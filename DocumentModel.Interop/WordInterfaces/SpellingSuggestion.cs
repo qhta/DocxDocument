@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public interface SpellingSuggestion : InteropObject
 {
   /// <summary>
-  /// Returns the name.
+  /// Returns or sets the name of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.spellingsuggestion.name?view=word-pia"/>
   public string Name { get; }

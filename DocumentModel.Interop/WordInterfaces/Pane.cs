@@ -1,103 +1,106 @@
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
-/// Represents a window pane. The Pane object is a member of the Panes collection. The Panes#SameCHM collection includes all the window panes for a single window.
+/// Represents a window pane. The Pane object is a member of the Panes collection. The Panes#SameCHM collection
+/// includes all the window panes for a single window.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane?view=word-pia"/>
 public partial interface Pane : InteropObject
 {
   /// <summary>
-  /// Returns the document.
+  /// Returns a Document object associated with the specified pane. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.document?view=word-pia"/>
   public Document Document { get; }
 
   /// <summary>
-  /// Returns the selection.
+  /// Returns the Selection object that represents a selection or the insertion point within a document pane.
+  /// Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.selection?view=word-pia"/>
   public Selection Selection { get; }
 
   /// <summary>
-  /// Returns or sets whether display rulers.
+  /// True if rulers are displayed for the specified pane. Read/write Boolean.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.displayrulers?view=word-pia"/>
   public bool DisplayRulers { get; set; }
 
   /// <summary>
-  /// Returns or sets whether display vertical ruler.
+  /// True if a vertical ruler is displayed for the specified pane. Read/write Boolean.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.displayverticalruler?view=word-pia"/>
   public bool DisplayVerticalRuler { get; set; }
 
   /// <summary>
-  /// Returns the zooms.
+  /// Returns a Zooms#SameCHM collection that represents the magnification options for each view (such as normal
+  /// view, outline view or print layout view).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.zooms?view=word-pia"/>
   public Zooms Zooms { get; }
 
   /// <summary>
-  /// Returns the index.
+  /// Returns a Long that represents the position of an item in a collection. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.index?view=word-pia"/>
   public int Index { get; }
 
   /// <summary>
-  /// Returns the view.
+  /// Returns a View object that represents the view for the specified pane.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.view?view=word-pia"/>
   public View View { get; }
 
   /// <summary>
-  /// Returns the next.
+  /// Returns a Pane object that represents the next document pane in the collection. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.next?view=word-pia"/>
   public Pane Next { get; }
 
   /// <summary>
-  /// Returns the previous.
+  /// Returns a Pane object that represents the previous document pane in the collection. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.previous?view=word-pia"/>
   public Pane Previous { get; }
 
   /// <summary>
-  /// Returns or sets the horizontal percent scrolled.
+  /// Returns or sets the horizontal scroll position as a percentage of the document width. Read/write Long.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.horizontalpercentscrolled?view=word-pia"/>
   public int HorizontalPercentScrolled { get; set; }
 
   /// <summary>
-  /// Returns or sets the vertical percent scrolled.
+  /// Returns or sets the vertical scroll position as a percentage of the document length. Read/write Long.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.verticalpercentscrolled?view=word-pia"/>
   public int VerticalPercentScrolled { get; set; }
 
   /// <summary>
-  /// Returns or sets the minimum font size.
+  /// Returns or sets the minimum font size (in points) displayed for the specified pane. Read/write Long.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.minimumfontsize?view=word-pia"/>
   public int MinimumFontSize { get; set; }
 
   /// <summary>
-  /// Returns or sets whether browse to window.
+  /// Reserved for internal use.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.browsetowindow?view=word-pia"/>
   public bool BrowseToWindow { get; set; }
 
   /// <summary>
-  /// Returns the browse width.
+  /// Returns the width (in points) of the area in which text wraps in the specified pane. Read-only Long.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.browsewidth?view=word-pia"/>
   public int BrowseWidth { get; }
 
   /// <summary>
-  /// Returns the frameset.
+  /// Returns a Frameset object that represents an entire frames page or a single frame on a frames page. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.frameset?view=word-pia"/>
   public Frameset Frameset { get; }
 
   /// <summary>
-  /// Returns the pages.
+  /// Returns a Pages collection that represents the pages in a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.pages?view=word-pia"/>
   public Pages Pages { get; }

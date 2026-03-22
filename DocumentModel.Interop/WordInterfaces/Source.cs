@@ -7,19 +7,19 @@ namespace DocumentModel.Interop.Word;
 public partial interface Source : InteropObject
 {
   /// <summary>
-  /// Returns the tag.
+  /// Returns a String that represents an internal identifying label for a source. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.source.tag?view=word-pia"/>
   public string Tag { get; }
 
   /// <summary>
-  /// Returns the x m l.
+  /// Returns a String that represents the XML markup for a Source object. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.source.xml?view=word-pia"/>
   public string XML { get; }
 
   /// <summary>
-  /// Returns whether cited.
+  /// Returns a Boolean that represents whether a source has been cited in a document. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.source.cited?view=word-pia"/>
   public bool Cited { get; }

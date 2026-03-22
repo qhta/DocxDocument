@@ -7,22 +7,22 @@ namespace DocumentModel.Interop.Word;
 public interface SmartTagType : InteropObject
 {
   /// <summary>
-  /// Returns the name.
+  /// Returns the name of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagtype.name?view=word-pia"/>
   public string Name { get; }
   /// <summary>
-  /// Returns the smart tag actions.
+  /// Returns a SmartTagActions collection that represents the collection of actions available on a smart tag.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagtype.smarttagactions?view=word-pia"/>
   public SmartTagActions SmartTagActions { get; }
   /// <summary>
-  /// Returns the smart tag recognizers.
+  /// Returns a SmartTagRecognizers collection for an application.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagtype.smarttagrecognizers?view=word-pia"/>
   public SmartTagRecognizers SmartTagRecognizers { get; }
   /// <summary>
-  /// Returns the friendly name.
+  /// Returns a String that represents a friendly name for a smart tag type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagtype.friendlyname?view=word-pia"/>
   public string FriendlyName { get; }

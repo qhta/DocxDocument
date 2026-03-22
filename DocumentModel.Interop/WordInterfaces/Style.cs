@@ -7,169 +7,177 @@ namespace DocumentModel.Interop.Word;
 public partial interface Style : InteropObject
 {
   /// <summary>
-  /// Returns or sets the name local.
+  /// Returns the name of a built-in style in the language of the user. Read/write String.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.namelocal?view=word-pia"/>
   public string NameLocal { get; set; }
 
   /// <summary>
-  /// Returns or sets the base style.
+  /// Returns or sets an existing style on which you can base the formatting of another style. Read/write Object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.basestyle?view=word-pia"/>
   public object BaseStyle { get; set; }
 
   /// <summary>
-  /// Returns the description.
+  /// Returns the description of the specified style. Read-only String.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.description?view=word-pia"/>
   public string Description { get; }
 
   /// <summary>
-  /// Returns the type.
+  /// Returns the style type. Read-only Style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.type?view=word-pia"/>
   public WdStyleType Type { get; }
 
   /// <summary>
-  /// Returns whether built in.
+  /// True if the specified object is one of the built-in styles or caption labels in Microsoft Word. Read-only
+  /// Boolean.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.builtin?view=word-pia"/>
   public bool BuiltIn { get; }
 
   /// <summary>
-  /// Returns or sets the next paragraph style.
+  /// Returns or sets the style to be applied automatically to a new paragraph inserted after a paragraph formatted
+  /// with the specified style. Read/write Object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.nextparagraphstyle?view=word-pia"/>
   public object NextParagraphStyle { get; set; }
 
   /// <summary>
-  /// Returns whether in use.
+  /// True if the specified style is a built-in style that has been modified or applied in the document or a new
+  /// style that has been created in the document. Read-only Boolean.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.inuse?view=word-pia"/>
   public bool InUse { get; }
 
   /// <summary>
-  /// Returns the shading.
+  /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.shading?view=word-pia"/>
   public Shading Shading { get; }
 
   /// <summary>
-  /// Returns or sets the borders.
+  /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.borders?view=word-pia"/>
   public Borders Borders { get; set; }
 
   /// <summary>
-  /// Returns or sets the paragraph format.
+  /// Returns or sets a ParagraphFormat object that represents the paragraph settings for the specified style.
+  /// Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.paragraphformat?view=word-pia"/>
   public ParagraphFormat ParagraphFormat { get; set; }
 
   /// <summary>
-  /// Returns or sets the font.
+  /// Returns or sets a Font object that represents the character formatting of the specified object. Read/write
+  /// Font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.font?view=word-pia"/>
   public Font Font { get; set; }
 
   /// <summary>
-  /// Returns the frame.
+  /// Returns a Frame object that represents the frame formatting for the specified style. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.frame?view=word-pia"/>
   public Frame Frame { get; }
 
   /// <summary>
-  /// Returns or sets the language i d.
+  /// Returns or sets the language for the specified object. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.languageid?view=word-pia"/>
   public WdLanguageID LanguageID { get; set; }
 
   /// <summary>
-  /// Returns or sets whether automatically update.
+  /// True if the style is automatically redefined based on the selection. False if Microsoft Word prompts for
+  /// confirmation before redefining the style based on the selection. Read/write Boolean.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.automaticallyupdate?view=word-pia"/>
   public bool AutomaticallyUpdate { get; set; }
 
   /// <summary>
-  /// Returns the list template.
+  /// Returns a ListTemplate object that represents the list formatting for the specified Style object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.listtemplate?view=word-pia"/>
   public ListTemplate ListTemplate { get; }
 
   /// <summary>
-  /// Returns the list level number.
+  /// Returns the list level for the specified style. Read-only Integer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.listlevelnumber?view=word-pia"/>
   public int ListLevelNumber { get; }
 
   /// <summary>
-  /// Returns or sets the language i d far east.
+  /// Returns or sets an East Asian language for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.languageidfareast?view=word-pia"/>
   public WdLanguageID LanguageIDFarEast { get; set; }
 
   /// <summary>
-  /// Returns or sets whether hidden.
+  /// Reserved for internal use.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.hidden?view=word-pia"/>
   public bool Hidden { get; set; }
 
   /// <summary>
-  /// Returns or sets the no proofing.
+  /// True if the spelling and grammar checker ignores text formatted with this style. Read/write Integer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.noproofing?view=word-pia"/>
   public int NoProofing { get; set; }
 
   /// <summary>
-  /// Returns or sets the link style.
+  /// Sets or returns an Object that represents a link between a paragraph and a character style. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.linkstyle?view=word-pia"/>
   public object LinkStyle { get; set; }
 
   /// <summary>
-  /// Returns or sets whether visibility.
+  /// Reserved for internal use.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.visibility?view=word-pia"/>
   public bool Visibility { get; set; }
 
   /// <summary>
-  /// Returns or sets whether no space between paragraphs of same style.
+  /// True if the spelling and grammar checker ignores text formatted with this style. Read/write Integer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.nospacebetweenparagraphsofsamestyle?view=word-pia"/>
   public bool NoSpaceBetweenParagraphsOfSameStyle { get; set; }
 
   /// <summary>
-  /// Returns the table.
+  /// Returns a TableStyle object representing properties that can be applied to a table using a table style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.table?view=word-pia"/>
   public TableStyle Table { get; }
 
   /// <summary>
-  /// Returns or sets whether locked.
+  /// True if the specified style is locked.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.locked?view=word-pia"/>
   public bool Locked { get; set; }
 
   /// <summary>
-  /// Returns or sets the priority.
+  /// Returns or sets a Integer that represents the priority for sorting styles in the Styles task pane. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.priority?view=word-pia"/>
   public int Priority { get; set; }
 
   /// <summary>
-  /// Returns or sets whether unhide when used.
+  /// Set True to clear the Hidden property when this style is used.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.unhidewhenused?view=word-pia"/>
   public bool UnhideWhenUsed { get; set; }
 
   /// <summary>
-  /// Returns or sets whether quick style.
+  /// Returns or sets a Boolean that represents whether the style corresponds to an available quick style.
+  /// Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.quickstyle?view=word-pia"/>
   public bool QuickStyle { get; set; }
 
   /// <summary>
-  /// Returns whether linked.
+  /// Returns or sets a Boolean that represents whether a style is a linked style that can be used for both
+  /// paragraph and character formatting. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.linked?view=word-pia"/>
   public bool Linked { get; }

@@ -7,22 +7,22 @@ namespace DocumentModel.Interop.Word;
 public interface SmartTagRecognizer : InteropObject
 {
   /// <summary>
-  /// Returns the full name.
+  /// Specifies the full name of a SmartTagRecognizer object, including the path.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagrecognizer.fullname?view=word-pia"/>
   public string FullName { get; }
   /// <summary>
-  /// Returns or sets whether enabled.
+  /// True if a smart tag recognizer is enabled.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagrecognizer.enabled?view=word-pia"/>
   public bool Enabled { get; set; }
   /// <summary>
-  /// Returns the prog i d.
+  /// Gets the programmatic identifier (ProgID) for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagrecognizer.progid?view=word-pia"/>
   public string ProgID { get; }
   /// <summary>
-  /// Returns the caption.
+  /// Returns the label that identifies the specified smart tag recognizer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagrecognizer.caption?view=word-pia"/>
   public string Caption { get; }

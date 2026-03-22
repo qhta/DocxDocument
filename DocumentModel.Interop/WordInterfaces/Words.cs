@@ -7,12 +7,12 @@ namespace DocumentModel.Interop.Word;
 public interface Words : InteropObject, InteropCollection<Range>
 {
   /// <summary>
-  /// Returns the first.
+  /// Returns a Range object that represents the first word in a document, selection or range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.words.first?view=word-pia"/>
   public Range First { get; }
   /// <summary>
-  /// Returns the last.
+  /// Returns a Range object that represents the last word in a document, selection, or range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.words.last?view=word-pia"/>
   public Range Last { get; }

@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <None Include=".github\copilot-instructions.md" />
+    <None Include="..\..\..\Scripts\UpdateXmlComments.py" Link="Scripts\UpdateXmlComments.py" />
   </ItemGroup>
 
   <ItemGroup>

@@ -7,85 +7,89 @@ namespace DocumentModel.Interop.Word;
 public partial interface System : InteropObject
 {
   /// <summary>
-  /// Returns the operating system.
+  /// Returns the name of the current operating system (for example, "Windows" or "Windows NT").
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system.operatingsystem?view=word-pia"/>
   public string OperatingSystem { get; }
 
   /// <summary>
-  /// Returns the processor type.
+  /// Returns the type of processor that the system is using (for example, i486).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system.processortype?view=word-pia"/>
   public string ProcessorType { get; }
 
   /// <summary>
-  /// Returns the version.
+  /// Returns the version number of the operating system.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system.version?view=word-pia"/>
   public string Version { get; }
 
   /// <summary>
-  /// Returns the free disk space.
+  /// Returns the available disk space for the current drive, in bytes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system.freediskspace?view=word-pia"/>
   public int FreeDiskSpace { get; }
 
   /// <summary>
-  /// Returns the country.
+  /// Reserved for internal use.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system.country?view=word-pia"/>
   public WdCountry Country { get; }
 
   /// <summary>
-  /// Returns the language designation.
+  /// Returns the designated language of the system software.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system.languagedesignation?view=word-pia"/>
   public string LanguageDesignation { get; }
 
   /// <summary>
-  /// Returns the horizontal resolution.
+  /// Returns the horizontal display resolution, in pixels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system.horizontalresolution?view=word-pia"/>
   public int HorizontalResolution { get; }
 
   /// <summary>
-  /// Returns the vertical resolution.
+  /// Returns the vertical screen resolution in pixels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system.verticalresolution?view=word-pia"/>
   public int VerticalResolution { get; }
 
   /// <summary>
-  /// Returns whether math coprocessor installed.
+  /// True if a math coprocessor is installed on the system.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system.mathcoprocessorinstalled?view=word-pia"/>
   public bool MathCoprocessorInstalled { get; }
 
   /// <summary>
-  /// Returns the computer type.
+  /// You have requested Help for a keyword used only on the Macintosh. For information about this keyword, consult
+  /// the language reference Help included with Microsoft Office Macintosh Edition.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system.computertype?view=word-pia"/>
   public string ComputerType { get; }
 
   /// <summary>
-  /// Returns the macintosh name.
+  /// You have requested Help for a keyword used only on the Macintosh. For information about this keyword, consult
+  /// the language reference Help included with Microsoft Office Macintosh Edition.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system.macintoshname?view=word-pia"/>
   public string MacintoshName { get; }
 
   /// <summary>
-  /// Returns whether quick draw installed.
+  /// You have requested Help for a keyword used only on the Macintosh. For information about this keyword, consult
+  /// the language reference Help included with Microsoft Office Macintosh Edition.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system.quickdrawinstalled?view=word-pia"/>
   public bool QuickDrawInstalled { get; }
 
   /// <summary>
-  /// Returns or sets the cursor.
+  /// Returns or sets the state (shape) of the pointer. Can be one of the following WdCursorType constants:
+  /// wdCursorIBeam, wdCursorNormal, wdCursorNorthwestArrow, or wdCursorWait.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system.cursor?view=word-pia"/>
   public WdCursorType Cursor { get; set; }
 
   /// <summary>
-  /// Returns the country region.
+  /// Returns the country/region designation of the system.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system.countryregion?view=word-pia"/>
   public WdCountry CountryRegion { get; }
