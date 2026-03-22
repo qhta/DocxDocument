@@ -9,38 +9,38 @@ public enum XlPieSliceIndex
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  xlOuterCounterClockwisePoint = 1,
+  OuterCounterClockwisePoint = 1,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  xlOuterCenterPoint,
+  OuterCenterPoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  xlOuterClockwisePoint,
+  OuterClockwisePoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  xlMidClockwiseRadiusPoint,
+  MidClockwiseRadiusPoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  xlCenterPoint,
+  CenterPoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  xlMidCounterClockwiseRadiusPoint,
+  MidCounterClockwiseRadiusPoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). public enum class
   /// XlPieSliceIndex ﾉ Expand table
   /// </summary>
-  xlInnerClockwisePoint,
+  InnerClockwisePoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  xlInnerCenterPoint,
+  InnerCenterPoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  xlInnerCounterClockwisePoint
+  InnerCounterClockwisePoint
 }

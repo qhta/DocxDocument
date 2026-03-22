@@ -11,271 +11,271 @@ public enum XlConstants
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  xlAutomatic = -4105,
+  Automatic = -4105,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  xlCombination = -4111,
+  Combination = -4111,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  xlCustom = -4114,
+  Custom = -4114,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 2
   /// </summary>
-  xlBar = 2,
+  Bar = 2,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 3
   /// </summary>
-  xlColumn = 3,
+  Column = 3,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  xl3DBar = -4099,
+  3DBar = -4099,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  xl3DSurface = -4103,
+  3DSurface = -4103,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  xlDefaultAutoFormat = -1,
+  DefaultAutoFormat = -1,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  xlNone = -4142,
+  None = -4142,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 0
   /// </summary>
-  xlAbove = 0,
+  Above = 0,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 1
   /// </summary>
-  xlBelow = 1,
+  Below = 1,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 1
   /// </summary>
-  xlBoth = 1,
+  Both = 1,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  xlBottom = -4107,
+  Bottom = -4107,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  xlCenter = -4108,
+  Center = -4108,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 9
   /// </summary>
-  xlChecker = 9,
+  Checker = 9,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 8
   /// </summary>
-  xlCircle = 8,
+  Circle = 8,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 2
   /// </summary>
-  xlCorner = 2,
+  Corner = 2,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 16
   /// </summary>
-  xlCrissCross = 16,
+  CrissCross = 16,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 4
   /// </summary>
-  xlCross = 4,
+  Cross = 4,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 2
   /// </summary>
-  xlDiamond = 2,
+  Diamond = 2,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  xlDistributed = -4117,
+  Distributed = -4117,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 5
   /// </summary>
-  xlFill = 5,
+  Fill = 5,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 1
   /// </summary>
-  xlFixedValue = 1,
+  FixedValue = 1,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 1
   /// </summary>
-  xlGeneral = 1,
+  General = 1,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 17
   /// </summary>
-  xlGray16 = 17,
+  Gray16 = 17,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  xlGray25 = -4124,
+  Gray25 = -4124,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  xlGray50 = -4125,
+  Gray50 = -4125,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  xlGray75 = -4126,
+  Gray75 = -4126,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 18
   /// </summary>
-  xlGray8 = 18,
+  Gray8 = 18,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 15
   /// </summary>
-  xlGrid = 15,
+  Grid = 15,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  xlHigh = -4127,
+  High = -4127,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 2
   /// </summary>
-  xlInside = 2,
+  Inside = 2,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  xlJustify = -4130,
+  Justify = -4130,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  xlLeft = -4131,
+  Left = -4131,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 13
   /// </summary>
-  xlLightDown = 13,
+  LightDown = 13,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 11
   /// </summary>
-  xlLightHorizontal = 11,
+  LightHorizontal = 11,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 14
   /// </summary>
-  xlLightUp = 14,
+  LightUp = 14,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 12
   /// </summary>
-  xlLightVertical = 12,
+  LightVertical = 12,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  xlLow = -4134,
+  Low = -4134,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 2
   /// </summary>
-  xlMaximum = 2,
+  Maximum = 2,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 4
   /// </summary>
-  xlMinimum = 4,
+  Minimum = 4,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 3
   /// </summary>
-  xlMinusValues = 3,
+  MinusValues = 3,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 4
   /// </summary>
-  xlNextToAxis = 4,
+  NextToAxis = 4,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 3
   /// </summary>
-  xlOpaque = 3,
+  Opaque = 3,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 3
   /// </summary>
-  xlOutside = 3,
+  Outside = 3,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 2
   /// </summary>
-  xlPercent = 2,
+  Percent = 2,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 9
   /// </summary>
-  xlPlus = 9,
+  Plus = 9,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 2
   /// </summary>
-  xlPlusValues = 2,
+  PlusValues = 2,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  xlRight = -4152,
+  Right = -4152,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 3
   /// </summary>
-  xlScale = 3,
+  Scale = 3,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 10
   /// </summary>
-  xlSemiGray75 = 10,
+  SemiGray75 = 10,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 4
   /// </summary>
-  xlShowLabel = 4,
+  ShowLabel = 4,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 5
   /// </summary>
-  xlShowLabelAndPercent = 5,
+  ShowLabelAndPercent = 5,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 3
   /// </summary>
-  xlShowPercent = 3,
+  ShowPercent = 3,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 2
   /// </summary>
-  xlShowValue = 2,
+  ShowValue = 2,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 2
   /// </summary>
-  xlSingle = 2,
+  Single = 2,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 1
   /// </summary>
-  xlSolid = 1,
+  Solid = 1,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 1
   /// </summary>
-  xlSquare = 1,
+  Square = 1,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 5
   /// </summary>
-  xlStar = 5,
+  Star = 5,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 4
   /// </summary>
-  xlStError = 4,
+  StError = 4,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
   /// constants used in Microsoft Excel.
   /// </summary>
-  xlTop = -4160,
+  Top = -4160,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 2
   /// </summary>
-  xlTransparent = 2,
+  Transparent = 2,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 3
   /// </summary>
-  xlTriangle = 3
+  Triangle = 3
 }

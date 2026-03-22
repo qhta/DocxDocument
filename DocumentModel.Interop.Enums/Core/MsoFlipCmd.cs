@@ -8,9 +8,9 @@ public enum MsoFlipCmd
   /// <summary>
   /// Flip horizontally.
   /// </summary>
-  msoFlipHorizontal,
+  Horizontal,
   /// <summary>
   /// Flip vertically.
   /// </summary>
-  msoFlipVertical
+  Vertical
 }

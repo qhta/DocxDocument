@@ -10,13 +10,13 @@ public enum MsoBroadcastCapabilities
   /// attendees can take shared notes. BroadcastCapSupportsUpdateDoc4 The presenters and attendees can make updates
   /// to the file during the broadcast.
   /// </summary>
-  BroadcastCapFileSizeLimited = 1,
+  FileSizeLimited = 1,
   /// <summary>
   /// Specifies the application capabilities available for a document or presentation broadcasting session.
   /// </summary>
-  BroadcastCapSupportsMeetingNotes = 2,
+  SupportsMeetingNotes = 2,
   /// <summary>
   /// Specifies the application capabilities available for a document or presentation broadcasting session.
   /// </summary>
-  BroadcastCapSupportsUpdateDoc = 4
+  SupportsUpdateDoc = 4
 }

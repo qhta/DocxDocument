@@ -8,17 +8,17 @@ public enum MsoRelativeNodePosition
   /// <summary>
   /// Node is added before current node.
   /// </summary>
-  msoBeforeNode = 1,
+  BeforeNode = 1,
   /// <summary>
   /// Node is added after current node.
   /// </summary>
-  msoAfterNode,
+  AfterNode,
   /// <summary>
   /// Node is added before first sibling.
   /// </summary>
-  msoBeforeFirstSibling,
+  BeforeFirstSibling,
   /// <summary>
   /// Node is added after last sibling.
   /// </summary>
-  msoAfterLastSibling
+  AfterLastSibling
 }

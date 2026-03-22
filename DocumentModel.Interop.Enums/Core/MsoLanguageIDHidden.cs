@@ -9,14 +9,14 @@ public enum MsoLanguageIDHidden
   /// <summary>
   /// msoLanguageIDChineseMacao 5124
   /// </summary>
-  msoLanguageIDChineseHongKong = 3076,
+  ChineseHongKong = 3076,
   /// <summary>
   /// msoLanguageIDEnglishTrinidad 11273
   /// </summary>
-  msoLanguageIDChineseMacao = 5124,
+  ChineseMacao = 5124,
   /// <summary>
   /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoLanguageIDHidden ﾉ
   /// Expand table
   /// </summary>
-  msoLanguageIDEnglishTrinidad = 11273
+  EnglishTrinidad = 11273
 }

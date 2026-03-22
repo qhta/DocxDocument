@@ -11,10 +11,10 @@ public enum XlColorIndex
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the color
   /// of a selected feature such as border, font, or fill.
   /// </summary>
-  xlColorIndexAutomatic = -4105,
+  Automatic = -4105,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the color
   /// of a selected feature such as border, font, or fill.
   /// </summary>
-  xlColorIndexNone = -4142
+  None = -4142
 }

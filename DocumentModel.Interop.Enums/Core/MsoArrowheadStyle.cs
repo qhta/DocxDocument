@@ -8,29 +8,29 @@ public enum MsoArrowheadStyle
   /// <summary>
   /// Specifies the style of the arrowhead at the end of a line.
   /// </summary>
-  msoArrowheadStyleMixed = -2,
+  StyleMixed = -2,
   /// <summary>
   /// No arrowhead.
   /// </summary>
-  msoArrowheadNone = 1,
+  None = 1,
   /// <summary>
   /// Triangular.
   /// </summary>
-  msoArrowheadTriangle = 2,
+  Triangle = 2,
   /// <summary>
   /// Open.
   /// </summary>
-  msoArrowheadOpen = 3,
+  Open = 3,
   /// <summary>
   /// Stealth-shaped. msoArrowheadDiamond5 Diamond-shaped.
   /// </summary>
-  msoArrowheadStealth = 4,
+  Stealth = 4,
   /// <summary>
   /// Specifies the style of the arrowhead at the end of a line.
   /// </summary>
-  msoArrowheadDiamond = 5,
+  Diamond = 5,
   /// <summary>
   /// Oval-shaped.
   /// </summary>
-  msoArrowheadOval = 6
+  Oval = 6
 }

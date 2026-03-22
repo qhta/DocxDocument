@@ -8,9 +8,9 @@ public enum MsoSegmentType
   /// <summary>
   /// Line.
   /// </summary>
-  msoSegmentLine,
+  Line,
   /// <summary>
   /// Curve.
   /// </summary>
-  msoSegmentCurve
+  Curve
 }

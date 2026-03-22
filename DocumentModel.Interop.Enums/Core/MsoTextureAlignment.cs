@@ -2,42 +2,42 @@
 
 public enum MsoTextureAlignment
 {
-  msoTextureAlignmentMixed = -2,
+  AlignmentMixed = -2,
   /// <summary>
   /// msoTextureTop 1
   /// </summary>
-  msoTextureTopLeft = 0,
+  TopLeft = 0,
   /// <summary>
   /// msoTextureTopRight 2
   /// </summary>
-  msoTextureTop = 1,
+  Top = 1,
   /// <summary>
   /// msoTextureLeft 3
   /// </summary>
-  msoTextureTopRight = 2,
+  TopRight = 2,
   /// <summary>
   /// msoTextureCenter 4
   /// </summary>
-  msoTextureLeft = 3,
+  Left = 3,
   /// <summary>
   /// msoTextureRight 5
   /// </summary>
-  msoTextureCenter = 4,
+  Center = 4,
   /// <summary>
   /// msoTextureBottomLeft 6
   /// </summary>
-  msoTextureRight = 5,
+  Right = 5,
   /// <summary>
   /// msoTextureBottom 7
   /// </summary>
-  msoTextureBottomLeft = 6,
+  BottomLeft = 6,
   /// <summary>
   /// msoTextureBottomRight 8
   /// </summary>
-  msoTextureBottom = 7,
+  Bottom = 7,
   /// <summary>
   /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoTextureAlignment ﾉ
   /// Expand table
   /// </summary>
-  msoTextureBottomRight = 8
+  BottomRight = 8
 }

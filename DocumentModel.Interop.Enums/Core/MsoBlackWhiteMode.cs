@@ -8,45 +8,45 @@ public enum MsoBlackWhiteMode
   /// <summary>
   /// Specifies how a shape appears when viewed in black-and-white mode.
   /// </summary>
-  msoBlackWhiteMixed = -2,
+  Mixed = -2,
   /// <summary>
   /// Default behavior.
   /// </summary>
-  msoBlackWhiteAutomatic = 1,
+  Automatic = 1,
   /// <summary>
   /// Grayscale.
   /// </summary>
-  msoBlackWhiteGrayScale = 2,
+  GrayScale = 2,
   /// <summary>
   /// Light grayscale.
   /// </summary>
-  msoBlackWhiteLightGrayScale = 3,
+  LightGrayScale = 3,
   /// <summary>
   /// Inverse grayscale.
   /// </summary>
-  msoBlackWhiteInverseGrayScale = 4,
+  InverseGrayScale = 4,
   /// <summary>
   /// Gray with white fill.
   /// </summary>
-  msoBlackWhiteGrayOutline = 5,
+  GrayOutline = 5,
   /// <summary>
   /// White with grayscale fill.
   /// </summary>
-  msoBlackWhiteBlackTextAndLine = 6,
+  BlackTextAndLine = 6,
   /// <summary>
   /// Black with white fill.
   /// </summary>
-  msoBlackWhiteHighContrast = 7,
+  HighContrast = 7,
   /// <summary>
   /// Black.
   /// </summary>
-  msoBlackWhiteBlack = 8,
+  Black = 8,
   /// <summary>
   /// White.
   /// </summary>
-  msoBlackWhiteWhite = 9,
+  White = 9,
   /// <summary>
   /// Not shown.
   /// </summary>
-  msoBlackWhiteDontShow = 10
+  DontShow = 10
 }

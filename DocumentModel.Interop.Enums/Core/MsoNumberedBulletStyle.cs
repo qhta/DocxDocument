@@ -2,169 +2,169 @@
 
 public enum MsoNumberedBulletStyle
 {
-  msoBulletStyleMixed = -2,
+  StyleMixed = -2,
   /// <summary>
   /// msoBulletAlphaUCPeriod 1
   /// </summary>
-  msoBulletAlphaLCPeriod = 0,
+  AlphaLCPeriod = 0,
   /// <summary>
   /// msoBulletArabicParenRight 2
   /// </summary>
-  msoBulletAlphaUCPeriod = 1,
+  AlphaUCPeriod = 1,
   /// <summary>
   /// msoBulletArabicPeriod 3
   /// </summary>
-  msoBulletArabicParenRight = 2,
+  ArabicParenRight = 2,
   /// <summary>
   /// msoBulletRomanLCParenBoth 4
   /// </summary>
-  msoBulletArabicPeriod = 3,
+  ArabicPeriod = 3,
   /// <summary>
   /// msoBulletRomanLCParenRight 5
   /// </summary>
-  msoBulletRomanLCParenBoth = 4,
+  RomanLCParenBoth = 4,
   /// <summary>
   /// msoBulletRomanLCPeriod 6
   /// </summary>
-  msoBulletRomanLCParenRight = 5,
+  RomanLCParenRight = 5,
   /// <summary>
   /// msoBulletRomanUCPeriod 7
   /// </summary>
-  msoBulletRomanLCPeriod = 6,
+  RomanLCPeriod = 6,
   /// <summary>
   /// msoBulletAlphaLCParenBoth 8
   /// </summary>
-  msoBulletRomanUCPeriod = 7,
+  RomanUCPeriod = 7,
   /// <summary>
   /// msoBulletAlphaLCParenRight 9
   /// </summary>
-  msoBulletAlphaLCParenBoth = 8,
+  AlphaLCParenBoth = 8,
   /// <summary>
   /// msoBulletAlphaUCParenBoth 10
   /// </summary>
-  msoBulletAlphaLCParenRight = 9,
+  AlphaLCParenRight = 9,
   /// <summary>
   /// msoBulletAlphaUCParenRight 11
   /// </summary>
-  msoBulletAlphaUCParenBoth = 10,
+  AlphaUCParenBoth = 10,
   /// <summary>
   /// msoBulletArabicParenBoth 12 public enum class MsoNumberedBulletStyle ﾉ Expand table
   /// </summary>
-  msoBulletAlphaUCParenRight = 11,
+  AlphaUCParenRight = 11,
   /// <summary>
   /// public enum class MsoNumberedBulletStyle ﾉ Expand table
   /// </summary>
-  msoBulletArabicParenBoth = 12,
+  ArabicParenBoth = 12,
   /// <summary>
   /// msoBulletRomanUCParenBoth 14
   /// </summary>
-  msoBulletArabicPlain = 13,
+  ArabicPlain = 13,
   /// <summary>
   /// msoBulletRomanUCParenRight 15
   /// </summary>
-  msoBulletRomanUCParenBoth = 14,
+  RomanUCParenBoth = 14,
   /// <summary>
   /// msoBulletSimpChinPlain 16
   /// </summary>
-  msoBulletRomanUCParenRight = 15,
+  RomanUCParenRight = 15,
   /// <summary>
   /// msoBulletSimpChinPeriod 17
   /// </summary>
-  msoBulletSimpChinPlain = 16,
+  SimpChinPlain = 16,
   /// <summary>
   /// msoBulletCircleNumDBPlain 18
   /// </summary>
-  msoBulletSimpChinPeriod = 17,
+  SimpChinPeriod = 17,
   /// <summary>
   /// msoBulletCircleNumWDWhitePlain 19
   /// </summary>
-  msoBulletCircleNumDBPlain = 18,
+  CircleNumDBPlain = 18,
   /// <summary>
   /// msoBulletCircleNumWDBlackPlain 20
   /// </summary>
-  msoBulletCircleNumWDWhitePlain = 19,
+  CircleNumWDWhitePlain = 19,
   /// <summary>
   /// msoBulletTradChinPlain 21
   /// </summary>
-  msoBulletCircleNumWDBlackPlain = 20,
+  CircleNumWDBlackPlain = 20,
   /// <summary>
   /// msoBulletTradChinPeriod 22
   /// </summary>
-  msoBulletTradChinPlain = 21,
+  TradChinPlain = 21,
   /// <summary>
   /// msoBulletArabicAlphaDash 23
   /// </summary>
-  msoBulletTradChinPeriod = 22,
+  TradChinPeriod = 22,
   /// <summary>
   /// msoBulletArabicAbjadDash 24
   /// </summary>
-  msoBulletArabicAlphaDash = 23,
+  ArabicAlphaDash = 23,
   /// <summary>
   /// msoBulletHebrewAlphaDash 25
   /// </summary>
-  msoBulletArabicAbjadDash = 24,
+  ArabicAbjadDash = 24,
   /// <summary>
   /// msoBulletKanjiKoreanPlain 26
   /// </summary>
-  msoBulletHebrewAlphaDash = 25,
+  HebrewAlphaDash = 25,
   /// <summary>
   /// msoBulletKanjiKoreanPeriod 27
   /// </summary>
-  msoBulletKanjiKoreanPlain = 26,
+  KanjiKoreanPlain = 26,
   /// <summary>
   /// msoBulletArabicDBPlain 28
   /// </summary>
-  msoBulletKanjiKoreanPeriod = 27,
+  KanjiKoreanPeriod = 27,
   /// <summary>
   /// msoBulletArabicDBPeriod 29
   /// </summary>
-  msoBulletArabicDBPlain = 28,
+  ArabicDBPlain = 28,
   /// <summary>
   /// msoBulletThaiAlphaPeriod 30
   /// </summary>
-  msoBulletArabicDBPeriod = 29,
+  ArabicDBPeriod = 29,
   /// <summary>
   /// msoBulletThaiAlphaParenRight 31
   /// </summary>
-  msoBulletThaiAlphaPeriod = 30,
+  ThaiAlphaPeriod = 30,
   /// <summary>
   /// msoBulletThaiAlphaParenBoth 32
   /// </summary>
-  msoBulletThaiAlphaParenRight = 31,
+  ThaiAlphaParenRight = 31,
   /// <summary>
   /// msoBulletThaiNumPeriod 33
   /// </summary>
-  msoBulletThaiAlphaParenBoth = 32,
+  ThaiAlphaParenBoth = 32,
   /// <summary>
   /// msoBulletThaiNumParenRight 34
   /// </summary>
-  msoBulletThaiNumPeriod = 33,
+  ThaiNumPeriod = 33,
   /// <summary>
   /// msoBulletThaiNumParenBoth 35
   /// </summary>
-  msoBulletThaiNumParenRight = 34,
+  ThaiNumParenRight = 34,
   /// <summary>
   /// msoBulletHindiAlphaPeriod 36
   /// </summary>
-  msoBulletThaiNumParenBoth = 35,
+  ThaiNumParenBoth = 35,
   /// <summary>
   /// msoBulletHindiNumPeriod 37
   /// </summary>
-  msoBulletHindiAlphaPeriod = 36,
+  HindiAlphaPeriod = 36,
   /// <summary>
   /// msoBulletKanjiSimpChinDBPeriod 38
   /// </summary>
-  msoBulletHindiNumPeriod = 37,
+  HindiNumPeriod = 37,
   /// <summary>
   /// msoBulletHindiNumParenRight 39
   /// </summary>
-  msoBulletKanjiSimpChinDBPeriod = 38,
+  KanjiSimpChinDBPeriod = 38,
   /// <summary>
   /// msoBulletHindiAlpha1Period 40
   /// </summary>
-  msoBulletHindiNumParenRight = 39,
+  HindiNumParenRight = 39,
   /// <summary>
   /// Applies to Product Versions Office primary interop assembly Latest
   /// </summary>
-  msoBulletHindiAlpha1Period = 40
+  HindiAlpha1Period = 40
 }

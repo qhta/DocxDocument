@@ -8,25 +8,25 @@ public enum MsoAlignCmd
   /// <summary>
   /// Align left sides of specified objects.
   /// </summary>
-  msoAlignLefts,
+  Lefts,
   /// <summary>
   /// Align centers of specified objects.
   /// </summary>
-  msoAlignCenters,
+  Centers,
   /// <summary>
   /// Align right sides of specified objects.
   /// </summary>
-  msoAlignRights,
+  Rights,
   /// <summary>
   /// Align tops of specified objects.
   /// </summary>
-  msoAlignTops,
+  Tops,
   /// <summary>
   /// Align middles of specified objects.
   /// </summary>
-  msoAlignMiddles,
+  Middles,
   /// <summary>
   /// Align bottoms of specified objects.
   /// </summary>
-  msoAlignBottoms
+  Bottoms
 }

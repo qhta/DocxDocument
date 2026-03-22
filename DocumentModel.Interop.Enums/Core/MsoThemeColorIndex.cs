@@ -8,74 +8,74 @@ public enum MsoThemeColorIndex
   /// <summary>
   /// Indicates the Office theme color.
   /// </summary>
-  msoThemeColorMixed = -2,
+  ThemeColorMixed = -2,
   /// <summary>
   /// Specifies no theme color.
   /// </summary>
-  msoNotThemeColor = 0,
+  NotThemeColor = 0,
   /// <summary>
   /// Specifies the
   /// </summary>
-  msoThemeColorDark1 = 1,
+  ThemeColorDark1 = 1,
   /// <summary>
   /// Specifies the
   /// </summary>
-  msoThemeColorLight1 = 2,
+  ThemeColorLight1 = 2,
   /// <summary>
   /// Specifies the
   /// </summary>
-  msoThemeColorDark2 = 3,
+  ThemeColorDark2 = 3,
   /// <summary>
   /// Specifies the
   /// </summary>
-  msoThemeColorLight2 = 4,
+  ThemeColorLight2 = 4,
   /// <summary>
   /// Specifies the
   /// </summary>
-  msoThemeColorAccent1 = 5,
+  ThemeColorAccent1 = 5,
   /// <summary>
   /// Specifies the
   /// </summary>
-  msoThemeColorAccent2 = 6,
+  ThemeColorAccent2 = 6,
   /// <summary>
   /// Specifies the
   /// </summary>
-  msoThemeColorAccent3 = 7,
+  ThemeColorAccent3 = 7,
   /// <summary>
   /// Specifies the
   /// </summary>
-  msoThemeColorAccent4 = 8,
+  ThemeColorAccent4 = 8,
   /// <summary>
   /// Specifies the
   /// </summary>
-  msoThemeColorAccent5 = 9,
+  ThemeColorAccent5 = 9,
   /// <summary>
   /// Specifies the
   /// </summary>
-  msoThemeColorAccent6 = 10,
+  ThemeColorAccent6 = 10,
   /// <summary>
   /// Specifies the theme color for a hyperlink. public enum class MsoThemeColorIndex ﾉ Expand table
   /// msoThemeColorFollowedHyperlink12 Specifies the theme color for a clicked hyperlink.
   /// </summary>
-  msoThemeColorHyperlink = 11,
+  ThemeColorHyperlink = 11,
   /// <summary>
   /// Indicates the Office theme color.
   /// </summary>
-  msoThemeColorFollowedHyperlink = 12,
+  ThemeColorFollowedHyperlink = 12,
   /// <summary>
   /// Specifies the
   /// </summary>
-  msoThemeColorText1 = 13,
+  ThemeColorText1 = 13,
   /// <summary>
   /// Specifies the
   /// </summary>
-  msoThemeColorBackground1 = 14,
+  ThemeColorBackground1 = 14,
   /// <summary>
   /// Specifies the
   /// </summary>
-  msoThemeColorText2 = 15,
+  ThemeColorText2 = 15,
   /// <summary>
   /// Specifies the
   /// </summary>
-  msoThemeColorBackground2 = 16
+  ThemeColorBackground2 = 16
 }

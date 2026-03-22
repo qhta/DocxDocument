@@ -9,21 +9,21 @@ public enum MsoSortBy
   /// <summary>
   /// File name.
   /// </summary>
-  msoSortByFileName = 1,
+  FileName = 1,
   /// <summary>
   /// File size.
   /// </summary>
-  msoSortBySize,
+  Size,
   /// <summary>
   /// File type.
   /// </summary>
-  msoSortByFileType,
+  FileType,
   /// <summary>
   /// Last modified date.
   /// </summary>
-  msoSortByLastModified,
+  LastModified,
   /// <summary>
   /// No sort.
   /// </summary>
-  msoSortByNone
+  None
 }

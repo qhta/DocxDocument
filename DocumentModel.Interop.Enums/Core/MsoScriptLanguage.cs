@@ -9,17 +9,17 @@ public enum MsoScriptLanguage
   /// <summary>
   /// Java. msoScriptLanguageVisualBasic2 Visual Basic.
   /// </summary>
-  msoScriptLanguageJava = 1,
+  Java = 1,
   /// <summary>
   /// Specifies scripting language of the active script.
   /// </summary>
-  msoScriptLanguageVisualBasic,
+  VisualBasic,
   /// <summary>
   /// Active Server Pages (ASP).
   /// </summary>
-  msoScriptLanguageASP,
+  ASP,
   /// <summary>
   /// A language other than ASP, Java, or Visual Basic.
   /// </summary>
-  msoScriptLanguageOther
+  Other
 }

@@ -8,13 +8,13 @@ public enum MsoCustomXMLValidationErrorType
   /// <summary>
   /// Indicates how validation errors will be cleared or generated.
   /// </summary>
-  msoCustomXMLValidationErrorSchemaGenerated,
+  SchemaGenerated,
   /// <summary>
   /// Indicates how validation errors will be cleared or generated.
   /// </summary>
-  msoCustomXMLValidationErrorAutomaticallyCleared,
+  AutomaticallyCleared,
   /// <summary>
   /// Specifies that the error will not be cleared until the Delete() method is called.
   /// </summary>
-  msoCustomXMLValidationErrorManual
+  Manual
 }

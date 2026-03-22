@@ -6,26 +6,26 @@ public enum MsoPickerField
   /// <summary>
   /// msoPickerFieldDateTime 1
   /// </summary>
-  msoPickerFieldUnknown,
+  Unknown,
   /// <summary>
   /// msoPickerFieldNumber 2
   /// </summary>
-  msoPickerFieldDateTime,
+  DateTime,
   /// <summary>
   /// msoPickerFieldText 3
   /// </summary>
-  msoPickerFieldNumber,
+  Number,
   /// <summary>
   /// msoPickerFieldUser 4
   /// </summary>
-  msoPickerFieldText,
+  Text,
   /// <summary>
   /// msoPickerFieldMax 5
   /// </summary>
-  msoPickerFieldUser,
+  User,
   /// <summary>
   /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoPickerField ﾉ Expand
   /// table
   /// </summary>
-  msoPickerFieldMax
+  Max
 }

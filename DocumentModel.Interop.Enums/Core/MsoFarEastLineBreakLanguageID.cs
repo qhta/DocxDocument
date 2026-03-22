@@ -9,17 +9,17 @@ public enum MsoFarEastLineBreakLanguageID
   /// <summary>
   /// Japanese.
   /// </summary>
-  MsoFarEastLineBreakLanguageJapanese = 1041,
+  Japanese = 1041,
   /// <summary>
   /// Korean.
   /// </summary>
-  MsoFarEastLineBreakLanguageKorean = 1042,
+  Korean = 1042,
   /// <summary>
   /// Simplified Chinese.
   /// </summary>
-  MsoFarEastLineBreakLanguageSimplifiedChinese = 2052,
+  SimplifiedChinese = 2052,
   /// <summary>
   /// Traditional Chinese.
   /// </summary>
-  MsoFarEastLineBreakLanguageTraditionalChinese = 1028
+  TraditionalChinese = 1028
 }

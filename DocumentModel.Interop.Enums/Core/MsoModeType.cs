@@ -11,13 +11,13 @@ public enum MsoModeType
   /// code. msoModeModeless2 This object, member, or enumeration is deprecated and is not intended to be used in
   /// your code.
   /// </summary>
-  msoModeModal,
+  Modal,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoModeAutoDown,
+  AutoDown,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoModeModeless
+  Modeless
 }

@@ -9,14 +9,14 @@ public enum MsoFileFindOptions
   /// <summary>
   /// This member is for Macintosh only and should not be used.
   /// </summary>
-  msoOptionsNew = 1,
+  New = 1,
   /// <summary>
   /// This member is for Macintosh only and should not be used. msoOptionsWithin3 This member is for Macintosh only
   /// and should not be used.
   /// </summary>
-  msoOptionsAdd,
+  Add,
   /// <summary>
   /// This enumeration applies to the Macintosh only and should not be used.
   /// </summary>
-  msoOptionsWithin
+  Within
 }

@@ -8,13 +8,13 @@ public enum MsoHorizontalAnchor
   /// <summary>
   /// Specifies the horizontal alignment of text in a text frame.
   /// </summary>
-  msoHorizontalAnchorMixed = -2,
+  HorizontalAnchorMixed = -2,
   /// <summary>
   /// No alignment.
   /// </summary>
-  msoAnchorNone = 1,
+  AnchorNone = 1,
   /// <summary>
   /// Text is centered horizontally.
   /// </summary>
-  msoAnchorCenter = 2
+  AnchorCenter = 2
 }

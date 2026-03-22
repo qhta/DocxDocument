@@ -8,17 +8,17 @@ public enum MsoMenuAnimation
   /// <summary>
   /// No animation.
   /// </summary>
-  msoMenuAnimationNone,
+  None,
   /// <summary>
   /// Random animation.
   /// </summary>
-  msoMenuAnimationRandom,
+  Random,
   /// <summary>
   /// Menus unfold into view.
   /// </summary>
-  msoMenuAnimationUnfold,
+  Unfold,
   /// <summary>
   /// Menus slide into view.
   /// </summary>
-  msoMenuAnimationSlide
+  Slide
 }

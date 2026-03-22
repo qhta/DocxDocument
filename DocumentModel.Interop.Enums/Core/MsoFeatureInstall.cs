@@ -10,13 +10,13 @@ public enum MsoFeatureInstall
   /// msoFeatureInstallOnDemand1 Prompts the user to install new features. msoFeatureInstallOnDemandWithUI2 Displays
   /// a progress meter during installation; does not prompt the user to install new features.
   /// </summary>
-  msoFeatureInstallNone,
+  None,
   /// <summary>
   /// Specifies how the application handles calls to methods and properties that require features not yet installed.
   /// </summary>
-  msoFeatureInstallOnDemand,
+  OnDemand,
   /// <summary>
   /// Specifies how the application handles calls to methods and properties that require features not yet installed.
   /// </summary>
-  msoFeatureInstallOnDemandWithUI
+  OnDemandWithUI
 }

@@ -8,52 +8,52 @@ public enum MsoBalloonErrorType
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoBalloonErrorNone,
+  None,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoBalloonErrorOther,
+  Other,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoBalloonErrorTooBig,
+  TooBig,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoBalloonErrorOutOfMemory,
+  OutOfMemory,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoBalloonErrorBadPictureRef,
+  BadPictureRef,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoBalloonErrorBadReference,
+  BadReference,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoBalloonErrorButtonlessModal,
+  ButtonlessModal,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code. public enum
   /// class MsoBalloonErrorType ﾉ Expand table
   /// </summary>
-  msoBalloonErrorButtonModeless,
+  ButtonModeless,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoBalloonErrorBadCharacter,
+  BadCharacter,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// msoBalloonErrorCharNotTopmostForModal10 This object, member, or enumeration is deprecated and is not intended
   /// to be used in your code.
   /// </summary>
-  msoBalloonErrorCOMFailure,
+  COMFailure,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoBalloonErrorCharNotTopmostForModal,
+  CharNotTopmostForModal,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoBalloonErrorTooManyControls
+  TooManyControls
 }

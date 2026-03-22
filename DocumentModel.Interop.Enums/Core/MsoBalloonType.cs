@@ -8,15 +8,15 @@ public enum MsoBalloonType
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoBalloonTypeButtons,
+  Buttons,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// msoBalloonTypeNumbers2 This object, member, or enumeration is deprecated and is not intended to be used in
   /// your code.
   /// </summary>
-  msoBalloonTypeBullets,
+  Bullets,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoBalloonTypeNumbers
+  Numbers
 }

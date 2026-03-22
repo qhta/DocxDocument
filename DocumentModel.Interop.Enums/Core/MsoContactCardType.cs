@@ -6,22 +6,22 @@ public enum MsoContactCardType
   /// <summary>
   /// msoContactCardTypePersonalContact 1
   /// </summary>
-  msoContactCardTypeEnterpriseContact,
+  EnterpriseContact,
   /// <summary>
   /// msoContactCardTypeUnknownContact 2
   /// </summary>
-  msoContactCardTypePersonalContact,
+  PersonalContact,
   /// <summary>
   /// msoContactCardTypeEnterpriseGroup 3
   /// </summary>
-  msoContactCardTypeUnknownContact,
+  UnknownContact,
   /// <summary>
   /// msoContactCardTypePersonalDistributionList 4
   /// </summary>
-  msoContactCardTypeEnterpriseGroup,
+  EnterpriseGroup,
   /// <summary>
   /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoContactCardType ﾉ
   /// Expand table
   /// </summary>
-  msoContactCardTypePersonalDistributionList
+  PersonalDistributionList
 }

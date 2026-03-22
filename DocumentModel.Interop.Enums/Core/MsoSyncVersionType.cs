@@ -8,9 +8,9 @@ public enum MsoSyncVersionType
   /// <summary>
   /// Specifies which version of a shared document to open alongside the currently open local version.
   /// </summary>
-  msoSyncVersionLastViewed,
+  LastViewed,
   /// <summary>
   /// Opens the server version.
   /// </summary>
-  msoSyncVersionServer
+  Server
 }

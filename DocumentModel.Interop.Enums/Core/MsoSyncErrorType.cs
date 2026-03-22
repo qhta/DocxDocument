@@ -8,71 +8,71 @@ public enum MsoSyncErrorType
   /// <summary>
   /// No error. msoSyncErrorUnauthorizedUser1 Unauthorized user. msoSyncErrorCouldNotConnect2 Could not connect.
   /// </summary>
-  msoSyncErrorNone,
+  None,
   /// <summary>
   /// Specifies a document synchronization error.
   /// </summary>
-  msoSyncErrorUnauthorizedUser,
+  UnauthorizedUser,
   /// <summary>
   /// Specifies a document synchronization error.
   /// </summary>
-  msoSyncErrorCouldNotConnect,
+  CouldNotConnect,
   /// <summary>
   /// Out of space.
   /// </summary>
-  msoSyncErrorOutOfSpace,
+  OutOfSpace,
   /// <summary>
   /// Destination file not found.
   /// </summary>
-  msoSyncErrorFileNotFound,
+  FileNotFound,
   /// <summary>
   /// File too large to synchronize.
   /// </summary>
-  msoSyncErrorFileTooLarge,
+  FileTooLarge,
   /// <summary>
   /// Destination file in use.
   /// </summary>
-  msoSyncErrorFileInUse,
+  FileInUse,
   /// <summary>
   /// Virus uploaded.
   /// </summary>
-  msoSyncErrorVirusUpload,
+  VirusUpload,
   /// <summary>
   /// Virus downloaded.
   /// </summary>
-  msoSyncErrorVirusDownload,
+  VirusDownload,
   /// <summary>
   /// Upload error. msoSyncErrorUnknownDownload10 Download error.
   /// </summary>
-  msoSyncErrorUnknownUpload,
+  UnknownUpload,
   /// <summary>
   /// Specifies a document synchronization error.
   /// </summary>
-  msoSyncErrorUnknownDownload,
+  UnknownDownload,
   /// <summary>
   /// Could not open file. msoSyncErrorCouldNotUpdate12 Could not update destination file. public enum class
   /// MsoSyncErrorType ﾉ Expand table msoSyncErrorCouldNotCompare13 Source and destination files could not be
   /// compared.
   /// </summary>
-  msoSyncErrorCouldNotOpen,
+  CouldNotOpen,
   /// <summary>
   /// Specifies a document synchronization error.
   /// </summary>
-  msoSyncErrorCouldNotUpdate,
+  CouldNotUpdate,
   /// <summary>
   /// Specifies a document synchronization error.
   /// </summary>
-  msoSyncErrorCouldNotCompare,
+  CouldNotCompare,
   /// <summary>
   /// Could not resolve files.
   /// </summary>
-  msoSyncErrorCouldNotResolve,
+  CouldNotResolve,
   /// <summary>
   /// No network available.
   /// </summary>
-  msoSyncErrorNoNetwork,
+  NoNetwork,
   /// <summary>
   /// Unknown error.
   /// </summary>
-  msoSyncErrorUnknown
+  Unknown
 }

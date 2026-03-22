@@ -8,13 +8,13 @@ public enum MsoShadowStyle
   /// <summary>
   /// Specifies the type of shadowing effect.
   /// </summary>
-  msoShadowStyleMixed = -2,
+  Mixed = -2,
   /// <summary>
   /// Specifies the type of shadowing effect.
   /// </summary>
-  msoShadowStyleInnerShadow = 1,
+  InnerShadow = 1,
   /// <summary>
   /// Specifies the type of shadowing effect.
   /// </summary>
-  msoShadowStyleOuterShadow = 2
+  OuterShadow = 2
 }

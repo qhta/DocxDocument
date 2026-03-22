@@ -8,17 +8,17 @@ public enum MsoTextStrike
   /// <summary>
   /// Indicates the number of times a character is printed to darken the image.
   /// </summary>
-  msoStrikeMixed = -2,
+  Mixed = -2,
   /// <summary>
   /// Specifies that the character is not printed.
   /// </summary>
-  msoNoStrike = 0,
+  NoStrike = 0,
   /// <summary>
   /// Specifies that the character is printed once.
   /// </summary>
-  msoSingleStrike = 1,
+  SingleStrike = 1,
   /// <summary>
   /// Specifies that the character is printed twice.
   /// </summary>
-  msoDoubleStrike = 2
+  DoubleStrike = 2
 }

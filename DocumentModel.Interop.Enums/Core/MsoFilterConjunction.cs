@@ -8,9 +8,9 @@ public enum MsoFilterConjunction
   /// <summary>
   /// And conjunction.
   /// </summary>
-  msoFilterConjunctionAnd,
+  And,
   /// <summary>
   /// Or conjunction.
   /// </summary>
-  msoFilterConjunctionOr
+  Or
 }

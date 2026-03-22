@@ -9,22 +9,22 @@ public enum DocProperties
   /// <summary>
   /// offPropertyTypeBoolean 2
   /// </summary>
-  offPropertyTypeNumber = 1,
+  Number = 1,
   /// <summary>
   /// offPropertyTypeDate 3
   /// </summary>
-  offPropertyTypeBoolean,
+  Boolean,
   /// <summary>
   /// offPropertyTypeString 4
   /// </summary>
-  offPropertyTypeDate,
+  Date,
   /// <summary>
   /// offPropertyTypeFloat 5
   /// </summary>
-  offPropertyTypeString,
+  String,
   /// <summary>
   /// Applies to Product Versions Office primary interop assembly Latest public enum class DocProperties ﾉ Expand
   /// table
   /// </summary>
-  offPropertyTypeFloat
+  Float
 }

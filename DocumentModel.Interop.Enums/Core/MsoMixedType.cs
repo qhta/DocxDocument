@@ -8,9 +8,9 @@ public enum MsoMixedType
   /// <summary>
   /// Internal use only.
   /// </summary>
-  msoIntegerMixed = 32768,
+  IntegerMixed = 32768,
   /// <summary>
   /// This enumeration has been deprecated and should not be used.
   /// </summary>
-  msoSingleMixed = int.MinValue
+  SingleMixed = int.MinValue
 }

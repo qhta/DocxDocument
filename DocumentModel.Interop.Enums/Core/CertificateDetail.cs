@@ -8,21 +8,21 @@ public enum CertificateDetail
   /// <summary>
   /// Specifies that the digital certificate is available for signing.
   /// </summary>
-  certdetAvailable,
+  Available,
   /// <summary>
   /// The holder of a Private Key corresponding to a Public Key.
   /// </summary>
-  certdetSubject,
+  Subject,
   /// <summary>
   /// The issuing authority of the certification. certdetExpirationDate3 The expiration date of the certificate.
   /// </summary>
-  certdetIssuer,
+  Issuer,
   /// <summary>
   /// Provides information about the digital certificate.
   /// </summary>
-  certdetExpirationDate,
+  ExpirationDate,
   /// <summary>
   /// A hash of the certificate's complete contents.
   /// </summary>
-  certdetThumbprint
+  Thumbprint
 }

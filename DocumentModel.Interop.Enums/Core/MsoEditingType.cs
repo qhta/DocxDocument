@@ -8,17 +8,17 @@ public enum MsoEditingType
   /// <summary>
   /// Editing type is appropriate to the segments being connected.
   /// </summary>
-  msoEditingAuto,
+  Auto,
   /// <summary>
   /// Corner node.
   /// </summary>
-  msoEditingCorner,
+  Corner,
   /// <summary>
   /// Smooth node.
   /// </summary>
-  msoEditingSmooth,
+  Smooth,
   /// <summary>
   /// Symmetric node.
   /// </summary>
-  msoEditingSymmetric
+  Symmetric
 }

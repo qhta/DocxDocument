@@ -12,29 +12,29 @@ public enum MsoOLEMenuGroup
   /// are merged with the menu groups of an OLE client (that is, when an object of the container application type is
   /// embedded in another application).
   /// </summary>
-  msoOLEMenuGroupNone = -1,
+  None = -1,
   /// <summary>
   /// File menu.
   /// </summary>
-  msoOLEMenuGroupFile,
+  File,
   /// <summary>
   /// Edit menu.
   /// </summary>
-  msoOLEMenuGroupEdit,
+  Edit,
   /// <summary>
   /// Container menu.
   /// </summary>
-  msoOLEMenuGroupContainer,
+  Container,
   /// <summary>
   /// Object menu.
   /// </summary>
-  msoOLEMenuGroupObject,
+  Object,
   /// <summary>
   /// Window menu.
   /// </summary>
-  msoOLEMenuGroupWindow,
+  Window,
   /// <summary>
   /// Help menu.
   /// </summary>
-  msoOLEMenuGroupHelp
+  Help
 }

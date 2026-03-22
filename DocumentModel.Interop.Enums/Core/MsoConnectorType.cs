@@ -8,17 +8,17 @@ public enum MsoConnectorType
   /// <summary>
   /// Specifies a type of connector.
   /// </summary>
-  msoConnectorTypeMixed = -2,
+  TypeMixed = -2,
   /// <summary>
   /// Straight line connector.
   /// </summary>
-  msoConnectorStraight = 1,
+  Straight = 1,
   /// <summary>
   /// Elbow connector.
   /// </summary>
-  msoConnectorElbow = 2,
+  Elbow = 2,
   /// <summary>
   /// Curved connector.
   /// </summary>
-  msoConnectorCurve = 3
+  Curve = 3
 }
