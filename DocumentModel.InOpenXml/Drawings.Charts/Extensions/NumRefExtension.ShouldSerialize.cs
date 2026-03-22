@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings.Charts;
-
 #pragma warning disable CS1591
-
 public partial class NumRefExtension
 {
   public bool ShouldSerializeFullReference() => FullReference is not null;

@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents an extension for a scatter chart, providing additional series filtering capabilities.
 /// </summary>
@@ -15,6 +14,5 @@ public partial class ScatterChartExtension: Extension<DXDC.ScatterChartExtension
     get => _FilteredScatterSeries;
     set => UpdateField(ref _FilteredScatterSeries, value, nameof(FilteredScatterSeries));
   }
-
   private FilteredScatterSeries? _FilteredScatterSeries;
 }

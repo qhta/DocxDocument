@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text.Json.Serialization;
-
 namespace DocumentModel
 {
   /// <summary>
@@ -19,13 +18,11 @@ namespace DocumentModel
       // Check if typeToConvert inherits from ElementCollection<T>
       if (!typeToConvert.IsGenericType)
         return false;
-
       var genericDef = typeToConvert.GetGenericTypeDefinition();
       return genericDef == typeof(ElementCollection<>)
           || typeToConvert.BaseType != null && typeToConvert.BaseType.IsGenericType &&
              typeToConvert.BaseType.GetGenericTypeDefinition() == typeof(ElementCollection<>);
     }
-
     /// <summary>
     ///   Creates a JSON converter for the specified <c>ElementCollection&lt;T&gt;</c> type.
     /// </summary>
@@ -38,7 +35,6 @@ namespace DocumentModel
       // Find the T in ElementCollection<T>
       Type? itemType = null;
       Type? collectionType = null;
-
       if (typeToConvert.IsGenericType && typeToConvert.GetGenericTypeDefinition() == typeof(ElementCollection<>))
       {
         itemType = typeToConvert.GetGenericArguments()[0];
@@ -59,10 +55,8 @@ namespace DocumentModel
           baseType = baseType.BaseType;
         }
       }
-
       if (itemType == null || collectionType == null)
         throw new InvalidOperationException("Cannot determine ElementCollection<T> type parameters.");
-
       var converterType = typeof(ElementCollectionJsonConverter<,>).MakeGenericType(collectionType, itemType);
       return (JsonConverter)Activator.CreateInstance(converterType)!;
     }

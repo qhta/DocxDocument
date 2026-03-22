@@ -2,46 +2,48 @@
 
 public enum MsoReflectionType
 {
+  /// <summary>
+  /// Mixed 
+  /// </summary>
   Mixed = -2,
   /// <summary>
-  /// msoReflectionType1 1
+  /// msoReflectionTypeNone
   /// </summary>
   None = 0,
   /// <summary>
+  /// msoReflectionType1 1
+  /// </summary>
+  Type1 = 1,
+  /// <summary>
   /// msoReflectionType2 2
   /// </summary>
-  1 = 1,
+  Type2 = 2,
   /// <summary>
   /// msoReflectionType3 3
   /// </summary>
-  2 = 2,
+  Type3 = 3,
   /// <summary>
   /// msoReflectionType4 4
   /// </summary>
-  3 = 3,
+  Type4 = 4,
   /// <summary>
   /// msoReflectionType5 5
   /// </summary>
-  4 = 4,
+  Type5 = 5,
   /// <summary>
   /// msoReflectionType6 6
   /// </summary>
-  5 = 5,
+  Type6 = 6,
   /// <summary>
   /// msoReflectionType7 7
   /// </summary>
-  6 = 6,
+  Type7 = 7,
   /// <summary>
   /// msoReflectionType8 8
   /// </summary>
-  7 = 7,
+  Type8 = 8,
   /// <summary>
   /// msoReflectionType9 9
   /// </summary>
-  8 = 8,
-  /// <summary>
-  /// Applies to public enum class MsoReflectionType ﾉ Expand table Product Versions Office primary interop assembly
-  /// Latest
-  /// </summary>
-  9 = 9
+  Type9 = 9,
 }

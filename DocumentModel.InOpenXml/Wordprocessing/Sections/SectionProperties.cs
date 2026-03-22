@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Defines the section properties for a section of the document.
 /// If it occurs as the last body element, then it specifies the properties of the last section of the document.
@@ -17,9 +16,7 @@ public partial class SectionProperties: BaseSectionProperties<DXW.SectionPropert
     get => _HeaderReferences;
     set => UpdateField(ref _HeaderReferences, value, nameof(HeaderReferences));
   }
-
   private HeaderReferences? _HeaderReferences;
-
   /// <summary>
   /// Collection of header references associated with the current instance.
   /// </summary>
@@ -29,9 +26,7 @@ public partial class SectionProperties: BaseSectionProperties<DXW.SectionPropert
     get => _FooterReferences;
     set => UpdateField(ref _FooterReferences, value, nameof(FooterReferences));
   }
-
   private FooterReferences? _FooterReferences;
-
   /// <summary>
   /// Change information for the section properties.
   /// </summary>
@@ -41,6 +36,5 @@ public partial class SectionProperties: BaseSectionProperties<DXW.SectionPropert
     get => _SectionPropertiesChange;
     set => UpdateField(ref _SectionPropertiesChange, value, nameof(SectionPropertiesChange));
   }
-
   private SectionPropertiesChange? _SectionPropertiesChange;
 }

@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel;
-
 /// <summary>
 /// Represents a collection of objects that can be accessed by name and provides notification when the collection
 /// changes.

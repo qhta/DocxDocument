@@ -5,5 +5,4 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class BaseTableGrid<T>: GridColumns<T> where T : DX.OpenXmlCompositeElement
 {
-
 }

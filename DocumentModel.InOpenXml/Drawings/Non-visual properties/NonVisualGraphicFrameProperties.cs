@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Defines the NonVisualGraphicFrameProperties Class.
 /// </summary>
@@ -14,9 +13,7 @@ public abstract partial class NonVisualGraphicFrameProperties<T>: ModelElement<T
     get => _GraphicFrameLocks;
     set => UpdateField(ref _GraphicFrameLocks, value, nameof(GraphicFrameLocks));
   }
-
   private GraphicFrameLocks? _GraphicFrameLocks;
-
   /// <summary>
   ///   ExtensionList.
   /// </summary>
@@ -25,10 +22,8 @@ public abstract partial class NonVisualGraphicFrameProperties<T>: ModelElement<T
     get => _ExtensionList;
     set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
   }
-
   private IExtensionList? _ExtensionList;
 }
-
 /// <summary>
 /// Specific DXD.NonVisualGraphicFrameProperties mapping class.
 /// </summary>

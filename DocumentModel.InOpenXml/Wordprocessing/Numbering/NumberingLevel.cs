@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Specifies the appearance and behavior of a numbering level within a given abstract numbering definition in a WordprocessingML document.
 /// A numbering level contains a set of properties for the display of numbering for a given level, including formatting, starting value, restart behavior, text, picture bullets, and associated paragraph/run properties.
@@ -16,17 +15,13 @@ public partial class NumberingLevel: ModelElement<DXW.Level>
   [OpenXmlProperty(nameof(DXW.Level.LevelIndex))]
   [Required]
   public NumLevel? LevelIndex { get => _LevelIndex; set => UpdateField(ref _LevelIndex, value, nameof(LevelIndex)); }
-
   private NumLevel? _LevelIndex;
-
   /// <summary>
   /// Indicates that this numbering level was saved by a producer but not used in the parent document, allowing redefinition by future consumers.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Level.Tentative))]
   public bool? Tentative { get => _Tentative; set => UpdateField(ref _Tentative, value, nameof(Tentative)); }
-
   private bool? _Tentative;
-
   /// <summary>
   /// Starting value for numbering at this level, used when the level starts or is restarted. Defaults to zero if omitted.
   /// </summary>
@@ -36,9 +31,7 @@ public partial class NumberingLevel: ModelElement<DXW.Level>
     get => _StartNumberingValue;
     set => UpdateField(ref _StartNumberingValue, value, nameof(StartNumberingValue));
   }
-
   private Int32? _StartNumberingValue;
-
   /// <summary>
   /// One-based index determining when this numbering level should restart to its start value, based on higher or earlier levels.
   /// A numbering level restarts when an instance of the specified numbering level, which shall be higher (earlier than this level)
@@ -51,9 +44,7 @@ public partial class NumberingLevel: ModelElement<DXW.Level>
     get => _LevelRestart;
     set => UpdateField(ref _LevelRestart, value, nameof(LevelRestart));
   }
-
   private NumLevel? _LevelRestart;
-
   /// <summary>
   /// Number format used to display numbering at this level, replacing %x in the level text string with the appropriate value.
   /// </summary>
@@ -63,9 +54,7 @@ public partial class NumberingLevel: ModelElement<DXW.Level>
     get => _NumberingFormat;
     set => UpdateField(ref _NumberingFormat, value, nameof(NumberingFormat));
   }
-
   private NumberingFormat? _NumberingFormat;
-
   /// <summary>
   /// Paragraph style ID associated with this numbering level.
   /// </summary>
@@ -75,9 +64,7 @@ public partial class NumberingLevel: ModelElement<DXW.Level>
     get => _ParagraphStyleIdInLevel;
     set => UpdateField(ref _ParagraphStyleIdInLevel, value, nameof(ParagraphStyleIdInLevel));
   }
-
   private string? _ParagraphStyleIdInLevel;
-
   /// <summary>
   /// Indicates that all levels are displayed using Arabic numerals.
   /// </summary>
@@ -87,9 +74,7 @@ public partial class NumberingLevel: ModelElement<DXW.Level>
     get => _IsLegalNumberingStyle;
     set => UpdateField(ref _IsLegalNumberingStyle, value, nameof(IsLegalNumberingStyle));
   }
-
   private bool? _IsLegalNumberingStyle;
-
   /// <summary>
   /// Content added between the numbering level's text and the text of every numbered paragraph referencing this level. Defaults to tab if omitted.
   /// </summary>
@@ -99,9 +84,7 @@ public partial class NumberingLevel: ModelElement<DXW.Level>
     get => _LevelSuffix;
     set => UpdateField(ref _LevelSuffix, value, nameof(LevelSuffix));
   }
-
   private LevelSuffix? _LevelSuffix;
-
   /// <summary>
   /// Textual content displayed for paragraphs at this numbering level, with %x replaced by the appropriate number.
   /// </summary>
@@ -111,9 +94,7 @@ public partial class NumberingLevel: ModelElement<DXW.Level>
     get => _LevelText;
     set => UpdateField(ref _LevelText, value, nameof(LevelText));
   }
-
   private NumberingLevelText? _LevelText;
-
   /// <summary>
   /// Identifier for the picture bullet to use as the numbering symbol at this level.
   /// </summary>
@@ -123,9 +104,7 @@ public partial class NumberingLevel: ModelElement<DXW.Level>
     get => _LevelPictureBulletId;
     set => UpdateField(ref _LevelPictureBulletId, value, nameof(LevelPictureBulletId));
   }
-
   private Int32? _LevelPictureBulletId;
-
   /// <summary>
   /// Unique hexadecimal value for UI location of this numbering level, interpretation is application-defined.
   /// </summary>
@@ -135,9 +114,7 @@ public partial class NumberingLevel: ModelElement<DXW.Level>
     get => _TemplateCode;
     set => UpdateField(ref _TemplateCode, value, nameof(TemplateCode));
   }
-
   private HexInt? _TemplateCode;
-
   /// <summary>
   /// Indicates that this numbering level is from an earlier word processor that did not support full WordprocessingML numbering properties.
   /// </summary>
@@ -147,9 +124,7 @@ public partial class NumberingLevel: ModelElement<DXW.Level>
     get => _LegacyNumbering;
     set => UpdateField(ref _LegacyNumbering, value, nameof(LegacyNumbering));
   }
-
   private LegacyNumbering? _LegacyNumbering;
-
   /// <summary>
   /// Justification for the numbering level (e.g., left, center, right).
   /// </summary>
@@ -159,9 +134,7 @@ public partial class NumberingLevel: ModelElement<DXW.Level>
     get => _justification;
     set => UpdateField(ref _justification, value, nameof(Justification));
   }
-
   private LevelJustification? _justification;
-
   /// <summary>
   /// Run properties for the numbering symbol at this level, specifying formatting for the symbol.
   /// </summary>
@@ -171,9 +144,7 @@ public partial class NumberingLevel: ModelElement<DXW.Level>
     get => _NumberingSymbolRunProperties;
     set => UpdateField(ref _NumberingSymbolRunProperties, value, nameof(NumberingSymbolRunProperties));
   }
-
   private NumberingSymbolRunProperties? _NumberingSymbolRunProperties;
-
   /// <summary>
   /// Paragraph properties for paragraphs at this numbering level, specifying formatting and layout for the paragraphs.
   /// </summary>
@@ -184,5 +155,4 @@ public partial class NumberingLevel: ModelElement<DXW.Level>
     set => UpdateField(ref _ParagraphProperties, value, nameof(ParagraphProperties));
   }
   private NumberingLevelParagraphProperties? _ParagraphProperties;
-
 }

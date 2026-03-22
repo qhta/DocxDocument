@@ -1,7 +1,5 @@
 namespace DocumentModel.Wordprocessing;
-
 #pragma warning disable CS1591
-
 public partial class PageBorders
 {
   public bool ShouldSerializeZOrder() => ZOrder is not null;

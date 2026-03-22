@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawing;
-
 /// <summary>
 /// Describes non-visual properties for connector shapes in chart drawings, including general drawing properties and connection-specific settings.
 /// </summary>
@@ -15,9 +14,7 @@ public class NonVisualConnectorShapeDrawingProperties: ModelElement<DXDCD.NonVis
     get => _NonVisualDrawingProperties;
     set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties));
   }
-
   private NonVisualDrawingProperties? _NonVisualDrawingProperties;
-
   /// <summary>
   /// Non-visual properties specific to connection shapes, including locks and connection endpoints.
   /// </summary>
@@ -27,6 +24,5 @@ public class NonVisualConnectorShapeDrawingProperties: ModelElement<DXDCD.NonVis
     get => _NonVisualConnectionShapeProperties;
     set => UpdateField(ref _NonVisualConnectionShapeProperties, value, nameof(NonVisualConnectionShapeProperties));
   }
-
   private NonVisualConnectionShapeProperties? _NonVisualConnectionShapeProperties;
 }

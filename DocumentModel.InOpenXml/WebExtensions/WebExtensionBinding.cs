@@ -1,5 +1,4 @@
 namespace DocumentModel.WebExtensions;
-
 /// <summary>
 ///   Defines the WebExtensionBinding Class.
 /// </summary>
@@ -11,17 +10,13 @@ public class WebExtensionBinding: ModelElement<DXO13WE.WebExtensionBinding>
   /// </summary>
   [OpenXmlProperty(nameof(DXO13WE.WebExtensionBinding.Id))]
   public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
-
   private string? _Id;
-
   /// <summary>
   /// Specifies the binding type.
   /// </summary>
   [OpenXmlProperty(nameof(DXO13WE.WebExtensionBinding.Type))]
   public string? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
-
   private string? _Type;
-
   /// <summary>
   /// Specifies the application reference for the binding.
   /// </summary>
@@ -31,9 +26,7 @@ public class WebExtensionBinding: ModelElement<DXO13WE.WebExtensionBinding>
     get => _AppReference;
     set => UpdateField(ref _AppReference, value, nameof(AppReference));
   }
-
   private string? _AppReference;
-
   /// <summary>
   /// Specifies the OfficeArt extension list.
   /// </summary>
@@ -43,6 +36,5 @@ public class WebExtensionBinding: ModelElement<DXO13WE.WebExtensionBinding>
     get => _OfficeArtExtensionList;
     set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList));
   }
-
   private OfficeArtExtensionList? _OfficeArtExtensionList;
 }

@@ -10,6 +10,5 @@ public partial class ParagraphProperties : ModelElement<DXM.ParagraphProperties>
  /// </summary>
  [OpenXmlProperty(nameof(DXM.ParagraphProperties.Justification))]
  public Justification? Justification { get => _Justification; set => UpdateField(ref _Justification, value, nameof(Justification)); }
-
  private Justification? _Justification;
 }

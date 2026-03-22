@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel;
-
 /// <summary>
 /// Collection of elements that have unique keys to identify them.
 /// </summary>

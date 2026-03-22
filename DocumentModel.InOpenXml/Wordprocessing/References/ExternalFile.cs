@@ -1,6 +1,5 @@
 using DocumentFormat.OpenXml;
 using DocumentModel.Packaging;
-
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents an external file relationship in a WordprocessingML document, providing logic for managing and synchronizing external file URIs and relationship IDs with the Open XML package.
@@ -10,14 +9,12 @@ namespace DocumentModel.Wordprocessing;
 //[OpenXmlUpdateData(nameof(ModelElement.UpdateData))]
 public abstract partial class ExternalFile<T> : RelationshipType<DXW.RelationshipType>
 {
-
   /// <summary>
   ///   Initializes a new instance of the <see cref="ExternalFile{T}"/> class with default values.
   /// </summary>
   protected ExternalFile()
   {
   }
-
   /// <summary>
   ///   Initializes a new instance of the <see cref="ExternalFile{T}"/> class with the specified URI.
   /// </summary>
@@ -26,7 +23,6 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
   {
     Uri = uri;
   }
-
   /// <summary>
   ///   Updates the internal data by loading information from the specified Open XML element.
   ///   If the associated document is not available, no update is performed.
@@ -37,7 +33,6 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
     if (WordprocessingDocument != null)
       UpdateData(WordprocessingDocument);
   }
-
   /// <summary>
   ///   Loads data from the specified document into the current instance, updating the relationship ID and URI if available.
   ///   If the relevant relationship is not present, the properties remain unchanged.
@@ -56,7 +51,6 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
       }
     }
   }
-
   /// <summary>
   ///   Updates the specified document with the current relationship ID and URI values.
   ///   Sets the ID property and, if specified, the URI property on the relationship element within the provided document.
@@ -74,16 +68,13 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
       }
     }
   }
-
   /// <summary>
   ///   The URI string of the relationship target (external resource).
   /// </summary>
   [OpenXmlLoadData(nameof(LoadUriFromOpenXml))]
   [OpenXmlUpdateData(nameof(UpdateUriInOpenXml))]
   public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
-
   private string? _Uri;
-
   /// <summary>
   ///   Updates the external relationship in the document to point to the current URI and stores the new relationship ID.
   ///   Removes any old relationship with the same ID before adding the new one.
@@ -93,22 +84,18 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
   {
     if (Uri == null)
       return;
-
     var parentPart = openXmlElement.GetOpenXmlPart();
     if (parentPart == null)
       return;
-
     if (!string.IsNullOrEmpty(Id))
     {
       var oldRel = parentPart.ExternalRelationships.FirstOrDefault(r => r.Id == Id);
       if (oldRel != null)
         parentPart.DeleteExternalRelationship(oldRel.Id);
     }
-
     var rel = parentPart?.AddExternalRelationship("http://schemas.openxmlformats.org/officeDocument/2006/relationships/attachedTemplate", new Uri(Uri));
     Id = rel?.Id;
   }
-
   /// <summary>
   ///   Loads the URI associated with the current relationship from the specified Open XML element.
   ///   Updates the <c>Uri</c> property if a matching external relationship is found in the main document part of the underlying document.
@@ -128,7 +115,6 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
       throw new InvalidOperationException($"OpenXmlElement is a {openXmlElement.GetType()} but not RelationshipType");
     if (Id == null)
       throw new InvalidOperationException($"No Id property in {element} of type {element.GetType()}");
-
     var openXmlPart = openXmlElement.GetOpenXmlPart();
     if (openXmlPart == null)
       openXmlPart = doc.MainDocumentPart;

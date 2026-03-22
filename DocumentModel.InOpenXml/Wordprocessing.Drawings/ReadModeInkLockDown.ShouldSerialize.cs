@@ -1,7 +1,5 @@
 namespace DocumentModel.Wordprocessing.Drawings;
-
 #pragma warning disable CS1591
-
 public partial class ReadModeInkLockDown
 {
   public bool ShouldSerializeUseActualPages() => UseActualPages is not null;

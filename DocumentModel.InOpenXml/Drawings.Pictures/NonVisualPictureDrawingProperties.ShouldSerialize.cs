@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings.Pictures;
-
 #pragma warning disable CS1591
-
 public partial class NonVisualPictureDrawingProperties
 {
   public bool ShouldSerializePreferRelativeResize() => PreferRelativeResize is not null;

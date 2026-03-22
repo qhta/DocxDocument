@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings;
-
 #pragma warning disable CS1591
-
 public partial class ParagraphProperties
 {
   public bool ShouldSerializeLeftMargin() => LeftMargin is not null;

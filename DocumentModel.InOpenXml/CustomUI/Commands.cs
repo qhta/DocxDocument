@@ -1,5 +1,4 @@
 namespace DocumentModel.CustomUI;
-
 /// <summary>
 /// <para>Defines the Commands Class.</para>
 /// <para>This class is available in Office 2010 and above.</para>

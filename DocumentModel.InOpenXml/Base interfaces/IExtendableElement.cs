@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel;
-
 /// <summary>
 /// Element that can specify the extension list within which all future extensions of element type are defined.
 /// The extension list along with corresponding future extensions is used to extend the storage capabilities of the DrawingML framework.

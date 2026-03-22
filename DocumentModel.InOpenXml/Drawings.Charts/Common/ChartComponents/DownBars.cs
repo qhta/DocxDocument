@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Down Bars.
 /// </summary>
@@ -15,6 +14,5 @@ public partial class DownBars: ModelElement<DXDC.DownBars>
     get => _ChartShapeProperties;
     set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties));
   }
-
   private ChartShapeProperties? _ChartShapeProperties;
 }

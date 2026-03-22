@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawing;
-
 /// <summary>
 /// Describes non-visual properties for a group shape in chart drawings, including general drawing properties and group-specific drawing settings.
 /// </summary>
@@ -15,9 +14,7 @@ public class NonVisualGroupShapeProperties: ModelElement<DXDCD.NonVisualGroupSha
     get => _NonVisualDrawingProperties;
     set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties));
   }
-
   private NonVisualDrawingProperties? _NonVisualDrawingProperties;
-
   /// <summary>
   /// Non-visual drawing properties specific to the group shape, including locking options and extension data.
   /// </summary>
@@ -27,6 +24,5 @@ public class NonVisualGroupShapeProperties: ModelElement<DXDCD.NonVisualGroupSha
     get => _NonVisualGroupShapeDrawingProperties;
     set => UpdateField(ref _NonVisualGroupShapeDrawingProperties, value, nameof(NonVisualGroupShapeDrawingProperties));
   }
-
   private NonVisualGroupShapeDrawingProperties? _NonVisualGroupShapeDrawingProperties;
 }

@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents a collection of format overrides that customize specific formatting aspects of chart elements.
 /// </summary>

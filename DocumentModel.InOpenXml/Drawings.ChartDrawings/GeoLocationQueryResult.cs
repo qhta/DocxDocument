@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents the result of a geographic location query, containing both the query specification and retrieved location data.
 /// </summary>
@@ -36,9 +35,7 @@ public class GeoLocationQueryResult: ModelElement<DXO16DCD.GeoLocationQueryResul
     get => _GeoLocationQuery;
     set => UpdateField(ref _GeoLocationQuery, value, nameof(GeoLocationQuery));
   }
-
   private GeoLocationQuery? _GeoLocationQuery;
-
   /// <summary>
   /// Specifies the geo locations.
   /// </summary>
@@ -48,6 +45,5 @@ public class GeoLocationQueryResult: ModelElement<DXO16DCD.GeoLocationQueryResul
     get => _GeoLocations;
     set => UpdateField(ref _GeoLocations, value, nameof(GeoLocations));
   }
-
   private GeoLocations? _GeoLocations;
 }

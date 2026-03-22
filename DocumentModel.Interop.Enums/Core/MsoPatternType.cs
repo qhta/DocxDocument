@@ -12,51 +12,51 @@ public enum MsoPatternType
   /// <summary>
   /// 5% of the foreground color.
   /// </summary>
-  5Percent = 1,
+  FivePercent = 1,
   /// <summary>
   /// 10% of the foreground color.
   /// </summary>
-  10Percent = 2,
+  TenPercent = 2,
   /// <summary>
   /// 20% of the foreground color.
   /// </summary>
-  20Percent = 3,
+  TwentyPercent = 3,
   /// <summary>
   /// 25% of the foreground color.
   /// </summary>
-  25Percent = 4,
+  TwentyFivePercent = 4,
   /// <summary>
   /// 30% of the foreground color.
   /// </summary>
-  30Percent = 5,
+  ThirtyPercent = 5,
   /// <summary>
   /// 40% of the foreground color.
   /// </summary>
-  40Percent = 6,
+  FortyPercent = 6,
   /// <summary>
   /// 50% of the foreground color.
   /// </summary>
-  50Percent = 7,
+  FiftyPercent = 7,
   /// <summary>
   /// 60% of the foreground color.
   /// </summary>
-  60Percent = 8,
+  SixtyPercent = 8,
   /// <summary>
   /// 70% of the foreground color.
   /// </summary>
-  70Percent = 9,
+  SeventyPercent = 9,
   /// <summary>
   /// 75% of the foreground color.
   /// </summary>
-  75Percent = 10,
+  SeventyFivePercent = 10,
   /// <summary>
   /// 80% of the foreground color.
   /// </summary>
-  80Percent = 11,
+  EightyPercent = 11,
   /// <summary>
-  /// 90% of the foreground color. public enum class MsoPatternType ﾉ Expand table
+  /// 90% of the foreground colorExpand table
   /// </summary>
-  90Percent = 12,
+  NinetyPercent = 12,
   /// <summary>
   /// Thick horizontal lines in the foreground color.
   /// </summary>

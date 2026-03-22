@@ -19,7 +19,6 @@ public partial class Bibliography : ModelElement
     ///   Each source contains metadata such as author, title, year, publisher, etc.
     /// </remarks>
     public Sources? Sources { get => _Sources; set => UpdateField(ref _Sources, value, nameof(Sources)); }
-
     private Sources? _Sources;
     /// <summary>
     ///   Gets or sets the master list of all sources across all documents.
@@ -29,7 +28,6 @@ public partial class Bibliography : ModelElement
     ///   multiple documents. It's typically stored separately from individual documents.
     /// </remarks>
     public Sources? MasterList { get => _MasterList; set => UpdateField(ref _MasterList, value, nameof(MasterList)); }
-
     private Sources? _MasterList;
     /// <summary>
     ///   Gets or sets the current list of sources in the active document.
@@ -39,7 +37,6 @@ public partial class Bibliography : ModelElement
     ///   or referenced in the active document.
     /// </remarks>
     public Sources? CurrentList { get => _CurrentList; set => UpdateField(ref _CurrentList, value, nameof(CurrentList)); }
-
     private Sources? _CurrentList;
 #endregion
 #region Bibliography Style and Formatting
@@ -51,7 +48,6 @@ public partial class Bibliography : ModelElement
     ///   The style determines how citations appear in-text and how the bibliography is formatted.
     /// </remarks>
     public string? BibliographyStyle { get => _BibliographyStyle; set => UpdateField(ref _BibliographyStyle, value, nameof(BibliographyStyle)); }
-
     private string? _BibliographyStyle;
     /// <summary>
     ///   Gets or sets the sort order for the bibliography entries.
@@ -61,7 +57,6 @@ public partial class Bibliography : ModelElement
     ///   by appearance in document, by year, etc.).
     /// </remarks>
     public BibliographySortOrder? SortOrder { get => _SortOrder; set => UpdateField(ref _SortOrder, value, nameof(SortOrder)); }
-
     private BibliographySortOrder? _SortOrder;
     /// <summary>
     ///   Gets or sets whether to show all bibliography sources or only cited sources.
@@ -71,7 +66,6 @@ public partial class Bibliography : ModelElement
     ///   When false, displays only sources that are actually cited in the document.
     /// </remarks>
     public bool ShowAllSources { get => _ShowAllSources; set => UpdateField(ref _ShowAllSources, value, nameof(ShowAllSources)); }
-
     private bool _ShowAllSources;
 #endregion
 }

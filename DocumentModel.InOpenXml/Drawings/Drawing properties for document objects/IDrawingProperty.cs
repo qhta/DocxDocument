@@ -4,5 +4,4 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public interface IDrawingProperty
 {
-
 }

@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents the geographic configuration and settings for map-based chart visualizations.
 /// </summary>
@@ -35,9 +34,7 @@ public class Geography: ModelElement<DXO16DCD.Geography>
     get => _ProjectionType;
     set => UpdateField(ref _ProjectionType, value, nameof(ProjectionType));
   }
-
   private GeoProjectionType? _ProjectionType;
-
   /// <summary>
   /// Specifies the viewed region type.
   /// </summary>
@@ -47,9 +44,7 @@ public class Geography: ModelElement<DXO16DCD.Geography>
     get => _ViewedRegionType;
     set => UpdateField(ref _ViewedRegionType, value, nameof(ViewedRegionType));
   }
-
   private GeoMappingLevel? _ViewedRegionType;
-
   /// <summary>
   /// Specifies the culture language.
   /// </summary>
@@ -59,9 +54,7 @@ public class Geography: ModelElement<DXO16DCD.Geography>
     get => _CultureLanguage;
     set => UpdateField(ref _CultureLanguage, value, nameof(CultureLanguage));
   }
-
   private string? _CultureLanguage;
-
   /// <summary>
   /// Specifies the culture region.
   /// </summary>
@@ -71,22 +64,17 @@ public class Geography: ModelElement<DXO16DCD.Geography>
     get => _CultureRegion;
     set => UpdateField(ref _CultureRegion, value, nameof(CultureRegion));
   }
-
   private string? _CultureRegion;
-
   /// <summary>
   /// Specifies the attribution.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.Geography.Attribution))]
   public string? Attribution { get => _Attribution; set => UpdateField(ref _Attribution, value, nameof(Attribution)); }
-
   private string? _Attribution;
-
   /// <summary>
   /// Specifies the geo cache.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.Geography.GeoCache))]
   public GeoCache? GeoCache { get => _GeoCache; set => UpdateField(ref _GeoCache, value, nameof(GeoCache)); }
-
   private GeoCache? _GeoCache;
 }

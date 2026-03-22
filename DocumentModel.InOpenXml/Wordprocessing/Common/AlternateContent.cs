@@ -37,7 +37,6 @@ public partial class AlternateContent : ModelElement
     ///   applications through the fallback mechanism.
     /// </remarks>
     public AlternateContentChoiceCollection? Choices { get => _Choices; set => UpdateField(ref _Choices, value, nameof(Choices)); }
-
     private AlternateContentChoiceCollection? _Choices;
     /// <summary>
     ///   Gets or sets the fallback content to use when none of the choices can be satisfied.
@@ -56,6 +55,5 @@ public partial class AlternateContent : ModelElement
     ///   advanced features.
     /// </remarks>
     public AlternateContentFallback? Fallback { get => _Fallback; set => UpdateField(ref _Fallback, value, nameof(Fallback)); }
-
     private AlternateContentFallback? _Fallback;
 }

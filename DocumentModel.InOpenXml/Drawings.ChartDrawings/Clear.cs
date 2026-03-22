@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents a container for geographic data query results used in map-based chart visualizations.
 /// </summary>
@@ -27,9 +26,7 @@ public class Clear: ModelElement<DXO16DCD.Clear>
     get => _GeoLocationQueryResults;
     set => UpdateField(ref _GeoLocationQueryResults, value, nameof(GeoLocationQueryResults));
   }
-
   private GeoLocationQueryResults? _GeoLocationQueryResults;
-
   /// <summary>
   /// Specifies the geo data entity query results.
   /// </summary>
@@ -39,9 +36,7 @@ public class Clear: ModelElement<DXO16DCD.Clear>
     get => _GeoDataEntityQueryResults;
     set => UpdateField(ref _GeoDataEntityQueryResults, value, nameof(GeoDataEntityQueryResults));
   }
-
   private GeoDataEntityQueryResults? _GeoDataEntityQueryResults;
-
   /// <summary>
   /// Specifies the geo data point to entity query results.
   /// </summary>
@@ -51,9 +46,7 @@ public class Clear: ModelElement<DXO16DCD.Clear>
     get => _GeoDataPointToEntityQueryResults;
     set => UpdateField(ref _GeoDataPointToEntityQueryResults, value, nameof(GeoDataPointToEntityQueryResults));
   }
-
   private GeoDataPointToEntityQueryResults? _GeoDataPointToEntityQueryResults;
-
   /// <summary>
   /// Specifies the geo child entities query results.
   /// </summary>
@@ -63,9 +56,7 @@ public class Clear: ModelElement<DXO16DCD.Clear>
     get => _GeoChildEntitiesQueryResults;
     set => UpdateField(ref _GeoChildEntitiesQueryResults, value, nameof(GeoChildEntitiesQueryResults));
   }
-
   private GeoChildEntitiesQueryResults? _GeoChildEntitiesQueryResults;
-
   /// <summary>
   /// Specifies the geo parent entities query results.
   /// </summary>
@@ -75,6 +66,5 @@ public class Clear: ModelElement<DXO16DCD.Clear>
     get => _GeoParentEntitiesQueryResults;
     set => UpdateField(ref _GeoParentEntitiesQueryResults, value, nameof(GeoParentEntitiesQueryResults));
   }
-
   private GeoParentEntitiesQueryResults? _GeoParentEntitiesQueryResults;
 }

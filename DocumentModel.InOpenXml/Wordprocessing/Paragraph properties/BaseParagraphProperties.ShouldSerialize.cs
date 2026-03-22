@@ -1,7 +1,5 @@
 namespace DocumentModel.Wordprocessing;
-
 #pragma warning disable CS1591
-
 public partial class BaseParagraphProperties<T> 
 {
   public bool ShouldSerializeKeepNext() => KeepNext is not null;
@@ -36,5 +34,4 @@ public partial class BaseParagraphProperties<T>
   public bool ShouldSerializeTextBoxTightWrap() => TextBoxTightWrap is not null;
   public bool ShouldSerializeOutlineLevel() => OutlineLevel is not null;
   public bool ShouldSerializeNumberingProperties() => NumberingProperties is not null;
-
 }

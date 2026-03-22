@@ -12,7 +12,6 @@ public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
  public Rsids()
  {
  }
-
  /// <summary>
  /// Initializing constructor.
  /// </summary>
@@ -22,7 +21,6 @@ public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
   if (document.WordprocessingDocument != null)
    AttachAndLoad(document.WordprocessingDocument);
  }
-
  /// <summary>
  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's DocumentSettings.
  /// </summary>
@@ -36,7 +34,6 @@ public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
   {
    return;
   }
-
   SetUpdatableElement(rsids);
   LoadData(rsids);
   if (rsids.RsidRoot != null)
@@ -48,7 +45,6 @@ public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
    }
   }
  }
-
  /// <summary>
  /// Attach this instance to the specified document. Data is stored to the document's DocumentSettings.
  /// </summary>
@@ -63,7 +59,6 @@ public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
    rsids = new DXW.Rsids();
    documentSettings.AddChildUsingSchemaOrder(rsids);
   }
-
   SetUpdatableElement(rsids);
   UpdateData(rsids);
   if (this.Count > 0)

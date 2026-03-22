@@ -11,7 +11,6 @@ public class ActiveWritingStyles : ElementCollection<ActiveWritingStyle>
  public ActiveWritingStyles()
  {
  }
-
  /// <summary>
  /// Initializes the collection with the specified styles.
  /// </summary>
@@ -19,5 +18,4 @@ public class ActiveWritingStyles : ElementCollection<ActiveWritingStyle>
  public ActiveWritingStyles(IEnumerable<ActiveWritingStyle> styles) : base(styles)
  {
  }
-
 }

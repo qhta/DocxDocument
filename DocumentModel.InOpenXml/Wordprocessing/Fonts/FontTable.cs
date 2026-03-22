@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Represents the root element of the font table in a WordprocessingML document.
 /// This class provides access to and management of <see cref="FontDef"/> objects, enabling advanced organization, referencing, and configuration of fonts used throughout the document.
@@ -14,7 +13,6 @@ public  sealed class FontTable : ModelElementCollection<FontDef, DXW.Fonts, DXW.
   public FontTable()
   {
   }
-
   /// <summary>
   /// Initializing constructor.
   /// </summary>
@@ -24,7 +22,6 @@ public  sealed class FontTable : ModelElementCollection<FontDef, DXW.Fonts, DXW.
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);
   }
-
   /// <summary>
   /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's FontTable.
   /// </summary>
@@ -36,7 +33,6 @@ public  sealed class FontTable : ModelElementCollection<FontDef, DXW.Fonts, DXW.
     SetUpdatableElement(fontTable);
     LoadData(fontTable);
   }
-
   /// <summary>
   /// Attach this instance to the specified document. Data is stored to the document's FontTable.
   /// </summary>
@@ -48,5 +44,4 @@ public  sealed class FontTable : ModelElementCollection<FontDef, DXW.Fonts, DXW.
     SetUpdatableElement(fontTable);
     UpdateData(fontTable);
   }
-
 }

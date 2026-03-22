@@ -10,6 +10,5 @@ public partial class BiLevel : ModelElement<DXD.BiLevel>
  /// </summary>
  [OpenXmlProperty(nameof(DXD.BiLevel.Threshold))]
  public Int32? Threshold { get => _Threshold; set => UpdateField(ref _Threshold, value, nameof(Threshold)); }
-
  private Int32? _Threshold;
 }

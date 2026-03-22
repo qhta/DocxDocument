@@ -4,5 +4,4 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class RunProperty: ModelElement
 {
-
 }

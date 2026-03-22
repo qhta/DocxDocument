@@ -1,9 +1,6 @@
 // ReSharper disable SpecifyACultureInStringConversionExplicitly
-
 using DocumentModel.BaseTypes.Interfaces;
-
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Defines the HeightMeasureType class. Its Value can be Exact (in HeightMeasure) or relative (in fiftieth of percent), or "auto" or "nil".
 /// The type of the Value is determined with the Type property.
@@ -16,12 +13,10 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
   {
     HeightMeasureOpenXmlConverter.RegisterOpenXmlConversion();
   }
-
   /// <summary>
   /// Defines the number of HeightMeasure in one inch.
   /// </summary>
   protected override double UnitsPerInch => 1440.0;
-
   /// <summary>
   /// Gets or sets the value represented as a nullable 64-bit signed integer.
   /// </summary>
@@ -31,7 +26,6 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
   [JsonIgnore]
   [NotMapped]
   public Int64? Value { get => (Int64?)_value; set => _value = value; }
-
   /// <summary>
   /// Represents the type of the HeightMeasure value, which can be Exact (in HeightMeasure), relative (in fiftieth of percent),
   /// or special values like "auto" or "nil".
@@ -40,18 +34,14 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
   [JsonIgnore]
   [NotMapped]
   public HeightMeasureType Type { get => _type; set => _type = value; }
-
   private HeightMeasureType _type;
-
   #region Constructors
-
   /// <summary>
   /// Default constructor. Creates an empty instance.
   /// </summary>
   public HeightMeasure()
   {
   }
-
   /// <summary>
   /// Initializes a new instance of the <see cref="HeightMeasure"/> from a string value.
   /// </summary>
@@ -76,7 +66,6 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
   {
     Init(str);
   }
-
   /// <summary>
   /// Initializes a new instance of the <see cref="HeightMeasure"/> from a 64-bit signed integer value and a specified type.
   /// </summary>
@@ -87,7 +76,6 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
     Init(value);
     _type = type;
   }
-
   /// <summary>
   /// Initializes a new instance of the <see cref="HeightMeasure"/> from an Int64 value.
   /// </summary>
@@ -97,7 +85,6 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
     Init(value);
     _type = HeightMeasureType.Exact;
   }
-
   /// <summary>
   /// Initializes a new instance of the <see cref="HeightMeasure"/> from a UInt64 value.
   /// </summary>
@@ -107,7 +94,6 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
     Init(value);
     _type = HeightMeasureType.Exact;
   }
-
   /// <summary>
   /// Initializes a new instance of the <see cref="HeightMeasure"/> from a Decimal value.
   /// </summary>
@@ -117,7 +103,6 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
     Init(value);
     _type = HeightMeasureType.Exact;
   }
-
   /// <summary>
   /// Initializes a new instance of the <see cref="HeightMeasure"/> from a Double value.
   /// </summary>
@@ -127,11 +112,8 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
     Init(value);
     _type = HeightMeasureType.Exact;
   }
-
   #endregion
-
   #region string conversion
-
   /// <summary>
   /// Initializes the table width unit based on the specified string representation.
   /// </summary>
@@ -163,7 +145,6 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
       _type = HeightMeasureType.Exact;
     }
   }
-
   /// <summary>
   /// Returns a string that represents the current table width unit in a human-readable format.
   /// </summary>
@@ -176,16 +157,13 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
   {
     if (Type == HeightMeasureType.Auto)
       return "auto";
-
     var result = base.ToString() + "tw";
     if (Type == HeightMeasureType.AtLeast)
       return "atLeast " + result;
     if (Type == HeightMeasureType.Exact)
       return "exact " + result;
-
     return result;
   }
-
   /// <summary>
   /// Converts the current length measure to its string representation using the specified format provider.
   /// This allows for culture-specific formatting of the output string, such as using different decimal separators
@@ -198,16 +176,13 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
   {
     if (Type == HeightMeasureType.Auto)
       return "auto";
-
     var result = base.ToString(formatProvider) + "tw";
     if (Type == HeightMeasureType.AtLeast)
       return "atLeast " + result;
     if (Type == HeightMeasureType.Exact)
       return "exact " + result;
-
     return result;
   }
-
   /// <summary>
   /// Converts the current length measure to its string representation using the specified format string and format provider.
   /// The format string can specify how the numeric value should be formatted (e.g., number of decimal places, unit symbols)
@@ -224,16 +199,13 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
   {
     if (Type == HeightMeasureType.Auto)
       return "auto";
-
     var result = base.ToString(format, formatProvider) + "tw";
     if (Type == HeightMeasureType.AtLeast)
       return "atLeast " + result;
     if (Type == HeightMeasureType.Exact)
       return "exact " + result;
-
     return result;
   }
-
   /// <summary>
   /// Converts the current instance to its string representation using the specified format string.
   /// </summary>
@@ -246,46 +218,36 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
   {
     if (Type == HeightMeasureType.Auto)
       return "auto";
-
     var result = base.ToString(format) + "tw";
     if (Type == HeightMeasureType.AtLeast)
       return "atLeast " + result;
     if (Type == HeightMeasureType.Exact)
       return "exact " + result;
-
     return result;
   }
-
   #endregion
-
   #region Static Factory Methods
-
   /// <summary>
   /// Creates an instance of an <see cref="HeightMeasure"/> that represents the specified value in Twips.
   /// </summary>
   public static HeightMeasure FromTwips(double twips) => new HeightMeasure($"{twips}tw");
-
   /// <summary>
   /// Creates an instance of an <see cref="HeightMeasure"/> that represents the specified value in points.
   /// </summary>
   public static HeightMeasure FromPT(double points) => new HeightMeasure($"{points}pt");
-
   /// <summary>
   /// Creates a new instance of an object that represents a length specified in millimeters.
   /// </summary>
   public static HeightMeasure FromMM(double millimeters) => new HeightMeasure($"{millimeters}mm");
-
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
   /// centimeters.
   /// </summary>
   public static HeightMeasure FromCM(double centimeters) => new HeightMeasure($"{centimeters}cm");
-
   /// <summary>
   /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
   /// </summary>
   public static HeightMeasure FromInch(double inches) => new HeightMeasure($"{inches}in");
-
   /// <summary>
   /// Converts a length value from the specified unit to a standardized length measure.
   /// </summary>
@@ -303,11 +265,8 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
     LengthUnit.Inches => FromInch(value),
     _ => throw new ArgumentException($"Unsupported length unit: {unit}", nameof(unit))
   };
-
   #endregion
-
   #region Parsing Methods
-
   /// <summary>
   /// Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
   /// </summary>
@@ -316,7 +275,6 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
   /// <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
   /// <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
   public static HeightMeasure Parse(string value) => new HeightMeasure(value);
-
   /// <summary>
   /// Attempts to parse the specified string representation of a length measure and returns a value that indicates
   /// whether the parsing succeeded.
@@ -339,11 +297,8 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
       return false;
     }
   }
-
   #endregion
-
   #region Implicit Conversions
-
   /// <summary>
   /// Implicitly converts a string to a <see cref="HeightMeasure"/> value.
   /// </summary>
@@ -353,7 +308,6 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
   {
     return new HeightMeasure(value);
   }
-
   /// <summary>
   /// Implicitly converts a <see cref="HeightMeasure"/> value to a string.
   /// </summary>
@@ -363,7 +317,6 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
   {
     return value.ToString();
   }
-
   /// <summary>
   /// Implicitly converts a 32-bit signed integer to a <see cref="HeightMeasure"/> value.
   /// </summary>
@@ -373,7 +326,6 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
   {
     return new HeightMeasure(value);
   }
-
   /// <summary>
   /// Implicitly converts a 64-bit signed integer to a <see cref="HeightMeasure"/> value.
   /// </summary>
@@ -383,7 +335,6 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
   {
     return new HeightMeasure(value);
   }
-
   /// <summary>
   /// Implicitly converts a double-precision floating-point number to a HeightMeasure instance.
   /// </summary>
@@ -394,11 +345,8 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
   {
     return new HeightMeasure(value);
   }
-
   #endregion
-
   #region IComparable and IEquatable Implementations
-
   /// <summary>
   /// Compares this instance to a specified <see cref="HeightMeasure"/> object and returns an indication of their relative values.
   /// </summary>
@@ -415,13 +363,10 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
       throw new ArgumentNullException(nameof(other), "Cannot compare to null.");
     if (other.Type != Type)
       throw new ArgumentException($"Cannot compare HeightMeasure of type {Type} to HeightMeasure of type {other.Type}.");
-
     if (Type == HeightMeasureType.Auto)
       return 0; // Consider "auto" as equal for comparison purposes 
-
     return DecimalValue.CompareTo(other.DecimalValue);
   }
-
   /// <summary>
   /// Returns the hash code for this instance.
   /// </summary>
@@ -431,7 +376,6 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
     // ReSharper disable once BaseObjectGetHashCodeCallInGetHashCode
     return base.GetHashCode();
   }
-
   /// <summary>
   /// Indicates whether the current object is equal to another object of the same type.
   /// </summary>
@@ -441,16 +385,12 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
   {
     if (other == null)
       return IsEmpty;
-
     if (other.Type != Type)
       throw new ArgumentException($"Cannot compare HeightMeasure of type {Type} to HeightMeasure of type {other.Type}.");
-
     if (Type == HeightMeasureType.Auto)
       return true; // Consider "auto" as equal for comparison purposes 
-
     return System.Math.Abs(ToInch() - other.ToInch()) < 1e-10;
   }
-
   /// <summary>
   /// Determines whether the specified object is equal to the current HeightMeasure instance.
   /// </summary>
@@ -462,7 +402,6 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
   {
     if (obj is HeightMeasure HeightMeasure)
       return Equals(HeightMeasure);
-
     if (obj is IConvertible convertible)
     {
       var doubleValue = Convert.ToDouble(convertible);
@@ -470,11 +409,8 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
     }
     return false;
   }
-
   #endregion
-
   #region OpenXml conversion methods
-
   /// <summary>
   /// Creates a new HeightMeasure instance from an OpenXML height value and an optional height rule type.
   /// </summary>
@@ -493,7 +429,6 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
       UInt32 nonNullVal = val?.Value ?? 0;
     return new HeightMeasure(nonNullVal, type!.Value);
   } 
-
   /// <summary>
   /// Converts the current height measure instance to its OpenXML representation.
   /// </summary>
@@ -508,7 +443,6 @@ public sealed partial class HeightMeasure: UniversalMeasure, IComparable<HeightM
     DXW.HeightRuleValues heightType =  OpenXml.EnumTypeConverter.ConvertTo<DXW.HeightRuleValues, HeightMeasureType>(Type);
     return (val, heightType);
   }
-
 
   #endregion
 }

@@ -5,5 +5,4 @@ namespace DocumentModel.Drawings.Diagrams;
 [OpenXmlType(typeof(DXDD.SampleData))]
 public partial class SampleData : SampleDataType
 {
-
 }

@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings.Charts;
-
 #pragma warning disable CS1591
-
 public partial class HeaderFooter
 {
   public bool ShouldSerializeAlignWithMargins() => AlignWithMargins is not null;

@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings.Diagrams;
-
 #pragma warning disable CS1591
-
 public partial class DataModelRoot
 {
   public bool ShouldSerializePointList() => PointList is not null && PointList.Count > 0;

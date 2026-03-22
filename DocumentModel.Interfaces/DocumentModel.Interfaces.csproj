@@ -18,71 +18,6 @@
     <NoWarn>1701;1702;8766;0618</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="Drawings.Charts\Classes\**" />
-    <Compile Remove="Properties\Classes\**" />
-    <Compile Remove="Settings\**" />
-    <Compile Remove="Wordprocessing\Application\**" />
-    <Compile Remove="Wordprocessing\Bibliography\**" />
-    <Compile Remove="Wordprocessing\Enums unused\**" />
-    <Compile Remove="Wordprocessing\Find  and replace\**" />
-    <Compile Remove="Wordprocessing\Proofing\**" />
-    <EmbeddedResource Remove="Drawings.Charts\Classes\**" />
-    <EmbeddedResource Remove="Properties\Classes\**" />
-    <EmbeddedResource Remove="Settings\**" />
-    <EmbeddedResource Remove="Wordprocessing\Application\**" />
-    <EmbeddedResource Remove="Wordprocessing\Bibliography\**" />
-    <EmbeddedResource Remove="Wordprocessing\Enums unused\**" />
-    <EmbeddedResource Remove="Wordprocessing\Find  and replace\**" />
-    <EmbeddedResource Remove="Wordprocessing\Proofing\**" />
-    <None Remove="Drawings.Charts\Classes\**" />
-    <None Remove="Properties\Classes\**" />
-    <None Remove="Settings\**" />
-    <None Remove="Wordprocessing\Application\**" />
-    <None Remove="Wordprocessing\Bibliography\**" />
-    <None Remove="Wordprocessing\Enums unused\**" />
-    <None Remove="Wordprocessing\Find  and replace\**" />
-    <None Remove="Wordprocessing\Proofing\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="CustomUI\DropDownRegular.cs" />
-    <Compile Remove="CustomUI\DynamicMenu.cs" />
-    <Compile Remove="CustomUI\DynamicMenuRegular.cs" />
-    <Compile Remove="CustomUI\EditBox.cs" />
-    <Compile Remove="CustomUI\Gallery.cs" />
-    <Compile Remove="CustomUI\GalleryRegular.cs" />
-    <Compile Remove="CustomUI\Group.cs" />
-    <Compile Remove="CustomUI\GroupBox.cs" />
-    <Compile Remove="CustomUI\Menu.cs" />
-    <Compile Remove="CustomUI\MenuRegular.cs" />
-    <Compile Remove="CustomUI\MenuSeparator.cs" />
-    <Compile Remove="CustomUI\RadioGroup.cs" />
-    <Compile Remove="CustomUI\Separator.cs" />
-    <Compile Remove="CustomUI\ToggleButton.cs" />
-    <Compile Remove="CustomUI\ToggleButtonRegular.cs" />
-    <Compile Remove="Math\Classes\OfficeMathArgumentType.cs" />
-    <Compile Remove="Properties\DigitalSignature.cs" />
-    <Compile Remove="Properties\VectorVariantType.cs" />
-    <Compile Remove="Wordprocessing\Document\Document.ext.cs" />
-    <Compile Remove="Wordprocessing\Abstract interfaces\ICommonRunContent.cs" />
-    <Compile Remove="Wordprocessing\Document\Versions.cs" />
-    <Compile Remove="Wordprocessing\Paragraphs\ListFormat.cs" />
-    <Compile Remove="Wordprocessing\Paragraphs\ListLevel.cs" />
-    <Compile Remove="Wordprocessing\Paragraphs\ListLevels.cs" />
-    <Compile Remove="Wordprocessing\Paragraphs\ListTemplate.cs" />
-    <Compile Remove="Wordprocessing\Paragraphs\ParagraphFormat.cs" />
-    <Compile Remove="Wordprocessing\Paragraphs\TextFormat.cs" />
-    <Compile Remove="Wordprocessing\Run properties\DualBoolTypeConverter.cs" />
-    <Compile Remove="Wordprocessing\Sdt\ContentControl.cs" />
-    <Compile Remove="Wordprocessing\Sdt\ContentControl.Methods.cs" />
-    <Compile Remove="Wordprocessing\Sdt\ContentControls.cs" />
-    <Compile Remove="Wordprocessing\Sdt\ContentControlType.cs" />
-    <Compile Remove="Wordprocessing\Sdt\RepeatingSectionItemCollection.cs" />
-    <Compile Remove="Wordprocessing\Table properties\ConditionalFormatStyle.cs" />
-    <Compile Remove="Wordprocessing\Table properties\ConditionalFormatStyleTypeConverter.cs" />
-    <Compile Remove="Wordprocessing\Tables\Cell.cs" />
-    <Compile Remove="Wordprocessing\Tables\Cell.Methods.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="DeepEqual" Version="5.1.0" />
     <PackageReference Include="DocumentFormat.OpenXml" Version="3.4.1" />
     <PackageReference Include="DocumentFormat.OpenXml.Framework" Version="3.4.1" />
@@ -92,16 +27,11 @@
     <PackageReference Include="System.IO.Packaging" Version="10.0.4" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Drawings.Office.ScriptLink\Classes\" />
-    <Folder Include="Drawings\Enums\" />
-    <Folder Include="Office.Drawing\" />
-    <Folder Include="Office2013.Word.Drawing\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="CustomUI\Ribbon\TabSetCollectioncs.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\DocumentModel.BaseConverters\DocumentModel.BaseConverters.csproj" />
     <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
+    <ProjectReference Include="..\DocumentModel.EnumTypes\DocumentModel.EnumTypes.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Windows\" />
   </ItemGroup>
 </Project>

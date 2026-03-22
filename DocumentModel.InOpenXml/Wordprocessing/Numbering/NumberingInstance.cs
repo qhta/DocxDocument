@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 ///   Specifies a unique instance of numbering information that can be referenced by zero or more paragraphs 
 ///   within the parent WordprocessingML document.
@@ -15,17 +14,13 @@ public partial class NumberingInstance: ModelElement<DXW.NumberingInstance>
   [OpenXmlProperty(nameof(DXW.NumberingInstance.NumberID))]
   [Required]
   public Int32? NumberID { get => _NumberID; set => UpdateField(ref _NumberID, value, nameof(NumberID)); }
-
   private Int32? _NumberID;
-
   /// <summary>
   ///   Associates a unique hexadecimal ID to the numbering definition instance.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.NumberingInstance.DurableId))]
   public Int32? DurableId { get => _DurableId; set => UpdateField(ref _DurableId, value, nameof(DurableId)); }
-
   private Int32? _DurableId;
-
   /// <summary>
   ///   Specifies the abstract numbering definition information 
   ///   whose properties shall be inherited by the parent numbering definition instance.
@@ -36,9 +31,7 @@ public partial class NumberingInstance: ModelElement<DXW.NumberingInstance>
     get => _AbstractNumId;
     set => UpdateField(ref _AbstractNumId, value, nameof(AbstractNumId));
   }
-
   private Int32? _AbstractNumId;
-
   /// <summary>
   ///  Collection of NumLevelOverride elements
   /// </summary>
@@ -55,9 +48,7 @@ public partial class NumberingInstance: ModelElement<DXW.NumberingInstance>
     }
     set => UpdateField(ref _NumberingLevelOverrides, value, nameof(LevelOverrides));
   }
-
   private NumberingLevelOverrides? _NumberingLevelOverrides;
-
 
   /// <summary>
   /// Updates the level overrides in the specified OpenXml element with level overrides defined in the LevelOverrides collection.  
@@ -69,7 +60,6 @@ public partial class NumberingInstance: ModelElement<DXW.NumberingInstance>
   {
     LevelOverrides.UpdateOverrides(element);
   }
-
   /// <summary>
   /// Loads level overrides from the specified OpenXmlElement into the LevelOverrides collection, replacing any existing LevelOverrides.
   /// </summary>

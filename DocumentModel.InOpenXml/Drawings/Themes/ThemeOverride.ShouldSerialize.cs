@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings;
-
 #pragma warning disable CS1591
-
 public partial class ThemeOverride
 {
   public bool ShouldSerializeColorScheme() => ColorScheme is not null;

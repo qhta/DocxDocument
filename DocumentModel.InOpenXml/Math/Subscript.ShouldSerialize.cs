@@ -1,7 +1,5 @@
 namespace DocumentModel.Math;
-
 #pragma warning disable CS1591
-
 public partial class Subscript
 {
   public bool ShouldSerializeSubscriptProperties() => SubscriptProperties is not null;

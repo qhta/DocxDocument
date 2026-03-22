@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents a single format override that applies custom formatting to a specific chart element.
 /// </summary>
@@ -29,9 +28,7 @@ public class FormatOverride: ModelElement<DXO16DCD.FormatOverride>
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.FormatOverride.Idx))]
   public UInt32? Idx { get => _Idx; set => UpdateField(ref _Idx, value, nameof(Idx)); }
-
   private UInt32? _Idx;
-
   /// <summary>
   /// Specifies the shape properties.
   /// </summary>
@@ -41,9 +38,7 @@ public class FormatOverride: ModelElement<DXO16DCD.FormatOverride>
     get => _ShapeProperties;
     set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties));
   }
-
   private ShapeProperties? _ShapeProperties;
-
   /// <summary>
   /// Specifies the extension list.
   /// </summary>
@@ -53,6 +48,5 @@ public class FormatOverride: ModelElement<DXO16DCD.FormatOverride>
     get => _ExtensionList;
     set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
   }
-
   private ExtensionList? _ExtensionList;
 }

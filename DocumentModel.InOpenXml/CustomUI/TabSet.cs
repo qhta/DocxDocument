@@ -1,5 +1,4 @@
 namespace DocumentModel.CustomUI;
-
 /// <summary>
 /// <para>Defines the TabSet Class.</para>
 /// <para>This class is available in Office 2010 and above.</para>
@@ -19,22 +18,17 @@ public class TabSet: ModelElement<DXO10CUI.TabSet>
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.TabSet.IdMso))]
   public String? IdMso { get => _IdMso; set => UpdateField(ref _IdMso, value, nameof(IdMso)); }
-
   private String? _IdMso;
-
   /// <summary>
   /// Specifies whether the control is visible.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.TabSet.Visible))]
   public Boolean? Visible { get => _Visible; set => UpdateField(ref _Visible, value, nameof(Visible)); }
-
   private Boolean? _Visible;
-
   /// <summary>
   /// Specifies the callback that returns visible.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.TabSet.GetVisible))]
   public String? GetVisible { get => _GetVisible; set => UpdateField(ref _GetVisible, value, nameof(GetVisible)); }
-
   private String? _GetVisible;
 }

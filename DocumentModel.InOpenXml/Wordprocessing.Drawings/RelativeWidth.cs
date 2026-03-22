@@ -10,12 +10,10 @@ public partial class RelativeWidth : ModelElement<DXO10WD.RelativeWidth>
  /// The reference object used to determine the relative horizontal sizing, such as margin, page, or paragraph.
  /// </summary>
  public SizeRelativeHorizontally? ObjectId { get => _ObjectId; set => UpdateField(ref _ObjectId, value, nameof(ObjectId)); }
-
  private SizeRelativeHorizontally? _ObjectId;
  /// <summary>
  /// The percentage value specifying the width of the drawing element relative to the reference object.
  /// </summary>
  public string? PercentageWidth { get => _PercentageWidth; set => UpdateField(ref _PercentageWidth, value, nameof(PercentageWidth)); }
-
  private string? _PercentageWidth;
 }

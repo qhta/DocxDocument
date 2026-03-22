@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Defines the OpenXmlGridlinesElement Class.
 /// </summary>
@@ -15,9 +14,7 @@ public class OpenXmlGridlinesElement: ModelElement<DXO16DCD.OpenXmlGridlinesElem
     get => _ShapeProperties;
     set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties));
   }
-
   private ShapeProperties? _ShapeProperties;
-
   /// <summary>
   /// Specifies the extension list.
   /// </summary>
@@ -27,6 +24,5 @@ public class OpenXmlGridlinesElement: ModelElement<DXO16DCD.OpenXmlGridlinesElem
     get => _ExtensionList;
     set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
   }
-
   private ExtensionList? _ExtensionList;
 }

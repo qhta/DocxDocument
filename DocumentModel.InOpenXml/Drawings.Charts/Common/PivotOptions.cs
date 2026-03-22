@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Defines the PivotOptions Class.
 /// </summary>
@@ -15,9 +14,7 @@ public partial class PivotOptions: ModelElement<DXO10DC.PivotOptions>
     get => _DropZoneFilter;
     set => UpdateField(ref _DropZoneFilter, value, nameof(DropZoneFilter));
   }
-
   private bool? _DropZoneFilter;
-
   /// <summary>
   ///   DropZoneCategories.
   /// </summary>
@@ -27,9 +24,7 @@ public partial class PivotOptions: ModelElement<DXO10DC.PivotOptions>
     get => _DropZoneCategories;
     set => UpdateField(ref _DropZoneCategories, value, nameof(DropZoneCategories));
   }
-
   private bool? _DropZoneCategories;
-
   /// <summary>
   ///   DropZoneData.
   /// </summary>
@@ -39,9 +34,7 @@ public partial class PivotOptions: ModelElement<DXO10DC.PivotOptions>
     get => _DropZoneData;
     set => UpdateField(ref _DropZoneData, value, nameof(DropZoneData));
   }
-
   private bool? _DropZoneData;
-
   /// <summary>
   ///   DropZoneSeries.
   /// </summary>
@@ -51,9 +44,7 @@ public partial class PivotOptions: ModelElement<DXO10DC.PivotOptions>
     get => _DropZoneSeries;
     set => UpdateField(ref _DropZoneSeries, value, nameof(DropZoneSeries));
   }
-
   private bool? _DropZoneSeries;
-
   /// <summary>
   ///   DropZonesVisible.
   /// </summary>
@@ -63,6 +54,5 @@ public partial class PivotOptions: ModelElement<DXO10DC.PivotOptions>
     get => _DropZonesVisible;
     set => UpdateField(ref _DropZonesVisible, value, nameof(DropZonesVisible));
   }
-
   private bool? _DropZonesVisible;
 }

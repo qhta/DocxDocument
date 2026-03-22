@@ -1,7 +1,6 @@
 ﻿
 namespace DocumentModel;
 
-
 /// <summary>
 /// Represents a collection of values that can be synchronized with an Open XML composite element and its child elements.
 /// </summary>
@@ -19,7 +18,6 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType, OpenXmlIt
   protected ValueCollection()
   {
   }
-
   /// <summary>
   /// Initializes a new instance of the collection from an Open XML composite element.
   /// </summary>
@@ -27,7 +25,6 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType, OpenXmlIt
   protected ValueCollection(OpenXmlCollectionType? openXmlCollection) : base()
   {
   }
-
   /// <summary>
   /// Initializes a new instance of the collection from an enumerable of model elements.
   /// </summary>
@@ -39,7 +36,6 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType, OpenXmlIt
       this.Add(item);
     }
   }
-
   /// <summary>
   /// Loads model elements from the specified Open XML composite element and populates the collection.
   /// </summary>
@@ -62,7 +58,6 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType, OpenXmlIt
       this.Add(modelObject);
     }
   }
-
   /// <summary>
   /// Updates the Open XML composite element to reflect the current state of the collection.
   /// </summary>

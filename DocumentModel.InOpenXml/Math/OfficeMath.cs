@@ -1,5 +1,4 @@
 using DocumentModel.Wordprocessing;
-
 namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies an instance of mathematical text. 

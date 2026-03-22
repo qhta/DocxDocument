@@ -10,7 +10,6 @@ public abstract partial class DocumentProperty : CollectionItem
  protected DocumentProperty()
  {
  }
-
  /// <summary>
  /// Constructor that initializes the parent collection.
  /// </summary>
@@ -18,25 +17,23 @@ public abstract partial class DocumentProperty : CollectionItem
  protected DocumentProperty(IElementCollection<CollectionItem> propertiesCollection) : base(propertiesCollection)
  {
  }
-
  /// <summary>
  ///   Property Category.
  /// </summary>
  [XmlAttribute]
  [NotMapped]
  public virtual string? Category { get; set; }
-
  /// <summary>
- ///   Property FontName.
+ ///   Property Name.
  /// </summary>
  [XmlAttribute]
- public virtual string? Name { get; set; }
+ public virtual string Name { get; set; } = string.Empty;
  /// <summary>
  ///   Value of the property
  /// </summary>
- public virtual Variant? Value { get; set; }
+ public virtual object? Value { get; set; }
  /// <summary>
  ///   Expected value type
  /// </summary>
- public virtual string? Type { get; set; }
+ public virtual Type? Type { get; set; }
 }

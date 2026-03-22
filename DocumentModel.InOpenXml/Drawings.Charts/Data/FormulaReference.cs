@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents a formula reference to a data source.
 /// </summary>
@@ -11,6 +10,5 @@ public partial class FormulaReference: ModelElement<DXO13DC.FormulaReference>
   /// </summary>
   [OpenXmlProperty(nameof(DXO13DC.FormulaReference.SequenceOfReferences))]
   public string? SequenceOfReferences { get => _SequenceOfReferences; set => UpdateField(ref _SequenceOfReferences, value, nameof(SequenceOfReferences)); }
-
   private string? _SequenceOfReferences;
 }

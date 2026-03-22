@@ -16,25 +16,25 @@ public enum MsoSoftEdgeType
   /// <summary>
   /// Soft Edge
   /// </summary>
-  1 = 1,
+  Type1 = 1,
   /// <summary>
   /// Soft Edge
   /// </summary>
-  2 = 2,
+  Type2 = 2,
   /// <summary>
   /// Soft Edge
   /// </summary>
-  3 = 3,
+  Type3 = 3,
   /// <summary>
   /// Soft Edge
   /// </summary>
-  4 = 4,
+  Type4 = 4,
   /// <summary>
   /// Soft Edge
   /// </summary>
-  5 = 5,
+  Type5 = 5,
   /// <summary>
   /// Soft Edge
   /// </summary>
-  6 = 6
+  Type6 = 6
 }

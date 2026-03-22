@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawing;
-
 /// <summary>
 /// Describes non-visual properties for a picture in chart drawings, including general drawing properties and picture-specific drawing settings.
 /// </summary>
@@ -15,9 +14,7 @@ public class NonVisualPictureProperties: ModelElement<DXDCD.NonVisualPictureProp
     get => _NonVisualDrawingProperties;
     set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties));
   }
-
   private NonVisualDrawingProperties? _NonVisualDrawingProperties;
-
   /// <summary>
   /// Non-visual drawing properties specific to the picture, including resizing preferences, locking options, and extension data.
   /// </summary>
@@ -27,6 +24,5 @@ public class NonVisualPictureProperties: ModelElement<DXDCD.NonVisualPictureProp
     get => _NonVisualPictureDrawingProperties;
     set => UpdateField(ref _NonVisualPictureDrawingProperties, value, nameof(NonVisualPictureDrawingProperties));
   }
-
   private NonVisualPictureDrawingProperties? _NonVisualPictureDrawingProperties;
 }

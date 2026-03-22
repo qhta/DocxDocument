@@ -1,5 +1,4 @@
 using System.Runtime.Serialization;
-
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the abstract class for markup range elements in a WordprocessingML document.
@@ -12,6 +11,5 @@ public abstract partial class MarkupEndRangeElement<T1, T2> : ModelElement<T1>, 
     /// Gets the element that forms the matching pair for this markup range element, if one exists.
     /// </summary>
     public MarkupStartRangeElement<T1, T2>? PairedElement { get => _PairedElement; set => UpdateField(ref _PairedElement, value, nameof(PairedElement)); }
-
     private MarkupStartRangeElement<T1, T2>? _PairedElement;
 }

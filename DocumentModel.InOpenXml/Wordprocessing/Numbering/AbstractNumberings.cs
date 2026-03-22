@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 ///   Collection of AbstractNum elements.
 /// </summary>
@@ -13,7 +12,6 @@ public partial class AbstractNumberings: ModelElementCollection<AbstractNumberin
   public AbstractNumberings()
   {
   }
-
   /// <summary>
   /// Initializing constructor.
   /// </summary>
@@ -22,7 +20,6 @@ public partial class AbstractNumberings: ModelElementCollection<AbstractNumberin
   {
     Numbering = numbering;
   }
-
   /// <summary>
   /// Parent numbering element that contains this collection of abstract numbering. 
   /// </summary>
@@ -30,7 +27,6 @@ public partial class AbstractNumberings: ModelElementCollection<AbstractNumberin
   [JsonIgnore]
   [NotMapped]
   public Numbering? Numbering { get => Parent as Numbering; set => SetParent(value); }
-
   /// <summary>
   /// Gets updatable element for this collection of abstract numbering,
   /// which is the <see cref="DXW.Numbering"/> element that contains the individual <see cref="DXW.AbstractNum"/> elements.
@@ -40,7 +36,6 @@ public partial class AbstractNumberings: ModelElementCollection<AbstractNumberin
   {
     return Numbering?.GetUpdatableElement() as DXW.Numbering;
   }
-
   /// <summary>
   /// Updates the numbering in the specified OpenXml element by removing all existing numbering and adding new abstract numbering 
   /// in the current collection.  
@@ -54,7 +49,6 @@ public partial class AbstractNumberings: ModelElementCollection<AbstractNumberin
     if (element is not DXW.Numbering numbering)
       throw new ArgumentException(
         $"Expected element of type {typeof(DXW.Numbering).FullName}, but got {element.GetType().FullName}.");
-
     numbering.RemoveAllChildren<DXW.AbstractNum>();
     foreach (var modelItem in this)
     {
@@ -63,7 +57,6 @@ public partial class AbstractNumberings: ModelElementCollection<AbstractNumberin
       numbering.AppendChild(openXmlChild);
     }
   }
-
   /// <summary>
   /// Loads numbering from the specified OpenXmlElement into the current collection, replacing any existing numbering.
   /// </summary>
@@ -76,7 +69,6 @@ public partial class AbstractNumberings: ModelElementCollection<AbstractNumberin
     if (element is not DXW.Numbering numbering)
       throw new ArgumentException(
         $"Expected element of type {typeof(DXW.Numbering).FullName}, but got {element.GetType().FullName}.");
-
     SetIsLoading(true);
     var openXmlChildren = numbering.Elements<DXW.AbstractNum>().ToArray();
     this.Clear();

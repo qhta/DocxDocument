@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Defines the ValueColorMiddlePosition Class.
 /// </summary>
@@ -15,9 +14,7 @@ public class ValueColorMiddlePosition: ModelElement<DXO16DCD.ValueColorMiddlePos
     get => _NumberColorPosition;
     set => UpdateField(ref _NumberColorPosition, value, nameof(NumberColorPosition));
   }
-
   private Double? _NumberColorPosition;
-
   /// <summary>
   /// Specifies the percentage color position.
   /// </summary>
@@ -27,6 +24,5 @@ public class ValueColorMiddlePosition: ModelElement<DXO16DCD.ValueColorMiddlePos
     get => _PercentageColorPosition;
     set => UpdateField(ref _PercentageColorPosition, value, nameof(PercentageColorPosition));
   }
-
   private Double? _PercentageColorPosition;
 }

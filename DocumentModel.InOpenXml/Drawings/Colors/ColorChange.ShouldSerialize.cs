@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings;
-
 #pragma warning disable CS1591
-
 public partial class ColorChange
 {
   public bool ShouldSerializeUseAlpha() => UseAlpha is not null;

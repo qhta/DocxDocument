@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents a collection of 3D surface chart extensions.
 /// </summary>
@@ -16,6 +15,5 @@ public partial class Surface3DChartExtensionList: ModelElementCollection<Surface
     get => _Surface3DChartExtensions;
     set => UpdateField(ref _Surface3DChartExtensions, value, nameof(Surface3DChartExtensions));
   }
-
   private Surface3DChartExtensions? _Surface3DChartExtensions;
 }

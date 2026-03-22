@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 /// Represents a collection of axis elements within a chart or coordinate system.
 /// </summary>
@@ -9,5 +8,4 @@
 /// class.</remarks>
 public class AxisList : ElementCollection<IAxis>
 {
-
 }

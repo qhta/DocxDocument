@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Relationship to embedded font part where embedded font data is stored.
 /// This relationship is used to link font definitions in the document to their corresponding embedded font data parts, allowing for proper rendering of fonts that are not available on the user's system.
@@ -17,9 +16,7 @@ public class FontRelationshipType : ModelElement<DXW.FontRelationshipType>
     get => _Id;
     set => UpdateField(ref _Id, value, nameof(Id));
   }
-
   private string? _Id;
-
   /// <summary>
   /// Specifies the key which was used to obfuscate this embedded font. This key can be used
   /// to retrieve the embedded font for the purposes of viewing this WordprocessingML
@@ -31,9 +28,7 @@ public class FontRelationshipType : ModelElement<DXW.FontRelationshipType>
     get => _FontKey;
     set => UpdateField(ref _FontKey, value, nameof(FontKey));
   }
-
   private Guid? _FontKey;
-
   /// <summary>
   /// Specifies that the embedded font targeted by the id attribute has been subsetted.
   /// Subsetting is a mechanism by which only the glyphs used in the contents of this
@@ -47,9 +42,7 @@ public class FontRelationshipType : ModelElement<DXW.FontRelationshipType>
     get => _Subsetted;
     set => UpdateField(ref _Subsetted, value, nameof(Subsetted));
   }
-
   private bool? _Subsetted;
-
   ///// <summary>
   ///// Attaches the specified WordprocessingDocument and loads its data into the current instance.
   ///// </summary>
@@ -59,10 +52,8 @@ public class FontRelationshipType : ModelElement<DXW.FontRelationshipType>
   //  base.AttachAndLoad(wordprocessingDocument);
   //  if (WordprocessingDocument == null)
   //    return;
-
   //  LoadData(WordprocessingDocument);
   //}
-
   ///// <summary>
   ///// Attaches the specified WordprocessingDocument and updates the associated data.
   ///// </summary>
@@ -72,10 +63,8 @@ public class FontRelationshipType : ModelElement<DXW.FontRelationshipType>
   //  base.AttachAndUpdate(wordprocessingDocument);
   //  if (WordprocessingDocument == null)
   //    return;
-
   //  UpdateData(WordprocessingDocument);
   //}
-
   ///// <summary>
   ///// Updates the internal data by loading information from the specified Open XML element.
   ///// </summary>
@@ -87,10 +76,8 @@ public class FontRelationshipType : ModelElement<DXW.FontRelationshipType>
   //{
   //  if (WordprocessingDocument == null)
   //    return;
-
   //  UpdateData(WordprocessingDocument);
   //}
-
   ///// <summary>
   ///// Loads data from the specified Document into the current instance.
   ///// </summary>
@@ -107,7 +94,6 @@ public class FontRelationshipType : ModelElement<DXW.FontRelationshipType>
   //      FontKey = updatedElement.FontKey;
   //  }
   //}
-
   ///// <summary>
   ///// Updates the specified Document with the current Id and Uri values.
   ///// </summary>

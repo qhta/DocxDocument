@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings;
-
 #pragma warning disable CS1591
-
 public partial class AdjustHandleXY
 {
   public bool ShouldSerializeXAdjustmentGuide() => XAdjustmentGuide is not null;

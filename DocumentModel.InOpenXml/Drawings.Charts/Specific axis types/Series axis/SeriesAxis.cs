@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents a series axis for a chart, including tick label and mark skipping, and extension list.
 /// </summary>
@@ -15,9 +14,7 @@ public partial class SeriesAxis: ModelElement<DXDC.SeriesAxis>
     get => _TickLabelSkip;
     set => UpdateField(ref _TickLabelSkip, value, nameof(TickLabelSkip));
   }
-
   private Int32? _TickLabelSkip;
-
   /// <summary>
   ///   Number of tick marks to skip on the axis.
   /// </summary>
@@ -27,9 +24,7 @@ public partial class SeriesAxis: ModelElement<DXDC.SeriesAxis>
     get => _TickMarkSkip;
     set => UpdateField(ref _TickMarkSkip, value, nameof(TickMarkSkip));
   }
-
   private Int32? _TickMarkSkip;
-
   /// <summary>
   ///   Extension list for additional series axis properties.
   /// </summary>
@@ -39,6 +34,5 @@ public partial class SeriesAxis: ModelElement<DXDC.SeriesAxis>
     get => _SerAxExtensionList;
     set => UpdateField(ref _SerAxExtensionList, value, nameof(SerAxExtensionList));
   }
-
   private SerAxExtensionList? _SerAxExtensionList;
 }

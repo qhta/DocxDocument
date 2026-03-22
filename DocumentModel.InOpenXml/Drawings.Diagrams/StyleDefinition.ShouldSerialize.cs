@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings.Diagrams;
-
 #pragma warning disable CS1591
-
 public partial class StyleDefinition
 {
   public bool ShouldSerializeUniqueId() => !String.IsNullOrEmpty(UniqueId);

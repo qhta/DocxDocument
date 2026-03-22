@@ -14,7 +14,6 @@ public class KnownTypes : Dictionary<string, TypeModel>
   RegisterType("int", typeof(int));
   RegisterType("bool", typeof(bool));
  }
-
  /// <summary>
  ///   Registers a type definition in the collection under the specified name.
  /// </summary>

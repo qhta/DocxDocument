@@ -12,7 +12,6 @@ public class AttachedTemplate : ExternalFile<DXW.AttachedTemplate>
  public AttachedTemplate()
  {
  }
-
  /// <summary>
  /// Initializes a new instance of the AttachedTemplate class with the specified template URI.
  /// </summary>

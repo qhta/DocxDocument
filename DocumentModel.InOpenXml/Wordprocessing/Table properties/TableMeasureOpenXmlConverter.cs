@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Converter class responsible for registering Open XML conversion delegates for table measurement properties,
 /// specifically for the TableWidth property in WordprocessingML documents.
@@ -21,7 +20,6 @@ public static class TableMeasureOpenXmlConverter
     OpenXmlModelConverter.ConvertToOpenXmlDelegates[typeof(DXW.TableWidth)] = ConvertToOpenXmlTableWidth;
   }
 
-
   /// <summary>
   /// Converts an Open XML TableWidth element to its corresponding domain model representation.
   /// </summary>
@@ -35,7 +33,6 @@ public static class TableMeasureOpenXmlConverter
       return TableMeasure.FromOpenXml(tableWidth.Width, tableWidth.Type);
     return null;
   }
-
   /// <summary>
   /// Converts a table measurement model object to an OpenXml TableWidth object if the specified type matches.
   /// </summary>
@@ -53,5 +50,4 @@ public static class TableMeasureOpenXmlConverter
     }
     return null;
   }
-
 }

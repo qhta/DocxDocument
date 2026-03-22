@@ -1,7 +1,5 @@
 using DocumentModel.Drawings;
-
 namespace DocumentModel.Wordprocessing.Drawings;
-
 /// <summary>
 /// Represents non-visual properties for an ink content part in a Wordprocessing document.
 /// This class provides configuration for comment status, content part locks, and extension data, enabling control over editing restrictions and extensibility for ink content parts.
@@ -18,9 +16,7 @@ public partial class NonVisualInkContentPartProperties: ModelElement<DXO10W.Word
     get => _IsComment;
     set => UpdateField(ref _IsComment, value, nameof(IsComment));
   }
-
   private bool? _IsComment;
-
   /// <summary>
   /// The set of locks applied to the content part, restricting modifications or interactions as defined by the document.
   /// </summary>
@@ -30,9 +26,7 @@ public partial class NonVisualInkContentPartProperties: ModelElement<DXO10W.Word
     get => _ContentPartLocks;
     set => UpdateField(ref _ContentPartLocks, value, nameof(ContentPartLocks));
   }
-
   private ContentPartLocks? _ContentPartLocks;
-
   /// <summary>
   /// List of OfficeArt extensions associated with the ink content part, allowing for additional metadata or custom features.
   /// </summary>
@@ -42,6 +36,5 @@ public partial class NonVisualInkContentPartProperties: ModelElement<DXO10W.Word
     get => _OfficeArtExtensionList;
     set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList));
   }
-
   private OfficeArtExtensionList? _OfficeArtExtensionList;
 }

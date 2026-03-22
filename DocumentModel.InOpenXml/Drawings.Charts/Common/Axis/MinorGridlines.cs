@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Minor Gridlines.
 /// </summary>
@@ -15,6 +14,5 @@ public partial class MinorGridlines: ModelElement<DXDC.MinorGridlines>
     get => _ChartShapeProperties;
     set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties));
   }
-
   private ChartShapeProperties? _ChartShapeProperties;
 }

@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents an extension for a bubble chart series, providing additional formatting, filtering, and labeling options.
 /// </summary>
@@ -15,9 +14,7 @@ public partial class BubbleSerExtension: Extension<DXDC.BubbleSerExtension>
     get => _InvertSolidFillFormat;
     set => UpdateField(ref _InvertSolidFillFormat, value, nameof(InvertSolidFillFormat));
   }
-
   private InvertSolidFillFormat? _InvertSolidFillFormat;
-
   /// <summary>
   ///   Filtered title for the category.
   /// </summary>
@@ -27,9 +24,7 @@ public partial class BubbleSerExtension: Extension<DXDC.BubbleSerExtension>
     get => _FilteredCategoryTitle;
     set => UpdateField(ref _FilteredCategoryTitle, value, nameof(FilteredCategoryTitle));
   }
-
   private FilteredCategoryTitle? _FilteredCategoryTitle;
-
   /// <summary>
   ///   Data labels range for the series.
   /// </summary>
@@ -39,9 +34,7 @@ public partial class BubbleSerExtension: Extension<DXDC.BubbleSerExtension>
     get => _DataLabelsRange;
     set => UpdateField(ref _DataLabelsRange, value, nameof(DataLabelsRange));
   }
-
   private DataLabelsRange? _DataLabelsRange;
-
   /// <summary>
   ///   Exceptions for category filters applied to the series.
   /// </summary>
@@ -51,6 +44,5 @@ public partial class BubbleSerExtension: Extension<DXDC.BubbleSerExtension>
     get => _CategoryFilterExceptions;
     set => UpdateField(ref _CategoryFilterExceptions, value, nameof(CategoryFilterExceptions));
   }
-
   private CategoryFilterExceptions? _CategoryFilterExceptions;
 }

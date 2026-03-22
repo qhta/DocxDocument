@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 /// Defines options for the sketch mode configuration of a chart.
 /// </summary>
@@ -15,9 +14,7 @@ public partial class SketchOptions: ModelElement<DXO10DC.SketchOptions>
     get => _InSketchMode;
     set => UpdateField(ref _InSketchMode, value, nameof(InSketchMode));
   }
-
   private bool? _InSketchMode;
-
   /// <summary>
   /// Boolean value specifying if the sketch mode button should be visible in the user class.
   /// </summary>
@@ -27,6 +24,5 @@ public partial class SketchOptions: ModelElement<DXO10DC.SketchOptions>
     get => _ShowSketchButton;
     set => UpdateField(ref _ShowSketchButton, value, nameof(ShowSketchButton));
   }
-
   private bool? _ShowSketchButton;
 }

@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Chart Space.
 /// </summary>
@@ -11,9 +10,7 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
   /// </summary>
   [OpenXmlProperty(nameof(DXDC.ChartSpace.Date1904))]
   public bool? Date1904 { get => _Date1904; set => UpdateField(ref _Date1904, value, nameof(Date1904)); }
-
   private bool? _Date1904;
-
   /// <summary>
   ///   EditingLanguage.
   /// </summary>
@@ -23,9 +20,7 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
     get => _EditingLanguage;
     set => UpdateField(ref _EditingLanguage, value, nameof(EditingLanguage));
   }
-
   private string? _EditingLanguage;
-
   /// <summary>
   ///   RoundedCorners.
   /// </summary>
@@ -35,17 +30,13 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
     get => _RoundedCorners;
     set => UpdateField(ref _RoundedCorners, value, nameof(RoundedCorners));
   }
-
   private bool? _RoundedCorners;
-
   /// <summary>
   ///   Style.
   /// </summary>
   [OpenXmlElement(typeof(DXDC.Style))]
   public Byte? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
-
   private Byte? _Style;
-
   /// <summary>
   ///   Color Map Override.
   /// </summary>
@@ -55,9 +46,7 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
     get => _ColorMapOverride;
     set => UpdateField(ref _ColorMapOverride, value, nameof(ColorMapOverride));
   }
-
   private ColorMapOverride? _ColorMapOverride;
-
   /// <summary>
   ///   Pivot Source.
   /// </summary>
@@ -67,25 +56,19 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
     get => _PivotSource;
     set => UpdateField(ref _PivotSource, value, nameof(PivotSource));
   }
-
   private PivotSource? _PivotSource;
-
   /// <summary>
   ///   Protection.
   /// </summary>
   [OpenXmlElement(typeof(DXDC.Protection))]
   public Protection? Protection { get => _Protection; set => UpdateField(ref _Protection, value, nameof(Protection)); }
-
   private Protection? _Protection;
-
   /// <summary>
   ///   Chart.
   /// </summary>
   [OpenXmlElement(typeof(DXDC.Chart))]
   public Chart? Chart { get => _Chart; set => UpdateField(ref _Chart, value, nameof(Chart)); }
-
   private Chart? _Chart;
-
   /// <summary>
   ///   Shape Properties.
   /// </summary>
@@ -95,9 +78,7 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
     get => _ShapeProperties;
     set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties));
   }
-
   private ShapeProperties? _ShapeProperties;
-
   /// <summary>
   ///   Text Properties.
   /// </summary>
@@ -107,9 +88,7 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
     get => _TextProperties;
     set => UpdateField(ref _TextProperties, value, nameof(TextProperties));
   }
-
   private TextProperties? _TextProperties;
-
   /// <summary>
   ///   External Data.
   /// </summary>
@@ -119,9 +98,7 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
     get => _ExternalData;
     set => UpdateField(ref _ExternalData, value, nameof(ExternalData));
   }
-
   private ExternalData? _ExternalData;
-
   /// <summary>
   ///   Print Settings.
   /// </summary>
@@ -131,9 +108,7 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
     get => _PrintSettings;
     set => UpdateField(ref _PrintSettings, value, nameof(PrintSettings));
   }
-
   private PrintSettings? _PrintSettings;
-
   /// <summary>
   ///   User Shapes Reference.
   /// </summary>
@@ -143,9 +118,7 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
     get => _UserShapesReference;
     set => UpdateField(ref _UserShapesReference, value, nameof(UserShapesReference));
   }
-
   private RelationshipIdType? _UserShapesReference;
-
   /// <summary>
   ///   Chart Space Extension List.
   /// </summary>
@@ -155,6 +128,5 @@ public partial class ChartSpace: ModelElement<DXDC.ChartSpace>
     get => _ChartSpaceExtensionList;
     set => UpdateField(ref _ChartSpaceExtensionList, value, nameof(ChartSpaceExtensionList));
   }
-
   private ChartSpaceExtensionList? _ChartSpaceExtensionList;
 }

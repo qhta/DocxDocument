@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents an extension for a bar chart, providing additional series filtering capabilities.
 /// </summary>
@@ -15,6 +14,5 @@ public partial class BarChartExtension: Extension<DXDC.BarChartExtension>
     get => _FilteredBarSeries;
     set => UpdateField(ref _FilteredBarSeries, value, nameof(FilteredBarSeries));
   }
-
   private FilteredBarSeries? _FilteredBarSeries;
 }

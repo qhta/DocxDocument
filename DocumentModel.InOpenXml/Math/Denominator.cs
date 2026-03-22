@@ -1,5 +1,4 @@
 using DocumentModel.Wordprocessing;
-
 namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies the denominator of a fraction.

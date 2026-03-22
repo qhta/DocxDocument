@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartsStyle;
-
 /// <summary>
 /// Describes a color style configuration for chart elements, supporting various color models and style variations.
 /// </summary>
@@ -9,17 +8,14 @@ public class ColorStyle //: OfficeArtExtendableElement
   /// Method used to apply the color style to chart elements.
   /// </summary>
   public string? Method { get; set; }
-
   /// <summary>
   /// Unique identifier for the color style.
   /// </summary>
   public UInt32? Id { get; set; }
-
   /// <summary>
   /// Color used in the color style.
   /// </summary>
   public DMD.ColorType? Color { get; set; }
-
   /// <summary>
   /// Collection of color style variations for additional customization.
   /// </summary>

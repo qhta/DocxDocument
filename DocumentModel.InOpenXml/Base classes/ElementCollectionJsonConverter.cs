@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
-
 namespace DocumentModel
 {
   /// <summary>
@@ -32,7 +31,6 @@ namespace DocumentModel
       }
       return collection;
     }
-
     /// <summary>
     ///   Serializes an <c>ElementCollection&lt;T&gt;</c> instance as a JSON array of items.
     /// </summary>

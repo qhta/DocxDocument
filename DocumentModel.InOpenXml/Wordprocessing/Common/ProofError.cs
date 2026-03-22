@@ -11,6 +11,5 @@ public partial class ProofError : ModelElement<DXW.ProofError>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.ProofError.Type))]
  public ProofingError? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
-
  private ProofingError? _Type;
 }

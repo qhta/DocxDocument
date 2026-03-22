@@ -1,11 +1,9 @@
 ﻿namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Represents an element that supports extensibility for line properties through an extension list.
 /// </summary>
 public interface ILinePropertiesExtendableElement: ICollectionItem
 {
-
   /// <summary>
   ///   List of extension properties for the line, used for extensibility scenarios.
   /// </summary>

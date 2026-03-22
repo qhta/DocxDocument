@@ -5,5 +5,4 @@ namespace DocumentModel.Drawings.Charts;
 [OpenXmlType(typeof(DXDC.Plus))]
 public class Plus : PlusMinus<DXDC.Plus>
 {
-
 }

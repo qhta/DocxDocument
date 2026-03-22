@@ -10,6 +10,5 @@ public partial class PreSubSuperProperties : ModelElement<DXM.PreSubSuperPropert
  ///   Specifies formatting of pre-sub-superscript object argument.
  /// </summary>
  public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
-
  private ControlProperties? _ControlProperties;
 }

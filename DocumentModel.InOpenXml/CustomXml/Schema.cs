@@ -24,7 +24,6 @@ public partial class Schema : ModelElement<DXCXSR.Schema>
  [XmlAttribute]
  [OpenXmlProperty(nameof(DXCXSR.Schema.Uri))]
  public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
-
  private string? _Uri;
  /// <summary>
  ///   Location of the resource manifest file for this schema.
@@ -36,7 +35,6 @@ public partial class Schema : ModelElement<DXCXSR.Schema>
  [XmlAttribute]
  [OpenXmlProperty(nameof(DXCXSR.Schema.ManifestLocation))]
  public string? ManifestLocation { get => _ManifestLocation; set => UpdateField(ref _ManifestLocation, value, nameof(ManifestLocation)); }
-
  private string? _ManifestLocation;
  /// <summary>
  ///   Physical location of the XML schema file.
@@ -49,6 +47,5 @@ public partial class Schema : ModelElement<DXCXSR.Schema>
  [XmlAttribute]
  [OpenXmlProperty(nameof(DXCXSR.Schema.SchemaLocation))]
  public string? SchemaLocation { get => _SchemaLocation; set => UpdateField(ref _SchemaLocation, value, nameof(SchemaLocation)); }
-
  private string? _SchemaLocation;
 }

@@ -1,6 +1,5 @@
 using System;
 using System.Text.Json.Serialization;
-
 namespace DocumentModel.Wordprocessing
 {
  /// <summary>
@@ -33,10 +32,8 @@ namespace DocumentModel.Wordprocessing
      Percent = percent
     };
    }
-
    throw new JsonException();
   }
-
   /// <summary>
   ///   Writes a <see cref="Zoom"/> object as JSON, using a string for preset kinds or a number for percentage values.
   /// </summary>

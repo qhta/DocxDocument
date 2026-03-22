@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Defines the PrintSettings Class.
 /// </summary>
@@ -15,9 +14,7 @@ public class PrintSettings: ModelElement<DXO16DCD.PrintSettings>
     get => _HeaderFooter;
     set => UpdateField(ref _HeaderFooter, value, nameof(HeaderFooter));
   }
-
   private HeaderFooter? _HeaderFooter;
-
   /// <summary>
   /// Specifies the page margins.
   /// </summary>
@@ -27,14 +24,11 @@ public class PrintSettings: ModelElement<DXO16DCD.PrintSettings>
     get => _PageMargins;
     set => UpdateField(ref _PageMargins, value, nameof(PageMargins));
   }
-
   private PageMargins? _PageMargins;
-
   /// <summary>
   /// Specifies the page setup.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.PrintSettings.PageSetup))]
   public PageSetup? PageSetup { get => _PageSetup; set => UpdateField(ref _PageSetup, value, nameof(PageSetup)); }
-
   private PageSetup? _PageSetup;
 }

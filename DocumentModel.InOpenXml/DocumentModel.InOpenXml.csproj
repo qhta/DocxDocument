@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -8,46 +7,38 @@
     <AppDesignerFolder>Properties and settings</AppDesignerFolder>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <NoWarn>1701;1702;0659;0612;1574</NoWarn>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <NoWarn>1701;1702;0659;0612;1574</NoWarn>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Remove="**\*.Methods.cs" />
     <Compile Remove="Base interfaces\ITypedModelElement.cs" />
     <Compile Remove="Wordprocessing\Settings\Settings.cs" />
     <Compile Remove="Wordprocessing\Styles\StyleDef.ext.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <None Remove="Wordprocessing\Table properties\Enums\5k3e00t1.egu~" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Include="..\NamespaceMappings\OpenXmlUsings.cs" Link="OpenXmlUsings.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="DocumentFormat.OpenXml" Version="3.4.1" />
     <PackageReference Include="DocumentFormat.OpenXml.Framework" Version="3.4.1" />
     <PackageReference Include="Microsoft.Office.Interop.Word" Version="15.0.4797.1004" />
     <PackageReference Include="Qhta.Collections" Version="5.4.0" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXmlTools.csproj" />
     <ProjectReference Include="..\DocumentModel.BaseConverters\DocumentModel.BaseConverters.csproj" />
     <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
     <ProjectReference Include="..\DocumentModel.EnumTypes\DocumentModel.EnumTypes.csproj" />
+    <ProjectReference Include="..\DocumentModel.Interfaces\DocumentModel.Interfaces.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="VariantTypes\Enums\" />
   </ItemGroup>
-
 </Project>

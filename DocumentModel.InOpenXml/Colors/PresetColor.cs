@@ -10,6 +10,5 @@ public partial class PresetColor : AbstractColor<DXD.PresetColor>
  /// Gets or sets the preset color name that defines the base color.
  /// </summary>
  public PresetColors? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
-
  private PresetColors? _Val;
 }

@@ -11,6 +11,5 @@ public partial class FilteredScatterSeries : ModelElement<DXO13DC.FilteredScatte
   [OpenXmlElement(typeof(DXO13DC.ScatterChartSeries))]
   [OpenXmlType(typeof(DXO13DC.ScatterChartSeries))]
   public ScatterChartSeries? ScatterChartSeries { get => _ScatterChartSeries; set => UpdateField(ref _ScatterChartSeries, value, nameof(ScatterChartSeries)); }
-
   private ScatterChartSeries? _ScatterChartSeries;
 }

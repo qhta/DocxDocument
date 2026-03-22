@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Provides JSON serialization and deserialization support for the <see cref="Color"/> structure.
 /// </summary>
@@ -40,7 +39,6 @@ public class ColorJsonConverter : JsonConverter<DMW.Color>
       var value = reader.GetString();
       if (value == null)
         throw new JsonException($"Expected string value for Color, but got null");
-
       try
       {
         return new DMW.Color(value);
@@ -51,7 +49,6 @@ public class ColorJsonConverter : JsonConverter<DMW.Color>
           $"String must be a valid number optionally followed by unit suffix (mm, cm, pt, or in). Error: {ex.Message}", ex);
       }
     }
-
     if (reader.TokenType == JsonTokenType.Number)
     {
       try
@@ -64,7 +61,6 @@ public class ColorJsonConverter : JsonConverter<DMW.Color>
         {
           return new Color(stringValue!);
         }
-
         throw new JsonException($"Invalid numeric value for Color");
       }
       catch (FormatException ex)
@@ -72,10 +68,8 @@ public class ColorJsonConverter : JsonConverter<DMW.Color>
         throw new JsonException($"Invalid numeric value for Color. Error: {ex.Message}", ex);
       }
     }
-
     throw new JsonException($"Expected string or number token for Color, but got {reader.TokenType}");
   }
-
   /// <summary>
   /// Writes a <see cref="Color"/> value as JSON.
   /// </summary>

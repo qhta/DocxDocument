@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings;
-
 #pragma warning disable CS1591
-
 public partial class NonVisualDrawingPropertiesExtension<T>
 {
   public bool ShouldSerializeCompatExtension() => CompatExtension is not null;

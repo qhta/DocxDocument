@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel;
-
 /// <summary>
 ///   Represents a model element that wraps an OpenXml element of the specified type, providing synchronization and data binding between the document model and OpenXml representation.
 ///   Supports loading, updating, and detaching data from WordprocessingML or other OpenXml-based elements.
@@ -9,7 +8,6 @@ public abstract class ModelElement<OpenXmlType> : ModelElement, IWordprocessingD
 where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with PackageProperties
 {
   private OpenXmlType? _openXmlElement;
-
 
   /// <summary>
   ///   The WordprocessingDocument instance to which this model element is attached, or null if not attached.
@@ -29,16 +27,12 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
         return collectionAware.WordprocessingDocument;
       if (Parent is IWordprocessingDocumentAware parentAware)
         return parentAware.WordprocessingDocument;
-
       return null;
     }
-
     [DebuggerStepThrough]
     private set => _WordprocessingDocument = value;
   }
-
   private DXPP.WordprocessingDocument? _WordprocessingDocument;
-
 
   /// <summary>
   ///   Initializes a new instance of the <see cref="ModelElement{Format}"/> class.
@@ -46,7 +40,6 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
   protected ModelElement()
   {
   }
-
 
   /// <summary>
   ///   Attaches this model element to the specified WordprocessingDocument and loads data from the document's package properties or OpenXml part.
@@ -57,7 +50,6 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
     WordprocessingDocument = wordprocessingDocument;
   }
 
-
   /// <summary>
   ///   Attaches this model element to the specified WordprocessingDocument and updates the document's package properties or OpenXml part with current data.
   /// </summary>
@@ -66,7 +58,6 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
   {
     WordprocessingDocument = wordprocessingDocument;
   }
-
 
   /// <summary>
   ///   Detaches this model element from the attached document, clearing the underlying OpenXml element reference.
@@ -78,7 +69,6 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
     SetUpdatableElement(null);
   }
 
-
   /// <summary>
   ///   Initializes a new instance of the <see cref="ModelElement{Format}"/> class with the specified OpenXml element.
   /// </summary>
@@ -87,7 +77,6 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
   {
     _openXmlElement = openXmlElement;
   }
-
 
   /// <summary>
   ///   Assigns the wrapped OpenXml element instance.
@@ -105,7 +94,6 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
         $"Expected an element of type {typeof(OpenXmlType).FullName}, but received {element.GetType().FullName}.");
   }
 
-
   /// <summary>
   ///   Returns the OpenXml element instance for update operations, or null if not set.
   /// </summary>
@@ -114,6 +102,5 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
   {
     return _openXmlElement;
   }
-
 
 }

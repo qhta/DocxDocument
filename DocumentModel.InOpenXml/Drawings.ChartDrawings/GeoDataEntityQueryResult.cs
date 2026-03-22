@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents the result of a geographic data entity query, containing both the query specification and retrieved entity data.
 /// </summary>
@@ -36,14 +35,11 @@ public class GeoDataEntityQueryResult: ModelElement<DXO16DCD.GeoDataEntityQueryR
     get => _GeoDataEntityQuery;
     set => UpdateField(ref _GeoDataEntityQuery, value, nameof(GeoDataEntityQuery));
   }
-
   private GeoDataEntityQuery? _GeoDataEntityQuery;
-
   /// <summary>
   /// Specifies the geo data.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoDataEntityQueryResult.GeoData))]
   public GeoData? GeoData { get => _GeoData; set => UpdateField(ref _GeoData, value, nameof(GeoData)); }
-
   private GeoData? _GeoData;
 }

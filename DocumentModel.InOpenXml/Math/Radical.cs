@@ -10,20 +10,17 @@ public partial class Radical : ModelElement<DXM.Radical>, ICommonMathContent
  /// </summary>
  [OpenXmlProperty(nameof(DXM.Radical.RadicalProperties))]
  public RadicalProperties? RadicalProperties { get => _RadicalProperties; set => UpdateField(ref _RadicalProperties, value, nameof(RadicalProperties)); }
-
  private RadicalProperties? _RadicalProperties;
  /// <summary>
  ///   Degree.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.Radical.Degree))]
  public Degree? Degree { get => _Degree; set => UpdateField(ref _Degree, value, nameof(Degree)); }
-
  private Degree? _Degree;
  /// <summary>
  ///   Base argument.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.Radical.Base))]
  public Argument? Base { get => _Base; set => UpdateField(ref _Base, value, nameof(Base)); }
-
  private Argument? _Base;
 }

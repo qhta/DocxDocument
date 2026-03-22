@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 ///   Represents the default paragraph and run properties for a WordprocessingML document.
 ///   This class provides properties for specifying the default character-level and paragraph-level formatting applied to all runs and paragraphs in the document unless overridden by more specific formatting.
@@ -13,7 +12,6 @@ public sealed partial class DocDefaults : ModelElement<DXW.DocDefaults>
   public DocDefaults()
   {
   }
-
   /// <summary>
   /// Initializing constructor.
   /// </summary>
@@ -23,7 +21,6 @@ public sealed partial class DocDefaults : ModelElement<DXW.DocDefaults>
     if (styles.WordprocessingDocument != null)
       AttachAndLoad(styles.WordprocessingDocument);
   }
-
   /// <summary>
   ///   Default run properties, specifying the default character-level formatting for text runs.
   /// </summary>
@@ -34,9 +31,7 @@ public sealed partial class DocDefaults : ModelElement<DXW.DocDefaults>
     get => _defaultRunProperties;
     set => UpdateField(ref _defaultRunProperties, value, nameof(DefaultRunProperties));
   }
-
   private BaseRunProperties? _defaultRunProperties;
-
   /// <summary>
   ///   Default paragraph properties, specifying the default paragraph-level formatting for paragraphs.
   /// </summary>
@@ -47,9 +42,7 @@ public sealed partial class DocDefaults : ModelElement<DXW.DocDefaults>
     get => _defaultParagraphProperties;
     set => UpdateField(ref _defaultParagraphProperties, value, nameof(DefaultParagraphProperties));
   }
-
   private BaseParagraphProperties? _defaultParagraphProperties;
-
   /// <summary>
   /// Updates the default run properties in the specified Word document defaults to match the current default run
   /// properties.
@@ -73,7 +66,6 @@ public sealed partial class DocDefaults : ModelElement<DXW.DocDefaults>
       wordDocDefaults.RunPropertiesDefault = null;
     }
   }
-
   /// <summary>
   /// Loads the default run properties from the specified document defaults object.
   /// </summary>
@@ -88,7 +80,6 @@ public sealed partial class DocDefaults : ModelElement<DXW.DocDefaults>
       DefaultRunProperties = OpenXmlModelConverter.ConvertFrom(runPropertiesBaseStyle, typeof(BaseRunProperties)) as BaseRunProperties;
     }
   }
-
 
   /// <summary>
   /// Updates the default Paragraph properties in the specified Word document defaults to match the current default Paragraph
@@ -113,7 +104,6 @@ public sealed partial class DocDefaults : ModelElement<DXW.DocDefaults>
       wordDocDefaults.ParagraphPropertiesDefault = null;
     }
   }
-
   /// <summary>
   /// Loads the default Paragraph properties from the specified document defaults object.
   /// </summary>
@@ -128,5 +118,4 @@ public sealed partial class DocDefaults : ModelElement<DXW.DocDefaults>
       DefaultParagraphProperties = OpenXmlModelConverter.ConvertFrom(ParagraphPropertiesBaseStyle, typeof(BaseParagraphProperties)) as BaseParagraphProperties;
     }
   }
-
 }

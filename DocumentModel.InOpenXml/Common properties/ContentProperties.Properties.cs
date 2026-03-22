@@ -1,5 +1,4 @@
 namespace DocumentModel;
-
 public partial class ContentProperties
 {
   /// <summary>
@@ -14,9 +13,7 @@ public partial class ContentProperties
       return _KnownProperties;
     }
   }
-
   private static KnownProperties? _KnownProperties;
-
   /// <summary>
   ///   Specifies the name of an external document template containing format 
   ///   and style information used to create the current document.
@@ -28,9 +25,7 @@ public partial class ContentProperties
     get => _Template;
     set => UpdateField(ref _Template, value, nameof(Template));
   }
-
   private string? _Template;
-
   /// <summary>
   ///   The name of a supervisor associated with the document.
   /// </summary>
@@ -40,9 +35,7 @@ public partial class ContentProperties
     get => _Manager;
     set => UpdateField(ref _Manager, value, nameof(Manager));
   }
-
   private string? _Manager;
-
   /// <summary>
   ///   The name of a company associated with the document.
   /// </summary>
@@ -52,9 +45,7 @@ public partial class ContentProperties
     get => _Company;
     set => UpdateField(ref _Company, value, nameof(Company));
   }
-
   private string? _Company;
-
   /// <summary>
   ///   The intended format for a presentation document. For example, a presentation intended
   ///   to be shown on video has PresentationFormat "Video".
@@ -65,9 +56,7 @@ public partial class ContentProperties
     get => _PresentationFormat;
     set => UpdateField(ref _PresentationFormat, value, nameof(PresentationFormat));
   }
-
   private string? _PresentationFormat;
-
   /// <summary>
   ///   Indicates the display mode of the document thumbnail. 
   ///   TRUE means scaling of the document thumbnail to the display. 
@@ -79,9 +68,7 @@ public partial class ContentProperties
     get => _ScaleCrop;
     set => UpdateField(ref _ScaleCrop, value, nameof(ScaleCrop));
   }
-
   private bool? _ScaleCrop;
-
   /// <summary>
   ///   Indicates the grouping of document parts and the number of parts in each group.
   ///   These parts are not document parts but conceptual representations of document sections.
@@ -93,9 +80,7 @@ public partial class ContentProperties
     get => _HeadingPairs;
     set => UpdateField(ref _HeadingPairs, value, nameof(HeadingPairs));
   }
-
   private HeadingPairs? _HeadingPairs;
-
   /// <summary>
   ///   The title of each document. 
   ///   These parts are not document parts but conceptual representations of document sections.
@@ -107,9 +92,7 @@ public partial class ContentProperties
     get => _TitlesOfParts;
     set => UpdateField(ref _TitlesOfParts, value, nameof(TitlesOfParts));
   }
-
   private StringList? _TitlesOfParts;
-
   /// <summary>
   ///   Indicates whether hyperlinks in a document are up-to-date.
   ///   TRUE means that hyperlinks are updated, FALSE means that hyperlinks are outdated.
@@ -121,9 +104,7 @@ public partial class ContentProperties
     get => _LinksUpToDate;
     set => UpdateField(ref _LinksUpToDate, value, nameof(LinksUpToDate));
   }
-
   private bool? _LinksUpToDate;
-
   /// <summary>
   ///   Indicates if this document is currently shared between multiple producers. 
   ///   If this element is set to TRUE, producers should take care when updating the document.
@@ -135,9 +116,7 @@ public partial class ContentProperties
     get => _SharedDocument;
     set => UpdateField(ref _SharedDocument, value, nameof(SharedDocument));
   }
-
   private bool? _SharedDocument;
-
   /// <summary>
   ///   The base string used for evaluating relative hyperlinks in this document.
   /// </summary>
@@ -148,9 +127,7 @@ public partial class ContentProperties
     get => _HyperlinkBase;
     set => UpdateField(ref _HyperlinkBase, value, nameof(HyperlinkBase));
   }
-
   private string? _HyperlinkBase;
-
   /// <summary>
   ///   The set of hyperlinks that were in this document when last saved.
   /// </summary>
@@ -161,9 +138,7 @@ public partial class ContentProperties
     get => _HyperlinkList;
     set => UpdateField(ref _HyperlinkList, value, nameof(HyperlinkList));
   }
-
   private HyperlinkList? _HyperlinkList;
-
   /// <summary>
   ///   Specifies that one or more hyperlinks in this part were updated exclusively in this part by a producer. 
   ///   The next producer to open this document shall update the hyperlink relationships with the new hyperlinks specified in this part.
@@ -175,9 +150,7 @@ public partial class ContentProperties
     get => _HyperlinksChanged;
     set => UpdateField(ref _HyperlinksChanged, value, nameof(HyperlinksChanged));
   }
-
   private bool? _HyperlinksChanged;
-
   /// <summary>
   ///   Specifies the security level of a document as a numeric value.
   ///   Document security is defined as:
@@ -193,9 +166,7 @@ public partial class ContentProperties
     get => (DocumentSecurity?)_DocumentSecurity;
     set => UpdateField(ref _DocumentSecurity, (int?)value, nameof(DocumentSecurity));
   }
-
   private int? _DocumentSecurity;
-
   /// <summary>
   ///   This element contains the signature of a digitally signed document.
   ///   This property is a mechanism used by legacy documents to store the digital signature of its binary
@@ -210,7 +181,6 @@ public partial class ContentProperties
     set => UpdateField(ref _DigitalSignature, value, nameof(DigitalSignature));
   }
   private HexBinary? _DigitalSignature;
-
   /// <summary>
   ///   Specifies the name of the application that created this document.
   /// </summary>
@@ -222,9 +192,7 @@ public partial class ContentProperties
     get => _Application;
     set => UpdateField(ref _Application, value, nameof(Application));
   }
-
   private string? _Application;
-
   /// <summary>
   ///   Specifies the version of the application which produced this document.
   /// </summary>
@@ -236,6 +204,5 @@ public partial class ContentProperties
     get => _ApplicationVersion;
     set => UpdateField(ref _ApplicationVersion, value, nameof(ApplicationVersion));
   }
-
   private string? _ApplicationVersion;
 }

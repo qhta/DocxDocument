@@ -1,7 +1,5 @@
 namespace DocumentModel.Wordprocessing.OEmbed;
-
 #pragma warning disable CS1591
-
 public partial class OEmbed
 {
   public bool ShouldSerializeOEmbedUrl() => OEmbedUrl is not null;

@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel;
-
 /// <summary>
 /// Represents a collection of elements that are associated with a parent model element.
 /// </summary>

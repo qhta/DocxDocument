@@ -1,5 +1,4 @@
 using DocumentModel.Math;
-
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Specifies the presence of a hyperlink at the current location in a WordprocessingML document.

@@ -11,13 +11,11 @@ public partial class DocPart : ModelElement<DXW.DocPart>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocPart.DocPartProperties))]
  public DocPartProperties? DocPartProperties { get => _DocPartProperties; set => UpdateField(ref _DocPartProperties, value, nameof(DocPartProperties)); }
-
  private DocPartProperties? _DocPartProperties;
  /// <summary>
  /// Contents of the glossary document entry, containing the actual content or body of the entry.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocPart.DocPartBody))]
  public DocPartBody? DocPartBody { get => _DocPartBody; set => UpdateField(ref _DocPartBody, value, nameof(DocPartBody)); }
-
  private DocPartBody? _DocPartBody;
 }

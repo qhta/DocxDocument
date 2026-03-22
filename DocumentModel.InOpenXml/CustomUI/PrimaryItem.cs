@@ -1,5 +1,4 @@
 namespace DocumentModel.CustomUI;
-
 /// <summary>
 /// <para>Defines the PrimaryItem Class.</para>
 /// <para>This class is available in Office 2010 and above.</para>
@@ -24,9 +23,7 @@ public class PrimaryItem: ModelElement<DXO10CUI.PrimaryItem>
     get => _BackstageRegularButton;
     set => UpdateField(ref _BackstageRegularButton, value, nameof(BackstageRegularButton));
   }
-
   private BackstageRegularButton? _BackstageRegularButton;
-
   /// <summary>
   /// Specifies the backstage primary menu.
   /// </summary>
@@ -36,6 +33,5 @@ public class PrimaryItem: ModelElement<DXO10CUI.PrimaryItem>
     get => _BackstagePrimaryMenu;
     set => UpdateField(ref _BackstagePrimaryMenu, value, nameof(BackstagePrimaryMenu));
   }
-
   private BackstagePrimaryMenu? _BackstagePrimaryMenu;
 }

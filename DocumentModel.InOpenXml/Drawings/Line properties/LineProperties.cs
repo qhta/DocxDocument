@@ -33,13 +33,11 @@ public partial class LineProperties : ElementCollection<IDrawingProperty>, ILine
  ///   Specifies the custom dash pattern for the line.
  /// </summary>
  public CustomDash? CustomDash { get; set; }
-
  /// <summary>
  ///   Indicates that a round line join is used.
  /// </summary>
  [DefaultValue(false)]
  public Boolean Round { get; set; }
-
  /// <summary>
  ///   Indicates that an angle (bevel) joint is used to connect lines.
  /// </summary>

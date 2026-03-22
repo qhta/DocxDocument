@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents an extension for a filtered line series, containing a reference to a line chart series.
 /// </summary>
@@ -11,6 +10,5 @@ public partial class FilteredLineSeriesExtension : Extension<DXO13DC.FilteredLin
   /// </summary>
   [OpenXmlType(typeof(DXO13DC.LineChartSeries))]
   public LineChartSeries? LineChartSeries { get => _LineChartSeries; set => UpdateField(ref _LineChartSeries, value, nameof(LineChartSeries)); }
-
   private LineChartSeries? _LineChartSeries;
 }

@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents the data for a category axis, including multi-level string references, number references, literals, and string references.
 /// </summary>
@@ -15,9 +14,7 @@ public partial class CategoryAxisData: ModelElement<DXDC.CategoryAxisData>
     get => _MultiLevelStringReference;
     set => UpdateField(ref _MultiLevelStringReference, value, nameof(MultiLevelStringReference));
   }
-
   private MultiLevelStringReference? _MultiLevelStringReference;
-
   /// <summary>
   ///   Reference to the numeric values used for category axis data.
   /// </summary>
@@ -27,9 +24,7 @@ public partial class CategoryAxisData: ModelElement<DXDC.CategoryAxisData>
     get => _NumberReference;
     set => UpdateField(ref _NumberReference, value, nameof(NumberReference));
   }
-
   private NumberReference? _NumberReference;
-
   /// <summary>
   ///   Literal numeric values for category axis data.
   /// </summary>
@@ -39,9 +34,7 @@ public partial class CategoryAxisData: ModelElement<DXDC.CategoryAxisData>
     get => _NumberLiteral;
     set => UpdateField(ref _NumberLiteral, value, nameof(NumberLiteral));
   }
-
   private NumberLiteral? _NumberLiteral;
-
   /// <summary>
   ///   Reference to the string values used for category axis data.
   /// </summary>
@@ -51,9 +44,7 @@ public partial class CategoryAxisData: ModelElement<DXDC.CategoryAxisData>
     get => _StringReference;
     set => UpdateField(ref _StringReference, value, nameof(StringReference));
   }
-
   private StringReference? _StringReference;
-
   /// <summary>
   ///   Literal string values for category axis data.
   /// </summary>
@@ -63,6 +54,5 @@ public partial class CategoryAxisData: ModelElement<DXDC.CategoryAxisData>
     get => _StringLiteral;
     set => UpdateField(ref _StringLiteral, value, nameof(StringLiteral));
   }
-
   private StringLiteral? _StringLiteral;
 }

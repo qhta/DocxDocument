@@ -9,6 +9,5 @@ public partial class SoftEdge : ModelElement<DXD.SoftEdge>
  ///   Radius of the soft edge effect.
  /// </summary>
  public Int64? Radius { get => _Radius; set => UpdateField(ref _Radius, value, nameof(Radius)); }
-
  private Int64? _Radius;
 }

@@ -9,6 +9,5 @@ public partial class GraphicData : ModelElement<DXD.GraphicData>
  ///   Uniform Resource Identifier for the graphic object.
  /// </summary>
  public string? UriString { get => _UriString; set => UpdateField(ref _UriString, value, nameof(UriString)); }
-
  private string? _UriString;
 }

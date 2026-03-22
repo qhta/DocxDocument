@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Represents a tracked change in a WordprocessingML document, such as insertion, deletion, or modification.
 /// This class extends <see cref="MarkupRangeElement"/> and <see cref="ICommonContent"/>, providing properties for author and date to enable revision tracking and review of document changes.

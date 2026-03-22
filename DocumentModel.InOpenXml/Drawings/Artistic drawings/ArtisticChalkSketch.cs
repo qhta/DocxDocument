@@ -9,13 +9,11 @@ public partial class ArtisticChalkSketch : ModelElement<DXO10D.ArtisticChalkSket
  /// Transparency level of the chalk sketch effect.
  /// </summary>
  public Int32? Transparency { get => _Transparency; set => UpdateField(ref _Transparency, value, nameof(Transparency)); }
-
  private Int32? _Transparency;
  /// <summary>
  /// Pressure applied in the chalk sketch effect, influencing the intensity of the strokes.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ArtisticChalkSketch.Pressure))]
  public Int32? Pressure { get => _Pressure; set => UpdateField(ref _Pressure, value, nameof(Pressure)); }
-
  private Int32? _Pressure;
 }

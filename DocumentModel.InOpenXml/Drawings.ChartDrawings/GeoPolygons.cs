@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents a collection of polygons that define the complete geographic boundaries of an entity.
 /// </summary>

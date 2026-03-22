@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Defines the ChartSpaceExtension Class.
 /// </summary>
@@ -15,9 +14,7 @@ public partial class ChartSpaceExtension: Extension<DXDC.ChartSpaceExtension>
     get => _PivotOptions;
     set => UpdateField(ref _PivotOptions, value, nameof(PivotOptions));
   }
-
   private PivotOptions? _PivotOptions;
-
   /// <summary>
   /// Options that configure the behavior and appearance of a sketch.
   /// </summary>
@@ -27,9 +24,7 @@ public partial class ChartSpaceExtension: Extension<DXDC.ChartSpaceExtension>
     get => _SketchOptions;
     set => UpdateField(ref _SketchOptions, value, nameof(SketchOptions));
   }
-
   private SketchOptions? _SketchOptions;
-
   /// <summary>
   /// Options that configure the behavior and appearance of a pivot source.
   /// </summary>
@@ -39,6 +34,5 @@ public partial class ChartSpaceExtension: Extension<DXDC.ChartSpaceExtension>
     get => _PivotSource;
     set => UpdateField(ref _PivotSource, value, nameof(PivotSource));
   }
-
   private PivotSource? _PivotSource;
 }

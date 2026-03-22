@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents an extension for a bubble chart, providing additional series filtering capabilities.
 /// </summary>

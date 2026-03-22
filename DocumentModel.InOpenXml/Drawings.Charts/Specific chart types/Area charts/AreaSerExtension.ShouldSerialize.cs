@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings.Charts;
-
 #pragma warning disable CS1591
-
 public partial class AreaSerExtension
 {
   public bool ShouldSerializeFilteredSeriesTitle() => FilteredSeriesTitle is not null;

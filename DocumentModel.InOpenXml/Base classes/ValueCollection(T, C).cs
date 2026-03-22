@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel;
-
 /// <summary>
 ///   Represents a collection of values associated with an OpenXml collection, providing synchronization between the document model and OpenXml elements.
 ///   Supports loading, updating, and detaching data from WordprocessingML or other OpenXml-based collections.
@@ -17,7 +16,6 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   /// </summary>
   protected bool isLoading;
 
-
   /// <summary>
   ///   The WordprocessingDocument instance to which this value collection is attached, or null if not attached.
   /// </summary>
@@ -25,7 +23,6 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   [JsonIgnore]
   [NotMapped]
   public DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
-
 
   /// <summary>
   ///   Attaches this value collection to the specified WordprocessingDocument and loads data from the document's package properties or OpenXml part.
@@ -36,7 +33,6 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
     WordprocessingDocument = wordprocessingDocument;
   }
 
-
   /// <summary>
   ///   Attaches this value collection to the specified WordprocessingDocument and updates the document's package properties or OpenXml part with current data.
   /// </summary>
@@ -45,8 +41,6 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   {
     WordprocessingDocument = wordprocessingDocument;
   }
-
-
 
   /// <summary>
   ///   Detaches this value collection from the attached document, clearing the underlying OpenXml element reference.
@@ -57,8 +51,6 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
     WordprocessingDocument = null;
     SetUpdatableElement(null);
   }
-
-
 
   /// <summary>
   ///   Initializes a new instance of the <see cref="ValueCollection{ItemType, OpenXmlCollectionType}"/> class.
@@ -80,7 +72,6 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
     };
   }
 
-
   /// <summary>
   ///   Initializes a new instance of the <see cref="ValueCollection{ItemType, OpenXmlCollectionType}"/> class with the specified OpenXml element.
   /// </summary>
@@ -89,7 +80,6 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   {
     _openXmlCollection = openXmlCollection;
   }
-
 
   /// <summary>
   ///   Initializes a new instance of the <see cref="ValueCollection{ItemType, OpenXmlCollectionType}"/> class with the specified items.
@@ -103,7 +93,6 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
     }
   }
 
-
   /// <summary>
   ///   Returns the wrapped OpenXml collection element instance, or null if not set.
   /// </summary>
@@ -113,7 +102,6 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
     return _openXmlCollection;
   }
 
-
   /// <summary>
   ///   Assigns the wrapped OpenXml collection element instance.
   /// </summary>
@@ -122,7 +110,6 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   {
     _openXmlCollection = element;
   }
-
   /// <summary>
   ///   Loads data from the specified OpenXml element into this value collection.
   ///   Sets the isLoading flag to true while loading data to avoid unnecessary updates by collection change events.
@@ -138,16 +125,12 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
     isLoading = false;
   }
 
-
-
   /// <summary>
   ///   Loads data from the modeled OpenXml collection into this value collection instance.
   ///   Must be implemented by derived classes to define the mapping logic.
   /// </summary>
   /// <param name="openXmlModeledCollection">The OpenXml collection to load data from.</param>
   protected abstract void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection);
-
-
 
   /// <summary>
   ///   Stores data from this value collection to the specified OpenXml element.
@@ -162,12 +145,10 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
     }
   }
 
-
   /// <summary>
   ///   Stores data from this value collection instance to the modeled OpenXml collection.
   ///   Must be implemented by derived classes to define the mapping logic.
   /// </summary>
   /// <param name="openXmlModeledCollection">The OpenXml collection to store data to.</param>
   protected abstract void UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection);
-
 }
