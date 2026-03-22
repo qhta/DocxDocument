@@ -15,7 +15,6 @@ public class CaptionDefinitions : ElementCollection<CaptionDefinition>
  public CaptionDefinitions()
  {
  }
-
  /// <summary>
  /// Initializing constructor.
  /// </summary>
@@ -23,5 +22,4 @@ public class CaptionDefinitions : ElementCollection<CaptionDefinition>
  public CaptionDefinitions(IEnumerable<CaptionDefinition> captions) : base(captions)
  {
  }
-
 }

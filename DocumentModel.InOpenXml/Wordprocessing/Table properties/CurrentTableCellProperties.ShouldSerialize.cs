@@ -1,7 +1,5 @@
 namespace DocumentModel.Wordprocessing;
-
 #pragma warning disable CS1591
-
 public partial class CurrentTableCellProperties<T> 
 {
   public bool ShouldSerializeConditionalFormatStyle() => ConditionalFormatStyle is not null;

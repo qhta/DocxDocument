@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents a table of data label field entries for a chart.
 ///   This class provides a collection of <see cref="DataLabelFieldTableEntry"/> elements, each defining a field used in custom data labels.

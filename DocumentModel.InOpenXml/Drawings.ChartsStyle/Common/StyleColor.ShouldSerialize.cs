@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings.ChartsStyle;
-
 #pragma warning disable CS1591
-
 public partial class StyleColor
 {
   public bool ShouldSerializeVal() => !String.IsNullOrEmpty(Val);

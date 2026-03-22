@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawing;
-
 /// <summary>
 /// Describes non-visual properties for a graphic frame in chart drawings, including locking options that restrict editing or manipulation of the frame.
 /// </summary>
@@ -17,6 +16,5 @@ public class
     get => _GraphicFrameLocks;
     set => UpdateField(ref _GraphicFrameLocks, value, nameof(GraphicFrameLocks));
   }
-
   private GraphicFrameLocks? _GraphicFrameLocks;
 }

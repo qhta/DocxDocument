@@ -20,6 +20,5 @@ public partial class Break : ModelElement<DXW.Break>
  ///   If alnAt is omitted, then all runs (r tag) that follow a brk tag will align with the left margin of the first run of mathematical text.
  /// </summary>
  public Int32? AlignAt { get => _AlignAt; set => UpdateField(ref _AlignAt, value, nameof(AlignAt)); }
-
  private Int32? _AlignAt;
 }

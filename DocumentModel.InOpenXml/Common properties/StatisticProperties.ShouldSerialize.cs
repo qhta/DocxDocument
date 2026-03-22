@@ -1,7 +1,5 @@
 namespace DocumentModel;
-
 #pragma warning disable CS1591
-
 public partial class StatisticProperties
 {
   public bool ShouldSerializePages() => Pages is not null;

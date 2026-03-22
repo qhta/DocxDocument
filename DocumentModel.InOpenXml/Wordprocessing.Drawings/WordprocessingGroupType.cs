@@ -10,18 +10,15 @@ public abstract partial class WordprocessingGroupType<T> : ModelElement<T> where
  /// Non-visual properties for the group type, including identifiers, names, and descriptive information.
  /// </summary>
  public NonVisualDrawingProperties? NonVisualDrawingProperties { get => _NonVisualDrawingProperties; set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties)); }
-
  private NonVisualDrawingProperties? _NonVisualDrawingProperties;
  /// <summary>
  /// Non-visual properties specific to group drawing shapes, such as locking and extension settings.
  /// </summary>
  public NonVisualGroupDrawingShapeProperties? NonVisualGroupDrawingShapeProperties { get => _NonVisualGroupDrawingShapeProperties; set => UpdateField(ref _NonVisualGroupDrawingShapeProperties, value, nameof(NonVisualGroupDrawingShapeProperties)); }
-
  private NonVisualGroupDrawingShapeProperties? _NonVisualGroupDrawingShapeProperties;
  /// <summary>
  /// Properties for the group shape, including layout, transformation, and grouping behavior.
  /// </summary>
  public GroupShapeProperties? GroupShapeProperties { get => _GroupShapeProperties; set => UpdateField(ref _GroupShapeProperties, value, nameof(GroupShapeProperties)); }
-
  private GroupShapeProperties? _GroupShapeProperties;
 }

@@ -1,18 +1,15 @@
 ﻿namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Provides XML serialization support for the <see cref="TableMeasure"/> structure.
 /// </summary>
 public partial class TableMeasure : IXmlSerializable
 {
 
-
   /// <summary>
   /// This method is reserved and should not be used. Returns null as no schema is required.
   /// </summary>
   /// <returns>Always returns null.</returns>
   XmlSchema? IXmlSerializable.GetSchema() => null;
-
   /// <summary>
   /// Deserializes the <see cref="TableMeasure"/> value from XML.
   /// Accepts numeric values and values with unit suffixes (mm, cm, pt, in).
@@ -39,32 +36,24 @@ public partial class TableMeasure : IXmlSerializable
       reader.Read();
       return;
     }
-
     reader.Read(); // Move to content
-
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
       string TableMeasureString = reader.Value;
-
       if (!string.IsNullOrEmpty(TableMeasureString))
       {
         var parsedValue = new DMW.TableMeasure(TableMeasureString);
-
         System.Runtime.CompilerServices.Unsafe.AsRef(in _value) = parsedValue._value;
         System.Runtime.CompilerServices.Unsafe.AsRef(in _unit) = parsedValue.Unit;
         System.Runtime.CompilerServices.Unsafe.AsRef(in _type) = parsedValue.Type;
-
       }
-
       reader.Read(); // Move past text
     }
-
     if (reader.NodeType == XmlNodeType.EndElement)
     {
       reader.Read(); // Move past end element
     }
   }
-
   /// <summary>
   /// Serializes the <see cref="TableMeasure"/> value to XML.
   /// </summary>

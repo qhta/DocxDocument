@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Defines the Text Class.
 /// </summary>
@@ -11,9 +10,7 @@ public class Text: ModelElement<DXO16DCD.Text>
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.Text.TextData))]
   public TextData? TextData { get => _TextData; set => UpdateField(ref _TextData, value, nameof(TextData)); }
-
   private TextData? _TextData;
-
   /// <summary>
   /// Specifies the rich text body.
   /// </summary>
@@ -23,6 +20,5 @@ public class Text: ModelElement<DXO16DCD.Text>
     get => _RichTextBody;
     set => UpdateField(ref _RichTextBody, value, nameof(RichTextBody));
   }
-
   private RichTextBody? _RichTextBody;
 }

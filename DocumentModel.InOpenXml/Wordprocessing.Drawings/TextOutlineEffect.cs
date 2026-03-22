@@ -1,5 +1,4 @@
 using DocumentModel.Drawings;
-
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents the outline effect applied to text in a Wordprocessing document.

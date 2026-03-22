@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Major Gridlines.
 /// </summary>
@@ -15,6 +14,5 @@ public partial class MajorGridlines: ModelElement<DXDC.MajorGridlines>
     get => _ChartShapeProperties;
     set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties));
   }
-
   private ChartShapeProperties? _ChartShapeProperties;
 }

@@ -43,7 +43,6 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// </para>
   /// </remarks>
   public Int32? Shade { get; set; }
-
   /// <summary>
   /// Gets or sets a value indicating whether the complement (opposite) color operation is applied.
   /// </summary>
@@ -53,7 +52,6 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// </remarks>
   [DefaultValue(false)]
   public Boolean Complement { get; set; }
-
   /// <summary>
   /// Gets or sets a value indicating whether the color inversion operation is applied.
   /// </summary>
@@ -63,7 +61,6 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// </remarks>
   [DefaultValue(false)]
   public Boolean Inverse { get; set; }
-
   /// <summary>
   /// Gets or sets a value indicating whether the color is converted to grayscale.
   /// </summary>
@@ -238,7 +235,6 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// A value of 50000 (50%) reduces the blue component by half.
   /// </remarks>
   public Int32? BlueModulation { get; set; }
-
   /// <summary>
   /// Gets or sets a value indicating whether gamma correction is applied.
   /// </summary>
@@ -249,7 +245,6 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// </remarks>
   [DefaultValue(false)]
   public Boolean Gamma { get; set; }
-
   /// <summary>
   /// Gets or sets a value indicating whether inverse gamma correction is applied.
   /// </summary>

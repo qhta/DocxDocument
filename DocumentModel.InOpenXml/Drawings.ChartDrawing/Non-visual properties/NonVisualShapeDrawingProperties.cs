@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawing;
-
 /// <summary>
 /// Describes non-visual properties for a shape in chart drawings, including text box indication, locking options, and extension data.
 /// </summary>
@@ -11,14 +10,11 @@ public class NonVisualShapeDrawingProperties: ModelElement<DXDCD.NonVisualShapeD
   /// </summary>
   [OpenXmlProperty(nameof(DXDCD.NonVisualShapeDrawingProperties.TextBox))]
   public bool? TextBox { get => _TextBox; set => UpdateField(ref _TextBox, value, nameof(TextBox)); }
-
   private bool? _TextBox;
-
   /// <summary>
   /// Specifies locking options that restrict editing or manipulation of the shape.
   /// </summary>
   [OpenXmlProperty(nameof(DXDCD.NonVisualShapeDrawingProperties.ShapeLocks))]
   public ShapeLocks? ShapeLocks { get => _ShapeLocks; set => UpdateField(ref _ShapeLocks, value, nameof(ShapeLocks)); }
-
   private ShapeLocks? _ShapeLocks;
 }

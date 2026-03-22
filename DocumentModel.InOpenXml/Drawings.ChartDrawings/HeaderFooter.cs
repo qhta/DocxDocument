@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents header and footer configuration for printed chart output.
 /// </summary>
@@ -32,9 +31,7 @@ public class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
     get => _AlignWithMargins;
     set => UpdateField(ref _AlignWithMargins, value, nameof(AlignWithMargins));
   }
-
   private bool? _AlignWithMargins;
-
   /// <summary>
   /// Specifies the different odd even.
   /// </summary>
@@ -44,9 +41,7 @@ public class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
     get => _DifferentOddEven;
     set => UpdateField(ref _DifferentOddEven, value, nameof(DifferentOddEven));
   }
-
   private bool? _DifferentOddEven;
-
   /// <summary>
   /// Specifies the different first.
   /// </summary>
@@ -56,9 +51,7 @@ public class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
     get => _DifferentFirst;
     set => UpdateField(ref _DifferentFirst, value, nameof(DifferentFirst));
   }
-
   private bool? _DifferentFirst;
-
   /// <summary>
   /// Specifies the odd header xsd string.
   /// </summary>
@@ -68,9 +61,7 @@ public class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
     get => _OddHeaderXsdString;
     set => UpdateField(ref _OddHeaderXsdString, value, nameof(OddHeaderXsdString));
   }
-
   private string? _OddHeaderXsdString;
-
   /// <summary>
   /// Specifies the odd footer xsd string.
   /// </summary>
@@ -80,9 +71,7 @@ public class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
     get => _OddFooterXsdString;
     set => UpdateField(ref _OddFooterXsdString, value, nameof(OddFooterXsdString));
   }
-
   private string? _OddFooterXsdString;
-
   /// <summary>
   /// Specifies the even header xsd string.
   /// </summary>
@@ -92,9 +81,7 @@ public class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
     get => _EvenHeaderXsdString;
     set => UpdateField(ref _EvenHeaderXsdString, value, nameof(EvenHeaderXsdString));
   }
-
   private string? _EvenHeaderXsdString;
-
   /// <summary>
   /// Specifies the even footer xsd string.
   /// </summary>
@@ -104,9 +91,7 @@ public class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
     get => _EvenFooterXsdString;
     set => UpdateField(ref _EvenFooterXsdString, value, nameof(EvenFooterXsdString));
   }
-
   private string? _EvenFooterXsdString;
-
   /// <summary>
   /// Specifies the first header xsd string.
   /// </summary>
@@ -116,9 +101,7 @@ public class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
     get => _FirstHeaderXsdString;
     set => UpdateField(ref _FirstHeaderXsdString, value, nameof(FirstHeaderXsdString));
   }
-
   private string? _FirstHeaderXsdString;
-
   /// <summary>
   /// Specifies the first footer xsd string.
   /// </summary>
@@ -128,6 +111,5 @@ public class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
     get => _FirstFooterXsdString;
     set => UpdateField(ref _FirstFooterXsdString, value, nameof(FirstFooterXsdString));
   }
-
   private string? _FirstFooterXsdString;
 }

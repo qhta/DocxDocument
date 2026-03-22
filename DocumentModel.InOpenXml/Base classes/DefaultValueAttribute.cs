@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel;
-
 /// <summary>
 /// Replaces system DefaultValueAttribute, which is recognized by XmlSerializer.
 /// </summary>

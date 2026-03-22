@@ -1,7 +1,5 @@
 namespace DocumentModel.Wordprocessing;
-
 #pragma warning disable CS1591
-
 public partial class BaseRunProperties<T> 
 {
   public bool ShouldSerializeRunFonts() => RunFonts is not null;

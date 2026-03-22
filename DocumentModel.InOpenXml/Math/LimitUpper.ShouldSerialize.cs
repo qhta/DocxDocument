@@ -1,7 +1,5 @@
 namespace DocumentModel.Math;
-
 #pragma warning disable CS1591
-
 public partial class LimitUpper
 {
   public bool ShouldSerializeLimitUpperProperties() => LimitUpperProperties is not null;

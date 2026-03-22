@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawing;
-
 /// <summary>
 ///   Describes non-visual properties for a picture in chart drawings, including resizing preferences, locking options, and extension data.
 /// </summary>
@@ -15,9 +14,7 @@ public class NonVisualPictureDrawingProperties: ModelElement<DXDCD.NonVisualPict
     get => _PreferRelativeResize;
     set => UpdateField(ref _PreferRelativeResize, value, nameof(PreferRelativeResize));
   }
-
   private bool? _PreferRelativeResize;
-
   /// <summary>
   ///   Specifies locking options that restrict editing or manipulation of the picture.
   /// </summary>
@@ -27,9 +24,7 @@ public class NonVisualPictureDrawingProperties: ModelElement<DXDCD.NonVisualPict
     get => _PictureLocks;
     set => UpdateField(ref _PictureLocks, value, nameof(PictureLocks));
   }
-
   private PictureLocks? _PictureLocks;
-
   /// <summary>
   ///   Extension list for additional or future non-visual picture properties.
   /// </summary>
@@ -40,6 +35,5 @@ public class NonVisualPictureDrawingProperties: ModelElement<DXDCD.NonVisualPict
     set => UpdateField(ref _NonVisualPicturePropertiesExtensionList, value,
       nameof(NonVisualPicturePropertiesExtensionList));
   }
-
   private NonVisualPicturePropertiesExtensionList? _NonVisualPicturePropertiesExtensionList;
 }

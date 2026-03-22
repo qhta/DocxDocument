@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Defines the ValueColors Class.
 /// </summary>
@@ -15,9 +14,7 @@ public class ValueColors: ModelElement<DXO16DCD.ValueColors>
     get => _MinColorSolidColorFillProperties;
     set => UpdateField(ref _MinColorSolidColorFillProperties, value, nameof(MinColorSolidColorFillProperties));
   }
-
   private SolidColorFillProperties? _MinColorSolidColorFillProperties;
-
   /// <summary>
   /// Specifies the mid color solid color fill properties.
   /// </summary>
@@ -27,9 +24,7 @@ public class ValueColors: ModelElement<DXO16DCD.ValueColors>
     get => _MidColorSolidColorFillProperties;
     set => UpdateField(ref _MidColorSolidColorFillProperties, value, nameof(MidColorSolidColorFillProperties));
   }
-
   private SolidColorFillProperties? _MidColorSolidColorFillProperties;
-
   /// <summary>
   /// Specifies the max color solid color fill properties.
   /// </summary>
@@ -39,6 +34,5 @@ public class ValueColors: ModelElement<DXO16DCD.ValueColors>
     get => _MaxColorSolidColorFillProperties;
     set => UpdateField(ref _MaxColorSolidColorFillProperties, value, nameof(MaxColorSolidColorFillProperties));
   }
-
   private SolidColorFillProperties? _MaxColorSolidColorFillProperties;
 }

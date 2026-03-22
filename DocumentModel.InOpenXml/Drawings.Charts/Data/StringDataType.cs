@@ -10,6 +10,5 @@ public partial class StringDataType : ModelElement<DXDC.StringDataType>
   /// </summary>
   [OpenXmlProperty(nameof(DXDC.StringDataType.PointCount))]
   public UInt32? PointCount { get => _PointCount; set => UpdateField(ref _PointCount, value, nameof(PointCount)); }
-
   private UInt32? _PointCount;
 }

@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents an extension for a surface chart series, providing additional filtering and labeling options.
 /// </summary>
@@ -15,9 +14,7 @@ public partial class SurfaceSerExtension: Extension<DXDC.SurfaceSerExtension>
     get => _FilteredSeriesTitle;
     set => UpdateField(ref _FilteredSeriesTitle, value, nameof(FilteredSeriesTitle));
   }
-
   private FilteredSeriesTitle? _FilteredSeriesTitle;
-
   /// <summary>
   ///   Filtered title for the category.
   /// </summary>
@@ -27,9 +24,7 @@ public partial class SurfaceSerExtension: Extension<DXDC.SurfaceSerExtension>
     get => _FilteredCategoryTitle;
     set => UpdateField(ref _FilteredCategoryTitle, value, nameof(FilteredCategoryTitle));
   }
-
   private FilteredCategoryTitle? _FilteredCategoryTitle;
-
   /// <summary>
   ///   Exceptions for category filters applied to the series.
   /// </summary>
@@ -39,6 +34,5 @@ public partial class SurfaceSerExtension: Extension<DXDC.SurfaceSerExtension>
     get => _CategoryFilterExceptions;
     set => UpdateField(ref _CategoryFilterExceptions, value, nameof(CategoryFilterExceptions));
   }
-
   private CategoryFilterExceptions? _CategoryFilterExceptions;
 }

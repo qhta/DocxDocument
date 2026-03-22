@@ -1,5 +1,4 @@
 namespace DocumentModel.CustomUI;
-
 /// <summary>
 /// <para>Defines the ItemBackstageItem Class.</para>
 /// <para>This class is available in Office 2010 and above.</para>

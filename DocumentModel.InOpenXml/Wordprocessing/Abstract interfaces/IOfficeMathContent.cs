@@ -5,5 +5,4 @@ namespace DocumentModel.Math;
 /// </summary>
 public interface IOfficeMathContent: ICollectionItem
 {
-
 }

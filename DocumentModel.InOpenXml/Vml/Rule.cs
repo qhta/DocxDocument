@@ -10,33 +10,28 @@ public partial class Rule : ModelElement<DXVO.Rule>
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Rule.Id))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
-
  private string? _Id;
  /// <summary>
  /// Specifies the rule type.
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Rule.Type))]
  public RuleType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
-
  private RuleType? _Type;
  /// <summary>
  /// Specifies the alignment rule type.
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Rule.How))]
  public Alignment? How { get => _How; set => UpdateField(ref _How, value, nameof(How)); }
-
  private Alignment? _How;
  /// <summary>
  /// Reference to the shape associated with this rule.
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Rule.ShapeReference))]
  public string? ShapeReference { get => _ShapeReference; set => UpdateField(ref _ShapeReference, value, nameof(ShapeReference)); }
-
  private string? _ShapeReference;
  /// <summary>
  /// Proxies collection associated with this rule.
  /// </summary>
  public Proxies? Proxies { get => _Proxies; set => UpdateField(ref _Proxies, value, nameof(Proxies)); }
-
  private Proxies? _Proxies;
 }

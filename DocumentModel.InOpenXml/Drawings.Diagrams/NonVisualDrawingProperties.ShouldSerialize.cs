@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings.Diagrams;
-
 #pragma warning disable CS1591
-
 public partial class NonVisualDrawingProperties
 {
   public bool ShouldSerializeId() => Id is not null;

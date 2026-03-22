@@ -1,7 +1,6 @@
 #pragma warning disable OOXML0001
 global using PackageProperties = DocumentFormat.OpenXml.Packaging.IPackageProperties;
 #pragma warning restore OOXML0001
-
 global using DX = DocumentFormat.OpenXml;
 global using DXB = DocumentFormat.OpenXml.Bibliography;
 global using DXCP = DocumentFormat.OpenXml.CustomProperties;
@@ -58,4 +57,3 @@ global using DXVS = DocumentFormat.OpenXml.Vml.Spreadsheet;
 global using DXVT = DocumentFormat.OpenXml.VariantTypes;
 global using DXVW = DocumentFormat.OpenXml.Vml.Wordprocessing;
 global using DXW = DocumentFormat.OpenXml.Wordprocessing;
-

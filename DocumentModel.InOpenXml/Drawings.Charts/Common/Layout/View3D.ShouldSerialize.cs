@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings.Charts;
-
 #pragma warning disable CS1591
-
 public partial class View3D
 {
   public bool ShouldSerializeRotateX() => RotateX is not null;

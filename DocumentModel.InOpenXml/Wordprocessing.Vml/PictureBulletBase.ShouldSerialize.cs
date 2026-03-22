@@ -1,7 +1,5 @@
 namespace DocumentModel.Wordprocessing.Vml;
-
 #pragma warning disable CS1591
-
 public partial class PictureBulletBase
 {
   public bool ShouldSerializeGroup() => Group is not null;

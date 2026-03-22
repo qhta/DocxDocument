@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents a query for retrieving parent geographic entities that contain a specific child entity.
 /// </summary>
@@ -31,6 +30,5 @@ public class GeoParentEntitiesQuery: ModelElement<DXO16DCD.GeoParentEntitiesQuer
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoParentEntitiesQuery.EntityId))]
   public string? EntityId { get => _EntityId; set => UpdateField(ref _EntityId, value, nameof(EntityId)); }
-
   private string? _EntityId;
 }

@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Represents a collection of numbering level override elements in a WordprocessingML document.
 /// </summary>
@@ -13,7 +12,6 @@ public class NumberingLevelOverrides:
   public NumberingLevelOverrides()
   {
   }
-
   /// <summary>
   /// Initializing constructor.
   /// </summary>
@@ -22,7 +20,6 @@ public class NumberingLevelOverrides:
   {
     Numbering = numbering;
   }
-
   /// <summary>
   /// Parent numbering instance element that contains this collection of numbering level overrides. 
   /// </summary>
@@ -30,7 +27,6 @@ public class NumberingLevelOverrides:
   [JsonIgnore]
   [NotMapped]
   public NumberingInstance? Numbering { get => Parent as NumberingInstance; set => SetParent(value); }
-
   /// <summary>
   /// Gets updatable element for this collection of numbering instance,
   /// which is the <see cref="DXW.NumberingInstance"/> element that contains the individual <see cref="DXW.NumberingLevelOverride"/> elements.
@@ -40,7 +36,6 @@ public class NumberingLevelOverrides:
   {
     return Numbering?.GetUpdatableElement() as DXW.NumberingInstance;
   }
-
   /// <summary>
   /// Updates the specified OpenXml element by removing all existing items and adding new items from the current collection.
   /// </summary>
@@ -53,7 +48,6 @@ public class NumberingLevelOverrides:
     if (element is not DXW.NumberingInstance numberingInstance)
       throw new ArgumentException(
         $"Expected element of type {typeof(DXW.NumberingInstance).FullName}, but got {element.GetType().FullName}.");
-
     numberingInstance.RemoveAllChildren<DXW.LevelOverride>();
     foreach (var modeItem in this)
     {
@@ -61,7 +55,6 @@ public class NumberingLevelOverrides:
       numberingInstance.AppendChild(openXmlChild);
     }
   }
-
   /// <summary>
   /// Loads items from the specified OpenXmlElement into the current collection, replacing any existing items.
   /// </summary>
@@ -74,7 +67,6 @@ public class NumberingLevelOverrides:
     if (element is not DXW.NumberingInstance numbering)
       throw new ArgumentException(
         $"Expected element of type {typeof(DXW.NumberingInstance).FullName}, but got {element.GetType().FullName}.");
-
     SetIsLoading(true);
     var openXmlChildren = numbering.Elements<DXW.LevelOverride>().ToArray();
     this.Clear();

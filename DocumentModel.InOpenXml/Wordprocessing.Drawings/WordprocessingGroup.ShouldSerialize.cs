@@ -1,7 +1,5 @@
 namespace DocumentModel.Wordprocessing.Drawings;
-
 #pragma warning disable CS1591
-
 public partial class WordprocessingGroup
 {
   public bool ShouldSerializeWordprocessingShape() => WordprocessingShape is not null;

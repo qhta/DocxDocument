@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents the result of a geographic child entities query, containing both the query specification and retrieved data.
 /// </summary>
@@ -34,9 +33,7 @@ public class GeoChildEntitiesQueryResult: ModelElement<DXO16DCD.GeoChildEntities
     get => _GeoChildEntitiesQuery;
     set => UpdateField(ref _GeoChildEntitiesQuery, value, nameof(GeoChildEntitiesQuery));
   }
-
   private GeoChildEntitiesQuery? _GeoChildEntitiesQuery;
-
   /// <summary>
   /// Specifies the geo child entities.
   /// </summary>
@@ -46,6 +43,5 @@ public class GeoChildEntitiesQueryResult: ModelElement<DXO16DCD.GeoChildEntities
     get => _GeoChildEntities;
     set => UpdateField(ref _GeoChildEntities, value, nameof(GeoChildEntities));
   }
-
   private GeoChildEntities? _GeoChildEntities;
 }

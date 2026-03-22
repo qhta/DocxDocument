@@ -16,17 +16,17 @@ public enum MsoCalloutAngleType
   /// <summary>
   /// 30˚ angle.
   /// </summary>
-  30 = 2,
+  ThirtyDegrees = 2,
   /// <summary>
   /// 45˚ angle.
   /// </summary>
-  45 = 3,
+  FortyFiveDegrees = 3,
   /// <summary>
   /// 60˚ angle.
   /// </summary>
-  60 = 4,
+  SixtyDegrees = 4,
   /// <summary>
   /// 90˚ angle.
   /// </summary>
-  90 = 5
+  NinetyDegrees = 5
 }

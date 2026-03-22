@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents the values for a chart series.
 ///   This class defines the data source for the values, which can be either a reference to a range or a set of literal values.
@@ -16,9 +15,7 @@ public partial class Values: ModelElement<DXDC.Values>
     get => _NumberReference;
     set => UpdateField(ref _NumberReference, value, nameof(NumberReference));
   }
-
   private NumberReference? _NumberReference;
-
   /// <summary>
   ///   Literal numeric values provided directly.
   /// </summary>
@@ -28,6 +25,5 @@ public partial class Values: ModelElement<DXDC.Values>
     get => _NumberLiteral;
     set => UpdateField(ref _NumberLiteral, value, nameof(NumberLiteral));
   }
-
   private NumberLiteral? _NumberLiteral;
 }

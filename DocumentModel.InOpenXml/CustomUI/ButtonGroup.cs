@@ -1,5 +1,4 @@
 namespace DocumentModel.CustomUI;
-
 /// <summary>
 /// <para>Defines the ButtonGroup Class.</para>
 /// <para>This class is available in Office 2010 and above.</para>
@@ -26,41 +25,31 @@ public class ButtonGroup: ModelElement<DXO10CUI.ButtonGroup>
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.ButtonGroup.Id))]
   public String? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
-
   private String? _Id;
-
   /// <summary>
   /// Specifies the qualified identifier of the button group.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.ButtonGroup.QualifiedId))]
   public String? QualifiedId { get => _QualifiedId; set => UpdateField(ref _QualifiedId, value, nameof(QualifiedId)); }
-
   private String? _QualifiedId;
-
   /// <summary>
   /// Specifies an application-defined tag for the button group.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.ButtonGroup.Tag))]
   public String? Tag { get => _Tag; set => UpdateField(ref _Tag, value, nameof(Tag)); }
-
   private String? _Tag;
-
   /// <summary>
   /// Specifies whether the button group is visible.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.ButtonGroup.Visible))]
   public Boolean? Visible { get => _Visible; set => UpdateField(ref _Visible, value, nameof(Visible)); }
-
   private Boolean? _Visible;
-
   /// <summary>
   /// Specifies the callback that returns whether the button group is visible.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.ButtonGroup.GetVisible))]
   public String? GetVisible { get => _GetVisible; set => UpdateField(ref _GetVisible, value, nameof(GetVisible)); }
-
   private String? _GetVisible;
-
   /// <summary>
   /// Specifies a built-in control after which this button group is inserted.
   /// </summary>
@@ -70,9 +59,7 @@ public class ButtonGroup: ModelElement<DXO10CUI.ButtonGroup>
     get => _InsertAfterMso;
     set => UpdateField(ref _InsertAfterMso, value, nameof(InsertAfterMso));
   }
-
   private String? _InsertAfterMso;
-
   /// <summary>
   /// Specifies a built-in control before which this button group is inserted.
   /// </summary>
@@ -82,9 +69,7 @@ public class ButtonGroup: ModelElement<DXO10CUI.ButtonGroup>
     get => _InsertBeforeMso;
     set => UpdateField(ref _InsertBeforeMso, value, nameof(InsertBeforeMso));
   }
-
   private String? _InsertBeforeMso;
-
   /// <summary>
   /// Specifies a qualified control identifier after which this button group is inserted.
   /// </summary>
@@ -94,9 +79,7 @@ public class ButtonGroup: ModelElement<DXO10CUI.ButtonGroup>
     get => _InsertAfterQualifiedId;
     set => UpdateField(ref _InsertAfterQualifiedId, value, nameof(InsertAfterQualifiedId));
   }
-
   private String? _InsertAfterQualifiedId;
-
   /// <summary>
   /// Specifies a qualified control identifier before which this button group is inserted.
   /// </summary>
@@ -106,6 +89,5 @@ public class ButtonGroup: ModelElement<DXO10CUI.ButtonGroup>
     get => _InsertBeforeQualifiedId;
     set => UpdateField(ref _InsertBeforeQualifiedId, value, nameof(InsertBeforeQualifiedId));
   }
-
   private String? _InsertBeforeQualifiedId;
 }

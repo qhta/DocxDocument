@@ -1,7 +1,5 @@
 namespace DocumentModel.Wordprocessing;
-
 #pragma warning disable CS1591
-
 public partial class Style
 {
   public bool ShouldSerializeNameLocal() => NameLocal is not null;

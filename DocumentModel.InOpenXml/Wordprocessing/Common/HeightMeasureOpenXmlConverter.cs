@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Converter class responsible for registering Open XML conversion delegates for table measurement properties,
 /// specifically for the HeightMeasure property in WordprocessingML documents.
@@ -21,7 +20,6 @@ public static class HeightMeasureOpenXmlConverter
     OpenXmlModelConverter.ConvertToOpenXmlDelegates[typeof(DXW.TableRowHeight)] = ConvertToOpenXmlTableRowHeight;
   }
 
-
   /// <summary>
   /// Converts an Open XML TableRowHeight element to its corresponding domain model representation.
   /// </summary>
@@ -35,7 +33,6 @@ public static class HeightMeasureOpenXmlConverter
       return HeightMeasure.FromOpenXml(tableRowHeight.Val, tableRowHeight.HeightType);
     return null;
   }
-
 
   /// <summary>
   /// Converts a model object representing table width to an Open XML TableRowHeight  object if the specified type
@@ -57,5 +54,4 @@ public static class HeightMeasureOpenXmlConverter
     }
     return null;
   }
-
 }

@@ -1,7 +1,5 @@
 namespace DocumentModel.Wordprocessing;
-
 #pragma warning disable CS1591
-
 public partial class DocumentProtection
 {
   public bool ShouldSerializeEdit() => Edit is not null;

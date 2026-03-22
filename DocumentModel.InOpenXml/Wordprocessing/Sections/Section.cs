@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 ///   Represents a section in a Word document.
 /// </summary>

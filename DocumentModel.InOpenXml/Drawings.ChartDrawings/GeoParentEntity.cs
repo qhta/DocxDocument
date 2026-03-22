@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents a parent geographic entity in a hierarchical containment relationship.
 /// </summary>
@@ -33,6 +32,5 @@ public class GeoParentEntity: ModelElement<DXO16DCD.GeoParentEntity>
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoParentEntity.EntityId))]
   public string? EntityId { get => _EntityId; set => UpdateField(ref _EntityId, value, nameof(EntityId)); }
-
   private string? _EntityId;
 }

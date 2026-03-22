@@ -12,6 +12,5 @@ public abstract partial class NoteReferenceMark<T> : ModelElement<T>, IRunConten
     /// Specifies that the element refers to: endnote / footnote or annotation.
     /// </summary>
     public NoteReferenceType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
-
     private NoteReferenceType? _Type;
 }

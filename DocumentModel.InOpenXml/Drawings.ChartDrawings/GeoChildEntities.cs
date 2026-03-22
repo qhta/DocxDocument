@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents a collection of child geographic entities within a hierarchical geographic structure.
 /// </summary>

@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Defines the NonVisualDrawingProperties Class.
 /// </summary>
@@ -15,9 +14,7 @@ public partial class NonVisualDrawingProperties<T>: ModelElement<T> where T: DX.
     get => _Id;
     set => UpdateField(ref _Id, value, nameof(Id));
   }
-
   private UInt32? _Id;
-
   /// <summary>
   ///   FontName compatible with Object Model (non-unique).
   /// </summary>
@@ -27,9 +24,7 @@ public partial class NonVisualDrawingProperties<T>: ModelElement<T> where T: DX.
     get => _Name;
     set => UpdateField(ref _Name, value, nameof(Name));
   }
-
   private string? _Name;
-
   /// <summary>
   ///   Description of the drawing element.
   /// </summary>
@@ -39,9 +34,7 @@ public partial class NonVisualDrawingProperties<T>: ModelElement<T> where T: DX.
     get => _Description;
     set => UpdateField(ref _Description, value, nameof(Description));
   }
-
   private string? _Description;
-
   /// <summary>
   ///   Flag determining to show or hide this element.
   /// </summary>
@@ -51,9 +44,7 @@ public partial class NonVisualDrawingProperties<T>: ModelElement<T> where T: DX.
     get => _Hidden;
     set => UpdateField(ref _Hidden, value, nameof(Hidden));
   }
-
   private bool? _Hidden;
-
   /// <summary>
   ///   Title
   /// </summary>
@@ -63,9 +54,7 @@ public partial class NonVisualDrawingProperties<T>: ModelElement<T> where T: DX.
     get => _Title;
     set => UpdateField(ref _Title, value, nameof(Title));
   }
-
   private string? _Title;
-
   /// <summary>
   ///   IHyperlink associated with clicking or selecting the element..
   /// </summary>
@@ -75,9 +64,7 @@ public partial class NonVisualDrawingProperties<T>: ModelElement<T> where T: DX.
     get => _HyperlinkOnClick;
     set => UpdateField(ref _HyperlinkOnClick, value, nameof(HyperlinkOnClick));
   }
-
   private HyperlinkOnClick? _HyperlinkOnClick;
-
   /// <summary>
   ///   IHyperlink associated with hovering over the element..
   /// </summary>
@@ -87,9 +74,7 @@ public partial class NonVisualDrawingProperties<T>: ModelElement<T> where T: DX.
     get => _HyperlinkOnHover;
     set => UpdateField(ref _HyperlinkOnHover, value, nameof(HyperlinkOnHover));
   }
-
   private HyperlinkOnHover? _HyperlinkOnHover;
-
   /// <summary>
   ///   Future extension.
   /// </summary>
@@ -100,15 +85,12 @@ public partial class NonVisualDrawingProperties<T>: ModelElement<T> where T: DX.
     set => UpdateField(ref _NonVisualDrawingPropertiesExtensionList, value,
       nameof(NonVisualDrawingPropertiesExtensionList));
   }
-
   private NonVisualDrawingPropertiesExtensionList? _NonVisualDrawingPropertiesExtensionList;
 }
-
 /// <summary>
 /// Specific DXD.NonVisualDrawingProperties mapping type
 /// </summary>
 [OpenXmlType(typeof(DXD.NonVisualDrawingProperties))]
 public class NonVisualDrawingProperties: NonVisualDrawingProperties<DXD.NonVisualDrawingProperties>
 {
-
 }

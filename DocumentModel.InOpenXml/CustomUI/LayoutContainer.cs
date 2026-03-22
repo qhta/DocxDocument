@@ -1,5 +1,4 @@
 namespace DocumentModel.CustomUI;
-
 /// <summary>
 /// <para>Defines the LayoutContainer Class.</para>
 /// <para>This class is available in Office 2010 and above.</para>
@@ -29,41 +28,31 @@ public class LayoutContainer: ModelElement<DXO10CUI.LayoutContainer>
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.LayoutContainer.Id))]
   public String? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
-
   private String? _Id;
-
   /// <summary>
   /// Specifies the qualified identifier of the control.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.LayoutContainer.QualifiedId))]
   public String? QualifiedId { get => _QualifiedId; set => UpdateField(ref _QualifiedId, value, nameof(QualifiedId)); }
-
   private String? _QualifiedId;
-
   /// <summary>
   /// Specifies an application-defined tag for the control.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.LayoutContainer.Tag))]
   public String? Tag { get => _Tag; set => UpdateField(ref _Tag, value, nameof(Tag)); }
-
   private String? _Tag;
-
   /// <summary>
   /// Specifies the alignment setting for the control.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.LayoutContainer.Align))]
   public Expand? Align { get => _Align; set => UpdateField(ref _Align, value, nameof(Align)); }
-
   private Expand? _Align;
-
   /// <summary>
   /// Specifies the expansion position in the layout.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.LayoutContainer.Expand))]
   public Expand? Expand { get => _Expand; set => UpdateField(ref _Expand, value, nameof(Expand)); }
-
   private Expand? _Expand;
-
   /// <summary>
   /// Specifies how child controls are arranged.
   /// </summary>
@@ -73,6 +62,5 @@ public class LayoutContainer: ModelElement<DXO10CUI.LayoutContainer>
     get => _LayoutChildren;
     set => UpdateField(ref _LayoutChildren, value, nameof(LayoutChildren));
   }
-
   private LayoutChildren? _LayoutChildren;
 }

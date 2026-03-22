@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawing;
-
 /// <summary>
 /// Describes non-visual properties for a group shape in chart drawings, including locking options and extension data for group-level settings.
 /// </summary>
@@ -15,9 +14,7 @@ public class NonVisualGroupShapeDrawingProperties: ModelElement<DXD.NonVisualGro
     get => _GroupShapeLocks;
     set => UpdateField(ref _GroupShapeLocks, value, nameof(GroupShapeLocks));
   }
-
   private GroupShapeLocks? _GroupShapeLocks;
-
   /// <summary>
   /// Extension list for additional or future non-visual group shape properties.
   /// </summary>
@@ -28,6 +25,5 @@ public class NonVisualGroupShapeDrawingProperties: ModelElement<DXD.NonVisualGro
     set => UpdateField(ref _NonVisualGroupDrawingShapePropsExtensionList, value,
       nameof(NonVisualGroupDrawingShapePropsExtensionList));
   }
-
   private NonVisualGroupDrawingShapePropsExtensionList? _NonVisualGroupDrawingShapePropsExtensionList;
 }

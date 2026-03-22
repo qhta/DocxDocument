@@ -1,7 +1,5 @@
 namespace DocumentModel.Wordprocessing;
-
 #pragma warning disable CS1591
-
 public partial class NumberingPictureBullet
 {
   public bool ShouldSerializeNumberingPictureBulletId() => NumberingPictureBulletId is not null;

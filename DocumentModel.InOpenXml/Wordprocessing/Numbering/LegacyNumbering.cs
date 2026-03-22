@@ -10,13 +10,11 @@ public class LegacyNumbering : ModelElement<DXW.LegacyNumbering>
  ///   Use Legacy Numbering Properties
  /// </summary>
  public Boolean Use { get => _Use; set => UpdateField(ref _Use, value, nameof(Use)); }
-
  private Boolean _Use;
  /// <summary>
  ///   Legacy Spacing
  /// </summary>
  public Twips? Space { get => _Space; set => UpdateField(ref _Space, value, nameof(Space)); }
-
  private Twips? _Space;
  /// <summary>
  ///   Legacy Indent

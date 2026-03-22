@@ -1,5 +1,4 @@
 namespace DocumentModel.CustomUI;
-
 /// <summary>
 /// <para>Defines the Gallery Class.</para>
 /// <para>This class is available in Office 2010 and above.</para>
@@ -20,25 +19,19 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.Size))]
   public Size? Size { get => _Size; set => UpdateField(ref _Size, value, nameof(Size)); }
-
   private Size? _Size;
-
   /// <summary>
   /// Specifies the callback that returns size.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.GetSize))]
   public String? GetSize { get => _GetSize; set => UpdateField(ref _GetSize, value, nameof(GetSize)); }
-
   private String? _GetSize;
-
   /// <summary>
   /// Specifies descriptive text associated with the control.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.Description))]
   public String? Description { get => _Description; set => UpdateField(ref _Description, value, nameof(Description)); }
-
   private String? _Description;
-
   /// <summary>
   /// Specifies the callback that returns description.
   /// </summary>
@@ -48,9 +41,7 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _GetDescription;
     set => UpdateField(ref _GetDescription, value, nameof(GetDescription));
   }
-
   private String? _GetDescription;
-
   /// <summary>
   /// Specifies whether content is refreshed when the list is opened.
   /// </summary>
@@ -60,41 +51,31 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _InvalidateContentOnDrop;
     set => UpdateField(ref _InvalidateContentOnDrop, value, nameof(InvalidateContentOnDrop));
   }
-
   private Boolean? _InvalidateContentOnDrop;
-
   /// <summary>
   /// Specifies the number of columns.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.Columns))]
   public int? Columns { get => _Columns; set => UpdateField(ref _Columns, value, nameof(Columns)); }
-
   private int? _Columns;
-
   /// <summary>
   /// Specifies the number of rows.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.Rows))]
   public int? Rows { get => _Rows; set => UpdateField(ref _Rows, value, nameof(Rows)); }
-
   private int? _Rows;
-
   /// <summary>
   /// Specifies the width of each item.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.ItemWidth))]
   public int? ItemWidth { get => _ItemWidth; set => UpdateField(ref _ItemWidth, value, nameof(ItemWidth)); }
-
   private int? _ItemWidth;
-
   /// <summary>
   /// Specifies the height of each item.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.ItemHeight))]
   public int? ItemHeight { get => _ItemHeight; set => UpdateField(ref _ItemHeight, value, nameof(ItemHeight)); }
-
   private int? _ItemHeight;
-
   /// <summary>
   /// Specifies the callback that returns item width.
   /// </summary>
@@ -104,9 +85,7 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _GetItemWidth;
     set => UpdateField(ref _GetItemWidth, value, nameof(GetItemWidth));
   }
-
   private String? _GetItemWidth;
-
   /// <summary>
   /// Specifies the callback that returns item height.
   /// </summary>
@@ -116,9 +95,7 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _GetItemHeight;
     set => UpdateField(ref _GetItemHeight, value, nameof(GetItemHeight));
   }
-
   private String? _GetItemHeight;
-
   /// <summary>
   /// Specifies whether item labels are shown.
   /// </summary>
@@ -128,9 +105,7 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _ShowItemLabel;
     set => UpdateField(ref _ShowItemLabel, value, nameof(ShowItemLabel));
   }
-
   private Boolean? _ShowItemLabel;
-
   /// <summary>
   /// Specifies whether the control is shown in the ribbon.
   /// </summary>
@@ -140,57 +115,43 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _ShowInRibbon;
     set => UpdateField(ref _ShowInRibbon, value, nameof(ShowInRibbon));
   }
-
   private GalleryShowInRibbon? _ShowInRibbon;
-
   /// <summary>
   /// Specifies the callback invoked when action occurs.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.OnAction))]
   public String? OnAction { get => _OnAction; set => UpdateField(ref _OnAction, value, nameof(OnAction)); }
-
   private String? _OnAction;
-
   /// <summary>
   /// Specifies whether the control is enabled.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.Enabled))]
   public Boolean? Enabled { get => _Enabled; set => UpdateField(ref _Enabled, value, nameof(Enabled)); }
-
   private Boolean? _Enabled;
-
   /// <summary>
   /// Specifies the callback that returns enabled.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.GetEnabled))]
   public String? GetEnabled { get => _GetEnabled; set => UpdateField(ref _GetEnabled, value, nameof(GetEnabled)); }
-
   private String? _GetEnabled;
-
   /// <summary>
   /// Specifies a custom image resource identifier.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.Image))]
   public String? Image { get => _Image; set => UpdateField(ref _Image, value, nameof(Image)); }
-
   private String? _Image;
-
   /// <summary>
   /// Specifies the built-in Office image identifier.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.ImageMso))]
   public String? ImageMso { get => _ImageMso; set => UpdateField(ref _ImageMso, value, nameof(ImageMso)); }
-
   private String? _ImageMso;
-
   /// <summary>
   /// Specifies the callback that returns image.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.GetImage))]
   public String? GetImage { get => _GetImage; set => UpdateField(ref _GetImage, value, nameof(GetImage)); }
-
   private String? _GetImage;
-
   /// <summary>
   /// Specifies whether item images are shown.
   /// </summary>
@@ -200,9 +161,7 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _ShowItemImage;
     set => UpdateField(ref _ShowItemImage, value, nameof(ShowItemImage));
   }
-
   private Boolean? _ShowItemImage;
-
   /// <summary>
   /// Specifies the callback that returns item count.
   /// </summary>
@@ -212,9 +171,7 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _GetItemCount;
     set => UpdateField(ref _GetItemCount, value, nameof(GetItemCount));
   }
-
   private String? _GetItemCount;
-
   /// <summary>
   /// Specifies the callback that returns item label.
   /// </summary>
@@ -224,9 +181,7 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _GetItemLabel;
     set => UpdateField(ref _GetItemLabel, value, nameof(GetItemLabel));
   }
-
   private String? _GetItemLabel;
-
   /// <summary>
   /// Specifies the callback that returns item screentip.
   /// </summary>
@@ -236,9 +191,7 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _GetItemScreentip;
     set => UpdateField(ref _GetItemScreentip, value, nameof(GetItemScreentip));
   }
-
   private String? _GetItemScreentip;
-
   /// <summary>
   /// Specifies the callback that returns item supertip.
   /// </summary>
@@ -248,9 +201,7 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _GetItemSupertip;
     set => UpdateField(ref _GetItemSupertip, value, nameof(GetItemSupertip));
   }
-
   private String? _GetItemSupertip;
-
   /// <summary>
   /// Specifies the callback that returns item image.
   /// </summary>
@@ -260,25 +211,19 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _GetItemImage;
     set => UpdateField(ref _GetItemImage, value, nameof(GetItemImage));
   }
-
   private String? _GetItemImage;
-
   /// <summary>
   /// Specifies the callback that returns item id.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.GetItemID))]
   public String? GetItemID { get => _GetItemID; set => UpdateField(ref _GetItemID, value, nameof(GetItemID)); }
-
   private String? _GetItemID;
-
   /// <summary>
   /// Specifies sample text used to size the control.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.SizeString))]
   public String? SizeString { get => _SizeString; set => UpdateField(ref _SizeString, value, nameof(SizeString)); }
-
   private String? _SizeString;
-
   /// <summary>
   /// Specifies the callback that returns selected item id.
   /// </summary>
@@ -288,9 +233,7 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _GetSelectedItemID;
     set => UpdateField(ref _GetSelectedItemID, value, nameof(GetSelectedItemID));
   }
-
   private String? _GetSelectedItemID;
-
   /// <summary>
   /// Specifies the callback that returns selected item index.
   /// </summary>
@@ -300,49 +243,37 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _GetSelectedItemIndex;
     set => UpdateField(ref _GetSelectedItemIndex, value, nameof(GetSelectedItemIndex));
   }
-
   private String? _GetSelectedItemIndex;
-
   /// <summary>
   /// Specifies the unique identifier of the control.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.Id))]
   public String? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
-
   private String? _Id;
-
   /// <summary>
   /// Specifies the qualified identifier of the control.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.QualifiedId))]
   public String? QualifiedId { get => _QualifiedId; set => UpdateField(ref _QualifiedId, value, nameof(QualifiedId)); }
-
   private String? _QualifiedId;
-
   /// <summary>
   /// Specifies an application-defined tag for the control.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.Tag))]
   public String? Tag { get => _Tag; set => UpdateField(ref _Tag, value, nameof(Tag)); }
-
   private String? _Tag;
-
   /// <summary>
   /// Specifies the identifier of a built-in Office control.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.IdMso))]
   public String? IdMso { get => _IdMso; set => UpdateField(ref _IdMso, value, nameof(IdMso)); }
-
   private String? _IdMso;
-
   /// <summary>
   /// Specifies the short screen tip text.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.Screentip))]
   public String? Screentip { get => _Screentip; set => UpdateField(ref _Screentip, value, nameof(Screentip)); }
-
   private String? _Screentip;
-
   /// <summary>
   /// Specifies the callback that returns screentip.
   /// </summary>
@@ -352,41 +283,31 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _GetScreentip;
     set => UpdateField(ref _GetScreentip, value, nameof(GetScreentip));
   }
-
   private String? _GetScreentip;
-
   /// <summary>
   /// Specifies the extended super tip text.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.Supertip))]
   public String? Supertip { get => _Supertip; set => UpdateField(ref _Supertip, value, nameof(Supertip)); }
-
   private String? _Supertip;
-
   /// <summary>
   /// Specifies the callback that returns supertip.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.GetSupertip))]
   public String? GetSupertip { get => _GetSupertip; set => UpdateField(ref _GetSupertip, value, nameof(GetSupertip)); }
-
   private String? _GetSupertip;
-
   /// <summary>
   /// Specifies the display label of the control.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.Label))]
   public String? Label { get => _Label; set => UpdateField(ref _Label, value, nameof(Label)); }
-
   private String? _Label;
-
   /// <summary>
   /// Specifies the callback that returns label.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.GetLabel))]
   public String? GetLabel { get => _GetLabel; set => UpdateField(ref _GetLabel, value, nameof(GetLabel)); }
-
   private String? _GetLabel;
-
   /// <summary>
   /// Specifies a built-in control after which this control is inserted.
   /// </summary>
@@ -396,9 +317,7 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _InsertAfterMso;
     set => UpdateField(ref _InsertAfterMso, value, nameof(InsertAfterMso));
   }
-
   private String? _InsertAfterMso;
-
   /// <summary>
   /// Specifies a built-in control before which this control is inserted.
   /// </summary>
@@ -408,9 +327,7 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _InsertBeforeMso;
     set => UpdateField(ref _InsertBeforeMso, value, nameof(InsertBeforeMso));
   }
-
   private String? _InsertBeforeMso;
-
   /// <summary>
   /// Specifies a qualified control identifier after which this control is inserted.
   /// </summary>
@@ -420,9 +337,7 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _InsertAfterQualifiedId;
     set => UpdateField(ref _InsertAfterQualifiedId, value, nameof(InsertAfterQualifiedId));
   }
-
   private String? _InsertAfterQualifiedId;
-
   /// <summary>
   /// Specifies a qualified control identifier before which this control is inserted.
   /// </summary>
@@ -432,49 +347,37 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _InsertBeforeQualifiedId;
     set => UpdateField(ref _InsertBeforeQualifiedId, value, nameof(InsertBeforeQualifiedId));
   }
-
   private String? _InsertBeforeQualifiedId;
-
   /// <summary>
   /// Specifies whether the control is visible.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.Visible))]
   public Boolean? Visible { get => _Visible; set => UpdateField(ref _Visible, value, nameof(Visible)); }
-
   private Boolean? _Visible;
-
   /// <summary>
   /// Specifies the callback that returns visible.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.GetVisible))]
   public String? GetVisible { get => _GetVisible; set => UpdateField(ref _GetVisible, value, nameof(GetVisible)); }
-
   private String? _GetVisible;
-
   /// <summary>
   /// Specifies the keyboard tip shown for quick access.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.Keytip))]
   public String? Keytip { get => _Keytip; set => UpdateField(ref _Keytip, value, nameof(Keytip)); }
-
   private String? _Keytip;
-
   /// <summary>
   /// Specifies the callback that returns keytip.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.GetKeytip))]
   public String? GetKeytip { get => _GetKeytip; set => UpdateField(ref _GetKeytip, value, nameof(GetKeytip)); }
-
   private String? _GetKeytip;
-
   /// <summary>
   /// Specifies whether the label is shown.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.ShowLabel))]
   public Boolean? ShowLabel { get => _ShowLabel; set => UpdateField(ref _ShowLabel, value, nameof(ShowLabel)); }
-
   private Boolean? _ShowLabel;
-
   /// <summary>
   /// Specifies the callback that returns show label.
   /// </summary>
@@ -484,17 +387,13 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _GetShowLabel;
     set => UpdateField(ref _GetShowLabel, value, nameof(GetShowLabel));
   }
-
   private String? _GetShowLabel;
-
   /// <summary>
   /// Specifies whether the image is shown.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.Gallery.ShowImage))]
   public Boolean? ShowImage { get => _ShowImage; set => UpdateField(ref _ShowImage, value, nameof(ShowImage)); }
-
   private Boolean? _ShowImage;
-
   /// <summary>
   /// Specifies the callback that returns show image.
   /// </summary>
@@ -504,6 +403,5 @@ public class Gallery: ModelElement<DXO10CUI.Gallery>
     get => _GetShowImage;
     set => UpdateField(ref _GetShowImage, value, nameof(GetShowImage));
   }
-
   private String? _GetShowImage;
 }

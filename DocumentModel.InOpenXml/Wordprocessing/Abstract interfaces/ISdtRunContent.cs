@@ -5,5 +5,4 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface ISdtRunContent: ICollectionItem
 {
-
 }

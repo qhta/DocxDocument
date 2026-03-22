@@ -1,5 +1,4 @@
 namespace DocumentModel.WebExtensions.UI;
-
 /// <summary>
 ///   Defines the WebExtensionTaskPane Class.
 /// </summary>

@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel;
-
 /// <summary>
 /// Defines a contract for objects that provide a name identifier.  
 /// </summary>

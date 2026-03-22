@@ -1,7 +1,5 @@
 using DocumentModel.Drawings;
-
 namespace DocumentModel.Wordprocessing.Drawings;
-
 /// <summary>
 ///   Defines the NonVisualGraphicFrameProperties Class.
 /// </summary>

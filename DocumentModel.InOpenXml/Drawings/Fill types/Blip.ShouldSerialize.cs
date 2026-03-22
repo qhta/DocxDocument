@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings;
-
 #pragma warning disable CS1591
-
 public partial class Blip
 {
   public bool ShouldSerializeEmbed() => Embed is not null;

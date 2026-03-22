@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing.VBA;
-
 /// <summary>
 ///   Defines the DocEvents Class.
 /// </summary>
@@ -15,9 +14,7 @@ public class DocEvents: ModelElement<DXOW.DocEvents>
     get => _EventDocNewXsdString;
     set => UpdateField(ref _EventDocNewXsdString, value, nameof(EventDocNewXsdString));
   }
-
   private string? _EventDocNewXsdString;
-
   /// <summary>
   ///   EventDocOpenXsdString.
   /// </summary>
@@ -27,9 +24,7 @@ public class DocEvents: ModelElement<DXOW.DocEvents>
     get => _EventDocOpenXsdString;
     set => UpdateField(ref _EventDocOpenXsdString, value, nameof(EventDocOpenXsdString));
   }
-
   private string? _EventDocOpenXsdString;
-
   /// <summary>
   ///   EventDocCloseXsdString.
   /// </summary>
@@ -39,9 +34,7 @@ public class DocEvents: ModelElement<DXOW.DocEvents>
     get => _EventDocCloseXsdString;
     set => UpdateField(ref _EventDocCloseXsdString, value, nameof(EventDocCloseXsdString));
   }
-
   private string? _EventDocCloseXsdString;
-
   /// <summary>
   ///   EventDocSyncXsdString.
   /// </summary>
@@ -51,9 +44,7 @@ public class DocEvents: ModelElement<DXOW.DocEvents>
     get => _EventDocSyncXsdString;
     set => UpdateField(ref _EventDocSyncXsdString, value, nameof(EventDocSyncXsdString));
   }
-
   private string? _EventDocSyncXsdString;
-
   /// <summary>
   ///   EventDocXmlAfterInsertXsdString.
   /// </summary>
@@ -63,9 +54,7 @@ public class DocEvents: ModelElement<DXOW.DocEvents>
     get => _EventDocXmlAfterInsertXsdString;
     set => UpdateField(ref _EventDocXmlAfterInsertXsdString, value, nameof(EventDocXmlAfterInsertXsdString));
   }
-
   private string? _EventDocXmlAfterInsertXsdString;
-
   /// <summary>
   ///   EventDocXmlBeforeDeleteXsdString.
   /// </summary>
@@ -75,9 +64,7 @@ public class DocEvents: ModelElement<DXOW.DocEvents>
     get => _EventDocXmlBeforeDeleteXsdString;
     set => UpdateField(ref _EventDocXmlBeforeDeleteXsdString, value, nameof(EventDocXmlBeforeDeleteXsdString));
   }
-
   private string? _EventDocXmlBeforeDeleteXsdString;
-
   /// <summary>
   ///   EventDocContentControlAfterInsertXsdString.
   /// </summary>
@@ -88,9 +75,7 @@ public class DocEvents: ModelElement<DXOW.DocEvents>
     set => UpdateField(ref _EventDocContentControlAfterInsertXsdString, value,
       nameof(EventDocContentControlAfterInsertXsdString));
   }
-
   private string? _EventDocContentControlAfterInsertXsdString;
-
   /// <summary>
   ///   EventDocContentControlBeforeDeleteXsdString.
   /// </summary>
@@ -101,9 +86,7 @@ public class DocEvents: ModelElement<DXOW.DocEvents>
     set => UpdateField(ref _EventDocContentControlBeforeDeleteXsdString, value,
       nameof(EventDocContentControlBeforeDeleteXsdString));
   }
-
   private string? _EventDocContentControlBeforeDeleteXsdString;
-
   /// <summary>
   ///   EventDocContentControlOnExistXsdString.
   /// </summary>
@@ -114,9 +97,7 @@ public class DocEvents: ModelElement<DXOW.DocEvents>
     set => UpdateField(ref _EventDocContentControlOnExistXsdString, value,
       nameof(EventDocContentControlOnExistXsdString));
   }
-
   private string? _EventDocContentControlOnExistXsdString;
-
   /// <summary>
   ///   EventDocContentControlOnEnterXsdString.
   /// </summary>
@@ -127,9 +108,7 @@ public class DocEvents: ModelElement<DXOW.DocEvents>
     set => UpdateField(ref _EventDocContentControlOnEnterXsdString, value,
       nameof(EventDocContentControlOnEnterXsdString));
   }
-
   private string? _EventDocContentControlOnEnterXsdString;
-
   /// <summary>
   ///   EventDocStoreUpdateXsdString.
   /// </summary>
@@ -139,9 +118,7 @@ public class DocEvents: ModelElement<DXOW.DocEvents>
     get => _EventDocStoreUpdateXsdString;
     set => UpdateField(ref _EventDocStoreUpdateXsdString, value, nameof(EventDocStoreUpdateXsdString));
   }
-
   private string? _EventDocStoreUpdateXsdString;
-
   /// <summary>
   ///   EventDocContentControlUpdateXsdString.
   /// </summary>
@@ -152,9 +129,7 @@ public class DocEvents: ModelElement<DXOW.DocEvents>
     set => UpdateField(ref _EventDocContentControlUpdateXsdString, value,
       nameof(EventDocContentControlUpdateXsdString));
   }
-
   private string? _EventDocContentControlUpdateXsdString;
-
   /// <summary>
   ///   EventDocBuildingBlockAfterInsertXsdString.
   /// </summary>
@@ -165,6 +140,5 @@ public class DocEvents: ModelElement<DXOW.DocEvents>
     set => UpdateField(ref _EventDocBuildingBlockAfterInsertXsdString, value,
       nameof(EventDocBuildingBlockAfterInsertXsdString));
   }
-
   private string? _EventDocBuildingBlockAfterInsertXsdString;
 }

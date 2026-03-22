@@ -34,6 +34,5 @@ public partial class SchemeColor : AbstractColor<DXD.SchemeColor>
  /// </para>
  /// </remarks>
  public SchemeColors? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
-
  private SchemeColors? _Val;
 }

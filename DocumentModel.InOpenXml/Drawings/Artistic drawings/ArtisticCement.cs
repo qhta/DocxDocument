@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 /// Represents an artistic cement effect, which simulates a cement texture with adjustable transparency and crack spacing.
 /// </summary>
@@ -15,9 +14,7 @@ public partial class ArtisticCement: ModelElement<DXO10D.ArtisticCement>
     get => _Transparency;
     set => UpdateField(ref _Transparency, value, nameof(Transparency));
   }
-
   private Int32? _Transparency;
-
   /// <summary>
   /// Spacing between cracks in the cement effect.
   /// </summary>
@@ -27,6 +24,5 @@ public partial class ArtisticCement: ModelElement<DXO10D.ArtisticCement>
     get => _CrackSpacing;
     set => UpdateField(ref _CrackSpacing, value, nameof(CrackSpacing));
   }
-
   private Int32? _CrackSpacing;
 }

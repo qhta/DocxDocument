@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings;
-
 #pragma warning disable CS1591
-
 public partial class ShapeStyle<T> 
 {
   public bool ShouldSerializeLineReference() => LineReference is not null;

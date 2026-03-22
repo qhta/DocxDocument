@@ -10,13 +10,11 @@ public partial class PresetGeometry : ModelElement<DXD.PresetGeometry>
  /// </summary>
  [OpenXmlProperty(nameof(DXD.PresetGeometry.Preset))]
  public Shapes? Preset { get => _Preset; set => UpdateField(ref _Preset, value, nameof(Preset)); }
-
  private Shapes? _Preset;
  /// <summary>
  ///   List of adjustment values for the preset shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.PresetGeometry.AdjustValueList))]
  public AdjustValueList? AdjustValueList { get => _AdjustValueList; set => UpdateField(ref _AdjustValueList, value, nameof(AdjustValueList)); }
-
  private AdjustValueList? _AdjustValueList;
 }

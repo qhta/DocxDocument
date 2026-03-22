@@ -11,19 +11,16 @@ public partial class DropDownListFormField : ModelElement<DXW.DropDownListFormFi
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DropDownListFormField.DropDownListSelection))]
  public Int32? DropDownListSelection { get => _DropDownListSelection; set => UpdateField(ref _DropDownListSelection, value, nameof(DropDownListSelection)); }
-
  private Int32? _DropDownListSelection;
  /// <summary>
  /// Index of the default item to be selected when the form is loaded.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DropDownListFormField.DefaultDropDownListItemIndex))]
  public Int32? DefaultDropDownListItemIndex { get => _DefaultDropDownListItemIndex; set => UpdateField(ref _DefaultDropDownListItemIndex, value, nameof(DefaultDropDownListItemIndex)); }
-
  private Int32? _DefaultDropDownListItemIndex;
  /// <summary>
  /// Collection of list entry form fields representing the available options in the drop-down list.
  /// </summary>
  public ListEntryFormFields? ListEntryFormFields { get => _ListEntryFormFields; set => UpdateField(ref _ListEntryFormFields, value, nameof(ListEntryFormFields)); }
-
  private ListEntryFormFields? _ListEntryFormFields;
 }

@@ -11,20 +11,17 @@ public partial class SdtContentCheckBox : ModelElement<DXO10W.SdtContentCheckBox
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.SdtContentCheckBox.Checked))]
  public Boolean? Checked { get => _Checked; set => UpdateField(ref _Checked, value, nameof(Checked)); }
-
  private Boolean? _Checked;
  /// <summary>
  /// Symbol used to represent the checked state of the checkbox.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.SdtContentCheckBox.CheckedState))]
  public CheckBoxSymbolType? CheckedState { get => _CheckedState; set => UpdateField(ref _CheckedState, value, nameof(CheckedState)); }
-
  private CheckBoxSymbolType? _CheckedState;
  /// <summary>
  /// Symbol used to represent the unchecked state of the checkbox.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.SdtContentCheckBox.UncheckedState))]
  public CheckBoxSymbolType? UncheckedState { get => _UncheckedState; set => UpdateField(ref _UncheckedState, value, nameof(UncheckedState)); }
-
  private CheckBoxSymbolType? _UncheckedState;
 }

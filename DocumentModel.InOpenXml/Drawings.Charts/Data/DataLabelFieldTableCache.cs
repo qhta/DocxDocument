@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents a cache of data label field table values for a chart.
 ///   This class provides storage for the number of points, the string values for each point, and any associated extension data.
@@ -13,9 +12,7 @@ public partial class DataLabelFieldTableCache: ModelElement<DXO13DC.DataLabelFie
   /// </summary>
   [OpenXmlProperty(nameof(DXO13DC.DataLabelFieldTableCache.PointCount))]
   public UInt32? PointCount { get => _PointCount; set => UpdateField(ref _PointCount, value, nameof(PointCount)); }
-
   private UInt32? _PointCount;
-
   /// <summary>
   ///   Collection of string values for each data point in the cache.
   /// </summary>
@@ -25,9 +22,7 @@ public partial class DataLabelFieldTableCache: ModelElement<DXO13DC.DataLabelFie
     get => _StringPoints;
     set => UpdateField(ref _StringPoints, value, nameof(StringPoints));
   }
-
   private StringPoints? _StringPoints;
-
   /// <summary>
   ///   Extension elements for additional cache customization or metadata.
   /// </summary>
@@ -37,6 +32,5 @@ public partial class DataLabelFieldTableCache: ModelElement<DXO13DC.DataLabelFie
     get => _StrDataExtension;
     set => UpdateField(ref _StrDataExtension, value, nameof(StrDataExtension));
   }
-
   private StrDataExtension? _StrDataExtension;
 }

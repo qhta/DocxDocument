@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 ///   Numbering Definitions.
 /// </summary>
@@ -12,7 +11,6 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
   public Numbering()
   {
   }
-
   /// <summary>
   /// Initializing constructor.
   /// </summary>
@@ -22,7 +20,6 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);
   }
-
   /// <summary>
   /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's Numberings part.
   /// </summary>
@@ -34,7 +31,6 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
     SetUpdatableElement(numbering);
     LoadData(numbering);
   }
-
   /// <summary>
   /// Attach this instance to the specified document. Data is stored to the document's Numberings part.
   /// </summary>
@@ -46,7 +42,6 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
     SetUpdatableElement(numbering);
     UpdateData(numbering);
   }
-
   /// <summary>
   /// Specifies to a consumer the progress in the last attempt made by the application to remove unused abstract numbering
   /// definitions from a given document. If a legacy document is opened by a consumer, it can choose to remove abstract
@@ -59,9 +54,7 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
     get => _lastRevAbstractNumbering;
     set => UpdateField(ref _lastRevAbstractNumbering, value, nameof(LastRevAbstractNumbering));
   }
-
   private int? _lastRevAbstractNumbering;
-
   /// <summary>
   /// Collection of abstract numbering definitions
   /// </summary>
@@ -78,9 +71,7 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
     }
     set => UpdateField(ref _AbstractNumberings, value, nameof(AbstractNumberings));
   }
-
   private AbstractNumberings? _AbstractNumberings;
-
   /// <summary>
   /// Updates the abstract numberings in the specified OpenXml element with abstract numberings defined in the AbstractNumberings collection.  
   /// </summary>
@@ -91,7 +82,6 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
   {
     AbstractNumberings.UpdateNumberings(element);
   }
-
   /// <summary>
   /// Loads abstract numberings from the specified OpenXmlElement into the AbstractNumberings collection, replacing any existing abstract numbering.
   /// </summary>
@@ -102,7 +92,6 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
   {
     AbstractNumberings.LoadNumberings(element);
   }
-
   /// <summary>
   /// Collection of numbering instances definitions
   /// </summary>
@@ -119,9 +108,7 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
     }
     set => UpdateField(ref _NumberingInstances, value, nameof(NumberingInstances));
   }
-
   private NumberingInstances? _NumberingInstances;
-
 
   /// <summary>
   /// Updates the numbering instances in the specified OpenXml element with numbering instances defined in the NumberingInstances collection.  
@@ -133,7 +120,6 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
   {
     NumberingInstances.UpdateNumberings(element);
   }
-
   /// <summary>
   /// Loads numbering instances from the specified OpenXmlElement into the NumberingInstances collection, replacing any existing NumberingInstances.
   /// </summary>
@@ -144,7 +130,6 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
   {
     NumberingInstances.LoadNumberings(element);
   }
-
   //  /// <summary>
   //  /// Collection of numbering picture bullets
   //  /// </summary>
@@ -153,6 +138,5 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
   //    get => _NumberingPictureBullets;
   //    set => UpdateField(ref _NumberingPictureBullets, value, nameof(NumberingPictureBullets));
   //  }
-
   //  private NumberingPictureBullets? _NumberingPictureBullets;
 }

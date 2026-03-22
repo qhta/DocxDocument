@@ -11,13 +11,11 @@ public partial class PathShadeProperties : ModelElement<DXO10W.PathShadeProperti
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.PathShadeProperties.Path))]
  public PathShade? Path { get => _Path; set => UpdateField(ref _Path, value, nameof(Path)); }
-
  private PathShade? _Path;
  /// <summary>
  /// The rectangle area to which the gradient fill is applied, allowing precise definition of the fill boundaries.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.PathShadeProperties.FillToRectangle))]
  public FillToRectangle? FillToRectangle { get => _FillToRectangle; set => UpdateField(ref _FillToRectangle, value, nameof(FillToRectangle)); }
-
  private FillToRectangle? _FillToRectangle;
 }

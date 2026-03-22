@@ -1,5 +1,4 @@
 using DocumentFormat.OpenXml;
-
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents an attached XML schema reference in a WordprocessingML document, enabling association of custom XML schemas with the document for validation and data binding.
@@ -13,9 +12,7 @@ public partial class AttachedSchema : ModelElement<DXW.AttachedSchema>
   [OpenXmlLoadData(nameof(LoadUriFromOpenXml))]
   [OpenXmlUpdateData(nameof(UpdateUriInOpenXml))]
   public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
-
   private string? _Uri;
-
   /// <summary>
   /// Returns a string representation of the current object.
   /// </summary>
@@ -24,19 +21,16 @@ public partial class AttachedSchema : ModelElement<DXW.AttachedSchema>
   {
     return _Uri;
   }
-
   /// <summary>
   /// Implicitly converts an AttachedSchema instance to its URI string.
   /// </summary>
   /// <param name="attachedSchema">Schema instance to convert</param>
   public static implicit operator string(AttachedSchema attachedSchema) => attachedSchema.Uri!;
-
   /// <summary>
   /// Implicitly converts a URI string to an AttachedSchema instance.
   /// </summary>
   /// <param name="uri">URI string to convert</param>
   public static implicit operator AttachedSchema(string uri) => new AttachedSchema { Uri = uri };
-
   /// <summary>
   ///   Updates the URI value of the specified Open XML element if it is an attached schema element.
   ///   If the URI is null or the provided element is not a <c>DXW.AttachedSchema</c>, this method performs no action.
@@ -49,7 +43,6 @@ public partial class AttachedSchema : ModelElement<DXW.AttachedSchema>
     if (openXmlElement is DXW.AttachedSchema attachedSchemaElement)
       attachedSchemaElement.Val = new StringValue(Uri);
   }
-
   /// <summary>
   ///   Loads the URI associated with the current attached schema from the specified Open XML element.
   ///   Updates the <c>Uri</c> property if the element is a <c>DXW.AttachedSchema</c>.

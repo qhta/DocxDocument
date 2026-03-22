@@ -10,6 +10,5 @@ public partial class HighLowLines : ModelElement<DXDC.HighLowLines>
   /// </summary>
   [OpenXmlProperty(nameof(DXDC.HighLowLines.ChartShapeProperties))]
   public ChartShapeProperties? ChartShapeProperties { get => _ChartShapeProperties; set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties)); }
-
   private ChartShapeProperties? _ChartShapeProperties;
 }

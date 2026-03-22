@@ -1,5 +1,4 @@
 namespace DocumentModel;
-
 public partial class ContentProperties
 {
   /// <summary>
@@ -21,7 +20,6 @@ public partial class ContentProperties
     OpenXmlModelConverter.ConvertToOpenXmlDelegates[typeof(DXEP.HyperlinkList)] = ConvertToOpenXmlHyperlinkList;
     OpenXmlModelConverter.ConvertToOpenXmlDelegates[typeof(DXEP.DigitalSignature)] = ConvertToOpenXmlDigitalSignature;
   }
-
   /// <summary>
   /// Converts an Open XML HeadingPairs element to its corresponding domain model representation.
   /// </summary>
@@ -37,7 +35,6 @@ public partial class ContentProperties
     }
     return null;
   }
-
   /// <summary>
   /// Converts the specified OpenXml VTVector element to a HeadingPairs value.
   /// </summary>
@@ -61,7 +58,6 @@ public partial class ContentProperties
     return null;
   }
 
-
   /// <summary>
   /// Converts a model object representing heading pairs to an Open XML HeadingPairs object if the specified type
   /// matches.
@@ -82,7 +78,6 @@ public partial class ContentProperties
     }
     return null;
   }
-
   /// <summary>
   /// Converts the specified HeadingPairs value to an OpenXml VTVector element.
   /// </summary>
@@ -91,7 +86,6 @@ public partial class ContentProperties
   public static DXVT.VTVector? ConvertVTVectorToHeadingPairs(HeadingPairs? value)
   {
     if (value == null) return null;
-
     var result = new DXVT.VTVector
     {
       Size = new DX.UInt32Value((uint)value.Count() * 2),
@@ -106,7 +100,6 @@ public partial class ContentProperties
     }
     return result;
   }
-
 
   /// <summary>
   /// Converts an OpenXml TitlesOfParts element to a list of string titles, if available.
@@ -125,7 +118,6 @@ public partial class ContentProperties
     }
     return null;
   }
-
   /// <summary>
   /// Converts a model object representing a list of titles of parts to an OpenXml TitlesOfParts instance if the
   /// specified type matches.
@@ -144,7 +136,6 @@ public partial class ContentProperties
     }
     return null;
   }
-
   /// <summary>
   /// Converts an Open XML HyperlinkList element to its corresponding model representation.
   /// </summary>
@@ -160,7 +151,6 @@ public partial class ContentProperties
     }
     return null;
   }
-
 
   /// <summary>
   /// Converts the specified OpenXml VTVector element to a HyperlinkList value.
@@ -216,7 +206,6 @@ public partial class ContentProperties
     return null;
   }
 
-
   /// <summary>
   /// Converts a model object representing a hyperlink list to an Open XML HyperlinkList instance if the specified type
   /// matches.
@@ -238,7 +227,6 @@ public partial class ContentProperties
     return null;
   }
 
-
   /// <summary>
   /// Converts the specified HyperlinkList value to an OpenXml VTVector element.
   /// </summary>
@@ -247,7 +235,6 @@ public partial class ContentProperties
   public static DXVT.VTVector? HyperlinkListToVTVector(HyperlinkList? value)
   {
     if (value == null) return null;
-
     var result = new DXVT.VTVector
     {
       Size = new DX.UInt32Value((uint)value.Count * 2),
@@ -267,7 +254,6 @@ public partial class ContentProperties
     }
     return result;
   }
-
   /// <summary>
   /// Converts an Open XML digital signature element to its corresponding byte array representation, if available.
   /// </summary>
@@ -286,7 +272,6 @@ public partial class ContentProperties
     }
     return null;
   }
-
   /// <summary>
   /// Converts a model object representing a digital signature to an Open XML DigitalSignature object, if compatible.
   /// </summary>
@@ -303,5 +288,4 @@ public partial class ContentProperties
       };
     return null;
   }
-
 }

@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel;
-
 /// <summary>
 /// Custom properties enable users to define custom metadata properties through a set of well-defined data types.
 /// </summary>
@@ -7,14 +6,12 @@
 [OpenXmlType(typeof(DXCP.Properties))]
 public sealed class CustomProperties : ModelElementCollection<CustomProperty, DXCP.Properties>
 {
-
   /// <summary>
   /// Default constructor.
   /// </summary>
   public CustomProperties()
   {
   }
-
 
   /// <summary>
   /// Initializing constructor.
@@ -25,7 +22,6 @@ public sealed class CustomProperties : ModelElementCollection<CustomProperty, DX
     if (document.WordprocessingDocument != null)
        AttachAndLoad(document.WordprocessingDocument);
   }
-
   /// <summary>
   /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
   /// </summary>
@@ -37,7 +33,6 @@ public sealed class CustomProperties : ModelElementCollection<CustomProperty, DX
     SetUpdatableElement(customFileProperties);
     LoadData(customFileProperties);
   }
-
   /// <summary>
   /// Attach this instance to the specified wordprocessingDocument. Data is stored to the wordprocessingDocument's PackageProperties.
   /// </summary>
@@ -49,7 +44,6 @@ public sealed class CustomProperties : ModelElementCollection<CustomProperty, DX
     SetUpdatableElement(customFileProperties);
     UpdateData(customFileProperties);
   }
-
   /// <summary>
   /// Loads data from customFileProperties to this instance.
   /// </summary>
@@ -63,7 +57,6 @@ public sealed class CustomProperties : ModelElementCollection<CustomProperty, DX
     }
   }
 
-
   /// <summary>
   /// Store data from this instance to CustomFileProperties.
   /// </summary>
@@ -75,7 +68,6 @@ public sealed class CustomProperties : ModelElementCollection<CustomProperty, DX
       customFileProperties.AppendChild(customDocumentProperty.CreateOpenCustomDocumentProperty());
     }
   }
-
   /// <summary>
   /// Automatically assigns PropertyId if not set, then adds the item to the collection.
   /// First PropertyId is 2, then increments from the highest existing PropertyId.
@@ -89,5 +81,4 @@ public sealed class CustomProperties : ModelElementCollection<CustomProperty, DX
     }
     base.Add(item);
   }
-
 }

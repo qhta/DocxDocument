@@ -11,7 +11,6 @@ public partial class Captions : ModelElement<DXW.Captions>
   [OpenXmlLoadData(nameof(LoadCaptionsInOpenXml))]
   [OpenXmlUpdateData(nameof(UpdateCaptionDefinitionsInOpenXml))]
   public CaptionDefinitions? CaptionDefinitions { get => _CaptionDefinitions; set => UpdateField(ref _CaptionDefinitions, value, nameof(CaptionDefinitions)); }
-
   private CaptionDefinitions? _CaptionDefinitions;
   /// <summary>
   /// Updates the caption definitions in the specified Open XML <see cref = "DXW.Captions"/> element to match the current
@@ -33,7 +32,6 @@ public partial class Captions : ModelElement<DXW.Captions>
         wordCaptions.AppendChild(caption);
     }
   }
-
   /// <summary>
   /// Loads caption definitions from the specified Open XML captions element into the current collection.
   /// </summary>
@@ -54,14 +52,12 @@ public partial class Captions : ModelElement<DXW.Captions>
       }
     }
   }
-
   /// <summary>
   /// Contains the collection of automatic captioning rules for objects in the document.
   /// </summary>
   [OpenXmlLoadData(nameof(LoadAutoCaptionsInOpenXml))]
   [OpenXmlUpdateData(nameof(UpdateAutoCaptionsInOpenXml))]
   public AutoCaptions? AutoCaptions { get => _AutoCaptions; set => UpdateField(ref _AutoCaptions, value, nameof(AutoCaptions)); }
-
   private AutoCaptions? _AutoCaptions;
   /// <summary>
   /// Updates the specified Open XML captions collection to reflect the current set of automatic captions.
@@ -84,11 +80,9 @@ public partial class Captions : ModelElement<DXW.Captions>
         if (openXmlItem is DXW.AutoCaption autoCaption)
           modelAutoCaptions.AppendChild(autoCaption);
       }
-
       wordCaptions.AppendChild(modelAutoCaptions);
     }
   }
-
   /// <summary>
   /// Loads automatic caption definitions from the specified Open XML captions collection into the current model.
   /// </summary>

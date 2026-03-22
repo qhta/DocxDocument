@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel;
-
 /// <summary>
 /// Provides methods for performing deep comparison of objects by recursively comparing their public properties.
 /// </summary>
@@ -32,7 +31,6 @@ public static class DeepComparer
       }
     }
     // Perform deep comparison of properties
-
     var properties = comparedType.GetModelProperties();
     foreach (var prop in properties)
     {
@@ -59,7 +57,6 @@ public static class DeepComparer
     }
     return result;
   }
-
   /// <summary>
   /// Recursively compares two objects for deep equality by comparing all public instance properties of the specified type.
   /// </summary>
@@ -71,7 +68,6 @@ public static class DeepComparer
   {
     if (obj1 is null && obj2 is null) return true;
     if (obj1 is null || obj2 is null) return false;
-
     // Perform deep comparison of properties
     var properties = comparedType.GetModelProperties();
     foreach (var prop in properties)

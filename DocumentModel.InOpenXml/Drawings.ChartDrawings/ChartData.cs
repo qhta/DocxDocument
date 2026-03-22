@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents the data source configuration for a chart, specifying whether data is external or embedded.
 /// </summary>
@@ -26,16 +25,12 @@ public class ChartData: ModelElement<DXO16DCD.ChartData>
     get => _ExternalData;
     set => UpdateField(ref _ExternalData, value, nameof(ExternalData));
   }
-
   private ExternalData? _ExternalData;
-
   /// <summary>
   /// Specifies the data.
   /// </summary>
   public Data? Data { get => _Data; set => UpdateField(ref _Data, value, nameof(Data)); }
-
   private Data? _Data;
-
   /// <summary>
   /// Specifies the extension list.
   /// </summary>
@@ -44,6 +39,5 @@ public class ChartData: ModelElement<DXO16DCD.ChartData>
     get => _ExtensionList;
     set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
   }
-
   private ExtensionList? _ExtensionList;
 }

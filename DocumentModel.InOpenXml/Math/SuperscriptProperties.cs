@@ -9,6 +9,5 @@ public partial class SuperscriptProperties : ModelElement<DXM.SuperscriptPropert
  ///   Specifies formatting of Superscript object argument.
  /// </summary>
  public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
-
  private ControlProperties? _ControlProperties;
 }

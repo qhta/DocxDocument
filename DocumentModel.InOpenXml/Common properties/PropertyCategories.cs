@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel;
-
 /// <summary>
 /// Contains constants for property categories, providing a standardized way to categorize properties across different types.
 ///

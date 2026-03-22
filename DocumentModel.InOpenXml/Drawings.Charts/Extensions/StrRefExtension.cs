@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents an extension for a string reference in a chart.
 ///   This extension allows specifying full references, level references, and formula references for string chart data.
@@ -16,9 +15,7 @@ public partial class StrRefExtension: Extension<DXDC.StrRefExtension>
     get => _FullReference;
     set => UpdateField(ref _FullReference, value, nameof(FullReference));
   }
-
   private FullReference? _FullReference;
-
   /// <summary>
   ///   Reference to a specific level within the string data (if applicable).
   /// </summary>
@@ -28,9 +25,7 @@ public partial class StrRefExtension: Extension<DXDC.StrRefExtension>
     get => _LevelReference;
     set => UpdateField(ref _LevelReference, value, nameof(LevelReference));
   }
-
   private LevelReference? _LevelReference;
-
   /// <summary>
   ///   Formula reference defining the string data source dynamic range.
   /// </summary>
@@ -40,6 +35,5 @@ public partial class StrRefExtension: Extension<DXDC.StrRefExtension>
     get => _FormulaReference;
     set => UpdateField(ref _FormulaReference, value, nameof(FormulaReference));
   }
-
   private FormulaReference? _FormulaReference;
 }

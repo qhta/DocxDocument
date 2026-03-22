@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel;
-
 /// <summary>
 /// Information about a property that is compatible with PropertyDescriptor.
 /// </summary>
@@ -9,7 +8,6 @@ public class TypeModel
   /// Registered type.
   /// </summary>
   public Type Type { get; }
-
   /// <summary>
   /// Initializes a new instance of the TypeModel class for the specified type.
   /// </summary>
@@ -18,5 +16,4 @@ public class TypeModel
   {
     Type = type;
   }
-
 }

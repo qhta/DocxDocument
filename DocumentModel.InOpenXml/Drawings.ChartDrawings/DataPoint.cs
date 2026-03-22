@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents a single data point in a chart series with customizable visual formatting.
 /// </summary>
@@ -27,9 +26,7 @@ public class DataPoint: ModelElement<DXO16DCD.DataPoint>
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.DataPoint.Idx))]
   public UInt32? Idx { get => _Idx; set => UpdateField(ref _Idx, value, nameof(Idx)); }
-
   private UInt32? _Idx;
-
   /// <summary>
   /// Specifies the shape properties.
   /// </summary>
@@ -39,9 +36,7 @@ public class DataPoint: ModelElement<DXO16DCD.DataPoint>
     get => _ShapeProperties;
     set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties));
   }
-
   private ShapeProperties? _ShapeProperties;
-
   /// <summary>
   /// Specifies the extension list.
   /// </summary>
@@ -51,6 +46,5 @@ public class DataPoint: ModelElement<DXO16DCD.DataPoint>
     get => _ExtensionList;
     set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
   }
-
   private ExtensionList? _ExtensionList;
 }

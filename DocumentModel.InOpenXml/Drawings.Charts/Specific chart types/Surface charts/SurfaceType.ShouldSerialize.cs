@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings.Charts;
-
 #pragma warning disable CS1591
-
 public partial class SurfaceType
 {
   public bool ShouldSerializeThickness() => Thickness is not null;

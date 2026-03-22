@@ -5,5 +5,4 @@ namespace DocumentModel.Vml;
 [OpenXmlType(typeof(Entry))]
 public class Entries : ElementCollection<Entry>
 {
-
 }

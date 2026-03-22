@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents the title displayed for a chart axis.
 /// </summary>
@@ -20,9 +19,7 @@ public class AxisTitle: ModelElement<DXO16DCD.AxisTitle>
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.AxisTitle.Text))]
   public Text? Text { get => _Text; set => UpdateField(ref _Text, value, nameof(Text)); }
-
   private Text? _Text;
-
   /// <summary>
   /// Specifies the shape properties.
   /// </summary>
@@ -32,9 +29,7 @@ public class AxisTitle: ModelElement<DXO16DCD.AxisTitle>
     get => _ShapeProperties;
     set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties));
   }
-
   private ShapeProperties? _ShapeProperties;
-
   /// <summary>
   /// Specifies the tx pr text body.
   /// </summary>
@@ -44,9 +39,7 @@ public class AxisTitle: ModelElement<DXO16DCD.AxisTitle>
     get => _TxPrTextBody;
     set => UpdateField(ref _TxPrTextBody, value, nameof(TxPrTextBody));
   }
-
   private TxPrTextBody? _TxPrTextBody;
-
   /// <summary>
   /// Specifies the extension list.
   /// </summary>
@@ -56,6 +49,5 @@ public class AxisTitle: ModelElement<DXO16DCD.AxisTitle>
     get => _ExtensionList;
     set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
   }
-
   private ExtensionList? _ExtensionList;
 }

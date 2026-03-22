@@ -1,5 +1,4 @@
 using DocumentModel.CustomXml;
-
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents a collection of additional schemas attached to a WordprocessingML document.
@@ -16,7 +15,6 @@ public class AttachedSchemas : ElementCollection<DMW.AttachedSchema>
  public AttachedSchemas()
  {
  }
-
  /// <summary>
  /// Initializing constructor.
  /// </summary>

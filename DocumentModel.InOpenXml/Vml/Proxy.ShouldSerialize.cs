@@ -1,7 +1,5 @@
 namespace DocumentModel.Vml;
-
 #pragma warning disable CS1591
-
 public partial class Proxy
 {
   public bool ShouldSerializeStart() => Start is not null;

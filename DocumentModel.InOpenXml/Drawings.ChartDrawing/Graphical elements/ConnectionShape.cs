@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawing;
-
 /// <summary>
 /// Describes a connection shape in chart drawings, including macro references, publishing options, non-visual connector properties, shape formatting, and style settings.
 /// </summary>
@@ -19,17 +18,13 @@ public class ConnectionShape: ModelElement<DXDCD.ConnectionShape>
   /// </summary>
   [OpenXmlProperty(nameof(DXDCD.ConnectionShape.Macro))]
   public string? Macro { get => _Macro; set => UpdateField(ref _Macro, value, nameof(Macro)); }
-
   private string? _Macro;
-
   /// <summary>
   /// Indicates whether the connection shape should be published to a server or external destination.
   /// </summary>
   [OpenXmlProperty(nameof(DXDCD.ConnectionShape.Published))]
   public bool? Published { get => _Published; set => UpdateField(ref _Published, value, nameof(Published)); }
-
   private bool? _Published;
-
   /// <summary>
   /// Non-visual properties for the connector shape, including drawing and connection settings.
   /// </summary>
@@ -40,9 +35,7 @@ public class ConnectionShape: ModelElement<DXDCD.ConnectionShape>
     set => UpdateField(ref _NonVisualConnectorShapeDrawingProperties, value,
       nameof(NonVisualConnectorShapeDrawingProperties));
   }
-
   private NonVisualConnectorShapeDrawingProperties? _NonVisualConnectorShapeDrawingProperties;
-
   /// <summary>
   /// Formatting and visual properties for the connection shape.
   /// </summary>
@@ -52,14 +45,11 @@ public class ConnectionShape: ModelElement<DXDCD.ConnectionShape>
     get => _ShapeProperties;
     set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties));
   }
-
   private ShapeProperties? _ShapeProperties;
-
   /// <summary>
   /// Style settings applied to the connection shape for appearance customization.
   /// </summary>
   [OpenXmlElement(typeof(DXDCD.Style))]
   public Style? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
-
   private Style? _Style;
 }

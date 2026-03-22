@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel;
-
 /// <summary>
 /// Provides methods for mapping model element properties to their corresponding OpenXML properties.
 /// </summary>
@@ -8,13 +7,11 @@
 /// and thread safe.</remarks>
 public static class OpenXmlPropertyMap
 {
-
   //  private static readonly Dictionary<(Type, string), (Type, string)> propertyMap = new()
   //  {
   //#pragma warning disable OOXML0001
   //    { (typeof(DMW.Document), nameof(DMW.Document.CoreProperties)), (typeof(DXPP.Document), "M`ainDocumentPart.OpenXmlPackage.PackageProperties") },
   //  };
-
 
   /// <summary>
   /// Retrieves the corresponding OpenXML property for a given model element property from the specified OpenXML type.
@@ -35,7 +32,6 @@ public static class OpenXmlPropertyMap
     return result;
   }
 
-
   /// <summary>
   /// Retrieves the get method information for the model property in the given OpenXml type.
   /// </summary>
@@ -54,9 +50,7 @@ public static class OpenXmlPropertyMap
     {
       return null;
     }
-
     var methodName = "Set" + modelElementProperty.Name;
-
     var methodInfo = openXmlType.GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public);
     if (methodInfo == null)
     {
@@ -65,10 +59,8 @@ public static class OpenXmlPropertyMap
     }
     if (methodInfo != null)
       return methodInfo;
-
     return null;
   }
-
   /// <summary>
   /// Retrieves the get method information for the model property in the given OpenXml type.
   /// </summary>
@@ -87,9 +79,7 @@ public static class OpenXmlPropertyMap
     {
       return null;
     }
-
     var methodName = "Get" + modelElementProperty.Name;
-
     var methodInfo = openXmlType.GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public);
     if (methodInfo == null)
     {
@@ -98,7 +88,6 @@ public static class OpenXmlPropertyMap
     }
     if (methodInfo != null)
       return methodInfo;
-
     return null;
   }
 }

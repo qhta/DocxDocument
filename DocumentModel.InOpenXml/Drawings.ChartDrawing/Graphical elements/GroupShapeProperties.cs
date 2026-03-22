@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawing;
-
 /// <summary>
 /// Describes properties for a group shape in chart drawings, including black and white rendering, 2D and 3D transforms, fill, effects, and extension data.
 /// </summary>
@@ -31,9 +30,7 @@ public class GroupShapeProperties: ModelElement<DXDCD.GroupShapeProperties>
     get => _BlackWhiteMode;
     set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode));
   }
-
   private BlackWhiteMode? _BlackWhiteMode;
-
   /// <summary>
   /// 2D transformation settings for positioning and scaling grouped objects.
   /// </summary>
@@ -43,33 +40,25 @@ public class GroupShapeProperties: ModelElement<DXDCD.GroupShapeProperties>
     get => _TransformGroup;
     set => UpdateField(ref _TransformGroup, value, nameof(TransformGroup));
   }
-
   private TransformGroup? _TransformGroup;
-
   /// <summary>
   /// Fill formatting applied to the group shape.
   /// </summary>
   [OpenXmlElement(typeof(DXD.Fill))]
   public Fill? Fill { get => _Fill; set => UpdateField(ref _Fill, value, nameof(Fill)); }
-
   private Fill? _Fill;
-
   /// <summary>
   /// Collection of effects applied to the group shape.
   /// </summary>
   [OpenXmlElement(typeof(DXD.EffectList))]
   public EffectList? EffectList { get => _EffectList; set => UpdateField(ref _EffectList, value, nameof(EffectList)); }
-
   private EffectList? _EffectList;
-
   /// <summary>
   /// Directed acyclic graph representing the structure and relationships of effects.
   /// </summary>
   [OpenXmlElement(typeof(DXD.EffectDag))]
   public EffectDag? EffectDag { get => _EffectDag; set => UpdateField(ref _EffectDag, value, nameof(EffectDag)); }
-
   private EffectDag? _EffectDag;
-
   /// <summary>
   /// 3D scene type specifying the environment for the group shape.
   /// </summary>
@@ -79,9 +68,7 @@ public class GroupShapeProperties: ModelElement<DXDCD.GroupShapeProperties>
     get => _Scene3DType;
     set => UpdateField(ref _Scene3DType, value, nameof(Scene3DType));
   }
-
   private Scene3DType? _Scene3DType;
-
   /// <summary>
   /// Extension list for additional or future group shape properties.
   /// </summary>
@@ -91,6 +78,5 @@ public class GroupShapeProperties: ModelElement<DXDCD.GroupShapeProperties>
     get => _ExtensionList;
     set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
   }
-
   private ExtensionList? _ExtensionList;
 }

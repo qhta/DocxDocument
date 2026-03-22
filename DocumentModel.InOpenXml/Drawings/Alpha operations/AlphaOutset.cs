@@ -10,6 +10,5 @@ public partial class AlphaOutset : ModelElement<DXD.AlphaOutset>
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AlphaOutset.Radius))]
  public Int64? Radius { get => _Radius; set => UpdateField(ref _Radius, value, nameof(Radius)); }
-
  private Int64? _Radius;
 }

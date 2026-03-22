@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings;
-
 #pragma warning disable CS1591
-
 public partial class PresetShadow
 {
   public bool ShouldSerializePreset() => Preset is not null;

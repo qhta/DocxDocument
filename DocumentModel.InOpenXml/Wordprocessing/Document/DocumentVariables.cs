@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Represents a collection of document variables in a WordprocessingML document.
 /// This class provides access to and management of <see cref = "DocumentVariable"/> objects, enabling advanced storage, retrieval, and organization of custom metadata or automation variables within the document.
@@ -7,14 +6,12 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.DocumentVariables))]
 public sealed class DocumentVariables : ModelElementCollection<DocumentVariable, DXW.DocumentVariables, DXW.DocumentVariable>
 {
-
   /// <summary>
   /// Default constructor.
   /// </summary>
   public DocumentVariables()
   {
   }
-
   /// <summary>
   /// Initializing constructor.
   /// </summary>
@@ -24,7 +21,6 @@ public sealed class DocumentVariables : ModelElementCollection<DocumentVariable,
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);
   }
-
   /// <summary>
   /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's DocumentSettings.
   /// </summary>
@@ -36,11 +32,9 @@ public sealed class DocumentVariables : ModelElementCollection<DocumentVariable,
     var DocumentVariables = documentSettings.Elements<DXW.DocumentVariables>().FirstOrDefault();
     if (DocumentVariables == null)
       return;
-
     SetUpdatableElement(DocumentVariables);
     LoadData(DocumentVariables);
   }
-
   /// <summary>
   /// Attach this instance to the specified document. Data is stored to the document's DocumentSettings.
   /// </summary>
@@ -55,7 +49,6 @@ public sealed class DocumentVariables : ModelElementCollection<DocumentVariable,
       DocumentVariables = new DXW.DocumentVariables();
       documentSettings.AddChildUsingSchemaOrder(DocumentVariables);
     }
-
     SetUpdatableElement(DocumentVariables);
     UpdateData(DocumentVariables);
   }

@@ -71,7 +71,6 @@ public partial class Anchor : ModelElement<DXD.Anchor>
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.Anchor.X))]
  public Int64? X { get => _X; set => UpdateField(ref _X, value, nameof(X)); }
-
  private Int64? _X;
  /// <summary>
  ///   Y-coordinate (vertical position) of the anchor point in 3D space.
@@ -103,7 +102,6 @@ public partial class Anchor : ModelElement<DXD.Anchor>
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.Anchor.Y))]
  public Int64? Y { get => _Y; set => UpdateField(ref _Y, value, nameof(Y)); }
-
  private Int64? _Y;
  /// <summary>
  ///   Z-coordinate (depth position) of the anchor point in 3D space.
@@ -140,6 +138,5 @@ public partial class Anchor : ModelElement<DXD.Anchor>
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.Anchor.Z))]
  public Int64? Z { get => _Z; set => UpdateField(ref _Z, value, nameof(Z)); }
-
  private Int64? _Z;
 }

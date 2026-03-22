@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents a query for retrieving detailed geographic data for a specific entity.
 /// </summary>
@@ -34,14 +33,11 @@ public class GeoDataEntityQuery: ModelElement<DXO16DCD.GeoDataEntityQuery>
     get => _EntityType;
     set => UpdateField(ref _EntityType, value, nameof(EntityType));
   }
-
   private EntityTypeEnum? _EntityType;
-
   /// <summary>
   /// Specifies the entity id.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoDataEntityQuery.EntityId))]
   public string? EntityId { get => _EntityId; set => UpdateField(ref _EntityId, value, nameof(EntityId)); }
-
   private string? _EntityId;
 }

@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents a collection of data point-to-entity mapping query results cached for map-based chart visualizations.
 /// </summary>

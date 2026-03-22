@@ -1,5 +1,4 @@
 ﻿using System.Reflection.Metadata;
-
 namespace DocumentModel;
 /// <summary>
 ///   Provides utility methods for resolving and working with .NET types by name at runtime.
@@ -15,7 +14,6 @@ public static class TypeHelper
   {
     if (string.IsNullOrEmpty(typeName))
       return null;
-
     var result = Assembly.GetAssembly(typeof(string))?.ExportedTypes.FirstOrDefault(t => t.Name == typeName);
     if (result == null)
       result = Assembly.GetAssembly(typeof(HexInt))?.ExportedTypes.FirstOrDefault(t => t.Name == typeName);

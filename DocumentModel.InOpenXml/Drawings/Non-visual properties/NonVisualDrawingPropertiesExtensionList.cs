@@ -1,7 +1,5 @@
 using DocumentModel.Drawings.Office.ScriptLink;
-
 namespace DocumentModel.Drawings;
-
 /// <summary>
 /// Defines a collection of non-visual drawing properties extensions.
 /// </summary>
@@ -19,9 +17,7 @@ public partial class NonVisualDrawingPropertiesExtensionList:
     get => _CompatExtension;
     set => UpdateField(ref _CompatExtension, value, nameof(CompatExtension));
   }
-
   private CompatExtension? _CompatExtension;
-
   /// <summary>
   ///   Background properties for the drawing element.
   /// </summary>
@@ -30,9 +26,7 @@ public partial class NonVisualDrawingPropertiesExtensionList:
     get => _BackgroundProperties;
     set => UpdateField(ref _BackgroundProperties, value, nameof(BackgroundProperties));
   }
-
   private BackgroundProperties? _BackgroundProperties;
-
   /// <summary>
   ///   Unique creation identifier for the drawing element.
   /// </summary>
@@ -41,9 +35,7 @@ public partial class NonVisualDrawingPropertiesExtensionList:
     get => _CreationId;
     set => UpdateField(ref _CreationId, value, nameof(CreationId));
   }
-
   private CreationId? _CreationId;
-
   /// <summary>
   ///   Reference to a predecessor drawing element.
   /// </summary>
@@ -52,9 +44,7 @@ public partial class NonVisualDrawingPropertiesExtensionList:
     get => _PredecessorDrawingElementReference;
     set => UpdateField(ref _PredecessorDrawingElementReference, value, nameof(PredecessorDrawingElementReference));
   }
-
   private PredecessorDrawingElementReference? _PredecessorDrawingElementReference;
-
   /// <summary>
   ///   Indicates whether the element is decorative.
   /// </summary>
@@ -63,9 +53,7 @@ public partial class NonVisualDrawingPropertiesExtensionList:
     get => _Decorative;
     set => UpdateField(ref _Decorative, value, nameof(Decorative));
   }
-
   private bool? _Decorative;
-
   /// <summary>
   ///   Classification outcome for accessibility or categorization.
   /// </summary>
@@ -74,9 +62,7 @@ public partial class NonVisualDrawingPropertiesExtensionList:
     get => _ClassificationOutcome;
     set => UpdateField(ref _ClassificationOutcome, value, nameof(ClassificationOutcome));
   }
-
   private ClassificationOutcome? _ClassificationOutcome;
-
   /// <summary>
   ///   Script link associated with the drawing element.
   /// </summary>
@@ -85,9 +71,7 @@ public partial class NonVisualDrawingPropertiesExtensionList:
     get => _ScriptLink;
     set => UpdateField(ref _ScriptLink, value, nameof(ScriptLink));
   }
-
   private ScriptLink? _ScriptLink;
-
   /// <summary>
   /// Uri string associated with the extension.
   /// </summary>
@@ -97,6 +81,5 @@ public partial class NonVisualDrawingPropertiesExtensionList:
     get => _Uri;
     set => UpdateField(ref _Uri, value, nameof(Uri));
   }
-
   private string? _Uri;
 }

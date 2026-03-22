@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawing;
-
 /// <summary>
 /// Describes non-visual properties for a graphic frame in chart drawings, including general drawing properties and frame-specific drawing settings.
 /// </summary>
@@ -15,9 +14,7 @@ public class NonVisualGraphicFrameProperties: ModelElement<DXDCD.NonVisualGraphi
     get => _NonVisualDrawingProperties;
     set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties));
   }
-
   private NonVisualDrawingProperties? _NonVisualDrawingProperties;
-
   /// <summary>
   /// Non-visual drawing properties specific to the graphic frame, including locking and editing restrictions.
   /// </summary>
@@ -28,6 +25,5 @@ public class NonVisualGraphicFrameProperties: ModelElement<DXDCD.NonVisualGraphi
     set => UpdateField(ref _NonVisualGraphicFrameDrawingProperties, value,
       nameof(NonVisualGraphicFrameDrawingProperties));
   }
-
   private NonVisualGraphicFrameDrawingProperties? _NonVisualGraphicFrameDrawingProperties;
 }

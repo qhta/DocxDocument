@@ -9,6 +9,5 @@ public partial class Stretch : ModelElement<DXD.Stretch>
  ///   Rectangle that defines the area to fill when stretching content.
  /// </summary>
  public RelativeRectangleType? FillRectangle { get => _FillRectangle; set => UpdateField(ref _FillRectangle, value, nameof(FillRectangle)); }
-
  private RelativeRectangleType? _FillRectangle;
 }

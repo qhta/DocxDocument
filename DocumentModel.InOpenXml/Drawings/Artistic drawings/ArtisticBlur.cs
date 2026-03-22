@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings;
-
 /// <summary>
 /// Represents an artistic blur effect, which applies a blur to an image or shape with a specified radius.
 /// </summary>
@@ -15,6 +14,5 @@ public partial class ArtisticBlur: ModelElement<DXO10D.ArtisticBlur>
     get => _Radius;
     set => UpdateField(ref _Radius, value, nameof(Radius));
   }
-
   private Int32? _Radius;
 }

@@ -76,13 +76,13 @@ global using DXVW = DocumentFormat.OpenXml.Vml.Wordprocessing;
 global using DXW = DocumentFormat.OpenXml.Wordprocessing;
 
 global using DM = DocumentModel;
-global using DMD = DocumentModel.Drawings;
-global using DMDO = DocumentModel.Drawings.Office;
-global using DMM = DocumentModel.Math;
-global using DMV = DocumentModel.Vml;
-global using DMW = DocumentModel.Wordprocessing;
-global using DMWD = DocumentModel.Wordprocessing.Drawings;
-global using DMWV = DocumentModel.Wordprocessing.Vml;
+//global using DMD = DocumentModel.Drawings;
+//global using DMDO = DocumentModel.Drawings.Office;
+//global using DMM = DocumentModel.Math;
+//global using DMV = DocumentModel.Vml;
+//global using DMW = DocumentModel.Wordprocessing;
+//global using DMWD = DocumentModel.Wordprocessing.Drawings;
+//global using DMWV = DocumentModel.Wordprocessing.Vml;
 global using EnumTypeConverter = DocumentModel.OpenXml.EnumTypeConverter;
 
 

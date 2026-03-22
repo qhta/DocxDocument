@@ -10,21 +10,16 @@ public partial class OfficeStyleSheetExtension : ModelElement<DXD.OfficeStyleShe
   ///   Theme family information associated with the extension, describing the family or category of the theme for compatibility and grouping.
   /// </summary>
   public ThemeFamily? ThemeFamily { get => _ThemeFamily; set => UpdateField(ref _ThemeFamily, value, nameof(ThemeFamily)); }
-
   private ThemeFamily? _ThemeFamily;
-
   /// <summary>
   ///   URI string associated with the extension, identifying the extension type or schema for the theme extension.
   /// </summary>
   [OpenXmlProperty(nameof(DXD.OfficeStyleSheetExtension.Uri))]
   public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
-
   private string? _Uri;
-
   /// <summary>
   ///   Additional URI string for the extension, used for custom or application-specific extension identification.
   /// </summary>
   public string? UriString { get => _UriString; set => UpdateField(ref _UriString, value, nameof(UriString)); }
-
   private string? _UriString;
 }

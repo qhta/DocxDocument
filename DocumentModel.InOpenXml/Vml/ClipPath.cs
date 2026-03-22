@@ -10,6 +10,5 @@ public partial class ClipPath : ModelElement<DXVO.ClipPath>
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.ClipPath.Value))]
  public string? Value { get => _Value; set => UpdateField(ref _Value, value, nameof(Value)); }
-
  private string? _Value;
 }

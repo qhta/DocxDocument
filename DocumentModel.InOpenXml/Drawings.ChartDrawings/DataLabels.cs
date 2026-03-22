@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents the collection of data labels and their default settings for a chart series or chart.
 /// </summary>
@@ -23,9 +22,7 @@ public class DataLabels: ModelElementCollection<DataLabel, DXO16DCD.DataLabels, 
   /// Specifies the pos.
   /// </summary>
   public DataLabelPos? Pos { get => _Pos; set => UpdateField(ref _Pos, value, nameof(Pos)); }
-
   private DataLabelPos? _Pos;
-
   /// <summary>
   /// Specifies the number format.
   /// </summary>
@@ -34,9 +31,7 @@ public class DataLabels: ModelElementCollection<DataLabel, DXO16DCD.DataLabels, 
     get => _NumberFormat;
     set => UpdateField(ref _NumberFormat, value, nameof(NumberFormat));
   }
-
   private NumberFormat? _NumberFormat;
-
   /// <summary>
   /// Specifies the shape properties.
   /// </summary>
@@ -45,9 +40,7 @@ public class DataLabels: ModelElementCollection<DataLabel, DXO16DCD.DataLabels, 
     get => _ShapeProperties;
     set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties));
   }
-
   private ShapeProperties? _ShapeProperties;
-
   /// <summary>
   /// Specifies the tx pr text body.
   /// </summary>
@@ -56,9 +49,7 @@ public class DataLabels: ModelElementCollection<DataLabel, DXO16DCD.DataLabels, 
     get => _TxPrTextBody;
     set => UpdateField(ref _TxPrTextBody, value, nameof(TxPrTextBody));
   }
-
   private TxPrTextBody? _TxPrTextBody;
-
   /// <summary>
   /// Specifies the data label visibilities.
   /// </summary>
@@ -67,16 +58,12 @@ public class DataLabels: ModelElementCollection<DataLabel, DXO16DCD.DataLabels, 
     get => _DataLabelVisibilities;
     set => UpdateField(ref _DataLabelVisibilities, value, nameof(DataLabelVisibilities));
   }
-
   private DataLabelVisibilities? _DataLabelVisibilities;
-
   /// <summary>
   /// Specifies the separator.
   /// </summary>
   public string? Separator { get => _Separator; set => UpdateField(ref _Separator, value, nameof(Separator)); }
-
   private string? _Separator;
-
   /// <summary>
   /// Specifies the hidden data labels.
   /// </summary>
@@ -85,9 +72,7 @@ public class DataLabels: ModelElementCollection<DataLabel, DXO16DCD.DataLabels, 
     get => _HiddenDataLabels;
     set => UpdateField(ref _HiddenDataLabels, value, nameof(HiddenDataLabels));
   }
-
   private HiddenDataLabels? _HiddenDataLabels;
-
   /// <summary>
   /// Specifies the extension list.
   /// </summary>
@@ -96,6 +81,5 @@ public class DataLabels: ModelElementCollection<DataLabel, DXO16DCD.DataLabels, 
     get => _ExtensionList;
     set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
   }
-
   private ExtensionList? _ExtensionList;
 }

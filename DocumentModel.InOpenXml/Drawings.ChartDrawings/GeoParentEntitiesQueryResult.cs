@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents the result of a parent entities query, containing the query specification and retrieved parent entity data.
 /// </summary>
@@ -37,17 +36,13 @@ public class GeoParentEntitiesQueryResult: ModelElement<DXO16DCD.GeoParentEntiti
     get => _GeoParentEntitiesQuery;
     set => UpdateField(ref _GeoParentEntitiesQuery, value, nameof(GeoParentEntitiesQuery));
   }
-
   private GeoParentEntitiesQuery? _GeoParentEntitiesQuery;
-
   /// <summary>
   /// Specifies the geo entity.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoParentEntitiesQueryResult.GeoEntity))]
   public GeoEntity? GeoEntity { get => _GeoEntity; set => UpdateField(ref _GeoEntity, value, nameof(GeoEntity)); }
-
   private GeoEntity? _GeoEntity;
-
   /// <summary>
   /// Specifies the geo parent entity.
   /// </summary>
@@ -57,6 +52,5 @@ public class GeoParentEntitiesQueryResult: ModelElement<DXO16DCD.GeoParentEntiti
     get => _GeoParentEntity;
     set => UpdateField(ref _GeoParentEntity, value, nameof(GeoParentEntity));
   }
-
   private GeoParentEntity? _GeoParentEntity;
 }

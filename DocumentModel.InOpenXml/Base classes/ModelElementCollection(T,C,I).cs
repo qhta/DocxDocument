@@ -1,7 +1,6 @@
 ﻿
 namespace DocumentModel;
 
-
 /// <summary>
 /// Represents a collection of model elements that can be synchronized with an Open XML composite element and its child elements.
 /// </summary>
@@ -20,7 +19,6 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   protected ModelElementCollection()
   {
   }
-
   /// <summary>
   /// Initializes a new instance of the ModelElementCollection class with the specified parent element.
   /// </summary>
@@ -28,7 +26,6 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   protected ModelElementCollection(ModelElement parent) : base(parent)
   {
   }
-
   /// <summary>
   /// Initializes a new instance of the collection from an Open XML composite element.
   /// </summary>
@@ -36,7 +33,6 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   protected ModelElementCollection(OpenXmlCollectionType? openXmlCollection) : base()
   {
   }
-
   /// <summary>
   /// Initializes a new instance of the collection from an enumerable of model elements.
   /// </summary>
@@ -48,7 +44,6 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
       this.Add(item);
     }
   }
-
   /// <summary>
   /// Loads model elements from the specified Open XML composite element and populates the collection.
   /// </summary>
@@ -72,7 +67,6 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
       this.Add(modelObject);
     }
   }
-
   /// <summary>
   /// Updates the Open XML composite element to reflect the current state of the collection.
   /// </summary>

@@ -1,5 +1,4 @@
 namespace DocumentModel;
-
 /// <summary>
 ///   Custom-defined document property.
 /// </summary>
@@ -14,14 +13,12 @@ public sealed partial class CustomProperty: ModelElement<DXCP.CustomDocumentProp
     get => GetUpdatableElement() as DXCP.CustomDocumentProperty; 
     set => SetUpdatableElement(value);
   }
-
   /// <summary>
   /// Default constructor needed for serialization.
   /// </summary>
   public CustomProperty(): base()
   {
   }
-
   /// <summary>
   /// Initialization constructor.
   /// </summary>
@@ -34,7 +31,6 @@ public sealed partial class CustomProperty: ModelElement<DXCP.CustomDocumentProp
     SetUpdatableElement(openXmlCustomDocumentProperty);
     LoadData(openXmlCustomDocumentProperty);
   }
-
   /// <summary>
   /// Creates and initializes an open custom document property based on the current state of the object.
   /// </summary>

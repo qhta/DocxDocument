@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Defines the MajorTickMarksTickMarks Class.
 /// </summary>
@@ -15,6 +14,5 @@ public class MajorTickMarksTickMarks: ModelElement<DXO16DCD.MajorTickMarksTickMa
     get => _ExtensionList;
     set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
   }
-
   private ExtensionList? _ExtensionList;
 }

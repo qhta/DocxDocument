@@ -10,6 +10,5 @@ public partial class RelationshipIdType : ModelElement<DXDC.RelationshipIdType>
   /// </summary>
   [OpenXmlProperty(nameof(DXDC.RelationshipIdType.Id))]
   public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
-
   private string? _Id;
 }

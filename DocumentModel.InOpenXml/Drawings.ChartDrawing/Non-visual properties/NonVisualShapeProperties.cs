@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawing;
-
 /// <summary>
 /// Describes non-visual properties for a shape in chart drawings, including general drawing properties and shape-specific drawing settings.
 /// </summary>
@@ -15,9 +14,7 @@ public class NonVisualShapeProperties: ModelElement<DXDCD.NonVisualShapeProperti
     get => _NonVisualDrawingProperties;
     set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties));
   }
-
   private NonVisualDrawingProperties? _NonVisualDrawingProperties;
-
   /// <summary>
   /// Non-visual drawing properties specific to the shape, including text box indication, locking options, and extension data.
   /// </summary>
@@ -27,6 +24,5 @@ public class NonVisualShapeProperties: ModelElement<DXDCD.NonVisualShapeProperti
     get => _NonVisualShapeDrawingProperties;
     set => UpdateField(ref _NonVisualShapeDrawingProperties, value, nameof(NonVisualShapeDrawingProperties));
   }
-
   private NonVisualShapeDrawingProperties? _NonVisualShapeDrawingProperties;
 }

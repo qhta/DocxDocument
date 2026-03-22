@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Office;
-
 /// <summary>
 ///   Specific DXOD.NonVisualGroupDrawingShapeProperties mapping type
 /// </summary>
@@ -7,5 +6,4 @@ namespace DocumentModel.Drawings.Office;
 public class NonVisualGroupDrawingShapeProperties:
   DMD.NonVisualGroupDrawingShapeProperties<DXOD.NonVisualGroupDrawingShapeProperties>
 {
-
 }

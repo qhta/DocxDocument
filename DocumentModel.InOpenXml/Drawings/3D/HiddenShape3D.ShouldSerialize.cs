@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings;
-
 #pragma warning disable CS1591
-
 public partial class HiddenShape3D
 {
   public bool ShouldSerializeZ() => Z is not null;

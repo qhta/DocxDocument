@@ -1,7 +1,5 @@
 namespace DocumentModel.Wordprocessing.Vml;
-
 #pragma warning disable CS1591
-
 public partial class TextWrap
 {
   public bool ShouldSerializeType() => Type is not null;

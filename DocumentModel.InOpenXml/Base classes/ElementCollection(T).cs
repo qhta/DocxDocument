@@ -1,7 +1,5 @@
 ﻿#pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
-
 namespace DocumentModel;
-
 /// <summary>
 /// Represents a collection of model elements.
 /// </summary>
@@ -9,10 +7,8 @@ namespace DocumentModel;
 public abstract class ElementCollection<ItemType> : ModelElement,
   IElementCollection<ItemType>, IEquatable<ElementCollection<ItemType>>, ICollection<ItemType>, IList, 
   INotificationSource, IEmptyCheckable
-
 {
   private readonly ObservableCollection<ItemType> _items = new();
-
   /// <summary>
   /// Initializes a new, empty collection.
   /// </summary>
@@ -20,7 +16,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   {
     _items.CollectionChanged += _items_CollectionChanged;
   }
-
   /// <summary>
   /// Creates a new collection with the specified parent element.
   /// The parent element is assigned to the Parent property of this collection, establishing a hierarchical relationship
@@ -33,7 +28,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     SetParent(parent);
   }
 
-
   /// <summary>
   /// Initializes a new collection with the specified items.
   /// </summary>
@@ -45,7 +39,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
       _items.Add(item);
     }
   }
-
   /// <summary>
   /// Handles the CollectionChanged event of the internal ObservableCollection.
   /// When items are added to the collection, this method checks if the new items implement the ICollectionItem interface and,
@@ -81,7 +74,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     if (!IsLoading && IsNotificationEnabled)
       SetIsModified(true);
   }
-
   /// <summary>
   /// Handles notification from child item and raises this PropertyChanged event.
   /// </summary>
@@ -92,17 +84,14 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     if (IsNotificationEnabled && PropertyName != null)
       NotifyPropertyChanged(PropertyName);
   }
-
   /// <summary>
   /// Returns the first item in the collection, or null if the collection is empty.
   /// </summary>
   public ItemType? First => this.Count > 0 ? this[0] : default;
-
   /// <summary>
   /// Returns the last item in the collection, or null if the collection is empty.
   /// </summary>
   public ItemType? Last => this.Count > 0 ? this[this.Count - 1] : default;
-
   /// <summary>
   /// Compares this collection to another collection for equality.
   /// </summary>
@@ -120,7 +109,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     return true;
   }
 
-
   /// <summary>
   /// Compares this collection to another object for equality.
   /// </summary>
@@ -133,7 +121,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     if (obj.GetType() != GetType()) return false;
     return Equals((ElementCollection<ItemType>)obj);
   }
-
   /// <summary>
   /// Returns an enumerator that iterates through the collection (non-generic).
   /// </summary>
@@ -141,7 +128,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   {
     return ((IEnumerable)_items).GetEnumerator();
   }
-
   /// <summary>
   /// Returns an enumerator that iterates through the collection.
   /// </summary>
@@ -149,7 +135,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   {
     return _items.GetEnumerator();
   }
-
   /// <summary>
   /// Adds an item to the collection.
   /// </summary>
@@ -158,7 +143,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   {
     _items.Add(item);
   }
-
   /// <summary>
   /// Removes all items from the collection.
   /// </summary>
@@ -166,7 +150,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   {
     _items.Clear();
   }
-
   /// <summary>
   /// Determines whether the collection contains a specific item.
   /// </summary>
@@ -176,7 +159,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   {
     return _items.Contains(item);
   }
-
   /// <summary>
   /// Copies the elements of the collection to an array, starting at a particular array index.
   /// </summary>
@@ -186,7 +168,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   {
     _items.CopyTo(array, arrayIndex);
   }
-
   /// <summary>
   /// Removes the first occurrence of a specific item from the collection.
   /// </summary>
@@ -197,12 +178,10 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     return _items.Remove(item);
   }
 
-
   /// <summary>
   /// Returns the number of items in the collection.
   /// </summary>
   public int Count => _items.Count;
-
   /// <summary>
   /// Copies the elements of the collection to a specified one-dimensional array, starting at the given index in the
   /// target array.
@@ -214,7 +193,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   {
     ((ICollection)_items).CopyTo(array, index);
   }
-
   /// <summary>
   /// Gets a value indicating whether access to the collection is synchronized (thread-safe).
   /// </summary>
@@ -222,7 +200,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   /// be shared among multiple threads without additional synchronization. If <see langword="false"/>, callers must
   /// implement their own synchronization to ensure thread safety when accessing the collection concurrently.</remarks>
   public bool IsSynchronized => ((ICollection)_items).IsSynchronized;
-
   /// <summary>
   /// Gets an object that can be used to synchronize access to the collection.
   /// </summary>
@@ -230,12 +207,10 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   /// collection from multiple threads. Synchronizing access using this object helps prevent race conditions and data
   /// corruption in multithreaded scenarios.</remarks>
   public object SyncRoot => ((ICollection)_items).SyncRoot;
-
   /// <summary>
   /// Indicates whether the collection is read-only.
   /// </summary>
   public bool IsReadOnly => false;
-
   /// <summary>
   /// Determines the index of a specific item in the collection.
   /// </summary>
@@ -245,7 +220,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   {
     return _items.IndexOf(item);
   }
-
   /// <summary>
   /// Inserts an item at the specified index.
   /// </summary>
@@ -255,7 +229,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   {
     _items.Insert(index, item);
   }
-
   /// <summary>
   /// Removes the item at the specified index.
   /// </summary>
@@ -264,7 +237,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   {
     _items.RemoveAt(index);
   }
-
   /// <summary>
   /// Returns or assigns the item at the specified index.
   /// </summary>
@@ -274,7 +246,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     get => _items[index];
     set => _items[index] = value;
   }
-
   /// <summary>
   /// Occurs when the collection changes, such as when items are added, removed, or the entire list is refreshed.
   /// </summary>
@@ -282,9 +253,7 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   /// provides details about the type of change and the affected items. This event is typically used to update UI
   /// elements or respond to dynamic data changes in data-binding scenarios.</remarks>
   public event NotifyCollectionChangedEventHandler? CollectionChanged;
-
   #region implementation of IList
-
   /// <summary>
   /// Adds an item to the collection and returns the index at which the item was inserted.
   /// </summary>
@@ -302,7 +271,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     }
     throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
   }
-
   /// <summary>
   /// Checks if an item is contained in the collection.
   /// </summary>
@@ -313,10 +281,8 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   {
     if (value is ItemType itemType)
       return Contains(itemType);
-
     throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
   }
-
   /// <summary>
   /// Gets the index of the item is contained in the collection.
   /// </summary>
@@ -327,10 +293,8 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   {
     if (value is ItemType itemType)
       return IndexOf(itemType);
-
     throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
   }
-
   /// <summary>
   /// Inserts an item of type ItemType at the specified index in the collection.
   /// </summary>
@@ -348,7 +312,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     }
     throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
   }
-
   /// <summary>
   /// Removes the specified item from the collection if it is of the correct type.
   /// </summary>
@@ -365,7 +328,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     }
     throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
   }
-
   /// <summary>
   /// Indexed access to items.
   /// </summary>
@@ -373,16 +335,13 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   /// <returns></returns>
   object? IList.this[int index] { get => this[index]; set => this[index] = (ItemType)value!; }
 
-
   /// <summary>
   /// Gets a value indicating whether the collection has a fixed size.
   /// </summary>
   /// <remarks>A fixed-size collection does not allow adding or removing elements after it is created. This
   /// property is useful for determining the mutability of the collection.</remarks>
   bool IList.IsFixedSize => false;
-
   #endregion
-
   /// <summary>
   /// Sets the IsNotification flag to be used by the instance.
   /// Flag is set in this instance and child items.
@@ -397,7 +356,6 @@ public abstract class ElementCollection<ItemType> : ModelElement,
         notificationSource.SetNotificationEnabled(enabled);
     }
   }
-
   /// <summary>
   /// Checks if the collection is empty.
   /// A collection is considered empty if all its properties are null or empty
@@ -416,7 +374,5 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     }
     return true;
   }
-
-
 
 }

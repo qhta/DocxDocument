@@ -10,12 +10,10 @@ public partial class SeparatorMark : ModelElement<DXW.SeparatorMark>, IRunConten
  /// Specifies whether the separator mark occurs in an endnote, footnote, or annotation.
  /// </summary>
  public NoteReferenceType? Value { get => _Value; set => UpdateField(ref _Value, value, nameof(Value)); }
-
  private NoteReferenceType? _Value;
  /// <summary>
  /// Indicates whether this instance is a continuation separator mark, used when footnotes or endnotes continue across pages.
  /// </summary>
  public bool Continuation { get => _Continuation; set => UpdateField(ref _Continuation, value, nameof(Continuation)); }
-
  private bool _Continuation;
 }

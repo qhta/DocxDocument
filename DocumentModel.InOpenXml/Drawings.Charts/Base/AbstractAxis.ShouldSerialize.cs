@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings.Charts;
-
 #pragma warning disable CS1591
-
 public partial class AbstractAxis<T> 
 {
   public bool ShouldSerializeAxisId() => AxisId is not null;

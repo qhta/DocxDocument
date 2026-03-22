@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents a label that displays information for a specific data point in a chart.
 /// </summary>
@@ -24,17 +23,13 @@ public class DataLabel: ModelElement<DXO16DCD.DataLabel>
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.DataLabel.Idx))]
   public UInt32? Idx { get => _Idx; set => UpdateField(ref _Idx, value, nameof(Idx)); }
-
   private UInt32? _Idx;
-
   /// <summary>
   /// Specifies the pos.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.DataLabel.Pos))]
   public DataLabelPos? Pos { get => _Pos; set => UpdateField(ref _Pos, value, nameof(Pos)); }
-
   private DataLabelPos? _Pos;
-
   /// <summary>
   /// Specifies the number format.
   /// </summary>
@@ -44,9 +39,7 @@ public class DataLabel: ModelElement<DXO16DCD.DataLabel>
     get => _NumberFormat;
     set => UpdateField(ref _NumberFormat, value, nameof(NumberFormat));
   }
-
   private NumberFormat? _NumberFormat;
-
   /// <summary>
   /// Specifies the shape properties.
   /// </summary>
@@ -56,9 +49,7 @@ public class DataLabel: ModelElement<DXO16DCD.DataLabel>
     get => _ShapeProperties;
     set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties));
   }
-
   private ShapeProperties? _ShapeProperties;
-
   /// <summary>
   /// Specifies the tx pr text body.
   /// </summary>
@@ -68,9 +59,7 @@ public class DataLabel: ModelElement<DXO16DCD.DataLabel>
     get => _TxPrTextBody;
     set => UpdateField(ref _TxPrTextBody, value, nameof(TxPrTextBody));
   }
-
   private TxPrTextBody? _TxPrTextBody;
-
   /// <summary>
   /// Specifies the data label visibilities.
   /// </summary>
@@ -80,9 +69,7 @@ public class DataLabel: ModelElement<DXO16DCD.DataLabel>
     get => _DataLabelVisibilities;
     set => UpdateField(ref _DataLabelVisibilities, value, nameof(DataLabelVisibilities));
   }
-
   private DataLabelVisibilities? _DataLabelVisibilities;
-
   /// <summary>
   /// Specifies the separator xsd string.
   /// </summary>
@@ -92,9 +79,7 @@ public class DataLabel: ModelElement<DXO16DCD.DataLabel>
     get => _SeparatorXsdString;
     set => UpdateField(ref _SeparatorXsdString, value, nameof(SeparatorXsdString));
   }
-
   private string? _SeparatorXsdString;
-
   /// <summary>
   /// Specifies the extension list.
   /// </summary>
@@ -104,6 +89,5 @@ public class DataLabel: ModelElement<DXO16DCD.DataLabel>
     get => _ExtensionList;
     set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
   }
-
   private ExtensionList? _ExtensionList;
 }

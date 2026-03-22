@@ -5,7 +5,7 @@ involved in anchoring graphical objects within chart surfaces.
 It allows for the placement, sizing, and interaction of "user shapes" 
 (such as text boxes, images, and custom shapes) that are drawn on top of a chart area.
 
-## Core Components
+## Components
 
 ### 1. Anchoring Mechanisms
 *   **Relative Anchoring (`RelativeAnchorSize`):** Defines the position and size of a drawing element relative to the chart's structural components (like percentage of width/height).
@@ -21,7 +21,7 @@ The namespace supports various types of graphical objects that can be embedded i
 *   **Groups (`GroupShape`):** Allows grouping multiple drawing elements to be transformed or manipulated as a single unit.
 
 ### 3. Visual Properties & Styling
-*   **Shape Properties:** Reuses core `Drawings.ShapeProperties` (Visual properties like fill, outline, effects) but scoped for chart contexts.
+*   **Shape Properties:** Reuses `Drawings.ShapeProperties` (Visual properties like fill, outline, effects) but scoped for chart contexts.
 *   **Styles (`Style`):** methods for referencing line lines, fills, effects, and font styles defined in the document's theme.
 
 ### 4. Non-Visual Properties

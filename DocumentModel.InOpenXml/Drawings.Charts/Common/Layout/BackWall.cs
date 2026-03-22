@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   3D back wall formatting.
 /// </summary>
@@ -14,9 +13,7 @@ public partial class BackWall: ModelElement<DXDC.BackWall>
   /// </summary>
   [OpenXmlProperty(nameof(DXDC.BackWall.Thickness))]
   public Byte? Thickness { get => _Thickness; set => UpdateField(ref _Thickness, value, nameof(Thickness)); }
-
   private Byte? _Thickness;
-
   /// <summary>
   /// The shape properties of the back wall.
   /// </summary>
@@ -26,9 +23,7 @@ public partial class BackWall: ModelElement<DXDC.BackWall>
     get => _ShapeProperties;
     set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties));
   }
-
   private ShapeProperties? _ShapeProperties;
-
   /// <summary>
   /// The picture options of the back wall.
   /// </summary>
@@ -38,9 +33,7 @@ public partial class BackWall: ModelElement<DXDC.BackWall>
     get => _PictureOptions;
     set => UpdateField(ref _PictureOptions, value, nameof(PictureOptions));
   }
-
   private PictureOptions? _PictureOptions;
-
   /// <summary>
   /// The extension list of the back wall.
   /// </summary>
@@ -50,6 +43,5 @@ public partial class BackWall: ModelElement<DXDC.BackWall>
     get => _ExtensionList;
     set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
   }
-
   private ExtensionList? _ExtensionList;
 }

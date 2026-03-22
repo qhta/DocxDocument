@@ -11,13 +11,11 @@ public partial class ExternalData : ModelElement<DXDC.ExternalData>
   /// </summary>
   [OpenXmlProperty(nameof(DXDC.ExternalData.Id))]
   public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
-
   private string? _Id;
   /// <summary>
   ///   Indicates whether the data source updates automatically when the chart is refreshed.
   /// </summary>
   [OpenXmlProperty(nameof(DXDC.ExternalData.AutoUpdate))]
   public bool? AutoUpdate { get => _AutoUpdate; set => UpdateField(ref _AutoUpdate, value, nameof(AutoUpdate)); }
-
   private bool? _AutoUpdate;
 }

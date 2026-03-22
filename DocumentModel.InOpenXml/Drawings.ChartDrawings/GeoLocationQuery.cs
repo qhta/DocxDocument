@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents a query for geocoding address components to determine geographic coordinates and location information.
 /// </summary>
@@ -37,9 +36,7 @@ public class GeoLocationQuery: ModelElement<DXO16DCD.GeoLocationQuery>
     get => _CountryRegion;
     set => UpdateField(ref _CountryRegion, value, nameof(CountryRegion));
   }
-
   private string? _CountryRegion;
-
   /// <summary>
   /// Specifies the admin district1.
   /// </summary>
@@ -49,9 +46,7 @@ public class GeoLocationQuery: ModelElement<DXO16DCD.GeoLocationQuery>
     get => _AdminDistrict1;
     set => UpdateField(ref _AdminDistrict1, value, nameof(AdminDistrict1));
   }
-
   private string? _AdminDistrict1;
-
   /// <summary>
   /// Specifies the admin district2.
   /// </summary>
@@ -61,17 +56,13 @@ public class GeoLocationQuery: ModelElement<DXO16DCD.GeoLocationQuery>
     get => _AdminDistrict2;
     set => UpdateField(ref _AdminDistrict2, value, nameof(AdminDistrict2));
   }
-
   private string? _AdminDistrict2;
-
   /// <summary>
   /// Specifies the postal code.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.GeoLocationQuery.PostalCode))]
   public string? PostalCode { get => _PostalCode; set => UpdateField(ref _PostalCode, value, nameof(PostalCode)); }
-
   private string? _PostalCode;
-
   /// <summary>
   /// Specifies the entity type.
   /// </summary>
@@ -81,6 +72,5 @@ public class GeoLocationQuery: ModelElement<DXO16DCD.GeoLocationQuery>
     get => _EntityType;
     set => UpdateField(ref _EntityType, value, nameof(EntityType));
   }
-
   private EntityTypeEnum? _EntityType;
 }

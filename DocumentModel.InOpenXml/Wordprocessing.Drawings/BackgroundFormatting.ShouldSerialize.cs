@@ -1,7 +1,5 @@
 namespace DocumentModel.Wordprocessing.Drawings;
-
 #pragma warning disable CS1591
-
 public partial class BackgroundFormatting
 {
   public bool ShouldSerializeFill() => Fill is not null;

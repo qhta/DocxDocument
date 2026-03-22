@@ -1,7 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
-
 namespace DocumentModel;
-
 /// <summary>
 /// This static class contains extension operations to be performed on a DocumentFormat.OpenXml.VariantTypes objects.
 /// </summary>
@@ -34,7 +32,6 @@ public static class VariantUtils
       { DXVT.VectorBaseValues.Error, typeof(int) },
       { DXVT.VectorBaseValues.ClassId, typeof(Guid) },
     };
-
   /// <summary>
   /// Converts the specified OpenXml VTVector element to a C# array.
   /// </summary>
@@ -42,7 +39,6 @@ public static class VariantUtils
   /// <returns></returns>
   // ReSharper disable InvokeAsExtensionMember
   public static Array? AsArray(this DXVT.VTVector? element) => AsArray(element, out _);
-
   /// <summary>
   /// Converts the specified OpenXml VTVector element to a C# array.
   /// using the specified OpenXml VectorBaseValues baseType.
@@ -55,7 +51,6 @@ public static class VariantUtils
     baseType = null;
     if (element == null)
       return null;
-
     baseType = element.BaseType?.Value;
     Type itemType = (baseType == null) ? typeof(object) : VectorBaseValueToType[(DXVT.VectorBaseValues)baseType];
     var size = /*(int?)element.Size?.Value ?? */element.Elements().Count();
@@ -68,7 +63,6 @@ public static class VariantUtils
     }
     return array;
   }
-
   /// <summary>
   /// Table to convert C# type to OpenXml VectorBaseValues value.
   /// Contains default base values. Default for String type is Lpwstr.
@@ -93,7 +87,6 @@ public static class VariantUtils
       { typeof(decimal), DXVT.VectorBaseValues.Currency },
       { typeof(Guid), DXVT.VectorBaseValues.ClassId },
     };
-
   /// <summary>
   /// Converts the specified array to an array of OpenXmlElements
   /// using the VectorBaseValues base type (when specified).
@@ -106,11 +99,9 @@ public static class VariantUtils
   {
     if (array == null)
       return null;
-
     var itemType = array.GetType().GetElementType();
     if (itemType == null)
       return null;
-
     if (baseType == null)
       baseType = TypeToVectorBase[itemType];
     var size = array.Length;
@@ -125,7 +116,6 @@ public static class VariantUtils
     }
     return result;
   }
-
   /// <summary>
   /// Converts the specified array to an OpenXml VTVector element
   /// using the VectorBaseValues base type (when specified).
@@ -138,11 +128,9 @@ public static class VariantUtils
   {
     if (array == null)
       return null;
-
     var itemType = array.GetType().GetElementType();
     if (itemType == null)
       return null;
-
     if (baseType == null)
       baseType = TypeToVectorBase[itemType];
     var size = array.Length;
@@ -156,7 +144,6 @@ public static class VariantUtils
     }
     return vector;
   }
-
   /// <summary>
   /// Table to convert OpenXml ArrayBaseValues value to C# type.
   /// </summary>
@@ -180,14 +167,12 @@ public static class VariantUtils
       { DXVT.ArrayBaseValues.Currency, typeof(Decimal) },
       { DXVT.ArrayBaseValues.Error, typeof(int) },
     };
-
   /// <summary>
   /// Converts the specified OpenXml VTArray element to a C# array.
   /// </summary>
   /// <param name="element"></param>
   /// <returns></returns>
   public static Array? AsArray(this DXVT.VTArray? element) => AsArray(element, out _);
-
   /// <summary>
   /// Converts the specified OpenXml VTArray element to a C# array
   /// using the specified OpenXml ArrayBaseValues base type. 
@@ -200,7 +185,6 @@ public static class VariantUtils
     baseType = null;
     if (element == null)
       return null;
-
     baseType = element.BaseType?.Value;
     var itemType = (baseType == null) ? typeof(object) : ArrayBaseValueToType[(DXVT.ArrayBaseValues)baseType];
     var lowerBounds = element.LowerBounds?.Value ?? 0;
@@ -215,7 +199,6 @@ public static class VariantUtils
     }
     return array;
   }
-
   /// <summary>
   /// Converts the value of the specified VTInteger variant to a nullable 32-bit integer.
   /// </summary>
@@ -227,10 +210,8 @@ public static class VariantUtils
   {
     if (long.TryParse(variant.InnerText, out var result))
       return result;
-
     return null;
   }
-
   /// <summary>
   /// Converts the value of the specified VTUnsignedInt32 variant to a 32-bit unsigned integer.
   /// </summary>
@@ -241,10 +222,8 @@ public static class VariantUtils
   {
     if (ulong.TryParse(variant.InnerText, out var result))
       return result;
-
     return null;
   }
-
   /// <summary>
   /// Converts the value of the specified <see cref="DXVT.VTBool"/> variant to a Boolean value.
   /// </summary>
@@ -255,10 +234,8 @@ public static class VariantUtils
   {
     if (bool.TryParse(variant.InnerText, out var result))
       return result;
-
     return null;
   }
-
   /// <summary>
   /// Converts the value of the specified VTByte variant to a nullable 8-bit signed integer.
   /// </summary>
@@ -268,10 +245,8 @@ public static class VariantUtils
   {
     if (sbyte.TryParse(variant.InnerText, out var result))
       return result;
-
     return null;
   }
-
   /// <summary>
   /// Converts the value of the specified VTShort variant to a nullable 16-bit signed integer.
   /// </summary>
@@ -283,10 +258,8 @@ public static class VariantUtils
   {
     if (short.TryParse(variant.InnerText, out var result))
       return result;
-
     return null;
   }
-
   /// <summary>
   /// Converts the value of the specified VTInt32 variant to a nullable 32-bit signed integer.
   /// </summary>
@@ -296,10 +269,8 @@ public static class VariantUtils
   {
     if (int.TryParse(variant.InnerText, out var result))
       return result;
-
     return null;
   }
-
   /// <summary>
   /// Converts the inner text of the specified VTInt64 variant to a 64-bit signed integer.
   /// </summary>
@@ -309,10 +280,8 @@ public static class VariantUtils
   {
     if (long.TryParse(variant.InnerText, out var result))
       return result;
-
     return null;
   }
-
   /// <summary>
   /// Converts the value of the specified VTUnsignedByte variant to a nullable 8-bit unsigned integer.
   /// </summary>
@@ -322,10 +291,8 @@ public static class VariantUtils
   {
     if (byte.TryParse(variant.InnerText, out var result))
       return result;
-
     return null;
   }
-
   /// <summary>
   /// Converts the value of the specified VTUnsignedShort variant to a nullable 16-bit unsigned integer.
   /// </summary>
@@ -335,10 +302,8 @@ public static class VariantUtils
   {
     if (ushort.TryParse(variant.InnerText, out var result))
       return result;
-
     return null;
   }
-
   /// <summary>
   /// Converts the value of the specified VTUnsignedInt32 variant to a nullable 32-bit unsigned integer.    
   /// </summary>
@@ -348,10 +313,8 @@ public static class VariantUtils
   {
     if (uint.TryParse(variant.InnerText, out var result))
       return result;
-
     return null;
   }
-
   /// <summary>
   /// Converts the value of the specified VTUnsignedInt64 variant to a nullable 64-bit unsigned integer.
   /// </summary>
@@ -361,10 +324,8 @@ public static class VariantUtils
   {
     if (ulong.TryParse(variant.InnerText, out var result))
       return result;
-
     return null;
   }
-
   /// <summary>
   /// Converts the value of the specified VTFloat variant to a nullable single-precision floating-point number. 
   /// </summary>
@@ -374,10 +335,8 @@ public static class VariantUtils
   {
     if (float.TryParse(variant.InnerText, out var result))
       return result;
-
     return null;
   }
-
   /// <summary>
   /// Converts the value of the specified VTDouble variant to a nullable double-precision floating-point number.
   /// </summary>
@@ -387,10 +346,8 @@ public static class VariantUtils
   {
     if (double.TryParse(variant.InnerText, out var result))
       return result;
-
     return null;
   }
-
   /// <summary>
   /// Converts the value of the specified VTDecimal variant to a nullable decimal number.
   /// </summary>
@@ -400,10 +357,8 @@ public static class VariantUtils
   {
     if (decimal.TryParse(variant.InnerText, out var result))
       return result;
-
     return null;
   }
-
   /// <summary>
   /// Converts the value of the specified VTCurrency variant to a nullable decimal number.
   /// </summary>
@@ -413,10 +368,8 @@ public static class VariantUtils
   {
     if (decimal.TryParse(variant.InnerText, out var result))
       return result;
-
     return null;
   }
-
   /// <summary>
   /// Converts the value of the specified VTDate variant to a nullable DateTime object.
   /// </summary>
@@ -428,10 +381,8 @@ public static class VariantUtils
   {
     if (DateTime.TryParse(variant.InnerText, out var result))
       return result;
-
     return null;
   }
-
   /// <summary>
   /// Converts the value of the specified <see cref="DXVT.VTFileTime"/> to a <see cref="DateTime"/> object, if possible.  
   /// </summary>
@@ -444,10 +395,8 @@ public static class VariantUtils
   {
     if (DateTime.TryParse(variant.InnerText, out var result))
       return result;
-
     return null;
   }
-
   /// <summary>
   /// Converts the value of the specified VTClassId to a Guid.
   /// </summary>
@@ -459,10 +408,8 @@ public static class VariantUtils
   {
     if (Guid.TryParse(variant.InnerText, out var result))
       return result;
-
     return null;
   }
-
   /// <summary>
   /// Converts the value of the specified VTError variant to a nullable HexInt.
   /// </summary>
@@ -472,10 +419,8 @@ public static class VariantUtils
   {
     if (HexInt.TryParse(variant.InnerText, out var result))
       return result;
-
     return null;
   }
-
   /// <summary>
   /// Converts the value of the specified VTBlob variant to a byte array.
   /// </summary>
@@ -486,7 +431,6 @@ public static class VariantUtils
     var value = Convert.FromBase64String(variant.InnerText);
     return value;
   }
-
   /// <summary>
   /// Converts the value of the specified VTOBlob variant to a byte array.
   /// </summary>
@@ -499,7 +443,6 @@ public static class VariantUtils
     Array.Copy(value, 4, result, 0, result.Length);
     return result;
   }
-
   /// <summary>
   /// Converts the value of the specified VTStorage variant to a byte array.
   /// </summary>
@@ -510,7 +453,6 @@ public static class VariantUtils
     var value = Convert.FromBase64String(variant.InnerText);
     return value;
   }
-
   /// <summary>
   /// Converts the value of the specified VTOStorage variant to a byte array.
   /// </summary>
@@ -521,7 +463,6 @@ public static class VariantUtils
     var value = Convert.FromBase64String(variant.InnerText);
     return value;
   }
-
   /// <summary>
   /// Converts the value of the specified VTOStreamData variant to a byte array.
   /// </summary>
@@ -532,7 +473,6 @@ public static class VariantUtils
     var value = Convert.FromBase64String(variant.InnerText);
     return value;
   }
-
   /// <summary>
   /// Converts the value of the specified VTVStreamData variant to a Guid version number and byte array.
   /// </summary>
@@ -547,7 +487,6 @@ public static class VariantUtils
     }
     return null;
   }
-
   /// <summary>
   /// Converts the specified OpenXmlElement, which must be some of the VTVariant types,
   /// to an object of the proper C# type.
@@ -618,10 +557,8 @@ public static class VariantUtils
       return vtOStream.AsByteArray();
     if (element is DXVT.VTVStreamData vtVStream)
       return vtVStream.AsGuidAndByteArray();
-
     return null;
   }
-
   /// <summary>
   /// Converts any object value to an OpenXmlElement
   /// using the specified VectorBaseValues base type.
@@ -635,7 +572,6 @@ public static class VariantUtils
       return new DXVT.VTNull();
     if (value == DBNull.Value)
       return new DXVT.VTEmpty();
-
     if (baseType == null)
     {
       if (value is Variant variant)
@@ -699,12 +635,9 @@ public static class VariantUtils
       return new DXVT.VTError("0x" + ((int)value).ToString("X8"));
     if (baseType == DXVT.VectorBaseValues.ClassId)
       return new DXVT.VTClassId(((Guid)value).ToString("B"));
-
     return null;
   }
-
   #region conversion methods needed for ExtendedFileProperties read/write
-
   /// <summary>
   /// Converts an array of items to the string of items separated with commas.
   /// Items which are strings are emitted enclosed with double-quotes characters.
@@ -714,7 +647,6 @@ public static class VariantUtils
   public static string? AsString(this Array? array)
   {
     if (array == null) return null;
-
     var ss = new List<string?>();
     for (int i = 0; i < array.Length; i++)
     {
@@ -724,7 +656,6 @@ public static class VariantUtils
     }
     return "{ " + String.Join(", ", ss) + " }";
   }
-
   /// <summary>
   /// Converts the specified OpenXml VTVector element to a StringList value.
   /// </summary>
@@ -743,7 +674,6 @@ public static class VariantUtils
     }
     return null;
   }
-
   /// <summary>
   /// Converts the specified StringList value to an OpenXml VTVector element.
   /// </summary>
@@ -752,7 +682,6 @@ public static class VariantUtils
   public static DXVT.VTVector? AsVTVector(this StringList? value)
   {
     if (value == null) return null;
-
     var result = new DXVT.VTVector
     {
       Size = new DX.UInt32Value((uint)value.Count()),
@@ -765,6 +694,5 @@ public static class VariantUtils
     }
     return result;
   }
-
   #endregion
 }

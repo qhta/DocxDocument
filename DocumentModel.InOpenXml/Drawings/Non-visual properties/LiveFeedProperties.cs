@@ -11,14 +11,11 @@ public partial class LiveFeedProperties : ModelElement<DXO21DL.LiveFeedPropertie
   /// </summary>
   [OpenXmlProperty(nameof(DXO21DL.LiveFeedProperties.LiveFeedBackgroundProperties))]
   public LiveFeedBackgroundProperties? LiveFeedBackgroundProperties { get => _LiveFeedBackgroundProperties; set => UpdateField(ref _LiveFeedBackgroundProperties, value, nameof(LiveFeedBackgroundProperties)); }
-
   private LiveFeedBackgroundProperties? _LiveFeedBackgroundProperties;
-
   /// <summary>
   ///   List of OfficeArt extension elements for the live feed, supporting extensibility and application-specific live feed data.
   /// </summary>
   [OpenXmlProperty(nameof(DXO21DL.LiveFeedProperties.OfficeArtExtensionList))]
   public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
-
   private OfficeArtExtensionList? _OfficeArtExtensionList;
 }

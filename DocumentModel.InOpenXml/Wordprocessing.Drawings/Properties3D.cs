@@ -1,5 +1,4 @@
 using DocumentModel.Drawings;
-
 namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents the set of 3D properties for a drawing element in a Wordprocessing document.

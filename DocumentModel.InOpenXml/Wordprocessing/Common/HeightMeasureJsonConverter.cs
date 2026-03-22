@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Provides JSON serialization and deserialization support for the <see cref="HeightMeasure"/> structure.
 /// </summary>
@@ -40,7 +39,6 @@ public class HeightMeasureJsonConverter : JsonConverter<DMW.HeightMeasure>
       var value = reader.GetString();
       if (value == null)
         throw new JsonException($"Expected string value for HeightMeasure, but got null");
-
       try
       {
         return new DMW.HeightMeasure(value);
@@ -51,7 +49,6 @@ public class HeightMeasureJsonConverter : JsonConverter<DMW.HeightMeasure>
           $"String must be a valid number optionally followed by unit suffix (mm, cm, pt, or in). Error: {ex.Message}", ex);
       }
     }
-
     if (reader.TokenType == JsonTokenType.Number)
     {
       try
@@ -60,22 +57,18 @@ public class HeightMeasureJsonConverter : JsonConverter<DMW.HeightMeasure>
         {
           return new HeightMeasure(longValue);
         }
-
         if (reader.TryGetUInt64(out ulong ulongValue))
         {
           return new HeightMeasure(ulongValue);
         }
-
         if (reader.TryGetDecimal(out decimal decimalValue))
         {
           return new HeightMeasure(decimalValue);
         }
-
         if (reader.TryGetDouble(out double doubleValue))
         {
           return new HeightMeasure(doubleValue);
         }
-
         throw new JsonException($"Invalid numeric value for HeightMeasure");
       }
       catch (FormatException ex)
@@ -83,10 +76,8 @@ public class HeightMeasureJsonConverter : JsonConverter<DMW.HeightMeasure>
         throw new JsonException($"Invalid numeric value for HeightMeasure. Error: {ex.Message}", ex);
       }
     }
-
     throw new JsonException($"Expected string or number token for HeightMeasure, but got {reader.TokenType}");
   }
-
   /// <summary>
   /// Writes a <see cref="HeightMeasure"/> value as JSON.
   /// </summary>

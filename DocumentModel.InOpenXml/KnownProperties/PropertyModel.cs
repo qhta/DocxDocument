@@ -1,10 +1,7 @@
 using System.Reflection;
-
 using Qhta.TextUtils;
 using Qhta.TypeUtils;
-
 namespace DocumentModel;
-
 /// <summary>
 /// Information about a property that is compatible with PropertyDescriptor.
 /// </summary>
@@ -14,7 +11,6 @@ public partial class PropertyModel: PropertyDescriptor
   /// Underlying reflected property information that this model represents. 
   /// </summary>
   public PropertyInfo PropertyInfo { get; private set; }
-
   /// <summary>
   /// Initializing constructor.
   /// </summary>
@@ -23,12 +19,10 @@ public partial class PropertyModel: PropertyDescriptor
   {
     PropertyInfo = propertyInfo;
   }
-
   /// <summary>
   /// Component to which this property is assigned.
   /// </summary>
   public object? Component { get; set; }
-
   /// <summary>
   /// Determines whether the value of this property can be reset to its default value for the specified component.
   /// </summary>
@@ -43,14 +37,11 @@ public partial class PropertyModel: PropertyDescriptor
     var defaultValueAttr = PropertyInfo.GetCustomAttribute<DefaultValueAttribute>();
     if (defaultValueAttr != null)
       return true;
-
     // For reference types (except string), can reset to null
     if (!PropertyInfo.PropertyType.IsValueType || Nullable.GetUnderlyingType(PropertyInfo.PropertyType) != null)
       return true;
-
     return false;
   }
-
   /// <summary>
   /// Gets the current value of the property for the specified component instance.
   /// </summary>
@@ -60,10 +51,8 @@ public partial class PropertyModel: PropertyDescriptor
   {
     if (component == null)
       component = Component;
-
     return PropertyInfo.GetValue(component);
   }
-
   /// <summary>
   /// Resets the value of the property on the specified component to its default value.
   /// </summary>
@@ -75,7 +64,6 @@ public partial class PropertyModel: PropertyDescriptor
   {
     if (component == null)
       component = Component;
-
     // Try to get default value from attribute
     var defaultValueAttr = PropertyInfo.GetCustomAttribute<DefaultValueAttribute>();
     if (defaultValueAttr != null)
@@ -83,25 +71,21 @@ public partial class PropertyModel: PropertyDescriptor
       PropertyInfo.SetValue(component, defaultValueAttr.Value);
       return;
     }
-
     // For reference types, reset to null
     if (!PropertyInfo.PropertyType.IsValueType)
     {
       PropertyInfo.SetValue(component, null);
       return;
     }
-
     // For nullable value types, reset to null
     if (Nullable.GetUnderlyingType(PropertyInfo.PropertyType) != null)
     {
       PropertyInfo.SetValue(component, null);
       return;
     }
-
     // For value types, reset to default(T)
     PropertyInfo.SetValue(component, Activator.CreateInstance(PropertyInfo.PropertyType));
   }
-
   /// <summary>
   /// Sets the value of the property for the specified component instance.
   /// </summary>
@@ -111,10 +95,8 @@ public partial class PropertyModel: PropertyDescriptor
   {
     if (component == null)
       component = Component;
-
     PropertyInfo.SetValue(component, value);
   }
-
   /// <summary>
   /// Determines whether the value of the property for the specified component should be serialized.
   /// </summary>
@@ -128,9 +110,7 @@ public partial class PropertyModel: PropertyDescriptor
   {
     if (component == null)
       return false;
-
     var currentValue = PropertyInfo.GetValue(component);
-
     // Check if there's a default value attribute
     var defaultValueAttr = PropertyInfo.GetCustomAttribute<DefaultValueAttribute>();
     if (defaultValueAttr != null)
@@ -138,25 +118,20 @@ public partial class PropertyModel: PropertyDescriptor
       // Serialize if value differs from default
       return !Equals(currentValue, defaultValueAttr.Value);
     }
-
     // For reference types, serialize if not null
     if (!PropertyInfo.PropertyType.IsValueType)
       return currentValue != null;
-
     // For nullable value types, serialize if has value
     if (Nullable.GetUnderlyingType(PropertyInfo.PropertyType) != null)
       return currentValue != null;
-
     // For value types, compare with default(T)
     var defaultValue = Activator.CreateInstance(PropertyInfo.PropertyType);
     return !Equals(currentValue, defaultValue);
   }
-
   /// <summary>
   /// Gets the type of the object that this property descriptor is associated with.
   /// </summary>
   public override Type ComponentType => PropertyInfo.DeclaringType ?? typeof(object);
-
   /// <summary>
   /// Gets a value indicating whether the property is read-only.
   /// </summary>
@@ -164,40 +139,33 @@ public partial class PropertyModel: PropertyDescriptor
   /// not defined. Use this property to determine whether the value of the property can be changed.</remarks>
   public override bool IsReadOnly => !PropertyInfo.CanWrite || PropertyInfo.GetSetMethod() == null;
 
-
   /// <summary>
   /// Gets a value indicating whether the property is nullable.
   /// </summary>
   /// <remarks>A property is considered nullable if it is a reference type or a nullable value type.</remarks>
   public bool IsNullable => PropertyInfo.PropertyType.IsNullable() || PropertyInfo.PropertyType.IsClass;
-
   /// <summary>
   /// Gets the type of the property represented by this instance.
   /// </summary>
   public override Type PropertyType => PropertyInfo.PropertyType;
-
   /// <summary>
   /// Gets the display name from propertyInfo.
   /// </summary>
   public override string Name => PropertyInfo.Name;
-
   /// <summary>
   /// Gets the display name from propertyInfo.
   /// </summary>
   public override string DisplayName => PropertyInfo.Name.DeCamelCase();
-
   /// <summary>
   /// Gets the type of the property represented by this instance.
   /// </summary>
   public Attribute[] PropertyAttributes => 
     PropertyInfo.GetCustomAttributes( true).OfType<Attribute>().ToArray();
 
-
   /// <summary>
   /// Gets the category of the property, if specified.
   /// </summary>
   public override string Category => PropertyInfo.GetCustomAttribute<CategoryAttribute>()?.Category ?? String.Empty;
-
   /// <summary>
   /// Gets the unit of measurement associated with the property, if specified.
   /// </summary>

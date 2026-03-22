@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Defines the NumberFormat Class.
 /// </summary>
@@ -11,9 +10,7 @@ public class NumberFormat: ModelElement<DXO16DCD.NumberFormat>
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.NumberFormat.FormatCode))]
   public string? FormatCode { get => _FormatCode; set => UpdateField(ref _FormatCode, value, nameof(FormatCode)); }
-
   private string? _FormatCode;
-
   /// <summary>
   /// Specifies the source linked.
   /// </summary>
@@ -23,6 +20,5 @@ public class NumberFormat: ModelElement<DXO16DCD.NumberFormat>
     get => _SourceLinked;
     set => UpdateField(ref _SourceLinked, value, nameof(SourceLinked));
   }
-
   private bool? _SourceLinked;
 }

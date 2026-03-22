@@ -11,13 +11,11 @@ public partial class SingleDataSourceRecord : ModelElement<DXOW.SingleDataSource
  /// </summary>
  [OpenXmlProperty(nameof(DXOW.SingleDataSourceRecord.RecordIncluded))]
  public bool? RecordIncluded { get => _RecordIncluded; set => UpdateField(ref _RecordIncluded, value, nameof(RecordIncluded)); }
-
  private bool? _RecordIncluded;
  /// <summary>
  /// Unique hash code for the record, used to identify and track the record in the data source.
  /// </summary>
  [OpenXmlProperty(nameof(DXOW.SingleDataSourceRecord.RecordHashCode))]
  public Int64? RecordHashCode { get => _RecordHashCode; set => UpdateField(ref _RecordHashCode, value, nameof(RecordHashCode)); }
-
  private Int64? _RecordHashCode;
 }

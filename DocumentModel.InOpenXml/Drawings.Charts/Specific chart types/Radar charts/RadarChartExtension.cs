@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents an extension for a radar chart, providing additional series filtering capabilities.
 /// </summary>
@@ -15,6 +14,5 @@ public partial class RadarChartExtension: Extension<DXDC.RadarChartExtension>
     get => _FilteredRadarSeries;
     set => UpdateField(ref _FilteredRadarSeries, value, nameof(FilteredRadarSeries));
   }
-
   private FilteredRadarSeries? _FilteredRadarSeries;
 }

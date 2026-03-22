@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 ///   Represents a WordprocessingML document, providing access to its settings, properties, and lifecycle management.
 ///   Enables loading, saving, and manipulating document-level metadata, content, and configuration for Open XML word processing documents.
@@ -12,7 +11,6 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   public Document()
   {
   }
-
   /// <summary>
   /// Creates a new instance of the <see cref="Document"/> class and opens a WordprocessingML document from the specified file path.
   /// </summary>
@@ -33,10 +31,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
       OpenDocument(filePath, access is FileAccess.ReadWrite or FileAccess.Write);
     if (access != FileAccess.ReadWrite && access != FileAccess.Write && access != FileAccess.Read)
       IsEditable = false;
-
     SetNotificationEnabled(true);
   }
-
   /// <summary>
   ///   Initializes a new instance of the <see cref="Document"/> class and attaches it to the specified Open XML word processing document.
   /// </summary>
@@ -46,7 +42,6 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     WordprocessingDocument = wordprocessingDocument;
     SetNotificationEnabled(true);
   }
-
   /// <summary>
   ///   The underlying Open XML word processing document associated with this instance.
   /// </summary>
@@ -56,9 +51,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     get => _WordprocessingDocument;
     set => UpdateField(ref _WordprocessingDocument, value, nameof(WordprocessingDocument));
   }
-
   private DXPP.WordprocessingDocument? _WordprocessingDocument;
-
   /// <summary>
   ///   Attaches this instance to the specified word processing document and loads data from its package properties and settings.
   /// </summary>
@@ -68,7 +61,6 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     SetNotificationEnabled(false);
     WordprocessingDocument = wordprocessingDocument;
     wordprocessingDocument.GetPackageProperties();
-
     CoreProperties.AttachAndLoad(wordprocessingDocument);
     ContentProperties.AttachAndLoad(wordprocessingDocument);
     StatisticProperties.AttachAndLoad(wordprocessingDocument);
@@ -76,7 +68,6 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     DocumentSettings?.AttachAndLoad(wordprocessingDocument);
     SetNotificationEnabled(true);
   }
-
   /// <summary>
   ///   Attaches this instance to the specified word processing document and updates its package properties and settings with current data.
   /// </summary>
@@ -90,7 +81,6 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     CustomProperties?.AttachAndUpdate(wordprocessingDocument);
     DocumentSettings?.AttachAndUpdate(wordprocessingDocument);
   }
-
   /// <summary>
   ///   Detaches the document and all associated property objects from their underlying data sources, releasing any held resources.
   ///   After calling this method, the document and its property objects are no longer connected to their original data.
@@ -105,7 +95,6 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     CustomProperties?.Detach();
     DocumentSettings?.Detach();
   }
-
   /// <summary>
   ///   Creates a new WordprocessingML document at the specified file path.
   /// </summary>
@@ -115,7 +104,6 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   {
     OpenDocument(filePath);
   }
-
   /// <summary>
   ///   Opens a WordprocessingML document from the specified file path.
   /// </summary>
@@ -127,14 +115,12 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     SetNotificationEnabled(false);
     Filename = filePath;
     IsEditable = editable;
-
     var wordprocessingDocument = (!File.Exists(filePath))
       ? WordprocessingHelper.CreateWordDocument(filePath)
       : WordprocessingHelper.OpenWordDocument(Filename, editable);
     AttachAndLoad(wordprocessingDocument);
     SetNotificationEnabled(true);
   }
-
   /// <summary>
   /// Filename of the document, which can be used for display purposes or to track the source of the document.
   /// </summary>
@@ -151,7 +137,6 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     }
   }
   private string? _Filename;
-
 
   /// <summary>
   /// Checks if the document is currently opened in an editable mode,
@@ -170,7 +155,6 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     }
   }
   private bool _IsEditable;
-
   /// <summary>
   /// Notifies listeners that the value of a property has changed.
   /// </summary>
@@ -183,7 +167,6 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     if (IsNotificationEnabled)
       OnPropertyChanged(propertyName);
   }
-
   /// <summary>
   /// Saves the current state of the document to its underlying data source, such as a file or stream.
   /// </summary>
@@ -195,13 +178,10 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
       return;
     if (WordprocessingDocument == null)
       throw new InvalidOperationException("Document is not attached.");
-
     if (WordprocessingDocument.CanSave)
       WordprocessingDocument.Save();
-
     SetIsModified(false);
   }
-
   /// <summary>
   ///   Releases resources used by the document and notifies property change.
   ///   Disposes the underlying Open XML document and detaches all property objects.
@@ -213,7 +193,6 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     Detach();
     NotifyPropertyChanged(nameof(WordprocessingDocument));
   }
-
   /// <summary>
   ///   Returns the updatable Open XML element associated with this document (the underlying <see cref="DXPP.WordprocessingDocument"/>).
   /// </summary>
@@ -222,7 +201,6 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   {
     return WordprocessingDocument;
   }
-
   /// <summary>
   ///   Core document properties such as title, author, and subject.
   /// </summary>
@@ -243,9 +221,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
       }
     }
   }
-
   private CoreProperties? _CoreProperties;
-
   /// <summary>
   ///   Content-specific document properties, such as content type and structure.
   /// </summary>
@@ -260,9 +236,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     }
     set => UpdateField(ref _ContentProperties!, value, nameof(ContentProperties));
   }
-
   private ContentProperties? _ContentProperties;
-
   /// <summary>
   ///   Statistical document properties such as word count and page count.
   /// </summary>
@@ -277,9 +251,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     }
     set => UpdateField(ref _StatisticProperties!, value, nameof(StatisticProperties));
   }
-
   private StatisticProperties? _StatisticProperties;
-
   /// <summary>
   ///   Custom document properties, allowing storage of user-defined metadata.
   /// </summary>
@@ -293,9 +265,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     }
     set => UpdateField(ref _CustomProperties, value, nameof(CustomProperties));
   }
-
   private CustomProperties? _CustomProperties;
-
   /// <summary>
   ///   Document-level settings, including compatibility, protection, and view options.
   /// </summary>
@@ -309,9 +279,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     }
     set => UpdateField(ref _DocumentSettings, value, nameof(DocumentSettings));
   }
-
   private DocumentSettings? _DocumentSettings;
-
 
   ///// <summary>
   /////   Document-level settings, including compatibility, protection, and view options.
@@ -328,9 +296,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   //  }
   //  set => UpdateField(ref _CompatibilitySettings, value, nameof(CompatibilitySettings));
   //}
-
   //private CompatibilitySettings? _CompatibilitySettings;
-
   /// <summary>
   /// Collection of all known document properties.
   /// </summary>
@@ -351,19 +317,15 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
         //  _KnownProperties.Add(new PropertyModel(propModel.PropertyInfo) { Component = DocumentSettings });
         //foreach (var propModel in CompatibilitySettings.KnownProperties.Values)
         //  _KnownProperties.Add(new PropertyModel(propModel.PropertyInfo) { Component = CompatibilitySettings });
-
         //_KnownProperties.AddRange(CompatibilitySettings.KnownProperties);
         //_KnownProperties.AddRange(MailMerge.KnownProperties);
         //_KnownProperties.AddRange(DMM.MathProperties.KnownProperties);
-
       }
       return _KnownProperties!;
     }
     set => UpdateField(ref _KnownProperties, value, nameof(KnownProperties));
   }
-
   private KnownProperties? _KnownProperties;
-
   /// <summary>
   ///   Collection of revision IDs for tracked changes in the document.
   /// </summary>
@@ -377,9 +339,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     }
     set => UpdateField(ref _Rsids, value, nameof(Rsids));
   }
-
   private Rsids? _Rsids;
-
   /// <summary>
   ///   Collection of DocumentVariables used in the document.
   /// </summary>
@@ -393,9 +353,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     }
     set => UpdateField(ref _DocumentVariables, value, nameof(DocumentVariables));
   }
-
   private DocumentVariables? _DocumentVariables;
-
   /// <summary>
   ///   Font table for the document, providing access to font definitions used within the document.
   /// </summary>
@@ -409,9 +367,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     }
     set => UpdateField(ref _FontTable, value, nameof(FontTableTable));
   }
-
   private FontTable? _FontTable;
-
 
   /// <summary>
   ///   Styles for the document, providing access to style definitions used within the document.
@@ -426,9 +382,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     }
     set => UpdateField(ref _Styles, value, nameof(Styles));
   }
-
   private Styles? _Styles;
-
   /// <summary>
   /// Numbering definitions for the document, providing access to numbering formats and instances used within the document.
   /// </summary>
@@ -442,6 +396,5 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     }
     set => UpdateField(ref _Numbering, value, nameof(Numbering));
   }
-
   private Numbering? _Numbering;
 }

@@ -1,5 +1,4 @@
 namespace DocumentModel.CustomUI;
-
 /// <summary>
 /// <para>Defines the MenuRoot Class.</para>
 /// <para>This class is available in Office 2010 and above.</para>
@@ -27,22 +26,17 @@ public class MenuRoot: ModelElement<DXO10CUI.MenuRoot>
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.MenuRoot.Title))]
   public String? Title { get => _Title; set => UpdateField(ref _Title, value, nameof(Title)); }
-
   private String? _Title;
-
   /// <summary>
   /// Specifies the callback that returns title.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.MenuRoot.GetTitle))]
   public String? GetTitle { get => _GetTitle; set => UpdateField(ref _GetTitle, value, nameof(GetTitle)); }
-
   private String? _GetTitle;
-
   /// <summary>
   /// Specifies the item size mode used by the control.
   /// </summary>
   [OpenXmlProperty(nameof(DXO10CUI.MenuRoot.ItemSize))]
   public ItemSize? ItemSize { get => _ItemSize; set => UpdateField(ref _ItemSize, value, nameof(ItemSize)); }
-
   private ItemSize? _ItemSize;
 }

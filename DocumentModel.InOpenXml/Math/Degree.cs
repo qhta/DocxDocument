@@ -1,5 +1,4 @@
 using DocumentModel.Wordprocessing;
-
 namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies the degree in the mathematical radical. This element is optional. 

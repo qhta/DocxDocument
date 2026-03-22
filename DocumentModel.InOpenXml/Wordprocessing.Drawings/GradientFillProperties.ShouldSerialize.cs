@@ -1,7 +1,5 @@
 namespace DocumentModel.Wordprocessing.Drawings;
-
 #pragma warning disable CS1591
-
 public partial class GradientFillProperties
 {
   public bool ShouldSerializeGradientStopList() => GradientStopList is not null;

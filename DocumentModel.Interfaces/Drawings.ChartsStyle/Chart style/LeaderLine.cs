@@ -1,9 +1,0 @@
-namespace DocumentModel.Drawings.ChartsStyle;
-
-/// <summary>
-///   Represents the style configuration for leader lines.
-/// </summary>
-public interface LeaderLine: StyleEntry
-{
-
-}

@@ -1,6 +1,5 @@
 ﻿#pragma warning disable CS0659  
 namespace DocumentModel;
-
 /// <summary>
 /// Base class for all model elements, providing property change notification support.
 /// </summary>
@@ -11,7 +10,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   {
     RegisterOpenXmlConversion();
   }
-
   /// <summary>
   /// Default constructor needed for serialization.
   /// </summary>
@@ -19,7 +17,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   {
     PropertyChanged += ModelElement_PropertyChanged;
   }
-
   /// <summary>
   /// Passes the IsModified up to the parent IModifiable object.
   /// </summary>
@@ -31,7 +28,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
       if (args.PropertyName != nameof(IsModified))
         SetIsModified(true);
   }
-
   /// <summary>
   /// Registers conversion delegates for handling Guid values in OpenXml serialization and deserialization operations.
   /// </summary>
@@ -43,7 +39,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     OpenXmlModelConverter.ConvertFromOpenXmlDelegates[typeof(Guid)] = ConvertGuidFromOpenXml;
     OpenXmlModelConverter.ConvertToOpenXmlDelegates[typeof(Guid)] = ConvertToGuidOpenXml;
   }
-
   /// <summary>
   /// Converts an OpenXml element representing a GUID value to a .NET Guid object if possible.
   /// </summary>
@@ -63,7 +58,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
       }
     return null;
   }
-
   /// <summary>
   /// Converts a <see cref="Guid"/> object to an OpenXml-compatible value if the specified type is supported.
   /// </summary>
@@ -86,12 +80,10 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     return null;
   }
 
-
   /// <summary>
   /// Occurs when a property value changes. Can be subscribed to by listeners to receive notifications of property changes.
   /// </summary>
   public event PropertyChangedEventHandler? PropertyChanged;
-
   /// <summary>
   /// Updates data and raises a property changed notification for the specified property.
   /// </summary>
@@ -106,7 +98,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     if (IsNotificationEnabled)
       PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
   }
-
   /// <summary>
   /// Raises a property changed notification for the specified property.
   /// </summary>
@@ -117,7 +108,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   {
     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
   }
-
   /// <summary>
   /// Updates the specified field with a new value and raises a property change notification if the value has changed.
   /// </summary>
@@ -131,7 +121,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// notification.</param>
   protected void UpdateField<FieldType>(ref FieldType? field, FieldType? value, string propertyName)
   {
-
     if (value is string stringValue && stringValue.Length == 0)
       value = default;
     if (!Equals(field, value))
@@ -163,22 +152,17 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     }
   }
 
-
   #region INotificationSource implementation
   /// <summary>
   /// Property name to be used when the object raise PropertyChanged event.
   /// </summary>
   public string? PropertyName => _PropertyName;
-
   private string? _PropertyName;
-
   /// <summary>
   /// Sets the property name.
   /// </summary>
   /// <param name="propertyName">Property name to set (null erases property name)</param>
-
   public void SetPropertyName(string? propertyName) => _PropertyName = propertyName;
-
   /// <summary>
   /// Flag to determine if notification is enabled when the object raise PropertyChanged event.
   /// It should be set to true when the object is created.
@@ -188,9 +172,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   [NotMapped]
   public bool IsNotificationEnabled => _IsNotificationEnabled 
                                        ?? Parent is INotificationSource parentSource && parentSource.IsNotificationEnabled;
-
   private bool? _IsNotificationEnabled;
-
 
   /// <summary>
   /// Sets the IsNotification flag to be used by the instance.
@@ -201,9 +183,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   {
     _IsNotificationEnabled = enabled;
   }
-
   #endregion
-
   /// <summary>
   /// Invoked on child item property change to raise PropertyChanged event on this model.
   /// </summary>
@@ -215,7 +195,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
       if (source.PropertyName is not null)
         NotifyPropertyChanged(source.PropertyName);
   }
-
   /// <summary>
   /// Invoked on child collection changed to raise PropertyChanged event on this model.
   /// </summary>
@@ -227,7 +206,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
       if (source.PropertyName is not null)
         NotifyPropertyChanged(source.PropertyName);
   }
-
   /// <summary>
   /// Determines whether the current ModelElement is equal to another ModelElement instance.
   /// </summary>
@@ -239,7 +217,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     if (ReferenceEquals(this, other)) return true;
     return DeepComparer.Equals(this, other);
   }
-
   /// <summary>
   /// Determines whether the specified object is equal to the current ModelElement instance.
   /// </summary>
@@ -255,7 +232,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     if (obj.GetType() != GetType()) return false;
     return DeepComparer.Equals(this.GetType(), this, obj);
   }
-
   /// <summary>
   /// Gets a dictionary of known properties for the current model element type, where the keys are property names
   /// and the values are PropertyModel instances containing metadata about each property.
@@ -266,7 +242,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   {
     if (_knownProperties == null)
     {
-
       var modelType = this.GetType();
       var knownProperties =
         modelType.GetProperty("KnownProperties", BindingFlags.Public | BindingFlags.Static)?
@@ -277,7 +252,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
       foreach (var kvp in knownProperties)
       {
         var prop = kvp.Value;
-
         var modelProp = (PropertyModel)prop.Clone()!;
         modelProp.Component = this;
         _knownProperties.Add(modelProp);
@@ -286,7 +260,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     return _knownProperties;
   }
   private KnownProperties? _knownProperties;
-
   /// <summary>
   /// Populates the current model element's properties with values from the specified Open XML element.
   /// </summary>
@@ -301,7 +274,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     OpenXmlModelConverter.LoadData(this, openXmlObject, this.GetType());
     SetIsLoading(false);
   }
-
   /// <summary>
   /// Updates the specified Open XML element with the current values of this model's public properties.
   /// </summary>
@@ -316,7 +288,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     var openXmlType = this.GetType().GetCustomAttribute<OpenXmlTypeAttribute>()?.Type ?? openXmlObject.GetType();
     OpenXmlModelConverter.UpdateData(this, openXmlObject, openXmlType);
   }
-
   /// <summary>
   /// Updates the value of the specified property in the underlying Open XML element, if it is available.
   /// </summary>
@@ -335,7 +306,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     if (openXmlProperty == null) return;
     OpenXmlModelConverter.UpdateOpenXmlProperty(this, modelProperty, updatableElement, openXmlProperty);
   }
-
   /// <summary>
   /// Retrieves the Open XML element that can be updated by the derived class.  
   /// </summary>
@@ -345,7 +315,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   /// <returns>An object representing the updatable Open XML element. The specific type and structure depend on the
   /// implementation in the derived class.</returns>
   public virtual object? GetUpdatableElement() => null;
-
   /// <summary>
   /// Parent object that contains this item.
   /// </summary>
@@ -356,9 +325,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     [DebuggerStepThrough]
     get => _Parent;
   }
-
   private object? _Parent;
-
   /// <summary>
   /// Sets the parent object to be used by the instance.
   /// </summary>
@@ -367,7 +334,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   {
     _Parent = parent;
   }
-
 
   /// <summary>
   /// Optional collection that contains this item.
@@ -379,9 +345,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
     [DebuggerStepThrough]
     get => _Collection;
   }
-
   private object? _Collection;
-
   /// <summary>
   /// Sets the collection object to be used by the instance.
   /// </summary>
@@ -390,7 +354,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   {
     _Collection = collection;
   }
-
   /// <summary>
   /// Gets a value indicating whether the object has been modified since it was last saved or loaded.
   /// </summary>
@@ -398,9 +361,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   [JsonIgnore]
   [NotMapped]
   public bool IsModified => _IsModified;
-
   private bool _IsModified;
-
   /// <summary>
   /// Sets the IsModified flag to be used by the instance.
   /// </summary>
@@ -428,7 +389,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
             if (prop.GetIndexParameters().Length == 0)
               if (prop.GetValue(this) is IModifiable modifiableChild)
                 modifiableChild.SetIsModified(IsModified);
-
           }
           catch (Exception ex)
           {
@@ -447,9 +407,7 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   [JsonIgnore]
   [NotMapped]
   public bool IsLoading => _isLoading;
-
   private bool _isLoading;
-
   /// <summary>
   /// Sets the IsLoading flag to be used by the instance.
   /// </summary>
@@ -458,7 +416,6 @@ public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelEle
   {
     _isLoading = isLoading;
   }
-
   /// <summary>
   /// Checks if all public properties of the current model element are null or empty (for strings and collections).
   /// </summary>

@@ -4,5 +4,4 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public interface ISdtBlockContent: ICollectionItem
 {
-
 }

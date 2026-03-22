@@ -1,5 +1,4 @@
 ﻿namespace DocumentModel.Drawings;
-
 /// <summary>
 ///   Represents an element that supports extensibility for office style sheets through an extension list.
 /// </summary>

@@ -13,5 +13,4 @@ public partial class Bookmark : CollectionItem
   /// End element of the bookmark, specifying the location where the bookmark ends.
   /// </summary>
   public BookmarkEnd? End { get; set; }
-
 }

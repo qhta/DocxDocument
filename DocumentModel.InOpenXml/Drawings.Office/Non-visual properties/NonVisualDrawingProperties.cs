@@ -5,5 +5,4 @@ namespace DocumentModel.Drawings.Office;
 [OpenXmlType(typeof(DXOD.NonVisualDrawingProperties))]
 public class NonVisualDrawingProperties: DMD.NonVisualDrawingProperties<DXOD.NonVisualDrawingProperties>
 {
-
 }

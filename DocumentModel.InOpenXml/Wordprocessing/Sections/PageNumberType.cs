@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Represents the page number type settings for a section in a Wordprocessing document.
 /// This class provides properties for page number format, starting page number, chapter heading style, and chapter separator character, enabling advanced configuration of page numbering and chapter formatting.
@@ -12,17 +11,13 @@ public partial class PageNumberType: ModelElement<DXW.PageNumberType>, ISectionP
   /// </summary>
   [OpenXmlProperty(nameof(DXW.PageNumberType.Format))]
   public NumberFormat? Format { get => _Format; set => UpdateField(ref _Format, value, nameof(Format)); }
-
   private NumberFormat? _Format;
-
   /// <summary>
   /// Starting page number for the section.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.PageNumberType.Start))]
   public Int32? Start { get => _Start; set => UpdateField(ref _Start, value, nameof(Start)); }
-
   private Int32? _Start;
-
   /// <summary>
   /// Specifies the one-based index of the heading style applied to chapter titles in the
   /// document which shall be used as chapter headings in all page numbers for this section,
@@ -48,9 +43,7 @@ public partial class PageNumberType: ModelElement<DXW.PageNumberType>, ISectionP
     get => _ChapterStyle;
     set => UpdateField(ref _ChapterStyle, value, nameof(ChapterStyle));
   }
-
   private Byte? _ChapterStyle;
-
   /// <summary>
   /// Chapter separator character, specifying the character used to separate chapter numbers from page numbers.
   /// </summary>
@@ -60,6 +53,5 @@ public partial class PageNumberType: ModelElement<DXW.PageNumberType>, ISectionP
     get => _ChapterSeparator;
     set => UpdateField(ref _ChapterSeparator, value, nameof(ChapterSeparator));
   }
-
   private ChapterSeparator? _ChapterSeparator;
 }

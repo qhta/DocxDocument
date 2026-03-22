@@ -372,27 +372,27 @@ public enum MsoAutoShapeType
   /// <summary>
   /// 4-point star.
   /// </summary>
-  4pointStar = 91,
+  FourPointStar = 91,
   /// <summary>
   /// 5-point star.
   /// </summary>
-  5pointStar = 92,
+  FivePointStar = 92,
   /// <summary>
   /// 8-point star.
   /// </summary>
-  8pointStar = 93,
+  EightPointStar = 93,
   /// <summary>
   /// 16-point star.
   /// </summary>
-  16pointStar = 94,
+  SixteenPointStar = 94,
   /// <summary>
   /// 24-point star.
   /// </summary>
-  24pointStar = 95,
+  TwentyFourPointStar = 95,
   /// <summary>
   /// 32-point star.
   /// </summary>
-  32pointStar = 96,
+  ThirtyTwoPointStar = 96,
   /// <summary>
   /// Ribbon banner with center area above ribbon ends.
   /// </summary>
@@ -596,19 +596,19 @@ public enum MsoAutoShapeType
   /// <summary>
   /// Specifies the shape type for an AutoShape object.
   /// </summary>
-  6pointStar = 147,
+  SixPointStar = 147,
   /// <summary>
   /// Specifies the shape type for an AutoShape object.
   /// </summary>
-  7pointStar = 148,
+  SevenPointStar = 148,
   /// <summary>
   /// Specifies the shape type for an AutoShape object.
   /// </summary>
-  10pointStar = 149,
+  TenPointStar = 149,
   /// <summary>
   /// Specifies the shape type for an AutoShape object.
   /// </summary>
-  12pointStar = 150,
+  TwelvePointStar = 150,
   /// <summary>
   /// Specifies the shape type for an AutoShape object.
   /// </summary>

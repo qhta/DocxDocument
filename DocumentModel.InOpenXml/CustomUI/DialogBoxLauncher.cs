@@ -1,5 +1,4 @@
 namespace DocumentModel.CustomUI;
-
 /// <summary>
 /// <para>Defines the DialogBoxLauncher Class.</para>
 /// <para>This class is available in Office 2010 and above.</para>
@@ -23,6 +22,5 @@ public class DialogBoxLauncher: ModelElement<DXO10CUI.DialogBoxLauncher>
     get => _ButtonRegular;
     set => UpdateField(ref _ButtonRegular, value, nameof(ButtonRegular));
   }
-
   private ButtonRegular? _ButtonRegular;
 }

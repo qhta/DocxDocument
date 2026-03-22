@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Defines the StringLevel Class.
 /// </summary>
@@ -11,17 +10,13 @@ public class StringLevel: ModelElement<DXO16DCD.StringLevel>
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.StringLevel.PtCount))]
   public UInt32? PtCount { get => _PtCount; set => UpdateField(ref _PtCount, value, nameof(PtCount)); }
-
   private UInt32? _PtCount;
-
   /// <summary>
   /// Specifies the name.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.StringLevel.Name))]
   public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
-
   private string? _Name;
-
   /// <summary>
   /// Specifies the chart string values.
   /// </summary>
@@ -30,6 +25,5 @@ public class StringLevel: ModelElement<DXO16DCD.StringLevel>
     get => _ChartStringValues;
     set => UpdateField(ref _ChartStringValues, value, nameof(ChartStringValues));
   }
-
   private ListOf<UInt32>? _ChartStringValues;
 }

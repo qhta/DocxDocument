@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Represents an abstract base class for defining a strongly-typed relationship element within a document model.
 /// </summary>
@@ -21,9 +20,7 @@ public abstract partial class RelationshipType<T>: ModelElement<T> where T: DXW.
     get => _Id;
     set => UpdateField(ref _Id, value, nameof(Id));
   }
-
   private string? _Id;
-
   /// <summary>
   /// Attaches the specified WordprocessingDocument and loads its data into the current instance.
   /// </summary>
@@ -33,10 +30,8 @@ public abstract partial class RelationshipType<T>: ModelElement<T> where T: DXW.
     base.AttachAndLoad(wordprocessingDocument);
     if (WordprocessingDocument == null)
       return;
-
     LoadData(WordprocessingDocument);
   }
-
   /// <summary>
   /// Attaches the specified WordprocessingDocument and updates the associated data.
   /// </summary>
@@ -46,10 +41,8 @@ public abstract partial class RelationshipType<T>: ModelElement<T> where T: DXW.
     base.AttachAndUpdate(wordprocessingDocument);
     if (WordprocessingDocument == null)
       return;
-
     UpdateData(WordprocessingDocument);
   }
-
   /// <summary>
   /// Updates the internal data by loading information from the specified Open XML element.
   /// </summary>
@@ -61,10 +54,8 @@ public abstract partial class RelationshipType<T>: ModelElement<T> where T: DXW.
   {
     if (WordprocessingDocument == null)
       return;
-
     UpdateData(WordprocessingDocument);
   }
-
   /// <summary>
   /// Loads data from the specified Document into the current instance.
   /// </summary>
@@ -80,7 +71,6 @@ public abstract partial class RelationshipType<T>: ModelElement<T> where T: DXW.
       Id = updatedElement.Id;
     }
   }
-
   /// <summary>
   /// Updates the specified Document with the current Id and Uri values.
   /// </summary>

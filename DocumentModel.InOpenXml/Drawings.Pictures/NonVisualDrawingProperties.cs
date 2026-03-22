@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Pictures;
-
 /// <summary>
 ///  Specific DXDP.NonVisualDrawingProperties mapping type.
 /// </summary>

@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings.Charts;
-
 #pragma warning disable CS1591
-
 public partial class Area3DChart
 {
   public bool ShouldSerializeGrouping() => Grouping is not null;

@@ -12,7 +12,6 @@ public partial class DocumentVariable : ModelElement<DXW.DocumentVariable>
  [XmlAttribute]
  [OpenXmlProperty(nameof(DXW.DocumentVariable.Name))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
-
  private string? _Name;
  /// <summary>
  /// Value of the document variable, specified as a string.
@@ -20,6 +19,5 @@ public partial class DocumentVariable : ModelElement<DXW.DocumentVariable>
  [XmlAttribute]
  [OpenXmlProperty(nameof(DXW.DocumentVariable.Val))]
  public string? Value { get => _value; set => UpdateField(ref _value, value, nameof(Value)); }
-
  private string? _value;
 }

@@ -11,7 +11,6 @@ public class OtherSettings : ModelElementCollection<CompatibilitySetting, DXW.Co
   public OtherSettings()
   {
   }
-
   /// <summary>
   /// Initializing constructor.
   /// </summary>

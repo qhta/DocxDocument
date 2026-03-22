@@ -5,7 +5,6 @@ namespace DocumentModel.Math;
 [OpenXmlType(typeof(DXM.MathProperties))]
 public partial class MathProperties : ModelElement<DXM.MathProperties>
 {
-
   /// <summary>
   /// Known properties that can be set in MathProperties.
   /// </summary>
@@ -18,16 +17,13 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
       return _KnownProperties;
     }
   }
-
   private static KnownProperties? _KnownProperties;
-
   /// <summary>
   ///   Specifies the default math font to be used in the document. 
   ///   If this element is omitted, font substitution (§17.8.2) should be used 
   ///   to determine the most appropriate font for use throughout the document.  
   /// </summary>
   public string? MathFont { get => _MathFont; set => UpdateField(ref _MathFont, value, nameof(MathFont)); }
-
  private string? _MathFont;
  /// <summary>
  ///   This element specifies how binary operators are treated when they coincide with a line break. 
@@ -35,7 +31,6 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
  ///   That is, the binary operator is the first element on the wrapped line.
  /// </summary>
  public BreakBinaryOperator? BreakBinary { get => _BreakBinary; set => UpdateField(ref _BreakBinary, value, nameof(BreakBinary)); }
-
  private BreakBinaryOperator? _BreakBinary;
  /// <summary>
  ///   Specifies how the subtraction operator is treated when it coincides with a line break, 
@@ -43,7 +38,6 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
  ///   If this element is omitted, the subtraction operator is repeated before and after the break.
  /// </summary>
  public BreakBinarySubtraction? BreakBinarySubtraction { get => _BreakBinarySubtraction; set => UpdateField(ref _BreakBinarySubtraction, value, nameof(BreakBinarySubtraction)); }
-
  private BreakBinarySubtraction? _BreakBinarySubtraction;
  /// <summary>
  ///   Specifies a reduced fraction size display math, such that the numerator and denominator 
@@ -53,7 +47,6 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
  ///   the default of the val attribute is 1 meaning that this option is applied.
  /// </summary>
  public bool? SmallFraction { get => _SmallFraction; set => UpdateField(ref _SmallFraction, value, nameof(SmallFraction)); }
-
  private bool? _SmallFraction;
  /// <summary>
  ///   Specifies the document-level property to overwrite paragraph settings for mathematical text. 
@@ -62,7 +55,6 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
  ///   the default of the val attribute is 1 meaning that this option is applied.
  /// </summary>
  public bool? DisplayDefaults { get => _DisplayDefaults; set => UpdateField(ref _DisplayDefaults, value, nameof(DisplayDefaults)); }
-
  private bool? _DisplayDefaults;
  /// <summary>
  ///   Specifies the left margin for math, in twips. If this element is omitted, no left margin is used. 
@@ -72,7 +64,6 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
  ///   If the sum of lMargin and rMargin exceed the width available, lMargin should be ignored. 
  /// </summary>
  public Twips? LeftMargin { get => _LeftMargin; set => UpdateField(ref _LeftMargin, value, nameof(LeftMargin)); }
-
  private Twips? _LeftMargin;
  /// <summary>
  ///   Specifies the right margin for math, in twips. If this element is omitted, no right margin is used. 
@@ -83,7 +74,6 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
  ///   If rMargin exceeds the width available, a default indent of 1440 twips should be used. 
  /// </summary>
  public Twips? RightMargin { get => _RightMargin; set => UpdateField(ref _RightMargin, value, nameof(RightMargin)); }
-
  private Twips? _RightMargin;
  /// <summary>
  ///   Specifies the default justification of display math, at the document level. 
@@ -96,34 +86,29 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
  ///   If this element is omitted, the mathematical text is centered as a group. 
  /// </summary>
  public Justification? DefaultJustification { get => _DefaultJustification; set => UpdateField(ref _DefaultJustification, value, nameof(DefaultJustification)); }
-
  private Justification? _DefaultJustification;
  /// <summary>
  ///   Specifies the spacing before a math paragraph, in twips. 
  ///   If this element is omitted, no spacing is applied before the paragraph. 
  /// </summary>
  public Twips? PreSpacing { get => _PreSpacing; set => UpdateField(ref _PreSpacing, value, nameof(PreSpacing)); }
-
  private Twips? _PreSpacing;
  /// <summary>
  ///   Specifies the spacing after a math paragraph, in twips. 
  ///   If this element is omitted, no spacing is applied after the paragraph.
  /// </summary>
  public Twips? PostSpacing { get => _PostSpacing; set => UpdateField(ref _PostSpacing, value, nameof(PostSpacing)); }
-
  private Twips? _PostSpacing;
  /// <summary>
  ///   Specifies spacing between equations, expressions, or other instances of mathematical text within a display math paragraph, in twips.
  /// </summary>
  public Twips? InterSpacing { get => _InterSpacing; set => UpdateField(ref _InterSpacing, value, nameof(InterSpacing)); }
-
  private Twips? _InterSpacing;
  /// <summary>
  ///   Specifies the spacing between adjacent display math paragraphs, in twips. 
  ///   If this element is omitted, no spacing is applied between adjacent math paragraphs..
  /// </summary>
  public Twips? IntraSpacing { get => _IntraSpacing; set => UpdateField(ref _IntraSpacing, value, nameof(IntraSpacing)); }
-
  private Twips? _IntraSpacing;
  /// <summary>
  ///   Specifies the indent of the wrapped line of an instance of mathematical text. 
@@ -133,7 +118,6 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
  ///   the default of the val attribute is 1440 twips (or 1 inch). 
  /// </summary>
  public Twips? WrapIndent { get => _WrapIndent; set => UpdateField(ref _WrapIndent, value, nameof(WrapIndent)); }
-
  private Twips? _WrapIndent;
  /// <summary>
  ///   Specifies the right justification of the wrapped line of an instance of mathematical text. 
@@ -145,7 +129,6 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
  ///   the default of the val attribute is 1 meaning that this option is applied.
  /// </summary>
  public bool? WrapRight { get => _WrapRight; set => UpdateField(ref _WrapRight, value, nameof(WrapRight)); }
-
  private bool? _WrapRight;
  /// <summary>
  ///   Specifies the document setting for the default placement of integral limits, 
@@ -153,13 +136,11 @@ public partial class MathProperties : ModelElement<DXM.MathProperties>
  ///   Limits can be either centered above and below the integral, or positioned just to the right of the operator.
  /// </summary>
  public LimitLocation? IntegralLimitLocation { get => _IntegralLimitLocation; set => UpdateField(ref _IntegralLimitLocation, value, nameof(IntegralLimitLocation)); }
-
  private LimitLocation? _IntegralLimitLocation;
  /// <summary>
  ///   Specifies the location of limits in n-ary operators. 
  ///   Limits can be either centered above and below the n-ary operator, or positioned just to the right of the operator.
  /// </summary>
  public LimitLocation? NaryLimitLocation { get => _NaryLimitLocation; set => UpdateField(ref _NaryLimitLocation, value, nameof(NaryLimitLocation)); }
-
  private LimitLocation? _NaryLimitLocation;
 }

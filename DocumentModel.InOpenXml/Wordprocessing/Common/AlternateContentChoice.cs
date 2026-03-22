@@ -38,6 +38,5 @@ public partial class AlternateContentChoice : ModelElement<DX.AlternateContentCh
  /// </remarks>
  [OpenXmlProperty(nameof(DX.AlternateContentChoice.Requires))]
  public string? Requires { get => _Requires; set => UpdateField(ref _Requires, value, nameof(Requires)); }
-
  private string? _Requires;
 }

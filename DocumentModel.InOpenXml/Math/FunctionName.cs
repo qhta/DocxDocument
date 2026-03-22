@@ -1,5 +1,4 @@
 using DocumentModel.Wordprocessing;
-
 namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies the name of the function in the Function-Apply object func. 

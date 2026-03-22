@@ -5,5 +5,4 @@ namespace DocumentModel.Drawings.Charts;
 [OpenXmlType(typeof(DXDC.ValAxExtension))]
 public partial class ValAxExtension : AxisExtension<DXDC.ValAxExtension>
 {
-
 }

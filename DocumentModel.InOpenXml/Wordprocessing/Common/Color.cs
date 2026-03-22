@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-
 /// <summary>
 /// Represents a color definition for use in WordprocessingML documents.
 /// This class extends <see cref = "AbstractColor"/> and is used to specify color values for document elements such as borders, shading, and text, enabling advanced formatting and visual customization.
@@ -13,7 +12,6 @@ public partial class Color: AbstractColor<DXW.Color>
   public Color(): base()
   {
   }
-
   /// <summary>
   /// Initializes a new instance of the Color class using the specified color string.
   /// </summary>
@@ -24,7 +22,6 @@ public partial class Color: AbstractColor<DXW.Color>
   {
     Init(colorString);
   }
-
   /// <summary>
   /// Initializes a new instance of the Color class using the specified hexadecimal RGB color value.
   /// </summary>
@@ -33,7 +30,6 @@ public partial class Color: AbstractColor<DXW.Color>
   {
     Val = hexRgb;
   }
-
   /// <summary>
   /// <para>Run Content Color</para>
   /// <para>Represents the following attribute in the schema: w:val</para>
@@ -43,7 +39,6 @@ public partial class Color: AbstractColor<DXW.Color>
   /// </remarks>
   [OpenXmlProperty(nameof(DXW.Color.Val))]
   public HexRgb? Val { get; set; }
-
   /// <summary>
   /// <para>Run Content Theme Color</para>
   /// <para>Represents the following attribute in the schema: w:themeColor</para>
@@ -53,7 +48,6 @@ public partial class Color: AbstractColor<DXW.Color>
   /// </remarks>
   [OpenXmlProperty(nameof(DXW.Color.ThemeColor))]
   public ThemeColors? ThemeColor { get; set; }
-
   /// <summary>
   /// <para>Run Content Theme Color Tint</para>
   /// <para>Represents the following attribute in the schema: w:themeTint</para>
@@ -63,7 +57,6 @@ public partial class Color: AbstractColor<DXW.Color>
   /// </remarks>
   [OpenXmlProperty(nameof(DXW.Color.ThemeTint))]
   public Byte? ThemeTint { get; set; }
-
   /// <summary>
   /// <para>Run Content Theme Color Shade</para>
   /// <para>Represents the following attribute in the schema: w:themeShade</para>
@@ -73,23 +66,19 @@ public partial class Color: AbstractColor<DXW.Color>
   /// </remarks>
   [OpenXmlProperty(nameof(DXW.Color.ThemeShade))]
   public Byte? ThemeShade { get; set; }
-
   /// <summary>
   /// Implicitly converts a string to a <see cref="Color"/> value.
   /// </summary>
   /// <param name="value">The string to convert.</param>
   /// <returns>A <see cref="Color"/> value representing the color.</returns>
   public static implicit operator Color(string value) => new Color(value);
-
   /// <summary>
   /// Implicitly converts an <see cref="Color"/> value to a string representation.
   /// </summary>
   /// <param name="value">The <see cref="Color"/> value to convert.</param>
   /// <returns>A string representation of the RGB color.</returns>
-
   // ReSharper disable once SpecifyACultureInStringConversionExplicitly
   public static implicit operator String(Color value) => value.ToString()!;
-
   /// <summary>
   /// Initializes instance properties based on the provided color string,
   /// which can include hexadecimal RGB values and theme color information.
@@ -101,7 +90,6 @@ public partial class Color: AbstractColor<DXW.Color>
   {
     if (string.IsNullOrEmpty(colorString))
       throw new ArgumentException("Color string cannot be null or empty.", nameof(colorString));
-
     var strings = colorString.Split(' ', StringSplitOptions.RemoveEmptyEntries);
     foreach (var str in strings)
     {
@@ -118,7 +106,6 @@ public partial class Color: AbstractColor<DXW.Color>
         ThemeShade = themeShade;
     }
   }
-
   /// <summary>
   /// String representation of the Color instance, which includes the hexadecimal color value and theme color information if available.
   /// </summary>
@@ -136,7 +123,6 @@ public partial class Color: AbstractColor<DXW.Color>
       strings.Add($"ThemeShade:{ThemeShade}");
     return String.Join(" ", strings);
   }
-
   /// <summary>
   /// Parses a string representation of a color and returns a corresponding Color object. Supports both hexadecimal RGB
   /// values and theme color names.
@@ -153,10 +139,8 @@ public partial class Color: AbstractColor<DXW.Color>
   {
     if (string.IsNullOrEmpty(colorString))
       throw new ArgumentException("Color string cannot be null or empty.", nameof(colorString));
-
     return new Color(colorString);
   }
-
   /// <summary>
   /// Attempts to parse the specified color string into a <see cref="Color"/> object, supporting both hexadecimal RGB
   /// and named theme color formats.
@@ -173,7 +157,6 @@ public partial class Color: AbstractColor<DXW.Color>
     color = null;
     if (string.IsNullOrEmpty(colorString))
       return false;
-
     try
     {
       color = new Color(colorString);
@@ -183,7 +166,6 @@ public partial class Color: AbstractColor<DXW.Color>
       return false;
     }
   }
-
   /// <summary>
   /// Creates new instance of <see cref="Color"/> based on the provided OpenXml color properties, including the color value, theme color, tint,
   /// and shade.
@@ -219,7 +201,6 @@ public partial class Color: AbstractColor<DXW.Color>
     }
     return color;
   }
-
   /// <summary>
   /// Converts the current color and theme-related properties to their OpenXML representations.
   /// </summary>
@@ -236,7 +217,6 @@ public partial class Color: AbstractColor<DXW.Color>
       val = HexRgbConverter.ConvertTo(Val, typeof(DX.StringValue)) as DX.StringValue;
     DX.EnumValue<DXW.ThemeColorValues>? themeColor = null;
     if (ThemeColor is not null)
-
       // ReSharper disable once InvokeAsExtensionMember
       themeColor = EnumTypeConverter.CreateOpenXmlEnumValue<DXW.ThemeColorValues, ThemeColors>(ThemeColor.Value);
     DX.StringValue? themeTint = null;

@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents the result of a data point-to-entity mapping query, containing both coordinate-based and entity-based query specifications.
 /// </summary>
@@ -35,9 +34,7 @@ public class GeoDataPointToEntityQueryResult: ModelElement<DXO16DCD.GeoDataPoint
     get => _GeoDataPointQuery;
     set => UpdateField(ref _GeoDataPointQuery, value, nameof(GeoDataPointQuery));
   }
-
   private GeoDataPointQuery? _GeoDataPointQuery;
-
   /// <summary>
   /// Specifies the geo data point to entity query.
   /// </summary>
@@ -47,6 +44,5 @@ public class GeoDataPointToEntityQueryResult: ModelElement<DXO16DCD.GeoDataPoint
     get => _GeoDataPointToEntityQuery;
     set => UpdateField(ref _GeoDataPointToEntityQuery, value, nameof(GeoDataPointToEntityQuery));
   }
-
   private GeoDataPointToEntityQuery? _GeoDataPointToEntityQuery;
 }

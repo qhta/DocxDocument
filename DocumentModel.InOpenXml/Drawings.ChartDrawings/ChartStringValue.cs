@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Represents a string value associated with a specific index position in chart data.
 /// </summary>
@@ -22,6 +21,5 @@ public class ChartStringValue: ModelElement<DXO16DCD.ChartStringValue>
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.ChartStringValue.Index))]
   public UInt32? Index { get => _Index; set => UpdateField(ref _Index, value, nameof(Index)); }
-
   private UInt32? _Index;
 }

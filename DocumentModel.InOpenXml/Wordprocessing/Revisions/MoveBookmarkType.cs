@@ -20,5 +20,4 @@ public abstract partial class MoveBookmarkType<T1, T2> : MarkupStartRangeElement
   /// </summary>
   public Int32? ColumnLast { get; set; }
 
-
 }

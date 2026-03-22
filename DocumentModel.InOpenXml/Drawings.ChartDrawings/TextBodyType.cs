@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.ChartDrawings;
-
 /// <summary>
 ///   Defines the TextBodyType Class.
 /// </summary>
@@ -15,14 +14,11 @@ public class TextBodyType: ModelElement<DXO16DCD.TextBodyType>
     get => _BodyProperties;
     set => UpdateField(ref _BodyProperties, value, nameof(BodyProperties));
   }
-
   private BodyProperties? _BodyProperties;
-
   /// <summary>
   /// Specifies the list style.
   /// </summary>
   [OpenXmlProperty(nameof(DXO16DCD.TextBodyType.ListStyle))]
   public ListStyle? ListStyle { get => _ListStyle; set => UpdateField(ref _ListStyle, value, nameof(ListStyle)); }
-
   private ListStyle? _ListStyle;
 }

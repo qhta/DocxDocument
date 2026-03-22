@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings.Charts;
-
 #pragma warning disable CS1591
-
 public partial class ChartSpace
 {
   public bool ShouldSerializeDate1904() => Date1904 is not null;

@@ -1,5 +1,4 @@
 namespace DocumentModel.Drawings.Charts;
-
 /// <summary>
 ///   Represents the surface type for a chart, including thickness, shape properties, picture options, and extensibility.
 /// </summary>
@@ -11,9 +10,7 @@ public partial class SurfaceType: ModelElement<DXDC.SurfaceType>
   /// </summary>
   [OpenXmlElement(typeof(DXDC.Thickness))]
   public Byte? Thickness { get => _Thickness; set => UpdateField(ref _Thickness, value, nameof(Thickness)); }
-
   private Byte? _Thickness;
-
   /// <summary>
   ///   Shape properties for the surface.
   /// </summary>
@@ -23,9 +20,7 @@ public partial class SurfaceType: ModelElement<DXDC.SurfaceType>
     get => _ShapeProperties;
     set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties));
   }
-
   private ShapeProperties? _ShapeProperties;
-
   /// <summary>
   ///   Picture options for the surface.
   /// </summary>
@@ -35,9 +30,7 @@ public partial class SurfaceType: ModelElement<DXDC.SurfaceType>
     get => _PictureOptions;
     set => UpdateField(ref _PictureOptions, value, nameof(PictureOptions));
   }
-
   private PictureOptions? _PictureOptions;
-
   /// <summary>
   ///   Extension list for additional surface properties.
   /// </summary>
@@ -47,6 +40,5 @@ public partial class SurfaceType: ModelElement<DXDC.SurfaceType>
     get => _ExtensionList;
     set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
   }
-
   private ExtensionList? _ExtensionList;
 }

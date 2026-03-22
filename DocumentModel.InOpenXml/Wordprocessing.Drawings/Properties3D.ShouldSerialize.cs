@@ -1,7 +1,5 @@
 namespace DocumentModel.Wordprocessing.Drawings;
-
 #pragma warning disable CS1591
-
 public partial class Properties3D
 {
   public bool ShouldSerializeExtrusionHeight() => ExtrusionHeight is not null;

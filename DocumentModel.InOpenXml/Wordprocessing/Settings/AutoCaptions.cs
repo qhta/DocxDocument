@@ -12,7 +12,6 @@ public class AutoCaptions : ModelElementCollection<AutoCaption, DXW.AutoCaptions
  public AutoCaptions()
  {
  }
-
  /// <summary>
  /// Initializes a new instance of the <see cref = "AutoCaptions"/> class with the specified captions.
  /// </summary>

@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings;
-
 #pragma warning disable CS1591
-
 public partial class BackgroundMark
 {
   public bool ShouldSerializeFirstXCoordinate() => FirstXCoordinate is not null;

@@ -1,7 +1,5 @@
 namespace DocumentModel.Drawings;
-
 #pragma warning disable CS1591
-
 public partial class GradientFill
 {
   public bool ShouldSerializeFlip() => Flip is not null;
