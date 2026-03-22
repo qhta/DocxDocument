@@ -7,12 +7,12 @@ namespace DocumentModel.Interop.Word;
 public interface ReadabilityStatistic : InteropObject
 {
   /// <summary>
-  /// Returns the name.
+  /// Returns or sets the name of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.readabilitystatistic.name?view=word-pia"/>
   public string Name { get; }
   /// <summary>
-  /// Returns the value.
+  /// Returns the value of the grammar statistic.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.readabilitystatistic.value?view=word-pia"/>
   public float Value { get; }

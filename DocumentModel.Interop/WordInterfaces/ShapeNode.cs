@@ -7,17 +7,19 @@ namespace DocumentModel.Interop.Word;
 public interface ShapeNode : InteropObject
 {
   /// <summary>
-  /// Returns the editing type.
+  /// If the specified node is a vertex, this property returns a value that indicates how changes made to the node
+  /// affect the two segments connected to the node. If the node is a control point for a curved segment, this
+  /// property returns the editing type of the adjacent vertex.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenode.editingtype?view=word-pia"/>
   public Core.MsoEditingType EditingType { get; }
   /// <summary>
-  /// Returns the points.
+  /// Returns the position of the specified node as a coordinate pair. Each coordinate is expressed in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenode.points?view=word-pia"/>
   public object Points { get; }
   /// <summary>
-  /// Returns the segment type.
+  /// Returns a value that indicates whether the segment associated with the specified node is straight or curved.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenode.segmenttype?view=word-pia"/>
   public Core.MsoSegmentType SegmentType { get; }

@@ -1,7 +1,8 @@
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
-/// A collection of SpellingSuggestion objects that represent all the suggestions for a specified word or for the first word in the specified range.
+/// A collection of SpellingSuggestion objects that represent all the suggestions for a specified word or for the
+/// first word in the specified range.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.spellingsuggestions?view=word-pia"/>
 public interface SpellingSuggestions : InteropObject, InteropCollection<SpellingSuggestion>

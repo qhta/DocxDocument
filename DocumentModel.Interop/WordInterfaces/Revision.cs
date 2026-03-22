@@ -7,55 +7,57 @@ namespace DocumentModel.Interop.Word;
 public partial interface Revision : InteropObject
 {
   /// <summary>
-  /// Returns the author.
+  /// Returns the name of the user who made the specified tracked change.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revision.author?view=word-pia"/>
   public string Author { get; }
 
   /// <summary>
-  /// Returns the date.
+  /// The date and time that the tracked change was made.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revision.date?view=word-pia"/>
   public DateTime Date { get; }
 
   /// <summary>
-  /// Returns the range.
+  /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revision.range?view=word-pia"/>
   public Range Range { get; }
 
   /// <summary>
-  /// Returns the type.
+  /// Returns the revision type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revision.type?view=word-pia"/>
   public WdRevisionType Type { get; }
 
   /// <summary>
-  /// Returns the index.
+  /// Returns an Integer that represents the position of an item in a collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revision.index?view=word-pia"/>
   public int Index { get; }
 
   /// <summary>
-  /// Returns the style.
+  /// Returns a Style object that represents the style associated with the current author for revisions.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revision.style?view=word-pia"/>
   public Style Style { get; }
 
   /// <summary>
-  /// Returns the format description.
+  /// Returns a String representing a description of tracked formatting changes in a revision.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revision.formatdescription?view=word-pia"/>
   public string FormatDescription { get; }
 
   /// <summary>
-  /// Returns the moved range.
+  /// Returns a Range object that represents a range of text that was moved from one place to another in a document
+  /// with tracked changes. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revision.movedrange?view=word-pia"/>
   public Range MovedRange { get; }
 
   /// <summary>
-  /// Returns the cells.
+  /// Returns a Cells collection that represents the table cells that have been marked with revision marks.
+  /// Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revision.cells?view=word-pia"/>
   public Cells Cells { get; }

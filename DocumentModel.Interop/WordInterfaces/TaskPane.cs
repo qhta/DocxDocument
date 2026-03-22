@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public interface TaskPane : InteropObject
 {
   /// <summary>
-  /// Returns or sets whether visible.
+  /// Determines if the specified object is visible.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.taskpane.visible?view=word-pia"/>
   public bool Visible { get; set; }

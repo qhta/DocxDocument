@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface Subdocuments : InteropObject, InteropCollection<Subdocument>
 {
   /// <summary>
-  /// Returns or sets whether expanded.
+  /// True if the subdocuments in the specified document are expanded.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.subdocuments.expanded?view=word-pia"/>
   public bool Expanded { get; set; }
