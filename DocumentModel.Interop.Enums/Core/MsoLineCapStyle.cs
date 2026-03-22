@@ -8,17 +8,17 @@ public enum MsoLineCapStyle
   /// <summary>
   /// Specifies the type of line cap.
   /// </summary>
-  msoLineCapMixed = -2,
+  Mixed = -2,
   /// <summary>
   /// Specifies a squared-off line cap.
   /// </summary>
-  msoLineCapSquare = 1,
+  Square = 1,
   /// <summary>
   /// Specifies a rounded line cap.
   /// </summary>
-  msoLineCapRound = 2,
+  Round = 2,
   /// <summary>
   /// Specifies a flat line cap.
   /// </summary>
-  msoLineCapFlat = 3
+  Flat = 3
 }

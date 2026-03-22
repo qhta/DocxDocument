@@ -9,29 +9,29 @@ public enum MsoChartFieldType
   /// Specifies the Bubble size of the data point. msoChartFieldCategoryName2 Specifies the category name size of
   /// the data point.
   /// </summary>
-  msoChartFieldBubbleSize = 1,
+  BubbleSize = 1,
   /// <summary>
   /// Specifies the type of data field to be inserted into a data label in a chart.
   /// </summary>
-  msoChartFieldCategoryName,
+  CategoryName,
   /// <summary>
   /// Specifies a percentage of the values.
   /// </summary>
-  msoChartFieldPercentage,
+  Percentage,
   /// <summary>
   /// Specifies the data series name.
   /// </summary>
-  msoChartFieldSeriesName,
+  SeriesName,
   /// <summary>
   /// Specifies the value of the data field.
   /// </summary>
-  msoChartFieldValue,
+  Value,
   /// <summary>
   /// Specifies the formula used in the data point.
   /// </summary>
-  msoChartFieldFormula,
+  Formula,
   /// <summary>
   /// Specifies the value of a range of data.
   /// </summary>
-  msoChartFieldRange
+  Range
 }

@@ -8,57 +8,57 @@ public enum MsoBevelType
   /// <summary>
   /// Indicates the bevel type of a ThreeDFormat object.
   /// </summary>
-  msoBevelTypeMixed = -2,
+  TypeMixed = -2,
   /// <summary>
   /// Specifies no bevel.
   /// </summary>
-  msoBevelNone = 1,
+  None = 1,
   /// <summary>
   /// Specifies a RelaxedInset bevel.
   /// </summary>
-  msoBevelRelaxedInset = 2,
+  RelaxedInset = 2,
   /// <summary>
   /// Specifies a Circle bevel.
   /// </summary>
-  msoBevelCircle = 3,
+  Circle = 3,
   /// <summary>
   /// Specifies a Slope bevel.
   /// </summary>
-  msoBevelSlope = 4,
+  Slope = 4,
   /// <summary>
   /// Specifies a Cross bevel.
   /// </summary>
-  msoBevelCross = 5,
+  Cross = 5,
   /// <summary>
   /// Specifies an Angle bevel.
   /// </summary>
-  msoBevelAngle = 6,
+  Angle = 6,
   /// <summary>
   /// Specifies a SoftRound bevel.
   /// </summary>
-  msoBevelSoftRound = 7,
+  SoftRound = 7,
   /// <summary>
   /// Specifies a Convex bevel.
   /// </summary>
-  msoBevelConvex = 8,
+  Convex = 8,
   /// <summary>
   /// Specifies a CoolSlant bevel.
   /// </summary>
-  msoBevelCoolSlant = 9,
+  CoolSlant = 9,
   /// <summary>
   /// Specifies a Divot bevel.
   /// </summary>
-  msoBevelDivot = 10,
+  Divot = 10,
   /// <summary>
   /// Specifies a Riblet bevel.
   /// </summary>
-  msoBevelRiblet = 11,
+  Riblet = 11,
   /// <summary>
   /// Specifies a HardEdge bevel. public enum class MsoBevelType ﾉ Expand table
   /// </summary>
-  msoBevelHardEdge = 12,
+  HardEdge = 12,
   /// <summary>
   /// Specifies an ArtDeco bevel.
   /// </summary>
-  msoBevelArtDeco = 13
+  ArtDeco = 13
 }

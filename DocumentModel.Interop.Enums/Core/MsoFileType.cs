@@ -9,95 +9,95 @@ public enum MsoFileType
   /// <summary>
   /// All files.
   /// </summary>
-  msoFileTypeAllFiles = 1,
+  AllFiles = 1,
   /// <summary>
   /// Files with any of the following extensions: *.doc, *.xls, *.ppt, *.pps, *.obd, *.mdb, *.mpd, *.dot, *.xlt,
   /// *.pot, *.obt, *.htm, or *.html.
   /// </summary>
-  msoFileTypeOfficeFiles,
+  OfficeFiles,
   /// <summary>
   /// Microsoft Word document file (*.doc).
   /// </summary>
-  msoFileTypeWordDocuments,
+  WordDocuments,
   /// <summary>
   /// Microsoft Excel workbook (*.wbk). msoFileTypePowerPointPresentations5 PowerPoint presentation file (.ppt),
   /// PowerPoint template file (.pot), or PowerPoint slide show file (*.pps).
   /// </summary>
-  msoFileTypeExcelWorkbooks,
+  ExcelWorkbooks,
   /// <summary>
   /// Specifies a type of file.
   /// </summary>
-  msoFileTypePowerPointPresentations,
+  PowerPointPresentations,
   /// <summary>
   /// Microsoft Binder file (*.obd).
   /// </summary>
-  msoFileTypeBinders,
+  Binders,
   /// <summary>
   /// Database file (*.mdb).
   /// </summary>
-  msoFileTypeDatabases,
+  Databases,
   /// <summary>
   /// Microsoft PowerPoint template (.pot), Word template (.dot), Excel template (*.xlt).
   /// </summary>
-  msoFileTypeTemplates,
+  Templates,
   /// <summary>
   /// Any Microsoft Outlook item file.
   /// </summary>
-  msoFileTypeOutlookItems,
+  OutlookItems,
   /// <summary>
   /// Mail item file (*.msg).
   /// </summary>
-  msoFileTypeMailItem,
+  MailItem,
   /// <summary>
   /// Calendar item file (*.ics or *.vsc). public enum class MsoFileType ﾉ Expand table
   /// </summary>
-  msoFileTypeCalendarItem,
+  CalendarItem,
   /// <summary>
   /// Contact item file (*.vcf).
   /// </summary>
-  msoFileTypeContactItem,
+  ContactItem,
   /// <summary>
   /// Microsoft Outlook Note item.
   /// </summary>
-  msoFileTypeNoteItem,
+  NoteItem,
   /// <summary>
   /// Microsoft Outlook Journal item
   /// </summary>
-  msoFileTypeJournalItem,
+  JournalItem,
   /// <summary>
   /// Microsoft Outlook task item.
   /// </summary>
-  msoFileTypeTaskItem,
+  TaskItem,
   /// <summary>
   /// PhotoDraw item file (*.mix). msoFileTypeDataConnectionFiles17 Data connection file (*.mdf).
   /// </summary>
-  msoFileTypePhotoDrawFiles,
+  PhotoDrawFiles,
   /// <summary>
   /// Specifies a type of file.
   /// </summary>
-  msoFileTypeDataConnectionFiles,
+  DataConnectionFiles,
   /// <summary>
   /// Microsoft Publisher file (*.pub)
   /// </summary>
-  msoFileTypePublisherFiles,
+  PublisherFiles,
   /// <summary>
   /// Project file (*.mpd). msoFileTypeDocumentImagingFiles20 Microsoft Document Imaging file (*.mdi).
   /// </summary>
-  msoFileTypeProjectFiles,
+  ProjectFiles,
   /// <summary>
   /// Specifies a type of file.
   /// </summary>
-  msoFileTypeDocumentImagingFiles,
+  DocumentImagingFiles,
   /// <summary>
   /// Microsoft Visio file (*.vsd).
   /// </summary>
-  msoFileTypeVisioFiles,
+  VisioFiles,
   /// <summary>
   /// Visual Basic Active Designer file (*.dsr).
   /// </summary>
-  msoFileTypeDesignerFiles,
+  DesignerFiles,
   /// <summary>
   /// HTML file (*.htm or *.html).
   /// </summary>
-  msoFileTypeWebPages
+  WebPages
 }

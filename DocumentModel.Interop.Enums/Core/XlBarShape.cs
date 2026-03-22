@@ -10,29 +10,29 @@ public enum XlBarShape
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Box.
   /// </summary>
-  xlBox,
+  Box,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Pyramid, coming to
   /// point at value.
   /// </summary>
-  xlPyramidToPoint,
+  PyramidToPoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Pyramid, truncated
   /// at value.
   /// </summary>
-  xlPyramidToMax,
+  PyramidToMax,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Cylinder.
   /// </summary>
-  xlCylinder,
+  Cylinder,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Cone, coming to
   /// point at value.
   /// </summary>
-  xlConeToPoint,
+  ConeToPoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Cone, truncated at
   /// value.
   /// </summary>
-  xlConeToMax
+  ConeToMax
 }

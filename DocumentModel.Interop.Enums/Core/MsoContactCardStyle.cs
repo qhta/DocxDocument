@@ -6,10 +6,10 @@ public enum MsoContactCardStyle
   /// <summary>
   /// msoContactCardFull 1
   /// </summary>
-  msoContactCardHover,
+  Hover,
   /// <summary>
   /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoContactCardStyle ﾉ
   /// Expand table
   /// </summary>
-  msoContactCardFull
+  Full
 }

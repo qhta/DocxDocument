@@ -12,10 +12,10 @@ public enum XlAxisGroup
   /// xlSecondary2 You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// Secondary axis group.
   /// </summary>
-  xlPrimary = 1,
+  Primary = 1,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the type
   /// of axis group.
   /// </summary>
-  xlSecondary
+  Secondary
 }

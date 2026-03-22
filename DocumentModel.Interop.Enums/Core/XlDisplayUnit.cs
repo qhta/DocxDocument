@@ -11,55 +11,55 @@ public enum XlDisplayUnit
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Indicates numeric
   /// units of measurement.
   /// </summary>
-  xlHundreds = -2,
+  Hundreds = -2,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Indicates numeric
   /// units of measurement.
   /// </summary>
-  xlThousands = -3,
+  Thousands = -3,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Indicates numeric
   /// units of measurement.
   /// </summary>
-  xlTenThousands = -4,
+  TenThousands = -4,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Indicates numeric
   /// units of measurement.
   /// </summary>
-  xlHundredThousands = -5,
+  HundredThousands = -5,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Indicates numeric
   /// units of measurement.
   /// </summary>
-  xlMillions = -6,
+  Millions = -6,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Indicates numeric
   /// units of measurement.
   /// </summary>
-  xlTenMillions = -7,
+  TenMillions = -7,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Indicates numeric
   /// units of measurement.
   /// </summary>
-  xlHundredMillions = -8,
+  HundredMillions = -8,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Indicates numeric
   /// units of measurement.
   /// </summary>
-  xlThousandMillions = -9,
+  ThousandMillions = -9,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Indicates numeric
   /// units of measurement.
   /// </summary>
-  xlMillionMillions = -10,
+  MillionMillions = -10,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Indicates numeric
   /// units of measurement.
   /// </summary>
-  xlDisplayUnitCustom = -4114,
+  DisplayUnitCustom = -4114,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Indicates numeric
   /// units of measurement.
   /// </summary>
-  xlDisplayUnitNone = -4142
+  DisplayUnitNone = -4142
 }

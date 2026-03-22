@@ -12,15 +12,15 @@ public enum XlTimeUnit
   /// xlMonths1 You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies
   /// Month units.
   /// </summary>
-  xlDays,
+  Days,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Indicates units of
   /// time measurement.
   /// </summary>
-  xlMonths,
+  Months,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies Year
   /// units.
   /// </summary>
-  xlYears
+  Years
 }

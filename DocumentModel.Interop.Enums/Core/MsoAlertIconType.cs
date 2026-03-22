@@ -8,21 +8,21 @@ public enum MsoAlertIconType
   /// <summary>
   /// Displays no icon with the alert message.
   /// </summary>
-  msoAlertIconNoIcon,
+  NoIcon,
   /// <summary>
   /// Displays the Critical icon.
   /// </summary>
-  msoAlertIconCritical,
+  Critical,
   /// <summary>
   /// Displays the Query icon.
   /// </summary>
-  msoAlertIconQuery,
+  Query,
   /// <summary>
   /// Displays the Warning icon.
   /// </summary>
-  msoAlertIconWarning,
+  Warning,
   /// <summary>
   /// Displays the Info icon.
   /// </summary>
-  msoAlertIconInfo
+  Info
 }

@@ -10,29 +10,29 @@ public enum MsoLastModified
   /// <summary>
   /// File last modified yesterday.
   /// </summary>
-  msoLastModifiedYesterday = 1,
+  Yesterday = 1,
   /// <summary>
   /// File last modified today.
   /// </summary>
-  msoLastModifiedToday,
+  Today,
   /// <summary>
   /// File last modified last week.
   /// </summary>
-  msoLastModifiedLastWeek,
+  LastWeek,
   /// <summary>
   /// File last modified this week.
   /// </summary>
-  msoLastModifiedThisWeek,
+  ThisWeek,
   /// <summary>
   /// File last modified last month.
   /// </summary>
-  msoLastModifiedLastMonth,
+  LastMonth,
   /// <summary>
   /// File last modified this month.
   /// </summary>
-  msoLastModifiedThisMonth,
+  ThisMonth,
   /// <summary>
   /// File last modified any time.
   /// </summary>
-  msoLastModifiedAnyTime
+  AnyTime
 }

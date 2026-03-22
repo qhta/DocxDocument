@@ -10,9 +10,9 @@ public enum MsoSortOrder
   /// <summary>
   /// Ascending order.
   /// </summary>
-  msoSortOrderAscending = 1,
+  Ascending = 1,
   /// <summary>
   /// Descending order.
   /// </summary>
-  msoSortOrderDescending
+  Descending
 }

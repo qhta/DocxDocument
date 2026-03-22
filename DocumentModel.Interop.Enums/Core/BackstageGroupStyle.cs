@@ -8,13 +8,13 @@ public enum BackstageGroupStyle
   /// <summary>
   /// Normal style.
   /// </summary>
-  BackstageGroupStyleNormal,
+  Normal,
   /// <summary>
   /// Warning style.
   /// </summary>
-  BackstageGroupStyleWarning,
+  Warning,
   /// <summary>
   /// Error style.
   /// </summary>
-  BackstageGroupStyleError
+  Error
 }

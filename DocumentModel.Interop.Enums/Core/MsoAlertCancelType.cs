@@ -8,25 +8,25 @@ public enum MsoAlertCancelType
   /// <summary>
   /// Specifies behavior when the user cancels an alert. Only msoAlertCancelDefault is currently supported.
   /// </summary>
-  msoAlertCancelDefault = -1,
+  Default = -1,
   /// <summary>
   /// Not supported.
   /// </summary>
-  msoAlertCancelFirst,
+  First,
   /// <summary>
   /// Not supported.
   /// </summary>
-  msoAlertCancelSecond,
+  Second,
   /// <summary>
   /// Not supported.
   /// </summary>
-  msoAlertCancelThird,
+  Third,
   /// <summary>
   /// Not supported.
   /// </summary>
-  msoAlertCancelFourth,
+  Fourth,
   /// <summary>
   /// Not supported.
   /// </summary>
-  msoAlertCancelFifth
+  Fifth
 }

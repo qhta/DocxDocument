@@ -8,17 +8,17 @@ public enum MsoFileDialogType
   /// <summary>
   /// Open dialog box.
   /// </summary>
-  msoFileDialogOpen = 1,
+  Open = 1,
   /// <summary>
   /// Save As dialog box.
   /// </summary>
-  msoFileDialogSaveAs,
+  SaveAs,
   /// <summary>
   /// File picker dialog box.
   /// </summary>
-  msoFileDialogFilePicker,
+  FilePicker,
   /// <summary>
   /// Folder picker dialog box.
   /// </summary>
-  msoFileDialogFolderPicker
+  FolderPicker
 }

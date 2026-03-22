@@ -8,13 +8,13 @@ public enum MsoFileNewAction
   /// <summary>
   /// Edit file.
   /// </summary>
-  msoEditFile,
+  EditFile,
   /// <summary>
   /// Create a new file.
   /// </summary>
-  msoCreateNewFile,
+  CreateNewFile,
   /// <summary>
   /// Open file.
   /// </summary>
-  msoOpenFile
+  OpenFile
 }

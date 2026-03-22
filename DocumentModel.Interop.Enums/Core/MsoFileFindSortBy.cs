@@ -12,29 +12,29 @@ public enum MsoFileFindSortBy
   /// should not be used. msoFileFindSortbyDateSaved4 This member is for Macintosh only and should not be used.
   /// msoFileFindSortbyFileName5 This member is for Macintosh only and should not be used.
   /// </summary>
-  msoFileFindSortbyAuthor = 1,
+  Author = 1,
   /// <summary>
   /// This enumeration applies to the Macintosh only and should not be used.
   /// </summary>
-  msoFileFindSortbyDateCreated,
+  DateCreated,
   /// <summary>
   /// This enumeration applies to the Macintosh only and should not be used.
   /// </summary>
-  msoFileFindSortbyLastSavedBy,
+  LastSavedBy,
   /// <summary>
   /// This enumeration applies to the Macintosh only and should not be used.
   /// </summary>
-  msoFileFindSortbyDateSaved,
+  DateSaved,
   /// <summary>
   /// This enumeration applies to the Macintosh only and should not be used.
   /// </summary>
-  msoFileFindSortbyFileName,
+  FileName,
   /// <summary>
   /// This member is for Macintosh only and should not be used.
   /// </summary>
-  msoFileFindSortbySize,
+  Size,
   /// <summary>
   /// This member is for Macintosh only and should not be used.
   /// </summary>
-  msoFileFindSortbyTitle
+  Title
 }

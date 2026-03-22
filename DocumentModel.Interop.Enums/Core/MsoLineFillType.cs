@@ -8,33 +8,33 @@ public enum MsoLineFillType
   /// <summary>
   /// Specifies the type of fill for a line.
   /// </summary>
-  msoLineFillMixed = -2,
+  Mixed = -2,
   /// <summary>
   /// No line fill.
   /// </summary>
-  msoLineFillNone = 0,
+  None = 0,
   /// <summary>
   /// Specifies a solid color line fill.
   /// </summary>
-  msoLineFillSolid = 1,
+  Solid = 1,
   /// <summary>
   /// Specifies a pattern line fill.
   /// </summary>
-  msoLineFillPatterned = 2,
+  Patterned = 2,
   /// <summary>
   /// Specifies a gradient line fill.
   /// </summary>
-  msoLineFillGradient = 3,
+  Gradient = 3,
   /// <summary>
   /// Specifies a textured line fill.
   /// </summary>
-  msoLineFillTextured = 4,
+  Textured = 4,
   /// <summary>
   /// Specifies the same fill as the background.
   /// </summary>
-  msoLineFillBackground = 5,
+  Background = 5,
   /// <summary>
   /// Specifies a picture line fill.
   /// </summary>
-  msoLineFillPicture = 6
+  Picture = 6
 }

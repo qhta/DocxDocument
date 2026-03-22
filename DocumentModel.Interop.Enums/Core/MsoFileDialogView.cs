@@ -12,37 +12,37 @@ public enum MsoFileDialogView
   /// msoFileDialogViewThumbnail5 Files displayed as thumbnails. msoFileDialogViewLargeIcons6 Files displayed as
   /// large icons. msoFileDialogViewSmallIcons7 Files displayed as small icons.
   /// </summary>
-  msoFileDialogViewList = 1,
+  List = 1,
   /// <summary>
   /// Specifies the view presented to the user in a file dialog box.
   /// </summary>
-  msoFileDialogViewDetails,
+  Details,
   /// <summary>
   /// Specifies the view presented to the user in a file dialog box.
   /// </summary>
-  msoFileDialogViewProperties,
+  Properties,
   /// <summary>
   /// Specifies the view presented to the user in a file dialog box.
   /// </summary>
-  msoFileDialogViewPreview,
+  Preview,
   /// <summary>
   /// Specifies the view presented to the user in a file dialog box.
   /// </summary>
-  msoFileDialogViewThumbnail,
+  Thumbnail,
   /// <summary>
   /// Specifies the view presented to the user in a file dialog box.
   /// </summary>
-  msoFileDialogViewLargeIcons,
+  LargeIcons,
   /// <summary>
   /// Specifies the view presented to the user in a file dialog box.
   /// </summary>
-  msoFileDialogViewSmallIcons,
+  SmallIcons,
   /// <summary>
   /// Files displayed in Web view.
   /// </summary>
-  msoFileDialogViewWebView,
+  WebView,
   /// <summary>
   /// Files displayed as tiled icons.
   /// </summary>
-  msoFileDialogViewTiles
+  Tiles
 }

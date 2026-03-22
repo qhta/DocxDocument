@@ -8,41 +8,41 @@ public enum MsoButtonSetType
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoButtonSetNone,
+  None,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoButtonSetOK,
+  OK,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoButtonSetCancel,
+  Cancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoButtonSetOkCancel,
+  OkCancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoButtonSetYesNo,
+  YesNo,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoButtonSetYesNoCancel,
+  YesNoCancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoButtonSetBackClose,
+  BackClose,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code. public enum
   /// class MsoButtonSetType ﾉ Expand table msoButtonSetBackNextClose8 This object, member, or enumeration is
   /// deprecated and is not intended to be used in your code.
   /// </summary>
-  msoButtonSetNextClose,
+  NextClose,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoButtonSetBackNextClose,
+  BackNextClose,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// msoButtonSetAbortRetryIgnore10 This object, member, or enumeration is deprecated and is not intended to be
@@ -52,25 +52,25 @@ public enum MsoButtonSetType
   /// enumeration is deprecated and is not intended to be used in your code. msoButtonSetYesAllNoCancel14 This
   /// object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoButtonSetRetryCancel,
+  RetryCancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoButtonSetAbortRetryIgnore,
+  AbortRetryIgnore,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoButtonSetSearchClose,
+  SearchClose,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoButtonSetBackNextSnooze,
+  BackNextSnooze,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoButtonSetTipsOptionsClose,
+  TipsOptionsClose,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoButtonSetYesAllNoCancel
+  YesAllNoCancel
 }

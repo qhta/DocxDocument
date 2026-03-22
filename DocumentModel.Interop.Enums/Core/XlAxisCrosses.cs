@@ -11,20 +11,20 @@ public enum XlAxisCrosses
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the point
   /// on the specified axis where the other axis crosses.
   /// </summary>
-  xlAxisCrossesAutomatic = -4105,
+  Automatic = -4105,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the point
   /// on the specified axis where the other axis crosses.
   /// </summary>
-  xlAxisCrossesCustom = -4114,
+  Custom = -4114,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the point
   /// on the specified axis where the other axis crosses.
   /// </summary>
-  xlAxisCrossesMaximum = 2,
+  Maximum = 2,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the point
   /// on the specified axis where the other axis crosses.
   /// </summary>
-  xlAxisCrossesMinimum = 4
+  Minimum = 4
 }

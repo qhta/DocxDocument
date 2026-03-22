@@ -8,21 +8,21 @@ public enum MsoSharedWorkspaceTaskStatus
   /// <summary>
   /// Not started.
   /// </summary>
-  msoSharedWorkspaceTaskStatusNotStarted = 1,
+  NotStarted = 1,
   /// <summary>
   /// In progress.
   /// </summary>
-  msoSharedWorkspaceTaskStatusInProgress,
+  InProgress,
   /// <summary>
   /// Completed.
   /// </summary>
-  msoSharedWorkspaceTaskStatusCompleted,
+  Completed,
   /// <summary>
   /// Deferred.
   /// </summary>
-  msoSharedWorkspaceTaskStatusDeferred,
+  Deferred,
   /// <summary>
   /// Waiting.
   /// </summary>
-  msoSharedWorkspaceTaskStatusWaiting
+  Waiting
 }

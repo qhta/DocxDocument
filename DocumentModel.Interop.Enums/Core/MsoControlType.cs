@@ -8,114 +8,114 @@ public enum MsoControlType
   /// <summary>
   /// Custom control. Cannot be created through the object model.
   /// </summary>
-  msoControlCustom,
+  Custom,
   /// <summary>
   /// Command button.
   /// </summary>
-  msoControlButton,
+  Button,
   /// <summary>
   /// Text box.
   /// </summary>
-  msoControlEdit,
+  Edit,
   /// <summary>
   /// Drop-down list.
   /// </summary>
-  msoControlDropdown,
+  Dropdown,
   /// <summary>
   /// Combo box. msoControlButtonDropdown5 Drop-down button. Cannot be created through the object model.
   /// </summary>
-  msoControlComboBox,
+  ComboBox,
   /// <summary>
   /// Specifies the type of the command bar control.
   /// </summary>
-  msoControlButtonDropdown,
+  ButtonDropdown,
   /// <summary>
   /// Split drop-down list. Cannot be created through the object model.
   /// </summary>
-  msoControlSplitDropdown,
+  SplitDropdown,
   /// <summary>
   /// OCX drop-down list. Cannot be created through the object model. msoControlGenericDropdown8 Generic drop-down
   /// list. Cannot be created through the object model. msoControlGraphicDropdown9 Graphic drop-down list. Cannot be
   /// created through the object model. public enum class MsoControlType ﾉ Expand table
   /// </summary>
-  msoControlOCXDropdown,
+  OCXDropdown,
   /// <summary>
   /// Specifies the type of the command bar control.
   /// </summary>
-  msoControlGenericDropdown,
+  GenericDropdown,
   /// <summary>
   /// Specifies the type of the command bar control.
   /// </summary>
-  msoControlGraphicDropdown,
+  GraphicDropdown,
   /// <summary>
   /// Pop-up.
   /// </summary>
-  msoControlPopup,
+  Popup,
   /// <summary>
   /// Graphic pop-up menu. Cannot be created through the object model.
   /// </summary>
-  msoControlGraphicPopup,
+  GraphicPopup,
   /// <summary>
   /// Pop-up button. Cannot be created through the object model.
   /// </summary>
-  msoControlButtonPopup,
+  ButtonPopup,
   /// <summary>
   /// Split button pop-up. Cannot be created through the object model.
   /// </summary>
-  msoControlSplitButtonPopup,
+  SplitButtonPopup,
   /// <summary>
   /// Most Recently Used (MRU) pop-up. Cannot be created through the object model.
   /// </summary>
-  msoControlSplitButtonMRUPopup,
+  SplitButtonMRUPopup,
   /// <summary>
   /// Label. Cannot be created through the object model.
   /// </summary>
-  msoControlLabel,
+  Label,
   /// <summary>
   /// Expanding grid. Cannot be created through the object model. msoControlSplitExpandingGrid17 Split expanding
   /// grid. Cannot be created through the object model.
   /// </summary>
-  msoControlExpandingGrid,
+  ExpandingGrid,
   /// <summary>
   /// Specifies the type of the command bar control.
   /// </summary>
-  msoControlSplitExpandingGrid,
+  SplitExpandingGrid,
   /// <summary>
   /// Grid. Cannot be created through the object model.
   /// </summary>
-  msoControlGrid,
+  Grid,
   /// <summary>
   /// Gauge control. Cannot be created through the object model.
   /// </summary>
-  msoControlGauge,
+  Gauge,
   /// <summary>
   /// Graphic combo box. Cannot be created through the object model.
   /// </summary>
-  msoControlGraphicCombo,
+  GraphicCombo,
   /// <summary>
   /// Pane. Cannot be created through the object model.
   /// </summary>
-  msoControlPane,
+  Pane,
   /// <summary>
   /// ActiveX control.
   /// </summary>
-  msoControlActiveX,
+  ActiveX,
   /// <summary>
   /// Spinner. Cannot be created through the object model.
   /// </summary>
-  msoControlSpinner,
+  Spinner,
   /// <summary>
   /// Extended label. Cannot be created through the object model.
   /// </summary>
-  msoControlLabelEx,
+  LabelEx,
   /// <summary>
   /// Work pane. Cannot be created through the object model. msoControlAutoCompleteCombo26 Combo box in which the
   /// first matching choice is automatically filled in as the user types. Cannot be created through the object
   /// model.
   /// </summary>
-  msoControlWorkPane,
+  WorkPane,
   /// <summary>
   /// Specifies the type of the command bar control.
   /// </summary>
-  msoControlAutoCompleteCombo
+  AutoCompleteCombo
 }

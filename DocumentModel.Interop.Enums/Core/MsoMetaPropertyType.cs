@@ -8,94 +8,94 @@ public enum MsoMetaPropertyType
   /// <summary>
   /// Represents an unknown value.
   /// </summary>
-  msoMetaPropertyTypeUnknown,
+  Unknown,
   /// <summary>
   /// Represents a Boolean value.
   /// </summary>
-  msoMetaPropertyTypeBoolean,
+  Boolean,
   /// <summary>
   /// Represents a value from one or more choices.
   /// </summary>
-  msoMetaPropertyTypeChoice,
+  Choice,
   /// <summary>
   /// Represents a calculated value.
   /// </summary>
-  msoMetaPropertyTypeCalculated,
+  Calculated,
   /// <summary>
   /// Represents a computed value.
   /// </summary>
-  msoMetaPropertyTypeComputed,
+  Computed,
   /// <summary>
   /// Represents a Currency value
   /// </summary>
-  msoMetaPropertyTypeCurrency,
+  Currency,
   /// <summary>
   /// Represents a DateTime value.
   /// </summary>
-  msoMetaPropertyTypeDateTime,
+  DateTime,
   /// <summary>
   /// Represents a value from two or more choices that is written-in by the user.
   /// </summary>
-  msoMetaPropertyTypeFillInChoice,
+  FillInChoice,
   /// <summary>
   /// Represents a GUID value.
   /// </summary>
-  msoMetaPropertyTypeGuid,
+  Guid,
   /// <summary>
   /// Represents an Integer value.
   /// </summary>
-  msoMetaPropertyTypeInteger,
+  Integer,
   /// <summary>
   /// Represents a value used to lookup another value. public enum class MsoMetaPropertyType ﾉ Expand table
   /// msoMetaPropertyTypeMultiChoiceLookup11 Represents a collection of choices used to lookup another value.
   /// </summary>
-  msoMetaPropertyTypeLookup,
+  Lookup,
   /// <summary>
   /// Specifies the metadata property type.
   /// </summary>
-  msoMetaPropertyTypeMultiChoiceLookup,
+  MultiChoiceLookup,
   /// <summary>
   /// Represents a collection of choices.
   /// </summary>
-  msoMetaPropertyTypeMultiChoice,
+  MultiChoice,
   /// <summary>
   /// Represents a collection of choices that require the user to write-in a value.
   /// </summary>
-  msoMetaPropertyTypeMultiChoiceFillIn,
+  MultiChoiceFillIn,
   /// <summary>
   /// Represents a value of one or more sentences.
   /// </summary>
-  msoMetaPropertyTypeNote,
+  Note,
   /// <summary>
   /// Represents a generic number data type.
   /// </summary>
-  msoMetaPropertyTypeNumber,
+  Number,
   /// <summary>
   /// Represents a Text value.
   /// </summary>
-  msoMetaPropertyTypeText,
+  Text,
   /// <summary>
   /// Represents a URL.
   /// </summary>
-  msoMetaPropertyTypeUrl,
+  Url,
   /// <summary>
   /// Represents a category of user.
   /// </summary>
-  msoMetaPropertyTypeUser,
+  User,
   /// <summary>
   /// msoMetaPropertyTypeBusinessData 20 msoMetaPropertyTypeBusinessDataSecondary21
   /// </summary>
-  msoMetaPropertyTypeUserMulti,
+  UserMulti,
   /// <summary>
   /// msoMetaPropertyTypeBusinessDataSecondary21
   /// </summary>
-  msoMetaPropertyTypeBusinessData,
+  BusinessData,
   /// <summary>
   /// Specifies the metadata property type.
   /// </summary>
-  msoMetaPropertyTypeBusinessDataSecondary,
+  BusinessDataSecondary,
   /// <summary>
   /// Represents the maximum value for a range.
   /// </summary>
-  msoMetaPropertyTypeMax
+  Max
 }

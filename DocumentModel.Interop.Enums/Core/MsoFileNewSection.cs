@@ -8,21 +8,21 @@ public enum MsoFileNewSection
   /// <summary>
   /// Open Document section.
   /// </summary>
-  msoOpenDocument,
+  OpenDocument,
   /// <summary>
   /// New section.
   /// </summary>
-  msoNew,
+  New,
   /// <summary>
   /// New from Existing File section.
   /// </summary>
-  msoNewfromExistingFile,
+  NewfromExistingFile,
   /// <summary>
   /// New from Template section.
   /// </summary>
-  msoNewfromTemplate,
+  NewfromTemplate,
   /// <summary>
   /// Bottom section.
   /// </summary>
-  msoBottomSection
+  BottomSection
 }

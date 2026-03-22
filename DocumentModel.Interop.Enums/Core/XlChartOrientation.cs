@@ -9,17 +9,17 @@ public enum XlChartOrientation
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  xlDownward = -4170,
+  Downward = -4170,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  xlHorizontal = -4128,
+  Horizontal = -4128,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  xlUpward = -4171,
+  Upward = -4171,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
-  xlVertical = -4166
+  Vertical = -4166
 }

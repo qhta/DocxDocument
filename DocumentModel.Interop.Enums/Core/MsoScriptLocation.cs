@@ -9,9 +9,9 @@ public enum MsoScriptLocation
   /// <summary>
   /// Script anchor is in the head of the document.
   /// </summary>
-  msoScriptLocationInHead = 1,
+  Head = 1,
   /// <summary>
   /// Script anchor is in the body of the document.
   /// </summary>
-  msoScriptLocationInBody
+  Body
 }

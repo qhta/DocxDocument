@@ -5,22 +5,22 @@ public enum MsoSmartArtNodePosition
   /// <summary>
   /// msoSmartArtNodeAfter 2
   /// </summary>
-  msoSmartArtNodeDefault = 1,
+  Default = 1,
   /// <summary>
   /// msoSmartArtNodeBefore 3
   /// </summary>
-  msoSmartArtNodeAfter,
+  After,
   /// <summary>
   /// msoSmartArtNodeAbove 4
   /// </summary>
-  msoSmartArtNodeBefore,
+  Before,
   /// <summary>
   /// msoSmartArtNodeBelow 5
   /// </summary>
-  msoSmartArtNodeAbove,
+  Above,
   /// <summary>
   /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoSmartArtNodePosition ﾉ
   /// Expand table
   /// </summary>
-  msoSmartArtNodeBelow
+  Below
 }

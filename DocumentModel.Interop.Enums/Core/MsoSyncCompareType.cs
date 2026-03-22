@@ -9,9 +9,9 @@ public enum MsoSyncCompareType
   /// <summary>
   /// Compare and merge versions.
   /// </summary>
-  msoSyncCompareAndMerge,
+  AndMerge,
   /// <summary>
   /// Compare versions side-by-side.
   /// </summary>
-  msoSyncCompareSideBySide
+  SideBySide
 }

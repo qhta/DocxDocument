@@ -5,113 +5,113 @@ public enum MsoPictureEffectType
   /// <summary>
   /// msoEffectBackgroundRemoval 1
   /// </summary>
-  msoEffectNone,
+  None,
   /// <summary>
   /// msoEffectBlur 2
   /// </summary>
-  msoEffectBackgroundRemoval,
+  BackgroundRemoval,
   /// <summary>
   /// msoEffectBrightnessContrast 3
   /// </summary>
-  msoEffectBlur,
+  Blur,
   /// <summary>
   /// msoEffectCement 4
   /// </summary>
-  msoEffectBrightnessContrast,
+  BrightnessContrast,
   /// <summary>
   /// msoEffectCrisscrossEtching 5
   /// </summary>
-  msoEffectCement,
+  Cement,
   /// <summary>
   /// msoEffectChalkSketch 6
   /// </summary>
-  msoEffectCrisscrossEtching,
+  CrisscrossEtching,
   /// <summary>
   /// msoEffectColorTemperature 7
   /// </summary>
-  msoEffectChalkSketch,
+  ChalkSketch,
   /// <summary>
   /// msoEffectCutout 8
   /// </summary>
-  msoEffectColorTemperature,
+  ColorTemperature,
   /// <summary>
   /// msoEffectFilmGrain 9
   /// </summary>
-  msoEffectCutout,
+  Cutout,
   /// <summary>
   /// msoEffectGlass 10
   /// </summary>
-  msoEffectFilmGrain,
+  FilmGrain,
   /// <summary>
   /// msoEffectGlowDiffused 11
   /// </summary>
-  msoEffectGlass,
+  Glass,
   /// <summary>
   /// msoEffectGlowEdges 12
   /// </summary>
-  msoEffectGlowDiffused,
+  GlowDiffused,
   /// <summary>
   /// msoEffectLightScreen 13 public enum class MsoPictureEffectType ﾉ Expand table
   /// </summary>
-  msoEffectGlowEdges,
+  GlowEdges,
   /// <summary>
   /// public enum class MsoPictureEffectType ﾉ Expand table
   /// </summary>
-  msoEffectLightScreen,
+  LightScreen,
   /// <summary>
   /// msoEffectMarker 15
   /// </summary>
-  msoEffectLineDrawing,
+  LineDrawing,
   /// <summary>
   /// msoEffectMosiaicBubbles 16
   /// </summary>
-  msoEffectMarker,
+  Marker,
   /// <summary>
   /// msoEffectPaintBrush 17
   /// </summary>
-  msoEffectMosiaicBubbles,
+  MosiaicBubbles,
   /// <summary>
   /// msoEffectPaintStrokes 18
   /// </summary>
-  msoEffectPaintBrush,
+  PaintBrush,
   /// <summary>
   /// msoEffectPastelsSmooth 19
   /// </summary>
-  msoEffectPaintStrokes,
+  PaintStrokes,
   /// <summary>
   /// msoEffectPencilGrayscale 20
   /// </summary>
-  msoEffectPastelsSmooth,
+  PastelsSmooth,
   /// <summary>
   /// msoEffectPencilSketch 21
   /// </summary>
-  msoEffectPencilGrayscale,
+  PencilGrayscale,
   /// <summary>
   /// msoEffectPhotocopy 22
   /// </summary>
-  msoEffectPencilSketch,
+  PencilSketch,
   /// <summary>
   /// msoEffectPlasticWrap 23
   /// </summary>
-  msoEffectPhotocopy,
+  Photocopy,
   /// <summary>
   /// msoEffectSaturation 24
   /// </summary>
-  msoEffectPlasticWrap,
+  PlasticWrap,
   /// <summary>
   /// msoEffectSharpenSoften 25
   /// </summary>
-  msoEffectSaturation,
+  Saturation,
   /// <summary>
   /// msoEffectTexturizer 26
   /// </summary>
-  msoEffectSharpenSoften,
+  SharpenSoften,
   /// <summary>
   /// msoEffectWatercolorSponge 27
   /// </summary>
-  msoEffectTexturizer,
+  Texturizer,
   /// <summary>
   /// Applies to Product Versions Office primary interop assembly Latest
   /// </summary>
-  msoEffectWatercolorSponge
+  WatercolorSponge
 }

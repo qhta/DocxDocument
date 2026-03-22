@@ -14,21 +14,21 @@ public enum MsoMergeCmd
   /// msoMergeFragment5 Breaks a shape into smaller parts or create new shapes from intersecting lines or from
   /// shapes that overlap.
   /// </summary>
-  msoMergeUnion = 1,
+  Union = 1,
   /// <summary>
   /// Specifies the output of a merge shapes operation.
   /// </summary>
-  msoMergeCombine,
+  Combine,
   /// <summary>
   /// Specifies the output of a merge shapes operation.
   /// </summary>
-  msoMergeIntersect,
+  Intersect,
   /// <summary>
   /// Specifies the output of a merge shapes operation.
   /// </summary>
-  msoMergeSubtract,
+  Subtract,
   /// <summary>
   /// Specifies the output of a merge shapes operation.
   /// </summary>
-  msoMergeFragment
+  Fragment
 }

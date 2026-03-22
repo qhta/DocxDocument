@@ -8,29 +8,29 @@ public enum MsoTextOrientation
   /// <summary>
   /// Specifies orientation for text.
   /// </summary>
-  msoTextOrientationMixed = -2,
+  Mixed = -2,
   /// <summary>
   /// Horizontal.
   /// </summary>
-  msoTextOrientationHorizontal = 1,
+  Horizontal = 1,
   /// <summary>
   /// Upward.
   /// </summary>
-  msoTextOrientationUpward = 2,
+  Upward = 2,
   /// <summary>
   /// Downward.
   /// </summary>
-  msoTextOrientationDownward = 3,
+  Downward = 3,
   /// <summary>
   /// Vertical as required for Far East language support.
   /// </summary>
-  msoTextOrientationVerticalFarEast = 4,
+  VerticalFarEast = 4,
   /// <summary>
   /// Vertical.
   /// </summary>
-  msoTextOrientationVertical = 5,
+  Vertical = 5,
   /// <summary>
   /// Horizontal and rotated as required for Far East language support.
   /// </summary>
-  msoTextOrientationHorizontalRotatedFarEast = 6
+  HorizontalRotatedFarEast = 6
 }

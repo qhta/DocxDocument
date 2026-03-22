@@ -8,109 +8,109 @@ public enum MsoShapeType
   /// <summary>
   /// Specifies the type of a shape or range of shapes.
   /// </summary>
-  msoShapeTypeMixed = -2,
+  ShapeTypeMixed = -2,
   /// <summary>
   /// AutoShape.
   /// </summary>
-  msoAutoShape = 1,
+  AutoShape = 1,
   /// <summary>
   /// Callout.
   /// </summary>
-  msoCallout = 2,
+  Callout = 2,
   /// <summary>
   /// Chart.
   /// </summary>
-  msoChart = 3,
+  Chart = 3,
   /// <summary>
   /// Comment.
   /// </summary>
-  msoComment = 4,
+  Comment = 4,
   /// <summary>
   /// Freeform.
   /// </summary>
-  msoFreeform = 5,
+  Freeform = 5,
   /// <summary>
   /// Group. msoEmbeddedOLEObject7 Embedded OLE object.
   /// </summary>
-  msoGroup = 6,
+  Group = 6,
   /// <summary>
   /// Specifies the type of a shape or range of shapes.
   /// </summary>
-  msoEmbeddedOLEObject = 7,
+  EmbeddedOLEObject = 7,
   /// <summary>
   /// Form control.
   /// </summary>
-  msoFormControl = 8,
+  FormControl = 8,
   /// <summary>
   /// Line.
   /// </summary>
-  msoLine = 9,
+  Line = 9,
   /// <summary>
   /// Linked OLE object.
   /// </summary>
-  msoLinkedOLEObject = 10,
+  LinkedOLEObject = 10,
   /// <summary>
   /// Linked picture.
   /// </summary>
-  msoLinkedPicture = 11,
+  LinkedPicture = 11,
   /// <summary>
   /// OLE control object. public enum class MsoShapeType ﾉ Expand table
   /// </summary>
-  msoOLEControlObject = 12,
+  OLEControlObject = 12,
   /// <summary>
   /// Picture.
   /// </summary>
-  msoPicture = 13,
+  Picture = 13,
   /// <summary>
   /// Placeholder.
   /// </summary>
-  msoPlaceholder = 14,
+  Placeholder = 14,
   /// <summary>
   /// Text effect.
   /// </summary>
-  msoTextEffect = 15,
+  TextEffect = 15,
   /// <summary>
   /// Media.
   /// </summary>
-  msoMedia = 16,
+  Media = 16,
   /// <summary>
   /// Text box.
   /// </summary>
-  msoTextBox = 17,
+  TextBox = 17,
   /// <summary>
   /// Script anchor.
   /// </summary>
-  msoScriptAnchor = 18,
+  ScriptAnchor = 18,
   /// <summary>
   /// Table.
   /// </summary>
-  msoTable = 19,
+  Table = 19,
   /// <summary>
   /// Canvas.
   /// </summary>
-  msoCanvas = 20,
+  Canvas = 20,
   /// <summary>
   /// Diagram.
   /// </summary>
-  msoDiagram = 21,
+  Diagram = 21,
   /// <summary>
   /// Ink.
   /// </summary>
-  msoInk = 22,
+  Ink = 22,
   /// <summary>
   /// Ink comment.
   /// </summary>
-  msoInkComment = 23,
+  InkComment = 23,
   /// <summary>
   /// msoSlicer 25
   /// </summary>
-  msoSmartArt = 24,
+  SmartArt = 24,
   /// <summary>
   /// msoWebVideo 26 Web video.
   /// </summary>
-  msoSlicer = 25,
+  Slicer = 25,
   /// <summary>
   /// Web video.
   /// </summary>
-  msoWebVideo = 26
+  WebVideo = 26
 }

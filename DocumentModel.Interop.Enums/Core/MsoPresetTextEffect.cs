@@ -8,205 +8,205 @@ public enum MsoPresetTextEffect
   /// <summary>
   /// Specifies what text effect to use on a WordArt object.
   /// </summary>
-  msoTextEffectMixed = -2,
+  Mixed = -2,
   /// <summary>
   /// First text effect.
   /// </summary>
-  msoTextEffect1 = 0,
+  Effect1 = 0,
   /// <summary>
   /// Second text effect.
   /// </summary>
-  msoTextEffect2 = 1,
+  Effect2 = 1,
   /// <summary>
   /// Third text effect.
   /// </summary>
-  msoTextEffect3 = 2,
+  Effect3 = 2,
   /// <summary>
   /// Fourth text effect.
   /// </summary>
-  msoTextEffect4 = 3,
+  Effect4 = 3,
   /// <summary>
   /// Fifth text effect.
   /// </summary>
-  msoTextEffect5 = 4,
+  Effect5 = 4,
   /// <summary>
   /// Sixth text effect.
   /// </summary>
-  msoTextEffect6 = 5,
+  Effect6 = 5,
   /// <summary>
   /// Seventh text effect.
   /// </summary>
-  msoTextEffect7 = 6,
+  Effect7 = 6,
   /// <summary>
   /// Eighth text effect.
   /// </summary>
-  msoTextEffect8 = 7,
+  Effect8 = 7,
   /// <summary>
   /// Ninth text effect.
   /// </summary>
-  msoTextEffect9 = 8,
+  Effect9 = 8,
   /// <summary>
   /// Tenth text effect.
   /// </summary>
-  msoTextEffect10 = 9,
+  Effect10 = 9,
   /// <summary>
   /// Eleventh text effect.
   /// </summary>
-  msoTextEffect11 = 10,
+  Effect11 = 10,
   /// <summary>
-  /// Twelfth text effect. public enum class MsoPresetTextEffect ﾉ Expand table
+  /// Twelfth text effect.
   /// </summary>
-  msoTextEffect12 = 11,
+  Effect12 = 11,
   /// <summary>
   /// Thirteenth text effect.
   /// </summary>
-  msoTextEffect13 = 12,
+  Effect13 = 12,
   /// <summary>
   /// Fourteenth text effect.
   /// </summary>
-  msoTextEffect14 = 13,
+  Effect14 = 13,
   /// <summary>
   /// Fifteenth text effect.
   /// </summary>
-  msoTextEffect15 = 14,
+  Effect15 = 14,
   /// <summary>
   /// Sixteenth text effect.
   /// </summary>
-  msoTextEffect16 = 15,
+  Effect16 = 15,
   /// <summary>
   /// Seventeenth text effect.
   /// </summary>
-  msoTextEffect17 = 16,
+  Effect17 = 16,
   /// <summary>
   /// Eighteenth text effect.
   /// </summary>
-  msoTextEffect18 = 17,
+  Effect18 = 17,
   /// <summary>
   /// Nineteenth text effect.
   /// </summary>
-  msoTextEffect19 = 18,
+  Effect19 = 18,
   /// <summary>
   /// Twentieth text effect.
   /// </summary>
-  msoTextEffect20 = 19,
+  Effect20 = 19,
   /// <summary>
   /// Twenty-first text effect.
   /// </summary>
-  msoTextEffect21 = 20,
+  Effect21 = 20,
   /// <summary>
   /// Twenty-second text effect.
   /// </summary>
-  msoTextEffect22 = 21,
+  Effect22 = 21,
   /// <summary>
   /// Twenty-third text effect.
   /// </summary>
-  msoTextEffect23 = 22,
+  Effect23 = 22,
   /// <summary>
   /// Twenty-fourth text effect.
   /// </summary>
-  msoTextEffect24 = 23,
+  Effect24 = 23,
   /// <summary>
   /// Twenty-fifth text effect.
   /// </summary>
-  msoTextEffect25 = 24,
+  Effect25 = 24,
   /// <summary>
   /// Twenty-sixth text effect.
   /// </summary>
-  msoTextEffect26 = 25,
+  Effect26 = 25,
   /// <summary>
   /// Twenty-seventh text effect.
   /// </summary>
-  msoTextEffect27 = 26,
+  Effect27 = 26,
   /// <summary>
   /// Twenty-eighth text effect.
   /// </summary>
-  msoTextEffect28 = 27,
+  Effect28 = 27,
   /// <summary>
   /// Twenty-ninth text effect.
   /// </summary>
-  msoTextEffect29 = 28,
+  Effect29 = 28,
   /// <summary>
   /// Thirtieth text effect.
   /// </summary>
-  msoTextEffect30 = 29,
+  Effect30 = 29,
   /// <summary>
   /// Thirty-first text effect.
   /// </summary>
-  msoTextEffect31 = 30,
+  Effect31 = 30,
   /// <summary>
   /// Thirty-second text effect.
   /// </summary>
-  msoTextEffect32 = 31,
+  Effect32 = 31,
   /// <summary>
   /// Thirty-third text effect.
   /// </summary>
-  msoTextEffect33 = 32,
+  Effect33 = 32,
   /// <summary>
   /// Thirty-fourth text effect.
   /// </summary>
-  msoTextEffect34 = 33,
+  Effect34 = 33,
   /// <summary>
   /// Thirty-fifth text effect.
   /// </summary>
-  msoTextEffect35 = 34,
+  Effect35 = 34,
   /// <summary>
   /// Thirty-sixth text effect.
   /// </summary>
-  msoTextEffect36 = 35,
+  Effect36 = 35,
   /// <summary>
   /// Thirty-seventh text effect.
   /// </summary>
-  msoTextEffect37 = 36,
+  Effect37 = 36,
   /// <summary>
   /// Thirty-eighth text effect.
   /// </summary>
-  msoTextEffect38 = 37,
+  Effect38 = 37,
   /// <summary>
   /// Thirty-ninth text effect.
   /// </summary>
-  msoTextEffect39 = 38,
+  Effect39 = 38,
   /// <summary>
   /// Fortieth text effect.
   /// </summary>
-  msoTextEffect40 = 39,
+  Effect40 = 39,
   /// <summary>
   /// Forty-first text effect.
   /// </summary>
-  msoTextEffect41 = 40,
+  Effect41 = 40,
   /// <summary>
   /// Forty-second text effect.
   /// </summary>
-  msoTextEffect42 = 41,
+  Effect42 = 41,
   /// <summary>
   /// Forty-third text effect.
   /// </summary>
-  msoTextEffect43 = 42,
+  Effect43 = 42,
   /// <summary>
   /// Forty-fourth text effect.
   /// </summary>
-  msoTextEffect44 = 43,
+  Effect44 = 43,
   /// <summary>
   /// Forty-fifth text effect.
   /// </summary>
-  msoTextEffect45 = 44,
+  Effect45 = 44,
   /// <summary>
   /// Forty-sixth text effect.
   /// </summary>
-  msoTextEffect46 = 45,
+  Effect46 = 45,
   /// <summary>
   /// Forty-seventh text effect.
   /// </summary>
-  msoTextEffect47 = 46,
+  Effect47 = 46,
   /// <summary>
   /// Forty-eighth text effect.
   /// </summary>
-  msoTextEffect48 = 47,
+  Effect48 = 47,
   /// <summary>
   /// Forty-ninth text effect.
   /// </summary>
-  msoTextEffect49 = 48,
+  Effect49 = 48,
   /// <summary>
   /// Fiftieth text effect.
   /// </summary>
-  msoTextEffect50 = 49
+  Effect50 = 49
 }

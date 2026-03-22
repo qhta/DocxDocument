@@ -12,10 +12,10 @@ public enum XlEndStyleCap
   /// xlNoCap2 You should access and use this enumeration from the Excel primary interop assembly (PIA). No caps
   /// applied.
   /// </summary>
-  xlCap = 1,
+  Cap = 1,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the end
   /// style for error bars.
   /// </summary>
-  xlNoCap
+  NoCap
 }

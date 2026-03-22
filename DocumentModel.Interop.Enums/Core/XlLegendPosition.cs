@@ -11,30 +11,30 @@ public enum XlLegendPosition
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
   /// position of the legend on a chart.
   /// </summary>
-  xlLegendPositionBottom = -4107,
+  Bottom = -4107,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
   /// position of the legend on a chart.
   /// </summary>
-  xlLegendPositionCorner = 2,
+  Corner = 2,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
   /// position of the legend on a chart.
   /// </summary>
-  xlLegendPositionLeft = -4131,
+  Left = -4131,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
   /// position of the legend on a chart.
   /// </summary>
-  xlLegendPositionRight = -4152,
+  Right = -4152,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
   /// position of the legend on a chart.
   /// </summary>
-  xlLegendPositionTop = -4160,
+  Top = -4160,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
   /// position of the legend on a chart.
   /// </summary>
-  xlLegendPositionCustom = -4161
+  Custom = -4161
 }

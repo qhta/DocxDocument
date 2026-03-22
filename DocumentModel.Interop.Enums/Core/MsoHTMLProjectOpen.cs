@@ -9,9 +9,9 @@ public enum MsoHTMLProjectOpen
   /// <summary>
   /// Open project in source view.
   /// </summary>
-  msoHTMLProjectOpenSourceView = 1,
+  SourceView = 1,
   /// <summary>
   /// Open project in text view.
   /// </summary>
-  msoHTMLProjectOpenTextView
+  TextView
 }

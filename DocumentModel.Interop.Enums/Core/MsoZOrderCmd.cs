@@ -8,25 +8,25 @@ public enum MsoZOrderCmd
   /// <summary>
   /// Bring shape to the front.
   /// </summary>
-  msoBringToFront,
+  BringToFront,
   /// <summary>
   /// Send shape to the back.
   /// </summary>
-  msoSendToBack,
+  SendToBack,
   /// <summary>
   /// Bring shape forward.
   /// </summary>
-  msoBringForward,
+  BringForward,
   /// <summary>
   /// Send shape backward.
   /// </summary>
-  msoSendBackward,
+  SendBackward,
   /// <summary>
   /// Bring shape in front of text.
   /// </summary>
-  msoBringInFrontOfText,
+  BringInFrontOfText,
   /// <summary>
   /// Send shape behind text.
   /// </summary>
-  msoSendBehindText
+  SendBehindText
 }

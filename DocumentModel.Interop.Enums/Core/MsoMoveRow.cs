@@ -8,17 +8,17 @@ public enum MsoMoveRow
   /// <summary>
   /// This enumeration has been deprecated and should not be used.
   /// </summary>
-  msoMoveRowFirst = -4,
+  First = -4,
   /// <summary>
   /// This enumeration has been deprecated and should not be used.
   /// </summary>
-  msoMoveRowPrev,
+  Prev,
   /// <summary>
   /// This enumeration has been deprecated and should not be used.
   /// </summary>
-  msoMoveRowNext,
+  Next,
   /// <summary>
   /// This enumeration has been deprecated and should not be used.
   /// </summary>
-  msoMoveRowNbr
+  Nbr
 }

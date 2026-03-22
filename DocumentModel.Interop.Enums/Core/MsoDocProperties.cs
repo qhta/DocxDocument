@@ -8,21 +8,21 @@ public enum MsoDocProperties
   /// <summary>
   /// Integer value.
   /// </summary>
-  msoPropertyTypeNumber = 1,
+  Number = 1,
   /// <summary>
   /// Boolean value.
   /// </summary>
-  msoPropertyTypeBoolean,
+  Boolean,
   /// <summary>
   /// Date value.
   /// </summary>
-  msoPropertyTypeDate,
+  Date,
   /// <summary>
   /// String value.
   /// </summary>
-  msoPropertyTypeString,
+  String,
   /// <summary>
   /// Floating point value.
   /// </summary>
-  msoPropertyTypeFloat
+  Float
 }

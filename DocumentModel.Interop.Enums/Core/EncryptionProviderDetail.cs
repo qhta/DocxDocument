@@ -5,22 +5,22 @@ public enum EncryptionProviderDetail
   /// <summary>
   /// encprovdetAlgorithm 1
   /// </summary>
-  encprovdetUrl,
+  Url,
   /// <summary>
   /// encprovdetBlockCipher 2
   /// </summary>
-  encprovdetAlgorithm,
+  Algorithm,
   /// <summary>
   /// encprovdetCipherBlockSize 3
   /// </summary>
-  encprovdetBlockCipher,
+  BlockCipher,
   /// <summary>
   /// encprovdetCipherMode 4
   /// </summary>
-  encprovdetCipherBlockSize,
+  CipherBlockSize,
   /// <summary>
   /// Applies to Product Versions Office primary interop assembly Latest public enum class EncryptionProviderDetail
   /// ﾉ Expand table
   /// </summary>
-  encprovdetCipherMode
+  CipherMode
 }

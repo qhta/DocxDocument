@@ -5,10 +5,10 @@ public enum MsoFileValidationMode
   /// <summary>
   /// msoFileValidationSkip 1
   /// </summary>
-  msoFileValidationDefault,
+  Default,
   /// <summary>
   /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoFileValidationMode ﾉ
   /// Expand table
   /// </summary>
-  msoFileValidationSkip
+  Skip
 }

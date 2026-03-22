@@ -9,9 +9,9 @@ public enum MsoConnector
   /// <summary>
   /// Combine property test values to form one property test.
   /// </summary>
-  msoConnectorAnd = 1,
+  And = 1,
   /// <summary>
   /// Treat property test values as separate criteria.
   /// </summary>
-  msoConnectorOr
+  Or
 }

@@ -2,22 +2,22 @@
 
 public enum MsoTabStopType
 {
-  msoTabStopMixed = -2,
+  Mixed = -2,
   /// <summary>
   /// msoTabStopCenter 2
   /// </summary>
-  msoTabStopLeft = 1,
+  Left = 1,
   /// <summary>
   /// msoTabStopRight 3
   /// </summary>
-  msoTabStopCenter = 2,
+  Center = 2,
   /// <summary>
   /// msoTabStopDecimal 4
   /// </summary>
-  msoTabStopRight = 3,
+  Right = 3,
   /// <summary>
   /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoTabStopType ﾉ Expand
   /// table
   /// </summary>
-  msoTabStopDecimal = 4
+  Decimal = 4
 }

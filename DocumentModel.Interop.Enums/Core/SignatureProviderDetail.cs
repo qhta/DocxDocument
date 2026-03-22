@@ -8,21 +8,21 @@ public enum SignatureProviderDetail
   /// <summary>
   /// The URL of the signature provider. sigprovdetHashAlgorithm1 Hash algorithm used to hash the data in the file.
   /// </summary>
-  sigprovdetUrl,
+  Url,
   /// <summary>
   /// Specifies properties of a signature provider.
   /// </summary>
-  sigprovdetHashAlgorithm,
+  HashAlgorithm,
   /// <summary>
   /// Indicates that the signature provider only uses a custom user interface.
   /// </summary>
-  sigprovdetUIOnly,
+  UIOnly,
   /// <summary>
   /// sigprovdetUseOfficeStampUI4
   /// </summary>
-  sigprovdetUseOfficeUI,
+  UseOfficeUI,
   /// <summary>
   /// Specifies properties of a signature provider.
   /// </summary>
-  sigprovdetUseOfficeStampUI
+  UseOfficeStampUI
 }

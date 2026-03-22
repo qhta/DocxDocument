@@ -11,15 +11,15 @@ public enum XlSeriesNameLevel
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the series
   /// labels for the series label levels.
   /// </summary>
-  xlSeriesNameLevelNone = -3,
+  None = -3,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the series
   /// labels for the series label levels.
   /// </summary>
-  xlSeriesNameLevelCustom,
+  Custom,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the series
   /// labels for the series label levels.
   /// </summary>
-  xlSeriesNameLevelAll
+  All
 }

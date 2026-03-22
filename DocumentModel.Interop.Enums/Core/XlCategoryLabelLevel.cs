@@ -11,15 +11,15 @@ public enum XlCategoryLabelLevel
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
   /// category labels for the category label levels.
   /// </summary>
-  xlCategoryLabelLevelNone = -3,
+  None = -3,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
   /// category labels for the category label levels.
   /// </summary>
-  xlCategoryLabelLevelCustom,
+  Custom,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
   /// category labels for the category label levels.
   /// </summary>
-  xlCategoryLabelLevelAll
+  All
 }

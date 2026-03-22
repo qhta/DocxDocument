@@ -8,13 +8,13 @@ public enum MsoButtonState
   /// <summary>
   /// Button is not pressed down.
   /// </summary>
-  msoButtonUp = 0,
+  Up = 0,
   /// <summary>
   /// Specifies the appearance of a command bar button control.
   /// </summary>
-  msoButtonDown = -1,
+  Down = -1,
   /// <summary>
   /// Button is pressed down.
   /// </summary>
-  msoButtonMixed = 2
+  Mixed = 2
 }

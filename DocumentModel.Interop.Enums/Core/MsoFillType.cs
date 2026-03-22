@@ -8,29 +8,29 @@ public enum MsoFillType
   /// <summary>
   /// Specifies a shape's fill type.
   /// </summary>
-  msoFillMixed = -2,
+  Mixed = -2,
   /// <summary>
   /// Solid fill.
   /// </summary>
-  msoFillSolid = 1,
+  Solid = 1,
   /// <summary>
   /// Patterned fill.
   /// </summary>
-  msoFillPatterned = 2,
+  Patterned = 2,
   /// <summary>
   /// Gradient fill.
   /// </summary>
-  msoFillGradient = 3,
+  Gradient = 3,
   /// <summary>
   /// Textured fill.
   /// </summary>
-  msoFillTextured = 4,
+  Textured = 4,
   /// <summary>
   /// Fill is the same as the background.
   /// </summary>
-  msoFillBackground = 5,
+  Background = 5,
   /// <summary>
   /// Picture fill.
   /// </summary>
-  msoFillPicture = 6
+  Picture = 6
 }

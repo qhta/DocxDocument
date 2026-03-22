@@ -8,33 +8,33 @@ public enum MsoSyncEventType
   /// <summary>
   /// Download initiated.
   /// </summary>
-  msoSyncEventDownloadInitiated,
+  DownloadInitiated,
   /// <summary>
   /// Download succeeded.
   /// </summary>
-  msoSyncEventDownloadSucceeded,
+  DownloadSucceeded,
   /// <summary>
   /// Download failed.
   /// </summary>
-  msoSyncEventDownloadFailed,
+  DownloadFailed,
   /// <summary>
   /// Upload initiated.
   /// </summary>
-  msoSyncEventUploadInitiated,
+  UploadInitiated,
   /// <summary>
   /// Upload succeeded.
   /// </summary>
-  msoSyncEventUploadSucceeded,
+  UploadSucceeded,
   /// <summary>
   /// Upload failed.
   /// </summary>
-  msoSyncEventUploadFailed,
+  UploadFailed,
   /// <summary>
   /// No change detected.
   /// </summary>
-  msoSyncEventDownloadNoChange,
+  DownloadNoChange,
   /// <summary>
   /// Offline.
   /// </summary>
-  msoSyncEventOffline
+  Offline
 }

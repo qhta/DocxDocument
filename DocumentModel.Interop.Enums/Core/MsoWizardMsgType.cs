@@ -10,21 +10,21 @@ public enum MsoWizardMsgType
   /// msoWizardMsgShowHelp3 User clicked the left button in the decision or branch balloon. msoWizardMsgSuspending4
   /// Passed to the ActivateWizard method if msoWizardActSuspend is specified for the Act argument.
   /// </summary>
-  msoWizardMsgLocalStateOn = 1,
+  LocalStateOn = 1,
   /// <summary>
   /// Specifies context under which a wizard's callback procedure is called.
   /// </summary>
-  msoWizardMsgLocalStateOff,
+  LocalStateOff,
   /// <summary>
   /// Specifies context under which a wizard's callback procedure is called.
   /// </summary>
-  msoWizardMsgShowHelp,
+  ShowHelp,
   /// <summary>
   /// Specifies context under which a wizard's callback procedure is called.
   /// </summary>
-  msoWizardMsgSuspending,
+  Suspending,
   /// <summary>
   /// Passed to the ActivateWizard method if msoWizardActResume is specified for the Act argument.
   /// </summary>
-  msoWizardMsgResuming
+  Resuming
 }

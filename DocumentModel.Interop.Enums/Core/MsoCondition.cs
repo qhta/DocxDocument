@@ -9,320 +9,320 @@ public enum MsoCondition
   /// <summary>
   /// File can be any type.
   /// </summary>
-  msoConditionFileTypeAllFiles = 1,
+  FileTypeAllFiles = 1,
   /// <summary>
   /// File can be any Office file type.
   /// </summary>
-  msoConditionFileTypeOfficeFiles,
+  FileTypeOfficeFiles,
   /// <summary>
   /// Word document.
   /// </summary>
-  msoConditionFileTypeWordDocuments,
+  FileTypeWordDocuments,
   /// <summary>
   /// Excel workbook. msoConditionFileTypePowerPointPresentations5 PowerPoint presentation.
   /// </summary>
-  msoConditionFileTypeExcelWorkbooks,
+  FileTypeExcelWorkbooks,
   /// <summary>
   /// Defines the condition for comparison between a file and a specified property in a file search.
   /// </summary>
-  msoConditionFileTypePowerPointPresentations,
+  FileTypePowerPointPresentations,
   /// <summary>
   /// Binder file.
   /// </summary>
-  msoConditionFileTypeBinders,
+  FileTypeBinders,
   /// <summary>
   /// Database.
   /// </summary>
-  msoConditionFileTypeDatabases,
+  FileTypeDatabases,
   /// <summary>
   /// Template.
   /// </summary>
-  msoConditionFileTypeTemplates,
+  FileTypeTemplates,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object includes the value specified
   /// in the Value property of the PropertyTest object.
   /// </summary>
-  msoConditionIncludes,
+  Includes,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object includes the phrase specified
   /// in the value specified in public enum class MsoCondition ﾉ Expand table the Value property of the PropertyTest
   /// object.
   /// </summary>
-  msoConditionIncludesPhrase,
+  IncludesPhrase,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object begins with the value
   /// specified in the Value property of the PropertyTest object.
   /// </summary>
-  msoConditionBeginsWith,
+  BeginsWith,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object ends with the value specified
   /// in the Value property of the PropertyTest object.
   /// </summary>
-  msoConditionEndsWith,
+  EndsWith,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object and the value specified in
   /// the Value property of the PropertyTest object are near each other.
   /// </summary>
-  msoConditionIncludesNearEachOther,
+  IncludesNearEachOther,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object is exactly the value
   /// specified in the Value property of the PropertyTest object.
   /// </summary>
-  msoConditionIsExactly,
+  IsExactly,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object is not the value specified in
   /// the Value property of the PropertyTest object.
   /// </summary>
-  msoConditionIsNot,
+  IsNot,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is yesterday.
   /// </summary>
-  msoConditionYesterday,
+  Yesterday,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is today.
   /// </summary>
-  msoConditionToday,
+  Today,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is tomorrow.
   /// </summary>
-  msoConditionTomorrow,
+  Tomorrow,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is within the last week.
   /// </summary>
-  msoConditionLastWeek,
+  LastWeek,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is this week.
   /// </summary>
-  msoConditionThisWeek,
+  ThisWeek,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is next week.
   /// </summary>
-  msoConditionNextWeek,
+  NextWeek,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is within the last month.
   /// </summary>
-  msoConditionLastMonth,
+  LastMonth,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is this month.
   /// </summary>
-  msoConditionThisMonth,
+  ThisMonth,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is next month.
   /// </summary>
-  msoConditionNextMonth,
+  NextMonth,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object can be any time.
   /// </summary>
-  msoConditionAnytime,
+  Anytime,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is between the dates specified with the Value
   /// and SecondValue properties of the PropertyTest object.
   /// </summary>
-  msoConditionAnytimeBetween,
+  AnytimeBetween,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is the same as the date specified in the Value
   /// property of the PropertyTest object.
   /// </summary>
-  msoConditionOn,
+  On,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is on or after the date specified in the Value
   /// property of the PropertyTest object.
   /// </summary>
-  msoConditionOnOrAfter,
+  OnOrAfter,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is on or before the date specified in the Value
   /// property of the PropertyTest object.
   /// </summary>
-  msoConditionOnOrBefore,
+  OnOrBefore,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is within the next time interval specified in
   /// the Value property of the PropertyTest object.
   /// </summary>
-  msoConditionInTheNext,
+  InTheNext,
   /// <summary>
   /// Date specified in the Name property of the PropertyTest object is within the last time interval specified in
   /// the Value property of the PropertyTest object.
   /// </summary>
-  msoConditionInTheLast,
+  InTheLast,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object equals the value specified in
   /// the Value property of the PropertyTest object.
   /// </summary>
-  msoConditionEquals,
+  Equals,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object does not equal the value
   /// specified in the Value property of the PropertyTest object.
   /// </summary>
-  msoConditionDoesNotEqual,
+  DoesNotEqual,
   /// <summary>
   /// Any number between values specified with the Value and SecondValue properties of the PropertyTest object.
   /// </summary>
-  msoConditionAnyNumberBetween,
+  AnyNumberBetween,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object is at most the value
   /// specified in the Value property of the PropertyTest object.
   /// </summary>
-  msoConditionAtMost,
+  AtMost,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object is at least the value
   /// specified in the Value property of the PropertyTest object.
   /// </summary>
-  msoConditionAtLeast,
+  AtLeast,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object is more than the value
   /// specified in the Value property of the PropertyTest object.
   /// </summary>
-  msoConditionMoreThan,
+  MoreThan,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object is less than the value
   /// specified in the Value property of the PropertyTest object.
   /// </summary>
-  msoConditionLessThan,
+  LessThan,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object is "True".
   /// </summary>
-  msoConditionIsYes,
+  IsYes,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object is "False".
   /// </summary>
-  msoConditionIsNo,
+  IsNo,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object includes forms of the value
   /// specified in the Value property of the PropertyTest object.
   /// </summary>
-  msoConditionIncludesFormsOf,
+  IncludesFormsOf,
   /// <summary>
   /// Value of the file property specified in the Name property of the PropertyTest object matches the value
   /// specified in the Value property of the PropertyTest object when a FreeText search is used.
   /// </summary>
-  msoConditionFreeText,
+  FreeText,
   /// <summary>
   /// Outlook item.
   /// </summary>
-  msoConditionFileTypeOutlookItems,
+  FileTypeOutlookItems,
   /// <summary>
   /// Mail item.
   /// </summary>
-  msoConditionFileTypeMailItem,
+  FileTypeMailItem,
   /// <summary>
   /// Calendar item.
   /// </summary>
-  msoConditionFileTypeCalendarItem,
+  FileTypeCalendarItem,
   /// <summary>
   /// Contact item.
   /// </summary>
-  msoConditionFileTypeContactItem,
+  FileTypeContactItem,
   /// <summary>
   /// Note item.
   /// </summary>
-  msoConditionFileTypeNoteItem,
+  FileTypeNoteItem,
   /// <summary>
   /// Journal item.
   /// </summary>
-  msoConditionFileTypeJournalItem,
+  FileTypeJournalItem,
   /// <summary>
   /// Task item.
   /// </summary>
-  msoConditionFileTypeTaskItem,
+  FileTypeTaskItem,
   /// <summary>
   /// PhotoDraw file.
   /// </summary>
-  msoConditionFileTypePhotoDrawFiles,
+  FileTypePhotoDrawFiles,
   /// <summary>
   /// Data connection file.
   /// </summary>
-  msoConditionFileTypeDataConnectionFiles,
+  FileTypeDataConnectionFiles,
   /// <summary>
   /// Publisher file.
   /// </summary>
-  msoConditionFileTypePublisherFiles,
+  FileTypePublisherFiles,
   /// <summary>
   /// Project file. msoConditionFileTypeDocumentImagingFiles54 Document imaging file.
   /// </summary>
-  msoConditionFileTypeProjectFiles,
+  FileTypeProjectFiles,
   /// <summary>
   /// Defines the condition for comparison between a file and a specified property in a file search.
   /// </summary>
-  msoConditionFileTypeDocumentImagingFiles,
+  FileTypeDocumentImagingFiles,
   /// <summary>
   /// Visio file.
   /// </summary>
-  msoConditionFileTypeVisioFiles,
+  FileTypeVisioFiles,
   /// <summary>
   /// Designer file.
   /// </summary>
-  msoConditionFileTypeDesignerFiles,
+  FileTypeDesignerFiles,
   /// <summary>
   /// Web page.
   /// </summary>
-  msoConditionFileTypeWebPages,
+  FileTypeWebPages,
   /// <summary>
   /// Priority equals "Low". Value of the Name property must be Priority.
   /// </summary>
-  msoConditionEqualsLow,
+  EqualsLow,
   /// <summary>
   /// Priority equals "Normal". Value of the Name property must be Priority.
   /// </summary>
-  msoConditionEqualsNormal,
+  EqualsNormal,
   /// <summary>
   /// Priority equals "High". Value of the Name property must be Priority.
   /// </summary>
-  msoConditionEqualsHigh,
+  EqualsHigh,
   /// <summary>
   /// Value of file property specified in the Name property of the PropertyTest object does not equal "Low". Value
   /// of the Name property must be Priority or Importance.
   /// </summary>
-  msoConditionNotEqualToLow,
+  NotEqualToLow,
   /// <summary>
   /// Value of file property specified in the Name property of the PropertyTest object does not equal "Normal".
   /// Value of the Name property must be Priority or Importance.
   /// </summary>
-  msoConditionNotEqualToNormal,
+  NotEqualToNormal,
   /// <summary>
   /// Value of file property specified in the Name property of the PropertyTest object does not equal "High". Value
   /// of the Name property must be Priority or Importance.
   /// </summary>
-  msoConditionNotEqualToHigh,
+  NotEqualToHigh,
   /// <summary>
   /// Status equals "Not Started". Value of the Name property must be Status.
   /// </summary>
-  msoConditionEqualsNotStarted,
+  EqualsNotStarted,
   /// <summary>
   /// Status equals "In Progress". Value of the Name property must be Status.
   /// </summary>
-  msoConditionEqualsInProgress,
+  EqualsInProgress,
   /// <summary>
   /// Status equals "Completed". Value of the Name property must be Status.
   /// msoConditionEqualsWaitingForSomeoneElse67 Status equals "Waiting for Someone Else". Value of the Name property
   /// must be Status.
   /// </summary>
-  msoConditionEqualsCompleted,
+  EqualsCompleted,
   /// <summary>
   /// Defines the condition for comparison between a file and a specified property in a file search.
   /// </summary>
-  msoConditionEqualsWaitingForSomeoneElse,
+  EqualsWaitingForSomeoneElse,
   /// <summary>
   /// Defines the condition for comparison between a file and a specified property in a file search.
   /// </summary>
-  msoConditionEqualsDeferred,
+  EqualsDeferred,
   /// <summary>
   /// Defines the condition for comparison between a file and a specified property in a file search.
   /// </summary>
-  msoConditionNotEqualToNotStarted,
+  NotEqualToNotStarted,
   /// <summary>
   /// Defines the condition for comparison between a file and a specified property in a file search.
   /// </summary>
-  msoConditionNotEqualToInProgress,
+  NotEqualToInProgress,
   /// <summary>
   /// Defines the condition for comparison between a file and a specified property in a file search.
   /// </summary>
-  msoConditionNotEqualToCompleted,
+  NotEqualToCompleted,
   /// <summary>
   /// Defines the condition for comparison between a file and a specified property in a file search.
   /// </summary>
-  msoConditionNotEqualToWaitingForSomeoneElse,
+  NotEqualToWaitingForSomeoneElse,
   /// <summary>
   /// Defines the condition for comparison between a file and a specified property in a file search.
   /// </summary>
-  msoConditionNotEqualToDeferred
+  NotEqualToDeferred
 }

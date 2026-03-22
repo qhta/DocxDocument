@@ -8,101 +8,101 @@ public enum MsoPresetTexture
   /// <summary>
   /// Specifies texture to be used to fill a shape.
   /// </summary>
-  msoPresetTextureMixed = -2,
+  Mixed = -2,
   /// <summary>
   /// Papyrus texture.
   /// </summary>
-  msoTexturePapyrus = 1,
+  Papyrus = 1,
   /// <summary>
   /// Canvas texture.
   /// </summary>
-  msoTextureCanvas = 2,
+  Canvas = 2,
   /// <summary>
   /// Denim texture.
   /// </summary>
-  msoTextureDenim = 3,
+  Denim = 3,
   /// <summary>
   /// Woven mat texture.
   /// </summary>
-  msoTextureWovenMat = 4,
+  WovenMat = 4,
   /// <summary>
   /// Water droplets texture.
   /// </summary>
-  msoTextureWaterDroplets = 5,
+  WaterDroplets = 5,
   /// <summary>
   /// Paper bag texture.
   /// </summary>
-  msoTexturePaperBag = 6,
+  PaperBag = 6,
   /// <summary>
   /// Fish fossil texture.
   /// </summary>
-  msoTextureFishFossil = 7,
+  FishFossil = 7,
   /// <summary>
   /// Sand texture.
   /// </summary>
-  msoTextureSand = 8,
+  Sand = 8,
   /// <summary>
   /// Green marble texture.
   /// </summary>
-  msoTextureGreenMarble = 9,
+  GreenMarble = 9,
   /// <summary>
   /// White marble texture.
   /// </summary>
-  msoTextureWhiteMarble = 10,
+  WhiteMarble = 10,
   /// <summary>
   /// Brown marble texture.
   /// </summary>
-  msoTextureBrownMarble = 11,
+  BrownMarble = 11,
   /// <summary>
   /// Granite texture. public enum class MsoPresetTexture ﾉ Expand table
   /// </summary>
-  msoTextureGranite = 12,
+  Granite = 12,
   /// <summary>
   /// Newsprint texture.
   /// </summary>
-  msoTextureNewsprint = 13,
+  Newsprint = 13,
   /// <summary>
   /// Recycled paper texture.
   /// </summary>
-  msoTextureRecycledPaper = 14,
+  RecycledPaper = 14,
   /// <summary>
   /// Parchment texture.
   /// </summary>
-  msoTextureParchment = 15,
+  Parchment = 15,
   /// <summary>
   /// Stationery texture.
   /// </summary>
-  msoTextureStationery = 16,
+  Stationery = 16,
   /// <summary>
   /// Blue tissue paper texture.
   /// </summary>
-  msoTextureBlueTissuePaper = 17,
+  BlueTissuePaper = 17,
   /// <summary>
   /// Pink tissue paper texture.
   /// </summary>
-  msoTexturePinkTissuePaper = 18,
+  PinkTissuePaper = 18,
   /// <summary>
   /// Purple mesh texture.
   /// </summary>
-  msoTexturePurpleMesh = 19,
+  PurpleMesh = 19,
   /// <summary>
   /// Bouquet texture.
   /// </summary>
-  msoTextureBouquet = 20,
+  Bouquet = 20,
   /// <summary>
   /// Cork texture.
   /// </summary>
-  msoTextureCork = 21,
+  Cork = 21,
   /// <summary>
   /// Walnut texture.
   /// </summary>
-  msoTextureWalnut = 22,
+  Walnut = 22,
   /// <summary>
   /// Oak texture.
   /// </summary>
-  msoTextureOak = 23,
+  Oak = 23,
   /// <summary>
   /// Medium wood texture.
   /// </summary>
-  msoTextureMediumWood = 24
+  MediumWood = 24
 }

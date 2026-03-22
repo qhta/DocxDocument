@@ -9,13 +9,13 @@ public enum MailFormat
   /// <summary>
   /// Plain text.
   /// </summary>
-  mfPlainText = 1,
+  PlainText = 1,
   /// <summary>
   /// Hypertext Markup Language (HTML) formatting.
   /// </summary>
-  mfHTML,
+  HTML,
   /// <summary>
   /// Rich Text Format (RTF) formatting.
   /// </summary>
-  mfRTF
+  RTF
 }

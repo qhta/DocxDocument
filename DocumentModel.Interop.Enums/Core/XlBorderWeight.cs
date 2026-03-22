@@ -11,19 +11,19 @@ public enum XlBorderWeight
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the weight
   /// of the border around a range.
   /// </summary>
-  xlHairline = 1,
+  Hairline = 1,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the weight
   /// of the border around a range.
   /// </summary>
-  xlMedium = -4138,
+  Medium = -4138,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Thick (widest
   /// border).
   /// </summary>
-  xlThick = 4,
+  Thick = 4,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Thin.
   /// </summary>
-  xlThin = 2
+  Thin = 2
 }

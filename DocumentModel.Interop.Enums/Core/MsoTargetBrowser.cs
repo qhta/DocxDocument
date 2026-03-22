@@ -8,21 +8,21 @@ public enum MsoTargetBrowser
   /// <summary>
   /// Netscape Navigator 3.
   /// </summary>
-  msoTargetBrowserV3,
+  V3,
   /// <summary>
   /// Netscape Navigator 4.
   /// </summary>
-  msoTargetBrowserV4,
+  V4,
   /// <summary>
   /// Microsoft Internet Explorer 4.0.
   /// </summary>
-  msoTargetBrowserIE4,
+  IE4,
   /// <summary>
   /// Microsoft Internet Explorer 5.
   /// </summary>
-  msoTargetBrowserIE5,
+  IE5,
   /// <summary>
   /// Microsoft Internet Explorer 6.
   /// </summary>
-  msoTargetBrowserIE6
+  IE6
 }

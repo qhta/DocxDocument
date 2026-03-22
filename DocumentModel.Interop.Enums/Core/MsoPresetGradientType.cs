@@ -8,101 +8,101 @@ public enum MsoPresetGradientType
   /// <summary>
   /// Specifies which predefined gradient to use to fill a shape.
   /// </summary>
-  msoPresetGradientMixed = -2,
+  Mixed = -2,
   /// <summary>
   /// Early Sunset gradient.
   /// </summary>
-  msoGradientEarlySunset = 1,
+  EarlySunset = 1,
   /// <summary>
   /// Late Sunset gradient.
   /// </summary>
-  msoGradientLateSunset = 2,
+  LateSunset = 2,
   /// <summary>
   /// Nightfall gradient.
   /// </summary>
-  msoGradientNightfall = 3,
+  Nightfall = 3,
   /// <summary>
   /// Daybreak gradient.
   /// </summary>
-  msoGradientDaybreak = 4,
+  Daybreak = 4,
   /// <summary>
   /// Horizon gradient.
   /// </summary>
-  msoGradientHorizon = 5,
+  Horizon = 5,
   /// <summary>
   /// Desert gradient.
   /// </summary>
-  msoGradientDesert = 6,
+  Desert = 6,
   /// <summary>
   /// Ocean gradient.
   /// </summary>
-  msoGradientOcean = 7,
+  Ocean = 7,
   /// <summary>
   /// Calm Water gradient.
   /// </summary>
-  msoGradientCalmWater = 8,
+  CalmWater = 8,
   /// <summary>
   /// Fire gradient.
   /// </summary>
-  msoGradientFire = 9,
+  Fire = 9,
   /// <summary>
   /// Fog gradient.
   /// </summary>
-  msoGradientFog = 10,
+  Fog = 10,
   /// <summary>
   /// Moss gradient.
   /// </summary>
-  msoGradientMoss = 11,
+  Moss = 11,
   /// <summary>
   /// Peacock gradient. public enum class MsoPresetGradientType ﾉ Expand table
   /// </summary>
-  msoGradientPeacock = 12,
+  Peacock = 12,
   /// <summary>
   /// Wheat gradient.
   /// </summary>
-  msoGradientWheat = 13,
+  Wheat = 13,
   /// <summary>
   /// Parchment gradient.
   /// </summary>
-  msoGradientParchment = 14,
+  Parchment = 14,
   /// <summary>
   /// Mahogany gradient.
   /// </summary>
-  msoGradientMahogany = 15,
+  Mahogany = 15,
   /// <summary>
   /// Rainbow gradient.
   /// </summary>
-  msoGradientRainbow = 16,
+  Rainbow = 16,
   /// <summary>
   /// Rainbow II gradient.
   /// </summary>
-  msoGradientRainbowII = 17,
+  RainbowII = 17,
   /// <summary>
   /// Gold gradient.
   /// </summary>
-  msoGradientGold = 18,
+  Gold = 18,
   /// <summary>
   /// Gold II gradient.
   /// </summary>
-  msoGradientGoldII = 19,
+  GoldII = 19,
   /// <summary>
   /// Brass gradient.
   /// </summary>
-  msoGradientBrass = 20,
+  Brass = 20,
   /// <summary>
   /// Chrome gradient.
   /// </summary>
-  msoGradientChrome = 21,
+  Chrome = 21,
   /// <summary>
   /// Chrome II gradient.
   /// </summary>
-  msoGradientChromeII = 22,
+  ChromeII = 22,
   /// <summary>
   /// Silver gradient.
   /// </summary>
-  msoGradientSilver = 23,
+  Silver = 23,
   /// <summary>
   /// Sapphire gradient.
   /// </summary>
-  msoGradientSapphire = 24
+  Sapphire = 24
 }

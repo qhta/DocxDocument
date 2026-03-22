@@ -8,9 +8,9 @@ public enum MsoDistributeCmd
   /// <summary>
   /// Distribute horizontally.
   /// </summary>
-  msoDistributeHorizontally,
+  Horizontally,
   /// <summary>
   /// Distribute vertically.
   /// </summary>
-  msoDistributeVertically
+  Vertically
 }
