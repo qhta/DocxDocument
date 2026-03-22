@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface Frame
 {
   /// <summary>
-  /// Deletes the frame.
+  /// Deletes the specified object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

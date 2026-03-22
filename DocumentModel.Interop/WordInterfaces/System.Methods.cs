@@ -19,7 +19,8 @@ public partial interface System
   public string ProfileString(string Section, string Key);
 
   /// <summary>
-  /// Starts the Microsoft System Information application if it's not running, or switches to it if it's already running.
+  /// Starts the Microsoft System Information application if it's not running, or switches to it if it's already
+  /// running.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

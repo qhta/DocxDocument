@@ -7,7 +7,8 @@ namespace DocumentModel.Interop.Word;
 public partial interface Replacement
 {
   /// <summary>
-  /// Removes text and paragraph formatting from a selection or from the formatting specified in a find or replace operation.
+  /// Removes text and paragraph formatting from a selection or from the formatting specified in a find or replace
+  /// operation.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

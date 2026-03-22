@@ -7,7 +7,8 @@ namespace DocumentModel.Interop.Word;
 public partial interface Conflict
 {
   /// <summary>
-  /// Accepts the conflict.
+  /// Accepts the user specified conflict change, removes the conflict, and merges the change into the server copy
+  /// of the document.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

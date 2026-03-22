@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface OtherCorrectionsException
 {
   /// <summary>
-  /// Deletes the AutoCorrect exception.
+  /// Deletes the specified object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

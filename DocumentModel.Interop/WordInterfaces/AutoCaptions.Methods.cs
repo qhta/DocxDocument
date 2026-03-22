@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface AutoCaptions
 {
   /// <summary>
-  /// Cancels automatic caption insertion.
+  /// Prevents Microsoft Word from automatically adding captions to any type of item.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

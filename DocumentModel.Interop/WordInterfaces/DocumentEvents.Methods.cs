@@ -25,7 +25,7 @@ public partial interface DocumentEvents
   public void Open();
 
   /// <summary>
-  /// Occurs when a document is closed.
+  /// Reserved for internal use.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

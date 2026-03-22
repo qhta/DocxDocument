@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface Column
 {
   /// <summary>
-  /// Selects the column.
+  /// Selects the specified object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

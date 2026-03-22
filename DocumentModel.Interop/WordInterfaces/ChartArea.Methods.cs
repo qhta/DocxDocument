@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface ChartArea
 {
   /// <summary>
-  /// Selects the chart area.
+  /// Selects the object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

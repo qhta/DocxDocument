@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface OMathMatCol
 {
   /// <summary>
-  /// Deletes the matrix column.
+  /// Deletes the specified matrix column.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

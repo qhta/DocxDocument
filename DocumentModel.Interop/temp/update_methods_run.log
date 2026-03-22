@@ -1,0 +1,788 @@
+Processing 262 files...
+Processing: _Application.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: _Document.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: _Font.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: _Global.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: _OLEControl.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: _ParagraphFormat.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ApplicationEvents2.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ApplicationEvents2_Event.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ApplicationEvents3.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ApplicationEvents3_Event.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ApplicationEvents4.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ApplicationEvents4_Event.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: AutoCaptions.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: AutoCorrectEntries.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: AutoCorrectEntry.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: AutoTextEntries.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: AutoTextEntry.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Axis.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: AxisTitle.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Bibliography.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Bookmark.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Bookmarks.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Borders.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Broadcast.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Browser.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: BuildingBlock.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: BuildingBlockEntries.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: BuildingBlocks.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: BuildingBlockTypes.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: CalloutFormat.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: CanvasShapes.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: CaptionLabel.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: CaptionLabels.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Categories.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Cell.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Cells.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Chart.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ChartArea.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ChartCharacters.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ChartData.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ChartFillFormat.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ChartGroup.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ChartTitle.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: CoAuthLock.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: CoAuthLocks.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ColorFormat.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Column.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Columns.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Comment.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Comments.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Conflict.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Conflicts.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ConnectorFormat.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ContentControl.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ContentControlListEntries.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ContentControlListEntry.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ContentControls.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Corners.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: CustomLabel.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: CustomLabels.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: CustomProperties.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: CustomProperty.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: DataLabel.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: DataLabels.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: DataTable.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Diagram.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: DiagramNode.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: DiagramNodeChildren.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: DiagramNodes.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Dialog.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Dictionaries.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Dictionary.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: DisplayUnitLabel.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: DocumentEvents.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: DocumentEvents2.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: DocumentEvents2_Event.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: DocumentEvents_Event.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Documents.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: DownBars.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: DropCap.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: DropLines.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Editor.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Editors.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: EmailOptions.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: EmailSignatureEntries.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: EmailSignatureEntry.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Endnotes.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Envelope.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ErrorBars.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Field.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Fields.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: FillFormat.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Find.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: FirstLetterException.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: FirstLetterExceptions.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Floor.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Footnote.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Footnotes.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: FormField.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: FormFields.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Frame.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Frames.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Frameset.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: FreeformBuilder.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Gridlines.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: GroupShapes.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: HangulAndAlphabetException.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: HangulAndAlphabetExceptions.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: HangulHanjaConversionDictionaries.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: HeadersFooters.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: HeadingStyle.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: HeadingStyles.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: HiLoLines.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: HTMLDivision.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: HTMLDivisions.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Hyperlink.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: IApplicationEvents.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: IApplicationEvents2.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: IApplicationEvents3.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: IApplicationEvents4.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Index.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Indexes.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: InlineShape.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: InlineShapes.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: KeyBinding.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: KeyBindings.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: KeysBoundTo.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: LeaderLines.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Legend.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: LegendEntry.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: LegendKey.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: LinkFormat.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: List.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ListEntries.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ListEntry.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ListFormat.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ListGallery.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ListLevel.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ListTemplate.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ListTemplates.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: MailingLabel.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: MailMerge.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: MailMergeDataSource.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: MailMergeField.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: MailMergeFields.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: MailMessage.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OCXEvents.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OCXEvents_Event.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OLEFormat.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OMath.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OMathAutoCorrectEntries.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OMathAutoCorrectEntry.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OMathBreak.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OMathFunction.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OMathFunctions.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OMathLimLow.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OMathLimUpp.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OMathMat.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OMathMatCol.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OMathMatCols.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OMathMatRow.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OMathMatRows.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OMathRecognizedFunction.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OMathRecognizedFunctions.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OMaths.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OMathScrPre.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OMathScrSubSup.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Options.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OtherCorrectionsException.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: OtherCorrectionsExceptions.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Page.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: PageNumber.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: PageNumbers.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: PageSetup.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Pane.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Panes.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Paragraph.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Paragraphs.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: PictureFormat.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: PlotArea.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Point.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ProtectedViewWindow.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ProtectedViewWindows.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Range.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: RecentFile.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: RecentFiles.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: RepeatingSectionItem.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Replacement.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Research.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Revision.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Revisions.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: RevisionsFilter.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: RoutingSlip.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Row.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Rows.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Sections.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Selection.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Series.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: SeriesCollection.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: SeriesLines.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ShadowFormat.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Shape.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ShapeNodes.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ShapeRange.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Shapes.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: SmartTag.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: SmartTagAction.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: SmartTagActions.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: SmartTagRecognizers.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: SmartTags.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: SmartTagTypes.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Source.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Sources.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Style.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Styles.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: StyleSheet.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: StyleSheets.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Subdocuments.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: SynonymInfo.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: System.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Table.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: TableOfAuthorities.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: TableOfContents.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: TableOfFigures.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Tables.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: TablesOfAuthorities.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: TablesOfContents.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: TablesOfFigures.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: TableStyle.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: TabStop.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Task.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Tasks.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Template.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Templates.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: TextColumns.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: TextEffectFormat.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: TextFrame.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: TextInput.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: ThreeDFormat.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: TickLabels.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Trendline.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Trendlines.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: TwoInitialCapsException.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: TwoInitialCapsExceptions.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: UndoRecord.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: UpBars.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Variable.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Variables.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Version.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: View.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Walls.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: WebOptions.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Window.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: Windows.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: XMLChildNodeSuggestion.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: XMLMapping.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: XMLNamespace.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: XMLNamespaces.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: XMLNode.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: XMLNodes.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: XMLSchemaReference.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Processing: XMLSchemaReferences.Methods.cs
+Updated summaries: 0
+Members without extracted description: 0
+Completed. Failures: 0

@@ -16,5 +16,5 @@ public partial interface OMathMat
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmat.get_cell?view=word-pia"/>
-  public OMath get_Cell(int Row, int Col);
+  public OMath Cell(int Row, int Col);
 }

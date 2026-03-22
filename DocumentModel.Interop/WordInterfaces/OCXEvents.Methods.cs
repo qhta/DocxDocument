@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface OCXEvents
 {
   /// <summary>
-  /// Handles the GotFocus event for the OCX control.
+  /// Reserved for internal use.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

@@ -15,10 +15,10 @@ public partial interface Source
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.source.get_field?view=word-pia"/>
-  public string get_Field(string Name);
+  public string Field(string Name);
 
   /// <summary>
-  /// Deletes the source.
+  /// Deletes the specified source.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

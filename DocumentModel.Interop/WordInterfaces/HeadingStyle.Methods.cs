@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface HeadingStyle
 {
   /// <summary>
-  /// Deletes the heading style.
+  /// Deletes the specified object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

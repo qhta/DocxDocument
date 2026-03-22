@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface ContentControl
 {
   /// <summary>
-  /// Copies the content control to the Clipboard.
+  /// Copies the content control from the active document to the Clipboard.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

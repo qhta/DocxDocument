@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface Comment
 {
   /// <summary>
-  /// Deletes the comment.
+  /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

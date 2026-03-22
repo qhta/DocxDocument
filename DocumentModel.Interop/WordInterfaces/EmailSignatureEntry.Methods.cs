@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface EmailSignatureEntry
 {
   /// <summary>
-  /// Executes the delete operation.
+  /// Deletes the specified object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

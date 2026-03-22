@@ -15,7 +15,7 @@ public partial interface Frameset
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.get_childframesetitem?view=word-pia"/>
-  public Frameset get_ChildFramesetItem(int Index);
+  public Frameset ChildFramesetItem(int Index);
 
   /// <summary>
   /// Returns the value produced by the add new frame operation.
