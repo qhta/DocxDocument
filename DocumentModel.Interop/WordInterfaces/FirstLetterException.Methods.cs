@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface FirstLetterException
 {
   /// <summary>
-  /// Executes the delete operation.
+  /// Deletes the specified object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

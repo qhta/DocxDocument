@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface Field
 {
   /// <summary>
-  /// Executes the select operation.
+  /// Selects the specified object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

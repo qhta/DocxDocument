@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface Dictionary
 {
   /// <summary>
-  /// Deletes the custom dictionary.
+  /// Deletes the specified object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

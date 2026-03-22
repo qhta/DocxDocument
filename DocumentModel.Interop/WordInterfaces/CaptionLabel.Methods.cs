@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface CaptionLabel
 {
   /// <summary>
-  /// Deletes the caption label.
+  /// Deletes the specified object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

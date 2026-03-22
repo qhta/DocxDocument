@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface AutoTextEntry
 {
   /// <summary>
-  /// Deletes the AutoText entry.
+  /// Deletes the specified object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

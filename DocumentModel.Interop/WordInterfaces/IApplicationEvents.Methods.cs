@@ -25,7 +25,7 @@ public partial interface IApplicationEvents
   public void Quit();
 
   /// <summary>
-  /// Occurs when the active document changes.
+  /// Reserved for internal use.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

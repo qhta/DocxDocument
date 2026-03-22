@@ -79,7 +79,7 @@ public partial interface _Document: InteropObject
   public void Activate();
 
   /// <summary>
-  /// Reserved for internal use.
+  /// Activates the specified object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -175,7 +175,8 @@ public partial interface _Document: InteropObject
   public bool CanCheckin();
 
   /// <summary>
-  /// Searches all text in a Japanese language document and displays instances where character usage is inconsistent for the same words.
+  /// Searches all text in a Japanese language document and displays instances where character usage is inconsistent
+  /// for the same words.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -264,7 +265,8 @@ public partial interface _Document: InteropObject
   public void Close(WdSaveOptions SaveChanges, WdOriginalFormat OriginalFormat, bool RouteDocument);
 
   /// <summary>
-  /// Switches the specified document from print preview to the previous view. If the specified document isn't in print preview, an error occurs.
+  /// Switches the specified document from print preview to the previous view. If the specified document isn't in
+  /// print preview, an error occurs.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -482,7 +484,8 @@ public partial interface _Document: InteropObject
   public void DetectLanguage();
 
   /// <summary>
-  /// Downgrades a document to the Word 97-2003 document format so that it can be edited in a previous version of Microsoft Office Word.
+  /// Downgrades a document to the Word 97-2003 document format so that it can be edited in a previous version of
+  /// Microsoft Office Word.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -540,7 +543,9 @@ public partial interface _Document: InteropObject
   public void EditionOptions(WdEditionType Type, WdEditionOption Option, string Name, object Format);
 
   /// <summary>
-  /// Terminates a review of a file that has been sent for review using the SendForReview(Object, Object, Object, Object) method or that has been automatically placed in a review cycle by sending a document to another user in an e-mail message.
+  /// Terminates a review of a file that has been sent for review using the SendForReview(Object, Object, Object,
+  /// Object) method or that has been automatically placed in a review cycle by sending a document to another user
+  /// in an e-mail message.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -610,7 +615,8 @@ public partial interface _Document: InteropObject
   public void ForwardMailer();
 
   /// <summary>
-  /// In Web view, fixes the layout of the document as it currently appears so that line breaks remain fixed and ink annotations do not move when you resize the window.
+  /// In Web view, fixes the layout of the document as it currently appears so that line breaks remain fixed and ink
+  /// annotations do not move when you resize the window.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -678,7 +684,8 @@ public partial interface _Document: InteropObject
   public void LockServerFile();
 
   /// <summary>
-  /// Sets the compatibility options on the Compatibility tab in the Options dialog box (Tools menu) as the default settings for new documents.
+  /// Sets the compatibility options on the Compatibility tab in the Options dialog box (Tools menu) as the default
+  /// settings for new documents.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -687,7 +694,8 @@ public partial interface _Document: InteropObject
   public void MakeCompatibilityDefault();
 
   /// <summary>
-  /// Initiates manual hyphenation of a document, one line at a time. The user is prompted to accept or decline suggested hyphenations.
+  /// Initiates manual hyphenation of a document, one line at a time. The user is prompted to accept or decline
+  /// suggested hyphenations.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -718,7 +726,8 @@ public partial interface _Document: InteropObject
   public void Merge2000(string FileName);
 
   /// <summary>
-  /// Posts the specified document to a public folder in Microsoft Exchange. This method displays the Send to Exchange Folder dialog box so that a folder can be selected.
+  /// Posts the specified document to a public folder in Microsoft Exchange. This method displays the Send to
+  /// Exchange Folder dialog box so that a folder can be selected.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -859,7 +868,8 @@ public partial interface _Document: InteropObject
   public Range Range(object Start, object End);
 
   /// <summary>
-  /// Removes smart tags recognized by the grammar checker and rechecks the document content against all smart tag recognizers.
+  /// Removes smart tags recognized by the grammar checker and rechecks the document content against all smart tag
+  /// recognizers.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -1018,7 +1028,8 @@ public partial interface _Document: InteropObject
   public void ResetFormFields();
 
   /// <summary>
-  /// Returns the active document to the last saved reading position, and returns an integer that represents that position.
+  /// Returns the active document to the last saved reading position, and returns an integer that represents that
+  /// position.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -1057,7 +1068,8 @@ public partial interface _Document: InteropObject
   public void RunLetterWizard(object LetterContent, object WizardMode);
 
   /// <summary>
-  /// Saves the specified document. If the document hasn't been saved before, the Save As dialog box prompts the user for a file name.
+  /// Saves the specified document. If the document hasn't been saved before, the Save As dialog box prompts the
+  /// user for a file name.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -1399,7 +1411,8 @@ public partial interface _Document: InteropObject
   public bool Undo(int Times);
 
   /// <summary>
-  /// Clears the list of actions that can be undone for the specified document. Corresponds to the list of items that appears when you click the arrow beside the Undo button on the Standard toolbar.
+  /// Clears the list of actions that can be undone for the specified document. Corresponds to the list of items
+  /// that appears when you click the arrow beside the Undo button on the Standard toolbar.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -1408,7 +1421,8 @@ public partial interface _Document: InteropObject
   public void UndoClear();
 
   /// <summary>
-  /// Reverses the effect of UnfreezeLayout(), and enables line breaks to change and ink annotations to move when you resize the Web browser window.
+  /// Reverses the effect of UnfreezeLayout(), and enables line breaks to change and ink annotations to move when
+  /// you resize the Web browser window.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
@@ -1427,7 +1441,8 @@ public partial interface _Document: InteropObject
   public void Unprotect(string Password);
 
   /// <summary>
-  /// Copies all styles from the attached template into the document, overwriting any existing styles in the document that have the same name.
+  /// Copies all styles from the attached template into the document, overwriting any existing styles in the
+  /// document that have the same name.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

@@ -7,7 +7,8 @@ namespace DocumentModel.Interop.Word;
 public partial interface CalloutFormat
 {
   /// <summary>
-  /// Sets the callout line length to be determined automatically.
+  /// Specifies that the first segment of the callout line (the segment attached to the text callout box) be scaled
+  /// automatically when the callout is moved.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

@@ -16,10 +16,10 @@ public partial interface DisplayUnitLabel
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.get_characters?view=word-pia"/>
-  public ChartCharacters get_Characters(object Start, object Length);
+  public ChartCharacters Characters(object Start, object Length);
 
   /// <summary>
-  /// Deletes the display unit label.
+  /// Deletes the object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface FillFormat
 {
   /// <summary>
-  /// Executes the background operation.
+  /// Reserved for internal use.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface Bookmark
 {
   /// <summary>
-  /// Selects the bookmark in the active document.
+  /// Selects the specified Bookmark object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface ContentControlListEntry
 {
   /// <summary>
-  /// Deletes the content control list entry.
+  /// Deletes the specified item in a combo box or drop-down list content control.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

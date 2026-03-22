@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface EmailOptions
 {
   /// <summary>
-  /// Executes the dummy3 operation.
+  /// Reserved for internal use.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

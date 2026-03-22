@@ -15,7 +15,7 @@ public partial interface ColorFormat
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.colorformat.get_ink?view=word-pia"/>
-  public float get_Ink(int Index);
+  public float Ink(int Index);
 
   /// <summary>
   /// Sets the color by using CMYK component values.

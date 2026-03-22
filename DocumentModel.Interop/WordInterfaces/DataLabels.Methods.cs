@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface DataLabels
 {
   /// <summary>
-  /// Selects the data labels.
+  /// Selects the object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

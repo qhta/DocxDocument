@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface CustomLabel
 {
   /// <summary>
-  /// Deletes the custom label.
+  /// Deletes the specified object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

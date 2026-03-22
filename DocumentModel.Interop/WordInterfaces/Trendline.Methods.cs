@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface Trendline
 {
   /// <summary>
-  /// Clears the formatting for the trendline.
+  /// Clears the formatting of the object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

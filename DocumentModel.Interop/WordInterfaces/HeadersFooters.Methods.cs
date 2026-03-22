@@ -15,5 +15,5 @@ public partial interface HeadersFooters
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headersfooters.get_item?view=word-pia"/>
-  public HeaderFooter get_Item(WdHeaderFooterIndex Index);
+  public HeaderFooter Item(WdHeaderFooterIndex Index);
 }

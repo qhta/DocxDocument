@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface Series
 {
   /// <summary>
-  /// Clears the formatting for the series.
+  /// Clears the formatting of the object.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

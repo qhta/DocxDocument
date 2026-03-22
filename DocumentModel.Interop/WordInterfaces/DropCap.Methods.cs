@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 public partial interface DropCap
 {
   /// <summary>
-  /// Executes the clear operation.
+  /// Removes the dropped capital letter formatting.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.

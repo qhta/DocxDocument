@@ -15,10 +15,10 @@ public partial interface Borders
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.get_item?view=word-pia"/>
-  public Border get_Item(WdBorderType Index);
+  public Border Item(WdBorderType Index);
 
   /// <summary>
-  /// Applies the current page border settings to all sections in the document.
+  /// Applies the specified page-border formatting to all sections in a document.
   /// </summary>
   /// <remarks>
   /// Microsoft Learn API reference.
