@@ -8,50 +8,50 @@ public enum MsoCharacterSet
   /// <summary>
   /// Arabic character set.
   /// </summary>
-  msoCharacterSetArabic = 1,
+  Arabic = 1,
   /// <summary>
   /// Cyrillic character set. msoCharacterSetEnglishWesternEuropeanOtherLatinScript3 English, Western European, and
   /// other Latin script character set.
   /// </summary>
-  msoCharacterSetCyrillic,
+  Cyrillic,
   /// <summary>
   /// Specifies the character set to be used when rendering text.
   /// </summary>
-  msoCharacterSetEnglishWesternEuropeanOtherLatinScript,
+  EnglishWesternEuropeanOtherLatinScript,
   /// <summary>
   /// Greek character set.
   /// </summary>
-  msoCharacterSetGreek,
+  Greek,
   /// <summary>
   /// Hebrew character set.
   /// </summary>
-  msoCharacterSetHebrew,
+  Hebrew,
   /// <summary>
   /// Japanese character set.
   /// </summary>
-  msoCharacterSetJapanese,
+  Japanese,
   /// <summary>
   /// Korean character set.
   /// </summary>
-  msoCharacterSetKorean,
+  Korean,
   /// <summary>
   /// Multilingual Unicode character set.
   /// </summary>
-  msoCharacterSetMultilingualUnicode,
+  MultilingualUnicode,
   /// <summary>
   /// Simplified Chinese character set.
   /// </summary>
-  msoCharacterSetSimplifiedChinese,
+  SimplifiedChinese,
   /// <summary>
   /// Thai character set.
   /// </summary>
-  msoCharacterSetThai,
+  Thai,
   /// <summary>
   /// Traditional Chinese character set.
   /// </summary>
-  msoCharacterSetTraditionalChinese,
+  TraditionalChinese,
   /// <summary>
   /// Vietnamese character set. public enum class MsoCharacterSet ﾉ Expand table
   /// </summary>
-  msoCharacterSetVietnamese
+  Vietnamese
 }

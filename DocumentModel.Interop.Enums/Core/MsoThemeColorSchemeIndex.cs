@@ -8,50 +8,50 @@ public enum MsoThemeColorSchemeIndex
   /// <summary>
   /// Specifies color scheme Dark 1.
   /// </summary>
-  msoThemeDark1 = 1,
+  Dark1 = 1,
   /// <summary>
   /// Specifies color scheme Light 1.
   /// </summary>
-  msoThemeLight1,
+  Light1,
   /// <summary>
   /// Specifies color scheme Dark 2.
   /// </summary>
-  msoThemeDark2,
+  Dark2,
   /// <summary>
   /// Specifies color scheme Light 2.
   /// </summary>
-  msoThemeLight2,
+  Light2,
   /// <summary>
   /// Specifies color scheme Accent 1.
   /// </summary>
-  msoThemeAccent1,
+  Accent1,
   /// <summary>
   /// Specifies color scheme Accent 2.
   /// </summary>
-  msoThemeAccent2,
+  Accent2,
   /// <summary>
   /// Specifies color scheme Accent 3.
   /// </summary>
-  msoThemeAccent3,
+  Accent3,
   /// <summary>
   /// Specifies color scheme Accent 4.
   /// </summary>
-  msoThemeAccent4,
+  Accent4,
   /// <summary>
   /// Specifies color scheme Accent 5.
   /// </summary>
-  msoThemeAccent5,
+  Accent5,
   /// <summary>
   /// Specifies color scheme Accent 6.
   /// </summary>
-  msoThemeAccent6,
+  Accent6,
   /// <summary>
   /// Specifies a color scheme for a hyperlink. msoThemeFollowedHyperlink12 Specifies a color scheme for a clicked
   /// hyperlink. public enum class MsoThemeColorSchemeIndex ﾉ Expand table
   /// </summary>
-  msoThemeHyperlink,
+  Hyperlink,
   /// <summary>
   /// Indicates the color scheme for an Office theme.
   /// </summary>
-  msoThemeFollowedHyperlink
+  FollowedHyperlink
 }

@@ -8,19 +8,19 @@ public enum MsoSearchIn
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoSearchInMyComputer,
+  MyComputer,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// msoSearchInMyNetworkPlaces2 This object, member, or enumeration is deprecated and is not intended to be used
   /// in your code.
   /// </summary>
-  msoSearchInOutlook,
+  Outlook,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoSearchInMyNetworkPlaces,
+  MyNetworkPlaces,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoSearchInCustom
+  Custom
 }

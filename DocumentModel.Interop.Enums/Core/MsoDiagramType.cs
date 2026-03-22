@@ -9,29 +9,29 @@ public enum MsoDiagramType
   /// <summary>
   /// Specifies the type of diagram.
   /// </summary>
-  msoDiagramMixed = -2,
+  Mixed = -2,
   /// <summary>
   /// Specifies the type of diagram.
   /// </summary>
-  msoDiagramOrgChart = 1,
+  OrgChart = 1,
   /// <summary>
   /// Cycle diagram.
   /// </summary>
-  msoDiagramCycle = 2,
+  Cycle = 2,
   /// <summary>
   /// Radial diagram. msoDiagramPyramid4 Pyramid diagram.
   /// </summary>
-  msoDiagramRadial = 3,
+  Radial = 3,
   /// <summary>
   /// Specifies the type of diagram.
   /// </summary>
-  msoDiagramPyramid = 4,
+  Pyramid = 4,
   /// <summary>
   /// Venn diagram.
   /// </summary>
-  msoDiagramVenn = 5,
+  Venn = 5,
   /// <summary>
   /// Target diagram.
   /// </summary>
-  msoDiagramTarget = 6
+  Target = 6
 }

@@ -10,41 +10,41 @@ public enum MsoPresetExtrusionDirection
   /// Specifies the direction that the extrusion's sweep path takes away from the extruded shape (the front face of
   /// the extrusion).
   /// </summary>
-  msoPresetExtrusionDirectionMixed = -2,
+  Mixed = -2,
   /// <summary>
   /// Bottom right.
   /// </summary>
-  msoExtrusionBottomRight = 1,
+  BottomRight = 1,
   /// <summary>
   /// Bottom.
   /// </summary>
-  msoExtrusionBottom = 2,
+  Bottom = 2,
   /// <summary>
   /// Bottom left.
   /// </summary>
-  msoExtrusionBottomLeft = 3,
+  BottomLeft = 3,
   /// <summary>
   /// Right.
   /// </summary>
-  msoExtrusionRight = 4,
+  Right = 4,
   /// <summary>
   /// No extrusion.
   /// </summary>
-  msoExtrusionNone = 5,
+  None = 5,
   /// <summary>
   /// Left.
   /// </summary>
-  msoExtrusionLeft = 6,
+  Left = 6,
   /// <summary>
   /// Top right.
   /// </summary>
-  msoExtrusionTopRight = 7,
+  TopRight = 7,
   /// <summary>
   /// Top.
   /// </summary>
-  msoExtrusionTop = 8,
+  Top = 8,
   /// <summary>
   /// Top left.
   /// </summary>
-  msoExtrusionTopLeft = 9
+  TopLeft = 9
 }

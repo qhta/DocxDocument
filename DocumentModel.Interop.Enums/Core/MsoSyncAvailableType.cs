@@ -9,13 +9,13 @@ public enum MsoSyncAvailableType
   /// <summary>
   /// No synchronization is available.
   /// </summary>
-  msoSyncAvailableNone,
+  None,
   /// <summary>
   /// Synchronization is available offline only.
   /// </summary>
-  msoSyncAvailableOffline,
+  Offline,
   /// <summary>
   /// Synchronization is available offline and online.
   /// </summary>
-  msoSyncAvailableAnywhere
+  Anywhere
 }

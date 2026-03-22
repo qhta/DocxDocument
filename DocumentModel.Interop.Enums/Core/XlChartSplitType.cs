@@ -12,22 +12,22 @@ public enum XlChartSplitType
   /// displays the smallest values in the data series. The number of values to display is specified by the
   /// SplitValue property.
   /// </summary>
-  xlSplitByPosition = 1,
+  Position = 1,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Second chart
   /// displays values less than some percentage of the total value. The percentage is specified by the SplitValue
   /// property. xlSplitByCustomSplit4 You should access and use this enumeration from the Excel primary interop
   /// assembly (PIA). Arbitrary slides are displayed in the second chart.
   /// </summary>
-  xlSplitByPercentValue = 3,
+  PercentValue = 3,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the values
   /// displayed in the second chart in a pie chart or a bar of pie chart.
   /// </summary>
-  xlSplitByCustomSplit = 4,
+  CustomSplit = 4,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Second chart
   /// displays values less than the value specified by the SplitValue property.
   /// </summary>
-  xlSplitByValue = 2
+  Value = 2
 }

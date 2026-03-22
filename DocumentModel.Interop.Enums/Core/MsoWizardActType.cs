@@ -8,17 +8,17 @@ public enum MsoWizardActType
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoWizardActInactive,
+  Inactive,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoWizardActActive,
+  Active,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoWizardActSuspend,
+  Suspend,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoWizardActResume
+  Resume
 }

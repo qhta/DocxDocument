@@ -8,33 +8,33 @@ public enum MsoAlertButtonType
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoAlertButtonOK,
+  OK,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// msoAlertButtonAbortRetryIgnore2 This object, member, or enumeration is deprecated and is not intended to be
   /// used in your code.
   /// </summary>
-  msoAlertButtonOKCancel,
+  OKCancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoAlertButtonAbortRetryIgnore,
+  AbortRetryIgnore,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoAlertButtonYesNoCancel,
+  YesNoCancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoAlertButtonYesNo,
+  YesNo,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// msoAlertButtonYesAllNoCancel6 This object, member, or enumeration is deprecated and is not intended to be used
   /// in your code.
   /// </summary>
-  msoAlertButtonRetryCancel,
+  RetryCancel,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoAlertButtonYesAllNoCancel
+  YesAllNoCancel
 }

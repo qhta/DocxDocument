@@ -8,33 +8,33 @@ public enum CertificateVerificationResults
   /// <summary>
   /// The verification resulted in an error.
   /// </summary>
-  certverresError,
+  Error,
   /// <summary>
   /// The certificate is currently being verified.
   /// </summary>
-  certverresVerifying,
+  Verifying,
   /// <summary>
   /// The certification is currently unverified.
   /// </summary>
-  certverresUnverified,
+  Unverified,
   /// <summary>
   /// The certification is valid.
   /// </summary>
-  certverresValid,
+  Valid,
   /// <summary>
   /// The certification is invalid.
   /// </summary>
-  certverresInvalid,
+  Invalid,
   /// <summary>
   /// The certification has expired.
   /// </summary>
-  certverresExpired,
+  Expired,
   /// <summary>
   /// The certification has been revoked.
   /// </summary>
-  certverresRevoked,
+  Revoked,
   /// <summary>
   /// The certification is from an untrusted source.
   /// </summary>
-  certverresUntrusted
+  Untrusted
 }

@@ -8,17 +8,17 @@ public enum MsoArrowheadWidth
   /// <summary>
   /// Specifies the width of the arrowhead at the end of a line.
   /// </summary>
-  msoArrowheadWidthMixed = -2,
+  WidthMixed = -2,
   /// <summary>
   /// Narrow. msoArrowheadWidthMedium2 Medium.
   /// </summary>
-  msoArrowheadNarrow = 1,
+  Narrow = 1,
   /// <summary>
   /// Specifies the width of the arrowhead at the end of a line.
   /// </summary>
-  msoArrowheadWidthMedium = 2,
+  WidthMedium = 2,
   /// <summary>
   /// Wide.
   /// </summary>
-  msoArrowheadWide = 3
+  Wide = 3
 }

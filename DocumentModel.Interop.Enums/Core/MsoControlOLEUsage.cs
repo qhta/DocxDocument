@@ -9,17 +9,17 @@ public enum MsoControlOLEUsage
   /// <summary>
   /// Control runs on neither client nor server.
   /// </summary>
-  msoControlOLEUsageNeither,
+  Neither,
   /// <summary>
   /// Server-only control.
   /// </summary>
-  msoControlOLEUsageServer,
+  Server,
   /// <summary>
   /// Client-only control.
   /// </summary>
-  msoControlOLEUsageClient,
+  Client,
   /// <summary>
   /// Control runs on both client and server.
   /// </summary>
-  msoControlOLEUsageBoth
+  Both
 }

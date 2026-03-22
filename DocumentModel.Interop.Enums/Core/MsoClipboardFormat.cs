@@ -2,22 +2,22 @@
 
 public enum MsoClipboardFormat
 {
-  msoClipboardFormatMixed = -2,
+  Mixed = -2,
   /// <summary>
   /// msoClipboardFormatHTML 2
   /// </summary>
-  msoClipboardFormatNative = 1,
+  Native = 1,
   /// <summary>
   /// msoClipboardFormatRTF 3
   /// </summary>
-  msoClipboardFormatHTML = 2,
+  HTML = 2,
   /// <summary>
   /// msoClipboardFormatPlainText 4
   /// </summary>
-  msoClipboardFormatRTF = 3,
+  RTF = 3,
   /// <summary>
   /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoClipboardFormat ﾉ
   /// Expand table
   /// </summary>
-  msoClipboardFormatPlainText = 4
+  PlainText = 4
 }

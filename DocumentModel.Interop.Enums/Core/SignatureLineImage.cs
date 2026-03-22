@@ -8,22 +8,22 @@ public enum SignatureLineImage
   /// <summary>
   /// The SoftwareRequired image.
   /// </summary>
-  siglnimgSoftwareRequired,
+  SoftwareRequired,
   /// <summary>
   /// The Unsigned image.
   /// </summary>
-  siglnimgUnsigned,
+  Unsigned,
   /// <summary>
   /// The SignedValid image.
   /// </summary>
-  siglnimgSignedValid,
+  SignedValid,
   /// <summary>
   /// The SignedInvalid image.
   /// </summary>
-  siglnimgSignedInvalid,
+  SignedInvalid,
   /// <summary>
   /// Applies to Product Versions Office primary interop assembly Latest public enum class SignatureLineImage ﾉ
   /// Expand table
   /// </summary>
-  siglnimgSigned
+  Signed
 }

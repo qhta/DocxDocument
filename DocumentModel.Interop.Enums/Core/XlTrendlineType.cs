@@ -11,33 +11,33 @@ public enum XlTrendlineType
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies how the
   /// trendline that smoothes out fluctuations in the data is calculated.
   /// </summary>
-  xlExponential = 5,
+  Exponential = 5,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies how the
   /// trendline that smoothes out fluctuations in the data is calculated.
   /// </summary>
-  xlLinear = -4132,
+  Linear = -4132,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies how the
   /// trendline that smoothes out fluctuations in the data is calculated.
   /// </summary>
-  xlLogarithmic = -4133,
+  Logarithmic = -4133,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Uses a sequence of
   /// averages computed from parts of the data public enum class XlTrendlineType ﾉ Expand table series. The number
   /// of points equals the total number of points in the series less the number specified for the period.
   /// </summary>
-  xlMovingAvg = 6,
+  MovingAvg = 6,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies how the
   /// trendline that smoothes out fluctuations in the data is calculated.
   /// </summary>
-  xlPolynomial = 3,
+  Polynomial = 3,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Uses an equation to
   /// calculate the least squares fit through points, for example, y = ax^b. xlExponential5 You should access and
   /// use this enumeration from the Excel primary interop assembly (PIA). Uses an equation to calculate the least
   /// squares fit through points, for example, y=ab^x .
   /// </summary>
-  xlPower = 4
+  Power = 4
 }

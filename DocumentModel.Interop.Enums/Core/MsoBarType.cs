@@ -8,13 +8,13 @@ public enum MsoBarType
   /// <summary>
   /// Default command bar.
   /// </summary>
-  msoBarTypeNormal,
+  Normal,
   /// <summary>
   /// Menu bar.
   /// </summary>
-  msoBarTypeMenuBar,
+  MenuBar,
   /// <summary>
   /// Shortcut menu.
   /// </summary>
-  msoBarTypePopup
+  Popup
 }

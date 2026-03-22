@@ -8,13 +8,13 @@ public enum MsoHyperlinkType
   /// <summary>
   /// Hyperlink
   /// </summary>
-  msoHyperlinkRange,
+  Range,
   /// <summary>
   /// Hyperlink
   /// </summary>
-  msoHyperlinkShape,
+  Shape,
   /// <summary>
   /// Specifies the type of hyperlink.
   /// </summary>
-  msoHyperlinkInlineShape
+  InlineShape
 }

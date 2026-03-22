@@ -8,13 +8,13 @@ public enum MsoSharedWorkspaceTaskPriority
   /// <summary>
   /// High priority.
   /// </summary>
-  msoSharedWorkspaceTaskPriorityHigh = 1,
+  High = 1,
   /// <summary>
   /// Normal priority.
   /// </summary>
-  msoSharedWorkspaceTaskPriorityNormal,
+  Normal,
   /// <summary>
   /// Low priority.
   /// </summary>
-  msoSharedWorkspaceTaskPriorityLow
+  Low
 }

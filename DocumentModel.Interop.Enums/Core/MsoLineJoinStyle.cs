@@ -8,17 +8,17 @@ public enum MsoLineJoinStyle
   /// <summary>
   /// Specifies the type of join where two lines connect.
   /// </summary>
-  msoLineJoinMixed = -2,
+  Mixed = -2,
   /// <summary>
   /// Specifies a rounded join.
   /// </summary>
-  msoLineJoinRound = 1,
+  Round = 1,
   /// <summary>
   /// Specifies a beveled join.
   /// </summary>
-  msoLineJoinBevel = 2,
+  Bevel = 2,
   /// <summary>
   /// Specifies a mitered join.
   /// </summary>
-  msoLineJoinMiter = 3
+  Miter = 3
 }

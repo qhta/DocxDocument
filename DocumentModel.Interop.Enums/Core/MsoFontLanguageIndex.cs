@@ -10,14 +10,14 @@ public enum MsoFontLanguageIndex
   /// The Complex Script language collection supports Arabic, Georgian, Hebrew, Indian, Thai and Vietnamese
   /// alphabets.
   /// </summary>
-  msoThemeLatin = 1,
+  Latin = 1,
   /// <summary>
   /// Represents one of the three language fonts contained in the ThemeFonts collection
   /// </summary>
-  msoThemeComplexScript,
+  ComplexScript,
   /// <summary>
   /// Represents the East Asian font face. East Asian Languages include Simplified Chinese, Traditional Chinese,
   /// Japanese, and Korean.
   /// </summary>
-  msoThemeEastAsian
+  EastAsian
 }

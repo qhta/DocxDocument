@@ -8,21 +8,21 @@ public enum MsoAlertDefaultType
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoAlertDefaultFirst,
+  First,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoAlertDefaultSecond,
+  Second,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoAlertDefaultThird,
+  Third,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoAlertDefaultFourth,
+  Fourth,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  msoAlertDefaultFifth
+  Fifth
 }

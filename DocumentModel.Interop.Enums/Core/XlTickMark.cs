@@ -11,20 +11,20 @@ public enum XlTickMark
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
   /// position of major and minor tick marks for an axis.
   /// </summary>
-  xlTickMarkCross = 4,
+  Cross = 4,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
   /// position of major and minor tick marks for an axis.
   /// </summary>
-  xlTickMarkInside = 2,
+  Inside = 2,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
   /// position of major and minor tick marks for an axis.
   /// </summary>
-  xlTickMarkNone = -4142,
+  None = -4142,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
   /// position of major and minor tick marks for an axis.
   /// </summary>
-  xlTickMarkOutside = 3
+  Outside = 3
 }

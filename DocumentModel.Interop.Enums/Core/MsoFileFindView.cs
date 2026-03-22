@@ -9,13 +9,13 @@ public enum MsoFileFindView
   /// <summary>
   /// View file information.
   /// </summary>
-  msoViewFileInfo = 1,
+  FileInfo = 1,
   /// <summary>
   /// View preview of file.
   /// </summary>
-  msoViewPreview,
+  Preview,
   /// <summary>
   /// View summary information.
   /// </summary>
-  msoViewSummaryInfo
+  SummaryInfo
 }
