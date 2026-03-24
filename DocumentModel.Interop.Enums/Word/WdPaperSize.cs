@@ -10,11 +10,11 @@ public enum WdPaperSize
 {
 
   /// <summary>
-  /// 10 inches wide, 14 inches long.
+  /// Specifies a paper size.
   /// </summary>
   Size10x14 = 0,
   /// <summary>
-  /// Legal 11 inches wide, 17 inches long.
+  /// Specifies a paper size.
   /// </summary>
   Size11x17 = 1,
   /// <summary>
@@ -54,127 +54,127 @@ public enum WdPaperSize
   /// </summary>
   B4 = 10,
   /// <summary>
-  /// B5 dimensions.
+  /// Specifies a paper size.
   /// </summary>
   B5 = 11,
   /// <summary>
-  /// C sheet dimensions.
+  /// Specifies a paper size.
   /// </summary>
   CSheet = 12,
   /// <summary>
-  /// D sheet dimensions.
+  /// Specifies a paper size.
   /// </summary>
   DSheet = 13,
   /// <summary>
-  /// E sheet dimensions.
+  /// Specifies a paper size.
   /// </summary>
   ESheet = 14,
   /// <summary>
-  /// German legal fanfold dimensions.
+  /// Specifies a paper size.
   /// </summary>
   FanfoldLegalGerman = 15,
   /// <summary>
-  /// German standard fanfold dimensions.
+  /// Specifies a paper size.
   /// </summary>
   FanfoldStdGerman = 16,
   /// <summary>
-  /// United States fanfold dimensions.
+  /// Specifies a paper size.
   /// </summary>
   FanfoldUS = 17,
   /// <summary>
-  /// Folio dimensions.
+  /// Specifies a paper size.
   /// </summary>
   Folio = 18,
   /// <summary>
-  /// Ledger dimensions.
+  /// Specifies a paper size.
   /// </summary>
   Ledger = 19,
   /// <summary>
-  /// Note dimensions.
+  /// Specifies a paper size.
   /// </summary>
   Note = 20,
   /// <summary>
-  /// Quarto dimensions.
+  /// Specifies a paper size.
   /// </summary>
   Quarto = 21,
   /// <summary>
-  /// Statement dimensions.
+  /// Specifies a paper size.
   /// </summary>
   Statement = 22,
   /// <summary>
-  /// Tabloid dimensions.
+  /// Specifies a paper size.
   /// </summary>
   Tabloid = 23,
   /// <summary>
-  /// Envelope, size 9.
+  /// Specifies a paper size.
   /// </summary>
   Envelope9 = 24,
   /// <summary>
-  /// Legal envelope, size 10.
+  /// Specifies a paper size.
   /// </summary>
   Envelope10 = 25,
   /// <summary>
-  /// Envelope, size 11.
+  /// Specifies a paper size.
   /// </summary>
   Envelope11 = 26,
   /// <summary>
-  /// Envelope, size 12.
+  /// Specifies a paper size.
   /// </summary>
   Envelope12 = 27,
   /// <summary>
-  /// Envelope, size 14.
+  /// Specifies a paper size.
   /// </summary>
   Envelope14 = 28,
   /// <summary>
-  /// B4 envelope.
+  /// Specifies a paper size.
   /// </summary>
   EnvelopeB4 = 29,
   /// <summary>
-  /// B5 envelope.
+  /// Specifies a paper size.
   /// </summary>
   EnvelopeB5 = 30,
   /// <summary>
-  /// B6 envelope.
+  /// Specifies a paper size.
   /// </summary>
   EnvelopeB6 = 31,
   /// <summary>
-  /// C3 envelope.
+  /// Specifies a paper size.
   /// </summary>
   EnvelopeC3 = 32,
   /// <summary>
-  /// C4 envelope.
+  /// Specifies a paper size.
   /// </summary>
   EnvelopeC4 = 33,
   /// <summary>
-  /// C5 envelope.
+  /// Specifies a paper size.
   /// </summary>
   EnvelopeC5 = 34,
   /// <summary>
-  /// C6 envelope.
+  /// Specifies a paper size.
   /// </summary>
   EnvelopeC6 = 35,
   /// <summary>
-  /// C65 envelope.
+  /// Specifies a paper size.
   /// </summary>
   EnvelopeC65 = 36,
   /// <summary>
-  /// DL envelope.
+  /// Specifies a paper size.
   /// </summary>
   EnvelopeDL = 37,
   /// <summary>
-  /// Italian envelope.
+  /// Specifies a paper size.
   /// </summary>
   EnvelopeItaly = 38,
   /// <summary>
-  /// Monarch envelope.
+  /// Specifies a paper size.
   /// </summary>
   EnvelopeMonarch = 39,
   /// <summary>
-  /// Personal envelope.
+  /// Specifies a paper size.
   /// </summary>
   EnvelopePersonal = 40,
   /// <summary>
-  /// Custom paper size.
+  /// Specifies a paper size.
   /// </summary>
   Custom = 41
 }

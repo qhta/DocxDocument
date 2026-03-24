@@ -37,8 +37,7 @@ public enum WdDeletedTextMark
   /// </summary>
   Italic = 6,
   /// <summary>
-  /// Deleted text is underlined. wdDeletedTextMarkDoubleUnderline8 Deleted text is marked up by using
-  /// double-underline characters.
+  /// Deleted text is underlined.
   /// </summary>
   Underline = 7,
   /// <summary>
@@ -47,9 +46,6 @@ public enum WdDeletedTextMark
   DoubleUnderline = 8,
   /// <summary>
   /// Deleted text is displayed in a specified color (default
-  /// [System.Runtime.InteropServices.Guid("002686EA-BC17-3B7C-BE4E-ECA572100016")] public enum WdDeletedTextMark ﾉ
-  /// Expand table is red). wdDeletedTextMarkDoubleStrikeThrough10 Deleted text is marked up by using double-
-  /// strikethrough characters.
   /// </summary>
   ColorOnly = 9,
   /// <summary>

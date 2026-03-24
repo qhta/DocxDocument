@@ -9,15 +9,15 @@ namespace DocumentModel.Interop.Word;
 public enum WdCaptionLabelID
 {
   /// <summary>
-  /// Specifies the type for a caption label.
+  /// Equation.
   /// </summary>
   Equation = -3,
   /// <summary>
-  /// Specifies the type for a caption label.
+  /// Table.
   /// </summary>
   Table = -2,
   /// <summary>
-  /// Specifies the type for a caption label.
+  /// Figure.
   /// </summary>
   Figure = -1
 }

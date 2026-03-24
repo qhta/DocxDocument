@@ -9,8 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdInternationalIndex
 {
   /// <summary>
-  /// Returns the list separator (, in U.S. English). wdDecimalSeparator18 Returns the decimal separator (. in U.S.
-  /// English). wdThousandsSeparator19 Returns the thousands separator (, in U.S. English).
+  /// Returns the list separator (, in U.S. English).
   /// </summary>
   ListSeparator = 17,
   /// <summary>
@@ -26,7 +25,7 @@ public enum WdInternationalIndex
   /// </summary>
   CurrencyCode = 20,
   /// <summary>
-  /// Returns True if you're using 24-hour time; returns False if you're using 12-hour time.
+  /// Specifies information specific to the current country/region and international settings.
   /// </summary>
   TwentyFourHourClock = 21,
   /// <summary>
@@ -43,8 +42,6 @@ public enum WdInternationalIndex
   TimeSeparator = 24,
   /// <summary>
   /// Returns the date separator (/ in U.S. English).
-  /// [System.Runtime.InteropServices.Guid("5077203F-7859-39B5-BF08-8308BDE14529")] public enum WdInternationalIndex
-  /// ﾉ Expand table wdProductLanguageID26 Returns the language version of Word.
   /// </summary>
   DateSeparator = 25,
   /// <summary>

@@ -9,13 +9,11 @@ namespace DocumentModel.Interop.Word;
 public enum WdWordDialogTabHID
 {
   /// <summary>
-  /// wdDialogFilePageSetupTabPaperSource 150002
+  /// Reserved for internal use.
   /// </summary>
   ize = 150001,
   /// <summary>
-  /// Applies to Product Versions Word primary interop assembly Latest
-  /// [System.Runtime.InteropServices.Guid("14A3993D-4639-3665-B2DF-68D5C76E407B")] public enum WdWordDialogTabHID ﾉ
-  /// Expand table
+  /// Reserved for internal use.
   /// </summary>
   ource = 150002
 }

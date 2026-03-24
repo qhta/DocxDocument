@@ -21,11 +21,11 @@ public enum XlUnderlineStyle
   /// </summary>
   DoubleAccounting = 5,
   /// <summary>
-  /// Specifies the type of underline applied to a font.
+  /// No underlining.
   /// </summary>
   None = -4142,
   /// <summary>
-  /// Specifies the type of underline applied to a font.
+  /// Double thick underline.
   /// </summary>
   Double = -4119
 }

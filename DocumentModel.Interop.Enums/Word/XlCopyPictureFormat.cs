@@ -13,7 +13,7 @@ public enum XlCopyPictureFormat
   /// </summary>
   Bitmap = 2,
   /// <summary>
-  /// Specifies the format of the picture being copied.
+  /// Drawn picture (.png, .wmf, .mix).
   /// </summary>
   Picture = -4147
 }

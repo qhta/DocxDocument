@@ -32,12 +32,11 @@ public enum WdLigatures
   /// </summary>
   Historical = 4,
   /// <summary>
-  /// Applies standard and historical ligatures to the font. public enum WdLigatures ﾉ Expand table
+  /// Applies standard and historical ligatures to the font. public enum WdLigatures
   /// </summary>
   StandardHistorical = 5,
   /// <summary>
-  /// Applies contextual and historical ligatures to the font. wdLigaturesStandardContextualHistorical7 Applies
-  /// standard, contextual, and historical ligatures to the font.
+  /// Specifies the type of ligatures applied to a font.
   /// </summary>
   ContextualHistorical = 6,
   /// <summary>
@@ -45,14 +44,11 @@ public enum WdLigatures
   /// </summary>
   StandardContextualHistorical = 7,
   /// <summary>
-  /// Applies discretional ligatures to the font. Discretional ligatures are most often designed to be ornamental at
-  /// the discretion of the type developer.
+  /// Specifies the type of ligatures applied to a font.
   /// </summary>
   Discretional = 8,
   /// <summary>
-  /// Applies standard and discretional ligatures to the font. wdLigaturesContextualDiscretional10 Applies
-  /// contextual and discretional ligatures to the font. wdLigaturesStandardContextualDiscretional11 Applies
-  /// standard, contextual and discretional ligatures to the font.
+  /// Specifies the type of ligatures applied to a font.
   /// </summary>
   StandardDiscretional = 9,
   /// <summary>
@@ -64,9 +60,7 @@ public enum WdLigatures
   /// </summary>
   StandardContextualDiscretional = 11,
   /// <summary>
-  /// Applies historical and discretional ligatures to the font. wdLigaturesStandardHistoricalDiscretional13 Applies
-  /// standard historical and discretional ligatures to the font. wdLigaturesContextualHistoricalDiscretional14
-  /// Applies contextual, historical, and discretional ligatures to a font.
+  /// Specifies the type of ligatures applied to a font.
   /// </summary>
   HistoricalDiscretional = 12,
   /// <summary>
@@ -78,7 +72,7 @@ public enum WdLigatures
   /// </summary>
   ContextualHistoricalDiscretional = 14,
   /// <summary>
-  /// Applies all types of ligatures to the font.
+  /// Specifies the type of ligatures applied to a font.
   /// </summary>
   All = 15
 }

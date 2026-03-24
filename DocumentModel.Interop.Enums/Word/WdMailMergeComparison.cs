@@ -21,9 +21,7 @@ public enum WdMailMergeComparison
   /// </summary>
   LessThan = 2,
   /// <summary>
-  /// A value is output if the mail merge field is greater than a value. wdMergeIfLessThanOrEqual4 A value is output
-  /// if the mail merge field is less than or equal to a value. wdMergeIfGreaterThanOrEqual5 A value is output if
-  /// the mail merge field is greater than or equal to a value.
+  /// A value is output if the mail merge field is greater than a value.
   /// </summary>
   GreaterThan = 3,
   /// <summary>

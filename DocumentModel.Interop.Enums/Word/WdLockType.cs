@@ -9,9 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdLockType
 {
   /// <summary>
-  /// Reserved for future use. wdLockReservation1 Specifies a reservation lock. A reservation lock is explicitly
-  /// created by a user through the Block Authors button on the Review tab in Word 2010. wdLockEphemeral2 Specifies
-  /// an ephemeral lock that
+  /// Specifies the type of lock for a CoAuthLock object.
   /// </summary>
   None = 0,
   /// <summary>

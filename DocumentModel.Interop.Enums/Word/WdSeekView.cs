@@ -49,8 +49,7 @@ public enum WdSeekView
   /// </summary>
   CurrentPageHeader = 9,
   /// <summary>
-  /// The current page footer. [System.Runtime.InteropServices.Guid("8472D0A9-03EA-3253-8BC8-F66718CF09A6")] public
-  /// enum WdSeekView ﾉ Expand table
+  /// The current page footer.
   /// </summary>
   CurrentPageFooter = 10
 }

@@ -25,19 +25,19 @@ public enum XlLineStyle
   /// </summary>
   SlantDashDot = 13,
   /// <summary>
-  /// Specifies the line style for the border.
+  /// No line.
   /// </summary>
   LineStyleNone = -4142,
   /// <summary>
-  /// Specifies the line style for the border.
+  /// Double line.
   /// </summary>
   Double = -4119,
   /// <summary>
-  /// Specifies the line style for the border.
+  /// Dotted line.
   /// </summary>
   Dot = -4118,
   /// <summary>
-  /// Specifies the line style for the border.
+  /// Dashed line.
   /// </summary>
   Dash = -4115
 }

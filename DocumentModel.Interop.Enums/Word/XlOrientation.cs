@@ -9,19 +9,19 @@ namespace DocumentModel.Interop.Word;
 public enum XlOrientation
 {
   /// <summary>
-  /// Specifies the text orientation.
+  /// Text runs upward.
   /// </summary>
   Upward = -4171,
   /// <summary>
-  /// Specifies the text orientation.
+  /// Text runs downward.
   /// </summary>
   Downward = -4170,
   /// <summary>
-  /// Specifies the text orientation.
+  /// Text runs downward and is centered in the cell.
   /// </summary>
   Vertical = -4166,
   /// <summary>
-  /// Specifies the text orientation.
+  /// Text runs horizontally.
   /// </summary>
   Horizontal = -4128
 }

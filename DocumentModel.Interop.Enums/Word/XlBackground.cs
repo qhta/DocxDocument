@@ -17,7 +17,7 @@ public enum XlBackground
   /// </summary>
   Opaque = 3,
   /// <summary>
-  /// Specifies the background type for text in charts.
+  /// Word controls the background.
   /// </summary>
   Automatic = -4105
 }

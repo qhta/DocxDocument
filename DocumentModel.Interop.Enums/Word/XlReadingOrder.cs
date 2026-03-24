@@ -9,15 +9,15 @@ namespace DocumentModel.Interop.Word;
 public enum XlReadingOrder
 {
   /// <summary>
-  /// Specifies the reading order for the specified object.
+  /// Right-to-left.
   /// </summary>
   RTL = -5004,
   /// <summary>
-  /// Specifies the reading order for the specified object.
+  /// Left-to-right.
   /// </summary>
   LTR = -5003,
   /// <summary>
-  /// Specifies the reading order for the specified object.
+  /// According to context.
   /// </summary>
   Context = -5002
 }

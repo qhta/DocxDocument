@@ -38,37 +38,34 @@ public enum WdCompatibility
   SuppressSpBfAfterPgBrk = 7,
   /// <summary>
   /// Suppress extra line spacing at top of page.
-  /// [System.Runtime.InteropServices.Guid("8B0DD4CD-D15D-3290-81BA-A73BC181E06F")] public enum WdCompatibility ﾉ
-  /// Expand table
   /// </summary>
   SuppressTopSpacing = 8,
   /// <summary>
-  /// Combine table borders like Word 5.x for the Macintosh.
+  /// Specifies a compatibility option.
   /// </summary>
   OrigWordTableRules = 9,
   /// <summary>
-  /// Don't blank the area behind metafile pictures.
+  /// Specifies a compatibility option.
   /// </summary>
   TransparentMetafiles = 10,
   /// <summary>
-  /// Show hard page or column breaks in frames.
+  /// Specifies a compatibility option.
   /// </summary>
   ShowBreaksInFrames = 11,
   /// <summary>
-  /// Swap left and right borders on odd facing pages.
+  /// Specifies a compatibility option.
   /// </summary>
   SwapBordersFacingPages = 12,
   /// <summary>
-  /// Convert backslash characters into yen signs.
+  /// Specifies a compatibility option.
   /// </summary>
   LeaveBackslashAlone = 13,
   /// <summary>
-  /// Don't expand character spaces on the line ending Shift+Return.
+  /// Specifies a compatibility option.
   /// </summary>
   ExpandShiftReturn = 14,
   /// <summary>
-  /// Draw underline on trailing spaces. wdDontBalanceSingleByteDoubleByteWidth16 Balance SBCS characters and DBCS
-  /// characters.
+  /// Specifies a compatibility option.
   /// </summary>
   DontULTrailSpace = 15,
   /// <summary>
@@ -76,116 +73,115 @@ public enum WdCompatibility
   /// </summary>
   DontBalanceSingleByteDoubleByteWidth = 16,
   /// <summary>
-  /// Suppress extra line spacing at top of page like Word 5.x for the Macintosh.
+  /// Specifies a compatibility option.
   /// </summary>
   SuppressTopSpacingMac5 = 17,
   /// <summary>
-  /// Expand/condense by whole number of points.
+  /// Specifies a compatibility option.
   /// </summary>
   SpacingInWholePoints = 18,
   /// <summary>
-  /// Print body text before header/footer.
+  /// Specifies a compatibility option.
   /// </summary>
   PrintBodyTextBeforeHeader = 19,
   /// <summary>
-  /// Don't add leading (extra space) between rows of text.
+  /// Specifies a compatibility option.
   /// </summary>
   NoLeading = 20,
   /// <summary>
-  /// Add space for underline.
+  /// Specifies a compatibility option.
   /// </summary>
   NoSpaceForUL = 21,
   /// <summary>
-  /// Use larger small caps like Word 5.x for the Macintosh.
+  /// Specifies a compatibility option.
   /// </summary>
   MWSmallCaps = 22,
   /// <summary>
-  /// Suppress extra line spacing like WordPerfect 5.x.
+  /// Specifies a compatibility option.
   /// </summary>
   NoExtraLineSpacing = 23,
   /// <summary>
-  /// Truncate font height.
+  /// Specifies a compatibility option.
   /// </summary>
   TruncateFontHeight = 24,
   /// <summary>
-  /// Substitute fonts based on font size.
+  /// Specifies a compatibility option.
   /// </summary>
   SubFontBySize = 25,
   /// <summary>
-  /// Use printer metrics to lay out document.
+  /// Specifies a compatibility option.
   /// </summary>
   UsePrinterMetrics = 26,
   /// <summary>
-  /// Use Word 6.x/95 border rules.
+  /// Specifies a compatibility option.
   /// </summary>
   WW6BorderRules = 27,
   /// <summary>
-  /// Don't center "exact line height" lines.
+  /// Specifies a compatibility option.
   /// </summary>
   ExactOnTop = 28,
   /// <summary>
-  /// Suppress extra line spacing at bottom of page.
+  /// Specifies a compatibility option.
   /// </summary>
   SuppressBottomSpacing = 29,
   /// <summary>
-  /// Set the width of a space like WordPerfect 5.x.
+  /// Specifies a compatibility option.
   /// </summary>
   WPSpaceWidth = 30,
   /// <summary>
-  /// Do full justification like WordPerfect 6.x for Windows.
+  /// Specifies a compatibility option.
   /// </summary>
   WPJustification = 31,
   /// <summary>
-  /// Line wrap like Word 6.0.
+  /// Specifies a compatibility option.
   /// </summary>
   LineWrapLikeWord6 = 32,
   /// <summary>
-  /// Lay out autoshapes like Word 97.
+  /// Specifies a compatibility option.
   /// </summary>
   ShapeLayoutLikeWW8 = 33,
   /// <summary>
-  /// Lay out footnotes like Word 6.x/95/97.
+  /// Specifies a compatibility option.
   /// </summary>
   FootnoteLayoutLikeWW8 = 34,
   /// <summary>
-  /// Don't use HTML paragraph auto spacing.
+  /// Specifies a compatibility option.
   /// </summary>
   DontUseHTMLParagraphAutoSpacing = 35,
   /// <summary>
-  /// Adjust line height to grid height in the table.
+  /// Specifies a compatibility option.
   /// </summary>
   DontAdjustLineHeightInTable = 36,
   /// <summary>
-  /// Forget last tab alignment.
+  /// Specifies a compatibility option.
   /// </summary>
   ForgetLastTabAlignment = 37,
   /// <summary>
-  /// Autospace like Word 95.
+  /// Specifies a compatibility option.
   /// </summary>
   AutospaceLikeWW7 = 38,
   /// <summary>
-  /// Align table rows independently.
+  /// Specifies a compatibility option.
   /// </summary>
   AlignTablesRowByRow = 39,
   /// <summary>
-  /// Lay out tables with raw width.
+  /// Specifies a compatibility option.
   /// </summary>
   LayoutRawTableWidth = 40,
   /// <summary>
-  /// Allow table rows to lay out apart.
+  /// Specifies a compatibility option.
   /// </summary>
   LayoutTableRowsApart = 41,
   /// <summary>
-  /// Use
+  /// Specifies a compatibility option.
   /// </summary>
   UseWord97LineBreakingRules = 42,
   /// <summary>
-  /// Don't break wrapped tables across pages.
+  /// Specifies a compatibility option.
   /// </summary>
   DontBreakWrappedTables = 43,
   /// <summary>
-  /// Don't snap text to grid inside table with inline objects. wdSelectFieldWithFirstOrLastCharacter45 Select
-  /// entire field with first or last character.
+  /// Specifies a compatibility option.
   /// </summary>
   DontSnapTextToGridInTableWithObjects = 44,
   /// <summary>
@@ -193,91 +189,91 @@ public enum WdCompatibility
   /// </summary>
   SelectFieldWithFirstOrLastCharacter = 45,
   /// <summary>
-  /// Use line-breaking rules.
+  /// Specifies a compatibility option.
   /// </summary>
   ApplyBreakingRules = 46,
   /// <summary>
-  /// Don't allow hanging punctuation with character grid.
+  /// Specifies a compatibility option.
   /// </summary>
   DontWrapTextWithPunctuation = 47,
   /// <summary>
-  /// Don't use Asian rules for line breaks with character grid.
+  /// Specifies a compatibility option.
   /// </summary>
   DontUseAsianBreakRulesInGrid = 48,
   /// <summary>
-  /// Use
+  /// Specifies a compatibility option.
   /// </summary>
   UseWord2002TableStyleRules = 49,
   /// <summary>
-  /// Allow tables to extend into margins.
+  /// Specifies a compatibility option.
   /// </summary>
   GrowAutofit = 50,
   /// <summary>
-  /// Use the Normal style instead of the List Paragraph style for bulleted or numbered lists.
+  /// Specifies a compatibility option.
   /// </summary>
   UseNormalStyleForList = 51,
   /// <summary>
-  /// Do not use hanging indent as tab stop for bullets and numbering.
+  /// Specifies a compatibility option.
   /// </summary>
   DontUseIndentAsNumberingTabStop = 52,
   /// <summary>
-  /// Use
+  /// Specifies a compatibility option.
   /// </summary>
   FELineBreak11 = 53,
   /// <summary>
-  /// Allow space between paragraphs of the same style in a table.
+  /// Specifies a compatibility option.
   /// </summary>
   AllowSpaceOfSameStyleInTable = 54,
   /// <summary>
-  /// Use
+  /// Specifies a compatibility option.
   /// </summary>
   WW11IndentRules = 55,
   /// <summary>
-  /// Do not autofit tables next to wrapped objects.
+  /// Specifies a compatibility option.
   /// </summary>
   DontAutofitConstrainedTables = 56,
   /// <summary>
-  /// Use Microsoft Office
+  /// Specifies a compatibility option.
   /// </summary>
   AutofitLikeWW11 = 57,
   /// <summary>
-  /// Underline the tab character between the number and the text in numbered lists.
+  /// Specifies a compatibility option.
   /// </summary>
   UnderlineTabInNumList = 58,
   /// <summary>
-  /// Do not use proportional width for Korean characters.
+  /// Specifies a compatibility option.
   /// </summary>
   HangulWidthLikeWW11 = 59,
   /// <summary>
-  /// Split apart page break and paragraph mark.
+  /// Specifies a compatibility option.
   /// </summary>
   SplitPgBreakAndParaMark = 60,
   /// <summary>
-  /// Reserved for internal use.
+  /// Specifies a compatibility option.
   /// </summary>
   DontVertAlignCellWithShape = 61,
   /// <summary>
-  /// Reserved for internal use.
+  /// Specifies a compatibility option.
   /// </summary>
   DontBreakConstrainedForcedTables = 62,
   /// <summary>
-  /// Reserved for internal use.
+  /// Specifies a compatibility option.
   /// </summary>
   DontVertAlignInTextbox = 63,
   /// <summary>
-  /// Reserved for internal use.
+  /// Specifies a compatibility option.
   /// </summary>
   Word11KerningPairs = 64,
   /// <summary>
-  /// Reserved for internal use.
+  /// Specifies a compatibility option.
   /// </summary>
   CachedColBalance = 65,
   /// <summary>
-  /// Reserved for internal use.
+  /// Specifies a compatibility option.
   /// </summary>
   DisableOTKerning = 66,
   /// <summary>
-  /// Reserved for internal use. wdDontOverrideTableStyleFontSzAndJustification68 Reserved for internal use.
+  /// Specifies a compatibility option.
   /// </summary>
   FlipMirrorIndents = 67,
   /// <summary>
@@ -285,7 +281,7 @@ public enum WdCompatibility
   /// </summary>
   DontOverrideTableStyleFontSzAndJustification = 68,
   /// <summary>
-  /// Use
+  /// Specifies a compatibility option.
   /// </summary>
   UseWord2010TableStyleRules = 69
 }

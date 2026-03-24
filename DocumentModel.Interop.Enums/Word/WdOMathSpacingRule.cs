@@ -13,7 +13,7 @@ public enum WdOMathSpacingRule
   /// </summary>
   Single = 0,
   /// <summary>
-  /// One and half spaces for each line.
+  /// Specifies spacing for an equation.
   /// </summary>
   OnePtFive = 1,
   /// <summary>

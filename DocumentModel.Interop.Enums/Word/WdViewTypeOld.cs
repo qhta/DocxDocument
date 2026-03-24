@@ -9,13 +9,11 @@ namespace DocumentModel.Interop.Word;
 public enum WdViewTypeOld
 {
   /// <summary>
-  /// wdOnlineView 6
+  /// Reserved for internal use.
   /// </summary>
   PageView = 3,
   /// <summary>
-  /// Applies to Product Versions Word primary interop assembly Latest
-  /// [System.Runtime.InteropServices.Guid("858C6BC5-2351-363F-9177-BBFFA86CCB78")] public enum WdViewTypeOld ﾉ
-  /// Expand table
+  /// Reserved for internal use.
   /// </summary>
   OnlineView = 6
 }

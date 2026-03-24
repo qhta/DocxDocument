@@ -9,11 +9,11 @@ namespace DocumentModel.Interop.Word;
 public enum XlScaleType
 {
   /// <summary>
-  /// Specifies the scale type of the value axis.
+  /// Logarithmic
   /// </summary>
   ogarithmic = -4133,
   /// <summary>
-  /// Specifies the scale type of the value axis.
+  /// Linear
   /// </summary>
   inear = -4132
 }

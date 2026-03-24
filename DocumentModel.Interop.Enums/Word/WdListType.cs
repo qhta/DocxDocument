@@ -17,8 +17,7 @@ public enum WdListType
   /// </summary>
   ListNumOnly = 1,
   /// <summary>
-  /// Bulleted list. wdListSimpleNumbering3 Simple numeric list. wdListOutlineNumbering4 Outlined list.
-  /// wdListMixedNumbering5 Mixed numeric list.
+  /// Bulleted list.
   /// </summary>
   Bullet = 2,
   /// <summary>

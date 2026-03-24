@@ -20,8 +20,7 @@ public enum WdDeleteCells
   /// </summary>
   ShiftUp = 1,
   /// <summary>
-  /// Delete the entire row of cells from the table. wdDeleteCellsEntireColumn3 Delete the entire column of cells
-  /// from the table.
+  /// Delete the entire row of cells from the table.
   /// </summary>
   EntireRow = 2,
   /// <summary>

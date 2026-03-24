@@ -46,8 +46,6 @@ public enum WdIMEMode
   HangulFull = 9,
   /// <summary>
   /// Activates the IME in half-width Hangul mode.
-  /// [System.Runtime.InteropServices.Guid("8BE9FF6B-231C-32F4-8F21-FD47474070BA")] public enum WdIMEMode ﾉ Expand
-  /// table
   /// </summary>
   Hangul = 10
 }

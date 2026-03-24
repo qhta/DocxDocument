@@ -21,8 +21,7 @@ public enum WdMailMergeState
   /// </summary>
   MainAndDataSource = 2,
   /// <summary>
-  /// A main document with an attached header source. wdMainAndSourceAndHeader4 A main document with attached data
-  /// source and header source.
+  /// A main document with an attached header source.
   /// </summary>
   MainAndHeader = 3,
   /// <summary>

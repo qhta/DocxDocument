@@ -13,8 +13,7 @@ public enum XlTrendlineType
   /// </summary>
   Polynomial = 3,
   /// <summary>
-  /// Uses an equation to calculate the least squares fit through points, for example, y = ax^b. xlExponential5 Uses
-  /// an equation to calculate the least squares fit through points, for example, y=ab^x .
+  /// Uses an equation to calculate the least squares fit through points, for example, y = ax^b.
   /// </summary>
   Power = 4,
   /// <summary>
@@ -31,7 +30,7 @@ public enum XlTrendlineType
   /// </summary>
   Logarithmic = -4133,
   /// <summary>
-  /// Specifies how the trendline that smoothes out fluctuations in the data is calculated.
+  /// Uses the linear equation y = mx + b to calculate the least squares fit through points.
   /// </summary>
   Linear = -4132
 }

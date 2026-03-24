@@ -37,8 +37,7 @@ public enum WdViewType
   /// </summary>
   ReadingView = 7,
   /// <summary>
-  /// Applies to [System.Runtime.InteropServices.Guid("32FB36EF-2E57-345C-98BA-051FB07F8F6C")] public enum
-  /// WdViewType ﾉ Expand table Product Versions Word primary interop assembly Latest
+  /// Specifies the view type.
   /// </summary>
   ConflictView = 8
 }

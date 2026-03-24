@@ -50,20 +50,18 @@ public enum WdCustomLabelPageSize
   VertHalfSheet = 9,
   /// <summary>
   /// Half-sheet landscape label dimensions.
-  /// [System.Runtime.InteropServices.Guid("B116B479-488C-3D69-BFBE-A64DD14F3BB9")] public enum
-  /// WdCustomLabelPageSize ﾉ Expand table
   /// </summary>
   VertHalfSheetLS = 10,
   /// <summary>
-  /// Higaki portrait label dimensions.
+  /// Specifies the page size for a custom mailing label.
   /// </summary>
   Higaki = 11,
   /// <summary>
-  /// Higaki landscape label dimensions.
+  /// Specifies the page size for a custom mailing label.
   /// </summary>
   HigakiLS = 12,
   /// <summary>
-  /// B4 JIS label dimensions.
+  /// Specifies the page size for a custom mailing label.
   /// </summary>
   B4JIS = 13
 }

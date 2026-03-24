@@ -9,11 +9,11 @@ namespace DocumentModel.Interop.Word;
 public enum XlColorIndex
 {
   /// <summary>
-  /// Specifies the color of a selected feature, such as a border, font, or fill.
+  /// No color.
   /// </summary>
   None = -4142,
   /// <summary>
-  /// Specifies the color of a selected feature, such as a border, font, or fill.
+  /// Automatic color.
   /// </summary>
   Automatic = -4105
 }

@@ -10,8 +10,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdFindWrap
 {
   /// <summary>
-  /// The find operation ends if the beginning or end of the search range is reached. wdFindContinue1 The find
-  /// operation continues if the beginning or end of the search range is reached.
+  /// The find operation ends if the beginning or end of the search range is reached.
   /// </summary>
   Stop = 0,
   /// <summary>

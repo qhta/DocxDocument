@@ -19,7 +19,7 @@ public enum XlChartSplitType
   Value = 2,
   /// <summary>
   /// Second chart displays values less than some percentage of the total value. The percentage is specified by the
-  /// SplitValue property. xlSplitByCustomSplit4 Arbitrary slides are displayed in the second chart.
+  /// SplitValue property.
   /// </summary>
   PercentValue = 3,
   /// <summary>

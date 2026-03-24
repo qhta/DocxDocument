@@ -9,47 +9,47 @@ namespace DocumentModel.Interop.Word;
 public enum WdBuiltinStyle
 {
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// TOC Heading.
   /// </summary>
   TocHeading = -267,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Bibliography.
   /// </summary>
   Bibliography = -266,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Book title.
   /// </summary>
   BookTitle = -265,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Intense Reference.
   /// </summary>
   IntenseReference = -264,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Subtle Reference.
   /// </summary>
   SubtleReference = -263,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Intense Emphasis.
   /// </summary>
   IntenseEmphasis = -262,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Subtle Emphasis.
   /// </summary>
   SubtleEmphasis = -261,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Intense Quote.
   /// </summary>
   IntenseQuote = -182,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Quote.
   /// </summary>
   Quote = -181,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// List Paragraph.
   /// </summary>
   ListParagraph = -180,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Medium List 1 Accent 1.
   /// </summary>
   TableMediumList1Accent1 = -178,
   /// <summary>
@@ -353,7 +353,8 @@ public enum WdBuiltinStyle
   /// </summary>
   ListBullet = -49,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Accent 1. [System.Runtime.InteropServices.Guid("200A1EF2-18FB-3BAB-92AE-E3A78B2E1108")] public enum
+  /// WdBuiltinStyle ﾉ Expand table wdStyleTableMediumShading2Accent1 -177 Medium
   /// </summary>
   List = -48,
   /// <summary>
