@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the style of the arrowhead at the end of a line.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoarrowheadstyle?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoArrowheadStyle
 {
   /// <summary>

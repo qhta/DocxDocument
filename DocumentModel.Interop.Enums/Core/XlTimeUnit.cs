@@ -5,6 +5,9 @@ namespace DocumentModel.Interop.Core;
 /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Indicates units of
 /// time measurement.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xltimeunit?view=office-pia` for Office interop details.
+/// </remarks>
 public enum XlTimeUnit
 {
   /// <summary>

@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the alignment of phonetic text that is added to the specified range.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdphoneticguidealignmenttype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdPhoneticGuideAlignmentType
 {
   /// <summary>

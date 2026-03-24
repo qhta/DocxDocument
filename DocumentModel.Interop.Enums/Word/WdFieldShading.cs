@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies when to apply on-screen shading for form fields.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdfieldshading?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdFieldShading
 {
   /// <summary>

@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the capitalization of the text.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotextcaps?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoTextCaps
 {
   /// <summary>

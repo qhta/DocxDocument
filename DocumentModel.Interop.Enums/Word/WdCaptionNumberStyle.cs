@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the number style to be used with the CaptionLabel object.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcaptionnumberstyle?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdCaptionNumberStyle
 {
   /// <summary>

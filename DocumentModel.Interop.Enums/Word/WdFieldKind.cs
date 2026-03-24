@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the type of field for a Field object.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdfieldkind?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdFieldKind
 {
   /// <summary>

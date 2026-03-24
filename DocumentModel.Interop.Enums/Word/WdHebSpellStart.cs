@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies which rules the Hebrew spelling checker will follow.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdhebspellstart?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdHebSpellStart
 {
   /// <summary>

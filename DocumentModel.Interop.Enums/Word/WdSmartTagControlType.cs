@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the type of control associated with a SmartTagAction object.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsmarttagcontroltype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdSmartTagControlType
 {
   /// <summary>

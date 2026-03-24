@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the state of a mail merge operation.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailmergestate?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdMailMergeState
 {
   /// <summary>

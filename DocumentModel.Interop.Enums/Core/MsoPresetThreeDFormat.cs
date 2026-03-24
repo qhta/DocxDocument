@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies an extrusion (three-dimensional) format.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetthreedformat?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoPresetThreeDFormat
 {
   /// <summary>

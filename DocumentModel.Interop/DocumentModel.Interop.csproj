@@ -22,6 +22,9 @@
     <None Include="..\..\..\Scripts\RemoveTypeNamesFromEnums.py" Link="Scripts\RemoveTypeNamesFromEnums.py" />
     <None Include="..\..\..\Scripts\TrimEnumFieldNames.py" Link="Scripts\TrimEnumFieldNames.py" />
     <None Include="..\..\..\Scripts\CompareEnumTypes.py" Link="Scripts\CompareEnumTypes.py" />
+    <None Include="..\..\..\Scripts\AddPiaCoreLink.py" Link="Scripts\AddPiaCoreLink.py" />
+    <None Include="..\..\..\Scripts\AddPiaWordLink.py" Link="Scripts\AddPiaWordLink.py" />
+
 
   </ItemGroup>
 

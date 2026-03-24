@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies properties of a signature.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signaturetype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum SignatureType
 {
   /// <summary>

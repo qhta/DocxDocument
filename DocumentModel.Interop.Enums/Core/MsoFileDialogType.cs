@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the type of a FileDialog object.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofiledialogtype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoFileDialogType
 {
   /// <summary>

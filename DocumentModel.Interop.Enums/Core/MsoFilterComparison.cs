@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies how the Column and CompareTo properties are compared for an ODSOFilter object.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofiltercomparison?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoFilterComparison
 {
   /// <summary>

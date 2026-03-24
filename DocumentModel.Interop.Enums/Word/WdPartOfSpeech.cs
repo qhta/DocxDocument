@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the part of speech that a word represents when returned by the Word thesaurus service.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdpartofspeech?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdPartOfSpeech
 {
   /// <summary>

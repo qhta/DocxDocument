@@ -5,6 +5,9 @@
 /// are merged with the menu groups of an OLE client (that is, when an object of the container application type is
 /// embedded in another application).
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoolemenugroup?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoOLEMenuGroup
 {
   /// <summary>

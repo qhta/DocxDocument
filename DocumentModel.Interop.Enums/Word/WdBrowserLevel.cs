@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the version of Web browser at which you want to target new Web pages created in Microsoft Word.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbrowserlevel?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdBrowserLevel
 {
   /// <summary>

@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies properties of the signature subset. These settings act as filters for signature sets.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosignaturesubset?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoSignatureSubset
 {
   /// <summary>

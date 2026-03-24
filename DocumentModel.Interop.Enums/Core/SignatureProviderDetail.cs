@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies properties of a signature provider.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureproviderdetail?view=office-pia` for Office interop details.
+/// </remarks>
 public enum SignatureProviderDetail
 {
   /// <summary>

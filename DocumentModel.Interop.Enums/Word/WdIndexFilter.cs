@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies how Microsoft Word classifies the first character of entries in the specified index.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdindexfilter?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdIndexFilter
 {
   /// <summary>

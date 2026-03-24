@@ -4,6 +4,9 @@ namespace DocumentModel.Interop.Word;
 /// Constants that represent chart category-label levels, passed to and returned by the CategoryLabelLevel
 /// property.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlcategorylabellevel?view=office-pia` for Office interop details.
+/// </remarks>
 public enum XlCategoryLabelLevel
 {
   /// <summary>

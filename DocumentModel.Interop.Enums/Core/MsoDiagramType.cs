@@ -4,6 +4,9 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Specifies the type of diagram.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodiagramtype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoDiagramType
 {
   /// <summary>

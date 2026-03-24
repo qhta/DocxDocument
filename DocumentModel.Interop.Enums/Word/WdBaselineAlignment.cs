@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the vertical position of fonts on a line.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbaselinealignment?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdBaselineAlignment
 {
   /// <summary>

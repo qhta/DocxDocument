@@ -4,6 +4,9 @@ namespace DocumentModel.Interop.Word;
 /// Specifies when scroll bars are available for the specified frame when viewing its frames page in a Web
 /// browser.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdscrollbartype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdScrollbarType
 {
   /// <summary>

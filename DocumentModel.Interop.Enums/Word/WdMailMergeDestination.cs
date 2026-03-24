@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies a destination for mail merge results.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailmergedestination?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdMailMergeDestination
 {
   /// <summary>

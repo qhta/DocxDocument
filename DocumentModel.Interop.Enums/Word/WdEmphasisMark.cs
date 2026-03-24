@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the type of emphasis mark to use for a character or designated character string.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdemphasismark?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdEmphasisMark
 {
   /// <summary>

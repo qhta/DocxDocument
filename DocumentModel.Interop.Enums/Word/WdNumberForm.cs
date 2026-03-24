@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the number form setting for an OpenType font.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdnumberform?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdNumberForm
 {
   /// <summary>

@@ -4,6 +4,9 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Specifies view to use for a file find process.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofilefindview?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoFileFindView
 {
   /// <summary>

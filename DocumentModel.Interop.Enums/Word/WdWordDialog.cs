@@ -4,6 +4,9 @@ namespace DocumentModel.Interop.Word;
 /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
 /// applicable, that you can use to get or set values in a dialog box.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdworddialog?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdWordDialog
 {
   /// <summary>

@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the task pane section to which to add a file or where the file reference exists.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofilenewsection?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoFileNewSection
 {
   /// <summary>

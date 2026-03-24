@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies how Microsoft Word wraps text around pictures.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdwraptypemerged?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdWrapTypeMerged
 {
   /// <summary>

@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies how the trendline that smoothes out fluctuations in the data is calculated.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xltrendlinetype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum XlTrendlineType
 {
   /// <summary>

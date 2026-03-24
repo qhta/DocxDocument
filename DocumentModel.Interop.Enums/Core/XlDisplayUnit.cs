@@ -5,6 +5,9 @@ namespace DocumentModel.Interop.Core;
 /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Indicates numeric
 /// units of measurement.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xldisplayunit?view=office-pia` for Office interop details.
+/// </remarks>
 public enum XlDisplayUnit
 {
   /// <summary>

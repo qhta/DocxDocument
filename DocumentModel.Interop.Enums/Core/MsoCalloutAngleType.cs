@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the size of the angle between the callout line and the side of the callout text box.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocalloutangletype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoCalloutAngleType
 {
   /// <summary>

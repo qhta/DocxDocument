@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the type of soft edge effect.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosoftedgetype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoSoftEdgeType
 {
   /// <summary>

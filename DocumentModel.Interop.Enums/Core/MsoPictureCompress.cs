@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies whether a picture will be compressed or not when inserted into a file.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopicturecompress?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoPictureCompress
 {
   /// <summary>

@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the maximum length of an automatically generated document summary.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsummarylength?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdSummaryLength
 {
   /// <summary>

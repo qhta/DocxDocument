@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies orientation of an object when it is displayed or printed.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoorientation?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoOrientation
 {
   /// <summary>

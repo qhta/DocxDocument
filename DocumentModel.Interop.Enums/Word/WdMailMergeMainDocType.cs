@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies a type of mail merge document.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailmergemaindoctype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdMailMergeMainDocType
 {
   /// <summary>

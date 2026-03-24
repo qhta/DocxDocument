@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies whether the formatting from the previous list can be continued.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcontinue?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdContinue
 {
   /// <summary>

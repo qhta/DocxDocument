@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the format in which to display month names.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmonthnames?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdMonthNames
 {
   /// <summary>

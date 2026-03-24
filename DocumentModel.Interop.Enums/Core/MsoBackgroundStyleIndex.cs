@@ -3,6 +3,9 @@
 /// <summary>
 /// Indicates the background style for an object.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobackgroundstyleindex?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoBackgroundStyleIndex
 {
   /// <summary>

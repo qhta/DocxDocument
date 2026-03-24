@@ -4,6 +4,9 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Specifies a type of file.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofiletype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoFileType
 {
   /// <summary>

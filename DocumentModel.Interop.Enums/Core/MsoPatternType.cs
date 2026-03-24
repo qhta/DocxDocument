@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the fill pattern used in a shape.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopatterntype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoPatternType
 {
   /// <summary>

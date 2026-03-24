@@ -4,6 +4,9 @@ namespace DocumentModel.Interop.Word;
 /// Specifies the relative width of a shape using the value specified in the WidthRelative property for a Shape or
 /// ShapeRange object.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrelativehorizontalsize?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdRelativeHorizontalSize
 {
   /// <summary>
