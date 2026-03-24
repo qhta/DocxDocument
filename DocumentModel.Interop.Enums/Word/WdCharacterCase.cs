@@ -21,7 +21,7 @@ public enum WdCharacterCase
   /// </summary>
   TitleWord = 2,
   /// <summary>
-  /// Specifies the case of the text in the specified range.
+  /// Sentence case.
   /// </summary>
   TitleSentence = 4,
   /// <summary>

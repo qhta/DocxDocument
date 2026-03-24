@@ -13,11 +13,12 @@ public enum WdChevronConvertRule
   /// </summary>
   NeverConvert = 0,
   /// <summary>
-  /// Specifies rules for converting text enclosed in chevron characters (« ») to merge fields.
+  /// The converter attempts to convert text enclosed in chevrons (« ») to mail merge fields.
   /// </summary>
   AlwaysConvert = 1,
   /// <summary>
-  /// Specifies rules for converting text enclosed in chevron characters (« ») to merge fields.
+  /// The converter prompts the user to convert or not convert chevrons when a Word for the Macintosh document is
+  /// opened.
   /// </summary>
   AskToNotConvert = 2,
   /// <summary>

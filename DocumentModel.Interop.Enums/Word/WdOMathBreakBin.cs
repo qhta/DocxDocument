@@ -9,15 +9,16 @@ namespace DocumentModel.Interop.Word;
 public enum WdOMathBreakBin
 {
   /// <summary>
-  /// Specifies where Microsoft Office Word places binary operators when equations span two or more lines.
+  /// Places the operator before a line break, at the end of the line.
   /// </summary>
   Before = 0,
   /// <summary>
-  /// Specifies where Microsoft Office Word places binary operators when equations span two or more lines.
+  /// Places the operator after a line break, at the beginning of the following line.
   /// </summary>
   After = 1,
   /// <summary>
-  /// Specifies where Microsoft Office Word places binary operators when equations span two or more lines.
+  /// Repeats the operator before a line break at the end of the line and after a line break at the beginning of the
+  /// following line.
   /// </summary>
   Repeat = 2
 }

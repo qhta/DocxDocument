@@ -23,7 +23,7 @@ public enum XlChartSplitType
   /// </summary>
   PercentValue = 3,
   /// <summary>
-  /// Specifies the values displayed in the second chart in a pie chart or a bar of pie chart.
+  /// Arbitrary slides are displayed in the second chart.
   /// </summary>
   CustomSplit = 4
 }

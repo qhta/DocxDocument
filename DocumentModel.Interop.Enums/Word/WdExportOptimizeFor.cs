@@ -9,11 +9,11 @@ namespace DocumentModel.Interop.Word;
 public enum WdExportOptimizeFor
 {
   /// <summary>
-  /// Specifies the resolution and quality of the exported document.
+  /// Export for print, which is higher quailty and results in a larger file size.
   /// </summary>
   Print = 0,
   /// <summary>
-  /// Specifies the resolution and quality of the exported document.
+  /// Export for screen, which is a lower quality and results in a smaller file size.
   /// </summary>
   OnScreen = 1
 }

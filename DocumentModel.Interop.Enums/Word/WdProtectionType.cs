@@ -13,11 +13,11 @@ public enum WdProtectionType
   /// </summary>
   AllowOnlyRevisions = 0,
   /// <summary>
-  /// Specifies the type of protection applied to the current document.
+  /// Allow only comments to be added to the document.
   /// </summary>
   AllowOnlyComments = 1,
   /// <summary>
-  /// Specifies the type of protection applied to the current document.
+  /// Allow content to be added to the document only through form fields.
   /// </summary>
   AllowOnlyFormFields = 2,
   /// <summary>

@@ -9,15 +9,15 @@ namespace DocumentModel.Interop.Word;
 public enum WdOMathVertAlignType
 {
   /// <summary>
-  /// Specifies the vertical alignment of equations within the shape canvas or the line, for inline equations.
+  /// Vertically centers the equation in the shape canvas or line.
   /// </summary>
   Center = 0,
   /// <summary>
-  /// Specifies the vertical alignment of equations within the shape canvas or the line, for inline equations.
+  /// Aligns the equation on the top of the shape canvas or line.
   /// </summary>
   Top = 1,
   /// <summary>
-  /// Specifies the vertical alignment of equations within the shape canvas or the line, for inline equations.
+  /// Aligns the equation on the bottom of the shape canvas or line.
   /// </summary>
   Bottom = 2
 }

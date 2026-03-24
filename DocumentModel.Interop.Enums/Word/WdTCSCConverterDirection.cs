@@ -17,7 +17,7 @@ public enum WdTCSCConverterDirection
   /// </summary>
   TCSC = 1,
   /// <summary>
-  /// Specifies how to convert between Traditional Chinese and Simplified Chinese.
+  /// Convert in the appropriate direction based on the detected language of the specified range.
   /// </summary>
   Auto = 2
 }

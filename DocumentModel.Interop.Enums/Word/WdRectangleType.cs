@@ -30,7 +30,7 @@ public enum WdRectangleType
   /// </summary>
   PageBorderRectangle = 4,
   /// <summary>
-  /// Specifies the type of rectangle and the information it contains.
+  /// Represents a region corresponding to a line that separates columns.
   /// </summary>
   LineBetweenColumnRectangle = 5,
   /// <summary>

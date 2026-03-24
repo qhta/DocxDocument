@@ -13,7 +13,7 @@ public enum WdNumberSpacing
   /// </summary>
   Default = 0,
   /// <summary>
-  /// Specifies the number spacing setting for an OpenType font.
+  /// Applies proportional number spacing to the font.
   /// </summary>
   Proportional = 1,
   /// <summary>

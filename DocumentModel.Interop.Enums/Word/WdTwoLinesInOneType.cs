@@ -13,7 +13,7 @@ public enum WdTwoLinesInOneType
   /// </summary>
   None = 0,
   /// <summary>
-  /// Specifies the character to use to enclose two lines being written into one.
+  /// Use no enclosing character.
   /// </summary>
   NoBrackets = 1,
   /// <summary>
@@ -21,15 +21,15 @@ public enum WdTwoLinesInOneType
   /// </summary>
   Parentheses = 2,
   /// <summary>
-  /// Specifies the character to use to enclose two lines being written into one.
+  /// Enclose the lines using square brackets.
   /// </summary>
   SquareBrackets = 3,
   /// <summary>
-  /// Specifies the character to use to enclose two lines being written into one.
+  /// Enclose the lines using angle brackets.
   /// </summary>
   AngleBrackets = 4,
   /// <summary>
-  /// Specifies the character to use to enclose two lines being written into one.
+  /// Enclose the lines using curly brackets.
   /// </summary>
   CurlyBrackets = 5
 }

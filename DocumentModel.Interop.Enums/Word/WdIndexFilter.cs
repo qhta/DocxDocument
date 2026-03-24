@@ -17,7 +17,7 @@ public enum WdIndexFilter
   /// </summary>
   Aiueo = 1,
   /// <summary>
-  /// Specifies how Microsoft Word classifies the first character of entries in the specified index.
+  /// Japanese words use Akasatana.
   /// </summary>
   Akasatana = 2,
   /// <summary>

@@ -9,11 +9,11 @@ namespace DocumentModel.Interop.Word;
 public enum WdSectionDirection
 {
   /// <summary>
-  /// Specifies how Word displays the reading order and alignment for the specified sections.
+  /// Displays the section with right alignment and right-to-left reading order.
   /// </summary>
   Rtl = 0,
   /// <summary>
-  /// Specifies how Word displays the reading order and alignment for the specified sections.
+  /// Displays the section with left alignment and left-to-right reading order.
   /// </summary>
   Ltr = 1
 }

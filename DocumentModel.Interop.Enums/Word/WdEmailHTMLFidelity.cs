@@ -9,15 +9,15 @@ namespace DocumentModel.Interop.Word;
 public enum WdEmailHTMLFidelity
 {
   /// <summary>
-  /// Specifies whether to leave or remove HTML tags not required for display.
+  /// Removes all HTML tags that do not affect how a message displays.
   /// </summary>
   Low = 1,
   /// <summary>
-  /// Specifies whether to leave or remove HTML tags not required for display.
+  /// Not supported.
   /// </summary>
   Medium = 2,
   /// <summary>
-  /// Specifies whether to leave or remove HTML tags not required for display.
+  /// Leaves HTML intact.
   /// </summary>
   High = 3
 }

@@ -9,7 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdLineSpacing
 {
   /// <summary>
-  /// Specifies a line spacing format to be applied to a paragraph.
+  /// Single spaced. default
   /// </summary>
   Single = 0,
   /// <summary>
@@ -17,19 +17,20 @@ public enum WdLineSpacing
   /// </summary>
   OnePtFive = 1,
   /// <summary>
-  /// Specifies a line spacing format to be applied to a paragraph.
+  /// Double spaced.
   /// </summary>
   Double = 2,
   /// <summary>
-  /// Specifies a line spacing format to be applied to a paragraph.
+  /// Line spacing is always at least a specified amount. The amount is specified separately.
   /// </summary>
   AtLeast = 3,
   /// <summary>
-  /// Specifies a line spacing format to be applied to a paragraph.
+  /// Line spacing is only the exact maximum amount of space required. This setting commonly uses less space than
+  /// single spacing.
   /// </summary>
   Exactly = 4,
   /// <summary>
-  /// Specifies a line spacing format to be applied to a paragraph.
+  /// Line spacing determined by the number of lines indicated.
   /// </summary>
   Multiple = 5
 }

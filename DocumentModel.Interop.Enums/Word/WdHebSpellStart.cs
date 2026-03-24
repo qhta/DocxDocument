@@ -23,7 +23,8 @@ public enum WdHebSpellStart
   /// </summary>
   MixedScript = 2,
   /// <summary>
-  /// Specifies which rules the Hebrew spelling checker will follow.
+  /// The spelling checker follows rules for full and partial script, but highlights as potential mistakes any
+  /// spelling variations not permitted within either system and any completely unrecognized words.
   /// </summary>
   MixedAuthorizedScript = 3
 }

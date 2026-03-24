@@ -9,7 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdCompareTarget
 {
   /// <summary>
-  /// Specifies the target document for displaying document comparison differences.
+  /// Places comparison differences in the target document.
   /// </summary>
   Selected = 0,
   /// <summary>

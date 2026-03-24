@@ -9,11 +9,11 @@ namespace DocumentModel.Interop.Word;
 public enum WdAutoVersions
 {
   /// <summary>
-  /// Specifies the state of the option for automatically saving document versions.
+  /// No document version is saved.
   /// </summary>
   ff = 0,
   /// <summary>
-  /// Specifies the state of the option for automatically saving document versions.
+  /// A document version is saved automatically when the document is closed.
   /// </summary>
   nClose = 1
 }

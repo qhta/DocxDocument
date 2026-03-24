@@ -10,18 +10,15 @@ namespace DocumentModel.Interop.Word;
 public enum XlCategoryLabelLevel
 {
   /// <summary>
-  /// Constants that represent chart category-label levels, passed to and returned by the CategoryLabelLevel
-  /// property.
+  /// Use no category labels in the chart. Defaults to automatic indexed labels.
   /// </summary>
   None = -3,
   /// <summary>
-  /// Constants that represent chart category-label levels, passed to and returned by the CategoryLabelLevel
-  /// property.
+  /// Indicates literal data in the category labels.
   /// </summary>
   Custom = -2,
   /// <summary>
-  /// Constants that represent chart category-label levels, passed to and returned by the CategoryLabelLevel
-  /// property.
+  /// Use all category label levels within range on the chart. The default.
   /// </summary>
   All = -1
 }

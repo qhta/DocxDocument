@@ -9,7 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdInlineShapeType
 {
   /// <summary>
-  /// Specifiesa shape type for inlie shapes.
+  /// Embedded OLE object.
   /// </summary>
   EmbeddedOLEObject = 1,
   /// <summary>
@@ -33,11 +33,11 @@ public enum WdInlineShapeType
   /// </summary>
   HorizontalLine = 6,
   /// <summary>
-  /// Specifiesa shape type for inlie shapes.
+  /// Picture with horizontal line.
   /// </summary>
   PictureHorizontalLine = 7,
   /// <summary>
-  /// Specifiesa shape type for inlie shapes.
+  /// Linked picture with horizontal line.
   /// </summary>
   LinkedPictureHorizontalLine = 8,
   /// <summary>

@@ -9,11 +9,11 @@ namespace DocumentModel.Interop.Word;
 public enum XlChartElementPosition
 {
   /// <summary>
-  /// Specifies the position of the chart element.
+  /// Specifies a specific position for the chart element.
   /// </summary>
   Custom = -4114,
   /// <summary>
-  /// Specifies the position of the chart element.
+  /// Automatically sets the position of the chart element.
   /// </summary>
   Automatic = -4105
 }

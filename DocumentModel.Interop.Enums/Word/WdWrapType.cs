@@ -17,7 +17,7 @@ public enum WdWrapType
   /// </summary>
   Tight = 1,
   /// <summary>
-  /// Specifies the wrap type for the specified shape.
+  /// Through.
   /// </summary>
   Through = 2,
   /// <summary>
@@ -29,7 +29,7 @@ public enum WdWrapType
   /// </summary>
   Front = 3,
   /// <summary>
-  /// Specifies the wrap type for the specified shape.
+  /// Top and bottom.
   /// </summary>
   TopBottom = 4,
   /// <summary>

@@ -9,19 +9,19 @@ namespace DocumentModel.Interop.Word;
 public enum WdEditorType
 {
   /// <summary>
-  /// Specifies a user or group of users for a document.
+  /// Represents the current user of the document.
   /// </summary>
   Current = -6,
   /// <summary>
-  /// Specifies a user or group of users for a document.
+  /// Represents the Editors group for documents that use Information Rights Management.
   /// </summary>
   Editors = -5,
   /// <summary>
-  /// Specifies a user or group of users for a document.
+  /// Represents the Owners group for documents that use Information Rights Management.
   /// </summary>
   Owners = -4,
   /// <summary>
-  /// Specifies a user or group of users for a document.
+  /// Represents all users who open a document.
   /// </summary>
   Everyone = -1
 }

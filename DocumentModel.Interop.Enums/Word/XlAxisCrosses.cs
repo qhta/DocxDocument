@@ -9,19 +9,19 @@ namespace DocumentModel.Interop.Word;
 public enum XlAxisCrosses
 {
   /// <summary>
-  /// Specifies the point on the specified axis where the other axis crosses.
+  /// The axis crosses at the maximum value.
   /// </summary>
   Maximum = 2,
   /// <summary>
-  /// Specifies the point on the specified axis where the other axis crosses.
+  /// The axis crosses at the minimum value.
   /// </summary>
   Minimum = 4,
   /// <summary>
-  /// Specifies the point on the specified axis where the other axis crosses.
+  /// The CrossesAt property specifies the axis crossing point.
   /// </summary>
   Custom = -4114,
   /// <summary>
-  /// Specifies the point on the specified axis where the other axis crosses.
+  /// Microsoft Word sets the axis crossing point.
   /// </summary>
   Automatic = -4105
 }

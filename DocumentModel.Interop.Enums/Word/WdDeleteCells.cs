@@ -24,8 +24,7 @@ public enum WdDeleteCells
   /// </summary>
   EntireRow = 2,
   /// <summary>
-  /// Specifies a range of cells to be deleted from a table in a delete cells action or the behavior of the
-  /// remaining cells after the deletion has occurred.
+  /// Delete the entire column of cells from the table.
   /// </summary>
   EntireColumn = 3
 }

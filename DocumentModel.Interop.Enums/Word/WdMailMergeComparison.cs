@@ -25,11 +25,11 @@ public enum WdMailMergeComparison
   /// </summary>
   GreaterThan = 3,
   /// <summary>
-  /// Specifies the type of comparison to use when a condition is added to a mail merge process.
+  /// A value is output if the mail merge field is less than or equal to a value.
   /// </summary>
   LessThanOrEqual = 4,
   /// <summary>
-  /// Specifies the type of comparison to use when a condition is added to a mail merge process.
+  /// A value is output if the mail merge field is greater than or equal to a value.
   /// </summary>
   GreaterThanOrEqual = 5,
   /// <summary>

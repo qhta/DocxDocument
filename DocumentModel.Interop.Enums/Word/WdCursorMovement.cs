@@ -9,11 +9,11 @@ namespace DocumentModel.Interop.Word;
 public enum WdCursorMovement
 {
   /// <summary>
-  /// Specifies how the insertion point progresses within bidirectional text.
+  /// Insertion point progresses according to the direction of the language Microsoft Word detects.
   /// </summary>
   Logical = 0,
   /// <summary>
-  /// Specifies how the insertion point progresses within bidirectional text.
+  /// Insertion point progresses to the next visually adjacent character.
   /// </summary>
   Visual = 1
 }

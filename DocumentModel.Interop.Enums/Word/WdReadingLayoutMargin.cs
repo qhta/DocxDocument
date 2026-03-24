@@ -9,15 +9,16 @@ namespace DocumentModel.Interop.Word;
 public enum WdReadingLayoutMargin
 {
   /// <summary>
-  /// Specifies whether margins are visible or hidden when a document is viewed in Full Screen Reading view.
+  /// Shows the pages without margins.
   /// </summary>
   AutomaticMargin = 0,
   /// <summary>
-  /// Specifies whether margins are visible or hidden when a document is viewed in Full Screen Reading view.
+  /// Microsoft Office Word determines automatically whether to show or hide the margins based on the available
+  /// space.
   /// </summary>
   SuppressMargin = 1,
   /// <summary>
-  /// Specifies whether margins are visible or hidden when a document is viewed in Full Screen Reading view.
+  /// Shows the pages with margins.
   /// </summary>
   FullMargin = 2
 }

@@ -41,7 +41,7 @@ public enum WdDeletedTextMark
   /// </summary>
   Underline = 7,
   /// <summary>
-  /// Specifies the format of text that is deleted while change tracking is enabled.
+  /// Deleted text is marked up by using double-underline characters.
   /// </summary>
   DoubleUnderline = 8,
   /// <summary>

@@ -17,15 +17,15 @@ public enum XlDataLabelPosition
   /// </summary>
   Below = 1,
   /// <summary>
-  /// Specifies where the data label is positioned.
+  /// Data label is positioned outside the data point at the top edge.
   /// </summary>
   OutsideEnd = 2,
   /// <summary>
-  /// Specifies where the data label is positioned.
+  /// Data label is positioned inside the data point at the top edge.
   /// </summary>
   InsideEnd = 3,
   /// <summary>
-  /// Specifies where the data label is positioned.
+  /// Data label is positioned inside the data point at the bottom edge.
   /// </summary>
   InsideBase = 4,
   /// <summary>

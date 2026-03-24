@@ -9,19 +9,21 @@ namespace DocumentModel.Interop.Word;
 public enum WdLayoutMode
 {
   /// <summary>
-  /// Specifies how text is laid out in the layout mode for the current document.
+  /// No grid is used to lay out text.
   /// </summary>
   Default = 0,
   /// <summary>
-  /// Specifies how text is laid out in the layout mode for the current document.
+  /// Text is laid out on a grid; the user specifies the number of lines and the number of characters per line. As
+  /// the user types, Microsoft Word doesn't automatically align characters with gridlines.
   /// </summary>
   Grid = 1,
   /// <summary>
-  /// Specifies how text is laid out in the layout mode for the current document.
+  /// Text is laid out on a grid; the user specifies the number of lines, but not the number of characters per line.
   /// </summary>
   LineGrid = 2,
   /// <summary>
-  /// Specifies how text is laid out in the layout mode for the current document.
+  /// Text is laid out on a grid; the user specifies the number of lines and the number of characters per line. As
+  /// the user types, Microsoft Word automatically aligns characters with gridlines.
   /// </summary>
   Genko = 3
 }

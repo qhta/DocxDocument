@@ -9,15 +9,15 @@ namespace DocumentModel.Interop.Word;
 public enum WdHorizontalInVerticalType
 {
   /// <summary>
-  /// Specifies the format of horizontal text set within vertical text.
+  /// No formatting is applied to the horizontal text.
   /// </summary>
   None = 0,
   /// <summary>
-  /// Specifies the format of horizontal text set within vertical text.
+  /// The horizontal text is sized to fit in the line of vertical text.
   /// </summary>
   FitInLine = 1,
   /// <summary>
-  /// Specifies the format of horizontal text set within vertical text.
+  /// The line of vertical text is sized to accommodate the horizontal text.
   /// </summary>
   ResizeLine = 2
 }

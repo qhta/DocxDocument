@@ -9,11 +9,11 @@ namespace DocumentModel.Interop.Word;
 public enum WdTableDirection
 {
   /// <summary>
-  /// Specifies the direction in which Microsoft Word orders cells in the specified table or row.
+  /// The selected rows are arranged with the first column in the rightmost position.
   /// </summary>
   Rtl = 0,
   /// <summary>
-  /// Specifies the direction in which Microsoft Word orders cells in the specified table or row.
+  /// The selected rows are arranged with the first column in the leftmost position.
   /// </summary>
   Ltr = 1
 }

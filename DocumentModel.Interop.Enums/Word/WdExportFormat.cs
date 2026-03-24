@@ -9,11 +9,11 @@ namespace DocumentModel.Interop.Word;
 public enum WdExportFormat
 {
   /// <summary>
-  /// Specifies format to use for exporting a document.
+  /// Export document into PDF format.
   /// </summary>
   PDF = 17,
   /// <summary>
-  /// Specifies format to use for exporting a document.
+  /// Export document into XML Paper Specification (XPS) format.
   /// </summary>
   XPS = 18
 }

@@ -9,11 +9,11 @@ namespace DocumentModel.Interop.Word;
 public enum WdPhoneticGuideAlignmentType
 {
   /// <summary>
-  /// Specifies the alignment of phonetic text that is added to the specified range.
+  /// Microsoft Word centers phonetic text over the specified range. This is the default value.
   /// </summary>
   Center = 0,
   /// <summary>
-  /// Specifies the alignment of phonetic text that is added to the specified range.
+  /// Word adjusts the inside and outside spacing of the phonetic text in a 0:1:0 ratio.
   /// </summary>
   ZeroOneZero = 1,
   /// <summary>
@@ -25,7 +25,7 @@ public enum WdPhoneticGuideAlignmentType
   /// </summary>
   Left = 3,
   /// <summary>
-  /// Specifies the alignment of phonetic text that is added to the specified range.
+  /// Word right-aligns phonetic text with the specified range.
   /// </summary>
   Right = 4,
   /// <summary>

@@ -9,19 +9,22 @@ namespace DocumentModel.Interop.Word;
 public enum WdFieldKind
 {
   /// <summary>
-  /// Specifies the type of field for a Field object.
+  /// An invalid field (for example, a pair of field characters with nothing inside).
   /// </summary>
   None = 0,
   /// <summary>
-  /// Specifies the type of field for a Field object.
+  /// A field that's automatically updated each time it's displayed or each time the page is reformatted, but which
+  /// can also be manually updated (for example, INCLUDEPICTURE or FORMDROPDOWN).
   /// </summary>
   Hot = 1,
   /// <summary>
-  /// Specifies the type of field for a Field object.
+  /// A field that can be updated and has a result. This type includes fields that are automatically updated when
+  /// the source changes as well as fields that can be manually updated (for example, DATE or INCLUDETEXT).
   /// </summary>
   Warm = 2,
   /// <summary>
-  /// Specifies the type of field for a Field object.
+  /// A field that doesn't have a result, for example, an Index Entry (XE), Table of Contents Entry (TC), or Private
+  /// field.
   /// </summary>
   Cold = 3
 }

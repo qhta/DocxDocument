@@ -9,15 +9,15 @@ namespace DocumentModel.Interop.Word;
 public enum WdUseFormattingFrom
 {
   /// <summary>
-  /// Specifies a source to copy formatting from.
+  /// Copy source formatting from the current item.
   /// </summary>
   Current = 0,
   /// <summary>
-  /// Specifies a source to copy formatting from.
+  /// Copy source formatting from the current selection.
   /// </summary>
   Selected = 1,
   /// <summary>
-  /// Specifies a source to copy formatting from.
+  /// Prompt the user for formatting to use.
   /// </summary>
   Prompt = 2
 }

@@ -9,15 +9,15 @@ namespace DocumentModel.Interop.Word;
 public enum WdSaveOptions
 {
   /// <summary>
-  /// Specifies how pending changes should be handled.
+  /// Do not save pending changes.
   /// </summary>
   DoNotSaveChanges = 0,
   /// <summary>
-  /// Specifies how pending changes should be handled.
+  /// Prompt the user to save pending changes.
   /// </summary>
   PromptToSaveChanges = -2,
   /// <summary>
-  /// Specifies how pending changes should be handled.
+  /// Save pending changes automatically without prompting the user.
   /// </summary>
   SaveChanges = -1
 }

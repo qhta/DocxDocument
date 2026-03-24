@@ -21,7 +21,7 @@ public enum WdRemoveDocInfoType
   /// </summary>
   Versions = 3,
   /// <summary>
-  /// Specifies the type of information to remove from a document.
+  /// Removes personal information.
   /// </summary>
   RemovePersonalInformation = 4,
   /// <summary>

@@ -45,7 +45,7 @@ public enum WdLineStyle
   /// </summary>
   Triple = 8,
   /// <summary>
-  /// Specifies the border style for an object.
+  /// An internal single thin solid line surrounded by a single thick solid line with a small gap between them.
   /// </summary>
   ThinThickSmallGap = 9,
   /// <summary>

@@ -25,7 +25,7 @@ public enum WdCompatibilityMode
   /// </summary>
   Word2013 = 15,
   /// <summary>
-  /// Specifies the compatibility mode that Word 2010 uses when opening a document.
+  /// Compatibility mode equivalent to the latest version of Word.
   /// </summary>
   Current = 65535
 }

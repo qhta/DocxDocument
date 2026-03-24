@@ -9,15 +9,15 @@ namespace DocumentModel.Interop.Word;
 public enum XlSeriesNameLevel
 {
   /// <summary>
-  /// Series-name-level constants passed to and returned by the SeriesNameLevel property.
+  /// Sets no series names in the chart.
   /// </summary>
   None = -3,
   /// <summary>
-  /// Series-name-level constants passed to and returned by the SeriesNameLevel property.
+  /// Indicates literal data in the series names.
   /// </summary>
   Custom = -2,
   /// <summary>
-  /// Series-name-level constants passed to and returned by the SeriesNameLevel property.
+  /// Sets series names to all series name levels within range on the chart. The default.
   /// </summary>
   All = -1
 }

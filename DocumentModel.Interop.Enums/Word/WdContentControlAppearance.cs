@@ -10,18 +10,15 @@ namespace DocumentModel.Interop.Word;
 public enum WdContentControlAppearance
 {
   /// <summary>
-  /// Constants that represent the visualizations for a content control, passed to and returned by the Appearance
-  /// property.
+  /// Represents a content control shown as a shaded rectangle or bounding box (with optional title).
   /// </summary>
   BoundingBox = 0,
   /// <summary>
-  /// Constants that represent the visualizations for a content control, passed to and returned by the Appearance
-  /// property.
+  /// Represents a content control that is not shown.
   /// </summary>
   Tags = 1,
   /// <summary>
-  /// Constants that represent the visualizations for a content control, passed to and returned by the Appearance
-  /// property.
+  /// Represents a content control shown as start and end markers.
   /// </summary>
   Hidden = 2
 }

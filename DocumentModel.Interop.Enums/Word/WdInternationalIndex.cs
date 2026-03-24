@@ -13,11 +13,11 @@ public enum WdInternationalIndex
   /// </summary>
   ListSeparator = 17,
   /// <summary>
-  /// Specifies information specific to the current country/region and international settings.
+  /// Returns the decimal separator (. in U.S. English).
   /// </summary>
   DecimalSeparator = 18,
   /// <summary>
-  /// Specifies information specific to the current country/region and international settings.
+  /// Returns the thousands separator (, in U.S. English).
   /// </summary>
   ThousandsSeparator = 19,
   /// <summary>

@@ -18,8 +18,7 @@ public enum WdBrowseTarget
   /// </summary>
   Section = 2,
   /// <summary>
-  /// Specifies the document item that the Next or Previous method locates, and places the insertion point before
-  /// the next or previous instance of the item.
+  /// Places insertion point before next or previous comment.
   /// </summary>
   Comment = 3,
   /// <summary>

@@ -9,15 +9,15 @@ namespace DocumentModel.Interop.Word;
 public enum WdMergeFormatFrom
 {
   /// <summary>
-  /// Specifies the document from which to retain formatting during a document compare function.
+  /// Retains formatting from the original document.
   /// </summary>
   Original = 0,
   /// <summary>
-  /// Specifies the document from which to retain formatting during a document compare function.
+  /// Retains formatting from the revised document.
   /// </summary>
   Revised = 1,
   /// <summary>
-  /// Specifies the document from which to retain formatting during a document compare function.
+  /// Prompt the user for the document to use for formatting.
   /// </summary>
   Prompt = 2
 }

@@ -25,7 +25,7 @@ public enum WdMoveToTextMark
   /// </summary>
   Underline = 3,
   /// <summary>
-  /// Marks the moved-to text when text in a document with tracked changes is moved from one place to another.
+  /// Moved text is marked with a double underline.
   /// </summary>
   DoubleUnderline = 4,
   /// <summary>
@@ -37,7 +37,7 @@ public enum WdMoveToTextMark
   /// </summary>
   StrikeThrough = 6,
   /// <summary>
-  /// Marks the moved-to text when text in a document with tracked changes is moved from one place to another.
+  /// Moved text is marked with a double strikethrough.
   /// </summary>
   DoubleStrikeThrough = 7
 }
