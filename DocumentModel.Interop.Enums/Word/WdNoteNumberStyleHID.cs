@@ -9,5 +9,5 @@ public enum WdNoteNumberStyleHID
   /// Applies to Product Versions Word primary interop assembly Latest public enum WdNoteNumberStyleHID ﾉ Expand
   /// table
   /// </summary>
-  emptyenum = unchecked((int)0)
+  emptyenum = 0
 }

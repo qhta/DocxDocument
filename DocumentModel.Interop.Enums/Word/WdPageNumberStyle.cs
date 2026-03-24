@@ -8,117 +8,117 @@ public enum WdPageNumberStyle
   /// <summary>
   /// Arabic style.
   /// </summary>
-  Arabic = unchecked((int)0),
+  Arabic = 0,
   /// <summary>
   /// Uppercase Roman style.
   /// </summary>
-  UppercaseRoman = unchecked((int)1),
+  UppercaseRoman = 1,
   /// <summary>
   /// Lowercase Roman style.
   /// </summary>
-  LowercaseRoman = unchecked((int)2),
+  LowercaseRoman = 2,
   /// <summary>
   /// Uppercase letter style.
   /// </summary>
-  UppercaseLetter = unchecked((int)3),
+  UppercaseLetter = 3,
   /// <summary>
   /// Lowercase letter style.
   /// </summary>
-  LowercaseLetter = unchecked((int)4),
+  LowercaseLetter = 4,
   /// <summary>
   /// Kanji style.
   /// </summary>
-  Kanji = unchecked((int)10),
+  Kanji = 10,
   /// <summary>
   /// Kanji Digit style.
   /// </summary>
-  KanjiDigit = unchecked((int)11),
+  KanjiDigit = 11,
   /// <summary>
   /// Arabic full width style.
   /// </summary>
-  ArabicFullWidth = unchecked((int)14),
+  ArabicFullWidth = 14,
   /// <summary>
   /// Kanji traditional style.
   /// </summary>
-  KanjiTraditional = unchecked((int)16),
+  KanjiTraditional = 16,
   /// <summary>
   /// Number in circle style.
   /// </summary>
-  NumberInCircle = unchecked((int)18),
+  NumberInCircle = 18,
   /// <summary>
   /// Traditional Chinese
   /// </summary>
-  TradChinNum1 = unchecked((int)33),
+  TradChinNum1 = 33,
   /// <summary>
   /// Traditional Chinese
   /// </summary>
-  TradChinNum2 = unchecked((int)34),
+  TradChinNum2 = 34,
   /// <summary>
   /// Simplified Chinese
   /// </summary>
-  SimpChinNum1 = unchecked((int)37),
+  SimpChinNum1 = 37,
   /// <summary>
   /// Simplified Chinese
   /// </summary>
-  SimpChinNum2 = unchecked((int)38),
+  SimpChinNum2 = 38,
   /// <summary>
   /// Hanja Read style.
   /// </summary>
-  HanjaRead = unchecked((int)41),
+  HanjaRead = 41,
   /// <summary>
   /// Hanja Read Digit style.
   /// </summary>
-  HanjaReadDigit = unchecked((int)42),
+  HanjaReadDigit = 42,
   /// <summary>
   /// Hebrew
   /// </summary>
-  HebrewLetter1 = unchecked((int)45),
+  HebrewLetter1 = 45,
   /// <summary>
   /// Arabic
   /// </summary>
-  ArabicLetter1 = unchecked((int)46),
+  ArabicLetter1 = 46,
   /// <summary>
   /// Hebrew
   /// </summary>
-  HebrewLetter2 = unchecked((int)47),
+  HebrewLetter2 = 47,
   /// <summary>
   /// Arabic
   /// </summary>
-  ArabicLetter2 = unchecked((int)48),
+  ArabicLetter2 = 48,
   /// <summary>
   /// Hindi
   /// </summary>
-  HindiLetter1 = unchecked((int)49),
+  HindiLetter1 = 49,
   /// <summary>
   /// Hindi
   /// </summary>
-  HindiLetter2 = unchecked((int)50),
+  HindiLetter2 = 50,
   /// <summary>
   /// Hindi Arabic style.
   /// </summary>
-  HindiArabic = unchecked((int)51),
+  HindiArabic = 51,
   /// <summary>
   /// Hindi Cardinal text style.
   /// </summary>
-  HindiCardinalText = unchecked((int)52),
+  HindiCardinalText = 52,
   /// <summary>
   /// Thai letter style.
   /// </summary>
-  ThaiLetter = unchecked((int)53),
+  ThaiLetter = 53,
   /// <summary>
   /// Thai Arabic style.
   /// </summary>
-  ThaiArabic = unchecked((int)54),
+  ThaiArabic = 54,
   /// <summary>
   /// Thai Cardinal Text style.
   /// </summary>
-  ThaiCardinalText = unchecked((int)55),
+  ThaiCardinalText = 55,
   /// <summary>
   /// Vietnamese Cardinal text style.
   /// </summary>
-  VietCardinalText = unchecked((int)56),
+  VietCardinalText = 56,
   /// <summary>
   /// Number in dash style.
   /// </summary>
-  NumberInDash = unchecked((int)57)
+  NumberInDash = 57
 }

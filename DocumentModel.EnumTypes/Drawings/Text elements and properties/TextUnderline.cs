@@ -7,10 +7,15 @@ namespace DocumentModel.Drawings;
 public enum TextUnderline
 {
   /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   ///   Text Underline Enum ( None ).
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.None))]
-  None,
+  None = 1,
+
   /// <summary>
   ///   Text Underline Enum ( Words ).
   /// </summary>

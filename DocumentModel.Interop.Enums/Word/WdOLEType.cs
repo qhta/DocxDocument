@@ -8,13 +8,13 @@ public enum WdOLEType
   /// <summary>
   /// Linked OLE object.
   /// </summary>
-  Link = unchecked((int)0),
+  Link = 0,
   /// <summary>
   /// Embedded OLE object.
   /// </summary>
-  Embed = unchecked((int)1),
+  Embed = 1,
   /// <summary>
   /// OLE control.
   /// </summary>
-  Control = unchecked((int)2)
+  Control = 2
 }

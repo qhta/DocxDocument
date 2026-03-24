@@ -10,18 +10,18 @@ public enum WdAraSpeller
   /// words beginning with an alef hamza. wdInitialAlef1 The spelling checker uses spelling rules regarding Arabic
   /// words beginning with an alef hamza.
   /// </summary>
-  None = unchecked((int)0),
+  None = 0,
   /// <summary>
   /// Specifies spelling rules for the Arabic spelling checker.
   /// </summary>
-  InitialAlef = unchecked((int)1),
+  InitialAlef = 1,
   /// <summary>
   /// The spelling checker uses spelling rules regarding Arabic words ending with the letter yaa.
   /// </summary>
-  FinalYaa = unchecked((int)2),
+  FinalYaa = 2,
   /// <summary>
   /// The spelling checker uses spelling rules regarding both Arabic words ending with the letter yaa and Arabic
   /// words beginning with an alef hamza.
   /// </summary>
-  Both = unchecked((int)3)
+  Both = 3
 }

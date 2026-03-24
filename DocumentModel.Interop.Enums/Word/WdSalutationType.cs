@@ -8,17 +8,17 @@ public enum WdSalutationType
   /// <summary>
   /// Informal salutation.
   /// </summary>
-  Informal = unchecked((int)0),
+  Informal = 0,
   /// <summary>
   /// Format salutation.
   /// </summary>
-  Formal = unchecked((int)1),
+  Formal = 1,
   /// <summary>
   /// Business salutation
   /// </summary>
-  Business = unchecked((int)2),
+  Business = 2,
   /// <summary>
   /// Custom salutation.
   /// </summary>
-  Other = unchecked((int)3)
+  Other = 3
 }

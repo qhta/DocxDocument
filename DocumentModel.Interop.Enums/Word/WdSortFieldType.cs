@@ -8,29 +8,29 @@ public enum WdSortFieldType
   /// <summary>
   /// Alphanumeric order.
   /// </summary>
-  Alphanumeric = unchecked((int)0),
+  Alphanumeric = 0,
   /// <summary>
   /// Numeric order.
   /// </summary>
-  Numeric = unchecked((int)1),
+  Numeric = 1,
   /// <summary>
   /// Date order.
   /// </summary>
-  Date = unchecked((int)2),
+  Date = 2,
   /// <summary>
   /// Syllable order.
   /// </summary>
-  Syllable = unchecked((int)3),
+  Syllable = 3,
   /// <summary>
   /// Japanese JIS order.
   /// </summary>
-  JapanJIS = unchecked((int)4),
+  JapanJIS = 4,
   /// <summary>
   /// Stroke order.
   /// </summary>
-  Stroke = unchecked((int)5),
+  Stroke = 5,
   /// <summary>
   /// Korean KS order.
   /// </summary>
-  KoreaKS = unchecked((int)6)
+  KoreaKS = 6
 }

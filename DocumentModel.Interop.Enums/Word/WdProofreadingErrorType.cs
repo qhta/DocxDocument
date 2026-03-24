@@ -8,9 +8,9 @@ public enum WdProofreadingErrorType
   /// <summary>
   /// Spelling error.
   /// </summary>
-  SpellingError = unchecked((int)0),
+  SpellingError = 0,
   /// <summary>
   /// Grammatical error.
   /// </summary>
-  GrammaticalError = unchecked((int)1)
+  GrammaticalError = 1
 }

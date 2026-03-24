@@ -1,56 +1,83 @@
 namespace DocumentModel.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the MarkerStyle enumeration.
-/// Used in types such as MarkerLayoutProperties, MarkerStyle, Marker.
+/// Specifies the marker style for a point or series in a line chart, scatter chart, or radar chart.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.MarkerStyleValues))]
 public enum MarkerStyle
 {
   /// <summary>
-  ///   circle.
+  /// Automatic marker style.
+  /// The actual marker style is determined by the chart type and the order of the data series in the chart.
   /// </summary>
-  [OpenXmlEnumValue("Circle")]
-  Circle,
+  [OpenXmlEnumValue(nameof(DXDC.MarkerStyleValues.Auto))]
+  Automatic = -4105,
+
   /// <summary>
-  ///   dash.
+  /// Square markers.
   /// </summary>
-  [OpenXmlEnumValue("Dash")]
-  Dash,
+  [OpenXmlEnumValue(nameof(DXDC.MarkerStyleValues.Square))]
+  Square = 1,
+
+
   /// <summary>
-  ///   diamond.
+  /// Diamond-shaped markers.
   /// </summary>
-  [OpenXmlEnumValue("Diamond")]
-  Diamond,
+  [OpenXmlEnumValue(nameof(DXDC.MarkerStyleValues.Diamond))]
+  Diamond = 2,
+
   /// <summary>
-  ///   dot.
+  /// Triangular markers.
   /// </summary>
-  [OpenXmlEnumValue("Dot")]
-  Dot,
+  [OpenXmlEnumValue(nameof(DXDC.MarkerStyleValues.Triangle))]
+  Triangle = 3,
+
   /// <summary>
-  ///   plus.
+  /// Square markers with  an asterisk.
   /// </summary>
-  [OpenXmlEnumValue("Plus")]
-  Plus,
+  [OpenXmlEnumValue(nameof(DXDC.MarkerStyleValues.Star))]
+  Star = 5,
+  
   /// <summary>
-  ///   square.
+  /// Circular markers.
   /// </summary>
-  [OpenXmlEnumValue("Square")]
-  Square,
+  [OpenXmlEnumValue(nameof(DXDC.MarkerStyleValues.Circle))]
+  Circle = 8,
+
   /// <summary>
-  ///   star.
+  /// Square markers with a plus sign.
   /// </summary>
-  [OpenXmlEnumValue("Star")]
-  Star,
+  [OpenXmlEnumValue(nameof(DXDC.MarkerStyleValues.Plus))]
+  Plus = 9,
+
   /// <summary>
-  ///   triangle.
+  /// Long-bar markers.
   /// </summary>
-  [OpenXmlEnumValue("Triangle")]
-  Triangle,
+  [OpenXmlEnumValue(nameof(DXDC.MarkerStyleValues.Dash))]
+  Dash = -4115,
+
   /// <summary>
-  ///   x.
+  /// Short-bar markers.
   /// </summary>
-  [OpenXmlEnumValue("X")]
-  X
+  [OpenXmlEnumValue(nameof(DXDC.MarkerStyleValues.Dot))]
+  Dot = -4118,
+
+  /// <summary>
+  /// No markers.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DXDC.MarkerStyleValues.None))]
+  None = -4142,
+
+  /// <summary>
+  /// Picture markers.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DXDC.MarkerStyleValues.Picture))]
+  Picture = -4147,
+
+  /// <summary>
+  /// Square markers with X.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DXDC.MarkerStyleValues.X))]
+  X = -4168,
 }

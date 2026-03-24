@@ -8,13 +8,13 @@ public enum WdGutterStyle
   /// <summary>
   /// On the left side.
   /// </summary>
-  Left = unchecked((int)0),
+  Left = 0,
   /// <summary>
   /// At the top.
   /// </summary>
-  Top = unchecked((int)1),
+  Top = 1,
   /// <summary>
   /// On the right side.
   /// </summary>
-  Right = unchecked((int)2)
+  Right = 2
 }

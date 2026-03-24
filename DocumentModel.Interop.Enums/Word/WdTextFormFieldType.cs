@@ -8,25 +8,25 @@ public enum WdTextFormFieldType
   /// <summary>
   /// Regular text field.
   /// </summary>
-  RegularText = unchecked((int)0),
+  RegularText = 0,
   /// <summary>
   /// Number text field.
   /// </summary>
-  NumberText = unchecked((int)1),
+  NumberText = 1,
   /// <summary>
   /// Date text field.
   /// </summary>
-  DateText = unchecked((int)2),
+  DateText = 2,
   /// <summary>
   /// Current date text field.
   /// </summary>
-  CurrentDateText = unchecked((int)3),
+  CurrentDateText = 3,
   /// <summary>
   /// Current time text field.
   /// </summary>
-  CurrentTimeText = unchecked((int)4),
+  CurrentTimeText = 4,
   /// <summary>
   /// Calculation text field.
   /// </summary>
-  CalculationText = unchecked((int)5)
+  CalculationText = 5
 }

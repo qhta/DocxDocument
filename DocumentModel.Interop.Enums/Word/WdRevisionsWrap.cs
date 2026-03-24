@@ -8,13 +8,13 @@ public enum WdRevisionsWrap
   /// <summary>
   /// Never wrap revisions.
   /// </summary>
-  Never = unchecked((int)0),
+  Never = 0,
   /// <summary>
   /// Revisions are wrapped.
   /// </summary>
-  Always = unchecked((int)1),
+  Always = 1,
   /// <summary>
   /// Ask the user if revisions should be wrapped.
   /// </summary>
-  Ask = unchecked((int)2)
+  Ask = 2
 }

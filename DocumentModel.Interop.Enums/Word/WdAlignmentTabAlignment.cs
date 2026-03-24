@@ -8,13 +8,13 @@ public enum WdAlignmentTabAlignment
   /// <summary>
   /// Left-aligned tab.
   /// </summary>
-  Left = unchecked((int)0),
+  Left = 0,
   /// <summary>
   /// Centered tab.
   /// </summary>
-  Center = unchecked((int)1),
+  Center = 1,
   /// <summary>
   /// Right-aligned tab.
   /// </summary>
-  Right = unchecked((int)2)
+  Right = 2
 }

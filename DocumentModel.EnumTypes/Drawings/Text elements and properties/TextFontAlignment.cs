@@ -7,10 +7,15 @@ namespace DocumentModel.Drawings;
 public enum TextFontAlignment
 {
   /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   ///   Font Alignment Enum ( Automatic ).
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.TextFontAlignmentValues.Automatic))]
-  Automatic,
+  Automatic = 1,
+
   /// <summary>
   ///   Font Alignment Enum ( Top ).
   /// </summary>

@@ -7,19 +7,23 @@ namespace DocumentModel.Wordprocessing;
 [JsonConverter(typeof(StringEnumConverter))]
 public enum BaselineAlignment
 {
+  /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
   /// <summary>Align to baseline</summary>
   [OpenXmlEnumValue(nameof(DXW.VerticalTextAlignmentValues.Baseline))]
-  Baseline = 0,
+  Baseline = 1,
   /// <summary>Align to top</summary>
   [OpenXmlEnumValue(nameof(DXW.VerticalTextAlignmentValues.Top))]
-  Top = 1,
+  Top,
   /// <summary>Align to center</summary>
   [OpenXmlEnumValue(nameof(DXW.VerticalTextAlignmentValues.Center))]
-  Center = 2,
+  Center,
   /// <summary>Align to bottom</summary>
   [OpenXmlEnumValue(nameof(DXW.VerticalTextAlignmentValues.Bottom))]
-  Bottom = 3,
+  Bottom,
   /// <summary>Automatic alignment</summary>
   [OpenXmlEnumValue(nameof(DXW.VerticalTextAlignmentValues.Auto))]
-  Auto = 4
+  Auto
 }

@@ -8,9 +8,9 @@ public enum WdBookmarkSortBy
   /// <summary>
   /// Sorted by bookmark name.
   /// </summary>
-  Name = unchecked((int)0),
+  Name = 0,
   /// <summary>
   /// Sorted by location in document.
   /// </summary>
-  Location = unchecked((int)1)
+  Location = 1
 }

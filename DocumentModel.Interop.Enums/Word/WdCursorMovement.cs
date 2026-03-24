@@ -8,9 +8,9 @@ public enum WdCursorMovement
   /// <summary>
   /// Specifies how the insertion point progresses within bidirectional text.
   /// </summary>
-  Logical = unchecked((int)0),
+  Logical = 0,
   /// <summary>
   /// Specifies how the insertion point progresses within bidirectional text.
   /// </summary>
-  Visual = unchecked((int)1)
+  Visual = 1
 }

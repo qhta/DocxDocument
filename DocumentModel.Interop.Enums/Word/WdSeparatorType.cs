@@ -8,21 +8,21 @@ public enum WdSeparatorType
   /// <summary>
   /// A hyphen.
   /// </summary>
-  Hyphen = unchecked((int)0),
+  Hyphen = 0,
   /// <summary>
   /// A period.
   /// </summary>
-  Period = unchecked((int)1),
+  Period = 1,
   /// <summary>
   /// A colon.
   /// </summary>
-  Colon = unchecked((int)2),
+  Colon = 2,
   /// <summary>
   /// An emphasized dash.
   /// </summary>
-  EmDash = unchecked((int)3),
+  EmDash = 3,
   /// <summary>
   /// A standard dash.
   /// </summary>
-  EnDash = unchecked((int)4)
+  EnDash = 4
 }

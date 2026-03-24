@@ -8,10 +8,15 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public enum DataLabelPos
 {
   /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   ///   bestFit.
   /// </summary>
   [OpenXmlEnumValue("BestFit")]
-  BestFit,
+  BestFit = 1,
+
   /// <summary>
   ///   b.
   /// </summary>

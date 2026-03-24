@@ -8,13 +8,13 @@ public enum WdDocumentMedium
   /// <summary>
   /// E-mail message.
   /// </summary>
-  EmailMessage = unchecked((int)0),
+  EmailMessage = 0,
   /// <summary>
   /// Document.
   /// </summary>
-  Document = unchecked((int)1),
+  Document = 1,
   /// <summary>
   /// Web page.
   /// </summary>
-  WebPage = unchecked((int)2)
+  WebPage = 2
 }

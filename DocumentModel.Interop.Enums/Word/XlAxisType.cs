@@ -8,13 +8,13 @@ public enum XlAxisType
   /// <summary>
   /// Axis displays categories.
   /// </summary>
-  Category = unchecked((int)1),
+  Category = 1,
   /// <summary>
   /// Axis displays values.
   /// </summary>
-  Value = unchecked((int)2),
+  Value = 2,
   /// <summary>
   /// Axis displays data series.
   /// </summary>
-  SeriesAxis = unchecked((int)3)
+  SeriesAxis = 3
 }

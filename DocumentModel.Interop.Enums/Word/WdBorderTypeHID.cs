@@ -8,5 +8,5 @@ public enum WdBorderTypeHID
   /// <summary>
   /// Applies to Product Versions Word primary interop assembly Latest public enum WdBorderTypeHID ﾉ Expand table
   /// </summary>
-  emptyenum = unchecked((int)0)
+  emptyenum = 0
 }

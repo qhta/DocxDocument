@@ -9,10 +9,15 @@ namespace DocumentModel.Drawings.Diagrams;
 public enum Direction
 {
   /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   ///   Normal Direction.
   /// </summary>
   [OpenXmlEnumValue("Normal")]
-  Normal,
+  Normal = 1,
+
   /// <summary>
   ///   Reversed Direction.
   /// </summary>

@@ -8,9 +8,9 @@ public enum WdDefaultTableBehavior
   /// <summary>
   /// Disables AutoFit. Default.
   /// </summary>
-  TableBehavior8 = unchecked((int)0),
+  TableBehavior8 = 0,
   /// <summary>
   /// Enables AutoFit.
   /// </summary>
-  TableBehavior9 = unchecked((int)1)
+  TableBehavior9 = 1
 }

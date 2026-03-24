@@ -8,9 +8,9 @@ public enum XlCopyPictureFormat
   /// <summary>
   /// Bitmap (.bmp, .jpg, .gif).
   /// </summary>
-  Bitmap = unchecked((int)2),
+  Bitmap = 2,
   /// <summary>
   /// Specifies the format of the picture being copied.
   /// </summary>
-  Picture = unchecked((int)-4147)
+  Picture = -4147
 }

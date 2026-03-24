@@ -8,13 +8,13 @@ public enum WdTrailingCharacter
   /// <summary>
   /// A tab is inserted.
   /// </summary>
-  Tab = unchecked((int)0),
+  Tab = 0,
   /// <summary>
   /// A space is inserted. default.
   /// </summary>
-  Space = unchecked((int)1),
+  Space = 1,
   /// <summary>
   /// No character is inserted.
   /// </summary>
-  None = unchecked((int)2)
+  None = 2
 }

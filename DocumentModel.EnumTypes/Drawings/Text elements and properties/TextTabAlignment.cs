@@ -7,10 +7,15 @@ namespace DocumentModel.Drawings;
 public enum TextTabAlignment
 {
   /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   ///   Text Tab Alignment Enum ( Left).
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.TextTabAlignmentValues.Left))]
-  Left,
+  Left = 1,
+
   /// <summary>
   ///   Text Tab Alignment Enum ( Center ).
   /// </summary>

@@ -8,43 +8,43 @@ public enum WdCharacterCase
   /// <summary>
   /// Lower case.
   /// </summary>
-  LowerCase = unchecked((int)0),
+  LowerCase = 0,
   /// <summary>
   /// Upper case.
   /// </summary>
-  UpperCase = unchecked((int)1),
+  UpperCase = 1,
   /// <summary>
   /// Title word case. wdTitleSentence4 Sentence case.
   /// </summary>
-  TitleWord = unchecked((int)2),
+  TitleWord = 2,
   /// <summary>
   /// Specifies the case of the text in the specified range.
   /// </summary>
-  TitleSentence = unchecked((int)4),
+  TitleSentence = 4,
   /// <summary>
   /// Toggles upper case characters to lower, and lower case characters to upper.
   /// </summary>
-  ToggleCase = unchecked((int)5),
+  ToggleCase = 5,
   /// <summary>
   /// Half-width. Used for Japanese characters.
   /// </summary>
-  HalfWidth = unchecked((int)6),
+  HalfWidth = 6,
   /// <summary>
   /// Full-width. Used for Japanese characters.
   /// </summary>
-  FullWidth = unchecked((int)7),
+  FullWidth = 7,
   /// <summary>
   /// Katakana characters. Used with Japanese text.
   /// </summary>
-  Katakana = unchecked((int)8),
+  Katakana = 8,
   /// <summary>
   /// Hiragana characters. Used with Japanese text.
   /// [System.Runtime.InteropServices.Guid("DB686EA6-1A50-3146-B8A0-868BC3C6F451")] public enum WdCharacterCase ﾉ
   /// Expand table
   /// </summary>
-  Hiragana = unchecked((int)9),
+  Hiragana = 9,
   /// <summary>
   /// Specifies the case of the text in the specified range.
   /// </summary>
-  NextCase = unchecked((int)-1)
+  NextCase = -1
 }

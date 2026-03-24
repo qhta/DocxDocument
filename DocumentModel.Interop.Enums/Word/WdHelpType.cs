@@ -8,59 +8,59 @@ public enum WdHelpType
   /// <summary>
   /// Displays the Help Topics dialog box.
   /// </summary>
-  wdHelp = unchecked((int)0),
+  wdHelp = 0,
   /// <summary>
   /// Displays the About Microsoft Word dialog box (Help menu).
   /// </summary>
-  wdHelpAbout = unchecked((int)1),
+  wdHelpAbout = 1,
   /// <summary>
   /// Displays Help describing the command associated with the active view or pane.
   /// </summary>
-  wdHelpActiveWindow = unchecked((int)2),
+  wdHelpActiveWindow = 2,
   /// <summary>
   /// Displays the Help Topics dialog box. wdHelpExamplesAndDemos4 Displays examples and demos.
   /// </summary>
-  wdHelpContents = unchecked((int)3),
+  wdHelpContents = 3,
   /// <summary>
   /// Specifies the type of online Help topic or window to display.
   /// </summary>
-  wdHelpExamplesAndDemos = unchecked((int)4),
+  wdHelpExamplesAndDemos = 4,
   /// <summary>
   /// Displays the Help Topics dialog box.
   /// </summary>
-  wdHelpIndex = unchecked((int)5),
+  wdHelpIndex = 5,
   /// <summary>
   /// Displays keyboard shortcuts associated with help.
   /// </summary>
-  wdHelpKeyboard = unchecked((int)6),
+  wdHelpKeyboard = 6,
   /// <summary>
   /// Displays product support information
   /// </summary>
-  wdHelpPSSHelp = unchecked((int)7),
+  wdHelpPSSHelp = 7,
   /// <summary>
   /// Displays quick previews.
   /// </summary>
-  wdHelpQuickPreview = unchecked((int)8),
+  wdHelpQuickPreview = 8,
   /// <summary>
   /// Displays the Help Topics dialog box.
   /// [System.Runtime.InteropServices.Guid("2253A7C8-C563-386D-BDC6-B55E72015C02")] public enum WdHelpType ﾉ Expand
   /// table
   /// </summary>
-  wdHelpSearch = unchecked((int)9),
+  wdHelpSearch = 9,
   /// <summary>
   /// Displays a list of Help topics that describe how to use Help.
   /// </summary>
-  wdHelpUsingHelp = unchecked((int)10),
+  wdHelpUsingHelp = 10,
   /// <summary>
   /// Displays Help topics for Ichitaro users.
   /// </summary>
-  wdHelpIchitaro = unchecked((int)11),
+  wdHelpIchitaro = 11,
   /// <summary>
   /// Displays Help topics for IBM Personal
   /// </summary>
-  wdHelpPE2 = unchecked((int)12),
+  wdHelpPE2 = 12,
   /// <summary>
   /// Displays Help topics for AreA Hangul users.
   /// </summary>
-  wdHelpHWP = unchecked((int)13)
+  wdHelpHWP = 13
 }

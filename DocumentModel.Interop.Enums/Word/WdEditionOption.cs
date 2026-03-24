@@ -8,33 +8,33 @@ public enum WdEditionOption
   /// <summary>
   /// Not supported.
   /// </summary>
-  CancelPublisher = unchecked((int)0),
+  CancelPublisher = 0,
   /// <summary>
   /// Not supported.
   /// </summary>
-  SendPublisher = unchecked((int)1),
+  SendPublisher = 1,
   /// <summary>
   /// Not supported.
   /// </summary>
-  SelectPublisher = unchecked((int)2),
+  SelectPublisher = 2,
   /// <summary>
   /// Not supported.
   /// </summary>
-  AutomaticUpdate = unchecked((int)3),
+  AutomaticUpdate = 3,
   /// <summary>
   /// Not supported.
   /// </summary>
-  ManualUpdate = unchecked((int)4),
+  ManualUpdate = 4,
   /// <summary>
   /// Not supported.
   /// </summary>
-  ChangeAttributes = unchecked((int)5),
+  ChangeAttributes = 5,
   /// <summary>
   /// Not supported.
   /// </summary>
-  UpdateSubscriber = unchecked((int)6),
+  UpdateSubscriber = 6,
   /// <summary>
   /// Not supported.
   /// </summary>
-  OpenSource = unchecked((int)7)
+  OpenSource = 7
 }

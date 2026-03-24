@@ -8,17 +8,17 @@ public enum WdSalutationGender
   /// <summary>
   /// Female gender.
   /// </summary>
-  Female = unchecked((int)0),
+  Female = 0,
   /// <summary>
   /// Male gender.
   /// </summary>
-  Male = unchecked((int)1),
+  Male = 1,
   /// <summary>
   /// Neutral gender.
   /// </summary>
-  Neutral = unchecked((int)2),
+  Neutral = 2,
   /// <summary>
   /// Unknown gender.
   /// </summary>
-  Unknown = unchecked((int)3)
+  Unknown = 3
 }

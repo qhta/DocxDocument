@@ -8,9 +8,9 @@ public enum WdDocumentDirection
   /// <summary>
   /// Left to right.
   /// </summary>
-  LeftToRight = unchecked((int)0),
+  LeftToRight = 0,
   /// <summary>
   /// Right to left.
   /// </summary>
-  RightToLeft = unchecked((int)1)
+  RightToLeft = 1
 }

@@ -8,21 +8,21 @@ public enum WdOMathJc
   /// <summary>
   /// Center as a group.
   /// </summary>
-  CenterGroup = unchecked((int)1),
+  CenterGroup = 1,
   /// <summary>
   /// Center.
   /// </summary>
-  Center = unchecked((int)2),
+  Center = 2,
   /// <summary>
   /// Left.
   /// </summary>
-  Left = unchecked((int)3),
+  Left = 3,
   /// <summary>
   /// Right.
   /// </summary>
-  Right = unchecked((int)4),
+  Right = 4,
   /// <summary>
   /// Inline.
   /// </summary>
-  Inline = unchecked((int)7)
+  Inline = 7
 }

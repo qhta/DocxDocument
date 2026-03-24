@@ -9,5 +9,5 @@ public enum WdPageNumberStyleHID
   /// Applies to Product Versions Word primary interop assembly Latest public enum WdPageNumberStyleHID ﾉ Expand
   /// table
   /// </summary>
-  emptyenum = unchecked((int)0)
+  emptyenum = 0
 }

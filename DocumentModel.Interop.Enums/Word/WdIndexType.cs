@@ -8,9 +8,9 @@ public enum WdIndexType
   /// <summary>
   /// An indented index.
   /// </summary>
-  Indent = unchecked((int)0),
+  Indent = 0,
   /// <summary>
   /// A run-in index.
   /// </summary>
-  Runin = unchecked((int)1)
+  Runin = 1
 }

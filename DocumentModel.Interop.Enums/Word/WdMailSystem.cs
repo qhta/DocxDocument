@@ -8,17 +8,17 @@ public enum WdMailSystem
   /// <summary>
   /// No mail system.
   /// </summary>
-  NoMailSystem = unchecked((int)0),
+  NoMailSystem = 0,
   /// <summary>
   /// Standard Messaging Application Programming Interface (MAPI) mail system.
   /// </summary>
-  MAPI = unchecked((int)1),
+  MAPI = 1,
   /// <summary>
   /// PowerTalk mail system.
   /// </summary>
-  PowerTalk = unchecked((int)2),
+  PowerTalk = 2,
   /// <summary>
   /// Both a standard Messaging Application Programming Interface (MAPI) mail system and a PowerTalk mail system.
   /// </summary>
-  MAPIandPowerTalk = unchecked((int)3)
+  MAPIandPowerTalk = 3
 }

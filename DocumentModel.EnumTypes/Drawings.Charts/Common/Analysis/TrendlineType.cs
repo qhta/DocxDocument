@@ -8,34 +8,43 @@ namespace DocumentModel.Drawings.Charts;
 [OpenXmlEnumType(typeof(DXDC.TrendlineValues))]
 public enum TrendlineType
 {
+
   /// <summary>
-  ///   Exponential.
+  ///   Uses the equation y = c ln x + b to calculate the least squares fit through points.
+  /// </summary>
+  [OpenXmlEnumValue("Logarithmic")]
+  Logarithmic = -4133,
+
+  /// <summary>
+  ///   Uses the linear equation y = mx + b to calculate the least squares fit through points.
+  /// </summary>
+  [OpenXmlEnumValue("Linear")]
+  Linear = -4132,
+
+  /// <summary>
+  ///   Uses an equation to calculate the least squares fit through points, for example,
+  /// y = ax^6 + bx^5 + cx^4 + dx^3 + ex^2 + fx + g.
+  /// </summary>
+  [OpenXmlEnumValue("Polynomial")]
+  Polynomial = 3,
+
+  /// <summary>
+  ///   Uses an equation to calculate the least squares fit through points, for example, y = ax^b.
+  /// </summary>
+  [OpenXmlEnumValue("Power")]
+  Power,
+
+  /// <summary>
+  ///   Uses an equation to calculate the least squares fit through points, for example, y=ab^x .
   /// </summary>
   [OpenXmlEnumValue("Exponential")]
   Exponential,
+
   /// <summary>
-  ///   Linear.
-  /// </summary>
-  [OpenXmlEnumValue("Linear")]
-  Linear,
-  /// <summary>
-  ///   Logarithmic.
-  /// </summary>
-  [OpenXmlEnumValue("Logarithmic")]
-  Logarithmic,
-  /// <summary>
-  ///   Moving Average.
+  /// Uses a sequence of averages computed from parts of the data series. The number of points equals the total number
+  /// of points in the series less the number specified for the period.
   /// </summary>
   [OpenXmlEnumValue("MovingAverage")]
   MovingAverage,
-  /// <summary>
-  ///   Polynomial.
-  /// </summary>
-  [OpenXmlEnumValue("Polynomial")]
-  Polynomial,
-  /// <summary>
-  ///   Power.
-  /// </summary>
-  [OpenXmlEnumValue("Power")]
-  Power
+
 }

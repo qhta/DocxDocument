@@ -8,13 +8,13 @@ public enum WdFieldShading
   /// <summary>
   /// Never apply.
   /// </summary>
-  Never = unchecked((int)0),
+  Never = 0,
   /// <summary>
   /// Always apply.
   /// </summary>
-  Always = unchecked((int)1),
+  Always = 1,
   /// <summary>
   /// Apply only when form field is selected.
   /// </summary>
-  WhenSelected = unchecked((int)2)
+  WhenSelected = 2
 }

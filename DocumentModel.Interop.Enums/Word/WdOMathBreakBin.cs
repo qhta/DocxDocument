@@ -8,14 +8,14 @@ public enum WdOMathBreakBin
   /// <summary>
   /// Specifies where Microsoft Office Word places binary operators when equations span two or more lines.
   /// </summary>
-  Before = unchecked((int)0),
+  Before = 0,
   /// <summary>
   /// Specifies where Microsoft Office Word places binary operators when equations span two or more lines.
   /// </summary>
-  After = unchecked((int)1),
+  After = 1,
   /// <summary>
   /// Repeats the operator before a line break at the end of the line and after a line break at the beginning of the
   /// following line.
   /// </summary>
-  Repeat = unchecked((int)2)
+  Repeat = 2
 }

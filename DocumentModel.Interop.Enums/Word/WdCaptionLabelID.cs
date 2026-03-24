@@ -8,13 +8,13 @@ public enum WdCaptionLabelID
   /// <summary>
   /// Specifies the type for a caption label.
   /// </summary>
-  Equation = unchecked((int)-3),
+  Equation = -3,
   /// <summary>
   /// Specifies the type for a caption label.
   /// </summary>
-  Table = unchecked((int)-2),
+  Table = -2,
   /// <summary>
   /// Specifies the type for a caption label.
   /// </summary>
-  Figure = unchecked((int)-1)
+  Figure = -1
 }

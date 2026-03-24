@@ -8,130 +8,130 @@ public enum WdCaptionNumberStyle
   /// <summary>
   /// Arabic style.
   /// </summary>
-  Arabic = unchecked((int)0),
+  Arabic = 0,
   /// <summary>
   /// Uppercase roman style.
   /// </summary>
-  UppercaseRoman = unchecked((int)1),
+  UppercaseRoman = 1,
   /// <summary>
   /// Lowercase roman style.
   /// </summary>
-  LowercaseRoman = unchecked((int)2),
+  LowercaseRoman = 2,
   /// <summary>
   /// Uppercase letter style.
   /// </summary>
-  UppercaseLetter = unchecked((int)3),
+  UppercaseLetter = 3,
   /// <summary>
   /// Lowercase letter style.
   /// </summary>
-  LowercaseLetter = unchecked((int)4),
+  LowercaseLetter = 4,
   /// <summary>
   /// Kanji style.
   /// </summary>
-  Kanji = unchecked((int)10),
+  Kanji = 10,
   /// <summary>
   /// Kanji digit style.
   /// </summary>
-  KanjiDigit = unchecked((int)11),
+  KanjiDigit = 11,
   /// <summary>
   /// Full-width Arabic style.
   /// </summary>
-  ArabicFullWidth = unchecked((int)14),
+  ArabicFullWidth = 14,
   /// <summary>
   /// Kanji traditional style.
   /// </summary>
-  KanjiTraditional = unchecked((int)16),
+  KanjiTraditional = 16,
   /// <summary>
   /// Number in circle style.
   /// </summary>
-  NumberInCircle = unchecked((int)18),
+  NumberInCircle = 18,
   /// <summary>
   /// Ganada style. [System.Runtime.InteropServices.Guid("D6F59885-2962-305C-AA83-BBAB24CDB85E")] public enum
   /// WdCaptionNumberStyle ﾉ Expand table
   /// </summary>
-  Ganada = unchecked((int)24),
+  Ganada = 24,
   /// <summary>
   /// Chosung style.
   /// </summary>
-  Chosung = unchecked((int)25),
+  Chosung = 25,
   /// <summary>
   /// Zodiac style 1.
   /// </summary>
-  Zodiac1 = unchecked((int)30),
+  Zodiac1 = 30,
   /// <summary>
   /// Zodiac style 2.
   /// </summary>
-  Zodiac2 = unchecked((int)31),
+  Zodiac2 = 31,
   /// <summary>
   /// Traditional Chinese number style 2.
   /// </summary>
-  TradChinNum2 = unchecked((int)34),
+  TradChinNum2 = 34,
   /// <summary>
   /// Traditional Chinese number style 3.
   /// </summary>
-  TradChinNum3 = unchecked((int)35),
+  TradChinNum3 = 35,
   /// <summary>
   /// Simplified Chinese number style 2.
   /// </summary>
-  SimpChinNum2 = unchecked((int)38),
+  SimpChinNum2 = 38,
   /// <summary>
   /// Simplified Chinese number style 3.
   /// </summary>
-  SimpChinNum3 = unchecked((int)39),
+  SimpChinNum3 = 39,
   /// <summary>
   /// Hanja read style.
   /// </summary>
-  HanjaRead = unchecked((int)41),
+  HanjaRead = 41,
   /// <summary>
   /// Hanja read digit style.
   /// </summary>
-  HanjaReadDigit = unchecked((int)42),
+  HanjaReadDigit = 42,
   /// <summary>
   /// Hebrew letter style 1.
   /// </summary>
-  HebrewLetter1 = unchecked((int)45),
+  HebrewLetter1 = 45,
   /// <summary>
   /// Arabic letter style 1.
   /// </summary>
-  ArabicLetter1 = unchecked((int)46),
+  ArabicLetter1 = 46,
   /// <summary>
   /// Hebrew letter style 2.
   /// </summary>
-  HebrewLetter2 = unchecked((int)47),
+  HebrewLetter2 = 47,
   /// <summary>
   /// Arabic letter style 2.
   /// </summary>
-  ArabicLetter2 = unchecked((int)48),
+  ArabicLetter2 = 48,
   /// <summary>
   /// Hindi letter style 1.
   /// </summary>
-  HindiLetter1 = unchecked((int)49),
+  HindiLetter1 = 49,
   /// <summary>
   /// Hindi letter style 2.
   /// </summary>
-  HindiLetter2 = unchecked((int)50),
+  HindiLetter2 = 50,
   /// <summary>
   /// Hindi Arabic style.
   /// </summary>
-  HindiArabic = unchecked((int)51),
+  HindiArabic = 51,
   /// <summary>
   /// Hindi cardinal style.
   /// </summary>
-  HindiCardinalText = unchecked((int)52),
+  HindiCardinalText = 52,
   /// <summary>
   /// Thai letter style.
   /// </summary>
-  ThaiLetter = unchecked((int)53),
+  ThaiLetter = 53,
   /// <summary>
   /// Thai Arabic style.
   /// </summary>
-  ThaiArabic = unchecked((int)54),
+  ThaiArabic = 54,
   /// <summary>
   /// Thai cardinal text style.
   /// </summary>
-  ThaiCardinalText = unchecked((int)55),
+  ThaiCardinalText = 55,
   /// <summary>
   /// Vietnamese cardinal text style.
   /// </summary>
-  VietCardinalText = unchecked((int)56)
+  VietCardinalText = 56
 }

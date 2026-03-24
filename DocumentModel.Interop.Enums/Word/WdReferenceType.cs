@@ -8,21 +8,21 @@ public enum WdReferenceType
   /// <summary>
   /// Numbered item.
   /// </summary>
-  NumberedItem = unchecked((int)0),
+  NumberedItem = 0,
   /// <summary>
   /// Heading.
   /// </summary>
-  Heading = unchecked((int)1),
+  Heading = 1,
   /// <summary>
   /// Bookmark.
   /// </summary>
-  Bookmark = unchecked((int)2),
+  Bookmark = 2,
   /// <summary>
   /// Footnote.
   /// </summary>
-  Footnote = unchecked((int)3),
+  Footnote = 3,
   /// <summary>
   /// Endnote.
   /// </summary>
-  Endnote = unchecked((int)4)
+  Endnote = 4
 }

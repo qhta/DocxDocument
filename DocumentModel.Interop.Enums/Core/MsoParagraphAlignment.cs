@@ -6,7 +6,8 @@
 public enum MsoParagraphAlignment
 {
   /// <summary>
-  /// Specifies paragraph alignment for a text block.
+  /// Specifies that the leftmost character of each line is aligned to the left margin, and the right edge of each line
+  /// is ragged. This is the default alignment for paragraphs with left-to-right text direction.
   /// </summary>
   Mixed = -2,
   /// <summary>
@@ -40,15 +41,21 @@ public enum MsoParagraphAlignment
   /// </summary>
   Justify = 4,
   /// <summary>
-  /// Specifies paragraph alignment for a text block.
+  /// Specifies that the first and last characters of each line (except the last) are aligned to the left
+  /// and right margins,  and lines are filled by adding or subtracting the same amount from each character.
+  /// The last line of the paragraph is aligned to the left margin if text direction is left-to-right,
+  /// or to the right margin if text direction is right-to-left.
   /// </summary>
   Distribute = 5,
   /// <summary>
-  /// Specifies paragraph alignment for a text block.
+  /// Specifies that the first and last characters of each line (except the last) are aligned to the left
+  /// and right margins, and lines are filled by adding or subtracting space between (but not within) words.
+  /// The last line of the paragraph is aligned to the left margin.
   /// </summary>
   ThaiDistribute = 6,
   /// <summary>
-  /// Specifies paragraph alignment for a text block.
+  /// Specifies the alignment or adjustment of kashida length in Arabic text. Kashida are special characters
+  /// used to extend the joiner between two Arabic characters.
   /// </summary>
   JustifyLow = 7
 }

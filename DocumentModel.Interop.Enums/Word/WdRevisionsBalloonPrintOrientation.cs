@@ -12,13 +12,13 @@ public enum WdRevisionsBalloonPrintOrientation
   /// of original orientation, and prints the revision and comment balloons on the side opposite to the document
   /// text.
   /// </summary>
-  Auto = unchecked((int)0),
+  Auto = 0,
   /// <summary>
   /// Specifies the orientation of revision and comment balloons when they are printed.
   /// </summary>
-  Preserve = unchecked((int)1),
+  Preserve = 1,
   /// <summary>
   /// Specifies the orientation of revision and comment balloons when they are printed.
   /// </summary>
-  ForceLandscape = unchecked((int)2)
+  ForceLandscape = 2
 }

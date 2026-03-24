@@ -9,13 +9,13 @@ public enum WdNumberType
   /// Preset numbers you can add to paragraphs by selecting a template in the Bullets and Numbering dialog box.
   /// wdNumberListNum2 Default value for LISTNUM fields. wdNumberAllNumbers3 Default value for all other cases.
   /// </summary>
-  Paragraph = unchecked((int)1),
+  Paragraph = 1,
   /// <summary>
   /// Specifies the type of number.
   /// </summary>
-  ListNum = unchecked((int)2),
+  ListNum = 2,
   /// <summary>
   /// Specifies the type of number.
   /// </summary>
-  AllNumbers = unchecked((int)3)
+  AllNumbers = 3
 }

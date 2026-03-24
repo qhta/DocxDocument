@@ -8,9 +8,9 @@ public enum WdOLEPlacement
   /// <summary>
   /// In line with text.
   /// </summary>
-  InLine = unchecked((int)0),
+  InLine = 0,
   /// <summary>
   /// Float over text.
   /// </summary>
-  FloatOverText = unchecked((int)1)
+  FloatOverText = 1
 }

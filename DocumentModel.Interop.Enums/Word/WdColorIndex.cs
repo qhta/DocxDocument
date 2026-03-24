@@ -8,78 +8,78 @@ public enum WdColorIndex
   /// <summary>
   /// Automatic color. Default; usually black.
   /// </summary>
-  Auto = unchecked((int)0),
+  Auto = 0,
   /// <summary>
   /// Removes highlighting that has been applied.
   /// </summary>
-  NoHighlight = unchecked((int)0),
+  NoHighlight = 0,
   /// <summary>
   /// Black color.
   /// </summary>
-  Black = unchecked((int)1),
+  Black = 1,
   /// <summary>
   /// Blue color.
   /// </summary>
-  Blue = unchecked((int)2),
+  Blue = 2,
   /// <summary>
   /// Turquoise color.
   /// </summary>
-  Turquoise = unchecked((int)3),
+  Turquoise = 3,
   /// <summary>
   /// Bright green color.
   /// </summary>
-  BrightGreen = unchecked((int)4),
+  BrightGreen = 4,
   /// <summary>
   /// Pink color.
   /// </summary>
-  Pink = unchecked((int)5),
+  Pink = 5,
   /// <summary>
   /// Red color.
   /// </summary>
-  Red = unchecked((int)6),
+  Red = 6,
   /// <summary>
   /// Yellow color.
   /// </summary>
-  Yellow = unchecked((int)7),
+  Yellow = 7,
   /// <summary>
   /// White color. [System.Runtime.InteropServices.Guid("B1F5A6AB-437D-319F-8B38-0E087D112FEA")] public enum
   /// WdColorIndex ﾉ Expand table
   /// </summary>
-  White = unchecked((int)8),
+  White = 8,
   /// <summary>
   /// Dark blue color.
   /// </summary>
-  DarkBlue = unchecked((int)9),
+  DarkBlue = 9,
   /// <summary>
   /// Teal color.
   /// </summary>
-  Teal = unchecked((int)10),
+  Teal = 10,
   /// <summary>
   /// Green color.
   /// </summary>
-  Green = unchecked((int)11),
+  Green = 11,
   /// <summary>
   /// Violet color.
   /// </summary>
-  Violet = unchecked((int)12),
+  Violet = 12,
   /// <summary>
   /// Dark red color.
   /// </summary>
-  DarkRed = unchecked((int)13),
+  DarkRed = 13,
   /// <summary>
   /// Dark yellow color.
   /// </summary>
-  DarkYellow = unchecked((int)14),
+  DarkYellow = 14,
   /// <summary>
   /// Shade 50 of gray color.
   /// </summary>
-  Gray50 = unchecked((int)15),
+  Gray50 = 15,
   /// <summary>
   /// Shade 25 of gray color.
   /// </summary>
-  Gray25 = unchecked((int)16),
+  Gray25 = 16,
   /// <summary>
   /// Specifies the color to apply.
   /// </summary>
-  ByAuthor = unchecked((int)-1)
+  ByAuthor = -1
 }

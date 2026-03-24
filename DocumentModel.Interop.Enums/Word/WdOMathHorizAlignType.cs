@@ -8,13 +8,13 @@ public enum WdOMathHorizAlignType
   /// <summary>
   /// Centered.
   /// </summary>
-  Center = unchecked((int)0),
+  Center = 0,
   /// <summary>
   /// Left alignment.
   /// </summary>
-  Left = unchecked((int)1),
+  Left = 1,
   /// <summary>
   /// Right alignment.
   /// </summary>
-  Right = unchecked((int)2)
+  Right = 2
 }

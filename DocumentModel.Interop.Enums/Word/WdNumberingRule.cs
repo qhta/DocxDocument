@@ -8,13 +8,13 @@ public enum WdNumberingRule
   /// <summary>
   /// Numbers are assigned continuously.
   /// </summary>
-  Continuous = unchecked((int)0),
+  Continuous = 0,
   /// <summary>
   /// Numbers are reset for each section.
   /// </summary>
-  Section = unchecked((int)1),
+  Section = 1,
   /// <summary>
   /// Numbers are reset for each page.
   /// </summary>
-  Page = unchecked((int)2)
+  Page = 2
 }

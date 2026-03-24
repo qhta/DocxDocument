@@ -8,13 +8,13 @@ public enum WdPictureLinkType
   /// <summary>
   /// Do not link to or embed the picture in the document.
   /// </summary>
-  None = unchecked((int)0),
+  None = 0,
   /// <summary>
   /// Embed the picture in the document.
   /// </summary>
-  DataInDoc = unchecked((int)1),
+  DataInDoc = 1,
   /// <summary>
   /// Link the picture to the document.
   /// </summary>
-  DataOnDisk = unchecked((int)2)
+  DataOnDisk = 2
 }

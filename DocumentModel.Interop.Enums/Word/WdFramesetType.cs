@@ -8,9 +8,9 @@ public enum WdFramesetType
   /// <summary>
   /// A frameset.
   /// </summary>
-  wdFramesetTypeFrameset = unchecked((int)0),
+  wdFramesetTypeFrameset = 0,
   /// <summary>
   /// A single frame.
   /// </summary>
-  wdFramesetTypeFrame = unchecked((int)1)
+  wdFramesetTypeFrame = 1
 }

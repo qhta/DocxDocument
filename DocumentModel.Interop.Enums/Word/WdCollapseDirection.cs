@@ -8,9 +8,9 @@ public enum WdCollapseDirection
   /// <summary>
   /// Collapse the range to the ending point.
   /// </summary>
-  End = unchecked((int)0),
+  End = 0,
   /// <summary>
   /// Collapse the range to the starting point.
   /// </summary>
-  Start = unchecked((int)1)
+  Start = 1
 }

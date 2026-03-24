@@ -8,17 +8,17 @@ public enum WdXMLNodeLevel
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  Inline = unchecked((int)0),
+  Inline = 0,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  Paragraph = unchecked((int)1),
+  Paragraph = 1,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  Row = unchecked((int)2),
+  Row = 2,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  Cell = unchecked((int)3)
+  Cell = 3
 }

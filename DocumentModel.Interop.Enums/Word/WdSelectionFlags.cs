@@ -8,21 +8,21 @@ public enum WdSelectionFlags
   /// <summary>
   /// The selection is at the start of the active document.
   /// </summary>
-  StartActive = unchecked((int)1),
+  StartActive = 1,
   /// <summary>
   /// The selection is at the end of the letter.
   /// </summary>
-  AtEOL = unchecked((int)2),
+  AtEOL = 2,
   /// <summary>
   /// The selection was overtyped.
   /// </summary>
-  Overtype = unchecked((int)4),
+  Overtype = 4,
   /// <summary>
   /// The selection is the active selection.
   /// </summary>
-  Active = unchecked((int)8),
+  Active = 8,
   /// <summary>
   /// The selection was replaced.
   /// </summary>
-  Replace = unchecked((int)16)
+  Replace = 16
 }

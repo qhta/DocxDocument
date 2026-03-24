@@ -8,13 +8,13 @@ public enum XlReadingOrder
   /// <summary>
   /// Specifies the reading order for the specified object.
   /// </summary>
-  RTL = unchecked((int)-5004),
+  RTL = -5004,
   /// <summary>
   /// Specifies the reading order for the specified object.
   /// </summary>
-  LTR = unchecked((int)-5003),
+  LTR = -5003,
   /// <summary>
   /// Specifies the reading order for the specified object.
   /// </summary>
-  Context = unchecked((int)-5002)
+  Context = -5002
 }

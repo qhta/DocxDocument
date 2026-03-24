@@ -3,67 +3,67 @@ Wordprocessing\Document;CaptionPosition.cs;Word;WdCaptionPosition.cs;100.0;100.0
 Wordprocessing\Unused;CollapseDirection.cs;Word;WdCollapseDirection.cs;100.0;100.0
 Drawings.Charts\Common\Analysis;ErrorBarDirection.cs;Core;XlErrorBarDirection.cs;100.0;100.0
 Wordprocessing\Run properties;Ligatures.cs;Word;WdLigatures.cs;100.0;100.0
-Wordprocessing.Drawings;LightRigType.cs;Core;MsoLightRigType.cs;100.0;100.0
 Wordprocessing\Unused;ListLevelAlignment.cs;Word;WdListLevelAlignment.cs;100.0;100.0
 Wordprocessing\Mail merge;MailMergeDestination.cs;Word;WdMailMergeDestination.cs;100.0;100.0
 Wordprocessing\Unused;MeasurementUnits.cs;Word;WdMeasurementUnits.cs;100.0;100.0
 Wordprocessing\Run properties;NumberForm.cs;Word;WdNumberForm.cs;100.0;100.0
 Wordprocessing\Run properties;NumberSpacing.cs;Word;WdNumberSpacing.cs;100.0;100.0
-Wordprocessing.Drawings;PresetCamera.cs;Core;MsoPresetCamera.cs;100.0;100.0
 Drawings.Charts\Specific char types;SizeRepresents.cs;Core;XlSizeRepresents.cs;100.0;100.0
 Wordprocessing\Unused;SortOrder.cs;Core;MsoSortOrder.cs;100.0;100.0
 Wordprocessing\Unused;Statistic.cs;Word;WdStatistic.cs;100.0;100.0
-Drawings\Text elements and properties;TextStrike.cs;Core;MsoTextStrike.cs;100.0;100.0
 Drawings.Charts\Common\Axis;TickMark.cs;Core;XlTickMark.cs;100.0;100.0
 Drawings.Charts\Common\Axis;TimeUnit.cs;Core;XlTimeUnit.cs;100.0;100.0
 Windows;WindowState.cs;Word;WdWindowState.cs;100.0;100.0
 Windows;WindowType.cs;Word;WdWindowType.cs;100.0;100.0
-Wordprocessing\Unused;ParagraphAlignment.cs;Core;MsoParagraphAlignment.cs;100.0;93.33
-Drawings\3D;LightRigType.cs;Core;MsoLightRigType.cs;100.0;92.86
-Wordprocessing\Unused;TextOrientation.cs;Core;MsoTextOrientation.cs;100.0;92.31
+Wordprocessing.Drawings;PresetCamera.cs;Core;MsoPresetCamera.cs;100.0;99.2
+Wordprocessing.Drawings;LightRigType.cs;Core;MsoLightRigType.cs;100.0;98.18
 Drawings.Charts\Formatting;MarkerStyle.cs;Core;XlMarkerStyle.cs;100.0;91.67
+Drawings\3D;LightRigType.cs;Core;MsoLightRigType.cs;100.0;90.91
 Wordprocessing\Unused;TabAlignment.cs;Word;WdTabAlignment.cs;100.0;90.91
 Drawings.ChartStyle;MarkerStyle.cs;Core;XlMarkerStyle.cs;100.0;85.71
+Wordprocessing\Unused;ParagraphAlignment.cs;Core;MsoParagraphAlignment.cs;100.0;85.71
+Drawings\Text elements and properties;TextStrike.cs;Core;MsoTextStrike.cs;100.0;85.71
 Wordprocessing\Paragraph properties;OutlineLevel.cs;Word;WdOutlineLevel.cs;100.0;84.21
 Wordprocessing\Unused;Information.cs;Word;WdInformation.cs;100.0;83.54
-Wordprocessing\Unused;BaselineAlignment.cs;Core;MsoBaselineAlignment.cs;100.0;83.33
+Wordprocessing\Unused;TextOrientation.cs;Core;MsoTextOrientation.cs;100.0;83.33
 Drawings.Charts\Common\Analysis;TrendlineType.cs;Core;XlTrendlineType.cs;100.0;83.33
 Wordprocessing\Sections;PaperSize.cs;Word;WdPaperSize.cs;100.0;77.23
-Drawings.Charts\Data;DataLabelPosition.cs;Core;XlDataLabelPosition.cs;100.0;76.19
 Drawings.Charts\Common\Axis;TickLabelPosition.cs;Core;XlTickLabelPosition.cs;100.0;75.0
 Math;VerticalAlignment.cs;Word;WdVerticalAlignment.cs;100.0;75.0
+Wordprocessing\Unused;BaselineAlignment.cs;Core;MsoBaselineAlignment.cs;100.0;72.73
 Drawings.Charts\Common;LegendPosition.cs;Core;XlLegendPosition.cs;100.0;72.73
-Wordprocessing.Drawings;PresetMaterial.cs;Core;MsoPresetMaterial.cs;100.0;72.73
+Drawings.Charts\Data;DataLabelPosition.cs;Core;XlDataLabelPosition.cs;100.0;70.0
+Wordprocessing.Drawings;PresetMaterial.cs;Core;MsoPresetMaterial.cs;100.0;68.75
 Wordprocessing\Unused;TabLeader.cs;Word;WdTabLeader.cs;100.0;66.67
-Wordprocessing\Paragraph properties;TabStopType.cs;Core;MsoTabStopType.cs;100.0;66.67
 Wordprocessing\Unused;TrailingCharacter.cs;Word;WdTrailingCharacter.cs;100.0;66.67
 Wordprocessing.Vml;WrapType.cs;Word;WdWrapType.cs;100.0;61.54
 Wordprocessing\Styles;StyleType.cs;Word;WdStyleType.cs;100.0;60.0
 Wordprocessing\Paragraph properties;TextBoxTightWrap.cs;Word;WdTextboxTightWrap.cs;100.0;60.0
 Wordprocessing\Frames and framesets;VerticalAlignment.cs;Word;WdVerticalAlignment.cs;100.0;60.0
 Vml;ScreenSize.cs;Core;MsoScreenSize.cs;100.0;58.82
+Wordprocessing\Paragraph properties;TabStopType.cs;Core;MsoTabStopType.cs;100.0;57.14
 Vml;ConnectorType.cs;Core;MsoConnectorType.cs;100.0;50.0
-Vml;FillType.cs;Core;MsoFillType.cs;100.0;50.0
-Wordprocessing\Common;TextDirection.cs;Core;MsoTextDirection.cs;100.0;37.5
+Vml;FillType.cs;Core;MsoFillType.cs;100.0;36.36
 Drawings.Charts\Common;DisplayBlanksAs.cs;Core;XlDisplayBlanksAs.cs;100.0;33.33
-Drawings\Shape properties;BlackWhiteMode.cs;Core;MsoBlackWhiteMode.cs;100.0;26.09
-Drawings\Text elements and properties;TextCaps.cs;Core;MsoTextCaps.cs;100.0;25.0
+Wordprocessing\Common;TextDirection.cs;Core;MsoTextDirection.cs;100.0;26.67
 Wordprocessing\Run properties;EmphasisMark.cs;Word;WdEmphasisMark.cs;100.0;20.0
-Wordprocessing\Frames and framesets;VerticalAnchor.cs;Core;MsoVerticalAnchor.cs;100.0;20.0
-Wordprocessing\Unused;Color.cs;Core;MsoColorType.cs;100.0;8.0
+Drawings\Shape properties;BlackWhiteMode.cs;Core;MsoBlackWhiteMode.cs;100.0;18.18
 Wordprocessing\Unused;StylisticSet.cs;Word;WdStylisticSet.cs;100.0;4.76
-Vml;ShadowType.cs;Core;MsoShadowType.cs;100.0;3.92
 Drawings.Diagrams;AxisType.cs;Core;XlAxisType.cs;100.0;0.0
 Vml;BorderType.cs;Word;WdBorderType.cs;100.0;0.0
 Wordprocessing\Common;BorderType.cs;Word;WdBorderType.cs;100.0;0.0
 Wordprocessing\Run content;BreakType.cs;Word;WdBreakType.cs;100.0;0.0
+Wordprocessing\Unused;Color.cs;Core;MsoColorType.cs;100.0;0.0
 Wordprocessing\Unused;ColorIndex.cs;Core;XlColorIndex.cs;100.0;0.0
 Wordprocessing\Document;DocumentType.cs;Word;WdDocumentType.cs;100.0;0.0
 Drawings.Charts\Common\Analysis;ErrorBarType.cs;Core;XlErrorBarType.cs;100.0;0.0
 Wordprocessing\Frames and framesets;HorizontalAnchor.cs;Core;MsoHorizontalAnchor.cs;100.0;0.0
 Drawings.Charts\Common;LayoutMode.cs;Word;WdLayoutMode.cs;100.0;0.0
 Drawings.Charts\Common\Axis;Orientation.cs;Core;MsoOrientation.cs;100.0;0.0
+Vml;ShadowType.cs;Core;MsoShadowType.cs;100.0;0.0
 Wordprocessing\Unused;Story.cs;Word;WdStoryType.cs;100.0;0.0
+Drawings\Text elements and properties;TextCaps.cs;Core;MsoTextCaps.cs;100.0;0.0
+Wordprocessing\Frames and framesets;VerticalAnchor.cs;Core;MsoVerticalAnchor.cs;100.0;0.0
 Wordprocessing\Settings;ViewType.cs;Word;WdViewType.cs;100.0;0.0
 Wordprocessing\Unused;BuildingBlockType.cs;Word;WdBuildingBlockTypes.cs;97.14;40.91
 Vml;ConnectType.cs;Core;MsoConnectorType.cs;91.67;0.0
@@ -72,7 +72,7 @@ Colors;WdColors.cs;Word;WdColor.cs;90.91;26.73
 Wordprocessing\Numbering;NumberFormat.cs;Word;WdNumberForm.cs;90.91;0.0
 Math;HorizontalAlignment.cs;Word;WdHorizontalLineAlignment.cs;90.48;100.0
 Wordprocessing\Frames and framesets;HorizontalAlignment.cs;Word;WdHorizontalLineAlignment.cs;90.48;75.0
-Vml;BlackAndWhiteMode.cs;Core;MsoBlackWhiteMode.cs;90.32;60.87
+Vml;BlackAndWhiteMode.cs;Core;MsoBlackWhiteMode.cs;90.32;54.55
 Drawings\Text elements and properties;TextAlignment.cs;Core;MsoTextureAlignment.cs;89.66;35.29
 Wordprocessing\Paragraph properties;VerticalTextAlignment.cs;Word;WdVerticalAlignment.cs;89.47;66.67
 Common properties;DocPropertyType.cs;Core;MsoPropertyType.cs;88.89;100.0
@@ -82,54 +82,54 @@ Drawings.Diagrams;Connection.cs;Core;MsoConnectorType.cs;88.89;0.0
 Wordprocessing.Vml;HorizontalAnchorType.cs;Core;MsoHorizontalAnchor.cs;88.89;0.0
 Wordprocessing\Mail merge;MailMergeSource.cs;Word;WdMailMergeDataSource.cs;88.24;0.0
 Drawings\Line properties;LineEndType.cs;Word;WdLineEndingType.cs;88.0;0.0
-Drawings\3D;PresetMaterialType.cs;Core;MsoPresetMaterial.cs;87.5;75.0
-Wordprocessing.Vml;VerticalAnchorType.cs;Core;MsoVerticalAnchor.cs;87.5;20.0
+Drawings\3D;PresetMaterialType.cs;Core;MsoPresetMaterial.cs;87.5;70.97
+Wordprocessing.Vml;VerticalAnchorType.cs;Core;MsoVerticalAnchor.cs;87.5;0.0
 Wordprocessing\Table properties;TableVerticalAlignment.cs;Word;WdVerticalAlignment.cs;87.18;85.71
-Drawings\Text elements and properties;TextFontAlignment.cs;Core;MsoTextFontAlign.cs;86.67;83.33
+Drawings\Text elements and properties;TextFontAlignment.cs;Core;MsoTextFontAlign.cs;86.67;72.73
 Wordprocessing\Footnotes and endnotes;NoteReferenceType.cs;Word;WdReferenceType.cs;86.67;50.0
-Drawings\Text elements and properties;TextUnderline.cs;Core;MsoTextUnderlineType.cs;86.67;10.53
+Drawings\Text elements and properties;TextUnderline.cs;Core;MsoTextUnderlineType.cs;86.67;5.41
 Math;Justification.cs;Word;WdJustificationMode.cs;86.67;0.0
 Wordprocessing\Paragraph properties;Justification.cs;Word;WdJustificationMode.cs;86.67;0.0
 Drawings.Charts\Formatting;PictureFormat.cs;Word;XlCopyPictureFormat.cs;86.67;0.0
 Drawings.Charts\Formatting;ColorSchemeIndex.cs;Core;MsoThemeColorSchemeIndex.cs;86.49;100.0
-Drawings\3D;PresetCameraType.cs;Core;MsoPresetCamera.cs;85.71;100.0
-Drawings\Text elements and properties;TextTabAlignment.cs;Core;MsoTextTabAlign.cs;85.71;100.0
+Drawings\3D;PresetCameraType.cs;Core;MsoPresetCamera.cs;85.71;99.2
+Drawings\Text elements and properties;TextTabAlignment.cs;Core;MsoTextTabAlign.cs;85.71;88.89
 Vml;Alignment.cs;Word;WdRowAlignment.cs;85.71;66.67
 Drawings.Charts\Common\Analysis;ErrorType.cs;Core;XlErrorBarType.cs;85.71;40.0
 Wordprocessing\Styles;BuiltInStyleType.cs;Word;WdBuiltinStyle.cs;85.71;31.25
-Wordprocessing\Unused;BulletStyle.cs;Core;MsoBulletType.cs;85.71;16.67
 Wordprocessing\Unused;ListLevelNumberStyle.cs;Word;WdListNumberStyle.cs;85.71;2.82
+Wordprocessing\Unused;BulletStyle.cs;Core;MsoBulletType.cs;85.71;0.0
 Drawings\Line properties;LineEndWidth.cs;Word;WdLineWidth.cs;85.71;0.0
 Wordprocessing\Unused;NumberStyle.cs;Word;WdNumberType.cs;85.71;0.0
 Drawings.Charts\Common\Axis;LabelAlignment.cs;Word;WdTabAlignment.cs;84.62;66.67
-Wordprocessing\Document;PageOrientation.cs;Core;MsoOrientation.cs;84.62;33.33
-Drawings.ChartDrawings;PageOrientation.cs;Core;MsoOrientation.cs;84.62;28.57
 Wordprocessing\Paragraph properties;LineSpacingRule.cs;Word;WdLineSpacing.cs;84.62;22.22
+Drawings.ChartDrawings;PageOrientation.cs;Core;MsoOrientation.cs;84.62;0.0
+Wordprocessing\Document;PageOrientation.cs;Core;MsoOrientation.cs;84.62;0.0
 Vml;ExtrusionType.cs;Core;MsoExtrusionColorType.cs;83.87;0.0
 Drawings.ChartDrawings;GeoProjectionType.cs;Word;WdProtectionType.cs;83.87;0.0
 Vml;OleType.cs;Word;WdOLEType.cs;83.33;80.0
 Wordprocessing\Sdt;DateFormat.cs;Core;MsoDateTimeFormat.cs;83.33;0.0
 Wordprocessing\Table properties;TableRowAlignment.cs;Word;WdRowAlignment.cs;82.76;100.0
-Drawings.ChartDrawings;DataLabelPos.cs;Core;XlDataLabelPosition.cs;82.76;19.05
+Drawings.ChartDrawings;DataLabelPos.cs;Core;XlDataLabelPosition.cs;82.76;10.0
 Drawings.Charts\Specific char types;BarDirection.cs;Core;XlErrorBarDirection.cs;82.76;0.0
 Vml;FillKind.cs;Word;WdFieldKind.cs;82.35;0.0
 Wordprocessing\Unused;SortField.cs;Word;WdSortFieldType.cs;81.82;66.67
-Drawings.Diagrams;Direction.cs;Core;MsoTextDirection.cs;81.82;33.33
-Wordprocessing\Common;Direction.cs;Core;MsoTextDirection.cs;81.82;33.33
 Wordprocessing\Paragraph properties;TabStopLeader.cs;Word;WdTabLeader.cs;81.82;33.33
+Drawings.Diagrams;Direction.cs;Core;MsoTextDirection.cs;81.82;0.0
+Wordprocessing\Common;Direction.cs;Core;MsoTextDirection.cs;81.82;0.0
 Drawings.Diagrams;ElementEType.cs;Core;MsoSegmentType.cs;81.82;0.0
 Wordprocessing\Fields and hyperlinks;FieldCharType.cs;Word;WdFieldType.cs;81.82;0.0
 Wordprocessing\Unused;FontProperties.cs;Core;DocProperties.cs;81.48;0.0
 Wordprocessing\Mail merge;MailMergeData.cs;Word;WdMailMergeState.cs;81.48;0.0
 Wordprocessing\Footnotes and endnotes;FootnotePosition.cs;Word;WdFootnoteLocation.cs;81.25;0.0
 Wordprocessing.Vml;WrapSide.cs;Word;WdWrapSideType.cs;80.0;100.0
-Wordprocessing.Drawings;LightRigDirection.cs;Core;MsoPresetLightingDirection.cs;80.0;94.74
-Drawings\3D;LightRigDirection.cs;Core;MsoPresetLightingDirection.cs;80.0;94.74
+Wordprocessing.Drawings;LightRigDirection.cs;Core;MsoPresetLightingDirection.cs;80.0;88.89
+Drawings\3D;LightRigDirection.cs;Core;MsoPresetLightingDirection.cs;80.0;88.89
 Math;RowSpacingRule.cs;Word;WdOMathSpacingRule.cs;80.0;80.0
 Wordprocessing\Sdt;Calendar.cs;Word;WdCalendarType.cs;80.0;38.46
-Drawings.Diagrams;HueDirection.cs;Core;MsoTextDirection.cs;80.0;33.33
 Wordprocessing\Document;DocPartType.cs;Core;XlChartType.cs;80.0;0.0
 Wordprocessing\Footnotes and endnotes;EndnotePosition.cs;Word;WdEndnoteLocation.cs;80.0;0.0
+Drawings.Diagrams;HueDirection.cs;Core;MsoTextDirection.cs;80.0;0.0
 Vml;RuleType.cs;Word;WdOLEType.cs;80.0;0.0
 Drawings.Diagrams;StorageType.cs;Word;WdStoryType.cs;80.0;0.0
 Wordprocessing\Run properties;VerticalPosition.cs;Word;WdRelativeVerticalPosition.cs;80.0;0.0
@@ -150,9 +150,9 @@ Wordprocessing\Document;TargetScreenSize.cs;Core;MsoScreenSize.cs;76.92;100.0
 Drawings\Background properties;TargetScreenSize.cs;Core;MsoScreenSize.cs;76.92;100.0
 Drawings.Charts\Formatting;Shape.cs;Core;XlBarShape.cs;76.92;50.0
 Wordprocessing\Unused;Comparison.cs;Core;MsoFilterComparison.cs;76.92;25.0
-Wordprocessing\Table properties;TableLayout.cs;Core;MsoCalloutType.cs;76.92;25.0
-Math;FractionType.cs;Core;MsoReflectionType.cs;76.92;12.5
-Wordprocessing\Run properties;TextEffect.cs;Core;MsoPresetTextEffect.cs;76.92;3.39
+Math;FractionType.cs;Core;MsoReflectionType.cs;76.92;0.0
+Wordprocessing\Table properties;TableLayout.cs;Core;MsoCalloutType.cs;76.92;0.0
+Wordprocessing\Run properties;TextEffect.cs;Core;MsoPresetTextEffect.cs;76.92;0.0
 Colors;ThemeColors.cs;Core;MsoThemeColorIndex.cs;76.92;0.0
 Wordprocessing\Common;ProofingError.cs;Word;WdProofreadingErrorType.cs;76.47;0.0
 Drawings.ChartDrawings;TickMarksType.cs;Core;XlTickMark.cs;76.19;50.0
@@ -166,24 +166,24 @@ Wordprocessing\Unused;TwoLinesInOneBracket.cs;Word;WdTwoLinesInOneType.cs;75.68;
 Vml;StrokeLineStyle.cs;Core;MsoLineStyle.cs;75.0;90.91
 Drawings\Effects;RectangleAlignment.cs;Word;WdVerticalAlignment.cs;74.29;46.15
 Wordprocessing.Drawings;RectangleAlignment.cs;Word;WdVerticalAlignment.cs;74.29;42.86
-Drawings.Charts\Common;PageSetupOrientation.cs;Core;MsoTextOrientation.cs;74.29;18.18
 Wordprocessing\Numbering;LevelJustification.cs;Word;WdJustificationMode.cs;74.29;0.0
+Drawings.Charts\Common;PageSetupOrientation.cs;Core;MsoTextOrientation.cs;74.29;0.0
 Wordprocessing\Frames and framesets;DropCapLocation.cs;Word;WdDropPosition.cs;74.07;66.67
-Drawings\Fill types;PresetPattern.cs;Core;MsoPresetMaterial.cs;74.07;2.82
 Math;LimitLocation.cs;Core;MsoScriptLocation.cs;74.07;0.0
 Drawings\Line properties;LineEndLength.cs;Word;WdLineEndingType.cs;74.07;0.0
-Wordprocessing.Drawings;LineCap.cs;Core;MsoLineCapStyle.cs;73.68;100.0
-Drawings\Line properties;LineCap.cs;Core;MsoLineCapStyle.cs;73.68;100.0
+Drawings\Fill types;PresetPattern.cs;Core;MsoPresetMaterial.cs;74.07;0.0
+Wordprocessing.Drawings;LineCap.cs;Core;MsoLineCapStyle.cs;73.68;85.71
+Drawings\Line properties;LineCap.cs;Core;MsoLineCapStyle.cs;73.68;85.71
 Wordprocessing\Bibliography;SourceType.cs;Core;XlScaleType.cs;73.68;0.0
 Wordprocessing\Unused;ListLevelPosition.cs;Word;WdTablePosition.cs;73.33;60.0
 Wordprocessing\Document;DocPartGalleryType.cs;Word;XlChartGallery.cs;73.33;0.0
 Wordprocessing\Document;PageBorderDisplay.cs;Word;WdPageBorderArt.cs;73.33;0.0
 Wordprocessing\Sdt;SdtAppearance.cs;Word;XlPictureAppearance.cs;73.33;0.0
 Wordprocessing\Numbering;MultiLevel.cs;Word;WdOutlineLevel.cs;72.73;0.0
-Drawings\Effects;EffectContainment.cs;Core;MsoTextEffectAlignment.cs;72.22;20.0
+Drawings\Effects;EffectContainment.cs;Core;MsoTextEffectAlignment.cs;72.22;0.0
 Wordprocessing\Mail merge;MailMergeDocument.cs;Word;WdMailMergeDataSource.cs;72.22;0.0
 Drawings.Diagrams;ConstraintType.cs;Core;MsoControlType.cs;72.0;0.0
-Vml;StrokeJoinStyle.cs;Core;MsoLineJoinStyle.cs;71.43;100.0
+Vml;StrokeJoinStyle.cs;Core;MsoLineJoinStyle.cs;71.43;85.71
 Wordprocessing\Unused;Index.cs;Word;WdIndexType.cs;71.43;16.67
 Wordprocessing\Document;CharacterSpacing.cs;Core;MsoCharacterSet.cs;71.43;0.0
 Drawings.Charts\Common;ChartBuildStep.cs;Core;MsoChartFieldType.cs;71.43;0.0
@@ -192,10 +192,10 @@ Common properties;HyperlinkAction.cs;Core;MsoHyperlinkType.cs;71.43;0.0
 Drawings.ChartDrawings;PosAlign.cs;Core;XlHAlign.cs;71.43;0.0
 Drawings\Shape properties;Shapes.cs;Core;XlBarShape.cs;71.43;0.0
 CustomUI;Style.cs;Core;MsoLineStyle.cs;71.43;0.0
-Drawings\Text elements and properties;TextShape.cs;Core;MsoTextCaps.cs;70.59;4.35
 Wordprocessing\Document;ChapterSeparator.cs;Word;XlDataLabelSeparator.cs;70.59;0.0
 Wordprocessing\Unused;DateItem.cs;Core;XlChartItem.cs;70.59;0.0
 Drawings.Diagrams;PointType.cs;Core;MsoIconType.cs;70.59;0.0
+Drawings\Text elements and properties;TextShape.cs;Core;MsoTextCaps.cs;70.59;0.0
 Wordprocessing\Document;CryptProvider.cs;Core;EncryptionProviderDetail.cs;70.27;0.0
 Wordprocessing\Mail merge;MailMergeOdsoField.cs;Word;WdMailMergeDataSource.cs;70.27;0.0
 Wordprocessing.Drawings;BevelPreset.cs;Core;MsoBevelType.cs;70.0;92.31

@@ -7,10 +7,15 @@ namespace DocumentModel.Vml;
 public enum ShadowType
 {
   /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   ///   Single Shadow.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXV.ShadowValues.Single))]
-  Single,
+  Single = 1,
+
   /// <summary>
   ///   Double Shadow.
   /// </summary>

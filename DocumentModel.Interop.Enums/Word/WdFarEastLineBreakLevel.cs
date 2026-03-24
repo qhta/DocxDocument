@@ -8,13 +8,13 @@ public enum WdFarEastLineBreakLevel
   /// <summary>
   /// Normal line break control.
   /// </summary>
-  Normal = unchecked((int)0),
+  Normal = 0,
   /// <summary>
   /// Strict line break control.
   /// </summary>
-  Strict = unchecked((int)1),
+  Strict = 1,
   /// <summary>
   /// Custom line break control.
   /// </summary>
-  Custom = unchecked((int)2)
+  Custom = 2
 }

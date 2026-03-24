@@ -8,86 +8,86 @@ public enum WdFindMatch
   /// <summary>
   /// Not supported.
   /// </summary>
-  Graphic = unchecked((int)1),
+  Graphic = 1,
   /// <summary>
   /// Not supported.
   /// </summary>
-  CommentMark = unchecked((int)5),
+  CommentMark = 5,
   /// <summary>
   /// Not supported.
   /// </summary>
-  TabCharacter = unchecked((int)9),
+  TabCharacter = 9,
   /// <summary>
   /// Not supported.
   /// </summary>
-  CaretCharacter = unchecked((int)11),
+  CaretCharacter = 11,
   /// <summary>
   /// Not supported.
   /// </summary>
-  ColumnBreak = unchecked((int)14),
+  ColumnBreak = 14,
   /// <summary>
   /// Not supported.
   /// </summary>
-  Field = unchecked((int)19),
+  Field = 19,
   /// <summary>
   /// Not supported.
   /// </summary>
-  NonbreakingHyphen = unchecked((int)30),
+  NonbreakingHyphen = 30,
   /// <summary>
   /// Not supported.
   /// </summary>
-  OptionalHyphen = unchecked((int)31),
+  OptionalHyphen = 31,
   /// <summary>
   /// Not supported.
   /// </summary>
-  NonbreakingSpace = unchecked((int)160),
+  NonbreakingSpace = 160,
   /// <summary>
   /// Not supported.
   /// </summary>
-  EnDash = unchecked((int)8211),
+  EnDash = 8211,
   /// <summary>
   /// Not supported. [System.Runtime.InteropServices.Guid("858EB926-41E4-3509-B9D9-0B62C364228A")] public enum
   /// WdFindMatch ﾉ Expand table
   /// </summary>
-  EmDash = unchecked((int)8212),
+  EmDash = 8212,
   /// <summary>
   /// Not supported.
   /// </summary>
-  ManualLineBreak = unchecked((int)65551),
+  ManualLineBreak = 65551,
   /// <summary>
   /// Not supported.
   /// </summary>
-  ParagraphMark = unchecked((int)65551),
+  ParagraphMark = 65551,
   /// <summary>
   /// Not supported.
   /// </summary>
-  FootnoteMark = unchecked((int)65554),
+  FootnoteMark = 65554,
   /// <summary>
   /// Not supported.
   /// </summary>
-  EndnoteMark = unchecked((int)65555),
+  EndnoteMark = 65555,
   /// <summary>
   /// Not supported.
   /// </summary>
-  ManualPageBreak = unchecked((int)65564),
+  ManualPageBreak = 65564,
   /// <summary>
   /// Not supported.
   /// </summary>
-  AnyDigit = unchecked((int)65567),
+  AnyDigit = 65567,
   /// <summary>
   /// Not supported.
   /// </summary>
-  SectionBreak = unchecked((int)65580),
+  SectionBreak = 65580,
   /// <summary>
   /// Not supported.
   /// </summary>
-  AnyLetter = unchecked((int)65583),
+  AnyLetter = 65583,
   /// <summary>
   /// Not supported.
   /// </summary>
-  AnyCharacter = unchecked((int)65599),
+  AnyCharacter = 65599,
   /// <summary>
   /// Not supported.
   /// </summary>
-  WhiteSpace = unchecked((int)65655)
+  WhiteSpace = 65655
 }

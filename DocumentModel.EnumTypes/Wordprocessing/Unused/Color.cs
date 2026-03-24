@@ -8,9 +8,14 @@ namespace DocumentModel.Wordprocessing;
 [JsonConverter(typeof(StringEnumConverter))]
 public enum ColorType
 {
+  /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
   /// <summary>Auto color</summary>
   [OpenXmlEnumValue("Auto")]
-  Auto,
+  Auto = 1,
+
   /// <summary>Black</summary>
   [OpenXmlEnumValue("Black")]
   Black,

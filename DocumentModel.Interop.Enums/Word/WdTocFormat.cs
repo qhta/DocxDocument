@@ -8,29 +8,29 @@ public enum WdTocFormat
   /// <summary>
   /// Template formatting.
   /// </summary>
-  Template = unchecked((int)0),
+  Template = 0,
   /// <summary>
   /// Classic formatting.
   /// </summary>
-  Classic = unchecked((int)1),
+  Classic = 1,
   /// <summary>
   /// Distinctive formatting.
   /// </summary>
-  Distinctive = unchecked((int)2),
+  Distinctive = 2,
   /// <summary>
   /// Fancy formatting.
   /// </summary>
-  Fancy = unchecked((int)3),
+  Fancy = 3,
   /// <summary>
   /// Modern formatting.
   /// </summary>
-  Modern = unchecked((int)4),
+  Modern = 4,
   /// <summary>
   /// Formal formatting.
   /// </summary>
-  Formal = unchecked((int)5),
+  Formal = 5,
   /// <summary>
   /// Simple formatting.
   /// </summary>
-  Simple = unchecked((int)6)
+  Simple = 6
 }

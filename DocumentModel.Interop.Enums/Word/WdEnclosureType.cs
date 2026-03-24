@@ -8,17 +8,17 @@ public enum WdEnclosureType
   /// <summary>
   /// A circle.
   /// </summary>
-  Circle = unchecked((int)0),
+  Circle = 0,
   /// <summary>
   /// A square.
   /// </summary>
-  Square = unchecked((int)1),
+  Square = 1,
   /// <summary>
   /// A triangle.
   /// </summary>
-  Triangle = unchecked((int)2),
+  Triangle = 2,
   /// <summary>
   /// A diamond.
   /// </summary>
-  Diamond = unchecked((int)3)
+  Diamond = 3
 }

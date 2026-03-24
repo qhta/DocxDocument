@@ -8,17 +8,17 @@ public enum WdSubscriberFormats
   /// <summary>
   /// Not supported.
   /// </summary>
-  BestFormat = unchecked((int)0),
+  BestFormat = 0,
   /// <summary>
   /// Not supported.
   /// </summary>
-  RTF = unchecked((int)1),
+  RTF = 1,
   /// <summary>
   /// Not supported.
   /// </summary>
-  Text = unchecked((int)2),
+  Text = 2,
   /// <summary>
   /// Not supported.
   /// </summary>
-  Pict = unchecked((int)4)
+  Pict = 4
 }

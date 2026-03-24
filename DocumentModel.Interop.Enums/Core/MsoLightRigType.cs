@@ -54,13 +54,13 @@ public enum MsoLightRigType
   /// </summary>
   LegacyHarsh3 = 11,
   /// <summary>
-  /// Specifies the LegacyHarsh4 effect. public enum class MsoLightRigType ﾉ Expand table
+  /// Specifies the LegacyHarsh4 effect.
   /// </summary>
   LegacyHarsh4 = 12,
   /// <summary>
   /// Specifies the ThreePoint effect.
   /// </summary>
-  ThreePoint = 13,
+  ThreePoints = 13,
   /// <summary>
   /// Specifies the Balanced effect.
   /// </summary>
@@ -108,7 +108,7 @@ public enum MsoLightRigType
   /// <summary>
   /// Specifies the TwoPoint effect.
   /// </summary>
-  TwoPoint = 25,
+  TwoPoints = 25,
   /// <summary>
   /// Specifies the Glow effect.
   /// </summary>

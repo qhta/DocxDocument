@@ -9,17 +9,17 @@ public enum WdWrapSideType
   /// <summary>
   /// Both sides of the specified shape.
   /// </summary>
-  Both = unchecked((int)0),
+  Both = 0,
   /// <summary>
   /// Left side of shape only.
   /// </summary>
-  Left = unchecked((int)1),
+  Left = 1,
   /// <summary>
   /// Right side of shape only.
   /// </summary>
-  Right = unchecked((int)2),
+  Right = 2,
   /// <summary>
   /// Side of the shape that is farthest from the page margin.
   /// </summary>
-  Largest = unchecked((int)3)
+  Largest = 3
 }

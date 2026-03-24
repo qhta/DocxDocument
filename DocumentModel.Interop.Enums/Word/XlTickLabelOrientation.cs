@@ -8,21 +8,21 @@ public enum XlTickLabelOrientation
   /// <summary>
   /// Specifies the text orientation for tick-mark labels.
   /// </summary>
-  Upward = unchecked((int)-4171),
+  Upward = -4171,
   /// <summary>
   /// Specifies the text orientation for tick-mark labels.
   /// </summary>
-  Downward = unchecked((int)-4170),
+  Downward = -4170,
   /// <summary>
   /// Specifies the text orientation for tick-mark labels.
   /// </summary>
-  Vertical = unchecked((int)-4166),
+  Vertical = -4166,
   /// <summary>
   /// Specifies the text orientation for tick-mark labels.
   /// </summary>
-  Horizontal = unchecked((int)-4128),
+  Horizontal = -4128,
   /// <summary>
   /// Specifies the text orientation for tick-mark labels.
   /// </summary>
-  Automatic = unchecked((int)-4105)
+  Automatic = -4105
 }

@@ -8,13 +8,13 @@ public enum WdDocumentType
   /// <summary>
   /// Document.
   /// </summary>
-  Document = unchecked((int)0),
+  Document = 0,
   /// <summary>
   /// Template.
   /// </summary>
-  Template = unchecked((int)1),
+  Template = 1,
   /// <summary>
   /// Frameset.
   /// </summary>
-  Frameset = unchecked((int)2)
+  Frameset = 2
 }

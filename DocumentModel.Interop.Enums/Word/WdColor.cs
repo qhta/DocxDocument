@@ -8,242 +8,242 @@ public enum WdColor
   /// <summary>
   /// Black color.
   /// </summary>
-  Black = unchecked((int)0),
+  Black = 0,
   /// <summary>
   /// Dark red color.
   /// </summary>
-  DarkRed = unchecked((int)128),
+  DarkRed = 128,
   /// <summary>
   /// Red color.
   /// </summary>
-  Red = unchecked((int)255),
+  Red = 255,
   /// <summary>
   /// Dark green color.
   /// </summary>
-  DarkGreen = unchecked((int)13056),
+  DarkGreen = 13056,
   /// <summary>
   /// Olive green color.
   /// </summary>
-  OliveGreen = unchecked((int)13107),
+  OliveGreen = 13107,
   /// <summary>
   /// Brown color.
   /// </summary>
-  Brown = unchecked((int)13209),
+  Brown = 13209,
   /// <summary>
   /// Orange color.
   /// </summary>
-  Orange = unchecked((int)26367),
+  Orange = 26367,
   /// <summary>
   /// Green color.
   /// </summary>
-  Green = unchecked((int)32768),
+  Green = 32768,
   /// <summary>
   /// Dark yellow color.
   /// </summary>
-  DarkYellow = unchecked((int)32896),
+  DarkYellow = 32896,
   /// <summary>
   /// Light orange color. [System.Runtime.InteropServices.Guid("B95C2C1C-FA2F-319B-A6DA-8D560FD44553")] public enum
   /// WdColor ﾉ Expand table
   /// </summary>
-  LightOrange = unchecked((int)39423),
+  LightOrange = 39423,
   /// <summary>
   /// Lime color.
   /// </summary>
-  Lime = unchecked((int)52377),
+  Lime = 52377,
   /// <summary>
   /// Gold color.
   /// </summary>
-  Gold = unchecked((int)52479),
+  Gold = 52479,
   /// <summary>
   /// Bright green color.
   /// </summary>
-  BrightGreen = unchecked((int)65280),
+  BrightGreen = 65280,
   /// <summary>
   /// Yellow color.
   /// </summary>
-  Yellow = unchecked((int)65535),
+  Yellow = 65535,
   /// <summary>
   /// Shade 95 of gray color.
   /// </summary>
-  Gray95 = unchecked((int)789516),
+  Gray95 = 789516,
   /// <summary>
   /// Shade 90 of gray color.
   /// </summary>
-  Gray90 = unchecked((int)1644825),
+  Gray90 = 1644825,
   /// <summary>
   /// Shade 875 of gray color.
   /// </summary>
-  Gray875 = unchecked((int)2105376),
+  Gray875 = 2105376,
   /// <summary>
   /// Shade 85 of gray color.
   /// </summary>
-  Gray85 = unchecked((int)2500134),
+  Gray85 = 2500134,
   /// <summary>
   /// Shade 80 of gray color.
   /// </summary>
-  Gray80 = unchecked((int)3355443),
+  Gray80 = 3355443,
   /// <summary>
   /// Shade 75 of gray color.
   /// </summary>
-  Gray75 = unchecked((int)4210752),
+  Gray75 = 4210752,
   /// <summary>
   /// Shade 70 of gray color.
   /// </summary>
-  Gray70 = unchecked((int)5000268),
+  Gray70 = 5000268,
   /// <summary>
   /// Shade 65 of gray color.
   /// </summary>
-  Gray65 = unchecked((int)5855577),
+  Gray65 = 5855577,
   /// <summary>
   /// Shade 625 of gray color.
   /// </summary>
-  Gray625 = unchecked((int)6316128),
+  Gray625 = 6316128,
   /// <summary>
   /// Dark teal color.
   /// </summary>
-  DarkTeal = unchecked((int)6697728),
+  DarkTeal = 6697728,
   /// <summary>
   /// Plum color.
   /// </summary>
-  Plum = unchecked((int)6697881),
+  Plum = 6697881,
   /// <summary>
   /// Shade 60 of gray color.
   /// </summary>
-  Gray60 = unchecked((int)6710886),
+  Gray60 = 6710886,
   /// <summary>
   /// Sea green color.
   /// </summary>
-  SeaGreen = unchecked((int)6723891),
+  SeaGreen = 6723891,
   /// <summary>
   /// Shade 55 of gray color.
   /// </summary>
-  Gray55 = unchecked((int)7566195),
+  Gray55 = 7566195,
   /// <summary>
   /// Dark blue color.
   /// </summary>
-  DarkBlue = unchecked((int)8388608),
+  DarkBlue = 8388608,
   /// <summary>
   /// Violet color.
   /// </summary>
-  Violet = unchecked((int)8388736),
+  Violet = 8388736,
   /// <summary>
   /// Teal color.
   /// </summary>
-  Teal = unchecked((int)8421376),
+  Teal = 8421376,
   /// <summary>
   /// Shade 50 of gray color.
   /// </summary>
-  Gray50 = unchecked((int)8421504),
+  Gray50 = 8421504,
   /// <summary>
   /// Shade 45 of gray color.
   /// </summary>
-  Gray45 = unchecked((int)9211020),
+  Gray45 = 9211020,
   /// <summary>
   /// Indigo color.
   /// </summary>
-  Indigo = unchecked((int)10040115),
+  Indigo = 10040115,
   /// <summary>
   /// Blue-gray color.
   /// </summary>
-  BlueGray = unchecked((int)10053222),
+  BlueGray = 10053222,
   /// <summary>
   /// Shade 40 of gray color.
   /// </summary>
-  Gray40 = unchecked((int)10066329),
+  Gray40 = 10066329,
   /// <summary>
   /// Tan color.
   /// </summary>
-  Tan = unchecked((int)10079487),
+  Tan = 10079487,
   /// <summary>
   /// Light yellow color.
   /// </summary>
-  LightYellow = unchecked((int)10092543),
+  LightYellow = 10092543,
   /// <summary>
   /// Shade 375 of gray color.
   /// </summary>
-  Gray375 = unchecked((int)10526880),
+  Gray375 = 10526880,
   /// <summary>
   /// Shade 35 of gray color.
   /// </summary>
-  Gray35 = unchecked((int)10921638),
+  Gray35 = 10921638,
   /// <summary>
   /// Shade 30 of gray color.
   /// </summary>
-  Gray30 = unchecked((int)11776947),
+  Gray30 = 11776947,
   /// <summary>
   /// Shade 25 of gray color.
   /// </summary>
-  Gray25 = unchecked((int)12632256),
+  Gray25 = 12632256,
   /// <summary>
   /// Rose color.
   /// </summary>
-  Rose = unchecked((int)13408767),
+  Rose = 13408767,
   /// <summary>
   /// Aqua color.
   /// </summary>
-  Aqua = unchecked((int)13421619),
+  Aqua = 13421619,
   /// <summary>
   /// Shade 20 of gray color.
   /// </summary>
-  Gray20 = unchecked((int)13421772),
+  Gray20 = 13421772,
   /// <summary>
   /// Light green color.
   /// </summary>
-  LightGreen = unchecked((int)13434828),
+  LightGreen = 13434828,
   /// <summary>
   /// Shade 15 of gray color.
   /// </summary>
-  Gray15 = unchecked((int)14277081),
+  Gray15 = 14277081,
   /// <summary>
   /// Shade 125 of gray color.
   /// </summary>
-  Gray125 = unchecked((int)14737632),
+  Gray125 = 14737632,
   /// <summary>
   /// Shade 10 of gray color.
   /// </summary>
-  Gray10 = unchecked((int)15132390),
+  Gray10 = 15132390,
   /// <summary>
   /// Shade 05 of gray color.
   /// </summary>
-  Gray05 = unchecked((int)15987699),
+  Gray05 = 15987699,
   /// <summary>
   /// Blue color.
   /// </summary>
-  Blue = unchecked((int)16711680),
+  Blue = 16711680,
   /// <summary>
   /// Pink color.
   /// </summary>
-  Pink = unchecked((int)16711935),
+  Pink = 16711935,
   /// <summary>
   /// Light blue color.
   /// </summary>
-  LightBlue = unchecked((int)16737843),
+  LightBlue = 16737843,
   /// <summary>
   /// Lavender color.
   /// </summary>
-  Lavender = unchecked((int)16751052),
+  Lavender = 16751052,
   /// <summary>
   /// Sky blue color.
   /// </summary>
-  SkyBlue = unchecked((int)16763904),
+  SkyBlue = 16763904,
   /// <summary>
   /// Pale blue color.
   /// </summary>
-  PaleBlue = unchecked((int)16764057),
+  PaleBlue = 16764057,
   /// <summary>
   /// Turquoise color.
   /// </summary>
-  Turquoise = unchecked((int)16776960),
+  Turquoise = 16776960,
   /// <summary>
   /// Light turquoise color.
   /// </summary>
-  LightTurquoise = unchecked((int)16777164),
+  LightTurquoise = 16777164,
   /// <summary>
   /// White color.
   /// </summary>
-  White = unchecked((int)16777215),
+  White = 16777215,
   /// <summary>
   /// Specifies the 24-bit color to apply.
   /// </summary>
-  Automatic = unchecked((int)-16777216)
+  Automatic = -16777216
 }

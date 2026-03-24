@@ -8,537 +8,537 @@ public enum WdBuiltinStyle
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TocHeading = unchecked((int)-267),
+  TocHeading = -267,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Bibliography = unchecked((int)-266),
+  Bibliography = -266,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  BookTitle = unchecked((int)-265),
+  BookTitle = -265,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  IntenseReference = unchecked((int)-264),
+  IntenseReference = -264,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  SubtleReference = unchecked((int)-263),
+  SubtleReference = -263,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  IntenseEmphasis = unchecked((int)-262),
+  IntenseEmphasis = -262,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  SubtleEmphasis = unchecked((int)-261),
+  SubtleEmphasis = -261,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  IntenseQuote = unchecked((int)-182),
+  IntenseQuote = -182,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Quote = unchecked((int)-181),
+  Quote = -181,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  ListParagraph = unchecked((int)-180),
+  ListParagraph = -180,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableMediumList1Accent1 = unchecked((int)-178),
+  TableMediumList1Accent1 = -178,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableMediumShading2Accent1 = unchecked((int)-177),
+  TableMediumShading2Accent1 = -177,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableMediumShading1Accent1 = unchecked((int)-176),
+  TableMediumShading1Accent1 = -176,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableLightGridAccent1 = unchecked((int)-175),
+  TableLightGridAccent1 = -175,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableLightListAccent1 = unchecked((int)-174),
+  TableLightListAccent1 = -174,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableLightShadingAccent1 = unchecked((int)-173),
+  TableLightShadingAccent1 = -173,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableColorfulGrid = unchecked((int)-172),
+  TableColorfulGrid = -172,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableColorfulList = unchecked((int)-171),
+  TableColorfulList = -171,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableColorfulShading = unchecked((int)-170),
+  TableColorfulShading = -170,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableDarkList = unchecked((int)-169),
+  TableDarkList = -169,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableMediumGrid3 = unchecked((int)-168),
+  TableMediumGrid3 = -168,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableMediumGrid2 = unchecked((int)-167),
+  TableMediumGrid2 = -167,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableMediumGrid1 = unchecked((int)-166),
+  TableMediumGrid1 = -166,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableMediumList2 = unchecked((int)-165),
+  TableMediumList2 = -165,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableMediumList1 = unchecked((int)-164),
+  TableMediumList1 = -164,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableMediumShading2 = unchecked((int)-163),
+  TableMediumShading2 = -163,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableMediumShading1 = unchecked((int)-162),
+  TableMediumShading1 = -162,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableLightGrid = unchecked((int)-161),
+  TableLightGrid = -161,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableLightList = unchecked((int)-160),
+  TableLightList = -160,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableLightShading = unchecked((int)-159),
+  TableLightShading = -159,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  NormalObject = unchecked((int)-158),
+  NormalObject = -158,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  NormalTable = unchecked((int)-106),
+  NormalTable = -106,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  HtmlVar = unchecked((int)-105),
+  HtmlVar = -105,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  HtmlTt = unchecked((int)-104),
+  HtmlTt = -104,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  HtmlSamp = unchecked((int)-103),
+  HtmlSamp = -103,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  HtmlPre = unchecked((int)-102),
+  HtmlPre = -102,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  HtmlKbd = unchecked((int)-101),
+  HtmlKbd = -101,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  HtmlDfn = unchecked((int)-100),
+  HtmlDfn = -100,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  HtmlCode = unchecked((int)-99),
+  HtmlCode = -99,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  HtmlCite = unchecked((int)-98),
+  HtmlCite = -98,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  HtmlAddress = unchecked((int)-97),
+  HtmlAddress = -97,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  HtmlAcronym = unchecked((int)-96),
+  HtmlAcronym = -96,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  HtmlNormal = unchecked((int)-95),
+  HtmlNormal = -95,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  PlainText = unchecked((int)-91),
+  PlainText = -91,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  NavPane = unchecked((int)-90),
+  NavPane = -90,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Emphasis = unchecked((int)-89),
+  Emphasis = -89,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Strong = unchecked((int)-88),
+  Strong = -88,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  HyperlinkFollowed = unchecked((int)-87),
+  HyperlinkFollowed = -87,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Hyperlink = unchecked((int)-86),
+  Hyperlink = -86,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  BlockQuotation = unchecked((int)-85),
+  BlockQuotation = -85,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  BodyTextIndent3 = unchecked((int)-84),
+  BodyTextIndent3 = -84,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  BodyTextIndent2 = unchecked((int)-83),
+  BodyTextIndent2 = -83,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  BodyText3 = unchecked((int)-82),
+  BodyText3 = -82,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  BodyText2 = unchecked((int)-81),
+  BodyText2 = -81,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  NoteHeading = unchecked((int)-80),
+  NoteHeading = -80,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  BodyTextFirstIndent2 = unchecked((int)-79),
+  BodyTextFirstIndent2 = -79,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  BodyTextFirstIndent = unchecked((int)-78),
+  BodyTextFirstIndent = -78,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Date = unchecked((int)-77),
+  Date = -77,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Salutation = unchecked((int)-76),
+  Salutation = -76,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Subtitle = unchecked((int)-75),
+  Subtitle = -75,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  MessageHeader = unchecked((int)-74),
+  MessageHeader = -74,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  ListContinue5 = unchecked((int)-73),
+  ListContinue5 = -73,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  ListContinue4 = unchecked((int)-72),
+  ListContinue4 = -72,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  ListContinue3 = unchecked((int)-71),
+  ListContinue3 = -71,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  ListContinue2 = unchecked((int)-70),
+  ListContinue2 = -70,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  ListContinue = unchecked((int)-69),
+  ListContinue = -69,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  BodyTextIndent = unchecked((int)-68),
+  BodyTextIndent = -68,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  BodyText = unchecked((int)-67),
+  BodyText = -67,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  DefaultParagraphFont = unchecked((int)-66),
+  DefaultParagraphFont = -66,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Signature = unchecked((int)-65),
+  Signature = -65,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Closing = unchecked((int)-64),
+  Closing = -64,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Title = unchecked((int)-63),
+  Title = -63,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  ListNumber5 = unchecked((int)-62),
+  ListNumber5 = -62,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  ListNumber4 = unchecked((int)-61),
+  ListNumber4 = -61,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  ListNumber3 = unchecked((int)-60),
+  ListNumber3 = -60,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  ListNumber2 = unchecked((int)-59),
+  ListNumber2 = -59,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  ListBullet5 = unchecked((int)-58),
+  ListBullet5 = -58,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  ListBullet4 = unchecked((int)-57),
+  ListBullet4 = -57,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  ListBullet3 = unchecked((int)-56),
+  ListBullet3 = -56,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  ListBullet2 = unchecked((int)-55),
+  ListBullet2 = -55,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  List5 = unchecked((int)-54),
+  List5 = -54,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  List4 = unchecked((int)-53),
+  List4 = -53,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  List3 = unchecked((int)-52),
+  List3 = -52,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  List2 = unchecked((int)-51),
+  List2 = -51,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  ListNumber = unchecked((int)-50),
+  ListNumber = -50,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  ListBullet = unchecked((int)-49),
+  ListBullet = -49,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  List = unchecked((int)-48),
+  List = -48,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TOAHeading = unchecked((int)-47),
+  TOAHeading = -47,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  MacroText = unchecked((int)-46),
+  MacroText = -46,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableOfAuthorities = unchecked((int)-45),
+  TableOfAuthorities = -45,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  EndnoteText = unchecked((int)-44),
+  EndnoteText = -44,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  EndnoteReference = unchecked((int)-43),
+  EndnoteReference = -43,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  PageNumber = unchecked((int)-42),
+  PageNumber = -42,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  LineNumber = unchecked((int)-41),
+  LineNumber = -41,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  CommentReference = unchecked((int)-40),
+  CommentReference = -40,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  FootnoteReference = unchecked((int)-39),
+  FootnoteReference = -39,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  EnvelopeReturn = unchecked((int)-38),
+  EnvelopeReturn = -38,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  EnvelopeAddress = unchecked((int)-37),
+  EnvelopeAddress = -37,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TableOfFigures = unchecked((int)-36),
+  TableOfFigures = -36,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Caption = unchecked((int)-35),
+  Caption = -35,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  IndexHeading = unchecked((int)-34),
+  IndexHeading = -34,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Footer = unchecked((int)-33),
+  Footer = -33,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Header = unchecked((int)-32),
+  Header = -32,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  CommentText = unchecked((int)-31),
+  CommentText = -31,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  FootnoteText = unchecked((int)-30),
+  FootnoteText = -30,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  NormalIndent = unchecked((int)-29),
+  NormalIndent = -29,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TOC9 = unchecked((int)-28),
+  TOC9 = -28,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TOC8 = unchecked((int)-27),
+  TOC8 = -27,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TOC7 = unchecked((int)-26),
+  TOC7 = -26,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TOC6 = unchecked((int)-25),
+  TOC6 = -25,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TOC5 = unchecked((int)-24),
+  TOC5 = -24,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TOC4 = unchecked((int)-23),
+  TOC4 = -23,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TOC3 = unchecked((int)-22),
+  TOC3 = -22,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TOC2 = unchecked((int)-21),
+  TOC2 = -21,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  TOC1 = unchecked((int)-20),
+  TOC1 = -20,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Index9 = unchecked((int)-19),
+  Index9 = -19,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Index8 = unchecked((int)-18),
+  Index8 = -18,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Index7 = unchecked((int)-17),
+  Index7 = -17,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Index6 = unchecked((int)-16),
+  Index6 = -16,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Index5 = unchecked((int)-15),
+  Index5 = -15,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Index4 = unchecked((int)-14),
+  Index4 = -14,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Index3 = unchecked((int)-13),
+  Index3 = -13,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Index2 = unchecked((int)-12),
+  Index2 = -12,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Index1 = unchecked((int)-11),
+  Index1 = -11,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Heading9 = unchecked((int)-10),
+  Heading9 = -10,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Heading8 = unchecked((int)-9),
+  Heading8 = -9,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Heading7 = unchecked((int)-8),
+  Heading7 = -8,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Heading6 = unchecked((int)-7),
+  Heading6 = -7,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Heading5 = unchecked((int)-6),
+  Heading5 = -6,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Heading4 = unchecked((int)-5),
+  Heading4 = -5,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Heading3 = unchecked((int)-4),
+  Heading3 = -4,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Heading2 = unchecked((int)-3),
+  Heading2 = -3,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Heading1 = unchecked((int)-2),
+  Heading1 = -2,
   /// <summary>
   /// Specifies a built-in Microsoft Word style.
   /// </summary>
-  Normal = unchecked((int)-1)
+  Normal = -1
 }

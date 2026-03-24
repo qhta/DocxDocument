@@ -7,10 +7,15 @@ namespace DocumentModel.Vml;
 public enum FillType
 {
   /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   ///   Solid Fill.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXV.FillTypeValues.Solid))]
-  Solid,
+  Solid = 1,
+
   /// <summary>
   ///   Linear Gradient.
   /// </summary>

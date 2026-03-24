@@ -8,25 +8,25 @@ public enum WdTabAlignment
   /// <summary>
   /// Left aligned.
   /// </summary>
-  Left = unchecked((int)0),
+  Left = 0,
   /// <summary>
   /// Center aligned.
   /// </summary>
-  Center = unchecked((int)1),
+  Center = 1,
   /// <summary>
   /// Right aligned.
   /// </summary>
-  Right = unchecked((int)2),
+  Right = 2,
   /// <summary>
   /// Decimal aligned.
   /// </summary>
-  Decimal = unchecked((int)3),
+  Decimal = 3,
   /// <summary>
   /// Bar aligned.
   /// </summary>
-  Bar = unchecked((int)4),
+  Bar = 4,
   /// <summary>
   /// List aligned.
   /// </summary>
-  List = unchecked((int)6)
+  List = 6
 }

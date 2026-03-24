@@ -8,25 +8,25 @@ public enum WdTabLeader
   /// <summary>
   /// Spaces. default.
   /// </summary>
-  Spaces = unchecked((int)0),
+  Spaces = 0,
   /// <summary>
   /// Dots.
   /// </summary>
-  Dots = unchecked((int)1),
+  Dots = 1,
   /// <summary>
   /// Dashes.
   /// </summary>
-  Dashes = unchecked((int)2),
+  Dashes = 2,
   /// <summary>
   /// Double lines.
   /// </summary>
-  Lines = unchecked((int)3),
+  Lines = 3,
   /// <summary>
   /// A heavy line.
   /// </summary>
-  Heavy = unchecked((int)4),
+  Heavy = 4,
   /// <summary>
   /// A middle dot.
   /// </summary>
-  MiddleDot = unchecked((int)5)
+  MiddleDot = 5
 }

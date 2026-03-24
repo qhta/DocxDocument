@@ -8,21 +8,21 @@ public enum WdOMathSpacingRule
   /// <summary>
   /// Single spacing.
   /// </summary>
-  Single = unchecked((int)0),
+  Single = 0,
   /// <summary>
   /// One and half spaces for each line.
   /// </summary>
-  OnePtFive = unchecked((int)1),
+  OnePtFive = 1,
   /// <summary>
   /// Double spacing.
   /// </summary>
-  Double = unchecked((int)2),
+  Double = 2,
   /// <summary>
   /// Exact spacing measurement.
   /// </summary>
-  Exactly = unchecked((int)3),
+  Exactly = 3,
   /// <summary>
   /// Custom spacing measurement.
   /// </summary>
-  Multiple = unchecked((int)4)
+  Multiple = 4
 }

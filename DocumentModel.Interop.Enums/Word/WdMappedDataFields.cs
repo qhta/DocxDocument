@@ -8,122 +8,122 @@ public enum WdMappedDataFields
   /// <summary>
   /// Unique identifier field.
   /// </summary>
-  UniqueIdentifier = unchecked((int)1),
+  UniqueIdentifier = 1,
   /// <summary>
   /// Courtesy title field.
   /// </summary>
-  CourtesyTitle = unchecked((int)2),
+  CourtesyTitle = 2,
   /// <summary>
   /// First name field.
   /// </summary>
-  FirstName = unchecked((int)3),
+  FirstName = 3,
   /// <summary>
   /// Middle name field.
   /// </summary>
-  MiddleName = unchecked((int)4),
+  MiddleName = 4,
   /// <summary>
   /// Last name field.
   /// </summary>
-  LastName = unchecked((int)5),
+  LastName = 5,
   /// <summary>
   /// Suffix field.
   /// </summary>
-  Suffix = unchecked((int)6),
+  Suffix = 6,
   /// <summary>
   /// Nickname field.
   /// </summary>
-  Nickname = unchecked((int)7),
+  Nickname = 7,
   /// <summary>
   /// Job title field.
   /// </summary>
-  JobTitle = unchecked((int)8),
+  JobTitle = 8,
   /// <summary>
   /// Company field.
   /// </summary>
-  Company = unchecked((int)9),
+  Company = 9,
   /// <summary>
   /// Address 1 field.
   /// </summary>
-  Address1 = unchecked((int)10),
+  Address1 = 10,
   /// <summary>
   /// Address 2 field. [System.Runtime.InteropServices.Guid("0785E3D2-6965-3DD2-A870-81BBA8A8547F")] public enum
   /// WdMappedDataFields ﾉ Expand table
   /// </summary>
-  Address2 = unchecked((int)11),
+  Address2 = 11,
   /// <summary>
   /// City field.
   /// </summary>
-  City = unchecked((int)12),
+  City = 12,
   /// <summary>
   /// State field.
   /// </summary>
-  State = unchecked((int)13),
+  State = 13,
   /// <summary>
   /// Postal code field.
   /// </summary>
-  PostalCode = unchecked((int)14),
+  PostalCode = 14,
   /// <summary>
   /// Country/region field.
   /// </summary>
-  CountryRegion = unchecked((int)15),
+  CountryRegion = 15,
   /// <summary>
   /// Business phone field.
   /// </summary>
-  BusinessPhone = unchecked((int)16),
+  BusinessPhone = 16,
   /// <summary>
   /// Business fax field.
   /// </summary>
-  BusinessFax = unchecked((int)17),
+  BusinessFax = 17,
   /// <summary>
   /// Home phone field.
   /// </summary>
-  HomePhone = unchecked((int)18),
+  HomePhone = 18,
   /// <summary>
   /// Home fax field.
   /// </summary>
-  HomeFax = unchecked((int)19),
+  HomeFax = 19,
   /// <summary>
   /// E-mail address field.
   /// </summary>
-  EmailAddress = unchecked((int)20),
+  EmailAddress = 20,
   /// <summary>
   /// Web page unique resource identifier (URL) field.
   /// </summary>
-  WebPageURL = unchecked((int)21),
+  WebPageURL = 21,
   /// <summary>
   /// Spouse courtesy title field.
   /// </summary>
-  SpouseCourtesyTitle = unchecked((int)22),
+  SpouseCourtesyTitle = 22,
   /// <summary>
   /// Spouse first name field.
   /// </summary>
-  SpouseFirstName = unchecked((int)23),
+  SpouseFirstName = 23,
   /// <summary>
   /// Spouse middle name field.
   /// </summary>
-  SpouseMiddleName = unchecked((int)24),
+  SpouseMiddleName = 24,
   /// <summary>
   /// Spouse last name field.
   /// </summary>
-  SpouseLastName = unchecked((int)25),
+  SpouseLastName = 25,
   /// <summary>
   /// Spouse nickname field.
   /// </summary>
-  SpouseNickname = unchecked((int)26),
+  SpouseNickname = 26,
   /// <summary>
   /// Ruby first name field.
   /// </summary>
-  RubyFirstName = unchecked((int)27),
+  RubyFirstName = 27,
   /// <summary>
   /// Ruby last name field.
   /// </summary>
-  RubyLastName = unchecked((int)28),
+  RubyLastName = 28,
   /// <summary>
   /// Address 3 field.
   /// </summary>
-  Address3 = unchecked((int)29),
+  Address3 = 29,
   /// <summary>
   /// Department field.
   /// </summary>
-  Department = unchecked((int)30)
+  Department = 30
 }

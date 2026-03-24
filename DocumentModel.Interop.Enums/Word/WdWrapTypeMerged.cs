@@ -8,29 +8,29 @@ public enum WdWrapTypeMerged
   /// <summary>
   /// In line with text.
   /// </summary>
-  Inline = unchecked((int)0),
+  Inline = 0,
   /// <summary>
   /// Square.
   /// </summary>
-  Square = unchecked((int)1),
+  Square = 1,
   /// <summary>
   /// Tight.
   /// </summary>
-  Tight = unchecked((int)2),
+  Tight = 2,
   /// <summary>
   /// Behind text.
   /// </summary>
-  Behind = unchecked((int)3),
+  Behind = 3,
   /// <summary>
   /// In front of text.
   /// </summary>
-  Front = unchecked((int)4),
+  Front = 4,
   /// <summary>
   /// Through.
   /// </summary>
-  Through = unchecked((int)5),
+  Through = 5,
   /// <summary>
   /// Top and bottom.
   /// </summary>
-  TopBottom = unchecked((int)6)
+  TopBottom = 6
 }

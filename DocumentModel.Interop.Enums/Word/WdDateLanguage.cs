@@ -8,9 +8,9 @@ public enum WdDateLanguage
   /// <summary>
   /// Bidirectional date/time format.
   /// </summary>
-  Bidi = unchecked((int)10),
+  Bidi = 10,
   /// <summary>
   /// Latin date/time format.
   /// </summary>
-  Latin = unchecked((int)1033)
+  Latin = 1033
 }

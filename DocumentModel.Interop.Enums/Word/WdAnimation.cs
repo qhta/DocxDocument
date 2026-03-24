@@ -8,35 +8,35 @@ public enum WdAnimation
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  None = unchecked((int)0),
+  None = 0,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// wdAnimationBlinkingBackground2 This object, member, or enumeration is deprecated and is not intended to be
   /// used in your code.
   /// </summary>
-  LasVegasLights = unchecked((int)1),
+  LasVegasLights = 1,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  BlinkingBackground = unchecked((int)2),
+  BlinkingBackground = 2,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// wdAnimationMarchingBlackAnts4 This object, member, or enumeration is deprecated and is not intended to be used
   /// in your code.
   /// </summary>
-  SparkleText = unchecked((int)3),
+  SparkleText = 3,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  MarchingBlackAnts = unchecked((int)4),
+  MarchingBlackAnts = 4,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  MarchingRedAnts = unchecked((int)5),
+  MarchingRedAnts = 5,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not
   /// [System.Runtime.InteropServices.Guid("FCFEF17F-A1D7-396E-907E-C822026DE484")] public enum WdAnimation ﾉ Expand
   /// table intended to be used in your code.
   /// </summary>
-  Shimmer = unchecked((int)6)
+  Shimmer = 6
 }

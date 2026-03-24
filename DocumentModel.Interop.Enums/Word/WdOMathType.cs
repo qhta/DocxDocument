@@ -8,9 +8,9 @@ public enum WdOMathType
   /// <summary>
   /// Professional format.
   /// </summary>
-  Display = unchecked((int)0),
+  Display = 0,
   /// <summary>
   /// Inline.
   /// </summary>
-  Inline = unchecked((int)1)
+  Inline = 1
 }

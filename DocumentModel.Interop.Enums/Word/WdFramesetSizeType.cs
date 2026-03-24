@@ -8,14 +8,14 @@ public enum WdFramesetSizeType
   /// <summary>
   /// Word interprets the height or width of the specified frame as a percentage of the screen height or width.
   /// </summary>
-  Percent = unchecked((int)0),
+  Percent = 0,
   /// <summary>
   /// Microsoft Word interprets the height or width of the specified frame as a fixed value (in points).
   /// </summary>
-  Fixed = unchecked((int)1),
+  Fixed = 1,
   /// <summary>
   /// Word interprets the height or width of the specified frame as relative to the height or width of other frames
   /// on the frames page.
   /// </summary>
-  Relative = unchecked((int)2)
+  Relative = 2
 }
