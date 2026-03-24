@@ -5,14 +5,16 @@
 /// </remarks>
 public enum MsoTextDirection
 {
+  /// <summary>
+  /// No description is available.
+  /// </summary>
   Mixed = -2,
   /// <summary>
-  /// msoTextDirectionRightToLeft 2
+  /// No description is available.
   /// </summary>
   LeftToRight = 1,
   /// <summary>
-  /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoTextDirection ﾉ Expand
-  /// table
+  /// No description is available.
   /// </summary>
   RightToLeft = 2
 }

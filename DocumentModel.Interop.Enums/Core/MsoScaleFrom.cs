@@ -13,12 +13,11 @@ public enum MsoScaleFrom
   /// </summary>
   TopLeft,
   /// <summary>
-  /// Shape's midpoint retains its position. msoScaleFromBottomRight2 Shape's bottom right corner retains its
-  /// position.
+  /// Shape's midpoint retains its position.
   /// </summary>
   Middle,
   /// <summary>
-  /// Specifies which part of the shape retains its position when the shape is scaled.
+  /// Shape's bottom right corner retains its position.
   /// </summary>
   BottomRight
 }

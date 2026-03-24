@@ -9,11 +9,11 @@
 public enum MsoCalloutAngleType
 {
   /// <summary>
-  /// Specifies the size of the angle between the callout line and the side of the callout text box.
+  /// Return value only; indicates a combination of the other states.
   /// </summary>
   Mixed = -2,
   /// <summary>
-  /// Specifies the size of the angle between the callout line and the side of the callout text box.
+  /// Default angle. Angle can be changed as you drag the object.
   /// </summary>
   Automatic = 1,
   /// <summary>

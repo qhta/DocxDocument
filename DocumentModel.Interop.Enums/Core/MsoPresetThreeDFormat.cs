@@ -57,7 +57,7 @@ public enum MsoPresetThreeDFormat
   /// </summary>
   ThreeD11 = 11,
   /// <summary>
-  /// Twelfth 3-D format. public enum class MsoPresetThreeDFormat ﾉ Expand table
+  /// Twelfth 3-D format. public enum class MsoPresetThreeDFormat
   /// </summary>
   ThreeD12 = 12,
   /// <summary>

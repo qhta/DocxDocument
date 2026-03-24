@@ -9,7 +9,7 @@
 public enum MsoAlertCancelType
 {
   /// <summary>
-  /// Specifies behavior when the user cancels an alert. Only msoAlertCancelDefault is currently supported.
+  /// Default behavior for canceling an alert.
   /// </summary>
   Default = -1,
   /// <summary>

@@ -57,7 +57,7 @@ public enum MsoChartElementType
   /// </summary>
   DataLabelShow = 201,
   /// <summary>
-  /// Display data label in center. public enum class MsoChartElementType ﾉ Expand table
+  /// Display data label in center. public enum class MsoChartElementType
   /// </summary>
   DataLabelCenter = 202,
   /// <summary>
@@ -101,12 +101,11 @@ public enum MsoChartElementType
   /// </summary>
   PrimaryCategoryAxisTitleNone = 300,
   /// <summary>
-  /// Display primary category axis title adjacent to the axis. msoElementPrimaryCategoryAxisTitleBelowAxis302
-  /// Display primary category axis title below the axis.
+  /// Display primary category axis title adjacent to the axis.
   /// </summary>
   PrimaryCategoryAxisTitleAdjacentToAxis = 301,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display primary category axis title below the axis.
   /// </summary>
   PrimaryCategoryAxisTitleBelowAxis = 302,
   /// <summary>
@@ -114,12 +113,11 @@ public enum MsoChartElementType
   /// </summary>
   PrimaryCategoryAxisTitleRotated = 303,
   /// <summary>
-  /// Display primary category axis title vertically. msoElementPrimaryCategoryAxisTitleHorizontal305 Display
-  /// primary category axis title horizontally.
+  /// Display primary category axis title vertically.
   /// </summary>
   PrimaryCategoryAxisTitleVertical = 304,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display primary category axis title horizontally.
   /// </summary>
   PrimaryCategoryAxisTitleHorizontal = 305,
   /// <summary>
@@ -143,21 +141,19 @@ public enum MsoChartElementType
   /// </summary>
   PrimaryValueAxisTitleVertical = 310,
   /// <summary>
-  /// Display primary value axis title horizontally. msoElementSecondaryCategoryAxisTitleNone312 Do not display
-  /// secondary category axis.
+  /// Display primary value axis title horizontally.
   /// </summary>
   PrimaryValueAxisTitleHorizontal = 311,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Do not display secondary category axis.
   /// </summary>
   SecondaryCategoryAxisTitleNone = 312,
   /// <summary>
-  /// Display secondary category axis title adjacent to axis. msoElementSecondaryCategoryAxisTitleBelowAxis314
-  /// Display secondary category axis title below axis.
+  /// Display secondary category axis title adjacent to axis.
   /// </summary>
   SecondaryCategoryAxisTitleAdjacentToAxis = 313,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display secondary category axis title below axis.
   /// </summary>
   SecondaryCategoryAxisTitleBelowAxis = 314,
   /// <summary>
@@ -165,12 +161,11 @@ public enum MsoChartElementType
   /// </summary>
   SecondaryCategoryAxisTitleRotated = 315,
   /// <summary>
-  /// Display secondary category axis title vertically. msoElementSecondaryCategoryAxisTitleHorizontal317 Display
-  /// secondary category axis title horizontally.
+  /// Display secondary category axis title vertically.
   /// </summary>
   SecondaryCategoryAxisTitleVertical = 316,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display secondary category axis title horizontally.
   /// </summary>
   SecondaryCategoryAxisTitleHorizontal = 317,
   /// <summary>
@@ -226,27 +221,23 @@ public enum MsoChartElementType
   /// </summary>
   PrimaryValueGridLinesMajor = 330,
   /// <summary>
-  /// Display both major and minor gridlines along primary value axis. msoElementPrimaryCategoryGridLinesNone332 Do
-  /// not display grid lines along primary category axis. msoElementPrimaryCategoryGridLinesMinor333 Display minor
-  /// gridlines along primary category axis. msoElementPrimaryCategoryGridLinesMajor334 Display major gridlines
-  /// along primary category axis. msoElementPrimaryCategoryGridLinesMinorMajor335 Display both major and minor
-  /// gridlines along primary category axis.
+  /// Display both major and minor gridlines along primary value axis.
   /// </summary>
   PrimaryValueGridLinesMinorMajor = 331,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Do not display grid lines along primary category axis.
   /// </summary>
   PrimaryCategoryGridLinesNone = 332,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display minor gridlines along primary category axis.
   /// </summary>
   PrimaryCategoryGridLinesMinor = 333,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display major gridlines along primary category axis.
   /// </summary>
   PrimaryCategoryGridLinesMajor = 334,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display both major and minor gridlines along primary category axis.
   /// </summary>
   PrimaryCategoryGridLinesMinorMajor = 335,
   /// <summary>
@@ -258,32 +249,27 @@ public enum MsoChartElementType
   /// </summary>
   SecondaryValueGridLinesMinor = 337,
   /// <summary>
-  /// Display major gridlines along secondary value axis. msoElementSecondaryValueGridLinesMinorMajor339 Display
-  /// both major and minor gridlines along secondary value axis. msoElementSecondaryCategoryGridLinesNone340 Do not
-  /// display grid lines along secondary category axis. msoElementSecondaryCategoryGridLinesMinor341 Display minor
-  /// gridlines along secondary category axis. msoElementSecondaryCategoryGridLinesMajor342 Display major gridlines
-  /// along secondary category axis. msoElementSecondaryCategoryGridLinesMinorMajor343 Display both major and minor
-  /// gridlines along secondary category axis.
+  /// Display major gridlines along secondary value axis.
   /// </summary>
   SecondaryValueGridLinesMajor = 338,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display both major and minor gridlines along secondary value axis.
   /// </summary>
   SecondaryValueGridLinesMinorMajor = 339,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Do not display grid lines along secondary category axis.
   /// </summary>
   SecondaryCategoryGridLinesNone = 340,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display minor gridlines along secondary category axis.
   /// </summary>
   SecondaryCategoryGridLinesMinor = 341,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display major gridlines along secondary category axis.
   /// </summary>
   SecondaryCategoryGridLinesMajor = 342,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display both major and minor gridlines along secondary category axis.
   /// </summary>
   SecondaryCategoryGridLinesMinorMajor = 343,
   /// <summary>
@@ -295,12 +281,11 @@ public enum MsoChartElementType
   /// </summary>
   SeriesAxisGridLinesMinor = 345,
   /// <summary>
-  /// Display major gridlines along series axis. msoElementSeriesAxisGridLinesMinorMajor347 Display both major and
-  /// minor gridlines along series axis.
+  /// Display major gridlines along series axis.
   /// </summary>
   SeriesAxisGridLinesMajor = 346,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display both major and minor gridlines along series axis.
   /// </summary>
   SeriesAxisGridLinesMinorMajor = 347,
   /// <summary>
@@ -308,12 +293,11 @@ public enum MsoChartElementType
   /// </summary>
   PrimaryCategoryAxisNone = 348,
   /// <summary>
-  /// Show primary category axis. msoElementPrimaryCategoryAxisWithoutLabels350 Display primary category axis
-  /// without labels.
+  /// Show primary category axis.
   /// </summary>
   PrimaryCategoryAxisShow = 349,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display primary category axis without labels.
   /// </summary>
   PrimaryCategoryAxisWithoutLabels = 350,
   /// <summary>
@@ -349,12 +333,11 @@ public enum MsoChartElementType
   /// </summary>
   SecondaryCategoryAxisNone = 358,
   /// <summary>
-  /// Display secondary category axis. msoElementSecondaryCategoryAxisWithoutLabels360 Display secondary category
-  /// axis without labels.
+  /// Display secondary category axis.
   /// </summary>
   SecondaryCategoryAxisShow = 359,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display secondary category axis without labels.
   /// </summary>
   SecondaryCategoryAxisWithoutLabels = 360,
   /// <summary>
@@ -398,11 +381,11 @@ public enum MsoChartElementType
   /// </summary>
   SeriesAxisWithoutLabeling = 370,
   /// <summary>
-  /// Reverse series axis. msoElementPrimaryCategoryAxisThousands372 Use thousands for primary category axis units.
+  /// Reverse series axis.
   /// </summary>
   SeriesAxisReverse = 371,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Use thousands for primary category axis units.
   /// </summary>
   PrimaryCategoryAxisThousands = 372,
   /// <summary>

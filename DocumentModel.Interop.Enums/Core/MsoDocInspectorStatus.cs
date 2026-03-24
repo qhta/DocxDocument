@@ -9,12 +9,11 @@
 public enum MsoDocInspectorStatus
 {
   /// <summary>
-  /// Indicates that the Document Inspector module returned no issues or errors. msoDocInspectorStatusIssueFound1
-  /// Indicates that the Document Inspector module found one or more occurrences of the search criteria.
+  /// Indicates that the Document Inspector module returned no issues or errors.
   /// </summary>
   DocOk,
   /// <summary>
-  /// Represents the results of running a Document Inspector module.
+  /// Indicates that the Document Inspector module found one or more occurrences of the search criteria.
   /// </summary>
   IssueFound,
   /// <summary>

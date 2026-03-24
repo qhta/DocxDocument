@@ -49,12 +49,11 @@ public enum MsoThemeColorSchemeIndex
   /// </summary>
   Accent6,
   /// <summary>
-  /// Specifies a color scheme for a hyperlink. msoThemeFollowedHyperlink12 Specifies a color scheme for a clicked
-  /// hyperlink. public enum class MsoThemeColorSchemeIndex ﾉ Expand table
+  /// Specifies a color scheme for a hyperlink.
   /// </summary>
   Hyperlink,
   /// <summary>
-  /// Indicates the color scheme for an Office theme.
+  /// Specifies a color scheme for a clicked hyperlink. public enum class MsoThemeColorSchemeIndex
   /// </summary>
   FollowedHyperlink
 }

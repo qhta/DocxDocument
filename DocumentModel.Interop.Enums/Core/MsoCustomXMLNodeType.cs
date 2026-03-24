@@ -21,11 +21,11 @@ public enum MsoCustomXMLNodeType
   /// </summary>
   Text = 3,
   /// <summary>
-  /// The node is a CData type. msoCustomXMLNodeProcessingInstruction7 The node is a processing instruction.
+  /// The node is a CData type.
   /// </summary>
   CData = 4,
   /// <summary>
-  /// Specifies the node type.
+  /// The node is a processing instruction.
   /// </summary>
   ProcessingInstruction = 7,
   /// <summary>

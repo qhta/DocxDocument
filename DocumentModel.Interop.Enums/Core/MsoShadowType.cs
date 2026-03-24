@@ -9,7 +9,7 @@
 public enum MsoShadowType
 {
   /// <summary>
-  /// Specifies the type of shadow displayed with a shape.
+  /// Not supported.
   /// </summary>
   Mixed = -2,
   /// <summary>

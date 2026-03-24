@@ -10,7 +10,7 @@ namespace DocumentModel.Interop.Core;
 public enum MsoLanguageID
 {
   /// <summary>
-  /// Specifies which language to use.
+  /// Mixed languages.
   /// </summary>
   Mixed = -2,
   /// <summary>
@@ -750,7 +750,7 @@ public enum MsoLanguageID
   /// </summary>
   SpanishModernSort = 3082,
   /// <summary>
-  /// Spanish. public enum class MsoLanguageID ﾉ Expand table
+  /// Spanish. public enum class MsoLanguageID
   /// </summary>
   Spanish = 1034,
   /// <summary>

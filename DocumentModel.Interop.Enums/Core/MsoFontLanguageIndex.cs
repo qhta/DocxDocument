@@ -9,13 +9,12 @@
 public enum MsoFontLanguageIndex
 {
   /// <summary>
-  /// Represents the Latin font face. msoThemeComplexScript2 Represents the font face for Complex Script languages.
-  /// The Complex Script language collection supports Arabic, Georgian, Hebrew, Indian, Thai and Vietnamese
-  /// alphabets.
+  /// Represents the Latin font face.
   /// </summary>
   Latin = 1,
   /// <summary>
-  /// Represents one of the three language fonts contained in the ThemeFonts collection
+  /// Represents the font face for Complex Script languages. The Complex Script language collection supports Arabic,
+  /// Georgian, Hebrew, Indian, Thai and Vietnamese alphabets.
   /// </summary>
   ComplexScript,
   /// <summary>

@@ -9,7 +9,7 @@
 public enum MsoSyncStatusType
 {
   /// <summary>
-  /// Specifies the status of the synchronization of the local copy of the active document with the server copy.
+  /// No shared workspace.
   /// </summary>
   NoSharedWorkspace = 0,
   /// <summary>

@@ -9,7 +9,7 @@
 public enum MsoLineFillType
 {
   /// <summary>
-  /// Specifies the type of fill for a line.
+  /// Specifies a mixture of line fill types.
   /// </summary>
   Mixed = -2,
   /// <summary>

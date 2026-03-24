@@ -7,24 +7,23 @@ namespace DocumentModel.Interop.Core;
 public enum MsoContactCardType
 {
   /// <summary>
-  /// msoContactCardTypePersonalContact 1
+  /// No description is available.
   /// </summary>
   EnterpriseContact,
   /// <summary>
-  /// msoContactCardTypeUnknownContact 2
+  /// No description is available.
   /// </summary>
   PersonalContact,
   /// <summary>
-  /// msoContactCardTypeEnterpriseGroup 3
+  /// No description is available.
   /// </summary>
   UnknownContact,
   /// <summary>
-  /// msoContactCardTypePersonalDistributionList 4
+  /// No description is available.
   /// </summary>
   EnterpriseGroup,
   /// <summary>
-  /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoContactCardType ﾉ
-  /// Expand table
+  /// No description is available.
   /// </summary>
   PersonalDistributionList
 }

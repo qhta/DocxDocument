@@ -17,16 +17,15 @@ public enum MsoCTPDockPosition
   /// </summary>
   Top,
   /// <summary>
-  /// Dock the task pane on the right side of the document window. msoCTPDockPositionBottom3 Dock the task pane at
-  /// the bottom of the document window. msoCTPDockPositionFloating4 Don't dock the task pane.
+  /// Dock the task pane on the right side of the document window.
   /// </summary>
   Right,
   /// <summary>
-  /// Specifies the docking behavior of the custom task pane.
+  /// Dock the task pane at the bottom of the document window.
   /// </summary>
   Bottom,
   /// <summary>
-  /// Specifies the docking behavior of the custom task pane.
+  /// Don't dock the task pane.
   /// </summary>
   Floating
 }

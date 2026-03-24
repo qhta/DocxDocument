@@ -9,7 +9,7 @@
 public enum MsoPathFormat
 {
   /// <summary>
-  /// Specifies the format of a file or folder path.
+  /// Represents a mixed format.
   /// </summary>
   Mixed = -2,
   /// <summary>

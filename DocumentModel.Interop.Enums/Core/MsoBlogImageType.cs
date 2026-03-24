@@ -6,16 +6,15 @@
 public enum MsoBlogImageType
 {
   /// <summary>
-  /// msoblogImageTypeGIF 2
+  /// No description is available.
   /// </summary>
   JPEG = 1,
   /// <summary>
-  /// msoblogImageTypePNG 3
+  /// No description is available.
   /// </summary>
   GIF,
   /// <summary>
-  /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoBlogImageType ﾉ Expand
-  /// table
+  /// No description is available.
   /// </summary>
   PNG
 }

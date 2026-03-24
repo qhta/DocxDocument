@@ -9,7 +9,7 @@
 public enum MsoLineJoinStyle
 {
   /// <summary>
-  /// Specifies the type of join where two lines connect.
+  /// Specifies a mixture of join types.
   /// </summary>
   Mixed = -2,
   /// <summary>

@@ -9,23 +9,23 @@
 public enum MsoSignatureSubset
 {
   /// <summary>
-  /// Specifies properties of the signature subset. These settings act as filters for signature sets.
+  /// All non-visible signatures plus all signed signature lines.
   /// </summary>
   SignaturesAllSigs,
   /// <summary>
-  /// Specifies properties of the signature subset. These settings act as filters for signature sets.
+  /// All non-visible signatures.
   /// </summary>
   SignaturesNonVisible,
   /// <summary>
-  /// Specifies properties of the signature subset. These settings act as filters for signature sets.
+  /// All signature lines.
   /// </summary>
   SignatureLines,
   /// <summary>
-  /// Specifies properties of the signature subset. These settings act as filters for signature sets.
+  /// Signature lines that have been signed.
   /// </summary>
   SignatureLinesSigned,
   /// <summary>
-  /// Specifies properties of the signature subset. These settings act as filters for signature sets.
+  /// Signature lines that have not been signed.
   /// </summary>
   SignatureLinesUnsigned,
   /// <summary>

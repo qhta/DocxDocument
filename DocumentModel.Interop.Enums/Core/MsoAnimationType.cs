@@ -26,10 +26,6 @@ public enum MsoAnimationType
   BeginSpeaking = 4,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
-  /// msoAnimationCharacterSuccessMajor6 This object, member, or enumeration is deprecated and is not intended to be
-  /// used in your code. msoAnimationGetAttentionMajor11 This object, member, or enumeration is deprecated and is
-  /// not intended to be used in your code. msoAnimationGetAttentionMinor12 This object, member, or enumeration is
-  /// deprecated and is not intended to be used in your code. public enum class MsoAnimationType ﾉ Expand table
   /// </summary>
   RestPose = 5,
   /// <summary>
@@ -41,7 +37,8 @@ public enum MsoAnimationType
   /// </summary>
   GetAttentionMajor = 11,
   /// <summary>
-  /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
+  /// This object, member, or enumeration is deprecated and is not intended to be used in your code. public enum
+  /// class MsoAnimationType
   /// </summary>
   GetAttentionMinor = 12,
   /// <summary>
@@ -54,9 +51,6 @@ public enum MsoAnimationType
   Printing = 18,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
-  /// msoAnimationWritingNotingSomething22 This object, member, or enumeration is deprecated and is not intended to
-  /// be used in your code. msoAnimationWorkingAtSomething23 This object, member, or enumeration is deprecated and
-  /// is not intended to be used in your code.
   /// </summary>
   GestureRight = 19,
   /// <summary>
@@ -97,8 +91,6 @@ public enum MsoAnimationType
   GetTechy = 101,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
-  /// msoAnimationCheckingSomething103 This object, member, or enumeration is deprecated and is not intended to be
-  /// used in your code.
   /// </summary>
   GetWizardy = 102,
   /// <summary>

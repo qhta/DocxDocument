@@ -9,7 +9,7 @@
 public enum MsoPresetTextEffect
 {
   /// <summary>
-  /// Specifies what text effect to use on a WordArt object.
+  /// Not used.
   /// </summary>
   Mixed = -2,
   /// <summary>

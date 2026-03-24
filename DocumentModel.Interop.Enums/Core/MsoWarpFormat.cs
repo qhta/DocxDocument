@@ -9,7 +9,7 @@
 public enum MsoWarpFormat
 {
   /// <summary>
-  /// Indicates various image warping formats.
+  /// Specifies a mix of warp formats.
   /// </summary>
   Mixed = -2,
   /// <summary>

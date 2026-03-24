@@ -9,7 +9,7 @@
 public enum MsoBlackWhiteMode
 {
   /// <summary>
-  /// Specifies how a shape appears when viewed in black-and-white mode.
+  /// Not supported.
   /// </summary>
   Mixed = -2,
   /// <summary>
@@ -41,7 +41,7 @@ public enum MsoBlackWhiteMode
   /// </summary>
   HighContrast = 7,
   /// <summary>
-  /// Black.
+  /// Not supported.
   /// </summary>
   Black = 8,
   /// <summary>

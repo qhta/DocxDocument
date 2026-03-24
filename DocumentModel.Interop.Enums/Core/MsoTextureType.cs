@@ -13,11 +13,11 @@ public enum MsoTextureType
   /// </summary>
   Mixed = -2,
   /// <summary>
-  /// Preset texture type. msoTextureUserDefined2 User-defined texture type.
+  /// Preset texture type.
   /// </summary>
   Preset = 1,
   /// <summary>
-  /// Specifies the texture type for the selected fill.
+  /// User-defined texture type.
   /// </summary>
   UserDefined = 2
 }

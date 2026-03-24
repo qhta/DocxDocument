@@ -6,16 +6,15 @@
 public enum MsoBlogCategorySupport
 {
   /// <summary>
-  /// msoBlogOneCategory 1
+  /// No description is available.
   /// </summary>
   NoCategories,
   /// <summary>
-  /// msoBlogMultipleCategories 2
+  /// No description is available.
   /// </summary>
   OneCategory,
   /// <summary>
-  /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoBlogCategorySupport ﾉ
-  /// Expand table
+  /// No description is available.
   /// </summary>
   MultipleCategories
 }

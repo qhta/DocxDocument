@@ -10,23 +10,23 @@ namespace DocumentModel.Interop.Core;
 public enum DocProperties
 {
   /// <summary>
-  /// Integer type
+  /// No description is available.
   /// </summary>
   Number = 1,
   /// <summary>
-  /// Boolean type
+  /// No description is available.
   /// </summary>
   Boolean,
   /// <summary>
-  /// Date-time type
+  /// No description is available.
   /// </summary>
   Date,
   /// <summary>
-  /// String type
+  /// No description is available.
   /// </summary>
   String,
   /// <summary>
-  /// Float type
+  /// No description is available.
   /// </summary>
   Float
 }

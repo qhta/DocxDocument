@@ -9,24 +9,23 @@
 public enum MsoGradientColorType
 {
   /// <summary>
-  /// Specifies the type of gradient used in a shape's fill.
+  /// Mixed gradient.
   /// </summary>
   ColorMixed = -2,
   /// <summary>
-  /// Specifies the type of gradient used in a shape's fill.
+  /// One-color gradient.
   /// </summary>
   OneColor = 1,
   /// <summary>
-  /// Two-color gradient. msoGradientPresetColors3 Gradient colors set according to a built-in gradient of the set
-  /// defined by the msoPresetGradientType constant. msoGradientMultiColor4
+  /// Two-color gradient.
   /// </summary>
   TwoColors = 2,
   /// <summary>
-  /// Specifies the type of gradient used in a shape's fill.
+  /// Gradient colors set according to a built-in gradient of the set defined by the msoPresetGradientType constant.
   /// </summary>
   PresetColors = 3,
   /// <summary>
-  /// Specifies the type of gradient used in a shape's fill.
+  /// No description is available.
   /// </summary>
   MultiColor = 4
 }

@@ -9,7 +9,7 @@
 public enum MsoAutoSize
 {
   /// <summary>
-  /// Determines the type of automatic sizing allowed.
+  /// A combination of automatic sizing schemes are used.
   /// </summary>
   Mixed = -2,
   /// <summary>

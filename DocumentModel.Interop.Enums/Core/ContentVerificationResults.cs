@@ -13,21 +13,19 @@ public enum ContentVerificationResults
   /// </summary>
   Error,
   /// <summary>
-  /// The content of the document is currently being verified. contverresUnverified2 The document has not been
-  /// verified.
+  /// The content of the document is currently being verified.
   /// </summary>
   Verifying,
   /// <summary>
-  /// Provides the status of verifying whether the content of a document has changed.
+  /// The document has not been verified.
   /// </summary>
   Unverified,
   /// <summary>
-  /// The content of the has been verified and is valid. contverresModified4 The content of the document has been
-  /// modified since it was digitally signed.
+  /// The content of the has been verified and is valid.
   /// </summary>
   Valid,
   /// <summary>
-  /// Provides the status of verifying whether the content of a document has changed.
+  /// The content of the document has been modified since it was digitally signed.
   /// </summary>
   Modified
 }

@@ -37,16 +37,15 @@ public enum MsoPermission
   /// </summary>
   Print = 16,
   /// <summary>
-  /// Permission to access the object model programmatically. msoPermissionFullControl64 Full control permissions.
-  /// msoPermissionAllCommon127
+  /// Permission to access the object model programmatically.
   /// </summary>
   ObjModel = 32,
   /// <summary>
-  /// Specifies an Information Rights Management (IRM) permission type for a document.
+  /// Full control permissions.
   /// </summary>
   FullControl = 64,
   /// <summary>
-  /// Specifies an Information Rights Management (IRM) permission type for a document.
+  /// No description is available.
   /// </summary>
   AllCommon = 127
 }

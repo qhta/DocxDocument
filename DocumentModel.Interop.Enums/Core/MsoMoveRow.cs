@@ -9,19 +9,19 @@
 public enum MsoMoveRow
 {
   /// <summary>
-  /// This enumeration has been deprecated and should not be used.
+  /// Internal use only.
   /// </summary>
   First = -4,
   /// <summary>
-  /// This enumeration has been deprecated and should not be used.
+  /// Internal use only.
   /// </summary>
   Prev,
   /// <summary>
-  /// This enumeration has been deprecated and should not be used.
+  /// Internal use only.
   /// </summary>
   Next,
   /// <summary>
-  /// This enumeration has been deprecated and should not be used.
+  /// Internal use only.
   /// </summary>
   Nbr
 }

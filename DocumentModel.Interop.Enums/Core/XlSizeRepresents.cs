@@ -11,13 +11,13 @@ namespace DocumentModel.Interop.Core;
 public enum XlSizeRepresents
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Indicates what the
-  /// size measurement is in relation to.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). The size measure is
+  /// for the width.
   /// </summary>
   Width = 2,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Indicates what the
-  /// size measurement is in relation to.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). The size measure is
+  /// for the area.
   /// </summary>
   Area = 1
 }

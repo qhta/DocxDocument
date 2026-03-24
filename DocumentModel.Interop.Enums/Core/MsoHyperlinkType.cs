@@ -9,15 +9,15 @@
 public enum MsoHyperlinkType
 {
   /// <summary>
-  /// Hyperlink
+  /// Hyperlink applies to a Range object.
   /// </summary>
   Range,
   /// <summary>
-  /// Hyperlink
+  /// Hyperlink applies to a Shape object.
   /// </summary>
   Shape,
   /// <summary>
-  /// Specifies the type of hyperlink.
+  /// Hyperlink applies to an inline shape. Used only with Microsoft Word.
   /// </summary>
   InlineShape
 }

@@ -11,24 +11,20 @@ namespace DocumentModel.Interop.Core;
 public enum XlHAlign
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
-  /// horizontal alignment for the object.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Center.
   /// </summary>
   Center = -4108,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
-  /// horizontal alignment for the object.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Center across
+  /// selection. public enum class XlHAlign
   /// </summary>
   CenterAcrossSelection = 7,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
-  /// horizontal alignment for the object.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Distribute.
   /// </summary>
   Distributed = -4117,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Fill.
-  /// xlHAlignCenterAcrossSelection7 You should access and use this enumeration from the Excel primary interop
-  /// assembly (PIA). Center across selection. public enum class XlHAlign ﾉ Expand table
   /// </summary>
   Fill = 5,
   /// <summary>
@@ -37,18 +33,15 @@ public enum XlHAlign
   /// </summary>
   General = 1,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
-  /// horizontal alignment for the object.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Justify.
   /// </summary>
   Justify = -4130,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
-  /// horizontal alignment for the object.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Left.
   /// </summary>
   Left = -4131,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
-  /// horizontal alignment for the object.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Right.
   /// </summary>
   Right = -4152
 }

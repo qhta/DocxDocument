@@ -14,8 +14,6 @@ public enum MsoBalloonType
   Buttons,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
-  /// msoBalloonTypeNumbers2 This object, member, or enumeration is deprecated and is not intended to be used in
-  /// your code.
   /// </summary>
   Bullets,
   /// <summary>

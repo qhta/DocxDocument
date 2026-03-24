@@ -5,10 +5,25 @@
 /// </remarks>
 public enum MsoBaselineAlignment
 {
+  /// <summary>
+  /// No description is available.
+  /// </summary>
   Mixed = -2,
+  /// <summary>
+  /// No description is available.
+  /// </summary>
   Baseline = 1,
+  /// <summary>
+  /// No description is available.
+  /// </summary>
   Top = 2,
+  /// <summary>
+  /// No description is available.
+  /// </summary>
   Center = 3,
   FarEast50 = 4,
+  /// <summary>
+  /// No description is available.
+  /// </summary>
   Auto = 5
 }

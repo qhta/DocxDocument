@@ -26,9 +26,6 @@ public enum MsoIconType
   AlertInfo = 4,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
-  /// msoIconAlertQuery6 This object, member, or enumeration is deprecated and is not intended to be used in your
-  /// code. msoIconAlertCritical7 This object, member, or enumeration is deprecated and is not intended to be used
-  /// in your code.
   /// </summary>
   AlertWarning = 5,
   /// <summary>

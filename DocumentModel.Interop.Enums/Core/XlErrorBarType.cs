@@ -11,8 +11,8 @@ namespace DocumentModel.Interop.Core;
 public enum XlErrorBarType
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the range
-  /// marked by error bars.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Range is set by
+  /// fixed values or cell values.
   /// </summary>
   Custom = -4114,
   /// <summary>
@@ -26,8 +26,8 @@ public enum XlErrorBarType
   /// </summary>
   Percent = 2,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the range
-  /// marked by error bars.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Shows range for
+  /// specified number of standard deviations.
   /// </summary>
   StDev = -4155,
   /// <summary>

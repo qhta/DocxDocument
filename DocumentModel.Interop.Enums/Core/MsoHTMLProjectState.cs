@@ -16,12 +16,11 @@ public enum MsoHTMLProjectState
   DocumentLocked = 1,
   /// <summary>
   /// Project is locked. In the Microsoft Script Editor, indicates that the Refresh toolbar is displayed.
-  /// msoHTMLProjectStateDocumentProjectUnlocked3 Document is unlocked. In a Microsoft Office host application or
-  /// Microsoft Script Editor, indicates that the Refresh toolbar is not displayed at all.
   /// </summary>
   ProjectLocked,
   /// <summary>
-  /// Specifies the current state of an HTMLProject object.
+  /// Document is unlocked. In a Microsoft Office host application or Microsoft Script Editor, indicates that the
+  /// Refresh toolbar is not displayed at all.
   /// </summary>
   DocumentProjectUnlocked
 }

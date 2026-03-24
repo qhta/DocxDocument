@@ -25,11 +25,11 @@ public enum MsoControlType
   /// </summary>
   Dropdown,
   /// <summary>
-  /// Combo box. msoControlButtonDropdown5 Drop-down button. Cannot be created through the object model.
+  /// Combo box.
   /// </summary>
   ComboBox,
   /// <summary>
-  /// Specifies the type of the command bar control.
+  /// Drop-down button. Cannot be created through the object model.
   /// </summary>
   ButtonDropdown,
   /// <summary>
@@ -37,17 +37,15 @@ public enum MsoControlType
   /// </summary>
   SplitDropdown,
   /// <summary>
-  /// OCX drop-down list. Cannot be created through the object model. msoControlGenericDropdown8 Generic drop-down
-  /// list. Cannot be created through the object model. msoControlGraphicDropdown9 Graphic drop-down list. Cannot be
-  /// created through the object model. public enum class MsoControlType ﾉ Expand table
+  /// OCX drop-down list. Cannot be created through the object model.
   /// </summary>
   OCXDropdown,
   /// <summary>
-  /// Specifies the type of the command bar control.
+  /// Generic drop-down list. Cannot be created through the object model.
   /// </summary>
   GenericDropdown,
   /// <summary>
-  /// Specifies the type of the command bar control.
+  /// Graphic drop-down list. Cannot be created through the object model. public enum class MsoControlType
   /// </summary>
   GraphicDropdown,
   /// <summary>
@@ -75,12 +73,11 @@ public enum MsoControlType
   /// </summary>
   Label,
   /// <summary>
-  /// Expanding grid. Cannot be created through the object model. msoControlSplitExpandingGrid17 Split expanding
-  /// grid. Cannot be created through the object model.
+  /// Expanding grid. Cannot be created through the object model.
   /// </summary>
   ExpandingGrid,
   /// <summary>
-  /// Specifies the type of the command bar control.
+  /// Split expanding grid. Cannot be created through the object model.
   /// </summary>
   SplitExpandingGrid,
   /// <summary>
@@ -112,13 +109,12 @@ public enum MsoControlType
   /// </summary>
   LabelEx,
   /// <summary>
-  /// Work pane. Cannot be created through the object model. msoControlAutoCompleteCombo26 Combo box in which the
-  /// first matching choice is automatically filled in as the user types. Cannot be created through the object
-  /// model.
+  /// Work pane. Cannot be created through the object model.
   /// </summary>
   WorkPane,
   /// <summary>
-  /// Specifies the type of the command bar control.
+  /// Combo box in which the first matching choice is automatically filled in as the user types. Cannot be created
+  /// through the object model.
   /// </summary>
   AutoCompleteCombo
 }

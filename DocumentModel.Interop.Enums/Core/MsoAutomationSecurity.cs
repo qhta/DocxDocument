@@ -13,12 +13,11 @@ public enum MsoAutomationSecurity
   /// </summary>
   Low = 1,
   /// <summary>
-  /// Uses the security setting specified in the Security dialog box. msoAutomationSecurityForceDisable3 Disables
-  /// all macros in all files opened programmatically, without showing any security alerts.
+  /// Uses the security setting specified in the Security dialog box.
   /// </summary>
   ByUI,
   /// <summary>
-  /// Specifies the security mode an application uses when programmatically opening files.
+  /// Disables all macros in all files opened programmatically, without showing any security alerts.
   /// </summary>
   ForceDisable
 }

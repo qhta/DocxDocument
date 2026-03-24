@@ -9,15 +9,15 @@
 public enum MsoDateTimeFormat
 {
   /// <summary>
-  /// Specifies the format of a date/time data type.
+  /// Specifies a mixed format.
   /// </summary>
   FormatMixed = -2,
   /// <summary>
-  /// Specifies a Mdyy format. msoDateTimeddddMMMMddyyyy2 Specifies a ddddMMMMddyyyy format.
+  /// Specifies a Mdyy format.
   /// </summary>
   Mdyy = 1,
   /// <summary>
-  /// Specifies the format of a date/time data type.
+  /// Specifies a ddddMMMMddyyyy format.
   /// </summary>
   ddddMMMMddyyyy = 2,
   /// <summary>
@@ -37,16 +37,15 @@ public enum MsoDateTimeFormat
   /// </summary>
   MMMMyy = 6,
   /// <summary>
-  /// Specifies a MMyy format. msoDateTimeMMddyyHmm8 Specifies a MMddyyHmm format. msoDateTimeMMddyyhmmAMPM9
-  /// Specifies a MMddyyhmmAMPM format.
+  /// Specifies a MMyy format.
   /// </summary>
   MMyy = 7,
   /// <summary>
-  /// Specifies the format of a date/time data type.
+  /// Specifies a MMddyyHmm format.
   /// </summary>
   MMddyyHmm = 8,
   /// <summary>
-  /// Specifies the format of a date/time data type.
+  /// Specifies a MMddyyhmmAMPM format.
   /// </summary>
   MMddyyhmmAMPM = 9,
   /// <summary>
@@ -58,12 +57,11 @@ public enum MsoDateTimeFormat
   /// </summary>
   Hmmss = 11,
   /// <summary>
-  /// Specifies a hmmAMPM format. public enum class MsoDateTimeFormat ﾉ Expand table msoDateTimehmmssAMPM13
-  /// Specifies a hmmssAMPM format.
+  /// Specifies a hmmAMPM format. public enum class MsoDateTimeFormat
   /// </summary>
   hmmAMPM = 12,
   /// <summary>
-  /// Specifies the format of a date/time data type.
+  /// Specifies a hmmssAMPM format.
   /// </summary>
   hmmssAMPM = 13,
   /// <summary>

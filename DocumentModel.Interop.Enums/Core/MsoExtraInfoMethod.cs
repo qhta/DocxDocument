@@ -9,7 +9,7 @@
 public enum MsoExtraInfoMethod
 {
   /// <summary>
-  /// Specifies how to use the value specified in the ExtraInfo property of the FollowHyperlink method.
+  /// The value specified in the ExtraInfo property is a string that is appended to the address.
   /// </summary>
   Get,
   /// <summary>

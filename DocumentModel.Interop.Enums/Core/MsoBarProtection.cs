@@ -21,11 +21,11 @@ public enum MsoBarProtection
   /// </summary>
   Resize = 2,
   /// <summary>
-  /// Command bar cannot be moved. msoBarNoChangeVisible8 Command bar cannot be hidden.
+  /// Command bar cannot be moved.
   /// </summary>
   Move = 4,
   /// <summary>
-  /// Specifies how a command bar is protected from user customization.
+  /// Command bar cannot be hidden.
   /// </summary>
   ChangeVisible = 8,
   /// <summary>
@@ -33,12 +33,11 @@ public enum MsoBarProtection
   /// </summary>
   ChangeDock = 0x10,
   /// <summary>
-  /// Command bar cannot be docked to the left or right. msoBarNoHorizontalDock64 Command bar cannot be docked to
-  /// the top or bottom.
+  /// Command bar cannot be docked to the left or right.
   /// </summary>
   VerticalDock = 0x20,
   /// <summary>
-  /// Specifies how a command bar is protected from user customization.
+  /// Command bar cannot be docked to the top or bottom.
   /// </summary>
   HorizontalDock = 0x40
 }

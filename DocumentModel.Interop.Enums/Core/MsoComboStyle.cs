@@ -9,11 +9,11 @@
 public enum MsoComboStyle
 {
   /// <summary>
-  /// Specifies whether the command bar combo box includes a label or not.
+  /// Combo box does not include a label.
   /// </summary>
   Normal,
   /// <summary>
-  /// Specifies whether the command bar combo box includes a label or not.
+  /// Combo box includes a label, specified by the Caption property of the combo box.
   /// </summary>
   Label
 }

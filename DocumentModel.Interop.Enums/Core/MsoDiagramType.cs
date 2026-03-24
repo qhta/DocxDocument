@@ -10,11 +10,11 @@ namespace DocumentModel.Interop.Core;
 public enum MsoDiagramType
 {
   /// <summary>
-  /// Specifies the type of diagram.
+  /// Return value only; indicates a combination of the other states.
   /// </summary>
   Mixed = -2,
   /// <summary>
-  /// Specifies the type of diagram.
+  /// Organization chart diagram.
   /// </summary>
   OrgChart = 1,
   /// <summary>
@@ -22,11 +22,11 @@ public enum MsoDiagramType
   /// </summary>
   Cycle = 2,
   /// <summary>
-  /// Radial diagram. msoDiagramPyramid4 Pyramid diagram.
+  /// Radial diagram.
   /// </summary>
   Radial = 3,
   /// <summary>
-  /// Specifies the type of diagram.
+  /// Pyramid diagram.
   /// </summary>
   Pyramid = 4,
   /// <summary>

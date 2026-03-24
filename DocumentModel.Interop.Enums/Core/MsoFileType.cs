@@ -23,12 +23,11 @@ public enum MsoFileType
   /// </summary>
   WordDocuments,
   /// <summary>
-  /// Microsoft Excel workbook (*.wbk). msoFileTypePowerPointPresentations5 PowerPoint presentation file (.ppt),
-  /// PowerPoint template file (.pot), or PowerPoint slide show file (*.pps).
+  /// Microsoft Excel workbook (*.wbk).
   /// </summary>
   ExcelWorkbooks,
   /// <summary>
-  /// Specifies a type of file.
+  /// PowerPoint presentation file (.ppt), PowerPoint template file (.pot), or PowerPoint slide show file (*.pps).
   /// </summary>
   PowerPointPresentations,
   /// <summary>
@@ -52,7 +51,7 @@ public enum MsoFileType
   /// </summary>
   MailItem,
   /// <summary>
-  /// Calendar item file (*.ics or *.vsc). public enum class MsoFileType ﾉ Expand table
+  /// Calendar item file (*.ics or *.vsc). public enum class MsoFileType
   /// </summary>
   CalendarItem,
   /// <summary>
@@ -72,11 +71,11 @@ public enum MsoFileType
   /// </summary>
   TaskItem,
   /// <summary>
-  /// PhotoDraw item file (*.mix). msoFileTypeDataConnectionFiles17 Data connection file (*.mdf).
+  /// PhotoDraw item file (*.mix).
   /// </summary>
   PhotoDrawFiles,
   /// <summary>
-  /// Specifies a type of file.
+  /// Data connection file (*.mdf).
   /// </summary>
   DataConnectionFiles,
   /// <summary>
@@ -84,11 +83,11 @@ public enum MsoFileType
   /// </summary>
   PublisherFiles,
   /// <summary>
-  /// Project file (*.mpd). msoFileTypeDocumentImagingFiles20 Microsoft Document Imaging file (*.mdi).
+  /// Project file (*.mpd).
   /// </summary>
   ProjectFiles,
   /// <summary>
-  /// Specifies a type of file.
+  /// Microsoft Document Imaging file (*.mdi).
   /// </summary>
   DocumentImagingFiles,
   /// <summary>

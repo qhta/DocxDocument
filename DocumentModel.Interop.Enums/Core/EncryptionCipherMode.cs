@@ -6,12 +6,11 @@
 public enum EncryptionCipherMode
 {
   /// <summary>
-  /// cipherModeCBC 1
+  /// No description is available.
   /// </summary>
   ECB,
   /// <summary>
-  /// Applies to Product Versions Office primary interop assembly Latest public enum class EncryptionCipherMode ﾉ
-  /// Expand table
+  /// No description is available.
   /// </summary>
   CBC
 }

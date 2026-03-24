@@ -9,7 +9,7 @@
 public enum MsoLineStyle
 {
   /// <summary>
-  /// Specifies the style for a line.
+  /// Not supported.
   /// </summary>
   StyleMixed = -2,
   /// <summary>
@@ -27,11 +27,11 @@ public enum MsoLineStyle
   ThinThick = 3,
   /// <summary>
   /// Thick line next to thin line. For horizontal lines, thick line is above thin line. For vertical lines, thick
-  /// line is to the left of the thin line. msoLineThickBetweenThin5 Thick line with a thin line on each side.
+  /// line is to the left of the thin line.
   /// </summary>
   ThickThin = 4,
   /// <summary>
-  /// Specifies the style for a line.
+  /// Thick line with a thin line on each side.
   /// </summary>
   ThickBetweenThin = 5
 }

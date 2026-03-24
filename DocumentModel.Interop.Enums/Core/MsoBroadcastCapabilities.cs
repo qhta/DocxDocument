@@ -9,17 +9,15 @@
 public enum MsoBroadcastCapabilities
 {
   /// <summary>
-  /// The size of the file being broadcasted is limited. BroadcastCapSupportsMeetingNotes2 The presenters and
-  /// attendees can take shared notes. BroadcastCapSupportsUpdateDoc4 The presenters and attendees can make updates
-  /// to the file during the broadcast.
+  /// The size of the file being broadcasted is limited.
   /// </summary>
   FileSizeLimited = 1,
   /// <summary>
-  /// Specifies the application capabilities available for a document or presentation broadcasting session.
+  /// The presenters and attendees can take shared notes.
   /// </summary>
   SupportsMeetingNotes = 2,
   /// <summary>
-  /// Specifies the application capabilities available for a document or presentation broadcasting session.
+  /// The presenters and attendees can make updates to the file during the broadcast.
   /// </summary>
   SupportsUpdateDoc = 4
 }

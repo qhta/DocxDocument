@@ -10,11 +10,11 @@ namespace DocumentModel.Interop.Core;
 public enum MsoScriptLanguage
 {
   /// <summary>
-  /// Java. msoScriptLanguageVisualBasic2 Visual Basic.
+  /// Java.
   /// </summary>
   Java = 1,
   /// <summary>
-  /// Specifies scripting language of the active script.
+  /// Visual Basic.
   /// </summary>
   VisualBasic,
   /// <summary>

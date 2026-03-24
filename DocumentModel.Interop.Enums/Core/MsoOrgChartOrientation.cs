@@ -9,7 +9,7 @@
 public enum MsoOrgChartOrientation
 {
   /// <summary>
-  /// Specifies orientation of an organization chart.
+  /// Mixed orientation.
   /// </summary>
   Mixed = -2,
   /// <summary>

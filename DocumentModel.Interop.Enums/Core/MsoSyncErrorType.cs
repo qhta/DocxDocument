@@ -9,15 +9,15 @@
 public enum MsoSyncErrorType
 {
   /// <summary>
-  /// No error. msoSyncErrorUnauthorizedUser1 Unauthorized user. msoSyncErrorCouldNotConnect2 Could not connect.
+  /// No error.
   /// </summary>
   None,
   /// <summary>
-  /// Specifies a document synchronization error.
+  /// Unauthorized user.
   /// </summary>
   UnauthorizedUser,
   /// <summary>
-  /// Specifies a document synchronization error.
+  /// Could not connect.
   /// </summary>
   CouldNotConnect,
   /// <summary>
@@ -45,25 +45,23 @@ public enum MsoSyncErrorType
   /// </summary>
   VirusDownload,
   /// <summary>
-  /// Upload error. msoSyncErrorUnknownDownload10 Download error.
+  /// Upload error.
   /// </summary>
   UnknownUpload,
   /// <summary>
-  /// Specifies a document synchronization error.
+  /// Download error.
   /// </summary>
   UnknownDownload,
   /// <summary>
-  /// Could not open file. msoSyncErrorCouldNotUpdate12 Could not update destination file. public enum class
-  /// MsoSyncErrorType ﾉ Expand table msoSyncErrorCouldNotCompare13 Source and destination files could not be
-  /// compared.
+  /// Could not open file.
   /// </summary>
   CouldNotOpen,
   /// <summary>
-  /// Specifies a document synchronization error.
+  /// Could not update destination file. public enum class MsoSyncErrorType
   /// </summary>
   CouldNotUpdate,
   /// <summary>
-  /// Specifies a document synchronization error.
+  /// Source and destination files could not be compared.
   /// </summary>
   CouldNotCompare,
   /// <summary>

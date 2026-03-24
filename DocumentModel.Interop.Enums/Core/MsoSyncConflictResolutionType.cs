@@ -9,11 +9,11 @@
 public enum MsoSyncConflictResolutionType
 {
   /// <summary>
-  /// Specifies how conflicts should be resolved when synchronizing a shared document.
+  /// Replace the server copy with the local copy.
   /// </summary>
   ClientWins,
   /// <summary>
-  /// Specifies how conflicts should be resolved when synchronizing a shared document.
+  /// Replace the local copy with the server copy.
   /// </summary>
   ServerWins,
   /// <summary>

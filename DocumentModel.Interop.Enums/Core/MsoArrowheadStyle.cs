@@ -9,7 +9,7 @@
 public enum MsoArrowheadStyle
 {
   /// <summary>
-  /// Specifies the style of the arrowhead at the end of a line.
+  /// Return value only; indicates a combination of the other states.
   /// </summary>
   StyleMixed = -2,
   /// <summary>
@@ -25,11 +25,11 @@ public enum MsoArrowheadStyle
   /// </summary>
   Open = 3,
   /// <summary>
-  /// Stealth-shaped. msoArrowheadDiamond5 Diamond-shaped.
+  /// Stealth-shaped.
   /// </summary>
   Stealth = 4,
   /// <summary>
-  /// Specifies the style of the arrowhead at the end of a line.
+  /// Diamond-shaped.
   /// </summary>
   Diamond = 5,
   /// <summary>

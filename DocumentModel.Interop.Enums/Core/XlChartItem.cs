@@ -40,7 +40,7 @@ public enum XlChartItem
   DataTable = 7,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Trend line. public
-  /// enum class XlChartItem ﾉ Expand table
+  /// enum class XlChartItem
   /// </summary>
   Trendline = 8,
   /// <summary>
@@ -92,7 +92,7 @@ public enum XlChartItem
   /// </summary>
   DownBars = 20,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Axis.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Axis title.
   /// </summary>
   Axis = 21,
   /// <summary>
@@ -104,7 +104,7 @@ public enum XlChartItem
   /// </summary>
   Floor = 23,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Legend.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Legend entry.
   /// </summary>
   Legend = 24,
   /// <summary>
@@ -129,19 +129,16 @@ public enum XlChartItem
   LeaderLines = 29,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Display unit label.
-  /// xlPivotChartFieldButton31 You should access and use this enumeration from the Excel primary interop assembly
-  /// (PIA). PivotChart field button. xlPivotChartDropZone32 You should access and use this enumeration from the
-  /// Excel primary interop assembly (PIA). PivotChart drop zone.
   /// </summary>
   DisplayUnitLabel = 30,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the type
-  /// of the chart item.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). PivotChart field
+  /// button.
   /// </summary>
   PivotChartFieldButton = 31,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the type
-  /// of the chart item.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). PivotChart drop
+  /// zone.
   /// </summary>
   PivotChartDropZone = 32
 }

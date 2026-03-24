@@ -49,12 +49,11 @@ public enum MsoMetaPropertyType
   /// </summary>
   Integer,
   /// <summary>
-  /// Represents a value used to lookup another value. public enum class MsoMetaPropertyType ﾉ Expand table
-  /// msoMetaPropertyTypeMultiChoiceLookup11 Represents a collection of choices used to lookup another value.
+  /// Represents a value used to lookup another value. public enum class MsoMetaPropertyType
   /// </summary>
   Lookup,
   /// <summary>
-  /// Specifies the metadata property type.
+  /// Represents a collection of choices used to lookup another value.
   /// </summary>
   MultiChoiceLookup,
   /// <summary>
@@ -86,15 +85,15 @@ public enum MsoMetaPropertyType
   /// </summary>
   User,
   /// <summary>
-  /// msoMetaPropertyTypeBusinessData 20 msoMetaPropertyTypeBusinessDataSecondary21
+  /// No description is available.
   /// </summary>
   UserMulti,
   /// <summary>
-  /// msoMetaPropertyTypeBusinessDataSecondary21
+  /// No description is available.
   /// </summary>
   BusinessData,
   /// <summary>
-  /// Specifies the metadata property type.
+  /// No description is available.
   /// </summary>
   BusinessDataSecondary,
   /// <summary>

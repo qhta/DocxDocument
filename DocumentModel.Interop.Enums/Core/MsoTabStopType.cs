@@ -5,22 +5,24 @@
 /// </remarks>
 public enum MsoTabStopType
 {
+  /// <summary>
+  /// No description is available.
+  /// </summary>
   Mixed = -2,
   /// <summary>
-  /// msoTabStopCenter 2
+  /// No description is available.
   /// </summary>
   Left = 1,
   /// <summary>
-  /// msoTabStopRight 3
+  /// No description is available.
   /// </summary>
   Center = 2,
   /// <summary>
-  /// msoTabStopDecimal 4
+  /// No description is available.
   /// </summary>
   Right = 3,
   /// <summary>
-  /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoTabStopType ﾉ Expand
-  /// table
+  /// No description is available.
   /// </summary>
   Decimal = 4
 }

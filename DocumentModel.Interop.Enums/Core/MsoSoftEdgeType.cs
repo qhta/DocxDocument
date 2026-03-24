@@ -9,7 +9,7 @@
 public enum MsoSoftEdgeType
 {
   /// <summary>
-  /// Specifies the type of soft edge effect.
+  /// A mix of soft edge types.
   /// </summary>
   Mixed = -2,
   /// <summary>

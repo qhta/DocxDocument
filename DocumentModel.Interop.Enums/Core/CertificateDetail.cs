@@ -17,11 +17,11 @@ public enum CertificateDetail
   /// </summary>
   Subject,
   /// <summary>
-  /// The issuing authority of the certification. certdetExpirationDate3 The expiration date of the certificate.
+  /// The issuing authority of the certification.
   /// </summary>
   Issuer,
   /// <summary>
-  /// Provides information about the digital certificate.
+  /// The expiration date of the certificate.
   /// </summary>
   ExpirationDate,
   /// <summary>

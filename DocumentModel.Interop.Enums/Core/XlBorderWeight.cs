@@ -11,13 +11,12 @@ namespace DocumentModel.Interop.Core;
 public enum XlBorderWeight
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the weight
-  /// of the border around a range.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Hairline (thinnest
+  /// border).
   /// </summary>
   Hairline = 1,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the weight
-  /// of the border around a range.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Medium.
   /// </summary>
   Medium = -4138,
   /// <summary>

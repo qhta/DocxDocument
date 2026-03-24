@@ -9,7 +9,7 @@
 public enum MsoTriState
 {
   /// <summary>
-  /// Specifies a tri-state Boolean value.
+  /// True.
   /// </summary>
   True = -1,
   /// <summary>
@@ -21,11 +21,11 @@ public enum MsoTriState
   /// </summary>
   CTrue = 1,
   /// <summary>
-  /// Specifies a tri-state Boolean value.
+  /// Not supported.
   /// </summary>
   TriStateToggle = -3,
   /// <summary>
-  /// Specifies a tri-state Boolean value.
+  /// Not supported.
   /// </summary>
   TriStateMixed = -2
 }

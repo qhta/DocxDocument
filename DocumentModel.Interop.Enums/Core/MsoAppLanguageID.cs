@@ -9,7 +9,7 @@
 public enum MsoAppLanguageID
 {
   /// <summary>
-  /// Specifies a language setting in a Microsoft Office application.
+  /// Install language.
   /// </summary>
   Install = 1,
   /// <summary>
@@ -17,16 +17,15 @@ public enum MsoAppLanguageID
   /// </summary>
   UI,
   /// <summary>
-  /// Help language. msoLanguageIDExeMode4 Execution mode language. msoLanguageIDUIPrevious5 User interface language
-  /// used prior to the current user interface language.
+  /// Help language.
   /// </summary>
   Help,
   /// <summary>
-  /// Specifies a language setting in a Microsoft Office application.
+  /// Execution mode language.
   /// </summary>
   ExeMode,
   /// <summary>
-  /// Specifies a language setting in a Microsoft Office application.
+  /// User interface language used prior to the current user interface language.
   /// </summary>
   UIPrevious
 }

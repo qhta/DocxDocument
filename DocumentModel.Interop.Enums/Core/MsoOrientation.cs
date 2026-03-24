@@ -9,7 +9,7 @@
 public enum MsoOrientation
 {
   /// <summary>
-  /// Specifies orientation of an object when it is displayed or printed.
+  /// Mixed orientation.
   /// </summary>
   Mixed = -2,
   /// <summary>

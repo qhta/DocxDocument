@@ -5,22 +5,24 @@
 /// </remarks>
 public enum MsoBulletType
 {
+  /// <summary>
+  /// No description is available.
+  /// </summary>
   Mixed = -2,
   /// <summary>
-  /// msoBulletUnnumbered 1
+  /// No description is available.
   /// </summary>
   None = 0,
   /// <summary>
-  /// msoBulletNumbered 2
+  /// No description is available.
   /// </summary>
   Unnumbered = 1,
   /// <summary>
-  /// msoBulletPicture 3
+  /// No description is available.
   /// </summary>
   Numbered = 2,
   /// <summary>
-  /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoBulletType ﾉ Expand
-  /// table
+  /// No description is available.
   /// </summary>
   Picture = 3
 }

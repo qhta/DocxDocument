@@ -7,20 +7,19 @@ namespace DocumentModel.Interop.Core;
 public enum MsoContactCardAddressType
 {
   /// <summary>
-  /// msoContactCardAddressTypeOutlook 1
+  /// No description is available.
   /// </summary>
   Unknown,
   /// <summary>
-  /// msoContactCardAddressTypeSMTP 2
+  /// No description is available.
   /// </summary>
   Outlook,
   /// <summary>
-  /// msoContactCardAddressTypeIM 3
+  /// No description is available.
   /// </summary>
   SMTP,
   /// <summary>
-  /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoContactCardAddressType
-  /// ﾉ Expand table
+  /// No description is available.
   /// </summary>
   IM
 }

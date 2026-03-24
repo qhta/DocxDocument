@@ -13,12 +13,11 @@ public enum MsoCharacterSet
   /// </summary>
   Arabic = 1,
   /// <summary>
-  /// Cyrillic character set. msoCharacterSetEnglishWesternEuropeanOtherLatinScript3 English, Western European, and
-  /// other Latin script character set.
+  /// Cyrillic character set.
   /// </summary>
   Cyrillic,
   /// <summary>
-  /// Specifies the character set to be used when rendering text.
+  /// English, Western European, and other Latin script character set.
   /// </summary>
   EnglishWesternEuropeanOtherLatinScript,
   /// <summary>
@@ -54,7 +53,7 @@ public enum MsoCharacterSet
   /// </summary>
   TraditionalChinese,
   /// <summary>
-  /// Vietnamese character set. public enum class MsoCharacterSet ﾉ Expand table
+  /// Vietnamese character set. public enum class MsoCharacterSet
   /// </summary>
   Vietnamese
 }

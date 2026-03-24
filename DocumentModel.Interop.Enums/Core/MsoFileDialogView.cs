@@ -9,35 +9,31 @@
 public enum MsoFileDialogView
 {
   /// <summary>
-  /// Files displayed in a list without details. msoFileDialogViewDetails2 Files displayed in a list with detail
-  /// information. msoFileDialogViewProperties3 Files displayed in a list with a pane showing the selected file's
-  /// properties. msoFileDialogViewPreview4 Files displayed in a list with a preview pane showing the selected file.
-  /// msoFileDialogViewThumbnail5 Files displayed as thumbnails. msoFileDialogViewLargeIcons6 Files displayed as
-  /// large icons. msoFileDialogViewSmallIcons7 Files displayed as small icons.
+  /// Files displayed in a list without details.
   /// </summary>
   List = 1,
   /// <summary>
-  /// Specifies the view presented to the user in a file dialog box.
+  /// Files displayed in a list with detail information.
   /// </summary>
   Details,
   /// <summary>
-  /// Specifies the view presented to the user in a file dialog box.
+  /// Files displayed in a list with a pane showing the selected file's properties.
   /// </summary>
   Properties,
   /// <summary>
-  /// Specifies the view presented to the user in a file dialog box.
+  /// Files displayed in a list with a preview pane showing the selected file.
   /// </summary>
   Preview,
   /// <summary>
-  /// Specifies the view presented to the user in a file dialog box.
+  /// Files displayed as thumbnails.
   /// </summary>
   Thumbnail,
   /// <summary>
-  /// Specifies the view presented to the user in a file dialog box.
+  /// Files displayed as large icons.
   /// </summary>
   LargeIcons,
   /// <summary>
-  /// Specifies the view presented to the user in a file dialog box.
+  /// Files displayed as small icons.
   /// </summary>
   SmallIcons,
   /// <summary>
