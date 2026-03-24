@@ -9,33 +9,31 @@
 public enum MsoTextEffectAlignment
 {
   /// <summary>
-  /// Specifies alignment for WordArt text.
+  /// Not used.
   /// </summary>
   Mixed = -2,
   /// <summary>
-  /// Left-aligned. msoTextEffectAlignmentCentered2 Centered.
+  /// Left-aligned.
   /// </summary>
   Left = 1,
   /// <summary>
-  /// Specifies alignment for WordArt text.
+  /// Centered.
   /// </summary>
   Centered = 2,
   /// <summary>
-  /// Right- aligned. msoTextEffectAlignmentLetterJustify4 Text is justified. Spacing between letters may be
-  /// adjusted to justify text.
+  /// Right- aligned.
   /// </summary>
   Right = 3,
   /// <summary>
-  /// Specifies alignment for WordArt text.
+  /// Text is justified. Spacing between letters may be adjusted to justify text.
   /// </summary>
   LetterJustify = 4,
   /// <summary>
   /// Text is justified. Spacing between words (but not letters) may be adjusted to justify text.
-  /// msoTextEffectAlignmentStretchJustify6 Text is justified. Letters may be stretched to justify text.
   /// </summary>
   WordJustify = 5,
   /// <summary>
-  /// Specifies alignment for WordArt text.
+  /// Text is justified. Letters may be stretched to justify text.
   /// </summary>
   StretchJustify = 6
 }

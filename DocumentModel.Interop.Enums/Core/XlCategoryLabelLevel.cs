@@ -11,18 +11,18 @@ namespace DocumentModel.Interop.Core;
 public enum XlCategoryLabelLevel
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
-  /// category labels for the category label levels.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Set no category
+  /// labels in the chart. Defaults to automatic indexed labels.
   /// </summary>
   None = -3,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
-  /// category labels for the category label levels.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Indicates literal
+  /// data in the category labels.
   /// </summary>
   Custom,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
-  /// category labels for the category label levels.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Set category labels
+  /// to all category label levels w/in range on the chart.
   /// </summary>
   All
 }

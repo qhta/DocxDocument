@@ -19,13 +19,12 @@ public enum XlChartSplitType
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Second chart
   /// displays values less than some percentage of the total value. The percentage is specified by the SplitValue
-  /// property. xlSplitByCustomSplit4 You should access and use this enumeration from the Excel primary interop
-  /// assembly (PIA). Arbitrary slides are displayed in the second chart.
+  /// property.
   /// </summary>
   PercentValue = 3,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the values
-  /// displayed in the second chart in a pie chart or a bar of pie chart.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Arbitrary slides are
+  /// displayed in the second chart.
   /// </summary>
   CustomSplit = 4,
   /// <summary>

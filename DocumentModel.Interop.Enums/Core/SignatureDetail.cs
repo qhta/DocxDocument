@@ -25,11 +25,11 @@ public enum SignatureDetail
   /// </summary>
   OfficeVersion,
   /// <summary>
-  /// Specifies the Windows version. sigdetNumberOfMonitors5 Specifies the number of monitors
+  /// Specifies the Windows version.
   /// </summary>
   WindowsVersion,
   /// <summary>
-  /// Indicates additional information about a signature.
+  /// Specifies the number of monitors
   /// </summary>
   NumberOfMonitors,
   /// <summary>
@@ -57,7 +57,7 @@ public enum SignatureDetail
   /// </summary>
   IPFormHash,
   /// <summary>
-  /// Specifies the IP current view. public enum class SignatureDetail ﾉ Expand table
+  /// Specifies the IP current view. public enum class SignatureDetail
   /// </summary>
   IPCurrentView,
   /// <summary>
@@ -77,10 +77,7 @@ public enum SignatureDetail
   /// </summary>
   DelSuggSigner,
   /// <summary>
-  /// Specifies the set of suggested signer's delegates. sigdetDelSuggSignerLine218 Specifies the suggested signer's
-  /// delegate's signature line. sigdetDelSuggSignerLine2Set19 Specifies the set of suggested signer's delegate's
-  /// signature lines. sigdetDelSuggSignerEmail20 Specifies the suggested signer's delegate's e-mail.
-  /// sigdetDelSuggSignerEmailSet21 Indicates whether an email for a suggested signer delegate has been specified.
+  /// Specifies the set of suggested signer's delegates.
   /// </summary>
   DelSuggSignerSet,
   /// <summary>
@@ -88,15 +85,15 @@ public enum SignatureDetail
   /// </summary>
   DelSuggSignerLine2,
   /// <summary>
-  /// Indicates additional information about a signature.
+  /// Specifies the set of suggested signer's delegate's signature lines.
   /// </summary>
   DelSuggSignerLine2Set,
   /// <summary>
-  /// Indicates additional information about a signature.
+  /// Specifies the suggested signer's delegate's e-mail.
   /// </summary>
   DelSuggSignerEmail,
   /// <summary>
-  /// Indicates additional information about a signature.
+  /// Indicates whether an email for a suggested signer delegate has been specified.
   /// </summary>
   DelSuggSignerEmailSet
 }

@@ -10,12 +10,11 @@ namespace DocumentModel.Interop.Core;
 public enum MsoButtonStyleHidden
 {
   /// <summary>
-  /// msoButtonTextBelow 8
+  /// No description is available.
   /// </summary>
   WrapText = 4,
   /// <summary>
-  /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoButtonStyleHidden ﾉ
-  /// Expand table
+  /// No description is available.
   /// </summary>
   TextBelow = 8
 }

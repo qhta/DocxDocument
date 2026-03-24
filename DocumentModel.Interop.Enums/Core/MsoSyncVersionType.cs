@@ -9,7 +9,8 @@
 public enum MsoSyncVersionType
 {
   /// <summary>
-  /// Specifies which version of a shared document to open alongside the currently open local version.
+  /// Opens the copy of the document that is created whenever the user overwrites the local copy with the server
+  /// copy.
   /// </summary>
   LastViewed,
   /// <summary>

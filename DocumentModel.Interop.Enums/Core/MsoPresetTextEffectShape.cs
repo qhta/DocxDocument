@@ -9,7 +9,7 @@
 public enum MsoPresetTextEffectShape
 {
   /// <summary>
-  /// Specifies shape of WordArt text.
+  /// Not used.
   /// </summary>
   Mixed = -2,
   /// <summary>
@@ -29,12 +29,11 @@ public enum MsoPresetTextEffectShape
   /// </summary>
   TriangleDown = 4,
   /// <summary>
-  /// Text slants down to its center point and then slants up. msoTextEffectShapeChevronDown6 Text slants up to its
-  /// center point and then slants down.
+  /// Text slants down to its center point and then slants up.
   /// </summary>
   ChevronUp = 5,
   /// <summary>
-  /// Specifies shape of WordArt text.
+  /// Text slants up to its center point and then slants down.
   /// </summary>
   ChevronDown = 6,
   /// <summary>
@@ -46,15 +45,15 @@ public enum MsoPresetTextEffectShape
   /// </summary>
   RingOutside = 8,
   /// <summary>
-  /// Text is an arch that curves up. msoTextEffectShapeArchDownCurve10 Text is an arch that curves down.
+  /// Text is an arch that curves up.
   /// </summary>
   ArchUpCurve = 9,
   /// <summary>
-  /// Specifies shape of WordArt text.
+  /// Text is an arch that curves down.
   /// </summary>
   ArchDownCurve = 10,
   /// <summary>
-  /// Text follows a circle, reading clockwise. public enum class MsoPresetTextEffectShape ﾉ Expand table
+  /// Text follows a circle, reading clockwise. public enum class MsoPresetTextEffectShape
   /// </summary>
   CircleCurve = 11,
   /// <summary>
@@ -116,18 +115,16 @@ public enum MsoPresetTextEffectShape
   Inflate = 25,
   /// <summary>
   /// Font size decreases to the text's midpoint, then increases to the starting size.
-  /// msoTextEffectShapeInflateBottom27 Font size of text increases to its center point, then decreases. Center
-  /// point of each letter follows an arch that curves downward. msoTextEffectShapeDeflateBottom28 Font size
-  /// decreases to the text's midpoint, then increases to the starting size, while keeping the top of the text along
-  /// the same curve.
   /// </summary>
   Deflate = 26,
   /// <summary>
-  /// Specifies shape of WordArt text.
+  /// Font size of text increases to its center point, then decreases. Center point of each letter follows an arch
+  /// that curves downward.
   /// </summary>
   InflateBottom = 27,
   /// <summary>
-  /// Specifies shape of WordArt text.
+  /// Font size decreases to the text's midpoint, then increases to the starting size, while keeping the top of the
+  /// text along the same curve.
   /// </summary>
   DeflateBottom = 28,
   /// <summary>
@@ -137,17 +134,15 @@ public enum MsoPresetTextEffectShape
   InflateTop = 29,
   /// <summary>
   /// Font size decreases to the text's midpoint, then increases to the starting size, while keeping the bottom of
-  /// the text along the same curve. msoTextEffectShapeDeflateInflate31 Font size increases to the text's midpoint,
-  /// then decreases to the starting size. msoTextEffectShapeDeflateInflateDeflate32 Font size decreases, increases,
-  /// and decreases again across the text.
+  /// the text along the same curve.
   /// </summary>
   DeflateTop = 30,
   /// <summary>
-  /// Specifies shape of WordArt text.
+  /// Font size increases to the text's midpoint, then decreases to the starting size.
   /// </summary>
   DeflateInflate = 31,
   /// <summary>
-  /// Specifies shape of WordArt text.
+  /// Font size decreases, increases, and decreases again across the text.
   /// </summary>
   DeflateInflateDeflate = 32,
   /// <summary>
@@ -175,12 +170,11 @@ public enum MsoPresetTextEffectShape
   /// </summary>
   SlantDown = 38,
   /// <summary>
-  /// Text slants down and to the right as font size increases. msoTextEffectShapeCascadeDown40 Text slants up and
-  /// to the right as font size decreases.
+  /// Text slants down and to the right as font size increases.
   /// </summary>
   CascadeUp = 39,
   /// <summary>
-  /// Specifies shape of WordArt text.
+  /// Text slants up and to the right as font size decreases.
   /// </summary>
   CascadeDown = 40
 }

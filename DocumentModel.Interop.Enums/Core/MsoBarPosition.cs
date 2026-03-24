@@ -21,20 +21,19 @@ public enum MsoBarPosition
   /// </summary>
   Right,
   /// <summary>
-  /// Command bar is docked at the bottom of the application window. msoBarFloating4 Command bar floats on top of
-  /// the application window.
+  /// Command bar is docked at the bottom of the application window.
   /// </summary>
   Bottom,
   /// <summary>
-  /// Specifies the position or behavior of a command bar.
+  /// Command bar floats on top of the application window.
   /// </summary>
   Floating,
   /// <summary>
-  /// Command bar will be a shortcut menu. msoBarMenuBar6 Command bar will be a menu bar (Macintosh only).
+  /// Command bar will be a shortcut menu.
   /// </summary>
   Popup,
   /// <summary>
-  /// Specifies the position or behavior of a command bar.
+  /// Command bar will be a menu bar (Macintosh only).
   /// </summary>
   MenuBar
 }

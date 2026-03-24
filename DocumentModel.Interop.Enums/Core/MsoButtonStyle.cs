@@ -21,24 +21,23 @@ public enum MsoButtonStyle
   /// </summary>
   Caption = 2,
   /// <summary>
-  /// Image and text, with text to the right of image. msoButtonIconAndWrapCaption7 Image with text wrapped and to
-  /// the right of the image. msoButtonIconAndCaptionBelow11 Image with text below.
+  /// Image and text, with text to the right of image.
   /// </summary>
   IconAndCaption = 3,
   /// <summary>
-  /// Specifies the style of a command bar button.
+  /// Image with text wrapped and to the right of the image.
   /// </summary>
   IconAndWrapCaption = 7,
   /// <summary>
-  /// Specifies the style of a command bar button.
+  /// Image with text below.
   /// </summary>
   IconAndCaptionBelow = 11,
   /// <summary>
-  /// Text only, centered and wrapped. msoButtonIconAndWrapCaptionBelow15 Image with text wrapped below image.
+  /// Text only, centered and wrapped.
   /// </summary>
   WrapCaption = 14,
   /// <summary>
-  /// Specifies the style of a command bar button.
+  /// Image with text wrapped below image.
   /// </summary>
   IconAndWrapCaptionBelow = 15
 }

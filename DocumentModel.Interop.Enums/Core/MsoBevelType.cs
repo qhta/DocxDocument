@@ -9,7 +9,7 @@
 public enum MsoBevelType
 {
   /// <summary>
-  /// Indicates the bevel type of a ThreeDFormat object.
+  /// Specifies a mixed type bevel.
   /// </summary>
   TypeMixed = -2,
   /// <summary>
@@ -57,7 +57,7 @@ public enum MsoBevelType
   /// </summary>
   Riblet = 11,
   /// <summary>
-  /// Specifies a HardEdge bevel. public enum class MsoBevelType ﾉ Expand table
+  /// Specifies a HardEdge bevel. public enum class MsoBevelType
   /// </summary>
   HardEdge = 12,
   /// <summary>

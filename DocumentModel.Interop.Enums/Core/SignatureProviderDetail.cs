@@ -9,11 +9,11 @@
 public enum SignatureProviderDetail
 {
   /// <summary>
-  /// The URL of the signature provider. sigprovdetHashAlgorithm1 Hash algorithm used to hash the data in the file.
+  /// The URL of the signature provider.
   /// </summary>
   Url,
   /// <summary>
-  /// Specifies properties of a signature provider.
+  /// Hash algorithm used to hash the data in the file.
   /// </summary>
   HashAlgorithm,
   /// <summary>
@@ -21,11 +21,11 @@ public enum SignatureProviderDetail
   /// </summary>
   UIOnly,
   /// <summary>
-  /// sigprovdetUseOfficeStampUI4
+  /// No description is available.
   /// </summary>
   UseOfficeUI,
   /// <summary>
-  /// Specifies properties of a signature provider.
+  /// No description is available.
   /// </summary>
   UseOfficeStampUI
 }

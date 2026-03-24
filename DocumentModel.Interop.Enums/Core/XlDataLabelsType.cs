@@ -11,8 +11,7 @@ namespace DocumentModel.Interop.Core;
 public enum XlDataLabelsType
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the type
-  /// of data label to apply. The default is typically xlDataLabelsShowValue.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). No data labels.
   /// </summary>
   None = -4142,
   /// <summary>
@@ -33,14 +32,11 @@ public enum XlDataLabelsType
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Percentage of the
   /// total, and category for the point. Available only for pie charts and doughnut charts.
-  /// xlDataLabelsShowBubbleSizes6 You should access and use this enumeration from the Excel primary interop
-  /// assembly (PIA). Show the size of the bubble in reference to the absolute value. public enum class
-  /// XlDataLabelsType ﾉ Expand table
   /// </summary>
   LabelAndPercent = 5,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the type
-  /// of data label to apply. The default is typically xlDataLabelsShowValue.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Show the size of the
+  /// bubble in reference to the absolute value. public enum class XlDataLabelsType
   /// </summary>
   BubbleSizes = 6
 }

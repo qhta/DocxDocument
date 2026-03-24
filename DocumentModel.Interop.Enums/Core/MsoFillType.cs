@@ -9,7 +9,7 @@
 public enum MsoFillType
 {
   /// <summary>
-  /// Specifies a shape's fill type.
+  /// Mixed fill.
   /// </summary>
   Mixed = -2,
   /// <summary>

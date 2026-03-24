@@ -7,28 +7,27 @@ namespace DocumentModel.Interop.Core;
 public enum MsoPickerField
 {
   /// <summary>
-  /// msoPickerFieldDateTime 1
+  /// No description is available.
   /// </summary>
   Unknown,
   /// <summary>
-  /// msoPickerFieldNumber 2
+  /// No description is available.
   /// </summary>
   DateTime,
   /// <summary>
-  /// msoPickerFieldText 3
+  /// No description is available.
   /// </summary>
   Number,
   /// <summary>
-  /// msoPickerFieldUser 4
+  /// No description is available.
   /// </summary>
   Text,
   /// <summary>
-  /// msoPickerFieldMax 5
+  /// No description is available.
   /// </summary>
   User,
   /// <summary>
-  /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoPickerField ﾉ Expand
-  /// table
+  /// No description is available.
   /// </summary>
   Max
 }

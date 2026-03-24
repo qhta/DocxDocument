@@ -9,15 +9,15 @@
 public enum MsoArrowheadWidth
 {
   /// <summary>
-  /// Specifies the width of the arrowhead at the end of a line.
+  /// Return value only; indicates a combination of the other states.
   /// </summary>
   WidthMixed = -2,
   /// <summary>
-  /// Narrow. msoArrowheadWidthMedium2 Medium.
+  /// Narrow.
   /// </summary>
   Narrow = 1,
   /// <summary>
-  /// Specifies the width of the arrowhead at the end of a line.
+  /// Medium.
   /// </summary>
   WidthMedium = 2,
   /// <summary>

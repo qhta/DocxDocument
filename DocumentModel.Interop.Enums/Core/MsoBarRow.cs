@@ -14,8 +14,7 @@ public enum MsoBarRow
   /// </summary>
   First = 0,
   /// <summary>
-  /// Specifies whether a command bar is in the first row or last row relative to other command bars in the same
-  /// docking area.
+  /// Last row of docking area.
   /// </summary>
   Last = -1
 }

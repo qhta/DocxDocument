@@ -9,16 +9,15 @@
 public enum MsoColorType
 {
   /// <summary>
-  /// Specifies the color type.
+  /// Not supported.
   /// </summary>
   Mixed = -2,
   /// <summary>
-  /// Color is determined by values of red, green, and blue. msoColorTypeScheme2 Color is defined by an
-  /// application-specific scheme.
+  /// Color is determined by values of red, green, and blue.
   /// </summary>
   RGB = 1,
   /// <summary>
-  /// Specifies the color type.
+  /// Color is defined by an application-specific scheme.
   /// </summary>
   Scheme = 2,
   /// <summary>

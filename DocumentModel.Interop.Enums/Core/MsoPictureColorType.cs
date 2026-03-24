@@ -9,7 +9,7 @@
 public enum MsoPictureColorType
 {
   /// <summary>
-  /// Specifies the color transformation applied to a picture.
+  /// Mixed transformation.
   /// </summary>
   Mixed = -2,
   /// <summary>

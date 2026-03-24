@@ -14,8 +14,6 @@ public enum MsoAlertButtonType
   OK,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
-  /// msoAlertButtonAbortRetryIgnore2 This object, member, or enumeration is deprecated and is not intended to be
-  /// used in your code.
   /// </summary>
   OKCancel,
   /// <summary>
@@ -32,8 +30,6 @@ public enum MsoAlertButtonType
   YesNo,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
-  /// msoAlertButtonYesAllNoCancel6 This object, member, or enumeration is deprecated and is not intended to be used
-  /// in your code.
   /// </summary>
   RetryCancel,
   /// <summary>

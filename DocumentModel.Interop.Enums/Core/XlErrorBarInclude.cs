@@ -21,8 +21,7 @@ public enum XlErrorBarInclude
   /// </summary>
   MinusValues = 3,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies which
-  /// error-bar parts to include.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). No error bar range.
   /// </summary>
   None = -4142,
   /// <summary>

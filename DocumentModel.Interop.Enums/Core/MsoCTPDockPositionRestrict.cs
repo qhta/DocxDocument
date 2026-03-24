@@ -9,17 +9,15 @@
 public enum MsoCTPDockPositionRestrict
 {
   /// <summary>
-  /// No restrictions on docking the task pane. msoCTPDockPositionRestrictNoChange1 There is no change from the
-  /// current restriction setting for the task pane. msoCTPDockPositionRestrictNoHorizontal2 Task pane can't be
-  /// docked to either the right or the left side of the document window.
+  /// No restrictions on docking the task pane.
   /// </summary>
   ne,
   /// <summary>
-  /// Specifies retrictions on the docking behavior of the custom task pane.
+  /// There is no change from the current restriction setting for the task pane.
   /// </summary>
   Change,
   /// <summary>
-  /// Specifies retrictions on the docking behavior of the custom task pane.
+  /// Task pane can't be docked to either the right or the left side of the document window.
   /// </summary>
   Horizontal,
   /// <summary>

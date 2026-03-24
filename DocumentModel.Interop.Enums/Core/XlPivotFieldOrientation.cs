@@ -11,8 +11,8 @@ namespace DocumentModel.Interop.Core;
 public enum XlPivotFieldOrientation
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
-  /// location of the field in a PivotTable report.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the Column
+  /// field.
   /// </summary>
   ColumnField = 2,
   /// <summary>
@@ -32,8 +32,7 @@ public enum XlPivotFieldOrientation
   PageField = 3,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the Row
-  /// field. xlColumnField2 You should access and use this enumeration from the Excel primary interop assembly
-  /// (PIA). Specifies the Column field.
+  /// field.
   /// </summary>
   RowField = 1
 }

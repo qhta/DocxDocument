@@ -9,7 +9,7 @@
 public enum MsoLineCapStyle
 {
   /// <summary>
-  /// Specifies the type of line cap.
+  /// Specifies a mixture of line caps.
   /// </summary>
   Mixed = -2,
   /// <summary>

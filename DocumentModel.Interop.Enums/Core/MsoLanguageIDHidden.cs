@@ -10,16 +10,15 @@ namespace DocumentModel.Interop.Core;
 public enum MsoLanguageIDHidden
 {
   /// <summary>
-  /// msoLanguageIDChineseMacao 5124
+  /// No description is available.
   /// </summary>
   ChineseHongKong = 3076,
   /// <summary>
-  /// msoLanguageIDEnglishTrinidad 11273
+  /// No description is available.
   /// </summary>
   ChineseMacao = 5124,
   /// <summary>
-  /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoLanguageIDHidden ﾉ
-  /// Expand table
+  /// No description is available.
   /// </summary>
   EnglishTrinidad = 11273
 }

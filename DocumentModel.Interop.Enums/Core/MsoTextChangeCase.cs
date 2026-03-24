@@ -9,7 +9,8 @@
 public enum MsoTextChangeCase
 {
   /// <summary>
-  /// Specifies the capitalization of text.
+  /// Display the text as sentence case characters. Sentence case specifies that the first letter of the sentence is
+  /// capitalized and that all others should be lowercase (with some exceptions such as proper nouns, and acronyms).
   /// </summary>
   Sentence = 1,
   /// <summary>

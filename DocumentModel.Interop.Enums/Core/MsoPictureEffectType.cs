@@ -6,115 +6,115 @@
 public enum MsoPictureEffectType
 {
   /// <summary>
-  /// msoEffectBackgroundRemoval 1
+  /// No description is available.
   /// </summary>
   None,
   /// <summary>
-  /// msoEffectBlur 2
+  /// No description is available.
   /// </summary>
   BackgroundRemoval,
   /// <summary>
-  /// msoEffectBrightnessContrast 3
+  /// No description is available.
   /// </summary>
   Blur,
   /// <summary>
-  /// msoEffectCement 4
+  /// No description is available.
   /// </summary>
   BrightnessContrast,
   /// <summary>
-  /// msoEffectCrisscrossEtching 5
+  /// No description is available.
   /// </summary>
   Cement,
   /// <summary>
-  /// msoEffectChalkSketch 6
+  /// No description is available.
   /// </summary>
   CrisscrossEtching,
   /// <summary>
-  /// msoEffectColorTemperature 7
+  /// No description is available.
   /// </summary>
   ChalkSketch,
   /// <summary>
-  /// msoEffectCutout 8
+  /// No description is available.
   /// </summary>
   ColorTemperature,
   /// <summary>
-  /// msoEffectFilmGrain 9
+  /// No description is available.
   /// </summary>
   Cutout,
   /// <summary>
-  /// msoEffectGlass 10
+  /// No description is available.
   /// </summary>
   FilmGrain,
   /// <summary>
-  /// msoEffectGlowDiffused 11
+  /// No description is available.
   /// </summary>
   Glass,
   /// <summary>
-  /// msoEffectGlowEdges 12
+  /// No description is available.
   /// </summary>
   GlowDiffused,
   /// <summary>
-  /// msoEffectLightScreen 13 public enum class MsoPictureEffectType ﾉ Expand table
+  /// No description is available.
   /// </summary>
   GlowEdges,
   /// <summary>
-  /// public enum class MsoPictureEffectType ﾉ Expand table
+  /// public enum class MsoPictureEffectType
   /// </summary>
   LightScreen,
   /// <summary>
-  /// msoEffectMarker 15
+  /// No description is available.
   /// </summary>
   LineDrawing,
   /// <summary>
-  /// msoEffectMosiaicBubbles 16
+  /// No description is available.
   /// </summary>
   Marker,
   /// <summary>
-  /// msoEffectPaintBrush 17
+  /// No description is available.
   /// </summary>
   MosiaicBubbles,
   /// <summary>
-  /// msoEffectPaintStrokes 18
+  /// No description is available.
   /// </summary>
   PaintBrush,
   /// <summary>
-  /// msoEffectPastelsSmooth 19
+  /// No description is available.
   /// </summary>
   PaintStrokes,
   /// <summary>
-  /// msoEffectPencilGrayscale 20
+  /// No description is available.
   /// </summary>
   PastelsSmooth,
   /// <summary>
-  /// msoEffectPencilSketch 21
+  /// No description is available.
   /// </summary>
   PencilGrayscale,
   /// <summary>
-  /// msoEffectPhotocopy 22
+  /// No description is available.
   /// </summary>
   PencilSketch,
   /// <summary>
-  /// msoEffectPlasticWrap 23
+  /// No description is available.
   /// </summary>
   Photocopy,
   /// <summary>
-  /// msoEffectSaturation 24
+  /// No description is available.
   /// </summary>
   PlasticWrap,
   /// <summary>
-  /// msoEffectSharpenSoften 25
+  /// No description is available.
   /// </summary>
   Saturation,
   /// <summary>
-  /// msoEffectTexturizer 26
+  /// No description is available.
   /// </summary>
   SharpenSoften,
   /// <summary>
-  /// msoEffectWatercolorSponge 27
+  /// No description is available.
   /// </summary>
   Texturizer,
   /// <summary>
-  /// Applies to Product Versions Office primary interop assembly Latest
+  /// No description is available.
   /// </summary>
   WatercolorSponge
 }

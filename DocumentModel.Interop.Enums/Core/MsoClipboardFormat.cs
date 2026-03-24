@@ -5,22 +5,24 @@
 /// </remarks>
 public enum MsoClipboardFormat
 {
+  /// <summary>
+  /// No description is available.
+  /// </summary>
   Mixed = -2,
   /// <summary>
-  /// msoClipboardFormatHTML 2
+  /// No description is available.
   /// </summary>
   Native = 1,
   /// <summary>
-  /// msoClipboardFormatRTF 3
+  /// No description is available.
   /// </summary>
   HTML = 2,
   /// <summary>
-  /// msoClipboardFormatPlainText 4
+  /// No description is available.
   /// </summary>
   RTF = 3,
   /// <summary>
-  /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoClipboardFormat ﾉ
-  /// Expand table
+  /// No description is available.
   /// </summary>
   PlainText = 4
 }

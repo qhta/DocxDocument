@@ -6,12 +6,11 @@
 public enum RibbonControlSize
 {
   /// <summary>
-  /// RibbonControlSizeLarge 1
+  /// No description is available.
   /// </summary>
   Regular,
   /// <summary>
-  /// Applies to Product Versions Office primary interop assembly Latest public enum class RibbonControlSize ﾉ
-  /// Expand table
+  /// No description is available.
   /// </summary>
   Large
 }

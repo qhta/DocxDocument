@@ -5,42 +5,44 @@
 /// </remarks>
 public enum MsoTextureAlignment
 {
+  /// <summary>
+  /// No description is available.
+  /// </summary>
   AlignmentMixed = -2,
   /// <summary>
-  /// msoTextureTop 1
+  /// No description is available.
   /// </summary>
   TopLeft = 0,
   /// <summary>
-  /// msoTextureTopRight 2
+  /// No description is available.
   /// </summary>
   Top = 1,
   /// <summary>
-  /// msoTextureLeft 3
+  /// No description is available.
   /// </summary>
   TopRight = 2,
   /// <summary>
-  /// msoTextureCenter 4
+  /// No description is available.
   /// </summary>
   Left = 3,
   /// <summary>
-  /// msoTextureRight 5
+  /// No description is available.
   /// </summary>
   Center = 4,
   /// <summary>
-  /// msoTextureBottomLeft 6
+  /// No description is available.
   /// </summary>
   Right = 5,
   /// <summary>
-  /// msoTextureBottom 7
+  /// No description is available.
   /// </summary>
   BottomLeft = 6,
   /// <summary>
-  /// msoTextureBottomRight 8
+  /// No description is available.
   /// </summary>
   Bottom = 7,
   /// <summary>
-  /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoTextureAlignment ﾉ
-  /// Expand table
+  /// No description is available.
   /// </summary>
   BottomRight = 8
 }

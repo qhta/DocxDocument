@@ -9,38 +9,35 @@
 public enum MsoGradientStyle
 {
   /// <summary>
-  /// Specifies the style for a gradient fill.
+  /// Gradient is mixed.
   /// </summary>
   Mixed = -2,
   /// <summary>
-  /// Specifies the style for a gradient fill.
+  /// Gradient running horizontally across the shape.
   /// </summary>
   Horizontal = 1,
   /// <summary>
-  /// Gradient running vertically down the shape. msoGradientDiagonalUp3 Diagonal gradient moving from a bottom
-  /// corner up to the opposite corner. msoGradientDiagonalDown4 Diagonal gradient moving from a top corner down to
-  /// the opposite corner. msoGradientFromCorner5 Gradient running from a corner to the other three corners.
+  /// Gradient running vertically down the shape.
   /// </summary>
   Vertical = 2,
   /// <summary>
-  /// Specifies the style for a gradient fill.
+  /// Diagonal gradient moving from a bottom corner up to the opposite corner.
   /// </summary>
   DiagonalUp = 3,
   /// <summary>
-  /// Specifies the style for a gradient fill.
+  /// Diagonal gradient moving from a top corner down to the opposite corner.
   /// </summary>
   DiagonalDown = 4,
   /// <summary>
-  /// Specifies the style for a gradient fill.
+  /// Gradient running from a corner to the other three corners.
   /// </summary>
   FromCorner = 5,
   /// <summary>
-  /// Gradient running from the title outward. msoGradientFromCenter7 Gradient running from the center out to the
-  /// corners.
+  /// Gradient running from the title outward.
   /// </summary>
   FromTitle = 6,
   /// <summary>
-  /// Specifies the style for a gradient fill.
+  /// Gradient running from the center out to the corners.
   /// </summary>
   FromCenter = 7
 }
