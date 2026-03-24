@@ -9,10 +9,15 @@ namespace DocumentModel.Drawings.Charts;
 public enum Orientation
 {
   /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   ///   Maximum to Minimum.
   /// </summary>
   [OpenXmlEnumValue("MaxMin")]
-  MaxMin,
+  MaxMin = 1,
+
   /// <summary>
   ///   Minimum to Maximum.
   /// </summary>

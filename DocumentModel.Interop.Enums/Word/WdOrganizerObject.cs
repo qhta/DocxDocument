@@ -8,17 +8,17 @@ public enum WdOrganizerObject
   /// <summary>
   /// A style item.
   /// </summary>
-  Styles = unchecked((int)0),
+  Styles = 0,
   /// <summary>
   /// An AutoText item.
   /// </summary>
-  AutoText = unchecked((int)1),
+  AutoText = 1,
   /// <summary>
   /// A command bar item.
   /// </summary>
-  CommandBars = unchecked((int)2),
+  CommandBars = 2,
   /// <summary>
   /// A project item.
   /// </summary>
-  ProjectItems = unchecked((int)3)
+  ProjectItems = 3
 }

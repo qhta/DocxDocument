@@ -8,174 +8,174 @@ public enum WdTableFormat
   /// <summary>
   /// No formatting.
   /// </summary>
-  None = unchecked((int)0),
+  None = 0,
   /// <summary>
   /// Simple format number 1.
   /// </summary>
-  Simple1 = unchecked((int)1),
+  Simple1 = 1,
   /// <summary>
   /// Simple format number 2.
   /// </summary>
-  Simple2 = unchecked((int)2),
+  Simple2 = 2,
   /// <summary>
   /// Simple format number 3.
   /// </summary>
-  Simple3 = unchecked((int)3),
+  Simple3 = 3,
   /// <summary>
   /// Classic format number 1.
   /// </summary>
-  Classic1 = unchecked((int)4),
+  Classic1 = 4,
   /// <summary>
   /// Classic format number 2.
   /// </summary>
-  Classic2 = unchecked((int)5),
+  Classic2 = 5,
   /// <summary>
   /// Classic format number 3.
   /// </summary>
-  Classic3 = unchecked((int)6),
+  Classic3 = 6,
   /// <summary>
   /// Classic format number 4.
   /// </summary>
-  Classic4 = unchecked((int)7),
+  Classic4 = 7,
   /// <summary>
   /// Colorful format number 1.
   /// </summary>
-  Colorful1 = unchecked((int)8),
+  Colorful1 = 8,
   /// <summary>
   /// Colorful format number 2.
   /// </summary>
-  Colorful2 = unchecked((int)9),
+  Colorful2 = 9,
   /// <summary>
   /// Colorful format number 3. [System.Runtime.InteropServices.Guid("6EEDBBA4-BD98-3F0A-A7E4-F4E97C8A6AA0")] public
   /// enum WdTableFormat ﾉ Expand table
   /// </summary>
-  Colorful3 = unchecked((int)10),
+  Colorful3 = 10,
   /// <summary>
   /// Columns format number 1.
   /// </summary>
-  Columns1 = unchecked((int)11),
+  Columns1 = 11,
   /// <summary>
   /// Columns format number 2.
   /// </summary>
-  Columns2 = unchecked((int)12),
+  Columns2 = 12,
   /// <summary>
   /// Columns format number 3.
   /// </summary>
-  Columns3 = unchecked((int)13),
+  Columns3 = 13,
   /// <summary>
   /// Columns format number 4.
   /// </summary>
-  Columns4 = unchecked((int)14),
+  Columns4 = 14,
   /// <summary>
   /// Columns format number 5.
   /// </summary>
-  Columns5 = unchecked((int)15),
+  Columns5 = 15,
   /// <summary>
   /// Grid format number 1.
   /// </summary>
-  Grid1 = unchecked((int)16),
+  Grid1 = 16,
   /// <summary>
   /// Grid format number 2.
   /// </summary>
-  Grid2 = unchecked((int)17),
+  Grid2 = 17,
   /// <summary>
   /// Grid format number 3.
   /// </summary>
-  Grid3 = unchecked((int)18),
+  Grid3 = 18,
   /// <summary>
   /// Grid format number 4.
   /// </summary>
-  Grid4 = unchecked((int)19),
+  Grid4 = 19,
   /// <summary>
   /// Grid format number 5.
   /// </summary>
-  Grid5 = unchecked((int)20),
+  Grid5 = 20,
   /// <summary>
   /// Grid format number 6.
   /// </summary>
-  Grid6 = unchecked((int)21),
+  Grid6 = 21,
   /// <summary>
   /// Grid format number 7.
   /// </summary>
-  Grid7 = unchecked((int)22),
+  Grid7 = 22,
   /// <summary>
   /// Grid format number 8.
   /// </summary>
-  Grid8 = unchecked((int)23),
+  Grid8 = 23,
   /// <summary>
   /// List format number 1.
   /// </summary>
-  List1 = unchecked((int)24),
+  List1 = 24,
   /// <summary>
   /// List format number 2.
   /// </summary>
-  List2 = unchecked((int)25),
+  List2 = 25,
   /// <summary>
   /// List format number 3.
   /// </summary>
-  List3 = unchecked((int)26),
+  List3 = 26,
   /// <summary>
   /// List format number 4.
   /// </summary>
-  List4 = unchecked((int)27),
+  List4 = 27,
   /// <summary>
   /// List format number 5.
   /// </summary>
-  List5 = unchecked((int)28),
+  List5 = 28,
   /// <summary>
   /// List format number 6.
   /// </summary>
-  List6 = unchecked((int)29),
+  List6 = 29,
   /// <summary>
   /// List format number 7.
   /// </summary>
-  List7 = unchecked((int)30),
+  List7 = 30,
   /// <summary>
   /// List format number 8.
   /// </summary>
-  List8 = unchecked((int)31),
+  List8 = 31,
   /// <summary>
   /// 3-D effects format number 1.
   /// </summary>
-  ThreeDEffects1 = unchecked((int)32),
+  ThreeDEffects1 = 32,
   /// <summary>
   /// 3-D effects format number 2.
   /// </summary>
-  ThreeDEffects2 = unchecked((int)33),
+  ThreeDEffects2 = 33,
   /// <summary>
   /// 3-D effects format number 3.
   /// </summary>
-  ThreeDEffects3 = unchecked((int)34),
+  ThreeDEffects3 = 34,
   /// <summary>
   /// Contemporary format.
   /// </summary>
-  Contemporary = unchecked((int)35),
+  Contemporary = 35,
   /// <summary>
   /// Elegant format.
   /// </summary>
-  Elegant = unchecked((int)36),
+  Elegant = 36,
   /// <summary>
   /// Professional format.
   /// </summary>
-  Professional = unchecked((int)37),
+  Professional = 37,
   /// <summary>
   /// Subtle format number 1.
   /// </summary>
-  Subtle1 = unchecked((int)38),
+  Subtle1 = 38,
   /// <summary>
   /// Subtle format number 2.
   /// </summary>
-  Subtle2 = unchecked((int)39),
+  Subtle2 = 39,
   /// <summary>
   /// Web format number 1.
   /// </summary>
-  Web1 = unchecked((int)40),
+  Web1 = 40,
   /// <summary>
   /// Web format number 2.
   /// </summary>
-  Web2 = unchecked((int)41),
+  Web2 = 41,
   /// <summary>
   /// Web format number 3.
   /// </summary>
-  Web3 = unchecked((int)42)
+  Web3 = 42
 }

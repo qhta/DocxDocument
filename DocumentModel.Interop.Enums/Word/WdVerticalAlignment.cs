@@ -8,17 +8,17 @@ public enum WdVerticalAlignment
   /// <summary>
   /// Top vertical alignment.
   /// </summary>
-  Top = unchecked((int)0),
+  Top = 0,
   /// <summary>
   /// Center vertical alignment.
   /// </summary>
-  Center = unchecked((int)1),
+  Center = 1,
   /// <summary>
   /// Justified vertical alignment.
   /// </summary>
-  Justify = unchecked((int)2),
+  Justify = 2,
   /// <summary>
   /// Bottom vertical alignment.
   /// </summary>
-  Bottom = unchecked((int)3)
+  Bottom = 3
 }

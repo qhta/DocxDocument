@@ -13,14 +13,19 @@ public enum TabAlignment
   Left = 0,
   /// <summary>Center-aligned tab</summary>
   [OpenXmlEnumValue("Center")]
-  Center = 1,
+  Center,
   /// <summary>Right-aligned tab</summary>
   [OpenXmlEnumValue("Right")]
-  Right = 2,
+  Right,
   /// <summary>Decimal-aligned tab</summary>
   [OpenXmlEnumValue("Decimal")]
-  Decimal = 3,
+  Decimal,
   /// <summary>Bar tab (vertical line)</summary>
   [OpenXmlEnumValue("Bar")]
-  Bar = 4
+  Bar,
+  /// <summary>
+  /// List aligned.
+  /// </summary>
+  [OpenXmlEnumValue("List")]
+  List = 6,
 }

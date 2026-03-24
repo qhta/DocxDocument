@@ -8,13 +8,13 @@ public enum WdHorizontalLineAlignment
   /// <summary>
   /// Aligned to the left.
   /// </summary>
-  Left = unchecked((int)0),
+  Left = 0,
   /// <summary>
   /// Centered.
   /// </summary>
-  Center = unchecked((int)1),
+  Center = 1,
   /// <summary>
   /// Aligned to the right.
   /// </summary>
-  Right = unchecked((int)2)
+  Right = 2
 }

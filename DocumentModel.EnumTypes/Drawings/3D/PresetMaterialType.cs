@@ -7,10 +7,15 @@ namespace DocumentModel.Drawings;
 public enum PresetMaterialType
 {
   /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   ///   Legacy Matte.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetMaterialTypeValues.LegacyMatte))]
-  LegacyMatte,
+  LegacyMatte = 1,
+
   /// <summary>
   ///   Legacy Plastic.
   /// </summary>

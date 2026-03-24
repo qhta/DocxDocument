@@ -8,59 +8,59 @@ public enum WdCustomLabelPageSize
   /// <summary>
   /// Standard letter portrait label dimensions.
   /// </summary>
-  Letter = unchecked((int)0),
+  Letter = 0,
   /// <summary>
   /// Standard letter landscape label dimensions.
   /// </summary>
-  LetterLS = unchecked((int)1),
+  LetterLS = 1,
   /// <summary>
   /// A4 portrait label dimensions.
   /// </summary>
-  A4 = unchecked((int)2),
+  A4 = 2,
   /// <summary>
   /// A4 landscape label dimensions.
   /// </summary>
-  A4LS = unchecked((int)3),
+  A4LS = 3,
   /// <summary>
   /// A5 portrait label dimensions.
   /// </summary>
-  A5 = unchecked((int)4),
+  A5 = 4,
   /// <summary>
   /// A5 landscape label dimensions.
   /// </summary>
-  A5LS = unchecked((int)5),
+  A5LS = 5,
   /// <summary>
   /// B5 label dimensions.
   /// </summary>
-  B5 = unchecked((int)6),
+  B5 = 6,
   /// <summary>
   /// Mini label dimensions.
   /// </summary>
-  Mini = unchecked((int)7),
+  Mini = 7,
   /// <summary>
   /// Fanfold label dimensions.
   /// </summary>
-  Fanfold = unchecked((int)8),
+  Fanfold = 8,
   /// <summary>
   /// Half-sheet portrait label dimensions.
   /// </summary>
-  VertHalfSheet = unchecked((int)9),
+  VertHalfSheet = 9,
   /// <summary>
   /// Half-sheet landscape label dimensions.
   /// [System.Runtime.InteropServices.Guid("B116B479-488C-3D69-BFBE-A64DD14F3BB9")] public enum
   /// WdCustomLabelPageSize ﾉ Expand table
   /// </summary>
-  VertHalfSheetLS = unchecked((int)10),
+  VertHalfSheetLS = 10,
   /// <summary>
   /// Higaki portrait label dimensions.
   /// </summary>
-  Higaki = unchecked((int)11),
+  Higaki = 11,
   /// <summary>
   /// Higaki landscape label dimensions.
   /// </summary>
-  HigakiLS = unchecked((int)12),
+  HigakiLS = 12,
   /// <summary>
   /// B4 JIS label dimensions.
   /// </summary>
-  B4JIS = unchecked((int)13)
+  B4JIS = 13
 }

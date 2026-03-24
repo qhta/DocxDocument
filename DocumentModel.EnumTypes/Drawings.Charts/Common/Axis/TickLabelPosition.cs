@@ -12,7 +12,7 @@ public enum TickLabelPosition
   ///   High.
   /// </summary>
   [OpenXmlEnumValue("High")]
-  High,
+  High = -4127,
   /// <summary>
   ///   Low.
   /// </summary>
@@ -22,10 +22,10 @@ public enum TickLabelPosition
   ///   Next To.
   /// </summary>
   [OpenXmlEnumValue("NextTo")]
-  NextTo,
+  NextToAxis = 4,
   /// <summary>
   ///   None.
   /// </summary>
   [OpenXmlEnumValue("None")]
-  None
+  None = -4142,
 }

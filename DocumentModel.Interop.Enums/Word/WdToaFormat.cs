@@ -8,21 +8,21 @@ public enum WdToaFormat
   /// <summary>
   /// Template formatting.
   /// </summary>
-  Template = unchecked((int)0),
+  Template = 0,
   /// <summary>
   /// Classic formatting.
   /// </summary>
-  Classic = unchecked((int)1),
+  Classic = 1,
   /// <summary>
   /// Distinctive formatting.
   /// </summary>
-  Distinctive = unchecked((int)2),
+  Distinctive = 2,
   /// <summary>
   /// Formal formatting.
   /// </summary>
-  Formal = unchecked((int)3),
+  Formal = 3,
   /// <summary>
   /// Simple formatting.
   /// </summary>
-  Simple = unchecked((int)4)
+  Simple = 4
 }

@@ -10,13 +10,13 @@ public enum WdScrollbarType
   /// Specifies when scroll bars are available for the specified frame when viewing its frames page in a Web
   /// browser.
   /// </summary>
-  Auto = unchecked((int)0),
+  Auto = 0,
   /// <summary>
   /// Scroll bars are always available for the specified frame.
   /// </summary>
-  Yes = unchecked((int)1),
+  Yes = 1,
   /// <summary>
   /// Scroll bars are never available for the specified frame.
   /// </summary>
-  No = unchecked((int)2)
+  No = 2
 }

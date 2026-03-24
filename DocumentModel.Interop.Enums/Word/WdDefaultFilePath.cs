@@ -8,70 +8,70 @@ public enum WdDefaultFilePath
   /// <summary>
   /// Documents path.
   /// </summary>
-  DocumentsPath = unchecked((int)0),
+  DocumentsPath = 0,
   /// <summary>
   /// Pictures path.
   /// </summary>
-  PicturesPath = unchecked((int)1),
+  PicturesPath = 1,
   /// <summary>
   /// User templates path.
   /// </summary>
-  UserTemplatesPath = unchecked((int)2),
+  UserTemplatesPath = 2,
   /// <summary>
   /// Workgroup templates path.
   /// </summary>
-  WorkgroupTemplatesPath = unchecked((int)3),
+  WorkgroupTemplatesPath = 3,
   /// <summary>
   /// User Options path.
   /// </summary>
-  UserOptionsPath = unchecked((int)4),
+  UserOptionsPath = 4,
   /// <summary>
   /// Path for Auto Recover files.
   /// </summary>
-  AutoRecoverPath = unchecked((int)5),
+  AutoRecoverPath = 5,
   /// <summary>
   /// Tools path.
   /// </summary>
-  ToolsPath = unchecked((int)6),
+  ToolsPath = 6,
   /// <summary>
   /// Tutorial path.
   /// </summary>
-  TutorialPath = unchecked((int)7),
+  TutorialPath = 7,
   /// <summary>
   /// Startup path.
   /// </summary>
-  StartupPath = unchecked((int)8),
+  StartupPath = 8,
   /// <summary>
   /// Program path.
   /// </summary>
-  ProgramPath = unchecked((int)9),
+  ProgramPath = 9,
   /// <summary>
   /// Graphics filters path. [System.Runtime.InteropServices.Guid("41700B9A-149A-3173-9324-E651080B9918")] public
   /// enum WdDefaultFilePath ﾉ Expand table
   /// </summary>
-  GraphicsFiltersPath = unchecked((int)10),
+  GraphicsFiltersPath = 10,
   /// <summary>
   /// Text converters path.
   /// </summary>
-  TextConvertersPath = unchecked((int)11),
+  TextConvertersPath = 11,
   /// <summary>
   /// Proofing tools path.
   /// </summary>
-  ProofingToolsPath = unchecked((int)12),
+  ProofingToolsPath = 12,
   /// <summary>
   /// Temp file path.
   /// </summary>
-  TempFilePath = unchecked((int)13),
+  TempFilePath = 13,
   /// <summary>
   /// Current folder path.
   /// </summary>
-  CurrentFolderPath = unchecked((int)14),
+  CurrentFolderPath = 14,
   /// <summary>
   /// Style Gallery path.
   /// </summary>
-  StyleGalleryPath = unchecked((int)15),
+  StyleGalleryPath = 15,
   /// <summary>
   /// Border art path.
   /// </summary>
-  BorderArtPath = unchecked((int)19)
+  BorderArtPath = 19
 }

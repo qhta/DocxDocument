@@ -8,19 +8,32 @@ namespace DocumentModel.Wordprocessing;
 [JsonConverter(typeof(StringEnumConverter))]
 public enum TextOrientation
 {
+  /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
   /// <summary>Horizontal text</summary>
   [OpenXmlEnumValue("Horizontal")]
-  Horizontal,
-  /// <summary>Text rotated 90 degrees downward</summary>
-  [OpenXmlEnumValue("Downward")]
-  Downward,
+  Horizontal = 1,
   /// <summary>Text rotated 90 degrees upward</summary>
   [OpenXmlEnumValue("Upward")]
   Upward,
-  /// <summary>Vertical text</summary>
+  /// <summary>Text rotated 90 degrees downward</summary>
+  [OpenXmlEnumValue("Downward")]
+  Downward,
+  /// <summary>
+  /// Vertical as required for Far East language support.
+  /// </summary>
+  [OpenXmlEnumValue("VerticalFarEast")]
+  VerticalFarEast = 4,
+  /// <summary>
+  /// Vertical.
+  /// </summary>
   [OpenXmlEnumValue("Vertical")]
-  Vertical,
-  /// <summary>Horizontal rotated Far East</summary>
+  Vertical = 5,
+  /// <summary>
+  /// Horizontal and rotated as required for Far East language support.
+  /// </summary>
   [OpenXmlEnumValue("HorizontalRotatedFarEast")]
-  HorizontalRotatedFarEast
+  HorizontalRotatedFarEast = 6
 }

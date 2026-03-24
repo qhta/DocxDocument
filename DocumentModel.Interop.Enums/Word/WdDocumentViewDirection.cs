@@ -8,9 +8,9 @@ public enum WdDocumentViewDirection
   /// <summary>
   /// Specifies the alignment and reading order for the entire document.
   /// </summary>
-  Rtl = unchecked((int)0),
+  Rtl = 0,
   /// <summary>
   /// Displays the document with left alignment and left-to-right reading order.
   /// </summary>
-  Ltr = unchecked((int)1)
+  Ltr = 1
 }

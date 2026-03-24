@@ -9,13 +9,13 @@ public enum WdCheckInVersionType
   /// <summary>
   /// Minor version.
   /// </summary>
-  MinorVersion = unchecked((int)0),
+  MinorVersion = 0,
   /// <summary>
   /// Major version.
   /// </summary>
-  MajorVersion = unchecked((int)1),
+  MajorVersion = 1,
   /// <summary>
   /// Overwrite current version on the server.
   /// </summary>
-  OverwriteVersion = unchecked((int)2)
+  OverwriteVersion = 2
 }

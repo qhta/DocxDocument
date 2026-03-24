@@ -8,13 +8,13 @@ public enum WdSpanishSpeller
   /// <summary>
   /// The Spanish spelling checker recognizes only tuteo verb forms.
   /// </summary>
-  TuteoOnly = unchecked((int)0),
+  TuteoOnly = 0,
   /// <summary>
   /// The Spanish spelling checker recognizes both tuteo and voseo verb forms.
   /// </summary>
-  TuteoAndVoseo = unchecked((int)1),
+  TuteoAndVoseo = 1,
   /// <summary>
   /// The Spanish spelling checker recognizes only voseo verb forms.
   /// </summary>
-  VoseoOnly = unchecked((int)2)
+  VoseoOnly = 2
 }

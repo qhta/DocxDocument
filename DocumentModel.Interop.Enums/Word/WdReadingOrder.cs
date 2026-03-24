@@ -8,9 +8,9 @@ public enum WdReadingOrder
   /// <summary>
   /// Right-to-left reading order.
   /// </summary>
-  Rtl = unchecked((int)0),
+  Rtl = 0,
   /// <summary>
   /// Left-to-right reading order.
   /// </summary>
-  Ltr = unchecked((int)1)
+  Ltr = 1
 }

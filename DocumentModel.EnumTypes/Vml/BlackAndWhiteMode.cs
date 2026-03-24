@@ -7,10 +7,15 @@ namespace DocumentModel.Vml;
 public enum BlackAndWhiteMode
 {
   /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   ///   Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXVO.BlackAndWhiteModeValues.Color))]
-  Color,
+  Color = 1,
+
   /// <summary>
   ///   Automatic.
   /// </summary>

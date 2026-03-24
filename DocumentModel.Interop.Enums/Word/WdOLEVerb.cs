@@ -10,29 +10,29 @@ public enum WdOLEVerb
   /// [System.Runtime.InteropServices.Guid("B1E1E568-A954-370D-BDDE-1DEE3FE965D7")] public enum WdOLEVerb ﾉ Expand
   /// table
   /// </summary>
-  Primary = unchecked((int)0),
+  Primary = 0,
   /// <summary>
   /// Specifies the action associated with the verb that the OLE object should perform.
   /// </summary>
-  DiscardUndoState = unchecked((int)-6),
+  DiscardUndoState = -6,
   /// <summary>
   /// Specifies the action associated with the verb that the OLE object should perform.
   /// </summary>
-  InPlaceActivate = unchecked((int)-5),
+  InPlaceActivate = -5,
   /// <summary>
   /// Specifies the action associated with the verb that the OLE object should perform.
   /// </summary>
-  UIActivate = unchecked((int)-4),
+  UIActivate = -4,
   /// <summary>
   /// Specifies the action associated with the verb that the OLE object should perform.
   /// </summary>
-  Hide = unchecked((int)-3),
+  Hide = -3,
   /// <summary>
   /// Specifies the action associated with the verb that the OLE object should perform.
   /// </summary>
-  Open = unchecked((int)-2),
+  Open = -2,
   /// <summary>
   /// Specifies the action associated with the verb that the OLE object should perform.
   /// </summary>
-  Show = unchecked((int)-1)
+  Show = -1
 }

@@ -8,9 +8,9 @@ public enum WdHorizontalLineWidthType
   /// <summary>
   /// Specifies how Word interprets the width (length) of the specified horizontal line.
   /// </summary>
-  FixedWidth = unchecked((int)-2),
+  FixedWidth = -2,
   /// <summary>
   /// Specifies how Word interprets the width (length) of the specified horizontal line.
   /// </summary>
-  PercentWidth = unchecked((int)-1)
+  PercentWidth = -1
 }

@@ -8,25 +8,25 @@ public enum WdShowFilter
   /// <summary>
   /// All styles available.
   /// </summary>
-  StylesAvailable = unchecked((int)0),
+  StylesAvailable = 0,
   /// <summary>
   /// All styles in use.
   /// </summary>
-  StylesInUse = unchecked((int)1),
+  StylesInUse = 1,
   /// <summary>
   /// All styles.
   /// </summary>
-  StylesAll = unchecked((int)2),
+  StylesAll = 2,
   /// <summary>
   /// All formatting in use.
   /// </summary>
-  FormattingInUse = unchecked((int)3),
+  FormattingInUse = 3,
   /// <summary>
   /// All formatting available.
   /// </summary>
-  FormattingAvailable = unchecked((int)4),
+  FormattingAvailable = 4,
   /// <summary>
   /// Only recommended styles.
   /// </summary>
-  FormattingRecommended = unchecked((int)5)
+  FormattingRecommended = 5
 }

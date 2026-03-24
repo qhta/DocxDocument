@@ -8,46 +8,46 @@ public enum WdSeekView
   /// <summary>
   /// The main document.
   /// </summary>
-  MainDocument = unchecked((int)0),
+  MainDocument = 0,
   /// <summary>
   /// The primary header.
   /// </summary>
-  PrimaryHeader = unchecked((int)1),
+  PrimaryHeader = 1,
   /// <summary>
   /// The first page header.
   /// </summary>
-  FirstPageHeader = unchecked((int)2),
+  FirstPageHeader = 2,
   /// <summary>
   /// The even pages header.
   /// </summary>
-  EvenPagesHeader = unchecked((int)3),
+  EvenPagesHeader = 3,
   /// <summary>
   /// The primary footer.
   /// </summary>
-  PrimaryFooter = unchecked((int)4),
+  PrimaryFooter = 4,
   /// <summary>
   /// The first page footer.
   /// </summary>
-  FirstPageFooter = unchecked((int)5),
+  FirstPageFooter = 5,
   /// <summary>
   /// The even pages footer.
   /// </summary>
-  EvenPagesFooter = unchecked((int)6),
+  EvenPagesFooter = 6,
   /// <summary>
   /// Footnotes.
   /// </summary>
-  Footnotes = unchecked((int)7),
+  Footnotes = 7,
   /// <summary>
   /// Endnotes.
   /// </summary>
-  Endnotes = unchecked((int)8),
+  Endnotes = 8,
   /// <summary>
   /// The current page header.
   /// </summary>
-  CurrentPageHeader = unchecked((int)9),
+  CurrentPageHeader = 9,
   /// <summary>
   /// The current page footer. [System.Runtime.InteropServices.Guid("8472D0A9-03EA-3253-8BC8-F66718CF09A6")] public
   /// enum WdSeekView ﾉ Expand table
   /// </summary>
-  CurrentPageFooter = unchecked((int)10)
+  CurrentPageFooter = 10
 }

@@ -8,13 +8,13 @@ public enum WdMergeTarget
   /// <summary>
   /// Merge into selected document.
   /// </summary>
-  Selected = unchecked((int)0),
+  Selected = 0,
   /// <summary>
   /// Merge into current document.
   /// </summary>
-  Current = unchecked((int)1),
+  Current = 1,
   /// <summary>
   /// Merge into new document.
   /// </summary>
-  New = unchecked((int)2)
+  New = 2
 }

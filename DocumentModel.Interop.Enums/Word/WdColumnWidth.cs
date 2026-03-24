@@ -8,13 +8,13 @@ public enum WdColumnWidth
   /// <summary>
   /// Narrow column width.
   /// </summary>
-  Narrow = unchecked((int)1),
+  Narrow = 1,
   /// <summary>
   /// Default column width.
   /// </summary>
-  Default = unchecked((int)2),
+  Default = 2,
   /// <summary>
   /// Wide column width.
   /// </summary>
-  Wide = unchecked((int)3)
+  Wide = 3
 }

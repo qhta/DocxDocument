@@ -8,62 +8,62 @@ public enum WdPaperTray
   /// <summary>
   /// Default bin.
   /// </summary>
-  DefaultBin = unchecked((int)0),
+  DefaultBin = 0,
   /// <summary>
   /// Upper bin.
   /// </summary>
-  UpperBin = unchecked((int)1),
+  UpperBin = 1,
   /// <summary>
   /// Printer's only bin.
   /// </summary>
-  OnlyBin = unchecked((int)1),
+  OnlyBin = 1,
   /// <summary>
   /// Lower bin.
   /// </summary>
-  LowerBin = unchecked((int)2),
+  LowerBin = 2,
   /// <summary>
   /// Middle bin.
   /// </summary>
-  MiddleBin = unchecked((int)3),
+  MiddleBin = 3,
   /// <summary>
   /// Manual feed.
   /// </summary>
-  ManualFeed = unchecked((int)4),
+  ManualFeed = 4,
   /// <summary>
   /// Envelope feed.
   /// </summary>
-  EnvelopeFeed = unchecked((int)5),
+  EnvelopeFeed = 5,
   /// <summary>
   /// Manual envelope feed.
   /// </summary>
-  ManualEnvelopeFeed = unchecked((int)6),
+  ManualEnvelopeFeed = 6,
   /// <summary>
   /// Automatic sheet feed.
   /// </summary>
-  AutomaticSheetFeed = unchecked((int)7),
+  AutomaticSheetFeed = 7,
   /// <summary>
   /// Tractor feed.
   /// </summary>
-  TractorFeed = unchecked((int)8),
+  TractorFeed = 8,
   /// <summary>
   /// Small-format bin. [System.Runtime.InteropServices.Guid("57D6BF95-896D-30E5-B0F0-B97327E7C71D")] public enum
   /// WdPaperTray ﾉ Expand table
   /// </summary>
-  SmallFormatBin = unchecked((int)9),
+  SmallFormatBin = 9,
   /// <summary>
   /// Large-format bin.
   /// </summary>
-  LargeFormatBin = unchecked((int)10),
+  LargeFormatBin = 10,
   /// <summary>
   /// Large-capacity bin.
   /// </summary>
-  LargeCapacityBin = unchecked((int)11),
+  LargeCapacityBin = 11,
   /// <summary>
   /// Paper cassette.
   /// </summary>
-  PaperCassette = unchecked((int)14),
+  PaperCassette = 14,
   /// <summary>
   /// Form source.
   /// </summary>
-  FormSource = unchecked((int)15)
+  FormSource = 15
 }

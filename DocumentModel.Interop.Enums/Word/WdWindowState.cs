@@ -8,13 +8,13 @@ public enum WdWindowState
   /// <summary>
   /// Normal.
   /// </summary>
-  Normal = unchecked((int)0),
+  Normal = 0,
   /// <summary>
   /// Maximized.
   /// </summary>
-  Maximize = unchecked((int)1),
+  Maximize = 1,
   /// <summary>
   /// Minimized.
   /// </summary>
-  Minimize = unchecked((int)2)
+  Minimize = 2
 }

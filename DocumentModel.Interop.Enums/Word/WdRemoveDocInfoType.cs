@@ -8,67 +8,67 @@ public enum WdRemoveDocInfoType
   /// <summary>
   /// Removes document comments.
   /// </summary>
-  Comments = unchecked((int)1),
+  Comments = 1,
   /// <summary>
   /// Removes revision marks.
   /// </summary>
-  Revisions = unchecked((int)2),
+  Revisions = 2,
   /// <summary>
   /// Removes document version information. wdRDIRemovePersonalInformation4 Removes personal information.
   /// </summary>
-  Versions = unchecked((int)3),
+  Versions = 3,
   /// <summary>
   /// Specifies the type of information to remove from a document.
   /// </summary>
-  RemovePersonalInformation = unchecked((int)4),
+  RemovePersonalInformation = 4,
   /// <summary>
   /// Removes e-mail header information.
   /// </summary>
-  EmailHeader = unchecked((int)5),
+  EmailHeader = 5,
   /// <summary>
   /// Removes routing slip information.
   /// </summary>
-  RoutingSlip = unchecked((int)6),
+  RoutingSlip = 6,
   /// <summary>
   /// Removes information stored when sending a document for review.
   /// </summary>
-  SendForReview = unchecked((int)7),
+  SendForReview = 7,
   /// <summary>
   /// Removes document properties.
   /// </summary>
-  DocumentProperties = unchecked((int)8),
+  DocumentProperties = 8,
   /// <summary>
   /// Removes template information.
   /// </summary>
-  Template = unchecked((int)9),
+  Template = 9,
   /// <summary>
   /// Removes document workspace information.
   /// [System.Runtime.InteropServices.Guid("F52DEE7F-8295-3A23-9DB3-37609770B6B2")] public enum WdRemoveDocInfoType
   /// ﾉ Expand table
   /// </summary>
-  DocumentWorkspace = unchecked((int)10),
+  DocumentWorkspace = 10,
   /// <summary>
   /// Removes ink annotations. wdRDIDocumentServerProperties14 Removes document server properties.
   /// </summary>
-  InkAnnotations = unchecked((int)11),
+  InkAnnotations = 11,
   /// <summary>
   /// Specifies the type of information to remove from a document.
   /// </summary>
-  DocumentServerProperties = unchecked((int)14),
+  DocumentServerProperties = 14,
   /// <summary>
   /// Removes document management policy information.
   /// </summary>
-  DocumentManagementPolicy = unchecked((int)15),
+  DocumentManagementPolicy = 15,
   /// <summary>
   /// Removes content type information.
   /// </summary>
-  ContentType = unchecked((int)16),
+  ContentType = 16,
   /// <summary>
   /// Removes taskpane web extensions information.
   /// </summary>
-  TaskpaneWebExtensions = unchecked((int)17),
+  TaskpaneWebExtensions = 17,
   /// <summary>
   /// Removes all document information.
   /// </summary>
-  All = unchecked((int)99)
+  All = 99
 }

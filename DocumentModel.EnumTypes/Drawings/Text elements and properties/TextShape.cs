@@ -7,10 +7,15 @@ namespace DocumentModel.Drawings;
 public enum TextShape
 {
   /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   ///   No Text Shape.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.TextShapeValues.TextNoShape))]
-  TextNoShape,
+  TextNoShape = 1,
+
   /// <summary>
   ///   Plain Text Shape.
   /// </summary>

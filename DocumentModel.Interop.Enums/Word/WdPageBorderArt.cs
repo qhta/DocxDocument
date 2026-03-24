@@ -8,659 +8,659 @@ public enum WdPageBorderArt
   /// <summary>
   /// An apple border.
   /// </summary>
-  Apples = unchecked((int)1),
+  Apples = 1,
   /// <summary>
   /// A maple muffins border.
   /// </summary>
-  MapleMuffins = unchecked((int)2),
+  MapleMuffins = 2,
   /// <summary>
   /// A cake slice border.
   /// </summary>
-  CakeSlice = unchecked((int)3),
+  CakeSlice = 3,
   /// <summary>
   /// A candy corn border.
   /// </summary>
-  CandyCorn = unchecked((int)4),
+  CandyCorn = 4,
   /// <summary>
   /// An ice cream cones border.
   /// </summary>
-  IceCreamCones = unchecked((int)5),
+  IceCreamCones = 5,
   /// <summary>
   /// A champagne bottle border.
   /// </summary>
-  ChampagneBottle = unchecked((int)6),
+  ChampagneBottle = 6,
   /// <summary>
   /// A party glass border.
   /// </summary>
-  PartyGlass = unchecked((int)7),
+  PartyGlass = 7,
   /// <summary>
   /// A Christmas tree border.
   /// </summary>
-  ChristmasTree = unchecked((int)8),
+  ChristmasTree = 8,
   /// <summary>
   /// A trees border.
   /// </summary>
-  Trees = unchecked((int)9),
+  Trees = 9,
   /// <summary>
   /// A colored palms border.
   /// </summary>
-  PalmsColor = unchecked((int)10),
+  PalmsColor = 10,
   /// <summary>
   /// Balloons in three colors as the border.
   /// [System.Runtime.InteropServices.Guid("921913F8-9206-362B-9C9D-E12B20FA517B")] public enum WdPageBorderArt ﾉ
   /// Expand table
   /// </summary>
-  Balloons3Colors = unchecked((int)11),
+  Balloons3Colors = 11,
   /// <summary>
   /// A hot air balloon border.
   /// </summary>
-  BalloonsHotAir = unchecked((int)12),
+  BalloonsHotAir = 12,
   /// <summary>
   /// A party favor border.
   /// </summary>
-  PartyFavor = unchecked((int)13),
+  PartyFavor = 13,
   /// <summary>
   /// A confetti streamers border.
   /// </summary>
-  ConfettiStreamers = unchecked((int)14),
+  ConfettiStreamers = 14,
   /// <summary>
   /// A hearts border.
   /// </summary>
-  Hearts = unchecked((int)15),
+  Hearts = 15,
   /// <summary>
   /// A heart balloon border.
   /// </summary>
-  HeartBalloon = unchecked((int)16),
+  HeartBalloon = 16,
   /// <summary>
   /// A 3-D stars border.
   /// </summary>
-  Stars3D = unchecked((int)17),
+  Stars3D = 17,
   /// <summary>
   /// A shadowed stars border.
   /// </summary>
-  StarsShadowed = unchecked((int)18),
+  StarsShadowed = 18,
   /// <summary>
   /// A stars border.
   /// </summary>
-  Stars = unchecked((int)19),
+  Stars = 19,
   /// <summary>
   /// A sun border.
   /// </summary>
-  Sun = unchecked((int)20),
+  Sun = 20,
   /// <summary>
   /// An earth
   /// </summary>
-  Earth2 = unchecked((int)21),
+  Earth2 = 21,
   /// <summary>
   /// An earth
   /// </summary>
-  Earth1 = unchecked((int)22),
+  Earth1 = 22,
   /// <summary>
   /// A people wearing hats border.
   /// </summary>
-  PeopleHats = unchecked((int)23),
+  PeopleHats = 23,
   /// <summary>
   /// A sombrero border.
   /// </summary>
-  Sombrero = unchecked((int)24),
+  Sombrero = 24,
   /// <summary>
   /// A pencils border.
   /// </summary>
-  Pencils = unchecked((int)25),
+  Pencils = 25,
   /// <summary>
   /// A packages border.
   /// </summary>
-  Packages = unchecked((int)26),
+  Packages = 26,
   /// <summary>
   /// A clocks border.
   /// </summary>
-  Clocks = unchecked((int)27),
+  Clocks = 27,
   /// <summary>
   /// A fire crackers border.
   /// </summary>
-  Firecrackers = unchecked((int)28),
+  Firecrackers = 28,
   /// <summary>
   /// A rings border.
   /// </summary>
-  Rings = unchecked((int)29),
+  Rings = 29,
   /// <summary>
   /// A map pins border.
   /// </summary>
-  MapPins = unchecked((int)30),
+  MapPins = 30,
   /// <summary>
   /// A confetti border.
   /// </summary>
-  Confetti = unchecked((int)31),
+  Confetti = 31,
   /// <summary>
   /// A butterfly border.
   /// </summary>
-  CreaturesButterfly = unchecked((int)32),
+  CreaturesButterfly = 32,
   /// <summary>
   /// A ladybug border.
   /// </summary>
-  CreaturesLadyBug = unchecked((int)33),
+  CreaturesLadyBug = 33,
   /// <summary>
   /// A fish border.
   /// </summary>
-  CreaturesFish = unchecked((int)34),
+  CreaturesFish = 34,
   /// <summary>
   /// A birds in flight border.
   /// </summary>
-  BirdsFlight = unchecked((int)35),
+  BirdsFlight = 35,
   /// <summary>
   /// A scared cat border.
   /// </summary>
-  ScaredCat = unchecked((int)36),
+  ScaredCat = 36,
   /// <summary>
   /// A bats border.
   /// </summary>
-  Bats = unchecked((int)37),
+  Bats = 37,
   /// <summary>
   /// A rose border.
   /// </summary>
-  FlowersRoses = unchecked((int)38),
+  FlowersRoses = 38,
   /// <summary>
   /// A red rose border.
   /// </summary>
-  FlowersRedRose = unchecked((int)39),
+  FlowersRedRose = 39,
   /// <summary>
   /// A poinsettias border.
   /// </summary>
-  Poinsettias = unchecked((int)40),
+  Poinsettias = 40,
   /// <summary>
   /// A holly border.
   /// </summary>
-  Holly = unchecked((int)41),
+  Holly = 41,
   /// <summary>
   /// A tiny flower border.
   /// </summary>
-  FlowersTiny = unchecked((int)42),
+  FlowersTiny = 42,
   /// <summary>
   /// A pansy border.
   /// </summary>
-  FlowersPansy = unchecked((int)43),
+  FlowersPansy = 43,
   /// <summary>
   /// A modern flowers
   /// </summary>
-  FlowersModern2 = unchecked((int)44),
+  FlowersModern2 = 44,
   /// <summary>
   /// A modern flowers
   /// </summary>
-  FlowersModern1 = unchecked((int)45),
+  FlowersModern1 = 45,
   /// <summary>
   /// A white flower border.
   /// </summary>
-  WhiteFlowers = unchecked((int)46),
+  WhiteFlowers = 46,
   /// <summary>
   /// A vine border.
   /// </summary>
-  Vine = unchecked((int)47),
+  Vine = 47,
   /// <summary>
   /// A daisies border.
   /// </summary>
-  FlowersDaisies = unchecked((int)48),
+  FlowersDaisies = 48,
   /// <summary>
   /// A block flowers print border.
   /// </summary>
-  FlowersBlockPrint = unchecked((int)49),
+  FlowersBlockPrint = 49,
   /// <summary>
   /// A deco arch colored border.
   /// </summary>
-  DecoArchColor = unchecked((int)50),
+  DecoArchColor = 50,
   /// <summary>
   /// A fans border.
   /// </summary>
-  Fans = unchecked((int)51),
+  Fans = 51,
   /// <summary>
   /// A film border.
   /// </summary>
-  Film = unchecked((int)52),
+  Film = 52,
   /// <summary>
   /// A lightning
   /// </summary>
-  Lightning1 = unchecked((int)53),
+  Lightning1 = 53,
   /// <summary>
   /// A compass border.
   /// </summary>
-  Compass = unchecked((int)54),
+  Compass = 54,
   /// <summary>
   /// A double-D border.
   /// </summary>
-  DoubleD = unchecked((int)55),
+  DoubleD = 55,
   /// <summary>
   /// A classical wave border.
   /// </summary>
-  ClassicalWave = unchecked((int)56),
+  ClassicalWave = 56,
   /// <summary>
   /// A shadowed squared border.
   /// </summary>
-  ShadowedSquares = unchecked((int)57),
+  ShadowedSquares = 57,
   /// <summary>
   /// A twisted lines
   /// </summary>
-  TwistedLines1 = unchecked((int)58),
+  TwistedLines1 = 58,
   /// <summary>
   /// A wave line border.
   /// </summary>
-  Waveline = unchecked((int)59),
+  Waveline = 59,
   /// <summary>
   /// A quadrants border.
   /// </summary>
-  Quadrants = unchecked((int)60),
+  Quadrants = 60,
   /// <summary>
   /// A checked-bar colored border.
   /// </summary>
-  CheckedBarColor = unchecked((int)61),
+  CheckedBarColor = 61,
   /// <summary>
   /// A swirling border.
   /// </summary>
-  Swirligig = unchecked((int)62),
+  Swirligig = 62,
   /// <summary>
   /// A pushpin note
   /// </summary>
-  PushPinNote1 = unchecked((int)63),
+  PushPinNote1 = 63,
   /// <summary>
   /// A pushpin note
   /// </summary>
-  PushPinNote2 = unchecked((int)64),
+  PushPinNote2 = 64,
   /// <summary>
   /// A pumpkin
   /// </summary>
-  Pumpkin1 = unchecked((int)65),
+  Pumpkin1 = 65,
   /// <summary>
   /// A black eggs border.
   /// </summary>
-  EggsBlack = unchecked((int)66),
+  EggsBlack = 66,
   /// <summary>
   /// A cup border.
   /// </summary>
-  Cup = unchecked((int)67),
+  Cup = 67,
   /// <summary>
   /// A heart border in shades of gray.
   /// </summary>
-  HeartGray = unchecked((int)68),
+  HeartGray = 68,
   /// <summary>
   /// A gingerbread man border.
   /// </summary>
-  GingerbreadMan = unchecked((int)69),
+  GingerbreadMan = 69,
   /// <summary>
   /// A baby pacifier border.
   /// </summary>
-  BabyPacifier = unchecked((int)70),
+  BabyPacifier = 70,
   /// <summary>
   /// A baby rattle border.
   /// </summary>
-  BabyRattle = unchecked((int)71),
+  BabyRattle = 71,
   /// <summary>
   /// A cabins border.
   /// </summary>
-  Cabins = unchecked((int)72),
+  Cabins = 72,
   /// <summary>
   /// A funky house border.
   /// </summary>
-  HouseFunky = unchecked((int)73),
+  HouseFunky = 73,
   /// <summary>
   /// A black stars border.
   /// </summary>
-  StarsBlack = unchecked((int)74),
+  StarsBlack = 74,
   /// <summary>
   /// A snowflake border.
   /// </summary>
-  Snowflakes = unchecked((int)75),
+  Snowflakes = 75,
   /// <summary>
   /// A fancy snowflake border.
   /// </summary>
-  SnowflakeFancy = unchecked((int)76),
+  SnowflakeFancy = 76,
   /// <summary>
   /// A sky rocket border.
   /// </summary>
-  Skyrocket = unchecked((int)77),
+  Skyrocket = 77,
   /// <summary>
   /// A Seattle border.
   /// </summary>
-  Seattle = unchecked((int)78),
+  Seattle = 78,
   /// <summary>
   /// A music notes border.
   /// </summary>
-  MusicNotes = unchecked((int)79),
+  MusicNotes = 79,
   /// <summary>
   /// A black palms border.
   /// </summary>
-  PalmsBlack = unchecked((int)80),
+  PalmsBlack = 80,
   /// <summary>
   /// A maple leaf border.
   /// </summary>
-  MapleLeaf = unchecked((int)81),
+  MapleLeaf = 81,
   /// <summary>
   /// A paper clips border.
   /// </summary>
-  PaperClips = unchecked((int)82),
+  PaperClips = 82,
   /// <summary>
   /// A shorebird tracks border.
   /// </summary>
-  ShorebirdTracks = unchecked((int)83),
+  ShorebirdTracks = 83,
   /// <summary>
   /// A people border.
   /// </summary>
-  People = unchecked((int)84),
+  People = 84,
   /// <summary>
   /// A people waving border.
   /// </summary>
-  PeopleWaving = unchecked((int)85),
+  PeopleWaving = 85,
   /// <summary>
   /// An eclipsing squares
   /// </summary>
-  EclipsingSquares2 = unchecked((int)86),
+  EclipsingSquares2 = 86,
   /// <summary>
   /// A hypnotic border.
   /// </summary>
-  Hypnotic = unchecked((int)87),
+  Hypnotic = 87,
   /// <summary>
   /// A diamond border using shades of gray.
   /// </summary>
-  DiamondsGray = unchecked((int)88),
+  DiamondsGray = 88,
   /// <summary>
   /// A deco arch border.
   /// </summary>
-  DecoArch = unchecked((int)89),
+  DecoArch = 89,
   /// <summary>
   /// A deco blocks border.
   /// </summary>
-  DecoBlocks = unchecked((int)90),
+  DecoBlocks = 90,
   /// <summary>
   /// A circles and lines border.
   /// </summary>
-  CirclesLines = unchecked((int)91),
+  CirclesLines = 91,
   /// <summary>
   /// A papyrus border.
   /// </summary>
-  Papyrus = unchecked((int)92),
+  Papyrus = 92,
   /// <summary>
   /// A woodwork border.
   /// </summary>
-  Woodwork = unchecked((int)93),
+  Woodwork = 93,
   /// <summary>
   /// A weaving braid border.
   /// </summary>
-  WeavingBraid = unchecked((int)94),
+  WeavingBraid = 94,
   /// <summary>
   /// A weaving ribbon border.
   /// </summary>
-  WeavingRibbon = unchecked((int)95),
+  WeavingRibbon = 95,
   /// <summary>
   /// A weaving angle border.
   /// </summary>
-  WeavingAngles = unchecked((int)96),
+  WeavingAngles = 96,
   /// <summary>
   /// An arched scalloped border.
   /// </summary>
-  ArchedScallops = unchecked((int)97),
+  ArchedScallops = 97,
   /// <summary>
   /// A safari border.
   /// </summary>
-  Safari = unchecked((int)98),
+  Safari = 98,
   /// <summary>
   /// A Celtic knot work border.
   /// </summary>
-  CelticKnotwork = unchecked((int)99),
+  CelticKnotwork = 99,
   /// <summary>
   /// A crazy maze border.
   /// </summary>
-  CrazyMaze = unchecked((int)100),
+  CrazyMaze = 100,
   /// <summary>
   /// An eclipsing squares
   /// </summary>
-  EclipsingSquares1 = unchecked((int)101),
+  EclipsingSquares1 = 101,
   /// <summary>
   /// A birds border.
   /// </summary>
-  Birds = unchecked((int)102),
+  Birds = 102,
   /// <summary>
   /// A teacup border.
   /// </summary>
-  FlowersTeacup = unchecked((int)103),
+  FlowersTeacup = 103,
   /// <summary>
   /// A northwest border.
   /// </summary>
-  Northwest = unchecked((int)104),
+  Northwest = 104,
   /// <summary>
   /// A southwest border.
   /// </summary>
-  Southwest = unchecked((int)105),
+  Southwest = 105,
   /// <summary>
   /// A tribal
   /// </summary>
-  Tribal6 = unchecked((int)106),
+  Tribal6 = 106,
   /// <summary>
   /// A tribal
   /// </summary>
-  Tribal4 = unchecked((int)107),
+  Tribal4 = 107,
   /// <summary>
   /// A tribal
   /// </summary>
-  Tribal3 = unchecked((int)108),
+  Tribal3 = 108,
   /// <summary>
   /// A tribal
   /// </summary>
-  Tribal2 = unchecked((int)109),
+  Tribal2 = 109,
   /// <summary>
   /// A tribal
   /// </summary>
-  Tribal5 = unchecked((int)110),
+  Tribal5 = 110,
   /// <summary>
   /// An X illusion border.
   /// </summary>
-  XIllusions = unchecked((int)111),
+  XIllusions = 111,
   /// <summary>
   /// A zany triangle border.
   /// </summary>
-  ZanyTriangles = unchecked((int)112),
+  ZanyTriangles = 112,
   /// <summary>
   /// A pyramids border.
   /// </summary>
-  Pyramids = unchecked((int)113),
+  Pyramids = 113,
   /// <summary>
   /// An external pyramids border.
   /// </summary>
-  PyramidsAbove = unchecked((int)114),
+  PyramidsAbove = 114,
   /// <summary>
   /// A confetti border using shades of gray.
   /// </summary>
-  ConfettiGrays = unchecked((int)115),
+  ConfettiGrays = 115,
   /// <summary>
   /// A confetti outline border.
   /// </summary>
-  ConfettiOutline = unchecked((int)116),
+  ConfettiOutline = 116,
   /// <summary>
   /// A confetti white border.
   /// </summary>
-  ConfettiWhite = unchecked((int)117),
+  ConfettiWhite = 117,
   /// <summary>
   /// A mosaic border.
   /// </summary>
-  Mosaic = unchecked((int)118),
+  Mosaic = 118,
   /// <summary>
   /// A lightning
   /// </summary>
-  Lightning2 = unchecked((int)119),
+  Lightning2 = 119,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  HeebieJeebies = unchecked((int)120),
+  HeebieJeebies = 120,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  LightBulb = unchecked((int)121),
+  LightBulb = 121,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  Gradient = unchecked((int)122),
+  Gradient = 122,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  TriangleParty = unchecked((int)123),
+  TriangleParty = 123,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  TwistedLines2 = unchecked((int)124),
+  TwistedLines2 = 124,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  Moons = unchecked((int)125),
+  Moons = 125,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  Ovals = unchecked((int)126),
+  Ovals = 126,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  DoubleDiamonds = unchecked((int)127),
+  DoubleDiamonds = 127,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  ChainLink = unchecked((int)128),
+  ChainLink = 128,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  Triangles = unchecked((int)129),
+  Triangles = 129,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  Tribal1 = unchecked((int)130),
+  Tribal1 = 130,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  MarqueeToothed = unchecked((int)131),
+  MarqueeToothed = 131,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  SharksTeeth = unchecked((int)132),
+  SharksTeeth = 132,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  Sawtooth = unchecked((int)133),
+  Sawtooth = 133,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  SawtoothGray = unchecked((int)134),
+  SawtoothGray = 134,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  PostageStamp = unchecked((int)135),
+  PostageStamp = 135,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  WeavingStrips = unchecked((int)136),
+  WeavingStrips = 136,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  ZigZag = unchecked((int)137),
+  ZigZag = 137,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  CrossStitch = unchecked((int)138),
+  CrossStitch = 138,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  Gems = unchecked((int)139),
+  Gems = 139,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  CirclesRectangles = unchecked((int)140),
+  CirclesRectangles = 140,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  CornerTriangles = unchecked((int)141),
+  CornerTriangles = 141,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  CreaturesInsects = unchecked((int)142),
+  CreaturesInsects = 142,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  ZigZagStitch = unchecked((int)143),
+  ZigZagStitch = 143,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  Checkered = unchecked((int)144),
+  Checkered = 144,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  CheckedBarBlack = unchecked((int)145),
+  CheckedBarBlack = 145,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  Marquee = unchecked((int)146),
+  Marquee = 146,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  BasicWhiteDots = unchecked((int)147),
+  BasicWhiteDots = 147,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  BasicWideMidline = unchecked((int)148),
+  BasicWideMidline = 148,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  BasicWideOutline = unchecked((int)149),
+  BasicWideOutline = 149,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  BasicWideInline = unchecked((int)150),
+  BasicWideInline = 150,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  BasicThinLines = unchecked((int)151),
+  BasicThinLines = 151,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  BasicWhiteDashes = unchecked((int)152),
+  BasicWhiteDashes = 152,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  BasicWhiteSquares = unchecked((int)153),
+  BasicWhiteSquares = 153,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  BasicBlackSquares = unchecked((int)154),
+  BasicBlackSquares = 154,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  BasicBlackDashes = unchecked((int)155),
+  BasicBlackDashes = 155,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  BasicBlackDots = unchecked((int)156),
+  BasicBlackDots = 156,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  StarsTop = unchecked((int)157),
+  StarsTop = 157,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  CertificateBanner = unchecked((int)158),
+  CertificateBanner = 158,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  Handmade1 = unchecked((int)159),
+  Handmade1 = 159,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  Handmade2 = unchecked((int)160),
+  Handmade2 = 160,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  TornPaper = unchecked((int)161),
+  TornPaper = 161,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  TornPaperBlack = unchecked((int)162),
+  TornPaperBlack = 162,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  CouponCutoutDashes = unchecked((int)163),
+  CouponCutoutDashes = 163,
   /// <summary>
   /// Specifies the graphical page border setting of a page.
   /// </summary>
-  CouponCutoutDots = unchecked((int)164)
+  CouponCutoutDots = 164
 }

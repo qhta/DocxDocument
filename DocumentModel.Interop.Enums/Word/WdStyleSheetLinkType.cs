@@ -8,9 +8,9 @@ public enum WdStyleSheetLinkType
   /// <summary>
   /// Linked external style sheet.
   /// </summary>
-  Linked = unchecked((int)0),
+  Linked = 0,
   /// <summary>
   /// Imported internal style sheet.
   /// </summary>
-  Imported = unchecked((int)1)
+  Imported = 1
 }

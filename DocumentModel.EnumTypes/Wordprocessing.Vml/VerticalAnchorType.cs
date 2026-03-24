@@ -7,10 +7,15 @@ namespace DocumentModel.Wordprocessing.Vml;
 public enum VerticalAnchorType
 {
   /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   ///   Margin.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXVW.VerticalAnchorValues.Margin))]
-  Margin,
+  Margin = 1,
+
   /// <summary>
   ///   Page.
   /// </summary>

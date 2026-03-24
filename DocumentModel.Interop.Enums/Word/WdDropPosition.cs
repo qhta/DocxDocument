@@ -8,13 +8,13 @@ public enum WdDropPosition
   /// <summary>
   /// No dropped capital letter.
   /// </summary>
-  None = unchecked((int)0),
+  None = 0,
   /// <summary>
   /// Dropped capital letter begins at the left margin.
   /// </summary>
-  Normal = unchecked((int)1),
+  Normal = 1,
   /// <summary>
   /// Dropped capital letter ends at the left margin.
   /// </summary>
-  Margin = unchecked((int)2)
+  Margin = 2
 }

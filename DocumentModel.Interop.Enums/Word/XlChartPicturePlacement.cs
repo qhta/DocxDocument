@@ -8,29 +8,29 @@ public enum XlChartPicturePlacement
   /// <summary>
   /// Display on sides.
   /// </summary>
-  Sides = unchecked((int)1),
+  Sides = 1,
   /// <summary>
   /// Display on end.
   /// </summary>
-  End = unchecked((int)2),
+  End = 2,
   /// <summary>
   /// Display on end and sides.
   /// </summary>
-  EndSides = unchecked((int)3),
+  EndSides = 3,
   /// <summary>
   /// Display on front.
   /// </summary>
-  Front = unchecked((int)4),
+  Front = 4,
   /// <summary>
   /// Display on front and sides.
   /// </summary>
-  FrontSides = unchecked((int)5),
+  FrontSides = 5,
   /// <summary>
   /// Display on front and end.
   /// </summary>
-  FrontEnd = unchecked((int)6),
+  FrontEnd = 6,
   /// <summary>
   /// Display on all faces.
   /// </summary>
-  AllFaces = unchecked((int)7)
+  AllFaces = 7
 }

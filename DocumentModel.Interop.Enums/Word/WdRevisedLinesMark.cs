@@ -8,17 +8,17 @@ public enum WdRevisedLinesMark
   /// <summary>
   /// Not displayed.
   /// </summary>
-  None = unchecked((int)0),
+  None = 0,
   /// <summary>
   /// In the left border.
   /// </summary>
-  LeftBorder = unchecked((int)1),
+  LeftBorder = 1,
   /// <summary>
   /// In the right border.
   /// </summary>
-  RightBorder = unchecked((int)2),
+  RightBorder = 2,
   /// <summary>
   /// Outside the border.
   /// </summary>
-  OutsideBorder = unchecked((int)3)
+  OutsideBorder = 3
 }

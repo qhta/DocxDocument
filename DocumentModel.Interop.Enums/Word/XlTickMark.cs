@@ -8,17 +8,17 @@ public enum XlTickMark
   /// <summary>
   /// Inside the axis
   /// </summary>
-  Inside = unchecked((int)2),
+  Inside = 2,
   /// <summary>
   /// No mark
   /// </summary>
-  Outside = unchecked((int)3),
+  Outside = 3,
   /// <summary>
   /// Crosses the axis
   /// </summary>
-  Cross = unchecked((int)4),
+  Cross = 4,
   /// <summary>
   /// Specifies the position of major and minor tick marks for an axis.
   /// </summary>
-  None = unchecked((int)-4142)
+  None = -4142
 }

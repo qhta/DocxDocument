@@ -8,13 +8,13 @@ public enum WdListGalleryType
   /// <summary>
   /// Bulleted list.
   /// </summary>
-  BulletGallery = unchecked((int)1),
+  BulletGallery = 1,
   /// <summary>
   /// Numbered list.
   /// </summary>
-  NumberGallery = unchecked((int)2),
+  NumberGallery = 2,
   /// <summary>
   /// Outline numbered list.
   /// </summary>
-  OutlineNumberGallery = unchecked((int)3)
+  OutlineNumberGallery = 3
 }
