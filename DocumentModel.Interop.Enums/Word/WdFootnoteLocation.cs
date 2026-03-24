@@ -11,9 +11,9 @@ public enum WdFootnoteLocation
   /// <summary>
   /// At bottom of current page.
   /// </summary>
-  ottomOfPage = 0,
+  BottomOfPage = 0,
   /// <summary>
   /// Beneath current text.
   /// </summary>
-  eneathText = 1
+  BeneathText = 1
 }

@@ -8,7 +8,6 @@ namespace DocumentModel.Interop.Word;
 /// </remarks>
 public enum WdPaperSize
 {
-
   /// <summary>
   /// Specifies a paper size.
   /// </summary>

@@ -11,9 +11,9 @@ public enum XlScaleType
   /// <summary>
   /// Logarithmic
   /// </summary>
-  ogarithmic = -4133,
+  Logarithmic = -4133,
   /// <summary>
   /// Linear
   /// </summary>
-  inear = -4132
+  Linear = -4132
 }

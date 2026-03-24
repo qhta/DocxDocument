@@ -89,7 +89,7 @@ public enum XlChartItem
   /// </summary>
   DownBars = 20,
   /// <summary>
-  /// Axis.
+  /// Axis title.
   /// </summary>
   Axis = 21,
   /// <summary>
@@ -101,7 +101,7 @@ public enum XlChartItem
   /// </summary>
   Floor = 23,
   /// <summary>
-  /// Legend.
+  /// Legend entry.
   /// </summary>
   Legend = 24,
   /// <summary>
