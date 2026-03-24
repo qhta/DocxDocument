@@ -49,51 +49,51 @@ public enum WdOpenFormat
   /// </summary>
   AllWord = 6,
   /// <summary>
-  /// Specifies the format to use when opening a document.
+  /// HTML format.
   /// </summary>
   WebPages = 7,
   /// <summary>
-  /// Specifies the format to use when opening a document.
+  /// XML format.
   /// </summary>
   XML = 8,
   /// <summary>
-  /// Specifies the format to use when opening a document.
+  /// XML document format.
   /// </summary>
   XMLDocument = 9,
   /// <summary>
-  /// Specifies the format to use when opening a document.
+  /// XML document format with macros enabled.
   /// </summary>
   XMLDocumentMacroEnabled = 10,
   /// <summary>
-  /// Specifies the format to use when opening a document.
+  /// XML template format.
   /// </summary>
   XMLTemplate = 11,
   /// <summary>
-  /// Specifies the format to use when opening a document.
+  /// XML template format with macros enabled.
   /// </summary>
   XMLTemplateMacroEnabled = 12,
   /// <summary>
-  /// Specifies the format to use when opening a document.
+  /// Word template format.
   /// </summary>
   AllWordTemplates = 13,
   /// <summary>
-  /// Specifies the format to use when opening a document.
+  /// Reserved for internal use.
   /// </summary>
   XMLDocumentSerialized = 14,
   /// <summary>
-  /// Specifies the format to use when opening a document.
+  /// Reserved for internal use.
   /// </summary>
   XMLDocumentMacroEnabledSerialized = 15,
   /// <summary>
-  /// Specifies the format to use when opening a document.
+  /// Reserved for internal use.
   /// </summary>
   XMLTemplateSerialized = 16,
   /// <summary>
-  /// Specifies the format to use when opening a document.
+  /// Reserved for internal use.
   /// </summary>
   XMLTemplateMacroEnabledSerialized = 17,
   /// <summary>
-  /// Specifies the format to use when opening a document.
+  /// No description is available.
   /// </summary>
   OpenDocumentText = 18
 }

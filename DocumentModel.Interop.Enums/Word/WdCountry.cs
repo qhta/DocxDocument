@@ -53,55 +53,55 @@ public enum WdCountry
   /// </summary>
   Norway = 47,
   /// <summary>
-  /// Specifies the country/region setting of the current system.
+  /// Germany
   /// </summary>
   Germany = 49,
   /// <summary>
-  /// Specifies the country/region setting of the current system.
+  /// Peru
   /// </summary>
   Peru = 51,
   /// <summary>
-  /// Specifies the country/region setting of the current system.
+  /// Mexico
   /// </summary>
   Mexico = 52,
   /// <summary>
-  /// Specifies the country/region setting of the current system.
+  /// Argentina
   /// </summary>
   Argentina = 54,
   /// <summary>
-  /// Specifies the country/region setting of the current system.
+  /// Brazil
   /// </summary>
   Brazil = 55,
   /// <summary>
-  /// Specifies the country/region setting of the current system.
+  /// Chile
   /// </summary>
   Chile = 56,
   /// <summary>
-  /// Specifies the country/region setting of the current system.
+  /// Venezuela
   /// </summary>
   Venezuela = 58,
   /// <summary>
-  /// Specifies the country/region setting of the current system.
+  /// Japan
   /// </summary>
   Japan = 81,
   /// <summary>
-  /// Specifies the country/region setting of the current system.
+  /// Korea
   /// </summary>
   Korea = 82,
   /// <summary>
-  /// Specifies the country/region setting of the current system.
+  /// China
   /// </summary>
   China = 86,
   /// <summary>
-  /// Specifies the country/region setting of the current system.
+  /// Iceland
   /// </summary>
   Iceland = 354,
   /// <summary>
-  /// Specifies the country/region setting of the current system.
+  /// Finland
   /// </summary>
   Finland = 358,
   /// <summary>
-  /// Specifies the country/region setting of the current system.
+  /// Taiwan
   /// </summary>
   Taiwan = 886
 }

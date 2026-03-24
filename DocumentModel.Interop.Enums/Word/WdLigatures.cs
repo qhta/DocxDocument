@@ -36,43 +36,44 @@ public enum WdLigatures
   /// </summary>
   StandardHistorical = 5,
   /// <summary>
-  /// Specifies the type of ligatures applied to a font.
+  /// Applies contextual and historical ligatures to the font.
   /// </summary>
   ContextualHistorical = 6,
   /// <summary>
-  /// Specifies the type of ligatures applied to a font.
+  /// Applies standard, contextual, and historical ligatures to the font.
   /// </summary>
   StandardContextualHistorical = 7,
   /// <summary>
-  /// Specifies the type of ligatures applied to a font.
+  /// Applies discretional ligatures to the font. Discretional ligatures are most often designed to be ornamental at
+  /// the discretion of the type developer.
   /// </summary>
   Discretional = 8,
   /// <summary>
-  /// Specifies the type of ligatures applied to a font.
+  /// Applies standard and discretional ligatures to the font.
   /// </summary>
   StandardDiscretional = 9,
   /// <summary>
-  /// Specifies the type of ligatures applied to a font.
+  /// Applies contextual and discretional ligatures to the font.
   /// </summary>
   ContextualDiscretional = 10,
   /// <summary>
-  /// Specifies the type of ligatures applied to a font.
+  /// Applies standard, contextual and discretional ligatures to the font.
   /// </summary>
   StandardContextualDiscretional = 11,
   /// <summary>
-  /// Specifies the type of ligatures applied to a font.
+  /// Applies historical and discretional ligatures to the font.
   /// </summary>
   HistoricalDiscretional = 12,
   /// <summary>
-  /// Specifies the type of ligatures applied to a font.
+  /// Applies standard historical and discretional ligatures to the font.
   /// </summary>
   StandardHistoricalDiscretional = 13,
   /// <summary>
-  /// Specifies the type of ligatures applied to a font.
+  /// Applies contextual, historical, and discretional ligatures to a font.
   /// </summary>
   ContextualHistoricalDiscretional = 14,
   /// <summary>
-  /// Specifies the type of ligatures applied to a font.
+  /// Applies all types of ligatures to the font.
   /// </summary>
   All = 15
 }

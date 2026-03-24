@@ -53,23 +53,23 @@ public enum WdUnits
   /// </summary>
   Window = 11,
   /// <summary>
-  /// Specifies a unit of measure to use.
+  /// A cell.
   /// </summary>
   Cell = 12,
   /// <summary>
-  /// Specifies a unit of measure to use.
+  /// Character formatting.
   /// </summary>
   CharacterFormatting = 13,
   /// <summary>
-  /// Specifies a unit of measure to use.
+  /// Paragraph formatting.
   /// </summary>
   ParagraphFormatting = 14,
   /// <summary>
-  /// Specifies a unit of measure to use.
+  /// A table.
   /// </summary>
   Table = 15,
   /// <summary>
-  /// Specifies a unit of measure to use.
+  /// The selected item.
   /// </summary>
   Item = 16
 }

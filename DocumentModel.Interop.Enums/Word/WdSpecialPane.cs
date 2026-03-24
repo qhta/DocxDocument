@@ -53,43 +53,43 @@ public enum WdSpecialPane
   /// </summary>
   FootnoteContinuationSeparator = 10,
   /// <summary>
-  /// Specifies an item to display in the active window pane.
+  /// The footnote separator.
   /// </summary>
   FootnoteSeparator = 11,
   /// <summary>
-  /// Specifies an item to display in the active window pane.
+  /// The endnote continuation notice.
   /// </summary>
   EndnoteContinuationNotice = 12,
   /// <summary>
-  /// Specifies an item to display in the active window pane.
+  /// The endnote continuation separator.
   /// </summary>
   EndnoteContinuationSeparator = 13,
   /// <summary>
-  /// Specifies an item to display in the active window pane.
+  /// The endnote separator.
   /// </summary>
   EndnoteSeparator = 14,
   /// <summary>
-  /// Specifies an item to display in the active window pane.
+  /// Selected comments.
   /// </summary>
   Comments = 15,
   /// <summary>
-  /// Specifies an item to display in the active window pane.
+  /// The page header.
   /// </summary>
   CurrentPageHeader = 16,
   /// <summary>
-  /// Specifies an item to display in the active window pane.
+  /// The page footer.
   /// </summary>
   CurrentPageFooter = 17,
   /// <summary>
-  /// Specifies an item to display in the active window pane.
+  /// The pane revisions.
   /// </summary>
   Revisions = 18,
   /// <summary>
-  /// Specifies an item to display in the active window pane.
+  /// The revisions pane displays along the bottom of the document window.
   /// </summary>
   RevisionsHoriz = 19,
   /// <summary>
-  /// Specifies an item to display in the active window pane.
+  /// The revisions pane displays along the left side of the document window.
   /// </summary>
   RevisionsVert = 20
 }

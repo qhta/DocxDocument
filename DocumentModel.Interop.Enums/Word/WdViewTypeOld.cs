@@ -9,11 +9,11 @@ namespace DocumentModel.Interop.Word;
 public enum WdViewTypeOld
 {
   /// <summary>
-  /// Reserved for internal use.
+  /// No description is available.
   /// </summary>
   PageView = 3,
   /// <summary>
-  /// Reserved for internal use.
+  /// No description is available.
   /// </summary>
   OnlineView = 6
 }

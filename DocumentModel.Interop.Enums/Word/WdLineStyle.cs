@@ -49,63 +49,66 @@ public enum WdLineStyle
   /// </summary>
   ThinThickSmallGap = 9,
   /// <summary>
-  /// Specifies the border style for an object.
+  /// An internal single thick solid line surrounded by a single thin solid line with a small gap between them.
   /// </summary>
   ThickThinSmallGap = 10,
   /// <summary>
-  /// Specifies the border style for an object.
+  /// An internal single thin solid line surrounded by a single thick solid line surrounded by a single thin solid
+  /// line with a small gap between all lines.
   /// </summary>
   ThinThickThinSmallGap = 11,
   /// <summary>
-  /// Specifies the border style for an object.
+  /// An internal single thin solid line surrounded by a single thick solid line with a medium gap between them.
   /// </summary>
   ThinThickMedGap = 12,
   /// <summary>
-  /// Specifies the border style for an object.
+  /// An internal single thick solid line surrounded by a single thin solid line with a medium gap between them.
   /// </summary>
   ThickThinMedGap = 13,
   /// <summary>
-  /// Specifies the border style for an object.
+  /// An internal single thin solid line surrounded by a single thick solid line surrounded by a single thin solid
+  /// line with a medium gap between all lines.
   /// </summary>
   ThinThickThinMedGap = 14,
   /// <summary>
-  /// Specifies the border style for an object.
+  /// An internal single thin solid line surrounded by a single thick solid line with a large gap between them.
   /// </summary>
   ThinThickLargeGap = 15,
   /// <summary>
-  /// Specifies the border style for an object.
+  /// An internal single thick solid line surrounded by a single thin solid line with a large gap between them.
   /// </summary>
   ThickThinLargeGap = 16,
   /// <summary>
-  /// Specifies the border style for an object.
+  /// An internal single thin solid line surrounded by a single thick solid line surrounded by a single thin solid
+  /// line with a large gap between all lines.
   /// </summary>
   ThinThickThinLargeGap = 17,
   /// <summary>
-  /// Specifies the border style for an object.
+  /// A single wavy solid line.
   /// </summary>
   SingleWavy = 18,
   /// <summary>
-  /// Specifies the border style for an object.
+  /// Double wavy solid lines.
   /// </summary>
   DoubleWavy = 19,
   /// <summary>
-  /// Specifies the border style for an object.
+  /// A dash followed by a dot stroke, thus rendering a border similar to a barber pole.
   /// </summary>
   DashDotStroked = 20,
   /// <summary>
-  /// Specifies the border style for an object.
+  /// The border appears to have a 3-D embossed look.
   /// </summary>
   Emboss3D = 21,
   /// <summary>
-  /// Specifies the border style for an object.
+  /// The border appears to have a 3-D engraved look.
   /// </summary>
   Engrave3D = 22,
   /// <summary>
-  /// Specifies the border style for an object.
+  /// The border appears to be outset.
   /// </summary>
   Outset = 23,
   /// <summary>
-  /// Specifies the border style for an object.
+  /// The border appears to be inset.
   /// </summary>
   Inset = 24
 }

@@ -53,31 +53,31 @@ public enum WdUnderline
   /// </summary>
   DottedHeavy = 20,
   /// <summary>
-  /// Specifies the type of underline to apply.
+  /// Heavy dashes.
   /// </summary>
   DashHeavy = 23,
   /// <summary>
-  /// Specifies the type of underline to apply.
+  /// Alternating heavy dots and heavy dashes.
   /// </summary>
   DotDashHeavy = 25,
   /// <summary>
-  /// Specifies the type of underline to apply.
+  /// An alternating heavy dot-dot-dash pattern.
   /// </summary>
   DotDotDashHeavy = 26,
   /// <summary>
-  /// Specifies the type of underline to apply.
+  /// A heavy wavy line.
   /// </summary>
   WavyHeavy = 27,
   /// <summary>
-  /// Specifies the type of underline to apply.
+  /// Long dashes.
   /// </summary>
   DashLong = 39,
   /// <summary>
-  /// Specifies the type of underline to apply.
+  /// A double wavy line.
   /// </summary>
   WavyDouble = 43,
   /// <summary>
-  /// Specifies the type of underline to apply.
+  /// Long heavy dashes.
   /// </summary>
   DashLongHeavy = 55
 }

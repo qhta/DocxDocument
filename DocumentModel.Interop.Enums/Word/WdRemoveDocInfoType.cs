@@ -49,27 +49,27 @@ public enum WdRemoveDocInfoType
   /// </summary>
   DocumentWorkspace = 10,
   /// <summary>
-  /// Specifies the type of information to remove from a document.
+  /// Removes ink annotations.
   /// </summary>
   InkAnnotations = 11,
   /// <summary>
-  /// Specifies the type of information to remove from a document.
+  /// Removes document server properties.
   /// </summary>
   DocumentServerProperties = 14,
   /// <summary>
-  /// Specifies the type of information to remove from a document.
+  /// Removes document management policy information.
   /// </summary>
   DocumentManagementPolicy = 15,
   /// <summary>
-  /// Specifies the type of information to remove from a document.
+  /// Removes content type information.
   /// </summary>
   ContentType = 16,
   /// <summary>
-  /// Specifies the type of information to remove from a document.
+  /// Removes taskpane web extensions information.
   /// </summary>
   TaskpaneWebExtensions = 17,
   /// <summary>
-  /// Specifies the type of information to remove from a document.
+  /// Removes all document information.
   /// </summary>
   All = 99
 }

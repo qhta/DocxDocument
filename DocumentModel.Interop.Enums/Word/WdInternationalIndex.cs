@@ -45,7 +45,7 @@ public enum WdInternationalIndex
   /// </summary>
   DateSeparator = 25,
   /// <summary>
-  /// Specifies information specific to the current country/region and international settings.
+  /// Returns the language version of Word.
   /// </summary>
   ProductLanguageID = 26
 }

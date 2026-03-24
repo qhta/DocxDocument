@@ -49,27 +49,27 @@ public enum WdGoToItem
   /// </summary>
   Object = 9,
   /// <summary>
-  /// Specifies the type of item to move the insertion point or selection just prior to.
+  /// An equation.
   /// </summary>
   Equation = 10,
   /// <summary>
-  /// Specifies the type of item to move the insertion point or selection just prior to.
+  /// A heading.
   /// </summary>
   Heading = 11,
   /// <summary>
-  /// Specifies the type of item to move the insertion point or selection just prior to.
+  /// A percent.
   /// </summary>
   Percent = 12,
   /// <summary>
-  /// Specifies the type of item to move the insertion point or selection just prior to.
+  /// A spelling error.
   /// </summary>
   SpellingError = 13,
   /// <summary>
-  /// Specifies the type of item to move the insertion point or selection just prior to.
+  /// A grammatical error.
   /// </summary>
   GrammaticalError = 14,
   /// <summary>
-  /// Specifies the type of item to move the insertion point or selection just prior to.
+  /// A proofreading error.
   /// </summary>
   ProofreadingError = 15,
   /// <summary>

@@ -49,79 +49,79 @@ public enum WdNoteNumberStyle
   /// </summary>
   KanjiTraditional = 16,
   /// <summary>
-  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
+  /// Number in circle number style.
   /// </summary>
   NumberInCircle = 18,
   /// <summary>
-  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
+  /// Traditional Chinese number style 1.
   /// </summary>
   TradChinNum1 = 33,
   /// <summary>
-  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
+  /// Traditional Chinese number style 2.
   /// </summary>
   TradChinNum2 = 34,
   /// <summary>
-  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
+  /// Simplified Chinese number style 1.
   /// </summary>
   SimpChinNum1 = 37,
   /// <summary>
-  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
+  /// Simplified Chinese number style 2.
   /// </summary>
   SimpChinNum2 = 38,
   /// <summary>
-  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
+  /// Hanja read number style.
   /// </summary>
   HanjaRead = 41,
   /// <summary>
-  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
+  /// Hanja read digit number style.
   /// </summary>
   HanjaReadDigit = 42,
   /// <summary>
-  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
+  /// Hebrew letter style 1.
   /// </summary>
   HebrewLetter1 = 45,
   /// <summary>
-  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
+  /// Arabic letter style 1.
   /// </summary>
   ArabicLetter1 = 46,
   /// <summary>
-  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
+  /// Hebrew letter style 2.
   /// </summary>
   HebrewLetter2 = 47,
   /// <summary>
-  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
+  /// Arabic letter style 2.
   /// </summary>
   ArabicLetter2 = 48,
   /// <summary>
-  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
+  /// Hindi letter style 1.
   /// </summary>
   HindiLetter1 = 49,
   /// <summary>
-  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
+  /// Hindi letter style 2.
   /// </summary>
   HindiLetter2 = 50,
   /// <summary>
-  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
+  /// Hindi Arabic number style.
   /// </summary>
   HindiArabic = 51,
   /// <summary>
-  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
+  /// Hindi Cardinal text style.
   /// </summary>
   HindiCardinalText = 52,
   /// <summary>
-  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
+  /// Thai letter style.
   /// </summary>
   ThaiLetter = 53,
   /// <summary>
-  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
+  /// Thai Arabic number style.
   /// </summary>
   ThaiArabic = 54,
   /// <summary>
-  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
+  /// Thai Cardinal text style.
   /// </summary>
   ThaiCardinalText = 55,
   /// <summary>
-  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
+  /// Vietnamese Cardinal text style.
   /// </summary>
   VietCardinalText = 56
 }

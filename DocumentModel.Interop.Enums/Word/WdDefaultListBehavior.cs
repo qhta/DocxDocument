@@ -9,15 +9,15 @@ namespace DocumentModel.Interop.Word;
 public enum WdDefaultListBehavior
 {
   /// <summary>
-  /// Specifies the default list behavior for a list.
+  /// Use formatting compatible with Microsoft Word 97.
   /// </summary>
-  ListBehavior8 = 0,
+  Word8 = 0,
   /// <summary>
-  /// Specifies the default list behavior for a list.
+  /// Use Web-oriented formatting as introduced in Microsoft Word 2000.
   /// </summary>
-  ListBehavior9 = 1,
+  Word9 = 1,
   /// <summary>
-  /// Specifies the default list behavior for a list.
+  /// Use formatting compatible with Microsoft Word 2002.
   /// </summary>
-  ListBehavior10 = 2
+  Word10 = 2
 }

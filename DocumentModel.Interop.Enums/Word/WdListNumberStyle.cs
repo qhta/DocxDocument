@@ -53,187 +53,187 @@ public enum WdListNumberStyle
   /// </summary>
   AiueoHalfWidth = 12,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Iroha half width style.
   /// </summary>
   IrohaHalfWidth = 13,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Arabic full-width numeric style.
   /// </summary>
   ArabicFullWidth = 14,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Kanji traditional style.
   /// </summary>
   KanjiTraditional = 16,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Kanji traditional 2 style.
   /// </summary>
   KanjiTraditional2 = 17,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Number in circle style.
   /// </summary>
   NumberInCircle = 18,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Aiueo numeric style.
   /// </summary>
   Aiueo = 20,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Iroha style.
   /// </summary>
   Iroha = 21,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// 64
   /// </summary>
   ArabicLZ = 22,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Bullet style.
   /// </summary>
   Bullet = 23,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Ganada style.
   /// </summary>
   Ganada = 24,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Chosung style.
   /// </summary>
   Chosung = 25,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// GB numeric 1 style.
   /// </summary>
   GBNum1 = 26,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// GB numeric 2 style.
   /// </summary>
   GBNum2 = 27,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// GB numeric 3 style.
   /// </summary>
   GBNum3 = 28,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// GB numeric 4 style.
   /// </summary>
   GBNum4 = 29,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Zodiac 1 style.
   /// </summary>
   Zodiac1 = 30,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Zodiac 2 style.
   /// </summary>
   Zodiac2 = 31,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Zodiac 3 style.
   /// </summary>
   Zodiac3 = 32,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Traditional Chinese numeric 1 style.
   /// </summary>
   TradChinNum1 = 33,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Traditional Chinese numeric 2 style.
   /// </summary>
   TradChinNum2 = 34,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Traditional Chinese numeric 3 style.
   /// </summary>
   TradChinNum3 = 35,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Traditional Chinese numeric 4 style.
   /// </summary>
   TradChinNum4 = 36,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Simplified Chinese numeric 1 style.
   /// </summary>
   SimpChinNum1 = 37,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Simplified Chinese numeric 2 style.
   /// </summary>
   SimpChinNum2 = 38,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Simplified Chinese numeric 3 style.
   /// </summary>
   SimpChinNum3 = 39,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Simplified Chinese numeric 4 style.
   /// </summary>
   SimpChinNum4 = 40,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Hanja Read style.
   /// </summary>
   HanjaRead = 41,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Hanja Read Digit style.
   /// </summary>
   HanjaReadDigit = 42,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Hanqul style.
   /// </summary>
   Hangul = 43,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Hanja style.
   /// </summary>
   Hanja = 44,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Hebrew 1 style.
   /// </summary>
   Hebrew1 = 45,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Arabic 1 numeric style.
   /// </summary>
   Arabic1 = 46,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Hebrew 2 style.
   /// </summary>
   Hebrew2 = 47,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Arabic 2 numeric style.
   /// </summary>
   Arabic2 = 48,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Hindi letter 1 style.
   /// </summary>
   HindiLetter1 = 49,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Hindi letter 2 style.
   /// </summary>
   HindiLetter2 = 50,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Hindi Arabic style.
   /// </summary>
   HindiArabic = 51,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Hindi Cardinal text style.
   /// </summary>
   HindiCardinalText = 52,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Thai letter style.
   /// </summary>
   ThaiLetter = 53,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Thai Arabic style.
   /// </summary>
   ThaiArabic = 54,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Thai Cardinal text style.
   /// </summary>
   ThaiCardinalText = 55,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Vietnamese Cardinal text style.
   /// </summary>
   VietCardinalText = 56,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Lowercase Russian style.
   /// </summary>
   LowercaseRussian = 58,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Uppercase Russian style.
   /// </summary>
   UppercaseRussian = 59,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// No description is available.
   /// </summary>
   LowercaseGreek = 60,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// No description is available.
   /// </summary>
   UppercaseGreek = 61,
   /// <summary>
@@ -249,35 +249,35 @@ public enum WdListNumberStyle
   /// </summary>
   ArabicLZ4 = 64,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// No description is available.
   /// </summary>
   LowercaseTurkish = 65,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// No description is available.
   /// </summary>
   UppercaseTurkish = 66,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// No description is available.
   /// </summary>
   LowercaseBulgarian = 67,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// No description is available.
   /// </summary>
   UppercaseBulgarian = 68,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Picture bullet style.
   /// </summary>
   PictureBullet = 249,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Legal style.
   /// </summary>
   Legal = 253,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// Legal LZ style.
   /// </summary>
   LegalLZ = 254,
   /// <summary>
-  /// Specifies the numeric style to apply to a list.
+  /// No style applied.
   /// </summary>
   None = 255
 }

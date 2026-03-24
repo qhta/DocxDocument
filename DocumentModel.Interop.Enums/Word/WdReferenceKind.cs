@@ -25,23 +25,23 @@ public enum WdReferenceKind
   /// </summary>
   FootnoteNumber = 5,
   /// <summary>
-  /// Specifies the information to include in a cross-reference.
+  /// Insert endnote reference mark.
   /// </summary>
   EndnoteNumber = 6,
   /// <summary>
-  /// Specifies the information to include in a cross-reference.
+  /// Insert page number of specified item.
   /// </summary>
   PageNumber = 7,
   /// <summary>
-  /// Specifies the information to include in a cross-reference.
+  /// Insert the word "Above" or the word "Below" as appropriate.
   /// </summary>
   Position = 15,
   /// <summary>
-  /// Specifies the information to include in a cross-reference.
+  /// Insert formatted footnote reference mark.
   /// </summary>
   FootnoteNumberFormatted = 16,
   /// <summary>
-  /// Specifies the information to include in a cross-reference.
+  /// Insert formatted endnote reference mark.
   /// </summary>
   EndnoteNumberFormatted = 17,
   /// <summary>

@@ -53,75 +53,75 @@ public enum WdPageNumberStyle
   /// </summary>
   TradChinNum1 = 33,
   /// <summary>
-  /// Specifies the style to apply to page numbers.
+  /// Traditional Chinese number 2 style.
   /// </summary>
   TradChinNum2 = 34,
   /// <summary>
-  /// Specifies the style to apply to page numbers.
+  /// Simplified Chinese number 1 style.
   /// </summary>
   SimpChinNum1 = 37,
   /// <summary>
-  /// Specifies the style to apply to page numbers.
+  /// Simplified Chinese number 2 style.
   /// </summary>
   SimpChinNum2 = 38,
   /// <summary>
-  /// Specifies the style to apply to page numbers.
+  /// Hanja Read style.
   /// </summary>
   HanjaRead = 41,
   /// <summary>
-  /// Specifies the style to apply to page numbers.
+  /// Hanja Read Digit style.
   /// </summary>
   HanjaReadDigit = 42,
   /// <summary>
-  /// Specifies the style to apply to page numbers.
+  /// Hebrew letter 1 style.
   /// </summary>
   HebrewLetter1 = 45,
   /// <summary>
-  /// Specifies the style to apply to page numbers.
+  /// Arabic letter 1 style.
   /// </summary>
   ArabicLetter1 = 46,
   /// <summary>
-  /// Specifies the style to apply to page numbers.
+  /// Hebrew letter 2 style.
   /// </summary>
   HebrewLetter2 = 47,
   /// <summary>
-  /// Specifies the style to apply to page numbers.
+  /// Arabic letter 2 style.
   /// </summary>
   ArabicLetter2 = 48,
   /// <summary>
-  /// Specifies the style to apply to page numbers.
+  /// Hindi letter 1 style.
   /// </summary>
   HindiLetter1 = 49,
   /// <summary>
-  /// Specifies the style to apply to page numbers.
+  /// Hindi letter 2 style.
   /// </summary>
   HindiLetter2 = 50,
   /// <summary>
-  /// Specifies the style to apply to page numbers.
+  /// Hindi Arabic style.
   /// </summary>
   HindiArabic = 51,
   /// <summary>
-  /// Specifies the style to apply to page numbers.
+  /// Hindi Cardinal text style.
   /// </summary>
   HindiCardinalText = 52,
   /// <summary>
-  /// Specifies the style to apply to page numbers.
+  /// Thai letter style.
   /// </summary>
   ThaiLetter = 53,
   /// <summary>
-  /// Specifies the style to apply to page numbers.
+  /// Thai Arabic style.
   /// </summary>
   ThaiArabic = 54,
   /// <summary>
-  /// Specifies the style to apply to page numbers.
+  /// Thai Cardinal Text style.
   /// </summary>
   ThaiCardinalText = 55,
   /// <summary>
-  /// Specifies the style to apply to page numbers.
+  /// Vietnamese Cardinal text style.
   /// </summary>
   VietCardinalText = 56,
   /// <summary>
-  /// Specifies the style to apply to page numbers.
+  /// Number in dash style.
   /// </summary>
   NumberInDash = 57
 }

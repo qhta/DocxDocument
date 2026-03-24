@@ -47,7 +47,8 @@ public enum WdBreakType
   /// </summary>
   LineBreakClearRight = 10,
   /// <summary>
-  /// Specifies type of break.
+  /// Ends the current line and forces the text to continue below a picture, table, or other item. The text
+  /// continues on the next blank line that does not contain a table aligned with the left or right margin.
   /// </summary>
   TextWrappingBreak = 11
 }

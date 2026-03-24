@@ -53,79 +53,79 @@ public enum WdBuiltInProperty
   /// </summary>
   TimeCreated = 11,
   /// <summary>
-  /// Specifies a built-in document property.
+  /// Time last saved.
   /// </summary>
   TimeLastSaved = 12,
   /// <summary>
-  /// Specifies a built-in document property.
+  /// Number of edits to VBA project.
   /// </summary>
   VBATotalEdit = 13,
   /// <summary>
-  /// Specifies a built-in document property.
+  /// Page count.
   /// </summary>
   Pages = 14,
   /// <summary>
-  /// Specifies a built-in document property.
+  /// Word count.
   /// </summary>
   Words = 15,
   /// <summary>
-  /// Specifies a built-in document property.
+  /// Character count.
   /// </summary>
   Characters = 16,
   /// <summary>
-  /// Specifies a built-in document property.
+  /// Security setting.
   /// </summary>
   Security = 17,
   /// <summary>
-  /// Specifies a built-in document property.
+  /// Category.
   /// </summary>
   Category = 18,
   /// <summary>
-  /// Specifies a built-in document property.
+  /// Not supported.
   /// </summary>
   Format = 19,
   /// <summary>
-  /// Specifies a built-in document property.
+  /// Manager.
   /// </summary>
   Manager = 20,
   /// <summary>
-  /// Specifies a built-in document property.
+  /// Company.
   /// </summary>
   Company = 21,
   /// <summary>
-  /// Specifies a built-in document property.
+  /// Byte count.
   /// </summary>
   Bytes = 22,
   /// <summary>
-  /// Specifies a built-in document property.
+  /// Line count.
   /// </summary>
   Lines = 23,
   /// <summary>
-  /// Specifies a built-in document property.
+  /// Paragraph count.
   /// </summary>
   Paras = 24,
   /// <summary>
-  /// Specifies a built-in document property.
+  /// Not supported.
   /// </summary>
   Slides = 25,
   /// <summary>
-  /// Specifies a built-in document property.
+  /// Notes.
   /// </summary>
   Notes = 26,
   /// <summary>
-  /// Specifies a built-in document property.
+  /// Not supported.
   /// </summary>
   HiddenSlides = 27,
   /// <summary>
-  /// Specifies a built-in document property.
+  /// Not supported.
   /// </summary>
   MMClips = 28,
   /// <summary>
-  /// Specifies a built-in document property.
+  /// Not supported.
   /// </summary>
   HyperlinkBase = 29,
   /// <summary>
-  /// Specifies a built-in document property.
+  /// Character count with spaces.
   /// </summary>
   CharsWSpaces = 30
 }

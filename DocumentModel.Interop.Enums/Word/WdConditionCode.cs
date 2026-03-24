@@ -53,7 +53,7 @@ public enum WdConditionCode
   /// </summary>
   SECell = 10,
   /// <summary>
-  /// Specifies the area of a table to which to apply special style formatting.
+  /// Applies formatting to first cell in the last row of the table.
   /// </summary>
   SWCell = 11
 }

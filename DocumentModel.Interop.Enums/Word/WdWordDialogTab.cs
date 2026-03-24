@@ -9,163 +9,197 @@ namespace DocumentModel.Interop.Word;
 public enum WdWordDialogTab
 {
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// General tab of the Options dialog box.
   /// </summary>
   ToolsOptionsTabGeneral = 203,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// View tab of the Options dialog box.
   /// </summary>
   ToolsOptionsTabView = 204,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Print tab of the Options dialog box.
   /// </summary>
   ToolsOptionsTabPrint = 208,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Save tab of the Options dialog box.
   /// </summary>
   ToolsOptionsTabSave = 209,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Spelling and Grammar tab of the Options dialog box.
   /// </summary>
   ToolsOptionsTabProofread = 211,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// User Information tab of the Options dialog box.
   /// </summary>
   ToolsOptionsTabUserInfo = 213,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Edit tab of the Options dialog box.
   /// </summary>
   ToolsOptionsTabEdit = 224,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// File Locations tab of the Options dialog box.
   /// </summary>
   ToolsOptionsTabFileLocations = 225,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Track Changes tab of the Options dialog box.
   /// </summary>
   ToolsOptionsTabTrackChanges = 386,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Compatibility tab of the Options dialog box.
   /// </summary>
   ToolsOptionsTabCompatibility = 525,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Asian Typography tab of the Options dialog box.
   /// </summary>
   ToolsOptionsTabTypography = 739,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Hangul Hanja Conversion tab of the Options dialog box.
   /// </summary>
   ToolsOptionsTabHangulHanjaConversion = 786,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Not supported.
   /// </summary>
   ToolsOptionsTabFuzzy = 790,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Complex Scripts tab of the Options dialog box.
   /// </summary>
   ToolsOptionsTabBidi = 1029,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Not supported.
   /// </summary>
   ToolsOptionsTabAcetate = 1266,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Security tab of the Options dialog box.
   /// </summary>
   ToolsOptionsTabSecurity = 1361,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Margins tab of the Page Setup dialog box.
   /// </summary>
   FilePageSetupTabMargins = 150000,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Paper tab of the Page Setup dialog box.
   /// </summary>
   FilePageSetupTabPaper = 150001,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Layout tab of the Page Setup dialog box.
   /// </summary>
   FilePageSetupTabLayout = 150003,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Margins tab of the Page Setup dialog box, with Apply To drop-down list active.
   /// </summary>
   FilePageSetupTabCharsLines = 150004,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Symbols tab of the Symbol dialog box.
   /// </summary>
   InsertSymbolTabSymbols = 200000,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Special Characters tab of the Symbol dialog box.
   /// </summary>
   InsertSymbolTabSpecialCharacters = 200001,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// All Footnotes tab of the Note Options dialog box.
   /// </summary>
   NoteOptionsTabAllFootnotes = 300000,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// All Endnotes tab of the Note Options dialog box.
   /// </summary>
   NoteOptionsTabAllEndnotes = 300001,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Index tab of the Index and Tables dialog box.
   /// </summary>
   InsertIndexAndTablesTabIndex = 400000,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Table of Contents tab of the Index and Tables dialog box.
   /// </summary>
   InsertIndexAndTablesTabTableOfContents = 400001,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Table of Figures tab of the Index and Tables dialog box.
   /// </summary>
   InsertIndexAndTablesTabTableOfFigures = 400002,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Table of Authorities tab of the Index and Tables dialog box.
   /// </summary>
   InsertIndexAndTablesTabTableOfAuthorities = 400003,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Styles tab of the Organizer dialog box.
   /// </summary>
   OrganizerTabStyles = 500000,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// AutoText tab of the Organizer dialog box.
   /// </summary>
   OrganizerTabAutoText = 500001,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Command Bars tab of the Organizer dialog box.
   /// </summary>
   OrganizerTabCommandBars = 500002,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Macros tab of the Organizer dialog box.
   /// </summary>
   OrganizerTabMacros = 500003,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Font tab of the Font dialog box.
   /// </summary>
   FormatFontTabFont = 600000,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Character Spacing tab of the Font dialog box.
   /// </summary>
   FormatFontTabCharacterSpacing = 600001,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Animation tab of the Font dialog box.
   /// </summary>
   FormatFontTabAnimation = 600002,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Borders tab of the Borders dialog box.
   /// </summary>
   FormatBordersAndShadingTabBorders = 700000,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Page Border tab of the Borders dialog box.
   /// </summary>
   FormatBordersAndShadingTabPageBorder = 700001,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Shading tab of the Borders dialog box.
   /// </summary>
   FormatBordersAndShadingTabShading = 700002,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Envelopes tab of the Envelopes and Labels dialog box.
   /// </summary>
   ToolsEnvelopesAndLabelsTabEnvelopes = 800000,
   /// <summary>
-  /// Specifies the active tab when the specified dialog box is displayed.
+  /// Labels tab of the Envelopes and Labels dialog box. wdDialogFormatParagraphTabIndentsAndSpacing 1000000Indents
+  /// and Spacing tab of the Paragraph dialog box. wdDialogFormatParagraphTabTextFlow 1000001Line and Page Breaks
+  /// tab of the Paragraph dialog box. wdDialogFormatParagraphTabTeisai 1000002Line and Page Breaks tab of the
+  /// Paragraph dialog box, with choices appropriate for Asian text. wdDialogFormatDrawingObjectTabColorsAndLines
+  /// 1200000Colors and Lines tab of the Format Drawing Object dialog box. wdDialogFormatDrawingObjectTabSize
+  /// 1200001Size tab of the Format Drawing Object dialog box. wdDialogFormatDrawingObjectTabPosition
+  /// 1200002Position tab of the Format Drawing Object dialog box. wdDialogFormatDrawingObjectTabWrapping
+  /// 1200003Wrapping tab of the Format Drawing Object dialog box. wdDialogFormatDrawingObjectTabPicture
+  /// 1200004Picture tab of the Format Drawing Object dialog box. wdDialogFormatDrawingObjectTabTextbox
+  /// 1200005Textbox tab of the Format Drawing Object dialog box. wdDialogFormatDrawingObjectTabWeb 1200006Web tab
+  /// of the Format Drawing Object dialog box. wdDialogFormatDrawingObjectTabHR 1200007Colors and Lines tab of the
+  /// Format Drawing Object dialog box. wdDialogToolsAutoCorrectExceptionsTabFirstLetter 1400000First Letter tab of
+  /// the AutoCorrect Exceptions dialog box. wdDialogToolsAutoCorrectExceptionsTabInitialCaps 1400001Initial Caps
+  /// tab of the AutoCorrect Exceptions dialog box.
+  /// wdDialogToolsAutoCorrectExceptionsTabHangulAndAlphabet1400002Hangul and Alphabet tab of the AutoCorrect
+  /// Exceptions dialog box. Available only in multi-language versions. wdDialogToolsAutoCorrectExceptionsTabIac
+  /// 1400003Other Corrections tab of the AutoCorrect Exceptions dialog box.
+  /// wdDialogFormatBulletsAndNumberingTabBulleted 1500000Bulleted tab of the Bullets and Numbering dialog box.
+  /// wdDialogFormatBulletsAndNumberingTabNumbered 1500001Numbered tab of the Bullets and Numbering dialog box.
+  /// wdDialogFormatBulletsAndNumberingTabOutlineNumbered1500002Outline Numbered tab of the Bullets and Numbering
+  /// dialog box. wdDialogLetterWizardTabLetterFormat 1600000Letter Format tab of the Letter Wizard dialog box.
+  /// wdDialogLetterWizardTabRecipientInfo 1600001Recipient Info tab of the Letter Wizard dialog box.
+  /// wdDialogLetterWizardTabOtherElements 1600002Other Elements tab of the Letter Wizard dialog box.
+  /// wdDialogLetterWizardTabSenderInfo 1600003Sender Info tab of the Letter Wizard dialog box.
+  /// wdDialogToolsAutoManagerTabAutoCorrect 1700000AutoCorrect tab of the AutoCorrect dialog box.
+  /// wdDialogToolsAutoManagerTabAutoFormatAsYouType 1700001Format As You Type tab of the AutoCorrect dialog box.
+  /// wdDialogToolsAutoManagerTabAutoText 1700002AutoText tab of the AutoCorrect dialog box.
+  /// wdDialogToolsAutoManagerTabAutoFormat 1700003AutoFormat tab of the AutoCorrect dialog box.
+  /// wdDialogToolsAutoManagerTabSmartTags 1700004Smart Tags tab of the AutoCorrect dialog box.
+  /// wdDialogTablePropertiesTabTable 1800000Table tab of the Table Properties dialog box.
+  /// wdDialogTablePropertiesTabRow 1800001Row tab of the Table Properties dialog box.
+  /// wdDialogTablePropertiesTabColumn 1800002Column tab of the Table Properties dialog box.
+  /// wdDialogTablePropertiesTabCell 1800003Cell tab of the Table Properties dialog box.
+  /// wdDialogEmailOptionsTabSignature 1900000E-mail Signature tab of the E- mail Options dialog box.
+  /// wdDialogEmailOptionsTabStationary 1900001Personal Stationary tab of the E-mail Options dialog box.
   /// </summary>
   ToolsEnvelopesAndLabelsTabLabels = 800001,
   /// <summary>

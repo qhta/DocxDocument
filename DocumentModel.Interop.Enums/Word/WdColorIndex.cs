@@ -49,35 +49,35 @@ public enum WdColorIndex
   /// </summary>
   White = 8,
   /// <summary>
-  /// Specifies the color to apply.
+  /// Dark blue color.
   /// </summary>
   DarkBlue = 9,
   /// <summary>
-  /// Specifies the color to apply.
+  /// Teal color.
   /// </summary>
   Teal = 10,
   /// <summary>
-  /// Specifies the color to apply.
+  /// Green color.
   /// </summary>
   Green = 11,
   /// <summary>
-  /// Specifies the color to apply.
+  /// Violet color.
   /// </summary>
   Violet = 12,
   /// <summary>
-  /// Specifies the color to apply.
+  /// Dark red color.
   /// </summary>
   DarkRed = 13,
   /// <summary>
-  /// Specifies the color to apply.
+  /// Dark yellow color.
   /// </summary>
   DarkYellow = 14,
   /// <summary>
-  /// Specifies the color to apply.
+  /// Shade 50 of gray color.
   /// </summary>
   Gray50 = 15,
   /// <summary>
-  /// Specifies the color to apply.
+  /// Shade 25 of gray color.
   /// </summary>
   Gray25 = 16,
   /// <summary>

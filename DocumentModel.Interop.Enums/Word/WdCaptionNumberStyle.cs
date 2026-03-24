@@ -53,87 +53,87 @@ public enum WdCaptionNumberStyle
   /// </summary>
   Ganada = 24,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Chosung style.
   /// </summary>
   Chosung = 25,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Zodiac style 1.
   /// </summary>
   Zodiac1 = 30,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Zodiac style 2.
   /// </summary>
   Zodiac2 = 31,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Traditional Chinese number style 2.
   /// </summary>
   TradChinNum2 = 34,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Traditional Chinese number style 3.
   /// </summary>
   TradChinNum3 = 35,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Simplified Chinese number style 2.
   /// </summary>
   SimpChinNum2 = 38,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Simplified Chinese number style 3.
   /// </summary>
   SimpChinNum3 = 39,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Hanja read style.
   /// </summary>
   HanjaRead = 41,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Hanja read digit style.
   /// </summary>
   HanjaReadDigit = 42,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Hebrew letter style 1.
   /// </summary>
   HebrewLetter1 = 45,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Arabic letter style 1.
   /// </summary>
   ArabicLetter1 = 46,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Hebrew letter style 2.
   /// </summary>
   HebrewLetter2 = 47,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Arabic letter style 2.
   /// </summary>
   ArabicLetter2 = 48,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Hindi letter style 1.
   /// </summary>
   HindiLetter1 = 49,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Hindi letter style 2.
   /// </summary>
   HindiLetter2 = 50,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Hindi Arabic style.
   /// </summary>
   HindiArabic = 51,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Hindi cardinal style.
   /// </summary>
   HindiCardinalText = 52,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Thai letter style.
   /// </summary>
   ThaiLetter = 53,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Thai Arabic style.
   /// </summary>
   ThaiArabic = 54,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Thai cardinal text style.
   /// </summary>
   ThaiCardinalText = 55,
   /// <summary>
-  /// Specifies the number style to be used with the CaptionLabel object.
+  /// Vietnamese cardinal text style.
   /// </summary>
   VietCardinalText = 56
 }

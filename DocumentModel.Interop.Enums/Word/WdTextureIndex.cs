@@ -9,7 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdTextureIndex
 {
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// No shading.
   /// </summary>
   None = 0,
   /// <summary>
@@ -169,7 +169,7 @@ public enum WdTextureIndex
   /// </summary>
   Texture97Pt5Percent = 975,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// Solid shading.
   /// </summary>
   Solid = 1000,
   /// <summary>
@@ -217,7 +217,7 @@ public enum WdTextureIndex
   /// </summary>
   DarkVertical = -2,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// Dark horizontal shading.
   /// </summary>
   DarkHorizontal = -1
 }

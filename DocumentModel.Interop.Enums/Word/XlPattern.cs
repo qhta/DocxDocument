@@ -25,39 +25,39 @@ public enum XlPattern
   /// </summary>
   LightHorizontal = 11,
   /// <summary>
-  /// Specifies the interior pattern of a chart or interior object.
+  /// Light vertical bars.
   /// </summary>
   LightVertical = 12,
   /// <summary>
-  /// Specifies the interior pattern of a chart or interior object.
+  /// Light diagonal lines running from the upper left to the lower right.
   /// </summary>
   LightDown = 13,
   /// <summary>
-  /// Specifies the interior pattern of a chart or interior object.
+  /// Light diagonal lines running from the lower left to the upper right.
   /// </summary>
   LightUp = 14,
   /// <summary>
-  /// Specifies the interior pattern of a chart or interior object.
+  /// Grid.
   /// </summary>
   Grid = 15,
   /// <summary>
-  /// Specifies the interior pattern of a chart or interior object.
+  /// Criss-cross lines.
   /// </summary>
   CrissCross = 16,
   /// <summary>
-  /// Specifies the interior pattern of a chart or interior object.
+  /// 16% gray.
   /// </summary>
   Gray16 = 17,
   /// <summary>
-  /// Specifies the interior pattern of a chart or interior object.
+  /// 8% gray.
   /// </summary>
   Gray8 = 18,
   /// <summary>
-  /// Specifies the interior pattern of a chart or interior object.
+  /// Linear gradient.
   /// </summary>
   LinearGradient = 4000,
   /// <summary>
-  /// Specifies the interior pattern of a chart or interior object.
+  /// Rectangular gradient.
   /// </summary>
   RectangularGradient = 4001,
   /// <summary>

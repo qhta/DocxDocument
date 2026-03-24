@@ -49,199 +49,199 @@ public enum WdColor
   /// </summary>
   LightOrange = 39423,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Lime color.
   /// </summary>
   Lime = 52377,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Gold color.
   /// </summary>
   Gold = 52479,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Bright green color.
   /// </summary>
   BrightGreen = 65280,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Yellow color.
   /// </summary>
   Yellow = 65535,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 95 of gray color.
   /// </summary>
   Gray95 = 789516,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 90 of gray color.
   /// </summary>
   Gray90 = 1644825,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 875 of gray color.
   /// </summary>
   Gray875 = 2105376,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 85 of gray color.
   /// </summary>
   Gray85 = 2500134,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 80 of gray color.
   /// </summary>
   Gray80 = 3355443,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 75 of gray color.
   /// </summary>
   Gray75 = 4210752,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 70 of gray color.
   /// </summary>
   Gray70 = 5000268,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 65 of gray color.
   /// </summary>
   Gray65 = 5855577,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 625 of gray color.
   /// </summary>
   Gray625 = 6316128,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Dark teal color.
   /// </summary>
   DarkTeal = 6697728,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Plum color.
   /// </summary>
   Plum = 6697881,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 60 of gray color.
   /// </summary>
   Gray60 = 6710886,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Sea green color.
   /// </summary>
   SeaGreen = 6723891,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 55 of gray color.
   /// </summary>
   Gray55 = 7566195,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Dark blue color.
   /// </summary>
   DarkBlue = 8388608,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Violet color.
   /// </summary>
   Violet = 8388736,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Teal color.
   /// </summary>
   Teal = 8421376,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 50 of gray color.
   /// </summary>
   Gray50 = 8421504,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 45 of gray color.
   /// </summary>
   Gray45 = 9211020,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Indigo color.
   /// </summary>
   Indigo = 10040115,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Blue-gray color.
   /// </summary>
   BlueGray = 10053222,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 40 of gray color.
   /// </summary>
   Gray40 = 10066329,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Tan color.
   /// </summary>
   Tan = 10079487,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Light yellow color.
   /// </summary>
   LightYellow = 10092543,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 375 of gray color.
   /// </summary>
   Gray375 = 10526880,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 35 of gray color.
   /// </summary>
   Gray35 = 10921638,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 30 of gray color.
   /// </summary>
   Gray30 = 11776947,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 25 of gray color.
   /// </summary>
   Gray25 = 12632256,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Rose color.
   /// </summary>
   Rose = 13408767,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Aqua color.
   /// </summary>
   Aqua = 13421619,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 20 of gray color.
   /// </summary>
   Gray20 = 13421772,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Light green color.
   /// </summary>
   LightGreen = 13434828,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 15 of gray color.
   /// </summary>
   Gray15 = 14277081,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 125 of gray color.
   /// </summary>
   Gray125 = 14737632,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 10 of gray color.
   /// </summary>
   Gray10 = 15132390,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Shade 05 of gray color.
   /// </summary>
   Gray05 = 15987699,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Blue color.
   /// </summary>
   Blue = 16711680,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Pink color.
   /// </summary>
   Pink = 16711935,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Light blue color.
   /// </summary>
   LightBlue = 16737843,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Lavender color.
   /// </summary>
   Lavender = 16751052,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Sky blue color.
   /// </summary>
   SkyBlue = 16763904,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Pale blue color.
   /// </summary>
   PaleBlue = 16764057,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Turquoise color.
   /// </summary>
   Turquoise = 16776960,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// Light turquoise color.
   /// </summary>
   LightTurquoise = 16777164,
   /// <summary>
-  /// Specifies the 24-bit color to apply.
+  /// White color.
   /// </summary>
   White = 16777215,
   /// <summary>

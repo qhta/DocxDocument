@@ -9,8 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdPageNumberStyleHID
 {
   /// <summary>
-  /// Applies to Product Versions Word primary interop assembly Latest public enum WdPageNumberStyleHID ﾉ Expand
-  /// table
+  /// No description is available.
   /// </summary>
   emptyenum = 0
 }

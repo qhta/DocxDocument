@@ -49,7 +49,7 @@ public enum WdMoveFromTextMark
   /// </summary>
   DoubleUnderline = 9,
   /// <summary>
-  /// Marks the moved-from text when text in a document with tracked changes is moved from one place to another.
+  /// Marks moved text with color only. Use the MoveFromTextColor property to set the color of moved text.
   /// </summary>
   ColorOnly = 10
 }

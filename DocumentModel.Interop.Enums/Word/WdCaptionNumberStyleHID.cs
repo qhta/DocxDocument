@@ -9,8 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdCaptionNumberStyleHID
 {
   /// <summary>
-  /// Applies to Product Versions Word primary interop assembly Latest public enum WdCaptionNumberStyleHID ﾉ Expand
-  /// table
+  /// No description is available.
   /// </summary>
   emptyenum = 0
 }

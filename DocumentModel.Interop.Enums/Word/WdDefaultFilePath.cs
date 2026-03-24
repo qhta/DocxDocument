@@ -53,27 +53,27 @@ public enum WdDefaultFilePath
   /// </summary>
   GraphicsFiltersPath = 10,
   /// <summary>
-  /// Specifies a default folder for files related to Microsoft Word.
+  /// Text converters path.
   /// </summary>
   TextConvertersPath = 11,
   /// <summary>
-  /// Specifies a default folder for files related to Microsoft Word.
+  /// Proofing tools path.
   /// </summary>
   ProofingToolsPath = 12,
   /// <summary>
-  /// Specifies a default folder for files related to Microsoft Word.
+  /// Temp file path.
   /// </summary>
   TempFilePath = 13,
   /// <summary>
-  /// Specifies a default folder for files related to Microsoft Word.
+  /// Current folder path.
   /// </summary>
   CurrentFolderPath = 14,
   /// <summary>
-  /// Specifies a default folder for files related to Microsoft Word.
+  /// Style Gallery path.
   /// </summary>
   StyleGalleryPath = 15,
   /// <summary>
-  /// Specifies a default folder for files related to Microsoft Word.
+  /// Border art path.
   /// </summary>
   BorderArtPath = 19
 }

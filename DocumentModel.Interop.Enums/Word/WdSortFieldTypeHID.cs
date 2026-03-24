@@ -9,7 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdSortFieldTypeHID
 {
   /// <summary>
-  /// Applies to Product Versions Word primary interop assembly Latest public enum WdSortFieldTypeHID ﾉ Expand table
+  /// No description is available.
   /// </summary>
   emptyenum = 0
 }

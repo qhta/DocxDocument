@@ -50,13 +50,11 @@ public enum WdBrowseTarget
   /// </summary>
   Edit = 10,
   /// <summary>
-  /// Specifies the document item that the Next or Previous method locates, and places the insertion point before
-  /// the next or previous instance of the item.
+  /// Places insertion point before next or previous browsefind.
   /// </summary>
   Find = 11,
   /// <summary>
-  /// Specifies the document item that the Next or Previous method locates, and places the insertion point before
-  /// the next or previous instance of the item.
+  /// Places insertion point before next or previous GoTo item.
   /// </summary>
   GoTo = 12
 }

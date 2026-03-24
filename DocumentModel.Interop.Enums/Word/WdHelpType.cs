@@ -57,7 +57,7 @@ public enum WdHelpType
   /// </summary>
   wdHelpIchitaro = 11,
   /// <summary>
-  /// Displays Help topics for IBM Personal
+  /// Displays Help topics for IBM Personal Editor 2 users.
   /// </summary>
   wdHelpPE2 = 12,
   /// <summary>

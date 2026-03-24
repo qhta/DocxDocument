@@ -53,55 +53,55 @@ public enum WdTaskPanes
   /// </summary>
   Research = 10,
   /// <summary>
-  /// Specifies the type of task pane object.
+  /// Fax service pane.
   /// </summary>
   FaxService = 11,
   /// <summary>
-  /// Specifies the type of task pane object.
+  /// XML document pane.
   /// </summary>
   XMLDocument = 12,
   /// <summary>
-  /// Specifies the type of task pane object.
+  /// Document updates pane.
   /// </summary>
   DocumentUpdates = 13,
   /// <summary>
-  /// Specifies the type of task pane object.
+  /// Signature pane.
   /// </summary>
   Signature = 14,
   /// <summary>
-  /// Specifies the type of task pane object.
+  /// Style inspector pane.
   /// </summary>
   StyleInspector = 15,
   /// <summary>
-  /// Specifies the type of task pane object.
+  /// Document management task pane.
   /// </summary>
   DocumentManagement = 16,
   /// <summary>
-  /// Specifies the type of task pane object.
+  /// Apply styles pane.
   /// </summary>
   ApplyStyles = 17,
   /// <summary>
-  /// Specifies the type of task pane object.
+  /// No description is available.
   /// </summary>
   Nav = 18,
   /// <summary>
-  /// Specifies the type of task pane object.
+  /// No description is available.
   /// </summary>
   Selection = 19,
   /// <summary>
-  /// Specifies the type of task pane object.
+  /// Proofing pane.
   /// </summary>
   Proofing = 20,
   /// <summary>
-  /// Specifies the type of task pane object.
+  /// XML mapping pane.
   /// </summary>
   XMLMapping = 21,
   /// <summary>
-  /// Specifies the type of task pane object.
+  /// Revisions pane flex pane.
   /// </summary>
   RevPaneFlex = 22,
   /// <summary>
-  /// Specifies the type of task pane object.
+  /// Thesaurus pane.
   /// </summary>
   Thesaurus = 23
 }
