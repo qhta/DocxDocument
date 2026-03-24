@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the type of join where two lines connect.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolinejoinstyle?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoLineJoinStyle
 {
   /// <summary>

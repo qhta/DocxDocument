@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the type of the command bar control.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocontroltype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoControlType
 {
   /// <summary>

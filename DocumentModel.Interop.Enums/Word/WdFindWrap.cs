@@ -4,6 +4,9 @@ namespace DocumentModel.Interop.Word;
 /// Specifies wrap behavior if a selection or range is specified for a find operation and the search text isn't
 /// found in the selection or range.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdfindwrap?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdFindWrap
 {
   /// <summary>

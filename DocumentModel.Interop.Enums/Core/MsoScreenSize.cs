@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the ideal screen resolution to be used to view a document in a Web browser.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoscreensize?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoScreenSize
 {
   /// <summary>

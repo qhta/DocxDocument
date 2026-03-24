@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies whether Microsoft Word displays balloons in the margin or inline with the document's text.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrevisionsmode?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdRevisionsMode
 {
   /// <summary>

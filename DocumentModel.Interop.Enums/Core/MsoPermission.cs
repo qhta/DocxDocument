@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies an Information Rights Management (IRM) permission type for a document.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopermission?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoPermission
 {
   /// <summary>

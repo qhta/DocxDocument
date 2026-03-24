@@ -4,6 +4,9 @@ namespace DocumentModel.Interop.Word;
 /// Specifies whether Microsoft Office Word calculates the alignment for a tab relative to the section margins or
 /// the paragraph indents.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdalignmenttabrelative?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdAlignmentTabRelative
 {
   /// <summary>

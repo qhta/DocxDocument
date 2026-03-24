@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the Spanish speller modes.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdspanishspeller?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdSpanishSpeller
 {
   /// <summary>

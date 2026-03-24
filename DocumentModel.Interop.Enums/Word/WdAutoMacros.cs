@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies an auto macro that is stored in the document.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdautomacros?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdAutoMacros
 {
   /// <summary>

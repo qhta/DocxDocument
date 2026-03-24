@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies whether and how to display chart elements.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msochartelementtype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoChartElementType
 {
   /// <summary>

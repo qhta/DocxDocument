@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies a document synchronization error.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosyncerrortype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoSyncErrorType
 {
   /// <summary>

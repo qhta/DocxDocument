@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies how to interpret the height or width of a specified frame on a frames page.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdframesetsizetype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdFramesetSizeType
 {
   /// <summary>

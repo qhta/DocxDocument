@@ -4,6 +4,9 @@
 /// Specifies the language to use to determine which line break level is used when the line break control option
 /// is turned on.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofareastlinebreaklanguageid?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoFarEastLineBreakLanguageID
 {
   /// <summary>

@@ -5,6 +5,9 @@ namespace DocumentModel.Interop.Word;
 /// Applies only to the document for which the property is set when used with the DisableFeaturesIntroducedAfter
 /// property or for all documents when used with the DisableFeaturesIntroducedAfterbyDefault property.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddisablefeaturesintroducedafter?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdDisableFeaturesIntroducedAfter
 {
   /// <summary>

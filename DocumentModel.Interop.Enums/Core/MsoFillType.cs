@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies a shape's fill type.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofilltype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoFillType
 {
   /// <summary>

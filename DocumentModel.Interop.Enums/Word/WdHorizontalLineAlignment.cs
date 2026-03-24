@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the alignment of a horizontal line.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdhorizontallinealignment?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdHorizontalLineAlignment
 {
   /// <summary>

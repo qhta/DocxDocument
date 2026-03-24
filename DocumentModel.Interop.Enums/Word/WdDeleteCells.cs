@@ -4,6 +4,9 @@ namespace DocumentModel.Interop.Word;
 /// Specifies a range of cells to be deleted from a table in a delete cells action or the behavior of the
 /// remaining cells after the deletion has occurred.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddeletecells?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdDeleteCells
 {
   /// <summary>

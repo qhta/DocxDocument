@@ -3,6 +3,9 @@
 /// <summary>
 /// Represents one of the three language fonts contained in the ThemeFonts collection
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofontlanguageindex?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoFontLanguageIndex
 {
   /// <summary>

@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the outline level to apply to a paragraph.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdoutlinelevel?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdOutlineLevel
 {
   /// <summary>

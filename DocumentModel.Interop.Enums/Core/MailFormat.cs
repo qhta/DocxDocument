@@ -4,6 +4,9 @@
 /// Specifies the format for an e-mail message. These formats correspond to the formats supported by Microsoft
 /// Outlook for e-mail messages.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.mailformat?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MailFormat
 {
   /// <summary>

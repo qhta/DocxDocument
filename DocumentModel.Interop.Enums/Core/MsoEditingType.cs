@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the editing type of a node.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoeditingtype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoEditingType
 {
   /// <summary>

@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies context under which a wizard's callback procedure is called.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msowizardmsgtype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoWizardMsgType
 {
   /// <summary>

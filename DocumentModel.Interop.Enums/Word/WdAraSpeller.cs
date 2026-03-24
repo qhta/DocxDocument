@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies spelling rules for the Arabic spelling checker.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdaraspeller?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdAraSpeller
 {
   /// <summary>

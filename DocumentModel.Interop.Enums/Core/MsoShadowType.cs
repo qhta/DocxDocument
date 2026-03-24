@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the type of shadow displayed with a shape.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoshadowtype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoShadowType
 {
   /// <summary>

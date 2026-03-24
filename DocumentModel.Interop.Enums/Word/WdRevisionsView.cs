@@ -4,6 +4,9 @@ namespace DocumentModel.Interop.Word;
 /// Specifies whether Word displays the original version of a document or a version with revisions and formatting
 /// changes applied.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrevisionsview?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdRevisionsView
 {
   /// <summary>

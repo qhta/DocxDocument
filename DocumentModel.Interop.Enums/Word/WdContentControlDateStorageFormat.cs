@@ -4,6 +4,9 @@ namespace DocumentModel.Interop.Word;
 /// Indicates how the date for a date content control is stored or retrieved when the date control is bound to an
 /// XML node in the document's data store.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcontentcontroldatestorageformat?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdContentControlDateStorageFormat
 {
   /// <summary>

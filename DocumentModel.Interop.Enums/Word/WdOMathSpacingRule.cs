@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies spacing for an equation.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdomathspacingrule?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdOMathSpacingRule
 {
   /// <summary>

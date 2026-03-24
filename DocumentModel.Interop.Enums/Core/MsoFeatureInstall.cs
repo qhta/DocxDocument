@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies how the application handles calls to methods and properties that require features not yet installed.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofeatureinstall?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoFeatureInstall
 {
   /// <summary>

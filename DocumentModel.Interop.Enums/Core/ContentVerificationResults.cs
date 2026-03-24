@@ -3,6 +3,9 @@
 /// <summary>
 /// Provides the status of verifying whether the content of a document has changed.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.contentverificationresults?view=office-pia` for Office interop details.
+/// </remarks>
 public enum ContentVerificationResults
 {
   /// <summary>

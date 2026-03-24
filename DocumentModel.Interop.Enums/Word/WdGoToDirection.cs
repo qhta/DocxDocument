@@ -4,6 +4,9 @@ namespace DocumentModel.Interop.Word;
 /// Specifies the position to which a selection or the insertion point is moved in relation to an object or to
 /// itself.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdgotodirection?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdGoToDirection
 {
   /// <summary>

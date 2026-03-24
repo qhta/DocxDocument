@@ -3,6 +3,9 @@
 /// <summary>
 /// Indicates the line and shape style.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoshapestyleindex?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoShapeStyleIndex
 {
   /// <summary>

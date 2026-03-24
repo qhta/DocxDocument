@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the type of data field to be inserted into a data label in a chart.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msochartfieldtype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoChartFieldType
 {
   /// <summary>

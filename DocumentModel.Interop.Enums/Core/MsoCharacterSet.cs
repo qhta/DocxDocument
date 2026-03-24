@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the character set to be used when rendering text.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocharacterset?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoCharacterSet
 {
   /// <summary>

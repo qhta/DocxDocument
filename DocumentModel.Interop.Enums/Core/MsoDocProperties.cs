@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the data type for a document property.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodocproperties?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoDocProperties
 {
   /// <summary>

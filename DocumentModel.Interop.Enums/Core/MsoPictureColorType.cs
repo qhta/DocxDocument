@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the color transformation applied to a picture.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopicturecolortype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoPictureColorType
 {
   /// <summary>

@@ -3,6 +3,9 @@
 /// <summary>
 /// Indicates additional information about a signature.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signaturedetail?view=office-pia` for Office interop details.
+/// </remarks>
 public enum SignatureDetail
 {
   /// <summary>

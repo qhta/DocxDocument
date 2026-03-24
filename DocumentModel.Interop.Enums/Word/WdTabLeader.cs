@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the character to use as the leader with formatted tabs.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtableader?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdTabLeader
 {
   /// <summary>

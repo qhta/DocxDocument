@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdnotenumberstyle?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdNoteNumberStyle
 {
   /// <summary>

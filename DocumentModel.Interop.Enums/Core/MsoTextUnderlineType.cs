@@ -3,6 +3,9 @@
 /// <summary>
 /// Indicates the type of underline for text.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotextunderlinetype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoTextUnderlineType
 {
   /// <summary>

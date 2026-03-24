@@ -5,6 +5,9 @@ namespace DocumentModel.Interop.Core;
 /// Specifies the period of time to filter files by the date last modified. Used with the LastModified property of
 /// the FileSearch object.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolastmodified?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoLastModified
 {
   /// <summary>

@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Indicates which version of French to use when using the French language spelling checker dictionaries.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdfrenchspeller?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdFrenchSpeller
 {
   /// <summary>

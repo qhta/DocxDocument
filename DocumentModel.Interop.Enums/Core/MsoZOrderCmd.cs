@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies where in the z-order a shape should be moved relative to other shapes.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msozordercmd?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoZOrderCmd
 {
   /// <summary>

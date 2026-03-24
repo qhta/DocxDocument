@@ -3,6 +3,9 @@
 /// <summary>
 /// Indicates the Office theme color.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msothemecolorindex?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoThemeColorIndex
 {
   /// <summary>

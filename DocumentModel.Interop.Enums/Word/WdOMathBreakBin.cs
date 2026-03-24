@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies where Microsoft Office Word places binary operators when equations span two or more lines.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdomathbreakbin?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdOMathBreakBin
 {
   /// <summary>

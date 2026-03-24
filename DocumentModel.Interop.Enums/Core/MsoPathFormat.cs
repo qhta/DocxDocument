@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the format of a file or folder path.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopathformat?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoPathFormat
 {
   /// <summary>

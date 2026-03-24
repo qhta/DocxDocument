@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the marker style for a point or series in a line chart, scatter chart, or radar chart.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlmarkerstyle?view=office-pia` for Office interop details.
+/// </remarks>
 public enum XlMarkerStyle
 {
   /// <summary>

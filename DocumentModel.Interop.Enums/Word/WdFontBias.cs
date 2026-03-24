@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the font bias for symbols.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdfontbias?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdFontBias
 {
   /// <summary>

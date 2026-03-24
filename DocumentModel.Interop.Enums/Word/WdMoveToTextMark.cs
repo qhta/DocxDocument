@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Marks the moved-to text when text in a document with tracked changes is moved from one place to another.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdmovetotextmark?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdMoveToTextMark
 {
   /// <summary>

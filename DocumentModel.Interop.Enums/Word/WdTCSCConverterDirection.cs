@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies how to convert between Traditional Chinese and Simplified Chinese.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtcscconverterdirection?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdTCSCConverterDirection
 {
   /// <summary>

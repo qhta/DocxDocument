@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the type of fill for a line.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolinefilltype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoLineFillType
 {
   /// <summary>

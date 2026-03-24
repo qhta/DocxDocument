@@ -3,6 +3,9 @@
 /// <summary>
 /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoballoontype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoBalloonType
 {
   /// <summary>

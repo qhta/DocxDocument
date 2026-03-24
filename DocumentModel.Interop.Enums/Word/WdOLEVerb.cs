@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the action associated with the verb that the OLE object should perform.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdoleverb?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdOLEVerb
 {
   /// <summary>

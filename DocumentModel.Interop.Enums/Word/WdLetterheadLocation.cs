@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies a location to place letterhead in a letter created by the Letter Wizard.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdletterheadlocation?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdLetterheadLocation
 {
   /// <summary>

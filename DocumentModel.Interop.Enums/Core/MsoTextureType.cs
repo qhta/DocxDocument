@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the texture type for the selected fill.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotexturetype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoTextureType
 {
   /// <summary>

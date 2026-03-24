@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies behavior when the user cancels an alert. Only msoAlertCancelDefault is currently supported.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoalertcanceltype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoAlertCancelType
 {
   /// <summary>

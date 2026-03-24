@@ -3,6 +3,9 @@
 /// <summary>
 /// Indicates the effects camera type used by the specified object.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetcamera?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoPresetCamera
 {
   /// <summary>

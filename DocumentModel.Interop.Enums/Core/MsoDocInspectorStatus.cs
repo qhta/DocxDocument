@@ -3,6 +3,9 @@
 /// <summary>
 /// Represents the results of running a Document Inspector module.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodocinspectorstatus?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoDocInspectorStatus
 {
   /// <summary>

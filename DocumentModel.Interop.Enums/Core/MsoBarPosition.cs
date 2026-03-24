@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the position or behavior of a command bar.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobarposition?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoBarPosition
 {
   /// <summary>

@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the extrusion surface material.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetmaterial?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoPresetMaterial
 {
   /// <summary>

@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies starting position of the callout line relative to the text bounding box.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocalloutdroptype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoCalloutDropType
 {
   /// <summary>
