@@ -7,7 +7,7 @@
 /// This is typically used for conversion to/from OpenXml EnumValue&lt;EnumValues&gt;.</remarks>
 /// <param name="enumValueName">The name of the Open XML EnumValues static property to be associated with the target Enum field.
 /// Cannot be null or empty.</param>
-[AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
+[AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = true)]
 public class OpenXmlEnumValueAttribute(string enumValueName) : Attribute
 {
   /// <summary>

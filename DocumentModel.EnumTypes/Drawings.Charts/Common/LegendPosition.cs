@@ -17,7 +17,7 @@ public enum LegendPosition
   ///   Top Right.
   /// </summary>
   [OpenXmlEnumValue("TopRight")]
-  TopRight,
+  Corner,
   /// <summary>
   ///   Left.
   /// </summary>

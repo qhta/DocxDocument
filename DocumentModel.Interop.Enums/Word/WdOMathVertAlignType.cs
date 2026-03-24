@@ -10,12 +10,11 @@ public enum WdOMathVertAlignType
   /// </summary>
   Center = 0,
   /// <summary>
-  /// Aligns the equation on the top of the shape canvas or line. wdOMathVertAlignBottom2 Aligns the equation on the
-  /// bottom of the shape canvas or line.
+  /// Aligns the equation on the top of the shape canvas or line. 
   /// </summary>
   Top = 1,
   /// <summary>
-  /// Specifies the vertical alignment of equations within the shape canvas or the line, for inline equations.
+  /// Aligns the equation on the bottom of the shape canvas or line.
   /// </summary>
   Bottom = 2
 }
