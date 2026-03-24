@@ -17,7 +17,7 @@ public enum WdBaselineAlignment
   /// </summary>
   Center = 1,
   /// <summary>
-  /// Align to a baseline for the paragraph.
+  /// Align along top of each font.
   /// </summary>
   Baseline = 2,
   /// <summary>

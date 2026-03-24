@@ -154,8 +154,9 @@ public enum WdInformation
   /// </summary>
    InMasterDocument = 34,
   /// <summary>
-  /// Returns True if the specified selection or range is in a footnote area in print layout view or in the footnote
-  /// pane in normal view.
+  /// Returns True if the specified selection or range is in the footnote or endnote pane in normal view or in a
+  /// footnote or endnote area in print layout view. For more information, see the descriptions of wdInFootnote and
+  /// wdInEndnote in the preceding paragraphs.
   /// </summary>
    InFootnote = 35,
   /// <summary>

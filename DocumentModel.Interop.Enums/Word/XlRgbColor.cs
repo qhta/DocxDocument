@@ -45,7 +45,7 @@ public enum XlRgbColor
   /// </summary>
   DarkOrange = 36095,
   /// <summary>
-  /// Orange
+  /// Orange Red
   /// </summary>
   Orange = 42495,
   /// <summary>
@@ -549,7 +549,7 @@ public enum XlRgbColor
   /// </summary>
   MintCream = 16449525,
   /// <summary>
-  /// Specifies the RGB color.
+  /// Blue Violet
   /// </summary>
   Blue = 16711680,
   /// <summary>

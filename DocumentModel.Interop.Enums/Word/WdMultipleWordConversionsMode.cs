@@ -11,9 +11,9 @@ public enum WdMultipleWordConversionsMode
   /// <summary>
   /// Hangul to Hanja.
   /// </summary>
-  gulToHanja = 0,
+  HangulToHanja = 0,
   /// <summary>
   /// Hanja to Hangul.
   /// </summary>
-  jaToHangul = 1
+  HanjaToHangul = 1
 }

@@ -13,159 +13,159 @@ public enum WdTextureIndex
   /// </summary>
   None = 0,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 2.5 percent shading.
   /// </summary>
   Texture2Pt5Percent = 25,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 5 percent shading.
   /// </summary>
   Texture5Percent = 50,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 7.5 percent shading.
   /// </summary>
   Texture7Pt5Percent = 75,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 10 percent shading.
   /// </summary>
   Texture10Percent = 100,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 12.5 percent shading.
   /// </summary>
   Texture12Pt5Percent = 125,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 15 percent shading.
   /// </summary>
   Texture15Percent = 150,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 17.5 percent shading.
   /// </summary>
   Texture17Pt5Percent = 175,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 20 percent shading.
   /// </summary>
   Texture20Percent = 200,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 22.5 percent shading.
   /// </summary>
   Texture22Pt5Percent = 225,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 25 percent shading.
   /// </summary>
   Texture25Percent = 250,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 27.5 percent shading.
   /// </summary>
   Texture27Pt5Percent = 275,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 30 percent shading.
   /// </summary>
   Texture30Percent = 300,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 32.5 percent shading.
   /// </summary>
   Texture32Pt5Percent = 325,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 35 percent shading.
   /// </summary>
   Texture35Percent = 350,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 37.5 percent shading.
   /// </summary>
   Texture37Pt5Percent = 375,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 40 percent shading.
   /// </summary>
   Texture40Percent = 400,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 42.5 percent shading.
   /// </summary>
   Texture42Pt5Percent = 425,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 45 percent shading.
   /// </summary>
   Texture45Percent = 450,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 47.5 percent shading.
   /// </summary>
   Texture47Pt5Percent = 475,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 50 percent shading.
   /// </summary>
   Texture50Percent = 500,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 52.5 percent shading.
   /// </summary>
   Texture52Pt5Percent = 525,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 55 percent shading.
   /// </summary>
   Texture55Percent = 550,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 57.5 percent shading.
   /// </summary>
   Texture57Pt5Percent = 575,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 60 percent shading.
   /// </summary>
   Texture60Percent = 600,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 62.5 percent shading.
   /// </summary>
   Texture62Pt5Percent = 625,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 65 percent shading.
   /// </summary>
   Texture65Percent = 650,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 67.5 percent shading.
   /// </summary>
   Texture67Pt5Percent = 675,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 70 percent shading.
   /// </summary>
   Texture70Percent = 700,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 72.5 percent shading.
   /// </summary>
   Texture72Pt5Percent = 725,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 75 percent shading.
   /// </summary>
   Texture75Percent = 750,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 77.5 percent shading.
   /// </summary>
   Texture77Pt5Percent = 775,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 80 percent shading.
   /// </summary>
   Texture80Percent = 800,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 82.5 percent shading.
   /// </summary>
   Texture82Pt5Percent = 825,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 85 percent shading.
   /// </summary>
   Texture85Percent = 850,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 87.5 percent shading.
   /// </summary>
   Texture87Pt5Percent = 875,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 90 percent shading.
   /// </summary>
   Texture90Percent = 900,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 92.5 percent shading.
   /// </summary>
   Texture92Pt5Percent = 925,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 95 percent shading.
   /// </summary>
   Texture95Percent = 950,
   /// <summary>
-  /// Specifies the shading texture to use for a selected item.
+  /// 97.5 percent shading.
   /// </summary>
   Texture97Pt5Percent = 975,
   /// <summary>

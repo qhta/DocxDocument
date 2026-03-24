@@ -11,9 +11,9 @@ public enum WdWordDialogTabHID
   /// <summary>
   /// No description is available.
   /// </summary>
-  ize = 150001,
+  Size = 150001,
   /// <summary>
   /// No description is available.
   /// </summary>
-  ource = 150002
+  Source = 150002
 }
