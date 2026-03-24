@@ -17,8 +17,7 @@ public enum WdExportCreateBookmarks
   /// </summary>
   HeadingBookmarks = 1,
   /// <summary>
-  /// Create a bookmark in the exported document for each Word bookmark, which includes all bookmarks except those
-  /// contained within headers and footers.
+  /// Specifies what bookmarks to include when exporting a document.
   /// </summary>
   WordBookmarks = 2
 }

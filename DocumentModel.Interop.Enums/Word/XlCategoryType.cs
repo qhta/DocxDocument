@@ -17,7 +17,7 @@ public enum XlCategoryType
   /// </summary>
   TimeScale = 3,
   /// <summary>
-  /// Specifies the type of the category axis.
+  /// Word controls the axis type.
   /// </summary>
   AutomaticScale = -4105
 }

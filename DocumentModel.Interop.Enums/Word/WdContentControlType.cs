@@ -25,8 +25,7 @@ public enum WdContentControlType
   /// </summary>
   ComboBox = 3,
   /// <summary>
-  /// Specifies a drop-down list content control. wdContentControlBuildingBlockGallery5 Specifies a building block
-  /// gallery content control.
+  /// Specifies a drop-down list content control.
   /// </summary>
   DropdownList = 4,
   /// <summary>
@@ -47,8 +46,6 @@ public enum WdContentControlType
   CheckBox = 8,
   /// <summary>
   /// Specifies a repeating section content control.
-  /// [System.Runtime.InteropServices.Guid("D837E0A6-EB0E-3F7F-B8BE-9C0F05401CCD")] public enum WdContentControlType
-  /// ﾉ Expand table
   /// </summary>
   RepeatingSection = 9
 }

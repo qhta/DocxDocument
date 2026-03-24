@@ -14,8 +14,7 @@ public enum WdBrowseTarget
   /// </summary>
   Page = 1,
   /// <summary>
-  /// Places insertion point before next or previous section. wdBrowseComment3 Places insertion point before next or
-  /// previous comment.
+  /// Places insertion point before next or previous section.
   /// </summary>
   Section = 2,
   /// <summary>
@@ -49,16 +48,16 @@ public enum WdBrowseTarget
   Heading = 9,
   /// <summary>
   /// Places insertion point before next or previous edit.
-  /// [System.Runtime.InteropServices.Guid("D82B33F8-1B6D-3829-BBCA-57D150E4C00D")] public enum WdBrowseTarget ﾉ
-  /// Expand table
   /// </summary>
   Edit = 10,
   /// <summary>
-  /// Places insertion point before next or previous browsefind.
+  /// Specifies the document item that the Next or Previous method locates, and places the insertion point before
+  /// the next or previous instance of the item.
   /// </summary>
   Find = 11,
   /// <summary>
-  /// Places insertion point before next or previous GoTo item.
+  /// Specifies the document item that the Next or Previous method locates, and places the insertion point before
+  /// the next or previous instance of the item.
   /// </summary>
   GoTo = 12
 }

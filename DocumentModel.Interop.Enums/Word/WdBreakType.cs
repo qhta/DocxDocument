@@ -9,7 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdBreakType
 {
   /// <summary>
-  /// Section break on next page. wdSectionBreakContinuous3 New section without a corresponding page break.
+  /// Section break on next page.
   /// </summary>
   SectionBreakNextPage = 2,
   /// <summary>
@@ -39,9 +39,7 @@ public enum WdBreakType
   /// </summary>
   ColumnBreak = 8,
   /// <summary>
-  /// Line break. wdLineBreakClearRight10 Line break.
-  /// [System.Runtime.InteropServices.Guid("58B14C6F-0FE6-3BCA-880E-E3A9C039E588")] public enum WdBreakType ﾉ Expand
-  /// table
+  /// Line break.
   /// </summary>
   LineBreakClearLeft = 9,
   /// <summary>
@@ -49,8 +47,7 @@ public enum WdBreakType
   /// </summary>
   LineBreakClearRight = 10,
   /// <summary>
-  /// Ends the current line and forces the text to continue below a picture, table, or other item. The text
-  /// continues on the next blank line that does not contain a table aligned with the left or right margin.
+  /// Specifies type of break.
   /// </summary>
   TextWrappingBreak = 11
 }

@@ -9,39 +9,39 @@ namespace DocumentModel.Interop.Word;
 public enum WdMailMergeActiveRecord
 {
   /// <summary>
-  /// Specifies the active record in a mail merge result set.
+  /// The previous record in the data source.
   /// </summary>
   PreviousDataSourceRecord = -9,
   /// <summary>
-  /// Specifies the active record in a mail merge result set.
+  /// The next record in the data source.
   /// </summary>
   NextDataSourceRecord = -8,
   /// <summary>
-  /// Specifies the active record in a mail merge result set.
+  /// The last record in the data source.
   /// </summary>
   LastDataSourceRecord = -7,
   /// <summary>
-  /// Specifies the active record in a mail merge result set.
+  /// The first record in the data source.
   /// </summary>
   FirstDataSourceRecord = -6,
   /// <summary>
-  /// Specifies the active record in a mail merge result set.
+  /// The last record in the result set.
   /// </summary>
   LastRecord = -5,
   /// <summary>
-  /// Specifies the active record in a mail merge result set.
+  /// The first record in the result set.
   /// </summary>
   FirstRecord = -4,
   /// <summary>
-  /// Specifies the active record in a mail merge result set.
+  /// The previous record in the result set.
   /// </summary>
   PreviousRecord = -3,
   /// <summary>
-  /// Specifies the active record in a mail merge result set.
+  /// The next record in the result set.
   /// </summary>
   NextRecord = -2,
   /// <summary>
-  /// Specifies the active record in a mail merge result set.
+  /// No active record.
   /// </summary>
   NoActiveRecord = -1
 }

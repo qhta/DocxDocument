@@ -9,9 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdAutoFitBehavior
 {
   /// <summary>
-  /// The table is set to a fixed size, regardless of the content, and is not automatically sized. wdAutoFitContent1
-  /// The table is automatically sized to fit the content contained in the table. wdAutoFitWindow2 The table is
-  /// automatically sized to the width of the active window.
+  /// Specifies how Microsoft Word resizes a table when the AutoFit feature is used.
   /// </summary>
   Fixed = 0,
   /// <summary>

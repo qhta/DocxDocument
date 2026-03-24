@@ -49,48 +49,47 @@ public enum WdFindMatch
   /// </summary>
   EnDash = 8211,
   /// <summary>
-  /// Not supported. [System.Runtime.InteropServices.Guid("858EB926-41E4-3509-B9D9-0B62C364228A")] public enum
-  /// WdFindMatch ﾉ Expand table
+  /// Not supported.
   /// </summary>
   EmDash = 8212,
   /// <summary>
-  /// Not supported.
+  /// This enumeration has been deprecated and should not be used.
   /// </summary>
   ManualLineBreak = 65551,
   /// <summary>
-  /// Not supported.
+  /// This enumeration has been deprecated and should not be used.
   /// </summary>
   ParagraphMark = 65551,
   /// <summary>
-  /// Not supported.
+  /// This enumeration has been deprecated and should not be used.
   /// </summary>
   FootnoteMark = 65554,
   /// <summary>
-  /// Not supported.
+  /// This enumeration has been deprecated and should not be used.
   /// </summary>
   EndnoteMark = 65555,
   /// <summary>
-  /// Not supported.
+  /// This enumeration has been deprecated and should not be used.
   /// </summary>
   ManualPageBreak = 65564,
   /// <summary>
-  /// Not supported.
+  /// This enumeration has been deprecated and should not be used.
   /// </summary>
   AnyDigit = 65567,
   /// <summary>
-  /// Not supported.
+  /// This enumeration has been deprecated and should not be used.
   /// </summary>
   SectionBreak = 65580,
   /// <summary>
-  /// Not supported.
+  /// This enumeration has been deprecated and should not be used.
   /// </summary>
   AnyLetter = 65583,
   /// <summary>
-  /// Not supported.
+  /// This enumeration has been deprecated and should not be used.
   /// </summary>
   AnyCharacter = 65599,
   /// <summary>
-  /// Not supported.
+  /// This enumeration has been deprecated and should not be used.
   /// </summary>
   WhiteSpace = 65655
 }

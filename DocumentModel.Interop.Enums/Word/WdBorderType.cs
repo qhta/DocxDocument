@@ -9,7 +9,8 @@ namespace DocumentModel.Interop.Word;
 public enum WdBorderType
 {
   /// <summary>
-  /// Specifies the type of border to be used.
+  /// A diagonal border starting in the bottom left corner. wdBorderDiagonalDown-7 A diagonal border starting in the
+  /// top left corner.
   /// </summary>
   DiagonalUp = -8,
   /// <summary>
@@ -17,27 +18,27 @@ public enum WdBorderType
   /// </summary>
   DiagonalDown = -7,
   /// <summary>
-  /// Specifies the type of border to be used.
+  /// Vertical borders.
   /// </summary>
   Vertical = -6,
   /// <summary>
-  /// Specifies the type of border to be used.
+  /// Horizontal borders.
   /// </summary>
   Horizontal = -5,
   /// <summary>
-  /// Specifies the type of border to be used.
+  /// A right border.
   /// </summary>
   Right = -4,
   /// <summary>
-  /// Specifies the type of border to be used.
+  /// A bottom border.
   /// </summary>
   Bottom = -3,
   /// <summary>
-  /// Specifies the type of border to be used.
+  /// A left border.
   /// </summary>
   Left = -2,
   /// <summary>
-  /// Specifies the type of border to be used.
+  /// A top border.
   /// </summary>
   Top = -1
 }

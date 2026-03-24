@@ -29,8 +29,7 @@ public enum WdInlineShapeType
   /// </summary>
   OLEControlObject = 5,
   /// <summary>
-  /// Horizontal line. wdInlineShapePictureHorizontalLine7 Picture with horizontal line.
-  /// wdInlineShapeLinkedPictureHorizontalLine8 Linked picture with horizontal line.
+  /// Horizontal line.
   /// </summary>
   HorizontalLine = 6,
   /// <summary>
@@ -47,32 +46,30 @@ public enum WdInlineShapeType
   PictureBullet = 9,
   /// <summary>
   /// Script anchor. Refers to anchor location for block of script stored with a document.
-  /// [System.Runtime.InteropServices.Guid("EEEC37A7-495B-30F5-8404-37644FC0358F")] public enum WdInlineShapeType ﾉ
-  /// Expand table
   /// </summary>
   ScriptAnchor = 10,
   /// <summary>
-  /// OWS anchor.
+  /// Specifiesa shape type for inlie shapes.
   /// </summary>
   OWSAnchor = 11,
   /// <summary>
-  /// Inline chart.
+  /// Specifiesa shape type for inlie shapes.
   /// </summary>
   Chart = 12,
   /// <summary>
-  /// Inline diagram.
+  /// Specifiesa shape type for inlie shapes.
   /// </summary>
   Diagram = 13,
   /// <summary>
-  /// Locked inline shape canvas.
+  /// Specifiesa shape type for inlie shapes.
   /// </summary>
   LockedCanvas = 14,
   /// <summary>
-  /// Smart art.
+  /// Specifiesa shape type for inlie shapes.
   /// </summary>
   SmartArt = 15,
   /// <summary>
-  /// A picture acting as a poster frame for a web video.
+  /// Specifiesa shape type for inlie shapes.
   /// </summary>
   WebVideo = 16
 }

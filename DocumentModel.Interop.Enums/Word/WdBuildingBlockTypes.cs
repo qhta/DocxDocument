@@ -50,65 +50,62 @@ public enum WdBuildingBlockTypes
   TextBox = 10,
   /// <summary>
   /// Building block for page numbering on the top of the page.
-  /// [System.Runtime.InteropServices.Guid("E1DBA742-1E0E-3633-B1C2-168561C6F0B0")] public enum WdBuildingBlockTypes
-  /// ﾉ Expand table
   /// </summary>
   PageNumberTop = 11,
   /// <summary>
-  /// Building block for page numbering on the bottom of the page.
+  /// Specifies the type of building block.
   /// </summary>
   PageNumberBottom = 12,
   /// <summary>
-  /// Page numbering building block.
+  /// Specifies the type of building block.
   /// </summary>
   PageNumberPage = 13,
   /// <summary>
-  /// Table of contents building block.
+  /// Specifies the type of building block.
   /// </summary>
   TableOfContents = 14,
   /// <summary>
-  /// Custom quick parts building block.
+  /// Specifies the type of building block.
   /// </summary>
   CustomQuickParts = 15,
   /// <summary>
-  /// Custom cover page building block.
+  /// Specifies the type of building block.
   /// </summary>
   CustomCoverPage = 16,
   /// <summary>
-  /// Custom equations building block.
+  /// Specifies the type of building block.
   /// </summary>
   CustomEquations = 17,
   /// <summary>
-  /// Custom footers building block.
+  /// Specifies the type of building block.
   /// </summary>
   CustomFooters = 18,
   /// <summary>
-  /// Custom headers building block.
+  /// Specifies the type of building block.
   /// </summary>
   CustomHeaders = 19,
   /// <summary>
-  /// Custom page numbering building block.
+  /// Specifies the type of building block.
   /// </summary>
   CustomPageNumber = 20,
   /// <summary>
-  /// Custom table building block.
+  /// Specifies the type of building block.
   /// </summary>
   CustomTables = 21,
   /// <summary>
-  /// Custom watermark building block.
+  /// Specifies the type of building block.
   /// </summary>
   CustomWatermarks = 22,
   /// <summary>
-  /// Custom autotext building block.
+  /// Specifies the type of building block.
   /// </summary>
   CustomAutoText = 23,
   /// <summary>
-  /// Custom text box building block.
+  /// Specifies the type of building block.
   /// </summary>
   CustomTextBox = 24,
   /// <summary>
-  /// Building block for custom page numbering on the top of the page. wdTypeCustomPageNumberBottom26 Building block
-  /// for custom page numbering on the bottom of the page.
+  /// Specifies the type of building block.
   /// </summary>
   CustomPageNumberTop = 25,
   /// <summary>
@@ -116,39 +113,39 @@ public enum WdBuildingBlockTypes
   /// </summary>
   CustomPageNumberBottom = 26,
   /// <summary>
-  /// Custom page numbering building block.
+  /// Specifies the type of building block.
   /// </summary>
   CustomPageNumberPage = 27,
   /// <summary>
-  /// Custom table of contents building block.
+  /// Specifies the type of building block.
   /// </summary>
   CustomTableOfContents = 28,
   /// <summary>
-  /// Custom building block.
+  /// Specifies the type of building block.
   /// </summary>
   Custom1 = 29,
   /// <summary>
-  /// Custom building block.
+  /// Specifies the type of building block.
   /// </summary>
   Custom2 = 30,
   /// <summary>
-  /// Custom building block.
+  /// Specifies the type of building block.
   /// </summary>
   Custom3 = 31,
   /// <summary>
-  /// Custom building block.
+  /// Specifies the type of building block.
   /// </summary>
   Custom4 = 32,
   /// <summary>
-  /// Custom building block.
+  /// Specifies the type of building block.
   /// </summary>
   Custom5 = 33,
   /// <summary>
-  /// Bibliography building block.
+  /// Specifies the type of building block.
   /// </summary>
   Bibliography = 34,
   /// <summary>
-  /// Custom bibliography building block.
+  /// Specifies the type of building block.
   /// </summary>
   CustomBibliography = 35
 }

@@ -21,7 +21,7 @@ public enum WdRevisedPropertiesMark
   /// </summary>
   Italic = 2,
   /// <summary>
-  /// With underline characters. wdRevisedPropertiesMarkDoubleUnderline4 With double underline characters.
+  /// With underline characters.
   /// </summary>
   Underline = 3,
   /// <summary>

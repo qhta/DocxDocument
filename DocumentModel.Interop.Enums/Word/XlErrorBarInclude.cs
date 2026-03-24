@@ -21,7 +21,7 @@ public enum XlErrorBarInclude
   /// </summary>
   MinusValues = 3,
   /// <summary>
-  /// Specifies which error-bar parts to include.
+  /// No error bar range.
   /// </summary>
   None = -4142
 }

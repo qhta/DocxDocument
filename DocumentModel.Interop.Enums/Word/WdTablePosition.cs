@@ -9,31 +9,31 @@ namespace DocumentModel.Interop.Word;
 public enum WdTablePosition
 {
   /// <summary>
-  /// Specifies the relative position of a table in the document.
+  /// At the top of the document.
   /// </summary>
   Top = -999999,
   /// <summary>
-  /// Specifies the relative position of a table in the document.
+  /// Aligned to the left side of the document.
   /// </summary>
   Left = -999998,
   /// <summary>
-  /// Specifies the relative position of a table in the document.
+  /// At the bottom of the document.
   /// </summary>
   Bottom = -999997,
   /// <summary>
-  /// Specifies the relative position of a table in the document.
+  /// Aligned to the right side of the document.
   /// </summary>
   Right = -999996,
   /// <summary>
-  /// Specifies the relative position of a table in the document.
+  /// Centered.
   /// </summary>
   Center = -999995,
   /// <summary>
-  /// Specifies the relative position of a table in the document.
+  /// Placed inside a range.
   /// </summary>
   Inside = -999994,
   /// <summary>
-  /// Specifies the relative position of a table in the document.
+  /// Placed outside a range.
   /// </summary>
   Outside = -999993
 }

@@ -9,11 +9,11 @@ namespace DocumentModel.Interop.Word;
 public enum WdDefaultTableBehavior
 {
   /// <summary>
-  /// Disables AutoFit. Default.
+  /// Specifies whether Microsoft Word automatically resizes cells in a table to fit the contents (AutoFit).
   /// </summary>
   TableBehavior8 = 0,
   /// <summary>
-  /// Enables AutoFit.
+  /// Specifies whether Microsoft Word automatically resizes cells in a table to fit the contents (AutoFit).
   /// </summary>
   TableBehavior9 = 1
 }

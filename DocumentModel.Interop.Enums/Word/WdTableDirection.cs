@@ -13,7 +13,7 @@ public enum WdTableDirection
   /// </summary>
   Rtl = 0,
   /// <summary>
-  /// The selected rows are arranged with the first column in the leftmost position.
+  /// Specifies the direction in which Microsoft Word orders cells in the specified table or row.
   /// </summary>
   Ltr = 1
 }

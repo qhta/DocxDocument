@@ -49,52 +49,51 @@ public enum WdOMathFunctionType
   /// </summary>
   LimLow = 10,
   /// <summary>
-  /// Equation upper limit. [System.Runtime.InteropServices.Guid("74779721-3C00-363D-BED4-B0AF3595EB05")] public
-  /// enum WdOMathFunctionType ﾉ Expand table
+  /// Equation upper limit.
   /// </summary>
   LimUpp = 11,
   /// <summary>
-  /// Equation matrix.
+  /// Specifies the type of equation function.
   /// </summary>
   Mat = 12,
   /// <summary>
-  /// Equation N-ary operator.
+  /// Specifies the type of equation function.
   /// </summary>
   Nary = 13,
   /// <summary>
-  /// Equation phantom.
+  /// Specifies the type of equation function.
   /// </summary>
   Phantom = 14,
   /// <summary>
-  /// Scr pre.
+  /// Specifies the type of equation function.
   /// </summary>
   ScrPre = 15,
   /// <summary>
-  /// Equation base expression.
+  /// Specifies the type of equation function.
   /// </summary>
   Rad = 16,
   /// <summary>
-  /// Scr. sub.
+  /// Specifies the type of equation function.
   /// </summary>
   ScrSub = 17,
   /// <summary>
-  /// Scr. sub sup.
+  /// Specifies the type of equation function.
   /// </summary>
   ScrSubSup = 18,
   /// <summary>
-  /// Scr sup.
+  /// Specifies the type of equation function.
   /// </summary>
   ScrSup = 19,
   /// <summary>
-  /// Equation text.
+  /// Specifies the type of equation function.
   /// </summary>
   Text = 20,
   /// <summary>
-  /// Equation normal text.
+  /// Specifies the type of equation function.
   /// </summary>
   NormalText = 21,
   /// <summary>
-  /// Equation literal text.
+  /// Specifies the type of equation function.
   /// </summary>
   LiteralText = 22
 }

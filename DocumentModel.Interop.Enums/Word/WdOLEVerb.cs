@@ -10,12 +10,12 @@ public enum WdOLEVerb
 {
   /// <summary>
   /// Performs the verb that is invoked when the user double-clicks the object.
-  /// [System.Runtime.InteropServices.Guid("B1E1E568-A954-370D-BDDE-1DEE3FE965D7")] public enum WdOLEVerb ﾉ Expand
-  /// table
   /// </summary>
   Primary = 0,
   /// <summary>
-  /// Specifies the action associated with the verb that the OLE object should perform.
+  /// Forces the object to discard any undo state that it might be maintaining; note that the object remains active,
+  /// however. wdOLEVerbInPlaceActivate-5 Runs the object and installs its window, but doesn't install any
+  /// user-interface tools.
   /// </summary>
   DiscardUndoState = -6,
   /// <summary>
@@ -23,19 +23,21 @@ public enum WdOLEVerb
   /// </summary>
   InPlaceActivate = -5,
   /// <summary>
-  /// Specifies the action associated with the verb that the OLE object should perform.
+  /// Activates the object in place and displays any user-interface tools that the object needs, such as menus or
+  /// toolbars.
   /// </summary>
   UIActivate = -4,
   /// <summary>
-  /// Specifies the action associated with the verb that the OLE object should perform.
+  /// Removes the object's user interface from view.
   /// </summary>
   Hide = -3,
   /// <summary>
-  /// Specifies the action associated with the verb that the OLE object should perform.
+  /// Opens the object in a separate window.
   /// </summary>
   Open = -2,
   /// <summary>
-  /// Specifies the action associated with the verb that the OLE object should perform.
+  /// Shows the object to the user for editing or viewing. Use it to show a newly inserted object for initial
+  /// editing.
   /// </summary>
   Show = -1
 }

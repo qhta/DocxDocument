@@ -18,11 +18,7 @@ public enum WdRelativeVerticalSize
   /// </summary>
   Page = 1,
   /// <summary>
-  /// Height is relative to the size of the top margin. wdRelativeVerticalSizeBottomMarginArea3 Height is relative
-  /// to the size of the bottom margin. wdRelativeVerticalSizeInnerMarginArea4 Height is relative to the size of the
-  /// inside margin—to the size of the top margin for odd pages, and to the size of the bottom margin for even
-  /// pages. wdRelativeVerticalSizeOuterMarginArea5 Height is relative to the size of the outside margin— to the
-  /// size of the bottom margin for odd pages, and to the size of the top margin for even pages.
+  /// Height is relative to the size of the top margin.
   /// </summary>
   TopMarginArea = 2,
   /// <summary>

@@ -9,17 +9,15 @@ namespace DocumentModel.Interop.Word;
 public enum WdLanguageID2000
 {
   /// <summary>
-  /// wdChineseMacao 5124
+  /// Reserved for internal use.
   /// </summary>
   ChineseHongKong = 3076,
   /// <summary>
-  /// wdEnglishTrinidad 11273
+  /// Reserved for internal use.
   /// </summary>
   ChineseMacao = 5124,
   /// <summary>
-  /// Applies to Product Versions Word primary interop assembly Latest
-  /// [System.Runtime.InteropServices.Guid("B47743D0-B1EC-3BFE-944D-183B51D50FB5")] public enum WdLanguageID2000 ﾉ
-  /// Expand table
+  /// Reserved for internal use.
   /// </summary>
   EnglishTrinidad = 11273
 }

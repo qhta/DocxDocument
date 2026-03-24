@@ -21,7 +21,7 @@ public enum WdMoveToTextMark
   /// </summary>
   Italic = 2,
   /// <summary>
-  /// Underlines moved text. wdMoveToTextMarkDoubleUnderline4 Moved text is marked with a double underline.
+  /// Underlines moved text.
   /// </summary>
   Underline = 3,
   /// <summary>
@@ -33,9 +33,7 @@ public enum WdMoveToTextMark
   /// </summary>
   ColorOnly = 5,
   /// <summary>
-  /// Moved text is marked with a strikethrough. wdMoveToTextMarkDoubleStrikeThrough7 Moved text is marked with a
-  /// double strikethrough. [System.Runtime.InteropServices.Guid("F3AE6A1B-BB9F-3258-AAB9-87D6BAF4C3A3")] public
-  /// enum WdMoveToTextMark ﾉ Expand table
+  /// Moved text is marked with a strikethrough.
   /// </summary>
   StrikeThrough = 6,
   /// <summary>

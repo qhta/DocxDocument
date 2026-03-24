@@ -13,8 +13,7 @@ public enum WdMergeFormatFrom
   /// </summary>
   Original = 0,
   /// <summary>
-  /// Retains formatting from the revised document. wdMergeFormatFromPrompt2 Prompt the user for the document to use
-  /// for formatting.
+  /// Specifies the document from which to retain formatting during a document compare function.
   /// </summary>
   Revised = 1,
   /// <summary>

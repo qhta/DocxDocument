@@ -49,52 +49,51 @@ public enum WdRevisionType
   /// </summary>
   RevisionReplace = 9,
   /// <summary>
-  /// Paragraph property changed. [System.Runtime.InteropServices.Guid("22EE5D98-3D02-3761-AD43-435C8CF763B0")]
-  /// public enum WdRevisionType ﾉ Expand table
+  /// Paragraph property changed.
   /// </summary>
   RevisionParagraphProperty = 10,
   /// <summary>
-  /// Table property changed.
+  /// Specifies the type of a change that is marked with a revision mark.
   /// </summary>
   RevisionTableProperty = 11,
   /// <summary>
-  /// Section property changed.
+  /// Specifies the type of a change that is marked with a revision mark.
   /// </summary>
   RevisionSectionProperty = 12,
   /// <summary>
-  /// Style definition changed.
+  /// Specifies the type of a change that is marked with a revision mark.
   /// </summary>
   RevisionStyleDefinition = 13,
   /// <summary>
-  /// Content moved from.
+  /// Specifies the type of a change that is marked with a revision mark.
   /// </summary>
   RevisionMovedFrom = 14,
   /// <summary>
-  /// Content moved to.
+  /// Specifies the type of a change that is marked with a revision mark.
   /// </summary>
   RevisionMovedTo = 15,
   /// <summary>
-  /// Table cell inserted.
+  /// Specifies the type of a change that is marked with a revision mark.
   /// </summary>
   RevisionCellInsertion = 16,
   /// <summary>
-  /// Table cell deleted.
+  /// Specifies the type of a change that is marked with a revision mark.
   /// </summary>
   RevisionCellDeletion = 17,
   /// <summary>
-  /// Table cells merged.
+  /// Specifies the type of a change that is marked with a revision mark.
   /// </summary>
   RevisionCellMerge = 18,
   /// <summary>
-  /// Reserved for internal use.
+  /// Specifies the type of a change that is marked with a revision mark.
   /// </summary>
   RevisionCellSplit = 19,
   /// <summary>
-  /// Reserved for internal use.
+  /// Specifies the type of a change that is marked with a revision mark.
   /// </summary>
   RevisionConflictInsert = 20,
   /// <summary>
-  /// Reserved for internal use.
+  /// Specifies the type of a change that is marked with a revision mark.
   /// </summary>
   RevisionConflictDelete = 21
 }

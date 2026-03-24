@@ -18,7 +18,7 @@ public enum WdAlertLevel
   /// </summary>
   MessageBox = -2,
   /// <summary>
-  /// Specifies the way certain alerts and messages are handled while a macro is running.
+  /// All message boxes and alerts are displayed; errors are returned to the macro.
   /// </summary>
   All = -1
 }

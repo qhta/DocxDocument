@@ -13,7 +13,7 @@ public enum WdSectionDirection
   /// </summary>
   Rtl = 0,
   /// <summary>
-  /// Displays the section with left alignment and left-to-right reading order.
+  /// Specifies how Word displays the reading order and alignment for the specified sections.
   /// </summary>
   Ltr = 1
 }

@@ -13,23 +13,23 @@ public enum XlLegendPosition
   /// </summary>
   Corner = 2,
   /// <summary>
-  /// Specifies the position of the legend on a chart.
+  /// A custom position.
   /// </summary>
   Custom = -4161,
   /// <summary>
-  /// Specifies the position of the legend on a chart.
+  /// Above the chart.
   /// </summary>
   Top = -4160,
   /// <summary>
-  /// Specifies the position of the legend on a chart.
+  /// Right of the chart.
   /// </summary>
   Right = -4152,
   /// <summary>
-  /// Specifies the position of the legend on a chart.
+  /// Left of the chart.
   /// </summary>
   Left = -4131,
   /// <summary>
-  /// Specifies the position of the legend on a chart.
+  /// Below the chart.
   /// </summary>
   Bottom = -4107
 }

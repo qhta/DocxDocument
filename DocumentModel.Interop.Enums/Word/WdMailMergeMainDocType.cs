@@ -37,7 +37,7 @@ public enum WdMailMergeMainDocType
   /// </summary>
   Fax = 5,
   /// <summary>
-  /// Specifies a type of mail merge document.
+  /// Not a merge document.
   /// </summary>
   NotAMergeDocument = -1
 }

@@ -13,7 +13,7 @@ public enum WdMailMergeDefaultRecord
   /// </summary>
   FirstRecord = 1,
   /// <summary>
-  /// Specifies the default record to use in a mail merge process.
+  /// Use the last record in the result set as the default record.
   /// </summary>
   LastRecord = -16
 }

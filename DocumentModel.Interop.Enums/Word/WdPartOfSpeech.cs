@@ -45,8 +45,7 @@ public enum WdPartOfSpeech
   /// </summary>
   Idiom = 8,
   /// <summary>
-  /// Some other part of speech. [System.Runtime.InteropServices.Guid("6AF6E882-A139-3B8E-9B1C-3315A1AF366D")]
-  /// public enum WdPartOfSpeech ﾉ Expand table
+  /// Some other part of speech.
   /// </summary>
   Other = 9
 }

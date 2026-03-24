@@ -9,39 +9,39 @@ namespace DocumentModel.Interop.Word;
 public enum WdOutlineLevel
 {
   /// <summary>
-  /// Outline level 1.
+  /// Specifies the outline level to apply to a paragraph.
   /// </summary>
   Level1 = 1,
   /// <summary>
-  /// Outline level 2.
+  /// Specifies the outline level to apply to a paragraph.
   /// </summary>
   Level2 = 2,
   /// <summary>
-  /// Outline level 3.
+  /// Specifies the outline level to apply to a paragraph.
   /// </summary>
   Level3 = 3,
   /// <summary>
-  /// Outline level 4.
+  /// Specifies the outline level to apply to a paragraph.
   /// </summary>
   Level4 = 4,
   /// <summary>
-  /// Outline level 5.
+  /// Specifies the outline level to apply to a paragraph.
   /// </summary>
   Level5 = 5,
   /// <summary>
-  /// Outline level 6.
+  /// Specifies the outline level to apply to a paragraph.
   /// </summary>
   Level6 = 6,
   /// <summary>
-  /// Outline level 7.
+  /// Specifies the outline level to apply to a paragraph.
   /// </summary>
   Level7 = 7,
   /// <summary>
-  /// Outline level 8.
+  /// Specifies the outline level to apply to a paragraph.
   /// </summary>
   Level8 = 8,
   /// <summary>
-  /// Outline level 9.
+  /// Specifies the outline level to apply to a paragraph.
   /// </summary>
   Level9 = 9,
   /// <summary>

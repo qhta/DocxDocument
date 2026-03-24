@@ -17,8 +17,7 @@ public enum WdInsertCells
   /// </summary>
   ShiftDown = 1,
   /// <summary>
-  /// Inserts an entire row above the row that contains the selection. wdInsertCellsEntireColumn3 Inserts an entire
-  /// column to the left of the column that contains the selection.
+  /// Specifies where and what type of cells to add to an existing table.
   /// </summary>
   EntireRow = 2,
   /// <summary>
