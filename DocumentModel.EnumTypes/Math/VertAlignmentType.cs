@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXM.VerticalAlignmentValues))]
-public enum VerticalAlignment
+public enum VertAlignmentType
 {
   /// <summary>
   ///   Top.
@@ -21,9 +21,5 @@ public enum VerticalAlignment
   /// </summary>
   [OpenXmlEnumValue(nameof(DXM.VerticalAlignmentValues.Bottom))]
   Bottom,
-  /// <summary>
-  ///   Bottom Alignment.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXM.VerticalAlignmentValues.Bot))]
-  Bot
+
 }
