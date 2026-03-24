@@ -11,9 +11,9 @@ public enum WdIndexSortBy
   /// <summary>
   /// Sort by the number of strokes in a character.
   /// </summary>
-  troke = 0,
+  Stroke = 0,
   /// <summary>
   /// Sort phonetically.
   /// </summary>
-  yllable = 1
+  Syllable = 1
 }

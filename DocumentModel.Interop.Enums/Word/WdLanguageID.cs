@@ -522,7 +522,7 @@ public enum WdLanguageID
   /// </summary>
   NorwegianNynorsk = 2068,
   /// <summary>
-  /// Specifies the language to use.
+  /// Portuguese (Brazil) language.
   /// </summary>
   Portuguese = 2070,
   /// <summary>

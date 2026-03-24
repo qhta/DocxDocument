@@ -45,7 +45,7 @@ public enum WdRecoveryType
   /// </summary>
   ChartPicture = 13,
   /// <summary>
-  /// Pastes a Microsoft Excel chart as an embedded OLE object.
+  /// Pastes an Excel chart as a picture.
   /// </summary>
   Chart = 14,
   /// <summary>

@@ -18,7 +18,7 @@ public enum WdKey
   /// </summary>
   KeyTab = 9,
   /// <summary>
-  /// .
+  /// The numeric 5 special key.
   /// </summary>
   KeyNumeric5Special = 12,
   /// <summary>

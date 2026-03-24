@@ -141,7 +141,7 @@ public enum XlConstants
   /// </summary>
   Circle = 8,
   /// <summary>
-  /// Display positive error bars in the specified chart group or series.
+  /// Plus values.
   /// </summary>
   Plus = 9,
   /// <summary>

@@ -13,83 +13,83 @@ public enum WdStylisticSet
   /// </summary>
   Default = 0,
   /// <summary>
-  /// Specifies the stylistic set to apply to the font.
+  /// First stylistic set for the specified font.
   /// </summary>
   StylisticSet01 = 1,
   /// <summary>
-  /// Specifies the stylistic set to apply to the font.
+  /// Second stylistic set for the specified font.
   /// </summary>
   StylisticSet02 = 2,
   /// <summary>
-  /// Specifies the stylistic set to apply to the font.
+  /// Third stylistic set for the specified font.
   /// </summary>
   StylisticSet03 = 4,
   /// <summary>
-  /// Specifies the stylistic set to apply to the font.
+  /// Fourth stylistic set for the specified font.
   /// </summary>
   StylisticSet04 = 8,
   /// <summary>
-  /// Specifies the stylistic set to apply to the font.
+  /// Fifth stylistic set for the specified font.
   /// </summary>
   StylisticSet05 = 16,
   /// <summary>
-  /// Specifies the stylistic set to apply to the font.
+  /// Sixth stylistic set for the specified font.
   /// </summary>
   StylisticSet06 = 32,
   /// <summary>
-  /// Specifies the stylistic set to apply to the font.
+  /// Seventh stylistic set for the specified font.
   /// </summary>
   StylisticSet07 = 64,
   /// <summary>
-  /// Specifies the stylistic set to apply to the font.
+  /// Eighth stylistic set for the specified font.
   /// </summary>
   StylisticSet08 = 128,
   /// <summary>
-  /// Specifies the stylistic set to apply to the font.
+  /// Ninth stylistic set for the specified font.
   /// </summary>
   StylisticSet09 = 256,
   /// <summary>
-  /// Specifies the stylistic set to apply to the font.
+  /// Tenth stylistic set for the specified font.
   /// </summary>
   StylisticSet10 = 512,
   /// <summary>
-  /// Specifies the stylistic set to apply to the font.
+  /// Eleventh stylistic set for the specified font.
   /// </summary>
   StylisticSet11 = 1024,
   /// <summary>
-  /// Specifies the stylistic set to apply to the font.
+  /// Twelfth stylistic set for the specified font. public enum WdStylisticSet
   /// </summary>
   StylisticSet12 = 2048,
   /// <summary>
-  /// Specifies the stylistic set to apply to the font.
+  /// Thirteenth stylistic set for the specified font.
   /// </summary>
   StylisticSet13 = 4096,
   /// <summary>
-  /// Specifies the stylistic set to apply to the font.
+  /// Fourtheenth stylistic set for the specified font.
   /// </summary>
   StylisticSet14 = 8192,
   /// <summary>
-  /// Specifies the stylistic set to apply to the font.
+  /// Fifthteenth stylistic set for the specified font.
   /// </summary>
   StylisticSet15 = 16384,
   /// <summary>
-  /// Specifies the stylistic set to apply to the font.
+  /// Sixteenth stylistic set for the specified font.
   /// </summary>
   StylisticSet16 = 32768,
   /// <summary>
-  /// Specifies the stylistic set to apply to the font.
+  /// Seventeenth stylistic set for the specified font.
   /// </summary>
   StylisticSet17 = 65536,
   /// <summary>
-  /// Specifies the stylistic set to apply to the font.
+  /// Eighteenth stylistic set for the specified font.
   /// </summary>
   StylisticSet18 = 131072,
   /// <summary>
-  /// Specifies the stylistic set to apply to the font.
+  /// Nineteenth stylistic set for the specified font.
   /// </summary>
   StylisticSet19 = 262144,
   /// <summary>
-  /// Specifies the stylistic set to apply to the font.
+  /// Twentieth stylistic set for the specified font.
   /// </summary>
   StylisticSet20 = 524288
 }

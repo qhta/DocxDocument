@@ -11,5 +11,5 @@ public enum WdShapeSizeRelative
   /// <summary>
   /// Specifies whether the WidthRelative or HeightRelative property for a Shape or ShapeRange object is valid.
   /// </summary>
-  wdShapeSizeRelativeNone = -999999
+  None = -999999
 }

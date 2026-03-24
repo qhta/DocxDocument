@@ -11,9 +11,9 @@ public enum WdDefaultTableBehavior
   /// <summary>
   /// Specifies whether Microsoft Word automatically resizes cells in a table to fit the contents (AutoFit).
   /// </summary>
-  TableBehavior8 = 0,
+  Word8 = 0,
   /// <summary>
   /// Specifies whether Microsoft Word automatically resizes cells in a table to fit the contents (AutoFit).
   /// </summary>
-  TableBehavior9 = 1
+  Word9 = 1
 }
