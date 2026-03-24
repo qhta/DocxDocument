@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 /// Base class for all model elements, providing property change notification support.
 /// </summary>
-public abstract class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem, ICollectionItem,
+public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem, ICollectionItem,
   IModifiable, INotificationSource, ILoadable, IEmptyCheckable, IPropertiesProvider
 {
   static ModelElement()

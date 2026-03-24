@@ -8,86 +8,86 @@ public enum WdFindMatch
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdMatchGraphic = unchecked((int)1),
+  Graphic = unchecked((int)1),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdMatchCommentMark = unchecked((int)5),
+  CommentMark = unchecked((int)5),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdMatchTabCharacter = unchecked((int)9),
+  TabCharacter = unchecked((int)9),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdMatchCaretCharacter = unchecked((int)11),
+  CaretCharacter = unchecked((int)11),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdMatchColumnBreak = unchecked((int)14),
+  ColumnBreak = unchecked((int)14),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdMatchField = unchecked((int)19),
+  Field = unchecked((int)19),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdMatchNonbreakingHyphen = unchecked((int)30),
+  NonbreakingHyphen = unchecked((int)30),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdMatchOptionalHyphen = unchecked((int)31),
+  OptionalHyphen = unchecked((int)31),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdMatchNonbreakingSpace = unchecked((int)160),
+  NonbreakingSpace = unchecked((int)160),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdMatchEnDash = unchecked((int)8211),
+  EnDash = unchecked((int)8211),
   /// <summary>
   /// Not supported. [System.Runtime.InteropServices.Guid("858EB926-41E4-3509-B9D9-0B62C364228A")] public enum
   /// WdFindMatch ﾉ Expand table
   /// </summary>
-  wdMatchEmDash = unchecked((int)8212),
+  EmDash = unchecked((int)8212),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdMatchManualLineBreak = unchecked((int)65551),
+  ManualLineBreak = unchecked((int)65551),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdMatchParagraphMark = unchecked((int)65551),
+  ParagraphMark = unchecked((int)65551),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdMatchFootnoteMark = unchecked((int)65554),
+  FootnoteMark = unchecked((int)65554),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdMatchEndnoteMark = unchecked((int)65555),
+  EndnoteMark = unchecked((int)65555),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdMatchManualPageBreak = unchecked((int)65564),
+  ManualPageBreak = unchecked((int)65564),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdMatchAnyDigit = unchecked((int)65567),
+  AnyDigit = unchecked((int)65567),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdMatchSectionBreak = unchecked((int)65580),
+  SectionBreak = unchecked((int)65580),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdMatchAnyLetter = unchecked((int)65583),
+  AnyLetter = unchecked((int)65583),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdMatchAnyCharacter = unchecked((int)65599),
+  AnyCharacter = unchecked((int)65599),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdMatchWhiteSpace = unchecked((int)65655)
+  WhiteSpace = unchecked((int)65655)
 }

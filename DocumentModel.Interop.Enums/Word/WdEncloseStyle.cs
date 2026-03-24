@@ -8,13 +8,13 @@ public enum WdEncloseStyle
   /// <summary>
   /// The enclosure assumes the default size.
   /// </summary>
-  wdEncloseStyleNone = unchecked((int)0),
+  None = unchecked((int)0),
   /// <summary>
   /// The enclosure is smaller.
   /// </summary>
-  wdEncloseStyleSmall = unchecked((int)1),
+  Small = unchecked((int)1),
   /// <summary>
   /// The enclosure is larger.
   /// </summary>
-  wdEncloseStyleLarge = unchecked((int)2)
+  Large = unchecked((int)2)
 }

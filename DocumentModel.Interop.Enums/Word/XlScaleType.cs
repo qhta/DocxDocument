@@ -8,9 +8,9 @@ public enum XlScaleType
   /// <summary>
   /// Specifies the scale type of the value axis.
   /// </summary>
-  xlScaleLogarithmic = unchecked((int)-4133),
+  ogarithmic = unchecked((int)-4133),
   /// <summary>
   /// Specifies the scale type of the value axis.
   /// </summary>
-  xlScaleLinear = unchecked((int)-4132)
+  inear = unchecked((int)-4132)
 }

@@ -8,21 +8,21 @@ public enum WdHeadingSeparator
   /// <summary>
   /// No separator.
   /// </summary>
-  wdHeadingSeparatorNone = unchecked((int)0),
+  None = unchecked((int)0),
   /// <summary>
   /// A blank line.
   /// </summary>
-  wdHeadingSeparatorBlankLine = unchecked((int)1),
+  BlankLine = unchecked((int)1),
   /// <summary>
   /// A designated letter.
   /// </summary>
-  wdHeadingSeparatorLetter = unchecked((int)2),
+  Letter = unchecked((int)2),
   /// <summary>
   /// A designated lowercase letter.
   /// </summary>
-  wdHeadingSeparatorLetterLow = unchecked((int)3),
+  LetterLow = unchecked((int)3),
   /// <summary>
   /// A designated uppercase letter.
   /// </summary>
-  wdHeadingSeparatorLetterFull = unchecked((int)4)
+  LetterFull = unchecked((int)4)
 }

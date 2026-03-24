@@ -10,13 +10,13 @@ public enum WdHorizontalInVerticalType
   /// to fit in the line of vertical text. wdHorizontalInVerticalResizeLine2 The line of vertical text is sized to
   /// accommodate the horizontal text.
   /// </summary>
-  wdHorizontalInVerticalNone = unchecked((int)0),
+  None = unchecked((int)0),
   /// <summary>
   /// Specifies the format of horizontal text set within vertical text.
   /// </summary>
-  wdHorizontalInVerticalFitInLine = unchecked((int)1),
+  FitInLine = unchecked((int)1),
   /// <summary>
   /// Specifies the format of horizontal text set within vertical text.
   /// </summary>
-  wdHorizontalInVerticalResizeLine = unchecked((int)2)
+  ResizeLine = unchecked((int)2)
 }

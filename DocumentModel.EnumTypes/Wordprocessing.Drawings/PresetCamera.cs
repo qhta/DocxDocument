@@ -8,10 +8,14 @@ namespace DocumentModel.Wordprocessing.Drawings;
 public enum PresetCamera
 {
   /// <summary>
+  /// Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   /// Legacy oblique top left camera.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetCameraValues.LegacyObliqueTopLeft))]
-  LegacyObliqueTopLeft,
+  LegacyObliqueTopLeft = 1,
   /// <summary>
   /// Legacy oblique top camera.
   /// </summary>

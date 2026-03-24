@@ -8,17 +8,17 @@ public enum XlErrorBarInclude
   /// <summary>
   /// Both positive and negative error range.
   /// </summary>
-  xlErrorBarIncludeBoth = unchecked((int)1),
+  Both = unchecked((int)1),
   /// <summary>
   /// Only positive error range.
   /// </summary>
-  xlErrorBarIncludePlusValues = unchecked((int)2),
+  PlusValues = unchecked((int)2),
   /// <summary>
   /// Only negative error range.
   /// </summary>
-  xlErrorBarIncludeMinusValues = unchecked((int)3),
+  MinusValues = unchecked((int)3),
   /// <summary>
   /// Specifies which error-bar parts to include.
   /// </summary>
-  xlErrorBarIncludeNone = unchecked((int)-4142)
+  None = unchecked((int)-4142)
 }

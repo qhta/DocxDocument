@@ -8,9 +8,9 @@ public enum WdCaptionPosition
   /// <summary>
   /// The caption label is added above.
   /// </summary>
-  wdCaptionPositionAbove = unchecked((int)0),
+  Above = unchecked((int)0),
   /// <summary>
   /// The caption label is added below.
   /// </summary>
-  wdCaptionPositionBelow = unchecked((int)1)
+  Below = unchecked((int)1)
 }

@@ -8,29 +8,29 @@ public enum WdIndexFilter
   /// <summary>
   /// No special filtering.
   /// </summary>
-  wdIndexFilterNone = unchecked((int)0),
+  None = unchecked((int)0),
   /// <summary>
   /// Japanese words use the AIUEO method of alphabetizing. wdIndexFilterAkasatana2 Japanese words use Akasatana.
   /// </summary>
-  wdIndexFilterAiueo = unchecked((int)1),
+  Aiueo = unchecked((int)1),
   /// <summary>
   /// Specifies how Microsoft Word classifies the first character of entries in the specified index.
   /// </summary>
-  wdIndexFilterAkasatana = unchecked((int)2),
+  Akasatana = unchecked((int)2),
   /// <summary>
   /// Korean words use Chosung.
   /// </summary>
-  wdIndexFilterChosung = unchecked((int)3),
+  Chosung = unchecked((int)3),
   /// <summary>
   /// Japanese words use Akasatana.
   /// </summary>
-  wdIndexFilterLow = unchecked((int)4),
+  Low = unchecked((int)4),
   /// <summary>
   /// Japanese words use the AIUEO method of alphabetizing.
   /// </summary>
-  wdIndexFilterMedium = unchecked((int)5),
+  Medium = unchecked((int)5),
   /// <summary>
   /// Korean words use Chosung.
   /// </summary>
-  wdIndexFilterFull = unchecked((int)6)
+  Full = unchecked((int)6)
 }

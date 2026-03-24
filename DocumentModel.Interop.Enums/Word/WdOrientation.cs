@@ -8,9 +8,9 @@ public enum WdOrientation
   /// <summary>
   /// Portrait orientation.
   /// </summary>
-  wdOrientPortrait = unchecked((int)0),
+  Portrait = unchecked((int)0),
   /// <summary>
   /// Landscape orientation.
   /// </summary>
-  wdOrientLandscape = unchecked((int)1)
+  Landscape = unchecked((int)1)
 }

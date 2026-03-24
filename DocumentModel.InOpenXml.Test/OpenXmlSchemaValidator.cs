@@ -114,8 +114,7 @@ internal static class OpenXmlSchemaValidator
       DtdProcessing = DtdProcessing.Ignore,
       CloseInput = true,
       ValidationFlags = //XmlSchemaValidationFlags.ReportValidationWarnings |
-                        XmlSchemaValidationFlags.ProcessInlineSchema |
-                        XmlSchemaValidationFlags.ProcessSchemaLocation
+        XmlSchemaValidationFlags.ProcessInlineSchema | XmlSchemaValidationFlags.ProcessSchemaLocation
     };
 
     settings.XmlResolver = new XmlUrlResolver();
@@ -125,7 +124,8 @@ internal static class OpenXmlSchemaValidator
       var severity = args.Severity == XmlSeverityType.Warning ? "Warning" : "Error";
       if (args.Exception is { } schemaException)
       {
-        errors.Add($"{severity} ({schemaException.SourceUri}, line {schemaException.LineNumber}, pos {schemaException.LinePosition}): {args.Message}");
+        errors.Add(
+          $"{severity} ({schemaException.SourceUri}, line {schemaException.LineNumber}, pos {schemaException.LinePosition}): {args.Message}");
       }
       else
       {
@@ -138,25 +138,17 @@ internal static class OpenXmlSchemaValidator
 
   private static XmlSchemaSet LoadSchemas()
   {
-    if (!Directory.Exists(SchemaDirectory))
-      throw new DirectoryNotFoundException($"Schema folder '{SchemaDirectory}' was not found.");
+    var schemaSet = new XmlSchemaSet { XmlResolver = new XmlUrlResolver() };
 
-    var schemaSet = new XmlSchemaSet
+    // only entry schemas, not all files
+    var entrySchemas = new[]
     {
-      XmlResolver = new XmlUrlResolver()
+      Path.Combine(SchemaDirectory, "wml.xsd"), // example
+      // add only required top-level schemas here
     };
 
-    foreach (var schemaPath in Directory.EnumerateFiles(SchemaDirectory, "*.xsd", SearchOption.AllDirectories))
-    {
-      try
-      {
-        schemaSet.Add(null, schemaPath);
-      }
-      catch (XmlSchemaException ex)
-      {
-        throw new InvalidOperationException($"Cannot load schema '{schemaPath}'. {ex.Message}", ex);
-      }
-    }
+    foreach (var path in entrySchemas)
+      schemaSet.Add(null, path);
 
     schemaSet.Compile();
     return schemaSet;

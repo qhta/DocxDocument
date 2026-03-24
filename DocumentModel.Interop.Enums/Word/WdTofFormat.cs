@@ -8,25 +8,25 @@ public enum WdTofFormat
   /// <summary>
   /// Template formatting.
   /// </summary>
-  wdTOFTemplate = unchecked((int)0),
+  Template = unchecked((int)0),
   /// <summary>
   /// Classic formatting.
   /// </summary>
-  wdTOFClassic = unchecked((int)1),
+  Classic = unchecked((int)1),
   /// <summary>
   /// Distinctive formatting.
   /// </summary>
-  wdTOFDistinctive = unchecked((int)2),
+  Distinctive = unchecked((int)2),
   /// <summary>
   /// Centered formatting.
   /// </summary>
-  wdTOFCentered = unchecked((int)3),
+  Centered = unchecked((int)3),
   /// <summary>
   /// Formal formatting.
   /// </summary>
-  wdTOFFormal = unchecked((int)4),
+  Formal = unchecked((int)4),
   /// <summary>
   /// Simple formatting.
   /// </summary>
-  wdTOFSimple = unchecked((int)5)
+  Simple = unchecked((int)5)
 }

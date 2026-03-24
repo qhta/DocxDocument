@@ -8,25 +8,25 @@ public enum XlBarShape
   /// <summary>
   /// Box.
   /// </summary>
-  xlBox = unchecked((int)0),
+  Box = unchecked((int)0),
   /// <summary>
   /// Pyramid, coming to point at value.
   /// </summary>
-  xlPyramidToPoint = unchecked((int)1),
+  PyramidToPoint = unchecked((int)1),
   /// <summary>
   /// Pyramid, truncated at value.
   /// </summary>
-  xlPyramidToMax = unchecked((int)2),
+  PyramidToMax = unchecked((int)2),
   /// <summary>
   /// Cylinder.
   /// </summary>
-  xlCylinder = unchecked((int)3),
+  Cylinder = unchecked((int)3),
   /// <summary>
   /// Cone, coming to point at value.
   /// </summary>
-  xlConeToPoint = unchecked((int)4),
+  ConeToPoint = unchecked((int)4),
   /// <summary>
   /// Cone, truncated at value.
   /// </summary>
-  xlConeToMax = unchecked((int)5)
+  ConeToMax = unchecked((int)5)
 }

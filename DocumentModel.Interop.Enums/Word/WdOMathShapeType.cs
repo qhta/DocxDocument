@@ -10,10 +10,10 @@ public enum WdOMathShapeType
   /// Specifies the appearance of delimiters (parentheses, braces, brackets) in relationship to the content that
   /// they surround.
   /// </summary>
-  wdOMathShapeCentered = unchecked((int)0),
+  Centered = unchecked((int)0),
   /// <summary>
   /// Specifies the appearance of delimiters (parentheses, braces, brackets) in relationship to the content that
   /// they surround.
   /// </summary>
-  wdOMathShapeMatch = unchecked((int)1)
+  Match = unchecked((int)1)
 }

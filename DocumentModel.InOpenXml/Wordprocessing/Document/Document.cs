@@ -8,9 +8,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <summary>
   ///  Default constructor - needed for serialization.
   /// </summary>
-  public Document()
-  {
-  }
+  public Document() { }
   /// <summary>
   /// Creates a new instance of the <see cref="Document"/> class and opens a WordprocessingML document from the specified file path.
   /// </summary>
@@ -222,6 +220,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     }
   }
   private CoreProperties? _CoreProperties;
+
   /// <summary>
   ///   Content-specific document properties, such as content type and structure.
   /// </summary>
@@ -237,6 +236,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     set => UpdateField(ref _ContentProperties!, value, nameof(ContentProperties));
   }
   private ContentProperties? _ContentProperties;
+
   /// <summary>
   ///   Statistical document properties such as word count and page count.
   /// </summary>
@@ -252,20 +252,22 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     set => UpdateField(ref _StatisticProperties!, value, nameof(StatisticProperties));
   }
   private StatisticProperties? _StatisticProperties;
+
   /// <summary>
   ///   Custom document properties, allowing storage of user-defined metadata.
   /// </summary>
-  public CustomProperties? CustomProperties
+  public CustomProperties CustomProperties
   {
     get
     {
       if (_CustomProperties == null && WordprocessingDocument?.CustomFilePropertiesPart != null)
         _CustomProperties = new CustomProperties(this);
-      return _CustomProperties;
+      return _CustomProperties!;
     }
     set => UpdateField(ref _CustomProperties, value, nameof(CustomProperties));
   }
   private CustomProperties? _CustomProperties;
+
   /// <summary>
   ///   Document-level settings, including compatibility, protection, and view options.
   /// </summary>

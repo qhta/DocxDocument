@@ -6,7 +6,7 @@
 public enum MsoPresetCamera
 {
   /// <summary>
-  /// Indicates the effects camera type used by the specified object.
+  /// Used only for detection.
   /// </summary>
   Mixed = -2,
   /// <summary>
@@ -54,7 +54,7 @@ public enum MsoPresetCamera
   /// </summary>
   LegacyPerspectiveTop = 11,
   /// <summary>
-  /// Specifies Legacy Perspective Upper Right. public enum class MsoPresetCamera ﾉ Expand table
+  /// Specifies Legacy Perspective Upper Right.
   /// </summary>
   LegacyPerspectiveTopRight = 12,
   /// <summary>

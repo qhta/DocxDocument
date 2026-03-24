@@ -6,7 +6,7 @@
 public enum MsoLightRigType
 {
   /// <summary>
-  /// Indicates the effects lighting for an object.
+  /// Used only for detection.
   /// </summary>
   Mixed = -2,
   /// <summary>

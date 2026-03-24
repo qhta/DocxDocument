@@ -8,13 +8,13 @@ public enum XlTimeUnit
   /// <summary>
   /// Days
   /// </summary>
-  xlDays = unchecked((int)0),
+  Days = unchecked((int)0),
   /// <summary>
   /// Months
   /// </summary>
-  xlMonths = unchecked((int)1),
+  Months = unchecked((int)1),
   /// <summary>
   /// Years
   /// </summary>
-  xlYears = unchecked((int)2)
+  Years = unchecked((int)2)
 }

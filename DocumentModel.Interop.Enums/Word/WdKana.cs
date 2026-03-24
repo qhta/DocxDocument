@@ -8,9 +8,9 @@ public enum WdKana
   /// <summary>
   /// The text is formatted as Katakana.
   /// </summary>
-  wdKanaKatakana = unchecked((int)8),
+  Katakana = unchecked((int)8),
   /// <summary>
   /// The text is formatted as Hiragana.
   /// </summary>
-  wdKanaHiragana = unchecked((int)9)
+  Hiragana = unchecked((int)9)
 }

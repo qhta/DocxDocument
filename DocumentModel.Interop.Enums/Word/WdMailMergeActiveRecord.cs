@@ -8,37 +8,37 @@ public enum WdMailMergeActiveRecord
   /// <summary>
   /// Specifies the active record in a mail merge result set.
   /// </summary>
-  wdPreviousDataSourceRecord = unchecked((int)-9),
+  PreviousDataSourceRecord = unchecked((int)-9),
   /// <summary>
   /// Specifies the active record in a mail merge result set.
   /// </summary>
-  wdNextDataSourceRecord = unchecked((int)-8),
+  NextDataSourceRecord = unchecked((int)-8),
   /// <summary>
   /// Specifies the active record in a mail merge result set.
   /// </summary>
-  wdLastDataSourceRecord = unchecked((int)-7),
+  LastDataSourceRecord = unchecked((int)-7),
   /// <summary>
   /// Specifies the active record in a mail merge result set.
   /// </summary>
-  wdFirstDataSourceRecord = unchecked((int)-6),
+  FirstDataSourceRecord = unchecked((int)-6),
   /// <summary>
   /// Specifies the active record in a mail merge result set.
   /// </summary>
-  wdLastRecord = unchecked((int)-5),
+  LastRecord = unchecked((int)-5),
   /// <summary>
   /// Specifies the active record in a mail merge result set.
   /// </summary>
-  wdFirstRecord = unchecked((int)-4),
+  FirstRecord = unchecked((int)-4),
   /// <summary>
   /// Specifies the active record in a mail merge result set.
   /// </summary>
-  wdPreviousRecord = unchecked((int)-3),
+  PreviousRecord = unchecked((int)-3),
   /// <summary>
   /// Specifies the active record in a mail merge result set.
   /// </summary>
-  wdNextRecord = unchecked((int)-2),
+  NextRecord = unchecked((int)-2),
   /// <summary>
   /// Specifies the active record in a mail merge result set.
   /// </summary>
-  wdNoActiveRecord = unchecked((int)-1)
+  NoActiveRecord = unchecked((int)-1)
 }

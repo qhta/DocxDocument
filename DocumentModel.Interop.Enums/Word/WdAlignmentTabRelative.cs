@@ -9,9 +9,9 @@ public enum WdAlignmentTabRelative
   /// <summary>
   /// Word calculates tab alignment relative to the margins
   /// </summary>
-  wdMargin = unchecked((int)0),
+  Margin = unchecked((int)0),
   /// <summary>
   /// Word calculates tab alignment relative to the paragraph indents.
   /// </summary>
-  wdIndent = unchecked((int)1)
+  Indent = unchecked((int)1)
 }

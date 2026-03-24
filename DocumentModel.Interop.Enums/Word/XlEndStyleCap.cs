@@ -8,9 +8,9 @@ public enum XlEndStyleCap
   /// <summary>
   /// Caps applied.
   /// </summary>
-  xlCap = unchecked((int)1),
+  Cap = unchecked((int)1),
   /// <summary>
   /// No caps applied.
   /// </summary>
-  xlNoCap = unchecked((int)2)
+  NoCap = unchecked((int)2)
 }

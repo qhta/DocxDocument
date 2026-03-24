@@ -8,33 +8,33 @@ public enum WdEditionOption
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdCancelPublisher = unchecked((int)0),
+  CancelPublisher = unchecked((int)0),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdSendPublisher = unchecked((int)1),
+  SendPublisher = unchecked((int)1),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdSelectPublisher = unchecked((int)2),
+  SelectPublisher = unchecked((int)2),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdAutomaticUpdate = unchecked((int)3),
+  AutomaticUpdate = unchecked((int)3),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdManualUpdate = unchecked((int)4),
+  ManualUpdate = unchecked((int)4),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdChangeAttributes = unchecked((int)5),
+  ChangeAttributes = unchecked((int)5),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdUpdateSubscriber = unchecked((int)6),
+  UpdateSubscriber = unchecked((int)6),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdOpenSource = unchecked((int)7)
+  OpenSource = unchecked((int)7)
 }

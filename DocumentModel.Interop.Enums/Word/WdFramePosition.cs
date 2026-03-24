@@ -8,29 +8,29 @@ public enum WdFramePosition
   /// <summary>
   /// Specifies the reference point against which the frame position is calculated.
   /// </summary>
-  wdFrameTop = unchecked((int)-999999),
+  Top = unchecked((int)-999999),
   /// <summary>
   /// Specifies the reference point against which the frame position is calculated.
   /// </summary>
-  wdFrameLeft = unchecked((int)-999998),
+  Left = unchecked((int)-999998),
   /// <summary>
   /// Specifies the reference point against which the frame position is calculated.
   /// </summary>
-  wdFrameBottom = unchecked((int)-999997),
+  Bottom = unchecked((int)-999997),
   /// <summary>
   /// Specifies the reference point against which the frame position is calculated.
   /// </summary>
-  wdFrameRight = unchecked((int)-999996),
+  Right = unchecked((int)-999996),
   /// <summary>
   /// Specifies the reference point against which the frame position is calculated.
   /// </summary>
-  wdFrameCenter = unchecked((int)-999995),
+  Center = unchecked((int)-999995),
   /// <summary>
   /// Specifies the reference point against which the frame position is calculated.
   /// </summary>
-  wdFrameInside = unchecked((int)-999994),
+  Inside = unchecked((int)-999994),
   /// <summary>
   /// Specifies the reference point against which the frame position is calculated.
   /// </summary>
-  wdFrameOutside = unchecked((int)-999993)
+  Outside = unchecked((int)-999993)
 }

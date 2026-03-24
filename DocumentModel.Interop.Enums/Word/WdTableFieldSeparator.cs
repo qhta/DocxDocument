@@ -9,17 +9,17 @@ public enum WdTableFieldSeparator
   /// <summary>
   /// Paragraph markers.
   /// </summary>
-  wdSeparateByParagraphs = unchecked((int)0),
+  Paragraphs = unchecked((int)0),
   /// <summary>
   /// A tab.
   /// </summary>
-  wdSeparateByTabs = unchecked((int)1),
+  Tabs = unchecked((int)1),
   /// <summary>
   /// A comma.
   /// </summary>
-  wdSeparateByCommas = unchecked((int)2),
+  Commas = unchecked((int)2),
   /// <summary>
   /// The default list separator.
   /// </summary>
-  wdSeparateByDefaultListSeparator = unchecked((int)3)
+  DefaultListSeparator = unchecked((int)3)
 }

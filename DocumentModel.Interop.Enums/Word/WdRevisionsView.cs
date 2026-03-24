@@ -10,10 +10,10 @@ public enum WdRevisionsView
   /// Specifies whether Word displays the original version of a document or a version with revisions and formatting
   /// changes applied.
   /// </summary>
-  wdRevisionsViewFinal = unchecked((int)0),
+  Final = unchecked((int)0),
   /// <summary>
   /// Specifies whether Word displays the original version of a document or a version with revisions and formatting
   /// changes applied.
   /// </summary>
-  wdRevisionsViewOriginal = unchecked((int)1)
+  Original = unchecked((int)1)
 }

@@ -8,9 +8,9 @@ public enum WdFootnoteLocation
   /// <summary>
   /// At bottom of current page.
   /// </summary>
-  wdBottomOfPage = unchecked((int)0),
+  ottomOfPage = unchecked((int)0),
   /// <summary>
   /// Beneath current text.
   /// </summary>
-  wdBeneathText = unchecked((int)1)
+  eneathText = unchecked((int)1)
 }

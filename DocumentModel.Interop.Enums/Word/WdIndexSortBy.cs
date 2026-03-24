@@ -8,9 +8,9 @@ public enum WdIndexSortBy
   /// <summary>
   /// Sort by the number of strokes in a character.
   /// </summary>
-  wdIndexSortByStroke = unchecked((int)0),
+  troke = unchecked((int)0),
   /// <summary>
   /// Sort phonetically.
   /// </summary>
-  wdIndexSortBySyllable = unchecked((int)1)
+  yllable = unchecked((int)1)
 }

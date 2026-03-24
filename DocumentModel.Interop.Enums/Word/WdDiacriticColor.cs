@@ -8,9 +8,9 @@ public enum WdDiacriticColor
   /// <summary>
   /// Bi-directional language (Arabic, Hebrew, and so forth).
   /// </summary>
-  wdDiacriticColorBidi = unchecked((int)0),
+  Bidi = unchecked((int)0),
   /// <summary>
   /// Latin style languages.
   /// </summary>
-  wdDiacriticColorLatin = unchecked((int)1)
+  Latin = unchecked((int)1)
 }

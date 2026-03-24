@@ -8,37 +8,37 @@ public enum WdMergeSubType
   /// <summary>
   /// Other type of data source.
   /// </summary>
-  wdMergeSubTypeOther = unchecked((int)0),
+  Other = unchecked((int)0),
   /// <summary>
   /// Microsoft Access.
   /// </summary>
-  wdMergeSubTypeAccess = unchecked((int)1),
+  Access = unchecked((int)1),
   /// <summary>
   /// Office Address List.
   /// </summary>
-  wdMergeSubTypeOAL = unchecked((int)2),
+  OAL = unchecked((int)2),
   /// <summary>
   /// OLE database.
   /// </summary>
-  wdMergeSubTypeOLEDBWord = unchecked((int)3),
+  OLEDBWord = unchecked((int)3),
   /// <summary>
   /// Microsoft Works.
   /// </summary>
-  wdMergeSubTypeWorks = unchecked((int)4),
+  Works = unchecked((int)4),
   /// <summary>
   /// OLE database.
   /// </summary>
-  wdMergeSubTypeOLEDBText = unchecked((int)5),
+  OLEDBText = unchecked((int)5),
   /// <summary>
   /// Microsoft Outlook.
   /// </summary>
-  wdMergeSubTypeOutlook = unchecked((int)6),
+  Outlook = unchecked((int)6),
   /// <summary>
   /// Microsoft Word.
   /// </summary>
-  wdMergeSubTypeWord = unchecked((int)7),
+  Word = unchecked((int)7),
   /// <summary>
   /// Microsoft Word 2000.
   /// </summary>
-  wdMergeSubTypeWord2000 = unchecked((int)8)
+  Word2000 = unchecked((int)8)
 }

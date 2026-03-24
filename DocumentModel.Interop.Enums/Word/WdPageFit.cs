@@ -8,17 +8,17 @@ public enum WdPageFit
   /// <summary>
   /// Do not adjust the view settings for the page.
   /// </summary>
-  wdPageFitNone = unchecked((int)0),
+  None = unchecked((int)0),
   /// <summary>
   /// View the full page.
   /// </summary>
-  wdPageFitFullPage = unchecked((int)1),
+  FullPage = unchecked((int)1),
   /// <summary>
   /// Best fit the page to the current window.
   /// </summary>
-  wdPageFitBestFit = unchecked((int)2),
+  BestFit = unchecked((int)2),
   /// <summary>
   /// Best fit the text of the page to the current window.
   /// </summary>
-  wdPageFitTextFit = unchecked((int)3)
+  TextFit = unchecked((int)3)
 }

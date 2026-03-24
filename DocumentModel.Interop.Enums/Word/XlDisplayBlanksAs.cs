@@ -8,13 +8,13 @@ public enum XlDisplayBlanksAs
   /// <summary>
   /// Blank cells are not plotted.
   /// </summary>
-  xlNotPlotted = unchecked((int)1),
+  NotPlotted = unchecked((int)1),
   /// <summary>
   /// Blanks are plotted as zero.
   /// </summary>
-  xlZero = unchecked((int)2),
+  Zero = unchecked((int)2),
   /// <summary>
   /// Values are interpolated into the chart.
   /// </summary>
-  xlInterpolated = unchecked((int)3)
+  Interpolated = unchecked((int)3)
 }

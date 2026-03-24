@@ -8,9 +8,9 @@ public enum WdArrangeStyle
   /// <summary>
   /// Windows are tiled into a single window.
   /// </summary>
-  wdTiled = unchecked((int)0),
+  Tiled = unchecked((int)0),
   /// <summary>
   /// Windows are displayed as icons in a single window.
   /// </summary>
-  wdIcons = unchecked((int)1)
+  Icons = unchecked((int)1)
 }

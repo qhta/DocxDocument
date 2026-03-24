@@ -8,9 +8,9 @@ public enum XlAxisGroup
   /// <summary>
   /// Primary axis group.
   /// </summary>
-  xlPrimary = unchecked((int)1),
+  Primary = unchecked((int)1),
   /// <summary>
   /// Secondary axis group.
   /// </summary>
-  xlSecondary = unchecked((int)2)
+  Secondary = unchecked((int)2)
 }

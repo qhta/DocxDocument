@@ -8,42 +8,42 @@ public enum WdPasteDataType
   /// <summary>
   /// OLE object.
   /// </summary>
-  wdPasteOLEObject = unchecked((int)0),
+  OLEObject = unchecked((int)0),
   /// <summary>
   /// Rich Text Format (RTF).
   /// </summary>
-  wdPasteRTF = unchecked((int)1),
+  RTF = unchecked((int)1),
   /// <summary>
   /// Text.
   /// </summary>
-  wdPasteText = unchecked((int)2),
+  Text = unchecked((int)2),
   /// <summary>
   /// Metafile picture.
   /// </summary>
-  wdPasteMetafilePicture = unchecked((int)3),
+  MetafilePicture = unchecked((int)3),
   /// <summary>
   /// Bitmap.
   /// </summary>
-  wdPasteBitmap = unchecked((int)4),
+  Bitmap = unchecked((int)4),
   /// <summary>
   /// Device-independent bitmap.
   /// </summary>
-  wdPasteDeviceIndependentBitmap = unchecked((int)5),
+  DeviceIndependentBitmap = unchecked((int)5),
   /// <summary>
   /// Hyperlink.
   /// </summary>
-  wdPasteHyperlink = unchecked((int)7),
+  Hyperlink = unchecked((int)7),
   /// <summary>
   /// Shape.
   /// </summary>
-  wdPasteShape = unchecked((int)8),
+  Shape = unchecked((int)8),
   /// <summary>
   /// Enhanced metafile.
   /// </summary>
-  wdPasteEnhancedMetafile = unchecked((int)9),
+  EnhancedMetafile = unchecked((int)9),
   /// <summary>
   /// HTML. [System.Runtime.InteropServices.Guid("773B6CF3-4435-343F-BA19-8F0B7D78CC67")] public enum
   /// WdPasteDataType ﾉ Expand table
   /// </summary>
-  wdPasteHTML = unchecked((int)10)
+  HTML = unchecked((int)10)
 }

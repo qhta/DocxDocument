@@ -8,13 +8,13 @@ public enum WdDefaultListBehavior
   /// <summary>
   /// Specifies the default list behavior for a list.
   /// </summary>
-  wdWord8ListBehavior = unchecked((int)0),
+  ListBehavior8 = unchecked((int)0),
   /// <summary>
   /// Specifies the default list behavior for a list.
   /// </summary>
-  wdWord9ListBehavior = unchecked((int)1),
+  ListBehavior9 = unchecked((int)1),
   /// <summary>
   /// Specifies the default list behavior for a list.
   /// </summary>
-  wdWord10ListBehavior = unchecked((int)2)
+  ListBehavior10 = unchecked((int)2)
 }

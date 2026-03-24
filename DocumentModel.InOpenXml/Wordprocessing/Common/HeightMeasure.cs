@@ -1,4 +1,5 @@
 // ReSharper disable SpecifyACultureInStringConversionExplicitly
+
 using DocumentModel.BaseTypes.Interfaces;
 namespace DocumentModel.Wordprocessing;
 /// <summary>

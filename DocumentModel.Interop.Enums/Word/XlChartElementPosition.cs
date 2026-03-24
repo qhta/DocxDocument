@@ -8,9 +8,9 @@ public enum XlChartElementPosition
   /// <summary>
   /// Specifies the position of the chart element.
   /// </summary>
-  xlChartElementPositionCustom = unchecked((int)-4114),
+  Custom = unchecked((int)-4114),
   /// <summary>
   /// Specifies the position of the chart element.
   /// </summary>
-  xlChartElementPositionAutomatic = unchecked((int)-4105)
+  Automatic = unchecked((int)-4105)
 }

@@ -8,13 +8,13 @@ public enum WdPortugueseReform
   /// <summary>
   /// Use the pre-reform spelling rules.
   /// </summary>
-  wdPortuguesePreReform = unchecked((int)1),
+  PreReform = unchecked((int)1),
   /// <summary>
   /// Use the post-reform spelling rules.
   /// </summary>
-  wdPortuguesePostReform = unchecked((int)2),
+  PostReform = unchecked((int)2),
   /// <summary>
   /// Use both the pre-reform and post-reform spelling rules.
   /// </summary>
-  wdPortugueseBoth = unchecked((int)3)
+  Both = unchecked((int)3)
 }

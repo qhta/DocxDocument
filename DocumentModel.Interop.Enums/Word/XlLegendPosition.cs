@@ -8,25 +8,25 @@ public enum XlLegendPosition
   /// <summary>
   /// In the upper right-hand corner of the chart border.
   /// </summary>
-  xlLegendPositionCorner = unchecked((int)2),
+  Corner = unchecked((int)2),
   /// <summary>
   /// Specifies the position of the legend on a chart.
   /// </summary>
-  xlLegendPositionCustom = unchecked((int)-4161),
+  Custom = unchecked((int)-4161),
   /// <summary>
   /// Specifies the position of the legend on a chart.
   /// </summary>
-  xlLegendPositionTop = unchecked((int)-4160),
+  Top = unchecked((int)-4160),
   /// <summary>
   /// Specifies the position of the legend on a chart.
   /// </summary>
-  xlLegendPositionRight = unchecked((int)-4152),
+  Right = unchecked((int)-4152),
   /// <summary>
   /// Specifies the position of the legend on a chart.
   /// </summary>
-  xlLegendPositionLeft = unchecked((int)-4131),
+  Left = unchecked((int)-4131),
   /// <summary>
   /// Specifies the position of the legend on a chart.
   /// </summary>
-  xlLegendPositionBottom = unchecked((int)-4107)
+  Bottom = unchecked((int)-4107)
 }

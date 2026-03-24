@@ -4,7 +4,7 @@
 ///   Supports loading, updating, and detaching data from WordprocessingML or other OpenXml-based elements.
 /// </summary>
 /// <typeparam name="OpenXmlType">Specifies the type of the underlying OpenXml element being wrapped and synchronized.</typeparam>
-public abstract class ModelElement<OpenXmlType> : ModelElement, IWordprocessingDocumentAware, IUpdatable
+public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordprocessingDocumentAware, IUpdatable
 where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with PackageProperties
 {
   private OpenXmlType? _openXmlElement;

@@ -8,13 +8,13 @@ public enum WdReplace
   /// <summary>
   /// Replace no occurrences.
   /// </summary>
-  wdReplaceNone = unchecked((int)0),
+  None = unchecked((int)0),
   /// <summary>
   /// Replace the first occurrence encountered.
   /// </summary>
-  wdReplaceOne = unchecked((int)1),
+  One = unchecked((int)1),
   /// <summary>
   /// Replace all occurrences.
   /// </summary>
-  wdReplaceAll = unchecked((int)2)
+  All = unchecked((int)2)
 }

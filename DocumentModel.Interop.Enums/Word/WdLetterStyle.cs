@@ -8,13 +8,13 @@ public enum WdLetterStyle
   /// <summary>
   /// Full block.
   /// </summary>
-  wdFullBlock = unchecked((int)0),
+  FullBlock = unchecked((int)0),
   /// <summary>
   /// Modified block.
   /// </summary>
-  wdModifiedBlock = unchecked((int)1),
+  ModifiedBlock = unchecked((int)1),
   /// <summary>
   /// Semi-block.
   /// </summary>
-  wdSemiBlock = unchecked((int)2)
+  SemiBlock = unchecked((int)2)
 }

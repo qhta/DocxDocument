@@ -8,70 +8,70 @@ public enum WdDefaultFilePath
   /// <summary>
   /// Documents path.
   /// </summary>
-  wdDocumentsPath = unchecked((int)0),
+  DocumentsPath = unchecked((int)0),
   /// <summary>
   /// Pictures path.
   /// </summary>
-  wdPicturesPath = unchecked((int)1),
+  PicturesPath = unchecked((int)1),
   /// <summary>
   /// User templates path.
   /// </summary>
-  wdUserTemplatesPath = unchecked((int)2),
+  UserTemplatesPath = unchecked((int)2),
   /// <summary>
   /// Workgroup templates path.
   /// </summary>
-  wdWorkgroupTemplatesPath = unchecked((int)3),
+  WorkgroupTemplatesPath = unchecked((int)3),
   /// <summary>
   /// User Options path.
   /// </summary>
-  wdUserOptionsPath = unchecked((int)4),
+  UserOptionsPath = unchecked((int)4),
   /// <summary>
   /// Path for Auto Recover files.
   /// </summary>
-  wdAutoRecoverPath = unchecked((int)5),
+  AutoRecoverPath = unchecked((int)5),
   /// <summary>
   /// Tools path.
   /// </summary>
-  wdToolsPath = unchecked((int)6),
+  ToolsPath = unchecked((int)6),
   /// <summary>
   /// Tutorial path.
   /// </summary>
-  wdTutorialPath = unchecked((int)7),
+  TutorialPath = unchecked((int)7),
   /// <summary>
   /// Startup path.
   /// </summary>
-  wdStartupPath = unchecked((int)8),
+  StartupPath = unchecked((int)8),
   /// <summary>
   /// Program path.
   /// </summary>
-  wdProgramPath = unchecked((int)9),
+  ProgramPath = unchecked((int)9),
   /// <summary>
   /// Graphics filters path. [System.Runtime.InteropServices.Guid("41700B9A-149A-3173-9324-E651080B9918")] public
   /// enum WdDefaultFilePath ﾉ Expand table
   /// </summary>
-  wdGraphicsFiltersPath = unchecked((int)10),
+  GraphicsFiltersPath = unchecked((int)10),
   /// <summary>
   /// Text converters path.
   /// </summary>
-  wdTextConvertersPath = unchecked((int)11),
+  TextConvertersPath = unchecked((int)11),
   /// <summary>
   /// Proofing tools path.
   /// </summary>
-  wdProofingToolsPath = unchecked((int)12),
+  ProofingToolsPath = unchecked((int)12),
   /// <summary>
   /// Temp file path.
   /// </summary>
-  wdTempFilePath = unchecked((int)13),
+  TempFilePath = unchecked((int)13),
   /// <summary>
   /// Current folder path.
   /// </summary>
-  wdCurrentFolderPath = unchecked((int)14),
+  CurrentFolderPath = unchecked((int)14),
   /// <summary>
   /// Style Gallery path.
   /// </summary>
-  wdStyleGalleryPath = unchecked((int)15),
+  StyleGalleryPath = unchecked((int)15),
   /// <summary>
   /// Border art path.
   /// </summary>
-  wdBorderArtPath = unchecked((int)19)
+  BorderArtPath = unchecked((int)19)
 }

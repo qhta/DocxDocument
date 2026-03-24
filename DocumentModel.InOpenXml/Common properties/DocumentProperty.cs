@@ -2,38 +2,20 @@ namespace DocumentModel;
 /// <summary>
 ///   Abstract document Property.
 /// </summary>
-public abstract partial class DocumentProperty : CollectionItem
+public abstract partial class DocumentProperty : NamedModelElement
 {
- /// <summary>
- /// Default constructor needed for serialization.
- /// </summary>
- protected DocumentProperty()
- {
- }
- /// <summary>
- /// Constructor that initializes the parent collection.
- /// </summary>
- /// <param name = "propertiesCollection">Collection that contains this document property.</param>
- protected DocumentProperty(IElementCollection<CollectionItem> propertiesCollection) : base(propertiesCollection)
- {
- }
- /// <summary>
- ///   Property Category.
- /// </summary>
- [XmlAttribute]
- [NotMapped]
- public virtual string? Category { get; set; }
- /// <summary>
- ///   Property Name.
- /// </summary>
- [XmlAttribute]
- public virtual string Name { get; set; } = string.Empty;
- /// <summary>
- ///   Value of the property
- /// </summary>
- public virtual object? Value { get; set; }
- /// <summary>
- ///   Expected value type
- /// </summary>
- public virtual Type? Type { get; set; }
+  /// <summary>
+  /// Default constructor needed for serialization.
+  /// </summary>
+  protected DocumentProperty() { }
+
+  /// <summary>
+  ///   Value of the property
+  /// </summary>
+  public virtual object? Value { get; set; }
+
+  /// <summary>
+  ///   Expected value type
+  /// </summary>
+  public virtual Type? Type { get; set; }
 }

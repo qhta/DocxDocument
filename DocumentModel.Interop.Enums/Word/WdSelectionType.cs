@@ -8,37 +8,37 @@ public enum WdSelectionType
   /// <summary>
   /// No selection.
   /// </summary>
-  wdNoSelection = unchecked((int)0),
+  NoSelection = unchecked((int)0),
   /// <summary>
   /// An inline paragraph selection.
   /// </summary>
-  wdSelectionIP = unchecked((int)1),
+  SelectionIP = unchecked((int)1),
   /// <summary>
   /// A normal or user-defined selection.
   /// </summary>
-  wdSelectionNormal = unchecked((int)2),
+  SelectionNormal = unchecked((int)2),
   /// <summary>
   /// A frame selection.
   /// </summary>
-  wdSelectionFrame = unchecked((int)3),
+  SelectionFrame = unchecked((int)3),
   /// <summary>
   /// A column selection.
   /// </summary>
-  wdSelectionColumn = unchecked((int)4),
+  SelectionColumn = unchecked((int)4),
   /// <summary>
   /// A row selection.
   /// </summary>
-  wdSelectionRow = unchecked((int)5),
+  SelectionRow = unchecked((int)5),
   /// <summary>
   /// A block selection.
   /// </summary>
-  wdSelectionBlock = unchecked((int)6),
+  SelectionBlock = unchecked((int)6),
   /// <summary>
   /// An inline shape selection.
   /// </summary>
-  wdSelectionInlineShape = unchecked((int)7),
+  SelectionInlineShape = unchecked((int)7),
   /// <summary>
   /// A shape selection.
   /// </summary>
-  wdSelectionShape = unchecked((int)8)
+  SelectionShape = unchecked((int)8)
 }

@@ -8,46 +8,46 @@ public enum WdCalendarType
   /// <summary>
   /// Western.
   /// </summary>
-  wdCalendarWestern = unchecked((int)0),
+  Western = unchecked((int)0),
   /// <summary>
   /// Arabic.
   /// </summary>
-  wdCalendarArabic = unchecked((int)1),
+  Arabic = unchecked((int)1),
   /// <summary>
   /// Hebrew.
   /// </summary>
-  wdCalendarHebrew = unchecked((int)2),
+  Hebrew = unchecked((int)2),
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  wdCalendarTaiwan = unchecked((int)3),
+  Taiwan = unchecked((int)3),
   /// <summary>
   /// Japanese.
   /// </summary>
-  wdCalendarJapan = unchecked((int)4),
+  Japan = unchecked((int)4),
   /// <summary>
   /// Thai.
   /// </summary>
-  wdCalendarThai = unchecked((int)5),
+  Thai = unchecked((int)5),
   /// <summary>
   /// Korean.
   /// </summary>
-  wdCalendarKorean = unchecked((int)6),
+  Korean = unchecked((int)6),
   /// <summary>
   /// Saka Era.
   /// </summary>
-  wdCalendarSakaEra = unchecked((int)7),
+  SakaEra = unchecked((int)7),
   /// <summary>
   /// English.
   /// </summary>
-  wdCalendarTranslitEnglish = unchecked((int)8),
+  TranslitEnglish = unchecked((int)8),
   /// <summary>
   /// French.
   /// </summary>
-  wdCalendarTranslitFrench = unchecked((int)9),
+  TranslitFrench = unchecked((int)9),
   /// <summary>
   /// Reserved for internal use. [System.Runtime.InteropServices.Guid("2F1B54DB-4A60-3B71-9EB6-7AE77033B5B5")]
   /// public enum WdCalendarType ﾉ Expand table
   /// </summary>
-  wdCalendarUmalqura = unchecked((int)13)
+  Umalqura = unchecked((int)13)
 }

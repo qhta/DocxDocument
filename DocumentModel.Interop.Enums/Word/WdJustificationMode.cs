@@ -9,13 +9,13 @@ public enum WdJustificationMode
   /// Expand. wdJustificationModeCompress1 Compress. wdJustificationModeCompressKana2 Compress, using rules of the
   /// kana syllabaries, Hiragana and Katakana.
   /// </summary>
-  wdJustificationModeExpand = unchecked((int)0),
+  Expand = unchecked((int)0),
   /// <summary>
   /// Specifies the character spacing adjustment for a document.
   /// </summary>
-  wdJustificationModeCompress = unchecked((int)1),
+  Compress = unchecked((int)1),
   /// <summary>
   /// Specifies the character spacing adjustment for a document.
   /// </summary>
-  wdJustificationModeCompressKana = unchecked((int)2)
+  CompressKana = unchecked((int)2)
 }

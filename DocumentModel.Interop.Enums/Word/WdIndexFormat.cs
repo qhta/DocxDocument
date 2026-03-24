@@ -8,29 +8,29 @@ public enum WdIndexFormat
   /// <summary>
   /// From template.
   /// </summary>
-  wdIndexTemplate = unchecked((int)0),
+  Template = unchecked((int)0),
   /// <summary>
   /// Classic.
   /// </summary>
-  wdIndexClassic = unchecked((int)1),
+  Classic = unchecked((int)1),
   /// <summary>
   /// Fancy.
   /// </summary>
-  wdIndexFancy = unchecked((int)2),
+  Fancy = unchecked((int)2),
   /// <summary>
   /// Modern.
   /// </summary>
-  wdIndexModern = unchecked((int)3),
+  Modern = unchecked((int)3),
   /// <summary>
   /// Bulleted.
   /// </summary>
-  wdIndexBulleted = unchecked((int)4),
+  Bulleted = unchecked((int)4),
   /// <summary>
   /// Formal.
   /// </summary>
-  wdIndexFormal = unchecked((int)5),
+  Formal = unchecked((int)5),
   /// <summary>
   /// Simple.
   /// </summary>
-  wdIndexSimple = unchecked((int)6)
+  Simple = unchecked((int)6)
 }

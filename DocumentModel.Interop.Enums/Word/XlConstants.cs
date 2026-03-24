@@ -8,253 +8,253 @@ public enum XlConstants
   /// <summary>
   /// Summary row is displayed above the specified range.
   /// </summary>
-  xlAbove = unchecked((int)0),
+  Above = unchecked((int)0),
   /// <summary>
   /// Display positive and negative error bars in the specified chart group or series.
   /// </summary>
-  xlBoth = unchecked((int)1),
+  Both = unchecked((int)1),
   /// <summary>
   /// Display error amounts as a fixed value.
   /// </summary>
-  xlFixedValue = unchecked((int)1),
+  FixedValue = unchecked((int)1),
   /// <summary>
   /// Summary row is displayed below the specified range.
   /// </summary>
-  xlBelow = unchecked((int)1),
+  Below = unchecked((int)1),
   /// <summary>
   /// General.
   /// </summary>
-  xlGeneral = unchecked((int)1),
+  General = unchecked((int)1),
   /// <summary>
   /// Square.
   /// </summary>
-  xlSquare = unchecked((int)1),
+  Square = unchecked((int)1),
   /// <summary>
   /// Solid pattern.
   /// </summary>
-  xlSolid = unchecked((int)1),
+  Solid = unchecked((int)1),
   /// <summary>
   /// Inside.
   /// </summary>
-  xlInside = unchecked((int)2),
+  Inside = unchecked((int)2),
   /// <summary>
   /// Maximum.
   /// </summary>
-  xlMaximum = unchecked((int)2),
+  Maximum = unchecked((int)2),
   /// <summary>
   /// Transparent fill.
   /// </summary>
-  xlTransparent = unchecked((int)2),
+  Transparent = unchecked((int)2),
   /// <summary>
   /// Display error amounts as a percentage.
   /// </summary>
-  xlPercent = unchecked((int)2),
+  Percent = unchecked((int)2),
   /// <summary>
   /// Corner.
   /// </summary>
-  xlCorner = unchecked((int)2),
+  Corner = unchecked((int)2),
   /// <summary>
   /// Plus values.
   /// </summary>
-  xlPlusValues = unchecked((int)2),
+  PlusValues = unchecked((int)2),
   /// <summary>
   /// Two dimensional bar chart group or series.
   /// </summary>
-  xlBar = unchecked((int)2),
+  Bar = unchecked((int)2),
   /// <summary>
   /// Show value.
   /// </summary>
-  xlShowValue = unchecked((int)2),
+  ShowValue = unchecked((int)2),
   /// <summary>
   /// Diamond pattern.
   /// </summary>
-  xlDiamond = unchecked((int)2),
+  Diamond = unchecked((int)2),
   /// <summary>
   /// Single line.
   /// </summary>
-  xlSingle = unchecked((int)2),
+  Single = unchecked((int)2),
   /// <summary>
   /// Opaque fill.
   /// </summary>
-  xlOpaque = unchecked((int)3),
+  Opaque = unchecked((int)3),
   /// <summary>
   /// Scale.
   /// </summary>
-  xlScale = unchecked((int)3),
+  Scale = unchecked((int)3),
   /// <summary>
   /// Outside.
   /// </summary>
-  xlOutside = unchecked((int)3),
+  Outside = unchecked((int)3),
   /// <summary>
   /// Columnar chart group or series.
   /// </summary>
-  xlColumn = unchecked((int)3),
+  Column = unchecked((int)3),
   /// <summary>
   /// Minus values.
   /// </summary>
-  xlMinusValues = unchecked((int)3),
+  MinusValues = unchecked((int)3),
   /// <summary>
   /// Triangle.
   /// </summary>
-  xlTriangle = unchecked((int)3),
+  Triangle = unchecked((int)3),
   /// <summary>
   /// Show percent.
   /// </summary>
-  xlShowPercent = unchecked((int)3),
+  ShowPercent = unchecked((int)3),
   /// <summary>
   /// Minimum.
   /// </summary>
-  xlMinimum = unchecked((int)4),
+  Minimum = unchecked((int)4),
   /// <summary>
   /// Next to axis.
   /// </summary>
-  xlNextToAxis = unchecked((int)4),
+  NextToAxis = unchecked((int)4),
   /// <summary>
   /// Show label.
   /// </summary>
-  xlShowLabel = unchecked((int)4),
+  ShowLabel = unchecked((int)4),
   /// <summary>
   /// Display error amounts as a standard error.
   /// </summary>
-  xlStError = unchecked((int)4),
+  StError = unchecked((int)4),
   /// <summary>
   /// Cross pattern.
   /// </summary>
-  xlCross = unchecked((int)4),
+  Cross = unchecked((int)4),
   /// <summary>
   /// Show label and percent.
   /// </summary>
-  xlShowLabelAndPercent = unchecked((int)5),
+  ShowLabelAndPercent = unchecked((int)5),
   /// <summary>
   /// Fill.
   /// </summary>
-  xlFill = unchecked((int)5),
+  Fill = unchecked((int)5),
   /// <summary>
   /// Star.
   /// </summary>
-  xlStar = unchecked((int)5),
+  Star = unchecked((int)5),
   /// <summary>
   /// Circle.
   /// </summary>
-  xlCircle = unchecked((int)8),
+  Circle = unchecked((int)8),
   /// <summary>
   /// Display positive error bars in the specified chart group or series.
   /// </summary>
-  xlPlus = unchecked((int)9),
+  Plus = unchecked((int)9),
   /// <summary>
   /// Checker pattern.
   /// </summary>
-  xlChecker = unchecked((int)9),
+  Checker = unchecked((int)9),
   /// <summary>
   /// 75% semi-gray pattern.
   /// </summary>
-  xlSemiGray75 = unchecked((int)10),
+  SemiGray75 = unchecked((int)10),
   /// <summary>
   /// Light horizontal line pattern.
   /// </summary>
-  xlLightHorizontal = unchecked((int)11),
+  LightHorizontal = unchecked((int)11),
   /// <summary>
   /// Light vertical line pattern.
   /// </summary>
-  xlLightVertical = unchecked((int)12),
+  LightVertical = unchecked((int)12),
   /// <summary>
   /// Light down line pattern.
   /// </summary>
-  xlLightDown = unchecked((int)13),
+  LightDown = unchecked((int)13),
   /// <summary>
   /// Light up line pattern.
   /// </summary>
-  xlLightUp = unchecked((int)14),
+  LightUp = unchecked((int)14),
   /// <summary>
   /// Grid pattern.
   /// </summary>
-  xlGrid = unchecked((int)15),
+  Grid = unchecked((int)15),
   /// <summary>
   /// Criss-cross pattern.
   /// </summary>
-  xlCrissCross = unchecked((int)16),
+  CrissCross = unchecked((int)16),
   /// <summary>
   /// 16% gray pattern.
   /// </summary>
-  xlGray16 = unchecked((int)17),
+  Gray16 = unchecked((int)17),
   /// <summary>
   /// 8% gray pattern.
   /// </summary>
-  xlGray8 = unchecked((int)18),
+  Gray8 = unchecked((int)18),
   /// <summary>
   /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
-  xlTop = unchecked((int)-4160),
+  Top = unchecked((int)-4160),
   /// <summary>
   /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
-  xlRight = unchecked((int)-4152),
+  Right = unchecked((int)-4152),
   /// <summary>
   /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
-  xlNone = unchecked((int)-4142),
+  None = unchecked((int)-4142),
   /// <summary>
   /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
-  xlLow = unchecked((int)-4134),
+  Low = unchecked((int)-4134),
   /// <summary>
   /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
-  xlLeft = unchecked((int)-4131),
+  Left = unchecked((int)-4131),
   /// <summary>
   /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
-  xlJustify = unchecked((int)-4130),
+  Justify = unchecked((int)-4130),
   /// <summary>
   /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
-  xlHigh = unchecked((int)-4127),
+  High = unchecked((int)-4127),
   /// <summary>
   /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
-  xlGray75 = unchecked((int)-4126),
+  Gray75 = unchecked((int)-4126),
   /// <summary>
   /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
-  xlGray50 = unchecked((int)-4125),
+  Gray50 = unchecked((int)-4125),
   /// <summary>
   /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
-  xlGray25 = unchecked((int)-4124),
+  Gray25 = unchecked((int)-4124),
   /// <summary>
   /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
-  xlDistributed = unchecked((int)-4117),
+  Distributed = unchecked((int)-4117),
   /// <summary>
   /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
-  xlCustom = unchecked((int)-4114),
+  Custom = unchecked((int)-4114),
   /// <summary>
   /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
-  xlCombination = unchecked((int)-4111),
+  Combination = unchecked((int)-4111),
   /// <summary>
   /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
-  xlCenter = unchecked((int)-4108),
+  Center = unchecked((int)-4108),
   /// <summary>
   /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
-  xlBottom = unchecked((int)-4107),
+  Bottom = unchecked((int)-4107),
   /// <summary>
   /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
-  xlAutomatic = unchecked((int)-4105),
+  Automatic = unchecked((int)-4105),
   /// <summary>
   /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
-  xl3DSurface = unchecked((int)-4103),
+  ThreeDSurface = unchecked((int)-4103),
   /// <summary>
   /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
-  xl3DBar = unchecked((int)-4099),
+  ThreeDBar = unchecked((int)-4099),
   /// <summary>
   /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
-  xlDefaultAutoFormat = unchecked((int)-1)
+  DefaultAutoFormat = unchecked((int)-1)
 }

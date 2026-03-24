@@ -8,17 +8,17 @@ public enum WdMailMergeDestination
   /// <summary>
   /// Send results to a new Word document.
   /// </summary>
-  wdSendToNewDocument = unchecked((int)0),
+  NewDocument = unchecked((int)0),
   /// <summary>
   /// Send results to a printer.
   /// </summary>
-  wdSendToPrinter = unchecked((int)1),
+  Printer = unchecked((int)1),
   /// <summary>
   /// Send results to e-mail recipient.
   /// </summary>
-  wdSendToEmail = unchecked((int)2),
+  Email = unchecked((int)2),
   /// <summary>
   /// Send results to fax recipient.
   /// </summary>
-  wdSendToFax = unchecked((int)3)
+  Fax = unchecked((int)3)
 }

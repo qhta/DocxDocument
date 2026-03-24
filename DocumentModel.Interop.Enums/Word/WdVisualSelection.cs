@@ -8,9 +8,9 @@ public enum WdVisualSelection
   /// <summary>
   /// All selected lines are the same width.
   /// </summary>
-  wdVisualSelectionBlock = unchecked((int)0),
+  Block = unchecked((int)0),
   /// <summary>
   /// The selection wraps from line to line.
   /// </summary>
-  wdVisualSelectionContinuous = unchecked((int)1)
+  Continuous = unchecked((int)1)
 }

@@ -8,13 +8,13 @@ public enum WdMonthNames
   /// <summary>
   /// Arabic format.
   /// </summary>
-  wdMonthNamesArabic = unchecked((int)0),
+  Arabic = unchecked((int)0),
   /// <summary>
   /// English format.
   /// </summary>
-  wdMonthNamesEnglish = unchecked((int)1),
+  English = unchecked((int)1),
   /// <summary>
   /// French format.
   /// </summary>
-  wdMonthNamesFrench = unchecked((int)2)
+  French = unchecked((int)2)
 }

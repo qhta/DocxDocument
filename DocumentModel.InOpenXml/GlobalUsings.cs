@@ -17,6 +17,11 @@ global using DocumentModel.OpenXml;
 global using Qhta.Collections;
 global using Qhta.TypeUtils;
 global using Qhta.TextUtils;
+
+global using DI = DocumentModel.Interop;
+global using DIC = DocumentModel.Interop.Core;
+global using DIW = DocumentModel.Interop.Word;
+
 global using DM = DocumentModel;
 global using DMD = DocumentModel.Drawings;
 global using DMDO = DocumentModel.Drawings.Office;

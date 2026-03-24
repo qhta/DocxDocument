@@ -2,7 +2,7 @@ using System.ComponentModel;
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents extended latent style exception information for a Wordprocessing document.
-/// This class provides properties for the primary style name and alternate style names, enabling advanced management and customization of latent styles. Implements property change notification interfaces.
+/// This class provides properties for the primary style name and alternate style names, enabling advanced management and customization of latent styles. Implements property change notification Interop.
 /// </summary>
 public partial class LatentStyleExceptionInfo
 {
