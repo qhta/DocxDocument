@@ -17,15 +17,15 @@ public enum WdTextboxTightWrap
   /// </summary>
   All = 1,
   /// <summary>
-  /// Specifies how Microsoft Office Word tightly wraps text around text boxes.
+  /// Wraps text tightly only on first and last lines.
   /// </summary>
   FirstAndLastLines = 2,
   /// <summary>
-  /// Specifies how Microsoft Office Word tightly wraps text around text boxes.
+  /// Wraps text tightly only on the first line.
   /// </summary>
   FirstLineOnly = 3,
   /// <summary>
-  /// Specifies how Microsoft Office Word tightly wraps text around text boxes.
+  /// Wraps text tightly only on the last line.
   /// </summary>
   LastLineOnly = 4
 }

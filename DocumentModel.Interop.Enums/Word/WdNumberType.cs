@@ -9,15 +9,15 @@ namespace DocumentModel.Interop.Word;
 public enum WdNumberType
 {
   /// <summary>
-  /// Specifies the type of number.
+  /// Preset numbers you can add to paragraphs by selecting a template in the Bullets and Numbering dialog box.
   /// </summary>
   Paragraph = 1,
   /// <summary>
-  /// Specifies the type of number.
+  /// Default value for LISTNUM fields.
   /// </summary>
   ListNum = 2,
   /// <summary>
-  /// Specifies the type of number.
+  /// Default value for all other cases.
   /// </summary>
   AllNumbers = 3
 }

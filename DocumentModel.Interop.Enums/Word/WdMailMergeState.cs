@@ -25,7 +25,7 @@ public enum WdMailMergeState
   /// </summary>
   MainAndHeader = 3,
   /// <summary>
-  /// Specifies the state of a mail merge operation.
+  /// A main document with attached data source and header source.
   /// </summary>
   MainAndSourceAndHeader = 4,
   /// <summary>

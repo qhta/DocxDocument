@@ -45,11 +45,11 @@ public enum WdSpecialPane
   /// </summary>
   Endnotes = 8,
   /// <summary>
-  /// Specifies an item to display in the active window pane.
+  /// The footnote continuation notice.
   /// </summary>
   FootnoteContinuationNotice = 9,
   /// <summary>
-  /// Specifies an item to display in the active window pane.
+  /// The footnote continuation separator.
   /// </summary>
   FootnoteContinuationSeparator = 10,
   /// <summary>

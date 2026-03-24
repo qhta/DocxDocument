@@ -41,7 +41,7 @@ public enum WdPrintOutItem
   /// </summary>
   Envelope = 6,
   /// <summary>
-  /// Specifies the item to print.
+  /// Current document content including markup.
   /// </summary>
   DocumentWithMarkup = 7
 }

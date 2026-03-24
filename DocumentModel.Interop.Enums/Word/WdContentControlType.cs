@@ -29,7 +29,7 @@ public enum WdContentControlType
   /// </summary>
   DropdownList = 4,
   /// <summary>
-  /// Indicates the type of content control.
+  /// Specifies a building block gallery content control.
   /// </summary>
   BuildingBlockGallery = 5,
   /// <summary>

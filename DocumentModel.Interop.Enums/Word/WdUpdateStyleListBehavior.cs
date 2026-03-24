@@ -10,13 +10,13 @@ namespace DocumentModel.Interop.Word;
 public enum WdUpdateStyleListBehavior
 {
   /// <summary>
-  /// Specifies the behavior Word 2010 should take when updating a style to match a selection that contains
-  /// numbering or bullets.
+  /// Keeps the existing numbering or bullets pattern for all other paragraphs that use the same style and does not
+  /// apply the numbering or bullets pattern of the selection.
   /// </summary>
   KeepPreviousPattern = 0,
   /// <summary>
-  /// Specifies the behavior Word 2010 should take when updating a style to match a selection that contains
-  /// numbering or bullets.
+  /// Adds the numbering or bullets pattern of the selection to all paragraphs in the document that use the same
+  /// style.
   /// </summary>
   AddBulletsNumbering = 1
 }

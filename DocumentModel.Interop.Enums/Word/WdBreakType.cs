@@ -13,7 +13,7 @@ public enum WdBreakType
   /// </summary>
   SectionBreakNextPage = 2,
   /// <summary>
-  /// Specifies type of break.
+  /// New section without a corresponding page break.
   /// </summary>
   SectionBreakContinuous = 3,
   /// <summary>
@@ -43,7 +43,7 @@ public enum WdBreakType
   /// </summary>
   LineBreakClearLeft = 9,
   /// <summary>
-  /// Specifies type of break.
+  /// Line break.
   /// </summary>
   LineBreakClearRight = 10,
   /// <summary>

@@ -9,19 +9,19 @@ namespace DocumentModel.Interop.Word;
 public enum WdContentControlLevel
 {
   /// <summary>
-  /// Constants that represent the possible levels for a content control, returned by the Level property.
+  /// Represents a content control that surrounds content within a single paragraph.
   /// </summary>
   Inline = 0,
   /// <summary>
-  /// Constants that represent the possible levels for a content control, returned by the Level property.
+  /// Represents a content control that surrounds one or more complete paragraphs.
   /// </summary>
   Paragraph = 1,
   /// <summary>
-  /// Constants that represent the possible levels for a content control, returned by the Level property.
+  /// Represents a content control that surrounds a table row.
   /// </summary>
   Row = 2,
   /// <summary>
-  /// Constants that represent the possible levels for a content control, returned by the Level property.
+  /// Represents a content control that surrounds a table cell.
   /// </summary>
   Cell = 3
 }

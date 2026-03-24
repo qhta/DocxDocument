@@ -14,12 +14,11 @@ public enum WdOLEVerb
   Primary = 0,
   /// <summary>
   /// Forces the object to discard any undo state that it might be maintaining; note that the object remains active,
-  /// however. wdOLEVerbInPlaceActivate-5 Runs the object and installs its window, but doesn't install any
-  /// user-interface tools.
+  /// however.
   /// </summary>
   DiscardUndoState = -6,
   /// <summary>
-  /// Specifies the action associated with the verb that the OLE object should perform.
+  /// Runs the object and installs its window, but doesn't install any user-interface tools.
   /// </summary>
   InPlaceActivate = -5,
   /// <summary>

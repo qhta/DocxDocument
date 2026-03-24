@@ -13,7 +13,7 @@ public enum WdReferenceKind
   /// </summary>
   EntireCaption = 2,
   /// <summary>
-  /// Specifies the information to include in a cross-reference.
+  /// Insert only the label and number of the specified equation, figure, or table.
   /// </summary>
   OnlyLabelAndNumber = 3,
   /// <summary>

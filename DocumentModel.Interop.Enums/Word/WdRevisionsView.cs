@@ -10,13 +10,11 @@ namespace DocumentModel.Interop.Word;
 public enum WdRevisionsView
 {
   /// <summary>
-  /// Specifies whether Word displays the original version of a document or a version with revisions and formatting
-  /// changes applied.
+  /// Displays the document with formatting and content changes applied.
   /// </summary>
   Final = 0,
   /// <summary>
-  /// Specifies whether Word displays the original version of a document or a version with revisions and formatting
-  /// changes applied.
+  /// Displays the document before changes were made.
   /// </summary>
   Original = 1
 }

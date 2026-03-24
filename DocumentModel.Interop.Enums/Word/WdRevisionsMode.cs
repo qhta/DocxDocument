@@ -9,7 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdRevisionsMode
 {
   /// <summary>
-  /// Specifies whether Microsoft Word displays balloons in the margin or inline with the document's text.
+  /// Displays revisions in balloons in the left or right margin.
   /// </summary>
   BalloonRevisions = 0,
   /// <summary>

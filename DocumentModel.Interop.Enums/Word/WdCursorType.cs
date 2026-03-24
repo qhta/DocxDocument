@@ -21,7 +21,7 @@ public enum WdCursorType
   /// </summary>
   Normal = 2,
   /// <summary>
-  /// Specifies the state (shape) of the cursor.
+  /// Diagonal cursor shape starting at top left corner.
   /// </summary>
   NorthwestArrow = 3
 }

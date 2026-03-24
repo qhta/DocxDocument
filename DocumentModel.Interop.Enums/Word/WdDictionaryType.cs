@@ -46,7 +46,7 @@ public enum WdDictionaryType
   /// </summary>
   HangulHanjaConversion = 8,
   /// <summary>
-  /// Specifies a proofing tool type.
+  /// Custom dictionary for converting between Hangul and
   /// </summary>
   HangulHanjaConversionCustom = 9
 }

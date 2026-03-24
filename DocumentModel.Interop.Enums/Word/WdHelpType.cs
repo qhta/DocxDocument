@@ -25,7 +25,7 @@ public enum WdHelpType
   /// </summary>
   wdHelpContents = 3,
   /// <summary>
-  /// Specifies the type of online Help topic or window to display.
+  /// Displays examples and demos.
   /// </summary>
   wdHelpExamplesAndDemos = 4,
   /// <summary>

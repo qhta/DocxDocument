@@ -10,13 +10,12 @@ namespace DocumentModel.Interop.Word;
 public enum WdOMathShapeType
 {
   /// <summary>
-  /// Specifies the appearance of delimiters (parentheses, braces, brackets) in relationship to the content that
-  /// they surround.
+  /// Vertically centers delimiters around the entire height of the equation causing delimiters grow equally above
+  /// and below their midpoint.
   /// </summary>
   Centered = 0,
   /// <summary>
-  /// Specifies the appearance of delimiters (parentheses, braces, brackets) in relationship to the content that
-  /// they surround.
+  /// Matches the shape of the delimiters to the size of their contents.
   /// </summary>
   Match = 1
 }

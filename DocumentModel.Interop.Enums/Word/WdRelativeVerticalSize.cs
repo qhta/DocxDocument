@@ -22,18 +22,17 @@ public enum WdRelativeVerticalSize
   /// </summary>
   TopMarginArea = 2,
   /// <summary>
-  /// Specifies the relative height of a shape using the value specified in the HeightRelative property for a Shape
-  /// or ShapeRange object.
+  /// Height is relative to the size of the bottom margin.
   /// </summary>
   BottomMarginArea = 3,
   /// <summary>
-  /// Specifies the relative height of a shape using the value specified in the HeightRelative property for a Shape
-  /// or ShapeRange object.
+  /// Height is relative to the size of the inside margin—to the size of the top margin for odd pages, and to the
+  /// size of the bottom margin for even pages.
   /// </summary>
   InnerMarginArea = 4,
   /// <summary>
-  /// Specifies the relative height of a shape using the value specified in the HeightRelative property for a Shape
-  /// or ShapeRange object.
+  /// Height is relative to the size of the outside margin— to the size of the bottom margin for odd pages, and to
+  /// the size of the top margin for even pages.
   /// </summary>
   OuterMarginArea = 5
 }

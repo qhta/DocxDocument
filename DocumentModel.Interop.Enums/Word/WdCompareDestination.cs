@@ -10,18 +10,16 @@ namespace DocumentModel.Interop.Word;
 public enum WdCompareDestination
 {
   /// <summary>
-  /// When comparing two files for differences, specifies whether to create a new file or mark the differences
-  /// between the two documents in the original document or the revised document. Version Added: Word 2007
+  /// Tracks the differences between the two files using tracked changes in the original document.
   /// </summary>
   Original = 0,
   /// <summary>
-  /// When comparing two files for differences, specifies whether to create a new file or mark the differences
-  /// between the two documents in the original document or the revised document. Version Added: Word 2007
+  /// Tracks the differences between the two files using tracked changes in the revised document.
   /// </summary>
   Revised = 1,
   /// <summary>
-  /// When comparing two files for differences, specifies whether to create a new file or mark the differences
-  /// between the two documents in the original document or the revised document. Version Added: Word 2007
+  /// Creates a new file and tracks the diferences between the original document and the revised document using
+  /// tracked changes.
   /// </summary>
   New = 2
 }

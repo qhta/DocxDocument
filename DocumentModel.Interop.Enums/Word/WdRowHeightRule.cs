@@ -9,15 +9,15 @@ namespace DocumentModel.Interop.Word;
 public enum WdRowHeightRule
 {
   /// <summary>
-  /// Specifies the rule for determining the height of the specified cells or rows.
+  /// The row height is adjusted to accommodate the tallest value in the row.
   /// </summary>
   Auto = 0,
   /// <summary>
-  /// Specifies the rule for determining the height of the specified cells or rows.
+  /// The row height is at least a minimum specified value.
   /// </summary>
   AtLeast = 1,
   /// <summary>
-  /// Specifies the rule for determining the height of the specified cells or rows.
+  /// The row height is an exact value.
   /// </summary>
   Exactly = 2
 }

@@ -9,7 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdHeaderFooterIndex
 {
   /// <summary>
-  /// Returns the specified header or footer in a document or section.
+  /// Returns the header or footer on all pages other than the first page of a document or section.
   /// </summary>
   Primary = 1,
   /// <summary>

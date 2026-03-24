@@ -9,15 +9,17 @@ namespace DocumentModel.Interop.Word;
 public enum WdOMathBreakSub
 {
   /// <summary>
-  /// Specifies how Microsoft Office Word handles a subtraction operator that falls before a line break.
+  /// Repeats a minus sign that ends before a line break at the beginning of the next line. Default.
   /// </summary>
   MinusMinus = 0,
   /// <summary>
-  /// Specifies how Microsoft Office Word handles a subtraction operator that falls before a line break.
+  /// Inserts a plus sign at the end of the first line, before the line break, and a minus sign at the beginning of
+  /// the following line, before the number.
   /// </summary>
   PlusMinus = 1,
   /// <summary>
-  /// Specifies how Microsoft Office Word handles a subtraction operator that falls before a line break.
+  /// Inserts a minus sign at the end of the first line, before the line break, and a plus sign at the beginning of
+  /// the following line, before the number.
   /// </summary>
   MinusPlus = 2
 }

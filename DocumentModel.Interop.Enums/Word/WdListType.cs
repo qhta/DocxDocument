@@ -21,15 +21,15 @@ public enum WdListType
   /// </summary>
   Bullet = 2,
   /// <summary>
-  /// Specifies a type of list.
+  /// Simple numeric list.
   /// </summary>
   SimpleNumbering = 3,
   /// <summary>
-  /// Specifies a type of list.
+  /// Outlined list.
   /// </summary>
   OutlineNumbering = 4,
   /// <summary>
-  /// Specifies a type of list.
+  /// Mixed numeric list.
   /// </summary>
   MixedNumbering = 5,
   /// <summary>

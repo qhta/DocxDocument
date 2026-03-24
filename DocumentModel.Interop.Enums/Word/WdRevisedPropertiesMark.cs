@@ -25,7 +25,7 @@ public enum WdRevisedPropertiesMark
   /// </summary>
   Underline = 3,
   /// <summary>
-  /// Specifies how revisions are displayed when change tracking is enabled.
+  /// With double underline characters.
   /// </summary>
   DoubleUnderline = 4,
   /// <summary>
