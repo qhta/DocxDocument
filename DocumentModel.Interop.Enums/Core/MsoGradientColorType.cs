@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the type of gradient used in a shape's fill.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msogradientcolortype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoGradientColorType
 {
   /// <summary>

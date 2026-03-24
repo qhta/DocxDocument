@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies how Microsoft Word marks the line and paragraph breaks in documents saved as text files.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdlineendingtype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdLineEndingType
 {
   /// <summary>

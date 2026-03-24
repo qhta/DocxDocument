@@ -4,6 +4,9 @@ namespace DocumentModel.Interop.Word;
 /// Specifies the relative height of a shape using the value specified in the HeightRelative property for a Shape
 /// or ShapeRange object.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrelativeverticalsize?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdRelativeVerticalSize
 {
   /// <summary>

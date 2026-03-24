@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the type of salutation to use for a letter.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsalutationtype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdSalutationType
 {
   /// <summary>

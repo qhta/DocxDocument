@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the type of list from a list template gallery.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdlistgallerytype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdListGalleryType
 {
   /// <summary>

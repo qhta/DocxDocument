@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the shape type for an AutoShape object.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoautoshapetype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoAutoShapeType
 {
   /// <summary>

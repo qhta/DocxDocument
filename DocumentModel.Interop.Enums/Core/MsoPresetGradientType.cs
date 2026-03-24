@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies which predefined gradient to use to fill a shape.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetgradienttype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoPresetGradientType
 {
   /// <summary>

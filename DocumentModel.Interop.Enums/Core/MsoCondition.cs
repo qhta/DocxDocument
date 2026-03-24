@@ -4,6 +4,9 @@ namespace DocumentModel.Interop.Core;
 /// <summary>
 /// Defines the condition for comparison between a file and a specified property in a file search.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocondition?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoCondition
 {
   /// <summary>

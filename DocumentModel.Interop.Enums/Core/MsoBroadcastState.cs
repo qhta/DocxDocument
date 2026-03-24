@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the current state of a document or presentation broadcast.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobroadcaststate?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoBroadcastState
 {
   /// <summary>

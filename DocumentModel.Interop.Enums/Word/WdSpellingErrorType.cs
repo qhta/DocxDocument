@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies a spelling error type.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdspellingerrortype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdSpellingErrorType
 {
   /// <summary>

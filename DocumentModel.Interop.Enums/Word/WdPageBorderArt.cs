@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the graphical page border setting of a page.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdpageborderart?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdPageBorderArt
 {
   /// <summary>

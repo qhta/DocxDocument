@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the type of text separator to place between headings in an index.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdheadingseparator?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdHeadingSeparator
 {
   /// <summary>

@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the vertical alignment of text in one or more cells of a table.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcellverticalalignment?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdCellVerticalAlignment
 {
   /// <summary>

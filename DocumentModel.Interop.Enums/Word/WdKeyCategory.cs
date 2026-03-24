@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the type of item assigned to the key binding.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdkeycategory?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdKeyCategory
 {
   /// <summary>

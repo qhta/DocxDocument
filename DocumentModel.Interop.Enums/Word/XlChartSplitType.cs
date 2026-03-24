@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the values displayed in the second chart in a pie chart or a bar of pie chart.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlchartsplittype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum XlChartSplitType
 {
   /// <summary>

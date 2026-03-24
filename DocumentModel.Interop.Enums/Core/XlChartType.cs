@@ -5,6 +5,9 @@ namespace DocumentModel.Interop.Core;
 /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
 /// type.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlcharttype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum XlChartType
 {
   /// <summary>

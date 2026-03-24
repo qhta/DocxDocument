@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies rules for converting text enclosed in chevron characters (« ») to merge fields.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdchevronconvertrule?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdChevronConvertRule
 {
   /// <summary>

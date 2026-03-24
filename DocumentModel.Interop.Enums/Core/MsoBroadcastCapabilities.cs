@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the application capabilities available for a document or presentation broadcasting session.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobroadcastcapabilities?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoBroadcastCapabilities
 {
   /// <summary>

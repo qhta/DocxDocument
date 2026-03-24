@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the status of a shared workspace task.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosharedworkspacetaskstatus?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoSharedWorkspaceTaskStatus
 {
   /// <summary>

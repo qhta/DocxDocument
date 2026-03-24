@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the placement for an OLE object.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdoleplacement?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdOLEPlacement
 {
   /// <summary>

@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies tab alignment.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdalignmenttabalignment?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdAlignmentTabAlignment
 {
   /// <summary>

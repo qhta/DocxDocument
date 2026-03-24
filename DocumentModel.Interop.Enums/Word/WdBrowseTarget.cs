@@ -4,6 +4,9 @@ namespace DocumentModel.Interop.Word;
 /// Specifies the document item that the Next or Previous method locates, and places the insertion point before
 /// the next or previous instance of the item.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbrowsetarget?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdBrowseTarget
 {
   /// <summary>

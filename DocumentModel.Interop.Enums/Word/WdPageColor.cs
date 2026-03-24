@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Constants that represent background page color in reading mode, returned by and passed to PageColor.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdpagecolor?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdPageColor
 {
   /// <summary>

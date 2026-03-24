@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the type of formatting to apply to the table of figures in the active document.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtofformat?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdTofFormat
 {
   /// <summary>

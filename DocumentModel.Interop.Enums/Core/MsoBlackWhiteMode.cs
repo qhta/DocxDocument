@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies how a shape appears when viewed in black-and-white mode.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoblackwhitemode?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoBlackWhiteMode
 {
   /// <summary>

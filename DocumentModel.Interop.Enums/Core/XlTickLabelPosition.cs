@@ -5,6 +5,9 @@ namespace DocumentModel.Interop.Core;
 /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
 /// position of tick-mark labels on the specified axis.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlticklabelposition?view=office-pia` for Office interop details.
+/// </remarks>
 public enum XlTickLabelPosition
 {
   /// <summary>

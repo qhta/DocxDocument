@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the type of section break for the specified item.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsectionstart?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdSectionStart
 {
   /// <summary>

@@ -5,6 +5,9 @@
 /// specifies whether the hyperlink should launch another application such as the browser or insert a picture at
 /// the active selection point.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocommandbarbuttonhyperlinktype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoCommandBarButtonHyperlinkType
 {
   /// <summary>

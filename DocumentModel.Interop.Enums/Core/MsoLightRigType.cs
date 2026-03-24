@@ -3,6 +3,9 @@
 /// <summary>
 /// Indicates the effects lighting for an object.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolightrigtype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoLightRigType
 {
   /// <summary>

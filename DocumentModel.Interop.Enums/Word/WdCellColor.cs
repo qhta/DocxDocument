@@ -4,6 +4,9 @@ namespace DocumentModel.Interop.Word;
 /// Specifies the color of highlighting for table cells that were added, deleted, or merged in the current
 /// document.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcellcolor?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdCellColor
 {
   /// <summary>

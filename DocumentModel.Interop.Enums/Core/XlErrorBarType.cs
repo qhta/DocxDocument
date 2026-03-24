@@ -5,6 +5,9 @@ namespace DocumentModel.Interop.Core;
 /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the range
 /// marked by error bars.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlerrorbartype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum XlErrorBarType
 {
   /// <summary>

@@ -3,6 +3,9 @@
 /// <summary>
 /// Indicates the bevel type of a ThreeDFormat object.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobeveltype?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoBevelType
 {
   /// <summary>

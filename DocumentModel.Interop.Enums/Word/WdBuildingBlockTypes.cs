@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies the type of building block.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbuildingblocktypes?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdBuildingBlockTypes
 {
   /// <summary>

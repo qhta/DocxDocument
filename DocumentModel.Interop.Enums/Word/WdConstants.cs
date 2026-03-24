@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// This enumeration groups together constants used with various Microsoft Word methods.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdconstants?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdConstants
 {
   /// <summary>

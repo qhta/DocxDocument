@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies a statistic to return from a selection or item.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdstatistic?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdStatistic
 {
   /// <summary>

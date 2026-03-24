@@ -3,6 +3,9 @@
 /// <summary>
 /// Specifies the style for a gradient fill.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msogradientstyle?view=office-pia` for Office interop details.
+/// </remarks>
 public enum MsoGradientStyle
 {
   /// <summary>

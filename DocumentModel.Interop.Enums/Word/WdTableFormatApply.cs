@@ -3,6 +3,9 @@ namespace DocumentModel.Interop.Word;
 /// <summary>
 /// Specifies how table formatting should be applied.
 /// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtableformatapply?view=office-pia` for Office interop details.
+/// </remarks>
 public enum WdTableFormatApply
 {
   /// <summary>
