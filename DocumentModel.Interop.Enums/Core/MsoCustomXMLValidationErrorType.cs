@@ -9,11 +9,12 @@
 public enum MsoCustomXMLValidationErrorType
 {
   /// <summary>
-  /// Indicates how validation errors will be cleared or generated.
+  /// Specifies that where there is a non-empty schema collection available for the custom XML part and validation
+  /// is in effect, any changes to the part will cause validation errors.
   /// </summary>
   SchemaGenerated,
   /// <summary>
-  /// Indicates how validation errors will be cleared or generated.
+  /// Specifies that the error will clear itself whenever any change is made to the node it is bound to.
   /// </summary>
   AutomaticallyCleared,
   /// <summary>

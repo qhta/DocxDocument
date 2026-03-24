@@ -9,7 +9,7 @@
 public enum MsoTextOrientation
 {
   /// <summary>
-  /// Specifies orientation for text.
+  /// Not supported.
   /// </summary>
   Mixed = -2,
   /// <summary>

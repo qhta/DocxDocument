@@ -9,7 +9,7 @@
 public enum MsoPatternType
 {
   /// <summary>
-  /// Specifies the fill pattern used in a shape.
+  /// Not supported.
   /// </summary>
   Mixed = -2,
   /// <summary>
@@ -65,17 +65,15 @@ public enum MsoPatternType
   /// </summary>
   DarkHorizontal = 13,
   /// <summary>
-  /// Thick vertical lines in the foreground color. msoPatternDarkDownwardDiagonal15 Thick lines in the foreground
-  /// color running from the top to the right-hand side of the shape. msoPatternDarkUpwardDiagonal16 Thick lines in
-  /// the foreground color running from the top to the left-hand side of the shape.
+  /// Thick vertical lines in the foreground color.
   /// </summary>
   DarkVertical = 14,
   /// <summary>
-  /// Specifies the fill pattern used in a shape.
+  /// Thick lines in the foreground color running from the top to the right-hand side of the shape.
   /// </summary>
   DarkDownwardDiagonal = 15,
   /// <summary>
-  /// Specifies the fill pattern used in a shape.
+  /// Thick lines in the foreground color running from the top to the left-hand side of the shape.
   /// </summary>
   DarkUpwardDiagonal = 16,
   /// <summary>
@@ -91,17 +89,15 @@ public enum MsoPatternType
   /// </summary>
   LightHorizontal = 19,
   /// <summary>
-  /// Thin vertical lines in the foreground color. msoPatternLightDownwardDiagonal21 Thin lines in the foreground
-  /// color running from the top to the right-hand side of the shape. msoPatternLightUpwardDiagonal22 Thin lines in
-  /// the foreground color running from the top to the left-hand side of the shape.
+  /// Thin vertical lines in the foreground color.
   /// </summary>
   LightVertical = 20,
   /// <summary>
-  /// Specifies the fill pattern used in a shape.
+  /// Thin lines in the foreground color running from the top to the right-hand side of the shape.
   /// </summary>
   LightDownwardDiagonal = 21,
   /// <summary>
-  /// Specifies the fill pattern used in a shape.
+  /// Thin lines in the foreground color running from the top to the left-hand side of the shape.
   /// </summary>
   LightUpwardDiagonal = 22,
   /// <summary>
@@ -111,27 +107,22 @@ public enum MsoPatternType
   SmallGrid = 23,
   /// <summary>
   /// Dotted perpendicular lines in the foreground color running diagonally to form diamonds across the shape.
-  /// msoPatternWideDownwardDiagonal25 Widely spaced lines in the foreground color running from the top to the
-  /// right-hand side of the shape. msoPatternWideUpwardDiagonal26 Widely spaced lines in the foreground color
-  /// running from the top to the left-hand side of the shape. msoPatternDashedUpwardDiagonal27 Dashed lines in the
-  /// foreground color running from the top to the left-hand side of the shape. msoPatternDashedDownwardDiagonal28
-  /// Dashed lines in the foreground color running from the top to the right-hand side of the shape.
   /// </summary>
   DottedDiamond = 24,
   /// <summary>
-  /// Specifies the fill pattern used in a shape.
+  /// Widely spaced lines in the foreground color running from the top to the right-hand side of the shape.
   /// </summary>
   WideDownwardDiagonal = 25,
   /// <summary>
-  /// Specifies the fill pattern used in a shape.
+  /// Widely spaced lines in the foreground color running from the top to the left-hand side of the shape.
   /// </summary>
   WideUpwardDiagonal = 26,
   /// <summary>
-  /// Specifies the fill pattern used in a shape.
+  /// Dashed lines in the foreground color running from the top to the left-hand side of the shape.
   /// </summary>
   DashedUpwardDiagonal = 27,
   /// <summary>
-  /// Specifies the fill pattern used in a shape.
+  /// Dashed lines in the foreground color running from the top to the right-hand side of the shape.
   /// </summary>
   DashedDownwardDiagonal = 28,
   /// <summary>

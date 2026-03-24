@@ -11,21 +11,15 @@
 public enum MsoExtrusionColorType
 {
   /// <summary>
-  /// Specifies whether the extrusion color is based on the extruded shape's fill (the front face of the extrusion)
-  /// and automatically changes when the shape's fill changes, or whether the extrusion color is independent of the
-  /// shape's fill.
+  /// Return value only; indicates a combination of the other states.
   /// </summary>
   TypeMixed = -2,
   /// <summary>
-  /// Specifies whether the extrusion color is based on the extruded shape's fill (the front face of the extrusion)
-  /// and automatically changes when the shape's fill changes, or whether the extrusion color is independent of the
-  /// shape's fill.
+  /// Extrusion color is based on shape fill.
   /// </summary>
   Automatic = 1,
   /// <summary>
-  /// Specifies whether the extrusion color is based on the extruded shape's fill (the front face of the extrusion)
-  /// and automatically changes when the shape's fill changes, or whether the extrusion color is independent of the
-  /// shape's fill.
+  /// Extrusion color is independent of shape fill.
   /// </summary>
   Custom = 2
 }

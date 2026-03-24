@@ -22,11 +22,11 @@ public enum MsoCondition
   /// </summary>
   FileTypeWordDocuments,
   /// <summary>
-  /// Excel workbook. msoConditionFileTypePowerPointPresentations5 PowerPoint presentation.
+  /// Excel workbook.
   /// </summary>
   FileTypeExcelWorkbooks,
   /// <summary>
-  /// Defines the condition for comparison between a file and a specified property in a file search.
+  /// PowerPoint presentation.
   /// </summary>
   FileTypePowerPointPresentations,
   /// <summary>
@@ -48,8 +48,7 @@ public enum MsoCondition
   Includes,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object includes the phrase specified
-  /// in the value specified in public enum class MsoCondition ﾉ Expand table the Value property of the PropertyTest
-  /// object.
+  /// in the value specified in public enum class MsoCondition
   /// </summary>
   IncludesPhrase,
   /// <summary>
@@ -240,11 +239,11 @@ public enum MsoCondition
   /// </summary>
   FileTypePublisherFiles,
   /// <summary>
-  /// Project file. msoConditionFileTypeDocumentImagingFiles54 Document imaging file.
+  /// Project file.
   /// </summary>
   FileTypeProjectFiles,
   /// <summary>
-  /// Defines the condition for comparison between a file and a specified property in a file search.
+  /// Document imaging file.
   /// </summary>
   FileTypeDocumentImagingFiles,
   /// <summary>
@@ -296,12 +295,10 @@ public enum MsoCondition
   EqualsInProgress,
   /// <summary>
   /// Status equals "Completed". Value of the Name property must be Status.
-  /// msoConditionEqualsWaitingForSomeoneElse67 Status equals "Waiting for Someone Else". Value of the Name property
-  /// must be Status.
   /// </summary>
   EqualsCompleted,
   /// <summary>
-  /// Defines the condition for comparison between a file and a specified property in a file search.
+  /// Status equals "Waiting for Someone Else". Value of the Name property must be Status.
   /// </summary>
   EqualsWaitingForSomeoneElse,
   /// <summary>

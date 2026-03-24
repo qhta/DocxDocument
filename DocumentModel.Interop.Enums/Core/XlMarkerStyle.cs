@@ -11,8 +11,7 @@ namespace DocumentModel.Interop.Core;
 public enum XlMarkerStyle
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the marker
-  /// style for a point or series in a line chart, scatter chart, or radar chart.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Automatic markers.
   /// </summary>
   Automatic = -4105,
   /// <summary>
@@ -20,28 +19,24 @@ public enum XlMarkerStyle
   /// </summary>
   Circle = 8,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the marker
-  /// style for a point or series in a line chart, scatter chart, or radar chart.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Long bar markers.
   /// </summary>
   Dash = -4115,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the marker
-  /// style for a point or series in a line chart, scatter chart, or radar chart.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Diamond-shaped
+  /// markers.
   /// </summary>
   Diamond = 2,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the marker
-  /// style for a point or series in a line chart, scatter chart, or radar chart.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Short bar markers.
   /// </summary>
   Dot = -4118,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the marker
-  /// style for a point or series in a line chart, scatter chart, or radar chart.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). No markers.
   /// </summary>
   None = -4142,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the marker
-  /// style for a point or series in a line chart, scatter chart, or radar chart.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Picture markers.
   /// </summary>
   Picture = -4147,
   /// <summary>
@@ -51,8 +46,7 @@ public enum XlMarkerStyle
   Plus = 9,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Square markers.
-  /// public enum class XlMarkerStyle ﾉ Expand table xlMarkerStyleDiamond2 You should access and use this
-  /// enumeration from the Excel primary interop assembly (PIA). Diamond-shaped markers.
+  /// public enum class XlMarkerStyle
   /// </summary>
   Square = 1,
   /// <summary>
@@ -65,8 +59,8 @@ public enum XlMarkerStyle
   /// </summary>
   Triangle = 3,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the marker
-  /// style for a point or series in a line chart, scatter chart, or radar chart.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Square markers with
+  /// an X.
   /// </summary>
   X = -4168
 }

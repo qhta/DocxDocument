@@ -11,8 +11,8 @@ namespace DocumentModel.Interop.Core;
 public enum XlCategoryType
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the type
-  /// of the category axis.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Axis groups data by
+  /// an arbitrary set of categories.
   /// </summary>
   CategoryScale = 2,
   /// <summary>
@@ -21,8 +21,8 @@ public enum XlCategoryType
   /// </summary>
   TimeScale = 3,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the type
-  /// of the category axis.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Excel controls the
+  /// axis type.
   /// </summary>
   AutomaticScale = -4105
 }

@@ -11,28 +11,23 @@ namespace DocumentModel.Interop.Core;
 public enum XlVAlign
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
-  /// vertical alignment for the object.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Bottom
   /// </summary>
   Bottom = -4107,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
-  /// vertical alignment for the object.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Center
   /// </summary>
   Center = -4108,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
-  /// vertical alignment for the object.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Distributed
   /// </summary>
   Distributed = -4117,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
-  /// vertical alignment for the object.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Justify
   /// </summary>
   Justify = -4130,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the
-  /// vertical alignment for the object.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Top
   /// </summary>
   Top = -4160
 }

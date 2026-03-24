@@ -9,23 +9,24 @@
 public enum MsoCalloutDropType
 {
   /// <summary>
-  /// Specifies starting position of the callout line relative to the text bounding box.
+  /// Return value only; indicates a combination of the other states.
   /// </summary>
   Mixed = -2,
   /// <summary>
-  /// Specifies starting position of the callout line relative to the text bounding box.
+  /// Custom. If this value is used as the value for the PresetDrop property, the Drop and AutoAttach properties of
+  /// the CalloutFormat object are used to determine where the callout line attaches to the text box.
   /// </summary>
   Custom = 1,
   /// <summary>
-  /// Top. msoCalloutDropCenter3 Center. msoCalloutDropBottom4 Bottom.
+  /// Top.
   /// </summary>
   Top = 2,
   /// <summary>
-  /// Specifies starting position of the callout line relative to the text bounding box.
+  /// Center.
   /// </summary>
   Center = 3,
   /// <summary>
-  /// Specifies starting position of the callout line relative to the text bounding box.
+  /// Bottom.
   /// </summary>
   Bottom = 4
 }

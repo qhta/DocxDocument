@@ -9,12 +9,11 @@
 public enum MsoChartFieldType
 {
   /// <summary>
-  /// Specifies the Bubble size of the data point. msoChartFieldCategoryName2 Specifies the category name size of
-  /// the data point.
+  /// Specifies the Bubble size of the data point.
   /// </summary>
   BubbleSize = 1,
   /// <summary>
-  /// Specifies the type of data field to be inserted into a data label in a chart.
+  /// Specifies the category name size of the data point.
   /// </summary>
   CategoryName,
   /// <summary>

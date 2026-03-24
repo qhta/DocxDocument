@@ -25,8 +25,7 @@ public enum SignatureLineImage
   /// </summary>
   SignedInvalid,
   /// <summary>
-  /// Applies to Product Versions Office primary interop assembly Latest public enum class SignatureLineImage ﾉ
-  /// Expand table
+  /// No description is available.
   /// </summary>
   Signed
 }

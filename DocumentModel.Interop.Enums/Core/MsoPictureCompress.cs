@@ -9,7 +9,7 @@
 public enum MsoPictureCompress
 {
   /// <summary>
-  /// Specifies whether a picture will be compressed or not when inserted into a file.
+  /// The picture is compressed or not depending on the settings for the document.
   /// </summary>
   DocDefault = -1,
   /// <summary>

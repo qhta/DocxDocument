@@ -35,7 +35,7 @@ public enum XlPieSliceIndex
   MidCounterClockwiseRadiusPoint,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). public enum class
-  /// XlPieSliceIndex ﾉ Expand table
+  /// XlPieSliceIndex
   /// </summary>
   InnerClockwisePoint,
   /// <summary>

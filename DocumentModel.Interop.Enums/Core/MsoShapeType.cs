@@ -9,7 +9,7 @@
 public enum MsoShapeType
 {
   /// <summary>
-  /// Specifies the type of a shape or range of shapes.
+  /// Return value only; indicates a combination of the other states.
   /// </summary>
   ShapeTypeMixed = -2,
   /// <summary>
@@ -33,11 +33,11 @@ public enum MsoShapeType
   /// </summary>
   Freeform = 5,
   /// <summary>
-  /// Group. msoEmbeddedOLEObject7 Embedded OLE object.
+  /// Group.
   /// </summary>
   Group = 6,
   /// <summary>
-  /// Specifies the type of a shape or range of shapes.
+  /// Embedded OLE object.
   /// </summary>
   EmbeddedOLEObject = 7,
   /// <summary>
@@ -57,7 +57,7 @@ public enum MsoShapeType
   /// </summary>
   LinkedPicture = 11,
   /// <summary>
-  /// OLE control object. public enum class MsoShapeType ﾉ Expand table
+  /// OLE control object. public enum class MsoShapeType
   /// </summary>
   OLEControlObject = 12,
   /// <summary>
@@ -105,11 +105,11 @@ public enum MsoShapeType
   /// </summary>
   InkComment = 23,
   /// <summary>
-  /// msoSlicer 25
+  /// No description is available.
   /// </summary>
   SmartArt = 24,
   /// <summary>
-  /// msoWebVideo 26 Web video.
+  /// No description is available.
   /// </summary>
   Slicer = 25,
   /// <summary>

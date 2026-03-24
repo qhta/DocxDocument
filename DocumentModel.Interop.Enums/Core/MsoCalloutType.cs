@@ -9,25 +9,23 @@
 public enum MsoCalloutType
 {
   /// <summary>
-  /// Specifies the type of callout line.
+  /// Return value only; indicates a combination of the other states.
   /// </summary>
   Mixed = -2,
   /// <summary>
-  /// Specifies the type of callout line.
+  /// Single, horizontal callout line.
   /// </summary>
   One = 1,
   /// <summary>
-  /// Single, angled callout line. msoCalloutThree3 Callout line made up of two line segments. Callout line is
-  /// attached on left side of text bounding box. msoCalloutFour4 Callout line made up of two line segments. Callout
-  /// line is attached on right side of text bounding box.
+  /// Single, angled callout line.
   /// </summary>
   Two = 2,
   /// <summary>
-  /// Specifies the type of callout line.
+  /// Callout line made up of two line segments. Callout line is attached on left side of text bounding box.
   /// </summary>
   Three = 3,
   /// <summary>
-  /// Specifies the type of callout line.
+  /// Callout line made up of two line segments. Callout line is attached on right side of text bounding box.
   /// </summary>
   Four = 4
 }

@@ -9,7 +9,7 @@
 public enum MsoBackgroundStyleIndex
 {
   /// <summary>
-  /// Indicates the background style for an object.
+  /// Specifies a combination of styles.
   /// </summary>
   Mixed = -2,
   /// <summary>
@@ -57,7 +57,7 @@ public enum MsoBackgroundStyleIndex
   /// </summary>
   Preset10 = 10,
   /// <summary>
-  /// Specifies style 11. public enum class MsoBackgroundStyleIndex ﾉ Expand table
+  /// Specifies style 11. public enum class MsoBackgroundStyleIndex
   /// </summary>
   Preset11 = 11,
   /// <summary>

@@ -6,24 +6,23 @@
 public enum EncryptionProviderDetail
 {
   /// <summary>
-  /// encprovdetAlgorithm 1
+  /// No description is available.
   /// </summary>
   Url,
   /// <summary>
-  /// encprovdetBlockCipher 2
+  /// No description is available.
   /// </summary>
   Algorithm,
   /// <summary>
-  /// encprovdetCipherBlockSize 3
+  /// No description is available.
   /// </summary>
   BlockCipher,
   /// <summary>
-  /// encprovdetCipherMode 4
+  /// No description is available.
   /// </summary>
   CipherBlockSize,
   /// <summary>
-  /// Applies to Product Versions Office primary interop assembly Latest public enum class EncryptionProviderDetail
-  /// ﾉ Expand table
+  /// No description is available.
   /// </summary>
   CipherMode
 }

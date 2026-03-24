@@ -38,8 +38,7 @@ public enum MsoButtonSetType
   BackClose,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code. public enum
-  /// class MsoButtonSetType ﾉ Expand table msoButtonSetBackNextClose8 This object, member, or enumeration is
-  /// deprecated and is not intended to be used in your code.
+  /// class MsoButtonSetType
   /// </summary>
   NextClose,
   /// <summary>
@@ -48,12 +47,6 @@ public enum MsoButtonSetType
   BackNextClose,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
-  /// msoButtonSetAbortRetryIgnore10 This object, member, or enumeration is deprecated and is not intended to be
-  /// used in your code. msoButtonSetSearchClose11 This object, member, or enumeration is deprecated and is not
-  /// intended to be used in your code. msoButtonSetBackNextSnooze12 This object, member, or enumeration is
-  /// deprecated and is not intended to be used in your code. msoButtonSetTipsOptionsClose13 This object, member, or
-  /// enumeration is deprecated and is not intended to be used in your code. msoButtonSetYesAllNoCancel14 This
-  /// object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   RetryCancel,
   /// <summary>

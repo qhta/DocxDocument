@@ -9,7 +9,7 @@
 public enum MsoAutoShapeType
 {
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Return value only; indicates a combination of the other states.
   /// </summary>
   Mixed = -2,
   /// <summary>
@@ -53,7 +53,7 @@ public enum MsoAutoShapeType
   /// </summary>
   Hexagon = 10,
   /// <summary>
-  /// Cross. public enum class MsoAutoShapeType ﾉ Expand table
+  /// Cross. public enum class MsoAutoShapeType
   /// </summary>
   Cross = 11,
   /// <summary>
@@ -253,11 +253,11 @@ public enum MsoAutoShapeType
   /// </summary>
   CircularArrow = 60,
   /// <summary>
-  /// Process flowchart symbol. msoShapeFlowchartAlternateProcess62 Alternate process flowchart symbol.
+  /// Process flowchart symbol.
   /// </summary>
   FlowchartProcess = 61,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Alternate process flowchart symbol.
   /// </summary>
   FlowchartAlternateProcess = 62,
   /// <summary>
@@ -265,11 +265,11 @@ public enum MsoAutoShapeType
   /// </summary>
   FlowchartDecision = 63,
   /// <summary>
-  /// Data flowchart symbol. msoShapeFlowchartPredefinedProcess65 Predefined process flowchart symbol.
+  /// Data flowchart symbol.
   /// </summary>
   FlowchartData = 64,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Predefined process flowchart symbol.
   /// </summary>
   FlowchartPredefinedProcess = 65,
   /// <summary>
@@ -277,11 +277,11 @@ public enum MsoAutoShapeType
   /// </summary>
   FlowchartInternalStorage = 66,
   /// <summary>
-  /// Document flowchart symbol. msoShapeFlowchartMultidocument68 Multi-document flowchart symbol.
+  /// Document flowchart symbol.
   /// </summary>
   FlowchartDocument = 67,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Multi-document flowchart symbol.
   /// </summary>
   FlowchartMultidocument = 68,
   /// <summary>
@@ -293,19 +293,19 @@ public enum MsoAutoShapeType
   /// </summary>
   FlowchartPreparation = 70,
   /// <summary>
-  /// Manual input flowchart symbol. msoShapeFlowchartManualOperation72 Manual operation flowchart symbol.
+  /// Manual input flowchart symbol.
   /// </summary>
   FlowchartManualInput = 71,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Manual operation flowchart symbol.
   /// </summary>
   FlowchartManualOperation = 72,
   /// <summary>
-  /// Connector flowchart symbol. msoShapeFlowchartOffpageConnector74 Off-page connector flowchart symbol.
+  /// Connector flowchart symbol.
   /// </summary>
   FlowchartConnector = 73,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Off-page connector flowchart symbol.
   /// </summary>
   FlowchartOffpageConnector = 74,
   /// <summary>
@@ -313,11 +313,11 @@ public enum MsoAutoShapeType
   /// </summary>
   FlowchartCard = 75,
   /// <summary>
-  /// Punched tape flowchart symbol. msoShapeFlowchartSummingJunction77 Summing junction flowchart symbol.
+  /// Punched tape flowchart symbol.
   /// </summary>
   FlowchartPunchedTape = 76,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Summing junction flowchart symbol.
   /// </summary>
   FlowchartSummingJunction = 77,
   /// <summary>
@@ -345,11 +345,11 @@ public enum MsoAutoShapeType
   /// </summary>
   FlowchartStoredData = 83,
   /// <summary>
-  /// Delay flowchart symbol. msoShapeFlowchartSequentialAccessStorage85 Sequential access storage flowchart symbol.
+  /// Delay flowchart symbol.
   /// </summary>
   FlowchartDelay = 84,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Sequential access storage flowchart symbol.
   /// </summary>
   FlowchartSequentialAccessStorage = 85,
   /// <summary>

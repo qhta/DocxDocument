@@ -9,7 +9,7 @@
 public enum MsoLineDashStyle
 {
   /// <summary>
-  /// Specifies the dash style for a line.
+  /// Not supported.
   /// </summary>
   DashStyleMixed = -2,
   /// <summary>
@@ -45,19 +45,19 @@ public enum MsoLineDashStyle
   /// </summary>
   LongDashDot = 8,
   /// <summary>
-  /// msoLineSysDash 10
+  /// No description is available.
   /// </summary>
   LongDashDotDot = 9,
   /// <summary>
-  /// msoLineSysDot 11
+  /// No description is available.
   /// </summary>
   SysDash = 10,
   /// <summary>
-  /// msoLineSysDashDot 12 public enum class MsoLineDashStyle ﾉ Expand table
+  /// No description is available.
   /// </summary>
   SysDot = 11,
   /// <summary>
-  /// public enum class MsoLineDashStyle ﾉ Expand table
+  /// public enum class MsoLineDashStyle
   /// </summary>
   SysDashDot = 12
 }

@@ -11,18 +11,15 @@ namespace DocumentModel.Interop.Core;
 public enum XlConstants
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
-  /// constants used in Microsoft Excel.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4105
   /// </summary>
   Automatic = -4105,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
-  /// constants used in Microsoft Excel.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4111
   /// </summary>
   Combination = -4111,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
-  /// constants used in Microsoft Excel.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4114
   /// </summary>
   Custom = -4114,
   /// <summary>
@@ -44,13 +41,11 @@ public enum XlConstants
   /// </summary>
   ThreeDSurface = -4103,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
-  /// constants used in Microsoft Excel.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -1
   /// </summary>
   DefaultAutoFormat = -1,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
-  /// constants used in Microsoft Excel.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4142
   /// </summary>
   None = -4142,
   /// <summary>
@@ -66,13 +61,11 @@ public enum XlConstants
   /// </summary>
   Both = 1,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
-  /// constants used in Microsoft Excel.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4017
   /// </summary>
   Bottom = -4107,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
-  /// constants used in Microsoft Excel.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4108
   /// </summary>
   Center = -4108,
   /// <summary>
@@ -100,8 +93,7 @@ public enum XlConstants
   /// </summary>
   Diamond = 2,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
-  /// constants used in Microsoft Excel.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4117
   /// </summary>
   Distributed = -4117,
   /// <summary>
@@ -121,18 +113,16 @@ public enum XlConstants
   /// </summary>
   Gray16 = 17,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
-  /// constants used in Microsoft Excel.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4124
   /// </summary>
   Gray25 = -4124,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
-  /// constants used in Microsoft Excel.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4125
   /// </summary>
   Gray50 = -4125,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
-  /// constants used in Microsoft Excel.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4126 public enum
+  /// class XlConstants
   /// </summary>
   Gray75 = -4126,
   /// <summary>
@@ -144,8 +134,7 @@ public enum XlConstants
   /// </summary>
   Grid = 15,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
-  /// constants used in Microsoft Excel.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4127
   /// </summary>
   High = -4127,
   /// <summary>
@@ -153,13 +142,11 @@ public enum XlConstants
   /// </summary>
   Inside = 2,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
-  /// constants used in Microsoft Excel.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4130
   /// </summary>
   Justify = -4130,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
-  /// constants used in Microsoft Excel.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4131
   /// </summary>
   Left = -4131,
   /// <summary>
@@ -179,8 +166,7 @@ public enum XlConstants
   /// </summary>
   LightVertical = 12,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
-  /// constants used in Microsoft Excel.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4134
   /// </summary>
   Low = -4134,
   /// <summary>
@@ -212,7 +198,7 @@ public enum XlConstants
   /// </summary>
   Percent = 2,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 9
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 2
   /// </summary>
   Plus = 9,
   /// <summary>
@@ -220,8 +206,7 @@ public enum XlConstants
   /// </summary>
   PlusValues = 2,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
-  /// constants used in Microsoft Excel.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4152
   /// </summary>
   Right = -4152,
   /// <summary>
@@ -269,8 +254,7 @@ public enum XlConstants
   /// </summary>
   StError = 4,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
-  /// constants used in Microsoft Excel.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4160
   /// </summary>
   Top = -4160,
   /// <summary>

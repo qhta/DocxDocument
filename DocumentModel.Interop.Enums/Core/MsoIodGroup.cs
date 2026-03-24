@@ -7,16 +7,15 @@ namespace DocumentModel.Interop.Core;
 public enum MsoIodGroup
 {
   /// <summary>
-  /// msoIodGroupVSTOR35Mgd 1
+  /// No description is available.
   /// </summary>
   PIAs,
   /// <summary>
-  /// msoIodGroupVSTOR40Mgd 2
+  /// No description is available.
   /// </summary>
   VSTOR35Mgd,
   /// <summary>
-  /// Applies to Product Versions Office primary interop assembly Latest public enum class MsoIodGroup ﾉ Expand
-  /// table
+  /// No description is available.
   /// </summary>
   VSTOR40Mgd
 }

@@ -9,30 +9,27 @@
 public enum MsoOrgChartLayoutType
 {
   /// <summary>
-  /// Indicates how to format the child nodes in an organization chart.
+  /// Return value for a parent node that has children formatted using more than one MsoOrgChartLayoutType.
   /// </summary>
   Mixed = -2,
   /// <summary>
-  /// Places child nodes horizontally below the parent node. msoOrgChartLayoutBothHanging2 Places child nodes
-  /// vertically below the parent node on both the left and the right side. msoOrgChartLayoutLeftHanging3 Places
-  /// child nodes vertically below the parent node on the left side. msoOrgChartLayoutRightHanging4 Places child
-  /// nodes vertically below the parent node on the right side. msoOrgChartLayoutDefault5
+  /// Places child nodes horizontally below the parent node.
   /// </summary>
   Standard = 1,
   /// <summary>
-  /// Indicates how to format the child nodes in an organization chart.
+  /// Places child nodes vertically below the parent node on both the left and the right side.
   /// </summary>
   BothHanging = 2,
   /// <summary>
-  /// Indicates how to format the child nodes in an organization chart.
+  /// Places child nodes vertically below the parent node on the left side.
   /// </summary>
   LeftHanging = 3,
   /// <summary>
-  /// Indicates how to format the child nodes in an organization chart.
+  /// Places child nodes vertically below the parent node on the right side.
   /// </summary>
   RightHanging = 4,
   /// <summary>
-  /// Indicates how to format the child nodes in an organization chart.
+  /// No description is available.
   /// </summary>
   Default = 5
 }

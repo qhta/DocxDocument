@@ -9,7 +9,7 @@
 public enum MsoHorizontalAnchor
 {
   /// <summary>
-  /// Specifies the horizontal alignment of text in a text frame.
+  /// Return value only; indicates a combination of the other states.
   /// </summary>
   HorizontalAnchorMixed = -2,
   /// <summary>

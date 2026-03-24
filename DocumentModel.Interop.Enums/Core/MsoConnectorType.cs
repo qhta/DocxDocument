@@ -9,7 +9,7 @@
 public enum MsoConnectorType
 {
   /// <summary>
-  /// Specifies a type of connector.
+  /// Return value only; indicates a combination of the other states.
   /// </summary>
   TypeMixed = -2,
   /// <summary>

@@ -9,15 +9,15 @@
 public enum MsoArrowheadLength
 {
   /// <summary>
-  /// Specifies the length of the arrowhead at the end of a line.
+  /// Return value only; indicates a combination of the other states in the specified shape range.
   /// </summary>
   LengthMixed = -2,
   /// <summary>
-  /// Short. msoArrowheadLengthMedium2 Medium.
+  /// Short.
   /// </summary>
   Short = 1,
   /// <summary>
-  /// Specifies the length of the arrowhead at the end of a line.
+  /// Medium.
   /// </summary>
   LengthMedium = 2,
   /// <summary>

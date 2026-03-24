@@ -11,13 +11,13 @@ namespace DocumentModel.Interop.Core;
 public enum XlChartPictureType
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies how
-  /// pictures are displayed on a column, bar picture chart, or legend key.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Picture is sized to
+  /// a specified number of units and repeated the length of the bar.
   /// </summary>
   ackScale = 3,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Picture is sized to
-  /// repeat a maximum
+  /// repeat a maximum of 15 times in the longest stacked bar.
   /// </summary>
   ack = 2,
   /// <summary>
