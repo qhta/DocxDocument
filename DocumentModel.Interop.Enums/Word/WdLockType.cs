@@ -10,17 +10,17 @@ public enum WdLockType
   /// created by a user through the Block Authors button on the Review tab in Word 2010. wdLockEphemeral2 Specifies
   /// an ephemeral lock that
   /// </summary>
-  None = unchecked((int)0),
+  None = 0,
   /// <summary>
   /// Specifies the type of lock for a CoAuthLock object.
   /// </summary>
-  Reservation = unchecked((int)1),
+  Reservation = 1,
   /// <summary>
   /// Specifies the type of lock for a CoAuthLock object.
   /// </summary>
-  Ephemeral = unchecked((int)2),
+  Ephemeral = 2,
   /// <summary>
   /// Specifies the type of lock for a CoAuthLock object.
   /// </summary>
-  Changed = unchecked((int)3)
+  Changed = 3
 }

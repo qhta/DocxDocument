@@ -8,21 +8,21 @@ public enum WdSectionStart
   /// <summary>
   /// Continuous section break.
   /// </summary>
-  Continuous = unchecked((int)0),
+  Continuous = 0,
   /// <summary>
   /// New column section break.
   /// </summary>
-  NewColumn = unchecked((int)1),
+  NewColumn = 1,
   /// <summary>
   /// New page section break.
   /// </summary>
-  NewPage = unchecked((int)2),
+  NewPage = 2,
   /// <summary>
   /// Even pages section break.
   /// </summary>
-  EvenPage = unchecked((int)3),
+  EvenPage = 3,
   /// <summary>
   /// Odd pages section break.
   /// </summary>
-  OddPage = unchecked((int)4)
+  OddPage = 4
 }

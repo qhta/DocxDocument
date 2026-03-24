@@ -10,17 +10,17 @@ public enum WdSummaryMode
   /// wdSummaryModeHideAllButSummary1 Hides everything except the specified summary and displays the AutoSummarize
   /// toolbar.
   /// </summary>
-  Highlight = unchecked((int)0),
+  Highlight = 0,
   /// <summary>
   /// Specifies the way the summary is displayed.
   /// </summary>
-  HideAllButSummary = unchecked((int)1),
+  HideAllButSummary = 1,
   /// <summary>
   /// Inserts a summary at the beginning of the specified document.
   /// </summary>
-  Insert = unchecked((int)2),
+  Insert = 2,
   /// <summary>
   /// Creates a new document and inserts the specified summary.
   /// </summary>
-  CreateNew = unchecked((int)3)
+  CreateNew = 3
 }

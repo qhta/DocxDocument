@@ -8,13 +8,13 @@ public enum WdPreferredWidthType
   /// <summary>
   /// Specifies the preferred unit of measure to use when measuring the width of an item.
   /// </summary>
-  Auto = unchecked((int)1),
+  Auto = 1,
   /// <summary>
   /// Measure the current item width using a specified percentage.
   /// </summary>
-  Percent = unchecked((int)2),
+  Percent = 2,
   /// <summary>
   /// Measure the current item width using a specified number of points.
   /// </summary>
-  Points = unchecked((int)3)
+  Points = 3
 }

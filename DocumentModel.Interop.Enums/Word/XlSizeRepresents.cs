@@ -8,9 +8,9 @@ public enum XlSizeRepresents
   /// <summary>
   /// Area of the bubble.
   /// </summary>
-  Area = unchecked((int)1),
+  Area = 1,
   /// <summary>
   /// Width of the bubble.
   /// </summary>
-  Width = unchecked((int)2)
+  Width = 2
 }

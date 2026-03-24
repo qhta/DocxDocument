@@ -49,5 +49,5 @@ public enum OutlineLevel
   /// <summary>
   /// Represents no outline level.
   /// </summary>
-  None = 9,
+  BodyText = 9,
 }

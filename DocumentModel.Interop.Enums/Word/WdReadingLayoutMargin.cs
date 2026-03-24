@@ -8,13 +8,13 @@ public enum WdReadingLayoutMargin
   /// <summary>
   /// Specifies whether margins are visible or hidden when a document is viewed in Full Screen Reading view.
   /// </summary>
-  AutomaticMargin = unchecked((int)0),
+  AutomaticMargin = 0,
   /// <summary>
   /// Specifies whether margins are visible or hidden when a document is viewed in Full Screen Reading view.
   /// </summary>
-  SuppressMargin = unchecked((int)1),
+  SuppressMargin = 1,
   /// <summary>
   /// Shows the pages with margins.
   /// </summary>
-  FullMargin = unchecked((int)2)
+  FullMargin = 2
 }

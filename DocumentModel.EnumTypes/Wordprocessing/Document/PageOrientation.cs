@@ -7,10 +7,15 @@ namespace DocumentModel.Wordprocessing;
 public enum PageOrientation
 {
   /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   ///   Portrait Mode.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.PageOrientationValues.Portrait))]
-  Portrait,
+  Portrait = 1,
+
   /// <summary>
   ///   Landscape Mode.
   /// </summary>

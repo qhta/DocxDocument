@@ -9,29 +9,29 @@ public enum WdMailMergeDataSource
   /// From Microsoft Word. wdMergeInfoFromAccessDDE1 From Microsoft Access using Dynamic Data Exchange (DDE).
   /// wdMergeInfoFromExcelDDE2 From Microsoft Excel using DDE. wdMergeInfoFromMSQueryDDE3 From MSQuery using DDE.
   /// </summary>
-  MergeInfoFromWord = unchecked((int)0),
+  MergeInfoFromWord = 0,
   /// <summary>
   /// Specifies the data source for a mail merge operation.
   /// </summary>
-  MergeInfoFromAccessDDE = unchecked((int)1),
+  MergeInfoFromAccessDDE = 1,
   /// <summary>
   /// Specifies the data source for a mail merge operation.
   /// </summary>
-  MergeInfoFromExcelDDE = unchecked((int)2),
+  MergeInfoFromExcelDDE = 2,
   /// <summary>
   /// Specifies the data source for a mail merge operation.
   /// </summary>
-  MergeInfoFromMSQueryDDE = unchecked((int)3),
+  MergeInfoFromMSQueryDDE = 3,
   /// <summary>
   /// From an Open Database Connectivity (ODBC) connection.
   /// </summary>
-  MergeInfoFromODBC = unchecked((int)4),
+  MergeInfoFromODBC = 4,
   /// <summary>
   /// From an Office Data Source Object (ODSO).
   /// </summary>
-  MergeInfoFromODSO = unchecked((int)5),
+  MergeInfoFromODSO = 5,
   /// <summary>
   /// Specifies the data source for a mail merge operation.
   /// </summary>
-  NoMergeInfo = unchecked((int)-1)
+  NoMergeInfo = -1
 }

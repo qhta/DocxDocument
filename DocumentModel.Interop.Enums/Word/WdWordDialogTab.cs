@@ -8,161 +8,161 @@ public enum WdWordDialogTab
   /// <summary>
   /// General tab of the Options dialog box.
   /// </summary>
-  ToolsOptionsTabGeneral = unchecked((int)203),
+  ToolsOptionsTabGeneral = 203,
   /// <summary>
   /// View tab of the Options dialog box.
   /// </summary>
-  ToolsOptionsTabView = unchecked((int)204),
+  ToolsOptionsTabView = 204,
   /// <summary>
   /// Print tab of the Options dialog box.
   /// </summary>
-  ToolsOptionsTabPrint = unchecked((int)208),
+  ToolsOptionsTabPrint = 208,
   /// <summary>
   /// Save tab of the Options dialog box.
   /// </summary>
-  ToolsOptionsTabSave = unchecked((int)209),
+  ToolsOptionsTabSave = 209,
   /// <summary>
   /// Spelling and Grammar tab of the Options dialog box.
   /// </summary>
-  ToolsOptionsTabProofread = unchecked((int)211),
+  ToolsOptionsTabProofread = 211,
   /// <summary>
   /// User Information tab of the Options dialog box.
   /// </summary>
-  ToolsOptionsTabUserInfo = unchecked((int)213),
+  ToolsOptionsTabUserInfo = 213,
   /// <summary>
   /// Edit tab of the Options dialog box.
   /// [System.Runtime.InteropServices.Guid("5A240536-0B1F-3599-BF96-3FD550690EF3")] public enum WdWordDialogTab ﾉ
   /// Expand table
   /// </summary>
-  ToolsOptionsTabEdit = unchecked((int)224),
+  ToolsOptionsTabEdit = 224,
   /// <summary>
   /// File Locations tab of the Options dialog box.
   /// </summary>
-  ToolsOptionsTabFileLocations = unchecked((int)225),
+  ToolsOptionsTabFileLocations = 225,
   /// <summary>
   /// Track Changes tab of the Options dialog box.
   /// </summary>
-  ToolsOptionsTabTrackChanges = unchecked((int)386),
+  ToolsOptionsTabTrackChanges = 386,
   /// <summary>
   /// Compatibility tab of the Options dialog box.
   /// </summary>
-  ToolsOptionsTabCompatibility = unchecked((int)525),
+  ToolsOptionsTabCompatibility = 525,
   /// <summary>
   /// Asian Typography tab of the Options dialog box.
   /// </summary>
-  ToolsOptionsTabTypography = unchecked((int)739),
+  ToolsOptionsTabTypography = 739,
   /// <summary>
   /// Hangul Hanja Conversion tab of the Options dialog box.
   /// </summary>
-  ToolsOptionsTabHangulHanjaConversion = unchecked((int)786),
+  ToolsOptionsTabHangulHanjaConversion = 786,
   /// <summary>
   /// Not supported.
   /// </summary>
-  ToolsOptionsTabFuzzy = unchecked((int)790),
+  ToolsOptionsTabFuzzy = 790,
   /// <summary>
   /// Complex Scripts tab of the Options dialog box.
   /// </summary>
-  ToolsOptionsTabBidi = unchecked((int)1029),
+  ToolsOptionsTabBidi = 1029,
   /// <summary>
   /// Not supported.
   /// </summary>
-  ToolsOptionsTabAcetate = unchecked((int)1266),
+  ToolsOptionsTabAcetate = 1266,
   /// <summary>
   /// Security tab of the Options dialog box.
   /// </summary>
-  ToolsOptionsTabSecurity = unchecked((int)1361),
+  ToolsOptionsTabSecurity = 1361,
   /// <summary>
   /// Margins tab of the Page Setup dialog box.
   /// </summary>
-  FilePageSetupTabMargins = unchecked((int)150000),
+  FilePageSetupTabMargins = 150000,
   /// <summary>
   /// Paper tab of the Page Setup dialog box.
   /// </summary>
-  FilePageSetupTabPaper = unchecked((int)150001),
+  FilePageSetupTabPaper = 150001,
   /// <summary>
   /// Layout tab of the Page Setup dialog box.
   /// </summary>
-  FilePageSetupTabLayout = unchecked((int)150003),
+  FilePageSetupTabLayout = 150003,
   /// <summary>
   /// Margins tab of the Page Setup dialog box, with Apply To drop-down list active.
   /// </summary>
-  FilePageSetupTabCharsLines = unchecked((int)150004),
+  FilePageSetupTabCharsLines = 150004,
   /// <summary>
   /// Symbols tab of the Symbol dialog box.
   /// </summary>
-  InsertSymbolTabSymbols = unchecked((int)200000),
+  InsertSymbolTabSymbols = 200000,
   /// <summary>
   /// Special Characters tab of the Symbol dialog box.
   /// </summary>
-  InsertSymbolTabSpecialCharacters = unchecked((int)200001),
+  InsertSymbolTabSpecialCharacters = 200001,
   /// <summary>
   /// All Footnotes tab of the Note Options dialog box.
   /// </summary>
-  NoteOptionsTabAllFootnotes = unchecked((int)300000),
+  NoteOptionsTabAllFootnotes = 300000,
   /// <summary>
   /// All Endnotes tab of the Note Options dialog box.
   /// </summary>
-  NoteOptionsTabAllEndnotes = unchecked((int)300001),
+  NoteOptionsTabAllEndnotes = 300001,
   /// <summary>
   /// Index tab of the Index and Tables dialog box.
   /// </summary>
-  InsertIndexAndTablesTabIndex = unchecked((int)400000),
+  InsertIndexAndTablesTabIndex = 400000,
   /// <summary>
   /// Table of Contents tab of the Index and Tables dialog box.
   /// </summary>
-  InsertIndexAndTablesTabTableOfContents = unchecked((int)400001),
+  InsertIndexAndTablesTabTableOfContents = 400001,
   /// <summary>
   /// Table of Figures tab of the Index and Tables dialog box.
   /// </summary>
-  InsertIndexAndTablesTabTableOfFigures = unchecked((int)400002),
+  InsertIndexAndTablesTabTableOfFigures = 400002,
   /// <summary>
   /// Table of Authorities tab of the Index and Tables dialog box.
   /// </summary>
-  InsertIndexAndTablesTabTableOfAuthorities = unchecked((int)400003),
+  InsertIndexAndTablesTabTableOfAuthorities = 400003,
   /// <summary>
   /// Styles tab of the Organizer dialog box.
   /// </summary>
-  OrganizerTabStyles = unchecked((int)500000),
+  OrganizerTabStyles = 500000,
   /// <summary>
   /// AutoText tab of the Organizer dialog box.
   /// </summary>
-  OrganizerTabAutoText = unchecked((int)500001),
+  OrganizerTabAutoText = 500001,
   /// <summary>
   /// Command Bars tab of the Organizer dialog box.
   /// </summary>
-  OrganizerTabCommandBars = unchecked((int)500002),
+  OrganizerTabCommandBars = 500002,
   /// <summary>
   /// Macros tab of the Organizer dialog box.
   /// </summary>
-  OrganizerTabMacros = unchecked((int)500003),
+  OrganizerTabMacros = 500003,
   /// <summary>
   /// Font tab of the Font dialog box.
   /// </summary>
-  FormatFontTabFont = unchecked((int)600000),
+  FormatFontTabFont = 600000,
   /// <summary>
   /// Character Spacing tab of the Font dialog box.
   /// </summary>
-  FormatFontTabCharacterSpacing = unchecked((int)600001),
+  FormatFontTabCharacterSpacing = 600001,
   /// <summary>
   /// Animation tab of the Font dialog box.
   /// </summary>
-  FormatFontTabAnimation = unchecked((int)600002),
+  FormatFontTabAnimation = 600002,
   /// <summary>
   /// Borders tab of the Borders dialog box.
   /// </summary>
-  FormatBordersAndShadingTabBorders = unchecked((int)700000),
+  FormatBordersAndShadingTabBorders = 700000,
   /// <summary>
   /// Page Border tab of the Borders dialog box.
   /// </summary>
-  FormatBordersAndShadingTabPageBorder = unchecked((int)700001),
+  FormatBordersAndShadingTabPageBorder = 700001,
   /// <summary>
   /// Shading tab of the Borders dialog box.
   /// </summary>
-  FormatBordersAndShadingTabShading = unchecked((int)700002),
+  FormatBordersAndShadingTabShading = 700002,
   /// <summary>
   /// Envelopes tab of the Envelopes and Labels dialog box.
   /// </summary>
-  ToolsEnvelopesAndLabelsTabEnvelopes = unchecked((int)800000),
+  ToolsEnvelopesAndLabelsTabEnvelopes = 800000,
   /// <summary>
   /// Labels tab of the Envelopes and Labels dialog box. wdDialogFormatParagraphTabIndentsAndSpacing 1000000Indents
   /// and Spacing tab of the Paragraph dialog box. wdDialogFormatParagraphTabTextFlow 1000001Line and Page Breaks
@@ -200,193 +200,193 @@ public enum WdWordDialogTab
   /// wdDialogEmailOptionsTabSignature 1900000E-mail Signature tab of the E- mail Options dialog box.
   /// wdDialogEmailOptionsTabStationary 1900001Personal Stationary tab of the E-mail Options dialog box.
   /// </summary>
-  ToolsEnvelopesAndLabelsTabLabels = unchecked((int)800001),
+  ToolsEnvelopesAndLabelsTabLabels = 800001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  FormatParagraphTabIndentsAndSpacing = unchecked((int)1000000),
+  FormatParagraphTabIndentsAndSpacing = 1000000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  FormatParagraphTabTextFlow = unchecked((int)1000001),
+  FormatParagraphTabTextFlow = 1000001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  FormatParagraphTabTeisai = unchecked((int)1000002),
+  FormatParagraphTabTeisai = 1000002,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  FormatDrawingObjectTabColorsAndLines = unchecked((int)1200000),
+  FormatDrawingObjectTabColorsAndLines = 1200000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  FormatDrawingObjectTabSize = unchecked((int)1200001),
+  FormatDrawingObjectTabSize = 1200001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  FormatDrawingObjectTabPosition = unchecked((int)1200002),
+  FormatDrawingObjectTabPosition = 1200002,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  FormatDrawingObjectTabWrapping = unchecked((int)1200003),
+  FormatDrawingObjectTabWrapping = 1200003,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  FormatDrawingObjectTabPicture = unchecked((int)1200004),
+  FormatDrawingObjectTabPicture = 1200004,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  FormatDrawingObjectTabTextbox = unchecked((int)1200005),
+  FormatDrawingObjectTabTextbox = 1200005,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  FormatDrawingObjectTabWeb = unchecked((int)1200006),
+  FormatDrawingObjectTabWeb = 1200006,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  FormatDrawingObjectTabHR = unchecked((int)1200007),
+  FormatDrawingObjectTabHR = 1200007,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  ToolsAutoCorrectExceptionsTabFirstLetter = unchecked((int)1400000),
+  ToolsAutoCorrectExceptionsTabFirstLetter = 1400000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  ToolsAutoCorrectExceptionsTabInitialCaps = unchecked((int)1400001),
+  ToolsAutoCorrectExceptionsTabInitialCaps = 1400001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  ToolsAutoCorrectExceptionsTabHangulAndAlphabet = unchecked((int)1400002),
+  ToolsAutoCorrectExceptionsTabHangulAndAlphabet = 1400002,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  ToolsAutoCorrectExceptionsTabIac = unchecked((int)1400003),
+  ToolsAutoCorrectExceptionsTabIac = 1400003,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  FormatBulletsAndNumberingTabBulleted = unchecked((int)1500000),
+  FormatBulletsAndNumberingTabBulleted = 1500000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  FormatBulletsAndNumberingTabNumbered = unchecked((int)1500001),
+  FormatBulletsAndNumberingTabNumbered = 1500001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  FormatBulletsAndNumberingTabOutlineNumbered = unchecked((int)1500002),
+  FormatBulletsAndNumberingTabOutlineNumbered = 1500002,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  LetterWizardTabLetterFormat = unchecked((int)1600000),
+  LetterWizardTabLetterFormat = 1600000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  LetterWizardTabRecipientInfo = unchecked((int)1600001),
+  LetterWizardTabRecipientInfo = 1600001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  LetterWizardTabOtherElements = unchecked((int)1600002),
+  LetterWizardTabOtherElements = 1600002,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  LetterWizardTabSenderInfo = unchecked((int)1600003),
+  LetterWizardTabSenderInfo = 1600003,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  ToolsAutoManagerTabAutoCorrect = unchecked((int)1700000),
+  ToolsAutoManagerTabAutoCorrect = 1700000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  ToolsAutoManagerTabAutoFormatAsYouType = unchecked((int)1700001),
+  ToolsAutoManagerTabAutoFormatAsYouType = 1700001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  ToolsAutoManagerTabAutoText = unchecked((int)1700002),
+  ToolsAutoManagerTabAutoText = 1700002,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  ToolsAutoManagerTabAutoFormat = unchecked((int)1700003),
+  ToolsAutoManagerTabAutoFormat = 1700003,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  ToolsAutoManagerTabSmartTags = unchecked((int)1700004),
+  ToolsAutoManagerTabSmartTags = 1700004,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  TablePropertiesTabTable = unchecked((int)1800000),
+  TablePropertiesTabTable = 1800000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  TablePropertiesTabRow = unchecked((int)1800001),
+  TablePropertiesTabRow = 1800001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  TablePropertiesTabColumn = unchecked((int)1800002),
+  TablePropertiesTabColumn = 1800002,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  TablePropertiesTabCell = unchecked((int)1800003),
+  TablePropertiesTabCell = 1800003,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  EmailOptionsTabSignature = unchecked((int)1900000),
+  EmailOptionsTabSignature = 1900000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  EmailOptionsTabStationary = unchecked((int)1900001),
+  EmailOptionsTabStationary = 1900001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  EmailOptionsTabQuoting = unchecked((int)1900002),
+  EmailOptionsTabQuoting = 1900002,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  WebOptionsGeneral = unchecked((int)2000000),
+  WebOptionsGeneral = 2000000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  WebOptionsBrowsers = unchecked((int)2000000),
+  WebOptionsBrowsers = 2000000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  WebOptionsFiles = unchecked((int)2000001),
+  WebOptionsFiles = 2000001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  WebOptionsPictures = unchecked((int)2000002),
+  WebOptionsPictures = 2000002,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  WebOptionsEncoding = unchecked((int)2000003),
+  WebOptionsEncoding = 2000003,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  WebOptionsFonts = unchecked((int)2000004),
+  WebOptionsFonts = 2000004,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  Templates = unchecked((int)2100000),
+  Templates = 2100000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  TemplatesXMLSchema = unchecked((int)2100001),
+  TemplatesXMLSchema = 2100001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  TemplatesXMLExpansionPacks = unchecked((int)2100002),
+  TemplatesXMLExpansionPacks = 2100002,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  TemplatesLinkedCSS = unchecked((int)2100003),
+  TemplatesLinkedCSS = 2100003,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  StyleManagementTabEdit = unchecked((int)2200000),
+  StyleManagementTabEdit = 2200000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  StyleManagementTabRecommend = unchecked((int)2200001),
+  StyleManagementTabRecommend = 2200001,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  StyleManagementTabRestrict = unchecked((int)2200002)
+  StyleManagementTabRestrict = 2200002
 }

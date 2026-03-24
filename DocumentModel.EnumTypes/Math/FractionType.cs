@@ -7,10 +7,15 @@ namespace DocumentModel.Math;
 public enum FractionType
 {
   /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   ///   Bar Fraction.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXM.FractionTypeValues.Bar))]
-  Bar,
+  Bar = 1,
+
   /// <summary>
   ///   Skewed.
   /// </summary>

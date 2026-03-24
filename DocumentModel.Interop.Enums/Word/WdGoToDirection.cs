@@ -9,26 +9,26 @@ public enum WdGoToDirection
   /// <summary>
   /// An absolute position.
   /// </summary>
-  Absolute = unchecked((int)1),
+  Absolute = 1,
   /// <summary>
   /// The first instance of the specified object.
   /// </summary>
-  First = unchecked((int)1),
+  First = 1,
   /// <summary>
   /// The next instance of the specified object.
   /// </summary>
-  Next = unchecked((int)2),
+  Next = 2,
   /// <summary>
   /// A position relative to the current position.
   /// </summary>
-  Relative = unchecked((int)2),
+  Relative = 2,
   /// <summary>
   /// The previous instance of the specified object.
   /// </summary>
-  Previous = unchecked((int)3),
+  Previous = 3,
   /// <summary>
   /// Specifies the position to which a selection or the insertion point is moved in relation to an object or to
   /// itself.
   /// </summary>
-  Last = unchecked((int)-1)
+  Last = -1
 }

@@ -9,9 +9,9 @@ public enum WdMovementType
   /// The selection is collapsed to an insertion point and moved to the end of the specified unit. Default.
   /// wdExtend1 The end of the selection is extended to the end of the specified unit.
   /// </summary>
-  Move = unchecked((int)0),
+  Move = 0,
   /// <summary>
   /// Specifies the way the selection is moved.
   /// </summary>
-  Extend = unchecked((int)1)
+  Extend = 1
 }

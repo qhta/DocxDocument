@@ -1,0 +1,42 @@
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings.ChartDrawings\DataLabelPos.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\XlDataLabelPosition.cs	10
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings.ChartDrawings\PageOrientation.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoOrientation.cs	0
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings.Charts\Common\Axis\Orientation.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoOrientation.cs	0
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings.Charts\Common\PageSetupOrientation.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoTextOrientation.cs	0
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings.Charts\Data\DataLabelPosition.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\XlDataLabelPosition.cs	70
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings.Diagrams\Direction.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoTextDirection.cs	0
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings.Diagrams\HueDirection.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoTextDirection.cs	0
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings\3D\LightRigDirection.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoPresetLightingDirection.cs	88.89
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings\3D\LightRigType.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoLightRigType.cs	90.91
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings\3D\PresetCameraType.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoPresetCamera.cs	99.2
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings\3D\PresetMaterialType.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoPresetMaterial.cs	70.97
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings\Effects\EffectContainment.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoTextEffectAlignment.cs	0
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings\Fill types\PresetPattern.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoPresetMaterial.cs	0
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings\Line properties\LineCap.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoLineCapStyle.cs	85.71
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings\Shape properties\BlackWhiteMode.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoBlackWhiteMode.cs	18.18
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings\Text elements and properties\TextCaps.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoTextCaps.cs	0
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings\Text elements and properties\TextFontAlignment.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoTextFontAlign.cs	72.73
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings\Text elements and properties\TextShape.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoTextCaps.cs	0
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings\Text elements and properties\TextStrike.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoTextStrike.cs	85.71
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings\Text elements and properties\TextTabAlignment.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoTextTabAlign.cs	88.89
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Drawings\Text elements and properties\TextUnderline.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoTextUnderlineType.cs	5.41
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Math\FractionType.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoReflectionType.cs	0
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Vml\BlackAndWhiteMode.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoBlackWhiteMode.cs	54.55
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Vml\FillType.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoFillType.cs	36.36
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Vml\ShadowType.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoShadowType.cs	0
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Vml\StrokeJoinStyle.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoLineJoinStyle.cs	85.71
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Wordprocessing.Drawings\LightRigDirection.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoPresetLightingDirection.cs	88.89
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Wordprocessing.Drawings\LineCap.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoLineCapStyle.cs	85.71
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Wordprocessing.Drawings\PresetMaterial.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoPresetMaterial.cs	68.75
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Wordprocessing.Vml\VerticalAnchorType.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoVerticalAnchor.cs	0
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Wordprocessing\Common\Direction.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoTextDirection.cs	0
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Wordprocessing\Common\TextDirection.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoTextDirection.cs	26.67
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Wordprocessing\Document\PageOrientation.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoOrientation.cs	0
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Wordprocessing\Frames and framesets\VerticalAnchor.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoVerticalAnchor.cs	0
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Wordprocessing\Paragraph properties\TabStopType.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoTabStopType.cs	57.14
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Wordprocessing\Run properties\TextEffect.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoPresetTextEffect.cs	0
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Wordprocessing\Table properties\TableLayout.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoCalloutType.cs	0
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Wordprocessing\Unused\BaselineAlignment.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoBaselineAlignment.cs	72.73
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Wordprocessing\Unused\BulletStyle.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoBulletType.cs	0
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Wordprocessing\Unused\Color.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoColorType.cs	0
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Wordprocessing\Unused\ParagraphAlignment.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoParagraphAlignment.cs	85.71
+D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.EnumTypes\Wordprocessing\Unused\TextOrientation.cs	D:\OneDrive\VS\Projects\DocxDocument\DocumentModel.Interop.Enums\Core\MsoTextOrientation.cs	83.33

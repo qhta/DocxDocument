@@ -8,9 +8,9 @@ public enum WdBorderDistanceFrom
   /// <summary>
   /// From the text it surrounds.
   /// </summary>
-  Text = unchecked((int)0),
+  Text = 0,
   /// <summary>
   /// From the edge of the page.
   /// </summary>
-  PageEdge = unchecked((int)1)
+  PageEdge = 1
 }

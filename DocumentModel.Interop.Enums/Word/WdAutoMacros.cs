@@ -8,25 +8,25 @@ public enum WdAutoMacros
   /// <summary>
   /// AutoExec macro.
   /// </summary>
-  Exec = unchecked((int)0),
+  Exec = 0,
   /// <summary>
   /// AutoNew macro.
   /// </summary>
-  New = unchecked((int)1),
+  New = 1,
   /// <summary>
   /// AutoOpen macro.
   /// </summary>
-  Open = unchecked((int)2),
+  Open = 2,
   /// <summary>
   /// AutoClose macro.
   /// </summary>
-  Close = unchecked((int)3),
+  Close = 3,
   /// <summary>
   /// AutoExit macro.
   /// </summary>
-  Exit = unchecked((int)4),
+  Exit = 4,
   /// <summary>
   /// AutoSync macro.
   /// </summary>
-  Sync = unchecked((int)5)
+  Sync = 5
 }

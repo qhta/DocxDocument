@@ -7,10 +7,15 @@ namespace DocumentModel.Drawings;
 public enum TextStrike
 {
   /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   ///   Text Strike Enum ( No Strike ).
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.TextStrikeValues.NoStrike))]
-  NoStrike,
+  NoStrike = 1,
+
   /// <summary>
   ///   Text Strike Enum ( Single Strike ).
   /// </summary>

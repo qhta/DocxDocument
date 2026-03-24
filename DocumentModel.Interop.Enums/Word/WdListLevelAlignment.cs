@@ -8,13 +8,13 @@ public enum WdListLevelAlignment
   /// <summary>
   /// Left aligned.
   /// </summary>
-  Left = unchecked((int)0),
+  Left = 0,
   /// <summary>
   /// Center aligned.
   /// </summary>
-  Center = unchecked((int)1),
+  Center = 1,
   /// <summary>
   /// Right aligned.
   /// </summary>
-  Right = unchecked((int)2)
+  Right = 2
 }

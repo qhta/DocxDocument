@@ -7,10 +7,15 @@ namespace DocumentModel.Wordprocessing;
 public enum TabStopType
 {
   /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   ///   No Tab Stop.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.TabStopValues.Clear))]
-  Clear,
+  Clear = 1,
+
   /// <summary>
   ///   Left Tab.
   /// </summary>

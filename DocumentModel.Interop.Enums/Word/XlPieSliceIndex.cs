@@ -8,37 +8,37 @@ public enum XlPieSliceIndex
   /// <summary>
   /// The outermost counterclockwise point of the circumference of a slice.
   /// </summary>
-  OuterCounterClockwisePoint = unchecked((int)1),
+  OuterCounterClockwisePoint = 1,
   /// <summary>
   /// The outer center point of the circumference of a slice.
   /// </summary>
-  OuterCenterPoint = unchecked((int)2),
+  OuterCenterPoint = 2,
   /// <summary>
   /// The outermost clockwise point of the circumference of a slice.
   /// </summary>
-  OuterClockwisePoint = unchecked((int)3),
+  OuterClockwisePoint = 3,
   /// <summary>
   /// The midpoint of the most clockwise radius of a slice.
   /// </summary>
-  MidClockwiseRadiusPoint = unchecked((int)4),
+  MidClockwiseRadiusPoint = 4,
   /// <summary>
   /// The center point of a pie slice.
   /// </summary>
-  CenterPoint = unchecked((int)5),
+  CenterPoint = 5,
   /// <summary>
   /// The midpoint of the most counterclockwise radius of a slice.
   /// </summary>
-  MidCounterClockwiseRadiusPoint = unchecked((int)6),
+  MidCounterClockwiseRadiusPoint = 6,
   /// <summary>
   /// The innermost point of the most clockwise radius of a doughnut slice.
   /// </summary>
-  InnerClockwisePoint = unchecked((int)7),
+  InnerClockwisePoint = 7,
   /// <summary>
   /// The innermost center point of a doughnut slice.
   /// </summary>
-  InnerCenterPoint = unchecked((int)8),
+  InnerCenterPoint = 8,
   /// <summary>
   /// The innermost point of the most counterclockwise radius of a doughnut slice.
   /// </summary>
-  InnerCounterClockwisePoint = unchecked((int)9)
+  InnerCounterClockwisePoint = 9
 }

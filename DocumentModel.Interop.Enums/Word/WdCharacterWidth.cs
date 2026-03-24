@@ -8,9 +8,9 @@ public enum WdCharacterWidth
   /// <summary>
   /// Characters are displayed in half the character width.
   /// </summary>
-  HalfWidth = unchecked((int)6),
+  HalfWidth = 6,
   /// <summary>
   /// Characters are displayed in full character width.
   /// </summary>
-  FullWidth = unchecked((int)7)
+  FullWidth = 7
 }

@@ -8,13 +8,13 @@ public enum WdCellVerticalAlignment
   /// <summary>
   /// Text is aligned to the top border of the cell.
   /// </summary>
-  Top = unchecked((int)0),
+  Top = 0,
   /// <summary>
   /// Text is aligned to the center of the cell.
   /// </summary>
-  Center = unchecked((int)1),
+  Center = 1,
   /// <summary>
   /// Text is aligned to the bottom border of the cell.
   /// </summary>
-  Bottom = unchecked((int)3)
+  Bottom = 3
 }

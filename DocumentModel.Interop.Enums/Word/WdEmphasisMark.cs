@@ -8,21 +8,21 @@ public enum WdEmphasisMark
   /// <summary>
   /// No emphasis mark.
   /// </summary>
-  None = unchecked((int)0),
+  None = 0,
   /// <summary>
   /// A solid black circle.
   /// </summary>
-  OverSolidCircle = unchecked((int)1),
+  OverSolidCircle = 1,
   /// <summary>
   /// A comma.
   /// </summary>
-  OverComma = unchecked((int)2),
+  OverComma = 2,
   /// <summary>
   /// An empty white circle.
   /// </summary>
-  OverWhiteCircle = unchecked((int)3),
+  OverWhiteCircle = 3,
   /// <summary>
   /// A solid black circle.
   /// </summary>
-  UnderSolidCircle = unchecked((int)4)
+  UnderSolidCircle = 4
 }

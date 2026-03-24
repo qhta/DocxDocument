@@ -8,13 +8,13 @@ public enum WdFrenchSpeller
   /// <summary>
   /// Use both Post Reform and Pre-Reform French dictionaries when checking French language spelling.
   /// </summary>
-  Both = unchecked((int)0),
+  Both = 0,
   /// <summary>
   /// Use only the Pre-Reform French dictionary when checking French language spelling.
   /// </summary>
-  PreReform = unchecked((int)1),
+  PreReform = 1,
   /// <summary>
   /// Use only the Post Reform French dictionary when checking French language spelling.
   /// </summary>
-  PostReform = unchecked((int)2)
+  PostReform = 2
 }

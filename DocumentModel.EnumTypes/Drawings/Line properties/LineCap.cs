@@ -7,10 +7,15 @@ namespace DocumentModel.Drawings;
 public enum LineCap
 {
   /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   ///   Round Line Cap.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.LineCapValues.Round))]
-  Round,
+  Round = 1,
+
   /// <summary>
   ///   Square Line Cap.
   /// </summary>

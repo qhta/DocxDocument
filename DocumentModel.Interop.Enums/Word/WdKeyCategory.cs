@@ -8,37 +8,37 @@ public enum WdKeyCategory
   /// <summary>
   /// Key is disabled.
   /// </summary>
-  Disable = unchecked((int)0),
+  Disable = 0,
   /// <summary>
   /// Key is assigned to a command
   /// </summary>
-  Command = unchecked((int)1),
+  Command = 1,
   /// <summary>
   /// Key is assigned to a
   /// </summary>
-  Macro = unchecked((int)2),
+  Macro = 2,
   /// <summary>
   /// Key is assigned to a font.
   /// </summary>
-  Font = unchecked((int)3),
+  Font = 3,
   /// <summary>
   /// Key is assigned to autotext.
   /// </summary>
-  AutoText = unchecked((int)4),
+  AutoText = 4,
   /// <summary>
   /// Key is assigned to a style.
   /// </summary>
-  Style = unchecked((int)5),
+  Style = 5,
   /// <summary>
   /// Key is assigned to a symbol.
   /// </summary>
-  Symbol = unchecked((int)6),
+  Symbol = 6,
   /// <summary>
   /// Key is assigned to a prefix.
   /// </summary>
-  Prefix = unchecked((int)7),
+  Prefix = 7,
   /// <summary>
   /// Specifies the type of item assigned to the key binding.
   /// </summary>
-  Nil = unchecked((int)-1)
+  Nil = -1
 }

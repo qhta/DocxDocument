@@ -8,29 +8,29 @@ public enum WdShapePosition
   /// <summary>
   /// Specifies the relative position of the specified shape.
   /// </summary>
-  Top = unchecked((int)-999999),
+  Top = -999999,
   /// <summary>
   /// Specifies the relative position of the specified shape.
   /// </summary>
-  Left = unchecked((int)-999998),
+  Left = -999998,
   /// <summary>
   /// Specifies the relative position of the specified shape.
   /// </summary>
-  Bottom = unchecked((int)-999997),
+  Bottom = -999997,
   /// <summary>
   /// Specifies the relative position of the specified shape.
   /// </summary>
-  Right = unchecked((int)-999996),
+  Right = -999996,
   /// <summary>
   /// Specifies the relative position of the specified shape.
   /// </summary>
-  Center = unchecked((int)-999995),
+  Center = -999995,
   /// <summary>
   /// Specifies the relative position of the specified shape.
   /// </summary>
-  Inside = unchecked((int)-999994),
+  Inside = -999994,
   /// <summary>
   /// Specifies the relative position of the specified shape.
   /// </summary>
-  Outside = unchecked((int)-999993)
+  Outside = -999993
 }

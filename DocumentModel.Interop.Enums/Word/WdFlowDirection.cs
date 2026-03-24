@@ -8,9 +8,9 @@ public enum WdFlowDirection
   /// <summary>
   /// Text in columns flows from left to right.
   /// </summary>
-  Ltr = unchecked((int)0),
+  Ltr = 0,
   /// <summary>
   /// Text in columns flows from right to left.
   /// </summary>
-  Rtl = unchecked((int)1)
+  Rtl = 1
 }

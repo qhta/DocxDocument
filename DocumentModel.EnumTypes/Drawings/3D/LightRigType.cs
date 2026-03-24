@@ -7,10 +7,14 @@ namespace DocumentModel.Drawings;
 public enum LightRigType
 {
   /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   ///   Legacy Flat 1.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.LightRigValues.LegacyFlat1))]
-  LegacyFlat1,
+  LegacyFlat1 = 1,
   /// <summary>
   ///   Legacy Flat 2.
   /// </summary>

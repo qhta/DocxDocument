@@ -9,5 +9,5 @@ public enum WdParagraphAlignmentHID
   /// Applies to Product Versions Word primary interop assembly Latest public enum WdParagraphAlignmentHID ﾉ Expand
   /// table
   /// </summary>
-  emptyenum = unchecked((int)0)
+  emptyenum = 0
 }

@@ -8,9 +8,9 @@ public enum WdEnableCancelKey
   /// <summary>
   /// Prevents CTRL+BREAK from interrupting a macro.
   /// </summary>
-  Disabled = unchecked((int)0),
+  Disabled = 0,
   /// <summary>
   /// Allows a macro to be interrupted by CTRL+BREAK.
   /// </summary>
-  Interrupt = unchecked((int)1)
+  Interrupt = 1
 }

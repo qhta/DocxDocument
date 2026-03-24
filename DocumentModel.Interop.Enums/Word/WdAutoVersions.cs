@@ -9,9 +9,9 @@ public enum WdAutoVersions
   /// No document version is saved. wdAutoVersionOnClose1 A document version is saved automatically when the
   /// document is closed.
   /// </summary>
-  ff = unchecked((int)0),
+  ff = 0,
   /// <summary>
   /// Specifies the state of the option for automatically saving document versions.
   /// </summary>
-  nClose = unchecked((int)1)
+  nClose = 1
 }

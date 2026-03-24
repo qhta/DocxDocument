@@ -9,48 +9,56 @@ namespace DocumentModel.Drawings.Charts;
 public enum DataLabelPosition
 {
   /// <summary>
-  ///   Best Fit.
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
+  ///   Office application controls position of data label.
   /// </summary>
   [OpenXmlEnumValue("BestFit")]
-  BestFit,
+  BestFit = 5,
   /// <summary>
-  ///   Bottom.
+  ///    Data label positioned below point.
   /// </summary>
   [OpenXmlEnumValue("Bottom")]
-  Bottom,
+  Below = 1,
   /// <summary>
-  ///   Center.
+  ///   Data label centered on data point or inside bar or pie.
   /// </summary>
   [OpenXmlEnumValue("Center")]
-  Center,
+  Center = -4108,
   /// <summary>
   ///   Inside Base.
   /// </summary>
   [OpenXmlEnumValue("InsideBase")]
-  InsideBase,
+  InsideBase = 4,
   /// <summary>
   ///   Inside End.
   /// </summary>
   [OpenXmlEnumValue("InsideEnd")]
-  InsideEnd,
+  InsideEnd = 3,
   /// <summary>
   ///   Left.
   /// </summary>
   [OpenXmlEnumValue("Left")]
-  Left,
+  Left = -4131,
   /// <summary>
   ///   Outside End.
   /// </summary>
   [OpenXmlEnumValue("OutsideEnd")]
-  OutsideEnd,
+  OutsideEnd = 2,
   /// <summary>
   ///   Right.
   /// </summary>
   [OpenXmlEnumValue("Right")]
-  Right,
+  Right = -4152,
   /// <summary>
-  ///   Top.
+  ///    Data label positioned above point.
   /// </summary>
   [OpenXmlEnumValue("Top")]
-  Top
+  Above = 0,
+  /// <summary>
+  /// Data label centered on data point or inside bar or pie.
+  /// </summary>
+  Custom = 7
 }

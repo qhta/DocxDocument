@@ -8,33 +8,33 @@ public enum WdRelativeHorizontalPosition
   /// <summary>
   /// Relative to margin.
   /// </summary>
-  Margin = unchecked((int)0),
+  Margin = 0,
   /// <summary>
   /// Relative to page.
   /// </summary>
-  Page = unchecked((int)1),
+  Page = 1,
   /// <summary>
   /// Relative to column.
   /// </summary>
-  Column = unchecked((int)2),
+  Column = 2,
   /// <summary>
   /// Relative to character.
   /// </summary>
-  Character = unchecked((int)3),
+  Character = 3,
   /// <summary>
   /// Relative to left margin.
   /// </summary>
-  LeftMarginArea = unchecked((int)4),
+  LeftMarginArea = 4,
   /// <summary>
   /// Relative to right margin.
   /// </summary>
-  RightMarginArea = unchecked((int)5),
+  RightMarginArea = 5,
   /// <summary>
   /// Relative to inner margin area.
   /// </summary>
-  InnerMarginArea = unchecked((int)6),
+  InnerMarginArea = 6,
   /// <summary>
   /// Relative to outer margin area.
   /// </summary>
-  OuterMarginArea = unchecked((int)7)
+  OuterMarginArea = 7
 }

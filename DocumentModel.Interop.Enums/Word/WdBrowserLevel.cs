@@ -8,13 +8,13 @@ public enum WdBrowserLevel
   /// <summary>
   /// Microsoft Internet Explorer 4.
   /// </summary>
-  V4 = unchecked((int)0),
+  V4 = 0,
   /// <summary>
   /// Microsoft Internet Explorer 5.
   /// </summary>
-  MicrosoftInternetExplorer5 = unchecked((int)1),
+  MicrosoftInternetExplorer5 = 1,
   /// <summary>
   /// Microsoft Internet Explorer 6.
   /// </summary>
-  MicrosoftInternetExplorer6 = unchecked((int)2)
+  MicrosoftInternetExplorer6 = 2
 }

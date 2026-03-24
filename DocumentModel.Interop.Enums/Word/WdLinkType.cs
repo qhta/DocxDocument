@@ -8,37 +8,37 @@ public enum WdLinkType
   /// <summary>
   /// OLE object.
   /// </summary>
-  OLE = unchecked((int)0),
+  OLE = 0,
   /// <summary>
   /// Picture.
   /// </summary>
-  Picture = unchecked((int)1),
+  Picture = 1,
   /// <summary>
   /// Text.
   /// </summary>
-  Text = unchecked((int)2),
+  Text = 2,
   /// <summary>
   /// Reference library.
   /// </summary>
-  Reference = unchecked((int)3),
+  Reference = 3,
   /// <summary>
   /// Include file.
   /// </summary>
-  Include = unchecked((int)4),
+  Include = 4,
   /// <summary>
   /// Import file.
   /// </summary>
-  Import = unchecked((int)5),
+  Import = 5,
   /// <summary>
   /// Dynamic Data Exchange.
   /// </summary>
-  DDE = unchecked((int)6),
+  DDE = 6,
   /// <summary>
   /// DDE automatic.
   /// </summary>
-  DDEAuto = unchecked((int)7),
+  DDEAuto = 7,
   /// <summary>
   /// Microsoft Excel chart.
   /// </summary>
-  Chart = unchecked((int)8)
+  Chart = 8
 }

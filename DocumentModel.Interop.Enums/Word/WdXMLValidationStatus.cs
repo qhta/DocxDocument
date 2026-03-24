@@ -8,9 +8,9 @@ public enum WdXMLValidationStatus
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  OK = unchecked((int)0),
+  OK = 0,
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  Custom = unchecked((int)-1072898048)
+  Custom = -1072898048
 }

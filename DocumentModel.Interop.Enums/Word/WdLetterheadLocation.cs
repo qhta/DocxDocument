@@ -8,17 +8,17 @@ public enum WdLetterheadLocation
   /// <summary>
   /// At the top of the letter.
   /// </summary>
-  Top = unchecked((int)0),
+  Top = 0,
   /// <summary>
   /// At the bottom of the letter.
   /// </summary>
-  Bottom = unchecked((int)1),
+  Bottom = 1,
   /// <summary>
   /// To the left of the letter.
   /// </summary>
-  Left = unchecked((int)2),
+  Left = 2,
   /// <summary>
   /// To the right of the letter.
   /// </summary>
-  Right = unchecked((int)3)
+  Right = 3
 }

@@ -8,13 +8,13 @@ public enum WdContinue
   /// <summary>
   /// Formatting cannot continue from the previous list.
   /// </summary>
-  ContinueDisabled = unchecked((int)0),
+  ContinueDisabled = 0,
   /// <summary>
   /// Numbering can be restarted.
   /// </summary>
-  ResetList = unchecked((int)1),
+  ResetList = 1,
   /// <summary>
   /// Formatting can continue from the previous list.
   /// </summary>
-  ContinueList = unchecked((int)2)
+  ContinueList = 2
 }

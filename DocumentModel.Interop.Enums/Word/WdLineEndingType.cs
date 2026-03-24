@@ -8,21 +8,21 @@ public enum WdLineEndingType
   /// <summary>
   /// Carriage return plus line feed.
   /// </summary>
-  CRLF = unchecked((int)0),
+  CRLF = 0,
   /// <summary>
   /// Carriage return only.
   /// </summary>
-  CROnly = unchecked((int)1),
+  CROnly = 1,
   /// <summary>
   /// Line feed only.
   /// </summary>
-  LFOnly = unchecked((int)2),
+  LFOnly = 2,
   /// <summary>
   /// Line feed plus carriage return.
   /// </summary>
-  LFCR = unchecked((int)3),
+  LFCR = 3,
   /// <summary>
   /// Not supported.
   /// </summary>
-  LSPS = unchecked((int)4)
+  LSPS = 4
 }

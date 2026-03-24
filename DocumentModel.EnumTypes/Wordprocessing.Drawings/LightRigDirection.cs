@@ -8,10 +8,15 @@ namespace DocumentModel.Wordprocessing.Drawings;
 public enum LightRigDirection
 {
   /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   /// Top left direction.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.LightRigDirectionValues.TopLeft))]
-  TopLeft,
+  TopLeft = 1,
+
   /// <summary>
   /// Top direction.
   /// </summary>

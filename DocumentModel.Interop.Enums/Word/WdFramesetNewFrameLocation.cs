@@ -8,17 +8,17 @@ public enum WdFramesetNewFrameLocation
   /// <summary>
   /// Above existing frame.
   /// </summary>
-  Above = unchecked((int)0),
+  Above = 0,
   /// <summary>
   /// Below existing frame.
   /// </summary>
-  Below = unchecked((int)1),
+  Below = 1,
   /// <summary>
   /// To the right of existing frame.
   /// </summary>
-  Right = unchecked((int)2),
+  Right = 2,
   /// <summary>
   /// To the left of existing frame.
   /// </summary>
-  Left = unchecked((int)3)
+  Left = 3
 }

@@ -7,10 +7,15 @@ namespace DocumentModel.Drawings;
 public enum EffectContainment
 {
   /// <summary>
+  ///   Used only for detection.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
   ///   Sibling.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.EffectContainerValues.Sibling))]
-  Sibling,
+  Sibling = 1,
+
   /// <summary>
   ///   Tree.
   /// </summary>

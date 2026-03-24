@@ -8,13 +8,13 @@ public enum WdDocPartInsertOptions
   /// <summary>
   /// Inline building block.
   /// </summary>
-  Content = unchecked((int)0),
+  Content = 0,
   /// <summary>
   /// Paragraph-level building block.
   /// </summary>
-  Paragraph = unchecked((int)1),
+  Paragraph = 1,
   /// <summary>
   /// Page-level building block.
   /// </summary>
-  Page = unchecked((int)2)
+  Page = 2
 }

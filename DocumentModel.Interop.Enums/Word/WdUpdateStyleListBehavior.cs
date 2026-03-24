@@ -11,10 +11,10 @@ public enum WdUpdateStyleListBehavior
   /// apply the numbering or bullets pattern of the selection. wdListBehaviorAddBulletsNumbering1 Adds the numbering
   /// or bullets pattern of the selection to all paragraphs in the document that use the same style.
   /// </summary>
-  KeepPreviousPattern = unchecked((int)0),
+  KeepPreviousPattern = 0,
   /// <summary>
   /// Specifies the behavior Word 2010 should take when updating a style to match a selection that contains
   /// numbering or bullets.
   /// </summary>
-  AddBulletsNumbering = unchecked((int)1)
+  AddBulletsNumbering = 1
 }

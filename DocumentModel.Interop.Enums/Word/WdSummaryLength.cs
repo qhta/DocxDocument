@@ -8,33 +8,33 @@ public enum WdSummaryLength
   /// <summary>
   /// Specifies the maximum length of an automatically generated document summary.
   /// </summary>
-  SummaryLength75Percent = unchecked((int)-9),
+  SummaryLength75Percent = -9,
   /// <summary>
   /// Specifies the maximum length of an automatically generated document summary.
   /// </summary>
-  SummaryLength50Percent = unchecked((int)-8),
+  SummaryLength50Percent = -8,
   /// <summary>
   /// Specifies the maximum length of an automatically generated document summary.
   /// </summary>
-  SummaryLength25Percent = unchecked((int)-7),
+  SummaryLength25Percent = -7,
   /// <summary>
   /// Specifies the maximum length of an automatically generated document summary.
   /// </summary>
-  SummaryLength10Percent = unchecked((int)-6),
+  SummaryLength10Percent = -6,
   /// <summary>
   /// Specifies the maximum length of an automatically generated document summary.
   /// </summary>
-  SummaryLength500Words = unchecked((int)-5),
+  SummaryLength500Words = -5,
   /// <summary>
   /// Specifies the maximum length of an automatically generated document summary.
   /// </summary>
-  SummaryLength100Words = unchecked((int)-4),
+  SummaryLength100Words = -4,
   /// <summary>
   /// Specifies the maximum length of an automatically generated document summary.
   /// </summary>
-  SummaryLength20Sentences = unchecked((int)-3),
+  SummaryLength20Sentences = -3,
   /// <summary>
   /// Specifies the maximum length of an automatically generated document summary.
   /// </summary>
-  SummaryLength10Sentences = unchecked((int)-2)
+  SummaryLength10Sentences = -2
 }

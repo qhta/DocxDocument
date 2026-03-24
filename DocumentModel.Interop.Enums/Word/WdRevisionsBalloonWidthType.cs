@@ -8,9 +8,9 @@ public enum WdRevisionsBalloonWidthType
   /// <summary>
   /// Measured as a percentage of the width of the document.
   /// </summary>
-  ercent = unchecked((int)0),
+  ercent = 0,
   /// <summary>
   /// Measured in points.
   /// </summary>
-  oints = unchecked((int)1)
+  oints = 1
 }

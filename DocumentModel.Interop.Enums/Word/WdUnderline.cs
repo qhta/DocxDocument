@@ -8,75 +8,75 @@ public enum WdUnderline
   /// <summary>
   /// No underline.
   /// </summary>
-  None = unchecked((int)0),
+  None = 0,
   /// <summary>
   /// A single line. default.
   /// </summary>
-  Single = unchecked((int)1),
+  Single = 1,
   /// <summary>
   /// Underline individual words only.
   /// </summary>
-  Words = unchecked((int)2),
+  Words = 2,
   /// <summary>
   /// A double line.
   /// </summary>
-  Double = unchecked((int)3),
+  Double = 3,
   /// <summary>
   /// Dots.
   /// </summary>
-  Dotted = unchecked((int)4),
+  Dotted = 4,
   /// <summary>
   /// A single thick line.
   /// </summary>
-  Thick = unchecked((int)6),
+  Thick = 6,
   /// <summary>
   /// Dashes.
   /// </summary>
-  Dash = unchecked((int)7),
+  Dash = 7,
   /// <summary>
   /// Alternating dots and dashes.
   /// </summary>
-  DotDash = unchecked((int)9),
+  DotDash = 9,
   /// <summary>
   /// An alternating dot-dot-dash pattern.
   /// </summary>
-  DotDotDash = unchecked((int)10),
+  DotDotDash = 10,
   /// <summary>
   /// A single wavy line.
   /// </summary>
-  Wavy = unchecked((int)11),
+  Wavy = 11,
   /// <summary>
   /// Heavy dots. [System.Runtime.InteropServices.Guid("DA77B198-31E3-312B-83EB-A0CFD52B0085")] public enum
   /// WdUnderline ﾉ Expand table
   /// </summary>
-  DottedHeavy = unchecked((int)20),
+  DottedHeavy = 20,
   /// <summary>
   /// Heavy dashes.
   /// </summary>
-  DashHeavy = unchecked((int)23),
+  DashHeavy = 23,
   /// <summary>
   /// Alternating heavy dots and heavy dashes. wdUnderlineDotDotDashHeavy26 An alternating heavy dot-dot-dash
   /// pattern.
   /// </summary>
-  DotDashHeavy = unchecked((int)25),
+  DotDashHeavy = 25,
   /// <summary>
   /// Specifies the type of underline to apply.
   /// </summary>
-  DotDotDashHeavy = unchecked((int)26),
+  DotDotDashHeavy = 26,
   /// <summary>
   /// A heavy wavy line.
   /// </summary>
-  WavyHeavy = unchecked((int)27),
+  WavyHeavy = 27,
   /// <summary>
   /// Long dashes.
   /// </summary>
-  DashLong = unchecked((int)39),
+  DashLong = 39,
   /// <summary>
   /// A double wavy line.
   /// </summary>
-  WavyDouble = unchecked((int)43),
+  WavyDouble = 43,
   /// <summary>
   /// Long heavy dashes.
   /// </summary>
-  DashLongHeavy = unchecked((int)55)
+  DashLongHeavy = 55
 }

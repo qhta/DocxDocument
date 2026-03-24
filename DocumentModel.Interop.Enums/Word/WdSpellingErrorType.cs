@@ -8,13 +8,13 @@ public enum WdSpellingErrorType
   /// <summary>
   /// Spelling is correct.
   /// </summary>
-  Correct = unchecked((int)0),
+  Correct = 0,
   /// <summary>
   /// The word is not in the specified dictionary.
   /// </summary>
-  NotInDictionary = unchecked((int)1),
+  NotInDictionary = 1,
   /// <summary>
   /// Capitalization error.
   /// </summary>
-  Capitalization = unchecked((int)2)
+  Capitalization = 2
 }

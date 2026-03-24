@@ -8,9 +8,9 @@ public enum WdWindowType
   /// <summary>
   /// A document window.
   /// </summary>
-  Document = unchecked((int)0),
+  Document = 0,
   /// <summary>
   /// A template window.
   /// </summary>
-  Template = unchecked((int)1)
+  Template = 1
 }
