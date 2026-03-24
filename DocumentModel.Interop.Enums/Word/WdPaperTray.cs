@@ -53,19 +53,19 @@ public enum WdPaperTray
   /// </summary>
   SmallFormatBin = 9,
   /// <summary>
-  /// Specifies a printer paper tray.
+  /// Large-format bin.
   /// </summary>
   LargeFormatBin = 10,
   /// <summary>
-  /// Specifies a printer paper tray.
+  /// Large-capacity bin.
   /// </summary>
   LargeCapacityBin = 11,
   /// <summary>
-  /// Specifies a printer paper tray.
+  /// Paper cassette.
   /// </summary>
   PaperCassette = 14,
   /// <summary>
-  /// Specifies a printer paper tray.
+  /// Form source.
   /// </summary>
   FormSource = 15
 }

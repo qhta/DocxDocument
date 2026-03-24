@@ -41,43 +41,43 @@ public enum WdRecoveryType
   /// </summary>
   TableOriginalFormatting = 12,
   /// <summary>
-  /// Specifies the formatting to use when pasting the selected table cells.
+  /// Pastes an Excel chart as a picture.
   /// </summary>
   ChartPicture = 13,
   /// <summary>
-  /// Specifies the formatting to use when pasting the selected table cells.
+  /// Pastes a Microsoft Excel chart as an embedded OLE object.
   /// </summary>
   Chart = 14,
   /// <summary>
-  /// Specifies the formatting to use when pasting the selected table cells.
+  /// Pastes an Excel chart and links it to the original Excel spreadsheet.
   /// </summary>
   ChartLinked = 15,
   /// <summary>
-  /// Specifies the formatting to use when pasting the selected table cells.
+  /// Preserves original formatting of the pasted material.
   /// </summary>
   FormatOriginalFormatting = 16,
   /// <summary>
-  /// Specifies the formatting to use when pasting the selected table cells.
+  /// Uses the styles that are in use in the destination document.
   /// </summary>
   UseDestinationStylesRecovery = 19,
   /// <summary>
-  /// Specifies the formatting to use when pasting the selected table cells.
+  /// Matches the formatting of the pasted text to the formatting of surrounding text.
   /// </summary>
   FormatSurroundingFormattingWithEmphasis = 20,
   /// <summary>
-  /// Specifies the formatting to use when pasting the selected table cells.
+  /// Pastes as plain, unformatted text.
   /// </summary>
   FormatPlainText = 22,
   /// <summary>
-  /// Specifies the formatting to use when pasting the selected table cells.
+  /// Pastes table cells and overwrites existing table cells.
   /// </summary>
   TableOverwriteCells = 23,
   /// <summary>
-  /// Specifies the formatting to use when pasting the selected table cells.
+  /// Merges a pasted list with neighboring lists.
   /// </summary>
   ListCombineWithExistingList = 24,
   /// <summary>
-  /// Specifies the formatting to use when pasting the selected table cells.
+  /// Not supported.
   /// </summary>
   ListDontMerge = 25
 }

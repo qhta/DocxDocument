@@ -49,7 +49,7 @@ public enum WdDeletedTextMark
   /// </summary>
   ColorOnly = 9,
   /// <summary>
-  /// Specifies the format of text that is deleted while change tracking is enabled.
+  /// Deleted text is marked up by using double- strikethrough characters.
   /// </summary>
   DoubleStrikeThrough = 10
 }

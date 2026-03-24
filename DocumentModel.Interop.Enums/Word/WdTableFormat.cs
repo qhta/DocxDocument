@@ -53,87 +53,87 @@ public enum WdTableFormat
   /// </summary>
   Colorful3 = 10,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Columns format number 1.
   /// </summary>
   Columns1 = 11,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Columns format number 2.
   /// </summary>
   Columns2 = 12,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Columns format number 3.
   /// </summary>
   Columns3 = 13,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Columns format number 4.
   /// </summary>
   Columns4 = 14,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Columns format number 5.
   /// </summary>
   Columns5 = 15,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Grid format number 1.
   /// </summary>
   Grid1 = 16,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Grid format number 2.
   /// </summary>
   Grid2 = 17,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Grid format number 3.
   /// </summary>
   Grid3 = 18,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Grid format number 4.
   /// </summary>
   Grid4 = 19,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Grid format number 5.
   /// </summary>
   Grid5 = 20,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Grid format number 6.
   /// </summary>
   Grid6 = 21,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Grid format number 7.
   /// </summary>
   Grid7 = 22,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Grid format number 8.
   /// </summary>
   Grid8 = 23,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// List format number 1.
   /// </summary>
   List1 = 24,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// List format number 2.
   /// </summary>
   List2 = 25,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// List format number 3.
   /// </summary>
   List3 = 26,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// List format number 4.
   /// </summary>
   List4 = 27,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// List format number 5.
   /// </summary>
   List5 = 28,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// List format number 6.
   /// </summary>
   List6 = 29,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// List format number 7.
   /// </summary>
   List7 = 30,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// List format number 8.
   /// </summary>
   List8 = 31,
   /// <summary>
@@ -149,35 +149,35 @@ public enum WdTableFormat
   /// </summary>
   ThreeDEffects3 = 34,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Contemporary format.
   /// </summary>
   Contemporary = 35,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Elegant format.
   /// </summary>
   Elegant = 36,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Professional format.
   /// </summary>
   Professional = 37,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Subtle format number 1.
   /// </summary>
   Subtle1 = 38,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Subtle format number 2.
   /// </summary>
   Subtle2 = 39,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Web format number 1.
   /// </summary>
   Web1 = 40,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Web format number 2.
   /// </summary>
   Web2 = 41,
   /// <summary>
-  /// Specifies the predefined format to apply to a table.
+  /// Web format number 3.
   /// </summary>
   Web3 = 42
 }

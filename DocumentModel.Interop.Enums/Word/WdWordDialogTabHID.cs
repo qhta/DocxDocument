@@ -9,11 +9,11 @@ namespace DocumentModel.Interop.Word;
 public enum WdWordDialogTabHID
 {
   /// <summary>
-  /// Reserved for internal use.
+  /// No description is available.
   /// </summary>
   ize = 150001,
   /// <summary>
-  /// Reserved for internal use.
+  /// No description is available.
   /// </summary>
   ource = 150002
 }

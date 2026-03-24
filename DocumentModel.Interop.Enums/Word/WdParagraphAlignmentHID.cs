@@ -9,8 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdParagraphAlignmentHID
 {
   /// <summary>
-  /// Applies to Product Versions Word primary interop assembly Latest public enum WdParagraphAlignmentHID ﾉ Expand
-  /// table
+  /// No description is available.
   /// </summary>
   emptyenum = 0
 }

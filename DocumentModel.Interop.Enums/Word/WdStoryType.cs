@@ -53,27 +53,27 @@ public enum WdStoryType
   /// </summary>
   FirstPageFooterStory = 11,
   /// <summary>
-  /// Specifies the story type of a selection or item.
+  /// Footnote separator story.
   /// </summary>
   FootnoteSeparatorStory = 12,
   /// <summary>
-  /// Specifies the story type of a selection or item.
+  /// Footnote continuation separator story.
   /// </summary>
   FootnoteContinuationSeparatorStory = 13,
   /// <summary>
-  /// Specifies the story type of a selection or item.
+  /// Footnote continuation notice story.
   /// </summary>
   FootnoteContinuationNoticeStory = 14,
   /// <summary>
-  /// Specifies the story type of a selection or item.
+  /// Endnote separator story.
   /// </summary>
   EndnoteSeparatorStory = 15,
   /// <summary>
-  /// Specifies the story type of a selection or item.
+  /// Endnote continuation separator story.
   /// </summary>
   EndnoteContinuationSeparatorStory = 16,
   /// <summary>
-  /// Specifies the story type of a selection or item.
+  /// Endnote continuation notice story.
   /// </summary>
   EndnoteContinuationNoticeStory = 17
 }

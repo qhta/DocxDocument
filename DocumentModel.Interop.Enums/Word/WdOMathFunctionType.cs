@@ -53,47 +53,47 @@ public enum WdOMathFunctionType
   /// </summary>
   LimUpp = 11,
   /// <summary>
-  /// Specifies the type of equation function.
+  /// Equation matrix.
   /// </summary>
   Mat = 12,
   /// <summary>
-  /// Specifies the type of equation function.
+  /// Equation N-ary operator.
   /// </summary>
   Nary = 13,
   /// <summary>
-  /// Specifies the type of equation function.
+  /// Equation phantom.
   /// </summary>
   Phantom = 14,
   /// <summary>
-  /// Specifies the type of equation function.
+  /// Scr pre.
   /// </summary>
   ScrPre = 15,
   /// <summary>
-  /// Specifies the type of equation function.
+  /// Equation base expression.
   /// </summary>
   Rad = 16,
   /// <summary>
-  /// Specifies the type of equation function.
+  /// Scr. sub.
   /// </summary>
   ScrSub = 17,
   /// <summary>
-  /// Specifies the type of equation function.
+  /// Scr. sub sup.
   /// </summary>
   ScrSubSup = 18,
   /// <summary>
-  /// Specifies the type of equation function.
+  /// Scr sup.
   /// </summary>
   ScrSup = 19,
   /// <summary>
-  /// Specifies the type of equation function.
+  /// Equation text.
   /// </summary>
   Text = 20,
   /// <summary>
-  /// Specifies the type of equation function.
+  /// Equation normal text.
   /// </summary>
   NormalText = 21,
   /// <summary>
-  /// Specifies the type of equation function.
+  /// Equation literal text.
   /// </summary>
   LiteralText = 22
 }

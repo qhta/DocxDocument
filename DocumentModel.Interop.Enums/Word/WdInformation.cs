@@ -33,147 +33,168 @@ public enum WdInformation
   /// </summary>
    HorizontalPositionRelativeToPage = 5,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns the vertical position of the selection or range; this is the distance from the top edge of the
+  /// selection to the top edge of the page measured in points (1 point = 20 twips, 72 points = 1 inch). If the
+  /// selection isn't visible in the document window, returns – 1.
   /// </summary>
    VerticalPositionRelativeToPage = 6,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns the horizontal position of the specified selection or range relative to the left edge of the nearest
+  /// text boundary enclosing it, in points (1 point = 20 twips, 72 points = 1 inch). If the selection or range
+  /// isn't within the screen area, returns - 1.
   /// </summary>
    HorizontalPositionRelativeToTextBoundary = 7,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns the vertical position of the selection or range relative to the top edge of the nearest text boundary
+  /// enclosing it, in points (1 point = 20 twips, 72 points = 1 inch). This is useful for determining the position
+  /// of the insertion point within a frame or table cell. If the selection isn't visible, returns – 1.
   /// </summary>
    VerticalPositionRelativeToTextBoundary = 8,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns the character position of the first character in the specified selection or range. If the selection or
+  /// range is collapsed, the character number immediately to the right of the range or selection is returned (this
+  /// is the same as the character column number displayed in the status bar after "Col").
   /// </summary>
    FirstCharacterColumnNumber = 9,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns the character position of the first character in the specified selection or range. If the selection or
+  /// range is collapsed, the character number immediately to the right of the range or selection is returned (this
+  /// is the same as the character line number displayed in the status bar after "Ln").
   /// </summary>
    FirstCharacterLineNumber = 10,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns True if the selection or range is an entire frame or text box.
   /// </summary>
    FrameIsSelected = 11,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns True if the selection is in a table.
   /// </summary>
    WithInTable = 12,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns the table row number that contains the beginning of the selection or range.
   /// </summary>
    StartOfRangeRowNumber = 13,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns the table row number that contains the end of the specified selection or range.
   /// </summary>
    EndOfRangeRowNumber = 14,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns the greatest number of table rows within the table in the specified selection or range.
   /// </summary>
    MaximumNumberOfRows = 15,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns the table column number that contains the beginning of the selection or range.
   /// </summary>
    StartOfRangeColumnNumber = 16,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns the table column number that contains the end of the specified selection or range.
   /// </summary>
   EndOfRangeColumnNumber = 17,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns the greatest number of table columns within any row in the selection or range.
   /// </summary>
    MaximumNumberOfColumns = 18,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns the current percentage of magnification as set by the Percentage property.
   /// </summary>
    ZoomPercentage = 19,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns a value that indicates the current selection mode, as shown in the following table.
   /// </summary>
    SelectionMode = 20,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns True if Caps Lock is in effect.
   /// </summary>
    CapsLock = 21,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns True if Num Lock is in effect.
   /// </summary>
    NumLock = 22,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns True if Overtype mode is in effect. The Overtype property can be used to change the state of the
+  /// Overtype mode.
   /// </summary>
    OverType = 23,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns True if change tracking is in effect.
   /// </summary>
    RevisionMarking = 24,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns True if the specified selection or range is in the footnote or endnote pane in normal view or in a
+  /// footnote or endnote area in print layout view. For more information, see the descriptions of wdInFootnote and
+  /// wdInEndnote in the preceding paragraphs.
   /// </summary>
    InFootnoteEndnotePane = 25,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns True if the specified selection or range is in a comment pane.
   /// </summary>
    InCommentPane = 26,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns True if the selection or range is in the header or footer pane or in a header or footer in print
+  /// layout view.
   /// </summary>
    InHeaderFooter = 28,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns True if the specified selection or range is at the end-of-row mark in a table.
   /// </summary>
    AtEndOfRowMarker = 31,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns a value that indicates where the selection is in relation to a footnote, endnote, or comment
+  /// reference, as shown in the following table.
   /// </summary>
    ReferenceOfType = 32,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns a value that indicates the type of header or footer that contains the specified selection or range, as
+  /// shown in the following table.
   /// </summary>
    HeaderFooterType = 33,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns True if the selection or range is in a master document (that is, a document that contains at least one
+  /// subdocument).
   /// </summary>
    InMasterDocument = 34,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns True if the specified selection or range is in a footnote area in print layout view or in the footnote
+  /// pane in normal view.
   /// </summary>
    InFootnote = 35,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns True if the specified selection or range is in an endnote area in print layout view or in the endnote
+  /// pane in normal view.
   /// </summary>
    InEndnote = 36,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns True if the selection or range is in the header or footer pane or in a header or footer in print
+  /// layout view.
   /// </summary>
    InWordMail = 37,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// For information about this constant, consult the language reference Help included with Microsoft Office
+  /// Macintosh Edition.
   /// </summary>
    InClipboard = 38,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns True if the specified selection or range is in a cover page.
   /// </summary>
    InCoverPage = 41,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns True if the specified selection or range is in a bibliography.
   /// </summary>
    InBibliography = 42,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns True if the specified selection or range is in a citation.
   /// </summary>
    InCitation = 43,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns True if the specified selection or range is in a field code.
   /// </summary>
    InFieldCode = 44,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns True if the specified selection or range is in a field result.
   /// </summary>
    InFieldResult = 45,
   /// <summary>
-  /// Specifies the type of information returned about a specified selection or range.
+  /// Returns True if the specified selection or range is in a content control.
   /// </summary>
    InContentControl = 46
 }

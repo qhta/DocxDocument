@@ -53,436 +53,435 @@ public enum WdBuiltinStyle
   /// </summary>
   TableMediumList1Accent1 = -178,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Medium Shading 2 Accent 1.
   /// </summary>
   TableMediumShading2Accent1 = -177,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Medium List 1 Accent 1.
   /// </summary>
   TableMediumShading1Accent1 = -176,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Light Grid Accent 1.
   /// </summary>
   TableLightGridAccent1 = -175,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Light List Accent 1.
   /// </summary>
   TableLightListAccent1 = -174,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Light Shading Accent 1.
   /// </summary>
   TableLightShadingAccent1 = -173,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Colorful Grid.
   /// </summary>
   TableColorfulGrid = -172,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Colorful List.
   /// </summary>
   TableColorfulList = -171,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Colorful Shading.
   /// </summary>
   TableColorfulShading = -170,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Dark List.
   /// </summary>
   TableDarkList = -169,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Medium Grid 3.
   /// </summary>
   TableMediumGrid3 = -168,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Medium Grid 2.
   /// </summary>
   TableMediumGrid2 = -167,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Medium Grid 1.
   /// </summary>
   TableMediumGrid1 = -166,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Medium List 2.
   /// </summary>
   TableMediumList2 = -165,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Medium List 1.
   /// </summary>
   TableMediumList1 = -164,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Medium Shading 2.
   /// </summary>
   TableMediumShading2 = -163,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Medium Shading 1.
   /// </summary>
   TableMediumShading1 = -162,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Light Grid.
   /// </summary>
   TableLightGrid = -161,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Light List.
   /// </summary>
   TableLightList = -160,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Light Shading.
   /// </summary>
   TableLightShading = -159,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Normal (applied to an object).
   /// </summary>
   NormalObject = -158,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Normal (applied within a table).
   /// </summary>
   NormalTable = -106,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// HTML Variable.
   /// </summary>
   HtmlVar = -105,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// HTML Typewriter.
   /// </summary>
   HtmlTt = -104,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// HTML Sample.
   /// </summary>
   HtmlSamp = -103,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// HTML Preformatted.
   /// </summary>
   HtmlPre = -102,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// HTML Keyboard.
   /// </summary>
   HtmlKbd = -101,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// HTML Definition.
   /// </summary>
   HtmlDfn = -100,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// HTML Code.
   /// </summary>
   HtmlCode = -99,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// HTML City.
   /// </summary>
   HtmlCite = -98,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// HTML Address.
   /// </summary>
   HtmlAddress = -97,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// HTML Acronym.
   /// </summary>
   HtmlAcronym = -96,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Normal (Web).
   /// </summary>
   HtmlNormal = -95,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Plain Text.
   /// </summary>
   PlainText = -91,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Document Map.
   /// </summary>
   NavPane = -90,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Emphasis.
   /// </summary>
   Emphasis = -89,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Strong.
   /// </summary>
   Strong = -88,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Followed Hyperlink.
   /// </summary>
   HyperlinkFollowed = -87,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Hyperlink.
   /// </summary>
   Hyperlink = -86,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Block Quotation.
   /// </summary>
   BlockQuotation = -85,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Body Text Indent 3.
   /// </summary>
   BodyTextIndent3 = -84,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Body Text Indent 2.
   /// </summary>
   BodyTextIndent2 = -83,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Body Text 3.
   /// </summary>
   BodyText3 = -82,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Body Text 2.
   /// </summary>
   BodyText2 = -81,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Note Heading.
   /// </summary>
   NoteHeading = -80,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Body Text First Indent 2.
   /// </summary>
   BodyTextFirstIndent2 = -79,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Body Text First Indent.
   /// </summary>
   BodyTextFirstIndent = -78,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Date.
   /// </summary>
   Date = -77,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Salutation.
   /// </summary>
   Salutation = -76,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Subtitle.
   /// </summary>
   Subtitle = -75,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Message Header.
   /// </summary>
   MessageHeader = -74,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// List Continue 5.
   /// </summary>
   ListContinue5 = -73,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// List Continue 4.
   /// </summary>
   ListContinue4 = -72,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// List Continue 3.
   /// </summary>
   ListContinue3 = -71,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// List Continue 2.
   /// </summary>
   ListContinue2 = -70,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// List Continue.
   /// </summary>
   ListContinue = -69,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Body Text Indent.
   /// </summary>
   BodyTextIndent = -68,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Body Text.
   /// </summary>
   BodyText = -67,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Default Paragraph Font.
   /// </summary>
   DefaultParagraphFont = -66,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Signature.
   /// </summary>
   Signature = -65,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Closing.
   /// </summary>
   Closing = -64,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Title.
   /// </summary>
   Title = -63,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// List Number 5.
   /// </summary>
   ListNumber5 = -62,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// List Number 4.
   /// </summary>
   ListNumber4 = -61,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// List Number 3.
   /// </summary>
   ListNumber3 = -60,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// List Number 2.
   /// </summary>
   ListNumber2 = -59,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// List Bullet 5.
   /// </summary>
   ListBullet5 = -58,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// List Bullet 4.
   /// </summary>
   ListBullet4 = -57,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// List Bullet 3.
   /// </summary>
   ListBullet3 = -56,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// List Bullet 2.
   /// </summary>
   ListBullet2 = -55,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// List 5.
   /// </summary>
   List5 = -54,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// List 4.
   /// </summary>
   List4 = -53,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// List 3.
   /// </summary>
   List3 = -52,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// List 2.
   /// </summary>
   List2 = -51,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// List Number.
   /// </summary>
   ListNumber = -50,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// List Bullet.
   /// </summary>
   ListBullet = -49,
   /// <summary>
-  /// Accent 1. [System.Runtime.InteropServices.Guid("200A1EF2-18FB-3BAB-92AE-E3A78B2E1108")] public enum
-  /// WdBuiltinStyle ﾉ Expand table wdStyleTableMediumShading2Accent1 -177 Medium
+  /// List.
   /// </summary>
   List = -48,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// TOA Heading.
   /// </summary>
   TOAHeading = -47,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Macro Text.
   /// </summary>
   MacroText = -46,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Table of Authorities.
   /// </summary>
   TableOfAuthorities = -45,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Endnote Text.
   /// </summary>
   EndnoteText = -44,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Endnote Reference.
   /// </summary>
   EndnoteReference = -43,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Page Number.
   /// </summary>
   PageNumber = -42,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Line Number.
   /// </summary>
   LineNumber = -41,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Comment Reference.
   /// </summary>
   CommentReference = -40,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Footnote Reference.
   /// </summary>
   FootnoteReference = -39,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Envelope Return.
   /// </summary>
   EnvelopeReturn = -38,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Envelope Address.
   /// </summary>
   EnvelopeAddress = -37,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Table of Figures.
   /// </summary>
   TableOfFigures = -36,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Caption.
   /// </summary>
   Caption = -35,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Index Heading
   /// </summary>
   IndexHeading = -34,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Footer.
   /// </summary>
   Footer = -33,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Header.
   /// </summary>
   Header = -32,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Comment Text.
   /// </summary>
   CommentText = -31,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Footnote Text.
   /// </summary>
   FootnoteText = -30,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Normal Indent.
   /// </summary>
   NormalIndent = -29,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// TOC 9.
   /// </summary>
   TOC9 = -28,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// TOC 8.
   /// </summary>
   TOC8 = -27,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// TOC 7.
   /// </summary>
   TOC7 = -26,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// TOC 6.
   /// </summary>
   TOC6 = -25,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// TOC 5.
   /// </summary>
   TOC5 = -24,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// TOC 4.
   /// </summary>
   TOC4 = -23,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// TOC 3.
   /// </summary>
   TOC3 = -22,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// TOC 2.
   /// </summary>
   TOC2 = -21,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// TOC 1.
   /// </summary>
   TOC1 = -20,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Index 9.
   /// </summary>
   Index9 = -19,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Index8.
   /// </summary>
   Index8 = -18,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Index 7.
   /// </summary>
   Index7 = -17,
   /// <summary>
-  /// Specifies a built-in Microsoft Word style.
+  /// Index 6.
   /// </summary>
   Index6 = -16,
   /// <summary>

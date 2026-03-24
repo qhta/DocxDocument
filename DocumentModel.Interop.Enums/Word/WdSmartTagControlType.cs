@@ -53,23 +53,23 @@ public enum WdSmartTagControlType
   /// </summary>
   Listbox = 11,
   /// <summary>
-  /// Specifies the type of control associated with a SmartTagAction object.
+  /// Combo box.
   /// </summary>
   Combo = 12,
   /// <summary>
-  /// Specifies the type of control associated with a SmartTagAction object.
+  /// ActiveX control.
   /// </summary>
   ActiveX = 13,
   /// <summary>
-  /// Specifies the type of control associated with a SmartTagAction object.
+  /// Document fragment.
   /// </summary>
   DocumentFragment = 14,
   /// <summary>
-  /// Specifies the type of control associated with a SmartTagAction object.
+  /// Document fragment URL.
   /// </summary>
   DocumentFragmentURL = 15,
   /// <summary>
-  /// Specifies the type of control associated with a SmartTagAction object.
+  /// Radio group.
   /// </summary>
   RadioGroup = 16
 }

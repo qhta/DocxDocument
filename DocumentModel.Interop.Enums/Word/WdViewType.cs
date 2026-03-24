@@ -37,7 +37,7 @@ public enum WdViewType
   /// </summary>
   ReadingView = 7,
   /// <summary>
-  /// Specifies the view type.
+  /// No description is available.
   /// </summary>
   ConflictView = 8
 }
