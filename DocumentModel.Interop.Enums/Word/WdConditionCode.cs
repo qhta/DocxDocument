@@ -33,11 +33,11 @@ public enum WdConditionCode
   /// </summary>
   LastColumn = 5,
   /// <summary>
-  /// Specifies the area of a table to which to apply special style formatting.
+  /// Applies formatting to odd-numbered columns.
   /// </summary>
   OddColumnBanding = 6,
   /// <summary>
-  /// Specifies the area of a table to which to apply special style formatting.
+  /// Applies formatting to even-numbered columns.
   /// </summary>
   EvenColumnBanding = 7,
   /// <summary>

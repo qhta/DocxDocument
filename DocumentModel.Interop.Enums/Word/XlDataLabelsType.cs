@@ -25,7 +25,7 @@ public enum XlDataLabelsType
   /// </summary>
   LabelAndPercent = 5,
   /// <summary>
-  /// Specifies the type of data label to apply.
+  /// Show the size of the bubble in reference to the absolute value.
   /// </summary>
   BubbleSizes = 6,
   /// <summary>

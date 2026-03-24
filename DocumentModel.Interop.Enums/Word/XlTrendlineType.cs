@@ -9,7 +9,8 @@ namespace DocumentModel.Interop.Word;
 public enum XlTrendlineType
 {
   /// <summary>
-  /// Specifies how the trendline that smoothes out fluctuations in the data is calculated.
+  /// Uses an equation to calculate the least squares fit through points, for example, y = ax^6 + bx^5 + cx^4 + dx^3
+  /// + ex^2 + fx + g.
   /// </summary>
   Polynomial = 3,
   /// <summary>
@@ -17,7 +18,7 @@ public enum XlTrendlineType
   /// </summary>
   Power = 4,
   /// <summary>
-  /// Specifies how the trendline that smoothes out fluctuations in the data is calculated.
+  /// Uses an equation to calculate the least squares fit through points, for example, y=ab^x .
   /// </summary>
   Exponential = 5,
   /// <summary>
@@ -26,7 +27,7 @@ public enum XlTrendlineType
   /// </summary>
   MovingAvg = 6,
   /// <summary>
-  /// Specifies how the trendline that smoothes out fluctuations in the data is calculated.
+  /// Uses the equation y = c ln x + b to calculate the least squares fit through points.
   /// </summary>
   Logarithmic = -4133,
   /// <summary>

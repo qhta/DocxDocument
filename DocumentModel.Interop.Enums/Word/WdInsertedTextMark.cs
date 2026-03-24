@@ -25,7 +25,7 @@ public enum WdInsertedTextMark
   /// </summary>
   Underline = 3,
   /// <summary>
-  /// Specifies the format of text that is inserted while change tracking is enabled.
+  /// Inserted text is marked up by using double-underline characters.
   /// </summary>
   DoubleUnderline = 4,
   /// <summary>
@@ -37,7 +37,7 @@ public enum WdInsertedTextMark
   /// </summary>
   StrikeThrough = 6,
   /// <summary>
-  /// Specifies the format of text that is inserted while change tracking is enabled.
+  /// Inserted text is marked up by using double- strikethrough characters.
   /// </summary>
   DoubleStrikeThrough = 7
 }

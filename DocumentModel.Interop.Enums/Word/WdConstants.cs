@@ -9,7 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdConstants
 {
   /// <summary>
-  /// This enumeration groups together constants used with various Microsoft Word methods.
+  /// Represents the Auto value for the specified setting.
   /// </summary>
   AutoPosition = 0,
   /// <summary>

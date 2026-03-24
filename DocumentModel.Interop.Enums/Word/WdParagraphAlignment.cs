@@ -25,23 +25,23 @@ public enum WdParagraphAlignment
   /// </summary>
   Justify = 3,
   /// <summary>
-  /// Specifies the alignment of a paragraph.
+  /// Paragraph characters are distributed to fill the entire width of the paragraph.
   /// </summary>
   Distribute = 4,
   /// <summary>
-  /// Specifies the alignment of a paragraph.
+  /// Justified with a medium character compression ratio.
   /// </summary>
   JustifyMed = 5,
   /// <summary>
-  /// Specifies the alignment of a paragraph.
+  /// Justified with a high character compression ratio.
   /// </summary>
   JustifyHi = 7,
   /// <summary>
-  /// Specifies the alignment of a paragraph.
+  /// Justified with a low character compression ratio.
   /// </summary>
   JustifyLow = 8,
   /// <summary>
-  /// Specifies the alignment of a paragraph.
+  /// Justified according to Thai formatting layout.
   /// </summary>
   ThaiJustify = 9
 }

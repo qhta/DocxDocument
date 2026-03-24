@@ -13,7 +13,7 @@ public enum WdSummaryMode
   /// </summary>
   Highlight = 0,
   /// <summary>
-  /// Specifies the way the summary is displayed.
+  /// Hides everything except the specified summary and displays the AutoSummarize toolbar.
   /// </summary>
   HideAllButSummary = 1,
   /// <summary>

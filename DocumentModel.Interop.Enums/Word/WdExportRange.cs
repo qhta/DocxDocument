@@ -9,7 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdExportRange
 {
   /// <summary>
-  /// Specifies how much of the document to export.
+  /// Exports the entire document.
   /// </summary>
   AllDocument = 0,
   /// <summary>

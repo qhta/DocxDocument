@@ -9,15 +9,15 @@ namespace DocumentModel.Interop.Word;
 public enum WdPreferredWidthType
 {
   /// <summary>
-  /// Specifies the preferred unit of measure to use when measuring the width of an item.
+  /// Automatically select the unit of measure to use based on the current selection.
   /// </summary>
   Auto = 1,
   /// <summary>
-  /// Specifies the preferred unit of measure to use when measuring the width of an item.
+  /// Measure the current item width using a specified percentage.
   /// </summary>
   Percent = 2,
   /// <summary>
-  /// Specifies the preferred unit of measure to use when measuring the width of an item.
+  /// Measure the current item width using a specified number of points.
   /// </summary>
   Points = 3
 }

@@ -10,8 +10,8 @@ namespace DocumentModel.Interop.Word;
 public enum WdScrollbarType
 {
   /// <summary>
-  /// Specifies when scroll bars are available for the specified frame when viewing its frames page in a Web
-  /// browser.
+  /// Scroll bars are available for the specified frame only if the contents are too large to fit in the allotted
+  /// space.
   /// </summary>
   Auto = 0,
   /// <summary>

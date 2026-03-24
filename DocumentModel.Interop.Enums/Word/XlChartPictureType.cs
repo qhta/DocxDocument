@@ -17,7 +17,7 @@ public enum XlChartPictureType
   /// </summary>
   ack = 2,
   /// <summary>
-  /// Specifies how pictures are displayed on a column, bar picture chart, or legend key.
+  /// Picture is sized to a specified number of units and repeated the length of the bar.
   /// </summary>
   ackScale = 3
 }

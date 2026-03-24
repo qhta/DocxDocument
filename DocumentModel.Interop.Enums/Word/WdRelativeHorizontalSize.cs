@@ -18,23 +18,21 @@ public enum WdRelativeHorizontalSize
   /// </summary>
   Page = 1,
   /// <summary>
-  /// Specifies the relative width of a shape using the value specified in the WidthRelative property for a Shape or
-  /// ShapeRange object.
+  /// Width is relative to the size of the left margin.
   /// </summary>
   LeftMarginArea = 2,
   /// <summary>
-  /// Specifies the relative width of a shape using the value specified in the WidthRelative property for a Shape or
-  /// ShapeRange object.
+  /// Width is relative to the width of the right margin.
   /// </summary>
   RightMarginArea = 3,
   /// <summary>
-  /// Specifies the relative width of a shape using the value specified in the WidthRelative property for a Shape or
-  /// ShapeRange object.
+  /// Width is relative to the size of the inside margin—to the size of the left margin for odd pages, and to the
+  /// size of the right margin for even pages.
   /// </summary>
   InnerMarginArea = 4,
   /// <summary>
-  /// Specifies the relative width of a shape using the value specified in the WidthRelative property for a Shape or
-  /// ShapeRange object.
+  /// Width is relative to the size of the outside margin— to the size of the right margin for odd pages, and to the
+  /// size of the left margin for even pages.
   /// </summary>
   OuterMarginArea = 5
 }

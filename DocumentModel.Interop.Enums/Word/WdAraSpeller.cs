@@ -14,7 +14,7 @@ public enum WdAraSpeller
   /// </summary>
   None = 0,
   /// <summary>
-  /// Specifies spelling rules for the Arabic spelling checker.
+  /// The spelling checker uses spelling rules regarding Arabic words beginning with an alef hamza.
   /// </summary>
   InitialAlef = 1,
   /// <summary>

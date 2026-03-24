@@ -9,7 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdBorderTypeHID
 {
   /// <summary>
-  /// Applies to Product Versions Word primary interop assembly Latest public enum WdBorderTypeHID ﾉ Expand table
+  /// No description is available.
   /// </summary>
   emptyenum = 0
 }

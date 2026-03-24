@@ -9,11 +9,11 @@ namespace DocumentModel.Interop.Word;
 public enum WdMovementType
 {
   /// <summary>
-  /// Specifies the way the selection is moved.
+  /// The selection is collapsed to an insertion point and moved to the end of the specified unit. Default.
   /// </summary>
   Move = 0,
   /// <summary>
-  /// Specifies the way the selection is moved.
+  /// The end of the selection is extended to the end of the specified unit.
   /// </summary>
   Extend = 1
 }

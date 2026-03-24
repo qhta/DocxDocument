@@ -13,7 +13,7 @@ public enum WdPasteOptions
   /// </summary>
   KeepSourceFormatting = 0,
   /// <summary>
-  /// Indicates how to paste copied text.
+  /// Matches formatting to the destination document.
   /// </summary>
   MatchDestinationFormatting = 1,
   /// <summary>

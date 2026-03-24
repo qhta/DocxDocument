@@ -14,8 +14,7 @@ public enum WdFindWrap
   /// </summary>
   Stop = 0,
   /// <summary>
-  /// Specifies wrap behavior if a selection or range is specified for a find operation and the search text isn't
-  /// found in the selection or range.
+  /// The find operation continues if the beginning or end of the search range is reached.
   /// </summary>
   Continue = 1,
   /// <summary>

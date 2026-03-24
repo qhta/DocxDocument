@@ -13,15 +13,15 @@ public enum WdMailMergeDataSource
   /// </summary>
   MergeInfoFromWord = 0,
   /// <summary>
-  /// Specifies the data source for a mail merge operation.
+  /// From Microsoft Access using Dynamic Data Exchange (DDE).
   /// </summary>
   MergeInfoFromAccessDDE = 1,
   /// <summary>
-  /// Specifies the data source for a mail merge operation.
+  /// From Microsoft Excel using DDE.
   /// </summary>
   MergeInfoFromExcelDDE = 2,
   /// <summary>
-  /// Specifies the data source for a mail merge operation.
+  /// From MSQuery using DDE.
   /// </summary>
   MergeInfoFromMSQueryDDE = 3,
   /// <summary>

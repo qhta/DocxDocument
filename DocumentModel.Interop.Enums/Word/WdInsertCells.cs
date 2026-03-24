@@ -9,19 +9,19 @@ namespace DocumentModel.Interop.Word;
 public enum WdInsertCells
 {
   /// <summary>
-  /// Specifies where and what type of cells to add to an existing table.
+  /// Insert new cells to the left of the selected cells.
   /// </summary>
   ShiftRight = 0,
   /// <summary>
-  /// Specifies where and what type of cells to add to an existing table.
+  /// Inserts new cells above the selected cells.
   /// </summary>
   ShiftDown = 1,
   /// <summary>
-  /// Specifies where and what type of cells to add to an existing table.
+  /// Inserts an entire row above the row that contains the selection.
   /// </summary>
   EntireRow = 2,
   /// <summary>
-  /// Specifies where and what type of cells to add to an existing table.
+  /// Inserts an entire column to the left of the column that contains the selection.
   /// </summary>
   EntireColumn = 3
 }
