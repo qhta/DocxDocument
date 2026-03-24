@@ -53,47 +53,47 @@ public enum WdRevisionType
   /// </summary>
   RevisionParagraphProperty = 10,
   /// <summary>
-  /// Specifies the type of a change that is marked with a revision mark.
+  /// Table property changed.
   /// </summary>
   RevisionTableProperty = 11,
   /// <summary>
-  /// Specifies the type of a change that is marked with a revision mark.
+  /// Section property changed.
   /// </summary>
   RevisionSectionProperty = 12,
   /// <summary>
-  /// Specifies the type of a change that is marked with a revision mark.
+  /// Style definition changed.
   /// </summary>
   RevisionStyleDefinition = 13,
   /// <summary>
-  /// Specifies the type of a change that is marked with a revision mark.
+  /// Content moved from.
   /// </summary>
   RevisionMovedFrom = 14,
   /// <summary>
-  /// Specifies the type of a change that is marked with a revision mark.
+  /// Content moved to.
   /// </summary>
   RevisionMovedTo = 15,
   /// <summary>
-  /// Specifies the type of a change that is marked with a revision mark.
+  /// Table cell inserted.
   /// </summary>
   RevisionCellInsertion = 16,
   /// <summary>
-  /// Specifies the type of a change that is marked with a revision mark.
+  /// Table cell deleted.
   /// </summary>
   RevisionCellDeletion = 17,
   /// <summary>
-  /// Specifies the type of a change that is marked with a revision mark.
+  /// Table cells merged.
   /// </summary>
   RevisionCellMerge = 18,
   /// <summary>
-  /// Specifies the type of a change that is marked with a revision mark.
+  /// Reserved for internal use.
   /// </summary>
   RevisionCellSplit = 19,
   /// <summary>
-  /// Specifies the type of a change that is marked with a revision mark.
+  /// Reserved for internal use.
   /// </summary>
   RevisionConflictInsert = 20,
   /// <summary>
-  /// Specifies the type of a change that is marked with a revision mark.
+  /// Reserved for internal use.
   /// </summary>
   RevisionConflictDelete = 21
 }

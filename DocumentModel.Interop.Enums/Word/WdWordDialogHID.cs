@@ -9,7 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdWordDialogHID
 {
   /// <summary>
-  /// Applies to Product Versions Word primary interop assembly Latest public enum WdWordDialogHID ﾉ Expand table
+  /// No description is available.
   /// </summary>
   emptyenum = 0
 }

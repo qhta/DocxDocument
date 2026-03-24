@@ -49,27 +49,27 @@ public enum WdInlineShapeType
   /// </summary>
   ScriptAnchor = 10,
   /// <summary>
-  /// Specifiesa shape type for inlie shapes.
+  /// OWS anchor.
   /// </summary>
   OWSAnchor = 11,
   /// <summary>
-  /// Specifiesa shape type for inlie shapes.
+  /// Inline chart.
   /// </summary>
   Chart = 12,
   /// <summary>
-  /// Specifiesa shape type for inlie shapes.
+  /// Inline diagram.
   /// </summary>
   Diagram = 13,
   /// <summary>
-  /// Specifiesa shape type for inlie shapes.
+  /// Locked inline shape canvas.
   /// </summary>
   LockedCanvas = 14,
   /// <summary>
-  /// Specifiesa shape type for inlie shapes.
+  /// Smart art.
   /// </summary>
   SmartArt = 15,
   /// <summary>
-  /// Specifiesa shape type for inlie shapes.
+  /// A picture acting as a poster frame for a web video.
   /// </summary>
   WebVideo = 16
 }

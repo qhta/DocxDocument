@@ -9,15 +9,15 @@ namespace DocumentModel.Interop.Word;
 public enum WdLanguageID2000
 {
   /// <summary>
-  /// Reserved for internal use.
+  /// No description is available.
   /// </summary>
   ChineseHongKong = 3076,
   /// <summary>
-  /// Reserved for internal use.
+  /// No description is available.
   /// </summary>
   ChineseMacao = 5124,
   /// <summary>
-  /// Reserved for internal use.
+  /// No description is available.
   /// </summary>
   EnglishTrinidad = 11273
 }

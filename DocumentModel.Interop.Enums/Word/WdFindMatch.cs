@@ -53,43 +53,43 @@ public enum WdFindMatch
   /// </summary>
   EmDash = 8212,
   /// <summary>
-  /// This enumeration has been deprecated and should not be used.
+  /// Not supported.
   /// </summary>
   ManualLineBreak = 65551,
   /// <summary>
-  /// This enumeration has been deprecated and should not be used.
+  /// Not supported.
   /// </summary>
   ParagraphMark = 65551,
   /// <summary>
-  /// This enumeration has been deprecated and should not be used.
+  /// Not supported.
   /// </summary>
   FootnoteMark = 65554,
   /// <summary>
-  /// This enumeration has been deprecated and should not be used.
+  /// Not supported.
   /// </summary>
   EndnoteMark = 65555,
   /// <summary>
-  /// This enumeration has been deprecated and should not be used.
+  /// Not supported.
   /// </summary>
   ManualPageBreak = 65564,
   /// <summary>
-  /// This enumeration has been deprecated and should not be used.
+  /// Not supported.
   /// </summary>
   AnyDigit = 65567,
   /// <summary>
-  /// This enumeration has been deprecated and should not be used.
+  /// Not supported.
   /// </summary>
   SectionBreak = 65580,
   /// <summary>
-  /// This enumeration has been deprecated and should not be used.
+  /// Not supported.
   /// </summary>
   AnyLetter = 65583,
   /// <summary>
-  /// This enumeration has been deprecated and should not be used.
+  /// Not supported.
   /// </summary>
   AnyCharacter = 65599,
   /// <summary>
-  /// This enumeration has been deprecated and should not be used.
+  /// Not supported.
   /// </summary>
   WhiteSpace = 65655
 }

@@ -53,435 +53,435 @@ public enum WdPageBorderArt
   /// </summary>
   Balloons3Colors = 11,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A hot air balloon border.
   /// </summary>
   BalloonsHotAir = 12,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A party favor border.
   /// </summary>
   PartyFavor = 13,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A confetti streamers border.
   /// </summary>
   ConfettiStreamers = 14,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A hearts border.
   /// </summary>
   Hearts = 15,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A heart balloon border.
   /// </summary>
   HeartBalloon = 16,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A 3-D stars border.
   /// </summary>
   Stars3D = 17,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A shadowed stars border.
   /// </summary>
   StarsShadowed = 18,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A stars border.
   /// </summary>
   Stars = 19,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A sun border.
   /// </summary>
   Sun = 20,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// An earth number 2 border.
   /// </summary>
   Earth2 = 21,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// An earth number 1 border.
   /// </summary>
   Earth1 = 22,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A people wearing hats border.
   /// </summary>
   PeopleHats = 23,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A sombrero border.
   /// </summary>
   Sombrero = 24,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A pencils border.
   /// </summary>
   Pencils = 25,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A packages border.
   /// </summary>
   Packages = 26,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A clocks border.
   /// </summary>
   Clocks = 27,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A fire crackers border.
   /// </summary>
   Firecrackers = 28,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A rings border.
   /// </summary>
   Rings = 29,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A map pins border.
   /// </summary>
   MapPins = 30,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A confetti border.
   /// </summary>
   Confetti = 31,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A butterfly border.
   /// </summary>
   CreaturesButterfly = 32,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A ladybug border.
   /// </summary>
   CreaturesLadyBug = 33,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A fish border.
   /// </summary>
   CreaturesFish = 34,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A birds in flight border.
   /// </summary>
   BirdsFlight = 35,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A scared cat border.
   /// </summary>
   ScaredCat = 36,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A bats border.
   /// </summary>
   Bats = 37,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A rose border.
   /// </summary>
   FlowersRoses = 38,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A red rose border.
   /// </summary>
   FlowersRedRose = 39,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A poinsettias border.
   /// </summary>
   Poinsettias = 40,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A holly border.
   /// </summary>
   Holly = 41,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A tiny flower border.
   /// </summary>
   FlowersTiny = 42,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A pansy border.
   /// </summary>
   FlowersPansy = 43,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A modern flowers number 2 border.
   /// </summary>
   FlowersModern2 = 44,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A modern flowers number 1 border.
   /// </summary>
   FlowersModern1 = 45,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A white flower border.
   /// </summary>
   WhiteFlowers = 46,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A vine border.
   /// </summary>
   Vine = 47,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A daisies border.
   /// </summary>
   FlowersDaisies = 48,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A block flowers print border.
   /// </summary>
   FlowersBlockPrint = 49,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A deco arch colored border.
   /// </summary>
   DecoArchColor = 50,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A fans border.
   /// </summary>
   Fans = 51,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A film border.
   /// </summary>
   Film = 52,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A lightning number 1 border.
   /// </summary>
   Lightning1 = 53,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A compass border.
   /// </summary>
   Compass = 54,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A double-D border.
   /// </summary>
   DoubleD = 55,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A classical wave border.
   /// </summary>
   ClassicalWave = 56,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A shadowed squared border.
   /// </summary>
   ShadowedSquares = 57,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A twisted lines number 1 border.
   /// </summary>
   TwistedLines1 = 58,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A wave line border.
   /// </summary>
   Waveline = 59,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A quadrants border.
   /// </summary>
   Quadrants = 60,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A checked-bar colored border.
   /// </summary>
   CheckedBarColor = 61,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A swirling border.
   /// </summary>
   Swirligig = 62,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A pushpin note number 1 border.
   /// </summary>
   PushPinNote1 = 63,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A pushpin note number 2 border.
   /// </summary>
   PushPinNote2 = 64,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A pumpkin number 1 border.
   /// </summary>
   Pumpkin1 = 65,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A black eggs border.
   /// </summary>
   EggsBlack = 66,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A cup border.
   /// </summary>
   Cup = 67,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A heart border in shades of gray.
   /// </summary>
   HeartGray = 68,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A gingerbread man border.
   /// </summary>
   GingerbreadMan = 69,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A baby pacifier border.
   /// </summary>
   BabyPacifier = 70,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A baby rattle border.
   /// </summary>
   BabyRattle = 71,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A cabins border.
   /// </summary>
   Cabins = 72,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A funky house border.
   /// </summary>
   HouseFunky = 73,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A black stars border.
   /// </summary>
   StarsBlack = 74,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A snowflake border.
   /// </summary>
   Snowflakes = 75,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A fancy snowflake border.
   /// </summary>
   SnowflakeFancy = 76,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A sky rocket border.
   /// </summary>
   Skyrocket = 77,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A Seattle border.
   /// </summary>
   Seattle = 78,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A music notes border.
   /// </summary>
   MusicNotes = 79,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A black palms border.
   /// </summary>
   PalmsBlack = 80,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A maple leaf border.
   /// </summary>
   MapleLeaf = 81,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A paper clips border.
   /// </summary>
   PaperClips = 82,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A shorebird tracks border.
   /// </summary>
   ShorebirdTracks = 83,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A people border.
   /// </summary>
   People = 84,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A people waving border.
   /// </summary>
   PeopleWaving = 85,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// An eclipsing squares number 2 border.
   /// </summary>
   EclipsingSquares2 = 86,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A hypnotic border.
   /// </summary>
   Hypnotic = 87,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A diamond border using shades of gray.
   /// </summary>
   DiamondsGray = 88,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A deco arch border.
   /// </summary>
   DecoArch = 89,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A deco blocks border.
   /// </summary>
   DecoBlocks = 90,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A circles and lines border.
   /// </summary>
   CirclesLines = 91,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A papyrus border.
   /// </summary>
   Papyrus = 92,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A woodwork border.
   /// </summary>
   Woodwork = 93,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A weaving braid border.
   /// </summary>
   WeavingBraid = 94,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A weaving ribbon border.
   /// </summary>
   WeavingRibbon = 95,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A weaving angle border.
   /// </summary>
   WeavingAngles = 96,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// An arched scalloped border.
   /// </summary>
   ArchedScallops = 97,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A safari border.
   /// </summary>
   Safari = 98,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A Celtic knot work border.
   /// </summary>
   CelticKnotwork = 99,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A crazy maze border.
   /// </summary>
   CrazyMaze = 100,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// An eclipsing squares number 1 border.
   /// </summary>
   EclipsingSquares1 = 101,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A birds border.
   /// </summary>
   Birds = 102,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A teacup border.
   /// </summary>
   FlowersTeacup = 103,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A northwest border.
   /// </summary>
   Northwest = 104,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A southwest border.
   /// </summary>
   Southwest = 105,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A tribal number 6 border.
   /// </summary>
   Tribal6 = 106,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A tribal number 4 border.
   /// </summary>
   Tribal4 = 107,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A tribal number 3 border.
   /// </summary>
   Tribal3 = 108,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A tribal number 2 border.
   /// </summary>
   Tribal2 = 109,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A tribal number 5 border.
   /// </summary>
   Tribal5 = 110,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// An X illusion border.
   /// </summary>
   XIllusions = 111,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A zany triangle border.
   /// </summary>
   ZanyTriangles = 112,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A pyramids border.
   /// </summary>
   Pyramids = 113,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// An external pyramids border.
   /// </summary>
   PyramidsAbove = 114,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A confetti border using shades of gray.
   /// </summary>
   ConfettiGrays = 115,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A confetti outline border.
   /// </summary>
   ConfettiOutline = 116,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A confetti white border.
   /// </summary>
   ConfettiWhite = 117,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A mosaic border.
   /// </summary>
   Mosaic = 118,
   /// <summary>
-  /// Specifies the graphical page border setting of a page.
+  /// A lightning number 2 border.
   /// </summary>
   Lightning2 = 119,
   /// <summary>

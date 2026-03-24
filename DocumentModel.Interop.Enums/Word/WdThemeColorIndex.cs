@@ -49,27 +49,27 @@ public enum WdThemeColorIndex
   /// </summary>
   ThemeColorAccent6 = 9,
   /// <summary>
-  /// Specifies the theme colors for document themes.
+  /// Hyperlink color.
   /// </summary>
   ThemeColorHyperlink = 10,
   /// <summary>
-  /// Specifies the theme colors for document themes.
+  /// Followed hyperlink color.
   /// </summary>
   ThemeColorHyperlinkFollowed = 11,
   /// <summary>
-  /// Specifies the theme colors for document themes.
+  /// Background color 1.
   /// </summary>
   ThemeColorBackground1 = 12,
   /// <summary>
-  /// Specifies the theme colors for document themes.
+  /// Text color 1.
   /// </summary>
   ThemeColorText1 = 13,
   /// <summary>
-  /// Specifies the theme colors for document themes.
+  /// Background color 2.
   /// </summary>
   ThemeColorBackground2 = 14,
   /// <summary>
-  /// Specifies the theme colors for document themes.
+  /// Text color 2.
   /// </summary>
   ThemeColorText2 = 15,
   /// <summary>

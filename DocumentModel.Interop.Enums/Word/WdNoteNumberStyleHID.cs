@@ -9,8 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdNoteNumberStyleHID
 {
   /// <summary>
-  /// Applies to Product Versions Word primary interop assembly Latest public enum WdNoteNumberStyleHID ﾉ Expand
-  /// table
+  /// No description is available.
   /// </summary>
   emptyenum = 0
 }

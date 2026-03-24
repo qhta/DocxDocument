@@ -61,79 +61,79 @@ public enum XlChartItem
   /// </summary>
   LegendKey = 13,
   /// <summary>
-  /// Specifies the type of the chart item.
+  /// Shape.
   /// </summary>
   Shape = 14,
   /// <summary>
-  /// Specifies the type of the chart item.
+  /// Major gridlines.
   /// </summary>
   MajorGridlines = 15,
   /// <summary>
-  /// Specifies the type of the chart item.
+  /// Minor gridlines.
   /// </summary>
   MinorGridlines = 16,
   /// <summary>
-  /// Specifies the type of the chart item.
+  /// Axis title.
   /// </summary>
   AxisTitle = 17,
   /// <summary>
-  /// Specifies the type of the chart item.
+  /// Up bars.
   /// </summary>
   UpBars = 18,
   /// <summary>
-  /// Specifies the type of the chart item.
+  /// Plot area.
   /// </summary>
   PlotArea = 19,
   /// <summary>
-  /// Specifies the type of the chart item.
+  /// Down bars.
   /// </summary>
   DownBars = 20,
   /// <summary>
-  /// Specifies the type of the chart item.
+  /// Axis.
   /// </summary>
   Axis = 21,
   /// <summary>
-  /// Specifies the type of the chart item.
+  /// Series lines.
   /// </summary>
   SeriesLines = 22,
   /// <summary>
-  /// Specifies the type of the chart item.
+  /// Floor.
   /// </summary>
   Floor = 23,
   /// <summary>
-  /// Specifies the type of the chart item.
+  /// Legend.
   /// </summary>
   Legend = 24,
   /// <summary>
-  /// Specifies the type of the chart item.
+  /// HiLo lines.
   /// </summary>
   HiLoLines = 25,
   /// <summary>
-  /// Specifies the type of the chart item.
+  /// Drop lines.
   /// </summary>
   DropLines = 26,
   /// <summary>
-  /// Specifies the type of the chart item.
+  /// Radar axis labels.
   /// </summary>
   RadarAxisLabels = 27,
   /// <summary>
-  /// Specifies the type of the chart item.
+  /// Nothing.
   /// </summary>
   Nothing = 28,
   /// <summary>
-  /// Specifies the type of the chart item.
+  /// Leader lines.
   /// </summary>
   LeaderLines = 29,
   /// <summary>
-  /// Specifies the type of the chart item.
+  /// Display unit label.
   /// </summary>
   DisplayUnitLabel = 30,
   /// <summary>
-  /// Specifies the type of the chart item.
+  /// PivotChart field button.
   /// </summary>
   PivotChartFieldButton = 31,
   /// <summary>
-  /// Specifies the type of the chart item.
+  /// PivotChart drop zone.
   /// </summary>
   PivotChartDropZone = 32
 }

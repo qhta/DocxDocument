@@ -53,99 +53,99 @@ public enum WdBuildingBlockTypes
   /// </summary>
   PageNumberTop = 11,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Building block for page numbering on the bottom of the page.
   /// </summary>
   PageNumberBottom = 12,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Page numbering building block.
   /// </summary>
   PageNumberPage = 13,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Table of contents building block.
   /// </summary>
   TableOfContents = 14,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Custom quick parts building block.
   /// </summary>
   CustomQuickParts = 15,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Custom cover page building block.
   /// </summary>
   CustomCoverPage = 16,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Custom equations building block.
   /// </summary>
   CustomEquations = 17,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Custom footers building block.
   /// </summary>
   CustomFooters = 18,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Custom headers building block.
   /// </summary>
   CustomHeaders = 19,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Custom page numbering building block.
   /// </summary>
   CustomPageNumber = 20,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Custom table building block.
   /// </summary>
   CustomTables = 21,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Custom watermark building block.
   /// </summary>
   CustomWatermarks = 22,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Custom autotext building block.
   /// </summary>
   CustomAutoText = 23,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Custom text box building block.
   /// </summary>
   CustomTextBox = 24,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Building block for custom page numbering on the top of the page.
   /// </summary>
   CustomPageNumberTop = 25,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Building block for custom page numbering on the bottom of the page.
   /// </summary>
   CustomPageNumberBottom = 26,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Custom page numbering building block.
   /// </summary>
   CustomPageNumberPage = 27,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Custom table of contents building block.
   /// </summary>
   CustomTableOfContents = 28,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Custom building block.
   /// </summary>
   Custom1 = 29,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Custom building block.
   /// </summary>
   Custom2 = 30,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Custom building block.
   /// </summary>
   Custom3 = 31,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Custom building block.
   /// </summary>
   Custom4 = 32,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Custom building block.
   /// </summary>
   Custom5 = 33,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Bibliography building block.
   /// </summary>
   Bibliography = 34,
   /// <summary>
-  /// Specifies the type of building block.
+  /// Custom bibliography building block.
   /// </summary>
   CustomBibliography = 35
 }

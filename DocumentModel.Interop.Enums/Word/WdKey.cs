@@ -10,493 +10,395 @@ namespace DocumentModel.Interop.Word;
 public enum WdKey
 {
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The BACKSPACE key.
   /// </summary>
   KeyBackspace = 8,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The TAB key.
   /// </summary>
   KeyTab = 9,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// .
   /// </summary>
   KeyNumeric5Special = 12,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The ENTER or RETURN key.
   /// </summary>
   KeyReturn = 13,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The PAUSE key.
   /// </summary>
   KeyPause = 19,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The ESC key.
   /// </summary>
   KeyEsc = 27,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The SPACEBAR key.
   /// </summary>
   KeySpacebar = 32,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The PAGE UP key.
   /// </summary>
   KeyPageUp = 33,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The PAGE DOWN key.
   /// </summary>
   KeyPageDown = 34,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The END key.
   /// </summary>
   KeyEnd = 35,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The HOME key.
   /// </summary>
   KeyHome = 36,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The INSERT key.
   /// </summary>
   KeyInsert = 45,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The DELETE key.
   /// </summary>
   KeyDelete = 46,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The 0 key.
   /// </summary>
   Key0 = 48,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The 1 key.
   /// </summary>
   Key1 = 49,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The 2 key.
   /// </summary>
   Key2 = 50,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The 3 key.
   /// </summary>
   Key3 = 51,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The 4 key.
   /// </summary>
   Key4 = 52,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The 5 key.
   /// </summary>
   Key5 = 53,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The 6 key.
   /// </summary>
   Key6 = 54,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The 7 key.
   /// </summary>
   Key7 = 55,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The 8 key.
   /// </summary>
   Key8 = 56,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The 9 key.
   /// </summary>
   Key9 = 57,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The A key.
   /// </summary>
   KeyA = 65,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The B key.
   /// </summary>
   KeyB = 66,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The C key.
   /// </summary>
   KeyC = 67,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The D key.
   /// </summary>
   KeyD = 68,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The E key.
   /// </summary>
   KeyE = 69,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The F key.
   /// </summary>
   KeyF = 70,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The G key.
   /// </summary>
   KeyG = 71,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The H key.
   /// </summary>
   KeyH = 72,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The I key.
   /// </summary>
   KeyI = 73,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The J key.
   /// </summary>
   KeyJ = 74,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The K key.
   /// </summary>
   KeyK = 75,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The L key.
   /// </summary>
   KeyL = 76,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The M key.
   /// </summary>
   KeyM = 77,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The N key.
   /// </summary>
   KeyN = 78,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The O key.
   /// </summary>
   KeyO = 79,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The P key.
   /// </summary>
   KeyP = 80,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The Q key.
   /// </summary>
   KeyQ = 81,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The R key.
   /// </summary>
   KeyR = 82,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The S key.
   /// </summary>
   KeyS = 83,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The T key.
   /// </summary>
   KeyT = 84,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The U key.
   /// </summary>
   KeyU = 85,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The V key.
   /// </summary>
   KeyV = 86,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The W key.
   /// </summary>
   KeyW = 87,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The X key.
   /// </summary>
   KeyX = 88,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The Y key.
   /// </summary>
   KeyY = 89,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The Z key.
   /// </summary>
   KeyZ = 90,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The 0 key.
   /// </summary>
   KeyNumeric0 = 96,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The 1 key.
   /// </summary>
   KeyNumeric1 = 97,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The 2 key.
   /// </summary>
   KeyNumeric2 = 98,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The 3 key.
   /// </summary>
   KeyNumeric3 = 99,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The 4 key.
   /// </summary>
   KeyNumeric4 = 100,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The 5 key.
   /// </summary>
   KeyNumeric5 = 101,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The 6 key.
   /// </summary>
   KeyNumeric6 = 102,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The 7 key.
   /// </summary>
   KeyNumeric7 = 103,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The 8 key.
   /// </summary>
   KeyNumeric8 = 104,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The 9 key.
   /// </summary>
   KeyNumeric9 = 105,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The * key on the numeric keypad.
   /// </summary>
   KeyNumericMultiply = 106,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The + key on the numeric keypad.
   /// </summary>
   KeyNumericAdd = 107,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The - key on the numeric keypad.
   /// </summary>
   KeyNumericSubtract = 109,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The . key on the numeric keypad.
   /// </summary>
   KeyNumericDecimal = 110,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The / key on the numeric keypad.
   /// </summary>
   KeyNumericDivide = 111,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The F1 key.
   /// </summary>
   KeyF1 = 112,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The F2 key.
   /// </summary>
   KeyF2 = 113,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The F3 key.
   /// </summary>
   KeyF3 = 114,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The F4 key.
   /// </summary>
   KeyF4 = 115,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The F5 key.
   /// </summary>
   KeyF5 = 116,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The F6 key.
   /// </summary>
   KeyF6 = 117,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The F7 key.
   /// </summary>
   KeyF7 = 118,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The F8 key.
   /// </summary>
   KeyF8 = 119,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The F9 key.
   /// </summary>
   KeyF9 = 120,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The F10 key.
   /// </summary>
   KeyF10 = 121,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The F11 key.
   /// </summary>
   KeyF11 = 122,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The F12 key.
   /// </summary>
   KeyF12 = 123,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The F13 key.
   /// </summary>
   KeyF13 = 124,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The F14 key.
   /// </summary>
   KeyF14 = 125,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The F15 key.
   /// </summary>
   KeyF15 = 126,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The F16 key.
   /// </summary>
   KeyF16 = 127,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The SCROLL LOCK key.
   /// </summary>
   KeyScrollLock = 145,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The ; key.
   /// </summary>
   KeySemiColon = 186,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The = key.
   /// </summary>
   KeyEquals = 187,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The , key.
   /// </summary>
   KeyComma = 188,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The - key.
   /// </summary>
   KeyHyphen = 189,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The . key.
   /// </summary>
   KeyPeriod = 190,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The / key.
   /// </summary>
   KeySlash = 191,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The ` key.
   /// </summary>
   KeyBackSingleQuote = 192,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The [ key.
   /// </summary>
   KeyOpenSquareBrace = 219,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The \ key.
   /// </summary>
   KeyBackSlash = 220,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The ] key.
   /// </summary>
   KeyCloseSquareBrace = 221,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The ' key.
   /// </summary>
   KeySingleQuote = 222,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// No key.
   /// </summary>
   NoKey = 255,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The SHIFT key.
   /// </summary>
   KeyShift = 256,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The CTRL key.
   /// </summary>
   KeyControl = 512,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The Windows command key or Macintosh COMMAND key.
   /// </summary>
   KeyCommand = 512,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The mouse option key or Macintosh OPTION key.
   /// </summary>
   KeyOption = 1024,
   /// <summary>
-  /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-  /// values in a character encoding map, they share a single constant in this enumeration.
+  /// The ALT key.
   /// </summary>
   KeyAlt = 1024
 }
