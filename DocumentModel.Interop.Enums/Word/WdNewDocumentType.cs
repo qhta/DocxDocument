@@ -8,21 +8,21 @@ public enum WdNewDocumentType
   /// <summary>
   /// Blank document.
   /// </summary>
-  wdNewBlankDocument = unchecked((int)0),
+  BlankDocument = unchecked((int)0),
   /// <summary>
   /// Web page.
   /// </summary>
-  wdNewWebPage = unchecked((int)1),
+  WebPage = unchecked((int)1),
   /// <summary>
   /// E-mail message.
   /// </summary>
-  wdNewEmailMessage = unchecked((int)2),
+  EmailMessage = unchecked((int)2),
   /// <summary>
   /// Frameset.
   /// </summary>
-  wdNewFrameset = unchecked((int)3),
+  Frameset = unchecked((int)3),
   /// <summary>
   /// XML document.
   /// </summary>
-  wdNewXMLDocument = unchecked((int)4)
+  XMLDocument = unchecked((int)4)
 }

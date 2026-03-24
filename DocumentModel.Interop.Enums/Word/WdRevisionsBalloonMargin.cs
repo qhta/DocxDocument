@@ -8,9 +8,9 @@ public enum WdRevisionsBalloonMargin
   /// <summary>
   /// Left margin.
   /// </summary>
-  wdLeftMargin = unchecked((int)0),
+  LeftMargin = unchecked((int)0),
   /// <summary>
   /// Right margin. default.
   /// </summary>
-  wdRightMargin = unchecked((int)1)
+  RightMargin = unchecked((int)1)
 }

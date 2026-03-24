@@ -15,7 +15,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="**\*.Methods.cs" />
-    <Compile Remove="Base interfaces\ITypedModelElement.cs" />
+    <Compile Remove="Base Interop\ITypedModelElement.cs" />
     <Compile Remove="Wordprocessing\Settings\Settings.cs" />
     <Compile Remove="Wordprocessing\Styles\StyleDef.ext.cs" />
   </ItemGroup>
@@ -36,7 +36,7 @@
     <ProjectReference Include="..\DocumentModel.BaseConverters\DocumentModel.BaseConverters.csproj" />
     <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
     <ProjectReference Include="..\DocumentModel.EnumTypes\DocumentModel.EnumTypes.csproj" />
-    <ProjectReference Include="..\DocumentModel.Interfaces\DocumentModel.Interfaces.csproj" />
+    <ProjectReference Include="..\DocumentModel.Interop\DocumentModel.Interop.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="VariantTypes\Enums\" />

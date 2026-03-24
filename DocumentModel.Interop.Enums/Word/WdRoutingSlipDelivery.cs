@@ -8,9 +8,9 @@ public enum WdRoutingSlipDelivery
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  wdOneAfterAnother = unchecked((int)0),
+  OneAfterAnother = unchecked((int)0),
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  wdAllAtOnce = unchecked((int)1)
+  AllAtOnce = unchecked((int)1)
 }

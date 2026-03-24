@@ -9,9 +9,9 @@ public enum XlPieSliceLocation
   /// <summary>
   /// The horizontal coordinate (x).
   /// </summary>
-  xlHorizontalCoordinate = unchecked((int)1),
+  HorizontalCoordinate = unchecked((int)1),
   /// <summary>
   /// The vertical coordinate (y).
   /// </summary>
-  xlVerticalCoordinate = unchecked((int)2)
+  VerticalCoordinate = unchecked((int)2)
 }

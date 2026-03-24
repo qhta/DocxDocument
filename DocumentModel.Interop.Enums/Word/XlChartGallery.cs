@@ -8,13 +8,13 @@ public enum XlChartGallery
   /// <summary>
   /// The built-in gallery.
   /// </summary>
-  xlBuiltIn = unchecked((int)21),
+  BuiltIn = unchecked((int)21),
   /// <summary>
   /// The user-defined gallery.
   /// </summary>
-  xlUserDefined = unchecked((int)22),
+  UserDefined = unchecked((int)22),
   /// <summary>
   /// Either of the galleries.
   /// </summary>
-  xlAnyGallery = unchecked((int)23)
+  AnyGallery = unchecked((int)23)
 }

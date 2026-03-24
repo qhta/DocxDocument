@@ -8,9 +8,9 @@ public enum WdMailMergeMailFormat
   /// <summary>
   /// Sends mail merge e-mail documents using plain text.
   /// </summary>
-  wdMailFormatPlainText = unchecked((int)0),
+  PlainText = unchecked((int)0),
   /// <summary>
   /// Sends mail merge e-mail documents using HTML format.
   /// </summary>
-  wdMailFormatHTML = unchecked((int)1)
+  HTML = unchecked((int)1)
 }

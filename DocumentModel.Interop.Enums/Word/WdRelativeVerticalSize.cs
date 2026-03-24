@@ -9,11 +9,11 @@ public enum WdRelativeVerticalSize
   /// <summary>
   /// Height is relative to the space between the left margin and the right margin.
   /// </summary>
-  wdRelativeVerticalSizeMargin = unchecked((int)0),
+  Margin = unchecked((int)0),
   /// <summary>
   /// Height is relative to the height of the page.
   /// </summary>
-  wdRelativeVerticalSizePage = unchecked((int)1),
+  Page = unchecked((int)1),
   /// <summary>
   /// Height is relative to the size of the top margin. wdRelativeVerticalSizeBottomMarginArea3 Height is relative
   /// to the size of the bottom margin. wdRelativeVerticalSizeInnerMarginArea4 Height is relative to the size of the
@@ -21,20 +21,20 @@ public enum WdRelativeVerticalSize
   /// pages. wdRelativeVerticalSizeOuterMarginArea5 Height is relative to the size of the outside margin— to the
   /// size of the bottom margin for odd pages, and to the size of the top margin for even pages.
   /// </summary>
-  wdRelativeVerticalSizeTopMarginArea = unchecked((int)2),
+  TopMarginArea = unchecked((int)2),
   /// <summary>
   /// Specifies the relative height of a shape using the value specified in the HeightRelative property for a Shape
   /// or ShapeRange object.
   /// </summary>
-  wdRelativeVerticalSizeBottomMarginArea = unchecked((int)3),
+  BottomMarginArea = unchecked((int)3),
   /// <summary>
   /// Specifies the relative height of a shape using the value specified in the HeightRelative property for a Shape
   /// or ShapeRange object.
   /// </summary>
-  wdRelativeVerticalSizeInnerMarginArea = unchecked((int)4),
+  InnerMarginArea = unchecked((int)4),
   /// <summary>
   /// Specifies the relative height of a shape using the value specified in the HeightRelative property for a Shape
   /// or ShapeRange object.
   /// </summary>
-  wdRelativeVerticalSizeOuterMarginArea = unchecked((int)5)
+  OuterMarginArea = unchecked((int)5)
 }

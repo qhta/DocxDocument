@@ -8,9 +8,9 @@ public enum WdEditionType
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdPublisher = unchecked((int)0),
+  Publisher = unchecked((int)0),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdSubscriber = unchecked((int)1)
+  Subscriber = unchecked((int)1)
 }

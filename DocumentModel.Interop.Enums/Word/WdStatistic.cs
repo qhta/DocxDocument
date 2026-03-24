@@ -8,29 +8,29 @@ public enum WdStatistic
   /// <summary>
   /// Count of words.
   /// </summary>
-  wdStatisticWords = unchecked((int)0),
+  Words = unchecked((int)0),
   /// <summary>
   /// Count of lines.
   /// </summary>
-  wdStatisticLines = unchecked((int)1),
+  Lines = unchecked((int)1),
   /// <summary>
   /// Count of pages.
   /// </summary>
-  wdStatisticPages = unchecked((int)2),
+  Pages = unchecked((int)2),
   /// <summary>
   /// Count of characters.
   /// </summary>
-  wdStatisticCharacters = unchecked((int)3),
+  Characters = unchecked((int)3),
   /// <summary>
   /// Count of paragraphs.
   /// </summary>
-  wdStatisticParagraphs = unchecked((int)4),
+  Paragraphs = unchecked((int)4),
   /// <summary>
   /// Count of characters including spaces.
   /// </summary>
-  wdStatisticCharactersWithSpaces = unchecked((int)5),
+  CharactersWithSpaces = unchecked((int)5),
   /// <summary>
   /// Count of Far East characters.
   /// </summary>
-  wdStatisticFarEastCharacters = unchecked((int)6)
+  FarEastCharacters = unchecked((int)6)
 }

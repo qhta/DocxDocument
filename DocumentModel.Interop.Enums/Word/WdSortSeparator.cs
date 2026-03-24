@@ -8,13 +8,13 @@ public enum WdSortSeparator
   /// <summary>
   /// Tab.
   /// </summary>
-  wdSortSeparateByTabs = unchecked((int)0),
+  Tabs = unchecked((int)0),
   /// <summary>
   /// Comma.
   /// </summary>
-  wdSortSeparateByCommas = unchecked((int)1),
+  Commas = unchecked((int)1),
   /// <summary>
   /// Default table separator.
   /// </summary>
-  wdSortSeparateByDefaultTableSeparator = unchecked((int)2)
+  DefaultTableSeparator = unchecked((int)2)
 }

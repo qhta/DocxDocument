@@ -19,6 +19,7 @@ public partial class ContentProperties
   ///   and style information used to create the current document.
   /// </summary>
   [Category("Base")]
+  [BuiltInProperty("Template")]
   [DefaultValue("Normal.dotm")]
   public string? Template
   {
@@ -30,6 +31,7 @@ public partial class ContentProperties
   ///   The name of a supervisor associated with the document.
   /// </summary>
   [Category("Base")]
+  [BuiltInProperty("Manager")]
   public string? Manager
   {
     get => _Manager;
@@ -40,6 +42,7 @@ public partial class ContentProperties
   ///   The name of a company associated with the document.
   /// </summary>
   [Category("Base")]
+  [BuiltInProperty("Company")]
   public string? Company
   {
     get => _Company;
@@ -51,6 +54,7 @@ public partial class ContentProperties
   ///   to be shown on video has PresentationFormat "Video".
   /// </summary>
   [Category("Presentation")]
+  [BuiltInProperty("Format")]
   public string? PresentationFormat
   {
     get => _PresentationFormat;
@@ -63,6 +67,7 @@ public partial class ContentProperties
   ///   FALSE means cropping of the document thumbnail to show only sections that fits the display.
   /// </summary>
   [Category("Presentation")]
+  [BuiltInProperty("Scale crop")]
   public bool? ScaleCrop
   {
     get => _ScaleCrop;
@@ -110,7 +115,7 @@ public partial class ContentProperties
   ///   If this element is set to TRUE, producers should take care when updating the document.
   /// </summary>
   [Category("Base")]
-  [OpenXmlType(typeof(DXEP.LinksUpToDate))]
+  [OpenXmlType(typeof(DXEP.SharedDocument))]
   public bool? SharedDocument
   {
     get => _SharedDocument;
@@ -121,6 +126,7 @@ public partial class ContentProperties
   ///   The base string used for evaluating relative hyperlinks in this document.
   /// </summary>
   [Category("Hyperlinks")]
+  [BuiltInProperty("Hyperlink base")]
   [OpenXmlType(typeof(DXEP.HyperlinkBase))]
   public string? HyperlinkBase
   {
@@ -160,6 +166,7 @@ public partial class ContentProperties
   ///   8 - Document is locked for annotation
   /// </summary>
   [Category("Security")]
+  [BuiltInProperty("Security")]
   [OpenXmlType(typeof(DXEP.DocumentSecurity))]
   public DocumentSecurity? DocumentSecurity
   {
@@ -185,6 +192,7 @@ public partial class ContentProperties
   ///   Specifies the name of the application that created this document.
   /// </summary>
   [Category("Base")]
+  [BuiltInProperty("Application name")]
   [DefaultValue("Microsoft Office Word")]
   [OpenXmlType(typeof(DXEP.Application))]
   public string? Application
@@ -197,6 +205,7 @@ public partial class ContentProperties
   ///   Specifies the version of the application which produced this document.
   /// </summary>
   [Category("Base")]
+  [BuiltInProperty("Application version")]
   [DefaultValue("16.0000")]
   [OpenXmlType(typeof(DXEP.ApplicationVersion))]
   public string? ApplicationVersion

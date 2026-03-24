@@ -14,17 +14,17 @@ public enum WdRulerStyle
   /// the first column, preserving the position of the right edge of the table by setting the widths of all the
   /// cells in the specified row or rows to the same value.
   /// </summary>
-  wdAdjustNone = unchecked((int)0),
+  None = unchecked((int)0),
   /// <summary>
   /// Specifies the way Word adjusts the table when the left indent is changed.
   /// </summary>
-  wdAdjustProportional = unchecked((int)1),
+  Proportional = unchecked((int)1),
   /// <summary>
   /// Specifies the way Word adjusts the table when the left indent is changed.
   /// </summary>
-  wdAdjustFirstColumn = unchecked((int)2),
+  FirstColumn = unchecked((int)2),
   /// <summary>
   /// Specifies the way Word adjusts the table when the left indent is changed.
   /// </summary>
-  wdAdjustSameWidth = unchecked((int)3)
+  SameWidth = unchecked((int)3)
 }

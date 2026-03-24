@@ -8,13 +8,13 @@ public enum WdPrintOutPages
   /// <summary>
   /// All pages.
   /// </summary>
-  wdPrintAllPages = unchecked((int)0),
+  AllPages = unchecked((int)0),
   /// <summary>
   /// Odd-numbered pages only.
   /// </summary>
-  wdPrintOddPagesOnly = unchecked((int)1),
+  OddPagesOnly = unchecked((int)1),
   /// <summary>
   /// Even-numbered pages only.
   /// </summary>
-  wdPrintEvenPagesOnly = unchecked((int)2)
+  EvenPagesOnly = unchecked((int)2)
 }

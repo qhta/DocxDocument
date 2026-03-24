@@ -19,7 +19,7 @@ public partial class Comment : ModelElement<DXW.Comment>
  public string? Author { get => _Author; set => UpdateField(ref _Author, value, nameof(Author)); }
  private string? _Author;
  /// <summary>
- /// Initials of the comment author, providing a compact representation for display in user interfaces and comment blocks.
+ /// Initials of the comment author, providing a compact representation for display in user Interop and comment blocks.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Comment.Initials))]
  public string? Initials { get => _Initials; set => UpdateField(ref _Initials, value, nameof(Initials)); }

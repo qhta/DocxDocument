@@ -8,33 +8,33 @@ public enum WdNumberStyleWordBasicBiDi
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdCaptionNumberStyleBidiLetter1 = unchecked((int)49),
+  CaptionNumberStyleBidiLetter1 = unchecked((int)49),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdListNumberStyleBidi1 = unchecked((int)49),
+  ListNumberStyleBidi1 = unchecked((int)49),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdPageNumberStyleBidiLetter1 = unchecked((int)49),
+  PageNumberStyleBidiLetter1 = unchecked((int)49),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdNoteNumberStyleBidiLetter1 = unchecked((int)49),
+  NoteNumberStyleBidiLetter1 = unchecked((int)49),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdCaptionNumberStyleBidiLetter2 = unchecked((int)50),
+  CaptionNumberStyleBidiLetter2 = unchecked((int)50),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdListNumberStyleBidi2 = unchecked((int)50),
+  ListNumberStyleBidi2 = unchecked((int)50),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdNoteNumberStyleBidiLetter2 = unchecked((int)50),
+  NoteNumberStyleBidiLetter2 = unchecked((int)50),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdPageNumberStyleBidiLetter2 = unchecked((int)50)
+  PageNumberStyleBidiLetter2 = unchecked((int)50)
 }

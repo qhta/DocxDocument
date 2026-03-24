@@ -8,9 +8,9 @@ public enum WdExportOptimizeFor
   /// <summary>
   /// Specifies the resolution and quality of the exported document.
   /// </summary>
-  wdExportOptimizeForPrint = unchecked((int)0),
+  Print = unchecked((int)0),
   /// <summary>
   /// Specifies the resolution and quality of the exported document.
   /// </summary>
-  wdExportOptimizeForOnScreen = unchecked((int)1)
+  OnScreen = unchecked((int)1)
 }

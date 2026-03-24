@@ -8,13 +8,13 @@ public enum WdDocumentKind
   /// <summary>
   /// No format specified.
   /// </summary>
-  wdDocumentNotSpecified = unchecked((int)0),
+  NotSpecified = unchecked((int)0),
   /// <summary>
   /// Letter format.
   /// </summary>
-  wdDocumentLetter = unchecked((int)1),
+  Letter = unchecked((int)1),
   /// <summary>
   /// E-mail format.
   /// </summary>
-  wdDocumentEmail = unchecked((int)2)
+  Email = unchecked((int)2)
 }

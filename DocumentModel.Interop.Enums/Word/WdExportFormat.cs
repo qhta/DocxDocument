@@ -8,9 +8,9 @@ public enum WdExportFormat
   /// <summary>
   /// Specifies format to use for exporting a document.
   /// </summary>
-  wdExportFormatPDF = unchecked((int)17),
+  PDF = unchecked((int)17),
   /// <summary>
   /// Specifies format to use for exporting a document.
   /// </summary>
-  wdExportFormatXPS = unchecked((int)18)
+  XPS = unchecked((int)18)
 }

@@ -8,33 +8,33 @@ public enum WdRelativeVerticalPosition
   /// <summary>
   /// Relative to margin.
   /// </summary>
-  wdRelativeVerticalPositionMargin = unchecked((int)0),
+  Margin = unchecked((int)0),
   /// <summary>
   /// Relative to page.
   /// </summary>
-  wdRelativeVerticalPositionPage = unchecked((int)1),
+  Page = unchecked((int)1),
   /// <summary>
   /// Relative to paragraph.
   /// </summary>
-  wdRelativeVerticalPositionParagraph = unchecked((int)2),
+  Paragraph = unchecked((int)2),
   /// <summary>
   /// Relative to line.
   /// </summary>
-  wdRelativeVerticalPositionLine = unchecked((int)3),
+  Line = unchecked((int)3),
   /// <summary>
   /// Relative to top margin.
   /// </summary>
-  wdRelativeVerticalPositionTopMarginArea = unchecked((int)4),
+  TopMarginArea = unchecked((int)4),
   /// <summary>
   /// Relative to bottom margin.
   /// </summary>
-  wdRelativeVerticalPositionBottomMarginArea = unchecked((int)5),
+  BottomMarginArea = unchecked((int)5),
   /// <summary>
   /// Relative to inner margin area.
   /// </summary>
-  wdRelativeVerticalPositionInnerMarginArea = unchecked((int)6),
+  InnerMarginArea = unchecked((int)6),
   /// <summary>
   /// Relative to outer margin area.
   /// </summary>
-  wdRelativeVerticalPositionOuterMarginArea = unchecked((int)7)
+  OuterMarginArea = unchecked((int)7)
 }

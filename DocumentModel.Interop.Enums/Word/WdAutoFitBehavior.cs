@@ -10,13 +10,13 @@ public enum WdAutoFitBehavior
   /// The table is automatically sized to fit the content contained in the table. wdAutoFitWindow2 The table is
   /// automatically sized to the width of the active window.
   /// </summary>
-  wdAutoFitFixed = unchecked((int)0),
+  Fixed = unchecked((int)0),
   /// <summary>
   /// Specifies how Microsoft Word resizes a table when the AutoFit feature is used.
   /// </summary>
-  wdAutoFitContent = unchecked((int)1),
+  Content = unchecked((int)1),
   /// <summary>
   /// Specifies how Microsoft Word resizes a table when the AutoFit feature is used.
   /// </summary>
-  wdAutoFitWindow = unchecked((int)2)
+  Window = unchecked((int)2)
 }

@@ -11,13 +11,13 @@ public enum WdFrameSizeRule
   /// property. wdFrameExact2 Sets the height or width to an exact value specified by the Height property or Width
   /// property.
   /// </summary>
-  wdFrameAuto = unchecked((int)0),
+  Auto = unchecked((int)0),
   /// <summary>
   /// Specifies how Word interprets the rule used to determine the height or width of a frame.
   /// </summary>
-  wdFrameAtLeast = unchecked((int)1),
+  AtLeast = unchecked((int)1),
   /// <summary>
   /// Specifies how Word interprets the rule used to determine the height or width of a frame.
   /// </summary>
-  wdFrameExact = unchecked((int)2)
+  Exact = unchecked((int)2)
 }

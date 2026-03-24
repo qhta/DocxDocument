@@ -20,6 +20,9 @@
     <None Include=".github\copilot-instructions.md" />
     <None Include="..\..\..\Scripts\UpdateXmlComments.py" Link="Scripts\UpdateXmlComments.py" />
     <None Include="..\..\..\Scripts\RemoveTypeNamesFromEnums.py" Link="Scripts\RemoveTypeNamesFromEnums.py" />
+    <None Include="..\..\..\Scripts\TrimEnumFieldNames.py" Link="Scripts\TrimEnumFieldNames.py" />
+    <None Include="..\..\..\Scripts\CompareEnumTypes.py" Link="Scripts\CompareEnumTypes.py" />
+
   </ItemGroup>
 
   <ItemGroup>

@@ -8,9 +8,9 @@ public enum WdSortOrder
   /// <summary>
   /// Ascending order. default.
   /// </summary>
-  wdSortOrderAscending = unchecked((int)0),
+  Ascending = unchecked((int)0),
   /// <summary>
   /// Descending order.
   /// </summary>
-  wdSortOrderDescending = unchecked((int)1)
+  Descending = unchecked((int)1)
 }

@@ -9,13 +9,13 @@ public enum WdNumberSpacing
   /// Applies the default number spacing for the font. wdNumberSpacingProportional1 Applies proportional number
   /// spacing to the font.
   /// </summary>
-  wdNumberSpacingDefault = unchecked((int)0),
+  Default = unchecked((int)0),
   /// <summary>
   /// Specifies the number spacing setting for an OpenType font.
   /// </summary>
-  wdNumberSpacingProportional = unchecked((int)1),
+  Proportional = unchecked((int)1),
   /// <summary>
   /// Applies tabular number spacing to the font.
   /// </summary>
-  wdNumberSpacingTabular = unchecked((int)2)
+  Tabular = unchecked((int)2)
 }

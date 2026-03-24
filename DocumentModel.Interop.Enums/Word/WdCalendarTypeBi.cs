@@ -8,9 +8,9 @@ public enum WdCalendarTypeBi
   /// <summary>
   /// Bi-directional calendar.
   /// </summary>
-  wdCalendarTypeBidi = unchecked((int)99),
+  Bidi = unchecked((int)99),
   /// <summary>
   /// Gregorian calendar.
   /// </summary>
-  wdCalendarTypeGregorian = unchecked((int)100)
+  Gregorian = unchecked((int)100)
 }

@@ -1,4 +1,4 @@
-namespace DocumentModel.Interfaces.Word;
+namespace DocumentModel.Interfaces;
 
 /// <summary>
 /// A collection of Window objects that represent all the available windows.

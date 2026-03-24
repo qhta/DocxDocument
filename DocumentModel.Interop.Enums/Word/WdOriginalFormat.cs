@@ -8,13 +8,13 @@ public enum WdOriginalFormat
   /// <summary>
   /// Microsoft Word document format.
   /// </summary>
-  wdWordDocument = unchecked((int)0),
+  WordDocument = unchecked((int)0),
   /// <summary>
   /// Original document format.
   /// </summary>
-  wdOriginalDocumentFormat = unchecked((int)1),
+  OriginalDocumentFormat = unchecked((int)1),
   /// <summary>
   /// Prompt user to select a document format.
   /// </summary>
-  wdPromptUser = unchecked((int)2)
+  PromptUser = unchecked((int)2)
 }
