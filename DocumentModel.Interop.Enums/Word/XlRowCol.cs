@@ -8,9 +8,9 @@ public enum XlRowCol
   /// <summary>
   /// Data series is in a column.
   /// </summary>
-  xlRows = unchecked((int)1),
+  Rows = unchecked((int)1),
   /// <summary>
   /// Data series is in a row.
   /// </summary>
-  xlColumns = unchecked((int)2)
+  Columns = unchecked((int)2)
 }

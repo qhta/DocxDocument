@@ -8,9 +8,9 @@ public enum WdRelocate
   /// <summary>
   /// Above the previous visible paragraph.
   /// </summary>
-  wdRelocateUp = unchecked((int)0),
+  Up = unchecked((int)0),
   /// <summary>
   /// Below the next visible paragraph.
   /// </summary>
-  wdRelocateDown = unchecked((int)1)
+  Down = unchecked((int)1)
 }

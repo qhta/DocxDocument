@@ -4,7 +4,7 @@
 ///   Supports initialization from an existing collection and advanced collection management for WordprocessingML or other OpenXml-based elements.
 /// </summary>
 /// <typeparam name="ItemType">Specifies the type of model elements contained in the collection.</typeparam>
-public abstract class ModelElementCollection<ItemType> : ElementCollection<ItemType> where ItemType : ModelElement
+public abstract partial class ModelElementCollection<ItemType> : ElementCollection<ItemType> where ItemType : ModelElement
 {
   /// <summary>
   ///   Initializes a new instance of the <see cref="ModelElementCollection{ItemType}"/> class.
@@ -23,4 +23,12 @@ public abstract class ModelElementCollection<ItemType> : ElementCollection<ItemT
       Add(item);
     }
   }
+  /// <summary>
+  /// Initializes a new instance of the ModelElementCollection class with the specified parent element.
+  /// </summary>
+  /// <param name="parent">The parent ModelElement that owns this collection. Cannot be null.</param>
+  protected ModelElementCollection(ModelElement parent) : base(parent)
+  {
+  }
+
 }

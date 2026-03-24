@@ -11,13 +11,13 @@ public enum WdRoutingSlipStatus
   /// code. wdRouteComplete2 This object, member, or enumeration is deprecated and is not intended to be used in
   /// your code.
   /// </summary>
-  wdNotYetRouted = unchecked((int)0),
+  NotYetRouted = unchecked((int)0),
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  wdRouteInProgress = unchecked((int)1),
+  RouteInProgress = unchecked((int)1),
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  wdRouteComplete = unchecked((int)2)
+  RouteComplete = unchecked((int)2)
 }

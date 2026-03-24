@@ -8,17 +8,17 @@ public enum WdFarEastLineBreakLanguageID
   /// <summary>
   /// Traditional Chinese.
   /// </summary>
-  wdLineBreakTraditionalChinese = unchecked((int)1028),
+  TraditionalChinese = unchecked((int)1028),
   /// <summary>
   /// Japanese.
   /// </summary>
-  wdLineBreakJapanese = unchecked((int)1041),
+  Japanese = unchecked((int)1041),
   /// <summary>
   /// Korean.
   /// </summary>
-  wdLineBreakKorean = unchecked((int)1042),
+  Korean = unchecked((int)1042),
   /// <summary>
   /// Simplified Chinese.
   /// </summary>
-  wdLineBreakSimplifiedChinese = unchecked((int)2052)
+  SimplifiedChinese = unchecked((int)2052)
 }

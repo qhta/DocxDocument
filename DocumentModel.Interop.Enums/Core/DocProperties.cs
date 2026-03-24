@@ -7,24 +7,23 @@ namespace DocumentModel.Interop.Core;
 public enum DocProperties
 {
   /// <summary>
-  /// offPropertyTypeBoolean 2
+  /// Integer type
   /// </summary>
   Number = 1,
   /// <summary>
-  /// offPropertyTypeDate 3
+  /// Boolean type
   /// </summary>
   Boolean,
   /// <summary>
-  /// offPropertyTypeString 4
+  /// Date-time type
   /// </summary>
   Date,
   /// <summary>
-  /// offPropertyTypeFloat 5
+  /// String type
   /// </summary>
   String,
   /// <summary>
-  /// Applies to Product Versions Office primary interop assembly Latest public enum class DocProperties ﾉ Expand
-  /// table
+  /// Float type
   /// </summary>
   Float
 }

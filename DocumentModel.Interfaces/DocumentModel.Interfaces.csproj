@@ -32,6 +32,7 @@
     <ProjectReference Include="..\DocumentModel.EnumTypes\DocumentModel.EnumTypes.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Application\" />
     <Folder Include="Windows\" />
   </ItemGroup>
 </Project>

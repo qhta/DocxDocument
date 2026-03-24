@@ -10,13 +10,13 @@ public enum WdDisableFeaturesIntroducedAfter
   /// <summary>
   /// Specifies Word for Windows 95, versions 7.0 and 7.0a.
   /// </summary>
-  wd70 = unchecked((int)0),
+  Word70 = unchecked((int)0),
   /// <summary>
   /// Specifies Word for Windows 95, versions 7.0 and 7.0a, Asian edition.
   /// </summary>
-  wd70FE = unchecked((int)1),
+  Word70FE = unchecked((int)1),
   /// <summary>
-  /// Specifies
+  /// Specifies Word for Windows 98, versions 8.0.
   /// </summary>
-  wd80 = unchecked((int)2)
+  Word80 = unchecked((int)2)
 }

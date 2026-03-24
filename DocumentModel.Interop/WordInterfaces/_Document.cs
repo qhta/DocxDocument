@@ -6,6 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document?view=word-pia"/>
 public partial interface _Document : InteropObject
 {
+
   /// <summary>
   /// Reserved for internal use.
   /// </summary>

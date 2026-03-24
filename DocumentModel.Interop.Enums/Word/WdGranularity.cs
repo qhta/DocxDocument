@@ -8,9 +8,9 @@ public enum WdGranularity
   /// <summary>
   /// Tracks character-level changes.
   /// </summary>
-  wdGranularityCharLevel = unchecked((int)0),
+  CharLevel = unchecked((int)0),
   /// <summary>
   /// Tracks word-level changes.
   /// </summary>
-  wdGranularityWordLevel = unchecked((int)1)
+  WordLevel = unchecked((int)1)
 }

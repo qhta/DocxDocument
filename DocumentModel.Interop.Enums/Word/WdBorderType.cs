@@ -8,33 +8,33 @@ public enum WdBorderType
   /// <summary>
   /// Specifies the type of border to be used.
   /// </summary>
-  wdBorderDiagonalUp = unchecked((int)-8),
+  DiagonalUp = unchecked((int)-8),
   /// <summary>
   /// Specifies the type of border to be used.
   /// </summary>
-  wdBorderDiagonalDown = unchecked((int)-7),
+  DiagonalDown = unchecked((int)-7),
   /// <summary>
   /// Specifies the type of border to be used.
   /// </summary>
-  wdBorderVertical = unchecked((int)-6),
+  Vertical = unchecked((int)-6),
   /// <summary>
   /// Specifies the type of border to be used.
   /// </summary>
-  wdBorderHorizontal = unchecked((int)-5),
+  Horizontal = unchecked((int)-5),
   /// <summary>
   /// Specifies the type of border to be used.
   /// </summary>
-  wdBorderRight = unchecked((int)-4),
+  Right = unchecked((int)-4),
   /// <summary>
   /// Specifies the type of border to be used.
   /// </summary>
-  wdBorderBottom = unchecked((int)-3),
+  Bottom = unchecked((int)-3),
   /// <summary>
   /// Specifies the type of border to be used.
   /// </summary>
-  wdBorderLeft = unchecked((int)-2),
+  Left = unchecked((int)-2),
   /// <summary>
   /// Specifies the type of border to be used.
   /// </summary>
-  wdBorderTop = unchecked((int)-1)
+  Top = unchecked((int)-1)
 }

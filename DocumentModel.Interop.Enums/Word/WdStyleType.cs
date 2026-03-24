@@ -8,25 +8,25 @@ public enum WdStyleType
   /// <summary>
   /// Paragraph style.
   /// </summary>
-  wdStyleTypeParagraph = unchecked((int)1),
+  Paragraph = unchecked((int)1),
   /// <summary>
   /// Body character style.
   /// </summary>
-  wdStyleTypeCharacter = unchecked((int)2),
+  Character = unchecked((int)2),
   /// <summary>
   /// Table style.
   /// </summary>
-  wdStyleTypeTable = unchecked((int)3),
+  Table = unchecked((int)3),
   /// <summary>
   /// List style.
   /// </summary>
-  wdStyleTypeList = unchecked((int)4),
+  List = unchecked((int)4),
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  wdStyleTypeParagraphOnly = unchecked((int)5),
+  ParagraphOnly = unchecked((int)5),
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  wdStyleTypeLinked = unchecked((int)6)
+  Linked = unchecked((int)6)
 }

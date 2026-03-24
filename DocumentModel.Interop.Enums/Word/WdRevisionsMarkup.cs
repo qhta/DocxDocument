@@ -10,14 +10,14 @@ public enum WdRevisionsMarkup
   /// Constants that represent the extent of markup visible in the document, returned by and passed to the
   /// RevisionsFilter.MarkupProperty(Word) property.
   /// </summary>
-  wdRevisionsMarkupNone = unchecked((int)0),
+  None = unchecked((int)0),
   /// <summary>
   /// Constants that represent the extent of markup visible in the document, returned by and passed to the
   /// RevisionsFilter.MarkupProperty(Word) property.
   /// </summary>
-  wdRevisionsMarkupSimple = unchecked((int)1),
+  Simple = unchecked((int)1),
   /// <summary>
   /// Displays the final document with all markup visible.
   /// </summary>
-  wdRevisionsMarkupAll = unchecked((int)2)
+  All = unchecked((int)2)
 }

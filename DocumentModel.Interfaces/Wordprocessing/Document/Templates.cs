@@ -1,4 +1,4 @@
-namespace DocumentModel.Interfaces.Word;
+namespace DocumentModel.Interfaces;
 
 /// <summary>
 /// A collection of Template objects that represent all the templates that are currently available.

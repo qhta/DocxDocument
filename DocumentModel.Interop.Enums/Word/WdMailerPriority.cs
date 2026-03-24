@@ -8,13 +8,13 @@ public enum WdMailerPriority
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdPriorityNormal = unchecked((int)1),
+  Normal = unchecked((int)1),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdPriorityLow = unchecked((int)2),
+  Low = unchecked((int)2),
   /// <summary>
   /// Not supported.
   /// </summary>
-  wdPriorityHigh = unchecked((int)3)
+  High = unchecked((int)3)
 }

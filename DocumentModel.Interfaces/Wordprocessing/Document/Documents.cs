@@ -1,4 +1,4 @@
-namespace DocumentModel.Interfaces.Word;
+namespace DocumentModel.Interfaces;
 
 /// <summary>
 /// A collection of all the Document objects that are currently open in Word.

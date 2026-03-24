@@ -8,13 +8,13 @@ public enum WdListApplyTo
   /// <summary>
   /// Entire list.
   /// </summary>
-  wdListApplyToWholeList = unchecked((int)0),
+  WholeList = unchecked((int)0),
   /// <summary>
   /// From cursor insertion point to end of list.
   /// </summary>
-  wdListApplyToThisPointForward = unchecked((int)1),
+  ThisPointForward = unchecked((int)1),
   /// <summary>
   /// Selection.
   /// </summary>
-  wdListApplyToSelection = unchecked((int)2)
+  Selection = unchecked((int)2)
 }

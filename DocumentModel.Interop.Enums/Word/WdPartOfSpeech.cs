@@ -8,42 +8,42 @@ public enum WdPartOfSpeech
   /// <summary>
   /// An adjective.
   /// </summary>
-  wdAdjective = unchecked((int)0),
+  Adjective = unchecked((int)0),
   /// <summary>
   /// A noun.
   /// </summary>
-  wdNoun = unchecked((int)1),
+  Noun = unchecked((int)1),
   /// <summary>
   /// An adverb.
   /// </summary>
-  wdAdverb = unchecked((int)2),
+  Adverb = unchecked((int)2),
   /// <summary>
   /// A verb.
   /// </summary>
-  wdVerb = unchecked((int)3),
+  Verb = unchecked((int)3),
   /// <summary>
   /// A pronoun.
   /// </summary>
-  wdPronoun = unchecked((int)4),
+  Pronoun = unchecked((int)4),
   /// <summary>
   /// A conjunction.
   /// </summary>
-  wdConjunction = unchecked((int)5),
+  Conjunction = unchecked((int)5),
   /// <summary>
   /// A preposition.
   /// </summary>
-  wdPreposition = unchecked((int)6),
+  Preposition = unchecked((int)6),
   /// <summary>
   /// An interjection.
   /// </summary>
-  wdInterjection = unchecked((int)7),
+  Interjection = unchecked((int)7),
   /// <summary>
   /// An idiom.
   /// </summary>
-  wdIdiom = unchecked((int)8),
+  Idiom = unchecked((int)8),
   /// <summary>
   /// Some other part of speech. [System.Runtime.InteropServices.Guid("6AF6E882-A139-3B8E-9B1C-3315A1AF366D")]
   /// public enum WdPartOfSpeech ﾉ Expand table
   /// </summary>
-  wdOther = unchecked((int)9)
+  Other = unchecked((int)9)
 }

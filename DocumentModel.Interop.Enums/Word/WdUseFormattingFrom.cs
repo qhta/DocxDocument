@@ -8,13 +8,13 @@ public enum WdUseFormattingFrom
   /// <summary>
   /// Specifies a source to copy formatting from.
   /// </summary>
-  wdFormattingFromCurrent = unchecked((int)0),
+  Current = unchecked((int)0),
   /// <summary>
   /// Specifies a source to copy formatting from.
   /// </summary>
-  wdFormattingFromSelected = unchecked((int)1),
+  Selected = unchecked((int)1),
   /// <summary>
   /// Specifies a source to copy formatting from.
   /// </summary>
-  wdFormattingFromPrompt = unchecked((int)2)
+  Prompt = unchecked((int)2)
 }

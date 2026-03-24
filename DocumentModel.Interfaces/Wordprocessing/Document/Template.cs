@@ -1,4 +1,4 @@
-namespace DocumentModel.Interfaces.Word;
+namespace DocumentModel.Interfaces;
 
 /// <summary>
 /// Represents a document template.

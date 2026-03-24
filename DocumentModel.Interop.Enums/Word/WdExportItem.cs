@@ -8,9 +8,9 @@ public enum WdExportItem
   /// <summary>
   /// Exports the document without markup.
   /// </summary>
-  wdExportDocumentContent = unchecked((int)0),
+  Content = unchecked((int)0),
   /// <summary>
   /// Exports the document with markup.
   /// </summary>
-  wdExportDocumentWithMarkup = unchecked((int)7)
+  WithMarkup = unchecked((int)7)
 }

@@ -8,33 +8,33 @@ public enum XlLineStyle
   /// <summary>
   /// Continuous line.
   /// </summary>
-  xlContinuous = unchecked((int)1),
+  Continuous = unchecked((int)1),
   /// <summary>
   /// Alternating dashes and dots.
   /// </summary>
-  xlDashDot = unchecked((int)4),
+  DashDot = unchecked((int)4),
   /// <summary>
   /// Dash followed by two dots.
   /// </summary>
-  xlDashDotDot = unchecked((int)5),
+  DashDotDot = unchecked((int)5),
   /// <summary>
   /// Slanted dashes.
   /// </summary>
-  xlSlantDashDot = unchecked((int)13),
+  SlantDashDot = unchecked((int)13),
   /// <summary>
   /// Specifies the line style for the border.
   /// </summary>
-  xlLineStyleNone = unchecked((int)-4142),
+  LineStyleNone = unchecked((int)-4142),
   /// <summary>
   /// Specifies the line style for the border.
   /// </summary>
-  xlDouble = unchecked((int)-4119),
+  Double = unchecked((int)-4119),
   /// <summary>
   /// Specifies the line style for the border.
   /// </summary>
-  xlDot = unchecked((int)-4118),
+  Dot = unchecked((int)-4118),
   /// <summary>
   /// Specifies the line style for the border.
   /// </summary>
-  xlDash = unchecked((int)-4115)
+  Dash = unchecked((int)-4115)
 }

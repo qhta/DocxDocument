@@ -8,274 +8,274 @@ public enum WdListNumberStyle
   /// <summary>
   /// Arabic numeric style.
   /// </summary>
-  wdListNumberStyleArabic = unchecked((int)0),
+  Arabic = unchecked((int)0),
   /// <summary>
   /// Uppercase Roman style.
   /// </summary>
-  wdListNumberStyleUppercaseRoman = unchecked((int)1),
+  UppercaseRoman = unchecked((int)1),
   /// <summary>
   /// Lowercase Roman style.
   /// </summary>
-  wdListNumberStyleLowercaseRoman = unchecked((int)2),
+  LowercaseRoman = unchecked((int)2),
   /// <summary>
   /// Uppercase letter style.
   /// </summary>
-  wdListNumberStyleUppercaseLetter = unchecked((int)3),
+  UppercaseLetter = unchecked((int)3),
   /// <summary>
   /// Lowercase letter style.
   /// </summary>
-  wdListNumberStyleLowercaseLetter = unchecked((int)4),
+  LowercaseLetter = unchecked((int)4),
   /// <summary>
   /// Ordinal style.
   /// </summary>
-  wdListNumberStyleOrdinal = unchecked((int)5),
+  Ordinal = unchecked((int)5),
   /// <summary>
   /// Cardinal text style.
   /// </summary>
-  wdListNumberStyleCardinalText = unchecked((int)6),
+  CardinalText = unchecked((int)6),
   /// <summary>
   /// Ordinal text style.
   /// </summary>
-  wdListNumberStyleOrdinalText = unchecked((int)7),
+  OrdinalText = unchecked((int)7),
   /// <summary>
   /// Kanji style.
   /// </summary>
-  wdListNumberStyleKanji = unchecked((int)10),
+  Kanji = unchecked((int)10),
   /// <summary>
   /// Kanji Digit style.
   /// </summary>
-  wdListNumberStyleKanjiDigit = unchecked((int)11),
+  KanjiDigit = unchecked((int)11),
   /// <summary>
   /// Aiueo half-width numeric style. [System.Runtime.InteropServices.Guid("9C1DBE08-4499-311E-B83E-27B844624F91")]
   /// public enum WdListNumberStyle ﾉ Expand table
   /// </summary>
-  wdListNumberStyleAiueoHalfWidth = unchecked((int)12),
+  AiueoHalfWidth = unchecked((int)12),
   /// <summary>
   /// Iroha half width style.
   /// </summary>
-  wdListNumberStyleIrohaHalfWidth = unchecked((int)13),
+  IrohaHalfWidth = unchecked((int)13),
   /// <summary>
   /// Arabic full-width numeric style.
   /// </summary>
-  wdListNumberStyleArabicFullWidth = unchecked((int)14),
+  ArabicFullWidth = unchecked((int)14),
   /// <summary>
   /// Kanji traditional style.
   /// </summary>
-  wdListNumberStyleKanjiTraditional = unchecked((int)16),
+  KanjiTraditional = unchecked((int)16),
   /// <summary>
   /// Kanji
   /// </summary>
-  wdListNumberStyleKanjiTraditional2 = unchecked((int)17),
+  KanjiTraditional2 = unchecked((int)17),
   /// <summary>
   /// Number in circle style.
   /// </summary>
-  wdListNumberStyleNumberInCircle = unchecked((int)18),
+  NumberInCircle = unchecked((int)18),
   /// <summary>
   /// Aiueo numeric style.
   /// </summary>
-  wdListNumberStyleAiueo = unchecked((int)20),
+  Aiueo = unchecked((int)20),
   /// <summary>
   /// Iroha style.
   /// </summary>
-  wdListNumberStyleIroha = unchecked((int)21),
+  Iroha = unchecked((int)21),
   /// <summary>
   /// Arabic LZ numeric style.
   /// </summary>
-  wdListNumberStyleArabicLZ = unchecked((int)22),
+  ArabicLZ = unchecked((int)22),
   /// <summary>
   /// Bullet style.
   /// </summary>
-  wdListNumberStyleBullet = unchecked((int)23),
+  Bullet = unchecked((int)23),
   /// <summary>
   /// Ganada style.
   /// </summary>
-  wdListNumberStyleGanada = unchecked((int)24),
+  Ganada = unchecked((int)24),
   /// <summary>
   /// Chosung style.
   /// </summary>
-  wdListNumberStyleChosung = unchecked((int)25),
+  Chosung = unchecked((int)25),
   /// <summary>
   /// GB
   /// </summary>
-  wdListNumberStyleGBNum1 = unchecked((int)26),
+  GBNum1 = unchecked((int)26),
   /// <summary>
   /// GB
   /// </summary>
-  wdListNumberStyleGBNum2 = unchecked((int)27),
+  GBNum2 = unchecked((int)27),
   /// <summary>
   /// GB
   /// </summary>
-  wdListNumberStyleGBNum3 = unchecked((int)28),
+  GBNum3 = unchecked((int)28),
   /// <summary>
   /// GB
   /// </summary>
-  wdListNumberStyleGBNum4 = unchecked((int)29),
+  GBNum4 = unchecked((int)29),
   /// <summary>
   /// Zodiac 1 style.
   /// </summary>
-  wdListNumberStyleZodiac1 = unchecked((int)30),
+  Zodiac1 = unchecked((int)30),
   /// <summary>
   /// Zodiac 2 style.
   /// </summary>
-  wdListNumberStyleZodiac2 = unchecked((int)31),
+  Zodiac2 = unchecked((int)31),
   /// <summary>
   /// Zodiac 3 style.
   /// </summary>
-  wdListNumberStyleZodiac3 = unchecked((int)32),
+  Zodiac3 = unchecked((int)32),
   /// <summary>
   /// Traditional Chinese
   /// </summary>
-  wdListNumberStyleTradChinNum1 = unchecked((int)33),
+  TradChinNum1 = unchecked((int)33),
   /// <summary>
   /// Traditional Chinese
   /// </summary>
-  wdListNumberStyleTradChinNum2 = unchecked((int)34),
+  TradChinNum2 = unchecked((int)34),
   /// <summary>
   /// Traditional Chinese
   /// </summary>
-  wdListNumberStyleTradChinNum3 = unchecked((int)35),
+  TradChinNum3 = unchecked((int)35),
   /// <summary>
   /// Traditional Chinese
   /// </summary>
-  wdListNumberStyleTradChinNum4 = unchecked((int)36),
+  TradChinNum4 = unchecked((int)36),
   /// <summary>
   /// Simplified Chinese
   /// </summary>
-  wdListNumberStyleSimpChinNum1 = unchecked((int)37),
+  SimpChinNum1 = unchecked((int)37),
   /// <summary>
   /// Simplified Chinese
   /// </summary>
-  wdListNumberStyleSimpChinNum2 = unchecked((int)38),
+  SimpChinNum2 = unchecked((int)38),
   /// <summary>
   /// Simplified Chinese
   /// </summary>
-  wdListNumberStyleSimpChinNum3 = unchecked((int)39),
+  SimpChinNum3 = unchecked((int)39),
   /// <summary>
   /// Simplified Chinese
   /// </summary>
-  wdListNumberStyleSimpChinNum4 = unchecked((int)40),
+  SimpChinNum4 = unchecked((int)40),
   /// <summary>
   /// Hanja Read style.
   /// </summary>
-  wdListNumberStyleHanjaRead = unchecked((int)41),
+  HanjaRead = unchecked((int)41),
   /// <summary>
   /// Hanja Read Digit style.
   /// </summary>
-  wdListNumberStyleHanjaReadDigit = unchecked((int)42),
+  HanjaReadDigit = unchecked((int)42),
   /// <summary>
   /// Hanqul style.
   /// </summary>
-  wdListNumberStyleHangul = unchecked((int)43),
+  Hangul = unchecked((int)43),
   /// <summary>
   /// Hanja style.
   /// </summary>
-  wdListNumberStyleHanja = unchecked((int)44),
+  Hanja = unchecked((int)44),
   /// <summary>
   /// Hebrew 1 style.
   /// </summary>
-  wdListNumberStyleHebrew1 = unchecked((int)45),
+  Hebrew1 = unchecked((int)45),
   /// <summary>
   /// Arabic 1 numeric style.
   /// </summary>
-  wdListNumberStyleArabic1 = unchecked((int)46),
+  Arabic1 = unchecked((int)46),
   /// <summary>
   /// Hebrew 2 style.
   /// </summary>
-  wdListNumberStyleHebrew2 = unchecked((int)47),
+  Hebrew2 = unchecked((int)47),
   /// <summary>
   /// Arabic 2 numeric style.
   /// </summary>
-  wdListNumberStyleArabic2 = unchecked((int)48),
+  Arabic2 = unchecked((int)48),
   /// <summary>
   /// Hindi
   /// </summary>
-  wdListNumberStyleHindiLetter1 = unchecked((int)49),
+  HindiLetter1 = unchecked((int)49),
   /// <summary>
   /// Hindi
   /// </summary>
-  wdListNumberStyleHindiLetter2 = unchecked((int)50),
+  HindiLetter2 = unchecked((int)50),
   /// <summary>
   /// Hindi Arabic style.
   /// </summary>
-  wdListNumberStyleHindiArabic = unchecked((int)51),
+  HindiArabic = unchecked((int)51),
   /// <summary>
   /// Hindi Cardinal text style.
   /// </summary>
-  wdListNumberStyleHindiCardinalText = unchecked((int)52),
+  HindiCardinalText = unchecked((int)52),
   /// <summary>
   /// Thai letter style.
   /// </summary>
-  wdListNumberStyleThaiLetter = unchecked((int)53),
+  ThaiLetter = unchecked((int)53),
   /// <summary>
   /// Thai Arabic style.
   /// </summary>
-  wdListNumberStyleThaiArabic = unchecked((int)54),
+  ThaiArabic = unchecked((int)54),
   /// <summary>
   /// Thai Cardinal text style.
   /// </summary>
-  wdListNumberStyleThaiCardinalText = unchecked((int)55),
+  ThaiCardinalText = unchecked((int)55),
   /// <summary>
   /// Vietnamese Cardinal text style.
   /// </summary>
-  wdListNumberStyleVietCardinalText = unchecked((int)56),
+  VietCardinalText = unchecked((int)56),
   /// <summary>
   /// Lowercase Russian style.
   /// </summary>
-  wdListNumberStyleLowercaseRussian = unchecked((int)58),
+  LowercaseRussian = unchecked((int)58),
   /// <summary>
   /// Uppercase Russian style.
   /// </summary>
-  wdListNumberStyleUppercaseRussian = unchecked((int)59),
+  UppercaseRussian = unchecked((int)59),
   /// <summary>
   /// wdListNumberStyleUppercaseGreek 61
   /// </summary>
-  wdListNumberStyleLowercaseGreek = unchecked((int)60),
+  LowercaseGreek = unchecked((int)60),
   /// <summary>
   /// wdListNumberStyleArabicLZ2 62
   /// </summary>
-  wdListNumberStyleUppercaseGreek = unchecked((int)61),
+  UppercaseGreek = unchecked((int)61),
   /// <summary>
   /// wdListNumberStyleArabicLZ3 63
   /// </summary>
-  wdListNumberStyleArabicLZ2 = unchecked((int)62),
+  ArabicLZ2 = unchecked((int)62),
   /// <summary>
   /// wdListNumberStyleArabicLZ4 64
   /// </summary>
-  wdListNumberStyleArabicLZ3 = unchecked((int)63),
+  ArabicLZ3 = unchecked((int)63),
   /// <summary>
   /// wdListNumberStyleLowercaseTurkish 65
   /// </summary>
-  wdListNumberStyleArabicLZ4 = unchecked((int)64),
+  ArabicLZ4 = unchecked((int)64),
   /// <summary>
   /// wdListNumberStyleUppercaseTurkish 66
   /// </summary>
-  wdListNumberStyleLowercaseTurkish = unchecked((int)65),
+  LowercaseTurkish = unchecked((int)65),
   /// <summary>
   /// wdListNumberStyleLowercaseBulgarian 67
   /// </summary>
-  wdListNumberStyleUppercaseTurkish = unchecked((int)66),
+  UppercaseTurkish = unchecked((int)66),
   /// <summary>
   /// wdListNumberStyleUppercaseBulgarian 68
   /// </summary>
-  wdListNumberStyleLowercaseBulgarian = unchecked((int)67),
+  LowercaseBulgarian = unchecked((int)67),
   /// <summary>
   /// wdListNumberStylePictureBullet 249 Picture bullet style.
   /// </summary>
-  wdListNumberStyleUppercaseBulgarian = unchecked((int)68),
+  UppercaseBulgarian = unchecked((int)68),
   /// <summary>
   /// Picture bullet style.
   /// </summary>
-  wdListNumberStylePictureBullet = unchecked((int)249),
+  PictureBullet = unchecked((int)249),
   /// <summary>
   /// Legal style.
   /// </summary>
-  wdListNumberStyleLegal = unchecked((int)253),
+  Legal = unchecked((int)253),
   /// <summary>
   /// Legal LZ style.
   /// </summary>
-  wdListNumberStyleLegalLZ = unchecked((int)254),
+  LegalLZ = unchecked((int)254),
   /// <summary>
   /// No style applied.
   /// </summary>
-  wdListNumberStyleNone = unchecked((int)255)
+  None = unchecked((int)255)
 }

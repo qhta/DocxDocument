@@ -8,25 +8,25 @@ public enum WdTextOrientation
   /// <summary>
   /// Text flows horizontally. default.
   /// </summary>
-  wdTextOrientationHorizontal = unchecked((int)0),
+  Horizontal = unchecked((int)0),
   /// <summary>
   /// Text flows vertically and reads downward from the top.
   /// </summary>
-  wdTextOrientationVerticalFarEast = unchecked((int)1),
+  VerticalFarEast = unchecked((int)1),
   /// <summary>
   /// Text flows upward on a slope.
   /// </summary>
-  wdTextOrientationUpward = unchecked((int)2),
+  Upward = unchecked((int)2),
   /// <summary>
   /// Text flows downward on a slope.
   /// </summary>
-  wdTextOrientationDownward = unchecked((int)3),
+  Downward = unchecked((int)3),
   /// <summary>
   /// Text flows horizontally but from right to left to accommodate Far East languages.
   /// </summary>
-  wdTextOrientationHorizontalRotatedFarEast = unchecked((int)4),
+  HorizontalRotatedFarEast = unchecked((int)4),
   /// <summary>
   /// Text flows vertically and reads downward from the top, left to right.
   /// </summary>
-  wdTextOrientationVertical = unchecked((int)5)
+  Vertical = unchecked((int)5)
 }

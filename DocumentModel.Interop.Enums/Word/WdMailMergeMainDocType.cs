@@ -8,33 +8,33 @@ public enum WdMailMergeMainDocType
   /// <summary>
   /// Form letter.
   /// </summary>
-  wdFormLetters = unchecked((int)0),
+  FormLetters = unchecked((int)0),
   /// <summary>
   /// Mailing label.
   /// </summary>
-  wdMailingLabels = unchecked((int)1),
+  MailingLabels = unchecked((int)1),
   /// <summary>
   /// Envelope.
   /// </summary>
-  wdEnvelopes = unchecked((int)2),
+  Envelopes = unchecked((int)2),
   /// <summary>
   /// Directory.
   /// </summary>
-  wdDirectory = unchecked((int)3),
+  Directory = unchecked((int)3),
   /// <summary>
   /// Catalog.
   /// </summary>
-  wdCatalog = unchecked((int)3),
+  Catalog = unchecked((int)3),
   /// <summary>
   /// E-mail message.
   /// </summary>
-  wdEMail = unchecked((int)4),
+  EMail = unchecked((int)4),
   /// <summary>
   /// Fax.
   /// </summary>
-  wdFax = unchecked((int)5),
+  Fax = unchecked((int)5),
   /// <summary>
   /// Specifies a type of mail merge document.
   /// </summary>
-  wdNotAMergeDocument = unchecked((int)-1)
+  NotAMergeDocument = unchecked((int)-1)
 }

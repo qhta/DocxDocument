@@ -8,9 +8,9 @@ public enum XlColorIndex
   /// <summary>
   /// Specifies the color of a selected feature, such as a border, font, or fill.
   /// </summary>
-  xlColorIndexNone = unchecked((int)-4142),
+  None = unchecked((int)-4142),
   /// <summary>
   /// Specifies the color of a selected feature, such as a border, font, or fill.
   /// </summary>
-  xlColorIndexAutomatic = unchecked((int)-4105)
+  Automatic = unchecked((int)-4105)
 }

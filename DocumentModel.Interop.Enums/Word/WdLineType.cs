@@ -8,9 +8,9 @@ public enum WdLineType
   /// <summary>
   /// A line of text in the body of the document.
   /// </summary>
-  wdTextLine = unchecked((int)0),
+  extLine = unchecked((int)0),
   /// <summary>
   /// A table row.
   /// </summary>
-  wdTableRow = unchecked((int)1)
+  ableRow = unchecked((int)1)
 }

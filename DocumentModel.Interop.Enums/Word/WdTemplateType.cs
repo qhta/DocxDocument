@@ -8,13 +8,13 @@ public enum WdTemplateType
   /// <summary>
   /// The normal default template.
   /// </summary>
-  wdNormalTemplate = unchecked((int)0),
+  NormalTemplate = unchecked((int)0),
   /// <summary>
   /// A global template.
   /// </summary>
-  wdGlobalTemplate = unchecked((int)1),
+  GlobalTemplate = unchecked((int)1),
   /// <summary>
   /// An attached template.
   /// </summary>
-  wdAttachedTemplate = unchecked((int)2)
+  AttachedTemplate = unchecked((int)2)
 }

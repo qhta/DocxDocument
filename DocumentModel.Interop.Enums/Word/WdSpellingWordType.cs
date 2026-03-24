@@ -8,13 +8,13 @@ public enum WdSpellingWordType
   /// <summary>
   /// Spellword searching.
   /// </summary>
-  wdSpellword = unchecked((int)0),
+  Spellword = unchecked((int)0),
   /// <summary>
   /// Wildcard searching.
   /// </summary>
-  wdWildcard = unchecked((int)1),
+  Wildcard = unchecked((int)1),
   /// <summary>
   /// Anagram searching.
   /// </summary>
-  wdAnagram = unchecked((int)2)
+  Anagram = unchecked((int)2)
 }
