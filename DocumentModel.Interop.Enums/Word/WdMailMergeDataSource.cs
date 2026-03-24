@@ -9,8 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdMailMergeDataSource
 {
   /// <summary>
-  /// From Microsoft Word. wdMergeInfoFromAccessDDE1 From Microsoft Access using Dynamic Data Exchange (DDE).
-  /// wdMergeInfoFromExcelDDE2 From Microsoft Excel using DDE. wdMergeInfoFromMSQueryDDE3 From MSQuery using DDE.
+  /// From Microsoft Word.
   /// </summary>
   MergeInfoFromWord = 0,
   /// <summary>
@@ -34,7 +33,7 @@ public enum WdMailMergeDataSource
   /// </summary>
   MergeInfoFromODSO = 5,
   /// <summary>
-  /// Specifies the data source for a mail merge operation.
+  /// No merge information provided.
   /// </summary>
   NoMergeInfo = -1
 }

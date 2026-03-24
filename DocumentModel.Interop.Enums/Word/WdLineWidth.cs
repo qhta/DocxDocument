@@ -9,39 +9,39 @@ namespace DocumentModel.Interop.Word;
 public enum WdLineWidth
 {
   /// <summary>
-  /// 0.25 point.
+  /// Specifies the width of an object's border.
   /// </summary>
   Pt025 = 2,
   /// <summary>
-  /// 0.50 point.
+  /// Specifies the width of an object's border.
   /// </summary>
   Pt050 = 4,
   /// <summary>
-  /// 0.75 point.
+  /// Specifies the width of an object's border.
   /// </summary>
   Pt075 = 6,
   /// <summary>
-  /// 1.00 point. default.
+  /// Specifies the width of an object's border.
   /// </summary>
   Pt100 = 8,
   /// <summary>
-  /// 1.50 points.
+  /// Specifies the width of an object's border.
   /// </summary>
   Pt150 = 12,
   /// <summary>
-  /// 2.25 points.
+  /// Specifies the width of an object's border.
   /// </summary>
   Pt225 = 18,
   /// <summary>
-  /// 3.00 points.
+  /// Specifies the width of an object's border.
   /// </summary>
   Pt300 = 24,
   /// <summary>
-  /// 4.50 points.
+  /// Specifies the width of an object's border.
   /// </summary>
   Pt450 = 36,
   /// <summary>
-  /// 6.00 points.
+  /// Specifies the width of an object's border.
   /// </summary>
   Pt600 = 48
 }

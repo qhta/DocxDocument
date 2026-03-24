@@ -10,7 +10,6 @@ public enum WdAraSpeller
 {
   /// <summary>
   /// The spelling checker ignores spelling rules regarding either Arabic words ending with the letter yaa or Arabic
-  /// words beginning with an alef hamza. wdInitialAlef1 The spelling checker uses spelling rules regarding Arabic
   /// words beginning with an alef hamza.
   /// </summary>
   None = 0,

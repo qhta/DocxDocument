@@ -45,84 +45,83 @@ public enum WdNoteNumberStyle
   /// </summary>
   ArabicFullWidth = 14,
   /// <summary>
-  /// Kanji traditional number style. [System.Runtime.InteropServices.Guid("ACA7717A-16C6-370B-80DD-55F440008A67")]
-  /// public enum WdNoteNumberStyle ﾉ Expand table
+  /// Kanji traditional number style.
   /// </summary>
   KanjiTraditional = 16,
   /// <summary>
-  /// Number in circle number style.
+  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
   /// </summary>
   NumberInCircle = 18,
   /// <summary>
-  /// Traditional Chinese number style 1.
+  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
   /// </summary>
   TradChinNum1 = 33,
   /// <summary>
-  /// Traditional Chinese number style 2.
+  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
   /// </summary>
   TradChinNum2 = 34,
   /// <summary>
-  /// Simplified Chinese number style 1.
+  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
   /// </summary>
   SimpChinNum1 = 37,
   /// <summary>
-  /// Simplified Chinese number style 2.
+  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
   /// </summary>
   SimpChinNum2 = 38,
   /// <summary>
-  /// Hanja read number style.
+  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
   /// </summary>
   HanjaRead = 41,
   /// <summary>
-  /// Hanja read digit number style.
+  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
   /// </summary>
   HanjaReadDigit = 42,
   /// <summary>
-  /// Hebrew letter style 1.
+  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
   /// </summary>
   HebrewLetter1 = 45,
   /// <summary>
-  /// Arabic letter style 1.
+  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
   /// </summary>
   ArabicLetter1 = 46,
   /// <summary>
-  /// Hebrew letter style 2.
+  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
   /// </summary>
   HebrewLetter2 = 47,
   /// <summary>
-  /// Arabic letter style 2.
+  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
   /// </summary>
   ArabicLetter2 = 48,
   /// <summary>
-  /// Hindi letter style 1.
+  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
   /// </summary>
   HindiLetter1 = 49,
   /// <summary>
-  /// Hindi letter style 2.
+  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
   /// </summary>
   HindiLetter2 = 50,
   /// <summary>
-  /// Hindi Arabic number style.
+  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
   /// </summary>
   HindiArabic = 51,
   /// <summary>
-  /// Hindi Cardinal text style.
+  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
   /// </summary>
   HindiCardinalText = 52,
   /// <summary>
-  /// Thai letter style.
+  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
   /// </summary>
   ThaiLetter = 53,
   /// <summary>
-  /// Thai Arabic number style.
+  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
   /// </summary>
   ThaiArabic = 54,
   /// <summary>
-  /// Thai Cardinal text style.
+  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
   /// </summary>
   ThaiCardinalText = 55,
   /// <summary>
-  /// Vietnamese Cardinal text style.
+  /// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
   /// </summary>
   VietCardinalText = 56
 }

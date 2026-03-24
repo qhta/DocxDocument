@@ -13,7 +13,7 @@ public enum WdWrapType
   /// </summary>
   Square = 0,
   /// <summary>
-  /// Tight. wdWrapThrough2 Through.
+  /// Tight.
   /// </summary>
   Tight = 1,
   /// <summary>
@@ -21,7 +21,7 @@ public enum WdWrapType
   /// </summary>
   Through = 2,
   /// <summary>
-  /// Behind text. wdWrapTopBottom4 Top and bottom.
+  /// Behind text.
   /// </summary>
   None = 3,
   /// <summary>

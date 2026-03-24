@@ -18,7 +18,6 @@ public enum WdCursorType
   IBeam = 1,
   /// <summary>
   /// Normal cursor shape. Default; cursor takes shape designated by Microsoft Windows or the application.
-  /// wdCursorNorthwestArrow3 Diagonal cursor shape starting at top left corner.
   /// </summary>
   Normal = 2,
   /// <summary>

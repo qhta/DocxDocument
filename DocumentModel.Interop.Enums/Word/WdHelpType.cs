@@ -21,7 +21,7 @@ public enum WdHelpType
   /// </summary>
   wdHelpActiveWindow = 2,
   /// <summary>
-  /// Displays the Help Topics dialog box. wdHelpExamplesAndDemos4 Displays examples and demos.
+  /// Displays the Help Topics dialog box.
   /// </summary>
   wdHelpContents = 3,
   /// <summary>
@@ -46,8 +46,6 @@ public enum WdHelpType
   wdHelpQuickPreview = 8,
   /// <summary>
   /// Displays the Help Topics dialog box.
-  /// [System.Runtime.InteropServices.Guid("2253A7C8-C563-386D-BDC6-B55E72015C02")] public enum WdHelpType ﾉ Expand
-  /// table
   /// </summary>
   wdHelpSearch = 9,
   /// <summary>

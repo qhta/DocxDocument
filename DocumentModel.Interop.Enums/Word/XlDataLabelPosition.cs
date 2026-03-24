@@ -13,9 +13,7 @@ public enum XlDataLabelPosition
   /// </summary>
   Above = 0,
   /// <summary>
-  /// Data label is positioned below the data point. xlLabelPositionOutsideEnd2 Data label is positioned outside the
-  /// data point at the top edge. xlLabelPositionInsideEnd3 Data label is positioned inside the data point at the
-  /// top edge. xlLabelPositionInsideBase4 Data label is positioned inside the data point at the bottom edge.
+  /// Data label is positioned below the data point.
   /// </summary>
   Below = 1,
   /// <summary>
@@ -43,15 +41,15 @@ public enum XlDataLabelPosition
   /// </summary>
   Custom = 7,
   /// <summary>
-  /// Specifies where the data label is positioned.
+  /// Data label is positioned to the right of the data point.
   /// </summary>
   Right = -4152,
   /// <summary>
-  /// Specifies where the data label is positioned.
+  /// Data label is positioned to the left of the data point.
   /// </summary>
   Left = -4131,
   /// <summary>
-  /// Specifies where the data label is positioned.
+  /// Data label is centered on the data point or is inside a bar or pie chart.
   /// </summary>
   Center = -4108
 }

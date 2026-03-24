@@ -49,32 +49,31 @@ public enum WdDefaultFilePath
   /// </summary>
   ProgramPath = 9,
   /// <summary>
-  /// Graphics filters path. [System.Runtime.InteropServices.Guid("41700B9A-149A-3173-9324-E651080B9918")] public
-  /// enum WdDefaultFilePath ﾉ Expand table
+  /// Graphics filters path.
   /// </summary>
   GraphicsFiltersPath = 10,
   /// <summary>
-  /// Text converters path.
+  /// Specifies a default folder for files related to Microsoft Word.
   /// </summary>
   TextConvertersPath = 11,
   /// <summary>
-  /// Proofing tools path.
+  /// Specifies a default folder for files related to Microsoft Word.
   /// </summary>
   ProofingToolsPath = 12,
   /// <summary>
-  /// Temp file path.
+  /// Specifies a default folder for files related to Microsoft Word.
   /// </summary>
   TempFilePath = 13,
   /// <summary>
-  /// Current folder path.
+  /// Specifies a default folder for files related to Microsoft Word.
   /// </summary>
   CurrentFolderPath = 14,
   /// <summary>
-  /// Style Gallery path.
+  /// Specifies a default folder for files related to Microsoft Word.
   /// </summary>
   StyleGalleryPath = 15,
   /// <summary>
-  /// Border art path.
+  /// Specifies a default folder for files related to Microsoft Word.
   /// </summary>
   BorderArtPath = 19
 }

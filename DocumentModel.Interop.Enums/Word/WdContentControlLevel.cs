@@ -17,8 +17,7 @@ public enum WdContentControlLevel
   /// </summary>
   Paragraph = 1,
   /// <summary>
-  /// Represents a content control that surrounds a table row. wdContentControlLevelCell3 Represents a content
-  /// control that surrounds a table cell.
+  /// Constants that represent the possible levels for a content control, returned by the Level property.
   /// </summary>
   Row = 2,
   /// <summary>

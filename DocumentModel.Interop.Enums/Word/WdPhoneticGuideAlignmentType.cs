@@ -21,8 +21,7 @@ public enum WdPhoneticGuideAlignmentType
   /// </summary>
   OneTwoOne = 2,
   /// <summary>
-  /// Word left-aligns phonetic text with the specified range. wdPhoneticGuideAlignmentRight4 Word right-aligns
-  /// phonetic text with the specified range.
+  /// Word left-aligns phonetic text with the specified range.
   /// </summary>
   Left = 3,
   /// <summary>

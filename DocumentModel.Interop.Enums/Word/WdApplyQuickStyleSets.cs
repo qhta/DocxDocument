@@ -9,7 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdApplyQuickStyleSets
 {
   /// <summary>
-  /// Specifies a Quick Style set to apply to the document.
+  /// Resets the Quick Style to the style set in use when the document was opened.
   /// </summary>
   SessionStartSet = 1,
   /// <summary>

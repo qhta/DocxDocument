@@ -10,7 +10,6 @@ public enum WdReferenceKind
 {
   /// <summary>
   /// Insert label, number, and any additional caption of specified equation, figure, or table.
-  /// wdOnlyLabelAndNumber3 Insert only the label and number of the specified equation, figure, or table.
   /// </summary>
   EntireCaption = 2,
   /// <summary>
@@ -22,21 +21,19 @@ public enum WdReferenceKind
   /// </summary>
   OnlyCaptionText = 4,
   /// <summary>
-  /// Insert footnote reference mark. [System.Runtime.InteropServices.Guid("394033AF-E0BA-30E7-B099-A79873E55634")]
-  /// public enum WdReferenceKind ﾉ Expand table
+  /// Insert footnote reference mark.
   /// </summary>
   FootnoteNumber = 5,
   /// <summary>
-  /// Insert endnote reference mark.
+  /// Specifies the information to include in a cross-reference.
   /// </summary>
   EndnoteNumber = 6,
   /// <summary>
-  /// Insert page number of specified item.
+  /// Specifies the information to include in a cross-reference.
   /// </summary>
   PageNumber = 7,
   /// <summary>
-  /// Insert the word "Above" or the word "Below" as appropriate. wdFootnoteNumberFormatted16 Insert formatted
-  /// footnote reference mark. wdEndnoteNumberFormatted17 Insert formatted endnote reference mark.
+  /// Specifies the information to include in a cross-reference.
   /// </summary>
   Position = 15,
   /// <summary>
@@ -48,19 +45,20 @@ public enum WdReferenceKind
   /// </summary>
   EndnoteNumberFormatted = 17,
   /// <summary>
-  /// Specifies the information to include in a cross-reference.
+  /// Insert complete heading or paragraph number.
   /// </summary>
   NumberFullContext = -4,
   /// <summary>
-  /// Specifies the information to include in a cross-reference.
+  /// Insert heading or paragraph without its relative position in the outline numbered list.
   /// </summary>
   NumberNoContext = -3,
   /// <summary>
-  /// Specifies the information to include in a cross-reference.
+  /// Insert heading or paragraph with as much of its relative position in the outline numbered list as necessary to
+  /// identify the item.
   /// </summary>
   NumberRelativeContext = -2,
   /// <summary>
-  /// Specifies the information to include in a cross-reference.
+  /// Insert text value of the specified item. For example, insert text of the specified heading.
   /// </summary>
   ContentText = -1
 }

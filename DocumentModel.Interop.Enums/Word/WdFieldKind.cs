@@ -17,10 +17,7 @@ public enum WdFieldKind
   /// </summary>
   Hot = 1,
   /// <summary>
-  /// A field that can be updated and has a result. This type includes fields that are automatically updated when
-  /// the source changes as well as fields that can be manually updated (for example, DATE or INCLUDETEXT).
-  /// wdFieldKindCold3 A field that doesn't have a result, for example, an Index Entry (XE), Table of Contents Entry
-  /// (TC), or Private field.
+  /// Specifies the type of field for a Field object.
   /// </summary>
   Warm = 2,
   /// <summary>

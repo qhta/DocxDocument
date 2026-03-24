@@ -19,7 +19,7 @@ public enum WdWordDialog
   HelpWordPerfectHelp = 10,
   /// <summary>
   /// FileName, Directory, Template, Title, Created, LastSaved, LastSavedBy, Revision, Time, Printed, Pages, Words,
-  /// Characters, Paragraphs, Lines, FileSize
+  /// Characters, Paragraphs, Lines,
   /// </summary>
   DocumentStatistics = 78,
   /// <summary>
@@ -30,9 +30,6 @@ public enum WdWordDialog
   /// Name, ConfirmConversions, ReadOnly, LinkToSource, AddToMru, PasswordDoc, PasswordDot, Revert,
   /// WritePasswordDoc, WritePasswordDot, Connection, SQLStatement, SQLStatement1, Format, Encoding, Visible,
   /// OpenExclusive, OpenAndRepair, SubType,
-  /// [System.Runtime.InteropServices.Guid("6EC6B31B-AA8E-31A3-8211-3ADB9601AC42")] public enum WdWordDialog ﾉ
-  /// Expand table DocumentDirection, NoEncodingDialog, XMLTransform wdDialogMailMergeOpenDataSource81
-  /// wdDialogMailMergeOpenHeaderSource82
   /// </summary>
   FileOpen = 80,
   /// <summary>
@@ -46,218 +43,218 @@ public enum WdWordDialog
   /// </summary>
   MailMergeOpenHeaderSource = 82,
   /// <summary>
-  /// Name, Format, LockAnnot, Password, AddToMru, WritePassword, RecommendReadOnly, EmbedFonts,
-  /// NativePictureFormat, FormsData, SaveAsAOCELetter, WriteVersion, VersionDesc, InsertLineBreaks,
-  /// AllowSubstitutions, LineEnding, AddBiDiMarks
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   FileSaveAs = 84,
   /// <summary>
-  /// Title, Subject, Author, Keywords, Comments, FileName, Directory, Template, CreateDate, LastSavedDate,
-  /// LastSavedBy, RevisionNumber, EditTime, LastPrintedDate, NumPages, NumWords, NumChars, NumParas, NumLines,
-  /// Update, FileSize
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   FileSummaryInfo = 86,
   /// <summary>
-  /// wdDialogFilePrint 88 Background, AppendPrFile, Range, PrToFileName, From, To, Type, NumCopies, Pages, Order,
-  /// PrintToFile, Collate, FileName, Printer, OutputPrinter, DuplexPrint, PrintZoomColumn, PrintZoomRow,
-  /// PrintZoomPaperWidth, PrintZoomPaperHeight, ZoomPaper
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   ToolsTemplates = 87,
   /// <summary>
-  /// Background, AppendPrFile, Range, PrToFileName, From, To, Type, NumCopies, Pages, Order, PrintToFile, Collate,
-  /// FileName, Printer, OutputPrinter, DuplexPrint, PrintZoomColumn, PrintZoomRow, PrintZoomPaperWidth,
-  /// PrintZoomPaperHeight, ZoomPaper
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   FilePrint = 88,
   /// <summary>
-  /// Printer, Options, Network, DoNotSetAsSysDefault
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   FilePrintSetup = 97,
   /// <summary>
-  /// SearchName, SearchPath, Name, SubDir, Title, Author, Keywords, Subject, Options, MatchCase, Text,
-  /// PatternMatch, DateSavedFrom, DateSavedTo, SavedBy, DateCreatedFrom, DateCreatedTo, View, SortBy, ListBy,
-  /// SelectedFile, Add, Delete, ShowFolders, MatchByte
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   FileFind = 99,
   /// <summary>
-  /// Points, Underline, Color, StrikeThrough, Superscript, Subscript, Hidden, SmallCaps, AllCaps, Spacing,
-  /// Position, Kerning, KerningMin, Default, Tab, Font, Bold, Italic, DoubleStrikeThrough, Shadow, Outline, Emboss,
-  /// Engrave, Scale, Animations, CharAccent, FontMajor, FontLowAnsi, FontHighAnsi, CharacterWidthGrid, ColorRGB,
-  /// UnderlineColor, PointsBi, ColorBi, FontNameBi, BoldBi, ItalicBi, DiacColor
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   FormatAddrFonts = 103,
   /// <summary>
-  /// IconNumber, Link, DisplayIcon, Class, DataType, IconFileName, Caption, Floating
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   EditPasteSpecial = 111,
   /// <summary>
-  /// Find, Replace, Direction, MatchCase, WholeWord, PatternMatch, SoundsLike, FindNext, ReplaceOne, ReplaceAll,
-  /// Format, Wrap, FindAllWordForms, MatchByte, FuzzyFind, Destination, CorrectEnd, MatchKashida, MatchDiacritics,
-  /// MatchAlefHamza, MatchControl
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   EditFind = 112,
   /// <summary>
-  /// Find, Replace, Direction, MatchCase, WholeWord, PatternMatch, SoundsLike, FindNext, ReplaceOne, ReplaceAll,
-  /// Format, Wrap, FindAllWordForms, MatchByte, FuzzyFind, Destination, CorrectEnd, MatchKashida, MatchDiacritics,
-  /// MatchAlefHamza, MatchControl
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   EditReplace = 117,
   /// <summary>
-  /// (none)
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   EditStyle = 120,
   /// <summary>
-  /// UpdateMode, Locked, SavePictureInDoc, UpdateNow, OpenSource, KillLink, Link, Application, Item, FileName,
-  /// PreserveFormatLinkUpdate
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   EditLinks = 124,
   /// <summary>
-  /// Verb
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   EditObject = 125,
   /// <summary>
-  /// wdDialogTableToText 128
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   TextToTable = 127,
   /// <summary>
-  /// wdDialogTableInsertTable 129
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   TableToText = 128,
   /// <summary>
-  /// wdDialogTableInsertCells 130
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   TableInsertTable = 129,
   /// <summary>
-  /// wdDialogTableInsertRow 131
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   TableInsertCells = 130,
   /// <summary>
-  /// wdDialogTableDeleteCells 133
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   TableInsertRow = 131,
   /// <summary>
-  /// wdDialogTableSplitCells 137
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   TableDeleteCells = 133,
   /// <summary>
-  /// wdDialogTableRowHeight 142
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   TableSplitCells = 137,
   /// <summary>
-  /// wdDialogTableColumnWidth 143
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   TableRowHeight = 142,
   /// <summary>
-  /// wdDialogToolsCustomize 152
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   TableColumnWidth = 143,
   /// <summary>
-  /// wdDialogInsertBreak 159 Type
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   ToolsCustomize = 152,
   /// <summary>
-  /// Type
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   InsertBreak = 159,
   /// <summary>
-  /// Font, Tab, CharNum, CharNumLow, Unicode, Hint
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   InsertSymbol = 162,
   /// <summary>
-  /// Name, LinkToFile, New, FloatOverText
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   InsertPicture = 163,
   /// <summary>
-  /// Name, Range, ConfirmConversions, Link, Attachment
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   InsertFile = 164,
   /// <summary>
-  /// DateTimePic, InsertAsField, DbCharField, DateLanguage, CalendarType
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   InsertDateTime = 165,
   /// <summary>
-  /// Field
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   InsertField = 166,
   /// <summary>
-  /// MergeField, WordField
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   InsertMergeField = 167,
   /// <summary>
-  /// Name, SortBy, Add, Delete, Goto, Hidden
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   InsertBookmark = 168,
   /// <summary>
-  /// wdDialogInsertIndex 170 Outline, Fields, From, To, TableId, AddedStyles, Caption, HeadingSeparator, Replace,
-  /// MarkEntry, AutoMark, MarkCitation, Type, RightAlignPageNumbers, Passim, KeepFormatting, Columns, Category,
-  /// Label, ShowPageNumbers, AccentedLetters, Filter, SortBy, Leader, TOCUseHyperlinks, TOCHidePageNumInWeb,
-  /// IndexLanguage, UseOutlineLevel
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   MarkIndexEntry = 169,
   /// <summary>
-  /// Outline, Fields, From, To, TableId, AddedStyles, Caption, HeadingSeparator, Replace, MarkEntry, AutoMark,
-  /// MarkCitation, Type, RightAlignPageNumbers, Passim, KeepFormatting, Columns, Category, Label, ShowPageNumbers,
-  /// AccentedLetters, Filter, SortBy, Leader, TOCUseHyperlinks, TOCHidePageNumInWeb, IndexLanguage, UseOutlineLevel
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   InsertIndex = 170,
   /// <summary>
-  /// Outline, Fields, From, To, TableId, AddedStyles, Caption, HeadingSeparator, Replace, MarkEntry, AutoMark,
-  /// MarkCitation, Type, RightAlignPageNumbers, Passim, KeepFormatting, Columns, Category, Label, ShowPageNumbers,
-  /// AccentedLetters, Filter, SortBy, Leader, TOCUseHyperlinks, TOCHidePageNumInWeb, IndexLanguage, UseOutlineLevel
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   InsertTableOfContents = 171,
   /// <summary>
-  /// IconNumber, FileName, Link, DisplayIcon, Tab, Class, IconFileName, Caption, Floating
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   InsertObject = 172,
   /// <summary>
-  /// wdDialogFormatFont 174 Points, Underline, Color, StrikeThrough, Superscript, Subscript, Hidden, SmallCaps,
-  /// AllCaps, Spacing, Position, Kerning, KerningMin, Default, Tab, Font, Bold, Italic, DoubleStrikeThrough,
-  /// Shadow, Outline, Emboss, Engrave, Scale, Animations, CharAccent, FontMajor, FontLowAnsi, FontHighAnsi,
-  /// CharacterWidthGrid, ColorRGB, UnderlineColor, PointsBi, ColorBi, FontNameBi, BoldBi, ItalicBi, DiacColor
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   ToolsCreateEnvelope = 173,
   /// <summary>
-  /// Points, Underline, Color, StrikeThrough, Superscript, Subscript, Hidden, SmallCaps, AllCaps, Spacing,
-  /// Position, Kerning, KerningMin, Default, Tab, Font, Bold, Italic, DoubleStrikeThrough, Shadow, Outline, Emboss,
-  /// Engrave, Scale, Animations, CharAccent, FontMajor, FontLowAnsi, FontHighAnsi, CharacterWidthGrid, ColorRGB,
-  /// UnderlineColor, PointsBi, ColorBi, FontNameBi, BoldBi, ItalicBi, DiacColor
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   FormatFont = 174,
   /// <summary>
-  /// LeftIndent, RightIndent, Before, After, LineSpacingRule, LineSpacing, Alignment, WidowControl, KeepWithNext,
-  /// KeepTogether, PageBreak, NoLineNum, DontHyphen, Tab, FirstIndent, OutlineLevel, Kinsoku, WordWrap,
-  /// OverflowPunct, TopLinePunct, AutoSpaceDE, LineHeightGrid, AutoSpaceDN, CharAlign, CharacterUnitLeftIndent,
-  /// AdjustRight, CharacterUnitFirstIndent, CharacterUnitRightIndent, LineUnitBefore, LineUnitAfter,
-  /// NoSpaceBetweenParagraphsOfSameStyle, OrientationBi
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   FormatParagraph = 175,
   /// <summary>
-  /// SectionStart, VertAlign, Endnotes, LineNum, StartingNum, FromText, CountBy, NumMode, SectionType
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   FormatSectionLayout = 176,
   /// <summary>
-  /// Columns, ColumnNo, ColumnWidth, ColumnSpacing, EvenlySpaced, ApplyColsTo, ColLine, StartNewCol, FlowColumnsRtl
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   FormatColumns = 177,
   /// <summary>
-  /// Tab, PaperSize, TopMargin, BottomMargin, LeftMargin, RightMargin, Gutter, PageWidth, PageHeight, Orientation,
-  /// FirstPage, OtherPages, VertAlign, ApplyPropsTo, Default, FacingPages, HeaderDistance, FooterDistance,
-  /// SectionStart, OddAndEvenPages, DifferentFirstPage, Endnotes, LineNum, StartingNum, FromText, CountBy, NumMode,
-  /// TwoOnOne, GutterPosition, LayoutMode, CharsLine, LinesPage, CharPitch, LinePitch, DocFontName, DocFontSize,
-  /// PageColumns, TextFlow, FirstPageOnLeft, SectionType, RTLAlignment, FolioPrint
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   FilePageSetup = 178,
   /// <summary>
-  /// Tab, PaperSize, TopMargin, BottomMargin, LeftMargin, RightMargin, Gutter, PageWidth, PageHeight, Orientation,
-  /// FirstPage, OtherPages, VertAlign, ApplyPropsTo, Default, FacingPages, HeaderDistance, FooterDistance,
-  /// SectionStart, OddAndEvenPages, DifferentFirstPage, Endnotes, LineNum, StartingNum, FromText, CountBy, NumMode,
-  /// TwoOnOne, GutterPosition, LayoutMode, CharsLine, LinesPage, CharPitch, LinePitch, DocFontName, DocFontSize,
-  /// PageColumns, TextFlow, FirstPageOnLeft, SectionType, RTLAlignment
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   FileDocumentLayout = 178,
   /// <summary>
-  /// Position, DefTabs, Align, Leader, Set, Clear, ClearAll
+  /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if
+  /// applicable, that you can use to get or set values in a dialog box.
   /// </summary>
   FormatTabs = 179,
   /// <summary>

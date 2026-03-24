@@ -13,7 +13,7 @@ public enum XlChartPictureType
   /// </summary>
   retch = 1,
   /// <summary>
-  /// Picture is sized to repeat a maximum
+  /// Picture is sized to repeat a maximum of 15 times in the longest stacked bar.
   /// </summary>
   ack = 2,
   /// <summary>

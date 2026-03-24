@@ -17,7 +17,7 @@ public enum WdRemoveDocInfoType
   /// </summary>
   Revisions = 2,
   /// <summary>
-  /// Removes document version information. wdRDIRemovePersonalInformation4 Removes personal information.
+  /// Removes document version information.
   /// </summary>
   Versions = 3,
   /// <summary>
@@ -46,12 +46,10 @@ public enum WdRemoveDocInfoType
   Template = 9,
   /// <summary>
   /// Removes document workspace information.
-  /// [System.Runtime.InteropServices.Guid("F52DEE7F-8295-3A23-9DB3-37609770B6B2")] public enum WdRemoveDocInfoType
-  /// ﾉ Expand table
   /// </summary>
   DocumentWorkspace = 10,
   /// <summary>
-  /// Removes ink annotations. wdRDIDocumentServerProperties14 Removes document server properties.
+  /// Specifies the type of information to remove from a document.
   /// </summary>
   InkAnnotations = 11,
   /// <summary>
@@ -59,19 +57,19 @@ public enum WdRemoveDocInfoType
   /// </summary>
   DocumentServerProperties = 14,
   /// <summary>
-  /// Removes document management policy information.
+  /// Specifies the type of information to remove from a document.
   /// </summary>
   DocumentManagementPolicy = 15,
   /// <summary>
-  /// Removes content type information.
+  /// Specifies the type of information to remove from a document.
   /// </summary>
   ContentType = 16,
   /// <summary>
-  /// Removes taskpane web extensions information.
+  /// Specifies the type of information to remove from a document.
   /// </summary>
   TaskpaneWebExtensions = 17,
   /// <summary>
-  /// Removes all document information.
+  /// Specifies the type of information to remove from a document.
   /// </summary>
   All = 99
 }

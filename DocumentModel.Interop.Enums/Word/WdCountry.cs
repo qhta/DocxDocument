@@ -49,60 +49,59 @@ public enum WdCountry
   /// </summary>
   Sweden = 46,
   /// <summary>
-  /// Norway [System.Runtime.InteropServices.Guid("5A6A6EF1-8165-3EFA-8982-536C7977A79D")] public enum WdCountry ﾉ
-  /// Expand table
+  /// Norway
   /// </summary>
   Norway = 47,
   /// <summary>
-  /// Germany
+  /// Specifies the country/region setting of the current system.
   /// </summary>
   Germany = 49,
   /// <summary>
-  /// Peru
+  /// Specifies the country/region setting of the current system.
   /// </summary>
   Peru = 51,
   /// <summary>
-  /// Mexico
+  /// Specifies the country/region setting of the current system.
   /// </summary>
   Mexico = 52,
   /// <summary>
-  /// Argentina
+  /// Specifies the country/region setting of the current system.
   /// </summary>
   Argentina = 54,
   /// <summary>
-  /// Brazil
+  /// Specifies the country/region setting of the current system.
   /// </summary>
   Brazil = 55,
   /// <summary>
-  /// Chile
+  /// Specifies the country/region setting of the current system.
   /// </summary>
   Chile = 56,
   /// <summary>
-  /// Venezuela
+  /// Specifies the country/region setting of the current system.
   /// </summary>
   Venezuela = 58,
   /// <summary>
-  /// Japan
+  /// Specifies the country/region setting of the current system.
   /// </summary>
   Japan = 81,
   /// <summary>
-  /// Korea
+  /// Specifies the country/region setting of the current system.
   /// </summary>
   Korea = 82,
   /// <summary>
-  /// China
+  /// Specifies the country/region setting of the current system.
   /// </summary>
   China = 86,
   /// <summary>
-  /// Iceland
+  /// Specifies the country/region setting of the current system.
   /// </summary>
   Iceland = 354,
   /// <summary>
-  /// Finland
+  /// Specifies the country/region setting of the current system.
   /// </summary>
   Finland = 358,
   /// <summary>
-  /// Taiwan
+  /// Specifies the country/region setting of the current system.
   /// </summary>
   Taiwan = 886
 }

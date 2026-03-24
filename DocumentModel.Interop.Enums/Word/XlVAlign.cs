@@ -9,23 +9,23 @@ namespace DocumentModel.Interop.Word;
 public enum XlVAlign
 {
   /// <summary>
-  /// Specifies the vertical alignment for the object.
+  /// Top
   /// </summary>
   Top = -4160,
   /// <summary>
-  /// Specifies the vertical alignment for the object.
+  /// Justify
   /// </summary>
   Justify = -4130,
   /// <summary>
-  /// Specifies the vertical alignment for the object.
+  /// Distributed
   /// </summary>
   Distributed = -4117,
   /// <summary>
-  /// Specifies the vertical alignment for the object.
+  /// Center
   /// </summary>
   Center = -4108,
   /// <summary>
-  /// Specifies the vertical alignment for the object.
+  /// Bottom
   /// </summary>
   Bottom = -4107
 }

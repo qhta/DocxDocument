@@ -9,8 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdNumberSpacing
 {
   /// <summary>
-  /// Applies the default number spacing for the font. wdNumberSpacingProportional1 Applies proportional number
-  /// spacing to the font.
+  /// Applies the default number spacing for the font.
   /// </summary>
   Default = 0,
   /// <summary>

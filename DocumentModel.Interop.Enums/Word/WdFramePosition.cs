@@ -9,31 +9,31 @@ namespace DocumentModel.Interop.Word;
 public enum WdFramePosition
 {
   /// <summary>
-  /// Specifies the reference point against which the frame position is calculated.
+  /// Top margin.
   /// </summary>
   Top = -999999,
   /// <summary>
-  /// Specifies the reference point against which the frame position is calculated.
+  /// Left margin.
   /// </summary>
   Left = -999998,
   /// <summary>
-  /// Specifies the reference point against which the frame position is calculated.
+  /// Bottom margin.
   /// </summary>
   Bottom = -999997,
   /// <summary>
-  /// Specifies the reference point against which the frame position is calculated.
+  /// Right margin.
   /// </summary>
   Right = -999996,
   /// <summary>
-  /// Specifies the reference point against which the frame position is calculated.
+  /// Center of document.
   /// </summary>
   Center = -999995,
   /// <summary>
-  /// Specifies the reference point against which the frame position is calculated.
+  /// Content on inside of frame.
   /// </summary>
   Inside = -999994,
   /// <summary>
-  /// Specifies the reference point against which the frame position is calculated.
+  /// Content on outside of frame.
   /// </summary>
   Outside = -999993
 }

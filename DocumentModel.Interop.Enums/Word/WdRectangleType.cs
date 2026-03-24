@@ -26,8 +26,7 @@ public enum WdRectangleType
   /// </summary>
   MarkupRectangleButton = 3,
   /// <summary>
-  /// Represents a space occupied by a page border. wdLineBetweenColumnRectangle5 Represents a region corresponding
-  /// to a line that separates columns.
+  /// Represents a space occupied by a page border.
   /// </summary>
   PageBorderRectangle = 4,
   /// <summary>
@@ -40,16 +39,11 @@ public enum WdRectangleType
   /// </summary>
   Selection = 6,
   /// <summary>
-  /// Not applicable. [System.Runtime.InteropServices.Guid("2C21A8CF-AB68-3F7E-92F9-B745177DF535")] public enum
-  /// WdRectangleType ﾉ Expand table
+  /// Not applicable.
   /// </summary>
   System = 7,
   /// <summary>
-  /// Represents space occupied for the presentation of revision balloons on the page. This space is only printed if
-  /// you print using "Document Showing Markup" in the Print dialog box. wdReadingModeNavigation9 Represents space
-  /// occupied by the page navigation buttons when reading a document in full page reading view.
-  /// wdMarkupRectangleMoveMatch10 Represents space occupied by the Go button used to find matching pairs of tracked
-  /// moves in a document.
+  /// Specifies the type of rectangle and the information it contains.
   /// </summary>
   MarkupRectangleArea = 8,
   /// <summary>
@@ -61,16 +55,15 @@ public enum WdRectangleType
   /// </summary>
   MarkupRectangleMoveMatch = 10,
   /// <summary>
-  /// Represents space occupied for page turning when reading a document in full page reading view.
+  /// Specifies the type of rectangle and the information it contains.
   /// </summary>
   ReadingModePanningArea = 11,
   /// <summary>
-  /// Represents space occupied by the e-mail message navigation buttons when reading e-mail in Microsoft Office
-  /// Outlook.
+  /// Specifies the type of rectangle and the information it contains.
   /// </summary>
   MailNavArea = 12,
   /// <summary>
-  /// Represents space occupied by a content control, equation, or document building block in-document control.
+  /// Specifies the type of rectangle and the information it contains.
   /// </summary>
   DocumentControlRectangle = 13
 }

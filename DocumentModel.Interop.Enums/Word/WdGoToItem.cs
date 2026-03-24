@@ -45,36 +45,35 @@ public enum WdGoToItem
   /// </summary>
   Graphic = 8,
   /// <summary>
-  /// An object. [System.Runtime.InteropServices.Guid("3568EE18-032C-39F9-A32B-179BC05CB782")] public enum
-  /// WdGoToItem ﾉ Expand table
+  /// An object.
   /// </summary>
   Object = 9,
   /// <summary>
-  /// An equation.
+  /// Specifies the type of item to move the insertion point or selection just prior to.
   /// </summary>
   Equation = 10,
   /// <summary>
-  /// A heading.
+  /// Specifies the type of item to move the insertion point or selection just prior to.
   /// </summary>
   Heading = 11,
   /// <summary>
-  /// A percent.
+  /// Specifies the type of item to move the insertion point or selection just prior to.
   /// </summary>
   Percent = 12,
   /// <summary>
-  /// A spelling error.
+  /// Specifies the type of item to move the insertion point or selection just prior to.
   /// </summary>
   SpellingError = 13,
   /// <summary>
-  /// A grammatical error.
+  /// Specifies the type of item to move the insertion point or selection just prior to.
   /// </summary>
   GrammaticalError = 14,
   /// <summary>
-  /// A proofreading error.
+  /// Specifies the type of item to move the insertion point or selection just prior to.
   /// </summary>
   ProofreadingError = 15,
   /// <summary>
-  /// Specifies the type of item to move the insertion point or selection just prior to.
+  /// A bookmark.
   /// </summary>
   Bookmark = -1
 }

@@ -41,10 +41,7 @@ public enum WdSpecialPane
   /// </summary>
   Footnotes = 7,
   /// <summary>
-  /// Endnotes. wdPaneFootnoteContinuationNotice9 The footnote continuation notice.
-  /// wdPaneFootnoteContinuationSeparator10 The footnote continuation separator.
-  /// [System.Runtime.InteropServices.Guid("167B59A9-DBBD-34AF-AFDB-57AC30C2CE58")] public enum WdSpecialPane ﾉ
-  /// Expand table
+  /// Endnotes.
   /// </summary>
   Endnotes = 8,
   /// <summary>
@@ -56,8 +53,7 @@ public enum WdSpecialPane
   /// </summary>
   FootnoteContinuationSeparator = 10,
   /// <summary>
-  /// The footnote separator. wdPaneEndnoteContinuationNotice12 The endnote continuation notice.
-  /// wdPaneEndnoteContinuationSeparator13 The endnote continuation separator.
+  /// Specifies an item to display in the active window pane.
   /// </summary>
   FootnoteSeparator = 11,
   /// <summary>
@@ -69,31 +65,31 @@ public enum WdSpecialPane
   /// </summary>
   EndnoteContinuationSeparator = 13,
   /// <summary>
-  /// The endnote separator.
+  /// Specifies an item to display in the active window pane.
   /// </summary>
   EndnoteSeparator = 14,
   /// <summary>
-  /// Selected comments.
+  /// Specifies an item to display in the active window pane.
   /// </summary>
   Comments = 15,
   /// <summary>
-  /// The page header.
+  /// Specifies an item to display in the active window pane.
   /// </summary>
   CurrentPageHeader = 16,
   /// <summary>
-  /// The page footer.
+  /// Specifies an item to display in the active window pane.
   /// </summary>
   CurrentPageFooter = 17,
   /// <summary>
-  /// The pane revisions.
+  /// Specifies an item to display in the active window pane.
   /// </summary>
   Revisions = 18,
   /// <summary>
-  /// The revisions pane displays along the bottom of the document window.
+  /// Specifies an item to display in the active window pane.
   /// </summary>
   RevisionsHoriz = 19,
   /// <summary>
-  /// The revisions pane displays along the left side of the document window.
+  /// Specifies an item to display in the active window pane.
   /// </summary>
   RevisionsVert = 20
 }

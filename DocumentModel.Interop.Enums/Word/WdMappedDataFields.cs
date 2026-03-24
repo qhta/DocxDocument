@@ -49,84 +49,83 @@ public enum WdMappedDataFields
   /// </summary>
   Address1 = 10,
   /// <summary>
-  /// Address 2 field. [System.Runtime.InteropServices.Guid("0785E3D2-6965-3DD2-A870-81BBA8A8547F")] public enum
-  /// WdMappedDataFields ﾉ Expand table
+  /// Address 2 field.
   /// </summary>
   Address2 = 11,
   /// <summary>
-  /// City field.
+  /// Specifies a type of mapped data field.
   /// </summary>
   City = 12,
   /// <summary>
-  /// State field.
+  /// Specifies a type of mapped data field.
   /// </summary>
   State = 13,
   /// <summary>
-  /// Postal code field.
+  /// Specifies a type of mapped data field.
   /// </summary>
   PostalCode = 14,
   /// <summary>
-  /// Country/region field.
+  /// Specifies a type of mapped data field.
   /// </summary>
   CountryRegion = 15,
   /// <summary>
-  /// Business phone field.
+  /// Specifies a type of mapped data field.
   /// </summary>
   BusinessPhone = 16,
   /// <summary>
-  /// Business fax field.
+  /// Specifies a type of mapped data field.
   /// </summary>
   BusinessFax = 17,
   /// <summary>
-  /// Home phone field.
+  /// Specifies a type of mapped data field.
   /// </summary>
   HomePhone = 18,
   /// <summary>
-  /// Home fax field.
+  /// Specifies a type of mapped data field.
   /// </summary>
   HomeFax = 19,
   /// <summary>
-  /// E-mail address field.
+  /// Specifies a type of mapped data field.
   /// </summary>
   EmailAddress = 20,
   /// <summary>
-  /// Web page unique resource identifier (URL) field.
+  /// Specifies a type of mapped data field.
   /// </summary>
   WebPageURL = 21,
   /// <summary>
-  /// Spouse courtesy title field.
+  /// Specifies a type of mapped data field.
   /// </summary>
   SpouseCourtesyTitle = 22,
   /// <summary>
-  /// Spouse first name field.
+  /// Specifies a type of mapped data field.
   /// </summary>
   SpouseFirstName = 23,
   /// <summary>
-  /// Spouse middle name field.
+  /// Specifies a type of mapped data field.
   /// </summary>
   SpouseMiddleName = 24,
   /// <summary>
-  /// Spouse last name field.
+  /// Specifies a type of mapped data field.
   /// </summary>
   SpouseLastName = 25,
   /// <summary>
-  /// Spouse nickname field.
+  /// Specifies a type of mapped data field.
   /// </summary>
   SpouseNickname = 26,
   /// <summary>
-  /// Ruby first name field.
+  /// Specifies a type of mapped data field.
   /// </summary>
   RubyFirstName = 27,
   /// <summary>
-  /// Ruby last name field.
+  /// Specifies a type of mapped data field.
   /// </summary>
   RubyLastName = 28,
   /// <summary>
-  /// Address 3 field.
+  /// Specifies a type of mapped data field.
   /// </summary>
   Address3 = 29,
   /// <summary>
-  /// Department field.
+  /// Specifies a type of mapped data field.
   /// </summary>
   Department = 30
 }

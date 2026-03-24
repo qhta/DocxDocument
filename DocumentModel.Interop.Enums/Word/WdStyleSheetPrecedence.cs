@@ -18,13 +18,11 @@ public enum WdStyleSheetPrecedence
   /// </summary>
   Highest = 1,
   /// <summary>
-  /// Specifies the level of importance of a style sheet compared to other cascading style sheets attached to the
-  /// Web document.
+  /// Lower precedence.
   /// </summary>
   Lower = -2,
   /// <summary>
-  /// Specifies the level of importance of a style sheet compared to other cascading style sheets attached to the
-  /// Web document.
+  /// Raise precedence.
   /// </summary>
   Higher = -1
 }

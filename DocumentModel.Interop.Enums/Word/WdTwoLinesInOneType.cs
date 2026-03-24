@@ -9,8 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdTwoLinesInOneType
 {
   /// <summary>
-  /// Restore the two lines of text written into one to two separate lines. wdTwoLinesInOneNoBrackets1 Use no
-  /// enclosing character.
+  /// Restore the two lines of text written into one to two separate lines.
   /// </summary>
   None = 0,
   /// <summary>
@@ -18,9 +17,7 @@ public enum WdTwoLinesInOneType
   /// </summary>
   NoBrackets = 1,
   /// <summary>
-  /// Enclose the lines using parentheses. wdTwoLinesInOneSquareBrackets3 Enclose the lines using square brackets.
-  /// wdTwoLinesInOneAngleBrackets4 Enclose the lines using angle brackets. wdTwoLinesInOneCurlyBrackets5 Enclose
-  /// the lines using curly brackets.
+  /// Enclose the lines using parentheses.
   /// </summary>
   Parentheses = 2,
   /// <summary>

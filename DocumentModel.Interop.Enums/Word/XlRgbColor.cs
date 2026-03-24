@@ -61,435 +61,435 @@ public enum XlRgbColor
   /// </summary>
   Lime = 65280,
   /// <summary>
-  /// Chartreuse
+  /// Specifies the RGB color.
   /// </summary>
   Chartreuse = 65407,
   /// <summary>
-  /// Yellow
+  /// Specifies the RGB color.
   /// </summary>
   Yellow = 65535,
   /// <summary>
-  /// Dark Goldenrod
+  /// Specifies the RGB color.
   /// </summary>
   DarkGoldenrod = 755384,
   /// <summary>
-  /// Goldenrod
+  /// Specifies the RGB color.
   /// </summary>
   Goldenrod = 2139610,
   /// <summary>
-  /// Fire Brick
+  /// Specifies the RGB color.
   /// </summary>
   FireBrick = 2237106,
   /// <summary>
-  /// Forest Green
+  /// Specifies the RGB color.
   /// </summary>
   ForestGreen = 2263842,
   /// <summary>
-  /// Olive Drab
+  /// Specifies the RGB color.
   /// </summary>
   OliveDrab = 2330219,
   /// <summary>
-  /// Brown
+  /// Specifies the RGB color.
   /// </summary>
   Brown = 2763429,
   /// <summary>
-  /// Sienna
+  /// Specifies the RGB color.
   /// </summary>
   Sienna = 2970272,
   /// <summary>
-  /// Dark Olive Green
+  /// Specifies the RGB color.
   /// </summary>
   DarkOliveGreen = 3107669,
   /// <summary>
-  /// Green Yellow
+  /// Specifies the RGB color.
   /// </summary>
   GreenYellow = 3145645,
   /// <summary>
-  /// Lime Green
+  /// Specifies the RGB color.
   /// </summary>
   LimeGreen = 3329330,
   /// <summary>
-  /// Yellow Green
+  /// Specifies the RGB color.
   /// </summary>
   YellowGreen = 3329434,
   /// <summary>
-  /// Crimson
+  /// Specifies the RGB color.
   /// </summary>
   Crimson = 3937500,
   /// <summary>
-  /// Peru
+  /// Specifies the RGB color.
   /// </summary>
   Peru = 4163021,
   /// <summary>
-  /// Tomato
+  /// Specifies the RGB color.
   /// </summary>
   Tomato = 4678655,
   /// <summary>
-  /// Dark Slate Grey
+  /// Specifies the RGB color.
   /// </summary>
   DarkSlateGrey = 5197615,
   /// <summary>
-  /// Dark Slate Gray
+  /// Specifies the RGB color.
   /// </summary>
   DarkSlateGray = 5197615,
   /// <summary>
-  /// Coral
+  /// Specifies the RGB color.
   /// </summary>
   Coral = 5275647,
   /// <summary>
-  /// Sea Green
+  /// Specifies the RGB color.
   /// </summary>
   SeaGreen = 5737262,
   /// <summary>
-  /// Indian Red
+  /// Specifies the RGB color.
   /// </summary>
   IndianRed = 6053069,
   /// <summary>
-  /// Sandy Brown
+  /// Specifies the RGB color.
   /// </summary>
   SandyBrown = 6333684,
   /// <summary>
-  /// Dim Grey
+  /// Specifies the RGB color.
   /// </summary>
   DimGrey = 6908265,
   /// <summary>
-  /// Dim Gray
+  /// Specifies the RGB color.
   /// </summary>
   DimGray = 6908265,
   /// <summary>
-  /// Dark Khaki
+  /// Specifies the RGB color.
   /// </summary>
   DarkKhaki = 7059389,
   /// <summary>
-  /// Pale Goldenrod
+  /// Specifies the RGB color.
   /// </summary>
   PaleGoldenrod = 7071982,
   /// <summary>
-  /// Midnight Blue
+  /// Specifies the RGB color.
   /// </summary>
   MidnightBlue = 7346457,
   /// <summary>
-  /// Medium Sea Green
+  /// Specifies the RGB color.
   /// </summary>
   MediumSeaGreen = 7451452,
   /// <summary>
-  /// Salmon
+  /// Specifies the RGB color.
   /// </summary>
   Salmon = 7504122,
   /// <summary>
-  /// Dark Salmon
+  /// Specifies the RGB color.
   /// </summary>
   DarkSalmon = 8034025,
   /// <summary>
-  /// Light Salmon
+  /// Specifies the RGB color.
   /// </summary>
   LightSalmon = 8036607,
   /// <summary>
-  /// Spring Green
+  /// Specifies the RGB color.
   /// </summary>
   SpringGreen = 8388352,
   /// <summary>
-  /// Navy Blue
+  /// Specifies the RGB color.
   /// </summary>
   NavyBlue = 8388608,
   /// <summary>
-  /// Navy
+  /// Specifies the RGB color.
   /// </summary>
   Navy = 8388608,
   /// <summary>
-  /// Purple
+  /// Specifies the RGB color.
   /// </summary>
   Purple = 8388736,
   /// <summary>
-  /// Teal
+  /// Specifies the RGB color.
   /// </summary>
   Teal = 8421376,
   /// <summary>
-  /// Grey
+  /// Specifies the RGB color.
   /// </summary>
   Grey = 8421504,
   /// <summary>
-  /// Gray
+  /// Specifies the RGB color.
   /// </summary>
   Gray = 8421504,
   /// <summary>
-  /// Light Coral
+  /// Specifies the RGB color.
   /// </summary>
   LightCoral = 8421616,
   /// <summary>
-  /// Indigo
+  /// Specifies the RGB color.
   /// </summary>
   Indigo = 8519755,
   /// <summary>
-  /// Medium Violet Red
+  /// Specifies the RGB color.
   /// </summary>
   MediumVioletRed = 8721863,
   /// <summary>
-  /// Burly Wood
+  /// Specifies the RGB color.
   /// </summary>
   BurlyWood = 8894686,
   /// <summary>
-  /// Dark Blue
+  /// Specifies the RGB color.
   /// </summary>
   DarkBlue = 9109504,
   /// <summary>
-  /// Dark Magenta
+  /// Specifies the RGB color.
   /// </summary>
   DarkMagenta = 9109643,
   /// <summary>
-  /// Dark Slate Blue
+  /// Specifies the RGB color.
   /// </summary>
   DarkSlateBlue = 9125192,
   /// <summary>
-  /// Light Cyan
+  /// Specifies the RGB color.
   /// </summary>
   LightCyan = 9145088,
   /// <summary>
-  /// Dark Cyan
+  /// Specifies the RGB color.
   /// </summary>
   DarkCyan = 9145088,
   /// <summary>
-  /// Tan
+  /// Specifies the RGB color.
   /// </summary>
   Tan = 9221330,
   /// <summary>
-  /// Khaki
+  /// Specifies the RGB color.
   /// </summary>
   Khaki = 9234160,
   /// <summary>
-  /// Rosy Brown
+  /// Specifies the RGB color.
   /// </summary>
   RosyBrown = 9408444,
   /// <summary>
-  /// Dark Sea Green
+  /// Specifies the RGB color.
   /// </summary>
   DarkSeaGreen = 9419919,
   /// <summary>
-  /// Slate Gray
+  /// Specifies the RGB color.
   /// </summary>
   SlateGray = 9470064,
   /// <summary>
-  /// Slate Grey
+  /// Specifies the RGB color.
   /// </summary>
   SlateGrey = 9470064,
   /// <summary>
-  /// Light Green
+  /// Specifies the RGB color.
   /// </summary>
   LightGreen = 9498256,
   /// <summary>
-  /// Deep Pink
+  /// Specifies the RGB color.
   /// </summary>
   DeepPink = 9639167,
   /// <summary>
-  /// Pale Violet Red
+  /// Specifies the RGB color.
   /// </summary>
   PaleVioletRed = 9662683,
   /// <summary>
-  /// Pale Green
+  /// Specifies the RGB color.
   /// </summary>
   PaleGreen = 10025880,
   /// <summary>
-  /// Light Slate Grey
+  /// Specifies the RGB color.
   /// </summary>
   LightSlateGrey = 10061943,
   /// <summary>
-  /// Light Slate Gray
+  /// Specifies the RGB color.
   /// </summary>
   LightSlateGray = 10061943,
   /// <summary>
-  /// Medium Spring Green
+  /// Specifies the RGB color.
   /// </summary>
   MediumSpringGreen = 10156544,
   /// <summary>
-  /// Cadet Blue
+  /// Specifies the RGB color.
   /// </summary>
   CadetBlue = 10526303,
   /// <summary>
-  /// Dark Grey
+  /// Specifies the RGB color.
   /// </summary>
   DarkGrey = 11119017,
   /// <summary>
-  /// Dark Gray
+  /// Specifies the RGB color.
   /// </summary>
   DarkGray = 11119017,
   /// <summary>
-  /// Light Sea Green
+  /// Specifies the RGB color.
   /// </summary>
   LightSeaGreen = 11186720,
   /// <summary>
-  /// Medium Aquamarine
+  /// Specifies the RGB color.
   /// </summary>
   MediumAquamarine = 11206502,
   /// <summary>
-  /// Navajo White
+  /// Specifies the RGB color.
   /// </summary>
   NavajoWhite = 11394815,
   /// <summary>
-  /// Wheat
+  /// Specifies the RGB color.
   /// </summary>
   Wheat = 11788021,
   /// <summary>
-  /// Hot Pink
+  /// Specifies the RGB color.
   /// </summary>
   HotPink = 11823615,
   /// <summary>
-  /// Steel Blue
+  /// Specifies the RGB color.
   /// </summary>
   SteelBlue = 11829830,
   /// <summary>
-  /// Moccasin
+  /// Specifies the RGB color.
   /// </summary>
   Moccasin = 11920639,
   /// <summary>
-  /// Peach Puff
+  /// Specifies the RGB color.
   /// </summary>
   PeachPuff = 12180223,
   /// <summary>
-  /// Silver
+  /// Specifies the RGB color.
   /// </summary>
   Silver = 12632256,
   /// <summary>
-  /// Light Pink
+  /// Specifies the RGB color.
   /// </summary>
   LightPink = 12695295,
   /// <summary>
-  /// Bisque
+  /// Specifies the RGB color.
   /// </summary>
   Bisque = 12903679,
   /// <summary>
-  /// Pink
+  /// Specifies the RGB color.
   /// </summary>
   Pink = 13353215,
   /// <summary>
-  /// Dark Orchid
+  /// Specifies the RGB color.
   /// </summary>
   DarkOrchid = 13382297,
   /// <summary>
-  /// Medium Turquoise
+  /// Specifies the RGB color.
   /// </summary>
   MediumTurquoise = 13422920,
   /// <summary>
-  /// Medium Blue
+  /// Specifies the RGB color.
   /// </summary>
   MediumBlue = 13434880,
   /// <summary>
-  /// Slate Blue
+  /// Specifies the RGB color.
   /// </summary>
   SlateBlue = 13458026,
   /// <summary>
-  /// Blanched Almond
+  /// Specifies the RGB color.
   /// </summary>
   BlanchedAlmond = 13495295,
   /// <summary>
-  /// Lemon Chiffon
+  /// Specifies the RGB color.
   /// </summary>
   LemonChiffon = 13499135,
   /// <summary>
-  /// Turquoise
+  /// Specifies the RGB color.
   /// </summary>
   Turquoise = 13688896,
   /// <summary>
-  /// Dark Turquoise
+  /// Specifies the RGB color.
   /// </summary>
   DarkTurquoise = 13749760,
   /// <summary>
-  /// LightGoldenrodYellow
+  /// Specifies the RGB color.
   /// </summary>
   LightGoldenrodYellow = 13826810,
   /// <summary>
-  /// Dark Violet
+  /// Specifies the RGB color.
   /// </summary>
   DarkViolet = 13828244,
   /// <summary>
-  /// Medium Orchid
+  /// Specifies the RGB color.
   /// </summary>
   MediumOrchid = 13850042,
   /// <summary>
-  /// Light Grey
+  /// Specifies the RGB color.
   /// </summary>
   LightGrey = 13882323,
   /// <summary>
-  /// Light Gray
+  /// Specifies the RGB color.
   /// </summary>
   LightGray = 13882323,
   /// <summary>
-  /// Aquamarine
+  /// Specifies the RGB color.
   /// </summary>
   Aquamarine = 13959039,
   /// <summary>
-  /// Papaya Whip
+  /// Specifies the RGB color.
   /// </summary>
   PapayaWhip = 14020607,
   /// <summary>
-  /// Orchid
+  /// Specifies the RGB color.
   /// </summary>
   Orchid = 14053594,
   /// <summary>
-  /// Antique White
+  /// Specifies the RGB color.
   /// </summary>
   AntiqueWhite = 14150650,
   /// <summary>
-  /// Thistle
+  /// Specifies the RGB color.
   /// </summary>
   Thistle = 14204888,
   /// <summary>
-  /// Medium Purple
+  /// Specifies the RGB color.
   /// </summary>
   MediumPurple = 14381203,
   /// <summary>
-  /// Gainsboro
+  /// Specifies the RGB color.
   /// </summary>
   Gainsboro = 14474460,
   /// <summary>
-  /// Beige
+  /// Specifies the RGB color.
   /// </summary>
   Beige = 14480885,
   /// <summary>
-  /// Cornsilk
+  /// Specifies the RGB color.
   /// </summary>
   Cornsilk = 14481663,
   /// <summary>
-  /// Plum
+  /// Specifies the RGB color.
   /// </summary>
   Plum = 14524637,
   /// <summary>
-  /// Light Steel Blue
+  /// Specifies the RGB color.
   /// </summary>
   LightSteelBlue = 14599344,
   /// <summary>
-  /// Light Yellow
+  /// Specifies the RGB color.
   /// </summary>
   LightYellow = 14745599,
   /// <summary>
-  /// Royal Blue
+  /// Specifies the RGB color.
   /// </summary>
   RoyalBlue = 14772545,
   /// <summary>
-  /// Misty Rose
+  /// Specifies the RGB color.
   /// </summary>
   MistyRose = 14804223,
   /// <summary>
-  /// Blue Violet
+  /// Specifies the RGB color.
   /// </summary>
   BlueViolet = 14822282,
   /// <summary>
-  /// Light Blue
+  /// Specifies the RGB color.
   /// </summary>
   LightBlue = 15128749,
   /// <summary>
-  /// Powder Blue
+  /// Specifies the RGB color.
   /// </summary>
   PowderBlue = 15130800,
   /// <summary>
-  /// Linen
+  /// Specifies the RGB color.
   /// </summary>
   Linen = 15134970,
   /// <summary>
-  /// Old Lace
+  /// Specifies the RGB color.
   /// </summary>
   OldLace = 15136253,
   /// <summary>
-  /// Sky Blue
+  /// Specifies the RGB color.
   /// </summary>
   SkyBlue = 15453831,
   /// <summary>

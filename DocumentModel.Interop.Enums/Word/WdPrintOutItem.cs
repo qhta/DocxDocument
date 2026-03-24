@@ -37,7 +37,7 @@ public enum WdPrintOutItem
   /// </summary>
   KeyAssignments = 5,
   /// <summary>
-  /// An envelope. wdPrintDocumentWithMarkup7 Current document content including markup.
+  /// An envelope.
   /// </summary>
   Envelope = 6,
   /// <summary>

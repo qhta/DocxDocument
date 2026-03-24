@@ -49,60 +49,59 @@ public enum WdTaskPanes
   /// </summary>
   Help = 9,
   /// <summary>
-  /// Research pane. [System.Runtime.InteropServices.Guid("A92A72D9-6D30-3581-B297-64A4732A6BD3")] public enum
-  /// WdTaskPanes ﾉ Expand table
+  /// Research pane.
   /// </summary>
   Research = 10,
   /// <summary>
-  /// Fax service pane.
+  /// Specifies the type of task pane object.
   /// </summary>
   FaxService = 11,
   /// <summary>
-  /// XML document pane.
+  /// Specifies the type of task pane object.
   /// </summary>
   XMLDocument = 12,
   /// <summary>
-  /// Document updates pane.
+  /// Specifies the type of task pane object.
   /// </summary>
   DocumentUpdates = 13,
   /// <summary>
-  /// Signature pane.
+  /// Specifies the type of task pane object.
   /// </summary>
   Signature = 14,
   /// <summary>
-  /// Style inspector pane.
+  /// Specifies the type of task pane object.
   /// </summary>
   StyleInspector = 15,
   /// <summary>
-  /// Document management task pane.
+  /// Specifies the type of task pane object.
   /// </summary>
   DocumentManagement = 16,
   /// <summary>
-  /// Apply styles pane.
+  /// Specifies the type of task pane object.
   /// </summary>
   ApplyStyles = 17,
   /// <summary>
-  /// wdTaskPaneSelection 19
+  /// Specifies the type of task pane object.
   /// </summary>
   Nav = 18,
   /// <summary>
-  /// wdTaskPaneProofing 20 Proofing pane.
+  /// Specifies the type of task pane object.
   /// </summary>
   Selection = 19,
   /// <summary>
-  /// Proofing pane.
+  /// Specifies the type of task pane object.
   /// </summary>
   Proofing = 20,
   /// <summary>
-  /// XML mapping pane.
+  /// Specifies the type of task pane object.
   /// </summary>
   XMLMapping = 21,
   /// <summary>
-  /// Revisions pane flex pane.
+  /// Specifies the type of task pane object.
   /// </summary>
   RevPaneFlex = 22,
   /// <summary>
-  /// Thesaurus pane.
+  /// Specifies the type of task pane object.
   /// </summary>
   Thesaurus = 23
 }

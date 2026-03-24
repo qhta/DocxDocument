@@ -49,17 +49,15 @@ public enum WdUnderline
   /// </summary>
   Wavy = 11,
   /// <summary>
-  /// Heavy dots. [System.Runtime.InteropServices.Guid("DA77B198-31E3-312B-83EB-A0CFD52B0085")] public enum
-  /// WdUnderline ﾉ Expand table
+  /// Heavy dots.
   /// </summary>
   DottedHeavy = 20,
   /// <summary>
-  /// Heavy dashes.
+  /// Specifies the type of underline to apply.
   /// </summary>
   DashHeavy = 23,
   /// <summary>
-  /// Alternating heavy dots and heavy dashes. wdUnderlineDotDotDashHeavy26 An alternating heavy dot-dot-dash
-  /// pattern.
+  /// Specifies the type of underline to apply.
   /// </summary>
   DotDashHeavy = 25,
   /// <summary>
@@ -67,19 +65,19 @@ public enum WdUnderline
   /// </summary>
   DotDotDashHeavy = 26,
   /// <summary>
-  /// A heavy wavy line.
+  /// Specifies the type of underline to apply.
   /// </summary>
   WavyHeavy = 27,
   /// <summary>
-  /// Long dashes.
+  /// Specifies the type of underline to apply.
   /// </summary>
   DashLong = 39,
   /// <summary>
-  /// A double wavy line.
+  /// Specifies the type of underline to apply.
   /// </summary>
   WavyDouble = 43,
   /// <summary>
-  /// Long heavy dashes.
+  /// Specifies the type of underline to apply.
   /// </summary>
   DashLongHeavy = 55
 }

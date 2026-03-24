@@ -21,23 +21,23 @@ public enum XlHAlign
   /// </summary>
   CenterAcrossSelection = 7,
   /// <summary>
-  /// Specifies the horizontal alignment for the object.
+  /// Right.
   /// </summary>
   Right = -4152,
   /// <summary>
-  /// Specifies the horizontal alignment for the object.
+  /// Left.
   /// </summary>
   Left = -4131,
   /// <summary>
-  /// Specifies the horizontal alignment for the object.
+  /// Justify.
   /// </summary>
   Justify = -4130,
   /// <summary>
-  /// Specifies the horizontal alignment for the object.
+  /// Distribute.
   /// </summary>
   Distributed = -4117,
   /// <summary>
-  /// Specifies the horizontal alignment for the object.
+  /// Center.
   /// </summary>
   Center = -4108
 }

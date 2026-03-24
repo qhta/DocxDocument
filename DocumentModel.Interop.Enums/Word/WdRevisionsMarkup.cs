@@ -20,7 +20,8 @@ public enum WdRevisionsMarkup
   /// </summary>
   Simple = 1,
   /// <summary>
-  /// Displays the final document with all markup visible.
+  /// Constants that represent the extent of markup visible in the document, returned by and passed to the
+  /// RevisionsFilter.MarkupProperty(Word) property.
   /// </summary>
   All = 2
 }

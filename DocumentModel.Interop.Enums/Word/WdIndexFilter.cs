@@ -13,7 +13,7 @@ public enum WdIndexFilter
   /// </summary>
   None = 0,
   /// <summary>
-  /// Japanese words use the AIUEO method of alphabetizing. wdIndexFilterAkasatana2 Japanese words use Akasatana.
+  /// Japanese words use the AIUEO method of alphabetizing.
   /// </summary>
   Aiueo = 1,
   /// <summary>

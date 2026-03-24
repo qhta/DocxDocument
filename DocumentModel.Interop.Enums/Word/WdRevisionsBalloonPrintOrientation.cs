@@ -9,11 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdRevisionsBalloonPrintOrientation
 {
   /// <summary>
-  /// Microsoft Word automatically selects the orientation that keeps the zoom factor closest to 100%.
-  /// wdBalloonPrintOrientationPreserve1 Word preserves the orientation of the original, uncommented document.
-  /// wdBalloonPrintOrientationForceLandscape2 Word forces all sections to be printed in Landscape mode, regardless
-  /// of original orientation, and prints the revision and comment balloons on the side opposite to the document
-  /// text.
+  /// Specifies the orientation of revision and comment balloons when they are printed.
   /// </summary>
   Auto = 0,
   /// <summary>

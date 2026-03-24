@@ -13,9 +13,7 @@ public enum WdTextboxTightWrap
   /// </summary>
   None = 0,
   /// <summary>
-  /// Wraps text around the text box tightly to the contents of the text box on all lines. wdTightFirstAndLastLines2
-  /// Wraps text tightly only on first and last lines. wdTightFirstLineOnly3 Wraps text tightly only on the first
-  /// line. wdTightLastLineOnly4 Wraps text tightly only on the last line.
+  /// Wraps text around the text box tightly to the contents of the text box on all lines.
   /// </summary>
   All = 1,
   /// <summary>

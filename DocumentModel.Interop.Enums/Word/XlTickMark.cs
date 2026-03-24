@@ -21,7 +21,7 @@ public enum XlTickMark
   /// </summary>
   Cross = 4,
   /// <summary>
-  /// Specifies the position of major and minor tick marks for an axis.
+  /// No mark.
   /// </summary>
   None = -4142
 }

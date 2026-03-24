@@ -21,11 +21,11 @@ public enum XlErrorBarType
   /// </summary>
   StError = 4,
   /// <summary>
-  /// Specifies the range marked by error bars.
+  /// Shows range for specified number of standard deviations.
   /// </summary>
   StDev = -4155,
   /// <summary>
-  /// Specifies the range marked by error bars.
+  /// Range is set by fixed values or cell values.
   /// </summary>
   Custom = -4114
 }

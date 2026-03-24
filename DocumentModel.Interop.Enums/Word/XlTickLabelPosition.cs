@@ -13,15 +13,15 @@ public enum XlTickLabelPosition
   /// </summary>
   NextToAxis = 4,
   /// <summary>
-  /// Specifies the position of tick-mark labels on the specified axis.
+  /// No tick marks.
   /// </summary>
   None = -4142,
   /// <summary>
-  /// Specifies the position of tick-mark labels on the specified axis.
+  /// Bottom or left side of the chart.
   /// </summary>
   Low = -4134,
   /// <summary>
-  /// Specifies the position of tick-mark labels on the specified axis.
+  /// Top or right side of the chart.
   /// </summary>
   High = -4127
 }

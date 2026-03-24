@@ -49,28 +49,27 @@ public enum WdUnits
   /// </summary>
   Row = 10,
   /// <summary>
-  /// A window. [System.Runtime.InteropServices.Guid("D66B392B-BDA5-3778-A812-F6EEA5A96C2F")] public enum WdUnits ﾉ
-  /// Expand table
+  /// A window.
   /// </summary>
   Window = 11,
   /// <summary>
-  /// A cell.
+  /// Specifies a unit of measure to use.
   /// </summary>
   Cell = 12,
   /// <summary>
-  /// Character formatting.
+  /// Specifies a unit of measure to use.
   /// </summary>
   CharacterFormatting = 13,
   /// <summary>
-  /// Paragraph formatting.
+  /// Specifies a unit of measure to use.
   /// </summary>
   ParagraphFormatting = 14,
   /// <summary>
-  /// A table.
+  /// Specifies a unit of measure to use.
   /// </summary>
   Table = 15,
   /// <summary>
-  /// The selected item.
+  /// Specifies a unit of measure to use.
   /// </summary>
   Item = 16
 }

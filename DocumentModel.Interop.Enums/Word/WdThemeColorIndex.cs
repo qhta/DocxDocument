@@ -45,36 +45,35 @@ public enum WdThemeColorIndex
   /// </summary>
   ThemeColorAccent5 = 8,
   /// <summary>
-  /// Accent color 6. [System.Runtime.InteropServices.Guid("803E4880-EECA-3830-9186-32B36FA120AB")] public enum
-  /// WdThemeColorIndex ﾉ Expand table
+  /// Accent color 6.
   /// </summary>
   ThemeColorAccent6 = 9,
   /// <summary>
-  /// Hyperlink color.
+  /// Specifies the theme colors for document themes.
   /// </summary>
   ThemeColorHyperlink = 10,
   /// <summary>
-  /// Followed hyperlink color.
+  /// Specifies the theme colors for document themes.
   /// </summary>
   ThemeColorHyperlinkFollowed = 11,
   /// <summary>
-  /// Background color 1.
+  /// Specifies the theme colors for document themes.
   /// </summary>
   ThemeColorBackground1 = 12,
   /// <summary>
-  /// Text color 1.
+  /// Specifies the theme colors for document themes.
   /// </summary>
   ThemeColorText1 = 13,
   /// <summary>
-  /// Background color 2.
+  /// Specifies the theme colors for document themes.
   /// </summary>
   ThemeColorBackground2 = 14,
   /// <summary>
-  /// Text color 2.
+  /// Specifies the theme colors for document themes.
   /// </summary>
   ThemeColorText2 = 15,
   /// <summary>
-  /// Specifies the theme colors for document themes.
+  /// No color.
   /// </summary>
   NotThemeColor = -1
 }

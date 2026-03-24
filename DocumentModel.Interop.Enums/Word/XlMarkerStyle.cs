@@ -29,31 +29,31 @@ public enum XlMarkerStyle
   /// </summary>
   Circle = 8,
   /// <summary>
-  /// Square markers with a plus sign public enum XlMarkerStyle ﾉ Expand table
+  /// Square markers with a plus sign public enum XlMarkerStyle
   /// </summary>
   Plus = 9,
   /// <summary>
-  /// Specifies the marker style for a point or series in a line chart, scatter chart, or radar chart.
+  /// Square markers with an X
   /// </summary>
   X = -4168,
   /// <summary>
-  /// Specifies the marker style for a point or series in a line chart, scatter chart, or radar chart.
+  /// Picture markers
   /// </summary>
   Picture = -4147,
   /// <summary>
-  /// Specifies the marker style for a point or series in a line chart, scatter chart, or radar chart.
+  /// No markers
   /// </summary>
   None = -4142,
   /// <summary>
-  /// Specifies the marker style for a point or series in a line chart, scatter chart, or radar chart.
+  /// Short bar markers
   /// </summary>
   Dot = -4118,
   /// <summary>
-  /// Specifies the marker style for a point or series in a line chart, scatter chart, or radar chart.
+  /// Long bar markers
   /// </summary>
   Dash = -4115,
   /// <summary>
-  /// Specifies the marker style for a point or series in a line chart, scatter chart, or radar chart.
+  /// Automatic markers
   /// </summary>
   Automatic = -4105
 }

@@ -9,227 +9,228 @@ namespace DocumentModel.Interop.Word;
 public enum XlConstants
 {
   /// <summary>
-  /// Summary row is displayed above the specified range.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Above = 0,
   /// <summary>
-  /// Display positive and negative error bars in the specified chart group or series.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Both = 1,
   /// <summary>
-  /// Display error amounts as a fixed value.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   FixedValue = 1,
   /// <summary>
-  /// Summary row is displayed below the specified range.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Below = 1,
   /// <summary>
-  /// General.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   General = 1,
   /// <summary>
-  /// Square.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Square = 1,
   /// <summary>
-  /// Solid pattern.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Solid = 1,
   /// <summary>
-  /// Inside.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Inside = 2,
   /// <summary>
-  /// Maximum.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Maximum = 2,
   /// <summary>
-  /// Transparent fill.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Transparent = 2,
   /// <summary>
-  /// Display error amounts as a percentage.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Percent = 2,
   /// <summary>
-  /// Corner.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Corner = 2,
   /// <summary>
-  /// Plus values.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   PlusValues = 2,
   /// <summary>
-  /// Two dimensional bar chart group or series.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Bar = 2,
   /// <summary>
-  /// Show value.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   ShowValue = 2,
   /// <summary>
-  /// Diamond pattern.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Diamond = 2,
   /// <summary>
-  /// Single line.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Single = 2,
   /// <summary>
-  /// Opaque fill.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Opaque = 3,
   /// <summary>
-  /// Scale.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Scale = 3,
   /// <summary>
-  /// Outside.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Outside = 3,
   /// <summary>
-  /// Columnar chart group or series.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Column = 3,
   /// <summary>
-  /// Minus values.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   MinusValues = 3,
   /// <summary>
-  /// Triangle.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Triangle = 3,
   /// <summary>
-  /// Show percent.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   ShowPercent = 3,
   /// <summary>
-  /// Minimum.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Minimum = 4,
   /// <summary>
-  /// Next to axis.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   NextToAxis = 4,
   /// <summary>
-  /// Show label.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   ShowLabel = 4,
   /// <summary>
-  /// Display error amounts as a standard error.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   StError = 4,
   /// <summary>
-  /// Cross pattern.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Cross = 4,
   /// <summary>
-  /// Show label and percent.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   ShowLabelAndPercent = 5,
   /// <summary>
-  /// Fill.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Fill = 5,
   /// <summary>
-  /// Star.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Star = 5,
   /// <summary>
-  /// Circle.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Circle = 8,
   /// <summary>
-  /// Display positive error bars in the specified chart group or series.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Plus = 9,
   /// <summary>
-  /// Checker pattern.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Checker = 9,
   /// <summary>
-  /// 75% semi-gray pattern.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   SemiGray75 = 10,
   /// <summary>
-  /// Light horizontal line pattern.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   LightHorizontal = 11,
   /// <summary>
-  /// Light vertical line pattern.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   LightVertical = 12,
   /// <summary>
-  /// Light down line pattern.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   LightDown = 13,
   /// <summary>
-  /// Light up line pattern.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   LightUp = 14,
   /// <summary>
-  /// Grid pattern.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Grid = 15,
   /// <summary>
-  /// Criss-cross pattern.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   CrissCross = 16,
   /// <summary>
-  /// 16% gray pattern.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Gray16 = 17,
   /// <summary>
-  /// 8% gray pattern.
+  /// Specifies a miscellaneous constant in Microsoft Word.
   /// </summary>
   Gray8 = 18,
   /// <summary>
-  /// Specifies a miscellaneous constant in Microsoft Word.
+  /// Top.
   /// </summary>
   Top = -4160,
   /// <summary>
-  /// Specifies a miscellaneous constant in Microsoft Word.
+  /// Right.
   /// </summary>
   Right = -4152,
   /// <summary>
-  /// Specifies a miscellaneous constant in Microsoft Word.
+  /// Do not display error bars in the specified chart group or series.
   /// </summary>
   None = -4142,
   /// <summary>
-  /// Specifies a miscellaneous constant in Microsoft Word.
+  /// Low.
   /// </summary>
   Low = -4134,
   /// <summary>
-  /// Specifies a miscellaneous constant in Microsoft Word.
+  /// Left.
   /// </summary>
   Left = -4131,
   /// <summary>
-  /// Specifies a miscellaneous constant in Microsoft Word.
+  /// Justify.
   /// </summary>
   Justify = -4130,
   /// <summary>
-  /// Specifies a miscellaneous constant in Microsoft Word.
+  /// High.
   /// </summary>
   High = -4127,
   /// <summary>
-  /// Specifies a miscellaneous constant in Microsoft Word.
+  /// 75% gray pattern.
   /// </summary>
   Gray75 = -4126,
   /// <summary>
-  /// Specifies a miscellaneous constant in Microsoft Word.
+  /// 50% gray pattern.
   /// </summary>
   Gray50 = -4125,
   /// <summary>
-  /// Specifies a miscellaneous constant in Microsoft Word.
+  /// 25% gray pattern.
   /// </summary>
   Gray25 = -4124,
   /// <summary>
-  /// Specifies a miscellaneous constant in Microsoft Word.
+  /// Distributed.
   /// </summary>
   Distributed = -4117,
   /// <summary>
-  /// Specifies a miscellaneous constant in Microsoft Word.
+  /// Microsoft Word applies custom settings, such as a color or error amount, to the specified object. public enum
+  /// XlConstants
   /// </summary>
   Custom = -4114,
   /// <summary>

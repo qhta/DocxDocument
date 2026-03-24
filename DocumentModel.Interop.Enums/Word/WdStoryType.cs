@@ -49,32 +49,31 @@ public enum WdStoryType
   /// </summary>
   FirstPageHeaderStory = 10,
   /// <summary>
-  /// First page footer story. [System.Runtime.InteropServices.Guid("28594D1A-A83A-3372-A275-C1700CFB7D42")] public
-  /// enum WdStoryType ﾉ Expand table
+  /// First page footer story.
   /// </summary>
   FirstPageFooterStory = 11,
   /// <summary>
-  /// Footnote separator story.
+  /// Specifies the story type of a selection or item.
   /// </summary>
   FootnoteSeparatorStory = 12,
   /// <summary>
-  /// Footnote continuation separator story.
+  /// Specifies the story type of a selection or item.
   /// </summary>
   FootnoteContinuationSeparatorStory = 13,
   /// <summary>
-  /// Footnote continuation notice story.
+  /// Specifies the story type of a selection or item.
   /// </summary>
   FootnoteContinuationNoticeStory = 14,
   /// <summary>
-  /// Endnote separator story.
+  /// Specifies the story type of a selection or item.
   /// </summary>
   EndnoteSeparatorStory = 15,
   /// <summary>
-  /// Endnote continuation separator story.
+  /// Specifies the story type of a selection or item.
   /// </summary>
   EndnoteContinuationSeparatorStory = 16,
   /// <summary>
-  /// Endnote continuation notice story.
+  /// Specifies the story type of a selection or item.
   /// </summary>
   EndnoteContinuationNoticeStory = 17
 }

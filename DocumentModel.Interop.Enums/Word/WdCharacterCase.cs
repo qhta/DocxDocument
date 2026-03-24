@@ -17,7 +17,7 @@ public enum WdCharacterCase
   /// </summary>
   UpperCase = 1,
   /// <summary>
-  /// Title word case. wdTitleSentence4 Sentence case.
+  /// Title word case.
   /// </summary>
   TitleWord = 2,
   /// <summary>
@@ -42,12 +42,10 @@ public enum WdCharacterCase
   Katakana = 8,
   /// <summary>
   /// Hiragana characters. Used with Japanese text.
-  /// [System.Runtime.InteropServices.Guid("DB686EA6-1A50-3146-B8A0-868BC3C6F451")] public enum WdCharacterCase ﾉ
-  /// Expand table
   /// </summary>
   Hiragana = 9,
   /// <summary>
-  /// Specifies the case of the text in the specified range.
+  /// Toggles between upper, lower, and sentence case.
   /// </summary>
   NextCase = -1
 }

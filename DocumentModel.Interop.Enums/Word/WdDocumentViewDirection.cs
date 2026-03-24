@@ -13,7 +13,7 @@ public enum WdDocumentViewDirection
   /// </summary>
   Rtl = 0,
   /// <summary>
-  /// Displays the document with left alignment and left-to-right reading order.
+  /// Specifies the alignment and reading order for the entire document.
   /// </summary>
   Ltr = 1
 }

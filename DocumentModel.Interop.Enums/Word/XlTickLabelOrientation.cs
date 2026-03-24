@@ -9,23 +9,23 @@ namespace DocumentModel.Interop.Word;
 public enum XlTickLabelOrientation
 {
   /// <summary>
-  /// Specifies the text orientation for tick-mark labels.
+  /// Text runs up.
   /// </summary>
   Upward = -4171,
   /// <summary>
-  /// Specifies the text orientation for tick-mark labels.
+  /// Text runs down.
   /// </summary>
   Downward = -4170,
   /// <summary>
-  /// Specifies the text orientation for tick-mark labels.
+  /// Characters run vertically.
   /// </summary>
   Vertical = -4166,
   /// <summary>
-  /// Specifies the text orientation for tick-mark labels.
+  /// Characters run horizontally.
   /// </summary>
   Horizontal = -4128,
   /// <summary>
-  /// Specifies the text orientation for tick-mark labels.
+  /// Text orientation set by Word.
   /// </summary>
   Automatic = -4105
 }

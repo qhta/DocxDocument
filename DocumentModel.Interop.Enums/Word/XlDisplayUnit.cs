@@ -9,39 +9,39 @@ namespace DocumentModel.Interop.Word;
 public enum XlDisplayUnit
 {
   /// <summary>
-  /// Specifies the display unit label for an axis.
+  /// Millions of millions.
   /// </summary>
   MillionMillions = -10,
   /// <summary>
-  /// Specifies the display unit label for an axis.
+  /// Thousands of millions.
   /// </summary>
   ThousandMillions = -9,
   /// <summary>
-  /// Specifies the display unit label for an axis.
+  /// Hundreds of millions.
   /// </summary>
   HundredMillions = -8,
   /// <summary>
-  /// Specifies the display unit label for an axis.
+  /// Tens of millions.
   /// </summary>
   TenMillions = -7,
   /// <summary>
-  /// Specifies the display unit label for an axis.
+  /// Millions.
   /// </summary>
   Millions = -6,
   /// <summary>
-  /// Specifies the display unit label for an axis.
+  /// Hundreds of thousands.
   /// </summary>
   HundredThousands = -5,
   /// <summary>
-  /// Specifies the display unit label for an axis.
+  /// Tens of thousands.
   /// </summary>
   TenThousands = -4,
   /// <summary>
-  /// Specifies the display unit label for an axis.
+  /// Thousands.
   /// </summary>
   Thousands = -3,
   /// <summary>
-  /// Specifies the display unit label for an axis.
+  /// Hundreds.
   /// </summary>
   Hundreds = -2
 }

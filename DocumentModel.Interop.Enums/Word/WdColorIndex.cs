@@ -45,44 +45,43 @@ public enum WdColorIndex
   /// </summary>
   Yellow = 7,
   /// <summary>
-  /// White color. [System.Runtime.InteropServices.Guid("B1F5A6AB-437D-319F-8B38-0E087D112FEA")] public enum
-  /// WdColorIndex ﾉ Expand table
+  /// White color.
   /// </summary>
   White = 8,
   /// <summary>
-  /// Dark blue color.
+  /// Specifies the color to apply.
   /// </summary>
   DarkBlue = 9,
   /// <summary>
-  /// Teal color.
+  /// Specifies the color to apply.
   /// </summary>
   Teal = 10,
   /// <summary>
-  /// Green color.
+  /// Specifies the color to apply.
   /// </summary>
   Green = 11,
   /// <summary>
-  /// Violet color.
+  /// Specifies the color to apply.
   /// </summary>
   Violet = 12,
   /// <summary>
-  /// Dark red color.
+  /// Specifies the color to apply.
   /// </summary>
   DarkRed = 13,
   /// <summary>
-  /// Dark yellow color.
+  /// Specifies the color to apply.
   /// </summary>
   DarkYellow = 14,
   /// <summary>
-  /// Shade 50 of gray color.
+  /// Specifies the color to apply.
   /// </summary>
   Gray50 = 15,
   /// <summary>
-  /// Shade 25 of gray color.
+  /// Specifies the color to apply.
   /// </summary>
   Gray25 = 16,
   /// <summary>
-  /// Specifies the color to apply.
+  /// Color defined by document author.
   /// </summary>
   ByAuthor = -1
 }

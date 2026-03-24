@@ -45,8 +45,7 @@ public enum WdPasteDataType
   /// </summary>
   EnhancedMetafile = 9,
   /// <summary>
-  /// HTML. [System.Runtime.InteropServices.Guid("773B6CF3-4435-343F-BA19-8F0B7D78CC67")] public enum
-  /// WdPasteDataType ﾉ Expand table
+  /// HTML.
   /// </summary>
   HTML = 10
 }

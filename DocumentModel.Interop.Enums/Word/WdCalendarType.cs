@@ -49,8 +49,7 @@ public enum WdCalendarType
   /// </summary>
   TranslitFrench = 9,
   /// <summary>
-  /// Reserved for internal use. [System.Runtime.InteropServices.Guid("2F1B54DB-4A60-3B71-9EB6-7AE77033B5B5")]
-  /// public enum WdCalendarType ﾉ Expand table
+  /// Reserved for internal use.
   /// </summary>
   Umalqura = 13
 }

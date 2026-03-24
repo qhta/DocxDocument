@@ -38,13 +38,11 @@ public enum WdCellColor
   /// </summary>
   LightGreen = 6,
   /// <summary>
-  /// Light gray. [System.Runtime.InteropServices.Guid("347CDE09-0CE2-3FBB-9BB8-7C9ECF5B750E")] public enum
-  /// WdCellColor ﾉ Expand table
+  /// Light gray.
   /// </summary>
   LightGray = 7,
   /// <summary>
-  /// Specifies the color of highlighting for table cells that were added, deleted, or merged in the current
-  /// document.
+  /// Highlighting color determined by reviewer.
   /// </summary>
   ByAuthor = -1
 }

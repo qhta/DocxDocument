@@ -49,24 +49,23 @@ public enum WdPaperTray
   /// </summary>
   TractorFeed = 8,
   /// <summary>
-  /// Small-format bin. [System.Runtime.InteropServices.Guid("57D6BF95-896D-30E5-B0F0-B97327E7C71D")] public enum
-  /// WdPaperTray ﾉ Expand table
+  /// Small-format bin.
   /// </summary>
   SmallFormatBin = 9,
   /// <summary>
-  /// Large-format bin.
+  /// Specifies a printer paper tray.
   /// </summary>
   LargeFormatBin = 10,
   /// <summary>
-  /// Large-capacity bin.
+  /// Specifies a printer paper tray.
   /// </summary>
   LargeCapacityBin = 11,
   /// <summary>
-  /// Paper cassette.
+  /// Specifies a printer paper tray.
   /// </summary>
   PaperCassette = 14,
   /// <summary>
-  /// Form source.
+  /// Specifies a printer paper tray.
   /// </summary>
   FormSource = 15
 }

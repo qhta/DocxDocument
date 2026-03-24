@@ -46,440 +46,439 @@ public enum WdLanguageID
   /// </summary>
   German = 1031,
   /// <summary>
-  /// Greek language. [System.Runtime.InteropServices.Guid("1614FDAC-2173-3FB1-ADD3-1A35B81F8897")] public enum
-  /// WdLanguageID ﾉ Expand table
+  /// Greek language.
   /// </summary>
   Greek = 1032,
   /// <summary>
-  /// United States English language.
+  /// Specifies the language to use.
   /// </summary>
   EnglishUS = 1033,
   /// <summary>
-  /// Spanish language.
+  /// Specifies the language to use.
   /// </summary>
   Spanish = 1034,
   /// <summary>
-  /// Finnish language.
+  /// Specifies the language to use.
   /// </summary>
   Finnish = 1035,
   /// <summary>
-  /// French language.
+  /// Specifies the language to use.
   /// </summary>
   French = 1036,
   /// <summary>
-  /// Hebrew language.
+  /// Specifies the language to use.
   /// </summary>
   Hebrew = 1037,
   /// <summary>
-  /// Hungarian language.
+  /// Specifies the language to use.
   /// </summary>
   Hungarian = 1038,
   /// <summary>
-  /// Icelandic language.
+  /// Specifies the language to use.
   /// </summary>
   Icelandic = 1039,
   /// <summary>
-  /// Italian language.
+  /// Specifies the language to use.
   /// </summary>
   Italian = 1040,
   /// <summary>
-  /// Japanese language.
+  /// Specifies the language to use.
   /// </summary>
   Japanese = 1041,
   /// <summary>
-  /// Korean language.
+  /// Specifies the language to use.
   /// </summary>
   Korean = 1042,
   /// <summary>
-  /// Dutch language.
+  /// Specifies the language to use.
   /// </summary>
   Dutch = 1043,
   /// <summary>
-  /// Norwegian Bokmol language.
+  /// Specifies the language to use.
   /// </summary>
   NorwegianBokmol = 1044,
   /// <summary>
-  /// Polish language.
+  /// Specifies the language to use.
   /// </summary>
   Polish = 1045,
   /// <summary>
-  /// Portuguese (Brazil) language.
+  /// Specifies the language to use.
   /// </summary>
   PortugueseBrazil = 1046,
   /// <summary>
-  /// Rhaeto Romanic language.
+  /// Specifies the language to use.
   /// </summary>
   RhaetoRomanic = 1047,
   /// <summary>
-  /// Romanian language.
+  /// Specifies the language to use.
   /// </summary>
   Romanian = 1048,
   /// <summary>
-  /// Russian language.
+  /// Specifies the language to use.
   /// </summary>
   Russian = 1049,
   /// <summary>
-  /// Croatian language.
+  /// Specifies the language to use.
   /// </summary>
   Croatian = 1050,
   /// <summary>
-  /// Slovakian language.
+  /// Specifies the language to use.
   /// </summary>
   Slovak = 1051,
   /// <summary>
-  /// Albanian language.
+  /// Specifies the language to use.
   /// </summary>
   Albanian = 1052,
   /// <summary>
-  /// Swedish language.
+  /// Specifies the language to use.
   /// </summary>
   Swedish = 1053,
   /// <summary>
-  /// Thai language.
+  /// Specifies the language to use.
   /// </summary>
   Thai = 1054,
   /// <summary>
-  /// Turkish language.
+  /// Specifies the language to use.
   /// </summary>
   Turkish = 1055,
   /// <summary>
-  /// Urdu language.
+  /// Specifies the language to use.
   /// </summary>
   Urdu = 1056,
   /// <summary>
-  /// Indonesian language.
+  /// Specifies the language to use.
   /// </summary>
   Indonesian = 1057,
   /// <summary>
-  /// Ukrainian language.
+  /// Specifies the language to use.
   /// </summary>
   Ukrainian = 1058,
   /// <summary>
-  /// Belarusian language.
+  /// Specifies the language to use.
   /// </summary>
   Byelorussian = 1059,
   /// <summary>
-  /// Slovenian language.
+  /// Specifies the language to use.
   /// </summary>
   Slovenian = 1060,
   /// <summary>
-  /// Estonian language.
+  /// Specifies the language to use.
   /// </summary>
   Estonian = 1061,
   /// <summary>
-  /// Latvian language.
+  /// Specifies the language to use.
   /// </summary>
   Latvian = 1062,
   /// <summary>
-  /// Lithuanian language.
+  /// Specifies the language to use.
   /// </summary>
   Lithuanian = 1063,
   /// <summary>
-  /// Tajik language.
+  /// Specifies the language to use.
   /// </summary>
   Tajik = 1064,
   /// <summary>
-  /// Persian language.
+  /// Specifies the language to use.
   /// </summary>
   Persian = 1065,
   /// <summary>
-  /// Vietnamese language.
+  /// Specifies the language to use.
   /// </summary>
   Vietnamese = 1066,
   /// <summary>
-  /// Armenian language.
+  /// Specifies the language to use.
   /// </summary>
   Armenian = 1067,
   /// <summary>
-  /// Azeri Latin language.
+  /// Specifies the language to use.
   /// </summary>
   AzeriLatin = 1068,
   /// <summary>
-  /// Basque language.
+  /// Specifies the language to use.
   /// </summary>
   Basque = 1069,
   /// <summary>
-  /// Sorbian language.
+  /// Specifies the language to use.
   /// </summary>
   Sorbian = 1070,
   /// <summary>
-  /// Macedonian (FYROM) language.
+  /// Specifies the language to use.
   /// </summary>
   MacedonianFYROM = 1071,
   /// <summary>
-  /// Sutu language.
+  /// Specifies the language to use.
   /// </summary>
   Sutu = 1072,
   /// <summary>
-  /// Sesotho language.
+  /// Specifies the language to use.
   /// </summary>
   Sesotho = 1072,
   /// <summary>
-  /// Tsonga language.
+  /// Specifies the language to use.
   /// </summary>
   Tsonga = 1073,
   /// <summary>
-  /// Tswana language.
+  /// Specifies the language to use.
   /// </summary>
   Tswana = 1074,
   /// <summary>
-  /// Venda language.
+  /// Specifies the language to use.
   /// </summary>
   Venda = 1075,
   /// <summary>
-  /// Xhosa language.
+  /// Specifies the language to use.
   /// </summary>
   Xhosa = 1076,
   /// <summary>
-  /// Zulu language.
+  /// Specifies the language to use.
   /// </summary>
   Zulu = 1077,
   /// <summary>
-  /// African language.
+  /// Specifies the language to use.
   /// </summary>
   Afrikaans = 1078,
   /// <summary>
-  /// Georgian language.
+  /// Specifies the language to use.
   /// </summary>
   Georgian = 1079,
   /// <summary>
-  /// Faeroese language.
+  /// Specifies the language to use.
   /// </summary>
   Faeroese = 1080,
   /// <summary>
-  /// Hindi language.
+  /// Specifies the language to use.
   /// </summary>
   Hindi = 1081,
   /// <summary>
-  /// Maltese language.
+  /// Specifies the language to use.
   /// </summary>
   Maltese = 1082,
   /// <summary>
-  /// Sami Lappish language.
+  /// Specifies the language to use.
   /// </summary>
   SamiLappish = 1083,
   /// <summary>
-  /// Gaelic Scottish language.
+  /// Specifies the language to use.
   /// </summary>
   GaelicScotland = 1084,
   /// <summary>
-  /// Yiddish language.
+  /// Specifies the language to use.
   /// </summary>
   Yiddish = 1085,
   /// <summary>
-  /// Malaysian language.
+  /// Specifies the language to use.
   /// </summary>
   Malaysian = 1086,
   /// <summary>
-  /// Kazakh language.
+  /// Specifies the language to use.
   /// </summary>
   Kazakh = 1087,
   /// <summary>
-  /// Kyrgyz language.
+  /// Specifies the language to use.
   /// </summary>
   Kyrgyz = 1088,
   /// <summary>
-  /// Kirghiz language.
+  /// Specifies the language to use.
   /// </summary>
   Kirghiz = 1088,
   /// <summary>
-  /// Swahili language.
+  /// Specifies the language to use.
   /// </summary>
   Swahili = 1089,
   /// <summary>
-  /// Turkmen language.
+  /// Specifies the language to use.
   /// </summary>
   Turkmen = 1090,
   /// <summary>
-  /// Uzbek Latin language.
+  /// Specifies the language to use.
   /// </summary>
   UzbekLatin = 1091,
   /// <summary>
-  /// Tatar language.
+  /// Specifies the language to use.
   /// </summary>
   Tatar = 1092,
   /// <summary>
-  /// Bengali language.
+  /// Specifies the language to use.
   /// </summary>
   Bengali = 1093,
   /// <summary>
-  /// Punjabi language.
+  /// Specifies the language to use.
   /// </summary>
   Punjabi = 1094,
   /// <summary>
-  /// Gujarati language.
+  /// Specifies the language to use.
   /// </summary>
   Gujarati = 1095,
   /// <summary>
-  /// Oriya language.
+  /// Specifies the language to use.
   /// </summary>
   Oriya = 1096,
   /// <summary>
-  /// Tamil language.
+  /// Specifies the language to use.
   /// </summary>
   Tamil = 1097,
   /// <summary>
-  /// Telugu language.
+  /// Specifies the language to use.
   /// </summary>
   Telugu = 1098,
   /// <summary>
-  /// Kannada language.
+  /// Specifies the language to use.
   /// </summary>
   Kannada = 1099,
   /// <summary>
-  /// Malayalam language.
+  /// Specifies the language to use.
   /// </summary>
   Malayalam = 1100,
   /// <summary>
-  /// Assamese language.
+  /// Specifies the language to use.
   /// </summary>
   Assamese = 1101,
   /// <summary>
-  /// Marathi language.
+  /// Specifies the language to use.
   /// </summary>
   Marathi = 1102,
   /// <summary>
-  /// Sanskrit language.
+  /// Specifies the language to use.
   /// </summary>
   Sanskrit = 1103,
   /// <summary>
-  /// Mongolian language.
+  /// Specifies the language to use.
   /// </summary>
   Mongolian = 1104,
   /// <summary>
-  /// Tibetan language.
+  /// Specifies the language to use.
   /// </summary>
   Tibetan = 1105,
   /// <summary>
-  /// Welsh language.
+  /// Specifies the language to use.
   /// </summary>
   Welsh = 1106,
   /// <summary>
-  /// Khmer language.
+  /// Specifies the language to use.
   /// </summary>
   Khmer = 1107,
   /// <summary>
-  /// Lao language.
+  /// Specifies the language to use.
   /// </summary>
   Lao = 1108,
   /// <summary>
-  /// Burmese language.
+  /// Specifies the language to use.
   /// </summary>
   Burmese = 1109,
   /// <summary>
-  /// Galician language.
+  /// Specifies the language to use.
   /// </summary>
   Galician = 1110,
   /// <summary>
-  /// Konkani language.
+  /// Specifies the language to use.
   /// </summary>
   Konkani = 1111,
   /// <summary>
-  /// Manipuri language.
+  /// Specifies the language to use.
   /// </summary>
   Manipuri = 1112,
   /// <summary>
-  /// Sindhi language.
+  /// Specifies the language to use.
   /// </summary>
   Sindhi = 1113,
   /// <summary>
-  /// Syriac language.
+  /// Specifies the language to use.
   /// </summary>
   Syriac = 1114,
   /// <summary>
-  /// Sinhalese language.
+  /// Specifies the language to use.
   /// </summary>
   Sinhalese = 1115,
   /// <summary>
-  /// Cherokee language.
+  /// Specifies the language to use.
   /// </summary>
   Cherokee = 1116,
   /// <summary>
-  /// Inuktitut language.
+  /// Specifies the language to use.
   /// </summary>
   Inuktitut = 1117,
   /// <summary>
-  /// Amharic language.
+  /// Specifies the language to use.
   /// </summary>
   Amharic = 1118,
   /// <summary>
-  /// Tamazight language.
+  /// Specifies the language to use.
   /// </summary>
   Tamazight = 1119,
   /// <summary>
-  /// Kashmiri language.
+  /// Specifies the language to use.
   /// </summary>
   Kashmiri = 1120,
   /// <summary>
-  /// Nepali language.
+  /// Specifies the language to use.
   /// </summary>
   Nepali = 1121,
   /// <summary>
-  /// Frisian Netherlands language.
+  /// Specifies the language to use.
   /// </summary>
   FrisianNetherlands = 1122,
   /// <summary>
-  /// Pashto language.
+  /// Specifies the language to use.
   /// </summary>
   Pashto = 1123,
   /// <summary>
-  /// Filipino language.
+  /// Specifies the language to use.
   /// </summary>
   Filipino = 1124,
   /// <summary>
-  /// Divehi language.
+  /// Specifies the language to use.
   /// </summary>
   Divehi = 1125,
   /// <summary>
-  /// Edo language.
+  /// Specifies the language to use.
   /// </summary>
   Edo = 1126,
   /// <summary>
-  /// Fulfulde language.
+  /// Specifies the language to use.
   /// </summary>
   Fulfulde = 1127,
   /// <summary>
-  /// Hausa language.
+  /// Specifies the language to use.
   /// </summary>
   Hausa = 1128,
   /// <summary>
-  /// Ibibio language.
+  /// Specifies the language to use.
   /// </summary>
   Ibibio = 1129,
   /// <summary>
-  /// Yoruba language.
+  /// Specifies the language to use.
   /// </summary>
   Yoruba = 1130,
   /// <summary>
-  /// Igbo language.
+  /// Specifies the language to use.
   /// </summary>
   Igbo = 1136,
   /// <summary>
-  /// Kanuri language.
+  /// Specifies the language to use.
   /// </summary>
   Kanuri = 1137,
   /// <summary>
-  /// Oromo language.
+  /// Specifies the language to use.
   /// </summary>
   Oromo = 1138,
   /// <summary>
-  /// Tigrigna Ethiopic language.
+  /// Specifies the language to use.
   /// </summary>
   TigrignaEthiopic = 1139,
   /// <summary>
-  /// Guarani language.
+  /// Specifies the language to use.
   /// </summary>
   Guarani = 1140,
   /// <summary>
-  /// Hawaiian language.
+  /// Specifies the language to use.
   /// </summary>
   Hawaiian = 1141,
   /// <summary>
-  /// Latin language.
+  /// Specifies the language to use.
   /// </summary>
   Latin = 1142,
   /// <summary>
-  /// Somali language.
+  /// Specifies the language to use.
   /// </summary>
   Somali = 1143,
   /// <summary>

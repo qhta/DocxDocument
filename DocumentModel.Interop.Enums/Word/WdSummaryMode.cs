@@ -10,8 +10,6 @@ public enum WdSummaryMode
 {
   /// <summary>
   /// Highlights the key points in the specified document and displays the AutoSummarize toolbar.
-  /// wdSummaryModeHideAllButSummary1 Hides everything except the specified summary and displays the AutoSummarize
-  /// toolbar.
   /// </summary>
   Highlight = 0,
   /// <summary>

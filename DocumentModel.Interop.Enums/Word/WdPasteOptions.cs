@@ -9,8 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdPasteOptions
 {
   /// <summary>
-  /// Keeps formatting from the source document. wdMatchDestinationFormatting1 Matches formatting to the destination
-  /// document.
+  /// Keeps formatting from the source document.
   /// </summary>
   KeepSourceFormatting = 0,
   /// <summary>

@@ -13,7 +13,7 @@ public enum WdGutterStyleOld
   /// </summary>
   Bidi = 2,
   /// <summary>
-  /// Specifies whether the gutter style should conform to left-to-right text flow or right-to-left text flow.
+  /// Latin gutter should be used to conform to left-to-right text flow.
   /// </summary>
   Latin = -10
 }

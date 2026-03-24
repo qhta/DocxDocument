@@ -19,9 +19,7 @@ public enum WdHebSpellStart
   PartialScript = 1,
   /// <summary>
   /// The spelling checker follows rules for full and partial script and allows non-conventional spelling
-  /// variations. Only completely unrecognized words are highlighted as potential mistakes. wdMixedAuthorizedScript3
-  /// The spelling checker follows rules for full and partial script, but highlights as potential mistakes any
-  /// spelling variations not permitted within either system and any completely unrecognized words.
+  /// variations. Only completely unrecognized words are highlighted as potential mistakes.
   /// </summary>
   MixedScript = 2,
   /// <summary>

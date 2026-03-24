@@ -21,7 +21,7 @@ public enum XlBorderWeight
   /// </summary>
   Thick = 4,
   /// <summary>
-  /// Specifies the weight of the border around a range.
+  /// Medium.
   /// </summary>
   Medium = -4138
 }

@@ -37,171 +37,167 @@ public enum WdFieldType
   /// </summary>
   TOCEntry = 9,
   /// <summary>
-  /// StyleRef field. [System.Runtime.InteropServices.Guid("AB7EDE63-D9C9-3D21-98B0-8DCC19D5BD63")] public enum
-  /// WdFieldType ﾉ Expand table
+  /// StyleRef field.
   /// </summary>
   StyleRef = 10,
   /// <summary>
-  /// RD (Reference Document) field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   RefDoc = 11,
   /// <summary>
-  /// Seq (Sequence) field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Sequence = 12,
   /// <summary>
-  /// TOC (Table of Contents) field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   TOC = 13,
   /// <summary>
-  /// Info field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Info = 14,
   /// <summary>
-  /// Title field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Title = 15,
   /// <summary>
-  /// Subject field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Subject = 16,
   /// <summary>
-  /// Author field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Author = 17,
   /// <summary>
-  /// Keywords field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   KeyWord = 18,
   /// <summary>
-  /// Comments field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Comments = 19,
   /// <summary>
-  /// LastSavedBy field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   LastSavedBy = 20,
   /// <summary>
-  /// CreateDate field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   CreateDate = 21,
   /// <summary>
-  /// SaveDate field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   SaveDate = 22,
   /// <summary>
-  /// PrintDate field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   PrintDate = 23,
   /// <summary>
-  /// RevNum field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   RevisionNum = 24,
   /// <summary>
-  /// EditTime field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   EditTime = 25,
   /// <summary>
-  /// NumPages field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   NumPages = 26,
   /// <summary>
-  /// NumWords field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   NumWords = 27,
   /// <summary>
-  /// NumChars field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   NumChars = 28,
   /// <summary>
-  /// FileName field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   FileName = 29,
   /// <summary>
-  /// Template field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Template = 30,
   /// <summary>
-  /// Date field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Date = 31,
   /// <summary>
-  /// Time field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Time = 32,
   /// <summary>
-  /// Page field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Page = 33,
   /// <summary>
-  /// = (Formula) field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Expression = 34,
   /// <summary>
-  /// Quote field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Quote = 35,
   /// <summary>
-  /// Include field. Cannot be added through the Field dialog box, but can be added interactively or through code.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Include = 36,
   /// <summary>
-  /// PageRef field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   PageRef = 37,
   /// <summary>
-  /// Ask field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Ask = 38,
   /// <summary>
-  /// Fill-In field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   FillIn = 39,
   /// <summary>
-  /// Data field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Data = 40,
   /// <summary>
-  /// Next field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Next = 41,
   /// <summary>
-  /// NextIf field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   NextIf = 42,
   /// <summary>
-  /// SkipIf field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   SkipIf = 43,
   /// <summary>
-  /// MergeRec field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   MergeRec = 44,
   /// <summary>
-  /// DDE field. No longer available through the Field dialog box, but supported for documents created in earlier
-  /// versions of Microsoft Word.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   DDE = 45,
   /// <summary>
-  /// DDEAuto field. No longer available through the Field dialog box, but supported for documents created in
-  /// earlier versions of Microsoft Word.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   DDEAuto = 46,
   /// <summary>
-  /// Glossary field. No longer supported in Microsoft Word.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Glossary = 47,
   /// <summary>
-  /// Print field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Print = 48,
   /// <summary>
-  /// EQ (Equation) field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Formula = 49,
   /// <summary>
-  /// GoToButton field. wdFieldMacroButton51 MacroButton field. wdFieldAutoNumOutline52 AutoNumOut field.
-  /// wdFieldAutoNumLegal53 AutoNumLgl field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   GoToButton = 50,
   /// <summary>
@@ -217,55 +213,55 @@ public enum WdFieldType
   /// </summary>
   AutoNumLegal = 53,
   /// <summary>
-  /// AutoNum field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   AutoNum = 54,
   /// <summary>
-  /// Import field. Cannot be added through the Field dialog box, but can be added interactively or through code.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Import = 55,
   /// <summary>
-  /// Link field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Link = 56,
   /// <summary>
-  /// Symbol field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Symbol = 57,
   /// <summary>
-  /// Embedded field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Embed = 58,
   /// <summary>
-  /// MergeField field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   MergeField = 59,
   /// <summary>
-  /// UserName field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   UserName = 60,
   /// <summary>
-  /// UserInitials field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   UserInitials = 61,
   /// <summary>
-  /// UserAddress field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   UserAddress = 62,
   /// <summary>
-  /// BarCode field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   BarCode = 63,
   /// <summary>
-  /// DocVariable field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   DocVariable = 64,
   /// <summary>
-  /// Section field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Section = 65,
   /// <summary>
-  /// SectionPages field. wdFieldIncludePicture67 IncludePicture field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   SectionPages = 66,
   /// <summary>
@@ -273,17 +269,15 @@ public enum WdFieldType
   /// </summary>
   IncludePicture = 67,
   /// <summary>
-  /// IncludeText field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   IncludeText = 68,
   /// <summary>
-  /// FileSize field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   FileSize = 69,
   /// <summary>
-  /// FormText field. Inserted with the Text Form Field button on the Forms toolbar rather than through the Fields
-  /// dialog box or through code. wdFieldFormCheckBox71 FormCheckBox field. Inserted with the Check Box Form Field
-  /// button on the Forms toolbar rather than through the Field dialog box or through code.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   FormTextInput = 70,
   /// <summary>
@@ -291,45 +285,43 @@ public enum WdFieldType
   /// </summary>
   FormCheckBox = 71,
   /// <summary>
-  /// NoteRef field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   NoteRef = 72,
   /// <summary>
-  /// TOA (Table of Authorities) field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   TOA = 73,
   /// <summary>
-  /// TOA (Table of Authorities Entry) field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   TOAEntry = 74,
   /// <summary>
-  /// MergeSeq field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   MergeSeq = 75,
   /// <summary>
-  /// Private field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Private = 77,
   /// <summary>
-  /// Database field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Database = 78,
   /// <summary>
-  /// AutoText field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   AutoText = 79,
   /// <summary>
-  /// Compare field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Compare = 80,
   /// <summary>
-  /// Add-in field. Not available through the Field dialog box. Used to store data that is hidden from the user
-  /// interface.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Addin = 81,
   /// <summary>
-  /// Subscriber field. wdFieldFormDropDown83 FormDropDown field. Inserted with the Drop-Down Form Field button on
-  /// the Forms toolbar rather than through the Field dialog box or through code.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Subscriber = 82,
   /// <summary>
@@ -337,36 +329,35 @@ public enum WdFieldType
   /// </summary>
   FormDropDown = 83,
   /// <summary>
-  /// Advance field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Advance = 84,
   /// <summary>
-  /// DocProperty field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   DocProperty = 85,
   /// <summary>
-  /// OCX field. Cannot be added through the Field dialog box, but can be added through code by using the
-  /// AddOLEControl method of the FormFields collection.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   OCX = 87,
   /// <summary>
-  /// Hyperlink field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Hyperlink = 88,
   /// <summary>
-  /// AutoTextList field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   AutoTextList = 89,
   /// <summary>
-  /// ListNum field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   ListNum = 90,
   /// <summary>
-  /// HTMLActiveX field. Not currently supported.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   HTMLActiveX = 91,
   /// <summary>
-  /// BidiOutline field. wdFieldAddressBlock93 AddressBlock field. wdFieldGreetingLine94 GreetingLine field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   BidiOutline = 92,
   /// <summary>
@@ -378,12 +369,11 @@ public enum WdFieldType
   /// </summary>
   GreetingLine = 94,
   /// <summary>
-  /// Shape field. Automatically created for any drawn picture.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Shape = 95,
   /// <summary>
-  /// Citation field. wdFieldBibliography97 Bibliography field. wdFieldMergeBarcode98 MergeBarcode field.
-  /// wdFieldDisplayBarcode99 DisplayBarcode field.
+  /// Specifies a Microsoft Word field.
   /// </summary>
   Citation = 96,
   /// <summary>
@@ -399,7 +389,8 @@ public enum WdFieldType
   /// </summary>
   DisplayBarcode = 99,
   /// <summary>
-  /// Specifies a Microsoft Word field.
+  /// Empty field. Acts as a placeholder for field content that has not yet been added. A field added by pressing
+  /// Ctrl+F9 in the user interface is an Empty field.
   /// </summary>
   Empty = -1
 }

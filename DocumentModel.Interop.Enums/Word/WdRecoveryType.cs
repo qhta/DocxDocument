@@ -38,29 +38,26 @@ public enum WdRecoveryType
   TableInsertAsRows = 11,
   /// <summary>
   /// Pastes an appended table without merging table styles.
-  /// [System.Runtime.InteropServices.Guid("CD2C303A-F5BB-3414-A740-57FB0618169A")] public enum WdRecoveryType ﾉ
-  /// Expand table
   /// </summary>
   TableOriginalFormatting = 12,
   /// <summary>
-  /// Pastes an Excel chart as a picture.
+  /// Specifies the formatting to use when pasting the selected table cells.
   /// </summary>
   ChartPicture = 13,
   /// <summary>
-  /// Pastes a Microsoft Excel chart as an embedded OLE object.
+  /// Specifies the formatting to use when pasting the selected table cells.
   /// </summary>
   Chart = 14,
   /// <summary>
-  /// Pastes an Excel chart and links it to the original Excel spreadsheet.
+  /// Specifies the formatting to use when pasting the selected table cells.
   /// </summary>
   ChartLinked = 15,
   /// <summary>
-  /// Preserves original formatting of the pasted material.
+  /// Specifies the formatting to use when pasting the selected table cells.
   /// </summary>
   FormatOriginalFormatting = 16,
   /// <summary>
-  /// Uses the styles that are in use in the destination document. wdFormatSurroundingFormattingWithEmphasis20
-  /// Matches the formatting of the pasted text to the formatting of surrounding text.
+  /// Specifies the formatting to use when pasting the selected table cells.
   /// </summary>
   UseDestinationStylesRecovery = 19,
   /// <summary>
@@ -68,19 +65,19 @@ public enum WdRecoveryType
   /// </summary>
   FormatSurroundingFormattingWithEmphasis = 20,
   /// <summary>
-  /// Pastes as plain, unformatted text.
+  /// Specifies the formatting to use when pasting the selected table cells.
   /// </summary>
   FormatPlainText = 22,
   /// <summary>
-  /// Pastes table cells and overwrites existing table cells.
+  /// Specifies the formatting to use when pasting the selected table cells.
   /// </summary>
   TableOverwriteCells = 23,
   /// <summary>
-  /// Merges a pasted list with neighboring lists.
+  /// Specifies the formatting to use when pasting the selected table cells.
   /// </summary>
   ListCombineWithExistingList = 24,
   /// <summary>
-  /// Not supported.
+  /// Specifies the formatting to use when pasting the selected table cells.
   /// </summary>
   ListDontMerge = 25
 }

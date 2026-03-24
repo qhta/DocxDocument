@@ -22,7 +22,6 @@ public enum XlDataLabelsType
   Label = 4,
   /// <summary>
   /// Percentage of the total, and category for the point. Available only for pie charts and doughnut charts.
-  /// xlDataLabelsShowBubbleSizes6 Show the size of the bubble in reference to the absolute value.
   /// </summary>
   LabelAndPercent = 5,
   /// <summary>
@@ -30,7 +29,7 @@ public enum XlDataLabelsType
   /// </summary>
   BubbleSizes = 6,
   /// <summary>
-  /// Specifies the type of data label to apply.
+  /// No data labels.
   /// </summary>
   None = -4142
 }

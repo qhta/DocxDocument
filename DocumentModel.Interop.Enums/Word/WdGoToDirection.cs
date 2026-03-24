@@ -30,8 +30,7 @@ public enum WdGoToDirection
   /// </summary>
   Previous = 3,
   /// <summary>
-  /// Specifies the position to which a selection or the insertion point is moved in relation to an object or to
-  /// itself.
+  /// The last instance of the specified object.
   /// </summary>
   Last = -1
 }

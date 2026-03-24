@@ -41,7 +41,7 @@ public enum WdKeyCategory
   /// </summary>
   Prefix = 7,
   /// <summary>
-  /// Specifies the type of item assigned to the key binding.
+  /// Key is not assigned.
   /// </summary>
   Nil = -1
 }

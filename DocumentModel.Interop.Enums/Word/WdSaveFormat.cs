@@ -13,7 +13,7 @@ public enum WdSaveFormat
   /// </summary>
   Document = 0,
   /// <summary>
-  /// Microsoft
+  /// Microsoft Word 97 document format.
   /// </summary>
   Document97 = 0,
   /// <summary>
@@ -45,32 +45,31 @@ public enum WdSaveFormat
   /// </summary>
   RTF = 6,
   /// <summary>
-  /// Unicode text format.
+  /// Specifies the format to use when saving a document.
   /// </summary>
   UnicodeText = 7,
   /// <summary>
-  /// Encoded text format. [System.Runtime.InteropServices.Guid("6AEEBC10-0420-3FB1-8A04-5F2053C4DAE9")] public enum
-  /// WdSaveFormat ﾉ Expand table
+  /// Encoded text format.
   /// </summary>
   EncodedText = 7,
   /// <summary>
-  /// Standard HTML format.
+  /// Specifies the format to use when saving a document.
   /// </summary>
   HTML = 8,
   /// <summary>
-  /// Web archive format.
+  /// Specifies the format to use when saving a document.
   /// </summary>
   WebArchive = 9,
   /// <summary>
-  /// Filtered HTML format.
+  /// Specifies the format to use when saving a document.
   /// </summary>
   FilteredHTML = 10,
   /// <summary>
-  /// Extensible Markup Language (XML) format.
+  /// Specifies the format to use when saving a document.
   /// </summary>
   XML = 11,
   /// <summary>
-  /// XML document format. wdFormatXMLDocumentMacroEnabled13 XML template format with macros enabled.
+  /// Specifies the format to use when saving a document.
   /// </summary>
   XMLDocument = 12,
   /// <summary>
@@ -78,7 +77,7 @@ public enum WdSaveFormat
   /// </summary>
   XMLDocumentMacroEnabled = 13,
   /// <summary>
-  /// XML template format. wdFormatXMLTemplateMacroEnabled15 XML template format with macros enabled.
+  /// Specifies the format to use when saving a document.
   /// </summary>
   XMLTemplate = 14,
   /// <summary>
@@ -86,27 +85,27 @@ public enum WdSaveFormat
   /// </summary>
   XMLTemplateMacroEnabled = 15,
   /// <summary>
-  /// Word default document file format. For Microsoft Office Word 2007, this is the DOCX format.
+  /// Specifies the format to use when saving a document.
   /// </summary>
   DocumentDefault = 16,
   /// <summary>
-  /// PDF format.
+  /// Specifies the format to use when saving a document.
   /// </summary>
   PDF = 17,
   /// <summary>
-  /// XPS format.
+  /// Specifies the format to use when saving a document.
   /// </summary>
   XPS = 18,
   /// <summary>
-  /// Reserved for internal use.
+  /// Specifies the format to use when saving a document.
   /// </summary>
   FlatXML = 19,
   /// <summary>
-  /// Reserved for internal use.
+  /// Specifies the format to use when saving a document.
   /// </summary>
   FlatXMLMacroEnabled = 20,
   /// <summary>
-  /// Reserved for internal use. wdFormatFlatXMLTemplateMacroEnabled22 Reserved for internal use.
+  /// Specifies the format to use when saving a document.
   /// </summary>
   FlatXMLTemplate = 21,
   /// <summary>
@@ -114,7 +113,7 @@ public enum WdSaveFormat
   /// </summary>
   FlatXMLTemplateMacroEnabled = 22,
   /// <summary>
-  /// wdFormatStrictOpenXMLDocument24 Strict Open XML document format.
+  /// Specifies the format to use when saving a document.
   /// </summary>
   OpenDocumentText = 23,
   /// <summary>

@@ -9,7 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdMoveFromTextMark
 {
   /// <summary>
-  /// Hides moved text. wdMoveFromTextMarkDoubleStrikeThrough1 Marks moved text with a double strikethrough.
+  /// Hides moved text.
   /// </summary>
   Hidden = 0,
   /// <summary>
@@ -41,9 +41,7 @@ public enum WdMoveFromTextMark
   /// </summary>
   Italic = 7,
   /// <summary>
-  /// Underlines moved text. wdMoveFromTextMarkDoubleUnderline9 Marks moved text with a double underline.
-  /// [System.Runtime.InteropServices.Guid("AF2FC7DB-2E3E-3BF2-B1D0-6426945B15E0")] public enum WdMoveFromTextMark ﾉ
-  /// Expand table
+  /// Underlines moved text.
   /// </summary>
   Underline = 8,
   /// <summary>
@@ -51,7 +49,7 @@ public enum WdMoveFromTextMark
   /// </summary>
   DoubleUnderline = 9,
   /// <summary>
-  /// Marks moved text with color only. Use the MoveFromTextColor property to set the color of moved text.
+  /// Marks the moved-from text when text in a document with tracked changes is moved from one place to another.
   /// </summary>
   ColorOnly = 10
 }

@@ -21,11 +21,7 @@ public enum WdParagraphAlignment
   /// </summary>
   Right = 2,
   /// <summary>
-  /// Fully justified. wdAlignParagraphDistribute4 Paragraph characters are distributed to fill the entire width of
-  /// the paragraph. wdAlignParagraphJustifyMed5 Justified with a medium character compression ratio.
-  /// wdAlignParagraphJustifyHi7 Justified with a high character compression ratio. wdAlignParagraphJustifyLow8
-  /// Justified with a low character compression ratio. wdAlignParagraphThaiJustify9 Justified according to Thai
-  /// formatting layout.
+  /// Fully justified.
   /// </summary>
   Justify = 3,
   /// <summary>

@@ -15,8 +15,7 @@ public enum WdContentControlDateStorageFormat
   Text = 0,
   /// <summary>
   /// Specifies to store or retrieve the date value for a date content control as a date in the standard XML Schema
-  /// DateTime format. wdContentControlDateStorageDateTime2 Specifies to store or retrieve the date value for a date
-  /// content control as a time in the standard XML Schema DateTime format.
+  /// DateTime format.
   /// </summary>
   Date = 1,
   /// <summary>

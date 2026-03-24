@@ -21,39 +21,39 @@ public enum XlPattern
   /// </summary>
   SemiGray75 = 10,
   /// <summary>
-  /// Light horizontal lines. public enum XlPattern ﾉ Expand table
+  /// Light horizontal lines. public enum XlPattern
   /// </summary>
   LightHorizontal = 11,
   /// <summary>
-  /// Light vertical bars.
+  /// Specifies the interior pattern of a chart or interior object.
   /// </summary>
   LightVertical = 12,
   /// <summary>
-  /// Light diagonal lines running from the upper left to the lower right.
+  /// Specifies the interior pattern of a chart or interior object.
   /// </summary>
   LightDown = 13,
   /// <summary>
-  /// Light diagonal lines running from the lower left to the upper right.
+  /// Specifies the interior pattern of a chart or interior object.
   /// </summary>
   LightUp = 14,
   /// <summary>
-  /// Grid.
+  /// Specifies the interior pattern of a chart or interior object.
   /// </summary>
   Grid = 15,
   /// <summary>
-  /// Criss-cross lines.
+  /// Specifies the interior pattern of a chart or interior object.
   /// </summary>
   CrissCross = 16,
   /// <summary>
-  /// 16% gray.
+  /// Specifies the interior pattern of a chart or interior object.
   /// </summary>
   Gray16 = 17,
   /// <summary>
-  /// 8% gray.
+  /// Specifies the interior pattern of a chart or interior object.
   /// </summary>
   Gray8 = 18,
   /// <summary>
-  /// Linear gradient. xlPatternRectangularGradient4001 Rectangular gradient.
+  /// Specifies the interior pattern of a chart or interior object.
   /// </summary>
   LinearGradient = 4000,
   /// <summary>
@@ -61,39 +61,39 @@ public enum XlPattern
   /// </summary>
   RectangularGradient = 4001,
   /// <summary>
-  /// Specifies the interior pattern of a chart or interior object.
+  /// Dark vertical bars.
   /// </summary>
   Vertical = -4166,
   /// <summary>
-  /// Specifies the interior pattern of a chart or interior object.
+  /// Dark diagonal lines running from the lower left to the upper right.
   /// </summary>
   Up = -4162,
   /// <summary>
-  /// Specifies the interior pattern of a chart or interior object.
+  /// No pattern.
   /// </summary>
   None = -4142,
   /// <summary>
-  /// Specifies the interior pattern of a chart or interior object.
+  /// Dark horizontal lines.
   /// </summary>
   Horizontal = -4128,
   /// <summary>
-  /// Specifies the interior pattern of a chart or interior object.
+  /// 75% gray.
   /// </summary>
   Gray75 = -4126,
   /// <summary>
-  /// Specifies the interior pattern of a chart or interior object.
+  /// 50% gray.
   /// </summary>
   Gray50 = -4125,
   /// <summary>
-  /// Specifies the interior pattern of a chart or interior object.
+  /// 25% gray.
   /// </summary>
   Gray25 = -4124,
   /// <summary>
-  /// Specifies the interior pattern of a chart or interior object.
+  /// Dark diagonal lines running from the upper left to the lower right.
   /// </summary>
   Down = -4121,
   /// <summary>
-  /// Specifies the interior pattern of a chart or interior object.
+  /// Word controls the pattern.
   /// </summary>
   Automatic = -4105
 }

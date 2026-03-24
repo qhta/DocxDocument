@@ -13,7 +13,7 @@ public enum WdLineSpacing
   /// </summary>
   Single = 0,
   /// <summary>
-  /// Space-and-a-half line spacing. Spacing is equivalent to the current font size
+  /// Specifies a line spacing format to be applied to a paragraph.
   /// </summary>
   OnePtFive = 1,
   /// <summary>

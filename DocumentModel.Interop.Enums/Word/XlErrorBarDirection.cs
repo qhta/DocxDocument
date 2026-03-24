@@ -13,7 +13,7 @@ public enum XlErrorBarDirection
   /// </summary>
   Y = 1,
   /// <summary>
-  /// Specifies which axis values are to receive error bars.
+  /// Bars run parallel to the Y axis for X-axis values.
   /// </summary>
   X = -4168
 }

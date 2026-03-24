@@ -17,7 +17,7 @@ public enum WdOpenFormat
   /// </summary>
   Document = 1,
   /// <summary>
-  /// Microsoft
+  /// Microsoft Word 97 document format.
   /// </summary>
   Document97 = 1,
   /// <summary>
@@ -46,20 +46,18 @@ public enum WdOpenFormat
   EncodedText = 5,
   /// <summary>
   /// A Microsoft Word format that is backward compatible with earlier versions of Microsoft Word.
-  /// [System.Runtime.InteropServices.Guid("9C1B95DA-5F16-303B-8B1C-9C846D96DE8E")] public enum WdOpenFormat ﾉ
-  /// Expand table
   /// </summary>
   AllWord = 6,
   /// <summary>
-  /// HTML format.
+  /// Specifies the format to use when opening a document.
   /// </summary>
   WebPages = 7,
   /// <summary>
-  /// XML format.
+  /// Specifies the format to use when opening a document.
   /// </summary>
   XML = 8,
   /// <summary>
-  /// XML document format. wdOpenFormatXMLDocumentMacroEnabled10 XML document format with macros enabled.
+  /// Specifies the format to use when opening a document.
   /// </summary>
   XMLDocument = 9,
   /// <summary>
@@ -67,19 +65,19 @@ public enum WdOpenFormat
   /// </summary>
   XMLDocumentMacroEnabled = 10,
   /// <summary>
-  /// XML template format.
+  /// Specifies the format to use when opening a document.
   /// </summary>
   XMLTemplate = 11,
   /// <summary>
-  /// XML template format with macros enabled.
+  /// Specifies the format to use when opening a document.
   /// </summary>
   XMLTemplateMacroEnabled = 12,
   /// <summary>
-  /// Word template format.
+  /// Specifies the format to use when opening a document.
   /// </summary>
   AllWordTemplates = 13,
   /// <summary>
-  /// Reserved for internal use. wdOpenFormatXMLDocumentMacroEnabledSerialized15 Reserved for internal use.
+  /// Specifies the format to use when opening a document.
   /// </summary>
   XMLDocumentSerialized = 14,
   /// <summary>
@@ -87,7 +85,7 @@ public enum WdOpenFormat
   /// </summary>
   XMLDocumentMacroEnabledSerialized = 15,
   /// <summary>
-  /// Reserved for internal use. wdOpenFormatXMLTemplateMacroEnabledSerialized17 Reserved for internal use.
+  /// Specifies the format to use when opening a document.
   /// </summary>
   XMLTemplateSerialized = 16,
   /// <summary>
@@ -95,7 +93,7 @@ public enum WdOpenFormat
   /// </summary>
   XMLTemplateMacroEnabledSerialized = 17,
   /// <summary>
-  /// Applies to Product Versions Word primary interop assembly Latest
+  /// Specifies the format to use when opening a document.
   /// </summary>
   OpenDocumentText = 18
 }

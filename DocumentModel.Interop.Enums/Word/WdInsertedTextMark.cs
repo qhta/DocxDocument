@@ -21,8 +21,7 @@ public enum WdInsertedTextMark
   /// </summary>
   Italic = 2,
   /// <summary>
-  /// Inserted text is underlined. wdInsertedTextMarkDoubleUnderline4 Inserted text is marked up by using
-  /// double-underline characters.
+  /// Inserted text is underlined.
   /// </summary>
   Underline = 3,
   /// <summary>
@@ -34,10 +33,7 @@ public enum WdInsertedTextMark
   /// </summary>
   ColorOnly = 5,
   /// <summary>
-  /// Inserted text is marked up by using strikethrough characters. wdInsertedTextMarkDoubleStrikeThrough7 Inserted
-  /// text is marked up by using double- strikethrough characters.
-  /// [System.Runtime.InteropServices.Guid("1A98AA4F-A0F3-3980-9A55-0B958B6C8158")] public enum WdInsertedTextMark ﾉ
-  /// Expand table
+  /// Inserted text is marked up by using strikethrough characters.
   /// </summary>
   StrikeThrough = 6,
   /// <summary>

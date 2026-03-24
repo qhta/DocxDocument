@@ -9,8 +9,7 @@ namespace DocumentModel.Interop.Word;
 public enum WdJustificationMode
 {
   /// <summary>
-  /// Expand. wdJustificationModeCompress1 Compress. wdJustificationModeCompressKana2 Compress, using rules of the
-  /// kana syllabaries, Hiragana and Katakana.
+  /// Specifies the character spacing adjustment for a document.
   /// </summary>
   Expand = 0,
   /// <summary>
