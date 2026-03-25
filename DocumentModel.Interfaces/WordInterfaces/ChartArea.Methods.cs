@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea?view=word-pia"/>
-public partial interface ChartArea
+public partial interface ChartArea: InteropObject
 {
   /// <summary>
   /// Selects the object.

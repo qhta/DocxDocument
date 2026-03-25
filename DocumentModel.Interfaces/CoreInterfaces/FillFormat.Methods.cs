@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat?view=office-pia"/>
-public partial interface FillFormat
+public partial interface FillFormat: InteropObject
 {
   /// <summary>
   /// Sets the fill to use the background style.

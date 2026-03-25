@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.firstletterexception?view=word-pia"/>
-public partial interface FirstLetterException
+public partial interface FirstLetterException: InteropObject
 {
   /// <summary>
   /// Deletes the specified object.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4?view=word-pia"/>
-public partial interface IApplicationEvents4
+public partial interface IApplicationEvents4: InteropObject
 {
   /// <summary>
   /// Occurs when the application starts up.

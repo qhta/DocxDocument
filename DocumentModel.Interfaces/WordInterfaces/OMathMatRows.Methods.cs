@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatrows?view=word-pia"/>
-public partial interface OMathMatRows
+public partial interface OMathMatRows: InteropObject
 {
   /// <summary>
   /// Adds a matrix row to the collection.

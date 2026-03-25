@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `TabStop2` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstop2?view=office-pia"/>
-public partial interface TabStop2
+public partial interface TabStop2: InteropObject
 {
   /// <summary>
   /// Invokes `Clear`.

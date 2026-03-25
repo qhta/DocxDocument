@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents drop lines in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodroplines?view=office-pia"/>
-public partial interface IMsoDropLines
+public partial interface IMsoDropLines: InteropObject
 {
   /// <summary>
   /// Selects the drop lines.

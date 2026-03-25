@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel?view=word-pia"/>
-public partial interface DisplayUnitLabel
+public partial interface DisplayUnitLabel: InteropObject
 {
   /// <summary>
   /// Returns a ChartCharacters object that represents a range of characters in the display unit label text.

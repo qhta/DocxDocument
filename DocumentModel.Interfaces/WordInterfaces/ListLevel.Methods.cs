@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel?view=word-pia"/>
-public partial interface ListLevel
+public partial interface ListLevel: InteropObject
 {
   /// <summary>
   /// Applies a picture bullet to the list level and returns the picture bullet shape.

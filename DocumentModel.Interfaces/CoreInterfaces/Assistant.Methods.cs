@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the Microsoft Office Assistant.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant?view=office-pia"/>
-public partial interface Assistant
+public partial interface Assistant: InteropObject
 {
   /// <summary>
   /// Moves the Office Assistant to the specified screen coordinates.

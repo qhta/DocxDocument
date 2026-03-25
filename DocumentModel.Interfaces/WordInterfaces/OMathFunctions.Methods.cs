@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunctions?view=word-pia"/>
-public partial interface OMathFunctions
+public partial interface OMathFunctions: InteropObject
 {
   /// <summary>
   /// Adds an equation function to the collection.

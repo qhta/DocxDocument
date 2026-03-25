@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keysboundto?view=word-pia"/>
-public partial interface KeysBoundTo
+public partial interface KeysBoundTo: InteropObject
 {
   /// <summary>
   /// Returns the key binding for the specified key combination.
