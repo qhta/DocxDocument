@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Interfaces;
+namespace DocumentModel.Interop.Core;
 
 public delegate void _CommandBarsEvents_OnUpdateEventHandler();
 

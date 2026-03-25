@@ -1,4 +1,4 @@
-namespace DocumentModel.Interfaces;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Represents a single point in a chart series.

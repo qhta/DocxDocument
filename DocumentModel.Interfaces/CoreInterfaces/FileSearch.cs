@@ -1,4 +1,4 @@
-namespace DocumentModel.Interfaces;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Represents file search functionality available in Office.

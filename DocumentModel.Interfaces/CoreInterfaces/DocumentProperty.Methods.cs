@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace DocumentModel.Interfaces;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Represents a custom or built-in document property.

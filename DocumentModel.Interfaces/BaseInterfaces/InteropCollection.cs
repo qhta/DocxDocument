@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interfaces;
+﻿namespace DocumentModel.Interop;
 
 /// <summary>
 /// Represents a collection of items that supports indexed and keyed access, designed for interoperability scenarios.
@@ -9,13 +9,13 @@
 /// interface is intended for use in scenarios where compatibility with external or legacy APIs is necessary.
 /// </remarks>
 /// <typeparam name="ItemType">The type of elements contained in the collection.</typeparam>
-public interface InteropCollection<ItemType> : IEnumerable<ItemType> where ItemType : InteropObject
+public interface InteropCollection<ItemType> : IEnumerable<ItemType>
 {
   /// <summary>
   /// Gets the item at the specified integer index.
   /// </summary>
   /// <param name="Index">The zero-based index of the item to get.</param>
   /// <returns>The item at the specified index.</returns>
-  ItemType this[object Index] { get; set; }
+  public ItemType this[object Index] { get; set; }
 
 }

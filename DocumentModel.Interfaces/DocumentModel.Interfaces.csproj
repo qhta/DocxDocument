@@ -18,6 +18,11 @@
     <NoWarn>1701;1702;8766;0618</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Windows\**" />
+    <EmbeddedResource Remove="Windows\**" />
+    <None Remove="Windows\**" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="DeepEqual" Version="5.1.0" />
     <PackageReference Include="DocumentFormat.OpenXml" Version="3.4.1" />
     <PackageReference Include="DocumentFormat.OpenXml.Framework" Version="3.4.1" />
@@ -33,6 +38,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
-    <Folder Include="Windows\" />
   </ItemGroup>
 </Project>

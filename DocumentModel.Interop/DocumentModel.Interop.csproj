@@ -8,15 +8,6 @@
 
 
   <ItemGroup>
-    <Compile Remove="**\*.Methods.cs" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <Compile Remove="BaseInterfaces\InteropList.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include=".github\copilot-instructions.md" />
     <None Include="..\..\..\Scripts\UpdateXmlComments.py" Link="Scripts\UpdateXmlComments.py" />
     <None Include="..\..\..\Scripts\RemoveTypeNamesFromEnums.py" Link="Scripts\RemoveTypeNamesFromEnums.py" />
@@ -24,17 +15,9 @@
     <None Include="..\..\..\Scripts\CompareEnumTypes.py" Link="Scripts\CompareEnumTypes.py" />
     <None Include="..\..\..\Scripts\AddPiaCoreLink.py" Link="Scripts\AddPiaCoreLink.py" />
     <None Include="..\..\..\Scripts\AddPiaWordLink.py" Link="Scripts\AddPiaWordLink.py" />
-
-
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Office.Interop.Word" Version="15.0.4797.1004" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
-    <ProjectReference Include="..\DocumentModel.EnumTypes\DocumentModel.EnumTypes.csproj" />
     <ProjectReference Include="..\DocumentModel.Interop.Enums\DocumentModel.Interop.Enums.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,4 @@
-namespace DocumentModel.Interfaces;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Represents the floor of a 3-D chart.

@@ -1,4 +1,4 @@
-namespace DocumentModel.Interfaces;
+namespace DocumentModel.Interop;
 
 /// <summary>
 /// Basic interface for all interop objects, providing common properties such as Application, Creator, and Parent.
@@ -8,7 +8,6 @@ public interface InteropObject
   ///// <summary>
   ///// Returns an Application object that represents the Microsoft Word application.
   ///// </summary>
-
   //public object Application { get; }
 
   ///// <summary>
@@ -22,7 +21,6 @@ public interface InteropObject
 
   /// <summary>
   /// Returns an object that represents the parent object of the specified object.
-  /// Can return null if the object has no parent or if the parent is not accessible.
   /// </summary>
   public object? Parent { get; }
 }
