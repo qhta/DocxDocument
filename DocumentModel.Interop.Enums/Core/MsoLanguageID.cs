@@ -34,47 +34,47 @@ public enum MsoLanguageID
   /// </summary>
   Amharic = 1118,
   /// <summary>
-  /// Specifies which language to use.
+  /// Arabic as spoken in Algeria.
   /// </summary>
   ArabicAlgeria = 5121,
   /// <summary>
-  /// Specifies which language to use.
+  /// Arabic as spoken in Bahrain.
   /// </summary>
   ArabicBahrain = 15361,
   /// <summary>
-  /// Specifies which language to use.
+  /// Arabic as spoken in Egypt.
   /// </summary>
   ArabicEgypt = 3073,
   /// <summary>
-  /// Specifies which language to use.
+  /// Arabic as spoken in Iraq.
   /// </summary>
   ArabicIraq = 2049,
   /// <summary>
-  /// Specifies which language to use.
+  /// Arabic as spoken in Jordan.
   /// </summary>
   ArabicJordan = 11265,
   /// <summary>
-  /// Specifies which language to use.
+  /// Arabic as spoken in Kuwait.
   /// </summary>
   ArabicKuwait = 13313,
   /// <summary>
-  /// Specifies which language to use.
+  /// Arabic as spoken in Lebanon.
   /// </summary>
   ArabicLebanon = 12289,
   /// <summary>
-  /// Specifies which language to use.
+  /// Arabic as spoken in Libya.
   /// </summary>
   ArabicLibya = 4097,
   /// <summary>
-  /// Specifies which language to use.
+  /// Arabic as spoken in Morocco.
   /// </summary>
   ArabicMorocco = 6145,
   /// <summary>
-  /// Specifies which language to use.
+  /// Arabic as spoken in Oman.
   /// </summary>
   ArabicOman = 8193,
   /// <summary>
-  /// Specifies which language to use.
+  /// Arabic as spoken in Qatar.
   /// </summary>
   ArabicQatar = 16385,
   /// <summary>
@@ -82,19 +82,19 @@ public enum MsoLanguageID
   /// </summary>
   Arabic = 1025,
   /// <summary>
-  /// Specifies which language to use.
+  /// Arabic as spoken in Syria.
   /// </summary>
   ArabicSyria = 10241,
   /// <summary>
-  /// Specifies which language to use.
+  /// Arabic as spoken in Tunisia.
   /// </summary>
   ArabicTunisia = 7169,
   /// <summary>
-  /// Specifies which language to use.
+  /// Arabic as spoken in the United Arab Emirates.
   /// </summary>
   ArabicUAE = 14337,
   /// <summary>
-  /// Specifies which language to use.
+  /// Arabic as spoken in Yemen.
   /// </summary>
   ArabicYemen = 9217,
   /// <summary>
@@ -106,7 +106,7 @@ public enum MsoLanguageID
   /// </summary>
   Assamese = 1101,
   /// <summary>
-  /// Specifies which language to use.
+  /// Azeri-Cyrillic.
   /// </summary>
   AzeriCyrillic = 2092,
   /// <summary>
@@ -126,15 +126,15 @@ public enum MsoLanguageID
   /// </summary>
   Bengali = 1093,
   /// <summary>
-  /// Specifies which language to use.
+  /// Bosnian.
   /// </summary>
   Bosnian = 4122,
   /// <summary>
-  /// Specifies which language to use.
+  /// The Bosnian Bosnia Herzegovina Cyrillic language.
   /// </summary>
   BosnianBosniaHerzegovinaCyrillic = 8218,
   /// <summary>
-  /// Specifies which language to use.
+  /// The Bosnian Bosnia Herzegovina Latin language.
   /// </summary>
   BosnianBosniaHerzegovinaLatin = 5146,
   /// <summary>
@@ -150,19 +150,19 @@ public enum MsoLanguageID
   /// </summary>
   Catalan = 1027,
   /// <summary>
-  /// Specifies which language to use.
+  /// Chinese as spoken in Hong Kong SAR.
   /// </summary>
   ChineseHongKongSAR = 3076,
   /// <summary>
-  /// Specifies which language to use.
+  /// Chinese as spoken in Macao SAR.
   /// </summary>
   ChineseMacaoSAR = 5124,
   /// <summary>
-  /// Specifies which language to use.
+  /// Simplified Chinese.
   /// </summary>
   SimplifiedChinese = 2052,
   /// <summary>
-  /// Specifies which language to use.
+  /// Chinese as spoken in Singapore.
   /// </summary>
   ChineseSingapore = 4100,
   /// <summary>
@@ -190,7 +190,7 @@ public enum MsoLanguageID
   /// </summary>
   Divehi = 1125,
   /// <summary>
-  /// Specifies which language to use.
+  /// Belgian Dutch.
   /// </summary>
   BelgianDutch = 2067,
   /// <summary>
@@ -198,7 +198,7 @@ public enum MsoLanguageID
   /// </summary>
   Dutch = 1043,
   /// <summary>
-  /// Specifies which language to use.
+  /// Dzongkha as spoken in Bhutan.
   /// </summary>
   DzongkhaBhutan = 2129,
   /// <summary>
@@ -206,51 +206,51 @@ public enum MsoLanguageID
   /// </summary>
   Edo = 1126,
   /// <summary>
-  /// Specifies which language to use.
+  /// English as spoken in Australia.
   /// </summary>
   EnglishAUS = 3081,
   /// <summary>
-  /// Specifies which language to use.
+  /// English as spoken in Belize.
   /// </summary>
   EnglishBelize = 10249,
   /// <summary>
-  /// Specifies which language to use.
+  /// English as spoken in Canada.
   /// </summary>
   EnglishCanadian = 4105,
   /// <summary>
-  /// Specifies which language to use.
+  /// English as spoken in the Caribbean.
   /// </summary>
   EnglishCaribbean = 9225,
   /// <summary>
-  /// Specifies which language to use.
+  /// English as spoken in Indonesia.
   /// </summary>
   EnglishIndonesia = 14345,
   /// <summary>
-  /// Specifies which language to use.
+  /// English as spoken in Ireland.
   /// </summary>
   EnglishIreland = 6153,
   /// <summary>
-  /// Specifies which language to use.
+  /// English as spoken in Jamaica.
   /// </summary>
   EnglishJamaica = 8201,
   /// <summary>
-  /// Specifies which language to use.
+  /// English as spoken in New Zealand.
   /// </summary>
   EnglishNewZealand = 5129,
   /// <summary>
-  /// Specifies which language to use.
+  /// English as spoken in the Philippines.
   /// </summary>
   EnglishPhilippines = 13321,
   /// <summary>
-  /// Specifies which language to use.
+  /// English as spoken in South Africa.
   /// </summary>
   EnglishSouthAfrica = 7177,
   /// <summary>
-  /// Specifies which language to use.
+  /// English as spoken in Trinidad and Tobago.
   /// </summary>
   EnglishTrinidadTobago = 11273,
   /// <summary>
-  /// Specifies which language to use.
+  /// English as spoken in the United Kingdom.
   /// </summary>
   EnglishUK = 2057,
   /// <summary>
@@ -258,7 +258,7 @@ public enum MsoLanguageID
   /// </summary>
   EnglishUS = 1033,
   /// <summary>
-  /// Specifies which language to use.
+  /// English as spoken in Zimbabwe.
   /// </summary>
   EnglishZimbabwe = 12297,
   /// <summary>
@@ -282,19 +282,19 @@ public enum MsoLanguageID
   /// </summary>
   Finnish = 1035,
   /// <summary>
-  /// Specifies which language to use.
+  /// Belgian French.
   /// </summary>
   BelgianFrench = 2060,
   /// <summary>
-  /// Specifies which language to use.
+  /// French as spoken in Cameroon.
   /// </summary>
   FrenchCameroon = 11276,
   /// <summary>
-  /// Specifies which language to use.
+  /// French as spoken in Canada.
   /// </summary>
   FrenchCanadian = 3084,
   /// <summary>
-  /// Specifies which language to use.
+  /// French as spoken in Cote d'Ivoire.
   /// </summary>
   FrenchCotedIvoire = 12300,
   /// <summary>
@@ -302,47 +302,47 @@ public enum MsoLanguageID
   /// </summary>
   French = 1036,
   /// <summary>
-  /// Specifies which language to use.
+  /// French as spoken in Haiti.
   /// </summary>
   FrenchHaiti = 15372,
   /// <summary>
-  /// Specifies which language to use.
+  /// French as spoken in Luxembourg.
   /// </summary>
   FrenchLuxembourg = 5132,
   /// <summary>
-  /// Specifies which language to use.
+  /// French as spoken in Mali.
   /// </summary>
   FrenchMali = 13324,
   /// <summary>
-  /// Specifies which language to use.
+  /// French as spoken in Monaco.
   /// </summary>
   FrenchMonaco = 6156,
   /// <summary>
-  /// Specifies which language to use.
+  /// French as spoken in Morocco.
   /// </summary>
   FrenchMorocco = 14348,
   /// <summary>
-  /// Specifies which language to use.
+  /// French as spoken in French Reunion Island.
   /// </summary>
   FrenchReunion = 8204,
   /// <summary>
-  /// Specifies which language to use.
+  /// French as spoken in Senegal.
   /// </summary>
   FrenchSenegal = 10252,
   /// <summary>
-  /// Specifies which language to use.
+  /// French as spoken in Switzerland.
   /// </summary>
   SwissFrench = 4108,
   /// <summary>
-  /// Specifies which language to use.
+  /// French as spoken in the West Indies.
   /// </summary>
   FrenchWestIndies = 7180,
   /// <summary>
-  /// Specifies which language to use.
+  /// French as spoken in Zaire.
   /// </summary>
   FrenchZaire = 9228,
   /// <summary>
-  /// Specifies which language to use.
+  /// The French Congo DRC language.
   /// </summary>
   FrenchCongoDRC = 9228,
   /// <summary>
@@ -354,7 +354,7 @@ public enum MsoLanguageID
   /// </summary>
   Fulfulde = 1127,
   /// <summary>
-  /// Specifies which language to use.
+  /// Gaelic as spoken in Ireland.
   /// </summary>
   GaelicIreland = 2108,
   /// <summary>
@@ -370,7 +370,7 @@ public enum MsoLanguageID
   /// </summary>
   Georgian = 1079,
   /// <summary>
-  /// Specifies which language to use.
+  /// German as spoken in Austria.
   /// </summary>
   GermanAustria = 3079,
   /// <summary>
@@ -378,15 +378,15 @@ public enum MsoLanguageID
   /// </summary>
   German = 1031,
   /// <summary>
-  /// Specifies which language to use.
+  /// German as spoken in Liechtenstein.
   /// </summary>
   GermanLiechtenstein = 5127,
   /// <summary>
-  /// Specifies which language to use.
+  /// German as spoken in Luxembourg.
   /// </summary>
   GermanLuxembourg = 4103,
   /// <summary>
-  /// Specifies which language to use.
+  /// German as spoken in Switzerland.
   /// </summary>
   SwissGerman = 2055,
   /// <summary>
@@ -446,7 +446,7 @@ public enum MsoLanguageID
   /// </summary>
   Italian = 1040,
   /// <summary>
-  /// Specifies which language to use.
+  /// Italian as spoken in Switzerland.
   /// </summary>
   SwissItalian = 2064,
   /// <summary>
@@ -466,7 +466,7 @@ public enum MsoLanguageID
   /// </summary>
   Kashmiri = 1120,
   /// <summary>
-  /// Specifies which language to use.
+  /// Kashmiri in Devanagari script.
   /// </summary>
   KashmiriDevanagari = 2144,
   /// <summary>
@@ -522,7 +522,7 @@ public enum MsoLanguageID
   /// </summary>
   Malaysian = 1086,
   /// <summary>
-  /// Specifies which language to use.
+  /// Malay as spoken in Brunei Darussalam.
   /// </summary>
   MalayBruneiDarussalam = 2110,
   /// <summary>
@@ -538,7 +538,7 @@ public enum MsoLanguageID
   /// </summary>
   Manipuri = 1112,
   /// <summary>
-  /// Specifies which language to use.
+  /// Maori.
   /// </summary>
   Maori = 1153,
   /// <summary>
@@ -558,7 +558,7 @@ public enum MsoLanguageID
   /// </summary>
   NorwegianBokmol = 1044,
   /// <summary>
-  /// Specifies which language to use.
+  /// Nynorsk as spoken in Norway.
   /// </summary>
   NorwegianNynorsk = 2068,
   /// <summary>
@@ -582,7 +582,7 @@ public enum MsoLanguageID
   /// </summary>
   BrazilianPortuguese = 1046,
   /// <summary>
-  /// Specifies which language to use.
+  /// Portuguese.
   /// </summary>
   Portuguese = 2070,
   /// <summary>
@@ -594,11 +594,11 @@ public enum MsoLanguageID
   /// </summary>
   QuechuaBolivia = 1131,
   /// <summary>
-  /// Specifies which language to use.
+  /// Quechua as spoken in Ecuador.
   /// </summary>
   QuechuaEcuador = 2155,
   /// <summary>
-  /// Specifies which language to use.
+  /// Quechua as spoken in Peru.
   /// </summary>
   QuechuaPeru = 3179,
   /// <summary>
@@ -606,7 +606,7 @@ public enum MsoLanguageID
   /// </summary>
   RhaetoRomanic = 1047,
   /// <summary>
-  /// Specifies which language to use.
+  /// Romanian as spoken in Moldova.
   /// </summary>
   RomanianMoldova = 2072,
   /// <summary>
@@ -614,7 +614,7 @@ public enum MsoLanguageID
   /// </summary>
   Romanian = 1048,
   /// <summary>
-  /// Specifies which language to use.
+  /// Russian as spoken in Moldova.
   /// </summary>
   RussianMoldova = 2073,
   /// <summary>
@@ -634,19 +634,19 @@ public enum MsoLanguageID
   /// </summary>
   Sepedi = 1132,
   /// <summary>
-  /// Specifies which language to use.
+  /// The Serbian Bosnia Herzegovina Cyrillic language.
   /// </summary>
   SerbianBosniaHerzegovinaCyrillic = 7194,
   /// <summary>
-  /// Specifies which language to use.
+  /// The Serbian Bosnia Herzegovina Latin language.
   /// </summary>
   SerbianBosniaHerzegovinaLatin = 6170,
   /// <summary>
-  /// Specifies which language to use.
+  /// Serbian/Cyrillic.
   /// </summary>
   SerbianCyrillic = 3098,
   /// <summary>
-  /// Specifies which language to use.
+  /// Serbian/Latin.
   /// </summary>
   SerbianLatin = 2074,
   /// <summary>
@@ -658,7 +658,7 @@ public enum MsoLanguageID
   /// </summary>
   Sindhi = 1113,
   /// <summary>
-  /// Specifies which language to use.
+  /// Sindhi as spoken in Pakistan.
   /// </summary>
   SindhiPakistan = 2137,
   /// <summary>
@@ -674,7 +674,7 @@ public enum MsoLanguageID
   /// </summary>
   Slovenian = 1060,
   /// <summary>
-  /// Specifies which language to use.
+  /// Somali.
   /// </summary>
   Somali = 1143,
   /// <summary>
@@ -682,71 +682,71 @@ public enum MsoLanguageID
   /// </summary>
   Sorbian = 1070,
   /// <summary>
-  /// Specifies which language to use.
+  /// Spanish as spoken in Argentina.
   /// </summary>
   SpanishArgentina = 11274,
   /// <summary>
-  /// Specifies which language to use.
+  /// Spanish as spoken in Bolivia.
   /// </summary>
   SpanishBolivia = 16394,
   /// <summary>
-  /// Specifies which language to use.
+  /// Spanish as spoken in Chile.
   /// </summary>
   SpanishChile = 13322,
   /// <summary>
-  /// Specifies which language to use.
+  /// Spanish as spoken in Colombia.
   /// </summary>
   SpanishColombia = 9226,
   /// <summary>
-  /// Specifies which language to use.
+  /// Spanish as spoken in Costa Rica.
   /// </summary>
   SpanishCostaRica = 5130,
   /// <summary>
-  /// Specifies which language to use.
+  /// Spanish as spoken in the Dominican Republic.
   /// </summary>
   SpanishDominicanRepublic = 7178,
   /// <summary>
-  /// Specifies which language to use.
+  /// Spanish as spoken in Ecuador.
   /// </summary>
   SpanishEcuador = 12298,
   /// <summary>
-  /// Specifies which language to use.
+  /// Spanish as spoken in El Salvador.
   /// </summary>
   SpanishElSalvador = 17418,
   /// <summary>
-  /// Specifies which language to use.
+  /// Spanish as spoken in Guatemala.
   /// </summary>
   SpanishGuatemala = 4106,
   /// <summary>
-  /// Specifies which language to use.
+  /// Spanish as spoken in Honduras.
   /// </summary>
   SpanishHonduras = 18442,
   /// <summary>
-  /// Specifies which language to use.
+  /// Spanish as spoken in Mexico.
   /// </summary>
   MexicanSpanish = 2058,
   /// <summary>
-  /// Specifies which language to use.
+  /// Spanish as spoken in Nicaragua.
   /// </summary>
   SpanishNicaragua = 19466,
   /// <summary>
-  /// Specifies which language to use.
+  /// Spanish as spoken in Panama.
   /// </summary>
   SpanishPanama = 6154,
   /// <summary>
-  /// Specifies which language to use.
+  /// Spanish as spoken in Paraguay.
   /// </summary>
   SpanishParaguay = 15370,
   /// <summary>
-  /// Specifies which language to use.
+  /// Spanish as spoken in Peru.
   /// </summary>
   SpanishPeru = 10250,
   /// <summary>
-  /// Specifies which language to use.
+  /// Spanish as spoken in Puerto Rico.
   /// </summary>
   SpanishPuertoRico = 20490,
   /// <summary>
-  /// Specifies which language to use.
+  /// Spanish (Modern Sort).
   /// </summary>
   SpanishModernSort = 3082,
   /// <summary>
@@ -754,11 +754,11 @@ public enum MsoLanguageID
   /// </summary>
   Spanish = 1034,
   /// <summary>
-  /// Specifies which language to use.
+  /// Spanish as spoken in Uruguay.
   /// </summary>
   SpanishUruguay = 14346,
   /// <summary>
-  /// Specifies which language to use.
+  /// Spanish as spoken in Venezuela.
   /// </summary>
   SpanishVenezuela = 8202,
   /// <summary>
@@ -770,7 +770,7 @@ public enum MsoLanguageID
   /// </summary>
   Swahili = 1089,
   /// <summary>
-  /// Specifies which language to use.
+  /// Swedish as spoken in Finland.
   /// </summary>
   SwedishFinland = 2077,
   /// <summary>
@@ -794,7 +794,7 @@ public enum MsoLanguageID
   /// </summary>
   Tamazight = 1119,
   /// <summary>
-  /// Specifies which language to use.
+  /// Tamazight (Latin).
   /// </summary>
   TamazightLatin = 2143,
   /// <summary>
@@ -818,7 +818,7 @@ public enum MsoLanguageID
   /// </summary>
   TigrignaEthiopic = 1139,
   /// <summary>
-  /// Specifies which language to use.
+  /// Tigrigna as spoken in Eritrea.
   /// </summary>
   TigrignaEritrea = 2163,
   /// <summary>
@@ -846,7 +846,7 @@ public enum MsoLanguageID
   /// </summary>
   Urdu = 1056,
   /// <summary>
-  /// Specifies which language to use.
+  /// Uzbek (Cyrillic).
   /// </summary>
   UzbekCyrillic = 2115,
   /// <summary>
@@ -870,7 +870,7 @@ public enum MsoLanguageID
   /// </summary>
   Xhosa = 1076,
   /// <summary>
-  /// Specifies which language to use.
+  /// Yi.
   /// </summary>
   Yi = 1144,
   /// <summary>

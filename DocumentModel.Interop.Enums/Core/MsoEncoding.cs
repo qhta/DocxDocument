@@ -74,43 +74,35 @@ public enum MsoEncoding
   /// </summary>
   Vietnamese = 1258,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// Web browser auto- detects type of encoding to use.
   /// </summary>
   AutoDetect = 50001,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// Web browser auto- detects type of Japanese encoding to use.
   /// </summary>
   JapaneseAutoDetect = 50932,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// Web browser auto- detects type of Simplified Chinese encoding to use.
   /// </summary>
   SimplifiedChineseAutoDetect = 50936,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// Web browser auto- detects type of Korean encoding to use.
   /// </summary>
   KoreanAutoDetect = 50949,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// Web browser auto- detects type of Traditional Chinese encoding to use.
   /// </summary>
   TraditionalChineseAutoDetect = 50950,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// Web browser auto- detects type of Cyrillic encoding to use.
   /// </summary>
   CyrillicAutoDetect = 51251,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// Web browser auto- detects type of Greek encoding to use.
   /// </summary>
   GreekAutoDetect = 51253,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// Web browser auto- detects type of Arabic encoding to use.
   /// </summary>
   ArabicAutoDetect = 51256,
   /// <summary>
@@ -142,53 +134,43 @@ public enum MsoEncoding
   /// </summary>
   ISO88597Greek = 28597,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// ISO 8859-8 Hebrew.
   /// </summary>
   ISO88598Hebrew = 28598,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// ISO 8859-9 Turkish.
   /// </summary>
   ISO88599Turkish = 28599,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// ISO 8859-15 with Latin 9.
   /// </summary>
   ISO885915Latin9 = 28605,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// ISO 8859-8 Hebrew (Logical).
   /// </summary>
   ISO88598HebrewLogical = 38598,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// ISO 2022-JP with no half-width Katakana.
   /// </summary>
   ISO2022JPNoHalfwidthKatakana = 50220,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// ISO 2022-JP
   /// </summary>
   ISO2022JPJISX02021984 = 50221,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// ISO 2022-JP
   /// </summary>
   ISO2022JPJISX02011989 = 50222,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// ISO 2022-KR.
   /// </summary>
   ISO2022KR = 50225,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// ISO 2022-CN encoding as used with Traditional Chinese.
   /// </summary>
   ISO2022CNTraditionalChinese = 50227,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// ISO 2022-CN encoding as used with Simplified Chinese.
   /// </summary>
   ISO2022CNSimplifiedChinese = 50229,
   /// <summary>
@@ -340,33 +322,27 @@ public enum MsoEncoding
   /// </summary>
   EBCDICSerbianBulgarian = 21025,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// EBCDIC as used with Japanese Katakana (extended) and Japanese.
   /// </summary>
   EBCDICJapaneseKatakanaExtendedAndJapanese = 50930,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// EBCDIC as used in the United States and Canada, and with Japanese.
   /// </summary>
   EBCDICUSCanadaAndJapanese = 50931,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// EBCDIC as used with Korean (extended) and Korean.
   /// </summary>
   EBCDICKoreanExtendedAndKorean = 50933,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// EBCDIC as used with Simplified Chinese (extended) and Simplified Chinese.
   /// </summary>
   EBCDICSimplifiedChineseExtendedAndSimplifiedChinese = 50935,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// EBCDIC as used in the United States and Canada, and with Traditional Chinese.
   /// </summary>
   EBCDICUSCanadaAndTraditionalChinese = 50937,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// EBCDIC as used with Japanese Latin (extended) and Japanese.
   /// </summary>
   EBCDICJapaneseLatinExtendedAndJapanese = 50939,
   /// <summary>
@@ -430,73 +406,59 @@ public enum MsoEncoding
   /// </summary>
   OEMModernGreek = 869,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// EUC as used with Japanese.
   /// </summary>
   EUCJapanese = 51932,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// Extended Unix Code (EUC) as used with Chinese and Simplified Chinese.
   /// </summary>
   EUCChineseSimplifiedChinese = 51936,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// EUC as used with Korean.
   /// </summary>
   EUCKorean = 51949,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// EUC as used with Taiwanese and Traditional Chinese.
   /// </summary>
   EUCTaiwaneseTraditionalChinese = 51950,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// ISCII as used with Devanagari.
   /// </summary>
   ISCIIDevanagari = 57002,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// ISCII as used with Bengali.
   /// </summary>
   ISCIIBengali = 57003,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// ISCII as used with Tamil.
   /// </summary>
   ISCIITamil = 57004,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// ISCII as used with Telugu.
   /// </summary>
   ISCIITelugu = 57005,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// Indian Script Code for Information Interchange (ISCII) as used with Assamese.
   /// </summary>
   ISCIIAssamese = 57006,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// ISCII as used with Oriya.
   /// </summary>
   ISCIIOriya = 57007,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// ISCII as used with Kannada.
   /// </summary>
   ISCIIKannada = 57008,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// ISCII as used with Malayalam.
   /// </summary>
   ISCIIMalayalam = 57009,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// ISCII as used with Gujarati.
   /// </summary>
   ISCIIGujarati = 57010,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// ISCII as used with Punjabi.
   /// </summary>
   ISCIIPunjabi = 57011,
   /// <summary>
@@ -576,28 +538,23 @@ public enum MsoEncoding
   /// </summary>
   KOI8U = 21866,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// Europa.
   /// </summary>
   Europa3 = 29001,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// Simplified Chinese (HZGB).
   /// </summary>
   HZGBSimplifiedChinese = 52936,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// Simplified Chinese GB 18030.
   /// </summary>
   SimplifiedChineseGB18030 = 54936,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// UTF-7 encoding.
   /// </summary>
   UTF7 = 65000,
   /// <summary>
-  /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
-  /// saved document.
+  /// UTF-8 encoding.
   /// </summary>
   UTF8 = 65001
 }

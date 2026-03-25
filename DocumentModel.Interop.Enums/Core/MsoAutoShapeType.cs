@@ -465,135 +465,135 @@ public enum MsoAutoShapeType
   /// </summary>
   LineCallout1AccentBar = 113,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Callout with diagonal callout line and accent bar.
   /// </summary>
   LineCallout2AccentBar = 114,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Callout with angled callout line and accent bar.
   /// </summary>
   LineCallout3AccentBar = 115,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Callout with accent bar and callout line segments forming a U-shape.
   /// </summary>
   LineCallout4AccentBar = 116,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Callout with horizontal line.
   /// </summary>
   LineCallout1NoBorder = 117,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Callout with no border and diagonal callout line.
   /// </summary>
   LineCallout2NoBorder = 118,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Callout with no border and angled callout line.
   /// </summary>
   LineCallout3NoBorder = 119,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Callout with no border and callout line segments forming a U-shape.
   /// </summary>
   LineCallout4NoBorder = 120,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Callout with border and horizontal accent bar.
   /// </summary>
   LineCallout1BorderandAccentBar = 121,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Callout with border, diagonal straight line, and accent bar.
   /// </summary>
   LineCallout2BorderandAccentBar = 122,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Callout with border, angled callout line, and accent bar.
   /// </summary>
   LineCallout3BorderandAccentBar = 123,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Callout with border, accent bar, and callout line segments forming a U-shape.
   /// </summary>
   LineCallout4BorderandAccentBar = 124,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Button with no default picture or text. Supports mouse-click and mouse-over actions.
   /// </summary>
   ActionButtonCustom = 125,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Home button. Supports mouse-click and mouse- over actions.
   /// </summary>
   ActionButtonHome = 126,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Help button. Supports mouse-click and mouse- over actions.
   /// </summary>
   ActionButtonHelp = 127,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Information button. Supports mouse-click and mouse-over actions.
   /// </summary>
   ActionButtonInformation = 128,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Back or Previous button. Supports mouse-click and mouse-over actions.
   /// </summary>
   ActionButtonBackorPrevious = 129,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Forward or Next button. Supports mouse-click and mouse-over actions.
   /// </summary>
   ActionButtonForwardorNext = 130,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Beginning button. Supports mouse-click and mouse-over actions.
   /// </summary>
   ActionButtonBeginning = 131,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// End button. Supports mouse-click and mouse- over actions.
   /// </summary>
   ActionButtonEnd = 132,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Return button. Supports mouse-click and mouse- over actions.
   /// </summary>
   ActionButtonReturn = 133,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Document button. Supports mouse-click and mouse-over actions.
   /// </summary>
   ActionButtonDocument = 134,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Sound button. Supports mouse-click and mouse- over actions.
   /// </summary>
   ActionButtonSound = 135,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Movie button. Supports mouse-click and mouse- over actions.
   /// </summary>
   ActionButtonMovie = 136,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Balloon.
   /// </summary>
   Balloon = 137,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// Not supported.
   /// </summary>
   NotPrimitive = 138,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   FlowchartOfflineStorage = 139,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   LeftRightRibbon = 140,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   DiagonalStripe = 141,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   Pie = 142,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   NonIsoscelesTrapezoid = 143,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   Decagon = 144,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   Heptagon = 145,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   Dodecagon = 146,
   /// <summary>
@@ -613,87 +613,87 @@ public enum MsoAutoShapeType
   /// </summary>
   TwelvePointStar = 150,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   Round1Rectangle = 151,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   Round2SameRectangle = 152,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   Round2DiagRectangle = 153,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   SnipRoundRectangle = 154,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   Snip1Rectangle = 155,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   Snip2SameRectangle = 156,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   Snip2DiagRectangle = 157,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   Frame = 158,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   HalfFrame = 159,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   Tear = 160,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   Chord = 161,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   Corner = 162,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   MathPlus = 163,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   MathMinus = 164,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   MathMultiply = 165,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   MathDivide = 166,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   MathEqual = 167,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   MathNotEqual = 168,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   CornerTabs = 169,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   SquareTabs = 170,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   PlaqueTabs = 171,
   /// <summary>
@@ -705,43 +705,43 @@ public enum MsoAutoShapeType
   /// </summary>
   Gear9 = 173,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   Funnel = 174,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   PieWedge = 175,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   LeftCircularArrow = 176,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   LeftRightCircularArrow = 177,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   SwooshArrow = 178,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   Cloud = 179,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   ChartX = 180,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   ChartStar = 181,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   ChartPlus = 182,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   LineInverse = 183
 }
