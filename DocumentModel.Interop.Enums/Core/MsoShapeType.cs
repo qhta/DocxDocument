@@ -25,7 +25,7 @@ public enum MsoShapeType
   /// </summary>
   Chart = 3,
   /// <summary>
-  /// Comment.
+  /// Ink comment.
   /// </summary>
   Comment = 4,
   /// <summary>

@@ -9,7 +9,7 @@
 public enum MsoTriState
 {
   /// <summary>
-  /// True.
+  /// Not supported.
   /// </summary>
   True = -1,
   /// <summary>

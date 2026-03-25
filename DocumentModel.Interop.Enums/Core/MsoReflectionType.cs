@@ -6,47 +6,47 @@
 public enum MsoReflectionType
 {
   /// <summary>
-  /// Mixed 
+  /// No description is available.
   /// </summary>
   Mixed = -2,
   /// <summary>
-  /// msoReflectionTypeNone
+  /// No description is available.
   /// </summary>
   None = 0,
   /// <summary>
-  /// msoReflectionType1 1
+  /// No description is available.
   /// </summary>
   Type1 = 1,
   /// <summary>
-  /// msoReflectionType2 2
+  /// No description is available.
   /// </summary>
   Type2 = 2,
   /// <summary>
-  /// msoReflectionType3 3
+  /// No description is available.
   /// </summary>
   Type3 = 3,
   /// <summary>
-  /// msoReflectionType4 4
+  /// No description is available.
   /// </summary>
   Type4 = 4,
   /// <summary>
-  /// msoReflectionType5 5
+  /// No description is available.
   /// </summary>
   Type5 = 5,
   /// <summary>
-  /// msoReflectionType6 6
+  /// No description is available.
   /// </summary>
   Type6 = 6,
   /// <summary>
-  /// msoReflectionType7 7
+  /// No description is available.
   /// </summary>
   Type7 = 7,
   /// <summary>
-  /// msoReflectionType8 8
+  /// No description is available.
   /// </summary>
   Type8 = 8,
   /// <summary>
-  /// msoReflectionType9 9
+  /// No description is available.
   /// </summary>
   Type9 = 9,
 }

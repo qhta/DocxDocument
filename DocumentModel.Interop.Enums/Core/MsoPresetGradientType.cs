@@ -57,7 +57,7 @@ public enum MsoPresetGradientType
   /// </summary>
   Moss = 11,
   /// <summary>
-  /// Peacock gradient. public enum class MsoPresetGradientType ﾉ Expand table
+  /// Peacock gradient.
   /// </summary>
   Peacock = 12,
   /// <summary>
