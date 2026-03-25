@@ -223,73 +223,69 @@ public enum XlChartType
   /// </summary>
   CylinderCol = 98,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Clustered Cone
+  /// Column
   /// </summary>
   ConeColClustered = 99,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Stacked Cone Column
   /// </summary>
   ConeColStacked = 100,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked Cone
+  /// Column
   /// </summary>
   ConeColStacked100 = 101,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Clustered Cone Bar
   /// </summary>
   ConeBarClustered = 102,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Stacked Cone Bar
   /// </summary>
   ConeBarStacked = 103,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked Cone
+  /// Bar
   /// </summary>
   ConeBarStacked100 = 104,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Clustered Cone
+  /// Column
   /// </summary>
   ConeCol = 105,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Clustered Pyramid
+  /// Column
   /// </summary>
   PyramidColClustered = 106,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Stacked Pyramid
+  /// Column
   /// </summary>
   PyramidColStacked = 107,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked Pyramid
+  /// Column
   /// </summary>
   PyramidColStacked100 = 108,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Clustered Pyramid
+  /// Bar
   /// </summary>
   PyramidBarClustered = 109,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Stacked Pyramid Bar
   /// </summary>
   PyramidBarStacked = 110,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked Pyramid
+  /// Bar
   /// </summary>
   PyramidBarStacked100 = 111,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Clustered Pyramid
+  /// Column
   /// </summary>
   PyramidCol = 112,
   /// <summary>
@@ -341,23 +337,19 @@ public enum XlChartType
   /// </summary>
   Combo = -4152,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
   ComboColumnClusteredLine = 113,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
   ComboColumnClusteredLineSecondaryAxis = 114,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
   ComboAreaStackedColumnClustered = 115,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
   /// </summary>
   OtherCombinations = 116,
   /// <summary>

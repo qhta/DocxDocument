@@ -48,7 +48,8 @@ public enum MsoCondition
   Includes,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object includes the phrase specified
-  /// in the value specified in public enum class MsoCondition
+  /// in the value specified in public enum class MsoCondition ﾉ Expand table the Value property of the PropertyTest
+  /// object.
   /// </summary>
   IncludesPhrase,
   /// <summary>
@@ -302,27 +303,27 @@ public enum MsoCondition
   /// </summary>
   EqualsWaitingForSomeoneElse,
   /// <summary>
-  /// Defines the condition for comparison between a file and a specified property in a file search.
+  /// Status equals "Deferred". Value of the Name property must be Status.
   /// </summary>
   EqualsDeferred,
   /// <summary>
-  /// Defines the condition for comparison between a file and a specified property in a file search.
+  /// Status does not equal "Not Started". Value of the Name property must be Status.
   /// </summary>
   NotEqualToNotStarted,
   /// <summary>
-  /// Defines the condition for comparison between a file and a specified property in a file search.
+  /// Status does not equal "In Progress". Value of the Name property must be Status.
   /// </summary>
   NotEqualToInProgress,
   /// <summary>
-  /// Defines the condition for comparison between a file and a specified property in a file search.
+  /// Status does not equal "Completed". Value of the Name property must be Status.
   /// </summary>
   NotEqualToCompleted,
   /// <summary>
-  /// Defines the condition for comparison between a file and a specified property in a file search.
+  /// Status does not equal "Waiting for Someone Else". Value of the Name property must be Status.
   /// </summary>
   NotEqualToWaitingForSomeoneElse,
   /// <summary>
-  /// Defines the condition for comparison between a file and a specified property in a file search.
+  /// Status does not equal "Deferred". Value of the Name property must be Status.
   /// </summary>
   NotEqualToDeferred
 }
