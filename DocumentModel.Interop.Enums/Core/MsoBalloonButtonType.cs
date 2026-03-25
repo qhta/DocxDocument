@@ -37,8 +37,7 @@ public enum MsoBalloonButtonType
   /// </summary>
   Ignore,
   /// <summary>
-  /// This object, member, or enumeration is deprecated and is not intended to be used in your code. public enum
-  /// class MsoBalloonButtonType
+  /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   Abort,
   /// <summary>

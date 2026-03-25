@@ -57,7 +57,7 @@ public enum MsoBevelType
   /// </summary>
   Riblet = 11,
   /// <summary>
-  /// Specifies a HardEdge bevel. public enum class MsoBevelType
+  /// Specifies a HardEdge bevel.
   /// </summary>
   HardEdge = 12,
   /// <summary>

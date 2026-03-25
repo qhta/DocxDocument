@@ -37,8 +37,7 @@ public enum MsoBalloonErrorType
   /// </summary>
   ButtonlessModal,
   /// <summary>
-  /// This object, member, or enumeration is deprecated and is not intended to be used in your code. public enum
-  /// class MsoBalloonErrorType
+  /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   ButtonModeless,
   /// <summary>

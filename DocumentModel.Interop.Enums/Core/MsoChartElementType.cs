@@ -57,7 +57,7 @@ public enum MsoChartElementType
   /// </summary>
   DataLabelShow = 201,
   /// <summary>
-  /// Display data label in center. public enum class MsoChartElementType
+  /// Display data label in center.
   /// </summary>
   DataLabelCenter = 202,
   /// <summary>

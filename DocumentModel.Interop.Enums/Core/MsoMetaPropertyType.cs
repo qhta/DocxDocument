@@ -49,7 +49,7 @@ public enum MsoMetaPropertyType
   /// </summary>
   Integer,
   /// <summary>
-  /// Represents a value used to lookup another value. public enum class MsoMetaPropertyType
+  /// Represents a value used to lookup another value.
   /// </summary>
   Lookup,
   /// <summary>

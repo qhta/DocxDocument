@@ -45,7 +45,7 @@ public enum MsoControlType
   /// </summary>
   GenericDropdown,
   /// <summary>
-  /// Graphic drop-down list. Cannot be created through the object model. public enum class MsoControlType
+  /// Graphic drop-down list. Cannot be created through the object model.
   /// </summary>
   GraphicDropdown,
   /// <summary>

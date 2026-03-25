@@ -27,8 +27,7 @@ public enum XlTrendlineType
   Logarithmic = -4133,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Uses a sequence of
-  /// averages computed from parts of the data public enum class XlTrendlineType ﾉ Expand table series. The number
-  /// of points equals the total number of points in the series less the number specified for the period.
+  /// averages computed from parts of the data
   /// </summary>
   MovingAvg = 6,
   /// <summary>

@@ -53,7 +53,7 @@ public enum MsoThemeColorSchemeIndex
   /// </summary>
   Hyperlink,
   /// <summary>
-  /// Specifies a color scheme for a clicked hyperlink. public enum class MsoThemeColorSchemeIndex
+  /// Specifies a color scheme for a clicked hyperlink.
   /// </summary>
   FollowedHyperlink
 }
