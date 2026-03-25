@@ -11,25 +11,23 @@ namespace DocumentModel.Interop.Core;
 public enum XlUnderlineStyle
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Double thick
-  /// underline.
+  /// Double thick underline.
   /// </summary>
   Double = -4119,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Two thin underlines
-  /// placed close together.
+  /// Two thin underlines placed close together.
   /// </summary>
   DoubleAccounting = 5,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). No underlining.
+  /// No underlining.
   /// </summary>
   None = -4142,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Single underlining.
+  /// Single underlining.
   /// </summary>
   Single = 2,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Not supported.
+  /// Not supported.
   /// </summary>
   SingleAccounting = 4
 }

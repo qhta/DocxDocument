@@ -11,19 +11,19 @@ namespace DocumentModel.Interop.Core;
 public enum XlTickMark
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Crosses the axis.
+  /// Crosses the axis.
   /// </summary>
   Cross = 4,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Inside the axis.
+  /// Inside the axis.
   /// </summary>
   Inside = 2,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). No mark.
+  /// No mark.
   /// </summary>
   None = -4142,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Outside the axis.
+  /// Outside the axis.
   /// </summary>
   Outside = 3
 }

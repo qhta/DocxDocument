@@ -11,22 +11,19 @@ namespace DocumentModel.Interop.Core;
 public enum XlTickLabelPosition
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Top or right side of
-  /// the chart.
+  /// Top or right side of the chart.
   /// </summary>
   High = -4127,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Bottom or left side
-  /// of the chart.
+  /// Bottom or left side of the chart.
   /// </summary>
   Low = -4134,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Next to axis (where
-  /// axis is not at either side of the chart).
+  /// Next to axis (where axis is not at either side of the chart).
   /// </summary>
   NextToAxis = 4,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). No tick marks.
+  /// No tick marks.
   /// </summary>
   None = -4142
 }

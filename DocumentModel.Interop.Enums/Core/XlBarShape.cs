@@ -11,31 +11,27 @@ namespace DocumentModel.Interop.Core;
 public enum XlBarShape
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Box.
+  /// Box.
   /// </summary>
   Box,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Pyramid, coming to
-  /// point at value.
+  /// Pyramid, coming to point at value.
   /// </summary>
   PyramidToPoint,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Pyramid, truncated
-  /// at value.
+  /// Pyramid, truncated at value.
   /// </summary>
   PyramidToMax,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Cylinder.
+  /// Cylinder.
   /// </summary>
   Cylinder,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Cone, coming to
-  /// point at value.
+  /// Cone, coming to point at value.
   /// </summary>
   ConeToPoint,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Cone, truncated at
-  /// value.
+  /// Cone, truncated at value.
   /// </summary>
   ConeToMax
 }

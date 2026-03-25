@@ -11,17 +11,15 @@ namespace DocumentModel.Interop.Core;
 public enum XlTimeUnit
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies Day units.
+  /// Specifies Day units.
   /// </summary>
   Days,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies Month
-  /// units.
+  /// Specifies Month units.
   /// </summary>
   Months,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies Year
-  /// units.
+  /// Specifies Year units.
   /// </summary>
   Years
 }

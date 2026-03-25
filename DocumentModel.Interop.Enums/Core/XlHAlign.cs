@@ -11,37 +11,35 @@ namespace DocumentModel.Interop.Core;
 public enum XlHAlign
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Center.
+  /// Center.
   /// </summary>
   Center = -4108,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Center across
-  /// selection.
+  /// Center across selection.
   /// </summary>
   CenterAcrossSelection = 7,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Distribute.
+  /// Distribute.
   /// </summary>
   Distributed = -4117,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Fill.
+  /// Fill.
   /// </summary>
   Fill = 5,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Align according to
-  /// data type.
+  /// Align according to data type.
   /// </summary>
   General = 1,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Justify.
+  /// Justify.
   /// </summary>
   Justify = -4130,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Left.
+  /// Left.
   /// </summary>
   Left = -4131,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Right.
+  /// Right.
   /// </summary>
   Right = -4152
 }

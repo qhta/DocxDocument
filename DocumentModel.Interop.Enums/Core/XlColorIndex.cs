@@ -11,11 +11,11 @@ namespace DocumentModel.Interop.Core;
 public enum XlColorIndex
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Automatic color.
+  /// Automatic color.
   /// </summary>
   Automatic = -4105,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). No color.
+  /// No color.
   /// </summary>
   None = -4142
 }

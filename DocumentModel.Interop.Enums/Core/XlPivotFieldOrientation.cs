@@ -11,28 +11,23 @@ namespace DocumentModel.Interop.Core;
 public enum XlPivotFieldOrientation
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the Column
-  /// field.
+  /// Specifies the Column field.
   /// </summary>
   ColumnField = 2,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the Data
-  /// field.
+  /// Specifies the Data field.
   /// </summary>
   DataField = 4,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies that the
-  /// field is hidden.
+  /// Specifies that the field is hidden.
   /// </summary>
   Hidden = 0,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the Page
-  /// field.
+  /// Specifies the Page field.
   /// </summary>
   PageField = 3,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the Row
-  /// field.
+  /// Specifies the Row field.
   /// </summary>
   RowField = 1
 }

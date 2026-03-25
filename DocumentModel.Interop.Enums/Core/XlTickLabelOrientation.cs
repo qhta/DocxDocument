@@ -11,26 +11,23 @@ namespace DocumentModel.Interop.Core;
 public enum XlTickLabelOrientation
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Text orientation set
-  /// by Excel.
+  /// Text orientation set by Excel.
   /// </summary>
   Automatic = -4105,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Text runs down.
+  /// Text runs down.
   /// </summary>
   Downward = -4170,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Characters run
-  /// horizontally.
+  /// Characters run horizontally.
   /// </summary>
   Horizontal = -4128,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Text runs up.
+  /// Text runs up.
   /// </summary>
   Upward = -4171,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Characters run
-  /// vertically.
+  /// Characters run vertically.
   /// </summary>
   Vertical = -4166
 }

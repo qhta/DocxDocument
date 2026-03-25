@@ -11,12 +11,11 @@ namespace DocumentModel.Interop.Core;
 public enum XlAxisGroup
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Primary axis group.
+  /// Primary axis group.
   /// </summary>
   Primary = 1,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Secondary axis
-  /// group.
+  /// Secondary axis group.
   /// </summary>
   Secondary
 }

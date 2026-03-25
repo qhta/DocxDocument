@@ -10,19 +10,19 @@ namespace DocumentModel.Interop.Core;
 public enum XlChartOrientation
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
+  /// No description is available.
   /// </summary>
   Downward = -4170,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
+  /// No description is available.
   /// </summary>
   Horizontal = -4128,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
+  /// No description is available.
   /// </summary>
   Upward = -4171,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
+  /// No description is available.
   /// </summary>
   Vertical = -4166
 }

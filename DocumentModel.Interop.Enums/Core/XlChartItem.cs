@@ -11,133 +11,131 @@ namespace DocumentModel.Interop.Core;
 public enum XlChartItem
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Data label.
+  /// Data label.
   /// </summary>
   DataLabel = 0,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Chart area.
+  /// Chart area.
   /// </summary>
   ChartArea = 2,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Series lines.
+  /// Series lines.
   /// </summary>
   Series = 3,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Chart title.
+  /// Chart title.
   /// </summary>
   ChartTitle = 4,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Walls.
+  /// Walls.
   /// </summary>
   Walls = 5,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Corners.
+  /// Corners.
   /// </summary>
   Corners = 6,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Data table.
+  /// Data table.
   /// </summary>
   DataTable = 7,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Trend line.
+  /// Trend line.
   /// </summary>
   Trendline = 8,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Y error bars.
+  /// Y error bars.
   /// </summary>
   ErrorBars = 9,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). X error bars.
+  /// X error bars.
   /// </summary>
   XErrorBars = 10,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Y error bars.
+  /// Y error bars.
   /// </summary>
   YErrorBars = 11,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Legend entry.
+  /// Legend entry.
   /// </summary>
   LegendEntry = 12,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Legend key.
+  /// Legend key.
   /// </summary>
   LegendKey = 13,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Shape.
+  /// Shape.
   /// </summary>
   Shape = 14,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Major gridlines.
+  /// Major gridlines.
   /// </summary>
   MajorGridlines = 15,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Minor gridlines.
+  /// Minor gridlines.
   /// </summary>
   MinorGridlines = 16,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Axis title.
+  /// Axis title.
   /// </summary>
   AxisTitle = 17,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Up bars.
+  /// Up bars.
   /// </summary>
   UpBars = 18,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Plot area.
+  /// Plot area.
   /// </summary>
   PlotArea = 19,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Down bars.
+  /// Down bars.
   /// </summary>
   DownBars = 20,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Axis.
+  /// Axis.
   /// </summary>
   Axis = 21,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Series lines.
+  /// Series lines.
   /// </summary>
   SeriesLines = 22,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Floor.
+  /// Floor.
   /// </summary>
   Floor = 23,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Legend.
+  /// Legend.
   /// </summary>
   Legend = 24,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). HiLo lines.
+  /// HiLo lines.
   /// </summary>
   HiLoLines = 25,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Drop lines.
+  /// Drop lines.
   /// </summary>
   DropLines = 26,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Radar axis labels.
+  /// Radar axis labels.
   /// </summary>
   RadarAxisLabels = 27,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Nothing.
+  /// Nothing.
   /// </summary>
   Nothing = 28,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Leader lines.
+  /// Leader lines.
   /// </summary>
   LeaderLines = 29,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Display unit label.
+  /// Display unit label.
   /// </summary>
   DisplayUnitLabel = 30,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). PivotChart field
-  /// button.
+  /// PivotChart field button.
   /// </summary>
   PivotChartFieldButton = 31,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). PivotChart drop
-  /// zone.
+  /// PivotChart drop zone.
   /// </summary>
   PivotChartDropZone = 32
 }

@@ -11,11 +11,11 @@ namespace DocumentModel.Interop.Core;
 public enum XlScaleType
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Linear.
+  /// Linear.
   /// </summary>
-  inear = -4132,
+  Linear = -4132,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Logarithmic.
+  /// Logarithmic.
   /// </summary>
-  ogarithmic = -4133
+  Logarithmic = -4133
 }
