@@ -11,33 +11,28 @@ namespace DocumentModel.Interop.Core;
 public enum XlTrendlineType
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Uses an equation to
-  /// calculate the least squares fit through points, for example, y=ab^x .
+  /// Uses an equation to calculate the least squares fit through points, for example, y=ab^x .
   /// </summary>
   Exponential = 5,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Uses the linear
-  /// equation y = mx + b to calculate the least squares fit through points.
+  /// Uses the linear equation y = mx + b to calculate the least squares fit through points.
   /// </summary>
   Linear = -4132,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Uses the equation y
-  /// = c ln x + b to calculate the least squares fit through points.
+  /// Uses the equation y = c ln x + b to calculate the least squares fit through points.
   /// </summary>
   Logarithmic = -4133,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Uses a sequence of
-  /// averages computed from parts of the data
+  /// Uses a sequence of averages computed from parts of the data
   /// </summary>
   MovingAvg = 6,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Uses an equation to
-  /// calculate the least squares fit through points, for example, y = ax^6 + bx^5 + cx^4 + dx^3 + ex^2 + fx + g.
+  /// Uses an equation to calculate the least squares fit through points, for example, y = ax^6 + bx^5 + cx^4 + dx^3
+  /// + ex^2 + fx + g.
   /// </summary>
   Polynomial = 3,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Uses an equation to
-  /// calculate the least squares fit through points, for example, y = ax^b.
+  /// Uses an equation to calculate the least squares fit through points, for example, y = ax^b.
   /// </summary>
   Power = 4
 }

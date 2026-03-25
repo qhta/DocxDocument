@@ -11,32 +11,27 @@ namespace DocumentModel.Interop.Core;
 public enum XlDataLabelsType
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). No data labels.
+  /// No data labels.
   /// </summary>
   None = -4142,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Value for the point
-  /// (assumed if this argument isn't specified).
+  /// Value for the point (assumed if this argument isn't specified).
   /// </summary>
   Value = 2,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Percentage of the
-  /// total. Available only for pie charts and doughnut charts.
+  /// Percentage of the total. Available only for pie charts and doughnut charts.
   /// </summary>
   Percent = 3,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Category for the
-  /// point.
+  /// Category for the point.
   /// </summary>
   Label = 4,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Percentage of the
-  /// total, and category for the point. Available only for pie charts and doughnut charts.
+  /// Percentage of the total, and category for the point. Available only for pie charts and doughnut charts.
   /// </summary>
   LabelAndPercent = 5,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Show the size of the
-  /// bubble in reference to the absolute value.
+  /// Show the size of the bubble in reference to the absolute value.
   /// </summary>
   BubbleSizes = 6
 }

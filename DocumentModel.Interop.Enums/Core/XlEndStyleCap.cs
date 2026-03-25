@@ -11,11 +11,11 @@ namespace DocumentModel.Interop.Core;
 public enum XlEndStyleCap
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). No caps applied.
+  /// No caps applied.
   /// </summary>
   Cap = 1,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). No caps applied.
+  /// No caps applied.
   /// </summary>
   NoCap
 }

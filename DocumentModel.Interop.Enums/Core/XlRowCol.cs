@@ -11,13 +11,11 @@ namespace DocumentModel.Interop.Core;
 public enum XlRowCol
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Data series is in a
-  /// column.
+  /// Data series is in a column.
   /// </summary>
   Columns = 2,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Data series is in a
-  /// row.
+  /// Data series is in a row.
   /// </summary>
   Rows = 1
 }
