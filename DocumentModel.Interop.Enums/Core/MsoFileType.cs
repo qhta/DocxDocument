@@ -51,7 +51,7 @@ public enum MsoFileType
   /// </summary>
   MailItem,
   /// <summary>
-  /// Calendar item file (*.ics or *.vsc). public enum class MsoFileType
+  /// Calendar item file (*.ics or *.vsc).
   /// </summary>
   CalendarItem,
   /// <summary>

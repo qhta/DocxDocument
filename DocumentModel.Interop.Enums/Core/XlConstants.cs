@@ -31,13 +31,11 @@ public enum XlConstants
   /// </summary>
   Column = 3,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
-  /// constants used in Microsoft Excel.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4099
   /// </summary>
   ThreeDBar = -4099,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
-  /// constants used in Microsoft Excel.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4103
   /// </summary>
   ThreeDSurface = -4103,
   /// <summary>
@@ -121,8 +119,7 @@ public enum XlConstants
   /// </summary>
   Gray50 = -4125,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4126 public enum
-  /// class XlConstants
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4126
   /// </summary>
   Gray75 = -4126,
   /// <summary>
@@ -198,7 +195,7 @@ public enum XlConstants
   /// </summary>
   Percent = 2,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 2
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 9
   /// </summary>
   Plus = 9,
   /// <summary>
@@ -218,7 +215,7 @@ public enum XlConstants
   /// </summary>
   SemiGray75 = 10,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 4
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 5
   /// </summary>
   ShowLabel = 4,
   /// <summary>

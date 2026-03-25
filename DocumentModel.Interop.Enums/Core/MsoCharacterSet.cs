@@ -53,7 +53,7 @@ public enum MsoCharacterSet
   /// </summary>
   TraditionalChinese,
   /// <summary>
-  /// Vietnamese character set. public enum class MsoCharacterSet
+  /// Vietnamese character set.
   /// </summary>
   Vietnamese
 }

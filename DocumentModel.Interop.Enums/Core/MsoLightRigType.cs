@@ -57,7 +57,7 @@ public enum MsoLightRigType
   /// </summary>
   LegacyHarsh3 = 11,
   /// <summary>
-  /// Specifies the LegacyHarsh4 effect. public enum class MsoLightRigType
+  /// Specifies the LegacyHarsh4 effect.
   /// </summary>
   LegacyHarsh4 = 12,
   /// <summary>

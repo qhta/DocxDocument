@@ -41,11 +41,11 @@ public enum MsoPresetCamera
   /// </summary>
   LegacyObliqueBottomLeft = 7,
   /// <summary>
-  /// Specifies Legacy Oblique Bottom. msoCameraLegacyObliqueBottomRight9 Specifies Legacy Oblique Lower Right.
+  /// Specifies Legacy Oblique Bottom.
   /// </summary>
   LegacyObliqueBottom = 8,
   /// <summary>
-  /// Indicates the effects camera type used by the specified object.
+  /// Specifies Legacy Oblique Lower Right.
   /// </summary>
   LegacyObliqueBottomRight = 9,
   /// <summary>

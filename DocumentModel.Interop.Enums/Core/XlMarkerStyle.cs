@@ -46,7 +46,6 @@ public enum XlMarkerStyle
   Plus = 9,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Square markers.
-  /// public enum class XlMarkerStyle
   /// </summary>
   Square = 1,
   /// <summary>

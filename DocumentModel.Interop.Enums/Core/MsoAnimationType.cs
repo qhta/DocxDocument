@@ -37,8 +37,7 @@ public enum MsoAnimationType
   /// </summary>
   GetAttentionMajor = 11,
   /// <summary>
-  /// This object, member, or enumeration is deprecated and is not intended to be used in your code. public enum
-  /// class MsoAnimationType
+  /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   GetAttentionMinor = 12,
   /// <summary>

@@ -57,7 +57,7 @@ public enum MsoSyncErrorType
   /// </summary>
   CouldNotOpen,
   /// <summary>
-  /// Could not update destination file. public enum class MsoSyncErrorType
+  /// Could not update destination file.
   /// </summary>
   CouldNotUpdate,
   /// <summary>

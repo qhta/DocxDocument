@@ -32,7 +32,7 @@ public enum XlDisplayUnit
   HundredThousands = -5,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies units of
-  /// millions. public enum class XlDisplayUnit
+  /// millions.
   /// </summary>
   Millions = -6,
   /// <summary>

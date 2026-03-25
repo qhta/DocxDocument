@@ -41,7 +41,7 @@ public enum MsoBlackWhiteMode
   /// </summary>
   HighContrast = 7,
   /// <summary>
-  /// Not supported.
+  /// Not shown.
   /// </summary>
   Black = 8,
   /// <summary>

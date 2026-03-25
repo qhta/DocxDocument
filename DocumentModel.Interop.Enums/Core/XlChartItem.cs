@@ -19,7 +19,7 @@ public enum XlChartItem
   /// </summary>
   ChartArea = 2,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Series.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Series lines.
   /// </summary>
   Series = 3,
   /// <summary>
@@ -39,8 +39,7 @@ public enum XlChartItem
   /// </summary>
   DataTable = 7,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Trend line. public
-  /// enum class XlChartItem
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Trend line.
   /// </summary>
   Trendline = 8,
   /// <summary>
@@ -92,7 +91,7 @@ public enum XlChartItem
   /// </summary>
   DownBars = 20,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Axis title.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Axis.
   /// </summary>
   Axis = 21,
   /// <summary>
@@ -104,7 +103,7 @@ public enum XlChartItem
   /// </summary>
   Floor = 23,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Legend entry.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Legend.
   /// </summary>
   Legend = 24,
   /// <summary>
