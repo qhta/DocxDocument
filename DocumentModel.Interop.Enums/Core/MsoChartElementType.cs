@@ -393,127 +393,127 @@ public enum MsoChartElementType
   /// </summary>
   PrimaryCategoryAxisMillions = 373,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Use billions for primary category axis units.
   /// </summary>
   PrimaryCategoryAxisBillions = 374,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Use log scale for primary category axis.
   /// </summary>
   PrimaryCategoryAxisLogScale = 375,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Use thousands for secondary category axis units.
   /// </summary>
   SecondaryCategoryAxisThousands = 376,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Use millions for secondary category axis units.
   /// </summary>
   SecondaryCategoryAxisMillions = 377,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Use billions for secondary category axis units.
   /// </summary>
   SecondaryCategoryAxisBillions = 378,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Use log scale for secondary category axis.
   /// </summary>
   SecondaryCategoryAxisLogScale = 379,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Do not display data table.
   /// </summary>
   DataTableNone = 500,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display data table.
   /// </summary>
   DataTableShow = 501,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display data table with legend keys.
   /// </summary>
   DataTableWithLegendKeys = 502,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Do not display trendline.
   /// </summary>
   TrendlineNone = 600,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Add a linear trendline.
   /// </summary>
   TrendlineAddLinear = 601,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Add an exponential trendline.
   /// </summary>
   TrendlineAddExponential = 602,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Add a linear forecast.
   /// </summary>
   TrendlineAddLinearForecast = 603,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Add a two-period moving average.
   /// </summary>
   TrendlineAddTwoPeriodMovingAverage = 604,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Do not display error bar.
   /// </summary>
   ErrorBarNone = 700,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display standard error bar.
   /// </summary>
   ErrorBarStandardError = 701,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display percentage error bar.
   /// </summary>
   ErrorBarPercentage = 702,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display standard deviation error bar.
   /// </summary>
   ErrorBarStandardDeviation = 703,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Do not display line.
   /// </summary>
   LineNone = 800,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display drop line.
   /// </summary>
   LineDropLine = 801,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display high/low line.
   /// </summary>
   LineHiLoLine = 802,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display series line.
   /// </summary>
   LineSeriesLine = 803,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display drop high/low line.
   /// </summary>
   LineDropHiLoLine = 804,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Do not display up/down bars.
   /// </summary>
   UpDownBarsNone = 900,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display up/down bars.
   /// </summary>
   UpDownBarsShow = 901,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Do not display plot area.
   /// </summary>
   PlotAreaNone = 1000,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display plot area.
   /// </summary>
   PlotAreaShow = 1001,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Do not display chart wall.
   /// </summary>
   ChartWallNone = 1100,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display chart wall.
   /// </summary>
   ChartWallShow = 1101,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Do not display chart floor.
   /// </summary>
   ChartFloorNone = 1200,
   /// <summary>
-  /// Specifies whether and how to display chart elements.
+  /// Display chart floor.
   /// </summary>
   ChartFloorShow = 1201
 }
