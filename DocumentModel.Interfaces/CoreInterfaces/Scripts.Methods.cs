@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a collection of HTML script blocks in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts?view=office-pia"/>
-public partial interface Scripts
+public partial interface Scripts: InteropObject
 {
   /// <summary>
   /// Returns a script by name, ID, or index.

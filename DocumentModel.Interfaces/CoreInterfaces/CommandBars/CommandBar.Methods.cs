@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a command bar in the container application.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar?view=office-pia"/>
-public partial interface CommandBar
+public partial interface CommandBar: InteropObject
 {
   /// <summary>
   /// Invokes `accSelect`.

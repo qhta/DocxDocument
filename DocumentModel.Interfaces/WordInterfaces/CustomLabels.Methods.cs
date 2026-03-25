@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customlabels?view=word-pia"/>
-public partial interface CustomLabels
+public partial interface CustomLabels: InteropObject
 {
   /// <summary>
   /// Adds a custom label to the collection.

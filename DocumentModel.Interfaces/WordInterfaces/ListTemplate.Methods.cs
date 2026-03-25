@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listtemplate?view=word-pia"/>
-public partial interface ListTemplate
+public partial interface ListTemplate: InteropObject
 {
   /// <summary>
   /// Converts a list template to another list template type.

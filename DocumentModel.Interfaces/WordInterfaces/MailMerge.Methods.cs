@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmerge?view=word-pia"/>
-public partial interface MailMerge
+public partial interface MailMerge: InteropObject
 {
   /// <summary>
   /// Creates a new mail merge data source.

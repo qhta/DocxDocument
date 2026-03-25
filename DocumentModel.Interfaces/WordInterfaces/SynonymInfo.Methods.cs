@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.synonyminfo?view=word-pia"/>
-public partial interface SynonymInfo
+public partial interface SynonymInfo: InteropObject
 {
   /// <summary>
   /// Returns the synonym list.

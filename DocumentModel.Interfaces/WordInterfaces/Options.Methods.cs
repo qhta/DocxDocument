@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options?view=word-pia"/>
-public partial interface Options
+public partial interface Options: InteropObject
 {
   /// <summary>
   /// Returns the default path for the specified file type.

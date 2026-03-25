@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents chart grid lines.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.gridlines?view=office-pia"/>
-public partial interface GridLines
+public partial interface GridLines: InteropObject
 {
   /// <summary>
   /// Gets the `Name` property.

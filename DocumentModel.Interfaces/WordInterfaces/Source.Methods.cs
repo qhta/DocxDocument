@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.source?view=word-pia"/>
-public partial interface Source
+public partial interface Source: InteropObject
 {
   /// <summary>
   /// Gets the value of the specified field from the source.

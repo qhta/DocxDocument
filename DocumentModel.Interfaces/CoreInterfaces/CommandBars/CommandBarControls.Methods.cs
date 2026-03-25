@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// A collection of command bar controls on a command bar.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrols?view=office-pia"/>
-public partial interface CommandBarControls
+public partial interface CommandBarControls: InteropObject
 {
   /// <summary>
   /// Adds a control to the command bar controls collection.

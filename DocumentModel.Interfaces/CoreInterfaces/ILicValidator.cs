@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicvalidator?view=office-pia"/>
-public partial interface ILicValidator
+public partial interface ILicValidator: InteropObject
 {
   /// <summary>
   /// Gets the products collection used by the licensing validator.

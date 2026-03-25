@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents bullet formatting.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.bulletformat2?view=office-pia"/>
-public partial interface BulletFormat2
+public partial interface BulletFormat2: InteropObject
 {
   /// <summary>
   /// Sets the picture used for bullet formatting.

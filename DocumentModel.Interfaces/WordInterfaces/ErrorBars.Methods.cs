@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.errorbars?view=word-pia"/>
-public partial interface ErrorBars
+public partial interface ErrorBars: InteropObject
 {
   /// <summary>
   /// Returns the value produced by the select operation.

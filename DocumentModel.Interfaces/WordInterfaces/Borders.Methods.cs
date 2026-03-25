@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders?view=word-pia"/>
-public partial interface Borders
+public partial interface Borders: InteropObject
 {
   /// <summary>
   /// Returns a Border object that represents a single border.

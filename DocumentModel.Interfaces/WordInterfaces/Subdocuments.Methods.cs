@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.subdocuments?view=word-pia"/>
-public partial interface Subdocuments
+public partial interface Subdocuments: InteropObject
 {
   /// <summary>
   /// Adds a subdocument from a file to the collection.

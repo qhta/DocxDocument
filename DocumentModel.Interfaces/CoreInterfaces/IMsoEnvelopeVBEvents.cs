@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoenvelopevbevents?view=office-pia"/>
-public partial interface IMsoEnvelopeVBEvents
+public partial interface IMsoEnvelopeVBEvents: InteropObject
 {
 }
 

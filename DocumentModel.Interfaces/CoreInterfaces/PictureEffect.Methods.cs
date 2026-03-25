@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureeffect?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface PictureEffect
+public partial interface PictureEffect: InteropObject
 {
   /// <summary>
   /// Invokes `Delete`.

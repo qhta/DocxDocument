@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.research?view=word-pia"/>
-public partial interface Research
+public partial interface Research: InteropObject
 {
   /// <summary>
   /// Executes a query against the specified service using the provided query string and language settings.

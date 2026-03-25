@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.droplines?view=word-pia"/>
-public partial interface DropLines
+public partial interface DropLines: InteropObject
 {
   /// <summary>
   /// Selects the object.

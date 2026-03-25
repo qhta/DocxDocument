@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.stylesheet?view=word-pia"/>
-public partial interface StyleSheet
+public partial interface StyleSheet: InteropObject
 {
   /// <summary>
   /// Moves the style sheet to a new precedence level.

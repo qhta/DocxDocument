@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datatable?view=word-pia"/>
-public partial interface DataTable
+public partial interface DataTable: InteropObject
 {
   /// <summary>
   /// Selects the object.

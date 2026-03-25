@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Used to create a custom task pane.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ictpfactory?view=office-pia"/>
-public partial interface ICTPFactory
+public partial interface ICTPFactory: InteropObject
 {
   /// <summary>
   /// Creates an instance of a custom task pane.

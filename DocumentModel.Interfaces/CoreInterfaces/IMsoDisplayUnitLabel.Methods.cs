@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a display unit label.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel?view=office-pia"/>
-public partial interface IMsoDisplayUnitLabel
+public partial interface IMsoDisplayUnitLabel: InteropObject
 {
   /// <summary>
   /// Deletes the display unit label.

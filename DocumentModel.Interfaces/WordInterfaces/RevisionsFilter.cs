@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the current settings related to display of reviewers’ comments and revision marks in the document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revisionsfilter?view=word-pia"/>
-public partial interface RevisionsFilter
+public partial interface RevisionsFilter: InteropObject
 {
   /// <summary>
   /// Sets or returns a WdRevisionsView constant that represents the global option that specifies whether Word
