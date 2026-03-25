@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Interfaces;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Represents shadow formatting for a shape.

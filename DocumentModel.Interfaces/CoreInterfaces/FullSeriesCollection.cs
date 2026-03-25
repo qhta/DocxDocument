@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace DocumentModel.Interfaces;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Represents the full set of Series objects in a chart.

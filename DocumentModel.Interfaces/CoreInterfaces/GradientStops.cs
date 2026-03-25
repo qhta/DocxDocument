@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace DocumentModel.Interfaces;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Represents a collection of GradientStop objects.

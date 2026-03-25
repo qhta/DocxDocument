@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Interfaces;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Represents a field definition for picker result sub-items.

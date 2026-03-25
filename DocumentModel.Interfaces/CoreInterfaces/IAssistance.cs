@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Interfaces;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Represents the Microsoft Office Help Viewer assistance interface.

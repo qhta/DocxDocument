@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace DocumentModel.Interfaces;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Contains a collection of CustomXMLNode objects that represent XML nodes in a document.

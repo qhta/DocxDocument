@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Interfaces;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Represents error bars in a chart.

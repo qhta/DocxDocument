@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Interfaces;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Events interface for `CustomXMLParts` object events.

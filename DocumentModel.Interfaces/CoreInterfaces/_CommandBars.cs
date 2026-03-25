@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace DocumentModel.Interfaces;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// A collection of CommandBar objects that represent the command bars in the container application.

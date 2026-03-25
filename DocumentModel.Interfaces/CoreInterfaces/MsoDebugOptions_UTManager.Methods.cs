@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace DocumentModel.Interfaces;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Manages debug unit tests.

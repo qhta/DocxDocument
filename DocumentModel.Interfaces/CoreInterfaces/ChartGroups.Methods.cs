@@ -1,4 +1,4 @@
-namespace DocumentModel.Interfaces;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// A collection of all ChartGroup objects in the specified chart.

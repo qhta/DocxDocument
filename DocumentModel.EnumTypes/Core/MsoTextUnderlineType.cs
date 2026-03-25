@@ -1,0 +1,87 @@
+﻿namespace DocumentModel.Interop.Core;
+
+/// <summary>
+/// Indicates the type of underline for text.
+/// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotextunderlinetype?view=office-pia` for Office interop details.
+/// </remarks>
+public enum MsoTextUnderlineType
+{
+  /// <summary>
+  /// Specifies a mix of underline types.
+  /// </summary>
+  Mixed = -2,
+  /// <summary>
+  /// Specifies no underline.
+  /// </summary>
+  NoUnderline = 0,
+  /// <summary>
+  /// Specifies underlining words.
+  /// </summary>
+  Words = 1,
+  /// <summary>
+  /// Specifies a single line underline.
+  /// </summary>
+  SingleLine = 2,
+  /// <summary>
+  /// Specifies a double line underline.
+  /// </summary>
+  DoubleLine = 3,
+  /// <summary>
+  /// Specifies a heavy line underline.
+  /// </summary>
+  HeavyLine = 4,
+  /// <summary>
+  /// Specifies a dotted line underline.
+  /// </summary>
+  DottedLine = 5,
+  /// <summary>
+  /// Specifies a dotted heavy line underline.
+  /// </summary>
+  DottedHeavyLine = 6,
+  /// <summary>
+  /// Specifies a dash line underline.
+  /// </summary>
+  DashLine = 7,
+  /// <summary>
+  /// Specifies a dash underline.
+  /// </summary>
+  DashHeavyLine = 8,
+  /// <summary>
+  /// Specifies a dashed long line underline.
+  /// </summary>
+  DashLongLine = 9,
+  /// <summary>
+  /// Specifies a long heavy line underline.
+  /// </summary>
+  DashLongHeavyLine = 10,
+  /// <summary>
+  /// Specifies a dot dash line underline.
+  /// </summary>
+  DotDashLine = 11,
+  /// <summary>
+  /// Specifies a dot dash heavy line underline.
+  /// </summary>
+  DotDashHeavyLine = 12,
+  /// <summary>
+  /// Specifies a dot dot dash line underline.
+  /// </summary>
+  DotDotDashLine = 13,
+  /// <summary>
+  /// Specifies a dot dot dash heavy line underline.
+  /// </summary>
+  DotDotDashHeavyLine = 14,
+  /// <summary>
+  /// Specifies a wavy line underline.
+  /// </summary>
+  WavyLine = 15,
+  /// <summary>
+  /// Specifies a wavy heavy line underline.
+  /// </summary>
+  WavyHeavyLine = 16,
+  /// <summary>
+  /// Specifies a wavy double line underline.
+  /// </summary>
+  WavyDoubleLine = 17
+}
