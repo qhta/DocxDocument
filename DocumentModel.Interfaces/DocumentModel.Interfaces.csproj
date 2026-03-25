@@ -18,9 +18,9 @@
     <NoWarn>1701;1702;8766;0618</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="Windows\**" />
-    <EmbeddedResource Remove="Windows\**" />
-    <None Remove="Windows\**" />
+    <Compile Remove=".github\**" />
+    <EmbeddedResource Remove=".github\**" />
+    <None Remove=".github\**" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="DeepEqual" Version="5.1.0" />
@@ -37,6 +37,11 @@
     <ProjectReference Include="..\DocumentModel.EnumTypes\DocumentModel.EnumTypes.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Application\" />
+    <None Include="..\..\..\Scripts\UpdateXmlComments.py" Link="Scripts\UpdateXmlComments.py" />
+    <None Include="..\..\..\Scripts\RemoveTypeNamesFromEnums.py" Link="Scripts\RemoveTypeNamesFromEnums.py" />
+    <None Include="..\..\..\Scripts\TrimEnumFieldNames.py" Link="Scripts\TrimEnumFieldNames.py" />
+    <None Include="..\..\..\Scripts\CompareEnumTypes.py" Link="Scripts\CompareEnumTypes.py" />
+    <None Include="..\..\..\Scripts\AddPiaCoreLink.py" Link="Scripts\AddPiaCoreLink.py" />
+    <None Include="..\..\..\Scripts\AddPiaWordLink.py" Link="Scripts\AddPiaWordLink.py" />
   </ItemGroup>
 </Project>

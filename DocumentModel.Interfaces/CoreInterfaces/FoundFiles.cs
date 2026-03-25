@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the list of files returned from a file search.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.foundfiles?view=office-pia"/>
-public partial interface FoundFiles: InteropCollection<string>
+public partial interface FoundFiles: InteropValues<string>
 {
 }
 

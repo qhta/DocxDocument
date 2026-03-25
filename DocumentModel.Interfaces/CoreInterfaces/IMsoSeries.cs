@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a chart series.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries?view=office-pia"/>
-public partial interface IMsoSeries
+public partial interface IMsoSeries: InteropObject
 {
   /// <summary>
   /// Gets or sets the `AxisGroup` property.

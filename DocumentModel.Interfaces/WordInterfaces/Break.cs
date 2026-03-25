@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single page, column, or section break.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.break?view=word-pia"/>
-public interface Break
+public interface Break: InteropObject
 {
   /// <summary>
   /// Gets the range that represents the break.
