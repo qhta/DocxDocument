@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interfaces;
+﻿namespace DocumentModel.Interop;
 
 /// <summary>
 /// Defines a generic dictionary interface that maps keys of a specified type to values, supporting both standard and

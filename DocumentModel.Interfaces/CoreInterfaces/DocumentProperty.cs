@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace DocumentModel.Interfaces;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Represents a custom or built-in document property.
@@ -20,7 +20,7 @@ public partial interface DocumentProperty
   ///This property is read-only for built-in document properties; read/write for custom document properties.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.value?view=office-pia"/>
-  public object Value { get; set; }
+  public object? Value { get; set; }
   /// <summary>
   /// Returns or sets the document property type.
   /// </summary>
