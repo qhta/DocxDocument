@@ -21,6 +21,9 @@ public enum MsoBaselineAlignment
   /// No description is available.
   /// </summary>
   Center = 3,
+  /// <summary>
+  /// No description is available.
+  /// </summary>
   FarEast50 = 4,
   /// <summary>
   /// No description is available.

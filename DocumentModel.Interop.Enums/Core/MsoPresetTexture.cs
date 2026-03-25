@@ -57,7 +57,7 @@ public enum MsoPresetTexture
   /// </summary>
   BrownMarble = 11,
   /// <summary>
-  /// Granite texture. public enum class MsoPresetTexture ﾉ Expand table
+  /// Granite texture.
   /// </summary>
   Granite = 12,
   /// <summary>

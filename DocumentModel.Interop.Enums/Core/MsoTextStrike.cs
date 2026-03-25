@@ -9,7 +9,7 @@
 public enum MsoTextStrike
 {
   /// <summary>
-  /// Indicates the number of times a character is printed to darken the image.
+  /// Specifies that the text can contain a combination of double-strike and single- strike characters.
   /// </summary>
   Mixed = -2,
   /// <summary>

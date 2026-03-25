@@ -697,11 +697,11 @@ public enum MsoAutoShapeType
   /// </summary>
   PlaqueTabs = 171,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   Gear6 = 172,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   Gear9 = 173,
   /// <summary>
