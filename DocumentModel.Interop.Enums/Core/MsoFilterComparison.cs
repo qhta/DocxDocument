@@ -41,8 +41,7 @@ public enum MsoFilterComparison
   /// </summary>
   IsNotBlank,
   /// <summary>
-  /// Column matches CompareTo if any part of the CompareTo string is contained in the Column value. public enum
-  /// class MsoFilterComparison
+  /// Column matches CompareTo if any part of the CompareTo string is contained in the Column value.
   /// </summary>
   Contains,
   /// <summary>

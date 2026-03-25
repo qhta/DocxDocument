@@ -11,7 +11,7 @@ public enum MsoCTPDockPositionRestrict
   /// <summary>
   /// No restrictions on docking the task pane.
   /// </summary>
-  ne,
+  None,
   /// <summary>
   /// There is no change from the current restriction setting for the task pane.
   /// </summary>

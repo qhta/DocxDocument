@@ -362,7 +362,7 @@ public enum MsoEncoding
   /// </summary>
   OEMMultilingualLatinI = 850,
   /// <summary>
-  /// OEM as used with multi- lingual Latin II. public enum class MsoEncoding
+  /// OEM as used with multi- lingual Latin II.
   /// </summary>
   OEMMultilingualLatinII = 852,
   /// <summary>

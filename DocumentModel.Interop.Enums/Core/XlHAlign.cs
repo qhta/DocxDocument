@@ -16,7 +16,7 @@ public enum XlHAlign
   Center = -4108,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Center across
-  /// selection. public enum class XlHAlign
+  /// selection.
   /// </summary>
   CenterAcrossSelection = 7,
   /// <summary>

@@ -57,7 +57,7 @@ public enum SignatureDetail
   /// </summary>
   IPFormHash,
   /// <summary>
-  /// Specifies the IP current view. public enum class SignatureDetail
+  /// Specifies the IP current view.
   /// </summary>
   IPCurrentView,
   /// <summary>

@@ -48,8 +48,7 @@ public enum MsoCondition
   Includes,
   /// <summary>
   /// Value of the file property specified in Name property of the PropertyTest object includes the phrase specified
-  /// in the value specified in public enum class MsoCondition ﾉ Expand table the Value property of the PropertyTest
-  /// object.
+  /// in the value specified in
   /// </summary>
   IncludesPhrase,
   /// <summary>

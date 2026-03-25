@@ -15,7 +15,7 @@ public enum XlChartType
   /// </summary>
   ColumnClustered = 51,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Stacked
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked Column
   /// </summary>
   ColumnStacked = 52,
   /// <summary>
@@ -39,7 +39,7 @@ public enum XlChartType
   /// </summary>
   BarClustered = 57,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Stacked
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked Bar
   /// </summary>
   BarStacked = 58,
   /// <summary>
@@ -59,7 +59,7 @@ public enum XlChartType
   /// </summary>
   ThreeDBarStacked100 = 62,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Stacked
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked Line
   /// </summary>
   LineStacked = 63,
   /// <summary>
@@ -67,12 +67,13 @@ public enum XlChartType
   /// </summary>
   LineStacked100 = 64,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Line with
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked Line
+  /// with Markers
   /// </summary>
   LineMarkers = 65,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Stacked Line with
-  /// Markers
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked Line
+  /// with Markers
   /// </summary>
   LineMarkersStacked = 66,
   /// <summary>
@@ -98,7 +99,7 @@ public enum XlChartType
   BarOfPie = 71,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Scatter with
-  /// Smoothed Lines
+  /// Smoothed Lines and No Data Markers
   /// </summary>
   XYScatterSmooth = 72,
   /// <summary>
@@ -108,6 +109,7 @@ public enum XlChartType
   XYScatterSmoothNoMarkers = 73,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Scatter with Lines
+  /// and No Data Markers
   /// </summary>
   XYScatterLines = 74,
   /// <summary>
@@ -116,7 +118,7 @@ public enum XlChartType
   /// </summary>
   XYScatterLinesNoMarkers = 75,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Stacked
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked Area
   /// </summary>
   AreaStacked = 76,
   /// <summary>
@@ -145,7 +147,8 @@ public enum XlChartType
   /// </summary>
   RadarFilled = 82,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 3D
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Surface (Top View
+  /// wireframe)
   /// </summary>
   Surface = 83,
   /// <summary>
@@ -154,7 +157,8 @@ public enum XlChartType
   /// </summary>
   SurfaceWireframe = 84,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Surface (Top View)
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Surface (Top View
+  /// wireframe)
   /// </summary>
   SurfaceTopView = 85,
   /// <summary>
@@ -163,7 +167,8 @@ public enum XlChartType
   /// </summary>
   SurfaceTopViewWireframe = 86,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Bubble
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Bubble with 3D
+  /// effects
   /// </summary>
   Bubble = 15,
   /// <summary>
@@ -195,7 +200,8 @@ public enum XlChartType
   /// </summary>
   CylinderColClustered = 92,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Stacked Cylinder Bar
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked
+  /// Cylinder Column
   /// </summary>
   CylinderColStacked = 93,
   /// <summary>
@@ -209,7 +215,8 @@ public enum XlChartType
   /// </summary>
   CylinderBarClustered = 95,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Stacked Cylinder Bar
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked
+  /// Cylinder Bar
   /// </summary>
   CylinderBarStacked = 96,
   /// <summary>
@@ -218,8 +225,7 @@ public enum XlChartType
   /// </summary>
   CylinderBarStacked100 = 97,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Clustered Cone
-  /// Column
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 3D Cylinder Column
   /// </summary>
   CylinderCol = 98,
   /// <summary>
@@ -228,7 +234,8 @@ public enum XlChartType
   /// </summary>
   ConeColClustered = 99,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Stacked Cone Column
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked Cone
+  /// Column
   /// </summary>
   ConeColStacked = 100,
   /// <summary>
@@ -241,7 +248,8 @@ public enum XlChartType
   /// </summary>
   ConeBarClustered = 102,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Stacked Cone Bar
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked Cone
+  /// Bar
   /// </summary>
   ConeBarStacked = 103,
   /// <summary>
@@ -250,8 +258,7 @@ public enum XlChartType
   /// </summary>
   ConeBarStacked100 = 104,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Clustered Cone
-  /// Column
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 3D Cone
   /// </summary>
   ConeCol = 105,
   /// <summary>
@@ -260,7 +267,7 @@ public enum XlChartType
   /// </summary>
   PyramidColClustered = 106,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Stacked Pyramid
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked Pyramid
   /// Column
   /// </summary>
   PyramidColStacked = 107,
@@ -275,7 +282,8 @@ public enum XlChartType
   /// </summary>
   PyramidBarClustered = 109,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Stacked Pyramid Bar
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked Pyramid
+  /// Bar
   /// </summary>
   PyramidBarStacked = 110,
   /// <summary>
@@ -284,52 +292,49 @@ public enum XlChartType
   /// </summary>
   PyramidBarStacked100 = 111,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Clustered Pyramid
-  /// Column
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 3D Pyramid Column
   /// </summary>
   PyramidCol = 112,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 3D
   /// </summary>
   ThreeDColumn = -4100,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Line
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked Line
+  /// with Markers
   /// </summary>
   Line = 4,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 3D Line
   /// </summary>
   ThreeDLine = -4101,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 3D Pie
   /// </summary>
   ThreeDPie = -4102,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Pie
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Exploded Pie
   /// </summary>
   Pie = 5,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Scatter
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Scatter with Lines
+  /// and No Data Markers
   /// </summary>
   XYScatter = -4169,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the chart
-  /// type.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 3D Area
   /// </summary>
   ThreeDArea = -4098,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Area
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked Area
   /// </summary>
   Area = 1,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA).
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Exploded Doughnut
   /// </summary>
   Doughnut = -4120,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Radar
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Filled
   /// </summary>
   Radar = -4151,
   /// <summary>

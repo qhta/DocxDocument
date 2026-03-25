@@ -53,7 +53,7 @@ public enum MsoAutoShapeType
   /// </summary>
   Hexagon = 10,
   /// <summary>
-  /// Cross. public enum class MsoAutoShapeType
+  /// Cross.
   /// </summary>
   Cross = 11,
   /// <summary>
@@ -597,19 +597,19 @@ public enum MsoAutoShapeType
   /// </summary>
   Dodecagon = 146,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   SixPointStar = 147,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   SevenPointStar = 148,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   TenPointStar = 149,
   /// <summary>
-  /// Specifies the shape type for an AutoShape object.
+  /// No description is available.
   /// </summary>
   TwelvePointStar = 150,
   /// <summary>

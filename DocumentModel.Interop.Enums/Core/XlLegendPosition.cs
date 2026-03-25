@@ -16,7 +16,7 @@ public enum XlLegendPosition
   Bottom = -4107,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). In the upper
-  /// right-hand corner of the chart border. public enum class XlLegendPosition
+  /// right-hand corner of the chart border.
   /// </summary>
   Corner = 2,
   /// <summary>

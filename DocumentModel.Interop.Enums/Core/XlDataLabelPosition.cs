@@ -42,7 +42,7 @@ public enum XlDataLabelPosition
   OutsideEnd = 2,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Data label
-  /// positioned arbitrarily. public enum class XlDataLabelPosition
+  /// positioned arbitrarily.
   /// </summary>
   InsideEnd = 3,
   /// <summary>

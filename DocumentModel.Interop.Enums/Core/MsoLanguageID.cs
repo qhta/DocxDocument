@@ -750,7 +750,7 @@ public enum MsoLanguageID
   /// </summary>
   SpanishModernSort = 3082,
   /// <summary>
-  /// Spanish. public enum class MsoLanguageID
+  /// Spanish.
   /// </summary>
   Spanish = 1034,
   /// <summary>

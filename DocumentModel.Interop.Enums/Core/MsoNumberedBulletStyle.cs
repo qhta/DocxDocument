@@ -58,7 +58,7 @@ public enum MsoNumberedBulletStyle
   /// </summary>
   AlphaUCParenRight = 11,
   /// <summary>
-  /// public enum class MsoNumberedBulletStyle
+  ///  No description is available.
   /// </summary>
   ArabicParenBoth = 12,
   /// <summary>

@@ -53,7 +53,7 @@ public enum MsoPresetTextEffectShape
   /// </summary>
   ArchDownCurve = 10,
   /// <summary>
-  /// Text follows a circle, reading clockwise. public enum class MsoPresetTextEffectShape
+  /// Text follows a circle, reading clockwise.
   /// </summary>
   CircleCurve = 11,
   /// <summary>

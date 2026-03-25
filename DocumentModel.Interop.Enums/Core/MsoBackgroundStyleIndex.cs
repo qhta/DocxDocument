@@ -57,7 +57,7 @@ public enum MsoBackgroundStyleIndex
   /// </summary>
   Preset10 = 10,
   /// <summary>
-  /// Specifies style 11. public enum class MsoBackgroundStyleIndex
+  /// Specifies style 11.
   /// </summary>
   Preset11 = 11,
   /// <summary>

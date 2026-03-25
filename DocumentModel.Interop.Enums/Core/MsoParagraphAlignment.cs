@@ -37,8 +37,6 @@ public enum MsoParagraphAlignment
   /// <summary>
   /// Specifies that the first and last characters of each line (except the last) are aligned to the left and right
   /// margins, and lines are filled by adding or subtracting the same amount from each character. The last line of
-  /// public enum class MsoParagraphAlignment ﾉ Expand table the paragraph is aligned to the left margin if text
-  /// direction is left-to- right, or to the right margin if text direction is right-to-left.
   /// </summary>
   Distribute = 5,
   /// <summary>

@@ -37,8 +37,7 @@ public enum MsoButtonSetType
   /// </summary>
   BackClose,
   /// <summary>
-  /// This object, member, or enumeration is deprecated and is not intended to be used in your code. public enum
-  /// class MsoButtonSetType
+  /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   NextClose,
   /// <summary>

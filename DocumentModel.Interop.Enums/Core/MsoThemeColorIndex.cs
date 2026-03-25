@@ -57,7 +57,7 @@ public enum MsoThemeColorIndex
   /// </summary>
   ThemeColorAccent6 = 10,
   /// <summary>
-  /// Specifies the theme color for a hyperlink. public enum class MsoThemeColorIndex
+  /// Specifies the theme color for a hyperlink.
   /// </summary>
   ThemeColorHyperlink = 11,
   /// <summary>

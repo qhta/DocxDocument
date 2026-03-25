@@ -57,7 +57,7 @@ public enum MsoShapeType
   /// </summary>
   LinkedPicture = 11,
   /// <summary>
-  /// OLE control object. public enum class MsoShapeType
+  /// OLE control object.
   /// </summary>
   OLEControlObject = 12,
   /// <summary>
@@ -97,7 +97,7 @@ public enum MsoShapeType
   /// </summary>
   Diagram = 21,
   /// <summary>
-  /// Ink.
+  /// Ink comment.
   /// </summary>
   Ink = 22,
   /// <summary>

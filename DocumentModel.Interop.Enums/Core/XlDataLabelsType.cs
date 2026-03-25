@@ -36,7 +36,7 @@ public enum XlDataLabelsType
   LabelAndPercent = 5,
   /// <summary>
   /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Show the size of the
-  /// bubble in reference to the absolute value. public enum class XlDataLabelsType
+  /// bubble in reference to the absolute value.
   /// </summary>
   BubbleSizes = 6
 }

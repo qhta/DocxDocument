@@ -23,7 +23,7 @@ public enum MsoDateTimeFormat
   /// <summary>
   /// Specifies MMMMyyyy format.
   /// </summary>
-  dMMMMyyyy = 3,
+  MMMMyyyy = 3,
   /// <summary>
   /// Specifies a MMMMdyyyy format.
   /// </summary>
@@ -31,7 +31,7 @@ public enum MsoDateTimeFormat
   /// <summary>
   /// Specifies MMMyy format.
   /// </summary>
-  dMMMyy = 5,
+  MMMyy = 5,
   /// <summary>
   /// Specifies a MMMMyy format.
   /// </summary>
@@ -57,7 +57,7 @@ public enum MsoDateTimeFormat
   /// </summary>
   Hmmss = 11,
   /// <summary>
-  /// Specifies a hmmAMPM format. public enum class MsoDateTimeFormat
+  /// Specifies a hmmAMPM format.
   /// </summary>
   hmmAMPM = 12,
   /// <summary>
