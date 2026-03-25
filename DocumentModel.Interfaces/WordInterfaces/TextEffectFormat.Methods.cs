@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat?view=word-pia"/>
-public partial interface TextEffectFormat
+public partial interface TextEffectFormat: InteropObject
 {
   /// <summary>
   /// Switches the text flow in the specified WordArt from horizontal to vertical, or vice versa.

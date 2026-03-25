@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icommandbarbuttonevents?view=office-pia"/>
-public partial interface ICommandBarButtonEvents
+public partial interface ICommandBarButtonEvents: InteropObject
 {
   /// <summary>
   /// Handles the click event for a command bar button.

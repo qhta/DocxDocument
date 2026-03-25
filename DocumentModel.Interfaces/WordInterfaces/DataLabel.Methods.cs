@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabel?view=word-pia"/>
-public partial interface DataLabel
+public partial interface DataLabel: InteropObject
 {
   /// <summary>
   /// Returns a ChartCharacters object that represents a range of characters in the data label text.

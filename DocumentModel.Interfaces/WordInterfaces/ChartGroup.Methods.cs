@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup?view=word-pia"/>
-public partial interface ChartGroup
+public partial interface ChartGroup: InteropObject
 {
   /// <summary>
   /// Returns one series or all series in the chart group.

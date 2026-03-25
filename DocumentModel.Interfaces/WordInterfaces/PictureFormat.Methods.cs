@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat?view=word-pia"/>
-public partial interface PictureFormat
+public partial interface PictureFormat: InteropObject
 {
   /// <summary>
   /// Increases the current brightness level by the specified amount.

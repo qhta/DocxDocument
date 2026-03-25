@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents characters in chart text.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharacters?view=office-pia"/>
-public partial interface IMsoCharacters
+public partial interface IMsoCharacters: InteropObject
 {
   /// <summary>
   /// Deletes the specified characters.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat?view=word-pia"/>
-public partial interface ListFormat
+public partial interface ListFormat: InteropObject
 {
   /// <summary>
   /// Returns whether the specified list template can continue the formatting of the previous list.

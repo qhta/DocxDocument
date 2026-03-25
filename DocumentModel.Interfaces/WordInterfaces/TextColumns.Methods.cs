@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textcolumns?view=word-pia"/>
-public partial interface TextColumns
+public partial interface TextColumns: InteropObject
 {
   /// <summary>
   /// Adds a new text column to the collection.

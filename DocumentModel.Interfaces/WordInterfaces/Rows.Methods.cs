@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows?view=word-pia"/>
-public partial interface Rows
+public partial interface Rows: InteropObject
 {
   /// <summary>
   /// Adds a new row before the specified row.

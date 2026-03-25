@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a collection of GradientStop objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.gradientstops?view=office-pia"/>
-public partial interface GradientStops
+public partial interface GradientStops: InteropObject
 {
   /// <summary>
   /// Deletes a gradient stop from the collection.

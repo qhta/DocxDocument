@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Restricts permissions to the active document and exposes permission settings.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.permission?view=office-pia"/>
-public partial interface Permission
+public partial interface Permission: InteropObject
 {
   /// <summary>
   /// Creates permissions for a specified user.

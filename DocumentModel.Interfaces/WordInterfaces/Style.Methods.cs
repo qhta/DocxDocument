@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style?view=word-pia"/>
-public partial interface Style
+public partial interface Style: InteropObject
 {
   /// <summary>
   /// Deletes the specified object.

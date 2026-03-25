@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagrecognizers?view=word-pia"/>
-public partial interface SmartTagRecognizers
+public partial interface SmartTagRecognizers: InteropObject
 {
   /// <summary>
   /// Reloads all recognizers installed on a user's computer.

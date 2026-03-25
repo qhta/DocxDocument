@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a custom or built-in document property.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty?view=office-pia"/>
-public partial interface DocumentProperty
+public partial interface DocumentProperty: InteropObject
 {
   /// <summary>
   /// Deletes the document property.

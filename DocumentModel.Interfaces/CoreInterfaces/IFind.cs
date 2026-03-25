@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Provides file search functionality.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind?view=office-pia"/>
-public partial interface IFind
+public partial interface IFind: InteropObject
 {
   /// <summary>
   /// Gets or sets the `SearchPath` property.
