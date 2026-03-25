@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a policy specified for a server-stored document type.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.serverpolicy?view=office-pia"/>
-public partial interface ServerPolicy: InteropObject
+public partial interface ServerPolicy: InteropCollection<PolicyItem>
 {
   /// <summary>
   /// Gets a policy item by name or index.
