@@ -1,0 +1,233 @@
+XlAxisCrosses.cs: XlAxisCrosses <-> XlAxisCrosses
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlAxisGroup.cs: XlAxisGroup <-> XlAxisGroup
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlAxisType.cs: XlAxisType <-> XlAxisType
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlBarShape.cs: XlBarShape <-> XlBarShape
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlBorderWeight.cs: XlBorderWeight <-> XlBorderWeight
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlCategoryLabelLevel.cs: XlCategoryLabelLevel <-> XlCategoryLabelLevel
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlCategoryType.cs: XlCategoryType <-> XlCategoryType
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlChartElementPosition.cs: XlChartElementPosition <-> XlChartElementPosition
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlChartItem.cs: XlChartItem <-> XlChartItem
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlChartPictureType.cs: XlChartPictureType <-> XlChartPictureType
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlChartSplitType.cs: XlChartSplitType <-> XlChartSplitType
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlColorIndex.cs: XlColorIndex <-> XlColorIndex
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlConstants.cs: XlConstants <-> XlConstants
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlDataLabelPosition.cs: XlDataLabelPosition <-> XlDataLabelPosition
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlDataLabelsType.cs: XlDataLabelsType <-> XlDataLabelsType
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlDisplayBlanksAs.cs: XlDisplayBlanksAs <-> XlDisplayBlanksAs
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlDisplayUnit.cs: XlDisplayUnit <-> XlDisplayUnit
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlEndStyleCap.cs: XlEndStyleCap <-> XlEndStyleCap
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlErrorBarDirection.cs: XlErrorBarDirection <-> XlErrorBarDirection
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlErrorBarInclude.cs: XlErrorBarInclude <-> XlErrorBarInclude
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlErrorBarType.cs: XlErrorBarType <-> XlErrorBarType
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlHAlign.cs: XlHAlign <-> XlHAlign
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlLegendPosition.cs: XlLegendPosition <-> XlLegendPosition
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlMarkerStyle.cs: XlMarkerStyle <-> XlMarkerStyle
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlPieSliceIndex.cs: XlPieSliceIndex <-> XlPieSliceIndex
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlPieSliceLocation.cs: XlPieSliceLocation <-> XlPieSliceLocation
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlPivotFieldOrientation.cs: XlPivotFieldOrientation <-> XlPivotFieldOrientation
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlReadingOrder.cs: XlReadingOrder <-> XlReadingOrder
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlRowCol.cs: XlRowCol <-> XlRowCol
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlScaleType.cs: XlScaleType <-> XlScaleType
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlSeriesNameLevel.cs: XlSeriesNameLevel <-> XlSeriesNameLevel
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlSizeRepresents.cs: XlSizeRepresents <-> XlSizeRepresents
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlTickLabelOrientation.cs: XlTickLabelOrientation <-> XlTickLabelOrientation
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlTickLabelPosition.cs: XlTickLabelPosition <-> XlTickLabelPosition
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlTickMark.cs: XlTickMark <-> XlTickMark
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlTimeUnit.cs: XlTimeUnit <-> XlTimeUnit
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlTrendlineType.cs: XlTrendlineType <-> XlTrendlineType
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlUnderlineStyle.cs: XlUnderlineStyle <-> XlUnderlineStyle
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
+
+XlVAlign.cs: XlVAlign <-> XlVAlign
+  TypeNameSimilarityPercent: 100
+  FieldsSimilarityPercent: 100
+  Only in Core: -
+  Only in Word: -
