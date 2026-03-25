@@ -11,18 +11,15 @@ namespace DocumentModel.Interop.Core;
 public enum XlChartPictureType
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Picture is sized to
-  /// a specified number of units and repeated the length of the bar.
+  /// Picture is sized to a specified number of units and repeated the length of the bar.
   /// </summary>
   ackScale = 3,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Picture is sized to
-  /// repeat a maximum of 15 times in the longest stacked bar.
+  /// Picture is sized to repeat a maximum of 15 times in the longest stacked bar.
   /// </summary>
   ack = 2,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Picture is stretched
-  /// the full length of stacked bar.
+  /// Picture is stretched the full length of stacked bar.
   /// </summary>
   retch = 1
 }

@@ -11,18 +11,15 @@ namespace DocumentModel.Interop.Core;
 public enum XlDisplayBlanksAs
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Values are
-  /// interpolated into the chart.
+  /// Values are interpolated into the chart.
   /// </summary>
   Interpolated = 3,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Blank cells are not
-  /// plotted.
+  /// Blank cells are not plotted.
   /// </summary>
   NotPlotted = 1,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Blanks are plotted
-  /// as zero.
+  /// Blanks are plotted as zero.
   /// </summary>
   Zero = 2
 }

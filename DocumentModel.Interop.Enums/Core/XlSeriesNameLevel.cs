@@ -11,18 +11,15 @@ namespace DocumentModel.Interop.Core;
 public enum XlSeriesNameLevel
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Set no category
-  /// labels in the chart; instead default to automatic indexed labels.
+  /// Set no category labels in the chart; instead default to automatic indexed labels.
   /// </summary>
   None = -3,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Indicates literal
-  /// data in the series names.
+  /// Indicates literal data in the series names.
   /// </summary>
   Custom,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Set series names to
-  /// all series name levels w/in range on the chart.
+  /// Set series names to all series name levels w/in range on the chart.
   /// </summary>
   All
 }

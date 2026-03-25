@@ -11,55 +11,51 @@ namespace DocumentModel.Interop.Core;
 public enum XlMarkerStyle
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Automatic markers.
+  /// Automatic markers.
   /// </summary>
   Automatic = -4105,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Circular markers.
+  /// Circular markers.
   /// </summary>
   Circle = 8,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Long bar markers.
+  /// Long bar markers.
   /// </summary>
   Dash = -4115,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Diamond-shaped
-  /// markers.
+  /// Diamond-shaped markers.
   /// </summary>
   Diamond = 2,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Short bar markers.
+  /// Short bar markers.
   /// </summary>
   Dot = -4118,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). No markers.
+  /// No markers.
   /// </summary>
   None = -4142,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Picture markers.
+  /// Picture markers.
   /// </summary>
   Picture = -4147,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Square markers with
-  /// a plus sign.
+  /// Square markers with a plus sign.
   /// </summary>
   Plus = 9,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Square markers.
+  /// Square markers.
   /// </summary>
   Square = 1,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Square markers with
-  /// an asterisk.
+  /// Square markers with an asterisk.
   /// </summary>
   Star = 5,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Triangular markers.
+  /// Triangular markers.
   /// </summary>
   Triangle = 3,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Square markers with
-  /// an X.
+  /// Square markers with an X.
   /// </summary>
   X = -4168
 }

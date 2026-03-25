@@ -11,25 +11,21 @@ namespace DocumentModel.Interop.Core;
 public enum XlChartSplitType
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Second chart
-  /// displays the smallest values in the data series. The number of values to display is specified by the
-  /// SplitValue property.
+  /// Second chart displays the smallest values in the data series. The number of values to display is specified by
+  /// the SplitValue property.
   /// </summary>
   Position = 1,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Second chart
-  /// displays values less than some percentage of the total value. The percentage is specified by the SplitValue
-  /// property.
+  /// Second chart displays values less than some percentage of the total value. The percentage is specified by the
+  /// SplitValue property.
   /// </summary>
   PercentValue = 3,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Arbitrary slides are
-  /// displayed in the second chart.
+  /// Arbitrary slides are displayed in the second chart.
   /// </summary>
   CustomSplit = 4,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Second chart
-  /// displays values less than the value specified by the SplitValue property.
+  /// Second chart displays values less than the value specified by the SplitValue property.
   /// </summary>
   Value = 2
 }

@@ -11,18 +11,15 @@ namespace DocumentModel.Interop.Core;
 public enum XlAxisType
 {
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Axis displays
-  /// categories.
+  /// Axis displays categories.
   /// </summary>
   Category = 1,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Axis displays data
-  /// series.
+  /// Axis displays data series.
   /// </summary>
   SeriesAxis = 3,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Axis displays
-  /// values.
+  /// Axis displays values.
   /// </summary>
   Value = 2
 }
