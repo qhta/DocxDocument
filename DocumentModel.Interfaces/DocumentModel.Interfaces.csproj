@@ -44,7 +44,4 @@
     <None Include="..\..\..\Scripts\AddPiaCoreLink.py" Link="Scripts\AddPiaCoreLink.py" />
     <None Include="..\..\..\Scripts\AddPiaWordLink.py" Link="Scripts\AddPiaWordLink.py" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="WordInterfaces\Lists\" />
-  </ItemGroup>
 </Project>
