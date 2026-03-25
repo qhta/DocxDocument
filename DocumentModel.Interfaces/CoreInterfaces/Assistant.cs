@@ -4,6 +4,8 @@ namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Represents the Microsoft Office Assistant.
+/// Used to control the behavior of the Office Assistant, including its position, visibility,
+/// animation, and the types of help it provides.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant?view=office-pia"/>
 public partial interface Assistant: InteropObject
