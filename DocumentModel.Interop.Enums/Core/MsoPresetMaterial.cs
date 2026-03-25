@@ -57,7 +57,7 @@ public enum MsoPresetMaterial
   /// </summary>
   DarkEdge = 11,
   /// <summary>
-  /// Soft Edge public enum class MsoPresetMaterial ﾉ Expand table
+  /// Soft Edge
   /// </summary>
   SoftEdge = 12,
   /// <summary>

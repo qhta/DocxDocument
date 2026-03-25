@@ -9,7 +9,7 @@
 public enum MsoTextUnderlineType
 {
   /// <summary>
-  /// Indicates the type of underline for text.
+  /// Specifies a mix of underline types.
   /// </summary>
   Mixed = -2,
   /// <summary>
@@ -49,15 +49,15 @@ public enum MsoTextUnderlineType
   /// </summary>
   DashHeavyLine = 8,
   /// <summary>
-  /// Specifies a dashed long line underline. msoUnderlineDashLongHeavyLine10 Specifies a long heavy line underline.
+  /// Specifies a dashed long line underline.
   /// </summary>
   DashLongLine = 9,
   /// <summary>
-  /// Indicates the type of underline for text.
+  /// Specifies a long heavy line underline.
   /// </summary>
   DashLongHeavyLine = 10,
   /// <summary>
-  /// Specifies a dot dash line underline. public enum class MsoTextUnderlineType ﾉ Expand table
+  /// Specifies a dot dash line underline.
   /// </summary>
   DotDashLine = 11,
   /// <summary>
@@ -65,12 +65,11 @@ public enum MsoTextUnderlineType
   /// </summary>
   DotDashHeavyLine = 12,
   /// <summary>
-  /// Specifies a dot dot dash line underline. msoUnderlineDotDotDashHeavyLine14 Specifies a dot dot dash heavy line
-  /// underline.
+  /// Specifies a dot dot dash line underline.
   /// </summary>
   DotDotDashLine = 13,
   /// <summary>
-  /// Indicates the type of underline for text.
+  /// Specifies a dot dot dash heavy line underline.
   /// </summary>
   DotDotDashHeavyLine = 14,
   /// <summary>

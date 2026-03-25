@@ -9,7 +9,7 @@
 public enum MsoTextCaps
 {
   /// <summary>
-  /// Specifies the capitalization of the text.
+  /// Display the text as mixed uppercase and lowercase letters.
   /// </summary>
   Mixed = -2,
   /// <summary>

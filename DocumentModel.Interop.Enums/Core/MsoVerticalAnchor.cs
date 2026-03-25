@@ -26,13 +26,12 @@ public enum MsoVerticalAnchor
   /// </summary>
   Middle = 3,
   /// <summary>
-  /// Aligns text to bottom of text frame. msoAnchorBottomBaseLine5 Anchors bottom of text string to current
-  /// position, regardless of text resizing. When you resize text without baseline anchoring, text centers itself on
-  /// previous position.
+  /// Aligns text to bottom of text frame.
   /// </summary>
   Bottom = 4,
   /// <summary>
-  /// Specifies the vertical alignment of text in a text frame.
+  /// Anchors bottom of text string to current position, regardless of text resizing. When you resize text without
+  /// baseline anchoring, text centers itself on previous position.
   /// </summary>
   BottomBaseLine = 5
 }

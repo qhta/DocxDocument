@@ -83,7 +83,7 @@ public enum XlConstants
   /// </summary>
   CrissCross = 16,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 4
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 16
   /// </summary>
   Cross = 4,
   /// <summary>
@@ -119,7 +119,7 @@ public enum XlConstants
   /// </summary>
   Gray50 = -4125,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). -4126
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 10
   /// </summary>
   Gray75 = -4126,
   /// <summary>
@@ -191,7 +191,7 @@ public enum XlConstants
   /// </summary>
   Outside = 3,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 2
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 3
   /// </summary>
   Percent = 2,
   /// <summary>

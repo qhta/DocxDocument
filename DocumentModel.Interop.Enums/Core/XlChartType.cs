@@ -35,15 +35,17 @@ public enum XlChartType
   /// </summary>
   ThreeDColumnStacked100 = 56,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Clustered Bar
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Clustered Pyramid
+  /// Bar
   /// </summary>
   BarClustered = 57,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked Bar
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Stacked Pyramid Bar
   /// </summary>
   BarStacked = 58,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked Bar
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). 100% Stacked Pyramid
+  /// Bar
   /// </summary>
   BarStacked100 = 59,
   /// <summary>

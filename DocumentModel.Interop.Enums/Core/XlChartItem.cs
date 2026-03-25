@@ -43,7 +43,7 @@ public enum XlChartItem
   /// </summary>
   Trendline = 8,
   /// <summary>
-  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Error bars.
+  /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Y error bars.
   /// </summary>
   ErrorBars = 9,
   /// <summary>
