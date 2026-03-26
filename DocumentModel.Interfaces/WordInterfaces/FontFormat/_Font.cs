@@ -216,7 +216,7 @@ public partial interface _Font : InteropObject
   /// The 24-bit color for the specified Font object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.color?view=word-pia"/>
-  public Color Color { get; set; }
+  public RgbColor Color { get; set; }
 
   /// <summary>
   /// True if the text is formatted as bold (for complex script).
@@ -256,13 +256,13 @@ public partial interface _Font : InteropObject
   /// Gets or sets the color of diacritical marks.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.diacriticcolor?view=word-pia"/>
-  public Color DiacriticColor { get; set; }
+  public RgbColor DiacriticColor { get; set; }
 
   /// <summary>
   /// Gets or sets the underline color.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.underlinecolor?view=word-pia"/>
-  public Color UnderlineColor { get; set; }
+  public RgbColor UnderlineColor { get; set; }
 
   /// <summary>
   /// Gets or sets the glow formatting for the font.

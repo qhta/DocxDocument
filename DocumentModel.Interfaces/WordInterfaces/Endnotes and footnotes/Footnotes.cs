@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
@@ -16,7 +18,7 @@ public partial interface Footnotes : InteropObject, InteropCollection<Footnote>
   /// Returns or sets the number style for the footnotes in a selection, range, or document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes.numberstyle?view=word-pia"/>
-  public NoteNumberStyle NumberStyle { get; set; }
+  public NumberStyle NumberStyle { get; set; }
 
   /// <summary>
   /// Returns or sets the starting note number.

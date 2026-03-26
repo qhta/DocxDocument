@@ -47,6 +47,6 @@ public interface Border : InteropObject
   /// Gets or sets the border color.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.border.color?view=word-pia"/>
-  public Color Color { get; set; }
+  public RgbColor Color { get; set; }
 
 }

@@ -144,7 +144,7 @@ public partial interface ContentControl : InteropObject
   /// Gets or sets the color of the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.color?view=word-pia"/>
-  public Color Color { get; set; }
+  public RgbColor Color { get; set; }
 
   /// <summary>
   /// Gets or sets how the content control appears in the document.

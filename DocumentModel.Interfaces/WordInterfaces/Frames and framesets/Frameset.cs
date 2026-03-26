@@ -58,7 +58,7 @@ public partial interface Frameset : InteropObject, InteropCollection<Frameset>
   /// Returns or sets the color of the border around the specified frameset.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.framesetbordercolor?view=word-pia"/>
-  public Color FramesetBorderColor { get; set; }
+  public RgbColor FramesetBorderColor { get; set; }
 
   /// <summary>
   /// Returns or sets how scroll bars are displayed for the specified frame.

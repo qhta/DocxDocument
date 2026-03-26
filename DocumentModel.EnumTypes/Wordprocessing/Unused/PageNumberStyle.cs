@@ -1,23 +1,23 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the number style to apply to endnotes, endnote options, footnotes, or footnote options.
+/// Specifies the number style to be used with the CaptionLabel object.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdnotenumberstyle?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcaptionnumberstyle?view=office-pia` for Office interop details.
 /// </remarks>
-public enum NoteNumberStyle
+public enum PageNumberStyle
 {
   /// <summary>
-  /// Arabic number style.
+  /// Arabic style.
   /// </summary>
   Arabic = 0,
   /// <summary>
-  /// Uppercase Roman number style.
+  /// Uppercase roman style.
   /// </summary>
   UppercaseRoman = 1,
   /// <summary>
-  /// Lowercase Roman number style.
+  /// Lowercase roman style.
   /// </summary>
   LowercaseRoman = 2,
   /// <summary>
@@ -29,51 +29,63 @@ public enum NoteNumberStyle
   /// </summary>
   LowercaseLetter = 4,
   /// <summary>
-  /// Symbol number style.
-  /// </summary>
-  Symbol = 9,
-  /// <summary>
-  /// Kanji number style.
+  /// Kanji style.
   /// </summary>
   Kanji = 10,
   /// <summary>
-  /// Kanji digit number style.
+  /// Kanji digit style.
   /// </summary>
   KanjiDigit = 11,
   /// <summary>
-  /// Arabic full-width number style.
+  /// Full-width Arabic style.
   /// </summary>
   ArabicFullWidth = 14,
   /// <summary>
-  /// Kanji traditional number style.
+  /// Kanji traditional style.
   /// </summary>
   KanjiTraditional = 16,
   /// <summary>
-  /// Number in circle number style.
+  /// Number in circle style.
   /// </summary>
   NumberInCircle = 18,
   /// <summary>
-  /// Traditional Chinese number style 1.
+  /// Ganada style.
   /// </summary>
-  TradChinNum1 = 33,
+  Ganada = 24,
+  /// <summary>
+  /// Chosung style.
+  /// </summary>
+  Chosung = 25,
+  /// <summary>
+  /// Zodiac style 1.
+  /// </summary>
+  Zodiac1 = 30,
+  /// <summary>
+  /// Zodiac style 2.
+  /// </summary>
+  Zodiac2 = 31,
   /// <summary>
   /// Traditional Chinese number style 2.
   /// </summary>
   TradChinNum2 = 34,
   /// <summary>
-  /// Simplified Chinese number style 1.
+  /// Traditional Chinese number style 3.
   /// </summary>
-  SimpChinNum1 = 37,
+  TradChinNum3 = 35,
   /// <summary>
   /// Simplified Chinese number style 2.
   /// </summary>
   SimpChinNum2 = 38,
   /// <summary>
-  /// Hanja read number style.
+  /// Simplified Chinese number style 3.
+  /// </summary>
+  SimpChinNum3 = 39,
+  /// <summary>
+  /// Hanja read style.
   /// </summary>
   HanjaRead = 41,
   /// <summary>
-  /// Hanja read digit number style.
+  /// Hanja read digit style.
   /// </summary>
   HanjaReadDigit = 42,
   /// <summary>
@@ -101,11 +113,11 @@ public enum NoteNumberStyle
   /// </summary>
   HindiLetter2 = 50,
   /// <summary>
-  /// Hindi Arabic number style.
+  /// Hindi Arabic style.
   /// </summary>
   HindiArabic = 51,
   /// <summary>
-  /// Hindi Cardinal text style.
+  /// Hindi cardinal style.
   /// </summary>
   HindiCardinalText = 52,
   /// <summary>
@@ -113,15 +125,19 @@ public enum NoteNumberStyle
   /// </summary>
   ThaiLetter = 53,
   /// <summary>
-  /// Thai Arabic number style.
+  /// Thai Arabic style.
   /// </summary>
   ThaiArabic = 54,
   /// <summary>
-  /// Thai Cardinal text style.
+  /// Thai cardinal text style.
   /// </summary>
   ThaiCardinalText = 55,
   /// <summary>
-  /// Vietnamese Cardinal text style.
+  /// Vietnamese cardinal text style.
   /// </summary>
-  VietCardinalText = 56
+  VietCardinalText = 56,
+  /// <summary>
+  /// Number in dash style.
+  /// </summary>
+  NumberInDash = 57
 }

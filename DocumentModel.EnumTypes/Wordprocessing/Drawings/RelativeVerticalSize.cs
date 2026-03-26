@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXO10WD.SizeRelativeVerticallyValues))]
-public enum SizeRelativeVertically
+public enum RelativeVerticalSize
 {
   /// <summary>
   /// The entire margin area is used as the reference for vertical sizing.

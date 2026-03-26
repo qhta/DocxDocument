@@ -36,7 +36,7 @@ public partial interface CaptionLabel : InteropObject
   /// Gets or sets the numbering style for captions that use this label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.numberstyle?view=word-pia"/>
-  public CaptionNumberStyle NumberStyle { get; set; }
+  public NumberStyle NumberStyle { get; set; }
 
   /// <summary>
   /// Gets or sets the heading style level used for chapter numbering in captions.

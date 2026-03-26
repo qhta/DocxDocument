@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing.Drawings;
+
 namespace DocumentModel.Interop.Word;
 
 /// <summary>

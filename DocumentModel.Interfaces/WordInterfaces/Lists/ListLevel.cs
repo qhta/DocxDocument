@@ -30,7 +30,7 @@ public partial interface ListLevel : InteropObject
   /// Returns or sets the numbering style for the list level.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.numberstyle?view=word-pia"/>
-  public ListNumberStyle NumberStyle { get; set; }
+  public NumberStyle NumberStyle { get; set; }
 
   /// <summary>
   /// Returns or sets the position of the list number, in points.
