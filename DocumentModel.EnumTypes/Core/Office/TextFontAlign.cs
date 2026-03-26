@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Core;
+namespace DocumentMode.Office;
 
 /// <summary>
 /// Indicates the text alignment scheme used for an object.

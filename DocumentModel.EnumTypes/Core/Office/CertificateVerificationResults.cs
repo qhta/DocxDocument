@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+﻿namespace DocumentMode.Office;
 
 /// <summary>
 /// Provides the results of verifying a digital certificate.

@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Core;
+namespace DocumentMode.Office;
 
 /// <summary>
 /// Specifies the menu group that a command bar pop-up control belongs to when the menu groups of the OLE server

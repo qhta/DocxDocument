@@ -1,32 +1,28 @@
+﻿namespace DocumentMode.Office;
 
-namespace DocumentModel.Interop.Core;
-
-/// <summary>
-/// Reserved for internal use.
-/// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.docproperties?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.encryptionproviderdetail?view=office-pia` for Office interop details.
 /// </remarks>
-public enum DocProperties
+public enum EncryptionProviderDetail
 {
   /// <summary>
   /// No description is available.
   /// </summary>
-  Number = 1,
+  Url,
   /// <summary>
   /// No description is available.
   /// </summary>
-  Boolean,
+  Algorithm,
   /// <summary>
   /// No description is available.
   /// </summary>
-  Date,
+  BlockCipher,
   /// <summary>
   /// No description is available.
   /// </summary>
-  String,
+  CipherBlockSize,
   /// <summary>
   /// No description is available.
   /// </summary>
-  Float
+  CipherMode
 }

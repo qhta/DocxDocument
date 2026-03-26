@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Represents a glow effect around an Office graphic.

@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Core;
+namespace DocumentMode.Office;
 
 /// <summary>
 /// Specifies whether a command bar is in the first row or last row relative to other command bars in the same

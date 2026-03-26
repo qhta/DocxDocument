@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Core;
+namespace DocumentMode.Office;
 
 /// <summary>
 /// Specifies texture to be used to fill a shape.

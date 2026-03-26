@@ -1,7 +1,7 @@
 
 using DocumentModel.Wordprocessing;
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Represents the `TextFrame` interface.

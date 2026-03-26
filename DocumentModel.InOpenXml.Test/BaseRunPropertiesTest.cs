@@ -145,7 +145,7 @@ namespace DocumentModel.InOpenXml.Test
         Strike = true,
         DoubleStrike = isUpdated ? true : null,
         Color = isUpdated ? new DMW.Color("00AA00") : new DMW.Color { Val = "000000", ThemeColor = ThemeColors.Text1 },
-        Underline = new Underline { Type = UnderlineType.Wave, Color = "FF0000" }, 
+        Underline = new Underline { Type = UnderlineType.Wavy, Color = "FF0000" }, 
         Spacing = isUpdated ? new Twips(30) : new Twips(20),
         CharacterScale = isUpdated ? new Percent(115) : new Percent(110),
         NoProof = true,

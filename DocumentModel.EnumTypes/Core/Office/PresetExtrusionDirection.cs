@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Core;
+namespace DocumentMode.Office;
 
 /// <summary>
 /// Specifies the direction that the extrusion's sweep path takes away from the extruded shape (the front face of

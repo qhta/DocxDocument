@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Represents a picture effect.

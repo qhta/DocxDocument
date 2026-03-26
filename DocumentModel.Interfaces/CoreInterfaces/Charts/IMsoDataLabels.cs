@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Represents a collection of data labels.

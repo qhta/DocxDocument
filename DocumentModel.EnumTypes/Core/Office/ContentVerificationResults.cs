@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+﻿namespace DocumentMode.Office;
 
 /// <summary>
 /// Provides the status of verifying whether the content of a document has changed.

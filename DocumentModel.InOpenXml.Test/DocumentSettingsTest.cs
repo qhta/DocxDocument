@@ -330,7 +330,7 @@
           RemovePersonalInformation = false,
           SaveFormsData = true,
           SaveSubsetFonts = false,
-          View = ViewType.Print,
+          View = ViewType.PrintView,
           Zoom = "100%", //PresetZoom.FullPage,
         };
       else
@@ -403,7 +403,7 @@
           UICompatibleWith97To2003 = false,
           UpdateFieldsOnOpen = false,
           UseXsltWhenSaving = false,
-          View = ViewType.Print,
+          View = ViewType.PrintView,
           Zoom = "100%", // PresetZoom.FullPage,
 
           ActiveWritingStyles =

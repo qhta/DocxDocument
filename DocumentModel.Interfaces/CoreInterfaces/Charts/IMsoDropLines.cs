@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Represents drop lines in a chart.

@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Represents a single point in a chart series.

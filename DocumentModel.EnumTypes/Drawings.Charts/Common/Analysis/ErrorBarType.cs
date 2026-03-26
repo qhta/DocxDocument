@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.ErrorBarValues))]
-public enum ErrorBarType
+public enum ErrorPlusMinus
 {
   /// <summary>
   ///   Both.
