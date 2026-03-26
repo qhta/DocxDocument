@@ -11,7 +11,7 @@ public partial interface IMsoChartFormat: InteropObject
   /// Gets or sets the `Fill` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartformat.fill?view=office-pia"/>
-  public Core.FillFormat Fill { get; }
+  public FillFormat Fill { get; }
   /// <summary>
   /// Gets the `Glow` property.
   /// </summary>
@@ -41,7 +41,7 @@ public partial interface IMsoChartFormat: InteropObject
   /// Gets the `TextFrame2` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartformat.textframe2?view=office-pia"/>
-  public TextFrame2 TextFrame2 { get; }
+  public Core.TextFrame2 TextFrame2 { get; }
   /// <summary>
   /// Gets the `ThreeD` property.
   /// </summary>
