@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdomathtype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdOMathType
+public enum OMathType
 {
   /// <summary>
   /// Professional format.

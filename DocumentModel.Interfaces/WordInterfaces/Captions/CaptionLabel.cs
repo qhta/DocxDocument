@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
@@ -22,7 +24,7 @@ public partial interface CaptionLabel : InteropObject
   /// Gets the built-in ID for the caption label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.id?view=word-pia"/>
-  public WdCaptionLabelID ID { get; }
+  public CaptionLabelID ID { get; }
 
   /// <summary>
   /// Gets or sets a value indicating whether chapter numbers are included in captions for this label.
@@ -34,7 +36,7 @@ public partial interface CaptionLabel : InteropObject
   /// Gets or sets the numbering style for captions that use this label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.numberstyle?view=word-pia"/>
-  public WdCaptionNumberStyle NumberStyle { get; set; }
+  public CaptionNumberStyle NumberStyle { get; set; }
 
   /// <summary>
   /// Gets or sets the heading style level used for chapter numbering in captions.
@@ -46,11 +48,11 @@ public partial interface CaptionLabel : InteropObject
   /// Gets or sets the separator between the chapter number and caption number.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.separator?view=word-pia"/>
-  public WdSeparatorType Separator { get; set; }
+  public SeparatorType Separator { get; set; }
 
   /// <summary>
   /// Gets or sets the position of captions relative to the associated item.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.position?view=word-pia"/>
-  public WdCaptionPosition Position { get; set; }
+  public CaptionPosition Position { get; set; }
 }

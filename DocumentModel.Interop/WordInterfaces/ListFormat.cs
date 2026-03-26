@@ -46,7 +46,7 @@ public partial interface ListFormat : InteropObject
   /// Returns the list type for the first paragraph in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.listtype?view=word-pia"/>
-  public WdListType ListType { get; }
+  public ListType ListType { get; }
 
   /// <summary>
   /// Returns the list string for the first paragraph in the range.

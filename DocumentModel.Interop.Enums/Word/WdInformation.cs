@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdinformation?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdInformation
+public enum Information
 {
   /// <summary>
   /// Returns the number of the page that contains the active end of the specified selection or range. If you set a

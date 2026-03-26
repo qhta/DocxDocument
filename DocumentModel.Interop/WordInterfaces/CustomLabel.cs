@@ -76,7 +76,7 @@ public partial interface CustomLabel : InteropObject
   /// Gets or sets the page size used by the custom label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customlabel.pagesize?view=word-pia"/>
-  public WdCustomLabelPageSize PageSize { get; set; }
+  public CustomLabelPageSize PageSize { get; set; }
 
   /// <summary>
   /// Gets a value indicating whether the custom label definition is valid.

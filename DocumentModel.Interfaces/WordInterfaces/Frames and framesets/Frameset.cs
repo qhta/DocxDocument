@@ -16,19 +16,19 @@ public partial interface Frameset : InteropObject, InteropCollection<Frameset>
   /// Returns the type of the specified frameset.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.type?view=word-pia"/>
-  public WdFramesetType Type { get; }
+  public FramesetType Type { get; }
 
   /// <summary>
   /// Returns or sets the way the width of the specified frameset is determined.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.widthtype?view=word-pia"/>
-  public WdFramesetSizeType WidthType { get; set; }
+  public FramesetSizeType WidthType { get; set; }
 
   /// <summary>
   /// Returns or sets the way the height of the specified frameset is determined.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.heighttype?view=word-pia"/>
-  public WdFramesetSizeType HeightType { get; set; }
+  public FramesetSizeType HeightType { get; set; }
 
   /// <summary>
   /// Returns or sets the width of the specified frameset.
@@ -58,13 +58,13 @@ public partial interface Frameset : InteropObject, InteropCollection<Frameset>
   /// Returns or sets the color of the border around the specified frameset.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.framesetbordercolor?view=word-pia"/>
-  public WdColor FramesetBorderColor { get; set; }
+  public Color FramesetBorderColor { get; set; }
 
   /// <summary>
   /// Returns or sets how scroll bars are displayed for the specified frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.framescrollbartype?view=word-pia"/>
-  public WdScrollbarType FrameScrollbarType { get; set; }
+  public ScrollbarType FrameScrollbarType { get; set; }
 
   /// <summary>
   /// Determines whether the specified frame can be resized.

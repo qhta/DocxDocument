@@ -19,10 +19,10 @@ public partial interface Row : InteropObject
   public int AllowBreakAcrossPages { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdRowAlignment constant that represents the alignment for the specified rows.
+  /// Returns or sets a RowAlignment constant that represents the alignment for the specified rows.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.alignment?view=word-pia"/>
-  public WdRowAlignment Alignment { get; set; }
+  public RowAlignment Alignment { get; set; }
 
   /// <summary>
   /// Determines if the specified row or rows are formatted as a table heading.
@@ -46,7 +46,7 @@ public partial interface Row : InteropObject
   /// Returns or sets the rule for determining the height of the specified row.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.heightrule?view=word-pia"/>
-  public WdRowHeightRule HeightRule { get; set; }
+  public RowHeightRule HeightRule { get; set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the left indent value (in points) for the specified table row.

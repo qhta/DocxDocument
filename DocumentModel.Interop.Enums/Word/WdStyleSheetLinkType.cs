@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdstylesheetlinktype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdStyleSheetLinkType
+public enum StyleSheetLinkType
 {
   /// <summary>
   /// Linked external style sheet.

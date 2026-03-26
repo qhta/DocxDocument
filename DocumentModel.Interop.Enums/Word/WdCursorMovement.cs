@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcursormovement?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdCursorMovement
+public enum CursorMovement
 {
   /// <summary>
   /// Insertion point progresses according to the direction of the language Microsoft Word detects.

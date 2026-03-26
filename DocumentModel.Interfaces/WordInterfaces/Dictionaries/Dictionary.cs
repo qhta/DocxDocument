@@ -22,7 +22,7 @@ public partial interface Dictionary : InteropObject
   /// Gets or sets the language ID associated with the dictionary.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionary.languageid?view=word-pia"/>
-  public WdLanguageID LanguageID { get; set; }
+  public LanguageID LanguageID { get; set; }
 
   /// <summary>
   /// Gets a value indicating whether the dictionary is read-only.
@@ -34,7 +34,7 @@ public partial interface Dictionary : InteropObject
   /// Gets the dictionary type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionary.type?view=word-pia"/>
-  public WdDictionaryType Type { get; }
+  public DictionaryType Type { get; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the dictionary is language-specific.

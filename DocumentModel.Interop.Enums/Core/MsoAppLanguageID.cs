@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies a language setting in a Microsoft Office application.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoapplanguageid?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoAppLanguageID
+public enum AppLanguageID
 {
   /// <summary>
   /// Install language.

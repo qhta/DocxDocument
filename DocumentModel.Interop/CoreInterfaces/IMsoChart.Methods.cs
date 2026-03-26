@@ -39,7 +39,7 @@ public partial interface IMsoChart
   /// <param name="HasLeaderLines">The `HasLeaderLines` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart._applydatalabels?view=office-pia"/>
   public void _ApplyDataLabels
-  (XlDataLabelsType Type, object IMsoLegendKey, object AutoText,
+  (DataLabelsType Type, object IMsoLegendKey, object AutoText,
     object HasLeaderLines);
   /// <summary>
   /// Invokes `ApplyDataLabels`.
@@ -56,7 +56,7 @@ public partial interface IMsoChart
   /// <param name="Separator">The `Separator` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.applydatalabels?view=office-pia"/>
   public void ApplyDataLabels
-  (XlDataLabelsType Type, object IMsoLegendKey, object AutoText,
+  (DataLabelsType Type, object IMsoLegendKey, object AutoText,
     object HasLeaderLines, object ShowSeriesName, object ShowCategoryName, object ShowValue, object ShowPercentage,
     object ShowBubbleSize, object Separator);
   /// <summary>
@@ -65,7 +65,7 @@ public partial interface IMsoChart
   /// <param name="ChartType">The `ChartType` parameter.</param>
   /// <param name="TypeName">The `TypeName` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.applycustomtype?view=office-pia"/>
-  public void ApplyCustomType(XlChartType ChartType, object TypeName);
+  public void ApplyCustomType(ChartType ChartType, object TypeName);
   /// <summary>
   /// Invokes `GetChartElement`.
   /// </summary>
@@ -90,7 +90,7 @@ public partial interface IMsoChart
   /// <param name="AxisGroup">The `AxisGroup` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.axes?view=office-pia"/>
-  public object Axes(object Type, XlAxisGroup AxisGroup);
+  public object Axes(object Type, AxisGroup AxisGroup);
   /// <summary>
   /// Invokes `AutoFormat`.
   /// </summary>
@@ -208,7 +208,7 @@ public partial interface IMsoChart
   /// </summary>
   /// <param name="RHS">The `RHS` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.setelement?view=office-pia"/>
-  public void SetElement(MsoChartElementType RHS);
+  public void SetElement(ChartElementType RHS);
   /// <summary>
   /// Invokes `AreaGroups`.
   /// </summary>

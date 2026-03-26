@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing
 {
   /// <summary>
-  /// Specifies the type of building block, corresponding to Microsoft.Office.Interop.Word.WdBuildingBlockTypes.
+  /// Specifies the type of building block, corresponding to Microsoft.Office.Interop.Word.BuildingBlockTypes.
   /// </summary>
   [OpenXmlNotMapped]
   public enum BuildingBlockType

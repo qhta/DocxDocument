@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdpagecolor?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdPageColor
+public enum PageColor
 {
   /// <summary>
   /// No page color, the default. The page background is rendered in white. Any assigned page background colors are

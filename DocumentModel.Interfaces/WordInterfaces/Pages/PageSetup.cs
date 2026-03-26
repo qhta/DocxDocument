@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
@@ -58,25 +60,25 @@ public partial interface PageSetup : InteropObject
   /// Returns or sets the orientation of the page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagesetup.orientation?view=word-pia"/>
-  public WdOrientation Orientation { get; set; }
+  public Orientation Orientation { get; set; }
 
   /// <summary>
   /// Returns or sets the paper tray to use for the first page of a document or section.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagesetup.firstpagetray?view=word-pia"/>
-  public WdPaperTray FirstPageTray { get; set; }
+  public PaperTray FirstPageTray { get; set; }
 
   /// <summary>
   /// Returns or sets the paper tray to be used for all but the first page of a document or section.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagesetup.otherpagestray?view=word-pia"/>
-  public WdPaperTray OtherPagesTray { get; set; }
+  public PaperTray OtherPagesTray { get; set; }
 
   /// <summary>
   /// Returns or sets the vertical alignment of text on each page in a document or section.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagesetup.verticalalignment?view=word-pia"/>
-  public WdVerticalAlignment VerticalAlignment { get; set; }
+  public VerticalAlignment VerticalAlignment { get; set; }
 
   /// <summary>
   /// True if the inside and outside margins of facing pages are the same width. Can be True, False, or wdUndefined.
@@ -100,7 +102,7 @@ public partial interface PageSetup : InteropObject
   /// Returns or sets the type of section break for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagesetup.sectionstart?view=word-pia"/>
-  public WdSectionStart SectionStart { get; set; }
+  public SectionStart SectionStart { get; set; }
 
   /// <summary>
   /// True if the inside and outside margins of facing pages are the same width. Can be True, False, or wdUndefined.
@@ -137,7 +139,7 @@ public partial interface PageSetup : InteropObject
   /// Returns or sets the paper size.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagesetup.papersize?view=word-pia"/>
-  public WdPaperSize PaperSize { get; set; }
+  public PaperSize PaperSize { get; set; }
 
   /// <summary>
   /// True if Microsoft Word prints the specified document two pages per sheet.
@@ -174,25 +176,25 @@ public partial interface PageSetup : InteropObject
   /// or a left-to-right language.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagesetup.gutterstyle?view=word-pia"/>
-  public WdGutterStyleOld GutterStyle { get; set; }
+  public GutterStyleOld GutterStyle { get; set; }
 
   /// <summary>
   /// Returns or sets the reading order and alignment for the specified sections.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagesetup.sectiondirection?view=word-pia"/>
-  public WdSectionDirection SectionDirection { get; set; }
+  public SectionDirection SectionDirection { get; set; }
 
   /// <summary>
   /// Returns or sets the layout mode for the current document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagesetup.layoutmode?view=word-pia"/>
-  public WdLayoutMode LayoutMode { get; set; }
+  public LayoutMode LayoutMode { get; set; }
 
   /// <summary>
   /// Returns or sets on which side the gutter appears in a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagesetup.gutterpos?view=word-pia"/>
-  public WdGutterStyle GutterPos { get; set; }
+  public GutterStyle GutterPos { get; set; }
 
   /// <summary>
   /// True for Microsoft Word to print a document in a series of booklets so the printed pages can be folded and

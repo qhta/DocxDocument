@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcellverticalalignment?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdCellVerticalAlignment
+public enum CellVerticalAlignment
 {
   /// <summary>
   /// Text is aligned to the top border of the cell.

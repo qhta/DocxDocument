@@ -13,10 +13,10 @@ public partial interface Rows : InteropObject, InteropCollection<Row>
   public int AllowBreakAcrossPages { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdRowAlignment constant that represents the alignment for the specified rows.
+  /// Returns or sets a RowAlignment constant that represents the alignment for the specified rows.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows.alignment?view=word-pia"/>
-  public WdRowAlignment Alignment { get; set; }
+  public RowAlignment Alignment { get; set; }
 
   /// <summary>
   /// Determine if the specified row or rows are formatted as a table heading.
@@ -40,7 +40,7 @@ public partial interface Rows : InteropObject, InteropCollection<Row>
   /// Returns or sets the rule for determining the height of the specified rows.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows.heightrule?view=word-pia"/>
-  public WdRowHeightRule HeightRule { get; set; }
+  public RowHeightRule HeightRule { get; set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the left indent value (in points) for the specified table rows.
@@ -120,13 +120,13 @@ public partial interface Rows : InteropObject, InteropCollection<Row>
   /// Specifies to what the horizontal position of a group of rows is relative.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows.relativehorizontalposition?view=word-pia"/>
-  public WdRelativeHorizontalPosition RelativeHorizontalPosition { get; set; }
+  public RelativeHorizontalPosition RelativeHorizontalPosition { get; set; }
 
   /// <summary>
   /// Specifies to what the vertical position of a group of rows is relative.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows.relativeverticalposition?view=word-pia"/>
-  public WdRelativeVerticalPosition RelativeVerticalPosition { get; set; }
+  public RelativeVerticalPosition RelativeVerticalPosition { get; set; }
 
   /// <summary>
   /// Returns or sets a value that specifies whether the specified rows can overlap other rows.
@@ -144,5 +144,5 @@ public partial interface Rows : InteropObject, InteropCollection<Row>
   /// Returns or sets the direction in which Microsoft Word orders cells in the specified table or row.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows.tabledirection?view=word-pia"/>
-  public WdTableDirection TableDirection { get; set; }
+  public TableDirection TableDirection { get; set; }
 }

@@ -10,7 +10,7 @@ public partial interface ConnectorFormat : InteropObject
   /// Gets a value indicating whether the beginning of the connector is attached to a shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.connectorformat.beginconnected?view=word-pia"/>
-  public Core.MsoTriState BeginConnected { get; }
+  public Core.TriState BeginConnected { get; }
 
   /// <summary>
   /// Gets the shape attached to the beginning of the connector.
@@ -28,7 +28,7 @@ public partial interface ConnectorFormat : InteropObject
   /// Gets a value indicating whether the end of the connector is attached to a shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.connectorformat.endconnected?view=word-pia"/>
-  public Core.MsoTriState EndConnected { get; }
+  public Core.TriState EndConnected { get; }
 
   /// <summary>
   /// Gets the shape attached to the end of the connector.
@@ -46,5 +46,5 @@ public partial interface ConnectorFormat : InteropObject
   /// Gets or sets the connector type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.connectorformat.type?view=word-pia"/>
-  public Core.MsoConnectorType Type { get; set; }
+  public Core.ConnectorType Type { get; set; }
 }

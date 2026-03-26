@@ -12,7 +12,7 @@ public partial interface HTMLProject: InteropObject
   /// Gets the `State` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlproject.state?view=office-pia"/>
-  public MsoHTMLProjectState State { get; }
+  public HTMLProjectState State { get; }
   /// <summary>
   /// Gets the `HTMLProjectItems` property.
   /// </summary>

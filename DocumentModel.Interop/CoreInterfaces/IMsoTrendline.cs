@@ -76,7 +76,7 @@ public partial interface IMsoTrendline
   /// Gets or sets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsotrendline.type?view=office-pia"/>
-  public XlTrendlineType Type { get; set; }
+  public TrendlineType Type { get; set; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>

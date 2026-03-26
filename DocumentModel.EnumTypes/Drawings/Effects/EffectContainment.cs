@@ -9,7 +9,6 @@ public enum EffectContainment
   /// <summary>
   ///   Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   ///   Sibling.
   /// </summary>

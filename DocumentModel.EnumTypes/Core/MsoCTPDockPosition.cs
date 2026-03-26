@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the docking behavior of the custom task pane.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoctpdockposition?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoCTPDockPosition
+public enum CTPDockPosition
 {
   /// <summary>
   /// Dock the task pane on the left side of the document window.

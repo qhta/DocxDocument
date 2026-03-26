@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the dash style for a line.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolinedashstyle?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoLineDashStyle
+public enum LineDashStyle
 {
   /// <summary>
   /// Not supported.
@@ -57,7 +57,7 @@ public enum MsoLineDashStyle
   /// </summary>
   SysDot = 11,
   /// <summary>
-  /// public enum class MsoLineDashStyle
+  /// public enum class LineDashStyle
   /// </summary>
   SysDashDot = 12
 }

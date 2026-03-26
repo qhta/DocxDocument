@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmergetarget?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdMergeTarget
+public enum MergeTarget
 {
   /// <summary>
   /// Merge into selected document.

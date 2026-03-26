@@ -11,7 +11,7 @@ public partial interface IMsoSeries
   /// Gets or sets the `AxisGroup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.axisgroup?view=office-pia"/>
-  public XlAxisGroup AxisGroup { get; set; }
+  public AxisGroup AxisGroup { get; set; }
   /// <summary>
   /// Gets the `Border` property.
   /// </summary>
@@ -81,7 +81,7 @@ public partial interface IMsoSeries
   /// Gets or sets the `MarkerBackgroundColorIndex` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.markerbackgroundcolorindex?view=office-pia"/>
-  public XlColorIndex MarkerBackgroundColorIndex { get; set; }
+  public ColorIndex MarkerBackgroundColorIndex { get; set; }
   /// <summary>
   /// Gets or sets the `MarkerForegroundColor` property.
   /// </summary>
@@ -91,7 +91,7 @@ public partial interface IMsoSeries
   /// Gets or sets the `MarkerForegroundColorIndex` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.markerforegroundcolorindex?view=office-pia"/>
-  public XlColorIndex MarkerForegroundColorIndex { get; set; }
+  public ColorIndex MarkerForegroundColorIndex { get; set; }
   /// <summary>
   /// Gets or sets the `MarkerSize` property.
   /// </summary>
@@ -101,7 +101,7 @@ public partial interface IMsoSeries
   /// Gets or sets the `MarkerStyle` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.markerstyle?view=office-pia"/>
-  public XlMarkerStyle MarkerStyle { get; set; }
+  public MarkerStyle MarkerStyle { get; set; }
   /// <summary>
   /// Gets or sets the `Name` property.
   /// </summary>
@@ -111,7 +111,7 @@ public partial interface IMsoSeries
   /// Gets or sets the `PictureType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.picturetype?view=office-pia"/>
-  public XlChartPictureType PictureType { get; set; }
+  public ChartPictureType PictureType { get; set; }
   /// <summary>
   /// Gets or sets the `PictureUnit` property.
   /// </summary>
@@ -136,7 +136,7 @@ public partial interface IMsoSeries
   /// Gets or sets the `ChartType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.charttype?view=office-pia"/>
-  public XlChartType ChartType { get; set; }
+  public ChartType ChartType { get; set; }
   /// <summary>
   /// Gets or sets the `Values` property.
   /// </summary>
@@ -156,7 +156,7 @@ public partial interface IMsoSeries
   /// Gets or sets the `BarShape` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.barshape?view=office-pia"/>
-  public XlBarShape BarShape { get; set; }
+  public BarShape BarShape { get; set; }
   /// <summary>
   /// Gets or sets the `ApplyPictToSides` property.
   /// </summary>
@@ -216,7 +216,7 @@ public partial interface IMsoSeries
   /// Gets or sets the `InvertColorIndex` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.invertcolorindex?view=office-pia"/>
-  public XlColorIndex InvertColorIndex { get; set; }
+  public ColorIndex InvertColorIndex { get; set; }
   /// <summary>
   /// Gets or sets the `IsFiltered` property.
   /// </summary>

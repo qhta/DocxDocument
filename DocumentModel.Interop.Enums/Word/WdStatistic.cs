@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdstatistic?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdStatistic
+public enum Statistic
 {
   /// <summary>
   /// Count of words.

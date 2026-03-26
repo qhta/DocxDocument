@@ -10,13 +10,13 @@ public partial interface Dialog : InteropObject
   /// Gets or sets the tab that appears by default when the dialog box is displayed.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dialog.defaulttab?view=word-pia"/>
-  public WdWordDialogTab DefaultTab { get; set; }
+  public WordDialogTab DefaultTab { get; set; }
 
   /// <summary>
   /// Gets the built-in type of the dialog box.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dialog.type?view=word-pia"/>
-  public WdWordDialog Type { get; }
+  public WordDialog Type { get; }
 
   /// <summary>
   /// Gets the command name associated with the dialog box.

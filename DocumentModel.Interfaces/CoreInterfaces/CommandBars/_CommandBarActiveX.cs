@@ -147,7 +147,7 @@ public partial interface _CommandBarActiveX: CommandBarControl
   /// Gets or sets the `OLEUsage` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbaractivex.oleusage?view=office-pia"/>
-  public new MsoControlOLEUsage OLEUsage { get; set; }
+  public new ControlOLEUsage OLEUsage { get; set; }
   /// <summary>
   /// Gets or sets the `OnAction` property.
   /// </summary>
@@ -182,7 +182,7 @@ public partial interface _CommandBarActiveX: CommandBarControl
   /// Gets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbaractivex.type?view=office-pia"/>
-  public new MsoControlType Type { get; }
+  public new ControlType Type { get; }
   /// <summary>
   /// Gets or sets the `Visible` property.
   /// </summary>

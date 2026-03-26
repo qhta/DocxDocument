@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodiagramtype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoDiagramType
+public enum DiagramType
 {
   /// <summary>
   /// Return value only; indicates a combination of the other states.

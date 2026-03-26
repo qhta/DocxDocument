@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdprotectiontype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdProtectionType
+public enum ProtectionType
 {
   /// <summary>
   /// Allow only revisions to be made to existing content.

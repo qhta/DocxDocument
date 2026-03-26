@@ -11,14 +11,12 @@ public enum TextDirection
   /// <summary>
   ///   Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   /// Left to Right, Top to Bottom.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.TextDirectionValues.LefToRightTopToBottom))]
   [Obsolete]
   LefToRightTopToBottom = 1,
-
 
   /// <summary>
   /// Left to Right, Top to Bottom (2010 compatibility).

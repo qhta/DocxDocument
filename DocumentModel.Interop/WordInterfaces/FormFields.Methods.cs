@@ -16,5 +16,5 @@ public partial interface FormFields
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfields.add?view=word-pia"/>
-  public FormField Add(Range Range, WdFieldType Type);
+  public FormField Add(Range Range, FieldType Type);
 }

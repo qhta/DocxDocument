@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the style of a command bar button.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobuttonstyle?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoButtonStyle
+public enum ButtonStyle
 {
   /// <summary>
   /// Default behavior.

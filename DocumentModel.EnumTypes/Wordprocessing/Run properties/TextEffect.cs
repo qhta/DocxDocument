@@ -9,7 +9,6 @@ public enum TextEffect
   /// <summary>
   ///   Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   ///   Blinking Background Animation.
   /// </summary>

@@ -32,7 +32,7 @@ public partial interface CustomXMLValidationError: InteropObject
   /// Gets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerror.type?view=office-pia"/>
-  public MsoCustomXMLValidationErrorType Type { get; }
+  public CustomXMLValidationErrorType Type { get; }
   /// <summary>
   /// Gets the `ErrorCode` property.
   /// </summary>

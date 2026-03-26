@@ -17,7 +17,7 @@ public partial interface IBlogExtensibility
   /// <param name="Padding">The `Padding` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.blogproviderproperties?view=office-pia"/>
   public void BlogProviderProperties
-    (out string BlogProvider, out string FriendlyName, out MsoBlogCategorySupport CategorySupport, out bool Padding);
+    (out string BlogProvider, out string FriendlyName, out BlogCategorySupport CategorySupport, out bool Padding);
   /// <summary>
   /// Sets up a provider account from the account selection dialogs.
   /// </summary>

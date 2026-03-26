@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies where a node is added to a diagram relative to existing nodes.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msorelativenodeposition?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoRelativeNodePosition
+public enum RelativeNodePosition
 {
   /// <summary>
   /// Node is added before current node.

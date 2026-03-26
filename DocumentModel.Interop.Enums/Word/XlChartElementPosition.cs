@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlchartelementposition?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlChartElementPosition
+public enum ChartElementPosition
 {
   /// <summary>
   /// Specifies a specific position for the chart element.

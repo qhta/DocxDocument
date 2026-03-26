@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtextboxtightwrap?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdTextboxTightWrap
+public enum TextboxTightWrap
 {
   /// <summary>
   /// Does not wrap text tightly around the contents of a text box.

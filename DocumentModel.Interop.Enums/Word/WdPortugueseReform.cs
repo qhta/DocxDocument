@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdportuguesereform?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdPortugueseReform
+public enum PortugueseReform
 {
   /// <summary>
   /// Use the pre-reform spelling rules.

@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlchartitem?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlChartItem
+public enum ChartItem
 {
   /// <summary>
   /// Data label.
@@ -57,7 +57,7 @@ public enum XlChartItem
   /// </summary>
   LegendEntry = 12,
   /// <summary>
-  /// Legend key. public enum XlChartItem
+  /// Legend key. public enum ChartItem
   /// </summary>
   LegendKey = 13,
   /// <summary>

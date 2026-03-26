@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the vertical alignment of text in a text frame.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoverticalanchor?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoVerticalAnchor
+public enum VerticalAnchor
 {
   /// <summary>
   /// Specifies the vertical alignment of text in a text frame.

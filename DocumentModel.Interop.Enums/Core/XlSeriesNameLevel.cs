@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlseriesnamelevel?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlSeriesNameLevel
+public enum SeriesNameLevel
 {
   /// <summary>
   /// Set no category labels in the chart; instead default to automatic indexed labels.

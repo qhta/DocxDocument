@@ -15,5 +15,5 @@ public partial interface ListFormat
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.cancontinuepreviouslist?view=word-pia"/>
-  public WdContinue CanContinuePreviousList(ListTemplate ListTemplate);
+  public Continue CanContinuePreviousList(ListTemplate ListTemplate);
 }

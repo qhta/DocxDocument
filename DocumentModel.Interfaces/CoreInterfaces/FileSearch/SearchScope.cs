@@ -12,7 +12,7 @@ public partial interface SearchScope: InteropObject
   /// Gets the type of this search scope.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.searchscope.type?view=office-pia"/>
-  public MsoSearchIn Type { get; }
+  public SearchIn Type { get; }
   /// <summary>
   /// Gets the root folder for this search scope.
   /// </summary>

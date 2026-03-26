@@ -21,12 +21,12 @@ public partial interface Balloon: InteropObject
   /// Gets or sets the `BalloonType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.balloon.balloontype?view=office-pia"/>
-  public MsoBalloonType BalloonType { get; set; }
+  public BalloonType BalloonType { get; set; }
   /// <summary>
   /// Gets or sets the `Icon` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.balloon.icon?view=office-pia"/>
-  public MsoIconType Icon { get; set; }
+  public IconType Icon { get; set; }
   /// <summary>
   /// Gets or sets the `Heading` property.
   /// </summary>
@@ -41,17 +41,17 @@ public partial interface Balloon: InteropObject
   /// Gets or sets the `Mode` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.balloon.mode?view=office-pia"/>
-  public MsoModeType Mode { get; set; }
+  public ModeType Mode { get; set; }
   /// <summary>
   /// Gets or sets the `Animation` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.balloon.animation?view=office-pia"/>
-  public MsoAnimationType Animation { get; set; }
+  public AnimationType Animation { get; set; }
   /// <summary>
   /// Gets or sets the `Button` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.balloon.button?view=office-pia"/>
-  public MsoButtonSetType Button { get; set; }
+  public ButtonSetType Button { get; set; }
   /// <summary>
   /// Gets or sets the `Callback` property.
   /// </summary>

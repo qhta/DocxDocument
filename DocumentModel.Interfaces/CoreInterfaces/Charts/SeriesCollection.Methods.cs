@@ -21,7 +21,7 @@ public partial interface SeriesCollection: InteropCollection<IMsoSeries>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.add?view=office-pia"/>
   public IMsoSeries Add
-    (object Source, XlRowCol Rowcol, object SeriesLabels, object CategoryLabels, object Replace);
+    (object Source, RowCol Rowcol, object SeriesLabels, object CategoryLabels, object Replace);
   /// <summary>
   /// Invokes `Extend`.
   /// </summary>
@@ -42,7 +42,7 @@ public partial interface SeriesCollection: InteropCollection<IMsoSeries>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.paste?view=office-pia"/>
   public object Paste
-  (XlRowCol Rowcol, object SeriesLabels, object CategoryLabels, object Replace,
+  (RowCol Rowcol, object SeriesLabels, object CategoryLabels, object Replace,
     object NewSeries);
   /// <summary>
   /// Invokes `NewSeries`.

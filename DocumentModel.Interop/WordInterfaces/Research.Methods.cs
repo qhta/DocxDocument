@@ -20,5 +20,5 @@ public partial interface Research
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.research.query?view=word-pia"/>
-  public object Query(string ServiceID, string QueryString, WdLanguageID QueryLanguage, bool UseSelection, bool LaunchQuery);
+  public object Query(string ServiceID, string QueryString, LanguageID QueryLanguage, bool UseSelection, bool LaunchQuery);
 }

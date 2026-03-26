@@ -15,8 +15,8 @@ public partial interface DiagramNode
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.addnode?view=office-pia"/>
   public DiagramNode AddNode
-  (MsoRelativeNodePosition Pos,
-    MsoDiagramNodeType NodeType);
+  (RelativeNodePosition Pos,
+    DiagramNodeType NodeType);
   /// <summary>
   /// Deletes the diagram node.
   /// </summary>
@@ -28,7 +28,7 @@ public partial interface DiagramNode
   /// <param name="TargetNode">The `TargetNode` parameter.</param>
   /// <param name="Pos">The `Pos` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.movenode?view=office-pia"/>
-  public void MoveNode(DiagramNode TargetNode, MsoRelativeNodePosition Pos);
+  public void MoveNode(DiagramNode TargetNode, RelativeNodePosition Pos);
   /// <summary>
   /// Invokes `ReplaceNode`.
   /// </summary>
@@ -51,7 +51,7 @@ public partial interface DiagramNode
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.clonenode?view=office-pia"/>
   public DiagramNode CloneNode
-    (bool CopyChildren, DiagramNode TargetNode, MsoRelativeNodePosition Pos);
+    (bool CopyChildren, DiagramNode TargetNode, RelativeNodePosition Pos);
   /// <summary>
   /// Invokes `TransferChildren`.
   /// </summary>

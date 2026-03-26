@@ -18,5 +18,5 @@ public partial interface StyleSheets: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.stylesheets.add?view=word-pia"/>
-  public StyleSheet Add(string FileName, WdStyleSheetLinkType LinkType, string Title, WdStyleSheetPrecedence Precedence);
+  public StyleSheet Add(string FileName, StyleSheetLinkType LinkType, string Title, StyleSheetPrecedence Precedence);
 }

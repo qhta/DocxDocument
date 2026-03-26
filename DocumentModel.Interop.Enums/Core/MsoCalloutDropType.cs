@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies starting position of the callout line relative to the text bounding box.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocalloutdroptype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoCalloutDropType
+public enum CalloutDropType
 {
   /// <summary>
   /// Return value only; indicates a combination of the other states.

@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdworddialogtabhid?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdWordDialogTabHID
+public enum WordDialogTabHID
 {
   /// <summary>
   /// No description is available.

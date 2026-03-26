@@ -102,7 +102,7 @@ public partial interface IMsoDataLabels: IEnumerable
   /// Gets or sets the `Position` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.position?view=office-pia"/>
-  public XlDataLabelPosition Position { get; set; }
+  public DataLabelPosition Position { get; set; }
   /// <summary>
   /// Gets or sets the `ShowSeriesName` property.
   /// </summary>

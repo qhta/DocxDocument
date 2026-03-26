@@ -19,7 +19,7 @@ public partial interface SeriesCollection
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.seriescollection.add?view=word-pia"/>
-  public Series Add(object Source, XlRowCol RowCol, object SeriesLabels, object CategoryLabels, object Replace);
+  public Series Add(object Source, RowCol RowCol, object SeriesLabels, object CategoryLabels, object Replace);
 
   /// <summary>
   /// Extends the series collection with additional data.

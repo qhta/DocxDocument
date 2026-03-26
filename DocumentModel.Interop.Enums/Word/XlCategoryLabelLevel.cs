@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlcategorylabellevel?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlCategoryLabelLevel
+public enum CategoryLabelLevel
 {
   /// <summary>
   /// Use no category labels in the chart. Defaults to automatic indexed labels.

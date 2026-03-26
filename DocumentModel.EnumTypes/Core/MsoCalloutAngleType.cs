@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the size of the angle between the callout line and the side of the callout text box.
@@ -6,12 +6,11 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocalloutangletype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoCalloutAngleType
+public enum CalloutAngleType
 {
   /// <summary>
   /// Return value only; indicates a combination of the other states.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   /// Default angle. Angle can be changed as you drag the object.
   /// </summary>

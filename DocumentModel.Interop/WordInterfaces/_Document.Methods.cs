@@ -37,7 +37,7 @@ public partial interface _Document: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.compatibility?view=word-pia"/>
-  public bool Compatibility(WdCompatibility type);
+  public bool Compatibility(Compatibility type);
 
   /// <summary>
   /// Sets the active writing style compatibility option for the specified type.
@@ -49,7 +49,7 @@ public partial interface _Document: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.setcompatibility?view=word-pia"/>
-  public void SetCompatibility(WdCompatibility type, bool compatibility);
+  public void SetCompatibility(Compatibility type, bool compatibility);
 
   /// <summary>
   /// Accepts all tracked changes in the specified document.
@@ -155,7 +155,7 @@ public partial interface _Document: InteropObject
   /// </summary>
   /// <param name="length">The length of the summary as a percentage of the total document length
   /// (the larger the number, the more detail that's included in the summary).</param>
-  /// <param name="mode">Specifies the way the summary is displayed. Can be one of the WdSummaryMode constants.</param>
+  /// <param name="mode">Specifies the way the summary is displayed. Can be one of the SummaryMode constants.</param>
   /// <param name="updateProperties">True to update the Keyword and Comments boxes in the Properties dialog box
   /// to reflect the content of the summary for the specified document.</param>
   /// <returns>A Range object representing the summary.</returns>
@@ -163,7 +163,7 @@ public partial interface _Document: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.autosummarize?view=word-pia"/>
-  public Range AutoSummarize(WdSummaryLength length, WdSummaryMode mode, object updateProperties);
+  public Range AutoSummarize(SummaryLength length, SummaryMode mode, object updateProperties);
 
   /// <summary>
   /// Determines if Microsoft Word can check in a specified document to a server.
@@ -215,12 +215,12 @@ public partial interface _Document: InteropObject
   /// <param name="MakePublic">True allows the user to publish on the document after being checked in.
   /// This submits the document for the approval process, which can eventually result in a version of the document
   /// being published to users with read-only rights to the document (only applies if SaveChanges equals True).</param>
-  /// <param name="VersionType">The version type to assign to the document being checked in. Can be one of the WdCheckInVersionType constants (only applies if SaveChanges equals True).</param>
+  /// <param name="VersionType">The version type to assign to the document being checked in. Can be one of the CheckInVersionType constants (only applies if SaveChanges equals True).</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.checkinwithversion?view=word-pia"/>
-  public void CheckInWithVersion(bool SaveChanges, object Comments, bool MakePublic, WdCheckInVersionType VersionType);
+  public void CheckInWithVersion(bool SaveChanges, object Comments, bool MakePublic, CheckInVersionType VersionType);
 
   /// <summary>
   /// Accesses the Microsoft Office Web site for available smart tag recognizer and action files.
@@ -255,14 +255,14 @@ public partial interface _Document: InteropObject
   /// <summary>
   /// Closes the specified document or documents.
   /// </summary>
-  /// <param name="SaveChanges">Specifies whether to save changes to the document. Can be one of the WdSaveOptions constants.</param>
-  /// <param name="OriginalFormat">Specifies the format in which to save the document. Can be one of the WdOriginalFormat constants.</param>
+  /// <param name="SaveChanges">Specifies whether to save changes to the document. Can be one of the SaveOptions constants.</param>
+  /// <param name="OriginalFormat">Specifies the format in which to save the document. Can be one of the OriginalFormat constants.</param>
   /// <param name="RouteDocument">Specifies whether to route the document. Can be True or False.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.close?view=word-pia"/>
-  public void Close(WdSaveOptions SaveChanges, WdOriginalFormat OriginalFormat, bool RouteDocument);
+  public void Close(SaveOptions SaveChanges, OriginalFormat OriginalFormat, bool RouteDocument);
 
   /// <summary>
   /// Switches the specified document from print preview to the previous view. If the specified document isn't in
@@ -279,7 +279,7 @@ public partial interface _Document: InteropObject
   /// </summary>
   /// <param name="Name">The name of the document to compare with the specified document.</param>
   /// <param name="AuthorName">The name of the author to use for the comparison.</param>
-  /// <param name="CompareTarget">Specifies the target for the comparison. Can be one of the WdCompareTarget constants.</param>
+  /// <param name="CompareTarget">Specifies the target for the comparison. Can be one of the CompareTarget constants.</param>
   /// <param name="DetectFormatChanges">Specifies whether to detect format changes. Can be True or False.</param>
   /// <param name="IgnoreAllComparisonWarnings">Specifies whether to ignore all comparison warnings. Can be True or False.</param>
   /// <param name="AddToRecentFiles">Specifies whether to add the document to the recent files list. Can be True or False.</param>
@@ -287,7 +287,7 @@ public partial interface _Document: InteropObject
   /// <param name="RemoveDateAndTime">Specifies whether to remove date and time information. Can be True or False.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.compare?view=word-pia"/>
   public void Compare
-  (string Name, string AuthorName, WdCompareTarget CompareTarget, bool DetectFormatChanges, bool IgnoreAllComparisonWarnings,
+  (string Name, string AuthorName, CompareTarget CompareTarget, bool DetectFormatChanges, bool IgnoreAllComparisonWarnings,
     bool AddToRecentFiles, bool RemovePersonalInformation, bool RemoveDateAndTime);
 
   /// <summary>
@@ -305,25 +305,25 @@ public partial interface _Document: InteropObject
   /// </summary>
   /// <param name="Name">The name of the document to compare with the specified document.</param>
   /// <param name="AuthorName">The name of the author to use for the comparison.</param>
-  /// <param name="CompareTarget">Specifies the target for the comparison. Can be one of the WdCompareTarget constants.</param>
+  /// <param name="CompareTarget">Specifies the target for the comparison. Can be one of the CompareTarget constants.</param>
   /// <param name="DetectFormatChanges">Specifies whether to detect format changes. Can be True or False.</param>
   /// <param name="IgnoreAllComparisonWarnings">Specifies whether to ignore all comparison warnings. Can be True or False.</param>
   /// <param name="AddToRecentFiles">Specifies whether to add the document to the recent files list. Can be True or False.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.compare2002?view=word-pia"/>
   public void Compare2002
-  (string Name, string AuthorName, WdCompareTarget CompareTarget, bool DetectFormatChanges, bool IgnoreAllComparisonWarnings,
+  (string Name, string AuthorName, CompareTarget CompareTarget, bool DetectFormatChanges, bool IgnoreAllComparisonWarnings,
     bool AddToRecentFiles);
 
   /// <summary>
   /// Returns a statistic based on the contents of the specified document.
   /// </summary>
-  /// <param name="Statistic">The statistic to return. Can be one of the WdStatistic constants.</param>
+  /// <param name="Statistic">The statistic to return. Can be one of the Statistic constants.</param>
   /// <param name="IncludeFootnotesAndEndnotes">Specifies whether to include footnotes and endnotes. Can be True or False.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.computestatistics?view=word-pia"/>
-  public int ComputeStatistics(WdStatistic Statistic, bool IncludeFootnotesAndEndnotes);
+  public int ComputeStatistics(Statistic Statistic, bool IncludeFootnotesAndEndnotes);
 
   /// <summary>
   /// Converts file to the newest file format and enables all new features.
@@ -346,12 +346,12 @@ public partial interface _Document: InteropObject
   /// <summary>
   /// Changes the list numbers and LISTNUM fields in the specified object to text.
   /// </summary>
-  /// <param name="NumberType">The type of numbers to convert. Can be one of the WdNumberType constants.</param>
+  /// <param name="NumberType">The type of numbers to convert. Can be one of the NumberType constants.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.convertnumberstotext?view=word-pia"/>
-  public void ConvertNumbersToText(WdNumberType NumberType);
+  public void ConvertNumbersToText(NumberType NumberType);
 
   /// <summary>
   /// Reconverts a Vietnamese document to Unicode using a code page other than the default.
@@ -376,13 +376,13 @@ public partial interface _Document: InteropObject
   /// <summary>
   /// Returns the number of bulleted or numbered items and LISTNUM fields in the specified object.
   /// </summary>
-  /// <param name="NumberType">The type of numbers to count. Can be one of the WdNumberType constants.</param>
+  /// <param name="NumberType">The type of numbers to count. Can be one of the NumberType constants.</param>
   /// <param name="Level">The level of the numbers to count. Can be one of the WdListLevel constants.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.countnumbereditems?view=word-pia"/>
-  public int CountNumberedItems(WdNumberType NumberType, int Level);
+  public int CountNumberedItems(NumberType NumberType, int Level);
 
   /// <summary>
   /// Creates and returns a LetterContent object based on the specified letter elements.
@@ -392,12 +392,12 @@ public partial interface _Document: InteropObject
   /// <param name="PageDesign">The design of the page.</param>
   /// <param name="LetterStyle">The style of the letter.</param>
   /// <param name="Letterhead">Specifies whether to include the letterhead. Can be True or False.</param>
-  /// <param name="LetterheadLocation">The location of the letterhead. Can be one of the WdLetterheadLocation constants.</param>
+  /// <param name="LetterheadLocation">The location of the letterhead. Can be one of the LetterheadLocation constants.</param>
   /// <param name="LetterheadSize">The size of the letterhead.</param>
   /// <param name="RecipientName">The name of the recipient.</param>
   /// <param name="RecipientAddress">The address of the recipient.</param>
   /// <param name="Salutation">The salutation to use in the letter.</param>
-  /// <param name="SalutationType">The type of salutation to use in the letter. Can be one of the WdSalutationType constants.</param>
+  /// <param name="SalutationType">The type of salutation to use in the letter. Can be one of the SalutationType constants.</param>
   /// <param name="RecipientReference">The reference for the recipient.</param>
   /// <param name="MailingInstructions">The mailing instructions for the letter.</param>
   /// <param name="AttentionLine">The attention line for the letter.</param>
@@ -420,9 +420,9 @@ public partial interface _Document: InteropObject
   /// <param name="SenderReference">The reference for the sender.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.createlettercontent?view=word-pia"/>
   public LetterContent CreateLetterContent
-  (string DateFormat, bool IncludeHeaderFooter, string PageDesign, WdLetterStyle LetterStyle, bool Letterhead,
-    WdLetterheadLocation LetterheadLocation, float LetterheadSize, string RecipientName, string RecipientAddress,
-    string Salutation, WdSalutationType SalutationType, string RecipientReference, string MailingInstructions,
+  (string DateFormat, bool IncludeHeaderFooter, string PageDesign, LetterStyle LetterStyle, bool Letterhead,
+    LetterheadLocation LetterheadLocation, float LetterheadSize, string RecipientName, string RecipientAddress,
+    string Salutation, SalutationType SalutationType, string RecipientReference, string MailingInstructions,
     string AttentionLine, string Subject, string CCList, string ReturnAddress, string SenderName, string Closing,
     string SenderCompany, string SenderJobTitle, string SenderInitials, int EnclosureNumber, object InfoBlock,
     object RecipientCode, object RecipientGender, object ReturnAddressShortForm, object SenderCity, object SenderCode,
@@ -540,7 +540,7 @@ public partial interface _Document: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.editionoptions?view=word-pia"/>
-  public void EditionOptions(WdEditionType Type, WdEditionOption Option, string Name, object Format);
+  public void EditionOptions(EditionType Type, EditionOption Option, string Name, object Format);
 
   /// <summary>
   /// Terminates a review of a file that has been sent for review using the SendForReview(Object, Object, Object,
@@ -576,9 +576,9 @@ public partial interface _Document: InteropObject
   /// see "Extending the Office (2007) Fixed-Format Export Feature" on MSDN.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.exportasfixedformat?view=word-pia"/>
   public void ExportAsFixedFormat
-  (string OutputFileName, WdExportFormat ExportFormat, bool OpenAfterExport, WdExportOptimizeFor OptimizeFor,
-    WdExportRange Range, int From, int To, WdExportItem Item, bool IncludeDocProps, bool KeepIRM,
-    WdExportCreateBookmarks CreateBookmarks, bool DocStructureTags, bool BitmapMissingFonts, bool UseISO19005_1,
+  (string OutputFileName, ExportFormat ExportFormat, bool OpenAfterExport, ExportOptimizeFor OptimizeFor,
+    ExportRange Range, int From, int To, ExportItem Item, bool IncludeDocProps, bool KeepIRM,
+    ExportCreateBookmarks CreateBookmarks, bool DocStructureTags, bool BitmapMissingFonts, bool UseISO19005_1,
     object FixedFormatExtClassPtr);
 
   /// <summary>
@@ -627,12 +627,12 @@ public partial interface _Document: InteropObject
   /// <summary>
   /// Returns an array of items that can be cross-referenced based on the specified cross-reference type.
   /// </summary>
-  /// <param name="ReferenceType">The type of items to return. Can be one of the WdReferenceType constants.</param>
+  /// <param name="ReferenceType">The type of items to return. Can be one of the ReferenceType constants.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.getcrossreferenceitems?view=word-pia"/>
-  public object GetCrossReferenceItems(WdReferenceType ReferenceType);
+  public object GetCrossReferenceItems(ReferenceType ReferenceType);
 
   /// <summary>
   /// Retrieves letter elements from the specified document and returns a LetterContent object.
@@ -664,15 +664,15 @@ public partial interface _Document: InteropObject
   /// <summary>
   /// Returns a Range object that represents the start position of the specified item.
   /// </summary>
-  /// <param name="What">The item to return. Can be one of the WdGoToItem constants.</param>
-  /// <param name="Which">Specifies which instance of the item to return. Can be one of the WdGoToDirection constants.</param>
+  /// <param name="What">The item to return. Can be one of the GoToItem constants.</param>
+  /// <param name="Which">Specifies which instance of the item to return. Can be one of the GoToDirection constants.</param>
   /// <param name="Count">Specifies the number of items to return.</param>
   /// <param name="Name">Specifies the name of the item to return.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.goto?view=word-pia"/>
-  public Range GoTo(WdGoToItem What, WdGoToDirection Which, int Count, string Name);
+  public Range GoTo(GoToItem What, GoToDirection Which, int Count, string Name);
 
   /// <summary>
   /// Locks the file on the server preventing anyone else from editing it.
@@ -707,13 +707,13 @@ public partial interface _Document: InteropObject
   /// Merges the changes marked with revision marks from one document to another.
   /// </summary>
   /// <param name="FileName">The name of the document to merge with the specified document.</param>
-  /// <param name="MergeTarget">Specifies the target for the merge. Can be one of the WdMergeTarget constants.</param>
-  /// <param name="DetectFormatChanges">Specifies whether to detect format changes. Can be one of the WdMergeFormatFrom constants.</param>
+  /// <param name="MergeTarget">Specifies the target for the merge. Can be one of the MergeTarget constants.</param>
+  /// <param name="DetectFormatChanges">Specifies whether to detect format changes. Can be one of the MergeFormatFrom constants.</param>
   /// <param name="UseFormattingFrom">Specifies which document's formatting to use. Can be one of the WdMergeFormattingFrom constants.</param>
   /// <param name="AddToRecentFiles">Specifies whether to add the merged document to the recent files list.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.merge?view=word-pia"/>
   public void Merge
-  (string FileName, WdMergeTarget MergeTarget, WdMergeFormatFrom DetectFormatChanges, object UseFormattingFrom,
+  (string FileName, MergeTarget MergeTarget, MergeFormatFrom DetectFormatChanges, object UseFormattingFrom,
     bool AddToRecentFiles);
 
   /// <summary>
@@ -749,14 +749,14 @@ public partial interface _Document: InteropObject
   /// </summary>
   /// <param name="Background">Whether to print in the background. Can be True or False.</param>
   /// <param name="Append">Whether to append the document to the printer queue. Can be True or False.</param>
-  /// <param name="Range">The range of the document to print. Can be one of the WdPrintOutRange constants.</param>
+  /// <param name="Range">The range of the document to print. Can be one of the PrintOutRange constants.</param>
   /// <param name="OutputFileName">The name of the file to print to when printing to a file.</param>
   /// <param name="From">The starting page number to print.</param>
   /// <param name="To">The ending page number to print.</param>
-  /// <param name="Item">Specifies the item to print. Can be one of the WdPrintOutItem constants.</param>
+  /// <param name="Item">Specifies the item to print. Can be one of the PrintOutItem constants.</param>
   /// <param name="Copies">The number of copies to print.</param>
   /// <param name="Pages">The pages to print. Can be a string specifying page ranges.</param>
-  /// <param name="PageType">Specifies the type of pages to print. Can be one of the WdPrintOutPages constants.</param>
+  /// <param name="PageType">Specifies the type of pages to print. Can be one of the PrintOutPages constants.</param>
   /// <param name="PrintToFile">Whether to print to a file. Can be True or False.</param>
   /// <param name="Collate">Whether to collate multiple copies. Can be True or False.</param>
   /// <param name="ActivePrinterMacGX">The name of the printer to use when printing from a Macintosh running Mac OS X.</param>
@@ -767,8 +767,8 @@ public partial interface _Document: InteropObject
   /// <param name="PrintZoomPaperHeight">The height of the paper to use when printing in zoom mode.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.printout?view=word-pia"/>
   public void PrintOut
-  (bool Background, bool Append, WdPrintOutRange Range, string OutputFileName, int From, int To, WdPrintOutItem Item,
-    int Copies, string Pages, WdPrintOutPages PageType, bool PrintToFile, bool Collate, string ActivePrinterMacGX,
+  (bool Background, bool Append, PrintOutRange Range, string OutputFileName, int From, int To, PrintOutItem Item,
+    int Copies, string Pages, PrintOutPages PageType, bool PrintToFile, bool Collate, string ActivePrinterMacGX,
     bool ManualDuplexPrint, int PrintZoomColumn, int PrintZoomRow, int PrintZoomPaperWidth,
     int PrintZoomPaperHeight);
 
@@ -777,14 +777,14 @@ public partial interface _Document: InteropObject
   /// </summary>
   /// <param name="Background">Whether to print in the background. Can be True or False.</param>
   /// <param name="Append">Whether to append the document to the printer queue. Can be True or False.</param>
-  /// <param name="Range">The range of the document to print. Can be one of the WdPrintOutRange constants.</param>
+  /// <param name="Range">The range of the document to print. Can be one of the PrintOutRange constants.</param>
   /// <param name="OutputFileName">The name of the file to print to when printing to a file.</param>
   /// <param name="From">The starting page number to print.</param>
   /// <param name="To">The ending page number to print.</param>
-  /// <param name="Item">Specifies the item to print. Can be one of the WdPrintOutItem constants.</param>
+  /// <param name="Item">Specifies the item to print. Can be one of the PrintOutItem constants.</param>
   /// <param name="Copies">The number of copies to print.</param>
   /// <param name="Pages">The pages to print. Can be a string specifying page ranges.</param>
-  /// <param name="PageType">Specifies the type of pages to print. Can be one of the WdPrintOutPages constants.</param>
+  /// <param name="PageType">Specifies the type of pages to print. Can be one of the PrintOutPages constants.</param>
   /// <param name="PrintToFile">Whether to print to a file. Can be True or False.</param>
   /// <param name="Collate">Whether to collate multiple copies. Can be True or False.</param>
   /// <param name="ActivePrinterMacGX">The name of the printer to use when printing from a Macintosh running Mac OS X.</param>
@@ -795,8 +795,8 @@ public partial interface _Document: InteropObject
   /// <param name="PrintZoomPaperHeight">The height of the paper to use when printing in zoom mode.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.printout2000?view=word-pia"/>
   public void PrintOut2000
-  (bool Background, bool Append, WdPrintOutRange Range, string OutputFileName, int From, int To, WdPrintOutItem Item,
-    int Copies, string Pages, WdPrintOutPages PageType, bool PrintToFile, bool Collate, string ActivePrinterMacGX,
+  (bool Background, bool Append, PrintOutRange Range, string OutputFileName, int From, int To, PrintOutItem Item,
+    int Copies, string Pages, PrintOutPages PageType, bool PrintToFile, bool Collate, string ActivePrinterMacGX,
     bool ManualDuplexPrint, int PrintZoomColumn, int PrintZoomRow, int PrintZoomPaperWidth,
     int PrintZoomPaperHeight);
 
@@ -805,14 +805,14 @@ public partial interface _Document: InteropObject
   /// </summary>
   /// <param name="Background">Whether to print in the background. Can be True or False.</param>
   /// <param name="Append">Whether to append the document to the printer queue. Can be True or False.</param>
-  /// <param name="Range">The range of the document to print. Can be one of the WdPrintOutRange constants.</param>
+  /// <param name="Range">The range of the document to print. Can be one of the PrintOutRange constants.</param>
   /// <param name="OutputFileName">The name of the file to print to when printing to a file.</param>
   /// <param name="From">The starting page number to print.</param>
   /// <param name="To">The ending page number to print.</param>
-  /// <param name="Item">Specifies the item to print. Can be one of the WdPrintOutItem constants.</param>
+  /// <param name="Item">Specifies the item to print. Can be one of the PrintOutItem constants.</param>
   /// <param name="Copies">The number of copies to print.</param>
   /// <param name="Pages">The pages to print. Can be a string specifying page ranges.</param>
-  /// <param name="PageType">Specifies the type of pages to print. Can be one of the WdPrintOutPages constants.</param>
+  /// <param name="PageType">Specifies the type of pages to print. Can be one of the PrintOutPages constants.</param>
   /// <param name="PrintToFile">Whether to print to a file. Can be True or False.</param>
   /// <param name="Collate">Whether to collate multiple copies. Can be True or False.</param>
   /// <param name="ActivePrinterMacGX">The name of the printer to use when printing from a Macintosh running Mac OS X.</param>
@@ -835,7 +835,7 @@ public partial interface _Document: InteropObject
   /// <summary>
   /// Helps to protect the specified document from changes. When a document is protected, users can make only limited changes, such as adding annotations, making revisions, or completing a form.
   /// </summary>
-  /// <param name="Type">The type of protection to apply. Can be one of the WdProtectionType constants.</param>
+  /// <param name="Type">The type of protection to apply. Can be one of the ProtectionType constants.</param>
   /// <param name="NoReset">Whether to reset the protection settings. Can be True or False.</param>
   /// <param name="Password">The password to use for protection.</param>
   /// <param name="UseIRM">Whether to use Information Rights Management (IRM) for protection. Can be True or False.</param>
@@ -844,19 +844,19 @@ public partial interface _Document: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.protect?view=word-pia"/>
-  public void Protect(WdProtectionType Type, bool NoReset, string Password, bool UseIRM, bool EnforceStyleLock);
+  public void Protect(ProtectionType Type, bool NoReset, string Password, bool UseIRM, bool EnforceStyleLock);
 
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  /// <param name="Type">The type of protection to apply. Can be one of the WdProtectionType constants.</param>
+  /// <param name="Type">The type of protection to apply. Can be one of the ProtectionType constants.</param>
   /// <param name="NoReset">Whether to reset the protection settings. Can be True or False.</param>
   /// <param name="Password">The password to use for protection.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.protect2002?view=word-pia"/>
-  public void Protect2002(WdProtectionType Type, bool NoReset, string Password);
+  public void Protect2002(ProtectionType Type, bool NoReset, string Password);
 
   /// <summary>
   /// Returns a Range object by using the specified starting and ending character positions.
@@ -922,17 +922,17 @@ public partial interface _Document: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.reloadas?view=word-pia"/>
-  public void ReloadAs(Core.MsoEncoding Encoding);
+  public void ReloadAs(Core.Encoding Encoding);
 
   /// <summary>
   /// Removes sensitive information, properties, comments, and other metadata from a document.
   /// </summary>
-  /// <param name="RemoveDocInfoType">The type of information to remove. Can be one of the WdRemoveDocInfoType constants.</param>
+  /// <param name="RemoveDocInfoType">The type of information to remove. Can be one of the RemoveDocInfoType constants.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.removedocumentinformation?view=word-pia"/>
-  public void RemoveDocumentInformation(WdRemoveDocInfoType RemoveDocInfoType);
+  public void RemoveDocumentInformation(RemoveDocInfoType RemoveDocInfoType);
 
   /// <summary>
   /// Reserved for internal use.
@@ -956,12 +956,12 @@ public partial interface _Document: InteropObject
   /// <summary>
   /// Removes numbers or bullets from the specified object.
   /// </summary>
-  /// <param name="NumberType">The type of numbering to remove. Can be one of the WdNumberType constants.</param>
+  /// <param name="NumberType">The type of numbering to remove. Can be one of the NumberType constants.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.removenumbers?view=word-pia"/>
-  public void RemoveNumbers(WdNumberType NumberType);
+  public void RemoveNumbers(NumberType NumberType);
 
   /// <summary>
   /// Removes all smart tag information from a document.
@@ -1049,12 +1049,12 @@ public partial interface _Document: InteropObject
   /// <summary>
   /// Runs an auto macro that's stored in the specified document. If the specified auto macro doesn't exist, nothing happens.
   /// </summary>
-  /// <param name="Which">Specifies which auto macro to run. Can be one of the WdAutoMacros constants.</param>
+  /// <param name="Which">Specifies which auto macro to run. Can be one of the AutoMacros constants.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.runautomacro?view=word-pia"/>
-  public void RunAutoMacro(WdAutoMacros Which);
+  public void RunAutoMacro(AutoMacros Which);
 
   /// <summary>
   /// Runs the Letter Wizard on the specified document.
@@ -1081,7 +1081,7 @@ public partial interface _Document: InteropObject
   /// Saves the specified document with a new name or format. Some of the arguments for this method correspond to the options in the Save Asdialog box (File menu).
   /// </summary>
   /// <param name="FileName">The name of the file to save the document as.</param>
-  /// <param name="FileFormat">The format in which to save the document. Can be one of the WdSaveFormat constants.</param>
+  /// <param name="FileFormat">The format in which to save the document. Can be one of the SaveFormat constants.</param>
   /// <param name="LockComments">Specifies whether to lock comments in the document.</param>
   /// <param name="Password">The password to protect the document.</param>
   /// <param name="AddToRecentFiles">Specifies whether to add the document to the list of recent files.</param>
@@ -1098,7 +1098,7 @@ public partial interface _Document: InteropObject
   /// <param name="AddBiDiMarks">Specifies whether to add bidirectional marks when saving the document.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.saveas?view=word-pia"/>
   public void SaveAs
-  (string FileName, WdSaveFormat FileFormat, bool LockComments, string Password, bool AddToRecentFiles,
+  (string FileName, SaveFormat FileFormat, bool LockComments, string Password, bool AddToRecentFiles,
     string WritePassword, bool ReadOnlyRecommended, bool EmbedTrueTypeFonts, bool SaveNativePictureFormat,
     bool SaveFormsData, bool SaveAsAOCELetter, int Encoding, bool InsertLineBreaks, bool AllowSubstitutions,
     int LineEnding, bool AddBiDiMarks);
@@ -1107,7 +1107,7 @@ public partial interface _Document: InteropObject
   /// Saves the specified document with a new name or format. Some of the arguments for this method correspond to the options in the Save As dialog box (File tab).
   /// </summary>
   /// <param name="FileName">The name of the file to save the document as.</param>
-  /// <param name="FileFormat">The format in which to save the document. Can be one of the WdSaveFormat constants.</param>
+  /// <param name="FileFormat">The format in which to save the document. Can be one of the SaveFormat constants.</param>
   /// <param name="LockComments">Specifies whether to lock comments in the document.</param>
   /// <param name="Password">The password to protect the document.</param>
   /// <param name="AddToRecentFiles">Specifies whether to add the document to the list of recent files.</param>
@@ -1125,7 +1125,7 @@ public partial interface _Document: InteropObject
   /// <param name="CompatibilityMode">Specifies the compatibility mode to use when saving the document.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.saveas2?view=word-pia"/>
   public void SaveAs2
-  (string FileName, WdSaveFormat FileFormat, bool LockComments, string Password, bool AddToRecentFiles,
+  (string FileName, SaveFormat FileFormat, bool LockComments, string Password, bool AddToRecentFiles,
     string WritePassword, bool ReadOnlyRecommended, bool EmbedTrueTypeFonts, bool SaveNativePictureFormat,
     bool SaveFormsData, bool SaveAsAOCELetter, int Encoding, bool InsertLineBreaks, bool AllowSubstitutions,
     int LineEnding, bool AddBiDiMarks, object CompatibilityMode);
@@ -1134,7 +1134,7 @@ public partial interface _Document: InteropObject
   /// Reserved for internal use.
   /// </summary>
   /// <param name="FileName">The name of the file to save the document as.</param>
-  /// <param name="FileFormat">The format in which to save the document. Can be one of the WdSaveFormat constants.</param>
+  /// <param name="FileFormat">The format in which to save the document. Can be one of the SaveFormat constants.</param>
   /// <param name="LockComments">Specifies whether to lock comments in the document.</param>
   /// <param name="Password">The password to protect the document.</param>
   /// <param name="AddToRecentFiles">Specifies whether to add the document to the list of recent files.</param>
@@ -1166,7 +1166,7 @@ public partial interface _Document: InteropObject
   /// This method is reserved for internal use, and its behavior may change, or it may be removed in future versions of Microsoft Office Word.
   /// </summary>
   /// <param name="FileName">The name of the file to save the document as.</param>
-  /// <param name="FileFormat">The format in which to save the document. Can be one of the WdSaveFormat constants.</param>
+  /// <param name="FileFormat">The format in which to save the document. Can be one of the SaveFormat constants.</param>
   /// <param name="LockComments">Specifies whether to lock comments in the document.</param>
   /// <param name="Password">The password to protect the document.</param>
   /// <param name="AddToRecentFiles">Specifies whether to add the document to the list of recent files.</param>
@@ -1184,7 +1184,7 @@ public partial interface _Document: InteropObject
   /// <param name="CompatibilityMode">Specifies the compatibility mode to use when saving the document.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.savecopyas?view=word-pia"/>
   public void SaveCopyAs
-  (string FileName, WdSaveFormat FileFormat, bool LockComments, string Password, bool AddToRecentFiles,
+  (string FileName, SaveFormat FileFormat, bool LockComments, string Password, bool AddToRecentFiles,
     string WritePassword, bool ReadOnlyRecommended, bool EmbedTrueTypeFonts, bool SaveNativePictureFormat,
     bool SaveFormsData, bool SaveAsAOCELetter, int Encoding, bool InsertLineBreaks, bool AllowSubstitutions,
     int LineEnding, bool AddBiDiMarks, object CompatibilityMode);

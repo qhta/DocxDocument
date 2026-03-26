@@ -370,7 +370,7 @@ public partial interface _Application : InteropObject
   /// Returns or sets the state of the specified document window or task window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.windowstate?view=word-pia"/>
-  public WdWindowState WindowState { get; set; }
+  public WindowState WindowState { get; set; }
 
   /// <summary>
   /// Determines if Microsoft Word displays tips that suggest text for completing words, dates, or phrases as you type.
@@ -388,7 +388,7 @@ public partial interface _Application : InteropObject
   /// Returns or sets the way certain alerts and messages are handled while a macro is running.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.displayalerts?view=word-pia"/>
-  public WdAlertLevel DisplayAlerts { get; set; }
+  public AlertLevel DisplayAlerts { get; set; }
 
   /// <summary>
   /// Returns a Dictionaries object that represents the collection of active custom dictionaries. Active custom dictionaries are marked with a check in the Custom Dictionaries dialog box.
@@ -424,7 +424,7 @@ public partial interface _Application : InteropObject
   /// Returns or sets the way that Word handles CTRL+BREAK user interruptions.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.enablecancelkey?view=word-pia"/>
-  public WdEnableCancelKey EnableCancelKey { get; set; }
+  public EnableCancelKey EnableCancelKey { get; set; }
 
   /// <summary>
   /// Determines if the document or application was created or opened by the user.
@@ -442,7 +442,7 @@ public partial interface _Application : InteropObject
   /// Returns the mail system (or systems) installed on the host machine.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.mailsystem?view=word-pia"/>
-  public WdMailSystem MailSystem { get; }
+  public MailSystem MailSystem { get; }
 
   /// <summary>
   /// Returns or sets the single character used to separate text into cells when text is converted to a table.
@@ -487,10 +487,10 @@ public partial interface _Application : InteropObject
   public EmailOptions EmailOptions { get; }
 
   /// <summary>
-  /// Returns an MsoLanguageID constant that represents the language selected for the Microsoft Word user interface.
+  /// Returns an LanguageID constant that represents the language selected for the Microsoft Word user interface.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.language?view=word-pia"/>
-  public Core.MsoLanguageID Language { get; }
+  public Core.LanguageID Language { get; }
 
   /// <summary>
   /// Returns a reference to the COMAddIns collection that represents all the Component Object Model (COM) add-ins currently loaded in Microsoft Word.
@@ -526,13 +526,13 @@ public partial interface _Application : InteropObject
   /// Returns or sets how Microsoft Word handles calls to methods and properties that require features not yet installed.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.featureinstall?view=word-pia"/>
-  public Core.MsoFeatureInstall FeatureInstall { get; set; }
+  public Core.FeatureInstall FeatureInstall { get; set; }
 
   /// <summary>
-  /// Returns or sets a MsoAutomationSecurity constant that represents the security setting Microsoft Word uses when programmatically opening files.
+  /// Returns or sets a AutomationSecurity constant that represents the security setting Microsoft Word uses when programmatically opening files.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.automationsecurity?view=word-pia"/>
-  public Core.MsoAutomationSecurity AutomationSecurity { get; set; }
+  public Core.AutomationSecurity AutomationSecurity { get; set; }
 
   /// <summary>
   /// Returns or sets a String that represents the document template to use when sending e-mail messages.
@@ -718,7 +718,7 @@ public partial interface _Application : InteropObject
   /// Gets or sets how Word will validate files before opening them.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.filevalidation?view=word-pia"/>
-  public Core.MsoFileValidationMode FileValidation { get; set; }
+  public Core.FileValidationMode FileValidation { get; set; }
 
   /// <summary>
   /// Returns or sets a Boolean ( bool in C#) that specifies whether charts use cell-reference data-point tracking. Read-write.

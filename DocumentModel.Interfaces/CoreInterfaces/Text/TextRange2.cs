@@ -88,7 +88,7 @@ public partial interface TextRange2: InteropObject, InteropCollection<TextRange2
   /// Gets or sets the `LanguageID` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.languageid?view=office-pia"/>
-  public MsoLanguageID LanguageID { get; set; }
+  public LanguageID LanguageID { get; set; }
   /// <summary>
   /// Gets the `MathZones` property.
   /// </summary>

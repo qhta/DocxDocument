@@ -24,12 +24,12 @@ public partial interface SharedWorkspaceTask: InteropObject
   /// Gets or sets the `Status` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetask.status?view=office-pia"/>
-  public MsoSharedWorkspaceTaskStatus Status { get; set; }
+  public SharedWorkspaceTaskStatus Status { get; set; }
   /// <summary>
   /// Gets or sets the `Priority` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetask.priority?view=office-pia"/>
-  public MsoSharedWorkspaceTaskPriority Priority { get; set; }
+  public SharedWorkspaceTaskPriority Priority { get; set; }
   /// <summary>
   /// Gets or sets the `Description` property.
   /// </summary>

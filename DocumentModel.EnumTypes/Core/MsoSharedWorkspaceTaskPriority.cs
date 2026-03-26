@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the priority for a shared workspace task.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosharedworkspacetaskpriority?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoSharedWorkspaceTaskPriority
+public enum SharedWorkspaceTaskPriority
 {
   /// <summary>
   /// High priority.

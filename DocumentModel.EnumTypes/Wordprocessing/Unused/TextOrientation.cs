@@ -11,7 +11,6 @@ public enum TextOrientation
   /// <summary>
   ///   Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>Horizontal text</summary>
   [OpenXmlEnumValue("Horizontal")]
   Horizontal = 1,

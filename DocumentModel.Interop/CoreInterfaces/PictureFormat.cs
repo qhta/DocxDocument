@@ -16,7 +16,7 @@ public partial interface PictureFormat: InteropObject
   /// Gets or sets the `ColorType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat.colortype?view=office-pia"/>
-  public MsoPictureColorType ColorType { get; set; }
+  public PictureColorType ColorType { get; set; }
   /// <summary>
   /// Gets or sets the `Contrast` property.
   /// </summary>
@@ -51,7 +51,7 @@ public partial interface PictureFormat: InteropObject
   /// Gets or sets the `TransparentBackground` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat.transparentbackground?view=office-pia"/>
-  public MsoTriState TransparentBackground { get; set; }
+  public TriState TransparentBackground { get; set; }
   /// <summary>
   /// Gets the `Crop` property.
   /// </summary>

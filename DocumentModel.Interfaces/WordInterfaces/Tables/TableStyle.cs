@@ -49,7 +49,7 @@ public partial interface TableStyle : InteropObject
   /// Returns or sets a constant that represents the alignment for the specified rows.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablestyle.alignment?view=word-pia"/>
-  public WdRowAlignment Alignment { get; set; }
+  public RowAlignment Alignment { get; set; }
 
   /// <summary>
   /// Returns or sets the spacing (in points) between the cells in a table style.
@@ -61,7 +61,7 @@ public partial interface TableStyle : InteropObject
   /// Returns or sets the direction in which Microsoft Word orders cells in the specified table or row.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablestyle.tabledirection?view=word-pia"/>
-  public WdTableDirection TableDirection { get; set; }
+  public TableDirection TableDirection { get; set; }
 
   /// <summary>
   /// Sets or returns an Integer indicating whether lines in the rows of tables formatted with a specified style

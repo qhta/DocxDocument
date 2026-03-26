@@ -76,5 +76,5 @@ public partial interface Column : InteropObject
   /// Gets or sets the preferred width type for the column.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column.preferredwidthtype?view=word-pia"/>
-  public WdPreferredWidthType PreferredWidthType { get; set; }
+  public PreferredWidthType PreferredWidthType { get; set; }
 }

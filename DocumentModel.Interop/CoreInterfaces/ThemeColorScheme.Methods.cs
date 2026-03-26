@@ -15,7 +15,7 @@ public partial interface ThemeColorScheme
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themecolorscheme.colors?view=office-pia"/>
-  public ThemeColor Colors(MsoThemeColorSchemeIndex Index);
+  public ThemeColor Colors(ThemeColorSchemeIndex Index);
   /// <summary>
   /// Invokes `Load`.
   /// </summary>

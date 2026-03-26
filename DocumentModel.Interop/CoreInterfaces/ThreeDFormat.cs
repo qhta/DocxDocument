@@ -21,37 +21,37 @@ public partial interface ThreeDFormat: InteropObject
   /// Gets or sets the `ExtrusionColorType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.extrusioncolortype?view=office-pia"/>
-  public MsoExtrusionColorType ExtrusionColorType { get; set; }
+  public ExtrusionColorType ExtrusionColorType { get; set; }
   /// <summary>
   /// Gets or sets the `Perspective` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.perspective?view=office-pia"/>
-  public MsoTriState Perspective { get; set; }
+  public TriState Perspective { get; set; }
   /// <summary>
   /// Gets the `PresetExtrusionDirection` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.presetextrusiondirection?view=office-pia"/>
-  public MsoPresetExtrusionDirection PresetExtrusionDirection { get; }
+  public PresetExtrusionDirection PresetExtrusionDirection { get; }
   /// <summary>
   /// Gets or sets the `PresetLightingDirection` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.presetlightingdirection?view=office-pia"/>
-  public MsoPresetLightingDirection PresetLightingDirection { get; set; }
+  public PresetLightingDirection PresetLightingDirection { get; set; }
   /// <summary>
   /// Gets or sets the `PresetLightingSoftness` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.presetlightingsoftness?view=office-pia"/>
-  public MsoPresetLightingSoftness PresetLightingSoftness { get; set; }
+  public PresetLightingSoftness PresetLightingSoftness { get; set; }
   /// <summary>
   /// Gets or sets the `PresetMaterial` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.presetmaterial?view=office-pia"/>
-  public MsoPresetMaterial PresetMaterial { get; set; }
+  public PresetMaterial PresetMaterial { get; set; }
   /// <summary>
   /// Gets the `PresetThreeDFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.presetthreedformat?view=office-pia"/>
-  public MsoPresetThreeDFormat PresetThreeDFormat { get; }
+  public PresetThreeDFormat PresetThreeDFormat { get; }
   /// <summary>
   /// Gets or sets the `RotationX` property.
   /// </summary>
@@ -66,12 +66,12 @@ public partial interface ThreeDFormat: InteropObject
   /// Gets or sets the `Visible` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.visible?view=office-pia"/>
-  public MsoTriState Visible { get; set; }
+  public TriState Visible { get; set; }
   /// <summary>
   /// Gets or sets the `PresetLighting` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.presetlighting?view=office-pia"/>
-  public MsoLightRigType PresetLighting { get; set; }
+  public LightRigType PresetLighting { get; set; }
   /// <summary>
   /// Gets or sets the `Z` property.
   /// </summary>
@@ -81,7 +81,7 @@ public partial interface ThreeDFormat: InteropObject
   /// Gets or sets the `BevelTopType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.beveltoptype?view=office-pia"/>
-  public MsoBevelType BevelTopType { get; set; }
+  public BevelType BevelTopType { get; set; }
   /// <summary>
   /// Gets or sets the `BevelTopInset` property.
   /// </summary>
@@ -96,7 +96,7 @@ public partial interface ThreeDFormat: InteropObject
   /// Gets or sets the `BevelBottomType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.bevelbottomtype?view=office-pia"/>
-  public MsoBevelType BevelBottomType { get; set; }
+  public BevelType BevelBottomType { get; set; }
   /// <summary>
   /// Gets or sets the `BevelBottomInset` property.
   /// </summary>
@@ -111,7 +111,7 @@ public partial interface ThreeDFormat: InteropObject
   /// Gets the `PresetCamera` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.presetcamera?view=office-pia"/>
-  public MsoPresetCamera PresetCamera { get; }
+  public PresetCamera PresetCamera { get; }
   /// <summary>
   /// Gets or sets the `RotationZ` property.
   /// </summary>
@@ -136,7 +136,7 @@ public partial interface ThreeDFormat: InteropObject
   /// Gets or sets the `ProjectText` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.projecttext?view=office-pia"/>
-  public MsoTriState ProjectText { get; set; }
+  public TriState ProjectText { get; set; }
   /// <summary>
   /// Gets or sets the `LightAngle` property.
   /// </summary>

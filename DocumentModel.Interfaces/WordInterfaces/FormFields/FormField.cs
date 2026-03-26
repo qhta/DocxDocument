@@ -10,7 +10,7 @@ public partial interface FormField : InteropObject
   /// Returns the field type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.type?view=word-pia"/>
-  public WdFieldType Type { get; }
+  public FieldType Type { get; }
 
   /// <summary>
   /// Returns or sets the name of the specified object.

@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Indicates the background style for an object.
@@ -6,12 +6,11 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobackgroundstyleindex?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoBackgroundStyleIndex
+public enum BackgroundStyleIndex
 {
   /// <summary>
   /// Specifies a combination of styles.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   /// Specifies no styles.
   /// </summary>

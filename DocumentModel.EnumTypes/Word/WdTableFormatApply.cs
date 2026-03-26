@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtableformatapply?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdTableFormatApply
+public enum TableFormatApply
 {
   /// <summary>
   /// Borders.

@@ -19,7 +19,7 @@ public partial interface CanvasShapes
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addcallout?view=word-pia"/>
-  public Shape AddCallout(Core.MsoCalloutType Type, float Left, float Top, float Width, float Height);
+  public Shape AddCallout(Core.CalloutType Type, float Left, float Top, float Width, float Height);
 
   /// <summary>
   /// Creates a connector shape on the drawing canvas.
@@ -34,7 +34,7 @@ public partial interface CanvasShapes
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addconnector?view=word-pia"/>
-  public Shape AddConnector(Core.MsoConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
+  public Shape AddConnector(Core.ConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
 
   /// <summary>
   /// Creates a curved shape using the specified points.
@@ -60,7 +60,7 @@ public partial interface CanvasShapes
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addlabel?view=word-pia"/>
-  public Shape AddLabel(Core.MsoTextOrientation Orientation, float Left, float Top, float Width, float Height);
+  public Shape AddLabel(Core.TextOrientation Orientation, float Left, float Top, float Width, float Height);
 
   /// <summary>
   /// Creates a line shape on the drawing canvas.
@@ -135,7 +135,7 @@ public partial interface CanvasShapes
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addtexteffect?view=word-pia"/>
-  public Shape AddTextEffect(Core.MsoPresetTextEffect PresetTextEffect, string Text, string FontName, float FontSize, Core.MsoTriState FontBold, Core.MsoTriState FontItalic, float Left, float Top);
+  public Shape AddTextEffect(Core.PresetTextEffect PresetTextEffect, string Text, string FontName, float FontSize, Core.TriState FontBold, Core.TriState FontItalic, float Left, float Top);
 
   /// <summary>
   /// Creates a text box on the drawing canvas.
@@ -150,7 +150,7 @@ public partial interface CanvasShapes
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addtextbox?view=word-pia"/>
-  public Shape AddTextbox(Core.MsoTextOrientation Orientation, float Left, float Top, float Width, float Height);
+  public Shape AddTextbox(Core.TextOrientation Orientation, float Left, float Top, float Width, float Height);
 
   /// <summary>
   /// Creates a freeform builder for constructing a custom shape.
@@ -163,7 +163,7 @@ public partial interface CanvasShapes
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.buildfreeform?view=word-pia"/>
-  public FreeformBuilder BuildFreeform(Core.MsoEditingType EditingType, float X1, float Y1);
+  public FreeformBuilder BuildFreeform(Core.EditingType EditingType, float X1, float Y1);
 
   /// <summary>
   /// Returns one or more shapes from the collection.

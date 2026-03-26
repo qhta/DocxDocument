@@ -10,5 +10,5 @@ public partial interface Browser : InteropObject
   /// Gets or sets the type of item that the browser moves to.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.browser.target?view=word-pia"/>
-  public WdBrowseTarget Target { get; set; }
+  public BrowseTarget Target { get; set; }
 }

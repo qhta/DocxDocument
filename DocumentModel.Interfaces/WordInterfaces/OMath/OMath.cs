@@ -22,7 +22,7 @@ public partial interface OMath : InteropObject
   /// Returns or sets the type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.type?view=word-pia"/>
-  public WdOMathType Type { get; set; }
+  public OMathType Type { get; set; }
 
   /// <summary>
   /// Returns the parent equation.
@@ -82,7 +82,7 @@ public partial interface OMath : InteropObject
   /// Returns or sets the justification.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.justification?view=word-pia"/>
-  public WdOMathJc Justification { get; set; }
+  public OMathJc Justification { get; set; }
 
   /// <summary>
   /// Returns or sets the alignment point for the equation.

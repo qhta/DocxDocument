@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies whether the extrusion color is based on the extruded shape's fill (the front face of the extrusion)
@@ -8,7 +8,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoextrusioncolortype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoExtrusionColorType
+public enum ExtrusionColorType
 {
   /// <summary>
   /// Return value only; indicates a combination of the other states.

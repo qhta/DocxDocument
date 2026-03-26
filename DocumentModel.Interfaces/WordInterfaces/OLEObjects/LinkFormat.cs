@@ -34,7 +34,7 @@ public partial interface LinkFormat : InteropObject
   /// Returns the type of linked object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linkformat.type?view=word-pia"/>
-  public WdLinkType Type { get; }
+  public LinkType Type { get; }
 
   /// <summary>
   /// Returns or sets the full path and file name of the source for the linked object.

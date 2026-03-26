@@ -16,6 +16,6 @@ public partial interface TabStop2: InteropObject
   /// Gets or sets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstop2.type?view=office-pia"/>
-  public MsoTabStopType Type { get; set; }
+  public TabStopType Type { get; set; }
 }
 

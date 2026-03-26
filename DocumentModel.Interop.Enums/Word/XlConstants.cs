@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlconstants?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlConstants
+public enum Constants
 {
   /// <summary>
   /// Summary row is displayed above the specified range.
@@ -230,7 +230,7 @@ public enum XlConstants
   Distributed = -4117,
   /// <summary>
   /// Microsoft Word applies custom settings, such as a color or error amount, to the specified object. public enum
-  /// XlConstants
+  /// Constants
   /// </summary>
   Custom = -4114,
   /// <summary>

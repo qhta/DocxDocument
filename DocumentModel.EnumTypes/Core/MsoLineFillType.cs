@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the type of fill for a line.
@@ -6,12 +6,11 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolinefilltype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoLineFillType
+public enum LineFillType
 {
   /// <summary>
   /// Specifies a mixture of line fill types.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   /// No line fill.
   /// </summary>

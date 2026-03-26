@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdapplyquickstylesets?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdApplyQuickStyleSets
+public enum ApplyQuickStyleSets
 {
   /// <summary>
   /// Resets the Quick Style to the style set in use when the document was opened.

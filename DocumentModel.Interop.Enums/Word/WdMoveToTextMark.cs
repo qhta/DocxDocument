@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdmovetotextmark?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdMoveToTextMark
+public enum MoveToTextMark
 {
   /// <summary>
   /// No special formatting for moved text.

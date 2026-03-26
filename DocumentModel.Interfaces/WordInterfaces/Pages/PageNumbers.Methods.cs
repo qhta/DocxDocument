@@ -17,5 +17,5 @@ public partial interface PageNumbers: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumbers.add?view=word-pia"/>
-  public PageNumber Add(WdPageNumberAlignment PageNumberAlignment, bool FirstPage);
+  public PageNumber Add(PageNumberAlignment PageNumberAlignment, bool FirstPage);
 }

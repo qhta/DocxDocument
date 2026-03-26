@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdfindmatch?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdFindMatch
+public enum FindMatch
 {
   /// <summary>
   /// Not supported.

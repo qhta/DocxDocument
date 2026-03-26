@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsortseparator?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdSortSeparator
+public enum SortSeparator
 {
   /// <summary>
   /// Tab.

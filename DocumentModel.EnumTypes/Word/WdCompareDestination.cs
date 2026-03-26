@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcomparedestination?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdCompareDestination
+public enum CompareDestination
 {
   /// <summary>
   /// Tracks the differences between the two files using tracked changes in the original document.

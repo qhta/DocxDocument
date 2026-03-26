@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdtwolinesinonetype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdTwoLinesInOneType
+public enum TwoLinesInOneType
 {
   /// <summary>
   /// Restore the two lines of text written into one to two separate lines.

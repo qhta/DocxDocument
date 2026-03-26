@@ -27,7 +27,7 @@ public partial interface Assistant: InteropObject
   /// Gets the `BalloonError` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.balloonerror?view=office-pia"/>
-  public MsoBalloonErrorType BalloonError { get; }
+  public BalloonErrorType BalloonError { get; }
   /// <summary>
   /// Gets or sets the `Visible` property.
   /// </summary>
@@ -37,7 +37,7 @@ public partial interface Assistant: InteropObject
   /// Gets or sets the `Animation` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.animation?view=office-pia"/>
-  public MsoAnimationType Animation { get; set; }
+  public AnimationType Animation { get; set; }
   /// <summary>
   /// Gets or sets the `Reduced` property.
   /// </summary>

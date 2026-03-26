@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcontentcontrolappearance?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdContentControlAppearance
+public enum ContentControlAppearance
 {
   /// <summary>
   /// Represents a content control shown as a shaded rectangle or bounding box (with optional title).

@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies how a command bar is protected from user customization.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobarprotection?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoBarProtection
+public enum BarProtection
 {
   /// <summary>
   /// All aspects of command bar can be customized by user.

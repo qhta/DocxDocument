@@ -21,7 +21,7 @@ public partial interface Balloon: InteropObject
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.balloon.show?view=office-pia"/>
-  public MsoBalloonButtonType Show();
+  public BalloonButtonType Show();
   /// <summary>
   /// Closes the balloon.
   /// </summary>

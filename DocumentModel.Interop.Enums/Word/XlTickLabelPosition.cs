@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlticklabelposition?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlTickLabelPosition
+public enum TickLabelPosition
 {
   /// <summary>
   /// Next to axis (where axis is not at either side of the chart).

@@ -42,11 +42,11 @@ public partial interface _CustomTaskPane
   /// Gets or sets the `DockPosition` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customtaskpane.dockposition?view=office-pia"/>
-  public MsoCTPDockPosition DockPosition { get; set; }
+  public CTPDockPosition DockPosition { get; set; }
   /// <summary>
   /// Gets or sets the `DockPositionRestrict` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customtaskpane.dockpositionrestrict?view=office-pia"/>
-  public MsoCTPDockPositionRestrict DockPositionRestrict { get; set; }
+  public CTPDockPositionRestrict DockPositionRestrict { get; set; }
 }
 

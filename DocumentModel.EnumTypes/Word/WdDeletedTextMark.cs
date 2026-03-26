@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddeletedtextmark?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdDeletedTextMark
+public enum DeletedTextMark
 {
   /// <summary>
   /// Deleted text is hidden.

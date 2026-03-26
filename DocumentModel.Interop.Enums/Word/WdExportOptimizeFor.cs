@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdexportoptimizefor?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdExportOptimizeFor
+public enum ExportOptimizeFor
 {
   /// <summary>
   /// Export for print, which is higher quailty and results in a larger file size.

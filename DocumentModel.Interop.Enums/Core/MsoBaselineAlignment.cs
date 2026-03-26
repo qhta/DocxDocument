@@ -1,9 +1,9 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobaselinealignment?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoBaselineAlignment
+public enum BaselineAlignment
 {
   /// <summary>
   /// No description is available.

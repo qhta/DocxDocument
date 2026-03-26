@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies orientation for text.
@@ -6,12 +6,11 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotextorientation?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoTextOrientation
+public enum TextOrientation
 {
   /// <summary>
   /// Not supported.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   /// Horizontal.
   /// </summary>

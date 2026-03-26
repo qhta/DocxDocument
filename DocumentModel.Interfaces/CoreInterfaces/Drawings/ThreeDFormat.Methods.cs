@@ -29,19 +29,19 @@ public partial interface ThreeDFormat: InteropObject
   /// </summary>
   /// <param name="PresetThreeDFormat">The `PresetThreeDFormat` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.setthreedformat?view=office-pia"/>
-  public void SetThreeDFormat(MsoPresetThreeDFormat PresetThreeDFormat);
+  public void SetThreeDFormat(PresetThreeDFormat PresetThreeDFormat);
   /// <summary>
   /// Invokes `SetExtrusionDirection`.
   /// </summary>
   /// <param name="PresetExtrusionDirection">The `PresetExtrusionDirection` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.setextrusiondirection?view=office-pia"/>
-  public void SetExtrusionDirection(MsoPresetExtrusionDirection PresetExtrusionDirection);
+  public void SetExtrusionDirection(PresetExtrusionDirection PresetExtrusionDirection);
   /// <summary>
   /// Invokes `SetPresetCamera`.
   /// </summary>
   /// <param name="PresetCamera">The `PresetCamera` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.setpresetcamera?view=office-pia"/>
-  public void SetPresetCamera(MsoPresetCamera PresetCamera);
+  public void SetPresetCamera(PresetCamera PresetCamera);
   /// <summary>
   /// Invokes `IncrementRotationZ`.
   /// </summary>

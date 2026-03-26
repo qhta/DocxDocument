@@ -146,7 +146,7 @@ public partial interface CommandBarControl: _IMsoOleAccDispObj
   /// Gets or sets the `OLEUsage` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.oleusage?view=office-pia"/>
-  public MsoControlOLEUsage OLEUsage { get; set; }
+  public ControlOLEUsage OLEUsage { get; set; }
   /// <summary>
   /// Gets or sets the `OnAction` property.
   /// </summary>
@@ -181,7 +181,7 @@ public partial interface CommandBarControl: _IMsoOleAccDispObj
   /// Gets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.type?view=office-pia"/>
-  public MsoControlType Type { get; }
+  public ControlType Type { get; }
   /// <summary>
   /// Gets or sets the `Visible` property.
   /// </summary>

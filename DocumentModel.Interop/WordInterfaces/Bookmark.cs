@@ -46,5 +46,5 @@ public partial interface Bookmark : InteropObject
   /// Gets the story type for the bookmark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.storytype?view=word-pia"/>
-  public WdStoryType StoryType { get; }
+  public StoryType StoryType { get; }
 }

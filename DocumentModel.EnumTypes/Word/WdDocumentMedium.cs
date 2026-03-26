@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddocumentmedium?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdDocumentMedium
+public enum DocumentMedium
 {
   /// <summary>
   /// E-mail message.

@@ -19,13 +19,13 @@ public partial interface FillFormat
   /// <param name="Variant">The `Variant` parameter.</param>
   /// <param name="Degree">The `Degree` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.onecolorgradient?view=office-pia"/>
-  public void OneColorGradient(MsoGradientStyle Style, int Variant, float Degree);
+  public void OneColorGradient(GradientStyle Style, int Variant, float Degree);
   /// <summary>
   /// Applies a patterned fill.
   /// </summary>
   /// <param name="Pattern">The `Pattern` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.patterned?view=office-pia"/>
-  public void Patterned(MsoPatternType Pattern);
+  public void Patterned(PatternType Pattern);
   /// <summary>
   /// Applies a preset gradient fill.
   /// </summary>
@@ -33,13 +33,13 @@ public partial interface FillFormat
   /// <param name="Variant">The `Variant` parameter.</param>
   /// <param name="PresetGradientType">The `PresetGradientType` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.presetgradient?view=office-pia"/>
-  public void PresetGradient(MsoGradientStyle Style, int Variant, MsoPresetGradientType PresetGradientType);
+  public void PresetGradient(GradientStyle Style, int Variant, PresetGradientType PresetGradientType);
   /// <summary>
   /// Applies a preset texture fill.
   /// </summary>
   /// <param name="PresetTexture">The `PresetTexture` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.presettextured?view=office-pia"/>
-  public void PresetTextured(MsoPresetTexture PresetTexture);
+  public void PresetTextured(PresetTexture PresetTexture);
   /// <summary>
   /// Applies a solid fill.
   /// </summary>
@@ -51,7 +51,7 @@ public partial interface FillFormat
   /// <param name="Style">The `Style` parameter.</param>
   /// <param name="Variant">The `Variant` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.twocolorgradient?view=office-pia"/>
-  public void TwoColorGradient(MsoGradientStyle Style, int Variant);
+  public void TwoColorGradient(GradientStyle Style, int Variant);
   /// <summary>
   /// Uses a picture file as the fill source.
   /// </summary>

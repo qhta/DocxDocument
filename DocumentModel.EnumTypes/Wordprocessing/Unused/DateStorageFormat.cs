@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing
 {
   /// <summary>
-  /// Specifies the date storage format for a content control, corresponding to Microsoft.Office.Interop.Word.WdContentControlDateStorageFormat.
+  /// Specifies the date storage format for a content control, corresponding to Microsoft.Office.Interop.Word.ContentControlDateStorageFormat.
   /// </summary>
   [OpenXmlNotMapped]
   public enum DateStorageFormat

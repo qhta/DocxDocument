@@ -1,9 +1,9 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopictureeffecttype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoPictureEffectType
+public enum PictureEffectType
 {
   /// <summary>
   /// No description is available.
@@ -58,7 +58,7 @@ public enum MsoPictureEffectType
   /// </summary>
   GlowEdges,
   /// <summary>
-  /// public enum class MsoPictureEffectType
+  /// public enum class PictureEffectType
   /// </summary>
   LightScreen,
   /// <summary>

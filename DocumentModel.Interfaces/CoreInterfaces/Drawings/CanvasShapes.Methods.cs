@@ -26,7 +26,7 @@ public partial interface CanvasShapes: InteropObject
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addcallout?view=office-pia"/>
-  public Shape AddCallout(MsoCalloutType Type, float Left, float Top, float Width, float Height);
+  public Shape AddCallout(CalloutType Type, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddConnector`.
   /// </summary>
@@ -37,7 +37,7 @@ public partial interface CanvasShapes: InteropObject
   /// <param name="EndY">The `EndY` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addconnector?view=office-pia"/>
-  public Shape AddConnector(MsoConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
+  public Shape AddConnector(ConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
   /// <summary>
   /// Invokes `AddCurve`.
   /// </summary>
@@ -55,7 +55,7 @@ public partial interface CanvasShapes: InteropObject
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addlabel?view=office-pia"/>
-  public Shape AddLabel(MsoTextOrientation Orientation, float Left, float Top, float Width, float Height);
+  public Shape AddLabel(TextOrientation Orientation, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddLine`.
   /// </summary>
@@ -79,7 +79,7 @@ public partial interface CanvasShapes: InteropObject
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addpicture?view=office-pia"/>
   public Shape AddPicture
-  (string FileName, MsoTriState LinkToFile, MsoTriState SaveWithDocument, float Left, float Top, float Width,
+  (string FileName, TriState LinkToFile, TriState SaveWithDocument, float Left, float Top, float Width,
     float Height);
   /// <summary>
   /// Invokes `AddPolyline`.
@@ -98,7 +98,7 @@ public partial interface CanvasShapes: InteropObject
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addshape?view=office-pia"/>
-  public Shape AddShape(MsoAutoShapeType Type, float Left, float Top, float Width, float Height);
+  public Shape AddShape(AutoShapeType Type, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `AddTextEffect`.
   /// </summary>
@@ -113,8 +113,8 @@ public partial interface CanvasShapes: InteropObject
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addtexteffect?view=office-pia"/>
   public Shape AddTextEffect
-  (MsoPresetTextEffect PresetTextEffect, string Text, string FontName, float FontSize, MsoTriState FontBold,
-    MsoTriState FontItalic, float Left, float Top);
+  (PresetTextEffect PresetTextEffect, string Text, string FontName, float FontSize, TriState FontBold,
+    TriState FontItalic, float Left, float Top);
   /// <summary>
   /// Invokes `AddTextbox`.
   /// </summary>
@@ -125,7 +125,7 @@ public partial interface CanvasShapes: InteropObject
   /// <param name="Height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addtextbox?view=office-pia"/>
-  public Shape AddTextbox(MsoTextOrientation Orientation, float Left, float Top, float Width, float Height);
+  public Shape AddTextbox(TextOrientation Orientation, float Left, float Top, float Width, float Height);
   /// <summary>
   /// Invokes `BuildFreeform`.
   /// </summary>
@@ -134,7 +134,7 @@ public partial interface CanvasShapes: InteropObject
   /// <param name="Y1">The `Y1` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.buildfreeform?view=office-pia"/>
-  public FreeformBuilder BuildFreeform(MsoEditingType EditingType, float X1, float Y1);
+  public FreeformBuilder BuildFreeform(EditingType EditingType, float X1, float Y1);
   /// <summary>
   /// Invokes `Range`.
   /// </summary>

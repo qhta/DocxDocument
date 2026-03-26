@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdwraptype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdWrapType
+public enum WrapType
 {
   /// <summary>
   /// Wraps text around the shape. Line continuation is on the opposite side of the shape.

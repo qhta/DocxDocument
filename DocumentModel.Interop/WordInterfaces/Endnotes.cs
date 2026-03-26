@@ -10,13 +10,13 @@ public partial interface Endnotes : InteropObject, InteropCollection<Endnote>
   /// Gets or sets the location of endnotes in the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.endnotes.location?view=word-pia"/>
-  public WdEndnoteLocation Location { get; set; }
+  public EndnoteLocation Location { get; set; }
 
   /// <summary>
   /// Gets or sets the number style for endnotes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.endnotes.numberstyle?view=word-pia"/>
-  public WdNoteNumberStyle NumberStyle { get; set; }
+  public NoteNumberStyle NumberStyle { get; set; }
 
   /// <summary>
   /// Gets or sets the starting number for endnotes.
@@ -28,7 +28,7 @@ public partial interface Endnotes : InteropObject, InteropCollection<Endnote>
   /// Gets or sets the numbering rule for endnotes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.endnotes.numberingrule?view=word-pia"/>
-  public WdNumberingRule NumberingRule { get; set; }
+  public NumberingRule NumberingRule { get; set; }
 
   /// <summary>
   /// Gets the endnote separator.

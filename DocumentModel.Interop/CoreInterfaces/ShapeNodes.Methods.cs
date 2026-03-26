@@ -36,7 +36,7 @@ public partial interface ShapeNodes
   /// <param name="Y3">The `Y3` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapenodes.insert?view=office-pia"/>
   public void Insert
-  (int Index, MsoSegmentType SegmentType, MsoEditingType EditingType, float X1, float Y1, float X2,
+  (int Index, SegmentType SegmentType, EditingType EditingType, float X1, float Y1, float X2,
     float Y2, float X3, float Y3);
   /// <summary>
   /// Invokes `SetEditingType`.
@@ -44,7 +44,7 @@ public partial interface ShapeNodes
   /// <param name="Index">The `Index` parameter.</param>
   /// <param name="EditingType">The `EditingType` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapenodes.seteditingtype?view=office-pia"/>
-  public void SetEditingType(int Index, MsoEditingType EditingType);
+  public void SetEditingType(int Index, EditingType EditingType);
   /// <summary>
   /// Invokes `SetPosition`.
   /// </summary>
@@ -59,6 +59,6 @@ public partial interface ShapeNodes
   /// <param name="Index">The `Index` parameter.</param>
   /// <param name="SegmentType">The `SegmentType` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapenodes.setsegmenttype?view=office-pia"/>
-  public void SetSegmentType(int Index, MsoSegmentType SegmentType);
+  public void SetSegmentType(int Index, SegmentType SegmentType);
 }
 

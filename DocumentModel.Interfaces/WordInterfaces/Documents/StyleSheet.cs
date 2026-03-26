@@ -34,7 +34,7 @@ public partial interface StyleSheet : InteropObject
   /// Returns the template type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.stylesheet.type?view=word-pia"/>
-  public WdStyleSheetLinkType Type { get; set; }
+  public StyleSheetLinkType Type { get; set; }
 
   /// <summary>
   /// Returns a String representing the title of a Web style sheet.

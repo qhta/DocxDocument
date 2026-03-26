@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the capitalization of text.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotextchangecase?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoTextChangeCase
+public enum TextChangeCase
 {
   /// <summary>
   /// Display the text as sentence case characters. Sentence case specifies that the first letter of the sentence is

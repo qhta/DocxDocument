@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcaptionnumberstylehid?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdCaptionNumberStyleHID
+public enum CaptionNumberStyleHID
 {
   /// <summary>
   /// No description is available.

@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsortfieldtypehid?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdSortFieldTypeHID
+public enum SortFieldTypeHID
 {
   /// <summary>
   /// No description is available.

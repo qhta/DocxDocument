@@ -56,6 +56,6 @@ public partial interface IMsoChartFormat
   /// Gets or sets the `AutoShapeType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartformat.autoshapetype?view=office-pia"/>
-  public MsoAutoShapeType AutoShapeType { get; set; }
+  public AutoShapeType AutoShapeType { get; set; }
 }
 

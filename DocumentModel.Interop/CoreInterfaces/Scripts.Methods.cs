@@ -28,8 +28,8 @@ public partial interface Scripts
   /// <returns>The added script.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.add?view=office-pia"/>
   public Script Add
-  (object Anchor, MsoScriptLocation Location,
-    MsoScriptLanguage Language, string Id, string Extended,
+  (object Anchor, ScriptLocation Location,
+    ScriptLanguage Language, string Id, string Extended,
     string ScriptText);
   /// <summary>
   /// Deletes all scripts in the collection.

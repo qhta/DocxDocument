@@ -22,7 +22,7 @@ public partial interface ShapeRange: InteropObject
   /// <param name="AlignCmd">The `AlignCmd` parameter.</param>
   /// <param name="RelativeTo">The `RelativeTo` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.align?view=office-pia"/>
-  public void Align(MsoAlignCmd AlignCmd, MsoTriState RelativeTo);
+  public void Align(AlignCmd AlignCmd, TriState RelativeTo);
   /// <summary>
   /// Invokes `Apply`.
   /// </summary>
@@ -39,7 +39,7 @@ public partial interface ShapeRange: InteropObject
   /// <param name="DistributeCmd">The `DistributeCmd` parameter.</param>
   /// <param name="RelativeTo">The `RelativeTo` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.distribute?view=office-pia"/>
-  public void Distribute(MsoDistributeCmd DistributeCmd, MsoTriState RelativeTo);
+  public void Distribute(DistributeCmd DistributeCmd, TriState RelativeTo);
   /// <summary>
   /// Invokes `Duplicate`.
   /// </summary>
@@ -51,7 +51,7 @@ public partial interface ShapeRange: InteropObject
   /// </summary>
   /// <param name="FlipCmd">The `FlipCmd` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.flip?view=office-pia"/>
-  public void Flip(MsoFlipCmd FlipCmd);
+  public void Flip(FlipCmd FlipCmd);
   /// <summary>
   /// Invokes `IncrementLeft`.
   /// </summary>
@@ -100,7 +100,7 @@ public partial interface ShapeRange: InteropObject
   /// <param name="fScale">The `fScale` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.scaleheight?view=office-pia"/>
   public void ScaleHeight
-    (float Factor, MsoTriState RelativeToOriginalSize, MsoScaleFrom fScale);
+    (float Factor, TriState RelativeToOriginalSize, ScaleFrom fScale);
   /// <summary>
   /// Invokes `ScaleWidth`.
   /// </summary>
@@ -109,7 +109,7 @@ public partial interface ShapeRange: InteropObject
   /// <param name="fScale">The `fScale` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.scalewidth?view=office-pia"/>
   public void ScaleWidth
-    (float Factor, MsoTriState RelativeToOriginalSize, MsoScaleFrom fScale);
+    (float Factor, TriState RelativeToOriginalSize, ScaleFrom fScale);
   /// <summary>
   /// Invokes `Select`.
   /// </summary>
@@ -132,7 +132,7 @@ public partial interface ShapeRange: InteropObject
   /// </summary>
   /// <param name="ZOrderCmd">The `ZOrderCmd` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.zorder?view=office-pia"/>
-  public void ZOrder(MsoZOrderCmd ZOrderCmd);
+  public void ZOrder(ZOrderCmd ZOrderCmd);
   /// <summary>
   /// Invokes `CanvasCropLeft`.
   /// </summary>
@@ -173,6 +173,6 @@ public partial interface ShapeRange: InteropObject
   /// <param name="MergeCmd">The `MergeCmd` parameter.</param>
   /// <param name="PrimaryShape">The `PrimaryShape` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.mergeshapes?view=office-pia"/>
-  public void MergeShapes(MsoMergeCmd MergeCmd, Shape PrimaryShape);
+  public void MergeShapes(MergeCmd MergeCmd, Shape PrimaryShape);
 }
 

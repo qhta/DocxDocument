@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xllegendposition?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlLegendPosition
+public enum LegendPosition
 {
   /// <summary>
   /// In the upper right-hand corner of the chart border.

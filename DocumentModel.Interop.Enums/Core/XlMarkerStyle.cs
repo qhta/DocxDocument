@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlmarkerstyle?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlMarkerStyle
+public enum MarkerStyle
 {
   /// <summary>
   /// Automatic markers.
