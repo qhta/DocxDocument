@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Word;
 
 /// <remarks>
@@ -60,7 +62,7 @@ public partial interface CanvasShapes: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addlabel?view=word-pia"/>
-  public Shape AddLabel(Core.TextOrientation Orientation, float Left, float Top, float Width, float Height);
+  public Shape AddLabel(TextOrientation Orientation, float Left, float Top, float Width, float Height);
 
   /// <summary>
   /// Creates a line shape on the drawing canvas.
@@ -150,7 +152,7 @@ public partial interface CanvasShapes: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addtextbox?view=word-pia"/>
-  public Shape AddTextbox(Core.TextOrientation Orientation, float Left, float Top, float Width, float Height);
+  public Shape AddTextbox(TextOrientation Orientation, float Left, float Top, float Width, float Height);
 
   /// <summary>
   /// Creates a freeform builder for constructing a custom shape.

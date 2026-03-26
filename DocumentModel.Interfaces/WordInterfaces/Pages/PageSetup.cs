@@ -60,7 +60,7 @@ public partial interface PageSetup : InteropObject
   /// Returns or sets the orientation of the page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagesetup.orientation?view=word-pia"/>
-  public Orientation Orientation { get; set; }
+  public PageOrientation Orientation { get; set; }
 
   /// <summary>
   /// Returns or sets the paper tray to use for the first page of a document or section.
