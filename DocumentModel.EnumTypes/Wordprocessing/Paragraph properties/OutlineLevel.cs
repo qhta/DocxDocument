@@ -47,6 +47,11 @@ public enum OutlineLevel
   Level8 = 7,
 
   /// <summary>
+  /// Represents the ninth level in an outline hierarchy.
+  /// </summary>
+  Level9 = 8,
+
+  /// <summary>
   /// Represents no outline level.
   /// </summary>
   BodyText = 9,

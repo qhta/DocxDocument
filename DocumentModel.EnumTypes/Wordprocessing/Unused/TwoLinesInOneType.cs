@@ -1,11 +1,11 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the character to use to enclose two lines being written into one.
+/// Defines the TwoLinesInOneBracket enumeration.
+/// Used to represent Open XML mapped options.
 /// </summary>
-/// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdtwolinesinonetype?view=office-pia` for Office interop details.
-/// </remarks>
+[OpenXmlNotMapped]
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TwoLinesInOneType
 {
   /// <summary>

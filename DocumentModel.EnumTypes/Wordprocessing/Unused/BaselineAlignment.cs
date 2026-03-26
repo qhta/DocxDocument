@@ -19,7 +19,7 @@ public enum BaselineAlignment
   /// <summary>Align to center</summary>
   [OpenXmlEnumValue(nameof(DXW.VerticalTextAlignmentValues.Center))]
   Center,
-  /// <summary>Align to bottom</summary>
+  /// <summary>Align to bottom according to the Far East font standards.</summary>
   [OpenXmlEnumValue(nameof(DXW.VerticalTextAlignmentValues.Bottom))]
   Bottom,
   /// <summary>Automatic alignment</summary>

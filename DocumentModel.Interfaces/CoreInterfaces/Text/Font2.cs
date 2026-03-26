@@ -1,4 +1,6 @@
 
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
@@ -56,7 +58,7 @@ public partial interface Font2: InteropObject
   /// Gets or sets the `UnderlineStyle` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.underlinestyle?view=office-pia"/>
-  public TextUnderlineType UnderlineStyle { get; set; }
+  public UnderlineType UnderlineStyle { get; set; }
   /// <summary>
   /// Gets or sets the `Allcaps` property.
   /// </summary>
