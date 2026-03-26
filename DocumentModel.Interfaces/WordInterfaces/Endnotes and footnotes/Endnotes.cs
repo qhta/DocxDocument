@@ -12,7 +12,7 @@ public partial interface Endnotes : InteropObject, InteropCollection<Endnote>
   /// Gets or sets the location of endnotes in the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.endnotes.location?view=word-pia"/>
-  public EndnoteLocation Location { get; set; }
+  public EndnotePosition Location { get; set; }
 
   /// <summary>
   /// Gets or sets the number style for endnotes.

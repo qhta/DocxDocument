@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
@@ -22,7 +24,7 @@ public partial interface TextInput : InteropObject
   /// Returns the type of text form field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textinput.type?view=word-pia"/>
-  public TextFormFieldType Type { get; }
+  public TextBoxFormField Type { get; }
 
   /// <summary>
   /// Returns the text formatting for the specified text box.
