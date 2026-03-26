@@ -1,11 +1,8 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Wordprocessing;
 /// <summary>
-/// Specifies the type of item to be cross referenced.
+/// Specifies the type of item to be cross-referenced.
 /// </summary>
-/// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdreferencetype?view=office-pia` for Office interop details.
-/// </remarks>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ReferenceType
 {
   /// <summary>

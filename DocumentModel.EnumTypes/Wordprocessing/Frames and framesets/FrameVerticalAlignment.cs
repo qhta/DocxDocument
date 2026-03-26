@@ -3,8 +3,8 @@ namespace DocumentModel.Wordprocessing;
 ///   Defines the VerticalAlignmentValues enumeration.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXM.VerticalAlignmentValues))]
-public enum VerticalAlignment
+[OpenXmlEnumType(typeof(DXW.VerticalAlignmentValues))]
+public enum FrameVerticalAlignment
 {
   /// <summary>
   ///   In line With Text.

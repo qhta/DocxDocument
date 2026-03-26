@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXW.SectionMarkValues))]
-public enum SectionMarkType
+public enum SectionStart
 {
   /// <summary>
   ///   Next Page ISection Break.
@@ -12,7 +12,7 @@ public enum SectionMarkType
   [OpenXmlEnumValue(nameof(DXW.SectionMarkValues.NextPage))]
   NextPage,
   /// <summary>
-  ///   IColumn ISection Break.
+  ///   Column Section Break.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.SectionMarkValues.NextColumn))]
   NextColumn,
