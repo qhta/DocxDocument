@@ -132,7 +132,7 @@ namespace DocumentModel.InOpenXml.Test
         RsidDel = isUpdated ? new HexInt(0x1002) : new HexInt(0x0002),
         RsidR = isUpdated ? new HexInt(0x1003) : new HexInt(0x0003),
         RsidSect = isUpdated ? new HexInt(0x1004) : new HexInt(0x0004),
-        SectionType = isUpdated ? SectionMarkType.EvenPage : SectionMarkType.NextPage,
+        SectionType = isUpdated ? SectionStart.EvenPage : SectionStart.NextPage,
         FormProtection = isUpdated,
         VerticalTextAlignmentOnPage = isUpdated ? VerticalJustification.Bottom : VerticalJustification.Top,
         NoEndnote = true,

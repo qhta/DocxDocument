@@ -23,12 +23,12 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   /// Source document type for the mail merge (e.g., form letter, email, envelope).
   /// </summary>
   [OpenXmlProperty(nameof(DXW.MailMerge.MainDocumentType))]
-  public MailMergeDocument? MainDocumentType
+  public MailMergeMainDocType? MainDocumentType
   {
     get => _MainDocumentType;
     set => UpdateField(ref _MainDocumentType, value, nameof(MainDocumentType));
   }
-  private MailMergeDocument? _MainDocumentType;
+  private MailMergeMainDocType? _MainDocumentType;
   /// <summary>
   /// Indicates whether the query contains a link to an external query file.
   /// </summary>

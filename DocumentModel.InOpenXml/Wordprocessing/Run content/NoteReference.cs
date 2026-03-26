@@ -8,8 +8,8 @@ public abstract partial class NoteReference<T> : ModelElement<T>, IRunContent wh
     /// <summary>
     /// Specifies which interface (footnote, endnote, or annotation) is the target of this reference.
     /// </summary>
-    public NoteReferenceType Type { get => _type; set => UpdateField(ref _type, value, nameof(Type)); }
-    private NoteReferenceType _type;
+    public ReferenceType Type { get => _type; set => UpdateField(ref _type, value, nameof(Type)); }
+    private ReferenceType _type;
     /// <summary>
     /// Indicates whether the footnote or endnote reference mark is suppressed, allowing for custom marks to follow.
     /// </summary>

@@ -16,6 +16,11 @@
   <ItemGroup>
     <Compile Remove="**\*.Methods.cs" />
     <Compile Remove="Base Interop\ITypedModelElement.cs" />
+    <Compile Remove="Common properties\BuiltInDocumentProperties.Imp.cs" />
+    <Compile Remove="Common properties\BuiltInDocumentProperty.Imp.cs" />
+    <Compile Remove="Common properties\CustomDocumentProperties.Imp.cs" />
+    <Compile Remove="Common properties\CustomProperty.Imp.cs" />
+    <Compile Remove="Wordprocessing\Document\Document.Imp.cs" />
     <Compile Remove="Wordprocessing\Settings\Settings.cs" />
     <Compile Remove="Wordprocessing\Styles\StyleDef.ext.cs" />
   </ItemGroup>
