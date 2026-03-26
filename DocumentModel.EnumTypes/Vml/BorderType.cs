@@ -135,10 +135,10 @@ public enum BorderType
   ///   Outset Border.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXVW.BorderValues.HTMLOutset))]
-  HTMLOutset,
+  Outset,
   /// <summary>
   ///   Inset Border.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXVW.BorderValues.HTMLInset))]
-  HTMLInset
+  Inset
 }

@@ -26,11 +26,11 @@ public enum BorderType
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.BorderValues.Double))]
   Double,
-  ///// <summary>
-  /////   Hairline Border.
-  ///// </summary>
-  //[OpenXmlEnumValue(nameof(DXW.BorderValues.Hairline))]
-  //Hairline,
+  /// <summary>
+  ///   Hairline Border.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DXW.BorderValues.Nil))]
+  Hairline,
   /// <summary>
   ///   Dotted Border.
   /// </summary>
