@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
@@ -16,7 +18,7 @@ public partial interface Endnotes : InteropObject, InteropCollection<Endnote>
   /// Gets or sets the number style for endnotes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.endnotes.numberstyle?view=word-pia"/>
-  public NoteNumberStyle NumberStyle { get; set; }
+  public NumberStyle NumberStyle { get; set; }
 
   /// <summary>
   /// Gets or sets the starting number for endnotes.

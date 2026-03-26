@@ -138,11 +138,11 @@ public partial interface Borders : InteropObject, InteropCollection<Border>
   /// Gets or sets the color of inside borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.insidecolor?view=word-pia"/>
-  public Color InsideColor { get; set; }
+  public RgbColor InsideColor { get; set; }
 
   /// <summary>
   /// Gets or sets the color of outside borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.outsidecolor?view=word-pia"/>
-  public Color OutsideColor { get; set; }
+  public RgbColor OutsideColor { get; set; }
 }
