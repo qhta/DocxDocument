@@ -846,7 +846,7 @@ public partial interface _Document: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.protect?view=word-pia"/>
-  public void Protect(ProtectionType Type, bool NoReset, string Password, bool UseIRM, bool EnforceStyleLock);
+  public void Protect(DocumentProtectionType Type, bool NoReset, string Password, bool UseIRM, bool EnforceStyleLock);
 
   /// <summary>
   /// Reserved for internal use.
@@ -858,7 +858,7 @@ public partial interface _Document: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.protect2002?view=word-pia"/>
-  public void Protect2002(ProtectionType Type, bool NoReset, string Password);
+  public void Protect2002(DocumentProtectionType Type, bool NoReset, string Password);
 
   /// <summary>
   /// Returns a Range object by using the specified starting and ending character positions.
