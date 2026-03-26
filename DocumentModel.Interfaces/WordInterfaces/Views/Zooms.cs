@@ -1,6 +1,6 @@
 using DocumentModel.Wordprocessing;
 
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// A collection of Zoom objects that represents the magnification options for each view (outline, normal, print

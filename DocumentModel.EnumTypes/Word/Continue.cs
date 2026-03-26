@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies whether the formatting from the previous list can be continued.

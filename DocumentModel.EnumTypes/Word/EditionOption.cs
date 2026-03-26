@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// This enumeration has been deprecated and should not be used.

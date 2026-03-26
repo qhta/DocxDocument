@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies the orientation of envelopes.

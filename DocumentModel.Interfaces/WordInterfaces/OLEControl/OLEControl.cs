@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents an OLE control in a Word document.

@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies the predefined format to apply to a table.

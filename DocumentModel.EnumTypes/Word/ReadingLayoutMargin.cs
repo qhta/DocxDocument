@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies whether margins are visible or hidden when a document is viewed in Full Screen Reading view.

@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// The ContentControlListEntries collection contains ContentControlListEntry objects that represent the items in a drop-down list or combo box content control.

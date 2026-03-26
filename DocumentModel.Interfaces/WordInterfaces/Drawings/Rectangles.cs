@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// A collection of Rectangle objects in a page that represent portions of text and graphics. Use the Rectangles

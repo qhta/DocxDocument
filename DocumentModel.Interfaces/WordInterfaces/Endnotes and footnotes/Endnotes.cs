@@ -1,6 +1,6 @@
 using DocumentModel.Wordprocessing;
 
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// A collection of Endnote objects that represents all the endnotes in a selection, range, or document.

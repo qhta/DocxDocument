@@ -1,6 +1,6 @@
 using DocumentModel.Wordprocessing;
 
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <remarks>
 /// Microsoft Learn API reference.

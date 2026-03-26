@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a single task pane available to Microsoft Word, which contains common tasks that users perform.

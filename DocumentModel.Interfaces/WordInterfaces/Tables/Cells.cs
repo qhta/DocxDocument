@@ -1,6 +1,6 @@
 using DocumentModel.Wordprocessing;
 
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// A collection of Cell objects in a table column, table row, selection, or range.

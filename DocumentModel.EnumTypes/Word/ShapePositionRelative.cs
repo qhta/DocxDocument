@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies whether the LeftRelative or TopRelative property for a Shape or ShapeRange is valid.

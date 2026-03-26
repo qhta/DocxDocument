@@ -1,6 +1,6 @@
 using DocumentModel.Wordprocessing;
 
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents the page setup description. The PageSetup object contains all page setup attributes (left margin,

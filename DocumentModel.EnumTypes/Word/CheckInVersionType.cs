@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies the type of version for the document checked in when using the CheckIn(Boolean, Object, Boolean)

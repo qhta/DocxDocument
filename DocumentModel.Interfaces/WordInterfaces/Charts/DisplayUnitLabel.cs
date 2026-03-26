@@ -1,6 +1,6 @@
 using DocumentModel.Interop.Core;
 
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a unit label on an axis in the specified chart.

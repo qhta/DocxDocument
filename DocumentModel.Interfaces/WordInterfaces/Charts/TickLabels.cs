@@ -1,6 +1,6 @@
 using DocumentModel.Interop.Core;
 
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents the tick-mark labels associated with tick marks on a chart axis.
