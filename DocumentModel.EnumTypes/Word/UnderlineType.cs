@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdunderline?view=office-pia` for Office interop details.
 /// </remarks>
-public enum Underline
+public enum UnderlineType
 {
   /// <summary>
   /// No underline.

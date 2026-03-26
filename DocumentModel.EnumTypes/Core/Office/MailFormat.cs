@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+﻿namespace DocumentMode.Office;
 
 /// <summary>
 /// Specifies the format for an e-mail message. These formats correspond to the formats supported by Microsoft

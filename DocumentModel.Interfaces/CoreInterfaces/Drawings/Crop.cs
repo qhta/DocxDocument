@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Represents an object used to remove a portion of an image.

@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Represents chart element formatting.
@@ -11,7 +11,7 @@ public partial interface IMsoChartFormat: InteropObject
   /// Gets or sets the `Fill` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartformat.fill?view=office-pia"/>
-  public FillFormat Fill { get; }
+  public Core.FillFormat Fill { get; }
   /// <summary>
   /// Gets the `Glow` property.
   /// </summary>

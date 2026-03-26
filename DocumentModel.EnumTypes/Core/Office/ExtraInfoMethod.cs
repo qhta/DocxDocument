@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Core;
+namespace DocumentMode.Office;
 
 /// <summary>
 /// Specifies how to use the value specified in the ExtraInfo property of the FollowHyperlink method.

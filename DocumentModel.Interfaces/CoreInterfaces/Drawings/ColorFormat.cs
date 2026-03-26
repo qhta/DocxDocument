@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Reserved for internal use.

@@ -23,6 +23,9 @@
     <None Remove=".github\**" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove="CoreInterfaces\DispObjs\_IMsoDispObj.Inheritance.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="DeepEqual" Version="5.1.0" />
     <PackageReference Include="DocumentFormat.OpenXml" Version="3.4.1" />
     <PackageReference Include="DocumentFormat.OpenXml.Framework" Version="3.4.1" />

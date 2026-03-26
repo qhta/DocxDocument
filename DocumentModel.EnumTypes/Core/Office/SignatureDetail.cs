@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+﻿namespace DocumentMode.Office;
 
 /// <summary>
 /// Indicates additional information about a signature.

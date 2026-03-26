@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Core;
+namespace DocumentMode.Office;
 
 /// <summary>
 /// Specifies whether the extrusion color is based on the extruded shape's fill (the front face of the extrusion)

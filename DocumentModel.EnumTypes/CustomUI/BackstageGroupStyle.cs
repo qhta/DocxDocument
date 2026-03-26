@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+﻿namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Specifies constants that define the styles of the groups on the File tab.

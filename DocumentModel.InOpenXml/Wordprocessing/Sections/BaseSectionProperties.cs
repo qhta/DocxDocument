@@ -34,12 +34,12 @@ public abstract partial class BaseSectionProperties<T>: ModelElement<T>
   /// Type of the section mark.
   /// </summary>
   [OpenXmlElement(typeof(DXW.SectionMarkValues))]
-  public SectionMarkType? SectionType
+  public SectionStart? SectionType
   {
     get => _SectionType;
     set => UpdateField(ref _SectionType, value, nameof(SectionType));
   }
-  private SectionMarkType? _SectionType;
+  private SectionStart? _SectionType;
   /// <summary>
   /// Indicates whether form protection is enabled.
   /// </summary>

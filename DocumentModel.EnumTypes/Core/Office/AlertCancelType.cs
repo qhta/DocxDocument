@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Core;
+namespace DocumentMode.Office;
 
 /// <summary>
 /// Specifies behavior when the user cancels an alert. Only msoAlertCancelDefault is currently supported.
