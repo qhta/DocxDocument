@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXO10WD.SizeRelativeHorizontallyValues))]
-public enum SizeRelativeHorizontally
+public enum RelativeHorizontalSize
 {
   /// <summary>
   /// The entire margin area is used as the reference for horizontal sizing.

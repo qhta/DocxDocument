@@ -936,7 +936,7 @@ public partial interface Options : InteropObject
   /// a value returned by Visual Basic's RGB function.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaultbordercolor?view=word-pia"/>
-  public Color DefaultBorderColor { get; set; }
+  public RgbColor DefaultBorderColor { get; set; }
 
   /// <summary>
   /// True if Microsoft Word uses pixels as the default unit of measurement for HTML features that support
@@ -1077,7 +1077,7 @@ public partial interface Options : InteropObject
   /// valid Color constant or a value returned by Visual Basic's RGB function.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.diacriticcolorval?view=word-pia"/>
-  public Color DiacriticColorVal { get; set; }
+  public RgbColor DiacriticColorVal { get; set; }
 
   /// <summary>
   /// True if Microsoft Word optimizes all new documents for viewing in Word 97 by disabling any incompatible
