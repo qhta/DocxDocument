@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbreaktype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum BreakType
+public enum BreakTypeEx
 {
   /// <summary>
   /// Section break on next page.

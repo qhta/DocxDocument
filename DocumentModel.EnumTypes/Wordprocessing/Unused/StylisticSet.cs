@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [OpenXmlNotMapped]
 [JsonConverter(typeof(StringEnumConverter))]
-public enum S
+public enum StylisticSet
 {
 
   /// <summary>
