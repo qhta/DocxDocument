@@ -1,6 +1,6 @@
 using DocumentModel.Interop.Core;
 
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents the legend in a chart. Each chart can have only one legend.

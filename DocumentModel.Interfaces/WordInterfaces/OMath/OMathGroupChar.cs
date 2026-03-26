@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a group character object, consisting of a character drawn above or below text, often with the purpose of visually grouping items.

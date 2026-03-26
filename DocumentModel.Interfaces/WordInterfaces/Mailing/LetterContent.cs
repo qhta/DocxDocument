@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents the elements of a letter created by the Letter Wizard as part of the requested batch update sourced from the local Word PIA documentation set.

@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a collection of dictionary objects that contains the active custom Hangul-Hanja conversion dictionaries.

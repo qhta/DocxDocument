@@ -1,6 +1,6 @@
 using DocumentModel.Interop.Core;
 
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents one or more series plotted in a chart with the same format.

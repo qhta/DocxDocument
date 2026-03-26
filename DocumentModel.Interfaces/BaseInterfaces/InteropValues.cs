@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Collection of simple values.

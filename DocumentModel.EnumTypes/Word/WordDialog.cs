@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Indicates the Microsoft Office Word dialog boxes with which you can work and specifies arguments, if

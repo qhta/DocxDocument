@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace DocumentModel.Interop;
+namespace DocumentModel;
 
 /// <summary>
 /// Defines a generic dictionary interface that maps keys of a specified type to values, supporting both standard and

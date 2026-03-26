@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop;
+namespace DocumentModel;
 
 /// <summary>
 /// Basic interface for all interop objects, providing common properties such as Application, Creator, and Parent.
