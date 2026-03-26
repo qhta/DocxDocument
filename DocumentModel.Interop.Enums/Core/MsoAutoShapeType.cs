@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the shape type for an AutoShape object.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoautoshapetype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoAutoShapeType
+public enum AutoShapeType
 {
   /// <summary>
   /// Return value only; indicates a combination of the other states.

@@ -16,37 +16,37 @@ public partial interface LineFormat: InteropObject
   /// Gets or sets the `BeginArrowheadLength` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.beginarrowheadlength?view=office-pia"/>
-  public MsoArrowheadLength BeginArrowheadLength { get; set; }
+  public ArrowheadLength BeginArrowheadLength { get; set; }
   /// <summary>
   /// Gets or sets the `BeginArrowheadStyle` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.beginarrowheadstyle?view=office-pia"/>
-  public MsoArrowheadStyle BeginArrowheadStyle { get; set; }
+  public ArrowheadStyle BeginArrowheadStyle { get; set; }
   /// <summary>
   /// Gets or sets the `BeginArrowheadWidth` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.beginarrowheadwidth?view=office-pia"/>
-  public MsoArrowheadWidth BeginArrowheadWidth { get; set; }
+  public ArrowheadWidth BeginArrowheadWidth { get; set; }
   /// <summary>
   /// Gets or sets the `DashStyle` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.dashstyle?view=office-pia"/>
-  public MsoLineDashStyle DashStyle { get; set; }
+  public LineDashStyle DashStyle { get; set; }
   /// <summary>
   /// Gets or sets the `EndArrowheadLength` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.endarrowheadlength?view=office-pia"/>
-  public MsoArrowheadLength EndArrowheadLength { get; set; }
+  public ArrowheadLength EndArrowheadLength { get; set; }
   /// <summary>
   /// Gets or sets the `EndArrowheadStyle` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.endarrowheadstyle?view=office-pia"/>
-  public MsoArrowheadStyle EndArrowheadStyle { get; set; }
+  public ArrowheadStyle EndArrowheadStyle { get; set; }
   /// <summary>
   /// Gets or sets the `EndArrowheadWidth` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.endarrowheadwidth?view=office-pia"/>
-  public MsoArrowheadWidth EndArrowheadWidth { get; set; }
+  public ArrowheadWidth EndArrowheadWidth { get; set; }
   /// <summary>
   /// Gets or sets the `ForeColor` property.
   /// </summary>
@@ -56,12 +56,12 @@ public partial interface LineFormat: InteropObject
   /// Gets or sets the `Pattern` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.pattern?view=office-pia"/>
-  public MsoPatternType Pattern { get; set; }
+  public PatternType Pattern { get; set; }
   /// <summary>
   /// Gets or sets the `Style` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.style?view=office-pia"/>
-  public MsoLineStyle Style { get; set; }
+  public LineStyle Style { get; set; }
   /// <summary>
   /// Gets or sets the `Transparency` property.
   /// </summary>
@@ -71,7 +71,7 @@ public partial interface LineFormat: InteropObject
   /// Gets or sets the `Visible` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.visible?view=office-pia"/>
-  public MsoTriState Visible { get; set; }
+  public TriState Visible { get; set; }
   /// <summary>
   /// Gets or sets the `Weight` property.
   /// </summary>
@@ -81,6 +81,6 @@ public partial interface LineFormat: InteropObject
   /// Gets or sets the `InsetPen` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.insetpen?view=office-pia"/>
-  public MsoTriState InsetPen { get; set; }
+  public TriState InsetPen { get; set; }
 }
 

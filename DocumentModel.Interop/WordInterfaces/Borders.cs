@@ -28,37 +28,37 @@ public partial interface Borders : InteropObject, InteropCollection<Border>
   /// Gets or sets the line style for inside borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.insidelinestyle?view=word-pia"/>
-  public WdLineStyle InsideLineStyle { get; set; }
+  public LineStyle InsideLineStyle { get; set; }
 
   /// <summary>
   /// Gets or sets the line style for outside borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.outsidelinestyle?view=word-pia"/>
-  public WdLineStyle OutsideLineStyle { get; set; }
+  public LineStyle OutsideLineStyle { get; set; }
 
   /// <summary>
   /// Gets or sets the line width for inside borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.insidelinewidth?view=word-pia"/>
-  public WdLineWidth InsideLineWidth { get; set; }
+  public LineWidth InsideLineWidth { get; set; }
 
   /// <summary>
   /// Gets or sets the line width for outside borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.outsidelinewidth?view=word-pia"/>
-  public WdLineWidth OutsideLineWidth { get; set; }
+  public LineWidth OutsideLineWidth { get; set; }
 
   /// <summary>
   /// Gets or sets the color index for inside borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.insidecolorindex?view=word-pia"/>
-  public WdColorIndex InsideColorIndex { get; set; }
+  public ColorIndex InsideColorIndex { get; set; }
 
   /// <summary>
   /// Gets or sets the color index for outside borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.outsidecolorindex?view=word-pia"/>
-  public WdColorIndex OutsideColorIndex { get; set; }
+  public ColorIndex OutsideColorIndex { get; set; }
 
   /// <summary>
   /// Gets or sets the distance, in points, between the left border and the left edge of the page.
@@ -118,7 +118,7 @@ public partial interface Borders : InteropObject, InteropCollection<Border>
   /// Gets or sets what border distances are measured from.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.distancefrom?view=word-pia"/>
-  public WdBorderDistanceFrom DistanceFrom { get; set; }
+  public BorderDistanceFrom DistanceFrom { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether borders are enabled on the first page of a section.
@@ -136,11 +136,11 @@ public partial interface Borders : InteropObject, InteropCollection<Border>
   /// Gets or sets the color of inside borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.insidecolor?view=word-pia"/>
-  public WdColor InsideColor { get; set; }
+  public Color InsideColor { get; set; }
 
   /// <summary>
   /// Gets or sets the color of outside borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.outsidecolor?view=word-pia"/>
-  public WdColor OutsideColor { get; set; }
+  public Color OutsideColor { get; set; }
 }

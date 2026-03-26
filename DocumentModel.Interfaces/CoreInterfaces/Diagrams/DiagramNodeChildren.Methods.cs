@@ -23,7 +23,7 @@ public partial interface DiagramNodeChildren
   /// <param name="NodeType">The `NodeType` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodechildren.addnode?view=office-pia"/>
-  public DiagramNode AddNode(object Index, MsoDiagramNodeType NodeType);
+  public DiagramNode AddNode(object Index, DiagramNodeType NodeType);
   /// <summary>
   /// Selects all child diagram nodes.
   /// </summary>

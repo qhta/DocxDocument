@@ -10,7 +10,7 @@ public partial interface Bookmarks : InteropObject, InteropCollection<Bookmark>
   /// Gets or sets the default sorting order for bookmarks.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmarks.defaultsorting?view=word-pia"/>
-  public WdBookmarkSortBy DefaultSorting { get; set; }
+  public BookmarkSortBy DefaultSorting { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether hidden bookmarks are displayed.

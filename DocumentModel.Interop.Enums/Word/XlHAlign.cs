@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlhalign?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlHAlign
+public enum HAlign
 {
   /// <summary>
   /// Align according to data type.

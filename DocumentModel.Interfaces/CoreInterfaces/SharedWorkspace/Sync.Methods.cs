@@ -23,13 +23,13 @@ public partial interface Sync: InteropObject
   /// </summary>
   /// <param name="SyncVersionType">The `SyncVersionType` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sync.openversion?view=office-pia"/>
-  public void OpenVersion(MsoSyncVersionType SyncVersionType);
+  public void OpenVersion(SyncVersionType SyncVersionType);
   /// <summary>
   /// Invokes `ResolveConflict`.
   /// </summary>
   /// <param name="SyncConflictResolution">The `SyncConflictResolution` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sync.resolveconflict?view=office-pia"/>
-  public void ResolveConflict(MsoSyncConflictResolutionType SyncConflictResolution);
+  public void ResolveConflict(SyncConflictResolutionType SyncConflictResolution);
   /// <summary>
   /// Invokes `Unsuspend`.
   /// </summary>

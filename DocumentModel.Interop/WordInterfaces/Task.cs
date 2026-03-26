@@ -40,7 +40,7 @@ public partial interface Task : InteropObject
   /// Returns or sets the state of the specified task window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.task.windowstate?view=word-pia"/>
-  public WdWindowState WindowState { get; set; }
+  public WindowState WindowState { get; set; }
 
   /// <summary>
   /// True if the specified object is visible.

@@ -12,7 +12,7 @@ public partial interface ChartGroup : InteropObject
   /// Gets or sets the axis group for the chart group.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup.axisgroup?view=word-pia"/>
-  public XlAxisGroup AxisGroup { get; set; }
+  public AxisGroup AxisGroup { get; set; }
 
   /// <summary>
   /// Gets or sets the size of the hole in a doughnut chart group, as a percentage.
@@ -132,7 +132,7 @@ public partial interface ChartGroup : InteropObject
   /// Gets or sets what the bubble size represents in a bubble chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup.sizerepresents?view=word-pia"/>
-  public XlSizeRepresents SizeRepresents { get; set; }
+  public SizeRepresents SizeRepresents { get; set; }
 
   /// <summary>
   /// Gets or sets the scale factor for bubbles in a bubble chart.
@@ -150,7 +150,7 @@ public partial interface ChartGroup : InteropObject
   /// Gets or sets the criterion used to split a pie-of-pie or bar-of-pie chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup.splittype?view=word-pia"/>
-  public XlChartSplitType SplitType { get; set; }
+  public ChartSplitType SplitType { get; set; }
 
   /// <summary>
   /// Gets or sets the split threshold value for a pie-of-pie or bar-of-pie chart.

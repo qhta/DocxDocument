@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Defines how to align specified objects relative to one another.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoaligncmd?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoAlignCmd
+public enum AlignCmd
 {
   /// <summary>
   /// Align left sides of specified objects.

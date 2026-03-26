@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
@@ -34,7 +36,7 @@ public partial interface ContentControl : InteropObject
   /// Gets or sets the type of content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.type?view=word-pia"/>
-  public WdContentControlType Type { get; set; }
+  public ContentControlType Type { get; set; }
 
   /// <summary>
   /// Gets the collection of list entries for a drop-down or combo box content control.
@@ -94,13 +96,13 @@ public partial interface ContentControl : InteropObject
   /// Gets or sets how date values are stored.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.datestorageformat?view=word-pia"/>
-  public WdContentControlDateStorageFormat DateStorageFormat { get; set; }
+  public DateStorageFormat DateStorageFormat { get; set; }
 
   /// <summary>
   /// Gets or sets the building block type for a building block gallery content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.buildingblocktype?view=word-pia"/>
-  public WdBuildingBlockTypes BuildingBlockType { get; set; }
+  public BuildingBlockTypes BuildingBlockType { get; set; }
 
   /// <summary>
   /// Gets or sets the building block category for a building block gallery content control.
@@ -112,7 +114,7 @@ public partial interface ContentControl : InteropObject
   /// Gets or sets the locale used to display dates.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.datedisplaylocale?view=word-pia"/>
-  public WdLanguageID DateDisplayLocale { get; set; }
+  public LanguageID DateDisplayLocale { get; set; }
 
   /// <summary>
   /// Gets or sets the default text style for the content control.
@@ -124,7 +126,7 @@ public partial interface ContentControl : InteropObject
   /// Gets or sets the calendar type used for date values.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.datecalendartype?view=word-pia"/>
-  public WdCalendarType DateCalendarType { get; set; }
+  public CalendarType DateCalendarType { get; set; }
 
   /// <summary>
   /// Gets or sets a tag value for identifying the content control.
@@ -142,19 +144,19 @@ public partial interface ContentControl : InteropObject
   /// Gets or sets the color of the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.color?view=word-pia"/>
-  public WdColor Color { get; set; }
+  public Color Color { get; set; }
 
   /// <summary>
   /// Gets or sets how the content control appears in the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.appearance?view=word-pia"/>
-  public WdContentControlAppearance Appearance { get; set; }
+  public ContentControlAppearance Appearance { get; set; }
 
   /// <summary>
   /// Gets the level of the content control in the content control hierarchy.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.level?view=word-pia"/>
-  public WdContentControlLevel Level { get; }
+  public ContentControlLevel Level { get; }
 
   /// <summary>
   /// Gets the collection of repeating section items.

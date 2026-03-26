@@ -20,7 +20,7 @@ public partial interface Shapes: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addcallout?view=word-pia"/>
-  public Shape AddCallout(Core.MsoCalloutType Type, float Left, float Top, float Width, float Height, object Anchor);
+  public Shape AddCallout(Core.CalloutType Type, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
   /// Adds a connector shape to the collection.
@@ -35,7 +35,7 @@ public partial interface Shapes: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addconnector?view=word-pia"/>
-  public Shape AddConnector(Core.MsoConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
+  public Shape AddConnector(Core.ConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
 
   /// <summary>
   /// Adds a curve shape to the collection.
@@ -63,7 +63,7 @@ public partial interface Shapes: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addlabel?view=word-pia"/>
-  public Shape AddLabel(Core.MsoTextOrientation Orientation, float Left, float Top, float Width, float Height, object Anchor);
+  public Shape AddLabel(Core.TextOrientation Orientation, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
   /// Adds a line shape to the collection.
@@ -143,7 +143,7 @@ public partial interface Shapes: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addtexteffect?view=word-pia"/>
-  public Shape AddTextEffect(Core.MsoPresetTextEffect PresetTextEffect, string Text, string FontName, float FontSize, Core.MsoTriState FontBold, Core.MsoTriState FontItalic, float Left, float Top, object Anchor);
+  public Shape AddTextEffect(Core.PresetTextEffect PresetTextEffect, string Text, string FontName, float FontSize, Core.TriState FontBold, Core.TriState FontItalic, float Left, float Top, object Anchor);
 
   /// <summary>
   /// Adds a textbox shape to the collection.
@@ -159,7 +159,7 @@ public partial interface Shapes: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addtextbox?view=word-pia"/>
-  public Shape AddTextbox(Core.MsoTextOrientation Orientation, float Left, float Top, float Width, float Height, object Anchor);
+  public Shape AddTextbox(Core.TextOrientation Orientation, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
   /// Builds a freeform shape and adds it to the collection.
@@ -172,7 +172,7 @@ public partial interface Shapes: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.buildfreeform?view=word-pia"/>
-  public FreeformBuilder BuildFreeform(Core.MsoEditingType EditingType, float X1, float Y1);
+  public FreeformBuilder BuildFreeform(Core.EditingType EditingType, float X1, float Y1);
 
   /// <summary>
   /// Returns a range of shapes from the collection.
@@ -246,7 +246,7 @@ public partial interface Shapes: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.adddiagram?view=word-pia"/>
-  public Shape AddDiagram(Core.MsoDiagramType Type, float Left, float Top, float Width, float Height, object Anchor);
+  public Shape AddDiagram(Core.DiagramType Type, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
   /// Adds a canvas to the collection as a shape.

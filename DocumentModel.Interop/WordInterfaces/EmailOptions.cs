@@ -220,7 +220,7 @@ public partial interface EmailOptions : InteropObject
   /// Gets or sets the HTML fidelity level for email messages.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.htmlfidelity?view=word-pia"/>
-  public WdEmailHTMLFidelity HTMLFidelity { get; set; }
+  public EmailHTMLFidelity HTMLFidelity { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether Smart Tags are embedded in email messages.

@@ -90,10 +90,10 @@ public partial interface Trendline : InteropObject
   public int Period { get; set; }
 
   /// <summary>
-  /// Returns or sets a XlTrendlineType value that represents the trendline type.
+  /// Returns or sets a TrendlineType value that represents the trendline type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.type?view=word-pia"/>
-  public XlTrendlineType Type { get; set; }
+  public TrendlineType Type { get; set; }
 
   /// <summary>
   /// Returns the line, fill, and effect formatting for the object. Read-only ChartFormat.

@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdalertlevel?view=word-pia` for Office interop details.
 /// </remarks>
-public enum WdAlertLevel
+public enum AlertLevel
 {
   /// <summary>
   /// No alerts or message boxes are displayed. If a macro encounters a message box, the default value is chosen and

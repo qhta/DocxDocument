@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the character set to be used when rendering text.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocharacterset?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoCharacterSet
+public enum CharacterSet
 {
   /// <summary>
   /// Arabic character set.

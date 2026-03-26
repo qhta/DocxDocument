@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofiletype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoFileType
+public enum FileType
 {
   /// <summary>
   /// All files.

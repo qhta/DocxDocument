@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies where in the z-order a shape should be moved relative to other shapes.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msozordercmd?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoZOrderCmd
+public enum ZOrderCmd
 {
   /// <summary>
   /// Bring shape to the front.

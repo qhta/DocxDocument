@@ -21,7 +21,7 @@ public partial interface _Application
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.international?view=word-pia"/>
-  public object International(WdInternationalIndex Index);
+  public object International(InternationalIndex Index);
 
   /// <summary>
   /// Returns a SynonymInfo object that contains information from the thesaurus on synonyms, antonyms, or related
@@ -40,7 +40,7 @@ public partial interface _Application
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_keysboundto?view=word-pia"/>
-  public KeysBoundTo KeysBoundTo(WdKeyCategory KeyCategory, string Command, object CommandParameter);
+  public KeysBoundTo KeysBoundTo(KeyCategory KeyCategory, string Command, object CommandParameter);
 
   /// <summary>
   /// Determines if the specified variable that references an object is valid.
@@ -58,7 +58,7 @@ public partial interface _Application
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_filedialog?view=word-pia"/>
-  public Core.FileDialog FileDialog(Core.MsoFileDialogType FileDialogType);
+  public Core.FileDialog FileDialog(Core.FileDialogType FileDialogType);
 
   /// <summary>
   /// Quits Microsoft Word and optionally saves or routes the open documents.

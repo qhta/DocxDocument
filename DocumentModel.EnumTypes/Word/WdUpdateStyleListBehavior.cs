@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdupdatestylelistbehavior?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdUpdateStyleListBehavior
+public enum UpdateStyleListBehavior
 {
   /// <summary>
   /// Keeps the existing numbering or bullets pattern for all other paragraphs that use the same style and does not

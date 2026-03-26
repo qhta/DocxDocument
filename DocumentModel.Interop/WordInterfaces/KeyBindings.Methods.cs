@@ -19,5 +19,5 @@ public partial interface KeyBindings
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybindings.add?view=word-pia"/>
-  public KeyBinding Add(WdKeyCategory KeyCategory, string Command, int KeyCode, int KeyCode2, object CommandParameter);
+  public KeyBinding Add(KeyCategory KeyCategory, string Command, int KeyCode, int KeyCode2, object CommandParameter);
 }

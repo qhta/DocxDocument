@@ -11,7 +11,7 @@ public partial interface ShapeNode: InteropObject
   /// Gets the `EditingType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapenode.editingtype?view=office-pia"/>
-  public MsoEditingType EditingType { get; }
+  public EditingType EditingType { get; }
   /// <summary>
   /// Gets the `Points` property.
   /// </summary>
@@ -21,6 +21,6 @@ public partial interface ShapeNode: InteropObject
   /// Gets the `SegmentType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapenode.segmenttype?view=office-pia"/>
-  public MsoSegmentType SegmentType { get; }
+  public SegmentType SegmentType { get; }
 }
 

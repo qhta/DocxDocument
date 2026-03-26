@@ -16,7 +16,7 @@ public partial interface Axis : InteropObject
   /// Gets the axis group.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.axisgroup?view=word-pia"/>
-  public XlAxisGroup AxisGroup { get; }
+  public AxisGroup AxisGroup { get; }
 
   /// <summary>
   /// Gets the axis title.
@@ -34,7 +34,7 @@ public partial interface Axis : InteropObject
   /// Gets or sets how the specified axis crosses the other axis.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.crosses?view=word-pia"/>
-  public XlAxisCrosses Crosses { get; set; }
+  public AxisCrosses Crosses { get; set; }
 
   /// <summary>
   /// Gets or sets the point, on the category axis, where the value axis crosses it.
@@ -70,7 +70,7 @@ public partial interface Axis : InteropObject
   /// Gets or sets the major tick mark type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.majortickmark?view=word-pia"/>
-  public XlTickMark MajorTickMark { get; set; }
+  public TickMark MajorTickMark { get; set; }
 
   /// <summary>
   /// Gets or sets the major unit value.
@@ -130,7 +130,7 @@ public partial interface Axis : InteropObject
   /// Gets or sets the minor tick mark type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.minortickmark?view=word-pia"/>
-  public XlTickMark MinorTickMark { get; set; }
+  public TickMark MinorTickMark { get; set; }
 
   /// <summary>
   /// Gets or sets the minor unit value.
@@ -154,13 +154,13 @@ public partial interface Axis : InteropObject
   /// Gets or sets the axis scale type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.scaletype?view=word-pia"/>
-  public XlScaleType ScaleType { get; set; }
+  public ScaleType ScaleType { get; set; }
 
   /// <summary>
   /// Gets or sets the tick-label position.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.ticklabelposition?view=word-pia"/>
-  public XlTickLabelPosition TickLabelPosition { get; set; }
+  public TickLabelPosition TickLabelPosition { get; set; }
 
   /// <summary>
   /// Gets the tick labels.
@@ -184,13 +184,13 @@ public partial interface Axis : InteropObject
   /// Gets or sets the axis type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.type?view=word-pia"/>
-  public XlAxisType Type { get; set; }
+  public AxisType Type { get; set; }
 
   /// <summary>
   /// Gets or sets the base time unit for category-axis labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.baseunit?view=word-pia"/>
-  public XlTimeUnit BaseUnit { get; set; }
+  public TimeUnit BaseUnit { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the base time unit is calculated automatically.
@@ -202,19 +202,19 @@ public partial interface Axis : InteropObject
   /// Gets or sets the major time-unit scale.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.majorunitscale?view=word-pia"/>
-  public XlTimeUnit MajorUnitScale { get; set; }
+  public TimeUnit MajorUnitScale { get; set; }
 
   /// <summary>
   /// Gets or sets the minor time-unit scale.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.minorunitscale?view=word-pia"/>
-  public XlTimeUnit MinorUnitScale { get; set; }
+  public TimeUnit MinorUnitScale { get; set; }
 
   /// <summary>
   /// Gets or sets the category-axis type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.categorytype?view=word-pia"/>
-  public XlCategoryType CategoryType { get; set; }
+  public CategoryType CategoryType { get; set; }
 
   /// <summary>
   /// Gets the distance, in points, from the left edge of the chart area to the left edge of the axis.
@@ -244,7 +244,7 @@ public partial interface Axis : InteropObject
   /// Gets or sets the display unit for the value axis.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.displayunit?view=word-pia"/>
-  public XlDisplayUnit DisplayUnit { get; set; }
+  public DisplayUnit DisplayUnit { get; set; }
 
   /// <summary>
   /// Gets or sets the custom display-unit value.

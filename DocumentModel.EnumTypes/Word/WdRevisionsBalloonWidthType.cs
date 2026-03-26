@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrevisionsballoonwidthtype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdRevisionsBalloonWidthType
+public enum RevisionsBalloonWidthType
 {
   /// <summary>
   /// Measured as a percentage of the width of the document.

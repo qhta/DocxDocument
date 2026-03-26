@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrevisionsmarkup?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdRevisionsMarkup
+public enum RevisionsMarkup
 {
   /// <summary>
   /// Displays the final document with no markup visible.

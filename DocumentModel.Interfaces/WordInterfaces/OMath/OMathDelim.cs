@@ -35,7 +35,7 @@ public interface OMathDelim : InteropObject
   /// Returns or sets the shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathdelim.shape?view=word-pia"/>
-  public WdOMathShapeType Shape { get; set; }
+  public OMathShapeType Shape { get; set; }
   /// <summary>
   /// Returns or sets whether the left delimiter is omitted.
   /// </summary>

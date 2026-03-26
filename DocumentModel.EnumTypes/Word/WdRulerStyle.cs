@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrulerstyle?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdRulerStyle
+public enum RulerStyle
 {
   /// <summary>
   /// Adjusts the left edge of row or rows, preserving the width of all columns by shifting them to the left or

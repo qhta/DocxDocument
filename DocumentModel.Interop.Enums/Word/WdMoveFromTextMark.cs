@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdmovefromtextmark?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdMoveFromTextMark
+public enum MoveFromTextMark
 {
   /// <summary>
   /// Hides moved text.

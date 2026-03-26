@@ -36,7 +36,7 @@ public partial interface IMsoTickLabels: InteropObject
   /// Gets or sets the `Orientation` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoticklabels.orientation?view=office-pia"/>
-  public XlTickLabelOrientation Orientation { get; set; }
+  public TickLabelOrientation Orientation { get; set; }
   /// <summary>
   /// Gets or sets the `ReadingOrder` property.
   /// </summary>

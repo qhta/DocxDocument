@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbrowserlevel?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdBrowserLevel
+public enum BrowserLevel
 {
   /// <summary>
   /// Microsoft Internet Explorer 4.

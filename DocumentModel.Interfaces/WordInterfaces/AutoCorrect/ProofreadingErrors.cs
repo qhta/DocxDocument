@@ -10,5 +10,5 @@ public interface ProofreadingErrors : InteropObject, InteropCollection<Range>
   /// Returns the type of proofreading error.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.proofreadingerrors.type?view=word-pia"/>
-  public WdProofreadingErrorType Type { get; }
+  public ProofreadingErrorType Type { get; }
 }

@@ -7,11 +7,11 @@ namespace DocumentModel.Interop.Word;
 public interface SoftEdgeFormat : InteropObject
 {
   /// <summary>
-  /// Returns or sets an MsoBevelType constant that represents the bevel type for the edges of images that use soft
+  /// Returns or sets an BevelType constant that represents the bevel type for the edges of images that use soft
   /// edge formatting. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.softedgeformat.type?view=word-pia"/>
-  public Core.MsoSoftEdgeType Type { get; set; }
+  public Core.SoftEdgeType Type { get; set; }
   /// <summary>
   /// Gets or sets a value that represents the length of the radius for a soft edge effect.
   /// </summary>

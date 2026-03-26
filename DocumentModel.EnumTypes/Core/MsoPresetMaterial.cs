@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the extrusion surface material.
@@ -6,12 +6,11 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetmaterial?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoPresetMaterial
+public enum PresetMaterial
 {
   /// <summary>
   /// Specifies the extrusion surface material.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   /// Matte.
   /// </summary>

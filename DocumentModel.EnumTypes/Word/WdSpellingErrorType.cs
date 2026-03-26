@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdspellingerrortype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdSpellingErrorType
+public enum SpellingErrorType
 {
   /// <summary>
   /// Spelling is correct.

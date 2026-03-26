@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdframesetsizetype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdFramesetSizeType
+public enum FramesetSizeType
 {
   /// <summary>
   /// Word interprets the height or width of the specified frame as a percentage of the screen height or width.

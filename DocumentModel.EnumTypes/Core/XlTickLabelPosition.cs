@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlticklabelposition?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlTickLabelPosition
+public enum TickLabelPosition
 {
   /// <summary>
   /// Top or right side of the chart.

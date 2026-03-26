@@ -16,5 +16,5 @@ public partial interface Styles: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.styles.add?view=word-pia"/>
-  public Style Add(string Name, WdStyleType Type);
+  public Style Add(string Name, StyleType Type);
 }

@@ -22,7 +22,7 @@ public partial interface ChartFillFormat : InteropObject
   /// Gets the gradient color type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartfillformat.gradientcolortype?view=word-pia"/>
-  public Core.MsoGradientColorType GradientColorType { get; }
+  public Core.GradientColorType GradientColorType { get; }
 
   /// <summary>
   /// Gets the gradient degree.
@@ -34,7 +34,7 @@ public partial interface ChartFillFormat : InteropObject
   /// Gets the gradient style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartfillformat.gradientstyle?view=word-pia"/>
-  public Core.MsoGradientStyle GradientStyle { get; }
+  public Core.GradientStyle GradientStyle { get; }
 
   /// <summary>
   /// Gets the gradient variant.
@@ -46,19 +46,19 @@ public partial interface ChartFillFormat : InteropObject
   /// Gets the fill pattern.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartfillformat.pattern?view=word-pia"/>
-  public Core.MsoPatternType Pattern { get; }
+  public Core.PatternType Pattern { get; }
 
   /// <summary>
   /// Gets the preset gradient type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartfillformat.presetgradienttype?view=word-pia"/>
-  public Core.MsoPresetGradientType PresetGradientType { get; }
+  public Core.PresetGradientType PresetGradientType { get; }
 
   /// <summary>
   /// Gets the preset texture.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartfillformat.presettexture?view=word-pia"/>
-  public Core.MsoPresetTexture PresetTexture { get; }
+  public Core.PresetTexture PresetTexture { get; }
 
   /// <summary>
   /// Gets the name of the custom texture file.
@@ -70,17 +70,17 @@ public partial interface ChartFillFormat : InteropObject
   /// Gets the texture type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartfillformat.texturetype?view=word-pia"/>
-  public Core.MsoTextureType TextureType { get; }
+  public Core.TextureType TextureType { get; }
 
   /// <summary>
   /// Gets the fill type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartfillformat.type?view=word-pia"/>
-  public Core.MsoFillType Type { get; }
+  public Core.FillType Type { get; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the fill is visible.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartfillformat.visible?view=word-pia"/>
-  public Core.MsoTriState Visible { get; set; }
+  public Core.TriState Visible { get; set; }
 }

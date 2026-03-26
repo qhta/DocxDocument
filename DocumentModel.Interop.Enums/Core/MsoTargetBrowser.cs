@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies target browser for documents viewed in a Web browser.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotargetbrowser?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoTargetBrowser
+public enum TargetBrowser
 {
   /// <summary>
   /// Netscape Navigator 3.

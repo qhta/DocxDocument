@@ -10,7 +10,6 @@ public enum DataLabelPos
   /// <summary>
   ///   Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   ///   bestFit.
   /// </summary>

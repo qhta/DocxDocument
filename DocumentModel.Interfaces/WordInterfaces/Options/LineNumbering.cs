@@ -10,7 +10,7 @@ public interface LineNumbering : InteropObject
   /// Returns or sets when line numbering restarts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linenumbering.restartmode?view=word-pia"/>
-  public WdNumberingRule RestartMode { get; set; }
+  public NumberingRule RestartMode { get; set; }
   /// <summary>
   /// Returns or sets the starting line number.
   /// </summary>

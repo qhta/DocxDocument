@@ -5,6 +5,6 @@ namespace DocumentModel.Interop.Word;
 /// layout, and so on).
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.zooms?view=word-pia"/>
-public partial interface Zooms : InteropObject, InteropDictionary<WdViewType, Zoom>
+public partial interface Zooms : InteropObject, InteropDictionary<ViewType, Zoom>
 {
 }

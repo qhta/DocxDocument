@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdalignmenttabrelative?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdAlignmentTabRelative
+public enum AlignmentTabRelative
 {
   /// <summary>
   /// Word calculates tab alignment relative to the margins

@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies how a filter criterion relates to other filter criteria.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofilterconjunction?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoFilterConjunction
+public enum FilterConjunction
 {
   /// <summary>
   /// And conjunction.

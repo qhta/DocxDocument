@@ -24,7 +24,7 @@ public partial class BuiltInDocumentProperty :  DIC.DocumentProperty
 	/// For built-in document properties, this property is read-only and returns the type of the property.
 	/// For custom document properties, this property is read/write and determines the type of the value that can be assigned to the Value property.
 	/// </summary>
-  DIC.MsoDocProperties DIC.DocumentProperty.Type
+  DIC.DocProperties DIC.DocumentProperty.Type
   {
     get
     {
@@ -44,13 +44,13 @@ public partial class BuiltInDocumentProperty :  DIC.DocumentProperty
   /// Mapping between DocPropertyType enumeration values and actual .NET types.
   /// This mapping is used to determine the expected type of the Value property based on the Type property.
   /// </summary>
-  private static readonly BiDiDictionary<DIC.MsoDocProperties, Type> typeMapping = new()
+  private static readonly BiDiDictionary<DIC.DocProperties, Type> typeMapping = new()
   {
-    { DIC.MsoDocProperties.Number, typeof(int) },
-    { DIC.MsoDocProperties.Boolean, typeof(bool) },
-    { DIC.MsoDocProperties.Date, typeof(DateTime) },
-    { DIC.MsoDocProperties.String, typeof(string) },
-    { DIC.MsoDocProperties.Float, typeof(float) },
+    { DIC.DocProperties.Number, typeof(int) },
+    { DIC.DocProperties.Boolean, typeof(bool) },
+    { DIC.DocProperties.Date, typeof(DateTime) },
+    { DIC.DocProperties.String, typeof(string) },
+    { DIC.DocProperties.Float, typeof(float) },
   };
 
   /// <summary>

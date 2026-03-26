@@ -16,7 +16,7 @@ public partial interface ShadowFormat: InteropObject
   /// Gets or sets the `Obscured` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shadowformat.obscured?view=office-pia"/>
-  public MsoTriState Obscured { get; set; }
+  public TriState Obscured { get; set; }
   /// <summary>
   /// Gets or sets the `OffsetX` property.
   /// </summary>
@@ -36,17 +36,17 @@ public partial interface ShadowFormat: InteropObject
   /// Gets or sets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shadowformat.type?view=office-pia"/>
-  public MsoShadowType Type { get; set; }
+  public ShadowType Type { get; set; }
   /// <summary>
   /// Gets or sets the `Visible` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shadowformat.visible?view=office-pia"/>
-  public MsoTriState Visible { get; set; }
+  public TriState Visible { get; set; }
   /// <summary>
   /// Gets or sets the `Style` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shadowformat.style?view=office-pia"/>
-  public MsoShadowStyle Style { get; set; }
+  public ShadowStyle Style { get; set; }
   /// <summary>
   /// Gets or sets the `Blur` property.
   /// </summary>
@@ -61,6 +61,6 @@ public partial interface ShadowFormat: InteropObject
   /// Gets or sets the `RotateWithShape` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shadowformat.rotatewithshape?view=office-pia"/>
-  public MsoTriState RotateWithShape { get; set; }
+  public TriState RotateWithShape { get; set; }
 }
 

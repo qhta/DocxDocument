@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdexportrange?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdExportRange
+public enum ExportRange
 {
   /// <summary>
   /// Exports the entire document.

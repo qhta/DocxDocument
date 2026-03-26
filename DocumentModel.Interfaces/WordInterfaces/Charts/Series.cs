@@ -1,4 +1,5 @@
 using DocumentModel.Interop.Core;
+using DocumentModel.Wordprocessing;
 
 namespace DocumentModel.Interop.Word;
 
@@ -9,10 +10,10 @@ namespace DocumentModel.Interop.Word;
 public partial interface Series : InteropObject
 {
   /// <summary>
-  /// Returns an XlAxisGroup value that represents the type of axis group. Read/write.
+  /// Returns an AxisGroup value that represents the type of axis group. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.axisgroup?view=word-pia"/>
-  public XlAxisGroup AxisGroup { get; set; }
+  public AxisGroup AxisGroup { get; set; }
 
   /// <summary>
   /// Returns a ChartBorder object that represents the border of the object. Read-only.
@@ -101,11 +102,11 @@ public partial interface Series : InteropObject
 
   /// <summary>
   /// Returns or sets the marker background color as an index into the current color palette, or as one of the
-  /// following XlColorIndex constants: xlColorIndexAutomatic or xlColorIndexNone. Applies only to line, scatter,
+  /// following ColorIndex constants: xlColorIndexAutomatic or xlColorIndexNone. Applies only to line, scatter,
   /// and radar charts. Read/write
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.markerbackgroundcolorindex?view=word-pia"/>
-  public XlColorIndex MarkerBackgroundColorIndex { get; set; }
+  public ColorIndex MarkerBackgroundColorIndex { get; set; }
 
   /// <summary>
   /// Sets the marker foreground color as an RGB value or returns the corresponding color index value. Applies only
@@ -116,11 +117,11 @@ public partial interface Series : InteropObject
 
   /// <summary>
   /// Returns or sets the marker foreground color as an index into the current color palette, or as one of the
-  /// following XlColorIndex constants: xlColorIndexAutomatic or xlColorIndexNone. Applies only to line, scatter,
+  /// following ColorIndex constants: xlColorIndexAutomatic or xlColorIndexNone. Applies only to line, scatter,
   /// and radar charts. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.markerforegroundcolorindex?view=word-pia"/>
-  public XlColorIndex MarkerForegroundColorIndex { get; set; }
+  public ColorIndex MarkerForegroundColorIndex { get; set; }
 
   /// <summary>
   /// Returns or sets the data-marker size, in points. Can be a value from 2 through 72. Read/write Integer.
@@ -130,10 +131,10 @@ public partial interface Series : InteropObject
 
   /// <summary>
   /// Returns or sets the marker style for a point or series in a line chart, scatter chart, or radar chart.
-  /// Read/write XlMarkerStyle.
+  /// Read/write MarkerStyle.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.markerstyle?view=word-pia"/>
-  public XlMarkerStyle MarkerStyle { get; set; }
+  public MarkerStyle MarkerStyle { get; set; }
 
   /// <summary>
   /// Returns or sets a String value that represents the name of the object.
@@ -142,11 +143,11 @@ public partial interface Series : InteropObject
   public string Name { get; set; }
 
   /// <summary>
-  /// Returns or sets a XlChartPictureType value that represents the way pictures are displayed on a column or bar
+  /// Returns or sets a ChartPictureType value that represents the way pictures are displayed on a column or bar
   /// picture chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.picturetype?view=word-pia"/>
-  public XlChartPictureType PictureType { get; set; }
+  public ChartPictureType PictureType { get; set; }
 
   /// <summary>
   /// Returns or sets the unit for each picture on the chart if the PictureType property is set to xlStackScale (if
@@ -175,7 +176,7 @@ public partial interface Series : InteropObject
   public int Type { get; set; }
 
   /// <summary>
-  /// Returns or sets the chart type. Read/write XlChartType.
+  /// Returns or sets the chart type. Read/write ChartType.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.charttype?view=word-pia"/>
   public object ChartType { get; set; }
@@ -201,10 +202,10 @@ public partial interface Series : InteropObject
   public object BubbleSizes { get; set; }
 
   /// <summary>
-  /// Returns or sets the shape used for a single series in a 3-D bar or column chart. Read/write XlBarShape.
+  /// Returns or sets the shape used for a single series in a 3-D bar or column chart. Read/write BarShape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.barshape?view=word-pia"/>
-  public XlBarShape BarShape { get; set; }
+  public BarShape BarShape { get; set; }
 
   /// <summary>
   /// True if a picture is applied to the sides of the point or all points in the series. Read/write Boolean.
@@ -277,7 +278,7 @@ public partial interface Series : InteropObject
   /// Gets or sets the fill color for negative data points in a series.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.invertcolorindex?view=word-pia"/>
-  public XlColorIndex InvertColorIndex { get; set; }
+  public ColorIndex InvertColorIndex { get; set; }
 
   /// <summary>
   /// Returns or sets a Boolean (bool in C#) that determines whether the specified chart series is filtered out from

@@ -47,7 +47,7 @@ public partial interface ProtectedViewWindow : InteropObject
   /// Gets or sets the state of the specified protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.windowstate?view=word-pia"/>
-  public WdWindowState WindowState { get; set; }
+  public WindowState WindowState { get; set; }
 
   /// <summary>
   /// Gets whether the specified protected view window is active.

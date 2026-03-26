@@ -22,7 +22,7 @@ public partial interface OMathMat : InteropObject
   /// Returns or sets the vertical alignment of the matrix.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmat.align?view=word-pia"/>
-  public WdOMathVertAlignType Align { get; set; }
+  public OMathVertAlignType Align { get; set; }
 
   /// <summary>
   /// Returns or sets whether placeholders are hidden.
@@ -34,7 +34,7 @@ public partial interface OMathMat : InteropObject
   /// Returns or sets the row spacing rule.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmat.rowspacingrule?view=word-pia"/>
-  public WdOMathSpacingRule RowSpacingRule { get; set; }
+  public OMathSpacingRule RowSpacingRule { get; set; }
 
   /// <summary>
   /// Returns or sets the spacing between matrix rows.
@@ -52,7 +52,7 @@ public partial interface OMathMat : InteropObject
   /// Returns or sets the column gap spacing rule.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmat.colgaprule?view=word-pia"/>
-  public WdOMathSpacingRule ColGapRule { get; set; }
+  public OMathSpacingRule ColGapRule { get; set; }
 
   /// <summary>
   /// Returns or sets the column gap value.

@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdpagefit?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdPageFit
+public enum PageFit
 {
   /// <summary>
   /// Do not adjust the view settings for the page.

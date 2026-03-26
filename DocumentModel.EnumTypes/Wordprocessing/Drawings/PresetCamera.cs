@@ -10,7 +10,6 @@ public enum PresetCamera
   /// <summary>
   /// Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   /// Legacy oblique top left camera.
   /// </summary>

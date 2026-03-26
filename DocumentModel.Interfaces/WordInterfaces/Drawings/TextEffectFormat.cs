@@ -10,19 +10,19 @@ public partial interface TextEffectFormat : InteropObject
   /// Returns or sets a constant that represents the alignment for the specified text effect.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.alignment?view=word-pia"/>
-  public Core.MsoTextEffectAlignment Alignment { get; set; }
+  public Core.TextEffectAlignment Alignment { get; set; }
 
   /// <summary>
   /// Returns or sets a constant that represents how bold font is handled for the specified text effect.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.fontbold?view=word-pia"/>
-  public Core.MsoTriState FontBold { get; set; }
+  public Core.TriState FontBold { get; set; }
 
   /// <summary>
   /// Italicizes WordArt text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.fontitalic?view=word-pia"/>
-  public Core.MsoTriState FontItalic { get; set; }
+  public Core.TriState FontItalic { get; set; }
 
   /// <summary>
   /// Returns or sets the name of the font for the dropped capital letter.
@@ -40,25 +40,25 @@ public partial interface TextEffectFormat : InteropObject
   /// Indicates that character pairs in a WordArt object have been kerned.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.kernedpairs?view=word-pia"/>
-  public Core.MsoTriState KernedPairs { get; set; }
+  public Core.TriState KernedPairs { get; set; }
 
   /// <summary>
   /// MsoTrue if all characters (both uppercase and lowercase) in the specified WordArt are the same height.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.normalizedheight?view=word-pia"/>
-  public Core.MsoTriState NormalizedHeight { get; set; }
+  public Core.TriState NormalizedHeight { get; set; }
 
   /// <summary>
   /// Returns or sets the shape of the specified WordArt.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.presetshape?view=word-pia"/>
-  public Core.MsoPresetTextEffectShape PresetShape { get; set; }
+  public Core.PresetTextEffectShape PresetShape { get; set; }
 
   /// <summary>
   /// Returns or sets the style of the specified WordArt.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.presettexteffect?view=word-pia"/>
-  public Core.MsoPresetTextEffect PresetTextEffect { get; set; }
+  public Core.PresetTextEffect PresetTextEffect { get; set; }
 
   /// <summary>
   /// MsoTrue if characters in the specified WordArt are rotated 90 degrees relative to the WordArt's bounding
@@ -66,7 +66,7 @@ public partial interface TextEffectFormat : InteropObject
   /// bounding shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.rotatedchars?view=word-pia"/>
-  public Core.MsoTriState RotatedChars { get; set; }
+  public Core.TriState RotatedChars { get; set; }
 
   /// <summary>
   /// Returns or sets the text in the specified WordArt.

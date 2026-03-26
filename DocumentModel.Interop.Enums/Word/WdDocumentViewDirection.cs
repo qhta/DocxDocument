@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddocumentviewdirection?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdDocumentViewDirection
+public enum DocumentViewDirection
 {
   /// <summary>
   /// Displays the document with right alignment and right-to-left reading order.

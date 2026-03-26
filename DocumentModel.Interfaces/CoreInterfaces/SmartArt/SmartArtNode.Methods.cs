@@ -15,8 +15,8 @@ public partial interface SmartArtNode: InteropObject
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode.addnode?view=office-pia"/>
   public SmartArtNode AddNode
-  (MsoSmartArtNodePosition Position,
-    MsoSmartArtNodeType Type);
+  (SmartArtNodePosition Position,
+    SmartArtNodeType Type);
   /// <summary>
   /// Invokes `Delete`.
   /// </summary>

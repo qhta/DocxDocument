@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdeditortype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdEditorType
+public enum EditorType
 {
   /// <summary>
   /// Represents the current user of the document.

@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdomathbreaksub?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdOMathBreakSub
+public enum OMathBreakSub
 {
   /// <summary>
   /// Repeats a minus sign that ends before a line break at the beginning of the next line. Default.

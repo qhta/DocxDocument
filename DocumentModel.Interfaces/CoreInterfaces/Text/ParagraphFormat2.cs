@@ -1,4 +1,6 @@
 
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
@@ -11,12 +13,12 @@ public partial interface ParagraphFormat2: InteropObject
   /// Gets or sets the `Alignment` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.paragraphformat2.alignment?view=office-pia"/>
-  public MsoParagraphAlignment Alignment { get; set; }
+  public ParagraphAlignment Alignment { get; set; }
   /// <summary>
   /// Gets or sets the `BaselineAlignment` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.paragraphformat2.baselinealignment?view=office-pia"/>
-  public MsoBaselineAlignment BaselineAlignment { get; set; }
+  public BaselineAlignment BaselineAlignment { get; set; }
   /// <summary>
   /// Gets the `Bullet` property.
   /// </summary>
@@ -26,7 +28,7 @@ public partial interface ParagraphFormat2: InteropObject
   /// Gets or sets the `FarEastLineBreakLevel` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.paragraphformat2.fareastlinebreaklevel?view=office-pia"/>
-  public MsoTriState FarEastLineBreakLevel { get; set; }
+  public TriState FarEastLineBreakLevel { get; set; }
   /// <summary>
   /// Gets or sets the `FirstLineIndent` property.
   /// </summary>
@@ -36,7 +38,7 @@ public partial interface ParagraphFormat2: InteropObject
   /// Gets or sets the `HangingPunctuation` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.paragraphformat2.hangingpunctuation?view=office-pia"/>
-  public MsoTriState HangingPunctuation { get; set; }
+  public TriState HangingPunctuation { get; set; }
   /// <summary>
   /// Gets or sets the `IndentLevel` property.
   /// </summary>
@@ -51,17 +53,17 @@ public partial interface ParagraphFormat2: InteropObject
   /// Gets or sets the `LineRuleAfter` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.paragraphformat2.lineruleafter?view=office-pia"/>
-  public MsoTriState LineRuleAfter { get; set; }
+  public TriState LineRuleAfter { get; set; }
   /// <summary>
   /// Gets or sets the `LineRuleBefore` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.paragraphformat2.linerulebefore?view=office-pia"/>
-  public MsoTriState LineRuleBefore { get; set; }
+  public TriState LineRuleBefore { get; set; }
   /// <summary>
   /// Gets or sets the `LineRuleWithin` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.paragraphformat2.linerulewithin?view=office-pia"/>
-  public MsoTriState LineRuleWithin { get; set; }
+  public TriState LineRuleWithin { get; set; }
   /// <summary>
   /// Gets or sets the `RightIndent` property.
   /// </summary>
@@ -91,11 +93,11 @@ public partial interface ParagraphFormat2: InteropObject
   /// Gets or sets the `TextDirection` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.paragraphformat2.textdirection?view=office-pia"/>
-  public MsoTextDirection TextDirection { get; set; }
+  public TextDirection TextDirection { get; set; }
   /// <summary>
   /// Gets or sets the `WordWrap` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.paragraphformat2.wordwrap?view=office-pia"/>
-  public MsoTriState WordWrap { get; set; }
+  public TriState WordWrap { get; set; }
 }
 

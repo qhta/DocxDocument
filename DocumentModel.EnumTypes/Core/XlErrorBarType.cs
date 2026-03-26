@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlerrorbartype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlErrorBarType
+public enum ErrorBarType
 {
   /// <summary>
   /// Range is set by fixed values or cell values.

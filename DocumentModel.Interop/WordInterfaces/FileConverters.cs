@@ -10,5 +10,5 @@ public interface FileConverters : InteropObject, InteropCollection<FileConverter
   /// Controls whether text enclosed in chevron characters (« ») is converted to merge fields.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fileconverters.convertmacwordchevrons?view=word-pia"/>
-  public WdChevronConvertRule ConvertMacWordChevrons { get; set; }
+  public ChevronConvertRule ConvertMacWordChevrons { get; set; }
 }

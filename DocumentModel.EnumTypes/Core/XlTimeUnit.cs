@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xltimeunit?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlTimeUnit
+public enum TimeUnit
 {
   /// <summary>
   /// Specifies Day units.

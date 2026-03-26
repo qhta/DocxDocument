@@ -9,7 +9,6 @@ public enum LightRigDirection
   /// <summary>
   ///   Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   ///   Top Left.
   /// </summary>

@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies context under which a wizard's callback procedure is called.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msowizardmsgtype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoWizardMsgType
+public enum WizardMsgType
 {
   /// <summary>
   /// Not supported.

@@ -55,6 +55,6 @@ public interface ChartFormat : InteropObject
   /// Gets or sets the AutoShape type for the chart element.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartformat.autoshapetype?view=word-pia"/>
-  public Core.MsoAutoShapeType AutoShapeType { get; set; }
+  public Core.AutoShapeType AutoShapeType { get; set; }
 
 }

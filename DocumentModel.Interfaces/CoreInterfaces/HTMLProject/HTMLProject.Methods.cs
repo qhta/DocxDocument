@@ -27,6 +27,6 @@ public partial interface HTMLProject: InteropObject
   /// </summary>
   /// <param name="OpenKind">The `OpenKind` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlproject.open?view=office-pia"/>
-  public void Open(MsoHTMLProjectOpen OpenKind);
+  public void Open(HTMLProjectOpen OpenKind);
 }
 

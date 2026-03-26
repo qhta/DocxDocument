@@ -11,7 +11,7 @@ public partial interface SmartArtNode: InteropObject
   /// Gets or sets the `OrgChartLayout` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode.orgchartlayout?view=office-pia"/>
-  public MsoOrgChartLayoutType OrgChartLayout { get; set; }
+  public OrgChartLayoutType OrgChartLayout { get; set; }
   /// <summary>
   /// Gets the `Shapes` property.
   /// </summary>
@@ -31,7 +31,7 @@ public partial interface SmartArtNode: InteropObject
   /// Gets the `Hidden` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode.hidden?view=office-pia"/>
-  public MsoTriState Hidden { get; }
+  public TriState Hidden { get; }
   /// <summary>
   /// Gets the `Nodes` property.
   /// </summary>
@@ -46,6 +46,6 @@ public partial interface SmartArtNode: InteropObject
   /// Gets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode.type?view=office-pia"/>
-  public MsoSmartArtNodeType Type { get; }
+  public SmartArtNodeType Type { get; }
 }
 

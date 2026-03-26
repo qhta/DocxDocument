@@ -10,7 +10,7 @@ public partial interface CoAuthLock : InteropObject
   /// Gets the type of coauthoring lock.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthlock.type?view=word-pia"/>
-  public WdLockType Type { get; }
+  public LockType Type { get; }
 
   /// <summary>
   /// Gets the coauthor who owns the lock.

@@ -39,7 +39,7 @@ public partial interface TextFrame : InteropObject
   /// Returns or sets the orientation of the text inside the frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.orientation?view=word-pia"/>
-  public Core.MsoTextOrientation Orientation { get; set; }
+  public Core.TextOrientation Orientation { get; set; }
 
   /// <summary>
   /// Returns a Range object that represents the text in the specified text frame.
@@ -91,29 +91,29 @@ public partial interface TextFrame : InteropObject
   public int WordWrap { get; set; }
 
   /// <summary>
-  /// Returns or sets an MsoVerticalAnchor constant that represents the vertical alignment of the text within a
+  /// Returns or sets an VerticalAnchor constant that represents the vertical alignment of the text within a
   /// shape. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.verticalanchor?view=word-pia"/>
-  public Core.MsoVerticalAnchor VerticalAnchor { get; set; }
+  public Core.VerticalAnchor VerticalAnchor { get; set; }
 
   /// <summary>
   /// Gets or sets the horizontal alignment of text in a text frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.horizontalanchor?view=word-pia"/>
-  public Core.MsoHorizontalAnchor HorizontalAnchor { get; set; }
+  public Core.HorizontalAnchor HorizontalAnchor { get; set; }
 
   /// <summary>
   /// Gets or sets the path type for the specified text frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.pathformat?view=word-pia"/>
-  public Core.MsoPathFormat PathFormat { get; set; }
+  public Core.PathFormat PathFormat { get; set; }
 
   /// <summary>
   /// Gets or sets the warp format (how the text is warped) for the specified text frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.warpformat?view=word-pia"/>
-  public Core.MsoWarpFormat WarpFormat { get; set; }
+  public Core.WarpFormat WarpFormat { get; set; }
 
   /// <summary>
   /// Gets the TextColumn2 object that represents the columns of the specified text frame.
@@ -131,5 +131,5 @@ public partial interface TextFrame : InteropObject
   /// Gets or sets whether the text in the text frame should not rotate when the shape is rotated.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.notextrotation?view=word-pia"/>
-  public Core.MsoTriState NoTextRotation { get; set; }
+  public Core.TriState NoTextRotation { get; set; }
 }

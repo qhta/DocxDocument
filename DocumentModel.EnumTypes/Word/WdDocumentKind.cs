@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddocumentkind?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdDocumentKind
+public enum DocumentKind
 {
   /// <summary>
   /// No format specified.

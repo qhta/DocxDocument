@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies which predefined gradient to use to fill a shape.
@@ -6,12 +6,11 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetgradienttype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoPresetGradientType
+public enum PresetGradientType
 {
   /// <summary>
   /// Specifies which predefined gradient to use to fill a shape.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   /// Early Sunset gradient.
   /// </summary>

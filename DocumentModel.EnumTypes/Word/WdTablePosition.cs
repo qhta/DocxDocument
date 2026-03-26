@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtableposition?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdTablePosition
+public enum TablePosition
 {
   /// <summary>
   /// At the top of the document.

@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdhorizontallinewidthtype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdHorizontalLineWidthType
+public enum HorizontalLineWidthType
 {
   /// <summary>
   /// Microsoft Word interprets the width (length) of the specified horizontal line as a fixed value (in points).

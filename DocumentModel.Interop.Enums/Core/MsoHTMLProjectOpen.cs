@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msohtmlprojectopen?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoHTMLProjectOpen
+public enum HTMLProjectOpen
 {
   /// <summary>
   /// Open project in source view.

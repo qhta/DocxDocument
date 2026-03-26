@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdprintoutitem?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdPrintOutItem
+public enum PrintOutItem
 {
   /// <summary>
   /// Current document content.

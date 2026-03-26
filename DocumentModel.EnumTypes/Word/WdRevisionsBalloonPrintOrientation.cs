@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrevisionsballoonprintorientation?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdRevisionsBalloonPrintOrientation
+public enum RevisionsBalloonPrintOrientation
 {
   /// <summary>
   /// Microsoft Word automatically selects the orientation that keeps the zoom factor closest to 100%.

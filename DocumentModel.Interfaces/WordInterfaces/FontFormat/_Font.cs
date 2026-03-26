@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
@@ -72,7 +74,7 @@ public partial interface _Font : InteropObject
   /// Gets or sets the color index for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.colorindex?view=word-pia"/>
-  public WdColorIndex ColorIndex { get; set; }
+  public ColorIndex ColorIndex { get; set; }
 
   /// <summary>
   /// True if the text is formatted as subscript.
@@ -94,7 +96,7 @@ public partial interface _Font : InteropObject
   /// Gets or sets the underline style for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.underline?view=word-pia"/>
-  public WdUnderline Underline { get; set; }
+  public Underline Underline { get; set; }
 
   /// <summary>
   /// The font size in points.
@@ -166,7 +168,7 @@ public partial interface _Font : InteropObject
   /// Gets or sets the animation effect for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.animation?view=word-pia"/>
-  public WdAnimation Animation { get; set; }
+  public Animation Animation { get; set; }
 
   /// <summary>
   /// Gets or sets the border formatting for the font.
@@ -184,7 +186,7 @@ public partial interface _Font : InteropObject
   /// Gets or sets the emphasis mark for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.emphasismark?view=word-pia"/>
-  public WdEmphasisMark EmphasisMark { get; set; }
+  public EmphasisMark EmphasisMark { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether to disable character spacing on the document grid.
@@ -214,7 +216,7 @@ public partial interface _Font : InteropObject
   /// The 24-bit color for the specified Font object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.color?view=word-pia"/>
-  public WdColor Color { get; set; }
+  public Color Color { get; set; }
 
   /// <summary>
   /// True if the text is formatted as bold (for complex script).
@@ -248,19 +250,19 @@ public partial interface _Font : InteropObject
   /// Gets or sets the color index for complex-script text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.colorindexbi?view=word-pia"/>
-  public WdColorIndex ColorIndexBi { get; set; }
+  public ColorIndex ColorIndexBi { get; set; }
 
   /// <summary>
   /// Gets or sets the color of diacritical marks.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.diacriticcolor?view=word-pia"/>
-  public WdColor DiacriticColor { get; set; }
+  public Color DiacriticColor { get; set; }
 
   /// <summary>
   /// Gets or sets the underline color.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.underlinecolor?view=word-pia"/>
-  public WdColor UnderlineColor { get; set; }
+  public Color UnderlineColor { get; set; }
 
   /// <summary>
   /// Gets or sets the glow formatting for the font.
@@ -308,19 +310,19 @@ public partial interface _Font : InteropObject
   /// Gets or sets the ligature setting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.ligatures?view=word-pia"/>
-  public WdLigatures Ligatures { get; set; }
+  public Ligatures Ligatures { get; set; }
 
   /// <summary>
   /// Gets or sets the number form for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.numberform?view=word-pia"/>
-  public WdNumberForm NumberForm { get; set; }
+  public NumberForm NumberForm { get; set; }
 
   /// <summary>
   /// Gets or sets the number spacing for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.numberspacing?view=word-pia"/>
-  public WdNumberSpacing NumberSpacing { get; set; }
+  public NumberSpacing NumberSpacing { get; set; }
 
   /// <summary>
   /// Gets or sets whether contextual alternates are enabled.
@@ -332,5 +334,5 @@ public partial interface _Font : InteropObject
   /// Gets or sets the stylistic set for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.stylisticset?view=word-pia"/>
-  public WdStylisticSet StylisticSet { get; set; }
+  public StylisticSet StylisticSet { get; set; }
 }

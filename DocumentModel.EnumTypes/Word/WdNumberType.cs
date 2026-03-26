@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdnumbertype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdNumberType
+public enum NumberType
 {
   /// <summary>
   /// Preset numbers you can add to paragraphs by selecting a template in the Bullets and Numbering dialog box.

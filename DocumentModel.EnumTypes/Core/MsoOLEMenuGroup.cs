@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the menu group that a command bar pop-up control belongs to when the menu groups of the OLE server
@@ -8,7 +8,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoolemenugroup?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoOLEMenuGroup
+public enum OLEMenuGroup
 {
   /// <summary>
   /// Pop-up control is not merged.

@@ -70,10 +70,10 @@ public partial interface XMLNode : InteropObject
   public Document OwnerDocument { get; }
 
   /// <summary>
-  /// Returns a WdXMLNodeType constant that represents the type of node.
+  /// Returns a XMLNodeType constant that represents the type of node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.nodetype?view=word-pia"/>
-  public WdXMLNodeType NodeType { get; }
+  public XMLNodeType NodeType { get; }
 
   /// <summary>
   /// Returns a XMLNodes collection that represents the child elements of a specified element.
@@ -110,14 +110,14 @@ public partial interface XMLNode : InteropObject
   /// Returns the level of the specified XML element within the hierarchy of elements applied to a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.level?view=word-pia"/>
-  public WdXMLNodeLevel Level { get; }
+  public XMLNodeLevel Level { get; }
 
   /// <summary>
-  /// Returns a WdXMLValidationStatus constant that represents whether an element or attribute is valid according to
+  /// Returns a XMLValidationStatus constant that represents whether an element or attribute is valid according to
   /// the attached schema.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.validationstatus?view=word-pia"/>
-  public WdXMLValidationStatus ValidationStatus { get; }
+  public XMLValidationStatus ValidationStatus { get; }
 
   /// <summary>
   /// Returns a SmartTag object that represents the smart tag associated with an XML element.

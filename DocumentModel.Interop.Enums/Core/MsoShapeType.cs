@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the type of a shape or range of shapes.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoshapetype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoShapeType
+public enum ShapeType
 {
   /// <summary>
   /// Return value only; indicates a combination of the other states.

@@ -10,7 +10,7 @@ public interface Line : InteropObject
   /// Returns the type of line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.line.linetype?view=word-pia"/>
-  public WdLineType LineType { get; }
+  public LineType LineType { get; }
   /// <summary>
   /// Returns the horizontal position of the line, in points.
   /// </summary>

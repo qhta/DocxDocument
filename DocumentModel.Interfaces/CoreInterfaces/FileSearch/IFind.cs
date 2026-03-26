@@ -47,7 +47,7 @@ public partial interface IFind: InteropObject
   /// Gets or sets the `Options` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.options?view=office-pia"/>
-  public MsoFileFindOptions Options { get; set; }
+  public FileFindOptions Options { get; set; }
   /// <summary>
   /// Gets or sets the `MatchCase` property.
   /// </summary>
@@ -92,17 +92,17 @@ public partial interface IFind: InteropObject
   /// Gets or sets the `View` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.view?view=office-pia"/>
-  public MsoFileFindView View { get; set; }
+  public FileFindView View { get; set; }
   /// <summary>
   /// Gets or sets the `SortBy` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.sortby?view=office-pia"/>
-  public MsoFileFindSortBy SortBy { get; set; }
+  public FileFindSortBy SortBy { get; set; }
   /// <summary>
   /// Gets or sets the `ListBy` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.listby?view=office-pia"/>
-  public MsoFileFindListBy ListBy { get; set; }
+  public FileFindListBy ListBy { get; set; }
   /// <summary>
   /// Gets or sets the `SelectedFile` property.
   /// </summary>

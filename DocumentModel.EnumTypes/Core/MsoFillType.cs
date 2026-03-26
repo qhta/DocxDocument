@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies a shape's fill type.
@@ -6,12 +6,11 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofilltype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoFillType
+public enum FillType
 {
   /// <summary>
   /// Mixed fill.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   /// Solid fill.
   /// </summary>

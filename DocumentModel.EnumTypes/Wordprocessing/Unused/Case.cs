@@ -8,9 +8,6 @@ namespace DocumentModel.Wordprocessing;
 [JsonConverter(typeof(StringEnumConverter))]
 public enum Case
 {
-  /// <summary>Mixed case</summary>
-  [OpenXmlEnumValue("Mixed")]
-  Mixed,
   /// <summary>Uppercase</summary>
   [OpenXmlEnumValue("Upper")]
   Upper,

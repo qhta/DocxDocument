@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdchevronconvertrule?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdChevronConvertRule
+public enum ChevronConvertRule
 {
   /// <summary>
   /// The converter passes the text through without attempting any interpretation.

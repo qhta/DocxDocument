@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Indicates how validation errors will be cleared or generated.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocustomxmlvalidationerrortype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoCustomXMLValidationErrorType
+public enum CustomXMLValidationErrorType
 {
   /// <summary>
   /// Specifies that where there is a non-empty schema collection available for the custom XML part and validation

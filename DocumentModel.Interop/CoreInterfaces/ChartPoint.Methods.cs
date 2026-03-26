@@ -17,7 +17,7 @@ public partial interface ChartPoint
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.chartpoint._applydatalabels?view=office-pia"/>
   public object _ApplyDataLabels
-  (XlDataLabelsType Type, object IMsoLegendKey, object AutoText,
+  (DataLabelsType Type, object IMsoLegendKey, object AutoText,
     object HasLeaderLines);
   /// <summary>
   /// Clears formatting from the chart point.
@@ -65,7 +65,7 @@ public partial interface ChartPoint
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.chartpoint.applydatalabels?view=office-pia"/>
   public object ApplyDataLabels
-  (XlDataLabelsType Type, object IMsoLegendKey, object AutoText,
+  (DataLabelsType Type, object IMsoLegendKey, object AutoText,
     object HasLeaderLines, object ShowSeriesName, object ShowCategoryName, object ShowValue, object ShowPercentage,
     object ShowBubbleSize, object Separator);
   /// <summary>
@@ -75,6 +75,6 @@ public partial interface ChartPoint
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.chartpoint.pieslicelocation?view=office-pia"/>
-  public double PieSliceLocation(XlPieSliceLocation loc, XlPieSliceIndex Index);
+  public double PieSliceLocation(PieSliceLocation loc, PieSliceIndex Index);
 }
 

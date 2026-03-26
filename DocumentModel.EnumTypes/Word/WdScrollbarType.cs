@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdscrollbartype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdScrollbarType
+public enum ScrollbarType
 {
   /// <summary>
   /// Scroll bars are available for the specified frame only if the contents are too large to fit in the allotted

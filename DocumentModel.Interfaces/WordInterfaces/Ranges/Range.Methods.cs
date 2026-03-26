@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Word;
 
 /// <remarks>
@@ -15,7 +17,7 @@ public partial interface Range: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.information?view=word-pia"/>
-  public object Information(WdInformation Type);
+  public object Information(Information Type);
 
   /// <summary>
   /// Returns the XML representation of the range.

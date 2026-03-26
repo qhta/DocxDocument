@@ -131,7 +131,7 @@ public partial interface CommandBar: _IMsoOleAccDispObj
   /// Gets or sets the `Position` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.position?view=office-pia"/>
-  public MsoBarPosition Position { get; set; }
+  public BarPosition Position { get; set; }
   /// <summary>
   /// Gets or sets the `RowIndex` property.
   /// </summary>
@@ -141,7 +141,7 @@ public partial interface CommandBar: _IMsoOleAccDispObj
   /// Gets or sets the `Protection` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.protection?view=office-pia"/>
-  public MsoBarProtection Protection { get; set; }
+  public BarProtection Protection { get; set; }
   /// <summary>
   /// Gets or sets the `Top` property.
   /// </summary>
@@ -151,7 +151,7 @@ public partial interface CommandBar: _IMsoOleAccDispObj
   /// Gets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.type?view=office-pia"/>
-  public MsoBarType Type { get; }
+  public BarType Type { get; }
   /// <summary>
   /// Gets or sets the `Visible` property.
   /// </summary>

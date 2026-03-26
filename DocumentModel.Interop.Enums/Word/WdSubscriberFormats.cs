@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsubscriberformats?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdSubscriberFormats
+public enum SubscriberFormats
 {
   /// <summary>
   /// Not supported.

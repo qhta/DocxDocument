@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Indicates the number of times a character is printed to darken the image.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotextstrike?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoTextStrike
+public enum TextStrike
 {
   /// <summary>
   /// Specifies that the text can contain a combination of double-strike and single- strike characters.

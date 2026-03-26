@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdlisttype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdListType
+public enum ListType
 {
   /// <summary>
   /// List with no bullets, numbering, or outlining.

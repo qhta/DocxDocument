@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies texture to be used to fill a shape.
@@ -6,12 +6,11 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresettexture?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoPresetTexture
+public enum PresetTexture
 {
   /// <summary>
   /// Specifies texture to be used to fill a shape.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   /// Papyrus texture.
   /// </summary>

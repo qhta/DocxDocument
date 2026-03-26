@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrelativehorizontalsize?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdRelativeHorizontalSize
+public enum RelativeHorizontalSize
 {
   /// <summary>
   /// Width is relative to the space between the left margin and the right margin.

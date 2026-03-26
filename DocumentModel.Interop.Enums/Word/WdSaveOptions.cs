@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsaveoptions?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdSaveOptions
+public enum SaveOptions
 {
   /// <summary>
   /// Do not save pending changes.

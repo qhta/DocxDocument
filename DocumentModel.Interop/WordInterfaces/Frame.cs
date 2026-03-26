@@ -7,16 +7,16 @@ namespace DocumentModel.Interop.Word;
 public partial interface Frame : InteropObject
 {
   /// <summary>
-  /// Returns or sets a <see cref="WdFrameSizeRule"/> constant that represents the rule for determining the height of the specified frame.
+  /// Returns or sets a <see cref="FrameSizeRule"/> constant that represents the rule for determining the height of the specified frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frame.heightrule?view=word-pia"/>
-  public WdFrameSizeRule HeightRule { get; set; }
+  public FrameSizeRule HeightRule { get; set; }
 
   /// <summary>
-  /// Returns or sets a <see cref="WdFrameSizeRule"/> constant that represents the rule for determining the width of the specified frame.
+  /// Returns or sets a <see cref="FrameSizeRule"/> constant that represents the rule for determining the width of the specified frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frame.widthrule?view=word-pia"/>
-  public WdFrameSizeRule WidthRule { get; set; }
+  public FrameSizeRule WidthRule { get; set; }
 
   /// <summary>
   /// Returns or sets the horizontal distance, in points, between the frame and the surrounding text.
@@ -46,13 +46,13 @@ public partial interface Frame : InteropObject
   /// Returns or sets the relative horizontal position of the specified frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frame.relativehorizontalposition?view=word-pia"/>
-  public WdRelativeHorizontalPosition RelativeHorizontalPosition { get; set; }
+  public RelativeHorizontalPosition RelativeHorizontalPosition { get; set; }
 
   /// <summary>
   /// Returns or sets the relative vertical position of the specified frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frame.relativeverticalposition?view=word-pia"/>
-  public WdRelativeVerticalPosition RelativeVerticalPosition { get; set; }
+  public RelativeVerticalPosition RelativeVerticalPosition { get; set; }
 
   /// <summary>
   /// Returns or sets the vertical distance, in points, between the frame and the surrounding text.

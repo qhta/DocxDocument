@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcompatibilitymode?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdCompatibilityMode
+public enum CompatibilityMode
 {
   /// <summary>
   /// Specifies the compatibility mode that Word 2010 uses when opening a document.

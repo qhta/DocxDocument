@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrelativehorizontalposition?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdRelativeHorizontalPosition
+public enum RelativeHorizontalPosition
 {
   /// <summary>
   /// Relative to margin.

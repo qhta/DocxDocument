@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrelativeverticalsize?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdRelativeVerticalSize
+public enum RelativeVerticalSize
 {
   /// <summary>
   /// Height is relative to the space between the left margin and the right margin.

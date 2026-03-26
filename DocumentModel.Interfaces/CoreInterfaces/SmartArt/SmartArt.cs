@@ -38,6 +38,6 @@ public partial interface SmartArt: InteropObject
   /// Gets or sets the `Reverse` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartart.reverse?view=office-pia"/>
-  public MsoTriState Reverse { get; set; }
+  public TriState Reverse { get; set; }
 }
 

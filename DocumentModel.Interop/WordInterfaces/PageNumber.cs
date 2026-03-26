@@ -13,8 +13,8 @@ public partial interface PageNumber : InteropObject
   public int Index { get; }
 
   /// <summary>
-  /// Returns or sets a WdPageNumberAlignment constant that represents the alignment for the page number.
+  /// Returns or sets a PageNumberAlignment constant that represents the alignment for the page number.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumber.alignment?view=word-pia"/>
-  public WdPageNumberAlignment Alignment { get; set; }
+  public PageNumberAlignment Alignment { get; set; }
 }

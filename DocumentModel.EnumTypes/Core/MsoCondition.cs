@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocondition?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoCondition
+public enum Condition
 {
   /// <summary>
   /// File can be any type.

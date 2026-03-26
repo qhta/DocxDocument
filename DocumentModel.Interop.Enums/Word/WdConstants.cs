@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdconstants?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdConstants
+public enum Constants
 {
   /// <summary>
   /// Represents the Auto value for the specified setting.

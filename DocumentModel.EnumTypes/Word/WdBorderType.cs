@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbordertype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdBorderType
+public enum BorderType
 {
   /// <summary>
   /// A diagonal border starting in the bottom left corner.

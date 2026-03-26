@@ -28,7 +28,7 @@ public partial interface Template : InteropObject
   /// Returns or sets the language for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.languageid?view=word-pia"/>
-  public WdLanguageID LanguageID { get; set; }
+  public LanguageID LanguageID { get; set; }
 
   /// <summary>
   /// True if the specified document or template hasn't changed since it was last saved. False if Microsoft Word
@@ -41,7 +41,7 @@ public partial interface Template : InteropObject
   /// Returns the template type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.type?view=word-pia"/>
-  public WdTemplateType Type { get; }
+  public TemplateType Type { get; }
 
   /// <summary>
   /// Specifies the name of a template, including the drive or Web path.
@@ -73,7 +73,7 @@ public partial interface Template : InteropObject
   /// Returns or sets an East Asian language for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.languageidfareast?view=word-pia"/>
-  public WdLanguageID LanguageIDFarEast { get; set; }
+  public LanguageID LanguageIDFarEast { get; set; }
 
   /// <summary>
   /// Returns the VBProject object for the specified template.
@@ -91,13 +91,13 @@ public partial interface Template : InteropObject
   /// Returns or sets the character spacing adjustment for the specified template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.justificationmode?view=word-pia"/>
-  public WdJustificationMode JustificationMode { get; set; }
+  public JustificationMode JustificationMode { get; set; }
 
   /// <summary>
   /// Returns or sets the line break control level for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.fareastlinebreaklevel?view=word-pia"/>
-  public WdFarEastLineBreakLevel FarEastLineBreakLevel { get; set; }
+  public FarEastLineBreakLevel FarEastLineBreakLevel { get; set; }
 
   /// <summary>
   /// Returns or sets the kinsoku characters before which Microsoft Word will not break a line.
@@ -122,7 +122,7 @@ public partial interface Template : InteropObject
   /// template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.fareastlinebreaklanguage?view=word-pia"/>
-  public WdFarEastLineBreakLanguageID FarEastLineBreakLanguage { get; set; }
+  public FarEastLineBreakLanguageID FarEastLineBreakLanguage { get; set; }
 
   /// <summary>
   /// Returns a BuildingBlockEntries collection that represents the collection of building block entries in a

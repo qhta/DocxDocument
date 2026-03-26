@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdhorizontalinverticaltype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdHorizontalInVerticalType
+public enum HorizontalInVerticalType
 {
   /// <summary>
   /// No formatting is applied to the horizontal text.

@@ -12,7 +12,7 @@ public partial interface IMsoDiagram
   /// </summary>
   /// <param name="Type">The `Type` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodiagram.convert?view=office-pia"/>
-  public void Convert(MsoDiagramType Type);
+  public void Convert(DiagramType Type);
   /// <summary>
   /// Fits text within the diagram.
   /// </summary>

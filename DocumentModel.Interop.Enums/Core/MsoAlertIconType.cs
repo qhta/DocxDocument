@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies which icon, if any, to display with an alert.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoalerticontype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoAlertIconType
+public enum AlertIconType
 {
   /// <summary>
   /// Displays no icon with the alert message.

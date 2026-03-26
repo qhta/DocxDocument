@@ -11,7 +11,6 @@ public enum ColorType
   /// <summary>
   ///   Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>Auto color</summary>
   [OpenXmlEnumValue("Auto")]
   Auto = 1,

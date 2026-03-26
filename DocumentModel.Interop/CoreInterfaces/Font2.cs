@@ -11,27 +11,27 @@ public partial interface Font2: InteropObject
   /// Gets or sets the `Bold` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.bold?view=office-pia"/>
-  public MsoTriState Bold { get; set; }
+  public TriState Bold { get; set; }
   /// <summary>
   /// Gets or sets the `Italic` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.italic?view=office-pia"/>
-  public MsoTriState Italic { get; set; }
+  public TriState Italic { get; set; }
   /// <summary>
   /// Gets or sets the `Strike` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.strike?view=office-pia"/>
-  public MsoTextStrike Strike { get; set; }
+  public TextStrike Strike { get; set; }
   /// <summary>
   /// Gets or sets the `Caps` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.caps?view=office-pia"/>
-  public MsoTextCaps Caps { get; set; }
+  public TextCaps Caps { get; set; }
   /// <summary>
   /// Gets or sets the `AutorotateNumbers` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.autorotatenumbers?view=office-pia"/>
-  public MsoTriState AutorotateNumbers { get; set; }
+  public TriState AutorotateNumbers { get; set; }
   /// <summary>
   /// Gets or sets the `BaselineOffset` property.
   /// </summary>
@@ -56,22 +56,22 @@ public partial interface Font2: InteropObject
   /// Gets or sets the `UnderlineStyle` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.underlinestyle?view=office-pia"/>
-  public MsoTextUnderlineType UnderlineStyle { get; set; }
+  public TextUnderlineType UnderlineStyle { get; set; }
   /// <summary>
   /// Gets or sets the `Allcaps` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.allcaps?view=office-pia"/>
-  public MsoTriState Allcaps { get; set; }
+  public TriState Allcaps { get; set; }
   /// <summary>
   /// Gets or sets the `DoubleStrikeThrough` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.doublestrikethrough?view=office-pia"/>
-  public MsoTriState DoubleStrikeThrough { get; set; }
+  public TriState DoubleStrikeThrough { get; set; }
   /// <summary>
   /// Gets or sets the `Equalize` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.equalize?view=office-pia"/>
-  public MsoTriState Equalize { get; set; }
+  public TriState Equalize { get; set; }
   /// <summary>
   /// Gets the `Fill` property.
   /// </summary>
@@ -111,42 +111,42 @@ public partial interface Font2: InteropObject
   /// Gets or sets the `Smallcaps` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.smallcaps?view=office-pia"/>
-  public MsoTriState Smallcaps { get; set; }
+  public TriState Smallcaps { get; set; }
   /// <summary>
   /// Gets or sets the `SoftEdgeFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.softedgeformat?view=office-pia"/>
-  public MsoSoftEdgeType SoftEdgeFormat { get; set; }
+  public SoftEdgeType SoftEdgeFormat { get; set; }
   /// <summary>
   /// Gets or sets the `StrikeThrough` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.strikethrough?view=office-pia"/>
-  public MsoTriState StrikeThrough { get; set; }
+  public TriState StrikeThrough { get; set; }
   /// <summary>
   /// Gets or sets the `Subscript` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.subscript?view=office-pia"/>
-  public MsoTriState Subscript { get; set; }
+  public TriState Subscript { get; set; }
   /// <summary>
   /// Gets or sets the `Superscript` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.superscript?view=office-pia"/>
-  public MsoTriState Superscript { get; set; }
+  public TriState Superscript { get; set; }
   /// <summary>
   /// Gets or sets the `WordArtformat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.wordartformat?view=office-pia"/>
-  public MsoPresetTextEffect WordArtformat { get; set; }
+  public PresetTextEffect WordArtformat { get; set; }
   /// <summary>
   /// Gets the `Embeddable` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.embeddable?view=office-pia"/>
-  public MsoTriState Embeddable { get; }
+  public TriState Embeddable { get; }
   /// <summary>
   /// Gets the `Embedded` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.embedded?view=office-pia"/>
-  public MsoTriState Embedded { get; }
+  public TriState Embedded { get; }
   /// <summary>
   /// Gets or sets the `Name` property.
   /// </summary>

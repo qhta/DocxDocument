@@ -16,7 +16,7 @@ public partial interface CoAuthLocks: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthlocks.add?view=word-pia"/>
-  public CoAuthLock Add(object Range, WdLockType Type);
+  public CoAuthLock Add(object Range, LockType Type);
 
   /// <summary>
   /// Removes ephemeral locks from the document.

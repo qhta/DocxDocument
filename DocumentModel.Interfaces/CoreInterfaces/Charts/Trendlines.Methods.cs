@@ -23,7 +23,7 @@ public partial interface Trendlines: InteropObject
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.trendlines.add?view=office-pia"/>
   public IMsoTrendline Add
-  (XlTrendlineType Type, object Order, object Period, object Forward, object Backward,
+  (TrendlineType Type, object Order, object Period, object Forward, object Backward,
     object Intercept, object DisplayEquation, object DisplayRSquared, object Name);
 
 }

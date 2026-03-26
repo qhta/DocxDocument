@@ -19,7 +19,7 @@ public partial interface SignatureSet: InteropCollection<Signature>
   /// Gets or sets the `Subset` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureset.subset?view=office-pia"/>
-  public MsoSignatureSubset Subset { get; set; }
+  public SignatureSubset Subset { get; set; }
   /// <summary>
   /// Sets the `ShowSignaturesPane` property.
   /// </summary>

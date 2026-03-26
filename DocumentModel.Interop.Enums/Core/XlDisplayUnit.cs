@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xldisplayunit?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlDisplayUnit
+public enum DisplayUnit
 {
   /// <summary>
   /// Specifies units of hundreds.

@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlchartpicturetype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlChartPictureType
+public enum ChartPictureType
 {
   /// <summary>
   /// Picture is stretched the full length of the stacked bar.

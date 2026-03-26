@@ -12,7 +12,7 @@ public partial interface PictureEffect: InteropObject
   /// Gets or sets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureeffect.type?view=office-pia"/>
-  public MsoPictureEffectType Type { get; }
+  public PictureEffectType Type { get; }
   /// <summary>
   /// Gets or sets the `Position` property.
   /// </summary>
@@ -27,6 +27,6 @@ public partial interface PictureEffect: InteropObject
   /// Gets or sets the `Visible` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureeffect.visible?view=office-pia"/>
-  public MsoTriState Visible { get; set; }
+  public TriState Visible { get; set; }
 }
 

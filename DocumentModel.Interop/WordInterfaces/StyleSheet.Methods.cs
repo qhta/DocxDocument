@@ -14,5 +14,5 @@ public partial interface StyleSheet
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.stylesheet.move?view=word-pia"/>
-  public void Move(WdStyleSheetPrecedence Precedence);
+  public void Move(StyleSheetPrecedence Precedence);
 }

@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the format of a file or folder path.
@@ -6,12 +6,11 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopathformat?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoPathFormat
+public enum PathFormat
 {
   /// <summary>
   /// Represents a mixed format.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   /// Represents no format.
   /// </summary>

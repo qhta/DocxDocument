@@ -9,7 +9,6 @@ public enum LightRigType
   /// <summary>
   ///   Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   ///   Legacy Flat 1.
   /// </summary>

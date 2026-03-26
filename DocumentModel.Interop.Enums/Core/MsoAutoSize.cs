@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Determines the type of automatic sizing allowed.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoautosize?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoAutoSize
+public enum AutoSize
 {
   /// <summary>
   /// A combination of automatic sizing schemes are used.

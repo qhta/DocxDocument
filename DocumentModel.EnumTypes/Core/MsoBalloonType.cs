@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoballoontype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoBalloonType
+public enum BalloonType
 {
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.

@@ -11,7 +11,6 @@ public enum BulletStyle
   /// <summary>
   ///   Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>Solid round bullet</summary>
   [OpenXmlEnumValue("Bullet")]
   Bullet = 0,

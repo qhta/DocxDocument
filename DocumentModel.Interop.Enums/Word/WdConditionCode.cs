@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdconditioncode?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdConditionCode
+public enum ConditionCode
 {
   /// <summary>
   /// Applies formatting to the first row in a table.

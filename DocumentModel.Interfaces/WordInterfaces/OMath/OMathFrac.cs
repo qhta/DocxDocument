@@ -20,6 +20,6 @@ public interface OMathFrac : InteropObject
   /// Returns or sets the fraction type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfrac.type?view=word-pia"/>
-  public WdOMathFracType Type { get; set; }
+  public OMathFracType Type { get; set; }
 
 }

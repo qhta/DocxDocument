@@ -17,6 +17,6 @@ public partial interface ThemeColor: InteropObject
   /// Gets the `ThemeColorSchemeIndex` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themecolor.themecolorschemeindex?view=office-pia"/>
-  public MsoThemeColorSchemeIndex ThemeColorSchemeIndex { get; }
+  public ThemeColorSchemeIndex ThemeColorSchemeIndex { get; }
 }
 

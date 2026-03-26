@@ -18,8 +18,8 @@ public partial interface PropertyTests: InteropObject
   /// <param name="Connector">The logical connector to use with subsequent criteria.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.propertytests.add?view=office-pia"/>
   public void Add
-  (string Name, MsoCondition Condition, object Value, object SecondValue,
-    MsoConnector Connector);
+  (string Name, Condition Condition, object Value, object SecondValue,
+    Connector Connector);
   /// <summary>
   /// Removes a search criterion from the collection.
   /// </summary>

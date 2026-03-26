@@ -34,7 +34,7 @@ public partial interface System : InteropObject
   /// Reserved for internal use.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system.country?view=word-pia"/>
-  public WdCountry Country { get; }
+  public Country Country { get; }
 
   /// <summary>
   /// Returns the designated language of the system software.
@@ -82,15 +82,15 @@ public partial interface System : InteropObject
   public bool QuickDrawInstalled { get; }
 
   /// <summary>
-  /// Returns or sets the state (shape) of the pointer. Can be one of the following WdCursorType constants:
+  /// Returns or sets the state (shape) of the pointer. Can be one of the following CursorType constants:
   /// wdCursorIBeam, wdCursorNormal, wdCursorNorthwestArrow, or wdCursorWait.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system.cursor?view=word-pia"/>
-  public WdCursorType Cursor { get; set; }
+  public CursorType Cursor { get; set; }
 
   /// <summary>
   /// Returns the country/region designation of the system.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system.countryregion?view=word-pia"/>
-  public WdCountry CountryRegion { get; }
+  public Country CountryRegion { get; }
 }

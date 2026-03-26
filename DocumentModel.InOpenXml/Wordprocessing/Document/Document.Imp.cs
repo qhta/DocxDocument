@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Wordprocessing;
 public partial class Document: DIW.Document
 {
 
@@ -204,7 +204,7 @@ public partial class Document: DIW.Document
   /// Disables all features introduced after a specified version of Microsoft Word in the document only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.disablefeaturesintroducedafter?view=word-pia"/>
-  public DIW.WdDisableFeaturesIntroducedAfter DisableFeaturesIntroducedAfter { get; set; }
+  public DIW.DisableFeaturesIntroducedAfter DisableFeaturesIntroducedAfter { get; set; }
 
   /// <summary>
   /// Reserved for internal use.
@@ -288,13 +288,13 @@ public partial class Document: DIW.Document
   /// Returns or sets the East Asian language to use when breaking lines of text in the specified document or template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.fareastlinebreaklanguage?view=word-pia"/>
-  public DIW.WdFarEastLineBreakLanguageID FarEastLineBreakLanguage { get; set; }
+  public DIW.FarEastLineBreakLanguageID FarEastLineBreakLanguage { get; set; }
 
   /// <summary>
   /// Returns or sets the line break control level for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.fareastlinebreaklevel?view=word-pia"/>
-  public DIW.WdFarEastLineBreakLevel FarEastLineBreakLevel { get; set; }
+  public DIW.FarEastLineBreakLevel FarEastLineBreakLevel { get; set; }
 
   /// <summary>
   /// Returns a read-only Fields collection that represents all the fields in the document, range, or selection.
@@ -321,10 +321,10 @@ public partial class Document: DIW.Document
   public bool FormattingShowClear { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdShowFilter constant that represents the styles and formatting displayed in the Styles and Formatting task pane.
+  /// Returns or sets a ShowFilter constant that represents the styles and formatting displayed in the Styles and Formatting task pane.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.formattingshowfilter?view=word-pia"/>
-  public DIW.WdShowFilter FormattingShowFilter { get; set; }
+  public DIW.ShowFilter FormattingShowFilter { get; set; }
 
   /// <summary>
   /// Determines if Microsoft Word displays font formatting in the Styles and Formatting task pane.
@@ -528,7 +528,7 @@ public partial class Document: DIW.Document
   /// Returns or sets the character spacing adjustment for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.justificationmode?view=word-pia"/>
-  public DIW.WdJustificationMode JustificationMode { get; set; }
+  public DIW.JustificationMode JustificationMode { get; set; }
 
   /// <summary>
   /// Determines if Microsoft Word kerns half-width Latin characters and punctuation marks in the specified document.
@@ -540,7 +540,7 @@ public partial class Document: DIW.Document
   /// Returns or sets the format type that Microsoft Word uses when automatically formatting the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.kind?view=word-pia"/>
-  public DIW.WdDocumentKind Kind { get; set; }
+  public DIW.DocumentKind Kind { get; set; }
 
   /// <summary>
   /// Returns or sets a value that specifies whether Microsoft Word has detected the language of the specified text.
@@ -615,16 +615,16 @@ public partial class Document: DIW.Document
   public string NoLineBreakBefore { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdOMathBreakBin enumeration value that represents where Microsoft Office Word places binary operators when equations span two or more lines. Read/write.
+  /// Returns or sets a OMathBreakBin enumeration value that represents where Microsoft Office Word places binary operators when equations span two or more lines. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.omathbreakbin?view=word-pia"/>
-  public DIW.WdOMathBreakBin OMathBreakBin { get; set; }
+  public DIW.OMathBreakBin OMathBreakBin { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdOMathBreakSub enumeration value that represents how Microsoft Office Word handles a subtraction operator that falls before a line break. Read/write.
+  /// Returns or sets a OMathBreakSub enumeration value that represents how Microsoft Office Word handles a subtraction operator that falls before a line break. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.omathbreaksub?view=word-pia"/>
-  public DIW.WdOMathBreakSub OMathBreakSub { get; set; }
+  public DIW.OMathBreakSub OMathBreakSub { get; set; }
 
   /// <summary>
   /// Returns the name of the font used in a document to display equations. Read/write.
@@ -642,7 +642,7 @@ public partial class Document: DIW.Document
   /// Returns or sets the default justification�left, right, centered, or centered as a group�of a group of equations. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.omathjc?view=word-pia"/>
-  public DIW.WdOMathJc OMathJc { get; set; }
+  public DIW.OMathJc OMathJc { get; set; }
 
   /// <summary>
   /// Returns or sets the left margin for equations. Read/write.
@@ -684,7 +684,7 @@ public partial class Document: DIW.Document
   /// Returns the encoding used to open the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.openencoding?view=word-pia"/>
-  public DIC.MsoEncoding OpenEncoding { get; }
+  public DIC.Encoding OpenEncoding { get; }
 
   /// <summary>
   /// Determines if Microsoft Word optimizes the current document for viewing in Word 97.
@@ -780,7 +780,7 @@ public partial class Document: DIW.Document
   /// Returns the protection type for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.protectiontype?view=word-pia"/>
-  public DIW.WdProtectionType ProtectionType { get; }
+  public DIW.ProtectionType ProtectionType { get; }
 
   /// <summary>
   /// Returns a ReadabilityStatistics collection that represents the readability statistics for the specified document.
@@ -870,7 +870,7 @@ public partial class Document: DIW.Document
   /// Returns or sets the encoding to use when saving a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.saveencoding?view=word-pia"/>
-  public DIC.MsoEncoding SaveEncoding { get; set; }
+  public DIC.Encoding SaveEncoding { get; set; }
 
   /// <summary>
   /// Returns an Integer representing the file format of the specified document or file converter.
@@ -1020,7 +1020,7 @@ public partial class Document: DIW.Document
   /// Returns or sets the sort method to use when sorting styles in the Styles task pane. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.stylesortmethod?view=word-pia"/>
-  public DIW.WdStyleSort StyleSortMethod { get; set; }
+  public DIW.StyleSort StyleSortMethod { get; set; }
 
   /// <summary>
   /// Returns a Subdocuments collection that represents all the subdocuments in the specified range or document.
@@ -1038,7 +1038,7 @@ public partial class Document: DIW.Document
   /// Returns or sets the way a summary is displayed.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.summaryviewmode?view=word-pia"/>
-  public DIW.WdSummaryMode SummaryViewMode { get; set; }
+  public DIW.SummaryMode SummaryViewMode { get; set; }
 
   /// <summary>
   /// Returns a Sync object that provides access to the methods and properties for documents that are part of a Document Workspace.
@@ -1080,13 +1080,13 @@ public partial class Document: DIW.Document
   /// Returns or sets the code page, or character set, that Microsoft Word uses for a document saved as an encoded text file.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.textencoding?view=word-pia"/>
-  public DIC.MsoEncoding TextEncoding { get; set; }
+  public DIC.Encoding TextEncoding { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdLineEndingType constant indicating how Microsoft Word marks the line and paragraph breaks in documents saved as text files.
+  /// Returns or sets a LineEndingType constant indicating how Microsoft Word marks the line and paragraph breaks in documents saved as text files.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.textlineending?view=word-pia"/>
-  public DIW.WdLineEndingType TextLineEnding { get; set; }
+  public DIW.LineEndingType TextLineEnding { get; set; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether to track formatting changes when change tracking is turned on. Read/write.
@@ -1110,7 +1110,7 @@ public partial class Document: DIW.Document
   /// Returns the document type (template or document).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.type?view=word-pia"/>
-  public DIW.WdDocumentType Type { get; }
+  public DIW.DocumentType Type { get; }
 
   /// <summary>
   /// Determines if the styles in the specified document are updated to match the styles in the attached template each time the document is opened.

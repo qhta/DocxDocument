@@ -10,7 +10,7 @@ public partial interface KeysBoundTo : InteropObject, InteropCollection<KeyBindi
   /// Returns the type of item assigned to the specified key binding.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keysboundto.keycategory?view=word-pia"/>
-  public WdKeyCategory KeyCategory { get; }
+  public KeyCategory KeyCategory { get; }
 
   /// <summary>
   /// Returns the command assigned to the specified key combination.

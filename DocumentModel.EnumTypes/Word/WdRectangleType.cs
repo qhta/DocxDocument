@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrectangletype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdRectangleType
+public enum RectangleType
 {
   /// <summary>
   /// Represents a space occupied by text.

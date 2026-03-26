@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrowheightrule?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdRowHeightRule
+public enum RowHeightRule
 {
   /// <summary>
   /// The row height is adjusted to accommodate the tallest value in the row.

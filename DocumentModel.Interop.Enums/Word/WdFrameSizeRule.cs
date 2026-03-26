@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdframesizerule?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdFrameSizeRule
+public enum FrameSizeRule
 {
   /// <summary>
   /// Sets the height or width according to the height or width of the item in the frame.

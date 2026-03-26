@@ -35,7 +35,7 @@ public partial interface Replacement : InteropObject
   /// Returns or sets the language for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.languageid?view=word-pia"/>
-  public WdLanguageID LanguageID { get; set; }
+  public LanguageID LanguageID { get; set; }
 
   /// <summary>
   /// True if highlight formatting is applied to the replacement text. Can return or be set to True, False, or
@@ -55,7 +55,7 @@ public partial interface Replacement : InteropObject
   /// Returns or sets an East Asian language for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.languageidfareast?view=word-pia"/>
-  public WdLanguageID LanguageIDFarEast { get; set; }
+  public LanguageID LanguageIDFarEast { get; set; }
 
   /// <summary>
   /// True if Microsoft Word finds or replaces text that the spelling and grammar checker ignores.

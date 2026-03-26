@@ -10,7 +10,7 @@ public interface TextRetrievalMode : InteropObject
   /// Returns or sets the view for the TextRetrievalMode object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textretrievalmode.viewtype?view=word-pia"/>
-  public WdViewType ViewType { get; set; }
+  public ViewType ViewType { get; set; }
   /// <summary>
   /// Returns a read-only TextRetrievalMode object that represents options related to retrieving text from the
   /// specified Range object.

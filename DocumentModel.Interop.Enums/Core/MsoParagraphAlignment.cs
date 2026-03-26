@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies paragraph alignment for a text block.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoparagraphalignment?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoParagraphAlignment
+public enum ParagraphAlignment
 {
   /// <summary>
   /// Use a combination of alignment styles.

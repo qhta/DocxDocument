@@ -25,7 +25,7 @@ public partial interface DocumentProperty
   /// Returns or sets the document property type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.type?view=office-pia"/>
-  public MsoDocProperties Type { get; set; }
+  public DocProperties Type { get; set; }
   /// <summary>
   /// Determine if the value of the custom document property is linked to the content of the container document.
   /// </summary>

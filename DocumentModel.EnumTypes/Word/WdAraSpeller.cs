@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdaraspeller?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdAraSpeller
+public enum AraSpeller
 {
   /// <summary>
   /// The spelling checker ignores spelling rules regarding either Arabic words ending with the letter yaa or Arabic

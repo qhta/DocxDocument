@@ -106,7 +106,7 @@ public partial interface ChartTitle : InteropObject
   /// Gets or sets the position of the chart title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.charttitle.position?view=word-pia"/>
-  public XlChartElementPosition Position { get; set; }
+  public ChartElementPosition Position { get; set; }
 
   /// <summary>
   /// Gets the chart formatting for the chart title.

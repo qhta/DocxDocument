@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Indicates how to format the child nodes in an organization chart.
@@ -6,10 +6,10 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoorgchartlayouttype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoOrgChartLayoutType
+public enum OrgChartLayoutType
 {
   /// <summary>
-  /// Return value for a parent node that has children formatted using more than one MsoOrgChartLayoutType.
+  /// Return value for a parent node that has children formatted using more than one OrgChartLayoutType.
   /// </summary>
   Mixed = -2,
   /// <summary>

@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodiagramnodetype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoDiagramNodeType
+public enum DiagramNodeType
 {
   /// <summary>
   /// Diagram node is a subordinate of its parent.

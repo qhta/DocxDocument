@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies what text effect to use on a WordArt object.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresettexteffect?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoPresetTextEffect
+public enum PresetTextEffect
 {
   /// <summary>
   /// Not used.

@@ -96,7 +96,7 @@ public partial interface IMsoChartTitle: InteropObject
   /// Gets or sets the `Position` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle.position?view=office-pia"/>
-  public XlChartElementPosition Position { get; set; }
+  public ChartElementPosition Position { get; set; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>

@@ -10,5 +10,5 @@ public partial interface Indexes : InteropObject, InteropCollection<Index>
   /// Returns or sets the built-in format used for the index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.indexes.format?view=word-pia"/>
-  public WdIndexFormat Format { get; set; }
+  public IndexFormat Format { get; set; }
 }

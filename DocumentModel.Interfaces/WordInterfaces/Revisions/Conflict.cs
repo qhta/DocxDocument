@@ -1,7 +1,7 @@
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
-/// Represents a conflicting edit in a co-authored document. The type of a Conflict object is specified by the WdRevisionType enumeration.
+/// Represents a conflicting edit in a co-authored document. The type of a Conflict object is specified by the RevisionType enumeration.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conflict?view=word-pia"/>
 public partial interface Conflict : InteropObject
@@ -16,7 +16,7 @@ public partial interface Conflict : InteropObject
   /// Gets the revision type of the conflict.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conflict.type?view=word-pia"/>
-  public WdRevisionType Type { get; }
+  public RevisionType Type { get; }
 
   /// <summary>
   /// Gets the index number of the conflict in the conflicts collection.

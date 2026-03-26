@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xldatalabelstype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlDataLabelsType
+public enum DataLabelsType
 {
   /// <summary>
   /// No data labels.

@@ -23,6 +23,6 @@ public partial interface Trendlines
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendlines.add?view=word-pia"/>
-  public Trendline Add(XlTrendlineType Type, object Order, int Period, int Forward, int Backward, 
+  public Trendline Add(TrendlineType Type, object Order, int Period, int Forward, int Backward, 
     object Intercept, bool DisplayEquation, bool DisplayRSquared, string Name);
 }

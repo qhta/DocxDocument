@@ -1,4 +1,4 @@
-﻿#nullable enable
+#nullable enable
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -35,7 +35,7 @@ internal class DocXmlBuilder
     {
       Chapter? chapter = null;
       var priorLevel = 0;
-      var endDoc = document.StoryRanges[Word.WdStoryType.wdMainTextStory].End;
+      var endDoc = document.StoryRanges[Word.StoryType.wdMainTextStory].End;
       var para = document.Paragraphs.First;
       while (para != null)
       {
@@ -200,11 +200,11 @@ internal class DocXmlBuilder
           typeDoc.Properties = properties;
         }
 
-        //heading.Range.HighlightColorIndex = Word.WdColorIndex.wdYellow;
+        //heading.Range.HighlightColorIndex = Word.ColorIndex.wdYellow;
         //foreach (var para in chapter.Paragraphs)
-        //  para.Range.HighlightColorIndex = Word.WdColorIndex.wdPink;
+        //  para.Range.HighlightColorIndex = Word.ColorIndex.wdPink;
         //foreach (var table in chapter.Tables)
-        //  table.Range.HighlightColorIndex = Word.WdColorIndex.wdTurquoise;
+        //  table.Range.HighlightColorIndex = Word.ColorIndex.wdTurquoise;
       }
       catch (Exception ex)
       {

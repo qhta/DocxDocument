@@ -111,7 +111,7 @@ public partial interface IMsoChartGroup
   /// Gets or sets the `SizeRepresents` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.sizerepresents?view=office-pia"/>
-  public XlSizeRepresents SizeRepresents { get; set; }
+  public SizeRepresents SizeRepresents { get; set; }
   /// <summary>
   /// Gets or sets the `BubbleScale` property.
   /// </summary>
@@ -126,7 +126,7 @@ public partial interface IMsoChartGroup
   /// Gets or sets the `SplitType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.splittype?view=office-pia"/>
-  public XlChartSplitType SplitType { get; set; }
+  public ChartSplitType SplitType { get; set; }
   /// <summary>
   /// Gets or sets the `SplitValue` property.
   /// </summary>

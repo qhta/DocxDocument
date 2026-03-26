@@ -17,7 +17,7 @@ public partial interface PropertyTest: InteropObject
   /// Gets the condition used for the search criterion.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.propertytest.condition?view=office-pia"/>
-  public MsoCondition Condition { get; }
+  public Condition Condition { get; }
   /// <summary>
   /// Gets the primary value used by the condition.
   /// </summary>
@@ -32,6 +32,6 @@ public partial interface PropertyTest: InteropObject
   /// Gets the logical connector used with the next criterion.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.propertytest.connector?view=office-pia"/>
-  public MsoConnector Connector { get; }
+  public Connector Connector { get; }
 }
 

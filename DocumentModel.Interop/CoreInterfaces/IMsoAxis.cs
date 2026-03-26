@@ -16,7 +16,7 @@ public partial interface IMsoAxis
   /// Gets the `AxisGroup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.axisgroup?view=office-pia"/>
-  public XlAxisGroup AxisGroup { get; }
+  public AxisGroup AxisGroup { get; }
   /// <summary>
   /// Gets the `AxisTitle` property.
   /// </summary>
@@ -31,7 +31,7 @@ public partial interface IMsoAxis
   /// Gets or sets the `Crosses` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.crosses?view=office-pia"/>
-  public XlAxisCrosses Crosses { get; set; }
+  public AxisCrosses Crosses { get; set; }
   /// <summary>
   /// Gets or sets the `CrossesAt` property.
   /// </summary>
@@ -61,7 +61,7 @@ public partial interface IMsoAxis
   /// Gets or sets the `MajorTickMark` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.majortickmark?view=office-pia"/>
-  public XlTickMark MajorTickMark { get; set; }
+  public TickMark MajorTickMark { get; set; }
   /// <summary>
   /// Gets or sets the `MajorUnit` property.
   /// </summary>
@@ -111,7 +111,7 @@ public partial interface IMsoAxis
   /// Gets or sets the `MinorTickMark` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.minortickmark?view=office-pia"/>
-  public XlTickMark MinorTickMark { get; set; }
+  public TickMark MinorTickMark { get; set; }
   /// <summary>
   /// Gets or sets the `MinorUnit` property.
   /// </summary>
@@ -131,12 +131,12 @@ public partial interface IMsoAxis
   /// Gets or sets the `ScaleType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.scaletype?view=office-pia"/>
-  public XlScaleType ScaleType { get; set; }
+  public ScaleType ScaleType { get; set; }
   /// <summary>
   /// Gets or sets the `TickLabelPosition` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.ticklabelposition?view=office-pia"/>
-  public XlTickLabelPosition TickLabelPosition { get; set; }
+  public TickLabelPosition TickLabelPosition { get; set; }
   /// <summary>
   /// Gets the `TickLabels` property.
   /// </summary>
@@ -156,12 +156,12 @@ public partial interface IMsoAxis
   /// Gets or sets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.type?view=office-pia"/>
-  public XlAxisType Type { get; set; }
+  public AxisType Type { get; set; }
   /// <summary>
   /// Gets or sets the `BaseUnit` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.baseunit?view=office-pia"/>
-  public XlTimeUnit BaseUnit { get; set; }
+  public TimeUnit BaseUnit { get; set; }
   /// <summary>
   /// Gets or sets the `BaseUnitIsAuto` property.
   /// </summary>
@@ -171,17 +171,17 @@ public partial interface IMsoAxis
   /// Gets or sets the `MajorUnitScale` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.majorunitscale?view=office-pia"/>
-  public XlTimeUnit MajorUnitScale { get; set; }
+  public TimeUnit MajorUnitScale { get; set; }
   /// <summary>
   /// Gets or sets the `MinorUnitScale` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.minorunitscale?view=office-pia"/>
-  public XlTimeUnit MinorUnitScale { get; set; }
+  public TimeUnit MinorUnitScale { get; set; }
   /// <summary>
   /// Gets or sets the `CategoryType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.categorytype?view=office-pia"/>
-  public XlCategoryType CategoryType { get; set; }
+  public CategoryType CategoryType { get; set; }
   /// <summary>
   /// Gets the `Left` property.
   /// </summary>
@@ -206,7 +206,7 @@ public partial interface IMsoAxis
   /// Gets or sets the `DisplayUnit` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.displayunit?view=office-pia"/>
-  public XlDisplayUnit DisplayUnit { get; set; }
+  public DisplayUnit DisplayUnit { get; set; }
   /// <summary>
   /// Gets or sets the `DisplayUnitCustom` property.
   /// </summary>

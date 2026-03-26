@@ -10,7 +10,7 @@ public partial interface DropCap : InteropObject
   /// Gets or sets the position of the drop cap.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dropcap.position?view=word-pia"/>
-  public WdDropPosition Position { get; set; }
+  public DropPosition Position { get; set; }
 
   /// <summary>
   /// Gets or sets the font name for the drop cap.

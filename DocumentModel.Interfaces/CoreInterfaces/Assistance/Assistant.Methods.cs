@@ -52,7 +52,7 @@ public partial interface Assistant: InteropObject
   /// <param name="act">The `act` parameter.</param>
   /// <param name="Animation">The `Animation` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.activatewizard?view=office-pia"/>
-  public void ActivateWizard(int WizardID, MsoWizardActType act, object Animation);
+  public void ActivateWizard(int WizardID, WizardActType act, object Animation);
   /// <summary>
   /// Resets the Assistant tips so they can be shown again.
   /// </summary>
@@ -71,7 +71,7 @@ public partial interface Assistant: InteropObject
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.doalert?view=office-pia"/>
   public int DoAlert
-  (string bstrAlertTitle, string bstrAlertText, MsoAlertButtonType alb, MsoAlertIconType alc, MsoAlertDefaultType ald,
-    MsoAlertCancelType alq, bool varfSysAlert);
+  (string bstrAlertTitle, string bstrAlertText, AlertButtonType alb, AlertIconType alc, AlertDefaultType ald,
+    AlertCancelType alq, bool varfSysAlert);
 }
 

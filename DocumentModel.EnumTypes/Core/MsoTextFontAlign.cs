@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Indicates the text alignment scheme used for an object.
@@ -6,12 +6,11 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotextfontalign?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoTextFontAlign
+public enum TextFontAlign
 {
   /// <summary>
   /// Specifies that there is a mix of text alignments used with the object.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   /// Specifies that the text alignment will be determined by the Office application.
   /// </summary>

@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlrowcol?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlRowCol
+public enum RowCol
 {
   /// <summary>
   /// Data series is in a column.

@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Represents one of the three language fonts contained in the ThemeFonts collection
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofontlanguageindex?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoFontLanguageIndex
+public enum FontLanguageIndex
 {
   /// <summary>
   /// Represents the Latin font face.

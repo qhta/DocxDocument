@@ -23,6 +23,6 @@ public partial interface TabStops2: InteropObject
   /// <param name="Position">The `Position` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstops2.add?view=office-pia"/>
-  public TabStop2 Add(MsoTabStopType Type, float Position);
+  public TabStop2 Add(TabStopType Type, float Position);
 }
 

@@ -1,4 +1,5 @@
 using DocumentModel.Interop.Core;
+using DocumentModel.Wordprocessing;
 
 namespace DocumentModel.Interop.Word;
 
@@ -42,7 +43,7 @@ public partial interface LegendKey : InteropObject
   /// Returns or sets the marker background color index for the legend key.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendkey.markerbackgroundcolorindex?view=word-pia"/>
-  public XlColorIndex MarkerBackgroundColorIndex { get; set; }
+  public ColorIndex MarkerBackgroundColorIndex { get; set; }
 
   /// <summary>
   /// Returns or sets the marker foreground color for the legend key.
@@ -54,7 +55,7 @@ public partial interface LegendKey : InteropObject
   /// Returns or sets the marker foreground color index for the legend key.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendkey.markerforegroundcolorindex?view=word-pia"/>
-  public XlColorIndex MarkerForegroundColorIndex { get; set; }
+  public ColorIndex MarkerForegroundColorIndex { get; set; }
 
   /// <summary>
   /// Returns or sets the marker size for the legend key.
@@ -66,7 +67,7 @@ public partial interface LegendKey : InteropObject
   /// Returns or sets the marker style for the legend key.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendkey.markerstyle?view=word-pia"/>
-  public XlMarkerStyle MarkerStyle { get; set; }
+  public MarkerStyle MarkerStyle { get; set; }
 
   /// <summary>
   /// Returns or sets the picture display type for the legend key.

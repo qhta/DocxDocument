@@ -10,7 +10,7 @@ public partial interface View : InteropObject
   /// Returns or sets the view type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.type?view=word-pia"/>
-  public WdViewType Type { get; set; }
+  public ViewType Type { get; set; }
 
   /// <summary>
   /// True if the window is in full-screen view.
@@ -148,7 +148,7 @@ public partial interface View : InteropObject
   /// Returns or sets on-screen shading for form fields.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.fieldshading?view=word-pia"/>
-  public WdFieldShading FieldShading { get; set; }
+  public FieldShading FieldShading { get; set; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
@@ -178,13 +178,13 @@ public partial interface View : InteropObject
   /// Returns or sets the document element displayed in print layout view.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.seekview?view=word-pia"/>
-  public WdSeekView SeekView { get; set; }
+  public SeekView SeekView { get; set; }
 
   /// <summary>
   /// Returns or sets the active window pane.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.splitspecial?view=word-pia"/>
-  public WdSpecialPane SplitSpecial { get; set; }
+  public SpecialPane SplitSpecial { get; set; }
 
   /// <summary>
   /// Reserved for internal use.
@@ -242,14 +242,14 @@ public partial interface View : InteropObject
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.revisionsview?view=word-pia"/>
-  public WdRevisionsView RevisionsView { get; set; }
+  public RevisionsView RevisionsView { get; set; }
 
   /// <summary>
   /// Sets or returns a constant representing the global option that specifies whether Microsoft Word displays
   /// balloons in the margin or inline with the document's text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.revisionsmode?view=word-pia"/>
-  public WdRevisionsMode RevisionsMode { get; set; }
+  public RevisionsMode RevisionsMode { get; set; }
 
   /// <summary>
   /// Sets or returns a Single representing the global setting in Microsoft Word that specifies the width of the
@@ -263,14 +263,14 @@ public partial interface View : InteropObject
   /// width of revision balloons.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.revisionsballoonwidthtype?view=word-pia"/>
-  public WdRevisionsBalloonWidthType RevisionsBalloonWidthType { get; set; }
+  public RevisionsBalloonWidthType RevisionsBalloonWidthType { get; set; }
 
   /// <summary>
   /// Sets or returns a constant that specifies whether Microsoft Word displays revision balloons in the left or
   /// right margin in a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.revisionsballoonside?view=word-pia"/>
-  public WdRevisionsBalloonMargin RevisionsBalloonSide { get; set; }
+  public RevisionsBalloonMargin RevisionsBalloonSide { get; set; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
@@ -337,11 +337,11 @@ public partial interface View : InteropObject
   public bool ReadingLayoutAllowEditing { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdReadingLayoutMargin constant that represents whether margins are visible or hidden when a
+  /// Returns or sets a ReadingLayoutMargin constant that represents whether margins are visible or hidden when a
   /// document is viewed in Full Screen Reading view. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.readinglayouttruncatemargins?view=word-pia"/>
-  public WdReadingLayoutMargin ReadingLayoutTruncateMargins { get; set; }
+  public ReadingLayoutMargin ReadingLayoutTruncateMargins { get; set; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether the markup area that shows revision and comment balloons is
@@ -364,10 +364,10 @@ public partial interface View : InteropObject
   public bool ShowCropMarks { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdRevisionsMode constant that represents the display mode for tracked changes. Read/write.
+  /// Returns or sets a RevisionsMode constant that represents the display mode for tracked changes. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.markupmode?view=word-pia"/>
-  public WdRevisionsMode MarkupMode { get; set; }
+  public RevisionsMode MarkupMode { get; set; }
 
   /// <summary>
   /// Gets or sets whether the document is in conflict mode view.
@@ -388,14 +388,14 @@ public partial interface View : InteropObject
   public RevisionsFilter RevisionsFilter { get; }
 
   /// <summary>
-  /// Returns and sets the page color in Reading mode. Read-write WdPageColor.
+  /// Returns and sets the page color in Reading mode. Read-write PageColor.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.pagecolor?view=word-pia"/>
-  public WdPageColor PageColor { get; set; }
+  public PageColor PageColor { get; set; }
 
   /// <summary>
-  /// Returns or gets a constant that determines the column width in reading mode. Read-write WdColumnWidth
+  /// Returns or gets a constant that determines the column width in reading mode. Read-write ColumnWidth
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.columnwidth?view=word-pia"/>
-  public WdColumnWidth ColumnWidth { get; set; }
+  public ColumnWidth ColumnWidth { get; set; }
 }

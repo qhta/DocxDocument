@@ -9,7 +9,6 @@ public enum TextFontAlignment
   /// <summary>
   ///   Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   ///   Font Alignment Enum ( Automatic ).
   /// </summary>

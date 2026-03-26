@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlaxiscrosses?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlAxisCrosses
+public enum AxisCrosses
 {
   /// <summary>
   /// Microsoft Excel sets the axis crossing point.

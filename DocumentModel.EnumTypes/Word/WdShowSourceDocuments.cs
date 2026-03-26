@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdshowsourcedocuments?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdShowSourceDocuments
+public enum ShowSourceDocuments
 {
   /// <summary>
   /// Shows neither the original nor the revised documents for the source document used in a Compare function.

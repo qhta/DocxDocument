@@ -9,7 +9,6 @@ public enum TextShape
   /// <summary>
   ///   Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   ///   No Text Shape.
   /// </summary>

@@ -63,7 +63,7 @@ public partial interface MailMergeFields
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addif?view=word-pia"/>
-  public MailMergeField AddIf(Range Range, string MergeField, WdMailMergeComparison Comparison, object CompareTo, object TrueAutoText, object TrueText, object FalseAutoText, object FalseText);
+  public MailMergeField AddIf(Range Range, string MergeField, MailMergeComparison Comparison, object CompareTo, object TrueAutoText, object TrueText, object FalseAutoText, object FalseText);
 
   /// <summary>
   /// Inserts a MERGEREC field at the specified range.
@@ -110,7 +110,7 @@ public partial interface MailMergeFields
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addnextif?view=word-pia"/>
-  public MailMergeField AddNextIf(Range Range, string MergeField, WdMailMergeComparison Comparison, object CompareTo);
+  public MailMergeField AddNextIf(Range Range, string MergeField, MailMergeComparison Comparison, object CompareTo);
 
   /// <summary>
   /// Inserts a SET field at the specified range.
@@ -138,5 +138,5 @@ public partial interface MailMergeFields
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addskipif?view=word-pia"/>
-  public MailMergeField AddSkipIf(Range Range, string MergeField, WdMailMergeComparison Comparison, object CompareTo);
+  public MailMergeField AddSkipIf(Range Range, string MergeField, MailMergeComparison Comparison, object CompareTo);
 }

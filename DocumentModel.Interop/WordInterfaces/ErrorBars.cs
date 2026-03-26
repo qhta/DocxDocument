@@ -22,7 +22,7 @@ public partial interface ErrorBars : InteropObject
   /// Gets or sets the cap style for the ends of the error bars.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.errorbars.endstyle?view=word-pia"/>
-  public XlEndStyleCap EndStyle { get; set; }
+  public EndStyleCap EndStyle { get; set; }
 
   /// <summary>
   /// Gets the chart formatting for the error bars.

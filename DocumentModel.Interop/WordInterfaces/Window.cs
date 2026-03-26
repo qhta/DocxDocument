@@ -77,7 +77,7 @@ public partial interface Window : InteropObject
   /// Returns or sets the state of the specified document window or task window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.windowstate?view=word-pia"/>
-  public WdWindowState WindowState { get; set; }
+  public WindowState WindowState { get; set; }
 
   /// <summary>
   /// True if rulers are displayed for the specified window or pane.
@@ -101,7 +101,7 @@ public partial interface Window : InteropObject
   /// Returns the window type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.type?view=word-pia"/>
-  public WdWindowType Type { get; }
+  public WindowType Type { get; }
 
   /// <summary>
   /// Returns the next object in the collection.
@@ -187,7 +187,7 @@ public partial interface Window : InteropObject
   /// Returns or sets the default start-up mode for the Japanese Input Method Editor (IME).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.imemode?view=word-pia"/>
-  public WdIMEMode IMEMode { get; set; }
+  public IMEMode IMEMode { get; set; }
 
   /// <summary>
   /// Returns the width (in points) of the active working area in the specified document window.
@@ -233,11 +233,11 @@ public partial interface Window : InteropObject
   public bool Thumbnails { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdShowSourceDocuments constant that represents how Microsoft Office Word displays source
+  /// Returns or sets a ShowSourceDocuments constant that represents how Microsoft Office Word displays source
   /// documents after a compare and merge process. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.showsourcedocuments?view=word-pia"/>
-  public WdShowSourceDocuments ShowSourceDocuments { get; set; }
+  public ShowSourceDocuments ShowSourceDocuments { get; set; }
 
   /// <summary>
   /// Returns an Integer (int in C#) that indicates the window handle of the specified window. Read- only.

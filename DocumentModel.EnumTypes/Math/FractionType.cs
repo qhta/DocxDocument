@@ -9,7 +9,6 @@ public enum FractionType
   /// <summary>
   ///   Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   ///   Bar Fraction.
   /// </summary>

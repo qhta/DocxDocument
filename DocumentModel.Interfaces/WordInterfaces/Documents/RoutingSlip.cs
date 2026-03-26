@@ -22,7 +22,7 @@ public partial interface RoutingSlip : InteropObject
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip.delivery?view=word-pia"/>
-  public WdRoutingSlipDelivery Delivery { get; set; }
+  public RoutingSlipDelivery Delivery { get; set; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
@@ -34,7 +34,7 @@ public partial interface RoutingSlip : InteropObject
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip.protect?view=word-pia"/>
-  public WdProtectionType Protect { get; set; }
+  public ProtectionType Protect { get; set; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
@@ -46,5 +46,5 @@ public partial interface RoutingSlip : InteropObject
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip.status?view=word-pia"/>
-  public WdRoutingSlipStatus Status { get; }
+  public RoutingSlipStatus Status { get; }
 }

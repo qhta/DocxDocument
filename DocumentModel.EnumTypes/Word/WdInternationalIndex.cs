@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdinternationalindex?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdInternationalIndex
+public enum InternationalIndex
 {
   /// <summary>
   /// Returns the list separator (, in U.S. English).

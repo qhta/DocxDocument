@@ -34,7 +34,7 @@ public partial interface DiagramNode : InteropObject
   /// Gets or sets the layout type for this diagram node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.layout?view=word-pia"/>
-  public Core.MsoOrgChartLayoutType Layout { get; set; }
+  public Core.OrgChartLayoutType Layout { get; set; }
 
   /// <summary>
   /// Gets the shape that contains text for this diagram node.

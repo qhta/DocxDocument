@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies how the Column and CompareTo properties are compared for an ODSOFilter object.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofiltercomparison?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoFilterComparison
+public enum FilterComparison
 {
   /// <summary>
   /// Column matches CompareTo if the CompareTo value is the same as the Column value.

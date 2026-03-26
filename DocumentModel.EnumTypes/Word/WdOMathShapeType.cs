@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdomathshapetype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdOMathShapeType
+public enum OMathShapeType
 {
   /// <summary>
   /// Vertically centers delimiters around the entire height of the equation causing delimiters grow equally above

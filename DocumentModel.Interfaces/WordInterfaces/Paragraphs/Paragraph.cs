@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
@@ -44,10 +46,10 @@ public partial interface Paragraph : InteropObject
   public object Style { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdParagraphAlignment constant that represents the alignment for the specified paragraphs.
+  /// Returns or sets a ParagraphAlignment constant that represents the alignment for the specified paragraphs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.alignment?view=word-pia"/>
-  public WdParagraphAlignment Alignment { get; set; }
+  public ParagraphAlignment Alignment { get; set; }
 
   /// <summary>
   /// Determines if all lines in the specified paragraphs remain on the same page when Microsoft Word repaginates
@@ -104,7 +106,7 @@ public partial interface Paragraph : InteropObject
   /// Returns or sets the line spacing for the specified paragraphs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.linespacingrule?view=word-pia"/>
-  public WdLineSpacing LineSpacingRule { get; set; }
+  public LineSpacing LineSpacingRule { get; set; }
 
   /// <summary>
   /// Returns or sets the spacing (in points) before the specified paragraphs.
@@ -178,10 +180,10 @@ public partial interface Paragraph : InteropObject
   public int AddSpaceBetweenFarEastAndDigit { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdBaselineAlignment constant that represents the vertical position of fonts on a line.
+  /// Returns or sets a BaselineAlignment constant that represents the vertical position of fonts on a line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.baselinealignment?view=word-pia"/>
-  public WdBaselineAlignment BaseLineAlignment { get; set; }
+  public BaselineAlignment BaseLineAlignment { get; set; }
 
   /// <summary>
   /// Determines if Microsoft Word is set to automatically adjust the right indent for the specified paragraphs if
@@ -201,7 +203,7 @@ public partial interface Paragraph : InteropObject
   /// Returns or sets the outline level for the specified paragraphs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.outlinelevel?view=word-pia"/>
-  public WdOutlineLevel OutlineLevel { get; set; }
+  public OutlineLevel OutlineLevel { get; set; }
 
   /// <summary>
   /// Returns or sets the right indent value (in characters) for the specified paragraphs.
@@ -237,7 +239,7 @@ public partial interface Paragraph : InteropObject
   /// Returns or sets the reading order of the specified paragraphs without changing their alignment.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.readingorder?view=word-pia"/>
-  public WdReadingOrder ReadingOrder { get; set; }
+  public ReadingOrder ReadingOrder { get; set; }
 
   /// <summary>
   /// Returns or sets the identifying label for the specified object when the current document is saved as a Web
@@ -273,11 +275,11 @@ public partial interface Paragraph : InteropObject
   public int MirrorIndents { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdTextboxTightWrap constant that represents how tightly text wraps around shapes or text
+  /// Returns or sets a TextboxTightWrap constant that represents how tightly text wraps around shapes or text
   /// boxes. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.textboxtightwrap?view=word-pia"/>
-  public WdTextboxTightWrap TextboxTightWrap { get; set; }
+  public TextBoxTightWrap TextboxTightWrap { get; set; }
 
   /// <summary>
   /// Reserved for internal use.

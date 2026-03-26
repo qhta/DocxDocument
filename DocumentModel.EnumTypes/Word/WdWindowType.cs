@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdwindowtype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdWindowType
+public enum WindowType
 {
   /// <summary>
   /// A document window.

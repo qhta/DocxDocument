@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies action to take when a user clicks an item in the task pane.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofilenewaction?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoFileNewAction
+public enum FileNewAction
 {
   /// <summary>
   /// Edit file.

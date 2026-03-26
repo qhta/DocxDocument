@@ -10,7 +10,7 @@ public partial interface Index : InteropObject
   /// Returns or sets the character that separates topic headings and page numbers in an index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.headingseparator?view=word-pia"/>
-  public WdHeadingSeparator HeadingSeparator { get; set; }
+  public HeadingSeparator HeadingSeparator { get; set; }
 
   /// <summary>
   /// Returns or sets whether page numbers are right-aligned in the index.
@@ -22,7 +22,7 @@ public partial interface Index : InteropObject
   /// Returns or sets the type of index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.type?view=word-pia"/>
-  public WdIndexType Type { get; set; }
+  public IndexType Type { get; set; }
 
   /// <summary>
   /// Returns or sets the number of columns in the index.
@@ -40,7 +40,7 @@ public partial interface Index : InteropObject
   /// Returns or sets the tab leader character between entries and page numbers in the index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.tableader?view=word-pia"/>
-  public WdTabLeader TabLeader { get; set; }
+  public TabLeader TabLeader { get; set; }
 
   /// <summary>
   /// Returns or sets whether accented letters are treated separately in index sorting.
@@ -52,17 +52,17 @@ public partial interface Index : InteropObject
   /// Returns or sets how index entries are sorted.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.sortby?view=word-pia"/>
-  public WdIndexSortBy SortBy { get; set; }
+  public IndexSortBy SortBy { get; set; }
 
   /// <summary>
   /// Returns or sets the type of index filter to apply.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.filter?view=word-pia"/>
-  public WdIndexFilter Filter { get; set; }
+  public IndexFilter Filter { get; set; }
 
   /// <summary>
   /// Returns or sets the language used for sorting the index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.indexlanguage?view=word-pia"/>
-  public WdLanguageID IndexLanguage { get; set; }
+  public LanguageID IndexLanguage { get; set; }
 }

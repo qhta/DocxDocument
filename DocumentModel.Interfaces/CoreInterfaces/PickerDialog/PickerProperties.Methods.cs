@@ -16,7 +16,7 @@ public partial interface PickerProperties: InteropObject
   /// <param name="Type">The `Type` parameter.</param>
   /// <returns>The added picker property.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerproperties.add?view=office-pia"/>
-  public PickerProperty Add(string Id, string Value, MsoPickerField Type);
+  public PickerProperty Add(string Id, string Value, PickerField Type);
   /// <summary>
   /// Removes a `PickerProperty` from the collection.
   /// </summary>

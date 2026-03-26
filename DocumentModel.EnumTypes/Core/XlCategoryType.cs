@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlcategorytype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlCategoryType
+public enum CategoryType
 {
   /// <summary>
   /// Axis groups data by an arbitrary set of categories.

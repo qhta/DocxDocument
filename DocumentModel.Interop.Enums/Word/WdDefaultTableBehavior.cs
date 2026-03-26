@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddefaulttablebehavior?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdDefaultTableBehavior
+public enum DefaultTableBehavior
 {
   /// <summary>
   /// Specifies whether Microsoft Word automatically resizes cells in a table to fit the contents (AutoFit).

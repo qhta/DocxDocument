@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the type of join where two lines connect.
@@ -6,12 +6,11 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolinejoinstyle?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoLineJoinStyle
+public enum LineJoinStyle
 {
   /// <summary>
   /// Specifies a mixture of join types.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   /// Specifies a rounded join.
   /// </summary>

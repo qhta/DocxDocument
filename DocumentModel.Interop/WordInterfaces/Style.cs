@@ -28,7 +28,7 @@ public partial interface Style : InteropObject
   /// Returns the style type. Read-only Style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.type?view=word-pia"/>
-  public WdStyleType Type { get; }
+  public StyleType Type { get; }
 
   /// <summary>
   /// True if the specified object is one of the built-in styles or caption labels in Microsoft Word. Read-only
@@ -87,7 +87,7 @@ public partial interface Style : InteropObject
   /// Returns or sets the language for the specified object. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.languageid?view=word-pia"/>
-  public WdLanguageID LanguageID { get; set; }
+  public LanguageID LanguageID { get; set; }
 
   /// <summary>
   /// True if the style is automatically redefined based on the selection. False if Microsoft Word prompts for
@@ -112,7 +112,7 @@ public partial interface Style : InteropObject
   /// Returns or sets an East Asian language for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.languageidfareast?view=word-pia"/>
-  public WdLanguageID LanguageIDFarEast { get; set; }
+  public LanguageID LanguageIDFarEast { get; set; }
 
   /// <summary>
   /// Reserved for internal use.

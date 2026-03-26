@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the type of data field to be inserted into a data label in a chart.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msochartfieldtype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoChartFieldType
+public enum ChartFieldType
 {
   /// <summary>
   /// Specifies the Bubble size of the data point.

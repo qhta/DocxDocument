@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdheaderfooterindex?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdHeaderFooterIndex
+public enum HeaderFooterIndex
 {
   /// <summary>
   /// Returns the header or footer on all pages other than the first page of a document or section.

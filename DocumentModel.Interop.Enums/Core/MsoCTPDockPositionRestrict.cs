@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies retrictions on the docking behavior of the custom task pane.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoctpdockpositionrestrict?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoCTPDockPositionRestrict
+public enum CTPDockPositionRestrict
 {
   /// <summary>
   /// No restrictions on docking the task pane.

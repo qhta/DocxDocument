@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
@@ -77,7 +79,7 @@ public partial interface TableOfFigures : InteropObject
   /// Returns or sets the character between entries and their page numbers in a table of figures.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableoffigures.tableader?view=word-pia"/>
-  public WdTabLeader TabLeader { get; set; }
+  public TabLeader TabLeader { get; set; }
 
   /// <summary>
   /// Returns or sets whether entries in a table of figures should be formatted as hyperlinks when publishing to the

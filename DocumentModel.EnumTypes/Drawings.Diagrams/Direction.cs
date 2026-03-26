@@ -11,7 +11,6 @@ public enum Direction
   /// <summary>
   ///   Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   ///   Normal Direction.
   /// </summary>

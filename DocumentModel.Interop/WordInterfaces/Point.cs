@@ -53,11 +53,11 @@ public partial interface Point : InteropObject
 
   /// <summary>
   /// Returns or sets the marker background color as an index into the current color palette, or as one of the
-  /// following XlColorIndex constants: xlColorIndexAutomatic or xlColorIndexNone. Applies only to line, scatter,
-  /// and radar charts. Read/write XlColorIndex.
+  /// following ColorIndex constants: xlColorIndexAutomatic or xlColorIndexNone. Applies only to line, scatter,
+  /// and radar charts. Read/write ColorIndex.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.markerbackgroundcolorindex?view=word-pia"/>
-  public XlColorIndex MarkerBackgroundColorIndex { get; set; }
+  public ColorIndex MarkerBackgroundColorIndex { get; set; }
 
   /// <summary>
   /// Sets the marker foreground color as an RGB value or returns the corresponding color index value. Applies only
@@ -68,11 +68,11 @@ public partial interface Point : InteropObject
 
   /// <summary>
   /// Returns or sets the marker foreground color as an index into the current color palette, or as one of the
-  /// following XlColorIndex constants: xlColorIndexAutomatic or xlColorIndexNone. Applies only to line, scatter,
-  /// and radar charts. Read/write XlColorIndex.
+  /// following ColorIndex constants: xlColorIndexAutomatic or xlColorIndexNone. Applies only to line, scatter,
+  /// and radar charts. Read/write ColorIndex.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.markerforegroundcolorindex?view=word-pia"/>
-  public XlColorIndex MarkerForegroundColorIndex { get; set; }
+  public ColorIndex MarkerForegroundColorIndex { get; set; }
 
   /// <summary>
   /// Returns or sets the data-marker size, in points. Can be a value from 2 through 72. Read/write Integer.
@@ -82,17 +82,17 @@ public partial interface Point : InteropObject
 
   /// <summary>
   /// Returns or sets the marker style for a point or series in a line chart, scatter chart, or radar chart.
-  /// Read/write XlMarkerStyle.
+  /// Read/write MarkerStyle.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.markerstyle?view=word-pia"/>
-  public XlMarkerStyle MarkerStyle { get; set; }
+  public MarkerStyle MarkerStyle { get; set; }
 
   /// <summary>
-  /// Returns or sets a XlChartPictureType value that represents the way pictures are displayed on a column or bar
+  /// Returns or sets a ChartPictureType value that represents the way pictures are displayed on a column or bar
   /// picture chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.picturetype?view=word-pia"/>
-  public XlChartPictureType PictureType { get; set; }
+  public ChartPictureType PictureType { get; set; }
 
   /// <summary>
   /// Returns or sets the unit for each picture on the chart if the PictureType property is set to xlStackScale (if

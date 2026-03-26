@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbrowsetarget?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdBrowseTarget
+public enum BrowseTarget
 {
   /// <summary>
   /// Places insertion point before next or previous page.

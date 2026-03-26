@@ -11,7 +11,6 @@ public enum DataLabelPosition
   /// <summary>
   ///   Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   ///   Office application controls position of data label.
   /// </summary>

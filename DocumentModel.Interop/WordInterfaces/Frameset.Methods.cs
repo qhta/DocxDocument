@@ -26,5 +26,5 @@ public partial interface Frameset
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.addnewframe?view=word-pia"/>
-  public Frameset AddNewFrame(WdFramesetNewFrameLocation Where);
+  public Frameset AddNewFrame(FramesetNewFrameLocation Where);
 }

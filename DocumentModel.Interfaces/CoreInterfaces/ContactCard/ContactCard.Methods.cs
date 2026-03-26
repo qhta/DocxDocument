@@ -24,7 +24,7 @@ public partial interface ContactCard: InteropObject
   /// <param name="ShowWithDelay">The `ShowWithDelay` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.contactcard.show?view=office-pia"/>
   public void Show
-  (MsoContactCardStyle CardStyle, int RectangleLeft, int RectangleRight, int RectangleTop, int RectangleBottom,
+  (ContactCardStyle CardStyle, int RectangleLeft, int RectangleRight, int RectangleTop, int RectangleBottom,
     int HorizontalPosition, bool ShowWithDelay);
 }
 

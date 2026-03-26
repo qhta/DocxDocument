@@ -21,6 +21,6 @@ public partial interface TextColumn2: InteropObject
   /// Gets or sets the `TextDirection` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textcolumn2.textdirection?view=office-pia"/>
-  public MsoTextDirection TextDirection { get; set; }
+  public TextDirection TextDirection { get; set; }
 }
 

@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlmarkerstyle?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlMarkerStyle
+public enum MarkerStyle
 {
   /// <summary>
   /// Square markers
@@ -29,7 +29,7 @@ public enum XlMarkerStyle
   /// </summary>
   Circle = 8,
   /// <summary>
-  /// Square markers with a plus sign public enum XlMarkerStyle
+  /// Square markers with a plus sign public enum MarkerStyle
   /// </summary>
   Plus = 9,
   /// <summary>

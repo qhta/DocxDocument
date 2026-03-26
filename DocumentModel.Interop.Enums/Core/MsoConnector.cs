@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoconnector?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoConnector
+public enum Connector
 {
   /// <summary>
   /// Combine property test values to form one property test.

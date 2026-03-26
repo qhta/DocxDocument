@@ -22,7 +22,7 @@ public sealed partial class CustomProperty: DIC.DocumentProperty
   /// For built-in document properties, this property is read-only and returns the type of the property.
   /// For custom document properties, this property is read/write and determines the type of the value that can be assigned to the Value property.
   /// </summary>
-   DIC.MsoDocProperties DIC.DocumentProperty.Type
+   DIC.DocProperties DIC.DocumentProperty.Type
   {
     get
     {
@@ -43,13 +43,13 @@ public sealed partial class CustomProperty: DIC.DocumentProperty
   /// Mapping between DocPropertyType enumeration values and actual .NET types.
   /// This mapping is used to determine the expected type of the Value property based on the Type property.
   /// </summary>
-  public static readonly BiDiDictionary<DIC.MsoDocProperties, string> typeMapping = new()
+  public static readonly BiDiDictionary<DIC.DocProperties, string> typeMapping = new()
   {
-		{  DIC.MsoDocProperties.Number, "Integer" },
-		{  DIC.MsoDocProperties.Boolean, "Boolean"},
-		{  DIC.MsoDocProperties.Date, "Date" },
-		{  DIC.MsoDocProperties.String, "String" },
-		{  DIC.MsoDocProperties.Float, "Float" },
+		{  DIC.DocProperties.Number, "Integer" },
+		{  DIC.DocProperties.Boolean, "Boolean"},
+		{  DIC.DocProperties.Date, "Date" },
+		{  DIC.DocProperties.String, "String" },
+		{  DIC.DocProperties.Float, "Float" },
   };
   /// <summary>
   /// Determine if the value of the custom document property is linked to the content of the container document. This property applies only to custom document properties.

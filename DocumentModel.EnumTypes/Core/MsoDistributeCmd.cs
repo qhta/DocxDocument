@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies how to evenly distribute a collection of shapes.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodistributecmd?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoDistributeCmd
+public enum DistributeCmd
 {
   /// <summary>
   /// Distribute horizontally.

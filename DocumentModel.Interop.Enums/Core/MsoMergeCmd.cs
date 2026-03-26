@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the output of a merge shapes operation.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msomergecmd?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoMergeCmd
+public enum MergeCmd
 {
   /// <summary>
   /// Creates a new shape from the perimeter of two or more overlapping shapes. The new shape is a set of all the

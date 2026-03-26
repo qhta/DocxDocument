@@ -11,5 +11,5 @@ public partial interface Versions : InteropObject, InteropCollection<Version>
   /// Returns or sets the state of the option for automatically saving document versions.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.versions.autoversion?view=word-pia"/>
-  public WdAutoVersions AutoVersion { get; set; }
+  public AutoVersions AutoVersion { get; set; }
 }

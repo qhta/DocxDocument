@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Indicates the effects camera type used by the specified object.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetcamera?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoPresetCamera
+public enum PresetCamera
 {
   /// <summary>
   /// Used only for detection.

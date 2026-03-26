@@ -22,5 +22,5 @@ public partial interface OMathMatCol : InteropObject
   /// Returns or sets the horizontal alignment of the matrix column.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatcol.align?view=word-pia"/>
-  public WdOMathHorizAlignType Align { get; set; }
+  public OMathHorizAlignType Align { get; set; }
 }

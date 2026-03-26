@@ -22,13 +22,13 @@ public partial interface Cells : InteropObject, InteropCollection<Cell>
   /// Gets or sets the rule for determining row height.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.heightrule?view=word-pia"/>
-  public WdRowHeightRule HeightRule { get; set; }
+  public RowHeightRule HeightRule { get; set; }
 
   /// <summary>
   /// Gets or sets the vertical alignment of text in the cells.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.verticalalignment?view=word-pia"/>
-  public WdCellVerticalAlignment VerticalAlignment { get; set; }
+  public CellVerticalAlignment VerticalAlignment { get; set; }
 
   /// <summary>
   /// Gets or sets the border formatting for the cells.
@@ -58,5 +58,5 @@ public partial interface Cells : InteropObject, InteropCollection<Cell>
   /// Gets or sets the preferred width type for the cells.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.preferredwidthtype?view=word-pia"/>
-  public WdPreferredWidthType PreferredWidthType { get; set; }
+  public PreferredWidthType PreferredWidthType { get; set; }
 }

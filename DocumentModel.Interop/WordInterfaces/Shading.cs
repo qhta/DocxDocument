@@ -11,29 +11,29 @@ public interface Shading : InteropObject
   /// dots and lines in the shading pattern.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shading.foregroundpatterncolorindex?view=word-pia"/>
-  public WdColorIndex ForegroundPatternColorIndex { get; set; }
+  public ColorIndex ForegroundPatternColorIndex { get; set; }
   /// <summary>
   /// Returns or sets the color that's applied to the background of the Shading object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shading.backgroundpatterncolorindex?view=word-pia"/>
-  public WdColorIndex BackgroundPatternColorIndex { get; set; }
+  public ColorIndex BackgroundPatternColorIndex { get; set; }
   /// <summary>
   /// Returns or sets the shading texture for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shading.texture?view=word-pia"/>
-  public WdTextureIndex Texture { get; set; }
+  public TextureIndex Texture { get; set; }
   /// <summary>
   /// Returns or sets the 24-bit color that's applied to the foreground of the Shading object. This color is applied
-  /// to the dots and lines in the shading pattern. Can be any valid WdColor constant or a value returned by Visual
+  /// to the dots and lines in the shading pattern. Can be any valid Color constant or a value returned by Visual
   /// Basic's RGB function.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shading.foregroundpatterncolor?view=word-pia"/>
-  public WdColor ForegroundPatternColor { get; set; }
+  public Color ForegroundPatternColor { get; set; }
   /// <summary>
   /// Returns or sets the 24-bit color that's applied to the background of the Shading object. Can be any valid
-  /// WdColor constant or a value returned by Visual Basic's RGB function.
+  /// Color constant or a value returned by Visual Basic's RGB function.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shading.backgroundpatterncolor?view=word-pia"/>
-  public WdColor BackgroundPatternColor { get; set; }
+  public Color BackgroundPatternColor { get; set; }
 
 }

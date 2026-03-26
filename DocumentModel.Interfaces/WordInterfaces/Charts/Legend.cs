@@ -30,7 +30,7 @@ public partial interface Legend : InteropObject
   /// Returns or sets the position of the legend on the chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legend.position?view=word-pia"/>
-  public XlLegendPosition Position { get; set; }
+  public LegendPosition Position { get; set; }
 
   /// <summary>
   /// Returns or sets whether the legend has a shadow.

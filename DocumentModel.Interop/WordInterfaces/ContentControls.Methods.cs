@@ -16,5 +16,5 @@ public partial interface ContentControls
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrols.add?view=word-pia"/>
-  public ContentControl Add(WdContentControlType Type, object Range);
+  public ContentControl Add(ContentControlType Type, object Range);
 }

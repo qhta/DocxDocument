@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtabledirection?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdTableDirection
+public enum TableDirection
 {
   /// <summary>
   /// The selected rows are arranged with the first column in the rightmost position.

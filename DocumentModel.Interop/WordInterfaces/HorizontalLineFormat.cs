@@ -20,11 +20,11 @@ public interface HorizontalLineFormat : InteropObject
   /// Returns or sets the alignment for the horizontal line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.horizontallineformat.alignment?view=word-pia"/>
-  public WdHorizontalLineAlignment Alignment { get; set; }
+  public HorizontalLineAlignment Alignment { get; set; }
   /// <summary>
   /// Returns or sets how the width of the horizontal line is measured.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.horizontallineformat.widthtype?view=word-pia"/>
-  public WdHorizontalLineWidthType WidthType { get; set; }
+  public HorizontalLineWidthType WidthType { get; set; }
 
 }

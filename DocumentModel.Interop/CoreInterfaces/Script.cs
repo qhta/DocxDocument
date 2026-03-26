@@ -22,12 +22,12 @@ public partial interface Script: InteropObject
   /// Gets or sets the scripting language.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.script.language?view=office-pia"/>
-  public MsoScriptLanguage Language { get; set; }
+  public ScriptLanguage Language { get; set; }
   /// <summary>
   /// Gets the script anchor location in the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.script.location?view=office-pia"/>
-  public MsoScriptLocation Location { get; }
+  public ScriptLocation Location { get; }
   /// <summary>
   /// Gets the shape associated with the script anchor.
   /// </summary>

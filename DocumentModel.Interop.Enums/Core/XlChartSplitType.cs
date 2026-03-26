@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlchartsplittype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlChartSplitType
+public enum ChartSplitType
 {
   /// <summary>
   /// Second chart displays the smallest values in the data series. The number of values to display is specified by

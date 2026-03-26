@@ -58,7 +58,7 @@ public partial interface Envelope : InteropObject
   /// Gets or sets the paper tray used to feed envelopes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.feedsource?view=word-pia"/>
-  public WdPaperTray FeedSource { get; set; }
+  public PaperTray FeedSource { get; set; }
 
   /// <summary>
   /// Gets or sets the distance, in points, from the left edge of the envelope to the delivery address.
@@ -100,7 +100,7 @@ public partial interface Envelope : InteropObject
   /// Gets or sets the default envelope orientation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.defaultorientation?view=word-pia"/>
-  public WdEnvelopeOrientation DefaultOrientation { get; set; }
+  public EnvelopeOrientation DefaultOrientation { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether envelopes are fed face up by default.

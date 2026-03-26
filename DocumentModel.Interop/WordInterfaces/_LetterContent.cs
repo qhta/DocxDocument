@@ -30,7 +30,7 @@ public interface _LetterContent : InteropObject
   /// Gets or sets the letter style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.letterstyle?view=word-pia"/>
-  public WdLetterStyle LetterStyle { get; set; }
+  public LetterStyle LetterStyle { get; set; }
   /// <summary>
   /// Gets or sets a value indicating whether letterhead is used.
   /// </summary>
@@ -40,7 +40,7 @@ public interface _LetterContent : InteropObject
   /// Gets or sets the letterhead location.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.letterheadlocation?view=word-pia"/>
-  public WdLetterheadLocation LetterheadLocation { get; set; }
+  public LetterheadLocation LetterheadLocation { get; set; }
   /// <summary>
   /// Gets or sets the letterhead size.
   /// </summary>
@@ -65,7 +65,7 @@ public interface _LetterContent : InteropObject
   /// Gets or sets the salutation type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.salutationtype?view=word-pia"/>
-  public WdSalutationType SalutationType { get; set; }
+  public SalutationType SalutationType { get; set; }
   /// <summary>
   /// Gets or sets the recipient reference.
   /// </summary>
@@ -140,7 +140,7 @@ public interface _LetterContent : InteropObject
   /// Gets or sets the recipient gender used for salutation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.recipientgender?view=word-pia"/>
-  public WdSalutationGender RecipientGender { get; set; }
+  public SalutationGender RecipientGender { get; set; }
   /// <summary>
   /// Gets or sets the short-form return address.
   /// </summary>
@@ -160,7 +160,7 @@ public interface _LetterContent : InteropObject
   /// Gets or sets the sender gender used for salutation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.sendergender?view=word-pia"/>
-  public WdSalutationGender SenderGender { get; set; }
+  public SalutationGender SenderGender { get; set; }
   /// <summary>
   /// Gets or sets the sender reference.
   /// </summary>
