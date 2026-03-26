@@ -21,5 +21,13 @@ public enum StyleType
   /// <summary>
   ///   Numbering Style.
   /// </summary>
-  Numbering
+  Numbering,
+  /// <summary>
+  /// Reserved for internal use.
+  /// </summary>
+  ParagraphOnly = 5,
+  /// <summary>
+  /// Reserved for internal use.
+  /// </summary>
+  Linked = 6
 }
