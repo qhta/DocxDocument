@@ -58,5 +58,9 @@ public enum ColorIndex
   Gray50 = 15,
   /// <summary>Gray 25%</summary>
   [OpenXmlEnumValue("Gray25")]
-  Gray25 = 16
+  Gray25 = 16,
+  /// <summary>
+  /// Color defined by document author.
+  /// </summary>
+  ByAuthor = -1
 }
