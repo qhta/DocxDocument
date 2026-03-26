@@ -1,6 +1,126 @@
-Word enums: 276
-Wordprocessing enums: 182
-Matched enum types: 88
+Word enums: 326
+Wordprocessing enums: 173
+Matched enum types: 130
+
+DocumentModel.Interop.Word.BaselineAlignment <-> DocumentModel.Wordprocessing.BaselineAlignment
+  Only in Word: FarEast50
+  Only in Wordprocessing: Bottom
+
+DocumentModel.Interop.Word.BorderTypeHID <-> DocumentModel.Wordprocessing.BorderType
+  Only in Word: emptyenum
+  Only in Wordprocessing: DashDotStroked, DashSmallGap, Dashed, DotDash, DotDotDash, Dotted, Double, DoubleWave, Inset, None, Outset, Single, Thick, ThickThinLargeGap, ThickThinMediumGap, ThickThinSmallGap, ThinThickLargeGap, ThinThickMediumGap, ThinThickSmallGap, ThinThickThinLargeGap, ThinThickThinMediumGap, ThinThickThinSmallGap, ThreeDEmboss, ThreeDEngrave, Triple, Wave
+
+DocumentModel.Interop.Word.BreakType <-> DocumentModel.Wordprocessing.BreakType
+  Only in Word: ColumnBreak, LineBreak, LineBreakClearLeft, LineBreakClearRight, PageBreak, SectionBreakContinuous, SectionBreakEvenPage, SectionBreakNextPage, SectionBreakOddPage, TextWrappingBreak
+  Only in Wordprocessing: Column, Page, TextWrapping
+
+DocumentModel.Interop.Word.CaptionNumberStyleHID <-> DocumentModel.Wordprocessing.NumberStyle
+  Only in Word: emptyenum
+  Only in Wordprocessing: Arabic, Cardinal, LowerLetter, LowerRoman, Ordinal, UpperLetter, UpperRoman
+
+DocumentModel.Interop.Word.ColorIndex <-> DocumentModel.Wordprocessing.ColorIndex
+  Only in Word: ByAuthor, NoHighlight
+  Only in Wordprocessing: -
+
+DocumentModel.Interop.Word.DictionaryTypeHID <-> DocumentModel.Wordprocessing.SectionMarkType
+  Only in Word: emptyenum
+  Only in Wordprocessing: Continuous, EvenPage, NextColumn, NextPage, OddPage
+
+DocumentModel.Interop.Word.DocumentType <-> DocumentModel.Wordprocessing.DocumentType
+  Only in Word: Document, Frameset, Template
+  Only in Wordprocessing: Email, Letter, NotSpecified
+
+DocumentModel.Interop.Word.EmphasisMark <-> DocumentModel.Wordprocessing.EmphasisMark
+  Only in Word: OverComma, OverSolidCircle, OverWhiteCircle, UnderSolidCircle
+  Only in Wordprocessing: Circle, Comma, Dot, UnderDot
+
+DocumentModel.Interop.Word.ListNumberStyleHID <-> DocumentModel.Wordprocessing.ListLevelNumberStyle
+  Only in Word: emptyenum
+  Only in Wordprocessing: Legal, SimplifiedLegal, Standard
+
+DocumentModel.Interop.Word.MailMergeDataSource <-> DocumentModel.Wordprocessing.MailMergeSource
+  Only in Word: MergeInfoFromAccessDDE, MergeInfoFromExcelDDE, MergeInfoFromMSQueryDDE, MergeInfoFromODBC, MergeInfoFromODSO, MergeInfoFromWord, NoMergeInfo
+  Only in Wordprocessing: AddressBook, Database, Document1, Document2, Email, Legacy, Master, Native, Text
+
+DocumentModel.Interop.Word.MailMergeMainDocType <-> DocumentModel.Wordprocessing.MailMergeDocument
+  Only in Word: Directory, Envelopes, FormLetters, MailingLabels, NotAMergeDocument
+  Only in Wordprocessing: Envelope, FormLetter, MailingLabel
+
+DocumentModel.Interop.Word.MailMergeState <-> DocumentModel.Wordprocessing.MailMergeData
+  Only in Word: DataSource, MainAndDataSource, MainAndHeader, MainAndSourceAndHeader, MainDocumentOnly, NormalDocument
+  Only in Wordprocessing: Database, Native, Odbc, Query, Spreadsheet, TextFile
+
+DocumentModel.Interop.Word.MeasurementUnitsHID <-> DocumentModel.Wordprocessing.MeasurementUnits
+  Only in Word: emptyenum
+  Only in Wordprocessing: Centimeters, Inches, Millimeters, Picas, Points
+
+DocumentModel.Interop.Word.NewDocumentType <-> DocumentModel.Wordprocessing.DocumentType
+  Only in Word: BlankDocument, EmailMessage, Frameset, WebPage, XMLDocument
+  Only in Wordprocessing: Email, Letter, NotSpecified
+
+DocumentModel.Interop.Word.NoteNumberStyleHID <-> DocumentModel.Wordprocessing.NumberStyle
+  Only in Word: emptyenum
+  Only in Wordprocessing: Arabic, Cardinal, LowerLetter, LowerRoman, Ordinal, UpperLetter, UpperRoman
+
+DocumentModel.Interop.Word.OutlineLevel <-> OutlineLevel
+  Only in Word: Level9
+  Only in Wordprocessing: -
+
+DocumentModel.Interop.Word.PageNumberStyleHID <-> DocumentModel.Wordprocessing.NumberStyle
+  Only in Word: emptyenum
+  Only in Wordprocessing: Arabic, Cardinal, LowerLetter, LowerRoman, Ordinal, UpperLetter, UpperRoman
+
+DocumentModel.Interop.Word.ParagraphAlignment <-> DocumentModel.Wordprocessing.ParagraphAlignment
+  Only in Word: JustifyHi, JustifyMed, ThaiJustify
+  Only in Wordprocessing: ThaiDistribute
+
+DocumentModel.Interop.Word.ParagraphAlignmentHID <-> DocumentModel.Wordprocessing.ParagraphAlignment
+  Only in Word: emptyenum
+  Only in Wordprocessing: Center, Distribute, Justify, JustifyLow, Left, Right, ThaiDistribute
+
+DocumentModel.Interop.Word.SortFieldTypeHID <-> DocumentModel.Wordprocessing.SortField
+  Only in Word: emptyenum
+  Only in Wordprocessing: Alphanumeric, Date, JIS, Kana, KoreanKS, Numeric, Stroke, Syllable
+
+DocumentModel.Interop.Word.StatisticHID <-> DocumentModel.Wordprocessing.Statistic
+  Only in Word: emptyenum
+  Only in Wordprocessing: Characters, CharactersWithSpaces, FarEastCharacters, Lines, Pages, Paragraphs, Words
+
+DocumentModel.Interop.Word.StyleType <-> DocumentModel.Wordprocessing.StyleType
+  Only in Word: Linked, List, ParagraphOnly
+  Only in Wordprocessing: Numbering
+
+DocumentModel.Interop.Word.StylisticSet <-> DocumentModel.Wordprocessing.StylisticSet
+  Only in Word: StylisticSet01, StylisticSet02, StylisticSet03, StylisticSet04, StylisticSet05, StylisticSet06, StylisticSet07, StylisticSet08, StylisticSet09, StylisticSet10, StylisticSet11, StylisticSet12, StylisticSet13, StylisticSet14, StylisticSet15, StylisticSet16, StylisticSet17, StylisticSet18, StylisticSet19, StylisticSet20
+  Only in Wordprocessing: Set1, Set10, Set11, Set12, Set13, Set14, Set15, Set16, Set17, Set18, Set19, Set2, Set20, Set3, Set4, Set5, Set6, Set7, Set8, Set9
+
+DocumentModel.Interop.Word.TabLeader <-> DocumentModel.Wordprocessing.TabLeader
+  Only in Word: Lines, Spaces
+  Only in Wordprocessing: Line, None
+
+DocumentModel.Interop.Word.TabLeaderHID <-> DocumentModel.Wordprocessing.TabLeader
+  Only in Word: emptyenum
+  Only in Wordprocessing: Dashes, Dots, Heavy, Line, MiddleDot, None
+
+DocumentModel.Interop.Word.TextboxTightWrap <-> DocumentModel.Wordprocessing.TextBoxTightWrap
+  Only in Word: All, FirstAndLastLines
+  Only in Wordprocessing: AllLines, FirstAndLastLine
+
+DocumentModel.Interop.Word.TextOrientationHID <-> DocumentModel.Wordprocessing.TextOrientation
+  Only in Word: emptyenum
+  Only in Wordprocessing: Downward, Horizontal, HorizontalRotatedFarEast, Upward, Vertical, VerticalFarEast
+
+DocumentModel.Interop.Word.TrailingCharacter <-> DocumentModel.Wordprocessing.TrailingCharacter
+  Only in Word: None
+  Only in Wordprocessing: Nothing
+
+DocumentModel.Interop.Word.TwoLinesInOneType <-> DocumentModel.Wordprocessing.TwoLinesInOneBracket
+  Only in Word: NoBrackets
+  Only in Wordprocessing: -
+
+DocumentModel.Interop.Word.VerticalAlignment <-> DocumentModel.Wordprocessing.VerticalAlignment
+  Only in Word: Justify
+  Only in Wordprocessing: Inline, Inside, Outside
 
 DocumentModel.Interop.Word.AlertLevel <-> DocumentModel.Wordprocessing.MultiLevel
   Only in Word: All, MessageBox, None
@@ -16,7 +136,7 @@ DocumentModel.Interop.Word.Animation <-> DocumentModel.Wordprocessing.Informatio
 
 DocumentModel.Interop.Word.BorderType <-> DocumentModel.Wordprocessing.BorderType
   Only in Word: Bottom, DiagonalDown, DiagonalUp, Horizontal, Left, Right, Top, Vertical
-  Only in Wordprocessing: DashDotStroked, DashSmallGap, Dashed, DotDash, DotDotDash, Dotted, Double, DoubleWave, Hairline, Inset, None, Outset, Single, Thick, ThickThinLargeGap, ThickThinMediumGap, ThickThinSmallGap, ThinThickLargeGap, ThinThickMediumGap, ThinThickSmallGap, ThinThickThinLargeGap, ThinThickThinMediumGap, ThinThickThinSmallGap, ThreeDEmboss, ThreeDEngrave, Triple, Wave
+  Only in Wordprocessing: DashDotStroked, DashSmallGap, Dashed, DotDash, DotDotDash, Dotted, Double, DoubleWave, Inset, None, Outset, Single, Thick, ThickThinLargeGap, ThickThinMediumGap, ThickThinSmallGap, ThinThickLargeGap, ThinThickMediumGap, ThinThickSmallGap, ThinThickThinLargeGap, ThinThickThinMediumGap, ThinThickThinSmallGap, ThreeDEmboss, ThreeDEngrave, Triple, Wave
 
 DocumentModel.Interop.Word.BuildingBlockTypes <-> DocumentModel.Wordprocessing.BuildingBlockType
   Only in Word: Bibliography, Custom1, Custom2, Custom3, Custom4, Custom5, CustomAutoText, CustomBibliography, CustomCoverPage, CustomEquations, CustomFooters, CustomHeaders, CustomPageNumber, CustomPageNumberBottom, CustomPageNumberPage, CustomPageNumberTop, CustomQuickParts, CustomTableOfContents, CustomTables, CustomTextBox, CustomWatermarks, PageNumberBottom, PageNumberPage, PageNumberTop, QuickParts, TableOfContents
@@ -48,7 +168,7 @@ DocumentModel.Interop.Word.CellVerticalAlignment <-> DocumentModel.Wordprocessin
 
 DocumentModel.Interop.Word.Color <-> DocumentModel.Wordprocessing.ColorType
   Only in Word: Aqua, Automatic, BlueGray, Brown, DarkGreen, DarkTeal, Gold, Gray05, Gray10, Gray125, Gray15, Gray20, Gray30, Gray35, Gray375, Gray40, Gray45, Gray55, Gray60, Gray625, Gray65, Gray70, Gray75, Gray80, Gray85, Gray875, Gray90, Gray95, Indigo, Lavender, LightBlue, LightGreen, LightOrange, LightTurquoise, LightYellow, Lime, OliveGreen, Orange, PaleBlue, Plum, Rose, SeaGreen, SkyBlue, Tan
-  Only in Wordprocessing: Auto, Mixed, None
+  Only in Wordprocessing: Auto, None
 
 DocumentModel.Interop.Word.CompareDestination <-> DocumentModel.Wordprocessing.MailMergeDestination
   Only in Word: New, Original, Revised
@@ -56,7 +176,7 @@ DocumentModel.Interop.Word.CompareDestination <-> DocumentModel.Wordprocessing.M
 
 DocumentModel.Interop.Word.CursorType <-> DocumentModel.Wordprocessing.ColorType
   Only in Word: IBeam, Normal, NorthwestArrow, Wait
-  Only in Wordprocessing: Auto, Black, Blue, BrightGreen, DarkBlue, DarkRed, DarkYellow, Gray25, Gray50, Green, Mixed, None, Pink, Red, Teal, Turquoise, Violet, White, Yellow
+  Only in Wordprocessing: Auto, Black, Blue, BrightGreen, DarkBlue, DarkRed, DarkYellow, Gray25, Gray50, Green, None, Pink, Red, Teal, Turquoise, Violet, White, Yellow
 
 DocumentModel.Interop.Word.DictionaryType <-> DocumentModel.Wordprocessing.SectionMarkType
   Only in Word: Grammar, HangulHanjaConversion, HangulHanjaConversionCustom, Hyphenation, Spelling, SpellingComplete, SpellingCustom, SpellingLegal, SpellingMedical, Thesaurus
@@ -76,7 +196,7 @@ DocumentModel.Interop.Word.EditorType <-> DocumentModel.Wordprocessing.StoryType
 
 DocumentModel.Interop.Word.EnclosureType <-> DocumentModel.Wordprocessing.ColorType
   Only in Word: Circle, Diamond, Square, Triangle
-  Only in Wordprocessing: Auto, Black, Blue, BrightGreen, DarkBlue, DarkRed, DarkYellow, Gray25, Gray50, Green, Mixed, None, Pink, Red, Teal, Turquoise, Violet, White, Yellow
+  Only in Wordprocessing: Auto, Black, Blue, BrightGreen, DarkBlue, DarkRed, DarkYellow, Gray25, Gray50, Green, None, Pink, Red, Teal, Turquoise, Violet, White, Yellow
 
 DocumentModel.Interop.Word.EndnoteLocation <-> DocumentModel.Wordprocessing.EndnotePosition
   Only in Word: Document, Section
@@ -84,15 +204,11 @@ DocumentModel.Interop.Word.EndnoteLocation <-> DocumentModel.Wordprocessing.Endn
 
 DocumentModel.Interop.Word.EnvelopeOrientation <-> DocumentModel.Wordprocessing.PageOrientation
   Only in Word: CenterClockwise, CenterLandscape, CenterPortrait, LeftClockwise, LeftLandscape, LeftPortrait, RightClockwise, RightLandscape, RightPortrait
-  Only in Wordprocessing: Landscape, Mixed, Portrait
+  Only in Wordprocessing: Landscape, Portrait
 
 DocumentModel.Interop.Word.FieldType <-> DocumentModel.Wordprocessing.FieldCharType
   Only in Word: Addin, AddressBlock, Advance, Ask, Author, AutoNum, AutoNumLegal, AutoNumOutline, AutoText, AutoTextList, BarCode, Bibliography, BidiOutline, Citation, Comments, Compare, CreateDate, DDE, DDEAuto, Data, Database, Date, DisplayBarcode, DocProperty, DocVariable, EditTime, Embed, Empty, Expression, FileName, FileSize, FillIn, FootnoteRef, FormCheckBox, FormDropDown, FormTextInput, Formula, Glossary, GoToButton, GreetingLine, HTMLActiveX, Hyperlink, If, Import, Include, IncludePicture, IncludeText, Index, IndexEntry, Info, KeyWord, LastSavedBy, Link, ListNum, MacroButton, MergeBarcode, MergeField, MergeRec, MergeSeq, Next, NextIf, NoteRef, NumChars, NumPages, NumWords, OCX, Page, PageRef, Print, PrintDate, Private, Quote, Ref, RefDoc, RevisionNum, SaveDate, Section, SectionPages, Sequence, Set, Shape, SkipIf, StyleRef, Subject, Subscriber, Symbol, TOA, TOAEntry, TOC, TOCEntry, Template, Time, Title, UserAddress, UserInitials, UserName
   Only in Wordprocessing: Begin, End, Separate
-
-DocumentModel.Interop.Word.FlowDirection <-> DocumentModel.Wordprocessing.Direction
-  Only in Word: -
-  Only in Wordprocessing: Mixed
 
 DocumentModel.Interop.Word.FootnoteLocation <-> DocumentModel.Wordprocessing.FootnotePosition
   Only in Word: eneathText, ottomOfPage
@@ -100,7 +216,7 @@ DocumentModel.Interop.Word.FootnoteLocation <-> DocumentModel.Wordprocessing.Foo
 
 DocumentModel.Interop.Word.GoToDirection <-> DocumentModel.Wordprocessing.Direction
   Only in Word: Absolute, First, Last, Next, Previous, Relative
-  Only in Wordprocessing: Ltr, Mixed, Rtl
+  Only in Wordprocessing: Ltr, Rtl
 
 DocumentModel.Interop.Word.GutterStyle <-> DocumentModel.Wordprocessing.NumberStyle
   Only in Word: Left, Right, Top
@@ -136,7 +252,7 @@ DocumentModel.Interop.Word.JustificationMode <-> DocumentModel.Wordprocessing.Ju
 
 DocumentModel.Interop.Word.LetterStyle <-> DocumentModel.Wordprocessing.BulletStyle
   Only in Word: FullBlock, ModifiedBlock, SemiBlock
-  Only in Wordprocessing: Arrow, Bullet, Check, Circle, Diamond, Mixed, Square
+  Only in Wordprocessing: Arrow, Bullet, Check, Circle, Diamond, Square
 
 DocumentModel.Interop.Word.LineSpacing <-> DocumentModel.Wordprocessing.LineSpacingRule
   Only in Word: Double, Exactly, Multiple, OnePtFive, Single
@@ -160,11 +276,11 @@ DocumentModel.Interop.Word.ListNumberStyle <-> DocumentModel.Wordprocessing.List
 
 DocumentModel.Interop.Word.ListType <-> DocumentModel.Wordprocessing.StyleType
   Only in Word: Bullet, ListNumOnly, MixedNumbering, NoNumbering, OutlineNumbering, PictureBullet, SimpleNumbering
-  Only in Wordprocessing: Character, Linked, Numbering, Paragraph, ParagraphOnly, Table
+  Only in Wordprocessing: Character, Numbering, Paragraph, Table
 
 DocumentModel.Interop.Word.LockType <-> DocumentModel.Wordprocessing.ColorType
   Only in Word: Changed, Ephemeral, Reservation
-  Only in Wordprocessing: Auto, Black, Blue, BrightGreen, DarkBlue, DarkRed, DarkYellow, Gray25, Gray50, Green, Mixed, Pink, Red, Teal, Turquoise, Violet, White, Yellow
+  Only in Wordprocessing: Auto, Black, Blue, BrightGreen, DarkBlue, DarkRed, DarkYellow, Gray25, Gray50, Green, Pink, Red, Teal, Turquoise, Violet, White, Yellow
 
 DocumentModel.Interop.Word.MovementType <-> DocumentModel.Wordprocessing.DocumentType
   Only in Word: Extend, Move
@@ -194,10 +310,6 @@ DocumentModel.Interop.Word.OpenFormat <-> DocumentModel.Wordprocessing.DateForma
   Only in Word: AllWord, AllWordTemplates, Auto, Document, Document97, EncodedText, OpenDocumentText, RTF, Template, Template97, UnicodeText, WebPages, XML, XMLDocument, XMLDocumentMacroEnabled, XMLDocumentMacroEnabledSerialized, XMLDocumentSerialized, XMLTemplate, XMLTemplateMacroEnabled, XMLTemplateMacroEnabledSerialized, XMLTemplateSerialized
   Only in Wordprocessing: Date, DateTime
 
-DocumentModel.Interop.Word.Orientation <-> DocumentModel.Wordprocessing.PageOrientation
-  Only in Word: -
-  Only in Wordprocessing: Mixed
-
 DocumentModel.Interop.Word.PageBorderArt <-> DocumentModel.Wordprocessing.PageBorderOffset
   Only in Word: Apples, ArchedScallops, BabyPacifier, BabyRattle, Balloons3Colors, BalloonsHotAir, BasicBlackDashes, BasicBlackDots, BasicBlackSquares, BasicThinLines, BasicWhiteDashes, BasicWhiteDots, BasicWhiteSquares, BasicWideInline, BasicWideMidline, BasicWideOutline, Bats, Birds, BirdsFlight, Cabins, CakeSlice, CandyCorn, CelticKnotwork, CertificateBanner, ChainLink, ChampagneBottle, CheckedBarBlack, CheckedBarColor, Checkered, ChristmasTree, CirclesLines, CirclesRectangles, ClassicalWave, Clocks, Compass, Confetti, ConfettiGrays, ConfettiOutline, ConfettiStreamers, ConfettiWhite, CornerTriangles, CouponCutoutDashes, CouponCutoutDots, CrazyMaze, CreaturesButterfly, CreaturesFish, CreaturesInsects, CreaturesLadyBug, CrossStitch, Cup, DecoArch, DecoArchColor, DecoBlocks, DiamondsGray, DoubleD, DoubleDiamonds, Earth1, Earth2, EclipsingSquares1, EclipsingSquares2, EggsBlack, Fans, Film, Firecrackers, FlowersBlockPrint, FlowersDaisies, FlowersModern1, FlowersModern2, FlowersPansy, FlowersRedRose, FlowersRoses, FlowersTeacup, FlowersTiny, Gems, GingerbreadMan, Gradient, Handmade1, Handmade2, HeartBalloon, HeartGray, Hearts, HeebieJeebies, Holly, HouseFunky, Hypnotic, IceCreamCones, LightBulb, Lightning1, Lightning2, MapPins, MapleLeaf, MapleMuffins, Marquee, MarqueeToothed, Moons, Mosaic, MusicNotes, Northwest, Ovals, Packages, PalmsBlack, PalmsColor, PaperClips, Papyrus, PartyFavor, PartyGlass, Pencils, People, PeopleHats, PeopleWaving, Poinsettias, PostageStamp, Pumpkin1, PushPinNote1, PushPinNote2, Pyramids, PyramidsAbove, Quadrants, Rings, Safari, Sawtooth, SawtoothGray, ScaredCat, Seattle, ShadowedSquares, SharksTeeth, ShorebirdTracks, Skyrocket, SnowflakeFancy, Snowflakes, Sombrero, Southwest, Stars, Stars3D, StarsBlack, StarsShadowed, StarsTop, Sun, Swirligig, TornPaper, TornPaperBlack, Trees, TriangleParty, Triangles, Tribal1, Tribal2, Tribal3, Tribal4, Tribal5, Tribal6, TwistedLines1, TwistedLines2, Vine, Waveline, WeavingAngles, WeavingBraid, WeavingRibbon, WeavingStrips, WhiteFlowers, Woodwork, XIllusions, ZanyTriangles, ZigZag, ZigZagStitch
   Only in Wordprocessing: Page, Text
@@ -209,10 +321,6 @@ DocumentModel.Interop.Word.PageNumberAlignment <-> DocumentModel.Wordprocessing.
 DocumentModel.Interop.Word.PageNumberStyle <-> DocumentModel.Wordprocessing.NumberStyle
   Only in Word: ArabicFullWidth, ArabicLetter1, ArabicLetter2, HanjaRead, HanjaReadDigit, HebrewLetter1, HebrewLetter2, HindiArabic, HindiCardinalText, HindiLetter1, HindiLetter2, Kanji, KanjiDigit, KanjiTraditional, LowercaseLetter, LowercaseRoman, NumberInCircle, NumberInDash, SimpChinNum1, SimpChinNum2, ThaiArabic, ThaiCardinalText, ThaiLetter, TradChinNum1, TradChinNum2, UppercaseLetter, UppercaseRoman, VietCardinalText
   Only in Wordprocessing: Cardinal, LowerLetter, LowerRoman, Ordinal, UpperLetter, UpperRoman
-
-DocumentModel.Interop.Word.PageVerticalAlignment <-> DocumentModel.Wordprocessing.VerticalAlignment
-  Only in Word: Justify
-  Only in Wordprocessing: Inline, Inside, Outside
 
 DocumentModel.Interop.Word.ProofreadingErrorType <-> DocumentModel.Wordprocessing.ProofingError
   Only in Word: GrammaticalError, SpellingError
@@ -244,7 +352,7 @@ DocumentModel.Interop.Word.RelativeVerticalSize <-> DocumentModel.Wordprocessing
 
 DocumentModel.Interop.Word.RulerStyle <-> DocumentModel.Wordprocessing.BulletStyle
   Only in Word: FirstColumn, None, Proportional, SameWidth
-  Only in Wordprocessing: Arrow, Bullet, Check, Circle, Diamond, Mixed, Square
+  Only in Wordprocessing: Arrow, Bullet, Check, Circle, Diamond, Square
 
 DocumentModel.Interop.Word.SaveFormat <-> DocumentModel.Wordprocessing.DateFormat
   Only in Word: DOSText, DOSTextLineBreaks, Document, Document97, DocumentDefault, EncodedText, FilteredHTML, FlatXML, FlatXMLMacroEnabled, FlatXMLTemplate, FlatXMLTemplateMacroEnabled, HTML, OpenDocumentText, PDF, RTF, StrictOpenXMLDocument, Template, Template97, TextLineBreaks, UnicodeText, WebArchive, XML, XMLDocument, XMLDocumentMacroEnabled, XMLTemplate, XMLTemplateMacroEnabled, XPS
@@ -252,11 +360,11 @@ DocumentModel.Interop.Word.SaveFormat <-> DocumentModel.Wordprocessing.DateForma
 
 DocumentModel.Interop.Word.ScrollbarType <-> DocumentModel.Wordprocessing.ColorType
   Only in Word: No, Yes
-  Only in Wordprocessing: Black, Blue, BrightGreen, DarkBlue, DarkRed, DarkYellow, Gray25, Gray50, Green, Mixed, None, Pink, Red, Teal, Turquoise, Violet, White, Yellow
+  Only in Wordprocessing: Black, Blue, BrightGreen, DarkBlue, DarkRed, DarkYellow, Gray25, Gray50, Green, None, Pink, Red, Teal, Turquoise, Violet, White, Yellow
 
 DocumentModel.Interop.Word.SectionDirection <-> DocumentModel.Wordprocessing.TextDirection
   Only in Word: Ltr, Rtl
-  Only in Wordprocessing: BottomToTopLeftToRight, LefToRightTopToBottom, LeftToRight, LeftToRightTopToBottomRotated, LeftToRightVertical, Mixed, RightToLeft, RightToLeftVertical, TopToBottom, TopToBottomLeftToRightRotated, TopToBottomRightToLeft, TopToBottomRightToLeftRotated, TopToBottomVertical
+  Only in Wordprocessing: BottomToTopLeftToRight, LefToRightTopToBottom, LeftToRight, LeftToRightTopToBottomRotated, LeftToRightVertical, RightToLeft, RightToLeftVertical, TopToBottom, TopToBottomLeftToRightRotated, TopToBottomRightToLeft, TopToBottomRightToLeftRotated, TopToBottomVertical
 
 DocumentModel.Interop.Word.SectionStart <-> DocumentModel.Wordprocessing.SectionMarkType
   Only in Word: NewColumn, NewPage
@@ -282,13 +390,9 @@ DocumentModel.Interop.Word.StoryType <-> DocumentModel.Wordprocessing.StoryType
   Only in Word: CommentsStory, EndnoteContinuationNoticeStory, EndnoteContinuationSeparatorStory, EndnoteSeparatorStory, EndnotesStory, EvenPagesFooterStory, EvenPagesHeaderStory, FirstPageFooterStory, FirstPageHeaderStory, FootnoteContinuationNoticeStory, FootnoteContinuationSeparatorStory, FootnoteSeparatorStory, FootnotesStory, MainTextStory, PrimaryFooterStory, PrimaryHeaderStory, TextFrameStory
   Only in Wordprocessing: Comments, EndnoteContinuationNotice, EndnoteContinuationSeparator, EndnoteSeparator, Endnotes, EvenPagesFooter, EvenPagesHeader, FirstPageFooter, FirstPageHeader, FootnoteContinuationNotice, FootnoteContinuationSeparator, FootnoteSeparator, Footnotes, MainText, PrimaryFooter, PrimaryHeader, TextFrame
 
-DocumentModel.Interop.Word.StyleType <-> DocumentModel.Wordprocessing.StyleType
-  Only in Word: List
-  Only in Wordprocessing: Numbering
-
 DocumentModel.Interop.Word.TableDirection <-> DocumentModel.Wordprocessing.TextDirection
   Only in Word: Ltr, Rtl
-  Only in Wordprocessing: BottomToTopLeftToRight, LefToRightTopToBottom, LeftToRight, LeftToRightTopToBottomRotated, LeftToRightVertical, Mixed, RightToLeft, RightToLeftVertical, TopToBottom, TopToBottomLeftToRightRotated, TopToBottomRightToLeft, TopToBottomRightToLeftRotated, TopToBottomVertical
+  Only in Wordprocessing: BottomToTopLeftToRight, LefToRightTopToBottom, LeftToRight, LeftToRightTopToBottomRotated, LeftToRightVertical, RightToLeft, RightToLeftVertical, TopToBottom, TopToBottomLeftToRightRotated, TopToBottomRightToLeft, TopToBottomRightToLeftRotated, TopToBottomVertical
 
 DocumentModel.Interop.Word.TableFormat <-> DocumentModel.Wordprocessing.DateFormat
   Only in Word: Classic1, Classic2, Classic3, Classic4, Colorful1, Colorful2, Colorful3, Columns1, Columns2, Columns3, Columns4, Columns5, Contemporary, Elegant, Grid1, Grid2, Grid3, Grid4, Grid5, Grid6, Grid7, Grid8, List1, List2, List3, List4, List5, List6, List7, List8, None, Professional, Simple1, Simple2, Simple3, Subtle1, Subtle2, ThreeDEffects1, ThreeDEffects2, ThreeDEffects3, Web1, Web2, Web3
@@ -303,8 +407,8 @@ DocumentModel.Interop.Word.TextFormFieldType <-> DocumentModel.Wordprocessing.Te
   Only in Wordprocessing: Calculated, CurrentDate, CurrentTime, Date, Number, Regular
 
 DocumentModel.Interop.Word.ThemeColorIndex <-> DocumentModel.Wordprocessing.ColorIndex
-  Only in Word: Accent1, Accent2, Accent3, Accent4, Accent5, Accent6, Background1, Background2, Hyperlink, HyperlinkFollowed, MainDark1, MainDark2, MainLight1, MainLight2, NotThemeColor, Text1, Text2
-  Only in Wordprocessing: Auto, Black, Blue, BrightGreen, ByAuthor, DarkBlue, DarkRed, DarkYellow, Gray25, Gray50, Green, Pink, Red, Teal, Turquoise, Violet, White, Yellow
+  Only in Word: NotThemeColor, ThemeColorAccent1, ThemeColorAccent2, ThemeColorAccent3, ThemeColorAccent4, ThemeColorAccent5, ThemeColorAccent6, ThemeColorBackground1, ThemeColorBackground2, ThemeColorHyperlink, ThemeColorHyperlinkFollowed, ThemeColorMainDark1, ThemeColorMainDark2, ThemeColorMainLight1, ThemeColorMainLight2, ThemeColorText1, ThemeColorText2
+  Only in Wordprocessing: Auto, Black, Blue, BrightGreen, DarkBlue, DarkRed, DarkYellow, Gray25, Gray50, Green, Pink, Red, Teal, Turquoise, Violet, White, Yellow
 
 DocumentModel.Interop.Word.ToaFormat <-> DocumentModel.Wordprocessing.DateFormat
   Only in Word: Classic, Distinctive, Formal, Simple, Template
@@ -317,10 +421,6 @@ DocumentModel.Interop.Word.TocFormat <-> DocumentModel.Wordprocessing.DateFormat
 DocumentModel.Interop.Word.TofFormat <-> DocumentModel.Wordprocessing.DateFormat
   Only in Word: Centered, Classic, Distinctive, Formal, Simple, Template
   Only in Wordprocessing: Date, DateTime, Text
-
-DocumentModel.Interop.Word.TwoLinesInOneType <-> DocumentModel.Wordprocessing.TwoLinesInOneBracket
-  Only in Word: NoBrackets
-  Only in Wordprocessing: -
 
 DocumentModel.Interop.Word.Underline <-> DocumentModel.Wordprocessing.UnderlineType
   Only in Word: DashHeavy, DotDashHeavy, DotDotDashHeavy, Wavy
@@ -337,4 +437,8 @@ DocumentModel.Interop.Word.ViewTypeOld <-> DocumentModel.Wordprocessing.ViewType
 DocumentModel.Interop.Word.WrapTypeMerged <-> DocumentModel.Wordprocessing.Vml.WrapType
   Only in Word: Behind, Front, Inline, TopBottom
   Only in Wordprocessing: None, TopAndBottom
+
+DocumentModel.Interop.Word.WrapType <-> DocumentModel.Wordprocessing.Vml.WrapType
+  Only in Word: Behind, Front, Inline, TopBottom
+  Only in Wordprocessing: TopAndBottom
 
