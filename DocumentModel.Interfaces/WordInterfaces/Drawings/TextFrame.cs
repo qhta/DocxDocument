@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
@@ -39,7 +41,7 @@ public partial interface TextFrame : InteropObject
   /// Returns or sets the orientation of the text inside the frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.orientation?view=word-pia"/>
-  public Core.TextOrientation Orientation { get; set; }
+  public TextOrientation Orientation { get; set; }
 
   /// <summary>
   /// Returns a Range object that represents the text in the specified text frame.

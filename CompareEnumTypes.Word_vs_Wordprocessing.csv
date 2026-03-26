@@ -25,107 +25,95 @@ WordDirectory;WordFile;WordprocessingDirectory;WordprocessingFile;TypeNameSimila
 .;VerticalAlignment.cs;Frames and framesets;VerticalAlignment.cs;100;60
 .;EmphasisMark.cs;Run properties;EmphasisMark.cs;100;20
 .;StylisticSet.cs;Unused;StylisticSet.cs;100;4
-.;BorderTypeHID.cs;Common;BorderType.cs;100;0
+.;BorderType.cs;Common;BorderType.cs;100;0
 .;BreakType.cs;Run content;BreakType.cs;100;0
 .;DocumentType.cs;Document;DocumentType.cs;100;0
-.;MeasurementUnitsHID.cs;Unused;MeasurementUnits.cs;100;0
-.;ParagraphAlignmentHID.cs;Unused;ParagraphAlignment.cs;100;0
-.;StatisticHID.cs;Unused;Statistic.cs;100;0
-.;TabLeaderHID.cs;Unused;TabLeader.cs;100;0
-.;TextOrientationHID.cs;Unused;TextOrientation.cs;100;0
-.;WdBorderType.cs;Common;BorderType.cs;100;0
-.;WdStoryType.cs;Unused;Story.cs;100;0
-.;WdViewType.cs;Settings;ViewType.cs;100;0
-.;WdBuildingBlockTypes.cs;Unused;BuildingBlockType.cs;97;40
-.;WdHorizontalLineAlignment.cs;Frames and framesets;HorizontalAlignment.cs;90;75
-.;WdCellVerticalAlignment.cs;Frames and framesets;VerticalAlignment.cs;89;66
+.;StoryType.cs;Unused;Story.cs;100;0
+.;ViewType.cs;Settings;ViewType.cs;100;0
+.;BuildingBlockTypes.cs;Unused;BuildingBlockType.cs;97;40
+.;HorizontalLineAlignment.cs;Frames and framesets;HorizontalAlignment.cs;90;75
+.;CellVerticalAlignment.cs;Frames and framesets;VerticalAlignment.cs;89;66
 .;Units.cs;Unused;Unit.cs;88;100
 .;MailMergeDataSource.cs;Mail merge;MailMergeSource.cs;88;0
 .;NewDocumentType.cs;Document;DocumentType.cs;88;0
-.;WdReferenceType.cs;Footnotes and endnotes;NoteReferenceType.cs;86;50
-.;WdJustificationMode.cs;Paragraph properties;Justification.cs;86;0
-.;WdBuiltinStyle.cs;Styles;BuiltInStyleType.cs;85;31
-.;WdListNumberStyle.cs;Unused;ListLevelNumberStyle.cs;85;2
-.;ListNumberStyleHID.cs;Unused;ListLevelNumberStyle.cs;85;0
-.;WdNumberType.cs;Unused;NumberStyle.cs;85;0
-.;WdOrientation.cs;Document;PageOrientation.cs;84;100
-.;WdLineSpacing.cs;Paragraph properties;LineSpacingRule.cs;84;22
-.;WdNoteNumberStyle.cs;Unused;NumberStyle.cs;84;5
-.;WdPageNumberStyle.cs;Unused;NumberStyle.cs;84;5
-.;NoteNumberStyleHID.cs;Unused;NumberStyle.cs;84;0
-.;PageNumberStyleHID.cs;Unused;NumberStyle.cs;84;0
-.;WdViewTypeOld.cs;Settings;ViewType.cs;84;0
+.;ReferenceType.cs;Footnotes and endnotes;NoteReferenceType.cs;86;50
+.;JustificationMode.cs;Paragraph properties;Justification.cs;86;0
+.;BuiltinStyle.cs;Styles;BuiltInStyleType.cs;85;31
+.;ListNumberStyle.cs;Unused;ListLevelNumberStyle.cs;85;2
+.;NumberType.cs;Unused;NumberStyle.cs;85;0
+.;Orientation.cs;Document;PageOrientation.cs;84;100
+.;LineSpacing.cs;Paragraph properties;LineSpacingRule.cs;84;22
+.;NoteNumberStyle.cs;Unused;NumberStyle.cs;84;5
+.;PageNumberStyle.cs;Unused;NumberStyle.cs;84;5
+.;ViewTypeOld.cs;Settings;ViewType.cs;84;0
 .;RowAlignment.cs;Table properties;TableRowAlignment.cs;82;100
-.;WdFlowDirection.cs;Common;Direction.cs;81;100
-.;WdUnderline.cs;Run properties;UnderlineType.cs;81;77
-.;WdSortFieldType.cs;Unused;SortField.cs;81;66
+.;FlowDirection.cs;Common;Direction.cs;81;100
+.;Underline.cs;Run properties;UnderlineType.cs;81;77
+.;SortFieldType.cs;Unused;SortField.cs;81;66
+.;FieldType.cs;Fields and hyperlinks;FieldCharType.cs;81;0
+.;FootnoteLocation.cs;Footnotes and endnotes;FootnotePosition.cs;81;0
+.;GoToDirection.cs;Common;Direction.cs;81;0
 .;MailMergeState.cs;Mail merge;MailMergeData.cs;81;0
-.;SortFieldTypeHID.cs;Unused;SortField.cs;81;0
-.;WdFieldType.cs;Fields and hyperlinks;FieldCharType.cs;81;0
-.;WdFootnoteLocation.cs;Footnotes and endnotes;FootnotePosition.cs;81;0
-.;WdGoToDirection.cs;Common;Direction.cs;81;0
-.;WdTableDirection.cs;Common;TextDirection.cs;81;0
+.;TableDirection.cs;Common;TextDirection.cs;81;0
 .;WrapSideType.cs;Vml;WrapSide.cs;80;100
-.;WdCalendarType.cs;Sdt;Calendar.cs;80;38
-.;WdSaveFormat.cs;Sdt;DateFormat.cs;80;6
-.;WdEndnoteLocation.cs;Footnotes and endnotes;EndnotePosition.cs;80;0
-.;WdRelativeVerticalPosition.cs;Run properties;VerticalPosition.cs;80;0
-.;WdThemeColorIndex.cs;Unused;ColorIndex.cs;80;0
-.;WdRelativeHorizontalSize.cs;Drawings;SizeRelativeHorizontally.cs;78;33
-.;WdCompareDestination.cs;Mail merge;MailMergeDestination.cs;78;0
-.;WdHeaderFooterIndex.cs;Headers and footers;HeaderFooterType.cs;78;0
-.;WdSelectionType.cs;Document;SectionMarkType.cs;78;0
-.;WdTextFormFieldType.cs;Fields and hyperlinks;TextBoxFormField.cs;78;0
-.;WdPageNumberAlignment.cs;Drawings;PenAlignment.cs;77;28
-.;WdProtectionType.cs;Document;DocumentProtectionType.cs;77;0
-.;WdRelativeVerticalSize.cs;Drawings;SizeRelativeVertically.cs;76;33
-.;WdDocumentDirection.cs;Document;DocumentProtectionType.cs;76;0
-.;WdEnvelopeOrientation.cs;Document;PageOrientation.cs;76;0
-.;WdIndexFormat.cs;Sdt;DateFormat.cs;76;0
-.;WdIndexType.cs;Fields and hyperlinks;InfoTextType.cs;76;0
-.;WdLineStyle.cs;Unused;InteropStyle.cs;76;0
-.;WdLineType.cs;Run properties;UnderlineType.cs;76;0
-.;WdOLEType.cs;Settings;ViewType.cs;76;0
-.;WdProofreadingErrorType.cs;Common;ProofingError.cs;76;0
-.;WdRulerStyle.cs;Unused;BulletStyle.cs;76;0
-.;WdTableFormat.cs;Sdt;DateFormat.cs;76;0
+.;CalendarType.cs;Sdt;Calendar.cs;80;38
+.;SaveFormat.cs;Sdt;DateFormat.cs;80;6
+.;EndnoteLocation.cs;Footnotes and endnotes;EndnotePosition.cs;80;0
+.;RelativeVerticalPosition.cs;Run properties;VerticalPosition.cs;80;0
+.;ThemeColorIndex.cs;Unused;ColorIndex.cs;80;0
+.;RelativeHorizontalSize.cs;Drawings;SizeRelativeHorizontally.cs;78;33
+.;CompareDestination.cs;Mail merge;MailMergeDestination.cs;78;0
+.;HeaderFooterIndex.cs;Headers and footers;HeaderFooterType.cs;78;0
+.;SelectionType.cs;Document;SectionMarkType.cs;78;0
+.;TextFormFieldType.cs;Fields and hyperlinks;TextBoxFormField.cs;78;0
+.;PageNumberAlignment.cs;Drawings;PenAlignment.cs;77;28
+.;ProtectionType.cs;Document;DocumentProtectionType.cs;77;0
+.;RelativeVerticalSize.cs;Drawings;SizeRelativeVertically.cs;76;33
+.;DocumentDirection.cs;Document;DocumentProtectionType.cs;76;0
+.;EnvelopeOrientation.cs;Document;PageOrientation.cs;76;0
+.;IndexFormat.cs;Sdt;DateFormat.cs;76;0
+.;IndexType.cs;Fields and hyperlinks;InfoTextType.cs;76;0
+.;LineStyle.cs;Unused;InteropStyle.cs;76;0
+.;LineType.cs;Run properties;UnderlineType.cs;76;0
+.;OLEType.cs;Settings;ViewType.cs;76;0
+.;ProofreadingErrorType.cs;Common;ProofingError.cs;76;0
+.;RulerStyle.cs;Unused;BulletStyle.cs;76;0
+.;TableFormat.cs;Sdt;DateFormat.cs;76;0
 .;TwoLinesInOneType.cs;Unused;TwoLinesInOneBracket.cs;75;90
-.;WdCaptionNumberStyle.cs;Unused;NumberStyle.cs;75;5
-.;CaptionNumberStyleHID.cs;Unused;NumberStyle.cs;75;0
-.;DictionaryTypeHID.cs;Document;SectionMarkType.cs;75;0
-.;WdDictionaryType.cs;Document;SectionMarkType.cs;75;0
-.;WdMovementType.cs;Document;DocumentType.cs;75;0
-.;WdPageBorderArt.cs;Document;PageBorderOffset.cs;75;0
-.;WdSectionDirection.cs;Common;TextDirection.cs;75;0
-.;WdTablePosition.cs;Run properties;VerticalPosition.cs;75;0
-.;WdSectionStart.cs;Document;SectionMarkType.cs;74;60
-.;WdDropPosition.cs;Footnotes and endnotes;EndnotePosition.cs;74;0
-.;WdHorizontalLineWidthType.cs;Vml;HorizontalAnchorType.cs;74;0
-.;WdCursorType.cs;Unused;Color.cs;73;0
-.;WdEditorType.cs;Unused;Story.cs;73;0
-.;WdToaFormat.cs;Sdt;DateFormat.cs;73;0
-.;WdTocFormat.cs;Sdt;DateFormat.cs;73;0
-.;WdTofFormat.cs;Sdt;DateFormat.cs;73;0
-.;WdAlignmentTabAlignment.cs;Unused;TabAlignment.cs;72;66
-.;WdWrapTypeMerged.cs;Vml;WrapType.cs;72;50
-.;WdRelativeHorizontalPosition.cs;Drawings;SizeRelativeHorizontally.cs;72;28
-.;WdCalendarTypeBi.cs;Sdt;Calendar.cs;72;11
-.;WdScrollbarType.cs;Unused;Color.cs;72;9
-.;WdEnclosureType.cs;Unused;Color.cs;72;0
-.;WdGutterStyle.cs;Unused;NumberStyle.cs;72;0
-.;WdHorizontalInVerticalType.cs;Vml;HorizontalAnchorType.cs;72;0
-.;WdLetterStyle.cs;Unused;BulletStyle.cs;72;0
-.;WdListGalleryType.cs;Document;DocPartGalleryType.cs;72;0
-.;WdSeparatorType.cs;Unused;Story.cs;72;0
-.;WdColor.cs;Unused;Color.cs;71;41
-.;WdShapePosition.cs;Document;CaptionPosition.cs;71;0
+.;CaptionNumberStyle.cs;Unused;NumberStyle.cs;75;5
+.;DictionaryType.cs;Document;SectionMarkType.cs;75;0
+.;MovementType.cs;Document;DocumentType.cs;75;0
+.;PageBorderArt.cs;Document;PageBorderOffset.cs;75;0
+.;SectionDirection.cs;Common;TextDirection.cs;75;0
+.;TablePosition.cs;Run properties;VerticalPosition.cs;75;0
+.;SectionStart.cs;Document;SectionMarkType.cs;74;60
+.;DropPosition.cs;Footnotes and endnotes;EndnotePosition.cs;74;0
+.;HorizontalLineWidthType.cs;Vml;HorizontalAnchorType.cs;74;0
+.;CursorType.cs;Unused;Color.cs;73;0
+.;EditorType.cs;Unused;Story.cs;73;0
+.;ToaFormat.cs;Sdt;DateFormat.cs;73;0
+.;TocFormat.cs;Sdt;DateFormat.cs;73;0
+.;TofFormat.cs;Sdt;DateFormat.cs;73;0
+.;AlignmentTabAlignment.cs;Unused;TabAlignment.cs;72;66
+.;WrapTypeMerged.cs;Vml;WrapType.cs;72;50
+.;RelativeHorizontalPosition.cs;Drawings;SizeRelativeHorizontally.cs;72;28
+.;CalendarTypeBi.cs;Sdt;Calendar.cs;72;11
+.;ScrollbarType.cs;Unused;Color.cs;72;9
+.;EnclosureType.cs;Unused;Color.cs;72;0
+.;GutterStyle.cs;Unused;NumberStyle.cs;72;0
+.;HorizontalInVerticalType.cs;Vml;HorizontalAnchorType.cs;72;0
+.;LetterStyle.cs;Unused;BulletStyle.cs;72;0
+.;ListGalleryType.cs;Document;DocPartGalleryType.cs;72;0
+.;SeparatorType.cs;Unused;Story.cs;72;0
+.;Color.cs;Unused;Color.cs;71;41
+.;ShapePosition.cs;Document;CaptionPosition.cs;71;0
 .;ContentControlDateStorageFormat.cs;Unused;DateStorageFormat.cs;70;100
 .;MailMergeMainDocType.cs;Mail merge;MailMergeDocument.cs;70;42
-.;WdLockType.cs;Unused;Color.cs;70;9
-.;WdOpenFormat.cs;Sdt;DateFormat.cs;70;8
-.;WdAlertLevel.cs;Numbering;MultiLevel.cs;70;0
-.;WdAnimation.cs;Unused;Information.cs;70;0
-.;WdCellColor.cs;Unused;SchemeColor.cs;70;0
-.;WdListType.cs;Styles;StyleType.cs;70;0
-.;WdOMathSpacingRule.cs;Paragraph properties;LineSpacingRule.cs;70;0
-.;WdOMathType.cs;Document;DocPartType.cs;70;0
+.;LockType.cs;Unused;Color.cs;70;9
+.;OpenFormat.cs;Sdt;DateFormat.cs;70;8
+.;AlertLevel.cs;Numbering;MultiLevel.cs;70;0
+.;Animation.cs;Unused;Information.cs;70;0
+.;CellColor.cs;Unused;SchemeColor.cs;70;0
+.;ListType.cs;Styles;StyleType.cs;70;0
+.;OMathSpacingRule.cs;Paragraph properties;LineSpacingRule.cs;70;0
+.;OMathType.cs;Document;DocPartType.cs;70;0

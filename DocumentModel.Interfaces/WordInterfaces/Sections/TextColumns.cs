@@ -36,5 +36,5 @@ public partial interface TextColumns : InteropObject, InteropCollection<TextColu
   /// Returns or sets the direction in which text flows from one text column to the next.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textcolumns.flowdirection?view=word-pia"/>
-  public FlowDirection FlowDirection { get; set; }
+  public TableDirection FlowDirection { get; set; }
 }

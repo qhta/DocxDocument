@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
@@ -22,7 +24,7 @@ public partial interface Row : InteropObject
   /// Returns or sets a RowAlignment constant that represents the alignment for the specified rows.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.alignment?view=word-pia"/>
-  public RowAlignment Alignment { get; set; }
+  public TableRowAlignment Alignment { get; set; }
 
   /// <summary>
   /// Determines if the specified row or rows are formatted as a table heading.

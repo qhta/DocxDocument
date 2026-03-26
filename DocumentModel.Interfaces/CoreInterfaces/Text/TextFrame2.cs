@@ -1,4 +1,6 @@
 
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
