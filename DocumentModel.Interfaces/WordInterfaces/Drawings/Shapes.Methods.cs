@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Word;
 
 /// <remarks>
@@ -63,7 +65,7 @@ public partial interface Shapes: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addlabel?view=word-pia"/>
-  public Shape AddLabel(Core.TextOrientation Orientation, float Left, float Top, float Width, float Height, object Anchor);
+  public Shape AddLabel(TextOrientation Orientation, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
   /// Adds a line shape to the collection.
@@ -159,7 +161,7 @@ public partial interface Shapes: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addtextbox?view=word-pia"/>
-  public Shape AddTextbox(Core.TextOrientation Orientation, float Left, float Top, float Width, float Height, object Anchor);
+  public Shape AddTextbox(TextOrientation Orientation, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
   /// Builds a freeform shape and adds it to the collection.

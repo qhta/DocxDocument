@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
@@ -49,7 +51,7 @@ public partial interface TableStyle : InteropObject
   /// Returns or sets a constant that represents the alignment for the specified rows.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablestyle.alignment?view=word-pia"/>
-  public RowAlignment Alignment { get; set; }
+  public TableRowAlignment Alignment { get; set; }
 
   /// <summary>
   /// Returns or sets the spacing (in points) between the cells in a table style.
