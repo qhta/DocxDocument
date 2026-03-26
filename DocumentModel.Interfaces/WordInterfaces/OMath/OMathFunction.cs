@@ -10,7 +10,7 @@ public partial interface OMathFunction : InteropObject
   /// Returns the type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction.type?view=word-pia"/>
-  public WdOMathFunctionType Type { get; }
+  public OMathFunctionType Type { get; }
 
   /// <summary>
   /// Returns the range.

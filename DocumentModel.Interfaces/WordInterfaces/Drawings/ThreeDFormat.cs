@@ -26,7 +26,7 @@ public partial interface ThreeDFormat : InteropObject
   /// color is independent of the shape's fill.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.extrusioncolortype?view=word-pia"/>
-  public Core.MsoExtrusionColorType ExtrusionColorType { get; set; }
+  public Core.ExtrusionColorType ExtrusionColorType { get; set; }
 
   /// <summary>
   /// MsoTrue if the extrusion appears in perspective— that is, if the walls of the extrusion narrow toward a
@@ -34,38 +34,38 @@ public partial interface ThreeDFormat : InteropObject
   /// don't narrow toward a vanishing point.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.perspective?view=word-pia"/>
-  public Core.MsoTriState Perspective { get; set; }
+  public Core.TriState Perspective { get; set; }
 
   /// <summary>
   /// Returns the direction taken by the extrusion's sweep path leading away from the extruded shape (the front face
   /// of the extrusion).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetextrusiondirection?view=word-pia"/>
-  public Core.MsoPresetExtrusionDirection PresetExtrusionDirection { get; }
+  public Core.PresetExtrusionDirection PresetExtrusionDirection { get; }
 
   /// <summary>
   /// Returns or sets the position of the light source relative to the extrusion.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetlightingdirection?view=word-pia"/>
-  public Core.MsoPresetLightingDirection PresetLightingDirection { get; set; }
+  public Core.PresetLightingDirection PresetLightingDirection { get; set; }
 
   /// <summary>
   /// Returns or sets the intensity of the extrusion lighting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetlightingsoftness?view=word-pia"/>
-  public Core.MsoPresetLightingSoftness PresetLightingSoftness { get; set; }
+  public Core.PresetLightingSoftness PresetLightingSoftness { get; set; }
 
   /// <summary>
   /// Returns or sets the extrusion surface material.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetmaterial?view=word-pia"/>
-  public Core.MsoPresetMaterial PresetMaterial { get; set; }
+  public Core.PresetMaterial PresetMaterial { get; set; }
 
   /// <summary>
   /// Returns the preset extrusion format.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetthreedformat?view=word-pia"/>
-  public Core.MsoPresetThreeDFormat PresetThreeDFormat { get; }
+  public Core.PresetThreeDFormat PresetThreeDFormat { get; }
 
   /// <summary>
   /// Returns or sets the rotation of the extruded shape around the x-axis in degrees. Can be a value from – 90
@@ -85,13 +85,13 @@ public partial interface ThreeDFormat : InteropObject
   /// True if the specified object, or the formatting applied to it, is visible.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.visible?view=word-pia"/>
-  public Core.MsoTriState Visible { get; set; }
+  public Core.TriState Visible { get; set; }
 
   /// <summary>
-  /// Returns or sets an MsoBevelType constant that represents the lighting preset. Read/write.
+  /// Returns or sets an BevelType constant that represents the lighting preset. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetlighting?view=word-pia"/>
-  public Core.MsoLightRigType PresetLighting { get; set; }
+  public Core.LightRigType PresetLighting { get; set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the z-axis for the shape. Read/write.
@@ -100,10 +100,10 @@ public partial interface ThreeDFormat : InteropObject
   public float Z { get; set; }
 
   /// <summary>
-  /// Returns or sets an MsoPresetCamera constant that represents the bevel type for the top bevel. Read/write.
+  /// Returns or sets an PresetCamera constant that represents the bevel type for the top bevel. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.beveltoptype?view=word-pia"/>
-  public Core.MsoBevelType BevelTopType { get; set; }
+  public Core.BevelType BevelTopType { get; set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the inset size for the top bevel. Read/write.
@@ -118,10 +118,10 @@ public partial interface ThreeDFormat : InteropObject
   public float BevelTopDepth { get; set; }
 
   /// <summary>
-  /// Returns or sets an MsoPresetCamera constant that represents the bevel type for the bottom bevel. Read/write.
+  /// Returns or sets an PresetCamera constant that represents the bevel type for the bottom bevel. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.bevelbottomtype?view=word-pia"/>
-  public Core.MsoBevelType BevelBottomType { get; set; }
+  public Core.BevelType BevelBottomType { get; set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the inset size for the bottom bevel. Read/write.
@@ -136,10 +136,10 @@ public partial interface ThreeDFormat : InteropObject
   public float BevelBottomDepth { get; set; }
 
   /// <summary>
-  /// Returns an MsoPresetCamera constant that represents the camera presets. Read-only.
+  /// Returns an PresetCamera constant that represents the camera presets. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetcamera?view=word-pia"/>
-  public Core.MsoPresetCamera PresetCamera { get; }
+  public Core.PresetCamera PresetCamera { get; }
 
   /// <summary>
   /// Returns or sets a Single that represents z-axis rotation of the camera. Read/write.
@@ -166,11 +166,11 @@ public partial interface ThreeDFormat : InteropObject
   public float FieldOfView { get; set; }
 
   /// <summary>
-  /// Returns or sets an MsoTriState constant that represents whether text on a shape rotates with shape. msoTrue
+  /// Returns or sets an TriState constant that represents whether text on a shape rotates with shape. msoTrue
   /// rotates the text. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.projecttext?view=word-pia"/>
-  public Core.MsoTriState ProjectText { get; set; }
+  public Core.TriState ProjectText { get; set; }
 
   /// <summary>
   /// Returns or sets a Single that represents angle of the lighting. Read/write.

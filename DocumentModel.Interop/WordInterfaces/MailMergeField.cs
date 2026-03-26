@@ -10,7 +10,7 @@ public partial interface MailMergeField : InteropObject
   /// Returns the type of mail merge field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefield.type?view=word-pia"/>
-  public WdFieldType Type { get; }
+  public FieldType Type { get; }
 
   /// <summary>
   /// Returns or sets whether the mail merge field is locked.

@@ -9,7 +9,6 @@ public enum BlackWhiteMode
   /// <summary>
   ///   Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   ///   Color.
   /// </summary>

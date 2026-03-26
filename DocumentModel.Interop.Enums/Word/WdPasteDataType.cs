@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdpastedatatype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdPasteDataType
+public enum PasteDataType
 {
   /// <summary>
   /// OLE object.

@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies starting position of the callout line relative to the text bounding box.
@@ -6,12 +6,11 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocalloutdroptype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoCalloutDropType
+public enum CalloutDropType
 {
   /// <summary>
   /// Return value only; indicates a combination of the other states.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   /// Custom. If this value is used as the value for the PresetDrop property, the Drop and AutoAttach properties of
   /// the CalloutFormat object are used to determine where the callout line attaches to the text box.

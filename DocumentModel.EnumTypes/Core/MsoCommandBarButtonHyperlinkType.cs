@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies whether the command bar button is a hyperlink. If the command bar button is a hyperlink, further
@@ -8,7 +8,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocommandbarbuttonhyperlinktype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoCommandBarButtonHyperlinkType
+public enum CommandBarButtonHyperlinkType
 {
   /// <summary>
   /// The command bar button is not a hyperlink.

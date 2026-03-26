@@ -21,7 +21,7 @@ public partial interface ODSOFilter: InteropObject
   /// Gets or sets the `Comparison` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilter.comparison?view=office-pia"/>
-  public MsoFilterComparison Comparison { get; set; }
+  public FilterComparison Comparison { get; set; }
   /// <summary>
   /// Gets or sets the `CompareTo` property.
   /// </summary>
@@ -31,6 +31,6 @@ public partial interface ODSOFilter: InteropObject
   /// Gets or sets the `Conjunction` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilter.conjunction?view=office-pia"/>
-  public MsoFilterConjunction Conjunction { get; set; }
+  public FilterConjunction Conjunction { get; set; }
 }
 

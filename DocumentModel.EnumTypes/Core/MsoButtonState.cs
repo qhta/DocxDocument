@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the appearance of a command bar button control.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobuttonstate?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoButtonState
+public enum ButtonState
 {
   /// <summary>
   /// Button is not pressed down.
@@ -16,8 +16,4 @@ public enum MsoButtonState
   /// Button is pressed down.
   /// </summary>
   Down = -1,
-  /// <summary>
-  /// Button is pressed down.
-  /// </summary>
-  Mixed = 2
 }

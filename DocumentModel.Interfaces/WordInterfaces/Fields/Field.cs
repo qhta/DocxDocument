@@ -16,7 +16,7 @@ public partial interface Field : InteropObject
   /// Gets the field type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.type?view=word-pia"/>
-  public WdFieldType Type { get; }
+  public FieldType Type { get; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the field is locked.
@@ -28,7 +28,7 @@ public partial interface Field : InteropObject
   /// Gets the field kind.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.kind?view=word-pia"/>
-  public WdFieldKind Kind { get; }
+  public FieldKind Kind { get; }
 
   /// <summary>
   /// Gets or sets the result displayed for the field.

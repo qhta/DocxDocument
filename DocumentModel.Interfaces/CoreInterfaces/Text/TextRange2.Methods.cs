@@ -44,7 +44,7 @@ public partial interface TextRange2: InteropObject
   /// <param name="Unicode">The `Unicode` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.insertsymbol?view=office-pia"/>
-  public TextRange2 InsertSymbol(string FontName, int CharNumber, MsoTriState Unicode);
+  public TextRange2 InsertSymbol(string FontName, int CharNumber, TriState Unicode);
   /// <summary>
   /// Invokes `Select`.
   /// </summary>
@@ -77,13 +77,13 @@ public partial interface TextRange2: InteropObject
   /// <param name="Format">The `Format` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.pastespecial?view=office-pia"/>
-  public TextRange2 PasteSpecial(MsoClipboardFormat Format);
+  public TextRange2 PasteSpecial(ClipboardFormat Format);
   /// <summary>
   /// Invokes `ChangeCase`.
   /// </summary>
   /// <param name="Type">The `Type` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.changecase?view=office-pia"/>
-  public void ChangeCase(MsoTextChangeCase Type);
+  public void ChangeCase(TextChangeCase Type);
   /// <summary>
   /// Invokes `AddPeriods`.
   /// </summary>
@@ -104,8 +104,8 @@ public partial interface TextRange2: InteropObject
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.find?view=office-pia"/>
   public TextRange2 Find
-  (string FindWhat, int After, MsoTriState MatchCase,
-    MsoTriState WholeWords);
+  (string FindWhat, int After, TriState MatchCase,
+    TriState WholeWords);
   /// <summary>
   /// Invokes `Replace`.
   /// </summary>
@@ -117,8 +117,8 @@ public partial interface TextRange2: InteropObject
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.replace?view=office-pia"/>
   public TextRange2 Replace
-  (string FindWhat, string ReplaceWhat, int After, MsoTriState MatchCase,
-    MsoTriState WholeWords);
+  (string FindWhat, string ReplaceWhat, int After, TriState MatchCase,
+    TriState WholeWords);
   /// <summary>
   /// Invokes `RotatedBounds`.
   /// </summary>
@@ -151,6 +151,6 @@ public partial interface TextRange2: InteropObject
   /// <param name="Position">The `Position` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.insertchartfield?view=office-pia"/>
-  public TextRange2 InsertChartField(MsoChartFieldType ChartFieldType, string Formula, int Position);
+  public TextRange2 InsertChartField(ChartFieldType ChartFieldType, string Formula, int Position);
 }
 

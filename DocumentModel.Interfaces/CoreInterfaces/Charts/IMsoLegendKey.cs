@@ -1,4 +1,6 @@
 
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
@@ -36,7 +38,7 @@ public partial interface IMsoLegendKey: InteropObject
   /// Gets or sets the `MarkerBackgroundColorIndex` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.markerbackgroundcolorindex?view=office-pia"/>
-  public XlColorIndex MarkerBackgroundColorIndex { get; set; }
+  public ColorIndex MarkerBackgroundColorIndex { get; set; }
   /// <summary>
   /// Gets or sets the `MarkerForegroundColor` property.
   /// </summary>
@@ -46,7 +48,7 @@ public partial interface IMsoLegendKey: InteropObject
   /// Gets or sets the `MarkerForegroundColorIndex` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.markerforegroundcolorindex?view=office-pia"/>
-  public XlColorIndex MarkerForegroundColorIndex { get; set; }
+  public ColorIndex MarkerForegroundColorIndex { get; set; }
   /// <summary>
   /// Gets or sets the `MarkerSize` property.
   /// </summary>
@@ -56,7 +58,7 @@ public partial interface IMsoLegendKey: InteropObject
   /// Gets or sets the `MarkerStyle` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.markerstyle?view=office-pia"/>
-  public XlMarkerStyle MarkerStyle { get; set; }
+  public MarkerStyle MarkerStyle { get; set; }
   /// <summary>
   /// Gets or sets the `PictureType` property.
   /// </summary>

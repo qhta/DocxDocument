@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcomparetarget?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdCompareTarget
+public enum CompareTarget
 {
   /// <summary>
   /// Places comparison differences in the target document.

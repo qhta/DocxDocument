@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Represents the results of running a Document Inspector module.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodocinspectorstatus?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoDocInspectorStatus
+public enum DocInspectorStatus
 {
   /// <summary>
   /// Indicates that the Document Inspector module returned no issues or errors.

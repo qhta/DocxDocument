@@ -29,6 +29,6 @@ public partial interface CalloutFormat
   /// </summary>
   /// <param name="DropType">The `DropType` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.calloutformat.presetdrop?view=office-pia"/>
-  public void PresetDrop(MsoCalloutDropType DropType);
+  public void PresetDrop(CalloutDropType DropType);
 }
 

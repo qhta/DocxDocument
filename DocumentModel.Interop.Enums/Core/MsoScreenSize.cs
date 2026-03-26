@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the ideal screen resolution to be used to view a document in a Web browser.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoscreensize?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoScreenSize
+public enum ScreenSize
 {
   /// <summary>
   /// 544x376 resolution.

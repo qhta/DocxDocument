@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Indicates the Office theme color.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msothemecolorindex?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoThemeColorIndex
+public enum ThemeColorIndex
 {
   /// <summary>
   /// Specifies a mixed color theme.

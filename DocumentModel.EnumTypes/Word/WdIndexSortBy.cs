@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdindexsortby?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdIndexSortBy
+public enum IndexSortBy
 {
   /// <summary>
   /// Sort by the number of strokes in a character.

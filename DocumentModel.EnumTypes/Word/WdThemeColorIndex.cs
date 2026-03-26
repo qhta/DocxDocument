@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdthemecolorindex?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdThemeColorIndex
+public enum ThemeColorIndex
 {
   /// <summary>
   /// Dark main color 1.

@@ -19,7 +19,7 @@ public partial interface _CustomXMLPart
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.addnode?view=office-pia"/>
   public void AddNode
   (CustomXMLNode Parent, string Name, string NamespaceURI, CustomXMLNode NextSibling,
-    MsoCustomXMLNodeType NodeType, string NodeValue);
+    CustomXMLNodeType NodeType, string NodeValue);
 
   /// <summary>
   /// Deletes the current custom XML part from the data store.

@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdworddialogtab?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdWordDialogTab
+public enum WordDialogTab
 {
   /// <summary>
   /// General tab of the Options dialog box.

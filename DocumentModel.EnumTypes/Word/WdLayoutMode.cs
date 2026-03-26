@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdlayoutmode?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdLayoutMode
+public enum LayoutMode
 {
   /// <summary>
   /// No grid is used to lay out text.

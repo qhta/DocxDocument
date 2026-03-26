@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdstylisticset?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdStylisticSet
+public enum StylisticSet
 {
   /// <summary>
   /// Default stylistic set for the specified font.
@@ -57,7 +57,7 @@ public enum WdStylisticSet
   /// </summary>
   StylisticSet11 = 1024,
   /// <summary>
-  /// Twelfth stylistic set for the specified font. public enum WdStylisticSet
+  /// Twelfth stylistic set for the specified font. public enum StylisticSet
   /// </summary>
   StylisticSet12 = 2048,
   /// <summary>

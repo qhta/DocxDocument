@@ -10,7 +10,6 @@ public enum BaselineAlignment
   /// <summary>
   ///   Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>Align to baseline</summary>
   [OpenXmlEnumValue(nameof(DXW.VerticalTextAlignmentValues.Baseline))]
   Baseline = 1,

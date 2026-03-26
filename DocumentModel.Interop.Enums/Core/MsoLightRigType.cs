@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Indicates the effects lighting for an object.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolightrigtype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoLightRigType
+public enum LightRigType
 {
   /// <summary>
   /// Specifies the Mixed effect.

@@ -83,7 +83,7 @@ public partial interface Table : InteropObject
   /// Returns or sets the preferred unit of measurement to use for the width of the specified table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.table.preferredwidthtype?view=word-pia"/>
-  public WdPreferredWidthType PreferredWidthType { get; set; }
+  public PreferredWidthType PreferredWidthType { get; set; }
 
   /// <summary>
   /// Returns or sets the amount of space (in points) to add above the contents of a single cell or all the cells in
@@ -123,7 +123,7 @@ public partial interface Table : InteropObject
   /// Returns or sets the direction in which Microsoft Word orders cells in the specified table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.table.tabledirection?view=word-pia"/>
-  public WdTableDirection TableDirection { get; set; }
+  public TableDirection TableDirection { get; set; }
 
   /// <summary>
   /// Returns or sets the identifying label for the specified object when the current document is saved as a Web

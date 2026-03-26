@@ -28,7 +28,7 @@ public partial interface KeyBinding : InteropObject
   /// Returns the category of the key binding.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybinding.keycategory?view=word-pia"/>
-  public WdKeyCategory KeyCategory { get; }
+  public KeyCategory KeyCategory { get; }
 
   /// <summary>
   /// Returns the primary key code of the key binding.

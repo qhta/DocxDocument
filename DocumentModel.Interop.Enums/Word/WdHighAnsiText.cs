@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdhighansitext?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdHighAnsiText
+public enum HighAnsiText
 {
   /// <summary>
   /// Word doesn't interpret any high-ANSI text as East Asian characters.

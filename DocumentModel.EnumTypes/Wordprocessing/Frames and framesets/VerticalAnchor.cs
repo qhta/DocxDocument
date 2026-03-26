@@ -9,7 +9,6 @@ public enum VerticalAnchor
   /// <summary>
   ///   Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   ///   Relative To Vertical Text Extents.
   /// </summary>

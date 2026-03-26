@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlerrorbarinclude?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlErrorBarInclude
+public enum ErrorBarInclude
 {
   /// <summary>
   /// Both positive and negative error range.

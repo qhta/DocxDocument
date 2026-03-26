@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcharacterwidth?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdCharacterWidth
+public enum CharacterWidth
 {
   /// <summary>
   /// Characters are displayed in half the character width.

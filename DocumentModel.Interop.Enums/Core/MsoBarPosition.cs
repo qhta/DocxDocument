@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the position or behavior of a command bar.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobarposition?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoBarPosition
+public enum BarPosition
 {
   /// <summary>
   /// Command bar is docked on the left side of the application window.

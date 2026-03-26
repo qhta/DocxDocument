@@ -18,12 +18,12 @@ public partial interface ShapeRange: InteropCollection<Shape>
   /// Gets or sets the `AutoShapeType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.autoshapetype?view=office-pia"/>
-  public MsoAutoShapeType AutoShapeType { get; set; }
+  public AutoShapeType AutoShapeType { get; set; }
   /// <summary>
   /// Gets or sets the `BlackWhiteMode` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.blackwhitemode?view=office-pia"/>
-  public MsoBlackWhiteMode BlackWhiteMode { get; set; }
+  public BlackWhiteMode BlackWhiteMode { get; set; }
   /// <summary>
   /// Gets the `Callout` property.
   /// </summary>
@@ -38,7 +38,7 @@ public partial interface ShapeRange: InteropCollection<Shape>
   /// Gets the `Connector` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.connector?view=office-pia"/>
-  public MsoTriState Connector { get; }
+  public TriState Connector { get; }
   /// <summary>
   /// Gets the `ConnectorFormat` property.
   /// </summary>
@@ -63,7 +63,7 @@ public partial interface ShapeRange: InteropCollection<Shape>
   /// Gets the `HorizontalFlip` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.horizontalflip?view=office-pia"/>
-  public MsoTriState HorizontalFlip { get; }
+  public TriState HorizontalFlip { get; }
   /// <summary>
   /// Gets or sets the `Left` property.
   /// </summary>
@@ -78,7 +78,7 @@ public partial interface ShapeRange: InteropCollection<Shape>
   /// Gets or sets the `LockAspectRatio` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.lockaspectratio?view=office-pia"/>
-  public MsoTriState LockAspectRatio { get; set; }
+  public TriState LockAspectRatio { get; set; }
   /// <summary>
   /// Gets or sets the `Name` property.
   /// </summary>
@@ -128,12 +128,12 @@ public partial interface ShapeRange: InteropCollection<Shape>
   /// Gets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.type?view=office-pia"/>
-  public MsoShapeType Type { get; }
+  public ShapeType Type { get; }
   /// <summary>
   /// Gets the `VerticalFlip` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.verticalflip?view=office-pia"/>
-  public MsoTriState VerticalFlip { get; }
+  public TriState VerticalFlip { get; }
   /// <summary>
   /// Gets the `Vertices` property.
   /// </summary>
@@ -143,7 +143,7 @@ public partial interface ShapeRange: InteropCollection<Shape>
   /// Gets or sets the `Visible` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.visible?view=office-pia"/>
-  public MsoTriState Visible { get; set; }
+  public TriState Visible { get; set; }
   /// <summary>
   /// Gets or sets the `Width` property.
   /// </summary>
@@ -168,7 +168,7 @@ public partial interface ShapeRange: InteropCollection<Shape>
   /// Gets the `HasDiagram` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.hasdiagram?view=office-pia"/>
-  public MsoTriState HasDiagram { get; }
+  public TriState HasDiagram { get; }
   /// <summary>
   /// Gets the `Diagram` property.
   /// </summary>
@@ -178,7 +178,7 @@ public partial interface ShapeRange: InteropCollection<Shape>
   /// Gets the `HasDiagramNode` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.hasdiagramnode?view=office-pia"/>
-  public MsoTriState HasDiagramNode { get; }
+  public TriState HasDiagramNode { get; }
   /// <summary>
   /// Gets the `DiagramNode` property.
   /// </summary>
@@ -188,7 +188,7 @@ public partial interface ShapeRange: InteropCollection<Shape>
   /// Gets the `Child` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.child?view=office-pia"/>
-  public MsoTriState Child { get; }
+  public TriState Child { get; }
   /// <summary>
   /// Gets the `ParentGroup` property.
   /// </summary>
@@ -218,7 +218,7 @@ public partial interface ShapeRange: InteropCollection<Shape>
   /// Gets the `HasChart` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.haschart?view=office-pia"/>
-  public MsoTriState HasChart { get; }
+  public TriState HasChart { get; }
   /// <summary>
   /// Gets the `Chart` property.
   /// </summary>
@@ -228,12 +228,12 @@ public partial interface ShapeRange: InteropCollection<Shape>
   /// Gets or sets the `ShapeStyle` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.shapestyle?view=office-pia"/>
-  public MsoShapeStyleIndex ShapeStyle { get; set; }
+  public ShapeStyleIndex ShapeStyle { get; set; }
   /// <summary>
   /// Gets or sets the `BackgroundStyle` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.backgroundstyle?view=office-pia"/>
-  public MsoBackgroundStyleIndex BackgroundStyle { get; set; }
+  public BackgroundStyleIndex BackgroundStyle { get; set; }
   /// <summary>
   /// Gets the `SoftEdge` property.
   /// </summary>

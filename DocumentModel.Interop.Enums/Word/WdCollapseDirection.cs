@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcollapsedirection?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdCollapseDirection
+public enum CollapseDirection
 {
   /// <summary>
   /// Collapse the range to the ending point.

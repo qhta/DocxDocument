@@ -13,11 +13,11 @@ public partial interface SmartTagAction : InteropObject
   public string Name { get; }
 
   /// <summary>
-  /// Returns a WdSmartTagControlType that represents the type of Smart Document control displayed in the Document
+  /// Returns a SmartTagControlType that represents the type of Smart Document control displayed in the Document
   /// Actions task pane.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagaction.type?view=word-pia"/>
-  public WdSmartTagControlType Type { get; }
+  public SmartTagControlType Type { get; }
 
   /// <summary>
   /// Returns a Boolean that represents whether a smart document control is currently displayed in the Document

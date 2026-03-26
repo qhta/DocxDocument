@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdwrapsidetype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdWrapSideType
+public enum WrapSideType
 {
   /// <summary>
   /// Both sides of the specified shape.

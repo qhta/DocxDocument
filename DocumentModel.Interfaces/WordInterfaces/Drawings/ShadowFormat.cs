@@ -18,7 +18,7 @@ public partial interface ShadowFormat : InteropObject
   /// the shape has no fill.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.obscured?view=word-pia"/>
-  public Core.MsoTriState Obscured { get; set; }
+  public Core.TriState Obscured { get; set; }
 
   /// <summary>
   /// Returns or sets the horizontal offset (in points) of the shadow from the specified shape. A positive value
@@ -45,19 +45,19 @@ public partial interface ShadowFormat : InteropObject
   /// Returns or sets the shape shadow type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.type?view=word-pia"/>
-  public Core.MsoShadowType Type { get; set; }
+  public Core.ShadowType Type { get; set; }
 
   /// <summary>
   /// True if the specified object, or the formatting applied to it, is visible.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.visible?view=word-pia"/>
-  public Core.MsoTriState Visible { get; set; }
+  public Core.TriState Visible { get; set; }
 
   /// <summary>
-  /// Returns or sets a MsoShadowType that represents the type of shadow formatting to apply to a shape. Read/write.
+  /// Returns or sets a ShadowType that represents the type of shadow formatting to apply to a shape. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.style?view=word-pia"/>
-  public Core.MsoShadowStyle Style { get; set; }
+  public Core.ShadowStyle Style { get; set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the blur level for a shadow format. Read/write.
@@ -72,9 +72,9 @@ public partial interface ShadowFormat : InteropObject
   public float Size { get; set; }
 
   /// <summary>
-  /// Returns or sets an MsoTriState that represents whether to rotate the shadow when rotating the shape.
+  /// Returns or sets an TriState that represents whether to rotate the shadow when rotating the shape.
   /// Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.rotatewithshape?view=word-pia"/>
-  public Core.MsoTriState RotateWithShape { get; set; }
+  public Core.TriState RotateWithShape { get; set; }
 }

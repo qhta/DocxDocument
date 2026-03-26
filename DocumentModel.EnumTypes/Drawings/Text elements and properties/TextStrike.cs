@@ -9,7 +9,6 @@ public enum TextStrike
   /// <summary>
   ///   Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   ///   Text Strike Enum ( No Strike ).
   /// </summary>

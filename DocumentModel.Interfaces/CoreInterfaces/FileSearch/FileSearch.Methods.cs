@@ -1,4 +1,6 @@
 
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
@@ -16,7 +18,7 @@ public partial interface FileSearch: InteropObject
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filesearch.execute?view=office-pia"/>
   public int Execute
-  (MsoSortBy SortBy, MsoSortOrder SortOrder,
+  (SortBy SortBy, SortOrder SortOrder,
     bool AlwaysAccurate);
   /// <summary>
   /// Starts a new file search.

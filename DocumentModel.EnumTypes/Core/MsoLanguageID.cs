@@ -7,12 +7,11 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolanguageid?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoLanguageID
+public enum LanguageID
 {
   /// <summary>
   /// Mixed languages.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   /// No language specified.
   /// </summary>

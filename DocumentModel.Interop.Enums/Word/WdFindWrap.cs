@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdfindwrap?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdFindWrap
+public enum FindWrap
 {
   /// <summary>
   /// The find operation ends if the beginning or end of the search range is reached.

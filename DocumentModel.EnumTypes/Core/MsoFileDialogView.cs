@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the view presented to the user in a file dialog box.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofiledialogview?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoFileDialogView
+public enum FileDialogView
 {
   /// <summary>
   /// Files displayed in a list without details.

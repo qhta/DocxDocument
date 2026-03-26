@@ -12,7 +12,7 @@ public partial interface Sync: InteropObject
   /// Gets the `Status` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sync.status?view=office-pia"/>
-  public MsoSyncStatusType Status { get; }
+  public SyncStatusType Status { get; }
   /// <summary>
   /// Gets the `WorkspaceLastChangedBy` property.
   /// </summary>
@@ -27,6 +27,6 @@ public partial interface Sync: InteropObject
   /// Gets the `ErrorType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sync.errortype?view=office-pia"/>
-  public MsoSyncErrorType ErrorType { get; }
+  public SyncErrorType ErrorType { get; }
 }
 

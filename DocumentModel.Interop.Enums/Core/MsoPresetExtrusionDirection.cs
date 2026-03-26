@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the direction that the extrusion's sweep path takes away from the extruded shape (the front face of
@@ -7,7 +7,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetextrusiondirection?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoPresetExtrusionDirection
+public enum PresetExtrusionDirection
 {
   /// <summary>
   /// Specifies the direction that the extrusion's sweep path takes away from the extruded shape (the front face of

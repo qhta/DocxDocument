@@ -12,7 +12,7 @@ public interface ShapeNode : InteropObject
   /// property returns the editing type of the adjacent vertex.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenode.editingtype?view=word-pia"/>
-  public Core.MsoEditingType EditingType { get; }
+  public Core.EditingType EditingType { get; }
   /// <summary>
   /// Returns the position of the specified node as a coordinate pair. Each coordinate is expressed in points.
   /// </summary>
@@ -22,6 +22,6 @@ public interface ShapeNode : InteropObject
   /// Returns a value that indicates whether the segment associated with the specified node is straight or curved.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenode.segmenttype?view=word-pia"/>
-  public Core.MsoSegmentType SegmentType { get; }
+  public Core.SegmentType SegmentType { get; }
 
 }

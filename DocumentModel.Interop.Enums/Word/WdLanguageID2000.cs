@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdlanguageid2000?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdLanguageID2000
+public enum LanguageID2000
 {
   /// <summary>
   /// No description is available.

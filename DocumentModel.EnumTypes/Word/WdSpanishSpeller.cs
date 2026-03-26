@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdspanishspeller?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdSpanishSpeller
+public enum SpanishSpeller
 {
   /// <summary>
   /// The Spanish spelling checker recognizes only tuteo verb forms.

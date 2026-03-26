@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xldatalabelposition?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlDataLabelPosition
+public enum DataLabelPosition
 {
   /// <summary>
   /// Data label is positioned above the data point.

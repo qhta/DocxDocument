@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdreferencekind?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdReferenceKind
+public enum ReferenceKind
 {
   /// <summary>
   /// Insert label, number, and any additional caption of specified equation, figure, or table.

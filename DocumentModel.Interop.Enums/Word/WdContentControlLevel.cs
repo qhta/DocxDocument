@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcontentcontrollevel?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdContentControlLevel
+public enum ContentControlLevel
 {
   /// <summary>
   /// Represents a content control that surrounds content within a single paragraph.

@@ -15,6 +15,6 @@ public partial interface ThemeFonts
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themefonts.item?view=office-pia"/>
-  public ThemeFont Item(MsoFontLanguageIndex Index);
+  public ThemeFont Item(FontLanguageIndex Index);
 }
 

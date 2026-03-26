@@ -15,7 +15,7 @@ public interface HeaderFooter : InteropObject
   /// Returns a constant that represents the specific header or footer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headerfooter.index?view=word-pia"/>
-  public WdHeaderFooterIndex Index { get; }
+  public HeaderFooterIndex Index { get; }
   /// <summary>
   /// Returns true if the object is a header.
   /// </summary>

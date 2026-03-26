@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdautofitbehavior?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdAutoFitBehavior
+public enum AutoFitBehavior
 {
   /// <summary>
   /// The table is set to a fixed size, regardless of the content, and is not automatically sized.

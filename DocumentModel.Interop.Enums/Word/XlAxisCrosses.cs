@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.xlaxiscrosses?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlAxisCrosses
+public enum AxisCrosses
 {
   /// <summary>
   /// The axis crosses at the maximum value.

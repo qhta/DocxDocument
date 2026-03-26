@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the type of hyperlink.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msohyperlinktype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoHyperlinkType
+public enum HyperlinkType
 {
   /// <summary>
   /// Hyperlink applies to a Range object.

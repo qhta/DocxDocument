@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosyncavailabletype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoSyncAvailableType
+public enum SyncAvailableType
 {
   /// <summary>
   /// No synchronization is available.

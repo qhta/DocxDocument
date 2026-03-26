@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies how a shape appears when viewed in black-and-white mode.
@@ -6,12 +6,11 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoblackwhitemode?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoBlackWhiteMode
+public enum BlackWhiteMode
 {
   /// <summary>
   /// Not supported.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   /// Default behavior.
   /// </summary>

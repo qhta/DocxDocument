@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlcharttype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlChartType
+public enum ChartType
 {
   /// <summary>
   /// 3D Clustered Column

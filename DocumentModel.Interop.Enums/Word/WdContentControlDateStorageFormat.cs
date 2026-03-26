@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcontentcontroldatestorageformat?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdContentControlDateStorageFormat
+public enum ContentControlDateStorageFormat
 {
   /// <summary>
   /// Specifies to store or retrieve the date value for a date content control as text.

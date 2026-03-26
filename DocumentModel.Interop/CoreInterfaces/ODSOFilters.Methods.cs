@@ -24,7 +24,7 @@ public partial interface ODSOFilters
   /// <param name="DeferUpdate">The `DeferUpdate` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilters.add?view=office-pia"/>
   public void Add
-  (string Column, MsoFilterComparison Comparison, MsoFilterConjunction Conjunction, string bstrCompareTo,
+  (string Column, FilterComparison Comparison, FilterConjunction Conjunction, string bstrCompareTo,
     bool DeferUpdate);
   /// <summary>
   /// Deletes a filter from the collection.

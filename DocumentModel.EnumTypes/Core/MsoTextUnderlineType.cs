@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Indicates the type of underline for text.
@@ -6,12 +6,11 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotextunderlinetype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoTextUnderlineType
+public enum TextUnderlineType
 {
   /// <summary>
   /// Specifies a mix of underline types.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   /// Specifies no underline.
   /// </summary>

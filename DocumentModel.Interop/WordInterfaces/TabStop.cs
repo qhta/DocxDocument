@@ -10,13 +10,13 @@ public partial interface TabStop : InteropObject
   /// Returns or sets a constant that represents the alignment for the specified tab stop.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tabstop.alignment?view=word-pia"/>
-  public WdTabAlignment Alignment { get; set; }
+  public TabAlignment Alignment { get; set; }
 
   /// <summary>
   /// Returns or sets the leader for the specified TabStop object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tabstop.leader?view=word-pia"/>
-  public WdTabLeader Leader { get; set; }
+  public TabLeader Leader { get; set; }
 
   /// <summary>
   /// Returns or sets the position of a tab stop relative to the left margin.

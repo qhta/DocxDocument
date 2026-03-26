@@ -28,7 +28,7 @@ public partial interface Shape: InteropObject
   /// </summary>
   /// <param name="FlipCmd">The `FlipCmd` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.flip?view=office-pia"/>
-  public void Flip(MsoFlipCmd FlipCmd);
+  public void Flip(FlipCmd FlipCmd);
   /// <summary>
   /// Invokes `IncrementLeft`.
   /// </summary>
@@ -65,7 +65,7 @@ public partial interface Shape: InteropObject
   /// <param name="fScale">The `fScale` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.scaleheight?view=office-pia"/>
   public void ScaleHeight
-    (float Factor, MsoTriState RelativeToOriginalSize, MsoScaleFrom fScale);
+    (float Factor, TriState RelativeToOriginalSize, ScaleFrom fScale);
   /// <summary>
   /// Invokes `ScaleWidth`.
   /// </summary>
@@ -74,7 +74,7 @@ public partial interface Shape: InteropObject
   /// <param name="fScale">The `fScale` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.scalewidth?view=office-pia"/>
   public void ScaleWidth
-    (float Factor, MsoTriState RelativeToOriginalSize, MsoScaleFrom fScale);
+    (float Factor, TriState RelativeToOriginalSize, ScaleFrom fScale);
   /// <summary>
   /// Invokes `Select`.
   /// </summary>
@@ -97,7 +97,7 @@ public partial interface Shape: InteropObject
   /// </summary>
   /// <param name="ZOrderCmd">The `ZOrderCmd` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.zorder?view=office-pia"/>
-  public void ZOrder(MsoZOrderCmd ZOrderCmd);
+  public void ZOrder(ZOrderCmd ZOrderCmd);
   /// <summary>
   /// Invokes `CanvasCropLeft`.
   /// </summary>

@@ -16,7 +16,7 @@ public partial interface Selection
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.information?view=word-pia"/>
-  public object Information(WdInformation Type);
+  public object Information(Information Type);
 
   /// <summary>
   /// Returns the XML representation of the selection.

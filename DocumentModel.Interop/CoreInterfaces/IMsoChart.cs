@@ -56,7 +56,7 @@ public partial interface IMsoChart
   /// Gets or sets the `DisplayBlanksAs` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.displayblanksas?view=office-pia"/>
-  public XlDisplayBlanksAs DisplayBlanksAs { get; set; }
+  public DisplayBlanksAs DisplayBlanksAs { get; set; }
   /// <summary>
   /// Gets or sets the `ProtectData` property.
   /// </summary>
@@ -106,7 +106,7 @@ public partial interface IMsoChart
   /// Gets or sets the `ChartType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.charttype?view=office-pia"/>
-  public XlChartType ChartType { get; set; }
+  public ChartType ChartType { get; set; }
   /// <summary>
   /// Gets or sets the `HasDataTable` property.
   /// </summary>
@@ -116,7 +116,7 @@ public partial interface IMsoChart
   /// Gets or sets the `PlotBy` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.plotby?view=office-pia"/>
-  public XlRowCol PlotBy { get; set; }
+  public RowCol PlotBy { get; set; }
   /// <summary>
   /// Gets or sets the `HasLegend` property.
   /// </summary>
@@ -171,7 +171,7 @@ public partial interface IMsoChart
   /// Gets or sets the `BarShape` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.barshape?view=office-pia"/>
-  public XlBarShape BarShape { get; set; }
+  public BarShape BarShape { get; set; }
   /// <summary>
   /// Gets the `SideWall` property.
   /// </summary>
@@ -282,12 +282,12 @@ public partial interface IMsoChart
   /// Gets or sets the `CategoryLabelLevel` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.categorylabellevel?view=office-pia"/>
-  public XlCategoryLabelLevel CategoryLabelLevel { get; set; }
+  public CategoryLabelLevel CategoryLabelLevel { get; set; }
   /// <summary>
   /// Gets or sets the `SeriesNameLevel` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.seriesnamelevel?view=office-pia"/>
-  public XlSeriesNameLevel SeriesNameLevel { get; set; }
+  public SeriesNameLevel SeriesNameLevel { get; set; }
   /// <summary>
   /// Gets the `HasHiddenContent` property.
   /// </summary>

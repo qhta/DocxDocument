@@ -16,5 +16,5 @@ public partial interface DiagramNode: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.addnode?view=word-pia"/>
-  public DiagramNode AddNode(Core.MsoRelativeNodePosition Pos, Core.MsoDiagramNodeType NodeType);
+  public DiagramNode AddNode(Core.RelativeNodePosition Pos, Core.DiagramNodeType NodeType);
 }

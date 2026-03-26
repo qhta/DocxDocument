@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the intensity of light used on a shape.
@@ -6,12 +6,11 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetlightingsoftness?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoPresetLightingSoftness
+public enum PresetLightingSoftness
 {
   /// <summary>
   /// Specifies the intensity of light used on a shape.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   /// Dim light.
   /// </summary>

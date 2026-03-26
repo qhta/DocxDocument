@@ -11,7 +11,7 @@ public partial interface ConnectorFormat: InteropObject
   /// Gets or sets the `BeginConnected` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.connectorformat.beginconnected?view=office-pia"/>
-  public MsoTriState BeginConnected { get; }
+  public TriState BeginConnected { get; }
   /// <summary>
   /// Gets the `BeginConnectedShape` property.
   /// </summary>
@@ -26,7 +26,7 @@ public partial interface ConnectorFormat: InteropObject
   /// Gets the `EndConnected` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.connectorformat.endconnected?view=office-pia"/>
-  public MsoTriState EndConnected { get; }
+  public TriState EndConnected { get; }
   /// <summary>
   /// Gets the `EndConnectedShape` property.
   /// </summary>
@@ -41,6 +41,6 @@ public partial interface ConnectorFormat: InteropObject
   /// Gets or sets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.connectorformat.type?view=office-pia"/>
-  public MsoConnectorType Type { get; set; }
+  public ConnectorType Type { get; set; }
 }
 

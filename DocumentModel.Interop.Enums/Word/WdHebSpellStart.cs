@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdhebspellstart?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdHebSpellStart
+public enum HebSpellStart
 {
   /// <summary>
   /// The spelling checker follows rules for the conventional script required by the Hebrew Language Academy for

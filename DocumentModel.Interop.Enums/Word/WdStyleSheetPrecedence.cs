@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdstylesheetprecedence?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdStyleSheetPrecedence
+public enum StyleSheetPrecedence
 {
   /// <summary>
   /// Lowest precedence.

@@ -17,7 +17,7 @@ public partial interface IMsoSeries
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries._applydatalabels?view=office-pia"/>
   public object _ApplyDataLabels
-  (XlDataLabelsType Type, object IMsoLegendKey, object AutoText,
+  (DataLabelsType Type, object IMsoLegendKey, object AutoText,
     object HasLeaderLines);
   /// <summary>
   /// Clears formatting from the series.
@@ -55,7 +55,7 @@ public partial interface IMsoSeries
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.errorbar?view=office-pia"/>
   public object ErrorBar
-    (XlErrorBarDirection Direction, XlErrorBarInclude Include, XlErrorBarType Type, object Amount, object MinusValues);
+    (ErrorBarDirection Direction, ErrorBarInclude Include, ErrorBarType Type, object Amount, object MinusValues);
   /// <summary>
   /// Pastes data into the series.
   /// </summary>
@@ -87,7 +87,7 @@ public partial interface IMsoSeries
   /// </summary>
   /// <param name="ChartType">The `ChartType` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.applycustomtype?view=office-pia"/>
-  public void ApplyCustomType(XlChartType ChartType);
+  public void ApplyCustomType(ChartType ChartType);
   /// <summary>
   /// Applies data labels to the series with detailed display options.
   /// </summary>
@@ -104,7 +104,7 @@ public partial interface IMsoSeries
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.applydatalabels?view=office-pia"/>
   public object ApplyDataLabels
-  (XlDataLabelsType Type, object IMsoLegendKey, object AutoText,
+  (DataLabelsType Type, object IMsoLegendKey, object AutoText,
     object HasLeaderLines, object ShowSeriesName, object ShowCategoryName, object ShowValue, object ShowPercentage,
     object ShowBubbleSize, object Separator);
 }

@@ -20,7 +20,7 @@ public partial interface FreeformBuilder: InteropObject
   /// <param name="Y3">The `Y3` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.freeformbuilder.addnodes?view=office-pia"/>
   public void AddNodes
-  (MsoSegmentType SegmentType, MsoEditingType EditingType, float X1, float Y1, float X2, float Y2,
+  (SegmentType SegmentType, EditingType EditingType, float X1, float Y1, float X2, float Y2,
     float X3, float Y3);
   /// <summary>
   /// Converts the freeform builder into a Shape object.

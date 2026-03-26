@@ -88,7 +88,7 @@ public partial interface Find : InteropObject
   /// Returns or sets the language for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.languageid?view=word-pia"/>
-  public WdLanguageID LanguageID { get; set; }
+  public LanguageID LanguageID { get; set; }
 
   /// <summary>
   /// Determines if highlight formatting is included in the find criteria.
@@ -112,7 +112,7 @@ public partial interface Find : InteropObject
   /// Returns or sets what happens if the end or beginning of the document is reached during the search, or if the text isn't found in the specified selection or range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.wrap?view=word-pia"/>
-  public WdFindWrap Wrap { get; set; }
+  public FindWrap Wrap { get; set; }
 
   /// <summary>
   /// Determine if formatting is included in the find operation.
@@ -124,13 +124,13 @@ public partial interface Find : InteropObject
   /// Returns or sets an East Asian language for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.languageidfareast?view=word-pia"/>
-  public WdLanguageID LanguageIDFarEast { get; set; }
+  public LanguageID LanguageIDFarEast { get; set; }
 
   /// <summary>
   /// Returns or sets the language for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.languageidother?view=word-pia"/>
-  public WdLanguageID LanguageIDOther { get; set; }
+  public LanguageID LanguageIDOther { get; set; }
 
   /// <summary>
   /// Determines if Microsoft Word automatically corrects Hangul endings when replacing Hangul text.

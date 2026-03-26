@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing.Vml;
+
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
@@ -10,14 +12,14 @@ public interface WrapFormat : InteropObject
   /// Returns the wrap type for the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wrapformat.type?view=word-pia"/>
-  public WdWrapType Type { get; set; }
+  public WrapType Type { get; set; }
   /// <summary>
   /// Returns or sets a value that indicates whether the document text should wrap on both sides of the specified
   /// shape, on either the left or right side only, or on the side of the shape that's farthest from the page
   /// margin.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wrapformat.side?view=word-pia"/>
-  public WdWrapSideType Side { get; set; }
+  public WrapSide Side { get; set; }
   /// <summary>
   /// Returns or sets the distance (in points) between the document text and the top edge of the text-free area
   /// surrounding the specified shape.

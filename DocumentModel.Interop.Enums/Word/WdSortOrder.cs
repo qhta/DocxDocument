@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsortorder?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdSortOrder
+public enum SortOrder
 {
   /// <summary>
   /// Ascending order. default.

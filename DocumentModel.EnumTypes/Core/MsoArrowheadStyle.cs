@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the style of the arrowhead at the end of a line.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoarrowheadstyle?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoArrowheadStyle
+public enum ArrowheadStyle
 {
   /// <summary>
   /// Return value only; indicates a combination of the other states.

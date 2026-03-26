@@ -22,7 +22,7 @@ public partial interface _ParagraphFormat : InteropObject
   /// Gets or sets the paragraph alignment.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.alignment?view=word-pia"/>
-  public WdParagraphAlignment Alignment { get; set; }
+  public ParagraphAlignment Alignment { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether all lines in the paragraph stay on the same page.
@@ -76,7 +76,7 @@ public partial interface _ParagraphFormat : InteropObject
   /// Gets or sets the line spacing rule.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.linespacingrule?view=word-pia"/>
-  public WdLineSpacing LineSpacingRule { get; set; }
+  public LineSpacing LineSpacingRule { get; set; }
 
   /// <summary>
   /// Gets or sets the spacing before the paragraph, in points.
@@ -142,7 +142,7 @@ public partial interface _ParagraphFormat : InteropObject
   /// Gets or sets the baseline alignment.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.baselinealignment?view=word-pia"/>
-  public WdBaselineAlignment BaseLineAlignment { get; set; }
+  public BaselineAlignment BaseLineAlignment { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the right indent is adjusted automatically.
@@ -178,7 +178,7 @@ public partial interface _ParagraphFormat : InteropObject
   /// Gets or sets the outline level.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.outlinelevel?view=word-pia"/>
-  public WdOutlineLevel OutlineLevel { get; set; }
+  public OutlineLevel OutlineLevel { get; set; }
 
   /// <summary>
   /// Gets or sets the right indent in character units.
@@ -214,7 +214,7 @@ public partial interface _ParagraphFormat : InteropObject
   /// Gets or sets the reading order for the paragraph.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.readingorder?view=word-pia"/>
-  public WdReadingOrder ReadingOrder { get; set; }
+  public ReadingOrder ReadingOrder { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether spacing before is adjusted automatically.
@@ -238,7 +238,7 @@ public partial interface _ParagraphFormat : InteropObject
   /// Gets or sets the text box tight-wrap setting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.textboxtightwrap?view=word-pia"/>
-  public WdTextboxTightWrap TextboxTightWrap { get; set; }
+  public TextboxTightWrap TextboxTightWrap { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the paragraph is collapsed by default.

@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdfieldkind?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdFieldKind
+public enum FieldKind
 {
   /// <summary>
   /// An invalid field (for example, a pair of field characters with nothing inside).

@@ -8,10 +8,10 @@ namespace DocumentModel.Interop.Word;
 public interface Rectangle : InteropObject
 {
   /// <summary>
-  /// Returns a WdRectangleType constant that represents the type for the specified rectangle.
+  /// Returns a RectangleType constant that represents the type for the specified rectangle.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangle.rectangletype?view=word-pia"/>
-  public WdRectangleType RectangleType { get; }
+  public RectangleType RectangleType { get; }
   /// <summary>
   /// Returns or sets an integer that represents the horizontal position of the specified rectangle, measured in
   /// points.

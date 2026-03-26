@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Indicates the text alignment against tab stops or line breaks. The default value is msoTabAlignLeft.
@@ -6,12 +6,11 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotexttabalign?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoTextTabAlign
+public enum TextTabAlign
 {
   /// <summary>
   /// Specifies that mixed text alignment against tab stops is used.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   /// Specifies that the following text starts immediately after the designated tab stop.
   /// </summary>

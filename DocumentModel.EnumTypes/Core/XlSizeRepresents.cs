@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlsizerepresents?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlSizeRepresents
+public enum SizeRepresents
 {
   /// <summary>
   /// The size measure is for the width.

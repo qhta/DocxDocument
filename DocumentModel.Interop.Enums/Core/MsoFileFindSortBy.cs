@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofilefindsortby?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoFileFindSortBy
+public enum FileFindSortBy
 {
   /// <summary>
   /// This member is for Macintosh only and should not be used.

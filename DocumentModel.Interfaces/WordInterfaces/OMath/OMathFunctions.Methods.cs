@@ -18,5 +18,5 @@ public partial interface OMathFunctions: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunctions.add?view=word-pia"/>
-  public OMathFunction Add(Range Range, WdOMathFunctionType Type, object NumArgs, object NumCols);
+  public OMathFunction Add(Range Range, OMathFunctionType Type, object NumArgs, object NumCols);
 }

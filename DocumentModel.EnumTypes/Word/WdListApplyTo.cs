@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdlistapplyto?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdListApplyTo
+public enum ListApplyTo
 {
   /// <summary>
   /// Entire list.

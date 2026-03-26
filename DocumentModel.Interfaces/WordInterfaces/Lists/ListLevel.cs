@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
@@ -22,13 +24,13 @@ public partial interface ListLevel : InteropObject
   /// Returns or sets the character inserted after the list number.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.trailingcharacter?view=word-pia"/>
-  public WdTrailingCharacter TrailingCharacter { get; set; }
+  public TrailingCharacter TrailingCharacter { get; set; }
 
   /// <summary>
   /// Returns or sets the numbering style for the list level.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.numberstyle?view=word-pia"/>
-  public WdListNumberStyle NumberStyle { get; set; }
+  public ListNumberStyle NumberStyle { get; set; }
 
   /// <summary>
   /// Returns or sets the position of the list number, in points.
@@ -40,7 +42,7 @@ public partial interface ListLevel : InteropObject
   /// Returns or sets the alignment of the list number.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.alignment?view=word-pia"/>
-  public WdListLevelAlignment Alignment { get; set; }
+  public ListLevelAlignment Alignment { get; set; }
 
   /// <summary>
   /// Returns or sets the position of the list text, in points.

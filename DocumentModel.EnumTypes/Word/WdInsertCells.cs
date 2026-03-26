@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdinsertcells?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdInsertCells
+public enum InsertCells
 {
   /// <summary>
   /// Insert new cells to the left of the selected cells.

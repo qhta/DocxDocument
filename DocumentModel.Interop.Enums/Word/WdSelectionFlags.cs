@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdselectionflags?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdSelectionFlags
+public enum SelectionFlags
 {
   /// <summary>
   /// The selection is at the start of the active document.

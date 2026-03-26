@@ -64,7 +64,7 @@ public partial interface Chart : InteropObject
   /// Gets or sets how blank cells are plotted on the chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.displayblanksas?view=word-pia"/>
-  public XlDisplayBlanksAs DisplayBlanksAs { get; set; }
+  public DisplayBlanksAs DisplayBlanksAs { get; set; }
 
   /// <summary>
   /// Gets or sets the chart subtype.
@@ -100,7 +100,7 @@ public partial interface Chart : InteropObject
   /// Gets or sets whether data series are plotted by rows or columns.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.plotby?view=word-pia"/>
-  public XlRowCol PlotBy { get; set; }
+  public RowCol PlotBy { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the chart has a legend.
@@ -160,7 +160,7 @@ public partial interface Chart : InteropObject
   /// Gets or sets the shape used for bars or columns in a 3-D chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.barshape?view=word-pia"/>
-  public XlBarShape BarShape { get; set; }
+  public BarShape BarShape { get; set; }
 
   /// <summary>
   /// Gets the side wall of a 3-D chart.
@@ -280,13 +280,13 @@ public partial interface Chart : InteropObject
   /// Gets or sets the category label level displayed in the chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.categorylabellevel?view=word-pia"/>
-  public XlCategoryLabelLevel CategoryLabelLevel { get; set; }
+  public CategoryLabelLevel CategoryLabelLevel { get; set; }
 
   /// <summary>
   /// Gets or sets the series name level displayed in the chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.seriesnamelevel?view=word-pia"/>
-  public XlSeriesNameLevel SeriesNameLevel { get; set; }
+  public SeriesNameLevel SeriesNameLevel { get; set; }
 
   /// <summary>
   /// Gets a value indicating whether the chart includes hidden content.

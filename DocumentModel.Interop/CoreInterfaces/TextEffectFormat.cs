@@ -11,17 +11,17 @@ public partial interface TextEffectFormat: InteropObject
   /// Gets or sets the `Alignment` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.alignment?view=office-pia"/>
-  public MsoTextEffectAlignment Alignment { get; set; }
+  public TextEffectAlignment Alignment { get; set; }
   /// <summary>
   /// Gets or sets the `FontBold` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.fontbold?view=office-pia"/>
-  public MsoTriState FontBold { get; set; }
+  public TriState FontBold { get; set; }
   /// <summary>
   /// Gets or sets the `FontItalic` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.fontitalic?view=office-pia"/>
-  public MsoTriState FontItalic { get; set; }
+  public TriState FontItalic { get; set; }
   /// <summary>
   /// Gets or sets the `FontName` property.
   /// </summary>
@@ -36,27 +36,27 @@ public partial interface TextEffectFormat: InteropObject
   /// Gets or sets the `KernedPairs` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.kernedpairs?view=office-pia"/>
-  public MsoTriState KernedPairs { get; set; }
+  public TriState KernedPairs { get; set; }
   /// <summary>
   /// Gets or sets the `NormalizedHeight` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.normalizedheight?view=office-pia"/>
-  public MsoTriState NormalizedHeight { get; set; }
+  public TriState NormalizedHeight { get; set; }
   /// <summary>
   /// Gets or sets the `PresetShape` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.presetshape?view=office-pia"/>
-  public MsoPresetTextEffectShape PresetShape { get; set; }
+  public PresetTextEffectShape PresetShape { get; set; }
   /// <summary>
   /// Gets or sets the `PresetTextEffect` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.presettexteffect?view=office-pia"/>
-  public MsoPresetTextEffect PresetTextEffect { get; set; }
+  public PresetTextEffect PresetTextEffect { get; set; }
   /// <summary>
   /// Gets or sets the `RotatedChars` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.rotatedchars?view=office-pia"/>
-  public MsoTriState RotatedChars { get; set; }
+  public TriState RotatedChars { get; set; }
   /// <summary>
   /// Gets or sets the `Text` property.
   /// </summary>

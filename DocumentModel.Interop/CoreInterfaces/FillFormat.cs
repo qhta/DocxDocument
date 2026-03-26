@@ -21,7 +21,7 @@ public partial interface FillFormat: InteropObject
   /// Gets the `GradientColorType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.gradientcolortype?view=office-pia"/>
-  public MsoGradientColorType GradientColorType { get; }
+  public GradientColorType GradientColorType { get; }
   /// <summary>
   /// Gets the `GradientDegree` property.
   /// </summary>
@@ -31,7 +31,7 @@ public partial interface FillFormat: InteropObject
   /// Gets the `GradientStyle` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.gradientstyle?view=office-pia"/>
-  public MsoGradientStyle GradientStyle { get; }
+  public GradientStyle GradientStyle { get; }
   /// <summary>
   /// Gets the `GradientVariant` property.
   /// </summary>
@@ -41,17 +41,17 @@ public partial interface FillFormat: InteropObject
   /// Gets the `Pattern` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.pattern?view=office-pia"/>
-  public MsoPatternType Pattern { get; }
+  public PatternType Pattern { get; }
   /// <summary>
   /// Gets the `PresetGradientType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.presetgradienttype?view=office-pia"/>
-  public MsoPresetGradientType PresetGradientType { get; }
+  public PresetGradientType PresetGradientType { get; }
   /// <summary>
   /// Gets the `PresetTexture` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.presettexture?view=office-pia"/>
-  public MsoPresetTexture PresetTexture { get; }
+  public PresetTexture PresetTexture { get; }
   /// <summary>
   /// Gets the `TextureName` property.
   /// </summary>
@@ -61,7 +61,7 @@ public partial interface FillFormat: InteropObject
   /// Gets the `TextureType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.texturetype?view=office-pia"/>
-  public MsoTextureType TextureType { get; }
+  public TextureType TextureType { get; }
   /// <summary>
   /// Gets or sets the `Transparency` property.
   /// </summary>
@@ -71,12 +71,12 @@ public partial interface FillFormat: InteropObject
   /// Gets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.type?view=office-pia"/>
-  public MsoFillType Type { get; }
+  public FillType Type { get; }
   /// <summary>
   /// Gets or sets the `Visible` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.visible?view=office-pia"/>
-  public MsoTriState Visible { get; set; }
+  public TriState Visible { get; set; }
   /// <summary>
   /// Gets the `GradientStops` property.
   /// </summary>
@@ -96,7 +96,7 @@ public partial interface FillFormat: InteropObject
   /// Gets or sets the `TextureAlignment` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.texturealignment?view=office-pia"/>
-  public MsoTextureAlignment TextureAlignment { get; set; }
+  public TextureAlignment TextureAlignment { get; set; }
   /// <summary>
   /// Gets or sets the `TextureHorizontalScale` property.
   /// </summary>
@@ -111,12 +111,12 @@ public partial interface FillFormat: InteropObject
   /// Gets or sets the `TextureTile` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.texturetile?view=office-pia"/>
-  public MsoTriState TextureTile { get; set; }
+  public TriState TextureTile { get; set; }
   /// <summary>
   /// Gets or sets the `RotateWithObject` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.rotatewithobject?view=office-pia"/>
-  public MsoTriState RotateWithObject { get; set; }
+  public TriState RotateWithObject { get; set; }
   /// <summary>
   /// Gets the `PictureEffects` property.
   /// </summary>

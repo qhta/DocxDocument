@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wduseformattingfrom?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdUseFormattingFrom
+public enum UseFormattingFrom
 {
   /// <summary>
   /// Copy source formatting from the current item.

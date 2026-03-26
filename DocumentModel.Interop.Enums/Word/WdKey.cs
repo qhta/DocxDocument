@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdkey?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdKey
+public enum Key
 {
   /// <summary>
   /// The BACKSPACE key.

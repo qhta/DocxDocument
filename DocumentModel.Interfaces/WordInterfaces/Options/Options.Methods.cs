@@ -15,7 +15,7 @@ public partial interface Options: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.get_defaultfilepath?view=word-pia"/>
-  public string DefaultFilePath(WdDefaultFilePath Path);
+  public string DefaultFilePath(DefaultFilePath Path);
 
   /// <summary>
   /// Sets WordPerfect help and navigation option values.

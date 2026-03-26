@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the capitalization of the text.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotextcaps?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoTextCaps
+public enum TextCaps
 {
   /// <summary>
   /// Display the text as mixed uppercase and lowercase letters.

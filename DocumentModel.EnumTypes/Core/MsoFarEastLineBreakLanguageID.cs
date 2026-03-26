@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the language to use to determine which line break level is used when the line break control option
@@ -7,7 +7,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofareastlinebreaklanguageid?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoFarEastLineBreakLanguageID
+public enum FarEastLineBreakLanguageID
 {
   /// <summary>
   /// Japanese.

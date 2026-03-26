@@ -1,4 +1,6 @@
-﻿namespace DocumentModel.Interop.Word;
+using DocumentModel.Wordprocessing;
+
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
 /// Represents application and document options in Microsoft Word. Many of the properties for the Options object correspond to items in the Options dialog box (Tools menu).
@@ -68,7 +70,7 @@ public partial interface Options : InteropObject
   /// Returns or sets the standard measurement unit for Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.measurementunit?view=word-pia"/>
-  public WdMeasurementUnits MeasurementUnit { get; set; }
+  public MeasurementUnits MeasurementUnit { get; set; }
 
   /// <summary>
   /// Returns or sets the number of clicks (either one or two) required to run a GOTOBUTTON or MACROBUTTON field.
@@ -203,37 +205,37 @@ public partial interface Options : InteropObject
   /// TrackRevisions property is True).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.insertedtextmark?view=word-pia"/>
-  public WdInsertedTextMark InsertedTextMark { get; set; }
+  public InsertedTextMark InsertedTextMark { get; set; }
 
   /// <summary>
   /// Returns or sets the format of text that is deleted while change tracking is enabled.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.deletedtextmark?view=word-pia"/>
-  public WdDeletedTextMark DeletedTextMark { get; set; }
+  public DeletedTextMark DeletedTextMark { get; set; }
 
   /// <summary>
   /// Returns or sets the placement of changed lines in a document with tracked changes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.revisedlinesmark?view=word-pia"/>
-  public WdRevisedLinesMark RevisedLinesMark { get; set; }
+  public RevisedLinesMark RevisedLinesMark { get; set; }
 
   /// <summary>
   /// Returns or sets the color of text that is inserted while change tracking is enabled.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.insertedtextcolor?view=word-pia"/>
-  public WdColorIndex InsertedTextColor { get; set; }
+  public ColorIndex InsertedTextColor { get; set; }
 
   /// <summary>
   /// Returns or sets the color of text that is deleted while change tracking is enabled.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.deletedtextcolor?view=word-pia"/>
-  public WdColorIndex DeletedTextColor { get; set; }
+  public ColorIndex DeletedTextColor { get; set; }
 
   /// <summary>
   /// Returns or sets the color of changed lines in a document with tracked changes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.revisedlinescolor?view=word-pia"/>
-  public WdColorIndex RevisedLinesColor { get; set; }
+  public ColorIndex RevisedLinesColor { get; set; }
 
   /// <summary>
   /// True if Overtype mode is active.
@@ -308,13 +310,13 @@ public partial interface Options : InteropObject
   /// Returns or sets the mark used to show formatting changes while change tracking is enabled.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.revisedpropertiesmark?view=word-pia"/>
-  public WdRevisedPropertiesMark RevisedPropertiesMark { get; set; }
+  public RevisedPropertiesMark RevisedPropertiesMark { get; set; }
 
   /// <summary>
   /// Returns or sets the color used to mark formatting changes while change tracking is enabled.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.revisedpropertiescolor?view=word-pia"/>
-  public WdColorIndex RevisedPropertiesColor { get; set; }
+  public ColorIndex RevisedPropertiesColor { get; set; }
 
   /// <summary>
   /// True if AutoShapes or East Asian characters are automatically aligned with an invisible grid when they are
@@ -541,13 +543,13 @@ public partial interface Options : InteropObject
   /// Returns or sets the color used to highlight text formatted with the Highlight button (Formatting toolbar).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaulthighlightcolorindex?view=word-pia"/>
-  public WdColorIndex DefaultHighlightColorIndex { get; set; }
+  public ColorIndex DefaultHighlightColorIndex { get; set; }
 
   /// <summary>
   /// Returns or sets the default border line style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaultborderlinestyle?view=word-pia"/>
-  public WdLineStyle DefaultBorderLineStyle { get; set; }
+  public LineStyle DefaultBorderLineStyle { get; set; }
 
   /// <summary>
   /// True if Microsoft Word checks spelling and marks errors automatically as you type.
@@ -605,7 +607,7 @@ public partial interface Options : InteropObject
   /// Returns or sets the default line width of borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaultborderlinewidth?view=word-pia"/>
-  public WdLineWidth DefaultBorderLineWidth { get; set; }
+  public LineWidth DefaultBorderLineWidth { get; set; }
 
   /// <summary>
   /// True if Microsoft Word checks grammar while checking spelling.
@@ -615,10 +617,10 @@ public partial interface Options : InteropObject
 
   /// <summary>
   /// Returns or sets the default file converter used to open documents. Can be a number returned by the
-  /// OpenFormat property, or one of the WdOpenFormat constants.
+  /// OpenFormat property, or one of the OpenFormat constants.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaultopenformat?view=word-pia"/>
-  public WdOpenFormat DefaultOpenFormat { get; set; }
+  public OpenFormat DefaultOpenFormat { get; set; }
 
   /// <summary>
   /// True if Microsoft Word prints using minimal formatting.
@@ -888,7 +890,7 @@ public partial interface Options : InteropObject
   /// Returns or sets the default line color for borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaultbordercolorindex?view=word-pia"/>
-  public WdColorIndex DefaultBorderColorIndex { get; set; }
+  public ColorIndex DefaultBorderColorIndex { get; set; }
 
   /// <summary>
   /// True if Microsoft Word checks for misused words when checking the spelling and grammar in a document.
@@ -927,14 +929,14 @@ public partial interface Options : InteropObject
   /// Returns or sets the direction for conversion between Hangul and Hanja.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.multiplewordconversionsmode?view=word-pia"/>
-  public WdMultipleWordConversionsMode MultipleWordConversionsMode { get; set; }
+  public MultipleWordConversionsMode MultipleWordConversionsMode { get; set; }
 
   /// <summary>
-  /// Returns or sets the default 24-bit color to use for new Border objects. Can be any valid WdColor constant or
+  /// Returns or sets the default 24-bit color to use for new Border objects. Can be any valid Color constant or
   /// a value returned by Visual Basic's RGB function.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaultbordercolor?view=word-pia"/>
-  public WdColor DefaultBorderColor { get; set; }
+  public Color DefaultBorderColor { get; set; }
 
   /// <summary>
   /// True if Microsoft Word uses pixels as the default unit of measurement for HTML features that support
@@ -966,31 +968,31 @@ public partial interface Options : InteropObject
   /// Returns or sets the alignment and reading order for the entire document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.documentviewdirection?view=word-pia"/>
-  public WdDocumentViewDirection DocumentViewDirection { get; set; }
+  public DocumentViewDirection DocumentViewDirection { get; set; }
 
   /// <summary>
   /// Returns or sets the numeral style for an Arabic language document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.arabicnumeral?view=word-pia"/>
-  public WdArabicNumeral ArabicNumeral { get; set; }
+  public ArabicNumeral ArabicNumeral { get; set; }
 
   /// <summary>
   /// Returns or sets the direction for conversion between Hangul and Hanja.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.monthnames?view=word-pia"/>
-  public WdMonthNames MonthNames { get; set; }
+  public MonthNames MonthNames { get; set; }
 
   /// <summary>
   /// Returns or sets how the insertion point progresses within bidirectional text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.cursormovement?view=word-pia"/>
-  public WdCursorMovement CursorMovement { get; set; }
+  public CursorMovement CursorMovement { get; set; }
 
   /// <summary>
   /// Returns or sets the selection behavior based on visual cursor movement in a right-to-left language document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.visualselection?view=word-pia"/>
-  public WdVisualSelection VisualSelection { get; set; }
+  public VisualSelection VisualSelection { get; set; }
 
   /// <summary>
   /// True if diacritics are visible in a right-to-left language document.
@@ -1032,13 +1034,13 @@ public partial interface Options : InteropObject
   /// Returns or sets the mode for the Hebrew spelling checker.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.hebrewmode?view=word-pia"/>
-  public WdHebSpellStart HebrewMode { get; set; }
+  public HebSpellStart HebrewMode { get; set; }
 
   /// <summary>
   /// Returns or sets the mode for the Arabic spelling checker.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.arabicmode?view=word-pia"/>
-  public WdAraSpeller ArabicMode { get; set; }
+  public AraSpeller ArabicMode { get; set; }
 
   /// <summary>
   /// True if Click and Type functionality is enabled.
@@ -1056,7 +1058,7 @@ public partial interface Options : InteropObject
   /// Returns or sets the high-ANSI text interpretation behavior.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.interprethighansi?view=word-pia"/>
-  public WdHighAnsiText InterpretHighAnsi { get; set; }
+  public HighAnsiText InterpretHighAnsi { get; set; }
 
   /// <summary>
   /// True if Microsoft Word encloses number formats in double quotation marks (").
@@ -1072,10 +1074,10 @@ public partial interface Options : InteropObject
 
   /// <summary>
   /// Returns or sets the 24-bit color to be used for diacritics in a right-to-left language document. Can be any
-  /// valid WdColor constant or a value returned by Visual Basic's RGB function.
+  /// valid Color constant or a value returned by Visual Basic's RGB function.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.diacriticcolorval?view=word-pia"/>
-  public WdColor DiacriticColorVal { get; set; }
+  public Color DiacriticColorVal { get; set; }
 
   /// <summary>
   /// True if Microsoft Word optimizes all new documents for viewing in Word 97 by disabling any incompatible
@@ -1159,16 +1161,16 @@ public partial interface Options : InteropObject
   public bool CtrlClickHyperlinkToOpen { get; set; }
 
   /// <summary>
-  /// Sets or returns a WdWrapTypeMerged constant that indicates how Microsoft Word wraps text around pictures.
+  /// Sets or returns a WrapTypeMerged constant that indicates how Microsoft Word wraps text around pictures.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.picturewraptype?view=word-pia"/>
-  public WdWrapTypeMerged PictureWrapType { get; set; }
+  public WrapTypeMerged PictureWrapType { get; set; }
 
   /// <summary>
   /// Disables all features introduced after a specified version for all documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.disablefeaturesintroducedafterbydefault?view=word-pia"/>
-  public WdDisableFeaturesIntroducedAfter DisableFeaturesIntroducedAfterbyDefault { get; set; }
+  public DisableFeaturesIntroducedAfter DisableFeaturesIntroducedAfterbyDefault { get; set; }
 
   /// <summary>
   /// True if Microsoft Word intelligently pastes selections into a document.
@@ -1199,11 +1201,11 @@ public partial interface Options : InteropObject
   public string DefaultEPostageApp { get; set; }
 
   /// <summary>
-  /// Returns or sets a MsoEncoding constant representing the code page, or character set, that Microsoft Word
+  /// Returns or sets a Encoding constant representing the code page, or character set, that Microsoft Word
   /// uses for all documents saved as encoded text files.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaulttextencoding?view=word-pia"/>
-  public Core.MsoEncoding DefaultTextEncoding { get; set; }
+  public Core.Encoding DefaultTextEncoding { get; set; }
 
   /// <summary>
   /// True for Microsoft Word to mark text in documents with smart tag information.
@@ -1266,17 +1268,17 @@ public partial interface Options : InteropObject
   public bool SmartParaSelection { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdRevisionsBalloonPrintOrientation constant that represents the direction of revision and
+  /// Returns or sets a RevisionsBalloonPrintOrientation constant that represents the direction of revision and
   /// comment balloons when they are printed.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.revisionsballoonprintorientation?view=word-pia"/>
-  public WdRevisionsBalloonPrintOrientation RevisionsBalloonPrintOrientation { get; set; }
+  public RevisionsBalloonPrintOrientation RevisionsBalloonPrintOrientation { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdColorIndex constant that represents the color of comments in a document.
+  /// Returns or sets a ColorIndex constant that represents the color of comments in a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.commentscolor?view=word-pia"/>
-  public WdColorIndex CommentsColor { get; set; }
+  public ColorIndex CommentsColor { get; set; }
 
   /// <summary>
   /// Returns a Boolean that represents whether to print the XML tags when printing a document. Corresponds to the
@@ -1315,18 +1317,18 @@ public partial interface Options : InteropObject
   public bool SmartCursoring { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdMoveToTextMark constant that represents the type of revision mark to use for moved text.
+  /// Returns or sets a MoveToTextMark constant that represents the type of revision mark to use for moved text.
   /// Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.movetotextmark?view=word-pia"/>
-  public WdMoveToTextMark MoveToTextMark { get; set; }
+  public MoveToTextMark MoveToTextMark { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdMoveFromTextMark constant that represents the type of revision mark to use for moved
+  /// Returns or sets a MoveFromTextMark constant that represents the type of revision mark to use for moved
   /// text. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.movefromtextmark?view=word-pia"/>
-  public WdMoveFromTextMark MoveFromTextMark { get; set; }
+  public MoveFromTextMark MoveFromTextMark { get; set; }
 
   /// <summary>
   /// Returns or sets a String that represents the name of the style to use for formatting bibliographies.
@@ -1343,28 +1345,28 @@ public partial interface Options : InteropObject
   public string BibliographySort { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdCellColor constant that represents the color for an inserted table cell. Read/write.
+  /// Returns or sets a CellColor constant that represents the color for an inserted table cell. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.insertedcellcolor?view=word-pia"/>
-  public WdCellColor InsertedCellColor { get; set; }
+  public CellColor InsertedCellColor { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdCellColor constant that represents the color for a deleted cell. Read/write.
+  /// Returns or sets a CellColor constant that represents the color for a deleted cell. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.deletedcellcolor?view=word-pia"/>
-  public WdCellColor DeletedCellColor { get; set; }
+  public CellColor DeletedCellColor { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdCellColor constant that represents the color for merged table cells. Read/write.
+  /// Returns or sets a CellColor constant that represents the color for merged table cells. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.mergedcellcolor?view=word-pia"/>
-  public WdCellColor MergedCellColor { get; set; }
+  public CellColor MergedCellColor { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdCellColor that represents the color for split table cells. Read/write.
+  /// Returns or sets a CellColor that represents the color for split table cells. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.splitcellcolor?view=word-pia"/>
-  public WdCellColor SplitCellColor { get; set; }
+  public CellColor SplitCellColor { get; set; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether mini toolbars display when a user selects text.
@@ -1409,32 +1411,32 @@ public partial interface Options : InteropObject
   public bool AlwaysUseClearType { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdPasteOptions constant that represents how text is pasted when text is copied or cut and
+  /// Returns or sets a PasteOptions constant that represents how text is pasted when text is copied or cut and
   /// then pasted in the same document. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.pasteformatwithindocument?view=word-pia"/>
-  public WdPasteOptions PasteFormatWithinDocument { get; set; }
+  public PasteOptions PasteFormatWithinDocument { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdPasteOptions constant that represents how text is pasted when text is copied from
+  /// Returns or sets a PasteOptions constant that represents how text is pasted when text is copied from
   /// another Microsoft Office Word document. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.pasteformatbetweendocuments?view=word-pia"/>
-  public WdPasteOptions PasteFormatBetweenDocuments { get; set; }
+  public PasteOptions PasteFormatBetweenDocuments { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdPasteOptions constant that represents how text is pasted when text is copied from a
+  /// Returns or sets a PasteOptions constant that represents how text is pasted when text is copied from a
   /// document that uses styles. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.pasteformatbetweenstyleddocuments?view=word-pia"/>
-  public WdPasteOptions PasteFormatBetweenStyledDocuments { get; set; }
+  public PasteOptions PasteFormatBetweenStyledDocuments { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdPasteOptions constant that represents how text is pasted when text is copied from an
+  /// Returns or sets a PasteOptions constant that represents how text is pasted when text is copied from an
   /// external source, such as a Web page. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.pasteformatfromexternalsource?view=word-pia"/>
-  public WdPasteOptions PasteFormatFromExternalSource { get; set; }
+  public PasteOptions PasteFormatFromExternalSource { get; set; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether to keep bullets and numbering when selecting Keep text
@@ -1457,11 +1459,11 @@ public partial interface Options : InteropObject
   public bool RepeatWord { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdFrenchSpeller constant that represents which spelling dictionary to use for regions of
+  /// Returns or sets a FrenchSpeller constant that represents which spelling dictionary to use for regions of
   /// text with language formatting set to French. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.frenchreform?view=word-pia"/>
-  public WdFrenchSpeller FrenchReform { get; set; }
+  public FrenchSpeller FrenchReform { get; set; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether to use the contextual speller to check spelling based on
@@ -1471,16 +1473,16 @@ public partial interface Options : InteropObject
   public bool ContextualSpeller { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdColorIndex constant that represents the color of moved text. Read/write.
+  /// Returns or sets a ColorIndex constant that represents the color of moved text. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.movetotextcolor?view=word-pia"/>
-  public WdColorIndex MoveToTextColor { get; set; }
+  public ColorIndex MoveToTextColor { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdColorIndex constant that represents the color of moved text. Read/write.
+  /// Returns or sets a ColorIndex constant that represents the color of moved text. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.movefromtextcolor?view=word-pia"/>
-  public WdColorIndex MoveFromTextColor { get; set; }
+  public ColorIndex MoveFromTextColor { get; set; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents how equations are represented in plain text. True indicates
@@ -1525,11 +1527,11 @@ public partial interface Options : InteropObject
   public bool PrecisePositioning { get; set; }
 
   /// <summary>
-  /// Gets or sets a WdUpdateStyleListBehavior constant that specifies the behavior Word 2010 should take when
+  /// Gets or sets a UpdateStyleListBehavior constant that specifies the behavior Word 2010 should take when
   /// updating a style to match a selection that contains numbering or bullets.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.updatestylelistbehavior?view=word-pia"/>
-  public WdUpdateStyleListBehavior UpdateStyleListBehavior { get; set; }
+  public UpdateStyleListBehavior UpdateStyleListBehavior { get; set; }
 
   /// <summary>
   /// Gets or sets whether the spelling checker uses spelling rules to flag Arabic words ending with haa instead
@@ -1549,19 +1551,19 @@ public partial interface Options : InteropObject
   /// Gets or sets the mode for the Spanish speller.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.spanishmode?view=word-pia"/>
-  public WdSpanishSpeller SpanishMode { get; set; }
+  public SpanishSpeller SpanishMode { get; set; }
 
   /// <summary>
   /// Gets or sets the mode for the European Portuguese speller.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.portugalreform?view=word-pia"/>
-  public WdPortugueseReform PortugalReform { get; set; }
+  public PortugueseReform PortugalReform { get; set; }
 
   /// <summary>
   /// Gets or sets the mode for the Brazilian Portuguese speller.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.brazilreform?view=word-pia"/>
-  public WdPortugueseReform BrazilReform { get; set; }
+  public PortugueseReform BrazilReform { get; set; }
 
   /// <summary>
   /// Gets or sets whether Word 2010 allows fields containing tracked changes to update before printing.

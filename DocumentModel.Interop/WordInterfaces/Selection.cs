@@ -40,13 +40,13 @@ public partial interface Selection : InteropObject
   /// Returns the selection type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.type?view=word-pia"/>
-  public WdSelectionType Type { get; }
+  public SelectionType Type { get; }
 
   /// <summary>
   /// Returns the story type for the specified selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.storytype?view=word-pia"/>
-  public WdStoryType StoryType { get; }
+  public StoryType StoryType { get; }
 
   /// <summary>
   /// Returns or sets the style for the specified object.
@@ -172,19 +172,19 @@ public partial interface Selection : InteropObject
   /// Returns or sets the language for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.languageid?view=word-pia"/>
-  public WdLanguageID LanguageID { get; set; }
+  public LanguageID LanguageID { get; set; }
 
   /// <summary>
   /// Returns or sets an East Asian language for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.languageidfareast?view=word-pia"/>
-  public WdLanguageID LanguageIDFarEast { get; set; }
+  public LanguageID LanguageIDFarEast { get; set; }
 
   /// <summary>
   /// Returns or sets the language for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.languageidother?view=word-pia"/>
-  public WdLanguageID LanguageIDOther { get; set; }
+  public LanguageID LanguageIDOther { get; set; }
 
   /// <summary>
   /// Returns a Hyperlinks collection that represents all the hyperlinks in the specified selection.
@@ -246,7 +246,7 @@ public partial interface Selection : InteropObject
   /// Returns or sets properties of the selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.flags?view=word-pia"/>
-  public WdSelectionFlags Flags { get; set; }
+  public SelectionFlags Flags { get; set; }
 
   /// <summary>
   /// Determines if the selection in the specified window or pane is active.
@@ -282,7 +282,7 @@ public partial interface Selection : InteropObject
   /// Returns or sets the orientation of text in a selection when the Text Direction feature is enabled.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.orientation?view=word-pia"/>
-  public WdTextOrientation Orientation { get; set; }
+  public TextOrientation Orientation { get; set; }
 
   /// <summary>
   /// Returns a InlineShapes collection that represents all the InlineShape objects in a selection.

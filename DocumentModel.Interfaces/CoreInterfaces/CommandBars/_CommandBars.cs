@@ -37,7 +37,7 @@ public partial interface _CommandBars: InteropCollection<CommandBar>
   /// Gets or sets the `MenuAnimationStyle` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.menuanimationstyle?view=office-pia"/>
-  public MsoMenuAnimation MenuAnimationStyle { get; set; }
+  public MenuAnimation MenuAnimationStyle { get; set; }
   /// <summary>
   /// Gets the `IdsString` property.
   /// </summary>

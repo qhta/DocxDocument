@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailsystem?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdMailSystem
+public enum MailSystem
 {
   /// <summary>
   /// No mail system.

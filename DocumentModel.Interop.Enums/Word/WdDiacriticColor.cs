@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wddiacriticcolor?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdDiacriticColor
+public enum DiacriticColor
 {
   /// <summary>
   /// Bi-directional language (Arabic, Hebrew, and so forth).

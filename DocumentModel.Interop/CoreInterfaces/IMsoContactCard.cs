@@ -16,11 +16,11 @@ public partial interface IMsoContactCard: InteropObject
   /// Gets the `AddressType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocontactcard.addresstype?view=office-pia"/>
-  public MsoContactCardAddressType AddressType { get; }
+  public ContactCardAddressType AddressType { get; }
   /// <summary>
   /// Gets the `CardType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocontactcard.cardtype?view=office-pia"/>
-  public MsoContactCardType CardType { get; }
+  public ContactCardType CardType { get; }
 }
 

@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdexportitem?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdExportItem
+public enum ExportItem
 {
   /// <summary>
   /// Exports the document without markup.

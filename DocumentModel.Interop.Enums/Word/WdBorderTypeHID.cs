@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbordertypehid?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdBorderTypeHID
+public enum BorderTypeHID
 {
   /// <summary>
   /// No description is available.

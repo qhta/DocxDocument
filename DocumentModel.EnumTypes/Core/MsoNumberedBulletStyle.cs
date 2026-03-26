@@ -1,9 +1,9 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msonumberedbulletstyle?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoNumberedBulletStyle
+public enum NumberedBulletStyle
 {
   /// <summary>
   /// No description is available.
@@ -58,7 +58,7 @@ public enum MsoNumberedBulletStyle
   /// </summary>
   AlphaUCParenRight = 11,
   /// <summary>
-  /// public enum class MsoNumberedBulletStyle
+  /// public enum class NumberedBulletStyle
   /// </summary>
   ArabicParenBoth = 12,
   /// <summary>

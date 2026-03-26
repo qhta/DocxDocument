@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtemplatetype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdTemplateType
+public enum TemplateType
 {
   /// <summary>
   /// The normal default template.

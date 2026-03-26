@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies which part of the shape retains its position when the shape is scaled.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoscalefrom?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoScaleFrom
+public enum ScaleFrom
 {
   /// <summary>
   /// Shape's top left corner retains its position.

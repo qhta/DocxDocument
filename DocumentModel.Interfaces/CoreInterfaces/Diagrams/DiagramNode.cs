@@ -31,7 +31,7 @@ public partial interface DiagramNode: InteropObject
   /// Gets or sets the `Layout` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.layout?view=office-pia"/>
-  public MsoOrgChartLayoutType Layout { get; set; }
+  public OrgChartLayoutType Layout { get; set; }
   /// <summary>
   /// Gets the `TextShape` property.
   /// </summary>

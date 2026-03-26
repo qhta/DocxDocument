@@ -25,12 +25,12 @@ public interface OMathEqArray : InteropObject
   /// Returns or sets the vertical alignment of the equation array.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omatheqarray.align?view=word-pia"/>
-  public WdOMathVertAlignType Align { get; set; }
+  public OMathVertAlignType Align { get; set; }
   /// <summary>
   /// Returns or sets the row spacing rule.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omatheqarray.rowspacingrule?view=word-pia"/>
-  public WdOMathSpacingRule RowSpacingRule { get; set; }
+  public OMathSpacingRule RowSpacingRule { get; set; }
   /// <summary>
   /// Returns or sets the row spacing value.
   /// </summary>

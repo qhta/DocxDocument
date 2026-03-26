@@ -11,5 +11,5 @@ public partial interface TablesOfAuthorities : InteropObject, InteropCollection<
   /// Returns or sets the formatting for the tables of authorities in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesofauthorities.format?view=word-pia"/>
-  public WdToaFormat Format { get; set; }
+  public ToaFormat Format { get; set; }
 }

@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the type of soft edge effect.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosoftedgetype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoSoftEdgeType
+public enum SoftEdgeType
 {
   /// <summary>
   /// A mix of soft edge types.

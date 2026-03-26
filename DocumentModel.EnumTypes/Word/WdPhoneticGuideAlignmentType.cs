@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdphoneticguidealignmenttype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdPhoneticGuideAlignmentType
+public enum PhoneticGuideAlignmentType
 {
   /// <summary>
   /// Microsoft Word centers phonetic text over the specified range. This is the default value.

@@ -10,7 +10,7 @@ public interface Language : InteropObject
   /// Returns a language ID constant for the language.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language.id?view=word-pia"/>
-  public WdLanguageID ID { get; }
+  public LanguageID ID { get; }
   /// <summary>
   /// Returns the localized name of the language.
   /// </summary>
@@ -55,6 +55,6 @@ public interface Language : InteropObject
   /// Returns or sets the type of spelling dictionary used for the language.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language.spellingdictionarytype?view=word-pia"/>
-  public WdDictionaryType SpellingDictionaryType { get; set; }
+  public DictionaryType SpellingDictionaryType { get; set; }
 
 }

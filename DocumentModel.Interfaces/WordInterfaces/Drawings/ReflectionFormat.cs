@@ -7,11 +7,11 @@ namespace DocumentModel.Interop.Word;
 public interface ReflectionFormat : InteropObject
 {
   /// <summary>
-  /// Returns or sets an MsoLightRigType constant that represents the type and direction of the lighting for a shape
+  /// Returns or sets an LightRigType constant that represents the type and direction of the lighting for a shape
   /// reflection. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.reflectionformat.type?view=word-pia"/>
-  public Core.MsoReflectionType Type { get; set; }
+  public Core.ReflectionType Type { get; set; }
   /// <summary>
   /// Gets or sets the degree of transparency for the reflection effect as a value between 0.0 (opaque) and 1.0
   /// (clear).

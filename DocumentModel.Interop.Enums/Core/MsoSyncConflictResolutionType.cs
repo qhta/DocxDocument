@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies how conflicts should be resolved when synchronizing a shared document.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosyncconflictresolutiontype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoSyncConflictResolutionType
+public enum SyncConflictResolutionType
 {
   /// <summary>
   /// Replace the server copy with the local copy.

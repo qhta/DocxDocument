@@ -20,7 +20,7 @@ public partial interface WebOptions : InteropObject
   /// Web page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.weboptions.browserlevel?view=word-pia"/>
-  public WdBrowserLevel BrowserLevel { get; set; }
+  public BrowserLevel BrowserLevel { get; set; }
 
   /// <summary>
   /// True if cascading style sheets (CSS) are used for font formatting when you view a saved document in a Web
@@ -63,7 +63,7 @@ public partial interface WebOptions : InteropObject
   /// the saved document in a Web browser.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.weboptions.screensize?view=word-pia"/>
-  public Core.MsoScreenSize ScreenSize { get; set; }
+  public Core.ScreenSize ScreenSize { get; set; }
 
   /// <summary>
   /// Returns or sets the density (pixels per inch) of graphics images and table cells on a Web page.
@@ -76,7 +76,7 @@ public partial interface WebOptions : InteropObject
   /// the saved document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.weboptions.encoding?view=word-pia"/>
-  public Core.MsoEncoding Encoding { get; set; }
+  public Core.Encoding Encoding { get; set; }
 
   /// <summary>
   /// Returns the folder suffix that Microsoft Word uses when you save a document as a Web page, use long file
@@ -90,5 +90,5 @@ public partial interface WebOptions : InteropObject
   /// Sets or returns a constant representing the target browser for documents viewed in a Web browser.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.weboptions.targetbrowser?view=word-pia"/>
-  public Core.MsoTargetBrowser TargetBrowser { get; set; }
+  public Core.TargetBrowser TargetBrowser { get; set; }
 }

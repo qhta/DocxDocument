@@ -11,7 +11,6 @@ public enum HueDirection
   /// <summary>
   ///   Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   ///   Clockwise Hue Direction.
   /// </summary>

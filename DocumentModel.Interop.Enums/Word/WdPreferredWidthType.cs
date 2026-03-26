@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdpreferredwidthtype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdPreferredWidthType
+public enum PreferredWidthType
 {
   /// <summary>
   /// Automatically select the unit of measure to use based on the current selection.

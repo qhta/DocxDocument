@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
@@ -46,7 +48,7 @@ public partial interface Range : InteropObject
   /// Returns the story type for the specified range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.storytype?view=word-pia"/>
-  public WdStoryType StoryType { get; }
+  public StoryType StoryType { get; }
 
   /// <summary>
   /// Returns a Tables collection that represents all the tables in the specified range.
@@ -178,13 +180,13 @@ public partial interface Range : InteropObject
   /// Returns or sets the type of underline applied to the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.underline?view=word-pia"/>
-  public WdUnderline Underline { get; set; }
+  public Underline Underline { get; set; }
 
   /// <summary>
   /// Returns or sets the emphasis mark for a character or designated character string.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.emphasismark?view=word-pia"/>
-  public WdEmphasisMark EmphasisMark { get; set; }
+  public EmphasisMark EmphasisMark { get; set; }
 
   /// <summary>
   /// Determines if Microsoft Word ignores the number of characters per line for the range.
@@ -214,7 +216,7 @@ public partial interface Range : InteropObject
   /// Returns or sets the language for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.languageid?view=word-pia"/>
-  public WdLanguageID LanguageID { get; set; }
+  public LanguageID LanguageID { get; set; }
 
   /// <summary>
   /// Returns a SynonymInfo object that contains information from the thesaurus on synonyms, antonyms, or related
@@ -257,7 +259,7 @@ public partial interface Range : InteropObject
   /// Returns or sets the highlight color for the specified range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.highlightcolorindex?view=word-pia"/>
-  public WdColorIndex HighlightColorIndex { get; set; }
+  public ColorIndex HighlightColorIndex { get; set; }
 
   /// <summary>
   /// Returns a Columns collection that represents all the table columns in the range.
@@ -321,10 +323,10 @@ public partial interface Range : InteropObject
   public ShapeRange ShapeRange { get; }
 
   /// <summary>
-  /// Returns or sets a WdCharacterCase constant that represents the case of the text in the specified range.
+  /// Returns or sets a CharacterCase constant that represents the case of the text in the specified range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.case?view=word-pia"/>
-  public WdCharacterCase Case { get; set; }
+  public CharacterCase Case { get; set; }
 
   /// <summary>
   /// Returns a ReadabilityStatistics collection that represents the readability statistics for the specified range.
@@ -350,7 +352,7 @@ public partial interface Range : InteropObject
   /// Returns or sets the orientation of text in a range when the Text Direction feature is enabled.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.orientation?view=word-pia"/>
-  public WdTextOrientation Orientation { get; set; }
+  public TextOrientation Orientation { get; set; }
 
   /// <summary>
   /// Returns a InlineShapes collection that represents all the InlineShape objects in a document, range, or
@@ -369,13 +371,13 @@ public partial interface Range : InteropObject
   /// Returns or sets an East Asian language for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.languageidfareast?view=word-pia"/>
-  public WdLanguageID LanguageIDFarEast { get; set; }
+  public LanguageID LanguageIDFarEast { get; set; }
 
   /// <summary>
   /// Returns or sets the language for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.languageidother?view=word-pia"/>
-  public WdLanguageID LanguageIDOther { get; set; }
+  public LanguageID LanguageIDOther { get; set; }
 
   /// <summary>
   /// Returns or sets a value that specifies whether Microsoft Word has detected the language of the specified text.
@@ -394,14 +396,14 @@ public partial interface Range : InteropObject
   /// Returns or sets the formatting for horizontal text set within vertical text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.horizontalinvertical?view=word-pia"/>
-  public WdHorizontalInVerticalType HorizontalInVertical { get; set; }
+  public HorizontalInVerticalType HorizontalInVertical { get; set; }
 
   /// <summary>
   /// Returns or sets whether Microsoft Word sets two lines of text in one and specifies the characters that enclose
   /// the text, if any.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.twolinesinone?view=word-pia"/>
-  public WdTwoLinesInOneType TwoLinesInOne { get; set; }
+  public TwoLinesInOneBracket TwoLinesInOne { get; set; }
 
   /// <summary>
   /// Determines if the specified range contains combined characters.
@@ -431,13 +433,13 @@ public partial interface Range : InteropObject
   /// Returns or sets the character width of the specified range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.characterwidth?view=word-pia"/>
-  public WdCharacterWidth CharacterWidth { get; set; }
+  public CharacterWidth CharacterWidth { get; set; }
 
   /// <summary>
   /// Returns or sets whether the specified range of Japanese language text is hiragana or katakana.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.kana?view=word-pia"/>
-  public WdKana Kana { get; set; }
+  public Kana Kana { get; set; }
 
   /// <summary>
   /// Determines if the font or range is formatted as bold.

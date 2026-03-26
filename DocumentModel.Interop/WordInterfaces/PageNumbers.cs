@@ -10,7 +10,7 @@ public partial interface PageNumbers : InteropObject, InteropCollection<PageNumb
   /// Returns or sets the number style for the PageNumbers object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumbers.numberstyle?view=word-pia"/>
-  public WdPageNumberStyle NumberStyle { get; set; }
+  public PageNumberStyle NumberStyle { get; set; }
 
   /// <summary>
   /// True if a chapter number is included with page numbers or a caption label.
@@ -27,10 +27,10 @@ public partial interface PageNumbers : InteropObject, InteropCollection<PageNumb
 
   /// <summary>
   /// Returns or sets the separator character used between the chapter number and the page number. Can be one of the
-  /// WdSeparatorType constants.
+  /// SeparatorType constants.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumbers.chapterpageseparator?view=word-pia"/>
-  public WdSeparatorType ChapterPageSeparator { get; set; }
+  public SeparatorType ChapterPageSeparator { get; set; }
 
   /// <summary>
   /// True if page numbering starts at 1 again at the beginning of the specified section.

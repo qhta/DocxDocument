@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xldisplayblanksas?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlDisplayBlanksAs
+public enum DisplayBlanksAs
 {
   /// <summary>
   /// Blank cells are not plotted.

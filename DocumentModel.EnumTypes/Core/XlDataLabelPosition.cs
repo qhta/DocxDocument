@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xldatalabelposition?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlDataLabelPosition
+public enum DataLabelPosition
 {
   /// <summary>
   /// Data label centered on data point or inside bar or pie.
@@ -49,7 +49,6 @@ public enum XlDataLabelPosition
   /// <summary>
   /// Data label positioned at bottom of bar or pie.
   /// </summary>
-  Mixed = 6,
   /// <summary>
   /// Data label centered on data point or inside bar or pie.
   /// </summary>

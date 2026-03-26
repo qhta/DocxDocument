@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
@@ -7,7 +7,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoencoding?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoEncoding
+public enum Encoding
 {
   /// <summary>
   /// Thai.

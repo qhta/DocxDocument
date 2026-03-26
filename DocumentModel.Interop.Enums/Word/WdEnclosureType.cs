@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdenclosuretype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdEnclosureType
+public enum EnclosureType
 {
   /// <summary>
   /// A circle.

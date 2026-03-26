@@ -16,7 +16,7 @@ public partial interface PickerField: InteropObject
   /// Gets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerfield.type?view=office-pia"/>
-  public MsoPickerField Type { get; }
+  public PickerField Type { get; }
   /// <summary>
   /// Gets the `IsHidden` property.
   /// </summary>

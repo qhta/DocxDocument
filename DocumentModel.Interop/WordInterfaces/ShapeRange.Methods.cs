@@ -15,5 +15,5 @@ public partial interface ShapeRange
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.align?view=word-pia"/>
-  public void Align(Core.MsoAlignCmd Align, int RelativeTo);
+  public void Align(Core.AlignCmd Align, int RelativeTo);
 }

@@ -11,7 +11,7 @@ public partial interface ReflectionFormat: InteropObject
   /// Gets or sets the reflection preset type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.reflectionformat.type?view=office-pia"/>
-  public MsoReflectionType Type { get; set; }
+  public ReflectionType Type { get; set; }
   /// <summary>
   /// Gets or sets the transparency of the reflection.
   /// </summary>

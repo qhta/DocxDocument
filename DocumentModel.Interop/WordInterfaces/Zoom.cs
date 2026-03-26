@@ -16,7 +16,7 @@ public interface Zoom : InteropObject
   /// width of the page is visible.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.zoom.pagefit?view=word-pia"/>
-  public WdPageFit PageFit { get; set; }
+  public PageFit PageFit { get; set; }
   /// <summary>
   /// Returns or sets the number of pages to be displayed one above the other on-screen at the same time in print
   /// layout view or print preview.

@@ -19,7 +19,7 @@ public partial interface Shape : InteropObject
   /// line or freeform drawing.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.autoshapetype?view=word-pia"/>
-  public Core.MsoAutoShapeType AutoShapeType { get; set; }
+  public Core.AutoShapeType AutoShapeType { get; set; }
 
   /// <summary>
   /// Returns a CalloutFormat object that contains callout formatting properties for the specified shape.
@@ -37,7 +37,7 @@ public partial interface Shape : InteropObject
   /// Reserved for internal use.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.connector?view=word-pia"/>
-  public Core.MsoTriState Connector { get; }
+  public Core.TriState Connector { get; }
 
   /// <summary>
   /// Reserved for internal use.
@@ -67,7 +67,7 @@ public partial interface Shape : InteropObject
   /// Indicates that a shape has been flipped horizontally.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.horizontalflip?view=word-pia"/>
-  public Core.MsoTriState HorizontalFlip { get; }
+  public Core.TriState HorizontalFlip { get; }
 
   /// <summary>
   /// Returns or sets a Single that represents the horizontal position, measured in points, of the specified shape
@@ -87,7 +87,7 @@ public partial interface Shape : InteropObject
   /// or if it retains its original proportions.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.lockaspectratio?view=word-pia"/>
-  public Core.MsoTriState LockAspectRatio { get; set; }
+  public Core.TriState LockAspectRatio { get; set; }
 
   /// <summary>
   /// Returns or sets the name of the specified object.
@@ -148,13 +148,13 @@ public partial interface Shape : InteropObject
   /// Returns the shape type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.type?view=word-pia"/>
-  public Core.MsoShapeType Type { get; }
+  public Core.ShapeType Type { get; }
 
   /// <summary>
   /// Determines if the specified shape is flipped around the vertical axis.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.verticalflip?view=word-pia"/>
-  public Core.MsoTriState VerticalFlip { get; }
+  public Core.TriState VerticalFlip { get; }
 
   /// <summary>
   /// Returns the coordinates of the specified freeform drawing's vertices (and control points for Bézier curves) as
@@ -167,7 +167,7 @@ public partial interface Shape : InteropObject
   /// Determines if the specified object, or the formatting applied to it, is visible.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.visible?view=word-pia"/>
-  public Core.MsoTriState Visible { get; set; }
+  public Core.TriState Visible { get; set; }
 
   /// <summary>
   /// Returns or sets the width of the specified object, in points.
@@ -191,13 +191,13 @@ public partial interface Shape : InteropObject
   /// Specifies to what the horizontal position of a shape is relative.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.relativehorizontalposition?view=word-pia"/>
-  public WdRelativeHorizontalPosition RelativeHorizontalPosition { get; set; }
+  public RelativeHorizontalPosition RelativeHorizontalPosition { get; set; }
 
   /// <summary>
   /// Specifies to what the vertical position of a shape is relative.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.relativeverticalposition?view=word-pia"/>
-  public WdRelativeVerticalPosition RelativeVerticalPosition { get; set; }
+  public RelativeVerticalPosition RelativeVerticalPosition { get; set; }
 
   /// <summary>
   /// Determines if the specified Shape object's anchor is locked to the anchoring range.
@@ -246,7 +246,7 @@ public partial interface Shape : InteropObject
   /// Determines if a shape is a diagram.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.hasdiagram?view=word-pia"/>
-  public Core.MsoTriState HasDiagram { get; }
+  public Core.TriState HasDiagram { get; }
 
   /// <summary>
   /// Returns a Diagram object to which a diagram node belongs.
@@ -258,7 +258,7 @@ public partial interface Shape : InteropObject
   /// Determines if a shape is a diagram node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.hasdiagramnode?view=word-pia"/>
-  public Core.MsoTriState HasDiagramNode { get; }
+  public Core.TriState HasDiagramNode { get; }
 
   /// <summary>
   /// Returns a DiagramNode object that represents a node in a diagram.
@@ -270,7 +270,7 @@ public partial interface Shape : InteropObject
   /// Determines if the shape is a child shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.child?view=word-pia"/>
-  public Core.MsoTriState Child { get; }
+  public Core.TriState Child { get; }
 
   /// <summary>
   /// Returns a Shape object that represents the common parent shape of a child shape.
@@ -307,7 +307,7 @@ public partial interface Shape : InteropObject
   /// True if the specified shape has a chart. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.haschart?view=word-pia"/>
-  public Core.MsoTriState HasChart { get; }
+  public Core.TriState HasChart { get; }
 
   /// <summary>
   /// Returns a Chart object that represents a chart within the collection of shapes in a document. Read-only.
@@ -340,18 +340,18 @@ public partial interface Shape : InteropObject
   public float HeightRelative { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdRelativeHorizontalSize constant that represents the object to which a range of shapes is
+  /// Returns or sets a RelativeHorizontalSize constant that represents the object to which a range of shapes is
   /// relative. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.relativehorizontalsize?view=word-pia"/>
-  public WdRelativeHorizontalSize RelativeHorizontalSize { get; set; }
+  public RelativeHorizontalSize RelativeHorizontalSize { get; set; }
 
   /// <summary>
-  /// Returns or sets a WdRelativeVerticalSize constant that represents the relative vertical size of a shape.
+  /// Returns or sets a RelativeVerticalSize constant that represents the relative vertical size of a shape.
   /// Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.relativeverticalsize?view=word-pia"/>
-  public WdRelativeVerticalSize RelativeVerticalSize { get; set; }
+  public RelativeVerticalSize RelativeVerticalSize { get; set; }
 
   /// <summary>
   /// Returns a SoftEdgeFormat object that represents the soft edge formatting for a shape. Read- only.
@@ -381,7 +381,7 @@ public partial interface Shape : InteropObject
   /// Gets True if there is a SmartArt diagram present on the shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.hassmartart?view=word-pia"/>
-  public Core.MsoTriState HasSmartArt { get; }
+  public Core.TriState HasSmartArt { get; }
 
   /// <summary>
   /// Gets a SmartArt object that provides a way to work with the SmartArt associated with the specified shape.
@@ -393,13 +393,13 @@ public partial interface Shape : InteropObject
   /// Gets or sets the shape style for the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.shapestyle?view=word-pia"/>
-  public Core.MsoShapeStyleIndex ShapeStyle { get; set; }
+  public Core.ShapeStyleIndex ShapeStyle { get; set; }
 
   /// <summary>
   /// Gets or sets the background style of the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.backgroundstyle?view=word-pia"/>
-  public Core.MsoBackgroundStyleIndex BackgroundStyle { get; set; }
+  public Core.BackgroundStyleIndex BackgroundStyle { get; set; }
 
   /// <summary>
   /// Gets or sets a string that contains a title for the specified shape.

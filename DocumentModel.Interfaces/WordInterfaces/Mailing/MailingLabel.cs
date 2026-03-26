@@ -16,7 +16,7 @@ public partial interface MailingLabel : InteropObject
   /// Returns or sets the default printer tray used for laser labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailinglabel.defaultlasertray?view=word-pia"/>
-  public WdPaperTray DefaultLaserTray { get; set; }
+  public PaperTray DefaultLaserTray { get; set; }
 
   /// <summary>
   /// Returns the custom labels collection.

@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrevisionsmode?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdRevisionsMode
+public enum RevisionsMode
 {
   /// <summary>
   /// Displays revisions in balloons in the left or right margin.

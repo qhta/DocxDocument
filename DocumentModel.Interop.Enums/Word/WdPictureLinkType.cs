@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdpicturelinktype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdPictureLinkType
+public enum PictureLinkType
 {
   /// <summary>
   /// Do not link to or embed the picture in the document.

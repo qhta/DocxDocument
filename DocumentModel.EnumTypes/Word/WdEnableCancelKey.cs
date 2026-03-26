@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdenablecancelkey?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdEnableCancelKey
+public enum EnableCancelKey
 {
   /// <summary>
   /// Prevents CTRL+BREAK from interrupting a macro.

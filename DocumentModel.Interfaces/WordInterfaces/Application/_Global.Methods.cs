@@ -25,7 +25,7 @@ public partial interface _Global : InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_keysboundto?view=word-pia"/>
-  public KeysBoundTo KeysBoundTo(WdKeyCategory KeyCategory, string Command, object CommandParameter);
+  public KeysBoundTo KeysBoundTo(KeyCategory KeyCategory, string Command, object CommandParameter);
   /// <summary>
   /// Returns a KeyBinding object that represents the specified key combination.
   /// </summary>
@@ -123,7 +123,7 @@ public partial interface _Global : InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.buildkeycode?view=word-pia"/>
-  public int BuildKeyCode(WdKey Arg1, object Arg2, object Arg3, object Arg4);
+  public int BuildKeyCode(Key Arg1, object Arg2, object Arg3, object Arg4);
   /// <summary>
   /// Returns the key combination string for the specified keys.
   /// </summary>

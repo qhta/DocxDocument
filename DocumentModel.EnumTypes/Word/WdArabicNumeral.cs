@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdarabicnumeral?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdArabicNumeral
+public enum ArabicNumeral
 {
   /// <summary>
   /// Arabic shape is used for numerals.

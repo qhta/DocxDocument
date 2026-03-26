@@ -17,7 +17,7 @@ public partial interface PictureFormat : InteropObject
   /// Returns or sets the type of color transformation applied to the specified picture or OLE object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.colortype?view=word-pia"/>
-  public Core.MsoPictureColorType ColorType { get; set; }
+  public Core.PictureColorType ColorType { get; set; }
 
   /// <summary>
   /// Returns or sets the contrast for the specified picture or OLE object. The value for this property must be a
@@ -63,7 +63,7 @@ public partial interface PictureFormat : InteropObject
   /// Applies to bitmaps only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.transparentbackground?view=word-pia"/>
-  public Core.MsoTriState TransparentBackground { get; set; }
+  public Core.TriState TransparentBackground { get; set; }
 
   /// <summary>
   /// Gets or sets a Crop object that represents an image cropping.

@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the status of the synchronization of the local copy of the active document with the server copy.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosyncstatustype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoSyncStatusType
+public enum SyncStatusType
 {
   /// <summary>
   /// No shared workspace.

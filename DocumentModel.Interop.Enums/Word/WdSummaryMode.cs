@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsummarymode?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdSummaryMode
+public enum SummaryMode
 {
   /// <summary>
   /// Highlights the key points in the specified document and displays the AutoSummarize toolbar.

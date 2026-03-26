@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofilefindoptions?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoFileFindOptions
+public enum FileFindOptions
 {
   /// <summary>
   /// This member is for Macintosh only and should not be used.

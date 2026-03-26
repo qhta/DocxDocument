@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlerrorbardirection?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlErrorBarDirection
+public enum ErrorBarDirection
 {
   /// <summary>
   /// Bars run parallel to the X axis for Y-axis values.

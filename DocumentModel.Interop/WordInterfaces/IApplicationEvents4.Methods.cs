@@ -293,7 +293,7 @@ public partial interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.documentsync?view=word-pia"/>
-  public void DocumentSync(Document Doc, Core.MsoSyncEventType SyncEventType);
+  public void DocumentSync(Document Doc, Core.SyncEventType SyncEventType);
 
   /// <summary>
   /// Occurs when e-postage is inserted with extended options.

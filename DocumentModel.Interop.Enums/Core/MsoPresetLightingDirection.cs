@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Specifies the location of lighting on an extruded (three-dimensional) shape relative to the shape.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetlightingdirection?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoPresetLightingDirection
+public enum PresetLightingDirection
 {
   /// <summary>
   /// Specifies the location of lighting on an extruded (three-dimensional) shape relative to the shape.

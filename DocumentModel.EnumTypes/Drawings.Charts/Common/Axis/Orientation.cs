@@ -11,7 +11,6 @@ public enum Orientation
   /// <summary>
   ///   Used only for detection.
   /// </summary>
-  Mixed = -2,
   /// <summary>
   ///   Maximum to Minimum.
   /// </summary>

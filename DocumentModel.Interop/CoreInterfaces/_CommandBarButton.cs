@@ -148,7 +148,7 @@ public partial interface _CommandBarButton: CommandBarControl
   /// Gets or sets the `OLEUsage` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarbutton.oleusage?view=office-pia"/>
-  public new MsoControlOLEUsage OLEUsage { get; set; }
+  public new ControlOLEUsage OLEUsage { get; set; }
   /// <summary>
   /// Gets or sets the `OnAction` property.
   /// </summary>
@@ -183,7 +183,7 @@ public partial interface _CommandBarButton: CommandBarControl
   /// Gets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarbutton.type?view=office-pia"/>
-  public new MsoControlType Type { get; }
+  public new ControlType Type { get; }
   /// <summary>
   /// Gets or sets the `Visible` property.
   /// </summary>
@@ -218,17 +218,17 @@ public partial interface _CommandBarButton: CommandBarControl
   /// Gets or sets the `State` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarbutton.state?view=office-pia"/>
-  public MsoButtonState State { get; set; }
+  public ButtonState State { get; set; }
   /// <summary>
   /// Gets or sets the `Style` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarbutton.style?view=office-pia"/>
-  public MsoButtonStyle Style { get; set; }
+  public ButtonStyle Style { get; set; }
   /// <summary>
   /// Gets or sets the `HyperlinkType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarbutton.hyperlinktype?view=office-pia"/>
-  public MsoCommandBarButtonHyperlinkType HyperlinkType { get; set; }
+  public CommandBarButtonHyperlinkType HyperlinkType { get; set; }
   /// <summary>
   /// Gets or sets the `Picture` property.
   /// </summary>

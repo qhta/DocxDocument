@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlchartpicturetype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum XlChartPictureType
+public enum ChartPictureType
 {
   /// <summary>
   /// Picture is sized to a specified number of units and repeated the length of the bar.

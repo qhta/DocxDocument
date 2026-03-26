@@ -10,13 +10,13 @@ public partial interface Footnotes : InteropObject, InteropCollection<Footnote>
   /// Returns or sets the position of all footnotes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes.location?view=word-pia"/>
-  public WdFootnoteLocation Location { get; set; }
+  public FootnoteLocation Location { get; set; }
 
   /// <summary>
   /// Returns or sets the number style for the footnotes in a selection, range, or document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes.numberstyle?view=word-pia"/>
-  public WdNoteNumberStyle NumberStyle { get; set; }
+  public NoteNumberStyle NumberStyle { get; set; }
 
   /// <summary>
   /// Returns or sets the starting note number.
@@ -28,7 +28,7 @@ public partial interface Footnotes : InteropObject, InteropCollection<Footnote>
   /// Returns or sets the way footnotes are numbered after page breaks or section breaks.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes.numberingrule?view=word-pia"/>
-  public WdNumberingRule NumberingRule { get; set; }
+  public NumberingRule NumberingRule { get; set; }
 
   /// <summary>
   /// Returns a <see cref="Range"/> object that represents the footnote separator.

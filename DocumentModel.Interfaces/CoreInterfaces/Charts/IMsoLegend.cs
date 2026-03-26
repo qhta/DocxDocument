@@ -26,7 +26,7 @@ public partial interface IMsoLegend: InteropObject
   /// Gets or sets the `Position` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegend.position?view=office-pia"/>
-  public XlLegendPosition Position { get; set; }
+  public LegendPosition Position { get; set; }
   /// <summary>
   /// Gets or sets the `Shadow` property.
   /// </summary>

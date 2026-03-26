@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdexportcreatebookmarks?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdExportCreateBookmarks
+public enum ExportCreateBookmarks
 {
   /// <summary>
   /// Do not create bookmarks in the exported document.

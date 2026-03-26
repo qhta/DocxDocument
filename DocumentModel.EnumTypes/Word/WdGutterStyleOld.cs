@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdgutterstyleold?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdGutterStyleOld
+public enum GutterStyleOld
 {
   /// <summary>
   /// Bidirectional gutter should be used to conform to right-to-left text flow.

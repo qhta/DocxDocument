@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcountry?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdCountry
+public enum Country
 {
   /// <summary>
   /// United States

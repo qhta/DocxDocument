@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcompatibility?view=office-pia` for Office interop details.
 /// </remarks>
-public enum WdCompatibility
+public enum Compatibility
 {
   /// <summary>
   /// Don't add automatic tab stop for hanging indent.

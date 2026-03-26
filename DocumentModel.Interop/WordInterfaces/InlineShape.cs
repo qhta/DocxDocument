@@ -40,7 +40,7 @@ public partial interface InlineShape : InteropObject
   /// Returns the type of inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.type?view=word-pia"/>
-  public WdInlineShapeType Type { get; }
+  public InlineShapeType Type { get; }
 
   /// <summary>
   /// Returns a hyperlink object associated with the inline shape.
@@ -76,7 +76,7 @@ public partial interface InlineShape : InteropObject
   /// Returns or sets whether the inline shape retains its original proportions when resized.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.lockaspectratio?view=word-pia"/>
-  public Core.MsoTriState LockAspectRatio { get; set; }
+  public Core.TriState LockAspectRatio { get; set; }
 
   /// <summary>
   /// Returns a line format object that represents line formatting for the inline shape.
@@ -142,7 +142,7 @@ public partial interface InlineShape : InteropObject
   /// Returns whether the inline shape has an associated chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.haschart?view=word-pia"/>
-  public Core.MsoTriState HasChart { get; }
+  public Core.TriState HasChart { get; }
 
   /// <summary>
   /// Returns the chart associated with the inline shape.
@@ -178,7 +178,7 @@ public partial interface InlineShape : InteropObject
   /// Returns whether the inline shape has SmartArt.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.hassmartart?view=word-pia"/>
-  public Core.MsoTriState HasSmartArt { get; }
+  public Core.TriState HasSmartArt { get; }
 
   /// <summary>
   /// Returns SmartArt for the inline shape.

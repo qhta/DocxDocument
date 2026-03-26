@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// Indicates various image warping formats.
@@ -6,7 +6,7 @@
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msowarpformat?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MsoWarpFormat
+public enum WarpFormat
 {
   /// <summary>
   /// Specifies a mix of warp formats.
