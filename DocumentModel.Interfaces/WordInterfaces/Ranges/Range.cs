@@ -403,7 +403,7 @@ public partial interface Range : InteropObject
   /// the text, if any.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.twolinesinone?view=word-pia"/>
-  public TwoLinesInOneBracket TwoLinesInOne { get; set; }
+  public Wordprocessing.TwoLinesInOneType TwoLinesInOne { get; set; }
 
   /// <summary>
   /// Determines if the specified range contains combined characters.

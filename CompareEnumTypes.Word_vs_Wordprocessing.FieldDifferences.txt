@@ -1,6 +1,6 @@
-Word enums: 310
+Word enums: 290
 Wordprocessing enums: 173
-Matched enum types: 118
+Matched enum types: 98
 
 DocumentModel.Interop.Word.AlertLevel <-> DocumentModel.Wordprocessing.MultiLevel
   Only in Word: All, MessageBox, None
