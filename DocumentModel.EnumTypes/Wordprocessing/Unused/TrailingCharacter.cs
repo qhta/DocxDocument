@@ -15,6 +15,6 @@ public enum TrailingCharacter
   [OpenXmlEnumValue("Space")]
   Space = 1,
   /// <summary>No trailing character</summary>
-  [OpenXmlEnumValue("Nothing")]
-  Nothing = 2
+  [OpenXmlEnumValue("None")]
+  None = 2
 }

@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
@@ -28,7 +30,7 @@ public partial interface Cells : InteropObject, InteropCollection<Cell>
   /// Gets or sets the vertical alignment of text in the cells.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.verticalalignment?view=word-pia"/>
-  public CellVerticalAlignment VerticalAlignment { get; set; }
+  public TableVerticalAlignment VerticalAlignment { get; set; }
 
   /// <summary>
   /// Gets or sets the border formatting for the cells.
