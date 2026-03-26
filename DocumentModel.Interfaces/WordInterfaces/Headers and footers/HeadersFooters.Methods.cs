@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Interop.Word;
 
 /// <remarks>
@@ -15,5 +17,5 @@ public partial interface HeadersFooters: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headersfooters.get_item?view=word-pia"/>
-  public HeaderFooter Item(HeaderFooterIndex Index);
+  public HeaderFooter Item(HeaderFooterType Index);
 }

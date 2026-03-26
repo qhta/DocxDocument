@@ -12,7 +12,7 @@ public interface FootnoteOptions : InteropObject
   /// Returns or sets the position of all footnotes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnoteoptions.location?view=word-pia"/>
-  public FootnoteLocation Location { get; set; }
+  public FootnotePosition Location { get; set; }
   /// <summary>
   /// Returns or sets the number style for a range or selection of footnotes in a document.
   /// </summary>
