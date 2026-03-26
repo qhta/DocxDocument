@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a recognized function. The OMathRecognizedFunction object is a member of the OMathRecognizedFunctions collection.

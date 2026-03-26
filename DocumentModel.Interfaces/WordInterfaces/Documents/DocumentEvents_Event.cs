@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Learn more about the Microsoft.Office.Interop.Word.DocumentEvents_Event in the Microsoft.Office.Interop.Word namespace.

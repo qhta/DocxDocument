@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// A collection of Conflict objects that represents the conflicts in a document. The type of a Conflict object is specified by the RevisionType enumeration.

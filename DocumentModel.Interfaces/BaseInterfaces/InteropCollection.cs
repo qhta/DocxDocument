@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interop;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Represents a collection of items that supports indexed and keyed access, designed for interoperability scenarios.

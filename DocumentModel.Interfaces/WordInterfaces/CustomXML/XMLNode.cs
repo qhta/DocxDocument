@@ -1,4 +1,6 @@
-namespace DocumentModel.Interop.Word;
+using DocumentModel.Wordprocessing;
+
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a single XML element applied to a document.

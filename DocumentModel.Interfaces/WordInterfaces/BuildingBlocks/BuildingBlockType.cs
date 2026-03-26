@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a type of building block. Each BuildingBlockType object is a member of the BuildingBlockTypes collection.

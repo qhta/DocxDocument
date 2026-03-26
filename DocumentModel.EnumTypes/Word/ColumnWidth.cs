@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Constants that represent column width in reading layout, passed to and returned by the ColumnWidth property.

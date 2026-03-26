@@ -1,6 +1,6 @@
 using DocumentModel.Interop.Core;
 
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// A collection of all the DataLabel objects for the specified series.

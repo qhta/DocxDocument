@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a building block in a template. A building block is pre-built content, similar to autotext, that may contain text, images, and formatting.

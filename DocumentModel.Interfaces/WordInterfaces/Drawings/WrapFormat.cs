@@ -1,6 +1,6 @@
 using DocumentModel.Wordprocessing.Vml;
 
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents all the properties for wrapping text around a shape or shape range.

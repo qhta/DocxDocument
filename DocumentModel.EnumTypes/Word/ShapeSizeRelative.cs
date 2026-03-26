@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies whether the WidthRelative or HeightRelative property for a Shape or ShapeRange object is valid.

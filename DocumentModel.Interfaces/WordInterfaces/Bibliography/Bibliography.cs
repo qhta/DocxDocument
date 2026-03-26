@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents the list of sources available attached to the document (in the current list) or the list of sources available in the application (in the master list).

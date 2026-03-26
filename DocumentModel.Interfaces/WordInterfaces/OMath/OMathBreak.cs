@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents individual line breaks in an equation. Each OMathBreak object is a member of the OMathBreaks collection.

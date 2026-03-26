@@ -1,6 +1,6 @@
 using DocumentModel.Wordprocessing.Drawings;
 
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a shape range, which is a set of shapes on a document.

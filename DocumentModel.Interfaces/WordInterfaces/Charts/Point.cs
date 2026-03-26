@@ -1,7 +1,7 @@
 using DocumentModel.Interop.Core;
 using DocumentModel.Wordprocessing;
 
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a single point in a series in a chart.

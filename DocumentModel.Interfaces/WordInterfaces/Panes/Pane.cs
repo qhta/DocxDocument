@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents a window pane. The Pane object is a member of the Panes collection. The Panes#SameCHM collection

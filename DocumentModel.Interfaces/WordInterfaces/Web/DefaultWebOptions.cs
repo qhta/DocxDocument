@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Contains global application-level attributes used by Microsoft Word when you save a document as a Web page or open a Web page.

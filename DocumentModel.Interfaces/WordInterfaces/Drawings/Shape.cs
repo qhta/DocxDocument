@@ -1,6 +1,6 @@
 using DocumentModel.Wordprocessing.Drawings;
 
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Represents an object in the drawing layer, such as an AutoShape, freeform, OLE object, ActiveX control, or
