@@ -1115,7 +1115,7 @@ public partial interface _Document : InteropObject
   /// Returns the document type (template or document).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.type?view=word-pia"/>
-  public DocumentType Type { get; }
+  public WordDocumentType Type { get; }
 
   /// <summary>
   /// Determines if the styles in the specified document are updated to match the styles in the attached template each time the document is opened.
