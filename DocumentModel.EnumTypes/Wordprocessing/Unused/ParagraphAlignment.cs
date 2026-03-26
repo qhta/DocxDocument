@@ -16,19 +16,19 @@ public enum ParagraphAlignment
   /// line is ragged. This is the default alignment for paragraphs with left-to-right text direction.
   /// </summary>
   [OpenXmlEnumValue("Left")]
-  Left = 1,
+  Left,
   /// <summary>
   /// Specifies that the center of each line of text is aligned to the midpoint of the right and left text box
   /// margins, and the left and right edges of each line are ragged.
   /// </summary>
   [OpenXmlEnumValue("Center")]
-  Center = 2,
+  Center,
   /// <summary>
   /// Specifies that the rightmost character of each line is aligned to the right margin, and the left edge of each
   /// line is ragged. This is the default alignment for paragraphs with right-to-left text direction.
   /// </summary>
   [OpenXmlEnumValue("Right")]
-  Right = 3,
+  Right,
   /// <summary>
   /// Specifies that the first and last characters of each line (except the last) are aligned to the left and right
   /// margins, and lines are filled by adding or subtracting space between and within words. The last line of the
@@ -44,7 +44,7 @@ public enum ParagraphAlignment
   /// special characters used to extend the joiner between two Arabic characters.
   /// </summary>
   [OpenXmlEnumValue("Justify")]
-  Justify = 4,
+  Justify,
   /// <summary>
   /// Specifies that the first and last characters of each line (except the last) are aligned to the left
   /// and right margins,  and lines are filled by adding or subtracting the same amount from each character.
@@ -52,18 +52,21 @@ public enum ParagraphAlignment
   /// or to the right margin if text direction is right-to-left.
   /// </summary>
   [OpenXmlEnumValue("Distribute")]
-  Distribute = 5,
+  Distribute,
   /// <summary>
-  /// Specifies that the first and last characters of each line (except the last) are aligned to the left
-  /// and right margins, and lines are filled by adding or subtracting space between (but not within) words.
-  /// The last line of the paragraph is aligned to the left margin.
+  /// Justified with a medium character compression ratio.
   /// </summary>
-  [OpenXmlEnumValue("ThaiDistribute")]
-  ThaiDistribute = 6,
+  JustifyMed,
   /// <summary>
-  /// Specifies the alignment or adjustment of kashida length in Arabic text. Kashida are special characters
-  /// used to extend the joiner between two Arabic characters.
+  /// Justified with a high character compression ratio.
   /// </summary>
-  [OpenXmlEnumValue("JustifyLow")]  
-  JustifyLow = 7
+  JustifyHi,
+  /// <summary>
+  /// Justified with a low character compression ratio.
+  /// </summary>
+  JustifyLow,
+  /// <summary>
+  /// Justified according to Thai formatting layout.
+  /// </summary>
+  ThaiJustify
 }
