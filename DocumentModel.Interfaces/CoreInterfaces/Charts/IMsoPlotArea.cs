@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents the plot area of a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea?view=office-pia"/>
-public partial interface IMsoPlotArea: InteropObject
+public partial interface PlotArea: InteropObject
 {
   /// <summary>
   /// Gets or sets the `Name` property.
@@ -16,7 +16,7 @@ public partial interface IMsoPlotArea: InteropObject
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea.border?view=office-pia"/>
-  public IMsoBorder Border { get; }
+  public Border Border { get; }
   /// <summary>
   /// Gets or sets the `Height` property.
   /// </summary>
@@ -26,7 +26,7 @@ public partial interface IMsoPlotArea: InteropObject
   /// Gets the `Interior` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea.interior?view=office-pia"/>
-  public IMsoInterior Interior { get; }
+  public Interior Interior { get; }
   /// <summary>
   /// Gets the `Fill` property.
   /// </summary>
@@ -76,6 +76,6 @@ public partial interface IMsoPlotArea: InteropObject
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea.format?view=office-pia"/>
-  public IMsoChartFormat Format { get; }
+  public ChartFormat Format { get; }
 }
 

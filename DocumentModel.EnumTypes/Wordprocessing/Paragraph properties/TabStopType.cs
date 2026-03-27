@@ -7,9 +7,6 @@ namespace DocumentModel.Wordprocessing;
 public enum TabStopType
 {
   /// <summary>
-  ///   Used only for detection.
-  /// </summary>
-  /// <summary>
   ///   No Tab Stop.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.TabStopValues.Clear))]

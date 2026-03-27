@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a data label.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel?view=office-pia"/>
-public partial interface IMsoDataLabel: InteropObject
+public partial interface DataLabel: InteropObject
 {
   /// <summary>
   /// Selects the data label.

@@ -9,9 +9,6 @@ namespace DocumentModel.Drawings.Charts;
 public enum DataLabelPosition
 {
   /// <summary>
-  ///   Used only for detection.
-  /// </summary>
-  /// <summary>
   ///   Office application controls position of data label.
   /// </summary>
   [OpenXmlEnumValue("BestFit")]

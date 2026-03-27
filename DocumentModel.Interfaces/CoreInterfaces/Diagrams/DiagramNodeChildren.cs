@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Reflection;
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Diagrams;
 
 /// <summary>
 /// Reserved for internal use.

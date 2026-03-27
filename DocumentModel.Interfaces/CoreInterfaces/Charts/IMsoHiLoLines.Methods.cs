@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents high-low lines in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsohilolines?view=office-pia"/>
-public partial interface IMsoHiLoLines: InteropObject
+public partial interface HiLoLines: InteropObject
 {
   /// <summary>
   /// Selects the high-low lines.

@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents error bars in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoerrorbars?view=office-pia"/>
-public partial interface IMsoErrorBars: InteropObject
+public partial interface ErrorBars: InteropObject
 {
   /// <summary>
   /// Selects the error bars.

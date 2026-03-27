@@ -1,4 +1,4 @@
-﻿namespace DocumentMode.Office;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Provides information about the digital certificate.

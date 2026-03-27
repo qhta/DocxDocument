@@ -7,9 +7,6 @@ namespace DocumentModel.Drawings;
 public enum EffectContainment
 {
   /// <summary>
-  ///   Used only for detection.
-  /// </summary>
-  /// <summary>
   ///   Sibling.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.EffectContainerValues.Sibling))]

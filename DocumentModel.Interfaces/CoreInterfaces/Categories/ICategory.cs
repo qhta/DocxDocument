@@ -1,11 +1,11 @@
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocategory?view=office-pia"/>
-public partial interface IMsoCategory: InteropObject
+public partial interface ICategory: InteropObject
 {
   /// <summary>
   /// Gets or sets the `Name` property.

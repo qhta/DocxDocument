@@ -1,6 +1,6 @@
 using System;
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Provides the ability to manipulate blog entries.

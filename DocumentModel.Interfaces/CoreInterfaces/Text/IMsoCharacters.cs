@@ -1,11 +1,11 @@
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Represents characters in chart text.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharacters?view=office-pia"/>
-public partial interface IMsoCharacters: InteropObject
+public partial interface Characters: InteropObject
 {
   /// <summary>
   /// Gets or sets the `Caption` property.

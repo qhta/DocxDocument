@@ -9,9 +9,6 @@ namespace DocumentModel.Wordprocessing;
 public enum TextDirection
 {
   /// <summary>
-  ///   Used only for detection.
-  /// </summary>
-  /// <summary>
   /// Left to Right, Top to Bottom.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.TextDirectionValues.LefToRightTopToBottom))]

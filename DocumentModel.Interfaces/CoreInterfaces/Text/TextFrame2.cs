@@ -1,7 +1,7 @@
 
 using DocumentModel.Wordprocessing;
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Represents the `TextFrame2` interface.
@@ -48,22 +48,22 @@ public partial interface TextFrame2: InteropObject
   /// Gets or sets the `PathFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.pathformat?view=office-pia"/>
-  public PathFormat PathFormat { get; set; }
+  public App.PathFormat PathFormat { get; set; }
   /// <summary>
   /// Gets or sets the `WarpFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.warpformat?view=office-pia"/>
-  public WarpFormat WarpFormat { get; set; }
+  public Drw.WarpFormat WarpFormat { get; set; }
   /// <summary>
   /// Gets or sets the `WordArtformat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.wordartformat?view=office-pia"/>
-  public PresetTextEffect WordArtformat { get; set; }
+  public Drw.PresetTextEffect WordArtformat { get; set; }
   /// <summary>
   /// Gets or sets the `WordWrap` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.wordwrap?view=office-pia"/>
-  public TriState WordWrap { get; set; }
+  public Drw.TriState WordWrap { get; set; }
   /// <summary>
   /// Gets or sets the `AutoSize` property.
   /// </summary>

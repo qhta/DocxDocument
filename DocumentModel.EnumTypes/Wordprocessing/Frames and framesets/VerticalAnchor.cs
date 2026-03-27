@@ -7,9 +7,6 @@ namespace DocumentModel.Wordprocessing;
 public enum VerticalAnchor
 {
   /// <summary>
-  ///   Used only for detection.
-  /// </summary>
-  /// <summary>
   ///   Relative To Vertical Text Extents.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXVW.VerticalAnchorValues.Text))]

@@ -1,11 +1,11 @@
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodispcagnotifysink?view=office-pia"/>
-public partial interface IMsoDispCagNotifySink: InteropObject
+public partial interface DispCagNotifySink: InteropObject
 {
 }
 

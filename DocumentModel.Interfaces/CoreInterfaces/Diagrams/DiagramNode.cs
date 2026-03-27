@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Diagrams;
 
 /// <summary>
 /// Reserved for internal use.
@@ -16,7 +16,7 @@ public partial interface DiagramNode: InteropObject
   /// Gets the `Shape` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.shape?view=office-pia"/>
-  public Shape Shape { get; }
+  public Drw.Shape Shape { get; }
   /// <summary>
   /// Gets the `Root` property.
   /// </summary>
@@ -26,7 +26,7 @@ public partial interface DiagramNode: InteropObject
   /// Gets the `Diagram` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.diagram?view=office-pia"/>
-  public IMsoDiagram Diagram { get; }
+  public Diagram Diagram { get; }
   /// <summary>
   /// Gets or sets the `Layout` property.
   /// </summary>
@@ -36,6 +36,6 @@ public partial interface DiagramNode: InteropObject
   /// Gets the `TextShape` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.textshape?view=office-pia"/>
-  public Shape TextShape { get; }
+  public Drw.Shape TextShape { get; }
 }
 

@@ -8,9 +8,6 @@ namespace DocumentModel.Wordprocessing;
 [JsonConverter(typeof(StringEnumConverter))]
 public enum BulletStyle
 {
-  /// <summary>
-  ///   Used only for detection.
-  /// </summary>
   /// <summary>Solid round bullet</summary>
   [OpenXmlEnumValue("Bullet")]
   Bullet = 0,

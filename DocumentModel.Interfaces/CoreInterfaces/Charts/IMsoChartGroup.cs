@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart group.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup?view=office-pia"/>
-public partial interface IMsoChartGroup: InteropObject
+public partial interface ChartGroup: InteropObject
 {
   /// <summary>
   /// Gets or sets the `AxisGroup` property.
@@ -21,12 +21,12 @@ public partial interface IMsoChartGroup: InteropObject
   /// Gets the `DownBars` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.downbars?view=office-pia"/>
-  public IMsoDownBars DownBars { get; }
+  public DownBars DownBars { get; }
   /// <summary>
   /// Gets the `DropLines` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.droplines?view=office-pia"/>
-  public IMsoDropLines DropLines { get; }
+  public DropLines DropLines { get; }
   /// <summary>
   /// Gets or sets the `FirstSliceAngle` property.
   /// </summary>
@@ -66,7 +66,7 @@ public partial interface IMsoChartGroup: InteropObject
   /// Gets the `HiLoLines` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.hilolines?view=office-pia"/>
-  public IMsoHiLoLines HiLoLines { get; }
+  public HiLoLines HiLoLines { get; }
   /// <summary>
   /// Gets the `Index` property.
   /// </summary>
@@ -86,7 +86,7 @@ public partial interface IMsoChartGroup: InteropObject
   /// Gets the `SeriesLines` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.serieslines?view=office-pia"/>
-  public IMsoSeriesLines SeriesLines { get; }
+  public SeriesLines SeriesLines { get; }
   /// <summary>
   /// Gets or sets the `SubType` property.
   /// </summary>
@@ -101,7 +101,7 @@ public partial interface IMsoChartGroup: InteropObject
   /// Gets the `UpBars` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.upbars?view=office-pia"/>
-  public IMsoUpBars UpBars { get; }
+  public UpBars UpBars { get; }
   /// <summary>
   /// Gets or sets the `VaryByCategories` property.
   /// </summary>

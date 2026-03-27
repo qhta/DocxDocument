@@ -8,9 +8,6 @@ namespace DocumentModel.Wordprocessing;
 public enum Direction
 {
   /// <summary>
-  ///   Used only for detection.
-  /// </summary>
-  /// <summary>
   /// Left-to-right text direction.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.DirectionValues.Ltr))]

@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents the chart area.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartarea?view=office-pia"/>
-public partial interface IMsoChartArea: InteropObject
+public partial interface ChartArea: InteropObject
 {
   /// <summary>
   /// Gets or sets the `Name` property.
@@ -16,7 +16,7 @@ public partial interface IMsoChartArea: InteropObject
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartarea.border?view=office-pia"/>
-  public IMsoBorder Border { get; }
+  public Border Border { get; }
   /// <summary>
   /// Gets the `Font` property.
   /// </summary>
@@ -36,7 +36,7 @@ public partial interface IMsoChartArea: InteropObject
   /// Gets the `Interior` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartarea.interior?view=office-pia"/>
-  public IMsoInterior Interior { get; }
+  public Interior Interior { get; }
   /// <summary>
   /// Gets the `Fill` property.
   /// </summary>
@@ -66,7 +66,7 @@ public partial interface IMsoChartArea: InteropObject
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartarea.format?view=office-pia"/>
-  public IMsoChartFormat Format { get; }
+  public ChartFormat Format { get; }
   /// <summary>
   /// Gets or sets the `RoundedCorners` property.
   /// </summary>

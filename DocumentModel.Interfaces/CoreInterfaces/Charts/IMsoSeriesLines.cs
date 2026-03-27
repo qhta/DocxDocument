@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents series lines in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoserieslines?view=office-pia"/>
-public partial interface IMsoSeriesLines: InteropObject
+public partial interface SeriesLines: InteropObject
 {
   /// <summary>
   /// Gets the `Name` property.
@@ -16,11 +16,11 @@ public partial interface IMsoSeriesLines: InteropObject
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoserieslines.border?view=office-pia"/>
-  public IMsoBorder Border { get; }
+  public Border Border { get; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoserieslines.format?view=office-pia"/>
-  public IMsoChartFormat Format { get; }
+  public ChartFormat Format { get; }
 }
 
