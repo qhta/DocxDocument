@@ -1,3 +1,5 @@
+using DocumentModel.Drawings.Diagrams;
+
 namespace DocumentModel.Wordprocessing;
 
 /// <remarks>
@@ -14,5 +16,5 @@ public partial interface Diagram: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagram.convert?view=word-pia"/>
-  public void Convert(Core.DiagramType Type);
+  public void Convert(DiagramType Type);
 }

@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Diagrams;
+namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Reserved for internal use.
@@ -11,7 +11,7 @@ public partial interface Diagram: InteropObject
   /// Gets or sets the `Nodes` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodiagram.nodes?view=office-pia"/>
-  public App.DiagramNodes Nodes { get; }
+  public DiagramNodes Nodes { get; }
   /// <summary>
   /// Gets the `Type` property.
   /// </summary>

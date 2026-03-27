@@ -1,4 +1,4 @@
-namespace DocumentModel.Application;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies the format of a file or folder path.

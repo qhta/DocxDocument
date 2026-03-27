@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace DocumentModel.Application;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Represents the `ThemeColor` interface.

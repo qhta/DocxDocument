@@ -25,7 +25,7 @@ public partial interface ShapeNodes: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenodes.seteditingtype?view=word-pia"/>
-  public void SetEditingType(int Index, Core.EditingType EditingType);
+  public void SetEditingType(int Index, Drw.EditingType EditingType);
 
   /// <summary>
   /// Sets the position of the shape node at the specified index.
@@ -48,7 +48,7 @@ public partial interface ShapeNodes: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenodes.setsegmenttype?view=word-pia"/>
-  public void SetSegmentType(int Index, Core.SegmentType SegmentType);
+  public void SetSegmentType(int Index, Drw.SegmentType SegmentType);
 
   /// <summary>
   /// Inserts a new shape node at the specified index.
@@ -66,5 +66,5 @@ public partial interface ShapeNodes: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenodes.insert?view=word-pia"/>
-  public void Insert(int Index, Core.SegmentType SegmentType, Core.EditingType EditingType, float X1, float Y1, float X2, float Y2, float X3, float Y3);
+  public void Insert(int Index, Drw.SegmentType SegmentType, Drw.EditingType EditingType, float X1, float Y1, float X2, float Y2, float X3, float Y3);
 }

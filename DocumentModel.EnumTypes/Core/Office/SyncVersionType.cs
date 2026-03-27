@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Specifies which version of a shared document to open alongside the currently open local version.

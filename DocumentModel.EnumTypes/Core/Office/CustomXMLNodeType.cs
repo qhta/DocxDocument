@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+namespace DocumentModel.CustomXml;
 
 /// <summary>
 /// Specifies the node type.

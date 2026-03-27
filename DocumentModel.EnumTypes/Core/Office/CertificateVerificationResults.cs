@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Application;
 
 /// <summary>
 /// Provides the results of verifying a digital certificate.

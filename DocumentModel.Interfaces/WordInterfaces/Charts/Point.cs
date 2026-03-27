@@ -1,4 +1,4 @@
-using DocumentModel.Interop.Core;
+using DocumentModel.Drawings.Charts;
 using DocumentModel.Wordprocessing;
 
 namespace DocumentModel.Wordprocessing;

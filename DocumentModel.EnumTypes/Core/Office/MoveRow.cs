@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// This enumeration has been deprecated and should not be used.

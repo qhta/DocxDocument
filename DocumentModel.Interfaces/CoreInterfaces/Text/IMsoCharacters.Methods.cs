@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Application;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Represents characters in chart text.

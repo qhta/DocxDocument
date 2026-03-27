@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Application;
 
 /// <summary>
 /// Indicates the signature line image.

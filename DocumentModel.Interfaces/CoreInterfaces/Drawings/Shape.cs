@@ -1,4 +1,7 @@
 
+using DocumentModel.Drawings.Charts;
+using DocumentModel.Drawings.Diagrams;
+
 namespace DocumentModel.Drawings;
 
 /// <summary>
@@ -156,7 +159,7 @@ public partial interface Shape: InteropObject
   /// Gets the `Script` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.script?view=office-pia"/>
-  public Script Script { get; }
+  public HTML.Script Script { get; }
   /// <summary>
   /// Gets or sets the `AlternativeText` property.
   /// </summary>
@@ -256,7 +259,7 @@ public partial interface Shape: InteropObject
   /// Gets the `SmartArt` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.smartart?view=office-pia"/>
-  public SmartArt SmartArt { get; }
+  public SmartArt.SmartArt SmartArt { get; }
   /// <summary>
   /// Gets or sets the `Title` property.
   /// </summary>

@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Specifies a document synchronization error.

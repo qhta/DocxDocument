@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Specifies where a node is added to a diagram relative to existing nodes.

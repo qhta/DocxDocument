@@ -41,7 +41,7 @@ public partial interface DocumentEvents2: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.sync?view=word-pia"/>
-  public void Sync(Core.SyncEventType SyncEventType);
+  public void Sync(App.SyncEventType SyncEventType);
 
   /// <summary>
   /// Executes the xmlafter insert operation.

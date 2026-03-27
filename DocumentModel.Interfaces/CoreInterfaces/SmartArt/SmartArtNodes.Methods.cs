@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace DocumentModel.Application;
+namespace DocumentModel.Drawings.SmartArt;
 
 /// <summary>
 /// Represents the `SmartArtNodes` interface.

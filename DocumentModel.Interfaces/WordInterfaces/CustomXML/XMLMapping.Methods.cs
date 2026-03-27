@@ -1,3 +1,5 @@
+using DocumentModel.CustomXml;
+
 namespace DocumentModel.Wordprocessing;
 
 /// <remarks>
@@ -17,5 +19,5 @@ public partial interface XMLMapping: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlmapping.setmapping?view=word-pia"/>
-  public bool SetMapping(string XPath, string PrefixMapping, Core.CustomXMLPart Source);
+  public bool SetMapping(string XPath, string PrefixMapping, CustomXMLPart Source);
 }

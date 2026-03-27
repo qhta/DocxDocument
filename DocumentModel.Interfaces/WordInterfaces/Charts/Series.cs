@@ -1,4 +1,4 @@
-using DocumentModel.Interop.Core;
+using DocumentModel.Drawings.Charts;
 using DocumentModel.Wordprocessing;
 
 namespace DocumentModel.Wordprocessing;
@@ -10,10 +10,10 @@ namespace DocumentModel.Wordprocessing;
 public partial interface Series : InteropObject
 {
   /// <summary>
-  /// Returns an AxisGroup value that represents the type of axis group. Read/write.
+  /// Returns an XlAxisGroup value that represents the type of axis group. Read/write.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.axisgroup?view=word-pia"/>
-  public AxisGroup AxisGroup { get; set; }
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.XlAxisGroup?view=word-pia"/>
+  public XlAxisGroup XlAxisGroup { get; set; }
 
   /// <summary>
   /// Returns a ChartBorder object that represents the border of the object. Read-only.

@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+namespace DocumentModel.HTML;
 
 /// <summary>
 /// Specifies target browser for documents viewed in a Web browser.

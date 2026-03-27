@@ -119,7 +119,7 @@ public partial record OnOff: IEquatable<byte>, IEquatable<bool>
       result = new OnOff(Off);
       return true;
     }
-    result = default;
+    result = OnOff.Undefined;
     return false;
   }
 

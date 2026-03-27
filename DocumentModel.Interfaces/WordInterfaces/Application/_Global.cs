@@ -106,7 +106,7 @@ public partial interface _Global: InteropObject
   /// Returns an Assistant object that represents the Microsoft Office Assistant.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.assistant?view=word-pia"/>
-  public Core.Assistant Assistant { get; }
+  public App.Assistant Assistant { get; }
 
   /// <summary>
   /// Returns a FileConverters collection that represents all file converters available to Microsoft Word.
@@ -226,13 +226,13 @@ public partial interface _Global: InteropObject
   /// Returns a LanguageSettings object that contains language setting information in Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.languagesettings?view=word-pia"/>
-  public Core.LanguageSettings LanguageSettings { get; }
+  public App.LanguageSettings LanguageSettings { get; }
 
   /// <summary>
   /// Returns an AnswerWizard object that contains files used by the online Help search engine.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.answerwizard?view=word-pia"/>
-  public Core.AnswerWizard AnswerWizard { get; }
+  public App.AnswerWizard AnswerWizard { get; }
 
   /// <summary>
   /// Returns an AutoCorrect object that represents automatic corrections made to e-mail messages.

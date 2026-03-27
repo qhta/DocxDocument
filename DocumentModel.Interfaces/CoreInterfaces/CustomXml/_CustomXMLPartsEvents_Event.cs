@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Application;
+namespace DocumentModel.CustomXml;
 
 public delegate void _CustomXMLPartsEvents_PartAfterAddEventHandler(CustomXMLPart NewPart);
 public delegate void _CustomXMLPartsEvents_PartBeforeDeleteEventHandler(CustomXMLPart OldPart);

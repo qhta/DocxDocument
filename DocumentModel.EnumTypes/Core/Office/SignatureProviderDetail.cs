@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Application;
 
 /// <summary>
 /// Specifies properties of a signature provider.

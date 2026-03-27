@@ -21,7 +21,7 @@ public partial interface FreeformBuilder: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.freeformbuilder.addnodes?view=word-pia"/>
-  public void AddNodes(Core.SegmentType SegmentType, Core.EditingType EditingType, float X1, float Y1, float X2, float Y2, float X3, float Y3);
+  public void AddNodes(Drw.SegmentType SegmentType, Drw.EditingType EditingType, float X1, float Y1, float X2, float Y2, float X3, float Y3);
 
   /// <summary>
   /// Converts the freeform into a shape.

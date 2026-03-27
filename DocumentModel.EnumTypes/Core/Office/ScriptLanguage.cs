@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Drawings;
+namespace DocumentModel.HTML;
 
 /// <summary>
 /// Specifies scripting language of the active script.
