@@ -33,14 +33,14 @@ public partial class HiddenShape3D : ModelElement<DXO10D.HiddenShape3D>, IExtend
  ///   Top bevel effect applied to the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.HiddenShape3D.BevelTop))]
- public BevelType? BevelTop { get => _BevelTop; set => UpdateField(ref _BevelTop, value, nameof(BevelTop)); }
- private BevelType? _BevelTop;
+ public Bevel? BevelTop { get => _BevelTop; set => UpdateField(ref _BevelTop, value, nameof(BevelTop)); }
+ private Bevel? _BevelTop;
  /// <summary>
  ///   Bottom bevel effect applied to the shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.HiddenShape3D.BevelBottom))]
- public BevelType? BevelBottom { get => _BevelBottom; set => UpdateField(ref _BevelBottom, value, nameof(BevelBottom)); }
- private BevelType? _BevelBottom;
+ public Bevel? BevelBottom { get => _BevelBottom; set => UpdateField(ref _BevelBottom, value, nameof(BevelBottom)); }
+ private Bevel? _BevelBottom;
  /// <summary>
  ///   Color used for the extrusion.
  /// </summary>

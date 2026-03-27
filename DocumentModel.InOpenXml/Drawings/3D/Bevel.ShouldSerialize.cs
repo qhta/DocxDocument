@@ -1,6 +1,6 @@
 namespace DocumentModel.Drawings;
 #pragma warning disable CS1591
-public partial class BevelType
+public partial class Bevel
 {
   public bool ShouldSerializeWidth() => Width is not null;
   public bool ShouldSerializeHeight() => Height is not null;

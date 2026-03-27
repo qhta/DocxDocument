@@ -15,7 +15,7 @@ public class ColorStyle //: OfficeArtExtendableElement
   /// <summary>
   /// Color used in the color style.
   /// </summary>
-  public DMD.ColorType? Color { get; set; }
+  public DMD.ColorClass? Color { get; set; }
   /// <summary>
   /// Collection of color style variations for additional customization.
   /// </summary>

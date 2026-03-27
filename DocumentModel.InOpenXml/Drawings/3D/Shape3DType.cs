@@ -33,14 +33,14 @@ public partial class Shape3DType : ModelElement<DXD.Shape3DType>, IExtendableEle
  ///   Top Bevel.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Shape3DType.BevelTop))]
- public BevelType? BevelTop { get => _BevelTop; set => UpdateField(ref _BevelTop, value, nameof(BevelTop)); }
- private BevelType? _BevelTop;
+ public Bevel? BevelTop { get => _BevelTop; set => UpdateField(ref _BevelTop, value, nameof(BevelTop)); }
+ private Bevel? _BevelTop;
  /// <summary>
  ///   Bottom Bevel.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Shape3DType.BevelBottom))]
- public BevelType? BevelBottom { get => _BevelBottom; set => UpdateField(ref _BevelBottom, value, nameof(BevelBottom)); }
- private BevelType? _BevelBottom;
+ public Bevel? BevelBottom { get => _BevelBottom; set => UpdateField(ref _BevelBottom, value, nameof(BevelBottom)); }
+ private Bevel? _BevelBottom;
  /// <summary>
  ///   Extrusion Color.
  /// </summary>
