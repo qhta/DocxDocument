@@ -8,11 +8,6 @@ namespace DocumentModel.Application;
 public partial interface ServerPolicy: InteropCollection<PolicyItem>
 {
   /// <summary>
-  /// Gets a policy item by name or index.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.serverpolicy.item?view=office-pia"/>
-  public PolicyItem this[object Index] { get; }
-  /// <summary>
   /// Gets the server policy ID.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.serverpolicy.id?view=office-pia"/>
