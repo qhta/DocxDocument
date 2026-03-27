@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [OpenXmlNotMapped]
 [JsonConverter(typeof(StringEnumConverter))]
-public enum Index
+public enum WordIndex
 {
   /// <summary>Standard index</summary>
   [OpenXmlEnumValue("Standard")]

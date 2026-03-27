@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.ShapeValues))]
-public enum Shapes
+public enum BuiltInShapeType
 {
   /// <summary>
   ///   Line Shape.
