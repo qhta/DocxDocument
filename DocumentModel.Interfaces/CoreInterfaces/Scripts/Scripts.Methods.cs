@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Reflection;
 
+using DocumentModel.HTML;
+
 namespace DocumentModel.Application;
 
 /// <summary>

@@ -1,3 +1,4 @@
+using DocumentModel.HTML;
 using DocumentModel.Wordprocessing;
 
 namespace DocumentModel.Wordprocessing;
@@ -427,7 +428,7 @@ public partial interface Range : InteropObject
   /// Returns a Scripts collection that represents the collection of HTML scripts in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.scripts?view=word-pia"/>
-  public Core.Scripts Scripts { get; }
+  public Scripts Scripts { get; }
 
   /// <summary>
   /// Returns or sets the character width of the specified range.

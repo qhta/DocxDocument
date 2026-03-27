@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace DocumentModel.Application;
+namespace DocumentModel.HTML;
 
 /// <summary>
 /// Represents the `HTMLProject` interface.

@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace DocumentModel.Application;
+namespace DocumentModel.HTML;
 
 /// <summary>
 /// Represents a top-level HTML project branch in Script Editor.

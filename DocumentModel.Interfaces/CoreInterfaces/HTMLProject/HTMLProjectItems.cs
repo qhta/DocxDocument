@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Reflection;
 
-namespace DocumentModel.Application;
+namespace DocumentModel.HTML;
 
 /// <summary>
 /// Represents a collection of HTML project items contained in an HTML project.

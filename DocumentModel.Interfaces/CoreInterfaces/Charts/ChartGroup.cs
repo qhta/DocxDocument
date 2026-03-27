@@ -11,7 +11,7 @@ public partial interface ChartGroup: InteropObject
   /// Gets or sets the `AxisGroup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.axisgroup?view=office-pia"/>
-  public int AxisGroup { get; set; }
+  public int XlAxisGroup { get; set; }
   /// <summary>
   /// Gets or sets the `DoughnutHoleSize` property.
   /// </summary>

@@ -11,7 +11,7 @@ public interface SoftEdgeFormat : InteropObject
   /// edge formatting. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.softedgeformat.type?view=word-pia"/>
-  public Core.SoftEdgeType Type { get; set; }
+  public Drw.SoftEdgeType Type { get; set; }
   /// <summary>
   /// Gets or sets a value that represents the length of the radius for a soft edge effect.
   /// </summary>

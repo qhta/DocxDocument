@@ -18,7 +18,7 @@ public partial interface ShadowFormat : InteropObject
   /// the shape has no fill.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.obscured?view=word-pia"/>
-  public Core.TriState Obscured { get; set; }
+  public TriState Obscured { get; set; }
 
   /// <summary>
   /// Returns or sets the horizontal offset (in points) of the shadow from the specified shape. A positive value
@@ -45,19 +45,19 @@ public partial interface ShadowFormat : InteropObject
   /// Returns or sets the shape shadow type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.type?view=word-pia"/>
-  public Core.ShadowType Type { get; set; }
+  public Drw.ShadowType Type { get; set; }
 
   /// <summary>
   /// True if the specified object, or the formatting applied to it, is visible.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.visible?view=word-pia"/>
-  public Core.TriState Visible { get; set; }
+  public TriState Visible { get; set; }
 
   /// <summary>
   /// Returns or sets a ShadowType that represents the type of shadow formatting to apply to a shape. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.style?view=word-pia"/>
-  public Core.ShadowStyle Style { get; set; }
+  public Drw.ShadowStyle Style { get; set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the blur level for a shadow format. Read/write.
@@ -76,5 +76,5 @@ public partial interface ShadowFormat : InteropObject
   /// Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.rotatewithshape?view=word-pia"/>
-  public Core.TriState RotateWithShape { get; set; }
+  public TriState RotateWithShape { get; set; }
 }

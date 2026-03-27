@@ -13,7 +13,7 @@ public partial interface Series: InteropObject
   /// Gets or sets the `AxisGroup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.axisgroup?view=office-pia"/>
-  public AxisGroup AxisGroup { get; set; }
+  public XlAxisGroup XlAxisGroup { get; set; }
   /// <summary>
   /// Gets the `Border` property.
   /// </summary>

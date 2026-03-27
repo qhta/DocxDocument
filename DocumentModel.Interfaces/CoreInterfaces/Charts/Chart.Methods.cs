@@ -90,7 +90,7 @@ public partial interface Chart: InteropObject
   /// <param name="AxisGroup">The `AxisGroup` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.axes?view=office-pia"/>
-  public object Axes(object Type, AxisGroup AxisGroup);
+  public object Axes(object Type, XlAxisGroup XlAxisGroup);
   /// <summary>
   /// Invokes `AutoFormat`.
   /// </summary>

@@ -38,13 +38,13 @@ public class OnOffJsonConverter : JsonConverter<OnOff>
   public override OnOff Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
   {
     if (reader.TokenType == JsonTokenType.Null)
-      return default;
+      return OnOff.Undefined;
 
     if (reader.TokenType == JsonTokenType.String)
     {
       var value = reader.GetString();
       if (string.IsNullOrEmpty(value))
-        return default;
+        return OnOff.Undefined;
 
       try
       {

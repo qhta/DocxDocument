@@ -16,7 +16,7 @@ public partial interface AxisTitle: ChartTitle
   /// Gets the `Characters` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxistitle.characters?view=office-pia"/>
-  public new App.Characters Characters { get; }
+  public new Characters Characters { get; }
   /// <summary>
   /// Gets the `Font` property.
   /// </summary>
