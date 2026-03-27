@@ -1,3 +1,5 @@
+using DocumentModel.Drawings.SmartArt;
+
 namespace DocumentModel.Drawings;
 
 /// <summary>
@@ -136,6 +138,6 @@ public partial interface Shape: InteropObject
   /// </summary>
   /// <param name="Layout">The `Layout` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.converttexttosmartart?view=office-pia"/>
-  public void ConvertTextToSmartArt(Core.SmartArtLayout Layout);
+  public void ConvertTextToSmartArt(SmartArtLayout Layout);
 }
 

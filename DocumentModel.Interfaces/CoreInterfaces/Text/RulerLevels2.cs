@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Reflection;
 
-namespace DocumentModel.Application;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Represents a collection of ruler outline levels.

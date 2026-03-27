@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Application;
 
 /// <summary>
 /// Provides the status of verifying whether the content of a document has changed.

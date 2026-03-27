@@ -20,7 +20,7 @@ public partial interface ShapeRange : InteropObject, InteropCollection<Shape>
   /// than a line or freeform drawing.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.autoshapetype?view=word-pia"/>
-  public Core.AutoShapeType AutoShapeType { get; set; }
+  public Drw.AutoShapeType AutoShapeType { get; set; }
 
   /// <summary>
   /// Returns a CalloutFormat object that contains callout formatting properties for the specified ShapeRange object
@@ -39,7 +39,7 @@ public partial interface ShapeRange : InteropObject, InteropCollection<Shape>
   /// Reserved for internal use.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.connector?view=word-pia"/>
-  public Core.TriState Connector { get; }
+  public TriState Connector { get; }
 
   /// <summary>
   /// Reserved for internal use.
@@ -70,7 +70,7 @@ public partial interface ShapeRange : InteropObject, InteropCollection<Shape>
   /// Indicates that a shape has been flipped horizontally.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.horizontalflip?view=word-pia"/>
-  public Core.TriState HorizontalFlip { get; }
+  public TriState HorizontalFlip { get; }
 
   /// <summary>
   /// Returns or sets a Single that represents the horizontal position, measured in points, of the specified shape
@@ -90,7 +90,7 @@ public partial interface ShapeRange : InteropObject, InteropCollection<Shape>
   /// the height and width of the shape independently of one another when you resize it.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.lockaspectratio?view=word-pia"/>
-  public Core.TriState LockAspectRatio { get; set; }
+  public TriState LockAspectRatio { get; set; }
 
   /// <summary>
   /// Returns or sets the name of the specified object.
@@ -153,13 +153,13 @@ public partial interface ShapeRange : InteropObject, InteropCollection<Shape>
   /// Returns the shape type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.type?view=word-pia"/>
-  public Core.ShapeType Type { get; }
+  public Drw.ShapeType Type { get; }
 
   /// <summary>
   /// True if the specified shape is flipped around the vertical axis.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.verticalflip?view=word-pia"/>
-  public Core.TriState VerticalFlip { get; }
+  public TriState VerticalFlip { get; }
 
   /// <summary>
   /// Returns the coordinates of the specified freeform drawing's vertices (and control points for Bézier curves) as
@@ -172,7 +172,7 @@ public partial interface ShapeRange : InteropObject, InteropCollection<Shape>
   /// True if the specified object, or the formatting applied to it, is visible.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.visible?view=word-pia"/>
-  public Core.TriState Visible { get; set; }
+  public TriState Visible { get; set; }
 
   /// <summary>
   /// Returns or sets the width of the specified object, in points.
@@ -233,19 +233,19 @@ public partial interface ShapeRange : InteropObject, InteropCollection<Shape>
   /// MsoTrue if a shape is a diagram.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.hasdiagram?view=word-pia"/>
-  public Core.TriState HasDiagram { get; }
+  public TriState HasDiagram { get; }
 
   /// <summary>
   /// Returns a Diagram object to which a diagram node belongs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.diagram?view=word-pia"/>
-  public Core.IMsoDiagram Diagram { get; }
+  public Diagram Diagram { get; }
 
   /// <summary>
   /// MsoTrue if a shape is a diagram node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.hasdiagramnode?view=word-pia"/>
-  public Core.TriState HasDiagramNode { get; }
+  public TriState HasDiagramNode { get; }
 
   /// <summary>
   /// Returns a DiagramNode object that represents a node in a diagram.
@@ -257,7 +257,7 @@ public partial interface ShapeRange : InteropObject, InteropCollection<Shape>
   /// True if all shapes in a shape range are child shapes of the same parent.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.child?view=word-pia"/>
-  public Core.TriState Child { get; }
+  public TriState Child { get; }
 
   /// <summary>
   /// Returns a Shape object that represents the common parent shape of a range of child shapes.
@@ -352,19 +352,19 @@ public partial interface ShapeRange : InteropObject, InteropCollection<Shape>
   /// Returns a TextFrame2 object that contains the text for the specified range of shapes. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.textframe2?view=word-pia"/>
-  public Core.TextFrame2 TextFrame2 { get; }
+  public Drw.TextFrame2 TextFrame2 { get; }
 
   /// <summary>
   /// Gets or sets the shape style for the shapes in the specified shape range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.shapestyle?view=word-pia"/>
-  public Core.ShapeStyleIndex ShapeStyle { get; set; }
+  public Drw.ShapeStyleIndex ShapeStyle { get; set; }
 
   /// <summary>
   /// Gets or sets the background style of the shapes in the specified shape range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.backgroundstyle?view=word-pia"/>
-  public Core.BackgroundStyleIndex BackgroundStyle { get; set; }
+  public Drw.BackgroundStyleIndex BackgroundStyle { get; set; }
 
   /// <summary>
   /// Gets or sets a string that contains a title for the shapes in the specified shape range.

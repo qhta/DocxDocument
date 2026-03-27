@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Reflection;
 
+using DocumentModel.Drawings.Charts;
+using DocumentModel.Drawings.Diagrams;
+
 namespace DocumentModel.Drawings;
 
 /// <summary>
@@ -158,7 +161,7 @@ public partial interface ShapeRange: InteropCollection<Shape>
   /// Gets the `Script` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.script?view=office-pia"/>
-  public Script Script { get; }
+  public HTML.Script Script { get; }
   /// <summary>
   /// Gets or sets the `AlternativeText` property.
   /// </summary>

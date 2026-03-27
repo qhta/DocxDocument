@@ -58,7 +58,7 @@ public partial interface _Application
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_filedialog?view=word-pia"/>
-  public Core.FileDialog FileDialog(Core.FileDialogType FileDialogType);
+  public App.FileDialog FileDialog(App.FileDialogType FileDialogType);
 
   /// <summary>
   /// Quits Microsoft Word and optionally saves or routes the open documents.

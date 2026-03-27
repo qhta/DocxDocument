@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace DocumentModel.Application;
+namespace DocumentModel.HTML;
 
 /// <summary>
 /// Represents a block of HTML script in an Office document.

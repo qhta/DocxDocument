@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+namespace DocumentModel.CustomXml;
 
 /// <summary>
 /// Indicates how validation errors will be cleared or generated.

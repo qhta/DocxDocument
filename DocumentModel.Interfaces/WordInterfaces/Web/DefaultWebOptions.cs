@@ -60,7 +60,7 @@ public interface DefaultWebOptions : InteropObject
   /// Gets or sets the target screen size for saved web pages.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.screensize?view=word-pia"/>
-  public Core.ScreenSize ScreenSize { get; set; }
+  public Drw.ScreenSize ScreenSize { get; set; }
   /// <summary>
   /// Gets or sets the target pixels-per-inch value for saved web pages.
   /// </summary>
@@ -70,7 +70,7 @@ public interface DefaultWebOptions : InteropObject
   /// Gets or sets the default encoding used when saving web pages.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.encoding?view=word-pia"/>
-  public Core.Encoding Encoding { get; set; }
+  public Encoding Encoding { get; set; }
   /// <summary>
   /// Gets or sets a value indicating whether web pages are always saved in the default encoding.
   /// </summary>
@@ -80,7 +80,7 @@ public interface DefaultWebOptions : InteropObject
   /// Gets the web page font settings.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.fonts?view=word-pia"/>
-  public Core.WebPageFonts Fonts { get; }
+  public App.WebPageFonts Fonts { get; }
   /// <summary>
   /// Gets the suffix used for the folder that contains supporting files for saved web pages.
   /// </summary>
@@ -90,7 +90,7 @@ public interface DefaultWebOptions : InteropObject
   /// Gets or sets the target browser used for web page compatibility.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.targetbrowser?view=word-pia"/>
-  public Core.TargetBrowser TargetBrowser { get; set; }
+  public HTML.TargetBrowser TargetBrowser { get; set; }
   /// <summary>
   /// Gets or sets a value indicating whether new web pages are saved as single-file web archives.
   /// </summary>

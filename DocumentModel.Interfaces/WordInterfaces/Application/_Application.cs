@@ -1,3 +1,5 @@
+using DocumentModel.Drawings.SmartArt;
+
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
@@ -100,7 +102,7 @@ public partial interface _Application : InteropObject
   /// Returns a Assistant object that represents the Microsoft Office Assistant.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.assistant?view=word-pia"/>
-  public Core.Assistant Assistant { get; }
+  public App.Assistant Assistant { get; }
 
   /// <summary>
   /// Returns a Browser object that represents the Select Browse Object tool on the vertical scroll bar.
@@ -262,7 +264,7 @@ public partial interface _Application : InteropObject
   /// Returns a CommandBars collection that represents the menu bar and all the toolbars in Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.commandbars?view=word-pia"/>
-  public Core.CommandBars CommandBars { get; }
+  public App.CommandBars CommandBars { get; }
 
   /// <summary>
   /// Returns a VBE object that represents the Visual Basic Editor.
@@ -436,7 +438,7 @@ public partial interface _Application : InteropObject
   /// Returns a FileSearch object that can be used to search for files using either an absolute or relative path.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.filesearch?view=word-pia"/>
-  public Core.FileSearch FileSearch { get; }
+  public App.FileSearch FileSearch { get; }
 
   /// <summary>
   /// Returns the mail system (or systems) installed on the host machine.
@@ -490,13 +492,13 @@ public partial interface _Application : InteropObject
   /// Returns an LanguageID constant that represents the language selected for the Microsoft Word user interface.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.language?view=word-pia"/>
-  public Core.LanguageID Language { get; }
+  public LanguageID Language { get; }
 
   /// <summary>
   /// Returns a reference to the COMAddIns collection that represents all the Component Object Model (COM) add-ins currently loaded in Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.comaddins?view=word-pia"/>
-  public Core.COMAddIns COMAddIns { get; }
+  public App.COMAddIns COMAddIns { get; }
 
   /// <summary>
   /// Determines if Microsoft Word automatically detects the language you are using as you type. Returns True if Microsoft Word automatically detects the language you are using as you type, and False if it does not automatically detect the language.
@@ -508,7 +510,7 @@ public partial interface _Application : InteropObject
   /// Returns a LanguageSettings object, which contains information about the language settings in Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.languagesettings?view=word-pia"/>
-  public Core.LanguageSettings LanguageSettings { get; }
+  public App.LanguageSettings LanguageSettings { get; }
 
   /// <summary>
   /// Reserved for internal use.
@@ -520,19 +522,19 @@ public partial interface _Application : InteropObject
   /// Returns a AnswerWizard object that contains the files used by the online Help search engine.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.answerwizard?view=word-pia"/>
-  public Core.AnswerWizard AnswerWizard { get; }
+  public App.AnswerWizard AnswerWizard { get; }
 
   /// <summary>
   /// Returns or sets how Microsoft Word handles calls to methods and properties that require features not yet installed.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.featureinstall?view=word-pia"/>
-  public Core.FeatureInstall FeatureInstall { get; set; }
+  public App.FeatureInstall FeatureInstall { get; set; }
 
   /// <summary>
   /// Returns or sets a AutomationSecurity constant that represents the security setting Microsoft Word uses when programmatically opening files.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.automationsecurity?view=word-pia"/>
-  public Core.AutomationSecurity AutomationSecurity { get; set; }
+  public App.AutomationSecurity AutomationSecurity { get; set; }
 
   /// <summary>
   /// Returns or sets a String that represents the document template to use when sending e-mail messages.
@@ -550,7 +552,7 @@ public partial interface _Application : InteropObject
   /// Returns a NewFile object that represents a document listed on the New Document task pane.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.newdocument?view=word-pia"/>
-  public Core.NewFile NewDocument { get; }
+  public App.NewFile NewDocument { get; }
 
   /// <summary>
   /// Determines if the Task Pane will be displayed when starting Microsoft Word.
@@ -646,7 +648,7 @@ public partial interface _Application : InteropObject
   /// Returns an Microsoft.Office.Core.IAssistance object that represents the Microsoft Office Help Viewer. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.assistance?view=word-pia"/>
-  public Core.IAssistance Assistance { get; }
+  public App.IAssistance Assistance { get; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether Microsoft Office Word opens e-mail attachments in Reading mode. Read/write.
@@ -670,19 +672,19 @@ public partial interface _Application : InteropObject
   /// Gets a SmartArtLayouts object that represents the set of SmartArt layouts that are currently loaded in the application.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.smartartlayouts?view=word-pia"/>
-  public Core.SmartArtLayouts SmartArtLayouts { get; }
+  public SmartArtLayouts SmartArtLayouts { get; }
 
   /// <summary>
   /// Gets a SmartArtQuickStyles object that represents the set of SmartArt styles that are currently loaded in the application.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.smartartquickstyles?view=word-pia"/>
-  public Core.SmartArtQuickStyles SmartArtQuickStyles { get; }
+  public SmartArtQuickStyles SmartArtQuickStyles { get; }
 
   /// <summary>
   /// Gets a SmartArtColors object that represents the set of color styles that are currently loaded in the application.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.smartartcolors?view=word-pia"/>
-  public Core.SmartArtColors SmartArtColors { get; }
+  public SmartArtColors SmartArtColors { get; }
 
   /// <summary>
   /// Gets an UndoRecord object that provides a custom entry point into the undo stack.
@@ -694,7 +696,7 @@ public partial interface _Application : InteropObject
   /// Gets a PickerDialog object that provides the functionality to select people or data in a dialog box.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.pickerdialog?view=word-pia"/>
-  public Core.PickerDialog PickerDialog { get; }
+  public App.PickerDialog PickerDialog { get; }
 
   /// <summary>
   /// Gets a ProtectedViewWindows collection that represents all protected view windows.
@@ -718,7 +720,7 @@ public partial interface _Application : InteropObject
   /// Gets or sets how Word will validate files before opening them.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.filevalidation?view=word-pia"/>
-  public Core.FileValidationMode FileValidation { get; set; }
+  public App.FileValidationMode FileValidation { get; set; }
 
   /// <summary>
   /// Returns or sets a Boolean ( bool in C#) that specifies whether charts use cell-reference data-point tracking. Read-write.

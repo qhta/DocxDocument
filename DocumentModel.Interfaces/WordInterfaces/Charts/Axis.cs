@@ -1,4 +1,6 @@
-using DocumentModel.Interop.Core;
+
+using DocumentModel.Drawings.Charts;
+using DocumentModel.Drawings.Diagrams;
 
 namespace DocumentModel.Wordprocessing;
 
@@ -17,8 +19,8 @@ public partial interface Axis : InteropObject
   /// <summary>
   /// Gets the axis group.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.axisgroup?view=word-pia"/>
-  public AxisGroup AxisGroup { get; }
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.XlAxisGroup?view=word-pia"/>
+  public XlAxisGroup XlAxisGroup { get; }
 
   /// <summary>
   /// Gets the axis title.

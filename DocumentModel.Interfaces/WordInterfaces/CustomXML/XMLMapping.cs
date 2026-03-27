@@ -1,3 +1,5 @@
+using DocumentModel.CustomXml;
+
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
@@ -20,14 +22,14 @@ public partial interface XMLMapping : InteropObject
   /// document maps.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlmapping.customxmlpart?view=word-pia"/>
-  public Core.CustomXMLPart CustomXMLPart { get; }
+  public CustomXMLPart CustomXMLPart { get; }
 
   /// <summary>
   /// Returns a CustomXMLNode object that represents the custom XML node in the data store to which the content
   /// control in the document maps.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlmapping.customxmlnode?view=word-pia"/>
-  public Core.CustomXMLNode CustomXMLNode { get; }
+  public CustomXMLNode CustomXMLNode { get; }
 
   /// <summary>
   /// Returns a String that represents the XPath for the XML mapping, which evaluates to the currently mapped XML

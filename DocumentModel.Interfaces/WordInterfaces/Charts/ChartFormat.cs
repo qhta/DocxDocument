@@ -1,5 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
+using DocumentModel.Drawings;
+
 /// <summary>
 /// Provides access to the Office Art formatting for chart elements.
 /// </summary>
@@ -40,7 +42,7 @@ public interface ChartFormat : InteropObject
   /// Gets the `TextFrame2` object for the chart element.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartformat.textframe2?view=word-pia"/>
-  public Core.TextFrame2 TextFrame2 { get; }
+  public TextFrame2 TextFrame2 { get; }
   /// <summary>
   /// Gets the 3-D formatting for the chart element.
   /// </summary>
@@ -55,6 +57,6 @@ public interface ChartFormat : InteropObject
   /// Gets or sets the AutoShape type for the chart element.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartformat.autoshapetype?view=word-pia"/>
-  public Core.AutoShapeType AutoShapeType { get; set; }
+  public AutoShapeType AutoShapeType { get; set; }
 
 }

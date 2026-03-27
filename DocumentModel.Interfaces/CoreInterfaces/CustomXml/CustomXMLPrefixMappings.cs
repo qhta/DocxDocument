@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace DocumentModel.Application;
+namespace DocumentModel.CustomXml;
 
 /// <summary>
 /// Represents the `CustomXMLPrefixMappings` interface.

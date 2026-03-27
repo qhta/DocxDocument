@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Application;
+namespace DocumentModel.CustomXml;
 
 /// <summary>
 /// Events interface for CustomXMLPart object events.

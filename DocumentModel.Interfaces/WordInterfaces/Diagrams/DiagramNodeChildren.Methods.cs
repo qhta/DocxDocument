@@ -1,3 +1,5 @@
+using DocumentModel.Drawings.Diagrams;
+
 namespace DocumentModel.Wordprocessing;
 
 /// <remarks>
@@ -16,5 +18,5 @@ public partial interface DiagramNodeChildren: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnodechildren.addnode?view=word-pia"/>
-  public DiagramNode AddNode(object Index, Core.DiagramNodeType NodeType);
+  public DiagramNode AddNode(object Index, DiagramNodeType NodeType);
 }

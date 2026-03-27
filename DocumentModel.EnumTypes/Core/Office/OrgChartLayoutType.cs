@@ -1,4 +1,4 @@
-namespace DocumentModel.Diagrams;
+namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Indicates how to format the child nodes in an organization chart.

@@ -1,4 +1,4 @@
-namespace DocumentModel.Application;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Represents bullet formatting.

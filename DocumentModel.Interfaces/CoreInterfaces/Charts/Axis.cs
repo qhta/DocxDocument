@@ -16,7 +16,7 @@ public partial interface Axis : InteropObject
   /// Gets the `AxisGroup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.axisgroup?view=office-pia"/>
-  public AxisGroup AxisGroup { get; }
+  public XlAxisGroup XlAxisGroup { get; }
   /// <summary>
   /// Gets the `AxisTitle` property.
   /// </summary>
@@ -156,7 +156,7 @@ public partial interface Axis : InteropObject
   /// Gets or sets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.type?view=office-pia"/>
-  public AxisType Type { get; set; }
+  public XlAxisType Type { get; set; }
   /// <summary>
   /// Gets or sets the `BaseUnit` property.
   /// </summary>

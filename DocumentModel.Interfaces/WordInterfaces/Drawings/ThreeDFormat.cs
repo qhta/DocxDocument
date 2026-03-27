@@ -1,4 +1,6 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Wordprocessing.Drawings;
+
+using DocumentModel.Drawings;
 
 /// <summary>
 /// Represents a shape's three-dimensional formatting.
@@ -26,7 +28,7 @@ public partial interface ThreeDFormat : InteropObject
   /// color is independent of the shape's fill.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.extrusioncolortype?view=word-pia"/>
-  public Core.ExtrusionColorType ExtrusionColorType { get; set; }
+  public ExtrusionColorType ExtrusionColorType { get; set; }
 
   /// <summary>
   /// MsoTrue if the extrusion appears in perspective— that is, if the walls of the extrusion narrow toward a
@@ -34,38 +36,38 @@ public partial interface ThreeDFormat : InteropObject
   /// don't narrow toward a vanishing point.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.perspective?view=word-pia"/>
-  public Core.TriState Perspective { get; set; }
+  public TriState Perspective { get; set; }
 
   /// <summary>
   /// Returns the direction taken by the extrusion's sweep path leading away from the extruded shape (the front face
   /// of the extrusion).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetextrusiondirection?view=word-pia"/>
-  public Core.PresetExtrusionDirection PresetExtrusionDirection { get; }
+  public PresetExtrusionDirection PresetExtrusionDirection { get; }
 
   /// <summary>
   /// Returns or sets the position of the light source relative to the extrusion.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetlightingdirection?view=word-pia"/>
-  public Core.PresetLightingDirection PresetLightingDirection { get; set; }
+  public PresetLightingDirection PresetLightingDirection { get; set; }
 
   /// <summary>
   /// Returns or sets the intensity of the extrusion lighting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetlightingsoftness?view=word-pia"/>
-  public Core.PresetLightingSoftness PresetLightingSoftness { get; set; }
+  public PresetLightingSoftness PresetLightingSoftness { get; set; }
 
   /// <summary>
   /// Returns or sets the extrusion surface material.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetmaterial?view=word-pia"/>
-  public Core.PresetMaterial PresetMaterial { get; set; }
+  public PresetMaterial PresetMaterial { get; set; }
 
   /// <summary>
   /// Returns the preset extrusion format.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetthreedformat?view=word-pia"/>
-  public Core.PresetThreeDFormat PresetThreeDFormat { get; }
+  public PresetThreeDFormat PresetThreeDFormat { get; }
 
   /// <summary>
   /// Returns or sets the rotation of the extruded shape around the x-axis in degrees. Can be a value from – 90
@@ -85,13 +87,13 @@ public partial interface ThreeDFormat : InteropObject
   /// True if the specified object, or the formatting applied to it, is visible.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.visible?view=word-pia"/>
-  public Core.TriState Visible { get; set; }
+  public TriState Visible { get; set; }
 
   /// <summary>
   /// Returns or sets an BevelType constant that represents the lighting preset. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetlighting?view=word-pia"/>
-  public Core.LightRigType PresetLighting { get; set; }
+  public LightRigType PresetLighting { get; set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the z-axis for the shape. Read/write.
@@ -103,7 +105,7 @@ public partial interface ThreeDFormat : InteropObject
   /// Returns or sets an PresetCamera constant that represents the bevel type for the top bevel. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.beveltoptype?view=word-pia"/>
-  public Core.BevelType BevelTopType { get; set; }
+  public BevelType BevelTopType { get; set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the inset size for the top bevel. Read/write.
@@ -121,7 +123,7 @@ public partial interface ThreeDFormat : InteropObject
   /// Returns or sets an PresetCamera constant that represents the bevel type for the bottom bevel. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.bevelbottomtype?view=word-pia"/>
-  public Core.BevelType BevelBottomType { get; set; }
+  public BevelType BevelBottomType { get; set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the inset size for the bottom bevel. Read/write.
@@ -139,7 +141,7 @@ public partial interface ThreeDFormat : InteropObject
   /// Returns an PresetCamera constant that represents the camera presets. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetcamera?view=word-pia"/>
-  public Core.PresetCamera PresetCamera { get; }
+  public PresetCamera PresetCamera { get; }
 
   /// <summary>
   /// Returns or sets a Single that represents z-axis rotation of the camera. Read/write.
@@ -170,7 +172,7 @@ public partial interface ThreeDFormat : InteropObject
   /// rotates the text. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.projecttext?view=word-pia"/>
-  public Core.TriState ProjectText { get; set; }
+  public TriState ProjectText { get; set; }
 
   /// <summary>
   /// Returns or sets a Single that represents angle of the lighting. Read/write.

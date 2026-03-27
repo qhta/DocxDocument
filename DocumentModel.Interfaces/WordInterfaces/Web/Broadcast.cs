@@ -16,7 +16,7 @@ public partial interface Broadcast : InteropObject
   /// Gets the current state of the broadcast session.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.broadcast.state?view=word-pia"/>
-  public Core.BroadcastState State { get; }
+  public App.BroadcastState State { get; }
 
   /// <summary>
   /// Gets the capabilities available for the broadcast session.

@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Diagrams;
+namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Specifies the type of diagram.

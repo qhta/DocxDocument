@@ -1,3 +1,5 @@
+using DocumentModel.Drawings.Diagrams;
+
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
@@ -34,7 +36,7 @@ public partial interface DiagramNode : InteropObject
   /// Gets or sets the layout type for this diagram node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.layout?view=word-pia"/>
-  public Core.OrgChartLayoutType Layout { get; set; }
+  public OrgChartLayoutType Layout { get; set; }
 
   /// <summary>
   /// Gets the shape that contains text for this diagram node.

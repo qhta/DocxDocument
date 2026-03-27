@@ -1,3 +1,4 @@
+using DocumentModel.CustomXml;
 using DocumentModel.Wordprocessing;
 
 namespace DocumentModel.Wordprocessing;
@@ -652,7 +653,7 @@ public partial interface _Document: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.getworkflowtasks?view=word-pia"/>
-  public Core.WorkflowTasks GetWorkflowTasks();
+  public App.WorkflowTasks GetWorkflowTasks();
 
   /// <summary>
   /// Returns the workflow templates attached to a document.
@@ -661,7 +662,7 @@ public partial interface _Document: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.getworkflowtemplates?view=word-pia"/>
-  public Core.WorkflowTemplates GetWorkflowTemplates();
+  public App.WorkflowTemplates GetWorkflowTemplates();
 
   /// <summary>
   /// Returns a Range object that represents the start position of the specified item.
@@ -924,7 +925,7 @@ public partial interface _Document: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.reloadas?view=word-pia"/>
-  public void ReloadAs(Core.Encoding Encoding);
+  public void ReloadAs(Encoding Encoding);
 
   /// <summary>
   /// Removes sensitive information, properties, comments, and other metadata from a document.
@@ -1247,7 +1248,7 @@ public partial interface _Document: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectlinkedcontrols?view=word-pia"/>
-  public ContentControls SelectLinkedControls(Core.CustomXMLNode Node);
+  public ContentControls SelectLinkedControls(CustomXMLNode Node);
 
   /// <summary>
   /// Returns an XMLNodes collection that represents all the specified nodes in the order in which they appear in the document.
@@ -1281,7 +1282,7 @@ public partial interface _Document: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectunlinkedcontrols?view=word-pia"/>
-  public ContentControls SelectUnlinkedControls(Core.CustomXMLPart Stream);
+  public ContentControls SelectUnlinkedControls(CustomXMLPart Stream);
 
   /// <summary>
   /// Sends the specified document as a fax, without any user interaction.

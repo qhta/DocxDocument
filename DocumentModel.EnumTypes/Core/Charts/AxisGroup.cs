@@ -8,7 +8,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlaxisgroup?view=office-pia` for Office interop details.
 /// </remarks>
-public enum AxisGroup
+public enum XlAxisGroup
 {
   /// <summary>
   /// Primary axis group.

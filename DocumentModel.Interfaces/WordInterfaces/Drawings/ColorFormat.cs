@@ -22,7 +22,7 @@ public partial interface ColorFormat : InteropObject
   /// Gets the type of color.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.colorformat.type?view=word-pia"/>
-  public Core.ColorType Type { get; }
+  public ColorType Type { get; }
 
   /// <summary>
   /// Gets or sets the name of the color.
@@ -40,7 +40,7 @@ public partial interface ColorFormat : InteropObject
   /// Gets or sets a value indicating whether overprint is enabled for the color.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.colorformat.overprint?view=word-pia"/>
-  public Core.TriState OverPrint { get; set; }
+  public TriState OverPrint { get; set; }
 
   /// <summary>
   /// Gets or sets the cyan component of the color.

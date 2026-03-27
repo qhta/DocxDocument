@@ -1,7 +1,7 @@
 
 using DocumentModel.Wordprocessing;
 
-namespace DocumentModel.Application;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Contains font attributes for an object, such as name, size, style, and color.

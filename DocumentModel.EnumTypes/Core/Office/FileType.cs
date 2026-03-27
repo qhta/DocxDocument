@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Drawings;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Specifies a type of file.

@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Drawings;
+namespace DocumentModel.HTML;
 
 /// <summary>
 /// Specifies the current state of an HTMLProject object.

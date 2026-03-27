@@ -37,7 +37,7 @@ public partial interface MetaProperty: InteropObject
   /// Gets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.type?view=office-pia"/>
-  public MetaPropertyType Type { get; }
+  public Drw.MetaPropertyType Type { get; }
   /// <summary>
   /// Gets the `ValidationError` property.
   /// </summary>

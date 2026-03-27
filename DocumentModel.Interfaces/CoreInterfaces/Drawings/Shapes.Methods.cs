@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Reflection;
 
+using DocumentModel.Drawings.Charts;
+using DocumentModel.Drawings.Diagrams;
+using DocumentModel.Drawings.SmartArt;
 using DocumentModel.Wordprocessing;
 
 namespace DocumentModel.Drawings;

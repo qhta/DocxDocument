@@ -1,3 +1,5 @@
+using DocumentModel.Drawings.SmartArt;
+using DocumentModel.HTML;
 using DocumentModel.Wordprocessing.Drawings;
 
 namespace DocumentModel.Wordprocessing;
@@ -21,7 +23,7 @@ public partial interface Shape : InteropObject
   /// line or freeform drawing.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.autoshapetype?view=word-pia"/>
-  public Core.AutoShapeType AutoShapeType { get; set; }
+  public Drw.AutoShapeType AutoShapeType { get; set; }
 
   /// <summary>
   /// Returns a CalloutFormat object that contains callout formatting properties for the specified shape.
@@ -39,7 +41,7 @@ public partial interface Shape : InteropObject
   /// Reserved for internal use.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.connector?view=word-pia"/>
-  public Core.TriState Connector { get; }
+  public TriState Connector { get; }
 
   /// <summary>
   /// Reserved for internal use.
@@ -69,7 +71,7 @@ public partial interface Shape : InteropObject
   /// Indicates that a shape has been flipped horizontally.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.horizontalflip?view=word-pia"/>
-  public Core.TriState HorizontalFlip { get; }
+  public TriState HorizontalFlip { get; }
 
   /// <summary>
   /// Returns or sets a Single that represents the horizontal position, measured in points, of the specified shape
@@ -89,7 +91,7 @@ public partial interface Shape : InteropObject
   /// or if it retains its original proportions.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.lockaspectratio?view=word-pia"/>
-  public Core.TriState LockAspectRatio { get; set; }
+  public TriState LockAspectRatio { get; set; }
 
   /// <summary>
   /// Returns or sets the name of the specified object.
@@ -150,13 +152,13 @@ public partial interface Shape : InteropObject
   /// Returns the shape type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.type?view=word-pia"/>
-  public Core.ShapeType Type { get; }
+  public Drw.ShapeType Type { get; }
 
   /// <summary>
   /// Determines if the specified shape is flipped around the vertical axis.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.verticalflip?view=word-pia"/>
-  public Core.TriState VerticalFlip { get; }
+  public TriState VerticalFlip { get; }
 
   /// <summary>
   /// Returns the coordinates of the specified freeform drawing's vertices (and control points for Bézier curves) as
@@ -169,7 +171,7 @@ public partial interface Shape : InteropObject
   /// Determines if the specified object, or the formatting applied to it, is visible.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.visible?view=word-pia"/>
-  public Core.TriState Visible { get; set; }
+  public TriState Visible { get; set; }
 
   /// <summary>
   /// Returns or sets the width of the specified object, in points.
@@ -242,25 +244,25 @@ public partial interface Shape : InteropObject
   /// Returns a Script object, which represents a block of script or code on the specified Web page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.script?view=word-pia"/>
-  public Core.Script Script { get; }
+  public Script Script { get; }
 
   /// <summary>
   /// Determines if a shape is a diagram.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.hasdiagram?view=word-pia"/>
-  public Core.TriState HasDiagram { get; }
+  public TriState HasDiagram { get; }
 
   /// <summary>
   /// Returns a Diagram object to which a diagram node belongs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.diagram?view=word-pia"/>
-  public Core.IMsoDiagram Diagram { get; }
+  public Diagram Diagram { get; }
 
   /// <summary>
   /// Determines if a shape is a diagram node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.hasdiagramnode?view=word-pia"/>
-  public Core.TriState HasDiagramNode { get; }
+  public TriState HasDiagramNode { get; }
 
   /// <summary>
   /// Returns a DiagramNode object that represents a node in a diagram.
@@ -272,7 +274,7 @@ public partial interface Shape : InteropObject
   /// Determines if the shape is a child shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.child?view=word-pia"/>
-  public Core.TriState Child { get; }
+  public TriState Child { get; }
 
   /// <summary>
   /// Returns a Shape object that represents the common parent shape of a child shape.
@@ -309,7 +311,7 @@ public partial interface Shape : InteropObject
   /// True if the specified shape has a chart. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.haschart?view=word-pia"/>
-  public Core.TriState HasChart { get; }
+  public TriState HasChart { get; }
 
   /// <summary>
   /// Returns a Chart object that represents a chart within the collection of shapes in a document. Read-only.
@@ -377,31 +379,31 @@ public partial interface Shape : InteropObject
   /// Returns a TextFrame2 object that contains the text for the specified shape. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.textframe2?view=word-pia"/>
-  public Core.TextFrame2 TextFrame2 { get; }
+  public Drw.TextFrame2 TextFrame2 { get; }
 
   /// <summary>
   /// Gets True if there is a SmartArt diagram present on the shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.hassmartart?view=word-pia"/>
-  public Core.TriState HasSmartArt { get; }
+  public TriState HasSmartArt { get; }
 
   /// <summary>
   /// Gets a SmartArt object that provides a way to work with the SmartArt associated with the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.smartart?view=word-pia"/>
-  public Core.SmartArt SmartArt { get; }
+  public SmartArt SmartArt { get; }
 
   /// <summary>
   /// Gets or sets the shape style for the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.shapestyle?view=word-pia"/>
-  public Core.ShapeStyleIndex ShapeStyle { get; set; }
+  public Drw.ShapeStyleIndex ShapeStyle { get; set; }
 
   /// <summary>
   /// Gets or sets the background style of the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.backgroundstyle?view=word-pia"/>
-  public Core.BackgroundStyleIndex BackgroundStyle { get; set; }
+  public Drw.BackgroundStyleIndex BackgroundStyle { get; set; }
 
   /// <summary>
   /// Gets or sets a string that contains a title for the specified shape.

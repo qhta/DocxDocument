@@ -8,7 +8,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlaxistype?view=office-pia` for Office interop details.
 /// </remarks>
-public enum AxisType
+public enum XlAxisType
 {
   /// <summary>
   /// Axis displays categories.

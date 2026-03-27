@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Drawings;
+namespace DocumentModel.HTML;
 
 /// <summary>
 /// Specifies the view in which an HTML project or project item is opened.

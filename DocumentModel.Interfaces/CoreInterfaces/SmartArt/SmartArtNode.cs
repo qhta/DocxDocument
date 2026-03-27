@@ -1,5 +1,7 @@
 
-namespace DocumentModel.Application;
+using DocumentModel.Drawings.Diagrams;
+
+namespace DocumentModel.Drawings.SmartArt;
 
 /// <summary>
 /// Represents the `SmartArtNode` interface.

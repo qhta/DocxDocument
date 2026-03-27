@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace DocumentModel.Application;
+namespace DocumentModel.HTML;
 
 /// <summary>
 /// Represents an individual project item branch in the Project Explorer in the Microsoft Script Editor.

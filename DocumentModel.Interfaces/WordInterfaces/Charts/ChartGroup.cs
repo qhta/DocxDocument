@@ -1,4 +1,4 @@
-using DocumentModel.Interop.Core;
+using DocumentModel.Drawings.Charts;
 
 namespace DocumentModel.Wordprocessing;
 
@@ -11,8 +11,8 @@ public partial interface ChartGroup : InteropObject
   /// <summary>
   /// Gets or sets the axis group for the chart group.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup.axisgroup?view=word-pia"/>
-  public AxisGroup AxisGroup { get; set; }
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup.XlAxisGroup?view=word-pia"/>
+  public XlAxisGroup XlAxisGroup { get; set; }
 
   /// <summary>
   /// Gets or sets the size of the hole in a doughnut chart group, as a percentage.

@@ -1,3 +1,5 @@
+using DocumentModel.CustomXml;
+using DocumentModel.HTML;
 using DocumentModel.Wordprocessing;
 
 namespace DocumentModel.Wordprocessing;
@@ -79,7 +81,7 @@ public partial interface _Document : InteropObject
   /// Returns a DocumentProperties collection that represents all the built-in document properties for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.builtindocumentproperties?view=word-pia"/>
-  public Core.DocumentProperties BuiltInDocumentProperties { get; }
+  public App.DocumentProperties BuiltInDocumentProperties { get; }
 
   /// <summary>
   /// Returns a Characters collection that represents the characters in a document.
@@ -121,7 +123,7 @@ public partial interface _Document : InteropObject
   /// Returns a CommandBars collection that represents the menu bar and all the toolbars in Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.commandbars?view=word-pia"/>
-  public Core.CommandBars CommandBars { get; }
+  public App.CommandBars CommandBars { get; }
 
   /// <summary>
   /// Returns a Comments collection that represents all the comments in the specified document.
@@ -163,7 +165,7 @@ public partial interface _Document : InteropObject
   /// Returns the metadata stored in a document, such as author name, subject, and company. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.contenttypeproperties?view=word-pia"/>
-  public Core.MetaProperties ContentTypeProperties { get; }
+  public App.MetaProperties ContentTypeProperties { get; }
 
   /// <summary>
   /// Returns a random number that Word assigns to changes in a document. Read-only.
@@ -175,13 +177,13 @@ public partial interface _Document : InteropObject
   /// Returns a DocumentProperties collection that represents all the custom document properties for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.customdocumentproperties?view=word-pia"/>
-  public Core.DocumentProperties CustomDocumentProperties { get; }
+  public App.DocumentProperties CustomDocumentProperties { get; }
 
   /// <summary>
   /// Returns a CustomXMLParts#SameCHM collection that represents the custom XML in the XML data store. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.customxmlparts?view=word-pia"/>
-  public Core.CustomXMLParts CustomXMLParts { get; }
+  public CustomXMLParts CustomXMLParts { get; }
 
   /// <summary>
   /// Returns a TableStyle that represents the table style that is applied to all newly created tables in a document.
@@ -223,19 +225,19 @@ public partial interface _Document : InteropObject
   /// Returns a DocumentInspectors collection that enables you to locate hidden personal information, such as author name, company name, and revision date. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.documentinspectors?view=word-pia"/>
-  public Core.DocumentInspectors DocumentInspectors { get; }
+  public App.DocumentInspectors DocumentInspectors { get; }
 
   /// <summary>
   /// Returns a DocumentLibraryVersions collection that represents the collection of versions of a shared document that has versioning enabled and that is stored in a document library on a server.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.documentlibraryversions?view=word-pia"/>
-  public Core.DocumentLibraryVersions DocumentLibraryVersions { get; }
+  public App.DocumentLibraryVersions DocumentLibraryVersions { get; }
 
   /// <summary>
   /// Returns an OfficeTheme object that represents the Microsoft Office theme applied to a document. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.documenttheme?view=word-pia"/>
-  public Core.OfficeTheme DocumentTheme { get; }
+  public Drw.OfficeTheme DocumentTheme { get; }
 
   /// <summary>
   /// Determines if Microsoft Word embeds common system fonts.
@@ -481,7 +483,7 @@ public partial interface _Document : InteropObject
   /// Returns an HTMLProject object in the specified document that represents a top-level project branch, as in the Project Explorer of the Microsoft Script Editor.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.htmlproject?view=word-pia"/>
-  public Core.HTMLProject HTMLProject { get; }
+  public HTMLProject HTMLProject { get; }
 
   /// <summary>
   /// Returns a Hyperlinks collection that represents all the hyperlinks in the specified document, range, or selection.
@@ -589,7 +591,7 @@ public partial interface _Document : InteropObject
   /// Returns an MsoEnvelope object that represents an e-mail header for a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.mailenvelope?view=word-pia"/>
-  public Core.MsoEnvelope MailEnvelope { get; }
+  public App.MsoEnvelope MailEnvelope { get; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
@@ -691,7 +693,7 @@ public partial interface _Document : InteropObject
   /// Returns the encoding used to open the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.openencoding?view=word-pia"/>
-  public Core.Encoding OpenEncoding { get; }
+  public Encoding OpenEncoding { get; }
 
   /// <summary>
   /// Determines if Microsoft Word optimizes the current document for viewing in Word 97.
@@ -757,7 +759,7 @@ public partial interface _Document : InteropObject
   /// Returns a Permission object that represents the permission settings in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.permission?view=word-pia"/>
-  public Core.Permission Permission { get; }
+  public App.Permission Permission { get; }
 
   /// <summary>
   /// Determines if Microsoft Word prints onto a preprinted form only the data entered in the corresponding online form.
@@ -877,7 +879,7 @@ public partial interface _Document : InteropObject
   /// Returns or sets the encoding to use when saving a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.saveencoding?view=word-pia"/>
-  public Core.Encoding SaveEncoding { get; set; }
+  public Encoding SaveEncoding { get; set; }
 
   /// <summary>
   /// Returns an Integer representing the file format of the specified document or file converter.
@@ -901,7 +903,7 @@ public partial interface _Document : InteropObject
   /// Returns a Scripts collection that represents the collection of HTML scripts in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.scripts?view=word-pia"/>
-  public Core.Scripts Scripts { get; }
+  public Scripts Scripts { get; }
 
   /// <summary>
   /// Returns a Sections collection that represents the sections in the specified document.
@@ -919,7 +921,7 @@ public partial interface _Document : InteropObject
   /// Returns the policy specified for a document stored on a server running Microsoft Office SharePoint Server 2007. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.serverpolicy?view=word-pia"/>
-  public Core.ServerPolicy ServerPolicy { get; }
+  public App.ServerPolicy ServerPolicy { get; }
 
   /// <summary>
   /// Returns a Shapes collection that represents all the Shape objects in the specified document.
@@ -931,7 +933,7 @@ public partial interface _Document : InteropObject
   /// Returns a SharedWorkspace object that represents the Document Workspace in which a specified document is located.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.sharedworkspace?view=word-pia"/>
-  public Core.SharedWorkspace SharedWorkspace { get; }
+  public App.SharedWorkspace SharedWorkspace { get; }
 
   /// <summary>
   /// Determines if grammatical errors are marked by a wavy green line in the specified document.
@@ -961,13 +963,13 @@ public partial interface _Document : InteropObject
   /// Returns a SignatureSet object that represents the digital signatures for a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.signatures?view=word-pia"/>
-  public Core.SignatureSet Signatures { get; }
+  public App.SignatureSet Signatures { get; }
 
   /// <summary>
   /// Returns a SmartDocument object that represents the settings for a smart document solution.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.smartdocument?view=word-pia"/>
-  public Core.SmartDocument SmartDocument { get; }
+  public App.SmartDocument SmartDocument { get; }
 
   /// <summary>
   /// Returns a SmartTags object that represents a smart tag in a document.
@@ -1051,7 +1053,7 @@ public partial interface _Document : InteropObject
   /// Returns a Sync object that provides access to the methods and properties for documents that are part of a Document Workspace.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.sync?view=word-pia"/>
-  public Core.Sync Sync { get; }
+  public App.Sync Sync { get; }
 
   /// <summary>
   /// Returns a Tables collection that represents all the tables in the specified document.
@@ -1087,7 +1089,7 @@ public partial interface _Document : InteropObject
   /// Returns or sets the code page, or character set, that Microsoft Word uses for a document saved as an encoded text file.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.textencoding?view=word-pia"/>
-  public Core.Encoding TextEncoding { get; set; }
+  public Encoding TextEncoding { get; set; }
 
   /// <summary>
   /// Returns or sets a LineEndingType constant indicating how Microsoft Word marks the line and paragraph breaks in documents saved as text files.
@@ -1234,7 +1236,7 @@ public partial interface _Document : InteropObject
   public XMLNodes XMLSchemaViolations { get; }
 
   /// <summary>
-  /// Returns or sets a Boolean that represents whether error message text is generated from the built-in Microsoft Word error messages or from the Microsoft XML Core Services (MSXML) 5.0 component included with Office.
+  /// Returns or sets a Boolean that represents whether error message text is generated from the built-in Microsoft Word error messages or from the Microsoft XML Services (MSXML) 5.0 component included with Office.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.xmlshowadvancederrors?view=word-pia"/>
   public bool XMLShowAdvancedErrors { get; set; }

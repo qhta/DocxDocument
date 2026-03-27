@@ -11,7 +11,7 @@ public interface ReflectionFormat : InteropObject
   /// reflection. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.reflectionformat.type?view=word-pia"/>
-  public Core.ReflectionType Type { get; set; }
+  public Drw.ReflectionType Type { get; set; }
   /// <summary>
   /// Gets or sets the degree of transparency for the reflection effect as a value between 0.0 (opaque) and 1.0
   /// (clear).

@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Diagrams;
+namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Reserved for internal use.
