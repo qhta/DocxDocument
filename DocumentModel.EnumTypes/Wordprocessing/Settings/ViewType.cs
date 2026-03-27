@@ -25,11 +25,11 @@ public enum ViewType
   [OpenXmlEnumValue(nameof(DXW.ViewValues.Print))]
   PrintView = 3,
 
-  /// <summary>
-  /// A print preview view.
-  /// </summary>
+  ///// <summary>
+  ///// A print preview view.
+  ///// </summary>
   //[OpenXmlEnumValue(nameof(DXW.ViewValues.PrintPreview))]
-  PrintPreview = 4,
+  //PrintPreview = 4,
 
   /// <summary>
   /// A master view.
@@ -43,13 +43,13 @@ public enum ViewType
   [OpenXmlEnumValue(nameof(DXW.ViewValues.Web))]
   WebView = 6,
 
-  /// <summary>
-  /// A reading view.
-  /// </summary>
-  ReadingView = 7,
+  ///// <summary>
+  ///// A reading view.
+  ///// </summary>
+  //ReadingView = 7,
 
-  /// <summary>
-  /// No description is available.
-  /// </summary>
-  ConflictView = 8,
+  ///// <summary>
+  ///// No description is available.
+  ///// </summary>
+  //ConflictView = 8,
 }

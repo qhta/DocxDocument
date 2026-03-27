@@ -35,7 +35,7 @@ public static class VStreamDataTest
     Console.WriteLine("--- Testing VStreamData Construction ---");      // Test constructor with version GUID and data
     Console.WriteLine("Testing construction with version GUID and data:");
     Guid versionGuid = new Guid("12345678-1234-1234-1234-123456789ABC");
-    byte[] streamData = Encoding.UTF8.GetBytes("Stream Data Content");
+    byte[] streamData = System.Text.Encoding.UTF8.GetBytes("Stream Data Content");
     VStreamData streamInfo = new VStreamData(versionGuid, streamData);
     Console.WriteLine($"\n✓ Created stream data: Version={streamInfo.Version}, Size={streamInfo.Data.Length}");
 
@@ -84,7 +84,7 @@ public static class VStreamDataTest
     Console.WriteLine("--- Testing VStreamData Properties ---");      // Test Version property
     Console.WriteLine("Testing Version property:");
     Guid testGuid = new Guid("ABCDEF12-3456-7890-ABCD-EF1234567890");
-    byte[] data1 = Encoding.UTF8.GetBytes("Test Data");
+    byte[] data1 = System.Text.Encoding.UTF8.GetBytes("Test Data");
     VStreamData streamData1 = new VStreamData(testGuid, data1);
     Console.WriteLine($"  Version: {streamData1.Version}");
     if (streamData1.Version != testGuid)
@@ -145,9 +145,9 @@ public static class VStreamDataTest
     // Test with embedded document-like data
     Console.WriteLine("\nTesting with embedded document data:");
     string documentContent = "<?xml version=\"1.0\"?><document><content>Embedded</content></document>";
-    byte[] docBytes = Encoding.UTF8.GetBytes(documentContent);
+    byte[] docBytes = System.Text.Encoding.UTF8.GetBytes(documentContent);
     VStreamData docStream = new VStreamData(testGuid, docBytes);
-    string reconstructed = Encoding.UTF8.GetString(docStream.Data);
+    string reconstructed = System.Text.Encoding.UTF8.GetString(docStream.Data);
     Console.WriteLine($"  Original: {documentContent.Substring(0, System.Math.Min(50, documentContent.Length))}...");
     Console.WriteLine($"  Reconstructed: {reconstructed.Substring(0, System.Math.Min(50, reconstructed.Length))}...");
     if (reconstructed != documentContent)
@@ -278,7 +278,7 @@ public static class VStreamDataTest
     // Test with custom format GUID
     Console.WriteLine("\nTesting with custom format GUID:");
     Guid customFormat = Guid.NewGuid();
-    byte[] customData = Encoding.UTF8.GetBytes("Custom format data");
+    byte[] customData = System.Text.Encoding.UTF8.GetBytes("Custom format data");
     VStreamData customStream = new VStreamData(customFormat, customData);
     Console.WriteLine($"\n✓ Custom format: {customStream.Version}");
 
@@ -476,9 +476,9 @@ public static class VStreamDataTest
     // Test with XML-like embedded content
     Console.WriteLine("\nTesting with XML embedded content:");
     string xmlContent = "<?xml version=\"1.0\"?><root><data>Test &lt;&gt; &amp;</data></root>";
-    byte[] xmlBytes = Encoding.UTF8.GetBytes(xmlContent);
+    byte[] xmlBytes = System.Text.Encoding.UTF8.GetBytes(xmlContent);
     VStreamData xmlData = new VStreamData(Guid.NewGuid(), xmlBytes);
-    string reconstructed = Encoding.UTF8.GetString(xmlData.Data);
+    string reconstructed = System.Text.Encoding.UTF8.GetString(xmlData.Data);
     if (reconstructed != xmlContent)
     {
       Console.WriteLine("✗ XML content test FAILED");
@@ -607,11 +607,11 @@ public static class VStreamDataTest
     {
       ExcelStream = new VStreamData(
         new Guid("{00020810-0000-0000-C000-000000000046}"),
-        Encoding.UTF8.GetBytes("Excel OLE Data")
+        System.Text.Encoding.UTF8.GetBytes("Excel OLE Data")
       ),
       WordStream = new VStreamData(
         new Guid("{00020906-0000-0000-C000-000000000046}"),
-        Encoding.UTF8.GetBytes("Word Document Data")
+        System.Text.Encoding.UTF8.GetBytes("Word Document Data")
       ),
       BinaryStream = new VStreamData(
         new Guid("{12345678-ABCD-1234-5678-123456789ABC}"),

@@ -34,7 +34,7 @@ public static class VClipboardDataTest
   {
     Console.WriteLine("--- Testing VClipboardData Construction ---");      // Test constructor with text data
     Console.WriteLine("Testing construction with text data:");
-    byte[] textBytes = Encoding.UTF8.GetBytes("Hello, World!");
+    byte[] textBytes = System.Text.Encoding.UTF8.GetBytes("Hello, World!");
     VClipboardData textData = new VClipboardData(1, textBytes); // CF_TEXT
     Console.WriteLine($"\n✓ Created text clipboard data: Format={textData.Format}, Size={textData.Size}");
 
@@ -71,7 +71,7 @@ public static class VClipboardDataTest
   {
     Console.WriteLine("--- Testing VClipboardData Properties ---");      // Test Format property
     Console.WriteLine("Testing Format property:");
-    byte[] data1 = Encoding.UTF8.GetBytes("Test");
+    byte[] data1 = System.Text.Encoding.UTF8.GetBytes("Test");
     VClipboardData clipData1 = new VClipboardData(1, data1);
     Console.WriteLine($"  Format: {clipData1.Format}");
     if (clipData1.Format != 1)
@@ -119,11 +119,11 @@ public static class VClipboardDataTest
     // Test with Unicode text
     Console.WriteLine("\nTesting with Unicode text:");
     string unicodeText = "Hello 世界 🌍";
-    byte[] unicodeBytes = Encoding.UTF8.GetBytes(unicodeText);
+    byte[] unicodeBytes = System.Text.Encoding.UTF8.GetBytes(unicodeText);
     VClipboardData unicodeClipData = new VClipboardData(13, unicodeBytes); // CF_UNICODETEXT
     Console.WriteLine($"  Original text: '{unicodeText}'");
     Console.WriteLine($"  Size: {unicodeClipData.Size} bytes");
-    string reconstructed = Encoding.UTF8.GetString(unicodeClipData.Data);
+    string reconstructed = System.Text.Encoding.UTF8.GetString(unicodeClipData.Data);
     Console.WriteLine($"  Reconstructed: '{reconstructed}'");
     if (reconstructed != unicodeText)
     {
@@ -219,7 +219,7 @@ public static class VClipboardDataTest
     Console.WriteLine("--- Testing VClipboardData Clipboard Formats ---");      // Test CF_TEXT (1)
     Console.WriteLine("Testing CF_TEXT format (1):");
     string ansiText = "ANSI Text";
-    byte[] ansiBytes = Encoding.ASCII.GetBytes(ansiText);
+    byte[] ansiBytes = System.Text.Encoding.ASCII.GetBytes(ansiText);
     VClipboardData textClip = new VClipboardData(1, ansiBytes);
     Console.WriteLine($"\n✓ CF_TEXT: Format={textClip.Format}, Size={textClip.Size}");
 
@@ -244,7 +244,7 @@ public static class VClipboardDataTest
     // Test CF_UNICODETEXT (13)
     Console.WriteLine("\nTesting CF_UNICODETEXT format (13):");
     string unicodeText = "Unicode Text: 你好";
-    byte[] unicodeBytes = Encoding.Unicode.GetBytes(unicodeText);
+    byte[] unicodeBytes = System.Text.Encoding.Unicode.GetBytes(unicodeText);
     VClipboardData unicodeClip = new VClipboardData(13, unicodeBytes);
     Console.WriteLine($"\n✓ CF_UNICODETEXT: Format={unicodeClip.Format}, Size={unicodeClip.Size}");
 
@@ -256,13 +256,13 @@ public static class VClipboardDataTest
 
     // Test CF_HDROP (15)
     Console.WriteLine("\nTesting CF_HDROP format (15):");
-    byte[] hdropBytes = Encoding.Unicode.GetBytes("file1.txt\0file2.txt\0\0");
+    byte[] hdropBytes = System.Text.Encoding.Unicode.GetBytes("file1.txt\0file2.txt\0\0");
     VClipboardData hdropClip = new VClipboardData(15, hdropBytes);
     Console.WriteLine($"\n✓ CF_HDROP: Format={hdropClip.Format}, Size={hdropClip.Size}");
 
     // Test custom format (>= 0xC000)
     Console.WriteLine("\nTesting custom format (0xC000):");
-    byte[] customBytes = Encoding.UTF8.GetBytes("Custom Format Data");
+    byte[] customBytes = System.Text.Encoding.UTF8.GetBytes("Custom Format Data");
     VClipboardData customClip = new VClipboardData(0xC000, customBytes);
     Console.WriteLine($"\n✓ Custom format: Format={customClip.Format}, Size={customClip.Size}");
 
@@ -432,9 +432,9 @@ public static class VClipboardDataTest
     // Test with special characters in text
     Console.WriteLine("\nTesting with special characters:");
     string specialText = "Tab:\t Newline:\n Quote:\" Backslash:\\";
-    byte[] specialBytes = Encoding.UTF8.GetBytes(specialText);
+    byte[] specialBytes = System.Text.Encoding.UTF8.GetBytes(specialText);
     VClipboardData specialData = new VClipboardData(1, specialBytes);
-    string reconstructed = Encoding.UTF8.GetString(specialData.Data);
+    string reconstructed = System.Text.Encoding.UTF8.GetString(specialData.Data);
     if (reconstructed != specialText)
     {
       Console.WriteLine("✗ Special characters test FAILED");
@@ -486,7 +486,7 @@ public static class VClipboardDataTest
     // Test JSON serialization
     var testObj = new VClipboardDataTestData
     {
-      TextClipboard = new VClipboardData(1, Encoding.UTF8.GetBytes("Performance test")),
+      TextClipboard = new VClipboardData(1, System.Text.Encoding.UTF8.GetBytes("Performance test")),
       BitmapClipboard = new VClipboardData(2, CreateTestData(100)),
       BinaryClipboard = new VClipboardData(8, CreateTestData(50)),
       EmptyClipboard = new VClipboardData(13, Array.Empty<byte>()),
@@ -533,7 +533,7 @@ public static class VClipboardDataTest
   {
     return new VClipboardDataTestData
     {
-      TextClipboard = new VClipboardData(1, Encoding.UTF8.GetBytes("Hello, World!")),
+      TextClipboard = new VClipboardData(1, System.Text.Encoding.UTF8.GetBytes("Hello, World!")),
       BitmapClipboard = new VClipboardData(2, new byte[] { 0x42, 0x4D, 0x00, 0x00 }),
       BinaryClipboard = new VClipboardData(8, new byte[] { 0xDE, 0xAD, 0xBE, 0xEF }),
       EmptyClipboard = new VClipboardData(13, Array.Empty<byte>()),
