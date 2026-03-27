@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart axis.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis?view=office-pia"/>
-public partial interface IMsoAxis : InteropObject
+public partial interface Axis : InteropObject
 {
   /// <summary>
   /// Gets or sets the `AxisBetweenCategories` property.
@@ -21,7 +21,7 @@ public partial interface IMsoAxis : InteropObject
   /// Gets the `AxisTitle` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.axistitle?view=office-pia"/>
-  public IMsoAxisTitle AxisTitle { get; }
+  public AxisTitle AxisTitle { get; }
   /// <summary>
   /// Gets or sets the `CategoryNames` property.
   /// </summary>
@@ -141,7 +141,7 @@ public partial interface IMsoAxis : InteropObject
   /// Gets the `TickLabels` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.ticklabels?view=office-pia"/>
-  public IMsoTickLabels TickLabels { get; }
+  public TickLabels TickLabels { get; }
   /// <summary>
   /// Gets or sets the `TickLabelSpacing` property.
   /// </summary>
@@ -221,12 +221,12 @@ public partial interface IMsoAxis : InteropObject
   /// Gets the `DisplayUnitLabel` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.displayunitlabel?view=office-pia"/>
-  public IMsoDisplayUnitLabel DisplayUnitLabel { get; }
+  public DisplayUnitLabel DisplayUnitLabel { get; }
   /// <summary>
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.border?view=office-pia"/>
-  public IMsoBorder Border { get; }
+  public Border Border { get; }
   /// <summary>
   /// Gets the `Name` property.
   /// </summary>
@@ -236,6 +236,6 @@ public partial interface IMsoAxis : InteropObject
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.format?view=office-pia"/>
-  public IMsoChartFormat Format { get; }
+  public ChartFormat Format { get; }
 }
 

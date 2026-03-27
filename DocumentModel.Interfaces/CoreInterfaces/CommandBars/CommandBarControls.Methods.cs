@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// A collection of command bar controls on a command bar.

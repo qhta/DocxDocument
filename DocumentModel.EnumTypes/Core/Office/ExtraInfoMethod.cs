@@ -1,4 +1,4 @@
-namespace DocumentMode.Office;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies how to use the value specified in the ExtraInfo property of the FollowHyperlink method.

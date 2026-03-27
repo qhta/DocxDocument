@@ -21,7 +21,7 @@ public partial interface LegendEntry: InteropObject
   /// Gets the `LegendKey` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.legendkey?view=office-pia"/>
-  public IMsoLegendKey LegendKey { get; }
+  public LegendKey LegendKey { get; }
   /// <summary>
   /// Gets or sets the `AutoScaleFont` property.
   /// </summary>
@@ -51,6 +51,6 @@ public partial interface LegendEntry: InteropObject
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.format?view=office-pia"/>
-  public IMsoChartFormat Format { get; }
+  public ChartFormat Format { get; }
 }
 

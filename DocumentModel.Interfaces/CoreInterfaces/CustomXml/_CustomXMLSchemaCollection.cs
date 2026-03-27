@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Represents a collection of CustomXMLSchema objects attached to a data stream.

@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart?view=office-pia"/>
-public partial interface IMsoChart: InteropObject
+public partial interface Chart: InteropObject
 {
   /// <summary>
   /// Gets or sets the `HasTitle` property.
@@ -16,7 +16,7 @@ public partial interface IMsoChart: InteropObject
   /// Gets the `ChartTitle` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.charttitle?view=office-pia"/>
-  public IMsoChartTitle ChartTitle { get; }
+  public ChartTitle ChartTitle { get; }
   /// <summary>
   /// Gets or sets the `DepthPercent` property.
   /// </summary>
@@ -101,7 +101,7 @@ public partial interface IMsoChart: InteropObject
   /// Gets the `Corners` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.corners?view=office-pia"/>
-  public IMsoCorners Corners { get; }
+  public Corners Corners { get; }
   /// <summary>
   /// Gets or sets the `ChartType` property.
   /// </summary>
@@ -126,7 +126,7 @@ public partial interface IMsoChart: InteropObject
   /// Gets the `Legend` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.legend?view=office-pia"/>
-  public IMsoLegend Legend { get; }
+  public Legend Legend { get; }
   /// <summary>
   /// Gets or sets the `HasAxis` property.
   /// </summary>
@@ -136,17 +136,17 @@ public partial interface IMsoChart: InteropObject
   /// Gets the `Walls` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.walls?view=office-pia"/>
-  public IMsoWalls Walls { get; }
+  public Walls Walls { get; }
   /// <summary>
   /// Gets the `Floor` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.floor?view=office-pia"/>
-  public IMsoFloor Floor { get; }
+  public Floor Floor { get; }
   /// <summary>
   /// Gets the `PlotArea` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.plotarea?view=office-pia"/>
-  public IMsoPlotArea PlotArea { get; }
+  public PlotArea PlotArea { get; }
   /// <summary>
   /// Gets or sets the `PlotVisibleOnly` property.
   /// </summary>
@@ -156,7 +156,7 @@ public partial interface IMsoChart: InteropObject
   /// Gets the `ChartArea` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.chartarea?view=office-pia"/>
-  public IMsoChartArea ChartArea { get; }
+  public ChartArea ChartArea { get; }
   /// <summary>
   /// Gets or sets the `AutoScaling` property.
   /// </summary>
@@ -166,7 +166,7 @@ public partial interface IMsoChart: InteropObject
   /// Gets the `DataTable` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.datatable?view=office-pia"/>
-  public IMsoDataTable DataTable { get; }
+  public DataTable DataTable { get; }
   /// <summary>
   /// Gets or sets the `BarShape` property.
   /// </summary>
@@ -176,12 +176,12 @@ public partial interface IMsoChart: InteropObject
   /// Gets the `SideWall` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.sidewall?view=office-pia"/>
-  public IMsoWalls SideWall { get; }
+  public Walls SideWall { get; }
   /// <summary>
   /// Gets the `BackWall` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.backwall?view=office-pia"/>
-  public IMsoWalls BackWall { get; }
+  public Walls BackWall { get; }
   /// <summary>
   /// Gets or sets the `ChartStyle` property.
   /// </summary>
@@ -211,12 +211,12 @@ public partial interface IMsoChart: InteropObject
   /// Gets the `ChartData` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.chartdata?view=office-pia"/>
-  public IMsoChartData ChartData { get; }
+  public ChartData ChartData { get; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.format?view=office-pia"/>
-  public IMsoChartFormat Format { get; }
+  public ChartFormat Format { get; }
   /// <summary>
   /// Gets the `Shapes` property.
   /// </summary>
@@ -226,32 +226,32 @@ public partial interface IMsoChart: InteropObject
   /// Gets the `Area3DGroup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.area3dgroup?view=office-pia"/>
-  public IMsoChartGroup Area3DGroup { get; }
+  public ChartGroup Area3DGroup { get; }
   /// <summary>
   /// Gets the `Bar3DGroup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.bar3dgroup?view=office-pia"/>
-  public IMsoChartGroup Bar3DGroup { get; }
+  public ChartGroup Bar3DGroup { get; }
   /// <summary>
   /// Gets the `Column3DGroup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.column3dgroup?view=office-pia"/>
-  public IMsoChartGroup Column3DGroup { get; }
+  public ChartGroup Column3DGroup { get; }
   /// <summary>
   /// Gets the `Line3DGroup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.line3dgroup?view=office-pia"/>
-  public IMsoChartGroup Line3DGroup { get; }
+  public ChartGroup Line3DGroup { get; }
   /// <summary>
   /// Gets the `Pie3DGroup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.pie3dgroup?view=office-pia"/>
-  public IMsoChartGroup Pie3DGroup { get; }
+  public ChartGroup Pie3DGroup { get; }
   /// <summary>
   /// Gets the `SurfaceGroup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.surfacegroup?view=office-pia"/>
-  public IMsoChartGroup SurfaceGroup { get; }
+  public ChartGroup SurfaceGroup { get; }
   /// <summary>
   /// Gets or sets the `ShowReportFilterFieldButtons` property.
   /// </summary>

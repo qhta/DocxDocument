@@ -7,9 +7,6 @@ namespace DocumentModel.Wordprocessing;
 public enum TableLayoutType
 {
   /// <summary>
-  ///   Used only for detection.
-  /// </summary>
-  /// <summary>
   ///   Fixed Width Table Layout.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.TableLayoutValues.Fixed))]

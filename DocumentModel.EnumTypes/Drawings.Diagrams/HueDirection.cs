@@ -9,9 +9,6 @@ namespace DocumentModel.Drawings.Diagrams;
 public enum HueDirection
 {
   /// <summary>
-  ///   Used only for detection.
-  /// </summary>
-  /// <summary>
   ///   Clockwise Hue Direction.
   /// </summary>
   [OpenXmlEnumValue("Clockwise")]

@@ -7,9 +7,6 @@ namespace DocumentModel.Drawings;
 public enum PresetPattern
 {
   /// <summary>
-  ///   Used only for detection.
-  /// </summary>
-  /// <summary>
   ///   5%.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetPatternValues.Percent5))]

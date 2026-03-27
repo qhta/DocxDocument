@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Represents the `_CommandBarActiveX` interface.

@@ -180,7 +180,7 @@ public partial interface Range : InteropObject
   /// Returns or sets the type of underline applied to the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.underline?view=word-pia"/>
-  public Underline Underline { get; set; }
+  public UnderlineType Underline { get; set; }
 
   /// <summary>
   /// Returns or sets the emphasis mark for a character or designated character string.

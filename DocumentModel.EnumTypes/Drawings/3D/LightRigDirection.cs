@@ -7,9 +7,6 @@ namespace DocumentModel.Drawings;
 public enum LightRigDirection
 {
   /// <summary>
-  ///   Used only for detection.
-  /// </summary>
-  /// <summary>
   ///   Top Left.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.LightRigDirectionValues.TopLeft))]

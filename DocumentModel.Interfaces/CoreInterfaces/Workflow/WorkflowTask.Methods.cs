@@ -1,6 +1,6 @@
 using System;
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Represents the `WorkflowTask` interface.

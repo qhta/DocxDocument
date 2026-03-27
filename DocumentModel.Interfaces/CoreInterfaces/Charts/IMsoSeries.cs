@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart series.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries?view=office-pia"/>
-public partial interface IMsoSeries: InteropObject
+public partial interface Series: InteropObject
 {
   /// <summary>
   /// Gets or sets the `AxisGroup` property.
@@ -18,12 +18,12 @@ public partial interface IMsoSeries: InteropObject
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.border?view=office-pia"/>
-  public IMsoBorder Border { get; }
+  public Border Border { get; }
   /// <summary>
   /// Gets the `ErrorBars` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.errorbars?view=office-pia"/>
-  public IMsoErrorBars ErrorBars { get; }
+  public ErrorBars ErrorBars { get; }
   /// <summary>
   /// Gets or sets the `Explosion` property.
   /// </summary>
@@ -63,7 +63,7 @@ public partial interface IMsoSeries: InteropObject
   /// Gets the `Interior` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.interior?view=office-pia"/>
-  public IMsoInterior Interior { get; }
+  public Interior Interior { get; }
   /// <summary>
   /// Gets the `Fill` property.
   /// </summary>
@@ -193,12 +193,12 @@ public partial interface IMsoSeries: InteropObject
   /// Gets the `LeaderLines` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.leaderlines?view=office-pia"/>
-  public IMsoLeaderLines LeaderLines { get; }
+  public LeaderLines LeaderLines { get; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.format?view=office-pia"/>
-  public IMsoChartFormat Format { get; }
+  public ChartFormat Format { get; }
   /// <summary>
   /// Gets or sets the `PictureUnit2` property.
   /// </summary>

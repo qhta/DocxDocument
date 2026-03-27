@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart axis.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis?view=office-pia"/>
-public partial interface IMsoAxis: InteropObject
+public partial interface Axis: InteropObject
 {
   /// <summary>
   /// Deletes the axis.

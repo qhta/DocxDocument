@@ -8,9 +8,6 @@ namespace DocumentModel.Wordprocessing.Drawings;
 public enum LineCap
 {
   /// <summary>
-  ///   Used only for detection.
-  /// </summary>
-  /// <summary>
   /// Round line cap.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.LineCapValues.Round))]

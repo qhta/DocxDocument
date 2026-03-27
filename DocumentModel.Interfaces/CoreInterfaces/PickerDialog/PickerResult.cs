@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Represents a resolved or selected item of data.

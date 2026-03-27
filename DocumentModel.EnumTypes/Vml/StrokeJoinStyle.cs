@@ -7,9 +7,6 @@ namespace DocumentModel.Vml;
 public enum StrokeJoinStyle
 {
   /// <summary>
-  ///   Used only for detection.
-  /// </summary>
-  /// <summary>
   ///   Round Joint.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXV.StrokeJoinStyleValues.Round))]

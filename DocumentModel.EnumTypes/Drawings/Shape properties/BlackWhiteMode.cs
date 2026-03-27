@@ -7,14 +7,10 @@ namespace DocumentModel.Drawings;
 public enum BlackWhiteMode
 {
   /// <summary>
-  ///   Used only for detection.
-  /// </summary>
-  /// <summary>
   ///   Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.BlackWhiteModeValues.Color))]
   Color = 1,
-
   /// <summary>
   ///   Automatic.
   /// </summary>

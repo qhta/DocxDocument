@@ -173,7 +173,7 @@ public partial interface ShapeRange: InteropCollection<Shape>
   /// Gets the `Diagram` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.diagram?view=office-pia"/>
-  public IMsoDiagram Diagram { get; }
+  public Diagram Diagram { get; }
   /// <summary>
   /// Gets the `HasDiagramNode` property.
   /// </summary>
@@ -223,7 +223,7 @@ public partial interface ShapeRange: InteropCollection<Shape>
   /// Gets the `Chart` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.chart?view=office-pia"/>
-  public IMsoChart Chart { get; }
+  public Chart Chart { get; }
   /// <summary>
   /// Gets or sets the `ShapeStyle` property.
   /// </summary>

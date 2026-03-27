@@ -8,9 +8,6 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public enum PageOrientation
 {
   /// <summary>
-  ///   Used only for detection.
-  /// </summary>
-  /// <summary>
   ///   default.
   /// </summary>
   [OpenXmlEnumValue("Default")]

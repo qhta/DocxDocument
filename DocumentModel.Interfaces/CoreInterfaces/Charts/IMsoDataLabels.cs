@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a collection of data labels.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels?view=office-pia"/>
-public partial interface IMsoDataLabels: IEnumerable
+public partial interface DataLabels: IEnumerable
 {
   /// <summary>
   /// Gets or sets the `Name` property.
@@ -17,12 +17,12 @@ public partial interface IMsoDataLabels: IEnumerable
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.border?view=office-pia"/>
-  public IMsoBorder Border { get; }
+  public Border Border { get; }
   /// <summary>
   /// Gets the `Interior` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.interior?view=office-pia"/>
-  public IMsoInterior Interior { get; }
+  public Interior Interior { get; }
   /// <summary>
   /// Gets the `Fill` property.
   /// </summary>
@@ -32,7 +32,7 @@ public partial interface IMsoDataLabels: IEnumerable
   /// Gets the `Characters` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.characters?view=office-pia"/>
-  public IMsoCharacters Characters { get; }
+  public Characters Characters { get; }
   /// <summary>
   /// Gets the `Font` property.
   /// </summary>
@@ -142,12 +142,12 @@ public partial interface IMsoDataLabels: IEnumerable
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.format?view=office-pia"/>
-  public IMsoChartFormat Format { get; }
+  public ChartFormat Format { get; }
   /// <summary>
   /// Gets a data label by index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.item?view=office-pia"/>
-  public IMsoDataLabel this[object Index] { get; }
+  public DataLabel this[object Index] { get; }
   /// <summary>
   /// Gets or sets the `ShowRange` property.
   /// </summary>

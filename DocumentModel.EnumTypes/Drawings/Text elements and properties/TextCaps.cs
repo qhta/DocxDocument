@@ -7,14 +7,10 @@ namespace DocumentModel.Drawings;
 public enum TextCaps
 {
   /// <summary>
-  ///   Used only for detection.
-  /// </summary>
-  /// <summary>
   ///   Text Caps Enum ( None ).
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.TextCapsValues.None))]
   None = 1,
-
   /// <summary>
   ///   Text Caps Enum ( Small ).
   /// </summary>

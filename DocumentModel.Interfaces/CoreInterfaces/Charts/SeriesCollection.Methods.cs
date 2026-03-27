@@ -20,7 +20,7 @@ public partial interface SeriesCollection: InteropCollection<IMsoSeries>
   /// <param name="Replace">The `Replace` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.add?view=office-pia"/>
-  public IMsoSeries Add
+  public Series Add
     (object Source, RowCol Rowcol, object SeriesLabels, object CategoryLabels, object Replace);
   /// <summary>
   /// Invokes `Extend`.
@@ -49,6 +49,6 @@ public partial interface SeriesCollection: InteropCollection<IMsoSeries>
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.newseries?view=office-pia"/>
-  public IMsoSeries NewSeries();
+  public Series NewSeries();
 }
 

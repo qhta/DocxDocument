@@ -7,9 +7,6 @@ namespace DocumentModel.Wordprocessing;
 [JsonConverter(typeof(StringEnumConverter))]
 public enum BaselineAlignment
 {
-  /// <summary>
-  ///   Used only for detection.
-  /// </summary>
   /// <summary>Align to baseline</summary>
   [OpenXmlEnumValue(nameof(DXW.VerticalTextAlignmentValues.Baseline))]
   Baseline = 1,

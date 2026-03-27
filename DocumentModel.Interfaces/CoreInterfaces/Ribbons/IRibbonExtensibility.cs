@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Defines how the Ribbon UI communicates with a COM add-in to customize the UI.

@@ -7,9 +7,6 @@ namespace DocumentModel.Wordprocessing;
 public enum TextEffect
 {
   /// <summary>
-  ///   Used only for detection.
-  /// </summary>
-  /// <summary>
   ///   Blinking Background Animation.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.TextEffectValues.BlinkBackground))]
