@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Represents a single policy setting within a server policy.

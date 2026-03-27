@@ -1,4 +1,4 @@
-namespace DocumentMode.Office;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Specifies the format of a file or folder path.
@@ -18,15 +18,15 @@ public enum PathFormat
   /// <summary>
   /// Represents the Type1 format.
   /// </summary>
-  Type1 = 1,
+  PathType1 = 1,
   /// <summary>
   /// Represents the Type2 format.
   /// </summary>
-  Type2 = 2,
+  PathType2 = 2,
   /// <summary>
   /// Represents the Type3 format.
   /// </summary>
-  Type3 = 3,
+  PathType3 = 3,
   /// <summary>
   /// Represents the Type4 format.
   /// </summary>

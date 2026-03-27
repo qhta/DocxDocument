@@ -1,4 +1,4 @@
-namespace DocumentMode.Office;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies how the application handles calls to methods and properties that require features not yet installed.

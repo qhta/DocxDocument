@@ -7,9 +7,6 @@ namespace DocumentModel.Vml;
 public enum BlackAndWhiteMode
 {
   /// <summary>
-  ///   Used only for detection.
-  /// </summary>
-  /// <summary>
   ///   Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXVO.BlackAndWhiteModeValues.Color))]

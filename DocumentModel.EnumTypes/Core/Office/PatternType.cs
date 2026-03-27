@@ -1,4 +1,4 @@
-namespace DocumentMode.Office;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies the fill pattern used in a shape.

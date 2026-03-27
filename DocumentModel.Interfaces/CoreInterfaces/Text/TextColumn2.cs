@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Represents the `TextColumn2` interface.

@@ -7,9 +7,6 @@ namespace DocumentModel.Vml;
 public enum FillType
 {
   /// <summary>
-  ///   Used only for detection.
-  /// </summary>
-  /// <summary>
   ///   Solid Fill.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXV.FillTypeValues.Solid))]

@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Represents events for a custom task pane.

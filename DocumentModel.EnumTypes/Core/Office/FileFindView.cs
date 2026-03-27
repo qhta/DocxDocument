@@ -1,5 +1,5 @@
 
-namespace DocumentMode.Office;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies view to use for a file find process.

@@ -1,5 +1,5 @@
 
-namespace DocumentMode.Office;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies the location of the script anchor within a document.

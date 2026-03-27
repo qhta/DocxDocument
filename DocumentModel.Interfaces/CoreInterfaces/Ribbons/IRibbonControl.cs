@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Represents the object passed into each Ribbon UI control callback procedure.

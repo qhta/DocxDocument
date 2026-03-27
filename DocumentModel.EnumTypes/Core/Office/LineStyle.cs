@@ -1,4 +1,4 @@
-namespace DocumentMode.Office;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies the style for a line.

@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Represents a single custom XML part in a custom XML parts collection.

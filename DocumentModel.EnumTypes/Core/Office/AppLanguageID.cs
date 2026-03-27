@@ -1,4 +1,4 @@
-namespace DocumentMode.Office;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies a language setting in a Microsoft Office application.

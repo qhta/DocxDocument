@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Contains first-line and hanging indent settings for an outline level.

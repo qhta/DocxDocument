@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart?view=office-pia"/>
-public partial interface IMsoChart: InteropObject
+public partial interface Chart: InteropObject
 {
   /// <summary>
   /// Invokes `UnProtect`.

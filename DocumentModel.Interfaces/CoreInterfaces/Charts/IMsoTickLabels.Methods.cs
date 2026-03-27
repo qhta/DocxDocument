@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents tick labels on a chart axis.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoticklabels?view=office-pia"/>
-public partial interface IMsoTickLabels: InteropObject
+public partial interface TickLabels: InteropObject
 {
   /// <summary>
   /// Deletes the tick labels.

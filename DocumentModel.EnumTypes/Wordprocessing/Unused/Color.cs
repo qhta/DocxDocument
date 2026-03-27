@@ -8,9 +8,6 @@ namespace DocumentModel.Wordprocessing;
 [JsonConverter(typeof(StringEnumConverter))]
 public enum ColorType
 {
-  /// <summary>
-  ///   Used only for detection.
-  /// </summary>
   /// <summary>Auto color</summary>
   [OpenXmlEnumValue("Auto")]
   Auto = 1,

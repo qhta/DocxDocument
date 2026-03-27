@@ -7,9 +7,6 @@ namespace DocumentModel.Math;
 public enum FractionType
 {
   /// <summary>
-  ///   Used only for detection.
-  /// </summary>
-  /// <summary>
   ///   Bar Fraction.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXM.FractionTypeValues.Bar))]

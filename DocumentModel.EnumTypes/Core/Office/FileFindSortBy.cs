@@ -1,5 +1,5 @@
 
-namespace DocumentMode.Office;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// This enumeration applies to the Macintosh only and should not be used.

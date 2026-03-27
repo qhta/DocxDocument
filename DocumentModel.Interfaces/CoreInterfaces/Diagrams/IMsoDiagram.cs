@@ -1,17 +1,17 @@
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Diagrams;
 
 /// <summary>
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodiagram?view=office-pia"/>
-public partial interface IMsoDiagram: InteropObject
+public partial interface Diagram: InteropObject
 {
   /// <summary>
   /// Gets or sets the `Nodes` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodiagram.nodes?view=office-pia"/>
-  public DiagramNodes Nodes { get; }
+  public App.DiagramNodes Nodes { get; }
   /// <summary>
   /// Gets the `Type` property.
   /// </summary>

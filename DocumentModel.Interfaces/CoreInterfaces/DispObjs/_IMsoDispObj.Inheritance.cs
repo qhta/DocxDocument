@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 public partial interface _CommandBars: _IMsoDispObj { }
 public partial interface _CustomXMLPart: _IMsoDispObj { }

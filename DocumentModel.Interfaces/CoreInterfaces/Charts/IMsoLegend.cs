@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart legend.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegend?view=office-pia"/>
-public partial interface IMsoLegend: InteropObject
+public partial interface Legend: InteropObject
 {
   /// <summary>
   /// Gets or sets the `Name` property.
@@ -16,7 +16,7 @@ public partial interface IMsoLegend: InteropObject
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegend.border?view=office-pia"/>
-  public IMsoBorder Border { get; }
+  public Border Border { get; }
   /// <summary>
   /// Gets the `Font` property.
   /// </summary>
@@ -41,7 +41,7 @@ public partial interface IMsoLegend: InteropObject
   /// Gets the `Interior` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegend.interior?view=office-pia"/>
-  public IMsoInterior Interior { get; }
+  public Interior Interior { get; }
   /// <summary>
   /// Gets the `Fill` property.
   /// </summary>
@@ -76,6 +76,6 @@ public partial interface IMsoLegend: InteropObject
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegend.format?view=office-pia"/>
-  public IMsoChartFormat Format { get; }
+  public ChartFormat Format { get; }
 }
 

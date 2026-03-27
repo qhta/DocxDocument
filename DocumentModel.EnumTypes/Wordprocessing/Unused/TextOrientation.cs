@@ -8,9 +8,6 @@ namespace DocumentModel.Wordprocessing;
 [JsonConverter(typeof(StringEnumConverter))]
 public enum TextOrientation
 {
-  /// <summary>
-  ///   Used only for detection.
-  /// </summary>
   /// <summary>Horizontal text</summary>
   [OpenXmlEnumValue("Horizontal")]
   Horizontal = 1,

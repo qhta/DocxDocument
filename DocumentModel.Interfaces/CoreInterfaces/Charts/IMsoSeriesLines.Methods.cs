@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents series lines in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoserieslines?view=office-pia"/>
-public partial interface IMsoSeriesLines: InteropObject
+public partial interface SeriesLines: InteropObject
 {
   /// <summary>
   /// Selects the series lines.

@@ -1,4 +1,4 @@
-namespace DocumentMode.Office;
+namespace DocumentModel;
 
 /// <summary>
 /// Specifies a tri-state Boolean value.

@@ -7,9 +7,6 @@ namespace DocumentModel.Drawings;
 public enum PresetCameraType
 {
   /// <summary>
-  ///   Used only for detection.
-  /// </summary>
-  /// <summary>
   ///   Legacy Oblique Top Left.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetCameraValues.LegacyObliqueTopLeft))]

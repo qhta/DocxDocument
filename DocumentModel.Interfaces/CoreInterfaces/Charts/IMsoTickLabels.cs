@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents tick labels on a chart axis.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoticklabels?view=office-pia"/>
-public partial interface IMsoTickLabels: InteropObject
+public partial interface TickLabels: InteropObject
 {
   /// <summary>
   /// Gets or sets the `Font` property.
@@ -71,6 +71,6 @@ public partial interface IMsoTickLabels: InteropObject
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoticklabels.format?view=office-pia"/>
-  public IMsoChartFormat Format { get; }
+  public ChartFormat Format { get; }
 }
 

@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// A collection of BalloonCheckbox objects that represent all check boxes in the Office Assistant balloon.

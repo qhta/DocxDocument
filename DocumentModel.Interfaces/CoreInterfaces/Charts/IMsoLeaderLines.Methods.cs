@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents leader lines in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoleaderlines?view=office-pia"/>
-public partial interface IMsoLeaderLines: InteropObject
+public partial interface LeaderLines: InteropObject
 {
   /// <summary>
   /// Selects the leader lines.

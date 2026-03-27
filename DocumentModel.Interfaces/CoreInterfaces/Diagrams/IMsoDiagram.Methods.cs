@@ -1,11 +1,11 @@
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodiagram?view=office-pia"/>
-public partial interface IMsoDiagram
+public partial interface Diagram
 {
   /// <summary>
   /// Converts the diagram to another diagram type.

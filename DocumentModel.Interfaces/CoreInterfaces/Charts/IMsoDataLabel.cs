@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a data label.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel?view=office-pia"/>
-public partial interface IMsoDataLabel: InteropObject
+public partial interface DataLabel: InteropObject
 {
   /// <summary>
   /// Gets or sets the `Name` property.
@@ -16,12 +16,12 @@ public partial interface IMsoDataLabel: InteropObject
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel.border?view=office-pia"/>
-  public IMsoBorder Border { get; }
+  public Border Border { get; }
   /// <summary>
   /// Gets the `Interior` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel.interior?view=office-pia"/>
-  public IMsoInterior Interior { get; }
+  public Interior Interior { get; }
   /// <summary>
   /// Gets the `Fill` property.
   /// </summary>
@@ -36,7 +36,7 @@ public partial interface IMsoDataLabel: InteropObject
   /// Gets the `Characters` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel.characters?view=office-pia"/>
-  public IMsoCharacters Characters { get; }
+  public Characters Characters { get; }
   /// <summary>
   /// Gets the `Font` property.
   /// </summary>
@@ -156,7 +156,7 @@ public partial interface IMsoDataLabel: InteropObject
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel.format?view=office-pia"/>
-  public IMsoChartFormat Format { get; }
+  public ChartFormat Format { get; }
   /// <summary>
   /// Gets the `_Height` property.
   /// </summary>

@@ -1,4 +1,4 @@
-namespace DocumentMode.Office;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Indicates the text alignment against tab stops or line breaks. The default value is msoTabAlignLeft.

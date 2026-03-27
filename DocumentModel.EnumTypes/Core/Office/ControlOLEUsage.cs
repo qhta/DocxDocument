@@ -1,4 +1,4 @@
-namespace DocumentMode.Office;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies the OLE client and OLE server roles in which a command bar control is used when two Microsoft Office

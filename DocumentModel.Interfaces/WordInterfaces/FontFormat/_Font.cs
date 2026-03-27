@@ -96,7 +96,7 @@ public partial interface _Font : InteropObject
   /// Gets or sets the underline style for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.underline?view=word-pia"/>
-  public Underline Underline { get; set; }
+  public UnderlineType Underline { get; set; }
 
   /// <summary>
   /// The font size in points.

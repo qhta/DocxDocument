@@ -1,4 +1,4 @@
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Provides file dialog box functionality similar to Office Open and Save dialogs.

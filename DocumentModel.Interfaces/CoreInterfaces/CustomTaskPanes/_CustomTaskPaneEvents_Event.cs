@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 public delegate void _CustomTaskPaneEvents_VisibleStateChangeEventHandler(CustomTaskPane CustomTaskPaneInst);
 public delegate void _CustomTaskPaneEvents_DockPositionStateChangeEventHandler(CustomTaskPane CustomTaskPaneInst);

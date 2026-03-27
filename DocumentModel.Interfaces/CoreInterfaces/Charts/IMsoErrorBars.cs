@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents error bars in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoerrorbars?view=office-pia"/>
-public partial interface IMsoErrorBars: InteropObject
+public partial interface ErrorBars: InteropObject
 {
   /// <summary>
   /// Gets or sets the `Name` property.
@@ -16,7 +16,7 @@ public partial interface IMsoErrorBars: InteropObject
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoerrorbars.border?view=office-pia"/>
-  public IMsoBorder Border { get; }
+  public Border Border { get; }
   /// <summary>
   /// Gets or sets the `EndStyle` property.
   /// </summary>
@@ -26,6 +26,6 @@ public partial interface IMsoErrorBars: InteropObject
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoerrorbars.format?view=office-pia"/>
-  public IMsoChartFormat Format { get; }
+  public ChartFormat Format { get; }
 }
 

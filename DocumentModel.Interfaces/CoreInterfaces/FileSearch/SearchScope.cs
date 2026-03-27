@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace DocumentModel.Interop.Core;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Represents a folder-tree scope that can be searched.

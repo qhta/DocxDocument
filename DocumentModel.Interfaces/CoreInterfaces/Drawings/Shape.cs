@@ -171,7 +171,7 @@ public partial interface Shape: InteropObject
   /// Gets the `Diagram` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.diagram?view=office-pia"/>
-  public IMsoDiagram Diagram { get; }
+  public Diagram Diagram { get; }
   /// <summary>
   /// Gets the `HasDiagramNode` property.
   /// </summary>
@@ -221,7 +221,7 @@ public partial interface Shape: InteropObject
   /// Gets the `Chart` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.chart?view=office-pia"/>
-  public IMsoChart Chart { get; }
+  public Chart Chart { get; }
   /// <summary>
   /// Gets or sets the `ShapeStyle` property.
   /// </summary>

@@ -1,5 +1,5 @@
 
-namespace DocumentMode.Office;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies the period of time to filter files by the date last modified. Used with the LastModified property of

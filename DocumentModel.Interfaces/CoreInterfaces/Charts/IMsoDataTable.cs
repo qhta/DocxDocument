@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart data table.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatatable?view=office-pia"/>
-public partial interface IMsoDataTable: InteropObject
+public partial interface DataTable: InteropObject
 {
   /// <summary>
   /// Gets or sets the `ShowLegendKey` property.
@@ -31,7 +31,7 @@ public partial interface IMsoDataTable: InteropObject
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatatable.border?view=office-pia"/>
-  public IMsoBorder Border { get; }
+  public Border Border { get; }
   /// <summary>
   /// Gets the `Font` property.
   /// </summary>
@@ -46,6 +46,6 @@ public partial interface IMsoDataTable: InteropObject
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatatable.format?view=office-pia"/>
-  public IMsoChartFormat Format { get; }
+  public ChartFormat Format { get; }
 }
 
