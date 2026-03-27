@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Specifies whether the command bar button is a hyperlink. If the command bar button is a hyperlink, further

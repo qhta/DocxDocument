@@ -22,7 +22,7 @@ public partial interface Hyperlink : InteropObject
   /// Returns the type of the hyperlink.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hyperlink.type?view=word-pia"/>
-  public Core.HyperlinkType Type { get; }
+  public HyperlinkType Type { get; }
 
   /// <summary>
   /// Returns a range object that represents the hyperlink range.

@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+namespace DocumentModel;
 
 /// <summary>
 /// Specifies the type of hyperlink.

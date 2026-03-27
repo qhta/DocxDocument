@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+namespace DocumentModel;
 
 /// <summary>
 /// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a

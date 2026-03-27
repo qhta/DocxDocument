@@ -26,7 +26,7 @@ public partial interface Assistant: InteropObject
   /// Gets the `NewBalloon` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.newballoon?view=office-pia"/>
-  public Core.Balloon NewBalloon { get; }
+  public Balloon NewBalloon { get; }
   /// <summary>
   /// Gets the `BalloonError` property.
   /// </summary>
