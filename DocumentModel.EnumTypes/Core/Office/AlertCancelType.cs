@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Specifies behavior when the user cancels an alert. Only msoAlertCancelDefault is currently supported.

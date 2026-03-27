@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a display unit label.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel?view=office-pia"/>
-public partial interface DisplayUnitLabel: IMsoChartTitle
+public partial interface DisplayUnitLabel: ChartTitle
 {
   /// <summary>
   /// Gets or sets the `Caption` property.
@@ -16,7 +16,7 @@ public partial interface DisplayUnitLabel: IMsoChartTitle
   /// Gets the `Characters` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.characters?view=office-pia"/>
-  public new IMsoCharacters Characters { get; }
+  public new Characters Characters { get; }
   /// <summary>
   /// Gets the `Font` property.
   /// </summary>
@@ -71,7 +71,7 @@ public partial interface DisplayUnitLabel: IMsoChartTitle
   /// Gets the `Interior` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.interior?view=office-pia"/>
-  public new IMsoInterior Interior { get; }
+  public new Interior Interior { get; }
   /// <summary>
   /// Gets the `Fill` property.
   /// </summary>
@@ -81,7 +81,7 @@ public partial interface DisplayUnitLabel: IMsoChartTitle
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.border?view=office-pia"/>
-  public new IMsoBorder Border { get; }
+  public new Border Border { get; }
   /// <summary>
   /// Gets the `Name` property.
   /// </summary>
@@ -101,7 +101,7 @@ public partial interface DisplayUnitLabel: IMsoChartTitle
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.format?view=office-pia"/>
-  public new IMsoChartFormat Format { get; }
+  public new ChartFormat Format { get; }
   /// <summary>
   /// Gets the `Height` property.
   /// </summary>
