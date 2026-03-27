@@ -1205,7 +1205,7 @@ public partial interface Options : InteropObject
   /// uses for all documents saved as encoded text files.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaulttextencoding?view=word-pia"/>
-  public Core.Encoding DefaultTextEncoding { get; set; }
+  public Drw.Encoding DefaultTextEncoding { get; set; }
 
   /// <summary>
   /// True for Microsoft Word to mark text in documents with smart tag information.

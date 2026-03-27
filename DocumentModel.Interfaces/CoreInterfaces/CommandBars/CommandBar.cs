@@ -141,7 +141,7 @@ public partial interface CommandBar: _IMsoOleAccDispObj
   /// Gets or sets the `Protection` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.protection?view=office-pia"/>
-  public BarProtection Protection { get; set; }
+  public Drw.BarProtection Protection { get; set; }
   /// <summary>
   /// Gets or sets the `Top` property.
   /// </summary>
@@ -151,7 +151,7 @@ public partial interface CommandBar: _IMsoOleAccDispObj
   /// Gets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.type?view=office-pia"/>
-  public BarType Type { get; }
+  public Drw.BarType Type { get; }
   /// <summary>
   /// Gets or sets the `Visible` property.
   /// </summary>

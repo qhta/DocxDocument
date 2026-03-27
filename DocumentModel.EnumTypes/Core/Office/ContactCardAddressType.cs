@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Drawings;
+namespace DocumentModel.Application;
 
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocontactcardaddresstype?view=office-pia` for Office interop details.

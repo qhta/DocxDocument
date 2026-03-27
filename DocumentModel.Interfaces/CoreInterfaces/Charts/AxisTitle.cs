@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart axis title.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxistitle?view=office-pia"/>
-public partial interface AxisTitle: IMsoChartTitle
+public partial interface AxisTitle: ChartTitle
 {
   /// <summary>
   /// Gets or sets the `Caption` property.
@@ -16,7 +16,7 @@ public partial interface AxisTitle: IMsoChartTitle
   /// Gets the `Characters` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxistitle.characters?view=office-pia"/>
-  public new IMsoCharacters Characters { get; }
+  public new App.Characters Characters { get; }
   /// <summary>
   /// Gets the `Font` property.
   /// </summary>
@@ -71,7 +71,7 @@ public partial interface AxisTitle: IMsoChartTitle
   /// Gets the `Interior` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxistitle.interior?view=office-pia"/>
-  public new IMsoInterior Interior { get; }
+  public new Interior Interior { get; }
   /// <summary>
   /// Gets the `Fill` property.
   /// </summary>
@@ -81,7 +81,7 @@ public partial interface AxisTitle: IMsoChartTitle
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxistitle.border?view=office-pia"/>
-  public new IMsoBorder Border { get; }
+  public new Border Border { get; }
   /// <summary>
   /// Gets the `Name` property.
   /// </summary>
@@ -101,7 +101,7 @@ public partial interface AxisTitle: IMsoChartTitle
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxistitle.format?view=office-pia"/>
-  public new IMsoChartFormat Format { get; }
+  public new ChartFormat Format { get; }
   /// <summary>
   /// Gets the `Height` property.
   /// </summary>
