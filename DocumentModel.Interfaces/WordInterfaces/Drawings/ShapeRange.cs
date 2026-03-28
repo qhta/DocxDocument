@@ -352,7 +352,7 @@ public partial interface ShapeRange : InteropObject, InteropCollection<Shape>
   /// Returns a TextFrame2 object that contains the text for the specified range of shapes. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.textframe2?view=word-pia"/>
-  public Drw.TextFrame2 TextFrame2 { get; }
+  public Drw.TextFrame TextFrame2 { get; }
 
   /// <summary>
   /// Gets or sets the shape style for the shapes in the specified shape range.

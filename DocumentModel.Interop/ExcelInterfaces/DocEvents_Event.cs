@@ -1,0 +1,31 @@
+﻿using System.Runtime.InteropServices;
+
+namespace DocumentModel.Interop.Excel;
+
+[ComVisible(false)]
+[TypeLibType(TypeLibTypeFlags.FHidden)]
+[ComEventInterface(typeof(DocEvents), typeof(DocEvents_EventProvider))]
+public interface DocEvents_Event
+{
+  event DocEvents_SelectionChangeEventHandler SelectionChange;
+  event DocEvents_BeforeDoubleClickEventHandler BeforeDoubleClick;
+  event DocEvents_BeforeRightClickEventHandler BeforeRightClick;
+  event DocEvents_ActivateEventHandler Activate;
+  event DocEvents_DeactivateEventHandler Deactivate;
+  event DocEvents_CalculateEventHandler Calculate;
+  event DocEvents_ChangeEventHandler Change;
+  event DocEvents_FollowHyperlinkEventHandler FollowHyperlink;
+  event DocEvents_PivotTableUpdateEventHandler PivotTableUpdate;
+  event DocEvents_PivotTableAfterValueChangeEventHandler PivotTableAfterValueChange;
+  event DocEvents_PivotTableBeforeAllocateChangesEventHandler PivotTableBeforeAllocateChanges;
+  event DocEvents_PivotTableBeforeCommitChangesEventHandler PivotTableBeforeCommitChanges;
+  event DocEvents_PivotTableBeforeDiscardChangesEventHandler PivotTableBeforeDiscardChanges;
+  event DocEvents_PivotTableChangeSyncEventHandler PivotTableChangeSync;
+  event DocEvents_LensGalleryRenderCompleteEventHandler LensGalleryRenderComplete;
+  event DocEvents_TableUpdateEventHandler TableUpdate;
+  event DocEvents_BeforeDeleteEventHandler BeforeDelete;
+  event DocEvents_RemoteChangeEventHandler RemoteChange;
+  event DocEvents_RemoteBeforeDeleteEventHandler RemoteBeforeDelete;
+  event DocEvents_RemotePivotTableUpdateEventHandler RemotePivotTableUpdate;
+  event DocEvents_RemotePivotTableChangeSyncEventHandler RemotePivotTableChangeSync;
+}

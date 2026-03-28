@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+namespace DocumentModel.Themes;
 
 /// <summary>
 /// Represents one of the three language fonts contained in the ThemeFonts collection

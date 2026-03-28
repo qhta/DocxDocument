@@ -147,7 +147,7 @@ public partial interface Series : InteropObject
   /// picture chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.picturetype?view=word-pia"/>
-  public ChartPictureType PictureType { get; set; }
+  public XlChartPictureType PictureType { get; set; }
 
   /// <summary>
   /// Returns or sets the unit for each picture on the chart if the PictureType property is set to xlStackScale (if
@@ -205,7 +205,7 @@ public partial interface Series : InteropObject
   /// Returns or sets the shape used for a single series in a 3-D bar or column chart. Read/write BarShape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.barshape?view=word-pia"/>
-  public BarShape BarShape { get; set; }
+  public XlBarShape BarShape { get; set; }
 
   /// <summary>
   /// True if a picture is applied to the sides of the point or all points in the series. Read/write Boolean.

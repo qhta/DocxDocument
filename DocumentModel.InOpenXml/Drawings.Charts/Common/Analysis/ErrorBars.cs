@@ -23,8 +23,8 @@ public partial class ErrorBars : ModelElement<DXDC.ErrorBars>
   ///   Direction of the error bar (e.g., X, Y, or both).
   /// </summary>
   [OpenXmlElement(typeof(DXDC.ErrorDirection))]
-  public ErrorBarDirection? ErrorDirection { get => _ErrorDirection; set => UpdateField(ref _ErrorDirection, value, nameof(ErrorDirection)); }
-  private ErrorBarDirection? _ErrorDirection;
+  public XlErrorBarDirection? ErrorDirection { get => _ErrorDirection; set => UpdateField(ref _ErrorDirection, value, nameof(ErrorDirection)); }
+  private XlErrorBarDirection? _ErrorDirection;
   /// <summary>
   ///   Type of error bar, such as fixed value, percentage, or standard deviation.
   /// </summary>

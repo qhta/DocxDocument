@@ -90,7 +90,7 @@ public partial interface PlotArea : InteropObject
   /// Returns or sets the position of the plot area on the chart. Read/write ChartElementPosition.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.plotarea.position?view=word-pia"/>
-  public ChartElementPosition Position { get; set; }
+  public XlChartElementPosition Position { get; set; }
 
   /// <summary>
   /// Returns the line, fill, and effect formatting for the object. Read-only ChartFormat.

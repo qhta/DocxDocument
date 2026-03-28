@@ -139,7 +139,7 @@ public partial interface DataLabel : InteropObject
   /// Gets or sets the position of the data label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabel.position?view=word-pia"/>
-  public DataLabelPosition Position { get; set; }
+  public XlDataLabelPosition Position { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the series name is displayed in the data label.

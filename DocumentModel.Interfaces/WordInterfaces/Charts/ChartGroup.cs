@@ -150,7 +150,7 @@ public partial interface ChartGroup : InteropObject
   /// Gets or sets the criterion used to split a pie-of-pie or bar-of-pie chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup.splittype?view=word-pia"/>
-  public ChartSplitType SplitType { get; set; }
+  public XlChartSplitType SplitType { get; set; }
 
   /// <summary>
   /// Gets or sets the split threshold value for a pie-of-pie or bar-of-pie chart.

@@ -45,7 +45,7 @@ public partial interface TickLabels : InteropObject
   /// Returns or sets a Long value that represents the text orientation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.ticklabels.orientation?view=word-pia"/>
-  public TickLabelOrientation Orientation { get; set; }
+  public XlTickLabelOrientation Orientation { get; set; }
 
   /// <summary>
   /// Returns or sets an ReadingOrder constant that represents the reading order for the specified object.

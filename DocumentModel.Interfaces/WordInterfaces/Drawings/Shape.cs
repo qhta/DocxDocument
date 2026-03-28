@@ -379,7 +379,7 @@ public partial interface Shape : InteropObject
   /// Returns a TextFrame2 object that contains the text for the specified shape. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.textframe2?view=word-pia"/>
-  public Drw.TextFrame2 TextFrame2 { get; }
+  public Drw.TextFrame TextFrame2 { get; }
 
   /// <summary>
   /// Gets True if there is a SmartArt diagram present on the shape.

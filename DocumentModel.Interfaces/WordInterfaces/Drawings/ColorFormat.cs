@@ -70,7 +70,7 @@ public partial interface ColorFormat : InteropObject
   /// Gets or sets the theme color applied to the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.colorformat.objectthemecolor?view=word-pia"/>
-  public ThemeColorIndex ObjectThemeColor { get; set; }
+  public ThemeColors ObjectThemeColor { get; set; }
 
   /// <summary>
   /// Gets or sets the brightness of the color.

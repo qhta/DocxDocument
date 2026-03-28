@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Defines placeholder delegate types for Word interop event handlers that may be absent from some generated references.

@@ -1,0 +1,82 @@
+﻿using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace DocumentModel.Interop.Excel;
+
+[ComImport]
+[InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
+[Guid("000244B1-0000-0000-C000-000000000046")]
+[TypeLibType(TypeLibTypeFlags.FDispatchable)]
+public interface MultiThreadedCalculation
+{
+  [DispId(148)]
+  Application Application
+  {
+    [MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall,
+      MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(148)]
+    [return: MarshalAs(UnmanagedType.Interface)]
+    get;
+  }
+
+  [DispId(149)]
+  XlCreator Creator
+  {
+    [MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall,
+      MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(149)]
+    get;
+  }
+
+  [DispId(150)]
+  object Parent
+  {
+    [MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall,
+      MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(150)]
+    [return: MarshalAs(UnmanagedType.IDispatch)]
+    get;
+  }
+
+  [DispId(600)]
+  bool Enabled
+  {
+    [MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall,
+      MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(600)]
+    get;
+    [MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall,
+      MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(600)]
+    [param: In]
+    set;
+  }
+
+  [DispId(2766)]
+  XlThreadMode ThreadMode
+  {
+    [MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall,
+      MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(2766)]
+    get;
+    [MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall,
+      MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(2766)]
+    [param: In]
+    set;
+  }
+
+  [DispId(2767)]
+  int ThreadCount
+  {
+    [MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall,
+      MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(2767)]
+    get;
+    [MethodImpl(MethodImplOptions.PreserveSig | MethodImplOptions.InternalCall,
+      MethodCodeType = MethodCodeType.Runtime)]
+    [DispId(2767)]
+    [param: In]
+    set;
+  }
+}

@@ -47,12 +47,12 @@ public partial class DataLabels: ModelElementCollection<DataLabel, DXDC.DataLabe
   ///   Position of the data labels relative to the data points.
   /// </summary>
   [OpenXmlElement(typeof(DXDC.DataLabelPosition))]
-  public DataLabelPosition? DataLabelPosition
+  public XlDataLabelPosition? DataLabelPosition
   {
     get => _DataLabelPosition;
     set => UpdateField(ref _DataLabelPosition, value, nameof(DataLabelPosition));
   }
-  private DataLabelPosition? _DataLabelPosition;
+  private XlDataLabelPosition? _DataLabelPosition;
   /// <summary>
   ///   Indicates whether the legend key is shown in the data labels.
   /// </summary>

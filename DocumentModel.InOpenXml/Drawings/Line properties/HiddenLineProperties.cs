@@ -37,8 +37,8 @@ public partial class HiddenLineProperties : ModelElement<DXO10D.HiddenLineProper
  /// <summary>
  /// Specifies the preset dash style for the line.
  /// </summary>
- public PresetLineDashes? PresetDash { get => _PresetDash; set => UpdateField(ref _PresetDash, value, nameof(PresetDash)); }
- private PresetLineDashes? _PresetDash;
+ public PresetLineDash? PresetDash { get => _PresetDash; set => UpdateField(ref _PresetDash, value, nameof(PresetDash)); }
+ private PresetLineDash? _PresetDash;
  /// <summary>
  /// Specifies the custom dash pattern for the line.
  /// </summary>

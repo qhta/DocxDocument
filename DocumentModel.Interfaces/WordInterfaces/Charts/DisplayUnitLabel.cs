@@ -109,7 +109,7 @@ public partial interface DisplayUnitLabel : InteropObject
   /// Gets or sets the position of the display-unit label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.position?view=word-pia"/>
-  public ChartElementPosition Position { get; set; }
+  public XlChartElementPosition Position { get; set; }
 
   /// <summary>
   /// Gets the chart formatting for the display-unit label.

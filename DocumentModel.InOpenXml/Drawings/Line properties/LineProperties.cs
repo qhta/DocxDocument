@@ -28,7 +28,7 @@ public partial class LineProperties : ElementCollection<IDrawingProperty>, ILine
  /// <summary>
  ///   Specifies the preset dash style for the line.
  /// </summary>
- public PresetLineDashes? PresetDash { get; set; }
+ public PresetLineDash? PresetDash { get; set; }
  /// <summary>
  ///   Specifies the custom dash pattern for the line.
  /// </summary>

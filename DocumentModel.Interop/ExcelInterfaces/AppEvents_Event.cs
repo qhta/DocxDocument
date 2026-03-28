@@ -1,0 +1,64 @@
+﻿using System.Runtime.InteropServices;
+
+namespace DocumentModel.Interop.Excel;
+
+[ComVisible(false)]
+[ComEventInterface(typeof(AppEvents), typeof(AppEvents_EventProvider))]
+[TypeLibType(TypeLibTypeFlags.FHidden)]
+public interface AppEvents_Event
+{
+  event AppEvents_NewWorkbookEventHandler NewWorkbook;
+  event AppEvents_SheetSelectionChangeEventHandler SheetSelectionChange;
+  event AppEvents_SheetBeforeDoubleClickEventHandler SheetBeforeDoubleClick;
+  event AppEvents_SheetBeforeRightClickEventHandler SheetBeforeRightClick;
+  event AppEvents_SheetActivateEventHandler SheetActivate;
+  event AppEvents_SheetDeactivateEventHandler SheetDeactivate;
+  event AppEvents_SheetCalculateEventHandler SheetCalculate;
+  event AppEvents_SheetChangeEventHandler SheetChange;
+  event AppEvents_WorkbookOpenEventHandler WorkbookOpen;
+  event AppEvents_WorkbookActivateEventHandler WorkbookActivate;
+  event AppEvents_WorkbookDeactivateEventHandler WorkbookDeactivate;
+  event AppEvents_WorkbookBeforeCloseEventHandler WorkbookBeforeClose;
+  event AppEvents_WorkbookBeforeSaveEventHandler WorkbookBeforeSave;
+  event AppEvents_WorkbookBeforePrintEventHandler WorkbookBeforePrint;
+  event AppEvents_WorkbookNewSheetEventHandler WorkbookNewSheet;
+  event AppEvents_WorkbookAddinInstallEventHandler WorkbookAddinInstall;
+  event AppEvents_WorkbookAddinUninstallEventHandler WorkbookAddinUninstall;
+  event AppEvents_WindowResizeEventHandler WindowResize;
+  event AppEvents_WindowActivateEventHandler WindowActivate;
+  event AppEvents_WindowDeactivateEventHandler WindowDeactivate;
+  event AppEvents_SheetFollowHyperlinkEventHandler SheetFollowHyperlink;
+  event AppEvents_SheetPivotTableUpdateEventHandler SheetPivotTableUpdate;
+  event AppEvents_WorkbookPivotTableCloseConnectionEventHandler WorkbookPivotTableCloseConnection;
+  event AppEvents_WorkbookPivotTableOpenConnectionEventHandler WorkbookPivotTableOpenConnection;
+  event AppEvents_WorkbookSyncEventHandler WorkbookSync;
+  event AppEvents_WorkbookBeforeXmlImportEventHandler WorkbookBeforeXmlImport;
+  event AppEvents_WorkbookAfterXmlImportEventHandler WorkbookAfterXmlImport;
+  event AppEvents_WorkbookBeforeXmlExportEventHandler WorkbookBeforeXmlExport;
+  event AppEvents_WorkbookAfterXmlExportEventHandler WorkbookAfterXmlExport;
+  event AppEvents_WorkbookRowsetCompleteEventHandler WorkbookRowsetComplete;
+  event AppEvents_AfterCalculateEventHandler AfterCalculate;
+  event AppEvents_SheetPivotTableAfterValueChangeEventHandler SheetPivotTableAfterValueChange;
+  event AppEvents_SheetPivotTableBeforeAllocateChangesEventHandler SheetPivotTableBeforeAllocateChanges;
+  event AppEvents_SheetPivotTableBeforeCommitChangesEventHandler SheetPivotTableBeforeCommitChanges;
+  event AppEvents_SheetPivotTableBeforeDiscardChangesEventHandler SheetPivotTableBeforeDiscardChanges;
+  event AppEvents_ProtectedViewWindowOpenEventHandler ProtectedViewWindowOpen;
+  event AppEvents_ProtectedViewWindowBeforeEditEventHandler ProtectedViewWindowBeforeEdit;
+  event AppEvents_ProtectedViewWindowBeforeCloseEventHandler ProtectedViewWindowBeforeClose;
+  event AppEvents_ProtectedViewWindowResizeEventHandler ProtectedViewWindowResize;
+  event AppEvents_ProtectedViewWindowActivateEventHandler ProtectedViewWindowActivate;
+  event AppEvents_ProtectedViewWindowDeactivateEventHandler ProtectedViewWindowDeactivate;
+  event AppEvents_WorkbookAfterSaveEventHandler WorkbookAfterSave;
+  event AppEvents_WorkbookNewChartEventHandler WorkbookNewChart;
+  event AppEvents_SheetLensGalleryRenderCompleteEventHandler SheetLensGalleryRenderComplete;
+  event AppEvents_SheetTableUpdateEventHandler SheetTableUpdate;
+  event AppEvents_WorkbookModelChangeEventHandler WorkbookModelChange;
+  event AppEvents_SheetBeforeDeleteEventHandler SheetBeforeDelete;
+  event AppEvents_WorkbookBeforeRemoteChangeEventHandler WorkbookBeforeRemoteChange;
+  event AppEvents_WorkbookAfterRemoteChangeEventHandler WorkbookAfterRemoteChange;
+  event AppEvents_RemoteSheetChangeEventHandler RemoteSheetChange;
+  event AppEvents_RemoteWorkbookNewSheetEventHandler RemoteWorkbookNewSheet;
+  event AppEvents_RemoteWorkbookNewChartEventHandler RemoteWorkbookNewChart;
+  event AppEvents_RemoteSheetBeforeDeleteEventHandler RemoteSheetBeforeDelete;
+  event AppEvents_RemoteSheetPivotTableUpdateEventHandler RemoteSheetPivotTableUpdate;
+}

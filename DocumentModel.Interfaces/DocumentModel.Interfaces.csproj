@@ -18,12 +18,7 @@
     <NoWarn>1701;1702;8766;0618</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove=".github\**" />
-    <EmbeddedResource Remove=".github\**" />
-    <None Remove=".github\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="CoreInterfaces\DispObjs\_IMsoDispObj.Inheritance.cs" />
+    <Compile Remove="Application\DispObjs\_IMsoDispObj.Inheritance.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="DeepEqual" Version="5.1.0" />

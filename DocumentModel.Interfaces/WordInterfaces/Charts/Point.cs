@@ -95,7 +95,7 @@ public partial interface Point : InteropObject
   /// picture chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.picturetype?view=word-pia"/>
-  public ChartPictureType PictureType { get; set; }
+  public XlChartPictureType PictureType { get; set; }
 
   /// <summary>
   /// Returns or sets the unit for each picture on the chart if the PictureType property is set to xlStackScale (if

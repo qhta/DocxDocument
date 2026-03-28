@@ -1,0 +1,43 @@
+namespace DocumentModel.Interop.Word;
+
+/// <summary>
+/// Marks the moved-to text when text in a document with tracked changes is moved from one place to another.
+/// </summary>
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdmovetotextmark?view=office-pia` for Office interop details.
+/// </remarks>
+public enum WdMoveToTextMark
+{
+  /// <summary>
+  /// No special formatting for moved text.
+  /// </summary>
+  None = 0,
+  /// <summary>
+  /// Marks moved text with bold formatting.
+  /// </summary>
+  Bold = 1,
+  /// <summary>
+  /// Marks moved text with italic formatting.
+  /// </summary>
+  Italic = 2,
+  /// <summary>
+  /// Underlines moved text.
+  /// </summary>
+  Underline = 3,
+  /// <summary>
+  /// Moved text is marked with a double underline.
+  /// </summary>
+  DoubleUnderline = 4,
+  /// <summary>
+  /// Marks moved text with color only. Use the MoveToTextColor property to set the color of moved text.
+  /// </summary>
+  ColorOnly = 5,
+  /// <summary>
+  /// Moved text is marked with a strikethrough.
+  /// </summary>
+  StrikeThrough = 6,
+  /// <summary>
+  /// Moved text is marked with a double strikethrough.
+  /// </summary>
+  DoubleStrikeThrough = 7
+}

@@ -1,5 +1,3 @@
-using DocumentModel.Wordprocessing;
-
 namespace DocumentModel.Wordprocessing;
 
 using DocumentModel.Drawings;
@@ -111,7 +109,7 @@ public partial interface TextFrame : InteropObject
   /// Gets or sets the path type for the specified text frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.pathformat?view=word-pia"/>
-  public Drw.PathFormat PathFormat { get; set; }
+  public PathFormat PathFormat { get; set; }
 
   /// <summary>
   /// Gets or sets the warp format (how the text is warped) for the specified text frame.
@@ -123,7 +121,7 @@ public partial interface TextFrame : InteropObject
   /// Gets the TextColumn2 object that represents the columns of the specified text frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.column?view=word-pia"/>
-  public TextColumn2 Column { get; }
+  public TextColumn Column { get; }
 
   /// <summary>
   /// Gets a ThreeDFormat object that contains 3-D effect formatting properties for the specified text frame.

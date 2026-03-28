@@ -42,7 +42,7 @@ public interface ChartFormat : InteropObject
   /// Gets the `TextFrame2` object for the chart element.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartformat.textframe2?view=word-pia"/>
-  public TextFrame2 TextFrame2 { get; }
+  public TextFrame TextFrame2 { get; }
   /// <summary>
   /// Gets the 3-D formatting for the chart element.
   /// </summary>

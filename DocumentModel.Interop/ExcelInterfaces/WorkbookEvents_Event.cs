@@ -1,0 +1,58 @@
+﻿using System.Runtime.InteropServices;
+
+namespace DocumentModel.Interop.Excel;
+
+[ComEventInterface(typeof(WorkbookEvents), typeof(WorkbookEvents_EventProvider))]
+[ComVisible(false)]
+[TypeLibType(TypeLibTypeFlags.FHidden)]
+public interface WorkbookEvents_Event
+{
+  event WorkbookEvents_OpenEventHandler Open;
+  event WorkbookEvents_ActivateEventHandler Activate;
+  event WorkbookEvents_DeactivateEventHandler Deactivate;
+  event WorkbookEvents_BeforeCloseEventHandler BeforeClose;
+  event WorkbookEvents_BeforeSaveEventHandler BeforeSave;
+  event WorkbookEvents_BeforePrintEventHandler BeforePrint;
+  event WorkbookEvents_NewSheetEventHandler NewSheet;
+  event WorkbookEvents_AddinInstallEventHandler AddinInstall;
+  event WorkbookEvents_AddinUninstallEventHandler AddinUninstall;
+  event WorkbookEvents_WindowResizeEventHandler WindowResize;
+  event WorkbookEvents_WindowActivateEventHandler WindowActivate;
+  event WorkbookEvents_WindowDeactivateEventHandler WindowDeactivate;
+  event WorkbookEvents_SheetSelectionChangeEventHandler SheetSelectionChange;
+  event WorkbookEvents_SheetBeforeDoubleClickEventHandler SheetBeforeDoubleClick;
+  event WorkbookEvents_SheetBeforeRightClickEventHandler SheetBeforeRightClick;
+  event WorkbookEvents_SheetActivateEventHandler SheetActivate;
+  event WorkbookEvents_SheetDeactivateEventHandler SheetDeactivate;
+  event WorkbookEvents_SheetCalculateEventHandler SheetCalculate;
+  event WorkbookEvents_SheetChangeEventHandler SheetChange;
+  event WorkbookEvents_SheetFollowHyperlinkEventHandler SheetFollowHyperlink;
+  event WorkbookEvents_SheetPivotTableUpdateEventHandler SheetPivotTableUpdate;
+  event WorkbookEvents_PivotTableCloseConnectionEventHandler PivotTableCloseConnection;
+  event WorkbookEvents_PivotTableOpenConnectionEventHandler PivotTableOpenConnection;
+  event WorkbookEvents_SyncEventHandler Sync;
+  event WorkbookEvents_BeforeXmlImportEventHandler BeforeXmlImport;
+  event WorkbookEvents_AfterXmlImportEventHandler AfterXmlImport;
+  event WorkbookEvents_BeforeXmlExportEventHandler BeforeXmlExport;
+  event WorkbookEvents_AfterXmlExportEventHandler AfterXmlExport;
+  event WorkbookEvents_RowsetCompleteEventHandler RowsetComplete;
+  event WorkbookEvents_SheetPivotTableAfterValueChangeEventHandler SheetPivotTableAfterValueChange;
+  event WorkbookEvents_SheetPivotTableBeforeAllocateChangesEventHandler SheetPivotTableBeforeAllocateChanges;
+  event WorkbookEvents_SheetPivotTableBeforeCommitChangesEventHandler SheetPivotTableBeforeCommitChanges;
+  event WorkbookEvents_SheetPivotTableBeforeDiscardChangesEventHandler SheetPivotTableBeforeDiscardChanges;
+  event WorkbookEvents_SheetPivotTableChangeSyncEventHandler SheetPivotTableChangeSync;
+  event WorkbookEvents_AfterSaveEventHandler AfterSave;
+  event WorkbookEvents_NewChartEventHandler NewChart;
+  event WorkbookEvents_SheetLensGalleryRenderCompleteEventHandler SheetLensGalleryRenderComplete;
+  event WorkbookEvents_SheetTableUpdateEventHandler SheetTableUpdate;
+  event WorkbookEvents_ModelChangeEventHandler ModelChange;
+  event WorkbookEvents_SheetBeforeDeleteEventHandler SheetBeforeDelete;
+  event WorkbookEvents_BeforeRemoteChangeEventHandler BeforeRemoteChange;
+  event WorkbookEvents_AfterRemoteChangeEventHandler AfterRemoteChange;
+  event WorkbookEvents_RemoteSheetChangeEventHandler RemoteSheetChange;
+  event WorkbookEvents_RemoteNewSheetEventHandler RemoteNewSheet;
+  event WorkbookEvents_RemoteNewChartEventHandler RemoteNewChart;
+  event WorkbookEvents_RemoteSheetBeforeDeleteEventHandler RemoteSheetBeforeDelete;
+  event WorkbookEvents_RemoteSheetPivotTableUpdateEventHandler RemoteSheetPivotTableUpdate;
+  event WorkbookEvents_RemoteSheetPivotTableChangeSyncEventHandler RemoteSheetPivotTableChangeSync;
+}

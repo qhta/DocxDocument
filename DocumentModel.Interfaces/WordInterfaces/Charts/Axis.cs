@@ -38,7 +38,7 @@ public partial interface Axis : InteropObject
   /// Gets or sets how the specified axis crosses the other axis.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.crosses?view=word-pia"/>
-  public AxisCrosses Crosses { get; set; }
+  public XlAxisCrosses Crosses { get; set; }
 
   /// <summary>
   /// Gets or sets the point, on the category axis, where the value axis crosses it.
@@ -158,7 +158,7 @@ public partial interface Axis : InteropObject
   /// Gets or sets the axis scale type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.scaletype?view=word-pia"/>
-  public ScaleType ScaleType { get; set; }
+  public XlScaleType ScaleType { get; set; }
 
   /// <summary>
   /// Gets or sets the tick-label position.
@@ -218,7 +218,7 @@ public partial interface Axis : InteropObject
   /// Gets or sets the category-axis type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.categorytype?view=word-pia"/>
-  public CategoryType CategoryType { get; set; }
+  public XlCategoryType CategoryType { get; set; }
 
   /// <summary>
   /// Gets the distance, in points, from the left edge of the chart area to the left edge of the axis.
@@ -248,7 +248,7 @@ public partial interface Axis : InteropObject
   /// Gets or sets the display unit for the value axis.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.displayunit?view=word-pia"/>
-  public DisplayUnit DisplayUnit { get; set; }
+  public XlDisplayUnit DisplayUnit { get; set; }
 
   /// <summary>
   /// Gets or sets the custom display-unit value.
