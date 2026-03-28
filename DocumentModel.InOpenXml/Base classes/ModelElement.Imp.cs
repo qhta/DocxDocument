@@ -3,6 +3,6 @@ namespace DocumentModel;
 /// <summary>
 /// Base class for all model elements, providing property change notification support.
 /// </summary>
-public abstract partial class ModelElement: Interop.InteropObject
+public abstract partial class ModelElement: Interfaces.InteropObject
 {
 }

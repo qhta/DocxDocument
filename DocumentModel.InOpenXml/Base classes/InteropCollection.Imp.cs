@@ -1,7 +1,7 @@
 ﻿using DocumentModel;
 
 namespace DocumentModel;
-public abstract partial class ModelElementCollection<ItemType> : Interop.InteropCollection<ItemType>
+public abstract partial class ModelElementCollection<ItemType> : Interfaces.InteropCollection<ItemType>
 {
   /// <summary>
   /// Used to store items that implement INamedObject and allow retrieval by name.
