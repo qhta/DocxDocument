@@ -9,7 +9,7 @@ public enum BaselineAlignment
 {
   /// <summary>Align to baseline</summary>
   [OpenXmlEnumValue(nameof(DXW.VerticalTextAlignmentValues.Baseline))]
-  Baseline = 1,
+  Baseline = 0,
   /// <summary>Align to top</summary>
   [OpenXmlEnumValue(nameof(DXW.VerticalTextAlignmentValues.Top))]
   Top,
