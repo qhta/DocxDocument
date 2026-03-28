@@ -1,10 +1,10 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel;
 
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system?view=word-pia"/>
-public partial interface System: InteropObject
+public partial interface ISystem: InteropObject
 {
   /// <summary>
   /// Returns the profile string.

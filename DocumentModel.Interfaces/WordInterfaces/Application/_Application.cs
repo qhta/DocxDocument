@@ -66,7 +66,7 @@ public partial interface _Application : InteropObject
   /// Returns a System object, which can be used to return system-related information and perform system-related tasks.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.system?view=word-pia"/>
-  public System System { get; }
+  public ISystem System { get; }
 
   /// <summary>
   /// Returns a AutoCorrect object that contains the current AutoCorrect options, entries, and exceptions.

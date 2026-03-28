@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel;
 
 /// <summary>
 /// Specifies the country/region setting of the current system.

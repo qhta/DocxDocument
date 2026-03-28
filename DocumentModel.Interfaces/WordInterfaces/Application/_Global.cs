@@ -70,7 +70,7 @@ public partial interface _Global: InteropObject
   /// Returns a System object that can be used to return system-related information and perform system-related tasks.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.system?view=word-pia"/>
-  public System System { get; }
+  public ISystem System { get; }
 
   /// <summary>
   /// Returns an AutoCorrect object that contains the current AutoCorrect options, entries, and exceptions.
