@@ -1,243 +1,338 @@
-using System.Collections;
-using System.Reflection;
-
-using DocumentModel.Drawings.Charts;
 using DocumentModel.Drawings.Diagrams;
-using DocumentModel.Drawings.SmartArt;
 using DocumentModel.Wordprocessing;
 
 namespace DocumentModel.Drawings;
 
-/// <summary>
-/// Reserved for internal use.
-/// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes?view=office-pia"/>
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes?view=word-pia"/>
 public partial interface Shapes: InteropObject
 {
   /// <summary>
-  /// Invokes `Item`.
+  /// Adds a callout shape to the collection.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.item?view=office-pia"/>
-  public Shape Item(object Index);
-  /// <summary>
-  /// Invokes `AddCallout`.
-  /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addcallout?view=office-pia"/>
-  public Shape AddCallout(CalloutType Type, float Left, float Top, float Width, float Height);
-  /// <summary>
-  /// Invokes `AddConnector`.
-  /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="BeginX">The `BeginX` parameter.</param>
-  /// <param name="BeginY">The `BeginY` parameter.</param>
-  /// <param name="EndX">The `EndX` parameter.</param>
-  /// <param name="EndY">The `EndY` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addconnector?view=office-pia"/>
-  public Shape AddConnector(ConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
-  /// <summary>
-  /// Invokes `AddCurve`.
-  /// </summary>
-  /// <param name="SafeArrayOfPoints">The `SafeArrayOfPoints` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addcurve?view=office-pia"/>
-  public Shape AddCurve(object SafeArrayOfPoints);
-  /// <summary>
-  /// Invokes `AddLabel`.
-  /// </summary>
-  /// <param name="Orientation">The `Orientation` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addlabel?view=office-pia"/>
-  public Shape AddLabel(TextOrientation Orientation, float Left, float Top, float Width, float Height);
-  /// <summary>
-  /// Invokes `AddLine`.
-  /// </summary>
-  /// <param name="BeginX">The `BeginX` parameter.</param>
-  /// <param name="BeginY">The `BeginY` parameter.</param>
-  /// <param name="EndX">The `EndX` parameter.</param>
-  /// <param name="EndY">The `EndY` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addline?view=office-pia"/>
-  public Shape AddLine(float BeginX, float BeginY, float EndX, float EndY);
-  /// <summary>
-  /// Invokes `AddPicture`.
-  /// </summary>
-  /// <param name="FileName">The `FileName` parameter.</param>
-  /// <param name="LinkToFile">The `LinkToFile` parameter.</param>
-  /// <param name="SaveWithDocument">The `SaveWithDocument` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addpicture?view=office-pia"/>
-  public Shape AddPicture
-  (string FileName, TriState LinkToFile, TriState SaveWithDocument, float Left, float Top, float Width,
-    float Height);
-  /// <summary>
-  /// Invokes `AddPolyline`.
-  /// </summary>
-  /// <param name="SafeArrayOfPoints">The `SafeArrayOfPoints` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addpolyline?view=office-pia"/>
-  public Shape AddPolyline(object SafeArrayOfPoints);
-  /// <summary>
-  /// Invokes `AddShape`.
-  /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addshape?view=office-pia"/>
-  public Shape AddShape(AutoShapeType Type, float Left, float Top, float Width, float Height);
-  /// <summary>
-  /// Invokes `AddTextEffect`.
-  /// </summary>
-  /// <param name="PresetTextEffect">The `PresetTextEffect` parameter.</param>
-  /// <param name="Text">The `Text` parameter.</param>
-  /// <param name="FontName">The `FontName` parameter.</param>
-  /// <param name="FontSize">The `FontSize` parameter.</param>
-  /// <param name="FontBold">The `FontBold` parameter.</param>
-  /// <param name="FontItalic">The `FontItalic` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addtexteffect?view=office-pia"/>
-  public Shape AddTextEffect
-  (PresetTextEffect PresetTextEffect, string Text, string FontName, float FontSize, TriState FontBold,
-    TriState FontItalic, float Left, float Top);
-  /// <summary>
-  /// Invokes `AddTextbox`.
-  /// </summary>
-  /// <param name="Orientation">The `Orientation` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addtextbox?view=office-pia"/>
-  public Shape AddTextbox(TextOrientation Orientation, float Left, float Top, float Width, float Height);
-  /// <summary>
-  /// Invokes `BuildFreeform`.
-  /// </summary>
-  /// <param name="EditingType">The `EditingType` parameter.</param>
-  /// <param name="X1">The `X1` parameter.</param>
-  /// <param name="Y1">The `Y1` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.buildfreeform?view=office-pia"/>
-  public FreeformBuilder BuildFreeform(EditingType EditingType, float X1, float Y1);
-  /// <summary>
-  /// Invokes `Range`.
-  /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.range?view=office-pia"/>
-  public ShapeRange Range(object Index);
-  /// <summary>
-  /// Invokes `SelectAll`.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.selectall?view=office-pia"/>
-  public void SelectAll();
-  /// <summary>
-  /// Invokes `AddDiagram`.
-  /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.adddiagram?view=office-pia"/>
-  public Shape AddDiagram(DiagramType Type, float Left, float Top, float Width, float Height);
-  /// <summary>
-  /// Invokes `AddCanvas`.
-  /// </summary>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addcanvas?view=office-pia"/>
-  public Shape AddCanvas(float Left, float Top, float Width, float Height);
-  /// <summary>
-  /// Invokes `AddChart`.
-  /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addchart?view=office-pia"/>
-  public Shape AddChart
-    (ChartType Type, float Left, float Top, float Width, float Height);
-  /// <summary>
-  /// Invokes `AddTable`.
-  /// </summary>
-  /// <param name="NumRows">The `NumRows` parameter.</param>
-  /// <param name="NumColumns">The `NumColumns` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addtable?view=office-pia"/>
-  public Shape AddTable(int NumRows, int NumColumns, float Left, float Top, float Width, float Height);
-  /// <summary>
-  /// Invokes `AddSmartArt`.
-  /// </summary>
-  /// <param name="Layout">The `Layout` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addsmartart?view=office-pia"/>
-  public Shape AddSmartArt(SmartArtLayout Layout, float Left, float Top, float Width, float Height);
-  /// <summary>
-  /// Invokes `AddChart2`.
-  /// </summary>
-  /// <param name="Style">The `Style` parameter.</param>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
-  /// <param name="NewLayout">The `NewLayout` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addchart2?view=office-pia"/>
-  public Shape AddChart2
-  (int Style, ChartType Type, float Left, float Top, float Width,
-    float Height, bool NewLayout);
-  /// <summary>
-  /// Invokes `AddPicture2`.
-  /// </summary>
-  /// <param name="FileName">The `FileName` parameter.</param>
-  /// <param name="LinkToFile">The `LinkToFile` parameter.</param>
-  /// <param name="SaveWithDocument">The `SaveWithDocument` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
-  /// <param name="Compress">The `Compress` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addpicture2?view=office-pia"/>
-  public Shape AddPicture2
-  (string FileName, TriState LinkToFile, TriState SaveWithDocument, float Left, float Top, float Width,
-    float Height, PictureCompress Compress);
-}
+  /// <param name="Type">The callout type.</param>
+  /// <param name="Left">The left position of the shape.</param>
+  /// <param name="Top">The top position of the shape.</param>
+  /// <param name="Width">The width of the shape.</param>
+  /// <param name="Height">The height of the shape.</param>
+  /// <param name="Anchor">The anchor for the shape.</param>
+  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addcallout?view=word-pia"/>
+  public Shape AddCallout(Drw.CalloutType Type, float Left, float Top, float Width, float Height, object Anchor);
 
+  /// <summary>
+  /// Adds a connector shape to the collection.
+  /// </summary>
+  /// <param name="Type">The connector type.</param>
+  /// <param name="BeginX">The starting x-coordinate.</param>
+  /// <param name="BeginY">The starting y-coordinate.</param>
+  /// <param name="EndX">The ending x-coordinate.</param>
+  /// <param name="EndY">The ending y-coordinate.</param>
+  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addconnector?view=word-pia"/>
+  public Shape AddConnector(Drw.ConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
+
+  /// <summary>
+  /// Adds a curve shape to the collection.
+  /// </summary>
+  /// <param name="SafeArrayOfPoints">The array of points for the curve.</param>
+  /// <param name="Anchor">The anchor for the shape.</param>
+  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addcurve?view=word-pia"/>
+  public Shape AddCurve(object SafeArrayOfPoints, object Anchor);
+
+  /// <summary>
+  /// Adds a label shape to the collection.
+  /// </summary>
+  /// <param name="Orientation">The text orientation.</param>
+  /// <param name="Left">The left position of the shape.</param>
+  /// <param name="Top">The top position of the shape.</param>
+  /// <param name="Width">The width of the shape.</param>
+  /// <param name="Height">The height of the shape.</param>
+  /// <param name="Anchor">The anchor for the shape.</param>
+  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addlabel?view=word-pia"/>
+  public Shape AddLabel(TextOrientation Orientation, float Left, float Top, float Width, float Height, object Anchor);
+
+  /// <summary>
+  /// Adds a line shape to the collection.
+  /// </summary>
+  /// <param name="BeginX">The starting x-coordinate.</param>
+  /// <param name="BeginY">The starting y-coordinate.</param>
+  /// <param name="EndX">The ending x-coordinate.</param>
+  /// <param name="EndY">The ending y-coordinate.</param>
+  /// <param name="Anchor">The anchor for the shape.</param>
+  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addline?view=word-pia"/>
+  public Shape AddLine(float BeginX, float BeginY, float EndX, float EndY, object Anchor);
+
+  /// <summary>
+  /// Adds a picture to the collection as a shape.
+  /// </summary>
+  /// <param name="FileName">The file name of the picture.</param>
+  /// <param name="LinkToFile">true to link to the file; otherwise, false.</param>
+  /// <param name="SaveWithDocument">true to save with the document; otherwise, false.</param>
+  /// <param name="Left">The left position of the shape.</param>
+  /// <param name="Top">The top position of the shape.</param>
+  /// <param name="Width">The width of the shape.</param>
+  /// <param name="Height">The height of the shape.</param>
+  /// <param name="Anchor">The anchor for the shape.</param>
+  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addpicture?view=word-pia"/>
+  public Shape AddPicture(string FileName, object LinkToFile, object SaveWithDocument, object Left, object Top, object Width, object Height, object Anchor);
+
+  /// <summary>
+  /// Adds a polyline shape to the collection.
+  /// </summary>
+  /// <param name="SafeArrayOfPoints">The array of points for the polyline.</param>
+  /// <param name="Anchor">The anchor for the shape.</param>
+  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addpolyline?view=word-pia"/>
+  public Shape AddPolyline(object SafeArrayOfPoints, object Anchor);
+
+  /// <summary>
+  /// Adds a shape to the collection.
+  /// </summary>
+  /// <param name="Type">The type of shape to add.</param>
+  /// <param name="Left">The left position of the shape.</param>
+  /// <param name="Top">The top position of the shape.</param>
+  /// <param name="Width">The width of the shape.</param>
+  /// <param name="Height">The height of the shape.</param>
+  /// <param name="Anchor">The anchor for the shape.</param>
+  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addshape?view=word-pia"/>
+  public Shape AddShape(int Type, float Left, float Top, float Width, float Height, object Anchor);
+
+  /// <summary>
+  /// Adds a text effect shape to the collection.
+  /// </summary>
+  /// <param name="PresetTextEffect">The preset text effect.</param>
+  /// <param name="Text">The text for the effect.</param>
+  /// <param name="FontName">The font name.</param>
+  /// <param name="FontSize">The font size.</param>
+  /// <param name="FontBold">true for bold font; otherwise, false.</param>
+  /// <param name="FontItalic">true for italic font; otherwise, false.</param>
+  /// <param name="Left">The left position of the shape.</param>
+  /// <param name="Top">The top position of the shape.</param>
+  /// <param name="Anchor">The anchor for the shape.</param>
+  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addtexteffect?view=word-pia"/>
+  public Shape AddTextEffect(Drw.PresetTextEffect PresetTextEffect, string Text, string FontName, float FontSize, TriState FontBold, TriState FontItalic, float Left, float Top, object Anchor);
+
+  /// <summary>
+  /// Adds a textbox shape to the collection.
+  /// </summary>
+  /// <param name="Orientation">The text orientation.</param>
+  /// <param name="Left">The left position of the shape.</param>
+  /// <param name="Top">The top position of the shape.</param>
+  /// <param name="Width">The width of the shape.</param>
+  /// <param name="Height">The height of the shape.</param>
+  /// <param name="Anchor">The anchor for the shape.</param>
+  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addtextbox?view=word-pia"/>
+  public Shape AddTextbox(TextOrientation Orientation, float Left, float Top, float Width, float Height, object Anchor);
+
+  /// <summary>
+  /// Builds a freeform shape and adds it to the collection.
+  /// </summary>
+  /// <param name="EditingType">The editing type for the freeform.</param>
+  /// <param name="X1">The x-coordinate of the first point.</param>
+  /// <param name="Y1">The y-coordinate of the first point.</param>
+  /// <returns>The created <see cref="FreeformBuilder"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.buildfreeform?view=word-pia"/>
+  public FreeformBuilder BuildFreeform(Drw.EditingType EditingType, float X1, float Y1);
+
+  /// <summary>
+  /// Returns a range of shapes from the collection.
+  /// </summary>
+  /// <param name="Index">The index or array of indexes of the shapes to include in the range.</param>
+  /// <returns>The <see cref="ShapeRange"/> object representing the range.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.range?view=word-pia"/>
+  public ShapeRange Range(object Index);
+
+  /// <summary>
+  /// Selects all the shapes in the main story, in a canvas, or in headers and footers of a document.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.selectall?view=word-pia"/>
+  public void SelectAll();
+
+  /// <summary>
+  /// Adds an OLE object to the collection as a shape.
+  /// </summary>
+  /// <param name="ClassType">The class type of the OLE object.</param>
+  /// <param name="FileName">The file name of the OLE object.</param>
+  /// <param name="LinkToFile">true to link to the file; otherwise, false.</param>
+  /// <param name="DisplayAsIcon">true to display as an icon; otherwise, false.</param>
+  /// <param name="IconFileName">The file name of the icon.</param>
+  /// <param name="IconIndex">The index of the icon.</param>
+  /// <param name="IconLabel">The label for the icon.</param>
+  /// <param name="Left">The left position of the shape.</param>
+  /// <param name="Top">The top position of the shape.</param>
+  /// <param name="Width">The width of the shape.</param>
+  /// <param name="Height">The height of the shape.</param>
+  /// <param name="Anchor">The anchor for the shape.</param>
+  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addoleobject?view=word-pia"/>
+  public Shape AddOLEObject(object ClassType, object FileName, object LinkToFile, object DisplayAsIcon, object IconFileName, object IconIndex, object IconLabel, object Left, object Top, object Width, object Height, object Anchor);
+
+  /// <summary>
+  /// Adds an OLE control to the collection as a shape.
+  /// </summary>
+  /// <param name="ClassType">The class type of the OLE control.</param>
+  /// <param name="Left">The left position of the shape.</param>
+  /// <param name="Top">The top position of the shape.</param>
+  /// <param name="Width">The width of the shape.</param>
+  /// <param name="Height">The height of the shape.</param>
+  /// <param name="Anchor">The anchor for the shape.</param>
+  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addolecontrol?view=word-pia"/>
+  public Shape AddOLEControl(object ClassType, object Left, object Top, object Width, object Height, object Anchor);
+
+  /// <summary>
+  /// Adds a diagram to the collection as a shape.
+  /// </summary>
+  /// <param name="Type">The diagram type.</param>
+  /// <param name="Left">The left position of the shape.</param>
+  /// <param name="Top">The top position of the shape.</param>
+  /// <param name="Width">The width of the shape.</param>
+  /// <param name="Height">The height of the shape.</param>
+  /// <param name="Anchor">The anchor for the shape.</param>
+  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.adddiagram?view=word-pia"/>
+  public Shape AddDiagram(DiagramType Type, float Left, float Top, float Width, float Height, object Anchor);
+
+  /// <summary>
+  /// Adds a canvas to the collection as a shape.
+  /// </summary>
+  /// <param name="Left">The left position of the canvas.</param>
+  /// <param name="Top">The top position of the canvas.</param>
+  /// <param name="Width">The width of the canvas.</param>
+  /// <param name="Height">The height of the canvas.</param>
+  /// <param name="Anchor">The anchor for the canvas.</param>
+  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addcanvas?view=word-pia"/>
+  public Shape AddCanvas(float Left, float Top, float Width, float Height, object Anchor);
+
+  /// <summary>
+  /// Adds a chart to the collection as a shape.
+  /// </summary>
+  /// <param name="Type">The chart type.</param>
+  /// <param name="Left">The left position of the chart.</param>
+  /// <param name="Top">The top position of the chart.</param>
+  /// <param name="Width">The width of the chart.</param>
+  /// <param name="Height">The height of the chart.</param>
+  /// <param name="Anchor">The anchor for the chart.</param>
+  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addchart?view=word-pia"/>
+  public Shape AddChart(object Type, object Left, object Top, object Width, object Height, object Anchor);
+
+  /// <summary>
+  /// Adds a SmartArt graphic to the collection as a shape.
+  /// </summary>
+  /// <param name="Layout">The SmartArt layout.</param>
+  /// <param name="Left">The left position of the shape.</param>
+  /// <param name="Top">The top position of the shape.</param>
+  /// <param name="Width">The width of the shape.</param>
+  /// <param name="Height">The height of the shape.</param>
+  /// <param name="Anchor">The anchor for the shape.</param>
+  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addsmartart?view=word-pia"/>
+  public Shape AddSmartArt(object Layout, object Left, object Top, object Width, object Height, object Anchor);
+
+  /// <summary>
+  /// Adds a web video to the collection as a shape.
+  /// </summary>
+  /// <param name="EmbedCode">The embed code for the web video.</param>
+  /// <param name="VideoWidth">The width of the video.</param>
+  /// <param name="VideoHeight">The height of the video.</param>
+  /// <param name="PosterFrameImage">The image to use as the poster frame.</param>
+  /// <param name="Url">The URL of the video.</param>
+  /// <param name="Left">The left position of the shape.</param>
+  /// <param name="Top">The top position of the shape.</param>
+  /// <param name="Width">The width of the shape.</param>
+  /// <param name="Height">The height of the shape.</param>
+  /// <param name="Anchor">The anchor for the shape.</param>
+  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addwebvideo?view=word-pia"/>
+  public Shape AddWebVideo(string EmbedCode, object VideoWidth, object VideoHeight, object PosterFrameImage, object Url, object Left, object Top, object Width, object Height, object Anchor);
+
+  /// <summary>
+  /// Adds a chart to the collection as a shape using the specified style and layout.
+  /// </summary>
+  /// <param name="Style">The chart style.</param>
+  /// <param name="Type">The chart type.</param>
+  /// <param name="Left">The left position of the chart.</param>
+  /// <param name="Top">The top position of the chart.</param>
+  /// <param name="Width">The width of the chart.</param>
+  /// <param name="Height">The height of the chart.</param>
+  /// <param name="Anchor">The anchor for the chart.</param>
+  /// <param name="NewLayout">The new layout for the chart.</param>
+  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addchart2?view=word-pia"/>
+  public Shape AddChart2(int Style, object Type, object Left, object Top, object Width, object Height, object Anchor, object NewLayout);
+}

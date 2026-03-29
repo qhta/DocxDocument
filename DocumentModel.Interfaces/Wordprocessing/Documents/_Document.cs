@@ -57,7 +57,7 @@ public partial interface _Document : InteropObject
   /// Returns a Shape object that represents the background image for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.background?view=word-pia"/>
-  public Shape Background { get; set; }
+  public Drw.Shape Background { get; set; }
 
   /// <summary>
   /// Returns the bibliography references contained within a document. Read-only.
@@ -513,7 +513,7 @@ public partial interface _Document : InteropObject
   /// Returns an InlineShapes collection that represents all the InlineShape objects in a document, range, or selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.inlineshapes?view=word-pia"/>
-  public InlineShapes InlineShapes { get; }
+  public Drw.InlineShapes InlineShapes { get; }
 
   /// <summary>
   /// True if the most recent firing of the Application.DocumentBeforeSave Event (Word)event was the result of an automatic save, and not a manual save by the user. Read-only.
@@ -927,7 +927,7 @@ public partial interface _Document : InteropObject
   /// Returns a Shapes collection that represents all the Shape objects in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.shapes?view=word-pia"/>
-  public Shapes Shapes { get; }
+  public Drw.Shapes Shapes { get; }
 
   /// <summary>
   /// Returns a SharedWorkspace object that represents the Document Workspace in which a specified document is located.

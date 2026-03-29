@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies the alignment of a horizontal line.

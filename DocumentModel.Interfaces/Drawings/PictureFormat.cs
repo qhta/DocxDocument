@@ -1,61 +1,73 @@
-
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Contains properties for formatting pictures and OLE objects.
+/// Contains properties and methods that apply to pictures and OLE objects.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat?view=office-pia"/>
-public partial interface PictureFormat: InteropObject
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat?view=word-pia"/>
+public partial interface PictureFormat : InteropObject
 {
   /// <summary>
-  /// Gets or sets the `Brightness` property.
+  /// Returns or sets the brightness of the specified picture or OLE object. The value for this property must be a
+  /// number from 0.0 (dimmest) to 1.0 (brightest).
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat.brightness?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.brightness?view=word-pia"/>
   public float Brightness { get; set; }
-  /// <summary>
-  /// Gets or sets the `ColorType` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat.colortype?view=office-pia"/>
-  public PictureColorType ColorType { get; set; }
-  /// <summary>
-  /// Gets or sets the `Contrast` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat.contrast?view=office-pia"/>
-  public float Contrast { get; set; }
-  /// <summary>
-  /// Gets or sets the `CropBottom` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat.cropbottom?view=office-pia"/>
-  public float CropBottom { get; set; }
-  /// <summary>
-  /// Gets or sets the `CropLeft` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat.cropleft?view=office-pia"/>
-  public float CropLeft { get; set; }
-  /// <summary>
-  /// Gets or sets the `CropRight` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat.cropright?view=office-pia"/>
-  public float CropRight { get; set; }
-  /// <summary>
-  /// Gets or sets the `CropTop` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat.croptop?view=office-pia"/>
-  public float CropTop { get; set; }
-  /// <summary>
-  /// Gets or sets the `TransparencyColor` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat.transparencycolor?view=office-pia"/>
-  public int TransparencyColor { get; set; }
-  /// <summary>
-  /// Gets or sets the `TransparentBackground` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat.transparentbackground?view=office-pia"/>
-  public TriState TransparentBackground { get; set; }
-  /// <summary>
-  /// Gets the `Crop` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat.crop?view=office-pia"/>
-  public Crop Crop { get; }
-}
 
+  /// <summary>
+  /// Returns or sets the type of color transformation applied to the specified picture or OLE object.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.colortype?view=word-pia"/>
+  public Drw.PictureColorType ColorType { get; set; }
+
+  /// <summary>
+  /// Returns or sets the contrast for the specified picture or OLE object. The value for this property must be a
+  /// number from 0.0 (the least contrast) to 1.0 (the greatest contrast).
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.contrast?view=word-pia"/>
+  public float Contrast { get; set; }
+
+  /// <summary>
+  /// Returns or sets the number of points that are cropped off the bottom of the specified picture or OLE object.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.cropbottom?view=word-pia"/>
+  public float CropBottom { get; set; }
+
+  /// <summary>
+  /// Returns or sets the number of points that are cropped off the left side of the specified picture or OLE
+  /// object.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.cropleft?view=word-pia"/>
+  public float CropLeft { get; set; }
+
+  /// <summary>
+  /// Returns or sets the number of points that are cropped off the right side of the specified picture or OLE
+  /// object.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.cropright?view=word-pia"/>
+  public float CropRight { get; set; }
+
+  /// <summary>
+  /// Returns or sets the number of points that are cropped off the top of the specified picture or OLE object.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.croptop?view=word-pia"/>
+  public float CropTop { get; set; }
+
+  /// <summary>
+  /// Returns or sets the transparent color for the specified picture as a red-green-blue (RGB) value.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.transparencycolor?view=word-pia"/>
+  public int TransparencyColor { get; set; }
+
+  /// <summary>
+  /// MsoTrue if the parts of the picture that are defined with a transparent color actually appear transparent.
+  /// Applies to bitmaps only.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.transparentbackground?view=word-pia"/>
+  public TriState TransparentBackground { get; set; }
+
+  /// <summary>
+  /// Gets or sets a Crop object that represents an image cropping.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.crop?view=word-pia"/>
+  public Drw.Crop Crop { get; set; }
+}

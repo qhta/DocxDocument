@@ -1,16 +1,17 @@
-
 namespace DocumentModel.Drawings;
 
-/// <summary>
-/// Represents the `TextEffectFormat` interface.
-/// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat?view=office-pia"/>
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat?view=word-pia"/>
 public partial interface TextEffectFormat: InteropObject
 {
   /// <summary>
-  /// Invokes `ToggleVerticalText`.
+  /// Switches the text flow in the specified WordArt from horizontal to vertical, or vice versa.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.toggleverticaltext?view=office-pia"/>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.toggleverticaltext?view=word-pia"/>
   public void ToggleVerticalText();
 }
-

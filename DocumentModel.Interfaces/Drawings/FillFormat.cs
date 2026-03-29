@@ -1,131 +1,152 @@
-
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Reserved for internal use.
+/// Represents fill formatting for a shape. A shape can have a solid, gradient, texture, pattern, picture, or semi-transparent fill.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat?view=office-pia"/>
-public partial interface FillFormat: InteropObject
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat?view=word-pia"/>
+public partial interface FillFormat : InteropObject
 {
   /// <summary>
-  /// Gets or sets the `BackColor` property.
+  /// Returns or sets a <see cref="ColorFormat"/> object that represents the background color for the specified fill or patterned line.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.backcolor?view=office-pia"/>
-  public ColorFormat BackColor { get; set; }
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.backcolor?view=word-pia"/>
+  public ColorFormat BackColor { get; }
+
   /// <summary>
-  /// Gets or sets the `ForeColor` property.
+  /// Returns or sets a <see cref="ColorFormat"/> object that represents the foreground color for the fill.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.forecolor?view=office-pia"/>
-  public ColorFormat ForeColor { get; set; }
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.forecolor?view=word-pia"/>
+  public ColorFormat ForeColor { get; }
+
   /// <summary>
-  /// Gets the `GradientColorType` property.
+  /// Returns the gradient color type for the specified fill.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.gradientcolortype?view=office-pia"/>
-  public GradientColorType GradientColorType { get; }
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.gradientcolortype?view=word-pia"/>
+  public Drw.GradientColorType GradientColorType { get; }
+
   /// <summary>
-  /// Gets the `GradientDegree` property.
+  /// Returns a value that indicates how dark or light a one-color gradient fill is.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.gradientdegree?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.gradientdegree?view=word-pia"/>
   public float GradientDegree { get; }
+
   /// <summary>
-  /// Gets the `GradientStyle` property.
+  /// Returns the gradient style for the specified fill.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.gradientstyle?view=office-pia"/>
-  public GradientStyle GradientStyle { get; }
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.gradientstyle?view=word-pia"/>
+  public Drw.GradientStyle GradientStyle { get; }
+
   /// <summary>
-  /// Gets the `GradientVariant` property.
+  /// Returns the gradient variant for the specified fill as an integer value from 1 to 4 for most gradient fills.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.gradientvariant?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.gradientvariant?view=word-pia"/>
   public int GradientVariant { get; }
+
   /// <summary>
-  /// Gets the `Pattern` property.
+  /// Returns a value that represents the pattern applied to the specified fill.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.pattern?view=office-pia"/>
-  public PatternType Pattern { get; }
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.pattern?view=word-pia"/>
+  public Drw.PatternType Pattern { get; }
+
   /// <summary>
-  /// Gets the `PresetGradientType` property.
+  /// Returns the preset gradient type for the specified fill.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.presetgradienttype?view=office-pia"/>
-  public PresetGradientType PresetGradientType { get; }
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.presetgradienttype?view=word-pia"/>
+  public Drw.PresetGradientType PresetGradientType { get; }
+
   /// <summary>
-  /// Gets the `PresetTexture` property.
+  /// Returns the preset texture for the specified fill.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.presettexture?view=office-pia"/>
-  public PresetTexture PresetTexture { get; }
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.presettexture?view=word-pia"/>
+  public Drw.PresetTexture PresetTexture { get; }
+
   /// <summary>
-  /// Gets the `TextureName` property.
+  /// Returns the name of the custom texture file for the specified fill.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.texturename?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.texturename?view=word-pia"/>
   public string TextureName { get; }
+
   /// <summary>
-  /// Gets the `TextureType` property.
+  /// Returns the texture type for the specified fill.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.texturetype?view=office-pia"/>
-  public TextureType TextureType { get; }
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.texturetype?view=word-pia"/>
+  public Drw.TextureType TextureType { get; }
+
   /// <summary>
-  /// Gets or sets the `Transparency` property.
+  /// Returns or sets the degree of transparency of the specified fill as a value between 0.0 (opaque) and 1.0 (clear).
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.transparency?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.transparency?view=word-pia"/>
   public float Transparency { get; set; }
+
   /// <summary>
-  /// Gets the `Type` property.
+  /// Returns the shape fill format type.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.type?view=office-pia"/>
-  public FillType Type { get; }
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.type?view=word-pia"/>
+  public Drw.FillType Type { get; }
+
   /// <summary>
-  /// Gets or sets the `Visible` property.
+  /// Returns whether the specified object, or the formatting applied to it, is visible.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.visible?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.visible?view=word-pia"/>
   public TriState Visible { get; set; }
+
   /// <summary>
-  /// Gets the `GradientStops` property.
+  /// Gets the <see cref="GradientStops"/> collection associated with the specified fill format.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.gradientstops?view=office-pia"/>
-  public GradientStops GradientStops { get; }
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.gradientstops?view=word-pia"/>
+  public Drw.GradientStops GradientStops { get; }
+
   /// <summary>
-  /// Gets or sets the `TextureOffsetX` property.
+  /// Gets or sets a value that specifies the horizontal offset of the texture from the origin in points.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.textureoffsetx?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.textureoffsetx?view=word-pia"/>
   public float TextureOffsetX { get; set; }
+
   /// <summary>
-  /// Gets or sets the `TextureOffsetY` property.
+  /// Gets or sets a value that specifies the vertical offset of the texture from the origin in points.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.textureoffsety?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.textureoffsety?view=word-pia"/>
   public float TextureOffsetY { get; set; }
+
   /// <summary>
-  /// Gets or sets the `TextureAlignment` property.
+  /// Gets or sets the alignment (the origin of the coordinate grid) for the tiling of the texture fill.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.texturealignment?view=office-pia"/>
-  public TextureAlignment TextureAlignment { get; set; }
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.texturealignment?view=word-pia"/>
+  public Drw.TextureAlignment TextureAlignment { get; set; }
+
   /// <summary>
-  /// Gets or sets the `TextureHorizontalScale` property.
+  /// Gets or sets a value that specifies the horizontal scaling factor for the texture fill.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.texturehorizontalscale?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.texturehorizontalscale?view=word-pia"/>
   public float TextureHorizontalScale { get; set; }
+
   /// <summary>
-  /// Gets or sets the `TextureVerticalScale` property.
+  /// Gets or sets a value that specifies the vertical scaling factor for the texture fill.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.textureverticalscale?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.textureverticalscale?view=word-pia"/>
   public float TextureVerticalScale { get; set; }
+
   /// <summary>
-  /// Gets or sets the `TextureTile` property.
+  /// Gets or sets whether the texture fill is tiled or centered.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.texturetile?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.texturetile?view=word-pia"/>
   public TriState TextureTile { get; set; }
+
   /// <summary>
-  /// Gets or sets the `RotateWithObject` property.
+  /// Gets or sets whether the fill rotates with the specified shape.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.rotatewithobject?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.rotatewithobject?view=word-pia"/>
   public TriState RotateWithObject { get; set; }
+
   /// <summary>
-  /// Gets the `PictureEffects` property.
+  /// Gets a <see cref="PictureEffects"/> object that can be used to apply picture effects to the specified fill formatting.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.pictureeffects?view=office-pia"/>
-  public PictureEffects PictureEffects { get; }
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.pictureeffects?view=word-pia"/>
+  public Drw.PictureEffects PictureEffects { get; }
+
   /// <summary>
-  /// Gets or sets the `GradientAngle` property.
+  /// Gets or sets the angle of the gradient fill for the specified fill format.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.gradientangle?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.gradientangle?view=word-pia"/>
   public float GradientAngle { get; set; }
 }
-

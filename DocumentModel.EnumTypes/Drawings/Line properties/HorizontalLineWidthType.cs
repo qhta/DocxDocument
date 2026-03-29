@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies how Word interprets the width (length) of the specified horizontal line.

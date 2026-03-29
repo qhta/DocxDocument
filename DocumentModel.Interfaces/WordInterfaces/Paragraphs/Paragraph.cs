@@ -137,7 +137,7 @@ public partial interface Paragraph : InteropObject
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public Drw.Shading Shading { get; }
 
   /// <summary>
   /// Determines if Microsoft Word applies East Asian line-breaking rules to the specified paragraphs.

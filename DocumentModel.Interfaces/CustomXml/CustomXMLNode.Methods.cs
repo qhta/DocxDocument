@@ -17,7 +17,7 @@ public partial interface CustomXMLNode: InteropObject
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode.appendchildnode?view=office-pia"/>
   public void AppendChildNode
   (string Name, string NamespaceURI,
-    CustomXMLNodeType NodeType, string NodeValue);
+    XMLNodeType NodeType, string NodeValue);
   /// <summary>
   /// Adds a subtree as the last child under the current element node.
   /// </summary>
@@ -46,7 +46,7 @@ public partial interface CustomXMLNode: InteropObject
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode.insertnodebefore?view=office-pia"/>
   public void InsertNodeBefore
   (string Name, string NamespaceURI,
-    CustomXMLNodeType NodeType, string NodeValue,
+    XMLNodeType NodeType, string NodeValue,
     CustomXMLNode NextSibling);
   /// <summary>
   /// Invokes `InsertSubtreeBefore`.
@@ -72,7 +72,7 @@ public partial interface CustomXMLNode: InteropObject
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode.replacechildnode?view=office-pia"/>
   public void ReplaceChildNode
   (CustomXMLNode OldNode, string Name, string NamespaceURI,
-    CustomXMLNodeType NodeType, string NodeValue);
+    XMLNodeType NodeType, string NodeValue);
   /// <summary>
   /// Invokes `ReplaceChildSubtree`.
   /// </summary>

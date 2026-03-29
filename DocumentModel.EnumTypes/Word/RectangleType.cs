@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies the type of rectangle and the information it contains.

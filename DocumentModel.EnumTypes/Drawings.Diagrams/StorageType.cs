@@ -1,11 +1,11 @@
-namespace DocumentModel.Drawings.Diagram1;
+namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Defines the STorageType enumeration.
 /// Used in types such as NumberDiagramInfo, STorageType, NumberDiagramInfoConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
-public enum STorageType
+public enum StorageType
 {
   /// <summary>
   ///   sibTrans.

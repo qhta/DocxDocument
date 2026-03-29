@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Reflection;
-
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Reserved for internal use.
+/// A collection of all the ShapeNode objects in the specified freeform.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapenodes?view=office-pia"/>
-public partial interface ShapeNodes: InteropCollection<ShapeNode>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenodes?view=word-pia"/>
+public partial interface ShapeNodes : InteropObject, InteropCollection<ShapeNode>
 {
 }
-

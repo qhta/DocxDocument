@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace DocumentModel.Interfaces;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// A collection of DocumentProperty objects.

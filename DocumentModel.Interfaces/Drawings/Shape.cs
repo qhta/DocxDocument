@@ -1,269 +1,430 @@
-
 using DocumentModel.Drawings.Charts;
+using DocumentModel.Drawings.SmartArt;
+using DocumentModel.HTML;
+using DocumentModel.Wordprocessing.Drawings;
 using DocumentModel.Drawings.Diagrams;
+using DocumentModel.Wordprocessing;
+
+using Range = System.Range;
 
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Reserved for internal use.
+/// Represents an object in the drawing layer, such as an AutoShape, freeform, OLE object, ActiveX control, or
+/// picture.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape?view=office-pia"/>
-public partial interface Shape: InteropObject
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape?view=word-pia"/>
+public partial interface Shape : InteropObject
 {
   /// <summary>
-  /// Gets or sets the `Adjustments` property.
+  /// Returns a Adjustments object that contains adjustment values for all the adjustments in the specified Shape
+  /// object that represents an AutoShape or WordArt.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.adjustments?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.adjustments?view=word-pia"/>
   public Adjustments Adjustments { get; }
-  /// <summary>
-  /// Gets or sets the `AutoShapeType` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.autoshapetype?view=office-pia"/>
-  public AutoShapeType AutoShapeType { get; set; }
-  /// <summary>
-  /// Gets or sets the `BlackWhiteMode` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.blackwhitemode?view=office-pia"/>
-  public BlackWhiteMode BlackWhiteMode { get; set; }
-  /// <summary>
-  /// Gets the `Callout` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.callout?view=office-pia"/>
-  public CalloutFormat Callout { get; }
-  /// <summary>
-  /// Gets the `ConnectionSiteCount` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.connectionsitecount?view=office-pia"/>
-  public int ConnectionSiteCount { get; }
-  /// <summary>
-  /// Gets the `Connector` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.connector?view=office-pia"/>
-  public TriState Connector { get; }
-  /// <summary>
-  /// Gets the `ConnectorFormat` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.connectorformat?view=office-pia"/>
-  public ConnectorFormat ConnectorFormat { get; }
-  /// <summary>
-  /// Gets the `Fill` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.fill?view=office-pia"/>
-  public FillFormat Fill { get; }
-  /// <summary>
-  /// Gets the `GroupItems` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.groupitems?view=office-pia"/>
-  public GroupShapes GroupItems { get; }
-  /// <summary>
-  /// Gets or sets the `Height` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.height?view=office-pia"/>
-  public float Height { get; set; }
-  /// <summary>
-  /// Gets the `HorizontalFlip` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.horizontalflip?view=office-pia"/>
-  public TriState HorizontalFlip { get; }
-  /// <summary>
-  /// Gets or sets the `Left` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.left?view=office-pia"/>
-  public float Left { get; set; }
-  /// <summary>
-  /// Gets the `Line` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.line?view=office-pia"/>
-  public LineFormat Line { get; }
-  /// <summary>
-  /// Gets or sets the `LockAspectRatio` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.lockaspectratio?view=office-pia"/>
-  public TriState LockAspectRatio { get; set; }
-  /// <summary>
-  /// Gets or sets the `Name` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.name?view=office-pia"/>
-  public string Name { get; set; }
-  /// <summary>
-  /// Gets the `Nodes` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.nodes?view=office-pia"/>
-  public ShapeNodes Nodes { get; }
-  /// <summary>
-  /// Gets or sets the `Rotation` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.rotation?view=office-pia"/>
-  public float Rotation { get; set; }
-  /// <summary>
-  /// Gets the `PictureFormat` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.pictureformat?view=office-pia"/>
-  public PictureFormat PictureFormat { get; }
-  /// <summary>
-  /// Gets the `Shadow` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.shadow?view=office-pia"/>
-  public ShadowFormat Shadow { get; }
-  /// <summary>
-  /// Gets the `TextEffect` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.texteffect?view=office-pia"/>
-  public TextEffectFormat TextEffect { get; }
-  /// <summary>
-  /// Gets the `TextFrame` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.textframe?view=office-pia"/>
-  public TextFrame TextFrame { get; }
-  /// <summary>
-  /// Gets the `ThreeD` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.threed?view=office-pia"/>
-  public ThreeDFormat ThreeD { get; }
-  /// <summary>
-  /// Gets or sets the `Top` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.top?view=office-pia"/>
-  public float Top { get; set; }
-  /// <summary>
-  /// Gets the `Type` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.type?view=office-pia"/>
-  public ShapeType Type { get; }
-  /// <summary>
-  /// Gets the `VerticalFlip` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.verticalflip?view=office-pia"/>
-  public TriState VerticalFlip { get; }
-  /// <summary>
-  /// Gets the `Vertices` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.vertices?view=office-pia"/>
-  public object Vertices { get; }
-  /// <summary>
-  /// Gets or sets the `Visible` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.visible?view=office-pia"/>
-  public TriState Visible { get; set; }
-  /// <summary>
-  /// Gets or sets the `Width` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.width?view=office-pia"/>
-  public float Width { get; set; }
-  /// <summary>
-  /// Gets the `ZOrderPosition` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.zorderposition?view=office-pia"/>
-  public int ZOrderPosition { get; }
-  /// <summary>
-  /// Gets the `Script` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.script?view=office-pia"/>
-  public HTML.Script Script { get; }
-  /// <summary>
-  /// Gets or sets the `AlternativeText` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.alternativetext?view=office-pia"/>
-  public string AlternativeText { get; set; }
-  /// <summary>
-  /// Gets the `HasDiagram` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.hasdiagram?view=office-pia"/>
-  public TriState HasDiagram { get; }
-  /// <summary>
-  /// Gets the `Diagram` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.diagram?view=office-pia"/>
-  public Diagram Diagram { get; }
-  /// <summary>
-  /// Gets the `HasDiagramNode` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.hasdiagramnode?view=office-pia"/>
-  public TriState HasDiagramNode { get; }
-  /// <summary>
-  /// Gets the `DiagramNode` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.diagramnode?view=office-pia"/>
-  public DiagramNode DiagramNode { get; }
-  /// <summary>
-  /// Gets the `Child` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.child?view=office-pia"/>
-  public TriState Child { get; }
-  /// <summary>
-  /// Gets the `ParentGroup` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.parentgroup?view=office-pia"/>
-  public Shape ParentGroup { get; }
-  /// <summary>
-  /// Gets the `CanvasItems` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.canvasitems?view=office-pia"/>
-  public CanvasShapes CanvasItems { get; }
-  /// <summary>
-  /// Gets the `Id` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.id?view=office-pia"/>
-  public int Id { get; }
-  /// <summary>
-  /// Sets the rich text format (RTF) content for the shape text.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.rtf?view=office-pia"/>
-  public string RTF { set; }
-  /// <summary>
-  /// Gets the `TextFrame2` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.textframe2?view=office-pia"/>
-  public TextFrame TextFrame2 { get; }
-  /// <summary>
-  /// Gets the `HasChart` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.haschart?view=office-pia"/>
-  public TriState HasChart { get; }
-  /// <summary>
-  /// Gets the `Chart` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.chart?view=office-pia"/>
-  public Chart Chart { get; }
-  /// <summary>
-  /// Gets or sets the `ShapeStyle` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.shapestyle?view=office-pia"/>
-  public ShapeStyleIndex ShapeStyle { get; set; }
-  /// <summary>
-  /// Gets or sets the `BackgroundStyle` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.backgroundstyle?view=office-pia"/>
-  public BackgroundStyleIndex BackgroundStyle { get; set; }
-  /// <summary>
-  /// Gets the `SoftEdge` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.softedge?view=office-pia"/>
-  public SoftEdgeFormat SoftEdge { get; }
-  /// <summary>
-  /// Gets the `Glow` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.glow?view=office-pia"/>
-  public GlowFormat Glow { get; }
-  /// <summary>
-  /// Gets the `Reflection` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.reflection?view=office-pia"/>
-  public ReflectionFormat Reflection { get; }
-  /// <summary>
-  /// Gets the `HasSmartArt` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.hassmartart?view=office-pia"/>
-  public TriState HasSmartArt { get; }
-  /// <summary>
-  /// Gets the `SmartArt` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.smartart?view=office-pia"/>
-  public SmartArt.SmartArt SmartArt { get; }
-  /// <summary>
-  /// Gets or sets the `Title` property.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.title?view=office-pia"/>
-  public string Title { get; set; }
-}
 
+  /// <summary>
+  /// Returns or sets the shape type for the specified Shape object, which must represent an AutoShape other than a
+  /// line or freeform drawing.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.autoshapetype?view=word-pia"/>
+  public Drw.AutoShapeType AutoShapeType { get; set; }
+
+  /// <summary>
+  /// Returns a CalloutFormat object that contains callout formatting properties for the specified shape.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.callout?view=word-pia"/>
+  public CalloutFormat Callout { get; }
+
+  /// <summary>
+  /// Reserved for internal use.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.connectionsitecount?view=word-pia"/>
+  public int ConnectionSiteCount { get; }
+
+  /// <summary>
+  /// Reserved for internal use.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.connector?view=word-pia"/>
+  public TriState Connector { get; }
+
+  /// <summary>
+  /// Reserved for internal use.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.connectorformat?view=word-pia"/>
+  public ConnectorFormat ConnectorFormat { get; }
+
+  /// <summary>
+  /// Returns a FillFormat object that contains fill formatting properties for the specified shape.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.fill?view=word-pia"/>
+  public FillFormat Fill { get; }
+
+  /// <summary>
+  /// Returns a GroupShapes object that represents the individual shapes in the specified group.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.groupitems?view=word-pia"/>
+  public GroupShapes GroupItems { get; }
+
+  /// <summary>
+  /// Returns or sets the height of the specified shape in points.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.height?view=word-pia"/>
+  public float Height { get; set; }
+
+  /// <summary>
+  /// Indicates that a shape has been flipped horizontally.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.horizontalflip?view=word-pia"/>
+  public TriState HorizontalFlip { get; }
+
+  /// <summary>
+  /// Returns or sets a Single that represents the horizontal position, measured in points, of the specified shape
+  /// or shape range.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.left?view=word-pia"/>
+  public float Left { get; set; }
+
+  /// <summary>
+  /// Returns a LineFormat object that contains line formatting properties for the specified shape.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.line?view=word-pia"/>
+  public LineFormat Line { get; }
+
+  /// <summary>
+  /// Determines if you can change the height and width of the shape independently of one another when you resize it
+  /// or if it retains its original proportions.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.lockaspectratio?view=word-pia"/>
+  public TriState LockAspectRatio { get; set; }
+
+  /// <summary>
+  /// Returns or sets the name of the specified object.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.name?view=word-pia"/>
+  public string Name { get; set; }
+
+  /// <summary>
+  /// Returns a ShapeNodes collection that represents the geometric description of the specified shape.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.nodes?view=word-pia"/>
+  public ShapeNodes Nodes { get; }
+
+  /// <summary>
+  /// Returns or sets the number of degrees the specified shape is rotated around the z-axis.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.rotation?view=word-pia"/>
+  public float Rotation { get; set; }
+
+  /// <summary>
+  /// Returns a PictureFormat object that contains picture formatting properties for the specified object.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.pictureformat?view=word-pia"/>
+  public PictureFormat PictureFormat { get; }
+
+  /// <summary>
+  /// Returns a ShadowFormat object that represents the shadow formatting for the specified shape.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.shadow?view=word-pia"/>
+  public ShadowFormat Shadow { get; }
+
+  /// <summary>
+  /// Returns a TextEffectFormat object that contains text-effect formatting properties for the specified shape.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.texteffect?view=word-pia"/>
+  public TextEffectFormat TextEffect { get; }
+
+  /// <summary>
+  /// Returns a TextFrame object that contains the text for the specified shape.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.textframe?view=word-pia"/>
+  public TextFrame TextFrame { get; }
+
+  /// <summary>
+  /// Returns a ThreeDFormat object that contains formatting properties of the three-dimensional effect for the
+  /// specified shape.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.threed?view=word-pia"/>
+  public ThreeDFormat ThreeD { get; }
+
+  /// <summary>
+  /// Returns or sets the vertical position of the specified shape in points.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.top?view=word-pia"/>
+  public float Top { get; set; }
+
+  /// <summary>
+  /// Returns the shape type.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.type?view=word-pia"/>
+  public Drw.ShapeType Type { get; }
+
+  /// <summary>
+  /// Determines if the specified shape is flipped around the vertical axis.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.verticalflip?view=word-pia"/>
+  public TriState VerticalFlip { get; }
+
+  /// <summary>
+  /// Returns the coordinates of the specified freeform drawing's vertices (and control points for Bézier curves) as
+  /// a series of coordinate pairs.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.vertices?view=word-pia"/>
+  public object Vertices { get; }
+
+  /// <summary>
+  /// Determines if the specified object, or the formatting applied to it, is visible.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.visible?view=word-pia"/>
+  public TriState Visible { get; set; }
+
+  /// <summary>
+  /// Returns or sets the width of the specified object, in points.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.width?view=word-pia"/>
+  public float Width { get; set; }
+
+  /// <summary>
+  /// Returns the position of the specified shape in the z-order.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.zorderposition?view=word-pia"/>
+  public int ZOrderPosition { get; }
+
+  /// <summary>
+  /// Returns a Hyperlink object that represents the hyperlink associated with the specified shape.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.hyperlink?view=word-pia"/>
+  public Hyperlink Hyperlink { get; }
+
+  /// <summary>
+  /// Specifies to what the horizontal position of a shape is relative.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.relativehorizontalposition?view=word-pia"/>
+  public RelativeHorizontalPosition RelativeHorizontalPosition { get; set; }
+
+  /// <summary>
+  /// Specifies to what the vertical position of a shape is relative.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.relativeverticalposition?view=word-pia"/>
+  public RelativeVerticalPosition RelativeVerticalPosition { get; set; }
+
+  /// <summary>
+  /// Determines if the specified Shape object's anchor is locked to the anchoring range.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.lockanchor?view=word-pia"/>
+  public int LockAnchor { get; set; }
+
+  /// <summary>
+  /// Returns a WrapFormat object that contains the properties for wrapping text around the specified shape.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.wrapformat?view=word-pia"/>
+  public WrapFormat WrapFormat { get; }
+
+  /// <summary>
+  /// Returns a OLEFormat object that represents the OLE characteristics (other than linking) for the specified
+  /// shape.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.oleformat?view=word-pia"/>
+  public OLEFormat OLEFormat { get; }
+
+  /// <summary>
+  /// Returns a Range object that represents the anchoring range for the specified shape.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.anchor?view=word-pia"/>
+  public Range Anchor { get; }
+
+  /// <summary>
+  /// Returns a LinkFormat object that represents the link options of the specified shape that's linked to a file.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.linkformat?view=word-pia"/>
+  public LinkFormat LinkFormat { get; }
+
+  /// <summary>
+  /// Returns or sets the alternative text associated with a shape in a Web page.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.alternativetext?view=word-pia"/>
+  public string AlternativeText { get; set; }
+
+  /// <summary>
+  /// Returns a Script object, which represents a block of script or code on the specified Web page.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.script?view=word-pia"/>
+  public Script Script { get; }
+
+  /// <summary>
+  /// Determines if a shape is a diagram.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.hasdiagram?view=word-pia"/>
+  public TriState HasDiagram { get; }
+
+  /// <summary>
+  /// Returns a Diagram object to which a diagram node belongs.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.diagram?view=word-pia"/>
+  public Diagram Diagram { get; }
+
+  /// <summary>
+  /// Determines if a shape is a diagram node.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.hasdiagramnode?view=word-pia"/>
+  public TriState HasDiagramNode { get; }
+
+  /// <summary>
+  /// Returns a DiagramNode object that represents a node in a diagram.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.diagramnode?view=word-pia"/>
+  public DiagramNode DiagramNode { get; }
+
+  /// <summary>
+  /// Determines if the shape is a child shape.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.child?view=word-pia"/>
+  public TriState Child { get; }
+
+  /// <summary>
+  /// Returns a Shape object that represents the common parent shape of a child shape.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.parentgroup?view=word-pia"/>
+  public Shape ParentGroup { get; }
+
+  /// <summary>
+  /// Returns a CanvasShapes object that represents a collection of shapes in a drawing canvas.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.canvasitems?view=word-pia"/>
+  public CanvasShapes CanvasItems { get; }
+
+  /// <summary>
+  /// Returns the type for the specified object.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.id?view=word-pia"/>
+  public int ID { get; }
+
+  /// <summary>
+  /// Reserved for internal use.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.rtf?view=word-pia"/>
+  public string RTF { set; }
+
+  /// <summary>
+  /// Returns an Integer that represents whether a shape in a table is displayed inside the table or outside of the
+  /// table.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.layoutincell?view=word-pia"/>
+  public int LayoutInCell { get; set; }
+
+  /// <summary>
+  /// True if the specified shape has a chart. Read-only.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.haschart?view=word-pia"/>
+  public TriState HasChart { get; }
+
+  /// <summary>
+  /// Returns a Chart object that represents a chart within the collection of shapes in a document. Read-only.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.chart?view=word-pia"/>
+  public Chart Chart { get; }
+
+  /// <summary>
+  /// Returns or sets a Single that represents the relative left position of a shape. Read/write.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.leftrelative?view=word-pia"/>
+  public float LeftRelative { get; set; }
+
+  /// <summary>
+  /// Returns or sets a Single that represents the relative top position of a shape. Read/write.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.toprelative?view=word-pia"/>
+  public float TopRelative { get; set; }
+
+  /// <summary>
+  /// Returns or sets a Single that represents the relative width of a shape. Read/write.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.widthrelative?view=word-pia"/>
+  public float WidthRelative { get; set; }
+
+  /// <summary>
+  /// Returns or sets a Single that represents the percentage of the relative height of a shape. Read/write.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.heightrelative?view=word-pia"/>
+  public float HeightRelative { get; set; }
+
+  /// <summary>
+  /// Returns or sets a RelativeHorizontalSize constant that represents the object to which a range of shapes is
+  /// relative. Read/write.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.relativehorizontalsize?view=word-pia"/>
+  public RelativeHorizontalSize RelativeHorizontalSize { get; set; }
+
+  /// <summary>
+  /// Returns or sets a RelativeVerticalSize constant that represents the relative vertical size of a shape.
+  /// Read/write.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.relativeverticalsize?view=word-pia"/>
+  public RelativeVerticalSize RelativeVerticalSize { get; set; }
+
+  /// <summary>
+  /// Returns a SoftEdgeFormat object that represents the soft edge formatting for a shape. Read- only.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.softedge?view=word-pia"/>
+  public SoftEdgeFormat SoftEdge { get; }
+
+  /// <summary>
+  /// Returns a GlowFormat object that represents the glow formatting for a shape. Read-only.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.glow?view=word-pia"/>
+  public GlowFormat Glow { get; }
+
+  /// <summary>
+  /// Returns a ReflectionFormat object that represents the reflection formatting for a shape. Read- only.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.reflection?view=word-pia"/>
+  public ReflectionFormat Reflection { get; }
+
+  /// <summary>
+  /// Returns a TextFrame2 object that contains the text for the specified shape. Read-only.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.textframe2?view=word-pia"/>
+  public Drw.TextFrame TextFrame2 { get; }
+
+  /// <summary>
+  /// Gets True if there is a SmartArt diagram present on the shape.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.hassmartart?view=word-pia"/>
+  public TriState HasSmartArt { get; }
+
+  /// <summary>
+  /// Gets a SmartArt object that provides a way to work with the SmartArt associated with the specified shape.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.smartart?view=word-pia"/>
+  public SmartArt.SmartArt SmartArt { get; }
+
+  /// <summary>
+  /// Gets or sets the shape style for the specified shape.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.shapestyle?view=word-pia"/>
+  public Drw.ShapeStyleIndex ShapeStyle { get; set; }
+
+  /// <summary>
+  /// Gets or sets the background style of the specified shape.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.backgroundstyle?view=word-pia"/>
+  public Drw.BackgroundStyleIndex BackgroundStyle { get; set; }
+
+  /// <summary>
+  /// Gets or sets a string that contains a title for the specified shape.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.title?view=word-pia"/>
+  public string Title { get; set; }
+
+  /// <summary>
+  /// Returns a Range object that represents the anchoring range for the specified shape.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.anchorid?view=word-pia"/>
+  public int AnchorID { get; }
+
+  /// <summary>
+  /// Returns a DiagramNode object that represents a node in a diagram.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.editid?view=word-pia"/>
+  public int EditID { get; }
+}

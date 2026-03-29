@@ -1,32 +1,36 @@
-
 namespace DocumentModel.Drawings;
 
-/// <summary>
-/// Reserved for internal use.
-/// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.freeformbuilder?view=office-pia"/>
+/// <remarks>
+/// Microsoft Learn API reference.
+/// </remarks>
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.freeformbuilder?view=word-pia"/>
 public partial interface FreeformBuilder: InteropObject
 {
   /// <summary>
-  /// Adds one or more nodes to the freeform being built.
+  /// Adds a node to the freeform being built.
   /// </summary>
-  /// <param name="SegmentType">The `SegmentType` parameter.</param>
-  /// <param name="EditingType">The `EditingType` parameter.</param>
-  /// <param name="X1">The `X1` parameter.</param>
-  /// <param name="Y1">The `Y1` parameter.</param>
-  /// <param name="X2">The `X2` parameter.</param>
-  /// <param name="Y2">The `Y2` parameter.</param>
-  /// <param name="X3">The `X3` parameter.</param>
-  /// <param name="Y3">The `Y3` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.freeformbuilder.addnodes?view=office-pia"/>
-  public void AddNodes
-  (SegmentType SegmentType, EditingType EditingType, float X1, float Y1, float X2, float Y2,
-    float X3, float Y3);
-  /// <summary>
-  /// Converts the freeform builder into a Shape object.
-  /// </summary>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.freeformbuilder.converttoshape?view=office-pia"/>
-  public Shape ConvertToShape();
-}
+  /// <param name="SegmentType">The segment type used for the new node.</param>
+  /// <param name="EditingType">The editing type used for the new node.</param>
+  /// <param name="X1">The x-coordinate, in points, of the first point.</param>
+  /// <param name="Y1">The y-coordinate, in points, of the first point.</param>
+  /// <param name="X2">The x-coordinate, in points, of the second point (used for curved segments).</param>
+  /// <param name="Y2">The y-coordinate, in points, of the second point (used for curved segments).</param>
+  /// <param name="X3">The x-coordinate, in points, of the third point (used for curved segments).</param>
+  /// <param name="Y3">The y-coordinate, in points, of the third point (used for curved segments).</param>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.freeformbuilder.addnodes?view=word-pia"/>
+  public void AddNodes(Drw.SegmentType SegmentType, Drw.EditingType EditingType, float X1, float Y1, float X2, float Y2, float X3, float Y3);
 
+  /// <summary>
+  /// Converts the freeform into a shape.
+  /// </summary>
+  /// <param name="Anchor">The anchor range for the created shape.</param>
+  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.freeformbuilder.converttoshape?view=word-pia"/>
+  public Shape ConvertToShape(object Anchor);
+}

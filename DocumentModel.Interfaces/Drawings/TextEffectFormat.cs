@@ -1,71 +1,84 @@
-
 namespace DocumentModel.Drawings;
+using DocumentModel.Drawings;
 
 /// <summary>
-/// Represents the `TextEffectFormat` interface.
+/// Contains properties and methods that apply to WordArt objects.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat?view=office-pia"/>
-public partial interface TextEffectFormat: InteropObject
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat?view=word-pia"/>
+public partial interface TextEffectFormat : InteropObject
 {
   /// <summary>
-  /// Gets or sets the `Alignment` property.
+  /// Returns or sets a constant that represents the alignment for the specified text effect.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.alignment?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.alignment?view=word-pia"/>
   public TextEffectAlignment Alignment { get; set; }
+
   /// <summary>
-  /// Gets or sets the `FontBold` property.
+  /// Returns or sets a constant that represents how bold font is handled for the specified text effect.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.fontbold?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.fontbold?view=word-pia"/>
   public TriState FontBold { get; set; }
+
   /// <summary>
-  /// Gets or sets the `FontItalic` property.
+  /// Italicizes WordArt text.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.fontitalic?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.fontitalic?view=word-pia"/>
   public TriState FontItalic { get; set; }
+
   /// <summary>
-  /// Gets or sets the `FontName` property.
+  /// Returns or sets the name of the font for the dropped capital letter.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.fontname?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.fontname?view=word-pia"/>
   public string FontName { get; set; }
+
   /// <summary>
-  /// Gets or sets the `FontSize` property.
+  /// Returns or sets the font size for the specified WordArt, in points.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.fontsize?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.fontsize?view=word-pia"/>
   public float FontSize { get; set; }
+
   /// <summary>
-  /// Gets or sets the `KernedPairs` property.
+  /// Indicates that character pairs in a WordArt object have been kerned.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.kernedpairs?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.kernedpairs?view=word-pia"/>
   public TriState KernedPairs { get; set; }
+
   /// <summary>
-  /// Gets or sets the `NormalizedHeight` property.
+  /// MsoTrue if all characters (both uppercase and lowercase) in the specified WordArt are the same height.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.normalizedheight?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.normalizedheight?view=word-pia"/>
   public TriState NormalizedHeight { get; set; }
+
   /// <summary>
-  /// Gets or sets the `PresetShape` property.
+  /// Returns or sets the shape of the specified WordArt.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.presetshape?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.presetshape?view=word-pia"/>
   public PresetTextEffectShape PresetShape { get; set; }
+
   /// <summary>
-  /// Gets or sets the `PresetTextEffect` property.
+  /// Returns or sets the style of the specified WordArt.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.presettexteffect?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.presettexteffect?view=word-pia"/>
   public PresetTextEffect PresetTextEffect { get; set; }
+
   /// <summary>
-  /// Gets or sets the `RotatedChars` property.
+  /// MsoTrue if characters in the specified WordArt are rotated 90 degrees relative to the WordArt's bounding
+  /// shape. MsoFalse if characters in the specified WordArt retain their original orientation relative to the
+  /// bounding shape.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.rotatedchars?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.rotatedchars?view=word-pia"/>
   public TriState RotatedChars { get; set; }
+
   /// <summary>
-  /// Gets or sets the `Text` property.
+  /// Returns or sets the text in the specified WordArt.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.text?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.text?view=word-pia"/>
   public string Text { get; set; }
+
   /// <summary>
-  /// Gets or sets the `Tracking` property.
+  /// Returns or sets the ratio of the horizontal space allotted to each character in the specified WordArt in
+  /// relation to the width of the character.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.tracking?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.tracking?view=word-pia"/>
   public float Tracking { get; set; }
 }
-

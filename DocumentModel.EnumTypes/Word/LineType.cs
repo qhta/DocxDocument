@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies whether a line is a line of text or a table row.

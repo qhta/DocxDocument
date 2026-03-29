@@ -46,7 +46,7 @@ public partial interface CustomXMLNode: InteropObject
   /// Gets the `NodeType` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode.nodetype?view=office-pia"/>
-  public CustomXMLNodeType NodeType { get; }
+  public XMLNodeType NodeType { get; }
   /// <summary>
   /// Gets or sets the `NodeValue` property.
   /// </summary>

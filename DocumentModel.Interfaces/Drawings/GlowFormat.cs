@@ -1,26 +1,25 @@
-
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Represents a glow effect around an Office graphic.
+/// Represents glow formatting for a shape or shape range.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.glowformat?view=office-pia"/>
-public partial interface GlowFormat: InteropObject
+/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.glowformat?view=word-pia"/>
+public interface GlowFormat : InteropObject
 {
   /// <summary>
-  /// Gets or sets the `Radius` property.
+  /// Returns or sets the radius of the glow effect, in points.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.glowformat.radius?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.glowformat.radius?view=word-pia"/>
   public float Radius { get; set; }
   /// <summary>
-  /// Gets the `Color` property.
+  /// Returns the color of the glow effect.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.glowformat.color?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.glowformat.color?view=word-pia"/>
   public ColorFormat Color { get; }
   /// <summary>
-  /// Gets or sets the `Transparency` property.
+  /// Returns or sets the transparency of the glow effect.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.glowformat.transparency?view=office-pia"/>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.glowformat.transparency?view=word-pia"/>
   public float Transparency { get; set; }
-}
 
+}
