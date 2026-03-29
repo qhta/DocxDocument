@@ -1,0 +1,388 @@
+﻿MOVED: Application\AlertButtonType.cs -> Application\Assistance\AlertButtonType.cs
+MOVED: Application\AlertCancelType.cs -> Application\Assistance\AlertCancelType.cs
+MOVED: Application\AlertDefaultType.cs -> Application\Assistance\AlertDefaultType.cs
+MOVED: Application\AlertIconType.cs -> Application\Assistance\AlertIconType.cs
+MOVED: Application\AnimationType.cs -> Application\Assistance\AnimationType.cs
+MOVED: Application\BalloonButtonType.cs -> Application\Baloons\BalloonButtonType.cs
+MOVED: Application\BalloonErrorType.cs -> Application\Assistance\BalloonErrorType.cs
+MOVED: Application\BalloonType.cs -> Application\Baloons\BalloonType.cs
+MOVED: Application\BarPosition.cs -> Application\CommandBars\BarPosition.cs
+MOVED: Application\BlogCategorySupport.cs -> Application\BlogExtensibility\BlogCategorySupport.cs
+MOVED: Application\BroadcastState.cs -> Application\SharedWorkspace\BroadcastState.cs
+MOVED: Application\ButtonSetType.cs -> Application\Baloons\ButtonSetType.cs
+MOVED: Application\ButtonState.cs -> Application\CommandBars\ButtonState.cs
+MOVED: Application\ButtonStyle.cs -> Application\CommandBars\ButtonStyle.cs
+MOVED: Application\CTPDockPosition.cs -> Application\CustomTaskPanes\CTPDockPosition.cs
+MOVED: Application\CTPDockPositionRestrict.cs -> Application\CustomTaskPanes\CTPDockPositionRestrict.cs
+MOVED: Application\CertificateDetail.cs -> Application\Security\CertificateDetail.cs
+MOVED: Application\CertificateVerificationResults.cs -> Application\Security\CertificateVerificationResults.cs
+MOVED: Application\ComboStyle.cs -> Application\CommandBars\ComboStyle.cs
+MOVED: Application\CommandBarButtonHyperlinkType.cs -> Application\CommandBars\CommandBarButtonHyperlinkType.cs
+MOVED: Application\Condition.cs -> Common properties\Condition.cs
+MOVED: Application\Connector.cs -> Common properties\Connector.cs
+MOVED: Application\ContactCardAddressType.cs -> Application\ContactCard\ContactCardAddressType.cs
+MOVED: Application\ContactCardStyle.cs -> Application\ContactCard\ContactCardStyle.cs
+MOVED: Application\ContactCardType.cs -> Application\ContactCard\ContactCardType.cs
+MOVED: Application\ContentVerificationResults.cs -> Application\Security\ContentVerificationResults.cs
+MOVED: Application\ControlOLEUsage.cs -> Application\CommandBars\ControlOLEUsage.cs
+MOVED: Application\ControlType.cs -> Application\CommandBars\ControlType.cs
+MOVED: Application\DocInspectorStatus.cs -> Application\DocumentInspectors\DocInspectorStatus.cs
+MOVED: Application\EncryptionProviderDetail.cs -> Application\Security\EncryptionProviderDetail.cs
+MOVED: Application\FarEastLineBreakLanguageID.cs -> Wordprocessing\Documents\FarEastLineBreakLanguageID.cs
+MOVED: Application\FileFindListBy.cs -> Application\FileSearch\FileFindListBy.cs
+MOVED: Application\FileFindOptions.cs -> Application\FileSearch\FileFindOptions.cs
+MOVED: Application\FileFindSortBy.cs -> Application\FileSearch\FileFindSortBy.cs
+MOVED: Application\FileFindView.cs -> Application\FileSearch\FileFindView.cs
+MOVED: Application\FileType.cs -> Application\FileSearch\FileType.cs
+MOVED: Application\FilterComparison.cs -> Application\ODSO\FilterComparison.cs
+MOVED: Application\FilterConjunction.cs -> Application\ODSO\FilterConjunction.cs
+MOVED: Application\IconType.cs -> Application\Baloons\IconType.cs
+MOVED: Application\MenuAnimation.cs -> Application\CommandBars\MenuAnimation.cs
+MOVED: Application\ModeType.cs -> Application\Baloons\ModeType.cs
+MOVED: Application\MoveRow.cs -> Application\ODSO\MoveRow.cs
+MOVED: Application\OLEMenuGroup.cs -> Application\CommandBars\OLEMenuGroup.cs
+MOVED: Application\SearchIn.cs -> Application\FileSearch\SearchIn.cs
+MOVED: Application\SharedWorkspaceTaskPriority.cs -> Application\SharedWorkspace\SharedWorkspaceTaskPriority.cs
+MOVED: Application\SharedWorkspaceTaskStatus.cs -> Application\SharedWorkspace\SharedWorkspaceTaskStatus.cs
+MOVED: Application\SignatureDetail.cs -> Application\Security\SignatureDetail.cs
+MOVED: Application\SignatureLineImage.cs -> Application\Security\SignatureLineImage.cs
+MOVED: Application\SignatureProviderDetail.cs -> Application\Security\SignatureProviderDetail.cs
+MOVED: Application\SignatureSubset.cs -> Application\Security\SignatureSubset.cs
+MOVED: Application\SortBy.cs -> Application\FileSearch\SortBy.cs
+MOVED: Application\SyncConflictResolutionType.cs -> Application\SharedWorkspace\SyncConflictResolutionType.cs
+MOVED: Application\SyncErrorType.cs -> Application\SharedWorkspace\SyncErrorType.cs
+MOVED: Application\SyncStatusType.cs -> Application\SharedWorkspace\SyncStatusType.cs
+MOVED: Application\SyncVersionType.cs -> Application\SharedWorkspace\SyncVersionType.cs
+MOVED: Application\WizardActType.cs -> Application\Assistance\WizardActType.cs
+MOVED: Colors\ThemeColors.cs -> Themes\ThemeColors.cs
+MOVED: CustomUI\Size.cs -> Drawings\Size.cs
+MOVED: CustomUI\Style.cs -> Drawings\Style.cs
+MOVED: Drawings\BarProtection.cs -> Application\CommandBars\BarProtection.cs
+MOVED: Drawings\BarType.cs -> Application\CommandBars\BarType.cs
+MOVED: Drawings\ChartElementType.cs -> Drawings.Charts\ChartElementType.cs
+MOVED: Drawings\ChartFieldType.cs -> Drawings.Text\ChartFieldType.cs
+MOVED: Drawings\ClipboardFormat.cs -> Drawings.Text\ClipboardFormat.cs
+MOVED: Drawings\LanguageID.cs -> Wordprocessing\Documents\LanguageID.cs
+MOVED: Drawings\LineStyle.cs -> Drawings.Charts\LineStyle.cs
+MOVED: Drawings\MailFormat.cs -> Wordprocessing\Mail merge\MailFormat.cs
+MOVED: Drawings\MetaPropertyType.cs -> Common properties\MetaPropertyType.cs
+MOVED: Drawings\Permission.cs -> Application\Security\Permission.cs
+MOVED: Drawings\PickerField.cs -> Application\PickerDialog\PickerField.cs
+MOVED: Drawings\ScreenSize.cs -> HTML\Web\ScreenSize.cs
+MOVED: Drawings\TabStopType.cs -> Drawings.Text\TabStopType.cs
+MOVED: Drawings\TextCaps.cs -> Drawings.Text\TextCaps.cs
+MOVED: Drawings\TextChangeCase.cs -> Drawings.Text\TextChangeCase.cs
+MOVED: Drawings\TextDirection.cs -> Drawings.Text\TextDirection.cs
+MOVED: Drawings\TextShape.cs -> Drawings.Diagrams\TextShape.cs
+MOVED: Drawings\TextStrike.cs -> Drawings.Text\TextStrike.cs
+MOVED: Drawings.Charts\ErrorType.cs -> Application\SharedWorkspace\ErrorType.cs
+MOVED: Drawings.Charts\LayoutMode.cs -> Wordprocessing\Pages\LayoutMode.cs
+MOVED: Drawings.Charts\PageOrientation.cs -> Wordprocessing\Pages\PageOrientation.cs
+MOVED: Drawings.Charts\PictureFormat.cs -> Drawings\PictureFormat.cs
+MOVED: Drawings.Charts\Shape.cs -> Drawings\Shape.cs
+MOVED: Drawings.Charts\Split.cs -> Windows\Split.cs
+MOVED: Drawings.Diagrams\DiagramType.cs -> Drawings\DiagramType.cs
+MOVED: Drawings.Diagrams\Direction.cs -> Wordprocessing\Ranges\Direction.cs
+MOVED: Drawings\Line properties\HorizontalLineAlignment.cs -> Drawings\HorizontalLineAlignment.cs
+MOVED: Drawings\Line properties\HorizontalLineWidthType.cs -> Drawings\HorizontalLineWidthType.cs
+MOVED: HTML\HTMLProjectOpen.cs -> HTML\HTMLProject\HTMLProjectOpen.cs
+MOVED: HTML\HTMLProjectState.cs -> HTML\HTMLProject\HTMLProjectState.cs
+MOVED: HTML\ScriptLanguage.cs -> HTML\Scripts\ScriptLanguage.cs
+MOVED: HTML\ScriptLocation.cs -> HTML\Scripts\ScriptLocation.cs
+MOVED: HTML\TargetBrowser.cs -> HTML\Web\TargetBrowser.cs
+MOVED: Math\Boolean.cs -> Drawings.Charts\Boolean.cs
+MOVED: Math\HorizontalAlignment.cs -> Drawings.Charts\HorizontalAlignment.cs
+MOVED: Math\Justification.cs -> OMath\Justification.cs
+MOVED: Math\RowSpacingRule.cs -> OMath\RowSpacingRule.cs
+MOVED: Vml\Alignment.cs -> Wordprocessing\Tables\Alignment.cs
+MOVED: Vml\Angle.cs -> Drawings\Angle.cs
+COLLISION: Vml\ConnectorType.cs -> Drawings\ConnectorType.cs
+COLLISION: Vml\FillType.cs -> Drawings\FillType.cs
+COLLISION: Vml\ScreenSize.cs -> HTML\Web\ScreenSize.cs
+COLLISION: Vml\ShadowType.cs -> Drawings\ShadowType.cs
+MOVED: Windows\WindowState.cs -> Wordprocessing\Windows\WindowState.cs
+MOVED: Word\Animation.cs -> Application\Assistance\Animation.cs
+MOVED: Word\AraSpeller.cs -> Wordprocessing\Settings\AraSpeller.cs
+MOVED: Word\ArabicNumeral.cs -> Wordprocessing\Settings\ArabicNumeral.cs
+MOVED: Word\AutoMacros.cs -> Wordprocessing\Documents\AutoMacros.cs
+MOVED: Word\AutoVersions.cs -> Wordprocessing\Versioning\AutoVersions.cs
+MOVED: Word\BookmarkSortBy.cs -> Wordprocessing\Bookmarks\BookmarkSortBy.cs
+MOVED: Word\BorderDistanceFrom.cs -> Wordprocessing\Borders\BorderDistanceFrom.cs
+MOVED: Word\BorderPosition.cs -> Wordprocessing\Borders\BorderPosition.cs
+MOVED: Word\BrowseTarget.cs -> HTML\Web\BrowseTarget.cs
+MOVED: Word\BrowserLevel.cs -> HTML\Web\BrowserLevel.cs
+MOVED: Word\CalendarType.cs -> Wordprocessing\ContentControls\CalendarType.cs
+MOVED: Word\CaptionLabelID.cs -> Wordprocessing\Captions\CaptionLabelID.cs
+MOVED: Word\CaptionPosition.cs -> Wordprocessing\Captions\CaptionPosition.cs
+MOVED: Word\CellColor.cs -> Wordprocessing\Settings\CellColor.cs
+MOVED: Word\CharacterCase.cs -> Wordprocessing\Ranges\CharacterCase.cs
+MOVED: Word\CharacterWidth.cs -> Wordprocessing\Ranges\CharacterWidth.cs
+MOVED: Word\CheckInVersionType.cs -> Wordprocessing\Documents\CheckInVersionType.cs
+MOVED: Word\ChevronConvertRule.cs -> Converters\ChevronConvertRule.cs
+MOVED: Word\ColorIndex.cs -> Drawings.Charts\ColorIndex.cs
+MOVED: Word\ColumnWidth.cs -> Wordprocessing\Views\ColumnWidth.cs
+MOVED: Word\CompareTarget.cs -> Wordprocessing\Documents\CompareTarget.cs
+MOVED: Word\Compatibility.cs -> Wordprocessing\Documents\Compatibility.cs
+MOVED: Word\CompatibilityMode.cs -> Wordprocessing\Documents\CompatibilityMode.cs
+MOVED: Word\ConditionCode.cs -> Wordprocessing\Tables\ConditionCode.cs
+MOVED: Word\ContentControlAppearance.cs -> Wordprocessing\ContentControls\ContentControlAppearance.cs
+MOVED: Word\ContentControlLevel.cs -> Wordprocessing\ContentControls\ContentControlLevel.cs
+MOVED: Word\ContentControlType.cs -> Wordprocessing\ContentControls\ContentControlType.cs
+MOVED: Word\Continue.cs -> Wordprocessing\Lists\Continue.cs
+COLLISION: Word\Country.cs -> Common\Country.cs
+MOVED: Word\CursorMovement.cs -> Wordprocessing\Settings\CursorMovement.cs
+MOVED: Word\CursorType.cs -> Common\CursorType.cs
+MOVED: Word\CustomLabelPageSize.cs -> Wordprocessing\Mail merge\CustomLabelPageSize.cs
+MOVED: Word\DateStorageFormat.cs -> Wordprocessing\ContentControls\DateStorageFormat.cs
+MOVED: Word\DefaultFilePath.cs -> Wordprocessing\Settings\DefaultFilePath.cs
+MOVED: Word\DeletedTextMark.cs -> Wordprocessing\Settings\DeletedTextMark.cs
+MOVED: Word\DiacriticColor.cs -> Wordprocessing\Fonts\DiacriticColor.cs
+MOVED: Word\DictionaryType.cs -> Wordprocessing\Dictionaries\DictionaryType.cs
+MOVED: Word\DisableFeaturesIntroducedAfter.cs -> Wordprocessing\Documents\DisableFeaturesIntroducedAfter.cs
+MOVED: Word\DocumentType.cs -> Wordprocessing\Documents\DocumentType.cs
+MOVED: Word\DocumentViewDirection.cs -> Wordprocessing\Settings\DocumentViewDirection.cs
+MOVED: Word\DropPosition.cs -> Wordprocessing\Paragraph properties\DropPosition.cs
+MOVED: Word\EditionOption.cs -> Wordprocessing\Documents\EditionOption.cs
+MOVED: Word\EditionType.cs -> Wordprocessing\Documents\EditionType.cs
+MOVED: Word\EmailHTMLFidelity.cs -> Wordprocessing\Mail merge\EmailHTMLFidelity.cs
+MOVED: Word\EnableCancelKey.cs -> Application\EnableCancelKey.cs
+MOVED: Word\EnvelopeOrientation.cs -> Wordprocessing\Mail merge\EnvelopeOrientation.cs
+MOVED: Word\ExportCreateBookmarks.cs -> Wordprocessing\Documents\ExportCreateBookmarks.cs
+MOVED: Word\ExportFormat.cs -> Wordprocessing\Documents\ExportFormat.cs
+MOVED: Word\ExportItem.cs -> Wordprocessing\Documents\ExportItem.cs
+MOVED: Word\ExportOptimizeFor.cs -> Wordprocessing\Documents\ExportOptimizeFor.cs
+MOVED: Word\ExportRange.cs -> Wordprocessing\Documents\ExportRange.cs
+COLLISION: Word\FarEastLineBreakLanguageID.cs -> Wordprocessing\Documents\FarEastLineBreakLanguageID.cs
+MOVED: Word\FarEastLineBreakLevel.cs -> Wordprocessing\Documents\FarEastLineBreakLevel.cs
+MOVED: Word\FieldKind.cs -> Wordprocessing\Fields\FieldKind.cs
+MOVED: Word\FieldShading.cs -> Wordprocessing\Views\FieldShading.cs
+MOVED: Word\FieldType.cs -> Wordprocessing\FormFields\FieldType.cs
+MOVED: Word\FindWrap.cs -> Wordprocessing\Find  and replace\FindWrap.cs
+MOVED: Word\FrameSizeRule.cs -> Wordprocessing\Frames and framesets\FrameSizeRule.cs
+MOVED: Word\FramesetNewFrameLocation.cs -> Wordprocessing\Frames and framesets\FramesetNewFrameLocation.cs
+MOVED: Word\FramesetSizeType.cs -> Wordprocessing\Frames and framesets\FramesetSizeType.cs
+MOVED: Word\FramesetType.cs -> Wordprocessing\Frames and framesets\FramesetType.cs
+MOVED: Word\FrenchSpeller.cs -> Wordprocessing\Settings\FrenchSpeller.cs
+MOVED: Word\GoToDirection.cs -> Wordprocessing\Documents\GoToDirection.cs
+MOVED: Word\GoToItem.cs -> Wordprocessing\Documents\GoToItem.cs
+MOVED: Word\GutterStyle.cs -> Wordprocessing\Pages\GutterStyle.cs
+MOVED: Word\GutterStyleOld.cs -> Wordprocessing\Pages\GutterStyleOld.cs
+MOVED: Word\HeaderFooterIndex.cs -> Wordprocessing\Headers and footers\HeaderFooterIndex.cs
+MOVED: Word\HeadingSeparator.cs -> Wordprocessing\Indexes\HeadingSeparator.cs
+MOVED: Word\HebSpellStart.cs -> Wordprocessing\Settings\HebSpellStart.cs
+MOVED: Word\HelpType.cs -> Global\HelpType.cs
+MOVED: Word\HighAnsiText.cs -> Wordprocessing\Settings\HighAnsiText.cs
+MOVED: Word\HorizontalInVerticalType.cs -> Wordprocessing\Ranges\HorizontalInVerticalType.cs
+MOVED: Word\IMEMode.cs -> Windows\IMEMode.cs
+MOVED: Word\IndexFilter.cs -> Wordprocessing\Indexes\IndexFilter.cs
+MOVED: Word\IndexFormat.cs -> Wordprocessing\Indexes\IndexFormat.cs
+MOVED: Word\IndexSortBy.cs -> Wordprocessing\Indexes\IndexSortBy.cs
+MOVED: Word\IndexType.cs -> Wordprocessing\Indexes\IndexType.cs
+MOVED: Word\Information.cs -> Wordprocessing\Ranges\Information.cs
+MOVED: Word\InlineShapeType.cs -> Wordprocessing\InlineShapes\InlineShapeType.cs
+MOVED: Word\InsertedTextMark.cs -> Wordprocessing\Settings\InsertedTextMark.cs
+MOVED: Word\JustificationMode.cs -> Wordprocessing\Documents\JustificationMode.cs
+MOVED: Word\Kana.cs -> Wordprocessing\Ranges\Kana.cs
+MOVED: Word\Key.cs -> Common\Key.cs
+MOVED: Word\KeyCategory.cs -> Wordprocessing\KeyBindings\KeyCategory.cs
+COLLISION: Word\LanguageID.cs -> Wordprocessing\Documents\LanguageID.cs
+COLLISION: Word\LayoutMode.cs -> Wordprocessing\Pages\LayoutMode.cs
+MOVED: Word\LetterStyle.cs -> Wordprocessing\Documents\LetterStyle.cs
+MOVED: Word\LetterheadLocation.cs -> Wordprocessing\Documents\LetterheadLocation.cs
+MOVED: Word\Ligatures.cs -> Wordprocessing\Fonts\Ligatures.cs
+MOVED: Word\LineEndingType.cs -> Wordprocessing\Documents\LineEndingType.cs
+MOVED: Word\LineSpacing.cs -> WordInterfaces\Paragraphs\LineSpacing.cs
+COLLISION: Word\LineStyle.cs -> Drawings.Charts\LineStyle.cs
+MOVED: Word\LineType.cs -> Drawings\LineType.cs
+MOVED: Word\LineWidth.cs -> Wordprocessing\Borders\LineWidth.cs
+MOVED: Word\LinkType.cs -> Wordprocessing\Documents\LinkType.cs
+MOVED: Word\ListLevelAlignment.cs -> Wordprocessing\Lists\ListLevelAlignment.cs
+MOVED: Word\ListType.cs -> Wordprocessing\Lists\ListType.cs
+MOVED: Word\LockType.cs -> Wordprocessing\CoAuthoring\LockType.cs
+COLLISION: Word\MailMergeActiveRecord.cs -> Wordprocessing\Mail merge\MailMergeActiveRecord.cs
+COLLISION: Word\MailMergeComparison.cs -> Wordprocessing\Mail merge\MailMergeComparison.cs
+MOVED: Word\MailMergeDataSource.cs -> Wordprocessing\Mail merge\MailMergeDataSource.cs
+COLLISION: Word\MailMergeDestination.cs -> Wordprocessing\Mail merge\MailMergeDestination.cs
+COLLISION: Word\MailMergeMailFormat.cs -> Wordprocessing\Mail merge\MailMergeMailFormat.cs
+COLLISION: Word\MailMergeMainDocType.cs -> Wordprocessing\Mail merge\MailMergeMainDocType.cs
+COLLISION: Word\MailMergeState.cs -> Wordprocessing\Mail merge\MailMergeState.cs
+MOVED: Word\MailSystem.cs -> Application\MailSystem.cs
+MOVED: Word\MeasurementUnits.cs -> Wordprocessing\Settings\MeasurementUnits.cs
+MOVED: Word\MergeFormatFrom.cs -> Wordprocessing\Documents\MergeFormatFrom.cs
+MOVED: Word\MergeTarget.cs -> Wordprocessing\Documents\MergeTarget.cs
+MOVED: Word\MonthNames.cs -> Wordprocessing\Settings\MonthNames.cs
+MOVED: Word\MoveFromTextMark.cs -> Wordprocessing\Settings\MoveFromTextMark.cs
+MOVED: Word\MoveToTextMark.cs -> Wordprocessing\Settings\MoveToTextMark.cs
+MOVED: Word\MultipleWordConversionsMode.cs -> Wordprocessing\Settings\MultipleWordConversionsMode.cs
+MOVED: Word\NumberForm.cs -> Wordprocessing\Fonts\NumberForm.cs
+MOVED: Word\NumberSpacing.cs -> Wordprocessing\Fonts\NumberSpacing.cs
+MOVED: Word\NumberType.cs -> Wordprocessing\Documents\NumberType.cs
+MOVED: Word\NumberingRule.cs -> Wordprocessing\Footnotes and endnotes\NumberingRule.cs
+MOVED: Word\OMathBreakBin.cs -> Wordprocessing\Documents\OMathBreakBin.cs
+MOVED: Word\OMathBreakSub.cs -> Wordprocessing\Documents\OMathBreakSub.cs
+MOVED: Word\OMathFracType.cs -> OMath\OMathFracType.cs
+MOVED: Word\OMathFunctionType.cs -> OMath\OMathFunctionType.cs
+MOVED: Word\OMathHorizAlignType.cs -> OMath\OMathHorizAlignType.cs
+MOVED: Word\OMathJc.cs -> OMath\OMathJc.cs
+MOVED: Word\OMathShapeType.cs -> OMath\OMathShapeType.cs
+MOVED: Word\OMathSpacingRule.cs -> OMath\OMathSpacingRule.cs
+MOVED: Word\OMathType.cs -> OMath\OMathType.cs
+MOVED: Word\OMathVertAlignType.cs -> OMath\OMathVertAlignType.cs
+MOVED: Word\OpenFormat.cs -> Converters\OpenFormat.cs
+MOVED: Word\OriginalFormat.cs -> Wordprocessing\Documents\OriginalFormat.cs
+MOVED: Word\OutlineLevel.cs -> WordInterfaces\Paragraphs\OutlineLevel.cs
+MOVED: Word\PageBorderArt.cs -> Wordprocessing\Borders\PageBorderArt.cs
+MOVED: Word\PageColor.cs -> Wordprocessing\Views\PageColor.cs
+MOVED: Word\PageFit.cs -> Wordprocessing\Views\PageFit.cs
+MOVED: Word\PageNumberAlignment.cs -> Wordprocessing\Pages\PageNumberAlignment.cs
+MOVED: Word\PageNumberStyle.cs -> Wordprocessing\Pages\PageNumberStyle.cs
+MOVED: Word\PaperSize.cs -> Wordprocessing\Pages\PaperSize.cs
+MOVED: Word\PaperTray.cs -> Wordprocessing\Mail merge\PaperTray.cs
+MOVED: Word\ParagraphAlignment.cs -> Drawings.Text\ParagraphAlignment.cs
+MOVED: Word\PasteOptions.cs -> Wordprocessing\Settings\PasteOptions.cs
+MOVED: Word\PortugueseReform.cs -> Wordprocessing\Settings\PortugueseReform.cs
+MOVED: Word\PreferredWidthType.cs -> Wordprocessing\Tables\PreferredWidthType.cs
+MOVED: Word\PrintOutItem.cs -> Wordprocessing\Documents\PrintOutItem.cs
+MOVED: Word\PrintOutPages.cs -> Wordprocessing\Documents\PrintOutPages.cs
+MOVED: Word\PrintOutRange.cs -> Wordprocessing\Documents\PrintOutRange.cs
+MOVED: Word\ProofreadingErrorType.cs -> Wordprocessing\AutoCorrect\ProofreadingErrorType.cs
+MOVED: Word\ProtectionType.cs -> Wordprocessing\Documents\ProtectionType.cs
+MOVED: Word\ReadingLayoutMargin.cs -> Wordprocessing\Views\ReadingLayoutMargin.cs
+MOVED: Word\ReadingOrder.cs -> Drawings.Charts\ReadingOrder.cs
+MOVED: Word\RectangleType.cs -> Drawings\RectangleType.cs
+MOVED: Word\ReferenceType.cs -> Wordprocessing\Documents\ReferenceType.cs
+MOVED: Word\RelativeHorizontalPosition.cs -> Drawings\RelativeHorizontalPosition.cs
+MOVED: Word\RelativeHorizontalSize.cs -> Drawings\RelativeHorizontalSize.cs
+MOVED: Word\RelativeVerticalPosition.cs -> Drawings\RelativeVerticalPosition.cs
+MOVED: Word\RelativeVerticalSize.cs -> Drawings\RelativeVerticalSize.cs
+MOVED: Word\RemoveDocInfoType.cs -> Wordprocessing\Documents\RemoveDocInfoType.cs
+MOVED: Word\Replace.cs -> Drawings\Replace.cs
+MOVED: Word\RevisedLinesMark.cs -> Wordprocessing\Settings\RevisedLinesMark.cs
+MOVED: Word\RevisedPropertiesMark.cs -> Wordprocessing\Settings\RevisedPropertiesMark.cs
+MOVED: Word\RevisionType.cs -> Wordprocessing\Revisions\RevisionType.cs
+MOVED: Word\RevisionsBalloonMargin.cs -> Wordprocessing\Views\RevisionsBalloonMargin.cs
+MOVED: Word\RevisionsBalloonPrintOrientation.cs -> Wordprocessing\Settings\RevisionsBalloonPrintOrientation.cs
+MOVED: Word\RevisionsBalloonWidthType.cs -> Wordprocessing\Views\RevisionsBalloonWidthType.cs
+MOVED: Word\RevisionsMarkup.cs -> Wordprocessing\Revisions\RevisionsMarkup.cs
+MOVED: Word\RevisionsMode.cs -> Wordprocessing\Views\RevisionsMode.cs
+MOVED: Word\RevisionsView.cs -> Wordprocessing\Revisions\RevisionsView.cs
+MOVED: Word\RgbColor.cs -> Wordprocessing\Borders\RgbColor.cs
+MOVED: Word\RoutingSlipDelivery.cs -> Wordprocessing\Documents\RoutingSlipDelivery.cs
+MOVED: Word\RoutingSlipStatus.cs -> Wordprocessing\Documents\RoutingSlipStatus.cs
+MOVED: Word\RowAlignment.cs -> Wordprocessing\Tables\RowAlignment.cs
+MOVED: Word\RowHeightRule.cs -> Wordprocessing\Tables\RowHeightRule.cs
+MOVED: Word\SalutationGender.cs -> Wordprocessing\Mail merge\SalutationGender.cs
+MOVED: Word\SalutationType.cs -> Wordprocessing\Documents\SalutationType.cs
+MOVED: Word\SaveFormat.cs -> Converters\SaveFormat.cs
+MOVED: Word\SaveOptions.cs -> Wordprocessing\Documents\SaveOptions.cs
+MOVED: Word\ScrollbarType.cs -> Wordprocessing\Frames and framesets\ScrollbarType.cs
+MOVED: Word\SectionDirection.cs -> Wordprocessing\Pages\SectionDirection.cs
+MOVED: Word\SectionStart.cs -> Wordprocessing\Pages\SectionStart.cs
+MOVED: Word\SeekView.cs -> Wordprocessing\Views\SeekView.cs
+MOVED: Word\SelectionFlags.cs -> Wordprocessing\Ranges\SelectionFlags.cs
+MOVED: Word\SelectionType.cs -> Wordprocessing\Ranges\SelectionType.cs
+MOVED: Word\SeparatorType.cs -> Wordprocessing\Captions\SeparatorType.cs
+MOVED: Word\ShapePosition.cs -> Drawings\ShapePosition.cs
+MOVED: Word\ShowFilter.cs -> Wordprocessing\Documents\ShowFilter.cs
+MOVED: Word\ShowSourceDocuments.cs -> Windows\ShowSourceDocuments.cs
+MOVED: Word\SmartTagControlType.cs -> Wordprocessing\SmartTags\SmartTagControlType.cs
+MOVED: Word\SortOrder.cs -> Application\FileSearch\SortOrder.cs
+MOVED: Word\SpanishSpeller.cs -> Wordprocessing\Settings\SpanishSpeller.cs
+MOVED: Word\SpecialPane.cs -> Wordprocessing\Views\SpecialPane.cs
+MOVED: Word\SpellingErrorType.cs -> Wordprocessing\AutoCorrect\SpellingErrorType.cs
+MOVED: Word\Statistic.cs -> Wordprocessing\Documents\Statistic.cs
+MOVED: Word\StoryType.cs -> Wordprocessing\Ranges\StoryType.cs
+MOVED: Word\StyleSheetLinkType.cs -> Wordprocessing\Documents\StyleSheetLinkType.cs
+MOVED: Word\StyleSheetPrecedence.cs -> Wordprocessing\Documents\StyleSheetPrecedence.cs
+MOVED: Word\StyleSort.cs -> Wordprocessing\Documents\StyleSort.cs
+COLLISION: Word\StyleType.cs -> Wordprocessing\Styles\StyleType.cs
+MOVED: Word\StylisticSet.cs -> Wordprocessing\Fonts\StylisticSet.cs
+MOVED: Word\SummaryLength.cs -> Wordprocessing\Documents\SummaryLength.cs
+MOVED: Word\SummaryMode.cs -> Wordprocessing\Documents\SummaryMode.cs
+MOVED: Word\TabAlignment.cs -> Wordprocessing\Paragraph properties\TabAlignment.cs
+MOVED: Word\TabLeader.cs -> Wordprocessing\TableOf\TabLeader.cs
+MOVED: Word\TableDirection.cs -> Wordprocessing\Tables\TableDirection.cs
+MOVED: Word\TemplateType.cs -> Wordprocessing\Documents\TemplateType.cs
+MOVED: Word\TextboxTightWrap.cs -> WordInterfaces\Paragraphs\TextboxTightWrap.cs
+MOVED: Word\TextureIndex.cs -> Drawings\TextureIndex.cs
+MOVED: Word\ToaFormat.cs -> Wordprocessing\TableOf\ToaFormat.cs
+MOVED: Word\TocFormat.cs -> Wordprocessing\TableOf\TocFormat.cs
+MOVED: Word\TofFormat.cs -> Wordprocessing\TableOf\TofFormat.cs
+MOVED: Word\TrailingCharacter.cs -> Wordprocessing\Lists\TrailingCharacter.cs
+MOVED: Word\TwoLinesInOneType.cs -> Wordprocessing\Ranges\TwoLinesInOneType.cs
+MOVED: Word\UpdateStyleListBehavior.cs -> Wordprocessing\Settings\UpdateStyleListBehavior.cs
+MOVED: Word\UseFormattingFrom.cs -> Wordprocessing\Documents\UseFormattingFrom.cs
+MOVED: Word\VerticalAlignment.cs -> Drawings.Charts\VerticalAlignment.cs
+MOVED: Word\ViewType.cs -> Wordprocessing\Views\ViewType.cs
+MOVED: Word\VisualSelection.cs -> Wordprocessing\Settings\VisualSelection.cs
+COLLISION: Word\WindowState.cs -> Wordprocessing\Windows\WindowState.cs
+COLLISION: Word\WindowType.cs -> Windows\WindowType.cs
+MOVED: Word\WordDialog.cs -> Application\Dialogs\WordDialog.cs
+MOVED: Word\WordDialogTab.cs -> Application\Dialogs\WordDialogTab.cs
+MOVED: Word\WrapSide.cs -> Drawings\WrapSide.cs
+MOVED: Word\WrapType.cs -> Drawings\WrapType.cs
+MOVED: Word\WrapTypeMerged.cs -> Wordprocessing\Settings\WrapTypeMerged.cs
+MOVED: Word\XMLNodeLevel.cs -> Wordprocessing\CustomXml\XMLNodeLevel.cs
+COLLISION: Word\XMLNodeType.cs -> CustomXML\XMLNodeType.cs
+MOVED: Word\XMLValidationStatus.cs -> Wordprocessing\CustomXml\XMLValidationStatus.cs
+MOVED: Wordprocessing\BuildingBlockEnumTypes.cs -> Wordprocessing\BuildingBlocks\BuildingBlockEnumTypes.cs
+COLLISION: Wordprocessing\Common\Direction.cs -> Wordprocessing\Ranges\Direction.cs
+COLLISION: Wordprocessing\Common\TextDirection.cs -> Drawings.Text\TextDirection.cs
+COLLISION: Wordprocessing\Document\CaptionPosition.cs -> Wordprocessing\Captions\CaptionPosition.cs
+MOVED: Wordprocessing\Document\DocumentDirection.cs -> Wordprocessing\Documents\DocumentDirection.cs
+MOVED: Wordprocessing\Document\DocumentKind.cs -> Wordprocessing\Documents\DocumentKind.cs
+MOVED: Wordprocessing\Document\DocumentProtectionType.cs -> Wordprocessing\Documents\DocumentProtectionType.cs
+COLLISION: Wordprocessing\Document\DocumentType.cs -> Wordprocessing\Documents\DocumentType.cs
+COLLISION: Wordprocessing\Document\PageOrientation.cs -> Wordprocessing\Pages\PageOrientation.cs
+COLLISION: Wordprocessing\Document\SectionStart.cs -> Wordprocessing\Pages\SectionStart.cs
+MOVED: Wordprocessing\Document\WordDocumentType.cs -> Wordprocessing\Documents\WordDocumentType.cs
+COLLISION: Wordprocessing\Drawings\RelativeHorizontalSize.cs -> Drawings\RelativeHorizontalSize.cs
+COLLISION: Wordprocessing\Drawings\RelativeVerticalSize.cs -> Drawings\RelativeVerticalSize.cs
+MOVED: Wordprocessing\Fields and hyperlinks\TextBoxFormField.cs -> Wordprocessing\FormFields\TextBoxFormField.cs
+COLLISION: Wordprocessing\Footnotes and endnotes\ReferenceType.cs -> Wordprocessing\Documents\ReferenceType.cs
+COLLISION: Wordprocessing\Frames and framesets\HorizontalAlignment.cs -> Drawings.Charts\HorizontalAlignment.cs
+COLLISION: Wordprocessing\Frames and framesets\HorizontalAnchor.cs -> Drawings\HorizontalAnchor.cs
+COLLISION: Wordprocessing\Frames and framesets\VerticalAnchor.cs -> Drawings\VerticalAnchor.cs
+MOVED: Wordprocessing\Numbering\MultiLevel.cs -> Drawings.Charts\MultiLevel.cs
+MOVED: Wordprocessing\Numbering\NumberFormat.cs -> Drawings.Charts\NumberFormat.cs
+COLLISION: Wordprocessing\Paragraph properties\Justification.cs -> OMath\Justification.cs
+MOVED: Wordprocessing\Paragraph properties\LineSpacingRule.cs -> WordInterfaces\Paragraphs\LineSpacingRule.cs
+COLLISION: Wordprocessing\Paragraph properties\OutlineLevel.cs -> WordInterfaces\Paragraphs\OutlineLevel.cs
+COLLISION: Wordprocessing\Paragraph properties\TabStopType.cs -> Drawings.Text\TabStopType.cs
+COLLISION: Wordprocessing\Paragraph properties\TextBoxTightWrap.cs -> WordInterfaces\Paragraphs\TextBoxTightWrap.cs
+MOVED: Wordprocessing\Run properties\EmphasisMark.cs -> Wordprocessing\Fonts\EmphasisMark.cs
+COLLISION: Wordprocessing\Run properties\Ligatures.cs -> Wordprocessing\Fonts\Ligatures.cs
+COLLISION: Wordprocessing\Run properties\NumberForm.cs -> Wordprocessing\Fonts\NumberForm.cs
+COLLISION: Wordprocessing\Run properties\NumberSpacing.cs -> Wordprocessing\Fonts\NumberSpacing.cs
+MOVED: Wordprocessing\Run properties\TextEffect.cs -> Drawings\TextEffect.cs
+MOVED: Wordprocessing\Run properties\ThemeFont.cs -> Themes\ThemeFont.cs
+MOVED: Wordprocessing\Run properties\UnderlineType.cs -> Drawings.Text\UnderlineType.cs
+MOVED: Wordprocessing\Run properties\VerticalPosition.cs -> Wordprocessing\Frames and framesets\VerticalPosition.cs
+MOVED: Wordprocessing\Sdt\DateFormat.cs -> Wordprocessing\Documents\DateFormat.cs
+COLLISION: Wordprocessing\Sections\PaperSize.cs -> Wordprocessing\Pages\PaperSize.cs
+COLLISION: Wordprocessing\Settings\ViewType.cs -> Wordprocessing\Views\ViewType.cs
+MOVED: Wordprocessing\Table properties\TableRowAlignment.cs -> Wordprocessing\Tables\TableRowAlignment.cs
+MOVED: Wordprocessing\Table properties\TableVerticalAlignment.cs -> Wordprocessing\Tables\TableVerticalAlignment.cs
+MOVED: Wordprocessing\Table properties\WidthRule.cs -> Wordprocessing\Frames and framesets\WidthRule.cs
+MOVED: Wordprocessing\Unused\BaselineAlignment.cs -> Drawings.Text\BaselineAlignment.cs
+MOVED: Wordprocessing\Unused\Case.cs -> Wordprocessing\Ranges\Case.cs
+COLLISION: Wordprocessing\Unused\ColorIndex.cs -> Drawings.Charts\ColorIndex.cs
+MOVED: Wordprocessing\Unused\Comparison.cs -> Application\ODSO\Comparison.cs
+COLLISION: Wordprocessing\Unused\DateStorageFormat.cs -> Wordprocessing\ContentControls\DateStorageFormat.cs
+COLLISION: Wordprocessing\Unused\Information.cs -> Wordprocessing\Ranges\Information.cs
+COLLISION: Wordprocessing\Unused\ListLevelAlignment.cs -> Wordprocessing\Lists\ListLevelAlignment.cs
+COLLISION: Wordprocessing\Unused\MeasurementUnits.cs -> Wordprocessing\Settings\MeasurementUnits.cs
+MOVED: Wordprocessing\Unused\NumberStyle.cs -> Wordprocessing\Footnotes and endnotes\NumberStyle.cs
+COLLISION: Wordprocessing\Unused\PageNumberStyle.cs -> Wordprocessing\Pages\PageNumberStyle.cs
+COLLISION: Wordprocessing\Unused\ParagraphAlignment.cs -> Drawings.Text\ParagraphAlignment.cs
+MOVED: Wordprocessing\Unused\SchemeColor.cs -> Drawings\SchemeColor.cs
+COLLISION: Wordprocessing\Unused\SortOrder.cs -> Application\FileSearch\SortOrder.cs
+COLLISION: Wordprocessing\Unused\Statistic.cs -> Wordprocessing\Documents\Statistic.cs
+COLLISION: Wordprocessing\Unused\StylisticSet.cs -> Wordprocessing\Fonts\StylisticSet.cs
+COLLISION: Wordprocessing\Unused\TabAlignment.cs -> Wordprocessing\Paragraph properties\TabAlignment.cs
+COLLISION: Wordprocessing\Unused\TabLeader.cs -> Wordprocessing\TableOf\TabLeader.cs
+MOVED: Wordprocessing\Unused\TextOrientation.cs -> Drawings\TextOrientation.cs
+COLLISION: Wordprocessing\Unused\TrailingCharacter.cs -> Wordprocessing\Lists\TrailingCharacter.cs
+COLLISION: Wordprocessing\Unused\TwoLinesInOneType.cs -> Wordprocessing\Ranges\TwoLinesInOneType.cs
+COLLISION: Wordprocessing\Vml\WrapSide.cs -> Drawings\WrapSide.cs
+COLLISION: Wordprocessing\Vml\WrapType.cs -> Drawings\WrapType.cs

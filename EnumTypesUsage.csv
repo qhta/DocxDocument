@@ -1,0 +1,995 @@
+EnumTypeDirectory;EnumTypeName;InterfaceTypeDirectory;InterfaceTypeName
+Application;AlertButtonType;Application\Assistance;Assistant
+Application;AlertCancelType;Application\Assistance;Assistant
+Application;AlertDefaultType;Application\Assistance;Assistant
+Application;AlertIconType;Application\Assistance;Assistant
+Application;AnimationType;Application\Assistance;Assistant
+Application;AnimationType;Application\Baloons;Balloon
+Application;AutomationSecurity;Application;_Application
+Application;BalloonButtonType;Application\Baloons;Balloon
+Application;BalloonErrorType;Application\Assistance;Assistant
+Application;BalloonType;Application\Baloons;Balloon
+Application;BarPosition;Application\CommandBars;CommandBar
+Application;BlogCategorySupport;Application\BlogExtensibility;IBlogExtensibility
+Application;BroadcastState;Application\SharedWorkspace;Broadcast
+Application;ButtonSetType;Application\Baloons;Balloon
+Application;ButtonState;Application\CommandBars;_CommandBarButton
+Application;ButtonStyle;Application\CommandBars;_CommandBarButton
+Application;CTPDockPosition;Application\CustomTaskPanes;_CustomTaskPane
+Application;CTPDockPositionRestrict;Application\CustomTaskPanes;_CustomTaskPane
+Application;CertificateDetail;Application\Security;SignatureInfo
+Application;CertificateVerificationResults;Application\Security;SignatureInfo
+Application;CertificateVerificationResults;Application\Security;SignatureProvider
+Application;ComboStyle;Application\CommandBars;_CommandBarComboBox
+Application;CommandBarButtonHyperlinkType;Application\CommandBars;_CommandBarButton
+Application;Condition;Common properties;PropertyTest
+Application;Condition;Common properties;PropertyTests
+Application;Condition;Wordprocessing\Tables;TableStyle
+Application;Connector;Common properties;PropertyTest
+Application;Connector;Common properties;PropertyTests
+Application;Connector;Drawings;Shape
+Application;Connector;Drawings;ShapeRange
+Application;ContactCardAddressType;Application\ContactCard;ContactCard
+Application;ContactCardStyle;Application\ContactCard;ContactCard
+Application;ContactCardType;Application\ContactCard;ContactCard
+Application;ContentVerificationResults;Application\Security;SignatureInfo
+Application;ContentVerificationResults;Application\Security;SignatureProvider
+Application;ControlOLEUsage;Application\CommandBars;CommandBarControl
+Application;ControlOLEUsage;Application\CommandBars;CommandBarPopup
+Application;ControlOLEUsage;Application\CommandBars;_CommandBarActiveX
+Application;ControlOLEUsage;Application\CommandBars;_CommandBarButton
+Application;ControlOLEUsage;Application\CommandBars;_CommandBarComboBox
+Application;ControlType;Application\CommandBars;CommandBarControl
+Application;ControlType;Application\CommandBars;CommandBarPopup
+Application;ControlType;Application\CommandBars;_CommandBarActiveX
+Application;ControlType;Application\CommandBars;_CommandBarButton
+Application;ControlType;Application\CommandBars;_CommandBarComboBox
+Application;DocInspectorStatus;Application\DocumentInspectors;DocumentInspector
+Application;EncryptionProviderDetail;Application\Security;EncryptionProvider
+Application;FarEastLineBreakLanguageID;Wordprocessing\Documents;Template
+Application;FarEastLineBreakLanguageID;Wordprocessing\Documents;_Document
+Application;FeatureInstall;Application;_Application
+Application;FileDialogType;Application;_Application
+Application;FileFindListBy;Application\FileSearch;IFind
+Application;FileFindOptions;Application\FileSearch;IFind
+Application;FileFindSortBy;Application\FileSearch;IFind
+Application;FileFindView;Application\FileSearch;IFind
+Application;FileType;Application\FileSearch;FileTypes
+Application;FileType;Application\FileSearch;IFind
+Application;FilterComparison;Application\ODSO;ODSOFilter
+Application;FilterComparison;Application\ODSO;ODSOFilters
+Application;FilterConjunction;Application\ODSO;ODSOFilter
+Application;FilterConjunction;Application\ODSO;ODSOFilters
+Application;IconType;Application\Baloons;Balloon
+Application;MenuAnimation;Application\CommandBars;_CommandBars
+Application;ModeType;Application\Baloons;Balloon
+Application;MoveRow;Application\ODSO;OfficeDataSourceObject
+Application;OLEMenuGroup;Application\CommandBars;CommandBarPopup
+Application;SearchIn;Application\FileSearch;SearchScope
+Application;SharedWorkspaceTaskPriority;Application\SharedWorkspace;SharedWorkspaceTask
+Application;SharedWorkspaceTaskStatus;Application\SharedWorkspace;SharedWorkspaceTask
+Application;SignatureDetail;Application\Security;SignatureInfo
+Application;SignatureLineImage;Application\Security;SignatureProvider
+Application;SignatureProviderDetail;Application\Security;SignatureProvider
+Application;SignatureSubset;Application\Security;SignatureSet
+Application;SortBy;Application\FileSearch;FileSearch
+Application;SortBy;Application\FileSearch;IFind
+Application;SortBy;Wordprocessing\Indexes;Index
+Application;SyncConflictResolutionType;Application\SharedWorkspace;Sync
+Application;SyncErrorType;Application\SharedWorkspace;Sync
+Application;SyncEventType;Application;ApplicationEvents4
+Application;SyncEventType;Application\Events;IApplicationEvents4
+Application;SyncEventType;Wordprocessing\Documents;DocumentEvents2
+Application;SyncStatusType;Application\SharedWorkspace;Sync
+Application;SyncVersionType;Application\SharedWorkspace;Sync
+Application;WizardActType;Application\Assistance;Assistant
+Colors;ThemeColors;Drawings;ColorFormat
+Colors;ThemeColors;Themes;ThemeColor
+Colors;ThemeColors;Themes;ThemeColorScheme
+Common;Country;Common;ISystem
+Common;Encoding;HTML\Web;DefaultWebOptions
+Common;Encoding;HTML\Web;WebOptions
+Common;Encoding;Wordprocessing\Documents;Documents
+Common;Encoding;Wordprocessing\Documents;_Document
+Common;Encoding;Wordprocessing\Settings;Options
+Common;HyperlinkType;Application\CommandBars;_CommandBarButton
+Common;HyperlinkType;Wordprocessing\Hyperlinks;Hyperlink
+Common;SortOrder;Application\FileSearch;FileSearch
+Common;TriState;Drawings;CalloutFormat
+Common;TriState;Drawings;CanvasShapes
+Common;TriState;Drawings;ColorFormat
+Common;TriState;Drawings;ConnectorFormat
+Common;TriState;Drawings;FillFormat
+Common;TriState;Drawings;LineFormat
+Common;TriState;Drawings;PictureEffect
+Common;TriState;Drawings;PictureFormat
+Common;TriState;Drawings;ShadowFormat
+Common;TriState;Drawings;Shape
+Common;TriState;Drawings;ShapeRange
+Common;TriState;Drawings;Shapes
+Common;TriState;Drawings;TextEffectFormat
+Common;TriState;Drawings;TextFrame
+Common;TriState;Drawings;ThreeDFormat
+Common;TriState;Drawings.Diagrams;Diagram
+Common;TriState;Drawings.SmartArt;SmartArt
+Common;TriState;Drawings.SmartArt;SmartArtNode
+Common;TriState;Drawings.Text;Font
+Common;TriState;Drawings.Text;ParagraphFormat2
+Common;TriState;Drawings.Text;TextFrame
+Common;TriState;Drawings.Text;TextRange
+Common;TriState;Wordprocessing\InlineShapes;InlineShape
+Common properties;DocPropertyType;Common properties;DocumentProperty
+CustomUI;Size;Drawings;ReflectionFormat
+CustomUI;Size;Drawings;ShadowFormat
+CustomUI;Size;Drawings.Charts;Chart
+CustomUI;Size;Drawings.Text;Font
+CustomUI;Size;Wordprocessing\Fonts;_Font
+CustomUI;Size;Wordprocessing\FormFields;CheckBox
+CustomUI;Size;Wordprocessing\Mail merge;Envelope
+CustomUI;Style;Application\CommandBars;_CommandBarButton
+CustomUI;Style;Application\CommandBars;_CommandBarComboBox
+CustomUI;Style;Drawings;FillFormat
+CustomUI;Style;Drawings;LineFormat
+CustomUI;Style;Drawings;ShadowFormat
+CustomUI;Style;Drawings;Shapes
+CustomUI;Style;Drawings.Charts;ChartFillFormat
+CustomUI;Style;WordInterfaces\Paragraphs;Paragraph
+CustomUI;Style;Wordprocessing\Documents;_Document
+CustomUI;Style;Wordprocessing\Find  and replace;Find
+CustomUI;Style;Wordprocessing\Find  and replace;Replacement
+CustomUI;Style;Wordprocessing\Headings;HeadingStyle
+CustomUI;Style;Wordprocessing\Headings;HeadingStyles
+CustomUI;Style;Wordprocessing\InlineShapes;InlineShapes
+CustomUI;Style;Wordprocessing\Mail merge;EmailAuthor
+CustomUI;Style;Wordprocessing\Mail merge;EmailOptions
+CustomUI;Style;Wordprocessing\Mail merge;Envelope
+CustomUI;Style;Wordprocessing\Paragraph properties;_ParagraphFormat
+CustomUI;Style;Wordprocessing\Paragraphs;Paragraphs
+CustomUI;Style;Wordprocessing\Ranges;Range
+CustomUI;Style;Wordprocessing\Ranges;Selection
+CustomUI;Style;Wordprocessing\Revisions;Revision
+CustomUI;Style;Wordprocessing\Styles;Style
+CustomUI;Style;Wordprocessing\Styles;Styles
+CustomUI;Style;Wordprocessing\Tables;Table
+CustomXML;CustomXMLValidationErrorType;CustomXML;CustomXMLValidationError
+CustomXML;XMLNodeType;CustomXML;CustomXMLNode
+CustomXML;XMLNodeType;CustomXML;_CustomXMLPart
+CustomXML;XMLNodeType;Wordprocessing\CustomXml;XMLNode
+Drawings;AlignCmd;Drawings;ShapeRange
+Drawings;ArrowheadLength;Drawings;LineFormat
+Drawings;ArrowheadStyle;Drawings;LineFormat
+Drawings;ArrowheadWidth;Drawings;LineFormat
+Drawings;AutoShapeType;Drawings;Shape
+Drawings;AutoShapeType;Drawings;ShapeRange
+Drawings;AutoShapeType;Drawings.Charts;ChartFormat
+Drawings;AutoSize;Drawings;TextFrame
+Drawings;AutoSize;Drawings.Text;TextFrame
+Drawings;AutoSize;Wordprocessing\FormFields;CheckBox
+Drawings;BackgroundStyleIndex;Drawings;Shape
+Drawings;BackgroundStyleIndex;Drawings;ShapeRange
+Drawings;BarProtection;Application\CommandBars;CommandBar
+Drawings;BarType;Application\CommandBars;CommandBar
+Drawings;BevelType;Drawings;SoftEdgeFormat
+Drawings;BevelType;Drawings;ThreeDFormat
+Drawings;CalloutAngleType;Drawings;CalloutFormat
+Drawings;CalloutDropType;Drawings;CalloutFormat
+Drawings;CalloutType;Drawings;CalloutFormat
+Drawings;CalloutType;Drawings;CanvasShapes
+Drawings;CalloutType;Drawings;Shapes
+Drawings;ChartElementType;Drawings.Charts;Chart
+Drawings;ChartFieldType;Drawings.Text;TextRange
+Drawings;ClipboardFormat;Drawings.Text;TextRange
+Drawings;ColorType;Drawings;ColorFormat
+Drawings;ColorType;Drawings;PictureFormat
+Drawings;ConnectorType;Drawings;CanvasShapes
+Drawings;ConnectorType;Drawings;ConnectorFormat
+Drawings;ConnectorType;Drawings;Shapes
+Drawings;DistributeCmd;Drawings;ShapeRange
+Drawings;EditingType;Drawings;CanvasShapes
+Drawings;EditingType;Drawings;FreeformBuilder
+Drawings;EditingType;Drawings;ShapeNode
+Drawings;EditingType;Drawings;ShapeNodes
+Drawings;EditingType;Drawings;Shapes
+Drawings;ExtrusionColorType;Drawings;ThreeDFormat
+Drawings;FillType;Drawings;FillFormat
+Drawings;FlipCmd;Drawings;Shape
+Drawings;FlipCmd;Drawings;ShapeRange
+Drawings;GradientColorType;Drawings;FillFormat
+Drawings;GradientStyle;Drawings;FillFormat
+Drawings;HorizontalAnchor;Drawings;TextFrame
+Drawings;HorizontalAnchor;Drawings.Text;TextFrame
+Drawings;LanguageID;Application;_Application
+Drawings;LanguageID;Common;LanguageSettings
+Drawings;LanguageID;Drawings.Text;TextRange
+Drawings;LanguageID;Global;_Global
+Drawings;LanguageID;Wordprocessing\ContentControls;ContentControl
+Drawings;LanguageID;Wordprocessing\Dictionaries;Dictionary
+Drawings;LanguageID;Wordprocessing\Documents;Research
+Drawings;LanguageID;Wordprocessing\Documents;Template
+Drawings;LanguageID;Wordprocessing\Find  and replace;Find
+Drawings;LanguageID;Wordprocessing\Find  and replace;Replacement
+Drawings;LanguageID;Wordprocessing\Indexes;Index
+Drawings;LanguageID;Wordprocessing\Ranges;Range
+Drawings;LanguageID;Wordprocessing\Ranges;Selection
+Drawings;LanguageID;Wordprocessing\Settings;Language
+Drawings;LanguageID;Wordprocessing\Styles;Style
+Drawings;LightRigType;Drawings;ReflectionFormat
+Drawings;LightRigType;Drawings;ThreeDFormat
+Drawings;LineDashStyle;Drawings;LineFormat
+Drawings;LineStyle;Drawings;LineFormat
+Drawings;LineStyle;Drawings.Charts;Border
+Drawings;LineStyle;Drawings.Charts;ChartBorder
+Drawings;LineStyle;Wordprocessing\Borders;Border
+Drawings;LineStyle;Wordprocessing\Borders;Borders
+Drawings;LineStyle;Wordprocessing\Settings;Options
+Drawings;MailFormat;Wordprocessing\Mail merge;MailMerge
+Drawings;MergeCmd;Drawings;ShapeRange
+Drawings;MetaPropertyType;Common properties;MetaProperty
+Drawings;PathFormat;Drawings;TextFrame
+Drawings;PathFormat;Drawings.Text;TextFrame
+Drawings;PatternType;Drawings;FillFormat
+Drawings;PatternType;Drawings;LineFormat
+Drawings;Permission;Application\DispObjs;Permission
+Drawings;Permission;Application\Security;Permission
+Drawings;Permission;Application\Security;UserPermission
+Drawings;Permission;Wordprocessing\Documents;_Document
+Drawings;PickerField;Application\DispObjs;PickerField
+Drawings;PickerField;Application\PickerDialog;PickerField
+Drawings;PickerField;Application\PickerDialog;PickerFields
+Drawings;PickerField;Application\PickerDialog;PickerProperties
+Drawings;PickerField;Application\PickerDialog;PickerProperty
+Drawings;PictureColorType;Drawings;PictureFormat
+Drawings;PictureEffectType;Drawings;PictureEffect
+Drawings;PictureEffectType;Drawings;PictureEffects
+Drawings;PresetCamera;Drawings;ThreeDFormat
+Drawings;PresetExtrusionDirection;Drawings;ThreeDFormat
+Drawings;PresetGradientType;Drawings;FillFormat
+Drawings;PresetGradientType;Drawings.Charts;ChartFillFormat
+Drawings;PresetLightingDirection;Drawings;ThreeDFormat
+Drawings;PresetLightingSoftness;Drawings;ThreeDFormat
+Drawings;PresetMaterial;Drawings;ThreeDFormat
+Drawings;PresetTextEffect;Drawings;CanvasShapes
+Drawings;PresetTextEffect;Drawings;Shapes
+Drawings;PresetTextEffect;Drawings;TextEffectFormat
+Drawings;PresetTextEffect;Drawings.Text;Font
+Drawings;PresetTextEffect;Drawings.Text;TextFrame
+Drawings;PresetTextEffectShape;Drawings;TextEffectFormat
+Drawings;PresetTexture;Drawings;FillFormat
+Drawings;PresetTexture;Drawings.Charts;ChartFillFormat
+Drawings;PresetThreeDFormat;Drawings;ThreeDFormat
+Drawings;ReflectionType;Drawings;ReflectionFormat
+Drawings;ScaleFrom;Drawings;Shape
+Drawings;ScaleFrom;Drawings;ShapeRange
+Drawings;ScreenSize;HTML\Web;DefaultWebOptions
+Drawings;ScreenSize;HTML\Web;WebOptions
+Drawings;SegmentType;Drawings;FreeformBuilder
+Drawings;SegmentType;Drawings;ShapeNode
+Drawings;SegmentType;Drawings;ShapeNodes
+Drawings;ShadowStyle;Drawings;ShadowFormat
+Drawings;ShadowType;Drawings;ShadowFormat
+Drawings;ShapeStyleIndex;Drawings;Shape
+Drawings;ShapeStyleIndex;Drawings;ShapeRange
+Drawings;ShapeType;Drawings;Shape
+Drawings;ShapeType;Drawings;ShapeRange
+Drawings;SoftEdgeType;Drawings;SoftEdgeFormat
+Drawings;SoftEdgeType;Drawings.Text;Font
+Drawings;TabStopType;Drawings.Text;TabStop
+Drawings;TabStopType;Drawings.Text;TabStops
+Drawings;TextCaps;Drawings.Text;Font
+Drawings;TextChangeCase;Drawings.Text;TextRange
+Drawings;TextDirection;Drawings.Text;ParagraphFormat2
+Drawings;TextDirection;Drawings.Text;TextColumn
+Drawings;TextEffectAlignment;Drawings;TextEffectFormat
+Drawings;TextShape;Drawings.Diagrams;DiagramNode
+Drawings;TextStrike;Drawings.Text;Font
+Drawings;TextureAlignment;Drawings;FillFormat
+Drawings;TextureType;Drawings;FillFormat
+Drawings;VerticalAnchor;Drawings;TextFrame
+Drawings;VerticalAnchor;Drawings.Text;TextFrame
+Drawings;WarpFormat;Drawings;TextFrame
+Drawings;WarpFormat;Drawings.Text;TextFrame
+Drawings;ZOrderCmd;Drawings;Shape
+Drawings;ZOrderCmd;Drawings;ShapeRange
+Drawings;class;Application\Converter;IConverter
+Drawings;class;Drawings;Shapes
+Drawings;class;Wordprocessing\InlineShapes;InlineShapes
+Drawings;class;Wordprocessing\OLEControl;OLEFormat
+Drawings.Charts;ChartType;Drawings.Charts;Chart
+Drawings.Charts;ChartType;Drawings.Charts;Series
+Drawings.Charts;Crosses;Drawings.Charts;Axis
+Drawings.Charts;DisplayBlanksAs;Drawings.Charts;Chart
+Drawings.Charts;ErrorType;Application\SharedWorkspace;Sync
+Drawings.Charts;LayoutMode;Wordprocessing\Pages;PageSetup
+Drawings.Charts;LegendPosition;Drawings.Charts;Legend
+Drawings.Charts;MarkerStyle;Drawings.Charts;LegendKey
+Drawings.Charts;MarkerStyle;Drawings.Charts;Point
+Drawings.Charts;MarkerStyle;Drawings.Charts;Series
+Drawings.Charts;Orientation;Drawings;CanvasShapes
+Drawings.Charts;Orientation;Drawings;Shapes
+Drawings.Charts;Orientation;Drawings;TextFrame
+Drawings.Charts;Orientation;Drawings.Charts;AxisTitle
+Drawings.Charts;Orientation;Drawings.Charts;ChartTitle
+Drawings.Charts;Orientation;Drawings.Charts;DataLabel
+Drawings.Charts;Orientation;Drawings.Charts;DataLabels
+Drawings.Charts;Orientation;Drawings.Charts;DisplayUnitLabel
+Drawings.Charts;Orientation;Drawings.Charts;TickLabels
+Drawings.Charts;Orientation;Drawings.Text;TextFrame
+Drawings.Charts;Orientation;Wordprocessing\Pages;PageSetup
+Drawings.Charts;Orientation;Wordprocessing\Ranges;Range
+Drawings.Charts;Orientation;Wordprocessing\Ranges;Selection
+Drawings.Charts;PageOrientation;Wordprocessing\Pages;PageSetup
+Drawings.Charts;PictureFormat;Application\DispObjs;PictureFormat
+Drawings.Charts;PictureFormat;Drawings;PictureFormat
+Drawings.Charts;PictureFormat;Drawings;Shape
+Drawings.Charts;PictureFormat;Drawings;ShapeRange
+Drawings.Charts;PictureFormat;Drawings.Charts;ChartFillFormat
+Drawings.Charts;PictureFormat;Drawings.Charts;ChartFormat
+Drawings.Charts;PictureFormat;Wordprocessing\InlineShapes;InlineShape
+Drawings.Charts;Shape;Application\DispObjs;Shape
+Drawings.Charts;Shape;Drawings;CanvasShapes
+Drawings.Charts;Shape;Drawings;ConnectorFormat
+Drawings.Charts;Shape;Drawings;FreeformBuilder
+Drawings.Charts;Shape;Drawings;GroupShapes
+Drawings.Charts;Shape;Drawings;Shape
+Drawings.Charts;Shape;Drawings;ShapeRange
+Drawings.Charts;Shape;Drawings;Shapes
+Drawings.Charts;Shape;Drawings.Diagrams;DiagramNode
+Drawings.Charts;Shape;HTML\Scripts;Script
+Drawings.Charts;Shape;HTML\Web;WebComponent
+Drawings.Charts;Shape;HTML\Web;WebComponentProperties
+Drawings.Charts;Shape;OMath;OMathDelim
+Drawings.Charts;Shape;Wordprocessing\Documents;_Document
+Drawings.Charts;Shape;Wordprocessing\Hyperlinks;Hyperlink
+Drawings.Charts;Shape;Wordprocessing\Ranges;Range
+Drawings.Charts;Shape;Wordprocessing\Ranges;Selection
+Drawings.Charts;SizeRepresents;Drawings.Charts;ChartGroup
+Drawings.Charts;Split;Windows;Window
+Drawings.Charts;Split;Wordprocessing\Windows;Window
+Drawings.Charts;TickLabelPosition;Drawings.Charts;Axis
+Drawings.Charts;TickMark;Drawings.Charts;Axis
+Drawings.Charts;TimeUnit;Drawings.Charts;Axis
+Drawings.Charts;TrendlineType;Drawings.Charts;Trendline
+Drawings.Charts;TrendlineType;Drawings.Charts;Trendlines
+Drawings.Charts;XlAxisCrosses;Drawings.Charts;Axis
+Drawings.Charts;XlAxisGroup;Drawings.Charts;Axis
+Drawings.Charts;XlAxisGroup;Drawings.Charts;Chart
+Drawings.Charts;XlAxisGroup;Drawings.Charts;ChartGroup
+Drawings.Charts;XlAxisGroup;Drawings.Charts;Series
+Drawings.Charts;XlAxisType;Drawings.Charts;Axis
+Drawings.Charts;XlBarShape;Drawings.Charts;Chart
+Drawings.Charts;XlBarShape;Drawings.Charts;Series
+Drawings.Charts;XlCategoryLabelLevel;Drawings.Charts;Chart
+Drawings.Charts;XlCategoryType;Drawings.Charts;Axis
+Drawings.Charts;XlChartElementPosition;Drawings.Charts;AxisTitle
+Drawings.Charts;XlChartElementPosition;Drawings.Charts;ChartTitle
+Drawings.Charts;XlChartElementPosition;Drawings.Charts;DisplayUnitLabel
+Drawings.Charts;XlChartElementPosition;Drawings.Charts;PlotArea
+Drawings.Charts;XlChartPictureType;Drawings.Charts;Point
+Drawings.Charts;XlChartPictureType;Drawings.Charts;Series
+Drawings.Charts;XlChartSplitType;Drawings.Charts;ChartGroup
+Drawings.Charts;XlDataLabelPosition;Drawings.Charts;DataLabel
+Drawings.Charts;XlDataLabelPosition;Drawings.Charts;DataLabels
+Drawings.Charts;XlDataLabelsType;Drawings.Charts;Chart
+Drawings.Charts;XlDataLabelsType;Drawings.Charts;ChartPoint
+Drawings.Charts;XlDataLabelsType;Drawings.Charts;Series
+Drawings.Charts;XlDisplayUnit;Drawings.Charts;Axis
+Drawings.Charts;XlEndStyleCap;Drawings.Charts;ErrorBars
+Drawings.Charts;XlErrorBarDirection;Drawings.Charts;Series
+Drawings.Charts;XlErrorBarInclude;Drawings.Charts;Series
+Drawings.Charts;XlErrorBarType;Drawings.Charts;Series
+Drawings.Charts;XlPieSliceIndex;Drawings.Charts;ChartPoint
+Drawings.Charts;XlPieSliceLocation;Drawings.Charts;ChartPoint
+Drawings.Charts;XlRowCol;Drawings.Charts;Chart
+Drawings.Charts;XlRowCol;Drawings.Charts;SeriesCollection
+Drawings.Charts;XlScaleType;Drawings.Charts;Axis
+Drawings.Charts;XlSeriesNameLevel;Drawings.Charts;Chart
+Drawings.Charts;XlTickLabelOrientation;Drawings.Charts;TickLabels
+Drawings.Diagrams;DiagramNodeType;Drawings.Diagrams;DiagramNode
+Drawings.Diagrams;DiagramNodeType;Drawings.Diagrams;DiagramNodeChildren
+Drawings.Diagrams;DiagramType;Drawings;Shapes
+Drawings.Diagrams;DiagramType;Drawings.Diagrams;Diagram
+Drawings.Diagrams;Direction;Drawings.Charts;Series
+Drawings.Diagrams;Direction;Wordprocessing\Ranges;Range
+Drawings.Diagrams;Direction;Wordprocessing\Ranges;Selection
+Drawings.Diagrams;OrgChartLayoutType;Drawings.Diagrams;DiagramNode
+Drawings.Diagrams;OrgChartLayoutType;Drawings.SmartArt;SmartArtNode
+Drawings.Diagrams;RelativeNodePosition;Drawings.Diagrams;DiagramNode
+Drawings.SmartArt;SmartArtNodePosition;Drawings.SmartArt;SmartArtNode
+Drawings.SmartArt;SmartArtNodeType;Drawings.SmartArt;SmartArtNode
+Drawings\Line properties;HorizontalLineAlignment;Drawings;HorizontalLineFormat
+Drawings\Line properties;HorizontalLineWidthType;Drawings;HorizontalLineFormat
+HTML;HTMLProjectOpen;HTML\HTMLProject;HTMLProject
+HTML;HTMLProjectOpen;HTML\HTMLProject;HTMLProjectItem
+HTML;HTMLProjectState;HTML\HTMLProject;HTMLProject
+HTML;ScriptLanguage;HTML\Scripts;Script
+HTML;ScriptLanguage;HTML\Scripts;Scripts
+HTML;ScriptLocation;HTML\Scripts;Script
+HTML;ScriptLocation;HTML\Scripts;Scripts
+HTML;TargetBrowser;HTML\Web;DefaultWebOptions
+HTML;TargetBrowser;HTML\Web;WebOptions
+Math;Boolean;Application;_Application
+Math;Boolean;Application\Panes;Pane
+Math;Boolean;Drawings.Charts;Point
+Math;Boolean;Drawings.Charts;Trendline
+Math;Boolean;Windows;Window
+Math;Boolean;WordInterfaces\Paragraphs;Paragraph
+Math;Boolean;Wordprocessing\Bibliography;Source
+Math;Boolean;Wordprocessing\CustomXml;XMLMapping
+Math;Boolean;Wordprocessing\Documents;_Document
+Math;Boolean;Wordprocessing\Settings;Options
+Math;Boolean;Wordprocessing\SmartTags;SmartTagAction
+Math;Boolean;Wordprocessing\Styles;Style
+Math;Boolean;Wordprocessing\Tables;Table
+Math;Boolean;Wordprocessing\Views;View
+Math;Boolean;Wordprocessing\Windows;Window
+Math;HorizontalAlignment;Drawings.Charts;AxisTitle
+Math;HorizontalAlignment;Drawings.Charts;ChartTitle
+Math;HorizontalAlignment;Drawings.Charts;DataLabel
+Math;HorizontalAlignment;Drawings.Charts;DataLabels
+Math;HorizontalAlignment;Drawings.Charts;DisplayUnitLabel
+Math;Justification;OMath;OMath
+Math;RowSpacingRule;OMath;OMathEqArray
+Math;RowSpacingRule;OMath;OMathMat
+Themes;FontLanguageIndex;Themes;ThemeFonts
+Vml;Alignment;Drawings;HorizontalLineFormat
+Vml;Alignment;Drawings;TextEffectFormat
+Vml;Alignment;Drawings.Charts;TickLabels
+Vml;Alignment;Drawings.Text;ParagraphFormat2
+Vml;Alignment;WordInterfaces\Paragraphs;Paragraph
+Vml;Alignment;Wordprocessing\Lists;ListLevel
+Vml;Alignment;Wordprocessing\Pages;PageNumber
+Vml;Alignment;Wordprocessing\Paragraph properties;TabStop
+Vml;Alignment;Wordprocessing\Paragraph properties;_ParagraphFormat
+Vml;Alignment;Wordprocessing\Paragraphs;Paragraphs
+Vml;Alignment;Wordprocessing\Tables;Row
+Vml;Alignment;Wordprocessing\Tables;Rows
+Vml;Alignment;Wordprocessing\Tables;TableStyle
+Vml;Angle;Drawings;CalloutFormat
+Vml;ConnectorType;Drawings;CanvasShapes
+Vml;ConnectorType;Drawings;ConnectorFormat
+Vml;ConnectorType;Drawings;Shapes
+Vml;FillType;Drawings;FillFormat
+Vml;ScreenSize;HTML\Web;DefaultWebOptions
+Vml;ScreenSize;HTML\Web;WebOptions
+Vml;ShadowType;Drawings;ShadowFormat
+Windows;WindowState;Application;_Application
+Windows;WindowState;Application\TaskPanes;Task
+Windows;WindowState;Windows;Window
+Windows;WindowState;Wordprocessing\Windows;ProtectedViewWindow
+Windows;WindowState;Wordprocessing\Windows;Window
+Windows;WindowType;Windows;Window
+Windows;WindowType;Wordprocessing\Windows;Window
+Word;Animation;Application\Assistance;Assistant
+Word;Animation;Application\Baloons;Balloon
+Word;Animation;Wordprocessing\Fonts;_Font
+Word;AraSpeller;Wordprocessing\Settings;Options
+Word;ArabicNumeral;Wordprocessing\Settings;Options
+Word;AutoMacros;Wordprocessing\Documents;_Document
+Word;AutoVersions;Wordprocessing\Versioning;Versions
+Word;BookmarkSortBy;Wordprocessing\Bookmarks;Bookmarks
+Word;BorderDistanceFrom;Wordprocessing\Borders;Borders
+Word;BorderPosition;Wordprocessing\Borders;Borders
+Word;BrowseTarget;HTML\Web;Browser
+Word;BrowserLevel;HTML\Web;DefaultWebOptions
+Word;BrowserLevel;HTML\Web;WebOptions
+Word;CalendarType;Wordprocessing\ContentControls;ContentControl
+Word;CaptionLabelID;Wordprocessing\Captions;CaptionLabel
+Word;CaptionPosition;Wordprocessing\Captions;CaptionLabel
+Word;CellColor;Wordprocessing\Settings;Options
+Word;CharacterCase;Wordprocessing\Ranges;Range
+Word;CharacterWidth;Wordprocessing\Ranges;Range
+Word;CheckInVersionType;Wordprocessing\Documents;_Document
+Word;ChevronConvertRule;Converters;FileConverters
+Word;ColorIndex;Drawings;Shading
+Word;ColorIndex;Drawings.Charts;Border
+Word;ColorIndex;Drawings.Charts;ChartBorder
+Word;ColorIndex;Drawings.Charts;Interior
+Word;ColorIndex;Drawings.Charts;LegendKey
+Word;ColorIndex;Drawings.Charts;Point
+Word;ColorIndex;Drawings.Charts;Series
+Word;ColorIndex;Wordprocessing\Borders;Border
+Word;ColorIndex;Wordprocessing\Borders;Borders
+Word;ColorIndex;Wordprocessing\Fonts;_Font
+Word;ColorIndex;Wordprocessing\Ranges;Range
+Word;ColorIndex;Wordprocessing\Settings;Options
+Word;ColumnWidth;Wordprocessing\Views;View
+Word;CompareTarget;Wordprocessing\Documents;_Document
+Word;Compatibility;Wordprocessing\Documents;_Document
+Word;CompatibilityMode;Wordprocessing\Documents;_Document
+Word;ConditionCode;Wordprocessing\Tables;TableStyle
+Word;ContentControlAppearance;Wordprocessing\ContentControls;ContentControl
+Word;ContentControlLevel;Wordprocessing\ContentControls;ContentControl
+Word;ContentControlType;Wordprocessing\ContentControls;ContentControl
+Word;ContentControlType;Wordprocessing\ContentControls;ContentControls
+Word;Continue;Wordprocessing\Lists;ListFormat
+Word;Country;Common;ISystem
+Word;CursorMovement;Wordprocessing\Settings;Options
+Word;CursorType;Common;ISystem
+Word;CustomLabelPageSize;Wordprocessing\Mail merge;CustomLabel
+Word;DateStorageFormat;Wordprocessing\ContentControls;ContentControl
+Word;DefaultFilePath;Wordprocessing\Settings;Options
+Word;DeletedTextMark;Wordprocessing\Settings;Options
+Word;DiacriticColor;Wordprocessing\Fonts;_Font
+Word;DictionaryType;Wordprocessing\Dictionaries;Dictionary
+Word;DictionaryType;Wordprocessing\Settings;Language
+Word;DisableFeaturesIntroducedAfter;Wordprocessing\Documents;_Document
+Word;DisableFeaturesIntroducedAfter;Wordprocessing\Settings;Options
+Word;DocumentType;Wordprocessing\Documents;Documents
+Word;DocumentViewDirection;Wordprocessing\Settings;Options
+Word;DropPosition;Wordprocessing\Paragraph properties;DropCap
+Word;EditionOption;Wordprocessing\Documents;_Document
+Word;EditionType;Wordprocessing\Documents;_Document
+Word;EmailHTMLFidelity;Wordprocessing\Mail merge;EmailOptions
+Word;EnableCancelKey;Application;_Application
+Word;EnvelopeOrientation;Wordprocessing\Mail merge;Envelope
+Word;ExportCreateBookmarks;Wordprocessing\Documents;_Document
+Word;ExportFormat;Wordprocessing\Documents;_Document
+Word;ExportItem;Wordprocessing\Documents;_Document
+Word;ExportOptimizeFor;Wordprocessing\Documents;_Document
+Word;ExportRange;Wordprocessing\Documents;_Document
+Word;FarEastLineBreakLanguageID;Wordprocessing\Documents;Template
+Word;FarEastLineBreakLanguageID;Wordprocessing\Documents;_Document
+Word;FarEastLineBreakLevel;Drawings.Text;ParagraphFormat2
+Word;FarEastLineBreakLevel;Wordprocessing\Documents;Template
+Word;FarEastLineBreakLevel;Wordprocessing\Documents;_Document
+Word;FieldKind;Wordprocessing\Fields;Field
+Word;FieldShading;Wordprocessing\Views;View
+Word;FieldType;Wordprocessing\Fields;Field
+Word;FieldType;Wordprocessing\FormFields;FormField
+Word;FieldType;Wordprocessing\FormFields;FormFields
+Word;FieldType;Wordprocessing\Mail merge;MailMergeField
+Word;FindWrap;Wordprocessing\Find  and replace;Find
+Word;FrameSizeRule;Wordprocessing\Frames and framesets;Frame
+Word;FramesetNewFrameLocation;Wordprocessing\Frames and framesets;Frameset
+Word;FramesetSizeType;Wordprocessing\Frames and framesets;Frameset
+Word;FramesetType;Wordprocessing\Frames and framesets;Frameset
+Word;FrenchSpeller;Wordprocessing\Settings;Options
+Word;GoToDirection;Wordprocessing\Documents;_Document
+Word;GoToItem;Wordprocessing\Documents;_Document
+Word;GutterStyle;Wordprocessing\Pages;PageSetup
+Word;GutterStyleOld;Wordprocessing\Pages;PageSetup
+Word;HeaderFooterIndex;Wordprocessing\Headers and footers;HeadersFooters
+Word;HeadingSeparator;Wordprocessing\Indexes;Index
+Word;HeadingSeparator;Wordprocessing\Indexes;Indexes
+Word;HebSpellStart;Wordprocessing\Settings;Options
+Word;HelpType;Global;_Global
+Word;HelpType;Wordprocessing\Settings;Options
+Word;HighAnsiText;Wordprocessing\Settings;Options
+Word;HorizontalInVerticalType;Wordprocessing\Ranges;Range
+Word;IMEMode;Windows;Window
+Word;IMEMode;Wordprocessing\Windows;Window
+Word;IndexFilter;Wordprocessing\Indexes;Index
+Word;IndexFormat;Wordprocessing\Indexes;Indexes
+Word;IndexSortBy;Wordprocessing\Indexes;Index
+Word;IndexType;Wordprocessing\Indexes;Index
+Word;IndexType;Wordprocessing\Indexes;Indexes
+Word;Information;Common;ISystem
+Word;Information;Wordprocessing\Documents;_Document
+Word;Information;Wordprocessing\Ranges;Range
+Word;Information;Wordprocessing\Ranges;Selection
+Word;InlineShapeType;Wordprocessing\InlineShapes;InlineShape
+Word;InsertedTextMark;Wordprocessing\Settings;Options
+Word;JustificationMode;Wordprocessing\Documents;Template
+Word;JustificationMode;Wordprocessing\Documents;_Document
+Word;Kana;Wordprocessing\Ranges;Range
+Word;Key;Common;ISystem
+Word;Key;Global;_Global
+Word;Key;Wordprocessing\KeyBindings;KeysBoundTo
+Word;KeyCategory;Application;_Application
+Word;KeyCategory;Global;_Global
+Word;KeyCategory;Wordprocessing\KeyBindings;KeyBinding
+Word;KeyCategory;Wordprocessing\KeyBindings;KeyBindings
+Word;KeyCategory;Wordprocessing\KeyBindings;KeysBoundTo
+Word;LanguageID;Application;_Application
+Word;LanguageID;Common;LanguageSettings
+Word;LanguageID;Drawings.Text;TextRange
+Word;LanguageID;Global;_Global
+Word;LanguageID;Wordprocessing\ContentControls;ContentControl
+Word;LanguageID;Wordprocessing\Dictionaries;Dictionary
+Word;LanguageID;Wordprocessing\Documents;Research
+Word;LanguageID;Wordprocessing\Documents;Template
+Word;LanguageID;Wordprocessing\Find  and replace;Find
+Word;LanguageID;Wordprocessing\Find  and replace;Replacement
+Word;LanguageID;Wordprocessing\Indexes;Index
+Word;LanguageID;Wordprocessing\Ranges;Range
+Word;LanguageID;Wordprocessing\Ranges;Selection
+Word;LanguageID;Wordprocessing\Settings;Language
+Word;LanguageID;Wordprocessing\Styles;Style
+Word;LayoutMode;Wordprocessing\Pages;PageSetup
+Word;LetterStyle;Wordprocessing\Documents;_Document
+Word;LetterStyle;Wordprocessing\Mail merge;_LetterContent
+Word;LetterheadLocation;Wordprocessing\Documents;_Document
+Word;LetterheadLocation;Wordprocessing\Mail merge;_LetterContent
+Word;Ligatures;Wordprocessing\Fonts;_Font
+Word;LineEndingType;Wordprocessing\Documents;_Document
+Word;LineSpacing;WordInterfaces\Paragraphs;Paragraph
+Word;LineSpacing;Wordprocessing\Paragraph properties;_ParagraphFormat
+Word;LineSpacing;Wordprocessing\Paragraphs;Paragraphs
+Word;LineStyle;Drawings;LineFormat
+Word;LineStyle;Drawings.Charts;Border
+Word;LineStyle;Drawings.Charts;ChartBorder
+Word;LineStyle;Wordprocessing\Borders;Border
+Word;LineStyle;Wordprocessing\Borders;Borders
+Word;LineStyle;Wordprocessing\Settings;Options
+Word;LineType;Drawings;Line
+Word;LineWidth;Wordprocessing\Borders;Border
+Word;LineWidth;Wordprocessing\Borders;Borders
+Word;LineWidth;Wordprocessing\Settings;Options
+Word;LinkType;Wordprocessing\Documents;StyleSheets
+Word;LinkType;Wordprocessing\OLEObjects;LinkFormat
+Word;ListLevelAlignment;Wordprocessing\Lists;ListLevel
+Word;ListType;Wordprocessing\Lists;ListFormat
+Word;LockType;Wordprocessing\CoAuthoring;CoAuthLock
+Word;LockType;Wordprocessing\CoAuthoring;CoAuthLocks
+Word;MailMergeActiveRecord;Wordprocessing\Mail merge;MailMergeDataSource
+Word;MailMergeComparison;Wordprocessing\Mail merge;MailMergeFields
+Word;MailMergeDataSource;Wordprocessing\Mail merge;MailMerge
+Word;MailMergeDataSource;Wordprocessing\Mail merge;MailMergeDataSource
+Word;MailMergeDestination;Wordprocessing\Mail merge;MailMerge
+Word;MailMergeMailFormat;Wordprocessing\Mail merge;MailMerge
+Word;MailMergeMainDocType;Wordprocessing\Mail merge;MailMerge
+Word;MailMergeState;Wordprocessing\Mail merge;MailMerge
+Word;MailSystem;Application;_Application
+Word;MeasurementUnits;Wordprocessing\Settings;Options
+Word;MergeFormatFrom;Wordprocessing\Documents;_Document
+Word;MergeTarget;Wordprocessing\Documents;_Document
+Word;MonthNames;Wordprocessing\Settings;Options
+Word;MoveFromTextMark;Wordprocessing\Settings;Options
+Word;MoveToTextMark;Wordprocessing\Settings;Options
+Word;MultipleWordConversionsMode;Wordprocessing\Settings;Options
+Word;NumberForm;Wordprocessing\Fonts;_Font
+Word;NumberSpacing;Wordprocessing\Fonts;_Font
+Word;NumberType;Wordprocessing\Documents;_Document
+Word;NumberType;Wordprocessing\Lists;List
+Word;NumberingRule;Wordprocessing\Footnotes and endnotes;EndnoteOptions
+Word;NumberingRule;Wordprocessing\Footnotes and endnotes;Endnotes
+Word;NumberingRule;Wordprocessing\Footnotes and endnotes;FootnoteOptions
+Word;NumberingRule;Wordprocessing\Footnotes and endnotes;Footnotes
+Word;NumberingRule;Wordprocessing\Settings;LineNumbering
+Word;OMathBreakBin;Wordprocessing\Documents;_Document
+Word;OMathBreakSub;Wordprocessing\Documents;_Document
+Word;OMathFracType;OMath;OMathFrac
+Word;OMathFunctionType;OMath;OMathFunction
+Word;OMathFunctionType;OMath;OMathFunctions
+Word;OMathHorizAlignType;OMath;OMathMatCol
+Word;OMathJc;OMath;OMath
+Word;OMathJc;Wordprocessing\Documents;_Document
+Word;OMathShapeType;OMath;OMathDelim
+Word;OMathSpacingRule;OMath;OMathEqArray
+Word;OMathSpacingRule;OMath;OMathMat
+Word;OMathType;OMath;OMath
+Word;OMathVertAlignType;OMath;OMathEqArray
+Word;OMathVertAlignType;OMath;OMathMat
+Word;OpenFormat;Converters;FileConverter
+Word;OpenFormat;Wordprocessing\Settings;Options
+Word;OriginalFormat;Application;_Application
+Word;OriginalFormat;Wordprocessing\Documents;Documents
+Word;OriginalFormat;Wordprocessing\Documents;_Document
+Word;OutlineLevel;WordInterfaces\Paragraphs;Paragraph
+Word;OutlineLevel;Wordprocessing\Paragraph properties;_ParagraphFormat
+Word;OutlineLevel;Wordprocessing\Paragraphs;Paragraphs
+Word;PageBorderArt;Wordprocessing\Borders;Border
+Word;PageColor;Wordprocessing\Views;View
+Word;PageFit;Wordprocessing\Views;Zoom
+Word;PageNumberAlignment;Wordprocessing\Pages;PageNumber
+Word;PageNumberAlignment;Wordprocessing\Pages;PageNumbers
+Word;PageNumberStyle;Wordprocessing\Pages;PageNumbers
+Word;PaperSize;Wordprocessing\Pages;PageSetup
+Word;PaperTray;Wordprocessing\Mail merge;Envelope
+Word;PaperTray;Wordprocessing\Mail merge;MailingLabel
+Word;PaperTray;Wordprocessing\Pages;PageSetup
+Word;ParagraphAlignment;Drawings.Text;ParagraphFormat2
+Word;ParagraphAlignment;WordInterfaces\Paragraphs;Paragraph
+Word;ParagraphAlignment;Wordprocessing\Paragraph properties;_ParagraphFormat
+Word;ParagraphAlignment;Wordprocessing\Paragraphs;Paragraphs
+Word;PasteOptions;Wordprocessing\Settings;Options
+Word;PortugueseReform;Wordprocessing\Settings;Options
+Word;PreferredWidthType;Wordprocessing\Ranges;Column
+Word;PreferredWidthType;Wordprocessing\Ranges;Columns
+Word;PreferredWidthType;Wordprocessing\Tables;Cell
+Word;PreferredWidthType;Wordprocessing\Tables;Cells
+Word;PreferredWidthType;Wordprocessing\Tables;Table
+Word;PrintOutItem;Wordprocessing\Documents;_Document
+Word;PrintOutPages;Wordprocessing\Documents;_Document
+Word;PrintOutRange;Wordprocessing\Documents;_Document
+Word;ProofreadingErrorType;Wordprocessing\AutoCorrect;ProofreadingErrors
+Word;ProtectionType;Wordprocessing\Documents;_Document
+Word;ReadingLayoutMargin;Wordprocessing\Views;View
+Word;ReadingOrder;Drawings.Charts;AxisTitle
+Word;ReadingOrder;Drawings.Charts;ChartTitle
+Word;ReadingOrder;Drawings.Charts;DataLabel
+Word;ReadingOrder;Drawings.Charts;DataLabels
+Word;ReadingOrder;Drawings.Charts;DisplayUnitLabel
+Word;ReadingOrder;Drawings.Charts;TickLabels
+Word;ReadingOrder;WordInterfaces\Paragraphs;Paragraph
+Word;ReadingOrder;Wordprocessing\Paragraph properties;_ParagraphFormat
+Word;ReadingOrder;Wordprocessing\Paragraphs;Paragraphs
+Word;RectangleType;Drawings;Rectangle
+Word;ReferenceType;Wordprocessing\Documents;_Document
+Word;RelativeHorizontalPosition;Drawings;Shape
+Word;RelativeHorizontalPosition;Drawings;ShapeRange
+Word;RelativeHorizontalPosition;Wordprocessing\Frames and framesets;Frame
+Word;RelativeHorizontalPosition;Wordprocessing\Tables;Rows
+Word;RelativeHorizontalSize;Drawings;Shape
+Word;RelativeHorizontalSize;Drawings;ShapeRange
+Word;RelativeVerticalPosition;Drawings;Shape
+Word;RelativeVerticalPosition;Drawings;ShapeRange
+Word;RelativeVerticalPosition;Wordprocessing\Frames and framesets;Frame
+Word;RelativeVerticalPosition;Wordprocessing\Tables;Rows
+Word;RelativeVerticalSize;Drawings;Shape
+Word;RelativeVerticalSize;Drawings;ShapeRange
+Word;RemoveDocInfoType;Wordprocessing\Documents;_Document
+Word;Replace;Drawings;Shape
+Word;Replace;Drawings;ShapeRange
+Word;Replace;Drawings.Charts;Chart
+Word;Replace;Drawings.Charts;SeriesCollection
+Word;Replace;Drawings.Text;TextRange
+Word;Replace;Wordprocessing\Find  and replace;Find
+Word;RevisedLinesMark;Wordprocessing\Settings;Options
+Word;RevisedPropertiesMark;Wordprocessing\Settings;Options
+Word;RevisionType;Wordprocessing\Revisions;Conflict
+Word;RevisionType;Wordprocessing\Revisions;Revision
+Word;RevisionsBalloonMargin;Wordprocessing\Views;View
+Word;RevisionsBalloonPrintOrientation;Wordprocessing\Settings;Options
+Word;RevisionsBalloonWidthType;Wordprocessing\Views;View
+Word;RevisionsMarkup;Wordprocessing\Revisions;RevisionsFilter
+Word;RevisionsMode;Wordprocessing\Views;View
+Word;RevisionsView;Wordprocessing\Revisions;RevisionsFilter
+Word;RevisionsView;Wordprocessing\Views;View
+Word;RgbColor;Drawings;Shading
+Word;RgbColor;Wordprocessing\Borders;Border
+Word;RgbColor;Wordprocessing\Borders;Borders
+Word;RgbColor;Wordprocessing\ContentControls;ContentControl
+Word;RgbColor;Wordprocessing\Fonts;_Font
+Word;RgbColor;Wordprocessing\Frames and framesets;Frameset
+Word;RgbColor;Wordprocessing\Settings;Options
+Word;RoutingSlipDelivery;Wordprocessing\Documents;RoutingSlip
+Word;RoutingSlipStatus;Wordprocessing\Documents;RoutingSlip
+Word;RowAlignment;Wordprocessing\Tables;Row
+Word;RowAlignment;Wordprocessing\Tables;Rows
+Word;RowHeightRule;Wordprocessing\Tables;Cell
+Word;RowHeightRule;Wordprocessing\Tables;Cells
+Word;RowHeightRule;Wordprocessing\Tables;Row
+Word;RowHeightRule;Wordprocessing\Tables;Rows
+Word;SalutationGender;Wordprocessing\Mail merge;_LetterContent
+Word;SalutationType;Wordprocessing\Documents;_Document
+Word;SalutationType;Wordprocessing\Mail merge;_LetterContent
+Word;SaveFormat;Converters;FileConverter
+Word;SaveFormat;Wordprocessing\Documents;_Document
+Word;SaveOptions;Wordprocessing\Documents;_Document
+Word;ScrollbarType;Wordprocessing\Frames and framesets;Frameset
+Word;SectionDirection;Wordprocessing\Pages;PageSetup
+Word;SectionStart;Wordprocessing\Pages;PageSetup
+Word;SeekView;Wordprocessing\Views;View
+Word;SelectionFlags;Wordprocessing\Ranges;Selection
+Word;SelectionType;Wordprocessing\Ranges;Selection
+Word;SeparatorType;Wordprocessing\Captions;CaptionLabel
+Word;SeparatorType;Wordprocessing\Pages;PageNumbers
+Word;ShapePosition;Drawings;ShapeRange
+Word;ShowFilter;Wordprocessing\Documents;_Document
+Word;ShowSourceDocuments;Windows;Window
+Word;ShowSourceDocuments;Wordprocessing\Windows;Window
+Word;SmartTagControlType;Wordprocessing\SmartTags;SmartTagAction
+Word;SortOrder;Application\FileSearch;FileSearch
+Word;SpanishSpeller;Wordprocessing\Settings;Options
+Word;SpecialPane;Wordprocessing\Views;View
+Word;SpellingErrorType;Wordprocessing\AutoCorrect;SpellingSuggestions
+Word;Statistic;Wordprocessing\Documents;_Document
+Word;StoryType;Wordprocessing\Bookmarks;Bookmark
+Word;StoryType;Wordprocessing\Documents;StoryRanges
+Word;StoryType;Wordprocessing\Ranges;Range
+Word;StoryType;Wordprocessing\Ranges;Selection
+Word;StyleSheetLinkType;Wordprocessing\Documents;StyleSheet
+Word;StyleSheetLinkType;Wordprocessing\Documents;StyleSheets
+Word;StyleSheetPrecedence;Wordprocessing\Documents;StyleSheet
+Word;StyleSheetPrecedence;Wordprocessing\Documents;StyleSheets
+Word;StyleSort;Wordprocessing\Documents;_Document
+Word;StyleType;Wordprocessing\Styles;Style
+Word;StyleType;Wordprocessing\Styles;Styles
+Word;StylisticSet;Wordprocessing\Fonts;_Font
+Word;SummaryLength;Wordprocessing\Documents;_Document
+Word;SummaryMode;Wordprocessing\Documents;_Document
+Word;TabAlignment;Wordprocessing\Paragraph properties;TabStop
+Word;TabLeader;Wordprocessing\Indexes;Index
+Word;TabLeader;Wordprocessing\Paragraph properties;TabStop
+Word;TabLeader;Wordprocessing\TableOf;TableOfAuthorities
+Word;TabLeader;Wordprocessing\TableOf;TableOfContents
+Word;TabLeader;Wordprocessing\TableOf;TableOfFigures
+Word;TableDirection;Wordprocessing\Sections;TextColumns
+Word;TableDirection;Wordprocessing\Tables;Rows
+Word;TableDirection;Wordprocessing\Tables;Table
+Word;TableDirection;Wordprocessing\Tables;TableStyle
+Word;TemplateType;Wordprocessing\Documents;Template
+Word;TextboxTightWrap;WordInterfaces\Paragraphs;Paragraph
+Word;TextboxTightWrap;Wordprocessing\Paragraph properties;_ParagraphFormat
+Word;TextureIndex;Drawings;Shading
+Word;ToaFormat;Wordprocessing\TableOf;TablesOfAuthorities
+Word;TocFormat;Wordprocessing\TableOf;TablesOfContents
+Word;TofFormat;Wordprocessing\TableOf;TablesOfFigures
+Word;TrailingCharacter;Wordprocessing\Lists;ListLevel
+Word;TwoLinesInOneType;Wordprocessing\Ranges;Range
+Word;UpdateStyleListBehavior;Wordprocessing\Settings;Options
+Word;UseFormattingFrom;Wordprocessing\Documents;_Document
+Word;VerticalAlignment;Drawings.Charts;AxisTitle
+Word;VerticalAlignment;Drawings.Charts;ChartTitle
+Word;VerticalAlignment;Drawings.Charts;DataLabel
+Word;VerticalAlignment;Drawings.Charts;DataLabels
+Word;VerticalAlignment;Drawings.Charts;DisplayUnitLabel
+Word;VerticalAlignment;Wordprocessing\Pages;PageSetup
+Word;VerticalAlignment;Wordprocessing\Tables;Cell
+Word;VerticalAlignment;Wordprocessing\Tables;Cells
+Word;ViewType;Wordprocessing\Ranges;TextRetrievalMode
+Word;ViewType;Wordprocessing\Views;View
+Word;ViewType;Wordprocessing\Views;Zooms
+Word;VisualSelection;Wordprocessing\Settings;Options
+Word;WindowState;Application;_Application
+Word;WindowState;Application\TaskPanes;Task
+Word;WindowState;Windows;Window
+Word;WindowState;Wordprocessing\Windows;ProtectedViewWindow
+Word;WindowState;Wordprocessing\Windows;Window
+Word;WindowType;Windows;Window
+Word;WindowType;Wordprocessing\Windows;Window
+Word;WordDialog;Application\Dialogs;Dialog
+Word;WordDialog;Application\Dialogs;Dialogs
+Word;WordDialogTab;Application\Dialogs;Dialog
+Word;WrapSide;Drawings;WrapFormat
+Word;WrapType;Drawings;WrapFormat
+Word;WrapTypeMerged;Wordprocessing\Settings;Options
+Word;XMLNodeLevel;Wordprocessing\CustomXml;XMLNode
+Word;XMLNodeType;CustomXML;CustomXMLNode
+Word;XMLNodeType;CustomXML;_CustomXMLPart
+Word;XMLNodeType;Wordprocessing\CustomXml;XMLNode
+Word;XMLValidationStatus;Wordprocessing\CustomXml;XMLNode
+Wordprocessing;BuildingBlockEnumTypes;Wordprocessing\BuildingBlocks;BuildingBlockTypes
+Wordprocessing\Common;Direction;Drawings.Charts;Series
+Wordprocessing\Common;Direction;Wordprocessing\Ranges;Range
+Wordprocessing\Common;Direction;Wordprocessing\Ranges;Selection
+Wordprocessing\Common;TextDirection;Drawings.Text;ParagraphFormat2
+Wordprocessing\Common;TextDirection;Drawings.Text;TextColumn
+Wordprocessing\Document;CaptionPosition;Wordprocessing\Captions;CaptionLabel
+Wordprocessing\Document;DocumentDirection;Wordprocessing\Documents;Documents
+Wordprocessing\Document;DocumentKind;Wordprocessing\Documents;_Document
+Wordprocessing\Document;DocumentProtectionType;Wordprocessing\Documents;RoutingSlip
+Wordprocessing\Document;DocumentProtectionType;Wordprocessing\Documents;_Document
+Wordprocessing\Document;DocumentType;Wordprocessing\Documents;Documents
+Wordprocessing\Document;PageOrientation;Wordprocessing\Pages;PageSetup
+Wordprocessing\Document;SectionStart;Wordprocessing\Pages;PageSetup
+Wordprocessing\Document;WordDocumentType;Wordprocessing\Documents;_Document
+Wordprocessing\Drawings;RelativeHorizontalSize;Drawings;Shape
+Wordprocessing\Drawings;RelativeHorizontalSize;Drawings;ShapeRange
+Wordprocessing\Drawings;RelativeVerticalSize;Drawings;Shape
+Wordprocessing\Drawings;RelativeVerticalSize;Drawings;ShapeRange
+Wordprocessing\Fields and hyperlinks;TextBoxFormField;Wordprocessing\FormFields;TextInput
+Wordprocessing\Footnotes and endnotes;EndnotePosition;Wordprocessing\Footnotes and endnotes;EndnoteOptions
+Wordprocessing\Footnotes and endnotes;EndnotePosition;Wordprocessing\Footnotes and endnotes;Endnotes
+Wordprocessing\Footnotes and endnotes;FootnotePosition;Wordprocessing\Footnotes and endnotes;FootnoteOptions
+Wordprocessing\Footnotes and endnotes;FootnotePosition;Wordprocessing\Footnotes and endnotes;Footnotes
+Wordprocessing\Footnotes and endnotes;ReferenceType;Wordprocessing\Documents;_Document
+Wordprocessing\Frames and framesets;HorizontalAlignment;Drawings.Charts;AxisTitle
+Wordprocessing\Frames and framesets;HorizontalAlignment;Drawings.Charts;ChartTitle
+Wordprocessing\Frames and framesets;HorizontalAlignment;Drawings.Charts;DataLabel
+Wordprocessing\Frames and framesets;HorizontalAlignment;Drawings.Charts;DataLabels
+Wordprocessing\Frames and framesets;HorizontalAlignment;Drawings.Charts;DisplayUnitLabel
+Wordprocessing\Frames and framesets;HorizontalAnchor;Drawings;TextFrame
+Wordprocessing\Frames and framesets;HorizontalAnchor;Drawings.Text;TextFrame
+Wordprocessing\Frames and framesets;VerticalAnchor;Drawings;TextFrame
+Wordprocessing\Frames and framesets;VerticalAnchor;Drawings.Text;TextFrame
+Wordprocessing\Headers and footers;HeaderFooterType;Wordprocessing\Headers and footers;HeaderFooter
+Wordprocessing\Headers and footers;HeaderFooterType;Wordprocessing\Headers and footers;HeadersFooters
+Wordprocessing\Mail merge;MailMergeActiveRecord;Wordprocessing\Mail merge;MailMergeDataSource
+Wordprocessing\Mail merge;MailMergeComparison;Wordprocessing\Mail merge;MailMergeFields
+Wordprocessing\Mail merge;MailMergeDestination;Wordprocessing\Mail merge;MailMerge
+Wordprocessing\Mail merge;MailMergeMailFormat;Wordprocessing\Mail merge;MailMerge
+Wordprocessing\Mail merge;MailMergeMainDocType;Wordprocessing\Mail merge;MailMerge
+Wordprocessing\Mail merge;MailMergeState;Wordprocessing\Mail merge;MailMerge
+Wordprocessing\Numbering;MultiLevel;Drawings.Charts;TickLabels
+Wordprocessing\Numbering;NumberFormat;Drawings.Charts;DataLabel
+Wordprocessing\Numbering;NumberFormat;Drawings.Charts;DataLabels
+Wordprocessing\Numbering;NumberFormat;Drawings.Charts;TickLabels
+Wordprocessing\Numbering;NumberFormat;Wordprocessing\Lists;ListLevel
+Wordprocessing\Paragraph properties;Justification;OMath;OMath
+Wordprocessing\Paragraph properties;LineSpacingRule;WordInterfaces\Paragraphs;Paragraph
+Wordprocessing\Paragraph properties;LineSpacingRule;Wordprocessing\Paragraph properties;_ParagraphFormat
+Wordprocessing\Paragraph properties;LineSpacingRule;Wordprocessing\Paragraphs;Paragraphs
+Wordprocessing\Paragraph properties;OutlineLevel;WordInterfaces\Paragraphs;Paragraph
+Wordprocessing\Paragraph properties;OutlineLevel;Wordprocessing\Paragraph properties;_ParagraphFormat
+Wordprocessing\Paragraph properties;OutlineLevel;Wordprocessing\Paragraphs;Paragraphs
+Wordprocessing\Paragraph properties;TabStopType;Drawings.Text;TabStop
+Wordprocessing\Paragraph properties;TabStopType;Drawings.Text;TabStops
+Wordprocessing\Paragraph properties;TextBoxTightWrap;WordInterfaces\Paragraphs;Paragraph
+Wordprocessing\Paragraph properties;TextBoxTightWrap;Wordprocessing\Paragraph properties;_ParagraphFormat
+Wordprocessing\Run properties;EmphasisMark;Wordprocessing\Fonts;_Font
+Wordprocessing\Run properties;EmphasisMark;Wordprocessing\Ranges;Range
+Wordprocessing\Run properties;Ligatures;Wordprocessing\Fonts;_Font
+Wordprocessing\Run properties;NumberForm;Wordprocessing\Fonts;_Font
+Wordprocessing\Run properties;NumberSpacing;Wordprocessing\Fonts;_Font
+Wordprocessing\Run properties;TextEffect;Drawings;Shape
+Wordprocessing\Run properties;TextEffect;Drawings;ShapeRange
+Wordprocessing\Run properties;TextEffect;Wordprocessing\InlineShapes;InlineShape
+Wordprocessing\Run properties;ThemeFont;Application\DispObjs;ThemeFont
+Wordprocessing\Run properties;ThemeFont;Themes;ThemeFont
+Wordprocessing\Run properties;ThemeFont;Themes;ThemeFonts
+Wordprocessing\Run properties;UnderlineType;Drawings.Text;Font
+Wordprocessing\Run properties;UnderlineType;Wordprocessing\Fonts;_Font
+Wordprocessing\Run properties;UnderlineType;Wordprocessing\Ranges;Range
+Wordprocessing\Run properties;VerticalPosition;Wordprocessing\Frames and framesets;Frame
+Wordprocessing\Run properties;VerticalPosition;Wordprocessing\Tables;Rows
+Wordprocessing\Sdt;DateFormat;Wordprocessing\Documents;_Document
+Wordprocessing\Sdt;DateFormat;Wordprocessing\Mail merge;_LetterContent
+Wordprocessing\Sections;PaperSize;Wordprocessing\Pages;PageSetup
+Wordprocessing\Settings;ViewType;Wordprocessing\Ranges;TextRetrievalMode
+Wordprocessing\Settings;ViewType;Wordprocessing\Views;View
+Wordprocessing\Settings;ViewType;Wordprocessing\Views;Zooms
+Wordprocessing\Styles;StyleType;Wordprocessing\Styles;Style
+Wordprocessing\Styles;StyleType;Wordprocessing\Styles;Styles
+Wordprocessing\Table properties;TableRowAlignment;Wordprocessing\Tables;Row
+Wordprocessing\Table properties;TableRowAlignment;Wordprocessing\Tables;Rows
+Wordprocessing\Table properties;TableRowAlignment;Wordprocessing\Tables;TableStyle
+Wordprocessing\Table properties;TableVerticalAlignment;Wordprocessing\Tables;Cell
+Wordprocessing\Table properties;TableVerticalAlignment;Wordprocessing\Tables;Cells
+Wordprocessing\Table properties;WidthRule;Wordprocessing\Frames and framesets;Frame
+Wordprocessing\Unused;BaselineAlignment;Drawings.Text;ParagraphFormat2
+Wordprocessing\Unused;BaselineAlignment;WordInterfaces\Paragraphs;Paragraph
+Wordprocessing\Unused;BaselineAlignment;Wordprocessing\Paragraph properties;_ParagraphFormat
+Wordprocessing\Unused;BaselineAlignment;Wordprocessing\Paragraphs;Paragraphs
+Wordprocessing\Unused;Case;Wordprocessing\Ranges;Range
+Wordprocessing\Unused;ColorIndex;Drawings;Shading
+Wordprocessing\Unused;ColorIndex;Drawings.Charts;Border
+Wordprocessing\Unused;ColorIndex;Drawings.Charts;ChartBorder
+Wordprocessing\Unused;ColorIndex;Drawings.Charts;Interior
+Wordprocessing\Unused;ColorIndex;Drawings.Charts;LegendKey
+Wordprocessing\Unused;ColorIndex;Drawings.Charts;Point
+Wordprocessing\Unused;ColorIndex;Drawings.Charts;Series
+Wordprocessing\Unused;ColorIndex;Wordprocessing\Borders;Border
+Wordprocessing\Unused;ColorIndex;Wordprocessing\Borders;Borders
+Wordprocessing\Unused;ColorIndex;Wordprocessing\Fonts;_Font
+Wordprocessing\Unused;ColorIndex;Wordprocessing\Ranges;Range
+Wordprocessing\Unused;ColorIndex;Wordprocessing\Settings;Options
+Wordprocessing\Unused;ColorType;Drawings;ColorFormat
+Wordprocessing\Unused;ColorType;Drawings;PictureFormat
+Wordprocessing\Unused;Comparison;Application\ODSO;ODSOFilter
+Wordprocessing\Unused;Comparison;Application\ODSO;ODSOFilters
+Wordprocessing\Unused;Comparison;Wordprocessing\Mail merge;MailMergeFields
+Wordprocessing\Unused;DateStorageFormat;Wordprocessing\ContentControls;ContentControl
+Wordprocessing\Unused;Information;Common;ISystem
+Wordprocessing\Unused;Information;Wordprocessing\Documents;_Document
+Wordprocessing\Unused;Information;Wordprocessing\Ranges;Range
+Wordprocessing\Unused;Information;Wordprocessing\Ranges;Selection
+Wordprocessing\Unused;ListLevelAlignment;Wordprocessing\Lists;ListLevel
+Wordprocessing\Unused;MeasurementUnits;Wordprocessing\Settings;Options
+Wordprocessing\Unused;NumberStyle;Wordprocessing\Captions;CaptionLabel
+Wordprocessing\Unused;NumberStyle;Wordprocessing\Footnotes and endnotes;EndnoteOptions
+Wordprocessing\Unused;NumberStyle;Wordprocessing\Footnotes and endnotes;Endnotes
+Wordprocessing\Unused;NumberStyle;Wordprocessing\Footnotes and endnotes;FootnoteOptions
+Wordprocessing\Unused;NumberStyle;Wordprocessing\Footnotes and endnotes;Footnotes
+Wordprocessing\Unused;NumberStyle;Wordprocessing\Lists;ListLevel
+Wordprocessing\Unused;NumberStyle;Wordprocessing\Pages;PageNumbers
+Wordprocessing\Unused;PageNumberStyle;Wordprocessing\Pages;PageNumbers
+Wordprocessing\Unused;ParagraphAlignment;Drawings.Text;ParagraphFormat2
+Wordprocessing\Unused;ParagraphAlignment;WordInterfaces\Paragraphs;Paragraph
+Wordprocessing\Unused;ParagraphAlignment;Wordprocessing\Paragraph properties;_ParagraphFormat
+Wordprocessing\Unused;ParagraphAlignment;Wordprocessing\Paragraphs;Paragraphs
+Wordprocessing\Unused;SchemeColor;Drawings;ColorFormat
+Wordprocessing\Unused;SortOrder;Application\FileSearch;FileSearch
+Wordprocessing\Unused;Statistic;Wordprocessing\Documents;_Document
+Wordprocessing\Unused;StylisticSet;Wordprocessing\Fonts;_Font
+Wordprocessing\Unused;TabAlignment;Wordprocessing\Paragraph properties;TabStop
+Wordprocessing\Unused;TabLeader;Wordprocessing\Indexes;Index
+Wordprocessing\Unused;TabLeader;Wordprocessing\Paragraph properties;TabStop
+Wordprocessing\Unused;TabLeader;Wordprocessing\TableOf;TableOfAuthorities
+Wordprocessing\Unused;TabLeader;Wordprocessing\TableOf;TableOfContents
+Wordprocessing\Unused;TabLeader;Wordprocessing\TableOf;TableOfFigures
+Wordprocessing\Unused;TextOrientation;Drawings;CanvasShapes
+Wordprocessing\Unused;TextOrientation;Drawings;Shapes
+Wordprocessing\Unused;TextOrientation;Drawings;TextFrame
+Wordprocessing\Unused;TextOrientation;Drawings.Text;TextFrame
+Wordprocessing\Unused;TextOrientation;Wordprocessing\Ranges;Range
+Wordprocessing\Unused;TextOrientation;Wordprocessing\Ranges;Selection
+Wordprocessing\Unused;TrailingCharacter;Wordprocessing\Lists;ListLevel
+Wordprocessing\Unused;TwoLinesInOneType;Wordprocessing\Ranges;Range
+Wordprocessing\Unused;class;Application\Converter;IConverter
+Wordprocessing\Unused;class;Drawings;Shapes
+Wordprocessing\Unused;class;Wordprocessing\InlineShapes;InlineShapes
+Wordprocessing\Unused;class;Wordprocessing\OLEControl;OLEFormat
+Wordprocessing\Vml;WrapSide;Drawings;WrapFormat
+Wordprocessing\Vml;WrapType;Drawings;WrapFormat

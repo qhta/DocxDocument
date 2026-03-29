@@ -1,34 +1,31 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Interop.Word;
+
 /// <summary>
-///   Defines the TextBoxTightWrapValues enumeration.
+/// Specifies how Microsoft Office Word tightly wraps text around text boxes.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
-[OpenXmlEnumType(typeof(DXW.TextBoxTightWrapValues))]
-public enum TextBoxTightWrap
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtextboxtightwrap?view=office-pia` for Office interop details.
+/// </remarks>
+public enum TextboxTightWrap
 {
   /// <summary>
-  ///   Do Not Tight Wrap.
+  /// Does not wrap text tightly around the contents of a text box.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.TextBoxTightWrapValues.None))]
-  None,
+  None = 0,
   /// <summary>
-  ///   Tight Wrap All Lines.
+  /// Wraps text around the text box tightly to the contents of the text box on all lines.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.TextBoxTightWrapValues.AllLines))]
-  AllLines,
+  All = 1,
   /// <summary>
-  ///   Tight Wrap First and Last Lines.
+  /// Wraps text tightly only on first and last lines.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.TextBoxTightWrapValues.FirstAndLastLine))]
-  FirstAndLastLine,
+  FirstAndLastLines = 2,
   /// <summary>
-  ///   Tight Wrap First Line.
+  /// Wraps text tightly only on the first line.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.TextBoxTightWrapValues.FirstLineOnly))]
-  FirstLineOnly,
+  FirstLineOnly = 3,
   /// <summary>
-  ///   Tight Wrap Last Line.
+  /// Wraps text tightly only on the last line.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.TextBoxTightWrapValues.LastLineOnly))]
-  LastLineOnly
+  LastLineOnly = 4
 }

@@ -14,4 +14,12 @@
     <ProjectReference Include="..\DocumentModel.BaseConverters\DocumentModel.BaseConverters.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\..\..\Scripts\ListEnumTypesUsage.py" Link="Scripts\ListEnumTypesUsage.py" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Wordprocessing\CustomXml\" />
+  </ItemGroup>
+
 </Project>

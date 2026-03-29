@@ -1,11 +1,8 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel;
 
 /// <summary>
 /// Specifies the state of the current document window or task window.
 /// </summary>
-/// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdwindowstate?view=office-pia` for Office interop details.
-/// </remarks>
 public enum WindowState
 {
   /// <summary>
@@ -15,9 +12,9 @@ public enum WindowState
   /// <summary>
   /// Maximized.
   /// </summary>
-  Maximize = 1,
+  Maximized = 1,
   /// <summary>
   /// Minimized.
   /// </summary>
-  Minimize = 2
+  Minimized = 2
 }

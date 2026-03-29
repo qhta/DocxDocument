@@ -1,58 +1,51 @@
-﻿namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Interop.Word;
 
 /// <summary>
-/// Outline level enumeration for paragraphs in WordprocessingML documents.
+/// Specifies the outline level to apply to a paragraph.
 /// </summary>
-[JsonConverter(typeof(StringEnumConverter))]
+/// <remarks>
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdoutlinelevel?view=office-pia` for Office interop details.
+/// </remarks>
 public enum OutlineLevel
 {
   /// <summary>
-  /// Represents the first level in an outline hierarchy, typically assigned to Header1.
+  /// Specifies the outline level 1 to apply to a paragraph.
   /// </summary>
-  Level1 = 0,
-
+  Level1 = 1,
   /// <summary>
-  /// Represents the second level in an outline hierarchy, typically assigned to Header2.
+  /// Specifies the outline level 2 to apply to a paragraph.
   /// </summary>
-  Level2 = 1,
-
+  Level2 = 2,
   /// <summary>
-  /// Represents the third level in an outline hierarchy.
+  /// Specifies the outline level 3 to apply to a paragraph.
   /// </summary>
-  Level3 = 2,
-
+  Level3 = 3,
   /// <summary>
-  /// Represents the fourth level in an outline hierarchy.
+  /// Specifies the outline level 4 to apply to a paragraph.
   /// </summary>
-  Level4 = 3,
-
+  Level4 = 4,
   /// <summary>
-  /// Represents the fifth level in an outline hierarchy.
+  /// Specifies the outline level 5 to apply to a paragraph.
   /// </summary>
-  Level5 = 4,
-
+  Level5 = 5,
   /// <summary>
-  /// Represents the sixth level in an outline hierarchy.
+  /// Specifies the outline level 6 to apply to a paragraph.
   /// </summary>
-  Level6 = 5,
-
+  Level6 = 6,
   /// <summary>
-  /// Represents the seventh level in an outline hierarchy.
+  /// Specifies the outline level 7 to apply to a paragraph.
   /// </summary>
-  Level7 = 6,
-
+  Level7 = 7,
   /// <summary>
-  /// Represents the eighth level in an outline hierarchy.
+  /// Specifies the outline level 8 to apply to a paragraph.
   /// </summary>
-  Level8 = 7,
-
+  Level8 = 8,
   /// <summary>
-  /// Represents the ninth level in an outline hierarchy.
+  /// Specifies the outline level 9 to apply to a paragraph.
   /// </summary>
-  Level9 = 8,
-
+  Level9 = 9,
   /// <summary>
-  /// Represents no outline level.
+  /// No outline level.
   /// </summary>
-  BodyText = 9,
+  BodyText = 10
 }
