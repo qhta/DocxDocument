@@ -13,13 +13,13 @@ public enum XlChartPictureType
   /// <summary>
   /// Picture is sized to a specified number of units and repeated the length of the bar.
   /// </summary>
-  ackScale = 3,
+  StackScale = 3,
   /// <summary>
   /// Picture is sized to repeat a maximum of 15 times in the longest stacked bar.
   /// </summary>
-  ack = 2,
+  Stack = 2,
   /// <summary>
   /// Picture is stretched the full length of stacked bar.
   /// </summary>
-  retch = 1
+  Stretch = 1
 }

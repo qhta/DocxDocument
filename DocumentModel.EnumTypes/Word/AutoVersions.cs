@@ -11,9 +11,9 @@ public enum AutoVersions
   /// <summary>
   /// No document version is saved.
   /// </summary>
-  ff = 0,
+  Off = 0,
   /// <summary>
   /// A document version is saved automatically when the document is closed.
   /// </summary>
-  nClose = 1
+  OnClose = 1
 }

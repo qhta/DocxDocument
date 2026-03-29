@@ -1,0 +1,16 @@
+﻿Word\FramesetType.cs:14: wdFramesetTypeFrameset
+Word\FramesetType.cs:18: wdFramesetTypeFrame
+Word\HelpType.cs:14: wdHelp
+Word\HelpType.cs:18: wdHelpAbout
+Word\HelpType.cs:22: wdHelpActiveWindow
+Word\HelpType.cs:26: wdHelpContents
+Word\HelpType.cs:30: wdHelpExamplesAndDemos
+Word\HelpType.cs:34: wdHelpIndex
+Word\HelpType.cs:38: wdHelpKeyboard
+Word\HelpType.cs:42: wdHelpPSSHelp
+Word\HelpType.cs:46: wdHelpQuickPreview
+Word\HelpType.cs:50: wdHelpSearch
+Word\HelpType.cs:54: wdHelpUsingHelp
+Word\HelpType.cs:58: wdHelpIchitaro
+Word\HelpType.cs:62: wdHelpPE2
+Word\HelpType.cs:66: wdHelpHWP

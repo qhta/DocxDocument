@@ -15,57 +15,57 @@ public enum DateTimeFormat
   /// <summary>
   /// Specifies a Mdyy format.
   /// </summary>
-  Mdyy = 1,
+  ShortestDate = 1,
   /// <summary>
   /// Specifies a ddddMMMMddyyyy format.
   /// </summary>
-  ddddMMMMddyyyy = 2,
+  LongestDate = 2,
   /// <summary>
   /// Specifies MMMMyyyy format.
   /// </summary>
-  MMMMyyyy = 3,
+  LongMonthLongYear = 3,
   /// <summary>
   /// Specifies a MMMMdyyyy format.
   /// </summary>
-  MMMMdyyyy = 4,
+  LongMonthDayLongYear = 4,
   /// <summary>
   /// Specifies MMMyy format.
   /// </summary>
-  MMMyy = 5,
+  MediumMonthShortYear = 5,
   /// <summary>
   /// Specifies a MMMMyy format.
   /// </summary>
-  MMMMyy = 6,
+  LongMonthShortYear = 6,
   /// <summary>
   /// Specifies a MMyy format.
   /// </summary>
-  MMyy = 7,
+  ShortMonthShortYear = 7,
   /// <summary>
   /// Specifies a MMddyyHmm format.
   /// </summary>
-  MMddyyHmm = 8,
+  ShortDateTime24 = 8,
   /// <summary>
   /// Specifies a MMddyyhmmAMPM format.
   /// </summary>
-  MMddyyhmmAMPM = 9,
+  ShortDateTime12 = 9,
   /// <summary>
   /// Specifies Hmm format.
   /// </summary>
-  Hmm = 10,
+  ShortestTime = 10,
   /// <summary>
   /// Specifies a Hmmss format.
   /// </summary>
-  Hmmss = 11,
+  ShortTimeWithSeconds = 11,
   /// <summary>
   /// Specifies a hmmAMPM format.
   /// </summary>
-  hmmAMPM = 12,
+  ShortTime12 = 12,
   /// <summary>
   /// Specifies a hmmssAMPM format.
   /// </summary>
-  hmmssAMPM = 13,
+  ShortTime12WithSeconds = 13,
   /// <summary>
   /// Specifies that the Office application will determine the format.
   /// </summary>
-  FigureOut = 14
+  Auto = 14
 }

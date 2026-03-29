@@ -11,10 +11,10 @@ public enum DocumentConformance
   /// Transitional conformance mode.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.DocumentConformance.transitional))]
-  transitional,
+  Transitional,
   /// <summary>
   /// Strict conformance mode.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.DocumentConformance.strict))]
-  strict
+  Strict
 }

@@ -41,5 +41,6 @@
     <None Include="..\..\..\Scripts\CompareEnumTypes.py" Link="Scripts\CompareEnumTypes.py" />
     <None Include="..\..\..\Scripts\AddPiaCoreLink.py" Link="Scripts\AddPiaCoreLink.py" />
     <None Include="..\..\..\Scripts\AddPiaWordLink.py" Link="Scripts\AddPiaWordLink.py" />
+    <None Include=".github\copilot-instructions.md" />
   </ItemGroup>
 </Project>

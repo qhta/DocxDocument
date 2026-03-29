@@ -11,5 +11,5 @@ public enum XlDataLabelSeparator
   /// <summary>
   /// Word selects the separator.
   /// </summary>
-  xlDataLabelSeparatorDefault = 1
+  DataLabelSeparatorDefault = 1
 }

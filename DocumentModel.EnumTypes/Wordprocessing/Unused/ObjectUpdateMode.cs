@@ -10,10 +10,10 @@ public enum ObjectUpdateMode
   ///   always.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.ObjectUpdateMode.always))]
-  always,
+  Always,
   /// <summary>
   ///   onCall.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.ObjectUpdateMode.onCall))]
-  onCall
+  OnCall
 }

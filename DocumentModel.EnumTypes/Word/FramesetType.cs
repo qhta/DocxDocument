@@ -11,9 +11,9 @@ public enum FramesetType
   /// <summary>
   /// A frameset.
   /// </summary>
-  wdFramesetTypeFrameset = 0,
+  Frameset = 0,
   /// <summary>
   /// A single frame.
   /// </summary>
-  wdFramesetTypeFrame = 1
+  Frame = 1
 }
