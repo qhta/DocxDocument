@@ -20,6 +20,8 @@
 
   <ItemGroup>
     <Folder Include="Wordprocessing\CustomXml\" />
+    <Folder Include="Wordprocessing\Drawings\" />
+    <Folder Include="Wordprocessing\Sections\" />
   </ItemGroup>
 
 </Project>

@@ -1,23 +1,24 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Wordprocessing;
 /// <summary>
-/// Specifies the number form setting for an OpenType font.
+///   Defines the NumberFormValues enumeration.
 /// </summary>
-/// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdnumberform?view=office-pia` for Office interop details.
-/// </remarks>
+[JsonConverter(typeof(StringEnumConverter))]
+[OpenXmlEnumType(typeof(DXO10W.NumberFormValues))]
 public enum NumberForm
 {
   /// <summary>
-  /// Applies the default number form for the font.
+  ///   default.
   /// </summary>
-  Default = 0,
+  [OpenXmlEnumValue(nameof(DXO10W.NumberFormValues.Default))]
+  Default,
   /// <summary>
-  /// Applies the lining number form to the font.
+  ///   lining.
   /// </summary>
-  Lining = 1,
+  [OpenXmlEnumValue(nameof(DXO10W.NumberFormValues.Lining))]
+  Lining,
   /// <summary>
-  /// Applies the "old-style" number form to the font.
+  ///   oldStyle.
   /// </summary>
-  OldStyle = 2
+  [OpenXmlEnumValue(nameof(DXO10W.NumberFormValues.OldStyle))]
+  OldStyle
 }

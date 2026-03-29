@@ -1,11 +1,11 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the type of information returned about a specified selection or range.
+/// Defines the Information enumeration.
+/// Used in types such as ShouldSerializeCodeFixProvider, AssemblyInfo, ShapeKind.
 /// </summary>
-/// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdinformation?view=office-pia` for Office interop details.
-/// </remarks>
+[OpenXmlNotMapped]
+[JsonConverter(typeof(StringEnumConverter))]
 public enum Information
 {
   /// <summary>
@@ -13,79 +13,98 @@ public enum Information
   /// starting page number or make other manual adjustments, returns the adjusted page number (unlike
   /// wdActiveEndPageNumber).
   /// </summary>
+  [OpenXmlEnumValue("ActiveEndAdjusted")]
   ActiveEndAdjustedPageNumber = 1,
   /// <summary>
   /// Returns the number of the section that contains the active end of the specified selection or range.
   /// </summary>
-   ActiveEndSectionNumber = 2,
+  [OpenXmlEnumValue("ActiveEndSectionNumber")]
+  ActiveEndSectionNumber = 2,
   /// <summary>
   /// Returns the number of the page that contains the active end of the specified selection or range, counting from
   /// the beginning of the document. Any manual adjustments to page numbering are disregarded (unlike
   /// wdActiveEndAdjustedPageNumber).
   /// </summary>
-   ActiveEndPageNumber = 3,
+  [OpenXmlEnumValue("ActiveEndPageNumber")]
+  ActiveEndPageNumber = 3,
   /// <summary>
   /// Returns the number of pages in the document associated with the selection or range.
   /// </summary>
-   NumberOfPagesInDocument = 4,
+  [OpenXmlEnumValue("NumberOfPagesInDocument")]
+  NumberOfPagesInDocument = 4,
   /// <summary>
   /// Returns the horizontal position of the specified selection or range; this is the distance from the
+  /// left edge of the page measured in points (1 point = 20 twips, 72 points = 1 inch). If the selection or range
+  /// isn't within the screen area, returns -1.
   /// </summary>
-   HorizontalPositionRelativeToPage = 5,
+  [OpenXmlEnumValue("HorizontalPositionRelativeToPage")]
+  HorizontalPositionRelativeToPage = 5,
   /// <summary>
   /// Returns the vertical position of the selection or range; this is the distance from the top edge of the
   /// selection to the top edge of the page measured in points (1 point = 20 twips, 72 points = 1 inch). If the
-  /// selection isn't visible in the document window, returns – 1.
-  /// </summary>
-   VerticalPositionRelativeToPage = 6,
-  /// <summary>
+  /// selection isn't visible in the document window, returns – 1. wdHorizontalPositionRelativeToTextBoundary7
   /// Returns the horizontal position of the specified selection or range relative to the left edge of the nearest
   /// text boundary enclosing it, in points (1 point = 20 twips, 72 points = 1 inch). If the selection or range
   /// isn't within the screen area, returns - 1.
   /// </summary>
-   HorizontalPositionRelativeToTextBoundary = 7,
+  [OpenXmlEnumValue("VerticalPositionRelativeToPage")]
+  VerticalPositionRelativeToPage = 6,
+  /// <summary>
+  /// Specifies the type of information returned about a specified selection or range.
+  /// </summary>
+  [OpenXmlEnumValue("HorizontalPositionRelativeToTextBoundary")]
+  HorizontalPositionRelativeToTextBoundary = 7,
   /// <summary>
   /// Returns the vertical position of the selection or range relative to the top edge of the nearest text boundary
   /// enclosing it, in points (1 point = 20 twips, 72 points = 1 inch). This is useful for determining the position
   /// of the insertion point within a frame or table cell. If the selection isn't visible, returns – 1.
   /// </summary>
-   VerticalPositionRelativeToTextBoundary = 8,
+  [OpenXmlEnumValue("VerticalPositionRelativeToTextBoundary")]
+  VerticalPositionRelativeToTextBoundary = 8,
   /// <summary>
   /// Returns the character position of the first character in the specified selection or range. If the selection or
   /// range is collapsed, the character number immediately to the right of the range or selection is returned (this
   /// is the same as the character column number displayed in the status bar after "Col").
   /// </summary>
-   FirstCharacterColumnNumber = 9,
+  [OpenXmlEnumValue("StartOfRangeColumnNumber")]
+  FirstCharacterColumnNumber = 9,
   /// <summary>
   /// Returns the character position of the first character in the specified selection or range. If the selection or
   /// range is collapsed, the character number immediately to the right of the range or selection is returned (this
   /// is the same as the character line number displayed in the status bar after "Ln").
   /// </summary>
-   FirstCharacterLineNumber = 10,
+  [OpenXmlEnumValue("StartOfRangeLineNumber")]
+  FirstCharacterLineNumber = 10,
   /// <summary>
   /// Returns True if the selection or range is an entire frame or text box.
   /// </summary>
-   FrameIsSelected = 11,
+  [OpenXmlEnumValue("FrameIsSelected")]
+  FrameIsSelected = 11,
   /// <summary>
   /// Returns True if the selection is in a table.
   /// </summary>
-   WithInTable = 12,
+  [OpenXmlEnumValue("InTable")]
+  WithInTable = 12,
   /// <summary>
   /// Returns the table row number that contains the beginning of the selection or range.
   /// </summary>
-   StartOfRangeRowNumber = 13,
+  [OpenXmlEnumValue("StartOfRangeRowNumber")]
+  StartOfRangeRowNumber = 13,
   /// <summary>
   /// Returns the table row number that contains the end of the specified selection or range.
   /// </summary>
-   EndOfRangeRowNumber = 14,
+  [OpenXmlEnumValue("EndOfRangeRowNumber")]
+  EndOfRangeRowNumber = 14,
   /// <summary>
   /// Returns the greatest number of table rows within the table in the specified selection or range.
   /// </summary>
-   MaximumNumberOfRows = 15,
+  [OpenXmlEnumValue("MaximumNumberOfRows")]
+  MaximumNumberOfRows = 15,
   /// <summary>
   /// Returns the table column number that contains the beginning of the selection or range.
   /// </summary>
-   StartOfRangeColumnNumber = 16,
+  [OpenXmlEnumValue("StartOfRangeColumnNumber")]
+  StartOfRangeColumnNumber = 16,
   /// <summary>
   /// Returns the table column number that contains the end of the specified selection or range.
   /// </summary>
@@ -93,109 +112,132 @@ public enum Information
   /// <summary>
   /// Returns the greatest number of table columns within any row in the selection or range.
   /// </summary>
-   MaximumNumberOfColumns = 18,
+  [OpenXmlEnumValue("MaximumNumberOfColumns")]
+  MaximumNumberOfColumns = 18,
   /// <summary>
   /// Returns the current percentage of magnification as set by the Percentage property.
   /// </summary>
-   ZoomPercentage = 19,
+  [OpenXmlEnumValue("ZoomPercentage")]
+  ZoomPercentage = 19,
   /// <summary>
   /// Returns a value that indicates the current selection mode, as shown in the following table.
   /// </summary>
-   SelectionMode = 20,
+  [OpenXmlEnumValue("SelectionMode")]
+  SelectionMode = 20,
   /// <summary>
   /// Returns True if Caps Lock is in effect.
   /// </summary>
-   CapsLock = 21,
+  [OpenXmlEnumValue("CapsLock")]
+  CapsLock = 21,
   /// <summary>
   /// Returns True if Num Lock is in effect.
   /// </summary>
-   NumLock = 22,
+  [OpenXmlEnumValue("NumLock")]
+  NumLock = 22,
   /// <summary>
   /// Returns True if Overtype mode is in effect. The Overtype property can be used to change the state of the
   /// Overtype mode.
   /// </summary>
-   OverType = 23,
+  [OpenXmlEnumValue("OverType")]
+  OverType = 23,
   /// <summary>
   /// Returns True if change tracking is in effect.
   /// </summary>
-   RevisionMarking = 24,
+  [OpenXmlEnumValue("RevisionMarking")]
+  RevisionMarking = 24,
   /// <summary>
   /// Returns True if the specified selection or range is in the footnote or endnote pane in normal view or in a
   /// footnote or endnote area in print layout view. For more information, see the descriptions of wdInFootnote and
   /// wdInEndnote in the preceding paragraphs.
   /// </summary>
-   InFootnoteEndnotePane = 25,
+  [OpenXmlEnumValue("InFootnoteEndnote")]
+  InFootnoteEndnotePane = 25,
   /// <summary>
   /// Returns True if the specified selection or range is in a comment pane.
   /// </summary>
-   InCommentPane = 26,
+  [OpenXmlEnumValue("InComment")]
+  InCommentPane = 26,
   /// <summary>
   /// Returns True if the selection or range is in the header or footer pane or in a header or footer in print
   /// layout view.
   /// </summary>
-   InHeaderFooter = 28,
+  [OpenXmlEnumValue("InHeaderFooter")]
+  InHeaderFooter = 28,
   /// <summary>
   /// Returns True if the specified selection or range is at the end-of-row mark in a table.
   /// </summary>
-   AtEndOfRowMarker = 31,
+  [OpenXmlEnumValue("AtEndOfRowMarker")]
+  AtEndOfRowMarker = 31,
   /// <summary>
   /// Returns a value that indicates where the selection is in relation to a footnote, endnote, or comment
   /// reference, as shown in the following table.
   /// </summary>
-   ReferenceOfType = 32,
+  [OpenXmlEnumValue("ReferenceOfType")]
+  ReferenceOfType = 32,
   /// <summary>
   /// Returns a value that indicates the type of header or footer that contains the specified selection or range, as
   /// shown in the following table.
   /// </summary>
-   HeaderFooterType = 33,
+  [OpenXmlEnumValue("HeaderFooterType")]
+  HeaderFooterType = 33,
   /// <summary>
   /// Returns True if the selection or range is in a master document (that is, a document that contains at least one
   /// subdocument).
   /// </summary>
-   InMasterDocument = 34,
+  [OpenXmlEnumValue("InMasterDocument")]
+  InMasterDocument = 34,
   /// <summary>
-  /// Returns True if the specified selection or range is in the footnote or endnote pane in normal view or in a
-  /// footnote or endnote area in print layout view. For more information, see the descriptions of wdInFootnote and
-  /// wdInEndnote in the preceding paragraphs.
+  /// Returns True if the specified selection or range is in a footnote area in print layout view or in the footnote
+  /// pane in normal view.
   /// </summary>
-   InFootnote = 35,
+  [OpenXmlEnumValue("InFootnote")]
+  InFootnote = 35,
   /// <summary>
   /// Returns True if the specified selection or range is in an endnote area in print layout view or in the endnote
   /// pane in normal view.
   /// </summary>
-   InEndnote = 36,
+  [OpenXmlEnumValue("InEndnote")]
+  InEndnote = 36,
   /// <summary>
   /// Returns True if the selection or range is in the header or footer pane or in a header or footer in print
   /// layout view.
   /// </summary>
-   InWordMail = 37,
+  [OpenXmlEnumValue("InWordMail")]
+  InWordMail = 37,
   /// <summary>
   /// For information about this constant, consult the language reference Help included with Microsoft Office
   /// Macintosh Edition.
   /// </summary>
-   InClipboard = 38,
+  [OpenXmlEnumValue("InClipboard")]
+  InClipboard = 38,
   /// <summary>
   /// Returns True if the specified selection or range is in a cover page.
   /// </summary>
-   InCoverPage = 41,
+  [OpenXmlEnumValue("InCoverPage")]
+  InCoverPage = 41,
   /// <summary>
   /// Returns True if the specified selection or range is in a bibliography.
   /// </summary>
-   InBibliography = 42,
+  [OpenXmlEnumValue("InBibliography")]
+  InBibliography = 42,
   /// <summary>
   /// Returns True if the specified selection or range is in a citation.
   /// </summary>
-   InCitation = 43,
+  [OpenXmlEnumValue("InCitation")]
+  InCitation = 43,
   /// <summary>
   /// Returns True if the specified selection or range is in a field code.
   /// </summary>
-   InFieldCode = 44,
+  [OpenXmlEnumValue("InFieldCode")]
+  InFieldCode = 44,
   /// <summary>
   /// Returns True if the specified selection or range is in a field result.
   /// </summary>
-   InFieldResult = 45,
+  [OpenXmlEnumValue("InFieldResult")]
+  InFieldResult = 45,
   /// <summary>
   /// Returns True if the specified selection or range is in a content control.
   /// </summary>
-   InContentControl = 46
+  [OpenXmlEnumValue("InContentControl")]
+  InContentControl = 46
 }

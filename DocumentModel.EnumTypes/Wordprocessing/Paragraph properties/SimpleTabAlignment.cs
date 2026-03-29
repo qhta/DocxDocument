@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdalignmenttabalignment?view=office-pia` for Office interop details.
 /// </remarks>
-public enum AlignmentTabAlignment
+public enum SimpleTabAlignment
 {
   /// <summary>
   /// Left-aligned tab.

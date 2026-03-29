@@ -1,23 +1,20 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the alignment of a list level.
+/// Defines the ListLevelAlignment enumeration.
+/// Used to represent Open XML mapped options.
 /// </summary>
-/// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdlistlevelalignment?view=office-pia` for Office interop details.
-/// </remarks>
+[OpenXmlNotMapped]
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ListLevelAlignment
 {
-  /// <summary>
-  /// Left aligned.
-  /// </summary>
+  /// <summary>Left-aligned</summary>
+  [OpenXmlEnumValue("Left")]
   Left = 0,
-  /// <summary>
-  /// Center aligned.
-  /// </summary>
+  /// <summary>Center-aligned</summary>
+  [OpenXmlEnumValue("Center")]
   Center = 1,
-  /// <summary>
-  /// Right aligned.
-  /// </summary>
+  /// <summary>Right-aligned</summary>
+  [OpenXmlEnumValue("Right")]
   Right = 2
 }

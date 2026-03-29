@@ -23,6 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\NamespaceMappings\OpenXmlUsings.cs" Link="OpenXmlUsings.cs" />
+    <Compile Include="Base classes\ModelElement%28T%29.Imp.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="DocumentFormat.OpenXml" Version="3.4.1" />
@@ -35,6 +36,7 @@
     <ProjectReference Include="..\DocumentModel.BaseConverters\DocumentModel.BaseConverters.csproj" />
     <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
     <ProjectReference Include="..\DocumentModel.EnumTypes\DocumentModel.EnumTypes.csproj" />
+    <ProjectReference Include="..\DocumentModel.Interfaces\DocumentModel.Interfaces.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="VariantTypes\Enums\" />

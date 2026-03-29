@@ -1,79 +1,90 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Wordprocessing;
 /// <summary>
-/// Specifies the type of ligatures applied to a font.
+/// Specifies ligature options for font rendering in WordprocessingML documents.
+/// This enumeration provides values for different types and combinations of ligatures, supporting advanced typographic features and fine control over character joining in text content.
 /// </summary>
-/// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdligatures?view=office-pia` for Office interop details.
-/// </remarks>
+[JsonConverter(typeof(StringEnumConverter))]
+[OpenXmlEnumType(typeof(DXO10W.LigaturesValues))]
 public enum Ligatures
 {
   /// <summary>
-  /// Does not apply any ligatures to the font.
+  /// No ligatures.
   /// </summary>
-  None = 0,
+  [OpenXmlEnumValue(nameof(DXO10W.LigaturesValues.None))]
+  None,
   /// <summary>
-  /// Applies standard ligatures to the font. Standard ligatures are designed to enhance readability. Standard
-  /// ligatures in Latin languages include "fi", "fl", and "ff", for example.
+  /// Standard ligatures.
   /// </summary>
-  Standard = 1,
+  [OpenXmlEnumValue(nameof(DXO10W.LigaturesValues.Standard))]
+  Standard,
   /// <summary>
-  /// Applies contextual ligatures to the font. Contextual ligatures are often designed to enhance readability, but
-  /// may also be solely ornamental. Contextual ligatures may also be contextual alternates.
+  /// Contextual ligatures.
   /// </summary>
-  Contextual = 2,
+  [OpenXmlEnumValue(nameof(DXO10W.LigaturesValues.Contextual))]
+  Contextual,
   /// <summary>
-  /// Applies standard and contextual ligatures to the font.
+  /// Historical ligatures.
   /// </summary>
-  StandardContextual = 3,
+  [OpenXmlEnumValue(nameof(DXO10W.LigaturesValues.Historical))]
+  Historical,
   /// <summary>
-  /// Applies historical ligatures to the font. Historical ligatures are similar to standard ligatures in that they
-  /// were originally intended to improve the readability of the font, but may look archaic to the modern reader.
+  /// Discretional ligatures.
   /// </summary>
-  Historical = 4,
+  [OpenXmlEnumValue(nameof(DXO10W.LigaturesValues.Discretional))]
+  Discretional,
   /// <summary>
-  /// Applies standard and historical ligatures to the font. public enum Ligatures
+  /// Standard and contextual ligatures.
   /// </summary>
-  StandardHistorical = 5,
+  [OpenXmlEnumValue(nameof(DXO10W.LigaturesValues.StandardContextual))]
+  StandardContextual,
   /// <summary>
-  /// Applies contextual and historical ligatures to the font.
+  /// Standard and historical ligatures.
   /// </summary>
-  ContextualHistorical = 6,
+  [OpenXmlEnumValue(nameof(DXO10W.LigaturesValues.StandardHistorical))]
+  StandardHistorical,
   /// <summary>
-  /// Applies standard, contextual, and historical ligatures to the font.
+  /// Contextual and historical ligatures.
   /// </summary>
-  StandardContextualHistorical = 7,
+  [OpenXmlEnumValue(nameof(DXO10W.LigaturesValues.ContextualHistorical))]
+  ContextualHistorical,
   /// <summary>
-  /// Applies discretional ligatures to the font. Discretional ligatures are most often designed to be ornamental at
-  /// the discretion of the type developer.
+  /// Standard and discretional ligatures.
   /// </summary>
-  Discretional = 8,
+  [OpenXmlEnumValue(nameof(DXO10W.LigaturesValues.StandardDiscretional))]
+  StandardDiscretional,
   /// <summary>
-  /// Applies standard and discretional ligatures to the font.
+  /// Contextual and discretional ligatures.
   /// </summary>
-  StandardDiscretional = 9,
+  [OpenXmlEnumValue(nameof(DXO10W.LigaturesValues.ContextualDiscretional))]
+  ContextualDiscretional,
   /// <summary>
-  /// Applies contextual and discretional ligatures to the font.
+  /// Historical and discretional ligatures.
   /// </summary>
-  ContextualDiscretional = 10,
+  [OpenXmlEnumValue(nameof(DXO10W.LigaturesValues.HistoricalDiscretional))]
+  HistoricalDiscretional,
   /// <summary>
-  /// Applies standard, contextual and discretional ligatures to the font.
+  /// Standard, contextual, and historical ligatures.
   /// </summary>
-  StandardContextualDiscretional = 11,
+  [OpenXmlEnumValue(nameof(DXO10W.LigaturesValues.StandardContextualHistorical))]
+  StandardContextualHistorical,
   /// <summary>
-  /// Applies historical and discretional ligatures to the font.
+  /// Standard, contextual, and discretional ligatures.
   /// </summary>
-  HistoricalDiscretional = 12,
+  [OpenXmlEnumValue(nameof(DXO10W.LigaturesValues.StandardContextualDiscretional))]
+  StandardContextualDiscretional,
   /// <summary>
-  /// Applies standard historical and discretional ligatures to the font.
+  /// Standard, historical, and discretional ligatures.
   /// </summary>
-  StandardHistoricalDiscretional = 13,
+  [OpenXmlEnumValue(nameof(DXO10W.LigaturesValues.StandardHistoricalDiscretional))]
+  StandardHistoricalDiscretional,
   /// <summary>
-  /// Applies contextual, historical, and discretional ligatures to a font.
+  /// Contextual, historical, and discretional ligatures.
   /// </summary>
-  ContextualHistoricalDiscretional = 14,
+  [OpenXmlEnumValue(nameof(DXO10W.LigaturesValues.ContextualHistoricalDiscretional))]
+  ContextualHistoricalDiscretional,
   /// <summary>
-  /// Applies all types of ligatures to the font.
+  /// All ligature types enabled.
   /// </summary>
-  All = 15
+  [OpenXmlEnumValue(nameof(DXO10W.LigaturesValues.All))]
+  All
 }

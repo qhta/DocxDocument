@@ -1,35 +1,31 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the tab stop alignment to apply.
+/// Defines the TabAlignment enumeration.
+/// Used to represent Open XML mapped options.
 /// </summary>
-/// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtabalignment?view=office-pia` for Office interop details.
-/// </remarks>
+[OpenXmlNotMapped]
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TabAlignment
 {
-  /// <summary>
-  /// Left aligned.
-  /// </summary>
+  /// <summary>Left-aligned tab</summary>
+  [OpenXmlEnumValue("Left")]
   Left = 0,
-  /// <summary>
-  /// Center aligned.
-  /// </summary>
-  Center = 1,
-  /// <summary>
-  /// Right aligned.
-  /// </summary>
-  Right = 2,
-  /// <summary>
-  /// Decimal aligned.
-  /// </summary>
-  Decimal = 3,
-  /// <summary>
-  /// Bar aligned.
-  /// </summary>
-  Bar = 4,
+  /// <summary>Center-aligned tab</summary>
+  [OpenXmlEnumValue("Center")]
+  Center,
+  /// <summary>Right-aligned tab</summary>
+  [OpenXmlEnumValue("Right")]
+  Right,
+  /// <summary>Decimal-aligned tab</summary>
+  [OpenXmlEnumValue("Decimal")]
+  Decimal,
+  /// <summary>Bar tab (vertical line)</summary>
+  [OpenXmlEnumValue("Bar")]
+  Bar,
   /// <summary>
   /// List aligned.
   /// </summary>
-  List = 6
+  [OpenXmlEnumValue("List")]
+  List = 6,
 }

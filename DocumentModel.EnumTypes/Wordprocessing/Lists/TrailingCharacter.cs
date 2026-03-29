@@ -1,23 +1,20 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the character inserted after the number for a numbered list item.
+/// Defines the TrailingCharacter enumeration.
+/// Used in types such as ListLevel.
 /// </summary>
-/// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtrailingcharacter?view=office-pia` for Office interop details.
-/// </remarks>
+[OpenXmlNotMapped]
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TrailingCharacter
 {
-  /// <summary>
-  /// A tab is inserted.
-  /// </summary>
+  /// <summary>Tab character</summary>
+  [OpenXmlEnumValue("Tab")]
   Tab = 0,
-  /// <summary>
-  /// A space is inserted. default.
-  /// </summary>
+  /// <summary>Space character</summary>
+  [OpenXmlEnumValue("Space")]
   Space = 1,
-  /// <summary>
-  /// No character is inserted.
-  /// </summary>
+  /// <summary>No trailing character</summary>
+  [OpenXmlEnumValue("None")]
   None = 2
 }

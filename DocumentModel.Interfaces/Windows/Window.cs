@@ -1,4 +1,6 @@
-namespace DocumentModel.Interfaces;
+using DocumentModel.Wordprocessing;
+
+namespace DocumentModel;
 
 /// <summary>
 /// Represents a window.

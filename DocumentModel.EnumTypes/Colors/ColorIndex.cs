@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel;
 
 /// <summary>
 /// Defines the ColorIndex enumeration.

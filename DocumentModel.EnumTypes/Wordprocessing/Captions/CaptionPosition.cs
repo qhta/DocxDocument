@@ -1,19 +1,21 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the position of the caption label text.
+///   Automatic Caption Positioning Values
 /// </summary>
-/// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcaptionposition?view=office-pia` for Office interop details.
-/// </remarks>
+[JsonConverter(typeof(StringEnumConverter))]
+[OpenXmlEnumType(typeof(DXW.CaptionPositionValues))]
 public enum CaptionPosition
 {
   /// <summary>
-  /// The caption label is added above.
+  ///   Position Caption Above Object.
   /// </summary>
-  Above = 0,
+  [OpenXmlEnumValue(nameof(DXW.CaptionPositionValues.Above))]
+  Above,
+
   /// <summary>
-  /// The caption label is added below.
+  ///   Position Caption Below Object.
   /// </summary>
-  Below = 1
+  [OpenXmlEnumValue(nameof(DXW.CaptionPositionValues.Below))]
+  Below
 }

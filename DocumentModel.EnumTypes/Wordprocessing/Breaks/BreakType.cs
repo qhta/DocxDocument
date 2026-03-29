@@ -1,54 +1,24 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Wordprocessing;
 /// <summary>
-/// Specifies type of break.
+///   Defines the BreakValues enumeration.
 /// </summary>
-/// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbreaktype?view=office-pia` for Office interop details.
-/// </remarks>
+[JsonConverter(typeof(StringEnumConverter))]
+[OpenXmlEnumType(typeof(DXW.BreakValues))]
 public enum BreakType
 {
   /// <summary>
-  /// Section break on next page.
+  ///   Page Break.
   /// </summary>
-  SectionBreakNextPage = 2,
+  [OpenXmlEnumValue(nameof(DXW.BreakValues.Page))]
+  Page,
   /// <summary>
-  /// New section without a corresponding page break.
+  ///   IColumn Break.
   /// </summary>
-  SectionBreakContinuous = 3,
+  [OpenXmlEnumValue(nameof(DXW.BreakValues.Column))]
+  Column,
   /// <summary>
-  /// Section break with the next section beginning on the next even- numbered page. If the section break falls on
-  /// an even-numbered page, Word leaves the next odd-numbered page blank.
+  ///   Line Break.
   /// </summary>
-  SectionBreakEvenPage = 4,
-  /// <summary>
-  /// Section break with the next section beginning on the next odd- numbered page. If the section break falls on an
-  /// odd-numbered page, Word leaves the next even-numbered page blank.
-  /// </summary>
-  SectionBreakOddPage = 5,
-  /// <summary>
-  /// Line break.
-  /// </summary>
-  LineBreak = 6,
-  /// <summary>
-  /// Page break at the insertion point.
-  /// </summary>
-  PageBreak = 7,
-  /// <summary>
-  /// Column break at the insertion point.
-  /// </summary>
-  ColumnBreak = 8,
-  /// <summary>
-  /// Line break.
-  /// </summary>
-  LineBreakClearLeft = 9,
-  /// <summary>
-  /// Line break.
-  /// </summary>
-  LineBreakClearRight = 10,
-  /// <summary>
-  /// Ends the current line and forces the text to continue below a picture, table, or other item. The text
-  /// continues on the next blank line that does not contain a table aligned with the left or right margin.
-  /// </summary>
-  TextWrappingBreak = 11
+  [OpenXmlEnumValue(nameof(DXW.BreakValues.TextWrapping))]
+  TextWrapping
 }

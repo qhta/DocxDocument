@@ -1,23 +1,24 @@
-namespace DocumentModel.Interop.Word;
-
+namespace DocumentModel.Wordprocessing;
 /// <summary>
-/// Specifies the number spacing setting for an OpenType font.
+///   Defines the NumberSpacingValues enumeration.
 /// </summary>
-/// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdnumberspacing?view=office-pia` for Office interop details.
-/// </remarks>
+[JsonConverter(typeof(StringEnumConverter))]
+[OpenXmlEnumType(typeof(DXO10W.NumberSpacingValues))]
 public enum NumberSpacing
 {
   /// <summary>
-  /// Applies the default number spacing for the font.
+  ///   default.
   /// </summary>
-  Default = 0,
+  [OpenXmlEnumValue(nameof(DXO10W.NumberSpacingValues.Default))]
+  Default,
   /// <summary>
-  /// Applies proportional number spacing to the font.
+  ///   proportional.
   /// </summary>
-  Proportional = 1,
+  [OpenXmlEnumValue(nameof(DXO10W.NumberSpacingValues.Proportional))]
+  Proportional,
   /// <summary>
-  /// Applies tabular number spacing to the font.
+  ///   tabular.
   /// </summary>
-  Tabular = 2
+  [OpenXmlEnumValue(nameof(DXO10W.NumberSpacingValues.Tabular))]
+  Tabular
 }

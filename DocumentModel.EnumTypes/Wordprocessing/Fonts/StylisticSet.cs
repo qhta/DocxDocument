@@ -1,13 +1,14 @@
-namespace DocumentModel.Interop.Word;
+namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the stylistic set to apply to the font.
+/// Defines the S enumeration.
+/// Used of OpenType font features, such as stylistic sets, character variants, and swashes.
 /// </summary>
-/// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdstylisticset?view=office-pia` for Office interop details.
-/// </remarks>
+[OpenXmlNotMapped]
+[JsonConverter(typeof(StringEnumConverter))]
 public enum StylisticSet
 {
+
   /// <summary>
   /// Default stylistic set for the specified font.
   /// </summary>
@@ -15,81 +16,81 @@ public enum StylisticSet
   /// <summary>
   /// First stylistic set for the specified font.
   /// </summary>
-  StylisticSet01 = 1,
+  S01 = 1,
   /// <summary>
   /// Second stylistic set for the specified font.
   /// </summary>
-  StylisticSet02 = 2,
+  S02 = 2,
   /// <summary>
   /// Third stylistic set for the specified font.
   /// </summary>
-  StylisticSet03 = 4,
+  S03 = 4,
   /// <summary>
   /// Fourth stylistic set for the specified font.
   /// </summary>
-  StylisticSet04 = 8,
+  S04 = 8,
   /// <summary>
   /// Fifth stylistic set for the specified font.
   /// </summary>
-  StylisticSet05 = 16,
+  S05 = 16,
   /// <summary>
   /// Sixth stylistic set for the specified font.
   /// </summary>
-  StylisticSet06 = 32,
+  S06 = 32,
   /// <summary>
   /// Seventh stylistic set for the specified font.
   /// </summary>
-  StylisticSet07 = 64,
+  S07 = 64,
   /// <summary>
   /// Eighth stylistic set for the specified font.
   /// </summary>
-  StylisticSet08 = 128,
+  S08 = 128,
   /// <summary>
   /// Ninth stylistic set for the specified font.
   /// </summary>
-  StylisticSet09 = 256,
+  S09 = 256,
   /// <summary>
   /// Tenth stylistic set for the specified font.
   /// </summary>
-  StylisticSet10 = 512,
+  S10 = 512,
   /// <summary>
   /// Eleventh stylistic set for the specified font.
   /// </summary>
-  StylisticSet11 = 1024,
+  S11 = 1024,
   /// <summary>
-  /// Twelfth stylistic set for the specified font. public enum StylisticSet
+  /// Twelfth stylistic set for the specified font.
   /// </summary>
-  StylisticSet12 = 2048,
+  S12 = 2048,
   /// <summary>
   /// Thirteenth stylistic set for the specified font.
   /// </summary>
-  StylisticSet13 = 4096,
+  S13 = 4096,
   /// <summary>
   /// Fourtheenth stylistic set for the specified font.
   /// </summary>
-  StylisticSet14 = 8192,
+  S14 = 8192,
   /// <summary>
   /// Fifthteenth stylistic set for the specified font.
   /// </summary>
-  StylisticSet15 = 16384,
+  S15 = 16384,
   /// <summary>
   /// Sixteenth stylistic set for the specified font.
   /// </summary>
-  StylisticSet16 = 32768,
+  S16 = 32768,
   /// <summary>
   /// Seventeenth stylistic set for the specified font.
   /// </summary>
-  StylisticSet17 = 65536,
+  S17 = 65536,
   /// <summary>
   /// Eighteenth stylistic set for the specified font.
   /// </summary>
-  StylisticSet18 = 131072,
+  S18 = 131072,
   /// <summary>
   /// Nineteenth stylistic set for the specified font.
   /// </summary>
-  StylisticSet19 = 262144,
+  S19 = 262144,
   /// <summary>
   /// Twentieth stylistic set for the specified font.
   /// </summary>
-  StylisticSet20 = 524288
+  S20 = 524288
 }
