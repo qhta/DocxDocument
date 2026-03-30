@@ -43,7 +43,7 @@ public partial interface ApplicationEvents3
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.documentopen?view=word-pia"/>
-  public void DocumentOpen(Document Doc);
+  public void DocumentOpen(IDocument Doc);
 
   /// <summary>
   /// Occurs before a document closes.
@@ -54,7 +54,7 @@ public partial interface ApplicationEvents3
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.documentbeforeclose?view=word-pia"/>
-  public void DocumentBeforeClose(Document Doc, ref bool Cancel);
+  public void DocumentBeforeClose(IDocument Doc, ref bool Cancel);
 
   /// <summary>
   /// Occurs before a document is printed.
@@ -65,7 +65,7 @@ public partial interface ApplicationEvents3
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.documentbeforeprint?view=word-pia"/>
-  public void DocumentBeforePrint(Document Doc, ref bool Cancel);
+  public void DocumentBeforePrint(IDocument Doc, ref bool Cancel);
 
   /// <summary>
   /// Occurs before a document is saved.
@@ -77,7 +77,7 @@ public partial interface ApplicationEvents3
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.documentbeforesave?view=word-pia"/>
-  public void DocumentBeforeSave(Document Doc, bool SaveAsUI, ref bool Cancel);
+  public void DocumentBeforeSave(IDocument Doc, bool SaveAsUI, ref bool Cancel);
 
   /// <summary>
   /// Occurs when a new document is created.
@@ -87,7 +87,7 @@ public partial interface ApplicationEvents3
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.newdocument?view=word-pia"/>
-  public void NewDocument(Document Doc);
+  public void NewDocument(IDocument Doc);
 
   /// <summary>
   /// Occurs when a document window is activated.
@@ -98,7 +98,7 @@ public partial interface ApplicationEvents3
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.windowactivate?view=word-pia"/>
-  public void WindowActivate(Document Doc, Window Wn);
+  public void WindowActivate(IDocument Doc, IWindow Wn);
 
   /// <summary>
   /// Occurs when a document window is deactivated.
@@ -109,7 +109,7 @@ public partial interface ApplicationEvents3
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.windowdeactivate?view=word-pia"/>
-  public void WindowDeactivate(Document Doc, Window Wn);
+  public void WindowDeactivate(IDocument Doc, IWindow Wn);
 
   ///// <summary>
   ///// Occurs when the selection changes in a document window.
@@ -151,7 +151,7 @@ public partial interface ApplicationEvents3
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.epostagepropertydialog?view=word-pia"/>
-  public void EPostagePropertyDialog(Document Doc);
+  public void EPostagePropertyDialog(IDocument Doc);
 
   /// <summary>
   /// Occurs when electronic postage is inserted into a document.
@@ -161,7 +161,7 @@ public partial interface ApplicationEvents3
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.epostageinsert?view=word-pia"/>
-  public void EPostageInsert(Document Doc);
+  public void EPostageInsert(IDocument Doc);
 
   /// <summary>
   /// Occurs after a mail merge operation completes.
@@ -172,7 +172,7 @@ public partial interface ApplicationEvents3
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.mailmergeaftermerge?view=word-pia"/>
-  public void MailMergeAfterMerge(Document Doc, Document DocResult);
+  public void MailMergeAfterMerge(IDocument Doc, IDocument DocResult);
 
   /// <summary>
   /// Occurs after each record is merged in a mail merge operation.
@@ -182,7 +182,7 @@ public partial interface ApplicationEvents3
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.mailmergeafterrecordmerge?view=word-pia"/>
-  public void MailMergeAfterRecordMerge(Document Doc);
+  public void MailMergeAfterRecordMerge(IDocument Doc);
 
   /// <summary>
   /// Occurs before a mail merge operation begins.
@@ -195,7 +195,7 @@ public partial interface ApplicationEvents3
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.mailmergebeforemerge?view=word-pia"/>
-  public void MailMergeBeforeMerge(Document Doc, int StartRecord, int EndRecord, ref bool Cancel);
+  public void MailMergeBeforeMerge(IDocument Doc, int StartRecord, int EndRecord, ref bool Cancel);
 
   /// <summary>
   /// Occurs before each record is merged in a mail merge operation.
@@ -206,7 +206,7 @@ public partial interface ApplicationEvents3
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.mailmergebeforerecordmerge?view=word-pia"/>
-  public void MailMergeBeforeRecordMerge(Document Doc, ref bool Cancel);
+  public void MailMergeBeforeRecordMerge(IDocument Doc, ref bool Cancel);
 
   /// <summary>
   /// Occurs when a mail merge data source is loaded.
@@ -216,7 +216,7 @@ public partial interface ApplicationEvents3
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.mailmergedatasourceload?view=word-pia"/>
-  public void MailMergeDataSourceLoad(Document Doc);
+  public void MailMergeDataSourceLoad(IDocument Doc);
 
   /// <summary>
   /// Occurs when a mail merge data source is validated.
@@ -227,7 +227,7 @@ public partial interface ApplicationEvents3
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.mailmergedatasourcevalidate?view=word-pia"/>
-  public void MailMergeDataSourceValidate(Document Doc, bool Handled);
+  public void MailMergeDataSourceValidate(IDocument Doc, bool Handled);
 
   /// <summary>
   /// Occurs when the Mail Merge Wizard sends output to a custom destination.
@@ -237,7 +237,7 @@ public partial interface ApplicationEvents3
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.mailmergewizardsendtocustom?view=word-pia"/>
-  public void MailMergeWizardSendToCustom(Document Doc);
+  public void MailMergeWizardSendToCustom(IDocument Doc);
 
   /// <summary>
   /// Occurs when the Mail Merge Wizard changes state.
@@ -250,7 +250,7 @@ public partial interface ApplicationEvents3
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.mailmergewizardstatechange?view=word-pia"/>
-  public void MailMergeWizardStateChange(Document Doc, int FromState, int ToState, bool Handled);
+  public void MailMergeWizardStateChange(IDocument Doc, int FromState, int ToState, bool Handled);
 
   /// <summary>
   /// Occurs when a document window is resized.
@@ -261,5 +261,5 @@ public partial interface ApplicationEvents3
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.windowsize?view=word-pia"/>
-  public void WindowSize(Document Doc, Window Wn);
+  public void WindowSize(IDocument Doc, IWindow Wn);
 }

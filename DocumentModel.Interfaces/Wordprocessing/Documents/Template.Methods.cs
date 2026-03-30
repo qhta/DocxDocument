@@ -9,10 +9,10 @@ public partial interface Template: InteropObject
   /// <summary>
   /// Opens the template as a document.
   /// </summary>
-  /// <returns>The created <see cref="Document"/> object.</returns>
+  /// <returns>The created <see cref="IDocument"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.openasdocument?view=word-pia"/>
-  public Document OpenAsDocument();
+  public IDocument OpenAsDocument();
 }

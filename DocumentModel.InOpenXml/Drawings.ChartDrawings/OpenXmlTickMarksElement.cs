@@ -1,3 +1,5 @@
+using DocumentModel.Drawings.Charts;
+
 namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the OpenXmlTickMarksElement Class.

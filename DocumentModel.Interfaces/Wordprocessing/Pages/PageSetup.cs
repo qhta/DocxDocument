@@ -133,7 +133,7 @@ public partial interface PageSetup : InteropObject
   /// Returns a TextColumns collection that represents the set of text columns for the specified PageSetup object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagesetup.textcolumns?view=word-pia"/>
-  public TextColumns TextColumns { get; set; }
+  public ITextColumns TextColumns { get; set; }
 
   /// <summary>
   /// Returns or sets the paper size.

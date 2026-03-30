@@ -1,3 +1,5 @@
+using DocumentModel.Drawings.Charts;
+
 namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Represents the binning configuration for histogram charts that groups continuous data into discrete intervals.

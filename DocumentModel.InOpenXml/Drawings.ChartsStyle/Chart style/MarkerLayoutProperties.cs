@@ -1,3 +1,5 @@
+using DocumentModel.Drawings.Charts;
+
 namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 /// Describes the layout properties for chart markers, including symbol type and size settings.

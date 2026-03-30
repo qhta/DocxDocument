@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customproperties?view=word-pia"/>
-public partial interface CustomProperties: InteropObject
+public partial interface ICustomProperties: InteropObject
 {
   /// <summary>
   /// Adds a custom property to the collection.

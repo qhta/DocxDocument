@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a border of an object.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.border?view=word-pia"/>
-public interface Border : InteropObject
+public interface IBorder : InteropObject
 {
   /// <summary>
   /// Gets or sets a value indicating whether the border is visible.

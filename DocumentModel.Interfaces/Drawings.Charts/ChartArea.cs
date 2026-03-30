@@ -16,7 +16,7 @@ public partial interface ChartArea: InteropObject
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartarea.border?view=office-pia"/>
-  public Border Border { get; }
+  public IBorder Border { get; }
   /// <summary>
   /// Gets the `Font` property.
   /// </summary>

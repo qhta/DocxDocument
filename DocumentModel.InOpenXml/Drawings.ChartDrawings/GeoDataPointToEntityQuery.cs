@@ -1,3 +1,5 @@
+using DocumentModel.Drawings.Charts;
+
 namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Represents a query for mapping a data point to its containing geographic entity by entity reference.

@@ -22,6 +22,6 @@ public partial class BevelType : ModelElement<DXO10W.BevelType>
  /// Preset profile type for the bevel, specifying the predefined bevel style.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.BevelType.PresetProfileType))]
- public BevelPreset? PresetProfileType { get => _PresetProfileType; set => UpdateField(ref _PresetProfileType, value, nameof(PresetProfileType)); }
- private BevelPreset? _PresetProfileType;
+ public DMD.BevelPresets? PresetProfileType { get => _PresetProfileType; set => UpdateField(ref _PresetProfileType, value, nameof(PresetProfileType)); }
+ private DMD.BevelPresets? _PresetProfileType;
 }

@@ -41,7 +41,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.documentopen?view=word-pia"/>
-  public void DocumentOpen(Document Doc);
+  public void DocumentOpen(IDocument Doc);
 
   /// <summary>
   /// Occurs before a document is closed.
@@ -52,7 +52,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.documentbeforeclose?view=word-pia"/>
-  public void DocumentBeforeClose(Document Doc, ref bool Cancel);
+  public void DocumentBeforeClose(IDocument Doc, ref bool Cancel);
 
   /// <summary>
   /// Occurs before a document is printed.
@@ -63,7 +63,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.documentbeforeprint?view=word-pia"/>
-  public void DocumentBeforePrint(Document Doc, ref bool Cancel);
+  public void DocumentBeforePrint(IDocument Doc, ref bool Cancel);
 
   /// <summary>
   /// Occurs before a document is saved.
@@ -75,7 +75,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.documentbeforesave?view=word-pia"/>
-  public void DocumentBeforeSave(Document Doc, bool SaveAsUI, ref bool Cancel);
+  public void DocumentBeforeSave(IDocument Doc, bool SaveAsUI, ref bool Cancel);
 
   /// <summary>
   /// Occurs when a new document is created.
@@ -85,7 +85,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.newdocument?view=word-pia"/>
-  public void NewDocument(Document Doc);
+  public void NewDocument(IDocument Doc);
 
   /// <summary>
   /// Occurs when a window is activated.
@@ -96,7 +96,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.windowactivate?view=word-pia"/>
-  public void WindowActivate(Document Doc, Window Wn);
+  public void WindowActivate(IDocument Doc, IWindow Wn);
 
   /// <summary>
   /// Occurs when a window is deactivated.
@@ -107,7 +107,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.windowdeactivate?view=word-pia"/>
-  public void WindowDeactivate(Document Doc, Window Wn);
+  public void WindowDeactivate(IDocument Doc, IWindow Wn);
 
   /// <summary>
   /// Occurs when the selection changes in a window.
@@ -149,7 +149,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.epostagepropertydialog?view=word-pia"/>
-  public void EPostagePropertyDialog(Document Doc);
+  public void EPostagePropertyDialog(IDocument Doc);
 
   /// <summary>
   /// Occurs when e-postage is inserted into a document.
@@ -159,7 +159,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.epostageinsert?view=word-pia"/>
-  public void EPostageInsert(Document Doc);
+  public void EPostageInsert(IDocument Doc);
 
   /// <summary>
   /// Occurs after a mail merge is completed.
@@ -170,7 +170,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergeaftermerge?view=word-pia"/>
-  public void MailMergeAfterMerge(Document Doc, Document DocResult);
+  public void MailMergeAfterMerge(IDocument Doc, IDocument DocResult);
 
   /// <summary>
   /// Occurs after a mail merge record is merged.
@@ -180,7 +180,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergeafterrecordmerge?view=word-pia"/>
-  public void MailMergeAfterRecordMerge(Document Doc);
+  public void MailMergeAfterRecordMerge(IDocument Doc);
 
   /// <summary>
   /// Occurs before a mail merge is performed.
@@ -193,7 +193,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergebeforemerge?view=word-pia"/>
-  public void MailMergeBeforeMerge(Document Doc, int StartRecord, int EndRecord, ref bool Cancel);
+  public void MailMergeBeforeMerge(IDocument Doc, int StartRecord, int EndRecord, ref bool Cancel);
 
   /// <summary>
   /// Occurs before a mail merge record is merged.
@@ -204,7 +204,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergebeforerecordmerge?view=word-pia"/>
-  public void MailMergeBeforeRecordMerge(Document Doc, ref bool Cancel);
+  public void MailMergeBeforeRecordMerge(IDocument Doc, ref bool Cancel);
 
   /// <summary>
   /// Occurs when a mail merge data source is loaded.
@@ -214,7 +214,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergedatasourceload?view=word-pia"/>
-  public void MailMergeDataSourceLoad(Document Doc);
+  public void MailMergeDataSourceLoad(IDocument Doc);
 
   /// <summary>
   /// Occurs when a mail merge data source is validated.
@@ -225,7 +225,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergedatasourcevalidate?view=word-pia"/>
-  public void MailMergeDataSourceValidate(Document Doc, bool Handled);
+  public void MailMergeDataSourceValidate(IDocument Doc, bool Handled);
 
   /// <summary>
   /// Occurs when the mail merge wizard sends to a custom recipient.
@@ -235,7 +235,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergewizardsendtocustom?view=word-pia"/>
-  public void MailMergeWizardSendToCustom(Document Doc);
+  public void MailMergeWizardSendToCustom(IDocument Doc);
 
   /// <summary>
   /// Occurs when the mail merge wizard state changes.
@@ -248,7 +248,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergewizardstatechange?view=word-pia"/>
-  public void MailMergeWizardStateChange(Document Doc, int FromState, int ToState, bool Handled);
+  public void MailMergeWizardStateChange(IDocument Doc, int FromState, int ToState, bool Handled);
 
   /// <summary>
   /// Occurs when a window is resized.
@@ -259,7 +259,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.windowsize?view=word-pia"/>
-  public void WindowSize(Document Doc, Window Wn);
+  public void WindowSize(IDocument Doc, IWindow Wn);
 
   /// <summary>
   /// Occurs when the XML selection changes.
@@ -293,7 +293,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.documentsync?view=word-pia"/>
-  public void DocumentSync(Document Doc, App.SyncEventType SyncEventType);
+  public void DocumentSync(IDocument Doc, App.SyncEventType SyncEventType);
 
   /// <summary>
   /// Occurs when e-postage is inserted with extended options.
@@ -313,7 +313,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.epostageinsertex?view=word-pia"/>
-  public void EPostageInsertEx(Document Doc, int cpDeliveryAddrStart, int cpDeliveryAddrEnd, int cpReturnAddrStart, int cpReturnAddrEnd, int xaWidth, int yaHeight, string bstrPrinterName, string bstrPaperFeed, bool fPrint, bool fCancel);
+  public void EPostageInsertEx(IDocument Doc, int cpDeliveryAddrStart, int cpDeliveryAddrEnd, int cpReturnAddrStart, int cpReturnAddrEnd, int xaWidth, int yaHeight, string bstrPrinterName, string bstrPaperFeed, bool fPrint, bool fCancel);
 
   /// <summary>
   /// Occurs when a mail merge data source is validated (version 2).
@@ -324,7 +324,7 @@ public partial interface IApplicationEvents4: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergedatasourcevalidate2?view=word-pia"/>
-  public void MailMergeDataSourceValidate2(Document Doc, bool Handled);
+  public void MailMergeDataSourceValidate2(IDocument Doc, bool Handled);
 
   /// <summary>
   /// Occurs when a protected view window is opened.

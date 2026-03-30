@@ -17,5 +17,5 @@ public partial interface RecentFiles: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.recentfiles.add?view=word-pia"/>
-  public RecentFile Add(Document Document, bool ReadOnly);
+  public RecentFile Add(IDocument Document, bool ReadOnly);
 }

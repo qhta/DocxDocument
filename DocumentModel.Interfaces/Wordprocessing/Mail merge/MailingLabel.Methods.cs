@@ -19,5 +19,5 @@ public partial interface MailingLabel: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailinglabel.createnewdocument2000?view=word-pia"/>
-  public Document CreateNewDocument2000(string Name, string Address, string AutoText, bool ExtractAddress, int LaserTray);
+  public IDocument CreateNewDocument2000(string Name, string Address, string AutoText, bool ExtractAddress, int LaserTray);
 }

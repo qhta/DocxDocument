@@ -13,7 +13,7 @@ public partial interface LegendKey: InteropObject
   /// Gets or sets the `Border` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.border?view=office-pia"/>
-  public Border Border { get; }
+  public IBorder Border { get; }
   /// <summary>
   /// Gets the `Interior` property.
   /// </summary>

@@ -11,7 +11,7 @@ public partial interface LeaderLines: InteropObject
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoleaderlines.border?view=office-pia"/>
-  public Border Border { get; }
+  public IBorder Border { get; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>

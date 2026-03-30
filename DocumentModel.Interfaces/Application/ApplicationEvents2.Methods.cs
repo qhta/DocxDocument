@@ -43,7 +43,7 @@ public partial interface ApplicationEvents2
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2.documentopen?view=word-pia"/>
-  public void DocumentOpen(Document Doc);
+  public void DocumentOpen(IDocument Doc);
 
   /// <summary>
   /// Occurs before a document closes.
@@ -54,7 +54,7 @@ public partial interface ApplicationEvents2
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2.documentbeforeclose?view=word-pia"/>
-  public void DocumentBeforeClose(Document Doc, ref bool Cancel);
+  public void DocumentBeforeClose(IDocument Doc, ref bool Cancel);
 
   /// <summary>
   /// Occurs before a document is printed.
@@ -65,7 +65,7 @@ public partial interface ApplicationEvents2
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2.documentbeforeprint?view=word-pia"/>
-  public void DocumentBeforePrint(Document Doc, ref bool Cancel);
+  public void DocumentBeforePrint(IDocument Doc, ref bool Cancel);
 
   /// <summary>
   /// Occurs before a document is saved.
@@ -77,7 +77,7 @@ public partial interface ApplicationEvents2
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2.documentbeforesave?view=word-pia"/>
-  public void DocumentBeforeSave(Document Doc, bool SaveAsUI, ref bool Cancel);
+  public void DocumentBeforeSave(IDocument Doc, bool SaveAsUI, ref bool Cancel);
 
   /// <summary>
   /// Occurs when a new document is created.
@@ -87,7 +87,7 @@ public partial interface ApplicationEvents2
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2.newdocument?view=word-pia"/>
-  public void NewDocument(Document Doc);
+  public void NewDocument(IDocument Doc);
 
   /// <summary>
   /// Occurs when a document window is activated.
@@ -98,7 +98,7 @@ public partial interface ApplicationEvents2
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2.windowactivate?view=word-pia"/>
-  public void WindowActivate(Document Doc, Window Wn);
+  public void WindowActivate(IDocument Doc, IWindow Wn);
 
   /// <summary>
   /// Occurs when a document window is deactivated.
@@ -109,7 +109,7 @@ public partial interface ApplicationEvents2
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2.windowdeactivate?view=word-pia"/>
-  public void WindowDeactivate(Document Doc, Window Wn);
+  public void WindowDeactivate(IDocument Doc, IWindow Wn);
 
   ///// <summary>
   ///// Occurs when the selection changes in a document window.

@@ -11,7 +11,7 @@ public partial interface Pane : InteropObject
   /// Returns a Document object associated with the specified pane. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.document?view=word-pia"/>
-  public Document Document { get; }
+  public IDocument Document { get; }
 
   /// <summary>
   /// Returns the Selection object that represents a selection or the insertion point within a document pane.

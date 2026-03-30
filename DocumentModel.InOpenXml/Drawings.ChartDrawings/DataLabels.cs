@@ -1,3 +1,5 @@
+using DocumentModel.Drawings.Charts;
+
 namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Represents the collection of data labels and their default settings for a chart series or chart.

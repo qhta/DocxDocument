@@ -10,6 +10,9 @@ using Qhta.MVVM;
 
 using Syncfusion.Windows.Tools.Controls;
 
+using ContentControl = System.Windows.Controls.ContentControl;
+using Point = System.Windows.Point;
+
 namespace DocxEditor;
 
 

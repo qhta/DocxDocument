@@ -44,8 +44,8 @@ public partial class Shadow2 : ModelElement<DXO10W.Shadow>
  /// <summary>
  ///   Alignment of the shadow relative to the text bounds. Determines the anchor point for shadow transformations.
  /// </summary>
- public RectangleAlignment? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
- private RectangleAlignment? _Alignment;
+ public DMD.RectangleAlignment? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
+ private DMD.RectangleAlignment? _Alignment;
  /// <summary>
  ///   Shadow color using RGB hexadecimal notation (e.g., "000000" for black). Mutually exclusive with SchemeColor.
  /// </summary>

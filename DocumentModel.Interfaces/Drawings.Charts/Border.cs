@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents border formatting for a chart element.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoborder?view=office-pia"/>
-public partial interface Border: InteropObject
+public partial interface IBorder: InteropObject
 {
   /// <summary>
   /// Gets or sets the `Color` property.

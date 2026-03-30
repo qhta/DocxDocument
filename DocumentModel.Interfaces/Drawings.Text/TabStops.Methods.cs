@@ -15,7 +15,7 @@ public partial interface TabStops: InteropObject
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstops2.item?view=office-pia"/>
-  public TabStop Item(object Index);
+  public ITabStop Item(object Index);
   /// <summary>
   /// Invokes `Add`.
   /// </summary>
@@ -23,6 +23,6 @@ public partial interface TabStops: InteropObject
   /// <param name="Position">The `Position` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstops2.add?view=office-pia"/>
-  public TabStop Add(TabStopType Type, float Position);
+  public ITabStop Add(TabStopType Type, float Position);
 }
 

@@ -1,3 +1,5 @@
+using DocumentModel.Drawings.Charts;
+
 namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Represents the title displayed for a chart with positioning and formatting options.

@@ -1,3 +1,5 @@
+using DocumentModel.Drawings.Diagrams;
+
 namespace DocumentModel.Drawings.Diagram1;
 /// <summary>
 ///   Defines the NumberDiagramInfo Class.
@@ -15,8 +17,8 @@ public partial class NumberDiagramInfo : ModelElement<DXO19DD1.NumberDiagramInfo
   ///   ptType
   /// </summary>
   [OpenXmlProperty(nameof(DXO19DD1.NumberDiagramInfo.PtType))]
-  public STorageType? PtType { get => _PtType; set => UpdateField(ref _PtType, value, nameof(PtType)); }
-  private STorageType? _PtType;
+  public StorageType? PtType { get => _PtType; set => UpdateField(ref _PtType, value, nameof(PtType)); }
+  private StorageType? _PtType;
   /// <summary>
   ///   DiagramAutoBullet.
   /// </summary>

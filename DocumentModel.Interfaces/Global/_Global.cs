@@ -28,13 +28,13 @@ public partial interface _Global: InteropObject
   /// Returns a Document object that represents the active document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.activedocument?view=word-pia"/>
-  public Document ActiveDocument { get; }
+  public IDocument ActiveDocument { get; }
 
   /// <summary>
   /// Returns a Window object that represents the active window (the window with the focus).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.activewindow?view=word-pia"/>
-  public Window ActiveWindow { get; }
+  public IWindow ActiveWindow { get; }
 
   /// <summary>
   /// Returns the Selection object that represents a selected range or the insertion point.
@@ -100,7 +100,7 @@ public partial interface _Global: InteropObject
   /// Returns a Languages collection that represents the proofing languages listed in the Language dialog box.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.languages?view=word-pia"/>
-  public Languages Languages { get; }
+  public ILanguages Languages { get; }
 
   /// <summary>
   /// Returns an Assistant object that represents the Microsoft Office Assistant.
@@ -130,7 +130,7 @@ public partial interface _Global: InteropObject
   /// Returns an AutoCaptions collection that represents captions automatically added for inserted items.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.autocaptions?view=word-pia"/>
-  public AutoCaptions AutoCaptions { get; }
+  public IAutoCaptions AutoCaptions { get; }
 
   /// <summary>
   /// Returns an AddIns collection that represents all available add-ins.

@@ -296,7 +296,7 @@ public partial interface Selection : InteropObject
   /// Returns a Document object associated with the specified selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.document?view=word-pia"/>
-  public Document Document { get; }
+  public IDocument Document { get; }
 
   /// <summary>
   /// Returns a ShapeRange collection that represents all the Shape objects in the specified range or selection.

@@ -484,7 +484,7 @@ public partial interface Range : InteropObject
   /// Returns a Document object associated with the specified range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.document?view=word-pia"/>
-  public Document Document { get; }
+  public IDocument Document { get; }
 
   /// <summary>
   /// Returns a FootnoteOptions object that represents the footnote options in a range.

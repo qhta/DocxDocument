@@ -33,7 +33,7 @@ public partial interface _Document : InteropObject
   /// Returns a Window object that represents the active window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.activewindow?view=word-pia"/>
-  public Window ActiveWindow { get; }
+  public IWindow ActiveWindow { get; }
 
   /// <summary>
   /// Returns a Template object that represents the template attached to the specified document.
@@ -1017,7 +1017,7 @@ public partial interface _Document : InteropObject
   /// Returns a Styles collection for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.styles?view=word-pia"/>
-  public Styles Styles { get; }
+  public IStyles Styles { get; }
 
   /// <summary>
   /// Returns a StyleSheets object that represents the Web style sheets attached to a document.

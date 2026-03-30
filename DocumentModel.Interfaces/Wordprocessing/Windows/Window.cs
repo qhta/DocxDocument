@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a window.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window?view=word-pia"/>
-public partial interface Window : InteropObject
+public partial interface IWindow : InteropObject
 {
   /// <summary>
   /// Returns a Pane object that represents the active pane for the specified window.
@@ -18,7 +18,7 @@ public partial interface Window : InteropObject
   /// Returns a Document object associated with the specified window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.document?view=word-pia"/>
-  public Document Document { get; }
+  public IDocument Document { get; }
 
   /// <summary>
   /// Returns a Panes collection that represents all the window panes for the specified window.
@@ -109,13 +109,13 @@ public partial interface Window : InteropObject
   /// Returns the next object in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.next?view=word-pia"/>
-  public Window Next { get; }
+  public IWindow Next { get; }
 
   /// <summary>
   /// Returns the previous object in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.previous?view=word-pia"/>
-  public Window Previous { get; }
+  public IWindow Previous { get; }
 
   /// <summary>
   /// Returns the window number of the document displayed in the specified window. For example, if the caption of

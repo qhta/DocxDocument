@@ -1,3 +1,5 @@
+using DocumentModel.Drawings.Charts;
+
 namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Represents a geographic entity within a hierarchical structure, providing identification and classification for parent-child geographic relationships.

@@ -10,12 +10,12 @@ public partial interface Borders: InteropObject
   /// Returns a Border object that represents a single border.
   /// </summary>
   /// <param name="Index">A <see cref="BorderPosition"/> value that identifies which border to return.</param>
-  /// <returns>The requested <see cref="Border"/> object.</returns>
+  /// <returns>The requested <see cref="IBorder"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.get_item?view=word-pia"/>
-  public Border Item(BorderPosition Index);
+  public IBorder Item(BorderPosition Index);
 
   /// <summary>
   /// Applies the specified page-border formatting to all sections in a document.

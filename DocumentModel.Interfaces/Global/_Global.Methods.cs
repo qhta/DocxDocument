@@ -193,7 +193,7 @@ public partial interface _Global : InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.newwindow?view=word-pia"/>
-  public Window NewWindow();
+  public IWindow NewWindow();
   /// <summary>
   /// Removes nonprinting and special Word characters from the specified string or changes them to spaces.
   /// </summary>

@@ -31,13 +31,13 @@ public partial interface _Application : InteropObject
   /// Returns a Document object that represents the active document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.activedocument?view=word-pia"/>
-  public Document ActiveDocument { get; }
+  public IDocument ActiveDocument { get; }
 
   /// <summary>
   /// Returns a Window object that represents the active window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.activewindow?view=word-pia"/>
-  public Window ActiveWindow { get; }
+  public IWindow ActiveWindow { get; }
 
   ///// <summary>
   ///// Returns the Selection object that represents a selected range or the insertion point.

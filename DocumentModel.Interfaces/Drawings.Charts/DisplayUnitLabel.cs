@@ -81,7 +81,7 @@ public partial interface DisplayUnitLabel: ChartTitle
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.border?view=office-pia"/>
-  public new Border Border { get; }
+  public new IBorder Border { get; }
   /// <summary>
   /// Gets the `Name` property.
   /// </summary>

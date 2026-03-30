@@ -71,7 +71,7 @@ public partial interface XMLNode : InteropObject
   /// Returns a Document object that represents the parent document of the specified XML element.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.ownerdocument?view=word-pia"/>
-  public Document OwnerDocument { get; }
+  public IDocument OwnerDocument { get; }
 
   /// <summary>
   /// Returns a XMLNodeType constant that represents the type of node.

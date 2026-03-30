@@ -1,4 +1,7 @@
+using DocumentModel.Drawings.Charts;
+
 namespace DocumentModel.Drawings.ChartDrawings;
+
 /// <summary>
 ///   Represents the unit display information for a chart axis.
 /// </summary>

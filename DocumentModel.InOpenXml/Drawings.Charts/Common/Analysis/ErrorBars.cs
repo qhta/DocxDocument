@@ -29,8 +29,8 @@ public partial class ErrorBars : ModelElement<DXDC.ErrorBars>
   ///   Type of error bar, such as fixed value, percentage, or standard deviation.
   /// </summary>
   [OpenXmlElement(typeof(DXDC.ErrorBarType))]
-  public ErrorBarType? ErrorBarType { get => _ErrorBarType; set => UpdateField(ref _ErrorBarType, value, nameof(ErrorBarType)); }
-  private ErrorBarType? _ErrorBarType;
+  public XlErrorBarType? ErrorBarType { get => _ErrorBarType; set => UpdateField(ref _ErrorBarType, value, nameof(ErrorBarType)); }
+  private XlErrorBarType? _ErrorBarType;
   /// <summary>
   ///   Value type for the error bar, such as custom, standard error, or standard deviation.
   /// </summary>

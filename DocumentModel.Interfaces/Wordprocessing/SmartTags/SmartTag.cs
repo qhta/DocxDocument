@@ -34,7 +34,7 @@ public partial interface SmartTag : InteropObject
   /// Returns a CustomProperties object that represents the properties of a smart tag.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttag.properties?view=word-pia"/>
-  public CustomProperties Properties { get; }
+  public ICustomProperties Properties { get; }
 
   /// <summary>
   /// Returns a SmartTagActions collection that represents the collection of actions available on a smart tag.
