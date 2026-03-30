@@ -12,7 +12,7 @@ namespace DocumentModel.Interfaces;
 /// coclass to access methods, properties, and events of the COM object. For information about the COM object, see
 /// Application.
 /// </summary>
-public partial interface _Application
+public partial interface I_Application
 {
 //  /// <summary>
 //  /// Returns information about the current country/region and international settings.

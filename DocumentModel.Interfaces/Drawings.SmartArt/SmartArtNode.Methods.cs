@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.SmartArt;
 /// Represents the `SmartArtNode` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode?view=office-pia"/>
-public partial interface SmartArtNode: IModelObject
+public partial interface ISmartArtNode: IModelObject
 {
   /// <summary>
   /// Invokes `AddNode`.
@@ -14,7 +14,7 @@ public partial interface SmartArtNode: IModelObject
   /// <param name="Type">The `Type` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode.addnode?view=office-pia"/>
-  public SmartArtNode AddNode
+  public ISmartArtNode AddNode
   (SmartArtNodePosition Position,
     SmartArtNodeType Type);
   /// <summary>

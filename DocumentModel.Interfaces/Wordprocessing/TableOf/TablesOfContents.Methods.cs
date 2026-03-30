@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesofcontents?view=word-pia"/>
-public partial interface TablesOfContents: IModelObject
+public partial interface ITablesOfContents: IModelObject
 {
   /// <summary>
   /// Adds a table of contents to the document using legacy options.
@@ -18,11 +18,11 @@ public partial interface TablesOfContents: IModelObject
   /// <param name="RightAlignPageNumbers">true to right-align page numbers; otherwise, false.</param>
   /// <param name="IncludePageNumbers">true to include page numbers; otherwise, false.</param>
   /// <param name="AddedStyles">Additional styles to include in the table of contents.</param>
-  /// <returns>The created <see cref="TableOfContents"/> object.</returns>
+  /// <returns>The created <see cref="ITableOfContents"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesofcontents.addold?view=word-pia"/>
-  public TableOfContents AddOld(Range Range, bool UseHeadingStyles, int UpperHeadingLevel, int LowerHeadingLevel, 
+  public ITableOfContents AddOld(IRange Range, bool UseHeadingStyles, int UpperHeadingLevel, int LowerHeadingLevel, 
     bool UseFields, string TableID, bool RightAlignPageNumbers, bool IncludePageNumbers, string AddedStyles);
 }

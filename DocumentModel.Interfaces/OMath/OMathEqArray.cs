@@ -4,13 +4,13 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a mathematical equation array object, consisting of one or more equations that can be vertically justified as a unit respect to surrounding text on the line.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omatheqarray?view=word-pia"/>
-public interface OMathEqArray : IModelObject
+public interface IOMathEqArray : IModelObject
 {
   /// <summary>
   /// Returns the collection of equations in the equation array.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omatheqarray.e?view=word-pia"/>
-  public OMathArgs E { get; }
+  public IOMathArgs E { get; }
   /// <summary>
   /// Returns or sets whether maximum spacing between rows is used.
   /// </summary>

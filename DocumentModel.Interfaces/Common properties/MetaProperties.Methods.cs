@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a collection of metadata properties.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties?view=office-pia"/>
-public partial interface MetaProperties: IModelObject
+public partial interface IMetaProperties: IModelObject
 {
   /// <summary>
   /// Gets a metadata property by its internal name.
@@ -14,7 +14,7 @@ public partial interface MetaProperties: IModelObject
   /// <param name="InternalName">The `InternalName` parameter.</param>
   /// <returns>The matching metadata property.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties.getitembyinternalname?view=office-pia"/>
-  public MetaProperty GetItemByInternalName(string InternalName);
+  public IMetaProperty GetItemByInternalName(string InternalName);
   /// <summary>
   /// Validates all metadata properties.
   /// </summary>

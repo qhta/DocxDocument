@@ -8,7 +8,7 @@ namespace DocumentModel.Application;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureset?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface SignatureSet: IModelCollection<Signature>
+public partial interface ISignatureSet: IModelCollection<ISignature>
 {
   /// <summary>
   /// Gets or sets the `CanAddSignatureLine` property.

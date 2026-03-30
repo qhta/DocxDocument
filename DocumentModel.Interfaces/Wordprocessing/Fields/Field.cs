@@ -4,13 +4,13 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a field. The Field object is a member of the Fields collection. The Fields collection represents the fields in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field?view=word-pia"/>
-public partial interface Field : IModelObject
+public partial interface IField : IModelObject
 {
   /// <summary>
   /// Gets or sets the field code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.code?view=word-pia"/>
-  public Range Code { get; set; }
+  public IRange Code { get; set; }
 
   /// <summary>
   /// Gets the field type.
@@ -34,7 +34,7 @@ public partial interface Field : IModelObject
   /// Gets or sets the result displayed for the field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.result?view=word-pia"/>
-  public Range Result { get; set; }
+  public IRange Result { get; set; }
 
   /// <summary>
   /// Gets or sets data associated with the field.
@@ -46,13 +46,13 @@ public partial interface Field : IModelObject
   /// Gets the next field in the `Fields` collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.next?view=word-pia"/>
-  public Field Next { get; }
+  public IField Next { get; }
 
   /// <summary>
   /// Gets the previous field in the `Fields` collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.previous?view=word-pia"/>
-  public Field Previous { get; }
+  public IField Previous { get; }
 
   /// <summary>
   /// Gets the index number of the field in the `Fields` collection.
@@ -70,13 +70,13 @@ public partial interface Field : IModelObject
   /// Gets the link formatting for a linked field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.linkformat?view=word-pia"/>
-  public LinkFormat LinkFormat { get; }
+  public ILinkFormat LinkFormat { get; }
 
   /// <summary>
   /// Gets the OLE formatting for an OLE field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.oleformat?view=word-pia"/>
-  public OLEFormat OLEFormat { get; }
+  public IOLEFormat OLEFormat { get; }
 
   /// <summary>
   /// Gets the inline shape associated with the field.

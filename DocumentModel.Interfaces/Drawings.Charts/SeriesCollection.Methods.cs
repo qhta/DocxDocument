@@ -8,7 +8,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface SeriesCollection: IModelCollection<Series>
+public partial interface ISeriesCollection: IModelCollection<ISeries>
 {
   /// <summary>
   /// Invokes `Add`.
@@ -20,7 +20,7 @@ public partial interface SeriesCollection: IModelCollection<Series>
   /// <param name="Replace">The `Replace` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.add?view=office-pia"/>
-  public Series Add
+  public ISeries Add
     (object Source, XlRowCol RowCol, object SeriesLabels, object CategoryLabels, object Replace);
   /// <summary>
   /// Invokes `Extend`.
@@ -47,6 +47,6 @@ public partial interface SeriesCollection: IModelCollection<Series>
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.newseries?view=office-pia"/>
-  public Series NewSeries();
+  public ISeries NewSeries();
 }
 

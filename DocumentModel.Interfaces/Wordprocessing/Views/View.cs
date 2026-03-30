@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Contains the view attributes (show all, field shading, table gridlines, and so on) for a window or pane.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view?view=word-pia"/>
-public partial interface View : IModelObject
+public partial interface IView : IModelObject
 {
   /// <summary>
   /// Returns or sets the view type.
@@ -278,7 +278,7 @@ public partial interface View : IModelObject
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.reviewers?view=word-pia"/>
-  public Reviewers Reviewers { get; }
+  public IReviewers Reviewers { get; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
@@ -387,7 +387,7 @@ public partial interface View : IModelObject
   /// Returns an instance of a RevisionsFilter object. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.revisionsfilter?view=word-pia"/>
-  public RevisionsFilter RevisionsFilter { get; }
+  public IRevisionsFilter RevisionsFilter { get; }
 
   /// <summary>
   /// Returns and sets the page color in Reading mode. Read-write PageColor.

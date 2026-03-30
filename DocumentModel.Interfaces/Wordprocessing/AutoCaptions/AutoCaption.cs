@@ -25,6 +25,6 @@ public interface IAutoCaption : IModelObject
   /// Gets or sets the caption label associated with the auto caption entry.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocaption.captionlabel?view=word-pia"/>
-  public CaptionLabel CaptionLabel { get; set; }
+  public ICaptionLabel CaptionLabel { get; set; }
 
 }

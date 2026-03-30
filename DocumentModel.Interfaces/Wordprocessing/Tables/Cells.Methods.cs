@@ -4,16 +4,16 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells?view=word-pia"/>
-public partial interface Cells: IModelObject
+public partial interface ICells: IModelObject
 {
   /// <summary>
   /// Adds a cell to the collection before the specified cell.
   /// </summary>
   /// <param name="BeforeCell">The cell before which the new cell is added.</param>
-  /// <returns>The newly added <see cref="Cell"/> object.</returns>
+  /// <returns>The newly added <see cref="ICell"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.add?view=word-pia"/>
-  public Cell Add(object BeforeCell);
+  public ICell Add(object BeforeCell);
 }

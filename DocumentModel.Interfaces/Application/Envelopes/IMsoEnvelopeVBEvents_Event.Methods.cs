@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Events interface for `MsoEnvelope` object events.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoenvelopevbevents_event?view=office-pia"/>
-public partial interface EnvelopeVBEvents_Event
+public partial interface IEnvelopeVBEvents_Event
 {
   /// <summary>
   /// Occurs when `EnvelopeShow` is raised.

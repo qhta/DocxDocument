@@ -6,18 +6,18 @@ namespace DocumentModel.Application;
 /// A collection of CommandBar objects that represent the command bars in the container application.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars?view=office-pia"/>
-public partial interface _CommandBars: IModelCollection<CommandBar>
+public partial interface I_CommandBars: IModelCollection<ICommandBar>
 {
   /// <summary>
   /// Gets or sets the `ActionControl` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.actioncontrol?view=office-pia"/>
-  public CommandBarControl ActionControl { get; }
+  public ICommandBarControl ActionControl { get; }
   /// <summary>
   /// Gets the `ActiveMenuBar` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.activemenubar?view=office-pia"/>
-  public CommandBar ActiveMenuBar { get; }
+  public ICommandBar ActiveMenuBar { get; }
   /// <summary>
   /// Gets or sets the `DisplayTooltips` property.
   /// </summary>

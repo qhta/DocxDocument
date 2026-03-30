@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Represents a combo box control on a command bar.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarcombobox?view=office-pia"/>
-public partial interface _CommandBarComboBox: CommandBarControl
+public partial interface I_CommandBarComboBox: ICommandBarControl
 {
   /// <summary>
   /// Gets or sets the `accParent` property.

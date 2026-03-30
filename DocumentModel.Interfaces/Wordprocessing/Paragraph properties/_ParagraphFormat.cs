@@ -6,13 +6,13 @@ namespace DocumentModel.Wordprocessing;
 /// This is a primary interface in a COM coclass that is required by managed code for interoperability with the corresponding COM object. Use this primary interface only when the method you want to use shares the same name as an event of the COM object; in this case, cast to this interface to call the method, and cast to the latest events interface to connect to the event. Otherwise, use the .NET interface that is derived from the COM coclass to access methods, properties, and events of the COM object. For more information about the COM object, see ParagraphFormat.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat?view=word-pia"/>
-public partial interface _ParagraphFormat : IModelObject
+public partial interface I_ParagraphFormat : IModelObject
 {
   /// <summary>
   /// Gets a duplicate of the paragraph formatting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.duplicate?view=word-pia"/>
-  public ParagraphFormat Duplicate { get; }
+  public IParagraphFormat Duplicate { get; }
 
   /// <summary>
   /// Gets or sets the style for the paragraph format.
@@ -162,7 +162,7 @@ public partial interface _ParagraphFormat : IModelObject
   /// Gets or sets the tab stops.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.tabstops?view=word-pia"/>
-  public TabStops TabStops { get; set; }
+  public ITabStops TabStops { get; set; }
 
   /// <summary>
   /// Gets or sets the border formatting for the paragraph.
@@ -174,7 +174,7 @@ public partial interface _ParagraphFormat : IModelObject
   /// Gets the shading formatting for the paragraph.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.shading?view=word-pia"/>
-  public Drw.Shading Shading { get; }
+  public Drw.IShading Shading { get; }
 
   /// <summary>
   /// Gets or sets the outline level.

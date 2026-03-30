@@ -52,7 +52,7 @@ public partial interface IDocumentEvents2: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.xmlafterinsert?view=word-pia"/>
-  public void XMLAfterInsert(XMLNode NewXMLNode, bool InUndoRedo);
+  public void XMLAfterInsert(IXMLNode NewXMLNode, bool InUndoRedo);
 
   /// <summary>
   /// Executes the xmlbefore delete operation.
@@ -64,7 +64,7 @@ public partial interface IDocumentEvents2: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.xmlbeforedelete?view=word-pia"/>
-  public void XMLBeforeDelete(Range DeletedRange, XMLNode OldXMLNode, bool InUndoRedo);
+  public void XMLBeforeDelete(IRange DeletedRange, IXMLNode OldXMLNode, bool InUndoRedo);
 
   /// <summary>
   /// Executes the content control after add operation.
@@ -75,7 +75,7 @@ public partial interface IDocumentEvents2: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.contentcontrolafteradd?view=word-pia"/>
-  public void ContentControlAfterAdd(ContentControl NewContentControl, bool InUndoRedo);
+  public void ContentControlAfterAdd(IContentControl NewContentControl, bool InUndoRedo);
 
   /// <summary>
   /// Executes the content control before delete operation.
@@ -86,7 +86,7 @@ public partial interface IDocumentEvents2: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.contentcontrolbeforedelete?view=word-pia"/>
-  public void ContentControlBeforeDelete(ContentControl OldContentControl, bool InUndoRedo);
+  public void ContentControlBeforeDelete(IContentControl OldContentControl, bool InUndoRedo);
 
   /// <summary>
   /// Executes the content control on exit operation.
@@ -97,7 +97,7 @@ public partial interface IDocumentEvents2: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.contentcontrolonexit?view=word-pia"/>
-  public void ContentControlOnExit(ContentControl ContentControl, ref bool Cancel);
+  public void ContentControlOnExit(IContentControl ContentControl, ref bool Cancel);
 
   /// <summary>
   /// Executes the content control on enter operation.
@@ -107,7 +107,7 @@ public partial interface IDocumentEvents2: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.contentcontrolonenter?view=word-pia"/>
-  public void ContentControlOnEnter(ContentControl ContentControl);
+  public void ContentControlOnEnter(IContentControl ContentControl);
 
   /// <summary>
   /// Executes the content control before store update operation.
@@ -118,7 +118,7 @@ public partial interface IDocumentEvents2: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.contentcontrolbeforestoreupdate?view=word-pia"/>
-  public void ContentControlBeforeStoreUpdate(ContentControl ContentControl, string Content);
+  public void ContentControlBeforeStoreUpdate(IContentControl ContentControl, string Content);
 
   /// <summary>
   /// Executes the content control before content update operation.
@@ -129,7 +129,7 @@ public partial interface IDocumentEvents2: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.contentcontrolbeforecontentupdate?view=word-pia"/>
-  public void ContentControlBeforeContentUpdate(ContentControl ContentControl, string Content);
+  public void ContentControlBeforeContentUpdate(IContentControl ContentControl, string Content);
 
   /// <summary>
   /// Executes the building block insert operation.
@@ -143,5 +143,5 @@ public partial interface IDocumentEvents2: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.buildingblockinsert?view=word-pia"/>
-  public void BuildingBlockInsert(Range Range, string Name, string Category, string BlockType, string Template);
+  public void BuildingBlockInsert(IRange Range, string Name, string Category, string BlockType, string Template);
 }

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage?view=word-pia"/>
-public partial interface MailMessage: IModelObject
+public partial interface IMailMessage: IModelObject
 {
   /// <summary>
   /// Validates the e-mail addresses that appear in the To:, Cc:, and Bcc: lines in the active e-mail message. This

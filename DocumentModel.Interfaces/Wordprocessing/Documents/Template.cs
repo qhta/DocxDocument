@@ -67,7 +67,7 @@ public partial interface ITemplate : IModelObject
   /// Returns a ListTemplates collection that represents all the list formats for the specified template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.listtemplates?view=word-pia"/>
-  public ListTemplates ListTemplates { get; }
+  public IListTemplates ListTemplates { get; }
 
   /// <summary>
   /// Returns or sets an East Asian language for the specified object.
@@ -129,12 +129,12 @@ public partial interface ITemplate : IModelObject
   /// template. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.buildingblockentries?view=word-pia"/>
-  public BuildingBlockEntries BuildingBlockEntries { get; }
+  public IBuildingBlockEntries BuildingBlockEntries { get; }
 
   /// <summary>
   /// Returns a BuildingBlockTypes collection that represents the collection of building block types that are
   /// contained in a template. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.buildingblocktypes?view=word-pia"/>
-  public BuildingBlockTypes BuildingBlockTypes { get; }
+  public IBuildingBlockTypes BuildingBlockTypes { get; }
 }

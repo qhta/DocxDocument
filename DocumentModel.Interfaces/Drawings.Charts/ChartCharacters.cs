@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents characters in an object that contains text.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters?view=word-pia"/>
-public partial interface ChartCharacters : IModelObject
+public partial interface IChartCharacters : IModelObject
 {
   /// <summary>
   /// Gets or sets the caption text for the chart characters.
@@ -22,7 +22,7 @@ public partial interface ChartCharacters : IModelObject
   /// Gets the font formatting for the chart characters.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters.font?view=word-pia"/>
-  public ChartFont Font { get; }
+  public IChartFont Font { get; }
 
   /// <summary>
   /// Gets or sets the text of the chart characters.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a custom key assignment in the current context.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybinding?view=word-pia"/>
-public partial interface KeyBinding : IModelObject
+public partial interface IKeyBinding : IModelObject
 {
   /// <summary>
   /// Returns the command assigned to the key binding.

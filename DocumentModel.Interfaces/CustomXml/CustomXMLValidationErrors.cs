@@ -12,7 +12,7 @@ namespace DocumentModel.CustomXml;
 /// Represents a collection of CustomXMLValidationError objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerrors?view=office-pia"/>
-public partial interface CustomXMLValidationErrors: IModelCollection<CustomXMLValidationError>
+public partial interface ICustomXMLValidationErrors: IModelCollection<ICustomXMLValidationError>
 {
 }
 

@@ -4,13 +4,13 @@ namespace DocumentModel.Wordprocessing;
 /// Represents special formatting applied to specified areas of a table when the selected table is formatted with a specified table style.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conditionalstyle?view=word-pia"/>
-public interface ConditionalStyle : IModelObject
+public interface IConditionalStyle : IModelObject
 {
   /// <summary>
   /// Gets the shading formatting for the conditional style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conditionalstyle.shading?view=word-pia"/>
-  public Drw.Shading Shading { get; }
+  public Drw.IShading Shading { get; }
   /// <summary>
   /// Gets or sets the border formatting for the conditional style.
   /// </summary>
@@ -40,7 +40,7 @@ public interface ConditionalStyle : IModelObject
   /// Gets or sets the paragraph formatting for the conditional style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conditionalstyle.paragraphformat?view=word-pia"/>
-  public ParagraphFormat ParagraphFormat { get; set; }
+  public IParagraphFormat ParagraphFormat { get; set; }
   /// <summary>
   /// Gets or sets the font formatting for the conditional style.
   /// </summary>

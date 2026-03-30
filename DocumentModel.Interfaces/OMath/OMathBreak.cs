@@ -4,13 +4,13 @@ namespace DocumentModel.Wordprocessing;
 /// Represents individual line breaks in an equation. Each OMathBreak object is a member of the OMathBreaks collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbreak?view=word-pia"/>
-public partial interface OMathBreak : IModelObject
+public partial interface IOMathBreak : IModelObject
 {
   /// <summary>
   /// Returns the range at the equation line break location.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbreak.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// Returns or sets the alignment position at the line break.

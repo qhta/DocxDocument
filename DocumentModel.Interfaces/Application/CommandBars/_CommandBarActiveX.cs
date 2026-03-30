@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbaractivex?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface _CommandBarActiveX: CommandBarControl
+public partial interface I_CommandBarActiveX: ICommandBarControl
 {
   /// <summary>
   /// Gets or sets the `accParent` property.

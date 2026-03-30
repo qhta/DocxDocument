@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart series.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries?view=office-pia"/>
-public partial interface Series: IModelObject
+public partial interface ISeries: IModelObject
 {
   /// <summary>
   /// Gets or sets the `AxisGroup` property.
@@ -68,7 +68,7 @@ public partial interface Series: IModelObject
   /// Gets the `Fill` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.fill?view=office-pia"/>
-  public ChartFillFormat Fill { get; }
+  public IChartFillFormat Fill { get; }
   /// <summary>
   /// Gets or sets the `InvertIfNegative` property.
   /// </summary>
@@ -193,12 +193,12 @@ public partial interface Series: IModelObject
   /// Gets the `LeaderLines` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.leaderlines?view=office-pia"/>
-  public LeaderLines LeaderLines { get; }
+  public ILeaderLines LeaderLines { get; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.format?view=office-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
   /// <summary>
   /// Gets or sets the `PictureUnit2` property.
   /// </summary>

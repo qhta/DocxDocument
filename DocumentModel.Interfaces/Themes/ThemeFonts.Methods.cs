@@ -7,7 +7,7 @@ namespace DocumentModel.Themes;
 /// Represents the `ThemeFonts` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themefonts?view=office-pia"/>
-public partial interface ThemeFonts: IModelObject
+public partial interface IThemeFonts: IModelObject
 {
   /// <summary>
   /// Invokes `Item`.
@@ -15,6 +15,6 @@ public partial interface ThemeFonts: IModelObject
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themefonts.item?view=office-pia"/>
-  public ThemeFont Item(FontLanguageIndex Index);
+  public IThemeFont Item(FontLanguageIndex Index);
 }
 

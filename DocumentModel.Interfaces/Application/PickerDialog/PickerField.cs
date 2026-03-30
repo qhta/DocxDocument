@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Represents a field definition for picker result sub-items.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerfield?view=office-pia"/>
-public partial interface PickerField: IModelObject
+public partial interface IPickerField: IModelObject
 {
   /// <summary>
   /// Gets the `Name` property.
@@ -16,7 +16,7 @@ public partial interface PickerField: IModelObject
   /// Gets the `Type` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerfield.type?view=office-pia"/>
-  public PickerField Type { get; }
+  public IPickerField Type { get; }
   /// <summary>
   /// Gets the `IsHidden` property.
   /// </summary>

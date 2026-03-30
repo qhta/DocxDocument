@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode?view=word-pia"/>
-public partial interface XMLNode: IModelObject
+public partial interface IXMLNode: IModelObject
 {
   /// <summary>
   /// Gets the XML representation of the node.
@@ -34,10 +34,10 @@ public partial interface XMLNode: IModelObject
   /// <param name="XPath">The XPath expression to evaluate.</param>
   /// <param name="PrefixMapping">The prefix mapping for the XPath expression.</param>
   /// <param name="FastSearchSkippingTextNodes">true to skip text nodes during the search; otherwise, false.</param>
-  /// <returns>The selected <see cref="XMLNode"/> object, or null if not found.</returns>
+  /// <returns>The selected <see cref="IXMLNode"/> object, or null if not found.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.selectsinglenode?view=word-pia"/>
-  public XMLNode SelectSingleNode(string XPath, string PrefixMapping, bool FastSearchSkippingTextNodes);
+  public IXMLNode SelectSingleNode(string XPath, string PrefixMapping, bool FastSearchSkippingTextNodes);
 }

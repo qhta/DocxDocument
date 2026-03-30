@@ -16,7 +16,7 @@ public partial interface IBookmark : IModelObject
   /// Gets the range that represents the bookmark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// Gets a value indicating whether the bookmark is empty.

@@ -9,7 +9,7 @@ namespace DocumentModel.Application;
 /// Represents a collection of HTML script blocks in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts?view=office-pia"/>
-public partial interface Scripts
+public partial interface IScripts
 {
   /// <summary>
   /// Returns a script by name, ID, or index.
@@ -17,7 +17,7 @@ public partial interface Scripts
   /// <param name="Index">The script name, ID, or index.</param>
   /// <returns>The requested script.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.item?view=office-pia"/>
-  public Script Item(object Index);
+  public IScript Item(object Index);
   /// <summary>
   /// Adds a script to the collection.
   /// </summary>
@@ -29,7 +29,7 @@ public partial interface Scripts
   /// <param name="ScriptText">The script content.</param>
   /// <returns>The added script.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.add?view=office-pia"/>
-  public Script Add
+  public IScript Add
   (object Anchor, ScriptLocation Location,
     ScriptLanguage Language, string Id, string Extended,
     string ScriptText);

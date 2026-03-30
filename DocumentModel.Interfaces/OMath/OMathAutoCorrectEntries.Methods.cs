@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathautocorrectentries?view=word-pia"/>
-public partial interface OMathAutoCorrectEntries: IModelObject
+public partial interface IOMathAutoCorrectEntries: IModelObject
 {
   /// <summary>
   /// Adds a math AutoCorrect entry to the collection.
@@ -16,5 +16,5 @@ public partial interface OMathAutoCorrectEntries: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathautocorrectentries.add?view=word-pia"/>
-  public OMathAutoCorrectEntry Add(string Name, string Value);
+  public IOMathAutoCorrectEntry Add(string Name, string Value);
 }

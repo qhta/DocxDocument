@@ -7,7 +7,7 @@ namespace DocumentModel.Themes;
 /// Represents the `ThemeColorScheme` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themecolorscheme?view=office-pia"/>
-public partial interface ThemeColorScheme: IModelObject
+public partial interface IThemeColorScheme: IModelObject
 {
   /// <summary>
   /// Invokes `Colors`.
@@ -15,7 +15,7 @@ public partial interface ThemeColorScheme: IModelObject
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themecolorscheme.colors?view=office-pia"/>
-  public ThemeColor Colors(ThemeColors Index);
+  public IThemeColor Colors(ThemeColors Index);
   /// <summary>
   /// Invokes `Load`.
   /// </summary>

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listtemplates?view=word-pia"/>
-public partial interface ListTemplates: IModelObject
+public partial interface IListTemplates: IModelObject
 {
   /// <summary>
   /// Adds a list template to the list templates collection.
@@ -16,5 +16,5 @@ public partial interface ListTemplates: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listtemplates.add?view=word-pia"/>
-  public ListTemplate Add(object OutlineNumbered, object Name);
+  public IListTemplate Add(object OutlineNumbered, object Name);
 }

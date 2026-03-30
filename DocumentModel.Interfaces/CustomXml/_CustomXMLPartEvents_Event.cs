@@ -1,19 +1,19 @@
 
 namespace DocumentModel.CustomXml;
 
-public delegate void _CustomXMLPartEvents_NodeAfterInsertEventHandler(CustomXMLNode NewNode, bool InUndoRedo);
+public delegate void _CustomXMLPartEvents_NodeAfterInsertEventHandler(ICustomXMLNode NewNode, bool InUndoRedo);
 public delegate void _CustomXMLPartEvents_NodeAfterDeleteEventHandler(
-  CustomXMLNode OldNode,
-  CustomXMLNode OldParentNode,
-  CustomXMLNode OldNextSibling,
+  ICustomXMLNode OldNode,
+  ICustomXMLNode OldParentNode,
+  ICustomXMLNode OldNextSibling,
   bool InUndoRedo);
-public delegate void _CustomXMLPartEvents_NodeAfterReplaceEventHandler(CustomXMLNode OldNode, CustomXMLNode NewNode, bool InUndoRedo);
+public delegate void _CustomXMLPartEvents_NodeAfterReplaceEventHandler(ICustomXMLNode OldNode, ICustomXMLNode NewNode, bool InUndoRedo);
 
 /// <summary>
 /// Events interface for CustomXMLPart object events.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpartevents_event?view=office-pia"/>
-public partial interface _CustomXMLPartEvents_Event
+public partial interface I_CustomXMLPartEvents_Event
 {
 }
 

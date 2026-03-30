@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// first word in the specified range.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.spellingsuggestions?view=word-pia"/>
-public interface SpellingSuggestions : IModelCollection<ISpellingSuggestion>
+public interface ISpellingSuggestions : IModelCollection<ISpellingSuggestion>
 {
   /// <summary>
   /// Returns the spelling error type.

@@ -8,7 +8,7 @@ namespace DocumentModel.Application;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacemembers?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface SharedWorkspaceMembers: IModelObject
+public partial interface ISharedWorkspaceMembers: IModelObject
 {
   /// <summary>
   /// Invokes `Add`.
@@ -19,6 +19,6 @@ public partial interface SharedWorkspaceMembers: IModelObject
   /// <param name="Role">The `Role` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacemembers.add?view=office-pia"/>
-  public SharedWorkspaceMember Add(string Email, string DomainName, string DisplayName, object Role);
+  public ISharedWorkspaceMember Add(string Email, string DomainName, string DisplayName, object Role);
 }
 

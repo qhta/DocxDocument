@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a display unit label.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel?view=office-pia"/>
-public partial interface DisplayUnitLabel: ChartTitle
+public partial interface IDisplayUnitLabel: IChartTitle
 {
   /// <summary>
   /// Gets or sets the `Caption` property.
@@ -16,12 +16,12 @@ public partial interface DisplayUnitLabel: ChartTitle
   /// Gets the `Characters` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.characters?view=office-pia"/>
-  public new Characters Characters { get; }
+  public new ICharacters Characters { get; }
   /// <summary>
   /// Gets the `Font` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.font?view=office-pia"/>
-  public new ChartFont Font { get; }
+  public new IChartFont Font { get; }
   /// <summary>
   /// Gets or sets the `HorizontalAlignment` property.
   /// </summary>
@@ -76,7 +76,7 @@ public partial interface DisplayUnitLabel: ChartTitle
   /// Gets the `Fill` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.fill?view=office-pia"/>
-  public new ChartFillFormat Fill { get; }
+  public new IChartFillFormat Fill { get; }
   /// <summary>
   /// Gets the `Border` property.
   /// </summary>
@@ -101,7 +101,7 @@ public partial interface DisplayUnitLabel: ChartTitle
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.format?view=office-pia"/>
-  public new ChartFormat Format { get; }
+  public new IChartFormat Format { get; }
   /// <summary>
   /// Gets the `Height` property.
   /// </summary>

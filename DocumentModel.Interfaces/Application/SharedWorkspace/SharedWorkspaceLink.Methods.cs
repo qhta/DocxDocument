@@ -8,7 +8,7 @@ namespace DocumentModel.Application;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacelink?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface SharedWorkspaceLink: IModelObject
+public partial interface ISharedWorkspaceLink: IModelObject
 {
   /// <summary>
   /// Invokes `Save`.

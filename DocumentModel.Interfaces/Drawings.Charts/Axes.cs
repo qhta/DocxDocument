@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// A collection of all Axis objects in the specified chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.axes?view=office-pia"/>
-public partial interface Axes: IModelValues<Axis>
+public partial interface IAxes: IModelValues<IAxis>
 {
 
 }

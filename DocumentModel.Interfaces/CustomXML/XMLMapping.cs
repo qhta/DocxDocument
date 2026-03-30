@@ -8,7 +8,7 @@ namespace DocumentModel.Wordprocessing;
 /// document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlmapping?view=word-pia"/>
-public partial interface XMLMapping : IModelObject
+public partial interface IXMLMapping : IModelObject
 {
   /// <summary>
   /// Returns a Boolean that represents whether the content control in the document is mapped to an XML node in the
@@ -22,14 +22,14 @@ public partial interface XMLMapping : IModelObject
   /// document maps.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlmapping.customxmlpart?view=word-pia"/>
-  public CustomXMLPart CustomXMLPart { get; }
+  public ICustomXMLPart CustomXMLPart { get; }
 
   /// <summary>
   /// Returns a CustomXMLNode object that represents the custom XML node in the data store to which the content
   /// control in the document maps.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlmapping.customxmlnode?view=word-pia"/>
-  public CustomXMLNode CustomXMLNode { get; }
+  public ICustomXMLNode CustomXMLNode { get; }
 
   /// <summary>
   /// Returns a String that represents the XPath for the XML mapping, which evaluates to the currently mapped XML

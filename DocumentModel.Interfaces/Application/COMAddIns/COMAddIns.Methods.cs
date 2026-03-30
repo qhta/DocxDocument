@@ -7,7 +7,7 @@ namespace DocumentModel.Application;
 /// A collection of COM add-ins registered in the Windows registry.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.comaddins?view=office-pia"/>
-public partial interface COMAddIns: IModelObject
+public partial interface ICOMAddIns: IModelObject
 {
   /// <summary>
   /// Returns a COM add-in from the collection by name or index.
@@ -15,7 +15,7 @@ public partial interface COMAddIns: IModelObject
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.comaddins.item?view=office-pia"/>
-  public COMAddIn Item(ref object Index);
+  public ICOMAddIn Item(ref object Index);
   /// <summary>
   /// Updates the COM add-ins collection.
   /// </summary>

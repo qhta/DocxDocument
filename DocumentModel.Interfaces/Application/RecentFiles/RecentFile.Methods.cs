@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.recentfile?view=word-pia"/>
-public partial interface RecentFile: IModelObject
+public partial interface IRecentFile: IModelObject
 {
   /// <summary>
   /// Opens the specified recent file and returns a Document object that represents the opened document.

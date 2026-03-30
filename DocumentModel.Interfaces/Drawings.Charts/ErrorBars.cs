@@ -26,6 +26,6 @@ public partial interface IErrorBars: IModelObject
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoerrorbars.format?view=office-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 }
 

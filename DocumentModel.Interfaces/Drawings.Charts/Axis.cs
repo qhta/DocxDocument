@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart axis.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis?view=office-pia"/>
-public partial interface Axis : IModelObject
+public partial interface IAxis : IModelObject
 {
   /// <summary>
   /// Gets or sets the `AxisBetweenCategories` property.
@@ -21,7 +21,7 @@ public partial interface Axis : IModelObject
   /// Gets the `AxisTitle` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.axistitle?view=office-pia"/>
-  public AxisTitle AxisTitle { get; }
+  public IAxisTitle AxisTitle { get; }
   /// <summary>
   /// Gets or sets the `CategoryNames` property.
   /// </summary>
@@ -56,7 +56,7 @@ public partial interface Axis : IModelObject
   /// Gets the `MajorGridlines` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.majorgridlines?view=office-pia"/>
-  public GridLines MajorGridlines { get; }
+  public IGridLines MajorGridlines { get; }
   /// <summary>
   /// Gets or sets the `MajorTickMark` property.
   /// </summary>
@@ -106,7 +106,7 @@ public partial interface Axis : IModelObject
   /// Gets the `MinorGridlines` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.minorgridlines?view=office-pia"/>
-  public GridLines MinorGridlines { get; }
+  public IGridLines MinorGridlines { get; }
   /// <summary>
   /// Gets or sets the `MinorTickMark` property.
   /// </summary>
@@ -141,7 +141,7 @@ public partial interface Axis : IModelObject
   /// Gets the `TickLabels` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.ticklabels?view=office-pia"/>
-  public TickLabels TickLabels { get; }
+  public ITickLabels TickLabels { get; }
   /// <summary>
   /// Gets or sets the `TickLabelSpacing` property.
   /// </summary>
@@ -221,7 +221,7 @@ public partial interface Axis : IModelObject
   /// Gets the `DisplayUnitLabel` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.displayunitlabel?view=office-pia"/>
-  public DisplayUnitLabel DisplayUnitLabel { get; }
+  public IDisplayUnitLabel DisplayUnitLabel { get; }
   /// <summary>
   /// Gets the `Border` property.
   /// </summary>
@@ -236,6 +236,6 @@ public partial interface Axis : IModelObject
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.format?view=office-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 }
 

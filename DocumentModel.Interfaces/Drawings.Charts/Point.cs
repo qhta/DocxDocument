@@ -7,19 +7,19 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single point in a series in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point?view=word-pia"/>
-public partial interface Point : IModelObject
+public partial interface IPoint : IModelObject
 {
   /// <summary>
   /// Returns a Border object that represents the border of the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public IChartBorder Border { get; }
 
   /// <summary>
   /// Returns a DataLabel object that represents the data label associated with the point. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.datalabel?view=word-pia"/>
-  public DataLabel DataLabel { get; }
+  public IDataLabel DataLabel { get; }
 
   /// <summary>
   /// Returns or sets the explosion value for a pie-chart or doughnut-chart slice. Returns 0 (zero) if there's no
@@ -140,7 +140,7 @@ public partial interface Point : IModelObject
   /// contains fill formatting properties for the shape or chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.fill?view=word-pia"/>
-  public ChartFillFormat Fill { get; }
+  public IChartFillFormat Fill { get; }
 
   /// <summary>
   /// True if a point has a three-dimensional appearance. Read/write Boolean.
@@ -152,7 +152,7 @@ public partial interface Point : IModelObject
   /// Returns the line, fill, and effect formatting for the object. Read-only ChartFormat.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 
   /// <summary>
   /// Returns or sets the unit for each picture on the chart if the PictureType property is set to xlStackScale (if

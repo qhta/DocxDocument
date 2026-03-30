@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// between macro sessions.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.variable?view=word-pia"/>
-public partial interface Variable : IModelObject
+public partial interface IVariable : IModelObject
 {
   /// <summary>
   /// Returns or sets the name of the specified object.

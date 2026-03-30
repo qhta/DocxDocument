@@ -6,32 +6,32 @@ namespace DocumentModel.Wordprocessing;
 /// A collection of Paragraph objects in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs?view=word-pia"/>
-public partial interface Paragraphs : IModelCollection<Paragraph>
+public partial interface IParagraphs : IModelCollection<IParagraph>
 {
   /// <summary>
   /// Returns a Paragraph object that represents the first item in the Paragraphs collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.first?view=word-pia"/>
-  public Paragraph First { get; }
+  public IParagraph First { get; }
 
   /// <summary>
   /// Returns the last item in the Paragraphs collection as a Paragraph object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.last?view=word-pia"/>
-  public Paragraph Last { get; }
+  public IParagraph Last { get; }
 
   /// <summary>
   /// Returns or sets a ParagraphFormat object that represents the formatting of the specified paragraph or
   /// paragraphs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.format?view=word-pia"/>
-  public ParagraphFormat Format { get; set; }
+  public IParagraphFormat Format { get; set; }
 
   /// <summary>
   /// Returns or sets a TabStops collection that represents all the custom tab stops for the specified paragraphs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.tabstops?view=word-pia"/>
-  public TabStops TabStops { get; set; }
+  public ITabStops TabStops { get; set; }
 
   /// <summary>
   /// Returns a Borders collection that represents all the borders for the specified object.
@@ -136,7 +136,7 @@ public partial interface Paragraphs : IModelCollection<Paragraph>
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.shading?view=word-pia"/>
-  public Drw.Shading Shading { get; }
+  public Drw.IShading Shading { get; }
 
   /// <summary>
   /// Determines if Microsoft Word applies East Asian line-breaking rules to the specified paragraphs.

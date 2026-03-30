@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a trendline in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsotrendline?view=office-pia"/>
-public partial interface Trendline: IModelObject
+public partial interface ITrendline: IModelObject
 {
   /// <summary>
   /// Clears formatting from the trendline.

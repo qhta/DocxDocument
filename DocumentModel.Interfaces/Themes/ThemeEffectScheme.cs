@@ -7,6 +7,6 @@ namespace DocumentModel.Themes;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themeeffectscheme?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface ThemeEffectScheme: IModelObject
+public partial interface IThemeEffectScheme: IModelObject
 {
 }

@@ -6,6 +6,6 @@ namespace DocumentModel.Wordprocessing;
 /// tab in the AutoCorrect Exceptions dialog box (AutoCorrect command, Tools menu).
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.othercorrectionsexceptions?view=word-pia"/>
-public partial interface OtherCorrectionsExceptions : IModelCollection<IOtherCorrectionsException>
+public partial interface IOtherCorrectionsExceptions : IModelCollection<IOtherCorrectionsException>
 {
 }

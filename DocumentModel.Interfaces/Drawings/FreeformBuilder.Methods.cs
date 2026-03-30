@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.freeformbuilder?view=word-pia"/>
-public partial interface FreeformBuilder: IModelObject
+public partial interface IFreeformBuilder: IModelObject
 {
   /// <summary>
   /// Adds a node to the freeform being built.
@@ -27,10 +27,10 @@ public partial interface FreeformBuilder: IModelObject
   /// Converts the freeform into a shape.
   /// </summary>
   /// <param name="Anchor">The anchor range for the created shape.</param>
-  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.freeformbuilder.converttoshape?view=word-pia"/>
-  public Shape ConvertToShape(object Anchor);
+  public IShape ConvertToShape(object Anchor);
 }

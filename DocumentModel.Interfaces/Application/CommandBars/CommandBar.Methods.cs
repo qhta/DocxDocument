@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Represents a command bar in the container application.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar?view=office-pia"/>
-public partial interface CommandBar: IModelObject
+public partial interface ICommandBar: IModelObject
 {
   /// <summary>
   /// Invokes `accSelect`.
@@ -61,7 +61,7 @@ public partial interface CommandBar: IModelObject
   /// <param name="Recursive">The `Recursive` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.findcontrol?view=office-pia"/>
-  public CommandBarControl FindControl(object Type, object Id, object Tag, object Visible, object Recursive);
+  public ICommandBarControl FindControl(object Type, object Id, object Tag, object Visible, object Recursive);
   /// <summary>
   /// Restores the command bar to its default state.
   /// </summary>

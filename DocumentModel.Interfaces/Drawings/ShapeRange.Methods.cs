@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange?view=office-pia"/>
-public partial interface ShapeRange: IModelObject
+public partial interface IShapeRange: IModelObject
 {
   /// <summary>
   /// Invokes `Item`.
@@ -15,7 +15,7 @@ public partial interface ShapeRange: IModelObject
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.item?view=office-pia"/>
-  public Shape Item(object Index);
+  public IShape Item(object Index);
   /// <summary>
   /// Invokes `Align`.
   /// </summary>
@@ -45,7 +45,7 @@ public partial interface ShapeRange: IModelObject
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.duplicate?view=office-pia"/>
-  public ShapeRange Duplicate();
+  public IShapeRange Duplicate();
   /// <summary>
   /// Invokes `Flip`.
   /// </summary>
@@ -75,7 +75,7 @@ public partial interface ShapeRange: IModelObject
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.group?view=office-pia"/>
-  public Shape Group();
+  public IShape Group();
   /// <summary>
   /// Invokes `PickUp`.
   /// </summary>
@@ -86,7 +86,7 @@ public partial interface ShapeRange: IModelObject
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.regroup?view=office-pia"/>
-  public Shape Regroup();
+  public IShape Regroup();
   /// <summary>
   /// Invokes `RerouteConnections`.
   /// </summary>
@@ -126,7 +126,7 @@ public partial interface ShapeRange: IModelObject
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.ungroup?view=office-pia"/>
-  public ShapeRange Ungroup();
+  public IShapeRange Ungroup();
   /// <summary>
   /// Invokes `ZOrder`.
   /// </summary>
@@ -173,6 +173,6 @@ public partial interface ShapeRange: IModelObject
   /// <param name="MergeCmd">The `MergeCmd` parameter.</param>
   /// <param name="PrimaryShape">The `PrimaryShape` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.mergeshapes?view=office-pia"/>
-  public void MergeShapes(MergeCmd MergeCmd, Shape PrimaryShape);
+  public void MergeShapes(MergeCmd MergeCmd, IShape PrimaryShape);
 }
 

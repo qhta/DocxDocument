@@ -4,16 +4,16 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblockentries?view=word-pia"/>
-public partial interface BuildingBlockEntries: IModelObject
+public partial interface IBuildingBlockEntries: IModelObject
 {
   /// <summary>
   /// Returns a building block from the collection by index or name.
   /// </summary>
   /// <param name="Index">The numeric index or name of the building block.</param>
-  /// <returns>The requested <see cref="BuildingBlock"/> object.</returns>
+  /// <returns>The requested <see cref="IBuildingBlock"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblockentries.item?view=word-pia"/>
-  public BuildingBlock Item(object Index);
+  public IBuildingBlock Item(object Index);
 }

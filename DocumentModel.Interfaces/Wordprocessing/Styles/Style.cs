@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single built-in or user-defined style.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style?view=word-pia"/>
-public partial interface Style : IModelObject
+public partial interface IStyle : IModelObject
 {
   /// <summary>
   /// Returns the name of a built-in style in the language of the user. Read/write String.
@@ -57,7 +57,7 @@ public partial interface Style : IModelObject
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.shading?view=word-pia"/>
-  public Drw.Shading Shading { get; }
+  public Drw.IShading Shading { get; }
 
   /// <summary>
   /// Returns a Borders collection that represents all the borders for the specified object.
@@ -70,7 +70,7 @@ public partial interface Style : IModelObject
   /// Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.paragraphformat?view=word-pia"/>
-  public ParagraphFormat ParagraphFormat { get; set; }
+  public IParagraphFormat ParagraphFormat { get; set; }
 
   /// <summary>
   /// Returns or sets a Font object that represents the character formatting of the specified object. Read/write
@@ -83,7 +83,7 @@ public partial interface Style : IModelObject
   /// Returns a Frame object that represents the frame formatting for the specified style. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.frame?view=word-pia"/>
-  public Frame Frame { get; }
+  public IFrame Frame { get; }
 
   /// <summary>
   /// Returns or sets the language for the specified object. Read/write.
@@ -102,7 +102,7 @@ public partial interface Style : IModelObject
   /// Returns a ListTemplate object that represents the list formatting for the specified Style object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.listtemplate?view=word-pia"/>
-  public ListTemplate ListTemplate { get; }
+  public IListTemplate ListTemplate { get; }
 
   /// <summary>
   /// Returns the list level for the specified style. Read-only Integer.
@@ -150,7 +150,7 @@ public partial interface Style : IModelObject
   /// Returns a TableStyle object representing properties that can be applied to a table using a table style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.table?view=word-pia"/>
-  public TableStyle Table { get; }
+  public ITableStyle Table { get; }
 
   /// <summary>
   /// True if the specified style is locked.

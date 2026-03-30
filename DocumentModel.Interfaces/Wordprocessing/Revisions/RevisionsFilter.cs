@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the current settings related to display of reviewers’ comments and revision marks in the document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revisionsfilter?view=word-pia"/>
-public partial interface RevisionsFilter: IModelObject
+public partial interface IRevisionsFilter: IModelObject
 {
   /// <summary>
   /// Sets or returns a RevisionsView constant that represents the global option that specifies whether Word
@@ -25,5 +25,5 @@ public partial interface RevisionsFilter: IModelObject
   /// Returns a Reviewers object that represents the collection of reviewers of one or more documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revisionsfilter.reviewers?view=word-pia"/>
-  public Reviewers Reviewers { get; }
+  public IReviewers Reviewers { get; }
 }

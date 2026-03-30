@@ -13,10 +13,10 @@ public partial interface IStyles: IModelObject
   /// </summary>
   /// <param name="Name">The name of the new style.</param>
   /// <param name="Type">The type of the new style.</param>
-  /// <returns>The created <see cref="Style"/> object.</returns>
+  /// <returns>The created <see cref="IStyle"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.styles.add?view=word-pia"/>
-  public Style Add(string Name, StyleType Type);
+  public IStyle Add(string Name, StyleType Type);
 }

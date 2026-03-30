@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a file converter that's used to open or save files.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fileconverter?view=word-pia"/>
-public interface FileConverter : IModelObject
+public interface IFileConverter : IModelObject
 {
   /// <summary>
   /// Returns the name of the specified file converter.
@@ -47,7 +47,7 @@ public interface FileConverter : IModelObject
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fileconverter.name?view=word-pia"/>
   public string Name { get; }
   /// <summary>
-  /// Returns the file name extensions associated with the specified <see cref="FileConverter"/> object.
+  /// Returns the file name extensions associated with the specified <see cref="IFileConverter"/> object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fileconverter.extensions?view=word-pia"/>
   public string Extensions { get; }

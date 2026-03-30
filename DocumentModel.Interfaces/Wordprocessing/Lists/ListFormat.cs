@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the list formatting attributes that can be applied to the paragraphs in a range.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat?view=word-pia"/>
-public partial interface ListFormat : IModelObject
+public partial interface IListFormat : IModelObject
 {
   /// <summary>
   /// Returns or sets the list level number for the first paragraph in the range.
@@ -16,13 +16,13 @@ public partial interface ListFormat : IModelObject
   /// Returns the first valid list that is applied to the paragraphs in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.list?view=word-pia"/>
-  public List List { get; }
+  public IList List { get; }
 
   /// <summary>
   /// Returns the list template associated with the first paragraph in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.listtemplate?view=word-pia"/>
-  public ListTemplate ListTemplate { get; }
+  public IListTemplate ListTemplate { get; }
 
   /// <summary>
   /// Returns the numeric value of the first paragraph in the range.

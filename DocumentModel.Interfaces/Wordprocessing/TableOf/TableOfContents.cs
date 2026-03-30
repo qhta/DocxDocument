@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single table of contents in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofcontents?view=word-pia"/>
-public partial interface TableOfContents : IModelObject
+public partial interface ITableOfContents : IModelObject
 {
   /// <summary>
   /// True if built-in heading styles are used to create a table of contents.
@@ -43,7 +43,7 @@ public partial interface TableOfContents : IModelObject
   /// other than the Heading 1 – Heading 9 styles).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofcontents.headingstyles?view=word-pia"/>
-  public HeadingStyles HeadingStyles { get; }
+  public IHeadingStyles HeadingStyles { get; }
 
   /// <summary>
   /// True if page numbers are aligned with the right margin in a table of contents.
@@ -61,7 +61,7 @@ public partial interface TableOfContents : IModelObject
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofcontents.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// Returns or sets the character between entries and their page numbers in a table of contents.

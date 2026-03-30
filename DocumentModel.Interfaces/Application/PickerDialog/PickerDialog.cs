@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Provides dialog UI functionality for picking people or data.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerdialog?view=office-pia"/>
-public partial interface PickerDialog: IModelObject
+public partial interface IPickerDialog: IModelObject
 {
   /// <summary>
   /// Gets or sets the `DataHandlerId` property.
@@ -21,6 +21,6 @@ public partial interface PickerDialog: IModelObject
   /// Gets the `Properties` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerdialog.properties?view=office-pia"/>
-  public PickerProperties Properties { get; }
+  public IPickerProperties Properties { get; }
 }
 

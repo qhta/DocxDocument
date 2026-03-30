@@ -8,7 +8,7 @@ namespace DocumentModel.Application;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolders?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface SharedWorkspaceFolders: IModelObject
+public partial interface ISharedWorkspaceFolders: IModelObject
 {
   /// <summary>
   /// Invokes `Add`.
@@ -17,6 +17,6 @@ public partial interface SharedWorkspaceFolders: IModelObject
   /// <param name="ParentFolder">The `ParentFolder` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolders.add?view=office-pia"/>
-  public SharedWorkspaceFolder Add(string FolderName, object ParentFolder);
+  public ISharedWorkspaceFolder Add(string FolderName, object ParentFolder);
 }
 

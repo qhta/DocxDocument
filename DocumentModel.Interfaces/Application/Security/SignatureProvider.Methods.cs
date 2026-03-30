@@ -8,7 +8,7 @@ namespace DocumentModel.Application;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface SignatureProvider: IModelObject
+public partial interface ISignatureProvider: IModelObject
 {
   /// <summary>
   /// Invokes `GenerateSignatureLineImage`.
@@ -20,14 +20,14 @@ public partial interface SignatureProvider: IModelObject
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.generatesignaturelineimage?view=office-pia"/>
   public object GenerateSignatureLineImage
-    (SignatureLineImage siglnimg, SignatureSetup psigsetup, SignatureInfo psiginfo, object XmlDsigStream);
+    (SignatureLineImage siglnimg, ISignatureSetup psigsetup, ISignatureInfo psiginfo, object XmlDsigStream);
   /// <summary>
   /// Invokes `ShowSignatureSetup`.
   /// </summary>
   /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
   /// <param name="psigsetup">The `psigsetup` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.showsignaturesetup?view=office-pia"/>
-  public void ShowSignatureSetup(object ParentWindow, SignatureSetup psigsetup);
+  public void ShowSignatureSetup(object ParentWindow, ISignatureSetup psigsetup);
   /// <summary>
   /// Invokes `ShowSigningCeremony`.
   /// </summary>
@@ -35,7 +35,7 @@ public partial interface SignatureProvider: IModelObject
   /// <param name="psigsetup">The `psigsetup` parameter.</param>
   /// <param name="psiginfo">The `psiginfo` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.showsigningceremony?view=office-pia"/>
-  public void ShowSigningCeremony(object ParentWindow, SignatureSetup psigsetup, SignatureInfo psiginfo);
+  public void ShowSigningCeremony(object ParentWindow, ISignatureSetup psigsetup, ISignatureInfo psiginfo);
   /// <summary>
   /// Invokes `SignXmlDsig`.
   /// </summary>
@@ -44,7 +44,7 @@ public partial interface SignatureProvider: IModelObject
   /// <param name="psiginfo">The `psiginfo` parameter.</param>
   /// <param name="XmlDsigStream">The `XmlDsigStream` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.signxmldsig?view=office-pia"/>
-  public void SignXmlDsig(object QueryContinue, SignatureSetup psigsetup, SignatureInfo psiginfo, object XmlDsigStream);
+  public void SignXmlDsig(object QueryContinue, ISignatureSetup psigsetup, ISignatureInfo psiginfo, object XmlDsigStream);
   /// <summary>
   /// Invokes `NotifySignatureAdded`.
   /// </summary>
@@ -52,7 +52,7 @@ public partial interface SignatureProvider: IModelObject
   /// <param name="psigsetup">The `psigsetup` parameter.</param>
   /// <param name="psiginfo">The `psiginfo` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.notifysignatureadded?view=office-pia"/>
-  public void NotifySignatureAdded(object ParentWindow, SignatureSetup psigsetup, SignatureInfo psiginfo);
+  public void NotifySignatureAdded(object ParentWindow, ISignatureSetup psigsetup, ISignatureInfo psiginfo);
   /// <summary>
   /// Invokes `VerifyXmlDsig`.
   /// </summary>
@@ -64,7 +64,7 @@ public partial interface SignatureProvider: IModelObject
   /// <param name="pcertverres">The `pcertverres` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.verifyxmldsig?view=office-pia"/>
   public void VerifyXmlDsig
-  (object QueryContinue, SignatureSetup psigsetup, SignatureInfo psiginfo, object XmlDsigStream,
+  (object QueryContinue, ISignatureSetup psigsetup, ISignatureInfo psiginfo, object XmlDsigStream,
     ref ContentVerificationResults pcontverres, ref CertificateVerificationResults pcertverres);
   /// <summary>
   /// Invokes `ShowSignatureDetails`.
@@ -77,7 +77,7 @@ public partial interface SignatureProvider: IModelObject
   /// <param name="pcertverres">The `pcertverres` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.showsignaturedetails?view=office-pia"/>
   public void ShowSignatureDetails
-  (object ParentWindow, SignatureSetup psigsetup, SignatureInfo psiginfo, object XmlDsigStream,
+  (object ParentWindow, ISignatureSetup psigsetup, ISignatureInfo psiginfo, object XmlDsigStream,
     ref ContentVerificationResults pcontverres, ref CertificateVerificationResults pcertverres);
   /// <summary>
   /// Invokes `GetProviderDetail`.

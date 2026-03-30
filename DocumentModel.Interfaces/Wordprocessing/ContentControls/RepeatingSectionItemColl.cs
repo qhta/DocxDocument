@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the collection of RepeatingSectionItem objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.repeatingsectionitemcoll?view=word-pia"/>
-public interface RepeatingSectionItemColl : IModelCollection<RepeatingSectionItem>
+public interface IRepeatingSectionItemColl : IModelCollection<IRepeatingSectionItem>
 {
 }

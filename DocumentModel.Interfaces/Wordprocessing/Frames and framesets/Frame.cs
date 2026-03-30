@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a frame in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frame?view=word-pia"/>
-public partial interface Frame : IModelObject
+public partial interface IFrame : IModelObject
 {
   /// <summary>
   /// Returns or sets a <see cref="FrameSizeRule"/> constant that represents the rule for determining the height of the specified frame.
@@ -82,7 +82,7 @@ public partial interface Frame : IModelObject
   /// Returns a <see cref="Shading"/> object that represents the shading formatting for the specified frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frame.shading?view=word-pia"/>
-  public Drw.Shading Shading { get; }
+  public Drw.IShading Shading { get; }
 
   /// <summary>
   /// Returns or sets a <see cref="Borders"/> collection that represents the borders of the specified frame.
@@ -94,5 +94,5 @@ public partial interface Frame : IModelObject
   /// Returns a <see cref="Range"/> object that represents the portion of a document that's contained in the specified frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frame.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 }

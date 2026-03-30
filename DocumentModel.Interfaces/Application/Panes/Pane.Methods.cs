@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane?view=word-pia"/>
-public partial interface Pane: IModelObject
+public partial interface IPane: IModelObject
 {
   /// <summary>
   /// Activates the specified pane.

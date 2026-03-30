@@ -2,7 +2,7 @@
 /// <summary>
 /// Abstract representation of an axis type. All specific axis types implement this class.
 /// </summary>
-public interface IAxis
+public interface AbstractAxis
 {
   /// <summary>
   ///   Identifier for the axis.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathlimupp?view=word-pia"/>
-public partial interface OMathLimUpp: IModelObject
+public partial interface IOMathLimUpp: IModelObject
 {
   /// <summary>
   /// Converts the upper-limit construct to a lower-limit construct.
@@ -14,5 +14,5 @@ public partial interface OMathLimUpp: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathlimupp.tolimlow?view=word-pia"/>
-  public OMathFunction ToLimLow();
+  public IOMathFunction ToLimLow();
 }

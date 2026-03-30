@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs?view=word-pia"/>
-public partial interface Paragraphs: IModelObject
+public partial interface IParagraphs: IModelObject
 {
   /// <summary>
   /// Adds a new paragraph to the document at the specified range.  
@@ -15,5 +15,5 @@ public partial interface Paragraphs: IModelObject
   /// that specifies the insertion point. Cannot be null.</param>
   /// <returns>A Paragraph object representing the newly added paragraph.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.add?view=word-pia"/>
-  public Paragraph Add(object Range);
+  public IParagraph Add(object Range);
 }

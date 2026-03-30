@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Text;
 /// Represents a collection of hyperlinks.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsohyperlinks?view=office-pia"/>
-public partial interface Hyperlinks: IModelObject
+public partial interface IHyperlinks: IModelObject
 {
 }
 

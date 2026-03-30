@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Contains all Answer Wizard files (.aw) available to the active Office application.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.answerwizardfiles?view=office-pia"/>
-public partial interface AnswerWizardFiles: IModelObject
+public partial interface IAnswerWizardFiles: IModelObject
 {
   /// <summary>
   /// Adds an Answer Wizard file to the collection.

@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single table of figures in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableoffigures?view=word-pia"/>
-public partial interface TableOfFigures : IModelObject
+public partial interface ITableOfFigures : IModelObject
 {
   /// <summary>
   /// Returns or sets the label that identifies the items to be included in a table of figures.
@@ -54,7 +54,7 @@ public partial interface TableOfFigures : IModelObject
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableoffigures.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// True if Table of Contents Entry (TC) fields are used to create a table of figures.
@@ -73,7 +73,7 @@ public partial interface TableOfFigures : IModelObject
   /// other than the Heading 1 – Heading 9 styles).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableoffigures.headingstyles?view=word-pia"/>
-  public HeadingStyles HeadingStyles { get; }
+  public IHeadingStyles HeadingStyles { get; }
 
   /// <summary>
   /// Returns or sets the character between entries and their page numbers in a table of figures.

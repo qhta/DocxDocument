@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.Text;
 /// Represents paragraph formatting of a text range.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.paragraphformat2?view=office-pia"/>
-public partial interface ParagraphFormat2: IModelObject
+public partial interface IParagraphFormat2: IModelObject
 {
   /// <summary>
   /// Gets or sets the `Alignment` property.
@@ -23,7 +23,7 @@ public partial interface ParagraphFormat2: IModelObject
   /// Gets the `Bullet` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.paragraphformat2.bullet?view=office-pia"/>
-  public BulletFormat Bullet { get; }
+  public IBulletFormat Bullet { get; }
   /// <summary>
   /// Gets or sets the `FarEastLineBreakLevel` property.
   /// </summary>
@@ -88,7 +88,7 @@ public partial interface ParagraphFormat2: IModelObject
   /// Gets the `TabStops` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.paragraphformat2.tabstops?view=office-pia"/>
-  public TabStops TabStops { get; }
+  public ITabStops TabStops { get; }
   /// <summary>
   /// Gets or sets the `TextDirection` property.
   /// </summary>

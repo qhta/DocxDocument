@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart legend.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegend?view=office-pia"/>
-public partial interface Legend: IModelObject
+public partial interface ILegend: IModelObject
 {
   /// <summary>
   /// Gets or sets the `Name` property.
@@ -21,7 +21,7 @@ public partial interface Legend: IModelObject
   /// Gets the `Font` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegend.font?view=office-pia"/>
-  public ChartFont Font { get; }
+  public IChartFont Font { get; }
   /// <summary>
   /// Gets or sets the `Position` property.
   /// </summary>
@@ -46,7 +46,7 @@ public partial interface Legend: IModelObject
   /// Gets the `Fill` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegend.fill?view=office-pia"/>
-  public ChartFillFormat Fill { get; }
+  public IChartFillFormat Fill { get; }
   /// <summary>
   /// Gets or sets the `Left` property.
   /// </summary>
@@ -76,6 +76,6 @@ public partial interface Legend: IModelObject
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegend.format?view=office-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 }
 

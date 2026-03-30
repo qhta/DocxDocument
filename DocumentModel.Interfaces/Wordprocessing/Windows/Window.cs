@@ -12,7 +12,7 @@ public partial interface IWindow : IModelObject
   /// Returns a Pane object that represents the active pane for the specified window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.activepane?view=word-pia"/>
-  public Pane ActivePane { get; }
+  public IPane ActivePane { get; }
 
   /// <summary>
   /// Returns a Document object associated with the specified window.
@@ -24,13 +24,13 @@ public partial interface IWindow : IModelObject
   /// Returns a Panes collection that represents all the window panes for the specified window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.panes?view=word-pia"/>
-  public Panes Panes { get; }
+  public IPanes Panes { get; }
 
   /// <summary>
   /// Returns the Selection object that represents a selected range or the insertion point.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.selection?view=word-pia"/>
-  public Selection Selection { get; }
+  public ISelection Selection { get; }
 
   /// <summary>
   /// Returns or sets an Integer that represents the horizontal position of the specified window, measured in
@@ -97,7 +97,7 @@ public partial interface IWindow : IModelObject
   /// Returns a View object that represents the view for the specified window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.view?view=word-pia"/>
-  public View View { get; }
+  public IView View { get; }
 
   /// <summary>
   /// Returns the window type.

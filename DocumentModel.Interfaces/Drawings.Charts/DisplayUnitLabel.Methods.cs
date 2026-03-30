@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a display unit label.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel?view=office-pia"/>
-public partial interface DisplayUnitLabel: IModelObject
+public partial interface IDisplayUnitLabel: IModelObject
 {
   /// <summary>
   /// Deletes the display unit label.

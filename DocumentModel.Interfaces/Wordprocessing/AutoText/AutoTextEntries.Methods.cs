@@ -16,7 +16,7 @@ public partial interface IAutoTextEntries: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autotextentries.add?view=word-pia"/>
-  public IAutoTextEntry Add(string Name, Range Range);
+  public IAutoTextEntry Add(string Name, IRange Range);
 
   /// <summary>
   /// Appends the specified range to the Spike AutoText entry.
@@ -27,5 +27,5 @@ public partial interface IAutoTextEntries: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autotextentries.appendtospike?view=word-pia"/>
-  public IAutoTextEntry AppendToSpike(Range Range);
+  public IAutoTextEntry AppendToSpike(IRange Range);
 }

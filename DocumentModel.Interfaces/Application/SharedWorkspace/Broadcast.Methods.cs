@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.broadcast?view=word-pia"/>
-public partial interface Broadcast: IModelObject
+public partial interface IBroadcast: IModelObject
 {
   /// <summary>
   /// Starts a broadcast session.

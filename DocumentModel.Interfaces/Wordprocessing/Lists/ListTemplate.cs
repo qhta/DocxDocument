@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single list template that includes all the formatting that defines a list.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listtemplate?view=word-pia"/>
-public partial interface ListTemplate : IModelObject
+public partial interface IListTemplate : IModelObject
 {
   /// <summary>
   /// Returns or sets whether the list template is outline numbered.
@@ -22,5 +22,5 @@ public partial interface ListTemplate : IModelObject
   /// Returns the list levels collection for the list template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listtemplate.listlevels?view=word-pia"/>
-  public ListLevels ListLevels { get; }
+  public IListLevels ListLevels { get; }
 }

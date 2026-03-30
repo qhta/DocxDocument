@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a hyperlink.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hyperlink?view=word-pia"/>
-public partial interface Hyperlink : IModelObject
+public partial interface IHyperlink : IModelObject
 {
   /// <summary>
   /// Returns the name of the hyperlink.
@@ -28,13 +28,13 @@ public partial interface Hyperlink : IModelObject
   /// Returns a range object that represents the hyperlink range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hyperlink.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// Returns a shape object that represents the shape for the hyperlink.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hyperlink.shape?view=word-pia"/>
-  public Drw.Shape Shape { get; }
+  public Drw.IShape Shape { get; }
 
   /// <summary>
   /// Returns the previous subaddress of the hyperlink.

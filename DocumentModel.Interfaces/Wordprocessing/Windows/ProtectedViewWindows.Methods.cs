@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindows?view=word-pia"/>
-public partial interface ProtectedViewWindows: IModelObject
+public partial interface IProtectedViewWindows: IModelObject
 {
   /// <summary>
   /// Opens the specified document in a new protected view window.
@@ -18,10 +18,10 @@ public partial interface ProtectedViewWindows: IModelObject
   /// window; otherwise, <see langword="false"/>.</param>
   /// <param name="OpenAndRepair">Indicates whether to attempt to repair the document while opening. Set to <see langword="true"/> to open and
   /// repair; otherwise, <see langword="false"/>.</param>
-  /// <returns>A <see cref="ProtectedViewWindow"/> object representing the newly opened protected view window.</returns>
+  /// <returns>A <see cref="IProtectedViewWindow"/> object representing the newly opened protected view window.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindows.open?view=word-pia"/>
-  public ProtectedViewWindow Open(string FileName, bool AddToRecentFiles, string PasswordDocument, bool Visible, bool OpenAndRepair);
+  public IProtectedViewWindow Open(string FileName, bool AddToRecentFiles, string PasswordDocument, bool Visible, bool OpenAndRepair);
 }

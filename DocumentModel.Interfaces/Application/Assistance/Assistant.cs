@@ -10,7 +10,7 @@ namespace DocumentModel.Application;
 /// animation, and the types of help it provides.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant?view=office-pia"/>
-public partial interface Assistant: IModelObject
+public partial interface IAssistant: IModelObject
 {
   /// <summary>
   /// Gets or sets the `Top` property.
@@ -26,7 +26,7 @@ public partial interface Assistant: IModelObject
   /// Gets the `NewBalloon` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.newballoon?view=office-pia"/>
-  public Balloon NewBalloon { get; }
+  public IBalloon NewBalloon { get; }
   /// <summary>
   /// Gets the `BalloonError` property.
   /// </summary>

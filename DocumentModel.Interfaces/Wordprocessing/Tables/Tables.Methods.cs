@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tables?view=word-pia"/>
-public partial interface Tables: IModelObject
+public partial interface ITables: IModelObject
 {
   /// <summary>
   /// Returns the value produced by the add old operation.
@@ -17,5 +17,5 @@ public partial interface Tables: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tables.addold?view=word-pia"/>
-  public Table AddOld(Range Range, int NumRows, int NumColumns);
+  public ITable AddOld(IRange Range, int NumRows, int NumColumns);
 }

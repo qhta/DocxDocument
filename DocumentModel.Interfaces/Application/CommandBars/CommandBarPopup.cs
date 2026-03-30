@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Represents a pop-up control on a command bar.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarpopup?view=office-pia"/>
-public partial interface CommandBarPopup: CommandBarControl
+public partial interface ICommandBarPopup: ICommandBarControl
 {
   /// <summary>
   /// Gets or sets the `accParent` property.
@@ -201,12 +201,12 @@ public partial interface CommandBarPopup: CommandBarControl
   /// Gets the `CommandBar` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarpopup.commandbar?view=office-pia"/>
-  public CommandBar CommandBar { get; }
+  public ICommandBar CommandBar { get; }
   /// <summary>
   /// Gets the `Controls` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarpopup.controls?view=office-pia"/>
-  public CommandBarControls Controls { get; }
+  public ICommandBarControls Controls { get; }
   /// <summary>
   /// Gets or sets the `OLEMenuGroup` property.
   /// </summary>

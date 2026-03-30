@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Represents the `WebPageFont` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webpagefont?view=office-pia"/>
-public partial interface WebPageFont: IModelObject
+public partial interface IWebPageFont: IModelObject
 {
   /// <summary>
   /// Gets or sets the `ProportionalFont` property.

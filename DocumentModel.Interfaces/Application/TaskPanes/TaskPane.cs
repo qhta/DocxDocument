@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single task pane available to Microsoft Word, which contains common tasks that users perform.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.taskpane?view=word-pia"/>
-public interface TaskPane : IModelObject
+public interface ITaskPane : IModelObject
 {
   /// <summary>
   /// Determines if the specified object is visible.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.firstletterexception?view=word-pia"/>
-public partial interface FirstLetterException: IModelObject
+public partial interface IFirstLetterException: IModelObject
 {
   /// <summary>
   /// Deletes the specified object.

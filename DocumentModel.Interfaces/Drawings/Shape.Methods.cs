@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape?view=office-pia"/>
-public partial interface Shape: IModelObject
+public partial interface IShape: IModelObject
 {
   /// <summary>
   /// Invokes `Apply`.
@@ -23,7 +23,7 @@ public partial interface Shape: IModelObject
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.duplicate?view=office-pia"/>
-  public Shape Duplicate();
+  public IShape Duplicate();
   /// <summary>
   /// Invokes `Flip`.
   /// </summary>
@@ -92,7 +92,7 @@ public partial interface Shape: IModelObject
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.ungroup?view=office-pia"/>
-  public ShapeRange Ungroup();
+  public IShapeRange Ungroup();
   /// <summary>
   /// Invokes `ZOrder`.
   /// </summary>
@@ -138,6 +138,6 @@ public partial interface Shape: IModelObject
   /// </summary>
   /// <param name="Layout">The `Layout` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.converttexttosmartart?view=office-pia"/>
-  public void ConvertTextToSmartArt(SmartArtLayout Layout);
+  public void ConvertTextToSmartArt(ISmartArtLayout Layout);
 }
 

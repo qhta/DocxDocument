@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodechildren?view=office-pia"/>
-public partial interface DiagramNodeChildren
+public partial interface IDiagramNodeChildren
 {
   /// <summary>
   /// Returns a child diagram node by index.
@@ -15,7 +15,7 @@ public partial interface DiagramNodeChildren
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodechildren.item?view=office-pia"/>
-  public DiagramNode Item(object Index);
+  public IDiagramNode Item(object Index);
   /// <summary>
   /// Adds a child node to the diagram node children collection.
   /// </summary>
@@ -23,7 +23,7 @@ public partial interface DiagramNodeChildren
   /// <param name="NodeType">The `NodeType` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodechildren.addnode?view=office-pia"/>
-  public DiagramNode AddNode(object Index, DiagramNodeType NodeType);
+  public IDiagramNode AddNode(object Index, DiagramNodeType NodeType);
   /// <summary>
   /// Selects all child diagram nodes.
   /// </summary>

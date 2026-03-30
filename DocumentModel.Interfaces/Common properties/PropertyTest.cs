@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a single file search criterion.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.propertytest?view=office-pia"/>
-public partial interface PropertyTest: IModelObject
+public partial interface IPropertyTest: IModelObject
 {
   /// <summary>
   /// Gets the name of the search property.

@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Represents a pop-up control on a command bar.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarpopup?view=office-pia"/>
-public partial interface CommandBarPopup: IModelObject
+public partial interface ICommandBarPopup: IModelObject
 {
   /// <summary>
   /// Invokes `accSelect`.
@@ -53,7 +53,7 @@ public partial interface CommandBarPopup: IModelObject
   /// <param name="Before">The `Before` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarpopup.copy?view=office-pia"/>
-  public new CommandBarControl Copy(object Bar, object Before);
+  public new ICommandBarControl Copy(object Bar, object Before);
   /// <summary>
   /// Invokes `Delete`.
   /// </summary>
@@ -72,7 +72,7 @@ public partial interface CommandBarPopup: IModelObject
   /// <param name="Before">The `Before` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarpopup.move?view=office-pia"/>
-  public new CommandBarControl Move(object Bar, object Before);
+  public new ICommandBarControl Move(object Bar, object Before);
   /// <summary>
   /// Invokes `Reset`.
   /// </summary>

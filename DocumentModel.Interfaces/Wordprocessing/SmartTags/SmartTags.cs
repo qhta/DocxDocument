@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// recognized type information.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttags?view=word-pia"/>
-public partial interface SmartTags : IModelCollection<SmartTag>
+public partial interface ISmartTags : IModelCollection<ISmartTag>
 {
 }

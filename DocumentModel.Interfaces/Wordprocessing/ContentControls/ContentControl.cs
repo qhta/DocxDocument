@@ -6,13 +6,13 @@ namespace DocumentModel.Wordprocessing;
 /// An individual content control. Content controls are bounded and potentially labeled regions in a document that serve as containers for specific types of content. Individual content controls may contain contents such as dates, lists, or paragraphs of formatted text. The ContentControl object is a member of the ContentControls collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol?view=word-pia"/>
-public partial interface ContentControl : IModelObject
+public partial interface IContentControl : IModelObject
 {
   /// <summary>
   /// Gets the range of text contained in the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the content control itself is locked.
@@ -30,7 +30,7 @@ public partial interface ContentControl : IModelObject
   /// Gets the XML mapping for the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.xmlmapping?view=word-pia"/>
-  public XMLMapping XMLMapping { get; }
+  public IXMLMapping XMLMapping { get; }
 
   /// <summary>
   /// Gets or sets the type of content control.
@@ -42,13 +42,13 @@ public partial interface ContentControl : IModelObject
   /// Gets the collection of list entries for a drop-down or combo box content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.dropdownlistentries?view=word-pia"/>
-  public ContentControlListEntries DropdownListEntries { get; }
+  public IContentControlListEntries DropdownListEntries { get; }
 
   /// <summary>
   /// Gets the placeholder text building block for the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.placeholdertext?view=word-pia"/>
-  public BuildingBlock PlaceholderText { get; }
+  public IBuildingBlock PlaceholderText { get; }
 
   /// <summary>
   /// Gets or sets the title of the content control.
@@ -72,7 +72,7 @@ public partial interface ContentControl : IModelObject
   /// Gets the parent content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.parentcontentcontrol?view=word-pia"/>
-  public ContentControl ParentContentControl { get; }
+  public IContentControl ParentContentControl { get; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the content control is removed after it is edited.
@@ -102,7 +102,7 @@ public partial interface ContentControl : IModelObject
   /// Gets or sets the building block type for a building block gallery content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.buildingblocktype?view=word-pia"/>
-  public BuildingBlockTypes BuildingBlockType { get; set; }
+  public IBuildingBlockTypes BuildingBlockType { get; set; }
 
   /// <summary>
   /// Gets or sets the building block category for a building block gallery content control.
@@ -162,7 +162,7 @@ public partial interface ContentControl : IModelObject
   /// Gets the collection of repeating section items.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.repeatingsectionitems?view=word-pia"/>
-  public RepeatingSectionItemColl RepeatingSectionItems { get; }
+  public IRepeatingSectionItemColl RepeatingSectionItems { get; }
 
   /// <summary>
   /// Gets or sets the title displayed for each repeating section item.

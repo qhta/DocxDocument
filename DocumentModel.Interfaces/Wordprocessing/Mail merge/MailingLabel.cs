@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a mailing label.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailinglabel?view=word-pia"/>
-public partial interface MailingLabel : IModelObject
+public partial interface IMailingLabel : IModelObject
 {
   /// <summary>
   /// Returns or sets whether a bar code is printed by default on mailing labels.
@@ -22,7 +22,7 @@ public partial interface MailingLabel : IModelObject
   /// Returns the custom labels collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailinglabel.customlabels?view=word-pia"/>
-  public CustomLabels CustomLabels { get; }
+  public ICustomLabels CustomLabels { get; }
 
   /// <summary>
   /// Returns or sets the default mailing label name.

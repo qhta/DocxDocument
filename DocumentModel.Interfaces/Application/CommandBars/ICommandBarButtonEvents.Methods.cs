@@ -13,6 +13,6 @@ public partial interface ICommandBarButtonEvents: IModelObject
   /// <param name="Ctrl">The `Ctrl` parameter.</param>
   /// <param name="CancelDefault">The `CancelDefault` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icommandbarbuttonevents.click?view=office-pia"/>
-  public void Click(CommandBarButton Ctrl, ref bool CancelDefault);
+  public void Click(ICommandBarButton Ctrl, ref bool CancelDefault);
 }
 

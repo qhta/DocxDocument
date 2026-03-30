@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset?view=word-pia"/>
-public partial interface Frameset: IModelObject
+public partial interface IFrameset: IModelObject
 {
   /// <summary>
   /// Returns the child frameset item.
@@ -15,7 +15,7 @@ public partial interface Frameset: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.get_childframesetitem?view=word-pia"/>
-  public Frameset ChildFramesetItem(int Index);
+  public IFrameset ChildFramesetItem(int Index);
 
   /// <summary>
   /// Returns the value produced by the add new frame operation.
@@ -26,5 +26,5 @@ public partial interface Frameset: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.addnewframe?view=word-pia"/>
-  public Frameset AddNewFrame(FramesetNewFrameLocation Where);
+  public IFrameset AddNewFrame(FramesetNewFrameLocation Where);
 }

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an item in a drop-down form field.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listentry?view=word-pia"/>
-public partial interface ListEntry : IModelObject
+public partial interface IListEntry : IModelObject
 {
   /// <summary>
   /// Returns the position of the item in the list entries collection.

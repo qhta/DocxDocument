@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Represents debug options for Office.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions?view=office-pia"/>
-public partial interface MsoDebugOptions: IModelObject
+public partial interface IMsoDebugOptions: IModelObject
 {
   /// <summary>
   /// Adds an assert tag to ignore.

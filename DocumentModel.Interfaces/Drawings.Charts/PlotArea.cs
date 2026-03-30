@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents the plot area of a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea?view=office-pia"/>
-public partial interface PlotArea: IModelObject
+public partial interface IPlotArea: IModelObject
 {
   /// <summary>
   /// Gets or sets the `Name` property.
@@ -31,7 +31,7 @@ public partial interface PlotArea: IModelObject
   /// Gets the `Fill` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea.fill?view=office-pia"/>
-  public ChartFillFormat Fill { get; }
+  public IChartFillFormat Fill { get; }
   /// <summary>
   /// Gets or sets the `Left` property.
   /// </summary>
@@ -76,6 +76,6 @@ public partial interface PlotArea: IModelObject
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea.format?view=office-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 }
 

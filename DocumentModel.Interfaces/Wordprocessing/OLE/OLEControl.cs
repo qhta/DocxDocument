@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an OLE control in a Word document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.olecontrol?view=word-pia"/>
-public interface OLEControl : _OLEControl, OCXEvents_Event
+public interface IOLEControl : I_OLEControl, IOCXEvents_Event
 {
 }

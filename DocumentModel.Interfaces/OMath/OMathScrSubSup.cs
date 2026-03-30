@@ -4,25 +4,25 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an equation with a base that contains a superscript or subscript.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsubsup?view=word-pia"/>
-public partial interface OMathScrSubSup : IModelObject
+public partial interface IOMathScrSubSup : IModelObject
 {
   /// <summary>
   /// Returns the base expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsubsup.e?view=word-pia"/>
-  public OMath E { get; }
+  public IOMath E { get; }
 
   /// <summary>
   /// Returns the subscript expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsubsup.sub?view=word-pia"/>
-  public OMath Sub { get; }
+  public IOMath Sub { get; }
 
   /// <summary>
   /// Returns the superscript expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsubsup.sup?view=word-pia"/>
-  public OMath Sup { get; }
+  public IOMath Sup { get; }
 
   /// <summary>
   /// Returns or sets whether the scripts are aligned.

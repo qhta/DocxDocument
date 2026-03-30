@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a label in the Office Assistant balloon.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.balloonlabel?view=office-pia"/>
-public partial interface BalloonLabel: IModelObject
+public partial interface IBalloonLabel: IModelObject
 {
   /// <summary>
   /// Gets the item associated with the label.

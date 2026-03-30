@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents up bars in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoupbars?view=office-pia"/>
-public partial interface UpBars: IModelObject
+public partial interface IUpBars: IModelObject
 {
   /// <summary>
   /// Gets the `Name` property.
@@ -26,11 +26,11 @@ public partial interface UpBars: IModelObject
   /// Gets the `Fill` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoupbars.fill?view=office-pia"/>
-  public ChartFillFormat Fill { get; }
+  public IChartFillFormat Fill { get; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoupbars.format?view=office-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 }
 

@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Represents the Answer Wizard in a Microsoft Office application.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.answerwizard?view=office-pia"/>
-public partial interface AnswerWizard: IModelObject
+public partial interface IAnswerWizard: IModelObject
 {
   /// <summary>
   /// Clears the list of Answer Wizard files.

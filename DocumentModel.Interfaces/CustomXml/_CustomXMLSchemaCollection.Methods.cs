@@ -6,7 +6,7 @@ namespace DocumentModel.CustomXml;
 /// Represents a collection of CustomXMLSchema objects attached to a data stream.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlschemacollection?view=office-pia"/>
-public partial interface _CustomXMLSchemaCollection
+public partial interface I_CustomXMLSchemaCollection
 {
   /// <summary>
   /// Adds a schema to the custom XML schema collection.
@@ -17,14 +17,14 @@ public partial interface _CustomXMLSchemaCollection
   /// <param name="InstallForAllUsers">The `InstallForAllUsers` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlschemacollection.add?view=office-pia"/>
-  public CustomXMLSchema Add
+  public ICustomXMLSchema Add
     (string NamespaceURI, string Alias, string FileName, bool InstallForAllUsers);
   /// <summary>
   /// Adds all schemas from another schema collection.
   /// </summary>
   /// <param name="SchemaCollection">The `SchemaCollection` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlschemacollection.addcollection?view=office-pia"/>
-  public void AddCollection(CustomXMLSchemaCollection SchemaCollection);
+  public void AddCollection(ICustomXMLSchemaCollection SchemaCollection);
   /// <summary>
   /// Validates the custom XML schema collection.
   /// </summary>

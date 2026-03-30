@@ -5,28 +5,28 @@ namespace DocumentModel.Drawings.Diagrams;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode?view=office-pia"/>
-public partial interface DiagramNode: IModelObject
+public partial interface IDiagramNode: IModelObject
 {
   /// <summary>
   /// Gets or sets the `Children` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.children?view=office-pia"/>
-  public DiagramNodeChildren Children { get; }
+  public IDiagramNodeChildren Children { get; }
   /// <summary>
   /// Gets the `Shape` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.shape?view=office-pia"/>
-  public Drw.Shape Shape { get; }
+  public Drw.IShape Shape { get; }
   /// <summary>
   /// Gets the `Root` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.root?view=office-pia"/>
-  public DiagramNode Root { get; }
+  public IDiagramNode Root { get; }
   /// <summary>
   /// Gets the `Diagram` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.diagram?view=office-pia"/>
-  public Diagram Diagram { get; }
+  public IDiagram Diagram { get; }
   /// <summary>
   /// Gets or sets the `Layout` property.
   /// </summary>
@@ -36,6 +36,6 @@ public partial interface DiagramNode: IModelObject
   /// Gets the `TextShape` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.textshape?view=office-pia"/>
-  public Drw.Shape TextShape { get; }
+  public Drw.IShape TextShape { get; }
 }
 

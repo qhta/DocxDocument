@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a Windows Live Broadcast Service broadcast session.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.broadcast?view=word-pia"/>
-public partial interface Broadcast : IModelObject
+public partial interface IBroadcast : IModelObject
 {
   /// <summary>
   /// Gets the attendee URL for the broadcast session.

@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodes?view=office-pia"/>
-public partial interface DiagramNodes
+public partial interface IDiagramNodes
 {
   /// <summary>
   /// Returns a diagram node by index.
@@ -15,7 +15,7 @@ public partial interface DiagramNodes
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodes.item?view=office-pia"/>
-  public DiagramNode Item(object Index);
+  public IDiagramNode Item(object Index);
   /// <summary>
   /// Selects all diagram nodes.
   /// </summary>

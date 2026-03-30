@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.Text;
 /// Represents the `TabStops2` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstops2?view=office-pia"/>
-public partial interface TabStops: IModelObject
+public partial interface ITabStops: IModelObject
 {
   /// <summary>
   /// Invokes `Item`.

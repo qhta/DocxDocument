@@ -2,6 +2,6 @@
 /// <summary>
 /// Abstract representation of a chart type. All specific chart types implement this class.
 /// </summary>
-public interface IChart
+public interface AbstractChart
 {
 }

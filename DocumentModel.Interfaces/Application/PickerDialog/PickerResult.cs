@@ -4,7 +4,7 @@ namespace DocumentModel.Application;
 /// Represents a resolved or selected item of data.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerresult?view=office-pia"/>
-public partial interface PickerResult: IModelObject
+public partial interface IPickerResult: IModelObject
 {
   /// <summary>
   /// Gets the unique identifier of the picker result.
@@ -40,11 +40,11 @@ public partial interface PickerResult: IModelObject
   /// Gets field definitions for picker result sub-items.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerresult.fields?view=office-pia"/>
-  public PickerFields Fields { get; }
+  public IPickerFields Fields { get; }
   /// <summary>
   /// Gets duplicate candidates when resolution returns multiple matches.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerresult.duplicateresults?view=office-pia"/>
-  public PickerResults DuplicateResults { get; }
+  public IPickerResults DuplicateResults { get; }
 }
 

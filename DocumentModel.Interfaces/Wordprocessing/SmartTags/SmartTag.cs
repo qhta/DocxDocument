@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a string in a document or range that contains recognized type information.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttag?view=word-pia"/>
-public partial interface SmartTag : IModelObject
+public partial interface ISmartTag : IModelObject
 {
   /// <summary>
   /// Returns the name of the specified object.
@@ -22,7 +22,7 @@ public partial interface SmartTag : IModelObject
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttag.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// Returns a String that represents the URL address for a smart tag.
@@ -40,11 +40,11 @@ public partial interface SmartTag : IModelObject
   /// Returns a SmartTagActions collection that represents the collection of actions available on a smart tag.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttag.smarttagactions?view=word-pia"/>
-  public SmartTagActions SmartTagActions { get; }
+  public ISmartTagActions SmartTagActions { get; }
 
   /// <summary>
   /// Returns a XMLNode object that represents the XML element for a smart tag.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttag.xmlnode?view=word-pia"/>
-  public XMLNode XMLNode { get; }
+  public IXMLNode XMLNode { get; }
 }

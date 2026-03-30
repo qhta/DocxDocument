@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a surface chart, including wireframe, series, band formats, axis identifiers, and extension list.
 /// </summary>
 [OpenXmlType(typeof(DXDC.SurfaceChart))]
-public partial class SurfaceChart: ModelElement<DXDC.SurfaceChart>, IChart
+public partial class SurfaceChart: ModelElement<DXDC.SurfaceChart>, AbstractChart
 {
   /// <summary>
   ///   Indicates whether the chart is rendered as a wireframe.

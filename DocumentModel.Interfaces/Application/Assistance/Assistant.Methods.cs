@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents the Microsoft Office Assistant.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant?view=office-pia"/>
-public partial interface Assistant: IModelObject
+public partial interface IAssistant: IModelObject
 {
   /// <summary>
   /// Moves the Office Assistant to the specified screen coordinates.

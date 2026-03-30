@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single table column. The Column object is a member of the Columns collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column?view=word-pia"/>
-public partial interface Column : IModelObject
+public partial interface IColumn : IModelObject
 {
   /// <summary>
   /// Gets or sets the width of the column, in points.
@@ -34,7 +34,7 @@ public partial interface Column : IModelObject
   /// Gets the collection of cells in the column.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column.cells?view=word-pia"/>
-  public Cells Cells { get; }
+  public ICells Cells { get; }
 
   /// <summary>
   /// Gets or sets the border formatting for the column.
@@ -46,19 +46,19 @@ public partial interface Column : IModelObject
   /// Gets the shading formatting for the column.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column.shading?view=word-pia"/>
-  public Drw.Shading Shading { get; }
+  public Drw.IShading Shading { get; }
 
   /// <summary>
   /// Gets the next column in the table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column.next?view=word-pia"/>
-  public Column Next { get; }
+  public IColumn Next { get; }
 
   /// <summary>
   /// Gets the previous column in the table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column.previous?view=word-pia"/>
-  public Column Previous { get; }
+  public IColumn Previous { get; }
 
   /// <summary>
   /// Gets the nesting level of the column.

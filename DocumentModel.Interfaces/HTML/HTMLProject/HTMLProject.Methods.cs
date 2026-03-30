@@ -8,7 +8,7 @@ namespace DocumentModel.HTML;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlproject?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface HTMLProject: IModelObject
+public partial interface IHTMLProject: IModelObject
 {
   /// <summary>
   /// Invokes `RefreshProject`.

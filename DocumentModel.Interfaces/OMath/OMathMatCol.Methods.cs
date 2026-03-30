@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatcol?view=word-pia"/>
-public partial interface OMathMatCol: IModelObject
+public partial interface IOMathMatCol: IModelObject
 {
   /// <summary>
   /// Deletes the specified matrix column.

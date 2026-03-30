@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a shared workspace linked to the current document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspace?view=office-pia"/>
-public partial interface SharedWorkspace: IModelObject
+public partial interface ISharedWorkspace: IModelObject
 {
   /// <summary>
   /// Invokes `Refresh`.

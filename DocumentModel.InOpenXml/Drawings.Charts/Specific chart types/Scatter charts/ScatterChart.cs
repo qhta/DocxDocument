@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a scatter chart, including style, color variation, series, labels, axis identifiers, and extension list.
 /// </summary>
 [OpenXmlType(typeof(DXDC.ScatterChart))]
-public partial class ScatterChart: ModelElement<DXDC.ScatterChart>, IChart
+public partial class ScatterChart: ModelElement<DXDC.ScatterChart>, AbstractChart
 {
   /// <summary>
   ///   Style of the scatter chart.

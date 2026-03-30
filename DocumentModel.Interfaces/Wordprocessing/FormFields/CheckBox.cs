@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single check box form field.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.checkbox?view=word-pia"/>
-public interface CheckBox : IModelObject
+public interface ICheckBox : IModelObject
 {
   /// <summary>
   /// Gets a value indicating whether the `CheckBox` object is valid.

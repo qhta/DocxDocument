@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents the `Trendlines` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.trendlines?view=office-pia"/>
-public partial interface Trendlines: IModelObject
+public partial interface ITrendlines: IModelObject
 {
   /// <summary>
   /// Invokes `Add`.
@@ -22,7 +22,7 @@ public partial interface Trendlines: IModelObject
   /// <param name="Name">The `Name` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.trendlines.add?view=office-pia"/>
-  public Trendline Add
+  public ITrendline Add
   (TrendlineType Type, object Order, object Period, object Forward, object Backward,
     object Intercept, object DisplayEquation, object DisplayRSquared, object Name);
 

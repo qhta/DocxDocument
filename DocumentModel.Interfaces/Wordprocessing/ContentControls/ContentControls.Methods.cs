@@ -4,17 +4,17 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrols?view=word-pia"/>
-public partial interface ContentControls: IModelObject
+public partial interface IContentControls: IModelObject
 {
   /// <summary>
   /// Adds a content control of the specified type.
   /// </summary>
   /// <param name="Type">The type of content control to add.</param>
   /// <param name="Range">The range where the content control is added.</param>
-  /// <returns>The created <see cref="ContentControl"/> object.</returns>
+  /// <returns>The created <see cref="IContentControl"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrols.add?view=word-pia"/>
-  public ContentControl Add(ContentControlType Type, object Range);
+  public IContentControl Add(ContentControlType Type, object Range);
 }

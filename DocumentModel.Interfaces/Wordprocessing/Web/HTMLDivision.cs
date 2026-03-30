@@ -4,13 +4,13 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single HTML division in a web document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivision?view=word-pia"/>
-public partial interface HTMLDivision : IModelObject
+public partial interface IHTMLDivision : IModelObject
 {
   /// <summary>
   /// Returns a range object that represents the contents of the HTML division.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivision.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// Returns a borders collection that represents the borders for the HTML division.
@@ -46,5 +46,5 @@ public partial interface HTMLDivision : IModelObject
   /// Returns the HTML divisions collection that contains this HTML division.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivision.htmldivisions?view=word-pia"/>
-  public HTMLDivisions HTMLDivisions { get; }
+  public IHTMLDivisions HTMLDivisions { get; }
 }

@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a trendline in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline?view=word-pia"/>
-public partial interface Trendline : IModelObject
+public partial interface ITrendline : IModelObject
 {
   /// <summary>
   /// Returns or sets the number of periods (or units on a scatter chart) that the trendline extends backward.
@@ -19,13 +19,13 @@ public partial interface Trendline : IModelObject
   /// Returns a ChartBorder object that represents the border of the object. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public IChartBorder Border { get; }
 
   /// <summary>
   /// Returns a DataLabel object that represents the data label associated with the trendline. Read- only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.datalabel?view=word-pia"/>
-  public DataLabel DataLabel { get; }
+  public IDataLabel DataLabel { get; }
 
   /// <summary>
   /// True if the equation for the trendline is displayed on the chart (in the same data label as the R- squared
@@ -102,7 +102,7 @@ public partial interface Trendline : IModelObject
   /// Returns the line, fill, and effect formatting for the object. Read-only ChartFormat.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 
   /// <summary>
   /// Returns or sets the number of periods (or units on a scatter chart) that the trendline extends backward.

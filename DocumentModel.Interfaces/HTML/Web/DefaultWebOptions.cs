@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Contains global application-level attributes used by Microsoft Word when you save a document as a Web page or open a Web page.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions?view=word-pia"/>
-public interface DefaultWebOptions : IModelObject
+public interface IDefaultWebOptions : IModelObject
 {
   /// <summary>
   /// Gets or sets a value indicating whether Word optimizes documents for the target browser when saving as a web page.
@@ -80,7 +80,7 @@ public interface DefaultWebOptions : IModelObject
   /// Gets the web page font settings.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.fonts?view=word-pia"/>
-  public App.WebPageFonts Fonts { get; }
+  public App.IWebPageFonts Fonts { get; }
   /// <summary>
   /// Gets the suffix used for the folder that contains supporting files for saved web pages.
   /// </summary>

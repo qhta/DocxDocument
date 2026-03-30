@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Represents all filters applied to the attached mail merge data source.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilters?view=office-pia"/>
-public partial interface ODSOFilters: IModelObject
+public partial interface IODSOFilters: IModelObject
 {
   /// <summary>
   /// Returns a filter from the collection.

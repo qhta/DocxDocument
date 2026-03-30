@@ -10,7 +10,7 @@ public interface IBreak: IModelObject
   /// Gets the range that represents the break.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.break.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
   /// <summary>
   /// Gets the page number that contains the break.
   /// </summary>

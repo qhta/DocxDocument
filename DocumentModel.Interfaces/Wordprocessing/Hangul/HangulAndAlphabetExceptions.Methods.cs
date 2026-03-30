@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hangulandalphabetexceptions?view=word-pia"/>
-public partial interface HangulAndAlphabetExceptions: IModelObject
+public partial interface IHangulAndAlphabetExceptions: IModelObject
 {
   /// <summary>
   /// Returns the value produced by the add operation.
@@ -15,5 +15,5 @@ public partial interface HangulAndAlphabetExceptions: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hangulandalphabetexceptions.add?view=word-pia"/>
-  public HangulAndAlphabetException Add(string Name);
+  public IHangulAndAlphabetException Add(string Name);
 }

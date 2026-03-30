@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a language used for proofing or formatting in Microsoft Word.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language?view=word-pia"/>
-public interface Language : IModelObject
+public interface ILanguage : IModelObject
 {
   /// <summary>
   /// Returns a language ID constant for the language.
@@ -25,22 +25,22 @@ public interface Language : IModelObject
   /// Returns the active grammar dictionary for the language.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language.activegrammardictionary?view=word-pia"/>
-  public Dictionary ActiveGrammarDictionary { get; }
+  public IDictionary ActiveGrammarDictionary { get; }
   /// <summary>
   /// Returns the active hyphenation dictionary for the language.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language.activehyphenationdictionary?view=word-pia"/>
-  public Dictionary ActiveHyphenationDictionary { get; }
+  public IDictionary ActiveHyphenationDictionary { get; }
   /// <summary>
   /// Returns the active spelling dictionary for the language.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language.activespellingdictionary?view=word-pia"/>
-  public Dictionary ActiveSpellingDictionary { get; }
+  public IDictionary ActiveSpellingDictionary { get; }
   /// <summary>
   /// Returns the active thesaurus dictionary for the language.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language.activethesaurusdictionary?view=word-pia"/>
-  public Dictionary ActiveThesaurusDictionary { get; }
+  public IDictionary ActiveThesaurusDictionary { get; }
   /// <summary>
   /// Returns or sets the default writing style for the language.
   /// </summary>

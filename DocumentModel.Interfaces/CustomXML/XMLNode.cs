@@ -1,6 +1,6 @@
 using DocumentModel.Wordprocessing;
 
-using Range = DocumentModel.Wordprocessing.Range;
+using IRange = DocumentModel.Wordprocessing.IRange;
 
 namespace DocumentModel.CustomXml;
 
@@ -8,7 +8,7 @@ namespace DocumentModel.CustomXml;
 /// Represents a single XML element applied to a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode?view=word-pia"/>
-public partial interface XMLNode : IModelObject
+public partial interface IXMLNode : IModelObject
 {
   /// <summary>
   /// Returns a String that represents the name of the element without any prefix.
@@ -20,7 +20,7 @@ public partial interface XMLNode : IModelObject
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// Returns or sets a String that represents the text displayed for an XML element.
@@ -40,32 +40,32 @@ public partial interface XMLNode : IModelObject
   /// specified element.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.nextsibling?view=word-pia"/>
-  public XMLNode NextSibling { get; }
+  public IXMLNode NextSibling { get; }
 
   /// <summary>
   /// Returns a XMLNode object that represents the previous element in the document that is at the same level as the
   /// specified element.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.previoussibling?view=word-pia"/>
-  public XMLNode PreviousSibling { get; }
+  public IXMLNode PreviousSibling { get; }
 
   /// <summary>
   /// Returns a XMLNode object that represents the parent element of the specified element.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.parentnode?view=word-pia"/>
-  public XMLNode ParentNode { get; }
+  public IXMLNode ParentNode { get; }
 
   /// <summary>
   /// Returns a DiagramNode object that represents the first child node of a parent node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.firstchild?view=word-pia"/>
-  public XMLNode FirstChild { get; }
+  public IXMLNode FirstChild { get; }
 
   /// <summary>
   /// Returns a DiagramNode object that represents the last child node of a parent node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.lastchild?view=word-pia"/>
-  public XMLNode LastChild { get; }
+  public IXMLNode LastChild { get; }
 
   /// <summary>
   /// Returns a Document object that represents the parent document of the specified XML element.
@@ -83,13 +83,13 @@ public partial interface XMLNode : IModelObject
   /// Returns a XMLNodes collection that represents the child elements of a specified element.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.childnodes?view=word-pia"/>
-  public XMLNodes ChildNodes { get; }
+  public IXMLNodes ChildNodes { get; }
 
   /// <summary>
   /// Returns a XMLNodes collection that represents the attributes for the specified element.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.attributes?view=word-pia"/>
-  public XMLNodes Attributes { get; }
+  public IXMLNodes Attributes { get; }
 
   /// <summary>
   /// Returns or sets a String that represents the value of an attribute.
@@ -108,7 +108,7 @@ public partial interface XMLNode : IModelObject
   /// object (which returns the child elements of a specified element).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.childnodesuggestions?view=word-pia"/>
-  public XMLChildNodeSuggestions ChildNodeSuggestions { get; }
+  public IXMLChildNodeSuggestions ChildNodeSuggestions { get; }
 
   /// <summary>
   /// Returns the level of the specified XML element within the hierarchy of elements applied to a document.
@@ -127,7 +127,7 @@ public partial interface XMLNode : IModelObject
   /// Returns a SmartTag object that represents the smart tag associated with an XML element.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.smarttag?view=word-pia"/>
-  public SmartTag SmartTag { get; }
+  public ISmartTag SmartTag { get; }
 
   /// <summary>
   /// Returns or sets a String that represents the text displayed for an element that contains no text.

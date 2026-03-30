@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a recently used file.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.recentfile?view=word-pia"/>
-public partial interface RecentFile : IModelObject
+public partial interface IRecentFile : IModelObject
 {
   /// <summary>
   /// Returns or sets the name of the specified object.

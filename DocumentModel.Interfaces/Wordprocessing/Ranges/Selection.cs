@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the current selection in a window or pane.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection?view=word-pia"/>
-public partial interface Selection : IModelObject
+public partial interface ISelection : IModelObject
 {
   /// <summary>
   /// Returns or sets the text in the specified selection.
@@ -18,7 +18,7 @@ public partial interface Selection : IModelObject
   /// Returns or sets a Range object that includes the formatted text in the specified selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.formattedtext?view=word-pia"/>
-  public Range FormattedText { get; set; }
+  public IRange FormattedText { get; set; }
 
   /// <summary>
   /// Returns or sets the starting character position of a selection.
@@ -60,61 +60,61 @@ public partial interface Selection : IModelObject
   /// Returns a Tables collection that represents all the tables in the specified selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.tables?view=word-pia"/>
-  public Tables Tables { get; }
+  public ITables Tables { get; }
 
   /// <summary>
   /// Returns a Words collection that represents all the words in a selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.words?view=word-pia"/>
-  public Words Words { get; }
+  public IWords Words { get; }
 
   /// <summary>
   /// Returns a Sentences collection that represents all the sentences in the selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.sentences?view=word-pia"/>
-  public Sentences Sentences { get; }
+  public ISentences Sentences { get; }
 
   /// <summary>
   /// Returns a Characters collection that represents the characters in a selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.characters?view=word-pia"/>
-  public Characters Characters { get; }
+  public ICharacters Characters { get; }
 
   /// <summary>
   /// Returns a Footnotes collection that represents all the footnotes in a selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.footnotes?view=word-pia"/>
-  public Footnotes Footnotes { get; }
+  public IFootnotes Footnotes { get; }
 
   /// <summary>
   /// Returns a Endnotes collection that represents all the endnotes in a selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.endnotes?view=word-pia"/>
-  public Endnotes Endnotes { get; }
+  public IEndnotes Endnotes { get; }
 
   /// <summary>
   /// Returns a Comments collection that represents all the comments in the specified selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.comments?view=word-pia"/>
-  public Comments Comments { get; }
+  public IComments Comments { get; }
 
   /// <summary>
   /// Returns a Cells collection that represents the table cells in a selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.cells?view=word-pia"/>
-  public Cells Cells { get; }
+  public ICells Cells { get; }
 
   /// <summary>
   /// Returns a Sections collection that represents the sections in the specified selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.sections?view=word-pia"/>
-  public Sections Sections { get; }
+  public ISections Sections { get; }
 
   /// <summary>
   /// Returns a Paragraphs collection that represents all the paragraphs in the specified selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.paragraphs?view=word-pia"/>
-  public Paragraphs Paragraphs { get; }
+  public IParagraphs Paragraphs { get; }
 
   /// <summary>
   /// Returns a Borders collection that represents all the borders for the specified object.
@@ -126,37 +126,37 @@ public partial interface Selection : IModelObject
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.shading?view=word-pia"/>
-  public Drw.Shading Shading { get; }
+  public Drw.IShading Shading { get; }
 
   /// <summary>
   /// Returns a read-only Fields collection that represents all the fields in the selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.fields?view=word-pia"/>
-  public Fields Fields { get; }
+  public IFields Fields { get; }
 
   /// <summary>
   /// Returns a FormFields collection that represents all the form fields in the selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.formfields?view=word-pia"/>
-  public FormFields FormFields { get; }
+  public IFormFields FormFields { get; }
 
   /// <summary>
   /// Returns a Frames collection that represents all the frames in a selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.frames?view=word-pia"/>
-  public Frames Frames { get; }
+  public IFrames Frames { get; }
 
   /// <summary>
   /// Returns or sets a ParagraphFormat object that represents the paragraph settings for the specified selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.paragraphformat?view=word-pia"/>
-  public ParagraphFormat ParagraphFormat { get; set; }
+  public IParagraphFormat ParagraphFormat { get; set; }
 
   /// <summary>
   /// Returns a PageSetup object that's associated with the specified selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.pagesetup?view=word-pia"/>
-  public PageSetup PageSetup { get; set; }
+  public IPageSetup PageSetup { get; set; }
 
   /// <summary>
   /// Returns a Bookmarks collection that represents all the bookmarks in a selection.
@@ -192,25 +192,25 @@ public partial interface Selection : IModelObject
   /// Returns a Hyperlinks collection that represents all the hyperlinks in the specified selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.hyperlinks?view=word-pia"/>
-  public Hyperlinks Hyperlinks { get; }
+  public IHyperlinks Hyperlinks { get; }
 
   /// <summary>
   /// Returns a Columns collection that represents all the table columns in the selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.columns?view=word-pia"/>
-  public Columns Columns { get; }
+  public IColumns Columns { get; }
 
   /// <summary>
   /// Returns a Rows collection that represents all the table rows in a selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.rows?view=word-pia"/>
-  public Rows Rows { get; }
+  public IRows Rows { get; }
 
   /// <summary>
   /// Returns a HeaderFooter object for the specified selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.headerfooter?view=word-pia"/>
-  public HeaderFooter HeaderFooter { get; }
+  public IHeaderFooter HeaderFooter { get; }
 
   /// <summary>
   /// Determines if the specified selection is collapsed and is located at the end-of-row mark in a table.
@@ -236,13 +236,13 @@ public partial interface Selection : IModelObject
   /// Returns a Find object that contains the criteria for a find operation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.find?view=word-pia"/>
-  public Find Find { get; }
+  public IFind Find { get; }
 
   /// <summary>
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// Returns or sets properties of the selection.
@@ -302,7 +302,7 @@ public partial interface Selection : IModelObject
   /// Returns a ShapeRange collection that represents all the Shape objects in the specified range or selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.shaperange?view=word-pia"/>
-  public Drw.ShapeRange ShapeRange { get; }
+  public Drw.IShapeRange ShapeRange { get; }
 
   /// <summary>
   /// Determines if the spelling and grammar checker ignores the specified text.
@@ -315,7 +315,7 @@ public partial interface Selection : IModelObject
   /// selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.topleveltables?view=word-pia"/>
-  public Tables TopLevelTables { get; }
+  public ITables TopLevelTables { get; }
 
   /// <summary>
   /// Returns or sets a value that specifies whether Microsoft Word has detected the language of the specified text.
@@ -334,19 +334,19 @@ public partial interface Selection : IModelObject
   /// Returns a HTMLDivisions object that represents an HTML division in a Web document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.htmldivisions?view=word-pia"/>
-  public HTMLDivisions HTMLDivisions { get; }
+  public IHTMLDivisions HTMLDivisions { get; }
 
   /// <summary>
   /// Returns a SmartTags object that represents a smart tag in a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.smarttags?view=word-pia"/>
-  public SmartTags SmartTags { get; }
+  public ISmartTags SmartTags { get; }
 
   /// <summary>
   /// Returns a ShapeRange object representing the child shapes of a selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.childshaperange?view=word-pia"/>
-  public Drw.ShapeRange ChildShapeRange { get; }
+  public Drw.IShapeRange ChildShapeRange { get; }
 
   /// <summary>
   /// Determines if the selection contains child shapes.
@@ -358,31 +358,31 @@ public partial interface Selection : IModelObject
   /// Returns a FootnoteOptions object that represents the footnote properties in a selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.footnoteoptions?view=word-pia"/>
-  public FootnoteOptions FootnoteOptions { get; }
+  public IFootnoteOptions FootnoteOptions { get; }
 
   /// <summary>
   /// Returns a EndnoteOptions object that represents the endnotes in a selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.endnoteoptions?view=word-pia"/>
-  public EndnoteOptions EndnoteOptions { get; }
+  public IEndnoteOptions EndnoteOptions { get; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.xmlnodes?view=word-pia"/>
-  public XMLNodes XMLNodes { get; }
+  public IXMLNodes XMLNodes { get; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.xmlparentnode?view=word-pia"/>
-  public XMLNode XMLParentNode { get; }
+  public IXMLNode XMLParentNode { get; }
 
   /// <summary>
   /// Returns a Editors object that represents all the users authorized to modify a selection within a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.editors?view=word-pia"/>
-  public Editors Editors { get; }
+  public IEditors Editors { get; }
 
   /// <summary>
   /// Returns an Object that represents a picture representation of how a selection of text appears.
@@ -394,7 +394,7 @@ public partial interface Selection : IModelObject
   /// Returns an OMaths collection that represents the OMath objects within the current selection. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.omaths?view=word-pia"/>
-  public OMaths OMaths { get; }
+  public IOMaths OMaths { get; }
 
   /// <summary>
   /// Returns a String that represents the XML contained within the selection in the Microsoft Office Word Open XML
@@ -407,11 +407,11 @@ public partial interface Selection : IModelObject
   /// Returns a ContentControls collection that represents the content controls contained within a range. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.contentcontrols?view=word-pia"/>
-  public ContentControls ContentControls { get; }
+  public IContentControls ContentControls { get; }
 
   /// <summary>
   /// Returns a ContentControl object that represents the parent content control for the specified range. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.parentcontentcontrol?view=word-pia"/>
-  public ContentControl ParentContentControl { get; }
+  public IContentControl ParentContentControl { get; }
 }

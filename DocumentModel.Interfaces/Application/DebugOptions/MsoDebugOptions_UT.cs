@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a debug unit test.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_ut?view=office-pia"/>
-public partial interface MsoDebugOptions_UT: IModelObject
+public partial interface IMsoDebugOptions_UT: IModelObject
 {
   /// <summary>
   /// Gets the `Name` property.

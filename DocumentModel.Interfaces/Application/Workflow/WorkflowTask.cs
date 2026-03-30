@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents the `WorkflowTask` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.workflowtask?view=office-pia"/>
-public partial interface WorkflowTask: IModelObject
+public partial interface IWorkflowTask: IModelObject
 {
   /// <summary>
   /// Gets the `Id` property.

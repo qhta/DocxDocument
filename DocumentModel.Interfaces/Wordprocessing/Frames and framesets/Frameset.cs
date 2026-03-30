@@ -4,13 +4,13 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an entire frames page or a single frame on a frames page.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset?view=word-pia"/>
-public partial interface Frameset : IModelCollection<Frameset>
+public partial interface IFrameset : IModelCollection<IFrameset>
 {
   /// <summary>
   /// Returns the parent frameset.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.parentframeset?view=word-pia"/>
-  public Frameset ParentFrameset { get; }
+  public IFrameset ParentFrameset { get; }
 
   /// <summary>
   /// Returns the type of the specified frameset.

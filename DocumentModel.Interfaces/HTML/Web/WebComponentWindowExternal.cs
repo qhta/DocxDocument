@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Represents the `WebComponentWindowExternal` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponentwindowexternal?view=office-pia"/>
-public partial interface WebComponentWindowExternal: IModelObject
+public partial interface IWebComponentWindowExternal: IModelObject
 {
   /// <summary>
   /// Gets the `InterfaceVersion` property.
@@ -26,6 +26,6 @@ public partial interface WebComponentWindowExternal: IModelObject
   /// Gets the `WebComponent` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponentwindowexternal.webcomponent?view=office-pia"/>
-  public WebComponent WebComponent { get; }
+  public IWebComponent WebComponent { get; }
 }
 

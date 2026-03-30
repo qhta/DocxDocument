@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an individual category of a building block type.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.category?view=word-pia"/>
-public interface Category : IModelObject
+public interface ICategory : IModelObject
 {
   /// <summary>
   /// Gets the index number of the category in the collection.
@@ -20,11 +20,11 @@ public interface Category : IModelObject
   /// Gets the collection of building blocks in the category.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.category.buildingblocks?view=word-pia"/>
-  public BuildingBlocks BuildingBlocks { get; }
+  public IBuildingBlocks BuildingBlocks { get; }
   /// <summary>
   /// Gets the building block type that contains this category.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.category.type?view=word-pia"/>
-  public BuildingBlockType Type { get; }
+  public IBuildingBlockType Type { get; }
 
 }

@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 /// Represents a picture effect.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureeffect?view=office-pia"/>
-public partial interface PictureEffect: IModelObject
+public partial interface IPictureEffect: IModelObject
 {
   /// <summary>
   /// Gets or sets the `Type` property.
@@ -22,7 +22,7 @@ public partial interface PictureEffect: IModelObject
   /// Gets the `EffectParameters` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureeffect.effectparameters?view=office-pia"/>
-  public EffectParameters EffectParameters { get; }
+  public IEffectParameters EffectParameters { get; }
   /// <summary>
   /// Gets or sets the `Visible` property.
   /// </summary>

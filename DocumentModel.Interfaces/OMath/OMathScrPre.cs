@@ -4,23 +4,23 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an equation that contains a superscript or subscript to the left of the base.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre?view=word-pia"/>
-public partial interface OMathScrPre : IModelObject
+public partial interface IOMathScrPre : IModelObject
 {
   /// <summary>
   /// Returns the subscript expression to the left of the base.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre.sub?view=word-pia"/>
-  public OMath Sub { get; }
+  public IOMath Sub { get; }
 
   /// <summary>
   /// Returns the superscript expression to the left of the base.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre.sup?view=word-pia"/>
-  public OMath Sup { get; }
+  public IOMath Sup { get; }
 
   /// <summary>
   /// Returns the base expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre.e?view=word-pia"/>
-  public OMath E { get; }
+  public IOMath E { get; }
 }

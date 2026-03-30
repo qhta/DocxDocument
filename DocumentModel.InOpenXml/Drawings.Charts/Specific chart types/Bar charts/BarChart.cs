@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a bar chart, including direction, grouping, color variation, series, labels, gap settings, overlap, series lines, axis identifiers, and extension list.
 /// </summary>
 [OpenXmlType(typeof(DXDC.BarChart))]
-public partial class BarChart: ModelElement<DXDC.BarChart>, IChart
+public partial class BarChart: ModelElement<DXDC.BarChart>, AbstractChart
 {
   /// <summary>
   ///   Direction of the bars in the chart.

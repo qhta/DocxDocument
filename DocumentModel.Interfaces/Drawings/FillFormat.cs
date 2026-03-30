@@ -4,19 +4,19 @@ namespace DocumentModel.Drawings;
 /// Represents fill formatting for a shape. A shape can have a solid, gradient, texture, pattern, picture, or semi-transparent fill.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat?view=word-pia"/>
-public partial interface FillFormat : IModelObject
+public partial interface IFillFormat : IModelObject
 {
   /// <summary>
-  /// Returns or sets a <see cref="ColorFormat"/> object that represents the background color for the specified fill or patterned line.
+  /// Returns or sets a <see cref="IColorFormat"/> object that represents the background color for the specified fill or patterned line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.backcolor?view=word-pia"/>
-  public ColorFormat BackColor { get; }
+  public IColorFormat BackColor { get; }
 
   /// <summary>
-  /// Returns or sets a <see cref="ColorFormat"/> object that represents the foreground color for the fill.
+  /// Returns or sets a <see cref="IColorFormat"/> object that represents the foreground color for the fill.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.forecolor?view=word-pia"/>
-  public ColorFormat ForeColor { get; }
+  public IColorFormat ForeColor { get; }
 
   /// <summary>
   /// Returns the gradient color type for the specified fill.
@@ -94,7 +94,7 @@ public partial interface FillFormat : IModelObject
   /// Gets the <see cref="GradientStops"/> collection associated with the specified fill format.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.gradientstops?view=word-pia"/>
-  public Drw.GradientStops GradientStops { get; }
+  public Drw.IGradientStops GradientStops { get; }
 
   /// <summary>
   /// Gets or sets a value that specifies the horizontal offset of the texture from the origin in points.
@@ -142,7 +142,7 @@ public partial interface FillFormat : IModelObject
   /// Gets a <see cref="PictureEffects"/> object that can be used to apply picture effects to the specified fill formatting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.pictureeffects?view=word-pia"/>
-  public Drw.PictureEffects PictureEffects { get; }
+  public Drw.IPictureEffects PictureEffects { get; }
 
   /// <summary>
   /// Gets or sets the angle of the gradient fill for the specified fill format.

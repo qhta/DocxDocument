@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the mail merge data field objects in a mail merge data source.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatafields?view=word-pia"/>
-public interface MailMergeDataFields : IModelCollection<MailMergeDataField>
+public interface IMailMergeDataFields : IModelCollection<IMailMergeDataField>
 {
 }

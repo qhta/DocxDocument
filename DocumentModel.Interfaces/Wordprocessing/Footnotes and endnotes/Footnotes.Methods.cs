@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes?view=word-pia"/>
-public partial interface Footnotes: IModelObject
+public partial interface IFootnotes: IModelObject
 {
   /// <summary>
   /// Returns the value produced by the add operation.
@@ -17,5 +17,5 @@ public partial interface Footnotes: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes.add?view=word-pia"/>
-  public Footnote Add(Range Range, object Reference, object Text);
+  public IFootnote Add(IRange Range, object Reference, object Text);
 }

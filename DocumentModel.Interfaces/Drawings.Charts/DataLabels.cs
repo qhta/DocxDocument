@@ -27,17 +27,17 @@ public partial interface IDataLabels: IEnumerable
   /// Gets the `Fill` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.fill?view=office-pia"/>
-  public ChartFillFormat Fill { get; }
+  public IChartFillFormat Fill { get; }
   /// <summary>
   /// Gets the `Characters` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.characters?view=office-pia"/>
-  public Characters Characters { get; }
+  public ICharacters Characters { get; }
   /// <summary>
   /// Gets the `Font` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.font?view=office-pia"/>
-  public ChartFont Font { get; }
+  public IChartFont Font { get; }
   /// <summary>
   /// Gets or sets the `HorizontalAlignment` property.
   /// </summary>
@@ -142,12 +142,12 @@ public partial interface IDataLabels: IEnumerable
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.format?view=office-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
   /// <summary>
   /// Gets a data label by index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.item?view=office-pia"/>
-  public DataLabel this[object Index] { get; }
+  public IDataLabel this[object Index] { get; }
   /// <summary>
   /// Gets or sets the `ShowRange` property.
   /// </summary>

@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.connectorformat?view=word-pia"/>
-public partial interface ConnectorFormat : IModelObject
+public partial interface IConnectorFormat : IModelObject
 {
   /// <summary>
   /// Gets a value indicating whether the beginning of the connector is attached to a shape.
@@ -16,7 +16,7 @@ public partial interface ConnectorFormat : IModelObject
   /// Gets the shape attached to the beginning of the connector.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.connectorformat.beginconnectedshape?view=word-pia"/>
-  public Shape BeginConnectedShape { get; }
+  public IShape BeginConnectedShape { get; }
 
   /// <summary>
   /// Gets the connection site on the shape where the beginning of the connector is attached.
@@ -34,7 +34,7 @@ public partial interface ConnectorFormat : IModelObject
   /// Gets the shape attached to the end of the connector.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.connectorformat.endconnectedshape?view=word-pia"/>
-  public Shape EndConnectedShape { get; }
+  public IShape EndConnectedShape { get; }
 
   /// <summary>
   /// Gets the connection site on the shape where the end of the connector is attached.

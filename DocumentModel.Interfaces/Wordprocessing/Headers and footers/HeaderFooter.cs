@@ -6,13 +6,13 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single header or footer.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headerfooter?view=word-pia"/>
-public interface HeaderFooter : IModelObject
+public interface IHeaderFooter : IModelObject
 {
   /// <summary>
   /// Returns a range object that represents the portion of a document contained in the header or footer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headerfooter.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
   /// <summary>
   /// Returns a constant that represents the specific header or footer.
   /// </summary>
@@ -32,7 +32,7 @@ public interface HeaderFooter : IModelObject
   /// Returns the page numbers collection for the header or footer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headerfooter.pagenumbers?view=word-pia"/>
-  public PageNumbers PageNumbers { get; }
+  public IPageNumbers PageNumbers { get; }
   /// <summary>
   /// Returns or sets whether the header or footer is linked to the corresponding header or footer in the previous section.
   /// </summary>
@@ -42,6 +42,6 @@ public interface HeaderFooter : IModelObject
   /// Returns the shapes collection for the header or footer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headerfooter.shapes?view=word-pia"/>
-  public Drw.Shapes Shapes { get; }
+  public Drw.IShapes Shapes { get; }
 
 }

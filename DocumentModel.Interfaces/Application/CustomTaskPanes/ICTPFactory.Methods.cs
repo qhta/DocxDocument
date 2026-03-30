@@ -15,6 +15,6 @@ public partial interface ICTPFactory: IModelObject
   /// <param name="CTPParentWindow">The `CTPParentWindow` parameter.</param>
   /// <returns>The created custom task pane.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ictpfactory.createctp?view=office-pia"/>
-  public CustomTaskPane CreateCTP(string CTPAxID, string CTPTitle, object CTPParentWindow);
+  public ICustomTaskPane CreateCTP(string CTPAxID, string CTPTitle, object CTPParentWindow);
 }
 

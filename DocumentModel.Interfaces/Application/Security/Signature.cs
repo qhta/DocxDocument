@@ -7,7 +7,7 @@ namespace DocumentModel.Application;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signature?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface Signature: IModelObject
+public partial interface ISignature: IModelObject
 {
   /// <summary>
   /// Gets the `Signer` property.
@@ -58,7 +58,7 @@ public partial interface Signature: IModelObject
   /// Gets the `Details` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signature.details?view=office-pia"/>
-  public SignatureInfo Details { get; }
+  public ISignatureInfo Details { get; }
   /// <summary>
   /// Gets the `CanSetup` property.
   /// </summary>
@@ -68,7 +68,7 @@ public partial interface Signature: IModelObject
   /// Gets the `Setup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signature.setup?view=office-pia"/>
-  public SignatureSetup Setup { get; }
+  public ISignatureSetup Setup { get; }
   /// <summary>
   /// Gets the `IsSignatureLine` property.
   /// </summary>

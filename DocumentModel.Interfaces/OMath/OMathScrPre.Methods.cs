@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre?view=word-pia"/>
-public partial interface OMathScrPre: IModelObject
+public partial interface IOMathScrPre: IModelObject
 {
   /// <summary>
   /// Creates a new script function with both subscript and superscript components based on the current mathematical
@@ -15,5 +15,5 @@ public partial interface OMathScrPre: IModelObject
   /// customization of the subscript and superscript values.</remarks>
   /// <returns>An instance of the OMathFunction representing the script function with subscript and superscript applied.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre.toscrsubsup?view=word-pia"/>
-  public OMathFunction ToScrSubSup();
+  public IOMathFunction ToScrSubSup();
 }

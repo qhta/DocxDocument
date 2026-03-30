@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a data label.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel?view=office-pia"/>
-public partial interface DataLabel: IModelObject
+public partial interface IDataLabel: IModelObject
 {
   /// <summary>
   /// Gets or sets the `Name` property.
@@ -26,7 +26,7 @@ public partial interface DataLabel: IModelObject
   /// Gets the `Fill` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel.fill?view=office-pia"/>
-  public ChartFillFormat Fill { get; }
+  public IChartFillFormat Fill { get; }
   /// <summary>
   /// Gets or sets the `Caption` property.
   /// </summary>
@@ -36,12 +36,12 @@ public partial interface DataLabel: IModelObject
   /// Gets the `Characters` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel.characters?view=office-pia"/>
-  public Characters Characters { get; }
+  public ICharacters Characters { get; }
   /// <summary>
   /// Gets the `Font` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel.font?view=office-pia"/>
-  public ChartFont Font { get; }
+  public IChartFont Font { get; }
   /// <summary>
   /// Gets or sets the `HorizontalAlignment` property.
   /// </summary>
@@ -156,7 +156,7 @@ public partial interface DataLabel: IModelObject
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel.format?view=office-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
   /// <summary>
   /// Gets the `_Height` property.
   /// </summary>

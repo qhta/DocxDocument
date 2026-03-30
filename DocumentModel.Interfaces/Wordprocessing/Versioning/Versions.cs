@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// in the Versions dialog box (File menu).
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.versions?view=word-pia"/>
-public partial interface Versions : IModelCollection<Version>
+public partial interface IVersions : IModelCollection<IVersion>
 {
   /// <summary>
   /// Returns or sets the state of the option for automatically saving document versions.

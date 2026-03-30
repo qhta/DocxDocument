@@ -4,19 +4,19 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an equation matrix.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmat?view=word-pia"/>
-public partial interface OMathMat : IModelObject
+public partial interface IOMathMat : IModelObject
 {
   /// <summary>
   /// Returns the collection of matrix rows.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmat.rows?view=word-pia"/>
-  public OMathMatRows Rows { get; }
+  public IOMathMatRows Rows { get; }
 
   /// <summary>
   /// Returns the collection of matrix columns.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmat.cols?view=word-pia"/>
-  public OMathMatCols Cols { get; }
+  public IOMathMatCols Cols { get; }
 
   /// <summary>
   /// Returns or sets the vertical alignment of the matrix.

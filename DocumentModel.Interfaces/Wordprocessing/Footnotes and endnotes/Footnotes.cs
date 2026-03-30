@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// A collection of Footnote objects that represent all the footnotes in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes?view=word-pia"/>
-public partial interface Footnotes : IModelCollection<Footnote>
+public partial interface IFootnotes : IModelCollection<IFootnote>
 {
   /// <summary>
   /// Returns or sets the position of all footnotes.
@@ -33,20 +33,20 @@ public partial interface Footnotes : IModelCollection<Footnote>
   public NumberingRule NumberingRule { get; set; }
 
   /// <summary>
-  /// Returns a <see cref="Range"/> object that represents the footnote separator.
+  /// Returns a <see cref="IRange"/> object that represents the footnote separator.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes.separator?view=word-pia"/>
-  public Range Separator { get; }
+  public IRange Separator { get; }
 
   /// <summary>
-  /// Returns a <see cref="Range"/> object that represents the footnote continuation separator.
+  /// Returns a <see cref="IRange"/> object that represents the footnote continuation separator.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes.continuationseparator?view=word-pia"/>
-  public Range ContinuationSeparator { get; }
+  public IRange ContinuationSeparator { get; }
 
   /// <summary>
-  /// Returns a <see cref="Range"/> object that represents the footnote continuation notice.
+  /// Returns a <see cref="IRange"/> object that represents the footnote continuation notice.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes.continuationnotice?view=word-pia"/>
-  public Range ContinuationNotice { get; }
+  public IRange ContinuationNotice { get; }
 }

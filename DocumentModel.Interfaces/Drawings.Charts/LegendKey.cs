@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a legend key in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey?view=office-pia"/>
-public partial interface LegendKey: IModelObject
+public partial interface ILegendKey: IModelObject
 {
   /// <summary>
   /// Gets or sets the `Border` property.
@@ -23,7 +23,7 @@ public partial interface LegendKey: IModelObject
   /// Gets the `Fill` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.fill?view=office-pia"/>
-  public ChartFillFormat Fill { get; }
+  public IChartFillFormat Fill { get; }
   /// <summary>
   /// Gets or sets the `InvertIfNegative` property.
   /// </summary>
@@ -103,7 +103,7 @@ public partial interface LegendKey: IModelObject
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.format?view=office-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
   /// <summary>
   /// Gets or sets the `PictureUnit2` property.
   /// </summary>

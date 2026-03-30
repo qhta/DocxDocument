@@ -117,7 +117,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.windowselectionchange?view=word-pia"/>
-  public void WindowSelectionChange(Selection Sel);
+  public void WindowSelectionChange(ISelection Sel);
 
   /// <summary>
   /// Occurs before a right-click in a window.
@@ -128,7 +128,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.windowbeforerightclick?view=word-pia"/>
-  public void WindowBeforeRightClick(Selection Sel, ref bool Cancel);
+  public void WindowBeforeRightClick(ISelection Sel, ref bool Cancel);
 
   /// <summary>
   /// Occurs before a double-click in a window.
@@ -139,7 +139,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.windowbeforedoubleclick?view=word-pia"/>
-  public void WindowBeforeDoubleClick(Selection Sel, ref bool Cancel);
+  public void WindowBeforeDoubleClick(ISelection Sel, ref bool Cancel);
 
   /// <summary>
   /// Occurs when the e-postage property dialog is displayed.

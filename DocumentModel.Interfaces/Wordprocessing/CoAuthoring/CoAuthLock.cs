@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a lock within the document. The CoAuthLock object is a member of the CoAuthLocks collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthlock?view=word-pia"/>
-public partial interface CoAuthLock : IModelObject
+public partial interface ICoAuthLock : IModelObject
 {
   /// <summary>
   /// Gets the type of coauthoring lock.
@@ -16,13 +16,13 @@ public partial interface CoAuthLock : IModelObject
   /// Gets the coauthor who owns the lock.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthlock.owner?view=word-pia"/>
-  public CoAuthor Owner { get; }
+  public ICoAuthor Owner { get; }
 
   /// <summary>
   /// Gets the range in the document covered by the lock.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthlock.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// Gets a value indicating whether the lock is in a header or footer.

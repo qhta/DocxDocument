@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefield?view=word-pia"/>
-public partial interface MailMergeField: IModelObject
+public partial interface IMailMergeField: IModelObject
 {
   /// <summary>
   /// Selects the specified object.

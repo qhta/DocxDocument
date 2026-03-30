@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlmapping?view=word-pia"/>
-public partial interface XMLMapping: IModelObject
+public partial interface IXMLMapping: IModelObject
 {
   /// <summary>
   /// Sets the XML mapping for the specified XPath, prefix mapping, and source.
@@ -19,5 +19,5 @@ public partial interface XMLMapping: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlmapping.setmapping?view=word-pia"/>
-  public bool SetMapping(string XPath, string PrefixMapping, CustomXMLPart Source);
+  public bool SetMapping(string XPath, string PrefixMapping, ICustomXMLPart Source);
 }

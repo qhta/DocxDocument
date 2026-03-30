@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesoffigures?view=word-pia"/>
-public partial interface TablesOfFigures: IModelObject
+public partial interface ITablesOfFigures: IModelObject
 {
   /// <summary>
   /// Adds a table of figures to the document using legacy options.
@@ -20,12 +20,12 @@ public partial interface TablesOfFigures: IModelObject
   /// <param name="RightAlignPageNumbers">true to right-align page numbers; otherwise, false.</param>
   /// <param name="IncludePageNumbers">true to include page numbers; otherwise, false.</param>
   /// <param name="AddedStyles">Additional styles to include in the table of figures.</param>
-  /// <returns>The created <see cref="TableOfFigures"/> object.</returns>
+  /// <returns>The created <see cref="ITableOfFigures"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesoffigures.addold?view=word-pia"/>
-  public TableOfFigures AddOld(Range Range, string Caption, bool IncludeLabel, bool UseHeadingStyles, 
+  public ITableOfFigures AddOld(IRange Range, string Caption, bool IncludeLabel, bool UseHeadingStyles, 
     int UpperHeadingLevel, int LowerHeadingLevel, bool UseFields, string TableID, 
     bool RightAlignPageNumbers, bool IncludePageNumbers, string AddedStyles);
 }

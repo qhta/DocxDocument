@@ -5,7 +5,7 @@ namespace DocumentModel.CustomXml;
 /// Represents a single custom XML part in a custom XML parts collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart?view=office-pia"/>
-public partial interface _CustomXMLPart
+public partial interface I_CustomXMLPart
 {
   /// <summary>
   /// Adds a node to the XML tree.
@@ -18,7 +18,7 @@ public partial interface _CustomXMLPart
   /// <param name="NodeValue">The node value.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.addnode?view=office-pia"/>
   public void AddNode
-  (CustomXMLNode Parent, string Name, string NamespaceURI, CustomXMLNode NextSibling,
+  (ICustomXMLNode Parent, string Name, string NamespaceURI, ICustomXMLNode NextSibling,
     XMLNodeType NodeType, string NodeValue);
 
   /// <summary>
@@ -52,7 +52,7 @@ public partial interface _CustomXMLPart
   /// <param name="XPath">The XPath expression.</param>
   /// <returns>A collection of matching nodes.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.selectnodes?view=office-pia"/>
-  public CustomXMLNodes SelectNodes(string XPath);
+  public ICustomXMLNodes SelectNodes(string XPath);
 
   /// <summary>
   /// Selects a single node in this custom XML part matching an XPath expression.
@@ -60,6 +60,6 @@ public partial interface _CustomXMLPart
   /// <param name="XPath">The XPath expression.</param>
   /// <returns>The matching node, if found.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.selectsinglenode?view=office-pia"/>
-  public CustomXMLNode SelectSingleNode(string XPath);
+  public ICustomXMLNode SelectSingleNode(string XPath);
 }
 

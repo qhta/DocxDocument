@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a collection of files in a shared workspace.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefiles?view=office-pia"/>
-public partial interface SharedWorkspaceFiles: IModelCollection<SharedWorkspaceFile>
+public partial interface ISharedWorkspaceFiles: IModelCollection<ISharedWorkspaceFile>
 {
   /// <summary>
   /// Gets the `ItemCountExceeded` property.

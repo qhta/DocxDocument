@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailsignatureentries?view=word-pia"/>
-public partial interface EmailSignatureEntries: IModelObject
+public partial interface IEmailSignatureEntries: IModelObject
 {
   /// <summary>
   /// Returns the value produced by the add operation.
@@ -16,5 +16,5 @@ public partial interface EmailSignatureEntries: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailsignatureentries.add?view=word-pia"/>
-  public EmailSignatureEntry Add(string Name, Range Range);
+  public IEmailSignatureEntry Add(string Name, IRange Range);
 }

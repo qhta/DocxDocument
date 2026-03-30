@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Text;
 /// Represents the `TextFrame2` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2?view=office-pia"/>
-public partial interface TextFrame: IModelObject
+public partial interface ITextFrame: IModelObject
 {
   /// <summary>
   /// Invokes `DeleteText`.

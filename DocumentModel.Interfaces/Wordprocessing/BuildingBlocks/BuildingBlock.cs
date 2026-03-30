@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a building block in a template. A building block is pre-built content, similar to autotext, that may contain text, images, and formatting.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblock?view=word-pia"/>
-public partial interface BuildingBlock : IModelObject
+public partial interface IBuildingBlock : IModelObject
 {
   /// <summary>
   /// Gets the index number of the building block in the collection.
@@ -22,7 +22,7 @@ public partial interface BuildingBlock : IModelObject
   /// Gets the building block type that contains this building block.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblock.type?view=word-pia"/>
-  public BuildingBlockType Type { get; }
+  public IBuildingBlockType Type { get; }
 
   /// <summary>
   /// Gets or sets the description of the building block.
@@ -40,7 +40,7 @@ public partial interface BuildingBlock : IModelObject
   /// Gets the category of the building block.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblock.category?view=word-pia"/>
-  public Category Category { get; }
+  public ICategory Category { get; }
 
   /// <summary>
   /// Gets or sets the content of the building block.

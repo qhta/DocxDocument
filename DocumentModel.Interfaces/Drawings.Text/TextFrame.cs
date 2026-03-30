@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.Text;
 /// Represents the `TextFrame2` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2?view=office-pia"/>
-public partial interface TextFrame: IModelObject
+public partial interface ITextFrame: IModelObject
 {
   /// <summary>
   /// Gets or sets the `MarginBottom` property.
@@ -73,7 +73,7 @@ public partial interface TextFrame: IModelObject
   /// Gets the `ThreeD` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.threed?view=office-pia"/>
-  public ThreeDFormat ThreeD { get; }
+  public IThreeDFormat ThreeD { get; }
   /// <summary>
   /// Gets the `HasText` property.
   /// </summary>
@@ -83,17 +83,17 @@ public partial interface TextFrame: IModelObject
   /// Gets the `TextRange` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.textrange?view=office-pia"/>
-  public TextRange TextRange { get; }
+  public ITextRange TextRange { get; }
   /// <summary>
   /// Gets the `Column` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.column?view=office-pia"/>
-  public TextColumn Column { get; }
+  public ITextColumn Column { get; }
   /// <summary>
   /// Gets the `Ruler` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.ruler?view=office-pia"/>
-  public Ruler Ruler { get; }
+  public IRuler Ruler { get; }
   /// <summary>
   /// Gets or sets the `NoTextRotation` property.
   /// </summary>

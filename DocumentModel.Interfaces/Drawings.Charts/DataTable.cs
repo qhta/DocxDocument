@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart data table.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatatable?view=office-pia"/>
-public partial interface DataTable: IModelObject
+public partial interface IDataTable: IModelObject
 {
   /// <summary>
   /// Gets or sets the `ShowLegendKey` property.
@@ -36,7 +36,7 @@ public partial interface DataTable: IModelObject
   /// Gets the `Font` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatatable.font?view=office-pia"/>
-  public ChartFont Font { get; }
+  public IChartFont Font { get; }
   /// <summary>
   /// Gets or sets the `AutoScaleFont` property.
   /// </summary>
@@ -46,6 +46,6 @@ public partial interface DataTable: IModelObject
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatatable.format?view=office-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 }
 

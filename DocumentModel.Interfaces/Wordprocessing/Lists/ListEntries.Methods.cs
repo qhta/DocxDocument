@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listentries?view=word-pia"/>
-public partial interface ListEntries: IModelObject
+public partial interface IListEntries: IModelObject
 {
   /// <summary>
   /// Adds an item to a drop-down form field.
@@ -16,5 +16,5 @@ public partial interface ListEntries: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listentries.add?view=word-pia"/>
-  public ListEntry Add(string Name, object Index);
+  public IListEntry Add(string Name, object Index);
 }

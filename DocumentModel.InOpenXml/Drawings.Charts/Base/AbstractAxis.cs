@@ -2,7 +2,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Abstract representation of an axis type. All specific axis types implement this class.
 /// </summary>
-public partial class AbstractAxis<T> : ModelElement<T>, IAxis where T : DX.OpenXmlCompositeElement
+public partial class AbstractAxis<T> : ModelElement<T>, AbstractAxis where T : DX.OpenXmlCompositeElement
 {
   /// <summary>
   ///   Identifier for the axis.

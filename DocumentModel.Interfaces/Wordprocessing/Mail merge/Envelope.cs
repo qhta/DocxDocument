@@ -4,19 +4,19 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an envelope.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope?view=word-pia"/>
-public partial interface Envelope : IModelObject
+public partial interface IEnvelope : IModelObject
 {
   /// <summary>
   /// Gets the delivery address on the envelope.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.address?view=word-pia"/>
-  public Range Address { get; }
+  public IRange Address { get; }
 
   /// <summary>
   /// Gets the return address on the envelope.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.returnaddress?view=word-pia"/>
-  public Range ReturnAddress { get; }
+  public IRange ReturnAddress { get; }
 
   /// <summary>
   /// Gets or sets a value indicating whether POSTNET bar codes are printed by default.
@@ -88,13 +88,13 @@ public partial interface Envelope : IModelObject
   /// Gets the style used for the delivery address.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.addressstyle?view=word-pia"/>
-  public Style AddressStyle { get; }
+  public IStyle AddressStyle { get; }
 
   /// <summary>
   /// Gets the style used for the return address.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope.returnaddressstyle?view=word-pia"/>
-  public Style ReturnAddressStyle { get; }
+  public IStyle ReturnAddressStyle { get; }
 
   /// <summary>
   /// Gets or sets the default envelope orientation.

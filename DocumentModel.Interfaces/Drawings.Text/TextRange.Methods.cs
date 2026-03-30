@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.Text;
 /// Represents the `TextRange2` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2?view=office-pia"/>
-public partial interface TextRange: IModelObject
+public partial interface ITextRange: IModelObject
 {
   /// <summary>
   /// Invokes `Item`.
@@ -15,27 +15,27 @@ public partial interface TextRange: IModelObject
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.item?view=office-pia"/>
-  public TextRange Item(object Index);
+  public ITextRange Item(object Index);
   /// <summary>
   /// Invokes `TrimText`.
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.trimtext?view=office-pia"/>
-  public TextRange TrimText();
+  public ITextRange TrimText();
   /// <summary>
   /// Invokes `InsertAfter`.
   /// </summary>
   /// <param name="NewText">The `NewText` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.insertafter?view=office-pia"/>
-  public TextRange InsertAfter(string NewText);
+  public ITextRange InsertAfter(string NewText);
   /// <summary>
   /// Invokes `InsertBefore`.
   /// </summary>
   /// <param name="NewText">The `NewText` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.insertbefore?view=office-pia"/>
-  public TextRange InsertBefore(string NewText);
+  public ITextRange InsertBefore(string NewText);
   /// <summary>
   /// Invokes `InsertSymbol`.
   /// </summary>
@@ -44,7 +44,7 @@ public partial interface TextRange: IModelObject
   /// <param name="Unicode">The `Unicode` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.insertsymbol?view=office-pia"/>
-  public TextRange InsertSymbol(string FontName, int CharNumber, TriState Unicode);
+  public ITextRange InsertSymbol(string FontName, int CharNumber, TriState Unicode);
   /// <summary>
   /// Invokes `Select`.
   /// </summary>
@@ -70,14 +70,14 @@ public partial interface TextRange: IModelObject
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.paste?view=office-pia"/>
-  public TextRange Paste();
+  public ITextRange Paste();
   /// <summary>
   /// Invokes `PasteSpecial`.
   /// </summary>
   /// <param name="Format">The `Format` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.pastespecial?view=office-pia"/>
-  public TextRange PasteSpecial(ClipboardFormat Format);
+  public ITextRange PasteSpecial(ClipboardFormat Format);
   /// <summary>
   /// Invokes `ChangeCase`.
   /// </summary>
@@ -103,7 +103,7 @@ public partial interface TextRange: IModelObject
   /// <param name="WholeWords">The `WholeWords` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.find?view=office-pia"/>
-  public TextRange Find
+  public ITextRange Find
   (string FindWhat, int After, TriState MatchCase,
     TriState WholeWords);
   /// <summary>
@@ -116,7 +116,7 @@ public partial interface TextRange: IModelObject
   /// <param name="WholeWords">The `WholeWords` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.replace?view=office-pia"/>
-  public TextRange Replace
+  public ITextRange Replace
   (string FindWhat, string ReplaceWhat, int After, TriState MatchCase,
     TriState WholeWords);
   /// <summary>
@@ -151,6 +151,6 @@ public partial interface TextRange: IModelObject
   /// <param name="Position">The `Position` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.insertchartfield?view=office-pia"/>
-  public TextRange InsertChartField(ChartFieldType ChartFieldType, string Formula, int Position);
+  public ITextRange InsertChartField(ChartFieldType ChartFieldType, string Formula, int Position);
 }
 

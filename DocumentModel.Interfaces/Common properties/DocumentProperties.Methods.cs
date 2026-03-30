@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// A collection of DocumentProperty objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperties?view=office-pia"/>
-public partial interface DocumentProperties: IModelObject
+public partial interface IDocumentProperties: IModelObject
 {
   /// <summary>
   /// Adds a new document property to the collection.
@@ -18,7 +18,7 @@ public partial interface DocumentProperties: IModelObject
   /// <param name="LinkSource">The `LinkSource` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperties.add?view=office-pia"/>
-  public DocumentProperty Add(string Name, bool LinkToContent, object Type, object Value, object LinkSource);
+  public IDocumentProperty Add(string Name, bool LinkToContent, object Type, object Value, object LinkSource);
   /// <summary>
   /// Returns an enumerator for the document properties collection.
   /// </summary>

@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a custom task pane in the container application.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customtaskpane?view=office-pia"/>
-public partial interface _CustomTaskPane
+public partial interface I_CustomTaskPane
 {
   /// <summary>
   /// Deletes the active custom task pane.

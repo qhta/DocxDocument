@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single mapped data field.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mappeddatafield?view=word-pia"/>
-public interface MappedDataField : IModelObject
+public interface IMappedDataField : IModelObject
 {
   /// <summary>
   /// Returns the index number of the mapped data field in the collection.

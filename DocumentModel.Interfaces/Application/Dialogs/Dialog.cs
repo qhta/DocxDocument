@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a built-in dialog box.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dialog?view=word-pia"/>
-public partial interface Dialog : IModelObject
+public partial interface IDialog : IModelObject
 {
   /// <summary>
   /// Gets or sets the tab that appears by default when the dialog box is displayed.

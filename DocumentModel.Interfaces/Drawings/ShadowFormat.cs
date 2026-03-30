@@ -4,13 +4,13 @@ namespace DocumentModel.Drawings;
 /// Represents shadow formatting for a shape.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat?view=word-pia"/>
-public partial interface ShadowFormat : IModelObject
+public partial interface IShadowFormat : IModelObject
 {
   /// <summary>
   /// Returns or sets a ColorFormat object that represents the foreground color for the shadow.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.forecolor?view=word-pia"/>
-  public ColorFormat ForeColor { get; }
+  public IColorFormat ForeColor { get; }
 
   /// <summary>
   /// MsoTrue if the shadow of the specified shape appears filled in and is obscured by the shape, even if the shape

@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.SmartArt;
 /// Represents the `SmartArtNode` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode?view=office-pia"/>
-public partial interface SmartArtNode: IModelObject
+public partial interface ISmartArtNode: IModelObject
 {
   /// <summary>
   /// Gets or sets the `OrgChartLayout` property.
@@ -18,12 +18,12 @@ public partial interface SmartArtNode: IModelObject
   /// Gets the `Shapes` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode.shapes?view=office-pia"/>
-  public ShapeRange Shapes { get; }
+  public IShapeRange Shapes { get; }
   /// <summary>
   /// Gets the `TextFrame2` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode.textframe2?view=office-pia"/>
-  public TextFrame TextFrame2 { get; }
+  public ITextFrame TextFrame2 { get; }
   /// <summary>
   /// Gets the `Level` property.
   /// </summary>
@@ -38,12 +38,12 @@ public partial interface SmartArtNode: IModelObject
   /// Gets the `Nodes` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode.nodes?view=office-pia"/>
-  public SmartArtNodes Nodes { get; }
+  public ISmartArtNodes Nodes { get; }
   /// <summary>
   /// Gets the `ParentNode` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode.parentnode?view=office-pia"/>
-  public SmartArtNode ParentNode { get; }
+  public ISmartArtNode ParentNode { get; }
   /// <summary>
   /// Gets the `Type` property.
   /// </summary>

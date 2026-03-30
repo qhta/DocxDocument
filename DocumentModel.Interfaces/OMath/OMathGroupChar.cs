@@ -4,13 +4,13 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a group character object, consisting of a character drawn above or below text, often with the purpose of visually grouping items.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathgroupchar?view=word-pia"/>
-public interface OMathGroupChar : IModelObject
+public interface IOMathGroupChar : IModelObject
 {
   /// <summary>
   /// Returns the expression associated with the group character.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathgroupchar.e?view=word-pia"/>
-  public OMath E { get; }
+  public IOMath E { get; }
   /// <summary>
   /// Returns or sets the group character.
   /// </summary>

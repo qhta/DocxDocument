@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Wordprocessing\Sections\**" />
+    <EmbeddedResource Remove="Wordprocessing\Sections\**" />
+    <None Remove="Wordprocessing\Sections\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="..\NamespaceMappings\OpenXmlUsings.cs" Link="OpenXmlUsings.cs" />
   </ItemGroup>
 
@@ -21,7 +27,6 @@
   <ItemGroup>
     <Folder Include="Wordprocessing\CustomXml\" />
     <Folder Include="Wordprocessing\Drawings\" />
-    <Folder Include="Wordprocessing\Sections\" />
   </ItemGroup>
 
 </Project>

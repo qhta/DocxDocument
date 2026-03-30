@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// Represents horizontal line formatting.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.horizontallineformat?view=word-pia"/>
-public interface HorizontalLineFormat : IModelObject
+public interface IHorizontalLineFormat : IModelObject
 {
   /// <summary>
   /// Returns or sets the width of the horizontal line as a percentage of the window width.

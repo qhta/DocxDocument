@@ -4,13 +4,13 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a matrix column. The OMathMatCol object is a member of the OMathMatCols collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatcol?view=word-pia"/>
-public partial interface OMathMatCol : IModelObject
+public partial interface IOMathMatCol : IModelObject
 {
   /// <summary>
   /// Returns the collection of arguments in the matrix column.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatcol.args?view=word-pia"/>
-  public OMathArgs Args { get; }
+  public IOMathArgs Args { get; }
 
   /// <summary>
   /// Returns the index number of the matrix column.

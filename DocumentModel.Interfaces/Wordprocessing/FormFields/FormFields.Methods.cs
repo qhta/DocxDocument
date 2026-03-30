@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfields?view=word-pia"/>
-public partial interface FormFields: IModelObject
+public partial interface IFormFields: IModelObject
 {
   /// <summary>
   /// Returns the value produced by the add operation.
@@ -16,5 +16,5 @@ public partial interface FormFields: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfields.add?view=word-pia"/>
-  public FormField Add(Range Range, FieldType Type);
+  public IFormField Add(IRange Range, FieldType Type);
 }

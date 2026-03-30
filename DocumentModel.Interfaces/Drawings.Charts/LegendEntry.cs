@@ -5,13 +5,13 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a legend entry in a chart legend.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry?view=office-pia"/>
-public partial interface LegendEntry: IModelObject
+public partial interface ILegendEntry: IModelObject
 {
   /// <summary>
   /// Gets or sets the `Font` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.font?view=office-pia"/>
-  public ChartFont Font { get; }
+  public IChartFont Font { get; }
   /// <summary>
   /// Gets the `Index` property.
   /// </summary>
@@ -21,7 +21,7 @@ public partial interface LegendEntry: IModelObject
   /// Gets the `LegendKey` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.legendkey?view=office-pia"/>
-  public LegendKey LegendKey { get; }
+  public ILegendKey LegendKey { get; }
   /// <summary>
   /// Gets or sets the `AutoScaleFont` property.
   /// </summary>
@@ -51,6 +51,6 @@ public partial interface LegendEntry: IModelObject
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.format?view=office-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 }
 

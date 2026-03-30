@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunctions?view=word-pia"/>
-public partial interface OMathFunctions: IModelObject
+public partial interface IOMathFunctions: IModelObject
 {
   /// <summary>
   /// Adds an equation function to the collection.
@@ -18,5 +18,5 @@ public partial interface OMathFunctions: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunctions.add?view=word-pia"/>
-  public OMathFunction Add(Range Range, OMathFunctionType Type, object NumArgs, object NumCols);
+  public IOMathFunction Add(IRange Range, OMathFunctionType Type, object NumArgs, object NumCols);
 }

@@ -4,18 +4,18 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the mathematical radical object, consisting of a radical, a base, and an optional degree.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrad?view=word-pia"/>
-public interface OMathRad : IModelObject
+public interface IOMathRad : IModelObject
 {
   /// <summary>
   /// Returns the degree expression of the radical.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrad.deg?view=word-pia"/>
-  public OMath Deg { get; }
+  public IOMath Deg { get; }
   /// <summary>
   /// Returns the base expression under the radical.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrad.e?view=word-pia"/>
-  public OMath E { get; }
+  public IOMath E { get; }
   /// <summary>
   /// Returns or sets whether the radical degree is hidden.
   /// </summary>

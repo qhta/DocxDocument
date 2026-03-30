@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a metadata property.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty?view=office-pia"/>
-public partial interface MetaProperty: IModelObject
+public partial interface IMetaProperty: IModelObject
 {
   /// <summary>
   /// Gets or sets the `Value` property.

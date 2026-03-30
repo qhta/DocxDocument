@@ -46,5 +46,6 @@
     <None Include="..\..\..\Scripts\CompareEnumTypes.py" Link="Scripts\CompareEnumTypes.py" />
     <None Include="..\..\..\Scripts\AddPiaCoreLink.py" Link="Scripts\AddPiaCoreLink.py" />
     <None Include="..\..\..\Scripts\AddPiaWordLink.py" Link="Scripts\AddPiaWordLink.py" />
+    <None Include="..\..\..\Scripts\RenameInterfaces.py" Link="Scripts\RenameInterfaces.py" />
   </ItemGroup>
 </Project>

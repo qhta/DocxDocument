@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Represents a collection of fields in a data source.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsocolumns?view=office-pia"/>
-public partial interface ODSOColumns: IModelCollection<ODSOColumn>
+public partial interface IODSOColumns: IModelCollection<IODSOColumn>
 {
   /// <summary>
   /// Gets the `Count` property.

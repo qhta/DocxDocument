@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a file in a shared workspace.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefile?view=office-pia"/>
-public partial interface SharedWorkspaceFile: IModelObject
+public partial interface ISharedWorkspaceFile: IModelObject
 {
   /// <summary>
   /// Gets the `URL` property.

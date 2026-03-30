@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents leader lines in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoleaderlines?view=office-pia"/>
-public partial interface LeaderLines: IModelObject
+public partial interface ILeaderLines: IModelObject
 {
   /// <summary>
   /// Gets the `Border` property.
@@ -16,6 +16,6 @@ public partial interface LeaderLines: IModelObject
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoleaderlines.format?view=office-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 }
 

@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Represents the `SmartDocument` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartdocument?view=office-pia"/>
-public partial interface SmartDocument: IModelObject
+public partial interface ISmartDocument: IModelObject
 {
   /// <summary>
   /// Gets or sets the `SolutionID` property.

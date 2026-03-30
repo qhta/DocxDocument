@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This is a primary interface in a COM coclass that is required by managed code for interoperability with the corresponding COM object. Use this primary interface only when the method you want to use shares the same name as an event of the COM object; in this case, cast to this interface to call the method, and cast to the latest events interface to connect to the event. Otherwise, use the .NET interface that is derived from the COM coclass to access methods, properties, and events of the COM object. For more information about the COM object, see Global.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global?view=word-pia"/>
-public partial interface _Global: IModelObject
+public partial interface I_Global: IModelObject
 {
   /// <summary>
   /// Returns or sets the name of the specified object.
@@ -22,7 +22,7 @@ public partial interface _Global: IModelObject
   /// Returns a Windows collection that represents all document windows.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.windows?view=word-pia"/>
-  public Windows Windows { get; }
+  public IWindows Windows { get; }
 
   /// <summary>
   /// Returns a Document object that represents the active document.
@@ -40,7 +40,7 @@ public partial interface _Global: IModelObject
   /// Returns the Selection object that represents a selected range or the insertion point.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.selection?view=word-pia"/>
-  public Selection Selection { get; }
+  public ISelection Selection { get; }
 
   /// <summary>
   /// Returns an Automation object (Word.Basic) that includes methods for all WordBasic statements and functions.
@@ -58,7 +58,7 @@ public partial interface _Global: IModelObject
   /// Returns a RecentFiles collection that represents the most recently accessed files.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.recentfiles?view=word-pia"/>
-  public RecentFiles RecentFiles { get; }
+  public IRecentFiles RecentFiles { get; }
 
   /// <summary>
   /// Returns a Template object that represents the Normal template.
@@ -106,25 +106,25 @@ public partial interface _Global: IModelObject
   /// Returns an Assistant object that represents the Microsoft Office Assistant.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.assistant?view=word-pia"/>
-  public App.Assistant Assistant { get; }
+  public App.IAssistant Assistant { get; }
 
   /// <summary>
   /// Returns a FileConverters collection that represents all file converters available to Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.fileconverters?view=word-pia"/>
-  public FileConverters FileConverters { get; }
+  public IFileConverters FileConverters { get; }
 
   /// <summary>
   /// Returns a Dialogs collection that represents all built-in dialog boxes in Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.dialogs?view=word-pia"/>
-  public Dialogs Dialogs { get; }
+  public IDialogs Dialogs { get; }
 
   /// <summary>
   /// Returns a CaptionLabels collection that represents all available caption labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.captionlabels?view=word-pia"/>
-  public CaptionLabels CaptionLabels { get; }
+  public ICaptionLabels CaptionLabels { get; }
 
   /// <summary>
   /// Returns an AutoCaptions collection that represents captions automatically added for inserted items.
@@ -136,13 +136,13 @@ public partial interface _Global: IModelObject
   /// Returns an AddIns collection that represents all available add-ins.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.addins?view=word-pia"/>
-  public App.AddIns AddIns { get; }
+  public App.IAddIns AddIns { get; }
 
   /// <summary>
   /// Returns a Tasks collection that represents all applications that are running.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.tasks?view=word-pia"/>
-  public Tasks Tasks { get; }
+  public ITasks Tasks { get; }
 
   /// <summary>
   /// Returns a Template or Document object in which the module containing the running procedure is stored.
@@ -166,7 +166,7 @@ public partial interface _Global: IModelObject
   /// Returns a ListGalleries collection that represents the Bulleted, Numbered, and Outline Numbered galleries.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.listgalleries?view=word-pia"/>
-  public ListGalleries ListGalleries { get; }
+  public IListGalleries ListGalleries { get; }
 
   /// <summary>
   /// Returns or sets the name of the active printer.
@@ -190,19 +190,19 @@ public partial interface _Global: IModelObject
   /// Returns a KeyBindings collection that represents customized key assignments.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.keybindings?view=word-pia"/>
-  public KeyBindings KeyBindings { get; }
+  public IKeyBindings KeyBindings { get; }
 
   /// <summary>
   /// Returns an Options object that represents application settings in Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.options?view=word-pia"/>
-  public Options Options { get; }
+  public IOptions Options { get; }
 
   /// <summary>
   /// Returns a Dictionaries object that represents the collection of active custom dictionaries.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.customdictionaries?view=word-pia"/>
-  public Dictionaries CustomDictionaries { get; }
+  public IDictionaries CustomDictionaries { get; }
 
   /// <summary>
   /// Sets the StatusBar.
@@ -220,19 +220,19 @@ public partial interface _Global: IModelObject
   /// Returns a HangulHanjaConversionDictionaries collection that represents active custom conversion dictionaries.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.hangulhanjadictionaries?view=word-pia"/>
-  public HangulHanjaConversionDictionaries HangulHanjaDictionaries { get; }
+  public IHangulHanjaConversionDictionaries HangulHanjaDictionaries { get; }
 
   /// <summary>
   /// Returns a LanguageSettings object that contains language setting information in Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.languagesettings?view=word-pia"/>
-  public App.LanguageSettings LanguageSettings { get; }
+  public App.ILanguageSettings LanguageSettings { get; }
 
   /// <summary>
   /// Returns an AnswerWizard object that contains files used by the online Help search engine.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.answerwizard?view=word-pia"/>
-  public App.AnswerWizard AnswerWizard { get; }
+  public App.IAnswerWizard AnswerWizard { get; }
 
   /// <summary>
   /// Returns an AutoCorrect object that represents automatic corrections made to e-mail messages.
@@ -244,13 +244,13 @@ public partial interface _Global: IModelObject
   /// Returns a ProtectedViewWindows object that represents open protected view windows.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.protectedviewwindows?view=word-pia"/>
-  public ProtectedViewWindows ProtectedViewWindows { get; }
+  public IProtectedViewWindows ProtectedViewWindows { get; }
 
   /// <summary>
   /// Returns a ProtectedViewWindow object that represents the active protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.activeprotectedviewwindow?view=word-pia"/>
-  public ProtectedViewWindow ActiveProtectedViewWindow { get; }
+  public IProtectedViewWindow ActiveProtectedViewWindow { get; }
 
   /// <summary>
   /// Gets whether the application window is a protected view window.

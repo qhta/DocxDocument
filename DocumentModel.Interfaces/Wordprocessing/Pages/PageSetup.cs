@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 /// bottom margin, paper size, and so on) as properties.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagesetup?view=word-pia"/>
-public partial interface PageSetup : IModelObject
+public partial interface IPageSetup : IModelObject
 {
   /// <summary>
   /// Returns or sets the distance (in points) between the top edge of the page and the top boundary of the body
@@ -127,7 +127,7 @@ public partial interface PageSetup : IModelObject
   /// Returns or sets the LineNumbering object that represents the line numbers for the specified PageSetup object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagesetup.linenumbering?view=word-pia"/>
-  public LineNumbering LineNumbering { get; set; }
+  public ILineNumbering LineNumbering { get; set; }
 
   /// <summary>
   /// Returns a TextColumns collection that represents the set of text columns for the specified PageSetup object.

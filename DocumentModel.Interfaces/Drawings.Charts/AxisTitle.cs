@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart axis title.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxistitle?view=office-pia"/>
-public partial interface AxisTitle: ChartTitle
+public partial interface IAxisTitle: IChartTitle
 {
   /// <summary>
   /// Gets or sets the `Caption` property.
@@ -16,12 +16,12 @@ public partial interface AxisTitle: ChartTitle
   /// Gets the `Characters` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxistitle.characters?view=office-pia"/>
-  public new Characters Characters { get; }
+  public new ICharacters Characters { get; }
   /// <summary>
   /// Gets the `Font` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxistitle.font?view=office-pia"/>
-  public new ChartFont Font { get; }
+  public new IChartFont Font { get; }
   /// <summary>
   /// Gets or sets the `HorizontalAlignment` property.
   /// </summary>
@@ -76,7 +76,7 @@ public partial interface AxisTitle: ChartTitle
   /// Gets the `Fill` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxistitle.fill?view=office-pia"/>
-  public new ChartFillFormat Fill { get; }
+  public new IChartFillFormat Fill { get; }
   /// <summary>
   /// Gets the `Border` property.
   /// </summary>
@@ -101,7 +101,7 @@ public partial interface AxisTitle: ChartTitle
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxistitle.format?view=office-pia"/>
-  public new ChartFormat Format { get; }
+  public new IChartFormat Format { get; }
   /// <summary>
   /// Gets the `Height` property.
   /// </summary>

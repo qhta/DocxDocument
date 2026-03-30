@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single caption label.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel?view=word-pia"/>
-public partial interface CaptionLabel : IModelObject
+public partial interface ICaptionLabel : IModelObject
 {
   /// <summary>
   /// Gets the name of the caption label.

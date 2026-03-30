@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// A collection of DocumentProperty objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperties?view=office-pia"/>
-public partial interface DocumentProperties: IModelCollection<DocumentProperty>
+public partial interface IDocumentProperties: IModelCollection<IDocumentProperty>
 {
 }
 

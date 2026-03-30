@@ -4,25 +4,25 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single comment.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment?view=word-pia"/>
-public partial interface Comment : IModelObject
+public partial interface IComment : IModelObject
 {
   /// <summary>
   /// Gets the range that contains the comment text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// Gets the range marked by the comment reference mark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment.reference?view=word-pia"/>
-  public Range Reference { get; }
+  public IRange Reference { get; }
 
   /// <summary>
   /// Gets the range in the document to which the comment applies.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment.scope?view=word-pia"/>
-  public Range Scope { get; }
+  public IRange Scope { get; }
 
   /// <summary>
   /// Gets the index number of the comment in the `Comments` collection.
@@ -70,17 +70,17 @@ public partial interface Comment : IModelObject
   /// Gets the parent comment for a reply.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment.ancestor?view=word-pia"/>
-  public Comment Ancestor { get; }
+  public IComment Ancestor { get; }
 
   /// <summary>
   /// Gets the co-author associated with the comment.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment.contact?view=word-pia"/>
-  public CoAuthor Contact { get; }
+  public ICoAuthor Contact { get; }
 
   /// <summary>
   /// Gets the collection of replies to the comment.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment.replies?view=word-pia"/>
-  public Comments Replies { get; }
+  public IComments Replies { get; }
 }

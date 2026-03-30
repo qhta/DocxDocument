@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Represents a command bar control.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol?view=office-pia"/>
-public partial interface CommandBarControl: IModelObject
+public partial interface ICommandBarControl: IModelObject
 {
   /// <summary>
   /// Invokes `accSelect`.
@@ -53,7 +53,7 @@ public partial interface CommandBarControl: IModelObject
   /// <param name="Before">The `Before` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.copy?view=office-pia"/>
-  public CommandBarControl Copy(object Bar, object Before);
+  public ICommandBarControl Copy(object Bar, object Before);
   /// <summary>
   /// Deletes the command bar control.
   /// </summary>
@@ -72,7 +72,7 @@ public partial interface CommandBarControl: IModelObject
   /// <param name="Before">The `Before` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.move?view=office-pia"/>
-  public CommandBarControl Move(object Bar, object Before);
+  public ICommandBarControl Move(object Bar, object Before);
   /// <summary>
   /// Resets the command bar control to its default settings.
   /// </summary>

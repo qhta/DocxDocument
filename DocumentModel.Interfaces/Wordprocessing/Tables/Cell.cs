@@ -6,13 +6,13 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single table cell.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell?view=word-pia"/>
-public partial interface Cell : IModelObject
+public partial interface ICell : IModelObject
 {
   /// <summary>
   /// Gets the range that represents the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// Gets the index number of the row that contains the cell.
@@ -54,31 +54,31 @@ public partial interface Cell : IModelObject
   /// Gets the column that contains the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.column?view=word-pia"/>
-  public Column Column { get; }
+  public IColumn Column { get; }
 
   /// <summary>
   /// Gets the row that contains the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.row?view=word-pia"/>
-  public Row Row { get; }
+  public IRow Row { get; }
 
   /// <summary>
   /// Gets the next cell in the table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.next?view=word-pia"/>
-  public Cell Next { get; }
+  public ICell Next { get; }
 
   /// <summary>
   /// Gets the previous cell in the table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.previous?view=word-pia"/>
-  public Cell Previous { get; }
+  public ICell Previous { get; }
 
   /// <summary>
   /// Gets the shading formatting for the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.shading?view=word-pia"/>
-  public Drw.Shading Shading { get; }
+  public Drw.IShading Shading { get; }
 
   /// <summary>
   /// Gets or sets the border formatting for the cell.
@@ -90,7 +90,7 @@ public partial interface Cell : IModelObject
   /// Gets the collection of tables nested within the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.tables?view=word-pia"/>
-  public Tables Tables { get; }
+  public ITables Tables { get; }
 
   /// <summary>
   /// Gets the nesting level of the cell.

@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the properties assigned to a range or selection of footnotes in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnoteoptions?view=word-pia"/>
-public interface FootnoteOptions : IModelObject
+public interface IFootnoteOptions : IModelObject
 {
   /// <summary>
   /// Returns or sets the position of all footnotes.

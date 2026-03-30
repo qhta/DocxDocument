@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the criteria for a find operation.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find?view=word-pia"/>
-public partial interface Find : IModelObject
+public partial interface IFind : IModelObject
 {
   /// <summary>
   /// Determines if the find operation searches forward through the document.
@@ -70,7 +70,7 @@ public partial interface Find : IModelObject
   /// Returns or sets a <see cref="ParagraphFormat"/> object that represents the paragraph settings for the specified range, selection, find or replacement operation, or style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.paragraphformat?view=word-pia"/>
-  public ParagraphFormat ParagraphFormat { get; set; }
+  public IParagraphFormat ParagraphFormat { get; set; }
 
   /// <summary>
   /// Returns or sets the style for the specified object.
@@ -100,13 +100,13 @@ public partial interface Find : IModelObject
   /// Returns a <see cref="Replacement"/> object that contains the criteria for a replace operation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.replacement?view=word-pia"/>
-  public Replacement Replacement { get; }
+  public IReplacement Replacement { get; }
 
   /// <summary>
   /// Returns a <see cref="Frame"/> object that represents the frame formatting for the specified style or find-and-replace operation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.frame?view=word-pia"/>
-  public Frame Frame { get; }
+  public IFrame Frame { get; }
 
   /// <summary>
   /// Returns or sets what happens if the end or beginning of the document is reached during the search, or if the text isn't found in the specified selection or range.

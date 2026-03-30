@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global?view=word-pia"/>
-public partial interface _Global : IModelObject
+public partial interface I_Global : IModelObject
 {
   /// <summary>
   /// Returns a SynonymInfo object with thesaurus information for the specified word or phrase.
@@ -25,7 +25,7 @@ public partial interface _Global : IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_keysboundto?view=word-pia"/>
-  public KeysBoundTo KeysBoundTo(KeyCategory KeyCategory, string Command, object CommandParameter);
+  public IKeysBoundTo KeysBoundTo(KeyCategory KeyCategory, string Command, object CommandParameter);
   /// <summary>
   /// Returns a KeyBinding object that represents the specified key combination.
   /// </summary>
@@ -35,7 +35,7 @@ public partial interface _Global : IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_findkey?view=word-pia"/>
-  public KeyBinding FindKey(int KeyCode, object KeyCode2);
+  public IKeyBinding FindKey(int KeyCode, object KeyCode2);
   /// <summary>
   /// Determines whether a variable that references an object is valid.
   /// </summary>
@@ -176,7 +176,7 @@ public partial interface _Global : IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.getspellingsuggestions?view=word-pia"/>
-  public SpellingSuggestions GetSpellingSuggestions(string Word, object CustomDictionary, object IgnoreUppercase, object MainDictionary, object SuggestionMode, object CustomDictionary2, object CustomDictionary3, object CustomDictionary4, object CustomDictionary5, object CustomDictionary6, object CustomDictionary7, object CustomDictionary8, object CustomDictionary9, object CustomDictionary10);
+  public ISpellingSuggestions GetSpellingSuggestions(string Word, object CustomDictionary, object IgnoreUppercase, object MainDictionary, object SuggestionMode, object CustomDictionary2, object CustomDictionary3, object CustomDictionary4, object CustomDictionary5, object CustomDictionary6, object CustomDictionary7, object CustomDictionary8, object CustomDictionary9, object CustomDictionary10);
   /// <summary>
   /// Displays online Help information.
   /// </summary>

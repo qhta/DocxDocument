@@ -117,7 +117,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.windowselectionchange?view=word-pia"/>
-  public void WindowSelectionChange(Selection Sel);
+  public void WindowSelectionChange(ISelection Sel);
 
   /// <summary>
   /// Occurs before a right-click in a window.
@@ -128,7 +128,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.windowbeforerightclick?view=word-pia"/>
-  public void WindowBeforeRightClick(Selection Sel, ref bool Cancel);
+  public void WindowBeforeRightClick(ISelection Sel, ref bool Cancel);
 
   /// <summary>
   /// Occurs before a double-click in a window.
@@ -139,7 +139,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.windowbeforedoubleclick?view=word-pia"/>
-  public void WindowBeforeDoubleClick(Selection Sel, ref bool Cancel);
+  public void WindowBeforeDoubleClick(ISelection Sel, ref bool Cancel);
 
   /// <summary>
   /// Occurs when the e-postage property dialog is displayed.
@@ -272,7 +272,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.xmlselectionchange?view=word-pia"/>
-  public void XMLSelectionChange(Selection Sel, XMLNode OldXMLNode, XMLNode NewXMLNode, int Reason);
+  public void XMLSelectionChange(ISelection Sel, IXMLNode OldXMLNode, IXMLNode NewXMLNode, int Reason);
 
   /// <summary>
   /// Occurs when an XML validation error occurs.
@@ -282,7 +282,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.xmlvalidationerror?view=word-pia"/>
-  public void XMLValidationError(XMLNode XMLNode);
+  public void XMLValidationError(IXMLNode XMLNode);
 
   /// <summary>
   /// Occurs when a document is synchronized.
@@ -334,7 +334,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.protectedviewwindowopen?view=word-pia"/>
-  public void ProtectedViewWindowOpen(ProtectedViewWindow PvWindow);
+  public void ProtectedViewWindowOpen(IProtectedViewWindow PvWindow);
 
   /// <summary>
   /// Occurs before a protected view window is edited.
@@ -345,7 +345,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.protectedviewwindowbeforeedit?view=word-pia"/>
-  public void ProtectedViewWindowBeforeEdit(ProtectedViewWindow PvWindow, ref bool Cancel);
+  public void ProtectedViewWindowBeforeEdit(IProtectedViewWindow PvWindow, ref bool Cancel);
 
   /// <summary>
   /// Occurs before a protected view window is closed.
@@ -357,7 +357,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.protectedviewwindowbeforeclose?view=word-pia"/>
-  public void ProtectedViewWindowBeforeClose(ProtectedViewWindow PvWindow, int CloseReason, ref bool Cancel);
+  public void ProtectedViewWindowBeforeClose(IProtectedViewWindow PvWindow, int CloseReason, ref bool Cancel);
 
   /// <summary>
   /// Occurs when a protected view window is resized.
@@ -367,7 +367,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.protectedviewwindowsize?view=word-pia"/>
-  public void ProtectedViewWindowSize(ProtectedViewWindow PvWindow);
+  public void ProtectedViewWindowSize(IProtectedViewWindow PvWindow);
 
   /// <summary>
   /// Occurs when a protected view window is activated.
@@ -377,7 +377,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.protectedviewwindowactivate?view=word-pia"/>
-  public void ProtectedViewWindowActivate(ProtectedViewWindow PvWindow);
+  public void ProtectedViewWindowActivate(IProtectedViewWindow PvWindow);
 
   /// <summary>
   /// Occurs when a protected view window is deactivated.
@@ -387,5 +387,5 @@ public partial interface IApplicationEvents4: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.protectedviewwindowdeactivate?view=word-pia"/>
-  public void ProtectedViewWindowDeactivate(ProtectedViewWindow PvWindow);
+  public void ProtectedViewWindowDeactivate(IProtectedViewWindow PvWindow);
 }

@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents chart grid lines.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.gridlines?view=office-pia"/>
-public partial interface GridLines: IModelObject
+public partial interface IGridLines: IModelObject
 {
   /// <summary>
   /// Gets the `Name` property.
@@ -21,6 +21,6 @@ public partial interface GridLines: IModelObject
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.gridlines.format?view=office-pia"/>
-  public ChartFormat Format { get; }
+  public IChartFormat Format { get; }
 }
 

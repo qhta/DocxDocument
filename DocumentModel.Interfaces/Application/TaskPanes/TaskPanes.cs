@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 /// A collection of TaskPane objects that contains commonly performed tasks in Microsoft Word.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.taskpanes?view=word-pia"/>
-public partial interface TaskPanes : IModelObject, IModelDictionary<TaskPanes, TaskPane>
+public partial interface ITaskPanes : IModelObject, IModelDictionary<ITaskPanes, ITaskPane>
 {
 }

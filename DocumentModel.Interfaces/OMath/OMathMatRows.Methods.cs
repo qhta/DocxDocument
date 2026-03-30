@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatrows?view=word-pia"/>
-public partial interface OMathMatRows: IModelObject
+public partial interface IOMathMatRows: IModelObject
 {
   /// <summary>
   /// Adds a matrix row to the collection.
@@ -16,5 +16,5 @@ public partial interface OMathMatRows: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatrows.add?view=word-pia"/>
-  public OMathMatRow Add(object BeforeRow);
+  public IOMathMatRow Add(object BeforeRow);
 }

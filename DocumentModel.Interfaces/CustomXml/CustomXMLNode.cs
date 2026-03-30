@@ -5,13 +5,13 @@ namespace DocumentModel.CustomXml;
 /// Represents an XML node in a document's custom XML tree.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode?view=office-pia"/>
-public partial interface CustomXMLNode: IModelObject
+public partial interface ICustomXMLNode: IModelObject
 {
   /// <summary>
   /// Gets or sets the `Attributes` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode.attributes?view=office-pia"/>
-  public CustomXMLNodes Attributes { get; }
+  public ICustomXMLNodes Attributes { get; }
   /// <summary>
   /// Gets the `BaseName` property.
   /// </summary>
@@ -21,17 +21,17 @@ public partial interface CustomXMLNode: IModelObject
   /// Gets the `ChildNodes` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode.childnodes?view=office-pia"/>
-  public CustomXMLNodes ChildNodes { get; }
+  public ICustomXMLNodes ChildNodes { get; }
   /// <summary>
   /// Gets the `FirstChild` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode.firstchild?view=office-pia"/>
-  public CustomXMLNode FirstChild { get; }
+  public ICustomXMLNode FirstChild { get; }
   /// <summary>
   /// Gets the `LastChild` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode.lastchild?view=office-pia"/>
-  public CustomXMLNode LastChild { get; }
+  public ICustomXMLNode LastChild { get; }
   /// <summary>
   /// Gets the `NamespaceURI` property.
   /// </summary>
@@ -41,7 +41,7 @@ public partial interface CustomXMLNode: IModelObject
   /// Gets the `NextSibling` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode.nextsibling?view=office-pia"/>
-  public CustomXMLNode NextSibling { get; }
+  public ICustomXMLNode NextSibling { get; }
   /// <summary>
   /// Gets the `NodeType` property.
   /// </summary>
@@ -61,17 +61,17 @@ public partial interface CustomXMLNode: IModelObject
   /// Gets the `OwnerPart` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode.ownerpart?view=office-pia"/>
-  public CustomXMLPart OwnerPart { get; }
+  public ICustomXMLPart OwnerPart { get; }
   /// <summary>
   /// Gets the `PreviousSibling` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode.previoussibling?view=office-pia"/>
-  public CustomXMLNode PreviousSibling { get; }
+  public ICustomXMLNode PreviousSibling { get; }
   /// <summary>
   /// Gets the `ParentNode` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode.parentnode?view=office-pia"/>
-  public CustomXMLNode ParentNode { get; }
+  public ICustomXMLNode ParentNode { get; }
   /// <summary>
   /// Gets or sets the `Text` property.
   /// </summary>

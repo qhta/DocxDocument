@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single table of authorities in a document (a TOA field).
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities?view=word-pia"/>
-public partial interface TableOfAuthorities : IModelObject
+public partial interface ITableOfAuthorities : IModelObject
 {
   /// <summary>
   /// True if five or more page references to the same authority are replaced with "Passim."
@@ -74,7 +74,7 @@ public partial interface TableOfAuthorities : IModelObject
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// Returns or sets the character between entries and their page numbers in a table of authorities.

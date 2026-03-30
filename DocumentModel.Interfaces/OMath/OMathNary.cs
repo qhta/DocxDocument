@@ -4,23 +4,23 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the mathematical n-ary object, consisting of an n-ary object, a base (or operand), and optional upper limits and lower limits.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary?view=word-pia"/>
-public interface OMathNary : IModelObject
+public interface IOMathNary : IModelObject
 {
   /// <summary>
   /// Returns the subscript expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.sub?view=word-pia"/>
-  public OMath Sub { get; }
+  public IOMath Sub { get; }
   /// <summary>
   /// Returns the superscript expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.sup?view=word-pia"/>
-  public OMath Sup { get; }
+  public IOMath Sup { get; }
   /// <summary>
   /// Returns the base expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.e?view=word-pia"/>
-  public OMath E { get; }
+  public IOMath E { get; }
   /// <summary>
   /// Returns or sets the n-ary operator character.
   /// </summary>

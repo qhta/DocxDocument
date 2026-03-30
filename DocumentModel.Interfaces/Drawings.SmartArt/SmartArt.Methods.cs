@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.SmartArt;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartart?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface SmartArt: IModelObject
+public partial interface ISmartArt: IModelObject
 {
   /// <summary>
   /// Invokes `Reset`.

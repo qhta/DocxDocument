@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.Text;
 /// Contains font attributes for an object, such as name, size, style, and color.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2?view=office-pia"/>
-public partial interface Font: IModelObject
+public partial interface IFont: IModelObject
 {
   /// <summary>
   /// Gets or sets the `Bold` property.
@@ -78,37 +78,37 @@ public partial interface Font: IModelObject
   /// Gets the `Fill` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.fill?view=office-pia"/>
-  public FillFormat Fill { get; }
+  public IFillFormat Fill { get; }
   /// <summary>
   /// Gets the `Glow` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.glow?view=office-pia"/>
-  public GlowFormat Glow { get; }
+  public IGlowFormat Glow { get; }
   /// <summary>
   /// Gets the `Reflection` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.reflection?view=office-pia"/>
-  public ReflectionFormat Reflection { get; }
+  public IReflectionFormat Reflection { get; }
   /// <summary>
   /// Gets the `Line` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.line?view=office-pia"/>
-  public LineFormat Line { get; }
+  public ILineFormat Line { get; }
   /// <summary>
   /// Gets the `Shadow` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.shadow?view=office-pia"/>
-  public ShadowFormat Shadow { get; }
+  public IShadowFormat Shadow { get; }
   /// <summary>
   /// Gets the `Highlight` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.highlight?view=office-pia"/>
-  public ColorFormat Highlight { get; }
+  public IColorFormat Highlight { get; }
   /// <summary>
   /// Gets the `UnderlineColor` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.font2.underlinecolor?view=office-pia"/>
-  public ColorFormat UnderlineColor { get; }
+  public IColorFormat UnderlineColor { get; }
   /// <summary>
   /// Gets or sets the `Smallcaps` property.
   /// </summary>

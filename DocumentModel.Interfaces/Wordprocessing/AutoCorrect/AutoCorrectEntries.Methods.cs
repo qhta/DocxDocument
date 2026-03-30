@@ -28,5 +28,5 @@ public partial interface IAutoCorrectEntries: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrectentries.addrichtext?view=word-pia"/>
-  public IAutoCorrectEntry AddRichText(string Name, Range Range);
+  public IAutoCorrectEntry AddRichText(string Name, IRange Range);
 }

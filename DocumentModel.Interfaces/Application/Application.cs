@@ -25,7 +25,7 @@ public partial interface IApplication : IModelObject
   /// Returns a Windows collection that represents all document windows.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.windows?view=word-pia"/>
-  public Windows Windows { get; }
+  public IWindows Windows { get; }
 
   /// <summary>
   /// Returns a Document object that represents the active document.
@@ -175,7 +175,7 @@ public partial interface IApplication : IModelObject
   /// Returns a Tasks collection that represents all the applications that are running.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.tasks?view=word-pia"/>
-  public Tasks Tasks { get; }
+  public ITasks Tasks { get; }
 
   /// <summary>
   /// Determines if the status bar is displayed.

@@ -7,6 +7,6 @@ namespace DocumentModel.Application;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarbuttonevents?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface _CommandBarButtonEvents
+public partial interface I_CommandBarButtonEvents
 {
 }

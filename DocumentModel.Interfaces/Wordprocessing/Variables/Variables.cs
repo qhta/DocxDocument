@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// variables are used to preserve macro settings in between macro sessions.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.variables?view=word-pia"/>
-public partial interface Variables : IModelCollection<Variable>
+public partial interface IVariables : IModelCollection<IVariable>
 {
 }

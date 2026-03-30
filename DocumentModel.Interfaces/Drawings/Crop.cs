@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 /// Represents an object used to remove a portion of an image.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.crop?view=office-pia"/>
-public partial interface Crop: IModelObject
+public partial interface ICrop: IModelObject
 {
   /// <summary>
   /// Gets or sets the `PictureOffsetX` property.

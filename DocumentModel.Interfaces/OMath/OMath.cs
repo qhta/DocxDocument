@@ -4,19 +4,19 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an equation. OMath objects are members of the OMaths collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath?view=word-pia"/>
-public partial interface OMath : IModelObject
+public partial interface IOMath : IModelObject
 {
   /// <summary>
   /// Returns the range that contains the equation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// Returns the collection of equation functions.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.functions?view=word-pia"/>
-  public OMathFunctions Functions { get; }
+  public IOMathFunctions Functions { get; }
 
   /// <summary>
   /// Returns or sets the type.
@@ -28,31 +28,31 @@ public partial interface OMath : IModelObject
   /// Returns the parent equation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.parentomath?view=word-pia"/>
-  public OMath ParentOMath { get; }
+  public IOMath ParentOMath { get; }
 
   /// <summary>
   /// Returns the parent equation function.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.parentfunction?view=word-pia"/>
-  public OMathFunction ParentFunction { get; }
+  public IOMathFunction ParentFunction { get; }
 
   /// <summary>
   /// Returns the parent matrix row.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.parentrow?view=word-pia"/>
-  public OMathMatRow ParentRow { get; }
+  public IOMathMatRow ParentRow { get; }
 
   /// <summary>
   /// Returns the parent matrix column.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.parentcol?view=word-pia"/>
-  public OMathMatCol ParentCol { get; }
+  public IOMathMatCol ParentCol { get; }
 
   /// <summary>
   /// Returns the parent argument equation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.parentarg?view=word-pia"/>
-  public OMath ParentArg { get; }
+  public IOMath ParentArg { get; }
 
   /// <summary>
   /// Returns the index of the argument within the parent function.
@@ -76,7 +76,7 @@ public partial interface OMath : IModelObject
   /// Returns the collection of equation line breaks.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.breaks?view=word-pia"/>
-  public OMathBreaks Breaks { get; }
+  public IOMathBreaks Breaks { get; }
 
   /// <summary>
   /// Returns or sets the justification.

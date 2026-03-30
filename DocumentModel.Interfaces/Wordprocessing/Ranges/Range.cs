@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a contiguous area in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range?view=word-pia"/>
-public partial interface Range : IModelObject
+public partial interface IRange : IModelObject
 {
   /// <summary>
   /// Returns or sets the text in the specified range.
@@ -19,7 +19,7 @@ public partial interface Range : IModelObject
   /// Returns or sets a Range object that includes the formatted text in the specified range or selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.formattedtext?view=word-pia"/>
-  public Range FormattedText { get; set; }
+  public IRange FormattedText { get; set; }
 
   /// <summary>
   /// Returns or sets the starting character position of a range.
@@ -43,7 +43,7 @@ public partial interface Range : IModelObject
   /// Returns a Range object that represents all the properties of the specified range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.duplicate?view=word-pia"/>
-  public Range Duplicate { get; }
+  public IRange Duplicate { get; }
 
   /// <summary>
   /// Returns the story type for the specified range.
@@ -55,61 +55,61 @@ public partial interface Range : IModelObject
   /// Returns a Tables collection that represents all the tables in the specified range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.tables?view=word-pia"/>
-  public Tables Tables { get; }
+  public ITables Tables { get; }
 
   /// <summary>
   /// Returns a Words collection that represents all the words in a range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.words?view=word-pia"/>
-  public Words Words { get; }
+  public IWords Words { get; }
 
   /// <summary>
   /// Returns a Sentences collection that represents all the sentences in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.sentences?view=word-pia"/>
-  public Sentences Sentences { get; }
+  public ISentences Sentences { get; }
 
   /// <summary>
   /// Returns a Characters collection that represents the characters in a range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.characters?view=word-pia"/>
-  public Characters Characters { get; }
+  public ICharacters Characters { get; }
 
   /// <summary>
   /// Returns a Footnotes collection that represents all the footnotes in a range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.footnotes?view=word-pia"/>
-  public Footnotes Footnotes { get; }
+  public IFootnotes Footnotes { get; }
 
   /// <summary>
   /// Returns a Endnotes collection that represents all the endnotes in a range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.endnotes?view=word-pia"/>
-  public Endnotes Endnotes { get; }
+  public IEndnotes Endnotes { get; }
 
   /// <summary>
   /// Returns a Comments collection that represents all the comments in the specified range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.comments?view=word-pia"/>
-  public Comments Comments { get; }
+  public IComments Comments { get; }
 
   /// <summary>
   /// Returns a Cells collection that represents the table cells in a range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.cells?view=word-pia"/>
-  public Cells Cells { get; }
+  public ICells Cells { get; }
 
   /// <summary>
   /// Returns a Sections collection that represents the sections in the specified range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.sections?view=word-pia"/>
-  public Sections Sections { get; }
+  public ISections Sections { get; }
 
   /// <summary>
   /// Returns a Paragraphs collection that represents all the paragraphs in the specified range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.paragraphs?view=word-pia"/>
-  public Paragraphs Paragraphs { get; }
+  public IParagraphs Paragraphs { get; }
 
   /// <summary>
   /// Returns a Borders collection that represents all the borders for the specified object.
@@ -121,43 +121,43 @@ public partial interface Range : IModelObject
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.shading?view=word-pia"/>
-  public Drw.Shading Shading { get; }
+  public Drw.IShading Shading { get; }
 
   /// <summary>
   /// Returns a TextRetrievalMode object that controls how text is retrieved from the specified range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.textretrievalmode?view=word-pia"/>
-  public TextRetrievalMode TextRetrievalMode { get; set; }
+  public ITextRetrievalMode TextRetrievalMode { get; set; }
 
   /// <summary>
   /// Returns a read-only Fields collection that represents all the fields in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.fields?view=word-pia"/>
-  public Fields Fields { get; }
+  public IFields Fields { get; }
 
   /// <summary>
   /// Returns a FormFields collection that represents all the form fields in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.formfields?view=word-pia"/>
-  public FormFields FormFields { get; }
+  public IFormFields FormFields { get; }
 
   /// <summary>
   /// Returns a Frames collection that represents all the frames in a range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.frames?view=word-pia"/>
-  public Frames Frames { get; }
+  public IFrames Frames { get; }
 
   /// <summary>
   /// Returns or sets a ParagraphFormat object that represents the paragraph settings for the specified range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.paragraphformat?view=word-pia"/>
-  public ParagraphFormat ParagraphFormat { get; set; }
+  public IParagraphFormat ParagraphFormat { get; set; }
 
   /// <summary>
   /// Returns a ListFormat object that represents all the list formatting characteristics of a range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.listformat?view=word-pia"/>
-  public ListFormat ListFormat { get; }
+  public IListFormat ListFormat { get; }
 
   /// <summary>
   /// Returns a Bookmarks collection that represents all the bookmarks in a range.
@@ -199,7 +199,7 @@ public partial interface Range : IModelObject
   /// Returns a Revisions collection that represents the tracked changes in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.revisions?view=word-pia"/>
-  public Revisions Revisions { get; }
+  public IRevisions Revisions { get; }
 
   /// <summary>
   /// Returns or sets the style for the specified object.
@@ -230,13 +230,13 @@ public partial interface Range : IModelObject
   /// Returns a Hyperlinks collection that represents all the hyperlinks in the specified range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.hyperlinks?view=word-pia"/>
-  public Hyperlinks Hyperlinks { get; }
+  public IHyperlinks Hyperlinks { get; }
 
   /// <summary>
   /// Returns a ListParagraphs collection that represents all the numbered paragraphs in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.listparagraphs?view=word-pia"/>
-  public ListParagraphs ListParagraphs { get; }
+  public IListParagraphs ListParagraphs { get; }
 
   /// <summary>
   /// Returns a Subdocuments collection that represents all the subdocuments in the specified range.
@@ -266,13 +266,13 @@ public partial interface Range : IModelObject
   /// Returns a Columns collection that represents all the table columns in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.columns?view=word-pia"/>
-  public Columns Columns { get; }
+  public IColumns Columns { get; }
 
   /// <summary>
   /// Returns a Rows collection that represents all the table rows in a range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.rows?view=word-pia"/>
-  public Rows Rows { get; }
+  public IRows Rows { get; }
 
   /// <summary>
   /// Reserved for internal use.
@@ -309,19 +309,19 @@ public partial interface Range : IModelObject
   /// Returns a Find object that contains the criteria for a find operation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.find?view=word-pia"/>
-  public Find Find { get; }
+  public IFind Find { get; }
 
   /// <summary>
   /// Returns a PageSetup object that's associated with the specified range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.pagesetup?view=word-pia"/>
-  public PageSetup PageSetup { get; set; }
+  public IPageSetup PageSetup { get; set; }
 
   /// <summary>
   /// Returns a ShapeRange collection that represents all the Shape objects in the specified range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.shaperange?view=word-pia"/>
-  public Drw.ShapeRange ShapeRange { get; }
+  public Drw.IShapeRange ShapeRange { get; }
 
   /// <summary>
   /// Returns or sets a CharacterCase constant that represents the case of the text in the specified range.
@@ -333,7 +333,7 @@ public partial interface Range : IModelObject
   /// Returns a ReadabilityStatistics collection that represents the readability statistics for the specified range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.readabilitystatistics?view=word-pia"/>
-  public ReadabilityStatistics ReadabilityStatistics { get; }
+  public IReadabilityStatistics ReadabilityStatistics { get; }
 
   /// <summary>
   /// Returns a ProofreadingErrors collection that represents the sentences that failed the grammar check on the
@@ -366,7 +366,7 @@ public partial interface Range : IModelObject
   /// Returns a Range object that refers to the next story as shown in the following table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.nextstoryrange?view=word-pia"/>
-  public Range NextStoryRange { get; }
+  public IRange NextStoryRange { get; }
 
   /// <summary>
   /// Returns or sets an East Asian language for the specified object.
@@ -422,13 +422,13 @@ public partial interface Range : IModelObject
   /// Returns a Tables collection that represents the tables at the outermost nesting level in the current range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.topleveltables?view=word-pia"/>
-  public Tables TopLevelTables { get; }
+  public ITables TopLevelTables { get; }
 
   /// <summary>
   /// Returns a Scripts collection that represents the collection of HTML scripts in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.scripts?view=word-pia"/>
-  public Scripts Scripts { get; }
+  public IScripts Scripts { get; }
 
   /// <summary>
   /// Returns or sets the character width of the specified range.
@@ -465,13 +465,13 @@ public partial interface Range : IModelObject
   /// Returns a HTMLDivisions object that represents an HTML division in a Web document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.htmldivisions?view=word-pia"/>
-  public HTMLDivisions HTMLDivisions { get; }
+  public IHTMLDivisions HTMLDivisions { get; }
 
   /// <summary>
   /// Returns a SmartTags object that represents a smart tag in a range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.smarttags?view=word-pia"/>
-  public SmartTags SmartTags { get; }
+  public ISmartTags SmartTags { get; }
 
   /// <summary>
   /// Determines if all nonprinting characters (such as hidden text, tab marks, space marks, and paragraph marks)
@@ -490,32 +490,32 @@ public partial interface Range : IModelObject
   /// Returns a FootnoteOptions object that represents the footnote options in a range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.footnoteoptions?view=word-pia"/>
-  public FootnoteOptions FootnoteOptions { get; }
+  public IFootnoteOptions FootnoteOptions { get; }
 
   /// <summary>
   /// Returns a EndnoteOptions object that represents the endnotes in a range or selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.endnoteoptions?view=word-pia"/>
-  public EndnoteOptions EndnoteOptions { get; }
+  public IEndnoteOptions EndnoteOptions { get; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.xmlnodes?view=word-pia"/>
-  public XMLNodes XMLNodes { get; }
+  public IXMLNodes XMLNodes { get; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.xmlparentnode?view=word-pia"/>
-  public XMLNode XMLParentNode { get; }
+  public IXMLNode XMLParentNode { get; }
 
   /// <summary>
   /// Returns an Editors object that represents all the users authorized to modify a selection or range within a
   /// document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.editors?view=word-pia"/>
-  public Editors Editors { get; }
+  public IEditors Editors { get; }
 
   /// <summary>
   /// Returns a picture representation of how a selection or range of text appears.
@@ -527,7 +527,7 @@ public partial interface Range : IModelObject
   /// Returns an OMaths collection that represents the OMath objects within the specified range. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.omaths?view=word-pia"/>
-  public OMaths OMaths { get; }
+  public IOMaths OMaths { get; }
 
   /// <summary>
   /// Returns a Object that represents the style used to format one or more characters. Read-only.
@@ -557,7 +557,7 @@ public partial interface Range : IModelObject
   /// Returns a ContentControls collection that represents the content controls contained within a range. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.contentcontrols?view=word-pia"/>
-  public ContentControls ContentControls { get; }
+  public IContentControls ContentControls { get; }
 
   /// <summary>
   /// Returns a String that represents the XML contained within the range in the Microsoft Office Word Open XML
@@ -570,25 +570,25 @@ public partial interface Range : IModelObject
   /// Returns a ContentControl object that represents the parent content control for the specified range. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.parentcontentcontrol?view=word-pia"/>
-  public ContentControl ParentContentControl { get; }
+  public IContentControl ParentContentControl { get; }
 
   /// <summary>
   /// Gets a CoAuthLocks collection object that represents all the locks in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.locks?view=word-pia"/>
-  public CoAuthLocks Locks { get; }
+  public ICoAuthLocks Locks { get; }
 
   /// <summary>
   /// Gets a CoAuthUpdates collection object that represents all the available updates in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.updates?view=word-pia"/>
-  public CoAuthUpdates Updates { get; }
+  public ICoAuthUpdates Updates { get; }
 
   /// <summary>
   /// Gets a Conflicts collection object that contains all the conflict objects in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.conflicts?view=word-pia"/>
-  public Conflicts Conflicts { get; }
+  public IConflicts Conflicts { get; }
 
   /// <summary>
   /// Returns an Integer (int in C#) that indicates whether the text in the specified range is visible on the

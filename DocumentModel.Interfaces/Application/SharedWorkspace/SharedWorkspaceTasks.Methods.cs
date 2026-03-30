@@ -8,7 +8,7 @@ namespace DocumentModel.Application;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetasks?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface SharedWorkspaceTasks: IModelObject
+public partial interface ISharedWorkspaceTasks: IModelObject
 {
   /// <summary>
   /// Invokes `Add`.
@@ -21,7 +21,7 @@ public partial interface SharedWorkspaceTasks: IModelObject
   /// <param name="DueDate">The `DueDate` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetasks.add?view=office-pia"/>
-  public SharedWorkspaceTask Add
+  public ISharedWorkspaceTask Add
     (string Title, object Status, object Priority, object Assignee, object Description, object DueDate);
 }
 

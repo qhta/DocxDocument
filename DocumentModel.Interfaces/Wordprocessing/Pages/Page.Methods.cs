@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.page?view=word-pia"/>
-public partial interface Page: IModelObject
+public partial interface IPage: IModelObject
 {
   /// <summary>
   /// Executes the save as png operation.

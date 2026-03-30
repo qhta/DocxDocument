@@ -4,13 +4,13 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a phantom object, which has two primary uses: (1) adding the spacing of the phantom base without displaying that base or (2) suppressing part of the glyph from spacing considerations.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathphantom?view=word-pia"/>
-public interface OMathPhantom : IModelObject
+public interface IOMathPhantom : IModelObject
 {
   /// <summary>
   /// Returns the base expression for the phantom.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathphantom.e?view=word-pia"/>
-  public OMath E { get; }
+  public IOMath E { get; }
   /// <summary>
   /// Returns or sets whether the phantom expression is shown.
   /// </summary>

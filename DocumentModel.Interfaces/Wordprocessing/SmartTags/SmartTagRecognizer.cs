@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents installed components that label text with types of information.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagrecognizer?view=word-pia"/>
-public interface SmartTagRecognizer : IModelObject
+public interface ISmartTagRecognizer : IModelObject
 {
   /// <summary>
   /// Specifies the full name of a SmartTagRecognizer object, including the path.

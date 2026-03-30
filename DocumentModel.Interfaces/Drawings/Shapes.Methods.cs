@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes?view=word-pia"/>
-public partial interface Shapes: IModelObject
+public partial interface IShapes: IModelObject
 {
   /// <summary>
   /// Adds a callout shape to the collection.
@@ -18,12 +18,12 @@ public partial interface Shapes: IModelObject
   /// <param name="Width">The width of the shape.</param>
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
-  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addcallout?view=word-pia"/>
-  public Shape AddCallout(Drw.CalloutType Type, float Left, float Top, float Width, float Height, object Anchor);
+  public IShape AddCallout(Drw.CalloutType Type, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
   /// Adds a connector shape to the collection.
@@ -33,24 +33,24 @@ public partial interface Shapes: IModelObject
   /// <param name="BeginY">The starting y-coordinate.</param>
   /// <param name="EndX">The ending x-coordinate.</param>
   /// <param name="EndY">The ending y-coordinate.</param>
-  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addconnector?view=word-pia"/>
-  public Shape AddConnector(Drw.ConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
+  public IShape AddConnector(Drw.ConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
 
   /// <summary>
   /// Adds a curve shape to the collection.
   /// </summary>
   /// <param name="SafeArrayOfPoints">The array of points for the curve.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
-  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addcurve?view=word-pia"/>
-  public Shape AddCurve(object SafeArrayOfPoints, object Anchor);
+  public IShape AddCurve(object SafeArrayOfPoints, object Anchor);
 
   /// <summary>
   /// Adds a label shape to the collection.
@@ -61,12 +61,12 @@ public partial interface Shapes: IModelObject
   /// <param name="Width">The width of the shape.</param>
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
-  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addlabel?view=word-pia"/>
-  public Shape AddLabel(TextOrientation Orientation, float Left, float Top, float Width, float Height, object Anchor);
+  public IShape AddLabel(TextOrientation Orientation, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
   /// Adds a line shape to the collection.
@@ -76,12 +76,12 @@ public partial interface Shapes: IModelObject
   /// <param name="EndX">The ending x-coordinate.</param>
   /// <param name="EndY">The ending y-coordinate.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
-  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addline?view=word-pia"/>
-  public Shape AddLine(float BeginX, float BeginY, float EndX, float EndY, object Anchor);
+  public IShape AddLine(float BeginX, float BeginY, float EndX, float EndY, object Anchor);
 
   /// <summary>
   /// Adds a picture to the collection as a shape.
@@ -94,24 +94,24 @@ public partial interface Shapes: IModelObject
   /// <param name="Width">The width of the shape.</param>
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
-  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addpicture?view=word-pia"/>
-  public Shape AddPicture(string FileName, object LinkToFile, object SaveWithDocument, object Left, object Top, object Width, object Height, object Anchor);
+  public IShape AddPicture(string FileName, object LinkToFile, object SaveWithDocument, object Left, object Top, object Width, object Height, object Anchor);
 
   /// <summary>
   /// Adds a polyline shape to the collection.
   /// </summary>
   /// <param name="SafeArrayOfPoints">The array of points for the polyline.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
-  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addpolyline?view=word-pia"/>
-  public Shape AddPolyline(object SafeArrayOfPoints, object Anchor);
+  public IShape AddPolyline(object SafeArrayOfPoints, object Anchor);
 
   /// <summary>
   /// Adds a shape to the collection.
@@ -122,12 +122,12 @@ public partial interface Shapes: IModelObject
   /// <param name="Width">The width of the shape.</param>
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
-  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addshape?view=word-pia"/>
-  public Shape AddShape(int Type, float Left, float Top, float Width, float Height, object Anchor);
+  public IShape AddShape(int Type, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
   /// Adds a text effect shape to the collection.
@@ -141,12 +141,12 @@ public partial interface Shapes: IModelObject
   /// <param name="Left">The left position of the shape.</param>
   /// <param name="Top">The top position of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
-  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addtexteffect?view=word-pia"/>
-  public Shape AddTextEffect(Drw.PresetTextEffect PresetTextEffect, string Text, string FontName, float FontSize, TriState FontBold, TriState FontItalic, float Left, float Top, object Anchor);
+  public IShape AddTextEffect(Drw.PresetTextEffect PresetTextEffect, string Text, string FontName, float FontSize, TriState FontBold, TriState FontItalic, float Left, float Top, object Anchor);
 
   /// <summary>
   /// Adds a textbox shape to the collection.
@@ -157,12 +157,12 @@ public partial interface Shapes: IModelObject
   /// <param name="Width">The width of the shape.</param>
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
-  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addtextbox?view=word-pia"/>
-  public Shape AddTextbox(TextOrientation Orientation, float Left, float Top, float Width, float Height, object Anchor);
+  public IShape AddTextbox(TextOrientation Orientation, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
   /// Builds a freeform shape and adds it to the collection.
@@ -170,23 +170,23 @@ public partial interface Shapes: IModelObject
   /// <param name="EditingType">The editing type for the freeform.</param>
   /// <param name="X1">The x-coordinate of the first point.</param>
   /// <param name="Y1">The y-coordinate of the first point.</param>
-  /// <returns>The created <see cref="FreeformBuilder"/> object.</returns>
+  /// <returns>The created <see cref="IFreeformBuilder"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.buildfreeform?view=word-pia"/>
-  public FreeformBuilder BuildFreeform(Drw.EditingType EditingType, float X1, float Y1);
+  public IFreeformBuilder BuildFreeform(Drw.EditingType EditingType, float X1, float Y1);
 
   /// <summary>
   /// Returns a range of shapes from the collection.
   /// </summary>
   /// <param name="Index">The index or array of indexes of the shapes to include in the range.</param>
-  /// <returns>The <see cref="ShapeRange"/> object representing the range.</returns>
+  /// <returns>The <see cref="IShapeRange"/> object representing the range.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.range?view=word-pia"/>
-  public ShapeRange Range(object Index);
+  public IShapeRange Range(object Index);
 
   /// <summary>
   /// Selects all the shapes in the main story, in a canvas, or in headers and footers of a document.
@@ -212,12 +212,12 @@ public partial interface Shapes: IModelObject
   /// <param name="Width">The width of the shape.</param>
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
-  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addoleobject?view=word-pia"/>
-  public Shape AddOLEObject(object ClassType, object FileName, object LinkToFile, object DisplayAsIcon, object IconFileName, object IconIndex, object IconLabel, object Left, object Top, object Width, object Height, object Anchor);
+  public IShape AddOLEObject(object ClassType, object FileName, object LinkToFile, object DisplayAsIcon, object IconFileName, object IconIndex, object IconLabel, object Left, object Top, object Width, object Height, object Anchor);
 
   /// <summary>
   /// Adds an OLE control to the collection as a shape.
@@ -228,12 +228,12 @@ public partial interface Shapes: IModelObject
   /// <param name="Width">The width of the shape.</param>
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
-  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addolecontrol?view=word-pia"/>
-  public Shape AddOLEControl(object ClassType, object Left, object Top, object Width, object Height, object Anchor);
+  public IShape AddOLEControl(object ClassType, object Left, object Top, object Width, object Height, object Anchor);
 
   /// <summary>
   /// Adds a diagram to the collection as a shape.
@@ -244,12 +244,12 @@ public partial interface Shapes: IModelObject
   /// <param name="Width">The width of the shape.</param>
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
-  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.adddiagram?view=word-pia"/>
-  public Shape AddDiagram(DiagramType Type, float Left, float Top, float Width, float Height, object Anchor);
+  public IShape AddDiagram(DiagramType Type, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
   /// Adds a canvas to the collection as a shape.
@@ -259,12 +259,12 @@ public partial interface Shapes: IModelObject
   /// <param name="Width">The width of the canvas.</param>
   /// <param name="Height">The height of the canvas.</param>
   /// <param name="Anchor">The anchor for the canvas.</param>
-  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addcanvas?view=word-pia"/>
-  public Shape AddCanvas(float Left, float Top, float Width, float Height, object Anchor);
+  public IShape AddCanvas(float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
   /// Adds a chart to the collection as a shape.
@@ -275,12 +275,12 @@ public partial interface Shapes: IModelObject
   /// <param name="Width">The width of the chart.</param>
   /// <param name="Height">The height of the chart.</param>
   /// <param name="Anchor">The anchor for the chart.</param>
-  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addchart?view=word-pia"/>
-  public Shape AddChart(object Type, object Left, object Top, object Width, object Height, object Anchor);
+  public IShape AddChart(object Type, object Left, object Top, object Width, object Height, object Anchor);
 
   /// <summary>
   /// Adds a SmartArt graphic to the collection as a shape.
@@ -291,12 +291,12 @@ public partial interface Shapes: IModelObject
   /// <param name="Width">The width of the shape.</param>
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
-  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addsmartart?view=word-pia"/>
-  public Shape AddSmartArt(object Layout, object Left, object Top, object Width, object Height, object Anchor);
+  public IShape AddSmartArt(object Layout, object Left, object Top, object Width, object Height, object Anchor);
 
   /// <summary>
   /// Adds a web video to the collection as a shape.
@@ -311,12 +311,12 @@ public partial interface Shapes: IModelObject
   /// <param name="Width">The width of the shape.</param>
   /// <param name="Height">The height of the shape.</param>
   /// <param name="Anchor">The anchor for the shape.</param>
-  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addwebvideo?view=word-pia"/>
-  public Shape AddWebVideo(string EmbedCode, object VideoWidth, object VideoHeight, object PosterFrameImage, object Url, object Left, object Top, object Width, object Height, object Anchor);
+  public IShape AddWebVideo(string EmbedCode, object VideoWidth, object VideoHeight, object PosterFrameImage, object Url, object Left, object Top, object Width, object Height, object Anchor);
 
   /// <summary>
   /// Adds a chart to the collection as a shape using the specified style and layout.
@@ -329,10 +329,10 @@ public partial interface Shapes: IModelObject
   /// <param name="Height">The height of the chart.</param>
   /// <param name="Anchor">The anchor for the chart.</param>
   /// <param name="NewLayout">The new layout for the chart.</param>
-  /// <returns>The created <see cref="Shape"/> object.</returns>
+  /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addchart2?view=word-pia"/>
-  public Shape AddChart2(int Style, object Type, object Left, object Top, object Width, object Height, object Anchor, object NewLayout);
+  public IShape AddChart2(int Style, object Type, object Left, object Top, object Width, object Height, object Anchor, object NewLayout);
 }

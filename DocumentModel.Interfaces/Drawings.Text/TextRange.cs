@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.Text;
 /// Represents the `TextRange2` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2?view=office-pia"/>
-public partial interface TextRange: IModelCollection<TextRange>
+public partial interface ITextRange: IModelCollection<ITextRange>
 {
   /// <summary>
   /// Gets or sets the `Text` property.
@@ -18,42 +18,42 @@ public partial interface TextRange: IModelCollection<TextRange>
   /// Gets the `Paragraphs` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.paragraphs?view=office-pia"/>
-  public TextRange Paragraphs { get; }
+  public ITextRange Paragraphs { get; }
   /// <summary>
   /// Gets the `Sentences` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.sentences?view=office-pia"/>
-  public TextRange Sentences { get; }
+  public ITextRange Sentences { get; }
   /// <summary>
   /// Gets the `Words` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.words?view=office-pia"/>
-  public TextRange Words { get; }
+  public ITextRange Words { get; }
   /// <summary>
   /// Gets the `Characters` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.characters?view=office-pia"/>
-  public TextRange Characters { get; }
+  public ITextRange Characters { get; }
   /// <summary>
   /// Gets the `Lines` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.lines?view=office-pia"/>
-  public TextRange Lines { get; }
+  public ITextRange Lines { get; }
   /// <summary>
   /// Gets the `Runs` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.runs?view=office-pia"/>
-  public TextRange Runs { get; }
+  public ITextRange Runs { get; }
   /// <summary>
   /// Gets the `ParagraphFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.paragraphformat?view=office-pia"/>
-  public ParagraphFormat2 ParagraphFormat { get; }
+  public IParagraphFormat2 ParagraphFormat { get; }
   /// <summary>
   /// Gets the `Font` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.font?view=office-pia"/>
-  public Font Font { get; }
+  public IFont Font { get; }
   /// <summary>
   /// Gets the `Length` property.
   /// </summary>
@@ -93,6 +93,6 @@ public partial interface TextRange: IModelCollection<TextRange>
   /// Gets the `MathZones` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.mathzones?view=office-pia"/>
-  public TextRange MathZones { get; }
+  public ITextRange MathZones { get; }
 }
 

@@ -4,16 +4,16 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlchildnodesuggestion?view=word-pia"/>
-public partial interface XMLChildNodeSuggestion: IModelObject
+public partial interface IXMLChildNodeSuggestion: IModelObject
 {
   /// <summary>
   /// Inserts a new XML child node at the specified range.
   /// </summary>
   /// <param name="Range">The range where the child node is inserted.</param>
-  /// <returns>The created <see cref="XMLNode"/> object.</returns>
+  /// <returns>The created <see cref="IXMLNode"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlchildnodesuggestion.insert?view=word-pia"/>
-  public XMLNode Insert(object Range);
+  public IXMLNode Insert(object Range);
 }

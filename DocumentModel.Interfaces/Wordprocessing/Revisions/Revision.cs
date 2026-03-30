@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a change marked with a revision mark.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revision?view=word-pia"/>
-public partial interface Revision : IModelObject
+public partial interface IRevision : IModelObject
 {
   /// <summary>
   /// Returns the name of the user who made the specified tracked change.
@@ -22,7 +22,7 @@ public partial interface Revision : IModelObject
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revision.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// Returns the revision type.
@@ -40,7 +40,7 @@ public partial interface Revision : IModelObject
   /// Returns a Style object that represents the style associated with the current author for revisions.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revision.style?view=word-pia"/>
-  public Style Style { get; }
+  public IStyle Style { get; }
 
   /// <summary>
   /// Returns a String representing a description of tracked formatting changes in a revision.
@@ -53,12 +53,12 @@ public partial interface Revision : IModelObject
   /// with tracked changes. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revision.movedrange?view=word-pia"/>
-  public Range MovedRange { get; }
+  public IRange MovedRange { get; }
 
   /// <summary>
   /// Returns a Cells collection that represents the table cells that have been marked with revision marks.
   /// Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revision.cells?view=word-pia"/>
-  public Cells Cells { get; }
+  public ICells Cells { get; }
 }

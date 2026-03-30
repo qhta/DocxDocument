@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a dropped capital letter at the beginning of a paragraph.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dropcap?view=word-pia"/>
-public partial interface DropCap : IModelObject
+public partial interface IDropCap : IModelObject
 {
   /// <summary>
   /// Gets or sets the position of the drop cap.

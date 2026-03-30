@@ -166,7 +166,7 @@ public partial interface IDocument: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.autosummarize?view=word-pia"/>
-  public Range AutoSummarize(SummaryLength length, SummaryMode mode, object updateProperties);
+  public IRange AutoSummarize(SummaryLength length, SummaryMode mode, object updateProperties);
 
   /// <summary>
   /// Determines if Microsoft Word can check in a specified document to a server.
@@ -422,7 +422,7 @@ public partial interface IDocument: IModelObject
   /// <param name="SenderGender">The gender of the sender.</param>
   /// <param name="SenderReference">The reference for the sender.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.createlettercontent?view=word-pia"/>
-  public LetterContent CreateLetterContent
+  public ILetterContent CreateLetterContent
   (string DateFormat, bool IncludeHeaderFooter, string PageDesign, LetterStyle LetterStyle, bool Letterhead,
     LetterheadLocation LetterheadLocation, float LetterheadSize, string RecipientName, string RecipientAddress,
     string Salutation, SalutationType SalutationType, string RecipientReference, string MailingInstructions,
@@ -644,7 +644,7 @@ public partial interface IDocument: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.getlettercontent?view=word-pia"/>
-  public LetterContent GetLetterContent();
+  public ILetterContent GetLetterContent();
 
   /// <summary>
   /// Returns the workflow tasks assigned to a document.
@@ -653,7 +653,7 @@ public partial interface IDocument: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.getworkflowtasks?view=word-pia"/>
-  public App.WorkflowTasks GetWorkflowTasks();
+  public App.IWorkflowTasks GetWorkflowTasks();
 
   /// <summary>
   /// Returns the workflow templates attached to a document.
@@ -662,7 +662,7 @@ public partial interface IDocument: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.getworkflowtemplates?view=word-pia"/>
-  public App.WorkflowTemplates GetWorkflowTemplates();
+  public App.IWorkflowTemplates GetWorkflowTemplates();
 
   /// <summary>
   /// Returns a Range object that represents the start position of the specified item.
@@ -675,7 +675,7 @@ public partial interface IDocument: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.goto?view=word-pia"/>
-  public Range GoTo(GoToItem What, GoToDirection Which, int Count, string Name);
+  public IRange GoTo(GoToItem What, GoToDirection Which, int Count, string Name);
 
   /// <summary>
   /// Locks the file on the server preventing anyone else from editing it.
@@ -868,7 +868,7 @@ public partial interface IDocument: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.range?view=word-pia"/>
-  public Range Range(object Start, object End);
+  public IRange Range(object Start, object End);
 
   /// <summary>
   /// Removes smart tags recognized by the grammar checker and rechecks the document content against all smart tag
@@ -1228,7 +1228,7 @@ public partial interface IDocument: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectcontentcontrolsbytag?view=word-pia"/>
-  public ContentControls SelectContentControlsByTag(string Tag);
+  public IContentControls SelectContentControlsByTag(string Tag);
 
   /// <summary>
   /// Returns a ContentControls collection that represents all the content controls in a document with the title specified in the Title parameter. Read-only.
@@ -1238,7 +1238,7 @@ public partial interface IDocument: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectcontentcontrolsbytitle?view=word-pia"/>
-  public ContentControls SelectContentControlsByTitle(string Title);
+  public IContentControls SelectContentControlsByTitle(string Title);
 
   /// <summary>
   /// Returns a ContentControls collection that represents all content controls in a document that are linked to the specific custom XML node in the document's XML data store as specified by the Node parameter. Read-only.
@@ -1248,7 +1248,7 @@ public partial interface IDocument: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectlinkedcontrols?view=word-pia"/>
-  public ContentControls SelectLinkedControls(CustomXMLNode Node);
+  public IContentControls SelectLinkedControls(ICustomXMLNode Node);
 
   /// <summary>
   /// Returns an XMLNodes collection that represents all the specified nodes in the order in which they appear in the document.
@@ -1260,7 +1260,7 @@ public partial interface IDocument: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectnodes?view=word-pia"/>
-  public XMLNodes SelectNodes(string XPath, string PrefixMapping, bool FastSearchSkippingTextNodes);
+  public IXMLNodes SelectNodes(string XPath, string PrefixMapping, bool FastSearchSkippingTextNodes);
 
   /// <summary>
   /// Returns an XMLNode object that represents a node in the specified document.
@@ -1272,7 +1272,7 @@ public partial interface IDocument: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectsinglenode?view=word-pia"/>
-  public XMLNode SelectSingleNode(string XPath, string PrefixMapping, bool FastSearchSkippingTextNodes);
+  public IXMLNode SelectSingleNode(string XPath, string PrefixMapping, bool FastSearchSkippingTextNodes);
 
   /// <summary>
   /// Returns all of the content controls in a document that are not linked to an XML node in the document's XML data store. Read-only.
@@ -1282,7 +1282,7 @@ public partial interface IDocument: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectunlinkedcontrols?view=word-pia"/>
-  public ContentControls SelectUnlinkedControls(CustomXMLPart Stream);
+  public IContentControls SelectUnlinkedControls(ICustomXMLPart Stream);
 
   /// <summary>
   /// Sends the specified document as a fax, without any user interaction.

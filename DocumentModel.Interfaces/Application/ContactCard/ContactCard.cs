@@ -10,7 +10,7 @@ namespace DocumentModel.Application;
 /// Represents a contact card.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocontactcard?view=office-pia"/>
-public partial interface ContactCard : IModelObject
+public partial interface IContactCard : IModelObject
 {
   /// <summary>
   /// Gets the `Address` property.

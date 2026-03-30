@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters?view=word-pia"/>
-public partial interface ChartCharacters: IModelObject
+public partial interface IChartCharacters: IModelObject
 {
   /// <summary>
   /// Deletes the object.

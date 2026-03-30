@@ -6,7 +6,7 @@ namespace DocumentModel.HTML;
 /// Represents a block of HTML script in an Office document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.script?view=office-pia"/>
-public partial interface Script: IModelObject
+public partial interface IScript: IModelObject
 {
   /// <summary>
   /// Deletes this script from the collection.

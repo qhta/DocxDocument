@@ -11,7 +11,7 @@ namespace DocumentModel.CustomXml;
 /// Represents a single validation error in a CustomXMLValidationErrors collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerror?view=office-pia"/>
-public partial interface CustomXMLValidationError: IModelObject
+public partial interface ICustomXMLValidationError: IModelObject
 {
   /// <summary>
   /// Gets the `Name` property.
@@ -22,7 +22,7 @@ public partial interface CustomXMLValidationError: IModelObject
   /// Gets the `Node` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerror.node?view=office-pia"/>
-  public CustomXMLNode Node { get; }
+  public ICustomXMLNode Node { get; }
   /// <summary>
   /// Gets the `Text` property.
   /// </summary>

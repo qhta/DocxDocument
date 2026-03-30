@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.undorecord?view=word-pia"/>
-public partial interface UndoRecord: IModelObject
+public partial interface IUndoRecord: IModelObject
 {
   /// <summary>
   /// Starts a custom undo record with the specified name.

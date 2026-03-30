@@ -7,7 +7,7 @@ namespace DocumentModel.Application;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureinfo?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface SignatureInfo: IModelObject
+public partial interface ISignatureInfo: IModelObject
 {
   /// <summary>
   /// Gets the `ReadOnly` property.

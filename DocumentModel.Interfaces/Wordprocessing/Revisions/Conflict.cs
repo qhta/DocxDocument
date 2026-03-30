@@ -4,13 +4,13 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a conflicting edit in a co-authored document. The type of a Conflict object is specified by the RevisionType enumeration.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conflict?view=word-pia"/>
-public partial interface Conflict : IModelObject
+public partial interface IConflict : IModelObject
 {
   /// <summary>
   /// Gets the range in the document where the conflict occurs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conflict.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// Gets the revision type of the conflict.

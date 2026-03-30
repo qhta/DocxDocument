@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// Contains properties and methods that apply to pictures and OLE objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat?view=word-pia"/>
-public partial interface PictureFormat : IModelObject
+public partial interface IPictureFormat : IModelObject
 {
   /// <summary>
   /// Returns or sets the brightness of the specified picture or OLE object. The value for this property must be a
@@ -69,5 +69,5 @@ public partial interface PictureFormat : IModelObject
   /// Gets or sets a Crop object that represents an image cropping.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.crop?view=word-pia"/>
-  public Drw.Crop Crop { get; set; }
+  public Drw.ICrop Crop { get; set; }
 }

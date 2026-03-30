@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.connectorformat?view=office-pia"/>
-public partial interface ConnectorFormat: IModelObject
+public partial interface IConnectorFormat: IModelObject
 {
   /// <summary>
   /// Connects the beginning of the connector to a shape at the specified connection site.
@@ -13,7 +13,7 @@ public partial interface ConnectorFormat: IModelObject
   /// <param name="ConnectedShape">The `ConnectedShape` parameter.</param>
   /// <param name="ConnectionSite">The `ConnectionSite` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.connectorformat.beginconnect?view=office-pia"/>
-  public void BeginConnect(Shape ConnectedShape, int ConnectionSite);
+  public void BeginConnect(IShape ConnectedShape, int ConnectionSite);
   /// <summary>
   /// Disconnects the beginning of the connector.
   /// </summary>
@@ -25,7 +25,7 @@ public partial interface ConnectorFormat: IModelObject
   /// <param name="ConnectedShape">The `ConnectedShape` parameter.</param>
   /// <param name="ConnectionSite">The `ConnectionSite` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.connectorformat.endconnect?view=office-pia"/>
-  public void EndConnect(Shape ConnectedShape, int ConnectionSite);
+  public void EndConnect(IShape ConnectedShape, int ConnectionSite);
   /// <summary>
   /// Disconnects the end of the connector.
   /// </summary>

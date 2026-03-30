@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel?view=word-pia"/>
-public partial interface ListLevel: IModelObject
+public partial interface IListLevel: IModelObject
 {
   /// <summary>
   /// Applies a picture bullet to the list level and returns the picture bullet shape.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnamespace?view=word-pia"/>
-public partial interface XMLNamespace: IModelObject
+public partial interface IXMLNamespace: IModelObject
 {
   /// <summary>
   /// Gets the location of the XML namespace.
@@ -21,10 +21,10 @@ public partial interface XMLNamespace: IModelObject
   /// Gets the default XSL transform for the XML namespace.
   /// </summary>
   /// <param name="AllUsers">true to return the transform for all users; otherwise, false.</param>
-  /// <returns>The default <see cref="XSLTransform"/> object.</returns>
+  /// <returns>The default <see cref="IXSLTransform"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnamespace.defaulttransform?view=word-pia"/>
-  public XSLTransform DefaultTransform(bool AllUsers);
+  public IXSLTransform DefaultTransform(bool AllUsers);
 }

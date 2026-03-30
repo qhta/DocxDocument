@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// programmatically defining page layout in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.page?view=word-pia"/>
-public partial interface Page : IModelObject
+public partial interface IPage : IModelObject
 {
   /// <summary>
   /// Returns 0 (zero) indicating the upper left corner of the page.
@@ -37,7 +37,7 @@ public partial interface Page : IModelObject
   /// Returns a Rectangles collection that represents a portion of text or graphics in a page in a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.page.rectangles?view=word-pia"/>
-  public Drw.Rectangles Rectangles { get; }
+  public Drw.IRectangles Rectangles { get; }
 
   /// <summary>
   /// Returns a Breaks collection that represents the breaks on a page. The Breaks collection includes page, column,

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an individual schema within the Schema Library.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnamespace?view=word-pia"/>
-public partial interface XMLNamespace : IModelObject
+public partial interface IXMLNamespace : IModelObject
 {
   /// <summary>
   /// Returns a String that represents the Uniform Resource Identifier (URI) of the associated namespace.
@@ -17,5 +17,5 @@ public partial interface XMLNamespace : IModelObject
   /// files specified for use with a schema.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnamespace.xsltransforms?view=word-pia"/>
-  public XSLTransforms XSLTransforms { get; }
+  public IXSLTransforms XSLTransforms { get; }
 }

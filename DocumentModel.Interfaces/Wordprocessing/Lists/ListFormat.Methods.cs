@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat?view=word-pia"/>
-public partial interface ListFormat: IModelObject
+public partial interface IListFormat: IModelObject
 {
   /// <summary>
   /// Returns whether the specified list template can continue the formatting of the previous list.
@@ -15,5 +15,5 @@ public partial interface ListFormat: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.cancontinuepreviouslist?view=word-pia"/>
-  public Continue CanContinuePreviousList(ListTemplate ListTemplate);
+  public Continue CanContinuePreviousList(IListTemplate ListTemplate);
 }

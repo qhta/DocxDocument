@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// A collection of Cell objects in a table column, table row, selection, or range.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells?view=word-pia"/>
-public partial interface Cells : IModelCollection<Cell>
+public partial interface ICells : IModelCollection<ICell>
 {
   /// <summary>
   /// Gets or sets the width of the cells, in points.
@@ -42,7 +42,7 @@ public partial interface Cells : IModelCollection<Cell>
   /// Gets the shading formatting for the cells.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.shading?view=word-pia"/>
-  public Drw.Shading Shading { get; }
+  public Drw.IShading Shading { get; }
 
   /// <summary>
   /// Gets the nesting level of the cells.

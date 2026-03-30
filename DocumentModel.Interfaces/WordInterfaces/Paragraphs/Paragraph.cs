@@ -6,26 +6,26 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single paragraph in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph?view=word-pia"/>
-public partial interface Paragraph : IModelObject
+public partial interface IParagraph : IModelObject
 {
   /// <summary>
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// Returns or sets a ParagraphFormat object that represents the formatting of the specified paragraph or
   /// paragraphs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.format?view=word-pia"/>
-  public ParagraphFormat Format { get; set; }
+  public IParagraphFormat Format { get; set; }
 
   /// <summary>
   /// Returns or sets a TabStops collection that represents all the custom tab stops for the specified paragraphs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.tabstops?view=word-pia"/>
-  public TabStops TabStops { get; set; }
+  public ITabStops TabStops { get; set; }
 
   /// <summary>
   /// Returns a Borders collection that represents all the borders for the specified object.
@@ -37,7 +37,7 @@ public partial interface Paragraph : IModelObject
   /// Returns a DropCap object that represents a dropped capital letter for the specified paragraph.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.dropcap?view=word-pia"/>
-  public DropCap DropCap { get; }
+  public IDropCap DropCap { get; }
 
   /// <summary>
   /// Returns or sets the style for the specified object.
@@ -137,7 +137,7 @@ public partial interface Paragraph : IModelObject
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.shading?view=word-pia"/>
-  public Drw.Shading Shading { get; }
+  public Drw.IShading Shading { get; }
 
   /// <summary>
   /// Determines if Microsoft Word applies East Asian line-breaking rules to the specified paragraphs.

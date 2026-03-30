@@ -5,7 +5,7 @@ namespace DocumentModel.CustomXml;
 /// Represents an XML node in a document's custom XML tree.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode?view=office-pia"/>
-public partial interface CustomXMLNode: IModelObject
+public partial interface ICustomXMLNode: IModelObject
 {
   /// <summary>
   /// Invokes `AppendChildNode`.
@@ -47,20 +47,20 @@ public partial interface CustomXMLNode: IModelObject
   public void InsertNodeBefore
   (string Name, string NamespaceURI,
     XMLNodeType NodeType, string NodeValue,
-    CustomXMLNode NextSibling);
+    ICustomXMLNode NextSibling);
   /// <summary>
   /// Invokes `InsertSubtreeBefore`.
   /// </summary>
   /// <param name="XML">The `XML` parameter.</param>
   /// <param name="NextSibling">The `NextSibling` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode.insertsubtreebefore?view=office-pia"/>
-  public void InsertSubtreeBefore(string XML, CustomXMLNode NextSibling);
+  public void InsertSubtreeBefore(string XML, ICustomXMLNode NextSibling);
   /// <summary>
   /// Invokes `RemoveChild`.
   /// </summary>
   /// <param name="Child">The `Child` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode.removechild?view=office-pia"/>
-  public void RemoveChild(CustomXMLNode Child);
+  public void RemoveChild(ICustomXMLNode Child);
   /// <summary>
   /// Invokes `ReplaceChildNode`.
   /// </summary>
@@ -71,7 +71,7 @@ public partial interface CustomXMLNode: IModelObject
   /// <param name="NodeValue">The `NodeValue` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode.replacechildnode?view=office-pia"/>
   public void ReplaceChildNode
-  (CustomXMLNode OldNode, string Name, string NamespaceURI,
+  (ICustomXMLNode OldNode, string Name, string NamespaceURI,
     XMLNodeType NodeType, string NodeValue);
   /// <summary>
   /// Invokes `ReplaceChildSubtree`.
@@ -79,20 +79,20 @@ public partial interface CustomXMLNode: IModelObject
   /// <param name="XML">The `XML` parameter.</param>
   /// <param name="OldNode">The `OldNode` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode.replacechildsubtree?view=office-pia"/>
-  public void ReplaceChildSubtree(string XML, CustomXMLNode OldNode);
+  public void ReplaceChildSubtree(string XML, ICustomXMLNode OldNode);
   /// <summary>
   /// Invokes `SelectNodes`.
   /// </summary>
   /// <param name="XPath">The `XPath` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode.selectnodes?view=office-pia"/>
-  public CustomXMLNodes SelectNodes(string XPath);
+  public ICustomXMLNodes SelectNodes(string XPath);
   /// <summary>
   /// Invokes `SelectSingleNode`.
   /// </summary>
   /// <param name="XPath">The `XPath` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode.selectsinglenode?view=office-pia"/>
-  public CustomXMLNode SelectSingleNode(string XPath);
+  public ICustomXMLNode SelectSingleNode(string XPath);
 }
 

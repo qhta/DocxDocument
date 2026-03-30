@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the mail merge data source in a mail merge operation.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource?view=word-pia"/>
-public partial interface MailMergeDataSource : IModelObject
+public partial interface IMailMergeDataSource : IModelObject
 {
   /// <summary>
   /// Returns the name of the mail merge data source.
@@ -22,13 +22,13 @@ public partial interface MailMergeDataSource : IModelObject
   /// Returns the type of the mail merge data source.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.type?view=word-pia"/>
-  public MailMergeDataSource Type { get; }
+  public IMailMergeDataSource Type { get; }
 
   /// <summary>
   /// Returns the type of source used for header fields.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.headersourcetype?view=word-pia"/>
-  public MailMergeDataSource HeaderSourceType { get; }
+  public IMailMergeDataSource HeaderSourceType { get; }
 
   /// <summary>
   /// Returns the connection string for the mail merge data source.
@@ -64,13 +64,13 @@ public partial interface MailMergeDataSource : IModelObject
   /// Returns the mail merge field names collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.fieldnames?view=word-pia"/>
-  public MailMergeFieldNames FieldNames { get; }
+  public IMailMergeFieldNames FieldNames { get; }
 
   /// <summary>
   /// Returns the mail merge data fields collection for the active record.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.datafields?view=word-pia"/>
-  public MailMergeDataFields DataFields { get; }
+  public IMailMergeDataFields DataFields { get; }
 
   /// <summary>
   /// Returns the number of records in the data source.
@@ -100,7 +100,7 @@ public partial interface MailMergeDataSource : IModelObject
   /// Returns the mapped data fields collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.mappeddatafields?view=word-pia"/>
-  public MappedDataFields MappedDataFields { get; }
+  public IMappedDataFields MappedDataFields { get; }
 
   /// <summary>
   /// Returns the source table name for the mail merge data source.

@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Text;
 /// Represents characters in chart text.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharacters?view=office-pia"/>
-public partial interface Characters: IModelObject
+public partial interface ICharacters: IModelObject
 {
   /// <summary>
   /// Deletes the specified characters.

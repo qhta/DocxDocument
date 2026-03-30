@@ -12,6 +12,6 @@ public partial interface ICommandBarComboBoxEvents: IModelObject
   /// </summary>
   /// <param name="Ctrl">The `Ctrl` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icommandbarcomboboxevents.change?view=office-pia"/>
-  public void Change(CommandBarComboBox Ctrl);
+  public void Change(ICommandBarComboBox Ctrl);
 }
 

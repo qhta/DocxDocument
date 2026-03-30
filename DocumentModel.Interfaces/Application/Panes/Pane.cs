@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// includes all the window panes for a single window.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane?view=word-pia"/>
-public partial interface Pane : IModelObject
+public partial interface IPane : IModelObject
 {
   /// <summary>
   /// Returns a Document object associated with the specified pane. Read-only.
@@ -18,7 +18,7 @@ public partial interface Pane : IModelObject
   /// Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.selection?view=word-pia"/>
-  public Selection Selection { get; }
+  public ISelection Selection { get; }
 
   /// <summary>
   /// True if rulers are displayed for the specified pane. Read/write Boolean.
@@ -49,19 +49,19 @@ public partial interface Pane : IModelObject
   /// Returns a View object that represents the view for the specified pane.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.view?view=word-pia"/>
-  public View View { get; }
+  public IView View { get; }
 
   /// <summary>
   /// Returns a Pane object that represents the next document pane in the collection. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.next?view=word-pia"/>
-  public Pane Next { get; }
+  public IPane Next { get; }
 
   /// <summary>
   /// Returns a Pane object that represents the previous document pane in the collection. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.previous?view=word-pia"/>
-  public Pane Previous { get; }
+  public IPane Previous { get; }
 
   /// <summary>
   /// Returns or sets the horizontal scroll position as a percentage of the document width. Read/write Long.
@@ -97,11 +97,11 @@ public partial interface Pane : IModelObject
   /// Returns a Frameset object that represents an entire frames page or a single frame on a frames page. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.frameset?view=word-pia"/>
-  public Frameset Frameset { get; }
+  public IFrameset Frameset { get; }
 
   /// <summary>
   /// Returns a Pages collection that represents the pages in a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.pages?view=word-pia"/>
-  public Pages Pages { get; }
+  public IPages Pages { get; }
 }

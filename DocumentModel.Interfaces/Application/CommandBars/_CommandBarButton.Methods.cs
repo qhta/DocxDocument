@@ -7,7 +7,7 @@ namespace DocumentModel.Application;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarbutton?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface _CommandBarButton
+public partial interface I_CommandBarButton
 {
   /// <summary>
   /// Invokes `accSelect`.
@@ -55,7 +55,7 @@ public partial interface _CommandBarButton
   /// <param name="Before">The `Before` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarbutton.copy?view=office-pia"/>
-  public new CommandBarControl Copy(object Bar, object Before);
+  public new ICommandBarControl Copy(object Bar, object Before);
   /// <summary>
   /// Invokes `Delete`.
   /// </summary>
@@ -74,7 +74,7 @@ public partial interface _CommandBarButton
   /// <param name="Before">The `Before` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarbutton.move?view=office-pia"/>
-  public new CommandBarControl Move(object Bar, object Before);
+  public new ICommandBarControl Move(object Bar, object Before);
   /// <summary>
   /// Invokes `Reset`.
   /// </summary>

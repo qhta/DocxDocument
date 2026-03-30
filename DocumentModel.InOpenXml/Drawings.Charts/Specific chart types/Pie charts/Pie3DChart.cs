@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents a 3D pie chart, including color variation, series, labels, and extension list.
 /// </summary>
 [OpenXmlType(typeof(DXDC.Pie3DChart))]
-public partial class Pie3DChart: ModelElement<DXDC.Pie3DChart>, IChart
+public partial class Pie3DChart: ModelElement<DXDC.Pie3DChart>, AbstractChart
 {
   /// <summary>
   ///   Indicates whether colors should vary between chart series.

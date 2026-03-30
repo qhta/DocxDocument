@@ -4,13 +4,13 @@ namespace DocumentModel.Drawings;
 /// Represents line and arrowhead formatting. For a line, the LineFormat object contains formatting information for the line itself; for a shape with a border, this object contains formatting information for the shape's border.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat?view=word-pia"/>
-public interface LineFormat : IModelObject
+public interface ILineFormat : IModelObject
 {
   /// <summary>
   /// Returns a color format object that represents the background color for the line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.backcolor?view=word-pia"/>
-  public ColorFormat BackColor { get; }
+  public IColorFormat BackColor { get; }
   /// <summary>
   /// Returns or sets the length of the begin arrowhead.
   /// </summary>
@@ -50,7 +50,7 @@ public interface LineFormat : IModelObject
   /// Returns a color format object that represents the foreground color for the line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.forecolor?view=word-pia"/>
-  public ColorFormat ForeColor { get; }
+  public IColorFormat ForeColor { get; }
   /// <summary>
   /// Returns or sets the fill pattern for the line.
   /// </summary>

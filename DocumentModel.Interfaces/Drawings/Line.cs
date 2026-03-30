@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// Represents an individual line in a Rectangle object of type wdTextRectangle.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.line?view=word-pia"/>
-public interface Line : IModelObject
+public interface ILine : IModelObject
 {
   /// <summary>
   /// Returns the type of line.
@@ -40,6 +40,6 @@ public interface Line : IModelObject
   /// Returns a rectangles collection that includes the rectangle objects in the line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.line.rectangles?view=word-pia"/>
-  public Rectangles Rectangles { get; }
+  public IRectangles Rectangles { get; }
 
 }

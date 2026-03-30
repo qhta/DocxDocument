@@ -4,14 +4,14 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the elements of a letter created by the Letter Wizard as part of the requested batch update sourced from the local Word PIA documentation set.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lettercontent?view=word-pia"/>
-public interface LetterContent
+public interface ILetterContent
 {
 
   /// <summary>
   /// Gets a duplicate of the letter content.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.duplicate?view=word-pia"/>
-  public LetterContent Duplicate { get; }
+  public ILetterContent Duplicate { get; }
   /// <summary>
   /// Gets or sets the date format for the letter.
   /// </summary>

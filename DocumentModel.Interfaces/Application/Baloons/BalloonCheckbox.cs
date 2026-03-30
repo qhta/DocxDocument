@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a check box in the Office Assistant balloon.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ballooncheckbox?view=office-pia"/>
-public partial interface BalloonCheckbox: IModelObject
+public partial interface IBalloonCheckbox: IModelObject
 {
   /// <summary>
   /// Gets the item text associated with the check box.

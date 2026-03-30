@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmat?view=word-pia"/>
-public partial interface OMathMat: IModelObject
+public partial interface IOMathMat: IModelObject
 {
   /// <summary>
   /// Returns the equation cell at the specified row and column.
@@ -16,5 +16,5 @@ public partial interface OMathMat: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmat.get_cell?view=word-pia"/>
-  public OMath Cell(int Row, int Col);
+  public IOMath Cell(int Row, int Col);
 }

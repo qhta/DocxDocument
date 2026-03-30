@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omaths?view=word-pia"/>
-public partial interface OMaths: IModelObject
+public partial interface IOMaths: IModelObject
 {
   /// <summary>
   /// Converts all equations in the collection to linear format. .
@@ -32,5 +32,5 @@ public partial interface OMaths: IModelObject
   /// <param name="Range">The range to add to the current range. Must not be null.</param>
   /// <returns>A new Range instance representing the combined range of the current and specified ranges.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omaths.add?view=word-pia"/>
-  public Range Add(Range Range);
+  public IRange Add(IRange Range);
 }
