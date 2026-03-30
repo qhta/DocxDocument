@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// A collection of words in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.words?view=word-pia"/>
-public interface Words : IModelObject, IModelCollection<Range>
+public interface Words : IModelCollection<Range>
 {
   /// <summary>
   /// Returns a Range object that represents the first word in a document, selection or range.

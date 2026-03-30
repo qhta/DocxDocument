@@ -28,7 +28,7 @@ public partial interface Columns : IModelCollection<Column>
   /// Gets or sets the border formatting for the columns.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders Borders { get; set; }
 
   /// <summary>
   /// Gets the shading formatting for the columns.

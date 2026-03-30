@@ -63,7 +63,7 @@ public partial interface Style : IModelObject
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders Borders { get; set; }
 
   /// <summary>
   /// Returns or sets a ParagraphFormat object that represents the paragraph settings for the specified style.
@@ -77,7 +77,7 @@ public partial interface Style : IModelObject
   /// Font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.font?view=word-pia"/>
-  public Font Font { get; set; }
+  public IFont Font { get; set; }
 
   /// <summary>
   /// Returns a Frame object that represents the frame formatting for the specified style. Read-only.

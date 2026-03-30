@@ -16,7 +16,7 @@ public partial interface Find : IModelObject
   /// Returns or sets a <see cref="Font"/> object that represents the character formatting of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.font?view=word-pia"/>
-  public Font Font { get; set; }
+  public IFont Font { get; set; }
 
   /// <summary>
   /// Determines if the search for the specified object has produced a match.

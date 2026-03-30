@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Reserved for internal use.

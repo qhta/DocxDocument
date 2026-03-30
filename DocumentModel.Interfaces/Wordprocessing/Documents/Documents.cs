@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 /// A collection of all the Document objects that are currently open in Word.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents?view=word-pia"/>
-public partial interface Documents : IModelObject, IModelCollection<IDocument>
+public partial interface IDocuments : IModelCollection<IDocument>
 {
 }

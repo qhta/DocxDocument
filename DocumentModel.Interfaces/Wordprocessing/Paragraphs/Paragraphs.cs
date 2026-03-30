@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// A collection of Paragraph objects in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs?view=word-pia"/>
-public partial interface Paragraphs : IModelObject, IModelCollection<Paragraph>
+public partial interface Paragraphs : IModelCollection<Paragraph>
 {
   /// <summary>
   /// Returns a Paragraph object that represents the first item in the Paragraphs collection.
@@ -37,7 +37,7 @@ public partial interface Paragraphs : IModelObject, IModelCollection<Paragraph>
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders Borders { get; set; }
 
   /// <summary>
   /// Returns or sets the style for the specified object.

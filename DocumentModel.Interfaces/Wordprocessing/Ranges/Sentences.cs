@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// Sentence object.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.sentences?view=word-pia"/>
-public interface Sentences : IModelObject, IModelCollection<Range>
+public interface Sentences : IModelCollection<Range>
 {
   /// <summary>
   /// Returns a Range object that represents the first sentence, word, or character in a document, selection or

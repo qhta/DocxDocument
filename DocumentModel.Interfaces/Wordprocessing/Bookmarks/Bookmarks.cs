@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// A collection of Bookmark objects that represent the bookmarks in the specified selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmarks?view=word-pia"/>
-public partial interface Bookmarks : IModelObject, IModelCollection<Bookmark>
+public partial interface IBookmarks : IModelCollection<IBookmark>
 {
   /// <summary>
   /// Gets or sets the default sorting order for bookmarks.

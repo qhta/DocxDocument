@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// A collection of Dictionary objects that includes the active custom spelling dictionaries.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionaries?view=word-pia"/>
-public partial interface Dictionaries : IModelObject, IModelCollection<Dictionary>
+public partial interface Dictionaries : IModelCollection<Dictionary>
 {
   /// <summary>
   /// Gets the maximum number of custom dictionaries that can be active.

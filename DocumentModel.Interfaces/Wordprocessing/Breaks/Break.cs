@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single page, column, or section break.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.break?view=word-pia"/>
-public interface Break: IModelObject
+public interface IBreak: IModelObject
 {
   /// <summary>
   /// Gets the range that represents the break.

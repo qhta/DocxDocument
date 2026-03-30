@@ -168,7 +168,7 @@ public partial interface _ParagraphFormat : IModelObject
   /// Gets or sets the border formatting for the paragraph.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders Borders { get; set; }
 
   /// <summary>
   /// Gets the shading formatting for the paragraph.

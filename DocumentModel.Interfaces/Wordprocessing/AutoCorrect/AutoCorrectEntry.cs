@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single AutoCorrect entry.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrectentry?view=word-pia"/>
-public partial interface AutoCorrectEntry : IModelObject
+public partial interface IAutoCorrectEntry : IModelObject
 {
   /// <summary>
   /// Gets the index number of the AutoCorrect entry in the collection.

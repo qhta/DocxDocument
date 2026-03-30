@@ -19,7 +19,7 @@ public partial interface _Application : IModelObject
   /// Returns a Documents collection that represents all the open documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.documents?view=word-pia"/>
-  public Documents Documents { get; }
+  public IDocuments Documents { get; }
 
   /// <summary>
   /// Returns a Windows collection that represents all document windows.
@@ -61,7 +61,7 @@ public partial interface _Application : IModelObject
   /// Returns a Template object that represents the Normal template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.normaltemplate?view=word-pia"/>
-  public Template NormalTemplate { get; }
+  public ITemplate NormalTemplate { get; }
 
   ///// <summary>
   ///// Returns a System object, which can be used to return system-related information and perform system-related tasks.
@@ -295,7 +295,7 @@ public partial interface _Application : IModelObject
   /// Returns a Templates collection that represents all the available templates - global templates as well as those attached to open documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.templates?view=word-pia"/>
-  public Templates Templates { get; }
+  public ITemplates Templates { get; }
 
   /// <summary>
   /// Returns or sets a Template or Document object that represents the template or document in which changes to menu bars, toolbars, and key bindings are stored.

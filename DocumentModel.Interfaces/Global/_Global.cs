@@ -16,7 +16,7 @@ public partial interface _Global: IModelObject
   /// Returns a Documents collection that represents all the open documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.documents?view=word-pia"/>
-  public Documents Documents { get; }
+  public IDocuments Documents { get; }
 
   /// <summary>
   /// Returns a Windows collection that represents all document windows.
@@ -64,7 +64,7 @@ public partial interface _Global: IModelObject
   /// Returns a Template object that represents the Normal template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.normaltemplate?view=word-pia"/>
-  public Template NormalTemplate { get; }
+  public ITemplate NormalTemplate { get; }
 
   /// <summary>
   /// Returns a System object that can be used to return system-related information and perform system-related tasks.
@@ -76,25 +76,25 @@ public partial interface _Global: IModelObject
   /// Returns an AutoCorrect object that contains the current AutoCorrect options, entries, and exceptions.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.autocorrect?view=word-pia"/>
-  public AutoCorrect AutoCorrect { get; }
+  public IAutoCorrect AutoCorrect { get; }
 
   /// <summary>
   /// Returns a FontNames object that includes the names of all available fonts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.fontnames?view=word-pia"/>
-  public FontNames FontNames { get; }
+  public IFontNames IFontNames { get; }
 
   /// <summary>
   /// Returns a FontNames object that includes the names of all available landscape fonts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.landscapefontnames?view=word-pia"/>
-  public FontNames LandscapeFontNames { get; }
+  public IFontNames LandscapeIFontNames { get; }
 
   /// <summary>
   /// Returns a FontNames object that includes the names of all available portrait fonts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.portraitfontnames?view=word-pia"/>
-  public FontNames PortraitFontNames { get; }
+  public IFontNames PortraitIFontNames { get; }
 
   /// <summary>
   /// Returns a Languages collection that represents the proofing languages listed in the Language dialog box.
@@ -178,7 +178,7 @@ public partial interface _Global: IModelObject
   /// Returns a Templates collection that represents all available templates.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.templates?view=word-pia"/>
-  public Templates Templates { get; }
+  public ITemplates Templates { get; }
 
   /// <summary>
   /// Returns or sets the Template or Document in which changes to menu bars, toolbars, and key bindings are stored.
@@ -238,7 +238,7 @@ public partial interface _Global: IModelObject
   /// Returns an AutoCorrect object that represents automatic corrections made to e-mail messages.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.autocorrectemail?view=word-pia"/>
-  public AutoCorrect AutoCorrectEmail { get; }
+  public IAutoCorrect AutoCorrectEmail { get; }
 
   /// <summary>
   /// Returns a ProtectedViewWindows object that represents open protected view windows.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a document template.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template?view=word-pia"/>
-public partial interface Template : IModelObject
+public partial interface ITemplate : IModelObject
 {
   /// <summary>
   /// Returns or sets the name of the specified object.
@@ -22,7 +22,7 @@ public partial interface Template : IModelObject
   /// Returns a AutoTextEntries collection that represents all the AutoText entries in the specified template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.autotextentries?view=word-pia"/>
-  public AutoTextEntries AutoTextEntries { get; }
+  public IAutoTextEntries IAutoTextEntries { get; }
 
   /// <summary>
   /// Returns or sets the language for the specified object.

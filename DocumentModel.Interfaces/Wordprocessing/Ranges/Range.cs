@@ -37,7 +37,7 @@ public partial interface Range : IModelObject
   /// Returns or sets a Font object that represents the character formatting of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.font?view=word-pia"/>
-  public Font Font { get; set; }
+  public IFont Font { get; set; }
 
   /// <summary>
   /// Returns a Range object that represents all the properties of the specified range.
@@ -115,7 +115,7 @@ public partial interface Range : IModelObject
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders Borders { get; set; }
 
   /// <summary>
   /// Returns a Shading object that refers to the shading formatting for the specified object.
@@ -163,7 +163,7 @@ public partial interface Range : IModelObject
   /// Returns a Bookmarks collection that represents all the bookmarks in a range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.bookmarks?view=word-pia"/>
-  public Bookmarks Bookmarks { get; }
+  public IBookmarks Bookmarks { get; }
 
   /// <summary>
   /// Determines if the font or range is formatted as bold.
@@ -224,7 +224,7 @@ public partial interface Range : IModelObject
   /// words and expressions for the specified word or phrase.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.synonyminfo?view=word-pia"/>
-  public SynonymInfo SynonymInfo { get; }
+  public ISynonymInfo SynonymInfo { get; }
 
   /// <summary>
   /// Returns a Hyperlinks collection that represents all the hyperlinks in the specified range.
@@ -242,7 +242,7 @@ public partial interface Range : IModelObject
   /// Returns a Subdocuments collection that represents all the subdocuments in the specified range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.subdocuments?view=word-pia"/>
-  public Subdocuments Subdocuments { get; }
+  public ISubdocuments Subdocuments { get; }
 
   /// <summary>
   /// Determines if a grammar check has been run on the specified range.
@@ -340,14 +340,14 @@ public partial interface Range : IModelObject
   /// specified range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.grammaticalerrors?view=word-pia"/>
-  public ProofreadingErrors GrammaticalErrors { get; }
+  public IProofreadingErrors GrammaticalErrors { get; }
 
   /// <summary>
   /// Returns a ProofreadingErrors collection that represents the words identified as spelling errors in the
   /// specified range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.spellingerrors?view=word-pia"/>
-  public ProofreadingErrors SpellingErrors { get; }
+  public IProofreadingErrors SpellingErrors { get; }
 
   /// <summary>
   /// Returns or sets the orientation of text in a range when the Text Direction feature is enabled.

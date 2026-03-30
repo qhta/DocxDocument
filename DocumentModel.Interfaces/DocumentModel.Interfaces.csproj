@@ -18,6 +18,11 @@
     <NoWarn>1701;1702;8766;0618</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove=".github\**" />
+    <EmbeddedResource Remove=".github\**" />
+    <None Remove=".github\**" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Remove="Application\DispObjs\_IMsoDispObj.Inheritance.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -41,6 +46,5 @@
     <None Include="..\..\..\Scripts\CompareEnumTypes.py" Link="Scripts\CompareEnumTypes.py" />
     <None Include="..\..\..\Scripts\AddPiaCoreLink.py" Link="Scripts\AddPiaCoreLink.py" />
     <None Include="..\..\..\Scripts\AddPiaWordLink.py" Link="Scripts\AddPiaWordLink.py" />
-    <None Include=".github\copilot-instructions.md" />
   </ItemGroup>
 </Project>

@@ -17,7 +17,7 @@ public partial interface InlineShape : IModelObject
   /// Returns or sets the borders for the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders Borders { get; set; }
 
   /// <summary>
   /// Returns a range object that represents the inline shape in the document.

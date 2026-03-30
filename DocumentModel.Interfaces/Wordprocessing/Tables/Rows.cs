@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// A collection of Row objects that represent the table rows in the specified selection, range, or table.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows?view=word-pia"/>
-public partial interface Rows : IModelObject, IModelCollection<Row>
+public partial interface Rows : IModelCollection<Row>
 {
   /// <summary>
   /// Determine if the text in a table row or rows is allowed to split across a page break.
@@ -66,7 +66,7 @@ public partial interface Rows : IModelObject, IModelCollection<Row>
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders Borders { get; set; }
 
   /// <summary>
   /// Returns a Shading object that refers to the shading formatting for the specified object.

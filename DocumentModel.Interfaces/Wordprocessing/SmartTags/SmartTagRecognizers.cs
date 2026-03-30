@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// information as you work in Microsoft Word.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagrecognizers?view=word-pia"/>
-public partial interface SmartTagRecognizers : IModelObject, IModelCollection<SmartTagRecognizer>
+public partial interface SmartTagRecognizers : IModelCollection<SmartTagRecognizer>
 {
 }

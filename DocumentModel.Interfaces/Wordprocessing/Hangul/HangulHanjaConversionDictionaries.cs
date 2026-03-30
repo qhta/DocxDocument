@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a collection of dictionary objects that contains the active custom Hangul-Hanja conversion dictionaries.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hangulhanjaconversiondictionaries?view=word-pia"/>
-public partial interface HangulHanjaConversionDictionaries : IModelObject, IModelCollection<Dictionary>
+public partial interface HangulHanjaConversionDictionaries : IModelCollection<Dictionary>
 {
   /// <summary>
   /// Returns the maximum number of active custom Hangul-Hanja conversion dictionaries.

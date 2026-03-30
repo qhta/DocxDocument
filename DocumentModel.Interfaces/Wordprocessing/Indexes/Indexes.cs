@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a collection of index objects in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.indexes?view=word-pia"/>
-public partial interface Indexes : IModelObject, IModelCollection<Index>
+public partial interface Indexes : IModelCollection<Index>
 {
   /// <summary>
   /// Returns or sets the built-in format used for the index.

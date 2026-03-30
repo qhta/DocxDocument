@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// A collection of Cell objects in a table column, table row, selection, or range.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells?view=word-pia"/>
-public partial interface Cells : IModelObject, IModelCollection<Cell>
+public partial interface Cells : IModelCollection<Cell>
 {
   /// <summary>
   /// Gets or sets the width of the cells, in points.
@@ -36,7 +36,7 @@ public partial interface Cells : IModelObject, IModelCollection<Cell>
   /// Gets or sets the border formatting for the cells.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders Borders { get; set; }
 
   /// <summary>
   /// Gets the shading formatting for the cells.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an individual source, such as a book, journal article, or interview.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.source?view=word-pia"/>
-public partial interface Source : IModelObject
+public partial interface ISource : IModelObject
 {
   /// <summary>
   /// Returns a String that represents an internal identifying label for a source. Read-only.

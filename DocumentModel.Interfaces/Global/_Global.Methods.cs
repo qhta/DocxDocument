@@ -14,7 +14,7 @@ public partial interface _Global : IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_synonyminfo?view=word-pia"/>
-  public SynonymInfo SynonymInfo(string Word, object LanguageID);
+  public ISynonymInfo SynonymInfo(string Word, object LanguageID);
   /// <summary>
   /// Returns a KeysBoundTo object that represents all key combinations assigned to the specified item.
   /// </summary>

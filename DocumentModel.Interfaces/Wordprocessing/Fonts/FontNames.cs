@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a list of the names of all the available fonts.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fontnames?view=word-pia"/>
-public interface FontNames : IModelObject, IModelValues<string>
+public interface IFontNames : IModelValues<string>
 {
 }

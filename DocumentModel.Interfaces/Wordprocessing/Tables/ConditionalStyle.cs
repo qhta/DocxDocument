@@ -15,7 +15,7 @@ public interface ConditionalStyle : IModelObject
   /// Gets or sets the border formatting for the conditional style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conditionalstyle.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders Borders { get; set; }
   /// <summary>
   /// Gets or sets the bottom cell padding, in points, for the conditional style.
   /// </summary>
@@ -45,6 +45,6 @@ public interface ConditionalStyle : IModelObject
   /// Gets or sets the font formatting for the conditional style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conditionalstyle.font?view=word-pia"/>
-  public Font Font { get; set; }
+  public IFont Font { get; set; }
 
 }

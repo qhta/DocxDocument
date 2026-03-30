@@ -15,5 +15,5 @@ public partial interface OtherCorrectionsExceptions: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.othercorrectionsexceptions.add?view=word-pia"/>
-  public OtherCorrectionsException Add(string Name);
+  public IOtherCorrectionsException Add(string Name);
 }

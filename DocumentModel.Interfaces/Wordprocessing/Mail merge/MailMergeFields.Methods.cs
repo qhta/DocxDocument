@@ -124,7 +124,7 @@ public partial interface MailMergeFields: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addset?view=word-pia"/>
-  public MailMergeField AddSet(Range Range, string Name, string ValueText, AutoTextEntry ValueAutoText);
+  public MailMergeField AddSet(Range Range, string Name, string ValueText, IAutoTextEntry ValueAutoText);
 
   /// <summary>
   /// Inserts a SKIPIF field at the specified range.

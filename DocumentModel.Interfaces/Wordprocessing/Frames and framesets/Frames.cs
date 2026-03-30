@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 /// A collection of Frame objects in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frames?view=word-pia"/>
-public partial interface Frames : IModelObject, IModelCollection<Frame>
+public partial interface Frames : IModelCollection<Frame>
 {
 }

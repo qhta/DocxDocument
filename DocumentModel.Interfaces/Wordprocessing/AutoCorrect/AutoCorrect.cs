@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the AutoCorrect functionality in Microsoft Word.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect?view=word-pia"/>
-public interface AutoCorrect : IModelObject
+public interface IAutoCorrect : IModelObject
 {
   /// <summary>
   /// Gets or sets a value indicating whether day names are corrected automatically.
@@ -30,7 +30,7 @@ public interface AutoCorrect : IModelObject
   /// Gets the AutoCorrect entries collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.entries?view=word-pia"/>
-  public AutoCorrectEntries Entries { get; }
+  public IAutoCorrectEntries Entries { get; }
   /// <summary>
   /// Gets the first-letter exceptions collection.
   /// </summary>
@@ -45,7 +45,7 @@ public interface AutoCorrect : IModelObject
   /// Gets the two-initial-capitals exceptions collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.twoinitialcapsexceptions?view=word-pia"/>
-  public TwoInitialCapsExceptions TwoInitialCapsExceptions { get; }
+  public ITwoInitialCapsExceptions TwoInitialCapsExceptions { get; }
   /// <summary>
   /// Gets or sets a value indicating whether two-initial-capitals exceptions are added automatically.
   /// </summary>

@@ -88,7 +88,7 @@ public partial interface Frame : IModelObject
   /// Returns or sets a <see cref="Borders"/> collection that represents the borders of the specified frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frame.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders Borders { get; set; }
 
   /// <summary>
   /// Returns a <see cref="Range"/> object that represents the portion of a document that's contained in the specified frame.

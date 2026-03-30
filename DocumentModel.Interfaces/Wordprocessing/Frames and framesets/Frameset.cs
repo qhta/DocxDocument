@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an entire frames page or a single frame on a frames page.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset?view=word-pia"/>
-public partial interface Frameset : IModelObject, IModelCollection<Frameset>
+public partial interface Frameset : IModelCollection<Frameset>
 {
   /// <summary>
   /// Returns the parent frameset.

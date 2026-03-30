@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// which indicates the elements that a user has applied to a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnodes?view=word-pia"/>
-public partial interface XMLNodes : IModelObject, IModelCollection<XMLNode>
+public partial interface XMLNodes : IModelCollection<XMLNode>
 {
 }

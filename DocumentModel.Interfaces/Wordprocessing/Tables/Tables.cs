@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// A collection of Table objects that represent the tables in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tables?view=word-pia"/>
-public partial interface Tables : IModelObject, IModelCollection<Table>
+public partial interface Tables : IModelCollection<Table>
 {
   /// <summary>
   /// Returns the nesting level of the specified tables.

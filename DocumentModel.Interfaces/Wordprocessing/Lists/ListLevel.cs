@@ -78,7 +78,7 @@ public partial interface ListLevel : IModelObject
   /// Returns or sets the font formatting for the list number.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.font?view=word-pia"/>
-  public Font Font { get; set; }
+  public IFont Font { get; set; }
 
   /// <summary>
   /// Returns or sets the higher list level that causes numbering to restart.

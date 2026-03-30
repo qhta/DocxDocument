@@ -44,7 +44,7 @@ public partial interface Page : IModelObject
   /// and section breaks.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.page.breaks?view=word-pia"/>
-  public Breaks Breaks { get; }
+  public IBreaks Breaks { get; }
 
   /// <summary>
   /// Returns a Object that represents a picture representation of how a page of text appears. Read- only.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrectentry?view=word-pia"/>
-public partial interface AutoCorrectEntry: IModelObject
+public partial interface IAutoCorrectEntry: IModelObject
 {
   /// <summary>
   /// Deletes the specified object.

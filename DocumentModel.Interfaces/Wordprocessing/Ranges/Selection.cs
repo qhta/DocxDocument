@@ -36,7 +36,7 @@ public partial interface Selection : IModelObject
   /// Returns or sets a Font object that represents the character formatting of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.font?view=word-pia"/>
-  public Font Font { get; set; }
+  public IFont Font { get; set; }
 
   /// <summary>
   /// Returns the selection type.
@@ -120,7 +120,7 @@ public partial interface Selection : IModelObject
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.borders?view=word-pia"/>
-  public Borders Borders { get; set; }
+  public IBorders Borders { get; set; }
 
   /// <summary>
   /// Returns a Shading object that refers to the shading formatting for the specified object.
@@ -162,7 +162,7 @@ public partial interface Selection : IModelObject
   /// Returns a Bookmarks collection that represents all the bookmarks in a selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.bookmarks?view=word-pia"/>
-  public Bookmarks Bookmarks { get; }
+  public IBookmarks Bookmarks { get; }
 
   /// <summary>
   /// Returns the number of characters in the story that contains the specified selection.
