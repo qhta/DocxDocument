@@ -7,7 +7,7 @@ using DocumentModel.Wordprocessing;
 /// This is a primary interface in a COM coclass that is required by managed code for interoperability with the corresponding COM object. Use this primary interface only when the method you want to use shares the same name as an event of the COM object; in this case, cast to this interface to call the method, and cast to the latest events interface to connect to the event. Otherwise, use the .NET interface that is derived from the COM coclass to access methods, properties, and events of the COM object. For information about the COM object, see Application.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application?view=word-pia"/>
-public partial interface _Application : IModelObject
+public partial interface IApplication : IModelObject
 {
   /// <summary>
   /// Returns or sets the name of the specified object.
