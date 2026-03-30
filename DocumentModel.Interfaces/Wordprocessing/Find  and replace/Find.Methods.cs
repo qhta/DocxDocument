@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find?view=word-pia"/>
-public partial interface Find: InteropObject
+public partial interface Find: IModelObject
 {
   /// <summary>
   /// Determines whether ExecuteOld.

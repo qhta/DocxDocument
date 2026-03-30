@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodiagram?view=office-pia"/>
-public partial interface Diagram: InteropObject
+public partial interface Diagram: IModelObject
 {
   /// <summary>
   /// Gets or sets the `Nodes` property.

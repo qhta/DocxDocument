@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.stylesheets?view=word-pia"/>
-public partial interface StyleSheets: InteropObject
+public partial interface StyleSheets: IModelObject
 {
   /// <summary>
   /// Adds a new style sheet to the collection.

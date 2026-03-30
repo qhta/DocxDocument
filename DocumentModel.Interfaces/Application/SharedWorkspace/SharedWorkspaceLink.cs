@@ -8,7 +8,7 @@ namespace DocumentModel.Application;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacelink?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface SharedWorkspaceLink: InteropObject
+public partial interface SharedWorkspaceLink: IModelObject
 {
   /// <summary>
   /// Gets or sets the `URL` property.

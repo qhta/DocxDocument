@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a string in a document or range that contains recognized type information.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttag?view=word-pia"/>
-public partial interface SmartTag : InteropObject
+public partial interface SmartTag : IModelObject
 {
   /// <summary>
   /// Returns the name of the specified object.

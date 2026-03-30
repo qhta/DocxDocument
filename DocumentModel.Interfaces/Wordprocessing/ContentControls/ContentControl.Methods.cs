@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol?view=word-pia"/>
-public partial interface ContentControl: InteropObject
+public partial interface ContentControl: IModelObject
 {
   /// <summary>
   /// Copies the content control from the active document to the Clipboard.

@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings;
 /// properties for programmatically defining page layout in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangle?view=word-pia"/>
-public interface Rectangle : InteropObject
+public interface Rectangle : IModelObject
 {
   /// <summary>
   /// Returns a RectangleType constant that represents the type for the specified rectangle.

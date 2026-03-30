@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart legend.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegend?view=office-pia"/>
-public partial interface Legend: InteropObject
+public partial interface Legend: IModelObject
 {
   /// <summary>
   /// Selects the legend.

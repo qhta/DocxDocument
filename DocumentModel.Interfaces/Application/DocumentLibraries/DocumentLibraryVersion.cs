@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a single saved version of a shared document in a document library.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentlibraryversion?view=office-pia"/>
-public partial interface DocumentLibraryVersion: InteropObject
+public partial interface DocumentLibraryVersion: IModelObject
 {
   /// <summary>
   /// Gets the `Modified` property.

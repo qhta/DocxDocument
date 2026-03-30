@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocategory?view=office-pia"/>
-public partial interface Category: InteropObject
+public partial interface Category: IModelObject
 {
   /// <summary>
   /// Gets or sets the `Name` property.

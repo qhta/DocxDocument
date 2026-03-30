@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a type of building block. Each BuildingBlockType object is a member of the BuildingBlockTypes collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblocktype?view=word-pia"/>
-public interface BuildingBlockType : InteropObject
+public interface BuildingBlockType : IModelObject
 {
   /// <summary>
   /// Gets the index number of the building block type in the collection.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a type of smart tag.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagtype?view=word-pia"/>
-public interface SmartTagType : InteropObject
+public interface SmartTagType : IModelObject
 {
   /// <summary>
   /// Returns the name of the specified object.

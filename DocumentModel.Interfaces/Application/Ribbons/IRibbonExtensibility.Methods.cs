@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Defines how the Ribbon UI communicates with a COM add-in to customize the UI.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonextensibility?view=office-pia"/>
-public partial interface IRibbonExtensibility: InteropObject
+public partial interface IRibbonExtensibility: IModelObject
 {
   /// <summary>
   /// Loads the XML markup that customizes the Ribbon UI.

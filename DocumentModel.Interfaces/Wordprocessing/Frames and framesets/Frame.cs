@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a frame in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frame?view=word-pia"/>
-public partial interface Frame : InteropObject
+public partial interface Frame : IModelObject
 {
   /// <summary>
   /// Returns or sets a <see cref="FrameSizeRule"/> constant that represents the rule for determining the height of the specified frame.

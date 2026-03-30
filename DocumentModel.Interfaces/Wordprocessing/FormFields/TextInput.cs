@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single text form field.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textinput?view=word-pia"/>
-public partial interface TextInput : InteropObject
+public partial interface TextInput : IModelObject
 {
   /// <summary>
   /// True if the specified form field object is a valid check box form field.

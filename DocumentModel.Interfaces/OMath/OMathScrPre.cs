@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an equation that contains a superscript or subscript to the left of the base.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre?view=word-pia"/>
-public partial interface OMathScrPre : InteropObject
+public partial interface OMathScrPre : IModelObject
 {
   /// <summary>
   /// Returns the subscript expression to the left of the base.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailinglabel?view=word-pia"/>
-public partial interface MailingLabel: InteropObject
+public partial interface MailingLabel: IModelObject
 {
   /// <summary>
   /// Creates a new mailing labels document using Word 2000-compatible behavior.

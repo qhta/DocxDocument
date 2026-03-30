@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// Represents shadow formatting for a shape.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat?view=word-pia"/>
-public partial interface ShadowFormat : InteropObject
+public partial interface ShadowFormat : IModelObject
 {
   /// <summary>
   /// Returns or sets a ColorFormat object that represents the foreground color for the shadow.

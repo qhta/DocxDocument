@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single table of contents in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofcontents?view=word-pia"/>
-public partial interface TableOfContents : InteropObject
+public partial interface TableOfContents : IModelObject
 {
   /// <summary>
   /// True if built-in heading styles are used to create a table of contents.

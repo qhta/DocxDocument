@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a collection of metadata properties.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties?view=office-pia"/>
-public partial interface MetaProperties: InteropCollection<MetaProperty>
+public partial interface MetaProperties: IModelCollection<MetaProperty>
 {
   /// <summary>
   /// Gets the `ValidationError` property.

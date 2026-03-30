@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a chart series.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries?view=office-pia"/>
-public partial interface Series: InteropObject
+public partial interface Series: IModelObject
 {
   /// <summary>
   /// Gets or sets the `AxisGroup` property.
@@ -23,7 +23,7 @@ public partial interface Series: InteropObject
   /// Gets the `ErrorBars` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.errorbars?view=office-pia"/>
-  public ErrorBars ErrorBars { get; }
+  public IErrorBars ErrorBars { get; }
   /// <summary>
   /// Gets or sets the `Explosion` property.
   /// </summary>

@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a collection of `PickerProperty` objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerproperties?view=office-pia"/>
-public partial interface PickerProperties: InteropObject
+public partial interface PickerProperties: IModelObject
 {
   /// <summary>
   /// Adds a `PickerProperty` to the collection.

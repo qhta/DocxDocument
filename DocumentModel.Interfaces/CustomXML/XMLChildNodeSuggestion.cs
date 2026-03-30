@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlchildnodesuggestion?view=word-pia"/>
-public partial interface XMLChildNodeSuggestion : InteropObject
+public partial interface XMLChildNodeSuggestion : IModelObject
 {
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.

@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a collection of files returned by a search.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifoundfiles?view=office-pia"/>
-public partial interface IFoundFiles: InteropObject
+public partial interface IFoundFiles: IModelObject
 {
   /// <summary>
   /// Returns an enumerator that iterates through the found files.

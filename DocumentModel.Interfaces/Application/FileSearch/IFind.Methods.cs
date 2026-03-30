@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Provides file search functionality.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind?view=office-pia"/>
-public partial interface IFind: InteropObject
+public partial interface IFind: IModelObject
 {
   /// <summary>
   /// Displays the Find dialog.

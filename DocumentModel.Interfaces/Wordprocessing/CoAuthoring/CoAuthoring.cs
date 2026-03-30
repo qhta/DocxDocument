@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Provides the primary entry point to the co-authoring object model.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthoring?view=word-pia"/>
-public interface CoAuthoring : InteropObject
+public interface CoAuthoring : IModelObject
 {
   /// <summary>
   /// Gets the collection of co-authors currently editing the document.

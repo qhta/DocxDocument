@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 /// Describes a single picture effect parameter.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.effectparameter?view=office-pia"/>
-public partial interface EffectParameter: InteropObject
+public partial interface EffectParameter: IModelObject
 {
   /// <summary>
   /// Gets the parameter name.

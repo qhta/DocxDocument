@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// Cases and Statutes.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesofauthoritiescategories?view=word-pia"/>
-public interface TablesOfAuthoritiesCategories : InteropObject, InteropCollection<TableOfAuthoritiesCategory>
+public interface TablesOfAuthoritiesCategories : IModelObject, IModelCollection<TableOfAuthoritiesCategory>
 {
 }

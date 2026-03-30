@@ -6,7 +6,7 @@ namespace DocumentModel.HTML;
 /// Represents an individual project item branch in the Project Explorer in the Microsoft Script Editor.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlprojectitem?view=office-pia"/>
-public partial interface HTMLProjectItem: InteropObject
+public partial interface HTMLProjectItem: IModelObject
 {
   /// <summary>
   /// Gets the name of the specified object.

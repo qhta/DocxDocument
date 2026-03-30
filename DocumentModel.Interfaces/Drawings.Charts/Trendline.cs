@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a trendline in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline?view=word-pia"/>
-public partial interface Trendline : InteropObject
+public partial interface Trendline : IModelObject
 {
   /// <summary>
   /// Returns or sets the number of periods (or units on a scatter chart) that the trendline extends backward.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.indexes?view=word-pia"/>
-public partial interface Indexes: InteropObject
+public partial interface Indexes: IModelObject
 {
   /// <summary>
   /// Adds an index to the document using legacy options.

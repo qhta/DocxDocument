@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the mail merge functionality in Microsoft Word.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmerge?view=word-pia"/>
-public partial interface MailMerge : InteropObject
+public partial interface IMailMerge : IModelObject
 {
   /// <summary>
   /// Returns or sets the main document type.

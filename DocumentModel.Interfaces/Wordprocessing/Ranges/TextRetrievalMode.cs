@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents options that control how text is retrieved from a Range object.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textretrievalmode?view=word-pia"/>
-public interface TextRetrievalMode : InteropObject
+public interface TextRetrievalMode : IModelObject
 {
   /// <summary>
   /// Returns or sets the view for the TextRetrievalMode object.

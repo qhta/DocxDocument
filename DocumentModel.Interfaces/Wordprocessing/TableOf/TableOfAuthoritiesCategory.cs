@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single table of authorities category.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthoritiescategory?view=word-pia"/>
-public interface TableOfAuthoritiesCategory : InteropObject
+public interface TableOfAuthoritiesCategory : IModelObject
 {
   /// <summary>
   /// Returns or sets the name of the specified object.

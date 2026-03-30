@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a row in a table.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row?view=word-pia"/>
-public partial interface Row : InteropObject
+public partial interface Row : IModelObject
 {
   /// <summary>
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.

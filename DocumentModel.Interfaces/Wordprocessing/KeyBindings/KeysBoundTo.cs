@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// A collection of KeyBinding objects assigned to a command, style, macro, or other item in the current context.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keysboundto?view=word-pia"/>
-public partial interface KeysBoundTo : InteropObject, InteropCollection<KeyBinding>
+public partial interface KeysBoundTo : IModelObject, IModelCollection<KeyBinding>
 {
   /// <summary>
   /// Returns the type of item assigned to the specified key binding.

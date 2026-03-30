@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a legend key in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey?view=office-pia"/>
-public partial interface LegendKey: InteropObject
+public partial interface LegendKey: IModelObject
 {
   /// <summary>
   /// Clears formatting from the legend key.

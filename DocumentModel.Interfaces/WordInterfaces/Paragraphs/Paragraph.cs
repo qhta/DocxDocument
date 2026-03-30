@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single paragraph in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph?view=word-pia"/>
-public partial interface Paragraph : InteropObject
+public partial interface Paragraph : IModelObject
 {
   /// <summary>
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.

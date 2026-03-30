@@ -11,7 +11,7 @@ using DocumentModel.Drawings;
 /// that control the margins and orientation of the text frame.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe?view=word-pia"/>
-public partial interface TextFrame : InteropObject
+public partial interface TextFrame : IModelObject
 {
   /// <summary>
   /// Returns or sets the distance (in points) between the bottom of the text frame and the bottom of the inscribed

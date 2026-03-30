@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single form field.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield?view=word-pia"/>
-public partial interface FormField : InteropObject
+public partial interface FormField : IModelObject
 {
   /// <summary>
   /// Returns the field type.

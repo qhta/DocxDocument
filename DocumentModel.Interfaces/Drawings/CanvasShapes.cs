@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes?view=office-pia"/>
-public partial interface CanvasShapes: InteropCollection<Shape>
+public partial interface CanvasShapes: IModelCollection<Shape>
 {
   /// <summary>
   /// Gets the `Background` property.

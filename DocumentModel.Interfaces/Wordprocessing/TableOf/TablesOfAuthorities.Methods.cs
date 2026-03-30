@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesofauthorities?view=word-pia"/>
-public partial interface TablesOfAuthorities: InteropObject
+public partial interface TablesOfAuthorities: IModelObject
 {
   /// <summary>
   /// Adds a new table of authorities to the document.

@@ -9,9 +9,11 @@
   <Project Path="../DocumentModel.BaseTypes.Test/DocumentModel.BaseTypes.Test.csproj" />
   <Project Path="../DocumentModel.EnumTypes/DocumentModel.EnumTypes.csproj" Id="8b0d4c8a-7a6d-45f6-9ce6-085beff23b47" />
   <Project Path="../DocumentModel.InOpenXml.Test/DocumentModel.InOpenXml.Test.csproj" Id="edc556fe-37c9-43cf-9462-8defdeac7a4b" />
+  <Project Path="../DocumentModel.Interfaces.Imp.Test/DocumentModel.Interfaces.Imp.Test.csproj" Id="aeaf4b90-9a3a-48f1-b9ef-1c2011506ad4" />
   <Project Path="../DocumentModel.Interfaces/DocumentModel.Interfaces.csproj" />
   <Project Path="../DocxEditor/DocxEditor/DocxEditor.csproj" />
   <Project Path="../DocxEditorWpf_lib/DocxEditorWpf_lib.csproj" />
   <Project Path="../NamespaceMappings/NamespaceMappings.csproj" />
+  <Project Path="../TestHelp/TestHelp.csproj" Id="167b5908-aa68-46b2-8ef7-9bfbc36a4576" />
   <Project Path="DocumentModel.InOpenXml.csproj" />
 </Solution>

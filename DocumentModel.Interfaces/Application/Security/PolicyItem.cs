@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a single policy setting within a server policy.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.policyitem?view=office-pia"/>
-public partial interface PolicyItem: InteropObject
+public partial interface PolicyItem: IModelObject
 {
   /// <summary>
   /// Gets the ID of the policy item.

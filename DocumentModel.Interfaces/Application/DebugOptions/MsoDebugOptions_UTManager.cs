@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Manages debug unit tests.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utmanager?view=office-pia"/>
-public partial interface MsoDebugOptions_UTManager: InteropObject
+public partial interface MsoDebugOptions_UTManager: IModelObject
 {
   /// <summary>
   /// Gets or sets the `UnitTests` property.

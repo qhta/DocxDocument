@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents chart grid lines.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.gridlines?view=office-pia"/>
-public partial interface GridLines: InteropObject
+public partial interface GridLines: IModelObject
 {
   /// <summary>
   /// Selects the grid lines.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an equation that has an accent mark above the base.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathacc?view=word-pia"/>
-public interface OMathAcc : InteropObject
+public interface OMathAcc : IModelObject
 {
   /// <summary>
   /// Returns the base expression of the accent equation.

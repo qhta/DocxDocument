@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.groupshapes?view=office-pia"/>
-public partial interface GroupShapes: InteropObject
+public partial interface GroupShapes: IModelObject
 {
   /// <summary>
   /// Returns a shape from the group by index or name.

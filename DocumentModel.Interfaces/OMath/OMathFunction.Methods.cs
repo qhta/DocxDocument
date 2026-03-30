@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction?view=word-pia"/>
-public partial interface OMathFunction: InteropObject
+public partial interface OMathFunction: IModelObject
 {
   /// <summary>
   /// Removes the equation function from the equation.

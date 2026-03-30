@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents drop lines in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodroplines?view=office-pia"/>
-public partial interface DropLines: InteropObject
+public partial interface DropLines: IModelObject
 {
   /// <summary>
   /// Gets the `Name` property.

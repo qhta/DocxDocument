@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// Contains properties and methods that apply to line callouts.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat?view=word-pia"/>
-public partial interface CalloutFormat : InteropObject
+public partial interface CalloutFormat : IModelObject
 {
   /// <summary>
   /// Gets or sets a value indicating whether the callout line has an accent bar.

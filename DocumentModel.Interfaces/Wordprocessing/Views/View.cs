@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Contains the view attributes (show all, field shading, table gridlines, and so on) for a window or pane.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view?view=word-pia"/>
-public partial interface View : InteropObject
+public partial interface View : IModelObject
 {
   /// <summary>
   /// Returns or sets the view type.
@@ -69,7 +69,7 @@ public partial interface View : InteropObject
   /// Returns a Zoom object that represents the magnification for the specified view.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.zoom?view=word-pia"/>
-  public Zoom Zoom { get; }
+  public IZoom Zoom { get; }
 
   /// <summary>
   /// True if object anchors are displayed next to items that can be positioned in print layout view.

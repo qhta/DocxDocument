@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an invisible box around an equation or part of an equation to which you can assign properties that affect the layout or mathematical formatting of the entire box. For example, a box can serve as an operator emulator with or without an alignment point, serve as a like breakpoint, have an associated argument size (argSz), or be grouped so as not to allow line breaks.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathborderbox?view=word-pia"/>
-public interface OMathBorderBox : InteropObject
+public interface OMathBorderBox : IModelObject
 {
   /// <summary>
   /// Returns the equation contained in the border box.

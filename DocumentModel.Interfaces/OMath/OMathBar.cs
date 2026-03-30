@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an equation with a bar above or below the base.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbar?view=word-pia"/>
-public interface OMathBar : InteropObject
+public interface OMathBar : IModelObject
 {
   /// <summary>
   /// Returns the base expression of the bar equation.

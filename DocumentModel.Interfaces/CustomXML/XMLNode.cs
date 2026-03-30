@@ -8,7 +8,7 @@ namespace DocumentModel.CustomXml;
 /// Represents a single XML element applied to a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode?view=word-pia"/>
-public partial interface XMLNode : InteropObject
+public partial interface XMLNode : IModelObject
 {
   /// <summary>
   /// Returns a String that represents the name of the element without any prefix.

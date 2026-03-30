@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frames?view=word-pia"/>
-public partial interface Frames: InteropObject
+public partial interface Frames: IModelObject
 {
   /// <summary>
   /// Returns the value produced by the add operation.

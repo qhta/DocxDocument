@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an equation. OMath objects are members of the OMaths collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath?view=word-pia"/>
-public partial interface OMath : InteropObject
+public partial interface OMath : IModelObject
 {
   /// <summary>
   /// Returns the range that contains the equation.

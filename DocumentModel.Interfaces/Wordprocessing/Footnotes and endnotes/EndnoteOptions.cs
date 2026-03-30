@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the properties assigned to a range or selection of endnotes in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.endnoteoptions?view=word-pia"/>
-public interface EndnoteOptions : InteropObject
+public interface EndnoteOptions : IModelObject
 {
   /// <summary>
   /// Gets or sets the location of endnotes in the document.

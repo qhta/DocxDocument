@@ -5,7 +5,7 @@ namespace DocumentModel.CustomXml;
 /// Represents a single custom XML part in a custom XML parts collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart?view=office-pia"/>
-public partial interface _CustomXMLPart: InteropObject
+public partial interface _CustomXMLPart: IModelObject
 {
   /// <summary>
   /// Gets the root element of a bound region of data in a document.

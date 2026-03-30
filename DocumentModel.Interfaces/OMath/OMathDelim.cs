@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a delimiter object, consisting of opening and closing delimiters (such as parentheses, braces, brackets, or vertical bars), and one or more elements contained inside the delimiters.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathdelim?view=word-pia"/>
-public interface OMathDelim : InteropObject
+public interface OMathDelim : IModelObject
 {
   /// <summary>
   /// Returns the collection of expressions inside the delimiters.

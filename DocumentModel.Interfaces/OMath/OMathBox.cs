@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an invisible box around an equation or part of an equation to which you can apply properties that affect the mathematical or formatting properties, such as line breaks.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbox?view=word-pia"/>
-public interface OMathBox : InteropObject
+public interface OMathBox : IModelObject
 {
   /// <summary>
   /// Returns the equation contained in the box.

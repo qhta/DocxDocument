@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global?view=word-pia"/>
-public partial interface _Global : InteropObject
+public partial interface _Global : IModelObject
 {
   /// <summary>
   /// Returns a SynonymInfo object with thesaurus information for the specified word or phrase.

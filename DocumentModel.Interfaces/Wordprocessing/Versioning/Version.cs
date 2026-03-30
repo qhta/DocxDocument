@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single version of a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.version?view=word-pia"/>
-public partial interface Version : InteropObject
+public partial interface Version : IModelObject
 {
   /// <summary>
   /// Returns the name of the user who saved the specified version of the document.

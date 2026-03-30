@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// A collection of Border objects that represent the borders of an object.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders?view=word-pia"/>
-public partial interface Borders : InteropObject, InteropCollection<IBorder>
+public partial interface Borders : IModelObject, IModelCollection<IBorder>
 {
   /// <summary>
   /// Gets or sets whether borders are enabled.

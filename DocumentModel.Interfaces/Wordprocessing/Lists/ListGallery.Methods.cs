@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listgallery?view=word-pia"/>
-public partial interface ListGallery: InteropObject
+public partial interface ListGallery: IModelObject
 {
   /// <summary>
   /// Returns whether the specified list template in the gallery has been modified.

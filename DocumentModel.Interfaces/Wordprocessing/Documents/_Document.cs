@@ -8,7 +8,7 @@ namespace DocumentModel.Wordprocessing;
 /// This is a primary interface in a COM coclass that is required by managed code for interoperability with the corresponding COM object. Use this primary interface only when the method you want to use shares the same name as an event of the COM object; in this case, cast to this interface to call the method, and cast to the latest events interface to connect to the event. Otherwise, use the .NET interface that is derived from the COM coclass to access methods, properties, and events of the COM object.For information about the COM object, see Document
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document?view=word-pia"/>
-public partial interface _Document : InteropObject
+public partial interface _Document : IModelObject
 {
 
   /// <summary>
@@ -603,7 +603,7 @@ public partial interface _Document : InteropObject
   /// Returns a MailMerge object that represents the mail merge functionality for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.mailmerge?view=word-pia"/>
-  public MailMerge MailMerge { get; }
+  public IMailMerge MailMerge { get; }
 
   /// <summary>
   /// Returns the name of the specified object.

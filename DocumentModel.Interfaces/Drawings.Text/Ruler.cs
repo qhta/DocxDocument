@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Text;
 /// Represents the ruler for text in a shape or text style.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ruler2?view=office-pia"/>
-public partial interface Ruler: InteropObject
+public partial interface Ruler: IModelObject
 {
   /// <summary>
   /// Gets outline text formatting levels for the ruler.

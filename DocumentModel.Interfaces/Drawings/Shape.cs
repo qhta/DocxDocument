@@ -14,7 +14,7 @@ namespace DocumentModel.Drawings;
 /// picture.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape?view=word-pia"/>
-public partial interface Shape : InteropObject
+public partial interface Shape : IModelObject
 {
   /// <summary>
   /// Returns a Adjustments object that contains adjustment values for all the adjustments in the specified Shape

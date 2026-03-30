@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip?view=word-pia"/>
-public partial interface RoutingSlip : InteropObject
+public partial interface RoutingSlip : IModelObject
 {
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.

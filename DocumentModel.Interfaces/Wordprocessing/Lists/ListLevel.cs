@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single list level, either the only level for a bulleted or numbered list or one of the nine levels of an outline numbered list.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel?view=word-pia"/>
-public partial interface ListLevel : InteropObject
+public partial interface ListLevel : IModelObject
 {
   /// <summary>
   /// Returns the index number of the list level in the list levels collection.

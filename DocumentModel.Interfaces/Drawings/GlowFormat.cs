@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// Represents glow formatting for a shape or shape range.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.glowformat?view=word-pia"/>
-public interface GlowFormat : InteropObject
+public interface GlowFormat : IModelObject
 {
   /// <summary>
   /// Returns or sets the radius of the glow effect, in points.

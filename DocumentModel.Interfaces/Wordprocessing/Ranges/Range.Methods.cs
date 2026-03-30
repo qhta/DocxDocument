@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range?view=word-pia"/>
-public partial interface Range: InteropObject
+public partial interface Range: IModelObject
 {
   /// <summary>
   /// Returns information about the range.

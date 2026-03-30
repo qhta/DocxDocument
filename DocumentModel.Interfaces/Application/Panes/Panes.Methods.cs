@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.panes?view=word-pia"/>
-public partial interface Panes: InteropObject
+public partial interface Panes: IModelObject
 {
   /// <summary>
   /// Adds a new pane to the collection, optionally splitting the current pane vertically or horizontally.

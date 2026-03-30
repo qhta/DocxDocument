@@ -5,6 +5,6 @@ namespace DocumentModel.Drawings;
 /// collection and related objects and properties for programmatically defining page layout in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangles?view=word-pia"/>
-public interface Rectangles : InteropObject, InteropCollection<Rectangle>
+public interface Rectangles : IModelObject, IModelCollection<Rectangle>
 {
 }

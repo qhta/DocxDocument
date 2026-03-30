@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.ocxevents?view=word-pia"/>
-public partial interface OCXEvents: InteropObject
+public partial interface OCXEvents: IModelObject
 {
   /// <summary>
   /// Reserved for internal use.

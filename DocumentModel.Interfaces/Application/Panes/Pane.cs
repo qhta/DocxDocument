@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// includes all the window panes for a single window.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane?view=word-pia"/>
-public partial interface Pane : InteropObject
+public partial interface Pane : IModelObject
 {
   /// <summary>
   /// Returns a Document object associated with the specified pane. Read-only.
@@ -37,7 +37,7 @@ public partial interface Pane : InteropObject
   /// view, outline view or print layout view).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.zooms?view=word-pia"/>
-  public Zooms Zooms { get; }
+  public IZooms Zooms { get; }
 
   /// <summary>
   /// Returns a Long that represents the position of an item in a collection. Read-only.

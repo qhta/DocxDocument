@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system?view=word-pia"/>
-public partial interface ISystem: InteropObject
+public partial interface ISystem: IModelObject
 {
   /// <summary>
   /// Returns the profile string.

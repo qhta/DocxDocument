@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a COM add-in in the Microsoft Office host application.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.comaddin?view=office-pia"/>
-public partial interface COMAddIn: InteropObject
+public partial interface COMAddIn: IModelObject
 {
   /// <summary>
   /// Gets or sets the `Description` property.

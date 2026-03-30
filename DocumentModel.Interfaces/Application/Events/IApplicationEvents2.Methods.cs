@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents2?view=word-pia"/>
-public partial interface IApplicationEvents2: InteropObject
+public partial interface IApplicationEvents2: IModelObject
 {
   /// <summary>
   /// Occurs when the application starts up.

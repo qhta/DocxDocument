@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single co-author in the document. The CoAuthor object is a member of the CoAuthors collection. The CoAuthors collection contains all the co-authors in the document (authors that are actively editing the document).
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthor?view=word-pia"/>
-public interface CoAuthor : InteropObject
+public interface CoAuthor : IModelObject
 {
   /// <summary>
   /// Gets the unique identifier of the co-author.

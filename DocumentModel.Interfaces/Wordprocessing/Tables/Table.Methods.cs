@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.table?view=word-pia"/>
-public partial interface Table: InteropObject
+public partial interface Table: IModelObject
 {
   /// <summary>
   /// Selects the specified object.

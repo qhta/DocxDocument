@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a folder-tree scope that can be searched.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.searchscope?view=office-pia"/>
-public partial interface SearchScope: InteropObject
+public partial interface SearchScope: IModelObject
 {
   /// <summary>
   /// Gets the type of this search scope.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single caption that can be automatically added when items such as tables, pictures, or OLE objects are inserted into a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocaption?view=word-pia"/>
-public interface IAutoCaption : InteropObject
+public interface IAutoCaption : IModelObject
 {
   /// <summary>
   /// Gets the name of the auto caption entry.

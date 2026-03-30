@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents the `Trendlines` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.trendlines?view=office-pia"/>
-public partial interface Trendlines: InteropCollection<Trendline>
+public partial interface Trendlines: IModelCollection<Trendline>
 {
 
 }

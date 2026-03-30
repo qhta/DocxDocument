@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a collection of available search scopes.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.searchscopes?view=office-pia"/>
-public partial interface SearchScopes: InteropCollection<SearchScope>
+public partial interface SearchScopes: IModelCollection<SearchScope>
 {
 }
 

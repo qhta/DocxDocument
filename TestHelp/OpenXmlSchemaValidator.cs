@@ -1,9 +1,13 @@
-namespace DocumentModel.InOpenXml.Test;
+using System.Text;
+using System.Xml;
+using System.Xml.Schema;
+
+namespace DocumentModel;
 
 /// <summary>
 /// Validates generated OpenXml XML against the canonical schema set.
 /// </summary>
-internal static class OpenXmlSchemaValidator
+public static class OpenXmlSchemaValidator
 {
   private const string SchemaDirectory = @"Schema";
   private static readonly Lazy<XmlSchemaSet> SchemaSet = new(LoadSchemas);
@@ -155,4 +159,4 @@ internal static class OpenXmlSchemaValidator
   }
 }
 
-internal sealed record OpenXmlValidationResult(bool IsValid, IReadOnlyList<string> Messages);
+public sealed record OpenXmlValidationResult(bool IsValid, IReadOnlyList<string> Messages);

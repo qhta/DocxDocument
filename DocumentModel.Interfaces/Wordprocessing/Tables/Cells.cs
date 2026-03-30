@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// A collection of Cell objects in a table column, table row, selection, or range.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells?view=word-pia"/>
-public partial interface Cells : InteropObject, InteropCollection<Cell>
+public partial interface Cells : IModelObject, IModelCollection<Cell>
 {
   /// <summary>
   /// Gets or sets the width of the cells, in points.

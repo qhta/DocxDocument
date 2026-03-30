@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 /// Represents all the properties for wrapping text around a shape or shape range.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wrapformat?view=word-pia"/>
-public interface WrapFormat : InteropObject
+public interface WrapFormat : IModelObject
 {
   /// <summary>
   /// Returns the wrap type for the specified shape.

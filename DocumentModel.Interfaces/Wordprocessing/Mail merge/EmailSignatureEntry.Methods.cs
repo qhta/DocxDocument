@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailsignatureentry?view=word-pia"/>
-public partial interface EmailSignatureEntry: InteropObject
+public partial interface EmailSignatureEntry: IModelObject
 {
   /// <summary>
   /// Deletes the specified object.

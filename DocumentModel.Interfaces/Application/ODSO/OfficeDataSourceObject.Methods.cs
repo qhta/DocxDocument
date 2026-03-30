@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Represents the mail merge data source in a mail merge operation.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officedatasourceobject?view=office-pia"/>
-public partial interface OfficeDataSourceObject: InteropObject
+public partial interface OfficeDataSourceObject: IModelObject
 {
   /// <summary>
   /// Moves the focus to a specified row.

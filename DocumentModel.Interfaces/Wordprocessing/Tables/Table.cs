@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single table.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.table?view=word-pia"/>
-public partial interface Table : InteropObject
+public partial interface Table : IModelObject
 {
   /// <summary>
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.

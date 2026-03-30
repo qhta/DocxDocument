@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents chart walls.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsowalls?view=office-pia"/>
-public partial interface Walls: InteropObject
+public partial interface Walls: IModelObject
 {
   /// <summary>
   /// Selects the chart walls.

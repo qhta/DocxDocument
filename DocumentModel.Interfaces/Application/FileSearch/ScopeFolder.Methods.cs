@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a searchable folder.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scopefolder?view=office-pia"/>
-public partial interface ScopeFolder: InteropObject
+public partial interface ScopeFolder: IModelObject
 {
   /// <summary>
   /// Adds this folder to the search folders collection.

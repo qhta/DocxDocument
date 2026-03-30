@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an equation matrix.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmat?view=word-pia"/>
-public partial interface OMathMat : InteropObject
+public partial interface OMathMat : IModelObject
 {
   /// <summary>
   /// Returns the collection of matrix rows.

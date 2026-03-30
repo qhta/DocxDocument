@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Provides the ability to manipulate blog images.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogpictureextensibility?view=office-pia"/>
-public partial interface IBlogPictureExtensibility: InteropObject
+public partial interface IBlogPictureExtensibility: IModelObject
 {
   /// <summary>
   /// Enables picture providers to offer themselves as an upload location for blog pictures.

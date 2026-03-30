@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an equation with a base that contains a superscript.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsup?view=word-pia"/>
-public interface OMathScrSup : InteropObject
+public interface OMathScrSup : IModelObject
 {
   /// <summary>
   /// Returns the base expression.

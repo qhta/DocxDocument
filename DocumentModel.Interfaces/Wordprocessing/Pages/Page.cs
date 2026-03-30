@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// programmatically defining page layout in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.page?view=word-pia"/>
-public partial interface Page : InteropObject
+public partial interface Page : IModelObject
 {
   /// <summary>
   /// Returns 0 (zero) indicating the upper left corner of the page.

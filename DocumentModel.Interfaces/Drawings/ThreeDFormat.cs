@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// Represents a shape's three-dimensional formatting.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat?view=word-pia"/>
-public partial interface ThreeDFormat : InteropObject
+public partial interface ThreeDFormat : IModelObject
 {
   /// <summary>
   /// Returns or sets the depth of the shape's extrusion. Can be a value from – 600 through 9600 (positive values

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblocks?view=word-pia"/>
-public partial interface BuildingBlocks: InteropObject
+public partial interface BuildingBlocks: IModelObject
 {
   /// <summary>
   /// Returns a building block from the collection by index or name.

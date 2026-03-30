@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible?view=office-pia"/>
-public partial interface IAccessible: InteropObject
+public partial interface IAccessible: IModelObject
 {
   /// <summary>
   /// Selects the specified accessible child object.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a language used for proofing or formatting in Microsoft Word.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.language?view=word-pia"/>
-public interface Language : InteropObject
+public interface Language : IModelObject
 {
   /// <summary>
   /// Returns a language ID constant for the language.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents special formatting applied to specified areas of a table when the selected table is formatted with a specified table style.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conditionalstyle?view=word-pia"/>
-public interface ConditionalStyle : InteropObject
+public interface ConditionalStyle : IModelObject
 {
   /// <summary>
   /// Gets the shading formatting for the conditional style.

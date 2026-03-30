@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comments?view=word-pia"/>
-public partial interface Comments: InteropObject
+public partial interface Comments: IModelObject
 {
   /// <summary>
   /// Adds a comment to the specified range.

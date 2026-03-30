@@ -1309,11 +1309,6 @@
             <param name="json">The JSON string to deserialize.</param>
             <returns>The deserialized Numbering object, or null if deserialization fails.</returns>
         </member>
-        <member name="T:DocumentModel.InOpenXml.Test.OpenXmlSchemaValidator">
-            <summary>
-            Validates generated OpenXml XML against the canonical schema set.
-            </summary>
-        </member>
         <member name="M:DocumentModel.InOpenXml.Test.Program.Exec(System.Func{System.Boolean})">
             <summary>
             Runs the specified test method and reports the result to the console.
@@ -1743,96 +1738,6 @@
             </summary>
             <param name="json">The JSON string to deserialize.</param>
             <returns>The deserialized Styles object, or null if deserialization fails.</returns>
-        </member>
-        <member name="T:DocumentModel.InOpenXml.Test.TestHelper">
-            <summary>
-            Provides helper methods for test scenarios.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.TestHelper.CompareTestData``1(``0,``0,System.String@)">
-            <summary>
-            Compares two test data instances property by property.
-            </summary>
-            <param name="obj1">First test data instance</param>
-            <param name="obj2">Second test data instance</param>
-            <param name="propName">FontName of the property that differs, if any</param>
-            <returns>True if the properties are equal, false otherwise</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.TestHelper.CompareTestData``1(System.Type,``0,``0,System.String@)">
-            <summary>
-            Compares the public writable properties of two objects of the specified type for deep equality.
-            </summary>
-            <remarks>If the specified type represents a collection, the method compares the elements recursively in
-            order. The comparison uses deep equality, including nested properties and collection items. The method does not
-            compare indexer properties or properties that are read-only.</remarks>
-            <typeparam name="T">The type of the objects to compare.</typeparam>
-            <param name="comparedType">The type whose public writable properties are compared between the two objects. Must not be null.</param>
-            <param name="obj1">The first object to compare. Must be of the specified type.</param>
-            <param name="obj2">The second object to compare. Must be of the specified type.</param>
-            <param name="propName">When the method returns <see langword="false"/>, contains the name of the first property or collection element
-            that differs; otherwise, <see langword="null"/>.</param>
-            <returns><see langword="true"/> if all public writable properties of the two objects are equal; otherwise, <see
-            langword="false"/>.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.TestHelper.CompareTestData1``1(System.Type,``0,``0,System.String@)">
-            <summary>
-            The actual implementation of CompareTestData with ref parameter for propName.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.TestHelper.ChangeTestData``1(``0)">
-            <summary>
-            Changes test data in the given instance.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="instance">The test data to modify.</param>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.TestHelper.ChangeBoolProperty(System.Object,System.Reflection.PropertyInfo)">
-            <summary>
-            Changes a boolean property value for testing purposes.
-            </summary>
-            <param name="obj">The object containing the property.</param>
-            <param name="prop">The property to change.</param>
-            <returns>The new value of the property.</returns>
-            <remarks>
-            If the property is null, a random boolean value will be returned.
-            Otherwise, the boolean value will be toggled.
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.TestHelper.ChangeIntProperty(System.Object,System.Reflection.PropertyInfo)">
-            <summary>
-            Changes the value of an integer property on the specified object and returns the new value.
-            </summary>
-            <param name="obj">The object whose property value is to be changed. Must not be null.</param>
-            <param name="prop">The property to change. Must be a readable property of <paramref name="obj"/>.</param>
-            <returns>A nullable integer representing the new value of the property.</returns>
-            <remarks>If the original value is null, returns a random integer.
-            If the original value is an integer, returns its value incremented by one.
-            </remarks>remarks
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.TestHelper.CopyTestData``1(``0,``0)">
-            <summary>
-            Copies test data from one instance to another.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="fromInstance">The instance to copy data from.</param>
-            <param name="toInstance"></param>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.TestHelper.GetInternalMessages(System.Exception)">
-            <summary>
-            Retrieves a formatted string containing the messages of all inner exceptions for the specified exception.
-            </summary>
-            <remarks>This method is useful for logging or displaying detailed error information, especially when
-            exceptions are nested. The returned string includes each inner exception message on a separate line.</remarks>
-            <param name="ex">The exception from which to extract inner exception messages. Cannot be null.</param>
-            <returns>A string listing the messages of all inner exceptions, each prefixed with "Inner Exception:". Returns "No inner
-            exceptions" if there are none.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.TestHelper.FormatXmlWithLineNumbers(System.String)">
-            <summary>
-            Formats XML string with line numbers for easier debugging.
-            </summary>
-            <param name="xml"></param>
-            <returns></returns>
         </member>
     </members>
 </doc>

@@ -71,7 +71,7 @@ public class ChartStyle //: OfficeArtExtendableElement
   /// <summary>
   /// Style settings for the chart floor.
   /// </summary>
-  public Floor? Floor { get; set; }
+  public IFloor? Floor { get; set; }
   /// <summary>
   /// Style settings for major gridlines.
   /// </summary>

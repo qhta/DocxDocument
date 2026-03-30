@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view?view=word-pia"/>
-public partial interface View: InteropObject
+public partial interface View: IModelObject
 {
   /// <summary>
   /// Collapses the outline at the specified range.

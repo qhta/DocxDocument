@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrectentries?view=word-pia"/>
-public partial interface AutoCorrectEntries: InteropObject
+public partial interface AutoCorrectEntries: IModelObject
 {
   /// <summary>
   /// Adds an AutoCorrect entry to the list of available AutoCorrect entries.

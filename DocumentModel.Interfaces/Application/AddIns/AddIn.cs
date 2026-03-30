@@ -4,7 +4,7 @@ namespace DocumentModel.Application;
 /// Represents a single add-in, either installed or not installed.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.addin?view=word-pia"/>
-public partial interface AddIn : InteropObject
+public partial interface AddIn : IModelObject
 {
   /// <summary>
   /// Gets the name of the add-in.

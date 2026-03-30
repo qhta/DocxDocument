@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// Represents the geometry and the geometry-editing properties of the nodes in a user-defined freeform.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenode?view=word-pia"/>
-public interface ShapeNode : InteropObject
+public interface ShapeNode : IModelObject
 {
   /// <summary>
   /// If the specified node is a vertex, this property returns a value that indicates how changes made to the node

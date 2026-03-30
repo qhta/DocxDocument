@@ -5,7 +5,7 @@ using DocumentModel.Drawings;
 /// Contains properties and methods that apply to WordArt objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat?view=word-pia"/>
-public partial interface TextEffectFormat : InteropObject
+public partial interface TextEffectFormat : IModelObject
 {
   /// <summary>
   /// Returns or sets a constant that represents the alignment for the specified text effect.

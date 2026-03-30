@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents the border of an object.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartborder?view=word-pia"/>
-public interface ChartBorder : InteropObject
+public interface ChartBorder : IModelObject
 {
   /// <summary>
   /// Gets or sets the primary color of the chart border.

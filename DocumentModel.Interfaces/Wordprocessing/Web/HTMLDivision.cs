@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single HTML division in a web document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivision?view=word-pia"/>
-public partial interface HTMLDivision : InteropObject
+public partial interface HTMLDivision : IModelObject
 {
   /// <summary>
   /// Returns a range object that represents the contents of the HTML division.

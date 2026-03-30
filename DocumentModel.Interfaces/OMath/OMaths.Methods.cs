@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omaths?view=word-pia"/>
-public partial interface OMaths: InteropObject
+public partial interface OMaths: IModelObject
 {
   /// <summary>
   /// Converts all equations in the collection to linear format. .

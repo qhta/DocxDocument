@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a contiguous area in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range?view=word-pia"/>
-public partial interface Range : InteropObject
+public partial interface Range : IModelObject
 {
   /// <summary>
   /// Returns or sets the text in the specified range.

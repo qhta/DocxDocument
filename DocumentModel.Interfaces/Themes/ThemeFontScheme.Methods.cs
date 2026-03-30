@@ -5,7 +5,7 @@ namespace DocumentModel.Themes;
 /// Represents the `ThemeFontScheme` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themefontscheme?view=office-pia"/>
-public partial interface ThemeFontScheme: InteropObject
+public partial interface ThemeFontScheme: IModelObject
 {
   /// <summary>
   /// Invokes `Load`.

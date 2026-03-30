@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a lock within the document. The CoAuthLock object is a member of the CoAuthLocks collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthlock?view=word-pia"/>
-public partial interface CoAuthLock : InteropObject
+public partial interface CoAuthLock : IModelObject
 {
   /// <summary>
   /// Gets the type of coauthoring lock.

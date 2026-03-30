@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttags?view=word-pia"/>
-public partial interface SmartTags: InteropObject
+public partial interface SmartTags: IModelObject
 {
   /// <summary>
   /// Adds a new smart tag to the collection.

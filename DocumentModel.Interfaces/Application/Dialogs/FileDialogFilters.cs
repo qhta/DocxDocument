@@ -7,7 +7,7 @@ namespace DocumentModel.Application;
 /// A collection of FileDialogFilter objects used by a FileDialog.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialogfilters?view=office-pia"/>
-public partial interface FileDialogFilters: InteropCollection<FileDialogFilter>
+public partial interface FileDialogFilters: IModelCollection<FileDialogFilter>
 {
 }
 

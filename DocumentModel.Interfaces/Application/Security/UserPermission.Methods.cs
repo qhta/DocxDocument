@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents the `UserPermission` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.userpermission?view=office-pia"/>
-public partial interface UserPermission: InteropObject
+public partial interface UserPermission: IModelObject
 {
   /// <summary>
   /// Invokes `Remove`.

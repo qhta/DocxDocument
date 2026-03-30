@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Text;
 /// Represents the `TabStop2` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstop2?view=office-pia"/>
-public partial interface ITabStop: InteropObject
+public partial interface ITabStop: IModelObject
 {
   /// <summary>
   /// Gets or sets the `Position` property.

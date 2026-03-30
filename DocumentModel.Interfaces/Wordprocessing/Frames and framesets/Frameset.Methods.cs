@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset?view=word-pia"/>
-public partial interface Frameset: InteropObject
+public partial interface Frameset: IModelObject
 {
   /// <summary>
   /// Returns the child frameset item.

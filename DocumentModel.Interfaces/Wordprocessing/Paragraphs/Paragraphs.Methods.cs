@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs?view=word-pia"/>
-public partial interface Paragraphs: InteropObject
+public partial interface Paragraphs: IModelObject
 {
   /// <summary>
   /// Adds a new paragraph to the document at the specified range.  

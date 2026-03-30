@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 /// Contains shading attributes for an object.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shading?view=word-pia"/>
-public interface Shading : InteropObject
+public interface Shading : IModelObject
 {
   /// <summary>
   /// Returns or sets the color that's applied to the foreground of the Shading object. This color is applied to the

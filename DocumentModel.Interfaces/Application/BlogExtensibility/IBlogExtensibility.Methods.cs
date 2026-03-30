@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Provides the ability to manipulate blog entries.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility?view=office-pia"/>
-public partial interface IBlogExtensibility: InteropObject
+public partial interface IBlogExtensibility: IModelObject
 {
   /// <summary>
   /// Contains information about the blog provider.

@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.Text;
 /// Represents the `TextRange2` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2?view=office-pia"/>
-public partial interface TextRange: InteropObject
+public partial interface TextRange: IModelObject
 {
   /// <summary>
   /// Invokes `Item`.

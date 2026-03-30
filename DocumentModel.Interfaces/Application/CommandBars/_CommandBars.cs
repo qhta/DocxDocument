@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// A collection of CommandBar objects that represent the command bars in the container application.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars?view=office-pia"/>
-public partial interface _CommandBars: InteropCollection<CommandBar>
+public partial interface _CommandBars: IModelCollection<CommandBar>
 {
   /// <summary>
   /// Gets or sets the `ActionControl` property.

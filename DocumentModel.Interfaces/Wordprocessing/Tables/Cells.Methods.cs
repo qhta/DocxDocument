@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells?view=word-pia"/>
-public partial interface Cells: InteropObject
+public partial interface Cells: IModelObject
 {
   /// <summary>
   /// Adds a cell to the collection before the specified cell.

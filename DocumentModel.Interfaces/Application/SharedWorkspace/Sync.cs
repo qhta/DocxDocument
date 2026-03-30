@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents the `Sync` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sync?view=office-pia"/>
-public partial interface Sync: InteropObject
+public partial interface Sync: IModelObject
 {
   /// <summary>
   /// Gets the `Status` property.

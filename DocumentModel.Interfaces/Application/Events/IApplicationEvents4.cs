@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4?view=word-pia"/>
-public partial interface IApplicationEvents4: InteropObject
+public partial interface IApplicationEvents4: IModelObject
 {
 }

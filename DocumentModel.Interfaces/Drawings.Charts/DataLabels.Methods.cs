@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents a collection of data labels.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels?view=office-pia"/>
-public partial interface DataLabels: InteropObject
+public partial interface IDataLabels: IModelObject
 {
   /// <summary>
   /// Selects the data labels collection.

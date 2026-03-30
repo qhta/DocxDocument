@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// A ContentControlListEntry object represents a list item in a drop-down list or combo box content control. A ContentControlListEntry object is a member of the ContentControlListEntries collection for a ContentControl object.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrollistentry?view=word-pia"/>
-public partial interface ContentControlListEntry : InteropObject
+public partial interface ContentControlListEntry : IModelObject
 {
   /// <summary>
   /// Gets or sets the display text of the list entry.

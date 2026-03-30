@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// A collection of FileType values used by FileSearch.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filetypes?view=office-pia"/>
-public partial interface FileTypes: InteropValues<FileType>
+public partial interface FileTypes: IModelValues<FileType>
 {
 }
 

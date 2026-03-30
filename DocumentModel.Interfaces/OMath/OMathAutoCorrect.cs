@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the math AutoCorrect feature in Microsoft Office Word. To access the math AutoCorrect entries, use the OMathAutoCorrectEntries collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathautocorrect?view=word-pia"/>
-public interface OMathAutoCorrect : InteropObject
+public interface OMathAutoCorrect : IModelObject
 {
   /// <summary>
   /// Returns or sets whether text is replaced with math AutoCorrect entries as you type.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a mail merge field name in a data source.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefieldname?view=word-pia"/>
-public interface MailMergeFieldName : InteropObject
+public interface MailMergeFieldName : IModelObject
 {
   /// <summary>
   /// Returns the name of the mail merge field.

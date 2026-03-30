@@ -8,7 +8,7 @@ namespace DocumentModel.Application;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacemembers?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface SharedWorkspaceMembers: InteropObject
+public partial interface SharedWorkspaceMembers: IModelObject
 {
   /// <summary>
   /// Invokes `Add`.

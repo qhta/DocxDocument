@@ -7,7 +7,7 @@ namespace DocumentModel.Themes;
 /// Represents the `ThemeColorScheme` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themecolorscheme?view=office-pia"/>
-public partial interface ThemeColorScheme: InteropObject
+public partial interface ThemeColorScheme: IModelObject
 {
   /// <summary>
   /// Invokes `Colors`.

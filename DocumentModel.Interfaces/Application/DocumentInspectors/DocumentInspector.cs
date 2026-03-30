@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a Document Inspector module in a DocumentInspectors collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentinspector?view=office-pia"/>
-public partial interface DocumentInspector: InteropObject
+public partial interface DocumentInspector: IModelObject
 {
   /// <summary>
   /// Gets the `Name` property.

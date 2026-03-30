@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Restricts permissions to the active document and exposes permission settings.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.permission?view=office-pia"/>
-public partial interface Permission: InteropObject
+public partial interface Permission: IModelObject
 {
   /// <summary>
   /// Creates permissions for a specified user.

@@ -11,7 +11,7 @@ namespace DocumentModel.CustomXml;
 /// Represents a namespace prefix mapping.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlprefixmapping?view=office-pia"/>
-public partial interface CustomXMLPrefixMapping: InteropObject
+public partial interface CustomXMLPrefixMapping: IModelObject
 {
   /// <summary>
   /// Gets the `Prefix` property.

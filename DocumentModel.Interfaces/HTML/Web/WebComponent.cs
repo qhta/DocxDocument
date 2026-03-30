@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Represents the `WebComponent` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponent?view=office-pia"/>
-public partial interface WebComponent: InteropObject
+public partial interface WebComponent: IModelObject
 {
   /// <summary>
   /// Gets the `Shape` property.

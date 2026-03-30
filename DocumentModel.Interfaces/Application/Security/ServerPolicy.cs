@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Represents a policy specified for a server-stored document type.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.serverpolicy?view=office-pia"/>
-public partial interface ServerPolicy: InteropCollection<PolicyItem>
+public partial interface ServerPolicy: IModelCollection<PolicyItem>
 {
   /// <summary>
   /// Gets the server policy ID.

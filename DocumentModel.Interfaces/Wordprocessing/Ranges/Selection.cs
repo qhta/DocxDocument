@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the current selection in a window or pane.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection?view=word-pia"/>
-public partial interface Selection : InteropObject
+public partial interface Selection : IModelObject
 {
   /// <summary>
   /// Returns or sets the text in the specified selection.

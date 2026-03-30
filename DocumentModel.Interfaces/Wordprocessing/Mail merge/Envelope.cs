@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents an envelope.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope?view=word-pia"/>
-public partial interface Envelope : InteropObject
+public partial interface Envelope : IModelObject
 {
   /// <summary>
   /// Gets the delivery address on the envelope.

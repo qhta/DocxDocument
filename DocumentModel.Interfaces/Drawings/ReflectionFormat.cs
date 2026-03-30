@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// Represents the reflection formatting for a shape or range of shapes.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.reflectionformat?view=word-pia"/>
-public interface ReflectionFormat : InteropObject
+public interface ReflectionFormat : IModelObject
 {
   /// <summary>
   /// Returns or sets an LightRigType constant that represents the type and direction of the lighting for a shape

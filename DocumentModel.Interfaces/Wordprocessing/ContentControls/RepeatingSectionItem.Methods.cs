@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.repeatingsectionitem?view=word-pia"/>
-public partial interface RepeatingSectionItem: InteropObject
+public partial interface RepeatingSectionItem: IModelObject
 {
   /// <summary>
   /// Deletes the specified repeating section item.

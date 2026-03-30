@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes?view=word-pia"/>
-public partial interface InlineShapes: InteropObject
+public partial interface InlineShapes: IModelObject
 {
   /// <summary>
   /// Adds a picture to the document as an inline shape.

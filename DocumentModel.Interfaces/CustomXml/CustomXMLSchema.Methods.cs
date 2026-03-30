@@ -5,7 +5,7 @@ namespace DocumentModel.CustomXml;
 /// Represents a schema in a custom XML schema collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlschema?view=office-pia"/>
-public partial interface CustomXMLSchema: InteropObject
+public partial interface CustomXMLSchema: IModelObject
 {
   /// <summary>
   /// Deletes the schema from the collection.

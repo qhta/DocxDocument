@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This is a primary interface in a COM coclass that is required by managed code for interoperability with the corresponding COM object. Use this primary interface only when the method you want to use shares the same name as an event of the COM object; in this case, cast to this interface to call the method, and cast to the latest events interface to connect to the event. Otherwise, use the .NET interface that is derived from the COM coclass to access methods, properties, and events of the COM object. For more information about the COM object, see LetterContent.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent?view=word-pia"/>
-public interface _LetterContent : InteropObject
+public interface _LetterContent : IModelObject
 {
   /// <summary>
   /// Gets a duplicate of the letter content.

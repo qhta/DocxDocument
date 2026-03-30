@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.othercorrectionsexception?view=word-pia"/>
-public partial interface OtherCorrectionsException: InteropObject
+public partial interface OtherCorrectionsException: IModelObject
 {
   /// <summary>
   /// Deletes the specified object.

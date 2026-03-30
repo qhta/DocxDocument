@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a dictionary.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionary?view=word-pia"/>
-public partial interface Dictionary : InteropObject
+public partial interface Dictionary : IModelObject
 {
   /// <summary>
   /// Gets the name of the dictionary.

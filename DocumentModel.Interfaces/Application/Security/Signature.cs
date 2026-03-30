@@ -7,7 +7,7 @@ namespace DocumentModel.Application;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signature?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface Signature: InteropObject
+public partial interface Signature: IModelObject
 {
   /// <summary>
   /// Gets the `Signer` property.

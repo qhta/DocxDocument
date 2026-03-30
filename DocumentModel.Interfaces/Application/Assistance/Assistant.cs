@@ -10,7 +10,7 @@ namespace DocumentModel.Application;
 /// animation, and the types of help it provides.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant?view=office-pia"/>
-public partial interface Assistant: InteropObject
+public partial interface Assistant: IModelObject
 {
   /// <summary>
   /// Gets or sets the `Top` property.

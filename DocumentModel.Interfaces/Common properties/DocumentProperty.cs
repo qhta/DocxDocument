@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// Represents a custom or built-in document property.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty?view=office-pia"/>
-public partial interface DocumentProperty: InteropObject
+public partial interface IDocumentProperty: IModelObject
 {
   /// <summary>
   /// Returns or sets the name of the specified object.

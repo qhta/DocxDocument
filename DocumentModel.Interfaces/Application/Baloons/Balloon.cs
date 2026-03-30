@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Represents the balloon where the Office Assistant displays information.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.balloon?view=office-pia"/>
-public partial interface Balloon: InteropObject
+public partial interface Balloon: IModelObject
 {
   /// <summary>
   /// Gets or sets the `Checkboxes` property.

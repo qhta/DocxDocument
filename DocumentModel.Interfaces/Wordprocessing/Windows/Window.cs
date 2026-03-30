@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a window.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window?view=word-pia"/>
-public partial interface IWindow : InteropObject
+public partial interface IWindow : IModelObject
 {
   /// <summary>
   /// Returns a Pane object that represents the active pane for the specified window.

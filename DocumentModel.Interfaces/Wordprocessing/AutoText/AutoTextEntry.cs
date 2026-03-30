@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single AutoText entry.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autotextentry?view=word-pia"/>
-public partial interface AutoTextEntry : InteropObject
+public partial interface AutoTextEntry : IModelObject
 {
   /// <summary>
   /// Gets the index number of the AutoText entry in the collection.

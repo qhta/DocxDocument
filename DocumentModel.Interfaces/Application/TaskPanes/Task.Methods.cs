@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.task?view=word-pia"/>
-public partial interface Task: InteropObject
+public partial interface Task: IModelObject
 {
   /// <summary>
   /// Activates the task, optionally waiting for completion.

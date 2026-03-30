@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// Contains properties and methods that apply to pictures and OLE objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat?view=word-pia"/>
-public partial interface PictureFormat : InteropObject
+public partial interface PictureFormat : IModelObject
 {
   /// <summary>
   /// Returns or sets the brightness of the specified picture or OLE object. The value for this property must be a

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrecognizedfunction?view=word-pia"/>
-public partial interface OMathRecognizedFunction: InteropObject
+public partial interface OMathRecognizedFunction: IModelObject
 {
   /// <summary>
   /// Deletes the specified recognized function from the list of the recognized functions.

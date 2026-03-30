@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the collection of recognized math functions.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrecognizedfunctions?view=word-pia"/>
-public partial interface OMathRecognizedFunctions : InteropObject, InteropCollection<OMathRecognizedFunction>
+public partial interface OMathRecognizedFunctions : IModelObject, IModelCollection<OMathRecognizedFunction>
 {
 }

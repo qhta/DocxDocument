@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a collection of file search criteria.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.propertytests?view=office-pia"/>
-public partial interface PropertyTests: InteropObject
+public partial interface PropertyTests: IModelObject
 {
   /// <summary>
   /// Adds a search criterion to the collection.

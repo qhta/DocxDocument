@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.envelope?view=word-pia"/>
-public partial interface Envelope: InteropObject
+public partial interface Envelope: IModelObject
 {
   /// <summary>
   /// Executes the insert2000 operation.

@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Represents events for a custom task pane.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customtaskpaneevents?view=office-pia"/>
-public partial interface CustomTaskPaneEvents: InteropObject
+public partial interface CustomTaskPaneEvents: IModelObject
 {
   /// <summary>
   /// Occurs when the user changes the visibility of the custom task pane.

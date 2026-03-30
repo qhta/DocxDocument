@@ -4,7 +4,7 @@ namespace DocumentModel.Application;
 /// Represents the `SharedWorkspaceMember` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacemember?view=office-pia"/>
-public partial interface SharedWorkspaceMember: InteropObject
+public partial interface SharedWorkspaceMember: IModelObject
 {
   /// <summary>
   /// Gets the `Name` property.

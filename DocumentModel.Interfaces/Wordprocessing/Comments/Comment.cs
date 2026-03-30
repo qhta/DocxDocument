@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single comment.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment?view=word-pia"/>
-public partial interface Comment : InteropObject
+public partial interface Comment : IModelObject
 {
   /// <summary>
   /// Gets the range that contains the comment text.

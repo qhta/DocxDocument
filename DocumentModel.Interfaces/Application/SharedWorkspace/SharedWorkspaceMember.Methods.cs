@@ -8,7 +8,7 @@ namespace DocumentModel.Application;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacemember?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface SharedWorkspaceMember: InteropObject
+public partial interface SharedWorkspaceMember: IModelObject
 {
   /// <summary>
   /// Invokes `Delete`.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailsignatureentries?view=word-pia"/>
-public partial interface EmailSignatureEntries: InteropObject
+public partial interface EmailSignatureEntries: IModelObject
 {
   /// <summary>
   /// Returns the value produced by the add operation.

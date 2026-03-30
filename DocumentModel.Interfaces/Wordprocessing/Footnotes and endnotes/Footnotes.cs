@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// A collection of Footnote objects that represent all the footnotes in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes?view=word-pia"/>
-public partial interface Footnotes : InteropObject, InteropCollection<Footnote>
+public partial interface Footnotes : IModelObject, IModelCollection<Footnote>
 {
   /// <summary>
   /// Returns or sets the position of all footnotes.

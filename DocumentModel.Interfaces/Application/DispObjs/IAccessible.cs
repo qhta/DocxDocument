@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Used as a base interface for _IMsoOleAddDispObject.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible?view=office-pia"/>
-public partial interface IAccessible: InteropObject
+public partial interface IAccessible: IModelObject
 {
   /// <summary>
   /// Gets the parent accessible object.

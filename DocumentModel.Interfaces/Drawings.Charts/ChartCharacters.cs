@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents characters in an object that contains text.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters?view=word-pia"/>
-public partial interface ChartCharacters : InteropObject
+public partial interface ChartCharacters : IModelObject
 {
   /// <summary>
   /// Gets or sets the caption text for the chart characters.

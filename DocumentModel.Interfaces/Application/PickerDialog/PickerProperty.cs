@@ -4,7 +4,7 @@ namespace DocumentModel.Application;
 /// Represents a custom picker property.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerproperty?view=office-pia"/>
-public partial interface PickerProperty: InteropObject
+public partial interface PickerProperty: IModelObject
 {
   /// <summary>
   /// Gets the unique identifier of the picker property.

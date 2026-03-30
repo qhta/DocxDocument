@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.calloutformat?view=office-pia"/>
-public partial interface CalloutFormat: InteropObject
+public partial interface CalloutFormat: IModelObject
 {
   /// <summary>
   /// Resets callout length to automatic mode.

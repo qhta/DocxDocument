@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents the result of a debug unit test run.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utrunresult?view=office-pia"/>
-public partial interface MsoDebugOptions_UTRunResult: InteropObject
+public partial interface MsoDebugOptions_UTRunResult: IModelObject
 {
   /// <summary>
   /// Gets the `Passed` property.

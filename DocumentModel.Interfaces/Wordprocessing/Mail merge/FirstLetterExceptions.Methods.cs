@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.firstletterexceptions?view=word-pia"/>
-public partial interface FirstLetterExceptions: InteropObject
+public partial interface FirstLetterExceptions: IModelObject
 {
   /// <summary>
   /// Returns the value produced by the add operation.

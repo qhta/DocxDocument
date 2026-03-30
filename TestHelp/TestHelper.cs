@@ -1,4 +1,13 @@
-﻿namespace DocumentModel.InOpenXml.Test;
+﻿using System.Collections;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics;
+using System.Reflection;
+using System.Text;
+using System.Xml;
+
+using Qhta.TypeUtils;
+
+namespace DocumentModel;
 
 /// <summary>
 /// Provides helper methods for test scenarios.

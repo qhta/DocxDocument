@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a single section in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.section?view=word-pia"/>
-public interface Section : InteropObject
+public interface Section : IModelObject
 {
   /// <summary>
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.

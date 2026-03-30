@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Provides an entry point into the undo stack.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.undorecord?view=word-pia"/>
-public partial interface UndoRecord : InteropObject
+public partial interface UndoRecord : IModelObject
 {
   /// <summary>
   /// Gets whether a custom undo action is being recorded.

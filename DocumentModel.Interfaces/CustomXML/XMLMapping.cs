@@ -8,7 +8,7 @@ namespace DocumentModel.Wordprocessing;
 /// document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlmapping?view=word-pia"/>
-public partial interface XMLMapping : InteropObject
+public partial interface XMLMapping : IModelObject
 {
   /// <summary>
   /// Returns a Boolean that represents whether the content control in the document is mapped to an XML node in the

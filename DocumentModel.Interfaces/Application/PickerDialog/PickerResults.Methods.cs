@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents a collection of `PickerResult` objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerresults?view=office-pia"/>
-public partial interface PickerResults: InteropObject
+public partial interface PickerResults: IModelObject
 {
   /// <summary>
   /// Adds a `PickerResult` to the collection.

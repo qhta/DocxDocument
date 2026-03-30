@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.Text;
 /// Represents a collection of ruler outline levels.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.rulerlevels2?view=office-pia"/>
-public partial interface RulerLevels: InteropObject
+public partial interface RulerLevels: IModelObject
 {
   /// <summary>
   /// Returns a ruler level by index.

@@ -6,7 +6,7 @@ namespace DocumentModel.HTML;
 /// Represents a top-level HTML project branch in Script Editor.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlproject?view=office-pia"/>
-public partial interface HTMLProject: InteropObject
+public partial interface HTMLProject: IModelObject
 {
   /// <summary>
   /// Gets the `State` property.

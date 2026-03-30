@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents a mailing label.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailinglabel?view=word-pia"/>
-public partial interface MailingLabel : InteropObject
+public partial interface MailingLabel : IModelObject
 {
   /// <summary>
   /// Returns or sets whether a bar code is printed by default on mailing labels.

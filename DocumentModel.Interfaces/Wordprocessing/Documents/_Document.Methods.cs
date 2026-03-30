@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document?view=word-pia"/>
-public partial interface _Document: InteropObject
+public partial interface _Document: IModelObject
 {
   /// <summary>
   /// Returns the writing style for a specified language in the specified document.

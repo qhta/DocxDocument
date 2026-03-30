@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.windows?view=word-pia"/>
-public partial interface Windows: InteropObject
+public partial interface Windows: IModelObject
 {
   /// <summary>
   /// Adds a new window to the collection.

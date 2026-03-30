@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// Represents fill formatting for a shape. A shape can have a solid, gradient, texture, pattern, picture, or semi-transparent fill.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat?view=word-pia"/>
-public partial interface FillFormat : InteropObject
+public partial interface FillFormat : IModelObject
 {
   /// <summary>
   /// Returns or sets a <see cref="ColorFormat"/> object that represents the background color for the specified fill or patterned line.

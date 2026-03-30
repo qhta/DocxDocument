@@ -8,7 +8,7 @@ namespace DocumentModel.Application;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolders?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface SharedWorkspaceFolders: InteropCollection<SharedWorkspaceFolder>
+public partial interface SharedWorkspaceFolders: IModelCollection<SharedWorkspaceFolder>
 {
   /// <summary>
   /// Gets the `ItemCountExceeded` property.

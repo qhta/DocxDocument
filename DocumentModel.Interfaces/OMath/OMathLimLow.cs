@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the lower limit mathematical construct, consisting of text on the baseline and reduced-size text immediately below it.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathlimlow?view=word-pia"/>
-public partial interface OMathLimLow : InteropObject
+public partial interface OMathLimLow : IModelObject
 {
   /// <summary>
   /// Returns the base expression for the lower-limit construct.

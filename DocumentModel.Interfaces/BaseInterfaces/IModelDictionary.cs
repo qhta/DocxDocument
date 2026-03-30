@@ -12,8 +12,8 @@ namespace DocumentModel;
 /// <typeparam name="TKey">The type of the keys or indices used to access items in the dictionary.</typeparam>
 /// <typeparam name="TValue">The type of the items stored in the dictionary.</typeparam>
 // ReSharper disable once PossibleInterfaceMemberAmbiguity
-public interface InteropDictionary<TKey, TValue>: IEnumerable<TValue>
-  where TValue: InteropObject
+public interface IModelDictionary<TKey, TValue>: IEnumerable<TValue>
+  where TValue: IModelObject
 {
   /// <summary>
   /// Adds the specified key and value to the dictionary.
