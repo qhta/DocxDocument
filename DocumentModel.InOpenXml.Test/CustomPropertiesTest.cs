@@ -206,7 +206,7 @@
 					Console.WriteLine($"✗ Updated document custom properties test FAILED  - new property count is {storedCount}, expected {initialCount + 1}");
 					return false;
 				}
-        var storedCustomProperty = storedData.Last();
+        var storedCustomProperty = storedData.Last<object>();
 				if (!TestHelper.CompareTestData(newCustomProperty, storedCustomProperty, out var propName))
         {
           Console.WriteLine($"✗ Store sample custom properties test FAILED - data mismatch in new item '{propName}'");

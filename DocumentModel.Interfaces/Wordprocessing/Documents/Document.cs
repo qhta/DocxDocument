@@ -69,7 +69,7 @@ public partial interface IDocument : IModelObject
   /// Returns a Broadcast object that represents a broadcast session, in which presenters can present Word documents to remote participants over the web without the participants needing to have rich clients installed.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.broadcast?view=word-pia"/>
-  public IBroadcast Broadcast { get; }
+  public App.IBroadcast Broadcast { get; }
 
   /// <summary>
   /// Returns a DocumentProperties collection that represents all the built-in document properties for the specified document.
@@ -159,7 +159,7 @@ public partial interface IDocument : IModelObject
   /// Returns a DocumentProperties collection that represents all the custom document properties for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.customdocumentproperties?view=word-pia"/>
-  public Props.IDocumentProperties CustomDocumentProperties { get; }
+  public Props.ICustomProperties CustomDocumentProperties { get; }
 
   /// <summary>
   /// Returns a CustomXMLParts#SameCHM collection that represents the custom XML in the XML data store. Read-only.

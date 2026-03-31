@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Application;
 
 /// <remarks>
 /// Microsoft Learn API reference.

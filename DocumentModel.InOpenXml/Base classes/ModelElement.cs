@@ -102,8 +102,6 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// <param name="propertyName">The name of the property that has changed. Cannot be null or empty.</param>
   public virtual void NotifyPropertyChanged(string propertyName)
   {
-    if (propertyName == "IsModified")
-      return;
     UpdatePropertyData(propertyName);
     if (IsNotificationEnabled)
       PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

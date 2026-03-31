@@ -6,19 +6,19 @@ public partial class Document: IDocument
   /// Returns the name of the active theme plus the theme formatting options for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.activetheme?view=word-pia"/>
-  public string ActiveTheme { get; }
+  public string ActiveTheme => throw new NotImplementedException();
 
   /// <summary>
   /// Returns the display name of the active theme for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.activethemedisplayname?view=word-pia"/>
-  public string ActiveThemeDisplayName { get; }
+  public string ActiveThemeDisplayName => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Window object that represents the active window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.activewindow?view=word-pia"/>
-  public IWindow ActiveWindow { get; }
+  public IWindow ActiveWindow => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Template object that represents the template attached to the specified document.
@@ -48,31 +48,31 @@ public partial class Document: IDocument
   /// Returns the bibliography references contained within a document. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.bibliography?view=word-pia"/>
-  public IBibliography Bibliography { get; }
+  public IBibliography Bibliography => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Bookmarks collection that represents all the bookmarks in a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.bookmarks?view=word-pia"/>
-  public IBookmarks Bookmarks { get; }
+  public IBookmarks Bookmarks => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Broadcast object that represents a broadcast session, in which presenters can present Word documents to remote participants over the web without the participants needing to have rich clients installed.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.broadcast?view=word-pia"/>
-  public IBroadcast Broadcast { get; }
+  public DMA.IBroadcast Broadcast => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a DocumentProperties collection that represents all the built-in document properties for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.builtindocumentproperties?view=word-pia"/>
-  public DMP.IDocumentProperties BuiltInDocumentProperties { get; }
+  public DMP.IDocumentProperties BuiltInDocumentProperties => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Characters collection that represents the characters in a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.characters?view=word-pia"/>
-  public ICharacters Characters { get; }
+  public ICharacters Characters => throw new NotImplementedException();
 
   /// <summary>
   /// Returns or sets a Boolean (bool in C#) that specifies whether charts in the active document use cell-reference data-point tracking. Read-write.
@@ -90,25 +90,25 @@ public partial class Document: IDocument
   /// Returns a CoAuthoring object that provides an entry point to co-authoring-related object model in the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.coauthoring?view=word-pia"/>
-  public ICoAuthoring CoAuthoring { get; }
+  public ICoAuthoring CoAuthoring => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a CommandBars collection that represents the menu bar and all the toolbars in Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.commandbars?view=word-pia"/>
-  public DMA.ICommandBars CommandBars { get; }
+  public DMA.ICommandBars CommandBars => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Comments collection that represents all the comments in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.comments?view=word-pia"/>
-  public IComments Comments { get; }
+  public IComments Comments => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a long that specifies the compatibility mode that Word 2010 uses when opening the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.compatibilitymode?view=word-pia"/>
-  public int CompatibilityMode { get; }
+  public int CompatibilityMode => throw new NotImplementedException();
 
   /// <summary>
   /// Returns or sets the maximum number of consecutive lines that can end with hyphens.
@@ -120,49 +120,49 @@ public partial class Document: IDocument
   /// Returns the object that represents the container application for the specified OLE object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.container?view=word-pia"/>
-  public object Container { get; }
+  public object Container => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Range object that represents the main document story.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.content?view=word-pia"/>
-  public IRange Content { get; }
+  public IRange Content => throw new NotImplementedException();
 
   /// <summary>
   /// Returns all of the content controls in a document. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.contentcontrols?view=word-pia"/>
-  public IContentControls ContentControls { get; }
+  public IContentControls ContentControls => throw new NotImplementedException();
 
   /// <summary>
   /// Returns the metadata stored in a document, such as author name, subject, and company. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.contenttypeproperties?view=word-pia"/>
-  public DMP.IMetaProperties ContentTypeProperties { get; }
+  public DMP.IMetaProperties ContentTypeProperties => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a random number that Word assigns to changes in a document. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.currentrsid?view=word-pia"/>
-  public int CurrentRsid { get; }
+  public int CurrentRsid => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a DocumentProperties collection that represents all the custom document properties for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.customdocumentproperties?view=word-pia"/>
-  public DMP.IDocumentProperties CustomDocumentProperties { get; }
+  public DMP.ICustomProperties CustomDocumentProperties => CustomProperties;
 
   /// <summary>
   /// Returns a CustomXMLParts#SameCHM collection that represents the custom XML in the XML data store. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.customxmlparts?view=word-pia"/>
-  public DMCX.ICustomXMLParts CustomXMLParts { get; }
+  public DMCX.ICustomXMLParts CustomXMLParts => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a TableStyle that represents the table style that is applied to all newly created tables in a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.defaulttablestyle?view=word-pia"/>
-  public ITableStyle DefaultTableStyle { get; }
+  public ITableStyle DefaultTableStyle => throw new NotImplementedException();
 
   /// <summary>
   /// Returns or sets the interval (in points) between the default tab stops in the specified document.
@@ -192,25 +192,25 @@ public partial class Document: IDocument
   /// Reserved for internal use.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.docid?view=word-pia"/>
-  public int DocID { get; }
+  public int DocID => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a DocumentInspectors collection that enables you to locate hidden personal information, such as author name, company name, and revision date. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.documentinspectors?view=word-pia"/>
-  public DMA.IDocumentInspectors DocumentInspectors { get; }
+  public DMA.IDocumentInspectors DocumentInspectors => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a DocumentLibraryVersions collection that represents the collection of versions of a shared document that has versioning enabled and that is stored in a document library on a server.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.documentlibraryversions?view=word-pia"/>
-  public DMA.IDocumentLibraryVersions DocumentLibraryVersions { get; }
+  public DMA.IDocumentLibraryVersions DocumentLibraryVersions => throw new NotImplementedException();
 
   /// <summary>
   /// Returns an OfficeTheme object that represents the Microsoft Office theme applied to a document. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.documenttheme?view=word-pia"/>
-  public DMT.ITheme DocumentTheme { get; }
+  public DMT.ITheme DocumentTheme => throw new NotImplementedException();
 
   /// <summary>
   /// Determines if Microsoft Word embeds common system fonts.
@@ -222,7 +222,7 @@ public partial class Document: IDocument
   /// Returns an Email object that contains all the e-mail � related properties of the current document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.email?view=word-pia"/>
-  public IEmail Email { get; }
+  public IEmail Email => throw new NotImplementedException();
 
   /// <summary>
   /// Determines if Microsoft Word embeds speech and handwriting, stores East Asian IME keystrokes, and controls text service data received from devices.
@@ -252,7 +252,7 @@ public partial class Document: IDocument
   /// Returns an Endnotes collection that represents all the endnotes in a range, selection, or document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.endnotes?view=word-pia"/>
-  public IEndnotes Endnotes { get; }
+  public IEndnotes Endnotes => throw new NotImplementedException();
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether formatting restrictions are enforced in a protected document.
@@ -264,7 +264,7 @@ public partial class Document: IDocument
   /// Returns an Envelope object that represents envelope functionality and the envelope in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.envelope?view=word-pia"/>
-  public IEnvelope Envelope { get; }
+  public IEnvelope Envelope => throw new NotImplementedException();
 
   /// <summary>
   /// Returns or sets the East Asian language to use when breaking lines of text in the specified document or template.
@@ -282,7 +282,7 @@ public partial class Document: IDocument
   /// Returns a read-only Fields collection that represents all the fields in the document, range, or selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.fields?view=word-pia"/>
-  public IFields Fields { get; }
+  public IFields Fields => throw new NotImplementedException();
 
   /// <summary>
   /// Returns or sets a Boolean that indicates whether a document is final. Read/write.
@@ -294,7 +294,7 @@ public partial class Document: IDocument
   /// Returns a Footnotes collection that represents all the footnotes in a range, selection, or document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.footnotes?view=word-pia"/>
-  public IFootnotes Footnotes { get; }
+  public IFootnotes Footnotes => throw new NotImplementedException();
 
   /// <summary>
   /// Determines if Microsoft Word is to show clear formatting in the Styles and Formatting task pane.
@@ -342,31 +342,31 @@ public partial class Document: IDocument
   /// Returns a FormFields collection that represents all the form fields in the document, range, or selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.formfields?view=word-pia"/>
-  public IFormFields FormFields { get; }
+  public IFormFields FormFields => throw new NotImplementedException();
 
   /// <summary>
   /// Returns True if the specified document is in form design mode.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.formsdesign?view=word-pia"/>
-  public bool FormsDesign { get; }
+  public bool FormsDesign => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Frames collection that represents all the frames in a document, range, or selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.frames?view=word-pia"/>
-  public IFrames Frames { get; }
+  public IFrames Frames => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Frameset object that represents an entire frames page or a single frame on a frames page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.frameset?view=word-pia"/>
-  public IFrameset Frameset { get; }
+  public IFrameset Frameset => throw new NotImplementedException();
 
   /// <summary>
   /// Specifies the name of a document, template, or cascading style sheet, including the drive or Web path.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.fullname?view=word-pia"/>
-  public string FullName { get; }
+  public string FullName => throw new NotImplementedException();
 
   /// <summary>
   /// Determines if a grammar check has been run on the specified range or document.
@@ -378,7 +378,7 @@ public partial class Document: IDocument
   /// Returns a ProofreadingErrors collection that represents the sentences that failed the grammar check on the specified document or range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.grammaticalerrors?view=word-pia"/>
-  public IProofreadingErrors GrammaticalErrors { get; }
+  public IProofreadingErrors GrammaticalErrors => throw new NotImplementedException();
 
   /// <summary>
   /// Returns or sets the amount of horizontal space between the invisible gridlines that Microsoft Word uses when you draw, move, and resize AutoShapes or East Asian characters in the specified document.
@@ -432,7 +432,7 @@ public partial class Document: IDocument
   /// Returns True if a password is required to open the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.haspassword?view=word-pia"/>
-  public bool HasPassword { get; }
+  public bool HasPassword => throw new NotImplementedException();
 
   /// <summary>
   /// Determines if the specified document has a routing slip attached to it.
@@ -444,25 +444,25 @@ public partial class Document: IDocument
   /// Returns a Boolean that represents whether a document has an attached Microsoft Visual Basic for Applications project. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.hasvbproject?view=word-pia"/>
-  public bool HasVBProject { get; }
+  public bool HasVBProject => throw new NotImplementedException();
 
   /// <summary>
   /// Returns an HTMLDivisions object that represents an HTML division in a Web document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.htmldivisions?view=word-pia"/>
-  public IHTMLDivisions HTMLDivisions { get; }
+  public IHTMLDivisions HTMLDivisions => throw new NotImplementedException();
 
   /// <summary>
   /// Returns an HTMLProject object in the specified document that represents a top-level project branch, as in the Project Explorer of the Microsoft Script Editor.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.htmlproject?view=word-pia"/>
-  public DMH.IHTMLProject HTMLProject { get; }
+  public DMH.IHTMLProject HTMLProject => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Hyperlinks collection that represents all the hyperlinks in the specified document, range, or selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.hyperlinks?view=word-pia"/>
-  public IHyperlinks Hyperlinks { get; }
+  public IHyperlinks Hyperlinks => throw new NotImplementedException();
 
   /// <summary>
   /// Determine if words in all capital letters can be hyphenated.
@@ -480,31 +480,31 @@ public partial class Document: IDocument
   /// Returns an Indexes collection that represents all the indexes in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.indexes?view=word-pia"/>
-  public IIndexes Indexes { get; }
+  public IIndexes Indexes => throw new NotImplementedException();
 
   /// <summary>
   /// Returns an IInlineShapes collection that represents all the InlineShape objects in a document, range, or selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.inlineshapes?view=word-pia"/>
-  public DMD.IInlineShapes InlineShapes { get; }
+  public DMD.IInlineShapes InlineShapes => throw new NotImplementedException();
 
   /// <summary>
   /// True if the most recent firing of the Application.DocumentBeforeSave Event (Word)event was the result of an automatic save, and not a manual save by the user. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.isinautosave?view=word-pia"/>
-  public bool IsInAutosave { get; }
+  public bool IsInAutosave => throw new NotImplementedException();
 
   /// <summary>
   /// Determines if the specified document is a master document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.ismasterdocument?view=word-pia"/>
-  public bool IsMasterDocument { get; }
+  public bool IsMasterDocument => throw new NotImplementedException();
 
   /// <summary>
   /// Determines if the specified document is opened in a separate document window as a subdocument of a master document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.issubdocument?view=word-pia"/>
-  public bool IsSubdocument { get; }
+  public bool IsSubdocument => throw new NotImplementedException();
 
   /// <summary>
   /// Returns or sets the character spacing adjustment for the specified document.
@@ -534,19 +534,19 @@ public partial class Document: IDocument
   /// Returns a ListParagraphs collection that represents all the numbered paragraphs in the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.listparagraphs?view=word-pia"/>
-  public IListParagraphs ListParagraphs { get; }
+  public IListParagraphs ListParagraphs => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Lists collection that contains all the formatted lists in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.lists?view=word-pia"/>
-  public ILists Lists { get; }
+  public ILists Lists => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a ListTemplates collection that represents all the list formats for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.listtemplates?view=word-pia"/>
-  public IListTemplates ListTemplates { get; }
+  public IListTemplates ListTemplates => throw new NotImplementedException();
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether users can change which set of Quick Styles is being used. Read/write.
@@ -564,25 +564,25 @@ public partial class Document: IDocument
   /// Returns an MsoEnvelope object that represents an e-mail header for a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.mailenvelope?view=word-pia"/>
-  public DMA.IMsoEnvelope MailEnvelope { get; }
+  public DMA.IMsoEnvelope MailEnvelope => throw new NotImplementedException();
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.mailer?view=word-pia"/>
-  public IMailer Mailer { get; }
+  public IMailer Mailer => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a MailMerge object that represents the mail merge functionality for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.mailmerge?view=word-pia"/>
-  public IMailMerge MailMerge { get; }
+  public IMailMerge MailMerge => throw new NotImplementedException();
 
   /// <summary>
   /// Returns the name of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.name?view=word-pia"/>
-  public string Name { get; }
+  public string Name => throw new NotImplementedException();
 
   /// <summary>
   /// Returns or sets the kinsoku characters after which Microsoft Word will not break a line.
@@ -648,7 +648,7 @@ public partial class Document: IDocument
   /// Returns the OMath objects within the specified range. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.omaths?view=word-pia"/>
-  public IOMaths OMaths { get; }
+  public IOMaths OMaths => throw new NotImplementedException();
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether to use small fractions in equations contained within the document. Read/write.
@@ -666,7 +666,7 @@ public partial class Document: IDocument
   /// Returns the encoding used to open the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.openencoding?view=word-pia"/>
-  public Encoding OpenEncoding { get; }
+  public Encoding OpenEncoding => throw new NotImplementedException();
 
   /// <summary>
   /// Determines if Microsoft Word optimizes the current document for viewing in Word 97.
@@ -678,7 +678,7 @@ public partial class Document: IDocument
   /// Returns the document title for the original document after running a legal-blackline document compare function. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.originaldocumenttitle?view=word-pia"/>
-  public string OriginalDocumentTitle { get; }
+  public string OriginalDocumentTitle => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a PageSetup object that's associated with the specified document.
@@ -690,7 +690,7 @@ public partial class Document: IDocument
   /// Returns a Paragraphs collection that represents all the paragraphs in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.paragraphs?view=word-pia"/>
-  public IParagraphs Paragraphs { get; }
+  public IParagraphs Paragraphs => throw new NotImplementedException();
 
   /// <summary>
   /// Sets a password that must be supplied to open the specified document.
@@ -702,37 +702,37 @@ public partial class Document: IDocument
   /// Returns a String indicating the algorithm Microsoft Word uses for encrypting documents with passwords.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.passwordencryptionalgorithm?view=word-pia"/>
-  public string PasswordEncryptionAlgorithm { get; }
+  public string PasswordEncryptionAlgorithm => throw new NotImplementedException();
 
   /// <summary>
   /// Returns True if Microsoft Word encrypts file properties for password-protected documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.passwordencryptionfileproperties?view=word-pia"/>
-  public bool PasswordEncryptionFileProperties { get; }
+  public bool PasswordEncryptionFileProperties => throw new NotImplementedException();
 
   /// <summary>
   /// Returns an Integer indicating the key length of the algorithm Microsoft Word uses when encrypting documents with passwords.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.passwordencryptionkeylength?view=word-pia"/>
-  public int PasswordEncryptionKeyLength { get; }
+  public int PasswordEncryptionKeyLength => throw new NotImplementedException();
 
   /// <summary>
   /// Returns the name of the algorithm encryption provider that Microsoft Word uses when encrypting documents with passwords.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.passwordencryptionprovider?view=word-pia"/>
-  public string PasswordEncryptionProvider { get; }
+  public string PasswordEncryptionProvider => throw new NotImplementedException();
 
   /// <summary>
   /// Returns the disk or Web path to the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.path?view=word-pia"/>
-  public string Path { get; }
+  public string Path => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Permission object that represents the permission settings in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.permission?view=word-pia"/>
-  public DMA.IPermission Permission { get; }
+  public DMA.IPermission Permission => throw new NotImplementedException();
 
   /// <summary>
   /// Determines if Microsoft Word prints onto a preprinted form only the data entered in the corresponding online form.
@@ -762,13 +762,13 @@ public partial class Document: IDocument
   /// Returns the protection type for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.protectiontype?view=word-pia"/>
-  public DocumentProtectionType ProtectionType { get; }
+  public DocumentProtectionType ProtectionType => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a ReadabilityStatistics collection that represents the readability statistics for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.readabilitystatistics?view=word-pia"/>
-  public IReadabilityStatistics ReadabilityStatistics { get; }
+  public IReadabilityStatistics ReadabilityStatistics => throw new NotImplementedException();
 
   /// <summary>
   /// Returns or sets an Integer that represents the width of pages in a document when it is displayed in reading layout view and is frozen for entering handwritten markup.
@@ -792,7 +792,7 @@ public partial class Document: IDocument
   /// Determines if changes to the document cannot be saved to the original document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.readonly?view=word-pia"/>
-  public bool ReadOnly { get; }
+  public bool ReadOnly => throw new NotImplementedException();
 
   /// <summary>
   /// Determines if Word displays a message box whenever a user opens the document, suggesting that it be opened as read-only.
@@ -816,31 +816,31 @@ public partial class Document: IDocument
   /// Returns the research service for a document. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.research?view=word-pia"/>
-  public IResearch Research { get; }
+  public IResearch Research => throw new NotImplementedException();
 
   /// <summary>
   /// Returns the document title for a revised document after running a legal-blackline document compare function. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.reviseddocumenttitle?view=word-pia"/>
-  public string RevisedDocumentTitle { get; }
+  public string RevisedDocumentTitle => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Revisions collection that represents the tracked changes in the document or range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.revisions?view=word-pia"/>
-  public IRevisions Revisions { get; }
+  public IRevisions Revisions => throw new NotImplementedException();
 
   /// <summary>
   /// Determines if the specified document has been routed to the next recipient.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.routed?view=word-pia"/>
-  public bool Routed { get; }
+  public bool Routed => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a RoutingSlip object that represents the routing slip information for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.routingslip?view=word-pia"/>
-  public IRoutingSlip RoutingSlip { get; }
+  public IRoutingSlip RoutingSlip => throw new NotImplementedException();
 
   /// <summary>
   /// Determines if the specified document or template hasn't changed since it was last saved.
@@ -858,7 +858,7 @@ public partial class Document: IDocument
   /// Returns an Integer representing the file format of the specified document or file converter.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.saveformat?view=word-pia"/>
-  public int SaveFormat { get; }
+  public int SaveFormat => throw new NotImplementedException();
 
   /// <summary>
   /// Determines if Microsoft Word saves the data entered in a form as a tab-delimited record for use in a database.
@@ -876,37 +876,37 @@ public partial class Document: IDocument
   /// Returns a Scripts collection that represents the collection of HTML scripts in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.scripts?view=word-pia"/>
-  public DMH.IScripts Scripts { get; }
+  public DMH.IScripts Scripts => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Sections collection that represents the sections in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.sections?view=word-pia"/>
-  public ISections Sections { get; }
+  public ISections Sections => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Sentences collection that represents all the sentences in the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.sentences?view=word-pia"/>
-  public ISentences Sentences { get; }
+  public ISentences Sentences => throw new NotImplementedException();
 
   /// <summary>
   /// Returns the policy specified for a document stored on a server running Microsoft Office SharePoint Server 2007. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.serverpolicy?view=word-pia"/>
-  public DMA.IServerPolicy ServerPolicy { get; }
+  public DMA.IServerPolicy ServerPolicy => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Shapes collection that represents all the Shape objects in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.shapes?view=word-pia"/>
-  public DMD.IShapes Shapes { get; }
+  public DMD.IShapes Shapes => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a SharedWorkspace object that represents the Document Workspace in which a specified document is located.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.sharedworkspace?view=word-pia"/>
-  public DMA.ISharedWorkspace SharedWorkspace { get; }
+  public DMA.ISharedWorkspace SharedWorkspace => throw new NotImplementedException();
 
   /// <summary>
   /// Determines if grammatical errors are marked by a wavy green line in the specified document.
@@ -936,19 +936,19 @@ public partial class Document: IDocument
   /// Returns a SignatureSet object that represents the digital signatures for a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.signatures?view=word-pia"/>
-  public DMA.ISignatureSet Signatures { get; }
+  public DMA.ISignatureSet Signatures => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a SmartDocument object that represents the settings for a smart document solution.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.smartdocument?view=word-pia"/>
-  public DMA.ISmartDocument SmartDocument { get; }
+  public DMA.ISmartDocument SmartDocument => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a SmartTags object that represents a smart tag in a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.smarttags?view=word-pia"/>
-  public ISmartTags SmartTags { get; }
+  public ISmartTags SmartTags => throw new NotImplementedException();
 
   /// <summary>
   /// Determines whether Microsoft Word creates an XML header containing smart tag information when a document containing smart tags is saved as HTML.
@@ -978,25 +978,25 @@ public partial class Document: IDocument
   /// Returns a ProofreadingErrors collection that represents the words identified as spelling errors in the specified document or range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.spellingerrors?view=word-pia"/>
-  public IProofreadingErrors SpellingErrors { get; }
+  public IProofreadingErrors SpellingErrors => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a StoryRanges collection that represents all the stories in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.storyranges?view=word-pia"/>
-  public IStoryRanges StoryRanges { get; }
+  public IStoryRanges StoryRanges => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Styles collection for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.styles?view=word-pia"/>
-  IStyles IDocument.Styles { get; }
+  IStyles IDocument.Styles => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a StyleSheets object that represents the Web style sheets attached to a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.stylesheets?view=word-pia"/>
-  public IStyleSheets StyleSheets { get; }
+  public IStyleSheets StyleSheets => throw new NotImplementedException();
 
   /// <summary>
   /// Returns or sets the sort method to use when sorting styles in the Styles task pane. Read/write.
@@ -1008,7 +1008,7 @@ public partial class Document: IDocument
   /// Returns a Subdocuments collection that represents all the subdocuments in the specified range or document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.subdocuments?view=word-pia"/>
-  public ISubdocuments Subdocuments { get; }
+  public ISubdocuments Subdocuments => throw new NotImplementedException();
 
   /// <summary>
   /// Returns or sets the length of the summary as a percentage of the document length.
@@ -1026,37 +1026,37 @@ public partial class Document: IDocument
   /// Returns a Sync object that provides access to the methods and properties for documents that are part of a Document Workspace.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.sync?view=word-pia"/>
-  public DMA.ISync Sync { get; }
+  public DMA.ISync Sync => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Tables collection that represents all the tables in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.tables?view=word-pia"/>
-  public ITables Tables { get; }
+  public ITables Tables => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a TablesOfAuthorities collection that represents the tables of authorities in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.tablesofauthorities?view=word-pia"/>
-  public ITablesOfAuthorities TablesOfAuthorities { get; }
+  public ITablesOfAuthorities TablesOfAuthorities => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a TablesOfAuthoritiesCategories collection that represents the available tables of authorities categories for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.tablesofauthoritiescategories?view=word-pia"/>
-  public ITablesOfAuthoritiesCategories TablesOfAuthoritiesCategories { get; }
+  public ITablesOfAuthoritiesCategories TablesOfAuthoritiesCategories => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a TablesOfContents collection that represents the tables of contents in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.tablesofcontents?view=word-pia"/>
-  public ITablesOfContents TablesOfContents { get; }
+  public ITablesOfContents TablesOfContents => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a TablesOfFigures collection that represents the tables of figures in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.tablesoffigures?view=word-pia"/>
-  public ITablesOfFigures TablesOfFigures { get; }
+  public ITablesOfFigures TablesOfFigures => throw new NotImplementedException();
 
   /// <summary>
   /// Returns or sets the code page, or character set, that Microsoft Word uses for a document saved as an encoded text file.
@@ -1092,7 +1092,7 @@ public partial class Document: IDocument
   /// Returns the document type (template or document).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.type?view=word-pia"/>
-  public WordDocumentType Type { get; }
+  public WordDocumentType Type => throw new NotImplementedException();
 
   /// <summary>
   /// Determines if the styles in the specified document are updated to match the styles in the attached template each time the document is opened.
@@ -1116,49 +1116,49 @@ public partial class Document: IDocument
   /// Returns a Variables collection that represents the variables stored in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.variables?view=word-pia"/>
-  public IVariables Variables { get; }
+  public IVariables Variables => throw new NotImplementedException();
 
   /// <summary>
   /// Determines if the Visual Basic for Applications (VBA) project for the specified document has been digitally signed.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.vbasigned?view=word-pia"/>
-  public bool VBASigned { get; }
+  public bool VBASigned => throw new NotImplementedException();
 
   /// <summary>
   /// Returns the VBProject object for the specified template or document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.vbproject?view=word-pia"/>
-  public object VBProject { get; }
+  public object VBProject => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Versions collection that represents all the versions of the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.versions?view=word-pia"/>
-  public IVersions Versions { get; }
+  public IVersions Versions => throw new NotImplementedException();
 
   /// <summary>
   /// Returns the WebOptions object, which contains document-level attributes used by Microsoft Word when you save a document as a Web page or open a Web page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.weboptions?view=word-pia"/>
-  public IWebOptions WebOptions { get; }
+  public IWebOptions WebOptions => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Windows collection that represents all windows for the specified document (for example, Sales.doc:1 and Sales.doc:2).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.windows?view=word-pia"/>
-  public IWindows Windows { get; }
+  public IWindows Windows => throw new NotImplementedException();
 
   /// <summary>
   /// Returns the flat XML format for the Word Open XML contents of the document. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.wordopenxml?view=word-pia"/>
-  public string WordOpenXML { get; }
+  public string WordOpenXML => throw new NotImplementedException();
 
   /// <summary>
   /// Returns a Words collection that represents all the words in a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.words?view=word-pia"/>
-  public IWords Words { get; }
+  public IWords Words => throw new NotImplementedException();
 
   /// <summary>
   /// Sets a password for saving changes to the specified document.
@@ -1170,7 +1170,7 @@ public partial class Document: IDocument
   /// Determines if the specified document is protected with a write password.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.writereserved?view=word-pia"/>
-  public bool WriteReserved { get; }
+  public bool WriteReserved => throw new NotImplementedException();
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
@@ -1182,7 +1182,7 @@ public partial class Document: IDocument
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.xmlnodes?view=word-pia"/>
-  public IXMLNodes XMLNodes { get; }
+  public IXMLNodes XMLNodes => throw new NotImplementedException();
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
@@ -1200,13 +1200,13 @@ public partial class Document: IDocument
   /// Returns an XMLSchemaReferences collection that represents the schemas attached to a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.xmlschemareferences?view=word-pia"/>
-  public IXMLSchemaReferences XMLSchemaReferences { get; }
+  public IXMLSchemaReferences XMLSchemaReferences => throw new NotImplementedException();
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.xmlschemaviolations?view=word-pia"/>
-  public IXMLNodes XMLSchemaViolations { get; }
+  public IXMLNodes XMLSchemaViolations => throw new NotImplementedException();
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether error message text is generated from the built-in Microsoft Word error messages or from the Microsoft XML Core Services (MSXML) 5.0 component included with Office.

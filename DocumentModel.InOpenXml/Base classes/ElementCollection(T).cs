@@ -7,13 +7,17 @@ namespace DocumentModel;
 public abstract class ElementCollection<ItemType> : ModelElement,
   IElementCollection<ItemType>, IEquatable<ElementCollection<ItemType>>, ICollection<ItemType>, IList, 
   INotificationSource, IEmptyCheckable
+  where ItemType : notnull
 {
   private readonly ObservableCollection<ItemType> _items = new();
+  private readonly BiDiDictionary<string, ItemType>? _index;
   /// <summary>
   /// Initializes a new, empty collection.
   /// </summary>
   protected ElementCollection()
   {
+    if (typeof(ItemType).IsAssignableTo(typeof(INamedObject)))
+      _index = new BiDiDictionary<string, ItemType>();
     _items.CollectionChanged += _items_CollectionChanged;
   }
   /// <summary>
@@ -37,8 +41,11 @@ public abstract class ElementCollection<ItemType> : ModelElement,
     foreach (var item in items)
     {
       _items.Add(item);
+      if (item is INotifyPropertyChanged notificationSource) 
+        notificationSource.PropertyChanged += ItemPropertyChanged;
     }
   }
+
   /// <summary>
   /// Handles the CollectionChanged event of the internal ObservableCollection.
   /// When items are added to the collection, this method checks if the new items implement the ICollectionItem interface and,
@@ -81,9 +88,51 @@ public abstract class ElementCollection<ItemType> : ModelElement,
   /// <param name="args">Arguments of this event</param>
   private void ItemPropertyChanged(object? sender, PropertyChangedEventArgs args)
   {
+    if (sender is ItemType item)
+    {
+      var propertyName = args.PropertyName;
+      if (propertyName == "Name" && sender is INamedObject namedObject && _index != null)
+      {
+        if (_index.TryGetValue1(item, out var oldName))
+          _index.Remove(new KeyValuePair<string, ItemType>(oldName, item));
+        if (namedObject.Name != null)
+          _index.Add(new KeyValuePair<string, ItemType>(namedObject.Name, item));
+      }
+    }
     if (IsNotificationEnabled && PropertyName != null)
       NotifyPropertyChanged(PropertyName);
   }
+
+  /// <summary>
+  /// Indexed access to items by integer index or string name (if ItemType implements INamedObject).
+  /// </summary>
+  /// <param name="Index">The index of the item to access. Can be an integer or a string.</param>
+  /// <returns>The item at the specified index.</returns>
+  /// <exception cref="KeyNotFoundException">Thrown when the specified string index does not exist in the collection.</exception>
+  /// <exception cref="NotSupportedException">Thrown when the index type is not supported.</exception>
+  public ItemType this[object Index]
+  {
+    get
+    {
+      if (Index is int intIndex)
+        return this[intIndex];
+      if (Index is string stringIndex && _index != null)
+         return _index.TryGetValue2(stringIndex, out var item) ? item : throw new KeyNotFoundException($"No item with name '{stringIndex}' found in the collection.");
+      throw new NotSupportedException($"Invalid index type {Index.GetType()}.");
+    }
+    set
+    {
+      if (Index is int intIndex)
+        this[intIndex] = value;
+      if (Index is string stringIndex && _index != null)
+        if ( _index.TryGetValue2(stringIndex, out var item))
+            _index[stringIndex] = value;
+        else throw new KeyNotFoundException($"No item with name '{stringIndex}' found in the collection.");
+
+      throw new NotSupportedException("Invalid index type.");
+    }
+  }
+
   /// <summary>
   /// Returns the first item in the collection, or null if the collection is empty.
   /// </summary>

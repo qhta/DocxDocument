@@ -4,7 +4,7 @@
 /// </summary>
 [XmlRoot("CustomProperties")]
 [OpenXmlType(typeof(DXCP.Properties))]
-public sealed class CustomProperties : ModelElementCollection<CustomProperty, DXCP.Properties>
+public sealed partial class CustomProperties : ModelElementCollection<CustomProperty, DXCP.Properties>
 {
   /// <summary>
   /// Default constructor.
@@ -77,7 +77,7 @@ public sealed class CustomProperties : ModelElementCollection<CustomProperty, DX
   {
     if (item.PropertyId == null)
     {
-      item.PropertyId = Count == 0 ? 2 : this.Max(p => p.PropertyId)!.Value + 1;
+      item.PropertyId = Count == 0 ? 2 : this.Max<CustomProperty, int?>(p => p.PropertyId)!.Value + 1;
     }
     base.Add(item);
   }

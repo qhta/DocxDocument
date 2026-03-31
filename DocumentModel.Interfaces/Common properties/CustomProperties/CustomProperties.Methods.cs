@@ -16,5 +16,5 @@ public partial interface ICustomProperties: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customproperties.add?view=word-pia"/>
-  public ICustomProperty Add(string Name, string Value);
+  public ICustomProperty Add(string Name, object Value);
 }

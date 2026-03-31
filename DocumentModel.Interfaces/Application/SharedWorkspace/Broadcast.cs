@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Application;
 
 /// <summary>
 /// Represents a Windows Live Broadcast Service broadcast session.
