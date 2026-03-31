@@ -24,6 +24,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Application\DispObjs\_IMsoDispObj.Inheritance.cs" />
+    <Compile Remove="Wordprocessing\Documents\Document.Methods.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="DeepEqual" Version="5.1.0" />

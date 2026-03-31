@@ -104,13 +104,6 @@ public partial interface IXMLNode : IModelObject
   public bool HasChildNodes { get; }
 
   /// <summary>
-  /// Returns a XMLChildNodeSuggestions collection that represents the list of allowed elements for the XMLNode
-  /// object (which returns the child elements of a specified element).
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.childnodesuggestions?view=word-pia"/>
-  public IXMLChildNodeSuggestions ChildNodeSuggestions { get; }
-
-  /// <summary>
   /// Returns the level of the specified XML element within the hierarchy of elements applied to a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.level?view=word-pia"/>

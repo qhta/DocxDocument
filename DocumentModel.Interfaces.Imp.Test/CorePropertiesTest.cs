@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Interfaces.Imp.Test
+﻿namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
   /// Comprehensive serialization test for DocumentModel.CoreProperties.

@@ -287,10 +287,10 @@ public partial interface ISelection : IModelObject
   public TextOrientation Orientation { get; set; }
 
   /// <summary>
-  /// Returns a InlineShapes collection that represents all the InlineShape objects in a selection.
+  /// Returns a IInlineShapes collection that represents all the InlineShape objects in a selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.inlineshapes?view=word-pia"/>
-  public Drw.InlineShapes InlineShapes { get; }
+  public Drw.IInlineShapes InlineShapes { get; }
 
   /// <summary>
   /// Returns a Document object associated with the specified selection.

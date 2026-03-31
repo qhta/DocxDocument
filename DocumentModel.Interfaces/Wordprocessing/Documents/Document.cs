@@ -75,7 +75,7 @@ public partial interface IDocument : IModelObject
   /// Returns a DocumentProperties collection that represents all the built-in document properties for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.builtindocumentproperties?view=word-pia"/>
-  public App.IDocumentProperties BuiltInDocumentProperties { get; }
+  public Props.IDocumentProperties BuiltInDocumentProperties { get; }
 
   /// <summary>
   /// Returns a Characters collection that represents the characters in a document.
@@ -90,12 +90,6 @@ public partial interface IDocument : IModelObject
   public bool ChartDataPointTrack { get; set; }
 
   /// <summary>
-  /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.childnodesuggestions?view=word-pia"/>
-  public IXMLChildNodeSuggestions ChildNodeSuggestions { get; }
-
-  /// <summary>
   /// Returns or sets the default paragraph style applied to text by the Click and Type feature in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.clickandtypeparagraphstyle?view=word-pia"/>
@@ -106,12 +100,6 @@ public partial interface IDocument : IModelObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.coauthoring?view=word-pia"/>
   public ICoAuthoring CoAuthoring { get; }
-
-  /// <summary>
-  /// Returns the code name for the specified document.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.codename?view=word-pia"/>
-  public string CodeName { get; }
 
   /// <summary>
   /// Returns a CommandBars collection that represents the menu bar and all the toolbars in Microsoft Word.
@@ -159,7 +147,7 @@ public partial interface IDocument : IModelObject
   /// Returns the metadata stored in a document, such as author name, subject, and company. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.contenttypeproperties?view=word-pia"/>
-  public App.IMetaProperties ContentTypeProperties { get; }
+  public Props.IMetaProperties ContentTypeProperties { get; }
 
   /// <summary>
   /// Returns a random number that Word assigns to changes in a document. Read-only.
@@ -171,7 +159,7 @@ public partial interface IDocument : IModelObject
   /// Returns a DocumentProperties collection that represents all the custom document properties for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.customdocumentproperties?view=word-pia"/>
-  public App.IDocumentProperties CustomDocumentProperties { get; }
+  public Props.IDocumentProperties CustomDocumentProperties { get; }
 
   /// <summary>
   /// Returns a CustomXMLParts#SameCHM collection that represents the custom XML in the XML data store. Read-only.
@@ -501,13 +489,13 @@ public partial interface IDocument : IModelObject
   /// Returns an Indexes collection that represents all the indexes in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.indexes?view=word-pia"/>
-  public Indexes Indexes { get; }
+  public IIndexes Indexes { get; }
 
   /// <summary>
-  /// Returns an InlineShapes collection that represents all the InlineShape objects in a document, range, or selection.
+  /// Returns an IInlineShapes collection that represents all the InlineShape objects in a document, range, or selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.inlineshapes?view=word-pia"/>
-  public Drw.InlineShapes InlineShapes { get; }
+  public Drw.IInlineShapes InlineShapes { get; }
 
   /// <summary>
   /// True if the most recent firing of the Application.DocumentBeforeSave Event (Word)event was the result of an automatic save, and not a manual save by the user. Read-only.

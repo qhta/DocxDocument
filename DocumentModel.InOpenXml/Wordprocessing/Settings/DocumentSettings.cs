@@ -1,4 +1,3 @@
-using DocumentModel.CustomXml;
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies all document-level properties that affect the handling, behavior, and appearance of the current Wordprocessing document.

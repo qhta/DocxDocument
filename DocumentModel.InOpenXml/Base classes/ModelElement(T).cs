@@ -41,6 +41,16 @@ where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with Pa
   {
   }
 
+
+  /// <summary>
+  /// Initializes a new instance of the ModelElement class and associates it with the specified collection.
+  /// </summary>
+  /// <param name="collection">The collection to which this model element will belong. This parameter determines the context in which the element
+  /// is managed.</param>
+  protected ModelElement(object collection): base(collection)
+  {
+  }
+
   /// <summary>
   ///   Attaches this model element to the specified WordprocessingDocument and loads data from the document's package properties or OpenXml part.
   /// </summary>

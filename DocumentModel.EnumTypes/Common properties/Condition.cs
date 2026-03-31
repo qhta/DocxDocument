@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Application;
+namespace DocumentModel.Properties;
 
 /// <summary>
 /// Defines the condition for comparison between a file and a specified property in a file search.

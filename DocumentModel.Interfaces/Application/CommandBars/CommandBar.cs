@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Represents a command bar in the container application.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar?view=office-pia"/>
-public partial interface ICommandBar: I_IMsoOleAccDispObj
+public partial interface ICommandBar: IMsoOleAccDispObj
 {
   /// <summary>
   /// Gets or sets the `accParent` property.

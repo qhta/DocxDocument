@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+namespace DocumentModel.Properties;
 
 /// <summary>
 /// Specifies the metadata property type.

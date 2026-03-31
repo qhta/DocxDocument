@@ -24,9 +24,8 @@ public sealed partial class CustomProperty: ModelElement<DXCP.CustomDocumentProp
   /// </summary>
   /// <param name = "propertiesCollection">Collection that contains this property</param>
   /// <param name = "openXmlCustomDocumentProperty">Element from the Open XML SDK representing a custom document property.</param>
-  public CustomProperty
-  (CustomProperties propertiesCollection,
-    DXCP.CustomDocumentProperty openXmlCustomDocumentProperty) //: base(propertiesCollection)
+  public CustomProperty(CustomProperties propertiesCollection,
+    DXCP.CustomDocumentProperty openXmlCustomDocumentProperty) : base(propertiesCollection)
   {
     SetUpdatableElement(openXmlCustomDocumentProperty);
     LoadData(openXmlCustomDocumentProperty);

@@ -356,11 +356,11 @@ public partial interface IRange : IModelObject
   public TextOrientation Orientation { get; set; }
 
   /// <summary>
-  /// Returns a InlineShapes collection that represents all the InlineShape objects in a document, range, or
+  /// Returns a IInlineShapes collection that represents all the InlineShape objects in a document, range, or
   /// selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.inlineshapes?view=word-pia"/>
-  public Drw.InlineShapes InlineShapes { get; }
+  public Drw.IInlineShapes InlineShapes { get; }
 
   /// <summary>
   /// Returns a Range object that refers to the next story as shown in the following table.

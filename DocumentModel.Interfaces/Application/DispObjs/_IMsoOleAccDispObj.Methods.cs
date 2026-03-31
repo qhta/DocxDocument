@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._imsooleaccdispobj?view=office-pia"/>
-public partial interface I_IMsoOleAccDispObj
+public partial interface IMsoOleAccDispObj
 {
   /// <summary>
   /// Invokes `accSelect`.

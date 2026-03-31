@@ -1,5 +1,5 @@
 
-namespace DocumentModel.Application;
+namespace DocumentModel.Properties;
 
 /// <summary>
 /// Specifies the connector between two similar property test values.

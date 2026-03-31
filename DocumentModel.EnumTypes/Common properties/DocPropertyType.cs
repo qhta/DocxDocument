@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+﻿namespace DocumentModel.Properties;
 
 /// <summary>
 /// Specifies the data type for a document property.

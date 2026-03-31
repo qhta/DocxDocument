@@ -17,6 +17,16 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   {
     PropertyChanged += ModelElement_PropertyChanged;
   }
+
+  /// <summary>
+  /// Initializes a new instance of the ModelElement class with the specified collection.
+  /// </summary>
+  /// <param name="collection">The collection object that contains or manages this model element. This parameter cannot be null.</param>
+  protected ModelElement(Object collection): this()
+  {
+    _Collection = collection;
+  }
+
   /// <summary>
   /// Passes the IsModified up to the parent IModifiable object.
   /// </summary>
@@ -345,6 +355,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     [DebuggerStepThrough]
     get => _Collection;
   }
+
   private object? _Collection;
   /// <summary>
   /// Sets the collection object to be used by the instance.

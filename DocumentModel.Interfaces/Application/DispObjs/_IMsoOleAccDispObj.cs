@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Used as base interface for CommandBar and CommandBarControl interfaces.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._imsooleaccdispobj?view=office-pia"/>
-public partial interface I_IMsoOleAccDispObj: IAccessible
+public partial interface IMsoOleAccDispObj: IAccessible
 {
   /// <summary>
   /// Gets or sets the `accParent` property.

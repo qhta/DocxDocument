@@ -1,4 +1,3 @@
-using DocumentModel.CustomXml;
 namespace DocumentModel.Wordprocessing;
 public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
 {
@@ -1093,12 +1092,12 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// </summary>
   [Category("CustomXml")]
   [OpenXmlElement(typeof(DXCXSR.SchemaLibrary))]
-  public SchemaLibrary? SchemaLibrary
+  public DMCX.SchemaLibrary? SchemaLibrary
   {
     get => _SchemaLibrary;
     set => UpdateField(ref _SchemaLibrary, (value != null && value.Count > 0) ? value : null, nameof(SchemaLibrary));
   }
-  private SchemaLibrary? _SchemaLibrary;
+  private DMCX.SchemaLibrary? _SchemaLibrary;
   /// <summary>
   /// Specifies the defaults used when creating new shapes, stored once per document.
   /// </summary>
