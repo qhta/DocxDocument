@@ -3,7 +3,7 @@ namespace DocumentModel;
 ///   Custom-defined document property.
 /// </summary>
 [OpenXmlType(typeof(DXCP.CustomDocumentProperty))]
-public sealed partial class CustomProperty: ModelElement<DXCP.CustomDocumentProperty>
+public sealed partial class CustomProperty: ModelElement<DXCP.CustomDocumentProperty>, INamedObject
 {
   [XmlIgnore]
   [JsonIgnore]
@@ -43,4 +43,5 @@ public sealed partial class CustomProperty: ModelElement<DXCP.CustomDocumentProp
     UpdateData(OpenXmlCustomDocumentProperty);
     return OpenXmlCustomDocumentProperty!;
   }
+
 }

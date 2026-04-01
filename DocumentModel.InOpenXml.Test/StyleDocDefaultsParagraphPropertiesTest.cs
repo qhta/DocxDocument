@@ -1,7 +1,7 @@
 namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
-  /// Comprehensive serialization test for Styles DocDefaults DefaultParagraphProperties.
+  /// Comprehensive test for Styles DocDefaults DefaultParagraphProperties.
   /// </summary>
   public static class StyleDocDefaultsParagraphPropertiesTest
   {

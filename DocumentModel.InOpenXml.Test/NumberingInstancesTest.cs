@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
-  /// Comprehensive serialization test for DocumentModel.Numbering.
+  /// Comprehensive test for DocumentModel.Numbering.
   /// </summary>
   public static class NumberingInstancesTest
   {

@@ -12,10 +12,10 @@ public interface INamedObject
   /// <returns></returns>
   public string? Name { get; set; }
 
-  /// <summary>
-  /// Event raised when the Name property changes, providing the old and new names of the object.
-  /// </summary>
-  public event EventHandler<NameChangedEventArgs>? NameChanged;
+  ///// <summary>
+  ///// Event raised when the Name property changes, providing the old and new names of the object.
+  ///// </summary>
+  //public event EventHandler<NameChangedEventArgs>? NameChanged;
 }
 
 /// <summary>

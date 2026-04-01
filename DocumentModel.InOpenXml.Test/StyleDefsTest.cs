@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
-  /// Comprehensive serialization test for DocumentModel.Styles.
+  /// Comprehensive test for DocumentModel.Styles.
   /// </summary>
   public static class StyleDefsTest
   {

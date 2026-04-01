@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.InOpenXml.Test
 {
 	/// <summary>
-	/// Comprehensive serialization test for DocumentModel.CustomProperties.
+	/// Comprehensive test for DocumentModel.CustomProperties.
 	/// </summary>
 	public static class CustomPropertiesTest
 	{

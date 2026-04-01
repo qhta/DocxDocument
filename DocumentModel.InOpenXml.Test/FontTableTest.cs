@@ -11,7 +11,7 @@ using DocumentModel.Wordprocessing;
 namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
-  /// Comprehensive serialization test for DocumentModel.Fonts.
+  /// Comprehensive test for DocumentModel.Fonts.
   /// </summary>
   public static class FontTableTest
   {

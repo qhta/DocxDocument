@@ -1,7 +1,7 @@
 namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
-  /// Comprehensive serialization test for BaseParagraphProperties.
+  /// Comprehensive test for BaseParagraphProperties.
   /// </summary>
   public static class BaseParagraphPropertiesTest
   {

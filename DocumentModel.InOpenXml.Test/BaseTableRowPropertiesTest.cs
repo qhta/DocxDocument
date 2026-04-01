@@ -1,7 +1,7 @@
 namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
-  /// Comprehensive serialization test for BaseTableRowProperties.
+  /// Comprehensive test for BaseTableRowProperties.
   /// </summary>
   public static class BaseTableRowPropertiesTest
   {

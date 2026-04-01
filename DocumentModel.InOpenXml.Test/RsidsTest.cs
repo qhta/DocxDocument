@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.InOpenXml.Test
 {
 	/// <summary>
-	/// Comprehensive serialization test for DocumentModel.Rsids.
+	/// Comprehensive test for DocumentModel.Rsids.
 	/// </summary>
 	public static class RsidsTest
 	{

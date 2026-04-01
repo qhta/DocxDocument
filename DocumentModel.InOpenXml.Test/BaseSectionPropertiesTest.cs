@@ -1,7 +1,7 @@
 namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
-  /// Comprehensive serialization test for Styles BaseSectionProperties.
+  /// Comprehensive test for Styles BaseSectionProperties.
   /// </summary>
   public static class BaseSectionPropertiesTest
   {

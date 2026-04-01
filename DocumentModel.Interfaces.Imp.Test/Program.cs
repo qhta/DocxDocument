@@ -11,10 +11,11 @@ internal class Program
     Console.WriteLine("║   DocumentModel InOpenXml Test Suite        ║");
     Console.WriteLine("╚═════════════════════════════════════════════╝");
     Console.WriteLine();
+    if (!Exec(BaseInterfacesTest.Run)) return;
     //if (!Exec(CorePropertiesTest.Run)) return;
     //if (!Exec(ContentPropertiesTest.Run)) return;
     //if (!Exec(StatisticPropertiesTest.Run)) return;
-    if (!Exec(CustomPropertiesTest.Run)) return;
+    //if (!Exec(CustomPropertiesTest.Run)) return;
     //if (!Exec(DocumentSettingsTest.Run)) return;
     //if (!Exec(RsidsTest.Run)) return;
     //if (!Exec(DocumentVariablesTest.Run)) return;

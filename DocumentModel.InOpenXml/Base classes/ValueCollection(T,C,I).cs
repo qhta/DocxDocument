@@ -9,6 +9,7 @@ namespace DocumentModel;
 /// <typeparam name="OpenXmlItemType">Type of the Open XML element representing individual items.</typeparam>
 public abstract class ValueCollection<ItemType, OpenXmlCollectionType, OpenXmlItemType> :
   ValueCollection<ItemType, OpenXmlCollectionType>
+  where ItemType : notnull
   where OpenXmlCollectionType : DX.OpenXmlCompositeElement
   where OpenXmlItemType : DX.OpenXmlElement
 {

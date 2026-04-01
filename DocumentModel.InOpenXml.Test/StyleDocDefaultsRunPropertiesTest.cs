@@ -1,7 +1,7 @@
 namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
-  /// Comprehensive serialization test for Styles DocDefaults DefaultRunProperties.
+  /// Comprehensive test for Styles DocDefaults DefaultRunProperties.
   /// </summary>
   public static class StyleDocDefaultsRunPropertiesTest
   {

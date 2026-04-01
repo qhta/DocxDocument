@@ -6,7 +6,7 @@
     <members>
         <member name="T:DocumentModel.InOpenXml.Test.AbstractNumberingsTest">
             <summary>
-            Comprehensive serialization test for DocumentModel.Numbering.
+            Comprehensive test for DocumentModel.Numbering.
             </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.AbstractNumberingsTest.Run">
@@ -104,7 +104,7 @@
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.BaseParagraphPropertiesTest">
             <summary>
-            Comprehensive serialization test for BaseParagraphProperties.
+            Comprehensive test for BaseParagraphProperties.
             </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.BaseParagraphPropertiesTest.Run">
@@ -174,7 +174,7 @@
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.BaseRunPropertiesTest">
             <summary>
-            Comprehensive serialization test for BaseRunProperties.
+            Comprehensive test for BaseRunProperties.
             </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.BaseRunPropertiesTest.Run">
@@ -244,7 +244,7 @@
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.BaseSectionPropertiesTest">
             <summary>
-            Comprehensive serialization test for Styles BaseSectionProperties.
+            Comprehensive test for Styles BaseSectionProperties.
             </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.BaseSectionPropertiesTest.Run">
@@ -315,7 +315,7 @@
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.BaseTableCellPropertiesTest">
             <summary>
-            Comprehensive serialization test for BaseTableCellProperties.
+            Comprehensive test for BaseTableCellProperties.
             </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.BaseTableCellPropertiesTest.Run">
@@ -386,7 +386,7 @@
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.BaseTablePropertiesTest">
             <summary>
-            Comprehensive serialization test for BaseTableProperties.
+            Comprehensive test for BaseTableProperties.
             </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.BaseTablePropertiesTest.Run">
@@ -457,7 +457,7 @@
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.BaseTableRowPropertiesTest">
             <summary>
-            Comprehensive serialization test for BaseTableRowProperties.
+            Comprehensive test for BaseTableRowProperties.
             </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.BaseTableRowPropertiesTest.Run">
@@ -619,7 +619,7 @@
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.CorePropertiesTest">
             <summary>
-            Comprehensive serialization test for DocumentModel.CoreProperties.
+            Comprehensive test for DocumentModel.CoreProperties.
             </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.Run">
@@ -728,7 +728,7 @@
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.CustomPropertiesTest">
             <summary>
-            Comprehensive serialization test for DocumentModel.CustomProperties.
+            Comprehensive test for DocumentModel.CustomProperties.
             </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.Run">
@@ -912,7 +912,7 @@
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.DocumentVariablesTest">
             <summary>
-            Comprehensive serialization test for DocumentModel.DocumentVariables.
+            Comprehensive test for DocumentModel.DocumentVariables.
             </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.Run">
@@ -993,7 +993,7 @@
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.FontTableTest">
             <summary>
-            Comprehensive serialization test for DocumentModel.Fonts.
+            Comprehensive test for DocumentModel.Fonts.
             </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.Run">
@@ -1115,7 +1115,7 @@
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.LatentStylesTest">
             <summary>
-            Comprehensive serialization test for DocumentModel.Styles.
+            Comprehensive test for DocumentModel.Styles.
             </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.LatentStylesTest.Run">
@@ -1213,7 +1213,7 @@
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.NumberingInstancesTest">
             <summary>
-            Comprehensive serialization test for DocumentModel.Numbering.
+            Comprehensive test for DocumentModel.Numbering.
             </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.NumberingInstancesTest.Run">
@@ -1318,7 +1318,7 @@
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.RsidsTest">
             <summary>
-            Comprehensive serialization test for DocumentModel.Rsids.
+            Comprehensive test for DocumentModel.Rsids.
             </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.RsidsTest.Run">
@@ -1489,7 +1489,7 @@
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.StyleDefsTest">
             <summary>
-            Comprehensive serialization test for DocumentModel.Styles.
+            Comprehensive test for DocumentModel.Styles.
             </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.StyleDefsTest.Run">
@@ -1579,7 +1579,7 @@
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.StyleDocDefaultsParagraphPropertiesTest">
             <summary>
-            Comprehensive serialization test for Styles DocDefaults DefaultParagraphProperties.
+            Comprehensive test for Styles DocDefaults DefaultParagraphProperties.
             </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.StyleDocDefaultsParagraphPropertiesTest.Run">
@@ -1660,7 +1660,7 @@
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.StyleDocDefaultsRunPropertiesTest">
             <summary>
-            Comprehensive serialization test for Styles DocDefaults DefaultRunProperties.
+            Comprehensive test for Styles DocDefaults DefaultRunProperties.
             </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.StyleDocDefaultsRunPropertiesTest.Run">

@@ -18,5 +18,6 @@ public partial class CustomProperties: DMP.ICustomProperties
   {
     var newItem = new CustomProperty{Name = name, Value = new Variant(value)};
     Add(newItem);
+    return newItem;
   }
 }

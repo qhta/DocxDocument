@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.InOpenXml.Test
 {
 	/// <summary>
-	/// Comprehensive serialization test for DocumentModel.DocumentVariables.
+	/// Comprehensive test for DocumentModel.DocumentVariables.
 	/// </summary>
 	public static class DocumentVariablesTest
 	{

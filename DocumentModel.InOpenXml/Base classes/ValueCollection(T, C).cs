@@ -7,6 +7,7 @@
 /// <typeparam name="OpenXmlCollectionType">Specifies the type of the OpenXml collection element being wrapped and synchronized.</typeparam>
 public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : ElementCollection<ItemType>,
   IWordprocessingDocumentAware
+  where ItemType : notnull
   where OpenXmlCollectionType : DX.OpenXmlElement
 {
   private OpenXmlCollectionType? _openXmlCollection;

@@ -1,7 +1,7 @@
 namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
-  /// Comprehensive serialization test for BaseRunProperties.
+  /// Comprehensive test for BaseRunProperties.
   /// </summary>
   public static class BaseRunPropertiesTest
   {
