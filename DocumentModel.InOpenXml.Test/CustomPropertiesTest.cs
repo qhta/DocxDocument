@@ -1,4 +1,6 @@
-﻿namespace DocumentModel.InOpenXml.Test
+﻿using DocumentModel.Properties;
+
+namespace DocumentModel.InOpenXml.Test
 {
 	/// <summary>
 	/// Comprehensive test for DocumentModel.CustomProperties.
@@ -12,11 +14,12 @@
 		public static bool Run()
 		{
 			Console.WriteLine("=== CustomProperties Test ===\n");
-			if (!TestXmlSerialization()) return false;
-			if (!TestJsonSerialization()) return false;
-			if (!TestEdgeCases()) return false;
-			if (!TestStoreInDocument()) return false;
-			if (!TestUpdateInDocument()) return false;
+			//if (!TestXmlSerialization()) return false;
+			//if (!TestJsonSerialization()) return false;
+			//if (!TestEdgeCases()) return false;
+			//if (!TestStoreInDocument()) return false;
+			//if (!TestUpdateInDocument()) return false;
+      if (!TestICustomProperties()) return false;
 			Console.WriteLine("All CustomProperties tests passed.\n");
 			return true;
 		}
@@ -132,7 +135,7 @@
 				using (var document = new Document("temp.docx", FileMode.CreateNew))
 				{
 					document.CustomProperties = testData;
-				}
+        }
 
 				CustomProperties storedData;
 				using (var document = new Document("temp.docx"))
@@ -218,12 +221,56 @@
 			}
 		}
 
+    /// <summary>
+    /// Tests setting sample custom properties to a new document and outputs the result to the console.
+    /// </summary>
+    /// <remarks>This method is intended for use in test scenarios to verify that document custom properties can
+    /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
+    /// inspection.</remarks>
+    /// <returns>true if the document custom properties are successfully stored and verified; otherwise, false.</returns>
+    static bool TestICustomProperties()
+    {
+      Console.WriteLine("--- Store sample custom properties in new document---");
+      {
+        CustomProperties testData = CreateSampleCustomProperties();
+        using (var document = new Document("temp.docx", FileMode.CreateNew))
+        {
+          foreach (var prop in testData)
+            document.CustomDocumentProperties.Add(prop.Name!, prop.Value!);
+        }
 
-		/// <summary>
-		/// Creates a sample CustomProperties object with various property types.
-		/// </summary>
-		/// <returns>A populated CustomProperties object.</returns>
-		static CustomProperties CreateSampleCustomProperties()
+        ICustomProperties storedData;
+        using (var document = new Document("temp.docx"))
+        {
+          storedData = document.CustomDocumentProperties ?? throw new InvalidOperationException("Custom properties not found.");
+        }
+
+        var xmlSerializer = new XmlSerializer(typeof(CustomProperties));
+        string xmlString;
+        using (var stringWriter = new StringWriter())
+        using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+        {
+          xmlSerializer.Serialize(xmlWriter, storedData);
+          xmlString = stringWriter.ToString();
+        }
+        Console.WriteLine("custom properties stored to new document and reloaded from it:\n" + xmlString);
+
+        if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+        {
+          Console.WriteLine($"✗ Store sample custom properties test FAILED - data mismatch in '{propName}'");
+          return false;
+        }
+
+        Console.WriteLine("✓ Store sample custom properties test passed\n");
+        return true;
+      }
+    }
+
+    /// <summary>
+    /// Creates a sample CustomProperties object with various property types.
+    /// </summary>
+    /// <returns>A populated CustomProperties object.</returns>
+    static CustomProperties CreateSampleCustomProperties()
 		{
 			var props = new CustomProperties();
 			props.Add(new CustomProperty

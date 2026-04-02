@@ -1,4 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
+
+using Qhta.OpenXmlTools;
+
 namespace DocumentModel;
 /// <summary>
 /// This static class contains extension operations to be performed on a DocumentFormat.OpenXml.VariantTypes objects.
@@ -190,7 +193,7 @@ public static class VariantUtils
     var lowerBounds = element.LowerBounds?.Value ?? 0;
     var upperBounds = element.UpperBounds?.Value ?? 0;
     Array array = Array.CreateInstance(itemType, lowerBounds, upperBounds);
-    
+
     var i = 0;
     foreach (var child in element.Elements())
     {
@@ -572,9 +575,10 @@ public static class VariantUtils
       return new DXVT.VTNull();
     if (value == DBNull.Value)
       return new DXVT.VTEmpty();
+    var variant = value as Variant;
     if (baseType == null)
     {
-      if (value is Variant variant)
+      if (variant != null)
       {
         if (variant.ValueType != null)
         {
@@ -582,7 +586,13 @@ public static class VariantUtils
           value = variant.Value;
         }
         else
-          baseType = DXVT.VectorBaseValues.Variant;
+        {
+          var currentType = variant.ValueType ?? (variant.Value as Variant)?.ValueType;
+          if (currentType != null)
+            baseType = TypeToVectorBase[currentType];
+          else
+            baseType = DXVT.VectorBaseValues.Variant;
+        }
       }
       else
         baseType = TypeToVectorBase[value.GetType()];
@@ -614,27 +624,27 @@ public static class VariantUtils
     if (baseType == DXVT.VectorBaseValues.EightBytesUnsignedInteger)
       return new DXVT.VTUnsignedInt64(value.ToString()!);
     if (baseType == DXVT.VectorBaseValues.FourBytesReal)
-      return new DXVT.VTFloat(((float)value).ToString(CultureInfo.InvariantCulture)!);
+      return new DXVT.VTFloat((variant?.ToSingle() ?? (float)value).ToString(CultureInfo.InvariantCulture)!);
     if (baseType == DXVT.VectorBaseValues.EightBytesReal)
-      return new DXVT.VTDouble(((double)value).ToString(CultureInfo.InvariantCulture)!);
+      return new DXVT.VTDouble((variant?.ToDouble() ?? (double)value).ToString(CultureInfo.InvariantCulture)!);
     if (baseType == DXVT.VectorBaseValues.Lpstr)
-      return new DXVT.VTLPSTR(((string)value));
+      return new DXVT.VTLPSTR(variant?.ToString() ?? (string)value);
     if (baseType == DXVT.VectorBaseValues.Lpwstr)
-      return new DXVT.VTLPWSTR(((string)value));
+      return new DXVT.VTLPWSTR(variant?.ToString() ?? (string)value);
     if (baseType == DXVT.VectorBaseValues.Bstr)
-      return new DXVT.VTBString(((string)value));
+      return new DXVT.VTBString(variant?.ToString() ?? (string)value);
     if (baseType == DXVT.VectorBaseValues.Date)
-      return new DXVT.VTDate(((DateTime)value).ToString("yyyy-MM-dd"));
+      return new DXVT.VTDate((variant?.ToDateTime() ?? ((DateTime)value)).ToString("yyyy-MM-dd"));
     if (baseType == DXVT.VectorBaseValues.Filetime)
-      return new DXVT.VTFileTime(((DateTime)value).ToString("s"));
+      return new DXVT.VTFileTime((variant?.ToDateTime() ?? ((DateTime)value)).ToString("s"));
     if (baseType == DXVT.VectorBaseValues.Bool)
-      return new DXVT.VTBool(((bool)value) ? "true" : "false");
+      return new DXVT.VTBool((variant?.ToBoolean() ?? (bool)value) ? "true" : "false");
     if (baseType == DXVT.VectorBaseValues.Currency)
-      return new DXVT.VTCurrency(((decimal)value).ToString(CultureInfo.InvariantCulture)!);
+      return new DXVT.VTCurrency((variant?.ToDecimal() ?? (decimal)value).ToString(CultureInfo.InvariantCulture)!);
     if (baseType == DXVT.VectorBaseValues.Error)
-      return new DXVT.VTError("0x" + ((int)value).ToString("X8"));
+      return new DXVT.VTError("0x" + (variant?.ToInt32() ?? (int)value).ToString("X8"));
     if (baseType == DXVT.VectorBaseValues.ClassId)
-      return new DXVT.VTClassId(((Guid)value).ToString("B"));
+      return new DXVT.VTClassId((variant?.ToGuid() ?? ((Guid)value)).ToString("B"));
     return null;
   }
   #region conversion methods needed for ExtendedFileProperties read/write

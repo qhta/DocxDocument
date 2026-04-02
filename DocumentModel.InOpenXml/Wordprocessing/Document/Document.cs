@@ -260,7 +260,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   {
     get
     {
-      if (_CustomProperties == null && WordprocessingDocument?.CustomFilePropertiesPart != null)
+      if (_CustomProperties == null)
         _CustomProperties = new CustomProperties(this);
       return _CustomProperties!;
     }

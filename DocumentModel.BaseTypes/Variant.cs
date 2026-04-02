@@ -91,6 +91,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     {
       //if (vString.IsAscii())
       _variantType = VariantType.Lpstr;
+
       //else
       //if (vString.IsUnicode())
       // VariantType = VariantType.Lpwstr;
@@ -268,6 +269,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     _variantType = variantType;
     if (variantType == VariantType.Empty)
       return;
+
     if (value != null)
     {
       if (valueType == null)
@@ -281,10 +283,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   /// Returns the variant type of the value.
   /// </summary>
   [XmlIgnore]
-  public virtual VariantType VariantType
-  {
-    get => _variantType;
-  }
+  public virtual VariantType VariantType { get => _variantType; }
 
   /// <summary>
   /// Returns the type name of the value.
@@ -297,6 +296,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
         return ValueType?.FullName ?? "Enum";
       if (VariantType == VariantType.Object)
         return ValueType?.FullName ?? "Object";
+
       return VariantType.ToString(CultureInfo.InvariantCulture);
     }
   }
@@ -305,7 +305,50 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   /// Returns the .NET type of the value, if known.
   /// </summary>
   [XmlIgnore]
-  public virtual Type? ValueType => _valueType;
+  public virtual Type? ValueType
+  {
+    get
+    {
+      if (_valueType != null) return _valueType;
+      if (Value is Boolean)
+        return typeof(Boolean);
+      if (Value is Byte)
+        return typeof(Byte);
+      if (Value is Char)
+        return typeof(Char);
+      if (Value is DateOnly)
+        return typeof(DateTime);
+      if (Value is DateTime)
+        return typeof(DateTime);
+      if (Value is Decimal)
+        return typeof(Decimal);
+      if (Value is Double)
+        return typeof(Double);
+      if (Value is Int16)
+        return typeof(Int16);
+      if (Value is Int32)
+        return typeof(Int32);
+      if (Value is Int64)
+        return typeof(Int64);
+      if (Value is SByte)
+        return typeof(SByte);
+      if (Value is Single)
+        return typeof(Single);
+      if (Value is String)
+        return typeof(String);
+      if (Value is UInt16)
+        return typeof(UInt16);
+      if (Value is UInt32)
+        return typeof(UInt32);
+      if (Value is UInt64)
+        return typeof(UInt64);
+      if (Value is DBNull)
+        return typeof(DBNull);
+
+      return null;
+
+    }
+  }
 
   /// <summary>
   /// Returns the value stored in the variant.
@@ -1184,7 +1227,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   /// <returns>The string representation.</returns>
   public override string? ToString()
   {
-    return ToString(CultureInfo.InvariantCulture) + $" ({TypeName})";
+    return ToString(CultureInfo.InvariantCulture);
   }
 
   /// <summary>

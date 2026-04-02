@@ -31,9 +31,10 @@
 			{
 				CustomProperties testData = CreateSampleCustomProperties();
 				using (var document = new Document("temp.docx", FileMode.CreateNew))
-				{
-					document.CustomProperties = testData;
-				}
+        {
+          foreach (var prop in testData)
+            document.CustomDocumentProperties.Add(prop.Name!, prop.Value!);
+        }
 
 				CustomProperties storedData;
 				using (var document = new Document("temp.docx"))

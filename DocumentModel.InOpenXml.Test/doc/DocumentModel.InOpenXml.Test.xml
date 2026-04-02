@@ -102,6 +102,17 @@
             <param name="json">The JSON string to deserialize.</param>
             <returns>The deserialized Numbering object, or null if deserialization fails.</returns>
         </member>
+        <member name="T:DocumentModel.InOpenXml.Test.BaseInterfacesTest">
+            <summary>
+            Comprehensive test for DocumentModel.BaseInterfaces implementation.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.BaseInterfacesTest.Run">
+            <summary>
+            Runs all BaseInterfaces serialization tests and reports the results.
+            </summary>
+            <returns>true if all BaseInterfaces serialization tests pass; otherwise, false.</returns>
+        </member>
         <member name="T:DocumentModel.InOpenXml.Test.BaseParagraphPropertiesTest">
             <summary>
             Comprehensive test for BaseParagraphProperties.
@@ -772,6 +783,15 @@
             be set and serialized correctly. It writes status messages and the serialized properties to the console for
             inspection.</remarks>
             <returns>true if the document custom properties are successfully updated and verified; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.TestICustomProperties">
+            <summary>
+            Tests setting sample custom properties to a new document and outputs the result to the console.
+            </summary>
+            <remarks>This method is intended for use in test scenarios to verify that document custom properties can
+            be set and serialized correctly. It writes status messages and the serialized properties to the console for
+            inspection.</remarks>
+            <returns>true if the document custom properties are successfully stored and verified; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.CreateSampleCustomProperties">
             <summary>

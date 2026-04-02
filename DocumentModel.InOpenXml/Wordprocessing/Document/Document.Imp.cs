@@ -150,7 +150,7 @@ public partial class Document: IDocument
   /// Returns a DocumentProperties collection that represents all the custom document properties for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.customdocumentproperties?view=word-pia"/>
-  public DMP.ICustomProperties? CustomDocumentProperties => CustomProperties;
+  public DMP.ICustomProperties CustomDocumentProperties => CustomProperties;
 
   /// <summary>
   /// Returns a CustomXMLParts#SameCHM collection that represents the custom XML in the XML data store. Read-only.

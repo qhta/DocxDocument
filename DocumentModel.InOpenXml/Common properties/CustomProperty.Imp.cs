@@ -12,8 +12,8 @@ public sealed partial class CustomProperty: DMP.ICustomProperty, DMP.IDocumentPr
   /// </summary>
   object? DMP.IDocumentProperty.Value
   {
-    get => this.Value?.ToString() ?? string.Empty;
-    set => this.Value = new Variant(value);
+    get => this.Value;
+    set => this.Value = (value as Variant) ?? new Variant(value);
   }
   /// <summary>
   /// Expected value type. According to the documentation, this property can be of any type.
