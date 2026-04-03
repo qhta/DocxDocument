@@ -36,7 +36,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   {
     CollectionChanged += (sender, e) =>
     {
-      if (isLoading || _openXmlCollection == null)
+      if (IsLoading || _openXmlCollection == null)
         return;
       if (e.Action == NotifyCollectionChangedAction.Add
           || e.Action == NotifyCollectionChangedAction.Remove
@@ -47,10 +47,10 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
       }
     };
   }
-  /// <summary>
-  /// Indicates whether a loading operation is currently in progress.
-  /// </summary>
-  protected bool isLoading;
+  ///// <summary>
+  ///// Indicates whether a loading operation is currently in progress.
+  ///// </summary>
+  //protected bool isLoading;
   /// <summary>
   ///   The WordprocessingDocument instance to which this model element collection is attached, or null if not attached.
   /// </summary>
@@ -143,12 +143,12 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   /// <param name="openXmlObject">The OpenXml element to load data from.</param>
   public override void LoadData(object openXmlObject)
   {
-    isLoading = true;
+    IsLoading = true;
     if (openXmlObject is OpenXmlCollectionType openXmlModeledElement)
     {
       LoadDataCollection(openXmlModeledElement);
     }
-    isLoading = false;
+    IsLoading = false;
   }
 
   /// <summary>

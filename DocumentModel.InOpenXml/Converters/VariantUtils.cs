@@ -89,6 +89,7 @@ public static class VariantUtils
       { typeof(bool), DXVT.VectorBaseValues.Bool },
       { typeof(decimal), DXVT.VectorBaseValues.Currency },
       { typeof(Guid), DXVT.VectorBaseValues.ClassId },
+
     };
   /// <summary>
   /// Converts the specified array to an array of OpenXmlElements

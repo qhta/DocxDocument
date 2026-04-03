@@ -8015,13 +8015,6 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:DocumentModel.ILoadable.SetIsLoading(System.Boolean)">
-            <summary>
-            Marks the object as Loaded or unLoaded.
-            </summary>
-            <param name="isLoading">A isLoaded indicating whether the object should be marked as Loaded. Set to <see langword="true"/> to mark as
-            Loaded; otherwise, <see langword="false"/>.</param>
-        </member>
         <member name="T:DocumentModel.IModifiable">
             <summary>
             Interface for types that can track modifications, allowing clients to check if the object has been modified and to set its modified state.
@@ -8063,12 +8056,6 @@
             Flag to determine if notification is enabled when the object raise PropertyChanged event.
             It should be set to true when the object is created.
             </summary>
-        </member>
-        <member name="M:DocumentModel.INotificationSource.SetNotificationEnabled(System.Boolean)">
-            <summary>
-            Sets the flag of IsNotificationEnabled.
-            </summary>
-            <param name="enable">Value to set.</param>
         </member>
     </members>
 </doc>

@@ -5,7 +5,7 @@ namespace DocumentModel.CustomXml;
 /// Represents a single custom XML part in a custom XML parts collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart?view=office-pia"/>
-public partial interface I_CustomXMLPart
+public partial interface ICustomXMLPart
 {
   /// <summary>
   /// Adds a node to the XML tree.

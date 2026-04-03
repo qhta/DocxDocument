@@ -11,7 +11,7 @@ namespace DocumentModel.CustomXml;
 /// Represents a collection of CustomXMLPart objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlparts?view=office-pia"/>
-public partial interface ICustomXMLParts: I_CustomXMLParts, I_CustomXMLPartsEvents_Event
+public partial interface ICustomXMLParts: IModelCollection<ICustomXMLPart>
 {
 }
 

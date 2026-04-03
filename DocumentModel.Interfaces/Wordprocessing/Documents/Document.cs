@@ -10,7 +10,6 @@ namespace DocumentModel.Wordprocessing;
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document?view=word-pia"/>
 public partial interface IDocument : IModelObject
 {
-
   /// <summary>
   /// Returns the name of the active theme plus the theme formatting options for the specified document.
   /// </summary>

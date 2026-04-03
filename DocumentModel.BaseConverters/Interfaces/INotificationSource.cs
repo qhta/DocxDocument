@@ -22,9 +22,4 @@ public interface INotificationSource
   /// </summary>
   public bool IsNotificationEnabled { get; }
 
-  /// <summary>
-  /// Sets the flag of IsNotificationEnabled.
-  /// </summary>
-  /// <param name="enable">Value to set.</param>
-  public void SetNotificationEnabled(bool enable);
 }

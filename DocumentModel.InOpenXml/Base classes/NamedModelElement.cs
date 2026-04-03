@@ -19,17 +19,10 @@ public class NamedModelElement: ModelElement, INamedObject
       {
         var oldName = _name;
         _name = value;
-        NameChanged?.Invoke(this, new NameChangedEventArgs(oldName, _name));
+        NotifyPropertyChanged("Name", oldName, _name);
       }
     }
   }
-
   private string? _name;
 
-  /// <summary>
-  /// Occurs when the value of the Name property changes.
-  /// </summary>
-  /// <remarks>Subscribe to this event to be notified whenever the Name property is modified. The event provides
-  /// the old and new values of the Name property through the NameChangedEventArgs parameter.</remarks>
-  public event EventHandler<NameChangedEventArgs>? NameChanged;
 }

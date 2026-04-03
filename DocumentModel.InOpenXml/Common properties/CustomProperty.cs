@@ -156,7 +156,8 @@ public sealed partial class CustomProperty: ModelElement<DXCP.CustomDocumentProp
   public void UpdateValueInOpenXml(DX.OpenXmlElement openXmlElement)
   {
     openXmlElement.RemoveAllChildren();
-    openXmlElement.AppendChild(Value.AsVTVariant());
+    if (Value != null)
+      openXmlElement.AppendChild(Value.AsVTVariant());
   }
 
   /// <summary>

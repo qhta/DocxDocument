@@ -17,7 +17,7 @@ public sealed partial class CustomProperties : ModelElementCollection<CustomProp
   /// Initializing constructor.
   /// </summary>
   /// <param name="document">Wordprocessing document model</param>
-  public CustomProperties(Wordprocessing.Document document) : base()
+  public CustomProperties(Wordprocessing.Document document) : base(document)
   {
     if (document.WordprocessingDocument != null)
        AttachAndLoad(document.WordprocessingDocument);
@@ -48,13 +48,17 @@ public sealed partial class CustomProperties : ModelElementCollection<CustomProp
   /// Loads data from customFileProperties to this instance.
   /// </summary>
   protected override void LoadDataCollection(DXCP.Properties customFileProperties)
-  {
-    this.Clear();
+  { 
+    IsLoading = true;
+    _IsNotificationEnabled = false;
+    Clear();
     foreach (var openXmlCustomDocumentProperty in customFileProperties!.ChildElements.Cast<DXCP.CustomDocumentProperty>())
     {
       var customDocumentProperty = new CustomProperty(this, openXmlCustomDocumentProperty);
-      this.Add(customDocumentProperty);
+      Add(customDocumentProperty);
     }
+    _IsNotificationEnabled = null;
+    IsLoading = false;
   }
 
   /// <summary>

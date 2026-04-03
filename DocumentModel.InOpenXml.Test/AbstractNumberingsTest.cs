@@ -6,19 +6,19 @@
   public static class AbstractNumberingsTest
   {
     /// <summary>
-    /// Runs all Numbering serialization tests.
+    /// Runs all tests and reports the results.
     /// </summary>
     /// <returns>True if all tests pass; otherwise, false.</returns>
     public static bool Run()
     {
-      Console.WriteLine("=== Abstract Numbering Test ===\n");
+      Console.WriteLine("=== AbstractNumberingsTest ===\n");
       if (!TestXmlSerialization()) return false;
       if (!TestJsonSerialization()) return false;
       if (!TestEdgeCases()) return false;
       if (!TestStoreInDocument()) return false;
       if (!TestUpdateInDocument()) return false;
       if (!TestValidateOpenXml()) return false;
-      Console.WriteLine("All Numbering tests passed.\n");
+      Console.WriteLine("AbstractNumberingsTest passed.\n");
       return true;
     }
 
@@ -28,7 +28,7 @@
     /// <returns>True if the test passes; otherwise, false.</returns>
     static bool TestXmlSerialization()
     {
-      Console.WriteLine("--- XML Serialization ---");
+      Console.WriteLine("--- AbstractNumberings Test XML Serialization ---");
       var testData = CreateSampleNumbering();
       var xmlSerializer = new XmlSerializer(typeof(Numbering));
       string xmlString;
@@ -47,15 +47,15 @@
       }
       if (deserialized == null)
       {
-        Console.WriteLine("✗ XML Deserialization returned null");
+        Console.WriteLine("✗ AbstractNumberings Test XML Deserialization returned null");
         return false;
       }
       if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
       {
-        Console.WriteLine($"✗ XML Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+        Console.WriteLine($"✗ AbstractNumberings Test XML Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
         return false;
       }
-      Console.WriteLine("✓ XML Serialization/Deserialization test passed\n");
+      Console.WriteLine("✓ AbstractNumberings Test XML Serialization/Deserialization test passed\n");
       return true;
     }
 
@@ -65,24 +65,24 @@
     /// <returns>True if the test passes; otherwise, false.</returns>
     static bool TestJsonSerialization()
     {
-      Console.WriteLine("--- JSON Serialization ---");
+      Console.WriteLine("--- AbstractNumberings Test JSON Serialization ---");
       var testData = CreateSampleNumbering();
       var jsonOptions = JsonConfig.Options;
       string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
-      Console.WriteLine("Serialized JSON:\n" + jsonString);
+      Console.WriteLine("AbstractNumberings Test Serialized JSON:\n" + jsonString);
 
       var deserialized = JsonSerializer.Deserialize<Numbering>(jsonString, jsonOptions);
       if (deserialized == null)
       {
-        Console.WriteLine("✗ JSON Deserialization returned null");
+        Console.WriteLine("✗ AbstractNumberings Test JSON Deserialization returned null");
         return false;
       }
       if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
       {
-        Console.WriteLine($"✗ JSON Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+        Console.WriteLine($"✗ AbstractNumberings Test JSON Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
         return false;
       }
-      Console.WriteLine("✓ JSON Serialization/Deserialization test passed\n");
+      Console.WriteLine("✓ AbstractNumberingsTest JSON Serialization/Deserialization test passed\n");
       return true;
     }
 
@@ -92,23 +92,23 @@
     /// <returns>True if the test passes; otherwise, false.</returns>
     static bool TestEdgeCases()
     {
-      Console.WriteLine("--- Edge Cases ---");
+      Console.WriteLine("--- AbstractNumberings Test Edge Cases ---");
       var empty = new Numbering();
       string xml = SerializeToXml(empty);
       var xmlDeserialized = DeserializeFromXml(xml);
       if (xmlDeserialized == null)
       {
-        Console.WriteLine("✗ Edge case: XML deserialization of empty object failed");
+        Console.WriteLine("✗ AbstractNumberings Test Edge Cases: XML deserialization of empty object failed");
         return false;
       }
       string json = SerializeToJson(empty);
       var jsonDeserialized = DeserializeFromJson(json);
       if (jsonDeserialized == null)
       {
-        Console.WriteLine("✗ Edge case: JSON deserialization of empty object failed");
+        Console.WriteLine("✗ AbstractNumberings Test Edge Cases: JSON deserialization of empty object failed");
         return false;
       }
-      Console.WriteLine("✓ Edge case tests passed\n");
+      Console.WriteLine("✓ AbstractNumberings Test Edge Cases passed\n");
       return true;
     }
 
@@ -121,7 +121,7 @@
     /// <returns>true if the document Numbering are successfully stored and verified; otherwise, false.</returns>
     static bool TestStoreInDocument()
     {
-      Console.WriteLine("--- Store sample abstract numbering in new document---");
+      Console.WriteLine("--- AbstractNumberings Test Store sample abstract numbering in new document---");
       Numbering testData = CreateSampleNumbering();
       using (var document = new Document("temp.docx", FileMode.CreateNew))
       {
@@ -148,15 +148,15 @@
         xmlSerializer.Serialize(xmlWriter, storedData);
         xmlString = stringWriter.ToString();
       }
-      Console.WriteLine("Numbering stored to new document and reloaded from it:\n" + xmlString);
+      Console.WriteLine("AbstractNumberings Test: Numbering stored to new document and reloaded from it:\n" + xmlString);
 
       if (!TestHelper.CompareTestData(testData, storedData, out var propName))
       {
-        Console.WriteLine($"✗ Store sample abstract numbering test FAILED - data mismatch in '{propName}'");
+        Console.WriteLine($"✗ AbstractNumberings Test: Store sample abstract numbering test FAILED - data mismatch in '{propName}'");
         return false;
       }
 
-      Console.WriteLine("✓ Store sample abstract numbering test passed\n");
+      Console.WriteLine("✓ AbstractNumberings Test: Store sample abstract numbering test passed\n");
       return true;
     }
 
@@ -169,7 +169,7 @@
     /// <returns>true if the document Numbering are successfully updated and verified; otherwise, false.</returns>
     static bool TestUpdateInDocument()
     {
-      Console.WriteLine("--- Update document abstract numbering ---");
+      Console.WriteLine("--- AbstractNumberings Test: Update document abstract numbering ---");
       {
         Numbering testData = CreateSampleNumbering();
         var initialCount = testData.AbstractNumberings.Count;
@@ -195,16 +195,16 @@
           xmlSerializer.Serialize(xmlWriter, storedData);
           xmlString = stringWriter.ToString();
         }
-        Console.WriteLine("Updated document abstract Numbering:\n" + xmlString);
+        Console.WriteLine("✓ AbstractNumberings Test: Updated document abstract Numbering:\n" + xmlString);
 
         var storedCount = storedData.AbstractNumberings.Count;
         if (storedCount != initialCount + 1)
         {
-          Console.WriteLine($"✗ Updated document abstract numbering test FAILED  - new property count is {storedCount}, expected {initialCount + 1}");
+          Console.WriteLine($"✗ AbstractNumberings Test: Updated document abstract numbering test FAILED  - new property count is {storedCount}, expected {initialCount + 1}");
           return false;
         }
 
-        Console.WriteLine("✓ Updated document Numbering test passed\n");
+        Console.WriteLine("✓ AbstractNumberings Test: Updated document abstract numbering test passed\n");
         return true;
       }
     }
@@ -218,7 +218,7 @@
     /// <returns>true if the OpenXml is valid according to the schema; otherwise, false.</returns>
     static bool TestValidateOpenXml()
     {
-      Console.WriteLine("--- Validate sample abstract numbering stored in new document against OpenXml schema ---");
+      Console.WriteLine("--- AbstractNumberings Test: Validate sample abstract numbering stored in new document against OpenXml schema ---");
       {
         Numbering testData = CreateSampleNumbering();
         using (var document = new Document("temp.docx", FileMode.CreateNew))
@@ -236,7 +236,7 @@
           var validationResult = OpenXmlSchemaValidator.ValidateXml(formattedOpenXml);
           if (!validationResult.IsValid)
           {
-            Console.WriteLine("✗ OpenXml schema validation FAILED - issues found:");
+            Console.WriteLine("✗ AbstractNumberings Test: OpenXml schema validation FAILED - issues found:");
             foreach (var message in validationResult.Messages)
             {
               Console.WriteLine($" {message}");
@@ -245,7 +245,7 @@
           }
         }
 
-        Console.WriteLine("✓ Validate sample abstract numbering test passed\n");
+        Console.WriteLine("✓ AbstractNumberings Test Validate sample abstract numbering test passed\n");
         return true;
       }
     }

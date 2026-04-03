@@ -71,28 +71,28 @@ public abstract class ElementCollection<ItemType>: ModelElement, IElementCollect
         {
           if (item is ICollectionItem collectionItem)
             collectionItem.SetCollection(this);
-          if (item is INamedObject namedObject && _index != null)
-            _index.Add(namedObject.Name!, item);
+          if (item is INamedObject namedObject && _index != null && namedObject.Name!=null)
+            _index.Add(namedObject.Name, item);
           if (item is INotifyPropertyChanged notificationSource)
             notificationSource.PropertyChanged += ItemPropertyChanged;
         }
       }
     }
-    else if (args.Action == NotifyCollectionChangedAction.Remove)
-    {
-      if (args.OldItems != null)
-      {
-        foreach (var item in args.OldItems.Cast<ItemType>())
-        {
-          if (item is ICollectionItem collectionItem)
-            collectionItem.SetCollection(null);
-          if (item is INamedObject namedObject && _index != null)
-            _index.Remove(namedObject.Name!);
-          if (item is INotifyPropertyChanged notificationSource)
-            notificationSource.PropertyChanged -= ItemPropertyChanged;
-        }
-      }
-    }
+    //else if (args.Action == NotifyCollectionChangedAction.Remove)
+    //{
+    //  if (args.OldItems != null)
+    //  {
+    //    foreach (var item in args.OldItems.Cast<ItemType>())
+    //    {
+    //      if (item is ICollectionItem collectionItem)
+    //        collectionItem.SetCollection(null);
+    //      if (item is INamedObject namedObject && _index != null && namedObject.Name!=null)
+    //        _index.Remove(namedObject.Name);
+    //      if (item is INotifyPropertyChanged notificationSource)
+    //        notificationSource.PropertyChanged -= ItemPropertyChanged;
+    //    }
+    //  }
+    //}
     if (!IsLoading)
       if (Parent != null)
       {
@@ -117,10 +117,22 @@ public abstract class ElementCollection<ItemType>: ModelElement, IElementCollect
       var propertyName = args.PropertyName;
       if (propertyName == "Name" && sender is INamedObject namedObject && _index != null)
       {
-        if (_index.TryGetValue1(item, out var oldName))
-          _index.Remove(new KeyValuePair<string, ItemType>(oldName, item));
-        if (namedObject.Name != null)
-          _index.Add(new KeyValuePair<string, ItemType>(namedObject.Name, item));
+        if (args is PropertyValueChangedEventArgs valueChangedArgs)
+        {
+          if (valueChangedArgs.OldValue is string oldName)
+            _index.Remove(new KeyValuePair<string, ItemType>(oldName, item));
+          if (valueChangedArgs.NewValue is string newName)
+            _index.Add(new KeyValuePair<string, ItemType>(newName, item));
+        }
+        else
+        {
+          // If PropertyValueChangedEventArgs is not available, we can still update the index based on the new name.
+          // However, we may not be able to remove the old name from the index without it. This is a limitation.
+          if (_index.TryGetValue1(item, out var oldName))
+            _index.Remove(new KeyValuePair<string, ItemType>(oldName, item));
+          if (namedObject.Name != null)
+            _index.Add(new KeyValuePair<string, ItemType>(namedObject.Name, item));
+        }
       }
     }
     if (IsNotificationEnabled && PropertyName != null)
@@ -446,21 +458,6 @@ public abstract class ElementCollection<ItemType>: ModelElement, IElementCollect
   bool IList.IsFixedSize => false;
 
   #endregion
-
-  /// <summary>
-  /// Sets the IsNotification flag to be used by the instance.
-  /// Flag is set in this instance and child items.
-  /// </summary>
-  /// <param name="enabled">The enabled value to set.</param>
-  void INotificationSource.SetNotificationEnabled(bool enabled)
-  {
-    base.SetNotificationEnabled(enabled);
-    foreach (var item in this)
-    {
-      if (item is INotificationSource notificationSource)
-        notificationSource.SetNotificationEnabled(enabled);
-    }
-  }
 
   /// <summary>
   /// Checks if the collection is empty.

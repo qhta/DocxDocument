@@ -6,22 +6,22 @@ namespace DocumentModel.InOpenXml.Test
   /// <summary>
   /// Comprehensive test for DocumentModel.BaseInterfaces implementation.
   /// </summary>
-  public static class BaseInterfacesTest
+  public static class ElementCollectionTest
   {
     /// <summary>
-    /// Runs all BaseInterfaces serialization tests and reports the results.
+    /// Runs all tests and reports the results.
     /// </summary>
-    /// <returns>true if all BaseInterfaces serialization tests pass; otherwise, false.</returns>
+    /// <returns>true if all tests pass; otherwise, false.</returns>
     public static bool Run()
     {
-      Console.WriteLine("=== BaseInterfaces Test ===\n");
+      Console.WriteLine("=== ElementCollectionTest ===\n");
       if (!TestIndexerGetByIntAndString()) return false;
       if (!TestIndexerSetByInt()) return false;
       if (!TestEnumeration()) return false;
       if (!TestMissingNameThrows()) return false;
       if (!TestInvalidIndexTypeThrows()) return false;
 
-      Console.WriteLine("All BaseInterfaces tests passed.\n");
+      Console.WriteLine("All ElementCollectionTest.\n");
       return true;
     }
 

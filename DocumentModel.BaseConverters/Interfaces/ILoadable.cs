@@ -12,10 +12,4 @@ public interface ILoadable
   /// <returns></returns>
   public bool IsLoading { get; }
 
-  /// <summary>
-  /// Marks the object as Loaded or unLoaded.
-  /// </summary>
-  /// <param name="isLoading">A isLoaded indicating whether the object should be marked as Loaded. Set to <see langword="true"/> to mark as
-  /// Loaded; otherwise, <see langword="false"/>.</param>
-  public void SetIsLoading(bool isLoading);
 }

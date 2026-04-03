@@ -11,7 +11,7 @@
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.AbstractNumberingsTest.Run">
             <summary>
-            Runs all Numbering serialization tests.
+            Runs all tests and reports the results.
             </summary>
             <returns>True if all tests pass; otherwise, false.</returns>
         </member>
@@ -101,17 +101,6 @@
             </summary>
             <param name="json">The JSON string to deserialize.</param>
             <returns>The deserialized Numbering object, or null if deserialization fails.</returns>
-        </member>
-        <member name="T:DocumentModel.InOpenXml.Test.BaseInterfacesTest">
-            <summary>
-            Comprehensive test for DocumentModel.BaseInterfaces implementation.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.BaseInterfacesTest.Run">
-            <summary>
-            Runs all BaseInterfaces serialization tests and reports the results.
-            </summary>
-            <returns>true if all BaseInterfaces serialization tests pass; otherwise, false.</returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.BaseParagraphPropertiesTest">
             <summary>
@@ -784,7 +773,7 @@
             inspection.</remarks>
             <returns>true if the document custom properties are successfully updated and verified; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.TestICustomProperties">
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.TestStoreICustomProperties">
             <summary>
             Tests setting sample custom properties to a new document and outputs the result to the console.
             </summary>
@@ -792,6 +781,15 @@
             be set and serialized correctly. It writes status messages and the serialized properties to the console for
             inspection.</remarks>
             <returns>true if the document custom properties are successfully stored and verified; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.TestUpdateICustomProperties">
+            <summary>
+            Tests updating the custom properties of a document and outputs the result to the console.
+            </summary>
+            <remarks>This method is intended for use in test scenarios to verify that document custom properties can
+            be set and serialized correctly. It writes status messages and the serialized properties to the console for
+            inspection.</remarks>
+            <returns>true if the document custom properties are successfully updated and verified; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.CreateSampleCustomProperties">
             <summary>
@@ -1010,6 +1008,17 @@
             </summary>
             <param name="json">The JSON string to deserialize.</param>
             <returns>The deserialized DocumentVariables object, or null if deserialization fails.</returns>
+        </member>
+        <member name="T:DocumentModel.InOpenXml.Test.ElementCollectionTest">
+            <summary>
+            Comprehensive test for DocumentModel.BaseInterfaces implementation.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ElementCollectionTest.Run">
+            <summary>
+            Runs all tests and reports the results.
+            </summary>
+            <returns>true if all tests pass; otherwise, false.</returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.FontTableTest">
             <summary>

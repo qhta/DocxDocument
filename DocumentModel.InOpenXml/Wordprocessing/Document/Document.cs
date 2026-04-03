@@ -29,7 +29,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
       OpenDocument(filePath, access is FileAccess.ReadWrite or FileAccess.Write);
     if (access != FileAccess.ReadWrite && access != FileAccess.Write && access != FileAccess.Read)
       IsEditable = false;
-    SetNotificationEnabled(true);
+    _IsNotificationEnabled = true;
   }
   /// <summary>
   ///   Initializes a new instance of the <see cref="Document"/> class and attaches it to the specified Open XML word processing document.
@@ -38,7 +38,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   public Document(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
-    SetNotificationEnabled(true);
+    _IsNotificationEnabled = true;
   }
   /// <summary>
   ///   The underlying Open XML word processing document associated with this instance.
@@ -56,7 +56,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <param name="wordprocessingDocument">The word processing document to attach and load from.</param>
   public void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
-    SetNotificationEnabled(false);
+    _IsNotificationEnabled = false;
     WordprocessingDocument = wordprocessingDocument;
     wordprocessingDocument.GetPackageProperties();
     CoreProperties.AttachAndLoad(wordprocessingDocument);
@@ -64,7 +64,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     StatisticProperties.AttachAndLoad(wordprocessingDocument);
     CustomProperties?.AttachAndLoad(wordprocessingDocument);
     DocumentSettings?.AttachAndLoad(wordprocessingDocument);
-    SetNotificationEnabled(true);
+    _IsNotificationEnabled = null;
   }
   /// <summary>
   ///   Attaches this instance to the specified word processing document and updates its package properties and settings with current data.
@@ -110,14 +110,14 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <returns>A <see cref="Document"/>The instance representing the opened file.</returns>
   public void OpenDocument(string filePath, bool editable = true)
   {
-    SetNotificationEnabled(false);
+    _IsNotificationEnabled = false;
     Filename = filePath;
     IsEditable = editable;
     var wordprocessingDocument = (!File.Exists(filePath))
       ? WordprocessingHelper.CreateWordDocument(filePath)
       : WordprocessingHelper.OpenWordDocument(Filename, editable);
     AttachAndLoad(wordprocessingDocument);
-    SetNotificationEnabled(true);
+    _IsNotificationEnabled = true;
   }
   /// <summary>
   /// Filename of the document, which can be used for display purposes or to track the source of the document.
@@ -266,7 +266,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     }
     set => UpdateField(ref _CustomProperties, value, nameof(CustomProperties));
   }
-  private CustomProperties? _CustomProperties;
+
+  private CustomProperties? _CustomProperties = null;
 
   /// <summary>
   ///   Document-level settings, including compatibility, protection, and view options.

@@ -67,7 +67,7 @@ public class NumberingLevelOverrides:
     if (element is not DXW.NumberingInstance numbering)
       throw new ArgumentException(
         $"Expected element of type {typeof(DXW.NumberingInstance).FullName}, but got {element.GetType().FullName}.");
-    SetIsLoading(true);
+    IsLoading = true;
     var openXmlChildren = numbering.Elements<DXW.LevelOverride>().ToArray();
     this.Clear();
     foreach (var openXmlChild in openXmlChildren)
@@ -77,6 +77,6 @@ public class NumberingLevelOverrides:
           DMW.NumberingLevelOverride;
       this.Add(modelItem!);
     }
-    SetIsLoading(false);
+    IsLoading = false;
   }
 }

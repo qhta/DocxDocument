@@ -69,7 +69,7 @@ public class NumberingInstances: ModelElementCollection<NumberingInstance, DXW.N
     if (element is not DXW.Numbering numbering)
       throw new ArgumentException(
         $"Expected element of type {typeof(DXW.Numbering).FullName}, but got {element.GetType().FullName}.");
-    SetIsLoading(true);
+    IsLoading = true;
     var openXmlChildren = numbering.Elements<DXW.NumberingInstance>().ToArray();
     this.Clear();
     foreach (var openXmlChild in openXmlChildren)
@@ -78,6 +78,6 @@ public class NumberingInstances: ModelElementCollection<NumberingInstance, DXW.N
         OpenXmlElementConverter.ConvertFrom(openXmlChild, typeof(DMW.NumberingInstance)) as DMW.NumberingInstance;
       this.Add(modelItem!);
     }
-    SetIsLoading(false);
+    IsLoading = false;
   }
 }

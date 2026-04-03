@@ -69,7 +69,7 @@ public partial class AbstractNumberings: ModelElementCollection<AbstractNumberin
     if (element is not DXW.Numbering numbering)
       throw new ArgumentException(
         $"Expected element of type {typeof(DXW.Numbering).FullName}, but got {element.GetType().FullName}.");
-    SetIsLoading(true);
+    IsLoading = true;
     var openXmlChildren = numbering.Elements<DXW.AbstractNum>().ToArray();
     this.Clear();
     foreach (var openXmlChild in openXmlChildren)
@@ -78,6 +78,6 @@ public partial class AbstractNumberings: ModelElementCollection<AbstractNumberin
         OpenXmlElementConverter.ConvertFrom(openXmlChild, typeof(DMW.AbstractNumbering)) as DMW.AbstractNumbering;
       this.Add(modeItem!);
     }
-    SetIsLoading(false);
+    IsLoading = false;
   }
 }

@@ -5,7 +5,11 @@ public sealed partial class CustomProperty: DMP.ICustomProperty, DMP.IDocumentPr
   /// <summary>
   /// Name of the custom document property. If not set, it defaults to an empty string.
   /// </summary>
-  string DMP.IDocumentProperty.Name { get => this.Name ?? string.Empty; set => this.Name = value; } 
+  string DMP.IDocumentProperty.Name
+  {
+    get => this.Name ?? string.Empty; 
+    set => this.Name = value;
+  } 
 
   /// <summary>
   /// Value of the document property, which can be of any type. The actual type of the value is determined by the Type property.
