@@ -24,6 +24,8 @@
   <ItemGroup>
     <Compile Include="..\NamespaceMappings\OpenXmlUsings.cs" Link="OpenXmlUsings.cs" />
     <Compile Include="Base classes\ModelElement%28T%29.Imp.cs" />
+    <Compile Include="Common properties\BuiltInDocumentProperties.Imp.cs" />
+    <Compile Include="Common properties\BuiltInDocumentProperty.Imp.cs" />
     <Compile Include="Common properties\CustomProperties.Imp.cs" />
     <Compile Include="Common properties\CustomProperty.Imp.cs" />
     <Compile Include="Wordprocessing\Document\Document.Imp.cs" />

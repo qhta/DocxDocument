@@ -2,6 +2,8 @@ using System.IO.Packaging;
 
 using DocumentFormat.OpenXml.Experimental;
 
+using Qhta.OpenXmlTools;
+
 namespace DocumentModel.Wordprocessing;
 public partial class Document: IDocument
 {
@@ -1163,70 +1165,10 @@ public partial class Document: IDocument
       var package = WordprocessingDocument?.MainDocumentPart?.OpenXmlPackage?.GetPackage();
       if (package != null)
       {
-        return CreateFlatOpcXml(package);
+        return PackageTools.CreateFlatOpcXml(package);
       }
       return null;
     }
-  }
-
-  //private static string CreateFlatOpcXml(string filename)
-  //{
-  //}
-
-  private static string CreateFlatOpcXml(DXPP.IPackage package)
-  {
-    System.Xml.Linq.XNamespace pkg = "http://schemas.microsoft.com/office/2006/xmlPackage";
-
-    var flatOpc = new System.Xml.Linq.XDocument(
-      new System.Xml.Linq.XDeclaration("1.0", "utf-8", "yes"),
-      new System.Xml.Linq.XElement(pkg + "package",
-        package.GetParts()
-          .OrderBy(part => part.Uri.ToString(), StringComparer.Ordinal)
-          .Select(part => CreateFlatOpcPart(part, pkg))));
-
-    return flatOpc.ToString(System.Xml.Linq.SaveOptions.DisableFormatting);
-  }
-
-  private static System.Xml.Linq.XElement CreateFlatOpcPart(DXPP.IPackagePart part, System.Xml.Linq.XNamespace pkg)
-  {
-    var partElement = new System.Xml.Linq.XElement(pkg + "part",
-      new System.Xml.Linq.XAttribute(pkg + "name", part.Uri.ToString()),
-      new System.Xml.Linq.XAttribute(pkg + "contentType", part.ContentType));
-
-    using var partStream = part.GetStream(FileMode.Open, FileAccess.Read);
-    using var memoryStream = new MemoryStream();
-    partStream.CopyTo(memoryStream);
-    var partBytes = memoryStream.ToArray();
-
-    if (IsXmlContentType(part.ContentType))
-    {
-      try
-      {
-        var xmlText = GetXmlText(partBytes);
-        var xmlRoot = System.Xml.Linq.XElement.Parse(xmlText, System.Xml.Linq.LoadOptions.PreserveWhitespace);
-        partElement.Add(new System.Xml.Linq.XElement(pkg + "xmlData", xmlRoot));
-        return partElement;
-      }
-      catch
-      {
-      }
-    }
-
-    partElement.Add(new System.Xml.Linq.XElement(pkg + "binaryData", Convert.ToBase64String(partBytes)));
-    return partElement;
-  }
-
-  private static string GetXmlText(byte[] bytes)
-  {
-    using var stream = new MemoryStream(bytes);
-    using var reader = new StreamReader(stream, System.Text.Encoding.UTF8, detectEncodingFromByteOrderMarks: true);
-    return reader.ReadToEnd();
-  }
-
-  private static bool IsXmlContentType(string contentType)
-  {
-    return contentType.EndsWith("/xml", StringComparison.OrdinalIgnoreCase)
-      || contentType.EndsWith("+xml", StringComparison.OrdinalIgnoreCase);
   }
 
   /// <summary>
