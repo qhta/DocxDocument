@@ -3,13 +3,13 @@
 	/// <summary>
 	/// Comprehensive test for DocumentModel.DocumentVariables.
 	/// </summary>
-	public static class DocumentVariablesTest
+	public class DocumentVariablesTest: AbstractTestClass
 	{
-		/// <summary>
-		/// Runs all DocumentVariables serialization tests.
-		/// </summary>
-		/// <returns>True if all tests pass; otherwise, false.</returns>
-		public static bool Run()
+    /// <summary>
+    /// Runs all DocumentVariables serialization tests.
+    /// </summary>
+    /// <returns>True if all tests pass; otherwise, false.</returns>
+    public static bool Run()
 		{
 			Console.WriteLine("=== DocumentVariables Test ===\n");
 			if (!TestXmlSerialization()) return false;
@@ -129,13 +129,13 @@
 			Console.WriteLine("--- Store sample DocumentVariables in new document---");
 			{
 				DocumentVariables testData = CreateSampleDocumentVariables();
-				using (var document = new Document("temp.docx", FileMode.CreateNew))
+				using (var document = new Document(TestFileName, FileMode.CreateNew))
 				{
 					document.DocumentVariables = testData;
 				}
 
 				DocumentVariables storedData;
-				using (var document = new Document("temp.docx"))
+				using (var document = new Document(TestFileName))
 				{
 					storedData = document.DocumentVariables ?? throw new InvalidOperationException("DocumentVariables not found.");
 				}
@@ -176,14 +176,14 @@
 				DocumentVariables testData = CreateSampleDocumentVariables();
 				var initialCount = testData.Count;
         var i = initialCount+1;
-				using (var document = new Document("temp.docx", FileMode.CreateNew))
+				using (var document = new Document(TestFileName, FileMode.CreateNew))
 				{
 					document.DocumentVariables = testData;
     			document.DocumentVariables.Add(new DocumentVariable { Name = $"Var{i}", Value = $"Value{i}" });
 				}
 
 				DocumentVariables storedData;
-				using (var document = new Document("temp.docx"))
+				using (var document = new Document(TestFileName))
 				{
 					storedData = document.DocumentVariables ?? throw new InvalidOperationException("DocumentVariables not found.");
 				}

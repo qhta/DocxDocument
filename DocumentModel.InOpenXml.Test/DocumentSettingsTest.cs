@@ -3,7 +3,7 @@
   /// <summary>
   /// Provides comprehensive serialization tests for <see cref="DocumentSettings"/>.
   /// </summary>
-  public static class DocumentSettingsTest
+  public class DocumentSettingsTest: AbstractTestClass
   {
     /// <summary>
     /// Runs all serialization tests for the <see cref="DocumentSettings"/> class and reports the results to the console.
@@ -129,13 +129,13 @@
     {
       Console.WriteLine("--- Store sample document settings in new document---");
       DocumentSettings testData = CreateSampleDocumentSettings(true);
-      using (var document = new Document("temp.docx", FileMode.CreateNew))
+      using (var document = new Document(TestFileName, FileMode.CreateNew))
       {
         document.DocumentSettings = testData;
       }
 
       DocumentSettings? storedData;
-      using (var document = new Document("temp.docx"))
+      using (var document = new Document(TestFileName))
       {
         storedData = document.DocumentSettings;
       }
@@ -177,7 +177,7 @@
     {
       Console.WriteLine("--- Update document settings stored in document---");
       DocumentSettings testData = CreateSampleDocumentSettings(true);
-      using (var document = new Document("temp.docx", FileMode.CreateNew))
+      using (var document = new Document(TestFileName, FileMode.CreateNew))
       {
         document.DocumentSettings = testData;
       }
@@ -185,7 +185,7 @@
       TestHelper.ChangeTestData(testData);
       testData.Compatibility?.Add(new CompatibilitySetting{ Name="CompatibilityMode", Val="value" });
       DocumentSettings? storedData;
-      using (var document = new Document("temp.docx"))
+      using (var document = new Document(TestFileName))
       {
         storedData = document.DocumentSettings;
         if (storedData != null)
@@ -231,14 +231,14 @@
         DocumentSettings testData = CreateSampleDocumentSettings(true);
         TestHelper.ChangeTestData(testData);
         testData.Compatibility?.Add(new CompatibilitySetting { Name = "CompatibilityMode", Val = "value" });
-        using (var document = new Document("temp.docx", FileMode.CreateNew))
+        using (var document = new Document(TestFileName, FileMode.CreateNew))
         {
           document.DocumentSettings = testData;
         }
 
 
 
-        using (var document = new Document("temp.docx"))
+        using (var document = new Document(TestFileName))
         {
           var openXml = document.WordprocessingDocument!.MainDocumentPart!.DocumentSettingsPart!.Settings!.OuterXml;
           var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
@@ -287,13 +287,13 @@
     static void UpdateMethodForPerformanceTest()
     {
       DocumentSettings testData = CreateSampleDocumentSettings(true);
-      using (var document = new Document("temp.docx", FileMode.CreateNew))
+      using (var document = new Document(TestFileName, FileMode.CreateNew))
       {
         document.DocumentSettings = testData;
       }
 
       TestHelper.ChangeTestData(testData);
-      using (var document = new Document("temp.docx"))
+      using (var document = new Document(TestFileName))
       {
         var storedData = document.DocumentSettings;
         if (storedData != null)

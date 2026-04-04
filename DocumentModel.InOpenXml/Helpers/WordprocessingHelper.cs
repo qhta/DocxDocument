@@ -146,13 +146,12 @@ public static class WordprocessingHelper
   /// </summary>
   /// <param name="wordDocument">The Document instance.</param>
   /// <returns>The core file properties class.</returns>
-  public static Qhta.OpenXMLTools.CoreFileProperties GetCoreProperties(this DXPP.WordprocessingDocument wordDocument)
+  public static DXPP.IPackageProperties GetCoreProperties(this DXPP.WordprocessingDocument wordDocument)
   {
     var coreFilePropertiesPart = wordDocument.CoreFilePropertiesPart ?? wordDocument.AddCoreFilePropertiesPart();
-    var properties = coreFilePropertiesPart.RootElement as Qhta.OpenXMLTools.CoreFileProperties;
+    var properties = coreFilePropertiesPart.RootElement as DXPP.IPackageProperties;
     if (properties == null)
     {
-      properties = new Qhta.OpenXMLTools.CoreFileProperties();
       using var stream = coreFilePropertiesPart.GetStream(FileMode.Create, FileAccess.Write);
       using var writer = new StreamWriter(stream, System.Text.Encoding.UTF8);
       writer.Write("<cp:coreProperties xmlns:cp=\"http://schemas.openxmlformats.org/package/2006/metadata/core-properties\" " +
@@ -161,29 +160,10 @@ public static class WordprocessingHelper
                    "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\" " +
                    "xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">" +
                    "</cp:coreProperties>");
+      coreFilePropertiesPart.UnloadRootElement();
+      properties = coreFilePropertiesPart.CoreFileProperties;
     }
     return properties;
-
-  }
-  /// <summary>
-  /// Sets the core file properties for the specified WordprocessingDocument using the provided core properties object.
-  /// </summary>
-  /// <remarks>This method creates or replaces the core properties part of the document with the specified
-  /// values. Existing core properties will be overwritten.</remarks>
-  /// <param name="wordDocument">The WordprocessingDocument to update with new core file properties.</param>
-  /// <param name="coreProperties">The core file properties to apply to the document.</param>
-  public static void SetCoreProperties
-    (this DXPP.WordprocessingDocument wordDocument, Qhta.OpenXMLTools.CoreFileProperties coreProperties)
-  {
-    var coreFilePropertiesPart = wordDocument.CoreFilePropertiesPart ?? wordDocument.AddCoreFilePropertiesPart();
-    using var stream = coreFilePropertiesPart.GetStream(FileMode.Create, FileAccess.Write);
-    using var writer = new StreamWriter(stream, System.Text.Encoding.UTF8);
-    writer.Write("<cp:coreProperties xmlns:cp=\"http://schemas.openxmlformats.org/package/2006/metadata/core-properties\" " +
-                  "xmlns:dc=\"http://purl.org/dc/elements/1.1/\" " +
-                  "xmlns:dcterms=\"http://purl.org/dc/terms/\" " +
-                  "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\" " +
-                  "xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">" +
-                  "</cp:coreProperties>");
   }
 
   /// <summary>

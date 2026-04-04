@@ -3,7 +3,7 @@ namespace DocumentModel.InOpenXml.Test
   /// <summary>
   /// Comprehensive test for BaseRunProperties.
   /// </summary>
-  public static class BaseRunPropertiesTest
+  public class BaseRunPropertiesTest: AbstractTestClass
   {
     /// <summary>
     /// Runs all BaseRUnProperties tests.

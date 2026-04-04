@@ -28,4 +28,6 @@ global using DMW = DocumentModel.Wordprocessing;
 global using DMWD = DocumentModel.Wordprocessing.Drawings;
 global using DMWV = DocumentModel.Wordprocessing.Vml;
 
+using System.Net;
+
 

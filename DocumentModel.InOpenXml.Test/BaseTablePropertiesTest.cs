@@ -3,7 +3,7 @@ namespace DocumentModel.InOpenXml.Test
   /// <summary>
   /// Comprehensive test for BaseTableProperties.
   /// </summary>
-  public static class BaseTablePropertiesTest
+  public class BaseTablePropertiesTest: AbstractTestClass
   {
     /// <summary>
     /// Paragraphs all BaseTableProperties tests.

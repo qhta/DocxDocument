@@ -102,6 +102,32 @@
             <param name="json">The JSON string to deserialize.</param>
             <returns>The deserialized Numbering object, or null if deserialization fails.</returns>
         </member>
+        <member name="T:DocumentModel.InOpenXml.Test.AbstractTestClass">
+            <summary>
+            Base class for all test classes, providing common functionality and constants.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.InOpenXml.Test.AbstractTestClass.TestFileName">
+            <summary>
+            Common file name used for testing purposes. This file is created and deleted during tests, so it should not exist before the tests are run.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.AbstractTestClass.GetDataXml(System.Object)">
+            <summary>
+            Returns the XML representation of the given data object.
+            This method uses the XmlSerializer to serialize the object to an XML string,
+            which can be useful for debugging and comparing expected and actual results in tests.
+            </summary>
+            <param name="data">The object to serialize to XML.</param>
+            <returns>The XML string representation of the object.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.AbstractTestClass.GetPartXml(DocumentFormat.OpenXml.Packaging.OpenXmlPart)">
+            <summary>
+            Returns the XML content of the given OpenXmlPart as a formatted string with line numbers.
+            </summary>
+            <param name="part">The OpenXmlPart to retrieve the XML content from.</param>
+            <returns>A string containing the formatted XML with line numbers if the part exists; otherwise, null.</returns>
+        </member>
         <member name="T:DocumentModel.InOpenXml.Test.BaseParagraphPropertiesTest">
             <summary>
             Comprehensive test for BaseParagraphProperties.
@@ -705,14 +731,15 @@
             <returns>A CoreProperties object initialized with example document metadata such as title, subject, creator, and other
             properties.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.PrintCorePropertiesPart">
+        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.CorePropertiesPartXml">
             <summary>
-            Prints the core file properties part of a Wordprocessing document to the console in a formatted XML view with
-            line numbers.
+            Retrieves the formatted XML content of the core properties part from a WordprocessingML document.
             </summary>
-            <remarks>This method opens a file named "temp.docx" in read-only mode, retrieves its core file
-            properties part, and outputs the XML content with line numbers to the console. The method is primarily intended
-            for diagnostic or testing purposes to inspect the built-in document properties stored in the file.</remarks>
+            <remarks>The method opens the file TestFileName in read-only mode and accesses its core properties part.
+            The returned XML is formatted with line numbers for readability. If the document does not contain a core
+            properties part, the method returns null.</remarks>
+            <returns>A string containing the formatted XML with line numbers from the core properties part if it exists; otherwise,
+            null.</returns>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.SerializeToXml(DocumentModel.CoreProperties)">
             <summary>

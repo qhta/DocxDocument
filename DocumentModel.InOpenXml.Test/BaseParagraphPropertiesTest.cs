@@ -3,7 +3,7 @@ namespace DocumentModel.InOpenXml.Test
   /// <summary>
   /// Comprehensive test for BaseParagraphProperties.
   /// </summary>
-  public static class BaseParagraphPropertiesTest
+  public class BaseParagraphPropertiesTest: AbstractTestClass
   {
     /// <summary>
     /// Run all BaseParagraphProperties tests.
