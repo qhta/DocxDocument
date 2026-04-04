@@ -1,4 +1,6 @@
-﻿namespace DocumentModel.InOpenXml.Test;
+﻿using DocumentFormat.OpenXml.Packaging;
+
+namespace DocumentModel.InOpenXml.Test;
 
 /// <summary>
 /// Provides comprehensive serialization tests for <see cref="DocumentModel.ContentProperties"/>.
@@ -19,7 +21,9 @@ public class ContentPropertiesTest: AbstractTestClass
     if (!TestNewFromDocument()) return false;
     if (!TestStoreInDocument()) return false;
     if (!TestUpdateInDocument()) return false;
-    Console.WriteLine("All ContentProperties tests passed.\n");
+    if (!TestStoreBuiltInProperties()) return false;
+
+    Console.WriteLine("All ContentProperties Tests passed.\n");
     return true;
   }
 
@@ -29,7 +33,7 @@ public class ContentPropertiesTest: AbstractTestClass
   /// <returns>True if the round-trip succeeds; otherwise, false.</returns>
   static bool TestXmlSerialization()
   {
-    Console.WriteLine("--- XML Serialization ---");
+    Console.WriteLine("--- ContentPropertiesTest XML Serialization ---");
     var testData = CreateSampleContentProperties(true);
     var xmlSerializer = new XmlSerializer(typeof(ContentProperties));
     string xmlString;
@@ -39,7 +43,7 @@ public class ContentPropertiesTest: AbstractTestClass
       xmlSerializer.Serialize(xmlWriter, testData);
       xmlString = stringWriter.ToString();
     }
-    Console.WriteLine("Serialized XML:\n" + xmlString);
+    Console.WriteLine("ContentPropertiesTest Serialized XML:\n" + xmlString);
 
     ContentProperties? deserialized;
     using (var stringReader = new StringReader(xmlString))
@@ -48,15 +52,15 @@ public class ContentPropertiesTest: AbstractTestClass
     }
     if (deserialized == null)
     {
-      Console.WriteLine("✗ XML Deserialization returned null");
+      Console.WriteLine("✗ ContentPropertiesTest XML Deserialization returned null");
       return false;
     }
     if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
     {
-      Console.WriteLine($"✗ XML Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
+      Console.WriteLine($"✗ ContentPropertiesTestXML Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
       return false;
     }
-    Console.WriteLine("✓ XML Serialization/Deserialization test passed\n");
+    Console.WriteLine("✓ ContentPropertiesTest XML Serialization/Deserialization test passed\n");
     return true;
   }
 
@@ -66,24 +70,24 @@ public class ContentPropertiesTest: AbstractTestClass
   /// <returns>True if the round-trip succeeds; otherwise, false.</returns>
   static bool TestJsonSerialization()
   {
-    Console.WriteLine("--- JSON Serialization ---");
+    Console.WriteLine("--- ContentPropertiesTest JSON Serialization ---");
     var testData = CreateSampleContentProperties(true);
     var jsonOptions = JsonConfig.Options;
     string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
-    Console.WriteLine("Serialized JSON:\n" + jsonString);
+    Console.WriteLine("ContentPropertiesTest Serialized JSON:\n" + jsonString);
 
     var deserialized = JsonSerializer.Deserialize<ContentProperties>(jsonString, jsonOptions);
     if (deserialized == null)
     {
-      Console.WriteLine("✗ JSON Deserialization returned null");
+      Console.WriteLine("✗ ContentPropertiesTestJSON Deserialization returned null");
       return false;
     }
     if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
     {
-      Console.WriteLine($"✗ JSON Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
+      Console.WriteLine($"✗ ContentPropertiesTest JSON Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
       return false;
     }
-    Console.WriteLine("✓ JSON Serialization/Deserialization test passed\n");
+    Console.WriteLine("✓ ContentPropertiesTest JSON Serialization/Deserialization test passed\n");
     return true;
   }
 
@@ -93,24 +97,24 @@ public class ContentPropertiesTest: AbstractTestClass
   /// <returns>True if all edge case tests pass; otherwise, false.</returns>
   static bool TestEdgeCases()
   {
-    Console.WriteLine("--- Edge Cases ---");
+    Console.WriteLine("--- ContentPropertiesTest Edge Cases ---");
     {
       var empty = new ContentProperties();
       string xml = SerializeToXml(empty);
-      var xmlDeserialized = DeserializeFromXml(xml);
+      var xmlDeserialized = DeserializeFromXml<ContentProperties>(xml);
       if (xmlDeserialized == null)
       {
-        Console.WriteLine("✗ Edge Cases: XML deserialization of empty object failed");
+        Console.WriteLine("✗ ContentPropertiesTest Edge Cases: XML deserialization of empty object failed");
         return false;
       }
       string json = SerializeToJson(empty);
-      var jsonDeserialized = DeserializeFromJson(json);
+      var jsonDeserialized = DeserializeFromJson<ContentProperties>(json);
       if (jsonDeserialized == null)
       {
-        Console.WriteLine("✗ Edge Cases: JSON deserialization of empty object failed");
+        Console.WriteLine("✗ ContentPropertiesTest Edge Cases: JSON deserialization of empty object failed");
         return false;
       }
-      Console.WriteLine("✓ Edge case tests passed\n");
+      Console.WriteLine("✓ ContentPropertiesTest Edge case tests passed\n");
       return true;
     }
   }
@@ -125,24 +129,17 @@ public class ContentPropertiesTest: AbstractTestClass
   /// <returns>true if the test completes successfully; otherwise, false.</returns>
   static bool TestNewFromDocument()
   {
-    Console.WriteLine("--- New document content properties ---");
+    Console.WriteLine("--- ContentPropertiesTest New document content properties ---");
     {
       ContentProperties testData;
       using (var document = new Document(TestFileName, FileMode.CreateNew))
       {
         testData = document.ContentProperties;
       }
-      var xmlSerializer = new XmlSerializer(typeof(ContentProperties));
-      string xmlString;
-      using (var stringWriter = new StringWriter())
-      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-      {
-        xmlSerializer.Serialize(xmlWriter, testData);
-        xmlString = stringWriter.ToString();
-      }
-      Console.WriteLine("New document content properties:\n" + xmlString);
 
-      Console.WriteLine("✓ New document content properties test passed\n");
+      Console.WriteLine("New document content properties:\n" + GetDataXml(testData));
+
+      Console.WriteLine("✓ ContentPropertiesTest New document content properties test passed\n");
       return true;
     }
   }
@@ -156,7 +153,7 @@ public class ContentPropertiesTest: AbstractTestClass
   /// <returns>true if the document content properties are successfully stored and verified; otherwise, false.</returns>
   static bool TestStoreInDocument()
   {
-    Console.WriteLine("--- Store sample content properties in new document---");
+    Console.WriteLine("--- ContentPropertiesTest Store sample content properties in new document---");
     {
       ContentProperties testData = CreateSampleContentProperties(true);
       using (var document = new Document(TestFileName, FileMode.CreateNew))
@@ -164,26 +161,27 @@ public class ContentPropertiesTest: AbstractTestClass
         document.ContentProperties = testData;
       }
 
+      Console.WriteLine("✓ ContentPropertiesTest: ExtendedFileProperties stored in document:\n" + ExtendedFileProperties());
+
       ContentProperties storedData;
       using (var document = new Document(TestFileName))
       {
         storedData = document.ContentProperties;
       }
 
-      Console.WriteLine("content properties stored to new document and reloaded from it:\n" + GetDataXml(storedData));
+      Console.WriteLine("ContentPropertiesTest: Content properties stored to new document and reloaded from it:\n" + GetDataXml(storedData));
 
       if (!TestHelper.CompareTestData(testData, storedData, out var propName))
       {
-        Console.WriteLine($"✗ Store sample content properties test FAILED - data mismatch in property '{propName}'");
+        Console.WriteLine($"✗ ContentPropertiesTest Store sample content properties test FAILED - data mismatch in property '{propName}'");
         return false;
       }
 
-      Console.WriteLine("✓ Store sample content properties test passed\n");
+      Console.WriteLine("✓ ContentPropertiesTest Store sample content properties test passed\n");
       return true;
     }
   }
-
-
+  
   /// <summary>
   /// Tests updating the content properties of a document and outputs the result to the console.
   /// </summary>
@@ -193,7 +191,7 @@ public class ContentPropertiesTest: AbstractTestClass
   /// <returns>true if the document content properties are successfully updated and verified; otherwise, false.</returns>
   static bool TestUpdateInDocument()
   {
-    Console.WriteLine("--- Update document content properties ---");
+    Console.WriteLine("--- ContentPropertiesTest Update document content properties ---");
     {
       var testData = CreateSampleContentProperties(false);
       using (var document = new Document(TestFileName, FileMode.CreateNew))
@@ -204,25 +202,58 @@ public class ContentPropertiesTest: AbstractTestClass
         testData.Application = "Updated Application";
       }
 
+      Console.WriteLine("✓ ContentPropertiesTest: ExtendedFileProperties stored in document:\n" + ExtendedFileProperties());
+
       ContentProperties storedData;
       using (var document = new Document(TestFileName))
       {
         storedData = document.ContentProperties;
       }
 
-      Console.WriteLine("Updated document content properties:\n" + GetDataXml(storedData));
+      Console.WriteLine("ContentPropertiesTest: Updated document content properties:\n" + GetDataXml(storedData));
 
       if (!TestHelper.CompareTestData(testData, storedData, out var propName))
       {
-        Console.WriteLine($"✗ Updated document content properties test FAILED - data mismatch in property '{propName}'");
+        Console.WriteLine($"✗ ContentPropertiesTest Updated document content properties test FAILED - data mismatch in property '{propName}'");
         return false;
       }
 
-      Console.WriteLine("✓ Updated document content properties test passed\n");
+      Console.WriteLine("✓ ContentPropertiesTest Updated document content properties test passed\n");
       return true;
     }
   }
 
+  /// <summary>
+  /// Tests storing sample content properties as built-into a new document and verifies that they are correctly saved and reloaded.
+  /// </summary>
+  /// <returns>true if the document content properties are successfully stored and verified; otherwise, false.</returns>
+  static bool TestStoreBuiltInProperties()
+  {
+    Console.WriteLine("--- ContentPropertiesTest Store sample content properties in new document---");
+    {
+      ContentProperties testData = CreateSampleContentProperties(true);
+      using (var document = new Document(TestFileName, FileMode.CreateNew))
+      {
+        foreach (var prop in ContentProperties.KnownProperties)
+        {
+          var propInfo = typeof(ContentProperties).GetProperty(prop.Key);
+          if (propInfo != null && propInfo.GetCustomAttribute<BuiltInPropertyAttribute>()!=null)
+          {
+            var value = propInfo.GetValue(testData);
+            if (value != null)
+            {
+              document.BuiltInDocumentProperties[prop.Key].Value = value;
+            }
+          }
+        }
+      }
+
+      Console.WriteLine("✓ ContentPropertiesTest: ExtendedFileProperties stored in document:\n" + ExtendedFileProperties());
+
+      Console.WriteLine("✓ ContentPropertiesTest Store sample content properties test passed\n");
+      return true;
+    }
+  }
 
   /// <summary>
   /// Creates a sample <see cref="ContentProperties"/> instance for testing.
@@ -269,55 +300,21 @@ public class ContentPropertiesTest: AbstractTestClass
     return props;
   }
 
+
   /// <summary>
-  /// Serializes a <see cref="ContentProperties"/> instance to XML.
+  /// Retrieves the formatted XML content of the content properties part from a WordprocessingML document.
   /// </summary>
-  /// <param name="props">The <see cref="ContentProperties"/> instance to serialize.</param>
-  /// <returns>XML string representation.</returns>
-  static string SerializeToXml(ContentProperties props)
+  /// <remarks>The method opens the file TestFileName in read-only mode and accesses its content properties part.
+  /// The returned XML is formatted with line numbers for readability. If the document does not contain a content
+  /// properties part, the method returns null.</remarks>
+  /// <returns>A string containing the formatted XML with line numbers from the content properties part if it exists; otherwise,
+  /// null.</returns>
+  public static string? ExtendedFileProperties()
   {
-    var xmlSerializer = new XmlSerializer(typeof(ContentProperties));
-    using (var stringWriter = new StringWriter())
-    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+    using (var wordDoc = WordprocessingDocument.Open(TestFileName, false))
     {
-      xmlSerializer.Serialize(xmlWriter, props);
-      return stringWriter.ToString();
+      return GetPartXml(wordDoc.ExtendedFilePropertiesPart);
     }
   }
 
-  /// <summary>
-  /// Deserializes a <see cref="ContentProperties"/> instance from XML.
-  /// </summary>
-  /// <param name="xml">The XML string to deserialize.</param>
-  /// <returns>The deserialized <see cref="ContentProperties"/> instance.</returns>
-  static ContentProperties? DeserializeFromXml(string xml)
-  {
-    var xmlSerializer = new XmlSerializer(typeof(ContentProperties));
-    using (var stringReader = new StringReader(xml))
-    {
-      return (ContentProperties?)xmlSerializer.Deserialize(stringReader);
-    }
-  }
-
-  /// <summary>
-  /// Serializes a <see cref="ContentProperties"/> instance to JSON.
-  /// </summary>
-  /// <param name="props">The <see cref="ContentProperties"/> instance to serialize.</param>
-  /// <returns>JSON string representation.</returns>
-  static string SerializeToJson(ContentProperties props)
-  {
-    var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-    return JsonSerializer.Serialize(props, jsonOptions);
-  }
-
-  /// <summary>
-  /// Deserializes a <see cref="ContentProperties"/> instance from JSON.
-  /// </summary>
-  /// <param name="json">The JSON string to deserialize.</param>
-  /// <returns>The deserialized <see cref="ContentProperties"/> instance.</returns>
-  static ContentProperties? DeserializeFromJson(string json)
-  {
-    var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-    return JsonSerializer.Deserialize<ContentProperties>(json, jsonOptions);
-  }
 }

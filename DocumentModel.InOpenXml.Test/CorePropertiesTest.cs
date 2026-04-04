@@ -118,14 +118,14 @@ public class CorePropertiesTest: AbstractTestClass
     {
       var empty = new CoreProperties();
       string xml = SerializeToXml(empty);
-      var xmlDeserialized = DeserializeFromXml(xml);
+      var xmlDeserialized = DeserializeFromXml<CoreProperties>(xml);
       if (xmlDeserialized == null)
       {
         Console.WriteLine("✗ CorePropertiesTest Edge Cases: XML deserialization of empty object failed");
         return false;
       }
       string json = SerializeToJson(empty);
-      var jsonDeserialized = DeserializeFromJson(json);
+      var jsonDeserialized = DeserializeFromJson<CoreProperties>(json);
       if (jsonDeserialized == null)
       {
         Console.WriteLine("✗ CorePropertiesTest Edge Cases: JSON deserialization of empty object failed");
@@ -355,59 +355,6 @@ public class CorePropertiesTest: AbstractTestClass
     }
   }
 
-  /// <summary>
-  /// Serializes the specified CoreProperties object to its XML representation.
-  /// </summary>
-  /// <param name="props">The CoreProperties instance to serialize. Cannot be null.</param>
-  /// <returns>A string containing the XML representation of the specified CoreProperties object.</returns>
-  static string SerializeToXml(CoreProperties props)
-  {
-    var xmlSerializer = new XmlSerializer(typeof(CoreProperties));
-    using (var stringWriter = new StringWriter())
-    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-    {
-      xmlSerializer.Serialize(xmlWriter, props);
-      return stringWriter.ToString();
-    }
-  }
-
-  /// <summary>
-  /// Deserializes a string containing XML data into a <see cref="CoreProperties"/> object.
-  /// </summary>
-  /// <param name="xml">A string that contains the XML representation of a <see cref="CoreProperties"/> object. Cannot be null.</param>
-  /// <returns>A <see cref="CoreProperties"/> object deserialized from the specified XML string, or <see langword="null"/> if
-  /// the XML does not represent a valid <see cref="CoreProperties"/> object.</returns>
-  static CoreProperties? DeserializeFromXml(string xml)
-  {
-    var xmlSerializer = new XmlSerializer(typeof(CoreProperties));
-    using (var stringReader = new StringReader(xml))
-    {
-      return (CoreProperties?)xmlSerializer.Deserialize(stringReader);
-    }
-  }
-
-  /// <summary>
-  /// Serializes the specified CoreProperties object to a formatted JSON string.
-  /// </summary>
-  /// <param name="props">The CoreProperties instance to serialize. Cannot be null.</param>
-  /// <returns>A JSON-formatted string that represents the specified CoreProperties object.</returns>
-  static string SerializeToJson(CoreProperties props)
-  {
-    var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-    return JsonSerializer.Serialize(props, jsonOptions);
-  }
-
-  /// <summary>
-  /// Deserializes the specified JSON string into a CoreProperties object.
-  /// </summary>
-  /// <param name="json">A JSON-formatted string representing the CoreProperties object to deserialize. Cannot be null or empty.</param>
-  /// <returns>A CoreProperties object deserialized from the JSON string, or null if the input is invalid or deserialization
-  /// fails.</returns>
-  static CoreProperties? DeserializeFromJson(string json)
-  {
-    var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-    return JsonSerializer.Deserialize<CoreProperties>(json, jsonOptions);
-  }
 
 
 }
