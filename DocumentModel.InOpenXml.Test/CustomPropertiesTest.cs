@@ -310,7 +310,7 @@ namespace DocumentModel.InOpenXml.Test
       {
         var outerXml = wordDoc.CustomFilePropertiesPart?.RootElement?.OuterXml;
         outerXml = outerXml?.FormatXmlWithLineNumbers();
-        Console.WriteLine("✓ CustomProperties Test: custom properties stored in document:\n" + outerXml);
+        Console.WriteLine("✓ ICustomProperties Test: custom properties stored in document:\n" + outerXml);
       }
 
       ICustomProperties storedData;

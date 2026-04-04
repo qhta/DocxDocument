@@ -2,12 +2,12 @@ namespace DocumentModel;
 /// <summary>
 ///   Abstract document Property.
 /// </summary>
-public abstract partial class DocumentProperty : NamedModelElement
+public partial class DocumentProperty : NamedModelElement
 {
   /// <summary>
   /// Default constructor needed for serialization.
   /// </summary>
-  protected DocumentProperty() { }
+  public DocumentProperty() { }
 
   /// <summary>
   ///   Value of the property

@@ -16,6 +16,9 @@
   <ItemGroup>
     <Compile Remove="**\*.Methods.cs" />
     <Compile Remove="**\*.Imp.cs" />
+    <Compile Remove="VariantTypes\Enums\**" />
+    <EmbeddedResource Remove="VariantTypes\Enums\**" />
+    <None Remove="VariantTypes\Enums\**" />
 
   </ItemGroup>
   <ItemGroup>
@@ -24,8 +27,8 @@
   <ItemGroup>
     <Compile Include="..\NamespaceMappings\OpenXmlUsings.cs" Link="OpenXmlUsings.cs" />
     <Compile Include="Base classes\ModelElement%28T%29.Imp.cs" />
-    <Compile Include="Common properties\BuiltInDocumentProperties.Imp.cs" />
-    <Compile Include="Common properties\BuiltInDocumentProperty.Imp.cs" />
+    <Compile Include="Common properties\BuiltInProperties.Imp.cs" />
+    <Compile Include="Common properties\BuiltInProperty.Imp.cs" />
     <Compile Include="Common properties\CustomProperties.Imp.cs" />
     <Compile Include="Common properties\CustomProperty.Imp.cs" />
     <Compile Include="Wordprocessing\Document\Document.Imp.cs" />
@@ -42,8 +45,5 @@
     <ProjectReference Include="..\DocumentModel.BaseTypes\DocumentModel.BaseTypes.csproj" />
     <ProjectReference Include="..\DocumentModel.EnumTypes\DocumentModel.EnumTypes.csproj" />
     <ProjectReference Include="..\DocumentModel.Interfaces\DocumentModel.Interfaces.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="VariantTypes\Enums\" />
   </ItemGroup>
 </Project>

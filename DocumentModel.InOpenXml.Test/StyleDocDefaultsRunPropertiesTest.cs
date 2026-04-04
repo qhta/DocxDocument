@@ -99,14 +99,14 @@ namespace DocumentModel.InOpenXml.Test
       var xmlDeserialized = DeserializeFromXml(xml);
       if (xmlDeserialized == null)
       {
-        Console.WriteLine("✗ Edge case: XML deserialization of empty object failed");
+        Console.WriteLine("✗ Edge Cases: XML deserialization of empty object failed");
         return false;
       }
       string json = SerializeToJson(empty);
       var jsonDeserialized = DeserializeFromJson(json);
       if (jsonDeserialized == null)
       {
-        Console.WriteLine("✗ Edge case: JSON deserialization of empty object failed");
+        Console.WriteLine("✗ Edge Cases: JSON deserialization of empty object failed");
         return false;
       }
       Console.WriteLine("✓ Edge case tests passed\n");

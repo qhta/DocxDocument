@@ -72,7 +72,17 @@ public partial class Document: IDocument
   /// Returns a DocumentProperties collection that represents all the built-in document properties for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.builtindocumentproperties?view=word-pia"/>
-  public DMP.IDocumentProperties? BuiltInDocumentProperties => throw new NotImplementedException();
+  public DMP.IDocumentProperties BuiltInDocumentProperties
+  {
+    get
+    {
+      if (_BuiltInDocumentProperties == null)
+        _BuiltInDocumentProperties = new BuiltInProperties(this);
+      return _BuiltInDocumentProperties;
+    }
+  }
+
+  private DMP.IDocumentProperties? _BuiltInDocumentProperties;
 
   /// <summary>
   /// Returns a Characters collection that represents the characters in a document.

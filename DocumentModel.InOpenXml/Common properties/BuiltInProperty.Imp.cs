@@ -1,6 +1,6 @@
 namespace DocumentModel;
 
-public partial class BuiltInDocumentProperty : DMP.IDocumentProperty
+public partial class BuiltInProperty : DMP.IDocumentProperty
 {
   /// <summary>
   /// Name of the custom document property. If not set, it defaults to an empty string.
@@ -17,7 +17,7 @@ public partial class BuiltInDocumentProperty : DMP.IDocumentProperty
   object? DMP.IDocumentProperty.Value
   {
     get => this.Value;
-    set => this.Value = (value as Variant) ?? new Variant(value);
+    set => this.Value = value;
   }
   /// <summary>
   /// Expected value type. According to the documentation, this property can be of any type.

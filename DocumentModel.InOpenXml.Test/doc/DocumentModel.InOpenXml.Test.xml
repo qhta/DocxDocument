@@ -660,30 +660,39 @@
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.TestNewFromDocument">
             <summary>
-            Tests the creation and serialization of core properties for a new document.
+            Tests the creation and serialization of properties for a new document.
             </summary>
-            <remarks>This method creates a new document, retrieves its core properties, serializes them to XML,
+            <remarks>This method creates a new document, retrieves its properties, serializes them to XML,
             and outputs the result to the console. It is intended for diagnostic or verification purposes and writes status
             messages to the console.</remarks>
             <returns>true if the test completes successfully; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.TestStoreInDocument">
             <summary>
-            Tests setting sample core properties to a new document and outputs the result to the console.
+            Tests setting sample properties to a new document and outputs the result to the console.
             </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document core properties can
+            <remarks>This method is intended for use in test scenarios to verify that document properties can
             be set and serialized correctly. It writes status messages and the serialized properties to the console for
             inspection.</remarks>
-            <returns>true if the document core properties are successfully stored and verified; otherwise, false.</returns>
+            <returns>true if the document properties are successfully stored and verified; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.TestUpdateInDocument">
             <summary>
-            Tests updating the core properties of a document and outputs the result to the console.
+            Tests updating the properties of a document and outputs the result to the console.
             </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document core properties can
+            <remarks>This method is intended for use in test scenarios to verify that document properties can
             be set and serialized correctly. It writes status messages and the serialized properties to the console for
             inspection.</remarks>
-            <returns>true if the document core properties are successfully updated and verified; otherwise, false.</returns>
+            <returns>true if the document properties are successfully updated and verified; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.TestStoreBuiltInProperties">
+            <summary>
+            Tests setting sample Built-in properties to a new document and outputs the result to the console.
+            </summary>
+            <remarks>This method is intended for use in test scenarios to verify that document properties can
+            be set and serialized correctly. It writes status messages and the serialized properties to the console for
+            inspection.</remarks>
+            <returns>true if the document properties are successfully stored and verified; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.CreateSampleCoreProperties">
             <summary>
@@ -694,7 +703,16 @@
             tests or as a template for document property configuration. The associated document is created in a temporary
             file and disposed after the properties are initialized.</remarks>
             <returns>A CoreProperties object initialized with example document metadata such as title, subject, creator, and other
-            core properties.</returns>
+            properties.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.PrintCorePropertiesPart">
+            <summary>
+            Prints the core file properties part of a Wordprocessing document to the console in a formatted XML view with
+            line numbers.
+            </summary>
+            <remarks>This method opens a file named "temp.docx" in read-only mode, retrieves its core file
+            properties part, and outputs the XML content with line numbers to the console. The method is primarily intended
+            for diagnostic or testing purposes to inspect the built-in document properties stored in the file.</remarks>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.SerializeToXml(DocumentModel.CoreProperties)">
             <summary>

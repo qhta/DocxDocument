@@ -3,12 +3,12 @@ namespace DocumentModel;
 /// <summary>
 ///   Abstract document Property.
 /// </summary>
-public partial class BuiltInDocumentProperty: DocumentProperty, DMP.IDocumentProperty
+public partial class BuiltInProperty: DocumentProperty, DMP.IDocumentProperty
 {
   /// <summary>
   /// Default constructor needed for serialization.
   /// </summary>
-  public BuiltInDocumentProperty()
+  public BuiltInProperty()
   {
   }
 
@@ -28,7 +28,17 @@ public partial class BuiltInDocumentProperty: DocumentProperty, DMP.IDocumentPro
   public override object? Value
   {
     get => PropertyInfo.GetValue(BaseObject);
-    set => PropertyInfo.SetValue(BaseObject, value);
+    set
+    {
+      try
+      {
+        PropertyInfo.SetValue(BaseObject, value); //(value as Variant) ?? new Variant(value));
+      }
+      catch (Exception e)
+      {
+        throw new InvalidOperationException($"Failed to set the value of the built-in property '{PropertyInfo.Name}'.", e);
+      }
+    }
   }
 
   /// <summary>

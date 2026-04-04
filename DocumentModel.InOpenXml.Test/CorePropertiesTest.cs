@@ -1,5 +1,8 @@
-﻿namespace DocumentModel.InOpenXml.Test
+﻿using DocumentFormat.OpenXml.Packaging;
+
+namespace DocumentModel.InOpenXml.Test
 {
+
   /// <summary>
   /// Comprehensive test for DocumentModel.CoreProperties.
   /// </summary>
@@ -11,15 +14,17 @@
     /// <returns>true if all CoreProperties serialization tests pass; otherwise, false.</returns>
     public static bool Run()
     {
-      Console.WriteLine("=== CoreProperties Test ===\n");
+      Console.WriteLine("=== CorePropertiesTest ===\n");
       if (!TestXmlSerialization()) return false;
       if (!TestJsonSerialization()) return false;
       if (!TestEdgeCases()) return false;
       if (!TestNewFromDocument()) return false;
       if (!TestStoreInDocument()) return false;
       if (!TestUpdateInDocument()) return false;
+      if (!TestStoreBuiltInProperties()) return false;
 
-      Console.WriteLine("All CoreProperties tests passed.\n");
+
+      Console.WriteLine("All CorePropertiesTest passed.\n");
       return true;
     }
 
@@ -33,37 +38,36 @@
     /// <returns>true if the CoreProperties object is correctly serialized and deserialized without data loss; otherwise, false.</returns>
     static bool TestXmlSerialization()
     {
-      Console.WriteLine("--- XML Serialization ---");
+      Console.WriteLine("--- CorePropertiesTest XML Serialization ---");
       var testData = CreateSampleCoreProperties();
+      var xmlSerializer = new XmlSerializer(typeof(CoreProperties));
+      string xmlString;
+      using (var stringWriter = new StringWriter())
+      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
       {
-        var xmlSerializer = new XmlSerializer(typeof(CoreProperties));
-        string xmlString;
-        using (var stringWriter = new StringWriter())
-        using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-        {
-          xmlSerializer.Serialize(xmlWriter, testData);
-          xmlString = stringWriter.ToString();
-        }
-        Console.WriteLine("Serialized XML:\n" + xmlString);
-
-        CoreProperties? deserialized;
-        using (var stringReader = new StringReader(xmlString))
-        {
-          deserialized = (CoreProperties?)xmlSerializer.Deserialize(stringReader);
-        }
-        if (deserialized == null)
-        {
-          Console.WriteLine("✗ XML Deserialization returned null");
-          return false;
-        }
-        if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
-        {
-          Console.WriteLine($"✗ XML Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
-          return false;
-        }
-        Console.WriteLine("✓ XML Serialization/Deserialization test passed\n");
-        return true;
+        xmlSerializer.Serialize(xmlWriter, testData);
+        xmlString = stringWriter.ToString();
       }
+      Console.WriteLine("CorePropertiesTest Serialized XML:\n" + xmlString);
+
+      CoreProperties? deserialized;
+      using (var stringReader = new StringReader(xmlString))
+      {
+        deserialized = (CoreProperties?)xmlSerializer.Deserialize(stringReader);
+      }
+      if (deserialized == null)
+      {
+        Console.WriteLine("✗ CorePropertiesTest XML Deserialization returned null");
+        return false;
+      }
+      if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+      {
+        Console.WriteLine(
+          $"✗ CorePropertiesTest XML Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
+        return false;
+      }
+      Console.WriteLine("✓ CorePropertiesTest XML Serialization/Deserialization test passed\n");
+      return true;
     }
 
     /// <summary>
@@ -77,7 +81,7 @@
     /// otherwise, false.</returns>
     static bool TestJsonSerialization()
     {
-      Console.WriteLine("--- JSON Serialization ---");
+      Console.WriteLine("--- CorePropertiesTest JSON Serialization ---");
       var testData = CreateSampleCoreProperties();
       {
         var jsonOptions = JsonConfig.Options;
@@ -87,15 +91,16 @@
         var deserialized = JsonSerializer.Deserialize<CoreProperties>(jsonString, jsonOptions);
         if (deserialized == null)
         {
-          Console.WriteLine("✗ JSON Deserialization returned null");
+          Console.WriteLine("✗ CorePropertiesTest JSON Deserialization returned null");
           return false;
         }
         if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
         {
-          Console.WriteLine($"✗ JSON Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
+          Console.WriteLine(
+            $"✗ CorePropertiesTest JSON Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
           return false;
         }
-        Console.WriteLine("✓ JSON Serialization/Deserialization test passed\n");
+        Console.WriteLine("✓ CorePropertiesTest JSON Serialization/Deserialization test passed\n");
         return true;
       }
     }
@@ -109,38 +114,38 @@
     /// <returns>true if all edge case tests pass; otherwise, false.</returns>
     static bool TestEdgeCases()
     {
-      Console.WriteLine("--- Edge Cases ---");
+      Console.WriteLine("--- CorePropertiesTest Edge Cases ---");
       {
         var empty = new CoreProperties();
         string xml = SerializeToXml(empty);
         var xmlDeserialized = DeserializeFromXml(xml);
         if (xmlDeserialized == null)
         {
-          Console.WriteLine("✗ Edge case: XML deserialization of empty object failed");
+          Console.WriteLine("✗ CorePropertiesTest Edge Cases: XML deserialization of empty object failed");
           return false;
         }
         string json = SerializeToJson(empty);
         var jsonDeserialized = DeserializeFromJson(json);
         if (jsonDeserialized == null)
         {
-          Console.WriteLine("✗ Edge case: JSON deserialization of empty object failed");
+          Console.WriteLine("✗ CorePropertiesTest Edge Cases: JSON deserialization of empty object failed");
           return false;
         }
-        Console.WriteLine("✓ Edge case tests passed\n");
+        Console.WriteLine("✓ CorePropertiesTest Edge Cases tests passed\n");
         return true;
       }
     }
 
     /// <summary>
-    /// Tests the creation and serialization of core properties for a new document.
+    /// Tests the creation and serialization of properties for a new document.
     /// </summary>
-    /// <remarks>This method creates a new document, retrieves its core properties, serializes them to XML,
+    /// <remarks>This method creates a new document, retrieves its properties, serializes them to XML,
     /// and outputs the result to the console. It is intended for diagnostic or verification purposes and writes status
     /// messages to the console.</remarks>
     /// <returns>true if the test completes successfully; otherwise, false.</returns>
     static bool TestNewFromDocument()
     {
-      Console.WriteLine("--- New document core properties ---");
+      Console.WriteLine("--- CorePropertiesTest New document properties ---");
       {
         CoreProperties testData;
         using (var document = new Document("temp.docx", FileMode.CreateNew))
@@ -155,29 +160,31 @@
           xmlSerializer.Serialize(xmlWriter, testData);
           xmlString = stringWriter.ToString();
         }
-        Console.WriteLine("New document core properties:\n" + xmlString);
+        Console.WriteLine("CorePropertiesTest New document properties:\n" + xmlString);
 
-        Console.WriteLine("✓ New document core properties test passed\n");
+        Console.WriteLine("✓ CorePropertiesTest New document properties test passed\n");
         return true;
       }
     }
 
     /// <summary>
-    /// Tests setting sample core properties to a new document and outputs the result to the console.
+    /// Tests setting sample properties to a new document and outputs the result to the console.
     /// </summary>
-    /// <remarks>This method is intended for use in test scenarios to verify that document core properties can
+    /// <remarks>This method is intended for use in test scenarios to verify that document properties can
     /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
     /// inspection.</remarks>
-    /// <returns>true if the document core properties are successfully stored and verified; otherwise, false.</returns>
+    /// <returns>true if the document properties are successfully stored and verified; otherwise, false.</returns>
     static bool TestStoreInDocument()
     {
-      Console.WriteLine("--- Store sample core properties in new document---");
+      Console.WriteLine("--- CorePropertiesTest Store sample properties in new document---");
       {
         CoreProperties testData = CreateSampleCoreProperties();
         using (var document = new Document("temp.docx", FileMode.CreateNew))
         {
           document.CoreProperties = testData;
         }
+
+        PrintCorePropertiesPart();
 
         CoreProperties storedData;
         using (var document = new Document("temp.docx"))
@@ -193,30 +200,30 @@
           xmlSerializer.Serialize(xmlWriter, storedData);
           xmlString = stringWriter.ToString();
         }
-        Console.WriteLine("Core properties stored to new document and reloaded from it:\n" + xmlString);
+        Console.WriteLine("CorePropertiesTest Core properties stored to new document and reloaded from it:\n" + xmlString);
 
         if (!TestHelper.CompareTestData(testData, storedData, out var propName))
         {
-          Console.WriteLine($"✗ Store sample core properties test FAILED - data mismatch in property '{propName}'");
+          Console.WriteLine($"✗ CorePropertiesTest Store sample properties test FAILED - data mismatch in property '{propName}'");
           return false;
         }
 
-        Console.WriteLine("✓ Store sample core properties test passed\n");
+        Console.WriteLine("✓ CorePropertiesTest Store sample properties test passed\n");
         return true;
       }
     }
 
 
     /// <summary>
-    /// Tests updating the core properties of a document and outputs the result to the console.
+    /// Tests updating the properties of a document and outputs the result to the console.
     /// </summary>
-    /// <remarks>This method is intended for use in test scenarios to verify that document core properties can
+    /// <remarks>This method is intended for use in test scenarios to verify that document properties can
     /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
     /// inspection.</remarks>
-    /// <returns>true if the document core properties are successfully updated and verified; otherwise, false.</returns>
+    /// <returns>true if the document properties are successfully updated and verified; otherwise, false.</returns>
     static bool TestUpdateInDocument()
     {
-      Console.WriteLine("--- Update document core properties ---");
+      Console.WriteLine("--- CorePropertiesTest Update document properties ---");
       {
         CoreProperties testData = CreateSampleCoreProperties();
         using (var document = new Document("temp.docx", FileMode.CreateNew))
@@ -225,6 +232,8 @@
           document.CoreProperties.Title = "Updated Title";
         }
 
+        PrintCorePropertiesPart();
+
         CoreProperties storedData;
         using (var document = new Document("temp.docx"))
         {
@@ -239,16 +248,76 @@
           xmlSerializer.Serialize(xmlWriter, storedData);
           xmlString = stringWriter.ToString();
         }
-        Console.WriteLine("Updated document core properties:\n" + xmlString);
+        Console.WriteLine("CorePropertiesTest Updated document properties:\n" + xmlString);
 
         if (storedData.Title != "Updated Title")
         {
           var propName = "Title";
-          Console.WriteLine($"✗ Updated document core properties test FAILED - data mismatch in property '{propName}'");
+          Console.WriteLine($"✗ CorePropertiesTest Updated document properties test FAILED - data mismatch in property '{propName}'");
           return false;
         }
 
-        Console.WriteLine("✓ Updated document core properties test passed\n");
+        Console.WriteLine("✓CorePropertiesTest  Updated document properties test passed\n");
+        return true;
+      }
+    }
+
+
+    /// <summary>
+    /// Tests setting sample Built-in properties to a new document and outputs the result to the console.
+    /// </summary>
+    /// <remarks>This method is intended for use in test scenarios to verify that document properties can
+    /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
+    /// inspection.</remarks>
+    /// <returns>true if the document properties are successfully stored and verified; otherwise, false.</returns>
+    static bool TestStoreBuiltInProperties()
+    {
+      Console.WriteLine("--- CorePropertiesTest store built-in properties in new document---");
+      {
+        CoreProperties testData = CreateSampleCoreProperties();
+        using (var document = new Document("temp.docx", FileMode.CreateNew))
+        {
+          foreach (var prop in CoreProperties.KnownProperties)
+          {
+            var propInfo = typeof(CoreProperties).GetProperty(prop.Key);
+            if (propInfo != null)
+            {
+              var value = propInfo.GetValue(testData);
+              if (value != null)
+              {
+                document.BuiltInDocumentProperties[prop.Key].Value = value;
+              }
+            }
+          }
+          document.BuiltInDocumentProperties["Title"].Value += " Updated";
+        }
+        testData.Title += " Updated";
+
+        PrintCorePropertiesPart();
+
+        CoreProperties storedData;
+        using (var document = new Document("temp.docx"))
+        {
+          storedData = document.CoreProperties;
+        }
+
+        var xmlSerializer = new XmlSerializer(typeof(CoreProperties));
+        string xmlString;
+        using (var stringWriter = new StringWriter())
+        using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+        {
+          xmlSerializer.Serialize(xmlWriter, storedData);
+          xmlString = stringWriter.ToString();
+        }
+        Console.WriteLine("CorePropertiesTest store built-in properties stored to new document and reloaded from it:\n" + xmlString);
+
+        if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+        {
+          Console.WriteLine($"✗ CorePropertiesTest store built-in properties test FAILED - data mismatch in property '{propName}'");
+          return false;
+        }
+
+        Console.WriteLine("✓ CorePropertiesTest store built-in properties test passed\n");
         return true;
       }
     }
@@ -261,7 +330,7 @@
     /// tests or as a template for document property configuration. The associated document is created in a temporary
     /// file and disposed after the properties are initialized.</remarks>
     /// <returns>A CoreProperties object initialized with example document metadata such as title, subject, creator, and other
-    /// core properties.</returns>
+    /// properties.</returns>
     static CoreProperties CreateSampleCoreProperties()
     {
       var props = new CoreProperties()
@@ -286,6 +355,28 @@
       return props;
     }
 
+    /// <summary>
+    /// Prints the core file properties part of a Wordprocessing document to the console in a formatted XML view with
+    /// line numbers.
+    /// </summary>
+    /// <remarks>This method opens a file named "temp.docx" in read-only mode, retrieves its core file
+    /// properties part, and outputs the XML content with line numbers to the console. The method is primarily intended
+    /// for diagnostic or testing purposes to inspect the built-in document properties stored in the file.</remarks>
+    public static void PrintCorePropertiesPart()
+    {
+      using (var wordDoc = WordprocessingDocument.Open("temp.docx", false))
+      {
+        var coreFilePropertiesPart = wordDoc.CoreFilePropertiesPart;
+        if (coreFilePropertiesPart != null)
+        {
+          using var stream = coreFilePropertiesPart.GetStream(FileMode.Open, FileAccess.Read);
+          using var reader = new StreamReader(stream, System.Text.Encoding.UTF8);
+          var xml = reader.ReadToEnd();
+          var formattedXml = xml.FormatXmlWithLineNumbers();
+          Console.WriteLine("✓ BuiltInProperties Test: CoreFileProperties stored in document:\n" + formattedXml);
+        }
+      }
+    }
 
     /// <summary>
     /// Serializes the specified CoreProperties object to its XML representation.
@@ -340,5 +431,8 @@
       var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
       return JsonSerializer.Deserialize<CoreProperties>(json, jsonOptions);
     }
+
+
   }
+
 }

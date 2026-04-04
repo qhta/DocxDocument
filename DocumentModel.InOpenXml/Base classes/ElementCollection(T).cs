@@ -152,11 +152,14 @@ public abstract class ElementCollection<ItemType>: ModelElement, IElementCollect
     {
       if (Index is int intIndex)
         return this[intIndex];
+
       if (Index is string stringIndex && _index != null)
+      {
+        if (stringIndex == "Identifier") Debug.Assert(true);
         return _index.TryGetValue2(stringIndex, out var item)
           ? item
           : throw new KeyNotFoundException($"No item with name '{stringIndex}' found in the collection.");
-
+      }
       throw new NotSupportedException($"Invalid index type {Index.GetType()}.");
     }
     set

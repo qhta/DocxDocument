@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// Collection of all document properties that is divided to several parts: core properties, 
 /// content properties, and statistic properties. 
 /// </summary>
-public partial class BuiltInDocumentProperties : ModelElementCollection<BuiltInDocumentProperty>
+public partial class BuiltInProperties : ModelElementCollection<BuiltInProperty>
 {
   /// <summary>
   /// Provides access to the core properties of the document.
@@ -18,11 +18,12 @@ public partial class BuiltInDocumentProperties : ModelElementCollection<BuiltInD
   /// </summary>
   public StatisticProperties StatisticProperties { get; private set; }
 
+
   /// <summary>
   /// Initializing constructor. Initializes the properties based on the provided document.
   /// </summary>
   /// <param name="document">The document from which to initialize the properties.</param>
-  public BuiltInDocumentProperties(DMW.Document document)
+  public BuiltInProperties(DMW.Document document)
   {
     CoreProperties = document.CoreProperties;
     foreach (var property in CoreProperties.KnownProperties.Values)
@@ -46,13 +47,16 @@ public partial class BuiltInDocumentProperties : ModelElementCollection<BuiltInD
     var builtInAttribute = propertyInfo.GetCustomAttribute<BuiltInPropertyAttribute>();
     if (builtInAttribute != null)
     {
-      var DocumentProperty = new BuiltInDocumentProperty
+      var DocumentProperty = new BuiltInProperty
       {
         BaseObject = baseObject,
         PropertyInfo = propertyInfo,
         Name = propertyInfo.Name,
-        Type = propertyInfo.PropertyType,
       };
+      if (DocumentProperty.Type != propertyInfo.PropertyType)
+        throw new InvalidOperationException("Property type mismatch.");
+      Add(DocumentProperty);
     }
   }
+
 }

@@ -1,4 +1,5 @@
 ﻿namespace DocumentModel;
+
 /// <summary>
 /// Provides helper methods for creating and manipulating Wordprocessing documents using OpenXml.
 /// </summary>
@@ -22,6 +23,7 @@ public static class WordprocessingHelper
     }
     return wordDocument;
   }
+
   /// <summary>
   /// Opens an existing Wordprocessing document at the specified file path.
   /// </summary>
@@ -47,6 +49,7 @@ public static class WordprocessingHelper
     InitWordprocessingDocument(wordDocument);
     return wordDocument;
   }
+
   /// <summary>
   /// Initializes the specified WordprocessingDocument by ensuring that the main document part, root document, and body
   /// are present.
@@ -63,6 +66,7 @@ public static class WordprocessingHelper
     var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
     var body = document.Body ?? (document.Body = document.AppendChild(new DXW.Body()));
   }
+
   /// <summary>
   /// Creates a new document from a template file, copying the template and initializing the document structure.
   /// </summary>
@@ -77,13 +81,16 @@ public static class WordprocessingHelper
     {
       File.Delete(documentFilename);
     }
+
     // Copy the template to the output file name.
     File.Copy(templateFilename, documentFilename);
+
     // Now open the copied file
     using (var wordDocument = DXPP.WordprocessingDocument.Open(documentFilename, true))
     {
       // We need to change the file type from template to document.
       wordDocument.ChangeDocumentType(DX.WordprocessingDocumentType.Document);
+
       // MainDocumentPart, root Document and Body already exist just access them
       var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
       var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
@@ -91,6 +98,7 @@ public static class WordprocessingHelper
       document.Save();
     }
   }
+
   /// <summary>
   /// Ensures that the Wordprocessing document is initialized with required parts and properties.
   /// </summary>
@@ -103,6 +111,7 @@ public static class WordprocessingHelper
     var contentProperties = wordDocument.ExtendedFilePropertiesPart ?? wordDocument.AddExtendedFilePropertiesPart();
     var body = document.Body ?? (document.Body = document.AppendChild(new DXW.Body()));
   }
+
   /// <summary>
   /// Retrieves the main document part of the specified Document, creating it if it does not already
   /// exist.
@@ -125,13 +134,58 @@ public static class WordprocessingHelper
   /// <param name="wordDocument">The Document instance.</param>
   /// <returns>The package properties class.</returns>
   public static DXPP.IPackageProperties GetPackageProperties(this DXPP.WordprocessingDocument wordDocument)
-#pragma warning restore OOXML0001
   {
     var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
     var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
     var properties = mainPart.OpenXmlPackage.PackageProperties;
     return properties;
   }
+
+  /// <summary>
+  /// Retrieves the core file properties for the specified Wordprocessing document.
+  /// </summary>
+  /// <param name="wordDocument">The Document instance.</param>
+  /// <returns>The core file properties class.</returns>
+  public static Qhta.OpenXMLTools.CoreFileProperties GetCoreProperties(this DXPP.WordprocessingDocument wordDocument)
+  {
+    var coreFilePropertiesPart = wordDocument.CoreFilePropertiesPart ?? wordDocument.AddCoreFilePropertiesPart();
+    var properties = coreFilePropertiesPart.RootElement as Qhta.OpenXMLTools.CoreFileProperties;
+    if (properties == null)
+    {
+      properties = new Qhta.OpenXMLTools.CoreFileProperties();
+      using var stream = coreFilePropertiesPart.GetStream(FileMode.Create, FileAccess.Write);
+      using var writer = new StreamWriter(stream, System.Text.Encoding.UTF8);
+      writer.Write("<cp:coreProperties xmlns:cp=\"http://schemas.openxmlformats.org/package/2006/metadata/core-properties\" " +
+                   "xmlns:dc=\"http://purl.org/dc/elements/1.1/\" " +
+                   "xmlns:dcterms=\"http://purl.org/dc/terms/\" " +
+                   "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\" " +
+                   "xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">" +
+                   "</cp:coreProperties>");
+    }
+    return properties;
+
+  }
+  /// <summary>
+  /// Sets the core file properties for the specified WordprocessingDocument using the provided core properties object.
+  /// </summary>
+  /// <remarks>This method creates or replaces the core properties part of the document with the specified
+  /// values. Existing core properties will be overwritten.</remarks>
+  /// <param name="wordDocument">The WordprocessingDocument to update with new core file properties.</param>
+  /// <param name="coreProperties">The core file properties to apply to the document.</param>
+  public static void SetCoreProperties
+    (this DXPP.WordprocessingDocument wordDocument, Qhta.OpenXMLTools.CoreFileProperties coreProperties)
+  {
+    var coreFilePropertiesPart = wordDocument.CoreFilePropertiesPart ?? wordDocument.AddCoreFilePropertiesPart();
+    using var stream = coreFilePropertiesPart.GetStream(FileMode.Create, FileAccess.Write);
+    using var writer = new StreamWriter(stream, System.Text.Encoding.UTF8);
+    writer.Write("<cp:coreProperties xmlns:cp=\"http://schemas.openxmlformats.org/package/2006/metadata/core-properties\" " +
+                  "xmlns:dc=\"http://purl.org/dc/elements/1.1/\" " +
+                  "xmlns:dcterms=\"http://purl.org/dc/terms/\" " +
+                  "xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\" " +
+                  "xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">" +
+                  "</cp:coreProperties>");
+  }
+
   /// <summary>
   /// Retrieves the extended file properties for the specified Wordprocessing document, creating it if necessary.
   /// </summary>
@@ -141,10 +195,12 @@ public static class WordprocessingHelper
   {
     var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
     var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
-    DXPP.ExtendedFilePropertiesPart part = wordDocument.ExtendedFilePropertiesPart ?? wordDocument.AddExtendedFilePropertiesPart();
+    DXPP.ExtendedFilePropertiesPart part = wordDocument.ExtendedFilePropertiesPart ??
+                                           wordDocument.AddExtendedFilePropertiesPart();
     var properties = part.Properties ?? (part.Properties = new DXEP.Properties());
     return properties;
   }
+
   /// <summary>
   /// Retrieves the custom file properties for the specified Wordprocessing document, creating it if necessary.
   /// </summary>
@@ -154,10 +210,12 @@ public static class WordprocessingHelper
   {
     var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
     var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
-    DXPP.CustomFilePropertiesPart part = wordDocument.CustomFilePropertiesPart ?? wordDocument.AddCustomFilePropertiesPart();
+    DXPP.CustomFilePropertiesPart part = wordDocument.CustomFilePropertiesPart ??
+                                         wordDocument.AddCustomFilePropertiesPart();
     var properties = part.Properties ?? (part.Properties = new DXCP.Properties());
     return properties;
   }
+
   /// <summary>
   /// Retrieves the document settings for the specified Wordprocessing document, creating it if necessary.
   /// </summary>
@@ -171,6 +229,7 @@ public static class WordprocessingHelper
     var settings = part.Settings ?? (part.Settings = new DXW.Settings());
     return settings;
   }
+
   /// <summary>
   /// Retrieves the reference relationship with the specified relationship ID from the main document part of the given
   /// Document.
@@ -181,12 +240,14 @@ public static class WordprocessingHelper
   /// <param name="relationshipId">The unique identifier of the relationship to retrieve from the main document part. Cannot be null or empty.</param>
   /// <returns>A ReferenceRelationship object representing the relationship with the specified ID, or null if no such
   /// relationship exists.</returns>
-  public static DXPP.ReferenceRelationship GetMainDocumentPartRelationship(this DXPP.WordprocessingDocument wordDocument, string relationshipId)
+  public static DXPP.ReferenceRelationship GetMainDocumentPartRelationship
+    (this DXPP.WordprocessingDocument wordDocument, string relationshipId)
   {
     var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
     var relationship = mainPart.GetReferenceRelationship(relationshipId);
     return relationship;
   }
+
   /// <summary>
   /// Retrieves the external relationship with the specified relationship ID from the main document part of the given
   /// Document.
@@ -198,12 +259,14 @@ public static class WordprocessingHelper
   /// <param name="relationshipId">The unique identifier of the external relationship to retrieve. Cannot be null or empty.</param>
   /// <returns>The ExternalRelationship object associated with the specified relationship ID, or null if no such relationship
   /// exists.</returns>
-  public static DXPP.ExternalRelationship GetMainDocumentPartExternalRelationship(this DXPP.WordprocessingDocument wordDocument, string relationshipId)
+  public static DXPP.ExternalRelationship GetMainDocumentPartExternalRelationship
+    (this DXPP.WordprocessingDocument wordDocument, string relationshipId)
   {
     var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
     var relationship = mainPart.GetExternalRelationship(relationshipId);
     return relationship;
   }
+
   /// <summary>
   /// Creates an external relationship for the main document part of the specified Document using the
   /// given relationship ID and target URI.
@@ -214,12 +277,14 @@ public static class WordprocessingHelper
   /// <param name="relationshipId">The unique identifier for the external relationship to create. Must not be null or empty.</param>
   /// <param name="uri">The target URI of the external resource to associate with the main document part. Must be a valid URI string.</param>
   /// <returns>An ExternalRelationship object representing the newly created external relationship for the main document part.</returns>
-  public static DXPP.ExternalRelationship CreateMainDocumentPartExternalRelationship(this DXPP.WordprocessingDocument wordDocument, string relationshipId, string uri)
+  public static DXPP.ExternalRelationship CreateMainDocumentPartExternalRelationship
+    (this DXPP.WordprocessingDocument wordDocument, string relationshipId, string uri)
   {
     var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
     var relationship = mainPart.AddExternalRelationship(relationshipId, new Uri(uri));
     return relationship;
   }
+
   /// <summary>
   /// Gets the OpenXmlPart associated with the specified OpenXmlElement, if available.
   /// </summary>
@@ -234,6 +299,7 @@ public static class WordprocessingHelper
     }
     return null;
   }
+
   /// <summary>
   /// Gets the root element of the OpenXmlElement, which is the topmost ancestor in the element hierarchy.
   /// </summary>
@@ -248,6 +314,7 @@ public static class WordprocessingHelper
     }
     return current;
   }
+
   /// <summary>
   /// Gets the WordprocessingDocument that contains the specified OpenXmlElement.
   /// </summary>
@@ -293,6 +360,7 @@ public static class WordprocessingHelper
     var Styles = part.Styles ?? (part.Styles = new DXW.Styles());
     return Styles;
   }
+
   /// <summary>
   /// Retrieves the Numbering element for the specified Wordprocessing document, creating it if necessary.
   /// </summary>
@@ -302,7 +370,8 @@ public static class WordprocessingHelper
   {
     var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
     var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
-    DXPP.NumberingDefinitionsPart part = mainPart.NumberingDefinitionsPart ?? mainPart.AddNewPart<DXPP.NumberingDefinitionsPart>();
+    DXPP.NumberingDefinitionsPart part = mainPart.NumberingDefinitionsPart ??
+                                         mainPart.AddNewPart<DXPP.NumberingDefinitionsPart>();
     var Numbering = part.Numbering ?? (part.Numbering = new DXW.Numbering());
     return Numbering;
   }

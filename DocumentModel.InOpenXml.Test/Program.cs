@@ -12,11 +12,13 @@ internal class Program
     Console.WriteLine("╚═════════════════════════════════════════════╝");
     Console.WriteLine();
     if (!Exec(ElementCollectionTest.Run)) return;
-    if (!Exec(CustomPropertiesTest.Run)) return;
-
-    //if (!Exec(CorePropertiesTest.Run)) return;
+    if (!Exec(CorePropertiesTest.Run)) return;
     //if (!Exec(ContentPropertiesTest.Run)) return;
-    //if (!Exec(StatisticPropertiesTest.Run)) return;
+    //if (!Exec(StatisticPropertiesTest.Run)) return
+    //if (!Exec(CustomPropertiesTest.Run)) return;
+    //if (!Exec(BuiltInPropertiesTest.Run)) return;
+
+;
     //if (!Exec(DocumentSettingsTest.Run)) return;
     //if (!Exec(RsidsTest.Run)) return;
     //if (!Exec(DocumentVariablesTest.Run)) return;
