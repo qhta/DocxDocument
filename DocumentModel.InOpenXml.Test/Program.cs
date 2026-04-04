@@ -14,7 +14,7 @@ internal class Program
     if (!Exec(ElementCollectionTest.Run)) return;
     if (!Exec(CorePropertiesTest.Run)) return;
     if (!Exec(ContentPropertiesTest.Run)) return;
-    //if (!Exec(StatisticPropertiesTest.Run)) return
+    if (!Exec(StatisticPropertiesTest.Run)) return;
     //if (!Exec(CustomPropertiesTest.Run)) return;
     //if (!Exec(BuiltInPropertiesTest.Run)) return;
 

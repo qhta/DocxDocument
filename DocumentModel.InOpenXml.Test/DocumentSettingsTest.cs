@@ -3,7 +3,7 @@
   /// <summary>
   /// Provides comprehensive serialization tests for <see cref="DocumentSettings"/>.
   /// </summary>
-  public class DocumentSettingsTest: AbstractTestClass
+  public class DocumentSettingsTest: _AbstractTestClass
   {
     /// <summary>
     /// Runs all serialization tests for the <see cref="DocumentSettings"/> class and reports the results to the console.

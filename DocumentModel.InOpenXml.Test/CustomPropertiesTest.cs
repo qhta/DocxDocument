@@ -9,7 +9,7 @@ namespace DocumentModel.InOpenXml.Test;
 /// <summary>
 /// Comprehensive test for DocumentModel.CustomProperties.
 /// </summary>
-public class CustomPropertiesTest: AbstractTestClass
+public class CustomPropertiesTest: _AbstractTestClass
 {
 
   /// <summary>

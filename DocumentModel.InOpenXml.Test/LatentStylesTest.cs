@@ -3,7 +3,7 @@
 /// <summary>
 /// Comprehensive test for DocumentModel.Styles.
 /// </summary>
-public class LatentStylesTest: AbstractTestClass
+public class LatentStylesTest: _AbstractTestClass
 {
   /// <summary>
   /// Runs all Styles serialization tests.

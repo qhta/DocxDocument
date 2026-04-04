@@ -5,7 +5,7 @@ namespace DocumentModel.InOpenXml.Test;
 /// <summary>
 /// Comprehensive test for DocumentModel.BaseInterfaces implementation.
 /// </summary>
-public class ElementCollectionTest: AbstractTestClass
+public class ElementCollectionTest: _AbstractTestClass
 {
   /// <summary>
   /// Runs all tests and reports the results.

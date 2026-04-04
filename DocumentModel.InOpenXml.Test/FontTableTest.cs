@@ -13,7 +13,7 @@ namespace DocumentModel.InOpenXml.Test;
 /// <summary>
 /// Comprehensive test for DocumentModel.Fonts.
 /// </summary>
-public class FontTableTest: AbstractTestClass
+public class FontTableTest: _AbstractTestClass
 {
   /// <summary>
   /// Runs all Fonts serialization tests.

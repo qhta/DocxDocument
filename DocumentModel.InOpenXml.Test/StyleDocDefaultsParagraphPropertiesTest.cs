@@ -3,7 +3,7 @@ namespace DocumentModel.InOpenXml.Test;
 /// <summary>
 /// Comprehensive test for Styles DocDefaults DefaultParagraphProperties.
 /// </summary>
-public class StyleDocDefaultsParagraphPropertiesTest: AbstractTestClass
+public class StyleDocDefaultsParagraphPropertiesTest: _AbstractTestClass
 {
   /// <summary>
   /// Paragraphs all Styles DocDefaults DefaultParagraphProperties tests.

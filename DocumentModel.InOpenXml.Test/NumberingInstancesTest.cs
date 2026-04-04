@@ -3,7 +3,7 @@
 /// <summary>
 /// Comprehensive test for DocumentModel.Numbering.
 /// </summary>
-public class NumberingInstancesTest: AbstractTestClass
+public class NumberingInstancesTest: _AbstractTestClass
 {
   /// <summary>
   /// Runs all Numbering serialization tests.

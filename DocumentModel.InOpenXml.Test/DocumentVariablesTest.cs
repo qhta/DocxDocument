@@ -3,7 +3,7 @@
 	/// <summary>
 	/// Comprehensive test for DocumentModel.DocumentVariables.
 	/// </summary>
-	public class DocumentVariablesTest: AbstractTestClass
+	public class DocumentVariablesTest: _AbstractTestClass
 	{
     /// <summary>
     /// Runs all DocumentVariables serialization tests.

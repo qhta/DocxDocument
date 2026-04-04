@@ -5,7 +5,7 @@ namespace DocumentModel.InOpenXml.Test;
 /// <summary>
 /// Base class for all test classes, providing common functionality and constants.
 /// </summary>
-public class AbstractTestClass
+public class _AbstractTestClass
 {
   /// <summary>
   /// Common file name used for testing purposes. This file is created and deleted during tests, so it should not exist before the tests are run.
@@ -111,5 +111,38 @@ public class AbstractTestClass
   {
     var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
     return JsonSerializer.Deserialize<DataType>(json, jsonOptions);
+  }
+
+
+  /// <summary>
+  /// Retrieves the formatted XML content of the core properties part from a WordprocessingML document.
+  /// </summary>
+  /// <remarks>The method opens the file TestFileName in read-only mode and accesses its core properties part.
+  /// The returned XML is formatted with line numbers for readability. If the document does not contain a core
+  /// properties part, the method returns null.</remarks>
+  /// <returns>A string containing the formatted XML with line numbers from the core properties part if it exists; otherwise,
+  /// null.</returns>
+  public static string? CorePropertiesPartXml()
+  {
+    using (var wordDoc = WordprocessingDocument.Open(TestFileName, false))
+    {
+      return GetPartXml(wordDoc.CoreFilePropertiesPart);
+    }
+  }
+
+  /// <summary>
+  /// Retrieves the formatted XML content of the content properties part from a WordprocessingML document.
+  /// </summary>
+  /// <remarks>The method opens the file TestFileName in read-only mode and accesses its content properties part.
+  /// The returned XML is formatted with line numbers for readability. If the document does not contain a content
+  /// properties part, the method returns null.</remarks>
+  /// <returns>A string containing the formatted XML with line numbers from the content properties part if it exists; otherwise,
+  /// null.</returns>
+  public static string? ExtendedFileProperties()
+  {
+    using (var wordDoc = WordprocessingDocument.Open(TestFileName, false))
+    {
+      return GetPartXml(wordDoc.ExtendedFilePropertiesPart);
+    }
   }
 }

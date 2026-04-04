@@ -30,6 +30,7 @@ public sealed partial class StatisticProperties : ModelElement<DXEP.Properties>
   /// <param name = "document">Wordprocessing document model</param>
   public StatisticProperties(Wordprocessing.Document document)
   {
+    SetParent(document);
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);
   }
@@ -55,12 +56,7 @@ public sealed partial class StatisticProperties : ModelElement<DXEP.Properties>
     SetUpdatableElement(extendedFileProperties);
     UpdateData(extendedFileProperties);
   }
-  /// <summary>
-  ///   The total number of pages of a document if applicable.
-  /// </summary>
-  [BuiltInProperty("Number of bytes")]
-  public int? Bytes { get => _Bytes; set => UpdateField(ref _Bytes, value, nameof(Bytes)); }
-  private int? _Bytes;
+
   /// <summary>
   ///   The total number of pages of a document if applicable.
   /// </summary>

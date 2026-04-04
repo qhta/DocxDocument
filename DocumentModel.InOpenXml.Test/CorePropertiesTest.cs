@@ -5,7 +5,7 @@ namespace DocumentModel.InOpenXml.Test;
 /// <summary>
 /// Comprehensive test for DocumentModel.CoreProperties.
 /// </summary>
-public class CorePropertiesTest: AbstractTestClass
+public class CorePropertiesTest: _AbstractTestClass
 {
 
   /// <summary>
@@ -339,21 +339,6 @@ public class CorePropertiesTest: AbstractTestClass
     return props;
   }
 
-  /// <summary>
-  /// Retrieves the formatted XML content of the core properties part from a WordprocessingML document.
-  /// </summary>
-  /// <remarks>The method opens the file TestFileName in read-only mode and accesses its core properties part.
-  /// The returned XML is formatted with line numbers for readability. If the document does not contain a core
-  /// properties part, the method returns null.</remarks>
-  /// <returns>A string containing the formatted XML with line numbers from the core properties part if it exists; otherwise,
-  /// null.</returns>
-  public static string? CorePropertiesPartXml()
-  {
-    using (var wordDoc = WordprocessingDocument.Open(TestFileName, false))
-    {
-      return GetPartXml(wordDoc.CoreFilePropertiesPart);
-    }
-  }
 
 
 

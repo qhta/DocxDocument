@@ -1,9 +1,11 @@
-﻿namespace DocumentModel.InOpenXml.Test
+﻿using DocumentFormat.OpenXml.Packaging;
+
+namespace DocumentModel.InOpenXml.Test
 {
   /// <summary>
   /// Comprehensive test for DocumentModel.Numbering.
   /// </summary>
-  public class AbstractNumberingsTest: AbstractTestClass
+  public class AbstractNumberingsTest: _AbstractTestClass
   {
     /// <summary>
     /// Runs all tests and reports the results.
@@ -404,5 +406,6 @@
       var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
       return JsonSerializer.Deserialize<Numbering>(json, jsonOptions);
     }
+
   }
 }

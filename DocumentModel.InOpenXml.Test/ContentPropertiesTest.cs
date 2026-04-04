@@ -5,7 +5,7 @@ namespace DocumentModel.InOpenXml.Test;
 /// <summary>
 /// Provides comprehensive serialization tests for <see cref="DocumentModel.ContentProperties"/>.
 /// </summary>
-public class ContentPropertiesTest: AbstractTestClass
+public class ContentPropertiesTest: _AbstractTestClass
 {
 
   /// <summary>
@@ -229,9 +229,9 @@ public class ContentPropertiesTest: AbstractTestClass
   /// <returns>true if the document content properties are successfully stored and verified; otherwise, false.</returns>
   static bool TestStoreBuiltInProperties()
   {
-    Console.WriteLine("--- ContentPropertiesTest Store sample content properties in new document---");
+    Console.WriteLine("--- ContentPropertiesTest Store built-in content properties in new document---");
     {
-      ContentProperties testData = CreateSampleContentProperties(true);
+      var testData = CreateSampleContentProperties(true);
       using (var document = new Document(TestFileName, FileMode.CreateNew))
       {
         foreach (var prop in ContentProperties.KnownProperties)
@@ -298,23 +298,6 @@ public class ContentPropertiesTest: AbstractTestClass
       ]);
     }
     return props;
-  }
-
-
-  /// <summary>
-  /// Retrieves the formatted XML content of the content properties part from a WordprocessingML document.
-  /// </summary>
-  /// <remarks>The method opens the file TestFileName in read-only mode and accesses its content properties part.
-  /// The returned XML is formatted with line numbers for readability. If the document does not contain a content
-  /// properties part, the method returns null.</remarks>
-  /// <returns>A string containing the formatted XML with line numbers from the content properties part if it exists; otherwise,
-  /// null.</returns>
-  public static string? ExtendedFileProperties()
-  {
-    using (var wordDoc = WordprocessingDocument.Open(TestFileName, false))
-    {
-      return GetPartXml(wordDoc.ExtendedFilePropertiesPart);
-    }
   }
 
 }

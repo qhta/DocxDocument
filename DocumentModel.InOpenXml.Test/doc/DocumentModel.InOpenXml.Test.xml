@@ -102,71 +102,6 @@
             <param name="json">The JSON string to deserialize.</param>
             <returns>The deserialized Numbering object, or null if deserialization fails.</returns>
         </member>
-        <member name="T:DocumentModel.InOpenXml.Test.AbstractTestClass">
-            <summary>
-            Base class for all test classes, providing common functionality and constants.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.InOpenXml.Test.AbstractTestClass.TestFileName">
-            <summary>
-            Common file name used for testing purposes. This file is created and deleted during tests, so it should not exist before the tests are run.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.AbstractTestClass.GetDataXml(System.Object)">
-            <summary>
-            Returns the XML representation of the given data object.
-            This method uses the XmlSerializer to serialize the object to an XML string,
-            which can be useful for debugging and comparing expected and actual results in tests.
-            </summary>
-            <param name="data">The object to serialize to XML.</param>
-            <returns>The XML string representation of the object.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.AbstractTestClass.GetPartXml(DocumentFormat.OpenXml.Packaging.OpenXmlPart)">
-            <summary>
-            Returns the XML content of the given OpenXmlPart as a formatted string with line numbers.
-            </summary>
-            <param name="part">The OpenXmlPart to retrieve the XML content from.</param>
-            <returns>A string containing the formatted XML with line numbers if the part exists; otherwise, null.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.AbstractTestClass.SerializeToXml(System.Object)">
-            <summary>
-            Serializes the specified object to its XML representation as a formatted string.
-            </summary>
-            <remarks>The returned XML is indented for readability. The object's type must be compatible with the
-            XmlSerializer; otherwise, an exception may be thrown.</remarks>
-            <param name="data">The object to serialize. The object must be serializable and not null.</param>
-            <returns>A string containing the XML representation of the specified object.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.AbstractTestClass.DeserializeFromXml``1(System.String)">
-            <summary>
-            Deserializes the specified XML string into an object of the given type.
-            </summary>
-            <remarks>The XML string must match the structure expected by the XML serializer for the specified type. If
-            the XML is invalid or does not match the expected format, the method may throw an exception.</remarks>
-            <typeparam name="DataType">The type of the object to deserialize from the XML string. Must be compatible with XML serialization.</typeparam>
-            <param name="xml">A string containing the XML data to deserialize. The XML must represent an object of type DataType.</param>
-            <returns>An instance of type DataType deserialized from the XML string, or null if the XML does not represent a valid
-            object.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.AbstractTestClass.SerializeToJson(System.Object)">
-            <summary>
-            Serializes the specified object to a JSON string using indented formatting.
-            </summary>
-            <remarks>The resulting JSON string is formatted with indentation for readability. If the object contains
-            properties that are not serializable, serialization may fail and throw an exception.</remarks>
-            <param name="data">The object to serialize to JSON. Can be any serializable type.</param>
-            <returns>A JSON-formatted string representation of the specified object.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.AbstractTestClass.DeserializeFromJson``1(System.String)">
-            <summary>
-            Deserializes the specified JSON string to an instance of the specified type.
-            </summary>
-            <remarks>The deserialization uses indented formatting options. If the JSON does not match the structure of
-            the specified type, the method may throw a JsonException.</remarks>
-            <typeparam name="DataType">The type of the object to deserialize to. Must be compatible with the structure of the JSON string.</typeparam>
-            <param name="json">The JSON string to deserialize. Must represent a valid JSON object compatible with the specified type.</param>
-            <returns>An instance of the specified type deserialized from the JSON string, or null if the input is null or empty.</returns>
-        </member>
         <member name="T:DocumentModel.InOpenXml.Test.BaseParagraphPropertiesTest">
             <summary>
             Comprehensive test for BaseParagraphProperties.
@@ -660,16 +595,6 @@
             <param name="createAllProperties">Whether to create compound properties, like HeadingPairs and TitlesOfParts.</param>
             <returns>A populated <see cref="T:DocumentModel.ContentProperties"/> object.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.ExtendedFileProperties">
-            <summary>
-            Retrieves the formatted XML content of the content properties part from a WordprocessingML document.
-            </summary>
-            <remarks>The method opens the file TestFileName in read-only mode and accesses its content properties part.
-            The returned XML is formatted with line numbers for readability. If the document does not contain a content
-            properties part, the method returns null.</remarks>
-            <returns>A string containing the formatted XML with line numbers from the content properties part if it exists; otherwise,
-            null.</returns>
-        </member>
         <member name="T:DocumentModel.InOpenXml.Test.CorePropertiesTest">
             <summary>
             Comprehensive test for DocumentModel.CoreProperties.
@@ -757,16 +682,6 @@
             file and disposed after the properties are initialized.</remarks>
             <returns>A CoreProperties object initialized with example document metadata such as title, subject, creator, and other
             properties.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.CorePropertiesPartXml">
-            <summary>
-            Retrieves the formatted XML content of the core properties part from a WordprocessingML document.
-            </summary>
-            <remarks>The method opens the file TestFileName in read-only mode and accesses its core properties part.
-            The returned XML is formatted with line numbers for readability. If the document does not contain a core
-            properties part, the method returns null.</remarks>
-            <returns>A string containing the formatted XML with line numbers from the core properties part if it exists; otherwise,
-            null.</returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.CustomPropertiesTest">
             <summary>
@@ -1524,39 +1439,17 @@
             inspection.</remarks>
             <returns>true if the document statistic properties are successfully updated and verified; otherwise, false.</returns>
         </member>
+        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.TestStoreBuiltInProperties">
+            <summary>
+            Tests storing statistic content properties as built-into a new document and verifies that they are correctly saved and reloaded.
+            </summary>
+            <returns>true if the document statistic properties are successfully stored and verified; otherwise, false.</returns>
+        </member>
         <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.CreateSampleStatisticProperties">
             <summary>
             Creates a sample <see cref="T:DocumentModel.StatisticProperties"/> instance for testing.
             </summary>
             <returns>A populated <see cref="T:DocumentModel.StatisticProperties"/> object.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.SerializeToXml(DocumentModel.StatisticProperties)">
-            <summary>
-            Serializes a <see cref="T:DocumentModel.StatisticProperties"/> instance to XML.
-            </summary>
-            <param name="props">The <see cref="T:DocumentModel.StatisticProperties"/> instance to serialize.</param>
-            <returns>XML string representation.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.DeserializeFromXml(System.String)">
-            <summary>
-            Deserializes a <see cref="T:DocumentModel.StatisticProperties"/> instance from XML.
-            </summary>
-            <param name="xml">The XML string to deserialize.</param>
-            <returns>The deserialized <see cref="T:DocumentModel.StatisticProperties"/> instance.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.SerializeToJson(DocumentModel.StatisticProperties)">
-            <summary>
-            Serializes a <see cref="T:DocumentModel.StatisticProperties"/> instance to JSON.
-            </summary>
-            <param name="props">The <see cref="T:DocumentModel.StatisticProperties"/> instance to serialize.</param>
-            <returns>JSON string representation.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.DeserializeFromJson(System.String)">
-            <summary>
-            Deserializes a <see cref="T:DocumentModel.StatisticProperties"/> instance from JSON.
-            </summary>
-            <param name="json">The JSON string to deserialize.</param>
-            <returns>The deserialized <see cref="T:DocumentModel.StatisticProperties"/> instance.</returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.StyleDefsTest">
             <summary>
@@ -1809,6 +1702,91 @@
             </summary>
             <param name="json">The JSON string to deserialize.</param>
             <returns>The deserialized Styles object, or null if deserialization fails.</returns>
+        </member>
+        <member name="T:DocumentModel.InOpenXml.Test._AbstractTestClass">
+            <summary>
+            Base class for all test classes, providing common functionality and constants.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.InOpenXml.Test._AbstractTestClass.TestFileName">
+            <summary>
+            Common file name used for testing purposes. This file is created and deleted during tests, so it should not exist before the tests are run.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.GetDataXml(System.Object)">
+            <summary>
+            Returns the XML representation of the given data object.
+            This method uses the XmlSerializer to serialize the object to an XML string,
+            which can be useful for debugging and comparing expected and actual results in tests.
+            </summary>
+            <param name="data">The object to serialize to XML.</param>
+            <returns>The XML string representation of the object.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.GetPartXml(DocumentFormat.OpenXml.Packaging.OpenXmlPart)">
+            <summary>
+            Returns the XML content of the given OpenXmlPart as a formatted string with line numbers.
+            </summary>
+            <param name="part">The OpenXmlPart to retrieve the XML content from.</param>
+            <returns>A string containing the formatted XML with line numbers if the part exists; otherwise, null.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.SerializeToXml(System.Object)">
+            <summary>
+            Serializes the specified object to its XML representation as a formatted string.
+            </summary>
+            <remarks>The returned XML is indented for readability. The object's type must be compatible with the
+            XmlSerializer; otherwise, an exception may be thrown.</remarks>
+            <param name="data">The object to serialize. The object must be serializable and not null.</param>
+            <returns>A string containing the XML representation of the specified object.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.DeserializeFromXml``1(System.String)">
+            <summary>
+            Deserializes the specified XML string into an object of the given type.
+            </summary>
+            <remarks>The XML string must match the structure expected by the XML serializer for the specified type. If
+            the XML is invalid or does not match the expected format, the method may throw an exception.</remarks>
+            <typeparam name="DataType">The type of the object to deserialize from the XML string. Must be compatible with XML serialization.</typeparam>
+            <param name="xml">A string containing the XML data to deserialize. The XML must represent an object of type DataType.</param>
+            <returns>An instance of type DataType deserialized from the XML string, or null if the XML does not represent a valid
+            object.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.SerializeToJson(System.Object)">
+            <summary>
+            Serializes the specified object to a JSON string using indented formatting.
+            </summary>
+            <remarks>The resulting JSON string is formatted with indentation for readability. If the object contains
+            properties that are not serializable, serialization may fail and throw an exception.</remarks>
+            <param name="data">The object to serialize to JSON. Can be any serializable type.</param>
+            <returns>A JSON-formatted string representation of the specified object.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.DeserializeFromJson``1(System.String)">
+            <summary>
+            Deserializes the specified JSON string to an instance of the specified type.
+            </summary>
+            <remarks>The deserialization uses indented formatting options. If the JSON does not match the structure of
+            the specified type, the method may throw a JsonException.</remarks>
+            <typeparam name="DataType">The type of the object to deserialize to. Must be compatible with the structure of the JSON string.</typeparam>
+            <param name="json">The JSON string to deserialize. Must represent a valid JSON object compatible with the specified type.</param>
+            <returns>An instance of the specified type deserialized from the JSON string, or null if the input is null or empty.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.CorePropertiesPartXml">
+            <summary>
+            Retrieves the formatted XML content of the core properties part from a WordprocessingML document.
+            </summary>
+            <remarks>The method opens the file TestFileName in read-only mode and accesses its core properties part.
+            The returned XML is formatted with line numbers for readability. If the document does not contain a core
+            properties part, the method returns null.</remarks>
+            <returns>A string containing the formatted XML with line numbers from the core properties part if it exists; otherwise,
+            null.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.ExtendedFileProperties">
+            <summary>
+            Retrieves the formatted XML content of the content properties part from a WordprocessingML document.
+            </summary>
+            <remarks>The method opens the file TestFileName in read-only mode and accesses its content properties part.
+            The returned XML is formatted with line numbers for readability. If the document does not contain a content
+            properties part, the method returns null.</remarks>
+            <returns>A string containing the formatted XML with line numbers from the content properties part if it exists; otherwise,
+            null.</returns>
         </member>
     </members>
 </doc>

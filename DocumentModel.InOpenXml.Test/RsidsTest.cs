@@ -3,7 +3,7 @@
 /// <summary>
 /// Comprehensive test for DocumentModel.Rsids.
 /// </summary>
-public class RsidsTest: AbstractTestClass
+public class RsidsTest: _AbstractTestClass
 {
   /// <summary>
   /// Runs all Rsids serialization tests.
