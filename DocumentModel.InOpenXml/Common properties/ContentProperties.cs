@@ -89,7 +89,7 @@ public sealed partial class ContentProperties: ModelElement<DXEP.Properties>
   ///   Specifies the name of an external document template containing format 
   ///   and style information used to create the current document.
   /// </summary>
-  [Category("Base")]
+  [MultiCategory("Base")]
   [BuiltInProperty("Template")]
   [DefaultValue("Normal.dotm")]
   public string? Template { get => _Template; set => UpdateField(ref _Template, value, nameof(Template)); }
@@ -99,7 +99,7 @@ public sealed partial class ContentProperties: ModelElement<DXEP.Properties>
   /// <summary>
   ///   The name of a supervisor associated with the document.
   /// </summary>
-  [Category("Base")]
+  [MultiCategory("Base")]
   [BuiltInProperty("Manager")]
   public string? Manager { get => _Manager; set => UpdateField(ref _Manager, value, nameof(Manager)); }
 
@@ -108,7 +108,7 @@ public sealed partial class ContentProperties: ModelElement<DXEP.Properties>
   /// <summary>
   ///   The name of a company associated with the document.
   /// </summary>
-  [Category("Base")]
+  [MultiCategory("Base")]
   [BuiltInProperty("Company")]
   public string? Company { get => _Company; set => UpdateField(ref _Company, value, nameof(Company)); }
 
@@ -118,7 +118,7 @@ public sealed partial class ContentProperties: ModelElement<DXEP.Properties>
   ///   The intended format for a presentation document. For example, a presentation intended
   ///   to be shown on video has PresentationFormat "Video".
   /// </summary>
-  [Category("Presentation")]
+  [MultiCategory("Presentation")]
   [BuiltInProperty("Format")]
   public string? PresentationFormat
   {
@@ -133,7 +133,7 @@ public sealed partial class ContentProperties: ModelElement<DXEP.Properties>
   ///   TRUE means scaling of the document thumbnail to the display. 
   ///   FALSE means cropping of the document thumbnail to show only sections that fits the display.
   /// </summary>
-  [Category("Presentation")]
+  [MultiCategory("Presentation")]
   [BuiltInProperty("Scale crop")]
   public bool? ScaleCrop { get => _ScaleCrop; set => UpdateField(ref _ScaleCrop, value, nameof(ScaleCrop)); }
 
@@ -143,7 +143,7 @@ public sealed partial class ContentProperties: ModelElement<DXEP.Properties>
   ///   Indicates the grouping of document parts and the number of parts in each group.
   ///   These parts are not document parts but conceptual representations of document sections.
   /// </summary>
-  [Category("Structure")]
+  [MultiCategory("Structure")]
   [OpenXmlType(typeof(DXEP.HeadingPairs))]
   public HeadingPairs? HeadingPairs
   {
@@ -157,7 +157,7 @@ public sealed partial class ContentProperties: ModelElement<DXEP.Properties>
   ///   The title of each document. 
   ///   These parts are not document parts but conceptual representations of document sections.
   /// </summary>
-  [Category("Structure")]
+  [MultiCategory("Structure")]
   [OpenXmlType(typeof(DXEP.TitlesOfParts))]
   public StringList? TitlesOfParts
   {
@@ -171,7 +171,7 @@ public sealed partial class ContentProperties: ModelElement<DXEP.Properties>
   ///   Indicates whether hyperlinks in a document are up-to-date.
   ///   TRUE means that hyperlinks are updated, FALSE means that hyperlinks are outdated.
   /// </summary>
-  [Category("Structure")]
+  [MultiCategory("Structure")]
   [OpenXmlType(typeof(DXEP.LinksUpToDate))]
   public bool? LinksUpToDate
   {
@@ -185,7 +185,7 @@ public sealed partial class ContentProperties: ModelElement<DXEP.Properties>
   ///   Indicates if this document is currently shared between multiple producers. 
   ///   If this element is set to TRUE, producers should take care when updating the document.
   /// </summary>
-  [Category("Base")]
+  [MultiCategory("Base")]
   [OpenXmlType(typeof(DXEP.SharedDocument))]
   public bool? SharedDocument
   {
@@ -198,7 +198,7 @@ public sealed partial class ContentProperties: ModelElement<DXEP.Properties>
   /// <summary>
   ///   The base string used for evaluating relative hyperlinks in this document.
   /// </summary>
-  [Category("Hyperlinks")]
+  [MultiCategory("Hyperlinks")]
   [BuiltInProperty("Hyperlink base")]
   [OpenXmlType(typeof(DXEP.HyperlinkBase))]
   public string? HyperlinkBase
@@ -212,7 +212,7 @@ public sealed partial class ContentProperties: ModelElement<DXEP.Properties>
   /// <summary>
   ///   The set of hyperlinks that were in this document when last saved.
   /// </summary>
-  [Category("Hyperlinks")]
+  [MultiCategory("Hyperlinks")]
   [OpenXmlType(typeof(DXEP.HyperlinkList))]
   public HyperlinkList? HyperlinkList
   {
@@ -226,7 +226,7 @@ public sealed partial class ContentProperties: ModelElement<DXEP.Properties>
   ///   Specifies that one or more hyperlinks in this part were updated exclusively in this part by a producer. 
   ///   The next producer to open this document shall update the hyperlink relationships with the new hyperlinks specified in this part.
   /// </summary>
-  [Category("Hyperlinks")]
+  [MultiCategory("Hyperlinks")]
   [OpenXmlType(typeof(DXEP.HyperlinksChanged))]
   public bool? HyperlinksChanged
   {
@@ -244,7 +244,7 @@ public sealed partial class ContentProperties: ModelElement<DXEP.Properties>
   ///   4 - Document is enforced to be opened as read-only.
   ///   8 - Document is locked for annotation
   /// </summary>
-  [Category("Security")]
+  [MultiCategory("Security")]
   [BuiltInProperty("Security")]
   [OpenXmlType(typeof(DXEP.DocumentSecurity))]
   public DocumentSecurity? DocumentSecurity
@@ -261,7 +261,7 @@ public sealed partial class ContentProperties: ModelElement<DXEP.Properties>
   ///   representation, and should be avoided in favor of the well-defined mechanism defined in Part 2. Any use of this
   ///   property should be for legacy compatibility only, and is application-defined. 
   /// </summary>
-  [Category("Security")]
+  [MultiCategory("Security")]
   [OpenXmlType(typeof(DXEP.DigitalSignature))]
   public HexBinary? DigitalSignature
   {
@@ -274,7 +274,7 @@ public sealed partial class ContentProperties: ModelElement<DXEP.Properties>
   /// <summary>
   ///   Specifies the name of the application that created this document.
   /// </summary>
-  [Category("Base")]
+  [MultiCategory("Base")]
   [BuiltInProperty("Application name")]
   [DefaultValue("Microsoft Office Word")]
   [OpenXmlType(typeof(DXEP.Application))]
@@ -285,7 +285,7 @@ public sealed partial class ContentProperties: ModelElement<DXEP.Properties>
   /// <summary>
   ///   Specifies the version of the application which produced this document.
   /// </summary>
-  [Category("Base")]
+  [MultiCategory("Base")]
   [BuiltInProperty("Application version")]
   [DefaultValue("16.0000")]
   [OpenXmlType(typeof(DXEP.ApplicationVersion))]

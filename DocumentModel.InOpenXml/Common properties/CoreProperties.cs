@@ -202,7 +202,7 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
   /// <summary>
   ///   The main title of the document, typically displayed in the title bar or metadata.
   /// </summary>
-  [Category("Base")]
+  [MultiCategory("Base")]
   [BuiltInProperty("Title")]
   [OpenXmlProperty(nameof(CoreProperties.Title))]
   public string? Title { get => _Title; set => UpdateField(ref _Title, value, nameof(Title)); }
@@ -212,7 +212,7 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
   /// <summary>
   ///   The subject or topic of the document's content.
   /// </summary>
-  [Category("Base")]
+  [MultiCategory("Base")]
   [BuiltInProperty("Subject")]
   [OpenXmlProperty(nameof(CoreProperties.Subject))]
   public string? Subject { get => _Subject; set => UpdateField(ref _Subject, value, nameof(Subject)); }
@@ -222,7 +222,7 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
   /// <summary>
   ///   The person or entity primarily responsible for creating the document content.
   /// </summary>
-  [Category("Base")]
+  [MultiCategory("Base")]
   [BuiltInProperty("Author")]
   [OpenXmlProperty(nameof(CoreProperties.Creator))]
   public string? Creator { get => _Creator; set => UpdateField(ref _Creator, value, nameof(Creator)); }
@@ -232,7 +232,7 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
   /// <summary>
   ///   A delimited set of keywords to support searching and indexing. Typically a list of terms not available elsewhere in the properties. May use xml:lang for language identification and allow mixed content.
   /// </summary>
-  [Category("Base")]
+  [MultiCategory("Base")]
   [BuiltInProperty("Keywords")]
   [OpenXmlProperty(nameof(CoreProperties.Keywords))]
   public string? Keywords { get => _Keywords; set => UpdateField(ref _Keywords, value, nameof(Keywords)); }
@@ -242,7 +242,7 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
   /// <summary>
   ///   An explanation or abstract of the document content. May include a summary, table of contents, or free-text account of the content.
   /// </summary>
-  [Category("Base")]
+  [MultiCategory("Base")]
   [BuiltInProperty("Comments")]
   [OpenXmlProperty(nameof(CoreProperties.Description))]
   public string? Description { get => _Description; set => UpdateField(ref _Description, value, nameof(Description)); }
@@ -252,7 +252,7 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
   /// <summary>
   ///   The user who last modified the document. Identification is environment-specific (e.g., name, email, or employee ID).
   /// </summary>
-  [Category("Base")]
+  [MultiCategory("Base")]
   [BuiltInProperty("Last author")]
   [OpenXmlProperty(nameof(PackageProperties.LastModifiedBy))]
   public string? LastModifiedBy
@@ -266,7 +266,7 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
   /// <summary>
   ///   The revision number, typically incremented after each save or revision.
   /// </summary>
-  [Category("Versioning")]
+  [MultiCategory("Versioning")]
   [BuiltInProperty("Revision number")]
   public int? Revision { get => _Revision; set => UpdateField(ref _Revision, value, nameof(Revision)); }
 
@@ -275,7 +275,7 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
   /// <summary>
   ///   The date and time when the document was last printed.
   /// </summary>
-  [Category("Base")]
+  [MultiCategory("Base")]
   [BuiltInProperty("Last print date")]
   [OpenXmlProperty(nameof(PackageProperties.LastPrinted))]
   public DateTime? LastPrinted
@@ -289,7 +289,7 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
   /// <summary>
   ///   The date and time when the document was created.
   /// </summary>
-  [Category("Base")]
+  [MultiCategory("Base")]
   [BuiltInProperty("Creation date")]
   [OpenXmlProperty(nameof(PackageProperties.Created))]
   public DateTime? Created { get => _Created; set => UpdateField(ref _Created, value, nameof(Created)); }
@@ -299,7 +299,7 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
   /// <summary>
   ///   The date and time when the document was last modified.
   /// </summary>
-  [Category("Base")]
+  [MultiCategory("Base")]
   [BuiltInProperty("Last save time")]
   [OpenXmlProperty(nameof(PackageProperties.Modified))]
   public DateTime? Modified { get => _Modified; set => UpdateField(ref _Modified, value, nameof(Modified)); }
@@ -309,7 +309,7 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
   /// <summary>
   ///   A categorization of the document content, such as Resume, Letter, Proposal, or Technical Presentation. May be used for navigation or filtering.
   /// </summary>
-  [Category("Base")]
+  [MultiCategory("Base")]
   [BuiltInProperty("Category")]
   [OpenXmlProperty(nameof(PackageProperties.Category))]
   public string? Category { get => _Category; set => UpdateField(ref _Category, value, nameof(Category)); }
@@ -319,7 +319,7 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
   /// <summary>
   ///   An unambiguous reference to the document within a given context.
   /// </summary>
-  [Category("Identification")]
+  [MultiCategory("Identification")]
   [BuiltInProperty("Identifier")]
   [OpenXmlProperty(nameof(PackageProperties.Identifier))]
   public string? Identifier { get => _Identifier; set => UpdateField(ref _Identifier, value, nameof(Identifier)); }
@@ -329,7 +329,7 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
   /// <summary>
   ///   The type of content represented, as defined by a specific application.
   /// </summary>
-  [Category("Base")]
+  [MultiCategory("Base")]
   [BuiltInProperty("Content type")]
   [OpenXmlProperty(nameof(PackageProperties.ContentType))]
   public string? ContentType { get => _ContentType; set => UpdateField(ref _ContentType, value, nameof(ContentType)); }
@@ -339,7 +339,7 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
   /// <summary>
   ///   The language of the document content, typically encoded per IETF RFC 3066.
   /// </summary>
-  [Category("Base")]
+  [MultiCategory("Base")]
   [BuiltInProperty("Language")]
   [OpenXmlProperty(nameof(PackageProperties.Language))]
   public string? Language { get => _Language; set => UpdateField(ref _Language, value, nameof(Language)); }
@@ -349,7 +349,7 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
   /// <summary>
   ///   The version number of the document, set by the user or application.
   /// </summary>
-  [Category("Versioning")]
+  [MultiCategory("Versioning")]
   [BuiltInProperty("Document version")]
   [OpenXmlProperty(nameof(PackageProperties.Version))]
   public string? Version { get => _Version; set => UpdateField(ref _Version, value, nameof(Version)); }
@@ -359,7 +359,7 @@ public partial class CoreProperties: ModelElement, IWordprocessingDocumentAware
   /// <summary>
   ///   The status of the document content, such as Draft, Reviewed, or Final.
   /// </summary>
-  [Category("Base")]
+  [MultiCategory("Base")]
   [BuiltInProperty("Content status")]
   [OpenXmlProperty(nameof(PackageProperties.ContentStatus))]
   public string? ContentStatus

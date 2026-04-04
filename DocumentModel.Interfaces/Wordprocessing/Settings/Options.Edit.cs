@@ -56,13 +56,6 @@ public partial interface IOptions : IModelObject
   public bool? AutoCreateNewDrawings { get; set; }
 
   /// <summary> 
-  /// True if Microsoft Word automatically switches the keyboard language to match what you’re typing at any given 
-  /// time. 
-  /// </summary> 
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.autokeyboardswitching?view=word-pia"/>
-  public bool? AutoKeyboardSwitching { get; set; }
-
-  /// <summary> 
   /// True if dragging selects one word at a time instead of one character at a time. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.autowordselection?view=word-pia"/>
@@ -432,6 +425,14 @@ public partial interface IOptions : IModelObject
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.printxmltag?view=word-pia"/>
   public bool? PrintXMLTag { get; set; }
+
+  /// <summary> 
+  /// True displays a message asking the user to verify whether they want to reformat a style or reapply the 
+  /// original style formatting when changing the formatting of styles. False reapplies the style formatting to 
+  /// the selection without verifying whether the user wants to change the style. 
+  /// </summary> 
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.promptupdatestyle?view=word-pia"/>
+  public bool? PromptUpdateStyle { get; set; }
 
   /// <summary> 
   /// True if the result of typing or pasting replaces the selection. False if the result of typing or pasting is 

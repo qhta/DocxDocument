@@ -1,5 +1,3 @@
-using DocumentModel.Wordprocessing;
-
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
@@ -13,6 +11,8 @@ public partial interface IOptions : IModelObject
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.alwaysusecleartype?view=word-pia"/>
+  [MultiCategory("Display")]
+  [Obsolete]
   public bool? AlwaysUseClearType { get; set; }
 
   /// <summary> 
@@ -20,18 +20,22 @@ public partial interface IOptions : IModelObject
   /// background saving and find and replace operations. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.animatescreenmovements?view=word-pia"/>
+  [MultiCategory("Display")]
   public bool? AnimateScreenMovements { get; set; }
 
   /// <summary> 
   /// True if Microsoft Word displays text as white characters on a blue background. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.bluescreen?view=word-pia"/>
+  [MultiCategory("Display")]
   public bool? BlueScreen { get; set; }
 
   /// <summary> 
   /// Returns or sets a ColorIndex constant that represents the color of comments in a document. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.commentscolor?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Comments")]
   public ColorIndex? CommentsColor { get; set; }
 
   /// <summary> 
@@ -39,48 +43,63 @@ public partial interface IOptions : IModelObject
   /// a value returned by Visual Basic's RGB function. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaultbordercolor?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Borders")]
   public RgbColor? DefaultBorderColor { get; set; }
 
   /// <summary> 
   /// Returns or sets the default line color for borders. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaultbordercolorindex?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Borders")]
   public ColorIndex? DefaultBorderColorIndex { get; set; }
 
   /// <summary> 
   /// Returns or sets the default border line style. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaultborderlinestyle?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Borders")]
   public LineStyle? DefaultBorderLineStyle { get; set; }
 
   /// <summary> 
   /// Returns or sets the default line width of borders. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaultborderlinewidth?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Borders")]
   public LineWidth? DefaultBorderLineWidth { get; set; }
 
   /// <summary> 
   /// Returns or sets the color used to highlight text formatted with the Highlight button (Formatting toolbar). 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaulthighlightcolorindex?view=word-pia"/>
+  [MultiCategory("Display")]
   public ColorIndex? DefaultHighlightColorIndex { get; set; }
 
   /// <summary> 
   /// Returns or sets a CellColor constant that represents the color for a deleted cell. Read/write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.deletedcellcolor?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Track Changes")]
   public CellColor? DeletedCellColor { get; set; }
 
   /// <summary> 
   /// Returns or sets the color of text that is deleted while change tracking is enabled. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.deletedtextcolor?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Track Changes")]
   public ColorIndex? DeletedTextColor { get; set; }
 
   /// <summary> 
   /// Returns or sets the format of text that is deleted while change tracking is enabled. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.deletedtextmark?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Track Changes")]
   public DeletedTextMark? DeletedTextMark { get; set; }
 
   /// <summary> 
@@ -88,6 +107,7 @@ public partial interface IOptions : IModelObject
   /// valid Color constant or a value returned by Visual Basic's RGB function. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.diacriticcolorval?view=word-pia"/>
+  [MultiCategory("Display")]
   public RgbColor? DiacriticColorVal { get; set; }
 
   /// <summary> 
@@ -95,6 +115,8 @@ public partial interface IOptions : IModelObject
   /// interface. Read-write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.displayalignmentguides?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Aligning")]
   public bool? DisplayAlignmentGuides { get; set; }
 
   /// <summary> 
@@ -102,6 +124,8 @@ public partial interface IOptions : IModelObject
   /// on the View menu. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.displaygridlines?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Aligning")]
   public bool? DisplayGridLines { get; set; }
 
   /// <summary> 
@@ -109,6 +133,7 @@ public partial interface IOptions : IModelObject
   /// text. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.displaypasteoptions?view=word-pia"/>
+  [MultiCategory("Display")]
   public bool? DisplayPasteOptions { get; set; }
 
   /// <summary> 
@@ -116,6 +141,7 @@ public partial interface IOptions : IModelObject
   /// over it. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.displaysmarttagbuttons?view=word-pia"/>
+  [MultiCategory("Display")]
   public bool? DisplaySmartTagButtons { get; set; }
 
   /// <summary> 
@@ -123,6 +149,9 @@ public partial interface IOptions : IModelObject
   /// you draw, move, and resize AutoShapes or East Asian characters in new documents. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.griddistancehorizontal?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Aligning")]
+  [MultiCategory("East Asian")]
   public float? GridDistanceHorizontal { get; set; }
 
   /// <summary> 
@@ -130,6 +159,9 @@ public partial interface IOptions : IModelObject
   /// you draw, move, and resize AutoShapes or East Asian characters in new documents. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.griddistancevertical?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Aligning")]
+  [MultiCategory("East Asian")]
   public float? GridDistanceVertical { get; set; }
 
   /// <summary> 
@@ -137,6 +169,9 @@ public partial interface IOptions : IModelObject
   /// drawing, moving, and resizing AutoShapes or East Asian characters to begin in new documents. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.gridoriginhorizontal?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Aligning")]
+  [MultiCategory("East Asian")]
   public float? GridOriginHorizontal { get; set; }
 
   /// <summary> 
@@ -144,18 +179,25 @@ public partial interface IOptions : IModelObject
   /// moving, and resizing AutoShapes or East Asian characters to begin in new documents. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.gridoriginvertical?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Aligning")]
+  [MultiCategory("East Asian")]
   public float? GridOriginVertical { get; set; }
 
   /// <summary> 
   /// Returns or sets a CellColor constant that represents the color for an inserted table cell. Read/write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.insertedcellcolor?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Track Changes")]
   public CellColor? InsertedCellColor { get; set; }
 
   /// <summary> 
   /// Returns or sets the color of text that is inserted while change tracking is enabled. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.insertedtextcolor?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Track Changes")]
   public ColorIndex? InsertedTextColor { get; set; }
 
   /// <summary> 
@@ -163,12 +205,15 @@ public partial interface IOptions : IModelObject
   /// TrackRevisions property is True). 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.insertedtextmark?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Track Changes")]
   public InsertedTextMark? InsertedTextMark { get; set; }
 
   /// <summary> 
   /// True for Microsoft Word to mark text in documents with smart tag information. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.labelsmarttags?view=word-pia"/>
+  [MultiCategory("Display")]
   public bool? LabelSmartTags { get; set; }
 
   /// <summary> 
@@ -176,18 +221,24 @@ public partial interface IOptions : IModelObject
   /// user interface. Read-write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.marginalignmentguides?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Aligning")]
   public bool? MarginAlignmentGuides { get; set; }
 
   /// <summary> 
   /// Returns or sets a CellColor constant that represents the color for merged table cells. Read/write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.mergedcellcolor?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Track Changes")]
   public CellColor? MergedCellColor { get; set; }
 
   /// <summary> 
   /// Returns or sets a ColorIndex constant that represents the color of moved text. Read/write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.movefromtextcolor?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Track Changes")]
   public ColorIndex? MoveFromTextColor { get; set; }
 
   /// <summary> 
@@ -195,12 +246,16 @@ public partial interface IOptions : IModelObject
   /// text. Read/write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.movefromtextmark?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Track Changes")]
   public MoveFromTextMark? MoveFromTextMark { get; set; }
 
   /// <summary> 
   /// Returns or sets a ColorIndex constant that represents the color of moved text. Read/write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.movetotextcolor?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Track Changes")]
   public ColorIndex? MoveToTextColor { get; set; }
 
   /// <summary> 
@@ -208,6 +263,8 @@ public partial interface IOptions : IModelObject
   /// Read/write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.movetotextmark?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Track Changes")]
   public MoveToTextMark? MoveToTextMark { get; set; }
 
   /// <summary> 
@@ -216,6 +273,8 @@ public partial interface IOptions : IModelObject
   /// Read/write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.omathautobuildup?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Math")]
   public bool? OMathAutoBuildUp { get; set; }
 
   /// <summary> 
@@ -223,6 +282,8 @@ public partial interface IOptions : IModelObject
   /// equations are represented in Linear Format. False indicates equations are represented in MathML. Read/write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.omathcopylf?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Math")]
   public bool? OMathCopyLF { get; set; }
 
   /// <summary> 
@@ -230,6 +291,8 @@ public partial interface IOptions : IModelObject
   /// user interface. Read-write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.pagealignmentguides?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Aligning")]
   public bool? PageAlignmentGuides { get; set; }
 
   /// <summary> 
@@ -237,12 +300,15 @@ public partial interface IOptions : IModelObject
   /// the user interface. Read-write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.paragraphalignmentguides?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Aligning")]
   public bool? ParagraphAlignmentGuides { get; set; }
 
   /// <summary> 
   /// Sets or returns a WrapTypeMerged constant that indicates how Microsoft Word wraps text around pictures. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.picturewraptype?view=word-pia"/>
+  [MultiCategory("Display")]
   public WrapTypeMerged? PictureWrapType { get; set; }
 
   /// <summary> 
@@ -251,30 +317,39 @@ public partial interface IOptions : IModelObject
   /// facilitate on-screen readability and enables character spacing for print media. Read/write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.precisepositioning?view=word-pia"/>
+  [MultiCategory("Display")]
   public bool? PrecisePositioning { get; set; }
 
   /// <summary> 
   /// Returns or sets the color of changed lines in a document with tracked changes. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.revisedlinescolor?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Track Changes")]
   public ColorIndex? RevisedLinesColor { get; set; }
 
   /// <summary> 
   /// Returns or sets the placement of changed lines in a document with tracked changes. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.revisedlinesmark?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Track Changes")]
   public RevisedLinesMark? RevisedLinesMark { get; set; }
 
   /// <summary> 
   /// Returns or sets the color used to mark formatting changes while change tracking is enabled. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.revisedpropertiescolor?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Track Changes")]
   public ColorIndex? RevisedPropertiesColor { get; set; }
 
   /// <summary> 
   /// Returns or sets the mark used to show formatting changes while change tracking is enabled. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.revisedpropertiesmark?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Track Changes")]
   public RevisedPropertiesMark? RevisedPropertiesMark { get; set; }
 
   /// <summary> 
@@ -282,6 +357,8 @@ public partial interface IOptions : IModelObject
   /// comment balloons when they are printed. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.revisionsballoonprintorientation?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Track Changes")]
   public RevisionsBalloonPrintOrientation? RevisionsBalloonPrintOrientation { get; set; }
 
   /// <summary> 
@@ -290,24 +367,30 @@ public partial interface IOptions : IModelObject
   /// </summary> 
   /// <remarks>This option works only on the Macintosh.</remarks> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.shortmenunames?view=word-pia"/>
+  [MultiCategory("Display")]
   public bool? ShortMenuNames { get; set; }
 
   /// <summary> 
   /// True if bidirectional control characters are visible in the current document. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.showcontrolcharacters?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Bidirectional")]
   public bool? ShowControlCharacters { get; set; }
 
   /// <summary> 
   /// Returns or sets a Boolean that represents whether the Developer tab is displayed in the Ribbon. Read/write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.showdevtools?view=word-pia"/>
+  [MultiCategory("Display")]
   public bool? ShowDevTools { get; set; }
 
   /// <summary> 
   /// True if diacritics are visible in a right-to-left language document. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.showdiacritics?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Bidirectional")]
   public bool? ShowDiacritics { get; set; }
 
   /// <summary> 
@@ -315,6 +398,7 @@ public partial interface IOptions : IModelObject
   /// formatted similarly to other formatting that is used more frequently in a document. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.showformaterror?view=word-pia"/>
+  [MultiCategory("Display")]
   public bool? ShowFormatError { get; set; }
 
   /// <summary> 
@@ -322,6 +406,7 @@ public partial interface IOptions : IModelObject
   /// saving a file. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.showmarkupopensave?view=word-pia"/>
+  [MultiCategory("Display")]
   public bool? ShowMarkupOpenSave { get; set; }
 
   /// <summary> 
@@ -329,20 +414,15 @@ public partial interface IOptions : IModelObject
   /// the document window. Read/write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.showmenufloaties?view=word-pia"/>
+  [MultiCategory("Display")]
   public bool? ShowMenuFloaties { get; set; }
-
-  /// <summary> 
-  /// True if Microsoft Word displays a list of summary statistics, including measures of readability, when it has 
-  /// finished checking grammar. 
-  /// </summary> 
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.showreadabilitystatistics?view=word-pia"/>
-  public bool? ShowReadabilityStatistics { get; set; }
 
   /// <summary> 
   /// Returns or sets a Boolean that represents whether mini toolbars display when a user selects text. 
   /// Read/write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.showselectionfloaties?view=word-pia"/>
+  [MultiCategory("Display")]
   public bool? ShowSelectionFloaties { get; set; }
 
   /// <summary> 
@@ -350,6 +430,9 @@ public partial interface IOptions : IModelObject
   /// drawn, moved, or resized in new documents. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.snaptogrid?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Aligning")]
+  [MultiCategory("East Asian")]
   public bool? SnapToGrid { get; set; }
 
   /// <summary> 
@@ -358,18 +441,24 @@ public partial interface IOptions : IModelObject
   /// documents. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.snaptoshapes?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Aligning")]
+  [MultiCategory("East Asian")]
   public bool? SnapToShapes { get; set; }
 
   /// <summary> 
   /// Returns or sets a CellColor that represents the color for split table cells. Read/write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.splitcellcolor?view=word-pia"/>
+  [MultiCategory("Display")]
+  [MultiCategory("Track Changes")]
   public CellColor? SplitCellColor { get; set; }
 
   /// <summary> 
   /// True if you can set the color of diacritics in the current document. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.usediffdiaccolor?view=word-pia"/>
+  [MultiCategory("Display")]
   public bool? UseDiffDiacColor { get; set; }
 
 }

@@ -13,18 +13,25 @@ public partial interface IOptions : IModelObject
   /// True if Microsoft Word checks grammar and marks errors automatically as you type. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.checkgrammarasyoutype?view=word-pia"/>
+  [MultiCategory("Proofing")]
+  [MultiCategory("Grammar")]
   public bool? CheckGrammarAsYouType { get; set; }
 
   /// <summary> 
   /// True if Microsoft Word checks grammar while checking spelling. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.checkgrammarwithspelling?view=word-pia"/>
+  [MultiCategory("Proofing")]
+  [MultiCategory("Grammar")]
+  [MultiCategory("Spelling")]
   public bool? CheckGrammarWithSpelling { get; set; }
 
   /// <summary> 
   /// True if Microsoft Word checks spelling and marks errors automatically as you type. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.checkspellingasyoutype?view=word-pia"/>
+  [MultiCategory("Proofing")]
+  [MultiCategory("Spelling")]
   public bool? CheckSpellingAsYouType { get; set; }
 
   /// <summary> 
@@ -32,12 +39,17 @@ public partial interface IOptions : IModelObject
   /// the context of a word and the words around it. Read/write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.contextualspeller?view=word-pia"/>
+  [MultiCategory("Proofing")]
+  [MultiCategory("Spelling")]
   public bool? ContextualSpeller { get; set; }
 
   /// <summary> 
   /// True if Microsoft Word checks for misused words when checking the spelling and grammar in a document. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.enablemisusedwordsdictionary?view=word-pia"/>
+  [MultiCategory("Proofing")]
+  [MultiCategory("Grammar")]
+  [MultiCategory("Spelling")]
   public bool? EnableMisusedWordsDictionary { get; set; }
 
   /// <summary> 
@@ -45,6 +57,9 @@ public partial interface IOptions : IModelObject
   /// additional proofing tools are available for download. Read-write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.enableproofingtoolsadvertisement?view=word-pia"/>
+  [MultiCategory("Proofing")]
+  [MultiCategory("Grammar")]
+  [MultiCategory("Spelling")]
   public bool? EnableProofingToolsAdvertisement { get; set; }
 
   /// <summary> 
@@ -52,40 +67,51 @@ public partial interface IOptions : IModelObject
   /// paths), and Internet addresses (also known as URLs) are ignored while checking spelling. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.ignoreinternetandfileaddresses?view=word-pia"/>
+  [MultiCategory("Proofing")]
+  [MultiCategory("Spelling")]
   public bool? IgnoreInternetAndFileAddresses { get; set; }
 
   /// <summary> 
   /// True if words that contain numbers are ignored while checking spelling. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.ignoremixeddigits?view=word-pia"/>
+  [MultiCategory("Proofing")]
+  [MultiCategory("Spelling")]
   public bool? IgnoreMixedDigits { get; set; }
 
   /// <summary> 
   /// True if words in all uppercase letters are ignored while checking spelling. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.ignoreuppercase?view=word-pia"/>
+  [MultiCategory("Proofing")]
+  [MultiCategory("Spelling")]
   public bool? IgnoreUppercase { get; set; }
-
-  /// <summary> 
-  /// True displays a message asking the user to verify whether they want to reformat a style or reapply the 
-  /// original style formatting when changing the formatting of styles. False reapplies the style formatting to 
-  /// the selection without verifying whether the user wants to change the style. 
-  /// </summary> 
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.promptupdatestyle?view=word-pia"/>
-  public bool? PromptUpdateStyle { get; set; }
 
   /// <summary> 
   /// Returns or sets a Boolean that represents whether to mark words that are repeated when spelling is checked. 
   /// True flags repeated words. Read/write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.repeatword?view=word-pia"/>
+  [MultiCategory("Proofing")]
+  [MultiCategory("Spelling")]
   public bool? RepeatWord { get; set; }
+
+  /// <summary> 
+  /// True if Microsoft Word displays a list of summary statistics, including measures of readability, when it has 
+  /// finished checking grammar. 
+  /// </summary> 
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.showreadabilitystatistics?view=word-pia"/>
+  [MultiCategory("Proofing")]
+  [MultiCategory("Grammar")]
+  public bool? ShowReadabilityStatistics { get; set; }
 
   /// <summary> 
   /// True if Microsoft Word draws spelling suggestions from the main dictionary only. False if it draws spelling 
   /// suggestions from the main dictionary and any custom dictionaries that have been added. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.suggestfrommaindictionaryonly?view=word-pia"/>
+  [MultiCategory("Proofing")]
+  [MultiCategory("Spelling")]
   public bool? SuggestFromMainDictionaryOnly { get; set; }
 
   /// <summary> 
@@ -93,6 +119,8 @@ public partial interface IOptions : IModelObject
   /// spelling. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.suggestspellingcorrections?view=word-pia"/>
+  [MultiCategory("Proofing")]
+  [MultiCategory("Spelling")]
   public bool? SuggestSpellingCorrections { get; set; }
 
 }

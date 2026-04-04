@@ -13,60 +13,88 @@ public partial interface IOptions : IModelObject
   /// True if Microsoft Word adds bidirectional control characters when saving a document as a text file.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.addbidirectionalmarkswhensavingtextfile?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Bidirectional")]
   public bool? AddBiDirectionalMarksWhenSavingTextFile { get; set; }
 
   /// <summary>
   /// True if Microsoft Word adds bidirectional control characters when cutting and copying text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.addcontrolcharacters?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Bidirectional")]
   public bool? AddControlCharacters { get; set; }
 
   /// <summary>
   /// True if Microsoft Word encloses number formats in double quotation marks (").
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.addhebdoublequote?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Hebrew")]
   public bool? AddHebDoubleQuote { get; set; }
 
   /// <summary> 
   /// True if accents are retained when a French language character is changed to uppercase. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.allowaccenteduppercase?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("French")]
   public bool? AllowAccentedUppercase { get; set; }
 
   /// <summary> 
   /// True if Microsoft Word ignores auxiliary verb forms when checking spelling in a Korean language document. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.allowcombinedauxiliaryforms?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Korean")]
   public bool? AllowCombinedAuxiliaryForms { get; set; }
 
   /// <summary> 
   /// True if Microsoft Word ignores compound nouns when checking spelling in a Korean language document. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.allowcompoundnounprocessing?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Korean")]
   public bool? AllowCompoundNounProcessing { get; set; }
 
   /// <summary> 
   /// True if Microsoft Word applies East Asian fonts to Latin text. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.applyfareastfontstoascii?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("East Asian")]
   public bool? ApplyFarEastFontsToAscii { get; set; }
 
   /// <summary> 
   /// Returns or sets the mode for the Arabic spelling checker. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.arabicmode?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Arabic")]
   public AraSpeller? ArabicMode { get; set; }
 
   /// <summary> 
   /// Returns or sets the numeral style for an Arabic language document. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.arabicnumeral?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Arabic")]
   public ArabicNumeral? ArabicNumeral { get; set; }
+
+  /// <summary> 
+  /// True if Microsoft Word automatically switches the keyboard language to match what you’re typing at any given 
+  /// time. 
+  /// </summary> 
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.autokeyboardswitching?view=word-pia"/>
+  public bool? AutoKeyboardSwitching { get; set; }
 
   /// <summary> 
   /// Gets or sets the mode for the Brazilian Portuguese speller. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.brazilreform?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Portuguese")]
+  [MultiCategory("Spelling")]
   public PortugueseReform? BrazilReform { get; set; }
 
   /// <summary> 
@@ -74,6 +102,8 @@ public partial interface IOptions : IModelObject
   /// to Hanja. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.checkhangulendings?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Hangul")]
   public bool? CheckHangulEndings { get; set; }
 
   /// <summary> 
@@ -81,6 +111,9 @@ public partial interface IOptions : IModelObject
   /// it opens a document. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.converthighansitofareast?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("East Asian")]
+  [MultiCategory("High ANSI")]
   public bool? ConvertHighAnsiToFarEast { get; set; }
 
   /// <summary> 
@@ -88,12 +121,16 @@ public partial interface IOptions : IModelObject
   /// conversion between Hangul and Hanja. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.enablehangulhanjarecentordering?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Hangul")]
   public bool? EnableHangulHanjaRecentOrdering { get; set; }
 
   /// <summary> 
-  /// Returns or sets aBoolean that represents whether to enable legacy IME mode. Read/write. 
+  /// Returns or sets a Boolean that represents whether to enable legacy IME mode. Read/write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.enablelegacyimemode?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("IME")]
   public bool? EnableLegacyIMEMode { get; set; }
 
   /// <summary> 
@@ -101,6 +138,8 @@ public partial interface IOptions : IModelObject
   /// text with language formatting set to French. Read/write. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.frenchreform?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("French")]
   public FrenchSpeller? FrenchReform { get; set; }
 
   /// <summary> 
@@ -108,18 +147,25 @@ public partial interface IOptions : IModelObject
   /// Hangul and Hanja. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.hangulhanjafastconversion?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Hangul")]
   public bool? HangulHanjaFastConversion { get; set; }
 
   /// <summary> 
   /// Returns or sets the mode for the Hebrew spelling checker. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.hebrewmode?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Hebrew")]
+  [MultiCategory("Spelling")]
   public HebSpellStart? HebrewMode { get; set; }
 
   /// <summary> 
   /// True if Microsoft Word is set to automatically open and close the Japanese Input Method Editor (IME). 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.imeautomaticcontrol?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("IME")]
   public bool? IMEAutomaticControl { get; set; }
 
   /// <summary> 
@@ -127,12 +173,16 @@ public partial interface IOptions : IModelObject
   /// an insertion between existing (confirmed) character strings. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.inlineconversion?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("IME")]
   public bool? InlineConversion { get; set; }
 
   /// <summary> 
   /// Returns or sets the high-ANSI text interpretation behavior. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.interprethighansi?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("High ANSI")]
   public HighAnsiText? InterpretHighAnsi { get; set; }
 
   /// <summary> 
@@ -140,6 +190,8 @@ public partial interface IOptions : IModelObject
   /// "e"-row characters during a search. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzyay?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("High ANSI")]
   public bool? MatchFuzzyAY { get; set; }
 
   /// <summary> 
@@ -147,6 +199,8 @@ public partial interface IOptions : IModelObject
   /// and "fua" characters during a search. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzybv?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Search")]
   public bool? MatchFuzzyBV { get; set; }
 
   /// <summary> 
@@ -154,12 +208,16 @@ public partial interface IOptions : IModelObject
   /// Japanese) during a search. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzybyte?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Search")]
   public bool? MatchFuzzyByte { get; set; }
 
   /// <summary> 
   /// True if Microsoft Word ignores the distinction between uppercase and lowercase letters during a search. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzycase?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Search")]
   public bool? MatchFuzzyCase { get; set; }
 
   /// <summary> 
@@ -167,6 +225,8 @@ public partial interface IOptions : IModelObject
   /// search. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzydash?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Search")]
   public bool? MatchFuzzyDash { get; set; }
 
   /// <summary> 
@@ -174,6 +234,8 @@ public partial interface IOptions : IModelObject
   /// "zu" characters during a search. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzydz?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Search")]
   public bool? MatchFuzzyDZ { get; set; }
 
   /// <summary> 
@@ -181,18 +243,24 @@ public partial interface IOptions : IModelObject
   /// "vuyu" characters during a search. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzyhf?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Search")]
   public bool? MatchFuzzyHF { get; set; }
 
   /// <summary> 
   /// True if Microsoft Word ignores the distinction between hiragana and katakana during a search. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzyhiragana?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Search")]
   public bool? MatchFuzzyHiragana { get; set; }
 
   /// <summary> 
   /// True if Microsoft Word ignores the distinction between types of repetition marks during a search. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzyiterationmark?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Search")]
   public bool? MatchFuzzyIterationMark { get; set; }
 
   /// <summary> 
@@ -200,6 +268,8 @@ public partial interface IOptions : IModelObject
   /// search. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzykanji?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Search")]
   public bool? MatchFuzzyKanji { get; set; }
 
   /// <summary> 
@@ -207,36 +277,48 @@ public partial interface IOptions : IModelObject
   /// characters during a search. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzykiku?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Search")]
   public bool? MatchFuzzyKiKu { get; set; }
 
   /// <summary> 
   /// True if Microsoft Word ignores the distinction between new kana and old kana characters during a search. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzyoldkana?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Search")]
   public bool? MatchFuzzyOldKana { get; set; }
 
   /// <summary> 
   /// True if Microsoft Word ignores the distinction between short and long vowel sounds during a search. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzyprolongedsoundmark?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Search")]
   public bool? MatchFuzzyProlongedSoundMark { get; set; }
 
   /// <summary> 
   /// True if Microsoft Word ignores the distinction between types of punctuation marks during a search. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzypunctuation?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Search")]
   public bool? MatchFuzzyPunctuation { get; set; }
 
   /// <summary> 
   /// True if Microsoft Word ignores the distinction between diphthongs and double consonants during a search. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzysmallkana?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Search")]
   public bool? MatchFuzzySmallKana { get; set; }
 
   /// <summary> 
   /// True if Microsoft Word ignores the distinction between space markers used during a search. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzyspace?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Search")]
   public bool? MatchFuzzySpace { get; set; }
 
   /// <summary> 
@@ -244,6 +326,8 @@ public partial interface IOptions : IModelObject
   /// the "dei" and "ji" characters during a search. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzytc?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Search")]
   public bool? MatchFuzzyTC { get; set; }
 
   /// <summary> 
@@ -251,48 +335,69 @@ public partial interface IOptions : IModelObject
   /// characters during a search. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.matchfuzzyzj?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Search")]
   public bool? MatchFuzzyZJ { get; set; }
 
   /// <summary> 
   /// Returns or sets the direction for conversion between Hangul and Hanja. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.monthnames?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Hangul")]
   public MonthNames? MonthNames { get; set; }
 
   /// <summary> 
   /// Returns or sets the direction for conversion between Hangul and Hanja. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.multiplewordconversionsmode?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Hangul")]
   public MultipleWordConversionsMode? MultipleWordConversionsMode { get; set; }
 
   /// <summary> 
   /// Gets or sets the mode for the European Portuguese speller. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.portugalreform?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Portuguese")]
+  [MultiCategory("Spelling")]
   public PortugueseReform? PortugalReform { get; set; }
 
   /// <summary> 
   /// True to check the sequence of independent characters for South Asian text. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.sequencecheck?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("East Asian")]
+  [MultiCategory("Spelling")]
   public bool? SequenceCheck { get; set; }
 
   /// <summary> 
   /// Gets or sets the mode for the Spanish speller. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.spanishmode?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Spanish")]
+  [MultiCategory("Spelling")]
   public SpanishSpeller? SpanishMode { get; set; }
 
   /// <summary> 
   /// True if the spelling checker uses spelling rules regarding Arabic words ending with the letter yaa. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.strictfinalyaa?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Arabic")]
+  [MultiCategory("Spelling")]
   public bool? StrictFinalYaa { get; set; }
 
   /// <summary> 
   /// True if the spelling checker uses spelling rules regarding Arabic words beginning with an alef hamza. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.strictinitialalefhamza?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Arabic")]
+  [MultiCategory("Spelling")]
   public bool? StrictInitialAlefHamza { get; set; }
 
   /// <summary> 
@@ -300,6 +405,9 @@ public partial interface IOptions : IModelObject
   /// character. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.strictrussiane?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Russian")]
+  [MultiCategory("Spelling")]
   public bool? StrictRussianE { get; set; }
 
   /// <summary> 
@@ -307,12 +415,18 @@ public partial interface IOptions : IModelObject
   /// of taa marboota. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.stricttaamarboota?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("Arabic")]
+  [MultiCategory("Spelling")]
   public bool? StrictTaaMarboota { get; set; }
 
   /// <summary> 
   /// True if Microsoft Word uses the German post-reform spelling rules when checking spelling. 
   /// </summary> 
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.usegermanspellingreform?view=word-pia"/>
+  [MultiCategory("International")]
+  [MultiCategory("German")]
+  [MultiCategory("Spelling")]
   public bool? UseGermanSpellingReform { get; set; }
 
 }

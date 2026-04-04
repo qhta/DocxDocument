@@ -25,12 +25,6 @@
   <ItemGroup>
     <Compile Remove="Application\DispObjs\_IMsoDispObj.Inheritance.cs" />
     <Compile Remove="Wordprocessing\Documents\Document.Methods.cs" />
-    <Compile Remove="Wordprocessing\Settings\Options.AutoFormat.cs" />
-    <Compile Remove="Wordprocessing\Settings\Options.Display.cs" />
-    <Compile Remove="Wordprocessing\Settings\Options.Edit.cs" />
-    <Compile Remove="Wordprocessing\Settings\Options.International.cs" />
-    <Compile Remove="Wordprocessing\Settings\Options.Methods.cs" />
-    <Compile Remove="Wordprocessing\Settings\Options.Proofing.cs" />
     <Compile Remove="Wordprocessing\Settings\Options.SpellChecking.cs" />
   </ItemGroup>
   <ItemGroup>
