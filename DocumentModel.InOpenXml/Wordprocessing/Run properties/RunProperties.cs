@@ -1,6 +1,6 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-/// Run Properties interface for formatting text runs in WordprocessingML documents.
+/// Run Properties class for formatting text runs in WordprocessingML documents.
 /// Provides complete control over character-level formatting including font name, size, style, color, spacing, effects, and advanced typography features.
 /// Corresponds to the DocumentFormat.OpenXml.Wordprocessing.RunProperties class and contains all properties for comprehensive run formatting.
 /// </summary>
@@ -20,7 +20,7 @@ public partial class RunProperties : BaseRunProperties<DXW.RunProperties>
  /// </summary>
  public bool? ItalicComplexScript { get; set; }
  /// <summary>
- /// Font size for complex script text in half-points.
+ /// TextFormat size for complex script text in half-points.
  /// </summary>
  public string? FontSizeComplexScript { get; set; }
  /// <summary>

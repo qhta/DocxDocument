@@ -54,7 +54,7 @@ public partial class ParagraphProperties : ModelElement<DXD.ParagraphProperties>
  public bool? EastAsianLineBreak { get => _EastAsianLineBreak; set => UpdateField(ref _EastAsianLineBreak, value, nameof(EastAsianLineBreak)); }
  private bool? _EastAsianLineBreak;
  /// <summary>
- ///   Font alignment within the paragraph.
+ ///   TextFormat alignment within the paragraph.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ParagraphProperties.FontAlignment))]
  public TextFontAlignment? FontAlignment { get => _FontAlignment; set => UpdateField(ref _FontAlignment, value, nameof(FontAlignment)); }

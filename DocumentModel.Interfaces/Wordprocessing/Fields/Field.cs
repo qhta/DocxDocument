@@ -82,5 +82,5 @@ public partial interface IField : IModelObject
   /// Gets the inline shape associated with the field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.inlineshape?view=word-pia"/>
-  public Drw.InlineShape InlineShape { get; }
+  public DMD.InlineShape InlineShape { get; }
 }

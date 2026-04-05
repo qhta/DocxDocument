@@ -30,8 +30,11 @@
     <None Remove="VariantTypes\**" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove="Converters\OnOff.XmlSerialization.cs" />
+    <Compile Remove="Converters\OnOffJsonConverter.cs" />
     <Compile Remove="Converters\OnOffToggle.XmlSerialization.cs" />
     <Compile Remove="Converters\OnOffToggleJsonConvertery.cs" />
+    <Compile Remove="OnOff.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Qhta.Collections" Version="5.4.0" />

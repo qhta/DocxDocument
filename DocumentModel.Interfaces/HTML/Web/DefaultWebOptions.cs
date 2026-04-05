@@ -60,7 +60,7 @@ public interface IDefaultWebOptions : IModelObject
   /// Gets or sets the target screen size for saved web pages.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.screensize?view=word-pia"/>
-  public Drw.ScreenSize ScreenSize { get; set; }
+  public DMD.ScreenSize ScreenSize { get; set; }
   /// <summary>
   /// Gets or sets the target pixels-per-inch value for saved web pages.
   /// </summary>

@@ -9,10 +9,10 @@ namespace DocumentModel.Wordprocessing;
 [JsonConverter(typeof(StringEnumConverter))]
 public enum FontProperties
 {
-  /// <summary>Font name</summary>
+  /// <summary>TextFormat name</summary>
   [OpenXmlEnumValue("Name")]
   Name = 1,
-  /// <summary>Font size</summary>
+  /// <summary>TextFormat size</summary>
   [OpenXmlEnumValue("Size")]
   Size = 2,
   /// <summary>Bold</summary>

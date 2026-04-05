@@ -18,7 +18,7 @@ public partial interface IDisplayUnitLabel: IChartTitle
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.characters?view=office-pia"/>
   public new ICharacters Characters { get; }
   /// <summary>
-  /// Gets the `Font` property.
+  /// Gets the `TextFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.font?view=office-pia"/>
   public new IChartFont Font { get; }

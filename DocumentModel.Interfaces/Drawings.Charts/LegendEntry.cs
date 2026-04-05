@@ -8,7 +8,7 @@ namespace DocumentModel.Drawings.Charts;
 public partial interface ILegendEntry: IModelObject
 {
   /// <summary>
-  /// Gets or sets the `Font` property.
+  /// Gets or sets the `TextFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.font?view=office-pia"/>
   public IChartFont Font { get; }

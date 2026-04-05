@@ -48,7 +48,7 @@ public partial class Diagram : ModelElement<DXVO.Diagram>
  public Int64? ScaleY { get => _ScaleY; set => UpdateField(ref _ScaleY, value, nameof(ScaleY)); }
  private Int64? _ScaleY;
  /// <summary>
- ///   Diagram Font Size
+ ///   Diagram TextFormat Size
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Diagram.FontSize))]
  public Int64? FontSize { get => _FontSize; set => UpdateField(ref _FontSize, value, nameof(FontSize)); }
@@ -60,7 +60,7 @@ public partial class Diagram : ModelElement<DXVO.Diagram>
  public string? ConstrainBounds { get => _ConstrainBounds; set => UpdateField(ref _ConstrainBounds, value, nameof(ConstrainBounds)); }
  private string? _ConstrainBounds;
  /// <summary>
- ///   Diagram Base Font Size
+ ///   Diagram Base TextFormat Size
  /// </summary>
  [OpenXmlProperty(nameof(DXVO.Diagram.BaseTextScale))]
  public Int64? BaseTextScale { get => _BaseTextScale; set => UpdateField(ref _BaseTextScale, value, nameof(BaseTextScale)); }

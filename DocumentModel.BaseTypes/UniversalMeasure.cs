@@ -266,13 +266,13 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   /// Converts the UniversalMeasure value to millimeters.
   /// </summary>
   /// <returns>The measurement in millimeters as a double-precision floating-point number.</returns>
-  public double ToMM() => DoubleValue / UnitsPerMM;
+  public double ToMillimeters() => DoubleValue / UnitsPerMM;
 
   /// <summary>
   /// Converts the UniversalMeasure value to centimeters.
   /// </summary>
   /// <returns>The measurement in centimeters as a double-precision floating-point number.</returns>
-  public double ToCM() => DoubleValue / UnitsInCM;
+  public double ToCentimeters() => DoubleValue / UnitsInCM;
 
   /// <summary>
   /// Converts the UniversalMeasure value to inches.
@@ -287,7 +287,7 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   /// <remarks>
   /// A point is defined as 1/72 of an inch.
   /// </remarks>
-  public double ToPT() => DoubleValue / UnitsPerPoint;
+  public double ToPoints() => DoubleValue / UnitsPerPoint;
 
   /// <summary>
   /// Converts the UniversalMeasure value to Twips.
@@ -310,9 +310,9 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
     return units switch
     {
       LengthUnit.Twips => ToTwips(),
-      LengthUnit.Points => ToPT(),
-      LengthUnit.Millimeters => ToMM(),
-      LengthUnit.Centimeters => ToCM(),
+      LengthUnit.Points => ToPoints(),
+      LengthUnit.Millimeters => ToMillimeters(),
+      LengthUnit.Centimeters => ToCentimeters(),
       LengthUnit.Inches => ToInch(),
       _ => throw new ArgumentException($"Unsupported length unit: {units}", nameof(units))
     };

@@ -10,7 +10,7 @@ public interface IConditionalStyle : IModelObject
   /// Gets the shading formatting for the conditional style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conditionalstyle.shading?view=word-pia"/>
-  public Drw.IShading Shading { get; }
+  public DMD.IShading Shading { get; }
   /// <summary>
   /// Gets or sets the border formatting for the conditional style.
   /// </summary>
@@ -45,6 +45,6 @@ public interface IConditionalStyle : IModelObject
   /// Gets or sets the font formatting for the conditional style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conditionalstyle.font?view=word-pia"/>
-  public IFont Font { get; set; }
+  public ITextFormat TextFormat { get; set; }
 
 }

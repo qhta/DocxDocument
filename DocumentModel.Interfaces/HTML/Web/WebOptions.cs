@@ -63,7 +63,7 @@ public partial interface IWebOptions : IModelObject
   /// the saved document in a Web browser.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.weboptions.screensize?view=word-pia"/>
-  public Drw.ScreenSize ScreenSize { get; set; }
+  public DMD.ScreenSize ScreenSize { get; set; }
 
   /// <summary>
   /// Returns or sets the density (pixels per inch) of graphics images and table cells on a Web page.

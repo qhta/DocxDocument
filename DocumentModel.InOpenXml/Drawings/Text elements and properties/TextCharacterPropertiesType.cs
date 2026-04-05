@@ -34,7 +34,7 @@ public partial class TextCharacterPropertiesType : ModelElement<DXD.TextCharacte
  public string? AlternativeLanguage { get => _AlternativeLanguage; set => UpdateField(ref _AlternativeLanguage, value, nameof(AlternativeLanguage)); }
  private string? _AlternativeLanguage;
  /// <summary>
- ///   Font size.
+ ///   TextFormat size.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.TextCharacterPropertiesType.FontSize))]
  public Int32? FontSize { get => _FontSize; set => UpdateField(ref _FontSize, value, nameof(FontSize)); }

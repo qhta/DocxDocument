@@ -48,17 +48,17 @@ public partial interface ITextFrame: IModelObject
   /// Gets or sets the `PathFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.pathformat?view=office-pia"/>
-  public Drw.PathFormat PathFormat { get; set; }
+  public Drawings.PathFormat PathFormat { get; set; }
   /// <summary>
   /// Gets or sets the `WarpFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.warpformat?view=office-pia"/>
-  public Drw.WarpFormat WarpFormat { get; set; }
+  public Drawings.WarpFormat WarpFormat { get; set; }
   /// <summary>
   /// Gets or sets the `WordArtformat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.wordartformat?view=office-pia"/>
-  public Drw.PresetTextEffect WordArtformat { get; set; }
+  public Drawings.PresetTextEffect WordArtformat { get; set; }
   /// <summary>
   /// Gets or sets the `WordWrap` property.
   /// </summary>

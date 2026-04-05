@@ -358,7 +358,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   }
   private DocumentVariables? _DocumentVariables;
   /// <summary>
-  ///   Font table for the document, providing access to font definitions used within the document.
+  ///   TextFormat table for the document, providing access to font definitions used within the document.
   /// </summary>
   public FontTable? FontTableTable
   {

@@ -33,7 +33,7 @@ public partial interface IDataTable: IModelObject
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatatable.border?view=office-pia"/>
   public IBorder Border { get; }
   /// <summary>
-  /// Gets the `Font` property.
+  /// Gets the `TextFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatatable.font?view=office-pia"/>
   public IChartFont Font { get; }

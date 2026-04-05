@@ -24,7 +24,7 @@ public partial class Style : ModelElement<DXDD.Style>
   public EffectReference? EffectReference { get => _EffectReference; set => UpdateField(ref _EffectReference, value, nameof(EffectReference)); }
   private EffectReference? _EffectReference;
   /// <summary>
-  ///   Font Reference.
+  ///   TextFormat Reference.
   /// </summary>
   [OpenXmlProperty(nameof(DXDD.Style.FontReference))]
   public FontReference? FontReference { get => _FontReference; set => UpdateField(ref _FontReference, value, nameof(FontReference)); }

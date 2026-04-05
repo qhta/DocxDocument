@@ -12,7 +12,7 @@ public partial class ThemeElements : ModelElement<DXD.ThemeElements>, IExtendabl
  public ColorScheme? ColorScheme { get => _ColorScheme; set => UpdateField(ref _ColorScheme, value, nameof(ColorScheme)); }
  private ColorScheme? _ColorScheme;
  /// <summary>
- ///   Font scheme for the theme.
+ ///   TextFormat scheme for the theme.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ThemeElements.FontScheme))]
  public FontScheme? FontScheme { get => _FontScheme; set => UpdateField(ref _FontScheme, value, nameof(FontScheme)); }

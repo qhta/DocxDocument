@@ -4,8 +4,14 @@ namespace DocumentModel.Wordprocessing;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font?view=word-pia"/>
-public partial interface IFont
+public partial interface ITextFormat
 {
+  /// <summary>
+  /// Gets a duplicate of the font formatting.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.duplicate?view=word-pia"/>
+  public ITextFormat Duplicate();
+
   /// <summary>
   /// Increases the font size to the next available size. If the selection or range contains more than one font
   /// size, each size is increased to the next available setting.

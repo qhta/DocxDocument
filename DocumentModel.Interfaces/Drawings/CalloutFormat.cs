@@ -16,7 +16,7 @@ public partial interface ICalloutFormat : IModelObject
   /// Gets or sets the angle type of the callout line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.angle?view=word-pia"/>
-  public Drw.CalloutAngleType Angle { get; set; }
+  public Drawings.CalloutAngleType Angle { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the callout automatically attaches to points on the shape.
@@ -46,7 +46,7 @@ public partial interface ICalloutFormat : IModelObject
   /// Gets the drop type of the callout line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.droptype?view=word-pia"/>
-  public Drw.CalloutDropType DropType { get; }
+  public Drawings.CalloutDropType DropType { get; }
 
   /// <summary>
   /// Gets or sets the distance, in points, between the callout line and the callout text box.
@@ -64,5 +64,5 @@ public partial interface ICalloutFormat : IModelObject
   /// Gets or sets the callout type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.type?view=word-pia"/>
-  public Drw.CalloutType Type { get; set; }
+  public Drawings.CalloutType Type { get; set; }
 }

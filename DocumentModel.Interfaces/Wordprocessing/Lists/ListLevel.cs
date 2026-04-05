@@ -78,7 +78,7 @@ public partial interface IListLevel : IModelObject
   /// Returns or sets the font formatting for the list number.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.font?view=word-pia"/>
-  public IFont Font { get; set; }
+  public ITextFormat TextFormat { get; set; }
 
   /// <summary>
   /// Returns or sets the higher list level that causes numbering to restart.
@@ -90,5 +90,5 @@ public partial interface IListLevel : IModelObject
   /// Returns the picture bullet for the list level.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.picturebullet?view=word-pia"/>
-  public Drw.InlineShape PictureBullet { get; }
+  public DMD.InlineShape PictureBullet { get; }
 }

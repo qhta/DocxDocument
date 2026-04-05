@@ -31,15 +31,15 @@ public static class HexRgbTest
   static bool TestHexRgbBasicOperations()
   {
     Console.WriteLine("--- Testing HexRgb Basic Operations ---");      // Test string to HexRgb conversion
-    HexRgb color1 = new HexRgb("FF0000");
+    HexColor color1 = new HexColor("FF0000");
     Console.WriteLine($"\n✓ String to HexRgb: {color1} = Red({color1.R}), Green({color1.G}), Blue({color1.B})");
 
     // Test UInt32 to HexRgb conversion
-    HexRgb color2 = new HexRgb(0xFF0000U);
+    HexColor color2 = new HexColor(0xFF0000U);
     Console.WriteLine($"\n✓ UInt32 to HexRgb: {color2}");
 
     // Test byte components constructor
-    HexRgb color3 = new HexRgb(255, 0, 0);
+    HexColor color3 = new HexColor(255, 0, 0);
     Console.WriteLine($"\n✓ Byte components to HexRgb: {color3}");
 
     // Test equality
@@ -56,7 +56,7 @@ public static class HexRgbTest
     Console.WriteLine($"\n✓ Component access: R={color1.R}, G={color1.G}, B={color1.B}");
 
     // Test component modification
-    HexRgb mutableColor = new HexRgb(100, 150, 200);
+    HexColor mutableColor = new HexColor(100, 150, 200);
     Console.WriteLine($"\n✓ Original color: {mutableColor}");
     mutableColor.R = 255;
     Console.WriteLine($"\n✓ After setting R=255: {mutableColor}");
@@ -73,8 +73,8 @@ public static class HexRgbTest
     Int32 intVal = color1;
     Console.WriteLine($"\n✓ Implicit conversions: UInt32={uintVal:X6}, Int32={intVal:X6}");
 
-    HexRgb fromUInt = uintVal;
-    HexRgb fromInt = intVal;
+    HexColor fromUInt = uintVal;
+    HexColor fromInt = intVal;
     Console.WriteLine($"\n✓ Back to HexRgb: fromUInt={fromUInt}, fromInt={fromInt}");
 
     Console.WriteLine("\n✓ All basic operations passed");
@@ -88,29 +88,29 @@ public static class HexRgbTest
   {
     Console.WriteLine("--- Testing HexRgb Color Operations ---");      // Test primary colors
     Console.WriteLine("Testing primary colors:");
-    HexRgb red = new HexRgb(255, 0, 0);
-    HexRgb green = new HexRgb(0, 255, 0);
-    HexRgb blue = new HexRgb(0, 0, 255);
+    HexColor red = new HexColor(255, 0, 0);
+    HexColor green = new HexColor(0, 255, 0);
+    HexColor blue = new HexColor(0, 0, 255);
     Console.WriteLine($"  Red: {red} (R={red.R}, G={red.G}, B={red.B})");
     Console.WriteLine($"  Green: {green} (R={green.R}, G={green.G}, B={green.B})");
     Console.WriteLine($"  Blue: {blue} (R={blue.R}, G={blue.G}, B={blue.B})");
 
     // Test secondary colors
     Console.WriteLine("\nTesting secondary colors:");
-    HexRgb yellow = new HexRgb(255, 255, 0);
-    HexRgb cyan = new HexRgb(0, 255, 255);
-    HexRgb magenta = new HexRgb(255, 0, 255);
+    HexColor yellow = new HexColor(255, 255, 0);
+    HexColor cyan = new HexColor(0, 255, 255);
+    HexColor magenta = new HexColor(255, 0, 255);
     Console.WriteLine($"  Yellow: {yellow} (R={yellow.R}, G={yellow.G}, B={yellow.B})");
     Console.WriteLine($"  Cyan: {cyan} (R={cyan.R}, G={cyan.G}, B={cyan.B})");
     Console.WriteLine($"  Magenta: {magenta} (R={magenta.R}, G={magenta.G}, B={magenta.B})");
 
     // Test grayscale colors
     Console.WriteLine("\nTesting grayscale colors:");
-    HexRgb black = new HexRgb(0, 0, 0);
-    HexRgb white = new HexRgb(255, 255, 255);
-    HexRgb gray50 = new HexRgb(128, 128, 128);
-    HexRgb gray25 = new HexRgb(64, 64, 64);
-    HexRgb gray75 = new HexRgb(192, 192, 192);
+    HexColor black = new HexColor(0, 0, 0);
+    HexColor white = new HexColor(255, 255, 255);
+    HexColor gray50 = new HexColor(128, 128, 128);
+    HexColor gray25 = new HexColor(64, 64, 64);
+    HexColor gray75 = new HexColor(192, 192, 192);
     Console.WriteLine($"  Black: {black}");
     Console.WriteLine($"  White: {white}");
     Console.WriteLine($"  Gray 50%: {gray50}");
@@ -119,10 +119,10 @@ public static class HexRgbTest
 
     // Test common web colors
     Console.WriteLine("\nTesting common web colors:");
-    HexRgb orange = new HexRgb("FFA500");
-    HexRgb purple = new HexRgb("800080");
-    HexRgb brown = new HexRgb("A52A2A");
-    HexRgb pink = new HexRgb("FFC0CB");
+    HexColor orange = new HexColor("FFA500");
+    HexColor purple = new HexColor("800080");
+    HexColor brown = new HexColor("A52A2A");
+    HexColor pink = new HexColor("FFC0CB");
     Console.WriteLine($"  Orange: {orange}");
     Console.WriteLine($"  Purple: {purple}");
     Console.WriteLine($"  Brown: {brown}");
@@ -130,15 +130,15 @@ public static class HexRgbTest
 
     // Test color string parsing (case insensitive)
     Console.WriteLine("\nTesting case-insensitive parsing:");
-    HexRgb upperCase = new HexRgb("FF00FF");
-    HexRgb lowerCase = new HexRgb("ff00ff");
+    HexColor upperCase = new HexColor("FF00FF");
+    HexColor lowerCase = new HexColor("ff00ff");
     Console.WriteLine($"  Uppercase 'FF00FF': {upperCase}");
     Console.WriteLine($"  Lowercase 'ff00ff': {lowerCase}");
     Console.WriteLine($"  Are equal: {upperCase.Equals(lowerCase)}");
 
     // Test bit manipulation correctness
     Console.WriteLine("\nTesting bit manipulation correctness:");
-    HexRgb testColor = new HexRgb(0x12, 0x34, 0x56);
+    HexColor testColor = new HexColor(0x12, 0x34, 0x56);
     UInt32 asUInt = testColor;
     Console.WriteLine($"  Original: R=0x{testColor.R:X2}, G=0x{testColor.G:X2}, B=0x{testColor.B:X2}");
     Console.WriteLine($"  As UInt32: 0x{asUInt:X6} (expected 0x123456)");
@@ -159,7 +159,7 @@ public static class HexRgbTest
   {
     Console.WriteLine("--- Testing HexRgb IConvertible Conversions ---");      // Test GetTypeCode
     Console.WriteLine("Testing GetTypeCode:");
-    HexRgb color = new HexRgb(0xABCDEF);
+    HexColor color = new HexColor(0xABCDEF);
     TypeCode typeCode = color.GetTypeCode();
     Console.WriteLine($"  GetTypeCode(): {typeCode}");
     if (typeCode != TypeCode.Object)
@@ -170,7 +170,7 @@ public static class HexRgbTest
 
     // Test ToInt32
     Console.WriteLine("\nTesting ToInt32 (returns HexRgb value):");
-    HexRgb testColor = new HexRgb(0x123456);
+    HexColor testColor = new HexColor(0x123456);
     int int32Value = testColor.ToInt32(null);
     Console.WriteLine($"  HexRgb(0x123456) ToInt32: 0x{int32Value:X6}");
     if (int32Value != 0x123456)
@@ -211,7 +211,7 @@ public static class HexRgbTest
 
     // Test ToString(IFormatProvider)
     Console.WriteLine("\nTesting ToString(IFormatProvider):");
-    HexRgb HexRgbColor = new HexRgb("FF00AA");
+    HexColor HexRgbColor = new HexColor("FF00AA");
     string str = HexRgbColor.ToString(CultureInfo.InvariantCulture);
     Console.WriteLine($"  ToString result: '{str}'");
     if (str != "FF00AA")
@@ -278,9 +278,9 @@ public static class HexRgbTest
     }
 
     // ToType(typeof(HexRgb))
-    var asHexRgb = testColor.ToType(typeof(HexRgb), null);
+    var asHexRgb = testColor.ToType(typeof(HexColor), null);
     Console.WriteLine($"  ToType(typeof(HexRgb)): {asHexRgb == (object)testColor}");
-    if (!(asHexRgb is HexRgb) || !((HexRgb)asHexRgb).Equals(testColor))
+    if (!(asHexRgb is HexColor) || !((HexColor)asHexRgb).Equals(testColor))
     {
       Console.WriteLine("✗ ToType(HexRgb) test FAILED");
       return false;
@@ -412,15 +412,15 @@ public static class HexRgbTest
   {
     return new HexRgbTestData
     {
-      PrimaryRed = new HexRgb(255, 0, 0),
-      PrimaryGreen = new HexRgb(0, 255, 0),
-      PrimaryBlue = new HexRgb(0, 0, 255),
-      SecondaryYellow = new HexRgb(255, 255, 0),
-      Black = new HexRgb(0, 0, 0),
-      White = new HexRgb(255, 255, 255),
-      Gray = new HexRgb(128, 128, 128),
-      CustomColor1 = new HexRgb("A1B2C3"),
-      CustomColor2 = new HexRgb(0x456789)
+      PrimaryRed = new HexColor(255, 0, 0),
+      PrimaryGreen = new HexColor(0, 255, 0),
+      PrimaryBlue = new HexColor(0, 0, 255),
+      SecondaryYellow = new HexColor(255, 255, 0),
+      Black = new HexColor(0, 0, 0),
+      White = new HexColor(255, 255, 255),
+      Gray = new HexColor(128, 128, 128),
+      CustomColor1 = new HexColor("A1B2C3"),
+      CustomColor2 = new HexColor(0x456789)
     };
   }
 
@@ -447,25 +447,25 @@ public static class HexRgbTest
 
     //      // Test boundary values
     Console.WriteLine("Testing boundary values:");
-    HexRgb minColor = new HexRgb(0, 0, 0);
-    HexRgb maxColor = new HexRgb(255, 255, 255);
+    HexColor minColor = new HexColor(0, 0, 0);
+    HexColor maxColor = new HexColor(255, 255, 255);
     Console.WriteLine($"  Min (Black): {minColor} (0x{((UInt32)minColor):X6})");
     Console.WriteLine($"  Max (White): {maxColor} (0x{((UInt32)maxColor):X6})");
 
     // Test individual component boundaries
     Console.WriteLine("\nTesting individual component boundaries:");
-    HexRgb maxRed = new HexRgb(255, 0, 0);
-    HexRgb maxGreen = new HexRgb(0, 255, 0);
-    HexRgb maxBlue = new HexRgb(0, 0, 255);
+    HexColor maxRed = new HexColor(255, 0, 0);
+    HexColor maxGreen = new HexColor(0, 255, 0);
+    HexColor maxBlue = new HexColor(0, 0, 255);
     Console.WriteLine($"  Max Red: {maxRed}");
     Console.WriteLine($"  Max Green: {maxGreen}");
     Console.WriteLine($"  Max Blue: {maxBlue}");
 
     // Test HexInt conversions
     Console.WriteLine("\nTesting HexInt conversions:");
-    HexRgb color = new HexRgb(0xABCDEF);
+    HexColor color = new HexColor(0xABCDEF);
     HexInt hexColor = color;
-    HexRgb backToHexRgb = hexColor;
+    HexColor backToHexRgb = hexColor;
     Console.WriteLine($"  Original HexRgb: {color}");
     Console.WriteLine($"  As HexInt: {hexColor}");
     Console.WriteLine($"  Back to HexRgb: {backToHexRgb}");
@@ -486,7 +486,7 @@ public static class HexRgbTest
 
     // Test component modification
     Console.WriteLine("\nTesting component modification:");
-    HexRgb mutable = new HexRgb(100, 100, 100);
+    HexColor mutable = new HexColor(100, 100, 100);
     Console.WriteLine($"  Original: {mutable} (R={mutable.R}, G={mutable.G}, B={mutable.B})");
 
     mutable.R = 200;
@@ -500,7 +500,7 @@ public static class HexRgbTest
 
     // Test 24-bit masking
     Console.WriteLine("\nTesting 24-bit masking:");
-    HexRgb masked = new HexRgb(0xFFABCDEF);
+    HexColor masked = new HexColor(0xFFABCDEF);
     Console.WriteLine($"  Input: 0xFFABCDEF");
     Console.WriteLine($"  Masked HexRgb: {masked} (should be ABCDEF)");
     if (masked.ToString() != "ABCDEF")
@@ -511,9 +511,9 @@ public static class HexRgbTest
 
     // Test equality and hash code
     Console.WriteLine("\nTesting equality and hash code:");
-    HexRgb color1 = new HexRgb("123456");
-    HexRgb color2 = new HexRgb(0x123456);
-    HexRgb color3 = new HexRgb(0x12, 0x34, 0x56);
+    HexColor color1 = new HexColor("123456");
+    HexColor color2 = new HexColor(0x123456);
+    HexColor color3 = new HexColor(0x12, 0x34, 0x56);
     Console.WriteLine($"  color1: {color1}");
     Console.WriteLine($"  color2: {color2}");
     Console.WriteLine($"  color3: {color3}");
@@ -549,7 +549,7 @@ public static class HexRgbTest
     var sw = System.Diagnostics.Stopwatch.StartNew();
     for (int i = 0; i < iterations; i++)
     {
-      HexRgb color = new HexRgb("FF0000");
+      HexColor color = new HexColor("FF0000");
     }
     sw.Stop();
     Console.WriteLine($"Construction from string x {iterations}: {sw.ElapsedMilliseconds}ms");
@@ -558,7 +558,7 @@ public static class HexRgbTest
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      HexRgb color = new HexRgb(0xFF0000U);
+      HexColor color = new HexColor(0xFF0000U);
     }
     sw.Stop();
     Console.WriteLine($"Construction from UInt32 x {iterations}: {sw.ElapsedMilliseconds}ms");
@@ -567,13 +567,13 @@ public static class HexRgbTest
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      HexRgb color = new HexRgb(255, 0, 0);
+      HexColor color = new HexColor(255, 0, 0);
     }
     sw.Stop();
     Console.WriteLine($"Construction from bytes x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     // Test ToString performance
-    HexRgb testColor = new HexRgb(255, 128, 64);
+    HexColor testColor = new HexColor(255, 128, 64);
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
@@ -594,7 +594,7 @@ public static class HexRgbTest
     Console.WriteLine($"Component access (R,G,B) x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     // Test component modification
-    HexRgb mutableColor = new HexRgb(100, 100, 100);
+    HexColor mutableColor = new HexColor(100, 100, 100);
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
@@ -608,15 +608,15 @@ public static class HexRgbTest
     // Test JSON serialization performance
     var testObj = new HexRgbTestData
     {
-      PrimaryRed = new HexRgb(255, 0, 0),
-      PrimaryGreen = new HexRgb(0, 255, 0),
-      PrimaryBlue = new HexRgb(0, 0, 255),
-      SecondaryYellow = new HexRgb(255, 255, 0),
-      Black = new HexRgb(0, 0, 0),
-      White = new HexRgb(255, 255, 255),
-      Gray = new HexRgb(128, 128, 128),
-      CustomColor1 = new HexRgb("A1B2C3"),
-      CustomColor2 = new HexRgb(0x456789)
+      PrimaryRed = new HexColor(255, 0, 0),
+      PrimaryGreen = new HexColor(0, 255, 0),
+      PrimaryBlue = new HexColor(0, 0, 255),
+      SecondaryYellow = new HexColor(255, 255, 0),
+      Black = new HexColor(0, 0, 0),
+      White = new HexColor(255, 255, 255),
+      Gray = new HexColor(128, 128, 128),
+      CustomColor1 = new HexColor("A1B2C3"),
+      CustomColor2 = new HexColor(0x456789)
     };
 
     sw.Restart();
@@ -638,8 +638,8 @@ public static class HexRgbTest
     Console.WriteLine($"Deserialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
 
     // Test Equals performance
-    HexRgb color1 = new HexRgb(128, 128, 128);
-    HexRgb color2 = new HexRgb(128, 128, 128);
+    HexColor color1 = new HexColor(128, 128, 128);
+    HexColor color2 = new HexColor(128, 128, 128);
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
@@ -682,31 +682,31 @@ public class HexRgbTestData
 {
   [XmlElement("PrimaryRed")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public HexRgb PrimaryRed { get; set; }
+  public HexColor PrimaryRed { get; set; }
 
   [XmlElement("PrimaryGreen")]
-  public HexRgb PrimaryGreen { get; set; }
+  public HexColor PrimaryGreen { get; set; }
 
   [XmlElement("PrimaryBlue")]
-  public HexRgb PrimaryBlue { get; set; }
+  public HexColor PrimaryBlue { get; set; }
 
   [XmlElement("SecondaryYellow")]
-  public HexRgb SecondaryYellow { get; set; }
+  public HexColor SecondaryYellow { get; set; }
 
   [XmlElement("Black")]
-  public HexRgb Black { get; set; }
+  public HexColor Black { get; set; }
 
   [XmlElement("White")]
-  public HexRgb White { get; set; }
+  public HexColor White { get; set; }
 
   [XmlElement("Gray")]
-  public HexRgb Gray { get; set; }
+  public HexColor Gray { get; set; }
 
   [XmlElement("CustomColor1")]
-  public HexRgb CustomColor1 { get; set; }
+  public HexColor CustomColor1 { get; set; }
 
   [XmlElement("CustomColor2")]
-  public HexRgb CustomColor2 { get; set; }
+  public HexColor CustomColor2 { get; set; }
 }
 
 /// <summary>
@@ -714,6 +714,6 @@ public class HexRgbTestData
 /// </summary>
 public class HexRgbWrapper
 {
-  public HexRgb Value { get; set; }
+  public HexColor Value { get; set; }
 }
 

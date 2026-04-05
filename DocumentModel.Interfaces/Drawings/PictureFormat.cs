@@ -17,7 +17,7 @@ public partial interface IPictureFormat : IModelObject
   /// Returns or sets the type of color transformation applied to the specified picture or OLE object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.colortype?view=word-pia"/>
-  public Drw.PictureColorType ColorType { get; set; }
+  public Drawings.PictureColorType ColorType { get; set; }
 
   /// <summary>
   /// Returns or sets the contrast for the specified picture or OLE object. The value for this property must be a
@@ -69,5 +69,5 @@ public partial interface IPictureFormat : IModelObject
   /// Gets or sets a Crop object that represents an image cropping.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pictureformat.crop?view=word-pia"/>
-  public Drw.ICrop Crop { get; set; }
+  public Drawings.ICrop Crop { get; set; }
 }

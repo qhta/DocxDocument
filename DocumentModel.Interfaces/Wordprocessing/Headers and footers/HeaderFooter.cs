@@ -42,6 +42,6 @@ public interface IHeaderFooter : IModelObject
   /// Returns the shapes collection for the header or footer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headerfooter.shapes?view=word-pia"/>
-  public Drw.IShapes Shapes { get; }
+  public DMD.IShapes Shapes { get; }
 
 }

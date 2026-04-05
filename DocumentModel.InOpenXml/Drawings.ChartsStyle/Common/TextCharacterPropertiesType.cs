@@ -40,7 +40,7 @@ public partial class TextCharacterPropertiesType: ModelElement<DXO13DCS.TextChar
   }
   private string? _AlternativeLanguage;
   /// <summary>
-  /// Font size for the text.
+  /// TextFormat size for the text.
   /// </summary>
   [OpenXmlProperty(nameof(DXO13DCS.TextCharacterPropertiesType.FontSize))]
   public Int32? FontSize { get => _FontSize; set => UpdateField(ref _FontSize, value, nameof(FontSize)); }

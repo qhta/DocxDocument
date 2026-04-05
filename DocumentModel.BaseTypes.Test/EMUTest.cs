@@ -137,7 +137,7 @@ public static class EMUTest
     Console.WriteLine("\nTesting millimeter conversions:");
     EMU oneMM = "1mm";
     Console.WriteLine($"  1mm = {(long)oneMM} EMUs (expected {emu1MM})");
-    Console.WriteLine($"  {emu1MM} EMUs = {oneMM.ToMM()}mm");
+    Console.WriteLine($"  {emu1MM} EMUs = {oneMM.ToMillimeters()}mm");
     if (!oneMM.Equals(emu1MM))
     {
       Console.WriteLine("✗ Millimeter conversion FAILED");
@@ -148,7 +148,7 @@ public static class EMUTest
     Console.WriteLine("\nTesting centimeter conversions:");
     EMU oneCM = "1cm";
     Console.WriteLine($"  1cm = {(long)oneCM} EMUs (expected ~{emu1CM})");
-    Console.WriteLine($"  {emu1CM} EMUs = {oneCM.ToCM()}cm");
+    Console.WriteLine($"  {emu1CM} EMUs = {oneCM.ToCentimeters()}cm");
     if (!oneCM.Equals(emu1CM))
     {
       Console.WriteLine("✗ Centimeter conversion FAILED");
@@ -159,7 +159,7 @@ public static class EMUTest
     Console.WriteLine("\nTesting point conversions:");
     EMU twelvePoints = "12pt";
     Console.WriteLine($"  12pt = {(long)twelvePoints} EMUs (expected {emu12PT})");
-    Console.WriteLine($"  {emu12PT} EMUs = {twelvePoints.ToPT()}pt");
+    Console.WriteLine($"  {emu12PT} EMUs = {twelvePoints.ToPoints()}pt");
     if (!twelvePoints.Equals(emu12PT))
     {
       Console.WriteLine("✗ Point conversion FAILED");
@@ -314,8 +314,8 @@ public static class EMUTest
     Console.WriteLine($"Original data:");
     Console.WriteLine($"  Width: {testData.Width} ({testData.Width.ToInch()}in)");
     Console.WriteLine($"  Height: {testData.Height} ({testData.Height.ToInch()}in)");
-    Console.WriteLine($"  LeftOffset: {testData.LeftOffset} ({testData.LeftOffset.ToMM():F1}mm)");
-    Console.WriteLine($"  TopOffset: {testData.TopOffset} ({testData.TopOffset.ToMM():F1}mm)");
+    Console.WriteLine($"  LeftOffset: {testData.LeftOffset} ({testData.LeftOffset.ToMillimeters():F1}mm)");
+    Console.WriteLine($"  TopOffset: {testData.TopOffset} ({testData.TopOffset.ToMillimeters():F1}mm)");
     Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
     Console.WriteLine($"  SmallValue: {testData.SmallValue}");
     Console.WriteLine($"  LargeValue: {testData.LargeValue}");
@@ -543,10 +543,10 @@ public static class EMUTest
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      double mm = testEmu.ToMM();
+      double mm = testEmu.ToMillimeters();
     }
     sw.Stop();
-    Console.WriteLine($"ToMM() x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"ToMillimeters() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     // Test JSON serialization performance
     var testObj = CreateTestData();

@@ -140,7 +140,7 @@ namespace DocumentModel.InOpenXml.Test
         ItalicCS = false,
         FontSize = isUpdated ? 28 : 24,
         FontSizeCS = isUpdated ? new HPS("12 pt") : "10 pt",
-        Caps = isUpdated ? false : true,
+        AllCaps = isUpdated ? false : true,
         SmallCaps = true,
         Strike = true,
         DoubleStrike = isUpdated ? true : null,

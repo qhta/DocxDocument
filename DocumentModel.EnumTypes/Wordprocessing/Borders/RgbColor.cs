@@ -11,241 +11,242 @@ public enum RgbColor
   /// <summary>
   /// Black color.
   /// </summary>
-  Black = 0,
+  Black = 0x000000,
   /// <summary>
   /// Dark red color.
   /// </summary>
-  DarkRed = 128,
+  DarkRed = 0x000080,
   /// <summary>
   /// Red color.
   /// </summary>
-  Red = 255,
+  Red = 0x0000FF,
   /// <summary>
   /// Dark green color.
   /// </summary>
-  DarkGreen = 13056,
+  DarkGreen = 0x003300,
   /// <summary>
   /// Olive green color.
   /// </summary>
-  OliveGreen = 13107,
+  OliveGreen = 0x003333,
   /// <summary>
   /// Brown color.
   /// </summary>
-  Brown = 13209,
+  Brown = 0x003399,
   /// <summary>
   /// Orange color.
   /// </summary>
-  Orange = 26367,
+  Orange = 0x0066FF,
   /// <summary>
   /// Green color.
   /// </summary>
-  Green = 32768,
+  Green = 0x008000,
   /// <summary>
   /// Dark yellow color.
   /// </summary>
-  DarkYellow = 32896,
+  DarkYellow = 0x008080,
   /// <summary>
   /// Light orange color.
   /// </summary>
-  LightOrange = 39423,
+  LightOrange = 0x0099FF,
   /// <summary>
   /// Lime color.
   /// </summary>
-  Lime = 52377,
+  Lime = 0x00CC99,
   /// <summary>
   /// Gold color.
   /// </summary>
-  Gold = 52479,
+  Gold = 0x00CCFF,
   /// <summary>
   /// Bright green color.
   /// </summary>
-  BrightGreen = 65280,
+  BrightGreen = 0x00FF00,
   /// <summary>
   /// Yellow color.
   /// </summary>
-  Yellow = 65535,
+  Yellow = 0x00FFFF,
   /// <summary>
   /// Shade 95 of gray color.
   /// </summary>
-  Gray95 = 789516,
+  Gray95 = 0x0C0C0C,
   /// <summary>
   /// Shade 90 of gray color.
   /// </summary>
-  Gray90 = 1644825,
+  Gray90 = 0x191919,
   /// <summary>
   /// Shade 875 of gray color.
   /// </summary>
-  Gray875 = 2105376,
+  Gray875 = 0x202020,
   /// <summary>
   /// Shade 85 of gray color.
   /// </summary>
-  Gray85 = 2500134,
+  Gray85 = 0x262626,
   /// <summary>
   /// Shade 80 of gray color.
   /// </summary>
-  Gray80 = 3355443,
+  Gray80 = 0x333333,
   /// <summary>
   /// Shade 75 of gray color.
   /// </summary>
-  Gray75 = 4210752,
+  Gray75 = 0x404040,
   /// <summary>
   /// Shade 70 of gray color.
   /// </summary>
-  Gray70 = 5000268,
+  Gray70 = 0x4C4C4C,
   /// <summary>
   /// Shade 65 of gray color.
   /// </summary>
-  Gray65 = 5855577,
+  Gray65 = 0x595959,
   /// <summary>
   /// Shade 625 of gray color.
   /// </summary>
-  Gray625 = 6316128,
+  Gray625 = 0x606060,
   /// <summary>
   /// Dark teal color.
   /// </summary>
-  DarkTeal = 6697728,
+  DarkTeal = 0x663300,
   /// <summary>
   /// Plum color.
   /// </summary>
-  Plum = 6697881,
+  Plum = 0x663399,
   /// <summary>
   /// Shade 60 of gray color.
   /// </summary>
-  Gray60 = 6710886,
+  Gray60 = 0x666666,
   /// <summary>
   /// Sea green color.
   /// </summary>
-  SeaGreen = 6723891,
+  SeaGreen = 0x669933,
   /// <summary>
   /// Shade 55 of gray color.
   /// </summary>
-  Gray55 = 7566195,
+  Gray55 = 0x737373,
   /// <summary>
   /// Dark blue color.
   /// </summary>
-  DarkBlue = 8388608,
+  DarkBlue = 0x800000,
   /// <summary>
   /// Violet color.
   /// </summary>
-  Violet = 8388736,
+  Violet = 0x800080,
   /// <summary>
   /// Teal color.
   /// </summary>
-  Teal = 8421376,
+  Teal = 0x808000,
   /// <summary>
   /// Shade 50 of gray color.
   /// </summary>
-  Gray50 = 8421504,
+  Gray50 = 0x808080,
   /// <summary>
   /// Shade 45 of gray color.
   /// </summary>
-  Gray45 = 9211020,
+  Gray45 = 0x8C8C8C,
   /// <summary>
   /// Indigo color.
   /// </summary>
-  Indigo = 10040115,
+  Indigo = 0x993333,
   /// <summary>
   /// Blue-gray color.
   /// </summary>
-  BlueGray = 10053222,
+  BlueGray = 0x996666,
   /// <summary>
   /// Shade 40 of gray color.
   /// </summary>
-  Gray40 = 10066329,
+  Gray40 = 0x999999,
   /// <summary>
   /// Tan color.
   /// </summary>
-  Tan = 10079487,
+  Tan = 0x99CCFF,
   /// <summary>
   /// Light yellow color.
   /// </summary>
-  LightYellow = 10092543,
+  LightYellow = 0x99FFFF,
   /// <summary>
   /// Shade 375 of gray color.
   /// </summary>
-  Gray375 = 10526880,
+  Gray375 = 0xA0A0A0,
   /// <summary>
   /// Shade 35 of gray color.
   /// </summary>
-  Gray35 = 10921638,
+  Gray35 = 0xA6A6A6,
   /// <summary>
   /// Shade 30 of gray color.
   /// </summary>
-  Gray30 = 11776947,
+  Gray30 = 0xB3B3B3,
   /// <summary>
   /// Shade 25 of gray color.
   /// </summary>
-  Gray25 = 12632256,
+  Gray25 = 0xC0C0C0,
   /// <summary>
   /// Rose color.
   /// </summary>
-  Rose = 13408767,
+  Rose = 0xCC99FF,
   /// <summary>
   /// Aqua color.
   /// </summary>
-  Aqua = 13421619,
+  Aqua = 0xCCCC33,
   /// <summary>
   /// Shade 20 of gray color.
   /// </summary>
-  Gray20 = 13421772,
+  Gray20 = 0xCCCCCC,
   /// <summary>
   /// Light green color.
   /// </summary>
-  LightGreen = 13434828,
+  LightGreen = 0xCCFFCC,
   /// <summary>
   /// Shade 15 of gray color.
   /// </summary>
-  Gray15 = 14277081,
+  Gray15 = 0xD9D9D9,
   /// <summary>
   /// Shade 125 of gray color.
   /// </summary>
-  Gray125 = 14737632,
+  Gray125 = 0xE0E0E0,
   /// <summary>
   /// Shade 10 of gray color.
   /// </summary>
-  Gray10 = 15132390,
+  Gray10 = 0xE6E6E6,
   /// <summary>
   /// Shade 05 of gray color.
   /// </summary>
-  Gray05 = 15987699,
+  Gray05 = 0xF3F3F3,
   /// <summary>
   /// Blue color.
   /// </summary>
-  Blue = 16711680,
+  Blue = 0xFF0000,
   /// <summary>
   /// Pink color.
   /// </summary>
-  Pink = 16711935,
+  Pink = 0xFF00FF,
   /// <summary>
   /// Light blue color.
   /// </summary>
-  LightBlue = 16737843,
+  LightBlue = 0xFF6633,
   /// <summary>
   /// Lavender color.
   /// </summary>
-  Lavender = 16751052,
+  Lavender = 0xFF99CC,
   /// <summary>
   /// Sky blue color.
   /// </summary>
-  SkyBlue = 16763904,
+  SkyBlue = 0xFFCC00,
   /// <summary>
   /// Pale blue color.
   /// </summary>
-  PaleBlue = 16764057,
+  PaleBlue = 0xFFCC99,
   /// <summary>
   /// Turquoise color.
   /// </summary>
-  Turquoise = 16776960,
+  Turquoise = 0xFFFF00,
   /// <summary>
   /// Light turquoise color.
   /// </summary>
-  LightTurquoise = 16777164,
+  LightTurquoise = 0xFFFFCC,
   /// <summary>
   /// White color.
   /// </summary>
-  White = 16777215,
+  White = 0xFFFFFF,
   /// <summary>
   /// Automatic color. Default; usually black.
   /// </summary>
   Automatic = -16777216
 }
+

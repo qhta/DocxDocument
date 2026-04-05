@@ -33,10 +33,10 @@ public partial interface ISelection : IModelObject
   public int End { get; set; }
 
   /// <summary>
-  /// Returns or sets a Font object that represents the character formatting of the specified object.
+  /// Returns or sets a TextFormat object that represents the character formatting of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.font?view=word-pia"/>
-  public IFont Font { get; set; }
+  public ITextFormat TextFormat { get; set; }
 
   /// <summary>
   /// Returns the selection type.
@@ -126,7 +126,7 @@ public partial interface ISelection : IModelObject
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.shading?view=word-pia"/>
-  public Drw.IShading Shading { get; }
+  public DMD.IShading Shading { get; }
 
   /// <summary>
   /// Returns a read-only Fields collection that represents all the fields in the selection.
@@ -290,7 +290,7 @@ public partial interface ISelection : IModelObject
   /// Returns a IInlineShapes collection that represents all the InlineShape objects in a selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.inlineshapes?view=word-pia"/>
-  public Drw.IInlineShapes InlineShapes { get; }
+  public DMD.IInlineShapes InlineShapes { get; }
 
   /// <summary>
   /// Returns a Document object associated with the specified selection.
@@ -302,7 +302,7 @@ public partial interface ISelection : IModelObject
   /// Returns a ShapeRange collection that represents all the Shape objects in the specified range or selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.shaperange?view=word-pia"/>
-  public Drw.IShapeRange ShapeRange { get; }
+  public DMD.IShapeRange ShapeRange { get; }
 
   /// <summary>
   /// Determines if the spelling and grammar checker ignores the specified text.
@@ -346,7 +346,7 @@ public partial interface ISelection : IModelObject
   /// Returns a ShapeRange object representing the child shapes of a selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection.childshaperange?view=word-pia"/>
-  public Drw.IShapeRange ChildShapeRange { get; }
+  public DMD.IShapeRange ChildShapeRange { get; }
 
   /// <summary>
   /// Determines if the selection contains child shapes.

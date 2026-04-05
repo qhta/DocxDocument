@@ -23,7 +23,7 @@ public partial class Languages : IXmlSerializable
       {
         var textValue = reader.ReadContentAsString();
         if (!string.IsNullOrWhiteSpace(textValue))
-          Val = new HexRgb(textValue);
+          Val = new HexColor(textValue);
       }
       else
       {
@@ -56,7 +56,7 @@ public partial class Languages : IXmlSerializable
       return;
     }
     if (!string.IsNullOrWhiteSpace(valAttribute))
-      Val = new HexRgb(valAttribute);
+      Val = new HexColor(valAttribute);
     if (!string.IsNullOrWhiteSpace(bidiAttribute))
       Bidi = bidiAttribute;
     if (!string.IsNullOrWhiteSpace(eastAsiaAttribute))

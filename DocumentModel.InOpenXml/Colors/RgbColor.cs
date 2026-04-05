@@ -19,6 +19,6 @@ public partial class RgbColor : AbstractColor<DXD.RgbColorModelHex>
  /// In earlier versions, only the base RGB value may be displayed without transformations.
  /// </para>
  /// </remarks>
- public HexRgb? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
- private HexRgb? _Val;
+ public HexColor? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+ private HexColor? _Val;
 }

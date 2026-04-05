@@ -21,7 +21,7 @@ public partial interface ICanvasShapes: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addcallout?view=word-pia"/>
-  public IShape AddCallout(Drw.CalloutType Type, float Left, float Top, float Width, float Height);
+  public IShape AddCallout(Drawings.CalloutType Type, float Left, float Top, float Width, float Height);
 
   /// <summary>
   /// Creates a connector shape on the drawing canvas.
@@ -36,7 +36,7 @@ public partial interface ICanvasShapes: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addconnector?view=word-pia"/>
-  public IShape AddConnector(Drw.ConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
+  public IShape AddConnector(Drawings.ConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
 
   /// <summary>
   /// Creates a curved shape using the specified points.
@@ -137,7 +137,7 @@ public partial interface ICanvasShapes: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addtexteffect?view=word-pia"/>
-  public IShape AddTextEffect(Drw.PresetTextEffect PresetTextEffect, string Text, string FontName, float FontSize, TriState FontBold, TriState FontItalic, float Left, float Top);
+  public IShape AddTextEffect(Drawings.PresetTextEffect PresetTextEffect, string Text, string FontName, float FontSize, TriState FontBold, TriState FontItalic, float Left, float Top);
 
   /// <summary>
   /// Creates a text box on the drawing canvas.
@@ -165,7 +165,7 @@ public partial interface ICanvasShapes: IModelObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.buildfreeform?view=word-pia"/>
-  public IFreeformBuilder BuildFreeform(Drw.EditingType EditingType, float X1, float Y1);
+  public IFreeformBuilder BuildFreeform(Drawings.EditingType EditingType, float X1, float Y1);
 
   /// <summary>
   /// Returns one or more shapes from the collection.

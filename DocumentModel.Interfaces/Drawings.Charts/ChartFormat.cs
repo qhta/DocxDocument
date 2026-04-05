@@ -41,7 +41,7 @@ public partial interface IChartFormat: IModelObject
   /// Gets the `TextFrame2` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartformat.textframe2?view=office-pia"/>
-  public Drw.ITextFrame TextFrame2 { get; }
+  public Drawings.ITextFrame TextFrame2 { get; }
   /// <summary>
   /// Gets the `ThreeD` property.
   /// </summary>

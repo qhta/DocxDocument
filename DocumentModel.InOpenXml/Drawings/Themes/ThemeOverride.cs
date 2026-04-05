@@ -12,7 +12,7 @@ public partial class ThemeOverride : ModelElement<DXD.ThemeOverride>
  public ColorScheme? ColorScheme { get => _ColorScheme; set => UpdateField(ref _ColorScheme, value, nameof(ColorScheme)); }
  private ColorScheme? _ColorScheme;
  /// <summary>
- ///   Font scheme used for the theme override.
+ ///   TextFormat scheme used for the theme override.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ThemeOverride.FontScheme))]
  public FontScheme? FontScheme { get => _FontScheme; set => UpdateField(ref _FontScheme, value, nameof(FontScheme)); }

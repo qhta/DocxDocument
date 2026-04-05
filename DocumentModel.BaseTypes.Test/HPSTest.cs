@@ -133,7 +133,7 @@ public static class HPSTest
     Console.WriteLine("\nTesting millimeter conversions:");
     HPS oneMM = "1mm";
     Console.WriteLine($"  1mm = {oneMM} HPS (expected {hps1MM})");
-    Console.WriteLine($"  {hps1MM} HPS = {oneMM.ToMM()}mm");
+    Console.WriteLine($"  {hps1MM} HPS = {oneMM.ToMillimeters()}mm");
     if (!oneMM.Equals(hps1MM))
     {
       Console.WriteLine("✗ Millimeter conversion FAILED");
@@ -144,7 +144,7 @@ public static class HPSTest
     Console.WriteLine("\nTesting centimeter conversions:");
     HPS oneCM = "1cm";
     Console.WriteLine($"  1cm = {oneCM} HPS (expected ~{hps1CM})");
-    Console.WriteLine($"  {hps1CM} HPS = {oneCM.ToCM()}cm");
+    Console.WriteLine($"  {hps1CM} HPS = {oneCM.ToCentimeters()}cm");
     if (!oneCM.Equals(hps1CM))
     {
       Console.WriteLine("✗ Centimeter conversion FAILED");
@@ -155,7 +155,7 @@ public static class HPSTest
     Console.WriteLine("\nTesting point conversions:");
     HPS twelvePoints = "12pt";
     Console.WriteLine($"  12pt = {twelvePoints} HPS (expected {hps12PT})");
-    Console.WriteLine($"  {hps12PT} HPS = {twelvePoints.ToPT()}pt");
+    Console.WriteLine($"  {hps12PT} HPS = {twelvePoints.ToPoints()}pt");
     if (!twelvePoints.Equals(hps12PT))
     {
       Console.WriteLine("✗ Point conversion FAILED");
@@ -270,13 +270,13 @@ public static class HPSTest
   private static void ShowOriginalData(HPSTestData testData)
   {
     Console.WriteLine($"Original data:");
-    Console.WriteLine($"  FontSize: {testData.FontSize} ({testData.FontSize.ToPT():F1}pt)");
-    Console.WriteLine($"  LineHeight: {testData.LineHeight} ({testData.LineHeight.ToPT():F1}pt)");
-    Console.WriteLine($"  LetterSpacing: {testData.LetterSpacing} ({testData.LetterSpacing.ToPT():F1}pt)");
-    Console.WriteLine($"  WordSpacing: {testData.WordSpacing} ({testData.WordSpacing.ToPT():F1}pt)");
-    Console.WriteLine($"  SuperscriptOffset: {testData.SuperscriptOffset} ({testData.SuperscriptOffset.ToPT():F1}pt)");
-    Console.WriteLine($"  SubscriptOffset: {testData.SubscriptOffset} ({testData.SubscriptOffset.ToPT():F1}pt)");
-    Console.WriteLine($"  BorderWidth: {testData.BorderWidth} ({testData.BorderWidth.ToPT():F1}pt)");
+    Console.WriteLine($"  FontSize: {testData.FontSize} ({testData.FontSize.ToPoints():F1}pt)");
+    Console.WriteLine($"  LineHeight: {testData.LineHeight} ({testData.LineHeight.ToPoints():F1}pt)");
+    Console.WriteLine($"  LetterSpacing: {testData.LetterSpacing} ({testData.LetterSpacing.ToPoints():F1}pt)");
+    Console.WriteLine($"  WordSpacing: {testData.WordSpacing} ({testData.WordSpacing.ToPoints():F1}pt)");
+    Console.WriteLine($"  SuperscriptOffset: {testData.SuperscriptOffset} ({testData.SuperscriptOffset.ToPoints():F1}pt)");
+    Console.WriteLine($"  SubscriptOffset: {testData.SubscriptOffset} ({testData.SubscriptOffset.ToPoints():F1}pt)");
+    Console.WriteLine($"  BorderWidth: {testData.BorderWidth} ({testData.BorderWidth.ToPoints():F1}pt)");
     Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
     Console.WriteLine($"  SmallValue: {testData.SmallValue}");
     Console.WriteLine($"  LargeValue: {testData.LargeValue}");
@@ -303,25 +303,25 @@ public static class HPSTest
     // Verify deserialized data
     Console.WriteLine("Deserialized data:");
 
-    Console.WriteLine($"  FontSize: {deserializedData.FontSize} ({deserializedData.FontSize.ToPT():F1}pt)");
+    Console.WriteLine($"  FontSize: {deserializedData.FontSize} ({deserializedData.FontSize.ToPoints():F1}pt)");
     if (testData.FontSize.CompareTo(deserializedData.FontSize) != 0)
       return false;
-    Console.WriteLine($"  LineHeight: {deserializedData.LineHeight} ({deserializedData.LineHeight.ToPT():F1}pt)");
+    Console.WriteLine($"  LineHeight: {deserializedData.LineHeight} ({deserializedData.LineHeight.ToPoints():F1}pt)");
     if (testData.LineHeight.CompareTo(deserializedData.LineHeight) != 0)
       return false;
-    Console.WriteLine($"  LetterSpacing: {deserializedData.LetterSpacing} ({deserializedData.LetterSpacing.ToPT():F1}pt)");
+    Console.WriteLine($"  LetterSpacing: {deserializedData.LetterSpacing} ({deserializedData.LetterSpacing.ToPoints():F1}pt)");
     if (testData.LetterSpacing.CompareTo(deserializedData.LetterSpacing) != 0)
       return false;
-    Console.WriteLine($"  WordSpacing: {deserializedData.WordSpacing} ({deserializedData.WordSpacing.ToPT():F1}pt)");
+    Console.WriteLine($"  WordSpacing: {deserializedData.WordSpacing} ({deserializedData.WordSpacing.ToPoints():F1}pt)");
     if (testData.WordSpacing.CompareTo(deserializedData.WordSpacing) != 0)
       return false;
-    Console.WriteLine($"  SuperscriptOffset: {deserializedData.SuperscriptOffset} ({deserializedData.SuperscriptOffset.ToPT():F1}pt)");
+    Console.WriteLine($"  SuperscriptOffset: {deserializedData.SuperscriptOffset} ({deserializedData.SuperscriptOffset.ToPoints():F1}pt)");
     if (testData.SuperscriptOffset.CompareTo(deserializedData.SuperscriptOffset) != 0)
       return false;
-    Console.WriteLine($"  SubscriptOffset: {deserializedData.SubscriptOffset} ({deserializedData.SubscriptOffset.ToPT():F1}pt)");
+    Console.WriteLine($"  SubscriptOffset: {deserializedData.SubscriptOffset} ({deserializedData.SubscriptOffset.ToPoints():F1}pt)");
     if (testData.SubscriptOffset.CompareTo(deserializedData.SubscriptOffset) != 0)
       return false;
-    Console.WriteLine($"  BorderWidth: {deserializedData.BorderWidth} ({deserializedData.BorderWidth.ToPT():F1}pt)");
+    Console.WriteLine($"  BorderWidth: {deserializedData.BorderWidth} ({deserializedData.BorderWidth.ToPoints():F1}pt)");
     if (testData.BorderWidth.CompareTo(deserializedData.BorderWidth) != 0)
       return false;
     Console.WriteLine($"  ZeroValue: {deserializedData.ZeroValue}");
@@ -430,17 +430,17 @@ public static class HPSTest
       Console.WriteLine("\nTesting half-point precision:");
       HPS oneHalfPoint = 1;
       HPS twoHPS = 2;
-      Console.WriteLine($"  1 half-point = {oneHalfPoint.ToPT():F1}pt");
-      Console.WriteLine($"  2 HPS = {twoHPS.ToPT():F1}pt (1 full point)");
+      Console.WriteLine($"  1 half-point = {oneHalfPoint.ToPoints():F1}pt");
+      Console.WriteLine($"  2 HPS = {twoHPS.ToPoints():F1}pt (1 full point)");
 
       // Test common fine-grained adjustments
       Console.WriteLine("\nTesting fine-grained typography adjustments:");
       HPS letterSpacing = new HPS(1);    // 0.5pt letter spacing
       HPS kerning = new HPS(2);          // 1pt kerning
       HPS tracking = new HPS(3);         // 1.5pt tracking
-      Console.WriteLine($"  Letter spacing (1 half-point): {letterSpacing.ToPT():F1}pt");
-      Console.WriteLine($"  Kerning (2 HPS): {kerning.ToPT():F1}pt");
-      Console.WriteLine($"  Tracking (3 HPS): {tracking.ToPT():F1}pt");
+      Console.WriteLine($"  Letter spacing (1 half-point): {letterSpacing.ToPoints():F1}pt");
+      Console.WriteLine($"  Kerning (2 HPS): {kerning.ToPoints():F1}pt");
+      Console.WriteLine($"  Tracking (3 HPS): {tracking.ToPoints():F1}pt");
 
       // Test common font sizes in HPS
       Console.WriteLine("\nTesting common font sizes:");
@@ -610,18 +610,18 @@ public static class HPSTest
       sw.Restart();
       for (int i = 0; i < iterations; i++)
       {
-        double points = testHp.ToPT();
+        double points = testHp.ToPoints();
       }
       sw.Stop();
-      Console.WriteLine($"ToPT() x {iterations}: {sw.ElapsedMilliseconds}ms");
+      Console.WriteLine($"ToPoints() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
       sw.Restart();
       for (int i = 0; i < iterations; i++)
       {
-        double mm = testHp.ToMM();
+        double mm = testHp.ToMillimeters();
       }
       sw.Stop();
-      Console.WriteLine($"ToMM() x {iterations}: {sw.ElapsedMilliseconds}ms");
+      Console.WriteLine($"ToMillimeters() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
       // Test JSON serialization performance
       var testObj = new HPSTestData

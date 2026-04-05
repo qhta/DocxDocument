@@ -37,7 +37,7 @@ public static class SimpleValueConverter
     { typeof(HexBinary), typeof(HexBinaryConverter) },
     { typeof(HexByte), typeof(HexByteConverter) },
     { typeof(HexChar), typeof(HexCharConverter) },
-    { typeof(HexRgb), typeof(HexRgbConverter) },
+    { typeof(HexColor), typeof(HexColorConverter) },
     { typeof(HexInt), typeof(HexIntConverter) },
     { typeof(HexLong), typeof(HexLongConverter) },
     { typeof(StringList), typeof(StringListConverter) },

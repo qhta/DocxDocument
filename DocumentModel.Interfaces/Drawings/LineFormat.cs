@@ -15,37 +15,37 @@ public interface ILineFormat : IModelObject
   /// Returns or sets the length of the begin arrowhead.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.beginarrowheadlength?view=word-pia"/>
-  public Drw.ArrowheadLength BeginArrowheadLength { get; set; }
+  public Drawings.ArrowheadLength BeginArrowheadLength { get; set; }
   /// <summary>
   /// Returns or sets the style of the begin arrowhead.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.beginarrowheadstyle?view=word-pia"/>
-  public Drw.ArrowheadStyle BeginArrowheadStyle { get; set; }
+  public Drawings.ArrowheadStyle BeginArrowheadStyle { get; set; }
   /// <summary>
   /// Returns or sets the width of the begin arrowhead.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.beginarrowheadwidth?view=word-pia"/>
-  public Drw.ArrowheadWidth BeginArrowheadWidth { get; set; }
+  public Drawings.ArrowheadWidth BeginArrowheadWidth { get; set; }
   /// <summary>
   /// Returns or sets the dash style for the line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.dashstyle?view=word-pia"/>
-  public Drw.LineDashStyle DashStyle { get; set; }
+  public Drawings.LineDashStyle DashStyle { get; set; }
   /// <summary>
   /// Returns or sets the length of the end arrowhead.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.endarrowheadlength?view=word-pia"/>
-  public Drw.ArrowheadLength EndArrowheadLength { get; set; }
+  public Drawings.ArrowheadLength EndArrowheadLength { get; set; }
   /// <summary>
   /// Returns or sets the style of the end arrowhead.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.endarrowheadstyle?view=word-pia"/>
-  public Drw.ArrowheadStyle EndArrowheadStyle { get; set; }
+  public Drawings.ArrowheadStyle EndArrowheadStyle { get; set; }
   /// <summary>
   /// Returns or sets the width of the end arrowhead.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.endarrowheadwidth?view=word-pia"/>
-  public Drw.ArrowheadWidth EndArrowheadWidth { get; set; }
+  public Drawings.ArrowheadWidth EndArrowheadWidth { get; set; }
   /// <summary>
   /// Returns a color format object that represents the foreground color for the line.
   /// </summary>
@@ -55,7 +55,7 @@ public interface ILineFormat : IModelObject
   /// Returns or sets the fill pattern for the line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.pattern?view=word-pia"/>
-  public Drw.PatternType Pattern { get; set; }
+  public Drawings.PatternType Pattern { get; set; }
   /// <summary>
   /// Returns or sets the style of the line.
   /// </summary>

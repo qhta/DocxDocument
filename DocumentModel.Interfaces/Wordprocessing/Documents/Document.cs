@@ -50,7 +50,7 @@ public partial interface IDocument : IModelObject
   /// Returns a Shape object that represents the background image for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.background?view=word-pia"/>
-  public Drw.IShape? Background { get; set; }
+  public DMD.IShape? Background { get; set; }
 
   /// <summary>
   /// Returns the bibliography references contained within a document. Read-only.
@@ -494,7 +494,7 @@ public partial interface IDocument : IModelObject
   /// Returns an IInlineShapes collection that represents all the InlineShape objects in a document, range, or selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.inlineshapes?view=word-pia"/>
-  public Drw.IInlineShapes? InlineShapes { get; }
+  public DMD.IInlineShapes? InlineShapes { get; }
 
   /// <summary>
   /// True if the most recent firing of the Application.DocumentBeforeSave Event (Word)event was the result of an automatic save, and not a manual save by the user. Read-only.
@@ -908,7 +908,7 @@ public partial interface IDocument : IModelObject
   /// Returns a Shapes collection that represents all the Shape objects in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.shapes?view=word-pia"/>
-  public Drw.IShapes? Shapes { get; }
+  public DMD.IShapes? Shapes { get; }
 
   /// <summary>
   /// Returns a SharedWorkspace object that represents the Document Workspace in which a specified document is located.

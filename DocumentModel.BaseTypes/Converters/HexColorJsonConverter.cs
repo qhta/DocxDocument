@@ -1,21 +1,21 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support for the <see cref="HexRgb"/> structure.
+/// Provides JSON serialization and deserialization support for the <see cref="HexColor"/> structure.
 /// </summary>
 /// <remarks>
 /// This converter handles both string and numeric JSON tokens for deserialization,
 /// and writes RGB values as hexadecimal strings for compatibility with web standards and Office Open XML conventions.
 /// </remarks>
-public class HexRgbJsonConverter : JsonConverter<HexRgb>
+public class HexColorJsonConverter : JsonConverter<HexColor>
 {
   /// <summary>
-  /// Reads and converts JSON to an <see cref="HexRgb"/> value.
+  /// Reads and converts JSON to an <see cref="HexColor"/> value.
   /// </summary>
   /// <param name="reader">The <see cref="Utf8JsonReader"/> to read from.</param>
   /// <param name="typeToConvert">The type to convert.</param>
   /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
-  /// <returns>An <see cref="HexRgb"/> value parsed from the JSON input.</returns>
+  /// <returns>An <see cref="HexColor"/> value parsed from the JSON input.</returns>
   /// <exception cref="JsonException">
   /// Thrown when:
   /// <list type="bullet">
@@ -33,7 +33,7 @@ public class HexRgbJsonConverter : JsonConverter<HexRgb>
   /// </list>
   /// The hexadecimal format is RRGGBB where RR is red, GG is green, and BB is blue.
   /// </remarks>
-  public override HexRgb Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+  public override HexColor Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
   {
     if (reader.TokenType == JsonTokenType.String)
     {
@@ -43,7 +43,7 @@ public class HexRgbJsonConverter : JsonConverter<HexRgb>
 
       try
       {
-        return new HexRgb(value);
+        return new HexColor(value);
       }
       catch (FormatException ex)
       {
@@ -58,17 +58,17 @@ public class HexRgbJsonConverter : JsonConverter<HexRgb>
       {
         if (reader.TryGetInt32(out int intValue))
         {
-          return new HexRgb(intValue);
+          return new HexColor(intValue);
         }
 
         if (reader.TryGetUInt32(out uint uintValue))
         {
-          return new HexRgb(uintValue);
+          return new HexColor(uintValue);
         }
 
         if (reader.TryGetInt64(out long longValue))
         {
-          return new HexRgb((Int32)longValue);
+          return new HexColor((Int32)longValue);
         }
 
         throw new JsonException($"Invalid numeric value for RGB");
@@ -83,17 +83,17 @@ public class HexRgbJsonConverter : JsonConverter<HexRgb>
   }
 
   /// <summary>
-  /// Writes an <see cref="HexRgb"/> value as JSON.
+  /// Writes an <see cref="HexColor"/> value as JSON.
   /// </summary>
   /// <param name="writer">The <see cref="Utf8JsonWriter"/> to write to.</param>
-  /// <param name="value">The <see cref="HexRgb"/> value to serialize.</param>
+  /// <param name="value">The <see cref="HexColor"/> value to serialize.</param>
   /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
   /// <remarks>
   /// Writes the RGB value as a 6-character hexadecimal string in the format RRGGBB.
   /// For example, red is written as "FF0000", green as "00FF00", and blue as "0000FF".
   /// This format is compatible with web standards and CSS color values.
   /// </remarks>
-  public override void Write(Utf8JsonWriter writer, HexRgb value, JsonSerializerOptions options)
+  public override void Write(Utf8JsonWriter writer, HexColor value, JsonSerializerOptions options)
   {
     // Write as hexadecimal string in RRGGBB format
     writer.WriteStringValue(value.ToString(CultureInfo.InvariantCulture));

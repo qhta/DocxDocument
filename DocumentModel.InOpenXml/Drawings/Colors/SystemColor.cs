@@ -71,5 +71,5 @@ public partial class SystemColor : DrawingColor<DXD.SystemColor>
  /// fallback for non-Windows or incompatible systems.
  /// </para>
  /// </remarks>
- public HexRgb? LastColor { get; set; }
+ public HexColor? LastColor { get; set; }
 }

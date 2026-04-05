@@ -34,10 +34,10 @@ public partial interface IRange : IModelObject
   public int End { get; set; }
 
   /// <summary>
-  /// Returns or sets a Font object that represents the character formatting of the specified object.
+  /// Returns or sets a TextFormat object that represents the character formatting of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.font?view=word-pia"/>
-  public IFont Font { get; set; }
+  public ITextFormat TextFormat { get; set; }
 
   /// <summary>
   /// Returns a Range object that represents all the properties of the specified range.
@@ -121,7 +121,7 @@ public partial interface IRange : IModelObject
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.shading?view=word-pia"/>
-  public Drw.IShading Shading { get; }
+  public DMD.IShading Shading { get; }
 
   /// <summary>
   /// Returns a TextRetrievalMode object that controls how text is retrieved from the specified range.
@@ -321,7 +321,7 @@ public partial interface IRange : IModelObject
   /// Returns a ShapeRange collection that represents all the Shape objects in the specified range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.shaperange?view=word-pia"/>
-  public Drw.IShapeRange ShapeRange { get; }
+  public DMD.IShapeRange ShapeRange { get; }
 
   /// <summary>
   /// Returns or sets a CharacterCase constant that represents the case of the text in the specified range.
@@ -360,7 +360,7 @@ public partial interface IRange : IModelObject
   /// selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.inlineshapes?view=word-pia"/>
-  public Drw.IInlineShapes InlineShapes { get; }
+  public DMD.IInlineShapes InlineShapes { get; }
 
   /// <summary>
   /// Returns a Range object that refers to the next story as shown in the following table.

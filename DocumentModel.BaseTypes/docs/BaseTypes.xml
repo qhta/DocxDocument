@@ -3362,6 +3362,386 @@
               </para>
             </remarks>
         </member>
+        <member name="T:DocumentModel.HexColor">
+            <summary>
+            Provides XML serialization support for the <see cref="T:DocumentModel.HexColor"/> structure.
+            </summary>
+            <summary>
+            ValueType of Red, Green, Blue compacted to UInt32 and written in hexadecimal format.
+            </summary>
+            <remarks>
+            The RGB value is stored as a 32-bit unsigned integer where:
+            - Bits 16-23 represent the Red component
+            - Bits 8-15 represent the Green component
+            - Bits 0-7 represent the Blue component
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HexColor.System#Xml#Serialization#IXmlSerializable#GetSchema">
+            <summary>
+            This method is reserved and should not be used. Returns null as no schema is required.
+            </summary>
+            <returns>Always returns null.</returns>
+        </member>
+        <member name="M:DocumentModel.HexColor.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Deserializes the <see cref="T:DocumentModel.HexColor"/> value from XML.
+            Accepts 6-digit hexadecimal string values representing RGB colors.
+            </summary>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> to read from.</param>
+            <remarks>
+            The method handles the following formats:
+            <list type="bullet">
+            <item><description>6-digit hexadecimal string (e.g., "FF0000" for red, "00FF00" for green, "0000FF" for blue)</description></item>
+            <item><description>Empty elements</description></item>
+            </list>
+            The format is RRGGBB where RR is the red component, GG is the green component, and BB is the blue component.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HexColor.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Serializes the <see cref="T:DocumentModel.HexColor"/> value to XML.
+            </summary>
+            <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> to write to.</param>
+            <remarks>
+            The value is written as a 6-digit hexadecimal string in the format RRGGBB.
+            For example, red is written as "FF0000", green as "00FF00", and blue as "0000FF".
+            </remarks>
+        </member>
+        <member name="F:DocumentModel.HexColor.value">
+            <summary>
+            The internal storage for the compound RGB value.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.HexColor.#ctor(System.String)">
+            <summary>
+            Constructor with a string parameter. It must be 6-digit hexadecimal value.
+            First goes the Red value (2 hex digits), then Green, and Blue at the end.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.HexColor.#ctor(System.UInt32)">
+            <summary>
+            Constructor with an UInt32 parameter. It must be 24-bit value.
+            Bits 0-7 represent the Blue value, bits 8-15 - the Green value,
+            bits 16-23 represent the Red value.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.HexColor.#ctor(System.Int32)">
+            <summary>
+            Constructor with an Int32 parameter. It must be 24-bit value.
+            Bits 0-7 represent the Blue value, bits 8-15 - the Green value,
+            bits 16-23 represent the Red value.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.HexColor.#ctor(System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Constructor with three byte parameters.
+            </summary>
+            <param name="r">Represents the Red value.</param>
+            <param name="g">Represents the Green value.</param>
+            <param name="b">Represents the Blue value.</param>
+        </member>
+        <member name="P:DocumentModel.HexColor.R">
+            <summary>
+            Red component of the color.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.HexColor.G">
+            <summary>
+            Green component of the color.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.HexColor.B">
+            <summary>
+            Blue component of the color.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.HexColor.op_Implicit(System.String)~DocumentModel.HexColor">
+            <summary>
+            Implicitly converts a string to an <see cref="T:DocumentModel.HexColor"/> value.
+            </summary>
+            <param name="value">The string to convert.</param>
+            <returns>An <see cref="T:DocumentModel.HexColor"/> value representing the color.</returns>
+        </member>
+        <member name="M:DocumentModel.HexColor.op_Implicit(DocumentModel.HexColor)~System.String">
+            <summary>
+            Implicitly converts an <see cref="T:DocumentModel.HexColor"/> value to a string representation.
+            </summary>
+            <param name="value">The <see cref="T:DocumentModel.HexColor"/> value to convert.</param>
+            <returns>A string representation of the RGB color.</returns>
+        </member>
+        <member name="M:DocumentModel.HexColor.op_Implicit(System.UInt32)~DocumentModel.HexColor">
+            <summary>
+            Implicitly converts a 32-bit unsigned integer to an <see cref="T:DocumentModel.HexColor"/> value.
+            </summary>
+            <param name="value">The 32-bit unsigned integer to convert.</param>
+            <returns>An <see cref="T:DocumentModel.HexColor"/> value representing the color.</returns>
+        </member>
+        <member name="M:DocumentModel.HexColor.op_Implicit(DocumentModel.HexColor)~System.UInt32">
+            <summary>
+            Implicitly converts an <see cref="T:DocumentModel.HexColor"/> value to a 32-bit unsigned integer.
+            </summary>
+            <param name="value">The <see cref="T:DocumentModel.HexColor"/> value to convert.</param>
+            <returns>A 32-bit unsigned integer representation of the RGB color.</returns>
+        </member>
+        <member name="M:DocumentModel.HexColor.op_Implicit(System.Int32)~DocumentModel.HexColor">
+            <summary>
+            Implicitly converts a 32-bit signed integer to an <see cref="T:DocumentModel.HexColor"/> value.
+            </summary>
+            <param name="value">The 32-bit signed integer to convert.</param>
+            <returns>An <see cref="T:DocumentModel.HexColor"/> value representing the color.</returns>
+        </member>
+        <member name="M:DocumentModel.HexColor.op_Implicit(DocumentModel.HexColor)~System.Int32">
+            <summary>
+            Implicitly converts an <see cref="T:DocumentModel.HexColor"/> value to a 32-bit signed integer.
+            </summary>
+            <param name="value">The <see cref="T:DocumentModel.HexColor"/> value to convert.</param>
+            <returns>A 32-bit signed integer representation of the RGB color.</returns>
+        </member>
+        <member name="M:DocumentModel.HexColor.op_Implicit(DocumentModel.HexInt)~DocumentModel.HexColor">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.HexInt"/> value to an <see cref="T:DocumentModel.HexColor"/> value.
+            </summary>
+            <param name="value">The <see cref="T:DocumentModel.HexInt"/> value to convert.</param>
+            <returns>An <see cref="T:DocumentModel.HexColor"/> value representing the color.</returns>
+        </member>
+        <member name="M:DocumentModel.HexColor.op_Implicit(DocumentModel.HexColor)~DocumentModel.HexInt">
+            <summary>
+            Implicitly converts an <see cref="T:DocumentModel.HexColor"/> value to a <see cref="T:DocumentModel.HexInt"/> value.
+            </summary>
+            <param name="value">The <see cref="T:DocumentModel.HexColor"/> value to convert.</param>
+            <returns>A <see cref="T:DocumentModel.HexInt"/> representation of the RGB color.</returns>
+        </member>
+        <member name="M:DocumentModel.HexColor.ToString">
+            <summary>
+            Converts the RGB value to its hexadecimal string representation.
+            </summary>
+            <returns>A 6-character hexadecimal string in the format RRGGBB.</returns>
+        </member>
+        <member name="M:DocumentModel.HexColor.Parse(System.String)">
+            <summary>
+            Parses the specified string representation of a hexadecimal RGB color and outputs the corresponding <see
+            cref="T:DocumentModel.HexColor"/> object.
+            </summary>
+            <remarks>If the input string is not in a valid hexadecimal RGB format, the behavior of this method is
+            undefined. It is recommended to validate the input before calling this method.</remarks>
+            <param name="str">The string containing the hexadecimal RGB color to parse.
+            The string must be in a valid hex color format, such as "RRGGBB".</param>
+            <returns>A <see cref="T:DocumentModel.HexColor"/> object representing the parsed RGB color.</returns>
+        </member>
+        <member name="M:DocumentModel.HexColor.TryParse(System.String,DocumentModel.HexColor@)">
+            <summary>
+            Attempts to convert the specified string representation of a hexadecimal RGB color to its equivalent <see
+            cref="T:DocumentModel.HexColor"/> value without throwing an exception.
+            </summary>
+            <remarks>Use this method to safely attempt to parse a hexadecimal RGB color string. If the input is not in
+            a valid format, the method returns false and does not throw an exception.</remarks>
+            <param name="str">The string containing the hexadecimal RGB color to parse.
+            The string must be in a valid format, such as "RRGGBB".</param>
+            <param name="result">When this method returns, contains the parsed <see cref="T:DocumentModel.HexColor"/> value
+            if the conversion succeeded; otherwise,  the default value of <see cref="T:DocumentModel.HexColor"/>.</param>
+            <returns>true if the string was successfully parsed; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.HexColor.Equals(DocumentModel.HexColor)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.HexColor.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to the current object.
+            </summary>
+            <param name="obj">The object to compare with the current object.</param>
+            <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.HexColor.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>A 32-bit signed integer hash code.</returns>
+        </member>
+        <member name="M:DocumentModel.HexColor.GetTypeCode">
+            <summary>
+            Returns the <see cref="T:System.TypeCode"/> for this instance.
+            </summary>
+            <returns><see cref="F:System.TypeCode.Object"/> as this is a color structure.</returns>
+        </member>
+        <member name="M:DocumentModel.HexColor.ToBoolean(System.IFormatProvider)">
+            <summary>
+            This conversion is not supported for RGB color types.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
+            <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.HexColor.ToByte(System.IFormatProvider)">
+            <summary>
+            This conversion is not supported for RGB color types.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
+            <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.HexColor.ToChar(System.IFormatProvider)">
+            <summary>
+            This conversion is not supported for RGB color types.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
+            <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.HexColor.ToDateTime(System.IFormatProvider)">
+            <summary>
+            This conversion is not supported for RGB color types.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
+            <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.HexColor.ToDecimal(System.IFormatProvider)">
+            <summary>
+            This conversion is not supported for RGB color types.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
+            <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.HexColor.ToDouble(System.IFormatProvider)">
+            <summary>
+            This conversion is not supported for RGB color types.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
+            <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.HexColor.ToInt16(System.IFormatProvider)">
+            <summary>
+            This conversion is not supported for RGB color types.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
+            <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.HexColor.ToInt32(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 32-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>The 24-bit RGB value as a 32-bit signed integer.</returns>
+        </member>
+        <member name="M:DocumentModel.HexColor.ToInt64(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 64-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>The 24-bit RGB value as a 64-bit signed integer.</returns>
+        </member>
+        <member name="M:DocumentModel.HexColor.ToSByte(System.IFormatProvider)">
+            <summary>
+            This conversion is not supported for RGB color types.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
+            <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.HexColor.ToSingle(System.IFormatProvider)">
+            <summary>
+            This conversion is not supported for RGB color types.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
+            <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.HexColor.ToString(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent string.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 6-character hexadecimal string in the format RRGGBB.</returns>
+        </member>
+        <member name="M:DocumentModel.HexColor.ToType(System.Type,System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to the specified type.
+            </summary>
+            <param name="conversionType">The type to which to convert the value of this instance.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>
+            An object of the specified type with a value equivalent to the value of this instance.
+            Supports conversion to <see cref="T:System.String"/>, <see cref="T:System.Int32"/>, <see cref="T:System.Int64"/>, <see cref="T:System.UInt32"/>, <see cref="T:System.UInt64"/>, <see cref="T:DocumentModel.HexInt"/>, and <see cref="T:DocumentModel.HexColor"/>.
+            </returns>
+            <exception cref="T:System.InvalidCastException">This conversion is not supported for the specified type.</exception>
+        </member>
+        <member name="M:DocumentModel.HexColor.ToUInt16(System.IFormatProvider)">
+            <summary>
+            This conversion is not supported for RGB color types.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
+            <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.HexColor.ToUInt32(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 32-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>The 24-bit RGB value as a 32-bit unsigned integer.</returns>
+        </member>
+        <member name="M:DocumentModel.HexColor.ToUInt64(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 64-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>The 24-bit RGB value as a 64-bit unsigned integer.</returns>
+        </member>
+        <member name="T:DocumentModel.HexColorJsonConverter">
+            <summary>
+            Provides JSON serialization and deserialization support for the <see cref="T:DocumentModel.HexColor"/> structure.
+            </summary>
+            <remarks>
+            This converter handles both string and numeric JSON tokens for deserialization,
+            and writes RGB values as hexadecimal strings for compatibility with web standards and Office Open XML conventions.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HexColorJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Reads and converts JSON to an <see cref="T:DocumentModel.HexColor"/> value.
+            </summary>
+            <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader"/> to read from.</param>
+            <param name="typeToConvert">The type to convert.</param>
+            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
+            <returns>An <see cref="T:DocumentModel.HexColor"/> value parsed from the JSON input.</returns>
+            <exception cref="T:System.Text.Json.JsonException">
+            Thrown when:
+            <list type="bullet">
+            <item><description>The JSON token is a string but contains a null value.</description></item>
+            <item><description>The string value cannot be parsed as a valid RGB color (must be a 6-digit hexadecimal value).</description></item>
+            <item><description>The JSON token is a number but cannot be converted to a 32-bit integer.</description></item>
+            <item><description>The JSON token is neither a string nor a number.</description></item>
+            </list>
+            </exception>
+            <remarks>
+            Accepts the following input formats:
+            <list type="bullet">
+            <item><description>String tokens with 6-digit hexadecimal values (e.g., "FF0000" for red, "00FF00" for green, "0000FF" for blue)</description></item>
+            <item><description>Numeric tokens as integer values representing the RGB color as a 24-bit value</description></item>
+            </list>
+            The hexadecimal format is RRGGBB where RR is red, GG is green, and BB is blue.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HexColorJsonConverter.Write(System.Text.Json.Utf8JsonWriter,DocumentModel.HexColor,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Writes an <see cref="T:DocumentModel.HexColor"/> value as JSON.
+            </summary>
+            <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter"/> to write to.</param>
+            <param name="value">The <see cref="T:DocumentModel.HexColor"/> value to serialize.</param>
+            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
+            <remarks>
+            Writes the RGB value as a 6-character hexadecimal string in the format RRGGBB.
+            For example, red is written as "FF0000", green as "00FF00", and blue as "0000FF".
+            This format is compatible with web standards and CSS color values.
+            </remarks>
+        </member>
         <member name="T:DocumentModel.HexInt">
             <summary>
               Represents a 32-bit integer value encoded as an 8-character hexadecimal string for use in Office Open XML documents.
@@ -4389,386 +4769,6 @@
               </para>
             </remarks>
         </member>
-        <member name="T:DocumentModel.HexRgb">
-            <summary>
-            Provides XML serialization support for the <see cref="T:DocumentModel.HexRgb"/> structure.
-            </summary>
-            <summary>
-            ValueType of Red, Green, Blue compacted to UInt32 and written in hexadecimal format.
-            </summary>
-            <remarks>
-            The RGB value is stored as a 32-bit unsigned integer where:
-            - Bits 16-23 represent the Red component
-            - Bits 8-15 represent the Green component
-            - Bits 0-7 represent the Blue component
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.HexRgb.System#Xml#Serialization#IXmlSerializable#GetSchema">
-            <summary>
-            This method is reserved and should not be used. Returns null as no schema is required.
-            </summary>
-            <returns>Always returns null.</returns>
-        </member>
-        <member name="M:DocumentModel.HexRgb.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
-            <summary>
-            Deserializes the <see cref="T:DocumentModel.HexRgb"/> value from XML.
-            Accepts 6-digit hexadecimal string values representing RGB colors.
-            </summary>
-            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> to read from.</param>
-            <remarks>
-            The method handles the following formats:
-            <list type="bullet">
-            <item><description>6-digit hexadecimal string (e.g., "FF0000" for red, "00FF00" for green, "0000FF" for blue)</description></item>
-            <item><description>Empty elements</description></item>
-            </list>
-            The format is RRGGBB where RR is the red component, GG is the green component, and BB is the blue component.
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.HexRgb.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
-            <summary>
-            Serializes the <see cref="T:DocumentModel.HexRgb"/> value to XML.
-            </summary>
-            <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> to write to.</param>
-            <remarks>
-            The value is written as a 6-digit hexadecimal string in the format RRGGBB.
-            For example, red is written as "FF0000", green as "00FF00", and blue as "0000FF".
-            </remarks>
-        </member>
-        <member name="F:DocumentModel.HexRgb.value">
-            <summary>
-            The internal storage for the compound RGB value.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.HexRgb.#ctor(System.String)">
-            <summary>
-            Constructor with a string parameter. It must be 6-digit hexadecimal value.
-            First goes the Red value (2 hex digits), then Green, and Blue at the end.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.HexRgb.#ctor(System.UInt32)">
-            <summary>
-            Constructor with an UInt32 parameter. It must be 24-bit value.
-            Bits 0-7 represent the Blue value, bits 8-15 - the Green value,
-            bits 16-23 represent the Red value.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.HexRgb.#ctor(System.Int32)">
-            <summary>
-            Constructor with an Int32 parameter. It must be 24-bit value.
-            Bits 0-7 represent the Blue value, bits 8-15 - the Green value,
-            bits 16-23 represent the Red value.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.HexRgb.#ctor(System.Byte,System.Byte,System.Byte)">
-            <summary>
-            Constructor with three byte parameters.
-            </summary>
-            <param name="r">Represents the Red value.</param>
-            <param name="g">Represents the Green value.</param>
-            <param name="b">Represents the Blue value.</param>
-        </member>
-        <member name="P:DocumentModel.HexRgb.R">
-            <summary>
-            Red component of the color.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.HexRgb.G">
-            <summary>
-            Green component of the color.
-            </summary>
-        </member>
-        <member name="P:DocumentModel.HexRgb.B">
-            <summary>
-            Blue component of the color.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.HexRgb.op_Implicit(System.String)~DocumentModel.HexRgb">
-            <summary>
-            Implicitly converts a string to an <see cref="T:DocumentModel.HexRgb"/> value.
-            </summary>
-            <param name="value">The string to convert.</param>
-            <returns>An <see cref="T:DocumentModel.HexRgb"/> value representing the color.</returns>
-        </member>
-        <member name="M:DocumentModel.HexRgb.op_Implicit(DocumentModel.HexRgb)~System.String">
-            <summary>
-            Implicitly converts an <see cref="T:DocumentModel.HexRgb"/> value to a string representation.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.HexRgb"/> value to convert.</param>
-            <returns>A string representation of the RGB color.</returns>
-        </member>
-        <member name="M:DocumentModel.HexRgb.op_Implicit(System.UInt32)~DocumentModel.HexRgb">
-            <summary>
-            Implicitly converts a 32-bit unsigned integer to an <see cref="T:DocumentModel.HexRgb"/> value.
-            </summary>
-            <param name="value">The 32-bit unsigned integer to convert.</param>
-            <returns>An <see cref="T:DocumentModel.HexRgb"/> value representing the color.</returns>
-        </member>
-        <member name="M:DocumentModel.HexRgb.op_Implicit(DocumentModel.HexRgb)~System.UInt32">
-            <summary>
-            Implicitly converts an <see cref="T:DocumentModel.HexRgb"/> value to a 32-bit unsigned integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.HexRgb"/> value to convert.</param>
-            <returns>A 32-bit unsigned integer representation of the RGB color.</returns>
-        </member>
-        <member name="M:DocumentModel.HexRgb.op_Implicit(System.Int32)~DocumentModel.HexRgb">
-            <summary>
-            Implicitly converts a 32-bit signed integer to an <see cref="T:DocumentModel.HexRgb"/> value.
-            </summary>
-            <param name="value">The 32-bit signed integer to convert.</param>
-            <returns>An <see cref="T:DocumentModel.HexRgb"/> value representing the color.</returns>
-        </member>
-        <member name="M:DocumentModel.HexRgb.op_Implicit(DocumentModel.HexRgb)~System.Int32">
-            <summary>
-            Implicitly converts an <see cref="T:DocumentModel.HexRgb"/> value to a 32-bit signed integer.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.HexRgb"/> value to convert.</param>
-            <returns>A 32-bit signed integer representation of the RGB color.</returns>
-        </member>
-        <member name="M:DocumentModel.HexRgb.op_Implicit(DocumentModel.HexInt)~DocumentModel.HexRgb">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.HexInt"/> value to an <see cref="T:DocumentModel.HexRgb"/> value.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.HexInt"/> value to convert.</param>
-            <returns>An <see cref="T:DocumentModel.HexRgb"/> value representing the color.</returns>
-        </member>
-        <member name="M:DocumentModel.HexRgb.op_Implicit(DocumentModel.HexRgb)~DocumentModel.HexInt">
-            <summary>
-            Implicitly converts an <see cref="T:DocumentModel.HexRgb"/> value to a <see cref="T:DocumentModel.HexInt"/> value.
-            </summary>
-            <param name="value">The <see cref="T:DocumentModel.HexRgb"/> value to convert.</param>
-            <returns>A <see cref="T:DocumentModel.HexInt"/> representation of the RGB color.</returns>
-        </member>
-        <member name="M:DocumentModel.HexRgb.ToString">
-            <summary>
-            Converts the RGB value to its hexadecimal string representation.
-            </summary>
-            <returns>A 6-character hexadecimal string in the format RRGGBB.</returns>
-        </member>
-        <member name="M:DocumentModel.HexRgb.Parse(System.String)">
-            <summary>
-            Parses the specified string representation of a hexadecimal RGB color and outputs the corresponding <see
-            cref="T:DocumentModel.HexRgb"/> object.
-            </summary>
-            <remarks>If the input string is not in a valid hexadecimal RGB format, the behavior of this method is
-            undefined. It is recommended to validate the input before calling this method.</remarks>
-            <param name="str">The string containing the hexadecimal RGB color to parse.
-            The string must be in a valid hex color format, such as "RRGGBB".</param>
-            <returns>A <see cref="T:DocumentModel.HexRgb"/> object representing the parsed RGB color.</returns>
-        </member>
-        <member name="M:DocumentModel.HexRgb.TryParse(System.String,DocumentModel.HexRgb@)">
-            <summary>
-            Attempts to convert the specified string representation of a hexadecimal RGB color to its equivalent <see
-            cref="T:DocumentModel.HexRgb"/> value without throwing an exception.
-            </summary>
-            <remarks>Use this method to safely attempt to parse a hexadecimal RGB color string. If the input is not in
-            a valid format, the method returns false and does not throw an exception.</remarks>
-            <param name="str">The string containing the hexadecimal RGB color to parse.
-            The string must be in a valid format, such as "RRGGBB".</param>
-            <param name="result">When this method returns, contains the parsed <see cref="T:DocumentModel.HexRgb"/> value
-            if the conversion succeeded; otherwise,  the default value of <see cref="T:DocumentModel.HexRgb"/>.</param>
-            <returns>true if the string was successfully parsed; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.HexRgb.Equals(DocumentModel.HexRgb)">
-            <summary>
-            Indicates whether the current object is equal to another object of the same type.
-            </summary>
-            <param name="other">An object to compare with this object.</param>
-            <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
-        </member>
-        <member name="M:DocumentModel.HexRgb.Equals(System.Object)">
-            <summary>
-            Determines whether the specified object is equal to the current object.
-            </summary>
-            <param name="obj">The object to compare with the current object.</param>
-            <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
-        </member>
-        <member name="M:DocumentModel.HexRgb.GetHashCode">
-            <summary>
-            Returns the hash code for this instance.
-            </summary>
-            <returns>A 32-bit signed integer hash code.</returns>
-        </member>
-        <member name="M:DocumentModel.HexRgb.GetTypeCode">
-            <summary>
-            Returns the <see cref="T:System.TypeCode"/> for this instance.
-            </summary>
-            <returns><see cref="F:System.TypeCode.Object"/> as this is a color structure.</returns>
-        </member>
-        <member name="M:DocumentModel.HexRgb.ToBoolean(System.IFormatProvider)">
-            <summary>
-            This conversion is not supported for RGB color types.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
-            <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
-        </member>
-        <member name="M:DocumentModel.HexRgb.ToByte(System.IFormatProvider)">
-            <summary>
-            This conversion is not supported for RGB color types.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
-            <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
-        </member>
-        <member name="M:DocumentModel.HexRgb.ToChar(System.IFormatProvider)">
-            <summary>
-            This conversion is not supported for RGB color types.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
-            <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
-        </member>
-        <member name="M:DocumentModel.HexRgb.ToDateTime(System.IFormatProvider)">
-            <summary>
-            This conversion is not supported for RGB color types.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
-            <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
-        </member>
-        <member name="M:DocumentModel.HexRgb.ToDecimal(System.IFormatProvider)">
-            <summary>
-            This conversion is not supported for RGB color types.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
-            <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
-        </member>
-        <member name="M:DocumentModel.HexRgb.ToDouble(System.IFormatProvider)">
-            <summary>
-            This conversion is not supported for RGB color types.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
-            <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
-        </member>
-        <member name="M:DocumentModel.HexRgb.ToInt16(System.IFormatProvider)">
-            <summary>
-            This conversion is not supported for RGB color types.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
-            <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
-        </member>
-        <member name="M:DocumentModel.HexRgb.ToInt32(System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to an equivalent 32-bit signed integer.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>The 24-bit RGB value as a 32-bit signed integer.</returns>
-        </member>
-        <member name="M:DocumentModel.HexRgb.ToInt64(System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to an equivalent 64-bit signed integer.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>The 24-bit RGB value as a 64-bit signed integer.</returns>
-        </member>
-        <member name="M:DocumentModel.HexRgb.ToSByte(System.IFormatProvider)">
-            <summary>
-            This conversion is not supported for RGB color types.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
-            <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
-        </member>
-        <member name="M:DocumentModel.HexRgb.ToSingle(System.IFormatProvider)">
-            <summary>
-            This conversion is not supported for RGB color types.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
-            <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
-        </member>
-        <member name="M:DocumentModel.HexRgb.ToString(System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to an equivalent string.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>A 6-character hexadecimal string in the format RRGGBB.</returns>
-        </member>
-        <member name="M:DocumentModel.HexRgb.ToType(System.Type,System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to the specified type.
-            </summary>
-            <param name="conversionType">The type to which to convert the value of this instance.</param>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>
-            An object of the specified type with a value equivalent to the value of this instance.
-            Supports conversion to <see cref="T:System.String"/>, <see cref="T:System.Int32"/>, <see cref="T:System.Int64"/>, <see cref="T:System.UInt32"/>, <see cref="T:System.UInt64"/>, <see cref="T:DocumentModel.HexInt"/>, and <see cref="T:DocumentModel.HexRgb"/>.
-            </returns>
-            <exception cref="T:System.InvalidCastException">This conversion is not supported for the specified type.</exception>
-        </member>
-        <member name="M:DocumentModel.HexRgb.ToUInt16(System.IFormatProvider)">
-            <summary>
-            This conversion is not supported for RGB color types.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>This method always throws <see cref="T:System.InvalidCastException"/>.</returns>
-            <exception cref="T:System.InvalidCastException">This conversion is not supported.</exception>
-        </member>
-        <member name="M:DocumentModel.HexRgb.ToUInt32(System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to an equivalent 32-bit unsigned integer.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>The 24-bit RGB value as a 32-bit unsigned integer.</returns>
-        </member>
-        <member name="M:DocumentModel.HexRgb.ToUInt64(System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to an equivalent 64-bit unsigned integer.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>The 24-bit RGB value as a 64-bit unsigned integer.</returns>
-        </member>
-        <member name="T:DocumentModel.HexRgbJsonConverter">
-            <summary>
-            Provides JSON serialization and deserialization support for the <see cref="T:DocumentModel.HexRgb"/> structure.
-            </summary>
-            <remarks>
-            This converter handles both string and numeric JSON tokens for deserialization,
-            and writes RGB values as hexadecimal strings for compatibility with web standards and Office Open XML conventions.
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.HexRgbJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
-            <summary>
-            Reads and converts JSON to an <see cref="T:DocumentModel.HexRgb"/> value.
-            </summary>
-            <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader"/> to read from.</param>
-            <param name="typeToConvert">The type to convert.</param>
-            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
-            <returns>An <see cref="T:DocumentModel.HexRgb"/> value parsed from the JSON input.</returns>
-            <exception cref="T:System.Text.Json.JsonException">
-            Thrown when:
-            <list type="bullet">
-            <item><description>The JSON token is a string but contains a null value.</description></item>
-            <item><description>The string value cannot be parsed as a valid RGB color (must be a 6-digit hexadecimal value).</description></item>
-            <item><description>The JSON token is a number but cannot be converted to a 32-bit integer.</description></item>
-            <item><description>The JSON token is neither a string nor a number.</description></item>
-            </list>
-            </exception>
-            <remarks>
-            Accepts the following input formats:
-            <list type="bullet">
-            <item><description>String tokens with 6-digit hexadecimal values (e.g., "FF0000" for red, "00FF00" for green, "0000FF" for blue)</description></item>
-            <item><description>Numeric tokens as integer values representing the RGB color as a 24-bit value</description></item>
-            </list>
-            The hexadecimal format is RRGGBB where RR is red, GG is green, and BB is blue.
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.HexRgbJsonConverter.Write(System.Text.Json.Utf8JsonWriter,DocumentModel.HexRgb,System.Text.Json.JsonSerializerOptions)">
-            <summary>
-            Writes an <see cref="T:DocumentModel.HexRgb"/> value as JSON.
-            </summary>
-            <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter"/> to write to.</param>
-            <param name="value">The <see cref="T:DocumentModel.HexRgb"/> value to serialize.</param>
-            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
-            <remarks>
-            Writes the RGB value as a 6-character hexadecimal string in the format RRGGBB.
-            For example, red is written as "FF0000", green as "00FF00", and blue as "0000FF".
-            This format is compatible with web standards and CSS color values.
-            </remarks>
-        </member>
         <member name="T:DocumentModel.HPS">
             <summary>
             Provides XML serialization support for the <see cref="T:DocumentModel.HPS"/> structure.
@@ -5380,193 +5380,6 @@
             <param name="typeToConvert">The type to create a converter for.</param>
             <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
             <returns>A <see cref="T:System.Text.Json.Serialization.JsonConverter"/> instance for the specified type.</returns>
-        </member>
-        <member name="T:DocumentModel.OnOff">
-            <summary>
-            Specific logical type for flag values switching between on and off states.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.OnOff.System#Xml#Serialization#IXmlSerializable#GetSchema">
-            <summary>
-              Returns null to indicate this type has no XML schema.
-            </summary>
-            <remarks>
-              OnOff is serialized as simple string content, so no XML schema definition is required.
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.OnOff.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
-            <summary>
-              Reads the OnOff value from XML as hexadecimal string content.
-            </summary>
-            <param name="reader">The XML reader to read from.</param>
-            <remarks>
-              <para>
-              This method reads the hexadecimal string content from the XML element and parses it
-              into the internal ushort value. Empty elements result in a zero value.
-              </para>
-              <para>
-              Since OnOff is a struct with a readonly field, this method uses unsafe code to update
-              the field during XML deserialization. This is necessary for XmlSerializer compatibility
-              while maintaining immutability for normal usage.
-              </para>
-              <para>
-              The method properly handles three scenarios:
-              <list type="number">
-              <item><description><b>Empty elements:</b> &lt;Byte /&gt; → Value remains 0 (default)</description></item>
-              <item><description><b>Text content:</b> &lt;Byte&gt;41&lt;/Byte&gt; → Parses and sets hex value</description></item>
-              <item><description><b>No content:</b> &lt;Byte&gt;&lt;/Byte&gt; → Value remains 0 (default)</description></item>
-              </list>
-              </para>
-            </remarks>
-            <exception cref="T:System.FormatException">
-              Thrown when the string is not a valid hexadecimal number.
-            </exception>
-            <exception cref="T:System.OverflowException">
-              Thrown when the parsed value exceeds 255 (byte.MaxValue).
-            </exception>
-        </member>
-        <member name="M:DocumentModel.OnOff.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
-            <summary>
-              Writes the OnOff value to XML as hexadecimal string content.
-            </summary>
-            <param name="writer">The XML writer to write to.</param>
-            <remarks>
-              <para>
-              This method writes the hexadecimal string representation of the character code as
-              text content within the XML element. The output uses uppercase hexadecimal digits
-              (0-9, A-F) for consistency with Office Open XML standards.
-              </para>
-              <para>
-              Zero values are written as "00", not as empty elements, to maintain consistency
-              with Office Open XML character code representations.
-              </para>
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.OnOff.#ctor">
-            <summary>
-            Default constructor initializes the OnOff instance to an undefined state (value = 0).
-            </summary>
-        </member>
-        <member name="M:DocumentModel.OnOff.#ctor(System.Byte)">
-            <summary>
-            Value initialization constructor allows setting the internal byte value directly,
-            which can represent on, off, or undefined states based on predefined constants.
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="F:DocumentModel.OnOff.Undefined">
-            <summary>
-            State is not defined,
-            which can be used to represent an uninitialized state or a state where the on/off status is not applicable.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.OnOff.On">
-            <summary>
-            State is on, indicating that the feature or setting is active or enabled.
-            </summary>
-        </member>
-        <member name="F:DocumentModel.OnOff.Off">
-            <summary>
-            State is off, indicating that the feature or setting is inactive or disabled.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.OnOff.op_Implicit(DocumentModel.OnOff)~System.Byte">
-            <summary>
-            Implicit conversion from byte to OnOff, allowing for easy assignment of byte values to OnOff variables.
-            </summary>
-            <param name="onOff">The OnOff instance to convert to a byte value.</param>
-        </member>
-        <member name="M:DocumentModel.OnOff.op_Implicit(System.Byte)~DocumentModel.OnOff">
-            <summary>
-            Defines an implicit conversion from a byte value to an OnOff instance.
-            </summary>
-            <param name="value">The byte value to convert to an OnOff instance.</param>
-        </member>
-        <member name="M:DocumentModel.OnOff.Equals(System.Byte)">
-            <summary>
-            Compares the current OnOff instance with a byte value for equality, returning true if they represent the same state (On, Off, or Undefined).
-            </summary>
-            <param name="other">The byte value to compare with the current instance.</param>
-            <returns>true if the current instance and the specified byte value represent the same state; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.OnOff.Equals(System.Boolean)">
-            <summary>
-            Determines whether the current instance and the specified Boolean value represent the same logical state.
-            </summary>
-            <param name="other">The Boolean value to compare with the current instance.</param>
-            <returns>true if the logical state of the current instance matches the specified Boolean value; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.OnOff.Parse(System.String)">
-            <summary>
-            Parses the specified string and returns its equivalent OnOff value.
-            </summary>
-            <param name="value">The string representation to parse.
-            Expected values are "on", "off", "undefined", or null/empty.</param>
-            <returns>The OnOff value that corresponds to the specified string.</returns>
-            <exception cref="T:System.FormatException">Thrown if the value is not a valid OnOff representation.</exception>
-        </member>
-        <member name="M:DocumentModel.OnOff.TryParse(System.String,DocumentModel.OnOff@)">
-            <summary>
-            Attempts to convert the specified string representation to its equivalent OnOff value.
-            </summary>
-            <remarks>If the input string is null or empty, the result is set to an undefined OnOff value and the
-            method returns true. The comparison is case-insensitive.</remarks>
-            <param name="value">The string to parse. Can be "on", "off", or null/empty.</param>
-            <param name="result">When this method returns, contains the OnOff value equivalent to the string, or an undefined value if the input is
-            null or empty. This parameter is passed uninitialized.</param>
-            <returns>true if the string was successfully parsed or is null/empty; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.OnOff.ToString">
-            <summary>
-            Returns a string that represents the current value.
-            </summary>
-            <returns>A string representation of the value: "On" if the value is 1, "Off" if the value is 2, "Undefined" if the value is
-            0, or "Unknown(value)" for any other value.</returns>
-        </member>
-        <member name="T:DocumentModel.OnOffJsonConverter">
-            <summary>
-              JSON converter that serializes OnOff values as hexadecimal strings.
-            </summary>
-            <remarks>
-              <para>
-              This converter ensures that OnOff values are written as hexadecimal string values in JSON output
-              (e.g., "41") rather than numeric values or complex objects. During deserialization, the converter
-              reads string values and constructs OnOff instances from them.
-              </para>
-              <para>
-              All output uses uppercase hexadecimal digits (A-F) for consistency. During deserialization, both
-              uppercase and lowercase hex digits are accepted, and the converter validates that input strings
-              contain only valid hexadecimal characters.
-              </para>
-              <para>
-              <b>Usage Context:</b> This converter is automatically applied to OnOff properties when the type
-              is used in JSON serialization, ensuring consistent hexadecimal string representation across all
-              JSON operations in Office Open XML document processing.
-              </para>
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.OnOffJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
-            <summary>
-              Reads a OnOff value from JSON as a string.
-            </summary>
-            <param name="reader">The JSON reader to read from.</param>
-            <param name="typeToConvert">The type of object to convert to.</param>
-            <param name="options">The JSON serializer options.</param>
-            <returns>
-              A OnOff value constructed from the hexadecimal string, or a default OnOff if the value is null or empty.
-            </returns>
-            <exception cref="T:System.Text.Json.JsonException">
-              Thrown when the JSON token is not a string
-            or when the string cannot be parsed as a valid byte value.
-            </exception>
-        </member>
-        <member name="M:DocumentModel.OnOffJsonConverter.Write(System.Text.Json.Utf8JsonWriter,DocumentModel.OnOff,System.Text.Json.JsonSerializerOptions)">
-            <summary>
-              Writes a OnOff value to JSON as a string.
-            </summary>
-            <param name="writer">The JSON writer to write to.</param>
-            <param name="value">The OnOff value to write.</param>
-            <param name="options">The JSON serializer options.</param>
         </member>
         <member name="T:DocumentModel.Percent">
             <summary>
@@ -9306,13 +9119,13 @@
             </summary>
             <param name="doubleValue">The value in UniversalMeasure.</param>
         </member>
-        <member name="M:DocumentModel.UniversalMeasure.ToMM">
+        <member name="M:DocumentModel.UniversalMeasure.ToMillimeters">
             <summary>
             Converts the UniversalMeasure value to millimeters.
             </summary>
             <returns>The measurement in millimeters as a double-precision floating-point number.</returns>
         </member>
-        <member name="M:DocumentModel.UniversalMeasure.ToCM">
+        <member name="M:DocumentModel.UniversalMeasure.ToCentimeters">
             <summary>
             Converts the UniversalMeasure value to centimeters.
             </summary>
@@ -9324,7 +9137,7 @@
             </summary>
             <returns>The measurement in inches as a double-precision floating-point number.</returns>
         </member>
-        <member name="M:DocumentModel.UniversalMeasure.ToPT">
+        <member name="M:DocumentModel.UniversalMeasure.ToPoints">
             <summary>
             Converts the UniversalMeasure value to points.
             </summary>

@@ -3020,6 +3020,235 @@
             is <see langword="null"/>.</returns>
             <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.HexByte"/> is not supported.</exception>
         </member>
+        <member name="T:DocumentModel.OpenXml.HexColorConverter">
+            <summary>
+            Provides conversion methods for RGB value to/from Open XML.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.#cctor">
+            <summary>
+            Initializes the conversion maps for <see cref="T:DocumentModel.OpenXml.HexColorConverter"/>.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertFromSByteValue(DocumentFormat.OpenXml.SByteValue)">
+            <summary>
+            Converts an OpenXml SByteValue to RGB.
+            </summary>
+            <param name="SByteValue">The SByteValue to convert.</param>
+            <returns>The RGB value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertToSByteValue(System.Nullable{DocumentModel.HexColor})">
+            <summary>
+            Creates an OpenXml SByteValue from an RGB value.
+            </summary>
+            <param name="value">The RGB value to convert.</param>
+            <returns>A new SByteValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertFromInt16Value(DocumentFormat.OpenXml.Int16Value)">
+            <summary>
+            Converts an OpenXml Int16Value to RGB.
+            </summary>
+            <param name="int16Value">The Int16Value to convert.</param>
+            <returns>The RGB int16Value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertToInt16Value(System.Nullable{DocumentModel.HexColor})">
+            <summary>
+            Creates an OpenXml Int16Value from an RGB value.
+            </summary>
+            <param name="value">The RGB value to convert.</param>
+            <returns>A new Int16Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertFromInt32Value(DocumentFormat.OpenXml.Int32Value)">
+            <summary>
+            Converts an OpenXml Int32Value to RGB.
+            </summary>
+            <param name="Int32Value">The Int32Value to convert.</param>
+            <returns>The RGB value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertToInt32Value(System.Nullable{DocumentModel.HexColor})">
+            <summary>
+            Creates an OpenXml Int32Value from an RGB value.
+            </summary>
+            <param name="value">The RGB value to convert.</param>
+            <returns>A new Int32Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertFromInt64Value(DocumentFormat.OpenXml.Int64Value)">
+            <summary>
+            Converts an OpenXml Int64Value to RGB.
+            </summary>
+            <param name="Int64Value">The Int64Value to convert.</param>
+            <returns>The RGB value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertToInt64Value(System.Nullable{DocumentModel.HexColor})">
+            <summary>
+            Creates an OpenXml Int64Value from an RGB value.
+            </summary>
+            <param name="value">The RGB value to convert.</param>
+            <returns>A new Int64Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertFromIntegerValue(DocumentFormat.OpenXml.IntegerValue)">
+            <summary>
+            Converts an OpenXml IntegerValue to RGB.
+            </summary>
+            <param name="IntegerValue">The IntegerValue to convert.</param>
+            <returns>The RGB value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertToIntegerValue(System.Nullable{DocumentModel.HexColor})">
+            <summary>
+            Creates an OpenXml IntegerValue from an RGB value.
+            </summary>
+            <param name="value">The RGB value to convert.</param>
+            <returns>A new IntegerValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertFromByteValue(DocumentFormat.OpenXml.ByteValue)">
+            <summary>
+            Converts an OpenXml ByteValue to RGB.
+            </summary>
+            <param name="ByteValue">The ByteValue to convert.</param>
+            <returns>The RGB value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertToByteValue(System.Nullable{DocumentModel.HexColor})">
+            <summary>
+            Creates an OpenXml ByteValue from an RGB value.
+            </summary>
+            <param name="value">The RGB value to convert.</param>
+            <returns>A new ByteValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertFromUInt16Value(DocumentFormat.OpenXml.UInt16Value)">
+            <summary>
+            Converts an OpenXml UInt16Value to RGB.
+            </summary>
+            <param name="UInt16Value">The UInt16Value to convert.</param>
+            <returns>The RGB value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertToUInt16Value(System.Nullable{DocumentModel.HexColor})">
+            <summary>
+            Creates an OpenXml UInt16Value from an RGB value.
+            </summary>
+            <param name="value">The RGB value to convert.</param>
+            <returns>A new UInt16Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertFromUInt32Value(DocumentFormat.OpenXml.UInt32Value)">
+            <summary>
+            Converts an OpenXml RgbValue to RGB.
+            </summary>
+            <param name="RgbValue">The RgbValue to convert.</param>
+            <returns>The RGB value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertToUInt32Value(System.Nullable{DocumentModel.HexColor})">
+            <summary>
+            Creates an OpenXml RgbValue from an RGB value.
+            </summary>
+            <param name="value">The RGB value to convert.</param>
+            <returns>A new RgbValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertFromUInt64Value(DocumentFormat.OpenXml.UInt64Value)">
+            <summary>
+            Converts an OpenXml UInt64Value to RGB.
+            </summary>
+            <param name="UInt64Value">The UInt64Value to convert.</param>
+            <returns>The RGB value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertToUInt64Value(System.Nullable{DocumentModel.HexColor})">
+            <summary>
+            Creates an OpenXml UInt64Value from an RGB value.
+            </summary>
+            <param name="value">The RGB value to convert.</param>
+            <returns>A new UInt64Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertFromStringValue(DocumentFormat.OpenXml.StringValue)">
+            <summary>
+            Converts an OpenXml StringValue to RGB.
+            </summary>
+            <param name="StringValue">The StringValue to convert.</param>
+            <returns>The RGB value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertToStringValue(System.Nullable{DocumentModel.HexColor},System.Type)">
+            <summary>
+            Creates an OpenXml StringValue from an RGB value.
+            </summary>
+            <param name="value">The RGB value to convert.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
+            <returns>A new StringValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
+            <summary>
+            Converts an OpenXml OpenXmlLeafTextElement to RGB.
+            </summary>
+            <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
+            <returns>The RGB value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertToOpenXmlLeafTextElement(System.Nullable{DocumentModel.HexColor},System.Type)">
+            <summary>
+            Creates an OpenXml OpenXmlLeafTextElement from an RGB value.
+            </summary>
+            <param name="value">The RGB value to convert.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertFromHexBinaryValue(DocumentFormat.OpenXml.HexBinaryValue)">
+            <summary>
+            Converts an OpenXml HexBinaryValue to RGB.
+            </summary>
+            <param name="HexBinaryValue">The HexBinaryValue to convert.</param>
+            <returns>The RGB value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertToHexBinaryValue(System.Nullable{DocumentModel.HexColor},System.Type)">
+            <summary>
+            Creates an OpenXml HexBinaryValue from an RGB value.
+            </summary>
+            <param name="value">The RGB value to convert.</param>
+            <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+            <returns>A new HexBinaryValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
+            <summary>
+            Converts an OpenXml OpenXmlLeafElement to RGB.
+            </summary>
+            <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
+            <returns>The RGB value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertToOpenXmlLeafElement(System.Nullable{DocumentModel.HexColor},System.Type)">
+            <summary>
+            Creates an OpenXml OpenXmlLeafElement from an RGB value.
+            </summary>
+            <param name="value">The RGB value to convert.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts the specified string representation of a number to its Rgbequivalent.
+            </summary>
+            <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
+            <returns>A RGB integer equivalent to the number contained in the input string, or null if the input is null or
+            not a valid integer.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertToString(System.Nullable{DocumentModel.HexColor})">
+            <summary>
+            Converts a nullable RGB value to its string representation.
+            </summary>
+            <param name="value">The nullable RGB value to convert. If null, the method returns null.</param>
+            <returns>A string representation of the specified value, or null if the value is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertTo(System.Nullable{DocumentModel.HexColor},System.Type)">
+            <summary>
+            Converts an RGB value to the specified target type using standard type conversion.
+            </summary>
+            <param name="value">The RGB value to convert.</param>
+            <param name="targetType">The target type to convert to.</param>
+            <returns>The converted value, or null if the input is null.</returns>
+            <exception cref="T:System.NotSupportedException">Raised when the target type is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexColorConverter.ConvertFrom(System.Object)">
+            <summary>
+            Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
+            </summary>
+            <param name="value">The value to convert to an <see cref="T:DocumentModel.HexColor"/>. Can be <see langword="null"/>.</param>
+            <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
+            is <see langword="null"/>.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.HexColor"/> is not supported.</exception>
+        </member>
         <member name="T:DocumentModel.OpenXml.HexIntConverter">
             <summary>
             Provides conversion methods for HexInt value to/from Open XML.
@@ -3477,235 +3706,6 @@
             <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
             is <see langword="null"/>.</returns>
             <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.HexLong"/> is not supported.</exception>
-        </member>
-        <member name="T:DocumentModel.OpenXml.HexRgbConverter">
-            <summary>
-            Provides conversion methods for RGB value to/from Open XML.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.#cctor">
-            <summary>
-            Initializes the conversion maps for <see cref="T:DocumentModel.OpenXml.HexRgbConverter"/>.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertFromSByteValue(DocumentFormat.OpenXml.SByteValue)">
-            <summary>
-            Converts an OpenXml SByteValue to RGB.
-            </summary>
-            <param name="SByteValue">The SByteValue to convert.</param>
-            <returns>The RGB value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertToSByteValue(System.Nullable{DocumentModel.HexRgb})">
-            <summary>
-            Creates an OpenXml SByteValue from an RGB value.
-            </summary>
-            <param name="value">The RGB value to convert.</param>
-            <returns>A new SByteValue, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertFromInt16Value(DocumentFormat.OpenXml.Int16Value)">
-            <summary>
-            Converts an OpenXml Int16Value to RGB.
-            </summary>
-            <param name="int16Value">The Int16Value to convert.</param>
-            <returns>The RGB int16Value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertToInt16Value(System.Nullable{DocumentModel.HexRgb})">
-            <summary>
-            Creates an OpenXml Int16Value from an RGB value.
-            </summary>
-            <param name="value">The RGB value to convert.</param>
-            <returns>A new Int16Value, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertFromInt32Value(DocumentFormat.OpenXml.Int32Value)">
-            <summary>
-            Converts an OpenXml Int32Value to RGB.
-            </summary>
-            <param name="Int32Value">The Int32Value to convert.</param>
-            <returns>The RGB value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertToInt32Value(System.Nullable{DocumentModel.HexRgb})">
-            <summary>
-            Creates an OpenXml Int32Value from an RGB value.
-            </summary>
-            <param name="value">The RGB value to convert.</param>
-            <returns>A new Int32Value, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertFromInt64Value(DocumentFormat.OpenXml.Int64Value)">
-            <summary>
-            Converts an OpenXml Int64Value to RGB.
-            </summary>
-            <param name="Int64Value">The Int64Value to convert.</param>
-            <returns>The RGB value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertToInt64Value(System.Nullable{DocumentModel.HexRgb})">
-            <summary>
-            Creates an OpenXml Int64Value from an RGB value.
-            </summary>
-            <param name="value">The RGB value to convert.</param>
-            <returns>A new Int64Value, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertFromIntegerValue(DocumentFormat.OpenXml.IntegerValue)">
-            <summary>
-            Converts an OpenXml IntegerValue to RGB.
-            </summary>
-            <param name="IntegerValue">The IntegerValue to convert.</param>
-            <returns>The RGB value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertToIntegerValue(System.Nullable{DocumentModel.HexRgb})">
-            <summary>
-            Creates an OpenXml IntegerValue from an RGB value.
-            </summary>
-            <param name="value">The RGB value to convert.</param>
-            <returns>A new IntegerValue, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertFromByteValue(DocumentFormat.OpenXml.ByteValue)">
-            <summary>
-            Converts an OpenXml ByteValue to RGB.
-            </summary>
-            <param name="ByteValue">The ByteValue to convert.</param>
-            <returns>The RGB value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertToByteValue(System.Nullable{DocumentModel.HexRgb})">
-            <summary>
-            Creates an OpenXml ByteValue from an RGB value.
-            </summary>
-            <param name="value">The RGB value to convert.</param>
-            <returns>A new ByteValue, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertFromUInt16Value(DocumentFormat.OpenXml.UInt16Value)">
-            <summary>
-            Converts an OpenXml UInt16Value to RGB.
-            </summary>
-            <param name="UInt16Value">The UInt16Value to convert.</param>
-            <returns>The RGB value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertToUInt16Value(System.Nullable{DocumentModel.HexRgb})">
-            <summary>
-            Creates an OpenXml UInt16Value from an RGB value.
-            </summary>
-            <param name="value">The RGB value to convert.</param>
-            <returns>A new UInt16Value, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertFromUInt32Value(DocumentFormat.OpenXml.UInt32Value)">
-            <summary>
-            Converts an OpenXml RgbValue to RGB.
-            </summary>
-            <param name="RgbValue">The RgbValue to convert.</param>
-            <returns>The RGB value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertToUInt32Value(System.Nullable{DocumentModel.HexRgb})">
-            <summary>
-            Creates an OpenXml RgbValue from an RGB value.
-            </summary>
-            <param name="value">The RGB value to convert.</param>
-            <returns>A new RgbValue, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertFromUInt64Value(DocumentFormat.OpenXml.UInt64Value)">
-            <summary>
-            Converts an OpenXml UInt64Value to RGB.
-            </summary>
-            <param name="UInt64Value">The UInt64Value to convert.</param>
-            <returns>The RGB value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertToUInt64Value(System.Nullable{DocumentModel.HexRgb})">
-            <summary>
-            Creates an OpenXml UInt64Value from an RGB value.
-            </summary>
-            <param name="value">The RGB value to convert.</param>
-            <returns>A new UInt64Value, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertFromStringValue(DocumentFormat.OpenXml.StringValue)">
-            <summary>
-            Converts an OpenXml StringValue to RGB.
-            </summary>
-            <param name="StringValue">The StringValue to convert.</param>
-            <returns>The RGB value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertToStringValue(System.Nullable{DocumentModel.HexRgb},System.Type)">
-            <summary>
-            Creates an OpenXml StringValue from an RGB value.
-            </summary>
-            <param name="value">The RGB value to convert.</param>
-            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
-            <returns>A new StringValue, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
-            <summary>
-            Converts an OpenXml OpenXmlLeafTextElement to RGB.
-            </summary>
-            <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
-            <returns>The RGB value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertToOpenXmlLeafTextElement(System.Nullable{DocumentModel.HexRgb},System.Type)">
-            <summary>
-            Creates an OpenXml OpenXmlLeafTextElement from an RGB value.
-            </summary>
-            <param name="value">The RGB value to convert.</param>
-            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
-            <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertFromHexBinaryValue(DocumentFormat.OpenXml.HexBinaryValue)">
-            <summary>
-            Converts an OpenXml HexBinaryValue to RGB.
-            </summary>
-            <param name="HexBinaryValue">The HexBinaryValue to convert.</param>
-            <returns>The RGB value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertToHexBinaryValue(System.Nullable{DocumentModel.HexRgb},System.Type)">
-            <summary>
-            Creates an OpenXml HexBinaryValue from an RGB value.
-            </summary>
-            <param name="value">The RGB value to convert.</param>
-            <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
-            <returns>A new HexBinaryValue, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
-            <summary>
-            Converts an OpenXml OpenXmlLeafElement to RGB.
-            </summary>
-            <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
-            <returns>The RGB value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertToOpenXmlLeafElement(System.Nullable{DocumentModel.HexRgb},System.Type)">
-            <summary>
-            Creates an OpenXml OpenXmlLeafElement from an RGB value.
-            </summary>
-            <param name="value">The RGB value to convert.</param>
-            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
-            <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertFromString(System.String)">
-            <summary>
-            Converts the specified string representation of a number to its Rgbequivalent.
-            </summary>
-            <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
-            <returns>A RGB integer equivalent to the number contained in the input string, or null if the input is null or
-            not a valid integer.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertToString(System.Nullable{DocumentModel.HexRgb})">
-            <summary>
-            Converts a nullable RGB value to its string representation.
-            </summary>
-            <param name="value">The nullable RGB value to convert. If null, the method returns null.</param>
-            <returns>A string representation of the specified value, or null if the value is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertTo(System.Nullable{DocumentModel.HexRgb},System.Type)">
-            <summary>
-            Converts an RGB value to the specified target type using standard type conversion.
-            </summary>
-            <param name="value">The RGB value to convert.</param>
-            <param name="targetType">The target type to convert to.</param>
-            <returns>The converted value, or null if the input is null.</returns>
-            <exception cref="T:System.NotSupportedException">Raised when the target type is not supported.</exception>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexRgbConverter.ConvertFrom(System.Object)">
-            <summary>
-            Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
-            </summary>
-            <param name="value">The value to convert to an <see cref="T:DocumentModel.HexRgb"/>. Can be <see langword="null"/>.</param>
-            <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
-            is <see langword="null"/>.</returns>
-            <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.HexRgb"/> is not supported.</exception>
         </member>
         <member name="T:DocumentModel.OpenXml.HPSConverter">
             <summary>

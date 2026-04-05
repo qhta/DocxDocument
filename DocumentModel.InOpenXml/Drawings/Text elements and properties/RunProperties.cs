@@ -53,22 +53,22 @@ public partial class RunProperties : ModelElement<DXD.RunProperties>, IExtendabl
  public Fill? UnderlineFill { get => _UnderlineFill; set => UpdateField(ref _UnderlineFill, value, nameof(UnderlineFill)); }
  private Fill? _UnderlineFill;
  /// <summary>
- ///   Font settings for Latin text.
+ ///   TextFormat settings for Latin text.
  /// </summary>
  public TextFontType? LatinFont { get => _LatinFont; set => UpdateField(ref _LatinFont, value, nameof(LatinFont)); }
  private TextFontType? _LatinFont;
  /// <summary>
- ///   Font settings for East Asian text.
+ ///   TextFormat settings for East Asian text.
  /// </summary>
  public TextFontType? EastAsianFont { get => _EastAsianFont; set => UpdateField(ref _EastAsianFont, value, nameof(EastAsianFont)); }
  private TextFontType? _EastAsianFont;
  /// <summary>
- ///   Font settings for complex script text.
+ ///   TextFormat settings for complex script text.
  /// </summary>
  public TextFontType? ComplexScriptFont { get => _ComplexScriptFont; set => UpdateField(ref _ComplexScriptFont, value, nameof(ComplexScriptFont)); }
  private TextFontType? _ComplexScriptFont;
  /// <summary>
- ///   Font settings for symbol text.
+ ///   TextFormat settings for symbol text.
  /// </summary>
  public TextFontType? SymbolFont { get => _SymbolFont; set => UpdateField(ref _SymbolFont, value, nameof(SymbolFont)); }
  private TextFontType? _SymbolFont;

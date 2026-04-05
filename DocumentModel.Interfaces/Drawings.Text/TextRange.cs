@@ -50,7 +50,7 @@ public partial interface ITextRange: IModelCollection<ITextRange>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.paragraphformat?view=office-pia"/>
   public IParagraphFormat2 ParagraphFormat { get; }
   /// <summary>
-  /// Gets the `Font` property.
+  /// Gets the `TextFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.font?view=office-pia"/>
   public IFont Font { get; }

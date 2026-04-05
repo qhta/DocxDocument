@@ -1,4 +1,5 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
 /// Represents a color definition for use in WordprocessingML documents.
 /// This class extends <see cref = "AbstractColor"/> and is used to specify color values for document elements such as borders, shading, and text, enabling advanced formatting and visual customization.
@@ -9,9 +10,8 @@ public partial class Color: AbstractColor<DXW.Color>
   /// <summary>
   /// Initializes a new instance of the Color class.
   /// </summary>
-  public Color(): base()
-  {
-  }
+  public Color(): base() { }
+
   /// <summary>
   /// Initializes a new instance of the Color class using the specified color string.
   /// </summary>
@@ -22,14 +22,16 @@ public partial class Color: AbstractColor<DXW.Color>
   {
     Init(colorString);
   }
+
   /// <summary>
   /// Initializes a new instance of the Color class using the specified hexadecimal RGB color value.
   /// </summary>
-  /// <param name="hexRgb"></param>
-  public Color(UInt32 hexRgb)
+  /// <param name="hexColor"></param>
+  public Color(UInt32 hexColor)
   {
-    Val = hexRgb;
+    Val = hexColor;
   }
+
   /// <summary>
   /// <para>Run Content Color</para>
   /// <para>Represents the following attribute in the schema: w:val</para>
@@ -38,7 +40,8 @@ public partial class Color: AbstractColor<DXW.Color>
   /// xmlns:w=http://schemas.openxmlformats.org/wordprocessingml/2006/main
   /// </remarks>
   [OpenXmlProperty(nameof(DXW.Color.Val))]
-  public HexRgb? Val { get; set; }
+  public HexColor? Val { get; set; }
+
   /// <summary>
   /// <para>Run Content Theme Color</para>
   /// <para>Represents the following attribute in the schema: w:themeColor</para>
@@ -48,6 +51,7 @@ public partial class Color: AbstractColor<DXW.Color>
   /// </remarks>
   [OpenXmlProperty(nameof(DXW.Color.ThemeColor))]
   public ThemeColors? ThemeColor { get; set; }
+
   /// <summary>
   /// <para>Run Content Theme Color Tint</para>
   /// <para>Represents the following attribute in the schema: w:themeTint</para>
@@ -57,6 +61,7 @@ public partial class Color: AbstractColor<DXW.Color>
   /// </remarks>
   [OpenXmlProperty(nameof(DXW.Color.ThemeTint))]
   public Byte? ThemeTint { get; set; }
+
   /// <summary>
   /// <para>Run Content Theme Color Shade</para>
   /// <para>Represents the following attribute in the schema: w:themeShade</para>
@@ -66,19 +71,23 @@ public partial class Color: AbstractColor<DXW.Color>
   /// </remarks>
   [OpenXmlProperty(nameof(DXW.Color.ThemeShade))]
   public Byte? ThemeShade { get; set; }
+
   /// <summary>
   /// Implicitly converts a string to a <see cref="Color"/> value.
   /// </summary>
   /// <param name="value">The string to convert.</param>
   /// <returns>A <see cref="Color"/> value representing the color.</returns>
   public static implicit operator Color(string value) => new Color(value);
+
   /// <summary>
   /// Implicitly converts an <see cref="Color"/> value to a string representation.
   /// </summary>
   /// <param name="value">The <see cref="Color"/> value to convert.</param>
   /// <returns>A string representation of the RGB color.</returns>
+
   // ReSharper disable once SpecifyACultureInStringConversionExplicitly
   public static implicit operator String(Color value) => value.ToString()!;
+
   /// <summary>
   /// Initializes instance properties based on the provided color string,
   /// which can include hexadecimal RGB values and theme color information.
@@ -90,11 +99,12 @@ public partial class Color: AbstractColor<DXW.Color>
   {
     if (string.IsNullOrEmpty(colorString))
       throw new ArgumentException("Color string cannot be null or empty.", nameof(colorString));
+
     var strings = colorString.Split(' ', StringSplitOptions.RemoveEmptyEntries);
     foreach (var str in strings)
     {
       var s = str.Trim();
-      if (HexRgb.TryParse(s, out var hexColor))
+      if (HexColor.TryParse(s, out var hexColor))
         Val = hexColor;
       else if (Enum.TryParse<ThemeColors>(s, true, out var themeColor))
         ThemeColor = themeColor;
@@ -106,6 +116,7 @@ public partial class Color: AbstractColor<DXW.Color>
         ThemeShade = themeShade;
     }
   }
+
   /// <summary>
   /// String representation of the Color instance, which includes the hexadecimal color value and theme color information if available.
   /// </summary>
@@ -123,6 +134,7 @@ public partial class Color: AbstractColor<DXW.Color>
       strings.Add($"ThemeShade:{ThemeShade}");
     return String.Join(" ", strings);
   }
+
   /// <summary>
   /// Parses a string representation of a color and returns a corresponding Color object. Supports both hexadecimal RGB
   /// values and theme color names.
@@ -139,8 +151,10 @@ public partial class Color: AbstractColor<DXW.Color>
   {
     if (string.IsNullOrEmpty(colorString))
       throw new ArgumentException("Color string cannot be null or empty.", nameof(colorString));
+
     return new Color(colorString);
   }
+
   /// <summary>
   /// Attempts to parse the specified color string into a <see cref="Color"/> object, supporting both hexadecimal RGB
   /// and named theme color formats.
@@ -157,6 +171,7 @@ public partial class Color: AbstractColor<DXW.Color>
     color = null;
     if (string.IsNullOrEmpty(colorString))
       return false;
+
     try
     {
       color = new Color(colorString);
@@ -166,6 +181,7 @@ public partial class Color: AbstractColor<DXW.Color>
       return false;
     }
   }
+
   /// <summary>
   /// Creates new instance of <see cref="Color"/> based on the provided OpenXml color properties, including the color value, theme color, tint,
   /// and shade.
@@ -175,14 +191,15 @@ public partial class Color: AbstractColor<DXW.Color>
   /// <param name="themeTint">StringValue representing the theme tint.</param>
   /// <param name="themeShade">StringValue representing the theme shade.</param>
   /// <returns>A Color object populated with the provided OpenXml color properties. If no color properties are provided, returns null.</returns>
-  public static DMW.Color? FromOpenXml (DX.StringValue? val = null, 
-    DX.EnumValue<DXW.ThemeColorValues>? themeColor = null, DX.StringValue? themeTint = null, DX.StringValue? themeShade = null)
+  public static DMW.Color? FromOpenXml
+  (DX.StringValue? val = null, DX.EnumValue<DXW.ThemeColorValues>? themeColor = null, DX.StringValue? themeTint = null,
+    DX.StringValue? themeShade = null)
   {
     DMW.Color? color = null;
     if (val?.Value != null)
     {
       color ??= new DMW.Color();
-      color.Val = HexRgbConverter.ConvertFrom(val);
+      color.Val = HexColorConverter.ConvertFrom(val);
     }
     if (themeColor?.Value != null)
     {
@@ -201,6 +218,7 @@ public partial class Color: AbstractColor<DXW.Color>
     }
     return color;
   }
+
   /// <summary>
   /// Converts the current color and theme-related properties to their OpenXML representations.
   /// </summary>
@@ -209,14 +227,15 @@ public partial class Color: AbstractColor<DXW.Color>
   /// tuple.</remarks>
   /// <returns>A tuple containing the converted color value, theme color, theme tint, and theme shade. Each element may be null
   /// if the corresponding property is not set.</returns>
-  public (DX.StringValue? val, 
-    DX.EnumValue<DXW.ThemeColorValues>? themeColor, DX.StringValue? themeTint, DX.StringValue? themeShade) ToOpenXml()
+  public (DX.StringValue? val, DX.EnumValue<DXW.ThemeColorValues>? themeColor, DX.StringValue? themeTint, DX.StringValue
+    ? themeShade) ToOpenXml()
   {
     DX.StringValue? val = null;
     if (Val is not null)
-      val = HexRgbConverter.ConvertTo(Val, typeof(DX.StringValue)) as DX.StringValue;
+      val = HexColorConverter.ConvertTo(Val, typeof(DX.StringValue)) as DX.StringValue;
     DX.EnumValue<DXW.ThemeColorValues>? themeColor = null;
     if (ThemeColor is not null)
+
       // ReSharper disable once InvokeAsExtensionMember
       themeColor = EnumTypeConverter.CreateOpenXmlEnumValue<DXW.ThemeColorValues, ThemeColors>(ThemeColor.Value);
     DX.StringValue? themeTint = null;
@@ -226,5 +245,66 @@ public partial class Color: AbstractColor<DXW.Color>
     if (ThemeShade is not null)
       themeShade = HexByteConverter.ConvertTo(ThemeShade, typeof(DX.StringValue)) as DX.StringValue;
     return (val, themeColor, themeTint, themeShade);
+  }
+
+  /// <summary>
+  /// Defines an implicit conversion from a nullable HexColor to a nullable DMW.Color instance.
+  /// </summary>
+  /// <remarks>This operator enables seamless assignment of a nullable HexColor to a nullable DMW.Color without
+  /// explicit casting. The Val property of the resulting Color is set to the provided HexColor value.</remarks>
+  /// <param name="value">The HexColor value to convert. If null, the result is null.</param>
+  public static implicit operator DMW.Color? (HexColor? value)
+  {
+    if (value is null)
+      return null!;
+    return new Color
+    {
+      Val = value,
+    };
+  }
+
+  /// <summary>
+  /// Defines an implicit conversion from a nullable Color to a nullable HexColor.
+  /// </summary>
+  /// <remarks>If the specified Color is null, the result is null; otherwise, the HexColor value of the Color is
+  /// returned. This operator enables seamless conversion between Color and HexColor types when working with nullable
+  /// values.</remarks>
+  /// <param name="color">The nullable Color instance to convert to a HexColor.</param>
+  public static implicit operator HexColor? (Color? color)
+  {
+    if (color is null)
+      return null;
+    return color.Val;
+  }
+
+
+  /// <summary>
+  /// Defines an implicit conversion from a nullable UInt32 to a nullable DMW.Color instance.
+  /// </summary>
+  /// <remarks>This operator enables seamless assignment of a nullable UInt32 to a nullable DMW.Color without
+  /// explicit casting. The Val property of the resulting Color is set to the provided UInt32 value.</remarks>
+  /// <param name="value">The UInt32 value to convert. If null, the result is null.</param>
+  public static implicit operator DMW.Color?(UInt32? value)
+  {
+    if (value is null)
+      return null!;
+    return new Color
+    {
+      Val = value,
+    };
+  }
+
+  /// <summary>
+  /// Defines an implicit conversion from a nullable Color to a nullable UInt32.
+  /// </summary>
+  /// <remarks>If the specified Color is null, the result is null; otherwise, the UInt32 value of the Color is
+  /// returned. This operator enables seamless conversion between Color and UInt32 types when working with nullable
+  /// values.</remarks>
+  /// <param name="color">The nullable Color instance to convert to an UInt32.</param>
+  public static implicit operator UInt32?(Color? color)
+  {
+    if (color is null)
+      return null;
+    return color.Val;
   }
 }

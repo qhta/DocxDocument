@@ -17,10 +17,10 @@ internal class Program
     if (!Exec(StatisticPropertiesTest.Run)) return;
     if (!Exec(CustomPropertiesTest.Run)) return;
 
-    //if (!Exec(DocumentSettingsTest.Run)) return;
-    //if (!Exec(RsidsTest.Run)) return;
-    //if (!Exec(DocumentVariablesTest.Run)) return;
-    //if (!Exec(FontTableTest.Run)) return;
+    if (!Exec(DocumentSettingsTest.Run)) return;
+    if (!Exec(RsidsTest.Run)) return;
+    if (!Exec(DocumentVariablesTest.Run)) return;
+    if (!Exec(FontTableTest.Run)) return;
     //if (!Exec(LatentStylesTest.Run)) return;
     //if (!Exec(StyleDefsTest.Run)) return;
     //if (!Exec(BaseRunPropertiesTest.Run)) return;

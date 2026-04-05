@@ -16,7 +16,7 @@ public partial interface IDiagramNode: IModelObject
   /// Gets the `Shape` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.shape?view=office-pia"/>
-  public Drw.IShape Shape { get; }
+  public Drawings.IShape Shape { get; }
   /// <summary>
   /// Gets the `Root` property.
   /// </summary>
@@ -36,6 +36,6 @@ public partial interface IDiagramNode: IModelObject
   /// Gets the `TextShape` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.textshape?view=office-pia"/>
-  public Drw.IShape TextShape { get; }
+  public Drawings.IShape TextShape { get; }
 }
 

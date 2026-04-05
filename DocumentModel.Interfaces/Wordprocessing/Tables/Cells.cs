@@ -42,7 +42,7 @@ public partial interface ICells : IModelCollection<ICell>
   /// Gets the shading formatting for the cells.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.shading?view=word-pia"/>
-  public Drw.IShading Shading { get; }
+  public DMD.IShading Shading { get; }
 
   /// <summary>
   /// Gets the nesting level of the cells.

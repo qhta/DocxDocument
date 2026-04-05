@@ -131,7 +131,7 @@ public static class PTSTest
     Console.WriteLine("\nTesting millimeter conversions:");
     PTS oneMM = "1mm";
     Console.WriteLine($"  1mm = {oneMM} PTS (expected {pts1MM})");
-    Console.WriteLine($"  {pts1MM} PTS = {oneMM.ToMM()}mm");
+    Console.WriteLine($"  {pts1MM} PTS = {oneMM.ToMillimeters()}mm");
     if (!oneMM.Equals(pts1MM))
     {
       Console.WriteLine("✗ Millimeter conversion FAILED");
@@ -142,7 +142,7 @@ public static class PTSTest
     Console.WriteLine("\nTesting centimeter conversions:");
     PTS oneCM = "1cm";
     Console.WriteLine($"  1cm = {oneCM} PTS (expected ~{pts1CM})");
-    Console.WriteLine($"  {pts1CM} PTS = {oneCM.ToCM()}cm");
+    Console.WriteLine($"  {pts1CM} PTS = {oneCM.ToCentimeters()}cm");
     if (!oneCM.Equals(pts1CM))
     {
       Console.WriteLine("✗ Centimeter conversion FAILED");
@@ -153,7 +153,7 @@ public static class PTSTest
     Console.WriteLine("\nTesting point conversions:");
     PTS twelvePTS = "12pt";
     Console.WriteLine($"  12pt = {twelvePTS} PTS (expected {pts12PT})");
-    Console.WriteLine($"  {pts12PT} PTS = {twelvePTS.ToPT()}pt");
+    Console.WriteLine($"  {pts12PT} PTS = {twelvePTS.ToPoints()}pt");
     if (!twelvePTS.Equals(pts12PT))
     {
       Console.WriteLine("✗ Point conversion FAILED");
@@ -280,22 +280,22 @@ public static class PTSTest
 
     Console.WriteLine("Deserialized data:");
 
-    Console.WriteLine($"  FontSize: {deserializedData.FontSize} ({deserializedData.FontSize.ToPT():F1}pt)");
+    Console.WriteLine($"  FontSize: {deserializedData.FontSize} ({deserializedData.FontSize.ToPoints():F1}pt)");
     if (testData.FontSize.CompareTo(deserializedData.FontSize) != 0)
       return false;
-    Console.WriteLine($"  LineHeight: {deserializedData.LineHeight} ({deserializedData.LineHeight.ToPT():F1}pt)");
+    Console.WriteLine($"  LineHeight: {deserializedData.LineHeight} ({deserializedData.LineHeight.ToPoints():F1}pt)");
     if (testData.LineHeight.CompareTo(deserializedData.LineHeight) != 0)
       return false;
-    Console.WriteLine($"  ParagraphSpacing: {deserializedData.ParagraphSpacing} ({deserializedData.ParagraphSpacing.ToPT():F1}pt)");
+    Console.WriteLine($"  ParagraphSpacing: {deserializedData.ParagraphSpacing} ({deserializedData.ParagraphSpacing.ToPoints():F1}pt)");
     if (testData.ParagraphSpacing.CompareTo(deserializedData.ParagraphSpacing) != 0)
       return false;
     Console.WriteLine($"  Indent: {deserializedData.Indent} ({deserializedData.Indent.ToInch()}in)");
     if (testData.Indent.CompareTo(deserializedData.Indent) != 0)
       return false;
-    Console.WriteLine($"  BodyFontSize: {deserializedData.BodyFontSize} ({deserializedData.BodyFontSize.ToPT():F1}pt)");
+    Console.WriteLine($"  BodyFontSize: {deserializedData.BodyFontSize} ({deserializedData.BodyFontSize.ToPoints():F1}pt)");
     if (testData.BodyFontSize.CompareTo(deserializedData.BodyFontSize) != 0)
       return false;
-    Console.WriteLine($"  HeadingFontSize: {deserializedData.HeadingFontSize} ({deserializedData.HeadingFontSize.ToPT():F1}pt)");
+    Console.WriteLine($"  HeadingFontSize: {deserializedData.HeadingFontSize} ({deserializedData.HeadingFontSize.ToPoints():F1}pt)");
     if (testData.HeadingFontSize.CompareTo(deserializedData.HeadingFontSize) != 0)
       return false;
     Console.WriteLine($"  ZeroValue: {deserializedData.ZeroValue}");
@@ -379,12 +379,12 @@ public static class PTSTest
   {
     Console.WriteLine($"Original data:");
 
-    Console.WriteLine($"  FontSize: {testData.FontSize} ({testData.FontSize.ToPT():F1}pt)");
-    Console.WriteLine($"  LineHeight: {testData.LineHeight} ({testData.LineHeight.ToPT():F1}pt)");
-    Console.WriteLine($"  ParagraphSpacing: {testData.ParagraphSpacing} ({testData.ParagraphSpacing.ToPT():F1}pt)");
+    Console.WriteLine($"  FontSize: {testData.FontSize} ({testData.FontSize.ToPoints():F1}pt)");
+    Console.WriteLine($"  LineHeight: {testData.LineHeight} ({testData.LineHeight.ToPoints():F1}pt)");
+    Console.WriteLine($"  ParagraphSpacing: {testData.ParagraphSpacing} ({testData.ParagraphSpacing.ToPoints():F1}pt)");
     Console.WriteLine($"  Indent: {testData.Indent} ({testData.Indent.ToInch()}in)");
-    Console.WriteLine($"  BodyFontSize: {testData.BodyFontSize} ({testData.BodyFontSize.ToPT():F1}pt)");
-    Console.WriteLine($"  HeadingFontSize: {testData.HeadingFontSize} ({testData.HeadingFontSize.ToPT():F1}pt)");
+    Console.WriteLine($"  BodyFontSize: {testData.BodyFontSize} ({testData.BodyFontSize.ToPoints():F1}pt)");
+    Console.WriteLine($"  HeadingFontSize: {testData.HeadingFontSize} ({testData.HeadingFontSize.ToPoints():F1}pt)");
     Console.WriteLine($"  ZeroValue: {testData.ZeroValue}");
     Console.WriteLine($"  SmallValue: {testData.SmallValue}");
     Console.WriteLine($"  LargeValue: {testData.LargeValue}");
@@ -575,18 +575,18 @@ public static class PTSTest
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      double pts = testPTS.ToPT();
+      double pts = testPTS.ToPoints();
     }
     sw.Stop();
-    Console.WriteLine($"ToPT() x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"ToPoints() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      double mm = testPTS.ToMM();
+      double mm = testPTS.ToMillimeters();
     }
     sw.Stop();
-    Console.WriteLine($"ToMM() x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"ToMillimeters() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     // Test JSON serialization performance
     var testObj = new PTSTestData

@@ -66,7 +66,7 @@ public static class SimpleValueConverterTest
     (typeof(DocumentModel.HexInt), typeof(DXW.LongHexNumberType)),
     (typeof(DocumentModel.HexChar), typeof(DX.HexBinaryValue)),
     (typeof(DocumentModel.StringList), typeof(DX.StringValue)),
-    (typeof(DocumentModel.HexRgb), typeof(DXW.Color)),
+    (typeof(DocumentModel.HexColor), typeof(DXW.Color)),
     (typeof(DocumentModel.PresetColors), typeof(DXD.PresetColorValues)),
     (typeof(DocumentModel.Percent), typeof(DXW.SummaryLength)),
 
@@ -307,8 +307,8 @@ public static class SimpleValueConverterTest
       return [new DocumentModel.HexChar('A'), new DocumentModel.HexChar('z'), new DocumentModel.HexChar('0')];
     if (testedType == typeof(DocumentModel.StringList))
       return [new DocumentModel.StringList([]), new DocumentModel.StringList(["One", "Two", "Three"])];
-    if (testedType == typeof(DocumentModel.HexRgb))
-      return [new DocumentModel.HexRgb(), new DocumentModel.HexRgb("ABCDEF")];
+    if (testedType == typeof(DocumentModel.HexColor))
+      return [new DocumentModel.HexColor(), new DocumentModel.HexColor("ABCDEF")];
     if (testedType == typeof(DocumentModel.PresetColors))
       return [new DocumentModel.PresetColors()];
     if (testedType == typeof(DocumentModel.Percent))

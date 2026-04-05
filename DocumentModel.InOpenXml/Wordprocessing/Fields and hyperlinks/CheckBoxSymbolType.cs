@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 public partial class CheckBoxSymbolType : ModelElement<DXO10W.CheckBoxSymbolType>
 {
  /// <summary>
- /// Font used to display the checkbox symbol.
+ /// TextFormat used to display the checkbox symbol.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.CheckBoxSymbolType.Font))]
  public string? Font { get => _Font; set => UpdateField(ref _Font, value, nameof(Font)); }

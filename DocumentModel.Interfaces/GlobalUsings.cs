@@ -87,6 +87,6 @@ global using EnumTypeConverter = DocumentModel.OpenXml.EnumTypeConverter;
 
 global using App = DocumentModel.Application;
 global using Props = DocumentModel.Properties;
-global using Drw = DocumentModel.Drawings;
+global using DMD = DocumentModel.Drawings;
 
 

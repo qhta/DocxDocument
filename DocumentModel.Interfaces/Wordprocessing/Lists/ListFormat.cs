@@ -58,5 +58,5 @@ public partial interface IListFormat : IModelObject
   /// Returns the picture bullet inline shape for the first paragraph in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.listpicturebullet?view=word-pia"/>
-  public Drw.InlineShape ListPictureBullet { get; }
+  public DMD.InlineShape ListPictureBullet { get; }
 }

@@ -18,7 +18,7 @@ public partial interface ICharacters: IModelObject
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharacters.count?view=office-pia"/>
   public int Count { get; }
   /// <summary>
-  /// Gets the `Font` property.
+  /// Gets the `TextFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharacters.font?view=office-pia"/>
   public IChartFont Font { get; }

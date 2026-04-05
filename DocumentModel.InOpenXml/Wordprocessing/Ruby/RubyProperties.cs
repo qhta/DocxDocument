@@ -13,7 +13,7 @@ public partial class RubyProperties : ModelElement<DXW.RubyProperties>
  public RubyAlign? RubyAlign { get => _RubyAlign; set => UpdateField(ref _RubyAlign, value, nameof(RubyAlign)); }
  private RubyAlign? _RubyAlign;
  /// <summary>
- /// Font size of the phonetic guide text, specified in half-points.
+ /// TextFormat size of the phonetic guide text, specified in half-points.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.RubyProperties.PhoneticGuideTextFontSize))]
  public HPS? PhoneticGuideTextFontSize { get => _PhoneticGuideTextFontSize; set => UpdateField(ref _PhoneticGuideTextFontSize, value, nameof(PhoneticGuideTextFontSize)); }
@@ -25,7 +25,7 @@ public partial class RubyProperties : ModelElement<DXW.RubyProperties>
  public Int16? PhoneticGuideRaise { get => _PhoneticGuideRaise; set => UpdateField(ref _PhoneticGuideRaise, value, nameof(PhoneticGuideRaise)); }
  private Int16? _PhoneticGuideRaise;
  /// <summary>
- /// Font size of the phonetic guide base text, specified in half-points.
+ /// TextFormat size of the phonetic guide base text, specified in half-points.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.RubyProperties.PhoneticGuideBaseTextSize))]
  public HPS? PhoneticGuideBaseTextSize { get => _PhoneticGuideBaseTextSize; set => UpdateField(ref _PhoneticGuideBaseTextSize, value, nameof(PhoneticGuideBaseTextSize)); }

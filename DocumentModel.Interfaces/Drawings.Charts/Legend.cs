@@ -18,7 +18,7 @@ public partial interface ILegend: IModelObject
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegend.border?view=office-pia"/>
   public IBorder Border { get; }
   /// <summary>
-  /// Gets the `Font` property.
+  /// Gets the `TextFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegend.font?view=office-pia"/>
   public IChartFont Font { get; }

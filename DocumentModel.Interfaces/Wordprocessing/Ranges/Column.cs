@@ -46,7 +46,7 @@ public partial interface IColumn : IModelObject
   /// Gets the shading formatting for the column.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column.shading?view=word-pia"/>
-  public Drw.IShading Shading { get; }
+  public DMD.IShading Shading { get; }
 
   /// <summary>
   /// Gets the next column in the table.

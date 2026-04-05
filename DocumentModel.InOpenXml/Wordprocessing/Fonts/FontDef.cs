@@ -28,13 +28,13 @@ public partial class FontDef : ModelElement<DXW.Font>
   /// <summary>
   /// Character set supported by the font, used for font substitution logic.
   /// </summary>
-  //[OpenXmlProperty(nameof(DXW.Font.FontCharSet))]
+  //[OpenXmlProperty(nameof(DXW.TextFormat.FontCharSet))]
   [OpenXmlLoadData(nameof(LoadCharset))]
   [OpenXmlUpdateData(nameof(UpdateCharset))]
   public HexByte? Charset { get => _charset; set => UpdateField(ref _charset, value, nameof(Charset)); }
   private HexByte? _charset;
   /// <summary>
-  /// Font family classification (e.g., Roman, Swiss, Modern).
+  /// TextFormat family classification (e.g., Roman, Swiss, Modern).
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Font.FontFamily))]
   public FontFamily? FontFamily { get => _fontFamily; set => UpdateField(ref _fontFamily, value, nameof(FontFamily)); }
@@ -52,7 +52,7 @@ public partial class FontDef : ModelElement<DXW.Font>
   public FontPitch? Pitch { get => _Pitch; set => UpdateField(ref _Pitch, value, nameof(Pitch)); }
   private FontPitch? _Pitch;
   /// <summary>
-  /// Font signature information, including Unicode subset and code page bitfields.
+  /// TextFormat signature information, including Unicode subset and code page bitfields.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Font.FontSignature))]
   public HexBinary? FontSignature

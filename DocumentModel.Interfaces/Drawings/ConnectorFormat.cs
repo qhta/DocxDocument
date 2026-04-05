@@ -46,5 +46,5 @@ public partial interface IConnectorFormat : IModelObject
   /// Gets or sets the connector type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.connectorformat.type?view=word-pia"/>
-  public Drw.ConnectorType Type { get; set; }
+  public Drawings.ConnectorType Type { get; set; }
 }

@@ -28,7 +28,7 @@ public partial interface IShape : IModelObject
   /// line or freeform drawing.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.autoshapetype?view=word-pia"/>
-  public Drw.AutoShapeType AutoShapeType { get; set; }
+  public Drawings.AutoShapeType AutoShapeType { get; set; }
 
   /// <summary>
   /// Returns a CalloutFormat object that contains callout formatting properties for the specified shape.
@@ -157,7 +157,7 @@ public partial interface IShape : IModelObject
   /// Returns the shape type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.type?view=word-pia"/>
-  public Drw.ShapeType Type { get; }
+  public Drawings.ShapeType Type { get; }
 
   /// <summary>
   /// Determines if the specified shape is flipped around the vertical axis.
@@ -384,7 +384,7 @@ public partial interface IShape : IModelObject
   /// Returns a TextFrame2 object that contains the text for the specified shape. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.textframe2?view=word-pia"/>
-  public Drw.ITextFrame TextFrame2 { get; }
+  public Drawings.ITextFrame TextFrame2 { get; }
 
   /// <summary>
   /// Gets True if there is a SmartArt diagram present on the shape.
@@ -402,13 +402,13 @@ public partial interface IShape : IModelObject
   /// Gets or sets the shape style for the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.shapestyle?view=word-pia"/>
-  public Drw.ShapeStyleIndex ShapeStyle { get; set; }
+  public Drawings.ShapeStyleIndex ShapeStyle { get; set; }
 
   /// <summary>
   /// Gets or sets the background style of the specified shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape.backgroundstyle?view=word-pia"/>
-  public Drw.BackgroundStyleIndex BackgroundStyle { get; set; }
+  public Drawings.BackgroundStyleIndex BackgroundStyle { get; set; }
 
   /// <summary>
   /// Gets or sets a string that contains a title for the specified shape.

@@ -82,7 +82,7 @@ public partial interface IFrame : IModelObject
   /// Returns a <see cref="Shading"/> object that represents the shading formatting for the specified frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frame.shading?view=word-pia"/>
-  public Drw.IShading Shading { get; }
+  public DMD.IShading Shading { get; }
 
   /// <summary>
   /// Returns or sets a <see cref="Borders"/> collection that represents the borders of the specified frame.

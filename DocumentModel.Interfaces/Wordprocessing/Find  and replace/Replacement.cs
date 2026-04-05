@@ -7,10 +7,10 @@ namespace DocumentModel.Wordprocessing;
 public partial interface IReplacement : IModelObject
 {
   /// <summary>
-  /// Returns or sets a Font object that represents the character formatting of the specified object.
+  /// Returns or sets a TextFormat object that represents the character formatting of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.font?view=word-pia"/>
-  public IFont Font { get; set; }
+  public ITextFormat TextFormat { get; set; }
 
   /// <summary>
   /// Returns or sets a ParagraphFormat object that represents the paragraph settings for the specified replacement

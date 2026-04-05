@@ -4,13 +4,8 @@ namespace DocumentModel.Wordprocessing;
 /// Contains font attributes (font name, font size, color, and so on) for an object.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.font?view=word-pia"/>
-public partial interface IFont
+public partial interface ITextFormat
 {
-  /// <summary>
-  /// Gets a duplicate of the font formatting.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.duplicate?view=word-pia"/>
-  public IFont Duplicate { get; }
 
   /// <summary>
   /// True if the text is formatted as bold.
@@ -18,7 +13,7 @@ public partial interface IFont
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.bold?view=word-pia"/>
-  public int Bold { get; set; }
+  public OnOffToggle? Bold { get; set; }
 
   /// <summary>
   /// True if the text is formatted as italic.
@@ -26,7 +21,7 @@ public partial interface IFont
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.italic?view=word-pia"/>
-  public int Italic { get; set; }
+  public OnOffToggle? Italic { get; set; }
 
   /// <summary>
   /// True if the text is formatted as hidden.
@@ -34,7 +29,7 @@ public partial interface IFont
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.hidden?view=word-pia"/>
-  public int Hidden { get; set; }
+  public OnOffToggle? Hidden { get; set; }
 
   /// <summary>
   /// True if the text is formatted as small capital letters.
@@ -42,7 +37,7 @@ public partial interface IFont
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.smallcaps?view=word-pia"/>
-  public int SmallCaps { get; set; }
+  public OnOffToggle? SmallCaps { get; set; }
 
   /// <summary>
   /// True if the text is formatted as all capital letters.
@@ -50,7 +45,7 @@ public partial interface IFont
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.allcaps?view=word-pia"/>
-  public int AllCaps { get; set; }
+  public OnOffToggle? AllCaps { get; set; }
 
   /// <summary>
   /// True if the text is formatted as strike-through.
@@ -58,7 +53,7 @@ public partial interface IFont
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.strikethrough?view=word-pia"/>
-  public int StrikeThrough { get; set; }
+  public OnOffToggle? StrikeThrough { get; set; }
 
   /// <summary>
   /// True if the text is formatted as double strike-through.
@@ -66,13 +61,13 @@ public partial interface IFont
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.doublestrikethrough?view=word-pia"/>
-  public int DoubleStrikeThrough { get; set; }
+  public OnOffToggle? DoubleStrikeThrough { get; set; }
 
   /// <summary>
   /// Gets or sets the color index for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.colorindex?view=word-pia"/>
-  public ColorIndex ColorIndex { get; set; }
+  public ColorIndex? ColorIndex { get; set; }
 
   /// <summary>
   /// True if the text is formatted as subscript.
@@ -80,7 +75,7 @@ public partial interface IFont
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.subscript?view=word-pia"/>
-  public int Subscript { get; set; }
+  public OnOffToggle? Subscript { get; set; }
 
   /// <summary>
   /// True if the text is formatted as superscript.
@@ -88,49 +83,49 @@ public partial interface IFont
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.superscript?view=word-pia"/>
-  public int Superscript { get; set; }
+  public OnOffToggle? Superscript { get; set; }
 
   /// <summary>
   /// Gets or sets the underline style for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.underline?view=word-pia"/>
-  public UnderlineType Underline { get; set; }
+  public UnderlineType? Underline { get; set; }
 
   /// <summary>
   /// The font size in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.size?view=word-pia"/>
-  public float Size { get; set; }
+  public float? Size { get; set; }
 
   /// <summary>
   /// The name of the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.name?view=word-pia"/>
-  public string Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// The position of text (in points) relative to the baseline. A positive number raises the text, and a negative number lowers it.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.position?view=word-pia"/>
-  public int Position { get; set; }
+  public int? Position { get; set; }
 
   /// <summary>
   /// The spacing (in points) between characters.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.spacing?view=word-pia"/>
-  public float Spacing { get; set; }
+  public float? Spacing { get; set; }
 
   /// <summary>
   /// The scaling percentage applied to the font. This property stretches or compresses text horizontally as a percentage of the current size (the scaling range is from 1 through 600).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.scaling?view=word-pia"/>
-  public int Scaling { get; set; }
+  public int? Scaling { get; set; }
 
   /// <summary>
   /// True if the specified font is formatted as shadowed. Can be True, False, or Undefined.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.shadow?view=word-pia"/>
-  public int Shadow { get; set; }
+  public OnOff? Shadow { get; set; }
 
   /// <summary>
   /// True if the text is formatted as outlined.
@@ -138,7 +133,7 @@ public partial interface IFont
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.outline?view=word-pia"/>
-  public int Outline { get; set; }
+  public OnOffToggle? Outline { get; set; }
 
   /// <summary>
   /// True if the text is formatted as embossed.
@@ -146,13 +141,13 @@ public partial interface IFont
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.emboss?view=word-pia"/>
-  public int Emboss { get; set; }
+  public OnOffToggle? Emboss { get; set; }
 
   /// <summary>
   /// The minimum font size for which kerning should be applied automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.kerning?view=word-pia"/>
-  public float Kerning { get; set; }
+  public float? Kerning { get; set; }
 
   /// <summary>
   /// True if the text is formatted as engraved.
@@ -160,61 +155,55 @@ public partial interface IFont
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.engrave?view=word-pia"/>
-  public int Engrave { get; set; }
+  public OnOffToggle? Engrave { get; set; }
 
   /// <summary>
   /// Gets or sets the animation effect for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.animation?view=word-pia"/>
-  public Animation Animation { get; set; }
+  public Animation? Animation { get; set; }
 
   /// <summary>
   /// Gets or sets the border formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.borders?view=word-pia"/>
-  public IBorders Borders { get; set; }
-
-  /// <summary>
-  /// Gets the shading formatting for the font.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.shading?view=word-pia"/>
-  public Drw.IShading Shading { get; }
+  public IBorders? Borders { get; set; }
 
   /// <summary>
   /// Gets or sets the emphasis mark for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.emphasismark?view=word-pia"/>
-  public EmphasisMark EmphasisMark { get; set; }
+  public EmphasisMark? EmphasisMark { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether to disable character spacing on the document grid.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.disablecharacterspacegrid?view=word-pia"/>
-  public bool DisableCharacterSpaceGrid { get; set; }
+  public bool? DisableCharacterSpaceGrid { get; set; }
 
   /// <summary>
   /// The name of the font for East Asian scripts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.namefareast?view=word-pia"/>
-  public string NameFarEast { get; set; }
+  public string? NameFarEast { get; set; }
 
   /// <summary>
   /// The name of the font for used for Latin text (characters with character codes from 0 (zero) through 127).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.nameascii?view=word-pia"/>
-  public string NameAscii { get; set; }
+  public string? NameAscii { get; set; }
 
   /// <summary>
   /// The name of the font for characters with character codes from 128 through 255.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.nameother?view=word-pia"/>
-  public string NameOther { get; set; }
+  public string? NameOther { get; set; }
 
   /// <summary>
-  /// The 24-bit color for the specified Font object.
+  /// The 24-bit color for the specified TextFormat object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.color?view=word-pia"/>
-  public RgbColor Color { get; set; }
+  public RgbColor? Color { get; set; }
 
   /// <summary>
   /// True if the text is formatted as bold (for complex script).
@@ -222,7 +211,7 @@ public partial interface IFont
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.boldbi?view=word-pia"/>
-  public int BoldBi { get; set; }
+  public OnOffToggle? BoldBi { get; set; }
 
   /// <summary>
   /// True if the text is formatted as italic (for complex script).
@@ -230,108 +219,36 @@ public partial interface IFont
   /// Can be set to True, False, or Toggle (reverses the current setting).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.italicbi?view=word-pia"/>
-  public int ItalicBi { get; set; }
+  public OnOffToggle? ItalicBi { get; set; }
 
   /// <summary>
   /// The font size in points for complex script.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.sizebi?view=word-pia"/>
-  public float SizeBi { get; set; }
+  public float? SizeBi { get; set; }
 
   /// <summary>
   /// The name of the font for complex script.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.namebi?view=word-pia"/>
-  public string NameBi { get; set; }
+  public string? NameBi { get; set; }
 
   /// <summary>
   /// Gets or sets the color index for complex-script text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.colorindexbi?view=word-pia"/>
-  public ColorIndex ColorIndexBi { get; set; }
+  public ColorIndex? ColorIndexBi { get; set; }
 
   /// <summary>
   /// Gets or sets the color of diacritical marks.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.diacriticcolor?view=word-pia"/>
-  public RgbColor DiacriticColor { get; set; }
+  public RgbColor? DiacriticColor { get; set; }
 
   /// <summary>
   /// Gets or sets the underline color.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.underlinecolor?view=word-pia"/>
-  public RgbColor UnderlineColor { get; set; }
-
-  /// <summary>
-  /// Gets or sets the glow formatting for the font.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.glow?view=word-pia"/>
-  public Drw.IGlowFormat Glow { get; set; }
-
-  /// <summary>
-  /// Gets or sets the reflection formatting for the font.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.reflection?view=word-pia"/>
-  public Drw.IReflectionFormat Reflection { get; set; }
-
-  /// <summary>
-  /// Gets or sets the shadow formatting for the font.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.textshadow?view=word-pia"/>
-  public Drw.IShadowFormat TextShadow { get; set; }
-
-  /// <summary>
-  /// Gets or sets the fill formatting for the font.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.fill?view=word-pia"/>
-  public Drw.IFillFormat Fill { get; set; }
-
-  /// <summary>
-  /// Gets or sets the line formatting for the font.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.line?view=word-pia"/>
-  public Drw.ILineFormat Line { get; set; }
-
-  /// <summary>
-  /// Gets or sets the 3D formatting for the font.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.threed?view=word-pia"/>
-  public Drw.IThreeDFormat ThreeD { get; set; }
-
-  /// <summary>
-  /// Gets the text color formatting.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.textcolor?view=word-pia"/>
-  public Drw.IColorFormat TextColor { get; }
-
-  /// <summary>
-  /// Gets or sets the ligature setting for the font.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.ligatures?view=word-pia"/>
-  public Ligatures Ligatures { get; set; }
-
-  /// <summary>
-  /// Gets or sets the number form for the font.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.numberform?view=word-pia"/>
-  public NumberForm NumberForm { get; set; }
-
-  /// <summary>
-  /// Gets or sets the number spacing for the font.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.numberspacing?view=word-pia"/>
-  public NumberSpacing NumberSpacing { get; set; }
-
-  /// <summary>
-  /// Gets or sets whether contextual alternates are enabled.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.contextualalternates?view=word-pia"/>
-  public int ContextualAlternates { get; set; }
-
-  /// <summary>
-  /// Gets or sets the stylistic set for the font.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.stylisticset?view=word-pia"/>
-  public StylisticSet StylisticSet { get; set; }
+  public RgbColor? UnderlineColor { get; set; }
 
 }

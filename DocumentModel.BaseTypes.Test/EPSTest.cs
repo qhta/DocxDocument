@@ -131,7 +131,7 @@ public static class EPSTest
     Console.WriteLine("\nTesting millimeter conversions:");
     EPS oneMM = "1mm";
     Console.WriteLine($"  1mm = {oneMM} EPS (expected {eps1MM})");
-    Console.WriteLine($"  {eps1MM} EPS = {oneMM.ToMM()}mm");
+    Console.WriteLine($"  {eps1MM} EPS = {oneMM.ToMillimeters()}mm");
     if (!oneMM.Equals(eps1MM))
     {
       Console.WriteLine("✗ Millimeter conversion FAILED");
@@ -142,7 +142,7 @@ public static class EPSTest
     Console.WriteLine("\nTesting centimeter conversions:");
     EPS oneCM = "1cm";
     Console.WriteLine($"  1cm = {oneCM} EPS (expected ~{eps1CM})");
-    Console.WriteLine($"  {eps1CM} EPS = {oneCM.ToCM()}cm");
+    Console.WriteLine($"  {eps1CM} EPS = {oneCM.ToCentimeters()}cm");
     if (!oneCM.Equals(eps1CM))
     {
       Console.WriteLine("✗ Centimeter conversion FAILED");
@@ -153,7 +153,7 @@ public static class EPSTest
     Console.WriteLine("\nTesting point conversions:");
     EPS twelvePoints = "12pt";
     Console.WriteLine($"  12pt = {twelvePoints} EPS (expected {eps12PT})");
-    Console.WriteLine($"  {eps12PT} EPS = {twelvePoints.ToPT()}pt");
+    Console.WriteLine($"  {eps12PT} EPS = {twelvePoints.ToPoints()}pt");
     if (!twelvePoints.Equals(eps12PT))
     {
       Console.WriteLine("✗ Point conversion FAILED");
@@ -429,19 +429,19 @@ public static class EPSTest
     EPS twoEighths = 2;
     EPS fourEighths = 4;
     EPS eightEighths = 8;
-    Console.WriteLine($"  1 eighth-point = {oneEighth.ToPT():F3}pt (0.125pt)");
-    Console.WriteLine($"  2 EPS = {twoEighths.ToPT():F3}pt (0.25pt)");
-    Console.WriteLine($"  4 EPS = {fourEighths.ToPT():F3}pt (0.5pt)");
-    Console.WriteLine($"  8 EPS = {eightEighths.ToPT():F3}pt (1.0pt)");
+    Console.WriteLine($"  1 eighth-point = {oneEighth.ToPoints():F3}pt (0.125pt)");
+    Console.WriteLine($"  2 EPS = {twoEighths.ToPoints():F3}pt (0.25pt)");
+    Console.WriteLine($"  4 EPS = {fourEighths.ToPoints():F3}pt (0.5pt)");
+    Console.WriteLine($"  8 EPS = {eightEighths.ToPoints():F3}pt (1.0pt)");
 
     // Test micro-adjustments (use case for EPS)
     Console.WriteLine("\nTesting micro-typography adjustments:");
     EPS microKerning = new EPS(1);     // 0.125pt
     EPS fineTracking = new EPS(3);     // 0.375pt
     EPS preciseSpacing = new EPS(5);   // 0.625pt
-    Console.WriteLine($"  Micro-kerning (1 eighth-point): {microKerning.ToPT():F3}pt");
-    Console.WriteLine($"  Fine tracking (3 EPS): {fineTracking.ToPT():F3}pt");
-    Console.WriteLine($"  Precise spacing (5 EPS): {preciseSpacing.ToPT():F3}pt");
+    Console.WriteLine($"  Micro-kerning (1 eighth-point): {microKerning.ToPoints():F3}pt");
+    Console.WriteLine($"  Fine tracking (3 EPS): {fineTracking.ToPoints():F3}pt");
+    Console.WriteLine($"  Precise spacing (5 EPS): {preciseSpacing.ToPoints():F3}pt");
 
     // Test common font sizes in EPS
     Console.WriteLine("\nTesting common font sizes:");
@@ -594,18 +594,18 @@ public static class EPSTest
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      double points = testEp.ToPT();
+      double points = testEp.ToPoints();
     }
     sw.Stop();
-    Console.WriteLine($"ToPT() x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"ToPoints() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     sw.Restart();
     for (int i = 0; i < iterations; i++)
     {
-      double mm = testEp.ToMM();
+      double mm = testEp.ToMillimeters();
     }
     sw.Stop();
-    Console.WriteLine($"ToMM() x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"ToMillimeters() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     // Test JSON serialization performance
     var testObj = new EPSTestData

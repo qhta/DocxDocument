@@ -36,4 +36,3 @@ global using DMT = DocumentModel.Themes;
 global using DMH = DocumentModel.HTML;
 
 global using EnumTypeConverter = DocumentModel.OpenXml.EnumTypeConverter;
-

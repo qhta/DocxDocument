@@ -57,7 +57,7 @@ public partial interface IStyle : IModelObject
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.shading?view=word-pia"/>
-  public Drw.IShading Shading { get; }
+  public DMD.IShading Shading { get; }
 
   /// <summary>
   /// Returns a Borders collection that represents all the borders for the specified object.
@@ -73,11 +73,11 @@ public partial interface IStyle : IModelObject
   public IParagraphFormat ParagraphFormat { get; set; }
 
   /// <summary>
-  /// Returns or sets a Font object that represents the character formatting of the specified object. Read/write
-  /// Font.
+  /// Returns or sets a TextFormat object that represents the character formatting of the specified object. Read/write
+  /// TextFormat.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.font?view=word-pia"/>
-  public IFont Font { get; set; }
+  public ITextFormat TextFormat { get; set; }
 
   /// <summary>
   /// Returns a Frame object that represents the frame formatting for the specified style. Read-only.

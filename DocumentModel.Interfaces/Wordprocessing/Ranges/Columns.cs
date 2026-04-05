@@ -34,7 +34,7 @@ public partial interface IColumns : IModelCollection<IColumn>
   /// Gets the shading formatting for the columns.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.shading?view=word-pia"/>
-  public Drw.IShading Shading { get; }
+  public DMD.IShading Shading { get; }
 
   /// <summary>
   /// Gets the nesting level of the columns.

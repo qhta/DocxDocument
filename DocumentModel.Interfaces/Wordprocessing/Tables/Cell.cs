@@ -78,7 +78,7 @@ public partial interface ICell : IModelObject
   /// Gets the shading formatting for the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.shading?view=word-pia"/>
-  public Drw.IShading Shading { get; }
+  public DMD.IShading Shading { get; }
 
   /// <summary>
   /// Gets or sets the border formatting for the cell.

@@ -59,8 +59,69 @@ public enum ColorIndex
   /// <summary>Gray 25%</summary>
   [OpenXmlEnumValue("Gray25")]
   Gray25 = 16,
+}
+
+public static class ColorIndexTools
+{
   /// <summary>
-  /// Color defined by document author.
+  /// Converts a ColorIndex enumeration value to its corresponding hex RGB color string.
   /// </summary>
-  ByAuthor = -1
+  /// <param name="colorIndex">The ColorIndex value to convert.</param>
+  /// <returns>A hex RGB color string representing the specified ColorIndex value, or null if the value is not recognized.</returns>
+  public static UInt32? ToHexColor(this ColorIndex? colorIndex)
+  {
+    return colorIndex switch
+    {
+      ColorIndex.Auto => 0x000000, // Default to black for Auto
+      ColorIndex.Black => 0x000000,
+      ColorIndex.Blue => 0x0000FF,
+      ColorIndex.Turquoise => 0x00FFFF,
+      ColorIndex.BrightGreen => 0x00FF00,
+      ColorIndex.Pink => 0xFFC0CB,
+      ColorIndex.Red => 0xFF0000,
+      ColorIndex.Yellow => 0xFFFF00,
+      ColorIndex.White => 0xFFFFFF,
+      ColorIndex.DarkBlue => 0x00008B,
+      ColorIndex.Teal => 0x008080,
+      ColorIndex.Green => 0x008000,
+      ColorIndex.Violet => 0xEE82EE,
+      ColorIndex.DarkRed => 0x8B0000,
+      ColorIndex.DarkYellow => 0x9ACD32,
+      ColorIndex.Gray50 => 0x808080,
+      ColorIndex.Gray25 => 0xC0C0C0,
+      _ => null,
+    };
+  }
+
+  /// <summary>
+  /// Converts a hexadecimal color string to its corresponding predefined ColorIndex value, if a match exists.
+  /// </summary>
+  /// <remarks>Only specific, predefined color mappings are supported. If the input does not match any of the
+  /// recognized color codes, the method returns null.</remarks>
+  /// <param name="hexColor">A six-character hexadecimal color string representing an RGB color (e.g., 0xFF0000 for red). The string is
+  /// case-insensitive and must not include a leading '#'.</param>
+  /// <returns>A ColorIndex value corresponding to the specified hexadecimal color string if a match is found; otherwise, null.</returns>
+  public static ColorIndex? ToColorIndex(this UInt32? hexColor)
+  {
+    return hexColor switch
+    {
+      0x000000 => ColorIndex.Black,
+      0x0000FF => ColorIndex.Blue,
+      0x00FFFF => ColorIndex.Turquoise,
+      0x00FF00 => ColorIndex.BrightGreen,
+      0xFFC0CB => ColorIndex.Pink,
+      0xFF0000 => ColorIndex.Red,
+      0xFFFF00 => ColorIndex.Yellow,
+      0xFFFFFF => ColorIndex.White,
+      0x00008B => ColorIndex.DarkBlue,
+      0x008080 => ColorIndex.Teal,
+      0x008000 => ColorIndex.Green,
+      0xEE82EE => ColorIndex.Violet,
+      0x8B0000 => ColorIndex.DarkRed,
+      0x9ACD32 => ColorIndex.DarkYellow,
+      0x808080 => ColorIndex.Gray50,
+      0xC0C0C0 => ColorIndex.Gray25,
+      _ => null,
+    };
+  }
 }

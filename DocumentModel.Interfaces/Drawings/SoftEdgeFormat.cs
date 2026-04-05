@@ -11,7 +11,7 @@ public interface ISoftEdgeFormat : IModelObject
   /// edge formatting. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.softedgeformat.type?view=word-pia"/>
-  public Drw.SoftEdgeType Type { get; set; }
+  public Drawings.SoftEdgeType Type { get; set; }
   /// <summary>
   /// Gets or sets a value that represents the length of the radius for a soft edge effect.
   /// </summary>

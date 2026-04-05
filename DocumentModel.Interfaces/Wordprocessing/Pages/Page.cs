@@ -37,7 +37,7 @@ public partial interface IPage : IModelObject
   /// Returns a Rectangles collection that represents a portion of text or graphics in a page in a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.page.rectangles?view=word-pia"/>
-  public Drw.IRectangles Rectangles { get; }
+  public DMD.IRectangles Rectangles { get; }
 
   /// <summary>
   /// Returns a Breaks collection that represents the breaks on a page. The Breaks collection includes page, column,

@@ -26,7 +26,7 @@ public partial class ExtBaseRunProperties<T>: BaseRunProperties<T> where T: DX.O
   #endregion
   #region These properties are defined in Office Word Extensions (from Office 2010)
   /// <summary>
-  /// Indicates whether to display characters using contextual alternates according to OpenType Font specification.
+  /// Indicates whether to display characters using contextual alternates according to OpenType TextFormat specification.
   /// </summary>
   public Boolean? ContextualAlternates { get; set; }
   /// <summary>

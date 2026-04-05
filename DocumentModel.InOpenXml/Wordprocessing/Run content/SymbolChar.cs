@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 public partial class SymbolChar : ModelElement<DXW.SymbolChar>, IRunContent
 {
  /// <summary>
- /// Font name from which the symbol character is selected.
+ /// TextFormat name from which the symbol character is selected.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SymbolChar.Font))]
  public string? Font { get => _Font; set => UpdateField(ref _Font, value, nameof(Font)); }

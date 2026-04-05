@@ -6,31 +6,31 @@ namespace DocumentModel.Wordprocessing;
 public partial class RunFonts : ModelElement<DXW.RunFonts>
 {
  /// <summary>
- /// Font content type hint, specifying the intended use or type of the font (e.g., default, East Asian, complex script).
+ /// TextFormat content type hint, specifying the intended use or type of the font (e.g., default, East Asian, complex script).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.RunFonts.Hint))]
  public FontTypeHint? Hint { get => _Hint; set => UpdateField(ref _Hint, value, nameof(Hint)); }
  private FontTypeHint? _Hint;
  /// <summary>
- /// Font information for ASCII characters (first 128 Unicode code points).
+ /// TextFormat information for ASCII characters (first 128 Unicode code points).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.RunFonts.Ascii))]
  public String? Ascii { get => _Ascii; set => UpdateField(ref _Ascii, value, nameof(Ascii)); }
  private String? _Ascii;
  /// <summary>
- /// Font information for High ANSI characters (extended Latin and other Western scripts).
+ /// TextFormat information for High ANSI characters (extended Latin and other Western scripts).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.RunFonts.HighAnsi))]
  public String? HighAnsi { get => _highAnsi; set => UpdateField(ref _highAnsi, value, nameof(HighAnsi)); }
  private String? _highAnsi;
  /// <summary>
- /// Font information for East Asian characters (Chinese, Japanese, Korean, etc.).
+ /// TextFormat information for East Asian characters (Chinese, Japanese, Korean, etc.).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.RunFonts.EastAsia))]
  public String? EastAsia { get => _EastAsia; set => UpdateField(ref _EastAsia, value, nameof(EastAsia)); }
  private String? _EastAsia;
  /// <summary>
- /// Font information for complex script characters (Arabic, Hebrew, Thai, etc.).
+ /// TextFormat information for complex script characters (Arabic, Hebrew, Thai, etc.).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.RunFonts.ComplexScript))]
  public String? ComplexScript { get => _ComplexScript; set => UpdateField(ref _ComplexScript, value, nameof(ComplexScript)); }

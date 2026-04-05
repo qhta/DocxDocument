@@ -34,7 +34,7 @@ public partial interface IDataLabels: IEnumerable
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.characters?view=office-pia"/>
   public ICharacters Characters { get; }
   /// <summary>
-  /// Gets the `Font` property.
+  /// Gets the `TextFormat` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.font?view=office-pia"/>
   public IChartFont Font { get; }

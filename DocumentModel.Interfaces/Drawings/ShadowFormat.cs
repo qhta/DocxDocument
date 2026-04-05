@@ -45,7 +45,7 @@ public partial interface IShadowFormat : IModelObject
   /// Returns or sets the shape shadow type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.type?view=word-pia"/>
-  public Drw.ShadowType Type { get; set; }
+  public Drawings.ShadowType Type { get; set; }
 
   /// <summary>
   /// True if the specified object, or the formatting applied to it, is visible.
@@ -57,7 +57,7 @@ public partial interface IShadowFormat : IModelObject
   /// Returns or sets a ShadowType that represents the type of shadow formatting to apply to a shape. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shadowformat.style?view=word-pia"/>
-  public Drw.ShadowStyle Style { get; set; }
+  public Drawings.ShadowStyle Style { get; set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the blur level for a shadow format. Read/write.
