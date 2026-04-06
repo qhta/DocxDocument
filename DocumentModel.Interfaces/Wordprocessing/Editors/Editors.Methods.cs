@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.editors?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.editors?view=word-pia"/>
 public partial interface IEditors: IModelObject
 {
   /// <summary>
@@ -14,6 +14,6 @@ public partial interface IEditors: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.editors.item?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.editors.item?view=word-pia"/>
   public IEditor Item(object Index);
 }

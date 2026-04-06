@@ -5,7 +5,7 @@ namespace DocumentModel.Properties;
 /// <summary>
 /// Represents a collection of file search criteria.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.propertytests?view=office-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.propertytests?view=office-pia"/>
 public partial interface IPropertyTests: IModelObject
 {
   /// <summary>
@@ -16,7 +16,7 @@ public partial interface IPropertyTests: IModelObject
   /// <param name="Value">The primary value for the condition.</param>
   /// <param name="SecondValue">The secondary value for the condition.</param>
   /// <param name="Connector">The logical connector to use with subsequent criteria.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.propertytests.add?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.propertytests.add?view=office-pia"/>
   public void Add
   (string Name, Condition Condition, object Value, object SecondValue,
     Connector Connector);
@@ -24,7 +24,7 @@ public partial interface IPropertyTests: IModelObject
   /// Removes a search criterion from the collection.
   /// </summary>
   /// <param name="Index">The index of the criterion to remove.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.propertytests.remove?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.propertytests.remove?view=office-pia"/>
   public void Remove(int Index);
 }
 

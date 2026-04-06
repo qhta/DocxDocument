@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// A collection of Range objects that represent stories in a document.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.storyranges?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.storyranges?view=word-pia"/>
 public partial interface IStoryRanges : IModelObject, IModelDictionary<StoryType, IRange>
 {
 }

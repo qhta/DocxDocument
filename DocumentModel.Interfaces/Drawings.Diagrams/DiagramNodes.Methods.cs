@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 /// Reserved for internal use.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodes?view=office-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodes?view=office-pia"/>
 public partial interface IDiagramNodes
 {
   /// <summary>
@@ -14,12 +14,12 @@ public partial interface IDiagramNodes
   /// </summary>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodes.item?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodes.item?view=office-pia"/>
   public IDiagramNode Item(object Index);
   /// <summary>
   /// Selects all diagram nodes.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodes.selectall?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodes.selectall?view=office-pia"/>
   public void SelectAll();
 }
 

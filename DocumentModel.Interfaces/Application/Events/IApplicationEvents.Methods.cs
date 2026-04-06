@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents?view=word-pia"/>
 public partial interface IApplicationEvents: IModelObject
 {
   /// <summary>
@@ -12,7 +12,7 @@ public partial interface IApplicationEvents: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents.startup?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents.startup?view=word-pia"/>
   public void Startup();
 
   /// <summary>
@@ -21,7 +21,7 @@ public partial interface IApplicationEvents: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents.quit?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents.quit?view=word-pia"/>
   public void Quit();
 
   /// <summary>
@@ -30,6 +30,6 @@ public partial interface IApplicationEvents: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents.documentchange?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents.documentchange?view=word-pia"/>
   public void DocumentChange();
 }

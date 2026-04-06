@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hangulhanjaconversiondictionaries?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hangulhanjaconversiondictionaries?view=word-pia"/>
 public partial interface IHangulHanjaConversionDictionaries: IModelObject
 {
   /// <summary>
@@ -14,6 +14,6 @@ public partial interface IHangulHanjaConversionDictionaries: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hangulhanjaconversiondictionaries.add?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hangulhanjaconversiondictionaries.add?view=word-pia"/>
   public IDictionary Add(string FileName);
 }

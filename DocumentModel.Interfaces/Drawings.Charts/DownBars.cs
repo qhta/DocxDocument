@@ -4,33 +4,33 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 /// Represents down bars in a chart.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodownbars?view=office-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodownbars?view=office-pia"/>
 public partial interface IDownBars: IModelObject
 {
   /// <summary>
   /// Gets the `Name` property.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodownbars.name?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodownbars.name?view=office-pia"/>
   public string Name { get; }
   /// <summary>
   /// Gets the `Border` property.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodownbars.border?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodownbars.border?view=office-pia"/>
   public IBorder Border { get; }
   /// <summary>
   /// Gets the `Interior` property.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodownbars.interior?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodownbars.interior?view=office-pia"/>
   public Interior Interior { get; }
   /// <summary>
   /// Gets the `Fill` property.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodownbars.fill?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodownbars.fill?view=office-pia"/>
   public IChartFillFormat Fill { get; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodownbars.format?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodownbars.format?view=office-pia"/>
   public IChartFormat Format { get; }
 }
 

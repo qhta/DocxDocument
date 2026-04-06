@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.research?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.research?view=word-pia"/>
 public partial interface IResearch: IModelObject
 {
   /// <summary>
@@ -19,6 +19,6 @@ public partial interface IResearch: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.research.query?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.research.query?view=word-pia"/>
   public object Query(string ServiceID, string QueryString, LanguageID QueryLanguage, bool UseSelection, bool LaunchQuery);
 }

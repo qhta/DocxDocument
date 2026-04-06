@@ -7,7 +7,13 @@
 public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordprocessingDocumentAware, IUpdatable
 where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with PackageProperties
 {
-  private OpenXmlType? _openXmlElement;
+  /// <summary>
+  /// Represents the underlying Open XML element associated with this instance, or null if no element is present.
+  /// </summary>
+  /// <remarks>This field is intended for use by derived classes to access or manipulate the Open XML element
+  /// that backs the current object. The value may be null if the instance has not been initialized with an Open XML
+  /// element.</remarks>
+  protected OpenXmlType? _openXmlElement { get; private set; }
 
   /// <summary>
   ///   The WordprocessingDocument instance to which this model element is attached, or null if not attached.

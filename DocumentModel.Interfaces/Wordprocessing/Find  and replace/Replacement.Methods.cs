@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement?view=word-pia"/>
 public partial interface IReplacement: IModelObject
 {
   /// <summary>
@@ -13,6 +13,6 @@ public partial interface IReplacement: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.clearformatting?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.clearformatting?view=word-pia"/>
   public void ClearFormatting();
 }

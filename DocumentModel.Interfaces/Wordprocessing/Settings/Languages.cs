@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// A collection of Language objects that represent languages used for proofing or formatting in Microsoft Word.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.languages?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.languages?view=word-pia"/>
 public interface ILanguages : IModelCollection<ILanguage>
 {
 }

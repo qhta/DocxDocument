@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// A collection of XSLTransform objects that represent all of the Extensible Stylesheet Language Transformations
 /// (XSLTs) for a specific XML namespace.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xsltransforms?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xsltransforms?view=word-pia"/>
 public partial interface IXSLTransforms : IModelCollection<IXSLTransform>
 {
 }

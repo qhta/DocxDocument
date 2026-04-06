@@ -4,18 +4,19 @@
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <RootNamespace>DocumentModel</RootNamespace>
     <Description>Definition of document model based on OpenXML</Description>
     <Authors>Yarreck Qhta</Authors>
     <Version>1.0</Version>
     <AppDesignerFolder>Properties</AppDesignerFolder>
+    <DocumentationFile>docs\DocumentMode.Interfaces.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <NoWarn>1701;1702;8766;0618</NoWarn>
+    <NoWarn>1701;1702;8766;0618,1584</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <NoWarn>1701;1702;8766;0618</NoWarn>
+    <NoWarn>1701;1702;8766;0618,1584</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove=".github\**" />
@@ -25,7 +26,6 @@
   <ItemGroup>
     <Compile Remove="Application\DispObjs\_IMsoDispObj.Inheritance.cs" />
     <Compile Remove="Wordprocessing\Documents\Document.Methods.cs" />
-    <Compile Remove="Wordprocessing\Fonts\TextFormat.Drawings.cs" />
     <Compile Remove="Wordprocessing\Fonts\TextFormat.Methods.cs" />
     <Compile Remove="Wordprocessing\Fonts\TextFormat2.cs" />
     <Compile Remove="Wordprocessing\Settings\Options.SpellChecking.cs" />

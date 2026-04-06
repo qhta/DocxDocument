@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4?view=word-pia"/>
 public partial interface IApplicationEvents4: IModelObject
 {
   /// <summary>
@@ -12,7 +12,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.startup?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.startup?view=word-pia"/>
   public void Startup();
 
   /// <summary>
@@ -21,7 +21,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.quit?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.quit?view=word-pia"/>
   public void Quit();
 
   /// <summary>
@@ -30,7 +30,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.documentchange?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.documentchange?view=word-pia"/>
   public void DocumentChange();
 
   /// <summary>
@@ -40,7 +40,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.documentopen?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.documentopen?view=word-pia"/>
   public void DocumentOpen(IDocument Doc);
 
   /// <summary>
@@ -51,7 +51,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.documentbeforeclose?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.documentbeforeclose?view=word-pia"/>
   public void DocumentBeforeClose(IDocument Doc, ref bool Cancel);
 
   /// <summary>
@@ -62,7 +62,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.documentbeforeprint?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.documentbeforeprint?view=word-pia"/>
   public void DocumentBeforePrint(IDocument Doc, ref bool Cancel);
 
   /// <summary>
@@ -74,7 +74,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.documentbeforesave?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.documentbeforesave?view=word-pia"/>
   public void DocumentBeforeSave(IDocument Doc, bool SaveAsUI, ref bool Cancel);
 
   /// <summary>
@@ -84,7 +84,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.newdocument?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.newdocument?view=word-pia"/>
   public void NewDocument(IDocument Doc);
 
   /// <summary>
@@ -95,7 +95,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.windowactivate?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.windowactivate?view=word-pia"/>
   public void WindowActivate(IDocument Doc, IWindow Wn);
 
   /// <summary>
@@ -106,7 +106,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.windowdeactivate?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.windowdeactivate?view=word-pia"/>
   public void WindowDeactivate(IDocument Doc, IWindow Wn);
 
   /// <summary>
@@ -116,7 +116,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.windowselectionchange?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.windowselectionchange?view=word-pia"/>
   public void WindowSelectionChange(ISelection Sel);
 
   /// <summary>
@@ -127,7 +127,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.windowbeforerightclick?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.windowbeforerightclick?view=word-pia"/>
   public void WindowBeforeRightClick(ISelection Sel, ref bool Cancel);
 
   /// <summary>
@@ -138,7 +138,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.windowbeforedoubleclick?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.windowbeforedoubleclick?view=word-pia"/>
   public void WindowBeforeDoubleClick(ISelection Sel, ref bool Cancel);
 
   /// <summary>
@@ -148,7 +148,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.epostagepropertydialog?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.epostagepropertydialog?view=word-pia"/>
   public void EPostagePropertyDialog(IDocument Doc);
 
   /// <summary>
@@ -158,7 +158,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.epostageinsert?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.epostageinsert?view=word-pia"/>
   public void EPostageInsert(IDocument Doc);
 
   /// <summary>
@@ -169,7 +169,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergeaftermerge?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergeaftermerge?view=word-pia"/>
   public void MailMergeAfterMerge(IDocument Doc, IDocument DocResult);
 
   /// <summary>
@@ -179,7 +179,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergeafterrecordmerge?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergeafterrecordmerge?view=word-pia"/>
   public void MailMergeAfterRecordMerge(IDocument Doc);
 
   /// <summary>
@@ -192,7 +192,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergebeforemerge?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergebeforemerge?view=word-pia"/>
   public void MailMergeBeforeMerge(IDocument Doc, int StartRecord, int EndRecord, ref bool Cancel);
 
   /// <summary>
@@ -203,7 +203,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergebeforerecordmerge?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergebeforerecordmerge?view=word-pia"/>
   public void MailMergeBeforeRecordMerge(IDocument Doc, ref bool Cancel);
 
   /// <summary>
@@ -213,7 +213,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergedatasourceload?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergedatasourceload?view=word-pia"/>
   public void MailMergeDataSourceLoad(IDocument Doc);
 
   /// <summary>
@@ -224,7 +224,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergedatasourcevalidate?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergedatasourcevalidate?view=word-pia"/>
   public void MailMergeDataSourceValidate(IDocument Doc, bool Handled);
 
   /// <summary>
@@ -234,7 +234,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergewizardsendtocustom?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergewizardsendtocustom?view=word-pia"/>
   public void MailMergeWizardSendToCustom(IDocument Doc);
 
   /// <summary>
@@ -247,7 +247,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergewizardstatechange?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergewizardstatechange?view=word-pia"/>
   public void MailMergeWizardStateChange(IDocument Doc, int FromState, int ToState, bool Handled);
 
   /// <summary>
@@ -258,7 +258,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.windowsize?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.windowsize?view=word-pia"/>
   public void WindowSize(IDocument Doc, IWindow Wn);
 
   /// <summary>
@@ -271,7 +271,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.xmlselectionchange?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.xmlselectionchange?view=word-pia"/>
   public void XMLSelectionChange(ISelection Sel, IXMLNode OldXMLNode, IXMLNode NewXMLNode, int Reason);
 
   /// <summary>
@@ -281,7 +281,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.xmlvalidationerror?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.xmlvalidationerror?view=word-pia"/>
   public void XMLValidationError(IXMLNode XMLNode);
 
   /// <summary>
@@ -292,7 +292,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.documentsync?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.documentsync?view=word-pia"/>
   public void DocumentSync(IDocument Doc, App.SyncEventType SyncEventType);
 
   /// <summary>
@@ -312,7 +312,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.epostageinsertex?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.epostageinsertex?view=word-pia"/>
   public void EPostageInsertEx(IDocument Doc, int cpDeliveryAddrStart, int cpDeliveryAddrEnd, int cpReturnAddrStart, int cpReturnAddrEnd, int xaWidth, int yaHeight, string bstrPrinterName, string bstrPaperFeed, bool fPrint, bool fCancel);
 
   /// <summary>
@@ -323,7 +323,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergedatasourcevalidate2?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.mailmergedatasourcevalidate2?view=word-pia"/>
   public void MailMergeDataSourceValidate2(IDocument Doc, bool Handled);
 
   /// <summary>
@@ -333,7 +333,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.protectedviewwindowopen?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.protectedviewwindowopen?view=word-pia"/>
   public void ProtectedViewWindowOpen(IProtectedViewWindow PvWindow);
 
   /// <summary>
@@ -344,7 +344,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.protectedviewwindowbeforeedit?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.protectedviewwindowbeforeedit?view=word-pia"/>
   public void ProtectedViewWindowBeforeEdit(IProtectedViewWindow PvWindow, ref bool Cancel);
 
   /// <summary>
@@ -356,7 +356,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.protectedviewwindowbeforeclose?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.protectedviewwindowbeforeclose?view=word-pia"/>
   public void ProtectedViewWindowBeforeClose(IProtectedViewWindow PvWindow, int CloseReason, ref bool Cancel);
 
   /// <summary>
@@ -366,7 +366,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.protectedviewwindowsize?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.protectedviewwindowsize?view=word-pia"/>
   public void ProtectedViewWindowSize(IProtectedViewWindow PvWindow);
 
   /// <summary>
@@ -376,7 +376,7 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.protectedviewwindowactivate?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.protectedviewwindowactivate?view=word-pia"/>
   public void ProtectedViewWindowActivate(IProtectedViewWindow PvWindow);
 
   /// <summary>
@@ -386,6 +386,6 @@ public partial interface IApplicationEvents4: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.protectedviewwindowdeactivate?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents4.protectedviewwindowdeactivate?view=word-pia"/>
   public void ProtectedViewWindowDeactivate(IProtectedViewWindow PvWindow);
 }

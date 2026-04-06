@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.subdocuments?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.subdocuments?view=word-pia"/>
 public partial interface ISubdocuments: IModelObject
 {
   /// <summary>
@@ -21,7 +21,7 @@ public partial interface ISubdocuments: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.subdocuments.addfromfile?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.subdocuments.addfromfile?view=word-pia"/>
   public ISubdocument AddFromFile(string Name, bool ConfirmConversions, bool ReadOnly, string PasswordDocument, 
     string PasswordTemplate, bool Revert, string WritePasswordDocument, string WritePasswordTemplate);
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents a collection of BuildingBlockType objects.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblocktypes?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblocktypes?view=word-pia"/>
 public partial interface IBuildingBlockTypes : IModelCollection<IBuildingBlockType>
 {
 }

@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// <summary>
 /// A collection of FileDialogFilter objects used by a FileDialog.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialogfilters?view=office-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialogfilters?view=office-pia"/>
 public partial interface IFileDialogFilters: IModelCollection<IFileDialogFilter>
 {
   /// <summary>
@@ -14,13 +14,13 @@ public partial interface IFileDialogFilters: IModelCollection<IFileDialogFilter>
   /// </summary>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialogfilters.item?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialogfilters.item?view=office-pia"/>
   public IFileDialogFilter Item(int Index);
   /// <summary>
   /// Removes a filter from the collection.
   /// </summary>
   /// <param name="filter">The `filter` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialogfilters.delete?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialogfilters.delete?view=office-pia"/>
   public void Delete(object filter);
   /// <summary>
   /// Adds a file filter to the collection.
@@ -29,7 +29,7 @@ public partial interface IFileDialogFilters: IModelCollection<IFileDialogFilter>
   /// <param name="Extensions">The `Extensions` parameter.</param>
   /// <param name="Position">The `Position` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialogfilters.add?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialogfilters.add?view=office-pia"/>
   public IFileDialogFilter Add(string Description, string Extensions, object Position);
 }
 

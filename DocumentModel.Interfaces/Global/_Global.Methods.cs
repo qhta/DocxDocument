@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global?view=word-pia"/>
 public partial interface I_Global : IModelObject
 {
   /// <summary>
@@ -13,7 +13,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_synonyminfo?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_synonyminfo?view=word-pia"/>
   public ISynonymInfo SynonymInfo(string Word, object LanguageID);
   /// <summary>
   /// Returns a KeysBoundTo object that represents all key combinations assigned to the specified item.
@@ -24,7 +24,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_keysboundto?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_keysboundto?view=word-pia"/>
   public IKeysBoundTo KeysBoundTo(KeyCategory KeyCategory, string Command, object CommandParameter);
   /// <summary>
   /// Returns a KeyBinding object that represents the specified key combination.
@@ -34,7 +34,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_findkey?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_findkey?view=word-pia"/>
   public IKeyBinding FindKey(int KeyCode, object KeyCode2);
   /// <summary>
   /// Determines whether a variable that references an object is valid.
@@ -43,7 +43,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_isobjectvalid?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_isobjectvalid?view=word-pia"/>
   public bool IsObjectValid(object Object);
   /// <summary>
   /// Repeats the most recent editing action one or more times.
@@ -52,7 +52,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.repeat?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.repeat?view=word-pia"/>
   public bool Repeat(object Times);
   /// <summary>
   /// Sends a command or series of commands through the specified dynamic data exchange (DDE) channel.
@@ -62,7 +62,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.ddeexecute?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.ddeexecute?view=word-pia"/>
   public void DDEExecute(int Channel, string Command);
   /// <summary>
   /// Opens a dynamic data exchange (DDE) channel to another application and returns the channel number.
@@ -72,7 +72,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.ddeinitiate?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.ddeinitiate?view=word-pia"/>
   public int DDEInitiate(string App, string Topic);
   /// <summary>
   /// Uses an open dynamic data exchange (DDE) channel to send data to an application.
@@ -83,7 +83,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.ddepoke?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.ddepoke?view=word-pia"/>
   public void DDEPoke(int Channel, string Item, string Data);
   /// <summary>
   /// Uses an open dynamic data exchange (DDE) channel to request information and returns it as a string.
@@ -93,7 +93,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.dderequest?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.dderequest?view=word-pia"/>
   public string DDERequest(int Channel, string Item);
   /// <summary>
   /// Closes the specified dynamic data exchange (DDE) channel to another application.
@@ -102,7 +102,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.ddeterminate?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.ddeterminate?view=word-pia"/>
   public void DDETerminate(int Channel);
   /// <summary>
   /// Closes all dynamic data exchange (DDE) channels opened by Microsoft Word.
@@ -110,7 +110,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.ddeterminateall?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.ddeterminateall?view=word-pia"/>
   public void DDETerminateAll();
   /// <summary>
   /// Returns a unique number for the specified key combination.
@@ -122,7 +122,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.buildkeycode?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.buildkeycode?view=word-pia"/>
   public int BuildKeyCode(Key Arg1, object Arg2, object Arg3, object Arg4);
   /// <summary>
   /// Returns the key combination string for the specified keys.
@@ -132,7 +132,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.keystring?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.keystring?view=word-pia"/>
   public string KeyString(int KeyCode, object KeyCode2);
   /// <summary>
   /// Checks a string for spelling errors.
@@ -153,7 +153,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.checkspelling?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.checkspelling?view=word-pia"/>
   public bool CheckSpelling(string Word, object CustomDictionary, object IgnoreUppercase, object MainDictionary, object CustomDictionary2, object CustomDictionary3, object CustomDictionary4, object CustomDictionary5, object CustomDictionary6, object CustomDictionary7, object CustomDictionary8, object CustomDictionary9, object CustomDictionary10);
   /// <summary>
   /// Returns a SpellingSuggestions collection that represents suggested spelling replacements for a word.
@@ -175,7 +175,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.getspellingsuggestions?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.getspellingsuggestions?view=word-pia"/>
   public ISpellingSuggestions GetSpellingSuggestions(string Word, object CustomDictionary, object IgnoreUppercase, object MainDictionary, object SuggestionMode, object CustomDictionary2, object CustomDictionary3, object CustomDictionary4, object CustomDictionary5, object CustomDictionary6, object CustomDictionary7, object CustomDictionary8, object CustomDictionary9, object CustomDictionary10);
   /// <summary>
   /// Displays online Help information.
@@ -184,7 +184,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.help?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.help?view=word-pia"/>
   public void Help(object HelpType);
   /// <summary>
   /// Opens a new window with the same document as the specified window.
@@ -192,7 +192,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.newwindow?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.newwindow?view=word-pia"/>
   public IWindow NewWindow();
   /// <summary>
   /// Removes nonprinting and special Word characters from the specified string or changes them to spaces.
@@ -201,7 +201,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.cleanstring?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.cleanstring?view=word-pia"/>
   public string CleanString(string String);
   /// <summary>
   /// Sets the folder in which Microsoft Word searches for documents.
@@ -210,7 +210,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.changefileopendirectory?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.changefileopendirectory?view=word-pia"/>
   public void ChangeFileOpenDirectory(string Path);
   /// <summary>
   /// Converts a measurement from inches to points (1 inch = 72 points).
@@ -219,7 +219,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.inchestopoints?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.inchestopoints?view=word-pia"/>
   public float InchesToPoints(float Inches);
   /// <summary>
   /// Converts a measurement from centimeters to points (1 cm = 28.35 points).
@@ -228,7 +228,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.centimeterstopoints?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.centimeterstopoints?view=word-pia"/>
   public float CentimetersToPoints(float Centimeters);
   /// <summary>
   /// Converts a measurement from millimeters to points (1 mm = 2.85 points).
@@ -237,7 +237,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.millimeterstopoints?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.millimeterstopoints?view=word-pia"/>
   public float MillimetersToPoints(float Millimeters);
   /// <summary>
   /// Converts a measurement from picas to points (1 pica = 12 points).
@@ -246,7 +246,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.picastopoints?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.picastopoints?view=word-pia"/>
   public float PicasToPoints(float Picas);
   /// <summary>
   /// Converts a measurement from lines to points (1 line = 12 points).
@@ -255,7 +255,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.linestopoints?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.linestopoints?view=word-pia"/>
   public float LinesToPoints(float Lines);
   /// <summary>
   /// Converts a measurement from points to inches (1 inch = 72 points).
@@ -264,7 +264,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pointstoinches?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pointstoinches?view=word-pia"/>
   public float PointsToInches(float Points);
   /// <summary>
   /// Converts a measurement from points to centimeters (1 centimeter = 28.35 points).
@@ -273,7 +273,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pointstocentimeters?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pointstocentimeters?view=word-pia"/>
   public float PointsToCentimeters(float Points);
   /// <summary>
   /// Converts a measurement from points to millimeters (1 millimeter = 2.835 points).
@@ -282,7 +282,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pointstomillimeters?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pointstomillimeters?view=word-pia"/>
   public float PointsToMillimeters(float Points);
   /// <summary>
   /// Converts a measurement from points to picas (1 pica = 12 points).
@@ -291,7 +291,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pointstopicas?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pointstopicas?view=word-pia"/>
   public float PointsToPicas(float Points);
   /// <summary>
   /// Converts a measurement from points to lines (1 line = 12 points).
@@ -300,7 +300,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pointstolines?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pointstolines?view=word-pia"/>
   public float PointsToLines(float Points);
   /// <summary>
   /// Converts a measurement from points to pixels.
@@ -310,7 +310,7 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pointstopixels?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pointstopixels?view=word-pia"/>
   public float PointsToPixels(float Points, object fVertical);
   /// <summary>
   /// Converts a measurement from pixels to points.
@@ -320,6 +320,6 @@ public partial interface I_Global : IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pixelstopoints?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pixelstopoints?view=word-pia"/>
   public float PixelsToPoints(float Pixels, object fVertical);
 }

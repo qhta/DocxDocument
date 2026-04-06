@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3?view=word-pia"/>
 public partial interface IApplicationEvents3: IModelObject
 {
   /// <summary>
@@ -12,7 +12,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.startup?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.startup?view=word-pia"/>
   public void Startup();
 
   /// <summary>
@@ -21,7 +21,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.quit?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.quit?view=word-pia"/>
   public void Quit();
 
   /// <summary>
@@ -30,7 +30,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.documentchange?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.documentchange?view=word-pia"/>
   public void DocumentChange();
 
   /// <summary>
@@ -40,7 +40,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.documentopen?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.documentopen?view=word-pia"/>
   public void DocumentOpen(IDocument Doc);
 
   /// <summary>
@@ -51,7 +51,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.documentbeforeclose?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.documentbeforeclose?view=word-pia"/>
   public void DocumentBeforeClose(IDocument Doc, ref bool Cancel);
 
   /// <summary>
@@ -62,7 +62,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.documentbeforeprint?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.documentbeforeprint?view=word-pia"/>
   public void DocumentBeforePrint(IDocument Doc, ref bool Cancel);
 
   /// <summary>
@@ -74,7 +74,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.documentbeforesave?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.documentbeforesave?view=word-pia"/>
   public void DocumentBeforeSave(IDocument Doc, bool SaveAsUI, ref bool Cancel);
 
   /// <summary>
@@ -84,7 +84,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.newdocument?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.newdocument?view=word-pia"/>
   public void NewDocument(IDocument Doc);
 
   /// <summary>
@@ -95,7 +95,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.windowactivate?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.windowactivate?view=word-pia"/>
   public void WindowActivate(IDocument Doc, IWindow Wn);
 
   /// <summary>
@@ -106,7 +106,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.windowdeactivate?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.windowdeactivate?view=word-pia"/>
   public void WindowDeactivate(IDocument Doc, IWindow Wn);
 
   /// <summary>
@@ -116,7 +116,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.windowselectionchange?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.windowselectionchange?view=word-pia"/>
   public void WindowSelectionChange(ISelection Sel);
 
   /// <summary>
@@ -127,7 +127,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.windowbeforerightclick?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.windowbeforerightclick?view=word-pia"/>
   public void WindowBeforeRightClick(ISelection Sel, ref bool Cancel);
 
   /// <summary>
@@ -138,7 +138,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.windowbeforedoubleclick?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.windowbeforedoubleclick?view=word-pia"/>
   public void WindowBeforeDoubleClick(ISelection Sel, ref bool Cancel);
 
   /// <summary>
@@ -148,7 +148,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.epostagepropertydialog?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.epostagepropertydialog?view=word-pia"/>
   public void EPostagePropertyDialog(IDocument Doc);
 
   /// <summary>
@@ -158,7 +158,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.epostageinsert?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.epostageinsert?view=word-pia"/>
   public void EPostageInsert(IDocument Doc);
 
   /// <summary>
@@ -169,7 +169,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.mailmergeaftermerge?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.mailmergeaftermerge?view=word-pia"/>
   public void MailMergeAfterMerge(IDocument Doc, IDocument DocResult);
 
   /// <summary>
@@ -179,7 +179,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.mailmergeafterrecordmerge?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.mailmergeafterrecordmerge?view=word-pia"/>
   public void MailMergeAfterRecordMerge(IDocument Doc);
 
   /// <summary>
@@ -192,7 +192,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.mailmergebeforemerge?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.mailmergebeforemerge?view=word-pia"/>
   public void MailMergeBeforeMerge(IDocument Doc, int StartRecord, int EndRecord, ref bool Cancel);
 
   /// <summary>
@@ -203,7 +203,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.mailmergebeforerecordmerge?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.mailmergebeforerecordmerge?view=word-pia"/>
   public void MailMergeBeforeRecordMerge(IDocument Doc, ref bool Cancel);
 
   /// <summary>
@@ -213,7 +213,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.mailmergedatasourceload?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.mailmergedatasourceload?view=word-pia"/>
   public void MailMergeDataSourceLoad(IDocument Doc);
 
   /// <summary>
@@ -224,7 +224,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.mailmergedatasourcevalidate?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.mailmergedatasourcevalidate?view=word-pia"/>
   public void MailMergeDataSourceValidate(IDocument Doc, bool Handled);
 
   /// <summary>
@@ -234,7 +234,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.mailmergewizardsendtocustom?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.mailmergewizardsendtocustom?view=word-pia"/>
   public void MailMergeWizardSendToCustom(IDocument Doc);
 
   /// <summary>
@@ -247,7 +247,7 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.mailmergewizardstatechange?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.mailmergewizardstatechange?view=word-pia"/>
   public void MailMergeWizardStateChange(IDocument Doc, int FromState, int ToState, bool Handled);
 
   /// <summary>
@@ -258,6 +258,6 @@ public partial interface IApplicationEvents3: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.windowsize?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.iapplicationevents3.windowsize?view=word-pia"/>
   public void WindowSize(IDocument Doc, IWindow Wn);
 }

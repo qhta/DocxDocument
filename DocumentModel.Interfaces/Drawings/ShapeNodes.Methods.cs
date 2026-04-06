@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenodes?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenodes?view=word-pia"/>
 public partial interface IShapeNodes: IModelObject
 {
   /// <summary>
@@ -13,7 +13,7 @@ public partial interface IShapeNodes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenodes.delete?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenodes.delete?view=word-pia"/>
   public void Delete(int Index);
 
   /// <summary>
@@ -24,7 +24,7 @@ public partial interface IShapeNodes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenodes.seteditingtype?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenodes.seteditingtype?view=word-pia"/>
   public void SetEditingType(int Index, Drawings.EditingType EditingType);
 
   /// <summary>
@@ -36,7 +36,7 @@ public partial interface IShapeNodes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenodes.setposition?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenodes.setposition?view=word-pia"/>
   public void SetPosition(int Index, float X1, float Y1);
 
   /// <summary>
@@ -47,7 +47,7 @@ public partial interface IShapeNodes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenodes.setsegmenttype?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenodes.setsegmenttype?view=word-pia"/>
   public void SetSegmentType(int Index, Drawings.SegmentType SegmentType);
 
   /// <summary>
@@ -65,6 +65,6 @@ public partial interface IShapeNodes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenodes.insert?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapenodes.insert?view=word-pia"/>
   public void Insert(int Index, Drawings.SegmentType SegmentType, Drawings.EditingType EditingType, float X1, float Y1, float X2, float Y2, float X3, float Y3);
 }

@@ -8,7 +8,7 @@ namespace DocumentModel.Application;
 /// <summary>
 /// Represents a collection of HTML script blocks in a document.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts?view=office-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts?view=office-pia"/>
 public partial interface IScripts
 {
   /// <summary>
@@ -16,7 +16,7 @@ public partial interface IScripts
   /// </summary>
   /// <param name="Index">The script name, ID, or index.</param>
   /// <returns>The requested script.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.item?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.item?view=office-pia"/>
   public IScript Item(object Index);
   /// <summary>
   /// Adds a script to the collection.
@@ -28,7 +28,7 @@ public partial interface IScripts
   /// <param name="Extended">Additional script tag attributes.</param>
   /// <param name="ScriptText">The script content.</param>
   /// <returns>The added script.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.add?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.add?view=office-pia"/>
   public IScript Add
   (object Anchor, ScriptLocation Location,
     ScriptLanguage Language, string Id, string Extended,
@@ -36,7 +36,7 @@ public partial interface IScripts
   /// <summary>
   /// Deletes all scripts in the collection.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.delete?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.delete?view=office-pia"/>
   public void Delete();
 }
 

@@ -26,7 +26,7 @@ public partial class Color: AbstractColor<DXW.Color>
   /// <summary>
   /// Initializes a new instance of the Color class using the specified hexadecimal RGB color value.
   /// </summary>
-  /// <param name="hexColor"></param>
+  /// <param name="hexColor">The </param>
   public Color(UInt32 hexColor)
   {
     Val = hexColor;
@@ -307,4 +307,36 @@ public partial class Color: AbstractColor<DXW.Color>
       return null;
     return color.Val;
   }
+
+
+  ///// <summary>
+  ///// Defines an implicit conversion from a nullable UInt32 to a nullable DMW.Color instance.
+  ///// </summary>
+  ///// <remarks>This operator enables seamless assignment of a nullable UInt32 to a nullable DMW.Color without
+  ///// explicit casting. The Val property of the resulting Color is set to the provided UInt32 value.</remarks>
+  ///// <param name="value">The UInt32 value to convert. If null, the result is null.</param>
+  //public static implicit operator DMW.Color?(RgbColor? value)
+  //{
+  //  if (value is null)
+  //    return null!;
+  //  return new Color
+  //  {
+  //    Val = RgbColor.Black,
+  //  };
+  //}
+
+  ///// <summary>
+  ///// Defines an implicit conversion from a nullable Color to a nullable UInt32.
+  ///// </summary>
+  ///// <remarks>If the specified Color is null, the result is null; otherwise, the UInt32 value of the Color is
+  ///// returned. This operator enables seamless conversion between Color and UInt32 types when working with nullable
+  ///// values.</remarks>
+  ///// <param name="color">The nullable Color instance to convert to an UInt32.</param>
+  //public static implicit operator RgbColor?(Color? color)
+  //{
+  //  if (color is null)
+  //    return null;
+
+  //  return color.Val;
+  //}
 }

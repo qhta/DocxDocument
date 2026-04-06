@@ -4,7 +4,7 @@ namespace DocumentModel.CustomXml;
 /// <summary>
 /// Represents a single custom XML part in a custom XML parts collection.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart?view=office-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart?view=office-pia"/>
 public partial interface ICustomXMLPart
 {
   /// <summary>
@@ -16,7 +16,7 @@ public partial interface ICustomXMLPart
   /// <param name="NextSibling">The sibling node before which to insert the node.</param>
   /// <param name="NodeType">The custom XML node type.</param>
   /// <param name="NodeValue">The node value.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.addnode?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.addnode?view=office-pia"/>
   public void AddNode
   (ICustomXMLNode Parent, string Name, string NamespaceURI, ICustomXMLNode NextSibling,
     XMLNodeType NodeType, string NodeValue);
@@ -25,7 +25,7 @@ public partial interface ICustomXMLPart
   /// Deletes the current custom XML part from the data store.
   /// If the part contains core properties, the operation is not performed.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.delete?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.delete?view=office-pia"/>
   public void Delete();
 
   /// <summary>
@@ -34,7 +34,7 @@ public partial interface ICustomXMLPart
   /// </summary>
   /// <param name="FilePath">Path of the source XML file.</param>
   /// <returns><c>true</c> when the part is loaded successfully; otherwise <c>false</c>.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.load?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.load?view=office-pia"/>
   public bool Load(string FilePath);
 
   /// <summary>
@@ -43,7 +43,7 @@ public partial interface ICustomXMLPart
   /// </summary>
   /// <param name="XML">The XML content to load.</param>
   /// <returns><c>true</c> when the XML is loaded successfully; otherwise <c>false</c>.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.loadxml?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.loadxml?view=office-pia"/>
   public bool LoadXML(string XML);
 
   /// <summary>
@@ -51,7 +51,7 @@ public partial interface ICustomXMLPart
   /// </summary>
   /// <param name="XPath">The XPath expression.</param>
   /// <returns>A collection of matching nodes.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.selectnodes?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.selectnodes?view=office-pia"/>
   public ICustomXMLNodes SelectNodes(string XPath);
 
   /// <summary>
@@ -59,7 +59,7 @@ public partial interface ICustomXMLPart
   /// </summary>
   /// <param name="XPath">The XPath expression.</param>
   /// <returns>The matching node, if found.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.selectsinglenode?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.selectsinglenode?view=office-pia"/>
   public ICustomXMLNode SelectSingleNode(string XPath);
 }
 

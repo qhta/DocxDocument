@@ -13,7 +13,6 @@ public partial class BaseRunProperties<T> : ITextFormat
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.name?view=word-pia"/>
   string? ITextFormat.Name { get; set; }
 
-
   /// <summary>
   /// The name of the font for East Asian scripts.
   /// </summary>
@@ -36,10 +35,21 @@ public partial class BaseRunProperties<T> : ITextFormat
   /// The font size in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.size?view=word-pia"/>
-  float? ITextFormat.Size
+  float? ITextFormat.FontSize
   {
     get => (float?)this.FontSize?.ToPoints();
     set => this.FontSize = value;
+  }
+
+
+  /// <summary>
+  /// The font size in points for complex script.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.sizebi?view=word-pia"/>
+  float? ITextFormat.FontSizeCS
+  {
+    get => (float?)this.FontSizeCS?.ToPoints();
+    set => this.FontSizeCS = value;
   }
 
   /// <summary>
@@ -54,6 +64,19 @@ public partial class BaseRunProperties<T> : ITextFormat
     set => this.Bold = value.ToBoolean();
   }
 
+
+  /// <summary>
+  /// True if the text is formatted as bold for complex script.
+  /// Returns True, False, or Undefined.
+  /// Can be set to True, False, or Toggle (reverses the current setting).
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.boldbi?view=word-pia"/>
+  OnOffToggle? ITextFormat.BoldCS
+  {
+    get => this.BoldCS.ToOnOffToggle();
+    set => this.BoldCS = value.ToBoolean();
+  }
+
   /// <summary>
   /// True if the text is formatted as italic.
   /// Returns True, False, or Undefined.
@@ -64,6 +87,18 @@ public partial class BaseRunProperties<T> : ITextFormat
   {
     get => this.Italic.ToOnOffToggle();
     set => this.Italic = value.ToBoolean();
+  }
+
+  /// <summary>
+  /// True if the text is formatted as italic for complex script.
+  /// Returns True, False, or Undefined.
+  /// Can be set to True, False, or Toggle (reverses the current setting).
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.italicbi?view=word-pia"/>
+  OnOffToggle? ITextFormat.ItalicCS
+  {
+    get => this.ItalicCS.ToOnOffToggle();
+    set => this.ItalicCS = value.ToBoolean(); 
   }
 
   /// <summary>
@@ -268,12 +303,6 @@ public partial class BaseRunProperties<T> : ITextFormat
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.borders?view=word-pia"/>
   IBorders? ITextFormat.Borders { get; set; }
 
-  ///// <summary>
-  ///// Gets the shading formatting for the font.
-  ///// </summary>
-  ///// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.shading?view=word-pia"/>
-  //DMD.IShading? ITextFormat.Shading { get; }
-
   /// <summary>
   /// Gets or sets the emphasis mark for the font.
   /// </summary>
@@ -298,124 +327,115 @@ public partial class BaseRunProperties<T> : ITextFormat
   /// The 24-bit color for the specified TextFormat object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.color?view=word-pia"/>
-  RgbColor? ITextFormat.Color { get; set; }
+  IColor? ITextFormat.Color
+  {
+    get => this.Color;
+    set => this.Color = value?.Val;
+  }
 
-  /// <summary>
-  /// True if the text is formatted as bold (for complex script).
-  /// Returns True, False, or Undefined.
-  /// Can be set to True, False, or Toggle (reverses the current setting).
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.boldbi?view=word-pia"/>
-  OnOffToggle? ITextFormat.BoldBi { get; set; }
 
-  /// <summary>
-  /// True if the text is formatted as italic (for complex script).
-  /// Returns True, False, or Undefined.
-  /// Can be set to True, False, or Toggle (reverses the current setting).
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.italicbi?view=word-pia"/>
-  OnOffToggle? ITextFormat.ItalicBi { get; set; }
-
-  /// <summary>
-  /// The font size in points for complex script.
-  /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.sizebi?view=word-pia"/>
-  float? ITextFormat.SizeBi { get; set; }
 
   /// <summary>
   /// The name of the font for complex script.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.namebi?view=word-pia"/>
-  string? ITextFormat.NameBi { get; set; }
+  string? ITextFormat.NameCS { get; set; }
 
   /// <summary>
   /// Gets or sets the color index for complex-script text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.colorindexbi?view=word-pia"/>
-  ColorIndex? ITextFormat.ColorIndexBi { get; set; }
+  ColorIndex? ITextFormat.ColorIndexCS { get; set; }
 
   /// <summary>
   /// Gets or sets the color of diacritical marks.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.diacriticcolor?view=word-pia"/>
-  RgbColor? ITextFormat.DiacriticColor { get; set; }
+  IColor? ITextFormat.DiacriticColor { get; set; }
 
   /// <summary>
   /// Gets or sets the underline color.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.underlinecolor?view=word-pia"/>
-  RgbColor? ITextFormat.UnderlineColor { get; set; }
+  IColor? ITextFormat.UnderlineColor { get; set; }
 
-  ///// <summary>
-  ///// Gets or sets the glow formatting for the font.
-  ///// </summary>
-  ///// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.glow?view=word-pia"/>
-  //DMD.IGlowFormat Glow { get; set; }
 
-  ///// <summary>
-  ///// Gets or sets the reflection formatting for the font.
-  ///// </summary>
-  ///// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.reflection?view=word-pia"/>
-  //DMD.IReflectionFormat Reflection { get; set; }
+  /// <summary>
+  /// Gets or sets the shading formatting for the font.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.shading?view=word-pia"/>
+  DMD.IShading? ITextFormat.Shading { get; set; }
 
-  ///// <summary>
-  ///// Gets or sets the shadow formatting for the font.
-  ///// </summary>
-  ///// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.textshadow?view=word-pia"/>
-  //DMD.IShadowFormat TextShadow { get; set; }
+  /// <summary>
+  /// Gets or sets the glow formatting for the font.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.glow?view=word-pia"/>
+  DMD.IGlowFormat? ITextFormat.Glow { get; set; }
 
-  ///// <summary>
-  ///// Gets or sets the fill formatting for the font.
-  ///// </summary>
-  ///// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.fill?view=word-pia"/>
-  //DMD.IFillFormat Fill { get; set; }
+  /// <summary>
+  /// Gets or sets the reflection formatting for the font.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.reflection?view=word-pia"/>
+  DMD.IReflectionFormat? ITextFormat.Reflection { get; set; }
 
-  ///// <summary>
-  ///// Gets or sets the line formatting for the font.
-  ///// </summary>
-  ///// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.line?view=word-pia"/>
-  //DMD.ILineFormat Line { get; set; }
+  /// <summary>
+  /// Gets or sets the shadow formatting for the font.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.textshadow?view=word-pia"/>
+  DMD.IShadowFormat? ITextFormat.TextShadow { get; set; }
 
-  ///// <summary>
-  ///// Gets or sets the 3D formatting for the font.
-  ///// </summary>
-  ///// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.threed?view=word-pia"/>
-  //DMD.IThreeDFormat ThreeD { get; set; }
+  /// <summary>
+  /// Gets or sets the fill formatting for the font.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.fill?view=word-pia"/>
+  DMD.IFillFormat? ITextFormat.Fill { get; set; }
 
-  ///// <summary>
-  ///// Gets the text color formatting.
-  ///// </summary>
-  ///// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.textcolor?view=word-pia"/>
-  //DMD.IColorFormat TextColor { get; }
+  /// <summary>
+  /// Gets or sets the line formatting for the font.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.line?view=word-pia"/>
+  DMD.ILineFormat? ITextFormat.Line { get; set; }
 
-  ///// <summary>
-  ///// Gets or sets the ligature setting for the font.
-  ///// </summary>
-  ///// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.ligatures?view=word-pia"/>
-  //Ligatures? ITextFormat.Ligatures { get; set; }
+  /// <summary>
+  /// Gets or sets the 3D formatting for the font.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.threed?view=word-pia"/>
+  DMD.IThreeDFormat? ITextFormat.ThreeD { get; set; }
 
-  ///// <summary>
-  ///// Gets or sets the number form for the font.
-  ///// </summary>
-  ///// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.numberform?view=word-pia"/>
-  //NumberForm? ITextFormat.NumberForm { get; set; }
+  /// <summary>
+  /// Gets or sets the text color formatting.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.textcolor?view=word-pia"/>
+  DMD.IColorFormat? ITextFormat.TextColor { get; set; }
 
-  ///// <summary>
-  ///// Gets or sets the number spacing for the font.
-  ///// </summary>
-  ///// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.numberspacing?view=word-pia"/>
-  //NumberSpacing? ITextFormat.NumberSpacing { get; set; }
+  /// <summary>
+  /// Gets or sets the ligature setting for the font.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.ligatures?view=word-pia"/>
+  Ligatures? ITextFormat.Ligatures { get; set; }
 
-  ///// <summary>
-  ///// Gets or sets whether contextual alternates are enabled.
-  ///// </summary>
-  ///// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.contextualalternates?view=word-pia"/>
-  //int? ITextFormat.ContextualAlternates { get; set; }
+  /// <summary>
+  /// Gets or sets the number form for the font.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.numberform?view=word-pia"/>
+  NumberForm? ITextFormat.NumberForm { get; set; }
 
-  ///// <summary>
-  ///// Gets or sets the stylistic set for the font.
-  ///// </summary>
-  ///// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.stylisticset?view=word-pia"/>
-  //StylisticSet? ITextFormat.StylisticSet { get; set; }
+  /// <summary>
+  /// Gets or sets the number spacing for the font.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.numberspacing?view=word-pia"/>
+  NumberSpacing? ITextFormat.NumberSpacing { get; set; }
+
+  /// <summary>
+  /// Gets or sets whether contextual alternates are enabled.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.contextualalternates?view=word-pia"/>
+  int? ITextFormat.ContextualAlternates { get; set; }
+
+  /// <summary>
+  /// Gets or sets the stylistic set for the font.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.stylisticset?view=word-pia"/>
+  StylisticSet? ITextFormat.StylisticSet { get; set; }
 
 }

@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// <summary>
 /// A collection of command bar controls on a command bar.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrols?view=office-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrols?view=office-pia"/>
 public partial interface ICommandBarControls: IModelObject
 {
   /// <summary>
@@ -17,7 +17,7 @@ public partial interface ICommandBarControls: IModelObject
   /// <param name="Before">The `Before` parameter.</param>
   /// <param name="Temporary">The `Temporary` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrols.add?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrols.add?view=office-pia"/>
   public ICommandBarControl Add(object Type, object Id, object Parameter, object Before, object Temporary);
 }
 

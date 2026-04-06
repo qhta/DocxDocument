@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage?view=word-pia"/>
 public partial interface IMailMessage: IModelObject
 {
   /// <summary>
@@ -13,7 +13,7 @@ public partial interface IMailMessage: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.checkname?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.checkname?view=word-pia"/>
   public void CheckName();
 
   /// <summary>
@@ -22,7 +22,7 @@ public partial interface IMailMessage: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.delete?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.delete?view=word-pia"/>
   public void Delete();
 
   /// <summary>
@@ -32,7 +32,7 @@ public partial interface IMailMessage: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.displaymovedialog?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.displaymovedialog?view=word-pia"/>
   public void DisplayMoveDialog();
 
   /// <summary>
@@ -42,7 +42,7 @@ public partial interface IMailMessage: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.displayproperties?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.displayproperties?view=word-pia"/>
   public void DisplayProperties();
 
   /// <summary>
@@ -53,7 +53,7 @@ public partial interface IMailMessage: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.displayselectnamesdialog?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.displayselectnamesdialog?view=word-pia"/>
   public void DisplaySelectNamesDialog();
 
   /// <summary>
@@ -63,7 +63,7 @@ public partial interface IMailMessage: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.forward?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.forward?view=word-pia"/>
   public void Forward();
 
   /// <summary>
@@ -72,7 +72,7 @@ public partial interface IMailMessage: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.gotonext?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.gotonext?view=word-pia"/>
   public void GoToNext();
 
   /// <summary>
@@ -81,7 +81,7 @@ public partial interface IMailMessage: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.gotoprevious?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.gotoprevious?view=word-pia"/>
   public void GoToPrevious();
 
   /// <summary>
@@ -90,7 +90,7 @@ public partial interface IMailMessage: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.reply?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.reply?view=word-pia"/>
   public void Reply();
 
   /// <summary>
@@ -100,7 +100,7 @@ public partial interface IMailMessage: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.replyall?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.replyall?view=word-pia"/>
   public void ReplyAll();
 
   /// <summary>
@@ -109,6 +109,6 @@ public partial interface IMailMessage: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.toggleheader?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmessage.toggleheader?view=word-pia"/>
   public void ToggleHeader();
 }

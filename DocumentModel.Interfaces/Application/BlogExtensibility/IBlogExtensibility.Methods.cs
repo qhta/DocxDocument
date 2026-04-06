@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// <summary>
 /// Provides the ability to manipulate blog entries.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility?view=office-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility?view=office-pia"/>
 public partial interface IBlogExtensibility: IModelObject
 {
   /// <summary>
@@ -15,7 +15,7 @@ public partial interface IBlogExtensibility: IModelObject
   /// <param name="FriendlyName">The `FriendlyName` parameter.</param>
   /// <param name="CategorySupport">The `CategorySupport` parameter.</param>
   /// <param name="Padding">The `Padding` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.blogproviderproperties?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.blogproviderproperties?view=office-pia"/>
   public void BlogProviderProperties
     (out string BlogProvider, out string FriendlyName, out BlogCategorySupport CategorySupport, out bool Padding);
   /// <summary>
@@ -26,7 +26,7 @@ public partial interface IBlogExtensibility: IModelObject
   /// <param name="Document">The `Document` parameter.</param>
   /// <param name="NewAccount">The `NewAccount` parameter.</param>
   /// <param name="ShowPictureUI">The `ShowPictureUI` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.setupblogaccount?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.setupblogaccount?view=office-pia"/>
   public void SetupBlogAccount(string Account, int ParentWindow, object Document, bool NewAccount, out bool ShowPictureUI);
   /// <summary>
   /// Returns the list and details of user blogs associated with the specified account.
@@ -37,7 +37,7 @@ public partial interface IBlogExtensibility: IModelObject
   /// <param name="BlogNames">The `BlogNames` parameter.</param>
   /// <param name="BlogIDs">The `BlogIDs` parameter.</param>
   /// <param name="BlogURLs">The `BlogURLs` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.getuserblogs?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.getuserblogs?view=office-pia"/>
   public void GetUserBlogs
     (string Account, int ParentWindow, object Document, out Array BlogNames, out Array BlogIDs, out Array BlogURLs);
   /// <summary>
@@ -49,7 +49,7 @@ public partial interface IBlogExtensibility: IModelObject
   /// <param name="PostTitles">The `PostTitles` parameter.</param>
   /// <param name="PostDates">The `PostDates` parameter.</param>
   /// <param name="PostIDs">The `PostIDs` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.getrecentposts?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.getrecentposts?view=office-pia"/>
   public void GetRecentPosts
     (string Account, int ParentWindow, object Document, out Array PostTitles, out Array PostDates, out Array PostIDs);
   /// <summary>
@@ -62,7 +62,7 @@ public partial interface IBlogExtensibility: IModelObject
   /// <param name="Title">The `Title` parameter.</param>
   /// <param name="DatePosted">The `DatePosted` parameter.</param>
   /// <param name="Categories">The `Categories` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.open?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.open?view=office-pia"/>
   public void Open
   (string Account, string PostID, int ParentWindow, out string xHTML, out string Title, out string DatePosted,
     out Array Categories);
@@ -79,7 +79,7 @@ public partial interface IBlogExtensibility: IModelObject
   /// <param name="Draft">The `Draft` parameter.</param>
   /// <param name="PostID">The `PostID` parameter.</param>
   /// <param name="PublishMessage">The `PublishMessage` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.publishpost?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.publishpost?view=office-pia"/>
   public void PublishPost
   (string Account, int ParentWindow, object Document, string xHTML, string Title, string DateTime, Array Categories,
     bool Draft, out string PostID, out string PublishMessage);
@@ -96,7 +96,7 @@ public partial interface IBlogExtensibility: IModelObject
   /// <param name="Categories">The `Categories` parameter.</param>
   /// <param name="Draft">The `Draft` parameter.</param>
   /// <param name="PublishMessage">The `PublishMessage` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.republishpost?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.republishpost?view=office-pia"/>
   public void RepublishPost
   (string Account, int ParentWindow, object Document, string PostID, string xHTML, string Title, string DateTime,
     Array Categories, bool Draft, out string PublishMessage);
@@ -107,7 +107,7 @@ public partial interface IBlogExtensibility: IModelObject
   /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
   /// <param name="Document">The `Document` parameter.</param>
   /// <param name="Categories">The `Categories` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.getcategories?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.getcategories?view=office-pia"/>
   public void GetCategories(string Account, int ParentWindow, object Document, out Array Categories);
 }
 

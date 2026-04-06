@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields?view=word-pia"/>
 public partial interface IMailMergeFields: IModelObject
 {
   /// <summary>
@@ -15,7 +15,7 @@ public partial interface IMailMergeFields: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.add?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.add?view=word-pia"/>
   public IMailMergeField Add(IRange Range, string Name);
 
   /// <summary>
@@ -30,7 +30,7 @@ public partial interface IMailMergeFields: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addask?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addask?view=word-pia"/>
   public IMailMergeField AddAsk(IRange Range, string Name, object Prompt, object DefaultAskText, object AskOnce);
 
   /// <summary>
@@ -44,7 +44,7 @@ public partial interface IMailMergeFields: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addfillin?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addfillin?view=word-pia"/>
   public IMailMergeField AddFillIn(IRange Range, object Prompt, object DefaultFillInText, object AskOnce);
 
   /// <summary>
@@ -62,7 +62,7 @@ public partial interface IMailMergeFields: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addif?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addif?view=word-pia"/>
   public IMailMergeField AddIf(IRange Range, string MergeField, MailMergeComparison Comparison, object CompareTo, object TrueAutoText, object TrueText, object FalseAutoText, object FalseText);
 
   /// <summary>
@@ -73,7 +73,7 @@ public partial interface IMailMergeFields: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addmergerec?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addmergerec?view=word-pia"/>
   public IMailMergeField AddMergeRec(IRange Range);
 
   /// <summary>
@@ -84,7 +84,7 @@ public partial interface IMailMergeFields: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addmergeseq?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addmergeseq?view=word-pia"/>
   public IMailMergeField AddMergeSeq(IRange Range);
 
   /// <summary>
@@ -95,7 +95,7 @@ public partial interface IMailMergeFields: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addnext?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addnext?view=word-pia"/>
   public IMailMergeField AddNext(IRange Range);
 
   /// <summary>
@@ -109,7 +109,7 @@ public partial interface IMailMergeFields: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addnextif?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addnextif?view=word-pia"/>
   public IMailMergeField AddNextIf(IRange Range, string MergeField, MailMergeComparison Comparison, object CompareTo);
 
   /// <summary>
@@ -123,7 +123,7 @@ public partial interface IMailMergeFields: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addset?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addset?view=word-pia"/>
   public IMailMergeField AddSet(IRange Range, string Name, string ValueText, IAutoTextEntry ValueAutoText);
 
   /// <summary>
@@ -137,6 +137,6 @@ public partial interface IMailMergeFields: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addskipif?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addskipif?view=word-pia"/>
   public IMailMergeField AddSkipIf(IRange Range, string MergeField, MailMergeComparison Comparison, object CompareTo);
 }

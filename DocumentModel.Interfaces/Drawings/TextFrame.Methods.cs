@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe?view=word-pia"/>
 public partial interface ITextFrame: IModelObject
 {
   /// <summary>
@@ -12,6 +12,6 @@ public partial interface ITextFrame: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.breakforwardlink?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.breakforwardlink?view=word-pia"/>
   public void BreakForwardLink();
 }

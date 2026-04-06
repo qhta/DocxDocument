@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes?view=word-pia"/>
 public partial interface IShapes: IModelObject
 {
   /// <summary>
@@ -22,7 +22,7 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addcallout?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addcallout?view=word-pia"/>
   public IShape AddCallout(Drawings.CalloutType Type, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
@@ -37,7 +37,7 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addconnector?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addconnector?view=word-pia"/>
   public IShape AddConnector(Drawings.ConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
 
   /// <summary>
@@ -49,7 +49,7 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addcurve?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addcurve?view=word-pia"/>
   public IShape AddCurve(object SafeArrayOfPoints, object Anchor);
 
   /// <summary>
@@ -65,7 +65,7 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addlabel?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addlabel?view=word-pia"/>
   public IShape AddLabel(TextOrientation Orientation, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
@@ -80,7 +80,7 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addline?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addline?view=word-pia"/>
   public IShape AddLine(float BeginX, float BeginY, float EndX, float EndY, object Anchor);
 
   /// <summary>
@@ -98,7 +98,7 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addpicture?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addpicture?view=word-pia"/>
   public IShape AddPicture(string FileName, object LinkToFile, object SaveWithDocument, object Left, object Top, object Width, object Height, object Anchor);
 
   /// <summary>
@@ -110,7 +110,7 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addpolyline?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addpolyline?view=word-pia"/>
   public IShape AddPolyline(object SafeArrayOfPoints, object Anchor);
 
   /// <summary>
@@ -126,7 +126,7 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addshape?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addshape?view=word-pia"/>
   public IShape AddShape(int Type, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
@@ -145,7 +145,7 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addtexteffect?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addtexteffect?view=word-pia"/>
   public IShape AddTextEffect(Drawings.PresetTextEffect PresetTextEffect, string Text, string FontName, float FontSize, TriState FontBold, TriState FontItalic, float Left, float Top, object Anchor);
 
   /// <summary>
@@ -161,7 +161,7 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addtextbox?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addtextbox?view=word-pia"/>
   public IShape AddTextbox(TextOrientation Orientation, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
@@ -174,7 +174,7 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.buildfreeform?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.buildfreeform?view=word-pia"/>
   public IFreeformBuilder BuildFreeform(Drawings.EditingType EditingType, float X1, float Y1);
 
   /// <summary>
@@ -185,7 +185,7 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.range?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.range?view=word-pia"/>
   public IShapeRange Range(object Index);
 
   /// <summary>
@@ -194,7 +194,7 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.selectall?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.selectall?view=word-pia"/>
   public void SelectAll();
 
   /// <summary>
@@ -216,7 +216,7 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addoleobject?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addoleobject?view=word-pia"/>
   public IShape AddOLEObject(object ClassType, object FileName, object LinkToFile, object DisplayAsIcon, object IconFileName, object IconIndex, object IconLabel, object Left, object Top, object Width, object Height, object Anchor);
 
   /// <summary>
@@ -232,7 +232,7 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addolecontrol?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addolecontrol?view=word-pia"/>
   public IShape AddOLEControl(object ClassType, object Left, object Top, object Width, object Height, object Anchor);
 
   /// <summary>
@@ -248,7 +248,7 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.adddiagram?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.adddiagram?view=word-pia"/>
   public IShape AddDiagram(DiagramType Type, float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
@@ -263,7 +263,7 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addcanvas?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addcanvas?view=word-pia"/>
   public IShape AddCanvas(float Left, float Top, float Width, float Height, object Anchor);
 
   /// <summary>
@@ -279,7 +279,7 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addchart?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addchart?view=word-pia"/>
   public IShape AddChart(object Type, object Left, object Top, object Width, object Height, object Anchor);
 
   /// <summary>
@@ -295,7 +295,7 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addsmartart?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addsmartart?view=word-pia"/>
   public IShape AddSmartArt(object Layout, object Left, object Top, object Width, object Height, object Anchor);
 
   /// <summary>
@@ -315,7 +315,7 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addwebvideo?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addwebvideo?view=word-pia"/>
   public IShape AddWebVideo(string EmbedCode, object VideoWidth, object VideoHeight, object PosterFrameImage, object Url, object Left, object Top, object Width, object Height, object Anchor);
 
   /// <summary>
@@ -333,6 +333,6 @@ public partial interface IShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addchart2?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes.addchart2?view=word-pia"/>
   public IShape AddChart2(int Style, object Type, object Left, object Top, object Width, object Height, object Anchor, object NewLayout);
 }

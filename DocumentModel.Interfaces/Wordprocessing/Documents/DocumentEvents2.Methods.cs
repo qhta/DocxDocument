@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2?view=word-pia"/>
 public partial interface IDocumentEvents2: IModelObject
 {
   /// <summary>
@@ -12,7 +12,7 @@ public partial interface IDocumentEvents2: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.new?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.new?view=word-pia"/>
   public void New();
 
   /// <summary>
@@ -21,7 +21,7 @@ public partial interface IDocumentEvents2: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.open?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.open?view=word-pia"/>
   public void Open();
 
   /// <summary>
@@ -30,7 +30,7 @@ public partial interface IDocumentEvents2: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.close?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.close?view=word-pia"/>
   public void Close();
 
   /// <summary>
@@ -40,7 +40,7 @@ public partial interface IDocumentEvents2: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.sync?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.sync?view=word-pia"/>
   public void Sync(App.SyncEventType SyncEventType);
 
   /// <summary>
@@ -51,19 +51,19 @@ public partial interface IDocumentEvents2: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.xmlafterinsert?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.xmlafterinsert?view=word-pia"/>
   public void XMLAfterInsert(IXMLNode NewXMLNode, bool InUndoRedo);
 
   /// <summary>
-  /// Executes the xmlbefore delete operation.
+  /// Executes the xml before delete operation.
   /// </summary>
   /// <param name="DeletedRange">Specifies the deleted range.</param>
-  /// <param name="OldXMLNode">Specifies the old xmlnode.</param>
+  /// <param name="OldXMLNode">Specifies the old xml node.</param>
   /// <param name="InUndoRedo">Specifies whether in undo redo.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.xmlbeforedelete?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.xmlbeforedelete?view=word-pia"/>
   public void XMLBeforeDelete(IRange DeletedRange, IXMLNode OldXMLNode, bool InUndoRedo);
 
   /// <summary>
@@ -74,7 +74,7 @@ public partial interface IDocumentEvents2: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.contentcontrolafteradd?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.contentcontrolafteradd?view=word-pia"/>
   public void ContentControlAfterAdd(IContentControl NewContentControl, bool InUndoRedo);
 
   /// <summary>
@@ -85,7 +85,7 @@ public partial interface IDocumentEvents2: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.contentcontrolbeforedelete?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.contentcontrolbeforedelete?view=word-pia"/>
   public void ContentControlBeforeDelete(IContentControl OldContentControl, bool InUndoRedo);
 
   /// <summary>
@@ -96,7 +96,7 @@ public partial interface IDocumentEvents2: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.contentcontrolonexit?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.contentcontrolonexit?view=word-pia"/>
   public void ContentControlOnExit(IContentControl ContentControl, ref bool Cancel);
 
   /// <summary>
@@ -106,7 +106,7 @@ public partial interface IDocumentEvents2: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.contentcontrolonenter?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.contentcontrolonenter?view=word-pia"/>
   public void ContentControlOnEnter(IContentControl ContentControl);
 
   /// <summary>
@@ -117,7 +117,7 @@ public partial interface IDocumentEvents2: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.contentcontrolbeforestoreupdate?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.contentcontrolbeforestoreupdate?view=word-pia"/>
   public void ContentControlBeforeStoreUpdate(IContentControl ContentControl, string Content);
 
   /// <summary>
@@ -128,7 +128,7 @@ public partial interface IDocumentEvents2: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.contentcontrolbeforecontentupdate?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.contentcontrolbeforecontentupdate?view=word-pia"/>
   public void ContentControlBeforeContentUpdate(IContentControl ContentControl, string Content);
 
   /// <summary>
@@ -142,6 +142,6 @@ public partial interface IDocumentEvents2: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.buildingblockinsert?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents2.buildingblockinsert?view=word-pia"/>
   public void BuildingBlockInsert(IRange Range, string Name, string Category, string BlockType, string Template);
 }

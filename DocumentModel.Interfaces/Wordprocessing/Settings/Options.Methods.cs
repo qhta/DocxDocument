@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options?view=word-pia"/>
 public partial interface IOptions: IModelObject
 {
   /// <summary>
@@ -14,7 +14,7 @@ public partial interface IOptions: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.get_defaultfilepath?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.get_defaultfilepath?view=word-pia"/>
   public string DefaultFilePath(DefaultFilePath Path);
 
   /// <summary>
@@ -29,6 +29,6 @@ public partial interface IOptions: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.setwphelpoptions?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.setwphelpoptions?view=word-pia"/>
   public void SetWPHelpOptions(object CommandKeyHelp, object DocNavigationKeys, object MouseSimulation, object DemoGuidance, object DemoSpeed, object HelpType);
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesoffigures?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesoffigures?view=word-pia"/>
 public partial interface ITablesOfFigures: IModelObject
 {
   /// <summary>
@@ -24,7 +24,7 @@ public partial interface ITablesOfFigures: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesoffigures.addold?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesoffigures.addold?view=word-pia"/>
   public ITableOfFigures AddOld(IRange Range, string Caption, bool IncludeLabel, bool UseHeadingStyles, 
     int UpperHeadingLevel, int LowerHeadingLevel, bool UseFields, string TableID, 
     bool RightAlignPageNumbers, bool IncludePageNumbers, string AddedStyles);

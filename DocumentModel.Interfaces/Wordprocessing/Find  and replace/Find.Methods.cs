@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find?view=word-pia"/>
 public partial interface IFind: IModelObject
 {
   /// <summary>
@@ -24,6 +24,6 @@ public partial interface IFind: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.executeold?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.executeold?view=word-pia"/>
   public bool ExecuteOld(object FindText, object MatchCase, object MatchWholeWord, object MatchWildcards, object MatchSoundsLike, object MatchAllWordForms, object Forward, object Wrap, object Format, object ReplaceWith, object Replace);
 }

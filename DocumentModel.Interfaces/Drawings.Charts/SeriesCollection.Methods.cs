@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.Charts;
 /// Represents the `SeriesCollection` interface.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection?view=office-pia` for Office interop details.
+/// See `http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection?view=office-pia` for Office interop details.
 /// </remarks>
 public partial interface ISeriesCollection: IModelCollection<ISeries>
 {
@@ -19,7 +19,7 @@ public partial interface ISeriesCollection: IModelCollection<ISeries>
   /// <param name="CategoryLabels">The `CategoryLabels` parameter.</param>
   /// <param name="Replace">The `Replace` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.add?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.add?view=office-pia"/>
   public ISeries Add
     (object Source, XlRowCol RowCol, object SeriesLabels, object CategoryLabels, object Replace);
   /// <summary>
@@ -29,7 +29,7 @@ public partial interface ISeriesCollection: IModelCollection<ISeries>
   /// <param name="RowCol">The `Rowcol` parameter.</param>
   /// <param name="CategoryLabels">The `CategoryLabels` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.extend?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.extend?view=office-pia"/>
   public object Extend(object Source, object RowCol, object CategoryLabels);
   /// <summary>
   /// Invokes `Paste`.
@@ -40,13 +40,13 @@ public partial interface ISeriesCollection: IModelCollection<ISeries>
   /// <param name="Replace">The `Replace` parameter.</param>
   /// <param name="NewSeries">The `NewSeries` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.paste?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.paste?view=office-pia"/>
   public object Paste (XlRowCol RowCol, object SeriesLabels, object CategoryLabels, object Replace, object NewSeries);
   /// <summary>
   /// Invokes `NewSeries`.
   /// </summary>
   /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.newseries?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.newseries?view=office-pia"/>
   public ISeries NewSeries();
 }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.freeformbuilder?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.freeformbuilder?view=word-pia"/>
 public partial interface IFreeformBuilder: IModelObject
 {
   /// <summary>
@@ -20,7 +20,7 @@ public partial interface IFreeformBuilder: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.freeformbuilder.addnodes?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.freeformbuilder.addnodes?view=word-pia"/>
   public void AddNodes(Drawings.SegmentType SegmentType, Drawings.EditingType EditingType, float X1, float Y1, float X2, float Y2, float X3, float Y3);
 
   /// <summary>
@@ -31,6 +31,6 @@ public partial interface IFreeformBuilder: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.freeformbuilder.converttoshape?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.freeformbuilder.converttoshape?view=word-pia"/>
   public IShape ConvertToShape(object Anchor);
 }

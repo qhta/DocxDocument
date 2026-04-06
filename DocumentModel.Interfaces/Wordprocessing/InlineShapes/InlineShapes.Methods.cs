@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes?view=word-pia"/>
 public partial interface IInlineShapes: IModelObject
 {
   /// <summary>
@@ -17,7 +17,7 @@ public partial interface IInlineShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addpicture?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addpicture?view=word-pia"/>
   public InlineShape AddPicture(string FileName, object LinkToFile, object SaveWithDocument, object Range);
 
   /// <summary>
@@ -35,7 +35,7 @@ public partial interface IInlineShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addoleobject?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addoleobject?view=word-pia"/>
   public InlineShape AddOLEObject(object ClassType, object FileName, object LinkToFile, object DisplayAsIcon, object IconFileName, object IconIndex, object IconLabel, object Range);
 
   /// <summary>
@@ -47,7 +47,7 @@ public partial interface IInlineShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addolecontrol?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addolecontrol?view=word-pia"/>
   public InlineShape AddOLEControl(object ClassType, object Range);
 
   /// <summary>
@@ -58,7 +58,7 @@ public partial interface IInlineShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.new?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.new?view=word-pia"/>
   public InlineShape New(Range Range);
 
   /// <summary>
@@ -70,7 +70,7 @@ public partial interface IInlineShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addhorizontalline?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addhorizontalline?view=word-pia"/>
   public InlineShape AddHorizontalLine(string FileName, object Range);
 
   /// <summary>
@@ -81,7 +81,7 @@ public partial interface IInlineShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addhorizontallinestandard?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addhorizontallinestandard?view=word-pia"/>
   public InlineShape AddHorizontalLineStandard(object Range);
 
   /// <summary>
@@ -93,7 +93,7 @@ public partial interface IInlineShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addpicturebullet?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addpicturebullet?view=word-pia"/>
   public InlineShape AddPictureBullet(string FileName, object Range);
 
   /// <summary>
@@ -105,7 +105,7 @@ public partial interface IInlineShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addchart?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addchart?view=word-pia"/>
   public InlineShape AddChart(object Type, object Range);
 
   /// <summary>
@@ -117,7 +117,7 @@ public partial interface IInlineShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addsmartart?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addsmartart?view=word-pia"/>
   public InlineShape AddSmartArt(object Layout, object Range);
 
   /// <summary>
@@ -133,7 +133,7 @@ public partial interface IInlineShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addwebvideo?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addwebvideo?view=word-pia"/>
   public InlineShape AddWebVideo(string EmbedCode, object VideoWidth, object VideoHeight, object PosterFrameImage, object Url, object Range);
 
   /// <summary>
@@ -147,6 +147,6 @@ public partial interface IInlineShapes: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addchart2?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addchart2?view=word-pia"/>
   public InlineShape AddChart2(int Style, object Type, object Range, object NewLayout);
 }

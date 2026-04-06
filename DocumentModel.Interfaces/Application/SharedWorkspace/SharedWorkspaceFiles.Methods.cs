@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// <summary>
 /// Represents a collection of files in a shared workspace.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefiles?view=office-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefiles?view=office-pia"/>
 public partial interface ISharedWorkspaceFiles: IModelObject
 {
   /// <summary>
@@ -16,7 +16,7 @@ public partial interface ISharedWorkspaceFiles: IModelObject
   /// <param name="OverwriteIfFileAlreadyExists">Whether to overwrite an existing file.</param>
   /// <param name="KeepInSync">Whether to keep the file synchronized.</param>
   /// <returns>The added shared workspace file.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefiles.add?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefiles.add?view=office-pia"/>
   public ISharedWorkspaceFile Add(string FileName, object ParentFolder, object OverwriteIfFileAlreadyExists, object KeepInSync);
 }
 

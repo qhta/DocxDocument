@@ -3,12 +3,12 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents a collection of HTML division objects in a web document.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivisions?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivisions?view=word-pia"/>
 public partial interface IHTMLDivisions : IModelCollection<IHTMLDivision>
 {
   /// <summary>
   /// Returns the nesting level of the HTML divisions collection.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivisions.nestinglevel?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivisions.nestinglevel?view=word-pia"/>
   public int NestingLevel { get; }
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.panes?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.panes?view=word-pia"/>
 public partial interface IPanes: IModelObject
 {
   /// <summary>
@@ -14,6 +14,6 @@ public partial interface IPanes: IModelObject
   /// <param name="SplitVertical">A value indicating whether to split the pane vertically. Pass <see langword="true"/> to split vertically; <see
   /// langword="false"/> to split horizontally.</param>
   /// <returns>A <see cref="IPane"/> object representing the newly added pane.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.panes.add?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.panes.add?view=word-pia"/>
   public IPane Add(bool SplitVertical);
 }

@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// correct automatically. This list corresponds to the list of AutoCorrect exceptions on the Other Corrections
 /// tab in the AutoCorrect Exceptions dialog box (AutoCorrect command, Tools menu).
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.othercorrectionsexceptions?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.othercorrectionsexceptions?view=word-pia"/>
 public partial interface IOtherCorrectionsExceptions : IModelCollection<IOtherCorrectionsException>
 {
 }

@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents the `SharedWorkspaceLinks` interface.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacelinks?view=office-pia` for Office interop details.
+/// See `http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacelinks?view=office-pia` for Office interop details.
 /// </remarks>
 public partial interface ISharedWorkspaceLinks: IModelObject
 {
@@ -17,7 +17,7 @@ public partial interface ISharedWorkspaceLinks: IModelObject
   /// <param name="Description">The `Description` parameter.</param>
   /// <param name="Notes">The `Notes` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacelinks.add?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacelinks.add?view=office-pia"/>
   public ISharedWorkspaceLink Add(string URL, object Description, object Notes);
 }
 

@@ -1,5 +1,7 @@
 namespace DocumentModel.Application;
 
+#pragma warning disable CS1591
+
 /// <summary>
 /// Defines placeholder delegate types for Word interop event handlers that may be absent from some generated references.
 /// </summary>

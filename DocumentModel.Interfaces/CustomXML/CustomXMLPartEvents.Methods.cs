@@ -4,7 +4,7 @@ namespace DocumentModel.CustomXml;
 /// <summary>
 /// Events interface for `CustomXMLPart` object events.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents?view=office-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents?view=office-pia"/>
 public partial interface ICustomXMLPartEvents: IModelObject
 {
   /// <summary>
@@ -12,7 +12,7 @@ public partial interface ICustomXMLPartEvents: IModelObject
   /// </summary>
   /// <param name="NewNode">The `NewNode` parameter.</param>
   /// <param name="InUndoRedo">The `InUndoRedo` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents.nodeafterinsert?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents.nodeafterinsert?view=office-pia"/>
   public void NodeAfterInsert(ICustomXMLNode NewNode, bool InUndoRedo);
   /// <summary>
   /// Raised after a custom XML node is deleted.
@@ -21,7 +21,7 @@ public partial interface ICustomXMLPartEvents: IModelObject
   /// <param name="OldParentNode">The `OldParentNode` parameter.</param>
   /// <param name="OldNextSibling">The `OldNextSibling` parameter.</param>
   /// <param name="InUndoRedo">The `InUndoRedo` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents.nodeafterdelete?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents.nodeafterdelete?view=office-pia"/>
   public void NodeAfterDelete
     (ICustomXMLNode OldNode, ICustomXMLNode OldParentNode, ICustomXMLNode OldNextSibling, bool InUndoRedo);
   /// <summary>
@@ -30,7 +30,7 @@ public partial interface ICustomXMLPartEvents: IModelObject
   /// <param name="OldNode">The `OldNode` parameter.</param>
   /// <param name="NewNode">The `NewNode` parameter.</param>
   /// <param name="InUndoRedo">The `InUndoRedo` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents.nodeafterreplace?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents.nodeafterreplace?view=office-pia"/>
   public void NodeAfterReplace(ICustomXMLNode OldNode, ICustomXMLNode NewNode, bool InUndoRedo);
 }
 

@@ -5,7 +5,7 @@ namespace DocumentModel.Application;
 /// <summary>
 /// Represents the Microsoft Office Assistant.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant?view=office-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant?view=office-pia"/>
 public partial interface IAssistant: IModelObject
 {
   /// <summary>
@@ -13,12 +13,12 @@ public partial interface IAssistant: IModelObject
   /// </summary>
   /// <param name="xLeft">The `xLeft` parameter.</param>
   /// <param name="yTop">The `yTop` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.move?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.move?view=office-pia"/>
   public void Move(int xLeft, int yTop);
   /// <summary>
   /// Displays Help for the Office Assistant.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.help?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.help?view=office-pia"/>
   public void Help();
   /// <summary>
   /// Starts the specified wizard and returns a wizard identifier.
@@ -33,7 +33,7 @@ public partial interface IAssistant: IModelObject
   /// <param name="Bottom">The `Bottom` parameter.</param>
   /// <param name="Right">The `Right` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.startwizard?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.startwizard?view=office-pia"/>
   public int StartWizard
   (bool On, string Callback, int PrivateX, object Animation, object CustomTeaser, object Top, object Left,
     object Bottom, object Right);
@@ -43,7 +43,7 @@ public partial interface IAssistant: IModelObject
   /// <param name="WizardID">The `WizardID` parameter.</param>
   /// <param name="varfSuccess">The `varfSuccess` parameter.</param>
   /// <param name="Animation">The `Animation` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.endwizard?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.endwizard?view=office-pia"/>
   public void EndWizard(int WizardID, bool varfSuccess, object Animation);
   /// <summary>
   /// Activates a wizard action for an existing wizard session.
@@ -51,12 +51,12 @@ public partial interface IAssistant: IModelObject
   /// <param name="WizardID">The `WizardID` parameter.</param>
   /// <param name="act">The `act` parameter.</param>
   /// <param name="Animation">The `Animation` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.activatewizard?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.activatewizard?view=office-pia"/>
   public void ActivateWizard(int WizardID, WizardActType act, object Animation);
   /// <summary>
   /// Resets the Assistant tips so they can be shown again.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.resettips?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.resettips?view=office-pia"/>
   public void ResetTips();
   /// <summary>
   /// Displays an alert and returns the selected action.
@@ -69,7 +69,7 @@ public partial interface IAssistant: IModelObject
   /// <param name="alq">The `alq` parameter.</param>
   /// <param name="varfSysAlert">The `varfSysAlert` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.doalert?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.doalert?view=office-pia"/>
   public int DoAlert
   (string bstrAlertTitle, string bstrAlertText, AlertButtonType alb, AlertIconType alc, AlertDefaultType ald,
     AlertCancelType alq, bool varfSysAlert);

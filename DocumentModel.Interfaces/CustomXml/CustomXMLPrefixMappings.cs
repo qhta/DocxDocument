@@ -6,12 +6,12 @@ namespace DocumentModel.CustomXml;
 /// Represents the `CustomXMLPrefixMappings` interface.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlprefixmappings?view=office-pia` for Office interop details.
+/// See `http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlprefixmappings?view=office-pia` for Office interop details.
 /// </remarks>
 /// <summary>
 /// Represents a collection of CustomXMLPrefixMapping objects.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlprefixmappings?view=office-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlprefixmappings?view=office-pia"/>
 public partial interface ICustomXMLPrefixMappings: IModelCollection<ICustomXMLPrefixMapping>
 {
 }

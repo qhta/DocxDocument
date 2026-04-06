@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindows?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindows?view=word-pia"/>
 public partial interface IProtectedViewWindows: IModelObject
 {
   /// <summary>
@@ -22,6 +22,6 @@ public partial interface IProtectedViewWindows: IModelObject
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindows.open?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindows.open?view=word-pia"/>
   public IProtectedViewWindow Open(string FileName, bool AddToRecentFiles, string PasswordDocument, bool Visible, bool OpenAndRepair);
 }

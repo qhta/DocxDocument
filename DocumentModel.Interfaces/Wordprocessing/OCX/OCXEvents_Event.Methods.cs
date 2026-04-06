@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.ocxevents_event?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.ocxevents_event?view=word-pia"/>
 public partial interface IOCXEvents_Event
 {
   /// <summary>
@@ -12,7 +12,7 @@ public partial interface IOCXEvents_Event
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.ocxevents_event.add_gotfocus?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.ocxevents_event.add_gotfocus?view=word-pia"/>
   public event App.OCXEvents_GotFocusEventHandler GotFocus;
 
 
@@ -22,7 +22,7 @@ public partial interface IOCXEvents_Event
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.ocxevents_event.add_lostfocus?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.ocxevents_event.add_lostfocus?view=word-pia"/>
   public event App.OCXEvents_LostFocusEventHandler LostFocus;
 
 }

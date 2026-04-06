@@ -6,7 +6,7 @@ namespace DocumentModel.Application;
 /// Represents the `SharedWorkspaceTasks` interface.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetasks?view=office-pia` for Office interop details.
+/// See `http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetasks?view=office-pia` for Office interop details.
 /// </remarks>
 public partial interface ISharedWorkspaceTasks: IModelObject
 {
@@ -20,7 +20,7 @@ public partial interface ISharedWorkspaceTasks: IModelObject
   /// <param name="Description">The `Description` parameter.</param>
   /// <param name="DueDate">The `DueDate` parameter.</param>
   /// <returns>The result of the operation.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetasks.add?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetasks.add?view=office-pia"/>
   public ISharedWorkspaceTask Add
     (string Title, object Status, object Priority, object Assignee, object Description, object DueDate);
 }

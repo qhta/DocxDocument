@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents?view=word-pia"/>
 public partial interface IDocuments
 {
   /// <summary>
@@ -15,7 +15,7 @@ public partial interface IDocuments
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.close?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.close?view=word-pia"/>
   public void Close(object SaveChanges, object OriginalFormat, object RouteDocument);
 
   /// <summary>
@@ -27,7 +27,7 @@ public partial interface IDocuments
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.addold?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.addold?view=word-pia"/>
   public IDocument AddOld(object Template, object NewTemplate);
 
   /// <summary>
@@ -47,7 +47,7 @@ public partial interface IDocuments
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.openold?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.openold?view=word-pia"/>
   public IDocument OpenOld(object FileName, object ConfirmConversions, object ReadOnly, object AddToRecentFiles, object PasswordDocument, object PasswordTemplate, object Revert, object WritePasswordDocument, object WritePasswordTemplate, object Format);
 
   /// <summary>
@@ -58,7 +58,7 @@ public partial interface IDocuments
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.save?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.save?view=word-pia"/>
   public void Save(object NoPrompt, object OriginalFormat);
 
   /// <summary>
@@ -72,7 +72,7 @@ public partial interface IDocuments
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.add?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.add?view=word-pia"/>
   public IDocument Add(object Template, object NewTemplate, object DocumentType, object Visible);
 
   /// <summary>
@@ -94,7 +94,7 @@ public partial interface IDocuments
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.open2000?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.open2000?view=word-pia"/>
   public IDocument Open2000(object FileName, object ConfirmConversions, object ReadOnly, object AddToRecentFiles, object PasswordDocument, object PasswordTemplate, object Revert, object WritePasswordDocument, object WritePasswordTemplate, object Format, object Encoding, object Visible);
 
   /// <summary>
@@ -104,7 +104,7 @@ public partial interface IDocuments
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.checkout?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.checkout?view=word-pia"/>
   public void CheckOut(string FileName);
 
   /// <summary>
@@ -115,7 +115,7 @@ public partial interface IDocuments
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.cancheckout?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.cancheckout?view=word-pia"/>
   public bool CanCheckOut(string FileName);
 
   /// <summary>
@@ -140,7 +140,7 @@ public partial interface IDocuments
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.open2002?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.open2002?view=word-pia"/>
   public IDocument Open2002(object FileName, object ConfirmConversions, object ReadOnly, object AddToRecentFiles, object PasswordDocument, object PasswordTemplate, object Revert, object WritePasswordDocument, object WritePasswordTemplate, object Format, object Encoding, object Visible, object OpenAndRepair, object DocumentDirection, object NoEncodingDialog);
 
   /// <summary>
@@ -166,7 +166,7 @@ public partial interface IDocuments
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.open?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.open?view=word-pia"/>
   public IDocument Open(object FileName, object ConfirmConversions, object ReadOnly, object AddToRecentFiles, object PasswordDocument, object PasswordTemplate, object Revert, object WritePasswordDocument, object WritePasswordTemplate, object Format, object Encoding, object Visible, object OpenAndRepair, object DocumentDirection, object NoEncodingDialog, object XMLTransform);
 
   /// <summary>
@@ -192,7 +192,7 @@ public partial interface IDocuments
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.opennorepairdialog?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.opennorepairdialog?view=word-pia"/>
   public IDocument OpenNoRepairDialog(object FileName, object ConfirmConversions, object ReadOnly, object AddToRecentFiles, object PasswordDocument, object PasswordTemplate, object Revert, object WritePasswordDocument, object WritePasswordTemplate, object Format, object Encoding, object Visible, object OpenAndRepair, object DocumentDirection, object NoEncodingDialog, object XMLTransform);
 
   /// <summary>
@@ -206,6 +206,6 @@ public partial interface IDocuments
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.addblogdocument?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documents.addblogdocument?view=word-pia"/>
   public IDocument AddBlogDocument(string ProviderID, string PostURL, string BlogName, string PostID);
 }

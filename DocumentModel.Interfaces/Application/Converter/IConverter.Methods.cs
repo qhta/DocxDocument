@@ -4,7 +4,7 @@ namespace DocumentModel.Application;
 /// <summary>
 /// Defines methods used by Office document converters.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter?view=office-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter?view=office-pia"/>
 public partial interface IConverter: IModelObject
 {
   /// <summary>
@@ -13,14 +13,14 @@ public partial interface IConverter: IModelObject
   /// <param name="pcap">The `pcap` parameter.</param>
   /// <param name="ppcp">The `ppcp` parameter.</param>
   /// <param name="pcuic">The `pcuic` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrinitconverter?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrinitconverter?view=office-pia"/>
   public void HrInitConverter
     (IConverterApplicationPreferences pcap, out IConverterPreferences ppcp, IConverterUICallback pcuic);
   /// <summary>
   /// Uninitializes the converter.
   /// </summary>
   /// <param name="pcuic">The `pcuic` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hruninitconverter?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hruninitconverter?view=office-pia"/>
   public void HrUninitConverter(IConverterUICallback pcuic);
   /// <summary>
   /// Imports content from a source path to a destination path.
@@ -30,7 +30,7 @@ public partial interface IConverter: IModelObject
   /// <param name="pcap">The `pcap` parameter.</param>
   /// <param name="ppcp">The `ppcp` parameter.</param>
   /// <param name="pcuic">The `pcuic` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrimport?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrimport?view=office-pia"/>
   public void HrImport
   (string bstrSourcePath, string bstrDestPath, IConverterApplicationPreferences pcap, out IConverterPreferences ppcp,
     IConverterUICallback pcuic);
@@ -43,7 +43,7 @@ public partial interface IConverter: IModelObject
   /// <param name="pcap">The `pcap` parameter.</param>
   /// <param name="ppcp">The `ppcp` parameter.</param>
   /// <param name="pcuic">The `pcuic` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrexport?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrexport?view=office-pia"/>
   public void HrExport
   (string bstrSourcePath, string bstrDestPath, string bstrClass, IConverterApplicationPreferences pcap,
     out IConverterPreferences ppcp, IConverterUICallback pcuic);
@@ -55,7 +55,7 @@ public partial interface IConverter: IModelObject
   /// <param name="pcap">The `pcap` parameter.</param>
   /// <param name="ppcp">The `ppcp` parameter.</param>
   /// <param name="pcuic">The `pcuic` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrgetformat?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrgetformat?view=office-pia"/>
   public void HrGetFormat
   (string bstrPath, out string pbstrClass, IConverterApplicationPreferences pcap, out IConverterPreferences ppcp,
     IConverterUICallback pcuic);
@@ -65,7 +65,7 @@ public partial interface IConverter: IModelObject
   /// <param name="hrErr">The `hrErr` parameter.</param>
   /// <param name="pbstrErrorMsg">The `pbstrErrorMsg` parameter.</param>
   /// <param name="pcap">The `pcap` parameter.</param>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrgeterrorstring?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrgeterrorstring?view=office-pia"/>
   public void HrGetErrorString(int hrErr, out string pbstrErrorMsg, IConverterApplicationPreferences pcap);
 }
 

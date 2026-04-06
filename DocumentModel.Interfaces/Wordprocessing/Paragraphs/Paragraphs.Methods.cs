@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs?view=word-pia"/>
 public partial interface IParagraphs: IModelObject
 {
   /// <summary>
@@ -14,6 +14,6 @@ public partial interface IParagraphs: IModelObject
   /// <param name="Range">The range within the document where the new paragraph will be inserted. This can be a Range object or a location
   /// that specifies the insertion point. Cannot be null.</param>
   /// <returns>A Paragraph object representing the newly added paragraph.</returns>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.add?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.add?view=word-pia"/>
   public IParagraph Add(object Range);
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Interfaces;
 /// <remarks>
 /// Microsoft Learn API reference.
 /// </remarks>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application?view=word-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application?view=word-pia"/>
 /// <summary>
 /// This is a primary interface in a COM coclass that is required by managed code for interoperability with the
 /// corresponding COM object. Use this primary interface only when the method you want to use shares the same name
@@ -20,7 +20,7 @@ public partial interface I_Application
 //  /// <remarks>
 //  /// Microsoft Learn API reference.
 //  /// </remarks>
-//  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.international?view=word-pia"/>
+//  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.international?view=word-pia"/>
 //  public object International(WdInternationalIndex Index);
 
 //  /// <summary>
@@ -30,7 +30,7 @@ public partial interface I_Application
 //  /// <remarks>
 //  /// Microsoft Learn API reference.
 //  /// </remarks>
-//  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_synonyminfo?view=word-pia"/>
+//  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_synonyminfo?view=word-pia"/>
 //  public SynonymInfo SynonymInfo(string Word, object LanguageID);
 
 //  /// <summary>
@@ -39,7 +39,7 @@ public partial interface I_Application
 //  /// <remarks>
 //  /// Microsoft Learn API reference.
 //  /// </remarks>
-//  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_keysboundto?view=word-pia"/>
+//  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_keysboundto?view=word-pia"/>
 //  public KeysBoundTo KeysBoundTo(WdKeyCategory KeyCategory, string Command, object CommandParameter);
 
 //  /// <summary>
@@ -48,7 +48,7 @@ public partial interface I_Application
 //  /// <remarks>
 //  /// Microsoft Learn API reference.
 //  /// </remarks>
-//  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_isobjectvalid?view=word-pia"/>
+//  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_isobjectvalid?view=word-pia"/>
 //  public bool IsObjectValid(object Object);
 
 //  /// <summary>
@@ -57,7 +57,7 @@ public partial interface I_Application
 //  /// <remarks>
 //  /// Microsoft Learn API reference.
 //  /// </remarks>
-//  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_filedialog?view=word-pia"/>
+//  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_filedialog?view=word-pia"/>
 //  public Core.FileDialog FileDialog(Core.MsoFileDialogType FileDialogType);
 
   /// <summary>
@@ -66,6 +66,6 @@ public partial interface I_Application
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.quit?view=word-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.quit?view=word-pia"/>
   public void Quit(object SaveChanges, object OriginalFormat, object RouteDocument);
 }

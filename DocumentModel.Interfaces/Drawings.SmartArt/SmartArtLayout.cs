@@ -4,28 +4,28 @@ namespace DocumentModel.Drawings.SmartArt;
 /// <summary>
 /// Represents the `SmartArtLayout` interface.
 /// </summary>
-/// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartlayout?view=office-pia"/>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartlayout?view=office-pia"/>
 public partial interface ISmartArtLayout: IModelObject
 {
   /// <summary>
   /// Gets the `Id` property.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartlayout.id?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartlayout.id?view=office-pia"/>
   public string Id { get; }
   /// <summary>
   /// Gets the `Name` property.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartlayout.name?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartlayout.name?view=office-pia"/>
   public string Name { get; }
   /// <summary>
   /// Gets the `Description` property.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartlayout.description?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartlayout.description?view=office-pia"/>
   public string Description { get; }
   /// <summary>
   /// Gets the `Category` property.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartlayout.category?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartlayout.category?view=office-pia"/>
   public string Category { get; }
 }
 

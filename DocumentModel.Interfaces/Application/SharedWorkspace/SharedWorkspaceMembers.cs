@@ -6,14 +6,14 @@ namespace DocumentModel.Application;
 /// Represents the `SharedWorkspaceMembers` interface.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacemembers?view=office-pia` for Office interop details.
+/// See `http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacemembers?view=office-pia` for Office interop details.
 /// </remarks>
 public partial interface ISharedWorkspaceMembers: IModelCollection<ISharedWorkspaceMember>
 {
   /// <summary>
   /// Gets the `ItemCountExceeded` property.
   /// </summary>
-  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacemembers.itemcountexceeded?view=office-pia"/>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacemembers.itemcountexceeded?view=office-pia"/>
   public bool ItemCountExceeded { get; }
 }
 
