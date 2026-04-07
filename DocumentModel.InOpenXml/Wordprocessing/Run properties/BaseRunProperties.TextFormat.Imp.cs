@@ -330,7 +330,7 @@ public partial class BaseRunProperties<T> : ITextFormat
   IColor? ITextFormat.Color
   {
     get => this.Color;
-    set => this.Color = value?.Val;
+    set => this.Color = value?.RGB;
   }
 
 

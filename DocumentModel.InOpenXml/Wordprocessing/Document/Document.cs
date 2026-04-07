@@ -357,6 +357,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     set => UpdateField(ref _DocumentVariables, value, nameof(DocumentVariables));
   }
   private DocumentVariables? _DocumentVariables;
+
   /// <summary>
   ///   TextFormat table for the document, providing access to font definitions used within the document.
   /// </summary>
@@ -372,6 +373,21 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   }
   private FontTable? _FontTable;
 
+
+  /// <summary>
+  ///   Document-level settings, including compatibility, protection, and view options.
+  /// </summary>
+  public DMD.Theme? Theme
+  {
+    get
+    {
+      if (_Theme == null)
+        _Theme = new DMD.Theme(this);
+      return _Theme;
+    }
+    set => UpdateField(ref _Theme, value, nameof(Theme));
+  }
+  private DMD.Theme? _Theme;
   /// <summary>
   ///   Styles for the document, providing access to style definitions used within the document.
   /// </summary>

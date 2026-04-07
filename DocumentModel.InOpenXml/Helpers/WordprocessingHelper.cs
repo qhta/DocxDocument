@@ -327,6 +327,20 @@ public static class WordprocessingHelper
     return fonts;
   }
 
+
+  /// <summary>
+  /// Retrieves the theme for the specified Wordprocessing document, creating it if necessary.
+  /// </summary>
+  /// <param name="wordDocument">The Document instance.</param>
+  /// <returns>The theme element.</returns>
+  public static DXD.Theme GetTheme(this DXPP.WordprocessingDocument wordDocument)
+  {
+    var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
+    var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
+    DXPP.ThemePart part = mainPart.ThemePart ?? mainPart.AddNewPart<DXPP.ThemePart>();
+    var theme = part.Theme ?? (part.Theme = new DXD.Theme());
+    return theme;
+  }
   /// <summary>
   /// Retrieves the Styles element for the specified Wordprocessing document, creating it if necessary.
   /// </summary>

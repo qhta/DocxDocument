@@ -5,7 +5,7 @@ namespace DocumentModel;
 /// Base class for all model elements, providing property change notification support.
 /// </summary>
 public abstract partial class ModelElement: INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem,
-  ICollectionItem, IModifiable, INotificationSource, ILoadable, IEmptyCheckable, IPropertiesProvider
+  ICollectionItem, IModifiable, INotificationSource, ILoadable, IEmptyCheckable, IPropertiesProvider, IModelObject
 {
   static ModelElement()
   {
@@ -392,8 +392,6 @@ public abstract partial class ModelElement: INotifyPropertyChanged, IEquatable<M
     get => _Parent;
   }
 
-  private object? _Parent;
-
   /// <summary>
   /// Sets the parent object to be used by the instance.
   /// </summary>
@@ -402,6 +400,8 @@ public abstract partial class ModelElement: INotifyPropertyChanged, IEquatable<M
   {
     _Parent = parent;
   }
+
+  private object? _Parent;
 
   /// <summary>
   /// Optional collection that contains this item.
@@ -414,7 +414,6 @@ public abstract partial class ModelElement: INotifyPropertyChanged, IEquatable<M
     get => _Collection;
   }
 
-  private object? _Collection;
 
   /// <summary>
   /// Sets the collection object to be used by the instance.
@@ -424,6 +423,7 @@ public abstract partial class ModelElement: INotifyPropertyChanged, IEquatable<M
   {
     _Collection = collection;
   }
+  private object? _Collection;
 
   /// <summary>
   /// Gets a value indicating whether the object has been modified since it was last saved or loaded.

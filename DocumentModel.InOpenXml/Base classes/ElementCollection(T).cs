@@ -5,8 +5,9 @@ namespace DocumentModel;
 /// Represents a collection of model elements.
 /// </summary>
 /// <typeparam name="ItemType">The type of elements contained in the collection.</typeparam>
-public abstract class ElementCollection<ItemType>: ModelElement, IElementCollection<ItemType>,
+public abstract partial class ElementCollection<ItemType>: ModelElement, IElementCollection<ItemType>,
   IEquatable<ElementCollection<ItemType>>, ICollection<ItemType>, IList, INotificationSource, IEmptyCheckable
+
   where ItemType: notnull
 {
   private readonly ObservableCollection<ItemType> _items = new();

@@ -1,11 +1,16 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Wordprocessing.Drawings;
 
-public partial class Color: IColor
+public partial class RgbColorModelHex: IColor
 {
   /// <summary>
-  /// Gets or sets the RGB+ value represented by this property.
+  /// Value of the color as RGB uint.
   /// </summary>
-  UInt32? IColor.RGB { get => this.Val; set => this.Val = value; }
+  UInt32? IColor.Val
+  {
+    get => this.Val is null ? null : (UInt32)this.Val!;
+    set => this.Val = value;
+  }
+
 
   /// <summary>
   /// Red component of the color as percentage value.
@@ -63,15 +68,13 @@ public partial class Color: IColor
   }
 
   /// <summary>
-  /// Gets or sets the name of the color represented by this property.
-  /// It may be used to specify a color by name, such as "red", "blue", etc. The actual interpretation of the name depends on the context in which it is used and may be mapped to a specific RGB value or theme color.
+  /// Name of the color. It may be used to specify a color by name, such as "red", "blue", etc.
+  /// If the color is found in the PresetColors enumeration, the corresponding RGB value will be used.
   /// </summary>
   string? IColor.Name
   {
     get
     {
-      if (this.ThemeColor is not null)
-        return this.ThemeColor.ToString();
       if (this.Val is not null)
       {
         var presetColorField = typeof(PresetColors).GetFields(BindingFlags.Public | BindingFlags.Static)
@@ -83,9 +86,7 @@ public partial class Color: IColor
     set
     {
       if (value is null)
-        this.ThemeColor = null;
-      if (Enum.TryParse<ThemeColors>(this.Val.ToString(), out var themeColor))
-        this.ThemeColor = themeColor;
+        return;
       if (Enum.TryParse<PresetColors>(this.Val.ToString(), out var presetColor))
         this.Val = (UInt32)presetColor;
       throw new ArgumentException($"The provided color name '{value}' is not recognized as a valid theme color or preset color.");
@@ -93,36 +94,20 @@ public partial class Color: IColor
   }
 
   /// <summary>
-  /// Gets or sets the theme tint represented by this property.
+  /// Tint
   /// </summary>
-  /// <remarks>
-  /// Given an RGB color defined as three hex values in RRGGBB format, the shade is applied as follows:
-  /// <list type="bullet">
-  /// <item>Convert the color to the HSL color format (values from 0 to 1)</item>
-  /// <item>Modify the luminance factor as follows:  L′ = Tint_percentage + (1 − Tint_percentage)</item>
-  /// <item>Convert the resultant HSL color to RGB</item>
-  /// </list> 
-  /// </remarks> 
   float? IColor.Tint
   {
-    get => this.ThemeTint is null ? null : 1-(float)(this.ThemeTint / 255.0);
-    set => ThemeTint = value is null ? null : (byte)System.Math.Round(1-(double)value * 255.0);
+    get => this.Tint is null ? null : (float)(this.Tint / 100000.0);
+    set => this.Tint = (value is null) ? null : (int)System.Math.Round((double)value * 100000.0);
   }
 
   /// <summary>
-  /// Gets or sets the theme shade represented by this property.
+  /// Shade 
   /// </summary>
-  /// <remarks>
-  /// Given an RGB color defined as three hex values in RRGGBB format, the shade is applied as follows:
-  /// <list type="bullet">
-  /// <item>Convert the color to the HSL color format (values from 0 to 1)</item>
-  /// <item>Modify the luminance factor as follows:  L′ =L* Shade_percentage </item>
-  /// <item>Convert the resultant HSL color to RGB</item>
-  /// </list>
-  /// </remarks>  
   float? IColor.Shade
   {
-    get => this.ThemeShade is null ? null : (float)(this.ThemeShade / 255.0);
-    set => ThemeShade = value is null ? null : (byte)System.Math.Round((double)value * 255.0);
+    get => this.Shade is null ? null : (float)(this.Shade / 100000.0);
+    set => this.Shade = (value is null) ? null : (int)System.Math.Round((double)value * 100000.0);
   }
 }

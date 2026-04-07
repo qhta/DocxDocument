@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DocumentFormat.OpenXml" Version="3.4.1" />
-    <PackageReference Include="DocumentFormat.OpenXml.Framework" Version="3.4.1" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.5.1" />
+    <PackageReference Include="DocumentFormat.OpenXml.Framework" Version="3.5.1" />
     <PackageReference Include="Qhta.Collections" Version="5.4.0" />
   </ItemGroup>
 

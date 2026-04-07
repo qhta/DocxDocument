@@ -13,6 +13,7 @@ public  sealed class FontTable : ModelElementCollection<FontDef, DXW.Fonts, DXW.
   public FontTable()
   {
   }
+
   /// <summary>
   /// Initializing constructor.
   /// </summary>

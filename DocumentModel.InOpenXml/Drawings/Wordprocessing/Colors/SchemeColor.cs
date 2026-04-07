@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents a color that references a theme color scheme with optional transformations.
 /// This class enables dynamic color theming in Word documents by referencing colors from the 
@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 /// When the document theme changes, scheme colors automatically update to match the new theme.
 /// </summary>
 [OpenXmlType(typeof(DXD.SchemeColor))]
-public partial class SchemeColor : DrawingColorBase<DXD.SchemeColor>
+public partial class SchemeColor : DrawingColor<DXD.SchemeColor>
 {
   /// <summary>
   /// Gets or sets the scheme color identifier that references a specific color role in the document theme.
@@ -34,7 +34,7 @@ public partial class SchemeColor : DrawingColorBase<DXD.SchemeColor>
   /// </para>
   /// </remarks>
   [OpenXmlProperty(nameof(DXD.SchemeColor.Val))]
-  public SchemeColors? Val { get => _val; set => UpdateField(ref _val, value, nameof(Val)); }
+  public SchemeColors? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
 
-  private SchemeColors? _val;
+  private SchemeColors? _Val;
 }

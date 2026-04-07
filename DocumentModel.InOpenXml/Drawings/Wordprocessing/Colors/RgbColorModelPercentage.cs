@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents an RGB color using percentage values with optional color transformations.
 /// This is the percentage variant of the RGB color model used in Office Open XML DrawingML, 
@@ -53,7 +53,7 @@ namespace DocumentModel.Drawings;
 /// </code>
 /// </example>
 [OpenXmlType(typeof(DXD.RgbColorModelPercentage))]
-public partial class RgbColorModelPercentage : DrawingColorBase<DXD.RgbColorModelPercentage>, SchemeBaseColor
+public partial class RgbColorModelPercentage : DrawingColor<DXD.RgbColorModelPercentage>
 {
   /// <summary>
   /// Red component as a percentage value.

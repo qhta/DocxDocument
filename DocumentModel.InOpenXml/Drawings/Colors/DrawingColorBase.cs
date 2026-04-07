@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// These modifications include tinting, shading, alpha transparency, hue/saturation/luminance adjustments
 /// and so on.
 /// </summary>
-public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlElement
+public partial class DrawingColorBase<T> : AbstractColor<T> where T : DX.OpenXmlElement
 {
   /// <summary>
   /// Tint value to lighten the color.
@@ -24,7 +24,10 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// Tint and shade are mutually exclusive; typically only one should be set.
   /// </para>
   /// </remarks>
-  public Int32? Tint { get; set; }
+  [OpenXmlElement(typeof(DXD.Tint))]
+  public Int32? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
+
+  private Int32? _Tint;
   /// <summary>
   /// Shade value to darken the color.
   /// </summary>
@@ -42,7 +45,10 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// Shade and tint are mutually exclusive; typically only one should be set.
   /// </para>
   /// </remarks>
-  public Int32? Shade { get; set; }
+  [OpenXmlElement(typeof(DXD.Shade))]
+  public Int32? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
+
+  private Int32? _Shade;
   /// <summary>
   /// Gets or sets a value indicating whether the complement (opposite) color operation is applied.
   /// </summary>
@@ -50,8 +56,10 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// When set to <see langword="true"/>, the color is transformed to its complement value on the color wheel
   /// (e.g., red becomes cyan, green becomes magenta). Default is <see langword="false"/>.
   /// </remarks>
-  [DefaultValue(false)]
-  public Boolean Complement { get; set; }
+  [OpenXmlElement(typeof(DXD.Complement))]
+  public Boolean? Complement { get => _Complement; set => UpdateField(ref _Complement, value, nameof(Complement)); }
+
+  private Boolean? _Complement;
   /// <summary>
   /// Gets or sets a value indicating whether the color inversion operation is applied.
   /// </summary>
@@ -59,8 +67,10 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// When set to <see langword="true"/>, each RGB component is inverted (255 - value),
   /// creating a negative effect. Default is <see langword="false"/>.
   /// </remarks>
-  [DefaultValue(false)]
-  public Boolean Inverse { get; set; }
+  [OpenXmlElement(typeof(DXD.Inverse))]
+  public Boolean? Inverse { get => _Inverse; set => UpdateField(ref _Inverse, value, nameof(Inverse)); }
+
+  private Boolean? _Inverse;
   /// <summary>
   /// Gets or sets a value indicating whether the color is converted to grayscale.
   /// </summary>
@@ -68,8 +78,10 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// When set to <see langword="true"/>, the color is desaturated to create a grayscale value
   /// based on the perceived luminance of the original color. Default is <see langword="false"/>.
   /// </remarks>
-  [DefaultValue(false)]
-  public Boolean Gray { get; set; }
+  [OpenXmlElement(typeof(DXD.Gray))]
+  public Boolean? Gray { get => _Gray; set => UpdateField(ref _Gray, value, nameof(Gray)); }
+
+  private Boolean? _Gray;
   /// <summary>
   /// Absolute alpha (transparency) value.
   /// </summary>
@@ -77,7 +89,10 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// Specifies the opacity of the color where 0 is fully transparent and 100000 is fully opaque (100%).
   /// Values between create semi-transparent colors. If null, full opacity (100000) is assumed.
   /// </remarks>
-  public Int32? Alpha { get; set; }
+  [OpenXmlElement(typeof(DXD.Alpha))]
+  public Int32? Alpha { get => _Alpha; set => UpdateField(ref _Alpha, value, nameof(Alpha)); }
+
+  private Int32? _Alpha;
   /// <summary>
   /// Alpha (transparency) offset adjustment.
   /// </summary>
@@ -85,7 +100,10 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// Adds or subtracts from the base alpha value. Range is typically -100000 to +100000.
   /// Positive values increase opacity, negative values increase transparency.
   /// </remarks>
-  public Int32? AlphaOffset { get; set; }
+  [OpenXmlElement(typeof(DXD.AlphaOffset))]
+  public Int32? AlphaOffset { get => _AlphaOffset; set => UpdateField(ref _AlphaOffset, value, nameof(AlphaOffset)); }
+
+  private Int32? _AlphaOffset;
   /// <summary>
   /// Alpha (transparency) modulation percentage.
   /// </summary>
@@ -93,7 +111,10 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// Multiplies the base alpha by this percentage. A value of 50000 (50%) makes the color twice as transparent.
   /// Range is 0 to 100000, where 100000 means no change.
   /// </remarks>
-  public Int32? AlphaModulation { get; set; }
+  [OpenXmlElement(typeof(DXD.AlphaModulation))]
+  public Int32? AlphaModulation { get => _AlphaModulation; set => UpdateField(ref _AlphaModulation, value, nameof(AlphaModulation)); }
+
+  private Int32? _AlphaModulation;
   /// <summary>
   /// Absolute hue value in the HSL color space.
   /// </summary>
@@ -101,7 +122,10 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// Specifies the hue angle in degrees (0-360), represented as 0-21600000 units (1/60000th of a degree).
   /// Hue represents the color's position on the color wheel: 0=red, 60=yellow, 120=green, 180=cyan, 240=blue, 300=magenta.
   /// </remarks>
-  public Int32? Hue { get; set; }
+  [OpenXmlElement(typeof(DXD.Hue))]
+  public Int32? Hue { get => _Hue; set => UpdateField(ref _Hue, value, nameof(Hue)); }
+
+  private Int32? _Hue;
   /// <summary>
   /// Hue offset adjustment in the HSL color space.
   /// </summary>
@@ -109,7 +133,10 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// Adds or subtracts from the base hue value to shift the color around the color wheel.
   /// Values wrap around (adding 360 degrees returns to the same hue).
   /// </remarks>
-  public Int32? HueOffset { get; set; }
+  [OpenXmlElement(typeof(DXD.HueOffset))]
+  public Int32? HueOffset { get => _HueOffset; set => UpdateField(ref _HueOffset, value, nameof(HueOffset)); }
+
+  private Int32? _HueOffset;
   /// <summary>
   /// Hue modulation percentage.
   /// </summary>
@@ -117,7 +144,9 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// Multiplies the base hue by this percentage. Used for relative hue adjustments.
   /// Range is 0 to 100000, where 100000 means no change.
   /// </remarks>
-  public Int32? HueModulation { get; set; }
+  public Int32? HueModulation { get => _HueModulation; set => UpdateField(ref _HueModulation, value, nameof(HueModulation)); }
+
+  private Int32? _HueModulation;
   /// <summary>
   /// Absolute saturation value in the HSL color space.
   /// </summary>
@@ -125,7 +154,10 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// Specifies the color saturation where 0 is grayscale and 100000 is fully saturated (100%).
   /// Saturation determines the intensity or vividness of the color.
   /// </remarks>
-  public Int32? Saturation { get; set; }
+  [OpenXmlElement(typeof(DXD.Saturation))]
+  public Int32? Saturation { get => _Saturation; set => UpdateField(ref _Saturation, value, nameof(Saturation)); }
+
+  private Int32? _Saturation;
   /// <summary>
   /// Saturation offset adjustment.
   /// </summary>
@@ -133,7 +165,10 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// Adds or subtracts from the base saturation value. Range is typically -100000 to +100000.
   /// Positive values make colors more vivid, negative values make them more gray.
   /// </remarks>
-  public Int32? SaturationOffset { get; set; }
+  [OpenXmlElement(typeof(DXD.SaturationOffset))]
+  public Int32? SaturationOffset { get => _SaturationOffset; set => UpdateField(ref _SaturationOffset, value, nameof(SaturationOffset)); }
+
+  private Int32? _SaturationOffset;
   /// <summary>
   /// Saturation modulation percentage.
   /// </summary>
@@ -141,7 +176,10 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// Multiplies the base saturation by this percentage. A value of 50000 (50%) reduces saturation by half.
   /// Range is 0 to 100000, where 100000 means no change. Commonly used to create muted color variations.
   /// </remarks>
-  public Int32? SaturationModulation { get; set; }
+  [OpenXmlElement(typeof(DXD.SaturationModulation))]
+  public Int32? SaturationModulation { get => _SaturationModulation; set => UpdateField(ref _SaturationModulation, value, nameof(SaturationModulation)); }
+
+  private Int32? _SaturationModulation;
   /// <summary>
   /// Absolute luminance value in the HSL color space.
   /// </summary>
@@ -149,7 +187,10 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// Specifies the brightness where 0 is black, 50000 is the color at normal brightness (50%), 
   /// and 100000 is white. Luminance determines how light or dark the color appears.
   /// </remarks>
-  public Int32? Luminance { get; set; }
+  [OpenXmlElement(typeof(DXD.Luminance))]
+  public Int32? Luminance { get => _Luminance; set => UpdateField(ref _Luminance, value, nameof(Luminance)); }
+
+  private Int32? _Luminance;
   /// <summary>
   /// Luminance offset adjustment.
   /// </summary>
@@ -157,7 +198,10 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// Adds or subtracts from the base luminance value. Range is typically -100000 to +100000.
   /// Positive values make colors lighter, negative values make them darker.
   /// </remarks>
-  public Int32? LuminanceOffset { get; set; }
+  [OpenXmlElement(typeof(DXD.LuminanceOffset))]
+  public Int32? LuminanceOffset { get => _LuminanceOffset; set => UpdateField(ref _LuminanceOffset, value, nameof(LuminanceOffset)); }
+
+  private Int32? _LuminanceOffset;
   /// <summary>
   /// Luminance modulation percentage.
   /// </summary>
@@ -165,7 +209,10 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// Multiplies the base luminance by this percentage. A value of 50000 (50%) reduces brightness by half.
   /// Range is 0 to 100000, where 100000 means no change. Commonly used to create lighter or darker variations.
   /// </remarks>
-  public Int32? LuminanceModulation { get; set; }
+  [OpenXmlElement(typeof(DXD.LuminanceModulation))]
+  public Int32? LuminanceModulation { get => _LuminanceModulation; set => UpdateField(ref _LuminanceModulation, value, nameof(LuminanceModulation)); }
+
+  private Int32? _LuminanceModulation;
   /// <summary>
   /// Absolute red channel value.
   /// </summary>
@@ -173,14 +220,20 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// Overrides the red component (0-100000 representing 0-255). 
   /// Use this to set an explicit red value independent of the base RGB color.
   /// </remarks>
-  public Int32? Red { get; set; }
+  [OpenXmlElement(typeof(DXD.Red))]
+  public Int32? Red { get => _Red; set => UpdateField(ref _Red, value, nameof(Red)); }
+
+  private Int32? _Red;
   /// <summary>
   /// Red channel offset adjustment.
   /// </summary>
   /// <remarks>
   /// Adds or subtracts from the red channel value. Range is typically -100000 to +100000.
   /// </remarks>
-  public Int32? RedOffset { get; set; }
+  [OpenXmlElement(typeof(DXD.RedOffset))]
+  public Int32? RedOffset { get => _RedOffset; set => UpdateField(ref _RedOffset, value, nameof(RedOffset)); }
+
+  private Int32? _RedOffset;
   /// <summary>
   /// Red channel modulation percentage.
   /// </summary>
@@ -188,7 +241,10 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// Multiplies the base red channel by this percentage. Range is 0 to 100000, where 100000 means no change.
   /// A value of 50000 (50%) reduces the red component by half.
   /// </remarks>
-  public Int32? RedModulation { get; set; }
+  [OpenXmlElement(typeof(DXD.RedModulation))]
+  public Int32? RedModulation { get => _RedModulation; set => UpdateField(ref _RedModulation, value, nameof(RedModulation)); }
+
+  private Int32? _RedModulation;
   /// <summary>
   /// Absolute green channel value.
   /// </summary>
@@ -196,14 +252,20 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// Overrides the green component (0-100000 representing 0-255).
   /// Use this to set an explicit green value independent of the base RGB color.
   /// </remarks>
-  public Int32? Green { get; set; }
+  [OpenXmlElement(typeof(DXD.Green))]
+  public Int32? Green { get => _Green; set => UpdateField(ref _Green, value, nameof(Green)); }
+
+  private Int32? _Green;
   /// <summary>
   /// Green channel offset adjustment.
   /// </summary>
   /// <remarks>
   /// Adds or subtracts from the green channel value. Range is typically -100000 to +100000.
   /// </remarks>
-  public Int32? GreenOffset { get; set; }
+  [OpenXmlElement(typeof(DXD.GreenOffset))]
+  public Int32? GreenOffset { get => _GreenOffset; set => UpdateField(ref _GreenOffset, value, nameof(GreenOffset)); }
+
+  private Int32? _GreenOffset;
   /// <summary>
   /// Green channel modulation percentage.
   /// </summary>
@@ -211,7 +273,10 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// Multiplies the base green channel by this percentage. Range is 0 to 100000, where 100000 means no change.
   /// A value of 50000 (50%) reduces the green component by half.
   /// </remarks>
-  public Int32? GreenModulation { get; set; }
+  [OpenXmlElement(typeof(DXD.GreenModulation))]
+  public Int32? GreenModulation { get => _GreenModulation; set => UpdateField(ref _GreenModulation, value, nameof(GreenModulation)); }
+
+  private Int32? _GreenModulation;
   /// <summary>
   /// Absolute blue channel value.
   /// </summary>
@@ -219,14 +284,20 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// Overrides the blue component (0-100000 representing 0-255).
   /// Use this to set an explicit blue value independent of the base RGB color.
   /// </remarks>
-  public Int32? Blue { get; set; }
+  [OpenXmlElement(typeof(DXD.Blue))]
+  public Int32? Blue { get => _Blue; set => UpdateField(ref _Blue, value, nameof(Blue)); }
+
+  private Int32? _Blue;
   /// <summary>
   /// Blue channel offset adjustment.
   /// </summary>
   /// <remarks>
   /// Adds or subtracts from the blue channel value. Range is typically -100000 to +100000.
   /// </remarks>
-  public Int32? BlueOffset { get; set; }
+  [OpenXmlElement(typeof(DXD.BlueOffset))]
+  public Int32? BlueOffset { get => _BlueOffset; set => UpdateField(ref _BlueOffset, value, nameof(BlueOffset)); }
+
+  private Int32? _BlueOffset;
   /// <summary>
   /// Blue channel modulation percentage.
   /// </summary>
@@ -234,7 +305,10 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// Multiplies the base blue channel by this percentage. Range is 0 to 100000, where 100000 means no change.
   /// A value of 50000 (50%) reduces the blue component by half.
   /// </remarks>
-  public Int32? BlueModulation { get; set; }
+  [OpenXmlElement(typeof(DXD.BlueModulation))]
+  public Int32? BlueModulation { get => _BlueModulation; set => UpdateField(ref _BlueModulation, value, nameof(BlueModulation)); }
+
+  private Int32? _BlueModulation;
   /// <summary>
   /// Gets or sets a value indicating whether gamma correction is applied.
   /// </summary>
@@ -243,8 +317,10 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// to convert from linear RGB space to display-corrected RGB. Default is <see langword="false"/>.
   /// Gamma correction adjusts colors to appear correct on display devices.
   /// </remarks>
-  [DefaultValue(false)]
-  public Boolean Gamma { get; set; }
+  [OpenXmlElement(typeof(DXD.Gamma))]
+  public Boolean? Gamma { get => _Gamma; set => UpdateField(ref _Gamma, value, nameof(Gamma)); }
+
+  private Boolean? _Gamma;
   /// <summary>
   /// Gets or sets a value indicating whether inverse gamma correction is applied.
   /// </summary>
@@ -253,6 +329,8 @@ public partial class DrawingColor<T> : AbstractColor<T> where T: DX.OpenXmlEleme
   /// display-corrected RGB to linear RGB space. Default is <see langword="false"/>.
   /// This is the opposite of standard gamma correction.
   /// </remarks>
-  [DefaultValue(false)]
-  public Boolean InverseGamma { get; set; }
+  [OpenXmlElement(typeof(DXD.InverseGamma))]
+  public Boolean? InverseGamma { get => _InverseGamma; set => UpdateField(ref _InverseGamma, value, nameof(InverseGamma)); }
+
+  private Boolean? _InverseGamma;
 }

@@ -29232,25 +29232,57 @@
             Full color interface, supporting both RGB and theme colors.
             </summary>
         </member>
-        <member name="P:DocumentModel.IColor.Val">
+        <member name="P:DocumentModel.IColor.RGB">
             <summary>
-            Gets or sets the hexadecimal value represented by this property.
+            Gets or sets the RGB value represented by this property.
             </summary>
         </member>
-        <member name="P:DocumentModel.IColor.ThemeColor">
+        <member name="P:DocumentModel.IColor.Red">
             <summary>
-            Gets or sets the theme color represented by this property.
+            Red component of the color as a percentage value.
             </summary>
         </member>
-        <member name="P:DocumentModel.IColor.ThemeTint">
+        <member name="P:DocumentModel.IColor.Green">
+            <summary>
+            Green component of the color as a percentage value.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.IColor.Blue">
+            <summary>
+            Blue component of the color as a percentage value.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.IColor.Name">
+            <summary>
+            Gets or sets the name of color. May be used to specify a color by name, such as "red", "blue", etc.
+            The actual interpretation of the name depends on the context in which it is used and may be mapped to a specific RGB value or theme color.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.IColor.Tint">
             <summary>
             Gets or sets the theme tint represented by this property.
-            </summary>  
+            </summary>
+            <remarks>
+            Given an RGB color defined as three hex values in RRGGBB format, the shade is applied as follows:
+            <list type="bullet">
+            <item>Convert the color to the HSL color format (values from 0 to 1)</item>
+            <item>Modify the luminance factor as follows:  L′ = Tint_percentage + (1 − Tint_percentage)</item>
+            <item>Convert the resultant HSL color to RGB</item>
+            </list> 
+            </remarks> 
         </member>
-        <member name="P:DocumentModel.IColor.ThemeShade">
+        <member name="P:DocumentModel.IColor.Shade">
             <summary>
             Gets or sets the theme shade represented by this property.
-            </summary>  
+            </summary>
+            <remarks>
+            Given an RGB color defined as three hex values in RRGGBB format, the shade is applied as follows:
+            <list type="bullet">
+            <item>Convert the color to the HSL color format (values from 0 to 1)</item>
+            <item>Modify the luminance factor as follows:  L′ =L* Shade_percentage </item>
+            <item>Convert the resultant HSL color to RGB</item>
+            </list>
+            </remarks>  
         </member>
         <member name="T:DocumentModel.Properties.ICustomProperties">
             <summary>
