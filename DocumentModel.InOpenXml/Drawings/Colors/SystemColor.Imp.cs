@@ -6,6 +6,8 @@ public partial class SystemColor : IColor
   /// Value of the color as RGB uint.
   /// </summary>
   [NotMapped]
+  [XmlIgnore]
+  [JsonIgnore]
   public UInt32? RGB
   {
     get
