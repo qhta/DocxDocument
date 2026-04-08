@@ -76,22 +76,22 @@ public partial interface IApplication : IModelObject
   //public AutoCorrect AutoCorrect { get; }
 
   ///// <summary>
-  ///// Returns a FontNames object that includes the names of all the available fonts.
+  ///// Returns a Names object that includes the names of all the available fonts.
   ///// </summary>
   ///// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.fontnames?view=word-pia"/>
-  //public FontNames FontNames { get; }
+  //public Names Names { get; }
 
   ///// <summary>
-  ///// Returns a FontNames object that includes the names of all the available landscape fonts.
+  ///// Returns a Names object that includes the names of all the available landscape fonts.
   ///// </summary>
   ///// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.landscapefontnames?view=word-pia"/>
-  //public FontNames LandscapeFontNames { get; }
+  //public Names LandscapeNames { get; }
 
   ///// <summary>
-  ///// Returns a FontNames object that includes the names of all the available portrait fonts.
+  ///// Returns a Names object that includes the names of all the available portrait fonts.
   ///// </summary>
   ///// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.portraitfontnames?view=word-pia"/>
-  //public FontNames PortraitFontNames { get; }
+  //public Names PortraitNames { get; }
 
   ///// <summary>
   ///// Returns a Languages collection that represents the proofing languages listed in the Language dialog box.

@@ -10,7 +10,7 @@ public partial class CustomXmlElement : CollectionItem
   /// </summary>
   public string? UriString { get; set; }
   /// <summary>
-  /// FontName of the custom XML element.
+  /// Name of the custom XML element.
   /// </summary>
   public string? Element { get; set; }
   /// <summary>

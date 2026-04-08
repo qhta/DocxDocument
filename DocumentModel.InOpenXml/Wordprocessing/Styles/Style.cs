@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 public partial class Style: ModelElement<DXW.Style>
 {
   /// <summary>
-  /// FontName of the style as defined in the document.
+  /// Name of the style as defined in the document.
   /// </summary>
   public string? NameLocal { get => _NameLocal; set => UpdateField(ref _NameLocal, value, nameof(NameLocal)); }
   private string? _NameLocal;

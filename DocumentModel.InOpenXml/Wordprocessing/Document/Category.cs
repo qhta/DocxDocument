@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 public partial class Category : ModelElement<DXW.Category>
 {
  /// <summary>
- /// FontName of the category associated with the entry.
+ /// Name of the category associated with the entry.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Category.Name))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }

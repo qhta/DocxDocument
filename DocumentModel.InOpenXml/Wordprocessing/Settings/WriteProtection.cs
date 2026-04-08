@@ -30,7 +30,7 @@ public partial class WriteProtection
   /// </summary>
   public UInt32? CryptographicSpinCount { get; set; }
   /// <summary>
-  /// FontName of the cryptographic provider.
+  /// Name of the cryptographic provider.
   /// </summary>
   public string? CryptographicProvider { get; set; }
   /// <summary>
@@ -58,7 +58,7 @@ public partial class WriteProtection
   /// </summary>
   public Base64Binary? Salt { get; set; }
   /// <summary>
-  /// FontName of the specific cryptographic hashing algorithm used with the salt and input password.
+  /// Name of the specific cryptographic hashing algorithm used with the salt and input password.
   /// </summary>
   public string? AlgorithmName { get; set; }
   /// <summary>

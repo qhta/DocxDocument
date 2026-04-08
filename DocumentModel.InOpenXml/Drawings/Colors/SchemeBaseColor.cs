@@ -6,10 +6,14 @@ namespace DocumentModel.Drawings;
 ///   <item><description><see cref="T:DocumentModel.Drawings.RgbColorModelHex" /></description></item>
 ///   <item><description><see cref="T:DocumentModel.Drawings.RgbColorModelPercentage" /></description></item>
 ///   <item><description><see cref="T:DocumentModel.Drawings.PresetColor" /></description></item>
-///   <item><description><see cref="T:DocumentModel.Drawings.SystemColor" /></description></item>/// </list> 
+///   <item><description><see cref="T:DocumentModel.Drawings.SystemColor" /></description></item>
 ///   <item><description><see cref="T:DocumentModel.Drawings.HslColor" /></description></item>
+/// </list>
 /// </summary>
-public partial interface SchemeBaseColor
+public partial interface ISchemeBaseColor
 {
-
+  /// <summary>
+  /// Gets the RGB color value represented by this instance, if available.
+  /// </summary>
+  public UInt32? RGB { get; }
 }

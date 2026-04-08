@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 public partial class FormFieldData : ModelElement<DXW.FormFieldData>
 {
  /// <summary>
- /// FontName of the form field, used for identification and referencing within the document.
+ /// Name of the form field, used for identification and referencing within the document.
  /// </summary>
  public string? FormFieldName { get => _FormFieldName; set => UpdateField(ref _FormFieldName, value, nameof(FormFieldName)); }
  private string? _FormFieldName;

@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 public partial class FixedCommandKeyboardCustomization
 {
   /// <summary>
-  /// FontName of the command associated with the keyboard customization.
+  /// Name of the command associated with the keyboard customization.
   /// </summary>
   public string? CommandName { get; set; }
   /// <summary>

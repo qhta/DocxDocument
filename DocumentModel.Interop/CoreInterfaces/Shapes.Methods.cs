@@ -104,7 +104,7 @@ public partial interface Shapes
   /// </summary>
   /// <param name="PresetTextEffect">The `PresetTextEffect` parameter.</param>
   /// <param name="Text">The `Text` parameter.</param>
-  /// <param name="FontName">The `FontName` parameter.</param>
+  /// <param name="Name">The `Name` parameter.</param>
   /// <param name="FontSize">The `FontSize` parameter.</param>
   /// <param name="FontBold">The `FontBold` parameter.</param>
   /// <param name="FontItalic">The `FontItalic` parameter.</param>

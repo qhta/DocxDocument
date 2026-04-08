@@ -1,6 +1,6 @@
 namespace DocumentModel.Drawings;
 
-public partial class SchemeColor: IColor
+public partial class HslColor: IColor
 {
   /// <summary>
   /// Value of the color as RGB uint.
@@ -8,30 +8,75 @@ public partial class SchemeColor: IColor
   [NotMapped]
   public UInt32? RGB
   {
-    get
+    get 
     {
-     if (this.Val is null)
-        return null;
-     var ColorScheme = ParentDocument?.Theme?.ThemeElements?.ColorScheme?.GetColor(this.Val.Value);
-      return ColorScheme?.RGB;
+      if (HueValue is null || SatValue is null || LumValue is null) return null;
+      var h = NormalizeHue(HueValue.Value / 60000.0);
+      var s = Clamp01(SatValue.Value / 100000.0);
+      var l = Clamp01(LumValue.Value / 100000.0);
+
+      var c = (1.0 - System.Math.Abs(2.0 * l - 1.0)) * s;
+      var x = c * (1.0 - System.Math.Abs((h / 60.0) % 2.0 - 1.0));
+      var m = l - c / 2.0;
+
+      var (r1, g1, b1) = h switch
+      {
+        < 60.0 => (c, x, 0.0),
+        < 120.0 => (x, c, 0.0),
+        < 180.0 => (0.0, c, x),
+        < 240.0 => (0.0, x, c),
+        < 300.0 => (x, 0.0, c),
+        _ => (c, 0.0, x),
+      };
+
+      var r = (UInt32)System.Math.Round((r1 + m) * 255.0);
+      var g = (UInt32)System.Math.Round((g1 + m) * 255.0);
+      var b = (UInt32)System.Math.Round((b1 + m) * 255.0);
+      return (r << 16) | (g << 8) | b;
     }
     set
     {
-      if (value == null)
+      if (value is null)
       {
-        this.Val = null;
+        HueValue = null;
+        SatValue = null;
+        LumValue = null;
         return;
       }
-      var schemeColorField = typeof(SchemeColors).GetFields(BindingFlags.Public | BindingFlags.Static)
-        .FirstOrDefault(f => f.GetValue(null)?.Equals(value) == true);
-      if (schemeColorField != null)
-      {
-        this.Val = (SchemeColors)schemeColorField.GetValue(null)!;
-        return;
-      }
+
+      var r = ((value.Value >> 16) & 0xFF) / 255.0;
+      var g = ((value.Value >> 8) & 0xFF) / 255.0;
+      var b = (value.Value & 0xFF) / 255.0;
+
+      var max = System.Math.Max(r, System.Math.Max(g, b));
+      var min = System.Math.Min(r, System.Math.Min(g, b));
+      var delta = max - min;
+
+      var l = (max + min) / 2.0;
+      var s = delta == 0.0 ? 0.0 : delta / (1.0 - System.Math.Abs(2.0 * l - 1.0));
+
+      double h;
+      if (delta == 0.0)
+        h = 0.0;
+      else if (max == r)
+        h = 60.0 * (((g - b) / delta) % 6.0);
+      else if (max == g)
+        h = 60.0 * (((b - r) / delta) + 2.0);
       else
-        throw new ArgumentException($"The provided RGB value '{value}' does not correspond to any known scheme color.");
+        h = 60.0 * (((r - g) / delta) + 4.0);
+
+      h = NormalizeHue(h);
+      HueValue = (Int32)System.Math.Round(h * 60000.0);
+      SatValue = (Int32)System.Math.Round(Clamp01(s) * 100000.0);
+      LumValue = (Int32)System.Math.Round(Clamp01(l) * 100000.0);
     }
+  }
+
+  private static double Clamp01(double value) => value < 0.0 ? 0.0 : value > 1.0 ? 1.0 : value;
+  private static double NormalizeHue(double hue)
+  {
+    hue %= 360.0;
+    return hue < 0.0 ? hue + 360.0 : hue;
   }
 
   /// <summary>
@@ -90,8 +135,8 @@ public partial class SchemeColor: IColor
   }
 
   /// <summary>
-  /// Name of the color. It may be used to specify a color by name, such as "Accent1", "Accent2", etc.
-  /// If the color is not found in the SchemeColors enumeration, the exception is raised.
+  /// Name of the color. It may be used to specify a color by name, such as "red", "blue", etc.
+  /// If the color is found in the PresetColors enumeration, the corresponding RGB value will be used.
   /// </summary>
   string? IColor.Name
   {
@@ -99,9 +144,9 @@ public partial class SchemeColor: IColor
     {
       if (this.RGB is not null)
       {
-        var schemeColorField = typeof(SchemeColors).GetFields(BindingFlags.Public | BindingFlags.Static)
+        var presetColorField = typeof(PresetColors).GetFields(BindingFlags.Public | BindingFlags.Static)
           .FirstOrDefault(f => f.GetValue(null)?.Equals(this.RGB.Value) == true);
-        return schemeColorField?.Name;
+        return presetColorField?.Name;
       }
       return null;
     }
@@ -109,12 +154,13 @@ public partial class SchemeColor: IColor
     {
       if (value is null)
         return;
-      if (Enum.TryParse<SchemeColors>(value, out var schemeColor))
+
+      if (Enum.TryParse<PresetColors>(value, out var presetColor))
       {
-        this.Val = schemeColor;
+        this.RGB = (UInt32)presetColor;
         return;
       }
-      throw new ArgumentException($"The provided color name '{value}' is not recognized as a valid scheme color.");
+      throw new ArgumentException($"The provided color name '{value}' is not recognized as a valid theme color or preset color.");
     }
   }
 

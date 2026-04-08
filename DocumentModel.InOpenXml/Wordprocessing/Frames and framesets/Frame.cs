@@ -13,7 +13,7 @@ public partial class Frame : ModelElement<DXW.Frame>, IFramesetItem
  public UInt32? FrameSize { get => _FrameSize; set => UpdateField(ref _FrameSize, value, nameof(FrameSize)); }
  private UInt32? _FrameSize;
  /// <summary>
- /// FontName of the frame, used for identification and targeting within the frameset.
+ /// Name of the frame, used for identification and targeting within the frameset.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Frame.FrameName))]
  public string? FrameName { get => _FrameName; set => UpdateField(ref _FrameName, value, nameof(FrameName)); }

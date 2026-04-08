@@ -76,7 +76,7 @@ public enum WordDialog
   /// Points, Underline, Color, StrikeThrough, Superscript, Subscript, Hidden, SmallCaps, AllCaps, Spacing,
   /// Position, Kerning, KerningMin, Default, Tab, Font, Bold, Italic, DoubleStrikeThrough, Shadow, Outline, Emboss,
   /// Engrave, Scale, Animations, CharAccent, FontMajor, FontLowAnsi, FontHighAnsi, CharacterWidthGrid, ColorRGB,
-  /// UnderlineColor, PointsBi, ColorBi, FontNameBi, BoldBi, ItalicBi,
+  /// UnderlineColor, PointsBi, ColorBi, NameBi, BoldBi, ItalicBi,
   /// </summary>
   FormatAddrFonts = 103,
   /// <summary>
@@ -207,7 +207,7 @@ public enum WordDialog
   /// Points, Underline, Color, StrikeThrough, Superscript, Subscript, Hidden, SmallCaps, AllCaps, Spacing,
   /// Position, Kerning, KerningMin, Default, Tab, Font, Bold, Italic, DoubleStrikeThrough, Shadow, Outline, Emboss,
   /// Engrave, Scale, Animations, CharAccent, FontMajor, FontLowAnsi, FontHighAnsi, CharacterWidthGrid, ColorRGB,
-  /// UnderlineColor, PointsBi, ColorBi, FontNameBi, BoldBi, ItalicBi,
+  /// UnderlineColor, PointsBi, ColorBi, NameBi, BoldBi, ItalicBi,
   /// </summary>
   FormatFont = 174,
   /// <summary>
@@ -230,7 +230,7 @@ public enum WordDialog
   /// Tab, PaperSize, TopMargin, BottomMargin, LeftMargin, RightMargin, Gutter, PageWidth, PageHeight, Orientation,
   /// FirstPage, OtherPages, VertAlign, ApplyPropsTo, Default, FacingPages, HeaderDistance, FooterDistance,
   /// SectionStart, OddAndEvenPages, DifferentFirstPage, Endnotes, LineNum, StartingNum, FromText, CountBy, NumMode,
-  /// TwoOnOne, GutterPosition, LayoutMode, CharsLine, LinesPage, CharPitch, LinePitch, DocFontName, DocFontSize,
+  /// TwoOnOne, GutterPosition, LayoutMode, CharsLine, LinesPage, CharPitch, LinePitch, DocName, DocFontSize,
   /// PageColumns, TextFlow, FirstPageOnLeft, SectionType, RTLAlignment, FolioPrint
   /// </summary>
   FilePageSetup = 178,
@@ -238,7 +238,7 @@ public enum WordDialog
   /// Tab, PaperSize, TopMargin, BottomMargin, LeftMargin, RightMargin, Gutter, PageWidth, PageHeight, Orientation,
   /// FirstPage, OtherPages, VertAlign, ApplyPropsTo, Default, FacingPages, HeaderDistance, FooterDistance,
   /// SectionStart, OddAndEvenPages, DifferentFirstPage, Endnotes, LineNum, StartingNum, FromText, CountBy, NumMode,
-  /// TwoOnOne, GutterPosition, LayoutMode, CharsLine, LinesPage, CharPitch, LinePitch, DocFontName, DocFontSize,
+  /// TwoOnOne, GutterPosition, LayoutMode, CharsLine, LinesPage, CharPitch, LinePitch, DocName, DocFontSize,
   /// PageColumns, TextFlow, FirstPageOnLeft, SectionType, RTLAlignment
   /// </summary>
   FileDocumentLayout = 178,

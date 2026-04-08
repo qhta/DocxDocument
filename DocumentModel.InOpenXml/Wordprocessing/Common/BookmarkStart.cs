@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 public partial class BookmarkStart : MarkupStartRangeElement<DXW.BookmarkStart, DXW.BookmarkEnd>
 {
  /// <summary>
- /// FontName of the bookmark. If multiple bookmarks share the same name, only the first (by document order) is maintained; subsequent bookmarks with the same name are ignored.
+ /// Name of the bookmark. If multiple bookmarks share the same name, only the first (by document order) is maintained; subsequent bookmarks with the same name are ignored.
  /// </summary>
  public string? Name { get; set; }
  /// <summary>

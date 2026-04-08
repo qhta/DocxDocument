@@ -13,7 +13,7 @@ public partial class Comment : ModelElement<DXW.Comment>
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
  private string? _Id;
  /// <summary>
- /// FontName of the author who created this comment, displayed in the comment balloon and review pane for attribution.
+ /// Name of the author who created this comment, displayed in the comment balloon and review pane for attribution.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Comment.Author))]
  public string? Author { get => _Author; set => UpdateField(ref _Author, value, nameof(Author)); }

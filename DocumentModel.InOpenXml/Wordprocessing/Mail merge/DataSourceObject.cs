@@ -13,7 +13,7 @@ public partial class DataSourceObject : ModelElement<DXW.DataSourceObject>
  public string? UdlConnectionString { get => _UdlConnectionString; set => UpdateField(ref _UdlConnectionString, value, nameof(UdlConnectionString)); }
  private string? _UdlConnectionString;
  /// <summary>
- /// FontName of the data source table used for the mail merge.
+ /// Name of the data source table used for the mail merge.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DataSourceObject.DataSourceTableName))]
  public string? DataSourceTableName { get => _DataSourceTableName; set => UpdateField(ref _DataSourceTableName, value, nameof(DataSourceTableName)); }

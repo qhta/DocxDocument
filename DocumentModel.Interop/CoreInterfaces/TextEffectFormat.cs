@@ -23,7 +23,7 @@ public partial interface TextEffectFormat: InteropObject
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.fontitalic?view=office-pia"/>
   public TriState FontItalic { get; set; }
   /// <summary>
-  /// Gets or sets the `FontName` property.
+  /// Gets or sets the `Name` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.fontname?view=office-pia"/>
   public string FontName { get; set; }

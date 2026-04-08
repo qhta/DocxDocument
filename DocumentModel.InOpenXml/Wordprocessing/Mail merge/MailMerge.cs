@@ -98,7 +98,7 @@ public partial class MailMerge: ModelElement<DXW.MailMerge>
   }
   private MailMergeDestination? _Destination;
   /// <summary>
-  /// FontName of the column containing email addresses for email merges.
+  /// Name of the column containing email addresses for email merges.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.MailMerge.AddressFieldName))]
   public string? AddressFieldName

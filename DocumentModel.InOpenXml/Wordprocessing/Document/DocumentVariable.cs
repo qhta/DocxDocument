@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 public partial class DocumentVariable : ModelElement<DXW.DocumentVariable>
 {
  /// <summary>
- /// FontName of the document variable, specifying the unique identifier for the variable.
+ /// Name of the document variable, specifying the unique identifier for the variable.
  /// </summary>
  [XmlAttribute]
  [OpenXmlProperty(nameof(DXW.DocumentVariable.Name))]

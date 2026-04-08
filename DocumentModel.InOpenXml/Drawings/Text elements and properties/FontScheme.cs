@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 public partial class FontScheme : ModelElement<DXD.FontScheme>, IExtendableElement
 {
  /// <summary>
- ///   FontName of the font scheme.
+ ///   Name of the font scheme.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.FontScheme.Name))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }

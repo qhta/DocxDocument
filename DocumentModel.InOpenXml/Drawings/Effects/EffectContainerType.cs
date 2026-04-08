@@ -27,11 +27,11 @@ public partial class EffectContainerType : ModelElement<DXD.EffectContainerType>
  public EffectContainment? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
  private EffectContainment? _Type;
  /// <summary>
- ///   FontName of the effect container for identification or documentation purposes.
+ ///   Name of the effect container for identification or documentation purposes.
  /// </summary>
  /// <remarks>
  ///   <para>
- ///   The <b>FontName</b> property provides a human-readable identifier for the effect container, which can be used
+ ///   The <b>Name</b> property provides a human-readable identifier for the effect container, which can be used
  ///   for referencing, documentation, or semantic grouping of effects. Names help distinguish between different
  ///   effect containers within a document or drawing context.
  ///   </para>

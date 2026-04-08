@@ -47,7 +47,7 @@ namespace DocumentModel.Drawings;
 /// </code>
 /// </example>
 [OpenXmlType(typeof(DXD.RgbColorModelHex))]
-public partial class RgbColorModelHex : DrawingColorBase<DXD.RgbColorModelHex>, SchemeBaseColor
+public partial class RgbColorModelHex : DrawingColorBase<DXD.RgbColorModelHex>, ISchemeBaseColor
 {
   /// <summary>
   /// Base RGB color value in hexadecimal format.

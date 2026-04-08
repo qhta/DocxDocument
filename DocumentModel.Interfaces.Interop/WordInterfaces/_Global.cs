@@ -66,17 +66,17 @@ public partial interface _Global: InteropObject
   public AutoCorrect AutoCorrect { get; }
 
   /// <summary>
-  /// Returns a FontNames object that includes the names of all available fonts.
+  /// Returns a Names object that includes the names of all available fonts.
   /// </summary>
   public FontNames FontNames { get; }
 
   /// <summary>
-  /// Returns a FontNames object that includes the names of all available landscape fonts.
+  /// Returns a Names object that includes the names of all available landscape fonts.
   /// </summary>
   public FontNames LandscapeFontNames { get; }
 
   /// <summary>
-  /// Returns a FontNames object that includes the names of all available portrait fonts.
+  /// Returns a Names object that includes the names of all available portrait fonts.
   /// </summary>
   public FontNames PortraitFontNames { get; }
 

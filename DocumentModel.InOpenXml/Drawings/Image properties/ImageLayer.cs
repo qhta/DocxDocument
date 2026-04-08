@@ -10,7 +10,7 @@ public partial class ImageLayer : ModelElementCollection<ImageEffect, DXO10D.Ima
  /// </summary>
  public string? Embed { get; set; }
  /// <summary>
- /// FontName of the image layer.
+ /// Name of the image layer.
  /// </summary>
  public string? Name { get; set; }
  /// <summary>

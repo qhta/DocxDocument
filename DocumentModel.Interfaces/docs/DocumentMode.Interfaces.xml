@@ -10581,19 +10581,19 @@
         </member>
         <member name="P:DocumentModel.Wordprocessing.I_Global.IFontNames">
             <summary>
-            Returns a FontNames object that includes the names of all available fonts.
+            Returns a Names object that includes the names of all available fonts.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.fontnames?view=word-pia"/>
         </member>
         <member name="P:DocumentModel.Wordprocessing.I_Global.LandscapeIFontNames">
             <summary>
-            Returns a FontNames object that includes the names of all available landscape fonts.
+            Returns a Names object that includes the names of all available landscape fonts.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.landscapefontnames?view=word-pia"/>
         </member>
         <member name="P:DocumentModel.Wordprocessing.I_Global.PortraitIFontNames">
             <summary>
-            Returns a FontNames object that includes the names of all available portrait fonts.
+            Returns a Names object that includes the names of all available portrait fonts.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.portraitfontnames?view=word-pia"/>
         </member>
@@ -36196,7 +36196,7 @@
             <summary>
             Invokes `InsertSymbol`.
             </summary>
-            <param name="FontName">The `FontName` parameter.</param>
+            <param name="FontName">The `Name` parameter.</param>
             <param name="CharNumber">The `CharNumber` parameter.</param>
             <param name="Unicode">The `Unicode` parameter.</param>
             <returns>The result of the operation.</returns>

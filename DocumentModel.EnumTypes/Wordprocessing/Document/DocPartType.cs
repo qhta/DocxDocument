@@ -17,7 +17,7 @@ public enum DocPartType
   [OpenXmlEnumValue(nameof(DXW.DocPartValues.Normal))]
   Normal,
   /// <summary>
-  ///   Automatically Replace FontName With Content.
+  ///   Automatically Replace Name With Content.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.DocPartValues.AutoExp))]
   AutoExp,

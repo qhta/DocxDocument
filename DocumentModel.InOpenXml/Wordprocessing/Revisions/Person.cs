@@ -12,7 +12,7 @@ public partial class Person : ModelElement<DXO13W.Person>, ICollectionItem
  public string? Contact { get => _Contact; set => UpdateField(ref _Contact, value, nameof(Contact)); }
  private string? _Contact;
  /// <summary>
- /// FontName of the author associated with the revision or document change.
+ /// Name of the author associated with the revision or document change.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13W.Person.Author))]
  public string? Author { get => _Author; set => UpdateField(ref _Author, value, nameof(Author)); }

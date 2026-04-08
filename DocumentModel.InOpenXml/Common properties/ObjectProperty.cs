@@ -5,7 +5,7 @@ namespace DocumentModel;
 public abstract partial class ObjectProperty
 {
   /// <summary>
-  /// FontName of the property.
+  /// Name of the property.
   /// </summary>
   public string? Name { get; set; }
 }

@@ -16,7 +16,7 @@ public partial class NonVisualDrawingProperties<T>: ModelElement<T> where T: DX.
   }
   private UInt32? _Id;
   /// <summary>
-  ///   FontName compatible with Object Model (non-unique).
+  ///   Name compatible with Object Model (non-unique).
   /// </summary>
   [OpenXmlProperty(nameof(DXD.NonVisualDrawingProperties.Name))]
   public string? Name

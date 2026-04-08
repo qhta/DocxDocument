@@ -5,7 +5,8 @@ public partial class RgbColorModelHex: IColor
   /// <summary>
   /// Value of the color as RGB uint.
   /// </summary>
-  UInt32? IColor.RGB
+  [NotMapped]
+  public UInt32? RGB
   {
     get => this.Val is null ? null : (UInt32)this.Val!;
     set => this.Val = value;

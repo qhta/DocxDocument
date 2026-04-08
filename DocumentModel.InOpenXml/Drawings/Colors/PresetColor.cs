@@ -62,7 +62,7 @@ namespace DocumentModel.Drawings;
 /// </code>
 /// </example>
 [OpenXmlType(typeof(DXD.PresetColor))]
-public partial class PresetColor : DrawingColorBase<DXD.PresetColor>, SchemeBaseColor
+public partial class PresetColor : DrawingColorBase<DXD.PresetColor>, ISchemeBaseColor
 {
   /// <summary>
   /// Gets or sets the preset color name that defines the base color.

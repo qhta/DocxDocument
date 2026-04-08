@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 public partial class ShapeGuide : ModelElement<DXD.ShapeGuide>
 {
  /// <summary>
- ///   FontName of the shape guide.
+ ///   Name of the shape guide.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.ShapeGuide.Name))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }

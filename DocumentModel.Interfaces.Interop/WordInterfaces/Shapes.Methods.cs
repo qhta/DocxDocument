@@ -95,7 +95,7 @@ public partial interface Shapes
   /// </summary>
   /// <param name="PresetTextEffect">The preset text effect.</param>
   /// <param name="Text">The text for the effect.</param>
-  /// <param name="FontName">The font name.</param>
+  /// <param name="Name">The font name.</param>
   /// <param name="FontSize">The font size.</param>
   /// <param name="FontBold">true for bold font; otherwise, false.</param>
   /// <param name="FontItalic">true for italic font; otherwise, false.</param>

@@ -15,7 +15,7 @@ namespace DocumentModel;
 public partial class ThemeFamily : ModelElement<DXO13T.ThemeFamily>
 {
  /// <summary>
- /// FontName of the theme family.
+ /// Name of the theme family.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13T.ThemeFamily.Name))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }

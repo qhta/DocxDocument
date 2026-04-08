@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 public partial class FormatScheme : ModelElement<DXD.FormatScheme>
 {
  /// <summary>
- ///   FontName of the format scheme.
+ ///   Name of the format scheme.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.FormatScheme.Name))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }

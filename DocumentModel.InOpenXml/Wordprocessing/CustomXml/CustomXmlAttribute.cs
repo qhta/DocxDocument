@@ -12,7 +12,7 @@ public partial class CustomXmlAttribute : ModelElement<DXW.CustomXmlAttribute>
  public string? UriString { get => _UriString; set => UpdateField(ref _UriString, value, nameof(UriString)); }
  private string? _UriString;
  /// <summary>
- /// FontName of the custom XML attribute.
+ /// Name of the custom XML attribute.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.CustomXmlAttribute.Name))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }

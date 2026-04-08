@@ -12,7 +12,7 @@ public partial class EmbeddedWavAudioFileType : ModelElement<DXD.EmbeddedWavAudi
  public string? Embed { get => _Embed; set => UpdateField(ref _Embed, value, nameof(Embed)); }
  private string? _Embed;
  /// <summary>
- ///   FontName of the sound.
+ ///   Name of the sound.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.EmbeddedWavAudioFileType.Name))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }

@@ -39,7 +39,7 @@ public partial interface TextRange2
   /// <summary>
   /// Invokes `InsertSymbol`.
   /// </summary>
-  /// <param name="FontName">The `FontName` parameter.</param>
+  /// <param name="Name">The `Name` parameter.</param>
   /// <param name="CharNumber">The `CharNumber` parameter.</param>
   /// <param name="Unicode">The `Unicode` parameter.</param>
   /// <returns>The result of the operation.</returns>

@@ -13,7 +13,7 @@ public partial class FieldMapData : ModelElement<DXW.FieldMapData>
  public MailMergeOdsoField? MailMergeFieldType { get => _MailMergeFieldType; set => UpdateField(ref _MailMergeFieldType, value, nameof(MailMergeFieldType)); }
  private MailMergeOdsoField? _MailMergeFieldType;
  /// <summary>
- /// FontName of the data source column being mapped.
+ /// Name of the data source column being mapped.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FieldMapData.Name))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }

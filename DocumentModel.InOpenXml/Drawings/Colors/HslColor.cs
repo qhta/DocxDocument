@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a color using the Hue, Saturation, and Luminance (HSL) color model, with additional color adjustment properties.
 /// </summary>
 [OpenXmlType(typeof(DXD.HslColor))]
-public partial class HslColor : DrawingColorBase<DXD.HslColor>, SchemeBaseColor
+public partial class HslColor : DrawingColorBase<DXD.HslColor>, ISchemeBaseColor
 {
  /// <summary>
  /// Base hue value.

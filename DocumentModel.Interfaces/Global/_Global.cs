@@ -79,19 +79,19 @@ public partial interface I_Global: IModelObject
   public IAutoCorrect AutoCorrect { get; }
 
   /// <summary>
-  /// Returns a FontNames object that includes the names of all available fonts.
+  /// Returns a Names object that includes the names of all available fonts.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.fontnames?view=word-pia"/>
   public IFontNames IFontNames { get; }
 
   /// <summary>
-  /// Returns a FontNames object that includes the names of all available landscape fonts.
+  /// Returns a Names object that includes the names of all available landscape fonts.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.landscapefontnames?view=word-pia"/>
   public IFontNames LandscapeIFontNames { get; }
 
   /// <summary>
-  /// Returns a FontNames object that includes the names of all available portrait fonts.
+  /// Returns a Names object that includes the names of all available portrait fonts.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.portraitfontnames?view=word-pia"/>
   public IFontNames PortraitIFontNames { get; }

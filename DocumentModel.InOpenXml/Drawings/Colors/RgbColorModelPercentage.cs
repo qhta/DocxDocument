@@ -53,7 +53,7 @@ namespace DocumentModel.Drawings;
 /// </code>
 /// </example>
 [OpenXmlType(typeof(DXD.RgbColorModelPercentage))]
-public partial class RgbColorModelPercentage : DrawingColorBase<DXD.RgbColorModelPercentage>, SchemeBaseColor
+public partial class RgbColorModelPercentage : DrawingColorBase<DXD.RgbColorModelPercentage>, ISchemeBaseColor
 {
   /// <summary>
   /// Red component as a percentage value.

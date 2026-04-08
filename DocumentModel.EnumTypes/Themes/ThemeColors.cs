@@ -7,88 +7,88 @@ namespace DocumentModel;
 public enum ThemeColors
 {
   /// <summary>
-  ///   Dark 1 Theme Color.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Dark1))]
-  Dark1,
-  /// <summary>
-  ///   Light 1 Theme Color.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Light1))]
-  Light1,
-  /// <summary>
-  ///   Dark 2 Theme Color.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Dark2))]
-  Dark2,
-  /// <summary>
-  ///   Light 2 Theme Color.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Light2))]
-  Light2,
-  /// <summary>
-  ///   Accent 1 Theme Color.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Accent1))]
-  Accent1,
-  /// <summary>
-  ///   Accent 2 Theme Color.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Accent2))]
-  Accent2,
-  /// <summary>
-  ///   Accent 3 Theme Color.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Accent3))]
-  Accent3,
-  /// <summary>
-  ///   Accent 4 Theme Color.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Accent4))]
-  Accent4,
-  /// <summary>
-  ///   Accent 5 Theme Color.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Accent5))]
-  Accent5,
-  /// <summary>
-  ///   Accent 6 Theme Color.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Accent6))]
-  Accent6,
-  /// <summary>
-  ///   IHyperlink Theme Color.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Hyperlink))]
-  Hyperlink,
-  /// <summary>
-  ///   Followed IHyperlink Theme Color.
-  /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.FollowedHyperlink))]
-  FollowedHyperlink,
-  /// <summary>
   ///   No Theme Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.None))]
-  None,
+  None = 0,
   /// <summary>
-  ///   Background 1 Theme Color.
+  ///   Dark Color 1.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Background1))]
-  Background1,
+  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Dark1))]
+  Dark1 = 1,
   /// <summary>
-  ///   Text 1 Theme Color.
+  ///   Light Color 1.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Light1))]
+  Light1 = 2,
+  /// <summary>
+  ///   Dark Color 2.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Dark2))]
+  Dark2 = 3,
+  /// <summary>
+  ///   Light Color 2.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Light2))]
+  Light2 = 4,
+  /// <summary>
+  ///   Accent Color 1.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Accent1))]
+  Accent1 = 5,
+  /// <summary>
+  ///   Accent Color 2.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Accent2))]
+  Accent2 = 6,
+  /// <summary>
+  ///   Accent Color 3.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Accent3))]
+  Accent3 = 7,
+  /// <summary>
+  ///   Accent Color 4.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Accent4))]
+  Accent4 = 8,
+  /// <summary>
+  ///   Accent Color 5.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Accent5))]
+  Accent5 = 9,
+  /// <summary>
+  ///   Accent Color 6.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Accent6))]
+  Accent6 = 10,
+  /// <summary>
+  ///   IHyperlink Color.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Hyperlink))]
+  Hyperlink = 11,
+  /// <summary>
+  ///   Followed IHyperlink Color.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.FollowedHyperlink))]
+  FollowedHyperlink = 12,
+  /// <summary>
+  ///   Text Color 1.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Text1))]
-  Text1,
+  Text1 = 17,
   /// <summary>
-  ///   Background 2 Theme Color.
+  ///   Background Color 2.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Background2))]
-  Background2,
+  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Background1))]
+  Background1 = 18,
   /// <summary>
-  ///   Text 2 Theme Color.
+  ///   Text Color 2.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Text2))]
-  Text2
+  Text2 = 19,
+  /// <summary>
+  ///   Background Color 1.
+  /// </summary>
+  [OpenXmlEnumValue(nameof(DXW.ThemeColorValues.Background2))]
+  Background2 = 20,
 }

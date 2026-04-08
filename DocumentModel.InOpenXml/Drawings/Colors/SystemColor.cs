@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings;
 /// theme and accessibility settings, providing better integration with the desktop environment.
 /// </summary>
 [OpenXmlType(typeof(DXD.SystemColor))]
-public partial class SystemColor : DrawingColorBase<DXD.SystemColor>, SchemeBaseColor
+public partial class SystemColor : DrawingColorBase<DXD.SystemColor>, ISchemeBaseColor
 {
   /// <summary>
   /// Gets or sets the system color identifier that references a specific OS-defined color.

@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 public partial class CompatibilitySetting: ModelElement<DXW.CompatibilitySetting>
 {
   /// <summary>
-  /// FontName of the compatibility setting, specifying the type of compatibility option.
+  /// Name of the compatibility setting, specifying the type of compatibility option.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.CompatibilitySetting.Name))]
   public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }

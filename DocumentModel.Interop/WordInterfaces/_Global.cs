@@ -79,19 +79,19 @@ public partial interface _Global: InteropObject
   public AutoCorrect AutoCorrect { get; }
 
   /// <summary>
-  /// Returns a FontNames object that includes the names of all available fonts.
+  /// Returns a Names object that includes the names of all available fonts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.fontnames?view=word-pia"/>
   public FontNames FontNames { get; }
 
   /// <summary>
-  /// Returns a FontNames object that includes the names of all available landscape fonts.
+  /// Returns a Names object that includes the names of all available landscape fonts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.landscapefontnames?view=word-pia"/>
   public FontNames LandscapeFontNames { get; }
 
   /// <summary>
-  /// Returns a FontNames object that includes the names of all available portrait fonts.
+  /// Returns a Names object that includes the names of all available portrait fonts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.portraitfontnames?view=word-pia"/>
   public FontNames PortraitFontNames { get; }

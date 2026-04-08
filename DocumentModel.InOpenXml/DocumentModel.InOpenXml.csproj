@@ -39,6 +39,7 @@
     <Compile Include="Common properties\BuiltInProperty.Imp.cs" />
     <Compile Include="Common properties\CustomProperties.Imp.cs" />
     <Compile Include="Common properties\CustomProperty.Imp.cs" />
+    <Compile Include="Drawings\Colors\HslColor.Imp.cs" />
     <Compile Include="Drawings\Colors\SchemeColor.Imp.cs" />
     <Compile Include="Drawings\Colors\PresetColor.Imp.cs" />
     <Compile Include="Drawings\Colors\RgbColorModelPercentage.Imp.cs" />
