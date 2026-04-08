@@ -67,8 +67,8 @@ public class AddPrivateFieldsWithUpdate
     // No blank line before generated backing field
     text = Regex.Replace(
       text,
-      @"(public\s+[^\r\n]+\{\s*get\s*=>\s*_[^;]+;\s*set\s*=>\s*UpdateField\([^\r\n]+;\s*\}\r?\n)\r?\n(\s*private\s+)",
-      "$1$2");
+      @"}(\r?\n)+(\s*private\s+)",
+      "}\r\n$2");
 
     // Exactly one blank line after generated backing field (before XML docs)
     text = Regex.Replace(

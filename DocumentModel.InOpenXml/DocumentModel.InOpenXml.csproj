@@ -16,11 +16,8 @@
   <ItemGroup>
     <Compile Remove="**\*.Methods.cs" />
     <Compile Remove="**\*.Imp.cs" />
-    <Compile Remove="Drawings\Wordprocessing\Colors\**" />
     <Compile Remove="VariantTypes\Enums\**" />
-    <EmbeddedResource Remove="Drawings\Wordprocessing\Colors\**" />
     <EmbeddedResource Remove="VariantTypes\Enums\**" />
-    <None Remove="Drawings\Wordprocessing\Colors\**" />
     <None Remove="VariantTypes\Enums\**" />
 
   </ItemGroup>
@@ -45,6 +42,8 @@
     <Compile Include="Drawings\Colors\RgbColorModelPercentage.Imp.cs" />
     <Compile Include="Drawings\Colors\RgbColorModelHex.Imp.cs" />
     <Compile Include="Drawings\Colors\SystemColor.Imp.cs" />
+    <Compile Include="Wordprocessing.Drawings\Colors\RgbColorModelHex.Imp.cs" />
+    <Compile Include="Wordprocessing.Drawings\Colors\SchemeColor.Imp.cs" />
     <Compile Include="Wordprocessing\Common\Color.Imp.cs" />
     <Compile Include="Wordprocessing\Document\Document.Imp.cs" />
     <Compile Include="Wordprocessing\Run properties\BaseRunProperties.TextFormat.Imp.cs" />

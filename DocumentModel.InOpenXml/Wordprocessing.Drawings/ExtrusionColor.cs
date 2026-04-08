@@ -9,8 +9,8 @@ public partial class ExtrusionColor : ModelElement<DXO10W.ExtrusionColor>
  /// <summary>
  /// The RGB color value used for the extrusion, allowing precise color specification.
  /// </summary>
- public RgbColor? RgbColor { get => _RgbColor; set => UpdateField(ref _RgbColor, value, nameof(RgbColor)); }
- private RgbColor? _RgbColor;
+ public RgbColorModelHex? RgbColor { get => _RgbColor; set => UpdateField(ref _RgbColor, value, nameof(RgbColor)); }
+ private RgbColorModelHex? _RgbColor;
  /// <summary>
  /// The scheme color used for the extrusion, enabling the use of document-defined color schemes.
  /// </summary>

@@ -15,8 +15,8 @@ public partial class GradientStop : ModelElement<DXO10W.GradientStop>
  /// <summary>
  /// The RGB color value for the gradient stop, allowing precise color specification.
  /// </summary>
- public RgbColor? RgbColor { get => _RgbColor; set => UpdateField(ref _RgbColor, value, nameof(RgbColor)); }
- private RgbColor? _RgbColor;
+ public RgbColorModelHex? RgbColor { get => _RgbColor; set => UpdateField(ref _RgbColor, value, nameof(RgbColor)); }
+ private RgbColorModelHex? _RgbColor;
  /// <summary>
  /// The scheme color for the gradient stop, enabling the use of document-defined color schemes.
  /// </summary>

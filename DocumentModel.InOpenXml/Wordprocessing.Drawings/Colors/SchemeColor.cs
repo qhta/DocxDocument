@@ -5,8 +5,8 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// document's theme (e.g., Accent1, Dark1, Light2) rather than using fixed RGB values.
 /// When the document theme changes, scheme colors automatically update to match the new theme.
 /// </summary>
-[OpenXmlType(typeof(DXD.SchemeColor))]
-public partial class SchemeColor : DrawingColor<DXD.SchemeColor>
+[OpenXmlType(typeof(DXO10W.SchemeColor))]
+public partial class SchemeColor : WordColorBase<DXO10W.SchemeColor>
 {
   /// <summary>
   /// Gets or sets the scheme color identifier that references a specific color role in the document theme.
@@ -33,8 +33,8 @@ public partial class SchemeColor : DrawingColor<DXD.SchemeColor>
   /// require compatibility with Office 2010 or higher to display correctly.
   /// </para>
   /// </remarks>
-  [OpenXmlProperty(nameof(DXD.SchemeColor.Val))]
-  public SchemeColors? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+  [OpenXmlProperty(nameof(DXO10W.SchemeColor.Val))]
+  public SchemeColors? Val { get => _val; set => UpdateField(ref _val, value, nameof(Val)); }
 
-  private SchemeColors? _Val;
+  private SchemeColors? _val;
 }

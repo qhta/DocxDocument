@@ -32,7 +32,7 @@ public partial class ExtBaseRunProperties<T>: BaseRunProperties<T> where T: DX.O
   /// <summary>
   /// Glow effect, a colored, blurred outline added outside the edges of text.
   /// </summary>
-  public Glow? Glow { get; set; }
+  public DMWD.Glow? Glow { get; set; }
   /// <summary>
   /// Shadow effect for the run (Office 2010+).
   /// </summary>
@@ -40,7 +40,7 @@ public partial class ExtBaseRunProperties<T>: BaseRunProperties<T> where T: DX.O
   /// <summary>
   /// 3-D reflection properties for the run (Office 2010+).
   /// </summary>
-  public Reflection? Reflection { get; set; }
+  public DMWD.Reflection? Reflection { get; set; }
   /// <summary>
   /// Text outline effect for the run (Office 2010+).
   /// </summary>
@@ -48,7 +48,7 @@ public partial class ExtBaseRunProperties<T>: BaseRunProperties<T> where T: DX.O
   /// <summary>
   /// Text fill effect for the run (Office 2010+).
   /// </summary>
-  public FillTextEffect? FillTextEffect { get; set; }
+  public DMWD.FillTextEffect? FillTextEffect { get; set; }
   /// <summary>
   /// 3D scene properties for the run (Office 2010+).
   /// </summary>

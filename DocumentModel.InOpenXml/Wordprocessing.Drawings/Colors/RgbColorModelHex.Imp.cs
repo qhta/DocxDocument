@@ -5,7 +5,8 @@ public partial class RgbColorModelHex: IColor
   /// <summary>
   /// Value of the color as RGB uint.
   /// </summary>
-  UInt32? IColor.Val
+  [NotMapped]
+  public UInt32? RGB
   {
     get => this.Val is null ? null : (UInt32)this.Val!;
     set => this.Val = value;
@@ -68,8 +69,9 @@ public partial class RgbColorModelHex: IColor
   }
 
   /// <summary>
-  /// Name of the color. It may be used to specify a color by name, such as "red", "blue", etc.
-  /// If the color is found in the PresetColors enumeration, the corresponding RGB value will be used.
+  /// Name of the color. It may be used to specify a color by name, such as "Red", "Blue", etc
+  /// or a scheme color name like "Accent1", "Accent2", etc.
+  /// If the color is not found in the PresetColors enumeration, the exception is raised.
   /// </summary>
   string? IColor.Name
   {
@@ -87,27 +89,30 @@ public partial class RgbColorModelHex: IColor
     {
       if (value is null)
         return;
-      if (Enum.TryParse<PresetColors>(this.Val.ToString(), out var presetColor))
+      if (Enum.TryParse<PresetColors>(value, out var presetColor))
+      {
         this.Val = (UInt32)presetColor;
+        return;
+      }
       throw new ArgumentException($"The provided color name '{value}' is not recognized as a valid theme color or preset color.");
     }
   }
 
   /// <summary>
-  /// Tint
+  /// Tint modification of the color, represented as a percentage value between 0 and 1.
   /// </summary>
   float? IColor.Tint
   {
     get => this.Tint is null ? null : (float)(this.Tint / 100000.0);
-    set => this.Tint = (value is null) ? null : (int)System.Math.Round((double)value * 100000.0);
+    set => this.Tint = value is null ? null : (int?)System.Math.Round((double)(value.Value * 100000.0));
   }
 
   /// <summary>
-  /// Shade 
+  /// Shade modification of the color, represented as a percentage value between 0 and 1.
   /// </summary>
   float? IColor.Shade
   {
     get => this.Shade is null ? null : (float)(this.Shade / 100000.0);
-    set => this.Shade = (value is null) ? null : (int)System.Math.Round((double)value * 100000.0);
+    set => this.Shade = value is null ? null : (int?)System.Math.Round((double)(value.Value * 100000.0));
   }
 }

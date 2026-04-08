@@ -1,4 +1,4 @@
-namespace DocumentModel;
+namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 ///   Defines the SolidColorFillProperties Class.
 /// </summary>

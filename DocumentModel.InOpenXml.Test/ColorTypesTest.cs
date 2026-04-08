@@ -43,7 +43,9 @@ public class ColorTypesTest: _AbstractTestClass
       "DocumentModel.Drawings.RgbColorModelPercentage",
       "DocumentModel.Drawings.SchemeColor",
       "DocumentModel.Drawings.SystemColor",
-      "DocumentModel.Wordprocessing.Color"
+      "DocumentModel.Wordprocessing.Color",
+      "DocumentModel.Wordprocessing.Drawings.RgbColorModelHex",
+      "DocumentModel.Wordprocessing.Drawings.SchemeColor",
     }.OrderBy(s => s).ToList();
 
     if (!discovered.SequenceEqual(expected))
@@ -291,6 +293,18 @@ public class ColorTypesTest: _AbstractTestClass
         ThemeColor = ThemeColors.Text1,
         ThemeTint = 40,
         ThemeShade = 20,
+      },
+      "DocumentModel.Wordprocessing.Drawings.RgbColorModelHex" => new DocumentModel.Wordprocessing.Drawings.RgbColorModelHex
+      {
+        Val = (HexColor)0x336699,
+        Tint = 10000,
+        Shade = 5000,
+      },
+      "DocumentModel.Wordprocessing.Drawings.SchemeColor" => new DocumentModel.Wordprocessing.Drawings.SchemeColor
+      {
+        Val = SchemeColors.Accent3,
+        Tint = 10000,
+        Shade = 5000,
       },
       _ => throw new NotSupportedException($"Unsupported IColor type '{colorType.FullName}'.")
     };

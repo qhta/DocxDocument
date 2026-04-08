@@ -239,10 +239,10 @@ public partial class BaseRunProperties<T> : ITextFormat
   /// True if the specified font is formatted as shadowed. Can be True, False, or Undefined.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.shadow?view=word-pia"/>
-  OnOff? ITextFormat.Shadow
+  OnOff? ITextFormat.HasShadow
   {
-    get => this.Shadow.ToOnOff(); 
-    set => this.Shadow = value.ToBoolean();
+    get => this.HasShadow.ToOnOff(); 
+    set => this.HasShadow = value.ToBoolean();
   }
 
   /// <summary>

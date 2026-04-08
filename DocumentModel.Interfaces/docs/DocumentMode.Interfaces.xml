@@ -17645,7 +17645,7 @@
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.scaling?view=word-pia"/>
         </member>
-        <member name="P:DocumentModel.Wordprocessing.ITextFormat.Shadow">
+        <member name="P:DocumentModel.Wordprocessing.ITextFormat.HasShadow">
             <summary>
             True if the specified font is formatted as shadowed. Can be True, False, or Undefined.
             </summary>

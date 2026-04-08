@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 /// Represents the fill text effect for a text run, providing options for no fill, solid color fill, or gradient fill.
 /// This class enables advanced text fill formatting in WordprocessingML documents.
@@ -22,6 +22,6 @@ public partial class FillTextEffect : ModelElement<DXO10W.FillTextEffect>
  /// Gradient fill properties for the text, specifying a gradient color fill effect.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.FillTextEffect.GradientFillProperties))]
- public DMWD.GradientFillProperties? GradientFillProperties { get => _GradientFillProperties; set => UpdateField(ref _GradientFillProperties, value, nameof(GradientFillProperties)); }
- private DMWD.GradientFillProperties? _GradientFillProperties;
+ public GradientFillProperties? GradientFillProperties { get => _GradientFillProperties; set => UpdateField(ref _GradientFillProperties, value, nameof(GradientFillProperties)); }
+ private GradientFillProperties? _GradientFillProperties;
 }

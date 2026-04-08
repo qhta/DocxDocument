@@ -125,7 +125,7 @@ public partial interface ITextFormat
   /// True if the specified font is formatted as shadowed. Can be True, False, or Undefined.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.shadow?view=word-pia"/>
-  public OnOff? Shadow { get; set; }
+  public OnOff? HasShadow { get; set; }
 
   /// <summary>
   /// True if the text is formatted as outlined.
