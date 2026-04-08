@@ -1,6 +1,6 @@
 namespace DocumentModel.Drawings;
 
-public partial class PresetColor: IColor
+public partial class PresetColor : IColor
 {
   /// <summary>
   /// Value of the color as RGB uint.
@@ -16,21 +16,30 @@ public partial class PresetColor: IColor
         this.Val = null;
         return;
       }
-      var presetColorFields = typeof(PresetColors).GetFields(BindingFlags.Public | BindingFlags.Static)
-        .ToDictionary(f => f.Name, f => (UInt32)f.GetValue(null)!);
-
+      if (_presetColorLookup == null)
+      {
+        _presetColorLookup = new();
+        var _presetColors = typeof(PresetColors).GetFields(BindingFlags.Public | BindingFlags.Static)
+                .Where(f => f.FieldType == typeof(PresetColors)).ToArray();
+        foreach (var field in _presetColors)
+        {
+          var colorValue = (UInt32)field.GetValue(null)!;
+          if (!_presetColorLookup.ContainsKey(colorValue))
+            _presetColorLookup[colorValue] = (PresetColors)field.GetValue(null)!;
+        }
+      }
       var presetColorField = typeof(PresetColors).GetFields(BindingFlags.Public | BindingFlags.Static)
         .FirstOrDefault(f => ((UInt32)f.GetValue(null)!).Equals(value) == true);
-      if (presetColorField != null)
+      if (_presetColorLookup .TryGetValue(value.Value, out var presetColor))
       {
-        this.Val = (PresetColors)presetColorField.GetValue(null)!;
+        this.Val = presetColor!;
         return;
       }
       else
         throw new ArgumentException($"The provided RGB value '{((uint)value):X6}' does not correspond to any known preset color.");
     }
   }
-
+  private Dictionary<UInt32, PresetColors>? _presetColorLookup = null!;
 
   /// <summary>
   /// Red component of the color as percentage value.

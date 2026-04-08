@@ -8,6 +8,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 /// <summary>
 /// Rewrites model classes so auto-properties become backed by private fields with UpdateField notifications.
@@ -39,9 +40,43 @@ public class AddPrivateFieldsWithUpdate
     var newRoot = rewriter.Visit(root);
     if (rewriter.Changed)
     {
-      File.WriteAllText(filePath, newRoot.NormalizeWhitespace("  ").ToFullString());
+      var text = newRoot.NormalizeWhitespace("  ").ToFullString();
+      text = FixBackingFieldSpacing(text);
+      File.WriteAllText(filePath, text);
       Console.WriteLine($"Updated: {filePath}");
     }
+  }
+
+  /// <summary>
+  /// Applies spacing cleanup for generated backing fields in the specified C# file.
+  /// </summary>
+  /// <param name="filePath">The file to rewrite in place.</param>
+  public static void RunFixBackingFieldSpacing(string filePath)
+  {
+    var text = File.ReadAllText(filePath);
+    var updatedText = FixBackingFieldSpacing(text);
+    if (!string.Equals(text, updatedText, StringComparison.Ordinal))
+    {
+      File.WriteAllText(filePath, updatedText);
+      Console.WriteLine($"Updated spacing: {filePath}");
+    }
+  }
+
+  private static string FixBackingFieldSpacing(string text)
+  {
+    // No blank line before generated backing field
+    text = Regex.Replace(
+      text,
+      @"(public\s+[^\r\n]+\{\s*get\s*=>\s*_[^;]+;\s*set\s*=>\s*UpdateField\([^\r\n]+;\s*\}\r?\n)\r?\n(\s*private\s+)",
+      "$1$2");
+
+    // Exactly one blank line after generated backing field (before XML docs)
+    text = Regex.Replace(
+      text,
+      @"(\s*private\s+[^\r\n;]+;)(\r?\n)+(\s*///\s*<summary>)",
+      "$1\r\n\r\n$3");
+
+    return text;
   }
 }
 
@@ -101,12 +136,14 @@ public class ModelElementPropertyRewriter: CSharpSyntaxRewriter
                         SyntaxFactory.SingletonSeparatedList(
                           SyntaxFactory.Argument(SyntaxFactory.IdentifierName(propName)))))),
                   }))))).WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken))
-          ]))).WithTrailingTrivia(prop.GetTrailingTrivia());
+          ]))).WithTrailingTrivia(SyntaxFactory.TriviaList(SyntaxFactory.CarriageReturnLineFeed));
           var field = SyntaxFactory
             .FieldDeclaration(SyntaxFactory.VariableDeclaration(prop.Type)
               .WithVariables(SyntaxFactory.SingletonSeparatedList(SyntaxFactory.VariableDeclarator(fieldName))))
             .WithModifiers(SyntaxFactory.TokenList(SyntaxFactory.Token(SyntaxKind.PrivateKeyword)))
-            .WithTrailingTrivia(SyntaxFactory.ElasticCarriageReturnLineFeed);
+            .WithTrailingTrivia(SyntaxFactory.TriviaList(
+              SyntaxFactory.CarriageReturnLineFeed,
+              SyntaxFactory.CarriageReturnLineFeed));
           toReplace.Add((newProp, i));
           toInsert.Add((field, i + 1));
           Changed = true;

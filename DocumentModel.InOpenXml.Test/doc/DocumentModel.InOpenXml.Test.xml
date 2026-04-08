@@ -580,6 +580,25 @@
             <param name="colorType">The concrete color implementation type.</param>
             <returns>A populated color instance.</returns>
         </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.CreateDocumentWithInitializedThemePart">
+            <summary>
+            Creates a document context initialized with a theme and color scheme.
+            </summary>
+            <returns>Document context for color tests.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.AttachToDocumentContext(System.Object,DocumentModel.Wordprocessing.Document)">
+            <summary>
+            Attaches a color instance to the document context to enable ParentDocument-dependent behavior.
+            </summary>
+            <param name="color">Color instance to attach.</param>
+            <param name="document">Document context containing initialized theme data.</param>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.InitializeThemePartWithColorScheme(DocumentModel.Wordprocessing.Document)">
+            <summary>
+            Initializes the document theme part with a basic color scheme.
+            </summary>
+            <param name="document">Target document whose theme should be initialized.</param>
+        </member>
         <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.SerializeObjectToXml(System.Object)">
             <summary>
             Serializes an object to XML using its runtime type.

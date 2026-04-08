@@ -8,6 +8,9 @@ public abstract partial class ModelElement : IModelObject, IDocumentElement
   /// </summary>
   /// <remarks>This property traverses the parent or collection hierarchy to locate the nearest containing
   /// document. If the element is not part of a document, the property returns null.</remarks>
+  [NotMapped]
+  [XmlIgnore]
+  [JsonIgnore]
   public DMW.Document? ParentDocument
   {
     get

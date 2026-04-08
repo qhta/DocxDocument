@@ -1,6 +1,6 @@
 namespace DocumentModel.Drawings;
 
-public partial class SystemColor: IColor
+public partial class SystemColor : IColor
 {
   /// <summary>
   /// Value of the color as RGB uint.
@@ -10,6 +10,8 @@ public partial class SystemColor: IColor
   {
     get
     {
+      if (LastColor is not null)
+        return LastColor;
       if (this.Val is null)
         return null;
       var systemColor = this.Val.Value switch
@@ -48,24 +50,9 @@ public partial class SystemColor: IColor
       };
       return LastColor = (UInt32)(systemColor.ToArgb() & 0x00FFFFFF);
     }
-    set
-    {
-      if (value == null)
-      {
-        this.Val = null;
-        return;
-      }
-      var systemColorField = typeof(SystemColors).GetFields(BindingFlags.Public | BindingFlags.Static)
-        .FirstOrDefault(f => f.GetValue(null)?.Equals(value) == true);
-      if (systemColorField != null)
-      {
-        this.Val = (SystemColors)systemColorField.GetValue(null)!;
-        return;
-      }
-      else
-        throw new ArgumentException($"The provided RGB value '{value}' does not correspond to any known System color.");
-    }
+    set => LastColor = value;
   }
+
 
   /// <summary>
   /// Red component of the color as percentage value.

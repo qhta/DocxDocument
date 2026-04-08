@@ -32,6 +32,3 @@ using Microsoft.VisualStudio.Shell;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: ProvideBindingRedirection(AssemblyName = "DocumentFormat.OpenXml", NewVersion = "3.4.1.0", OldVersionLowerBound = "0.0.0.0", OldVersionUpperBound = "3.4.1.0")]
-[assembly: ProvideBindingRedirection(AssemblyName = "DocumentFormat.OpenXml.Framework", NewVersion = "3.4.1.0", OldVersionLowerBound = "0.0.0.0", OldVersionUpperBound = "3.4.1.0")]
-[assembly: ProvideBindingRedirection(AssemblyName = "System.Text.Encoding.CodePages", NewVersion = "8.0.0.0", OldVersionLowerBound = "0.0.0.0", OldVersionUpperBound = "8.0.0.0")]

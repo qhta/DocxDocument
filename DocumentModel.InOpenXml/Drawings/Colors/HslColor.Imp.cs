@@ -6,6 +6,8 @@ public partial class HslColor: IColor
   /// Value of the color as RGB uint.
   /// </summary>
   [NotMapped]
+  [XmlIgnore]
+  [JsonIgnore]
   public UInt32? RGB
   {
     get 
@@ -85,6 +87,9 @@ public partial class HslColor: IColor
   /// This is derived from the RGB+ value, where the red component is extracted and converted to a percentage.
   /// Setting this property will update the RGB+ value accordingly, modifying only the red component while preserving the green and blue components.
   /// </summary>
+  [NotMapped]
+  [XmlIgnore]
+  [JsonIgnore]
   float? IColor.Red
   {
     get => this.RGB is null ? null : (float)(((this.RGB >> 16) & 0xFF) / 255.0);
@@ -103,6 +108,9 @@ public partial class HslColor: IColor
   /// This is derived from the RGB+ value, where the green component is extracted and converted to a percentage.
   /// Setting this property will update the RGB+ value accordingly, modifying only the green component while preserving the red and blue components.
   /// </summary>
+  [NotMapped]
+  [XmlIgnore]
+  [JsonIgnore]
   float? IColor.Green
   {
     get => this.RGB is null ? null : (float)(((this.RGB >> 8) & 0xFF) / 255.0);
@@ -122,6 +130,9 @@ public partial class HslColor: IColor
   /// This is derived from the RGB+ value, where the blue component is extracted and converted to a percentage.
   /// Setting this property will update the RGB+ value accordingly, modifying only the blue component while preserving the red and green components.
   /// </summary>
+  [NotMapped]
+  [XmlIgnore]
+  [JsonIgnore]
   float? IColor.Blue
   {
     get => this.RGB is null ? null : (float)((this.RGB & 0xFF) / 255.0);
@@ -138,6 +149,9 @@ public partial class HslColor: IColor
   /// Name of the color. It may be used to specify a color by name, such as "red", "blue", etc.
   /// If the color is found in the PresetColors enumeration, the corresponding RGB value will be used.
   /// </summary>
+  [NotMapped]
+  [XmlIgnore]
+  [JsonIgnore]
   string? IColor.Name
   {
     get
@@ -167,6 +181,9 @@ public partial class HslColor: IColor
   /// <summary>
   /// Tint modification of the color, represented as a percentage value between 0 and 1.
   /// </summary>
+  [NotMapped]
+  [XmlIgnore]
+  [JsonIgnore]
   float? IColor.Tint
   {
     get => this.Tint is null ? null : (float)(this.Tint / 100000.0);
@@ -176,6 +193,9 @@ public partial class HslColor: IColor
   /// <summary>
   /// Shade modification of the color, represented as a percentage value between 0 and 1.
   /// </summary>
+  [NotMapped]
+  [XmlIgnore]
+  [JsonIgnore]
   float? IColor.Shade
   {
     get => this.Shade is null ? null : (float)(this.Shade / 100000.0);

@@ -5,16 +5,24 @@ namespace DocumentModel.Drawings;
 [OpenXmlType(typeof(DXD.HslColor))]
 public partial class HslColor : DrawingColorBase<DXD.HslColor>, ISchemeBaseColor
 {
- /// <summary>
- /// Base hue value.
- /// </summary>
- public Int32? HueValue { get; set; }
- /// <summary>
- /// Base saturation value.
- /// </summary>
- public Int32? SatValue { get; set; }
- /// <summary>
- /// Base luminance value.
- /// </summary>
- public Int32? LumValue { get; set; }
+  /// <summary>
+  /// Base hue value.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.HslColor.HueValue))]
+  public Int32? HueValue { get => _HueValue; set => UpdateField(ref _HueValue, value, nameof(HueValue)); }
+  private Int32? _HueValue;
+
+  /// <summary>
+  /// Base saturation value.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.HslColor.SatValue))]
+  public Int32? SatValue { get => _SatValue; set => UpdateField(ref _SatValue, value, nameof(SatValue)); }
+  private Int32? _SatValue;
+
+  /// <summary>
+  /// Base luminance value.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXD.HslColor.LumValue))]
+  public Int32? LumValue { get => _LumValue; set => UpdateField(ref _LumValue, value, nameof(LumValue)); }
+  private Int32? _LumValue;
 }

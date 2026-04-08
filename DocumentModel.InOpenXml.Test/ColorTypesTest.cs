@@ -67,9 +67,11 @@ public class ColorTypesTest: _AbstractTestClass
   static bool TestXmlSerialization()
   {
     Console.WriteLine("--- XML Serialization ---");
+    var document = CreateDocumentWithInitializedThemePart();
     foreach (var colorType in GetIColorTypes())
     {
       var testData = CreateSampleColor(colorType);
+      AttachToDocumentContext(testData, document);
       var xmlString = SerializeObjectToXml(testData);
       Console.WriteLine($"Serialized XML ({colorType.Name}):\n{xmlString}");
 
@@ -79,6 +81,7 @@ public class ColorTypesTest: _AbstractTestClass
         Console.WriteLine($"✗ XML Deserialization returned null for '{colorType.Name}'");
         return false;
       }
+      AttachToDocumentContext(deserialized, document);
 
       if (!TestHelper.CompareTestData(colorType, testData, deserialized, out var propName))
       {
@@ -98,9 +101,11 @@ public class ColorTypesTest: _AbstractTestClass
   static bool TestJsonSerialization()
   {
     Console.WriteLine("--- JSON Serialization ---");
+    var document = CreateDocumentWithInitializedThemePart();
     foreach (var colorType in GetIColorTypes())
     {
       var testData = CreateSampleColor(colorType);
+      AttachToDocumentContext(testData, document);
       var jsonString = JsonSerializer.Serialize(testData, colorType, JsonConfig.Options);
       Console.WriteLine($"Serialized JSON ({colorType.Name}):\n{jsonString}");
 
@@ -110,6 +115,7 @@ public class ColorTypesTest: _AbstractTestClass
         Console.WriteLine($"✗ JSON Deserialization returned null for '{colorType.Name}'");
         return false;
       }
+      AttachToDocumentContext(deserialized, document);
 
       if (!TestHelper.CompareTestData(colorType, testData, deserialized, out var propName))
       {
@@ -129,9 +135,11 @@ public class ColorTypesTest: _AbstractTestClass
   static bool TestIColorAccessors()
   {
     Console.WriteLine("--- IColor Accessors ---");
+    var document = CreateDocumentWithInitializedThemePart();
     foreach (var colorType in GetIColorTypes())
     {
       var testData = CreateSampleColor(colorType);
+      AttachToDocumentContext(testData, document);
       var iColorType = colorType.GetInterfaces().First(i => i.Name == "IColor");
 
       foreach (var propName in new[] { "Red", "Green", "Blue", "Name", "Tint", "Shade" })
@@ -179,6 +187,7 @@ public class ColorTypesTest: _AbstractTestClass
   static bool TestEdgeCases()
   {
     Console.WriteLine("--- Edge Cases ---");
+    var document = CreateDocumentWithInitializedThemePart();
     foreach (var colorType in GetIColorTypes())
     {
       var empty = Activator.CreateInstance(colorType);
@@ -187,6 +196,7 @@ public class ColorTypesTest: _AbstractTestClass
         Console.WriteLine($"✗ Could not create empty instance of '{colorType.Name}'");
         return false;
       }
+      AttachToDocumentContext(empty, document);
 
       var xml = SerializeObjectToXml(empty);
       var xmlDeserialized = DeserializeObjectFromXml(colorType, xml);
@@ -195,6 +205,7 @@ public class ColorTypesTest: _AbstractTestClass
         Console.WriteLine($"✗ Edge case XML deserialization failed for '{colorType.Name}'");
         return false;
       }
+      AttachToDocumentContext(xmlDeserialized, document);
 
       var json = JsonSerializer.Serialize(empty, colorType, JsonConfig.Options);
       var jsonDeserialized = JsonSerializer.Deserialize(json, colorType, JsonConfig.Options);
@@ -203,6 +214,7 @@ public class ColorTypesTest: _AbstractTestClass
         Console.WriteLine($"✗ Edge case JSON deserialization failed for '{colorType.Name}'");
         return false;
       }
+      AttachToDocumentContext(jsonDeserialized, document);
     }
 
     Console.WriteLine("✓ Edge case tests passed\n");
@@ -282,6 +294,28 @@ public class ColorTypesTest: _AbstractTestClass
       },
       _ => throw new NotSupportedException($"Unsupported IColor type '{colorType.FullName}'.")
     };
+  }
+
+  /// <summary>
+  /// Creates a document context initialized with a theme and color scheme.
+  /// </summary>
+  /// <returns>Document context for color tests.</returns>
+  static DocumentModel.Wordprocessing.Document CreateDocumentWithInitializedThemePart()
+  {
+    var document = new DocumentModel.Wordprocessing.Document();
+    InitializeThemePartWithColorScheme(document);
+    return document;
+  }
+
+  /// <summary>
+  /// Attaches a color instance to the document context to enable ParentDocument-dependent behavior.
+  /// </summary>
+  /// <param name="color">Color instance to attach.</param>
+  /// <param name="document">Document context containing initialized theme data.</param>
+  static void AttachToDocumentContext(object color, DocumentModel.Wordprocessing.Document document)
+  {
+    if (color is ModelElement modelElement)
+      modelElement.SetParent(document);
   }
 
   /// <summary>

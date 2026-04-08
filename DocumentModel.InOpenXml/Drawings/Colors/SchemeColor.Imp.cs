@@ -1,6 +1,6 @@
 namespace DocumentModel.Drawings;
 
-public partial class SchemeColor: IColor
+public partial class SchemeColor : IColor
 {
   /// <summary>
   /// Value of the color as RGB uint.
@@ -10,29 +10,16 @@ public partial class SchemeColor: IColor
   {
     get
     {
-     if (this.Val is null)
+      if (_RGB != null)
+        return _RGB;
+      if (this.Val is null)
         return null;
-     var ColorScheme = ParentDocument?.Theme?.ThemeElements?.ColorScheme?.GetColor(this.Val.Value);
+      var ColorScheme = ParentDocument?.Theme?.ThemeElements?.ColorScheme?.GetColor(this.Val.Value);
       return ColorScheme?.RGB;
     }
-    set
-    {
-      if (value == null)
-      {
-        this.Val = null;
-        return;
-      }
-      var schemeColorField = typeof(SchemeColors).GetFields(BindingFlags.Public | BindingFlags.Static)
-        .FirstOrDefault(f => f.GetValue(null)?.Equals(value) == true);
-      if (schemeColorField != null)
-      {
-        this.Val = (SchemeColors)schemeColorField.GetValue(null)!;
-        return;
-      }
-      else
-        throw new ArgumentException($"The provided RGB value '{value}' does not correspond to any known scheme color.");
-    }
+    set => _RGB = value;
   }
+  private UInt32? _RGB;
 
   /// <summary>
   /// Red component of the color as percentage value.

@@ -20,6 +20,7 @@ internal static class AutoEditCommands
   public const int AddPrivateFieldsWithUpdateCommandId = 0x0105;
   public const int GenerateShouldSerializeFunctionsCommandId = 0x0106;
   public const int RemoveDuplicateDocCommentsCommandId = 0x0107;
+  public const int FixBackingFieldSpacingCommandId = 0x0108;
 
   public static async Task InitializeAsync(AsyncPackage package)
   {
@@ -36,6 +37,7 @@ internal static class AutoEditCommands
     Register(commandService, package, AddPrivateFieldsWithUpdateCommandId, AddPrivateFieldsWithUpdate.Run);
     Register(commandService, package, GenerateShouldSerializeFunctionsCommandId, GenerateShouldSerializeFunctions.Run);
     Register(commandService, package, RemoveDuplicateDocCommentsCommandId, RemoveDuplicateDocComments.Run);
+    Register(commandService, package, FixBackingFieldSpacingCommandId, AddPrivateFieldsWithUpdate.RunFixBackingFieldSpacing);
   }
 
   private static void Register(OleMenuCommandService commandService, AsyncPackage package, int commandId, Action<string> action)

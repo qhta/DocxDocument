@@ -83,6 +83,12 @@
           <ButtonText>Remove Duplicate Doc Comments</ButtonText>
         </Strings>
       </Button>
+      <Button guid="guidAutoEditCmdSet" id="cmdidFixBackingFieldSpacing" priority="0x0180" type="Button">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupProjNode" />
+        <Strings>
+          <ButtonText>Fix Backing Field Spacing</ButtonText>
+        </Strings>
+      </Button>
     </Buttons>
   </Commands>
 
@@ -118,6 +124,10 @@
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidRemoveDuplicateDocComments" priority="0x0170">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
     </CommandPlacement>
+
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidFixBackingFieldSpacing" priority="0x0180">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
+    </CommandPlacement>
     
   </CommandPlacements>
 
@@ -138,6 +148,7 @@
       <IDSymbol name="cmdidAddPrivateFieldsWithUpdate" value="0x0105" />
       <IDSymbol name="cmdidGenerateShouldSerializeFunctions" value="0x0106" />
       <IDSymbol name="cmdidRemoveDuplicateDocComments" value="0x0107" />
+      <IDSymbol name="cmdidFixBackingFieldSpacing" value="0x0108" />
     </GuidSymbol>
   </Symbols>
 </CommandTable>
