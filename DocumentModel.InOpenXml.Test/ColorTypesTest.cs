@@ -1,0 +1,349 @@
+using System.Text.Json;
+using System.Xml;
+using System.Xml.Serialization;
+
+using DocumentModel.Drawings;
+
+namespace DocumentModel.InOpenXml.Test;
+
+/// <summary>
+/// Comprehensive tests for all DocumentModel types implementing IColor.
+/// </summary>
+public class ColorTypesTest: _AbstractTestClass
+{
+  /// <summary>
+  /// Runs all IColor implementation tests.
+  /// </summary>
+  /// <returns>True if all tests pass; otherwise, false.</returns>
+  public static bool Run()
+  {
+    Console.WriteLine("=== IColor Implementations Test ===\n");
+    if (!TestTypeDiscovery()) return false;
+    if (!TestXmlSerialization()) return false;
+    if (!TestJsonSerialization()) return false;
+    if (!TestIColorAccessors()) return false;
+    if (!TestEdgeCases()) return false;
+    Console.WriteLine("All IColor implementation tests passed.\n");
+    return true;
+  }
+
+  /// <summary>
+  /// Verifies that all known IColor implementations are discovered.
+  /// </summary>
+  /// <returns>True if discovery is correct; otherwise, false.</returns>
+  static bool TestTypeDiscovery()
+  {
+    Console.WriteLine("--- Type Discovery ---");
+    var discovered = GetIColorTypes().Select(t => t.FullName).OrderBy(s => s).ToList();
+    var expected = new List<string>
+    {
+      "DocumentModel.Drawings.HslColor",
+      "DocumentModel.Drawings.PresetColor",
+      "DocumentModel.Drawings.RgbColorModelHex",
+      "DocumentModel.Drawings.RgbColorModelPercentage",
+      "DocumentModel.Drawings.SchemeColor",
+      "DocumentModel.Drawings.SystemColor",
+      "DocumentModel.Wordprocessing.Color"
+    }.OrderBy(s => s).ToList();
+
+    if (!discovered.SequenceEqual(expected))
+    {
+      Console.WriteLine("✗ IColor type discovery FAILED");
+      Console.WriteLine("Discovered:");
+      foreach (var item in discovered) Console.WriteLine($"  {item}");
+      Console.WriteLine("Expected:");
+      foreach (var item in expected) Console.WriteLine($"  {item}");
+      return false;
+    }
+
+    Console.WriteLine("✓ IColor type discovery passed\n");
+    return true;
+  }
+
+  /// <summary>
+  /// Tests XML serialization and deserialization for all IColor implementations.
+  /// </summary>
+  /// <returns>True if all XML tests pass; otherwise, false.</returns>
+  static bool TestXmlSerialization()
+  {
+    Console.WriteLine("--- XML Serialization ---");
+    foreach (var colorType in GetIColorTypes())
+    {
+      var testData = CreateSampleColor(colorType);
+      var xmlString = SerializeObjectToXml(testData);
+      Console.WriteLine($"Serialized XML ({colorType.Name}):\n{xmlString}");
+
+      var deserialized = DeserializeObjectFromXml(colorType, xmlString);
+      if (deserialized == null)
+      {
+        Console.WriteLine($"✗ XML Deserialization returned null for '{colorType.Name}'");
+        return false;
+      }
+
+      if (!TestHelper.CompareTestData(colorType, testData, deserialized, out var propName))
+      {
+        Console.WriteLine($"✗ XML test FAILED for '{colorType.Name}' - mismatch in '{propName}'");
+        return false;
+      }
+    }
+
+    Console.WriteLine("✓ XML serialization tests passed\n");
+    return true;
+  }
+
+  /// <summary>
+  /// Tests JSON serialization and deserialization for all IColor implementations.
+  /// </summary>
+  /// <returns>True if all JSON tests pass; otherwise, false.</returns>
+  static bool TestJsonSerialization()
+  {
+    Console.WriteLine("--- JSON Serialization ---");
+    foreach (var colorType in GetIColorTypes())
+    {
+      var testData = CreateSampleColor(colorType);
+      var jsonString = JsonSerializer.Serialize(testData, colorType, JsonConfig.Options);
+      Console.WriteLine($"Serialized JSON ({colorType.Name}):\n{jsonString}");
+
+      var deserialized = JsonSerializer.Deserialize(jsonString, colorType, JsonConfig.Options);
+      if (deserialized == null)
+      {
+        Console.WriteLine($"✗ JSON Deserialization returned null for '{colorType.Name}'");
+        return false;
+      }
+
+      if (!TestHelper.CompareTestData(colorType, testData, deserialized, out var propName))
+      {
+        Console.WriteLine($"✗ JSON test FAILED for '{colorType.Name}' - mismatch in '{propName}'");
+        return false;
+      }
+    }
+
+    Console.WriteLine("✓ JSON serialization tests passed\n");
+    return true;
+  }
+
+  /// <summary>
+  /// Tests common IColor accessors for all implementations.
+  /// </summary>
+  /// <returns>True if all accessor tests pass; otherwise, false.</returns>
+  static bool TestIColorAccessors()
+  {
+    Console.WriteLine("--- IColor Accessors ---");
+    foreach (var colorType in GetIColorTypes())
+    {
+      var testData = CreateSampleColor(colorType);
+      var iColorType = colorType.GetInterfaces().First(i => i.Name == "IColor");
+
+      foreach (var propName in new[] { "Red", "Green", "Blue", "Name", "Tint", "Shade" })
+      {
+        var prop = iColorType.GetProperty(propName);
+        if (prop == null) continue;
+
+        try
+        {
+          _ = prop.GetValue(testData);
+        }
+        catch (Exception ex)
+        {
+          Console.WriteLine($"✗ Accessor '{colorType.Name}.{propName}' get failed: {ex.Message}");
+          return false;
+        }
+      }
+
+      foreach (var propName in new[] { "Tint", "Shade" })
+      {
+        var prop = iColorType.GetProperty(propName);
+        if (prop?.CanWrite != true) continue;
+
+        try
+        {
+          prop.SetValue(testData, 0.25f);
+          _ = prop.GetValue(testData);
+        }
+        catch (Exception ex)
+        {
+          Console.WriteLine($"✗ Accessor '{colorType.Name}.{propName}' set failed: {ex.Message}");
+          return false;
+        }
+      }
+    }
+
+    Console.WriteLine("✓ IColor accessor tests passed\n");
+    return true;
+  }
+
+  /// <summary>
+  /// Tests edge cases using empty instances for all IColor implementations.
+  /// </summary>
+  /// <returns>True if all edge case tests pass; otherwise, false.</returns>
+  static bool TestEdgeCases()
+  {
+    Console.WriteLine("--- Edge Cases ---");
+    foreach (var colorType in GetIColorTypes())
+    {
+      var empty = Activator.CreateInstance(colorType);
+      if (empty == null)
+      {
+        Console.WriteLine($"✗ Could not create empty instance of '{colorType.Name}'");
+        return false;
+      }
+
+      var xml = SerializeObjectToXml(empty);
+      var xmlDeserialized = DeserializeObjectFromXml(colorType, xml);
+      if (xmlDeserialized == null)
+      {
+        Console.WriteLine($"✗ Edge case XML deserialization failed for '{colorType.Name}'");
+        return false;
+      }
+
+      var json = JsonSerializer.Serialize(empty, colorType, JsonConfig.Options);
+      var jsonDeserialized = JsonSerializer.Deserialize(json, colorType, JsonConfig.Options);
+      if (jsonDeserialized == null)
+      {
+        Console.WriteLine($"✗ Edge case JSON deserialization failed for '{colorType.Name}'");
+        return false;
+      }
+    }
+
+    Console.WriteLine("✓ Edge case tests passed\n");
+    return true;
+  }
+
+  /// <summary>
+  /// Returns all non-abstract classes in the model assembly that implement an interface named IColor.
+  /// </summary>
+  /// <returns>Collection of discovered IColor implementation types.</returns>
+  static List<Type> GetIColorTypes()
+  {
+    return typeof(RgbColorModelHex).Assembly.GetTypes()
+      .Where(t => t.IsClass && !t.IsAbstract)
+      .Where(t => t.Namespace?.StartsWith("DocumentModel.", StringComparison.Ordinal) == true)
+      .Where(t => t.GetInterfaces().Any(i => i.Name == "IColor"))
+      .OrderBy(t => t.FullName)
+      .ToList();
+  }
+
+  /// <summary>
+  /// Creates representative sample data for each IColor implementation type.
+  /// </summary>
+  /// <param name="colorType">The concrete color implementation type.</param>
+  /// <returns>A populated color instance.</returns>
+  static object CreateSampleColor(Type colorType)
+  {
+    return colorType.FullName switch
+    {
+      "DocumentModel.Drawings.HslColor" => new HslColor
+      {
+        HueValue = 120 * 60000,
+        SatValue = 60000,
+        LumValue = 45000,
+        Tint = 10000,
+        Shade = 5000,
+      },
+      "DocumentModel.Drawings.PresetColor" => new DocumentModel.Drawings.PresetColor
+      {
+        Val = PresetColors.Red,
+        Tint = 10000,
+        Shade = 5000,
+      },
+      "DocumentModel.Drawings.RgbColorModelHex" => new DocumentModel.Drawings.RgbColorModelHex
+      {
+        Val = (HexColor)0x336699,
+        Tint = 10000,
+        Shade = 5000,
+      },
+      "DocumentModel.Drawings.RgbColorModelPercentage" => new DocumentModel.Drawings.RgbColorModelPercentage
+      {
+        RedPortion = 20000,
+        GreenPortion = 40000,
+        BluePortion = 60000,
+        Tint = 10000,
+        Shade = 5000,
+      },
+      "DocumentModel.Drawings.SchemeColor" => new DocumentModel.Drawings.SchemeColor
+      {
+        Val = SchemeColors.Accent3,
+        Tint = 10000,
+        Shade = 5000,
+      },
+      "DocumentModel.Drawings.SystemColor" => new DocumentModel.Drawings.SystemColor
+      {
+        Val = SystemColors.WindowText,
+        LastColor = (HexColor)0x112233,
+        Tint = 10000,
+        Shade = 5000,
+      },
+      "DocumentModel.Wordprocessing.Color" => new DocumentModel.Wordprocessing.Color
+      {
+        Val = (HexColor)0x445566,
+        ThemeColor = ThemeColors.Text1,
+        ThemeTint = 40,
+        ThemeShade = 20,
+      },
+      _ => throw new NotSupportedException($"Unsupported IColor type '{colorType.FullName}'.")
+    };
+  }
+
+  /// <summary>
+  /// Initializes the document theme part with a basic color scheme.
+  /// </summary>
+  /// <param name="document">Target document whose theme should be initialized.</param>
+  static void InitializeThemePartWithColorScheme(DocumentModel.Wordprocessing.Document document)
+  {
+    document.Theme = new Theme
+    {
+      Name = "ColorTypesTest Theme",
+      ThemeId = "ColorTypesTestTheme",
+      ThemeElements = new ThemeElements
+      {
+        ColorScheme = new ColorScheme
+        {
+          Name = "ColorTypesTest Color Scheme",
+          Dark1Color = new RgbColorModelHex { Val = (HexColor)0x000000 },
+          Light1Color = new RgbColorModelHex { Val = (HexColor)0xFFFFFF },
+          Dark2Color = new RgbColorModelHex { Val = (HexColor)0x1F1F1F },
+          Light2Color = new RgbColorModelHex { Val = (HexColor)0xEEEEEE },
+          Accent1Color = new RgbColorModelHex { Val = (HexColor)0x4472C4 },
+          Accent2Color = new RgbColorModelHex { Val = (HexColor)0xED7D31 },
+          Accent3Color = new RgbColorModelHex { Val = (HexColor)0xA5A5A5 },
+          Accent4Color = new RgbColorModelHex { Val = (HexColor)0xFFC000 },
+          Accent5Color = new RgbColorModelHex { Val = (HexColor)0x5B9BD5 },
+          Accent6Color = new RgbColorModelHex { Val = (HexColor)0x70AD47 },
+          Hyperlink = new RgbColorModelHex { Val = (HexColor)0x0563C1 },
+          FollowedHyperlinkColor = new RgbColorModelHex { Val = (HexColor)0x954F72 },
+        }
+      }
+    };
+  }
+
+  /// <summary>
+  /// Serializes an object to XML using its runtime type.
+  /// </summary>
+  /// <param name="data">The object to serialize.</param>
+  /// <returns>Serialized XML text.</returns>
+  static string SerializeObjectToXml(object data)
+  {
+    var xmlSerializer = new XmlSerializer(data.GetType());
+    using (var stringWriter = new StringWriter())
+    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+    {
+      xmlSerializer.Serialize(xmlWriter, data);
+      return stringWriter.ToString();
+    }
+  }
+
+  /// <summary>
+  /// Deserializes XML to an object of the specified type.
+  /// </summary>
+  /// <param name="dataType">Target type.</param>
+  /// <param name="xml">XML input.</param>
+  /// <returns>Deserialized instance or null.</returns>
+  static object? DeserializeObjectFromXml(Type dataType, string xml)
+  {
+    var xmlSerializer = new XmlSerializer(dataType);
+    using (var stringReader = new StringReader(xml))
+    {
+      return xmlSerializer.Deserialize(stringReader);
+    }
+  }
+}

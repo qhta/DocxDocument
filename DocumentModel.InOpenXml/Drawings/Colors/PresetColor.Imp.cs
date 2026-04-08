@@ -16,8 +16,11 @@ public partial class PresetColor: IColor
         this.Val = null;
         return;
       }
+      var presetColorFields = typeof(PresetColors).GetFields(BindingFlags.Public | BindingFlags.Static)
+        .ToDictionary(f => f.Name, f => (UInt32)f.GetValue(null)!);
+
       var presetColorField = typeof(PresetColors).GetFields(BindingFlags.Public | BindingFlags.Static)
-        .FirstOrDefault(f => f.GetValue(null)?.Equals(value) == true);
+        .FirstOrDefault(f => ((UInt32)f.GetValue(null)!).Equals(value) == true);
       if (presetColorField != null)
       {
         this.Val = (PresetColors)presetColorField.GetValue(null)!;

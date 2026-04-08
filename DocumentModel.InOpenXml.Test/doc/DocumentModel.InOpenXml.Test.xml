@@ -526,6 +526,75 @@
             <param name="json">The JSON string to deserialize.</param>
             <returns>The deserialized Styles object, or null if deserialization fails.</returns>
         </member>
+        <member name="T:DocumentModel.InOpenXml.Test.ColorTypesTest">
+            <summary>
+            Comprehensive tests for all DocumentModel types implementing IColor.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.Run">
+            <summary>
+            Runs all IColor implementation tests.
+            </summary>
+            <returns>True if all tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.TestTypeDiscovery">
+            <summary>
+            Verifies that all known IColor implementations are discovered.
+            </summary>
+            <returns>True if discovery is correct; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.TestXmlSerialization">
+            <summary>
+            Tests XML serialization and deserialization for all IColor implementations.
+            </summary>
+            <returns>True if all XML tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.TestJsonSerialization">
+            <summary>
+            Tests JSON serialization and deserialization for all IColor implementations.
+            </summary>
+            <returns>True if all JSON tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.TestIColorAccessors">
+            <summary>
+            Tests common IColor accessors for all implementations.
+            </summary>
+            <returns>True if all accessor tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.TestEdgeCases">
+            <summary>
+            Tests edge cases using empty instances for all IColor implementations.
+            </summary>
+            <returns>True if all edge case tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.GetIColorTypes">
+            <summary>
+            Returns all non-abstract classes in the model assembly that implement an interface named IColor.
+            </summary>
+            <returns>Collection of discovered IColor implementation types.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.CreateSampleColor(System.Type)">
+            <summary>
+            Creates representative sample data for each IColor implementation type.
+            </summary>
+            <param name="colorType">The concrete color implementation type.</param>
+            <returns>A populated color instance.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.SerializeObjectToXml(System.Object)">
+            <summary>
+            Serializes an object to XML using its runtime type.
+            </summary>
+            <param name="data">The object to serialize.</param>
+            <returns>Serialized XML text.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.DeserializeObjectFromXml(System.Type,System.String)">
+            <summary>
+            Deserializes XML to an object of the specified type.
+            </summary>
+            <param name="dataType">Target type.</param>
+            <param name="xml">XML input.</param>
+            <returns>Deserialized instance or null.</returns>
+        </member>
         <member name="T:DocumentModel.InOpenXml.Test.ContentPropertiesTest">
             <summary>
             Provides comprehensive serialization tests for <see cref="T:DocumentModel.ContentProperties"/>.
