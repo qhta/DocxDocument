@@ -599,6 +599,14 @@
             </summary>
             <param name="document">Target document whose theme should be initialized.</param>
         </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.ChangeTwoWordColorsInDocument(System.String)">
+            <summary>
+            Changes colors of two specific run texts in the specified document package.
+            Finds run text "RED" and changes it to blue. Finds run text "ACCENT1" and changes it to theme Accent2.
+            </summary>
+            <param name="filePath">Path to the .docx/.zip OpenXml package.</param>
+            <returns>True if both target runs were found and updated; otherwise, false.</returns>
+        </member>
         <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.SerializeObjectToXml(System.Object)">
             <summary>
             Serializes an object to XML using its runtime type.

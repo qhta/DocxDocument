@@ -23,6 +23,7 @@ public class ColorTypesTest: _AbstractTestClass
     if (!TestJsonSerialization()) return false;
     if (!TestIColorAccessors()) return false;
     if (!TestEdgeCases()) return false;
+    if (!ChangeTwoWordColorsInDocument()) return false;
     Console.WriteLine("All IColor implementation tests passed.\n");
     return true;
   }
@@ -362,6 +363,70 @@ public class ColorTypesTest: _AbstractTestClass
         }
       }
     };
+  }
+
+  /// <summary>
+  /// Changes colors of two specific run texts in the specified document package.
+  /// Finds run text "RED" and changes it to blue. Finds run text "ACCENT1" and changes it to theme Accent2.
+  /// </summary>
+  /// <param name="filePath">Path to the .docx/.zip OpenXml package.</param>
+  /// <returns>True if both target runs were found and updated; otherwise, false.</returns>
+  public static bool ChangeTwoWordColorsInDocument(string filePath = @"D:\OneDrive\VS\Projects\DocxDocument\Samples\Colors test2.zip")
+  {
+    if (!File.Exists(filePath))
+    {
+      Console.WriteLine($"✗ File not found: {filePath}");
+      return false;
+    }
+
+    using var wordDoc = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(filePath, true);
+    var body = wordDoc.MainDocumentPart?.Document?.Body;
+    if (body == null)
+    {
+      Console.WriteLine("✗ Main document body not found.");
+      return false;
+    }
+
+    var redUpdated = false;
+    var accentUpdated = false;
+
+    foreach (var run in body.Descendants<DocumentFormat.OpenXml.Wordprocessing.Run>())
+    {
+      var runText = string.Concat(run.Elements<DocumentFormat.OpenXml.Wordprocessing.Text>().Select(t => t.Text));
+      if (string.IsNullOrEmpty(runText))
+        continue;
+
+      if (!redUpdated && runText == "RED")
+      {
+        var runProperties = run.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunProperties>() ?? run.PrependChild(new DocumentFormat.OpenXml.Wordprocessing.RunProperties());
+        var color = runProperties.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Color>() ?? runProperties.AppendChild(new DocumentFormat.OpenXml.Wordprocessing.Color());
+        color.Val = "0000FF";
+        color.ThemeColor = null;
+        color.ThemeTint = null;
+        color.ThemeShade = null;
+        redUpdated = true;
+      }
+      else if (!accentUpdated && runText == "ACCENT1")
+      {
+        var runProperties = run.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunProperties>() ?? run.PrependChild(new DocumentFormat.OpenXml.Wordprocessing.RunProperties());
+        var color = runProperties.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Color>() ?? runProperties.AppendChild(new DocumentFormat.OpenXml.Wordprocessing.Color());
+        color.Val = null;
+        color.ThemeColor = DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues.Accent2;
+        accentUpdated = true;
+      }
+
+      if (redUpdated && accentUpdated)
+        break;
+    }
+
+    wordDoc.MainDocumentPart?.Document?.Save();
+
+    if (!redUpdated)
+      Console.WriteLine("✗ Run with text 'RED' not found.");
+    if (!accentUpdated)
+      Console.WriteLine("✗ Run with text 'ACCENT1' not found.");
+
+    return redUpdated && accentUpdated;
   }
 
   /// <summary>
