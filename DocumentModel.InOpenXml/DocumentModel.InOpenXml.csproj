@@ -22,8 +22,14 @@
 
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove="Base classes\LazyLoadElementCollection%28T,C%29.cs" />
     <Compile Remove="Drawings\Colors\DrawingColor.cs" />
+    <Compile Remove="Drawings\Colors\DrawingColorBase.cs" />
+    <Compile Remove="Drawings\Colors\DrawingColorBase.ShouldSerialize.cs" />
     <Compile Remove="Drawings\Colors\IDrawingColor.cs" />
+    <Compile Remove="Wordprocessing.Drawings\Colors\WordColorBase.cs" />
+    <Compile Remove="Wordprocessing.Drawings\Colors\WordColorBase.ShouldSerialize.cs" />
+    <Compile Remove="Wordprocessing.Drawings\Colors\WordColorClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Wordprocessing\Table properties\Enums\5k3e00t1.egu~" />

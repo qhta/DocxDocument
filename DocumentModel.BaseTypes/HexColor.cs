@@ -24,6 +24,11 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// </summary>
   public HexColor(string str)
   {
+    if (str == "auto")
+    {
+      value = 0xFFFFFFFF;
+      return;
+    }
     value = UInt32.Parse(str, NumberStyles.HexNumber);
   }
 
@@ -34,7 +39,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// </summary>
   public HexColor(UInt32 value)
   {
-    this.value = value & 0xFFFFFF; // Mask to ensure only 24 bits are used
+    this.value = value;
   }
 
   /// <summary>
@@ -44,7 +49,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// </summary>
   public HexColor(Int32 value)
   {
-    this.value = (UInt32)(value & 0xFFFFFF); // Mask to ensure only 24 bits are used
+    this.value = (UInt32)value;
   }
 
   /// <summary>
@@ -153,6 +158,8 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <returns>A 6-character hexadecimal string in the format RRGGBB.</returns>
   public override string ToString()
   {
+    if (value == 0xFFFFFFFF)
+      return "auto";
     return R.ToString("X2") + G.ToString("X2") + B.ToString("X2");
   }
 
@@ -222,7 +229,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <returns>A 32-bit signed integer hash code.</returns>
   public override int GetHashCode()
   {
-    return (Int32)(value & 0xFFFFFF);
+    return (Int32)(value);
   }
 
   #region IConvertible Implementation

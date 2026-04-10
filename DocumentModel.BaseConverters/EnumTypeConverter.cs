@@ -406,11 +406,21 @@ public static partial class EnumTypeConverter
       return (Enum)enumValue;
     }
 
+    if (modelEnumType.GetCustomAttribute<FlagsAttribute>() != null) Debug.Assert(true);
+
     var enumValuesMap = GetEnumValuesMap(modelEnumType, typeof(string));
     if (enumValuesMap.TryGetValue1(enumValuesMap, out var result))
       return (Enum)result;
+    if (Int32.TryParse(value, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out intValue))
+    {
+      var enumValue = Enum.ToObject(modelEnumType, intValue);
+      return (Enum)enumValue;
+    }
 
-    return (Enum?)Enum.Parse(modelEnumType, value, true)!;
+    if (modelEnumType.TryParseEnum(value, out var enumResult))
+        return (Enum)enumResult!;
+
+    return null;
   }
 
   /// <summary>

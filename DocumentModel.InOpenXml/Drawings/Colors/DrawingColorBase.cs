@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// These modifications include tinting, shading, alpha transparency, hue/saturation/luminance adjustments
 /// and so on.
 /// </summary>
-public partial class DrawingColorBase<T> : AbstractColor<T> where T : DX.OpenXmlElement
+public abstract partial class DrawingColorBase<T> : AbstractColor<T> where T : DX.OpenXmlElement
 {
   /// <summary>
   /// Tint value to lighten the color.

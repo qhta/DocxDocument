@@ -365,6 +365,10 @@ public class ColorTypesTest: _AbstractTestClass
     };
   }
 
+  private static readonly Random Random = new Random();
+  private static HexColor GetRandomHexColor() => (HexColor)Random.Next(0x000000, 0xFFFFFF);
+  //private static DXW.ThemeColorValues GetRandomThemeColor() => (DXW.ThemeColorValues)Random.Next(1, Enum.GetValues(typeof(DXW.ThemeColorValues)).Length);
+
   /// <summary>
   /// Changes colors of two specific run texts in the specified document package.
   /// Finds run text "RED" and changes it to blue. Finds run text "ACCENT1" and changes it to theme Accent2.
@@ -400,7 +404,7 @@ public class ColorTypesTest: _AbstractTestClass
       {
         var runProperties = run.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.RunProperties>() ?? run.PrependChild(new DocumentFormat.OpenXml.Wordprocessing.RunProperties());
         var color = runProperties.GetFirstChild<DocumentFormat.OpenXml.Wordprocessing.Color>() ?? runProperties.AppendChild(new DocumentFormat.OpenXml.Wordprocessing.Color());
-        color.Val = "0000FF";
+        color.Val = GetRandomHexColor().ToString();
         color.ThemeColor = null;
         color.ThemeTint = null;
         color.ThemeShade = null;
@@ -436,11 +440,41 @@ public class ColorTypesTest: _AbstractTestClass
   /// <returns>Serialized XML text.</returns>
   static string SerializeObjectToXml(object data)
   {
+    var rootType = data.GetType();
+    var overrides = new XmlAttributeOverrides();
+
+    //var attrs1 = new XmlAttributes
+    //{
+    //  XmlType = new XmlTypeAttribute
+    //  {
+    //    TypeName = "SchemeColor",
+    //    Namespace = "urn:docmodel:drawings"
+    //  }
+    //};
+    //overrides.Add(typeof(DocumentModel.Drawings.SchemeColor), attrs1);
+
+    //var attrs2 = new XmlAttributes
+    //{
+    //  XmlType = new XmlTypeAttribute
+    //  {
+    //    TypeName = "SchemeColor",
+    //    Namespace = "urn:docmodel:wordprocessing:drawings"
+    //  }
+    //};
+    //overrides.Add(typeof(DocumentModel.Wordprocessing.Drawings.SchemeColor), attrs2);
+
+    var serializer = new XmlSerializer(rootType, overrides, null, null, null);
+
+    var ns = new XmlSerializerNamespaces();
+    ns.Add("d", "urn:docmodel:drawings");
+    ns.Add("wd", "urn:docmodel:wordprocessing:drawings");
+
+
     var xmlSerializer = new XmlSerializer(data.GetType());
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
     {
-      xmlSerializer.Serialize(xmlWriter, data);
+      xmlSerializer.Serialize(xmlWriter, data, ns);
       return stringWriter.ToString();
     }
   }
