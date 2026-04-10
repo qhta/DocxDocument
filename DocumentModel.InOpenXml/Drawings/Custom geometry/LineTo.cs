@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a command to draw a straight line to a specified point.
 /// </summary>
 [OpenXmlType(typeof(DXD.LineTo))]
+[XmlRoot("LineTo", Namespace = "DocumentModel.Drawings")]
 public partial class LineTo : ModelElement<DXD.LineTo>
 {
  /// <summary>
@@ -10,5 +11,6 @@ public partial class LineTo : ModelElement<DXD.LineTo>
  /// </summary>
  [OpenXmlProperty(nameof(DXD.LineTo.Point))]
  public AdjustPoint2DType? Point { get => _Point; set => UpdateField(ref _Point, value, nameof(Point)); }
+
  private AdjustPoint2DType? _Point;
 }

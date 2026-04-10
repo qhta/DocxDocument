@@ -24,22 +24,21 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   external mapping service is unavailable.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoDataEntityQueryResult))]
-public class GeoDataEntityQueryResult: ModelElement<DXO16DCD.GeoDataEntityQueryResult>
+[XmlRoot("GeoDataEntityQueryResult", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class GeoDataEntityQueryResult : ModelElement<DXO16DCD.GeoDataEntityQueryResult>
 {
-  /// <summary>
-  /// Specifies the geo data entity query.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.GeoDataEntityQueryResult.GeoDataEntityQuery))]
-  public GeoDataEntityQuery? GeoDataEntityQuery
-  {
-    get => _GeoDataEntityQuery;
-    set => UpdateField(ref _GeoDataEntityQuery, value, nameof(GeoDataEntityQuery));
-  }
-  private GeoDataEntityQuery? _GeoDataEntityQuery;
-  /// <summary>
-  /// Specifies the geo data.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.GeoDataEntityQueryResult.GeoData))]
-  public GeoData? GeoData { get => _GeoData; set => UpdateField(ref _GeoData, value, nameof(GeoData)); }
-  private GeoData? _GeoData;
+ /// <summary>
+ /// Specifies the geo data entity query.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.GeoDataEntityQueryResult.GeoDataEntityQuery))]
+ public GeoDataEntityQuery? GeoDataEntityQuery { get => _GeoDataEntityQuery; set => UpdateField(ref _GeoDataEntityQuery, value, nameof(GeoDataEntityQuery)); }
+
+ private GeoDataEntityQuery? _GeoDataEntityQuery;
+ /// <summary>
+ /// Specifies the geo data.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.GeoDataEntityQueryResult.GeoData))]
+ public GeoData? GeoData { get => _GeoData; set => UpdateField(ref _GeoData, value, nameof(GeoData)); }
+
+ private GeoData? _GeoData;
 }

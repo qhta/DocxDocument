@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "Hyperlink"/> and <see cref = "IRubyContent"/>, enabling advanced integration of hyperlinks within ruby text, supporting East Asian typography and annotation scenarios where hyperlinks are embedded in phonetic guides or ruby runs.
 /// </summary>
 [OpenXmlType(typeof(DXW.HyperlinkRuby))]
+[XmlRoot("HyperlinkRuby", Namespace = "DocumentModel.Wordprocessing")]
 public class HyperlinkRuby : Hyperlink<DXW.HyperlinkRuby>, IRubyContent
 {
 }

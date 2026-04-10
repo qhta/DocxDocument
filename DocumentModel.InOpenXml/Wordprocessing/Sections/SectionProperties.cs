@@ -5,36 +5,28 @@ namespace DocumentModel.Wordprocessing;
 /// For any other section the properties are stored as a child element of the paragraph element corresponding to the last paragraph in the given section.
 /// </summary>
 [OpenXmlType(typeof(DXW.SectionProperties))]
-public partial class SectionProperties: BaseSectionProperties<DXW.SectionProperties>
+[XmlRoot("SectionProperties", Namespace = "DocumentModel.Wordprocessing")]
+public partial class SectionProperties : BaseSectionProperties<DXW.SectionProperties>
 {
-  /// <summary>
-  /// Collection of header references associated with the current instance.
-  /// </summary>
-  [OpenXmlElementCollection(typeof(DXW.HeaderReference))]
-  public HeaderReferences? HeaderReferences
-  {
-    get => _HeaderReferences;
-    set => UpdateField(ref _HeaderReferences, value, nameof(HeaderReferences));
-  }
-  private HeaderReferences? _HeaderReferences;
-  /// <summary>
-  /// Collection of header references associated with the current instance.
-  /// </summary>
-  [OpenXmlElementCollection(typeof(DXW.FooterReference))]
-  public FooterReferences? FooterReferences
-  {
-    get => _FooterReferences;
-    set => UpdateField(ref _FooterReferences, value, nameof(FooterReferences));
-  }
-  private FooterReferences? _FooterReferences;
-  /// <summary>
-  /// Change information for the section properties.
-  /// </summary>
-  [OpenXmlElement(typeof(DXW.SectionPropertiesChange))]
-  public SectionPropertiesChange? SectionPropertiesChange
-  {
-    get => _SectionPropertiesChange;
-    set => UpdateField(ref _SectionPropertiesChange, value, nameof(SectionPropertiesChange));
-  }
-  private SectionPropertiesChange? _SectionPropertiesChange;
+ /// <summary>
+ /// Collection of header references associated with the current instance.
+ /// </summary>
+ [OpenXmlElementCollection(typeof(DXW.HeaderReference))]
+ public HeaderReferences? HeaderReferences { get => _HeaderReferences; set => UpdateField(ref _HeaderReferences, value, nameof(HeaderReferences)); }
+
+ private HeaderReferences? _HeaderReferences;
+ /// <summary>
+ /// Collection of header references associated with the current instance.
+ /// </summary>
+ [OpenXmlElementCollection(typeof(DXW.FooterReference))]
+ public FooterReferences? FooterReferences { get => _FooterReferences; set => UpdateField(ref _FooterReferences, value, nameof(FooterReferences)); }
+
+ private FooterReferences? _FooterReferences;
+ /// <summary>
+ /// Change information for the section properties.
+ /// </summary>
+ [OpenXmlElement(typeof(DXW.SectionPropertiesChange))]
+ public SectionPropertiesChange? SectionPropertiesChange { get => _SectionPropertiesChange; set => UpdateField(ref _SectionPropertiesChange, value, nameof(SectionPropertiesChange)); }
+
+ private SectionPropertiesChange? _SectionPropertiesChange;
 }

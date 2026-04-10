@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class annotates <see cref = "PreviousTablePropertyExceptions"/> with author, date, and annotation identifier, enabling tracking and management of property revisions for table-level exceptions.
 /// </summary>
 [OpenXmlType(typeof(DXW.TablePropertyExceptionsChange))]
+[XmlRoot("TablePropertyExceptionsChange", Namespace = "DocumentModel.Wordprocessing")]
 public partial class TablePropertyExceptionsChange : IdentifiedChange<DXW.TablePropertyExceptionsChange>
 {
  /// <summary>

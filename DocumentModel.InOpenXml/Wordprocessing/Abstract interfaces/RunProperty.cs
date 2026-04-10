@@ -2,6 +2,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Interface for Run property
 /// </summary>
-public class RunProperty: ModelElement
+[XmlRoot("RunProperty", Namespace = "DocumentModel.Wordprocessing")]
+public class RunProperty : ModelElement
 {
 }

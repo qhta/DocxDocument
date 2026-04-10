@@ -24,22 +24,21 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   (such as "Georgia" the country vs. "Georgia" the U.S. state), ensuring the correct entity data is retrieved.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoDataEntityQuery))]
-public class GeoDataEntityQuery: ModelElement<DXO16DCD.GeoDataEntityQuery>
+[XmlRoot("GeoDataEntityQuery", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class GeoDataEntityQuery : ModelElement<DXO16DCD.GeoDataEntityQuery>
 {
-  /// <summary>
-  /// Specifies the entity type.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.GeoDataEntityQuery.EntityType))]
-  public EntityTypeEnum? EntityType
-  {
-    get => _EntityType;
-    set => UpdateField(ref _EntityType, value, nameof(EntityType));
-  }
-  private EntityTypeEnum? _EntityType;
-  /// <summary>
-  /// Specifies the entity id.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.GeoDataEntityQuery.EntityId))]
-  public string? EntityId { get => _EntityId; set => UpdateField(ref _EntityId, value, nameof(EntityId)); }
-  private string? _EntityId;
+ /// <summary>
+ /// Specifies the entity type.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.GeoDataEntityQuery.EntityType))]
+ public EntityTypeEnum? EntityType { get => _EntityType; set => UpdateField(ref _EntityType, value, nameof(EntityType)); }
+
+ private EntityTypeEnum? _EntityType;
+ /// <summary>
+ /// Specifies the entity id.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.GeoDataEntityQuery.EntityId))]
+ public string? EntityId { get => _EntityId; set => UpdateField(ref _EntityId, value, nameof(EntityId)); }
+
+ private string? _EntityId;
 }

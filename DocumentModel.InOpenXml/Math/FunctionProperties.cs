@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies properties such as ctrlPr that can be stored on the function apply object func.
 /// </summary>
 [OpenXmlType(typeof(DXM.FunctionProperties))]
+[XmlRoot("FunctionProperties", Namespace = "DocumentModel.Math")]
 public partial class FunctionProperties : ModelElement<DXM.FunctionProperties>
 {
  /// <summary>
@@ -10,5 +11,6 @@ public partial class FunctionProperties : ModelElement<DXM.FunctionProperties>
  /// </summary>
  [OpenXmlProperty(nameof(DXM.FunctionProperties.ControlProperties))]
  public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
+
  private ControlProperties? _ControlProperties;
 }

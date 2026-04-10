@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to and management of <see cref = "ICustomXmlBlockContent"/> objects, enabling advanced organization, annotation, and schema-based processing of custom XML data within block-level document content.
 /// </summary>
 [OpenXmlType(typeof(ICustomXmlBlockContent))]
+[XmlRoot("CustomXmlBlockContentCollection", Namespace = "DocumentModel.Wordprocessing")]
 public class CustomXmlBlockContentCollection : ElementCollection<ICustomXmlBlockContent>
 {
 }

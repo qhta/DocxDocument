@@ -18,28 +18,28 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   clarity, allowing charts to be tailored to specific audiences and use cases.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.DataLabelVisibilities))]
-public class DataLabelVisibilities: ModelElement<DXO16DCD.DataLabelVisibilities>
+[XmlRoot("DataLabelVisibilities", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class DataLabelVisibilities : ModelElement<DXO16DCD.DataLabelVisibilities>
 {
-  /// <summary>
-  /// Specifies the series name.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.DataLabelVisibilities.SeriesName))]
-  public bool? SeriesName { get => _SeriesName; set => UpdateField(ref _SeriesName, value, nameof(SeriesName)); }
-  private bool? _SeriesName;
-  /// <summary>
-  /// Specifies the category name.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.DataLabelVisibilities.CategoryName))]
-  public bool? CategoryName
-  {
-    get => _CategoryName;
-    set => UpdateField(ref _CategoryName, value, nameof(CategoryName));
-  }
-  private bool? _CategoryName;
-  /// <summary>
-  /// Specifies the value.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.DataLabelVisibilities.Value))]
-  public bool? Value { get => _Value; set => UpdateField(ref _Value, value, nameof(Value)); }
-  private bool? _Value;
+ /// <summary>
+ /// Specifies the series name.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.DataLabelVisibilities.SeriesName))]
+ public bool? SeriesName { get => _SeriesName; set => UpdateField(ref _SeriesName, value, nameof(SeriesName)); }
+
+ private bool? _SeriesName;
+ /// <summary>
+ /// Specifies the category name.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.DataLabelVisibilities.CategoryName))]
+ public bool? CategoryName { get => _CategoryName; set => UpdateField(ref _CategoryName, value, nameof(CategoryName)); }
+
+ private bool? _CategoryName;
+ /// <summary>
+ /// Specifies the value.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.DataLabelVisibilities.Value))]
+ public bool? Value { get => _Value; set => UpdateField(ref _Value, value, nameof(Value)); }
+
+ private bool? _Value;
 }

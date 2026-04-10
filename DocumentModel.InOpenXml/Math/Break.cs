@@ -10,6 +10,7 @@ namespace DocumentModel.Math;
 ///   meaning that this property’s parent structure manually breaks onto the next line and is aligned with the beginning of the previous line. 
 /// </summary>
 [OpenXmlType(typeof(DXW.Break))]
+[XmlRoot("Break", Namespace = "DocumentModel.Math")]
 public partial class Break : ModelElement<DXW.Break>
 {
  /// <summary>
@@ -20,5 +21,6 @@ public partial class Break : ModelElement<DXW.Break>
  ///   If alnAt is omitted, then all runs (r tag) that follow a brk tag will align with the left margin of the first run of mathematical text.
  /// </summary>
  public Int32? AlignAt { get => _AlignAt; set => UpdateField(ref _AlignAt, value, nameof(AlignAt)); }
+
  private Int32? _AlignAt;
 }

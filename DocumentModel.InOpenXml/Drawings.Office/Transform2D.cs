@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// Specific DXOD.Transform2D mapping type.
 /// </summary>
 [OpenXmlType(typeof(DXOD.Transform2D))]
+[XmlRoot("Transform2D", Namespace = "DocumentModel.Drawings.Office")]
 public partial class Transform2D : DMD.Transform2D<DXOD.Transform2D>
 {
 }

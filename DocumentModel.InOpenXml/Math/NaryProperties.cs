@@ -7,12 +7,14 @@ namespace DocumentModel.Math;
 ///  and whether empty limits display a placeholder character or are hidden (using the subHide and supHide elements). 
 /// </summary>
 [OpenXmlType(typeof(DXM.NaryProperties))]
+[XmlRoot("NaryProperties", Namespace = "DocumentModel.Math")]
 public partial class NaryProperties : ModelElement<DXM.NaryProperties>
 {
  /// <summary>
  ///   Specifies n-ary Operator Character.
  /// </summary>
  public string? Operator { get => _Operator; set => UpdateField(ref _Operator, value, nameof(Operator)); }
+
  private string? _Operator;
  /// <summary>
  ///   Specifies the location of limits in n-ary operators. 
@@ -20,6 +22,7 @@ public partial class NaryProperties : ModelElement<DXM.NaryProperties>
  ///   or positioned just to the right of the operator.
  /// </summary>
  public LimitLocation? LimitLocation { get => _LimitLocation; set => UpdateField(ref _LimitLocation, value, nameof(LimitLocation)); }
+
  private LimitLocation? _LimitLocation;
  /// <summary>
  ///   Specifies the growth property of n-ary operators. 
@@ -28,22 +31,26 @@ public partial class NaryProperties : ModelElement<DXM.NaryProperties>
  ///   If this property is omitted, grow is set to 0.
  /// </summary>
  public bool? GrowOperators { get => _GrowOperators; set => UpdateField(ref _GrowOperators, value, nameof(GrowOperators)); }
+
  private bool? _GrowOperators;
  /// <summary>
  ///   Specifies the n-ary Hide Subscript property. 
  ///   When 1 or true, the lower limit does not appear. If this element is omitted, the lower limit appears.
  /// </summary>
  public bool? HideSubArgument { get => _HideSubArgument; set => UpdateField(ref _HideSubArgument, value, nameof(HideSubArgument)); }
+
  private bool? _HideSubArgument;
  /// <summary>
  ///   Specifies the n-ary Hide Superscript property. 
  ///   When 1 or true, the upper limit does not appear. If this element is omitted, the upper limit appears.
  /// </summary>
  public bool? HideSuperArgument { get => _HideSuperArgument; set => UpdateField(ref _HideSuperArgument, value, nameof(HideSuperArgument)); }
+
  private bool? _HideSuperArgument;
  /// <summary>
  ///   Specifies formatting of n-ary object argument.
  /// </summary>
  public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
+
  private ControlProperties? _ControlProperties;
 }

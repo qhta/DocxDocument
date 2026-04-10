@@ -4,17 +4,20 @@ namespace DocumentModel.Drawings;
 ///   Enables extensibility for custom or future Office features by associating extra data with group shapes.
 /// </summary>
 [OpenXmlType(typeof(DXD.NonVisualGroupDrawingShapePropsExtension))]
+[XmlRoot("NonVisualGroupDrawingShapePropsExtension", Namespace = "DocumentModel.Drawings")]
 public partial class NonVisualGroupDrawingShapePropsExtension : ModelElement<DXD.NonVisualGroupDrawingShapePropsExtension>, IExtension
 {
-  /// <summary>
-  ///   Additional non-visual group properties associated with the group shape extension, providing metadata or configuration for group shapes.
-  /// </summary>
-  public NonVisualGroupProperties? NonVisualGroupProperties { get => _NonVisualGroupProperties; set => UpdateField(ref _NonVisualGroupProperties, value, nameof(NonVisualGroupProperties)); }
-  private NonVisualGroupProperties? _NonVisualGroupProperties;
-  /// <summary>
-  ///   URI string identifying the extension type or schema for the non-visual group drawing shape properties extension.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXD.NonVisualGroupDrawingShapePropsExtension.Uri))]
-  public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
-  private string? _Uri;
+ /// <summary>
+ ///   Additional non-visual group properties associated with the group shape extension, providing metadata or configuration for group shapes.
+ /// </summary>
+ public NonVisualGroupProperties? NonVisualGroupProperties { get => _NonVisualGroupProperties; set => UpdateField(ref _NonVisualGroupProperties, value, nameof(NonVisualGroupProperties)); }
+
+ private NonVisualGroupProperties? _NonVisualGroupProperties;
+ /// <summary>
+ ///   URI string identifying the extension type or schema for the non-visual group drawing shape properties extension.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXD.NonVisualGroupDrawingShapePropsExtension.Uri))]
+ public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
+
+ private string? _Uri;
 }

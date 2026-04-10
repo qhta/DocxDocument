@@ -1,7 +1,8 @@
-﻿namespace DocumentModel.Drawings.ChartDrawings;
+namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 /// Represents a collection of axis elements within a model.
 /// </summary>
-public class AxisList: ModelElementCollection<Axis>
+[XmlRoot("AxisList", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class AxisList : ModelElementCollection<Axis>
 {
 }

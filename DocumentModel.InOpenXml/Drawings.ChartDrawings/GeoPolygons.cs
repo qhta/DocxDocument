@@ -3,14 +3,14 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a collection of polygons that define the complete geographic boundaries of an entity.
 /// </summary>
 /// <remarks>
-///   This class extends <see cref="ElementCollection{ItemType}"/> of <see cref="GeoPolygon"/> and defines a collection
+///   This class extends <see cref = "ElementCollection{ItemType}"/> of <see cref = "GeoPolygon"/> and defines a collection
 ///   of geometric polygons that together represent the complete boundary shape of a geographic entity. Geographic
 ///   entities often require multiple polygons to accurately represent their boundaries due to various geographic
 ///   features including disconnected territories (such as archipelagos, overseas territories, or non-contiguous regions),
 ///   interior exclusions (such as lakes, enclaves, or holes within the boundary), and complex coastlines or borders
 ///   that may be divided into multiple segments for efficient rendering or data management. The polygon collection is
-///   used within <see cref="GeoData"/> to provide detailed, accurate boundary definitions for countries, states, regions,
-///   or other geographic entities displayed in map-based charts. Each <see cref="GeoPolygon"/> in the collection contains
+///   used within <see cref = "GeoData"/> to provide detailed, accurate boundary definitions for countries, states, regions,
+///   or other geographic entities displayed in map-based charts. Each <see cref = "GeoPolygon"/> in the collection contains
 ///   encoded coordinate data defining a boundary component, with the collection as a whole forming the complete entity
 ///   shape. The multiple-polygon structure supports various geographic scenarios: island nations where each major island
 ///   is represented by a separate polygon, countries with overseas territories that are geographically separated from the
@@ -24,6 +24,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   performance constraints.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoPolygons))]
-public class GeoPolygons: ModelElementCollection<GeoPolygon, DXO16DCD.GeoPolygons, DXO16DCD.GeoPolygon>
+[XmlRoot("GeoPolygons", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class GeoPolygons : ModelElementCollection<GeoPolygon, DXO16DCD.GeoPolygons, DXO16DCD.GeoPolygon>
 {
 }

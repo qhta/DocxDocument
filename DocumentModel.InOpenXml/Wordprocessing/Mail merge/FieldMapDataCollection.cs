@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to and management of <see cref = "FieldMapData"/> objects, enabling advanced configuration and organization of data source to merge field mappings for mail merge operations.
 /// </summary>
 [OpenXmlType(typeof(FieldMapData))]
+[XmlRoot("FieldMapDataCollection", Namespace = "DocumentModel.Wordprocessing")]
 public class FieldMapDataCollection : ElementCollection<FieldMapData>
 {
 }

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a collection of effect styles, each defining a set of effects and 3D properties for drawing elements.
 /// </summary>
 [OpenXmlType(typeof(EffectStyle))]
+[XmlRoot("EffectStyleList", Namespace = "DocumentModel.Drawings")]
 public class EffectStyleList : ModelElementCollection<EffectStyle, DXD.EffectStyleList, DXD.EffectStyle>
 {
 }

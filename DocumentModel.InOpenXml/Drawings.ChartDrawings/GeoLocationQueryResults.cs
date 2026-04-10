@@ -4,10 +4,10 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 /// <remarks>
 ///   This class defines a collection of query results that cache geocoded location data retrieved from mapping services or geographic
-///   data providers. Each result in the collection pairs a geocoding query specification (<see cref="GeoLocationQuery"/>)
-///   with its corresponding location results (<see cref="GeoLocations"/>), enabling efficient cache management and
-///   quick retrieval of previously geocoded addresses. The collection is part of the <see cref="Clear"/> structure
-///   within <see cref="GeoCache"/>, where it supports offline access to geocoded location data and improves performance
+///   data providers. Each result in the collection pairs a geocoding query specification (<see cref = "GeoLocationQuery"/>)
+///   with its corresponding location results (<see cref = "GeoLocations"/>), enabling efficient cache management and
+///   quick retrieval of previously geocoded addresses. The collection is part of the <see cref = "Clear"/> structure
+///   within <see cref = "GeoCache"/>, where it supports offline access to geocoded location data and improves performance
 ///   by eliminating redundant queries to external mapping services. This caching mechanism is essential for map-based
 ///   charts that need to convert address data into mappable coordinates and complete location information. The collection
 ///   enables the chart to maintain multiple cached geocoding results simultaneously, supporting scenarios where maps
@@ -26,7 +26,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   all potential matches for comprehensive address resolution.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoLocationQueryResults))]
-public class GeoLocationQueryResults: ModelElementCollection<GeoLocationQueryResult, DXO16DCD.GeoLocationQueryResults,
-  DXO16DCD.GeoLocationQueryResult>
+[XmlRoot("GeoLocationQueryResults", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class GeoLocationQueryResults : ModelElementCollection<GeoLocationQueryResult, DXO16DCD.GeoLocationQueryResults, DXO16DCD.GeoLocationQueryResult>
 {
 }

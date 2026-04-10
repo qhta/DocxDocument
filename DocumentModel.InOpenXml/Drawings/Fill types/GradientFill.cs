@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Defines the GradientFill class.
 /// </summary>
 [OpenXmlType(typeof(DXD.GradientFill))]
+[XmlRoot("GradientFill", Namespace = "DocumentModel.Drawings")]
 public partial class GradientFill : Fill<DXD.GradientFill>
 {
  /// <summary>

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for caption type name, placement, chapter numbering, heading style, label inclusion, numbering format, and separator, enabling advanced configuration and management of captions.
 /// </summary>
 [OpenXmlType(typeof(DXW.Caption))]
+[XmlRoot("CaptionDefinition", Namespace = "DocumentModel.Wordprocessing")]
 public partial class CaptionDefinition : ModelElement<DXW.Caption>
 {
  /// <summary>
@@ -19,12 +20,14 @@ public partial class CaptionDefinition : ModelElement<DXW.Caption>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Caption.Name))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
+
  private string? _Name;
  /// <summary>
  /// Specifies how an automatically inserted caption shall be positioned relative to the object that it is captioning.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Caption.Position))]
  public CaptionPosition? Position { get => _Position; set => UpdateField(ref _Position, value, nameof(Position)); }
+
  private CaptionPosition? _Position;
  /// <summary>
  /// Specifies whether to display numbering associated with the most recent chapter
@@ -34,6 +37,7 @@ public partial class CaptionDefinition : ModelElement<DXW.Caption>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Caption.ChapterNumber))]
  public bool? ChapterNumber { get => _ChapterNumber; set => UpdateField(ref _ChapterNumber, value, nameof(ChapterNumber)); }
+
  private bool? _ChapterNumber;
  /// <summary>
  /// Specifies the given style that is used to demarcate chapter headings in a document.
@@ -42,6 +46,7 @@ public partial class CaptionDefinition : ModelElement<DXW.Caption>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Caption.Heading))]
  public int? Heading { get => _Heading; set => UpdateField(ref _Heading, value, nameof(Heading)); }
+
  private int? _Heading;
  /// <summary>
  /// Specifies if the string specified in the name attribute shall be included in the resulting
@@ -50,12 +55,14 @@ public partial class CaptionDefinition : ModelElement<DXW.Caption>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Caption.NoLabel))]
  public bool? NoLabel { get => _NoLabel; set => UpdateField(ref _NoLabel, value, nameof(NoLabel)); }
+
  private bool? _NoLabel;
  /// <summary>
  /// Caption numbering format, specifying the format used for numbering captions.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Caption.NumberFormat))]
  public NumberFormat? NumberFormat { get => _NumberFormat; set => UpdateField(ref _NumberFormat, value, nameof(NumberFormat)); }
+
  private NumberFormat? _NumberFormat;
  /// <summary>
  /// Specifies the character which shall be used to separate the chapter number used in this
@@ -71,5 +78,6 @@ public partial class CaptionDefinition : ModelElement<DXW.Caption>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Caption.Separator))]
  public ChapterSeparator? Separator { get => _Separator; set => UpdateField(ref _Separator, value, nameof(Separator)); }
+
  private ChapterSeparator? _Separator;
 }

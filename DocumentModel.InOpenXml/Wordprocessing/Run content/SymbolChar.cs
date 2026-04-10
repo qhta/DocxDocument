@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// A symbol character is a special character that does not use any of the run fonts specified in the font table or style hierarchy. Instead, the character is determined by pulling the character with the specified hexadecimal value from the specified font.
 /// </summary>
 [OpenXmlType(typeof(DXW.SymbolChar))]
+[XmlRoot("SymbolChar", Namespace = "DocumentModel.Wordprocessing")]
 public partial class SymbolChar : ModelElement<DXW.SymbolChar>, IRunContent
 {
  /// <summary>
@@ -11,11 +12,13 @@ public partial class SymbolChar : ModelElement<DXW.SymbolChar>, IRunContent
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SymbolChar.Font))]
  public string? Font { get => _Font; set => UpdateField(ref _Font, value, nameof(Font)); }
+
  private string? _Font;
  /// <summary>
  /// Hexadecimal character code specifying the symbol to display from the given font.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SymbolChar.Char))]
  public HexChar? Char { get => _Char; set => UpdateField(ref _Char, value, nameof(Char)); }
+
  private HexChar? _Char;
 }

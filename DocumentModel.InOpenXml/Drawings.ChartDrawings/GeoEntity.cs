@@ -24,22 +24,21 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   management in map-based chart visualizations.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoEntity))]
-public class GeoEntity: ModelElement<DXO16DCD.GeoEntity>
+[XmlRoot("GeoEntity", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class GeoEntity : ModelElement<DXO16DCD.GeoEntity>
 {
-  /// <summary>
-  /// Specifies the entity name.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.GeoEntity.EntityName))]
-  public string? EntityName { get => _EntityName; set => UpdateField(ref _EntityName, value, nameof(EntityName)); }
-  private string? _EntityName;
-  /// <summary>
-  /// Specifies the entity type.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.GeoEntity.EntityType))]
-  public EntityTypeEnum? EntityType
-  {
-    get => _EntityType;
-    set => UpdateField(ref _EntityType, value, nameof(EntityType));
-  }
-  private EntityTypeEnum? _EntityType;
+ /// <summary>
+ /// Specifies the entity name.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.GeoEntity.EntityName))]
+ public string? EntityName { get => _EntityName; set => UpdateField(ref _EntityName, value, nameof(EntityName)); }
+
+ private string? _EntityName;
+ /// <summary>
+ /// Specifies the entity type.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.GeoEntity.EntityType))]
+ public EntityTypeEnum? EntityType { get => _EntityType; set => UpdateField(ref _EntityType, value, nameof(EntityType)); }
+
+ private EntityTypeEnum? _EntityType;
 }

@@ -12,6 +12,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.SimpleGroups))]
-public class SimpleGroups: ModelElement<DXO10CUI.SimpleGroups>
+[XmlRoot("SimpleGroups", Namespace = "DocumentModel.CustomUI")]
+public class SimpleGroups : ModelElement<DXO10CUI.SimpleGroups>
 {
 }

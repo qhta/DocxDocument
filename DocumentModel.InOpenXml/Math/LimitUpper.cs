@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies the Upper-Limit object, consisting of text on the baseline and reduced-size text immediately above it.
 /// </summary>
 [OpenXmlType(typeof(DXM.LimitUpper))]
+[XmlRoot("LimitUpper", Namespace = "DocumentModel.Math")]
 public partial class LimitUpper : ModelElement<DXM.LimitUpper>, ICommonMathContent
 {
  /// <summary>
@@ -10,16 +11,19 @@ public partial class LimitUpper : ModelElement<DXM.LimitUpper>, ICommonMathConte
  /// </summary>
  [OpenXmlProperty(nameof(DXM.LimitUpper.LimitUpperProperties))]
  public LimitUpperProperties? LimitUpperProperties { get => _LimitUpperProperties; set => UpdateField(ref _LimitUpperProperties, value, nameof(LimitUpperProperties)); }
+
  private LimitUpperProperties? _LimitUpperProperties;
  /// <summary>
  ///   Argument.
  /// </summary>
  public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
+
  private Argument? _Argument;
  /// <summary>
  ///   Limit (Upper).
  /// </summary>
  [OpenXmlProperty(nameof(DXM.LimitUpper.Limit))]
  public Limit? Limit { get => _Limit; set => UpdateField(ref _Limit, value, nameof(Limit)); }
+
  private Limit? _Limit;
 }

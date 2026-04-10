@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 ///  Grid Column Definition.
 /// </summary>
 [OpenXmlType(typeof(DXW.GridColumn))]
+[XmlRoot("GridColumn", Namespace = "DocumentModel.Wordprocessing")]
 public partial class GridColumn : ModelElement<DXW.GridColumn>
 {
  /// <summary>
@@ -10,5 +11,6 @@ public partial class GridColumn : ModelElement<DXW.GridColumn>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.GridColumn.Width))]
  public Twips? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
+
  private Twips? _Width;
 }

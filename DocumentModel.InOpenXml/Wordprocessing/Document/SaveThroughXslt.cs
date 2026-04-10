@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "ExternalFile"/> and provides a property for the local identifier of the XSL transform, enabling advanced customization of XML output through user-defined transformations.
 /// </summary>
 [OpenXmlType(typeof(DXW.SaveThroughXslt))]
+[XmlRoot("SaveThroughXslt", Namespace = "DocumentModel.Wordprocessing")]
 public partial class SaveThroughXslt : ModelElement<DXW.SaveThroughXslt>
 {
  /// <summary>
@@ -11,5 +12,6 @@ public partial class SaveThroughXslt : ModelElement<DXW.SaveThroughXslt>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SaveThroughXslt.SolutionId))]
  public string? SolutionId { get => _SolutionId; set => UpdateField(ref _SolutionId, value, nameof(SolutionId)); }
+
  private string? _SolutionId;
 }

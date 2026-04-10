@@ -1,4 +1,5 @@
 using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies a math paragraph, or display math zone, 
@@ -6,6 +7,7 @@ namespace DocumentModel.Math;
 ///   The oMath containers of a display math zone are not themselves considered inline math zones.
 /// </summary>
 [OpenXmlType(typeof(DXM.Paragraph))]
+[XmlRoot("Paragraph", Namespace = "DocumentModel.Math")]
 public partial class Paragraph : ModelElement<DXM.Paragraph>, ICommonMathContent
 {
  /// <summary>
@@ -13,5 +15,6 @@ public partial class Paragraph : ModelElement<DXM.Paragraph>, ICommonMathContent
  /// </summary>
  [OpenXmlProperty(nameof(DXM.Paragraph.ParagraphProperties))]
  public ParagraphProperties? ParagraphProperties { get => _ParagraphProperties; set => UpdateField(ref _ParagraphProperties, value, nameof(ParagraphProperties)); }
+
  private ParagraphProperties? _ParagraphProperties;
 }

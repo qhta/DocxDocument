@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 ///   Defines the WebExtensionBindingList Class.
 /// </summary>
 [OpenXmlType(typeof(DXO13WE.WebExtensionBindingList))]
-public class WebExtensionBindingList : 
-  ModelElementCollection<WebExtensionBinding, DXO13WE.WebExtensionBindingList, DXO13WE.WebExtensionBinding>
+[XmlRoot("WebExtensionBindingList", Namespace = "DocumentModel.WebExtensions")]
+public class WebExtensionBindingList : ModelElementCollection<WebExtensionBinding, DXO13WE.WebExtensionBindingList, DXO13WE.WebExtensionBinding>
 {
 }

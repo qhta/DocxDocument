@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Defines the StyleData Class.
 /// </summary>
 [OpenXmlType(typeof(DXDD.StyleData))]
+[XmlRoot("StyleData", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class StyleData : SampleDataType
 {
 }

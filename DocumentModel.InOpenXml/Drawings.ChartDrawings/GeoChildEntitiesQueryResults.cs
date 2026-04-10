@@ -5,10 +5,10 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <remarks>
 ///   This class defines a collection of query results that cache
 ///   geographic child entity data retrieved from mapping services or geographic data providers. Each result in
-///   the collection pairs a query specification (<see cref="GeoChildEntitiesQuery"/>) with its corresponding
-///   child entities data (<see cref="GeoChildEntities"/>), enabling efficient cache management and quick retrieval
-///   of previously queried geographic hierarchies. The collection is part of the <see cref="Clear"/> structure
-///   within <see cref="GeoCache"/>, where it supports offline access to hierarchical geographic relationships and
+///   the collection pairs a query specification (<see cref = "GeoChildEntitiesQuery"/>) with its corresponding
+///   child entities data (<see cref = "GeoChildEntities"/>), enabling efficient cache management and quick retrieval
+///   of previously queried geographic hierarchies. The collection is part of the <see cref = "Clear"/> structure
+///   within <see cref = "GeoCache"/>, where it supports offline access to hierarchical geographic relationships and
 ///   improves performance by eliminating redundant queries to external mapping services. This caching mechanism is
 ///   essential for interactive map charts that support drill-down navigation, where users explore geographic
 ///   hierarchies by selecting parent regions to reveal their child entities (such as drilling from countries to
@@ -24,7 +24,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   minimizing external service dependencies and network traffic.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoChildEntitiesQueryResults))]
-public class GeoChildEntitiesQueryResults: ModelElementCollection<GeoChildEntitiesQueryResult,
-  DXO16DCD.GeoChildEntitiesQueryResults, DXO16DCD.GeoChildEntitiesQueryResult>
+[XmlRoot("GeoChildEntitiesQueryResults", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class GeoChildEntitiesQueryResults : ModelElementCollection<GeoChildEntitiesQueryResult, DXO16DCD.GeoChildEntitiesQueryResults, DXO16DCD.GeoChildEntitiesQueryResult>
 {
 }

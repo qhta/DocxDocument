@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to and management of <see cref = "TableRow"/> objects, enabling advanced organization and manipulation of table row structures within a table.
 /// </summary>
 [OpenXmlType(typeof(TableRow))]
+[XmlRoot("TableRows", Namespace = "DocumentModel.Wordprocessing")]
 public class TableRows : ElementCollection<TableRow>
 {
 }

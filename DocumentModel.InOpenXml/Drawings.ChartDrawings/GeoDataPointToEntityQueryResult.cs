@@ -23,26 +23,21 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   association is specified, supporting responsive map chart rendering while minimizing external service dependencies.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoDataPointToEntityQueryResult))]
-public class GeoDataPointToEntityQueryResult: ModelElement<DXO16DCD.GeoDataPointToEntityQueryResult>
+[XmlRoot("GeoDataPointToEntityQueryResult", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class GeoDataPointToEntityQueryResult : ModelElement<DXO16DCD.GeoDataPointToEntityQueryResult>
 {
-  /// <summary>
-  /// Specifies the geo data point query.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointToEntityQueryResult.GeoDataPointQuery))]
-  public GeoDataPointQuery? GeoDataPointQuery
-  {
-    get => _GeoDataPointQuery;
-    set => UpdateField(ref _GeoDataPointQuery, value, nameof(GeoDataPointQuery));
-  }
-  private GeoDataPointQuery? _GeoDataPointQuery;
-  /// <summary>
-  /// Specifies the geo data point to entity query.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointToEntityQueryResult.GeoDataPointToEntityQuery))]
-  public GeoDataPointToEntityQuery? GeoDataPointToEntityQuery
-  {
-    get => _GeoDataPointToEntityQuery;
-    set => UpdateField(ref _GeoDataPointToEntityQuery, value, nameof(GeoDataPointToEntityQuery));
-  }
-  private GeoDataPointToEntityQuery? _GeoDataPointToEntityQuery;
+ /// <summary>
+ /// Specifies the geo data point query.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointToEntityQueryResult.GeoDataPointQuery))]
+ public GeoDataPointQuery? GeoDataPointQuery { get => _GeoDataPointQuery; set => UpdateField(ref _GeoDataPointQuery, value, nameof(GeoDataPointQuery)); }
+
+ private GeoDataPointQuery? _GeoDataPointQuery;
+ /// <summary>
+ /// Specifies the geo data point to entity query.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointToEntityQueryResult.GeoDataPointToEntityQuery))]
+ public GeoDataPointToEntityQuery? GeoDataPointToEntityQuery { get => _GeoDataPointToEntityQuery; set => UpdateField(ref _GeoDataPointToEntityQuery, value, nameof(GeoDataPointToEntityQuery)); }
+
+ private GeoDataPointToEntityQuery? _GeoDataPointToEntityQuery;
 }

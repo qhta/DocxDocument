@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to and management of <see cref = "IRunContent"/> objects, enabling advanced organization and manipulation of inline content such as text, breaks, fields, and other run-level elements within paragraphs.
 /// </summary>
 [OpenXmlType(typeof(IRunContent))]
+[XmlRoot("RunContentCollection", Namespace = "DocumentModel.Wordprocessing")]
 public class RunContentCollection : ElementCollection<IRunContent>
 {
 }

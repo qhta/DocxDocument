@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 ///   The three fill styles are arranged in order from subtle to moderate to intense.
 /// </summary>
 [OpenXmlType(typeof(DXD.FillStyleList))]
+[XmlRoot("FillStyleList", Namespace = "DocumentModel.Drawings")]
 public class FillStyleList : ModelElement<DXD.FillStyleList>
 {
 }

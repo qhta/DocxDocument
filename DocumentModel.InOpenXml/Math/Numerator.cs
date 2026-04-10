@@ -1,9 +1,11 @@
 using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies the numerator of the Fraction object f. 
 /// </summary>
 [OpenXmlType(typeof(DXM.Numerator))]
+[XmlRoot("Numerator", Namespace = "DocumentModel.Math")]
 public partial class Numerator : OfficeMathArgumentType<DXM.Numerator>
 {
  /// <summary>

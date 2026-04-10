@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "TrackChangeType"/> and is used to mark the beginning of a region where custom XML content has been inserted as part of tracked changes, enabling revision tracking and review of custom XML insertions.
 /// </summary>
 [OpenXmlType(typeof(DXW.CustomXmlInsRangeStart))]
+[XmlRoot("CustomXmlInsRangeStart", Namespace = "DocumentModel.Wordprocessing")]
 public class CustomXmlInsRangeStart : MarkupStartRangeElement<DXW.CustomXmlInsRangeStart, DXW.CustomXmlInsRangeEnd>
 {
 }

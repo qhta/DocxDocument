@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Variable List.
 /// </summary>
 [OpenXmlType(typeof(DXDD.VariableList))]
+[XmlRoot("VariableList", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class VariableList : LayoutVariablePropertySetType<DXDD.VariableList>
 {
 }

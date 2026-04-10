@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Represents a mail merge recipient data reference in a WordprocessingML document, linking to the external data file that contains recipient information for mail merge operations.
 /// </summary>
 [OpenXmlType(typeof(DXW.RecipientDataReference))]
+[XmlRoot("RecipientDataReference", Namespace = "DocumentModel.Wordprocessing")]
 public class RecipientDataReference : RelationshipType<DXW.RecipientDataReference>
 {
 }

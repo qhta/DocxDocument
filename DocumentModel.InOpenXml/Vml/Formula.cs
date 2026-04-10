@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 ///   Single Formula.
 /// </summary>
 [OpenXmlType(typeof(DXV.Formula))]
+[XmlRoot("Formula", Namespace = "DocumentModel.Vml")]
 public partial class Formula : ModelElement<DXV.Formula>
 {
  /// <summary>
@@ -10,5 +11,6 @@ public partial class Formula : ModelElement<DXV.Formula>
  /// </summary>
  [OpenXmlProperty(nameof(DXV.Formula.Equation))]
  public string? Equation { get => _Equation; set => UpdateField(ref _Equation, value, nameof(Equation)); }
+
  private string? _Equation;
 }

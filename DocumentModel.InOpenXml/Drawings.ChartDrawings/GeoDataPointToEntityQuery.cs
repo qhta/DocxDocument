@@ -26,22 +26,21 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   where geographic associations are known and explicit rather than derived from coordinates.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoDataPointToEntityQuery))]
-public class GeoDataPointToEntityQuery: ModelElement<DXO16DCD.GeoDataPointToEntityQuery>
+[XmlRoot("GeoDataPointToEntityQuery", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class GeoDataPointToEntityQuery : ModelElement<DXO16DCD.GeoDataPointToEntityQuery>
 {
-  /// <summary>
-  /// Specifies the entity type.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointToEntityQuery.EntityType))]
-  public EntityTypeEnum? EntityType
-  {
-    get => _EntityType;
-    set => UpdateField(ref _EntityType, value, nameof(EntityType));
-  }
-  private EntityTypeEnum? _EntityType;
-  /// <summary>
-  /// Specifies the entity id.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointToEntityQuery.EntityId))]
-  public string? EntityId { get => _EntityId; set => UpdateField(ref _EntityId, value, nameof(EntityId)); }
-  private string? _EntityId;
+ /// <summary>
+ /// Specifies the entity type.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointToEntityQuery.EntityType))]
+ public EntityTypeEnum? EntityType { get => _EntityType; set => UpdateField(ref _EntityType, value, nameof(EntityType)); }
+
+ private EntityTypeEnum? _EntityType;
+ /// <summary>
+ /// Specifies the entity id.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointToEntityQuery.EntityId))]
+ public string? EntityId { get => _EntityId; set => UpdateField(ref _EntityId, value, nameof(EntityId)); }
+
+ private string? _EntityId;
 }

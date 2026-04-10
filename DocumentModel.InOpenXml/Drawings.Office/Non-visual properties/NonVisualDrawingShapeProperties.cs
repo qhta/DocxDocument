@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 ///   Defines the NonVisualDrawingShapeProperties Class.
 /// </summary>
 [OpenXmlType(typeof(DXOD.NonVisualDrawingShapeProperties))]
-public partial class NonVisualDrawingShapeProperties:
-  DMD.NonVisualDrawingShapeProperties<DXOD.NonVisualDrawingShapeProperties>
+[XmlRoot("NonVisualDrawingShapeProperties", Namespace = "DocumentModel.Drawings.Office")]
+public partial class NonVisualDrawingShapeProperties : DMD.NonVisualDrawingShapeProperties<DXOD.NonVisualDrawingShapeProperties>
 {
 }

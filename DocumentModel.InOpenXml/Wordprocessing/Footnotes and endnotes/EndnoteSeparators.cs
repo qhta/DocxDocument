@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to and management of <see cref = "EndnoteSeparator"/> objects, enabling advanced organization and referencing of endnote separators for visual separation and formatting of endnote content.
 /// </summary>
 [OpenXmlType(typeof(EndnoteSeparator))]
+[XmlRoot("EndnoteSeparators", Namespace = "DocumentModel.Wordprocessing")]
 public class EndnoteSeparators : ElementCollection<EndnoteSeparator>
 {
 }

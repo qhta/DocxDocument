@@ -1,8 +1,8 @@
-
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Interface for drawing property.
 /// </summary>
-public class OpenTypeFontProperty: RunProperty
+[XmlRoot("OpenTypeFontProperty", Namespace = "DocumentModel.Wordprocessing")]
+public class OpenTypeFontProperty : RunProperty
 {
 }

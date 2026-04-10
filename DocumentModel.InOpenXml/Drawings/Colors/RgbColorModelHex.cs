@@ -47,7 +47,7 @@ namespace DocumentModel.Drawings;
 /// </code>
 /// </example>
 [OpenXmlType(typeof(DXD.RgbColorModelHex))]
-[XmlRoot("RgbColorModelHex", Namespace = "urn:docmodel:drawings")]
+[XmlRoot("RgbColorModelHex", Namespace = "DocumentModel.Drawings")]
 public partial class RgbColorModelHex : AbstractColor<DXD.RgbColorModelHex>, ISchemeBaseColor
 {
   /// <summary>

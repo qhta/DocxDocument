@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   Upper Limit Properties.
 /// </summary>
 [OpenXmlType(typeof(DXM.LimitUpperProperties))]
+[XmlRoot("LimitUpperProperties", Namespace = "DocumentModel.Math")]
 public partial class LimitUpperProperties : ModelElement<DXM.LimitUpperProperties>
 {
  /// <summary>
@@ -10,5 +11,6 @@ public partial class LimitUpperProperties : ModelElement<DXM.LimitUpperPropertie
  /// </summary>
  [OpenXmlProperty(nameof(DXM.LimitUpperProperties.ControlProperties))]
  public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
+
  private ControlProperties? _ControlProperties;
 }

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "CustomXmlElement"/>, <see cref = "TableRowContent"/>, and <see cref = "SdtCellContent"/>, enabling advanced schema-based processing, annotation, and integration of custom XML data within table cell content. The attributes specify the name and namespace UriString of the custom XML element.
 /// </summary>
 [OpenXmlType(typeof(DXW.CustomXmlCell))]
+[XmlRoot("CustomXmlCell", Namespace = "DocumentModel.Wordprocessing")]
 public class CustomXmlCell : ModelElement<DXW.CustomXmlCell>, ITableRowContent, ISdtCellContent
 {
 }

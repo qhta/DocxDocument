@@ -89,45 +89,57 @@
           <ButtonText>Fix Backing Field Spacing</ButtonText>
         </Strings>
       </Button>
+      <Button guid="guidAutoEditCmdSet" id="cmdidAddXmlRootAttribute" priority="0x0190" type="Button">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupProjNode" />
+        <Strings>
+          <ButtonText>Add XmlRoot Attribute</ButtonText>
+        </Strings>
+      </Button>
     </Buttons>
   </Commands>
 
   <CommandPlacements>
-    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlElementAttribute" priority="0x0100">
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddXmlRootAttribute" priority="0x0100">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
     </CommandPlacement>
     
-    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlEnumTypeAttribute" priority="0x0110">
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlElementAttribute" priority="0x0110">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
     </CommandPlacement>
     
-    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlPropertyAttribute" priority="0x0120">
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlEnumTypeAttribute" priority="0x0120">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
     </CommandPlacement>
     
-    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlTypeAttribute" priority="0x0130">
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlPropertyAttribute" priority="0x0130">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
     </CommandPlacement>
     
-    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddPartialToClass" priority="0x0140">
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlTypeAttribute" priority="0x0140">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
     </CommandPlacement>
     
-    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddPrivateFieldsWithUpdate" priority="0x0150">
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddPartialToClass" priority="0x0150">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
     </CommandPlacement>
     
-    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidGenerateShouldSerializeFunctions" priority="0x0160">
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddPrivateFieldsWithUpdate" priority="0x0160">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
     </CommandPlacement>
     
-    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidRemoveDuplicateDocComments" priority="0x0170">
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidGenerateShouldSerializeFunctions" priority="0x0170">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
+    </CommandPlacement>
+    
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidRemoveDuplicateDocComments" priority="0x0180">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
     </CommandPlacement>
 
-    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidFixBackingFieldSpacing" priority="0x0180">
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidFixBackingFieldSpacing" priority="0x0190">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
     </CommandPlacement>
+
+
     
   </CommandPlacements>
 
@@ -149,6 +161,7 @@
       <IDSymbol name="cmdidGenerateShouldSerializeFunctions" value="0x0106" />
       <IDSymbol name="cmdidRemoveDuplicateDocComments" value="0x0107" />
       <IDSymbol name="cmdidFixBackingFieldSpacing" value="0x0108" />
+      <IDSymbol name="cmdidAddXmlRootAttribute" value="0x0109" />
     </GuidSymbol>
   </Symbols>
 </CommandTable>

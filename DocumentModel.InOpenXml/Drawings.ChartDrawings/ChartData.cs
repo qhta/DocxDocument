@@ -14,30 +14,26 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   data source management and future extensibility.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.ChartData))]
-public class ChartData: ModelElement<DXO16DCD.ChartData>
+[XmlRoot("ChartData", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class ChartData : ModelElement<DXO16DCD.ChartData>
 {
-  /// <summary>
-  /// Specifies the external data.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.ChartData.ExternalData))]
-  public ExternalData? ExternalData
-  {
-    get => _ExternalData;
-    set => UpdateField(ref _ExternalData, value, nameof(ExternalData));
-  }
-  private ExternalData? _ExternalData;
-  /// <summary>
-  /// Specifies the data.
-  /// </summary>
-  public Data? Data { get => _Data; set => UpdateField(ref _Data, value, nameof(Data)); }
-  private Data? _Data;
-  /// <summary>
-  /// Specifies the extension list.
-  /// </summary>
-  public ExtensionList? ExtensionList
-  {
-    get => _ExtensionList;
-    set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList));
-  }
-  private ExtensionList? _ExtensionList;
+ /// <summary>
+ /// Specifies the external data.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.ChartData.ExternalData))]
+ public ExternalData? ExternalData { get => _ExternalData; set => UpdateField(ref _ExternalData, value, nameof(ExternalData)); }
+
+ private ExternalData? _ExternalData;
+ /// <summary>
+ /// Specifies the data.
+ /// </summary>
+ public Data? Data { get => _Data; set => UpdateField(ref _Data, value, nameof(Data)); }
+
+ private Data? _Data;
+ /// <summary>
+ /// Specifies the extension list.
+ /// </summary>
+ public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+ private ExtensionList? _ExtensionList;
 }

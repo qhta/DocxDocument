@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Each band format defines the visual appearance of a specific range or band in the chart.
 /// </summary>
 [OpenXmlType(typeof(DXDC.BandFormats))]
+[XmlRoot("BandFormats", Namespace = "DocumentModel.Drawings.Charts")]
 public class BandFormats : ModelElementCollection<BandFormat, DXDC.BandFormats, DXDC.BandFormat>
 {
 }

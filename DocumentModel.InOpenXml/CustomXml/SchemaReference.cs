@@ -11,17 +11,18 @@ namespace DocumentModel.CustomXml;
 ///   enabling validation and structure definition for custom XML data. The referenced schema may be
 ///   resolved from the document's <see cref = "SchemaLibrary"/> or from external schema sources.
 /// </remarks>
+[XmlRoot("SchemaReference", Namespace = "DocumentModel.CustomXml")]
 public partial class SchemaReference : CollectionItem
 {
-  /// <summary>
-  ///   Gets or sets the target namespace UriString of the associated XML schema.
-  /// </summary>
-  /// <remarks>
-  ///   The target namespace uniquely identifies the XML schema being referenced. This UriString should match
-  ///   the target namespace defined in the actual schema (XSD) file. The namespace is used to locate
-  ///   the corresponding schema definition, either from the document's embedded <see cref = "SchemaLibrary"/>
-  ///   or from external schema sources, enabling validation of custom XML data elements that belong
-  ///   to this namespace.
-  /// </remarks>
-  public string? UriString { get; set; }
+ /// <summary>
+ ///   Gets or sets the target namespace UriString of the associated XML schema.
+ /// </summary>
+ /// <remarks>
+ ///   The target namespace uniquely identifies the XML schema being referenced. This UriString should match
+ ///   the target namespace defined in the actual schema (XSD) file. The namespace is used to locate
+ ///   the corresponding schema definition, either from the document's embedded <see cref = "SchemaLibrary"/>
+ ///   or from external schema sources, enabling validation of custom XML data elements that belong
+ ///   to this namespace.
+ /// </remarks>
+ public string? UriString { get; set; }
 }

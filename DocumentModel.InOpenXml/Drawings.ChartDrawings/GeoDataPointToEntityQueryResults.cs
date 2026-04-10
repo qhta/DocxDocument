@@ -5,10 +5,10 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <remarks>
 ///   This class defines a collection of query results that cache
 ///   data point-to-entity mappings retrieved from mapping services or geographic data providers. Each result in
-///   the collection contains both coordinate-based (<see cref="GeoDataPointQuery"/>) and entity-based
-///   (<see cref="GeoDataPointToEntityQuery"/>) query specifications, enabling flexible caching strategies that
+///   the collection contains both coordinate-based (<see cref = "GeoDataPointQuery"/>) and entity-based
+///   (<see cref = "GeoDataPointToEntityQuery"/>) query specifications, enabling flexible caching strategies that
 ///   support multiple approaches to associating data points with geographic entities. The collection is part of
-///   the <see cref="Clear"/> structure within <see cref="GeoCache"/>, where it supports offline access to
+///   the <see cref = "Clear"/> structure within <see cref = "GeoCache"/>, where it supports offline access to
 ///   point-to-entity mappings and improves performance by eliminating redundant queries to external mapping services.
 ///   This caching mechanism is essential for map-based charts that need to associate data points with geographic
 ///   regions, whether the data points are specified by coordinates (requiring reverse geocoding) or by entity
@@ -27,7 +27,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   and mapping requirements.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoDataPointToEntityQueryResults))]
-public class GeoDataPointToEntityQueryResults: ModelElementCollection<GeoDataPointToEntityQueryResult,
-  DXO16DCD.GeoDataPointToEntityQueryResults, DXO16DCD.GeoDataPointToEntityQueryResult>
+[XmlRoot("GeoDataPointToEntityQueryResults", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class GeoDataPointToEntityQueryResults : ModelElementCollection<GeoDataPointToEntityQueryResult, DXO16DCD.GeoDataPointToEntityQueryResults, DXO16DCD.GeoDataPointToEntityQueryResult>
 {
 }

@@ -1,10 +1,13 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Reflection;
+
 namespace DocumentModel;
 /// <summary>
 /// Collection of known document properties, i.e. document properties which can be included in the document
 /// </summary>
+[XmlRoot("KnownProperties", Namespace = "DocumentModel")]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
 public class KnownProperties : Dictionary<string, PropertyModel>
 {
  /// <summary>
@@ -13,6 +16,7 @@ public class KnownProperties : Dictionary<string, PropertyModel>
  public KnownProperties()
  {
  }
+
  /// <summary>
  /// Initializing constructor.
  /// </summary>
@@ -20,8 +24,9 @@ public class KnownProperties : Dictionary<string, PropertyModel>
  public KnownProperties(Type type)
  {
   var discoveredProperties = DiscoverProperties(type);
-  AddRange(discoveredProperties); 
+  AddRange(discoveredProperties);
  }
+
  /// <summary>
  /// Provides a cache of property information for known types, organized by type and property name.
  /// </summary>
@@ -39,6 +44,7 @@ public class KnownProperties : Dictionary<string, PropertyModel>
  {
   return DiscoverProperties(obj.GetType());
  }
+
  /// <summary>
  /// Retrieves a dictionary of public properties for the specified type, keyed by property name.
  /// </summary>
@@ -52,15 +58,14 @@ public class KnownProperties : Dictionary<string, PropertyModel>
  {
   if (!_knownTypeProperties.TryGetValue(ofType, out var _properties))
   {
-   _properties = ofType.GetProperties().Where(prop => prop.CanWrite
-       //&& prop.Name != "Count" && prop.Name != "IsReadOnly" && prop.Name != "KnownProperties"
-       && prop.GetCustomAttribute<NotMappedAttribute>()==null
-       )
-     .ToDictionary(item => item.Name, item => new PropertyModel(item));
+   _properties = ofType.GetProperties().Where(prop => prop.CanWrite //&& prop.Name != "Count" && prop.Name != "IsReadOnly" && prop.Name != "KnownProperties"
+   && prop.GetCustomAttribute<NotMappedAttribute>() == null).ToDictionary(item => item.Name, item => new PropertyModel(item));
    _knownTypeProperties.Add(ofType, _properties);
   }
+
   return _properties;
  }
+
  /// <summary>
  /// Adds the specified item to the collection if it is a supported type. Needed to implement non-generic ICollection class.
  /// </summary>
@@ -69,15 +74,16 @@ public class KnownProperties : Dictionary<string, PropertyModel>
  public void Add(object item)
  {
   if (item is PropertyModel propertyModel)
-     Add(propertyModel.Name, propertyModel);
+   Add(propertyModel.Name, propertyModel);
  }
+
  /// <summary>
  /// Adds items from the existing dictionary.
  /// </summary>
  /// <param name = "items">Directory of property models.</param>
  public void AddRange(Dictionary<string, PropertyModel> items)
  {
-   foreach (var pair in items)
-     Add(pair.Key, pair.Value);
+  foreach (var pair in items)
+   Add(pair.Key, pair.Value);
  }
 }

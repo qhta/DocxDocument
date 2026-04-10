@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class is used to store grid definitions that were in place before a specific set of revisions, enabling tracking and management of historical table layouts.
 /// </summary>
 [OpenXmlType(typeof(DXW.PreviousTableGrid))]
+[XmlRoot("PreviousTableGrid", Namespace = "DocumentModel.Wordprocessing")]
 public class PreviousTableGrid : BaseTableGrid<DXW.PreviousTableGrid>
 {
 }

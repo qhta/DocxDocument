@@ -35,21 +35,22 @@ public class ColorTypesTest: _AbstractTestClass
   static bool TestTypeDiscovery()
   {
     Console.WriteLine("--- Type Discovery ---");
-    var discovered = GetIColorTypes().Select(t => t.FullName).OrderBy(s => s).ToList();
-    var expected = new List<string>
+    var discovered = GetIColorTypes().OrderBy(t => t.FullName).ToList();
+    var expected = new List<Type>
     {
-      "DocumentModel.Drawings.HslColor",
-      "DocumentModel.Drawings.PresetColor",
-      "DocumentModel.Drawings.RgbColorModelHex",
-      "DocumentModel.Drawings.RgbColorModelPercentage",
-      "DocumentModel.Drawings.SchemeColor",
-      "DocumentModel.Drawings.SystemColor",
-      "DocumentModel.Wordprocessing.Color",
-      "DocumentModel.Wordprocessing.Drawings.RgbColorModelHex",
-      "DocumentModel.Wordprocessing.Drawings.SchemeColor",
-    }.OrderBy(s => s).ToList();
+      typeof(DocumentModel.Drawings.HslColor),
+      typeof(DocumentModel.Drawings.PresetColor),
+      typeof(DocumentModel.Drawings.RgbColorModelHex),
+      typeof(DocumentModel.Drawings.RgbColorModelPercentage),
+      typeof(DocumentModel.Drawings.SchemeColor),
+      typeof(DocumentModel.Drawings.SystemColor),
+      typeof(DocumentModel.Wordprocessing.Color),
+      typeof(DocumentModel.Wordprocessing.Drawings.RgbColorModelHex),
+      typeof(DocumentModel.Wordprocessing.Drawings.SchemeColor),
+    }.OrderBy(t => t.FullName).ToList();
 
     if (!discovered.SequenceEqual(expected))
+
     {
       Console.WriteLine("✗ IColor type discovery FAILED");
       Console.WriteLine("Discovered:");
@@ -245,70 +246,52 @@ public class ColorTypesTest: _AbstractTestClass
   /// <returns>A populated color instance.</returns>
   static object CreateSampleColor(Type colorType)
   {
-    return colorType.FullName switch
-    {
-      "DocumentModel.Drawings.HslColor" => new HslColor
+    if (colorType == typeof(DocumentModel.Drawings.HslColor))
+      return new HslColor
       {
         HueValue = 120 * 60000,
         SatValue = 60000,
         LumValue = 45000,
         Tint = 10000,
         Shade = 5000,
-      },
-      "DocumentModel.Drawings.PresetColor" => new DocumentModel.Drawings.PresetColor
-      {
-        Val = PresetColors.Red,
-        Tint = 10000,
-        Shade = 5000,
-      },
-      "DocumentModel.Drawings.RgbColorModelHex" => new DocumentModel.Drawings.RgbColorModelHex
-      {
-        Val = (HexColor)0x336699,
-        Tint = 10000,
-        Shade = 5000,
-      },
-      "DocumentModel.Drawings.RgbColorModelPercentage" => new DocumentModel.Drawings.RgbColorModelPercentage
+      };
+
+    if (colorType == typeof(DocumentModel.Drawings.PresetColor))
+      return new DocumentModel.Drawings.PresetColor { Val = PresetColors.Red, Tint = 10000, Shade = 5000, };
+    if (colorType == typeof(DocumentModel.Drawings.RgbColorModelHex))
+      return new DocumentModel.Drawings.RgbColorModelHex { Val = (HexColor)0x336699, Tint = 10000, Shade = 5000, };
+    if (colorType == typeof(DocumentModel.Drawings.RgbColorModelPercentage))
+      return new DocumentModel.Drawings.RgbColorModelPercentage
       {
         RedPortion = 20000,
         GreenPortion = 40000,
         BluePortion = 60000,
         Tint = 10000,
         Shade = 5000,
-      },
-      "DocumentModel.Drawings.SchemeColor" => new DocumentModel.Drawings.SchemeColor
+      };
+    if (colorType == typeof(DocumentModel.Drawings.SchemeColor))
+      return new DocumentModel.Drawings.SchemeColor { Val = SchemeColors.Accent3, Tint = 10000, Shade = 5000, };
+    if (colorType == typeof(DocumentModel.Drawings.SystemColor))
+      return new DocumentModel.Drawings.SystemColor
       {
-        Val = SchemeColors.Accent3,
-        Tint = 10000,
-        Shade = 5000,
-      },
-      "DocumentModel.Drawings.SystemColor" => new DocumentModel.Drawings.SystemColor
+        Val = SystemColors.WindowText, LastColor = (HexColor)0x112233, Tint = 10000, Shade = 5000,
+      };
+    if (colorType == typeof(DocumentModel.Wordprocessing.Color))
+      return new DocumentModel.Wordprocessing.Color
       {
-        Val = SystemColors.WindowText,
-        LastColor = (HexColor)0x112233,
-        Tint = 10000,
-        Shade = 5000,
-      },
-      "DocumentModel.Wordprocessing.Color" => new DocumentModel.Wordprocessing.Color
+        Val = (HexColor)0x445566, ThemeColor = ThemeColors.Text1, ThemeTint = 40, ThemeShade = 20,
+      };
+    if (colorType == typeof(DocumentModel.Wordprocessing.Drawings.RgbColorModelHex))
+      return new DocumentModel.Wordprocessing.Drawings.RgbColorModelHex
       {
-        Val = (HexColor)0x445566,
-        ThemeColor = ThemeColors.Text1,
-        ThemeTint = 40,
-        ThemeShade = 20,
-      },
-      "DocumentModel.Wordprocessing.Drawings.RgbColorModelHex" => new DocumentModel.Wordprocessing.Drawings.RgbColorModelHex
+        Val = (HexColor)0x336699, Tint = 10000, Shade = 5000,
+      };
+    if (colorType == typeof(DocumentModel.Wordprocessing.Drawings.SchemeColor))
+      return new DocumentModel.Wordprocessing.Drawings.SchemeColor
       {
-        Val = (HexColor)0x336699,
-        Tint = 10000,
-        Shade = 5000,
-      },
-      "DocumentModel.Wordprocessing.Drawings.SchemeColor" => new DocumentModel.Wordprocessing.Drawings.SchemeColor
-      {
-        Val = SchemeColors.Accent3,
-        Tint = 10000,
-        Shade = 5000,
-      },
-      _ => throw new NotSupportedException($"Unsupported IColor type '{colorType.FullName}'.")
-    };
+        Val = SchemeColors.Accent3, Tint = 10000, Shade = 5000,
+      };
+    throw new NotSupportedException($"Unsupported IColor type '{colorType.FullName}'.");
   }
 
   /// <summary>
@@ -466,8 +449,8 @@ public class ColorTypesTest: _AbstractTestClass
     var serializer = new XmlSerializer(rootType, overrides, null, null, null);
 
     var ns = new XmlSerializerNamespaces();
-    ns.Add("d", "urn:docmodel:drawings");
-    ns.Add("wd", "urn:docmodel:wordprocessing:drawings");
+    ns.Add("d", "DocumentModel.Drawings");
+    ns.Add("wd", "DocumentModel.Wordprocessing.Drawings");
 
 
     var xmlSerializer = new XmlSerializer(data.GetType());

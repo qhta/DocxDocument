@@ -3,6 +3,7 @@ namespace DocumentModel;
 ///   Defines the ClassificationExtension Class.
 /// </summary>
 [OpenXmlType(typeof(DXO21MLMD.ClassificationExtension))]
-public class ClassificationExtension: Extension
+[XmlRoot("ClassificationExtension", Namespace = "DocumentModel")]
+public class ClassificationExtension : Extension
 {
 }

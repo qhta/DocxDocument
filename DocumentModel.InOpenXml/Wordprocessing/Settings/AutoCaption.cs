@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   This class provides properties for the object identifier and the caption used for automatic captioning, enabling configuration and management of automatic captions for document objects.
 /// </summary>
 [OpenXmlType(typeof(DXW.AutoCaption))]
+[XmlRoot("AutoCaption", Namespace = "DocumentModel.Wordprocessing")]
 public partial class AutoCaption : ModelElement<DXW.AutoCaption>
 {
  /// <summary>
@@ -12,6 +13,7 @@ public partial class AutoCaption : ModelElement<DXW.AutoCaption>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Caption.Name))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
+
  private string? _Name;
  /// <summary>
  /// Specifies the caption defined in using the caption element (�17.15.1.16) which shall be
@@ -21,5 +23,6 @@ public partial class AutoCaption : ModelElement<DXW.AutoCaption>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.AutoCaption.Caption))]
  public string? Caption { get => _Caption; set => UpdateField(ref _Caption, value, nameof(Caption)); }
+
  private string? _Caption;
 }

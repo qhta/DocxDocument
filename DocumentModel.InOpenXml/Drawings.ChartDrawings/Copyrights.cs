@@ -14,6 +14,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   sources, which is especially important for charts used in published documents, presentations, or
 ///   commercial applications.
 /// </remarks>
-public class Copyrights: StringList
+[XmlRoot("Copyrights", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class Copyrights : StringList
 {
 }

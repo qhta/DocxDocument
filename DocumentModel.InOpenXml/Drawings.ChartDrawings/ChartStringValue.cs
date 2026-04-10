@@ -14,12 +14,14 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   chart's data model.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.ChartStringValue))]
-public class ChartStringValue: ModelElement<DXO16DCD.ChartStringValue>
+[XmlRoot("ChartStringValue", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class ChartStringValue : ModelElement<DXO16DCD.ChartStringValue>
 {
-  /// <summary>
-  /// Specifies the index.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.ChartStringValue.Index))]
-  public UInt32? Index { get => _Index; set => UpdateField(ref _Index, value, nameof(Index)); }
-  private UInt32? _Index;
+ /// <summary>
+ /// Specifies the index.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.ChartStringValue.Index))]
+ public UInt32? Index { get => _Index; set => UpdateField(ref _Index, value, nameof(Index)); }
+
+ private UInt32? _Index;
 }

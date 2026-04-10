@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 ///   Defines the WebExtensionReferenceList Class.
 /// </summary>
 [OpenXmlType(typeof(DXO13WE.WebExtensionReferenceList))]
-public class WebExtensionReferenceList : 
-  ModelElementCollection<WebExtensionStoreReference, DXO13WE.WebExtensionReferenceList, DXO13WE.WebExtensionStoreReference>
+[XmlRoot("WebExtensionReferenceList", Namespace = "DocumentModel.WebExtensions")]
+public class WebExtensionReferenceList : ModelElementCollection<WebExtensionStoreReference, DXO13WE.WebExtensionReferenceList, DXO13WE.WebExtensionStoreReference>
 {
 }

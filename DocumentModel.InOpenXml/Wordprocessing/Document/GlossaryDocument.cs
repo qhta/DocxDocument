@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   This class provides properties for the document background and the list of glossary document entries, enabling advanced management, organization, and reuse of building blocks, autotext, and other reusable document content.
 /// </summary>
 [OpenXmlType(typeof(DXW.GlossaryDocument))]
+[XmlRoot("GlossaryDocument", Namespace = "DocumentModel.Wordprocessing")]
 public partial class GlossaryDocument : ModelElement<DXW.GlossaryDocument>
 {
  /// <summary>
@@ -11,11 +12,13 @@ public partial class GlossaryDocument : ModelElement<DXW.GlossaryDocument>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.GlossaryDocument.DocumentBackground))]
  public DocumentBackground? DocumentBackground { get => _DocumentBackground; set => UpdateField(ref _DocumentBackground, value, nameof(DocumentBackground)); }
+
  private DocumentBackground? _DocumentBackground;
  /// <summary>
  ///   List of glossary document entries, providing access to and management of reusable document parts.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.GlossaryDocument.DocParts))]
  public DocParts? DocParts { get => _DocParts; set => UpdateField(ref _DocParts, value, nameof(DocParts)); }
+
  private DocParts? _DocParts;
 }

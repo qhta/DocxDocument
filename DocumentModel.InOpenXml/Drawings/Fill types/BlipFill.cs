@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a blip fill, providing properties for image fill effects in drawing elements.
 /// </summary>
 [OpenXmlType(typeof(DXD.BlipFill))]
+[XmlRoot("BlipFill", Namespace = "DocumentModel.Drawings")]
 public partial class BlipFill : Fill<DXD.BlipFill>
 {
  /// <summary>

@@ -588,7 +588,7 @@
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.AddAbstractColorOverride(System.Xml.Serialization.XmlAttributeOverrides,System.Type,System.String,System.String)">
             <summary>
-            Adds an XML type override for a closed generic <see cref="T:DocumentModel.AbstractColor`1"/> type.
+            Adds an XML type override for a closed generic <see cref="!:AbstractColor&lt;T&gt;"/> type.
             </summary>
             <param name="overrides">Override collection to populate.</param>
             <param name="type">Closed generic abstract color type to override.</param>

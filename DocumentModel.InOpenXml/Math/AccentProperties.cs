@@ -4,6 +4,7 @@ namespace DocumentModel.Math;
 ///   If AccentChar is omitted, the default accent character is U+0302 (COMBINING CIRCUMFLEX ACCENT). 
 /// </summary>
 [OpenXmlType(typeof(DXM.AccentProperties))]
+[XmlRoot("AccentProperties", Namespace = "DocumentModel.Math")]
 public partial class AccentProperties : ModelElement<DXM.AccentProperties>
 {
  /// <summary>
@@ -11,11 +12,13 @@ public partial class AccentProperties : ModelElement<DXM.AccentProperties>
  /// </summary>
  [OpenXmlProperty(nameof(DXM.AccentProperties.AccentChar))]
  public string? AccentChar { get => _AccentChar; set => UpdateField(ref _AccentChar, value, nameof(AccentChar)); }
+
  private string? _AccentChar;
  /// <summary>
  ///   Specifies formatting of accent character.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.AccentProperties.ControlProperties))]
  public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
+
  private ControlProperties? _ControlProperties;
 }

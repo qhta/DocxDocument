@@ -14,12 +14,14 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   is specified depending on the axis type.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.CategoryAxisScaling))]
-public class CategoryAxisScaling: ModelElement<DXO16DCD.CategoryAxisScaling>
+[XmlRoot("CategoryAxisScaling", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class CategoryAxisScaling : ModelElement<DXO16DCD.CategoryAxisScaling>
 {
-  /// <summary>
-  /// Specifies the gap width.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.CategoryAxisScaling.GapWidth))]
-  public string? GapWidth { get => _GapWidth; set => UpdateField(ref _GapWidth, value, nameof(GapWidth)); }
-  private string? _GapWidth;
+ /// <summary>
+ /// Specifies the gap width.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.CategoryAxisScaling.GapWidth))]
+ public string? GapWidth { get => _GapWidth; set => UpdateField(ref _GapWidth, value, nameof(GapWidth)); }
+
+ private string? _GapWidth;
 }

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides two complementary ways to specify the hyphen: by an enum-typed value or by a visual text string, enabling advanced control over hyphenation and character encoding in document content.
 /// </summary>
 [OpenXmlType(typeof(DXW.NoBreakHyphen))]
+[XmlRoot("NoBreakHyphen", Namespace = "DocumentModel.Wordprocessing")]
 public class NoBreakHyphen : ModelElement<DXW.NoBreakHyphen>, IRunContent
 {
 }

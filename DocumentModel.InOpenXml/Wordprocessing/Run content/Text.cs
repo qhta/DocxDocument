@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class is used for inline text content, enabling the representation and manipulation of textual data within runs, paragraphs, and other document structures.
 /// </summary>
 [OpenXmlType(typeof(DXM.Text))]
+[XmlRoot("Text", Namespace = "DocumentModel.Wordprocessing")]
 public class Text : TextualElement<DXM.Text>
 {
 }

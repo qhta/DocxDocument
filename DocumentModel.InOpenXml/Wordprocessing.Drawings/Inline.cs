@@ -7,6 +7,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 ///   floating shapes which can be positioned independently.
 /// </remarks>
 [OpenXmlType(typeof(DXDW.Inline))]
-public partial class Inline: ModelElement<DXDW.Inline>
+[XmlRoot("Inline", Namespace = "DocumentModel.Wordprocessing.Drawings")]
+public partial class Inline : ModelElement<DXDW.Inline>
 {
 }

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class annotates <see cref = "PreviousParagraphProperties"/> with author, date, and annotation identifier, enabling tracking and management of property revisions for paragraph formatting in WordprocessingML documents.
 /// </summary>
 [OpenXmlType(typeof(DXW.ParagraphPropertiesChange))]
+[XmlRoot("ParagraphPropertiesChange", Namespace = "DocumentModel.Wordprocessing")]
 public partial class ParagraphPropertiesChange : TrackChangeType<DXW.ParagraphPropertiesChange>
 {
  /// <summary>

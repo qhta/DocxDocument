@@ -22,26 +22,21 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   a state for repeated access, or maintaining city-level data for quick navigation within regional hierarchies.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoChildEntitiesQueryResult))]
-public class GeoChildEntitiesQueryResult: ModelElement<DXO16DCD.GeoChildEntitiesQueryResult>
+[XmlRoot("GeoChildEntitiesQueryResult", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class GeoChildEntitiesQueryResult : ModelElement<DXO16DCD.GeoChildEntitiesQueryResult>
 {
-  /// <summary>
-  /// Specifies the geo child entities query.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.GeoChildEntitiesQueryResult.GeoChildEntitiesQuery))]
-  public GeoChildEntitiesQuery? GeoChildEntitiesQuery
-  {
-    get => _GeoChildEntitiesQuery;
-    set => UpdateField(ref _GeoChildEntitiesQuery, value, nameof(GeoChildEntitiesQuery));
-  }
-  private GeoChildEntitiesQuery? _GeoChildEntitiesQuery;
-  /// <summary>
-  /// Specifies the geo child entities.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.GeoChildEntitiesQueryResult.GeoChildEntities))]
-  public GeoChildEntities? GeoChildEntities
-  {
-    get => _GeoChildEntities;
-    set => UpdateField(ref _GeoChildEntities, value, nameof(GeoChildEntities));
-  }
-  private GeoChildEntities? _GeoChildEntities;
+ /// <summary>
+ /// Specifies the geo child entities query.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.GeoChildEntitiesQueryResult.GeoChildEntitiesQuery))]
+ public GeoChildEntitiesQuery? GeoChildEntitiesQuery { get => _GeoChildEntitiesQuery; set => UpdateField(ref _GeoChildEntitiesQuery, value, nameof(GeoChildEntitiesQuery)); }
+
+ private GeoChildEntitiesQuery? _GeoChildEntitiesQuery;
+ /// <summary>
+ /// Specifies the geo child entities.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.GeoChildEntitiesQueryResult.GeoChildEntities))]
+ public GeoChildEntities? GeoChildEntities { get => _GeoChildEntities; set => UpdateField(ref _GeoChildEntities, value, nameof(GeoChildEntities)); }
+
+ private GeoChildEntities? _GeoChildEntities;
 }

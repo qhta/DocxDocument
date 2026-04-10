@@ -13,6 +13,7 @@ namespace DocumentModel.Drawings;
 /// and the coordinate points for x grow to the right and for y grow down.
 /// </remarks>
 [OpenXmlType(typeof(DXD.AdjustPoint2DType))]
+[XmlRoot("AdjustPoint2DType", Namespace = "DocumentModel.Drawings")]
 public partial class AdjustPoint2DType : ModelElement<DXD.AdjustPoint2DType>
 {
  /// <summary>
@@ -20,11 +21,13 @@ public partial class AdjustPoint2DType : ModelElement<DXD.AdjustPoint2DType>
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AdjustPoint2DType.X))]
  public EMU? X { get => _X; set => UpdateField(ref _X, value, nameof(X)); }
+
  private EMU? _X;
  /// <summary>
  /// Y-coordinate of the adjustment point.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AdjustPoint2DType.Y))]
  public EMU? Y { get => _Y; set => UpdateField(ref _Y, value, nameof(Y)); }
+
  private EMU? _Y;
 }

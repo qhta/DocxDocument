@@ -15,12 +15,14 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   control over label visibility without requiring individual DataLabel definitions for every data point.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.DataLabelHidden))]
-public class DataLabelHidden: ModelElement<DXO16DCD.DataLabelHidden>
+[XmlRoot("DataLabelHidden", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class DataLabelHidden : ModelElement<DXO16DCD.DataLabelHidden>
 {
-  /// <summary>
-  /// Specifies the idx.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.DataLabelHidden.Idx))]
-  public UInt32? Idx { get => _Idx; set => UpdateField(ref _Idx, value, nameof(Idx)); }
-  private UInt32? _Idx;
+ /// <summary>
+ /// Specifies the idx.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.DataLabelHidden.Idx))]
+ public UInt32? Idx { get => _Idx; set => UpdateField(ref _Idx, value, nameof(Idx)); }
+
+ private UInt32? _Idx;
 }

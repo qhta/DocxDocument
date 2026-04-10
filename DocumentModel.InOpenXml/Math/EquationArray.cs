@@ -12,6 +12,7 @@ namespace DocumentModel.Math;
 ///   (as well, the beginning of each argument provides an implied spacer value).
 /// </summary>
 [OpenXmlType(typeof(DXM.EquationArray))]
+[XmlRoot("EquationArray", Namespace = "DocumentModel.Math")]
 public partial class EquationArray : ModelElement<DXM.EquationArray>, IArgumentCollection, ICommonMathContent
 {
  /// <summary>
@@ -19,5 +20,6 @@ public partial class EquationArray : ModelElement<DXM.EquationArray>, IArgumentC
  /// </summary>
  [OpenXmlProperty(nameof(DXM.EquationArray.EquationArrayProperties))]
  public EquationArrayProperties? EquationArrayProperties { get => _EquationArrayProperties; set => UpdateField(ref _EquationArrayProperties, value, nameof(EquationArrayProperties)); }
+
  private EquationArrayProperties? _EquationArrayProperties;
 }

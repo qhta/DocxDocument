@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Defines the DataModelExtensionList Class.
 /// </summary>
 [OpenXmlType(typeof(DXDD.DataModelExtensionList))]
+[XmlRoot("DataModelExtensionList", Namespace = "DocumentModel.Drawings.Diagrams")]
 public class DataModelExtensionList : ModelElementCollection<DataModelExtension, DXDD.DataModelExtensionList, DXD.DataModelExtension>
 {
 }

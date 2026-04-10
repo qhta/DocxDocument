@@ -1,10 +1,12 @@
 using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Math;
 /// <summary>
 ///   This element specifies the name of the function in the Function-Apply object func. 
 ///   For example, function names are sin and cos.
 /// </summary>
 [OpenXmlType(typeof(DXM.FunctionName))]
+[XmlRoot("FunctionName", Namespace = "DocumentModel.Math")]
 public partial class FunctionName : OfficeMathArgumentType<DXM.FunctionName>
 {
  /// <summary>

@@ -1,23 +1,19 @@
-using DocumentModel.Interop;
+﻿using DocumentModel.Interop;
 
 namespace DocumentModel;
-
-public partial class CustomProperties: DMP.ICustomProperties
+public partial class CustomProperties : DMP.ICustomProperties
 {
+ IEnumerator<DMP.ICustomProperty> IEnumerable<DMP.ICustomProperty>.GetEnumerator() => this.GetEnumerator();
+ DMP.ICustomProperty IModelCollection<DMP.ICustomProperty>.this[object index] { get => this[index]; set => this[index] = (CustomProperty)value; }
 
-  IEnumerator<DMP.ICustomProperty> IEnumerable<DMP.ICustomProperty>.GetEnumerator()
-  => this.GetEnumerator();
-
- 
-  DMP.ICustomProperty IModelCollection<DMP.ICustomProperty>.this[object index]
+ DMP.ICustomProperty DMP.ICustomProperties.Add(string name, object value)
+ {
+  var newItem = new CustomProperty
   {
-    get => this[index]; 
-    set => this[index] = (CustomProperty)value;
-  }
-  DMP.ICustomProperty DMP.ICustomProperties.Add(string name, object value)
-  {
-    var newItem = new CustomProperty{Name = name, Value = new Variant(value)};
-    Add(newItem);
-    return newItem;
-  }
+   Name = name,
+   Value = new Variant(value)
+  };
+  Add(newItem);
+  return newItem;
+ }
 }

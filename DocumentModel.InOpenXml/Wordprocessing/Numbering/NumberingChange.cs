@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "IIdentifiedChange"/> and provides a property for the original numbering value, enabling tracking and management of revisions to paragraph numbering.
 /// </summary>
 [OpenXmlType(typeof(DXW.NumberingChange))]
+[XmlRoot("NumberingChange", Namespace = "DocumentModel.Wordprocessing")]
 public partial class NumberingChange : TrackChangeType<DXW.NumberingChange>
 {
  /// <summary>

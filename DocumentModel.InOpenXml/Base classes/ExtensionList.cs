@@ -4,7 +4,7 @@ namespace DocumentModel;
 /// </summary>
 /// <remarks>
 /// <para>
-/// <see cref="IExtensionList"/> in the <see cref="DocumentModel.Drawings"/> namespace is the general-purpose extension mechanism for DrawingML (Office Art) elements. While specialized extension lists exist for specific scenarios (like <see cref="BlipExtensionList"/> for images or <see cref="ConnectorLockingExtensionList"/>
+/// <see cref = "IExtensionList"/> in the <see cref = "DocumentModel.Drawings"/> namespace is the general-purpose extension mechanism for DrawingML (Office Art) elements. While specialized extension lists exist for specific scenarios (like <see cref = "BlipExtensionList"/> for images or <see cref = "ConnectorLockingExtensionList"/>
 /// for connectors), this ExtensionList handles general DrawingML extensions that don't fit specialized categories.
 /// </para>
 /// <para>
@@ -18,10 +18,11 @@ namespace DocumentModel;
 /// </list>
 /// </para>
 /// <para>
-/// Each <see cref="IExtension"/> in the collection typically contains a UriString identifier, visual properties, metadata, and version information.
+/// Each <see cref = "IExtension"/> in the collection typically contains a UriString identifier, visual properties, metadata, and version information.
 /// </para>
 /// </remarks>
 [OpenXmlType(typeof(DXD.ExtensionList))]
+[XmlRoot("ExtensionList", Namespace = "DocumentModel")]
 public class ExtensionList : ModelElementCollection<Extension, DXD.ExtensionList, DXD.Extension>
 {
 }

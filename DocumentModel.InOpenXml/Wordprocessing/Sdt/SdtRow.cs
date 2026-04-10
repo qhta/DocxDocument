@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class represents a collection of structured document tag row content and provides properties for tag configuration and end character formatting, enabling advanced handling of structured document tags for table rows.
 /// </summary>
 [OpenXmlType(typeof(DXW.SdtRow))]
+[XmlRoot("SdtRow", Namespace = "DocumentModel.Wordprocessing")]
 public partial class SdtRow : ModelElement<DXW.SdtRow>, ITableContent, ISdtRowContent
 {
  /// <summary>
@@ -11,11 +12,13 @@ public partial class SdtRow : ModelElement<DXW.SdtRow>, ITableContent, ISdtRowCo
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SdtRow.SdtProperties))]
  public SdtProperties? SdtProperties { get => _SdtProperties; set => UpdateField(ref _SdtProperties, value, nameof(SdtProperties)); }
+
  private SdtProperties? _SdtProperties;
  /// <summary>
  /// Specifies the properties applied to the physical character that delimits the end of a structured document tag.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SdtRow.SdtEndCharProperties))]
  public SdtEndCharProperties? SdtEndCharProperties { get => _SdtEndCharProperties; set => UpdateField(ref _SdtEndCharProperties, value, nameof(SdtEndCharProperties)); }
+
  private SdtEndCharProperties? _SdtEndCharProperties;
 }

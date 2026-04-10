@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to and management of <see cref = "DocPart"/> objects, enabling advanced organization, reuse, and referencing of building blocks, autotext, and other reusable document content.
 /// </summary>
 [OpenXmlType(typeof(DocPart))]
+[XmlRoot("DocParts", Namespace = "DocumentModel.Wordprocessing")]
 public class DocParts : ModelElementCollection<DocPart, DXW.DocParts, DXW.DocPart>
 {
 }

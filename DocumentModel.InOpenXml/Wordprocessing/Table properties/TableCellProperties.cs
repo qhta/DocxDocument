@@ -4,10 +4,11 @@ namespace DocumentModel.Wordprocessing;
 /// Each unique property is specified by a child element. In any instance where there is a conflict between table-level, table-level exception, or row-level properties with a corresponding table cell property, these properties overwrite the table or row-wide properties.
 /// </summary>
 [OpenXmlType(typeof(DXW.TableCellProperties))]
+[XmlRoot("TableCellProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class TableCellProperties : CurrentTableCellProperties<DXW.TableCellProperties>
 {
-  /// <summary>
-  /// Details about a single revision to a set of table cell properties in a WordprocessingML document.
-  /// </summary>
-  public TableCellPropertiesChange? TableCellPropertiesChange { get; set; }
+ /// <summary>
+ /// Details about a single revision to a set of table cell properties in a WordprocessingML document.
+ /// </summary>
+ public TableCellPropertiesChange? TableCellPropertiesChange { get; set; }
 }

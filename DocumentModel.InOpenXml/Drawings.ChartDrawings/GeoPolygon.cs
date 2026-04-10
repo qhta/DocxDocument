@@ -22,24 +22,28 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   provides information about the polygon's complexity and detail level.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoPolygon))]
-public class GeoPolygon: ModelElement<DXO16DCD.GeoPolygon>
+[XmlRoot("GeoPolygon", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class GeoPolygon : ModelElement<DXO16DCD.GeoPolygon>
 {
-  /// <summary>
-  /// Specifies the polygon id.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.GeoPolygon.PolygonId))]
-  public string? PolygonId { get => _PolygonId; set => UpdateField(ref _PolygonId, value, nameof(PolygonId)); }
-  private string? _PolygonId;
-  /// <summary>
-  /// Specifies the num points.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.GeoPolygon.NumPoints))]
-  public Int64? NumPoints { get => _NumPoints; set => UpdateField(ref _NumPoints, value, nameof(NumPoints)); }
-  private Int64? _NumPoints;
-  /// <summary>
-  /// Specifies the pca rings.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.GeoPolygon.PcaRings))]
-  public string? PcaRings { get => _PcaRings; set => UpdateField(ref _PcaRings, value, nameof(PcaRings)); }
-  private string? _PcaRings;
+ /// <summary>
+ /// Specifies the polygon id.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.GeoPolygon.PolygonId))]
+ public string? PolygonId { get => _PolygonId; set => UpdateField(ref _PolygonId, value, nameof(PolygonId)); }
+
+ private string? _PolygonId;
+ /// <summary>
+ /// Specifies the num points.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.GeoPolygon.NumPoints))]
+ public Int64? NumPoints { get => _NumPoints; set => UpdateField(ref _NumPoints, value, nameof(NumPoints)); }
+
+ private Int64? _NumPoints;
+ /// <summary>
+ /// Specifies the pca rings.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.GeoPolygon.PcaRings))]
+ public string? PcaRings { get => _PcaRings; set => UpdateField(ref _PcaRings, value, nameof(PcaRings)); }
+
+ private string? _PcaRings;
 }

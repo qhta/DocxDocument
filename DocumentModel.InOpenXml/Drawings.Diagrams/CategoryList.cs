@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Category List.
 /// </summary>
 [OpenXmlType(typeof(DXDD.CategoryList))]
+[XmlRoot("CategoryList", Namespace = "DocumentModel.Drawings.Diagrams")]
 public class CategoryList : ModelElementCollection<Category, DXDD.CategoryList, DXDD.Category>
 {
 }

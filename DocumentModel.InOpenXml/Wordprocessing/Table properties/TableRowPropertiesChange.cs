@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class annotates <see cref = "PreviousTableRowProperties"/> with author, date, and annotation identifier, enabling tracking and management of property revisions for table rows.
 /// </summary>
 [OpenXmlType(typeof(DXW.TableRowPropertiesChange))]
+[XmlRoot("TableRowPropertiesChange", Namespace = "DocumentModel.Wordprocessing")]
 public partial class TableRowPropertiesChange : IdentifiedChange<DXW.TableRowPropertiesChange>
 {
  /// <summary>

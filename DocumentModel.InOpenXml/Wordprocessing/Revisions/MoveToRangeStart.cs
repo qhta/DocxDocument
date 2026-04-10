@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This element defines the start of the move destination container (bookmark) for tracked move revisions. The Id attribute links this element with the corresponding end of the move destination container, grouping moved content for revision tracking and review.
 /// </summary>
 [OpenXmlType(typeof(DXW.MoveToRangeStart))]
+[XmlRoot("MoveToRangeStart", Namespace = "DocumentModel.Wordprocessing")]
 public class MoveToRangeStart : MarkupStartRangeElement<DXW.MoveToRangeStart, DXW.MoveToRangeEnd>
 {
 }

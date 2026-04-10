@@ -5,6 +5,7 @@ namespace DocumentModel.CustomUI;
 /// <para>When the object is serialized out as xml, it's qualified name is mso14:radioButton.</para>
 /// </summary>
 [OpenXmlType(typeof(DXO10CUI.RadioButtonBackstageItem))]
-public class RadioButtonBackstageItem: ModelElement<DXO10CUI.RadioButtonBackstageItem>
+[XmlRoot("RadioButtonBackstageItem", Namespace = "DocumentModel.CustomUI")]
+public class RadioButtonBackstageItem : ModelElement<DXO10CUI.RadioButtonBackstageItem>
 {
 }

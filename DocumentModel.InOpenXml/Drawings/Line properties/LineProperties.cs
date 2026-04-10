@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents line formatting properties, including width, cap, compound type, alignment, fill, dash, join, end properties, and extensions.
 /// </summary>
 [OpenXmlType(typeof(IDrawingProperty))]
+[XmlRoot("LineProperties", Namespace = "DocumentModel.Drawings")]
 public partial class LineProperties : ElementCollection<IDrawingProperty>, ILinePropertiesExtendableElement
 {
  /// <summary>
@@ -33,11 +34,13 @@ public partial class LineProperties : ElementCollection<IDrawingProperty>, ILine
  ///   Specifies the custom dash pattern for the line.
  /// </summary>
  public CustomDash? CustomDash { get; set; }
+
  /// <summary>
  ///   Indicates that a round line join is used.
  /// </summary>
  [DefaultValue(false)]
  public Boolean Round { get; set; }
+
  /// <summary>
  ///   Indicates that an angle (bevel) joint is used to connect lines.
  /// </summary>

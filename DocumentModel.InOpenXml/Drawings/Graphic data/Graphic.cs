@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 ///   Represents a graphic object, containing graphic data.
 /// </summary>
 [OpenXmlType(typeof(DXD.Graphic))]
+[XmlRoot("Graphic", Namespace = "DocumentModel.Drawings")]
 public partial class Graphic : ModelElement<DXD.Graphic>
 {
  /// <summary>
@@ -10,5 +11,6 @@ public partial class Graphic : ModelElement<DXD.Graphic>
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Graphic.GraphicData))]
  public GraphicData? GraphicData { get => _GraphicData; set => UpdateField(ref _GraphicData, value, nameof(GraphicData)); }
+
  private GraphicData? _GraphicData;
 }

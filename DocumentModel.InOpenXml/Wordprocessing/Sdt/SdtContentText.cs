@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides a property for allowing soft line breaks, enabling advanced customization of multiline or single-line text input in SDTs.
 /// </summary>
 [OpenXmlType(typeof(DXW.SdtContentText))]
+[XmlRoot("SdtContentText", Namespace = "DocumentModel.Wordprocessing")]
 public partial class SdtContentText : ModelElement<DXW.SdtContentText>
 {
  /// <summary>
@@ -11,5 +12,6 @@ public partial class SdtContentText : ModelElement<DXW.SdtContentText>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SdtContentText.MultiLine))]
  public bool? MultiLine { get => _MultiLine; set => UpdateField(ref _MultiLine, value, nameof(MultiLine)); }
+
  private bool? _MultiLine;
 }

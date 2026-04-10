@@ -9,6 +9,7 @@ namespace DocumentModel.Drawings;
 /// Depending on the autofit options within the txBody element the text might not entirely reside within this shape text rectangle. 
 /// </remarks>
 [OpenXmlType(typeof(DXD.Rectangle))]
+[XmlRoot("Rectangle", Namespace = "DocumentModel.Drawings")]
 public partial class Rectangle : ModelElement<DXD.Rectangle>
 {
  /// <summary>
@@ -16,23 +17,27 @@ public partial class Rectangle : ModelElement<DXD.Rectangle>
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Rectangle.Left))]
  public string? Left { get => _Left; set => UpdateField(ref _Left, value, nameof(Left)); }
+
  private string? _Left;
  /// <summary>
  ///   Top position of the rectangle.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Rectangle.Top))]
  public string? Top { get => _Top; set => UpdateField(ref _Top, value, nameof(Top)); }
+
  private string? _Top;
  /// <summary>
  ///   Right position of the rectangle.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Rectangle.Right))]
  public string? Right { get => _Right; set => UpdateField(ref _Right, value, nameof(Right)); }
+
  private string? _Right;
  /// <summary>
  ///   Bottom position of the rectangle.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.Rectangle.Bottom))]
  public string? Bottom { get => _Bottom; set => UpdateField(ref _Bottom, value, nameof(Bottom)); }
+
  private string? _Bottom;
 }

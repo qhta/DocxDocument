@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Office;
 ///   Defines the GroupShapeType Class.
 /// </summary>
 [OpenXmlType(typeof(DXOD.GroupShapeType))]
+[XmlRoot("GroupShapeType", Namespace = "DocumentModel.Drawings.Office")]
 public partial class GroupShapeType : ModelElement<DXOD.GroupShapeType>
 {
  /// <summary>
@@ -10,11 +11,13 @@ public partial class GroupShapeType : ModelElement<DXOD.GroupShapeType>
  /// </summary>
  [OpenXmlProperty(nameof(DXOD.GroupShapeType.GroupShapeNonVisualProperties))]
  public GroupShapeNonVisualProperties? GroupShapeNonVisualProperties { get => _GroupShapeNonVisualProperties; set => UpdateField(ref _GroupShapeNonVisualProperties, value, nameof(GroupShapeNonVisualProperties)); }
+
  private GroupShapeNonVisualProperties? _GroupShapeNonVisualProperties;
  /// <summary>
  ///   GroupShapeProperties.
  /// </summary>
  [OpenXmlProperty(nameof(DXOD.GroupShapeType.GroupShapeProperties))]
  public GroupShapeProperties? GroupShapeProperties { get => _GroupShapeProperties; set => UpdateField(ref _GroupShapeProperties, value, nameof(GroupShapeProperties)); }
+
  private GroupShapeProperties? _GroupShapeProperties;
 }

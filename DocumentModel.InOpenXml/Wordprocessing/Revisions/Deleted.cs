@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "TrackChangeType"/> and is used to indicate that content has been deleted as part of tracked changes, enabling revision tracking and review of content removals within the document.
 /// </summary>
 [OpenXmlType(typeof(DXW.Deleted))]
+[XmlRoot("Deleted", Namespace = "DocumentModel.Wordprocessing")]
 public class Deleted : TrackChangeType<DXW.Deleted>
 {
 }

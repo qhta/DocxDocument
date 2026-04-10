@@ -5,12 +5,14 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Defines the OpenXmlFormulaElement Class.
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.OpenXmlFormulaElement))]
-public class OpenXmlFormulaElement: ModelElement<DXO16DCD.OpenXmlFormulaElement>
+[XmlRoot("OpenXmlFormulaElement", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class OpenXmlFormulaElement : ModelElement<DXO16DCD.OpenXmlFormulaElement>
 {
-  /// <summary>
-  /// Specifies the dir.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.OpenXmlFormulaElement.Dir))]
-  public FormulaDirection? Dir { get => _Dir; set => UpdateField(ref _Dir, value, nameof(Dir)); }
-  private FormulaDirection? _Dir;
+ /// <summary>
+ /// Specifies the dir.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.OpenXmlFormulaElement.Dir))]
+ public FormulaDirection? Dir { get => _Dir; set => UpdateField(ref _Dir, value, nameof(Dir)); }
+
+ private FormulaDirection? _Dir;
 }

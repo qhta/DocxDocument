@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies the lower limit of the limLow object and the upper limit of the limUpp function.
 /// </summary>
 [OpenXmlType(typeof(DXM.Limit))]
+[XmlRoot("Limit", Namespace = "DocumentModel.Math")]
 public partial class Limit : OfficeMathArgumentType<DXM.Limit>
 {
  /// <summary>

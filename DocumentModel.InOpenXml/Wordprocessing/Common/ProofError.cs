@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "ICommonContent"/> and provides a property for the proofing error type, enabling advanced tracking and management of spelling, grammar, or other proofing errors within the document content.
 /// </summary>
 [OpenXmlType(typeof(DXW.ProofError))]
+[XmlRoot("ProofError", Namespace = "DocumentModel.Wordprocessing")]
 public partial class ProofError : ModelElement<DXW.ProofError>
 {
  /// <summary>
@@ -11,5 +12,6 @@ public partial class ProofError : ModelElement<DXW.ProofError>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.ProofError.Type))]
  public ProofingError? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+
  private ProofingError? _Type;
 }

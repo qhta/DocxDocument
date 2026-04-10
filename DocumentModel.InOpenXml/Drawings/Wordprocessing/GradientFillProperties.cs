@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 /// This class provides configuration for gradient stops, linear shading, and path shading, enabling advanced gradient effects and color transitions.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.GradientFillProperties))]
+[XmlRoot("GradientFillProperties", Namespace = "DocumentModel.Drawings")]
 public partial class GradientFillProperties : ModelElement<DXO10W.GradientFillProperties>
 {
  /// <summary>
@@ -11,15 +12,18 @@ public partial class GradientFillProperties : ModelElement<DXO10W.GradientFillPr
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.GradientFillProperties.GradientStopList))]
  public GradientStopList? GradientStopList { get => _GradientStopList; set => UpdateField(ref _GradientStopList, value, nameof(GradientStopList)); }
+
  private GradientStopList? _GradientStopList;
  /// <summary>
  /// Properties for linear shading, specifying the direction and behavior of a linear gradient fill.
  /// </summary>
  public LinearShadeProperties? LinearShadeProperties { get => _LinearShadeProperties; set => UpdateField(ref _LinearShadeProperties, value, nameof(LinearShadeProperties)); }
+
  private LinearShadeProperties? _LinearShadeProperties;
  /// <summary>
  /// Properties for path shading, specifying the shape and behavior of a path-based gradient fill.
  /// </summary>
  public PathShadeProperties? PathShadeProperties { get => _PathShadeProperties; set => UpdateField(ref _PathShadeProperties, value, nameof(PathShadeProperties)); }
+
  private PathShadeProperties? _PathShadeProperties;
 }

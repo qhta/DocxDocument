@@ -16,68 +16,56 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// </list>
 /// </remarks>
 [OpenXmlType(typeof(DXDCD.GroupShape))]
-public class GroupShape: ModelElement<DXDCD.GroupShape>
+[XmlRoot("GroupShape", Namespace = "DocumentModel.Drawings.ChartDrawing")]
+public class GroupShape : ModelElement<DXDCD.GroupShape>
 {
-  /// <summary>
-  /// Non-visual properties for the group shape, such as identifiers, names, and metadata.
-  /// </summary>
-  [OpenXmlElement(typeof(DXDCD.NonVisualGroupShapeProperties))]
-  public NonVisualGroupShapeProperties? NonVisualGroupShapeProperties
-  {
-    get => _NonVisualGroupShapeProperties;
-    set => UpdateField(ref _NonVisualGroupShapeProperties, value, nameof(NonVisualGroupShapeProperties));
-  }
-  private NonVisualGroupShapeProperties? _NonVisualGroupShapeProperties;
-  /// <summary>
-  /// Visual properties and formatting for the group shape.
-  /// </summary>
-  [OpenXmlElement(typeof(DXDCD.GroupShapeProperties))]
-  public GroupShapeProperties? GroupShapeProperties
-  {
-    get => _GroupShapeProperties;
-    set => UpdateField(ref _GroupShapeProperties, value, nameof(GroupShapeProperties));
-  }
-  private GroupShapeProperties? _GroupShapeProperties;
-  /// <summary>
-  /// Shape element contained within the group.
-  /// </summary>
-  [OpenXmlElement(typeof(DXDCD.Shape))]
-  public Shape? Shape { get => _Shape; set => UpdateField(ref _Shape, value, nameof(Shape)); }
-  private Shape? _Shape;
-  /// <summary>
-  /// Child group shape element for nested grouping.
-  /// </summary>
-  [OpenXmlElement(typeof(DXDCD.GroupShape))]
-  public GroupShape? ChildGroupShape
-  {
-    get => _ChildGroupShape;
-    set => UpdateField(ref _ChildGroupShape, value, nameof(ChildGroupShape));
-  }
-  private GroupShape? _ChildGroupShape;
-  /// <summary>
-  /// Graphic frame element contained within the group.
-  /// </summary>
-  [OpenXmlElement(typeof(DXDCD.GraphicFrame))]
-  public GraphicFrame? GraphicFrame
-  {
-    get => _GraphicFrame;
-    set => UpdateField(ref _GraphicFrame, value, nameof(GraphicFrame));
-  }
-  private GraphicFrame? _GraphicFrame;
-  /// <summary>
-  /// Connection shape element contained within the group.
-  /// </summary>
-  [OpenXmlElement(typeof(DXDCD.ConnectionShape))]
-  public ConnectionShape? ConnectionShape
-  {
-    get => _ConnectionShape;
-    set => UpdateField(ref _ConnectionShape, value, nameof(ConnectionShape));
-  }
-  private ConnectionShape? _ConnectionShape;
-  /// <summary>
-  /// Picture element contained within the group.
-  /// </summary>
-  [OpenXmlElement(typeof(DXDCD.Picture))]
-  public Picture? Picture { get => _Picture; set => UpdateField(ref _Picture, value, nameof(Picture)); }
-  private Picture? _Picture;
+ /// <summary>
+ /// Non-visual properties for the group shape, such as identifiers, names, and metadata.
+ /// </summary>
+ [OpenXmlElement(typeof(DXDCD.NonVisualGroupShapeProperties))]
+ public NonVisualGroupShapeProperties? NonVisualGroupShapeProperties { get => _NonVisualGroupShapeProperties; set => UpdateField(ref _NonVisualGroupShapeProperties, value, nameof(NonVisualGroupShapeProperties)); }
+
+ private NonVisualGroupShapeProperties? _NonVisualGroupShapeProperties;
+ /// <summary>
+ /// Visual properties and formatting for the group shape.
+ /// </summary>
+ [OpenXmlElement(typeof(DXDCD.GroupShapeProperties))]
+ public GroupShapeProperties? GroupShapeProperties { get => _GroupShapeProperties; set => UpdateField(ref _GroupShapeProperties, value, nameof(GroupShapeProperties)); }
+
+ private GroupShapeProperties? _GroupShapeProperties;
+ /// <summary>
+ /// Shape element contained within the group.
+ /// </summary>
+ [OpenXmlElement(typeof(DXDCD.Shape))]
+ public Shape? Shape { get => _Shape; set => UpdateField(ref _Shape, value, nameof(Shape)); }
+
+ private Shape? _Shape;
+ /// <summary>
+ /// Child group shape element for nested grouping.
+ /// </summary>
+ [OpenXmlElement(typeof(DXDCD.GroupShape))]
+ public GroupShape? ChildGroupShape { get => _ChildGroupShape; set => UpdateField(ref _ChildGroupShape, value, nameof(ChildGroupShape)); }
+
+ private GroupShape? _ChildGroupShape;
+ /// <summary>
+ /// Graphic frame element contained within the group.
+ /// </summary>
+ [OpenXmlElement(typeof(DXDCD.GraphicFrame))]
+ public GraphicFrame? GraphicFrame { get => _GraphicFrame; set => UpdateField(ref _GraphicFrame, value, nameof(GraphicFrame)); }
+
+ private GraphicFrame? _GraphicFrame;
+ /// <summary>
+ /// Connection shape element contained within the group.
+ /// </summary>
+ [OpenXmlElement(typeof(DXDCD.ConnectionShape))]
+ public ConnectionShape? ConnectionShape { get => _ConnectionShape; set => UpdateField(ref _ConnectionShape, value, nameof(ConnectionShape)); }
+
+ private ConnectionShape? _ConnectionShape;
+ /// <summary>
+ /// Picture element contained within the group.
+ /// </summary>
+ [OpenXmlElement(typeof(DXDCD.Picture))]
+ public Picture? Picture { get => _Picture; set => UpdateField(ref _Picture, value, nameof(Picture)); }
+
+ private Picture? _Picture;
 }

@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// The semantics of this field are defined via its field codes. Simple fields provide a way to insert dynamic content, such as references, calculations, or dates, using a single field code instruction.
 /// </summary>
 [OpenXmlType(typeof(DXW.SimpleField))]
+[XmlRoot("SimpleField", Namespace = "DocumentModel.Wordprocessing")]
 public class SimpleField : SimpleField<DXW.SimpleField>
 {
 }

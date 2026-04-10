@@ -5,6 +5,7 @@ namespace DocumentModel.Drawings;
 /// image processing capabilities while maintaining backward compatibility with older Office versions.
 /// </summary>
 [OpenXmlType(typeof(BlipExtension))]
+[XmlRoot("BlipExtensionList", Namespace = "DocumentModel.Drawings")]
 public class BlipExtensionList : ElementCollection<BlipExtension>
 // DXD.BlipExtensionList, DXD.BlipExtension>
 {

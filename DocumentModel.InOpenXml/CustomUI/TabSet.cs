@@ -11,24 +11,28 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.TabSet))]
-public class TabSet: ModelElement<DXO10CUI.TabSet>
+[XmlRoot("TabSet", Namespace = "DocumentModel.CustomUI")]
+public class TabSet : ModelElement<DXO10CUI.TabSet>
 {
-  /// <summary>
-  /// Specifies the identifier of a built-in Office control.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO10CUI.TabSet.IdMso))]
-  public String? IdMso { get => _IdMso; set => UpdateField(ref _IdMso, value, nameof(IdMso)); }
-  private String? _IdMso;
-  /// <summary>
-  /// Specifies whether the control is visible.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO10CUI.TabSet.Visible))]
-  public Boolean? Visible { get => _Visible; set => UpdateField(ref _Visible, value, nameof(Visible)); }
-  private Boolean? _Visible;
-  /// <summary>
-  /// Specifies the callback that returns visible.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO10CUI.TabSet.GetVisible))]
-  public String? GetVisible { get => _GetVisible; set => UpdateField(ref _GetVisible, value, nameof(GetVisible)); }
-  private String? _GetVisible;
+ /// <summary>
+ /// Specifies the identifier of a built-in Office control.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO10CUI.TabSet.IdMso))]
+ public String? IdMso { get => _IdMso; set => UpdateField(ref _IdMso, value, nameof(IdMso)); }
+
+ private String? _IdMso;
+ /// <summary>
+ /// Specifies whether the control is visible.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO10CUI.TabSet.Visible))]
+ public Boolean? Visible { get => _Visible; set => UpdateField(ref _Visible, value, nameof(Visible)); }
+
+ private Boolean? _Visible;
+ /// <summary>
+ /// Specifies the callback that returns visible.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO10CUI.TabSet.GetVisible))]
+ public String? GetVisible { get => _GetVisible; set => UpdateField(ref _GetVisible, value, nameof(GetVisible)); }
+
+ private String? _GetVisible;
 }

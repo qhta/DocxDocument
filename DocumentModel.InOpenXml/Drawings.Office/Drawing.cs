@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Office;
 ///   Defines the Drawing Class.
 /// </summary>
 [OpenXmlType(typeof(DXOD.Drawing))]
+[XmlRoot("Drawing", Namespace = "DocumentModel.Drawings.Office")]
 public partial class Drawing : ModelElement<DXOD.Drawing>
 {
  /// <summary>
@@ -10,5 +11,6 @@ public partial class Drawing : ModelElement<DXOD.Drawing>
  /// </summary>
  [OpenXmlProperty(nameof(DXOD.Drawing.ShapeTree))]
  public ShapeTree? ShapeTree { get => _ShapeTree; set => UpdateField(ref _ShapeTree, value, nameof(ShapeTree)); }
+
  private ShapeTree? _ShapeTree;
 }

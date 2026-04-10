@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 ///   Defines the WebExtensionPropertyBag Class.
 /// </summary>
 [OpenXmlType(typeof(DXO13WE.WebExtensionPropertyBag))]
-public class WebExtensionPropertyBag : 
-  ModelElementCollection<WebExtensionProperty, DXO13WE.WebExtensionPropertyBag, DXO13WE.WebExtensionProperty>
+[XmlRoot("WebExtensionPropertyBag", Namespace = "DocumentModel.WebExtensions")]
+public class WebExtensionPropertyBag : ModelElementCollection<WebExtensionProperty, DXO13WE.WebExtensionPropertyBag, DXO13WE.WebExtensionProperty>
 {
 }

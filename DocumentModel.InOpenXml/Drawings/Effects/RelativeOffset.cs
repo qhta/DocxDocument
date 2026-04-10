@@ -3,16 +3,19 @@ namespace DocumentModel.Drawings;
 ///   Represents a relative offset effect, specifying X and Y offset values for positioning.
 /// </summary>
 [OpenXmlType(typeof(DXD.RelativeOffset))]
+[XmlRoot("RelativeOffset", Namespace = "DocumentModel.Drawings")]
 public partial class RelativeOffset : ModelElement<DXD.RelativeOffset>
 {
  /// <summary>
  ///   X offset value.
  /// </summary>
  public Int32? OffsetX { get => _OffsetX; set => UpdateField(ref _OffsetX, value, nameof(OffsetX)); }
+
  private Int32? _OffsetX;
  /// <summary>
  ///   Y offset value.
  /// </summary>
  public Int32? OffsetY { get => _OffsetY; set => UpdateField(ref _OffsetY, value, nameof(OffsetY)); }
+
  private Int32? _OffsetY;
 }

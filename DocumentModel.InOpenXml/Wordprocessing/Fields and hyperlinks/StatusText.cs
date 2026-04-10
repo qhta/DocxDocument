@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for the type and value of status text, enabling advanced user feedback and contextual information for interactive form fields within documents.
 /// </summary>
 [OpenXmlType(typeof(DXW.StatusText))]
+[XmlRoot("StatusText", Namespace = "DocumentModel.Wordprocessing")]
 public partial class StatusText : ModelElement<DXW.StatusText>
 {
  /// <summary>
@@ -11,11 +12,13 @@ public partial class StatusText : ModelElement<DXW.StatusText>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.StatusText.Type))]
  public InfoTextType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
+
  private InfoTextType? _Type;
  /// <summary>
  /// Value of the status text, containing the actual information or message to be displayed to the user.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.StatusText.Val))]
  public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
+
  private string? _Val;
 }

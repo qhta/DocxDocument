@@ -4,6 +4,7 @@ namespace DocumentModel.Math;
 ///   often with the purpose of visually grouping items.
 /// </summary>
 [OpenXmlType(typeof(DXM.GroupChar))]
+[XmlRoot("GroupChar", Namespace = "DocumentModel.Math")]
 public partial class GroupChar : ModelElement<DXM.GroupChar>, ICommonMathContent
 {
  /// <summary>
@@ -11,10 +12,12 @@ public partial class GroupChar : ModelElement<DXM.GroupChar>, ICommonMathContent
  /// </summary>
  [OpenXmlProperty(nameof(DXM.GroupChar.GroupCharProperties))]
  public GroupCharProperties? GroupCharProperties { get => _GroupCharProperties; set => UpdateField(ref _GroupCharProperties, value, nameof(GroupCharProperties)); }
+
  private GroupCharProperties? _GroupCharProperties;
  /// <summary>
  ///   Arugment of the group-character object.
  /// </summary>
  public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
+
  private Argument? _Argument;
 }

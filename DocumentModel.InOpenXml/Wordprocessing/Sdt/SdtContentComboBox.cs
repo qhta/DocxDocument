@@ -3,10 +3,11 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the configuration for a combo box content control in a structured document tag (SDT) in a Wordprocessing document.
 /// This class provides properties for the last saved value and the list of items, enabling advanced customization and management of combo box options in SDTs.
 /// </summary>
+[XmlRoot("SdtContentComboBox", Namespace = "DocumentModel.Wordprocessing")]
 public partial class SdtContentComboBox : SdtListItems
 {
-  /// <summary>
-  /// Combo box last saved value, specifying the most recently selected or entered option.
-  /// </summary>
-  public string? LastValue { get; set; }
+ /// <summary>
+ /// Combo box last saved value, specifying the most recently selected or entered option.
+ /// </summary>
+ public string? LastValue { get; set; }
 }

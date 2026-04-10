@@ -4,6 +4,7 @@ namespace DocumentModel.Math;
 ///   (such as a formula or equation). If borderBoxPr is omitted then the default behavior of borderBox is a rectangular border 
 /// </summary>
 [OpenXmlType(typeof(DXM.BorderBox))]
+[XmlRoot("BorderBox", Namespace = "DocumentModel.Math")]
 public partial class BorderBox : ModelElement<DXM.BorderBox>, ICommonMathContent
 {
  /// <summary>
@@ -11,10 +12,12 @@ public partial class BorderBox : ModelElement<DXM.BorderBox>, ICommonMathContent
  /// </summary>
  [OpenXmlProperty(nameof(DXM.BorderBox.BorderBoxProperties))]
  public BorderBoxProperties? BorderBoxProperties { get => _BorderBoxProperties; set => UpdateField(ref _BorderBoxProperties, value, nameof(BorderBoxProperties)); }
+
  private BorderBoxProperties? _BorderBoxProperties;
  /// <summary>
  ///   Specifies argument of border-box object.
  /// </summary>
  public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
+
  private Argument? _Argument;
 }

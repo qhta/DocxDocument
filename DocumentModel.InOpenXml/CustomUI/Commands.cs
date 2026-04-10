@@ -11,6 +11,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.Commands))]
-public class Commands: ModelElement<DXO10CUI.Commands>
+[XmlRoot("Commands", Namespace = "DocumentModel.CustomUI")]
+public class Commands : ModelElement<DXO10CUI.Commands>
 {
 }

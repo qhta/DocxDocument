@@ -12,6 +12,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.Backstage))]
+[XmlRoot("Backstage", Namespace = "DocumentModel.CustomUI")]
 public class Backstage : ModelElement<DXO10CUI.Backstage>
 {
  /// <summary>
@@ -19,12 +20,13 @@ public class Backstage : ModelElement<DXO10CUI.Backstage>
  /// </summary>
  [OpenXmlProperty(nameof(DXO10CUI.Backstage.OnShow))]
  public String? OnShow { get => _OnShow; set => UpdateField(ref _OnShow, value, nameof(OnShow)); }
+
  private String? _OnShow;
  /// <summary>
  /// Specifies the callback invoked when the Backstage view is hidden.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10CUI.Backstage.OnHide))]
  public String? OnHide { get => _OnHide; set => UpdateField(ref _OnHide, value, nameof(OnHide)); }
- private String? _OnHide;
 
+ private String? _OnHide;
 }

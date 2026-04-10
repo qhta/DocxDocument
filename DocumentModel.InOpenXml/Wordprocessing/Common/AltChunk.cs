@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// The specified file's contents appear at the specified location and are treated as regular WordprocessingML content. The location of the external content is determined by the relationship whose Id attribute matches the Id attribute on this element.
 /// </summary>
 [OpenXmlType(typeof(DXW.AltChunk))]
+[XmlRoot("AltChunk", Namespace = "DocumentModel.Wordprocessing")]
 public partial class AltChunk : ModelElement<DXW.AltChunk>, IStoryContent, ITableCellContent, ICommentContent
 {
  /// <summary>
@@ -11,11 +12,13 @@ public partial class AltChunk : ModelElement<DXW.AltChunk>, IStoryContent, ITabl
  /// </summary>
  [OpenXmlProperty(nameof(DXW.AltChunk.Id))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+
  private string? _Id;
  /// <summary>
  /// Properties for external content import, specifying additional import options and settings.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.AltChunk.AltChunkProperties))]
  public AltChunkProperties? AltChunkProperties { get => _AltChunkProperties; set => UpdateField(ref _AltChunkProperties, value, nameof(AltChunkProperties)); }
+
  private AltChunkProperties? _AltChunkProperties;
 }

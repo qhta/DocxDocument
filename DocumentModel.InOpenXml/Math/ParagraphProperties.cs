@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies properties of the math paragraph oMathPara, including justification jc.
 /// </summary>
 [OpenXmlType(typeof(DXM.ParagraphProperties))]
+[XmlRoot("ParagraphProperties", Namespace = "DocumentModel.Math")]
 public partial class ParagraphProperties : ModelElement<DXM.ParagraphProperties>
 {
  /// <summary>
@@ -10,5 +11,6 @@ public partial class ParagraphProperties : ModelElement<DXM.ParagraphProperties>
  /// </summary>
  [OpenXmlProperty(nameof(DXM.ParagraphProperties.Justification))]
  public Justification? Justification { get => _Justification; set => UpdateField(ref _Justification, value, nameof(Justification)); }
+
  private Justification? _Justification;
 }

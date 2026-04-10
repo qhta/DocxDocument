@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   This element specifies properties of the Sub-Superscript object, including the alignment of scripts.
 /// </summary>
 [OpenXmlType(typeof(DXM.SubSuperscriptProperties))]
+[XmlRoot("SubSuperscriptProperties", Namespace = "DocumentModel.Math")]
 public partial class SubSuperscriptProperties : ModelElement<DXM.SubSuperscriptProperties>
 {
  /// <summary>
@@ -14,10 +15,12 @@ public partial class SubSuperscriptProperties : ModelElement<DXM.SubSuperscriptP
  ///   to not align the superscript and subscript with each other
  /// </summary>
  public bool? AlignScripts { get => _AlignScripts; set => UpdateField(ref _AlignScripts, value, nameof(AlignScripts)); }
+
  private bool? _AlignScripts;
  /// <summary>
  ///   Specifies formatting of SubSuperscript object argument.
  /// </summary>
  public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
+
  private ControlProperties? _ControlProperties;
 }

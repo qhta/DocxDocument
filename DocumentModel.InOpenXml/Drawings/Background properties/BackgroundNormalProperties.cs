@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents normal background properties, including an optional list of OfficeArt extensions for additional customization.
 /// </summary>
 [OpenXmlType(typeof(DXO21DL.BackgroundNormalProperties))]
+[XmlRoot("BackgroundNormalProperties", Namespace = "DocumentModel.Drawings")]
 public partial class BackgroundNormalProperties : ModelElement<DXO21DL.BackgroundNormalProperties>, IOfficeArtExtendableElement
 {
  /// <summary>
@@ -10,5 +11,6 @@ public partial class BackgroundNormalProperties : ModelElement<DXO21DL.Backgroun
  /// </summary>
  [OpenXmlProperty(nameof(DXO21DL.BackgroundNormalProperties.OfficeArtExtensionList))]
  public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
+
  private OfficeArtExtensionList? _OfficeArtExtensionList;
 }

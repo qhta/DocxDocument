@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to table properties and grid definitions, enabling configuration and management of table structure, formatting, and layout within the document.
 /// </summary>
 [OpenXmlType(typeof(DXW.Table))]
+[XmlRoot("Table", Namespace = "DocumentModel.Wordprocessing")]
 public partial class Table : ModelElement<DXW.Table>, IStoryContent, ITableCellContent, ISdtBlockContent, ICommentContent, ICustomXmlBlockContent
 {
  /// <summary>
@@ -11,11 +12,13 @@ public partial class Table : ModelElement<DXW.Table>, IStoryContent, ITableCellC
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Table.TableProperties))]
  public TableProperties? TableProperties { get => _TableProperties; set => UpdateField(ref _TableProperties, value, nameof(TableProperties)); }
+
  private TableProperties? _TableProperties;
  /// <summary>
  /// Table grid definition, specifying the column structure and widths for the table.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Table.TableGrid))]
  public TableGrid? TableGrid { get => _TableGrid; set => UpdateField(ref _TableGrid, value, nameof(TableGrid)); }
+
  private TableGrid? _TableGrid;
 }

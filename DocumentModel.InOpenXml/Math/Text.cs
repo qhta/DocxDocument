@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 ///   Text.
 /// </summary>
 [OpenXmlType(typeof(DXM.Text))]
-public class Text: DMW.TextualElement<DXM.Text> 
+[XmlRoot("Text", Namespace = "DocumentModel.Math")]
+public class Text : DMW.TextualElement<DXM.Text>
 {
 }

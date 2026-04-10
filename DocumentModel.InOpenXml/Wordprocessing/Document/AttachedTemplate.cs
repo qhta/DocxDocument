@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents the relationship for an attached document template in a WordprocessingML document.
 /// </summary>
 [OpenXmlType(typeof(DXW.AttachedTemplate))]
+[XmlRoot("AttachedTemplate", Namespace = "DocumentModel.Wordprocessing")]
 //[OpenXmlUpdateData(nameof(UpdateData))]
 public class AttachedTemplate : ExternalFile<DXW.AttachedTemplate>
 {
@@ -12,6 +13,7 @@ public class AttachedTemplate : ExternalFile<DXW.AttachedTemplate>
  public AttachedTemplate()
  {
  }
+
  /// <summary>
  /// Initializes a new instance of the AttachedTemplate class with the specified template URI.
  /// </summary>

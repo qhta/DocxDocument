@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "TrackChangeType"/> and is used to indicate that a table cell has been deleted as part of tracked changes, enabling revision tracking and review of cell deletions in tables.
 /// </summary>
 [OpenXmlType(typeof(DXW.CellDeletion))]
+[XmlRoot("CellDeletion", Namespace = "DocumentModel.Wordprocessing")]
 public class CellDeletion : TrackChangeType<DXW.CellDeletion>
 {
 }

@@ -3,16 +3,14 @@ namespace DocumentModel.Drawings.Charts;
 ///   Major Gridlines.
 /// </summary>
 [OpenXmlType(typeof(DXDC.MajorGridlines))]
-public partial class MajorGridlines: ModelElement<DXDC.MajorGridlines>
+[XmlRoot("MajorGridlines", Namespace = "DocumentModel.Drawings.Charts")]
+public partial class MajorGridlines : ModelElement<DXDC.MajorGridlines>
 {
-  /// <summary>
-  /// ChartShapeProperties of the major gridlines.
-  /// </summary>
-  [OpenXmlElement(typeof(DXDC.ChartShapeProperties))]
-  public ChartShapeProperties? ChartShapeProperties
-  {
-    get => _ChartShapeProperties;
-    set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties));
-  }
-  private ChartShapeProperties? _ChartShapeProperties;
+ /// <summary>
+ /// ChartShapeProperties of the major gridlines.
+ /// </summary>
+ [OpenXmlElement(typeof(DXDC.ChartShapeProperties))]
+ public ChartShapeProperties? ChartShapeProperties { get => _ChartShapeProperties; set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties)); }
+
+ private ChartShapeProperties? _ChartShapeProperties;
 }

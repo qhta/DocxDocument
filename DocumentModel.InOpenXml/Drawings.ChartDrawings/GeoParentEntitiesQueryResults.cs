@@ -3,12 +3,12 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   Represents a collection of parent entities query results cached for map-based chart visualizations.
 /// </summary>
 /// <remarks>
-///   This class extends <see cref="ElementCollection{ItemType}"/> of <see cref="GeoParentEntitiesQueryResult"/> and
+///   This class extends <see cref = "ElementCollection{ItemType}"/> of <see cref = "GeoParentEntitiesQueryResult"/> and
 ///   defines a collection of query results that cache parent entity relationships retrieved from mapping services
 ///   or geographic data providers. Each result in the collection pairs a parent entities query specification
-///   (<see cref="GeoParentEntitiesQuery"/>) with its corresponding parent entity data (<see cref="GeoEntity"/> and
-///   <see cref="GeoParentEntity"/>), enabling efficient cache management and quick retrieval of previously queried
-///   hierarchical relationships. The collection is part of the <see cref="Clear"/> structure within <see cref="GeoCache"/>,
+///   (<see cref = "GeoParentEntitiesQuery"/>) with its corresponding parent entity data (<see cref = "GeoEntity"/> and
+///   <see cref = "GeoParentEntity"/>), enabling efficient cache management and quick retrieval of previously queried
+///   hierarchical relationships. The collection is part of the <see cref = "Clear"/> structure within <see cref = "GeoCache"/>,
 ///   where it supports offline access to parent-child geographic relationships and improves performance by eliminating
 ///   redundant queries to external mapping services. This caching mechanism is essential for map-based charts that
 ///   support drill-up navigation, where users navigate from detailed regions to broader containing regions through
@@ -27,7 +27,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   the hierarchical path from detailed to broader regions), data aggregation (rolling up values from child entities
 ///   to parent entities), and geographic context display (showing which larger regions contain a selected area).
 /// </remarks>
-public class GeoParentEntitiesQueryResults: ModelElementCollection<GeoParentEntitiesQueryResult,
-  DXO16DCD.GeoParentEntitiesQueryResults, DXO16DCD.GeoParentEntitiesQueryResult>
+[XmlRoot("GeoParentEntitiesQueryResults", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class GeoParentEntitiesQueryResults : ModelElementCollection<GeoParentEntitiesQueryResult, DXO16DCD.GeoParentEntitiesQueryResults, DXO16DCD.GeoParentEntitiesQueryResult>
 {
 }

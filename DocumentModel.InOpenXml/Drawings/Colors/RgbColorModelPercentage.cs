@@ -53,84 +53,86 @@ namespace DocumentModel.Drawings;
 /// </code>
 /// </example>
 [OpenXmlType(typeof(DXD.RgbColorModelPercentage))]
+[XmlRoot("RgbColorModelPercentage", Namespace = "DocumentModel.Drawings")]
 public partial class RgbColorModelPercentage : AbstractColor<DXD.RgbColorModelPercentage>, ISchemeBaseColor
 {
-  /// <summary>
-  /// Red component as a percentage value.
-  /// </summary>
-  /// <remarks>
-  /// Specifies the amount of red in the color where 0 is no red and 100000 is maximum red (100%).
-  /// This is equivalent to RGB values 0-255, but expressed as a percentage for easier calculations.
-  /// Common values: 0 (no red), 50000 (50% red), 100000 (full red).
-  /// </remarks>
-  [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.RedPortion))]
-  public Int32? RedPortion { get => _RedPortion; set => UpdateField(ref _RedPortion, value, nameof(RedPortion)); }
-  private Int32? _RedPortion;
+ /// <summary>
+ /// Red component as a percentage value.
+ /// </summary>
+ /// <remarks>
+ /// Specifies the amount of red in the color where 0 is no red and 100000 is maximum red (100%).
+ /// This is equivalent to RGB values 0-255, but expressed as a percentage for easier calculations.
+ /// Common values: 0 (no red), 50000 (50% red), 100000 (full red).
+ /// </remarks>
+ [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.RedPortion))]
+ public Int32? RedPortion { get => _RedPortion; set => UpdateField(ref _RedPortion, value, nameof(RedPortion)); }
 
-  /// <summary>
-  /// Green component as a percentage value.
-  /// </summary>
-  /// <remarks>
-  /// Specifies the amount of green in the color where 0 is no green and 100000 is maximum green (100%).
-  /// This is equivalent to RGB values 0-255, but expressed as a percentage for easier calculations.
-  /// Common values: 0 (no green), 50000 (50% green), 100000 (full green).
-  /// </remarks>
-  [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.GreenPortion))]
-  public Int32? GreenPortion { get => _GreenPortion; set => UpdateField(ref _GreenPortion, value, nameof(GreenPortion)); }
-  private Int32? _GreenPortion;
+ private Int32? _RedPortion;
+ /// <summary>
+ /// Green component as a percentage value.
+ /// </summary>
+ /// <remarks>
+ /// Specifies the amount of green in the color where 0 is no green and 100000 is maximum green (100%).
+ /// This is equivalent to RGB values 0-255, but expressed as a percentage for easier calculations.
+ /// Common values: 0 (no green), 50000 (50% green), 100000 (full green).
+ /// </remarks>
+ [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.GreenPortion))]
+ public Int32? GreenPortion { get => _GreenPortion; set => UpdateField(ref _GreenPortion, value, nameof(GreenPortion)); }
 
-  /// <summary>
-  /// Blue component as a percentage value.
-  /// </summary>
-  /// <remarks>
-  /// Specifies the amount of blue in the color where 0 is no blue and 100000 is maximum blue (100%).
-  /// This is equivalent to RGB values 0-255, but expressed as a percentage for easier calculations.
-  /// Common values: 0 (no blue), 50000 (50% blue), 100000 (full blue).
-  /// </remarks>
-  [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.BluePortion))]
-  public Int32? BluePortion { get => _BluePortion; set => UpdateField(ref _BluePortion, value, nameof(BluePortion)); }
-  private Int32? _BluePortion;
+ private Int32? _GreenPortion;
+ /// <summary>
+ /// Blue component as a percentage value.
+ /// </summary>
+ /// <remarks>
+ /// Specifies the amount of blue in the color where 0 is no blue and 100000 is maximum blue (100%).
+ /// This is equivalent to RGB values 0-255, but expressed as a percentage for easier calculations.
+ /// Common values: 0 (no blue), 50000 (50% blue), 100000 (full blue).
+ /// </remarks>
+ [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.BluePortion))]
+ public Int32? BluePortion { get => _BluePortion; set => UpdateField(ref _BluePortion, value, nameof(BluePortion)); }
 
-  /// <summary>
-  /// Tint value to lighten the color.
-  /// </summary>
-  /// <remarks>
-  /// <para>
-  /// A tint value lightens the base color by mixing it with white. 
-  /// Values range from 0 to 100000, where:
-  /// <list type="bullet">
-  /// <item><description>0 or null = no tint applied (original color)</description></item>
-  /// <item><description>50000 = 50% tint (color mixed 50/50 with white)</description></item>
-  /// <item><description>100000 = 100% tint (fully white)</description></item>
-  /// </list>
-  /// </para>
-  /// <para>
-  /// If the value is <see langword="null"/>, no tint is applied. 
-  /// Tint and shade are mutually exclusive; typically only one should be set.
-  /// </para>
-  /// </remarks>
-  [OpenXmlElement(typeof(DXD.Tint))]
-  public Int32? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
-  private Int32? _Tint;
+ private Int32? _BluePortion;
+ /// <summary>
+ /// Tint value to lighten the color.
+ /// </summary>
+ /// <remarks>
+ /// <para>
+ /// A tint value lightens the base color by mixing it with white. 
+ /// Values range from 0 to 100000, where:
+ /// <list type="bullet">
+ /// <item><description>0 or null = no tint applied (original color)</description></item>
+ /// <item><description>50000 = 50% tint (color mixed 50/50 with white)</description></item>
+ /// <item><description>100000 = 100% tint (fully white)</description></item>
+ /// </list>
+ /// </para>
+ /// <para>
+ /// If the value is <see langword="null"/>, no tint is applied. 
+ /// Tint and shade are mutually exclusive; typically only one should be set.
+ /// </para>
+ /// </remarks>
+ [OpenXmlElement(typeof(DXD.Tint))]
+ public Int32? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
 
-  /// <summary>
-  /// Shade value to darken the color.
-  /// </summary>
-  /// <remarks>
-  /// <para>
-  /// A shade value darkens the base color by mixing it with black.
-  /// Values range from 0 to 100000, where:
-  /// <list type="bullet">
-  /// <item><description>0 or null = no shade applied (original color)</description></item>
-  /// <item><description>50000 = 50% shade (color mixed 50/50 with black)</description></item>
-  /// <item><description>100000 = 100% shade (fully black)</description></item>
-  /// </list>
-  /// </para>
-  /// <para>
-  /// Shade and tint are mutually exclusive; typically only one should be set.
-  /// </para>
-  /// </remarks>
-  [OpenXmlElement(typeof(DXD.Shade))]
-  public Int32? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
-  private Int32? _Shade;
+ private Int32? _Tint;
+ /// <summary>
+ /// Shade value to darken the color.
+ /// </summary>
+ /// <remarks>
+ /// <para>
+ /// A shade value darkens the base color by mixing it with black.
+ /// Values range from 0 to 100000, where:
+ /// <list type="bullet">
+ /// <item><description>0 or null = no shade applied (original color)</description></item>
+ /// <item><description>50000 = 50% shade (color mixed 50/50 with black)</description></item>
+ /// <item><description>100000 = 100% shade (fully black)</description></item>
+ /// </list>
+ /// </para>
+ /// <para>
+ /// Shade and tint are mutually exclusive; typically only one should be set.
+ /// </para>
+ /// </remarks>
+ [OpenXmlElement(typeof(DXD.Shade))]
+ public Int32? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
+
+ private Int32? _Shade;
 }

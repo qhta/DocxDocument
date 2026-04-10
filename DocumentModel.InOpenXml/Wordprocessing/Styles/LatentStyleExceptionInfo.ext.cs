@@ -1,4 +1,5 @@
-using System.ComponentModel;
+﻿using System.ComponentModel;
+
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents extended latent style exception information for a Wordprocessing document.
@@ -6,14 +7,12 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public partial class LatentStyleExceptionInfo
 {
-  
-  /// <summary>
-  /// Primary style name associated with the latent style exception.
-  /// </summary>
-  public string? StyleName { get; set; }
-  
-  /// <summary>
-  /// Alternate style names associated with the latent style exception.
-  /// </summary>
-  public ListOf<String>? Aliases { get; set; }
+ /// <summary>
+ /// Primary style name associated with the latent style exception.
+ /// </summary>
+ public string? StyleName { get; set; }
+ /// <summary>
+ /// Alternate style names associated with the latent style exception.
+ /// </summary>
+ public ListOf<String>? Aliases { get; set; }
 }

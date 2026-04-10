@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [XmlIgnoreEmptyCollection]
 [OpenXmlType(typeof(DMW.AttachedSchema))]
+[XmlRoot("AttachedSchemas", Namespace = "DocumentModel.Wordprocessing")]
 //[OpenXmlItem(typeof(DXW.AttachedSchema))]
 public class AttachedSchemas : ElementCollection<DMW.AttachedSchema>
 {
@@ -14,6 +15,7 @@ public class AttachedSchemas : ElementCollection<DMW.AttachedSchema>
  public AttachedSchemas()
  {
  }
+
  /// <summary>
  /// Initializing constructor.
  /// </summary>

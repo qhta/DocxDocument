@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "BaseParagraphMarkRunProperties"/> and is used to store the state of paragraph mark formatting before a tracked change, enabling comparison and revision management in WordprocessingML documents.
 /// </summary>
 [OpenXmlType(typeof(DXW.PreviousParagraphMarkRunProperties))]
+[XmlRoot("PreviousParagraphMarkRunProperties", Namespace = "DocumentModel.Wordprocessing")]
 public class PreviousParagraphMarkRunProperties : BaseParagraphMarkRunProperties<DXW.PreviousParagraphMarkRunProperties>
 {
 }

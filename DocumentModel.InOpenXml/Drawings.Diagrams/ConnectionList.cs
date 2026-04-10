@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Connection List.
 /// </summary>
 [OpenXmlType(typeof(DXDD.ConnectionList))]
+[XmlRoot("ConnectionList", Namespace = "DocumentModel.Drawings.Diagrams")]
 public class ConnectionList : ModelElementCollection<Connection, DXDD.ConnectionList, DXDD.Connection>
 {
 }

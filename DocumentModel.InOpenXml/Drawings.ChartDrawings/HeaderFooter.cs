@@ -20,96 +20,70 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   professional appearance with appropriate page decoration that aids in document organization and identification.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.HeaderFooter))]
-public class HeaderFooter: ModelElement<DXO16DCD.HeaderFooter>
+[XmlRoot("HeaderFooter", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class HeaderFooter : ModelElement<DXO16DCD.HeaderFooter>
 {
-  /// <summary>
-  /// Specifies the align with margins.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.HeaderFooter.AlignWithMargins))]
-  public bool? AlignWithMargins
-  {
-    get => _AlignWithMargins;
-    set => UpdateField(ref _AlignWithMargins, value, nameof(AlignWithMargins));
-  }
-  private bool? _AlignWithMargins;
-  /// <summary>
-  /// Specifies the different odd even.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.HeaderFooter.DifferentOddEven))]
-  public bool? DifferentOddEven
-  {
-    get => _DifferentOddEven;
-    set => UpdateField(ref _DifferentOddEven, value, nameof(DifferentOddEven));
-  }
-  private bool? _DifferentOddEven;
-  /// <summary>
-  /// Specifies the different first.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.HeaderFooter.DifferentFirst))]
-  public bool? DifferentFirst
-  {
-    get => _DifferentFirst;
-    set => UpdateField(ref _DifferentFirst, value, nameof(DifferentFirst));
-  }
-  private bool? _DifferentFirst;
-  /// <summary>
-  /// Specifies the odd header xsd string.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.HeaderFooter.OddHeaderXsdstring))]
-  public string? OddHeaderXsdString
-  {
-    get => _OddHeaderXsdString;
-    set => UpdateField(ref _OddHeaderXsdString, value, nameof(OddHeaderXsdString));
-  }
-  private string? _OddHeaderXsdString;
-  /// <summary>
-  /// Specifies the odd footer xsd string.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.HeaderFooter.OddFooterXsdstring))]
-  public string? OddFooterXsdString
-  {
-    get => _OddFooterXsdString;
-    set => UpdateField(ref _OddFooterXsdString, value, nameof(OddFooterXsdString));
-  }
-  private string? _OddFooterXsdString;
-  /// <summary>
-  /// Specifies the even header xsd string.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.HeaderFooter.EvenHeaderXsdstring))]
-  public string? EvenHeaderXsdString
-  {
-    get => _EvenHeaderXsdString;
-    set => UpdateField(ref _EvenHeaderXsdString, value, nameof(EvenHeaderXsdString));
-  }
-  private string? _EvenHeaderXsdString;
-  /// <summary>
-  /// Specifies the even footer xsd string.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.HeaderFooter.EvenFooterXsdstring))]
-  public string? EvenFooterXsdString
-  {
-    get => _EvenFooterXsdString;
-    set => UpdateField(ref _EvenFooterXsdString, value, nameof(EvenFooterXsdString));
-  }
-  private string? _EvenFooterXsdString;
-  /// <summary>
-  /// Specifies the first header xsd string.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.HeaderFooter.FirstHeaderXsdstring))]
-  public string? FirstHeaderXsdString
-  {
-    get => _FirstHeaderXsdString;
-    set => UpdateField(ref _FirstHeaderXsdString, value, nameof(FirstHeaderXsdString));
-  }
-  private string? _FirstHeaderXsdString;
-  /// <summary>
-  /// Specifies the first footer xsd string.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.HeaderFooter.FirstFooterXsdstring))]
-  public string? FirstFooterXsdString
-  {
-    get => _FirstFooterXsdString;
-    set => UpdateField(ref _FirstFooterXsdString, value, nameof(FirstFooterXsdString));
-  }
-  private string? _FirstFooterXsdString;
+ /// <summary>
+ /// Specifies the align with margins.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.HeaderFooter.AlignWithMargins))]
+ public bool? AlignWithMargins { get => _AlignWithMargins; set => UpdateField(ref _AlignWithMargins, value, nameof(AlignWithMargins)); }
+
+ private bool? _AlignWithMargins;
+ /// <summary>
+ /// Specifies the different odd even.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.HeaderFooter.DifferentOddEven))]
+ public bool? DifferentOddEven { get => _DifferentOddEven; set => UpdateField(ref _DifferentOddEven, value, nameof(DifferentOddEven)); }
+
+ private bool? _DifferentOddEven;
+ /// <summary>
+ /// Specifies the different first.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.HeaderFooter.DifferentFirst))]
+ public bool? DifferentFirst { get => _DifferentFirst; set => UpdateField(ref _DifferentFirst, value, nameof(DifferentFirst)); }
+
+ private bool? _DifferentFirst;
+ /// <summary>
+ /// Specifies the odd header xsd string.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.HeaderFooter.OddHeaderXsdstring))]
+ public string? OddHeaderXsdString { get => _OddHeaderXsdString; set => UpdateField(ref _OddHeaderXsdString, value, nameof(OddHeaderXsdString)); }
+
+ private string? _OddHeaderXsdString;
+ /// <summary>
+ /// Specifies the odd footer xsd string.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.HeaderFooter.OddFooterXsdstring))]
+ public string? OddFooterXsdString { get => _OddFooterXsdString; set => UpdateField(ref _OddFooterXsdString, value, nameof(OddFooterXsdString)); }
+
+ private string? _OddFooterXsdString;
+ /// <summary>
+ /// Specifies the even header xsd string.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.HeaderFooter.EvenHeaderXsdstring))]
+ public string? EvenHeaderXsdString { get => _EvenHeaderXsdString; set => UpdateField(ref _EvenHeaderXsdString, value, nameof(EvenHeaderXsdString)); }
+
+ private string? _EvenHeaderXsdString;
+ /// <summary>
+ /// Specifies the even footer xsd string.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.HeaderFooter.EvenFooterXsdstring))]
+ public string? EvenFooterXsdString { get => _EvenFooterXsdString; set => UpdateField(ref _EvenFooterXsdString, value, nameof(EvenFooterXsdString)); }
+
+ private string? _EvenFooterXsdString;
+ /// <summary>
+ /// Specifies the first header xsd string.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.HeaderFooter.FirstHeaderXsdstring))]
+ public string? FirstHeaderXsdString { get => _FirstHeaderXsdString; set => UpdateField(ref _FirstHeaderXsdString, value, nameof(FirstHeaderXsdString)); }
+
+ private string? _FirstHeaderXsdString;
+ /// <summary>
+ /// Specifies the first footer xsd string.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.HeaderFooter.FirstFooterXsdstring))]
+ public string? FirstFooterXsdString { get => _FirstFooterXsdString; set => UpdateField(ref _FirstFooterXsdString, value, nameof(FirstFooterXsdString)); }
+
+ private string? _FirstFooterXsdString;
 }

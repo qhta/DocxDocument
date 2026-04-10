@@ -23,12 +23,14 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   geographic hierarchies, complementing child entity queries to provide complete hierarchical exploration capabilities.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoParentEntitiesQuery))]
-public class GeoParentEntitiesQuery: ModelElement<DXO16DCD.GeoParentEntitiesQuery>
+[XmlRoot("GeoParentEntitiesQuery", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class GeoParentEntitiesQuery : ModelElement<DXO16DCD.GeoParentEntitiesQuery>
 {
-  /// <summary>
-  /// Specifies the entity id.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO16DCD.GeoParentEntitiesQuery.EntityId))]
-  public string? EntityId { get => _EntityId; set => UpdateField(ref _EntityId, value, nameof(EntityId)); }
-  private string? _EntityId;
+ /// <summary>
+ /// Specifies the entity id.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO16DCD.GeoParentEntitiesQuery.EntityId))]
+ public string? EntityId { get => _EntityId; set => UpdateField(ref _EntityId, value, nameof(EntityId)); }
+
+ private string? _EntityId;
 }

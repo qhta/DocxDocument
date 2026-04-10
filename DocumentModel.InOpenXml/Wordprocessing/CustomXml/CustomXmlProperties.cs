@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "ElementCollection{CustomXmlAttribute}"/> and provides a property for placeholder text, enabling advanced schema-based processing, annotation, and user guidance for custom XML markup.
 /// </summary>
 [OpenXmlType(typeof(CustomXmlAttribute))]
+[XmlRoot("CustomXmlProperties", Namespace = "DocumentModel.Wordprocessing")]
 public partial class CustomXmlProperties : ModelElementCollection<CustomXmlAttribute, DXW.CustomXmlProperties, DX.OpenXmlElement>
 {
  /// <summary>

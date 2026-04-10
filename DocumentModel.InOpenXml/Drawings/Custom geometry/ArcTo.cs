@@ -19,6 +19,7 @@ namespace DocumentModel.Drawings;
 ///   </para>
 /// </remarks>
 [OpenXmlType(typeof(DXD.ArcTo))]
+[XmlRoot("ArcTo", Namespace = "DocumentModel.Drawings")]
 public partial class ArcTo : ModelElement<DXD.ArcTo>
 {
  /// <summary>
@@ -44,6 +45,7 @@ public partial class ArcTo : ModelElement<DXD.ArcTo>
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.ArcTo.WidthRadius))]
  public string? WidthRadius { get => _WidthRadius; set => UpdateField(ref _WidthRadius, value, nameof(WidthRadius)); }
+
  private string? _WidthRadius;
  /// <summary>
  ///   Vertical radius (height) of the ellipse from which the arc is drawn.
@@ -68,6 +70,7 @@ public partial class ArcTo : ModelElement<DXD.ArcTo>
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.ArcTo.HeightRadius))]
  public string? HeightRadius { get => _HeightRadius; set => UpdateField(ref _HeightRadius, value, nameof(HeightRadius)); }
+
  private string? _HeightRadius;
  /// <summary>
  ///   Starting angle of the arc on the ellipse.
@@ -100,6 +103,7 @@ public partial class ArcTo : ModelElement<DXD.ArcTo>
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.ArcTo.StartAngle))]
  public string? StartAngle { get => _StartAngle; set => UpdateField(ref _StartAngle, value, nameof(StartAngle)); }
+
  private string? _StartAngle;
  /// <summary>
  ///   Angular extent through which the arc sweeps.
@@ -133,5 +137,6 @@ public partial class ArcTo : ModelElement<DXD.ArcTo>
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.ArcTo.SwingAngle))]
  public string? SwingAngle { get => _SwingAngle; set => UpdateField(ref _SwingAngle, value, nameof(SwingAngle)); }
+
  private string? _SwingAngle;
 }

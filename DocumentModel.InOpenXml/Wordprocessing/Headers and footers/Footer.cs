@@ -1,8 +1,9 @@
 namespace DocumentModel.Wordprocessing;
-  /// <summary>
-  /// Represents the content for a single footer for use within one or more sections of a WordprocessingML document.
-  /// This class extends <see cref="HeaderFooter"/> and contains block-level markup similar to the document body, enabling advanced management and formatting of footer content for different sections and page types.
-  /// </summary>
-  public class Footer : HeaderFooter
-  {
-  }
+/// <summary>
+/// Represents the content for a single footer for use within one or more sections of a WordprocessingML document.
+/// This class extends <see cref = "HeaderFooter"/> and contains block-level markup similar to the document body, enabling advanced management and formatting of footer content for different sections and page types.
+/// </summary>
+[XmlRoot("Footer", Namespace = "DocumentModel.Wordprocessing")]
+public class Footer : HeaderFooter
+{
+}

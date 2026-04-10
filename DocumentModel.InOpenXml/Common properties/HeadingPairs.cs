@@ -4,18 +4,20 @@ namespace DocumentModel;
 /// </summary>
 [SimpleType]
 [OpenXmlType(typeof(HeadingPair))]
+[XmlRoot("HeadingPairs", Namespace = "DocumentModel")]
 public class HeadingPairs : ModelElementCollection<HeadingPair>, IEquatable<HeadingPairs>
 {
-  /// <summary>
-  /// Default constructor. Needed to allow adding items.
-  /// </summary>
-  public HeadingPairs()
-  {
-  }
-  /// <summary>
+ /// <summary>
+ /// Default constructor. Needed to allow adding items.
+ /// </summary>
+ public HeadingPairs()
+ {
+ }
+
+ /// <summary>
  ///   Determines whether the specified object is equal to the current HeadingPairs collection.
  /// </summary>
- /// <param name="obj">The object to compare with the current collection.</param>
+ /// <param name = "obj">The object to compare with the current collection.</param>
  /// <returns>True if the specified object is a HeadingPairs collection with the same sequence of values; otherwise, false.</returns>
  public override bool Equals(object? obj)
  {
@@ -23,10 +25,11 @@ public class HeadingPairs : ModelElementCollection<HeadingPair>, IEquatable<Head
    return Equals(other);
   return false;
  }
+
  /// <summary>
  ///   Determines whether the specified HeadingPairs collection is equal to the current collection.
  /// </summary>
- /// <param name="other">The HeadingPairs collection to compare with the current collection.</param>
+ /// <param name = "other">The HeadingPairs collection to compare with the current collection.</param>
  /// <returns>True if the collections contain the same sequence of values; otherwise, false.</returns>
  public bool Equals(HeadingPairs? other)
  {

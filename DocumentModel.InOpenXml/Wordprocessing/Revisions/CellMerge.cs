@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for the current and original vertical merge state, author, date, and annotation identifier, enabling tracking and management of cell merge and split revisions in tables.
 /// </summary>
 [OpenXmlType(typeof(DXW.CellMerge))]
+[XmlRoot("CellMerge", Namespace = "DocumentModel.Wordprocessing")]
 public partial class CellMerge : TrackChangeType<DXW.CellMerge>
 {
  /// <summary>

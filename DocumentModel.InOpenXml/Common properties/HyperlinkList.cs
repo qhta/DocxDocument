@@ -4,6 +4,7 @@ namespace DocumentModel;
 /// </summary>
 [SimpleType]
 [OpenXmlType(typeof(HyperlinkInfo))]
+[XmlRoot("HyperlinkList", Namespace = "DocumentModel")]
 public class HyperlinkList : ElementCollection<HyperlinkInfo>
 {
  /// <summary>
@@ -12,6 +13,7 @@ public class HyperlinkList : ElementCollection<HyperlinkInfo>
  public HyperlinkList()
  {
  }
+
  /// <summary>
  /// Initializes a new instance of the HyperlinkList class with the specified collection of hyperlink information.
  /// </summary>

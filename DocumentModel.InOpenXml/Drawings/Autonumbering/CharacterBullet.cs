@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// Represents a character bullet, including the bullet character and additional extension options.
 /// </summary>
 [OpenXmlType(typeof(DXD.CharacterBullet))]
+[XmlRoot("CharacterBullet", Namespace = "DocumentModel.Drawings")]
 public partial class CharacterBullet : ModelElement<DXD.CharacterBullet>, IExtendableElement
 {
  /// <summary>
@@ -10,10 +11,12 @@ public partial class CharacterBullet : ModelElement<DXD.CharacterBullet>, IExten
  /// </summary>
  [OpenXmlProperty(nameof(DXD.CharacterBullet.Char))]
  public string? Char { get => _Char; set => UpdateField(ref _Char, value, nameof(Char)); }
+
  private string? _Char;
  /// <summary>
  /// List of extension elements.
  /// </summary>
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
  private ExtensionList? _ExtensionList;
 }

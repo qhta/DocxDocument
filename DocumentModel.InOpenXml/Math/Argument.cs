@@ -5,6 +5,7 @@ namespace DocumentModel.Math;
 ///   If all subelements are omitted, this element specifies the presence of an empty argument. 
 /// </summary>
 [OpenXmlType(typeof(IMathArgumentContent))]
+[XmlRoot("Argument", Namespace = "DocumentModel.Math")]
 public partial class Argument : ElementCollection<IMathArgumentContent>
 {
  /// <summary>

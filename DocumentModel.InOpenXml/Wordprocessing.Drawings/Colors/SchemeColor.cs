@@ -6,8 +6,8 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// When the document theme changes, scheme colors automatically update to match the new theme.
 /// </summary>
 [OpenXmlType(typeof(DXO10W.SchemeColor))]
-[XmlRoot("SchemeColor", Namespace = "urn:docmodel:wordprocessing:drawings")]
-public partial class SchemeColor : AbstractColor<DXO10W.SchemeColor>
+[XmlRoot("SchemeColor", Namespace = "DocumentModel.Wordprocessing.Drawings")]
+public partial class SchemeColor : WordAbstractColor<DXO10W.SchemeColor>
 {
   /// <summary>
   /// Gets or sets the scheme color identifier that references a specific color role in the document theme.

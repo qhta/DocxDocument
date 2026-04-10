@@ -21,6 +21,7 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.TopItemsGroupControls))]
-public class TopItemsGroupControls: ModelElement<DXO10CUI.TopItemsGroupControls>
+[XmlRoot("TopItemsGroupControls", Namespace = "DocumentModel.CustomUI")]
+public class TopItemsGroupControls : ModelElement<DXO10CUI.TopItemsGroupControls>
 {
 }

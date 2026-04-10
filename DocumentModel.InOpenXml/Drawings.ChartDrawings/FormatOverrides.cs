@@ -11,16 +11,17 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   visually distinguished or emphasized while maintaining consistent base formatting for the majority of chart
 ///   components. Common use cases include highlighting specific data points with different colors, applying custom
 ///   formatting to outlier values, distinguishing specific series with unique styling, or emphasizing particular
-///   chart elements to draw user attention. Each <see cref="FormatOverride"/> in the collection defines a specific
+///   chart elements to draw user attention. Each <see cref = "FormatOverride"/> in the collection defines a specific
 ///   formatting customization that supersedes default formatting when applied to its target element. The override
 ///   mechanism is particularly valuable in scenarios where charts need to dynamically adjust formatting based on data
 ///   values, conditions, or user interactions without requiring complete reformatting of the entire chart. Format
-///   overrides are referenced by the <see cref="ChartSpace"/> and can be applied throughout the chart structure,
+///   overrides are referenced by the <see cref = "ChartSpace"/> and can be applied throughout the chart structure,
 ///   providing a centralized location for managing exceptional formatting cases while keeping standard formatting
 ///   definitions clean and maintainable. This separation of base formatting and overrides promotes efficient chart
 ///   styling where most elements follow consistent rules while specific elements receive targeted customization.
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.FormatOverrides))]
-public class FormatOverrides: ModelElementCollection<FormatOverride, DXO16DCD.FormatOverrides, DXO16DCD.FormatOverride>
+[XmlRoot("FormatOverrides", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class FormatOverrides : ModelElementCollection<FormatOverride, DXO16DCD.FormatOverrides, DXO16DCD.FormatOverride>
 {
 }

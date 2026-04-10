@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides common formatting options for table cells, such as shading, text wrapping, margins, and vertical alignment, used in table styles.
 /// </summary>
 [OpenXmlType(typeof(DXW.StyleTableCellProperties))]
+[XmlRoot("StyleTableCellProperties", Namespace = "DocumentModel.Wordprocessing")]
 public class StyleTableCellProperties : BaseTableCellProperties<DXW.StyleTableProperties>
 {
 }

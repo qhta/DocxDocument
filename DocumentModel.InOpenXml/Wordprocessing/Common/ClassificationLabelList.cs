@@ -209,6 +209,7 @@ namespace DocumentModel;
 /// </code>
 /// </example>
 [OpenXmlType(typeof(ClassificationLabel))]
+[XmlRoot("ClassificationLabelList", Namespace = "DocumentModel")]
 public partial class ClassificationLabelList : ModelElementCollection<ClassificationLabel, DXO21MLMD.ClassificationLabelList, DXO21MLMD.ClassificationLabel>
 {
  /// <summary>

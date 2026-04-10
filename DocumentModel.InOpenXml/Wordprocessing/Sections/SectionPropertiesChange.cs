@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides properties for author, date, annotation identifier, and previous section properties, enabling tracking and management of section property revisions.
 /// </summary>
 [OpenXmlType(typeof(DXW.SectionPropertiesChange))]
+[XmlRoot("SectionPropertiesChange", Namespace = "DocumentModel.Wordprocessing")]
 public partial class SectionPropertiesChange : IdentifiedChange<DXW.SectionPropertiesChange>
 {
  /// <summary>

@@ -19,12 +19,14 @@ namespace DocumentModel.CustomUI;
 /// </list>
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.ContextMenu))]
-public class ContextMenu: ModelElement<DXO10CUI.ContextMenu>
+[XmlRoot("ContextMenu", Namespace = "DocumentModel.CustomUI")]
+public class ContextMenu : ModelElement<DXO10CUI.ContextMenu>
 {
-  /// <summary>
-  /// Specifies the identifier of the built-in Office context menu.
-  /// </summary>
-  [OpenXmlProperty(nameof(DXO10CUI.ContextMenu.IdMso))]
-  public String? IdMso { get => _IdMso; set => UpdateField(ref _IdMso, value, nameof(IdMso)); }
-  private String? _IdMso;
+ /// <summary>
+ /// Specifies the identifier of the built-in Office context menu.
+ /// </summary>
+ [OpenXmlProperty(nameof(DXO10CUI.ContextMenu.IdMso))]
+ public String? IdMso { get => _IdMso; set => UpdateField(ref _IdMso, value, nameof(IdMso)); }
+
+ private String? _IdMso;
 }

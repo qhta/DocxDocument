@@ -5,9 +5,9 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <remarks>
 ///   This class defines a collection of query results that cache
 ///   comprehensive geographic entity data retrieved from mapping services or geographic data providers. Each result
-///   in the collection pairs a query specification (<see cref="GeoDataEntityQuery"/>) with its corresponding
-///   geographic data (<see cref="GeoData"/>), enabling efficient cache management and quick retrieval of previously
-///   queried entity information. The collection is part of the <see cref="Clear"/> structure within <see cref="GeoCache"/>,
+///   in the collection pairs a query specification (<see cref = "GeoDataEntityQuery"/>) with its corresponding
+///   geographic data (<see cref = "GeoData"/>), enabling efficient cache management and quick retrieval of previously
+///   queried entity information. The collection is part of the <see cref = "Clear"/> structure within <see cref = "GeoCache"/>,
 ///   where it supports offline access to geographic entity definitions and improves performance by eliminating
 ///   redundant queries to external mapping services. This caching mechanism is essential for map-based charts that
 ///   need to display specific geographic regions with accurate boundaries, coordinates, and identification information.
@@ -24,7 +24,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 ///   polygons, identification, copyright attributions) needed for accurate map visualization, supporting features such
 ///   as region coloring, boundary rendering, geographic selection, and spatial analysis.
 /// </remarks>
-public class GeoDataEntityQueryResults: ModelElementCollection<GeoDataEntityQueryResult,
-  DXO16DCD.GeoDataEntityQueryResults, DXO16DCD.GeoDataEntityQueryResult>
+[XmlRoot("GeoDataEntityQueryResults", Namespace = "DocumentModel.Drawings.ChartDrawings")]
+public class GeoDataEntityQueryResults : ModelElementCollection<GeoDataEntityQueryResult, DXO16DCD.GeoDataEntityQueryResults, DXO16DCD.GeoDataEntityQueryResult>
 {
 }

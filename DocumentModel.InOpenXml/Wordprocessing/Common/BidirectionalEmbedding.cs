@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends <see cref = "BidirectionalElement"/> and enables nested embedding levels, allowing for advanced control of bidirectional text layout. The semantics for the rtl element continue to apply within this element, providing high-level overrides of character classification at the appropriate embedding level. Functionally, this markup is equivalent to using LRE/RLE and PDF characters in Unicode text.
 /// </summary>
 [OpenXmlType(typeof(DXW.BidirectionalEmbedding))]
+[XmlRoot("BidirectionalEmbedding", Namespace = "DocumentModel.Wordprocessing")]
 public class BidirectionalEmbedding : BidirectionalElement<DXW.BidirectionalEmbedding>
 {
 }

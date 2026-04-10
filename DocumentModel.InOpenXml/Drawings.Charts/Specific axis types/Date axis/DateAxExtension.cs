@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents an extension for a date axis, providing additional numbering format options.
 /// </summary>
 [OpenXmlType(typeof(DXDC.DateAxExtension))]
+[XmlRoot("DateAxExtension", Namespace = "DocumentModel.Drawings.Charts")]
 public partial class DateAxExtension : AxisExtension<DXDC.DateAxExtension>
 {
 }

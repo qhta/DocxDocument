@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 ///   Defines the SampleData Class.
 /// </summary>
 [OpenXmlType(typeof(DXDD.SampleData))]
+[XmlRoot("SampleData", Namespace = "DocumentModel.Drawings.Diagrams")]
 public partial class SampleData : SampleDataType
 {
 }

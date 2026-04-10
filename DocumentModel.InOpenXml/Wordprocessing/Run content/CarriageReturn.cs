@@ -1,4 +1,5 @@
 using DocumentFormat.OpenXml.EMMA;
+
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents a carriage return character in a text run in WordprocessingML documents.
@@ -6,6 +7,7 @@ namespace DocumentModel.Wordprocessing;
 /// Its behavior is identical to a break character with null type and clear attributes, ending the current line and continuing on the next available line.
 /// </summary>
 [OpenXmlType(typeof(DXW.CarriageReturn))]
+[XmlRoot("CarriageReturn", Namespace = "DocumentModel.Wordprocessing")]
 public class CarriageReturn : ModelElement<DXW.CarriageReturn>, IRunContent
 {
 }

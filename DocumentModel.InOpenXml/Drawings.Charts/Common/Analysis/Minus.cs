@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 ///   Minus.
 /// </summary>
 [OpenXmlType(typeof(DXDC.Minus))]
-public class Minus: PlusMinus<DXDC.Minus>
+[XmlRoot("Minus", Namespace = "DocumentModel.Drawings.Charts")]
+public class Minus : PlusMinus<DXDC.Minus>
 {
 }

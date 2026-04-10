@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides formatting options for text runs within tables, such as font, size, color, and effects, enabling advanced styling and conditional formatting for table content.
 /// </summary>
 [OpenXmlType(typeof(DXW.RunProperties))]
+[XmlRoot("TableStyleRunProperties", Namespace = "DocumentModel.Wordprocessing")]
 public class TableStyleRunProperties : ExtBaseRunProperties<DXW.RunProperties>
 {
 }

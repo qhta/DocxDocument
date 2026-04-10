@@ -4,6 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to and management of <see cref = "Bookmark"/> objects, enabling advanced referencing, navigation, and content marking within the document.
 /// </summary>
 [OpenXmlType(typeof(Bookmark))]
+[XmlRoot("Bookmarks", Namespace = "DocumentModel.Wordprocessing")]
 public class Bookmarks : ElementCollection<Bookmark>
 {
 }
