@@ -1,4 +1,6 @@
-﻿using Qhta.Collections;
+﻿using System.Diagnostics.CodeAnalysis;
+
+using Qhta.Collections;
 
 namespace AutoEdit;
 
@@ -68,98 +70,88 @@ public class AddOpenXmlPropertyAttributeRewriter(BiDiDictionary<string, string> 
     //  return classNode;
 
     var openXmlTypeAttribute = classNode.AttributeLists
-      .SelectMany(al => al.Attributes)
-      .FirstOrDefault(attr =>
+      .SelectMany(selector: al => al.Attributes)
+      .FirstOrDefault(predicate: attr =>
       {
         var attrName = attr.Name.ToString();
-        return attrName == "OpenXmlType"
-               || attrName == "OpenXmlTypeAttribute"
-               || attrName.EndsWith(".OpenXmlType")
-               || attrName.EndsWith(".OpenXmlTypeAttribute");
+        return attrName == "OpenXmlType";
       });
 
     if (openXmlTypeAttribute?.ArgumentList == null) 
-      return base.VisitClassDeclaration(classNode);
+      return base.VisitClassDeclaration(node: classNode);
 
     if (openXmlTypeAttribute.ArgumentList.Arguments.Count < 1)
-      return base.VisitClassDeclaration(classNode);
+      return base.VisitClassDeclaration(node: classNode);
 
-    var openXmlTypeExpression = openXmlTypeAttribute.ArgumentList.Arguments[0].Expression;
+    var openXmlTypeExpression = openXmlTypeAttribute.ArgumentList.Arguments[index: 0].Expression;
     if (openXmlTypeExpression is not TypeOfExpressionSyntax typeOfExpression)
-      return base.VisitClassDeclaration(classNode);
+      return base.VisitClassDeclaration(node: classNode);
 
-    var openXmlTypeName = typeOfExpression.Type.ToString();
-    if (openXmlTypeName == "T")
-    {
-      var typeParamClause = classNode.ConstraintClauses.FirstOrDefault(clause => clause.Name.Identifier.Text == openXmlTypeName);
-      if (typeParamClause?.Constraints == null)
-        return base.VisitClassDeclaration(classNode);
+    var openXmlTypeName =  typeOfExpression.Type.ToString();
+    if (!TryResolveOpenXmlType(ResolveAlias(openXmlTypeName), out var openXmlType))
+      return base.VisitClassDeclaration(node: classNode);
 
-      var constraint = typeParamClause.Constraints.OfType<TypeConstraintSyntax>().FirstOrDefault();
-      if (constraint == null)
-        return base.VisitClassDeclaration(classNode);
 
-      var qualifiedName = constraint.Type is QualifiedNameSyntax constraintType ? constraintType.ToString() : constraint.Type.ToString();
-      if (qualifiedName == "DX.OpenXmlElement")
-        return base.VisitClassDeclaration(classNode);
-
-      openXmlTypeName = qualifiedName;
-    }
     // Add [OpenXmlProperty(nameof(Format.EnumPropertyName))] to each property
-    var newMembers = classNode.Members.Select(member =>
+
+    var properties = classNode.Members.OfType<PropertyDeclarationSyntax>();
+    var newMembers = new List<MemberDeclarationSyntax>();
+    foreach (var prop in properties)
     {
-      if (member is PropertyDeclarationSyntax prop)
+      // Only touch properties that have a setter
+      var hasSetter = prop.AccessorList?.Accessors.Any(predicate: a => a.Kind() == SyntaxKind.SetAccessorDeclaration) ==
+                      true;
+      if (!hasSetter)
       {
-        // Only touch properties that have a setter
-        var hasSetter = prop.AccessorList?.Accessors
-          .Any(a => a.Kind() == SyntaxKind.SetAccessorDeclaration) == true;
-        if (!hasSetter)
-          return member;
-
-        var hasAttr = prop.AttributeLists
-          .SelectMany(al => al.Attributes)
-          .Any(attr => attr.Name.ToString().Contains("OpenXmlProperty"));
-
-        if (!hasAttr)
-        {
-          var leadingTrivia = prop.GetLeadingTrivia();
-          var docTrivia = leadingTrivia.Where(t => t.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia) || t.IsKind(SyntaxKind.MultiLineDocumentationCommentTrivia)).ToList();
-          var otherTrivia = leadingTrivia.Except(docTrivia).ToList();
-
-          if (PropertyExistsInOpenXmlType(openXmlTypeName, prop.Identifier.Text))
-          {
-            var attributeName = "OpenXmlProperty";
-
-            var attr = SyntaxFactory.Attribute(SyntaxFactory.IdentifierName(attributeName), 
-              SyntaxFactory.AttributeArgumentList(SyntaxFactory.SingletonSeparatedList
-                (SyntaxFactory.AttributeArgument(SyntaxFactory.ParseExpression($"nameof({openXmlTypeName}.{prop.Identifier.Text})")))));
-
-            var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(attr))
-              .WithLeadingTrivia(SyntaxFactory.TriviaList(docTrivia));
-            var newProp = prop.WithLeadingTrivia(SyntaxFactory.TriviaList(otherTrivia))
-              .WithAttributeLists(prop.AttributeLists.Add(attrList)).WithTrailingTrivia(prop.GetTrailingTrivia());
-
-            Changed = true;
-            return newProp;
-          }
-        }
+        newMembers.Add(prop);
+        continue;
       }
-      return member;
-    }).ToList();
-    return classNode.WithMembers(SyntaxFactory.List(newMembers));
+      var hasAttr = prop.AttributeLists.SelectMany(selector: al => al.Attributes)
+        .Any(predicate: attr => attr.Name.ToString().Contains(value: "OpenXmlProperty"));
+      if (hasAttr)
+      {
+        newMembers.Add(prop);
+        continue;
+      }
+
+      var leadingTrivia = prop.GetLeadingTrivia();
+      var docTrivia = leadingTrivia.Where(predicate: t =>
+        t.IsKind(kind: SyntaxKind.SingleLineDocumentationCommentTrivia) ||
+        t.IsKind(kind: SyntaxKind.MultiLineDocumentationCommentTrivia)).ToList();
+      var otherTrivia = leadingTrivia.Except(second: docTrivia).ToList();
+
+      if (!PropertyExistsInOpenXmlType(openXmlType!, prop.Identifier.Text))
+      {
+        newMembers.Add(prop);
+        continue;
+      }
+      var attributeName = "OpenXmlProperty";
+
+      var attr = SyntaxFactory.Attribute(name: SyntaxFactory.IdentifierName(name: attributeName),
+        argumentList: SyntaxFactory.AttributeArgumentList(arguments: SyntaxFactory.SingletonSeparatedList(
+          node: SyntaxFactory.AttributeArgument(
+            expression: SyntaxFactory.ParseExpression(text: $"nameof({openXmlTypeName}.{prop.Identifier.Text})")))));
+
+      var attrList = SyntaxFactory.AttributeList(attributes: SyntaxFactory.SingletonSeparatedList(node: attr))
+        .WithLeadingTrivia(trivia: SyntaxFactory.TriviaList(trivias: docTrivia));
+      var newProp = prop.WithLeadingTrivia(trivia: SyntaxFactory.TriviaList(trivias: otherTrivia))
+        .WithAttributeLists(attributeLists: prop.AttributeLists.Add(node: attrList))
+        .WithTrailingTrivia(trivia: prop.GetTrailingTrivia());
+
+      Changed = true;
+      newMembers.Add(newProp);
+    }
+    return classNode.WithMembers(members: SyntaxFactory.List(nodes: newMembers));
   }
 
   /// <summary>
   /// Determines whether the Open XML type already declares a property with the specified name.
   /// </summary>
-  /// <param name="openXmlTypeName">Fully-qualified Open XML type name.</param>
+  /// <param name="openXmlType">Open XML type name.</param>
   /// <param name="propertyName">Property to look up.</param>
-  private bool PropertyExistsInOpenXmlType(string openXmlTypeName, string propertyName)
+  private bool PropertyExistsInOpenXmlType(Type openXmlType, string propertyName)
   {
-    if (!TryResolveOpenXmlType(openXmlTypeName, out var type))
-      return false;
-
-    return type!.GetProperty(propertyName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase) != null;
+    return openXmlType.GetProperty(propertyName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase) != null;
   }
 
   /// <summary>
@@ -178,16 +170,7 @@ public class AddOpenXmlPropertyAttributeRewriter(BiDiDictionary<string, string> 
 
     var resolvedName = ResolveAlias(typeName);
     type = TypeCache.ResolveType(resolvedName);
-    //{
-    //  foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
-    //  {
-    //    type = asm.GetType(resolvedName, false, false);
-    //    if (type != null)
-    //      break;
-    //  }
-    //}
-
-    //_typeCache[typeName] = type;
+;
     return type!=null;
   }
 

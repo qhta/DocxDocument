@@ -16,7 +16,7 @@ public partial class SchemeColor : IColor
    if (this.Val is null)
     return null;
    var ColorScheme = ParentDocument?.Theme?.ThemeElements?.ColorScheme?.GetColor(this.Val.Value);
-   return ColorScheme?.RGB;
+   return (ColorScheme as ISchemeBaseColor)?.RGB;
   }
 
   set => _RGB = value;

@@ -238,7 +238,7 @@ public class BodyReadTest : _AbstractTestClass
     }
   }
 
-  public static bool IsXmlAnonymousType(Type type)
+  private static bool IsXmlAnonymousType(Type type)
   {
     var xmlType = type.GetCustomAttribute<XmlTypeAttribute>();
     var xmlRoot = type.GetCustomAttribute<XmlRootAttribute>();
@@ -311,11 +311,12 @@ public class BodyReadTest : _AbstractTestClass
   }
 
   /// <summary>
-  /// Adds an XML type override for a closed generic <see cref="AbstractColor{T}"/> type.
+  /// Adds an XML type override for a closed generic AbstractColor{T}"/> type.
   /// </summary>
   /// <param name="overrides">Override collection to populate.</param>
   /// <param name="type">Closed generic abstract color type to override.</param>
   /// <param name="xmlTypeName">Unique XML type name.</param>
+  /// <param name="xmlNamespace">XML namespace for the type.</param>
   static void AddAbstractColorOverride(XmlAttributeOverrides overrides, Type type, string xmlTypeName, string xmlNamespace)
   {
     var attrs = new XmlAttributes

@@ -17,6 +17,12 @@
           <ButtonText>AutoEdit</ButtonText>
         </Strings>
       </Menu>
+      <Menu guid="guidAutoEditCmdSet" id="AutoEditSubMenuCodeWin" priority="0x0100" type="Menu">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditContextCodeWinGroup" />
+        <Strings>
+          <ButtonText>AutoEdit</ButtonText>
+        </Strings>
+      </Menu>
     </Menus>
 
     <Groups>
@@ -26,11 +32,17 @@
       <Group guid="guidAutoEditCmdSet" id="AutoEditContextProjNodeGroup" priority="0x0100">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_PROJNODE" />
       </Group>
+      <Group guid="guidAutoEditCmdSet" id="AutoEditContextCodeWinGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
+      </Group>
       <Group guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" priority="0x0100">
         <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuItemNode" />
       </Group>
       <Group guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupProjNode" priority="0x0100">
         <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuProjNode" />
+      </Group>
+      <Group guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCodeWin" priority="0x0100">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuCodeWin" />
       </Group>
     </Groups>
 
@@ -102,20 +114,23 @@
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddXmlRootAttribute" priority="0x0100">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
     </CommandPlacement>
+
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlTypeAttribute" priority="0x0110">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlPropertyAttribute" priority="0x0120">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlPropertyAttribute" priority="0x0120">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCodeWin" />
+    </CommandPlacement>
     
-    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlElementAttribute" priority="0x0110">
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlElementAttribute" priority="0x0130">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
     </CommandPlacement>
     
-    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlEnumTypeAttribute" priority="0x0120">
-      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
-    </CommandPlacement>
-    
-    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlPropertyAttribute" priority="0x0130">
-      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
-    </CommandPlacement>
-    
-    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlTypeAttribute" priority="0x0140">
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlEnumTypeAttribute" priority="0x0140">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
     </CommandPlacement>
     
@@ -148,10 +163,13 @@
     <GuidSymbol name="guidAutoEditCmdSet" value="{A7F1C3D5-6C25-4D78-B8EE-18A0A60F0123}">
       <IDSymbol name="AutoEditSubMenuItemNode" value="0x1000" />
       <IDSymbol name="AutoEditSubMenuProjNode" value="0x1001" />
+      <IDSymbol name="AutoEditSubMenuCodeWin" value="0x1006" />
       <IDSymbol name="AutoEditContextItemNodeGroup" value="0x1004" />
       <IDSymbol name="AutoEditContextProjNodeGroup" value="0x1005" />
+      <IDSymbol name="AutoEditContextCodeWinGroup" value="0x1007" />
       <IDSymbol name="AutoEditSubMenuGroupItemNode" value="0x1002" />
       <IDSymbol name="AutoEditSubMenuGroupProjNode" value="0x1003" />
+      <IDSymbol name="AutoEditSubMenuGroupCodeWin" value="0x1008" />
       <IDSymbol name="cmdidAddOpenXmlElementAttribute" value="0x0100" />
       <IDSymbol name="cmdidAddOpenXmlEnumTypeAttribute" value="0x0101" />
       <IDSymbol name="cmdidAddOpenXmlPropertyAttribute" value="0x0102" />

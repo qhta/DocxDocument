@@ -400,13 +400,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
  /// </summary>
  public DMD.Theme? Theme
  {
-  get
-  {
-   if (_Theme == null)
-    _Theme = new DMD.Theme(this);
-   return _Theme;
-  }
-
+  get => _Theme ??= new DMD.Theme(this);
   set => UpdateField(ref _Theme, value, nameof(Theme));
  }
 

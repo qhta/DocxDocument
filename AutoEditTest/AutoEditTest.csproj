@@ -8,6 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="LineProperties.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\NamespaceMappings\OpenXmlUsings.cs" Link="OpenXmlUsings.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AutoEditLib\AutoEditLib.csproj" />
   </ItemGroup>
 

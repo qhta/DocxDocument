@@ -588,11 +588,12 @@
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.AddAbstractColorOverride(System.Xml.Serialization.XmlAttributeOverrides,System.Type,System.String,System.String)">
             <summary>
-            Adds an XML type override for a closed generic <see cref="!:AbstractColor&lt;T&gt;"/> type.
+            Adds an XML type override for a closed generic AbstractColor{T}"/> type.
             </summary>
             <param name="overrides">Override collection to populate.</param>
             <param name="type">Closed generic abstract color type to override.</param>
             <param name="xmlTypeName">Unique XML type name.</param>
+            <param name="xmlNamespace">XML namespace for the type.</param>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.ColorTypesTest">
             <summary>

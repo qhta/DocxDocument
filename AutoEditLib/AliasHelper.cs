@@ -2,6 +2,7 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,7 +17,6 @@ namespace AutoEdit;
 /// </summary>
 static class AliasHelper
 {
-  private static readonly ConcurrentDictionary<string, Dictionary<string, string>> GlobalAliasCache = new(StringComparer.OrdinalIgnoreCase);
 
   /// <summary>
   /// Builds an alias map from local <c>using</c> directives and cached global aliases for the containing project.
@@ -34,11 +34,13 @@ static class AliasHelper
         map[u.Alias!.Name.Identifier.Text] = u.Name.ToString();
     }
 
-    foreach (var kvp in GetGlobalAliases(filePath))
-    {
-      if (!map.ContainsKey(kvp.Key))
-        map[kvp.Key] = kvp.Value;
-    }
+    var globalAliases = FindGlobalAliases(filePath);
+    if (globalAliases != null)
+      foreach (var kvp in globalAliases)
+      {
+        if (!map.ContainsKey(kvp.Key))
+          map[kvp.Key] = kvp.Value;
+      }
 
     return map;
   }
@@ -46,34 +48,98 @@ static class AliasHelper
   /// <summary>
   /// Retrieves project-level alias mappings defined in <c>GlobalUsings.cs</c> if present.
   /// </summary>
-  private static Dictionary<string, string> GetGlobalAliases(string filePath)
+  private static Dictionary<string, string>? FindGlobalAliases(string filePath)
   {
+
     var projectDir = FindProjectRoot(Path.GetDirectoryName(filePath)!);
     if (projectDir == null)
-      return new Dictionary<string, string>(StringComparer.Ordinal);
+      return null;
 
-    return GlobalAliasCache.GetOrAdd(projectDir, dir =>
+    var map = new Dictionary<string, string>();
+    var globalUsingsPath = Path.Combine(projectDir, "GlobalUsings.cs");
+    if (File.Exists(globalUsingsPath))
     {
-      var map = new Dictionary<string, string>(StringComparer.Ordinal);
-      var globalUsingsPath = Path.Combine(dir, "GlobalUsings.cs");
-      if (!File.Exists(globalUsingsPath))
-        return map;
-
-      foreach (var line in File.ReadLines(globalUsingsPath))
+      var globalAliases = GetGlobalUsings(filePath);
+      foreach (var kvp in globalAliases)
       {
-        var trimmed = line.Trim();
-        if (!trimmed.StartsWith("global using", StringComparison.Ordinal) || !trimmed.Contains('='))
-          continue;
-
-        var eqIndex = trimmed.IndexOf('=');
-        var aliasPart = trimmed.Substring("global using".Length, eqIndex - "global using".Length).Trim();
-        var nsPart = trimmed.Substring(eqIndex + 1).Trim().TrimEnd(';');
-
-        if (!string.IsNullOrEmpty(aliasPart) && !string.IsNullOrEmpty(nsPart))
-          map[aliasPart] = nsPart;
+        if (!map.ContainsKey(kvp.Key))
+          map[kvp.Key] = kvp.Value;
       }
-      return map;
-    });
+    }
+    var projectFiles = Directory.GetFiles(projectDir, "*.csproj");
+    foreach (var file in projectFiles)
+    {
+      var linkedFiles = GetLinkedFiles(file);
+      foreach (var linkedFile in linkedFiles)
+      {
+        var globalAliases = GetGlobalUsings(linkedFile);
+        foreach (var kvp in globalAliases)
+        {
+          if (!map.ContainsKey(kvp.Key))
+            map[kvp.Key] = kvp.Value;
+        }
+      }
+    }
+
+    return map;
+  }
+
+  /// <summary>
+  /// Get files linked in the project file with a <c>include</c> attribute, which may include the <c>GlobalUsings.cs</c> file containing project-wide alias definitions.
+  /// </summary>
+  /// <param name="projectFilePath"></param>
+  /// <returns></returns>
+  private static List<string> GetLinkedFiles(string projectFilePath)
+  {
+    var result = new List<string>();
+    if (!File.Exists(projectFilePath))
+      return result;
+
+    var projectDir = Path.GetDirectoryName(projectFilePath) ?? string.Empty;
+    var regex = new Regex("<Compile\\s+Include=\"(?<include>[^\"]+)\"\\s+Link=\"(?<link>[^\"]+)\"\\s*/>",
+      RegexOptions.Compiled);
+
+    foreach (var line in File.ReadLines(projectFilePath))
+    {
+      var match = regex.Match(line);
+      if (!match.Success)
+        continue;
+
+      var includePath = match.Groups["include"].Value;
+      if (string.IsNullOrWhiteSpace(includePath))
+        continue;
+
+      var fullPath = Path.GetFullPath(Path.Combine(projectDir, includePath));
+      result.Add(fullPath);
+    }
+
+    return result;
+  }
+
+
+  /// <summary>
+  /// Gets alias mappings from a *.cs file by parsing lines that match the pattern of global using alias directives.
+  /// </summary>
+  /// <param name="sourceFilePath">A path to file containing global usings directives</param>
+  /// <returns>A dictionary mapping alias identifiers to fully-qualified namespaces.</returns>
+  private static Dictionary<string, string> GetGlobalUsings(string sourceFilePath)
+  {
+    var map = new Dictionary<string, string>(StringComparer.Ordinal);
+
+    foreach (var line in File.ReadLines(sourceFilePath))
+    {
+      var trimmed = line.Trim();
+      if (!trimmed.StartsWith("global using", StringComparison.Ordinal) || !trimmed.Contains('='))
+        continue;
+
+      var eqIndex = trimmed.IndexOf('=');
+      var aliasPart = trimmed.Substring("global using".Length, eqIndex - "global using".Length).Trim();
+      var nsPart = trimmed.Substring(eqIndex + 1).Trim().TrimEnd(';');
+
+      if (!string.IsNullOrEmpty(aliasPart) && !string.IsNullOrEmpty(nsPart))
+        map[aliasPart] = nsPart;
+    }
+    return map;
   }
 
   /// <summary>
@@ -84,18 +150,19 @@ static class AliasHelper
   private static string? FindProjectRoot(string startDir)
   {
     var current = startDir;
-    while (!string.IsNullOrEmpty(current))
+    if (!string.IsNullOrEmpty(current))
     {
       if (Directory.GetFiles(current, "*.csproj").Any())
         return current;
 
-      var parent = Directory.GetParent(current);
-      if (parent == null)
-        break;
+      var parent = Path.GetDirectoryName(current);
+      if (parent != null)
+        return FindProjectRoot(parent);
 
-      current = parent.FullName;
     }
     return null;
+
   }
 }
+
 

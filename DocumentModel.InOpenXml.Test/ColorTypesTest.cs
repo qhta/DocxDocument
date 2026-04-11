@@ -34,7 +34,7 @@ public class ColorTypesTest: _AbstractTestClass
   /// <returns>True if discovery is correct; otherwise, false.</returns>
   static bool TestTypeDiscovery()
   {
-    Console.WriteLine("--- Type Discovery ---");
+    Console.WriteLine("--- IColor Type Discovery ---");
     var discovered = GetIColorTypes().OrderBy(t => t.FullName).ToList();
     var expected = new List<Type>
     {
@@ -72,11 +72,26 @@ public class ColorTypesTest: _AbstractTestClass
   {
     Console.WriteLine("--- XML Serialization ---");
     var document = CreateDocumentWithInitializedThemePart();
+    var theme = document.Theme!;
+    var xmlString = SerializeObjectToXml(theme);
+    Console.WriteLine($"Serialized Theme XML (theme):\n{xmlString}");
+    var deserializedTheme = DeserializeObjectFromXml(typeof(Theme), xmlString);
+    if (deserializedTheme == null)
+    {
+      Console.WriteLine($"✗ Xml theme deserialization returned null for '{theme.GetType().Name}'");
+      return false;
+    }
+    if (!TestHelper.CompareTestData(typeof(Theme), theme, deserializedTheme, out var propName1))
+    {
+      Console.WriteLine($"✗ XML test FAILED for '{theme.GetType().Name}' - mismatch in '{propName1}'");
+      return false;
+    }
+
     foreach (var colorType in GetIColorTypes())
     {
       var testData = CreateSampleColor(colorType);
       AttachToDocumentContext(testData, document);
-      var xmlString = SerializeObjectToXml(testData);
+      xmlString = SerializeObjectToXml(testData);
       Console.WriteLine($"Serialized XML ({colorType.Name}):\n{xmlString}");
 
       var deserialized = DeserializeObjectFromXml(colorType, xmlString);
@@ -331,18 +346,18 @@ public class ColorTypesTest: _AbstractTestClass
         ColorScheme = new ColorScheme
         {
           Name = "ColorTypesTest Color Scheme",
-          Dark1Color = new RgbColorModelHex { Val = (HexColor)0x000000 },
-          Light1Color = new RgbColorModelHex { Val = (HexColor)0xFFFFFF },
-          Dark2Color = new RgbColorModelHex { Val = (HexColor)0x1F1F1F },
-          Light2Color = new RgbColorModelHex { Val = (HexColor)0xEEEEEE },
-          Accent1Color = new RgbColorModelHex { Val = (HexColor)0x4472C4 },
-          Accent2Color = new RgbColorModelHex { Val = (HexColor)0xED7D31 },
-          Accent3Color = new RgbColorModelHex { Val = (HexColor)0xA5A5A5 },
-          Accent4Color = new RgbColorModelHex { Val = (HexColor)0xFFC000 },
-          Accent5Color = new RgbColorModelHex { Val = (HexColor)0x5B9BD5 },
-          Accent6Color = new RgbColorModelHex { Val = (HexColor)0x70AD47 },
-          Hyperlink = new RgbColorModelHex { Val = (HexColor)0x0563C1 },
-          FollowedHyperlinkColor = new RgbColorModelHex { Val = (HexColor)0x954F72 },
+          //Dark1Color = new RgbColorModelHex { Val = (HexColor)0x000000 },
+          //Light1Color = new RgbColorModelHex { Val = (HexColor)0xFFFFFF },
+          //Dark2Color = new RgbColorModelHex { Val = (HexColor)0x1F1F1F },
+          //Light2Color = new RgbColorModelHex { Val = (HexColor)0xEEEEEE },
+          //Accent1Color = new RgbColorModelHex { Val = (HexColor)0x4472C4 },
+          //Accent2Color = new RgbColorModelHex { Val = (HexColor)0xED7D31 },
+          //Accent3Color = new RgbColorModelHex { Val = (HexColor)0xA5A5A5 },
+          //Accent4Color = new RgbColorModelHex { Val = (HexColor)0xFFC000 },
+          //Accent5Color = new RgbColorModelHex { Val = (HexColor)0x5B9BD5 },
+          //Accent6Color = new RgbColorModelHex { Val = (HexColor)0x70AD47 },
+          //Hyperlink = new RgbColorModelHex { Val = (HexColor)0x0563C1 },
+          //FollowedHyperlink = new RgbColorModelHex { Val = (HexColor)0x954F72 },
         }
       }
     };

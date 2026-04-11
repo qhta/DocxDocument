@@ -68,12 +68,12 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
 
     bool hasClassAttr = classNode.AttributeLists
       .SelectMany(al => al.Attributes)
-      .Any(attr => attr.Name.ToString().Contains("Format"));
+      .Any(attr => attr.Name.ToString().StartsWith("OpenXmlType"));
 
     if (!hasClassAttr)
     {
       var openXmlTypeAttr = SyntaxFactory.Attribute(
-        SyntaxFactory.IdentifierName("Format"),
+        SyntaxFactory.IdentifierName("OpenXmlType"),
         SyntaxFactory.AttributeArgumentList(
           SyntaxFactory.SingletonSeparatedList(
             SyntaxFactory.AttributeArgument(
@@ -83,19 +83,21 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
         )
       );
 
-      var leadingTrivia = classNode.GetLeadingTrivia();
-      var docTrivia = leadingTrivia.Where(t =>
-          t.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia) ||
-          t.IsKind(SyntaxKind.MultiLineDocumentationCommentTrivia))
-        .ToList();
-      var otherTrivia = leadingTrivia.Except(docTrivia).ToList();
-
-      var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(openXmlTypeAttr))
-        .WithLeadingTrivia(SyntaxFactory.TriviaList(docTrivia));
-      var newClassNode = classNode
-        .WithLeadingTrivia(SyntaxFactory.TriviaList(otherTrivia))
-        .WithAttributeLists(classNode.AttributeLists.Add(attrList))
-        .WithTrailingTrivia(classNode.GetTrailingTrivia());
+      ClassDeclarationSyntax newClassNode;
+      if (classNode.AttributeLists.Count == 0)
+      {
+        var (docTrivia, remainingTrivia) = SplitDocumentationTrivia(classNode.GetLeadingTrivia());
+        var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(openXmlTypeAttr))
+          .WithLeadingTrivia(docTrivia);
+        newClassNode = classNode
+          .WithLeadingTrivia(remainingTrivia)
+          .WithAttributeLists(classNode.AttributeLists.Add(attrList));
+      }
+      else
+      {
+        var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(openXmlTypeAttr));
+        newClassNode = classNode.WithAttributeLists(classNode.AttributeLists.Add(attrList));
+      }
 
       Changed = true;
       return newClassNode;
