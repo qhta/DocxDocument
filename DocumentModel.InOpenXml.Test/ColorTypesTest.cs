@@ -74,7 +74,7 @@ public class ColorTypesTest: _AbstractTestClass
     var document = CreateDocumentWithInitializedThemePart();
     var theme = document.Theme!;
     var xmlString = SerializeObjectToXml(theme);
-    Console.WriteLine($"\nSerialized Theme XML (theme):\n{xmlString}");
+    Console.WriteLine($"\nSerialized XML (theme):\n{xmlString}");
     var deserializedTheme = DeserializeObjectFromXml(typeof(Theme), xmlString);
     if (deserializedTheme == null)
     {
@@ -121,11 +121,26 @@ public class ColorTypesTest: _AbstractTestClass
   {
     Console.WriteLine("--- JSON Serialization ---");
     var document = CreateDocumentWithInitializedThemePart();
+    var theme = document.Theme!;
+    var jsonString = JsonSerializer.Serialize(theme, typeof(Theme), JsonConfig.Options);
+    Console.WriteLine($"\nSerialized JSON (theme):\n{jsonString}");
+    var deserializedTheme = JsonSerializer.Deserialize(jsonString, typeof(Theme), JsonConfig.Options);
+    if (deserializedTheme == null)
+    {
+      Console.WriteLine($"✗ JSON theme deserialization returned null for '{theme.GetType().Name}'");
+      return false;
+    }
+    if (!TestHelper.CompareTestData(typeof(Theme), theme, deserializedTheme, out var propName1))
+    {
+      Console.WriteLine($"✗ JSON test FAILED for '{theme.GetType().Name}' - mismatch in '{propName1}'");
+      return false;
+    }
+    
     foreach (var colorType in GetIColorTypes())
     {
       var testData = CreateSampleColor(colorType);
       AttachToDocumentContext(testData, document);
-      var jsonString = JsonSerializer.Serialize(testData, colorType, JsonConfig.Options);
+      jsonString = JsonSerializer.Serialize(testData, colorType, JsonConfig.Options);
       Console.WriteLine($"\nSerialized JSON ({colorType.Name}):\n{jsonString}");
 
       var deserialized = JsonSerializer.Deserialize(jsonString, colorType, JsonConfig.Options);
@@ -348,7 +363,7 @@ public class ColorTypesTest: _AbstractTestClass
           Name = "ColorTypesTest Color Scheme",
           Dark1Color = new RgbColorModelHex { Val = (HexColor)0x000000 },
           Light1Color = new RgbColorModelHex { Val = (HexColor)0xFFFFFF },
-          Dark2Color = new RgbColorModelHex { Val = (HexColor)0x1F1F1F },
+          Dark2Color = new RgbColorModelPercentage { Red = 0.5, Green = 0.5, Blue = 0.5 },
           Light2Color = new RgbColorModelHex { Val = (HexColor)0xEEEEEE },
           Accent1Color = new RgbColorModelHex { Val = (HexColor)0x4472C4 },
           Accent2Color = new RgbColorModelHex { Val = (HexColor)0xED7D31 },

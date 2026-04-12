@@ -13,17 +13,17 @@ public interface IColor
   /// <summary>
   /// Red component of the color as a percentage value.
   /// </summary>
-  public float? Red { get; set; }
+  public double? Red { get; set; }
 
   /// <summary>
   /// Green component of the color as a percentage value.
   /// </summary>
-  public float? Green { get; set; }
+  public double? Green { get; set; }
 
   /// <summary>
   /// Blue component of the color as a percentage value.
   /// </summary>
-  public float? Blue { get; set; }
+  public double? Blue { get; set; }
 
   /// <summary>
   /// Gets or sets the name of color. May be used to specify a color by name, such as "red", "blue", etc.
@@ -42,7 +42,7 @@ public interface IColor
   /// <item>Convert the resultant HSL color to RGB</item>
   /// </list> 
   /// </remarks> 
-  public float? Tint { get; set; }
+  public double? Tint { get; set; }
 
   /// <summary>
   /// Gets or sets the theme shade represented by this property.
@@ -55,6 +55,6 @@ public interface IColor
   /// <item>Convert the resultant HSL color to RGB</item>
   /// </list>
   /// </remarks>  
-  public float? Shade { get; set; }
+  public double? Shade { get; set; }
 
 }

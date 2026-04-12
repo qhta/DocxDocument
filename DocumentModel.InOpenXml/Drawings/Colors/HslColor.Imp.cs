@@ -84,9 +84,9 @@ public partial class HslColor : IColor
  [NotMapped]
  [XmlIgnore]
  [JsonIgnore]
- float? IColor.Red
+ double? IColor.Red
  {
-  get => this.RGB is null ? null : (float)(((this.RGB >> 16) & 0xFF) / 255.0);
+  get => this.RGB is null ? null : (double)(((this.RGB >> 16) & 0xFF) / 255.0);
   set
   {
    if (value is null)
@@ -105,9 +105,9 @@ public partial class HslColor : IColor
  [NotMapped]
  [XmlIgnore]
  [JsonIgnore]
- float? IColor.Green
+ double? IColor.Green
  {
-  get => this.RGB is null ? null : (float)(((this.RGB >> 8) & 0xFF) / 255.0);
+  get => this.RGB is null ? null : (double)(((this.RGB >> 8) & 0xFF) / 255.0);
   set
   {
    if (value is null)
@@ -126,9 +126,9 @@ public partial class HslColor : IColor
  [NotMapped]
  [XmlIgnore]
  [JsonIgnore]
- float? IColor.Blue
+ double? IColor.Blue
  {
-  get => this.RGB is null ? null : (float)((this.RGB & 0xFF) / 255.0);
+  get => this.RGB is null ? null : (double)((this.RGB & 0xFF) / 255.0);
   set
   {
    if (value is null)
@@ -178,7 +178,7 @@ public partial class HslColor : IColor
  [NotMapped]
  [XmlIgnore]
  [JsonIgnore]
- float? IColor.Tint { get => this.Tint is null ? null : (float)(this.Tint / 100000.0); set => this.Tint = value is null ? null : (int? )System.Math.Round((double)(value.Value * 100000.0)); }
+ double? IColor.Tint { get => this.Tint is null ? null : (double)(this.Tint / 100000.0); set => this.Tint = value is null ? null : (int? )System.Math.Round((double)(value.Value * 100000.0)); }
 
  /// <summary>
  /// Shade modification of the color, represented as a percentage value between 0 and 1.
@@ -186,5 +186,5 @@ public partial class HslColor : IColor
  [NotMapped]
  [XmlIgnore]
  [JsonIgnore]
- float? IColor.Shade { get => this.Shade is null ? null : (float)(this.Shade / 100000.0); set => this.Shade = value is null ? null : (int? )System.Math.Round((double)(value.Value * 100000.0)); }
+ double? IColor.Shade { get => this.Shade is null ? null : (double)(this.Shade / 100000.0); set => this.Shade = value is null ? null : (int? )System.Math.Round((double)(value.Value * 100000.0)); }
 }

@@ -48,9 +48,9 @@ public partial class PresetColor : IColor
  /// This is derived from the RGB+ value, where the red component is extracted and converted to a percentage.
  /// Setting this property will update the RGB+ value accordingly, modifying only the red component while preserving the green and blue components.
  /// </summary>
- float? IColor.Red
+ double? IColor.Red
  {
-  get => this.RGB is null ? null : (float)(((this.RGB >> 16) & 0xFF) / 255.0);
+  get => this.RGB is null ? null : (double)(((this.RGB >> 16) & 0xFF) / 255.0);
   set
   {
    if (value is null)
@@ -66,9 +66,9 @@ public partial class PresetColor : IColor
  /// This is derived from the RGB+ value, where the green component is extracted and converted to a percentage.
  /// Setting this property will update the RGB+ value accordingly, modifying only the green component while preserving the red and blue components.
  /// </summary>
- float? IColor.Green
+ double? IColor.Green
  {
-  get => this.RGB is null ? null : (float)(((this.RGB >> 8) & 0xFF) / 255.0);
+  get => this.RGB is null ? null : (double)(((this.RGB >> 8) & 0xFF) / 255.0);
   set
   {
    if (value is null)
@@ -84,9 +84,9 @@ public partial class PresetColor : IColor
  /// This is derived from the RGB+ value, where the blue component is extracted and converted to a percentage.
  /// Setting this property will update the RGB+ value accordingly, modifying only the blue component while preserving the red and green components.
  /// </summary>
- float? IColor.Blue
+ double? IColor.Blue
  {
-  get => this.RGB is null ? null : (float)((this.RGB & 0xFF) / 255.0);
+  get => this.RGB is null ? null : (double)((this.RGB & 0xFF) / 255.0);
   set
   {
    if (value is null)
@@ -130,10 +130,10 @@ public partial class PresetColor : IColor
  /// <summary>
  /// Tint modification of the color, represented as a percentage value between 0 and 1.
  /// </summary>
- float? IColor.Tint { get => this.Tint is null ? null : (float)(this.Tint / 100000.0); set => this.Tint = value is null ? null : (int? )System.Math.Round((double)(value.Value * 100000.0)); }
+ double? IColor.Tint { get => this.Tint is null ? null : (double)(this.Tint / 100000.0); set => this.Tint = value is null ? null : (int? )System.Math.Round((double)(value.Value * 100000.0)); }
 
  /// <summary>
  /// Shade modification of the color, represented as a percentage value between 0 and 1.
  /// </summary>
- float? IColor.Shade { get => this.Shade is null ? null : (float)(this.Shade / 100000.0); set => this.Shade = value is null ? null : (int? )System.Math.Round((double)(value.Value * 100000.0)); }
+ double? IColor.Shade { get => this.Shade is null ? null : (double)(this.Shade / 100000.0); set => this.Shade = value is null ? null : (int? )System.Math.Round((double)(value.Value * 100000.0)); }
 }
