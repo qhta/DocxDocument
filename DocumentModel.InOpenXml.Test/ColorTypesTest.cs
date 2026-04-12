@@ -74,7 +74,7 @@ public class ColorTypesTest: _AbstractTestClass
     var document = CreateDocumentWithInitializedThemePart();
     var theme = document.Theme!;
     var xmlString = SerializeObjectToXml(theme);
-    Console.WriteLine($"Serialized Theme XML (theme):\n{xmlString}");
+    Console.WriteLine($"\nSerialized Theme XML (theme):\n{xmlString}");
     var deserializedTheme = DeserializeObjectFromXml(typeof(Theme), xmlString);
     if (deserializedTheme == null)
     {
@@ -92,7 +92,7 @@ public class ColorTypesTest: _AbstractTestClass
       var testData = CreateSampleColor(colorType);
       AttachToDocumentContext(testData, document);
       xmlString = SerializeObjectToXml(testData);
-      Console.WriteLine($"Serialized XML ({colorType.Name}):\n{xmlString}");
+      Console.WriteLine($"\nSerialized XML ({colorType.Name}):\n{xmlString}");
 
       var deserialized = DeserializeObjectFromXml(colorType, xmlString);
       if (deserialized == null)
@@ -126,7 +126,7 @@ public class ColorTypesTest: _AbstractTestClass
       var testData = CreateSampleColor(colorType);
       AttachToDocumentContext(testData, document);
       var jsonString = JsonSerializer.Serialize(testData, colorType, JsonConfig.Options);
-      Console.WriteLine($"Serialized JSON ({colorType.Name}):\n{jsonString}");
+      Console.WriteLine($"\nSerialized JSON ({colorType.Name}):\n{jsonString}");
 
       var deserialized = JsonSerializer.Deserialize(jsonString, colorType, JsonConfig.Options);
       if (deserialized == null)
@@ -346,18 +346,18 @@ public class ColorTypesTest: _AbstractTestClass
         ColorScheme = new ColorScheme
         {
           Name = "ColorTypesTest Color Scheme",
-          //Dark1Color = new RgbColorModelHex { Val = (HexColor)0x000000 },
-          //Light1Color = new RgbColorModelHex { Val = (HexColor)0xFFFFFF },
-          //Dark2Color = new RgbColorModelHex { Val = (HexColor)0x1F1F1F },
-          //Light2Color = new RgbColorModelHex { Val = (HexColor)0xEEEEEE },
-          //Accent1Color = new RgbColorModelHex { Val = (HexColor)0x4472C4 },
-          //Accent2Color = new RgbColorModelHex { Val = (HexColor)0xED7D31 },
-          //Accent3Color = new RgbColorModelHex { Val = (HexColor)0xA5A5A5 },
-          //Accent4Color = new RgbColorModelHex { Val = (HexColor)0xFFC000 },
-          //Accent5Color = new RgbColorModelHex { Val = (HexColor)0x5B9BD5 },
-          //Accent6Color = new RgbColorModelHex { Val = (HexColor)0x70AD47 },
-          //Hyperlink = new RgbColorModelHex { Val = (HexColor)0x0563C1 },
-          //FollowedHyperlink = new RgbColorModelHex { Val = (HexColor)0x954F72 },
+          Dark1Color = new RgbColorModelHex { Val = (HexColor)0x000000 },
+          Light1Color = new RgbColorModelHex { Val = (HexColor)0xFFFFFF },
+          Dark2Color = new RgbColorModelHex { Val = (HexColor)0x1F1F1F },
+          Light2Color = new RgbColorModelHex { Val = (HexColor)0xEEEEEE },
+          Accent1Color = new RgbColorModelHex { Val = (HexColor)0x4472C4 },
+          Accent2Color = new RgbColorModelHex { Val = (HexColor)0xED7D31 },
+          Accent3Color = new RgbColorModelHex { Val = (HexColor)0xA5A5A5 },
+          Accent4Color = new RgbColorModelHex { Val = (HexColor)0xFFC000 },
+          Accent5Color = new RgbColorModelHex { Val = (HexColor)0x5B9BD5 },
+          Accent6Color = new RgbColorModelHex { Val = (HexColor)0x70AD47 },
+          Hyperlink = new RgbColorModelHex { Val = (HexColor)0x0563C1 },
+          FollowedHyperlinkColor = new RgbColorModelHex { Val = (HexColor)0x954F72 },
         }
       }
     };
@@ -439,36 +439,14 @@ public class ColorTypesTest: _AbstractTestClass
   static string SerializeObjectToXml(object data)
   {
     var rootType = data.GetType();
-    var overrides = new XmlAttributeOverrides();
-
-    //var attrs1 = new XmlAttributes
-    //{
-    //  XmlType = new XmlTypeAttribute
-    //  {
-    //    TypeName = "SchemeColor",
-    //    Namespace = "urn:docmodel:drawings"
-    //  }
-    //};
-    //overrides.Add(typeof(DocumentModel.Drawings.SchemeColor), attrs1);
-
-    //var attrs2 = new XmlAttributes
-    //{
-    //  XmlType = new XmlTypeAttribute
-    //  {
-    //    TypeName = "SchemeColor",
-    //    Namespace = "urn:docmodel:wordprocessing:drawings"
-    //  }
-    //};
-    //overrides.Add(typeof(DocumentModel.Wordprocessing.Drawings.SchemeColor), attrs2);
-
-    var serializer = new XmlSerializer(rootType, overrides, null, null, null);
 
     var ns = new XmlSerializerNamespaces();
+    ns.Add("xsi", "http://www.w3.org/2001/XMLSchema-instance");
     ns.Add("d", "DocumentModel.Drawings");
     ns.Add("wd", "DocumentModel.Wordprocessing.Drawings");
 
 
-    var xmlSerializer = new XmlSerializer(data.GetType());
+    var xmlSerializer = new XmlSerializer(rootType);
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
     {
