@@ -10,9 +10,9 @@ public partial class HslColor : AbstractColor<DXD.HslColor>, ISchemeBaseColor
  /// Base hue value.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.HslColor.HueValue))]
- public Int32? HueValue { get => _HueValue; set => UpdateField(ref _HueValue, value, nameof(HueValue)); }
+ public Int32? Val { get => _val; set => UpdateField(ref _val, value, nameof(Val)); }
 
- private Int32? _HueValue;
+ private Int32? _val;
  /// <summary>
  /// Base saturation value.
  /// </summary>

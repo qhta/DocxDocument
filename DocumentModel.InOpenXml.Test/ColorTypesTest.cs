@@ -279,7 +279,7 @@ public class ColorTypesTest: _AbstractTestClass
     if (colorType == typeof(DocumentModel.Drawings.HslColor))
       return new HslColor
       {
-        HueValue = 120 * 60000,
+        Val = 120 * 60000,
         SatValue = 60000,
         LumValue = 45000,
         Tint = 10000,
@@ -300,7 +300,7 @@ public class ColorTypesTest: _AbstractTestClass
         Shade = 5000,
       };
     if (colorType == typeof(DocumentModel.Drawings.SchemeColor))
-      return new DocumentModel.Drawings.SchemeColor { Val = SchemeColors.Accent3, Tint = 10000, Shade = 5000, };
+      return new DocumentModel.Drawings.SchemeColor { Val = SchemeColors.Accent3/*, Tint = 10000, Shade = 5000,*/ };
     if (colorType == typeof(DocumentModel.Drawings.SystemColor))
       return new DocumentModel.Drawings.SystemColor
       {

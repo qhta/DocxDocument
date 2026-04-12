@@ -11,9 +11,9 @@ public partial class HslColor : IColor
  {
   get
   {
-   if (HueValue is null || SatValue is null || LumValue is null)
+   if (Val is null || SatValue is null || LumValue is null)
     return null;
-   var h = NormalizeHue(HueValue.Value / 60000.0);
+   var h = NormalizeHue(Val.Value / 60000.0);
    var s = Clamp01(SatValue.Value / 100000.0);
    var l = Clamp01(LumValue.Value / 100000.0);
    var c = (1.0 - System.Math.Abs(2.0 * l - 1.0)) * s;
@@ -38,7 +38,7 @@ public partial class HslColor : IColor
   {
    if (value is null)
    {
-    HueValue = null;
+    Val = null;
     SatValue = null;
     LumValue = null;
     return;
@@ -62,7 +62,7 @@ public partial class HslColor : IColor
    else
     h = 60.0 * (((r - g) / delta) + 4.0);
    h = NormalizeHue(h);
-   HueValue = (Int32)System.Math.Round(h * 60000.0);
+   Val = (Int32)System.Math.Round(h * 60000.0);
    SatValue = (Int32)System.Math.Round(Clamp01(s) * 100000.0);
    LumValue = (Int32)System.Math.Round(Clamp01(l) * 100000.0);
   }

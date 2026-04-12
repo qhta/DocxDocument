@@ -26,6 +26,7 @@ public abstract partial class DrawingColorBase<T> : AbstractColor<T> where T : D
  /// </para>
  /// </remarks>
  [OpenXmlElement(typeof(DXD.Tint))]
+ [XmlElement("Tint", Namespace = "DocumentModel.Drawings", IsNullable = true)]
  public Int32? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
 
  private Int32? _Tint;
