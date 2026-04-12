@@ -48,10 +48,11 @@ public static class PercentageConverter
   {
     if (value == null) return null;
 
-    if (value < Int32.MinValue || value > Int32.MaxValue)
+    var doubleValue = (double)value * 100000;
+    if (doubleValue < Int32.MinValue || doubleValue > Int32.MaxValue)
       throw new OverflowException($"Value {value} is out of range for Int32");
 
-    return new DX.Int32Value { Value = (Int32)(value * 100000) };
+    return new DX.Int32Value { Value = (Int32)doubleValue };
   }
 
   #endregion

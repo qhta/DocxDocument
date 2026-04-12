@@ -662,11 +662,18 @@
             <param name="color">Color instance to attach.</param>
             <param name="document">Document context containing initialized theme data.</param>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.InitializeThemePartWithColorScheme(DocumentModel.Wordprocessing.Document)">
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.CreateThemeWithColorScheme">
             <summary>
             Initializes the document theme part with a basic color scheme.
             </summary>
             <param name="document">Target document whose theme should be initialized.</param>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.StoreThemeInDocument">
+            <summary>
+            Tests that a Theme with a color scheme can be stored in a document and loaded back with all data intact.
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.ChangeTwoWordColorsInDocument(System.String)">
             <summary>

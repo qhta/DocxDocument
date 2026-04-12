@@ -9,7 +9,7 @@ namespace DocumentModel.InOpenXml.Test;
 /// <summary>
 /// Comprehensive tests for all DocumentModel types implementing IColor.
 /// </summary>
-public class ColorTypesTest: _AbstractTestClass
+public class ColorTypesTest : _AbstractTestClass
 {
   /// <summary>
   /// Runs all IColor implementation tests.
@@ -21,9 +21,10 @@ public class ColorTypesTest: _AbstractTestClass
     if (!TestTypeDiscovery()) return false;
     if (!TestXmlSerialization()) return false;
     if (!TestJsonSerialization()) return false;
-    //if (!TestIColorAccessors()) return false;
-    //if (!TestEdgeCases()) return false;
-    //if (!ChangeTwoWordColorsInDocument()) return false;
+    if (!TestIColorAccessors()) return false;
+    if (!TestEdgeCases()) return false;
+    if (!StoreThemeInDocument()) return false;
+    if (!ChangeTwoWordColorsInDocument()) return false;
     Console.WriteLine("All IColor implementation tests passed.\n");
     return true;
   }
@@ -135,7 +136,7 @@ public class ColorTypesTest: _AbstractTestClass
       Console.WriteLine($"✗ JSON test FAILED for '{theme.GetType().Name}' - mismatch in '{propName1}'");
       return false;
     }
-    
+
     foreach (var colorType in GetIColorTypes())
     {
       var testData = CreateSampleColor(colorType);
@@ -304,22 +305,32 @@ public class ColorTypesTest: _AbstractTestClass
     if (colorType == typeof(DocumentModel.Drawings.SystemColor))
       return new DocumentModel.Drawings.SystemColor
       {
-        Val = SystemColors.WindowText, LastColor = (HexColor)0x112233, Tint = new Percentage(10), Shade = new Percentage(5),
+        Val = SystemColors.WindowText,
+        LastColor = (HexColor)0x112233,
+        Tint = new Percentage(10),
+        Shade = new Percentage(5),
       };
     if (colorType == typeof(DocumentModel.Wordprocessing.Color))
       return new DocumentModel.Wordprocessing.Color
       {
-        Val = (HexColor)0x445566, ThemeColor = ThemeColors.Text1, ThemeTint = 40, ThemeShade = 20,
+        Val = (HexColor)0x445566,
+        ThemeColor = ThemeColors.Text1,
+        ThemeTint = 40,
+        ThemeShade = 20,
       };
     if (colorType == typeof(DocumentModel.Wordprocessing.Drawings.RgbColorModelHex))
       return new DocumentModel.Wordprocessing.Drawings.RgbColorModelHex
       {
-        Val = (HexColor)0x336699, Tint = 10000, Shade = 5000,
+        Val = (HexColor)0x336699,
+        Tint = 10000,
+        Shade = 5000,
       };
     if (colorType == typeof(DocumentModel.Wordprocessing.Drawings.SchemeColor))
       return new DocumentModel.Wordprocessing.Drawings.SchemeColor
       {
-        Val = SchemeColors.Accent3, Tint = 10000, Shade = 5000,
+        Val = SchemeColors.Accent3,
+        Tint = 10000,
+        Shade = 5000,
       };
     throw new NotSupportedException($"Unsupported IColor type '{colorType.FullName}'.");
   }
@@ -331,7 +342,7 @@ public class ColorTypesTest: _AbstractTestClass
   static DocumentModel.Wordprocessing.Document CreateDocumentWithInitializedThemePart()
   {
     var document = new DocumentModel.Wordprocessing.Document();
-    InitializeThemePartWithColorScheme(document);
+    document.Theme = CreateThemeWithColorScheme();
     return document;
   }
 
@@ -350,9 +361,9 @@ public class ColorTypesTest: _AbstractTestClass
   /// Initializes the document theme part with a basic color scheme.
   /// </summary>
   /// <param name="document">Target document whose theme should be initialized.</param>
-  static void InitializeThemePartWithColorScheme(DocumentModel.Wordprocessing.Document document)
+  static Theme CreateThemeWithColorScheme()
   {
-    document.Theme = new Theme
+    var theme = new Theme
     {
       Name = "ColorTypesTest Theme",
       ThemeId = "ColorTypesTestTheme",
@@ -364,7 +375,7 @@ public class ColorTypesTest: _AbstractTestClass
           Dark1Color = new RgbColorModelHex { Val = (HexColor)0x000000 },
           Light1Color = new RgbColorModelHex { Val = (HexColor)0xFFFFFF },
           Dark2Color = new RgbColorModelPercentage { Red = 0.5, Green = 0.5, Blue = 0.5 },
-          Light2Color = new HslColor { HueValue = new Degrees(60), LumValue = new Percentage(45), SatValue = new Percentage(60)},
+          Light2Color = new HslColor { HueValue = new Degrees(60), LumValue = new Percentage(45), SatValue = new Percentage(60) },
           Accent1Color = new RgbColorModelHex { Val = (HexColor)0x4472C4 },
           Accent2Color = new RgbColorModelHex { Val = (HexColor)0xED7D31 },
           Accent3Color = new RgbColorModelHex { Val = (HexColor)0xA5A5A5 },
@@ -376,6 +387,52 @@ public class ColorTypesTest: _AbstractTestClass
         }
       }
     };
+    return theme;
+  }
+
+  /// <summary>
+  /// Tests that a Theme with a color scheme can be stored in a document and loaded back with all data intact.
+  /// </summary>
+  /// <returns></returns>
+  /// <exception cref="InvalidOperationException"></exception>
+  public static bool StoreThemeInDocument()
+  {
+    Console.WriteLine("--- Store Theme in document ---");
+    {
+      Theme testData = CreateThemeWithColorScheme();
+      using (var document = new Document(TestFileName, FileMode.CreateNew))
+      {
+        document.Theme = testData;
+      }
+
+      Theme storedData;
+      using (var document = new Document(TestFileName))
+      {
+        var openXml = document.WordprocessingDocument!.MainDocumentPart!.ThemePart!.Theme!.OuterXml;
+        //openXml = openXml.Replace("http://schemas.openxmlformats.org/wordprocessingml/2006/main",
+        //  "http://purl.oclc.org/ooxml/wordprocessingml/main");
+        var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
+        Console.WriteLine(formattedOpenXml);
+        storedData = document.Theme ?? throw new InvalidOperationException("Theme not found.");
+      }
+
+      var xmlSerializer = new XmlSerializer(typeof(Theme));
+      string xmlString;
+      using (var stringWriter = new StringWriter())
+      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+      {
+        xmlSerializer.Serialize(xmlWriter, storedData);
+        xmlString = stringWriter.ToString();
+      }
+      Console.WriteLine("Theme loaded from document:\n" + xmlString);
+      if (!TestHelper.CompareTestData(typeof(Theme), testData, storedData, out var propName1))
+      {
+        Console.WriteLine($"✗ XML test FAILED for '{storedData.GetType().Name}' - mismatch in '{propName1}'");
+        return false;
+      }
+      return true;
+    }
+
   }
 
   private static readonly Random Random = new Random();
@@ -390,6 +447,8 @@ public class ColorTypesTest: _AbstractTestClass
   /// <returns>True if both target runs were found and updated; otherwise, false.</returns>
   public static bool ChangeTwoWordColorsInDocument(string filePath = @"D:\OneDrive\VS\Projects\DocxDocument\Samples\Colors test2.zip")
   {
+    Console.WriteLine("--- Two Word Colors in Document ---");
+
     if (!File.Exists(filePath))
     {
       Console.WriteLine($"✗ File not found: {filePath}");
@@ -443,7 +502,11 @@ public class ColorTypesTest: _AbstractTestClass
     if (!accentUpdated)
       Console.WriteLine("✗ Run with text 'ACCENT1' not found.");
 
-    return redUpdated && accentUpdated;
+    var result = redUpdated && accentUpdated;
+    if (result)
+      Console.WriteLine("--- Two Word Colors in Document passed ---");
+
+    return result;
   }
 
   /// <summary>
