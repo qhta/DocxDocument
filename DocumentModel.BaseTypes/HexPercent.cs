@@ -14,7 +14,7 @@
 /// commonly used in color representations where byte percentages need to be converted to 0-255 range.
 /// </para>
 /// </remarks>
-//[JsonConverter(typeof(HexPercentJsonConverter))]
+[JsonConverter(typeof(HexPercentJsonConverter))]
 public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>, IComparable<HexPercent>
 {
   private readonly byte value;
@@ -25,7 +25,6 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// <param name="str">The string to parse. It can be in one of the following formats:
   /// <list type="bullet">
   /// <item><description>If includes "%" suffix then string represents a percent decimal from 0% to 100% value.</description></item>
-  /// <item><description>If includes "#" prefix then string represents a 2-digit hexadecimal value.</description></item>
   /// <item><description>In other case the string represents decimal from 0 to 1 value.</description></item>
   /// </list>
   /// </param>
@@ -40,19 +39,14 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
     if (str.EndsWith("%"))
     {
       str = str.TrimEnd('%');
-      byte byteValue = Byte.Parse(str);
-      value = (byte)(byteValue * 255 / 100);
-      return;
+      double doubleValue = double.Parse(str.Replace(',', '.'), CultureInfo.InvariantCulture);
+      value = (byte)(doubleValue * 255 / 100);
     }
-    if (str.StartsWith("#"))
+    else
     {
-      str = str.TrimStart('#');
-      byte byteValue = Convert.ToByte(str, 16);
-      value = byteValue;
-      return;
+      var doubleValue = double.Parse(str.Replace(',', '.'), CultureInfo.InvariantCulture);
+      value = (byte)(doubleValue * 255);
     }
-    var doubleValue = double.Parse(str.Replace(',','.'), CultureInfo.InvariantCulture);
-    value = (byte)(doubleValue * 255);
   }
 
   /// <summary>
@@ -292,112 +286,34 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// <summary>
   /// Implicitly converts a string to a <see cref="HexPercent"/> value.
   /// </summary>
-  /// <param name="val">The string to convert. Can optionally include "%" suffix.</param>
+  /// <param name="str">The string to convert. Can optionally include "%" suffix.</param>
   /// <returns>A new HexPercent instance parsed from the string.</returns>
   /// <exception cref="FormatException">Thrown when the string cannot be parsed as a valid byte value.</exception>
-  public static implicit operator HexPercent(string val)
+  public static implicit operator HexPercent(string str)
   {
-    return new HexPercent(val);
+    return new HexPercent(str);
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="HexPercent"/> value to a 16-bit unsigned integer.
+  /// Implicitly converts a <see cref="HexPercent"/> value to a double value.
   /// </summary>
   /// <param name="val">The HexPercent value to convert.</param>
-  /// <returns>The underlying byte value cast to UInt16.</returns>
-  public static implicit operator ushort(HexPercent val)
+  /// <returns>The underlying byte value divided by 255.0 to get a percentage.</returns>
+  public static implicit operator double(HexPercent val)
   {
-    return (ushort)val.value;
+    return val.value / 255.0;
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="HexPercent"/> value to a 32-bit unsigned integer.
+  /// Implicitly converts a double value to a <see cref="HexPercent"/> value.
   /// </summary>
-  /// <param name="val">The HexPercent value to convert.</param>
-  /// <returns>The underlying byte value cast to UInt32.</returns>
-  public static implicit operator uint(HexPercent val)
-  {
-    return (uint)val.value;
-  }
-
-  /// <summary>
-  /// Implicitly converts a <see cref="HexPercent"/> value to a 32-bit signed integer.
-  /// </summary>
-  /// <param name="val">The HexPercent value to convert.</param>
-  /// <returns>The underlying byte value cast to Int32.</returns>
-  public static implicit operator Int32(HexPercent val)
-  {
-    return val.value;
-  }
-
-  /// <summary>
-  /// Implicitly converts a <see cref="HexPercent"/> value to a 64-bit unsigned integer.
-  /// </summary>
-  /// <param name="val">The HexPercent value to convert.</param>
-  /// <returns>The underlying byte value cast to UInt64.</returns>
-  public static implicit operator ulong(HexPercent val)
-  {
-    return (ulong)val.value;
-  }
-
-  /// <summary>
-  /// Implicitly converts a 16-bit unsigned integer to a <see cref="HexPercent"/> value.
-  /// </summary>
-  /// <param name="val">The unsigned integer value to convert.</param>
+  /// <param name="val">The double value to convert.</param>
   /// <returns>A new HexPercent instance with the converted value.</returns>
-  /// <remarks>Values greater than 255 will overflow when cast to byte.</remarks>
-  public static implicit operator HexPercent(ushort val)
+  /// <remarks>Values should be between 0.0 and 1.0. Values outside this range will be clamped.</remarks>
+  public static implicit operator HexPercent(double val)
   {
-    return new HexPercent((byte)val);
+    return new HexPercent((byte)(val * 255.0));
   }
-
-  /// <summary>
-  /// Implicitly converts a 32-bit unsigned integer to a <see cref="HexPercent"/> value.
-  /// </summary>
-  /// <param name="val">The unsigned integer value to convert.</param>
-  /// <returns>A new HexPercent instance with the converted value.</returns>
-  /// <remarks>Values greater than 255 will overflow when cast to byte.</remarks>
-  public static implicit operator HexPercent(uint val)
-  {
-    return new HexPercent((byte)val);
-  }
-
-  /// <summary>
-  /// Implicitly converts a 32-bit signed integer to a <see cref="HexPercent"/> value.
-  /// </summary>
-  /// <param name="val">The signed integer value to convert.</param>
-  /// <returns>A new HexPercent instance with the converted value.</returns>
-  /// <remarks>Values less than 0 or greater than 255 will overflow when cast to byte.</remarks>
-  public static implicit operator HexPercent(Int32 val)
-  {
-    return new HexPercent((byte)val);
-  }
-
-  /// <summary>
-  /// Implicitly converts a 64-bit unsigned integer to a <see cref="HexPercent"/> value.
-  /// </summary>
-  /// <param name="val">The unsigned long value to convert.</param>
-  /// <returns>A new HexPercent instance with the converted value.</returns>
-  /// <remarks>Values greater than 255 will overflow when cast to byte.</remarks>
-  public static implicit operator HexPercent(ulong val)
-  {
-    return new HexPercent((byte)val);
-  }
-
-  /// <summary>
-  /// Implicitly converts a <see cref="HexPercent"/> value to a <see cref="HexBinary"/> value.
-  /// </summary>
-  /// <param name="value">The HexPercent value to convert.</param>
-  /// <returns>A new HexBinary instance created from the string representation of the HexPercent value.</returns>
-  public static implicit operator HexBinary(HexPercent value) => new HexBinary(value.ToString(CultureInfo.InvariantCulture));
-
-  /// <summary>
-  /// Implicitly converts a <see cref="HexBinary"/> value to a <see cref="HexPercent"/> value.
-  /// </summary>
-  /// <param name="value">The HexBinary value to convert.</param>
-  /// <returns>A new HexPercent instance parsed from the HexBinary string representation.</returns>
-  public static implicit operator HexPercent(HexBinary value) => new HexPercent(value.ToString());
-
   #endregion
 
   #region String Conversion
@@ -444,7 +360,7 @@ public readonly partial struct HexPercent : IConvertible, IEquatable<HexPercent>
   /// </remarks>
   public override string ToString()
   {
-    return (value / 255.0).ToString(CultureInfo.InvariantCulture) + "%";
+    return (value / 255.0 * 100).ToString(CultureInfo.InvariantCulture) + "%";
   }
 
   /// <summary>

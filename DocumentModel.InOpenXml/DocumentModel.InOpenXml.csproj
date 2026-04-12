@@ -30,6 +30,8 @@
     <Compile Remove="Wordprocessing.Drawings\Colors\WordColorBase.cs" />
     <Compile Remove="Wordprocessing.Drawings\Colors\WordColorBase.ShouldSerialize.cs" />
     <Compile Remove="Wordprocessing.Drawings\Colors\WordColorClass.cs" />
+    <Compile Remove="Wordprocessing\Common\Color.XmlSerialization.cs" />
+    <Compile Remove="Wordprocessing\Common\ColorJsonConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Wordprocessing\Table properties\Enums\5k3e00t1.egu~" />

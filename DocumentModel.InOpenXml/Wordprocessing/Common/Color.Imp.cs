@@ -112,7 +112,7 @@ public partial class Color : IColor
   /// <item>Convert the resultant HSL color to RGB</item>
   /// </list> 
   /// </remarks> 
-  double? IColor.Tint { get => 1 - this.ThemeTint / 255.0; set => ThemeTint = value is null ? null : (byte)System.Math.Round(1 - (double)value * 255.0); }
+  double? IColor.Tint { get => this.ThemeTint; set => ThemeTint = value; }
 
   /// <summary>
   /// Gets or sets the theme shade represented by this property.
@@ -125,5 +125,5 @@ public partial class Color : IColor
   /// <item>Convert the resultant HSL color to RGB</item>
   /// </list>
   /// </remarks>  
-  double? IColor.Shade { get => this.ThemeShade / 255.0; set => ThemeShade = value is null ? null : (byte)System.Math.Round((double)value * 255.0); }
+  double? IColor.Shade { get => this.ThemeShade; set => ThemeShade = value; }
 }

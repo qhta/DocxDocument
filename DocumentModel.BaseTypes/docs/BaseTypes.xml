@@ -5230,11 +5230,11 @@
         </member>
         <member name="M:DocumentModel.HexPercent.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
             <summary>
-              Reads the HexPercent value from XML as hexadecimal string content.
+              Reads the HexPercent value from XML
             </summary>
             <param name="reader">The XML reader to read from.</param>
             <exception cref="T:System.FormatException">
-              Thrown when the string is not a valid hexadecimal number.
+              Thrown when the string is not a valid percent number.
             </exception>
             <exception cref="T:System.OverflowException">
               Thrown when the parsed value exceeds 255 (byte.MaxValue).
@@ -5242,7 +5242,7 @@
         </member>
         <member name="M:DocumentModel.HexPercent.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
             <summary>
-              Writes the HexPercent value to XML as hexadecimal string content.
+              Writes the HexPercent value to XML as a percent string.
             </summary>
             <param name="writer">The XML writer to write to.</param>
         </member>
@@ -5253,7 +5253,6 @@
             <param name="str">The string to parse. It can be in one of the following formats:
             <list type="bullet">
             <item><description>If includes "%" suffix then string represents a percent decimal from 0% to 100% value.</description></item>
-            <item><description>If includes "#" prefix then string represents a 2-digit hexadecimal value.</description></item>
             <item><description>In other case the string represents decimal from 0 to 1 value.</description></item>
             </list>
             </param>
@@ -5416,83 +5415,24 @@
             <summary>
             Implicitly converts a string to a <see cref="T:DocumentModel.HexPercent"/> value.
             </summary>
-            <param name="val">The string to convert. Can optionally include "%" suffix.</param>
+            <param name="str">The string to convert. Can optionally include "%" suffix.</param>
             <returns>A new HexPercent instance parsed from the string.</returns>
             <exception cref="T:System.FormatException">Thrown when the string cannot be parsed as a valid byte value.</exception>
         </member>
-        <member name="M:DocumentModel.HexPercent.op_Implicit(DocumentModel.HexPercent)~System.UInt16">
+        <member name="M:DocumentModel.HexPercent.op_Implicit(DocumentModel.HexPercent)~System.Double">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.HexPercent"/> value to a 16-bit unsigned integer.
+            Implicitly converts a <see cref="T:DocumentModel.HexPercent"/> value to a double value.
             </summary>
             <param name="val">The HexPercent value to convert.</param>
-            <returns>The underlying byte value cast to UInt16.</returns>
+            <returns>The underlying byte value divided by 255.0 to get a percentage.</returns>
         </member>
-        <member name="M:DocumentModel.HexPercent.op_Implicit(DocumentModel.HexPercent)~System.UInt32">
+        <member name="M:DocumentModel.HexPercent.op_Implicit(System.Double)~DocumentModel.HexPercent">
             <summary>
-            Implicitly converts a <see cref="T:DocumentModel.HexPercent"/> value to a 32-bit unsigned integer.
+            Implicitly converts a double value to a <see cref="T:DocumentModel.HexPercent"/> value.
             </summary>
-            <param name="val">The HexPercent value to convert.</param>
-            <returns>The underlying byte value cast to UInt32.</returns>
-        </member>
-        <member name="M:DocumentModel.HexPercent.op_Implicit(DocumentModel.HexPercent)~System.Int32">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.HexPercent"/> value to a 32-bit signed integer.
-            </summary>
-            <param name="val">The HexPercent value to convert.</param>
-            <returns>The underlying byte value cast to Int32.</returns>
-        </member>
-        <member name="M:DocumentModel.HexPercent.op_Implicit(DocumentModel.HexPercent)~System.UInt64">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.HexPercent"/> value to a 64-bit unsigned integer.
-            </summary>
-            <param name="val">The HexPercent value to convert.</param>
-            <returns>The underlying byte value cast to UInt64.</returns>
-        </member>
-        <member name="M:DocumentModel.HexPercent.op_Implicit(System.UInt16)~DocumentModel.HexPercent">
-            <summary>
-            Implicitly converts a 16-bit unsigned integer to a <see cref="T:DocumentModel.HexPercent"/> value.
-            </summary>
-            <param name="val">The unsigned integer value to convert.</param>
+            <param name="val">The double value to convert.</param>
             <returns>A new HexPercent instance with the converted value.</returns>
-            <remarks>Values greater than 255 will overflow when cast to byte.</remarks>
-        </member>
-        <member name="M:DocumentModel.HexPercent.op_Implicit(System.UInt32)~DocumentModel.HexPercent">
-            <summary>
-            Implicitly converts a 32-bit unsigned integer to a <see cref="T:DocumentModel.HexPercent"/> value.
-            </summary>
-            <param name="val">The unsigned integer value to convert.</param>
-            <returns>A new HexPercent instance with the converted value.</returns>
-            <remarks>Values greater than 255 will overflow when cast to byte.</remarks>
-        </member>
-        <member name="M:DocumentModel.HexPercent.op_Implicit(System.Int32)~DocumentModel.HexPercent">
-            <summary>
-            Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.HexPercent"/> value.
-            </summary>
-            <param name="val">The signed integer value to convert.</param>
-            <returns>A new HexPercent instance with the converted value.</returns>
-            <remarks>Values less than 0 or greater than 255 will overflow when cast to byte.</remarks>
-        </member>
-        <member name="M:DocumentModel.HexPercent.op_Implicit(System.UInt64)~DocumentModel.HexPercent">
-            <summary>
-            Implicitly converts a 64-bit unsigned integer to a <see cref="T:DocumentModel.HexPercent"/> value.
-            </summary>
-            <param name="val">The unsigned long value to convert.</param>
-            <returns>A new HexPercent instance with the converted value.</returns>
-            <remarks>Values greater than 255 will overflow when cast to byte.</remarks>
-        </member>
-        <member name="M:DocumentModel.HexPercent.op_Implicit(DocumentModel.HexPercent)~DocumentModel.HexBinary">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.HexPercent"/> value to a <see cref="T:DocumentModel.HexBinary"/> value.
-            </summary>
-            <param name="value">The HexPercent value to convert.</param>
-            <returns>A new HexBinary instance created from the string representation of the HexPercent value.</returns>
-        </member>
-        <member name="M:DocumentModel.HexPercent.op_Implicit(DocumentModel.HexBinary)~DocumentModel.HexPercent">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.HexBinary"/> value to a <see cref="T:DocumentModel.HexPercent"/> value.
-            </summary>
-            <param name="value">The HexBinary value to convert.</param>
-            <returns>A new HexPercent instance parsed from the HexBinary string representation.</returns>
+            <remarks>Values should be between 0.0 and 1.0. Values outside this range will be clamped.</remarks>
         </member>
         <member name="M:DocumentModel.HexPercent.Parse(System.String)">
             <summary>
@@ -5589,6 +5529,31 @@
             Returns the hash code for this instance.
             </summary>
             <returns>A 32-bit signed integer hash code.</returns>
+        </member>
+        <member name="T:DocumentModel.HexPercentJsonConverter">
+            <summary>
+              JSON converter that serializes HexPercent values.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.HexPercentJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+              Reads a HexPercent value from JSON.
+            </summary>
+            <param name="reader">The JSON reader to read from.</param>
+            <param name="typeToConvert">The type of object to convert to.</param>
+            <param name="options">The JSON serializer options.</param>
+            <exception cref="T:System.Text.Json.JsonException">
+              Thrown when the JSON token is not a string or when the string cannot be parsed as a valid
+              HexPercent value.
+            </exception>
+        </member>
+        <member name="M:DocumentModel.HexPercentJsonConverter.Write(System.Text.Json.Utf8JsonWriter,DocumentModel.HexPercent,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+              Writes a HexPercent value to JSON.
+            </summary>
+            <param name="writer">The JSON writer to write to.</param>
+            <param name="value">The HexPercent value to write.</param>
+            <param name="options">The JSON serializer options.</param>
         </member>
         <member name="T:DocumentModel.HPS">
             <summary>

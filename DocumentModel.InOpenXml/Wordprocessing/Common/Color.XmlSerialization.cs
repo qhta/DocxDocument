@@ -11,23 +11,8 @@ public partial class Color : IXmlSerializable
  XmlSchema? IXmlSerializable.GetSchema() => null;
  /// <summary>
  /// Deserializes the <see cref = "Color"/> value from XML.
- /// Accepts numeric values and values with unit suffixes (mm, cm, pt, in).
  /// </summary>
  /// <param name = "reader">The <see cref = "XmlReader"/> to read from.</param>
- /// <remarks>
- /// The method handles the following formats:
- /// <list type="bullet">
- /// <item><description>Plain numeric values (e.g., "1440" representing Color directly)</description></item>
- /// <item><description>Values with millimeter suffix (e.g., "25.4mm")</description></item>
- /// <item><description>Values with centimeter suffix (e.g., "2.54cm")</description></item>
- /// <item><description>Values with point suffix (e.g., "72pt")</description></item>
- /// <item><description>Values with inch suffix (e.g., "1in")</description></item>
- /// <item><description>Values with percentage suffix (e.g., "50%")</description></item>
- /// <item><description>Literal string values like "auto" or "nil" (interpreted as special values)</description></item>
- /// <item><description>Empty elements</description></item>
- /// </list>
- /// Commas in the input are automatically replaced with periods for decimal separator consistency.
- /// </remarks>
  void IXmlSerializable.ReadXml(XmlReader reader)
  {
   if (reader.IsEmptyElement)

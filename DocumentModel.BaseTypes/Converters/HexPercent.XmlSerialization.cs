@@ -13,11 +13,11 @@ public partial struct HexPercent : IXmlSerializable
   XmlSchema? IXmlSerializable.GetSchema() => null;
 
   /// <summary>
-  ///   Reads the HexPercent value from XML as hexadecimal string content.
+  ///   Reads the HexPercent value from XML
   /// </summary>
   /// <param name="reader">The XML reader to read from.</param>
   /// <exception cref="FormatException">
-  ///   Thrown when the string is not a valid hexadecimal number.
+  ///   Thrown when the string is not a valid percent number.
   /// </exception>
   /// <exception cref="OverflowException">
   ///   Thrown when the parsed value exceeds 255 (byte.MaxValue).
@@ -34,15 +34,15 @@ public partial struct HexPercent : IXmlSerializable
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
-      string hexString = reader.Value;
+      string str = reader.Value;
 
-      if (!string.IsNullOrEmpty(hexString))
+      if (!string.IsNullOrEmpty(str))
       {
         // Parse the hex string to byte
-        byte parsedValue = byte.Parse(hexString, NumberStyles.HexNumber);
+        var temp = new HexPercent(str);
 
         // Use Unsafe.AsRef to update the readonly field
-        System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue;
+        System.Runtime.CompilerServices.Unsafe.AsRef(in value) = temp.value;
       }
 
       reader.Read(); // Move past text
@@ -55,7 +55,7 @@ public partial struct HexPercent : IXmlSerializable
   }
 
   /// <summary>
-  ///   Writes the HexPercent value to XML as hexadecimal string content.
+  ///   Writes the HexPercent value to XML as a percent string.
   /// </summary>
   /// <param name="writer">The XML writer to write to.</param>
   void IXmlSerializable.WriteXml(XmlWriter writer)
