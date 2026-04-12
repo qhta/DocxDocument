@@ -42,7 +42,7 @@ public partial class RgbColorModelHex : IColor
   [JsonIgnore]
   double? IColor.Green
   {
-    get => this.Val is null ? null : (double)(((this.Val >> 8) & 0xFF) / 255.0);
+    get => ((this.Val >> 8) & 0xFF) / 255.0;
     set
     {
       if (value is null)
@@ -63,7 +63,7 @@ public partial class RgbColorModelHex : IColor
   [JsonIgnore]
   double? IColor.Blue
   {
-    get => this.Val is null ? null : (double)((this.Val & 0xFF) / 255.0);
+    get => (this.Val & 0xFF) / 255.0;
     set
     {
       if (value is null)
@@ -108,10 +108,10 @@ public partial class RgbColorModelHex : IColor
   /// <summary>
   /// Tint modification of the color, represented as a percentage value between 0 and 1.
   /// </summary>
-  double? IColor.Tint { get => this.Tint is null ? null : (double)(this.Tint / 100000.0); set => this.Tint = value is null ? null : (int?)System.Math.Round((double)(value.Value * 100000.0)); }
+  double? IColor.Tint { get => this.Tint; set => this.Tint =value; }
 
   /// <summary>
   /// Shade modification of the color, represented as a percentage value between 0 and 1.
   /// </summary>
-  double? IColor.Shade { get => this.Shade is null ? null : (double)(this.Shade / 100000.0); set => this.Shade = value is null ? null : (int?)System.Math.Round((double)(value.Value * 100000.0)); }
+  double? IColor.Shade { get => this.Shade; set => this.Shade =value; }
 }

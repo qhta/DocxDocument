@@ -199,7 +199,7 @@ public class ColorTypesTest: _AbstractTestClass
 
         try
         {
-          prop.SetValue(testData, 0.25f);
+          prop.SetValue(testData, 0.25);
           _ = prop.GetValue(testData);
         }
         catch (Exception ex)
@@ -293,9 +293,9 @@ public class ColorTypesTest: _AbstractTestClass
     if (colorType == typeof(DocumentModel.Drawings.RgbColorModelPercentage))
       return new DocumentModel.Drawings.RgbColorModelPercentage
       {
-        RedPortion = 20000,
-        GreenPortion = 40000,
-        BluePortion = 60000,
+        Red = 20000,
+        Green = 40000,
+        Blue = 60000,
         Tint = 10000,
         Shade = 5000,
       };

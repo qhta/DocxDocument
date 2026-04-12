@@ -81,8 +81,8 @@ public partial class RgbColorModelHex : AbstractColor<DXD.RgbColorModelHex>, ISc
   /// </para>
   /// </remarks>
   [OpenXmlElement(typeof(DXD.Tint))]
-  public Int32? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
-  private Int32? _Tint;
+  public PerHundredThousand? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
+  private PerHundredThousand? _Tint;
 
   /// <summary>
   /// Shade value to darken the color.
@@ -102,6 +102,6 @@ public partial class RgbColorModelHex : AbstractColor<DXD.RgbColorModelHex>, ISc
   /// </para>
   /// </remarks>
   [OpenXmlElement(typeof(DXD.Shade))]
-  public Int32? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
-  private Int32? _Shade;
+  public PerHundredThousand? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
+  private PerHundredThousand? _Shade;
 }

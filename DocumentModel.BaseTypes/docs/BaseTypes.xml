@@ -5807,6 +5807,427 @@
             For example, a value of 50 is written as "50%".
             </remarks>
         </member>
+        <member name="T:DocumentModel.PerHundredThousand">
+            <summary>
+            Represents a PerHundredThousand value stored as a double-precision floating-point number.
+            Supports implicit conversions to/from numeric types and string representations with optional "%" suffix.
+            When converted to/from integers, the value is treated as a whole number (e.g., 50000 represents 50%).
+            </summary>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.System#Xml#Serialization#IXmlSerializable#GetSchema">
+            <summary>
+            This method is reserved and should not be used. Returns null as no schema is required.
+            </summary>
+            <returns>Always returns null.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Deserializes the <see cref="T:DocumentModel.PerHundredThousand"/> value from XML.
+            Accepts both plain numeric values and values with a trailing PerHundredThousand sign (%).
+            </summary>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> to read from.</param>
+            <remarks>
+            The method handles the following formats:
+            <list type="bullet">
+            <item><description>Plain numeric values (e.g., "50")</description></item>
+            <item><description>Values with PerHundredThousand sign (e.g., "50%")</description></item>
+            <item><description>Empty elements</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Serializes the <see cref="T:DocumentModel.PerHundredThousand"/> value to XML.
+            </summary>
+            <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> to write to.</param>
+            <remarks>
+            The value is written using the default string representation of the <see cref="T:DocumentModel.PerHundredThousand"/> structure.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.PerHundredThousand"/> struct from a string value.
+            </summary>
+            <param name="str">The string value to parse. Can include an optional "%" suffix and uses invariant culture for parsing.</param>
+            <remarks>
+            Commas in the input string are replaced with periods before parsing to ensure double separator consistency.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.PerHundredThousand"/> struct from an int value.
+            </summary>
+            <param name="value">The int value representing the PerHundredThousand.</param>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.#ctor(System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.PerHundredThousand"/> struct from an Int64 value.
+            </summary>
+            <param name="value">The int value representing the PerHundredThousand.</param>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.PerHundredThousand"/> struct from a double value.
+            </summary>
+            <param name="value">The double value representing the PerHundredThousand.</param>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.#ctor(System.Decimal)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.PerHundredThousand"/> struct from a decimal value.
+            </summary>
+            <param name="value">The double value representing the PerHundredThousand.</param>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.#ctor(System.UInt64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.PerHundredThousand"/> struct from an UInt64 value.
+            </summary>
+            <param name="value">The UInt64 value representing the PerHundredThousand.</param>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.FromHexString(System.String)">
+            <summary>
+            Creates a <see cref="T:DocumentModel.PerHundredThousand"/> instance from a string representation.
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.GetTypeCode">
+            <summary>
+            Returns the <see cref="T:System.TypeCode"/> for this instance.
+            </summary>
+            <returns>The type code of the underlying value.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToBoolean(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent Boolean value.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns><see langword="true"/> if value is not zero; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToByte(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 8-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>An 8-bit unsigned integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToChar(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent Unicode character.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A Unicode character equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToDateTime(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent <see cref="T:System.DateTime"/>.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A <see cref="T:System.DateTime"/> equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToDecimal(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent <see cref="T:System.Decimal"/> number.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A <see cref="T:System.Decimal"/> number equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToDouble(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent double-precision floating-point number.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A double-precision floating-point number equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToInt16(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 16-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 16-bit signed integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToInt32(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 32-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 32-bit signed integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToInt64(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 64-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 64-bit signed integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToSByte(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 8-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>An 8-bit signed integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToSingle(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent single-precision floating-point number.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A single-precision floating-point number equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToString(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to its equivalent string representation using the specified format provider.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>The string representation of the value of this instance as specified by the provider.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToUInt16(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 16-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 16-bit unsigned integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToUInt32(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 32-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 32-bit unsigned integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToUInt64(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 64-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 64-bit unsigned integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToType(System.Type,System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an <see cref="T:System.Object"/> of the specified <see cref="T:System.Type"/> 
+            that has an equivalent value, using the specified culture-specific formatting information.
+            </summary>
+            <param name="targetType">The <see cref="T:System.Type"/> to which the value of this instance is converted.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>An <see cref="T:System.Object"/> instance of type <paramref name="targetType"/> whose value is equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(System.String)~DocumentModel.PerHundredThousand">
+            <summary>
+            Implicitly converts a string to a <see cref="T:DocumentModel.PerHundredThousand"/> value.
+            </summary>
+            <param name="val">The string to convert.</param>
+            <returns>A <see cref="T:DocumentModel.PerHundredThousand"/> value parsed from the string.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(DocumentModel.PerHundredThousand)~System.UInt16">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.PerHundredThousand"/> value to a 16-bit unsigned integer.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.PerHundredThousand"/> value to convert.</param>
+            <returns>A 16-bit unsigned integer representation of the PerHundredThousand value.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(DocumentModel.PerHundredThousand)~System.UInt32">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.PerHundredThousand"/> value to a 32-bit unsigned integer.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.PerHundredThousand"/> value to convert.</param>
+            <returns>A 32-bit unsigned integer representation of the PerHundredThousand value.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(DocumentModel.PerHundredThousand)~System.Int32">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.PerHundredThousand"/> value to a 32-bit signed integer.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.PerHundredThousand"/> value to convert.</param>
+            <returns>A 32-bit signed integer representation of the PerHundredThousand value.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(DocumentModel.PerHundredThousand)~System.Int64">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.PerHundredThousand"/> value to a 64-bit signed integer.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.PerHundredThousand"/> value to convert.</param>
+            <returns>A 64-bit signed integer representation of the PerHundredThousand value.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(DocumentModel.PerHundredThousand)~System.UInt64">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.PerHundredThousand"/> value to a 64-bit unsigned integer.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.PerHundredThousand"/> value to convert.</param>
+            <returns>A 64-bit unsigned integer representation of the PerHundredThousand value.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(DocumentModel.PerHundredThousand)~System.Decimal">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.PerHundredThousand"/> value to a decimal value.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.PerHundredThousand"/> value to convert.</param>
+            <returns>A double representation of the PerHundredThousand value.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(DocumentModel.PerHundredThousand)~System.Double">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.PerHundredThousand"/> value to a double value.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.PerHundredThousand"/> value to convert.</param>
+            <returns>A double representation of the PerHundredThousand value.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(System.UInt16)~DocumentModel.PerHundredThousand">
+            <summary>
+            Implicitly converts a 16-bit unsigned integer to a <see cref="T:DocumentModel.PerHundredThousand"/> value.
+            </summary>
+            <param name="val">The 16-bit unsigned integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.PerHundredThousand"/>PerHundredThousand instance.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(System.Double)~DocumentModel.PerHundredThousand">
+            <summary>
+            Implicitly converts a 32-bit unsigned integer to a <see cref="T:DocumentModel.PerHundredThousand"/> value.
+            </summary>
+            <param name="val">The 32-bit unsigned integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.PerHundredThousand"/>PerHundredThousand instance.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(System.Int32)~DocumentModel.PerHundredThousand">
+            <summary>
+            Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.PerHundredThousand"/> value.
+            </summary>
+            <param name="val">The 32-bit signed integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.PerHundredThousand"/>PerHundredThousand instance.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(System.UInt64)~DocumentModel.PerHundredThousand">
+            <summary>
+            Implicitly converts a 64-bit unsigned integer to a <see cref="T:DocumentModel.PerHundredThousand"/> value.
+            </summary>
+            <param name="val">The 64-bit unsigned integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.PerHundredThousand"/>PerHundredThousand instance.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.Parse(System.String)">
+            <summary>
+            Parses a string representation of a PerHundredThousand and returns a corresponding PerHundredThousand instance.
+            </summary>
+            <param name="str">The string containing the PerHundredThousand to parse. The string should be in a format recognized by the PerHundredThousand type,
+            such as "50%" or "0.5".</param>
+            <returns>A PerHundredThousand instance that represents the value specified by the input string.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.TryParse(System.String,DocumentModel.PerHundredThousand@)">
+            <summary>
+            Attempts to parse a string representation of a PerHundredThousand into a <see cref="T:DocumentModel.PerHundredThousand"/> instance.
+            </summary>
+            <param name="str">The string representation of the PerHundredThousand.</param>
+            <param name="result">The resulting <see cref="T:DocumentModel.PerHundredThousand"/> instance if parsing is successful.</param>
+            <returns><see langword="true"/> if parsing succeeded; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToString">
+            <summary>
+            Converts the value of this instance to its equivalent string representation with a "%" suffix.
+            </summary>
+            <returns>The string representation of the value with a "%" suffix, using invariant culture formatting.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToString(System.String)">
+            <summary>
+            Converts value to string using the specified unit.
+            </summary>
+            <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
+            <returns>The string representation of the value with the specified unit suffix.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToString(System.Int32,System.String)">
+            <summary>
+            Converts value to string using the specified unit and precision (fractional digits count).
+            </summary>
+            <param name="precision">The number of fractional digits in the return value.</param>
+            <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
+            <returns>The string representation of the value with the specified precision and unit suffix.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToString(System.Int32,System.IFormatProvider,System.String)">
+            <summary>
+            Converts value to string using the specified unit, precision (fractional digits count),
+            and format provider to determine digit separator. Fixed format is used.
+            </summary>
+            <param name="precision">The number of fractional digits in the return value.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
+            <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
+            <returns>The string representation of the value with the specified precision, format provider, and unit suffix.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.ToString(System.IFormatProvider,System.String)">
+            <summary>
+            Converts value to string using the specified unit and format provider to determine digit separator.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
+            <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
+            <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.Equals(DocumentModel.PerHundredThousand)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.CompareTo(DocumentModel.PerHundredThousand)">
+            <summary>
+            Compares this instance to a specified <see cref="T:DocumentModel.PerHundredThousand"/> object and returns an indication of their relative values.
+            </summary>
+            <param name="other">A <see cref="T:DocumentModel.PerHundredThousand"/> object to compare.</param>
+            <returns>
+            A signed number indicating the relative values of this instance and <paramref name="other"/>.
+            Less than zero if this instance is less than <paramref name="other"/>;
+            zero if this instance equals <paramref name="other"/>;
+            greater than zero if this instance is greater than <paramref name="other"/>.
+            </returns>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.CompareTo(System.Object)">
+            <summary>
+            Compares this instance to a specified object and returns an indication of their relative values.
+            </summary>
+            <param name="other">Any object to compare.</param>
+            <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when the comparison is invalid.</exception>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousand.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>A 32-bit signed integer hash code.</returns>
+        </member>
+        <member name="T:DocumentModel.PerHundredThousandJsonConverter">
+            <summary>
+            Provides JSON serialization and deserialization support for the <see cref="T:DocumentModel.PerHundredThousand"/> structure.
+            </summary>
+            <remarks>
+            This converter handles both string and numeric JSON tokens for deserialization,
+            and writes PerHundredThousandage values as strings with a "%" suffix following Office Open XML conventions.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousandJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Reads and converts JSON to a <see cref="T:DocumentModel.PerHundredThousand"/> value.
+            </summary>
+            <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader"/> to read from.</param>
+            <param name="typeToConvert">The type to convert.</param>
+            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
+            <returns>A <see cref="T:DocumentModel.PerHundredThousand"/> value parsed from the JSON input.</returns>
+            <exception cref="T:System.Text.Json.JsonException">
+            Thrown when:
+            <list type="bullet">
+            <item><description>The JSON token is a string but contains a null value.</description></item>
+            <item><description>The string value cannot be parsed as a valid PerHundredThousandage (must be a number with optional '%' suffix).</description></item>
+            <item><description>The JSON token is a number but cannot be converted to a double or integer.</description></item>
+            <item><description>The JSON token is neither a string nor a number.</description></item>
+            </list>
+            </exception>
+            <remarks>
+            Accepts the following input formats:
+            <list type="bullet">
+            <item><description>String tokens with numeric values (e.g., "50" or "50%")</description></item>
+            <item><description>Numeric tokens as double or integer values</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.PerHundredThousandJsonConverter.Write(System.Text.Json.Utf8JsonWriter,DocumentModel.PerHundredThousand,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Writes a <see cref="T:DocumentModel.PerHundredThousand"/> value as JSON.
+            </summary>
+            <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter"/> to write to.</param>
+            <param name="value">The <see cref="T:DocumentModel.PerHundredThousand"/> value to serialize.</param>
+            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
+            <remarks>
+            Writes the PerHundredThousandage value as a string with a "%" suffix, following Office Open XML conventions.
+            For example, a value of 50 is written as "50%".
+            </remarks>
+        </member>
         <member name="T:DocumentModel.PTS">
             <summary>
             Provides XML serialization support for the <see cref="T:DocumentModel.PTS"/> structure.

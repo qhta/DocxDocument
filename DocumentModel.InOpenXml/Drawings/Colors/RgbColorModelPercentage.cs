@@ -65,9 +65,9 @@ public partial class RgbColorModelPercentage : AbstractColor<DXD.RgbColorModelPe
  /// Common values: 0 (no red), 50000 (50% red), 100000 (full red).
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.RedPortion))]
- public Int32? RedPortion { get => _RedPortion; set => UpdateField(ref _RedPortion, value, nameof(RedPortion)); }
+ public PerHundredThousand? Red { get => _red; set => UpdateField(ref _red, value, nameof(Red)); }
 
- private Int32? _RedPortion;
+ private PerHundredThousand? _red;
  /// <summary>
  /// Green component as a percentage value.
  /// </summary>
@@ -77,9 +77,9 @@ public partial class RgbColorModelPercentage : AbstractColor<DXD.RgbColorModelPe
  /// Common values: 0 (no green), 50000 (50% green), 100000 (full green).
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.GreenPortion))]
- public Int32? GreenPortion { get => _GreenPortion; set => UpdateField(ref _GreenPortion, value, nameof(GreenPortion)); }
+ public PerHundredThousand? Green { get => _green; set => UpdateField(ref _green, value, nameof(Green)); }
 
- private Int32? _GreenPortion;
+ private PerHundredThousand? _green;
  /// <summary>
  /// Blue component as a percentage value.
  /// </summary>
@@ -89,9 +89,9 @@ public partial class RgbColorModelPercentage : AbstractColor<DXD.RgbColorModelPe
  /// Common values: 0 (no blue), 50000 (50% blue), 100000 (full blue).
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.BluePortion))]
- public Int32? BluePortion { get => _BluePortion; set => UpdateField(ref _BluePortion, value, nameof(BluePortion)); }
+ public PerHundredThousand? Blue { get => _blue; set => UpdateField(ref _blue, value, nameof(Blue)); }
 
- private Int32? _BluePortion;
+ private PerHundredThousand? _blue;
  /// <summary>
  /// Tint value to lighten the color.
  /// </summary>
@@ -111,9 +111,9 @@ public partial class RgbColorModelPercentage : AbstractColor<DXD.RgbColorModelPe
  /// </para>
  /// </remarks>
  [OpenXmlElement(typeof(DXD.Tint))]
- public Int32? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
+ public PerHundredThousand? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
 
- private Int32? _Tint;
+ private PerHundredThousand? _Tint;
  /// <summary>
  /// Shade value to darken the color.
  /// </summary>
@@ -132,7 +132,7 @@ public partial class RgbColorModelPercentage : AbstractColor<DXD.RgbColorModelPe
  /// </para>
  /// </remarks>
  [OpenXmlElement(typeof(DXD.Shade))]
- public Int32? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
+ public PerHundredThousand? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
 
- private Int32? _Shade;
+ private PerHundredThousand? _Shade;
 }

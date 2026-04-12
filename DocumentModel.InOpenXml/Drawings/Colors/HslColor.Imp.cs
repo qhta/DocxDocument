@@ -178,7 +178,7 @@ public partial class HslColor : IColor
  [NotMapped]
  [XmlIgnore]
  [JsonIgnore]
- double? IColor.Tint { get => this.Tint is null ? null : (double)(this.Tint / 100000.0); set => this.Tint = value is null ? null : (int? )System.Math.Round((double)(value.Value * 100000.0)); }
+ double? IColor.Tint { get => this.Tint; set => this.Tint = value; }
 
  /// <summary>
  /// Shade modification of the color, represented as a percentage value between 0 and 1.
@@ -186,5 +186,5 @@ public partial class HslColor : IColor
  [NotMapped]
  [XmlIgnore]
  [JsonIgnore]
- double? IColor.Shade { get => this.Shade is null ? null : (double)(this.Shade / 100000.0); set => this.Shade = value is null ? null : (int? )System.Math.Round((double)(value.Value * 100000.0)); }
+ double? IColor.Shade { get => this.Shade; set => this.Shade = value; }
 }

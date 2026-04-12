@@ -33,6 +33,7 @@
     <Compile Remove="Converters\OnOff.XmlSerialization.cs" />
     <Compile Remove="Converters\OnOffJsonConverter.cs" />
     <Compile Remove="Converters\OnOffToggle.XmlSerialization.cs" />
+    <Compile Remove="Converters\OnOffToggleJsonConverter.cs" />
     <Compile Remove="Converters\OnOffToggleJsonConvertery.cs" />
     <Compile Remove="OnOff.cs" />
   </ItemGroup>
