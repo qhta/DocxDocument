@@ -10,23 +10,23 @@ public partial class HslColor : AbstractColor<DXD.HslColor>, ISchemeBaseColor
  /// Base hue value.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.HslColor.HueValue))]
- public Int32? Val { get => _val; set => UpdateField(ref _val, value, nameof(Val)); }
+ public Degrees? HueValue { get => _hueValue; set => UpdateField(ref _hueValue, value, nameof(HueValue)); }
 
- private Int32? _val;
+ private Degrees? _hueValue;
  /// <summary>
  /// Base saturation value.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.HslColor.SatValue))]
- public Int32? SatValue { get => _SatValue; set => UpdateField(ref _SatValue, value, nameof(SatValue)); }
+ public Percentage? SatValue { get => _SatValue; set => UpdateField(ref _SatValue, value, nameof(SatValue)); }
 
- private Int32? _SatValue;
+ private Percentage? _SatValue;
  /// <summary>
  /// Base luminance value.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.HslColor.LumValue))]
- public Int32? LumValue { get => _LumValue; set => UpdateField(ref _LumValue, value, nameof(LumValue)); }
+ public Percentage? LumValue { get => _LumValue; set => UpdateField(ref _LumValue, value, nameof(LumValue)); }
 
- private Int32? _LumValue;
+ private Percentage? _LumValue;
  /// <summary>
  /// Tint value to lighten the color.
  /// </summary>
@@ -46,9 +46,9 @@ public partial class HslColor : AbstractColor<DXD.HslColor>, ISchemeBaseColor
  /// </para>
  /// </remarks>
  [OpenXmlElement(typeof(DXD.Tint))]
- public PerHundredThousand? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
+ public Percentage? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
 
- private PerHundredThousand? _Tint;
+ private Percentage? _Tint;
  /// <summary>
  /// Shade value to darken the color.
  /// </summary>
@@ -67,7 +67,7 @@ public partial class HslColor : AbstractColor<DXD.HslColor>, ISchemeBaseColor
  /// </para>
  /// </remarks>
  [OpenXmlElement(typeof(DXD.Shade))]
- public PerHundredThousand? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
+ public Percentage? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
 
- private PerHundredThousand? _Shade;
+ private Percentage? _Shade;
 }

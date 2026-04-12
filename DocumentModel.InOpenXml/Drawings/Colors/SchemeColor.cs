@@ -35,7 +35,6 @@ public partial class SchemeColor : AbstractColor<DXD.SchemeColor>
   /// </para>
   /// </remarks>
   [OpenXmlProperty(nameof(DXD.SchemeColor.Val))]
-  [XmlElement("Val", Namespace = "DocumentModel.Drawings", IsNullable = true)]
   public SchemeColors? Val { get => _val; set => UpdateField(ref _val, value, nameof(Val)); }
 
   private SchemeColors? _val;
@@ -59,9 +58,8 @@ public partial class SchemeColor : AbstractColor<DXD.SchemeColor>
   /// </para>
   /// </remarks>
   [OpenXmlElement(typeof(DXD.Tint))]
-  [XmlElement("Tint", Namespace = "DocumentModel.Drawings", IsNullable = true)]
-  public PerHundredThousand? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
-  private PerHundredThousand? _Tint;
+  public Percentage? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
+  private Percentage? _Tint;
 
   /// <summary>
   /// Shade value to darken the color.
@@ -81,7 +79,6 @@ public partial class SchemeColor : AbstractColor<DXD.SchemeColor>
   /// </para>
   /// </remarks>
   [OpenXmlElement(typeof(DXD.Shade))]
-  [XmlElement("Shade", Namespace = "DocumentModel.Drawings", IsNullable = true)]
-  public PerHundredThousand? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
-  private PerHundredThousand? _Shade;
+  public Percentage? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
+  private Percentage? _Shade;
 }

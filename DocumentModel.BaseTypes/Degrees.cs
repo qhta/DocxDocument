@@ -1,94 +1,72 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a percentage value stored as a double-precision floating-point number.
-/// Supports implicit conversions to/from numeric types and string representations with optional "%" suffix.
+/// Represents a DrawingAngle value stored as a double-precision floating-point number.
+/// Supports implicit conversions to/from numeric types and string representations with optional "°" suffix.
 /// </summary>
-[JsonConverter(typeof(PercentJsonConverter))]
-public readonly partial struct Percent : IConvertible, IEquatable<Percent>, IComparable<Percent>, IComparable<object>
+[JsonConverter(typeof(DegreesJsonConverter))]
+public readonly partial struct Degrees : IConvertible, IEquatable<Degrees>, IComparable<Degrees>, IComparable<object>
 {
-  private readonly decimal value;
+  private readonly double value;
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="Percent"/> struct from a string value.
+  /// Initializes a new instance of the <see cref="Degrees"/> struct from a string value.
   /// </summary>
-  /// <param name="str">The string value to parse. Can include an optional "%" suffix and uses invariant culture for parsing.</param>
+  /// <param name="str">The string value to parse. Can include an optional "°" suffix and uses invariant culture for parsing.</param>
   /// <remarks>
-  /// Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.
+  /// Commas in the input string are replaced with periods before parsing to ensure double separator consistency.
   /// </remarks>
-  public Percent(string str)
+  public Degrees(string str)
   {
-    str = str.TrimEnd('%');
-    value = decimal.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
+    str = str.TrimEnd('°');
+    value = double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="Percent"/> struct from an int value.
+  /// Initializes a new instance of the <see cref="Degrees"/> struct from an int value.
   /// </summary>
-  /// <param name="value">The int value representing the percentage.</param>
-  public Percent(int value)
+  /// <param name="value">The int value representing the DrawingAngle.</param>
+  public Degrees(int value)
   {
-    this.value = (decimal)value;
+    this.value = value;
   }
 
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="Percent"/> struct from an Int64 value.
+  /// Initializes a new instance of the <see cref="Degrees"/> struct from an Int64 value.
   /// </summary>
-  /// <param name="value">The int value representing the percentage.</param>
-  public Percent(Int64 value)
-  {
-    this.value = (decimal)value;
-  }
-
-  /// <summary>
-  /// Initializes a new instance of the <see cref="Percent"/> struct from a decimal value.
-  /// </summary>
-  /// <param name="value">The decimal value representing the percentage.</param>
-  public Percent(decimal value)
+  /// <param name="value">The int value representing the DrawingAngle.</param>
+  public Degrees(Int64 value)
   {
     this.value = value;
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="Percent"/> struct from a double value.
+  /// Initializes a new instance of the <see cref="Degrees"/> struct from a double value.
   /// </summary>
-  /// <param name="value">The double value representing the percentage.</param>
-  public Percent(double value)
+  /// <param name="value">The double value representing the DrawingAngle.</param>
+  public Degrees(double value)
   {
-    this.value = (decimal)value;
+    this.value = value;
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="Degrees"/> struct from a decimal value.
+  /// </summary>
+  /// <param name="value">The double value representing the DrawingAngle.</param>
+  public Degrees(decimal value)
+  {
+    this.value = (double)value;
   }
 
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="Percent"/> struct from an UInt64 value.
+  /// Initializes a new instance of the <see cref="Degrees"/> struct from an UInt64 value.
   /// </summary>
-  /// <param name="value">The UInt64 value representing the percentage.</param>
-  public Percent(UInt64 value)
+  /// <param name="value">The UInt64 value representing the DrawingAngle.</param>
+  public Degrees(UInt64 value)
   {
-    this.value = (decimal)value;
-  }
-
-  /// <summary>
-  /// Creates a <see cref="Percent"/> instance from a hexadecimal string representation.
-  /// </summary>
-  /// <param name="hexString"></param>
-  /// <returns></returns>
-  public static Percent FromHexString(string hexString)
-  {
-    if (hexString.EndsWith("%"))
-      hexString = hexString.TrimEnd('%');
-    var val = decimal.Parse(hexString.Replace(",", "."), CultureInfo.InvariantCulture);
-    return new Percent(val);
-  }
-
-  /// <summary>
-  /// Converts the value of this instance to its hexadecimal string representation.
-  /// </summary>
-  /// <returns>A string that represents the value in uppercase hexadecimal format.</returns>
-  public string ToHexString()
-  {
-    return value.ToString("2X");
+    this.value = value;
   }
 
   #region IConvertible Implementation
@@ -109,7 +87,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns><see langword="true"/> if value is not zero; otherwise, <see langword="false"/>.</returns>
   public bool ToBoolean(IFormatProvider? provider)
   {
-    throw new NotSupportedException("Conversion from Percent to Boolean is not supported.");
+    throw new NotSupportedException("Conversion from DrawingAngle to Boolean is not supported.");
   }
 
   /// <summary>
@@ -129,7 +107,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A Unicode character equivalent to the value of this instance.</returns>
   public char ToChar(IFormatProvider? provider)
   {
-    throw new NotSupportedException("Conversion from Percent to Char is not supported.");
+    throw new NotSupportedException("Conversion from DrawingAngle to Char is not supported.");
   }
 
   /// <summary>
@@ -139,7 +117,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>A <see cref="DateTime"/> equivalent to the value of this instance.</returns>
   public DateTime ToDateTime(IFormatProvider? provider)
   {
-    throw new NotSupportedException("Conversion from Percent to DateTime is not supported.");
+    throw new NotSupportedException("Conversion from DrawingAngle to DateTime is not supported.");
   }
 
   /// <summary>
@@ -147,9 +125,9 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
   /// <returns>A <see cref="decimal"/> number equivalent to the value of this instance.</returns>
-  public decimal ToDecimal(IFormatProvider? provider)
+  public Decimal ToDecimal(IFormatProvider? provider)
   {
-    return (Decimal)(value);
+    return (decimal)(value);
   }
 
   /// <summary>
@@ -219,7 +197,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <returns>The string representation of the value of this instance as specified by the provider.</returns>
   public string ToString(IFormatProvider? provider)
   {
-    return value.ToString(provider) + "%";
+    return value.ToString(provider);
   }
 
   /// <summary>
@@ -281,12 +259,12 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
       return (float)(value);
     if (targetType == typeof(Double))
       return (double)value;
-    if (targetType == typeof(Decimal))
-      return (decimal)value;
+    if (targetType == typeof(double))
+      return (double)value;
     if (targetType == typeof(String))
       return ToString(CultureInfo.InvariantCulture, null);
-    if (targetType == typeof(Percent))
-      return new Percent(value);
+    if (targetType == typeof(Degrees))
+      return new Degrees(value);
 
     return ((IConvertible)value).ToType(targetType, provider);
   }
@@ -296,124 +274,124 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   #region Implicit Conversions
 
   /// <summary>
-  /// Implicitly converts a string to a <see cref="Percent"/> value.
+  /// Implicitly converts a string to a <see cref="Degrees"/> value.
   /// </summary>
   /// <param name="val">The string to convert.</param>
-  /// <returns>A <see cref="Percent"/> value parsed from the string.</returns>
-  public static implicit operator Percent(string val)
+  /// <returns>A <see cref="Degrees"/> value parsed from the string.</returns>
+  public static implicit operator Degrees(string val)
   {
-    return new Percent(val);
+    return new Degrees(val);
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="Percent"/> value to a 16-bit unsigned integer.
+  /// Implicitly converts a <see cref="Degrees"/> value to a 16-bit unsigned integer.
   /// </summary>
-  /// <param name="val">The <see cref="Percent"/> value to convert.</param>
-  /// <returns>A 16-bit unsigned integer representation of the percentage value.</returns>
-  public static implicit operator ushort(Percent val)
+  /// <param name="val">The <see cref="Degrees"/> value to convert.</param>
+  /// <returns>A 16-bit unsigned integer representation of the DrawingAngle value.</returns>
+  public static implicit operator ushort(Degrees val)
   {
-    return (ushort)val.value;
+    return (ushort)(val.value);
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="Percent"/> value to a 32-bit unsigned integer.
+  /// Implicitly converts a <see cref="Degrees"/> value to a 32-bit unsigned integer.
   /// </summary>
-  /// <param name="val">The <see cref="Percent"/> value to convert.</param>
-  /// <returns>A 32-bit unsigned integer representation of the percentage value.</returns>
-  public static implicit operator uint(Percent val)
+  /// <param name="val">The <see cref="Degrees"/> value to convert.</param>
+  /// <returns>A 32-bit unsigned integer representation of the DrawingAngle value.</returns>
+  public static implicit operator uint(Degrees val)
   {
-    return (uint)val.value;
+    return (uint)(val.value);
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="Percent"/> value to a 32-bit signed integer.
+  /// Implicitly converts a <see cref="Degrees"/> value to a 32-bit signed integer.
   /// </summary>
-  /// <param name="val">The <see cref="Percent"/> value to convert.</param>
-  /// <returns>A 32-bit signed integer representation of the percentage value.</returns>
-  public static implicit operator Int32(Percent val)
+  /// <param name="val">The <see cref="Degrees"/> value to convert.</param>
+  /// <returns>A 32-bit signed integer representation of the DrawingAngle value.</returns>
+  public static implicit operator Int32(Degrees val)
   {
-    return (int)val.value;
+    return (int)(val.value);
   }
 
 
   /// <summary>
-  /// Implicitly converts a <see cref="Percent"/> value to a 64-bit signed integer.
+  /// Implicitly converts a <see cref="Degrees"/> value to a 64-bit signed integer.
   /// </summary>
-  /// <param name="val">The <see cref="Percent"/> value to convert.</param>
-  /// <returns>A 64-bit signed integer representation of the percentage value.</returns>
-  public static implicit operator Int64(Percent val)
+  /// <param name="val">The <see cref="Degrees"/> value to convert.</param>
+  /// <returns>A 64-bit signed integer representation of the DrawingAngle value.</returns>
+  public static implicit operator Int64(Degrees val)
   {
-    return (long)val.value;
+    return (long)(val.value);
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="Percent"/> value to a 64-bit unsigned integer.
+  /// Implicitly converts a <see cref="Degrees"/> value to a 64-bit unsigned integer.
   /// </summary>
-  /// <param name="val">The <see cref="Percent"/> value to convert.</param>
-  /// <returns>A 64-bit unsigned integer representation of the percentage value.</returns>
-  public static implicit operator ulong(Percent val)
+  /// <param name="val">The <see cref="Degrees"/> value to convert.</param>
+  /// <returns>A 64-bit unsigned integer representation of the DrawingAngle value.</returns>
+  public static implicit operator ulong(Degrees val)
   {
-    return (ulong)val.value;
+    return (ulong)(val.value);
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="Percent"/> value to a decimal value.
+  /// Implicitly converts a <see cref="Degrees"/> value to a decimal value.
   /// </summary>
-  /// <param name="val">The <see cref="Percent"/> value to convert.</param>
-  /// <returns>A decimal representation of the percentage value.</returns>
-  public static implicit operator Decimal(Percent val)
+  /// <param name="val">The <see cref="Degrees"/> value to convert.</param>
+  /// <returns>A double representation of the DrawingAngle value.</returns>
+  public static implicit operator decimal(Degrees val)
   {
-    return (Decimal)val.value;
+    return (decimal)val.value;
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="Percent"/> value to a double value.
+  /// Implicitly converts a <see cref="Degrees"/> value to a double value.
   /// </summary>
-  /// <param name="val">The <see cref="Percent"/> value to convert.</param>
-  /// <returns>A decimal representation of the percentage value.</returns>
-  public static implicit operator Double(Percent val)
+  /// <param name="val">The <see cref="Degrees"/> value to convert.</param>
+  /// <returns>A double representation of the DrawingAngle value.</returns>
+  public static implicit operator Double(Degrees val)
   {
     return (Double)val.value;
   }
 
   /// <summary>
-  /// Implicitly converts a 16-bit unsigned integer to a <see cref="Percent"/> value.
+  /// Implicitly converts a 16-bit unsigned integer to a <see cref="Degrees"/> value.
   /// </summary>
   /// <param name="val">The 16-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="Percent"/>Percent instance.</returns>
-  public static implicit operator Percent(ushort val)
+  /// <returns>A <see cref="Degrees"/>DrawingAngle instance.</returns>
+  public static implicit operator Degrees(ushort val)
   {
-    return new Percent(val);
+    return new Degrees(val);
   }
 
   /// <summary>
-  /// Implicitly converts a 32-bit unsigned integer to a <see cref="Percent"/> value.
+  /// Implicitly converts a 32-bit unsigned integer to a <see cref="Degrees"/> value.
   /// </summary>
   /// <param name="val">The 32-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="Percent"/>Percent instance.</returns>
-  public static implicit operator Percent(decimal val)
+  /// <returns>A <see cref="Degrees"/>DrawingAngle instance.</returns>
+  public static implicit operator Degrees(double val)
   {
-    return new Percent(val);
+    return new Degrees(val);
   }
 
   /// <summary>
-  /// Implicitly converts a 32-bit signed integer to a <see cref="Percent"/> value.
+  /// Implicitly converts a 32-bit signed integer to a <see cref="Degrees"/> value.
   /// </summary>
   /// <param name="val">The 32-bit signed integer to convert.</param>
-  /// <returns>A <see cref="Percent"/>Percent instance.</returns>
-  public static implicit operator Percent(Int32 val)
+  /// <returns>A <see cref="Degrees"/>DrawingAngle instance.</returns>
+  public static implicit operator Degrees(Int32 val)
   {
-    return new Percent(val);
+    return new Degrees(val);
   }
 
   /// <summary>
-  /// Implicitly converts a 64-bit unsigned integer to a <see cref="Percent"/> value.
+  /// Implicitly converts a 64-bit unsigned integer to a <see cref="Degrees"/> value.
   /// </summary>
   /// <param name="val">The 64-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="Percent"/>Percent instance.</returns>
-  public static implicit operator Percent(ulong val)
+  /// <returns>A <see cref="Degrees"/>DrawingAngle instance.</returns>
+  public static implicit operator Degrees(ulong val)
   {
-    return new Percent((decimal)val);
+    return new Degrees((double)val);
   }
 
   #endregion
@@ -421,27 +399,27 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   #region String Conversions
 
   /// <summary>
-  /// Parses a string representation of a percentage and returns a corresponding Percent instance.
+  /// Parses a string representation of a DrawingAngle and returns a corresponding DrawingAngle instance.
   /// </summary>
-  /// <param name="str">The string containing the percentage to parse. The string should be in a format recognized by the Percent type,
-  /// such as "50%" or "0.5".</param>
-  /// <returns>A Percent instance that represents the value specified by the input string.</returns>
-  public static Percent Parse(string str)
+  /// <param name="str">The string containing the DrawingAngle to parse. The string should be in a format recognized by the DrawingAngle type,
+  /// such as "50°" or "0.5".</param>
+  /// <returns>A DrawingAngle instance that represents the value specified by the input string.</returns>
+  public static Degrees Parse(string str)
   {
-    return new Percent(str);
+    return new Degrees(str);
   }
 
   /// <summary>
-  /// Attempts to parse a string representation of a percentage into a <see cref="Percent"/> instance.
+  /// Attempts to parse a string representation of a DrawingAngle into a <see cref="Degrees"/> instance.
   /// </summary>
-  /// <param name="str">The string representation of the percentage.</param>
-  /// <param name="result">The resulting <see cref="Percent"/> instance if parsing is successful.</param>
+  /// <param name="str">The string representation of the DrawingAngle.</param>
+  /// <param name="result">The resulting <see cref="Degrees"/> instance if parsing is successful.</param>
   /// <returns><see langword="true"/> if parsing succeeded; otherwise, <see langword="false"/>.</returns>
-  public static bool TryParse(string str, out Percent result)
+  public static bool TryParse(string str, out Degrees result)
   {
     try
     {
-      result = new Percent(str);
+      result = new Degrees(str);
       return true;
     }
     catch
@@ -452,18 +430,18 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   }
 
   /// <summary>
-  /// Converts the value of this instance to its equivalent string representation with a "%" suffix.
+  /// Converts the value of this instance to its equivalent string representation with a "°" suffix.
   /// </summary>
-  /// <returns>The string representation of the value with a "%" suffix, using invariant culture formatting.</returns>
+  /// <returns>The string representation of the value with a "°" suffix, using invariant culture formatting.</returns>
   public override string ToString()
   {
-    return value.ToString(CultureInfo.InvariantCulture) + "%";
+    return value.ToString(CultureInfo.InvariantCulture) + "°";
   }
 
   /// <summary>
   /// Converts value to string using the specified unit.
   /// </summary>
-  /// <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
+  /// <param name="unit">The unit suffix (e.g., "°") to append to the value, or <see langword="null"/> for no suffix.</param>
   /// <returns>The string representation of the value with the specified unit suffix.</returns>
   public string ToString(string? unit)
   {
@@ -474,7 +452,7 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// Converts value to string using the specified unit and precision (fractional digits count).
   /// </summary>
   /// <param name="precision">The number of fractional digits in the return value.</param>
-  /// <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
+  /// <param name="unit">The unit suffix (e.g., "°") to append to the value, or <see langword="null"/> for no suffix.</param>
   /// <returns>The string representation of the value with the specified precision and unit suffix.</returns>
   public string ToString(int precision, string? unit)
   {
@@ -487,15 +465,14 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// </summary>
   /// <param name="precision">The number of fractional digits in the return value.</param>
   /// <param name="provider">An <see cref="IFormatProvider"/> that supplies culture-specific formatting information.</param>
-  /// <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
+  /// <param name="unit">The unit suffix (e.g., "°") to append to the value, or <see langword="null"/> for no suffix.</param>
   /// <returns>The string representation of the value with the specified precision, format provider, and unit suffix.</returns>
   public string ToString(int precision, IFormatProvider provider, string? unit)
   {
     string format = $"F{precision}";
     if (unit != null)
     {
-      if (unit.EndsWith("%"))
-        return (value).ToString(format, provider) + unit;
+      return (value).ToString(format, provider) + unit;
     }
     return value.ToString(provider);
   }
@@ -504,14 +481,13 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// Converts value to string using the specified unit and format provider to determine digit separator.
   /// </summary>
   /// <param name="provider">An <see cref="IFormatProvider"/> that supplies culture-specific formatting information.</param>
-  /// <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
+  /// <param name="unit">The unit suffix (e.g., "°") to append to the value, or <see langword="null"/> for no suffix.</param>
   /// <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
   public string ToString(IFormatProvider provider, string? unit)
   {
     if (unit != null)
     {
-      if (unit.EndsWith("%"))
-        return (value).ToString(provider) + unit;
+      return (value).ToString(provider) + unit;
     }
     return value.ToString(provider);
   }
@@ -523,22 +499,22 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// </summary>
   /// <param name="other">An object to compare with this object.</param>
   /// <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
-  public bool Equals(Percent other)
+  public bool Equals(Degrees other)
   {
     return value == other.value;
   }
 
   /// <summary>
-  /// Compares this instance to a specified <see cref="Percent"/> object and returns an indication of their relative values.
+  /// Compares this instance to a specified <see cref="Degrees"/> object and returns an indication of their relative values.
   /// </summary>
-  /// <param name="other">A <see cref="Percent"/> object to compare.</param>
+  /// <param name="other">A <see cref="Degrees"/> object to compare.</param>
   /// <returns>
   /// A signed number indicating the relative values of this instance and <paramref name="other"/>.
   /// Less than zero if this instance is less than <paramref name="other"/>;
   /// zero if this instance equals <paramref name="other"/>;
   /// greater than zero if this instance is greater than <paramref name="other"/>.
   /// </returns>
-  public int CompareTo(Percent other)
+  public int CompareTo(Degrees other)
   {
     return value.CompareTo(other.value);
   }
@@ -551,8 +527,8 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <exception cref="ArgumentException">Thrown when the comparison is invalid.</exception>
   public int CompareTo(object? other)
   {
-    if (other is Percent percent)
-      return CompareTo(percent);
+    if (other is Degrees DrawingAngle)
+      return CompareTo(DrawingAngle);
     if (other is Int32 int32value)
       return this.CompareTo(int32value);
     if (other is UInt32 uint32value)
@@ -570,13 +546,13 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
     if (other is Byte byteValue)
       return this.CompareTo(byteValue);
     if (other is Single singleValue)
-      return this.CompareTo((decimal)singleValue);
-    if (other is Double doubleValue)
-      return this.CompareTo((decimal)doubleValue);
-    if (other is Decimal decimalValue)
-      return this.CompareTo((decimal)decimalValue);
+      return this.CompareTo((double)singleValue);
+    if (other is decimal decimalValue)
+      return this.CompareTo((double)decimalValue);
+    if (other is double doubleValue)
+      return this.CompareTo((double)doubleValue);
     if (other is String str)
-      return this.CompareTo(Percent.Parse(str));
+      return this.CompareTo(Degrees.Parse(str));
     throw new ArgumentException($"Invalid comparison between {GetType()} and {other?.GetType()}");
   }
 

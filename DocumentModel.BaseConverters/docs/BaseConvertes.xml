@@ -1571,6 +1571,108 @@
             is <see langword="null"/>.</returns>
             <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:System.Decimal"/> is not supported.</exception>
         </member>
+        <member name="T:DocumentModel.OpenXml.DegreesConverter">
+            <summary>
+            Provides conversion methods for Degrees value to/from Open XML.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.DegreesConverter.#cctor">
+            <summary>
+            Initializes the conversion maps for <see cref="T:DocumentModel.OpenXml.DegreesConverter"/>.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.DegreesConverter.ConvertFromInt32Value(DocumentFormat.OpenXml.Int32Value)">
+            <summary>
+            Converts an OpenXml Int32Value to Degrees.
+            </summary>
+            <param name="Int32Value">The Int32Value to convert.</param>
+            <returns>The Degrees value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.DegreesConverter.ConvertToInt32Value(System.Nullable{DocumentModel.Degrees})">
+            <summary>
+            Creates an OpenXml Int32Value from an Degrees value.
+            </summary>
+            <param name="value">The Degrees value to convert.</param>
+            <returns>A new Int32Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.DegreesConverter.ConvertFromStringValue(DocumentFormat.OpenXml.StringValue)">
+            <summary>
+            Converts an OpenXml StringValue to Degrees.
+            </summary>
+            <param name="StringValue">The StringValue to convert.</param>
+            <returns>The Degrees value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.DegreesConverter.ConvertToStringValue(System.Nullable{DocumentModel.Degrees},System.Type)">
+            <summary>
+            Creates an OpenXml StringValue from an Degrees value.
+            </summary>
+            <param name="value">The Degrees value to convert.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
+            <returns>A new StringValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.DegreesConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts the specified string representation of a number to its 32-bit signed integer equivalent.
+            </summary>
+            <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
+            <returns>A 32-bit signed integer equivalent to the number contained in the input string, or null if the input is null or
+            not a valid integer.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.DegreesConverter.ConvertToString(System.Nullable{DocumentModel.Degrees})">
+            <summary>
+            Converts a nullable 32-bit integer value to its string representation.
+            </summary>
+            <param name="value">The nullable 32-bit integer value to convert. If null, the method returns null.</param>
+            <returns>A string representation of the specified value, or null if the value is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.DegreesConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
+            <summary>
+            Converts an OpenXml OpenXmlLeafTextElement to Degrees.
+            </summary>
+            <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
+            <returns>The Degrees value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.DegreesConverter.ConvertToOpenXmlLeafTextElement(System.Nullable{DocumentModel.Degrees},System.Type)">
+            <summary>
+            Creates an OpenXml OpenXmlLeafTextElement from an Degrees value.
+            </summary>
+            <param name="value">The Degrees value to convert.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.DegreesConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
+            <summary>
+            Converts an OpenXml OpenXmlLeafElement to Degrees.
+            </summary>
+            <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
+            <returns>The Degrees value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.DegreesConverter.ConvertToOpenXmlLeafElement(System.Nullable{DocumentModel.Degrees},System.Type)">
+            <summary>
+            Creates an OpenXml OpenXmlLeafElement from an Degrees value.
+            </summary>
+            <param name="value">The Degrees value to convert.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.DegreesConverter.ConvertTo(System.Nullable{DocumentModel.Degrees},System.Type)">
+            <summary>
+            Converts an Degrees value to the specified target type using standard type conversion.
+            </summary>
+            <param name="value">The Degrees value to convert.</param>
+            <param name="targetType">The target type to convert to.</param>
+            <returns>The converted value, or null if the input is null.</returns>
+            <exception cref="T:System.NotSupportedException">Raised when the target type is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.OpenXml.DegreesConverter.ConvertFrom(System.Object)">
+            <summary>
+            Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
+            </summary>
+            <param name="value">The value to convert to an <see cref="T:DocumentModel.Degrees"/>. Can be <see langword="null"/>.</param>
+            <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
+            is <see langword="null"/>.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.Degrees"/> is not supported.</exception>
+        </member>
         <member name="T:DocumentModel.OpenXml.DoubleConverter">
             <summary>
             Provides helper methods for converting Double values to and from OpenXml.
@@ -2562,235 +2664,6 @@
             <returns>An HexBinary representation of the input value, or null if the input is null or cannot be converted.</returns>
             <exception cref="T:System.InvalidOperationException">Thrown if the type of value is not supported for conversion.</exception>
         </member>
-        <member name="T:DocumentModel.OpenXml.HexCharConverter">
-            <summary>
-            Provides conversion methods for HexChar value to/from Open XML.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.#cctor">
-            <summary>
-            Initializes the conversion maps for <see cref="T:DocumentModel.OpenXml.HexCharConverter"/>.
-            </summary>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromSByteValue(DocumentFormat.OpenXml.SByteValue)">
-            <summary>
-            Converts an OpenXml SByteValue to HexChar.
-            </summary>
-            <param name="SByteValue">The SByteValue to convert.</param>
-            <returns>The HexChar value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToSByteValue(DocumentModel.HexChar)">
-            <summary>
-            Creates an OpenXml SByteValue from an HexChar value.
-            </summary>
-            <param name="value">The HexChar value to convert.</param>
-            <returns>A new SByteValue, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromInt16Value(DocumentFormat.OpenXml.Int16Value)">
-            <summary>
-            Converts an OpenXml Int16Value to HexChar.
-            </summary>
-            <param name="int16Value">The Int16Value to convert.</param>
-            <returns>The HexChar int16Value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToInt16Value(DocumentModel.HexChar)">
-            <summary>
-            Creates an OpenXml Int16Value from an HexChar value.
-            </summary>
-            <param name="value">The HexChar value to convert.</param>
-            <returns>A new Int16Value, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromInt32Value(DocumentFormat.OpenXml.Int32Value)">
-            <summary>
-            Converts an OpenXml Int32Value to HexChar.
-            </summary>
-            <param name="Int32Value">The Int32Value to convert.</param>
-            <returns>The HexChar value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToInt32Value(DocumentModel.HexChar)">
-            <summary>
-            Creates an OpenXml Int32Value from an HexChar value.
-            </summary>
-            <param name="value">The HexChar value to convert.</param>
-            <returns>A new Int32Value, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromInt64Value(DocumentFormat.OpenXml.Int64Value)">
-            <summary>
-            Converts an OpenXml Int64Value to HexChar.
-            </summary>
-            <param name="Int64Value">The Int64Value to convert.</param>
-            <returns>The HexChar value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToInt64Value(DocumentModel.HexChar)">
-            <summary>
-            Creates an OpenXml Int64Value from an HexChar value.
-            </summary>
-            <param name="value">The HexChar value to convert.</param>
-            <returns>A new Int64Value, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromIntegerValue(DocumentFormat.OpenXml.IntegerValue)">
-            <summary>
-            Converts an OpenXml IntegerValue to HexChar.
-            </summary>
-            <param name="IntegerValue">The IntegerValue to convert.</param>
-            <returns>The HexChar value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToIntegerValue(DocumentModel.HexChar)">
-            <summary>
-            Creates an OpenXml IntegerValue from an HexChar value.
-            </summary>
-            <param name="value">The HexChar value to convert.</param>
-            <returns>A new IntegerValue, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromByteValue(DocumentFormat.OpenXml.ByteValue)">
-            <summary>
-            Converts an OpenXml ByteValue to HexChar.
-            </summary>
-            <param name="ByteValue">The ByteValue to convert.</param>
-            <returns>The HexChar value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToByteValue(DocumentModel.HexChar)">
-            <summary>
-            Creates an OpenXml ByteValue from an HexChar value.
-            </summary>
-            <param name="value">The HexChar value to convert.</param>
-            <returns>A new ByteValue, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromUInt16Value(DocumentFormat.OpenXml.UInt16Value)">
-            <summary>
-            Converts an OpenXml UInt16Value to HexChar.
-            </summary>
-            <param name="UInt16Value">The UInt16Value to convert.</param>
-            <returns>The HexChar value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToUInt16Value(DocumentModel.HexChar)">
-            <summary>
-            Creates an OpenXml UInt16Value from an HexChar value.
-            </summary>
-            <param name="value">The HexChar value to convert.</param>
-            <returns>A new UInt16Value, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromUInt32Value(DocumentFormat.OpenXml.UInt32Value)">
-            <summary>
-            Converts an OpenXml HexCharValue to HexChar.
-            </summary>
-            <param name="HexCharValue">The HexCharValue to convert.</param>
-            <returns>The HexChar value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToUInt32Value(DocumentModel.HexChar)">
-            <summary>
-            Creates an OpenXml HexCharValue from an HexChar value.
-            </summary>
-            <param name="value">The HexChar value to convert.</param>
-            <returns>A new HexCharValue, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromUInt64Value(DocumentFormat.OpenXml.UInt64Value)">
-            <summary>
-            Converts an OpenXml UInt64Value to HexChar.
-            </summary>
-            <param name="UInt64Value">The UInt64Value to convert.</param>
-            <returns>The HexChar value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToUInt64Value(DocumentModel.HexChar)">
-            <summary>
-            Creates an OpenXml UInt64Value from an HexChar value.
-            </summary>
-            <param name="value">The HexChar value to convert.</param>
-            <returns>A new UInt64Value, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromStringValue(DocumentFormat.OpenXml.StringValue)">
-            <summary>
-            Converts an OpenXml StringValue to HexChar.
-            </summary>
-            <param name="StringValue">The StringValue to convert.</param>
-            <returns>The HexChar value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToStringValue(DocumentModel.HexChar,System.Type)">
-            <summary>
-            Creates an OpenXml StringValue from an HexChar value.
-            </summary>
-            <param name="value">The HexChar value to convert.</param>
-            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
-            <returns>A new StringValue, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
-            <summary>
-            Converts an OpenXml OpenXmlLeafTextElement to HexChar.
-            </summary>
-            <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
-            <returns>The HexChar value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToOpenXmlLeafTextElement(DocumentModel.HexChar,System.Type)">
-            <summary>
-            Creates an OpenXml OpenXmlLeafTextElement from an HexChar value.
-            </summary>
-            <param name="value">The HexChar value to convert.</param>
-            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
-            <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromHexBinaryValue(DocumentFormat.OpenXml.HexBinaryValue)">
-            <summary>
-            Converts an OpenXml HexBinaryValue to HexChar.
-            </summary>
-            <param name="HexBinaryValue">The HexBinaryValue to convert.</param>
-            <returns>The HexChar value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToHexBinaryValue(DocumentModel.HexChar,System.Type)">
-            <summary>
-            Creates an OpenXml HexBinaryValue from an HexChar value.
-            </summary>
-            <param name="value">The HexChar value to convert.</param>
-            <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
-            <returns>A new HexBinaryValue, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
-            <summary>
-            Converts an OpenXml OpenXmlLeafElement to HexChar.
-            </summary>
-            <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
-            <returns>The HexChar value, or null if the element has no content.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToOpenXmlLeafElement(DocumentModel.HexChar,System.Type)">
-            <summary>
-            Creates an OpenXml OpenXmlLeafElement from an HexChar value.
-            </summary>
-            <param name="value">The HexChar value to convert.</param>
-            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
-            <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromString(System.String)">
-            <summary>
-            Converts the specified string representation of a number to its HexCharequivalent.
-            </summary>
-            <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
-            <returns>A HexChar integer equivalent to the number contained in the input string, or null if the input is null or
-            not a valid integer.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToString(DocumentModel.HexChar)">
-            <summary>
-            Converts a nullable HexChar value to its string representation.
-            </summary>
-            <param name="value">The nullable HexChar value to convert. If null, the method returns null.</param>
-            <returns>A string representation of the specified value, or null if the value is null.</returns>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertTo(DocumentModel.HexChar,System.Type)">
-            <summary>
-            Converts an HexChar value to the specified target type using standard type conversion.
-            </summary>
-            <param name="value">The HexChar value to convert.</param>
-            <param name="targetType">The target type to convert to.</param>
-            <returns>The converted value, or null if the input is null.</returns>
-            <exception cref="T:System.NotSupportedException">Raised when the target type is not supported.</exception>
-        </member>
-        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFrom(System.Object)">
-            <summary>
-            Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
-            </summary>
-            <param name="value">The value to convert to an <see cref="T:DocumentModel.HexChar"/>. Can be <see langword="null"/>.</param>
-            <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
-            is <see langword="null"/>.</returns>
-            <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.HexChar"/> is not supported.</exception>
-        </member>
         <member name="T:DocumentModel.OpenXml.HexByteConverter">
             <summary>
             Provides conversion methods for HexByte value to/from Open XML.
@@ -3019,6 +2892,235 @@
             <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
             is <see langword="null"/>.</returns>
             <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.HexByte"/> is not supported.</exception>
+        </member>
+        <member name="T:DocumentModel.OpenXml.HexCharConverter">
+            <summary>
+            Provides conversion methods for HexChar value to/from Open XML.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.#cctor">
+            <summary>
+            Initializes the conversion maps for <see cref="T:DocumentModel.OpenXml.HexCharConverter"/>.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromSByteValue(DocumentFormat.OpenXml.SByteValue)">
+            <summary>
+            Converts an OpenXml SByteValue to HexChar.
+            </summary>
+            <param name="SByteValue">The SByteValue to convert.</param>
+            <returns>The HexChar value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToSByteValue(DocumentModel.HexChar)">
+            <summary>
+            Creates an OpenXml SByteValue from an HexChar value.
+            </summary>
+            <param name="value">The HexChar value to convert.</param>
+            <returns>A new SByteValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromInt16Value(DocumentFormat.OpenXml.Int16Value)">
+            <summary>
+            Converts an OpenXml Int16Value to HexChar.
+            </summary>
+            <param name="int16Value">The Int16Value to convert.</param>
+            <returns>The HexChar int16Value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToInt16Value(DocumentModel.HexChar)">
+            <summary>
+            Creates an OpenXml Int16Value from an HexChar value.
+            </summary>
+            <param name="value">The HexChar value to convert.</param>
+            <returns>A new Int16Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromInt32Value(DocumentFormat.OpenXml.Int32Value)">
+            <summary>
+            Converts an OpenXml Int32Value to HexChar.
+            </summary>
+            <param name="Int32Value">The Int32Value to convert.</param>
+            <returns>The HexChar value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToInt32Value(DocumentModel.HexChar)">
+            <summary>
+            Creates an OpenXml Int32Value from an HexChar value.
+            </summary>
+            <param name="value">The HexChar value to convert.</param>
+            <returns>A new Int32Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromInt64Value(DocumentFormat.OpenXml.Int64Value)">
+            <summary>
+            Converts an OpenXml Int64Value to HexChar.
+            </summary>
+            <param name="Int64Value">The Int64Value to convert.</param>
+            <returns>The HexChar value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToInt64Value(DocumentModel.HexChar)">
+            <summary>
+            Creates an OpenXml Int64Value from an HexChar value.
+            </summary>
+            <param name="value">The HexChar value to convert.</param>
+            <returns>A new Int64Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromIntegerValue(DocumentFormat.OpenXml.IntegerValue)">
+            <summary>
+            Converts an OpenXml IntegerValue to HexChar.
+            </summary>
+            <param name="IntegerValue">The IntegerValue to convert.</param>
+            <returns>The HexChar value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToIntegerValue(DocumentModel.HexChar)">
+            <summary>
+            Creates an OpenXml IntegerValue from an HexChar value.
+            </summary>
+            <param name="value">The HexChar value to convert.</param>
+            <returns>A new IntegerValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromByteValue(DocumentFormat.OpenXml.ByteValue)">
+            <summary>
+            Converts an OpenXml ByteValue to HexChar.
+            </summary>
+            <param name="ByteValue">The ByteValue to convert.</param>
+            <returns>The HexChar value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToByteValue(DocumentModel.HexChar)">
+            <summary>
+            Creates an OpenXml ByteValue from an HexChar value.
+            </summary>
+            <param name="value">The HexChar value to convert.</param>
+            <returns>A new ByteValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromUInt16Value(DocumentFormat.OpenXml.UInt16Value)">
+            <summary>
+            Converts an OpenXml UInt16Value to HexChar.
+            </summary>
+            <param name="UInt16Value">The UInt16Value to convert.</param>
+            <returns>The HexChar value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToUInt16Value(DocumentModel.HexChar)">
+            <summary>
+            Creates an OpenXml UInt16Value from an HexChar value.
+            </summary>
+            <param name="value">The HexChar value to convert.</param>
+            <returns>A new UInt16Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromUInt32Value(DocumentFormat.OpenXml.UInt32Value)">
+            <summary>
+            Converts an OpenXml HexCharValue to HexChar.
+            </summary>
+            <param name="HexCharValue">The HexCharValue to convert.</param>
+            <returns>The HexChar value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToUInt32Value(DocumentModel.HexChar)">
+            <summary>
+            Creates an OpenXml HexCharValue from an HexChar value.
+            </summary>
+            <param name="value">The HexChar value to convert.</param>
+            <returns>A new HexCharValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromUInt64Value(DocumentFormat.OpenXml.UInt64Value)">
+            <summary>
+            Converts an OpenXml UInt64Value to HexChar.
+            </summary>
+            <param name="UInt64Value">The UInt64Value to convert.</param>
+            <returns>The HexChar value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToUInt64Value(DocumentModel.HexChar)">
+            <summary>
+            Creates an OpenXml UInt64Value from an HexChar value.
+            </summary>
+            <param name="value">The HexChar value to convert.</param>
+            <returns>A new UInt64Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromStringValue(DocumentFormat.OpenXml.StringValue)">
+            <summary>
+            Converts an OpenXml StringValue to HexChar.
+            </summary>
+            <param name="StringValue">The StringValue to convert.</param>
+            <returns>The HexChar value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToStringValue(DocumentModel.HexChar,System.Type)">
+            <summary>
+            Creates an OpenXml StringValue from an HexChar value.
+            </summary>
+            <param name="value">The HexChar value to convert.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
+            <returns>A new StringValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
+            <summary>
+            Converts an OpenXml OpenXmlLeafTextElement to HexChar.
+            </summary>
+            <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
+            <returns>The HexChar value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToOpenXmlLeafTextElement(DocumentModel.HexChar,System.Type)">
+            <summary>
+            Creates an OpenXml OpenXmlLeafTextElement from an HexChar value.
+            </summary>
+            <param name="value">The HexChar value to convert.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromHexBinaryValue(DocumentFormat.OpenXml.HexBinaryValue)">
+            <summary>
+            Converts an OpenXml HexBinaryValue to HexChar.
+            </summary>
+            <param name="HexBinaryValue">The HexBinaryValue to convert.</param>
+            <returns>The HexChar value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToHexBinaryValue(DocumentModel.HexChar,System.Type)">
+            <summary>
+            Creates an OpenXml HexBinaryValue from an HexChar value.
+            </summary>
+            <param name="value">The HexChar value to convert.</param>
+            <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+            <returns>A new HexBinaryValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
+            <summary>
+            Converts an OpenXml OpenXmlLeafElement to HexChar.
+            </summary>
+            <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
+            <returns>The HexChar value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToOpenXmlLeafElement(DocumentModel.HexChar,System.Type)">
+            <summary>
+            Creates an OpenXml OpenXmlLeafElement from an HexChar value.
+            </summary>
+            <param name="value">The HexChar value to convert.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts the specified string representation of a number to its HexCharequivalent.
+            </summary>
+            <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
+            <returns>A HexChar integer equivalent to the number contained in the input string, or null if the input is null or
+            not a valid integer.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertToString(DocumentModel.HexChar)">
+            <summary>
+            Converts a nullable HexChar value to its string representation.
+            </summary>
+            <param name="value">The nullable HexChar value to convert. If null, the method returns null.</param>
+            <returns>A string representation of the specified value, or null if the value is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertTo(DocumentModel.HexChar,System.Type)">
+            <summary>
+            Converts an HexChar value to the specified target type using standard type conversion.
+            </summary>
+            <param name="value">The HexChar value to convert.</param>
+            <param name="targetType">The target type to convert to.</param>
+            <returns>The converted value, or null if the input is null.</returns>
+            <exception cref="T:System.NotSupportedException">Raised when the target type is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexCharConverter.ConvertFrom(System.Object)">
+            <summary>
+            Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
+            </summary>
+            <param name="value">The value to convert to an <see cref="T:DocumentModel.HexChar"/>. Can be <see langword="null"/>.</param>
+            <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
+            is <see langword="null"/>.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.HexChar"/> is not supported.</exception>
         </member>
         <member name="T:DocumentModel.OpenXml.HexColorConverter">
             <summary>
@@ -3706,6 +3808,123 @@
             <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
             is <see langword="null"/>.</returns>
             <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.HexLong"/> is not supported.</exception>
+        </member>
+        <member name="T:DocumentModel.OpenXml.HexPercentConverter">
+            <summary>
+            Provides conversion methods for HexPercent value to/from Open XML.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexPercentConverter.#cctor">
+            <summary>
+            Initializes the conversion maps for <see cref="T:DocumentModel.OpenXml.HexPercentConverter"/>.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexPercentConverter.ConvertFromByteValue(DocumentFormat.OpenXml.ByteValue)">
+            <summary>
+            Converts an OpenXml ByteValue to HexPercent.
+            </summary>
+            <param name="ByteValue">The ByteValue to convert.</param>
+            <returns>The HexPercent value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexPercentConverter.ConvertToByteValue(System.Nullable{DocumentModel.HexPercent})">
+            <summary>
+            Creates an OpenXml ByteValue from an HexPercent value.
+            </summary>
+            <param name="value">The HexPercent value to convert.</param>
+            <returns>A new ByteValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexPercentConverter.ConvertFromStringValue(DocumentFormat.OpenXml.StringValue)">
+            <summary>
+            Converts an OpenXml StringValue to HexPercent.
+            </summary>
+            <param name="StringValue">The StringValue to convert.</param>
+            <returns>The HexPercent value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexPercentConverter.ConvertToStringValue(System.Nullable{DocumentModel.HexPercent},System.Type)">
+            <summary>
+            Creates an OpenXml StringValue from an HexPercent value.
+            </summary>
+            <param name="value">The HexPercent value to convert.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
+            <returns>A new StringValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexPercentConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
+            <summary>
+            Converts an OpenXml OpenXmlLeafTextElement to HexPercent.
+            </summary>
+            <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
+            <returns>The HexPercent value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexPercentConverter.ConvertToOpenXmlLeafTextElement(System.Nullable{DocumentModel.HexPercent},System.Type)">
+            <summary>
+            Creates an OpenXml OpenXmlLeafTextElement from an HexPercent value.
+            </summary>
+            <param name="value">The HexPercent value to convert.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexPercentConverter.ConvertFromHexBinaryValue(DocumentFormat.OpenXml.HexBinaryValue)">
+            <summary>
+            Converts an OpenXml HexBinaryValue to HexPercent.
+            </summary>
+            <param name="HexBinaryValue">The HexBinaryValue to convert.</param>
+            <returns>The HexPercent value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexPercentConverter.ConvertToHexBinaryValue(System.Nullable{DocumentModel.HexPercent},System.Type)">
+            <summary>
+            Creates an OpenXml HexBinaryValue from an HexPercent value.
+            </summary>
+            <param name="value">The HexPercent value to convert.</param>
+            <param name="targetType">The target type for the created HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
+            <returns>A new HexBinaryValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexPercentConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
+            <summary>
+            Converts an OpenXml OpenXmlLeafElement to HexPercent.
+            </summary>
+            <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
+            <returns>The HexPercent value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexPercentConverter.ConvertToOpenXmlLeafElement(System.Nullable{DocumentModel.HexPercent},System.Type)">
+            <summary>
+            Creates an OpenXml OpenXmlLeafElement from an HexPercent value.
+            </summary>
+            <param name="value">The HexPercent value to convert.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexPercentConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts the specified string representation of a number to its HexPercentequivalent.
+            </summary>
+            <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
+            <returns>A HexPercent integer equivalent to the number contained in the input string, or null if the input is null or
+            not a valid integer.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexPercentConverter.ConvertToString(System.Nullable{DocumentModel.HexPercent})">
+            <summary>
+            Converts a nullable HexPercent value to its string representation.
+            </summary>
+            <param name="value">The nullable HexPercent value to convert. If null, the method returns null.</param>
+            <returns>A string representation of the specified value, or null if the value is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexPercentConverter.ConvertTo(System.Nullable{DocumentModel.HexPercent},System.Type)">
+            <summary>
+            Converts an HexPercent value to the specified target type using standard type conversion.
+            </summary>
+            <param name="value">The HexPercent value to convert.</param>
+            <param name="targetType">The target type to convert to.</param>
+            <returns>The converted value, or null if the input is null.</returns>
+            <exception cref="T:System.NotSupportedException">Raised when the target type is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.OpenXml.HexPercentConverter.ConvertFrom(System.Object)">
+            <summary>
+            Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
+            </summary>
+            <param name="value">The value to convert to an <see cref="T:DocumentModel.HexPercent"/>. Can be <see langword="null"/>.</param>
+            <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
+            is <see langword="null"/>.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.HexPercent"/> is not supported.</exception>
         </member>
         <member name="T:DocumentModel.OpenXml.HPSConverter">
             <summary>
@@ -5501,6 +5720,108 @@
             Attempts to find a method name specified in the OpenXmlLoadDataAttribute applied to the model type.
             </remarks>
             <returns>A method info is found; otherwise, null.</returns>
+        </member>
+        <member name="T:DocumentModel.OpenXml.PercentageConverter">
+            <summary>
+            Provides conversion methods for Percentage value to/from Open XML.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PercentageConverter.#cctor">
+            <summary>
+            Initializes the conversion maps for <see cref="T:DocumentModel.OpenXml.PercentageConverter"/>.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PercentageConverter.ConvertFromInt32Value(DocumentFormat.OpenXml.Int32Value)">
+            <summary>
+            Converts an OpenXml Int32Value to Percentage.
+            </summary>
+            <param name="Int32Value">The Int32Value to convert.</param>
+            <returns>The Percentage value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PercentageConverter.ConvertToInt32Value(System.Nullable{DocumentModel.Percentage})">
+            <summary>
+            Creates an OpenXml Int32Value from an Percentage value.
+            </summary>
+            <param name="value">The Percentage value to convert.</param>
+            <returns>A new Int32Value, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PercentageConverter.ConvertFromStringValue(DocumentFormat.OpenXml.StringValue)">
+            <summary>
+            Converts an OpenXml StringValue to Percentage.
+            </summary>
+            <param name="StringValue">The StringValue to convert.</param>
+            <returns>The Percentage value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PercentageConverter.ConvertToStringValue(System.Nullable{DocumentModel.Percentage},System.Type)">
+            <summary>
+            Creates an OpenXml StringValue from an Percentage value.
+            </summary>
+            <param name="value">The Percentage value to convert.</param>
+            <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
+            <returns>A new StringValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PercentageConverter.ConvertFromString(System.String)">
+            <summary>
+            Converts the specified string representation of a number to its 32-bit signed integer equivalent.
+            </summary>
+            <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
+            <returns>A 32-bit signed integer equivalent to the number contained in the input string, or null if the input is null or
+            not a valid integer.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PercentageConverter.ConvertToString(System.Nullable{DocumentModel.Percentage})">
+            <summary>
+            Converts a nullable 32-bit integer value to its string representation.
+            </summary>
+            <param name="value">The nullable 32-bit integer value to convert. If null, the method returns null.</param>
+            <returns>A string representation of the specified value, or null if the value is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PercentageConverter.ConvertFromOpenXmlLeafTextElement(DocumentFormat.OpenXml.OpenXmlLeafTextElement)">
+            <summary>
+            Converts an OpenXml OpenXmlLeafTextElement to Percentage.
+            </summary>
+            <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
+            <returns>The Percentage value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PercentageConverter.ConvertToOpenXmlLeafTextElement(System.Nullable{DocumentModel.Percentage},System.Type)">
+            <summary>
+            Creates an OpenXml OpenXmlLeafTextElement from an Percentage value.
+            </summary>
+            <param name="value">The Percentage value to convert.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+            <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PercentageConverter.ConvertFromOpenXmlLeafElement(DocumentFormat.OpenXml.OpenXmlLeafElement)">
+            <summary>
+            Converts an OpenXml OpenXmlLeafElement to Percentage.
+            </summary>
+            <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
+            <returns>The Percentage value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PercentageConverter.ConvertToOpenXmlLeafElement(System.Nullable{DocumentModel.Percentage},System.Type)">
+            <summary>
+            Creates an OpenXml OpenXmlLeafElement from an Percentage value.
+            </summary>
+            <param name="value">The Percentage value to convert.</param>
+            <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+            <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PercentageConverter.ConvertTo(System.Nullable{DocumentModel.Percentage},System.Type)">
+            <summary>
+            Converts an Percentage value to the specified target type using standard type conversion.
+            </summary>
+            <param name="value">The Percentage value to convert.</param>
+            <param name="targetType">The target type to convert to.</param>
+            <returns>The converted value, or null if the input is null.</returns>
+            <exception cref="T:System.NotSupportedException">Raised when the target type is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.OpenXml.PercentageConverter.ConvertFrom(System.Object)">
+            <summary>
+            Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
+            </summary>
+            <param name="value">The value to convert to an <see cref="T:DocumentModel.Percentage"/>. Can be <see langword="null"/>.</param>
+            <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
+            is <see langword="null"/>.</returns>
+            <exception cref="T:System.NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="T:DocumentModel.Percentage"/> is not supported.</exception>
         </member>
         <member name="T:DocumentModel.OpenXml.PercentConverter">
             <summary>

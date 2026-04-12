@@ -1470,6 +1470,419 @@
             </para>
             </remarks>
         </member>
+        <member name="T:DocumentModel.Degrees">
+            <summary>
+            Represents a DrawingAngle value stored as a double-precision floating-point number.
+            Supports implicit conversions to/from numeric types and string representations with optional "°" suffix.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.Degrees.System#Xml#Serialization#IXmlSerializable#GetSchema">
+            <summary>
+            This method is reserved and should not be used. Returns null as no schema is required.
+            </summary>
+            <returns>Always returns null.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Deserializes the <see cref="T:DocumentModel.Degrees"/> value from XML.
+            Accepts both plain numeric values and values with a trailing Degrees sign (°).
+            </summary>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> to read from.</param>
+            <remarks>
+            The method handles the following formats:
+            <list type="bullet">
+            <item><description>Plain numeric values (e.g., "60.0")</description></item>
+            <item><description>Values with Degrees sign (e.g., "60°")</description></item>
+            <item><description>Empty elements</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.Degrees.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Serializes the <see cref="T:DocumentModel.Degrees"/> value to XML.
+            </summary>
+            <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> to write to.</param>
+            <remarks>
+            The value is written using the default string representation of the <see cref="T:DocumentModel.Degrees"/> structure.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.Degrees.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Degrees"/> struct from a string value.
+            </summary>
+            <param name="str">The string value to parse. Can include an optional "°" suffix and uses invariant culture for parsing.</param>
+            <remarks>
+            Commas in the input string are replaced with periods before parsing to ensure double separator consistency.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.Degrees.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Degrees"/> struct from an int value.
+            </summary>
+            <param name="value">The int value representing the DrawingAngle.</param>
+        </member>
+        <member name="M:DocumentModel.Degrees.#ctor(System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Degrees"/> struct from an Int64 value.
+            </summary>
+            <param name="value">The int value representing the DrawingAngle.</param>
+        </member>
+        <member name="M:DocumentModel.Degrees.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Degrees"/> struct from a double value.
+            </summary>
+            <param name="value">The double value representing the DrawingAngle.</param>
+        </member>
+        <member name="M:DocumentModel.Degrees.#ctor(System.Decimal)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Degrees"/> struct from a decimal value.
+            </summary>
+            <param name="value">The double value representing the DrawingAngle.</param>
+        </member>
+        <member name="M:DocumentModel.Degrees.#ctor(System.UInt64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Degrees"/> struct from an UInt64 value.
+            </summary>
+            <param name="value">The UInt64 value representing the DrawingAngle.</param>
+        </member>
+        <member name="M:DocumentModel.Degrees.GetTypeCode">
+            <summary>
+            Returns the <see cref="T:System.TypeCode"/> for this instance.
+            </summary>
+            <returns>The type code of the underlying value.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToBoolean(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent Boolean value.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns><see langword="true"/> if value is not zero; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToByte(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 8-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>An 8-bit unsigned integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToChar(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent Unicode character.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A Unicode character equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToDateTime(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent <see cref="T:System.DateTime"/>.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A <see cref="T:System.DateTime"/> equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToDecimal(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent <see cref="T:System.Decimal"/> number.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A <see cref="T:System.Decimal"/> number equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToDouble(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent double-precision floating-point number.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A double-precision floating-point number equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToInt16(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 16-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 16-bit signed integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToInt32(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 32-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 32-bit signed integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToInt64(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 64-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 64-bit signed integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToSByte(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 8-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>An 8-bit signed integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToSingle(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent single-precision floating-point number.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A single-precision floating-point number equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToString(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to its equivalent string representation using the specified format provider.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>The string representation of the value of this instance as specified by the provider.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToUInt16(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 16-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 16-bit unsigned integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToUInt32(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 32-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 32-bit unsigned integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToUInt64(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 64-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 64-bit unsigned integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToType(System.Type,System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an <see cref="T:System.Object"/> of the specified <see cref="T:System.Type"/> 
+            that has an equivalent value, using the specified culture-specific formatting information.
+            </summary>
+            <param name="targetType">The <see cref="T:System.Type"/> to which the value of this instance is converted.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>An <see cref="T:System.Object"/> instance of type <paramref name="targetType"/> whose value is equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.op_Implicit(System.String)~DocumentModel.Degrees">
+            <summary>
+            Implicitly converts a string to a <see cref="T:DocumentModel.Degrees"/> value.
+            </summary>
+            <param name="val">The string to convert.</param>
+            <returns>A <see cref="T:DocumentModel.Degrees"/> value parsed from the string.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.op_Implicit(DocumentModel.Degrees)~System.UInt16">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.Degrees"/> value to a 16-bit unsigned integer.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.Degrees"/> value to convert.</param>
+            <returns>A 16-bit unsigned integer representation of the DrawingAngle value.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.op_Implicit(DocumentModel.Degrees)~System.UInt32">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.Degrees"/> value to a 32-bit unsigned integer.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.Degrees"/> value to convert.</param>
+            <returns>A 32-bit unsigned integer representation of the DrawingAngle value.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.op_Implicit(DocumentModel.Degrees)~System.Int32">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.Degrees"/> value to a 32-bit signed integer.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.Degrees"/> value to convert.</param>
+            <returns>A 32-bit signed integer representation of the DrawingAngle value.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.op_Implicit(DocumentModel.Degrees)~System.Int64">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.Degrees"/> value to a 64-bit signed integer.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.Degrees"/> value to convert.</param>
+            <returns>A 64-bit signed integer representation of the DrawingAngle value.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.op_Implicit(DocumentModel.Degrees)~System.UInt64">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.Degrees"/> value to a 64-bit unsigned integer.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.Degrees"/> value to convert.</param>
+            <returns>A 64-bit unsigned integer representation of the DrawingAngle value.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.op_Implicit(DocumentModel.Degrees)~System.Decimal">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.Degrees"/> value to a decimal value.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.Degrees"/> value to convert.</param>
+            <returns>A double representation of the DrawingAngle value.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.op_Implicit(DocumentModel.Degrees)~System.Double">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.Degrees"/> value to a double value.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.Degrees"/> value to convert.</param>
+            <returns>A double representation of the DrawingAngle value.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.op_Implicit(System.UInt16)~DocumentModel.Degrees">
+            <summary>
+            Implicitly converts a 16-bit unsigned integer to a <see cref="T:DocumentModel.Degrees"/> value.
+            </summary>
+            <param name="val">The 16-bit unsigned integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.Degrees"/>DrawingAngle instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.op_Implicit(System.Double)~DocumentModel.Degrees">
+            <summary>
+            Implicitly converts a 32-bit unsigned integer to a <see cref="T:DocumentModel.Degrees"/> value.
+            </summary>
+            <param name="val">The 32-bit unsigned integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.Degrees"/>DrawingAngle instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.op_Implicit(System.Int32)~DocumentModel.Degrees">
+            <summary>
+            Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.Degrees"/> value.
+            </summary>
+            <param name="val">The 32-bit signed integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.Degrees"/>DrawingAngle instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.op_Implicit(System.UInt64)~DocumentModel.Degrees">
+            <summary>
+            Implicitly converts a 64-bit unsigned integer to a <see cref="T:DocumentModel.Degrees"/> value.
+            </summary>
+            <param name="val">The 64-bit unsigned integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.Degrees"/>DrawingAngle instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.Parse(System.String)">
+            <summary>
+            Parses a string representation of a DrawingAngle and returns a corresponding DrawingAngle instance.
+            </summary>
+            <param name="str">The string containing the DrawingAngle to parse. The string should be in a format recognized by the DrawingAngle type,
+            such as "50°" or "0.5".</param>
+            <returns>A DrawingAngle instance that represents the value specified by the input string.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.TryParse(System.String,DocumentModel.Degrees@)">
+            <summary>
+            Attempts to parse a string representation of a DrawingAngle into a <see cref="T:DocumentModel.Degrees"/> instance.
+            </summary>
+            <param name="str">The string representation of the DrawingAngle.</param>
+            <param name="result">The resulting <see cref="T:DocumentModel.Degrees"/> instance if parsing is successful.</param>
+            <returns><see langword="true"/> if parsing succeeded; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToString">
+            <summary>
+            Converts the value of this instance to its equivalent string representation with a "°" suffix.
+            </summary>
+            <returns>The string representation of the value with a "°" suffix, using invariant culture formatting.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToString(System.String)">
+            <summary>
+            Converts value to string using the specified unit.
+            </summary>
+            <param name="unit">The unit suffix (e.g., "°") to append to the value, or <see langword="null"/> for no suffix.</param>
+            <returns>The string representation of the value with the specified unit suffix.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToString(System.Int32,System.String)">
+            <summary>
+            Converts value to string using the specified unit and precision (fractional digits count).
+            </summary>
+            <param name="precision">The number of fractional digits in the return value.</param>
+            <param name="unit">The unit suffix (e.g., "°") to append to the value, or <see langword="null"/> for no suffix.</param>
+            <returns>The string representation of the value with the specified precision and unit suffix.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToString(System.Int32,System.IFormatProvider,System.String)">
+            <summary>
+            Converts value to string using the specified unit, precision (fractional digits count),
+            and format provider to determine digit separator. Fixed format is used.
+            </summary>
+            <param name="precision">The number of fractional digits in the return value.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
+            <param name="unit">The unit suffix (e.g., "°") to append to the value, or <see langword="null"/> for no suffix.</param>
+            <returns>The string representation of the value with the specified precision, format provider, and unit suffix.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.ToString(System.IFormatProvider,System.String)">
+            <summary>
+            Converts value to string using the specified unit and format provider to determine digit separator.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
+            <param name="unit">The unit suffix (e.g., "°") to append to the value, or <see langword="null"/> for no suffix.</param>
+            <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.Equals(DocumentModel.Degrees)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.CompareTo(DocumentModel.Degrees)">
+            <summary>
+            Compares this instance to a specified <see cref="T:DocumentModel.Degrees"/> object and returns an indication of their relative values.
+            </summary>
+            <param name="other">A <see cref="T:DocumentModel.Degrees"/> object to compare.</param>
+            <returns>
+            A signed number indicating the relative values of this instance and <paramref name="other"/>.
+            Less than zero if this instance is less than <paramref name="other"/>;
+            zero if this instance equals <paramref name="other"/>;
+            greater than zero if this instance is greater than <paramref name="other"/>.
+            </returns>
+        </member>
+        <member name="M:DocumentModel.Degrees.CompareTo(System.Object)">
+            <summary>
+            Compares this instance to a specified object and returns an indication of their relative values.
+            </summary>
+            <param name="other">Any object to compare.</param>
+            <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when the comparison is invalid.</exception>
+        </member>
+        <member name="M:DocumentModel.Degrees.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>A 32-bit signed integer hash code.</returns>
+        </member>
+        <member name="T:DocumentModel.DegreesJsonConverter">
+            <summary>
+            Provides JSON serialization and deserialization support for the <see cref="T:DocumentModel.Degrees"/> structure.
+            </summary>
+            <remarks>
+            This converter handles both string and numeric JSON tokens for deserialization,
+            and writes Degrees values as strings with a "°" suffix following Office Open XML conventions.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.DegreesJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Reads and converts JSON to a <see cref="T:DocumentModel.Degrees"/> value.
+            </summary>
+            <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader"/> to read from.</param>
+            <param name="typeToConvert">The type to convert.</param>
+            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
+            <returns>A <see cref="T:DocumentModel.Degrees"/> value parsed from the JSON input.</returns>
+            <exception cref="T:System.Text.Json.JsonException">
+            Thrown when:
+            <list type="bullet">
+            <item><description>The JSON token is a string but contains a null value.</description></item>
+            <item><description>The string value cannot be parsed as a valid Degrees (must be a number with optional '°' suffix).</description></item>
+            <item><description>The JSON token is a number but cannot be converted to a double or integer.</description></item>
+            <item><description>The JSON token is neither a string nor a number.</description></item>
+            </list>
+            </exception>
+            <remarks>
+            Accepts the following input formats:
+            <list type="bullet">
+            <item><description>String tokens with numeric values (e.g., "50" or "50°")</description></item>
+            <item><description>Numeric tokens as double or integer values</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.DegreesJsonConverter.Write(System.Text.Json.Utf8JsonWriter,DocumentModel.Degrees,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Writes a <see cref="T:DocumentModel.Degrees"/> value as JSON.
+            </summary>
+            <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter"/> to write to.</param>
+            <param name="value">The <see cref="T:DocumentModel.Degrees"/> value to serialize.</param>
+            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
+            <remarks>
+            Writes the Degrees value as a string with a "°" suffix, following Office Open XML conventions.
+            For example, a value of 50 is written as "50°".
+            </remarks>
+        </member>
         <member name="T:DocumentModel.EMU">
             <summary>
             Provides XML serialization support for the <see cref="T:DocumentModel.EMU"/> structure.
@@ -2367,8 +2780,9 @@
             <summary>
               Initializes a new instance of the <see cref="T:DocumentModel.HexByte"/> struct from a hexadecimal string.
             </summary>
-            <param name="val">
+            <param name="str">
               A hexadecimal string containing 2 or 4 hex digits (0-9, A-F, a-f) representing a byte code.
+              May begin with an optional '#' character (e.g., "#41" or "41" both represent 65, 'A').
             </param>
             <remarks>
               <para>
@@ -2612,7 +3026,10 @@
             <summary>
               Implicitly converts a hexadecimal string to a HexByte.
             </summary>
-            <param name="val">A hexadecimal string (2 or 4 hex digits).</param>
+            <param name="val">
+            A hexadecimal string (2 hex digits).
+              May begin with an optional '#' character (e.g., "#41" or "41" both represent 65, 'A').
+            </param>
             <returns>A HexByte representing the parsed byte code.</returns>
             <remarks>
               Example: HexByte c = "41"; // represents 'A' (65)
@@ -2707,6 +3124,15 @@
             </summary>
             <returns>
               A hexadecimal string of 2 digits.
+            </returns>
+        </member>
+        <member name="M:DocumentModel.HexByte.ToString(System.String)">
+            <summary>
+              Converts this HexByte to its string representation in a provided format.
+            </summary>
+            <param name="format">format for string representation (e.g., "X2" for 2-digit hex).</param>
+            <returns>
+              A string in provided format string.
             </returns>
         </member>
         <member name="M:DocumentModel.HexByte.Equals(DocumentModel.HexByte)">
@@ -2905,13 +3331,14 @@
             <summary>
               Initializes a new instance of the <see cref="T:DocumentModel.HexChar"/> struct from a hexadecimal string.
             </summary>
-            <param name="val">
+            <param name="str">
               A hexadecimal string containing 2 or 4 hex digits (0-9, A-F, a-f) representing a character code.
             </param>
             <remarks>
               <para>
               The string is parsed as a hexadecimal number to obtain the character code value.
               Valid input examples: "41" (65, 'A'), "20" (32, space), "03B1" (945, Greek alpha α).
+              May begin with an optional '#' character (e.g., "#41" or "41" both represent 65, 'A').
               </para>
             </remarks>
             <exception cref="T:System.FormatException">
@@ -3150,7 +3577,10 @@
             <summary>
               Implicitly converts a hexadecimal string to a HexChar.
             </summary>
-            <param name="val">A hexadecimal string (2 or 4 hex digits).</param>
+            <param name="str">
+              A hexadecimal string (2 or 4 hex digits).
+              May begin with an optional '#' character (e.g., "#41" or "41" both represent 65, 'A').
+            </param>
             <returns>A HexChar representing the parsed character code.</returns>
             <remarks>
               Example: HexChar c = "41"; // represents 'A' (65)
@@ -3515,7 +3945,7 @@
             <summary>
             Converts the RGB value to its hexadecimal string representation.
             </summary>
-            <returns>A 6-character hexadecimal string in the format RRGGBB.</returns>
+            <returns>A 6-character hexadecimal string in the format #RRGGBB.</returns>
         </member>
         <member name="M:DocumentModel.HexColor.Parse(System.String)">
             <summary>
@@ -3877,7 +4307,7 @@
             <summary>
             Converts the specified hexadecimal string to its <see cref="T:DocumentModel.HexInt"/> equivalent.
             </summary>
-            <param name="input">The hexadecimal string to convert.</param>
+            <param name="str">The hexadecimal string to convert.</param>
             <param name="result">The resulting HexInt value.</param>
             <returns>True if the conversion was successful; otherwise, false.</returns>
         </member>
@@ -3885,8 +4315,9 @@
             <summary>
               Initializes a new instance of the <see cref="T:DocumentModel.HexInt"/> struct from a hexadecimal string.
             </summary>
-            <param name="val">
+            <param name="str">
               A hexadecimal string containing up to 8 hex digits (0-9, A-F, a-f) representing a 32-bit integer.
+              May begin with an optional '#' character.
             </param>
             <remarks>
               <para>
@@ -4119,7 +4550,9 @@
             <summary>
               Implicitly converts a hexadecimal string to a HexInt.
             </summary>
-            <param name="val">A hexadecimal string (up to 8 hex digits).</param>
+            <param name="str">A hexadecimal string (up to 8 hex digits).
+              May begin with an optional '#' character.
+            </param>
             <returns>A HexInt representing the parsed integer value.</returns>
             <remarks>
               Example: HexInt i = "7B"; // represents 123
@@ -4468,7 +4901,9 @@
             <summary>
             Initializes a new instance from a hexadecimal string.
             </summary>
-            <param name="val">A hexadecimal string representing a 64-bit integer.</param>
+            <param name="str">A hexadecimal string representing a 64-bit integer.
+              May begin with an optional '#' character.
+            </param>
         </member>
         <member name="M:DocumentModel.HexLong.#ctor(System.Int32)">
             <summary>
@@ -4768,6 +5203,392 @@
               JSON structure and simplifying parsing operations in consuming applications.
               </para>
             </remarks>
+        </member>
+        <member name="T:DocumentModel.HexPercent">
+            <summary>
+            Represents a percentage value stored in hexadecimal format (0x00-0xFF), used in Office Open XML documents to represent Tint and Shade in Word color.
+            </summary>
+            <remarks>
+            <para>
+            This structure provides a type-safe representation of percentage values that are stored as byte values
+            in Office Open XML specifications. It supports conversion between different numeric formats and provides
+            functionality for parsing and formatting percentage strings with "%" suffix.
+            </para>
+            <para>
+            The HexPercent type also supports conversion to/from hexadecimal format (0x00-0xFF scale) which is
+            commonly used in color representations where byte percentages need to be converted to 0-255 range.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HexPercent.System#Xml#Serialization#IXmlSerializable#GetSchema">
+            <summary>
+              Returns null to indicate this type has no XML schema.
+            </summary>
+            <remarks>
+              HexPercent is serialized as simple string content, so no XML schema definition is required.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HexPercent.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+            <summary>
+              Reads the HexPercent value from XML as hexadecimal string content.
+            </summary>
+            <param name="reader">The XML reader to read from.</param>
+            <exception cref="T:System.FormatException">
+              Thrown when the string is not a valid hexadecimal number.
+            </exception>
+            <exception cref="T:System.OverflowException">
+              Thrown when the parsed value exceeds 255 (byte.MaxValue).
+            </exception>
+        </member>
+        <member name="M:DocumentModel.HexPercent.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+            <summary>
+              Writes the HexPercent value to XML as hexadecimal string content.
+            </summary>
+            <param name="writer">The XML writer to write to.</param>
+        </member>
+        <member name="M:DocumentModel.HexPercent.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.HexPercent"/> structure from a string representation.
+            </summary>
+            <param name="str">The string to parse. It can be in one of the following formats:
+            <list type="bullet">
+            <item><description>If includes "%" suffix then string represents a percent decimal from 0% to 100% value.</description></item>
+            <item><description>If includes "#" prefix then string represents a 2-digit hexadecimal value.</description></item>
+            <item><description>In other case the string represents decimal from 0 to 1 value.</description></item>
+            </list>
+            </param>
+            <exception cref="T:System.FormatException">
+            Thrown when <paramref name="str"/> cannot be parsed as a valid byte value.
+            </exception>
+            <exception cref="T:System.OverflowException">
+            Thrown when <paramref name="str"/> represents a number less than 0 or greater than 255.
+            </exception>
+        </member>
+        <member name="M:DocumentModel.HexPercent.#ctor(System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.HexPercent"/> structure from a byte value.
+            </summary>
+            <param name="value">The byte value representing the percentage (0-100).</param>
+            <remarks>
+            Values are typically in the range 0-100 representing 0% to 100%, though the byte type
+            allows values up to 255.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HexPercent.GetTypeCode">
+            <summary>
+            Returns the <see cref="T:System.TypeCode"/> for this instance.
+            </summary>
+            <returns>The enumerated constant <see cref="F:System.TypeCode.Byte"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToBoolean(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent Boolean value.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns><see langword="true"/> if the value is not zero; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToByte(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 8-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>An 8-bit unsigned integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToChar(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent Unicode character.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A Unicode cha
+            racter equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToDateTime(System.IFormatProvider)">
+            <summary>
+            This conversion is not supported. Calling this method always throws <see cref="T:System.InvalidCastException"/>.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>This conversion is not supported. No value is returned.</returns>
+            <exception cref="T:System.InvalidCastException">Always thrown as this conversion is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToDecimal(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent <see cref="T:System.Decimal"/> number.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A <see cref="T:System.Decimal"/> number equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToDouble(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent double-precision floating-point number.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A double-precision floating-point number equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToInt16(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 16-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 16-bit signed integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToInt32(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 32-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 32-bit signed integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToInt64(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 64-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 64-bit signed integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToSByte(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 8-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>An 8-bit signed integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToSingle(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent single-precision floating-point number.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A single-precision floating-point number equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToString(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to its equivalent string representation.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>The string representation of the value of this instance without "%" suffix.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToUInt16(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 16-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 16-bit unsigned integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToUInt32(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 32-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 32-bit unsigned integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToUInt64(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 64-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 64-bit unsigned integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToType(System.Type,System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an <see cref="T:System.Object"/> of the specified <see cref="T:System.Type"/> 
+            that has an equivalent value, using the specified culture-specific formatting information.
+            </summary>
+            <param name="targetType">The <see cref="T:System.Type"/> to which the value of this instance is converted.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>An <see cref="T:System.Object"/> instance of type <paramref name="targetType"/> whose value is equivalent to the value of this instance.</returns>
+            <remarks>
+            <para>
+            This method supports conversion to the following types:
+            <list type="bullet">
+            <item><description><see cref="T:System.UInt16"/>, <see cref="T:System.UInt32"/>, <see cref="T:System.UInt64"/> - Returns the byte value as unsigned integer</description></item>
+            <item><description><see cref="T:System.Int16"/>, <see cref="T:System.Int32"/>, <see cref="T:System.Int64"/> - Returns the byte value as signed integer</description></item>
+            <item><description><see cref="T:System.Byte"/>, <see cref="T:System.SByte"/> - Returns the byte value</description></item>
+            <item><description><see cref="T:System.Single"/>, <see cref="T:System.Double"/>, <see cref="T:System.Decimal"/> - Returns the byte value as floating-point</description></item>
+            <item><description><see cref="T:System.String"/> - Returns the string representation with "%" suffix</description></item>
+            <item><description><see cref="T:DocumentModel.HexPercent"/> - Returns a new HexPercent instance</description></item>
+            </list>
+            </para>
+            </remarks>
+            <exception cref="T:System.InvalidCastException">
+            This conversion is not supported for the specified <paramref name="targetType"/>.
+            </exception>
+        </member>
+        <member name="M:DocumentModel.HexPercent.op_Implicit(System.String)~DocumentModel.HexPercent">
+            <summary>
+            Implicitly converts a string to a <see cref="T:DocumentModel.HexPercent"/> value.
+            </summary>
+            <param name="val">The string to convert. Can optionally include "%" suffix.</param>
+            <returns>A new HexPercent instance parsed from the string.</returns>
+            <exception cref="T:System.FormatException">Thrown when the string cannot be parsed as a valid byte value.</exception>
+        </member>
+        <member name="M:DocumentModel.HexPercent.op_Implicit(DocumentModel.HexPercent)~System.UInt16">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.HexPercent"/> value to a 16-bit unsigned integer.
+            </summary>
+            <param name="val">The HexPercent value to convert.</param>
+            <returns>The underlying byte value cast to UInt16.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.op_Implicit(DocumentModel.HexPercent)~System.UInt32">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.HexPercent"/> value to a 32-bit unsigned integer.
+            </summary>
+            <param name="val">The HexPercent value to convert.</param>
+            <returns>The underlying byte value cast to UInt32.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.op_Implicit(DocumentModel.HexPercent)~System.Int32">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.HexPercent"/> value to a 32-bit signed integer.
+            </summary>
+            <param name="val">The HexPercent value to convert.</param>
+            <returns>The underlying byte value cast to Int32.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.op_Implicit(DocumentModel.HexPercent)~System.UInt64">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.HexPercent"/> value to a 64-bit unsigned integer.
+            </summary>
+            <param name="val">The HexPercent value to convert.</param>
+            <returns>The underlying byte value cast to UInt64.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.op_Implicit(System.UInt16)~DocumentModel.HexPercent">
+            <summary>
+            Implicitly converts a 16-bit unsigned integer to a <see cref="T:DocumentModel.HexPercent"/> value.
+            </summary>
+            <param name="val">The unsigned integer value to convert.</param>
+            <returns>A new HexPercent instance with the converted value.</returns>
+            <remarks>Values greater than 255 will overflow when cast to byte.</remarks>
+        </member>
+        <member name="M:DocumentModel.HexPercent.op_Implicit(System.UInt32)~DocumentModel.HexPercent">
+            <summary>
+            Implicitly converts a 32-bit unsigned integer to a <see cref="T:DocumentModel.HexPercent"/> value.
+            </summary>
+            <param name="val">The unsigned integer value to convert.</param>
+            <returns>A new HexPercent instance with the converted value.</returns>
+            <remarks>Values greater than 255 will overflow when cast to byte.</remarks>
+        </member>
+        <member name="M:DocumentModel.HexPercent.op_Implicit(System.Int32)~DocumentModel.HexPercent">
+            <summary>
+            Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.HexPercent"/> value.
+            </summary>
+            <param name="val">The signed integer value to convert.</param>
+            <returns>A new HexPercent instance with the converted value.</returns>
+            <remarks>Values less than 0 or greater than 255 will overflow when cast to byte.</remarks>
+        </member>
+        <member name="M:DocumentModel.HexPercent.op_Implicit(System.UInt64)~DocumentModel.HexPercent">
+            <summary>
+            Implicitly converts a 64-bit unsigned integer to a <see cref="T:DocumentModel.HexPercent"/> value.
+            </summary>
+            <param name="val">The unsigned long value to convert.</param>
+            <returns>A new HexPercent instance with the converted value.</returns>
+            <remarks>Values greater than 255 will overflow when cast to byte.</remarks>
+        </member>
+        <member name="M:DocumentModel.HexPercent.op_Implicit(DocumentModel.HexPercent)~DocumentModel.HexBinary">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.HexPercent"/> value to a <see cref="T:DocumentModel.HexBinary"/> value.
+            </summary>
+            <param name="value">The HexPercent value to convert.</param>
+            <returns>A new HexBinary instance created from the string representation of the HexPercent value.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.op_Implicit(DocumentModel.HexBinary)~DocumentModel.HexPercent">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.HexBinary"/> value to a <see cref="T:DocumentModel.HexPercent"/> value.
+            </summary>
+            <param name="value">The HexBinary value to convert.</param>
+            <returns>A new HexPercent instance parsed from the HexBinary string representation.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.Parse(System.String)">
+            <summary>
+            Parses a string representation of a percentage and returns a corresponding HexPercent instance.
+            </summary>
+            <param name="str">The string containing the percentage to parse. The string should be in a format recognized by the Percent type,
+            such as "50%" or "0.5".</param>
+            <returns>A Percent instance that represents the value specified by the input string.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.TryParse(System.String,DocumentModel.HexPercent@)">
+            <summary>
+            Attempts to parse a string representation of a percentage into a <see cref="T:DocumentModel.HexPercent"/> instance.
+            </summary>
+            <param name="str">The string representation of the percentage.</param>
+            <param name="result">The resulting <see cref="T:DocumentModel.Percent"/> instance if parsing is successful.</param>
+            <returns><see langword="true"/> if parsing succeeded; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToString">
+            <summary>
+            Converts the value of this instance to its equivalent string representation with "%" suffix.
+            </summary>
+            <returns>A string representation of the percentage value (e.g., "50%").</returns>
+            <remarks>
+            The returned string includes the "%" suffix to clearly indicate the value is a percentage.
+            For string output without the suffix, use <see cref="M:DocumentModel.HexPercent.ToString(System.IFormatProvider)"/>.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToString(System.String)">
+            <summary>
+            Converts value to string using unit.
+            Unit can be determined as "%" suffix or null.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToString(System.Int32,System.String)">
+            <summary>
+            Converts value to string using unit and specific precision (fractional digits count).
+            Unit can be determined as "%" suffix or null.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToString(System.Int32,System.IFormatProvider,System.String)">
+            <summary>
+            Converts value to string using unit, specific precision (fractional digits count),
+            and format provider to determine digits separator.
+            Fixed format is used.
+            Unit can be determined as "%" suffix or null.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToString(System.IFormatProvider,System.String)">
+            <summary>
+            Converts value to string using unit
+            and format provider to determine digits separator.
+            Unit can be determined as "%" suffix or null.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.HexPercent.FromHexString(System.String)">
+            <summary>
+            Creates a new HexPercent instance from a hexadecimal string representation.
+            </summary>
+            <remarks>The input string is interpreted as a hexadecimal byte and mapped to a percentage value in the
+            range 0 to 100. The method rounds the result to the nearest integer percentage.</remarks>
+            <param name="str">A string containing a hexadecimal value to convert. The string must represent a value between 0x00 and 0xFF.</param>
+            <returns>A HexPercent instance corresponding to the percentage value derived from the specified hexadecimal string.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.ToHexString">
+            <summary>
+            Converts the value of this instance to its equivalent hexadecimal string representation.
+            </summary>
+            <returns>A string representation of the hexadecimal value (e.g., "32").</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.Equals(DocumentModel.HexPercent)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.CompareTo(DocumentModel.HexPercent)">
+            <summary>
+            Compares the current instance with another object of the same type and returns an integer that indicates 
+            whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
+            </summary>
+            <param name="other">An object to compare with this instance.</param>
+            <returns>
+            A value that indicates the relative order of the objects being compared:
+            <list type="bullet">
+            <item><description>Less than zero: This instance precedes <paramref name="other"/> in the sort order.</description></item>
+            <item><description>Zero: This instance occurs in the same position in the sort order as <paramref name="other"/>.</description></item>
+            <item><description>Greater than zero: This instance follows <paramref name="other"/> in the sort order.</description></item>
+            </list>
+            </returns>
+        </member>
+        <member name="M:DocumentModel.HexPercent.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>A 32-bit signed integer hash code.</returns>
         </member>
         <member name="T:DocumentModel.HPS">
             <summary>
@@ -5421,7 +6242,7 @@
             <summary>
             Initializes a new instance of the <see cref="T:DocumentModel.Percent"/> struct from a string value.
             </summary>
-            <param name="val">The string value to parse. Can include an optional "%" suffix and uses invariant culture for parsing.</param>
+            <param name="str">The string value to parse. Can include an optional "%" suffix and uses invariant culture for parsing.</param>
             <remarks>
             Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.
             </remarks>
@@ -5761,6 +6582,427 @@
             </summary>
             <returns>A 32-bit signed integer hash code.</returns>
         </member>
+        <member name="T:DocumentModel.Percentage">
+            <summary>
+            Represents a Percentage value stored as a double-precision floating-point number.
+            Supports implicit conversions to/from numeric types and string representations with optional "%" suffix.
+            When converted to/from integers, the value is treated as a whole number counted in 1/100000.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.Percentage.System#Xml#Serialization#IXmlSerializable#GetSchema">
+            <summary>
+            This method is reserved and should not be used. Returns null as no schema is required.
+            </summary>
+            <returns>Always returns null.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Deserializes the <see cref="T:DocumentModel.Percentage"/> value from XML.
+            Accepts both plain numeric values and values with a trailing PerHundredThousand sign (%).
+            </summary>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> to read from.</param>
+            <remarks>
+            The method handles the following formats:
+            <list type="bullet">
+            <item><description>Plain numeric values (e.g., "50")</description></item>
+            <item><description>Values with PerHundredThousand sign (e.g., "50%")</description></item>
+            <item><description>Empty elements</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.Percentage.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Serializes the <see cref="T:DocumentModel.Percentage"/> value to XML.
+            </summary>
+            <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> to write to.</param>
+            <remarks>
+            The value is written using the default string representation of the <see cref="T:DocumentModel.Percentage"/> structure.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.Percentage.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Percentage"/> struct from a string value.
+            </summary>
+            <param name="str">The string value to parse. Can include an optional "%" suffix and uses invariant culture for parsing.</param>
+            <remarks>
+            Commas in the input string are replaced with periods before parsing to ensure double separator consistency.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.Percentage.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Percentage"/> struct from an int value.
+            </summary>
+            <param name="value">The int value representing the Percentage.</param>
+        </member>
+        <member name="M:DocumentModel.Percentage.#ctor(System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Percentage"/> struct from an Int64 value.
+            </summary>
+            <param name="value">The int value representing the Percentage.</param>
+        </member>
+        <member name="M:DocumentModel.Percentage.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Percentage"/> struct from a double value.
+            </summary>
+            <param name="value">The double value representing the Percentage.</param>
+        </member>
+        <member name="M:DocumentModel.Percentage.#ctor(System.Decimal)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Percentage"/> struct from a decimal value.
+            </summary>
+            <param name="value">The double value representing the Percentage.</param>
+        </member>
+        <member name="M:DocumentModel.Percentage.#ctor(System.UInt64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Percentage"/> struct from an UInt64 value.
+            </summary>
+            <param name="value">The UInt64 value representing the Percentage.</param>
+        </member>
+        <member name="M:DocumentModel.Percentage.FromHexString(System.String)">
+            <summary>
+            Creates a <see cref="T:DocumentModel.Percentage"/> instance from a string representation.
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.GetTypeCode">
+            <summary>
+            Returns the <see cref="T:System.TypeCode"/> for this instance.
+            </summary>
+            <returns>The type code of the underlying value.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToBoolean(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent Boolean value.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns><see langword="true"/> if value is not zero; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToByte(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 8-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>An 8-bit unsigned integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToChar(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent Unicode character.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A Unicode character equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToDateTime(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent <see cref="T:System.DateTime"/>.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A <see cref="T:System.DateTime"/> equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToDecimal(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent <see cref="T:System.Decimal"/> number.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A <see cref="T:System.Decimal"/> number equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToDouble(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent double-precision floating-point number.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A double-precision floating-point number equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToInt16(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 16-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 16-bit signed integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToInt32(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 32-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 32-bit signed integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToInt64(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 64-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 64-bit signed integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToSByte(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 8-bit signed integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>An 8-bit signed integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToSingle(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent single-precision floating-point number.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A single-precision floating-point number equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToString(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to its equivalent string representation using the specified format provider.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>The string representation of the value of this instance as specified by the provider.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToUInt16(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 16-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 16-bit unsigned integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToUInt32(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 32-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 32-bit unsigned integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToUInt64(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent 64-bit unsigned integer.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>A 64-bit unsigned integer equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToType(System.Type,System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an <see cref="T:System.Object"/> of the specified <see cref="T:System.Type"/> 
+            that has an equivalent value, using the specified culture-specific formatting information.
+            </summary>
+            <param name="targetType">The <see cref="T:System.Type"/> to which the value of this instance is converted.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
+            <returns>An <see cref="T:System.Object"/> instance of type <paramref name="targetType"/> whose value is equivalent to the value of this instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.op_Implicit(System.String)~DocumentModel.Percentage">
+            <summary>
+            Implicitly converts a string to a <see cref="T:DocumentModel.Percentage"/> value.
+            </summary>
+            <param name="val">The string to convert.</param>
+            <returns>A <see cref="T:DocumentModel.Percentage"/> value parsed from the string.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.op_Implicit(DocumentModel.Percentage)~System.UInt16">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.Percentage"/> value to a 16-bit unsigned integer.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.Percentage"/> value to convert.</param>
+            <returns>A 16-bit unsigned integer representation of the Percentage value.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.op_Implicit(DocumentModel.Percentage)~System.UInt32">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.Percentage"/> value to a 32-bit unsigned integer.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.Percentage"/> value to convert.</param>
+            <returns>A 32-bit unsigned integer representation of the Percentage value.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.op_Implicit(DocumentModel.Percentage)~System.Int32">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.Percentage"/> value to a 32-bit signed integer.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.Percentage"/> value to convert.</param>
+            <returns>A 32-bit signed integer representation of the Percentage value.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.op_Implicit(DocumentModel.Percentage)~System.Int64">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.Percentage"/> value to a 64-bit signed integer.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.Percentage"/> value to convert.</param>
+            <returns>A 64-bit signed integer representation of the Percentage value.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.op_Implicit(DocumentModel.Percentage)~System.UInt64">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.Percentage"/> value to a 64-bit unsigned integer.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.Percentage"/> value to convert.</param>
+            <returns>A 64-bit unsigned integer representation of the Percentage value.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.op_Implicit(DocumentModel.Percentage)~System.Decimal">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.Percentage"/> value to a decimal value.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.Percentage"/> value to convert.</param>
+            <returns>A double representation of the Percentage value.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.op_Implicit(DocumentModel.Percentage)~System.Double">
+            <summary>
+            Implicitly converts a <see cref="T:DocumentModel.Percentage"/> value to a double value.
+            </summary>
+            <param name="val">The <see cref="T:DocumentModel.Percentage"/> value to convert.</param>
+            <returns>A double representation of the Percentage value.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.op_Implicit(System.UInt16)~DocumentModel.Percentage">
+            <summary>
+            Implicitly converts a 16-bit unsigned integer to a <see cref="T:DocumentModel.Percentage"/> value.
+            </summary>
+            <param name="val">The 16-bit unsigned integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.Percentage"/>Percentage instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.op_Implicit(System.Double)~DocumentModel.Percentage">
+            <summary>
+            Implicitly converts a 32-bit unsigned integer to a <see cref="T:DocumentModel.Percentage"/> value.
+            </summary>
+            <param name="val">The 32-bit unsigned integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.Percentage"/>Percentage instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.op_Implicit(System.Int32)~DocumentModel.Percentage">
+            <summary>
+            Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.Percentage"/> value.
+            </summary>
+            <param name="val">The 32-bit signed integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.Percentage"/>Percentage instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.op_Implicit(System.UInt64)~DocumentModel.Percentage">
+            <summary>
+            Implicitly converts a 64-bit unsigned integer to a <see cref="T:DocumentModel.Percentage"/> value.
+            </summary>
+            <param name="val">The 64-bit unsigned integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.Percentage"/>Percentage instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.Parse(System.String)">
+            <summary>
+            Parses a string representation of a Percentage and returns a corresponding Percentage instance.
+            </summary>
+            <param name="str">The string containing the Percentage to parse. The string should be in a format recognized by the Percentage type,
+            such as "50%" or "0.5".</param>
+            <returns>A Percentage instance that represents the value specified by the input string.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.TryParse(System.String,DocumentModel.Percentage@)">
+            <summary>
+            Attempts to parse a string representation of a Percentage into a <see cref="T:DocumentModel.Percentage"/> instance.
+            </summary>
+            <param name="str">The string representation of the Percentage.</param>
+            <param name="result">The resulting <see cref="T:DocumentModel.Percentage"/> instance if parsing is successful.</param>
+            <returns><see langword="true"/> if parsing succeeded; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToString">
+            <summary>
+            Converts the value of this instance to its equivalent string representation with a "%" suffix.
+            </summary>
+            <returns>The string representation of the value with a "%" suffix, using invariant culture formatting.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToString(System.String)">
+            <summary>
+            Converts value to string using the specified unit.
+            </summary>
+            <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
+            <returns>The string representation of the value with the specified unit suffix.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToString(System.Int32,System.String)">
+            <summary>
+            Converts value to string using the specified unit and precision (fractional digits count).
+            </summary>
+            <param name="precision">The number of fractional digits in the return value.</param>
+            <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
+            <returns>The string representation of the value with the specified precision and unit suffix.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToString(System.Int32,System.IFormatProvider,System.String)">
+            <summary>
+            Converts value to string using the specified unit, precision (fractional digits count),
+            and format provider to determine digit separator. Fixed format is used.
+            </summary>
+            <param name="precision">The number of fractional digits in the return value.</param>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
+            <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
+            <returns>The string representation of the value with the specified precision, format provider, and unit suffix.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.ToString(System.IFormatProvider,System.String)">
+            <summary>
+            Converts value to string using the specified unit and format provider to determine digit separator.
+            </summary>
+            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
+            <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
+            <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.Equals(DocumentModel.Percentage)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.CompareTo(DocumentModel.Percentage)">
+            <summary>
+            Compares this instance to a specified <see cref="T:DocumentModel.Percentage"/> object and returns an indication of their relative values.
+            </summary>
+            <param name="other">A <see cref="T:DocumentModel.Percentage"/> object to compare.</param>
+            <returns>
+            A signed number indicating the relative values of this instance and <paramref name="other"/>.
+            Less than zero if this instance is less than <paramref name="other"/>;
+            zero if this instance equals <paramref name="other"/>;
+            greater than zero if this instance is greater than <paramref name="other"/>.
+            </returns>
+        </member>
+        <member name="M:DocumentModel.Percentage.CompareTo(System.Object)">
+            <summary>
+            Compares this instance to a specified object and returns an indication of their relative values.
+            </summary>
+            <param name="other">Any object to compare.</param>
+            <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when the comparison is invalid.</exception>
+        </member>
+        <member name="M:DocumentModel.Percentage.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>A 32-bit signed integer hash code.</returns>
+        </member>
+        <member name="T:DocumentModel.PercentageJsonConverter">
+            <summary>
+            Provides JSON serialization and deserialization support for the <see cref="T:DocumentModel.Percentage"/> structure.
+            </summary>
+            <remarks>
+            This converter handles both string and numeric JSON tokens for deserialization,
+            and writes PerHundredThousandage values as strings with a "%" suffix following Office Open XML conventions.
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.PercentageJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Reads and converts JSON to a <see cref="T:DocumentModel.Percentage"/> value.
+            </summary>
+            <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader"/> to read from.</param>
+            <param name="typeToConvert">The type to convert.</param>
+            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
+            <returns>A <see cref="T:DocumentModel.Percentage"/> value parsed from the JSON input.</returns>
+            <exception cref="T:System.Text.Json.JsonException">
+            Thrown when:
+            <list type="bullet">
+            <item><description>The JSON token is a string but contains a null value.</description></item>
+            <item><description>The string value cannot be parsed as a valid PerHundredThousandage (must be a number with optional '%' suffix).</description></item>
+            <item><description>The JSON token is a number but cannot be converted to a double or integer.</description></item>
+            <item><description>The JSON token is neither a string nor a number.</description></item>
+            </list>
+            </exception>
+            <remarks>
+            Accepts the following input formats:
+            <list type="bullet">
+            <item><description>String tokens with numeric values (e.g., "50" or "50%")</description></item>
+            <item><description>Numeric tokens as double or integer values</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:DocumentModel.PercentageJsonConverter.Write(System.Text.Json.Utf8JsonWriter,DocumentModel.Percentage,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Writes a <see cref="T:DocumentModel.Percentage"/> value as JSON.
+            </summary>
+            <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter"/> to write to.</param>
+            <param name="value">The <see cref="T:DocumentModel.Percentage"/> value to serialize.</param>
+            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
+            <remarks>
+            Writes the PerHundredThousandage value as a string with a "%" suffix, following Office Open XML conventions.
+            For example, a value of 50 is written as "50%".
+            </remarks>
+        </member>
         <member name="T:DocumentModel.PercentJsonConverter">
             <summary>
             Provides JSON serialization and deserialization support for the <see cref="T:DocumentModel.Percent"/> structure.
@@ -5804,427 +7046,6 @@
             <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
             <remarks>
             Writes the percentage value as a string with a "%" suffix, following Office Open XML conventions.
-            For example, a value of 50 is written as "50%".
-            </remarks>
-        </member>
-        <member name="T:DocumentModel.PerHundredThousand">
-            <summary>
-            Represents a PerHundredThousand value stored as a double-precision floating-point number.
-            Supports implicit conversions to/from numeric types and string representations with optional "%" suffix.
-            When converted to/from integers, the value is treated as a whole number (e.g., 50000 represents 50%).
-            </summary>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.System#Xml#Serialization#IXmlSerializable#GetSchema">
-            <summary>
-            This method is reserved and should not be used. Returns null as no schema is required.
-            </summary>
-            <returns>Always returns null.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
-            <summary>
-            Deserializes the <see cref="T:DocumentModel.PerHundredThousand"/> value from XML.
-            Accepts both plain numeric values and values with a trailing PerHundredThousand sign (%).
-            </summary>
-            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> to read from.</param>
-            <remarks>
-            The method handles the following formats:
-            <list type="bullet">
-            <item><description>Plain numeric values (e.g., "50")</description></item>
-            <item><description>Values with PerHundredThousand sign (e.g., "50%")</description></item>
-            <item><description>Empty elements</description></item>
-            </list>
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
-            <summary>
-            Serializes the <see cref="T:DocumentModel.PerHundredThousand"/> value to XML.
-            </summary>
-            <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> to write to.</param>
-            <remarks>
-            The value is written using the default string representation of the <see cref="T:DocumentModel.PerHundredThousand"/> structure.
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.PerHundredThousand"/> struct from a string value.
-            </summary>
-            <param name="str">The string value to parse. Can include an optional "%" suffix and uses invariant culture for parsing.</param>
-            <remarks>
-            Commas in the input string are replaced with periods before parsing to ensure double separator consistency.
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.#ctor(System.Int32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.PerHundredThousand"/> struct from an int value.
-            </summary>
-            <param name="value">The int value representing the PerHundredThousand.</param>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.#ctor(System.Int64)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.PerHundredThousand"/> struct from an Int64 value.
-            </summary>
-            <param name="value">The int value representing the PerHundredThousand.</param>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.#ctor(System.Double)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.PerHundredThousand"/> struct from a double value.
-            </summary>
-            <param name="value">The double value representing the PerHundredThousand.</param>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.#ctor(System.Decimal)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.PerHundredThousand"/> struct from a decimal value.
-            </summary>
-            <param name="value">The double value representing the PerHundredThousand.</param>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.#ctor(System.UInt64)">
-            <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.PerHundredThousand"/> struct from an UInt64 value.
-            </summary>
-            <param name="value">The UInt64 value representing the PerHundredThousand.</param>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.FromHexString(System.String)">
-            <summary>
-            Creates a <see cref="T:DocumentModel.PerHundredThousand"/> instance from a string representation.
-            </summary>
-            <param name="str"></param>
-            <returns></returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.GetTypeCode">
-            <summary>
-            Returns the <see cref="T:System.TypeCode"/> for this instance.
-            </summary>
-            <returns>The type code of the underlying value.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToBoolean(System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to an equivalent Boolean value.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns><see langword="true"/> if value is not zero; otherwise, <see langword="false"/>.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToByte(System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to an equivalent 8-bit unsigned integer.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>An 8-bit unsigned integer equivalent to the value of this instance.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToChar(System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to an equivalent Unicode character.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>A Unicode character equivalent to the value of this instance.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToDateTime(System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to an equivalent <see cref="T:System.DateTime"/>.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>A <see cref="T:System.DateTime"/> equivalent to the value of this instance.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToDecimal(System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to an equivalent <see cref="T:System.Decimal"/> number.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>A <see cref="T:System.Decimal"/> number equivalent to the value of this instance.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToDouble(System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to an equivalent double-precision floating-point number.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>A double-precision floating-point number equivalent to the value of this instance.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToInt16(System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to an equivalent 16-bit signed integer.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>A 16-bit signed integer equivalent to the value of this instance.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToInt32(System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to an equivalent 32-bit signed integer.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>A 32-bit signed integer equivalent to the value of this instance.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToInt64(System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to an equivalent 64-bit signed integer.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>A 64-bit signed integer equivalent to the value of this instance.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToSByte(System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to an equivalent 8-bit signed integer.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>An 8-bit signed integer equivalent to the value of this instance.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToSingle(System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to an equivalent single-precision floating-point number.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>A single-precision floating-point number equivalent to the value of this instance.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToString(System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to its equivalent string representation using the specified format provider.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>The string representation of the value of this instance as specified by the provider.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToUInt16(System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to an equivalent 16-bit unsigned integer.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>A 16-bit unsigned integer equivalent to the value of this instance.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToUInt32(System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to an equivalent 32-bit unsigned integer.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>A 32-bit unsigned integer equivalent to the value of this instance.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToUInt64(System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to an equivalent 64-bit unsigned integer.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>A 64-bit unsigned integer equivalent to the value of this instance.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToType(System.Type,System.IFormatProvider)">
-            <summary>
-            Converts the value of this instance to an <see cref="T:System.Object"/> of the specified <see cref="T:System.Type"/> 
-            that has an equivalent value, using the specified culture-specific formatting information.
-            </summary>
-            <param name="targetType">The <see cref="T:System.Type"/> to which the value of this instance is converted.</param>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> interface implementation that supplies culture-specific formatting information.</param>
-            <returns>An <see cref="T:System.Object"/> instance of type <paramref name="targetType"/> whose value is equivalent to the value of this instance.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(System.String)~DocumentModel.PerHundredThousand">
-            <summary>
-            Implicitly converts a string to a <see cref="T:DocumentModel.PerHundredThousand"/> value.
-            </summary>
-            <param name="val">The string to convert.</param>
-            <returns>A <see cref="T:DocumentModel.PerHundredThousand"/> value parsed from the string.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(DocumentModel.PerHundredThousand)~System.UInt16">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.PerHundredThousand"/> value to a 16-bit unsigned integer.
-            </summary>
-            <param name="val">The <see cref="T:DocumentModel.PerHundredThousand"/> value to convert.</param>
-            <returns>A 16-bit unsigned integer representation of the PerHundredThousand value.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(DocumentModel.PerHundredThousand)~System.UInt32">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.PerHundredThousand"/> value to a 32-bit unsigned integer.
-            </summary>
-            <param name="val">The <see cref="T:DocumentModel.PerHundredThousand"/> value to convert.</param>
-            <returns>A 32-bit unsigned integer representation of the PerHundredThousand value.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(DocumentModel.PerHundredThousand)~System.Int32">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.PerHundredThousand"/> value to a 32-bit signed integer.
-            </summary>
-            <param name="val">The <see cref="T:DocumentModel.PerHundredThousand"/> value to convert.</param>
-            <returns>A 32-bit signed integer representation of the PerHundredThousand value.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(DocumentModel.PerHundredThousand)~System.Int64">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.PerHundredThousand"/> value to a 64-bit signed integer.
-            </summary>
-            <param name="val">The <see cref="T:DocumentModel.PerHundredThousand"/> value to convert.</param>
-            <returns>A 64-bit signed integer representation of the PerHundredThousand value.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(DocumentModel.PerHundredThousand)~System.UInt64">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.PerHundredThousand"/> value to a 64-bit unsigned integer.
-            </summary>
-            <param name="val">The <see cref="T:DocumentModel.PerHundredThousand"/> value to convert.</param>
-            <returns>A 64-bit unsigned integer representation of the PerHundredThousand value.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(DocumentModel.PerHundredThousand)~System.Decimal">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.PerHundredThousand"/> value to a decimal value.
-            </summary>
-            <param name="val">The <see cref="T:DocumentModel.PerHundredThousand"/> value to convert.</param>
-            <returns>A double representation of the PerHundredThousand value.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(DocumentModel.PerHundredThousand)~System.Double">
-            <summary>
-            Implicitly converts a <see cref="T:DocumentModel.PerHundredThousand"/> value to a double value.
-            </summary>
-            <param name="val">The <see cref="T:DocumentModel.PerHundredThousand"/> value to convert.</param>
-            <returns>A double representation of the PerHundredThousand value.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(System.UInt16)~DocumentModel.PerHundredThousand">
-            <summary>
-            Implicitly converts a 16-bit unsigned integer to a <see cref="T:DocumentModel.PerHundredThousand"/> value.
-            </summary>
-            <param name="val">The 16-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.PerHundredThousand"/>PerHundredThousand instance.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(System.Double)~DocumentModel.PerHundredThousand">
-            <summary>
-            Implicitly converts a 32-bit unsigned integer to a <see cref="T:DocumentModel.PerHundredThousand"/> value.
-            </summary>
-            <param name="val">The 32-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.PerHundredThousand"/>PerHundredThousand instance.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(System.Int32)~DocumentModel.PerHundredThousand">
-            <summary>
-            Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.PerHundredThousand"/> value.
-            </summary>
-            <param name="val">The 32-bit signed integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.PerHundredThousand"/>PerHundredThousand instance.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.op_Implicit(System.UInt64)~DocumentModel.PerHundredThousand">
-            <summary>
-            Implicitly converts a 64-bit unsigned integer to a <see cref="T:DocumentModel.PerHundredThousand"/> value.
-            </summary>
-            <param name="val">The 64-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.PerHundredThousand"/>PerHundredThousand instance.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.Parse(System.String)">
-            <summary>
-            Parses a string representation of a PerHundredThousand and returns a corresponding PerHundredThousand instance.
-            </summary>
-            <param name="str">The string containing the PerHundredThousand to parse. The string should be in a format recognized by the PerHundredThousand type,
-            such as "50%" or "0.5".</param>
-            <returns>A PerHundredThousand instance that represents the value specified by the input string.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.TryParse(System.String,DocumentModel.PerHundredThousand@)">
-            <summary>
-            Attempts to parse a string representation of a PerHundredThousand into a <see cref="T:DocumentModel.PerHundredThousand"/> instance.
-            </summary>
-            <param name="str">The string representation of the PerHundredThousand.</param>
-            <param name="result">The resulting <see cref="T:DocumentModel.PerHundredThousand"/> instance if parsing is successful.</param>
-            <returns><see langword="true"/> if parsing succeeded; otherwise, <see langword="false"/>.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToString">
-            <summary>
-            Converts the value of this instance to its equivalent string representation with a "%" suffix.
-            </summary>
-            <returns>The string representation of the value with a "%" suffix, using invariant culture formatting.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToString(System.String)">
-            <summary>
-            Converts value to string using the specified unit.
-            </summary>
-            <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified unit suffix.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToString(System.Int32,System.String)">
-            <summary>
-            Converts value to string using the specified unit and precision (fractional digits count).
-            </summary>
-            <param name="precision">The number of fractional digits in the return value.</param>
-            <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified precision and unit suffix.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToString(System.Int32,System.IFormatProvider,System.String)">
-            <summary>
-            Converts value to string using the specified unit, precision (fractional digits count),
-            and format provider to determine digit separator. Fixed format is used.
-            </summary>
-            <param name="precision">The number of fractional digits in the return value.</param>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
-            <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified precision, format provider, and unit suffix.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.ToString(System.IFormatProvider,System.String)">
-            <summary>
-            Converts value to string using the specified unit and format provider to determine digit separator.
-            </summary>
-            <param name="provider">An <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.</param>
-            <param name="unit">The unit suffix (e.g., "%") to append to the value, or <see langword="null"/> for no suffix.</param>
-            <returns>The string representation of the value with the specified format provider and unit suffix.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.Equals(DocumentModel.PerHundredThousand)">
-            <summary>
-            Indicates whether the current object is equal to another object of the same type.
-            </summary>
-            <param name="other">An object to compare with this object.</param>
-            <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.CompareTo(DocumentModel.PerHundredThousand)">
-            <summary>
-            Compares this instance to a specified <see cref="T:DocumentModel.PerHundredThousand"/> object and returns an indication of their relative values.
-            </summary>
-            <param name="other">A <see cref="T:DocumentModel.PerHundredThousand"/> object to compare.</param>
-            <returns>
-            A signed number indicating the relative values of this instance and <paramref name="other"/>.
-            Less than zero if this instance is less than <paramref name="other"/>;
-            zero if this instance equals <paramref name="other"/>;
-            greater than zero if this instance is greater than <paramref name="other"/>.
-            </returns>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.CompareTo(System.Object)">
-            <summary>
-            Compares this instance to a specified object and returns an indication of their relative values.
-            </summary>
-            <param name="other">Any object to compare.</param>
-            <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
-            <exception cref="T:System.ArgumentException">Thrown when the comparison is invalid.</exception>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousand.GetHashCode">
-            <summary>
-            Returns the hash code for this instance.
-            </summary>
-            <returns>A 32-bit signed integer hash code.</returns>
-        </member>
-        <member name="T:DocumentModel.PerHundredThousandJsonConverter">
-            <summary>
-            Provides JSON serialization and deserialization support for the <see cref="T:DocumentModel.PerHundredThousand"/> structure.
-            </summary>
-            <remarks>
-            This converter handles both string and numeric JSON tokens for deserialization,
-            and writes PerHundredThousandage values as strings with a "%" suffix following Office Open XML conventions.
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousandJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
-            <summary>
-            Reads and converts JSON to a <see cref="T:DocumentModel.PerHundredThousand"/> value.
-            </summary>
-            <param name="reader">The <see cref="T:System.Text.Json.Utf8JsonReader"/> to read from.</param>
-            <param name="typeToConvert">The type to convert.</param>
-            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
-            <returns>A <see cref="T:DocumentModel.PerHundredThousand"/> value parsed from the JSON input.</returns>
-            <exception cref="T:System.Text.Json.JsonException">
-            Thrown when:
-            <list type="bullet">
-            <item><description>The JSON token is a string but contains a null value.</description></item>
-            <item><description>The string value cannot be parsed as a valid PerHundredThousandage (must be a number with optional '%' suffix).</description></item>
-            <item><description>The JSON token is a number but cannot be converted to a double or integer.</description></item>
-            <item><description>The JSON token is neither a string nor a number.</description></item>
-            </list>
-            </exception>
-            <remarks>
-            Accepts the following input formats:
-            <list type="bullet">
-            <item><description>String tokens with numeric values (e.g., "50" or "50%")</description></item>
-            <item><description>Numeric tokens as double or integer values</description></item>
-            </list>
-            </remarks>
-        </member>
-        <member name="M:DocumentModel.PerHundredThousandJsonConverter.Write(System.Text.Json.Utf8JsonWriter,DocumentModel.PerHundredThousand,System.Text.Json.JsonSerializerOptions)">
-            <summary>
-            Writes a <see cref="T:DocumentModel.PerHundredThousand"/> value as JSON.
-            </summary>
-            <param name="writer">The <see cref="T:System.Text.Json.Utf8JsonWriter"/> to write to.</param>
-            <param name="value">The <see cref="T:DocumentModel.PerHundredThousand"/> value to serialize.</param>
-            <param name="options">The <see cref="T:System.Text.Json.JsonSerializerOptions"/> to use.</param>
-            <remarks>
-            Writes the PerHundredThousandage value as a string with a "%" suffix, following Office Open XML conventions.
             For example, a value of 50 is written as "50%".
             </remarks>
         </member>

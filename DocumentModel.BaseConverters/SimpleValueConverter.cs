@@ -48,7 +48,10 @@ public static class SimpleValueConverter
     { typeof(EMU), typeof(EMUConverter) },
     { typeof(EPS), typeof(EPSConverter) },
     { typeof(HPS), typeof(HPSConverter) },
-    { typeof(PTS), typeof(PTSConverter) }
+    { typeof(PTS), typeof(PTSConverter) },
+    { typeof(Degrees), typeof(DegreesConverter) },
+    { typeof(Percentage), typeof(PercentageConverter) },
+
   };
 
   /// <summary>

@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel;
 
-public partial struct BytePercent : IXmlSerializable
+public partial struct Percentage : IXmlSerializable
 {
 
 
@@ -11,15 +11,15 @@ public partial struct BytePercent : IXmlSerializable
   XmlSchema? IXmlSerializable.GetSchema() => null;
 
   /// <summary>
-  /// Deserializes the <see cref="BytePercent"/> value from XML.
-  /// Accepts both plain numeric values and values with a trailing percent sign (%).
+  /// Deserializes the <see cref="Percentage"/> value from XML.
+  /// Accepts both plain numeric values and values with a trailing PerHundredThousand sign (%).
   /// </summary>
   /// <param name="reader">The <see cref="XmlReader"/> to read from.</param>
   /// <remarks>
   /// The method handles the following formats:
   /// <list type="bullet">
   /// <item><description>Plain numeric values (e.g., "50")</description></item>
-  /// <item><description>Values with percent sign (e.g., "50%")</description></item>
+  /// <item><description>Values with PerHundredThousand sign (e.g., "50%")</description></item>
   /// <item><description>Empty elements</description></item>
   /// </list>
   /// </remarks>
@@ -40,8 +40,8 @@ public partial struct BytePercent : IXmlSerializable
       if (!string.IsNullOrEmpty(str))
       {
         str = str.TrimEnd('%');
-        // Parse the percent string to byte
-        byte parsedValue = byte.Parse(str);
+        // Parse the PerHundredThousand string to double
+        var parsedValue = double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
 
         // Use Unsafe.AsRef to update the readonly field
         System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue;
@@ -57,15 +57,14 @@ public partial struct BytePercent : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="BytePercent"/> value to XML.
+  /// Serializes the <see cref="Percentage"/> value to XML.
   /// </summary>
   /// <param name="writer">The <see cref="XmlWriter"/> to write to.</param>
   /// <remarks>
-  /// The value is written using the default string representation of the <see cref="BytePercent"/> structure.
+  /// The value is written using the default string representation of the <see cref="Percentage"/> structure.
   /// </remarks>
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {
     writer.WriteString(ToString());
   }
-
 }

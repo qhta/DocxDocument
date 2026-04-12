@@ -69,12 +69,13 @@ public partial struct HexInt : IXmlSerializable
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
-      string hexString = reader.Value;
+      string str = reader.Value;
 
-      if (!string.IsNullOrEmpty(hexString))
+      if (!string.IsNullOrEmpty(str))
       {
+        str = str.TrimStart('#');
         // Parse the hex string to int
-        uint parsedValue = uint.Parse(hexString, NumberStyles.HexNumber);
+        uint parsedValue = uint.Parse(str, NumberStyles.HexNumber);
 
         // Use Unsafe.AsRef to update the readonly field
         System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue;

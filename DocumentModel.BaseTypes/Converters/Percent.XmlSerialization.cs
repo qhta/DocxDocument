@@ -35,18 +35,13 @@ public partial struct Percent : IXmlSerializable
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
-      string percentString = reader.Value;
+      string str = reader.Value;
 
-      if (!string.IsNullOrEmpty(percentString))
+      if (!string.IsNullOrEmpty(str))
       {
-        if (percentString.EndsWith("%"))
-        {
-          // Remove the percent sign and parse the remaining string
-          percentString = percentString.TrimEnd('%');
-        }
-
+        str = str.TrimEnd('%');
         // Parse the percent string to double
-        var parsedValue = decimal.Parse(percentString.Replace(",", "."), CultureInfo.InvariantCulture);
+        var parsedValue = decimal.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
 
         // Use Unsafe.AsRef to update the readonly field
         System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue;

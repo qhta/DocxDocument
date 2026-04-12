@@ -1,23 +1,23 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a PerHundredThousand value stored as a double-precision floating-point number.
+/// Represents a Percentage value stored as a double-precision floating-point number.
 /// Supports implicit conversions to/from numeric types and string representations with optional "%" suffix.
-/// When converted to/from integers, the value is treated as a whole number (e.g., 50000 represents 50%).
+/// When converted to/from integers, the value is treated as a whole number counted in 1/100000.
 /// </summary>
-[JsonConverter(typeof(PerHundredThousandJsonConverter))]
-public readonly partial struct PerHundredThousand : IConvertible, IEquatable<PerHundredThousand>, IComparable<PerHundredThousand>, IComparable<object>
+[JsonConverter(typeof(PercentageJsonConverter))]
+public readonly partial struct Percentage : IConvertible, IEquatable<Percentage>, IComparable<Percentage>, IComparable<object>
 {
   private readonly double value;
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="PerHundredThousand"/> struct from a string value.
+  /// Initializes a new instance of the <see cref="Percentage"/> struct from a string value.
   /// </summary>
   /// <param name="str">The string value to parse. Can include an optional "%" suffix and uses invariant culture for parsing.</param>
   /// <remarks>
   /// Commas in the input string are replaced with periods before parsing to ensure double separator consistency.
   /// </remarks>
-  public PerHundredThousand(string str)
+  public Percentage(string str)
   {
     if (str.EndsWith("%"))
     {
@@ -31,69 +31,68 @@ public readonly partial struct PerHundredThousand : IConvertible, IEquatable<Per
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="PerHundredThousand"/> struct from an int value.
+  /// Initializes a new instance of the <see cref="Percentage"/> struct from an int value.
   /// </summary>
-  /// <param name="value">The int value representing the PerHundredThousand.</param>
-  public PerHundredThousand(int value)
+  /// <param name="value">The int value representing the Percentage.</param>
+  public Percentage(int value)
   {
-    this.value = value/100000.0;
-  }
-
-
-  /// <summary>
-  /// Initializes a new instance of the <see cref="PerHundredThousand"/> struct from an Int64 value.
-  /// </summary>
-  /// <param name="value">The int value representing the PerHundredThousand.</param>
-  public PerHundredThousand(Int64 value)
-  {
-    this.value = value / 100000.0;
+    this.value = value / 100.0;
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="PerHundredThousand"/> struct from a double value.
+  /// Initializes a new instance of the <see cref="Percentage"/> struct from an Int64 value.
   /// </summary>
-  /// <param name="value">The double value representing the PerHundredThousand.</param>
-  public PerHundredThousand(double value)
+  /// <param name="value">The int value representing the Percentage.</param>
+  public Percentage(Int64 value)
+  {
+    this.value = value / 100.0;
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="Percentage"/> struct from a double value.
+  /// </summary>
+  /// <param name="value">The double value representing the Percentage.</param>
+  public Percentage(double value)
   {
     this.value = value;
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="PerHundredThousand"/> struct from a decimal value.
+  /// Initializes a new instance of the <see cref="Percentage"/> struct from a decimal value.
   /// </summary>
-  /// <param name="value">The double value representing the PerHundredThousand.</param>
-  public PerHundredThousand(decimal value)
+  /// <param name="value">The double value representing the Percentage.</param>
+  public Percentage(decimal value)
   {
     this.value = (double)value;
   }
 
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="PerHundredThousand"/> struct from an UInt64 value.
+  /// Initializes a new instance of the <see cref="Percentage"/> struct from an UInt64 value.
   /// </summary>
-  /// <param name="value">The UInt64 value representing the PerHundredThousand.</param>
-  public PerHundredThousand(UInt64 value)
+  /// <param name="value">The UInt64 value representing the Percentage.</param>
+  public Percentage(UInt64 value)
   {
-    this.value = value / 100000.0;
+    this.value = value / 100.0;
   }
 
   /// <summary>
-  /// Creates a <see cref="PerHundredThousand"/> instance from a string representation.
+  /// Creates a <see cref="Percentage"/> instance from a string representation.
   /// </summary>
   /// <param name="str"></param>
   /// <returns></returns>
-  public static PerHundredThousand FromHexString(string str)
+  public static Percentage FromHexString(string str)
   {
     if (str.EndsWith("%"))
     {
       str = str.TrimEnd('%');
       var val = double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture)/100.0;
-      return new PerHundredThousand(val);
+      return new Percentage(val);
     }
     else
     {
       var val = double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
-      return new PerHundredThousand(val);
+      return new Percentage(val);
     }
   }
 
@@ -115,7 +114,7 @@ public readonly partial struct PerHundredThousand : IConvertible, IEquatable<Per
   /// <returns><see langword="true"/> if value is not zero; otherwise, <see langword="false"/>.</returns>
   public bool ToBoolean(IFormatProvider? provider)
   {
-    throw new NotSupportedException("Conversion from PerHundredThousand to Boolean is not supported.");
+    throw new NotSupportedException("Conversion from Percentage to Boolean is not supported.");
   }
 
   /// <summary>
@@ -135,7 +134,7 @@ public readonly partial struct PerHundredThousand : IConvertible, IEquatable<Per
   /// <returns>A Unicode character equivalent to the value of this instance.</returns>
   public char ToChar(IFormatProvider? provider)
   {
-    throw new NotSupportedException("Conversion from PerHundredThousand to Char is not supported.");
+    throw new NotSupportedException("Conversion from Percentage to Char is not supported.");
   }
 
   /// <summary>
@@ -145,7 +144,7 @@ public readonly partial struct PerHundredThousand : IConvertible, IEquatable<Per
   /// <returns>A <see cref="DateTime"/> equivalent to the value of this instance.</returns>
   public DateTime ToDateTime(IFormatProvider? provider)
   {
-    throw new NotSupportedException("Conversion from PerHundredThousand to DateTime is not supported.");
+    throw new NotSupportedException("Conversion from Percentage to DateTime is not supported.");
   }
 
   /// <summary>
@@ -291,8 +290,8 @@ public readonly partial struct PerHundredThousand : IConvertible, IEquatable<Per
       return (double)value;
     if (targetType == typeof(String))
       return ToString(CultureInfo.InvariantCulture, null);
-    if (targetType == typeof(PerHundredThousand))
-      return new PerHundredThousand(value);
+    if (targetType == typeof(Percentage))
+      return new Percentage(value);
 
     return ((IConvertible)value).ToType(targetType, provider);
   }
@@ -302,124 +301,123 @@ public readonly partial struct PerHundredThousand : IConvertible, IEquatable<Per
   #region Implicit Conversions
 
   /// <summary>
-  /// Implicitly converts a string to a <see cref="PerHundredThousand"/> value.
+  /// Implicitly converts a string to a <see cref="Percentage"/> value.
   /// </summary>
   /// <param name="val">The string to convert.</param>
-  /// <returns>A <see cref="PerHundredThousand"/> value parsed from the string.</returns>
-  public static implicit operator PerHundredThousand(string val)
+  /// <returns>A <see cref="Percentage"/> value parsed from the string.</returns>
+  public static implicit operator Percentage(string val)
   {
-    return new PerHundredThousand(val);
+    return new Percentage(val);
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="PerHundredThousand"/> value to a 16-bit unsigned integer.
+  /// Implicitly converts a <see cref="Percentage"/> value to a 16-bit unsigned integer.
   /// </summary>
-  /// <param name="val">The <see cref="PerHundredThousand"/> value to convert.</param>
-  /// <returns>A 16-bit unsigned integer representation of the PerHundredThousand value.</returns>
-  public static implicit operator ushort(PerHundredThousand val)
+  /// <param name="val">The <see cref="Percentage"/> value to convert.</param>
+  /// <returns>A 16-bit unsigned integer representation of the Percentage value.</returns>
+  public static implicit operator ushort(Percentage val)
   {
-    return (ushort)(val.value * 100000);
+    return (ushort)(val.value * 100);
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="PerHundredThousand"/> value to a 32-bit unsigned integer.
+  /// Implicitly converts a <see cref="Percentage"/> value to a 32-bit unsigned integer.
   /// </summary>
-  /// <param name="val">The <see cref="PerHundredThousand"/> value to convert.</param>
-  /// <returns>A 32-bit unsigned integer representation of the PerHundredThousand value.</returns>
-  public static implicit operator uint(PerHundredThousand val)
+  /// <param name="val">The <see cref="Percentage"/> value to convert.</param>
+  /// <returns>A 32-bit unsigned integer representation of the Percentage value.</returns>
+  public static implicit operator uint(Percentage val)
   {
-    return (uint)(val.value * 100000);
+    return (uint)(val.value * 100);
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="PerHundredThousand"/> value to a 32-bit signed integer.
+  /// Implicitly converts a <see cref="Percentage"/> value to a 32-bit signed integer.
   /// </summary>
-  /// <param name="val">The <see cref="PerHundredThousand"/> value to convert.</param>
-  /// <returns>A 32-bit signed integer representation of the PerHundredThousand value.</returns>
-  public static implicit operator Int32(PerHundredThousand val)
+  /// <param name="val">The <see cref="Percentage"/> value to convert.</param>
+  /// <returns>A 32-bit signed integer representation of the Percentage value.</returns>
+  public static implicit operator Int32(Percentage val)
   {
-    return (int)(val.value * 1000000);
-  }
-
-
-  /// <summary>
-  /// Implicitly converts a <see cref="PerHundredThousand"/> value to a 64-bit signed integer.
-  /// </summary>
-  /// <param name="val">The <see cref="PerHundredThousand"/> value to convert.</param>
-  /// <returns>A 64-bit signed integer representation of the PerHundredThousand value.</returns>
-  public static implicit operator Int64(PerHundredThousand val)
-  {
-    return (long)(val.value * 1000000);
+    return (int)(val.value * 100);
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="PerHundredThousand"/> value to a 64-bit unsigned integer.
+  /// Implicitly converts a <see cref="Percentage"/> value to a 64-bit signed integer.
   /// </summary>
-  /// <param name="val">The <see cref="PerHundredThousand"/> value to convert.</param>
-  /// <returns>A 64-bit unsigned integer representation of the PerHundredThousand value.</returns>
-  public static implicit operator ulong(PerHundredThousand val)
+  /// <param name="val">The <see cref="Percentage"/> value to convert.</param>
+  /// <returns>A 64-bit signed integer representation of the Percentage value.</returns>
+  public static implicit operator Int64(Percentage val)
   {
-    return (ulong)(val.value * 1000000);
+    return (long)(val.value * 100);
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="PerHundredThousand"/> value to a decimal value.
+  /// Implicitly converts a <see cref="Percentage"/> value to a 64-bit unsigned integer.
   /// </summary>
-  /// <param name="val">The <see cref="PerHundredThousand"/> value to convert.</param>
-  /// <returns>A double representation of the PerHundredThousand value.</returns>
-  public static implicit operator decimal(PerHundredThousand val)
+  /// <param name="val">The <see cref="Percentage"/> value to convert.</param>
+  /// <returns>A 64-bit unsigned integer representation of the Percentage value.</returns>
+  public static implicit operator ulong(Percentage val)
+  {
+    return (ulong)(val.value * 100);
+  }
+
+  /// <summary>
+  /// Implicitly converts a <see cref="Percentage"/> value to a decimal value.
+  /// </summary>
+  /// <param name="val">The <see cref="Percentage"/> value to convert.</param>
+  /// <returns>A double representation of the Percentage value.</returns>
+  public static implicit operator decimal(Percentage val)
   {
     return (decimal)val.value;
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="PerHundredThousand"/> value to a double value.
+  /// Implicitly converts a <see cref="Percentage"/> value to a double value.
   /// </summary>
-  /// <param name="val">The <see cref="PerHundredThousand"/> value to convert.</param>
-  /// <returns>A double representation of the PerHundredThousand value.</returns>
-  public static implicit operator Double(PerHundredThousand val)
+  /// <param name="val">The <see cref="Percentage"/> value to convert.</param>
+  /// <returns>A double representation of the Percentage value.</returns>
+  public static implicit operator Double(Percentage val)
   {
     return (Double)val.value;
   }
 
   /// <summary>
-  /// Implicitly converts a 16-bit unsigned integer to a <see cref="PerHundredThousand"/> value.
+  /// Implicitly converts a 16-bit unsigned integer to a <see cref="Percentage"/> value.
   /// </summary>
   /// <param name="val">The 16-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="PerHundredThousand"/>PerHundredThousand instance.</returns>
-  public static implicit operator PerHundredThousand(ushort val)
+  /// <returns>A <see cref="Percentage"/>Percentage instance.</returns>
+  public static implicit operator Percentage(ushort val)
   {
-    return new PerHundredThousand(val);
+    return new Percentage(val);
   }
 
   /// <summary>
-  /// Implicitly converts a 32-bit unsigned integer to a <see cref="PerHundredThousand"/> value.
+  /// Implicitly converts a 32-bit unsigned integer to a <see cref="Percentage"/> value.
   /// </summary>
   /// <param name="val">The 32-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="PerHundredThousand"/>PerHundredThousand instance.</returns>
-  public static implicit operator PerHundredThousand(double val)
+  /// <returns>A <see cref="Percentage"/>Percentage instance.</returns>
+  public static implicit operator Percentage(double val)
   {
-    return new PerHundredThousand(val);
+    return new Percentage(val);
   }
 
   /// <summary>
-  /// Implicitly converts a 32-bit signed integer to a <see cref="PerHundredThousand"/> value.
+  /// Implicitly converts a 32-bit signed integer to a <see cref="Percentage"/> value.
   /// </summary>
   /// <param name="val">The 32-bit signed integer to convert.</param>
-  /// <returns>A <see cref="PerHundredThousand"/>PerHundredThousand instance.</returns>
-  public static implicit operator PerHundredThousand(Int32 val)
+  /// <returns>A <see cref="Percentage"/>Percentage instance.</returns>
+  public static implicit operator Percentage(Int32 val)
   {
-    return new PerHundredThousand(val);
+    return new Percentage(val);
   }
 
   /// <summary>
-  /// Implicitly converts a 64-bit unsigned integer to a <see cref="PerHundredThousand"/> value.
+  /// Implicitly converts a 64-bit unsigned integer to a <see cref="Percentage"/> value.
   /// </summary>
   /// <param name="val">The 64-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="PerHundredThousand"/>PerHundredThousand instance.</returns>
-  public static implicit operator PerHundredThousand(ulong val)
+  /// <returns>A <see cref="Percentage"/>Percentage instance.</returns>
+  public static implicit operator Percentage(ulong val)
   {
-    return new PerHundredThousand((double)val);
+    return new Percentage((double)val);
   }
 
   #endregion
@@ -427,27 +425,27 @@ public readonly partial struct PerHundredThousand : IConvertible, IEquatable<Per
   #region String Conversions
 
   /// <summary>
-  /// Parses a string representation of a PerHundredThousand and returns a corresponding PerHundredThousand instance.
+  /// Parses a string representation of a Percentage and returns a corresponding Percentage instance.
   /// </summary>
-  /// <param name="str">The string containing the PerHundredThousand to parse. The string should be in a format recognized by the PerHundredThousand type,
+  /// <param name="str">The string containing the Percentage to parse. The string should be in a format recognized by the Percentage type,
   /// such as "50%" or "0.5".</param>
-  /// <returns>A PerHundredThousand instance that represents the value specified by the input string.</returns>
-  public static PerHundredThousand Parse(string str)
+  /// <returns>A Percentage instance that represents the value specified by the input string.</returns>
+  public static Percentage Parse(string str)
   {
-    return new PerHundredThousand(str);
+    return new Percentage(str);
   }
 
   /// <summary>
-  /// Attempts to parse a string representation of a PerHundredThousand into a <see cref="PerHundredThousand"/> instance.
+  /// Attempts to parse a string representation of a Percentage into a <see cref="Percentage"/> instance.
   /// </summary>
-  /// <param name="str">The string representation of the PerHundredThousand.</param>
-  /// <param name="result">The resulting <see cref="PerHundredThousand"/> instance if parsing is successful.</param>
+  /// <param name="str">The string representation of the Percentage.</param>
+  /// <param name="result">The resulting <see cref="Percentage"/> instance if parsing is successful.</param>
   /// <returns><see langword="true"/> if parsing succeeded; otherwise, <see langword="false"/>.</returns>
-  public static bool TryParse(string str, out PerHundredThousand result)
+  public static bool TryParse(string str, out Percentage result)
   {
     try
     {
-      result = new PerHundredThousand(str);
+      result = new Percentage(str);
       return true;
     }
     catch
@@ -463,7 +461,7 @@ public readonly partial struct PerHundredThousand : IConvertible, IEquatable<Per
   /// <returns>The string representation of the value with a "%" suffix, using invariant culture formatting.</returns>
   public override string ToString()
   {
-    return value.ToString(CultureInfo.InvariantCulture);
+    return (value * 100).ToString(CultureInfo.InvariantCulture) + "%";
   }
 
   /// <summary>
@@ -529,22 +527,22 @@ public readonly partial struct PerHundredThousand : IConvertible, IEquatable<Per
   /// </summary>
   /// <param name="other">An object to compare with this object.</param>
   /// <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
-  public bool Equals(PerHundredThousand other)
+  public bool Equals(Percentage other)
   {
     return value == other.value;
   }
 
   /// <summary>
-  /// Compares this instance to a specified <see cref="PerHundredThousand"/> object and returns an indication of their relative values.
+  /// Compares this instance to a specified <see cref="Percentage"/> object and returns an indication of their relative values.
   /// </summary>
-  /// <param name="other">A <see cref="PerHundredThousand"/> object to compare.</param>
+  /// <param name="other">A <see cref="Percentage"/> object to compare.</param>
   /// <returns>
   /// A signed number indicating the relative values of this instance and <paramref name="other"/>.
   /// Less than zero if this instance is less than <paramref name="other"/>;
   /// zero if this instance equals <paramref name="other"/>;
   /// greater than zero if this instance is greater than <paramref name="other"/>.
   /// </returns>
-  public int CompareTo(PerHundredThousand other)
+  public int CompareTo(Percentage other)
   {
     return value.CompareTo(other.value);
   }
@@ -557,8 +555,8 @@ public readonly partial struct PerHundredThousand : IConvertible, IEquatable<Per
   /// <exception cref="ArgumentException">Thrown when the comparison is invalid.</exception>
   public int CompareTo(object? other)
   {
-    if (other is PerHundredThousand PerHundredThousand)
-      return CompareTo(PerHundredThousand);
+    if (other is Percentage Percentage)
+      return CompareTo(Percentage);
     if (other is Int32 int32value)
       return this.CompareTo(int32value);
     if (other is UInt32 uint32value)
@@ -582,7 +580,7 @@ public readonly partial struct PerHundredThousand : IConvertible, IEquatable<Per
     if (other is double doubleValue)
       return this.CompareTo((double)doubleValue);
     if (other is String str)
-      return this.CompareTo(PerHundredThousand.Parse(str));
+      return this.CompareTo(Percentage.Parse(str));
     throw new ArgumentException($"Invalid comparison between {GetType()} and {other?.GetType()}");
   }
 

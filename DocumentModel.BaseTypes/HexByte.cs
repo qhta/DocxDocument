@@ -35,8 +35,9 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   /// <summary>
   ///   Initializes a new instance of the <see cref="HexByte"/> struct from a hexadecimal string.
   /// </summary>
-  /// <param name="val">
+  /// <param name="str">
   ///   A hexadecimal string containing 2 or 4 hex digits (0-9, A-F, a-f) representing a byte code.
+  ///   May begin with an optional '#' character (e.g., "#41" or "41" both represent 65, 'A').
   /// </param>
   /// <remarks>
   ///   <para>
@@ -50,9 +51,10 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   /// <exception cref="OverflowException">
   ///   Thrown when the parsed value exceeds 65535 (ushort.MaxValue).
   /// </exception>
-  public HexByte(string val)
+  public HexByte(string str)
   {
-    value = byte.Parse(val, NumberStyles.HexNumber);
+    str = str.TrimStart('#');
+    value = byte.Parse(str, NumberStyles.HexNumber);
   }
 
   /// <summary>
@@ -370,7 +372,10 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
   /// <summary>
   ///   Implicitly converts a hexadecimal string to a HexByte.
   /// </summary>
-  /// <param name="val">A hexadecimal string (2 or 4 hex digits).</param>
+  /// <param name="val">
+  /// A hexadecimal string (2 hex digits).
+  ///   May begin with an optional '#' character (e.g., "#41" or "41" both represent 65, 'A').
+  /// </param>
   /// <returns>A HexByte representing the parsed byte code.</returns>
   /// <remarks>
   ///   Example: HexByte c = "41"; // represents 'A' (65)
@@ -508,6 +513,18 @@ public partial record HexByte : IConvertible, IEquatable<HexByte>
     return value.ToString("X2");
   }
 
+
+  /// <summary>
+  ///   Converts this HexByte to its string representation in a provided format.
+  /// </summary>
+  /// <param name="format">format for string representation (e.g., "X2" for 2-digit hex).</param>
+  /// <returns>
+  ///   A string in provided format string.
+  /// </returns>
+  public string ToString(string format)
+  {
+    return value.ToString(format);
+  }
   /// <summary>
   ///   Determines whether this HexByte is equal to another HexByte.
   /// </summary>

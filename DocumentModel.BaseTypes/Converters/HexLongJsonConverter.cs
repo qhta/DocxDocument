@@ -92,21 +92,21 @@ public class HexLongJsonConverter : JsonConverter<HexLong>
     if (reader.TokenType != JsonTokenType.String)
       throw new JsonException($"Expected string token for HexLong, but got {reader.TokenType}");
 
-    var value = reader.GetString();
-    if (string.IsNullOrEmpty(value))
+    var str = reader.GetString();
+    if (string.IsNullOrEmpty(str))
       return default;
 
     try
     {
-      return new HexLong(value);
+      return new HexLong(str);
     }
     catch (FormatException ex)
     {
-      throw new JsonException($"Invalid hexadecimal string '{value}' for HexLong. Expected hex digits (0-9, A-F) representing a 64-bit long.", ex);
+      throw new JsonException($"Invalid hexadecimal string '{str}' for HexLong. Expected hex digits (0-9, A-F) representing a 64-bit long.", ex);
     }
     catch (OverflowException ex)
     {
-      throw new JsonException($"Hexadecimal value '{value}' is out of range for HexLong. Must represent a 64-bit signed long.", ex);
+      throw new JsonException($"Hexadecimal value '{str}' is out of range for HexLong. Must represent a 64-bit signed long.", ex);
     }
   }
 

@@ -24,34 +24,7 @@ namespace DocumentModel.Drawings;
 /// <item><description><b>Color Effects:</b> Apply complement, inverse, gray, or gamma corrections</description></item>
 /// </list>
 /// </para>
-/// <para>
-/// All percentage values in this model use the range 0-100000 to represent 0% to 100%, 
-/// providing fine-grained control with 1/1000th of a percent precision.
-/// Multiple transformations can be applied simultaneously and are processed in the order 
-/// defined by the Office Open XML specification.
-/// </para>
 /// </remarks>
-/// <example>
-/// <code>
-/// // Create a red color (100% red, 0% green, 0% blue)
-/// var red = new RgbColorModelPercentage 
-/// { 
-///     RedPortion = 100000,    // 100%
-///     GreenPortion = 0,       // 0%
-///     BluePortion = 0         // 0%
-/// };
-/// 
-/// // Create a semi-transparent purple with tint
-/// var lightPurple = new RgbColorModelPercentage
-/// {
-///     RedPortion = 50000,     // 50% red
-///     GreenPortion = 0,       // 0% green
-///     BluePortion = 50000,    // 50% blue
-///     Tint = 40000,          // 40% lighter
-///     Alpha = 50000          // 50% opacity
-/// };
-/// </code>
-/// </example>
 [OpenXmlType(typeof(DXD.RgbColorModelPercentage))]
 [XmlRoot("RgbColorModelPercentage", Namespace = "DocumentModel.Drawings")]
 public partial class RgbColorModelPercentage : AbstractColor<DXD.RgbColorModelPercentage>, ISchemeBaseColor
@@ -65,9 +38,9 @@ public partial class RgbColorModelPercentage : AbstractColor<DXD.RgbColorModelPe
  /// Common values: 0 (no red), 50000 (50% red), 100000 (full red).
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.RedPortion))]
- public PerHundredThousand? Red { get => _red; set => UpdateField(ref _red, value, nameof(Red)); }
+ public Percentage? Red { get => _red; set => UpdateField(ref _red, value, nameof(Red)); }
 
- private PerHundredThousand? _red;
+ private Percentage? _red;
  /// <summary>
  /// Green component as a percentage value.
  /// </summary>
@@ -77,9 +50,9 @@ public partial class RgbColorModelPercentage : AbstractColor<DXD.RgbColorModelPe
  /// Common values: 0 (no green), 50000 (50% green), 100000 (full green).
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.GreenPortion))]
- public PerHundredThousand? Green { get => _green; set => UpdateField(ref _green, value, nameof(Green)); }
+ public Percentage? Green { get => _green; set => UpdateField(ref _green, value, nameof(Green)); }
 
- private PerHundredThousand? _green;
+ private Percentage? _green;
  /// <summary>
  /// Blue component as a percentage value.
  /// </summary>
@@ -89,9 +62,9 @@ public partial class RgbColorModelPercentage : AbstractColor<DXD.RgbColorModelPe
  /// Common values: 0 (no blue), 50000 (50% blue), 100000 (full blue).
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.BluePortion))]
- public PerHundredThousand? Blue { get => _blue; set => UpdateField(ref _blue, value, nameof(Blue)); }
+ public Percentage? Blue { get => _blue; set => UpdateField(ref _blue, value, nameof(Blue)); }
 
- private PerHundredThousand? _blue;
+ private Percentage? _blue;
  /// <summary>
  /// Tint value to lighten the color.
  /// </summary>
@@ -111,9 +84,9 @@ public partial class RgbColorModelPercentage : AbstractColor<DXD.RgbColorModelPe
  /// </para>
  /// </remarks>
  [OpenXmlElement(typeof(DXD.Tint))]
- public PerHundredThousand? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
+ public Percentage? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
 
- private PerHundredThousand? _Tint;
+ private Percentage? _Tint;
  /// <summary>
  /// Shade value to darken the color.
  /// </summary>
@@ -132,7 +105,7 @@ public partial class RgbColorModelPercentage : AbstractColor<DXD.RgbColorModelPe
  /// </para>
  /// </remarks>
  [OpenXmlElement(typeof(DXD.Shade))]
- public PerHundredThousand? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
+ public Percentage? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
 
- private PerHundredThousand? _Shade;
+ private Percentage? _Shade;
 }

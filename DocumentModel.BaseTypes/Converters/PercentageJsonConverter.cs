@@ -1,21 +1,21 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support for the <see cref="PerHundredThousand"/> structure.
+/// Provides JSON serialization and deserialization support for the <see cref="Percentage"/> structure.
 /// </summary>
 /// <remarks>
 /// This converter handles both string and numeric JSON tokens for deserialization,
 /// and writes PerHundredThousandage values as strings with a "%" suffix following Office Open XML conventions.
 /// </remarks>
-public class PerHundredThousandJsonConverter : JsonConverter<PerHundredThousand>
+public class PercentageJsonConverter : JsonConverter<Percentage>
 {
   /// <summary>
-  /// Reads and converts JSON to a <see cref="PerHundredThousand"/> value.
+  /// Reads and converts JSON to a <see cref="Percentage"/> value.
   /// </summary>
   /// <param name="reader">The <see cref="Utf8JsonReader"/> to read from.</param>
   /// <param name="typeToConvert">The type to convert.</param>
   /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
-  /// <returns>A <see cref="PerHundredThousand"/> value parsed from the JSON input.</returns>
+  /// <returns>A <see cref="Percentage"/> value parsed from the JSON input.</returns>
   /// <exception cref="JsonException">
   /// Thrown when:
   /// <list type="bullet">
@@ -32,7 +32,7 @@ public class PerHundredThousandJsonConverter : JsonConverter<PerHundredThousand>
   /// <item><description>Numeric tokens as double or integer values</description></item>
   /// </list>
   /// </remarks>
-  public override PerHundredThousand Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+  public override Percentage Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
   {
     if (reader.TokenType == JsonTokenType.String)
     {
@@ -42,7 +42,7 @@ public class PerHundredThousandJsonConverter : JsonConverter<PerHundredThousand>
 
       try
       {
-        return new PerHundredThousand(value);
+        return new Percentage(value);
       }
       catch (FormatException ex)
       {
@@ -55,9 +55,9 @@ public class PerHundredThousandJsonConverter : JsonConverter<PerHundredThousand>
     {
       try
       {
-        if (reader.TryGetDecimal(out decimal decimalValue))
+        if (reader.TryGetDouble(out double doubleValue))
         {
-          return new PerHundredThousand(decimalValue);
+          return new Percentage(doubleValue);
         }
 
         throw new JsonException($"Invalid numeric value for PerHundredThousand");
@@ -72,16 +72,16 @@ public class PerHundredThousandJsonConverter : JsonConverter<PerHundredThousand>
   }
 
   /// <summary>
-  /// Writes a <see cref="PerHundredThousand"/> value as JSON.
+  /// Writes a <see cref="Percentage"/> value as JSON.
   /// </summary>
   /// <param name="writer">The <see cref="Utf8JsonWriter"/> to write to.</param>
-  /// <param name="value">The <see cref="PerHundredThousand"/> value to serialize.</param>
+  /// <param name="value">The <see cref="Percentage"/> value to serialize.</param>
   /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
   /// <remarks>
   /// Writes the PerHundredThousandage value as a string with a "%" suffix, following Office Open XML conventions.
   /// For example, a value of 50 is written as "50%".
   /// </remarks>
-  public override void Write(Utf8JsonWriter writer, PerHundredThousand value, JsonSerializerOptions options)
+  public override void Write(Utf8JsonWriter writer, Percentage value, JsonSerializerOptions options)
   {
     writer.WriteStringValue(value.ToString(CultureInfo.InvariantCulture));
   }

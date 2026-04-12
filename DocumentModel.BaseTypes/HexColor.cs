@@ -29,6 +29,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
       value = 0xFFFFFFFF;
       return;
     }
+    str = str.TrimStart('#');
     value = UInt32.Parse(str, NumberStyles.HexNumber);
   }
 
@@ -155,12 +156,12 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <summary>
   /// Converts the RGB value to its hexadecimal string representation.
   /// </summary>
-  /// <returns>A 6-character hexadecimal string in the format RRGGBB.</returns>
+  /// <returns>A 6-character hexadecimal string in the format #RRGGBB.</returns>
   public override string ToString()
   {
     if (value == 0xFFFFFFFF)
       return "auto";
-    return R.ToString("X2") + G.ToString("X2") + B.ToString("X2");
+    return value.ToString("X6");
   }
 
   /// <summary>
@@ -194,6 +195,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <returns>true if the string was successfully parsed; otherwise, false.</returns>
   public static bool TryParse(string str, out HexColor result)
   {
+    str = str.TrimStart('#');
     if (UInt32.TryParse(str, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var value))
     {
       result = new HexColor(value);
@@ -327,7 +329,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <returns>The 24-bit RGB value as a 32-bit signed integer.</returns>
   public int ToInt32(IFormatProvider? provider)
   {
-    return (int)(value & 0xFFFFFF);
+    return (int)(value);
   }
 
   /// <summary>
@@ -337,7 +339,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <returns>The 24-bit RGB value as a 64-bit signed integer.</returns>
   public long ToInt64(IFormatProvider? provider)
   {
-    return (long)(value & 0xFFFFFF);
+    return (long)(value);
   }
 
   /// <summary>
@@ -426,7 +428,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <returns>The 24-bit RGB value as a 32-bit unsigned integer.</returns>
   public uint ToUInt32(IFormatProvider? provider)
   {
-    return value & 0xFFFFFF;
+    return value;
   }
 
   /// <summary>
@@ -436,7 +438,7 @@ public readonly partial struct HexColor : IEquatable<HexColor>, IConvertible
   /// <returns>The 24-bit RGB value as a 64-bit unsigned integer.</returns>
   public ulong ToUInt64(IFormatProvider? provider)
   {
-    return (ulong)(value & 0xFFFFFF);
+    return value;
   }
 
   #endregion

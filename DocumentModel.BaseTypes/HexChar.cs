@@ -51,13 +51,14 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   /// <summary>
   ///   Initializes a new instance of the <see cref="HexChar"/> struct from a hexadecimal string.
   /// </summary>
-  /// <param name="val">
+  /// <param name="str">
   ///   A hexadecimal string containing 2 or 4 hex digits (0-9, A-F, a-f) representing a character code.
   /// </param>
   /// <remarks>
   ///   <para>
   ///   The string is parsed as a hexadecimal number to obtain the character code value.
   ///   Valid input examples: "41" (65, 'A'), "20" (32, space), "03B1" (945, Greek alpha α).
+  ///   May begin with an optional '#' character (e.g., "#41" or "41" both represent 65, 'A').
   ///   </para>
   /// </remarks>
   /// <exception cref="FormatException">
@@ -66,9 +67,10 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   /// <exception cref="OverflowException">
   ///   Thrown when the parsed value exceeds 65535 (ushort.MaxValue).
   /// </exception>
-  public HexChar(string val)
+  public HexChar(string str)
   {
-    value = ushort.Parse(val, NumberStyles.HexNumber);
+    str = str.TrimStart('#');
+    value = ushort.Parse(str, NumberStyles.HexNumber);
   }
 
   /// <summary>
@@ -386,14 +388,17 @@ public partial record HexChar : IConvertible, IEquatable<HexChar>
   /// <summary>
   ///   Implicitly converts a hexadecimal string to a HexChar.
   /// </summary>
-  /// <param name="val">A hexadecimal string (2 or 4 hex digits).</param>
+  /// <param name="str">
+  ///   A hexadecimal string (2 or 4 hex digits).
+  ///   May begin with an optional '#' character (e.g., "#41" or "41" both represent 65, 'A').
+  /// </param>
   /// <returns>A HexChar representing the parsed character code.</returns>
   /// <remarks>
   ///   Example: HexChar c = "41"; // represents 'A' (65)
   /// </remarks>
-  public static implicit operator HexChar(string val)
+  public static implicit operator HexChar(string str)
   {
-    return new HexChar(val);
+    return new HexChar(str);
   }
 
   /// <summary>

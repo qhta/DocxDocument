@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel;
 
-public partial struct PerHundredThousand : IXmlSerializable
+public partial struct Degrees : IXmlSerializable
 {
 
 
@@ -11,15 +11,15 @@ public partial struct PerHundredThousand : IXmlSerializable
   XmlSchema? IXmlSerializable.GetSchema() => null;
 
   /// <summary>
-  /// Deserializes the <see cref="PerHundredThousand"/> value from XML.
-  /// Accepts both plain numeric values and values with a trailing PerHundredThousand sign (%).
+  /// Deserializes the <see cref="Degrees"/> value from XML.
+  /// Accepts both plain numeric values and values with a trailing Degrees sign (°).
   /// </summary>
   /// <param name="reader">The <see cref="XmlReader"/> to read from.</param>
   /// <remarks>
   /// The method handles the following formats:
   /// <list type="bullet">
-  /// <item><description>Plain numeric values (e.g., "50")</description></item>
-  /// <item><description>Values with PerHundredThousand sign (e.g., "50%")</description></item>
+  /// <item><description>Plain numeric values (e.g., "60.0")</description></item>
+  /// <item><description>Values with Degrees sign (e.g., "60°")</description></item>
   /// <item><description>Empty elements</description></item>
   /// </list>
   /// </remarks>
@@ -35,18 +35,13 @@ public partial struct PerHundredThousand : IXmlSerializable
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
-      string PerHundredThousandString = reader.Value;
+      string str = reader.Value;
 
-      if (!string.IsNullOrEmpty(PerHundredThousandString))
+      if (!string.IsNullOrEmpty(str))
       {
-        if (PerHundredThousandString.EndsWith("%"))
-        {
-          // Remove the PerHundredThousand sign and parse the remaining string
-          PerHundredThousandString = PerHundredThousandString.TrimEnd('%');
-        }
-
-        // Parse the PerHundredThousand string to double
-        var parsedValue = double.Parse(PerHundredThousandString.Replace(",", "."), CultureInfo.InvariantCulture);
+          str = str.TrimEnd('°');
+        // Parse the Degrees string to double
+        var parsedValue = double.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
 
         // Use Unsafe.AsRef to update the readonly field
         System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue;
@@ -62,11 +57,11 @@ public partial struct PerHundredThousand : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="PerHundredThousand"/> value to XML.
+  /// Serializes the <see cref="Degrees"/> value to XML.
   /// </summary>
   /// <param name="writer">The <see cref="XmlWriter"/> to write to.</param>
   /// <remarks>
-  /// The value is written using the default string representation of the <see cref="PerHundredThousand"/> structure.
+  /// The value is written using the default string representation of the <see cref="Degrees"/> structure.
   /// </remarks>
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {

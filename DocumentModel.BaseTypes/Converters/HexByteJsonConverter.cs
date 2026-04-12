@@ -48,17 +48,17 @@ public class HexByteJsonConverter : JsonConverter<HexByte>
     if (reader.TokenType != JsonTokenType.String)
       throw new JsonException($"Expected string token for HexByte, but got {reader.TokenType}");
 
-    var value = reader.GetString();
-    if (string.IsNullOrEmpty(value))
+    var str = reader.GetString();
+    if (string.IsNullOrEmpty(str))
       return null;
 
     try
     {
-      return new HexByte(value);
+      return new HexByte(str);
     }
     catch (Exception ex)
     {
-      throw new JsonException($"Invalid hexadecimal string '{value}' for HexByte. Expected 2 or 4 hex digits (0-9, A-F).", ex);
+      throw new JsonException($"Invalid hexadecimal string '{str}' for HexByte. Expected 2 or 4 hex digits (0-9, A-F).", ex);
     }
   }
 

@@ -32,7 +32,7 @@ public partial class FontDef : ModelElement<DXW.Font>
  /// <summary>
  /// Character set supported by the font, used for font substitution logic.
  /// </summary>
-  //[OpenXmlProperty(nameof(DXW.TextFormat.FontCharSet))]
+ //[OpenXmlProperty(nameof(DXW.Font.FontCharSet))]
  [OpenXmlLoadData(nameof(LoadCharset))]
  [OpenXmlUpdateData(nameof(UpdateCharset))]
  public HexByte? Charset { get => _charset; set => UpdateField(ref _charset, value, nameof(Charset)); }
@@ -132,7 +132,7 @@ public partial class FontDef : ModelElement<DXW.Font>
   {
    fontElement.FontCharSet = new DXW.FontCharSet()
    {
-    Val = Charset.ToString(),
+    Val = Charset.ToString("X2"),
    };
   }
  }

@@ -93,21 +93,21 @@ public class HexIntJsonConverter : JsonConverter<HexInt>
     if (reader.TokenType != JsonTokenType.String)
       throw new JsonException($"Expected string token for HexInt, but got {reader.TokenType}");
 
-    var value = reader.GetString();
-    if (string.IsNullOrEmpty(value))
+    var str = reader.GetString();
+    if (string.IsNullOrEmpty(str))
       return default;
 
     try
     {
-      return new HexInt(value);
+      return new HexInt(str);
     }
     catch (FormatException ex)
     {
-      throw new JsonException($"Invalid hexadecimal string '{value}' for HexInt. Expected hex digits (0-9, A-F) representing a 32-bit integer.", ex);
+      throw new JsonException($"Invalid hexadecimal string '{str}' for HexInt. Expected hex digits (0-9, A-F) representing a 32-bit integer.", ex);
     }
     catch (OverflowException ex)
     {
-      throw new JsonException($"Hexadecimal value '{value}' is out of range for HexInt. Must represent a 32-bit signed integer.", ex);
+      throw new JsonException($"Hexadecimal value '{str}' is out of range for HexInt. Must represent a 32-bit signed integer.", ex);
     }
   }
 

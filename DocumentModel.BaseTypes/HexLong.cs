@@ -16,10 +16,12 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   /// <summary>
   /// Initializes a new instance from a hexadecimal string.
   /// </summary>
-  /// <param name="val">A hexadecimal string representing a 64-bit integer.</param>
-  public HexLong(string val)
+  /// <param name="str">A hexadecimal string representing a 64-bit integer.
+  ///   May begin with an optional '#' character.
+  /// </param>
+  public HexLong(string str)
   {
-    value = UInt64.Parse(val, NumberStyles.HexNumber);
+    value = UInt64.Parse(str, NumberStyles.HexNumber);
   }
 
   /// <summary>
@@ -57,7 +59,6 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   {
     this.value = (UInt64)value;
   }
-
 
   #region IConvertible Implementation
   /// <summary>
@@ -228,9 +229,9 @@ public readonly partial struct HexLong : IConvertible, IEquatable<HexLong>
   /// <summary>
   /// Implicitly converts a hexadecimal string to a HexLong.
   /// </summary>
-  public static implicit operator HexLong(string val)
+  public static implicit operator HexLong(string str)
   {
-    return new HexLong(val);
+    return new HexLong(str);
   }
 
   /// <summary>

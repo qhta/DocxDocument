@@ -43,16 +43,17 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// <summary>
   /// Converts the specified hexadecimal string to its <see cref="HexInt"/> equivalent.
   /// </summary>
-  /// <param name="input">The hexadecimal string to convert.</param>
+  /// <param name="str">The hexadecimal string to convert.</param>
   /// <param name="result">The resulting HexInt value.</param>
   /// <returns>True if the conversion was successful; otherwise, false.</returns>
-  public static bool TryParse(string input, out HexInt result)
+  public static bool TryParse(string str, out HexInt result)
   {
+    str = str.TrimStart('#');
     result = default;
-    if (string.IsNullOrEmpty(input) || input.Length > 8)
+    if (string.IsNullOrEmpty(str) || str.Length > 8)
       return false;
 
-    if (int.TryParse(input, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var intValue))
+    if (int.TryParse(str, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var intValue))
     {
       result = new HexInt(intValue);
       return true;
@@ -63,8 +64,9 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// <summary>
   ///   Initializes a new instance of the <see cref="HexInt"/> struct from a hexadecimal string.
   /// </summary>
-  /// <param name="val">
+  /// <param name="str">
   ///   A hexadecimal string containing up to 8 hex digits (0-9, A-F, a-f) representing a 32-bit integer.
+  ///   May begin with an optional '#' character.
   /// </param>
   /// <remarks>
   ///   <para>
@@ -78,9 +80,10 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// <exception cref="OverflowException">
   ///   Thrown when the parsed value exceeds the range of a 32-bit signed integer.
   /// </exception>
-  public HexInt(string val)
+  public HexInt(string str)
   {
-    value = uint.Parse(val, NumberStyles.HexNumber);
+    str = str.TrimStart('#');
+    value = uint.Parse(str, NumberStyles.HexNumber);
   }
 
   /// <summary>
@@ -391,14 +394,16 @@ public readonly partial struct HexInt : IConvertible, IEquatable<HexInt>
   /// <summary>
   ///   Implicitly converts a hexadecimal string to a HexInt.
   /// </summary>
-  /// <param name="val">A hexadecimal string (up to 8 hex digits).</param>
+  /// <param name="str">A hexadecimal string (up to 8 hex digits).
+  ///   May begin with an optional '#' character.
+  /// </param>
   /// <returns>A HexInt representing the parsed integer value.</returns>
   /// <remarks>
   ///   Example: HexInt i = "7B"; // represents 123
   /// </remarks>
-  public static implicit operator HexInt(string val)
+  public static implicit operator HexInt(string str)
   {
-    return new HexInt(val);
+    return new HexInt(str);
   }
 
   /// <summary>

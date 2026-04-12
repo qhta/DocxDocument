@@ -53,12 +53,13 @@ public partial record HexByte : IXmlSerializable
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
-      string hexString = reader.Value;
+      string str = reader.Value;
 
-      if (!string.IsNullOrEmpty(hexString))
+      if (!string.IsNullOrEmpty(str))
       {
+        str = str.TrimStart('#');
         // Parse the hex string to byte
-        byte parsedValue = byte.Parse(hexString, NumberStyles.HexNumber);
+        byte parsedValue = byte.Parse(str, NumberStyles.HexNumber);
 
         // Use Unsafe.AsRef to update the readonly field
         System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue;

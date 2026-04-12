@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 
 public partial class HslColor
 {
-  public bool ShouldSerializeVal() => Val is not null;
+  public bool ShouldSerializeVal() => HueValue is not null;
   public bool ShouldSerializeTint() => Tint is not null;
   public bool ShouldSerializeShade() => Shade is not null;
 }

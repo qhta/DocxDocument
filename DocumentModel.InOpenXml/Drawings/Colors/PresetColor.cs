@@ -105,9 +105,9 @@ public partial class PresetColor : AbstractColor<DXD.PresetColor>, ISchemeBaseCo
  /// </para>
  /// </remarks>
  [OpenXmlElement(typeof(DXD.Tint))]
- public PerHundredThousand? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
+ public Percentage? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
 
- private PerHundredThousand? _Tint;
+ private Percentage? _Tint;
  /// <summary>
  /// Shade value to darken the color.
  /// </summary>
@@ -126,7 +126,7 @@ public partial class PresetColor : AbstractColor<DXD.PresetColor>, ISchemeBaseCo
  /// </para>
  /// </remarks>
  [OpenXmlElement(typeof(DXD.Shade))]
- public PerHundredThousand? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
+ public Percentage? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
 
- private PerHundredThousand? _Shade;
+ private Percentage? _Shade;
 }

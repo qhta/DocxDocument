@@ -65,17 +65,17 @@ public class HexCharJsonConverter : JsonConverter<HexChar>
     if (reader.TokenType != JsonTokenType.String)
       throw new JsonException($"Expected string token for HexChar, but got {reader.TokenType}");
 
-    var value = reader.GetString();
-    if (string.IsNullOrEmpty(value))
+    var str = reader.GetString();
+    if (string.IsNullOrEmpty(str))
       return null;
 
     try
     {
-      return new HexChar(value);
+      return new HexChar(str);
     }
     catch (Exception ex)
     {
-      throw new JsonException($"Invalid hexadecimal string '{value}' for HexChar. Expected 2 or 4 hex digits (0-9, A-F).", ex);
+      throw new JsonException($"Invalid hexadecimal string '{str}' for HexChar. Expected 2 or 4 hex digits (0-9, A-F).", ex);
     }
   }
 
