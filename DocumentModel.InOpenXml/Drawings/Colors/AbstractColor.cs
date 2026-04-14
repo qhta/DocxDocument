@@ -24,4 +24,20 @@ namespace DocumentModel.Drawings;
 [XmlRoot("AbstractColor", Namespace = "DocumentModel")]
 public abstract class AbstractColor<T> : ModelElement<T> where T : DX.OpenXmlElement
 {
+  /// <summary>
+  /// Default constructor.
+  /// </summary>
+  protected AbstractColor() { }
+
+  /// <summary>
+  /// Constructor that assigns the parent object of this instance.
+  /// </summary>
+  protected AbstractColor(object parent) : base(parent)
+  {
+  }
+
+  ///// <summary>
+  ///// Gets the RGB color value represented by this instance, if available.
+  ///// </summary>
+  //public abstract UInt32? RGB { get; }
 }

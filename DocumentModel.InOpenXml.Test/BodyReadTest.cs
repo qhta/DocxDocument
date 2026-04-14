@@ -132,50 +132,6 @@ public class BodyReadTest : _AbstractTestClass
     return true;
   }
 
-  /// <summary>
-  /// Serializes an object to XML using its runtime type.
-  /// </summary>
-  /// <param name="data">The object to serialize.</param>
-  /// <returns>Serialized XML text.</returns>
-  static string SerializeObjectToXml(object data)
-  {
-    var knownTypes = GetRuntimeKnownTypes(data, data.GetType());
-    var xmlSerializer = CreateXmlSerializer(data.GetType(), knownTypes);
-    using (var stringWriter = new StringWriter())
-    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-    {
-      xmlSerializer.Serialize(xmlWriter, data);
-      return stringWriter.ToString();
-    }
-  }
-
-  /// <summary>
-  /// Deserializes XML to an object of the specified type.
-  /// </summary>
-  /// <param name="dataType">Target type.</param>
-  /// <param name="xml">XML input.</param>
-  /// <returns>Deserialized instance or null.</returns>
-  static object? DeserializeObjectFromXml(Type dataType, string xml)
-  {
-    var xmlSerializer = CreateXmlSerializer(dataType, []);
-    using (var stringReader = new StringReader(xml))
-    {
-      return xmlSerializer.Deserialize(stringReader);
-    }
-  }
-
-  /// <summary>
-  /// Creates an XML serializer with type overrides to avoid generic XML type-name collisions.
-  /// </summary>
-  /// <param name="rootType">The root type to serialize.</param>
-  /// <param name="knownTypes">An array of known types to include in the serializer.</param>
-  /// <returns>An <see cref="XmlSerializer"/> configured for the requested type.</returns>
-  static XmlSerializer CreateXmlSerializer(Type rootType, Type[] knownTypes)
-  {
-    var overrides = CreateXmlSerializerOverrides();
-    return new XmlSerializer(rootType, overrides, knownTypes, null, null);
-  }
-
   static Type[] GetRuntimeKnownTypes(object root, Type rootType)
   {
     var knownTypes = new HashSet<Type>();

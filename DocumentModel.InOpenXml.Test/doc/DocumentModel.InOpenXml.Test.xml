@@ -549,29 +549,6 @@
             </summary>
             <returns>True if the test passes; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.SerializeObjectToXml(System.Object)">
-            <summary>
-            Serializes an object to XML using its runtime type.
-            </summary>
-            <param name="data">The object to serialize.</param>
-            <returns>Serialized XML text.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.DeserializeObjectFromXml(System.Type,System.String)">
-            <summary>
-            Deserializes XML to an object of the specified type.
-            </summary>
-            <param name="dataType">Target type.</param>
-            <param name="xml">XML input.</param>
-            <returns>Deserialized instance or null.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.CreateXmlSerializer(System.Type,System.Type[])">
-            <summary>
-            Creates an XML serializer with type overrides to avoid generic XML type-name collisions.
-            </summary>
-            <param name="rootType">The root type to serialize.</param>
-            <param name="knownTypes">An array of known types to include in the serializer.</param>
-            <returns>An <see cref="T:System.Xml.Serialization.XmlSerializer"/> configured for the requested type.</returns>
-        </member>
         <member name="M:DocumentModel.InOpenXml.Test.BodyReadTest.CreateXmlSerializerOverrides">
             <summary>
             Creates XML serializer overrides with separate XML namespaces for different DocumentModel namespaces.
@@ -666,7 +643,6 @@
             <summary>
             Initializes the document theme part with a basic color scheme.
             </summary>
-            <param name="document">Target document whose theme should be initialized.</param>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.StoreThemeInDocument">
             <summary>
@@ -682,21 +658,6 @@
             </summary>
             <param name="filePath">Path to the .docx/.zip OpenXml package.</param>
             <returns>True if both target runs were found and updated; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.SerializeObjectToXml(System.Object)">
-            <summary>
-            Serializes an object to XML using its runtime type.
-            </summary>
-            <param name="data">The object to serialize.</param>
-            <returns>Serialized XML text.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ColorTypesTest.DeserializeObjectFromXml(System.Type,System.String)">
-            <summary>
-            Deserializes XML to an object of the specified type.
-            </summary>
-            <param name="dataType">Target type.</param>
-            <param name="xml">XML input.</param>
-            <returns>Deserialized instance or null.</returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.ContentPropertiesTest">
             <summary>
@@ -1875,6 +1836,29 @@
             <param name="json">The JSON string to deserialize.</param>
             <returns>The deserialized Styles object, or null if deserialization fails.</returns>
         </member>
+        <member name="T:DocumentModel.InOpenXml.Test.ThemeTest">
+            <summary>
+            Comprehensive tests for all DocumentModel types implementing IColor.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ThemeTest.Run">
+            <summary>
+            Runs all IColor implementation tests.
+            </summary>
+            <returns>True if all tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ThemeTest.StoreThemeInDocument">
+            <summary>
+            Tests that a Theme with a color scheme can be stored in a document and loaded back with all data intact.
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ThemeTest.CreateThemeWithColorScheme">
+            <summary>
+            Creates a Theme with a basic content.
+            </summary>
+        </member>
         <member name="T:DocumentModel.InOpenXml.Test._AbstractTestClass">
             <summary>
             Base class for all test classes, providing common functionality and constants.
@@ -1883,6 +1867,11 @@
         <member name="F:DocumentModel.InOpenXml.Test._AbstractTestClass.TestFileName">
             <summary>
             Common file name used for testing purposes. This file is created and deleted during tests, so it should not exist before the tests are run.
+            </summary>
+        </member>
+        <member name="F:DocumentModel.InOpenXml.Test._AbstractTestClass.TestFileDir">
+            <summary>
+            Common directory path used for testing purposes. This should be set to a valid directory on the test machine where sample files can be stored and accessed during tests.
             </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.GetDataXml(System.Object)">
@@ -1959,6 +1948,21 @@
             properties part, the method returns null.</remarks>
             <returns>A string containing the formatted XML with line numbers from the content properties part if it exists; otherwise,
             null.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.SerializeObjectToXml(System.Object)">
+            <summary>
+            Serializes an object to XML using its runtime type.
+            </summary>
+            <param name="data">The object to serialize.</param>
+            <returns>Serialized XML text.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.DeserializeObjectFromXml(System.Type,System.String)">
+            <summary>
+            Deserializes XML to an object of the specified type.
+            </summary>
+            <param name="dataType">Target type.</param>
+            <param name="xml">XML input.</param>
+            <returns>Deserialized instance or null.</returns>
         </member>
     </members>
 </doc>

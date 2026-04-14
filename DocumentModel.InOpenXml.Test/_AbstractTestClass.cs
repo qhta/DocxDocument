@@ -11,6 +11,10 @@ public class _AbstractTestClass
   /// Common file name used for testing purposes. This file is created and deleted during tests, so it should not exist before the tests are run.
   /// </summary>
   protected const string TestFileName = "temp.docx";
+  /// <summary>
+  /// Common directory path used for testing purposes. This should be set to a valid directory on the test machine where sample files can be stored and accessed during tests.
+  /// </summary>
+  protected const string TestFileDir = @"d:\OneDrive\VS\Projects\DocxDocument\Samples\";
 
   /// <summary>
   /// Returns the XML representation of the given data object.
@@ -143,6 +147,46 @@ public class _AbstractTestClass
     using (var wordDoc = WordprocessingDocument.Open(TestFileName, false))
     {
       return GetPartXml(wordDoc.ExtendedFilePropertiesPart);
+    }
+  }
+
+
+  /// <summary>
+  /// Serializes an object to XML using its runtime type.
+  /// </summary>
+  /// <param name="data">The object to serialize.</param>
+  /// <returns>Serialized XML text.</returns>
+  public static string SerializeObjectToXml(object data)
+  {
+    var rootType = data.GetType();
+
+    var ns = new XmlSerializerNamespaces();
+    ns.Add("xsi", "http://www.w3.org/2001/XMLSchema-instance");
+    ns.Add("d", "DocumentModel.Drawings");
+    ns.Add("wd", "DocumentModel.Wordprocessing.Drawings");
+
+
+    var xmlSerializer = new XmlSerializer(rootType);
+    using (var stringWriter = new StringWriter())
+    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+    {
+      xmlSerializer.Serialize(xmlWriter, data, ns);
+      return stringWriter.ToString();
+    }
+  }
+
+  /// <summary>
+  /// Deserializes XML to an object of the specified type.
+  /// </summary>
+  /// <param name="dataType">Target type.</param>
+  /// <param name="xml">XML input.</param>
+  /// <returns>Deserialized instance or null.</returns>
+  public static object? DeserializeObjectFromXml(Type dataType, string xml)
+  {
+    var xmlSerializer = new XmlSerializer(dataType);
+    using (var stringReader = new StringReader(xml))
+    {
+      return xmlSerializer.Deserialize(stringReader);
     }
   }
 }

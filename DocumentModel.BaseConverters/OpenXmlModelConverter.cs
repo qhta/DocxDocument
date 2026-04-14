@@ -27,7 +27,7 @@ public static partial class OpenXmlModelConverter
     if (modelObject == null)
       return null;
 
-    if (openXmlType == typeof(DXW.TopBorder)) Debug.Assert(true);
+    if (openXmlType == typeof(DXD.Dark1Color)) Debug.Assert(true);
     var modelType = modelObject.GetType().GetNotNullableType();
     if (modelType == openXmlType)
       return modelObject;
@@ -193,7 +193,7 @@ public static partial class OpenXmlModelConverter
   {
     if (modelProperty.GetCustomAttribute<NotMappedAttribute>() != null)
       return false;
-    if (modelProperty.Name == "DefaultTabStop") Debug.Assert(true);
+    if (modelProperty.Name == "Color") Debug.Assert(true);
     if (TryUpdateUsingPropertyUpdateDataMethod(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
     if (TryUpdateUsingTypeUpdateDataMethod(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
     if (TryUpdateUsingElementAttribute(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
@@ -340,7 +340,7 @@ public static partial class OpenXmlModelConverter
       var targetParameters = updatePropertyMethod.GetParameters();
       if (targetParameters.Length == 1)
       {
-        if (openXmlObject is DXW.TopBorder) Debug.Assert(true);
+        if (openXmlObject is DXD.Dark1Color) Debug.Assert(true);
         updatePropertyMethod.Invoke(modelObject, [openXmlObject]);
         return true;
       }
@@ -496,7 +496,7 @@ public static partial class OpenXmlModelConverter
   /// type of modelObject.</param>
   public static void LoadData(object modelObject, object openXmlObject, Type modelType)
   {
-    if (modelObject.GetType().Name == "DefaultRunProperties") Debug.Assert(true);
+    if (modelObject.GetType().Name == "Dark1Color") Debug.Assert(true);
     var openXmlType = openXmlObject.GetType();
     if (TryLoadUsingTypeLoadDataMethod(modelObject, openXmlObject, openXmlType)) return;
     TryLoadModelProperties(modelObject, openXmlObject, modelType, openXmlType);
@@ -586,7 +586,7 @@ public static partial class OpenXmlModelConverter
   {
     //Debug.WriteLine($"Loading property {modelProperty.Name} of type {modelProperty.PropertyType} " +
     //                $"from Open XML type {openXmlType} into model type {modelObject.GetType()}");
-    if (modelProperty.Name == "Spacing") Debug.Assert(true);
+    if (modelProperty.Name == "Color") Debug.Assert(true);
     if (TryLoadUsingPropertyLoadDataMethod(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
     if (TryLoadUsingTypeLoadDataMethod(modelObject, modelProperty, openXmlObject, openXmlType)) return true;
     if (TryLoadUsingElementAttribute(modelObject, modelProperty, openXmlObject, openXmlType)) return true;

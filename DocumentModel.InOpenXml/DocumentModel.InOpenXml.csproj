@@ -26,7 +26,7 @@
     <Compile Remove="Drawings\Colors\DrawingColor.cs" />
     <Compile Remove="Drawings\Colors\DrawingColorBase.cs" />
     <Compile Remove="Drawings\Colors\DrawingColorBase.ShouldSerialize.cs" />
-    <Compile Remove="Drawings\Colors\IDrawingColor.cs" />
+    <Compile Remove="Drawings\Colors\SchemeColorDef.cs" />
     <Compile Remove="Wordprocessing.Drawings\Colors\WordColorBase.cs" />
     <Compile Remove="Wordprocessing.Drawings\Colors\WordColorBase.ShouldSerialize.cs" />
     <Compile Remove="Wordprocessing.Drawings\Colors\WordColorClass.cs" />

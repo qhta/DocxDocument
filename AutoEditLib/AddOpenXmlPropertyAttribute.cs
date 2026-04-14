@@ -94,10 +94,15 @@ public class AddOpenXmlPropertyAttributeRewriter(BiDiDictionary<string, string> 
 
     // Add [OpenXmlProperty(nameof(Format.EnumPropertyName))] to each property
 
-    var properties = classNode.Members.OfType<PropertyDeclarationSyntax>();
     var newMembers = new List<MemberDeclarationSyntax>();
-    foreach (var prop in properties)
+    foreach (var member in classNode.Members)
     {
+      if (member is not PropertyDeclarationSyntax prop)
+      {
+        newMembers.Add(member);
+        continue;
+      }
+
       // Only touch properties that have a setter
       var hasSetter = prop.AccessorList?.Accessors.Any(predicate: a => a.Kind() == SyntaxKind.SetAccessorDeclaration) ==
                       true;

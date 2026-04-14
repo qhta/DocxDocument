@@ -33,7 +33,8 @@ internal class Program
     //if (!Exec(BaseTableCellPropertiesTest.Run)) return;
     //if (!Exec(BaseTableRowPropertiesTest.Run)) return;
     //if (!Exec(BaseTablePropertiesTest.Run)) return;
-    if (!Exec(ColorTypesTest.Run)) return;
+    if (!Exec(ThemeTest.Run)) return;
+    //if (!Exec(ColorTypesTest.Run)) return;
     //if (!Exec(BodyReadTest.Run)) return;
 
     Console.WriteLine("All tests passed.");

@@ -36,7 +36,7 @@ public static class OpenXmlElementConverter
       }
       return null;
     }
-    if (openXmlType == typeof(DXW.TopBorder)) Debug.Assert(true);
+    if (openXmlType == typeof(DXD.Dark1Color)) Debug.Assert(true);
 
     if (SimpleValueConverter.TryConvertTo(modelValue, openXmlType, out var result))
     {

@@ -144,9 +144,9 @@ public partial class ColorScheme : ModelElement<DXD.ColorScheme>, IOfficeArtExte
  /// xmlns:a = http://schemas.openxmlformats.org/drawingml/2006/main
  /// </remarks>
  [OpenXmlProperty(nameof(DXD.ColorScheme.FollowedHyperlinkColor))]
- public SchemeColorDef? FollowedHyperlinkColor { get => _FollowedHyperlinkColor; set => UpdateField(ref _FollowedHyperlinkColor, value, nameof(FollowedHyperlinkColor)); }
+ public SchemeColorDef? FollowedHyperlink { get => _followedHyperlink; set => UpdateField(ref _followedHyperlink, value, nameof(FollowedHyperlink)); }
 
- private SchemeColorDef? _FollowedHyperlinkColor;
+ private SchemeColorDef? _followedHyperlink;
  /// <summary>
  /// ExtensionList, which allows for additional properties or elements to be associated with the color scheme.
  /// </summary>
@@ -176,7 +176,7 @@ public partial class ColorScheme : ModelElement<DXD.ColorScheme>, IOfficeArtExte
    SchemeColors.Accent5 => Accent5Color,
    SchemeColors.Accent6 => Accent6Color,
    SchemeColors.Hyperlink => Hyperlink,
-   SchemeColors.FollowedHyperlink => FollowedHyperlinkColor,
+   SchemeColors.FollowedHyperlink => FollowedHyperlink,
    SchemeColors.Text1 => Dark1Color,
    SchemeColors.Background1 => Light1Color,
    SchemeColors.Text2 => Dark2Color,

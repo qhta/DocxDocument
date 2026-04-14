@@ -4,6 +4,8 @@ using System.Xml.Serialization;
 
 using DocumentModel.Drawings;
 
+using Path = System.IO.Path;
+
 namespace DocumentModel.InOpenXml.Test;
 
 /// <summary>
@@ -24,7 +26,7 @@ public class ColorTypesTest : _AbstractTestClass
     if (!TestIColorAccessors()) return false;
     if (!TestEdgeCases()) return false;
     if (!StoreThemeInDocument()) return false;
-    if (!ChangeTwoWordColorsInDocument()) return false;
+    //if (!ChangeTwoWordColorsInDocument()) return false;
     Console.WriteLine("All IColor implementation tests passed.\n");
     return true;
   }
@@ -360,30 +362,28 @@ public class ColorTypesTest : _AbstractTestClass
   /// <summary>
   /// Initializes the document theme part with a basic color scheme.
   /// </summary>
-  /// <param name="document">Target document whose theme should be initialized.</param>
   static Theme CreateThemeWithColorScheme()
   {
     var theme = new Theme
     {
-      Name = "ColorTypesTest Theme",
-      ThemeId = "ColorTypesTestTheme",
+      Name = "Office Theme",
       ThemeElements = new ThemeElements
       {
         ColorScheme = new ColorScheme
         {
-          Name = "ColorTypesTest Color Scheme",
-          Dark1Color = new RgbColorModelHex { Val = (HexColor)0x000000 },
-          Light1Color = new RgbColorModelHex { Val = (HexColor)0xFFFFFF },
-          Dark2Color = new RgbColorModelPercentage { Red = 0.5, Green = 0.5, Blue = 0.5 },
-          Light2Color = new HslColor { HueValue = new Degrees(60), LumValue = new Percentage(45), SatValue = new Percentage(60) },
-          Accent1Color = new RgbColorModelHex { Val = (HexColor)0x4472C4 },
-          Accent2Color = new RgbColorModelHex { Val = (HexColor)0xED7D31 },
-          Accent3Color = new RgbColorModelHex { Val = (HexColor)0xA5A5A5 },
-          Accent4Color = new RgbColorModelHex { Val = (HexColor)0xFFC000 },
-          Accent5Color = new RgbColorModelHex { Val = (HexColor)0x5B9BD5 },
-          Accent6Color = new RgbColorModelHex { Val = (HexColor)0x70AD47 },
-          Hyperlink = new RgbColorModelHex { Val = (HexColor)0x0563C1 },
-          FollowedHyperlinkColor = new RgbColorModelHex { Val = (HexColor)0x954F72 },
+          Name = "Office",
+          Dark1Color = new SystemColor() { Val = SystemColors.WindowText, LastColor = (HexColor)0x000000 },
+          Light1Color = new SystemColor() { Val = SystemColors.Window, LastColor = (HexColor)0xFFFFFF },
+          Dark2Color = new RgbColorModelHex { Val = (HexColor)0x0E2841 },
+          Light2Color = new RgbColorModelHex { Val = (HexColor)0xE8E8E8 },
+          Accent1Color = new RgbColorModelHex { Val = (HexColor)0x156082 },
+          Accent2Color = new RgbColorModelHex { Val = (HexColor)0xE97132 },
+          Accent3Color = new RgbColorModelHex { Val = (HexColor)0xE97132 },
+          Accent4Color = new RgbColorModelHex { Val = (HexColor)0x0F9ED5 },
+          Accent5Color = new RgbColorModelHex { Val = (HexColor)0xA02B93 },
+          Accent6Color = new RgbColorModelHex { Val = (HexColor)0x4EA72E },
+          Hyperlink = new RgbColorModelHex { Val = (HexColor)0x0467886 },
+          FollowedHyperlink = new RgbColorModelHex { Val = (HexColor)0x96607D },
         }
       }
     };
@@ -397,41 +397,52 @@ public class ColorTypesTest : _AbstractTestClass
   /// <exception cref="InvalidOperationException"></exception>
   public static bool StoreThemeInDocument()
   {
-    Console.WriteLine("--- Store Theme in document ---");
+    Console.WriteLine("\n --- Store Theme in document ---");
+    Theme testData = CreateThemeWithColorScheme();
+    var testFileName = Path.Combine(_AbstractTestClass.TestFileDir, "TestThemeCreate.docx");
+    using (var document = new Document(testFileName, FileMode.CreateNew))
     {
-      Theme testData = CreateThemeWithColorScheme();
-      using (var document = new Document(TestFileName, FileMode.CreateNew))
-      {
-        document.Theme = testData;
-      }
+      document.Theme = testData;
+    }
 
-      Theme storedData;
-      using (var document = new Document(TestFileName))
+    Theme storedData;
+    using (var document = new Document(testFileName))
+    {
+      var openXml = document.WordprocessingDocument!.MainDocumentPart!.ThemePart!.Theme!.OuterXml;
+      //openXml = openXml.Replace("http://schemas.openxmlformats.org/wordprocessingml/2006/main",
+      //  "http://purl.oclc.org/ooxml/wordprocessingml/main");
+      var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
+      Console.WriteLine(formattedOpenXml);
+      var validationResult = OpenXmlSchemaValidator.ValidateXml(formattedOpenXml);
+      if (!validationResult.IsValid)
       {
-        var openXml = document.WordprocessingDocument!.MainDocumentPart!.ThemePart!.Theme!.OuterXml;
-        //openXml = openXml.Replace("http://schemas.openxmlformats.org/wordprocessingml/2006/main",
-        //  "http://purl.oclc.org/ooxml/wordprocessingml/main");
-        var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
-        Console.WriteLine(formattedOpenXml);
-        storedData = document.Theme ?? throw new InvalidOperationException("Theme not found.");
-      }
-
-      var xmlSerializer = new XmlSerializer(typeof(Theme));
-      string xmlString;
-      using (var stringWriter = new StringWriter())
-      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-      {
-        xmlSerializer.Serialize(xmlWriter, storedData);
-        xmlString = stringWriter.ToString();
-      }
-      Console.WriteLine("Theme loaded from document:\n" + xmlString);
-      if (!TestHelper.CompareTestData(typeof(Theme), testData, storedData, out var propName1))
-      {
-        Console.WriteLine($"✗ XML test FAILED for '{storedData.GetType().Name}' - mismatch in '{propName1}'");
+        Console.WriteLine("✗ Store Theme Test: OpenXml schema validation FAILED - issues found:");
+        foreach (var message in validationResult.Messages)
+        {
+          Console.WriteLine($" {message}");
+        }
         return false;
       }
-      return true;
+
+      storedData = document.Theme ?? throw new InvalidOperationException("Theme not found.");
     }
+
+    var xmlSerializer = new XmlSerializer(typeof(Theme));
+    string xmlString;
+    using (var stringWriter = new StringWriter())
+    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+    {
+      xmlSerializer.Serialize(xmlWriter, storedData);
+      xmlString = stringWriter.ToString();
+    }
+    Console.WriteLine("Theme loaded from document:\n" + xmlString);
+    if (!TestHelper.CompareTestData(typeof(Theme), testData, storedData, out var propName1))
+    {
+      Console.WriteLine($"✗ XML test FAILED for '{storedData.GetType().Name}' - mismatch in '{propName1}'");
+      return false;
+    }
+    Console.WriteLine("✓ Store Theme in document passed");
+    return true;
 
   }
 
@@ -447,7 +458,7 @@ public class ColorTypesTest : _AbstractTestClass
   /// <returns>True if both target runs were found and updated; otherwise, false.</returns>
   public static bool ChangeTwoWordColorsInDocument(string filePath = @"D:\OneDrive\VS\Projects\DocxDocument\Samples\Colors test2.zip")
   {
-    Console.WriteLine("--- Two Word Colors in Document ---");
+    Console.WriteLine("\n--- Two Word Colors in Document ---");
 
     if (!File.Exists(filePath))
     {
@@ -504,47 +515,9 @@ public class ColorTypesTest : _AbstractTestClass
 
     var result = redUpdated && accentUpdated;
     if (result)
-      Console.WriteLine("--- Two Word Colors in Document passed ---");
+      Console.WriteLine("✓  Two Word Colors in Document passed");
 
     return result;
   }
 
-  /// <summary>
-  /// Serializes an object to XML using its runtime type.
-  /// </summary>
-  /// <param name="data">The object to serialize.</param>
-  /// <returns>Serialized XML text.</returns>
-  static string SerializeObjectToXml(object data)
-  {
-    var rootType = data.GetType();
-
-    var ns = new XmlSerializerNamespaces();
-    ns.Add("xsi", "http://www.w3.org/2001/XMLSchema-instance");
-    ns.Add("d", "DocumentModel.Drawings");
-    ns.Add("wd", "DocumentModel.Wordprocessing.Drawings");
-
-
-    var xmlSerializer = new XmlSerializer(rootType);
-    using (var stringWriter = new StringWriter())
-    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-    {
-      xmlSerializer.Serialize(xmlWriter, data, ns);
-      return stringWriter.ToString();
-    }
-  }
-
-  /// <summary>
-  /// Deserializes XML to an object of the specified type.
-  /// </summary>
-  /// <param name="dataType">Target type.</param>
-  /// <param name="xml">XML input.</param>
-  /// <returns>Deserialized instance or null.</returns>
-  static object? DeserializeObjectFromXml(Type dataType, string xml)
-  {
-    var xmlSerializer = new XmlSerializer(dataType);
-    using (var stringReader = new StringReader(xml))
-    {
-      return xmlSerializer.Deserialize(stringReader);
-    }
-  }
 }
