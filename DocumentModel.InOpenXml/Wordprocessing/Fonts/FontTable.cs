@@ -1,11 +1,12 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Represents the root element of the font table in a WordprocessingML document.
-/// This class provides access to and management of <see cref="FontDef"/> objects, enabling advanced organization, referencing, and configuration of fonts used throughout the document.
+/// This class provides access to and management of <see cref="Font"/> objects, enabling advanced organization, referencing, and configuration of fonts used throughout the document.
 /// </summary>
 [OpenXmlType(typeof(DXW.Fonts))]
+[LazyLoad]
 [XmlRoot("FontTable")]
-public  sealed class FontTable : ModelElementCollection<FontDef, DXW.Fonts, DXW.Font>
+public  sealed class FontTable : ModelElementCollection<Font, DXW.Fonts, DXW.Font>
 {
   /// <summary>
   /// Default constructor.

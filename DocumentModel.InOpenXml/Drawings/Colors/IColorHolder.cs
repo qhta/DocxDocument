@@ -12,17 +12,6 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public partial interface IColorHolder
 {
-  ///// <summary>
-  ///// Loads color information from the specified Open XML element.
-  ///// </summary>
-  ///// <param name="openXmlElement">The Open XML element from which to load color data. Must not be null.</param>
-  //void LoadColorFromOpenXml(DX.OpenXmlElement openXmlElement);
-
-  ///// <summary>
-  ///// Updates a color information in an Open XML element based on the current color properties of this instance.
-  ///// </summary>
-  ///// <param name="openXmlElement">The Open XML element to update with the current color information.</param>
-  //void UpdateColorInOpenXml(DX.OpenXmlElement openXmlElement);
 
   /// <summary>
   /// Color that is held by this instance. 

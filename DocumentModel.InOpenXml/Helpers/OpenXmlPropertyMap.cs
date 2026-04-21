@@ -23,7 +23,7 @@ public static class OpenXmlPropertyMap
  /// <param name = "openXmlType">The OpenXML type to search for the property mapping. Must not be null.</param>
  /// <returns>A PropertyInfo object representing the OpenXML property that corresponds to the specified model element property.</returns>
  /// <exception cref = "ArgumentException">Thrown if no corresponding OpenXML property is found for the specified model element property.</exception>
- public static PropertyInfo? GetOpenXmlPropertyForModelProperty(PropertyInfo modelElementProperty, Type openXmlType)
+ public static PropertyInfo? GetOpenXmlProperty(PropertyInfo modelElementProperty, Type openXmlType)
  {
   var openXmlPropertyName = modelElementProperty.GetCustomAttribute<OpenXmlPropertyAttribute>()is { } openXmlPropertyAttribute ? openXmlPropertyAttribute.PropertyName : modelElementProperty.Name;
   var result = openXmlType.GetProperty(openXmlPropertyName, BindingFlags.Public | BindingFlags.Instance);

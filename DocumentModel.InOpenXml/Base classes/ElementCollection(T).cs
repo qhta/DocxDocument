@@ -8,479 +8,489 @@ namespace DocumentModel;
 [XmlRoot("ElementCollection", Namespace = "DocumentModel")]
 public abstract partial class ElementCollection<ItemType> : ModelElement, IElementCollection<ItemType>, IEquatable<ElementCollection<ItemType>>, ICollection<ItemType>, IList, INotificationSource, IEmptyCheckable where ItemType : notnull
 {
- private readonly ObservableCollection<ItemType> _items = new();
- private readonly BiDiDictionary<string, ItemType>? _index;
- /// <summary>
- /// Initializes a new, empty collection.
- /// </summary>
- protected ElementCollection()
- {
-  if (typeof(ItemType).IsAssignableTo(typeof(INamedObject)))
-   _index = new BiDiDictionary<string, ItemType>();
-  _items.CollectionChanged += _items_CollectionChanged;
- }
+  private bool _IsLazyLoadingEnabled;
+  private ObservableCollection<ItemType> Items => _items ??= new ObservableCollection<ItemType>();
+  private ObservableCollection<ItemType>? _items;
+  private readonly BiDiDictionary<string, ItemType>? _index;
 
- /// <summary>
- /// Creates a new collection with the specified parent element.
- /// The parent element is assigned to the Parent property of this collection, establishing a hierarchical relationship
- /// between the collection and its parent. This constructor allows for the creation of collections that are associated
- /// with a specific parent model element, enabling structured data organization and navigation within the model.
- /// </summary>
- /// <param name = "parent">Model element that will be notified about modifications.</param>
- protected ElementCollection(ModelElement parent) : this()
- {
-  SetParent(parent);
- }
-
- /// <summary>
- /// Initializes a new collection with the specified items.
- /// </summary>
- /// <param name = "items">The items to add to the collection.</param>
- protected ElementCollection(IEnumerable<ItemType> items)
- {
-  foreach (var item in items)
+  /// <summary>
+  /// Initializes a new, empty collection.
+  /// </summary>
+  protected ElementCollection()
   {
-   _items.Add(item);
-   if (item is ICollectionItem collectionItem)
-    collectionItem.SetCollection(this);
-   if (item is INamedObject namedObject && _index != null)
-    _index.Add(namedObject.Name!, item);
-   if (item is INotifyPropertyChanged notificationSource)
-    notificationSource.PropertyChanged += ItemPropertyChanged;
+    _IsLazyLoadingEnabled = GetType().GetCustomAttribute<LazyLoadAttribute>() != null;
+    if (typeof(ItemType).IsAssignableTo(typeof(INamedObject)))
+      _index = new BiDiDictionary<string, ItemType>();
+    Items.CollectionChanged += Items_CollectionChanged;
   }
- }
 
- /// <summary>
- /// Handles the CollectionChanged event of the internal ObservableCollection.
- /// When items are added to the collection, this method checks if the new items implement the ICollectionItem interface and,
- /// if so, sets their Collection property to this instance of ElementCollection.
- /// This ensures that each item in the collection has a reference back to the collection it belongs to,
- /// which can be useful for navigation and data management purposes. 
- /// </summary>
- /// <param name = "sender">The object which have raised this event.</param>
- /// <param name = "args">The argument object of the event.</param>
- private void _items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
- {
-  if (args.Action == NotifyCollectionChangedAction.Add)
+  /// <summary>
+  /// Creates a new collection with the specified parent element.
+  /// The parent element is assigned to the Parent property of this collection, establishing a hierarchical relationship
+  /// between the collection and its parent. This constructor allows for the creation of collections that are associated
+  /// with a specific parent model element, enabling structured data organization and navigation within the model.
+  /// </summary>
+  /// <param name = "parent">Model element that will be notified about modifications.</param>
+  protected ElementCollection(ModelElement parent) : this()
   {
-   if (args.NewItems != null)
-   {
-    foreach (var item in args.NewItems.Cast<ItemType>())
+    SetParent(parent);
+  }
+
+  /// <summary>
+  /// Initializes a new collection with the specified items.
+  /// </summary>
+  /// <param name = "items">The items to add to the collection.</param>
+  protected ElementCollection(IEnumerable<ItemType> items)
+  {
+    _IsLazyLoadingEnabled = GetType().GetCustomAttribute<LazyLoadAttribute>() != null;
+    if (typeof(ItemType).IsAssignableTo(typeof(INamedObject)))
+      _index = new BiDiDictionary<string, ItemType>();
+    foreach (var item in items)
     {
-     if (item is ICollectionItem collectionItem)
-      collectionItem.SetCollection(this);
-     if (item is INamedObject namedObject && _index != null && namedObject.Name != null)
-      _index.Add(namedObject.Name, item);
-     if (item is INotifyPropertyChanged notificationSource)
-      notificationSource.PropertyChanged += ItemPropertyChanged;
+      Items.Add(item);
+      if (item is ICollectionItem collectionItem)
+        collectionItem.SetCollection(this);
+      if (item is INamedObject namedObject && _index != null)
+        _index.Add(namedObject.Name!, item);
+      if (item is INotifyPropertyChanged notificationSource)
+        notificationSource.PropertyChanged += ItemPropertyChanged;
     }
-   }
+    Items.CollectionChanged += Items_CollectionChanged;
   }
 
-  //else if (args.Action == NotifyCollectionChangedAction.Remove)
-  //{
-  //  if (args.OldItems != null)
-  //  {
-  //    foreach (var item in args.OldItems.Cast<ItemType>())
-  //    {
-  //      if (item is ICollectionItem collectionItem)
-  //        collectionItem.SetCollection(null);
-  //      if (item is INamedObject namedObject && _index != null && namedObject.Name!=null)
-  //        _index.Remove(namedObject.Name);
-  //      if (item is INotifyPropertyChanged notificationSource)
-  //        notificationSource.PropertyChanged -= ItemPropertyChanged;
-  //    }
-  //  }
-  //}
-  if (!IsLoading)
-   if (Parent != null)
-   {
-    var openXmlElement = GetUpdatableElement();
-    if (openXmlElement != null)
-     UpdateData(openXmlElement);
-   }
-
-  CollectionChanged?.Invoke(this, args);
-  if (!IsLoading && IsNotificationEnabled)
-   SetIsModified(true);
- }
-
- /// <summary>
- /// Handles notification from child item and raises this PropertyChanged event.
- /// </summary>
- /// <param name = "sender">Child item that sent PropertyChanged event</param>
- /// <param name = "args">Arguments of this event</param>
- private void ItemPropertyChanged(object? sender, PropertyChangedEventArgs args)
- {
-  if (sender is ItemType item)
+  /// <summary>
+  /// Handles the CollectionChanged event of the internal ObservableCollection.
+  /// When items are added to the collection, this method checks if the new items implement the ICollectionItem interface and,
+  /// if so, sets their Collection property to this instance of ElementCollection.
+  /// This ensures that each item in the collection has a reference back to the collection it belongs to,
+  /// which can be useful for navigation and data management purposes. 
+  /// </summary>
+  /// <param name = "sender">The object which have raised this event.</param>
+  /// <param name = "args">The argument object of the event.</param>
+  private void Items_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs args)
   {
-   var propertyName = args.PropertyName;
-   if (propertyName == "Name" && sender is INamedObject namedObject && _index != null)
-   {
-    if (args is PropertyValueChangedEventArgs valueChangedArgs)
+    if (args.Action == NotifyCollectionChangedAction.Add)
     {
-     if (valueChangedArgs.OldValue is string oldName)
-      _index.Remove(new KeyValuePair<string, ItemType>(oldName, item));
-     if (valueChangedArgs.NewValue is string newName)
-      _index.Add(new KeyValuePair<string, ItemType>(newName, item));
+      if (args.NewItems != null)
+      {
+        foreach (var item in args.NewItems.Cast<ItemType>())
+        {
+          if (item is ICollectionItem collectionItem)
+            collectionItem.SetCollection(this);
+          if (item is INamedObject namedObject && _index != null && namedObject.Name != null)
+            _index.Add(namedObject.Name, item);
+          if (item is INotifyPropertyChanged notificationSource)
+            notificationSource.PropertyChanged += ItemPropertyChanged;
+        }
+      }
     }
-    else
+    else if (args.Action == NotifyCollectionChangedAction.Remove)
     {
-     // If PropertyValueChangedEventArgs is not available, we can still update the index based on the new name.
-     // However, we may not be able to remove the old name from the index without it. This is a limitation.
-     if (_index.TryGetValue1(item, out var oldName))
-      _index.Remove(new KeyValuePair<string, ItemType>(oldName, item));
-     if (namedObject.Name != null)
-      _index.Add(new KeyValuePair<string, ItemType>(namedObject.Name, item));
+      if (args.OldItems != null)
+      {
+        foreach (var item in args.OldItems.Cast<ItemType>())
+        {
+          if (item is ICollectionItem collectionItem)
+            collectionItem.SetCollection(null);
+          if (item is INamedObject namedObject && _index != null && namedObject.Name != null)
+            _index.Remove(namedObject.Name);
+          if (item is INotifyPropertyChanged notificationSource)
+            notificationSource.PropertyChanged -= ItemPropertyChanged;
+        }
+      }
     }
-   }
+    if (!IsLoading)
+      if (Parent != null)
+      {
+        var openXmlElement = GetUpdatableElement();
+        if (openXmlElement != null)
+          UpdateData(openXmlElement);
+      }
+
+    CollectionChanged?.Invoke(this, args);
+    if (!IsLoading && IsNotificationEnabled)
+      SetIsModified(true);
   }
 
-  if (IsNotificationEnabled && PropertyName != null)
-   NotifyPropertyChanged(PropertyName);
- }
-
- /// <summary>
- /// Indexed access to items by integer index or string name (if ItemType implements INamedObject).
- /// </summary>
- /// <param name = "Index">The index of the item to access. Can be an integer or a string.</param>
- /// <returns>The item at the specified index.</returns>
- /// <exception cref = "KeyNotFoundException">Thrown when the specified string index does not exist in the collection.</exception>
- /// <exception cref = "NotSupportedException">Thrown when the index type is not supported.</exception>
- public ItemType this[object Index]
- {
-  get
+  /// <summary>
+  /// Handles notification from child item and raises this PropertyChanged event.
+  /// </summary>
+  /// <param name = "sender">Child item that sent PropertyChanged event</param>
+  /// <param name = "args">Arguments of this event</param>
+  private void ItemPropertyChanged(object? sender, PropertyChangedEventArgs args)
   {
-   if (Index is int intIndex)
-    return this[intIndex];
-   if (Index is string stringIndex && _index != null)
-   {
-    if (stringIndex == "Identifier")
-     Debug.Assert(true);
-    return _index.TryGetValue2(stringIndex, out var item) ? item : throw new KeyNotFoundException($"No item with name '{stringIndex}' found in the collection.");
-   }
+    if (sender is ItemType item)
+    {
+      var propertyName = args.PropertyName;
+      if (propertyName == "Name" && sender is INamedObject namedObject && _index != null)
+      {
+        if (args is PropertyValueChangedEventArgs valueChangedArgs)
+        {
+          if (valueChangedArgs.OldValue is string oldName)
+            _index.Remove(new KeyValuePair<string, ItemType>(oldName, item));
+          if (valueChangedArgs.NewValue is string newName)
+            _index.Add(new KeyValuePair<string, ItemType>(newName, item));
+        }
+        else
+        {
+          // If PropertyValueChangedEventArgs is not available, we can still update the index based on the new name.
+          // However, we may not be able to remove the old name from the index without it. This is a limitation.
+          if (_index.TryGetValue1(item, out var oldName))
+            _index.Remove(new KeyValuePair<string, ItemType>(oldName, item));
+          if (namedObject.Name != null)
+            _index.Add(new KeyValuePair<string, ItemType>(namedObject.Name, item));
+        }
+      }
+    }
 
-   throw new NotSupportedException($"Invalid index type {Index.GetType()}.");
+    if (IsNotificationEnabled && PropertyName != null)
+      NotifyPropertyChanged(PropertyName);
   }
 
-  set
+  /// <summary>
+  /// Indexed access to items by integer index or string name (if ItemType implements INamedObject).
+  /// </summary>
+  /// <param name = "Index">The index of the item to access. Can be an integer or a string.</param>
+  /// <returns>The item at the specified index.</returns>
+  /// <exception cref = "KeyNotFoundException">Thrown when the specified string index does not exist in the collection.</exception>
+  /// <exception cref = "NotSupportedException">Thrown when the index type is not supported.</exception>
+  public virtual ItemType this[object Index]
   {
-   if (Index is int intIndex)
-    this[intIndex] = value;
-   else if (Index is string stringIndex && _index != null)
-   {
-    if (_index.TryGetValue2(stringIndex, out var item))
-     _index[stringIndex] = value;
-    else
-     throw new KeyNotFoundException($"No item with name '{stringIndex}' found in the collection.");
-   }
-   else
-    throw new NotSupportedException("Invalid index type.");
+    get
+    {
+      if (Index is int intIndex)
+        return this[intIndex];
+      if (Index is string stringIndex && _index != null)
+      {
+        if (stringIndex == "Identifier")
+          Debug.Assert(true);
+        return _index.TryGetValue2(stringIndex, out var item) ? item : throw new KeyNotFoundException($"No item with name '{stringIndex}' found in the collection.");
+      }
+
+      throw new NotSupportedException($"Invalid index type {Index.GetType()}.");
+    }
+
+    set
+    {
+      if (Index is int intIndex)
+        this[intIndex] = value;
+      else if (Index is string stringIndex && _index != null)
+      {
+        if (_index.TryGetValue2(stringIndex, out var item))
+          _index[stringIndex] = value;
+        else
+          throw new KeyNotFoundException($"No item with name '{stringIndex}' found in the collection.");
+      }
+      else
+        throw new NotSupportedException("Invalid index type.");
+    }
   }
- }
 
- /// <summary>
- /// Returns the first item in the collection, or null if the collection is empty.
- /// </summary>
- public ItemType? First => this.Count > 0 ? this[0] : default;
- /// <summary>
- /// Returns the last item in the collection, or null if the collection is empty.
- /// </summary>
- public ItemType? Last => this.Count > 0 ? this[this.Count - 1] : default;
+  /// <summary>
+  /// Returns the first item in the collection, or null if the collection is empty.
+  /// </summary>
+  public virtual ItemType? First => this.Count > 0 ? this[0] : default;
+  /// <summary>
+  /// Returns the last item in the collection, or null if the collection is empty.
+  /// </summary>
+  public virtual ItemType? Last => this.Count > 0 ? this[this.Count - 1] : default;
 
- /// <summary>
- /// Compares this collection to another collection for equality.
- /// </summary>
- /// <param name = "other">The other collection to compare to.</param>
- /// <returns>True if the collections are equal; otherwise, false.</returns>
- public bool Equals(ElementCollection<ItemType>? other)
- {
-  if (this.Count != other?.Count)
-   return false;
-  for (int i = 0; i < this.Count; i++)
+  /// <summary>
+  /// Compares this collection to another collection for equality.
+  /// </summary>
+  /// <param name = "other">The other collection to compare to.</param>
+  /// <returns>True if the collections are equal; otherwise, false.</returns>
+  public bool Equals(ElementCollection<ItemType>? other)
   {
-   var thisItem = this[i];
-   var otherItem = other[i];
-   if (!thisItem!.Equals(otherItem))
-    return false;
+    if (this.Count != other?.Count)
+      return false;
+    for (int i = 0; i < this.Count; i++)
+    {
+      var thisItem = this[i];
+      var otherItem = other[i];
+      if (!thisItem!.Equals(otherItem))
+        return false;
+    }
+
+    return true;
   }
 
-  return true;
- }
-
- /// <summary>
- /// Compares this collection to another object for equality.
- /// </summary>
- /// <param name = "obj">The object to compare to.</param>
- /// <returns>True if the objects are equal; otherwise, false.</returns>
- public override bool Equals(object? obj)
- {
-  if (obj is null)
-   return false;
-  if (ReferenceEquals(this, obj))
-   return true;
-  if (obj.GetType() != GetType())
-   return false;
-  return Equals((ElementCollection<ItemType>)obj);
- }
-
- /// <summary>
- /// Returns an enumerator that iterates through the collection (non-generic).
- /// </summary>
- IEnumerator IEnumerable.GetEnumerator()
- {
-  return ((IEnumerable)_items).GetEnumerator();
- }
-
- /// <summary>
- /// Returns an enumerator that iterates through the collection.
- /// </summary>
- public IEnumerator<ItemType> GetEnumerator()
- {
-  return _items.GetEnumerator();
- }
-
- /// <summary>
- /// Adds an item to the collection.
- /// </summary>
- /// <param name = "item">The item to add.</param>
- public void Add(ItemType item)
- {
-  _items.Add(item);
- }
-
- /// <summary>
- /// Removes all items from the collection.
- /// </summary>
- public void Clear()
- {
-  _items.Clear();
- }
-
- /// <summary>
- /// Determines whether the collection contains a specific item.
- /// </summary>
- /// <param name = "item">The item to locate.</param>
- /// <returns>True if found; otherwise, false.</returns>
- public bool Contains(ItemType item)
- {
-  return _items.Contains(item);
- }
-
- /// <summary>
- /// Copies the elements of the collection to an array, starting at a particular array index.
- /// </summary>
- /// <param name = "array">The destination array.</param>
- /// <param name = "arrayIndex">The zero-based index at which copying begins.</param>
- public void CopyTo(ItemType[] array, int arrayIndex)
- {
-  _items.CopyTo(array, arrayIndex);
- }
-
- /// <summary>
- /// Removes the first occurrence of a specific item from the collection.
- /// </summary>
- /// <param name = "item">The item to remove.</param>
- /// <returns>True if removed; otherwise, false.</returns>
- public bool Remove(ItemType item)
- {
-  return _items.Remove(item);
- }
-
- /// <summary>
- /// Returns the number of items in the collection.
- /// </summary>
- public int Count => _items.Count;
-
- /// <summary>
- /// Copies the elements of the collection to a specified one-dimensional array, starting at the given index in the
- /// target array.
- /// </summary>
- /// <param name = "array">The one-dimensional array that is the destination of the elements copied from the collection. The array must have
- /// zero-based indexing and sufficient space to accommodate the copied elements.</param>
- /// <param name = "index">The zero-based index in the destination array at which copying begins.</param>
- public void CopyTo(Array array, int index)
- {
-  ((ICollection)_items).CopyTo(array, index);
- }
-
- /// <summary>
- /// Gets a value indicating whether access to the collection is synchronized (thread-safe).
- /// </summary>
- /// <remarks>If this property returns <see langword="true"/>, access to the collection is thread-safe and can
- /// be shared among multiple threads without additional synchronization. If <see langword="false"/>, callers must
- /// implement their own synchronization to ensure thread safety when accessing the collection concurrently.</remarks>
- public bool IsSynchronized => ((ICollection)_items).IsSynchronized;
- /// <summary>
- /// Gets an object that can be used to synchronize access to the collection.
- /// </summary>
- /// <remarks>Use the returned object with a lock statement to ensure thread safety when accessing the
- /// collection from multiple threads. Synchronizing access using this object helps prevent race conditions and data
- /// corruption in multithreaded scenarios.</remarks>
- public object SyncRoot => ((ICollection)_items).SyncRoot;
- /// <summary>
- /// Indicates whether the collection is read-only.
- /// </summary>
- public bool IsReadOnly => false;
-
- /// <summary>
- /// Determines the index of a specific item in the collection.
- /// </summary>
- /// <param name = "item">The item to locate.</param>
- /// <returns>The index if found; otherwise, -1.</returns>
- public int IndexOf(ItemType item)
- {
-  return _items.IndexOf(item);
- }
-
- /// <summary>
- /// Inserts an item at the specified index.
- /// </summary>
- /// <param name = "index">The zero-based index at which to insert.</param>
- /// <param name = "item">The item to insert.</param>
- public void Insert(int index, ItemType item)
- {
-  _items.Insert(index, item);
- }
-
- /// <summary>
- /// Removes the item at the specified index.
- /// </summary>
- /// <param name = "index">The zero-based index of the item to remove.</param>
- public void RemoveAt(int index)
- {
-  _items.RemoveAt(index);
- }
-
- /// <summary>
- /// Returns or assigns the item at the specified index.
- /// </summary>
- /// <param name = "index">The zero-based index.</param>
- public ItemType this[int index] { get => _items[index]; set => _items[index] = value; }
-
- /// <summary>
- /// Occurs when the collection changes, such as when items are added, removed, or the entire list is refreshed.
- /// </summary>
- /// <remarks>Subscribe to this event to receive notifications about changes to the collection. The event
- /// provides details about the type of change and the affected items. This event is typically used to update UI
- /// elements or respond to dynamic data changes in data-binding scenarios.</remarks>
- public event NotifyCollectionChangedEventHandler? CollectionChanged;
-#region implementation of IList
- /// <summary>
- /// Adds an item to the collection and returns the index at which the item was inserted.
- /// </summary>
- /// <remarks>This method modifies the collection by adding the specified item. Ensure that the value parameter
- /// is of the correct type to avoid exceptions.</remarks>
- /// <param name = "value">The item to add to the collection. Must be of type ItemType.</param>
- /// <returns>The zero-based index at which the item was added to the collection.</returns>
- /// <exception cref = "InvalidOperationException">Thrown if the provided value is not of type ItemType.</exception>
- int IList.Add(object? value)
- {
-  if (value is ItemType itemType)
+  /// <summary>
+  /// Compares this collection to another object for equality.
+  /// </summary>
+  /// <param name = "obj">The object to compare to.</param>
+  /// <returns>True if the objects are equal; otherwise, false.</returns>
+  public override bool Equals(object? obj)
   {
-   Add(itemType);
-   return Count - 1;
+    if (obj is null)
+      return false;
+    if (ReferenceEquals(this, obj))
+      return true;
+    if (obj.GetType() != GetType())
+      return false;
+    return Equals((ElementCollection<ItemType>)obj);
   }
 
-  throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
- }
-
- /// <summary>
- /// Checks if an item is contained in the collection.
- /// </summary>
- /// <param name = "value">The item to check.</param>
- /// <returns>True if an item is contained in the collection, otherwise false.</returns>
- /// <exception cref = "InvalidOperationException">Thrown if the provided value is not of type ItemType.</exception>
- bool IList.Contains(object? value)
- {
-  if (value is ItemType itemType)
-   return Contains(itemType);
-  throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
- }
-
- /// <summary>
- /// Gets the index of the item is contained in the collection.
- /// </summary>
- /// <param name = "value">The item to search.</param>
- /// <returns>The index of the item is contained in the collection.</returns>
- /// <exception cref = "InvalidOperationException">Thrown if the provided value is not of type ItemType.</exception>
- int IList.IndexOf(object? value)
- {
-  if (value is ItemType itemType)
-   return IndexOf(itemType);
-  throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
- }
-
- /// <summary>
- /// Inserts an item of type ItemType at the specified index in the collection.
- /// </summary>
- /// <remarks>This method modifies the collection by adding the specified item at the given index. Ensure that
- /// the index is valid before calling this method.</remarks>
- /// <param name = "index">The zero-based index at which the item should be inserted. Must be within the bounds of the collection.</param>
- /// <param name = "value">The object to insert into the collection. Must be of type ItemType; otherwise, an exception is thrown.</param>
- /// <exception cref = "InvalidOperationException">Thrown if the provided value is not of type ItemType.</exception>
- void IList.Insert(int index, object? value)
- {
-  if (value is ItemType itemType)
+  /// <summary>
+  /// Returns an enumerator that iterates through the collection (non-generic).
+  /// </summary>
+  IEnumerator IEnumerable.GetEnumerator()
   {
-   Insert(index, itemType);
-   return;
+    return this.GetEnumerator();
   }
 
-  throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
- }
-
- /// <summary>
- /// Removes the specified item from the collection if it is of the correct type.
- /// </summary>
- /// <remarks>This method attempts to cast the provided value to <see langword="ItemType"/> before removal. If
- /// the cast fails, an exception is thrown.</remarks>
- /// <param name = "value">The item to remove from the collection. Must be of type <see langword="ItemType"/>.</param>
- /// <exception cref = "InvalidOperationException">Thrown if the specified item is not of type <see langword="ItemType"/>.</exception>
- void IList.Remove(object? value)
- {
-  if (value is ItemType itemType)
+  /// <summary>
+  /// Returns an enumerator that iterates through the collection.
+  /// </summary>
+  public IEnumerator<ItemType> GetEnumerator()
   {
-   Remove(itemType);
-   return;
+    return Items.GetEnumerator();
   }
 
-  throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
- }
-
- /// <summary>
- /// Indexed access to items.
- /// </summary>
- /// <param name = "index"></param>
- /// <returns></returns>
- object? IList.this[int index] { get => this[index]; set => this[index] = (ItemType)value!; }
-
- /// <summary>
- /// Gets a value indicating whether the collection has a fixed size.
- /// </summary>
- /// <remarks>A fixed-size collection does not allow adding or removing elements after it is created. This
- /// property is useful for determining the mutability of the collection.</remarks>
- bool IList.IsFixedSize => false;
-
-#endregion
- /// <summary>
- /// Checks if the collection is empty.
- /// A collection is considered empty if all its properties are null or empty
- /// (as determined by the base implementation of IsEmpty())
- /// and it contains no items or if all items in the collection are themselves empty
- /// (i.e., they implement IEmptyCheckable and return true for IsEmpty()).
- /// </summary>
- /// <returns></returns>
- public override bool IsEmpty()
- {
-  if (!base.IsEmpty())
-   return false;
-  foreach (var item in this)
+  /// <summary>
+  /// Adds an item to the collection.
+  /// </summary>
+  /// <param name = "item">The item to add.</param>
+  public virtual void Add(ItemType item)
   {
-   if (item is IEmptyCheckable emptyCheckable && !emptyCheckable.IsEmpty())
-    return false;
+    Items.Add(item);
   }
 
-  return true;
- }
+  /// <summary>
+  /// Removes all items from the collection.
+  /// </summary>
+  public virtual void Clear()
+  {
+    Items.Clear();
+  }
+
+  /// <summary>
+  /// Determines whether the collection contains a specific item.
+  /// </summary>
+  /// <param name = "item">The item to locate.</param>
+  /// <returns>True if found; otherwise, false.</returns>
+  public virtual bool Contains(ItemType item)
+  {
+    return Items.Contains(item);
+  }
+
+  /// <summary>
+  /// Copies the elements of the collection to an array, starting at a particular array index.
+  /// </summary>
+  /// <param name = "array">The destination array.</param>
+  /// <param name = "arrayIndex">The zero-based index at which copying begins.</param>
+  public virtual void CopyTo(ItemType[] array, int arrayIndex)
+  {
+    Items.CopyTo(array, arrayIndex);
+  }
+
+  /// <summary>
+  /// Removes the first occurrence of a specific item from the collection.
+  /// </summary>
+  /// <param name = "item">The item to remove.</param>
+  /// <returns>True if removed; otherwise, false.</returns>
+  public virtual bool Remove(ItemType item)
+  {
+    return Items.Remove(item);
+  }
+
+  /// <summary>
+  /// Returns the number of items in the collection.
+  /// </summary>
+  public virtual int Count => Items.Count;
+
+  /// <summary>
+  /// Copies the elements of the collection to a specified one-dimensional array, starting at the given index in the
+  /// target array.
+  /// </summary>
+  /// <param name = "array">The one-dimensional array that is the destination of the elements copied from the collection. The array must have
+  /// zero-based indexing and sufficient space to accommodate the copied elements.</param>
+  /// <param name = "index">The zero-based index in the destination array at which copying begins.</param>
+  public virtual void CopyTo(Array array, int index)
+  {
+    ((ICollection)Items).CopyTo(array, index);
+  }
+
+  /// <summary>
+  /// Gets a value indicating whether access to the collection is synchronized (thread-safe).
+  /// </summary>
+  /// <remarks>If this property returns <see langword="true"/>, access to the collection is thread-safe and can
+  /// be shared among multiple threads without additional synchronization. If <see langword="false"/>, callers must
+  /// implement their own synchronization to ensure thread safety when accessing the collection concurrently.</remarks>
+  public virtual bool IsSynchronized => ((ICollection)Items).IsSynchronized;
+
+  /// <summary>
+  /// Gets an object that can be used to synchronize access to the collection.
+  /// </summary>
+  /// <remarks>Use the returned object with a lock statement to ensure thread safety when accessing the
+  /// collection from multiple threads. Synchronizing access using this object helps prevent race conditions and data
+  /// corruption in multithreaded scenarios.</remarks>
+  public virtual object SyncRoot => ((ICollection)Items).SyncRoot;
+
+  /// <summary>
+  /// Indicates whether the collection is read-only.
+  /// </summary>
+  public virtual bool IsReadOnly => false;
+
+  /// <summary>
+  /// Determines the index of a specific item in the collection.
+  /// </summary>
+  /// <param name = "item">The item to locate.</param>
+  /// <returns>The index if found; otherwise, -1.</returns>
+  public virtual int IndexOf(ItemType item)
+  {
+    return Items.IndexOf(item);
+  }
+
+  /// <summary>
+  /// Inserts an item at the specified index.
+  /// </summary>
+  /// <param name = "index">The zero-based index at which to insert.</param>
+  /// <param name = "item">The item to insert.</param>
+  public virtual void Insert(int index, ItemType item)
+  {
+    Items.Insert(index, item);
+  }
+
+  /// <summary>
+  /// Removes the item at the specified index.
+  /// </summary>
+  /// <param name = "index">The zero-based index of the item to remove.</param>
+  public virtual void RemoveAt(int index)
+  {
+    Items.RemoveAt(index);
+  }
+
+  /// <summary>
+  /// Returns or assigns the item at the specified index.
+  /// </summary>
+  /// <param name = "index">The zero-based index.</param>
+  public virtual ItemType this[int index] { get => Items[index]; set => Items[index] = value; }
+
+  /// <summary>
+  /// Occurs when the collection changes, such as when items are added, removed, or the entire list is refreshed.
+  /// </summary>
+  /// <remarks>Subscribe to this event to receive notifications about changes to the collection. The event
+  /// provides details about the type of change and the affected items. This event is typically used to update UI
+  /// elements or respond to dynamic data changes in data-binding scenarios.</remarks>
+  public event NotifyCollectionChangedEventHandler? CollectionChanged;
+
+  #region implementation of IList
+  /// <summary>
+  /// Adds an item to the collection and returns the index at which the item was inserted.
+  /// </summary>
+  /// <remarks>This method modifies the collection by adding the specified item. Ensure that the value parameter
+  /// is of the correct type to avoid exceptions.</remarks>
+  /// <param name = "value">The item to add to the collection. Must be of type ItemType.</param>
+  /// <returns>The zero-based index at which the item was added to the collection.</returns>
+  /// <exception cref = "InvalidOperationException">Thrown if the provided value is not of type ItemType.</exception>
+  int IList.Add(object? value)
+  {
+    if (value is ItemType itemType)
+    {
+      Add(itemType);
+      return Count - 1;
+    }
+
+    throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
+  }
+
+  /// <summary>
+  /// Checks if an item is contained in the collection.
+  /// </summary>
+  /// <param name = "value">The item to check.</param>
+  /// <returns>True if an item is contained in the collection, otherwise false.</returns>
+  /// <exception cref = "InvalidOperationException">Thrown if the provided value is not of type ItemType.</exception>
+  bool IList.Contains(object? value)
+  {
+    if (value is ItemType itemType)
+      return Contains(itemType);
+    throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
+  }
+
+  /// <summary>
+  /// Gets the index of the item is contained in the collection.
+  /// </summary>
+  /// <param name = "value">The item to search.</param>
+  /// <returns>The index of the item is contained in the collection.</returns>
+  /// <exception cref = "InvalidOperationException">Thrown if the provided value is not of type ItemType.</exception>
+  int IList.IndexOf(object? value)
+  {
+    if (value is ItemType itemType)
+      return IndexOf(itemType);
+    throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
+  }
+
+  /// <summary>
+  /// Inserts an item of type ItemType at the specified index in the collection.
+  /// </summary>
+  /// <remarks>This method modifies the collection by adding the specified item at the given index. Ensure that
+  /// the index is valid before calling this method.</remarks>
+  /// <param name = "index">The zero-based index at which the item should be inserted. Must be within the bounds of the collection.</param>
+  /// <param name = "value">The object to insert into the collection. Must be of type ItemType; otherwise, an exception is thrown.</param>
+  /// <exception cref = "InvalidOperationException">Thrown if the provided value is not of type ItemType.</exception>
+  void IList.Insert(int index, object? value)
+  {
+    if (value is ItemType itemType)
+    {
+      Insert(index, itemType);
+      return;
+    }
+
+    throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
+  }
+
+  /// <summary>
+  /// Removes the specified item from the collection if it is of the correct type.
+  /// </summary>
+  /// <remarks>This method attempts to cast the provided value to <see langword="ItemType"/> before removal. If
+  /// the cast fails, an exception is thrown.</remarks>
+  /// <param name = "value">The item to remove from the collection. Must be of type <see langword="ItemType"/>.</param>
+  /// <exception cref = "InvalidOperationException">Thrown if the specified item is not of type <see langword="ItemType"/>.</exception>
+  void IList.Remove(object? value)
+  {
+    if (value is ItemType itemType)
+    {
+      Remove(itemType);
+      return;
+    }
+
+    throw new InvalidOperationException($"Item to add must be a {typeof(ItemType)}");
+  }
+
+  /// <summary>
+  /// Indexed access to items.
+  /// </summary>
+  /// <param name = "index"></param>
+  /// <returns></returns>
+  object? IList.this[int index] { get => this[index]; set => this[index] = (ItemType)value!; }
+
+  /// <summary>
+  /// Gets a value indicating whether the collection has a fixed size.
+  /// </summary>
+  /// <remarks>A fixed-size collection does not allow adding or removing elements after it is created. This
+  /// property is useful for determining the mutability of the collection.</remarks>
+  bool IList.IsFixedSize => false;
+
+  #endregion
+  /// <summary>
+  /// Checks if the collection is empty.
+  /// A collection is considered empty if all its properties are null or empty
+  /// (as determined by the base implementation of IsEmpty())
+  /// and it contains no items or if all items in the collection are themselves empty
+  /// (i.e., they implement IEmptyCheckable and return true for IsEmpty()).
+  /// </summary>
+  /// <returns></returns>
+  public override bool IsEmpty()
+  {
+    if (!base.IsEmpty())
+      return false;
+    foreach (var item in this)
+    {
+      if (item is IEmptyCheckable emptyCheckable && !emptyCheckable.IsEmpty())
+        return false;
+    }
+
+    return true;
+  }
 }

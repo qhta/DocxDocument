@@ -45,7 +45,11 @@ public static class HexByteConverter
   {
     if (SByteValue == null) return null;
     if (SByteValue.Value < 0)
-      throw new OverflowException($"Value {SByteValue.Value} is out of range for HexByte");
+    {
+      int val = SByteValue.Value;
+      val = -(256 - val); // Two's complement to get the negative value for SByte
+      return new HexByte((byte)val);
+    }
 
     return new HexByte(SByteValue.Value);
   }
@@ -58,8 +62,13 @@ public static class HexByteConverter
   public static DX.SByteValue? ConvertToSByteValue(HexByte? value)
   {
     if (value is null) return null;
+
     if (value > SByte.MaxValue)
-      throw new OverflowException($"Value {value} is out of range for SByte");
+    {
+      int val= (int)value;
+      val = -(256 - val); // Two's complement to get the negative value for SByte
+      return new DX.SByteValue { Value = (SByte)val };
+    }
 
     return new DX.SByteValue { Value = (SByte)(UInt16)value };
   }

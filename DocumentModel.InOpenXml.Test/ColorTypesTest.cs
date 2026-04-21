@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Text.Json.Serialization.Metadata;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -123,11 +124,12 @@ public class ColorTypesTest : _AbstractTestClass
   static bool TestJsonSerialization()
   {
     Console.WriteLine("--- JSON Serialization ---");
+    var jsonOptions = CreateJsonOptions();
     var document = CreateDocumentWithInitializedThemePart();
     var theme = document.Theme!;
-    var jsonString = JsonSerializer.Serialize(theme, typeof(Theme), JsonConfig.Options);
+    var jsonString = JsonSerializer.Serialize(theme, typeof(Theme), jsonOptions);
     Console.WriteLine($"\nSerialized JSON (theme):\n{jsonString}");
-    var deserializedTheme = JsonSerializer.Deserialize(jsonString, typeof(Theme), JsonConfig.Options);
+    var deserializedTheme = JsonSerializer.Deserialize(jsonString, typeof(Theme), jsonOptions);
     if (deserializedTheme == null)
     {
       Console.WriteLine($"✗ JSON theme deserialization returned null for '{theme.GetType().Name}'");
@@ -143,10 +145,10 @@ public class ColorTypesTest : _AbstractTestClass
     {
       var testData = CreateSampleColor(colorType);
       AttachToDocumentContext(testData, document);
-      jsonString = JsonSerializer.Serialize(testData, colorType, JsonConfig.Options);
+      jsonString = JsonSerializer.Serialize(testData, colorType, jsonOptions);
       Console.WriteLine($"\nSerialized JSON ({colorType.Name}):\n{jsonString}");
 
-      var deserialized = JsonSerializer.Deserialize(jsonString, colorType, JsonConfig.Options);
+      var deserialized = JsonSerializer.Deserialize(jsonString, colorType, jsonOptions);
       if (deserialized == null)
       {
         Console.WriteLine($"✗ JSON Deserialization returned null for '{colorType.Name}'");
@@ -224,6 +226,7 @@ public class ColorTypesTest : _AbstractTestClass
   static bool TestEdgeCases()
   {
     Console.WriteLine("--- Edge Cases ---");
+    var jsonOptions = CreateJsonOptions();
     var document = CreateDocumentWithInitializedThemePart();
     foreach (var colorType in GetIColorTypes())
     {
@@ -244,8 +247,8 @@ public class ColorTypesTest : _AbstractTestClass
       }
       AttachToDocumentContext(xmlDeserialized, document);
 
-      var json = JsonSerializer.Serialize(empty, colorType, JsonConfig.Options);
-      var jsonDeserialized = JsonSerializer.Deserialize(json, colorType, JsonConfig.Options);
+      var json = JsonSerializer.Serialize(empty, colorType, jsonOptions);
+      var jsonDeserialized = JsonSerializer.Deserialize(json, colorType, jsonOptions);
       if (jsonDeserialized == null)
       {
         Console.WriteLine($"✗ Edge case JSON deserialization failed for '{colorType.Name}'");
@@ -388,6 +391,30 @@ public class ColorTypesTest : _AbstractTestClass
       }
     };
     return theme;
+  }
+
+  static JsonSerializerOptions CreateJsonOptions()
+  {
+    var options = new JsonSerializerOptions(JsonConfig.Options);
+    var resolver = new DefaultJsonTypeInfoResolver();
+    resolver.Modifiers.Add(typeInfo =>
+    {
+      if (typeInfo.Type != typeof(ModelElement))
+        return;
+
+      var polymorphismOptions = new JsonPolymorphismOptions
+      {
+        TypeDiscriminatorPropertyName = "$type"
+      };
+      foreach (var derivedType in GetIColorTypes().Where(t => typeof(ModelElement).IsAssignableFrom(t)))
+      {
+        polymorphismOptions.DerivedTypes.Add(new JsonDerivedType(derivedType, derivedType.FullName!));
+      }
+      typeInfo.PolymorphismOptions = polymorphismOptions;
+    });
+
+    options.TypeInfoResolver = resolver;
+    return options;
   }
 
   /// <summary>

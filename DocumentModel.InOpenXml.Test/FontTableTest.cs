@@ -267,7 +267,7 @@ public class FontTableTest: _AbstractTestClass
   static FontTable CreateSampleFonts()
   {
     var fonts = new FontTable();
-    fonts.Add(new FontDef
+    fonts.Add(new Font
     {
       FontName = "Arial",
       Aliases = "Helvetica,Swiss",
@@ -277,7 +277,7 @@ public class FontTableTest: _AbstractTestClass
       Panose = "020B0604020202020204",
       FontSignature = "E0002EFF-C000785B-00000009-00000000-000001FF-00000000"
     });
-    fonts.Add(new FontDef
+    fonts.Add(new Font
     {
       FontName = "Times New Roman",
       Aliases = "Times",
@@ -287,7 +287,7 @@ public class FontTableTest: _AbstractTestClass
       Panose = "02020603050405020304",
       FontSignature = "E0002EFF-C000785B-00000009-00000000-000001FF-00000000"
     });
-    fonts.Add(new FontDef
+    fonts.Add(new Font
     {
       FontName = "Courier New",
       Aliases = "Courier",
@@ -303,9 +303,9 @@ public class FontTableTest: _AbstractTestClass
   /// <summary>
   /// Creates a new instance of the FontDef class.
   /// </summary>
-  static FontDef CreateOneFont()
+  static Font CreateOneFont()
   {
-    var font = (new FontDef
+    var font = (new Font
     {
       FontName = "Arial",
       Aliases = "Helvetica,Swiss",

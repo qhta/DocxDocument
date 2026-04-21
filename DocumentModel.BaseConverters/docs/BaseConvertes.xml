@@ -4,6 +4,11 @@
         <name>DocumentModel.BaseConverters</name>
     </assembly>
     <members>
+        <member name="T:DocumentModel.OpenXml.LazyLoadAttribute">
+            <summary>
+            Indicates a property or collection that is lazily loaded from the underlying OpenXml element. When applied, the property will not be initialized until it is first accessed, allowing for deferred loading of data and improved performance when working with large documents or complex structures.
+            </summary>
+        </member>
         <member name="T:DocumentModel.OpenXml.OpenXmlConvertFromAttribute">
             <summary>
             Specifies the model method name that is used to convert the property from its Open XML representation.
@@ -5309,6 +5314,24 @@
             <param name="openXmlType">The Open XML type of the element.</param>
             <exception cref="T:System.InvalidOperationException"></exception>
         </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.GetCollectionLoadMetadata(System.Type,System.String,System.Type)">
+            <summary>
+            Helper method to retrieve metadata required for loading a collection property from an Open XML element.
+            </summary>
+            <param name="collectionType"></param>
+            <param name="collectionDisplayName"></param>
+            <param name="fallbackOpenXmlChildType"></param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.GetResolvedChildElements(DocumentFormat.OpenXml.OpenXmlElement,System.Type)">
+            <summary>
+            Helper method to get resolved child elements of a specific Open XML type from a parent Open XML element.
+            </summary>
+            <param name="openXmlElement">The parent Open XML element.</param>
+            <param name="openXmlChildType">The expected type of the child Open XML elements.</param>
+            <returns>An array of resolved child elements of the specified type.</returns>
+        </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.ResolveTypedChildElement(DocumentFormat.OpenXml.OpenXmlElement,System.Type)">
             <summary>
             Resolves the specified child element to a strongly typed OpenXmlElement if it matches the expected type or can be
@@ -6453,6 +6476,14 @@
             <remarks>This dictionary is used to determine the underlying numeric type associated with specific
             measurement units, such as Twips, EMU, and HalfPoints. It enables conversion or type resolution scenarios where
             the base type of measurement unit is required.</remarks>
+        </member>
+        <member name="M:DocumentModel.OpenXml.SimpleValueConverter.IsSimpleValueType(System.Type)">
+            <summary>
+            Checks if a model type can be converted using the simple value conversion mechanism. This includes value types, enums, and types marked with the SimpleTypeAttribute.
+            Also accepts types that have specific converters defined in the specificConverters dictionary, allowing for custom conversion logic for those types.
+            </summary>
+            <param name="type">The type to check</param>
+            <returns>true if the type can be converted using the simple value conversion mechanism; otherwise, false.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.SimpleValueConverter.ConvertTo(System.Object,System.Type)">
             <summary>

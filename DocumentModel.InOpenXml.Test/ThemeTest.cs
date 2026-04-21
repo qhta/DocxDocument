@@ -114,7 +114,7 @@ public class ThemeTest : _AbstractTestClass
           Name = "Office",
           MajorFont = new MajorFont
           {
-            LatinFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204") },
+            LatinFont = new DMD.TextFontType { Typeface = "Aptos Display", Panose = new HexBinary("02110004020202020204"), Charset = 0xEE },
             EastAsianFont = new DMD.TextFontType(),
             ComplexScriptFont = new DMD.TextFontType(),
             SupplementalFonts =

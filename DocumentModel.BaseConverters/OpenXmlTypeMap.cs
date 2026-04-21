@@ -89,7 +89,8 @@ public static class OpenXmlTypeMap
     var methodName = modelType.GetCustomAttribute<OpenXmlLoadDataAttribute>()?.MethodName;
     if (methodName != null)
     {
-      var methodInfo = modelType.DeclaringType?.GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public);
+      var methodInfo = modelType.DeclaringType?.GetMethod(methodName, 
+        BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
       if (methodInfo != null)
         return methodInfo;
     }

@@ -30,9 +30,29 @@ public abstract partial class SchemeFont<T> : ModelElement<T>, IExtendableElemen
   /// <summary>
   ///   Collection of supplemental fonts for additional language and script support beyond the primary font definitions.
   /// </summary>
-  [OpenXmlElement(typeof(DXD.SupplementalFont))]
+  [OpenXmlLoadData(nameof(LoadSupplementalFontsFromOpenXml))]
+  [OpenXmlUpdateData(nameof(UpdateSupplementalFontsFromOpenXml))]
   public SupplementalFonts? SupplementalFonts { get => _SupplementalFonts; set => UpdateField(ref _SupplementalFonts, value, nameof(SupplementalFonts)); }
   private SupplementalFonts? _SupplementalFonts;
+
+  /// <summary>
+  /// Loads supplemental font information from the specified Open XML element into the current object.
+  /// </summary>
+  /// <param name="openXmlElement">The Open XML element containing supplemental font data to be loaded.</param>
+  private void LoadSupplementalFontsFromOpenXml(DX.OpenXmlElement openXmlElement)
+  {
+    SupplementalFonts ??= new SupplementalFonts(this);
+    SupplementalFonts.LoadData(openXmlElement);
+  }
+
+  /// <summary>
+  /// Updates the supplemental fonts information using data from the specified Open XML element.
+  /// </summary>
+  /// <param name="openXmlElement">The Open XML element containing the supplemental fonts data to update from.</param>
+  private void UpdateSupplementalFontsFromOpenXml(DX.OpenXmlElement openXmlElement)
+  {
+    SupplementalFonts?.UpdateData(openXmlElement);
+  }
 
   /// <summary>
   ///   List of extension elements for the scheme font, supporting extensibility and application-specific font data.

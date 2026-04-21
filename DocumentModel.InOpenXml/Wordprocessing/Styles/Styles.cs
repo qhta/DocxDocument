@@ -71,12 +71,12 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
  /// Latent style information, providing metadata and settings for latent styles in the document.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Styles.LatentStyles))]
- public LatentStyles LatentStyles
+  public LatentStyles? LatentStyles
  {
   get
   {
-   if (_LatentStyles == null)
-    _LatentStyles = new LatentStyles(this);
+   //if (_LatentStyles == null)
+   // _LatentStyles = new LatentStyles(this);
    return _LatentStyles;
   }
 

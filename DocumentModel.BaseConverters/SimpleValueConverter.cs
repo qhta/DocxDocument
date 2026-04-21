@@ -95,6 +95,18 @@ public static class SimpleValueConverter
   };
 
   /// <summary>
+  /// Checks if a model type can be converted using the simple value conversion mechanism. This includes value types, enums, and types marked with the SimpleTypeAttribute.
+  /// Also accepts types that have specific converters defined in the specificConverters dictionary, allowing for custom conversion logic for those types.
+  /// </summary>
+  /// <param name="type">The type to check</param>
+  /// <returns>true if the type can be converted using the simple value conversion mechanism; otherwise, false.</returns>
+  public static bool IsSimpleValueType(this Type type)
+  {
+    return type.IsValueType || type.IsEnum || type.GetCustomAttribute<SimpleTypeAttribute>() != null ||
+           specificConverters.ContainsKey(type);
+  }
+
+  /// <summary>
   /// Converts a value to the specified target type using standard type conversion.
   /// </summary>
   /// <param name="value">The value to convert.</param>

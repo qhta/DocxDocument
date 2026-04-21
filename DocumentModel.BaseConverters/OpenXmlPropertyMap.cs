@@ -85,7 +85,7 @@ public static class OpenXmlPropertyMap
     if (methodName != null)
     {
       var methodInfo = modelProperty.DeclaringType?
-        .GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public);
+        .GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
       if (methodInfo != null)
         return methodInfo;
     }

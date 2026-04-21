@@ -9,25 +9,28 @@ public partial class TextFontType : ModelElement<DXD.TextFontType>
  /// <summary>
  ///   Typeface name for the font.
  /// </summary>
+ [OpenXmlProperty(nameof(DXD.TextFontType.Typeface))]
  public string? Typeface { get => _Typeface; set => UpdateField(ref _Typeface, value, nameof(Typeface)); }
-
  private string? _Typeface;
+
  /// <summary>
  ///   Panose classification for the font.
  /// </summary>
+ [OpenXmlProperty(nameof(DXD.TextFontType.Panose))]
  public HexBinary? Panose { get => _Panose; set => UpdateField(ref _Panose, value, nameof(Panose)); }
-
  private HexBinary? _Panose;
+
  /// <summary>
  ///   Pitch family value indicating similar font family.
  /// </summary>
- public SByte? PitchFamily { get => _PitchFamily; set => UpdateField(ref _PitchFamily, value, nameof(PitchFamily)); }
+ [OpenXmlProperty(nameof(DXD.TextFontType.PitchFamily))]
+ public HexByte? PitchFamily { get => _PitchFamily; set => UpdateField(ref _PitchFamily, value, nameof(PitchFamily)); }
+ private HexByte? _PitchFamily;
 
- private SByte? _PitchFamily;
  /// <summary>
  ///   Character set value indicating similar character set.
  /// </summary>
- public SByte? CharacterSet { get => _CharacterSet; set => UpdateField(ref _CharacterSet, value, nameof(CharacterSet)); }
-
- private SByte? _CharacterSet;
+ [OpenXmlProperty(nameof(DXD.TextFontType.CharacterSet))]
+ public HexByte? Charset { get => _charset; set => UpdateField(ref _charset, value, nameof(Charset)); }
+ private HexByte? _charset;
 }

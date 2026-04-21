@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [OpenXmlType(typeof(DXW.Font))]
 [XmlRoot("FontDef", Namespace = "DocumentModel.Wordprocessing")]
-public partial class FontDef : ModelElement<DXW.Font>
+public partial class Font : ModelElement<DXW.Font>
 {
  /// <summary>
  /// Primary name of the font, used to link font information with uses in the rFonts element in document content.
