@@ -4,7 +4,6 @@ namespace DocumentModel.Wordprocessing;
 /// This class provides access to and management of <see cref="Font"/> objects, enabling advanced organization, referencing, and configuration of fonts used throughout the document.
 /// </summary>
 [OpenXmlType(typeof(DXW.Fonts))]
-[LazyLoad]
 [XmlRoot("FontTable")]
 public  sealed class FontTable : ModelElementCollection<Font, DXW.Fonts, DXW.Font>
 {

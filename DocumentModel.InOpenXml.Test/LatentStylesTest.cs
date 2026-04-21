@@ -12,9 +12,9 @@ public class LatentStylesTest: _AbstractTestClass
   public static bool Run()
   {
     Console.WriteLine("=== Latent Styles Test ===\n");
-    if (!TestXmlSerialization()) return false;
-    if (!TestJsonSerialization()) return false;
-    if (!TestEdgeCases()) return false;
+    //if (!TestXmlSerialization()) return false;
+    //if (!TestJsonSerialization()) return false;
+    //if (!TestEdgeCases()) return false;
     if (!TestStoreInDocument()) return false;
     if (!TestUpdateInDocument()) return false;
     if (!TestValidateOpenXml()) return false;

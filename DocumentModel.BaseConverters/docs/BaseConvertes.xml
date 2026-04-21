@@ -5155,17 +5155,12 @@
             <param name="openXmlElement">The target Open XML element.</param>
             <exception cref="T:System.InvalidOperationException">Thrown if the update fails.</exception>
         </member>
-        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.LoadData(System.Object,System.Object,System.Type)">
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.LoadData(System.Object,System.Object)">
             <summary>
-            Populates the properties of a model object with data from an Open XML element using the specified model type.
+            Loads data to model object from OpenXml object. This method will try to find a load method for the specified types and invoke it if available.
             </summary>
-            <remarks>This method iterates over all public, writable properties of the specified model type and
-            attempts to load corresponding data from the Open XML element into the model object. Only properties that can be
-            written to are affected.</remarks>
-            <param name="modelObject">The instance of the model object whose properties are to be populated. Must not be null.</param>
-            <param name="openXmlObject">The Open XML element or other object that provides the source data. Must not be null.</param>
-            <param name="modelType">The type that defines the properties to be populated on the model object. Must not be null and should match the
-            type of modelObject.</param>
+            <param name="modelObject">The target model object that will receive the loaded data.</param>
+            <param name="openXmlObject">The Open XML object containing the data to be loaded into the model object.</param>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryLoadUsingTypeLoadDataMethod(System.Object,System.Object,System.Type)">
             <summary>
@@ -5181,7 +5176,7 @@
             <param name="openXmlType">The type of the Open XML object, used to identify the appropriate load method on the model object.</param>
             <returns>true if the data was successfully loaded into the model object; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryLoadUsingItemAttribute(System.Object,System.Object,System.Type,System.Type)">
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryLoadUsingItemAttribute(System.Object,System.Object,System.Type)">
             <summary>
             Attempts to load data from an Open XML element into a model object if the model type is decorated with the
             OpenXmlItemAttribute.
@@ -5192,7 +5187,6 @@
             <param name="modelObject">The model object that receives data loaded from the Open XML element.</param>
             <param name="openXmlObject">The Open XML object to be loaded into the model object. Must be of type DX.OpenXmlElement.</param>
             <param name="modelType">The type of the model object, used to determine if the OpenXmlItemAttribute is present.</param>
-            <param name="openXmlType">The type of the Open XML element, which may affect how data is loaded into the model object.</param>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryLoadModelProperties(System.Object,System.Object,System.Type,System.Type)">
             <summary>
@@ -5208,17 +5202,16 @@
             <param name="openXmlType">The type of the Open XML object, used to determine how to extract data for the model properties.</param>
             <returns>true if at least one property was successfully loaded; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.LoadData(System.Object,System.Reflection.PropertyInfo,System.Object,System.Type)">
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.LoadProperty(System.Object,System.Reflection.PropertyInfo,System.Object)">
             <summary>
             Loads data from an Open XML element into a model object's property.
             </summary>
             <param name="modelObject">The target model object.</param>
             <param name="modelProperty">The property to set on the model object.</param>
             <param name="openXmlObject">The source Open XML element or other object.</param>
-            <param name="openXmlType">The type of the Open XML element.</param>
             <returns>true if the property was successfully loaded; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryLoadUsingPropertyMapping(System.Object,System.Reflection.PropertyInfo,System.Object,System.Type)">
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryLoadUsingPropertyMapping(System.Object,System.Reflection.PropertyInfo,System.Object)">
             <summary>
             Attempts to load a value from an Open XML object into a specified property of a model object using property mapping.
             </summary>
@@ -5228,10 +5221,9 @@
             <param name="modelObject">The target object whose property will be set with the value retrieved from the Open XML object.</param>
             <param name="modelProperty">The property information of the model object that is to be assigned a value from the Open XML object.</param>
             <param name="openXmlObject">The Open XML object from which the value is extracted for mapping to the model property.</param>
-            <param name="openXmlType">The type of the Open XML object, used to determine the appropriate property mapping strategy.</param>
             <returns>true if the value was successfully loaded and assigned to the model property; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryLoadUsingElementCollectionAttribute(System.Object,System.Reflection.PropertyInfo,System.Object,System.Type)">
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryLoadUsingElementCollectionAttribute(System.Object,System.Reflection.PropertyInfo,System.Object)">
             <summary>
             Attempts to load child elements from an OpenXmlCompositeElement into a model object's property that is decorated
             with the OpenXmlElementCollectionAttribute.
@@ -5242,10 +5234,9 @@
             <param name="modelObject">The target model object that will receive the loaded child elements.</param>
             <param name="modelProperty">The property of the model object that is expected to be decorated with the OpenXmlElementCollectionAttribute.</param>
             <param name="openXmlObject">The OpenXmlCompositeElement instance containing the child elements to be loaded.</param>
-            <param name="openXmlType">The type of the OpenXml elements to be processed and loaded into the model property.</param>
             <returns>true if the child elements were successfully loaded into the model object's property; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryLoadUsingElementAttribute(System.Object,System.Reflection.PropertyInfo,System.Object,System.Type)">
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryLoadUsingElementAttribute(System.Object,System.Reflection.PropertyInfo,System.Object)">
             <summary>
             Attempts to load a child element from the specified Open XML object into the given model property using the
             property's OpenXmlElementAttribute mapping.
@@ -5258,10 +5249,9 @@
             Open XML element.</param>
             <param name="openXmlObject">The Open XML object from which the child element is loaded. Must be an instance of DX.OpenXmlCompositeElement to
             succeed.</param>
-            <param name="openXmlType">The type of the Open XML element being processed, which may affect how the child element is loaded.</param>
             <returns>true if the child element was successfully loaded into the model property; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryLoadUsingTypeLoadDataMethod(System.Object,System.Reflection.PropertyInfo,System.Object,System.Type)">
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryLoadUsingTypeLoadDataMethod(System.Object,System.Reflection.PropertyInfo,System.Object)">
             <summary>
             Attempts to populate a property of a model object with data from an Open XML object using a model type loading method.
             </summary>
@@ -5270,56 +5260,49 @@
             <param name="modelObject">The instance of the model object containing the property to be populated.</param>
             <param name="modelProperty">The property information for the model property that will receive the loaded data.</param>
             <param name="openXmlObject">The Open XML object that provides the data to be loaded into the model property.</param>
-            <param name="openXmlType">The type of the Open XML object, used to determine the appropriate loading method.</param>
             <returns>true if the data was successfully loaded into the model property; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryLoadUsingPropertyLoadDataMethod(System.Object,System.Reflection.PropertyInfo,System.Object,System.Type)">
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryLoadUsingPropertyLoadDataMethod(System.Object,System.Reflection.PropertyInfo,System.Object)">
             <summary>
             Attempts to load data into a model object's property using a custom load method defined for the model property.
             </summary>
             <param name="modelObject">The model object to load data into.</param>
             <param name="modelProperty">The property of the model object to set.</param>
             <param name="openXmlObject">The Open XML object containing the data.</param>
-            <param name="openXmlType">The type of the Open XML object.</param>
             <returns>True if the data was successfully loaded using a custom load method; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.LoadChildElement(System.Object,System.Reflection.PropertyInfo,DocumentFormat.OpenXml.OpenXmlCompositeElement,System.Type,System.Type)">
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.LoadChildElement(System.Object,System.Reflection.PropertyInfo,DocumentFormat.OpenXml.OpenXmlCompositeElement,System.Type)">
             <summary>
             Loads a child element from an Open XML element into a model object's property, based on the specified Open XML type and child type.
             </summary>
             <param name="modelObject">The model object to load the child element into.</param>
             <param name="modelProperty">The model property to set the value of.</param>
             <param name="openXmlElement">The Open XML element to load the child element from.</param>
-            <param name="openXmlType">The Open XML type of the element.</param>
             <param name="openXmlChildType">The Open XML child type of the element.</param>
             <exception cref="T:System.InvalidOperationException"></exception>
         </member>
-        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.LoadChildElementCollection(System.Object,System.Reflection.PropertyInfo,DocumentFormat.OpenXml.OpenXmlCompositeElement,System.Type)">
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.LoadChildElementCollection(System.Object,System.Reflection.PropertyInfo,DocumentFormat.OpenXml.OpenXmlCompositeElement)">
             <summary>
             Loads a collection of child elements from an Open XML element into a model object's property, based on the specified Open XML type.
             </summary>
             <param name="modelObject">The model object to load the child elements into.</param>
             <param name="modelProperty">The model property to set the value of.</param>
             <param name="openXmlElement">The Open XML element to load the child elements from.</param>
-            <param name="openXmlType">The Open XML type of the element.</param>
             <exception cref="T:System.InvalidOperationException"></exception>
         </member>
-        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.LoadElementCollection(System.Object,DocumentFormat.OpenXml.OpenXmlElement,System.Type)">
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.LoadCollectionChildren(System.Object,DocumentFormat.OpenXml.OpenXmlCompositeElement)">
             <summary>
-            Loads a collection of child elements from an Open XML element into a model object,
-            based on the specified Open XML type.
+            Helper method to load child elements from an Open XML element into a model object's collection property.
             </summary>
-            <param name="modelObject">The model object to load the child elements into.</param>
+            <param name="modelCollection">The model collection to load the child elements into.</param>
             <param name="openXmlElement">The Open XML element to load the child elements from.</param>
-            <param name="openXmlType">The Open XML type of the element.</param>
             <exception cref="T:System.InvalidOperationException"></exception>
         </member>
-        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.GetCollectionLoadMetadata(System.Type,System.String,System.Type)">
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.GetCollectionLoadMetadata(System.Type,System.Type)">
             <summary>
             Helper method to retrieve metadata required for loading a collection property from an Open XML element.
             </summary>
             <param name="collectionType"></param>
-            <param name="collectionDisplayName"></param>
             <param name="fallbackOpenXmlChildType"></param>
             <returns></returns>
             <exception cref="T:System.InvalidOperationException"></exception>
@@ -5368,6 +5351,13 @@
             <param name="openXmlType">The OpenXML type to search for properties</param>
             <returns>Array of writable OpenXML properties</returns>
             <remarks>Properties declared in DX.OpenXmlElement are ignored</remarks>
+        </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.TryRegisterLazyLoad(System.Object,DocumentFormat.OpenXml.OpenXmlCompositeElement)">
+            <summary>
+            Tries to registers a lazy load for a model collection from openXmlObject.
+            </summary>
+            <param name="modelCollection">The target model object collection.</param>
+            <param name="openXmlObject">The source Open XML element or other object.</param>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.AddChildUsingSchemaOrder(DocumentFormat.OpenXml.OpenXmlElement,DocumentFormat.OpenXml.OpenXmlElement)">
             <summary>
@@ -8354,6 +8344,29 @@
             Determines whether the current object is considered empty.
             </summary>
             <returns><c>true</c> if the object is empty; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:DocumentModel.ILazyLoadable">
+            <summary>
+            Interface used to mark a collection as supporting lazy loading of its elements from an Open XML composite element.
+            </summary>
+            <remarks>When lazy loading is enabled, related data is loaded from the data source on demand rather than
+            being loaded immediately with the main entity. This can improve performance by deferring the loading of related
+            objects until they are accessed, but may result in additional queries to the data source.</remarks>
+        </member>
+        <member name="P:DocumentModel.ILazyLoadable.IsLazyLoadEnabled">
+            <summary>
+            Gets or sets a value indicating whether lazy loading is enabled.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.ILazyLoadable.DataSource">
+            <summary>
+            Source of data for lazy loading. This property can be used to specify the data source from which the collection will load its elements when lazy loading is enabled.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ILazyLoadable.TryLazyLoad">
+            <summary>
+            If LazyLoad is enabled, this method loads the related data from the data source and disables lazy loading.
+            </summary>
         </member>
         <member name="T:DocumentModel.ILoadable">
             <summary>

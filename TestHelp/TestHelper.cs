@@ -73,7 +73,7 @@ public static class TestHelper
 
     foreach (var property in comparedType.GetProperties())
     {
-      if (propName=="TableCellMargin") Debug.Assert(true);
+      if (propName=="LatentStyles") Debug.Assert(true);
       if (property.CanWrite && property.GetIndexParameters().Length == 0 && !property.IsDefined(typeof(NotMappedAttribute), true))
       {
         propName = /*property.DeclaringType?.Name +"."+ */property.Name;

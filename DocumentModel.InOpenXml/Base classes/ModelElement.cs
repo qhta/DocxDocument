@@ -326,7 +326,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   public virtual void LoadData(object openXmlObject)
   {
     IsLoading = true;
-    OpenXmlModelConverter.LoadData(this, openXmlObject, this.GetType());
+    OpenXmlModelConverter.LoadData(this, openXmlObject);
     IsLoading = false;
   }
 

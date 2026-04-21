@@ -8,8 +8,7 @@ namespace DocumentModel;
 [XmlRoot("ElementCollection", Namespace = "DocumentModel")]
 public abstract partial class ElementCollection<ItemType> : ModelElement, IElementCollection<ItemType>, IEquatable<ElementCollection<ItemType>>, ICollection<ItemType>, IList, INotificationSource, IEmptyCheckable where ItemType : notnull
 {
-  private bool _IsLazyLoadingEnabled;
-  private ObservableCollection<ItemType> Items => _items ??= new ObservableCollection<ItemType>();
+ private ObservableCollection<ItemType> Items => _items ??= new ObservableCollection<ItemType>();
   private ObservableCollection<ItemType>? _items;
   private readonly BiDiDictionary<string, ItemType>? _index;
 
@@ -18,7 +17,6 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   /// </summary>
   protected ElementCollection()
   {
-    _IsLazyLoadingEnabled = GetType().GetCustomAttribute<LazyLoadAttribute>() != null;
     if (typeof(ItemType).IsAssignableTo(typeof(INamedObject)))
       _index = new BiDiDictionary<string, ItemType>();
     Items.CollectionChanged += Items_CollectionChanged;
@@ -42,7 +40,6 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   /// <param name = "items">The items to add to the collection.</param>
   protected ElementCollection(IEnumerable<ItemType> items)
   {
-    _IsLazyLoadingEnabled = GetType().GetCustomAttribute<LazyLoadAttribute>() != null;
     if (typeof(ItemType).IsAssignableTo(typeof(INamedObject)))
       _index = new BiDiDictionary<string, ItemType>();
     foreach (var item in items)
@@ -251,7 +248,7 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   /// Adds an item to the collection.
   /// </summary>
   /// <param name = "item">The item to add.</param>
-  public virtual void Add(ItemType item)
+  public void Add(ItemType item)
   {
     Items.Add(item);
   }
