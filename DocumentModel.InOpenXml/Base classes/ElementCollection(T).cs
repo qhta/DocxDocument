@@ -8,18 +8,19 @@ namespace DocumentModel;
 [XmlRoot("ElementCollection", Namespace = "DocumentModel")]
 public abstract partial class ElementCollection<ItemType> : ModelElement, IElementCollection<ItemType>, IEquatable<ElementCollection<ItemType>>, ICollection<ItemType>, IList, INotificationSource, IEmptyCheckable where ItemType : notnull
 {
- private ObservableCollection<ItemType> Items => _items ??= new ObservableCollection<ItemType>();
-  private ObservableCollection<ItemType>? _items;
-  private readonly BiDiDictionary<string, ItemType>? _index;
+  private ObservableCollection<ItemType> _items = new ObservableCollection<ItemType>();
+  private readonly BiDiDictionary<object, ItemType> _index = new BiDiDictionary<object, ItemType>();
+  /// <summary>
+  /// Accessor for the internal ObservableCollection of items for all Collection
+  /// </summary>
+  protected virtual ObservableCollection<ItemType> Items => _items;
 
   /// <summary>
   /// Initializes a new, empty collection.
   /// </summary>
   protected ElementCollection()
   {
-    if (typeof(ItemType).IsAssignableTo(typeof(INamedObject)))
-      _index = new BiDiDictionary<string, ItemType>();
-    Items.CollectionChanged += Items_CollectionChanged;
+    _items.CollectionChanged += Items_CollectionChanged;
   }
 
   /// <summary>
@@ -32,6 +33,7 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   protected ElementCollection(ModelElement parent) : this()
   {
     SetParent(parent);
+    _items.CollectionChanged += Items_CollectionChanged;
   }
 
   /// <summary>
@@ -40,11 +42,9 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   /// <param name = "items">The items to add to the collection.</param>
   protected ElementCollection(IEnumerable<ItemType> items)
   {
-    if (typeof(ItemType).IsAssignableTo(typeof(INamedObject)))
-      _index = new BiDiDictionary<string, ItemType>();
     foreach (var item in items)
     {
-      Items.Add(item);
+      _items.Add(item);
       if (item is ICollectionItem collectionItem)
         collectionItem.SetCollection(this);
       if (item is INamedObject namedObject && _index != null)
@@ -52,7 +52,7 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
       if (item is INotifyPropertyChanged notificationSource)
         notificationSource.PropertyChanged += ItemPropertyChanged;
     }
-    Items.CollectionChanged += Items_CollectionChanged;
+    _items.CollectionChanged += Items_CollectionChanged;
   }
 
   /// <summary>
@@ -119,23 +119,23 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
     if (sender is ItemType item)
     {
       var propertyName = args.PropertyName;
-      if (propertyName == "Name" && sender is INamedObject namedObject && _index != null)
+      if (propertyName == "Name" && sender is INamedObject namedObject)
       {
         if (args is PropertyValueChangedEventArgs valueChangedArgs)
         {
           if (valueChangedArgs.OldValue is string oldName)
             _index.Remove(new KeyValuePair<string, ItemType>(oldName, item));
           if (valueChangedArgs.NewValue is string newName)
-            _index.Add(new KeyValuePair<string, ItemType>(newName, item));
+            _index.Add(new KeyValuePair<object, ItemType>(newName, item));
         }
         else
         {
           // If PropertyValueChangedEventArgs is not available, we can still update the index based on the new name.
           // However, we may not be able to remove the old name from the index without it. This is a limitation.
           if (_index.TryGetValue1(item, out var oldName))
-            _index.Remove(new KeyValuePair<string, ItemType>(oldName, item));
+            _index.Remove(new KeyValuePair<object, ItemType>(oldName, item));
           if (namedObject.Name != null)
-            _index.Add(new KeyValuePair<string, ItemType>(namedObject.Name, item));
+            _index.Add(new KeyValuePair<object, ItemType>(namedObject.Name, item));
         }
       }
     }
@@ -157,29 +157,22 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
     {
       if (Index is int intIndex)
         return this[intIndex];
-      if (Index is string stringIndex && _index != null)
-      {
-        if (stringIndex == "Identifier")
-          Debug.Assert(true);
-        return _index.TryGetValue2(stringIndex, out var item) ? item : throw new KeyNotFoundException($"No item with name '{stringIndex}' found in the collection.");
-      }
 
-      throw new NotSupportedException($"Invalid index type {Index.GetType()}.");
+      return _index.TryGetValue2(Index, out var item)
+        ? item
+        : throw new KeyNotFoundException($"No item with index '{Index}' found in the collection.");
     }
-
     set
     {
       if (Index is int intIndex)
         this[intIndex] = value;
-      else if (Index is string stringIndex && _index != null)
-      {
-        if (_index.TryGetValue2(stringIndex, out var item))
-          _index[stringIndex] = value;
-        else
-          throw new KeyNotFoundException($"No item with name '{stringIndex}' found in the collection.");
-      }
       else
-        throw new NotSupportedException("Invalid index type.");
+      {
+        if (_index.TryGetValue2((Index), out var item))
+          _index[Index] = value;
+        else
+          throw new KeyNotFoundException($"No item with index '{Index}' found in the collection.");
+      }
     }
   }
 
@@ -187,6 +180,7 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   /// Returns the first item in the collection, or null if the collection is empty.
   /// </summary>
   public virtual ItemType? First => this.Count > 0 ? this[0] : default;
+
   /// <summary>
   /// Returns the last item in the collection, or null if the collection is empty.
   /// </summary>

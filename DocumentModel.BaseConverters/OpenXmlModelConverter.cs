@@ -1006,7 +1006,8 @@ public static partial class OpenXmlModelConverter
   public static bool TryRegisterLazyLoad(object modelCollection, DX.OpenXmlCompositeElement openXmlObject)
   {
     var modelType = modelCollection.GetType();
-    if (modelType.GetCustomAttribute<LazyLoadAttribute>() != null && modelCollection is ILazyLoadable lazyLoadable)
+    var lazyLoadAttribute = modelType.GetCustomAttribute<LazyLoadAttribute>();
+    if (lazyLoadAttribute != null && lazyLoadAttribute.IsEnabled && modelCollection is ILazyLoadable lazyLoadable)
     {
       lazyLoadable.DataSource = openXmlObject;
       lazyLoadable.IsLazyLoadEnabled = true;

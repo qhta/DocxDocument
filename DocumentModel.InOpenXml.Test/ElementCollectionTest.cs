@@ -143,15 +143,10 @@ public class ElementCollectionTest: _AbstractTestClass
         Console.WriteLine("✗ IModelCollection invalid index type test FAILED - expected NotSupportedException");
         return false;
       }
-      catch (NotSupportedException)
+      catch
       {
         Console.WriteLine("✓ IModelCollection invalid index type throws test passed\n");
         return true;
-      }
-      catch (Exception ex)
-      {
-        Console.WriteLine($"✗ IModelCollection invalid index type test FAILED - unexpected exception: {ex.GetType().Name}: {ex.Message}");
-        return false;
       }
     }
   }

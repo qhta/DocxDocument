@@ -7,11 +7,23 @@ namespace DocumentModel;
 /// </summary>
 /// <typeparam name = "ItemType">Specifies the type of model elements contained in the collection.</typeparam>
 [XmlRoot("ModelElementCollection", Namespace = "DocumentModel")]
+[LazyLoad]
 public abstract partial class ModelElementCollection<ItemType> : ElementCollection<ItemType>,
   ILazyLoadable
   where ItemType : ModelElement
 {
-  //private bool _IsLazyLoad;
+
+  /// <summary>
+  /// Overriden accessor for the Items collection that ensures lazy loading is attempted before returning the collection.
+  /// </summary>
+  protected override ObservableCollection<ItemType> Items
+  {
+    get
+    {
+      TryLazyLoad();
+      return base.Items;
+    }
+  }
 
   /// <summary>
   ///   Initializes a new instance of the <see cref = "ModelElementCollection{ItemType}"/> class.
@@ -65,21 +77,13 @@ public abstract partial class ModelElementCollection<ItemType> : ElementCollecti
   {
     if (IsLazyLoadEnabled)
     {
+      IsLazyLoadEnabled = false;
       if (DataSource is DX.OpenXmlCompositeElement openXmlElement)
       {
         Debug.WriteLine($"Lazy loading data for {GetType().Name} from OpenXmlCompositeElement: {openXmlElement.LocalName}");
         LoadData(openXmlElement);
       }
-      IsLazyLoadEnabled = false;
     }
   }
 
-  public override int Count
-  {
-    get
-    {
-      TryLazyLoad();
-      return base.Count;
-    }
-  }
 }

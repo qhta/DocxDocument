@@ -7,7 +7,6 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.LatentStyles))]
 [OpenXmlItem(typeof(DXW.LatentStyleExceptionInfo))]
 [XmlRoot("LatentStyles", Namespace = "DocumentModel.Wordprocessing")]
-[LazyLoad]
 public partial class LatentStyles: 
   ModelElementCollection<LatentStyleExceptionInfo, DXW.LatentStyles, DXW.LatentStyleExceptionInfo>
 
