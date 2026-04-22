@@ -4,19 +4,20 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// </summary>
 [OpenXmlType(typeof(DXDCD.NonVisualShapeDrawingProperties))]
 [XmlRoot("NonVisualShapeDrawingProperties", Namespace = "DocumentModel.Drawings.ChartDrawing")]
-public class NonVisualShapeDrawingProperties : ModelElement<DXDCD.NonVisualShapeDrawingProperties> //: ExtendableElement
+public partial class NonVisualShapeDrawingProperties : ModelElement<DXDCD.NonVisualShapeDrawingProperties> //: ExtendableElement
 {
- /// <summary>
- /// Indicates whether the shape functions as a text box within the drawing.
- /// </summary>
- [OpenXmlProperty(nameof(DXDCD.NonVisualShapeDrawingProperties.TextBox))]
- public bool? TextBox { get => _TextBox; set => UpdateField(ref _TextBox, value, nameof(TextBox)); }
- private bool? _TextBox;
+  /// <summary>
+  /// Indicates whether the shape functions as a text box within the drawing.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDCD.NonVisualShapeDrawingProperties.TextBox))]
+  public bool? TextBox { get => _TextBox; set => UpdateField(ref _TextBox, value, nameof(TextBox)); }
 
- /// <summary>
- /// Specifies locking options that restrict editing or manipulation of the shape.
- /// </summary>
- [OpenXmlProperty(nameof(DXDCD.NonVisualShapeDrawingProperties.ShapeLocks))]
- public ShapeLocks? ShapeLocks { get => _ShapeLocks; set => UpdateField(ref _ShapeLocks, value, nameof(ShapeLocks)); }
- private ShapeLocks? _ShapeLocks;
+  private bool? _TextBox;
+  /// <summary>
+  /// Specifies locking options that restrict editing or manipulation of the shape.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDCD.NonVisualShapeDrawingProperties.ShapeLocks))]
+  public ShapeLocks? ShapeLocks { get => _ShapeLocks; set => UpdateField(ref _ShapeLocks, value, nameof(ShapeLocks)); }
+
+  private ShapeLocks? _ShapeLocks;
 }

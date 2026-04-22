@@ -4,12 +4,13 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// </summary>
 [OpenXmlType(typeof(DXDCD.NonVisualGraphicFrameDrawingProperties))]
 [XmlRoot("NonVisualGraphicFrameDrawingProperties", Namespace = "DocumentModel.Drawings.ChartDrawing")]
-public class NonVisualGraphicFrameDrawingProperties : ModelElement<DXDCD.NonVisualGraphicFrameDrawingProperties> //, IExtendableElement
+public partial class NonVisualGraphicFrameDrawingProperties : ModelElement<DXDCD.NonVisualGraphicFrameDrawingProperties> //, IExtendableElement
 {
- /// <summary>
- /// Specifies locking options for the graphic frame to control editing and manipulation.
- /// </summary>
- [OpenXmlProperty(nameof(DXDCD.NonVisualGraphicFrameDrawingProperties.GraphicFrameLocks))]
- public GraphicFrameLocks? GraphicFrameLocks { get => _GraphicFrameLocks; set => UpdateField(ref _GraphicFrameLocks, value, nameof(GraphicFrameLocks)); }
- private GraphicFrameLocks? _GraphicFrameLocks;
+  /// <summary>
+  /// Specifies locking options for the graphic frame to control editing and manipulation.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXDCD.NonVisualGraphicFrameDrawingProperties.GraphicFrameLocks))]
+  public GraphicFrameLocks? GraphicFrameLocks { get => _GraphicFrameLocks; set => UpdateField(ref _GraphicFrameLocks, value, nameof(GraphicFrameLocks)); }
+
+  private GraphicFrameLocks? _GraphicFrameLocks;
 }

@@ -23,19 +23,20 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.ExternalData))]
 [XmlRoot("ExternalData", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public class ExternalData : ModelElement<DXO16DCD.ExternalData>
+public partial class ExternalData : ModelElement<DXO16DCD.ExternalData>
 {
- /// <summary>
- /// Specifies the unique identifier of the element.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.ExternalData.Id))]
- public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
- private string? _Id;
+  /// <summary>
+  /// Specifies the unique identifier of the element.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.ExternalData.Id))]
+  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
- /// <summary>
- /// Specifies the auto update.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.ExternalData.AutoUpdate))]
- public bool? AutoUpdate { get => _AutoUpdate; set => UpdateField(ref _AutoUpdate, value, nameof(AutoUpdate)); }
- private bool? _AutoUpdate;
+  private string? _Id;
+  /// <summary>
+  /// Specifies the auto update.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.ExternalData.AutoUpdate))]
+  public bool? AutoUpdate { get => _AutoUpdate; set => UpdateField(ref _AutoUpdate, value, nameof(AutoUpdate)); }
+
+  private bool? _AutoUpdate;
 }

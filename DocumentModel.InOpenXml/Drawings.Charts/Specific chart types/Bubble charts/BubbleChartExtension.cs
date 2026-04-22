@@ -3,10 +3,10 @@ namespace DocumentModel.Drawings.Charts;
 ///   Represents an extension for a bubble chart, providing additional series filtering capabilities.
 /// </summary>
 [XmlRoot("BubbleChartExtension", Namespace = "DocumentModel.Drawings.Charts")]
-public class BubbleChartExtension : Extension
+public partial class BubbleChartExtension : Extension
 {
- /// <summary>
- ///   Filtered bubble series for the chart extension.
- /// </summary>
- public FilteredBubbleSeries? FilteredBubbleSeries { get; set; }
+  /// <summary>
+  ///   Filtered bubble series for the chart extension.
+  /// </summary>
+  public FilteredBubbleSeries? FilteredBubbleSeries { get; set; }
 }

@@ -4,19 +4,20 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </summary>
 [OpenXmlType(typeof(DXO16DCD.ValueColorMiddlePosition))]
 [XmlRoot("ValueColorMiddlePosition", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public class ValueColorMiddlePosition : ModelElement<DXO16DCD.ValueColorMiddlePosition>
+public partial class ValueColorMiddlePosition : ModelElement<DXO16DCD.ValueColorMiddlePosition>
 {
- /// <summary>
- /// Specifies the number color position.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.ValueColorMiddlePosition.NumberColorPosition))]
- public Double? NumberColorPosition { get => _NumberColorPosition; set => UpdateField(ref _NumberColorPosition, value, nameof(NumberColorPosition)); }
- private Double? _NumberColorPosition;
+  /// <summary>
+  /// Specifies the number color position.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.ValueColorMiddlePosition.NumberColorPosition))]
+  public Double? NumberColorPosition { get => _NumberColorPosition; set => UpdateField(ref _NumberColorPosition, value, nameof(NumberColorPosition)); }
 
- /// <summary>
- /// Specifies the percentage color position.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.ValueColorMiddlePosition.PercentageColorPosition))]
- public Double? PercentageColorPosition { get => _PercentageColorPosition; set => UpdateField(ref _PercentageColorPosition, value, nameof(PercentageColorPosition)); }
- private Double? _PercentageColorPosition;
+  private Double? _NumberColorPosition;
+  /// <summary>
+  /// Specifies the percentage color position.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.ValueColorMiddlePosition.PercentageColorPosition))]
+  public Double? PercentageColorPosition { get => _PercentageColorPosition; set => UpdateField(ref _PercentageColorPosition, value, nameof(PercentageColorPosition)); }
+
+  private Double? _PercentageColorPosition;
 }

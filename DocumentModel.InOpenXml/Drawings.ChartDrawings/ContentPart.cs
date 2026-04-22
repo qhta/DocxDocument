@@ -15,40 +15,41 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </remarks>
 [OpenXmlType(typeof(DXO10DCD.ContentPart))]
 [XmlRoot("ContentPart", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public class ContentPart : ModelElement<DXO10DCD.ContentPart> //: OfficeArtExtendableElement
+public partial class ContentPart : ModelElement<DXO10DCD.ContentPart> //: OfficeArtExtendableElement
 {
- /// <summary>
- /// Specifies the relationship id.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10DCD.ContentPart.RelationshipId))]
- public string? RelationshipId { get => _RelationshipId; set => UpdateField(ref _RelationshipId, value, nameof(RelationshipId)); }
- private string? _RelationshipId;
+  /// <summary>
+  /// Specifies the relationship id.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10DCD.ContentPart.RelationshipId))]
+  public string? RelationshipId { get => _RelationshipId; set => UpdateField(ref _RelationshipId, value, nameof(RelationshipId)); }
 
- /// <summary>
- /// Specifies the black white mode.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10DCD.ContentPart.BlackWhiteMode))]
- public BlackWhiteMode? BlackWhiteMode { get => _BlackWhiteMode; set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode)); }
- private BlackWhiteMode? _BlackWhiteMode;
+  private string? _RelationshipId;
+  /// <summary>
+  /// Specifies the black white mode.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10DCD.ContentPart.BlackWhiteMode))]
+  public BlackWhiteMode? BlackWhiteMode { get => _BlackWhiteMode; set => UpdateField(ref _BlackWhiteMode, value, nameof(BlackWhiteMode)); }
 
- /// <summary>
- /// Specifies the non visual content part properties.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10DCD.ContentPart.NonVisualContentPartProperties))]
- public NonVisualContentPartProperties? NonVisualContentPartProperties { get => _NonVisualContentPartProperties; set => UpdateField(ref _NonVisualContentPartProperties, value, nameof(NonVisualContentPartProperties)); }
- private NonVisualContentPartProperties? _NonVisualContentPartProperties;
+  private BlackWhiteMode? _BlackWhiteMode;
+  /// <summary>
+  /// Specifies the non visual content part properties.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10DCD.ContentPart.NonVisualContentPartProperties))]
+  public NonVisualContentPartProperties? NonVisualContentPartProperties { get => _NonVisualContentPartProperties; set => UpdateField(ref _NonVisualContentPartProperties, value, nameof(NonVisualContentPartProperties)); }
 
- /// <summary>
- /// Specifies the application non visual drawing properties.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10DCD.ContentPart.ApplicationNonVisualDrawingProperties))]
- public ApplicationNonVisualDrawingProperties? ApplicationNonVisualDrawingProperties { get => _ApplicationNonVisualDrawingProperties; set => UpdateField(ref _ApplicationNonVisualDrawingProperties, value, nameof(ApplicationNonVisualDrawingProperties)); }
- private ApplicationNonVisualDrawingProperties? _ApplicationNonVisualDrawingProperties;
+  private NonVisualContentPartProperties? _NonVisualContentPartProperties;
+  /// <summary>
+  /// Specifies the application non visual drawing properties.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10DCD.ContentPart.ApplicationNonVisualDrawingProperties))]
+  public ApplicationNonVisualDrawingProperties? ApplicationNonVisualDrawingProperties { get => _ApplicationNonVisualDrawingProperties; set => UpdateField(ref _ApplicationNonVisualDrawingProperties, value, nameof(ApplicationNonVisualDrawingProperties)); }
 
- /// <summary>
- /// Specifies the transform2d.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10DCD.ContentPart.Transform2D))]
- public Transform2D? Transform2D { get => _Transform2D; set => UpdateField(ref _Transform2D, value, nameof(Transform2D)); }
- private Transform2D? _Transform2D;
+  private ApplicationNonVisualDrawingProperties? _ApplicationNonVisualDrawingProperties;
+  /// <summary>
+  /// Specifies the transform2d.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10DCD.ContentPart.Transform2D))]
+  public Transform2D? Transform2D { get => _Transform2D; set => UpdateField(ref _Transform2D, value, nameof(Transform2D)); }
+
+  private Transform2D? _Transform2D;
 }

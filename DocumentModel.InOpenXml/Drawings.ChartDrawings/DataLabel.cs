@@ -19,61 +19,62 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.DataLabel))]
 [XmlRoot("DataLabel", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public class DataLabel : ModelElement<DXO16DCD.DataLabel>
+public partial class DataLabel : ModelElement<DXO16DCD.DataLabel>
 {
- /// <summary>
- /// Specifies the idx.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.DataLabel.Idx))]
- public UInt32? Idx { get => _Idx; set => UpdateField(ref _Idx, value, nameof(Idx)); }
- private UInt32? _Idx;
+  /// <summary>
+  /// Specifies the idx.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.DataLabel.Idx))]
+  public UInt32? Idx { get => _Idx; set => UpdateField(ref _Idx, value, nameof(Idx)); }
 
- /// <summary>
- /// Specifies the pos.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.DataLabel.Pos))]
- public DataLabelPos? Pos { get => _Pos; set => UpdateField(ref _Pos, value, nameof(Pos)); }
- private DataLabelPos? _Pos;
+  private UInt32? _Idx;
+  /// <summary>
+  /// Specifies the pos.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.DataLabel.Pos))]
+  public DataLabelPos? Pos { get => _Pos; set => UpdateField(ref _Pos, value, nameof(Pos)); }
 
- /// <summary>
- /// Specifies the number format.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.DataLabel.NumberFormat))]
- public NumberFormat? NumberFormat { get => _NumberFormat; set => UpdateField(ref _NumberFormat, value, nameof(NumberFormat)); }
- private NumberFormat? _NumberFormat;
+  private DataLabelPos? _Pos;
+  /// <summary>
+  /// Specifies the number format.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.DataLabel.NumberFormat))]
+  public NumberFormat? NumberFormat { get => _NumberFormat; set => UpdateField(ref _NumberFormat, value, nameof(NumberFormat)); }
 
- /// <summary>
- /// Specifies the shape properties.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.DataLabel.ShapeProperties))]
- public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
- private ShapeProperties? _ShapeProperties;
+  private NumberFormat? _NumberFormat;
+  /// <summary>
+  /// Specifies the shape properties.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.DataLabel.ShapeProperties))]
+  public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
 
- /// <summary>
- /// Specifies the tx pr text body.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.DataLabel.TxPrTextBody))]
- public TxPrTextBody? TxPrTextBody { get => _TxPrTextBody; set => UpdateField(ref _TxPrTextBody, value, nameof(TxPrTextBody)); }
- private TxPrTextBody? _TxPrTextBody;
+  private ShapeProperties? _ShapeProperties;
+  /// <summary>
+  /// Specifies the tx pr text body.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.DataLabel.TxPrTextBody))]
+  public TxPrTextBody? TxPrTextBody { get => _TxPrTextBody; set => UpdateField(ref _TxPrTextBody, value, nameof(TxPrTextBody)); }
 
- /// <summary>
- /// Specifies the data label visibilities.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.DataLabel.DataLabelVisibilities))]
- public DataLabelVisibilities? DataLabelVisibilities { get => _DataLabelVisibilities; set => UpdateField(ref _DataLabelVisibilities, value, nameof(DataLabelVisibilities)); }
- private DataLabelVisibilities? _DataLabelVisibilities;
+  private TxPrTextBody? _TxPrTextBody;
+  /// <summary>
+  /// Specifies the data label visibilities.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.DataLabel.DataLabelVisibilities))]
+  public DataLabelVisibilities? DataLabelVisibilities { get => _DataLabelVisibilities; set => UpdateField(ref _DataLabelVisibilities, value, nameof(DataLabelVisibilities)); }
 
- /// <summary>
- /// Specifies the separator xsd string.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.DataLabel.SeparatorXsdstring))]
- public string? SeparatorXsdString { get => _SeparatorXsdString; set => UpdateField(ref _SeparatorXsdString, value, nameof(SeparatorXsdString)); }
- private string? _SeparatorXsdString;
+  private DataLabelVisibilities? _DataLabelVisibilities;
+  /// <summary>
+  /// Specifies the separator xsd string.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.DataLabel.SeparatorXsdstring))]
+  public string? SeparatorXsdString { get => _SeparatorXsdString; set => UpdateField(ref _SeparatorXsdString, value, nameof(SeparatorXsdString)); }
 
- /// <summary>
- /// Specifies the extension list.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.DataLabel.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+  private string? _SeparatorXsdString;
+  /// <summary>
+  /// Specifies the extension list.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.DataLabel.ExtensionList))]
+  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+  private ExtensionList? _ExtensionList;
 }

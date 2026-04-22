@@ -16,40 +16,41 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.Clear))]
 [XmlRoot("Clear", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public class Clear : ModelElement<DXO16DCD.Clear>
+public partial class Clear : ModelElement<DXO16DCD.Clear>
 {
- /// <summary>
- /// Specifies the geo location query results.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.Clear.GeoLocationQueryResults))]
- public GeoLocationQueryResults? GeoLocationQueryResults { get => _GeoLocationQueryResults; set => UpdateField(ref _GeoLocationQueryResults, value, nameof(GeoLocationQueryResults)); }
- private GeoLocationQueryResults? _GeoLocationQueryResults;
+  /// <summary>
+  /// Specifies the geo location query results.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.Clear.GeoLocationQueryResults))]
+  public GeoLocationQueryResults? GeoLocationQueryResults { get => _GeoLocationQueryResults; set => UpdateField(ref _GeoLocationQueryResults, value, nameof(GeoLocationQueryResults)); }
 
- /// <summary>
- /// Specifies the geo data entity query results.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.Clear.GeoDataEntityQueryResults))]
- public GeoDataEntityQueryResults? GeoDataEntityQueryResults { get => _GeoDataEntityQueryResults; set => UpdateField(ref _GeoDataEntityQueryResults, value, nameof(GeoDataEntityQueryResults)); }
- private GeoDataEntityQueryResults? _GeoDataEntityQueryResults;
+  private GeoLocationQueryResults? _GeoLocationQueryResults;
+  /// <summary>
+  /// Specifies the geo data entity query results.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.Clear.GeoDataEntityQueryResults))]
+  public GeoDataEntityQueryResults? GeoDataEntityQueryResults { get => _GeoDataEntityQueryResults; set => UpdateField(ref _GeoDataEntityQueryResults, value, nameof(GeoDataEntityQueryResults)); }
 
- /// <summary>
- /// Specifies the geo data point to entity query results.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.Clear.GeoDataPointToEntityQueryResults))]
- public GeoDataPointToEntityQueryResults? GeoDataPointToEntityQueryResults { get => _GeoDataPointToEntityQueryResults; set => UpdateField(ref _GeoDataPointToEntityQueryResults, value, nameof(GeoDataPointToEntityQueryResults)); }
- private GeoDataPointToEntityQueryResults? _GeoDataPointToEntityQueryResults;
+  private GeoDataEntityQueryResults? _GeoDataEntityQueryResults;
+  /// <summary>
+  /// Specifies the geo data point to entity query results.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.Clear.GeoDataPointToEntityQueryResults))]
+  public GeoDataPointToEntityQueryResults? GeoDataPointToEntityQueryResults { get => _GeoDataPointToEntityQueryResults; set => UpdateField(ref _GeoDataPointToEntityQueryResults, value, nameof(GeoDataPointToEntityQueryResults)); }
 
- /// <summary>
- /// Specifies the geo child entities query results.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.Clear.GeoChildEntitiesQueryResults))]
- public GeoChildEntitiesQueryResults? GeoChildEntitiesQueryResults { get => _GeoChildEntitiesQueryResults; set => UpdateField(ref _GeoChildEntitiesQueryResults, value, nameof(GeoChildEntitiesQueryResults)); }
- private GeoChildEntitiesQueryResults? _GeoChildEntitiesQueryResults;
+  private GeoDataPointToEntityQueryResults? _GeoDataPointToEntityQueryResults;
+  /// <summary>
+  /// Specifies the geo child entities query results.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.Clear.GeoChildEntitiesQueryResults))]
+  public GeoChildEntitiesQueryResults? GeoChildEntitiesQueryResults { get => _GeoChildEntitiesQueryResults; set => UpdateField(ref _GeoChildEntitiesQueryResults, value, nameof(GeoChildEntitiesQueryResults)); }
 
- /// <summary>
- /// Specifies the geo parent entities query results.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.Clear.GeoParentEntitiesQueryResults))]
- public GeoParentEntitiesQueryResults? GeoParentEntitiesQueryResults { get => _GeoParentEntitiesQueryResults; set => UpdateField(ref _GeoParentEntitiesQueryResults, value, nameof(GeoParentEntitiesQueryResults)); }
- private GeoParentEntitiesQueryResults? _GeoParentEntitiesQueryResults;
+  private GeoChildEntitiesQueryResults? _GeoChildEntitiesQueryResults;
+  /// <summary>
+  /// Specifies the geo parent entities query results.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.Clear.GeoParentEntitiesQueryResults))]
+  public GeoParentEntitiesQueryResults? GeoParentEntitiesQueryResults { get => _GeoParentEntitiesQueryResults; set => UpdateField(ref _GeoParentEntitiesQueryResults, value, nameof(GeoParentEntitiesQueryResults)); }
+
+  private GeoParentEntitiesQueryResults? _GeoParentEntitiesQueryResults;
 }

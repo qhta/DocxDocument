@@ -16,54 +16,55 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.ChartTitle))]
 [XmlRoot("ChartTitle", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public class ChartTitle : ModelElement<DXO16DCD.ChartTitle>
+public partial class ChartTitle : ModelElement<DXO16DCD.ChartTitle>
 {
- /// <summary>
- /// Specifies the pos.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.ChartTitle.Pos))]
- public SidePos? Pos { get => _Pos; set => UpdateField(ref _Pos, value, nameof(Pos)); }
- private SidePos? _Pos;
+  /// <summary>
+  /// Specifies the pos.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.ChartTitle.Pos))]
+  public SidePos? Pos { get => _Pos; set => UpdateField(ref _Pos, value, nameof(Pos)); }
 
- /// <summary>
- /// Specifies the align.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.ChartTitle.Align))]
- public PosAlign? Align { get => _Align; set => UpdateField(ref _Align, value, nameof(Align)); }
- private PosAlign? _Align;
+  private SidePos? _Pos;
+  /// <summary>
+  /// Specifies the align.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.ChartTitle.Align))]
+  public PosAlign? Align { get => _Align; set => UpdateField(ref _Align, value, nameof(Align)); }
 
- /// <summary>
- /// Specifies the overlay.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.ChartTitle.Overlay))]
- public bool? Overlay { get => _Overlay; set => UpdateField(ref _Overlay, value, nameof(Overlay)); }
- private bool? _Overlay;
+  private PosAlign? _Align;
+  /// <summary>
+  /// Specifies the overlay.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.ChartTitle.Overlay))]
+  public bool? Overlay { get => _Overlay; set => UpdateField(ref _Overlay, value, nameof(Overlay)); }
 
- /// <summary>
- /// Specifies the text.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.ChartTitle.Text))]
- public Text? Text { get => _Text; set => UpdateField(ref _Text, value, nameof(Text)); }
- private Text? _Text;
+  private bool? _Overlay;
+  /// <summary>
+  /// Specifies the text.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.ChartTitle.Text))]
+  public Text? Text { get => _Text; set => UpdateField(ref _Text, value, nameof(Text)); }
 
- /// <summary>
- /// Specifies the shape properties.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.ChartTitle.ShapeProperties))]
- public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
- private ShapeProperties? _ShapeProperties;
+  private Text? _Text;
+  /// <summary>
+  /// Specifies the shape properties.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.ChartTitle.ShapeProperties))]
+  public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
 
- /// <summary>
- /// Specifies the tx pr text body.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.ChartTitle.TxPrTextBody))]
- public TxPrTextBody? TxPrTextBody { get => _TxPrTextBody; set => UpdateField(ref _TxPrTextBody, value, nameof(TxPrTextBody)); }
- private TxPrTextBody? _TxPrTextBody;
+  private ShapeProperties? _ShapeProperties;
+  /// <summary>
+  /// Specifies the tx pr text body.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.ChartTitle.TxPrTextBody))]
+  public TxPrTextBody? TxPrTextBody { get => _TxPrTextBody; set => UpdateField(ref _TxPrTextBody, value, nameof(TxPrTextBody)); }
 
- /// <summary>
- /// Specifies the extension list.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.ChartTitle.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+  private TxPrTextBody? _TxPrTextBody;
+  /// <summary>
+  /// Specifies the extension list.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.ChartTitle.ExtensionList))]
+  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+  private ExtensionList? _ExtensionList;
 }

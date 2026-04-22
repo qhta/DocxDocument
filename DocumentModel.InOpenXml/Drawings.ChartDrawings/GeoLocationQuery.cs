@@ -28,40 +28,41 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoLocationQuery))]
 [XmlRoot("GeoLocationQuery", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public class GeoLocationQuery : ModelElement<DXO16DCD.GeoLocationQuery>
+public partial class GeoLocationQuery : ModelElement<DXO16DCD.GeoLocationQuery>
 {
- /// <summary>
- /// Specifies the country region.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.GeoLocationQuery.CountryRegion))]
- public string? CountryRegion { get => _CountryRegion; set => UpdateField(ref _CountryRegion, value, nameof(CountryRegion)); }
- private string? _CountryRegion;
+  /// <summary>
+  /// Specifies the country region.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.GeoLocationQuery.CountryRegion))]
+  public string? CountryRegion { get => _CountryRegion; set => UpdateField(ref _CountryRegion, value, nameof(CountryRegion)); }
 
- /// <summary>
- /// Specifies the admin district1.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.GeoLocationQuery.AdminDistrict1))]
- public string? AdminDistrict1 { get => _AdminDistrict1; set => UpdateField(ref _AdminDistrict1, value, nameof(AdminDistrict1)); }
- private string? _AdminDistrict1;
+  private string? _CountryRegion;
+  /// <summary>
+  /// Specifies the admin district1.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.GeoLocationQuery.AdminDistrict1))]
+  public string? AdminDistrict1 { get => _AdminDistrict1; set => UpdateField(ref _AdminDistrict1, value, nameof(AdminDistrict1)); }
 
- /// <summary>
- /// Specifies the admin district2.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.GeoLocationQuery.AdminDistrict2))]
- public string? AdminDistrict2 { get => _AdminDistrict2; set => UpdateField(ref _AdminDistrict2, value, nameof(AdminDistrict2)); }
- private string? _AdminDistrict2;
+  private string? _AdminDistrict1;
+  /// <summary>
+  /// Specifies the admin district2.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.GeoLocationQuery.AdminDistrict2))]
+  public string? AdminDistrict2 { get => _AdminDistrict2; set => UpdateField(ref _AdminDistrict2, value, nameof(AdminDistrict2)); }
 
- /// <summary>
- /// Specifies the postal code.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.GeoLocationQuery.PostalCode))]
- public string? PostalCode { get => _PostalCode; set => UpdateField(ref _PostalCode, value, nameof(PostalCode)); }
- private string? _PostalCode;
+  private string? _AdminDistrict2;
+  /// <summary>
+  /// Specifies the postal code.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.GeoLocationQuery.PostalCode))]
+  public string? PostalCode { get => _PostalCode; set => UpdateField(ref _PostalCode, value, nameof(PostalCode)); }
 
- /// <summary>
- /// Specifies the entity type.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.GeoLocationQuery.EntityType))]
- public EntityTypeEnum? EntityType { get => _EntityType; set => UpdateField(ref _EntityType, value, nameof(EntityType)); }
- private EntityTypeEnum? _EntityType;
+  private string? _PostalCode;
+  /// <summary>
+  /// Specifies the entity type.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.GeoLocationQuery.EntityType))]
+  public EntityTypeEnum? EntityType { get => _EntityType; set => UpdateField(ref _EntityType, value, nameof(EntityType)); }
+
+  private EntityTypeEnum? _EntityType;
 }

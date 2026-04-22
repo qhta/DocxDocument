@@ -20,26 +20,27 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.DataPoint))]
 [XmlRoot("DataPoint", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public class DataPoint : ModelElement<DXO16DCD.DataPoint>
+public partial class DataPoint : ModelElement<DXO16DCD.DataPoint>
 {
- /// <summary>
- /// Specifies the idx.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.DataPoint.Idx))]
- public UInt32? Idx { get => _Idx; set => UpdateField(ref _Idx, value, nameof(Idx)); }
- private UInt32? _Idx;
+  /// <summary>
+  /// Specifies the idx.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.DataPoint.Idx))]
+  public UInt32? Idx { get => _Idx; set => UpdateField(ref _Idx, value, nameof(Idx)); }
 
- /// <summary>
- /// Specifies the shape properties.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.DataPoint.ShapeProperties))]
- public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
- private ShapeProperties? _ShapeProperties;
+  private UInt32? _Idx;
+  /// <summary>
+  /// Specifies the shape properties.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.DataPoint.ShapeProperties))]
+  public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
 
- /// <summary>
- /// Specifies the extension list.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.DataPoint.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+  private ShapeProperties? _ShapeProperties;
+  /// <summary>
+  /// Specifies the extension list.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.DataPoint.ExtensionList))]
+  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+  private ExtensionList? _ExtensionList;
 }

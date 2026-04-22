@@ -22,26 +22,27 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.FormatOverride))]
 [XmlRoot("FormatOverride", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public class FormatOverride : ModelElement<DXO16DCD.FormatOverride>
+public partial class FormatOverride : ModelElement<DXO16DCD.FormatOverride>
 {
- /// <summary>
- /// Specifies the idx.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.FormatOverride.Idx))]
- public UInt32? Idx { get => _Idx; set => UpdateField(ref _Idx, value, nameof(Idx)); }
- private UInt32? _Idx;
+  /// <summary>
+  /// Specifies the idx.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.FormatOverride.Idx))]
+  public UInt32? Idx { get => _Idx; set => UpdateField(ref _Idx, value, nameof(Idx)); }
 
- /// <summary>
- /// Specifies the shape properties.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.FormatOverride.ShapeProperties))]
- public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
- private ShapeProperties? _ShapeProperties;
+  private UInt32? _Idx;
+  /// <summary>
+  /// Specifies the shape properties.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.FormatOverride.ShapeProperties))]
+  public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
 
- /// <summary>
- /// Specifies the extension list.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.FormatOverride.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+  private ShapeProperties? _ShapeProperties;
+  /// <summary>
+  /// Specifies the extension list.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.FormatOverride.ExtensionList))]
+  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+  private ExtensionList? _ExtensionList;
 }

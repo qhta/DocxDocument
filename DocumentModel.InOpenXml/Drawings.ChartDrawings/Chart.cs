@@ -15,33 +15,34 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.Chart))]
 [XmlRoot("Chart", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public class Chart : ModelElement<DXO16DCD.Chart>
+public partial class Chart : ModelElement<DXO16DCD.Chart>
 {
- /// <summary>
- /// Specifies the chart title.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.Chart.ChartTitle))]
- public ChartTitle? ChartTitle { get => _ChartTitle; set => UpdateField(ref _ChartTitle, value, nameof(ChartTitle)); }
- private ChartTitle? _ChartTitle;
+  /// <summary>
+  /// Specifies the chart title.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.Chart.ChartTitle))]
+  public ChartTitle? ChartTitle { get => _ChartTitle; set => UpdateField(ref _ChartTitle, value, nameof(ChartTitle)); }
 
- /// <summary>
- /// Specifies the plot area.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.Chart.PlotArea))]
- public PlotArea? PlotArea { get => _PlotArea; set => UpdateField(ref _PlotArea, value, nameof(PlotArea)); }
- private PlotArea? _PlotArea;
+  private ChartTitle? _ChartTitle;
+  /// <summary>
+  /// Specifies the plot area.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.Chart.PlotArea))]
+  public PlotArea? PlotArea { get => _PlotArea; set => UpdateField(ref _PlotArea, value, nameof(PlotArea)); }
 
- /// <summary>
- /// Specifies the legend.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.Chart.Legend))]
- public Legend? Legend { get => _Legend; set => UpdateField(ref _Legend, value, nameof(Legend)); }
- private Legend? _Legend;
+  private PlotArea? _PlotArea;
+  /// <summary>
+  /// Specifies the legend.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.Chart.Legend))]
+  public Legend? Legend { get => _Legend; set => UpdateField(ref _Legend, value, nameof(Legend)); }
 
- /// <summary>
- /// Specifies the extension list.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.Chart.ExtensionList))]
- public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
- private ExtensionList? _ExtensionList;
+  private Legend? _Legend;
+  /// <summary>
+  /// Specifies the extension list.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.Chart.ExtensionList))]
+  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
+
+  private ExtensionList? _ExtensionList;
 }

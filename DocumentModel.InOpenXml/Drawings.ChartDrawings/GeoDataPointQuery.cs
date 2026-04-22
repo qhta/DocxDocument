@@ -26,26 +26,27 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoDataPointQuery))]
 [XmlRoot("GeoDataPointQuery", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public class GeoDataPointQuery : ModelElement<DXO16DCD.GeoDataPointQuery>
+public partial class GeoDataPointQuery : ModelElement<DXO16DCD.GeoDataPointQuery>
 {
- /// <summary>
- /// Specifies the entity type.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointQuery.EntityType))]
- public EntityTypeEnum? EntityType { get => _EntityType; set => UpdateField(ref _EntityType, value, nameof(EntityType)); }
- private EntityTypeEnum? _EntityType;
+  /// <summary>
+  /// Specifies the entity type.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointQuery.EntityType))]
+  public EntityTypeEnum? EntityType { get => _EntityType; set => UpdateField(ref _EntityType, value, nameof(EntityType)); }
 
- /// <summary>
- /// Specifies the latitude.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointQuery.Latitude))]
- public Double? Latitude { get => _Latitude; set => UpdateField(ref _Latitude, value, nameof(Latitude)); }
- private Double? _Latitude;
+  private EntityTypeEnum? _EntityType;
+  /// <summary>
+  /// Specifies the latitude.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointQuery.Latitude))]
+  public Double? Latitude { get => _Latitude; set => UpdateField(ref _Latitude, value, nameof(Latitude)); }
 
- /// <summary>
- /// Specifies the longitude.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointQuery.Longitude))]
- public Double? Longitude { get => _Longitude; set => UpdateField(ref _Longitude, value, nameof(Longitude)); }
- private Double? _Longitude;
+  private Double? _Latitude;
+  /// <summary>
+  /// Specifies the longitude.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointQuery.Longitude))]
+  public Double? Longitude { get => _Longitude; set => UpdateField(ref _Longitude, value, nameof(Longitude)); }
+
+  private Double? _Longitude;
 }

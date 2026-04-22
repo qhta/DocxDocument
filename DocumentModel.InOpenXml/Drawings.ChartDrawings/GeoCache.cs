@@ -22,24 +22,25 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoCache))]
 [XmlRoot("GeoCache", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public class GeoCache : ModelElement<DXO16DCD.GeoCache>
+public partial class GeoCache : ModelElement<DXO16DCD.GeoCache>
 {
- /// <summary>
- /// Specifies the provider.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.GeoCache.Provider))]
- public string? Provider { get => _Provider; set => UpdateField(ref _Provider, value, nameof(Provider)); }
- private string? _Provider;
+  /// <summary>
+  /// Specifies the provider.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.GeoCache.Provider))]
+  public string? Provider { get => _Provider; set => UpdateField(ref _Provider, value, nameof(Provider)); }
 
- /// <summary>
- /// Specifies the xsd base64binary.
- /// </summary>
- public string? XsdBase64Binary { get => _XsdBase64Binary; set => UpdateField(ref _XsdBase64Binary, value, nameof(XsdBase64Binary)); }
- private string? _XsdBase64Binary;
+  private string? _Provider;
+  /// <summary>
+  /// Specifies the xsd base64binary.
+  /// </summary>
+  public string? XsdBase64Binary { get => _XsdBase64Binary; set => UpdateField(ref _XsdBase64Binary, value, nameof(XsdBase64Binary)); }
 
- /// <summary>
- /// Specifies the clear.
- /// </summary>
- public Clear? Clear { get => _Clear; set => UpdateField(ref _Clear, value, nameof(Clear)); }
- private Clear? _Clear;
+  private string? _XsdBase64Binary;
+  /// <summary>
+  /// Specifies the clear.
+  /// </summary>
+  public Clear? Clear { get => _Clear; set => UpdateField(ref _Clear, value, nameof(Clear)); }
+
+  private Clear? _Clear;
 }

@@ -25,19 +25,20 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </remarks>
 [OpenXmlType(typeof(DXO16DCD.GeoLocationQueryResult))]
 [XmlRoot("GeoLocationQueryResult", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public class GeoLocationQueryResult : ModelElement<DXO16DCD.GeoLocationQueryResult>
+public partial class GeoLocationQueryResult : ModelElement<DXO16DCD.GeoLocationQueryResult>
 {
- /// <summary>
- /// Specifies the geo location query.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.GeoLocationQueryResult.GeoLocationQuery))]
- public GeoLocationQuery? GeoLocationQuery { get => _GeoLocationQuery; set => UpdateField(ref _GeoLocationQuery, value, nameof(GeoLocationQuery)); }
- private GeoLocationQuery? _GeoLocationQuery;
+  /// <summary>
+  /// Specifies the geo location query.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.GeoLocationQueryResult.GeoLocationQuery))]
+  public GeoLocationQuery? GeoLocationQuery { get => _GeoLocationQuery; set => UpdateField(ref _GeoLocationQuery, value, nameof(GeoLocationQuery)); }
 
- /// <summary>
- /// Specifies the geo locations.
- /// </summary>
- [OpenXmlProperty(nameof(DXO16DCD.GeoLocationQueryResult.GeoLocations))]
- public GeoLocations? GeoLocations { get => _GeoLocations; set => UpdateField(ref _GeoLocations, value, nameof(GeoLocations)); }
- private GeoLocations? _GeoLocations;
+  private GeoLocationQuery? _GeoLocationQuery;
+  /// <summary>
+  /// Specifies the geo locations.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO16DCD.GeoLocationQueryResult.GeoLocations))]
+  public GeoLocations? GeoLocations { get => _GeoLocations; set => UpdateField(ref _GeoLocations, value, nameof(GeoLocations)); }
+
+  private GeoLocations? _GeoLocations;
 }

@@ -12,19 +12,20 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// </remarks>
 [OpenXmlType(typeof(DXO10DCD.ApplicationNonVisualDrawingProperties))]
 [XmlRoot("ApplicationNonVisualDrawingProperties", Namespace = "DocumentModel.Drawings.ChartDrawings")]
-public class ApplicationNonVisualDrawingProperties : ModelElement<DXO10DCD.ApplicationNonVisualDrawingProperties>
+public partial class ApplicationNonVisualDrawingProperties : ModelElement<DXO10DCD.ApplicationNonVisualDrawingProperties>
 {
- /// <summary>
- /// Specifies the macro.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10DCD.ApplicationNonVisualDrawingProperties.Macro))]
- public string? Macro { get => _Macro; set => UpdateField(ref _Macro, value, nameof(Macro)); }
- private string? _Macro;
+  /// <summary>
+  /// Specifies the macro.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10DCD.ApplicationNonVisualDrawingProperties.Macro))]
+  public string? Macro { get => _Macro; set => UpdateField(ref _Macro, value, nameof(Macro)); }
 
- /// <summary>
- /// Specifies the published.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10DCD.ApplicationNonVisualDrawingProperties.Published))]
- public bool? Published { get => _Published; set => UpdateField(ref _Published, value, nameof(Published)); }
- private bool? _Published;
+  private string? _Macro;
+  /// <summary>
+  /// Specifies the published.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10DCD.ApplicationNonVisualDrawingProperties.Published))]
+  public bool? Published { get => _Published; set => UpdateField(ref _Published, value, nameof(Published)); }
+
+  private bool? _Published;
 }
