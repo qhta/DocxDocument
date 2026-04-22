@@ -164,9 +164,15 @@ public class _AbstractTestClass
     ns.Add("xsi", "http://www.w3.org/2001/XMLSchema-instance");
     ns.Add("d", "DocumentModel.Drawings");
     ns.Add("wd", "DocumentModel.Wordprocessing.Drawings");
+    ns.Add("dW", "DocumentModel.Drawings.Wordprocessing");
 
+    Type[] knownTypes = typeof(DMW.Document).Assembly.GetTypes().Where
+      (t => 
+        t.IsAssignableTo(typeof(DM.ModelElement)) && t.IsPublic && !t.IsAbstract && !t.IsGenericType 
+        && t.GetCustomAttribute<SpecificClassAttribute>() != null
+        ).ToArray();
 
-    var xmlSerializer = new XmlSerializer(rootType);
+    var xmlSerializer = new XmlSerializer(rootType, knownTypes);
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
     {

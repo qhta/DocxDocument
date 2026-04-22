@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [OpenXmlType(typeof(DXW.BookmarkStart))]
 [XmlRoot("BookmarkStart", Namespace = "DocumentModel.Wordprocessing")]
+[SpecificClass]
 public partial class BookmarkStart : MarkupStartRangeElement<DXW.BookmarkStart, DXW.BookmarkEnd>
 {
  /// <summary>

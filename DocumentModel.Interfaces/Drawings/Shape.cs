@@ -1,7 +1,7 @@
 using DocumentModel.Drawings.Charts;
 using DocumentModel.Drawings.SmartArt;
 using DocumentModel.HTML;
-using DocumentModel.Wordprocessing.Drawings;
+using DocumentModel.Drawings.Wordprocessing;
 using DocumentModel.Drawings.Diagrams;
 using DocumentModel.Wordprocessing;
 

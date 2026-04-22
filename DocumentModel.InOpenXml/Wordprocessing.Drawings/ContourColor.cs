@@ -10,9 +10,9 @@ public partial class ContourColor : ModelElement<DXO10W.ContourColor>
  /// <summary>
  /// The RGB color value used for the contour, allowing precise color specification.
  /// </summary>
- public RgbColorModelHex? RgbColor { get => _RgbColor; set => UpdateField(ref _RgbColor, value, nameof(RgbColor)); }
+ public RgbColorHex? RgbColor { get => _RgbColor; set => UpdateField(ref _RgbColor, value, nameof(RgbColor)); }
 
- private RgbColorModelHex? _RgbColor;
+ private RgbColorHex? _RgbColor;
  /// <summary>
  /// The scheme color used for the contour, enabling the use of document-defined color schemes.
  /// </summary>

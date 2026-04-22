@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [OpenXmlType(typeof(DXW.SdtBlock))]
 [XmlRoot("SdtBlock", Namespace = "DocumentModel.Wordprocessing")]
+[SpecificClass]
 public partial class SdtBlock : ModelElement<DXW.SdtBlock>, IStoryContent, ITableCellContent, ISdtBlockContent, ICustomXmlBlockContent, ICommentContent
 {
  /// <summary>

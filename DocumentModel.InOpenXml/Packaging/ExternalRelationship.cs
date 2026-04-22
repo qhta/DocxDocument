@@ -4,7 +4,7 @@ namespace DocumentModel.Packaging;
 /// </summary>
 [OpenXmlType(typeof(DXPP.ExternalRelationship))]
 [XmlRoot("ExternalRelationship", Namespace = "DocumentModel.Packaging")]
-public class ExternalRelationship : ReferenceRelationship<DXPP.ExternalRelationship>
+public abstract class ExternalRelationship : ReferenceRelationship<DXPP.ExternalRelationship>
 {
  /// <summary>
  ///   Initializes a new instance of the <see cref = "ExternalRelationship"/> class, representing a link to an external resource.

@@ -58,9 +58,9 @@ public partial class Shadow : ModelElement<DXO10W.Shadow>
  /// <summary>
  ///   Shadow color using RGB hexadecimal notation (e.g., "000000" for black). Mutually exclusive with SchemeColor.
  /// </summary>
- public RgbColorModelHex? RgbColor { get => _RgbColor; set => UpdateField(ref _RgbColor, value, nameof(RgbColor)); }
+ public RgbColorHex? RgbColor { get => _RgbColor; set => UpdateField(ref _RgbColor, value, nameof(RgbColor)); }
 
- private RgbColorModelHex? _RgbColor;
+ private RgbColorHex? _RgbColor;
  /// <summary>
  ///   Shadow color using a theme color scheme. Mutually exclusive with RgbColor.
  /// </summary>

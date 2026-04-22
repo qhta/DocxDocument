@@ -20,9 +20,9 @@ public partial class Glow : ModelElement<DXO10W.Glow>, IDrawingProperty
  /// The RGB color value for the glow effect, allowing precise color specification using hexadecimal notation.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.Glow.RgbColorModelHex))]
- public RgbColorModelHex? RgbColorModelHex { get => _RgbColorModelHex; set => UpdateField(ref _RgbColorModelHex, value, nameof(RgbColorModelHex)); }
+ public RgbColorHex? RgbColorModelHex { get => _RgbColorModelHex; set => UpdateField(ref _RgbColorModelHex, value, nameof(RgbColorModelHex)); }
 
- private RgbColorModelHex? _RgbColorModelHex;
+ private RgbColorHex? _RgbColorModelHex;
  /// <summary>
  /// The scheme color for the glow effect, enabling the use of document-defined color schemes for consistent styling.
  /// </summary>

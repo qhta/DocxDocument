@@ -16,7 +16,7 @@ public sealed partial class Theme: ModelElement<DXD.Theme>, IOfficeStyleSheetExt
   /// Initializing constructor.
   /// </summary>
   /// <param name = "document">The document to attach to.</param>
-  public Theme(Wordprocessing.Document document)
+  public Theme(DMW.Document document)
   {
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);

@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel.Wordprocessing.Drawings;
 
-public partial class RgbColorModelHex : IColor
+public partial class RgbColorHex : IColor
 {
   /// <summary>
   /// Value of the color as RGB uint.

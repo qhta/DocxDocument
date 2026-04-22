@@ -350,6 +350,12 @@
             The Open XML property name associated with the decorated member.
             </summary>
         </member>
+        <member name="T:DocumentModel.OpenXml.SpecificClassAttribute">
+            <summary>
+            Used to mark a class as a specific class for serialization purposes.
+            This attribute can be applied to classes to indicate that they are recognized during deserialization processes, allowing for proper handling of polymorphic types and ensuring that the correct class is instantiated when deserializing XML data.
+            </summary>
+        </member>
         <member name="T:DocumentModel.OpenXml.XmlIgnoreEmptyCollectionAttribute">
             <summary>
             Attach this attribute to a class or struct to indicate that during XML serialization,

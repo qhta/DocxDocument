@@ -49,7 +49,7 @@ public class ColorTypesTest : _AbstractTestClass
       typeof(DocumentModel.Drawings.SchemeColor),
       typeof(DocumentModel.Drawings.SystemColor),
       typeof(DocumentModel.Wordprocessing.Color),
-      typeof(DocumentModel.Wordprocessing.Drawings.RgbColorModelHex),
+      typeof(DocumentModel.Wordprocessing.Drawings.RgbColorHex),
       typeof(DocumentModel.Wordprocessing.Drawings.SchemeColor),
     }.OrderBy(t => t.FullName).ToList();
 
@@ -323,8 +323,8 @@ public class ColorTypesTest : _AbstractTestClass
         ThemeTint = 40,
         ThemeShade = 20,
       };
-    if (colorType == typeof(DocumentModel.Wordprocessing.Drawings.RgbColorModelHex))
-      return new DocumentModel.Wordprocessing.Drawings.RgbColorModelHex
+    if (colorType == typeof(DocumentModel.Wordprocessing.Drawings.RgbColorHex))
+      return new DocumentModel.Wordprocessing.Drawings.RgbColorHex
       {
         Val = (HexColor)0x336699,
         Tint = 10000,

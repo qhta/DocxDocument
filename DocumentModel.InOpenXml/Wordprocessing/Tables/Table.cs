@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [OpenXmlType(typeof(DXW.Table))]
 [XmlRoot("Table", Namespace = "DocumentModel.Wordprocessing")]
+[SpecificClass]
 public partial class Table : ModelElement<DXW.Table>, IStoryContent, ITableCellContent, ISdtBlockContent, ICommentContent, ICustomXmlBlockContent
 {
  /// <summary>

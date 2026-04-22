@@ -4,12 +4,27 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends multiple content and collection Interop, providing properties for unique identification, revision tracking, spell checking, and paragraph formatting. Enables advanced management, revision, and formatting of paragraph content within the document.
 /// </summary>
 [XmlRoot("Paragraph", Namespace = "DocumentModel.Wordprocessing")]
+[SpecificClass]
 public partial class Paragraph : ModelElement<DXW.Paragraph>, IStoryContent, ITableCellContent, ISdtBlockContent, ICustomXmlBlockContent, ICommentContent, IBidirectionalContent
 {
- /// <summary>
- /// Identifier for the paragraph, unique within the document part (except across Alternate Content blocks). Values must be greater than 0 and less than 0x80000000.
- /// </summary>
- public HexInt? ParagraphId { get; set; }
+  /// <summary>
+  /// Default constructor
+  /// </summary>
+  public Paragraph() : base()
+  {
+  }
+
+  /// <summary>
+  /// Constructor that initializes the paragraph with an existing DXW.Paragraph element.
+  /// </summary>
+  public Paragraph(DXW.Paragraph element) : base(element)
+  {
+  }
+
+  /// <summary>
+  /// Identifier for the paragraph, unique within the document part (except across Alternate Content blocks). Values must be greater than 0 and less than 0x80000000.
+  /// </summary>
+  public HexInt? ParagraphId { get; set; }
  /// <summary>
  /// Version identifier for the paragraph. Values must be greater than 0 and less than 0x80000000. Requires <see cref = "ParagraphId"/>. Used for text identity across documents with the same docId.
  /// </summary>

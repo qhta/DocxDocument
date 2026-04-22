@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing.Drawings;
+namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 /// Specifies the reference point for determining the horizontal size of a drawing element relative to another element in a Wordprocessing document.
 /// This enumeration provides options for margins, page boundaries, and other layout anchors used in relative sizing calculations.

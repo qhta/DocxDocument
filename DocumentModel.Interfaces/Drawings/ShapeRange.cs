@@ -1,6 +1,6 @@
 using DocumentModel.Drawings.Diagrams;
 using DocumentModel.Wordprocessing;
-using DocumentModel.Wordprocessing.Drawings;
+using DocumentModel.Drawings.Wordprocessing;
 
 using Range = System.Range;
 

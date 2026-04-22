@@ -10,13 +10,18 @@ public partial class CurrentTableProperties<T> : BaseTableProperties<T> where T 
  /// <summary>
  /// Preferred table width, used in table layout algorithms to determine the optimal width of the table.
  /// </summary>
+ [OpenXmlProperty(nameof(DXW.TableProperties.TableWidth))]
  public TableMeasure? TableWidth { get; set; }
+
  /// <summary>
  /// Table layout type, specifying the layout algorithm used for the table (e.g., fixed or auto).
  /// </summary>
+ [OpenXmlProperty(nameof(DXW.TableProperties.TableLayout))]
  public TableLayout? TableLayout { get; set; }
+
  /// <summary>
  /// Table style conditional formatting settings, controlling the appearance and behavior of table styles.
  /// </summary>
- public TableLookFlags? TableLook { get; set; }
+ [OpenXmlProperty(nameof(DXW.TableProperties.TableLook))]
+ public TableLook? TableLook { get; set; }
 }

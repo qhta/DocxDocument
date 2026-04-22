@@ -20,6 +20,7 @@ global using DocumentModel.Wordprocessing;
 
 global using Qhta.TypeUtils;
 global using Qhta.TextUtils;
+global using DM = DocumentModel;
 global using DMD = DocumentModel.Drawings;
 global using DMDO = DocumentModel.Drawings.Office;
 global using DMM = DocumentModel.Math;
