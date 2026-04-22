@@ -5,24 +5,23 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [OpenXmlType(typeof(DXW.LegacyNumbering))]
 [XmlRoot("LegacyNumbering", Namespace = "DocumentModel.Wordprocessing")]
-public class LegacyNumbering : ModelElement<DXW.LegacyNumbering>
+public partial class LegacyNumbering : ModelElement<DXW.LegacyNumbering>
 {
- /// <summary>
- ///   Use Legacy Numbering Properties
- /// </summary>
- public Boolean Use { get => _Use; set => UpdateField(ref _Use, value, nameof(Use)); }
+  /// <summary>
+  ///   Use Legacy Numbering Properties
+  /// </summary>
+  public Boolean Use { get => _Use; set => UpdateField(ref _Use, value, nameof(Use)); }
+  private Boolean _Use;
 
- private Boolean _Use;
- /// <summary>
- ///   Legacy Spacing
- /// </summary>
- public Twips? Space { get => _Space; set => UpdateField(ref _Space, value, nameof(Space)); }
+  /// <summary>
+  ///   Legacy Spacing
+  /// </summary>
+  public Twips? Space { get => _Space; set => UpdateField(ref _Space, value, nameof(Space)); }
+  private Twips? _Space;
 
- private Twips? _Space;
- /// <summary>
- ///   Legacy Indent
- /// </summary>
- public Twips? Indent { get => _Indent; set => UpdateField(ref _Indent, value, nameof(Indent)); }
-
- private Twips? _Indent;
+  /// <summary>
+  ///   Legacy Indent
+  /// </summary>
+  public Twips? Indent { get => _Indent; set => UpdateField(ref _Indent, value, nameof(Indent)); }
+  private Twips? _Indent;
 }

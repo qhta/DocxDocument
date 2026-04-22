@@ -12,13 +12,12 @@ public partial class SeriesText : ModelElement<DXDC.SeriesText>
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.SeriesText.StringReference))]
  public StringReference? StringReference { get => _StringReference; set => UpdateField(ref _StringReference, value, nameof(StringReference)); }
-
  private StringReference? _StringReference;
+
  /// <summary>
  ///   Numeric value displayed as text for the series.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.SeriesText.NumericValue))]
  public string? NumericValue { get => _NumericValue; set => UpdateField(ref _NumericValue, value, nameof(NumericValue)); }
-
  private string? _NumericValue;
 }

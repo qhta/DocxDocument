@@ -10,13 +10,12 @@ public partial class ArtisticPaintStrokes : ModelElement<DXO10D.ArtisticPaintStr
  /// Transparency level of the paint strokes effect.
  /// </summary>
  public Int32? Transparency { get => _Transparency; set => UpdateField(ref _Transparency, value, nameof(Transparency)); }
-
  private Int32? _Transparency;
+
  /// <summary>
  /// Intensity of the paint strokes effect, influencing the strength and visibility of the strokes.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ArtisticPaintStrokes.Intensity))]
  public Int32? Intensity { get => _Intensity; set => UpdateField(ref _Intensity, value, nameof(Intensity)); }
-
  private Int32? _Intensity;
 }

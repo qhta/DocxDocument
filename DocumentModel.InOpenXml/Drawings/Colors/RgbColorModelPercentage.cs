@@ -20,8 +20,8 @@ public partial class RgbColorModelPercentage : AbstractColor<DXD.RgbColorModelPe
   /// </remarks>
   [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.RedPortion))]
   public Percentage? Red { get => _red; set => UpdateField(ref _red, value, nameof(Red)); }
-
   private Percentage? _red;
+
   /// <summary>
   /// Green component as a percentage value.
   /// </summary>
@@ -32,8 +32,8 @@ public partial class RgbColorModelPercentage : AbstractColor<DXD.RgbColorModelPe
   /// </remarks>
   [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.GreenPortion))]
   public Percentage? Green { get => _green; set => UpdateField(ref _green, value, nameof(Green)); }
-
   private Percentage? _green;
+
   /// <summary>
   /// Blue component as a percentage value.
   /// </summary>
@@ -44,8 +44,8 @@ public partial class RgbColorModelPercentage : AbstractColor<DXD.RgbColorModelPe
   /// </remarks>
   [OpenXmlProperty(nameof(DXD.RgbColorModelPercentage.BluePortion))]
   public Percentage? Blue { get => _blue; set => UpdateField(ref _blue, value, nameof(Blue)); }
-
   private Percentage? _blue;
+
   /// <summary>
   /// Tint value to lighten the color.
   /// </summary>
@@ -66,8 +66,8 @@ public partial class RgbColorModelPercentage : AbstractColor<DXD.RgbColorModelPe
   /// </remarks>
   [OpenXmlElement(typeof(DXD.Tint))]
   public Percentage? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
-
   private Percentage? _Tint;
+
   /// <summary>
   /// Shade value to darken the color.
   /// </summary>
@@ -87,6 +87,5 @@ public partial class RgbColorModelPercentage : AbstractColor<DXD.RgbColorModelPe
   /// </remarks>
   [OpenXmlElement(typeof(DXD.Shade))]
   public Percentage? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
-
   private Percentage? _Shade;
 }

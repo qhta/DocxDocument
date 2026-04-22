@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Drawings;
+namespace DocumentModel.Drawings;
 public partial class HslColor : IColor
 {
  /// <summary>
@@ -67,7 +67,6 @@ public partial class HslColor : IColor
    LumValue = (Int32)System.Math.Round(Clamp01(l) * 100000.0);
   }
  }
-
  private static double Clamp01(double value) => value < 0.0 ? 0.0 : value > 1.0 ? 1.0 : value;
  private static double NormalizeHue(double hue)
  {

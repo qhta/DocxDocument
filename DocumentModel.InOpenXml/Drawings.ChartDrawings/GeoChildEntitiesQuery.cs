@@ -29,13 +29,12 @@ public class GeoChildEntitiesQuery : ModelElement<DXO16DCD.GeoChildEntitiesQuery
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.GeoChildEntitiesQuery.EntityId))]
  public string? EntityId { get => _EntityId; set => UpdateField(ref _EntityId, value, nameof(EntityId)); }
-
  private string? _EntityId;
+
  /// <summary>
  /// Specifies the geo child types.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.GeoChildEntitiesQuery.GeoChildTypes))]
  public ListOf<string>? GeoChildTypes { get => _GeoChildTypes; set => UpdateField(ref _GeoChildTypes, value, nameof(GeoChildTypes)); }
-
  private ListOf<string>? _GeoChildTypes;
 }

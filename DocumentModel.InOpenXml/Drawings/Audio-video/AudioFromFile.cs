@@ -12,13 +12,12 @@ public partial class AudioFromFile : ModelElement<DXD.AudioFromFile>, IExtendabl
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AudioFromFile.Link))]
  public string? Link { get => _Link; set => UpdateField(ref _Link, value, nameof(Link)); }
-
  private string? _Link;
+
  /// <summary>
  ///   List of extension elements for the audio file, supporting extensibility and application-specific audio data.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AudioFromFile.ExtensionList))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
-
  private ExtensionList? _ExtensionList;
 }

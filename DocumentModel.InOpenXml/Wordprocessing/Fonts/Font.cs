@@ -13,22 +13,22 @@ public partial class Font : ModelElement<DXW.Font>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Font.Name))]
  public string? FontName { get => _fontName; set => UpdateField(ref _fontName, value, nameof(FontName)); }
-
  private string? _fontName;
+
  /// <summary>
  /// Set of alternative names for the font, stored as a comma-delimited list, used to locate the font if the primary name is unavailable.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Font.AltName))]
  public StringList? Aliases { get => _Aliases; set => UpdateField(ref _Aliases, value, nameof(Aliases)); }
-
  private StringList? _Aliases;
+
  /// <summary>
  /// Panose-1 classification number, used for font substitution logic to locate appropriate substitute fonts.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Font.Panose1Number))]
  public HexBinary? Panose { get => _panose; set => UpdateField(ref _panose, value, nameof(Panose)); }
-
  private HexBinary? _panose;
+
  /// <summary>
  /// Character set supported by the font, used for font substitution logic.
  /// </summary>
@@ -36,68 +36,68 @@ public partial class Font : ModelElement<DXW.Font>
  [OpenXmlLoadData(nameof(LoadCharset))]
  [OpenXmlUpdateData(nameof(UpdateCharset))]
  public HexByte? Charset { get => _charset; set => UpdateField(ref _charset, value, nameof(Charset)); }
-
  private HexByte? _charset;
+
  /// <summary>
  /// TextFormat family classification (e.g., Roman, Swiss, Modern).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Font.FontFamily))]
  public FontFamily? FontFamily { get => _fontFamily; set => UpdateField(ref _fontFamily, value, nameof(FontFamily)); }
-
  private FontFamily? _fontFamily;
+
  /// <summary>
  /// Indicates whether the font is not a TrueType font.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Font.NotTrueType))]
  public bool? NotTrueType { get => _NotTrueType; set => UpdateField(ref _NotTrueType, value, nameof(NotTrueType)); }
-
  private bool? _NotTrueType;
+
  /// <summary>
  /// Pitch of the font (e.g., fixed, variable).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Font.Pitch))]
  public FontPitch? Pitch { get => _Pitch; set => UpdateField(ref _Pitch, value, nameof(Pitch)); }
-
  private FontPitch? _Pitch;
+
  /// <summary>
  /// TextFormat signature information, including Unicode subset and code page bitfields.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Font.FontSignature))]
  public HexBinary? FontSignature { get => _FontSignature; set => UpdateField(ref _FontSignature, value, nameof(FontSignature)); }
-
  private HexBinary? _FontSignature;
+
  /// <summary>
  /// Reference to an embedded font part containing the regular (non-bold, non-italic) form of the font,
  /// used for embedding font data within the document package.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Font.EmbedRegularFont))]
  public FontRelationshipType? EmbedRegularFont { get => _EmbedRegularFont; set => UpdateField(ref _EmbedRegularFont, value, nameof(EmbedRegularFont)); }
-
  private FontRelationshipType? _EmbedRegularFont;
+
  /// <summary>
  /// Reference to an embedded font part containing the bold form of the font,
  /// used for embedding font data within the document package.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Font.EmbedBoldFont))]
  public FontRelationshipType? EmbedBoldFont { get => _EmbedBoldFont; set => UpdateField(ref _EmbedBoldFont, value, nameof(EmbedBoldFont)); }
-
  private FontRelationshipType? _EmbedBoldFont;
+
  /// <summary>
  /// Reference to an embedded font part containing the italic form of the font,
  /// used for embedding font data within the document package.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Font.EmbedItalicFont))]
  public FontRelationshipType? EmbedItalicFont { get => _EmbedItalicFont; set => UpdateField(ref _EmbedItalicFont, value, nameof(EmbedItalicFont)); }
-
  private FontRelationshipType? _EmbedItalicFont;
+
  /// <summary>
  /// Reference to an embedded font part containing the bold italic form of the font,
  /// used for embedding font data within the document package.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Font.EmbedBoldItalicFont))]
  public FontRelationshipType? EmbedBoldItalicFont { get => _EmbedBoldItalicFont; set => UpdateField(ref _EmbedBoldItalicFont, value, nameof(EmbedBoldItalicFont)); }
-
  private FontRelationshipType? _EmbedBoldItalicFont;
+
  /// <summary>
  /// Loads the character set from the specified font source and updates the Charset property accordingly.
  /// </summary>
@@ -136,7 +136,6 @@ public partial class Font : ModelElement<DXW.Font>
    };
   }
  }
-
  private static readonly BiDiDictionary<DXW.StrictCharacterSet, string> strictCharacterSets = new BiDiDictionary<DXW.StrictCharacterSet, string>()
  {
   {

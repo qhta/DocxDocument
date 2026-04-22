@@ -23,6 +23,5 @@ public class NamedModelElement : ModelElement, INamedObject
    }
   }
  }
-
  private string? _name;
 }

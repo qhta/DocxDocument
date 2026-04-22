@@ -12,12 +12,11 @@ public partial class DocPartTypes : ModelElement<DXW.DocPartTypes>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.DocPartTypes.All))]
  public bool? All { get => _All; set => UpdateField(ref _All, value, nameof(All)); }
-
  private bool? _All;
+
  /// <summary>
  /// Specific document part type associated with the entry.
  /// </summary>
  public DocPartType? DocPartType { get => _DocPartType; set => UpdateField(ref _DocPartType, value, nameof(DocPartType)); }
-
  private DocPartType? _DocPartType;
 }

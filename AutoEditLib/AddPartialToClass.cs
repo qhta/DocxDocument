@@ -1,4 +1,6 @@
-﻿namespace AutoEdit;
+﻿using System.Diagnostics;
+
+namespace AutoEdit;
 
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -18,6 +20,7 @@ public static class AddPartialToClass
   /// <param name="filePath">The path to the file to update.</param>
   public static void Run(string filePath)
   {
+    Debug.WriteLine($"AddPartialToClass({filePath})");
     var code = File.ReadAllText(filePath);
     var tree = CSharpSyntaxTree.ParseText(code);
     var root = tree.GetRoot();

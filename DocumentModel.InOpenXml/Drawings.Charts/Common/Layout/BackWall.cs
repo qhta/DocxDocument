@@ -14,27 +14,26 @@ public partial class BackWall : ModelElement<DXDC.BackWall>
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.BackWall.Thickness))]
  public Byte? Thickness { get => _Thickness; set => UpdateField(ref _Thickness, value, nameof(Thickness)); }
-
  private Byte? _Thickness;
+
  /// <summary>
  /// The shape properties of the back wall.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.BackWall.ShapeProperties))]
  public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
-
  private ShapeProperties? _ShapeProperties;
+
  /// <summary>
  /// The picture options of the back wall.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.BackWall.PictureOptions))]
  public PictureOptions? PictureOptions { get => _PictureOptions; set => UpdateField(ref _PictureOptions, value, nameof(PictureOptions)); }
-
  private PictureOptions? _PictureOptions;
+
  /// <summary>
  /// The extension list of the back wall.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.BackWall.ExtensionList))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
-
  private ExtensionList? _ExtensionList;
 }

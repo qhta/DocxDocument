@@ -13,6 +13,5 @@ public partial class FilteredAreaSeries : ModelElement<DXO13DC.FilteredAreaSerie
  /// </summary>
  [OpenXmlType(typeof(DXO13DC.AreaChartSeries))]
  public AreaChartSeries? AreaChartSeries { get => _AreaChartSeries; set => UpdateField(ref _AreaChartSeries, value, nameof(AreaChartSeries)); }
-
  private AreaChartSeries? _AreaChartSeries;
 }

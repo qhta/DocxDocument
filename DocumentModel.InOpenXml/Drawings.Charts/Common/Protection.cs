@@ -11,27 +11,26 @@ public partial class Protection : ModelElement<DXDC.Protection>
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.Protection.ChartObject))]
  public bool? ChartObject { get => _ChartObject; set => UpdateField(ref _ChartObject, value, nameof(ChartObject)); }
-
  private bool? _ChartObject;
+
  /// <summary>
  ///   Data Cannot Be Changed.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.Protection.Data))]
  public bool? Data { get => _Data; set => UpdateField(ref _Data, value, nameof(Data)); }
-
  private bool? _Data;
+
  /// <summary>
  ///   Formatting.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.Protection.Formatting))]
  public bool? Formatting { get => _Formatting; set => UpdateField(ref _Formatting, value, nameof(Formatting)); }
-
  private bool? _Formatting;
+
  /// <summary>
  ///   Selection.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.Protection.Selection))]
  public bool? Selection { get => _Selection; set => UpdateField(ref _Selection, value, nameof(Selection)); }
-
  private bool? _Selection;
 }

@@ -11,6 +11,5 @@ public partial class ScatterChartExtension : Extension<DXDC.ScatterChartExtensio
  /// </summary>
  [OpenXmlElement(typeof(DXO13DC.FilteredScatterSeries))]
  public FilteredScatterSeries? FilteredScatterSeries { get => _FilteredScatterSeries; set => UpdateField(ref _FilteredScatterSeries, value, nameof(FilteredScatterSeries)); }
-
  private FilteredScatterSeries? _FilteredScatterSeries;
 }

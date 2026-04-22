@@ -21,6 +21,7 @@ public class AddPrivateFieldsWithUpdate
   /// <param name="filePath">The file to rewrite in place.</param>
   public static void Run(string filePath)
   {
+    Debug.WriteLine($"AddPrivateFieldsWithUpdate({filePath})");
     var code = File.ReadAllText(filePath);
     var tree = CSharpSyntaxTree.ParseText(code);
     var root = tree.GetRoot();
@@ -53,6 +54,7 @@ public class AddPrivateFieldsWithUpdate
   /// <param name="filePath">The file to rewrite in place.</param>
   public static void RunFixBackingFieldSpacing(string filePath)
   {
+    Debug.WriteLine($"FixBackingFieldSpacing({filePath})");
     var text = File.ReadAllText(filePath);
     var updatedText = FixBackingFieldSpacing(text);
     if (!string.Equals(text, updatedText, StringComparison.Ordinal))

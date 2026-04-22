@@ -11,6 +11,5 @@ public class NonVisualGraphicFrameDrawingProperties : ModelElement<DXDCD.NonVisu
  /// </summary>
  [OpenXmlProperty(nameof(DXDCD.NonVisualGraphicFrameDrawingProperties.GraphicFrameLocks))]
  public GraphicFrameLocks? GraphicFrameLocks { get => _GraphicFrameLocks; set => UpdateField(ref _GraphicFrameLocks, value, nameof(GraphicFrameLocks)); }
-
  private GraphicFrameLocks? _GraphicFrameLocks;
 }

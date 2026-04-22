@@ -15,34 +15,34 @@ public partial class RunProperties : ModelElement<DXM.RunProperties>
  /// </summary>
  [OpenXmlProperty(nameof(DXM.RunProperties.Literal))]
  public bool? Literal { get => _Literal; set => UpdateField(ref _Literal, value, nameof(Literal)); }
-
  private bool? _Literal;
+
  /// <summary>
  ///   Specifies that the run is normal text, i.e., math italics and math spacing are not applied. 
  ///   In a normal text run, no characters will trigger reformatting of a linear expression into a two-dimensional expression.
  /// </summary>
  public bool? NormalText { get => _NormalText; set => UpdateField(ref _NormalText, value, nameof(NormalText)); }
-
  private bool? _NormalText;
+
  /// <summary>
  ///  Describes the script applied to the characters in the run.
  /// </summary>
  public RunScript? Script { get => _Script; set => UpdateField(ref _Script, value, nameof(Script)); }
-
  private RunScript? _Script;
+
  /// <summary>
  /// Describes the font style applied to the characters in the run. 
  /// </summary>
  public RunStyle? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
-
  private RunStyle? _Style;
+
  /// <summary>
  /// Specifies whether there is a line break at the start of a run, or at the start of the Box object, 
  /// such that the line wraps at the start of the run or box object. 
  /// </summary>
  public Break? Break { get => _Break; set => UpdateField(ref _Break, value, nameof(Break)); }
-
  private Break? _Break;
+
  /// <summary>
  /// Specifies the alignment property on the box object. 
  /// It is utilized only when the box is designated as an operator emulator. 
@@ -50,6 +50,5 @@ public partial class RunProperties : ModelElement<DXM.RunProperties>
  /// that is, designated alignment points in other equations can be aligned with it.
  /// </summary>
  public bool? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
-
  private bool? _Alignment;
 }

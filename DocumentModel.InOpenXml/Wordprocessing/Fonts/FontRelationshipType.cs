@@ -13,8 +13,8 @@ public class FontRelationshipType : ModelElement<DXW.FontRelationshipType>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FontRelationshipType.Id))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
-
  private string? _Id;
+
  /// <summary>
  /// Specifies the key which was used to obfuscate this embedded font. This key can be used
  /// to retrieve the embedded font for the purposes of viewing this WordprocessingML
@@ -22,8 +22,8 @@ public class FontRelationshipType : ModelElement<DXW.FontRelationshipType>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FontRelationshipType.FontKey))]
  public Guid? FontKey { get => _FontKey; set => UpdateField(ref _FontKey, value, nameof(FontKey)); }
-
  private Guid? _FontKey;
+
  /// <summary>
  /// Specifies that the embedded font targeted by the id attribute has been subsetted.
  /// Subsetting is a mechanism by which only the glyphs used in the contents of this
@@ -33,7 +33,6 @@ public class FontRelationshipType : ModelElement<DXW.FontRelationshipType>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.FontRelationshipType.Subsetted))]
  public bool? Subsetted { get => _Subsetted; set => UpdateField(ref _Subsetted, value, nameof(Subsetted)); }
-
  private bool? _Subsetted;
 ///// <summary>
 ///// Attaches the specified WordprocessingDocument and loads its data into the current instance.

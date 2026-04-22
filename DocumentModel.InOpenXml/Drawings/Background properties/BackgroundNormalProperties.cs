@@ -11,6 +11,5 @@ public partial class BackgroundNormalProperties : ModelElement<DXO21DL.Backgroun
  /// </summary>
  [OpenXmlProperty(nameof(DXO21DL.BackgroundNormalProperties.OfficeArtExtensionList))]
  public OfficeArtExtensionList? OfficeArtExtensionList { get => _OfficeArtExtensionList; set => UpdateField(ref _OfficeArtExtensionList, value, nameof(OfficeArtExtensionList)); }
-
  private OfficeArtExtensionList? _OfficeArtExtensionList;
 }

@@ -31,55 +31,54 @@ public class GeoData : ModelElement<DXO16DCD.GeoData>
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.GeoData.EntityName))]
  public string? EntityName { get => _EntityName; set => UpdateField(ref _EntityName, value, nameof(EntityName)); }
-
  private string? _EntityName;
+
  /// <summary>
  /// Specifies the entity id.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.GeoData.EntityId))]
  public string? EntityId { get => _EntityId; set => UpdateField(ref _EntityId, value, nameof(EntityId)); }
-
  private string? _EntityId;
+
  /// <summary>
  /// Specifies the east.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.GeoData.East))]
  public Double? East { get => _East; set => UpdateField(ref _East, value, nameof(East)); }
-
  private Double? _East;
+
  /// <summary>
  /// Specifies the west.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.GeoData.West))]
  public Double? West { get => _West; set => UpdateField(ref _West, value, nameof(West)); }
-
  private Double? _West;
+
  /// <summary>
  /// Specifies the north.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.GeoData.North))]
  public Double? North { get => _North; set => UpdateField(ref _North, value, nameof(North)); }
-
  private Double? _North;
+
  /// <summary>
  /// Specifies the south.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.GeoData.South))]
  public Double? South { get => _South; set => UpdateField(ref _South, value, nameof(South)); }
-
  private Double? _South;
+
  /// <summary>
  /// Specifies the geo polygons.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.GeoData.GeoPolygons))]
  public GeoPolygons? GeoPolygons { get => _GeoPolygons; set => UpdateField(ref _GeoPolygons, value, nameof(GeoPolygons)); }
-
  private GeoPolygons? _GeoPolygons;
+
  /// <summary>
  /// Specifies the copyrights.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.GeoData.Copyrights))]
  public Copyrights? Copyrights { get => _Copyrights; set => UpdateField(ref _Copyrights, value, nameof(Copyrights)); }
-
  private Copyrights? _Copyrights;
 }

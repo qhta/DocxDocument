@@ -39,8 +39,8 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordpro
     [DebuggerStepThrough]
     private set => _WordprocessingDocument = value;
   }
-
   private DXPP.WordprocessingDocument? _WordprocessingDocument;
+
   /// <summary>
   ///   Initializes a new instance of the <see cref = "ModelElement{Format}"/> class.
   /// </summary>

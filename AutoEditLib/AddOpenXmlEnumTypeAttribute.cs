@@ -29,6 +29,7 @@ public static class AddOpenXmlEnumTypeAttribute
   /// <param name="filePath">Absolute or relative path to the C# file to update.</param>
   public static void Run(string filePath)
   {
+    Debug.WriteLine($"AddOpenXmlEnumTypeAttribute({filePath})");
     var code = File.ReadAllText(filePath);
     var tree = CSharpSyntaxTree.ParseText(code);
     var root = tree.GetCompilationUnitRoot();

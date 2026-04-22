@@ -13,6 +13,5 @@ public class ParentLabelLayout : ModelElement<DXO16DCD.ParentLabelLayout>
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.ParentLabelLayout.ParentLabelLayoutVal))]
  public ParentLabelLayoutVal? ParentLabelLayoutVal { get => _ParentLabelLayoutVal; set => UpdateField(ref _ParentLabelLayoutVal, value, nameof(ParentLabelLayoutVal)); }
-
  private ParentLabelLayoutVal? _ParentLabelLayoutVal;
 }

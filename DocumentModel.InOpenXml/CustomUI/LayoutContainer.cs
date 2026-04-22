@@ -22,48 +22,47 @@ namespace DocumentModel.CustomUI;
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.LayoutContainer))]
 [XmlRoot("LayoutContainer", Namespace = "DocumentModel.CustomUI")]
-public class LayoutContainer : ModelElement<DXO10CUI.LayoutContainer>
+public partial class LayoutContainer : ModelElement<DXO10CUI.LayoutContainer>
 {
- /// <summary>
- /// Specifies the unique identifier of the control.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.LayoutContainer.Id))]
- public String? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+  /// <summary>
+  /// Specifies the unique identifier of the control.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.LayoutContainer.Id))]
+  public String? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+  private String? _Id;
 
- private String? _Id;
- /// <summary>
- /// Specifies the qualified identifier of the control.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.LayoutContainer.QualifiedId))]
- public String? QualifiedId { get => _QualifiedId; set => UpdateField(ref _QualifiedId, value, nameof(QualifiedId)); }
+  /// <summary>
+  /// Specifies the qualified identifier of the control.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.LayoutContainer.QualifiedId))]
+  public String? QualifiedId { get => _QualifiedId; set => UpdateField(ref _QualifiedId, value, nameof(QualifiedId)); }
+  private String? _QualifiedId;
 
- private String? _QualifiedId;
- /// <summary>
- /// Specifies an application-defined tag for the control.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.LayoutContainer.Tag))]
- public String? Tag { get => _Tag; set => UpdateField(ref _Tag, value, nameof(Tag)); }
+  /// <summary>
+  /// Specifies an application-defined tag for the control.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.LayoutContainer.Tag))]
+  public String? Tag { get => _Tag; set => UpdateField(ref _Tag, value, nameof(Tag)); }
+  private String? _Tag;
 
- private String? _Tag;
- /// <summary>
- /// Specifies the alignment setting for the control.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.LayoutContainer.Align))]
- public Expand? Align { get => _Align; set => UpdateField(ref _Align, value, nameof(Align)); }
+  /// <summary>
+  /// Specifies the alignment setting for the control.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.LayoutContainer.Align))]
+  public Expand? Align { get => _Align; set => UpdateField(ref _Align, value, nameof(Align)); }
+  private Expand? _Align;
 
- private Expand? _Align;
- /// <summary>
- /// Specifies the expansion position in the layout.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.LayoutContainer.Expand))]
- public Expand? Expand { get => _Expand; set => UpdateField(ref _Expand, value, nameof(Expand)); }
+  /// <summary>
+  /// Specifies the expansion position in the layout.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.LayoutContainer.Expand))]
+  public Expand? Expand { get => _Expand; set => UpdateField(ref _Expand, value, nameof(Expand)); }
+  private Expand? _Expand;
 
- private Expand? _Expand;
- /// <summary>
- /// Specifies how child controls are arranged.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.LayoutContainer.LayoutChildren))]
- public LayoutChildren? LayoutChildren { get => _LayoutChildren; set => UpdateField(ref _LayoutChildren, value, nameof(LayoutChildren)); }
-
- private LayoutChildren? _LayoutChildren;
+  /// <summary>
+  /// Specifies how child controls are arranged.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.LayoutContainer.LayoutChildren))]
+  public LayoutChildren? LayoutChildren { get => _LayoutChildren; set => UpdateField(ref _LayoutChildren, value, nameof(LayoutChildren)); }
+  private LayoutChildren? _LayoutChildren;
 }

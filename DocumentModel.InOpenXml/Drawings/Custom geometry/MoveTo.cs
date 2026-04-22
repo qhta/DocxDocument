@@ -11,6 +11,5 @@ public partial class MoveTo : ModelElement<DXD.MoveTo>
  /// </summary>
  [OpenXmlProperty(nameof(DXD.MoveTo.Point))]
  public AdjustPoint2DType? Point { get => _Point; set => UpdateField(ref _Point, value, nameof(Point)); }
-
  private AdjustPoint2DType? _Point;
 }

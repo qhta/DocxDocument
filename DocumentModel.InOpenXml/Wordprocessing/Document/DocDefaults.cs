@@ -30,16 +30,16 @@ public sealed partial class DocDefaults : ModelElement<DXW.DocDefaults>
  [OpenXmlUpdateData(nameof(UpdateDefaultRunPropertiesInOpenXml))]
  [OpenXmlLoadData(nameof(LoadDefaultRunProperties))]
  public BaseRunProperties? DefaultRunProperties { get => _defaultRunProperties; set => UpdateField(ref _defaultRunProperties, value, nameof(DefaultRunProperties)); }
-
  private BaseRunProperties? _defaultRunProperties;
+
  /// <summary>
  ///   Default paragraph properties, specifying the default paragraph-level formatting for paragraphs.
  /// </summary>
  [OpenXmlUpdateData(nameof(UpdateDefaultParagraphPropertiesInOpenXml))]
  [OpenXmlLoadData(nameof(LoadDefaultParagraphProperties))]
  public BaseParagraphProperties? DefaultParagraphProperties { get => _defaultParagraphProperties; set => UpdateField(ref _defaultParagraphProperties, value, nameof(DefaultParagraphProperties)); }
-
  private BaseParagraphProperties? _defaultParagraphProperties;
+
  /// <summary>
  /// Updates the default run properties in the specified Word document defaults to match the current default run
  /// properties.

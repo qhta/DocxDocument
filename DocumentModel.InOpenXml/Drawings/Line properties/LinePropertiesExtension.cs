@@ -10,13 +10,12 @@ public partial class LinePropertiesExtension : ModelElement<DXD.LinePropertiesEx
  ///   Sketch style properties for the line.
  /// </summary>
  public LineSketchStyleProperties? LineSketchStyleProperties { get => _LineSketchStyleProperties; set => UpdateField(ref _LineSketchStyleProperties, value, nameof(LineSketchStyleProperties)); }
-
  private LineSketchStyleProperties? _LineSketchStyleProperties;
+
  /// <summary>
  ///  URI associated with the line properties extension.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.LinePropertiesExtension.Uri))]
  public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
-
  private string? _Uri;
 }

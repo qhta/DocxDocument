@@ -11,13 +11,12 @@ public partial class SketchOptions : ModelElement<DXO10DC.SketchOptions>
  /// </summary>
  [OpenXmlProperty(nameof(DXO10DC.SketchOptions.InSketchMode))]
  public bool? InSketchMode { get => _InSketchMode; set => UpdateField(ref _InSketchMode, value, nameof(InSketchMode)); }
-
  private bool? _InSketchMode;
+
  /// <summary>
  /// Boolean value specifying if the sketch mode button should be visible in the user class.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10DC.SketchOptions.ShowSketchButton))]
  public bool? ShowSketchButton { get => _ShowSketchButton; set => UpdateField(ref _ShowSketchButton, value, nameof(ShowSketchButton)); }
-
  private bool? _ShowSketchButton;
 }

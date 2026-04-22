@@ -11,62 +11,61 @@ public partial class Shape : ModelElement<DXDD.Shape>
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.Shape.Rotation))]
  public Double? Rotation { get => _Rotation; set => UpdateField(ref _Rotation, value, nameof(Rotation)); }
-
  private Double? _Rotation;
+
  /// <summary>
  ///   Shape Type
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.Shape.Type))]
  public string? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
-
  private string? _Type;
+
  /// <summary>
  ///   Relationship to Image Part
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.Shape.Blip))]
  public string? Blip { get => _Blip; set => UpdateField(ref _Blip, value, nameof(Blip)); }
-
  private string? _Blip;
+
  /// <summary>
  ///   Z-Order Offset
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.Shape.ZOrderOffset))]
  public Int32? ZOrderOffset { get => _ZOrderOffset; set => UpdateField(ref _ZOrderOffset, value, nameof(ZOrderOffset)); }
-
  private Int32? _ZOrderOffset;
+
  /// <summary>
  ///   Hide Geometry
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.Shape.HideGeometry))]
  public bool? HideGeometry { get => _HideGeometry; set => UpdateField(ref _HideGeometry, value, nameof(HideGeometry)); }
-
  private bool? _HideGeometry;
+
  /// <summary>
  ///   Prevent Text Editing
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.Shape.LockedText))]
  public bool? LockedText { get => _LockedText; set => UpdateField(ref _LockedText, value, nameof(LockedText)); }
-
  private bool? _LockedText;
+
  /// <summary>
  ///   Image Placeholder
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.Shape.BlipPlaceholder))]
  public bool? BlipPlaceholder { get => _BlipPlaceholder; set => UpdateField(ref _BlipPlaceholder, value, nameof(BlipPlaceholder)); }
-
  private bool? _BlipPlaceholder;
+
  /// <summary>
  ///   Shape Adjust List.
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.Shape.AdjustList))]
  public AdjustList? AdjustList { get => _AdjustList; set => UpdateField(ref _AdjustList, value, nameof(AdjustList)); }
-
  private AdjustList? _AdjustList;
+
  /// <summary>
  ///   ExtensionList.
  /// </summary>
  [OpenXmlProperty(nameof(DXDD.Shape.ExtensionList))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
-
  private ExtensionList? _ExtensionList;
 }

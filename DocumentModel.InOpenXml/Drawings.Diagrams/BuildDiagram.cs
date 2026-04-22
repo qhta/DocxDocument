@@ -11,13 +11,12 @@ public partial class BuildDiagram : ModelElement<DXD.BuildDiagram> // , Extendab
  /// </summary>
  [OpenXmlProperty(nameof(DXD.BuildDiagram.Build))]
  public string? Build { get => _Build; set => UpdateField(ref _Build, value, nameof(Build)); }
-
  private string? _Build;
+
  /// <summary>
  /// Indicates whether the animation should be reversed.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.BuildDiagram.ReverseAnimation))]
  public bool? ReverseAnimation { get => _ReverseAnimation; set => UpdateField(ref _ReverseAnimation, value, nameof(ReverseAnimation)); }
-
  private bool? _ReverseAnimation;
 }

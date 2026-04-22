@@ -13,24 +13,24 @@ public partial class Shading : ModelElement<DXW.Shading>
  [OpenXmlProperty(nameof(DXW.Shading.Val))]
  [Required]
  public ShadingPattern? Pattern { get => _Pattern; set => UpdateField(ref _Pattern, value, nameof(Pattern)); }
-
  private ShadingPattern? _Pattern;
+
  /// <summary>
  /// The color of the pattern foreground, specifying the primary color used in the shading pattern.
  /// </summary>
  [OpenXmlLoadData(nameof(LoadForegroundColor))]
  [OpenXmlUpdateData(nameof(UpdateForegroundColor))]
  public DMW.Color? ForegroundColor { get => _ForegroundColor; set => UpdateField(ref _ForegroundColor, value, nameof(ForegroundColor)); }
-
  private DMW.Color? _ForegroundColor;
+
  /// <summary>
  /// The color of the pattern background, specifying the secondary color used in the shading pattern.
  /// </summary>
  [OpenXmlLoadData(nameof(LoadBackgroundColor))]
  [OpenXmlUpdateData(nameof(UpdateBackgroundColor))]
  public DMW.Color? BackgroundColor { get => _BackgroundColor; set => UpdateField(ref _BackgroundColor, value, nameof(BackgroundColor)); }
-
  private DMW.Color? _BackgroundColor;
+
  /// <summary>
  /// Loads the shading foreground color from the specified OpenXML shading element, applying any associated theme color, tint,
  /// or shade settings.

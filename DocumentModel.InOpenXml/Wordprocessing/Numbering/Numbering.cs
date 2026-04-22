@@ -55,8 +55,8 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
  /// </summary>
  [OpenXmlElement(typeof(DXW.NumberingIdMacAtCleanup))]
  public int? LastRevAbstractNumbering { get => _lastRevAbstractNumbering; set => UpdateField(ref _lastRevAbstractNumbering, value, nameof(LastRevAbstractNumbering)); }
-
  private int? _lastRevAbstractNumbering;
+
  /// <summary>
  /// Collection of abstract numbering definitions
  /// </summary>
@@ -74,8 +74,8 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
 
   set => UpdateField(ref _AbstractNumberings, value, nameof(AbstractNumberings));
  }
-
  private AbstractNumberings? _AbstractNumberings;
+
  /// <summary>
  /// Updates the abstract numberings in the specified OpenXml element with abstract numberings defined in the AbstractNumberings collection.  
  /// </summary>
@@ -115,8 +115,8 @@ public sealed partial class Numbering : ModelElement<DXW.Numbering>
 
   set => UpdateField(ref _NumberingInstances, value, nameof(NumberingInstances));
  }
-
  private NumberingInstances? _NumberingInstances;
+
  /// <summary>
  /// Updates the numbering instances in the specified OpenXml element with numbering instances defined in the NumberingInstances collection.  
  /// </summary>

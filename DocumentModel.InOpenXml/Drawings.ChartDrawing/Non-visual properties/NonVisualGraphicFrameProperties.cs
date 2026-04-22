@@ -11,13 +11,12 @@ public class NonVisualGraphicFrameProperties : ModelElement<DXDCD.NonVisualGraph
  /// </summary>
  [OpenXmlProperty(nameof(DXDCD.NonVisualGraphicFrameProperties.NonVisualDrawingProperties))]
  public NonVisualDrawingProperties? NonVisualDrawingProperties { get => _NonVisualDrawingProperties; set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties)); }
-
  private NonVisualDrawingProperties? _NonVisualDrawingProperties;
+
  /// <summary>
  /// Non-visual drawing properties specific to the graphic frame, including locking and editing restrictions.
  /// </summary>
  [OpenXmlProperty(nameof(DXDCD.NonVisualGraphicFrameProperties.NonVisualGraphicFrameDrawingProperties))]
  public NonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties { get => _NonVisualGraphicFrameDrawingProperties; set => UpdateField(ref _NonVisualGraphicFrameDrawingProperties, value, nameof(NonVisualGraphicFrameDrawingProperties)); }
-
  private NonVisualGraphicFrameDrawingProperties? _NonVisualGraphicFrameDrawingProperties;
 }

@@ -12,8 +12,8 @@ public partial class Underline : ModelElement<DXW.Underline>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Underline.Val))]
  public UnderlineType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
-
  private UnderlineType? _Type;
+
  /// <summary>
  /// Underline color, specified as a hex RGB value or named color.
  /// </summary>
@@ -22,8 +22,8 @@ public partial class Underline : ModelElement<DXW.Underline>
  [OpenXmlLoadData(nameof(LoadColor))]
  [OpenXmlUpdateData(nameof(UpdateColor))]
  public DMW.Color? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
-
  private DMW.Color? _Color;
+
  /// <summary>
  /// Loads the underline color from the specified OpenXML underline element, applying any associated theme color, tint,
  /// or shade settings.

@@ -11,6 +11,5 @@ public partial class AlphaBiLevel : ModelElement<DXD.AlphaBiLevel>
  /// </summary>
  [OpenXmlProperty(nameof(DXD.AlphaBiLevel.Threshold))]
  public Int32? Threshold { get => _Threshold; set => UpdateField(ref _Threshold, value, nameof(Threshold)); }
-
  private Int32? _Threshold;
 }

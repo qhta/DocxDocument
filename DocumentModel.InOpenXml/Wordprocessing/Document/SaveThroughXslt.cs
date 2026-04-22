@@ -12,6 +12,5 @@ public partial class SaveThroughXslt : ModelElement<DXW.SaveThroughXslt>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SaveThroughXslt.SolutionId))]
  public string? SolutionId { get => _SolutionId; set => UpdateField(ref _SolutionId, value, nameof(SolutionId)); }
-
  private string? _SolutionId;
 }

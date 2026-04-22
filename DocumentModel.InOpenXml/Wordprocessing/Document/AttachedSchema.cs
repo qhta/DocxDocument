@@ -14,8 +14,8 @@ public partial class AttachedSchema : ModelElement<DXW.AttachedSchema>
  [OpenXmlLoadData(nameof(LoadUriFromOpenXml))]
  [OpenXmlUpdateData(nameof(UpdateUriInOpenXml))]
  public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
-
  private string? _Uri;
+
  /// <summary>
  /// Returns a string representation of the current object.
  /// </summary>

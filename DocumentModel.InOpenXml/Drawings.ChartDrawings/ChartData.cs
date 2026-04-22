@@ -22,18 +22,17 @@ public class ChartData : ModelElement<DXO16DCD.ChartData>
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.ChartData.ExternalData))]
  public ExternalData? ExternalData { get => _ExternalData; set => UpdateField(ref _ExternalData, value, nameof(ExternalData)); }
-
  private ExternalData? _ExternalData;
+
  /// <summary>
  /// Specifies the data.
  /// </summary>
  public Data? Data { get => _Data; set => UpdateField(ref _Data, value, nameof(Data)); }
-
  private Data? _Data;
+
  /// <summary>
  /// Specifies the extension list.
  /// </summary>
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
-
  private ExtensionList? _ExtensionList;
 }

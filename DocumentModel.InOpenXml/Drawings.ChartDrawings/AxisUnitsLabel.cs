@@ -21,27 +21,26 @@ public class AxisUnitsLabel : ModelElement<DXO16DCD.AxisUnitsLabel>
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.AxisUnitsLabel.Text))]
  public Text? Text { get => _Text; set => UpdateField(ref _Text, value, nameof(Text)); }
-
  private Text? _Text;
+
  /// <summary>
  /// Specifies the shape properties.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.AxisUnitsLabel.ShapeProperties))]
  public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
-
  private ShapeProperties? _ShapeProperties;
+
  /// <summary>
  /// Specifies the tx pr text body.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.AxisUnitsLabel.TxPrTextBody))]
  public TxPrTextBody? TxPrTextBody { get => _TxPrTextBody; set => UpdateField(ref _TxPrTextBody, value, nameof(TxPrTextBody)); }
-
  private TxPrTextBody? _TxPrTextBody;
+
  /// <summary>
  /// Specifies the extension list.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.AxisUnitsLabel.ExtensionList))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
-
  private ExtensionList? _ExtensionList;
 }

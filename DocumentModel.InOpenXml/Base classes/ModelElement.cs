@@ -208,6 +208,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   public string? PropertyName => _PropertyName;
 
   private string? _PropertyName;
+
   /// <summary>
   /// Sets the property name.
   /// </summary>
@@ -313,8 +314,8 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
 
     return _knownProperties;
   }
-
   private KnownProperties? _knownProperties;
+
   /// <summary>
   /// Populates the current model element's properties with values from the specified Open XML element.
   /// </summary>
@@ -396,8 +397,8 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   {
     _Parent = parent;
   }
-
   private object? _Parent;
+
   /// <summary>
   /// Optional collection that contains this item.
   /// </summary>
@@ -417,8 +418,8 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   {
     _Collection = collection;
   }
-
   private object? _Collection;
+
   /// <summary>
   /// Gets a value indicating whether the object has been modified since it was last saved or loaded.
   /// </summary>
@@ -428,6 +429,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   public bool IsModified => _IsModified;
 
   private bool _IsModified;
+
   /// <summary>
   /// Sets the IsModified flag to be used by the instance.
   /// </summary>

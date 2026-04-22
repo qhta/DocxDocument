@@ -17,28 +17,27 @@ public partial class BaseTableCellProperties<T> : ModelElement<T> where T : DX.O
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TableCellProperties.Shading))]
  public Shading? Shading { get => _Shading; set => UpdateField(ref _Shading, value, nameof(Shading)); }
-
  private Shading? _Shading;
+
  /// <summary>
  /// Indicates whether text wrapping is disabled for the cell.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TableCellProperties.NoWrap))]
  public bool? NoWrap { get => _NoWrap; set => UpdateField(ref _NoWrap, value, nameof(NoWrap)); }
-
  private bool? _NoWrap;
+
  /// <summary>
  /// Margins for the table cell, specifying padding on each side.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TableCellProperties.TableCellMargin))]
  public TableCellMargin? TableCellMargin { get => _TableCellMargin; set => UpdateField(ref _TableCellMargin, value, nameof(TableCellMargin)); }
-
  private TableCellMargin? _TableCellMargin;
+
  /// <summary>
  /// Vertical alignment of content within the table cell.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TableCellProperties.TableCellVerticalAlignment))]
  public TableVerticalAlignment? TableCellVerticalAlignment { get => _TableCellVerticalAlignment; set => UpdateField(ref _TableCellVerticalAlignment, value, nameof(TableCellVerticalAlignment)); }
-
  private TableVerticalAlignment? _TableCellVerticalAlignment;
 }
 

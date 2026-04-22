@@ -12,13 +12,12 @@ public partial class DataLabelsRange : ModelElement<DXO13DC.DataLabelsRange>
  /// </summary>
  [OpenXmlProperty(nameof(DXO13DC.DataLabelsRange.Formula))]
  public string? Formula { get => _Formula; set => UpdateField(ref _Formula, value, nameof(Formula)); }
-
  private string? _Formula;
+
  /// <summary>
  ///   Cache containing the values and metadata for the data labels range.
  /// </summary>
  [OpenXmlElement(typeof(DXO13DC.DataLabelsRangeChache))]
  public DataLabelsRangeCache? DataLabelsRangeCache { get => _DataLabelsRangeCache; set => UpdateField(ref _DataLabelsRangeCache, value, nameof(DataLabelsRangeCache)); }
-
  private DataLabelsRangeCache? _DataLabelsRangeCache;
 }

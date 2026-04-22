@@ -12,13 +12,12 @@ public partial class Category : ModelElement<DXW.Category>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Category.Name))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
-
  private string? _Name;
+
  /// <summary>
  /// Gallery associated with the entry, specifying the type of document part gallery.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Category.Gallery))]
  public DocPartGalleryType? Gallery { get => _Gallery; set => UpdateField(ref _Gallery, value, nameof(Gallery)); }
-
  private DocPartGalleryType? _Gallery;
 }

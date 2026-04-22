@@ -10,20 +10,20 @@ public partial class ParagraphSpacing : ModelElement //<DXW.SpacingBeforeOrAfter
  /// Spacing specified in twentieths of a point.
  /// </summary>
  public Twips? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
-
  private Twips? _Val;
+
  /// <summary>
  /// Spacing between lines, specified in line units.
  /// </summary>
  public Int32? Lines { get => _Lines; set => UpdateField(ref _Lines, value, nameof(Lines)); }
-
  private Int32? _Lines;
+
  /// <summary>
  /// Indicates whether spacing is determined automatically.
  /// </summary>
  public bool? AutoSpacing { get => _AutoSpacing; set => UpdateField(ref _AutoSpacing, value, nameof(AutoSpacing)); }
-
  private bool? _AutoSpacing;
+
  /// <summary>
  /// Converts spacing settings from the provided source values,
  /// allowing for the creation of a SpacingBeforeOrAfter instance based on existing document properties.

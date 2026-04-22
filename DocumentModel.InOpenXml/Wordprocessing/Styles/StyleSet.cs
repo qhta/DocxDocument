@@ -12,13 +12,12 @@ public partial class StyleSet : ModelElement<DXO10W.StyleSet>
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.StyleSet.Id))]
  public UInt32? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
-
  private UInt32? _Id;
+
  /// <summary>
  /// Value indicating the state or setting of the style set.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.StyleSet.Val))]
  public Boolean? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
-
  private Boolean? _Val;
 }

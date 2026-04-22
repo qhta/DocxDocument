@@ -11,6 +11,5 @@ public partial class RadarChartExtension : Extension<DXDC.RadarChartExtension>
  /// </summary>
  [OpenXmlElement(typeof(DXO13DC.FilteredRadarSeries))]
  public FilteredRadarSeries? FilteredRadarSeries { get => _FilteredRadarSeries; set => UpdateField(ref _FilteredRadarSeries, value, nameof(FilteredRadarSeries)); }
-
  private FilteredRadarSeries? _FilteredRadarSeries;
 }

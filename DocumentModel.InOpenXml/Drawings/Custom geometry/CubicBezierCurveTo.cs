@@ -12,6 +12,5 @@ public partial class CubicBezierCurveTo : ModelElement<DXD.CubicBezierCurveTo>
  ///   Typically includes two control points and an endpoint.
  /// </summary>
  public AdjustPoints? Points { get => _Points; set => UpdateField(ref _Points, value, nameof(Points)); }
-
  private AdjustPoints? _Points;
 }

@@ -11,6 +11,7 @@ namespace DocumentModel;
 public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : ModelElementCollection<ItemType>, IWordprocessingDocumentAware, IUpdatable where ItemType : ModelElement where OpenXmlCollectionType : DX.OpenXmlElement
 {
  private OpenXmlCollectionType? _openXmlCollection;
+
  /// <summary>
  ///   Initializes a new instance of the <see cref = "ModelElementCollection{ItemType, OpenXmlCollectionType}"/> class.
  ///   Subscribes to collection change events to synchronize with the underlying OpenXml collection.
@@ -56,8 +57,8 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
  [JsonIgnore]
  [NotMapped]
  public DXPP.WordprocessingDocument? WordprocessingDocument { get => _WordprocessingDocument ?? (Parent as IWordprocessingDocumentAware)?.WordprocessingDocument; protected set => _WordprocessingDocument = value; }
-
  private DXPP.WordprocessingDocument? _WordprocessingDocument;
+
  /// <summary>
  ///   Attaches this model element collection to the specified WordprocessingDocument and loads data from the document's package properties or OpenXml part.
  /// </summary>

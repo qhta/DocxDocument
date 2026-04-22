@@ -13,13 +13,12 @@ public class OpenXmlTickMarksElement : ModelElement<DXO16DCD.OpenXmlTickMarksEle
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.OpenXmlTickMarksElement.Type))]
  public TickMarksType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
-
  private TickMarksType? _Type;
+
  /// <summary>
  /// Specifies the extension list.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.OpenXmlTickMarksElement.ExtensionList))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
-
  private ExtensionList? _ExtensionList;
 }

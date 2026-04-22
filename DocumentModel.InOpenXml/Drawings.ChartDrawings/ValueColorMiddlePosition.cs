@@ -11,13 +11,12 @@ public class ValueColorMiddlePosition : ModelElement<DXO16DCD.ValueColorMiddlePo
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.ValueColorMiddlePosition.NumberColorPosition))]
  public Double? NumberColorPosition { get => _NumberColorPosition; set => UpdateField(ref _NumberColorPosition, value, nameof(NumberColorPosition)); }
-
  private Double? _NumberColorPosition;
+
  /// <summary>
  /// Specifies the percentage color position.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.ValueColorMiddlePosition.PercentageColorPosition))]
  public Double? PercentageColorPosition { get => _PercentageColorPosition; set => UpdateField(ref _PercentageColorPosition, value, nameof(PercentageColorPosition)); }
-
  private Double? _PercentageColorPosition;
 }

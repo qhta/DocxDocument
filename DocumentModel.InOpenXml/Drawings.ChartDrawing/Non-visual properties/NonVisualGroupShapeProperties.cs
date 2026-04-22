@@ -11,13 +11,12 @@ public class NonVisualGroupShapeProperties : ModelElement<DXDCD.NonVisualGroupSh
  /// </summary>
  [OpenXmlProperty(nameof(DXDCD.NonVisualGroupShapeProperties.NonVisualDrawingProperties))]
  public NonVisualDrawingProperties? NonVisualDrawingProperties { get => _NonVisualDrawingProperties; set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties)); }
-
  private NonVisualDrawingProperties? _NonVisualDrawingProperties;
+
  /// <summary>
  /// Non-visual drawing properties specific to the group shape, including locking options and extension data.
  /// </summary>
  [OpenXmlProperty(nameof(DXDCD.NonVisualGroupShapeProperties.NonVisualGroupShapeDrawingProperties))]
  public NonVisualGroupShapeDrawingProperties? NonVisualGroupShapeDrawingProperties { get => _NonVisualGroupShapeDrawingProperties; set => UpdateField(ref _NonVisualGroupShapeDrawingProperties, value, nameof(NonVisualGroupShapeDrawingProperties)); }
-
  private NonVisualGroupShapeDrawingProperties? _NonVisualGroupShapeDrawingProperties;
 }

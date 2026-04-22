@@ -36,9 +36,7 @@ public partial class SchemeColor : WordAbstractColor<DXO10W.SchemeColor>
   /// </remarks>
   [OpenXmlProperty(nameof(DXO10W.SchemeColor.Val))]
   public SchemeColors? Val { get => _val; set => UpdateField(ref _val, value, nameof(Val)); }
-
   private SchemeColors? _val;
-
 
   /// <summary>
   /// Tint value to lighten the color.

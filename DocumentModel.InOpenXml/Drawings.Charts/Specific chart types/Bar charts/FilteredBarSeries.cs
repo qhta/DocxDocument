@@ -11,6 +11,5 @@ public partial class FilteredBarSeries : ModelElement<DXO13DC.FilteredBarSeries>
  /// </summary>
  [OpenXmlProperty(nameof(DXO13DC.FilteredBarSeries.BarChartSeries))]
  public BarChartSeries? BarChartSeries { get => _BarChartSeries; set => UpdateField(ref _BarChartSeries, value, nameof(BarChartSeries)); }
-
  private BarChartSeries? _BarChartSeries;
 }

@@ -11,6 +11,5 @@ public partial class BarChartExtension : Extension<DXDC.BarChartExtension>
  /// </summary>
  [OpenXmlElement(typeof(DXO13DC.FilteredBarSeries))]
  public FilteredBarSeries? FilteredBarSeries { get => _FilteredBarSeries; set => UpdateField(ref _FilteredBarSeries, value, nameof(FilteredBarSeries)); }
-
  private FilteredBarSeries? _FilteredBarSeries;
 }

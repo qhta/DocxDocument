@@ -11,13 +11,12 @@ public abstract partial class TextualElement<T> : ModelElement<T>, IRunContent w
  /// </summary>
  [DefaultValue(false)]
  public bool IsDeleted { get => _IsDeleted; set => UpdateField(ref _IsDeleted, value, nameof(IsDeleted)); }
-
  private bool _IsDeleted;
+
  /// <summary>
  /// The text value represented by this element.
  /// </summary>
  [XmlText]
  public string? Text { get => _Text; set => UpdateField(ref _Text, value, nameof(Text)); }
-
  private string? _Text;
 }

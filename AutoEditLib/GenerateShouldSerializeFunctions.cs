@@ -22,6 +22,7 @@ public class GenerateShouldSerializeFunctions
   public static void Run(string filePath)
   {
     var filename = Path.GetFileNameWithoutExtension(filePath);
+    Debug.WriteLine($"GenerateShouldSerializeFunctions({filename})");
     var ShouldSerializeFile = filename + ".ShouldSerialize.cs";
     var code = File.ReadAllText(filePath);
     var tree = CSharpSyntaxTree.ParseText(code);

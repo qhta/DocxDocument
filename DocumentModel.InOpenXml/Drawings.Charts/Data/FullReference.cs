@@ -11,6 +11,5 @@ public partial class FullReference : ModelElement<DXO13DC.FullReference>
  /// </summary>
  [OpenXmlProperty(nameof(DXO13DC.FullReference.SequenceOfReferences))]
  public string? SequenceOfReferences { get => _SequenceOfReferences; set => UpdateField(ref _SequenceOfReferences, value, nameof(SequenceOfReferences)); }
-
  private string? _SequenceOfReferences;
 }

@@ -17,6 +17,24 @@
           <ButtonText>AutoEdit</ButtonText>
         </Strings>
       </Menu>
+      <Menu guid="guidAutoEditCmdSet" id="AutoEditSubMenuFolderNode" priority="0x0100" type="Menu">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditContextFolderNodeGroup" />
+        <Strings>
+          <ButtonText>AutoEdit</ButtonText>
+        </Strings>
+      </Menu>
+      <Menu guid="guidAutoEditCmdSet" id="AutoEditSubMenuCpsProjectNode" priority="0x0100" type="Menu">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditContextCpsProjectNodeGroup" />
+        <Strings>
+          <ButtonText>AutoEdit</ButtonText>
+        </Strings>
+      </Menu>
+      <Menu guid="guidAutoEditCmdSet" id="AutoEditSubMenuCpsFolderNode" priority="0x0100" type="Menu">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditContextCpsFolderNodeGroup" />
+        <Strings>
+          <ButtonText>AutoEdit</ButtonText>
+        </Strings>
+      </Menu>
       <Menu guid="guidAutoEditCmdSet" id="AutoEditSubMenuCodeWin" priority="0x0100" type="Menu">
         <Parent guid="guidAutoEditCmdSet" id="AutoEditContextCodeWinGroup" />
         <Strings>
@@ -32,6 +50,15 @@
       <Group guid="guidAutoEditCmdSet" id="AutoEditContextProjNodeGroup" priority="0x0100">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_PROJNODE" />
       </Group>
+      <Group guid="guidAutoEditCmdSet" id="AutoEditContextFolderNodeGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_FOLDERNODE" />
+      </Group>
+      <Group guid="guidAutoEditCmdSet" id="AutoEditContextCpsProjectNodeGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CV_PROJECT" />
+      </Group>
+      <Group guid="guidAutoEditCmdSet" id="AutoEditContextCpsFolderNodeGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CV_FOLDER" />
+      </Group>
       <Group guid="guidAutoEditCmdSet" id="AutoEditContextCodeWinGroup" priority="0x0100">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
       </Group>
@@ -40,6 +67,15 @@
       </Group>
       <Group guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupProjNode" priority="0x0100">
         <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuProjNode" />
+      </Group>
+      <Group guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupFolderNode" priority="0x0100">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuFolderNode" />
+      </Group>
+      <Group guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsProjectNode" priority="0x0100">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuCpsProjectNode" />
+      </Group>
+      <Group guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsFolderNode" priority="0x0100">
+        <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuCpsFolderNode" />
       </Group>
       <Group guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCodeWin" priority="0x0100">
         <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuCodeWin" />
@@ -114,13 +150,40 @@
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddXmlRootAttribute" priority="0x0100">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
     </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddXmlRootAttribute" priority="0x0100">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupFolderNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddXmlRootAttribute" priority="0x0100">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsProjectNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddXmlRootAttribute" priority="0x0100">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsFolderNode" />
+    </CommandPlacement>
 
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlTypeAttribute" priority="0x0110">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
     </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlTypeAttribute" priority="0x0110">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupFolderNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlTypeAttribute" priority="0x0110">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsProjectNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlTypeAttribute" priority="0x0110">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsFolderNode" />
+    </CommandPlacement>
 
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlPropertyAttribute" priority="0x0120">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlPropertyAttribute" priority="0x0120">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupFolderNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlPropertyAttribute" priority="0x0120">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsProjectNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlPropertyAttribute" priority="0x0120">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsFolderNode" />
     </CommandPlacement>
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlPropertyAttribute" priority="0x0120">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCodeWin" />
@@ -129,29 +192,92 @@
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlElementAttribute" priority="0x0130">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
     </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlElementAttribute" priority="0x0130">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupFolderNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlElementAttribute" priority="0x0130">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsProjectNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlElementAttribute" priority="0x0130">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsFolderNode" />
+    </CommandPlacement>
     
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlEnumTypeAttribute" priority="0x0140">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlEnumTypeAttribute" priority="0x0140">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupFolderNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlEnumTypeAttribute" priority="0x0140">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsProjectNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlEnumTypeAttribute" priority="0x0140">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsFolderNode" />
     </CommandPlacement>
     
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddPartialToClass" priority="0x0150">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
     </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddPartialToClass" priority="0x0150">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupFolderNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddPartialToClass" priority="0x0150">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsProjectNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddPartialToClass" priority="0x0150">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsFolderNode" />
+    </CommandPlacement>
     
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddPrivateFieldsWithUpdate" priority="0x0160">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddPrivateFieldsWithUpdate" priority="0x0160">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupFolderNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddPrivateFieldsWithUpdate" priority="0x0160">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsProjectNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddPrivateFieldsWithUpdate" priority="0x0160">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsFolderNode" />
     </CommandPlacement>
     
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidGenerateShouldSerializeFunctions" priority="0x0170">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
     </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidGenerateShouldSerializeFunctions" priority="0x0170">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupFolderNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidGenerateShouldSerializeFunctions" priority="0x0170">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsProjectNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidGenerateShouldSerializeFunctions" priority="0x0170">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsFolderNode" />
+    </CommandPlacement>
     
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidRemoveDuplicateDocComments" priority="0x0180">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
     </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidRemoveDuplicateDocComments" priority="0x0180">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupFolderNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidRemoveDuplicateDocComments" priority="0x0180">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsProjectNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidRemoveDuplicateDocComments" priority="0x0180">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsFolderNode" />
+    </CommandPlacement>
 
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidFixBackingFieldSpacing" priority="0x0190">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidFixBackingFieldSpacing" priority="0x0190">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupFolderNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidFixBackingFieldSpacing" priority="0x0190">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsProjectNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidFixBackingFieldSpacing" priority="0x0190">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsFolderNode" />
     </CommandPlacement>
 
 
@@ -163,12 +289,21 @@
     <GuidSymbol name="guidAutoEditCmdSet" value="{A7F1C3D5-6C25-4D78-B8EE-18A0A60F0123}">
       <IDSymbol name="AutoEditSubMenuItemNode" value="0x1000" />
       <IDSymbol name="AutoEditSubMenuProjNode" value="0x1001" />
+      <IDSymbol name="AutoEditSubMenuFolderNode" value="0x1009" />
+      <IDSymbol name="AutoEditSubMenuCpsProjectNode" value="0x100A" />
+      <IDSymbol name="AutoEditSubMenuCpsFolderNode" value="0x100B" />
       <IDSymbol name="AutoEditSubMenuCodeWin" value="0x1006" />
       <IDSymbol name="AutoEditContextItemNodeGroup" value="0x1004" />
       <IDSymbol name="AutoEditContextProjNodeGroup" value="0x1005" />
+      <IDSymbol name="AutoEditContextFolderNodeGroup" value="0x100C" />
+      <IDSymbol name="AutoEditContextCpsProjectNodeGroup" value="0x100D" />
+      <IDSymbol name="AutoEditContextCpsFolderNodeGroup" value="0x100E" />
       <IDSymbol name="AutoEditContextCodeWinGroup" value="0x1007" />
       <IDSymbol name="AutoEditSubMenuGroupItemNode" value="0x1002" />
       <IDSymbol name="AutoEditSubMenuGroupProjNode" value="0x1003" />
+      <IDSymbol name="AutoEditSubMenuGroupFolderNode" value="0x100F" />
+      <IDSymbol name="AutoEditSubMenuGroupCpsProjectNode" value="0x1010" />
+      <IDSymbol name="AutoEditSubMenuGroupCpsFolderNode" value="0x1011" />
       <IDSymbol name="AutoEditSubMenuGroupCodeWin" value="0x1008" />
       <IDSymbol name="cmdidAddOpenXmlElementAttribute" value="0x0100" />
       <IDSymbol name="cmdidAddOpenXmlEnumTypeAttribute" value="0x0101" />

@@ -22,34 +22,33 @@ public class Binning : ModelElement<DXO16DCD.Binning>
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.Binning.IntervalClosed))]
  public IntervalClosedSide? IntervalClosed { get => _IntervalClosed; set => UpdateField(ref _IntervalClosed, value, nameof(IntervalClosed)); }
-
  private IntervalClosedSide? _IntervalClosed;
+
  /// <summary>
  /// Specifies the underflow.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.Binning.Underflow))]
  public string? Underflow { get => _Underflow; set => UpdateField(ref _Underflow, value, nameof(Underflow)); }
-
  private string? _Underflow;
+
  /// <summary>
  /// Specifies the overflow.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.Binning.Overflow))]
  public string? Overflow { get => _Overflow; set => UpdateField(ref _Overflow, value, nameof(Overflow)); }
-
  private string? _Overflow;
+
  /// <summary>
  /// Specifies the xsddouble.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.Binning.Xsddouble))]
  public string? Xsddouble { get => _Xsddouble; set => UpdateField(ref _Xsddouble, value, nameof(Xsddouble)); }
-
  private string? _Xsddouble;
+
  /// <summary>
  /// Specifies the bin count xsdunsigned int.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.Binning.BinCountXsdunsignedInt))]
  public string? BinCountXsdunsignedInt { get => _BinCountXsdunsignedInt; set => UpdateField(ref _BinCountXsdunsignedInt, value, nameof(BinCountXsdunsignedInt)); }
-
  private string? _BinCountXsdunsignedInt;
 }

@@ -39,7 +39,6 @@ public sealed partial class TableMeasure : UniversalMeasure, IComparable<TableMe
  [JsonIgnore]
  [NotMapped]
  public TableMeasureType Type { get => _type; set => _type = value; }
-
  private TableMeasureType _type;
 #region Constructors
  /// <summary>

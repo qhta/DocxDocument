@@ -11,6 +11,5 @@ public partial class FunctionProperties : ModelElement<DXM.FunctionProperties>
  /// </summary>
  [OpenXmlProperty(nameof(DXM.FunctionProperties.ControlProperties))]
  public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
-
  private ControlProperties? _ControlProperties;
 }

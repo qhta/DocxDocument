@@ -11,6 +11,5 @@ public partial class DropLines : ModelElement<DXDC.DropLines>
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.DropLines.ChartShapeProperties))]
  public ChartShapeProperties? ChartShapeProperties { get => _ChartShapeProperties; set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties)); }
-
  private ChartShapeProperties? _ChartShapeProperties;
 }

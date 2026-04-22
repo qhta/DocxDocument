@@ -22,20 +22,19 @@ public class AxisUnits : ModelElement<DXO16DCD.AxisUnits>
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.AxisUnits.Unit))]
  public AxisUnit? Unit { get => _Unit; set => UpdateField(ref _Unit, value, nameof(Unit)); }
-
  private AxisUnit? _Unit;
+
  /// <summary>
  /// Specifies the axis units label.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.AxisUnits.AxisUnitsLabel))]
  public AxisUnitsLabel? AxisUnitsLabel { get => _AxisUnitsLabel; set => UpdateField(ref _AxisUnitsLabel, value, nameof(AxisUnitsLabel)); }
-
  private AxisUnitsLabel? _AxisUnitsLabel;
+
  /// <summary>
  /// Specifies the extension list.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.AxisUnits.ExtensionList))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
-
  private ExtensionList? _ExtensionList;
 }

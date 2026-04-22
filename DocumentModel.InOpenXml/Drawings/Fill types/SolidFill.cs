@@ -47,6 +47,7 @@ public partial class SolidFill : Fill<DXD.SolidFill>
   [OpenXmlProperty(nameof(DXD.SolidFill.PresetColor))]
   public PresetColor? PresetColor { get => _PresetColor; set => UpdateField(ref _PresetColor, value, nameof(PresetColor)); }
   private PresetColor? _PresetColor;
+
   
   /// <summary>
   /// Gets or sets the effective color value of the scheme color.

@@ -14,8 +14,8 @@ public partial class SystemColor : AbstractColor<DXD.SystemColor>, ISchemeBaseCo
   /// </summary>
   [OpenXmlProperty(nameof(DXD.SystemColor.Val))]
   public SystemColors? Val { get => _val; set => UpdateField(ref _val, value, nameof(Val)); }
-
   private SystemColors? _val;
+
   /// <summary>
   /// Gets or sets the last known RGB value for this system color, used as a fallback.
   /// </summary>
@@ -47,8 +47,8 @@ public partial class SystemColor : AbstractColor<DXD.SystemColor>, ISchemeBaseCo
   /// </remarks>
   [OpenXmlProperty(nameof(DXD.SystemColor.LastColor))]
   public HexColor? LastColor { get => _LastColor; set => UpdateField(ref _LastColor, value, nameof(LastColor)); }
-
   private HexColor? _LastColor;
+
   /// <summary>
   /// Tint value to lighten the color.
   /// </summary>
@@ -69,8 +69,8 @@ public partial class SystemColor : AbstractColor<DXD.SystemColor>, ISchemeBaseCo
   /// </remarks>
   [OpenXmlElement(typeof(DXD.Tint))]
   public Percentage? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
-
   private Percentage? _Tint;
+
   /// <summary>
   /// Shade value to darken the color.
   /// </summary>
@@ -90,6 +90,5 @@ public partial class SystemColor : AbstractColor<DXD.SystemColor>, ISchemeBaseCo
   /// </remarks>
   [OpenXmlElement(typeof(DXD.Shade))]
   public Percentage? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
-
   private Percentage? _Shade;
 }

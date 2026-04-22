@@ -24,24 +24,23 @@ public class Data : ModelElement<DXO16DCD.Data>
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.Data.Id))]
  public UInt32? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
-
  private UInt32? _Id;
+
  /// <summary>
  /// Specifies the numeric dimension.
  /// </summary>
  public NumericDimension? NumericDimension { get => _NumericDimension; set => UpdateField(ref _NumericDimension, value, nameof(NumericDimension)); }
-
  private NumericDimension? _NumericDimension;
+
  /// <summary>
  /// Specifies the string dimension.
  /// </summary>
  public StringDimension? StringDimension { get => _StringDimension; set => UpdateField(ref _StringDimension, value, nameof(StringDimension)); }
-
  private StringDimension? _StringDimension;
+
  /// <summary>
  /// Specifies the extension list.
  /// </summary>
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
-
  private ExtensionList? _ExtensionList;
 }

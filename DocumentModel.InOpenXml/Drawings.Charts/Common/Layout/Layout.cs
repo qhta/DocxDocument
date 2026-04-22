@@ -13,13 +13,12 @@ public partial class Layout : ModelElement<DXDC.Layout>
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.Layout.ManualLayout))]
  public ManualLayout? ManualLayout { get => _ManualLayout; set => UpdateField(ref _ManualLayout, value, nameof(ManualLayout)); }
-
  private ManualLayout? _ManualLayout;
+
  /// <summary>
  ///   Chart Extensibility.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.Layout.ExtensionList))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
-
  private ExtensionList? _ExtensionList;
 }

@@ -15,73 +15,73 @@ public partial class StyleDef : ModelElement<DXW.Style>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Style.Type))]
  public StyleType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
-
  private StyleType? _Type;
+
  /// <summary>
  /// Style identifier, used to uniquely identify the style in the document.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Style.StyleId))]
  public string? StyleId { get => _StyleId; set => UpdateField(ref _StyleId, value, nameof(StyleId)); }
-
  private string? _StyleId;
+
  /// <summary>
  /// Style name as displayed in the UI.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Style.StyleName))]
  public string? StyleName { get => _StyleName; set => UpdateField(ref _StyleName, value, nameof(StyleName)); }
-
  private string? _StyleName;
+
  /// <summary>
  /// Indicates whether the style is the default for its type.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Style.Default))]
  public bool? IsDefault { get => _IsDefault; set => UpdateField(ref _IsDefault, value, nameof(IsDefault)); }
-
  private bool? _IsDefault;
+
  /// <summary>
  /// Indicates whether the style is user-defined.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Style.CustomStyle))]
  public bool? IsCustom { get => _IsCustom; set => UpdateField(ref _IsCustom, value, nameof(IsCustom)); }
-
  private bool? _IsCustom;
+
  /// <summary>
  /// Parent style identifier, specifying the style on which this style is based.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Style.BasedOn))]
  public string? BasedOn { get => _BasedOn; set => UpdateField(ref _BasedOn, value, nameof(BasedOn)); }
-
  private string? _BasedOn;
+
  /// <summary>
  /// Style for the next paragraph, used for automatic style transitions.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Style.NextParagraphStyle))]
  public string? NextParagraphStyle { get => _NextParagraphStyle; set => UpdateField(ref _NextParagraphStyle, value, nameof(NextParagraphStyle)); }
-
  private string? _NextParagraphStyle;
+
  /// <summary>
  /// Linked style reference, specifying a related style for linking purposes.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Style.LinkedStyle))]
  public string? LinkedStyle { get => _LinkedStyle; set => UpdateField(ref _LinkedStyle, value, nameof(LinkedStyle)); }
-
  private string? _LinkedStyle;
+
  /// <summary>
  /// Indicates whether user formatting is automatically merged into the style definition.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Style.AutoRedefine))]
  [DefaultValue(false)]
  public Boolean IsAutoRedefined { get => _IsAutoRedefined; set => UpdateField(ref _IsAutoRedefined, value, nameof(IsAutoRedefined)); }
-
  private Boolean _IsAutoRedefined;
+
  /// <summary>
  /// Indicates whether the style is hidden in the user interface, preventing it from being displayed in style galleries or lists.
  /// </summary>
  [OpenXmlLoadData(nameof(LoadStyleHide))]
  [OpenXmlUpdateData(nameof(UpdateStyleHide))]
  public StyleHide IsHidden { get => _IsHidden; set => UpdateField(ref _IsHidden, value, nameof(IsHidden)); }
-
  private StyleHide _IsHidden;
+
  /// <summary>
  /// Loads the style visibility flags from the specified OpenXmlElement and updates the hidden state accordingly.
  /// </summary>
@@ -128,24 +128,24 @@ public partial class StyleDef : ModelElement<DXW.Style>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Style.UIPriority))]
  public Int32? UIPriority { get => _UIPriority; set => UpdateField(ref _UIPriority, value, nameof(UIPriority)); }
-
  private Int32? _UIPriority;
+
  /// <summary>
  /// Indicates whether the style is a primary style.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Style.PrimaryStyle))]
  [DefaultValue(false)]
  public Boolean IsPrimary { get => _IsPrimary; set => UpdateField(ref _IsPrimary, value, nameof(IsPrimary)); }
-
  private Boolean _IsPrimary;
+
  /// <summary>
  /// Indicates whether the style cannot be applied.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Style.Locked))]
  [DefaultValue(false)]
  public Boolean IsLocked { get => _IsLocked; set => UpdateField(ref _IsLocked, value, nameof(IsLocked)); }
-
  private Boolean _IsLocked;
+
  /// <summary>
  /// Indicates whether the style is used for e-mail message text.
  /// </summary>
@@ -154,28 +154,28 @@ public partial class StyleDef : ModelElement<DXW.Style>
 
  [DefaultValue(false)]
  private Boolean _IsPersonal;
+
  /// <summary>
  /// Indicates whether the style is used for e-mail message composition.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Style.PersonalCompose))]
  [DefaultValue(false)]
  public Boolean IsPersonalCompose { get => _IsPersonalCompose; set => UpdateField(ref _IsPersonalCompose, value, nameof(IsPersonalCompose)); }
-
  private Boolean _IsPersonalCompose;
+
  /// <summary>
  /// Indicates whether the style is used for e-mail message replies.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Style.PersonalReply))]
  [DefaultValue(false)]
  public Boolean IsPersonalReply { get => _IsPersonalReply; set => UpdateField(ref _IsPersonalReply, value, nameof(IsPersonalReply)); }
-
  private Boolean _IsPersonalReply;
+
  /// <summary>
  /// Revision identifier for the style definition, used for change tracking.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Style.Rsid))]
  public HexInt? Rsid { get => _Rsid; set => UpdateField(ref _Rsid, value, nameof(Rsid)); }
-
  private HexInt? _Rsid;
 ///// <summary>
 ///// Style paragraph properties, specifying formatting for paragraphs in the style.

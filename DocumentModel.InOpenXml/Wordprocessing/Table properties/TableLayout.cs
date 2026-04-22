@@ -12,6 +12,5 @@ public partial class TableLayout : ModelElement<DXW.TableLayout>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TableLayout.Type))]
  public TableLayoutType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
-
  private TableLayoutType? _Type;
 }

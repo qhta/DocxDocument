@@ -31,13 +31,12 @@ public class GeoDataPointToEntityQueryResult : ModelElement<DXO16DCD.GeoDataPoin
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointToEntityQueryResult.GeoDataPointQuery))]
  public GeoDataPointQuery? GeoDataPointQuery { get => _GeoDataPointQuery; set => UpdateField(ref _GeoDataPointQuery, value, nameof(GeoDataPointQuery)); }
-
  private GeoDataPointQuery? _GeoDataPointQuery;
+
  /// <summary>
  /// Specifies the geo data point to entity query.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointToEntityQueryResult.GeoDataPointToEntityQuery))]
  public GeoDataPointToEntityQuery? GeoDataPointToEntityQuery { get => _GeoDataPointToEntityQuery; set => UpdateField(ref _GeoDataPointToEntityQuery, value, nameof(GeoDataPointToEntityQuery)); }
-
  private GeoDataPointToEntityQuery? _GeoDataPointToEntityQuery;
 }

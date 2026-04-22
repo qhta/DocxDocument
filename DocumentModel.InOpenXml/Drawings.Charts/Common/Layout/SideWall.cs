@@ -14,27 +14,26 @@ public partial class SideWall : ModelElement<DXDC.SideWall>
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.SideWall.Thickness))]
  public Byte? Thickness { get => _Thickness; set => UpdateField(ref _Thickness, value, nameof(Thickness)); }
-
  private Byte? _Thickness;
+
  /// <summary>
  /// The shape properties of the side wall.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.SideWall.ShapeProperties))]
  public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
-
  private ShapeProperties? _ShapeProperties;
+
  /// <summary>
  /// The picture options of the side wall.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.SideWall.PictureOptions))]
  public PictureOptions? PictureOptions { get => _PictureOptions; set => UpdateField(ref _PictureOptions, value, nameof(PictureOptions)); }
-
  private PictureOptions? _PictureOptions;
+
  /// <summary>
  /// The extension list of the side wall.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.SideWall.ExtensionList))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
-
  private ExtensionList? _ExtensionList;
 }

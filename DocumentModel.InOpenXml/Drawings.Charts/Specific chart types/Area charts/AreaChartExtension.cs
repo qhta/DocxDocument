@@ -11,6 +11,5 @@ public partial class AreaChartExtension : Extension<DXDC.AreaChartExtension>
  /// </summary>
  [OpenXmlElement(typeof(DXO13DC.FilteredAreaSeries))]
  public FilteredAreaSeries? FilteredAreaSeries { get => _FilteredAreaSeries; set => UpdateField(ref _FilteredAreaSeries, value, nameof(FilteredAreaSeries)); }
-
  private FilteredAreaSeries? _FilteredAreaSeries;
 }

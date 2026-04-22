@@ -11,6 +11,5 @@ public partial class VTVStreamData : ModelElement
  ///   VSTREAM Version Attribute
  /// </summary>
  public string? Version { get => _Version; set => UpdateField(ref _Version, value, nameof(Version)); }
-
  private string? _Version;
 }

@@ -35,22 +35,22 @@ public partial class Languages : ModelElement<DXW.Languages>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Languages.Val))]
  public string? Val { get => _val; set => UpdateField(ref _val, value, nameof(Val)); }
-
  private string? _val;
+
  /// <summary>
  /// Language code for complex (bidirectional) scripts, such as Arabic, Hebrew, or Thai.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Languages.Bidi))]
  public string? Bidi { get => _bidi; set => UpdateField(ref _bidi, value, nameof(Bidi)); }
-
  private string? _bidi;
+
  /// <summary>
  /// Language code for East Asian scripts, such as Chinese, Japanese, or Korean.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Languages.EastAsia))]
  public string? EastAsia { get => _EastAsia; set => UpdateField(ref _EastAsia, value, nameof(EastAsia)); }
-
  private string? _EastAsia;
+
  /// <summary>
  /// Returns a string that represents the current object, including its value and any associated language properties.
  /// </summary>

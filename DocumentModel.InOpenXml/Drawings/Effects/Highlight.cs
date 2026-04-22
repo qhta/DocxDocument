@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 [OpenXmlType(typeof(DXD.Highlight))]
 [XmlRoot("Highlight", Namespace = "DocumentModel.Drawings")]
-public class Highlight : ModelElement<DXD.Highlight>
+public partial class Highlight : ModelElement<DXD.Highlight>
 {
   /// <summary>
   ///   Highlight color.

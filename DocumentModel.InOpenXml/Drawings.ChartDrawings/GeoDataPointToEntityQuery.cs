@@ -34,13 +34,12 @@ public class GeoDataPointToEntityQuery : ModelElement<DXO16DCD.GeoDataPointToEnt
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointToEntityQuery.EntityType))]
  public EntityTypeEnum? EntityType { get => _EntityType; set => UpdateField(ref _EntityType, value, nameof(EntityType)); }
-
  private EntityTypeEnum? _EntityType;
+
  /// <summary>
  /// Specifies the entity id.
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.GeoDataPointToEntityQuery.EntityId))]
  public string? EntityId { get => _EntityId; set => UpdateField(ref _EntityId, value, nameof(EntityId)); }
-
  private string? _EntityId;
 }

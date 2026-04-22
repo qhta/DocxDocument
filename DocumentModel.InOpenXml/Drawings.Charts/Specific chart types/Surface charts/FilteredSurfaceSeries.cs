@@ -11,6 +11,5 @@ public partial class FilteredSurfaceSeries : ModelElement<DXDC.SurfaceChartSerie
  /// </summary>
  [OpenXmlType(typeof(DXO13DC.SurfaceChartSeries))]
  public SurfaceChartSeries? SurfaceChartSeries { get => _SurfaceChartSeries; set => UpdateField(ref _SurfaceChartSeries, value, nameof(SurfaceChartSeries)); }
-
  private SurfaceChartSeries? _SurfaceChartSeries;
 }

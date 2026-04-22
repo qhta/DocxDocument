@@ -13,20 +13,19 @@ namespace DocumentModel.CustomUI;
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.QuickAccessToolbar))]
 [XmlRoot("QuickAccessToolbar", Namespace = "DocumentModel.CustomUI")]
-public class QuickAccessToolbar : ModelElement<DXO10CUI.QuickAccessToolbar>
+public partial class QuickAccessToolbar : ModelElement<DXO10CUI.QuickAccessToolbar>
 {
- /// <summary>
- /// Specifies the shared controls qat items.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.QuickAccessToolbar.SharedControlsQatItems))]
- public SharedControlsQatItems? SharedControlsQatItems { get => _SharedControlsQatItems; set => UpdateField(ref _SharedControlsQatItems, value, nameof(SharedControlsQatItems)); }
+  /// <summary>
+  /// Specifies the shared controls qat items.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.QuickAccessToolbar.SharedControlsQatItems))]
+  public SharedControlsQatItems? SharedControlsQatItems { get => _SharedControlsQatItems; set => UpdateField(ref _SharedControlsQatItems, value, nameof(SharedControlsQatItems)); }
+  private SharedControlsQatItems? _SharedControlsQatItems;
 
- private SharedControlsQatItems? _SharedControlsQatItems;
- /// <summary>
- /// Specifies the document controls qat items.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.QuickAccessToolbar.DocumentControlsQatItems))]
- public DocumentControlsQatItems? DocumentControlsQatItems { get => _DocumentControlsQatItems; set => UpdateField(ref _DocumentControlsQatItems, value, nameof(DocumentControlsQatItems)); }
-
- private DocumentControlsQatItems? _DocumentControlsQatItems;
+  /// <summary>
+  /// Specifies the document controls qat items.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.QuickAccessToolbar.DocumentControlsQatItems))]
+  public DocumentControlsQatItems? DocumentControlsQatItems { get => _DocumentControlsQatItems; set => UpdateField(ref _DocumentControlsQatItems, value, nameof(DocumentControlsQatItems)); }
+  private DocumentControlsQatItems? _DocumentControlsQatItems;
 }

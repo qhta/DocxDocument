@@ -1,0 +1,8 @@
+namespace DocumentModel.Drawings;
+
+#pragma warning disable CS1591
+
+public partial class CustomColorList
+{
+  public bool ShouldSerializeExtensionList() => ExtensionList is not null;
+}

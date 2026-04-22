@@ -1,4 +1,4 @@
-﻿using System.IO.Packaging;
+using System.IO.Packaging;
 using DocumentFormat.OpenXml.Experimental;
 using Qhta.OpenXmlTools;
 
@@ -69,8 +69,8 @@ public partial class Document : IDocument
    return _BuiltInDocumentProperties;
   }
  }
-
  private DMP.IDocumentProperties? _BuiltInDocumentProperties;
+
  /// <summary>
  /// Returns a Characters collection that represents the characters in a document.
  /// </summary>

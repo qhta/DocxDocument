@@ -12,13 +12,12 @@ public class VbaSuppData : ModelElement<DXOW.VbaSuppData>
  /// </summary>
  [OpenXmlProperty(nameof(DXOW.VbaSuppData.DocEvents))]
  public DocEvents? DocEvents { get => _DocEvents; set => UpdateField(ref _DocEvents, value, nameof(DocEvents)); }
-
  private DocEvents? _DocEvents;
+
  /// <summary>
  /// Additional macro data structures, providing extended information and configuration for VBA macros.
  /// </summary>
  [OpenXmlProperty(nameof(DXOW.VbaSuppData.Mcds))]
  public Mcds? Mcds { get => _Mcds; set => UpdateField(ref _Mcds, value, nameof(Mcds)); }
-
  private Mcds? _Mcds;
 }

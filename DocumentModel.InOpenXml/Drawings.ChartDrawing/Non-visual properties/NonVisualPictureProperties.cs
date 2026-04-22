@@ -11,13 +11,12 @@ public class NonVisualPictureProperties : ModelElement<DXDCD.NonVisualPicturePro
  /// </summary>
  [OpenXmlProperty(nameof(DXDCD.NonVisualPictureProperties.NonVisualDrawingProperties))]
  public NonVisualDrawingProperties? NonVisualDrawingProperties { get => _NonVisualDrawingProperties; set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties)); }
-
  private NonVisualDrawingProperties? _NonVisualDrawingProperties;
+
  /// <summary>
  /// Non-visual drawing properties specific to the picture, including resizing preferences, locking options, and extension data.
  /// </summary>
  [OpenXmlProperty(nameof(DXDCD.NonVisualPictureProperties.NonVisualPictureDrawingProperties))]
  public NonVisualPictureDrawingProperties? NonVisualPictureDrawingProperties { get => _NonVisualPictureDrawingProperties; set => UpdateField(ref _NonVisualPictureDrawingProperties, value, nameof(NonVisualPictureDrawingProperties)); }
-
  private NonVisualPictureDrawingProperties? _NonVisualPictureDrawingProperties;
 }

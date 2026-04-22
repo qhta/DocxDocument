@@ -13,15 +13,15 @@ public partial class Zoom : ModelElement<DXW.Zoom>, IEquatable<Zoom>
  /// </summary>
  [OpenXmlProperty("Val")]
  public PresetZoom? Preset { get => _preset; set => UpdateField(ref _preset, value, nameof(Preset)); }
-
  private PresetZoom? _preset;
+
  /// <summary>
  /// Zoom percentage, specifying the magnification level as a percentage.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.Zoom.Percent))]
  public Percent? Percent { get => _Percent; set => UpdateField(ref _Percent, value, nameof(Percent)); }
-
  private Percent? _Percent;
+
  /// <summary>
  /// Converts an integer percentage value to a Zoom instance.
  /// </summary>

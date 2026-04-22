@@ -1,4 +1,6 @@
-﻿namespace AutoEdit;
+﻿using System.Diagnostics;
+
+namespace AutoEdit;
 
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -20,6 +22,7 @@ public static class RemoveDuplicateDocComments
   /// <param name="filePath">Absolute or relative path to the C# source file.</param>
   public static void Run(string filePath)
   {
+    Debug.WriteLine($"RemoveDuplicateDocComments({filePath})");
     var code = File.ReadAllText(filePath);
     var tree = CSharpSyntaxTree.ParseText(code);
     var root = tree.GetRoot();

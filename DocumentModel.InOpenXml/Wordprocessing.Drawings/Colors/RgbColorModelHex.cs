@@ -59,7 +59,6 @@ public partial class RgbColorHex : WordAbstractColor<DXO10W.RgbColorModelHex>, I
   /// </remarks>
   [OpenXmlProperty(nameof(DXO10W.RgbColorModelHex.Val))]
   public HexColor? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
-
   private HexColor? _Val;
 
   /// <summary>

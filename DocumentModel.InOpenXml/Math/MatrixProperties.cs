@@ -13,48 +13,47 @@ public partial class MatrixProperties : ModelElement<DXM.MatrixProperties>
  ///   In other words, whether the element is absent or present without the val attribute, the default of the val attribute is center.
  /// </summary>
  public VertAlignmentType? BaseJustification { get => _BaseJustification; set => UpdateField(ref _BaseJustification, value, nameof(BaseJustification)); }
-
  private VertAlignmentType? _BaseJustification;
+
  /// <summary>
  ///   Hide Placeholders (Matrix).
  /// </summary>
  public bool? HidePlaceholder { get => _HidePlaceholder; set => UpdateField(ref _HidePlaceholder, value, nameof(HidePlaceholder)); }
-
  private bool? _HidePlaceholder;
+
  /// <summary>
  ///   Row Spacing.
  /// </summary>
  public RowSpacing? RowSpacing { get => _RowSpacing; set => UpdateField(ref _RowSpacing, value, nameof(RowSpacing)); }
-
  private RowSpacing? _RowSpacing;
+
  /// <summary>
  ///   Matrix IColumn Gap Rule.
  /// </summary>
  public Int64? ColumnGapRule { get => _ColumnGapRule; set => UpdateField(ref _ColumnGapRule, value, nameof(ColumnGapRule)); }
-
  private Int64? _ColumnGapRule;
+
  /// <summary>
  ///   Matrix IColumn Spacing.
  /// </summary>
  public UInt32? ColumnSpacing { get => _ColumnSpacing; set => UpdateField(ref _ColumnSpacing, value, nameof(ColumnSpacing)); }
-
  private UInt32? _ColumnSpacing;
+
  /// <summary>
  ///   Matrix IColumn Gap.
  /// </summary>
  public UInt16? ColumnGap { get => _ColumnGap; set => UpdateField(ref _ColumnGap, value, nameof(ColumnGap)); }
-
  private UInt16? _ColumnGap;
+
  /// <summary>
  ///   Matrix IColumns.
  /// </summary>
  public MatrixColumns? MatrixColumns { get => _MatrixColumns; set => UpdateField(ref _MatrixColumns, value, nameof(MatrixColumns)); }
-
  private MatrixColumns? _MatrixColumns;
+
  /// <summary>
  ///   Specifies formatting of matrix object argument.
  /// </summary>
  public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
-
  private ControlProperties? _ControlProperties;
 }

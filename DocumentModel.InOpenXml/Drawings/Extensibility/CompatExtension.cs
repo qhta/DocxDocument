@@ -12,12 +12,11 @@ public partial class CompatExtension : ModelElement<DXO10D.CompatExtension>, IEx
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.CompatExtension.ShapeId))]
  public string? ShapeId { get => _ShapeId; set => UpdateField(ref _ShapeId, value, nameof(ShapeId)); }
-
  private string? _ShapeId;
+
  /// <summary>
  ///   URI string associated with the compatibility extension, identifying the extension type or schema for compatibility purposes.
  /// </summary>
  public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
-
  private string? _Uri;
 }

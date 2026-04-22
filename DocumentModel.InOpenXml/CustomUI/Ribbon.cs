@@ -14,34 +14,33 @@ namespace DocumentModel.CustomUI;
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.Ribbon))]
 [XmlRoot("Ribbon", Namespace = "DocumentModel.CustomUI")]
-public class Ribbon : ModelElement<DXO10CUI.Ribbon>
+public partial class Ribbon : ModelElement<DXO10CUI.Ribbon>
 {
- /// <summary>
- /// Specifies the start from scratch.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.Ribbon.StartFromScratch))]
- public Boolean? StartFromScratch { get => _StartFromScratch; set => UpdateField(ref _StartFromScratch, value, nameof(StartFromScratch)); }
+  /// <summary>
+  /// Specifies the start from scratch.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.Ribbon.StartFromScratch))]
+  public Boolean? StartFromScratch { get => _StartFromScratch; set => UpdateField(ref _StartFromScratch, value, nameof(StartFromScratch)); }
+  private Boolean? _StartFromScratch;
 
- private Boolean? _StartFromScratch;
- /// <summary>
- /// Specifies the quick access toolbar.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.Ribbon.QuickAccessToolbar))]
- public QuickAccessToolbar? QuickAccessToolbar { get => _QuickAccessToolbar; set => UpdateField(ref _QuickAccessToolbar, value, nameof(QuickAccessToolbar)); }
+  /// <summary>
+  /// Specifies the quick access toolbar.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.Ribbon.QuickAccessToolbar))]
+  public QuickAccessToolbar? QuickAccessToolbar { get => _QuickAccessToolbar; set => UpdateField(ref _QuickAccessToolbar, value, nameof(QuickAccessToolbar)); }
+  private QuickAccessToolbar? _QuickAccessToolbar;
 
- private QuickAccessToolbar? _QuickAccessToolbar;
- /// <summary>
- /// Specifies the tabs.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.Ribbon.Tabs))]
- public Tabs? Tabs { get => _Tabs; set => UpdateField(ref _Tabs, value, nameof(Tabs)); }
+  /// <summary>
+  /// Specifies the tabs.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.Ribbon.Tabs))]
+  public Tabs? Tabs { get => _Tabs; set => UpdateField(ref _Tabs, value, nameof(Tabs)); }
+  private Tabs? _Tabs;
 
- private Tabs? _Tabs;
- /// <summary>
- /// Specifies the contextual tabs.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.Ribbon.ContextualTabs))]
- public ContextualTabs? ContextualTabs { get => _ContextualTabs; set => UpdateField(ref _ContextualTabs, value, nameof(ContextualTabs)); }
-
- private ContextualTabs? _ContextualTabs;
+  /// <summary>
+  /// Specifies the contextual tabs.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.Ribbon.ContextualTabs))]
+  public ContextualTabs? ContextualTabs { get => _ContextualTabs; set => UpdateField(ref _ContextualTabs, value, nameof(ContextualTabs)); }
+  private ContextualTabs? _ContextualTabs;
 }

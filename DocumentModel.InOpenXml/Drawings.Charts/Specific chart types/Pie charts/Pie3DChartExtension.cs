@@ -11,6 +11,5 @@ public partial class Pie3DChartExtension : Extension<DXDC.Pie3DChartExtension>
  /// </summary>
  [OpenXmlElement(typeof(DXO13DC.FilteredPieSeries))]
  public FilteredPieSeries? FilteredPieSeries { get => _FilteredPieSeries; set => UpdateField(ref _FilteredPieSeries, value, nameof(FilteredPieSeries)); }
-
  private FilteredPieSeries? _FilteredPieSeries;
 }

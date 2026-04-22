@@ -11,13 +11,12 @@ public partial class NumberingLevelText : ModelElement<DXW.LevelText>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.LevelText.Val))]
  public string? Text { get => _Text; set => UpdateField(ref _Text, value, nameof(Text)); }
-
  private string? _Text;
+
  /// <summary>
  ///   Indicates whether the level text is a null character.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.LevelText.Null))]
  public Boolean IsNull { get => _IsNull; set => UpdateField(ref _IsNull, value, nameof(IsNull)); }
-
  private Boolean _IsNull;
 }

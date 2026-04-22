@@ -16,12 +16,11 @@ public partial class RadicalProperties : ModelElement<DXM.RadicalProperties>
  ///   the default of the val attribute is 1 meaning that this property is applied.
  /// </summary>
  public bool? HideDegree { get => _HideDegree; set => UpdateField(ref _HideDegree, value, nameof(HideDegree)); }
-
  private bool? _HideDegree;
+
  /// <summary>
  ///   Specifies formatting of radical object argument.
  /// </summary>
  public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
-
  private ControlProperties? _ControlProperties;
 }

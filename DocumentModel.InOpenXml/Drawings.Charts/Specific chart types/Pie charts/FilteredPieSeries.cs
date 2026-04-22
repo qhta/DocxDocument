@@ -12,6 +12,5 @@ public partial class FilteredPieSeries : ModelElement<DXO13DC.FilteredPieSeries>
  [OpenXmlProperty(nameof(DXO13DC.FilteredPieSeries.PieChartSeries))]
  [OpenXmlType(typeof(DXO13DC.PieChartSeries))]
  public PieChartSeries? PieChartSeries { get => _PieChartSeries; set => UpdateField(ref _PieChartSeries, value, nameof(PieChartSeries)); }
-
  private PieChartSeries? _PieChartSeries;
 }

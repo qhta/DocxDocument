@@ -12,20 +12,19 @@ public partial class LightRig : ModelElement<DXO10W.LightRig>
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.LightRig.LightRigType))]
  public DMD.LightRigType? LightRigType { get => _LightRigType; set => UpdateField(ref _LightRigType, value, nameof(LightRigType)); }
-
  private DMD.LightRigType? _LightRigType;
+
  /// <summary>
  /// The direction of the light rig, specifying the orientation of the lighting relative to the 3D object.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.LightRig.LightDirectionType))]
  public DMD.LightRigDirection? LightDirectionType { get => _LightDirectionType; set => UpdateField(ref _LightDirectionType, value, nameof(LightDirectionType)); }
-
  private DMD.LightRigDirection? _LightDirectionType;
+
  /// <summary>
  /// The sphere coordinates for the light rig, allowing precise positioning of the light source in 3D space.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10W.LightRig.SphereCoordinates))]
  public SphereCoordinates? SphereCoordinates { get => _SphereCoordinates; set => UpdateField(ref _SphereCoordinates, value, nameof(SphereCoordinates)); }
-
  private SphereCoordinates? _SphereCoordinates;
 }

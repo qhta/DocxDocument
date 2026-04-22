@@ -11,6 +11,5 @@ public class MajorTickMarksTickMarks : ModelElement<DXO16DCD.MajorTickMarksTickM
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.MajorTickMarksTickMarks.ExtensionList))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
-
  private ExtensionList? _ExtensionList;
 }

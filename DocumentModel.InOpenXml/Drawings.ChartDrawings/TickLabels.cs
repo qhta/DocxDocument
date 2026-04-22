@@ -11,6 +11,5 @@ public class TickLabels : ModelElement<DXO16DCD.TickLabels>
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.TickLabels.ExtensionList))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
-
  private ExtensionList? _ExtensionList;
 }

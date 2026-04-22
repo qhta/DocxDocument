@@ -19,7 +19,6 @@ public partial class RgbColorModelHex : AbstractColor<DXD.RgbColorModelHex>, ISc
   /// </remarks>
   [OpenXmlProperty(nameof(DXD.RgbColorModelHex.Val))]
   public HexColor? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
-
   private HexColor? _Val;
 
   /// <summary>

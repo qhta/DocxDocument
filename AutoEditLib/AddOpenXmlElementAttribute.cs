@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 using DocumentFormat.OpenXml.Wordprocessing;
 
 using Qhta.Collections;
@@ -28,6 +30,7 @@ public static class AddOpenXmlElementAttribute
   /// <param name="filePath">The path to the source file to inspect and update.</param>
   public static void Run(string filePath)
   {
+    Debug.WriteLine($"AddOpenXmlElementAttribute.Run({filePath})");
     var code = File.ReadAllText(filePath);
     var tree = CSharpSyntaxTree.ParseText(code);
     var root = tree.GetCompilationUnitRoot();

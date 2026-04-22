@@ -12,12 +12,11 @@ public partial class Interline : ModelElement
  /// Spacing between lines in the paragraph, specified in twentieths of a point or as a multiple of line height.
  /// </summary>
  public Twips? Line { get => _Line; set => UpdateField(ref _Line, value, nameof(Line)); }
-
  private Twips? _Line;
+
  /// <summary>
  /// Type of spacing rule applied between lines (e.g., auto, exact, at least, multiple).
  /// </summary>
  public LineSpacingRule? LineRule { get => _LineRule; set => UpdateField(ref _LineRule, value, nameof(LineRule)); }
-
  private LineSpacingRule? _LineRule;
 }

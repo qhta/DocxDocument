@@ -51,8 +51,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
  /// </summary>
  public DXPP.WordprocessingDocument? WordprocessingDocument {[DebuggerStepThrough]
   get => _WordprocessingDocument; set => UpdateField(ref _WordprocessingDocument, value, nameof(WordprocessingDocument)); }
-
  private DXPP.WordprocessingDocument? _WordprocessingDocument;
+
  /// <summary>
  ///   Attaches this instance to the specified word processing document and loads data from its package properties and settings.
  /// </summary>
@@ -140,8 +140,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
    }
   }
  }
-
  private string? _Filename;
+
  /// <summary>
  /// Checks if the document is currently opened in an editable mode,
  /// which determines whether changes can be made to the document's content and properties.
@@ -158,8 +158,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
    }
   }
  }
-
  private bool _IsEditable;
+
  /// <summary>
  /// Notifies listeners that the value of a property has changed.
  /// </summary>
@@ -231,8 +231,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
    }
   }
  }
-
  private CoreProperties? _CoreProperties;
+
  /// <summary>
  ///   Content-specific document properties, such as content type and structure.
  /// </summary>
@@ -248,8 +248,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
 
   set => UpdateField(ref _ContentProperties!, value, nameof(ContentProperties));
  }
-
  private ContentProperties? _ContentProperties;
+
  /// <summary>
  ///   Statistical document properties such as word count and page count.
  /// </summary>
@@ -265,8 +265,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
 
   set => UpdateField(ref _StatisticProperties!, value, nameof(StatisticProperties));
  }
-
  private StatisticProperties? _StatisticProperties;
+
  /// <summary>
  ///   Custom document properties, allowing storage of user-defined metadata.
  /// </summary>
@@ -281,8 +281,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
 
   set => UpdateField(ref _CustomProperties, value, nameof(CustomProperties));
  }
-
  private CustomProperties? _CustomProperties = null;
+
  /// <summary>
  ///   Document-level settings, including compatibility, protection, and view options.
  /// </summary>
@@ -297,7 +297,6 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
 
   set => UpdateField(ref _DocumentSettings, value, nameof(DocumentSettings));
  }
-
  private DocumentSettings? _DocumentSettings;
  ///// <summary>
  /////   Document-level settings, including compatibility, protection, and view options.
@@ -315,6 +314,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
  //  set => UpdateField(ref _CompatibilitySettings, value, nameof(CompatibilitySettings));
  //}
  //private CompatibilitySettings? _CompatibilitySettings;
+
  /// <summary>
  /// Collection of all known document properties.
  /// </summary>
@@ -345,8 +345,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
 
   set => UpdateField(ref _KnownProperties, value, nameof(KnownProperties));
  }
-
  private KnownProperties? _KnownProperties;
+
  /// <summary>
  ///   Collection of revision IDs for tracked changes in the document.
  /// </summary>
@@ -361,8 +361,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
 
   set => UpdateField(ref _Rsids, value, nameof(Rsids));
  }
-
  private Rsids? _Rsids;
+
  /// <summary>
  ///   Collection of DocumentVariables used in the document.
  /// </summary>
@@ -377,8 +377,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
 
   set => UpdateField(ref _DocumentVariables, value, nameof(DocumentVariables));
  }
-
  private DocumentVariables? _DocumentVariables;
+
  /// <summary>
  ///   TextFormat table for the document, providing access to font definitions used within the document.
  /// </summary>
@@ -393,8 +393,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
 
   set => UpdateField(ref _FontTable, value, nameof(FontTableTable));
  }
-
  private FontTable? _FontTable;
+
  /// <summary>
  ///   Document-level settings, including compatibility, protection, and view options.
  /// </summary>
@@ -403,8 +403,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   get => _Theme ??= new DMD.Theme(this);
   set => UpdateField(ref _Theme, value, nameof(Theme));
  }
-
  private DMD.Theme? _Theme;
+
  /// <summary>
  ///   Styles for the document, providing access to style definitions used within the document.
  /// </summary>
@@ -419,8 +419,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
 
   set => UpdateField(ref _Styles, value, nameof(Styles));
  }
-
  private Styles? _Styles;
+
  /// <summary>
  /// Numbering definitions for the document, providing access to numbering formats and instances used within the document.
  /// </summary>
@@ -435,6 +435,5 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
 
   set => UpdateField(ref _Numbering, value, nameof(Numbering));
  }
-
  private Numbering? _Numbering;
 }

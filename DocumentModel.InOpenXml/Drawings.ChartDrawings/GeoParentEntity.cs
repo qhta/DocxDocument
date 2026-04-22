@@ -33,6 +33,5 @@ public class GeoParentEntity : ModelElement<DXO16DCD.GeoParentEntity>
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.GeoParentEntity.EntityId))]
  public string? EntityId { get => _EntityId; set => UpdateField(ref _EntityId, value, nameof(EntityId)); }
-
  private string? _EntityId;
 }

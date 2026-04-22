@@ -11,20 +11,19 @@ public partial class CustomXmlAttribute : ModelElement<DXW.CustomXmlAttribute>
  /// UriString of the custom XML attribute, specifying the namespace or schema context.
  /// </summary>
  public string? UriString { get => _UriString; set => UpdateField(ref _UriString, value, nameof(UriString)); }
-
  private string? _UriString;
+
  /// <summary>
  /// Name of the custom XML attribute.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.CustomXmlAttribute.Name))]
  public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
-
  private string? _Name;
+
  /// <summary>
  /// Value of the custom XML attribute.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.CustomXmlAttribute.Val))]
  public string? Val { get => _Val; set => UpdateField(ref _Val, value, nameof(Val)); }
-
  private string? _Val;
 }

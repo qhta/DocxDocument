@@ -11,6 +11,5 @@ public partial class PictureBullet : ModelElement<DXD.PictureBullet>
  /// </summary>
  [OpenXmlProperty(nameof(DXD.PictureBullet.Blip))]
  public Blip? Blip { get => _Blip; set => UpdateField(ref _Blip, value, nameof(Blip)); }
-
  private Blip? _Blip;
 }

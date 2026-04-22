@@ -11,6 +11,5 @@ public partial class DownBars : ModelElement<DXDC.DownBars>
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.DownBars.ChartShapeProperties))]
  public ChartShapeProperties? ChartShapeProperties { get => _ChartShapeProperties; set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties)); }
-
  private ChartShapeProperties? _ChartShapeProperties;
 }

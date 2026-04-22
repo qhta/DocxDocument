@@ -81,8 +81,8 @@ public abstract partial class ExternalFile<T> : RelationshipType<DXW.Relationshi
  [OpenXmlLoadData(nameof(LoadUriFromOpenXml))]
  [OpenXmlUpdateData(nameof(UpdateUriInOpenXml))]
  public string? Uri { get => _Uri; set => UpdateField(ref _Uri, value, nameof(Uri)); }
-
  private string? _Uri;
+
  /// <summary>
  ///   Updates the external relationship in the document to point to the current URI and stores the new relationship ID.
  ///   Removes any old relationship with the same ID before adding the new one.

@@ -7,6 +7,7 @@ namespace DocumentModel;
 public abstract class ValueCollection<ItemType> : ModelElement, IValueCollection<ItemType>, IEquatable<ValueCollection<ItemType>>, ICollection, IList
 {
  private readonly ObservableCollection<ItemType> _items = new();
+
  /// <summary>
  /// Initializes a new, empty collection.
  /// </summary>

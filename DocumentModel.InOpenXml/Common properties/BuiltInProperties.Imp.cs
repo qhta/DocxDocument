@@ -1,4 +1,4 @@
-﻿namespace DocumentModel;
+namespace DocumentModel;
 public partial class BuiltInProperties : DMP.IDocumentProperties
 {
  IEnumerator<DMP.IDocumentProperty> IEnumerable<DMP.IDocumentProperty>.GetEnumerator() => this.GetEnumerator();
@@ -20,7 +20,6 @@ public partial class BuiltInProperties : DMP.IDocumentProperties
    this[index] = (BuiltInProperty)value;
   }
  }
-
  private static readonly BiDiDictionary<string, string> propertyNameMapping = new()
  {
   {

@@ -11,13 +11,12 @@ public class NonVisualConnectorShapeDrawingProperties : ModelElement<DXDCD.NonVi
  /// </summary>
  [OpenXmlProperty(nameof(DXDCD.NonVisualConnectorShapeDrawingProperties.NonVisualDrawingProperties))]
  public NonVisualDrawingProperties? NonVisualDrawingProperties { get => _NonVisualDrawingProperties; set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties)); }
-
  private NonVisualDrawingProperties? _NonVisualDrawingProperties;
+
  /// <summary>
  /// Non-visual properties specific to connection shapes, including locks and connection endpoints.
  /// </summary>
  [OpenXmlProperty(nameof(DXDCD.NonVisualConnectorShapeDrawingProperties.NonVisualConnectionShapeProperties))]
  public NonVisualConnectionShapeProperties? NonVisualConnectionShapeProperties { get => _NonVisualConnectionShapeProperties; set => UpdateField(ref _NonVisualConnectionShapeProperties, value, nameof(NonVisualConnectionShapeProperties)); }
-
  private NonVisualConnectionShapeProperties? _NonVisualConnectionShapeProperties;
 }

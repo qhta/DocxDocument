@@ -12,13 +12,12 @@ public partial class AltChunk : ModelElement<DXW.AltChunk>, IStoryContent, ITabl
  /// </summary>
  [OpenXmlProperty(nameof(DXW.AltChunk.Id))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
-
  private string? _Id;
+
  /// <summary>
  /// Properties for external content import, specifying additional import options and settings.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.AltChunk.AltChunkProperties))]
  public AltChunkProperties? AltChunkProperties { get => _AltChunkProperties; set => UpdateField(ref _AltChunkProperties, value, nameof(AltChunkProperties)); }
-
  private AltChunkProperties? _AltChunkProperties;
 }

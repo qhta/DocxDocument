@@ -10,6 +10,7 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
 {
   private ObservableCollection<ItemType> _items = new ObservableCollection<ItemType>();
   private readonly BiDiDictionary<object, ItemType> _index = new BiDiDictionary<object, ItemType>();
+
   /// <summary>
   /// Accessor for the internal ObservableCollection of items for all Collection
   /// </summary>

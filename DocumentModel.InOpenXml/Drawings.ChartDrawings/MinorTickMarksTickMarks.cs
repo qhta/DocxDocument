@@ -11,6 +11,5 @@ public class MinorTickMarksTickMarks : ModelElement<DXO16DCD.MinorTickMarksTickM
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.MinorTickMarksTickMarks.ExtensionList))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
-
  private ExtensionList? _ExtensionList;
 }

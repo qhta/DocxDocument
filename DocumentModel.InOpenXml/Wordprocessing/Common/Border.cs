@@ -14,52 +14,52 @@ public partial class Border : ModelElement<DXW.BorderType>
  [OpenXmlUpdateData(nameof(UpdateBorderType))]
  [Required]
  public BorderType? Type { get => _type; set => UpdateField(ref _type, value, nameof(Type)); }
-
  private BorderType? _type;
+
  /// <summary>
  /// Border art style, specifying the type of decorative border (e.g., Apples, Clocks, ZigZag).
  /// </summary>
  [OpenXmlLoadData(nameof(LoadBorderType))]
  [OpenXmlUpdateData(nameof(UpdateBorderType))]
  public string? ArtStyle { get => _ArtStyle; set => UpdateField(ref _ArtStyle, value, nameof(ArtStyle)); }
-
  private string? _ArtStyle;
+
  /// <summary>
  /// Border color, specified as an abstract color value.
  /// </summary>
  [OpenXmlLoadData(nameof(LoadColor))]
  [OpenXmlUpdateData(nameof(UpdateColor))]
  public DMW.Color? Color { get => _Color; set => UpdateField(ref _Color, value, nameof(Color)); }
-
  private DMW.Color? _Color;
+
  /// <summary>
  /// Border width, specified in twips.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.BorderType.Size))]
  public Twips? Width { get => _Width; set => UpdateField(ref _Width, value, nameof(Width)); }
-
  private Twips? _Width;
+
  /// <summary>
  /// Border spacing measurement, specifying the space between the border and the content.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.BorderType.Space))]
  public Twips? Space { get => _Space; set => UpdateField(ref _Space, value, nameof(Space)); }
-
  private Twips? _Space;
+
  /// <summary>
  /// Indicates whether the border has a shadow effect.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.BorderType.Shadow))]
  public bool? Shadow { get => _Shadow; set => UpdateField(ref _Shadow, value, nameof(Shadow)); }
-
  private bool? _Shadow;
+
  /// <summary>
  /// Indicates whether the border has a frame effect.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.BorderType.Frame))]
  public bool? Frame { get => _Frame; set => UpdateField(ref _Frame, value, nameof(Frame)); }
-
  private bool? _Frame;
+
  /// <summary>
  /// Loads the border style from the specified border object, setting the Style or ArtStyle properties based on the
  /// border's value.

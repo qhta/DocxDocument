@@ -11,20 +11,19 @@ public class NonVisualConnectionShapeProperties : ModelElement<DXDCD.NonVisualCo
  /// </summary>
  [OpenXmlProperty(nameof(DXDCD.NonVisualConnectionShapeProperties.ConnectionShapeLocks))]
  public ConnectionShapeLocks? ConnectionShapeLocks { get => _ConnectionShapeLocks; set => UpdateField(ref _ConnectionShapeLocks, value, nameof(ConnectionShapeLocks)); }
-
  private ConnectionShapeLocks? _ConnectionShapeLocks;
+
  /// <summary>
  /// Defines the starting connection point for the connection shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXDCD.NonVisualConnectionShapeProperties.StartConnection))]
  public ConnectionType? StartConnection { get => _StartConnection; set => UpdateField(ref _StartConnection, value, nameof(StartConnection)); }
-
  private ConnectionType? _StartConnection;
+
  /// <summary>
  /// Defines the ending connection point for the connection shape.
  /// </summary>
  [OpenXmlProperty(nameof(DXDCD.NonVisualConnectionShapeProperties.EndConnection))]
  public ConnectionType? EndConnection { get => _EndConnection; set => UpdateField(ref _EndConnection, value, nameof(EndConnection)); }
-
  private ConnectionType? _EndConnection;
 }

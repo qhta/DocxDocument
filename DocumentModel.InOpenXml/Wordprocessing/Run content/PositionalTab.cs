@@ -12,20 +12,19 @@ public partial class PositionalTab : ModelElement<DXW.PositionalTab>, IRunConten
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PositionalTab.Alignment))]
  public AbsolutePositionTabAlignment? Alignment { get => _Alignment; set => UpdateField(ref _Alignment, value, nameof(Alignment)); }
-
  private AbsolutePositionTabAlignment? _Alignment;
+
  /// <summary>
  /// Base for the positional tab stop, specifying the reference point for tab alignment (e.g., margin, indent).
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PositionalTab.RelativeTo))]
  public AbsolutePositionTabPositioningBase? RelativeTo { get => _RelativeTo; set => UpdateField(ref _RelativeTo, value, nameof(RelativeTo)); }
-
  private AbsolutePositionTabPositioningBase? _RelativeTo;
+
  /// <summary>
  /// Leader character for the tab, specifying the character used to fill the space advanced by the tab.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PositionalTab.Leader))]
  public AbsolutePositionTabLeaderChar? Leader { get => _Leader; set => UpdateField(ref _Leader, value, nameof(Leader)); }
-
  private AbsolutePositionTabLeaderChar? _Leader;
 }

@@ -6,34 +6,33 @@ namespace DocumentModel.CustomUI;
 /// </summary>
 [OpenXmlType(typeof(DXO10CUI.Command))]
 [XmlRoot("Command", Namespace = "DocumentModel.CustomUI")]
-public class Command : ModelElement<DXO10CUI.Command>
+public partial class Command : ModelElement<DXO10CUI.Command>
 {
- /// <summary>
- /// Specifies the callback invoked when the command action occurs.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.Command.OnAction))]
- public String? OnAction { get => _OnAction; set => UpdateField(ref _OnAction, value, nameof(OnAction)); }
+  /// <summary>
+  /// Specifies the callback invoked when the command action occurs.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.Command.OnAction))]
+  public String? OnAction { get => _OnAction; set => UpdateField(ref _OnAction, value, nameof(OnAction)); }
+  private String? _OnAction;
 
- private String? _OnAction;
- /// <summary>
- /// Specifies whether the command is enabled.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.Command.Enabled))]
- public Boolean? Enabled { get => _Enabled; set => UpdateField(ref _Enabled, value, nameof(Enabled)); }
+  /// <summary>
+  /// Specifies whether the command is enabled.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.Command.Enabled))]
+  public Boolean? Enabled { get => _Enabled; set => UpdateField(ref _Enabled, value, nameof(Enabled)); }
+  private Boolean? _Enabled;
 
- private Boolean? _Enabled;
- /// <summary>
- /// Specifies the callback that returns whether the command is enabled.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.Command.GetEnabled))]
- public String? GetEnabled { get => _GetEnabled; set => UpdateField(ref _GetEnabled, value, nameof(GetEnabled)); }
+  /// <summary>
+  /// Specifies the callback that returns whether the command is enabled.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.Command.GetEnabled))]
+  public String? GetEnabled { get => _GetEnabled; set => UpdateField(ref _GetEnabled, value, nameof(GetEnabled)); }
+  private String? _GetEnabled;
 
- private String? _GetEnabled;
- /// <summary>
- /// Specifies the identifier of the built-in Office command.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.Command.IdMso))]
- public String? IdMso { get => _IdMso; set => UpdateField(ref _IdMso, value, nameof(IdMso)); }
-
- private String? _IdMso;
+  /// <summary>
+  /// Specifies the identifier of the built-in Office command.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.Command.IdMso))]
+  public String? IdMso { get => _IdMso; set => UpdateField(ref _IdMso, value, nameof(IdMso)); }
+  private String? _IdMso;
 }

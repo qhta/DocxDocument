@@ -12,22 +12,22 @@ public partial class HslColor : AbstractColor<DXD.HslColor>, ISchemeBaseColor, I
   /// </summary>
   [OpenXmlProperty(nameof(DXD.HslColor.HueValue))]
   public Degrees? HueValue { get => _hueValue; set => UpdateField(ref _hueValue, value, nameof(HueValue)); }
-
   private Degrees? _hueValue;
+
   /// <summary>
   /// Base saturation value.
   /// </summary>
   [OpenXmlProperty(nameof(DXD.HslColor.SatValue))]
   public Percentage? SatValue { get => _SatValue; set => UpdateField(ref _SatValue, value, nameof(SatValue)); }
-
   private Percentage? _SatValue;
+
   /// <summary>
   /// Base luminance value.
   /// </summary>
   [OpenXmlProperty(nameof(DXD.HslColor.LumValue))]
   public Percentage? LumValue { get => _LumValue; set => UpdateField(ref _LumValue, value, nameof(LumValue)); }
-
   private Percentage? _LumValue;
+
   /// <summary>
   /// Tint value to lighten the color.
   /// </summary>
@@ -48,8 +48,8 @@ public partial class HslColor : AbstractColor<DXD.HslColor>, ISchemeBaseColor, I
   /// </remarks>
   [OpenXmlElement(typeof(DXD.Tint))]
   public Percentage? Tint { get => _Tint; set => UpdateField(ref _Tint, value, nameof(Tint)); }
-
   private Percentage? _Tint;
+
   /// <summary>
   /// Shade value to darken the color.
   /// </summary>
@@ -69,6 +69,5 @@ public partial class HslColor : AbstractColor<DXD.HslColor>, ISchemeBaseColor, I
   /// </remarks>
   [OpenXmlElement(typeof(DXD.Shade))]
   public Percentage? Shade { get => _Shade; set => UpdateField(ref _Shade, value, nameof(Shade)); }
-
   private Percentage? _Shade;
 }

@@ -17,8 +17,8 @@ public abstract partial class RelationshipType<T> : ModelElement<T> where T : DX
  /// </summary>
  [OpenXmlProperty(nameof(DXW.RelationshipType.Id))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
-
  private string? _Id;
+
  /// <summary>
  /// Attaches the specified WordprocessingDocument and loads its data into the current instance.
  /// </summary>

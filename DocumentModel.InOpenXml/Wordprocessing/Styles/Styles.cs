@@ -65,8 +65,8 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
 
     set => UpdateField(ref _DocDefaults, value, nameof(DocDefaults));
   }
-
   private DocDefaults? _DocDefaults;
+
   /// <summary>
   /// Latent style information, providing metadata and settings for latent styles in the document.
   /// </summary>
@@ -82,8 +82,8 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
 
     set => UpdateField(ref _LatentStyles, value, nameof(LatentStyles));
   }
-
   private LatentStyles? _LatentStyles;
+
   /// <summary>
   /// Collection of defined styles in the document, including paragraph, character, table, and numbering styles.
   /// </summary>
@@ -101,8 +101,8 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
 
     set => UpdateField(ref _DefinedStyles, value, nameof(DefinedStyles));
   }
-
   private DefinedStyles? _DefinedStyles;
+
   /// <summary>
   /// Updates the styles in the specified OpenXml element b with styles defined in the DefinedStyles collection.  
   /// </summary>

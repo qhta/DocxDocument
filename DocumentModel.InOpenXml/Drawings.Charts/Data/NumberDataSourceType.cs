@@ -12,13 +12,12 @@ public partial class NumberDataSourceType : ModelElement<DXDC.NumberDataSourceTy
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.NumberDataSourceType.NumberReference))]
  public NumberReference? NumberReference { get => _NumberReference; set => UpdateField(ref _NumberReference, value, nameof(NumberReference)); }
-
  private NumberReference? _NumberReference;
+
  /// <summary>
  ///   Literal numeric values provided directly for the data source.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.NumberDataSourceType.NumberLiteral))]
  public NumberLiteral? NumberLiteral { get => _NumberLiteral; set => UpdateField(ref _NumberLiteral, value, nameof(NumberLiteral)); }
-
  private NumberLiteral? _NumberLiteral;
 }

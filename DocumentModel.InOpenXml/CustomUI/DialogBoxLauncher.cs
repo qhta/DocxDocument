@@ -12,13 +12,12 @@ namespace DocumentModel.CustomUI;
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.DialogBoxLauncher))]
 [XmlRoot("DialogBoxLauncher", Namespace = "DocumentModel.CustomUI")]
-public class DialogBoxLauncher : ModelElement<DXO10CUI.DialogBoxLauncher>
+public partial class DialogBoxLauncher : ModelElement<DXO10CUI.DialogBoxLauncher>
 {
- /// <summary>
- /// Specifies the button displayed in the dialog box launcher area.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.DialogBoxLauncher.ButtonRegular))]
- public ButtonRegular? ButtonRegular { get => _ButtonRegular; set => UpdateField(ref _ButtonRegular, value, nameof(ButtonRegular)); }
-
- private ButtonRegular? _ButtonRegular;
+  /// <summary>
+  /// Specifies the button displayed in the dialog box launcher area.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.DialogBoxLauncher.ButtonRegular))]
+  public ButtonRegular? ButtonRegular { get => _ButtonRegular; set => UpdateField(ref _ButtonRegular, value, nameof(ButtonRegular)); }
+  private ButtonRegular? _ButtonRegular;
 }

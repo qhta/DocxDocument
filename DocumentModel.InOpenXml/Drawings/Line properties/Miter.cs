@@ -10,6 +10,5 @@ public partial class Miter : ModelElement<DXD.Miter>
  ///   Miter join limit value.
  /// </summary>
  public Int32? Limit { get => _Limit; set => UpdateField(ref _Limit, value, nameof(Limit)); }
-
  private Int32? _Limit;
 }

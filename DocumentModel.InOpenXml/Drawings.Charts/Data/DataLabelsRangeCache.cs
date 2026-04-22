@@ -13,20 +13,19 @@ public partial class DataLabelsRangeCache : ModelElement<DXO13DC.DataLabelsRange
  /// </summary>
  [OpenXmlProperty(nameof(DXO13DC.DataLabelsRangeChache.PointCount))]
  public UInt32? PointCount { get => _PointCount; set => UpdateField(ref _PointCount, value, nameof(PointCount)); }
-
  private UInt32? _PointCount;
+
  /// <summary>
  ///   Collection of string values for each data point in the cache.
  /// </summary>
  [OpenXmlElement(typeof(DXDC.StringPoint))]
  public StringPoints? StringPoints { get => _StringPoints; set => UpdateField(ref _StringPoints, value, nameof(StringPoints)); }
-
  private StringPoints? _StringPoints;
+
  /// <summary>
  ///   Extension elements for additional cache customization or metadata.
  /// </summary>
  [OpenXmlElement(typeof(DXDC.StrDataExtensionList))]
  public StrDataExtension? StrDataExtension { get => _StrDataExtension; set => UpdateField(ref _StrDataExtension, value, nameof(StrDataExtension)); }
-
  private StrDataExtension? _StrDataExtension;
 }

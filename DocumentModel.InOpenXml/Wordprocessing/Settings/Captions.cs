@@ -12,8 +12,8 @@ public partial class Captions : ModelElement<DXW.Captions>
  [OpenXmlLoadData(nameof(LoadCaptionsInOpenXml))]
  [OpenXmlUpdateData(nameof(UpdateCaptionDefinitionsInOpenXml))]
  public CaptionDefinitions? CaptionDefinitions { get => _CaptionDefinitions; set => UpdateField(ref _CaptionDefinitions, value, nameof(CaptionDefinitions)); }
-
  private CaptionDefinitions? _CaptionDefinitions;
+
  /// <summary>
  /// Updates the caption definitions in the specified Open XML <see cref = "DXW.Captions"/> element to match the current
  /// set of caption definitions.
@@ -62,8 +62,8 @@ public partial class Captions : ModelElement<DXW.Captions>
  [OpenXmlLoadData(nameof(LoadAutoCaptionsInOpenXml))]
  [OpenXmlUpdateData(nameof(UpdateAutoCaptionsInOpenXml))]
  public AutoCaptions? AutoCaptions { get => _AutoCaptions; set => UpdateField(ref _AutoCaptions, value, nameof(AutoCaptions)); }
-
  private AutoCaptions? _AutoCaptions;
+
  /// <summary>
  /// Updates the specified Open XML captions collection to reflect the current set of automatic captions.
  /// </summary>

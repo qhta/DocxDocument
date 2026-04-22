@@ -9,6 +9,7 @@ namespace DocumentModel;
 public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : ElementCollection<ItemType>, IWordprocessingDocumentAware where ItemType : notnull where OpenXmlCollectionType : DX.OpenXmlElement
 {
  private OpenXmlCollectionType? _openXmlCollection;
+
  /// <summary>
  /// Indicates whether a loading operation is currently in progress.
  /// </summary>

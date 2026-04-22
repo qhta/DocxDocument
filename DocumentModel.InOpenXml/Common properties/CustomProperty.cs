@@ -50,15 +50,15 @@ public sealed partial class CustomProperty : ModelElement<DXCP.CustomDocumentPro
   /// </summary>
   [OpenXmlProperty(nameof(DXCP.CustomDocumentProperty.PropertyId))]
   public int? PropertyId { get => _PropertyId; set => UpdateField(ref _PropertyId, value, nameof(PropertyId)); }
-
   private int? _PropertyId;
+
   /// <summary>
   ///   Property name. Should be unique within the document properties.
   /// </summary>
   [OpenXmlProperty(nameof(DXCP.CustomDocumentProperty.Name))]
   public string? Name { get => _Name; set => UpdateField(ref _Name, value, nameof(Name)); }
-
   private string? _Name;
+
   /// <summary>
   /// Format identifier (FormatId) for the custom document property in OpenXml.
   /// </summary>
@@ -80,8 +80,8 @@ public sealed partial class CustomProperty : ModelElement<DXCP.CustomDocumentPro
   /// </remarks>
   [OpenXmlProperty(nameof(DXCP.CustomDocumentProperty.FormatId))]
   public Guid? FormatId { get => _FormatId; set => UpdateField(ref _FormatId, value, nameof(FormatId)); }
-
   private Guid? _FormatId = new Guid("D5CDD505-2E9C-101B-9397-08002B2CF9AE");
+
   /// <summary>
   /// Link target for the custom document property in OpenXml.
   /// </summary>
@@ -100,8 +100,8 @@ public sealed partial class CustomProperty : ModelElement<DXCP.CustomDocumentPro
   /// </remarks>
   [OpenXmlProperty(nameof(DXCP.CustomDocumentProperty.LinkTarget))]
   public string? LinkTarget { get => _LinkTarget; set => UpdateField(ref _LinkTarget, value, nameof(LinkTarget)); }
-
   private string? _LinkTarget;
+
   /// <summary>
   /// Value of the custom document property.
   /// </summary>
@@ -140,8 +140,8 @@ public sealed partial class CustomProperty : ModelElement<DXCP.CustomDocumentPro
       }
     }
   }
-
   private Variant? _Value;
+
   /// <summary>
   /// Needed to set the value in OpenXml element.
   /// </summary>
@@ -207,6 +207,5 @@ public sealed partial class CustomProperty : ModelElement<DXCP.CustomDocumentPro
       }
     }
   }
-
   private Type? _Type;
 }

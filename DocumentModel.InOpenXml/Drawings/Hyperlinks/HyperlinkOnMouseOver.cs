@@ -12,13 +12,12 @@ public partial class HyperlinkOnMouseOver : ModelElement<DXD.HyperlinkOnMouseOve
  /// </summary>
  [OpenXmlProperty(nameof(DXD.HyperlinkOnMouseOver.HyperlinkSound))]
  public EmbeddedWavAudioFileType? HyperlinkSound { get => _HyperlinkSound; set => UpdateField(ref _HyperlinkSound, value, nameof(HyperlinkSound)); }
-
  private EmbeddedWavAudioFileType? _HyperlinkSound;
+
  /// <summary>
  ///   List of extension elements for the mouse-over hyperlink, supporting extensibility and application-specific hyperlink data.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.HyperlinkOnMouseOver.HyperlinkExtensionList))]
  public HyperlinkExtensionList? HyperlinkExtensionList { get => _HyperlinkExtensionList; set => UpdateField(ref _HyperlinkExtensionList, value, nameof(HyperlinkExtensionList)); }
-
  private HyperlinkExtensionList? _HyperlinkExtensionList;
 }

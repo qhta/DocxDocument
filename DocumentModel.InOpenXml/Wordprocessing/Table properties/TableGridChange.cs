@@ -11,13 +11,12 @@ public partial class TableGridChange : ModelElement<DXW.TableGridChange>
  /// Annotation identifier for the table grid change, used to uniquely identify the revision.
  /// </summary>
  public string? AnnotationId { get => _AnnotationId; set => UpdateField(ref _AnnotationId, value, nameof(AnnotationId)); }
-
  private string? _AnnotationId;
+
  /// <summary>
  /// Previous table grid configuration before the change, enabling comparison and tracking of grid revisions.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.TableGridChange.PreviousTableGrid))]
  public PreviousTableGrid? PreviousTableGrid { get => _PreviousTableGrid; set => UpdateField(ref _PreviousTableGrid, value, nameof(PreviousTableGrid)); }
-
  private PreviousTableGrid? _PreviousTableGrid;
 }

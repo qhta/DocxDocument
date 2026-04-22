@@ -11,20 +11,19 @@ public partial class ObjectProperties : ModelElement<DXO13D.ObjectProperties>
  /// </summary>
  [OpenXmlProperty(nameof(DXO13D.ObjectProperties.Id))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
-
  private string? _Id;
+
  /// <summary>
  ///   Indicates whether the object is an ActiveX control.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13D.ObjectProperties.IsActiveX))]
  public bool? IsActiveX { get => _IsActiveX; set => UpdateField(ref _IsActiveX, value, nameof(IsActiveX)); }
-
  private bool? _IsActiveX;
+
  /// <summary>
  ///   Type of link associated with the object.
  /// </summary>
  [OpenXmlProperty(nameof(DXO13D.ObjectProperties.LinkType))]
  public string? LinkType { get => _LinkType; set => UpdateField(ref _LinkType, value, nameof(LinkType)); }
-
  private string? _LinkType;
 }

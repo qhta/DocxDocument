@@ -12,13 +12,12 @@ public partial class HyperlinkOnHover : ModelElement<DXD.HyperlinkOnHover>, IExt
  /// </summary>
  [OpenXmlProperty(nameof(DXD.HyperlinkOnHover.HyperlinkSound))]
  public EmbeddedWavAudioFileType? HyperlinkSound { get => _HyperlinkSound; set => UpdateField(ref _HyperlinkSound, value, nameof(HyperlinkSound)); }
-
  private EmbeddedWavAudioFileType? _HyperlinkSound;
+
  /// <summary>
  ///   List of extension elements for the hover hyperlink, supporting extensibility and application-specific hyperlink data.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.HyperlinkOnHover.HyperlinkExtensionList))]
  public HyperlinkExtensionList? HyperlinkExtensionList { get => _HyperlinkExtensionList; set => UpdateField(ref _HyperlinkExtensionList, value, nameof(HyperlinkExtensionList)); }
-
  private HyperlinkExtensionList? _HyperlinkExtensionList;
 }

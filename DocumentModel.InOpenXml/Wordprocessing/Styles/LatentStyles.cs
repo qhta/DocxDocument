@@ -78,6 +78,5 @@ public partial class LatentStyles:
     get => _DefaultPrimaryStyle;
     set => UpdateField(ref _DefaultPrimaryStyle, value, nameof(DefaultPrimaryStyle));
   }
-
   private bool? _DefaultPrimaryStyle;
 }

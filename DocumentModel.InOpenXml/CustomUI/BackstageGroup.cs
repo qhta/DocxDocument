@@ -14,132 +14,131 @@ namespace DocumentModel.CustomUI;
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.BackstageGroup))]
 [XmlRoot("BackstageGroup", Namespace = "DocumentModel.CustomUI")]
-public class BackstageGroup : ModelElement<DXO10CUI.BackstageGroup>
+public partial class BackstageGroup : ModelElement<DXO10CUI.BackstageGroup>
 {
- /// <summary>
- /// Specifies the unique identifier of the group.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.Id))]
- public String? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+  /// <summary>
+  /// Specifies the unique identifier of the group.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.Id))]
+  public String? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
+  private String? _Id;
 
- private String? _Id;
- /// <summary>
- /// Specifies the qualified identifier of the group.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.QualifiedId))]
- public String? QualifiedId { get => _QualifiedId; set => UpdateField(ref _QualifiedId, value, nameof(QualifiedId)); }
+  /// <summary>
+  /// Specifies the qualified identifier of the group.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.QualifiedId))]
+  public String? QualifiedId { get => _QualifiedId; set => UpdateField(ref _QualifiedId, value, nameof(QualifiedId)); }
+  private String? _QualifiedId;
 
- private String? _QualifiedId;
- /// <summary>
- /// Specifies an application-defined tag for the group.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.Tag))]
- public String? Tag { get => _Tag; set => UpdateField(ref _Tag, value, nameof(Tag)); }
+  /// <summary>
+  /// Specifies an application-defined tag for the group.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.Tag))]
+  public String? Tag { get => _Tag; set => UpdateField(ref _Tag, value, nameof(Tag)); }
+  private String? _Tag;
 
- private String? _Tag;
- /// <summary>
- /// Specifies the identifier of a built-in Office control.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.IdMso))]
- public String? IdMso { get => _IdMso; set => UpdateField(ref _IdMso, value, nameof(IdMso)); }
+  /// <summary>
+  /// Specifies the identifier of a built-in Office control.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.IdMso))]
+  public String? IdMso { get => _IdMso; set => UpdateField(ref _IdMso, value, nameof(IdMso)); }
+  private String? _IdMso;
 
- private String? _IdMso;
- /// <summary>
- /// Specifies a built-in control after which this group is inserted.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.InsertAfterMso))]
- public String? InsertAfterMso { get => _InsertAfterMso; set => UpdateField(ref _InsertAfterMso, value, nameof(InsertAfterMso)); }
+  /// <summary>
+  /// Specifies a built-in control after which this group is inserted.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.InsertAfterMso))]
+  public String? InsertAfterMso { get => _InsertAfterMso; set => UpdateField(ref _InsertAfterMso, value, nameof(InsertAfterMso)); }
+  private String? _InsertAfterMso;
 
- private String? _InsertAfterMso;
- /// <summary>
- /// Specifies a built-in control before which this group is inserted.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.InsertBeforeMso))]
- public String? InsertBeforeMso { get => _InsertBeforeMso; set => UpdateField(ref _InsertBeforeMso, value, nameof(InsertBeforeMso)); }
+  /// <summary>
+  /// Specifies a built-in control before which this group is inserted.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.InsertBeforeMso))]
+  public String? InsertBeforeMso { get => _InsertBeforeMso; set => UpdateField(ref _InsertBeforeMso, value, nameof(InsertBeforeMso)); }
+  private String? _InsertBeforeMso;
 
- private String? _InsertBeforeMso;
- /// <summary>
- /// Specifies a qualified control identifier after which this group is inserted.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.InsertAfterQulifiedId))]
- public String? InsertAfterQualifiedId { get => _InsertAfterQualifiedId; set => UpdateField(ref _InsertAfterQualifiedId, value, nameof(InsertAfterQualifiedId)); }
+  /// <summary>
+  /// Specifies a qualified control identifier after which this group is inserted.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.InsertAfterQulifiedId))]
+  public String? InsertAfterQualifiedId { get => _InsertAfterQualifiedId; set => UpdateField(ref _InsertAfterQualifiedId, value, nameof(InsertAfterQualifiedId)); }
+  private String? _InsertAfterQualifiedId;
 
- private String? _InsertAfterQualifiedId;
- /// <summary>
- /// Specifies a qualified control identifier before which this group is inserted.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.InsertBeforeQulifiedId))]
- public String? InsertBeforeQualifiedId { get => _InsertBeforeQualifiedId; set => UpdateField(ref _InsertBeforeQualifiedId, value, nameof(InsertBeforeQualifiedId)); }
+  /// <summary>
+  /// Specifies a qualified control identifier before which this group is inserted.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.InsertBeforeQulifiedId))]
+  public String? InsertBeforeQualifiedId { get => _InsertBeforeQualifiedId; set => UpdateField(ref _InsertBeforeQualifiedId, value, nameof(InsertBeforeQualifiedId)); }
+  private String? _InsertBeforeQualifiedId;
 
- private String? _InsertBeforeQualifiedId;
- /// <summary>
- /// Specifies the display label of the group.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.Label))]
- public String? Label { get => _Label; set => UpdateField(ref _Label, value, nameof(Label)); }
+  /// <summary>
+  /// Specifies the display label of the group.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.Label))]
+  public String? Label { get => _Label; set => UpdateField(ref _Label, value, nameof(Label)); }
+  private String? _Label;
 
- private String? _Label;
- /// <summary>
- /// Specifies the callback that returns the group label.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.GetLabel))]
- public String? GetLabel { get => _GetLabel; set => UpdateField(ref _GetLabel, value, nameof(GetLabel)); }
+  /// <summary>
+  /// Specifies the callback that returns the group label.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.GetLabel))]
+  public String? GetLabel { get => _GetLabel; set => UpdateField(ref _GetLabel, value, nameof(GetLabel)); }
+  private String? _GetLabel;
 
- private String? _GetLabel;
- /// <summary>
- /// Specifies whether the group is visible.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.Visible))]
- public Boolean? Visible { get => _Visible; set => UpdateField(ref _Visible, value, nameof(Visible)); }
+  /// <summary>
+  /// Specifies whether the group is visible.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.Visible))]
+  public Boolean? Visible { get => _Visible; set => UpdateField(ref _Visible, value, nameof(Visible)); }
+  private Boolean? _Visible;
 
- private Boolean? _Visible;
- /// <summary>
- /// Specifies the callback that returns whether the group is visible.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.GetVisible))]
- public String? GetVisible { get => _GetVisible; set => UpdateField(ref _GetVisible, value, nameof(GetVisible)); }
+  /// <summary>
+  /// Specifies the callback that returns whether the group is visible.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.GetVisible))]
+  public String? GetVisible { get => _GetVisible; set => UpdateField(ref _GetVisible, value, nameof(GetVisible)); }
+  private String? _GetVisible;
 
- private String? _GetVisible;
- /// <summary>
- /// Specifies the visual style applied to the group.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.Style))]
- public Style? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
+  /// <summary>
+  /// Specifies the visual style applied to the group.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.Style))]
+  public Style? Style { get => _Style; set => UpdateField(ref _Style, value, nameof(Style)); }
+  private Style? _Style;
 
- private Style? _Style;
- /// <summary>
- /// Specifies the callback that returns the group style.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.GetStyle))]
- public String? GetStyle { get => _GetStyle; set => UpdateField(ref _GetStyle, value, nameof(GetStyle)); }
+  /// <summary>
+  /// Specifies the callback that returns the group style.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.GetStyle))]
+  public String? GetStyle { get => _GetStyle; set => UpdateField(ref _GetStyle, value, nameof(GetStyle)); }
+  private String? _GetStyle;
 
- private String? _GetStyle;
- /// <summary>
- /// Specifies helper text associated with the group.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.HelperText))]
- public String? HelperText { get => _HelperText; set => UpdateField(ref _HelperText, value, nameof(HelperText)); }
+  /// <summary>
+  /// Specifies helper text associated with the group.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.HelperText))]
+  public String? HelperText { get => _HelperText; set => UpdateField(ref _HelperText, value, nameof(HelperText)); }
+  private String? _HelperText;
 
- private String? _HelperText;
- /// <summary>
- /// Specifies the callback that returns helper text.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.GetHelperText))]
- public String? GetHelperText { get => _GetHelperText; set => UpdateField(ref _GetHelperText, value, nameof(GetHelperText)); }
+  /// <summary>
+  /// Specifies the callback that returns helper text.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.GetHelperText))]
+  public String? GetHelperText { get => _GetHelperText; set => UpdateField(ref _GetHelperText, value, nameof(GetHelperText)); }
+  private String? _GetHelperText;
 
- private String? _GetHelperText;
- /// <summary>
- /// Specifies whether the group label is shown.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.ShowLabel))]
- public Boolean? ShowLabel { get => _ShowLabel; set => UpdateField(ref _ShowLabel, value, nameof(ShowLabel)); }
+  /// <summary>
+  /// Specifies whether the group label is shown.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.ShowLabel))]
+  public Boolean? ShowLabel { get => _ShowLabel; set => UpdateField(ref _ShowLabel, value, nameof(ShowLabel)); }
+  private Boolean? _ShowLabel;
 
- private Boolean? _ShowLabel;
- /// <summary>
- /// Specifies the callback that returns whether the label is shown.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.GetShowLabel))]
- public String? GetShowLabel { get => _GetShowLabel; set => UpdateField(ref _GetShowLabel, value, nameof(GetShowLabel)); }
-
- private String? _GetShowLabel;
+  /// <summary>
+  /// Specifies the callback that returns whether the label is shown.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.BackstageGroup.GetShowLabel))]
+  public String? GetShowLabel { get => _GetShowLabel; set => UpdateField(ref _GetShowLabel, value, nameof(GetShowLabel)); }
+  private String? _GetShowLabel;
 }

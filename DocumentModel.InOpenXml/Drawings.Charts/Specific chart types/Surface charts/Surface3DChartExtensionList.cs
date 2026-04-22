@@ -11,6 +11,5 @@ public partial class Surface3DChartExtensionList : ModelElementCollection<Surfac
  /// </summary>
  [OpenXmlElement(typeof(DXDC.Surface3DChartExtension))]
  public Surface3DChartExtensions? Surface3DChartExtensions { get => _Surface3DChartExtensions; set => UpdateField(ref _Surface3DChartExtensions, value, nameof(Surface3DChartExtensions)); }
-
  private Surface3DChartExtensions? _Surface3DChartExtensions;
 }

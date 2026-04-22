@@ -14,27 +14,26 @@ public partial class Floor : ModelElement<DXDC.Floor>
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.Floor.Thickness))]
  public Byte? Thickness { get => _Thickness; set => UpdateField(ref _Thickness, value, nameof(Thickness)); }
-
  private Byte? _Thickness;
+
  /// <summary>
  /// The shape properties of the floor.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.Floor.ShapeProperties))]
  public ShapeProperties? ShapeProperties { get => _ShapeProperties; set => UpdateField(ref _ShapeProperties, value, nameof(ShapeProperties)); }
-
  private ShapeProperties? _ShapeProperties;
+
  /// <summary>
  /// The picture options of the floor.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.Floor.PictureOptions))]
  public PictureOptions? PictureOptions { get => _PictureOptions; set => UpdateField(ref _PictureOptions, value, nameof(PictureOptions)); }
-
  private PictureOptions? _PictureOptions;
+
  /// <summary>
  /// The extension list of the floor.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.Floor.ExtensionList))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
-
  private ExtensionList? _ExtensionList;
 }

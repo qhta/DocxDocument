@@ -15,12 +15,11 @@ public partial class SubSuperscriptProperties : ModelElement<DXM.SubSuperscriptP
  ///   to not align the superscript and subscript with each other
  /// </summary>
  public bool? AlignScripts { get => _AlignScripts; set => UpdateField(ref _AlignScripts, value, nameof(AlignScripts)); }
-
  private bool? _AlignScripts;
+
  /// <summary>
  ///   Specifies formatting of SubSuperscript object argument.
  /// </summary>
  public ControlProperties? ControlProperties { get => _ControlProperties; set => UpdateField(ref _ControlProperties, value, nameof(ControlProperties)); }
-
  private ControlProperties? _ControlProperties;
 }

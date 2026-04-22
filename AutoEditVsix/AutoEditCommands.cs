@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Threading.Tasks;
 using EnvDTE;
@@ -59,14 +60,42 @@ internal static class AutoEditCommands
     await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
     var dte = await package.GetServiceAsync(typeof(DTE)) as DTE2;
-    var document = dte?.ActiveDocument;
-    var filePath = document?.FullName;
+    if (dte == null)
+      return;
 
-    if (string.IsNullOrWhiteSpace(filePath))
+    var filePaths = new List<string>();
+    var filePathSet = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+    var selectedItems = dte.SelectedItems;
+    if (selectedItems is { Count: > 0 })
+    {
+      for (var i = 1; i <= selectedItems.Count; i++)
+      {
+        try
+        {
+          var selectedItem = selectedItems.Item(i);
+          if (selectedItem == null)
+            continue;
+
+          CollectFilePaths(selectedItem, filePathSet, filePaths);
+        }
+        catch
+        {
+        }
+      }
+    }
+
+    if (filePaths.Count == 0)
+    {
+      var filePath = dte.ActiveDocument?.FullName;
+      if (!string.IsNullOrWhiteSpace(filePath) && filePathSet.Add(filePath))
+        filePaths.Add(filePath);
+    }
+
+    if (filePaths.Count == 0)
     {
       VsShellUtilities.ShowMessageBox(
         package,
-        "No active document.",
+        "No selected or active document.",
         "AutoEdit",
         OLEMSGICON.OLEMSGICON_INFO,
         OLEMSGBUTTON.OLEMSGBUTTON_OK,
@@ -74,6 +103,128 @@ internal static class AutoEditCommands
       return;
     }
 
-    action(filePath);
+    foreach (var filePath in filePaths)
+    {
+      if (!IsDocumentOpen(dte, filePath))
+      {
+        try
+        {
+          dte.ItemOperations.OpenFile(filePath, EnvDTE.Constants.vsViewKindTextView);
+          action(filePath);
+        }
+        catch
+        {
+        }
+      }
+    }
+  }
+
+  private static bool IsDocumentOpen(DTE2 dte, string filePath)
+  {
+    foreach (Document document in dte.Documents)
+    {
+      if (string.Equals(document.FullName, filePath, StringComparison.OrdinalIgnoreCase))
+        return true;
+    }
+
+    return false;
+  }
+
+  private static void CollectFilePaths(SelectedItem selectedItem, HashSet<string> filePathSet, List<string> filePaths)
+  {
+    ThreadHelper.ThrowIfNotOnUIThread();
+
+    var projectItem = selectedItem.ProjectItem;
+    if (projectItem != null)
+      CollectFilePathsFromProjectItem(projectItem, filePathSet, filePaths);
+
+    var project = selectedItem.Project;
+    if (project != null)
+      CollectFilePathsFromProject(project, filePathSet, filePaths);
+  }
+
+  private static void CollectFilePathsFromProject(Project project, HashSet<string> filePathSet, List<string> filePaths)
+  {
+    ThreadHelper.ThrowIfNotOnUIThread();
+
+    ProjectItems projectItems;
+    try
+    {
+      projectItems = project.ProjectItems;
+    }
+    catch
+    {
+      return;
+    }
+
+    if (projectItems == null)
+      return;
+
+    for (var i = 1; i <= projectItems.Count; i++)
+    {
+      try
+      {
+        var projectItem = projectItems.Item(i);
+        if (projectItem != null)
+          CollectFilePathsFromProjectItem(projectItem, filePathSet, filePaths);
+      }
+      catch
+      {
+      }
+    }
+  }
+
+  private static void CollectFilePathsFromProjectItem(ProjectItem projectItem, HashSet<string> filePathSet, List<string> filePaths)
+  {
+    ThreadHelper.ThrowIfNotOnUIThread();
+
+    try
+    {
+      for (var i = 1; i <= projectItem.FileCount; i++)
+      {
+        var filePath = projectItem.FileNames[(short)i];
+        if (!string.IsNullOrWhiteSpace(filePath) && filePathSet.Add(filePath))
+          filePaths.Add(filePath);
+      }
+    }
+    catch
+    {
+    }
+
+    try
+    {
+      var subProject = projectItem.SubProject;
+      if (subProject != null)
+        CollectFilePathsFromProject(subProject, filePathSet, filePaths);
+    }
+    catch
+    {
+    }
+
+    ProjectItems childItems;
+    try
+    {
+      childItems = projectItem.ProjectItems;
+    }
+    catch
+    {
+      return;
+    }
+
+    if (childItems == null)
+      return;
+
+    for (var i = 1; i <= childItems.Count; i++)
+    {
+      try
+      {
+        var child = childItems.Item(i);
+        if (child != null)
+          CollectFilePathsFromProjectItem(child, filePathSet, filePaths);
+      }
+      catch
+      {
+      }
+    }
   }
 }

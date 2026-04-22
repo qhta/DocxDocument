@@ -5,13 +5,12 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [OpenXmlType(typeof(DX.OpenXmlElement))]
 [XmlRoot("NumberingLevelParagraphProperties", Namespace = "DocumentModel.Wordprocessing")]
-public class NumberingLevelParagraphProperties : BaseParagraphProperties<DXW.PreviousParagraphProperties>
+public partial class NumberingLevelParagraphProperties : BaseParagraphProperties<DXW.PreviousParagraphProperties>
 {
- /// <summary>
- /// Style ID of the paragraph style used to format the contents of this paragraph.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.PreviousParagraphProperties.ParagraphStyleId))]
- public string? ParagraphStyleId { get => _ParagraphStyleId; set => UpdateField(ref _ParagraphStyleId, value, nameof(ParagraphStyleId)); }
-
- private string? _ParagraphStyleId;
+  /// <summary>
+  /// Style ID of the paragraph style used to format the contents of this paragraph.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.PreviousParagraphProperties.ParagraphStyleId))]
+  public string? ParagraphStyleId { get => _ParagraphStyleId; set => UpdateField(ref _ParagraphStyleId, value, nameof(ParagraphStyleId)); }
+  private string? _ParagraphStyleId;
 }

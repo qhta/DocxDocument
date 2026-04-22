@@ -20,27 +20,26 @@ namespace DocumentModel.CustomUI;
 /// </remark>
 [OpenXmlType(typeof(DXO10CUI.MenuRoot))]
 [XmlRoot("MenuRoot", Namespace = "DocumentModel.CustomUI")]
-public class MenuRoot : ModelElement<DXO10CUI.MenuRoot>
+public partial class MenuRoot : ModelElement<DXO10CUI.MenuRoot>
 {
- /// <summary>
- /// Specifies the title.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.MenuRoot.Title))]
- public String? Title { get => _Title; set => UpdateField(ref _Title, value, nameof(Title)); }
+  /// <summary>
+  /// Specifies the title.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.MenuRoot.Title))]
+  public String? Title { get => _Title; set => UpdateField(ref _Title, value, nameof(Title)); }
+  private String? _Title;
 
- private String? _Title;
- /// <summary>
- /// Specifies the callback that returns title.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.MenuRoot.GetTitle))]
- public String? GetTitle { get => _GetTitle; set => UpdateField(ref _GetTitle, value, nameof(GetTitle)); }
+  /// <summary>
+  /// Specifies the callback that returns title.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.MenuRoot.GetTitle))]
+  public String? GetTitle { get => _GetTitle; set => UpdateField(ref _GetTitle, value, nameof(GetTitle)); }
+  private String? _GetTitle;
 
- private String? _GetTitle;
- /// <summary>
- /// Specifies the item size mode used by the control.
- /// </summary>
- [OpenXmlProperty(nameof(DXO10CUI.MenuRoot.ItemSize))]
- public ItemSize? ItemSize { get => _ItemSize; set => UpdateField(ref _ItemSize, value, nameof(ItemSize)); }
-
- private ItemSize? _ItemSize;
+  /// <summary>
+  /// Specifies the item size mode used by the control.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXO10CUI.MenuRoot.ItemSize))]
+  public ItemSize? ItemSize { get => _ItemSize; set => UpdateField(ref _ItemSize, value, nameof(ItemSize)); }
+  private ItemSize? _ItemSize;
 }

@@ -10,13 +10,12 @@ public partial class ArtisticGlowDiffused : ModelElement<DXO10D.ArtisticGlowDiff
  /// Transparency level of the diffused glow effect.
  /// </summary>
  public Int32? Transparency { get => _Transparency; set => UpdateField(ref _Transparency, value, nameof(Transparency)); }
-
  private Int32? _Transparency;
+
  /// <summary>
  /// Intensity of the diffused glow effect, influencing the strength of the glow.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10D.ArtisticGlowDiffused.Intensity))]
  public Int32? Intensity { get => _Intensity; set => UpdateField(ref _Intensity, value, nameof(Intensity)); }
-
  private Int32? _Intensity;
 }

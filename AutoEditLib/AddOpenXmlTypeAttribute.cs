@@ -21,7 +21,7 @@ public static class AddOpenXmlTypeAttribute
   /// <param name="filePath">Absolute or relative path to the file to rewrite.</param>
   public static void Run(string filePath)
   {
-    //Console.WriteLine($"Checking: {filePath}");
+    Debug.WriteLine($"AddOpenXmlTypeAttribute({filePath})");
 
     var code = File.ReadAllText(filePath);
     var tree = CSharpSyntaxTree.ParseText(code);

@@ -12,6 +12,5 @@ public partial class FilteredRadarSeries : ModelElement<DXO13DC.FilteredRadarSer
  [OpenXmlElement(typeof(DXO13DC.RadarChartSeries))]
  [OpenXmlType(typeof(DXO13DC.RadarChartSeries))]
  public RadarChartSeries? RadarChartSeries { get => _RadarChartSeries; set => UpdateField(ref _RadarChartSeries, value, nameof(RadarChartSeries)); }
-
  private RadarChartSeries? _RadarChartSeries;
 }

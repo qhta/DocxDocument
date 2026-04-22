@@ -12,6 +12,5 @@ public class MacroWllType : ModelElement<DXOW.MacroWllType>
  /// </summary>
  [OpenXmlProperty(nameof(DXOW.MacroWllType.MacroName))]
  public string? MacroName { get => _MacroName; set => UpdateField(ref _MacroName, value, nameof(MacroName)); }
-
  private string? _MacroName;
 }

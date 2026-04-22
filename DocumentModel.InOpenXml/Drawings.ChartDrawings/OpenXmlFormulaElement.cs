@@ -13,6 +13,5 @@ public class OpenXmlFormulaElement : ModelElement<DXO16DCD.OpenXmlFormulaElement
  /// </summary>
  [OpenXmlProperty(nameof(DXO16DCD.OpenXmlFormulaElement.Dir))]
  public FormulaDirection? Dir { get => _Dir; set => UpdateField(ref _Dir, value, nameof(Dir)); }
-
  private FormulaDirection? _Dir;
 }

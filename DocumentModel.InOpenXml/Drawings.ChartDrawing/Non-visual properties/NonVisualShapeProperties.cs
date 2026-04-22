@@ -11,13 +11,12 @@ public class NonVisualShapeProperties : ModelElement<DXDCD.NonVisualShapePropert
  /// </summary>
  [OpenXmlProperty(nameof(DXDCD.NonVisualShapeProperties.NonVisualDrawingProperties))]
  public NonVisualDrawingProperties? NonVisualDrawingProperties { get => _NonVisualDrawingProperties; set => UpdateField(ref _NonVisualDrawingProperties, value, nameof(NonVisualDrawingProperties)); }
-
  private NonVisualDrawingProperties? _NonVisualDrawingProperties;
+
  /// <summary>
  /// Non-visual drawing properties specific to the shape, including text box indication, locking options, and extension data.
  /// </summary>
  [OpenXmlProperty(nameof(DXDCD.NonVisualShapeProperties.NonVisualShapeDrawingProperties))]
  public NonVisualShapeDrawingProperties? NonVisualShapeDrawingProperties { get => _NonVisualShapeDrawingProperties; set => UpdateField(ref _NonVisualShapeDrawingProperties, value, nameof(NonVisualShapeDrawingProperties)); }
-
  private NonVisualShapeDrawingProperties? _NonVisualShapeDrawingProperties;
 }

@@ -11,20 +11,19 @@ public partial class LightRig : ModelElement<DXD.LightRig>
  /// </summary>
  [OpenXmlProperty(nameof(DXD.LightRig.Rig))]
  public LightRigType? Rig { get => _Rig; set => UpdateField(ref _Rig, value, nameof(Rig)); }
-
  private LightRigType? _Rig;
+
  /// <summary>
  ///   Direction of the light rig.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.LightRig.Direction))]
  public LightRigDirection? Direction { get => _Direction; set => UpdateField(ref _Direction, value, nameof(Direction)); }
-
  private LightRigDirection? _Direction;
+
  /// <summary>
  ///   Rotation settings for the light rig.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.LightRig.Rotation))]
  public Rotation? Rotation { get => _Rotation; set => UpdateField(ref _Rotation, value, nameof(Rotation)); }
-
  private Rotation? _Rotation;
 }

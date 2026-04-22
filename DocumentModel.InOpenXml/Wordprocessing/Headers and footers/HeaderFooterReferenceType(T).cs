@@ -11,13 +11,12 @@ public abstract partial class HeaderFooterReferenceType<T> : ModelElement<T>, IP
  /// </summary>
  [OpenXmlProperty(nameof(HeaderReference.Type))]
  public HeaderFooterType? Type { get => _Type; set => UpdateField(ref _Type, value, nameof(Type)); }
-
  private HeaderFooterType? _Type;
+
  /// <summary>
  /// Relationship ID to the part where the header or footer is defined.
  /// </summary>
  [OpenXmlProperty(nameof(HeaderReference.Id))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
-
  private string? _Id;
 }

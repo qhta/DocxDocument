@@ -11,13 +11,12 @@ public class MarkerType<T> : ModelElement<DXDCD.MarkerType> where T : DXDCD.Mark
  /// </summary>
  [OpenXmlElement(typeof(DXDCD.XPosition))]
  public string? XPosition { get => _XPosition; set => UpdateField(ref _XPosition, value, nameof(XPosition)); }
-
  private string? _XPosition;
+
  /// <summary>
  /// Relative vertical coordinate for positioning the marker.
  /// </summary>
  [OpenXmlElement(typeof(DXDCD.YPosition))]
  public string? YPosition { get => _YPosition; set => UpdateField(ref _YPosition, value, nameof(YPosition)); }
-
  private string? _YPosition;
 }

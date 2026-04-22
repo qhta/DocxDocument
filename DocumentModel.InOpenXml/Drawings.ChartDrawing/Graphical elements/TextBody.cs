@@ -19,20 +19,19 @@ public class TextBody : ModelElement<DXDCD.TextBody>
  /// </summary>
  [OpenXmlElement(typeof(DXD.BodyProperties))]
  public BodyProperties? BodyProperties { get => _BodyProperties; set => UpdateField(ref _BodyProperties, value, nameof(BodyProperties)); }
-
  private BodyProperties? _BodyProperties;
+
  /// <summary>
  /// Styles applied to bulleted or numbered lists within the text body.
  /// </summary>
  [OpenXmlElement(typeof(DXD.ListStyle))]
  public ListStyle? ListStyle { get => _ListStyle; set => UpdateField(ref _ListStyle, value, nameof(ListStyle)); }
-
  private ListStyle? _ListStyle;
+
  /// <summary>
  /// Paragraph content and formatting within the text body.
  /// </summary>
  [OpenXmlElement(typeof(DXD.Paragraph))]
  public Paragraph? Paragraph { get => _Paragraph; set => UpdateField(ref _Paragraph, value, nameof(Paragraph)); }
-
  private Paragraph? _Paragraph;
 }

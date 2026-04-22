@@ -11,6 +11,5 @@ public partial class Surface3DChartExtension : Extension<DXDC.Surface3DChartExte
  /// </summary>
  [OpenXmlElement(typeof(DXO13DC.FilteredSurfaceSeries))]
  public FilteredSurfaceSeries? FilteredSurfaceSeries { get => _FilteredSurfaceSeries; set => UpdateField(ref _FilteredSurfaceSeries, value, nameof(FilteredSurfaceSeries)); }
-
  private FilteredSurfaceSeries? _FilteredSurfaceSeries;
 }

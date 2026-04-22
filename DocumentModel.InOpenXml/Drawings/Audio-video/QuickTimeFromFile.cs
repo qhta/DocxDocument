@@ -11,13 +11,12 @@ public partial class QuickTimeFromFile : ModelElement<DXD.QuickTimeFromFile>, IE
  /// </summary>
  [OpenXmlProperty(nameof(DXD.QuickTimeFromFile.Link))]
  public string? Link { get => _Link; set => UpdateField(ref _Link, value, nameof(Link)); }
-
  private string? _Link;
+
  /// <summary>
  /// List of extension elements.
  /// </summary>
  [OpenXmlProperty(nameof(DXD.QuickTimeFromFile.ExtensionList))]
  public ExtensionList? ExtensionList { get => _ExtensionList; set => UpdateField(ref _ExtensionList, value, nameof(ExtensionList)); }
-
  private ExtensionList? _ExtensionList;
 }

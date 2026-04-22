@@ -12,15 +12,15 @@ public partial class PageNumberType : ModelElement<DXW.PageNumberType>, ISection
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PageNumberType.Format))]
  public NumberFormat? Format { get => _Format; set => UpdateField(ref _Format, value, nameof(Format)); }
-
  private NumberFormat? _Format;
+
  /// <summary>
  /// Starting page number for the section.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PageNumberType.Start))]
  public Int32? Start { get => _Start; set => UpdateField(ref _Start, value, nameof(Start)); }
-
  private Int32? _Start;
+
  /// <summary>
  /// Specifies the one-based index of the heading style applied to chapter titles in the
  /// document which shall be used as chapter headings in all page numbers for this section,
@@ -42,13 +42,12 @@ public partial class PageNumberType : ModelElement<DXW.PageNumberType>, ISection
  /// </remarks>
  [OpenXmlProperty(nameof(DXW.PageNumberType.ChapterStyle))]
  public Byte? ChapterStyle { get => _ChapterStyle; set => UpdateField(ref _ChapterStyle, value, nameof(ChapterStyle)); }
-
  private Byte? _ChapterStyle;
+
  /// <summary>
  /// Chapter separator character, specifying the character used to separate chapter numbers from page numbers.
  /// </summary>
  [OpenXmlProperty(nameof(DXW.PageNumberType.ChapterSeparator))]
  public ChapterSeparator? ChapterSeparator { get => _ChapterSeparator; set => UpdateField(ref _ChapterSeparator, value, nameof(ChapterSeparator)); }
-
  private ChapterSeparator? _ChapterSeparator;
 }

@@ -1,4 +1,4 @@
-﻿namespace DocumentModel.Drawings;
+namespace DocumentModel.Drawings;
 public partial class PresetColor : IColor
 {
  /// <summary>
@@ -40,8 +40,8 @@ public partial class PresetColor : IColor
     throw new ArgumentException($"The provided RGB value '{((uint)value):X6}' does not correspond to any known preset color.");
   }
  }
-
  private Dictionary<UInt32, PresetColors>? _presetColorLookup = null!;
+
  /// <summary>
  /// Red component of the color as percentage value.
  /// The value is between 0 and 1, where 0 represents no red and 1 represents full red (255 in RGB).

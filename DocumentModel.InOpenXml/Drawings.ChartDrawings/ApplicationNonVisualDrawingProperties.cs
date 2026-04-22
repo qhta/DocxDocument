@@ -19,13 +19,12 @@ public class ApplicationNonVisualDrawingProperties : ModelElement<DXO10DCD.Appli
  /// </summary>
  [OpenXmlProperty(nameof(DXO10DCD.ApplicationNonVisualDrawingProperties.Macro))]
  public string? Macro { get => _Macro; set => UpdateField(ref _Macro, value, nameof(Macro)); }
-
  private string? _Macro;
+
  /// <summary>
  /// Specifies the published.
  /// </summary>
  [OpenXmlProperty(nameof(DXO10DCD.ApplicationNonVisualDrawingProperties.Published))]
  public bool? Published { get => _Published; set => UpdateField(ref _Published, value, nameof(Published)); }
-
  private bool? _Published;
 }

@@ -11,6 +11,5 @@ public partial class FlatText : ModelElement<DXD.FlatText>
  /// </summary>
  [OpenXmlProperty(nameof(DXD.FlatText.Z))]
  public Int64? Z { get => _Z; set => UpdateField(ref _Z, value, nameof(Z)); }
-
  private Int64? _Z;
 }

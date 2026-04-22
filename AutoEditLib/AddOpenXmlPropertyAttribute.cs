@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 
 using Qhta.Collections;
 
@@ -25,6 +26,7 @@ public static class AddOpenXmlPropertyAttribute
   /// <param name="filePath">Absolute or relative path to the C# file to update.</param>
   public static void Run(string filePath)
   {
+    Debug.WriteLine($"AddOpenXmlPropertyAttribute({filePath})");
     var code = File.ReadAllText(filePath);
     var tree = CSharpSyntaxTree.ParseText(code);
     var root = tree.GetCompilationUnitRoot();

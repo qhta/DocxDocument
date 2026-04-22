@@ -12,6 +12,5 @@ public partial class ContentPart : ModelElement<DXW.ContentPart>, IRunContent, D
  /// </summary>
  [OpenXmlProperty(nameof(DXW.ContentPart.Id))]
  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
-
  private string? _Id;
 }

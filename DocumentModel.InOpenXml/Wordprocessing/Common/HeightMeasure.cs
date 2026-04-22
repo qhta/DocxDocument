@@ -39,7 +39,6 @@ public sealed partial class HeightMeasure : UniversalMeasure, IComparable<Height
  [JsonIgnore]
  [NotMapped]
  public HeightMeasureType Type { get => _type; set => _type = value; }
-
  private HeightMeasureType _type;
 #region Constructors
  /// <summary>

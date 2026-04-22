@@ -11,6 +11,5 @@ public partial class MajorGridlines : ModelElement<DXDC.MajorGridlines>
  /// </summary>
  [OpenXmlElement(typeof(DXDC.ChartShapeProperties))]
  public ChartShapeProperties? ChartShapeProperties { get => _ChartShapeProperties; set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties)); }
-
  private ChartShapeProperties? _ChartShapeProperties;
 }

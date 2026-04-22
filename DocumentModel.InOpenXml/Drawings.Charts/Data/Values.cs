@@ -12,13 +12,12 @@ public partial class Values : ModelElement<DXDC.Values>
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.Values.NumberReference))]
  public NumberReference? NumberReference { get => _NumberReference; set => UpdateField(ref _NumberReference, value, nameof(NumberReference)); }
-
  private NumberReference? _NumberReference;
+
  /// <summary>
  ///   Literal numeric values provided directly.
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.Values.NumberLiteral))]
  public NumberLiteral? NumberLiteral { get => _NumberLiteral; set => UpdateField(ref _NumberLiteral, value, nameof(NumberLiteral)); }
-
  private NumberLiteral? _NumberLiteral;
 }

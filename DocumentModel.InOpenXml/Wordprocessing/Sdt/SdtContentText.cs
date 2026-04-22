@@ -12,6 +12,5 @@ public partial class SdtContentText : ModelElement<DXW.SdtContentText>
  /// </summary>
  [OpenXmlProperty(nameof(DXW.SdtContentText.MultiLine))]
  public bool? MultiLine { get => _MultiLine; set => UpdateField(ref _MultiLine, value, nameof(MultiLine)); }
-
  private bool? _MultiLine;
 }

@@ -11,7 +11,6 @@ public partial class ChartLinesType<T> : ModelElement<T> where T : DXDC.ChartLin
  /// </summary>
  [OpenXmlProperty(nameof(DXDC.ChartLinesType.ChartShapeProperties))]
  public ChartShapeProperties? ChartShapeProperties { get => _ChartShapeProperties; set => UpdateField(ref _ChartShapeProperties, value, nameof(ChartShapeProperties)); }
-
  private ChartShapeProperties? _ChartShapeProperties;
 }
 
