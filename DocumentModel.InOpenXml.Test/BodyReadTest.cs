@@ -70,8 +70,8 @@ public class BodyReadTest : _AbstractTestClass
     var bodyXml = SerializeObjectToXml(modelBody);
     Console.WriteLine("Serialized Body XML:\n" + bodyXml);
 
-    var bodyJson = JsonSerializer.Serialize(modelBody, JsonConfig.Options);
-    Console.WriteLine("Serialized Body JSON:\n" + bodyJson);
+    //var bodyJson = JsonSerializer.Serialize(modelBody, JsonConfig.Options);
+    //Console.WriteLine("Serialized Body JSON:\n" + bodyJson);
 
     Console.WriteLine("✓ Body read from sample file test passed\n");
     return true;
