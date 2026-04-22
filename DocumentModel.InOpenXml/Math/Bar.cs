@@ -14,8 +14,10 @@ public partial class Bar : ModelElement<DXM.Bar>, ICommonMathContent
  private BarProperties? _BarProperties;
 
  /// <summary>
- ///   Specifies argument of bar function.
+ ///   Specifies the argument of bar function.
  /// </summary>
- public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
- private Argument? _Argument;
+ [OpenXmlProperty(nameof(DXM.Bar.Base))]
+ public Base? Base { get => _Base; set => UpdateField(ref _Base, value, nameof(Base)); }
+ private Base? _Base;
+
 }

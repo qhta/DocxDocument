@@ -4,16 +4,8 @@ namespace DocumentModel.Math;
 ///   of a mathematical object or function, the elements in an array, and the elements in boxes. 
 ///   If all subelements are omitted, this element specifies the presence of an empty argument. 
 /// </summary>
-[OpenXmlType(typeof(IMathArgumentContent))]
-[XmlRoot("Argument", Namespace = "DocumentModel.Math")]
-public partial class Argument : ElementCollection<IMathArgumentContent>
+[OpenXmlType(typeof(DXM.Argument))]
+public abstract partial class Argument<T> : OfficeMathArgumentType<T> where T : DX.OpenXmlElement
 {
- /// <summary>
- /// Specifies properties of the base argument.
- /// </summary>
- public ArgumentProperties? ArgumentProperties { get; set; }
- /// <summary>
- /// Specifies formatting of base argument.
- /// </summary>
- public ControlProperties? ControlProperties { get; set; }
+
 }

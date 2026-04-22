@@ -29,8 +29,9 @@ public partial class Nary : ModelElement<DXM.Nary>, ICommonMathContent
  private SuperArgument? _SuperArgument;
 
  /// <summary>
- ///   Base argument.
+ ///   Specifies the argument of N-ary function.
  /// </summary>
- public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
- private Argument? _Argument;
+ [OpenXmlProperty(nameof(DXM.Nary.Base))]
+ public Base? Base { get => _Base; set => UpdateField(ref _Base, value, nameof(Base)); }
+ private Base? _Base;
 }

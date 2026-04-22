@@ -22,8 +22,9 @@ public partial class Function : ModelElement<DXM.MathFunction>, ICommonMathConte
  private FunctionName? _FunctionName;
 
  /// <summary>
- ///   Base (Argument).
+ ///   Specifies the argument of math function.
  /// </summary>
- public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
- private Argument? _Argument;
+ [OpenXmlProperty(nameof(DXM.MathFunction.Base))]
+ public Base? Base { get => _Base; set => UpdateField(ref _Base, value, nameof(Base)); }
+ private Base? _Base;
 }

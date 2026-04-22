@@ -15,8 +15,9 @@ public partial class GroupChar : ModelElement<DXM.GroupChar>, ICommonMathContent
  private GroupCharProperties? _GroupCharProperties;
 
  /// <summary>
- ///   Arugment of the group-character object.
+ ///   Specifies the argument of group char.
  /// </summary>
- public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
- private Argument? _Argument;
+ [OpenXmlProperty(nameof(DXM.GroupChar.Base))]
+ public Base? Base { get => _Base; set => UpdateField(ref _Base, value, nameof(Base)); }
+ private Base? _Base;
 }

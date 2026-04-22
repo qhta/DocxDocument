@@ -159,20 +159,50 @@ public class _AbstractTestClass
   public static string SerializeObjectToXml(object data)
   {
     var rootType = data.GetType();
+    var overrides = new XmlAttributeOverrides();
+    var modelTypes = typeof(DMW.Document).Assembly.GetTypes()
+      .Where(t => typeof(DM.ModelElement).IsAssignableFrom(t) && !t.IsAbstract);
+
+    foreach (var t in modelTypes)
+    {
+      var b = t.BaseType;
+      while (b != null)
+      {
+        if (b.IsGenericType && b.GetGenericTypeDefinition() == typeof(DM.ModelElement<>))
+        {
+          var arg = b.GetGenericArguments()[0];
+          if (string.IsNullOrEmpty(arg.Namespace))
+            continue;
+          var unique = $"ModelElementOf_{arg.Namespace!.Replace('.', '_')}_{arg.Name}";
+          try
+          {
+
+            overrides.Add(b, new XmlAttributes { XmlType = new XmlTypeAttribute(unique) });
+          }
+          catch (Exception ex)
+          {
+            //Debug.WriteLine(ex);
+          }
+          break;
+        }
+        b = b.BaseType;
+      }
+    }
 
     var ns = new XmlSerializerNamespaces();
     ns.Add("xsi", "http://www.w3.org/2001/XMLSchema-instance");
     ns.Add("d", "DocumentModel.Drawings");
     ns.Add("wd", "DocumentModel.Wordprocessing.Drawings");
-    ns.Add("dW", "DocumentModel.Drawings.Wordprocessing");
+    ns.Add("dw", "DocumentModel.Drawings.Wordprocessing");
+    ns.Add("m", "DocumentModel.Math");
 
-    Type[] knownTypes = typeof(DMW.Document).Assembly.GetTypes().Where
-      (t => 
-        t.IsAssignableTo(typeof(DM.ModelElement)) && t.IsPublic && !t.IsAbstract && !t.IsGenericType 
-        && t.GetCustomAttribute<SpecificClassAttribute>() != null
-        ).ToArray();
+    //Type[] knownTypes = typeof(DMW.Document).Assembly.GetTypes().Where
+    //  (t => 
+    //    t.IsAssignableTo(typeof(DM.ModelElement)) && t.IsPublic && !t.IsAbstract && !t.IsGenericType 
+    //    && t.GetCustomAttribute<SpecificClassAttribute>() != null
+    //    ).ToArray();
 
-    var xmlSerializer = new XmlSerializer(rootType, knownTypes);
+    var xmlSerializer = new XmlSerializer(rootType, overrides);
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
     {

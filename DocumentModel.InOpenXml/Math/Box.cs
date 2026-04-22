@@ -17,8 +17,9 @@ public partial class Box : ModelElement<DXM.Box>, ICommonMathContent
  private BoxProperties? _BoxProperties;
 
  /// <summary>
- ///   Specifies argument of box object.
+ ///   Specifies the argument of box function.
  /// </summary>
- public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
- private Argument? _Argument;
+ [OpenXmlProperty(nameof(DXM.Box.Base))]
+ public Base? Base { get => _Base; set => UpdateField(ref _Base, value, nameof(Base)); }
+ private Base? _Base;
 }

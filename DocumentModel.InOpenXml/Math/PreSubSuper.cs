@@ -27,10 +27,12 @@ public partial class PreSubSuper : ModelElement<DXM.PreSubSuper>, ICommonMathCon
  public SuperArgument? SuperArgument { get => _SuperArgument; set => UpdateField(ref _SuperArgument, value, nameof(SuperArgument)); }
  private SuperArgument? _SuperArgument;
 
+
  /// <summary>
- ///   Base argument.
+ ///   Specifies the argument of pre-sb-super function.
  /// </summary>
  [OpenXmlProperty(nameof(DXM.PreSubSuper.Base))]
- public Argument? Base { get => _Base; set => UpdateField(ref _Base, value, nameof(Base)); }
- private Argument? _Base;
+ public Base? Base { get => _Base; set => UpdateField(ref _Base, value, nameof(Base)); }
+ private Base? _Base;
+
 }

@@ -13,16 +13,18 @@ public partial class Subscript : ModelElement<DXM.Subscript>, ICommonMathContent
  public SubscriptProperties? SubscriptProperties { get => _SubscriptProperties; set => UpdateField(ref _SubscriptProperties, value, nameof(SubscriptProperties)); }
  private SubscriptProperties? _SubscriptProperties;
 
- /// <summary>
- ///   Subscript base argument.
- /// </summary>
- public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
- private Argument? _Argument;
 
  /// <summary>
- ///   Subscript (Subscript function).
+ ///   Specifies the argument of subscript function.
  /// </summary>
- [OpenXmlProperty(nameof(DXM.Subscript.SubArgument))]
+ [OpenXmlProperty(nameof(DXM.Subscript.Base))]
+ public Base? Base { get => _Base; set => UpdateField(ref _Base, value, nameof(Base)); }
+ private Base? _Base;
+
+  /// <summary>
+  ///   Subscript (Subscript function).
+  /// </summary>
+  [OpenXmlProperty(nameof(DXM.Subscript.SubArgument))]
  public SubArgument? SubArgument { get => _SubArgument; set => UpdateField(ref _SubArgument, value, nameof(SubArgument)); }
  private SubArgument? _SubArgument;
 }

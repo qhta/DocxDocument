@@ -14,15 +14,16 @@ public partial class LimitUpper : ModelElement<DXM.LimitUpper>, ICommonMathConte
  private LimitUpperProperties? _LimitUpperProperties;
 
  /// <summary>
- ///   Argument.
+ ///   Specifies the argument of limit-upper function.
  /// </summary>
- public Argument? Argument { get => _Argument; set => UpdateField(ref _Argument, value, nameof(Argument)); }
- private Argument? _Argument;
+ [OpenXmlProperty(nameof(DXM.LimitUpper.Base))]
+ public Base? Base { get => _Base; set => UpdateField(ref _Base, value, nameof(Base)); }
+ private Base? _Base;
 
- /// <summary>
- ///   Limit (Upper).
- /// </summary>
- [OpenXmlProperty(nameof(DXM.LimitUpper.Limit))]
+  /// <summary>
+  ///   Limit (Upper).
+  /// </summary>
+  [OpenXmlProperty(nameof(DXM.LimitUpper.Limit))]
  public Limit? Limit { get => _Limit; set => UpdateField(ref _Limit, value, nameof(Limit)); }
  private Limit? _Limit;
 }

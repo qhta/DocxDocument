@@ -13,17 +13,18 @@ public partial class SubSuperscript : ModelElement<DXM.SubSuperscript>, ICommonM
  public SubSuperscriptProperties? SubSuperscriptProperties { get => _SubSuperscriptProperties; set => UpdateField(ref _SubSuperscriptProperties, value, nameof(SubSuperscriptProperties)); }
  private SubSuperscriptProperties? _SubSuperscriptProperties;
 
- /// <summary>
- ///   Base argument.
- /// </summary>
- [OpenXmlProperty(nameof(DXM.SubSuperscript.Base))]
- public Argument? Base { get => _Base; set => UpdateField(ref _Base, value, nameof(Base)); }
- private Argument? _Base;
 
  /// <summary>
- ///   Subscript (Sub-Superscript).
+ ///   Specifies the argument of sub-superscript function.
  /// </summary>
- [OpenXmlProperty(nameof(DXM.SubSuperscript.SubArgument))]
+ [OpenXmlProperty(nameof(DXM.SubSuperscript.Base))]
+ public Base? Base { get => _Base; set => UpdateField(ref _Base, value, nameof(Base)); }
+ private Base? _Base;
+
+  /// <summary>
+  ///   Subscript (Sub-Superscript).
+  /// </summary>
+  [OpenXmlProperty(nameof(DXM.SubSuperscript.SubArgument))]
  public SubArgument? SubArgument { get => _SubArgument; set => UpdateField(ref _SubArgument, value, nameof(SubArgument)); }
  private SubArgument? _SubArgument;
 
