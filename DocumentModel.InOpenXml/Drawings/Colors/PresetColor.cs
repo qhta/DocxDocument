@@ -11,16 +11,6 @@ public partial class PresetColor : AbstractColor<DXD.PresetColor>, ISchemeBaseCo
 {
 
   /// <summary>
-  /// Default constructor.
-  /// </summary>
-  public PresetColor() : base() { }
-
-  /// <summary>
-  /// Constructor that assigns the parent object of this instance.
-  /// </summary>
-  public PresetColor(object parent) : base(parent) { }
-
-  /// <summary>
   /// Gets or sets the preset color name that defines the base color.
   /// </summary>
   /// <remarks>

@@ -10,16 +10,6 @@ public partial class SystemColor : AbstractColor<DXD.SystemColor>, ISchemeBaseCo
 {
 
   /// <summary>
-  /// Default constructor.
-  /// </summary>
-  public SystemColor() : base() { }
-
-  /// <summary>
-  /// Constructor that assigns the parent object of this instance.
-  /// </summary>
-  public SystemColor(object parent) : base(parent) { }
-
-  /// <summary>
   /// Gets or sets the system color identifier that references a specific OS-defined color.
   /// </summary>
   [OpenXmlProperty(nameof(DXD.SystemColor.Val))]

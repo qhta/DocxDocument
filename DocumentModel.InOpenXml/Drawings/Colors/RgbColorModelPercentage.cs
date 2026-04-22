@@ -9,15 +9,6 @@ namespace DocumentModel.Drawings;
 [XmlRoot("RgbColorModelPercentage", Namespace = "DocumentModel.Drawings")]
 public partial class RgbColorModelPercentage : AbstractColor<DXD.RgbColorModelPercentage>, ISchemeBaseColor, IDrawingColor
 {
-  /// <summary>
-  /// Default constructor.
-  /// </summary>
-  public RgbColorModelPercentage() : base() { }
-
-  /// <summary>
-  /// Constructor that assigns the parent object of this instance.
-  /// </summary>
-  public RgbColorModelPercentage(object parent) : base(parent) { }
 
   /// <summary>
   /// Red component as a percentage value.

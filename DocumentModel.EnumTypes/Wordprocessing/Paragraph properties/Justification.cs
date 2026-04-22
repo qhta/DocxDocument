@@ -12,8 +12,7 @@ public enum Justification
   /// Align left.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXM.JustificationValues.Left))]
-  [Obsolete]
-  Left,
+  Left = 0,
 
   /// <summary>
   /// Align start (logical start of the text direction).
@@ -30,7 +29,6 @@ public enum Justification
   /// Align right.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXM.JustificationValues.Right))]
-  [Obsolete]
   Right,
 
   /// <summary>

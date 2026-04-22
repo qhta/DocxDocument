@@ -11,16 +11,6 @@ public partial class RgbColorModelHex : AbstractColor<DXD.RgbColorModelHex>, ISc
 {
 
   /// <summary>
-  /// Default constructor.
-  /// </summary>
-  public RgbColorModelHex() : base() { }
-
-  /// <summary>
-  /// Constructor that assigns the parent object of this instance.
-  /// </summary>
-  public RgbColorModelHex(object parent) : base(parent) { }
-
-  /// <summary>
   /// Base RGB color value in hexadecimal format.
   /// </summary>
   /// <remarks>

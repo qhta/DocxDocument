@@ -7,113 +7,113 @@ namespace DocumentModel;
 [XmlRoot("ModelElement", Namespace = "DocumentModel")]
 public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordprocessingDocumentAware, IUpdatable where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with PackageProperties
 {
- /// <summary>
- /// Represents the underlying Open XML element associated with this instance, or null if no element is present.
- /// </summary>
- /// <remarks>This field is intended for use by derived classes to access or manipulate the Open XML element
- /// that backs the current object. The value may be null if the instance has not been initialized with an Open XML
- /// element.</remarks>
- protected OpenXmlType? _openXmlElement { get; private set; }
+  /// <summary>
+  /// Represents the underlying Open XML element associated with this instance, or null if no element is present.
+  /// </summary>
+  /// <remarks>This field is intended for use by derived classes to access or manipulate the Open XML element
+  /// that backs the current object. The value may be null if the instance has not been initialized with an Open XML
+  /// element.</remarks>
+  protected OpenXmlType? _openXmlElement { get; private set; }
 
- /// <summary>
- ///   The WordprocessingDocument instance to which this model element is attached, or null if not attached.
- ///   This property resolves the document context by checking the current element, its collection, or its parent.
- /// </summary>
- [XmlIgnore]
- [JsonIgnore]
- [NotMapped]
- public DXPP.WordprocessingDocument? WordprocessingDocument
- {
-  //[DebuggerStepThrough]
-  get
+  /// <summary>
+  ///   The WordprocessingDocument instance to which this model element is attached, or null if not attached.
+  ///   This property resolves the document context by checking the current element, its collection, or its parent.
+  /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public DXPP.WordprocessingDocument? WordprocessingDocument
   {
-   if (_WordprocessingDocument != null)
-    return _WordprocessingDocument;
-   if (Collection is IWordprocessingDocumentAware collectionAware)
-    return collectionAware.WordprocessingDocument;
-   if (Parent is IWordprocessingDocumentAware parentAware)
-    return parentAware.WordprocessingDocument;
-   return null;
+    //[DebuggerStepThrough]
+    get
+    {
+      if (_WordprocessingDocument != null)
+        return _WordprocessingDocument;
+      if (Collection is IWordprocessingDocumentAware collectionAware)
+        return collectionAware.WordprocessingDocument;
+      if (Parent is IWordprocessingDocumentAware parentAware)
+        return parentAware.WordprocessingDocument;
+      return null;
+    }
+
+    [DebuggerStepThrough]
+    private set => _WordprocessingDocument = value;
   }
 
-  [DebuggerStepThrough]
-  private set => _WordprocessingDocument = value;
- }
+  private DXPP.WordprocessingDocument? _WordprocessingDocument;
+  /// <summary>
+  ///   Initializes a new instance of the <see cref = "ModelElement{Format}"/> class.
+  /// </summary>
+  protected ModelElement()
+  {
+  }
 
- private DXPP.WordprocessingDocument? _WordprocessingDocument;
- /// <summary>
- ///   Initializes a new instance of the <see cref = "ModelElement{Format}"/> class.
- /// </summary>
- protected ModelElement()
- {
- }
+  /// <summary>
+  /// Initializes a new instance of the ModelElement class and associates it with the specified collection.
+  /// </summary>
+  /// <param name = "collection">The collection to which this model element will belong. This parameter determines the context in which the element
+  /// is managed.</param>
+  protected ModelElement(object collection) : base(collection)
+  {
+  }
 
- /// <summary>
- /// Initializes a new instance of the ModelElement class and associates it with the specified collection.
- /// </summary>
- /// <param name = "collection">The collection to which this model element will belong. This parameter determines the context in which the element
- /// is managed.</param>
- protected ModelElement(object collection) : base(collection)
- {
- }
+  /// <summary>
+  ///   Attaches this model element to the specified WordprocessingDocument and loads data from the document's package properties or OpenXml part.
+  /// </summary>
+  /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to and load data from.</param>
+  public virtual void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
+  {
+    WordprocessingDocument = wordprocessingDocument;
+  }
 
- /// <summary>
- ///   Attaches this model element to the specified WordprocessingDocument and loads data from the document's package properties or OpenXml part.
- /// </summary>
- /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to and load data from.</param>
- public virtual void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
- {
-  WordprocessingDocument = wordprocessingDocument;
- }
+  /// <summary>
+  ///   Attaches this model element to the specified WordprocessingDocument and updates the document's package properties or OpenXml part with current data.
+  /// </summary>
+  /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to and update.</param>
+  public virtual void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
+  {
+    WordprocessingDocument = wordprocessingDocument;
+  }
 
- /// <summary>
- ///   Attaches this model element to the specified WordprocessingDocument and updates the document's package properties or OpenXml part with current data.
- /// </summary>
- /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to and update.</param>
- public virtual void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
- {
-  WordprocessingDocument = wordprocessingDocument;
- }
+  /// <summary>
+  ///   Detaches this model element from the attached document, clearing the underlying OpenXml element reference.
+  ///   After detaching, further access to OpenXml properties is not possible until re-attached.
+  /// </summary>
+  public virtual void Detach()
+  {
+    WordprocessingDocument = null;
+    SetUpdatableElement(null);
+  }
 
- /// <summary>
- ///   Detaches this model element from the attached document, clearing the underlying OpenXml element reference.
- ///   After detaching, further access to OpenXml properties is not possible until re-attached.
- /// </summary>
- public virtual void Detach()
- {
-  WordprocessingDocument = null;
-  SetUpdatableElement(null);
- }
+  /// <summary>
+  ///   Initializes a new instance of the <see cref = "ModelElement{Format}"/> class with the specified OpenXml element.
+  /// </summary>
+  /// <param name = "openXmlElement">The OpenXml element to wrap and synchronize with.</param>
+  protected ModelElement(OpenXmlType? openXmlElement)
+  {
+    _openXmlElement = openXmlElement;
+  }
 
- /// <summary>
- ///   Initializes a new instance of the <see cref = "ModelElement{Format}"/> class with the specified OpenXml element.
- /// </summary>
- /// <param name = "openXmlElement">The OpenXml element to wrap and synchronize with.</param>
- protected ModelElement(OpenXmlType? openXmlElement)
- {
-  _openXmlElement = openXmlElement;
- }
+  /// <summary>
+  ///   Assigns the wrapped OpenXml element instance.
+  /// </summary>
+  /// <param name = "element">The OpenXml element to assign.</param>
+  public virtual void SetUpdatableElement(object? element)
+  {
+    if (element == null)
+      _openXmlElement = null;
+    else if (element is OpenXmlType openXmlElement)
+      _openXmlElement = openXmlElement;
+    else
+      throw new ArgumentException($"Expected an element of type {typeof(OpenXmlType).FullName}, but received {element.GetType().FullName}.");
+  }
 
- /// <summary>
- ///   Assigns the wrapped OpenXml element instance.
- /// </summary>
- /// <param name = "element">The OpenXml element to assign.</param>
- public virtual void SetUpdatableElement(object? element)
- {
-  if (element == null)
-   _openXmlElement = null;
-  else if (element is OpenXmlType openXmlElement)
-   _openXmlElement = openXmlElement;
-  else
-   throw new ArgumentException($"Expected an element of type {typeof(OpenXmlType).FullName}, but received {element.GetType().FullName}.");
- }
-
- /// <summary>
- ///   Returns the OpenXml element instance for update operations, or null if not set.
- /// </summary>
- /// <returns>The OpenXml element instance, or null if not set.</returns>
- public override object? GetUpdatableElement()
- {
-  return _openXmlElement;
- }
+  /// <summary>
+  ///   Returns the OpenXml element instance for update operations, or null if not set.
+  /// </summary>
+  /// <returns>The OpenXml element instance, or null if not set.</returns>
+  public override object? GetUpdatableElement()
+  {
+    return _openXmlElement;
+  }
 }

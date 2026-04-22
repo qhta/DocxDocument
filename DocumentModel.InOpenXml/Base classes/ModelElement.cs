@@ -20,7 +20,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   }
 
   /// <summary>
-  /// Initializes a new instance of the ModelElement class with the specified collection.
+  /// Initializes a new instance of the ModelElement class within the specified collection.
   /// </summary>
   /// <param name = "collection">The collection object that contains or manages this model element. This parameter cannot be null.</param>
   protected ModelElement(Object collection) : this()

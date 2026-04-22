@@ -6,18 +6,7 @@ namespace DocumentModel.Drawings;
 [XmlRoot("HslColor", Namespace = "DocumentModel.Drawings")]
 public partial class HslColor : AbstractColor<DXD.HslColor>, ISchemeBaseColor, IDrawingColor
 {
-
-  /// <summary>
-  /// Default constructor.
-  /// </summary>
-  public HslColor() : base() { }
-
-  /// <summary>
-  /// Constructor that assigns the parent object of this instance.
-  /// </summary>
-  public HslColor(object parent) : base(parent) { }
-
-
+  
   /// <summary>
   /// Base hue value.
   /// </summary>

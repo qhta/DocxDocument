@@ -11,16 +11,6 @@ public partial class SchemeColor : AbstractColor<DXD.SchemeColor>, IDrawingColor
 {
 
   /// <summary>
-  /// Default constructor.
-  /// </summary>
-  public SchemeColor() : base() { }
-
-  /// <summary>
-  /// Constructor that assigns the parent object of this instance.
-  /// </summary>
-  public SchemeColor(object parent) : base(parent) { }
-
-  /// <summary>
   /// Gets or sets the scheme color identifier that references a specific color role in the document theme.
   /// </summary>
   [OpenXmlProperty(nameof(DXD.SchemeColor.Val))]
