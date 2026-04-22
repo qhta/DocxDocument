@@ -50,7 +50,7 @@ public class BodyReadTest : _AbstractTestClass
     modelBody.LoadData(openXmlBody);
 
     var openXmlCount = openXmlBody.ChildElements.Count;
-    var modelCount = modelBody.Count;
+    var modelCount = modelBody.Items.Count;
 
     Console.WriteLine($"OpenXml body elements count: {openXmlCount}");
     Console.WriteLine($"Model body elements count: {modelCount}");
@@ -96,7 +96,7 @@ public class BodyReadTest : _AbstractTestClass
     var modelBody = new DocumentModel.Wordprocessing.Body();
     modelBody.LoadData(openXmlBody);
 
-    var createdElements = modelBody.Cast<ModelElement>().Take(10).ToList();
+    var createdElements = modelBody.Items.Cast<ModelElement>().Take(10).ToList();
     if (createdElements.Count == 0)
     {
       Console.WriteLine("✗ No DocumentModel elements created from body");

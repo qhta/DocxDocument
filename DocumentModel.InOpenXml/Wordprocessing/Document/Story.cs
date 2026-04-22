@@ -6,7 +6,9 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [OpenXmlType(typeof(CommonContent<IStoryContent>))]
 [XmlRoot("Story", Namespace = "DocumentModel.Wordprocessing")]
-public partial class Story<OpenXmlCollectionType>: ModelElementCollection<ModelElement, OpenXmlCollectionType>
+[OpenXmlLoadData(nameof(LoadDataCollection))]
+[OpenXmlUpdateData(nameof(UpdateDataCollection))]
+public partial class Story<OpenXmlCollectionType>: ModelElement<OpenXmlCollectionType>
   where OpenXmlCollectionType: DX.OpenXmlCompositeElement
 {
   private readonly Dictionary<Type, Type> _modelElementTypeMapping = new()
@@ -21,7 +23,6 @@ public partial class Story<OpenXmlCollectionType>: ModelElementCollection<ModelE
     { typeof(DXW.CustomXmlInsRangeEnd), typeof(DMW.CustomXmlInsRangeEnd) },
     { typeof(DXW.CustomXmlDelRangeEnd), typeof(DMW.CustomXmlDelRangeEnd) },
     { typeof(DXW.CustomXmlMoveFromRangeEnd), typeof(DMW.CustomXmlMoveFromRangeEnd) }, 
-    { typeof(DXW.CustomXmlMoveFromRangeEnd), typeof(DMW.CustomXmlMoveFromRangeEnd) },
     { typeof(DXW.CustomXmlMoveToRangeEnd), typeof(DMW.CustomXmlMoveToRangeEnd) },
     { typeof(DXO10W.CustomXmlConflictInsertionRangeEnd), typeof(DMW.CustomXmlConflictInsertionRangeEnd) },
     { typeof(DXO10W.CustomXmlConflictDeletionRangeEnd), typeof(DMW.CustomXmlConflictDeletionRangeEnd) },
@@ -41,7 +42,6 @@ public partial class Story<OpenXmlCollectionType>: ModelElementCollection<ModelE
     { typeof(DXW.MoveToRun), typeof(DMW.MoveToRun) },
     { typeof(DXO10W.RunConflictInsertion), typeof(DMW.RunConflictInsertion) },
     { typeof(DXO10W.RunConflictDeletion), typeof(DMW.RunConflictDeletion) },
-    { typeof(DXW.SdtBlock), typeof(DMW.SdtBlock) },
     { typeof(DXW.SectionProperties), typeof(DMW.SectionProperties) },
     { typeof(DXW.CustomXmlInsRangeStart), typeof(DMW.CustomXmlInsRangeStart) },
     { typeof(DXW.CustomXmlDelRangeStart), typeof(DMW.CustomXmlDelRangeStart) },
@@ -52,12 +52,56 @@ public partial class Story<OpenXmlCollectionType>: ModelElementCollection<ModelE
   };
 
   /// <summary>
+  /// Collection of items.
+  /// </summary>
+  [XmlArray("Items")]
+  [XmlArrayItem("Paragraph", typeof(Paragraph))]
+  [XmlArrayItem("Table", typeof(Table))]
+  [XmlArrayItem("AltChunk", typeof(AltChunk))]
+  [XmlArrayItem("SdtBlock", typeof(SdtBlock))]
+  [XmlArrayItem("BookmarkStart", typeof(BookmarkStart))]
+  [XmlArrayItem("ContentPart", typeof(ContentPart))]
+  [XmlArrayItem("CustomXmlBlock", typeof(CustomXmlBlock))]
+  [XmlArrayItem("CustomXmlInsRangeEnd", typeof(CustomXmlInsRangeEnd))]
+  [XmlArrayItem("CustomXmlDelRangeEnd", typeof(CustomXmlDelRangeEnd))]
+  [XmlArrayItem("CustomXmlMoveFromRangeEnd", typeof(CustomXmlMoveFromRangeEnd))]
+  [XmlArrayItem("CustomXmlMoveToRangeEnd", typeof(CustomXmlMoveToRangeEnd))]
+  [XmlArrayItem("CustomXmlConflictInsertionRangeEnd", typeof(CustomXmlConflictInsertionRangeEnd))]
+  [XmlArrayItem("CustomXmlConflictDeletionRangeEnd", typeof(CustomXmlConflictDeletionRangeEnd))]
+  [XmlArrayItem("BookmarkEnd", typeof(BookmarkEnd))]
+  [XmlArrayItem("CommentRangeStart", typeof(CommentRangeStart))]
+  [XmlArrayItem("CommentRangeEnd", typeof(CommentRangeEnd))]
+  [XmlArrayItem("MoveFromRangeEnd", typeof(MoveFromRangeEnd))]
+  [XmlArrayItem("MoveToRangeEnd", typeof(MoveToRangeEnd))]
+  [XmlArrayItem("MoveFromRangeStart", typeof(MoveFromRangeStart))]
+  [XmlArrayItem("MoveToRangeStart", typeof(MoveToRangeStart))]
+  [XmlArrayItem("PermEnd", typeof(PermEnd))]
+  [XmlArrayItem("PermStart", typeof(PermStart))]
+  [XmlArrayItem("ProofError", typeof(ProofError))]
+  [XmlArrayItem("InsertedRun", typeof(InsertedRun))]
+  [XmlArrayItem("DeletedRun", typeof(DeletedRun))]
+  [XmlArrayItem("MoveFromRun", typeof(MoveFromRun))]
+  [XmlArrayItem("MoveToRun", typeof(MoveToRun))]
+  [XmlArrayItem("RunConflictInsertion", typeof(RunConflictInsertion))]
+  [XmlArrayItem("RunConflictDeletion", typeof(RunConflictDeletion))]
+  [XmlArrayItem("SectionProperties", typeof(SectionProperties))]
+  [XmlArrayItem("CustomXmlInsRangeStart", typeof(CustomXmlInsRangeStart))]
+  [XmlArrayItem("CustomXmlDelRangeStart", typeof(CustomXmlDelRangeStart))]
+  [XmlArrayItem("CustomXmlMoveFromRangeStart", typeof(CustomXmlMoveFromRangeStart))]
+  [XmlArrayItem("CustomXmlMoveToRangeStart", typeof(CustomXmlMoveToRangeStart))]
+  [XmlArrayItem("CustomXmlConflictInsertionRangeStart", typeof(CustomXmlConflictInsertionRangeStart))]
+  [XmlArrayItem("CustomXmlConflictDeletionRangeStart", typeof(CustomXmlConflictDeletionRangeStart))]
+
+  public ObservableCollection<ModelElement> Items { get; set; } = new();
+
+
+  /// <summary>
   /// Loads model elements from the specified Open XML composite element and populates the collection.
   /// </summary>
   /// <param name = "openXmlModeledCollection">The Open XML composite element containing child elements to load.</param>
-  protected override void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection)
+  protected void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection)
   {
-    this.Clear();
+    Items.Clear();
     foreach (var openXmlElement in openXmlModeledCollection.Elements())
     {
       var openXmlElementType = openXmlElement.GetType();
@@ -71,7 +115,7 @@ public partial class Story<OpenXmlCollectionType>: ModelElementCollection<ModelE
       if (constructor != null)
       {
         modelObject = (ModelElement)constructor.Invoke([this]);
-        this.Add(modelObject);
+        Items.Add(modelObject);
         modelObject.LoadData(openXmlElement);
       }
       else
@@ -87,7 +131,7 @@ public partial class Story<OpenXmlCollectionType>: ModelElementCollection<ModelE
           if (constructor != null)
           {
             modelObject = (ModelElement)constructor.Invoke([openXmlElement]);
-            this.Add(modelObject);
+            Items.Add(modelObject);
           }
           else
           {
@@ -97,7 +141,7 @@ public partial class Story<OpenXmlCollectionType>: ModelElementCollection<ModelE
               modelObject = (ModelElement)constructor.Invoke([]);
               Debug.WriteLine(
                 $"Warning: Model element of type {modelElementType.FullName} was created using a parameterless constructor. Consider adding a constructor that accepts the parent collection or the Open XML element for better initialization.");
-              this.Add(modelObject);
+              Items.Add(modelObject);
               modelObject.LoadData(openXmlElement);
             }
             else
@@ -115,7 +159,7 @@ public partial class Story<OpenXmlCollectionType>: ModelElementCollection<ModelE
   /// Updates the Open XML composite element to reflect the current state of the collection.
   /// </summary>
   /// <param name = "openXmlModeledCollection">The Open XML composite element to update.</param>
-  protected override void UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection)
+  protected void UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection)
   {
     SetUpdatableElement(openXmlModeledCollection);
     var children = openXmlModeledCollection.Elements().ToArray();
@@ -123,7 +167,7 @@ public partial class Story<OpenXmlCollectionType>: ModelElementCollection<ModelE
     {
       child.Remove();
     }
-    foreach (var item in this)
+    foreach (var item in Items)
     {
       if (item is IUpdatable updatable)
       {

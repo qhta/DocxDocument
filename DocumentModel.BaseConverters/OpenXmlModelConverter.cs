@@ -492,7 +492,7 @@ public static partial class OpenXmlModelConverter
   /// <param name="openXmlObject">The Open XML object containing the data to be loaded into the model object.</param>
   public static void LoadData(object modelObject, object openXmlObject)
   {
-    if (modelObject.GetType().Name == "LatentStyles") Debug.Assert(true);
+    if (modelObject.GetType().Name == "Body") Debug.Assert(true);
     var modelType = modelObject.GetType();
     var openXmlType = openXmlObject.GetType();
     if (TryLoadUsingTypeLoadDataMethod(modelObject, openXmlObject, openXmlType)) return;
