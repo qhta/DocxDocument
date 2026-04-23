@@ -311,8 +311,6 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// <returns>true if the object should be serialized; otherwise, false.</returns>
   public bool ShouldSerialize(object value)
   {
-    //if (value is DMW.HeaderReferences)
-      Debug.WriteLine($"ShouldSerialize called for {value.GetType().Name}");
     if (value is ISerializationEnabling serializationEnabling)
       return serializationEnabling.ShouldSerialize();
     return true;
