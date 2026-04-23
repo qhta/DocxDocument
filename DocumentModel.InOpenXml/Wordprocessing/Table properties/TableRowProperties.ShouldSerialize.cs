@@ -4,9 +4,9 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class TableRowProperties
 {
-  public bool ShouldSerializeInserted() => Inserted is not null;
-  public bool ShouldSerializeDeleted() => Deleted is not null;
-  public bool ShouldSerializeTableRowPropertiesChange() => TableRowPropertiesChange is not null;
-  public bool ShouldSerializeConflictInsertion() => ConflictInsertion is not null;
-  public bool ShouldSerializeConflictDeletion() => ConflictDeletion is not null;
+  public bool ShouldSerializeInserted() => Inserted is not null && ShouldSerialize(Inserted);
+  public bool ShouldSerializeDeleted() => Deleted is not null && ShouldSerialize(Deleted);
+  public bool ShouldSerializeTableRowPropertiesChange() => TableRowPropertiesChange is not null && ShouldSerialize(TableRowPropertiesChange);
+  public bool ShouldSerializeConflictInsertion() => ConflictInsertion is not null && ShouldSerialize(ConflictInsertion);
+  public bool ShouldSerializeConflictDeletion() => ConflictDeletion is not null && ShouldSerialize(ConflictDeletion);
 }

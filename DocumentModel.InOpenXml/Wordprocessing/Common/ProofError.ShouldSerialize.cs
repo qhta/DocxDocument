@@ -4,5 +4,5 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class ProofError
 {
-  public bool ShouldSerializeType() => Type is not null;
+  public bool ShouldSerializeType() => Type is not null && ShouldSerialize(Type);
 }

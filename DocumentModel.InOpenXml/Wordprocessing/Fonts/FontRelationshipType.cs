@@ -5,35 +5,36 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [OpenXmlType(typeof(DXW.FontRelationshipType))]
 [XmlRoot("FontRelationshipType", Namespace = "DocumentModel.Wordprocessing")]
-public class FontRelationshipType : ModelElement<DXW.FontRelationshipType>
+public partial class FontRelationshipType : ModelElement<DXW.FontRelationshipType>
 {
- /// <summary>
- /// Identifier of the relationship, corresponding to the 'r:id' attribute in the Open XML schema.
- /// This property is used to link the relationship to a specific part or resource within the document.
- /// </summary>
- [OpenXmlProperty(nameof(DXW.FontRelationshipType.Id))]
- public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
- private string? _Id;
+  /// <summary>
+  /// Identifier of the relationship, corresponding to the 'r:id' attribute in the Open XML schema.
+  /// This property is used to link the relationship to a specific part or resource within the document.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.FontRelationshipType.Id))]
+  public string? Id { get => _Id; set => UpdateField(ref _Id, value, nameof(Id)); }
 
- /// <summary>
- /// Specifies the key which was used to obfuscate this embedded font. This key can be used
- /// to retrieve the embedded font for the purposes of viewing this WordprocessingML
- ///  document only, using the algorithm described in §17.8.1.    
- /// </summary>
- [OpenXmlProperty(nameof(DXW.FontRelationshipType.FontKey))]
- public Guid? FontKey { get => _FontKey; set => UpdateField(ref _FontKey, value, nameof(FontKey)); }
- private Guid? _FontKey;
+  private string? _Id;
+  /// <summary>
+  /// Specifies the key which was used to obfuscate this embedded font. This key can be used
+  /// to retrieve the embedded font for the purposes of viewing this WordprocessingML
+  ///  document only, using the algorithm described in §17.8.1.    
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.FontRelationshipType.FontKey))]
+  public Guid? FontKey { get => _FontKey; set => UpdateField(ref _FontKey, value, nameof(FontKey)); }
 
- /// <summary>
- /// Specifies that the embedded font targeted by the id attribute has been subsetted.
- /// Subsetting is a mechanism by which only the glyphs used in the contents of this
- /// WordprocessingML document are stored in an embedded font, in order to prevent the
- /// file from becoming unnecessarily large from the use of a small number of glyphs from a
- /// large embedded font.  
- /// </summary>
- [OpenXmlProperty(nameof(DXW.FontRelationshipType.Subsetted))]
- public bool? Subsetted { get => _Subsetted; set => UpdateField(ref _Subsetted, value, nameof(Subsetted)); }
- private bool? _Subsetted;
+  private Guid? _FontKey;
+  /// <summary>
+  /// Specifies that the embedded font targeted by the id attribute has been subsetted.
+  /// Subsetting is a mechanism by which only the glyphs used in the contents of this
+  /// WordprocessingML document are stored in an embedded font, in order to prevent the
+  /// file from becoming unnecessarily large from the use of a small number of glyphs from a
+  /// large embedded font.  
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.FontRelationshipType.Subsetted))]
+  public bool? Subsetted { get => _Subsetted; set => UpdateField(ref _Subsetted, value, nameof(Subsetted)); }
+
+  private bool? _Subsetted;
 ///// <summary>
 ///// Attaches the specified WordprocessingDocument and loads its data into the current instance.
 ///// </summary>

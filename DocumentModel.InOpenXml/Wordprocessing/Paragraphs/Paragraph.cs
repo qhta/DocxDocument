@@ -4,61 +4,77 @@ namespace DocumentModel.Wordprocessing;
 /// This class extends multiple content and collection Interop, providing properties for unique identification, revision tracking, spell checking, and paragraph formatting. Enables advanced management, revision, and formatting of paragraph content within the document.
 /// </summary>
 [XmlRoot("Paragraph", Namespace = "DocumentModel.Wordprocessing")]
+[OpenXmlType(typeof(DXW.Paragraph))]
 [OpenXmlLoadData(nameof(LoadDataCollection))]
 [OpenXmlUpdateData(nameof(UpdateDataCollection))]
 [SpecificClass]
-public partial class Paragraph : ModelElement<DXW.Paragraph>, IStoryContent, ITableCellContent, ISdtBlockContent, ICustomXmlBlockContent, ICommentContent, IBidirectionalContent
+public partial class Paragraph : ModelElement<DXW.Paragraph>, IStoryContent, ITableCellContent, ISdtBlockContent, ICustomXmlBlockContent, ICommentContent, IBidirectionalContent, ILazyLoadable
 {
-  /// <summary>
-  /// Default constructor.
-  /// </summary>
-  public Paragraph() : base() { }
-
-  /// <summary>
-  /// Constructor that initializes the element within an owner collection.
-  /// </summary>
-  /// <param name="collection">The collection to which this element belongs.</param>
-  public Paragraph(object collection) : base(collection) { }
 
   /// <summary>
   /// Identifier for the paragraph, unique within the document part (except across Alternate Content blocks). Values must be greater than 0 and less than 0x80000000.
   /// </summary>
-  public HexInt? ParagraphId { get; set; }
+  [OpenXmlProperty(nameof(DXW.Paragraph.ParagraphId))]
+  public HexInt? ParagraphId { get => _ParagraphId; set => UpdateField(ref _ParagraphId, value, nameof(ParagraphId)); }
+  private HexInt? _ParagraphId;
+
   /// <summary>
   /// Version identifier for the paragraph. Values must be greater than 0 and less than 0x80000000. Requires <see cref = "ParagraphId"/>. Used for text identity across documents with the same docId.
   /// </summary>
-  public HexInt? TextId { get; set; }
-  /// <summary>
-  /// Revision identifier for paragraph glyph formatting.
-  /// </summary>
-  public HexInt? RsidParagraphMarkRevision { get; set; }
+  [OpenXmlProperty(nameof(DXW.Paragraph.TextId))]
+  public HexInt? TextId { get => _TextId; set => UpdateField(ref _TextId, value, nameof(TextId)); }
+  private HexInt? _TextId;
+
   /// <summary>
   /// Revision identifier for paragraph addition.
   /// </summary>
-  public HexInt? RsidParagraphAddition { get; set; }
+  [OpenXmlProperty(nameof(DXW.Paragraph.RsidParagraphAddition))]
+  public HexInt? RsidParagraphAddition { get => _RsidParagraphAddition; set => UpdateField(ref _RsidParagraphAddition, value, nameof(RsidParagraphAddition)); }
+  private HexInt? _RsidParagraphAddition;
+
   /// <summary>
   /// Revision identifier for paragraph deletion.
   /// </summary>
-  public HexInt? RsidParagraphDeletion { get; set; }
+  [OpenXmlProperty(nameof(DXW.Paragraph.RsidParagraphDeletion))]
+  public HexInt? RsidParagraphDeletion { get => _RsidParagraphDeletion; set => UpdateField(ref _RsidParagraphDeletion, value, nameof(RsidParagraphDeletion)); }
+  private HexInt? _RsidParagraphDeletion;
+
   /// <summary>
   /// Revision identifier for paragraph properties.
   /// </summary>
-  public HexInt? RsidParagraphProperties { get; set; }
+  [OpenXmlProperty(nameof(DXW.Paragraph.RsidParagraphProperties))]
+  public HexInt? RsidParagraphProperties { get => _RsidParagraphProperties; set => UpdateField(ref _RsidParagraphProperties, value, nameof(RsidParagraphProperties)); }
+  private HexInt? _RsidParagraphProperties;
+
   /// <summary>
   /// Default revision identifier for runs within the paragraph.
   /// </summary>
-  public HexInt? RsidRunAdditionDefault { get; set; }
+  [OpenXmlProperty(nameof(DXW.Paragraph.RsidRunAdditionDefault))]
+  public HexInt? RsidRunAdditionDefault { get => _RsidRunAdditionDefault; set => UpdateField(ref _RsidRunAdditionDefault, value, nameof(RsidRunAdditionDefault)); }
+  private HexInt? _RsidRunAdditionDefault;
+
+  /// <summary>
+  /// Revision identifier for paragraph glyph formatting.
+  /// </summary>
+  [OpenXmlProperty(nameof(DXW.Paragraph.RsidParagraphMarkRevision))]
+  public HexInt? RsidParagraphMarkRevision { get => _RsidParagraphMarkRevision; set => UpdateField(ref _RsidParagraphMarkRevision, value, nameof(RsidParagraphMarkRevision)); }
+  private HexInt? _RsidParagraphMarkRevision;
+
   /// <summary>
   /// Indicates whether the text of the paragraph is free of detected spelling errors.
   /// </summary>
-  public bool? NoSpellError { get; set; }
+  [OpenXmlProperty(nameof(DXW.Paragraph.NoSpellError))]
+  public bool? NoSpellError { get => _NoSpellError; set => UpdateField(ref _NoSpellError, value, nameof(NoSpellError)); }
+  private bool? _NoSpellError;
+
   /// <summary>
   /// Paragraph properties, specifying formatting and layout options for the paragraph.
   /// </summary>
-  public ParagraphProperties? ParagraphProperties { get; set; }
-
+  [OpenXmlProperty(nameof(DXW.Paragraph.ParagraphProperties))]
+  public ParagraphProperties? ParagraphProperties { get => _ParagraphProperties; set => UpdateField(ref _ParagraphProperties, value, nameof(ParagraphProperties)); }
+  private ParagraphProperties? _ParagraphProperties;
   private readonly Dictionary<Type, Type> _modelElementTypeMapping = new()
-  {
+  { 
     { typeof(DXM.Accent), typeof(DMM.Accent) },
     { typeof(DXM.Bar), typeof(DMM.Bar) },
     { typeof(DXM.BorderBox), typeof(DMM.BorderBox) },
@@ -121,7 +137,6 @@ public partial class Paragraph : ModelElement<DXW.Paragraph>, IStoryContent, ITa
     { typeof(DXO10W.CustomXmlConflictInsertionRangeStart), typeof(DMW.CustomXmlConflictInsertionRangeStart) },
     { typeof(DXO10W.CustomXmlConflictDeletionRangeStart), typeof(DMW.CustomXmlConflictDeletionRangeStart) },
   };
-
   /// <summary>
   /// Collection of items.
   /// </summary>
@@ -187,7 +202,7 @@ public partial class Paragraph : ModelElement<DXW.Paragraph>, IStoryContent, ITa
   [XmlArrayItem("CustomXmlMoveToRangeStart", typeof(DMW.CustomXmlMoveToRangeStart))]
   [XmlArrayItem("CustomXmlConflictInsertionRangeStart", typeof(DMW.CustomXmlConflictInsertionRangeStart))]
   [XmlArrayItem("CustomXmlConflictDeletionRangeStart", typeof(DMW.CustomXmlConflictDeletionRangeStart))]
-  public ObservableCollection<ModelElement> Items { get; set; } = new();
+  public ModelElementCollection<ModelElement> Items { get; set; } = new();
 
 
   /// <summary>
@@ -206,19 +221,21 @@ public partial class Paragraph : ModelElement<DXW.Paragraph>, IStoryContent, ITa
         {
           ParagraphProperties = new ParagraphProperties(this);
         }
+
         ParagraphProperties.LoadData(openXmlElement);
         continue;
       }
+
       if (!_modelElementTypeMapping.TryGetValue(openXmlElementType, out var modelElementType))
       {
-        throw new InvalidOperationException(
-          $"No model element type mapping found for Open XML element type {openXmlElementType.FullName}.");
+        throw new InvalidOperationException($"No model element type mapping found for Open XML element type {openXmlElementType.FullName}.");
       }
+
       ModelElement? modelObject = null;
       var constructor = modelElementType.GetConstructor([this.GetType()]);
       if (constructor != null)
       {
-        modelObject = (ModelElement)constructor.Invoke([this]);
+        modelObject = (ModelElement)constructor.Invoke([this ]);
         Items.Add(modelObject);
         modelObject.LoadData(openXmlElement);
       }
@@ -227,7 +244,7 @@ public partial class Paragraph : ModelElement<DXW.Paragraph>, IStoryContent, ITa
         constructor = modelElementType.GetConstructor([openXmlElementType, this.GetType()]);
         if (constructor != null)
         {
-          modelObject = (ModelElement)constructor.Invoke([openXmlElement, this]);
+          modelObject = (ModelElement)constructor.Invoke([openXmlElement, this ]);
         }
         else
         {
@@ -243,15 +260,13 @@ public partial class Paragraph : ModelElement<DXW.Paragraph>, IStoryContent, ITa
             if (constructor != null)
             {
               modelObject = (ModelElement)constructor.Invoke([]);
-              Debug.WriteLine(
-                $"Warning: Model element of type {modelElementType.FullName} was created using a parameterless constructor. Consider adding a constructor that accepts the parent collection or the Open XML element for better initialization.");
+              //Debug.WriteLine($"Warning: Model element of type {modelElementType.FullName} was created using a parameterless constructor. Consider adding a constructor that accepts the parent collection or the Open XML element for better initialization.");
               Items.Add(modelObject);
               modelObject.LoadData(openXmlElement);
             }
             else
             {
-              throw new InvalidOperationException(
-                $"No suitable constructor found for model element type {modelElementType.FullName}.");
+              throw new InvalidOperationException($"No suitable constructor found for model element type {modelElementType.FullName}.");
             }
           }
         }
@@ -271,6 +286,7 @@ public partial class Paragraph : ModelElement<DXW.Paragraph>, IStoryContent, ITa
     {
       child.Remove();
     }
+
     foreach (var item in Items)
     {
       if (item is IUpdatable updatable)
@@ -285,4 +301,32 @@ public partial class Paragraph : ModelElement<DXW.Paragraph>, IStoryContent, ITa
     }
   }
 
+  /// <summary>
+  /// Enables or disables lazy loading for the paragraph.
+  /// </summary>
+  public bool IsLazyLoadEnabled { get => _IsLazyLoadEnabled; set => UpdateField(ref _IsLazyLoadEnabled, value, nameof(IsLazyLoadEnabled)); }
+  private bool _IsLazyLoadEnabled;
+
+  /// <summary>
+  /// Data source for lazy loading. This property can be used to specify the data source from which the paragraph will load its data when lazy loading is enabled.
+  /// </summary>
+  public object? DataSource { get => _DataSource; set => UpdateField(ref _DataSource, value, nameof(DataSource)); }
+  private object? _DataSource;
+
+  /// <summary>
+  /// Tries to load related data from the data source if lazy loading is enabled. This method should be called before accessing properties that may require data from the data source.
+  /// </summary>
+  /// <exception cref = "NotImplementedException"></exception>
+  public void TryLazyLoad()
+  {
+    if (IsLazyLoadEnabled)
+    {
+      IsLazyLoadEnabled = false;
+      if (DataSource is DX.OpenXmlCompositeElement openXmlElement)
+      {
+        Debug.WriteLine($"Lazy loading data for {GetType().Name} from OpenXmlCompositeElement: {openXmlElement.LocalName}");
+        LoadData(openXmlElement);
+      }
+    }
+  }
 }

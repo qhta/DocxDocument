@@ -4,24 +4,14 @@ namespace DocumentModel.Wordprocessing;
 /// If it occurs as the last body element, then it specifies the properties of the last section of the document.
 /// For any other section the properties are stored as a child element of the paragraph element corresponding to the last paragraph in the given section.
 /// </summary>
+[OpenXmlElement(typeof(DXW.SectionProperties))]
 [XmlRoot("BaseSectionProperties", Namespace = "DocumentModel.Wordprocessing")]
 public abstract partial class BaseSectionProperties<T> : ModelElement<T> where T : DX.OpenXmlCompositeElement
 {
   /// <summary>
-  /// Default constructor.
-  /// </summary>
-  protected BaseSectionProperties() : base() { }
-
-  /// <summary>
-  /// Constructor that initializes the element within an owner collection.
-  /// </summary>
-  /// <param name="collection">The collection to which this element belongs.</param>
-  protected BaseSectionProperties(object collection) : base(collection) { }
-
-
-  /// <summary>
   /// Physical section mark character revision ID.
   /// </summary>
+  [OpenXmlProperty(nameof(DXW.SectionProperties.RsidRPr))]
   public HexInt? RsidRPr { get => _RsidRPr; set => UpdateField(ref _RsidRPr, value, nameof(RsidRPr)); }
   private HexInt? _RsidRPr;
 

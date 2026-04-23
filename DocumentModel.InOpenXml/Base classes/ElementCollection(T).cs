@@ -6,7 +6,9 @@ namespace DocumentModel;
 /// </summary>
 /// <typeparam name = "ItemType">The type of elements contained in the collection.</typeparam>
 [XmlRoot("ElementCollection", Namespace = "DocumentModel")]
-public abstract partial class ElementCollection<ItemType> : ModelElement, IElementCollection<ItemType>, IEquatable<ElementCollection<ItemType>>, ICollection<ItemType>, IList, INotificationSource, IEmptyCheckable where ItemType : notnull
+public abstract partial class ElementCollection<ItemType> : ModelElement, IElementCollection<ItemType>, 
+  IEquatable<ElementCollection<ItemType>>, ICollection<ItemType>, IList, INotificationSource, IEmptyCheckable
+  where ItemType : notnull
 {
   private ObservableCollection<ItemType> _items = new ObservableCollection<ItemType>();
   private readonly BiDiDictionary<object, ItemType> _index = new BiDiDictionary<object, ItemType>();
@@ -485,4 +487,14 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
 
     return true;
   }
+
+  /// <summary>
+  /// Checks if the collection should be serialized.
+  /// </summary>
+  /// <returns></returns>
+  public override bool ShouldSerialize()
+  {
+    return !IsEmpty();
+  }
+
 }

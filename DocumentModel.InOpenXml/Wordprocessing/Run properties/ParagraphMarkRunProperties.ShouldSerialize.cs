@@ -4,5 +4,5 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class ParagraphMarkRunProperties
 {
-  public bool ShouldSerializeParagraphMarkRunPropertiesChange() => ParagraphMarkRunPropertiesChange is not null;
+  public bool ShouldSerializeParagraphMarkRunPropertiesChange() => ParagraphMarkRunPropertiesChange is not null && ShouldSerialize(ParagraphMarkRunPropertiesChange);
 }

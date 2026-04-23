@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class LegacyNumbering
 {
-  public bool ShouldSerializeSpace() => Space is not null;
-  public bool ShouldSerializeIndent() => Indent is not null;
+  public bool ShouldSerializeSpace() => Space is not null && ShouldSerialize(Space);
+  public bool ShouldSerializeIndent() => Indent is not null && ShouldSerialize(Indent);
 }

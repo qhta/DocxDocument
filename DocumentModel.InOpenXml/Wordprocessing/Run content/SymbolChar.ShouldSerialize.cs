@@ -5,5 +5,5 @@ namespace DocumentModel.Wordprocessing;
 public partial class SymbolChar
 {
   public bool ShouldSerializeFont() => !String.IsNullOrEmpty(Font);
-  public bool ShouldSerializeChar() => Char is not null;
+  public bool ShouldSerializeChar() => Char is not null && ShouldSerialize(Char);
 }

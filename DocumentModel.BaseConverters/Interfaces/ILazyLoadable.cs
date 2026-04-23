@@ -15,7 +15,7 @@ public interface ILazyLoadable
   public bool IsLazyLoadEnabled { get; set; }
 
   /// <summary>
-  /// Source of data for lazy loading. This property can be used to specify the data source from which the collection will load its elements when lazy loading is enabled.
+  /// Source of data for lazy loading. This property can be used to specify the data source from which the model element will load its data when lazy loading is enabled.
   /// </summary>
   public object? DataSource { get; set; }
 

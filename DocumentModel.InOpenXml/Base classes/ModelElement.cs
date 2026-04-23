@@ -1,10 +1,13 @@
+using DocumentModel.BaseConverters;
+
 #pragma warning disable CS0659
 namespace DocumentModel;
 /// <summary>
 /// Base class for all model elements, providing property change notification support.
 /// </summary>
 [XmlRoot("ModelElement", Namespace = "DocumentModel")]
-public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem, ICollectionItem, IModifiable, INotificationSource, ILoadable, IEmptyCheckable, IPropertiesProvider, IModelObject
+public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem, ICollectionItem,
+  IModifiable, INotificationSource, ILoadable, ISerializationEnabling, IEmptyCheckable, IPropertiesProvider, IModelObject
 {
   static ModelElement()
   {
@@ -289,6 +292,33 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   }
 
   /// <summary>
+  /// Determines whether the current ModelElement should be serialized. This method can be overridden in derived classes to implement custom serialization logic.
+  /// </summary>
+  /// <returns><see langword="true"/>In this implementation, always return true</returns>
+  public virtual bool ShouldSerialize()
+  {
+    return true;
+  }
+
+  /// <summary>
+  /// Determines whether the specified object should be serialized based on its type and state.   
+  /// </summary>
+  /// <remarks>If the provided object implements the ISerializationEnabling interface, this method delegates
+  /// the decision to the object's ShouldSerialize method. Otherwise, it returns true, indicating that the object
+  /// should be serialized by default.</remarks>
+  /// <param name="value">The object to evaluate for serialization. If the object implements the ISerializationEnabling interface, its
+  /// ShouldSerialize method is used to determine serializability.</param>
+  /// <returns>true if the object should be serialized; otherwise, false.</returns>
+  public bool ShouldSerialize(object value)
+  {
+    //if (value is DMW.HeaderReferences)
+      Debug.WriteLine($"ShouldSerialize called for {value.GetType().Name}");
+    if (value is ISerializationEnabling serializationEnabling)
+      return serializationEnabling.ShouldSerialize();
+    return true;
+  }
+
+  /// <summary>
   /// Gets a dictionary of known properties for the current model element type, where the keys are property names
   /// and the values are PropertyModel instances containing metadata about each property.
   /// </summary>
@@ -516,4 +546,5 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
 
     return true;
   }
+
 }

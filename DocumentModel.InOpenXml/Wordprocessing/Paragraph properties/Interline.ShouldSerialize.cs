@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class Interline
 {
-  public bool ShouldSerializeLine() => Line is not null;
-  public bool ShouldSerializeLineRule() => LineRule is not null;
+  public bool ShouldSerializeLine() => Line is not null && ShouldSerialize(Line);
+  public bool ShouldSerializeLineRule() => LineRule is not null && ShouldSerialize(LineRule);
 }

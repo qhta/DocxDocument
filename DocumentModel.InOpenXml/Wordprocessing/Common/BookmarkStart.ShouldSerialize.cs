@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 public partial class BookmarkStart
 {
   public bool ShouldSerializeName() => !String.IsNullOrEmpty(Name);
-  public bool ShouldSerializeColumnFirst() => ColumnFirst is not null;
-  public bool ShouldSerializeColumnLast() => ColumnLast is not null;
+  public bool ShouldSerializeColumnFirst() => ColumnFirst is not null && ShouldSerialize(ColumnFirst);
+  public bool ShouldSerializeColumnLast() => ColumnLast is not null && ShouldSerialize(ColumnLast);
 }

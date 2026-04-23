@@ -1,0 +1,73 @@
+namespace DocumentModel.Wordprocessing;
+
+#pragma warning disable CS1591
+
+public partial class CompatibilitySettings
+{
+  public bool ShouldSerializeUseSingleBorderForContiguousCells() => UseSingleBorderForContiguousCells is not null;
+  public bool ShouldSerializeWordPerfectJustification() => WordPerfectJustification is not null;
+  public bool ShouldSerializeNoTabHangIndent() => NoTabHangIndent is not null;
+  public bool ShouldSerializeNoLeading() => NoLeading is not null;
+  public bool ShouldSerializeSpaceForUnderline() => SpaceForUnderline is not null;
+  public bool ShouldSerializeNoColumnBalance() => NoColumnBalance is not null;
+  public bool ShouldSerializeBalanceSingleByteDoubleByteWidth() => BalanceSingleByteDoubleByteWidth is not null;
+  public bool ShouldSerializeNoExtraLineSpacing() => NoExtraLineSpacing is not null;
+  public bool ShouldSerializeDoNotLeaveBackslashAlone() => DoNotLeaveBackslashAlone is not null;
+  public bool ShouldSerializeUnderlineTrailingSpaces() => UnderlineTrailingSpaces is not null;
+  public bool ShouldSerializeDoNotExpandShiftReturn() => DoNotExpandShiftReturn is not null;
+  public bool ShouldSerializeSpacingInWholePoints() => SpacingInWholePoints is not null;
+  public bool ShouldSerializeLineWrapLikeWord6() => LineWrapLikeWord6 is not null;
+  public bool ShouldSerializePrintBodyTextBeforeHeader() => PrintBodyTextBeforeHeader is not null;
+  public bool ShouldSerializePrintColorBlackWhite() => PrintColorBlackWhite is not null;
+  public bool ShouldSerializeWordPerfectSpaceWidth() => WordPerfectSpaceWidth is not null;
+  public bool ShouldSerializeShowBreaksInFrames() => ShowBreaksInFrames is not null;
+  public bool ShouldSerializeSubFontBySize() => SubFontBySize is not null;
+  public bool ShouldSerializeSuppressBottomSpacing() => SuppressBottomSpacing is not null;
+  public bool ShouldSerializeSuppressTopSpacing() => SuppressTopSpacing is not null;
+  public bool ShouldSerializeSuppressSpacingAtTopOfPage() => SuppressSpacingAtTopOfPage is not null;
+  public bool ShouldSerializeSuppressTopSpacingWordPerfect() => SuppressTopSpacingWordPerfect is not null;
+  public bool ShouldSerializeSuppressSpacingBeforeAfterPageBreak() => SuppressSpacingBeforeAfterPageBreak is not null;
+  public bool ShouldSerializeSwapBordersFacingPages() => SwapBordersFacingPages is not null;
+  public bool ShouldSerializeConvertMailMergeEscape() => ConvertMailMergeEscape is not null;
+  public bool ShouldSerializeTruncateFontHeightsLikeWordPerfect() => TruncateFontHeightsLikeWordPerfect is not null;
+  public bool ShouldSerializeMacWordSmallCaps() => MacWordSmallCaps is not null;
+  public bool ShouldSerializeUsePrinterMetrics() => UsePrinterMetrics is not null;
+  public bool ShouldSerializeDoNotSuppressParagraphBorders() => DoNotSuppressParagraphBorders is not null;
+  public bool ShouldSerializeWrapTrailSpaces() => WrapTrailSpaces is not null;
+  public bool ShouldSerializeFootnoteLayoutLikeWord8() => FootnoteLayoutLikeWord8 is not null;
+  public bool ShouldSerializeShapeLayoutLikeWord8() => ShapeLayoutLikeWord8 is not null;
+  public bool ShouldSerializeAlignTablesRowByRow() => AlignTablesRowByRow is not null;
+  public bool ShouldSerializeForgetLastTabAlignment() => ForgetLastTabAlignment is not null;
+  public bool ShouldSerializeAdjustLineHeightInTable() => AdjustLineHeightInTable is not null;
+  public bool ShouldSerializeAutoSpaceLikeWord95() => AutoSpaceLikeWord95 is not null;
+  public bool ShouldSerializeNoSpaceRaiseLower() => NoSpaceRaiseLower is not null;
+  public bool ShouldSerializeDoNotUseHTMLParagraphAutoSpacing() => DoNotUseHTMLParagraphAutoSpacing is not null;
+  public bool ShouldSerializeLayoutRawTableWidth() => LayoutRawTableWidth is not null;
+  public bool ShouldSerializeLayoutTableRowsApart() => LayoutTableRowsApart is not null;
+  public bool ShouldSerializeUseWord97LineBreakRules() => UseWord97LineBreakRules is not null;
+  public bool ShouldSerializeDoNotBreakWrappedTables() => DoNotBreakWrappedTables is not null;
+  public bool ShouldSerializeDoNotSnapToGridInCell() => DoNotSnapToGridInCell is not null;
+  public bool ShouldSerializeSelectFieldWithFirstOrLastChar() => SelectFieldWithFirstOrLastChar is not null;
+  public bool ShouldSerializeApplyBreakingRules() => ApplyBreakingRules is not null;
+  public bool ShouldSerializeDoNotWrapTextWithPunctuation() => DoNotWrapTextWithPunctuation is not null;
+  public bool ShouldSerializeDoNotUseEastAsianBreakRules() => DoNotUseEastAsianBreakRules is not null;
+  public bool ShouldSerializeUseWord2002TableStyleRules() => UseWord2002TableStyleRules is not null;
+  public bool ShouldSerializeGrowAutofit() => GrowAutofit is not null;
+  public bool ShouldSerializeUseFarEastLayout() => UseFarEastLayout is not null;
+  public bool ShouldSerializeUseNormalStyleForList() => UseNormalStyleForList is not null;
+  public bool ShouldSerializeDoNotUseIndentAsNumberingTabStop() => DoNotUseIndentAsNumberingTabStop is not null;
+  public bool ShouldSerializeUseAltKinsokuLineBreakRules() => UseAltKinsokuLineBreakRules is not null;
+  public bool ShouldSerializeAllowSpaceOfSameStyleInTable() => AllowSpaceOfSameStyleInTable is not null;
+  public bool ShouldSerializeDoNotSuppressIndentation() => DoNotSuppressIndentation is not null;
+  public bool ShouldSerializeDoNotAutofitConstrainedTables() => DoNotAutofitConstrainedTables is not null;
+  public bool ShouldSerializeAutofitToFirstFixedWidthCell() => AutofitToFirstFixedWidthCell is not null;
+  public bool ShouldSerializeUnderlineTabInNumberingList() => UnderlineTabInNumberingList is not null;
+  public bool ShouldSerializeDisplayHangulFixedWidth() => DisplayHangulFixedWidth is not null;
+  public bool ShouldSerializeSplitPageBreakAndParagraphMark() => SplitPageBreakAndParagraphMark is not null;
+  public bool ShouldSerializeDoNotVerticallyAlignCellWithShape() => DoNotVerticallyAlignCellWithShape is not null;
+  public bool ShouldSerializeDoNotBreakConstrainedForcedTable() => DoNotBreakConstrainedForcedTable is not null;
+  public bool ShouldSerializeDoNotVerticallyAlignInTextBox() => DoNotVerticallyAlignInTextBox is not null;
+  public bool ShouldSerializeUseAnsiKerningPairs() => UseAnsiKerningPairs is not null;
+  public bool ShouldSerializeCachedColumnBalance() => CachedColumnBalance is not null;
+  public bool ShouldSerializeOtherSettings() => OtherSettings is not null && ShouldSerialize(OtherSettings);
+}

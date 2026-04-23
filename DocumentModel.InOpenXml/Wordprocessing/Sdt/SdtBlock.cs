@@ -9,17 +9,6 @@ namespace DocumentModel.Wordprocessing;
 public partial class SdtBlock : ModelElement<DXW.SdtBlock>, IStoryContent, ITableCellContent, ISdtBlockContent, ICustomXmlBlockContent, ICommentContent
 {
   /// <summary>
-  /// Default constructor.
-  /// </summary>
-  public SdtBlock() : base() { }
-
-  /// <summary>
-  /// Constructor that initializes the element within an owner collection.
-  /// </summary>
-  /// <param name="collection">The collection to which this element belongs.</param>
-  public SdtBlock(object collection) : base(collection) { }
-
-  /// <summary>
   /// Specifies the set of properties applied to this structured document tag.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.SdtBlock.SdtProperties))]

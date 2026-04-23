@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class NumberingLevelOverride
 {
-  public bool ShouldSerializeLevelIndex() => LevelIndex is not null;
-  public bool ShouldSerializeStartOverrideNumberingValue() => StartOverrideNumberingValue is not null;
-  public bool ShouldSerializeLevel() => Level is not null;
+  public bool ShouldSerializeLevelIndex() => LevelIndex is not null && ShouldSerialize(LevelIndex);
+  public bool ShouldSerializeStartOverrideNumberingValue() => StartOverrideNumberingValue is not null && ShouldSerialize(StartOverrideNumberingValue);
+  public bool ShouldSerializeLevel() => Level is not null && ShouldSerialize(Level);
 }

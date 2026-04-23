@@ -8376,7 +8376,7 @@
         </member>
         <member name="P:DocumentModel.ILazyLoadable.DataSource">
             <summary>
-            Source of data for lazy loading. This property can be used to specify the data source from which the collection will load its elements when lazy loading is enabled.
+            Source of data for lazy loading. This property can be used to specify the data source from which the model element will load its data when lazy loading is enabled.
             </summary>
         </member>
         <member name="M:DocumentModel.ILazyLoadable.TryLazyLoad">
@@ -8437,6 +8437,17 @@
             Flag to determine if notification is enabled when the object raise PropertyChanged event.
             It should be set to true when the object is created.
             </summary>
+        </member>
+        <member name="T:DocumentModel.BaseConverters.ISerializationEnabling">
+            <summary>
+            Interface used in XML serialization to determine whether an object should be serialized. Implementing this interface allows a class to provide custom logic for deciding if it should be included in the serialized output, which can be useful for optimizing serialization or excluding certain objects based on specific conditions.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.BaseConverters.ISerializationEnabling.ShouldSerialize">
+            <summary>
+            Determines whether the object should be serialized.
+            </summary>
+            <returns><see langword="true"/> if the object should be serialized; otherwise, <see langword="false"/>.</returns>
         </member>
     </members>
 </doc>

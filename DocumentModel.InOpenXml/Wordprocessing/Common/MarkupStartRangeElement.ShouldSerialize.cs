@@ -4,9 +4,9 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class MarkupStartRangeElement<T1, T2> 
 {
-  public bool ShouldSerializeDisplacedByCustomXml() => DisplacedByCustomXml is not null;
-  public bool ShouldSerializePairedElement() => PairedElement is not null;
+  public bool ShouldSerializeDisplacedByCustomXml() => DisplacedByCustomXml is not null && ShouldSerialize(DisplacedByCustomXml);
+  public bool ShouldSerializePairedElement() => PairedElement is not null && ShouldSerialize(PairedElement);
   public bool ShouldSerializeId() => Id is not null;
   public bool ShouldSerializeAuthor() => !String.IsNullOrEmpty(Author);
-  public bool ShouldSerializeDate() => Date is not null;
+  public bool ShouldSerializeDate() => Date is not null && ShouldSerialize(Date);
 }

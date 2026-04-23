@@ -9,17 +9,6 @@ namespace DocumentModel.Wordprocessing;
 public partial class Table : ModelElement<DXW.Table>, IStoryContent, ITableCellContent, ISdtBlockContent, ICommentContent, ICustomXmlBlockContent
 {
   /// <summary>
-  /// Default constructor.
-  /// </summary>
-  public Table() : base() { }
-
-  /// <summary>
-  /// Constructor that initializes the element within an owner collection.
-  /// </summary>
-  /// <param name="collection">The collection to which this element belongs.</param>
-  public Table(object collection) : base(collection) { }
-
-  /// <summary>
   /// Table properties, including borders, cell spacing, alignment, and other formatting options.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Table.TableProperties))]

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class SectionProperties
 {
-  public bool ShouldSerializeHeaderReferences() => HeaderReferences is not null;
-  public bool ShouldSerializeFooterReferences() => FooterReferences is not null;
-  public bool ShouldSerializeSectionPropertiesChange() => SectionPropertiesChange is not null;
+  public bool ShouldSerializeHeaderReferences() => HeaderReferences is not null && ShouldSerialize(HeaderReferences);
+  public bool ShouldSerializeFooterReferences() => FooterReferences is not null && ShouldSerialize(FooterReferences);
+  public bool ShouldSerializeSectionPropertiesChange() => SectionPropertiesChange is not null && ShouldSerialize(SectionPropertiesChange);
 }

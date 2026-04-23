@@ -5,5 +5,5 @@ namespace DocumentModel.Wordprocessing;
 public partial class TablePropertyExceptionsChange
 {
   public bool ShouldSerializeAnnotationId() => !String.IsNullOrEmpty(AnnotationId);
-  public bool ShouldSerializePreviousTablePropertyExceptions() => PreviousTablePropertyExceptions is not null;
+  public bool ShouldSerializePreviousTablePropertyExceptions() => PreviousTablePropertyExceptions is not null && ShouldSerialize(PreviousTablePropertyExceptions);
 }

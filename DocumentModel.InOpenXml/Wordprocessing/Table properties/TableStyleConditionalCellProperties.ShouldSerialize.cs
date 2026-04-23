@@ -4,9 +4,9 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class TableStyleConditionalCellProperties
 {
-  public bool ShouldSerializeTableCellBorders() => TableCellBorders is not null;
-  public bool ShouldSerializeShading() => Shading is not null;
+  public bool ShouldSerializeTableCellBorders() => TableCellBorders is not null && ShouldSerialize(TableCellBorders);
+  public bool ShouldSerializeShading() => Shading is not null && ShouldSerialize(Shading);
   public bool ShouldSerializeNoWrap() => NoWrap is not null;
-  public bool ShouldSerializeTableCellMargin() => TableCellMargin is not null;
-  public bool ShouldSerializeTableCellVerticalAlignment() => TableCellVerticalAlignment is not null;
+  public bool ShouldSerializeTableCellMargin() => TableCellMargin is not null && ShouldSerialize(TableCellMargin);
+  public bool ShouldSerializeTableCellVerticalAlignment() => TableCellVerticalAlignment is not null && ShouldSerialize(TableCellVerticalAlignment);
 }

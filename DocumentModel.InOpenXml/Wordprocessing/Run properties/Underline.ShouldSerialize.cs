@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class Underline
 {
-  public bool ShouldSerializeType() => Type is not null;
-  public bool ShouldSerializeColor() => Color is not null;
+  public bool ShouldSerializeType() => Type is not null && ShouldSerialize(Type);
+  public bool ShouldSerializeColor() => Color is not null && ShouldSerialize(Color);
 }

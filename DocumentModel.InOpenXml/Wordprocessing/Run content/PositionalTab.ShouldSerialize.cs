@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class PositionalTab
 {
-  public bool ShouldSerializeAlignment() => Alignment is not null;
-  public bool ShouldSerializeRelativeTo() => RelativeTo is not null;
-  public bool ShouldSerializeLeader() => Leader is not null;
+  public bool ShouldSerializeAlignment() => Alignment is not null && ShouldSerialize(Alignment);
+  public bool ShouldSerializeRelativeTo() => RelativeTo is not null && ShouldSerialize(RelativeTo);
+  public bool ShouldSerializeLeader() => Leader is not null && ShouldSerialize(Leader);
 }

@@ -14,7 +14,7 @@ namespace AutoEdit;
 /// </summary>
 public class GenerateShouldSerializeFunctions
 {
-  private static readonly string[] ignoredAttributes = [ "XmlIgnore", "JsonIgnore", "NotMapped"];
+  private static readonly string[] ignoredAttributes = ["XmlIgnore", "JsonIgnore", "NotMapped"];
   /// <summary>
   /// Entry point for generating ShouldSerialize helpers for the specified source file.
   /// </summary>
@@ -36,7 +36,7 @@ public class GenerateShouldSerializeFunctions
     var semanticModel = compilation.GetSemanticModel(tree);
     var iCollectionType = compilation.GetTypeByMetadataName("System.Collections.ICollection");
     var iGenericCollectionType = compilation.GetTypeByMetadataName("System.Collections.Generic.ICollection`1");
-    
+
     BaseNamespaceDeclarationSyntax? namespaceNode = root.DescendantNodes().OfType<NamespaceDeclarationSyntax>().FirstOrDefault();
     if (namespaceNode == null)
     {
@@ -51,7 +51,7 @@ public class GenerateShouldSerializeFunctions
     if (classNode == null)
       return;
     var className = classNode.Identifier.Text;
-    
+
 
     var properties = classNode.Members.OfType<PropertyDeclarationSyntax>()
       .Where(p =>
@@ -75,9 +75,10 @@ public class GenerateShouldSerializeFunctions
          typeSymbol.AllInterfaces.Any(i =>
            SymbolEqualityComparer.Default.Equals(i, iCollectionType) ||
            SymbolEqualityComparer.Default.Equals(i.OriginalDefinition, iGenericCollectionType)));
-      if (propType is NullableTypeSyntax)
+      if (propType is NullableTypeSyntax nullableTypeSyntax)
       {
-        if (propType.ToString().Equals("String?", StringComparison.OrdinalIgnoreCase))
+        propType = nullableTypeSyntax.ElementType;
+        if (propType.ToString().Equals("String", StringComparison.OrdinalIgnoreCase))
         {
           var str = $"!String.IsNullOrEmpty({propName})";
           propertyTypes[propName] = str;
@@ -85,40 +86,46 @@ public class GenerateShouldSerializeFunctions
         else
         {
           var str = $"{propName} is not null";
-          if (isCollection) str += $" && {propName}.Value.Count > 0";
+          //if (isCollection) 
+          //  str += $" && {propName}.Value.Count > 0";
+          if (propType is not PredefinedTypeSyntax)
+          {
+            str += $" && ShouldSerialize({propName})";
+          }
           propertyTypes[propName] = str;
         }
       }
-      else if (isCollection)
-      {
-        var str = $"{propName}.Value.Count > 0";
-        propertyTypes[propName] = str;
-      }
-      else if (propType is PredefinedTypeSyntax predefinedType)
-      {
-        var typeKeyword = predefinedType.Keyword.Text;
-        switch (typeKeyword)
+      else
+        if (isCollection)
         {
-          //case "int":
-          //case "long":
-          //case "float":
-          //case "double":
-          //case "decimal":
-          //  propertyTypes[propName] = $"{propName} != 0";
-          //  break;
-          case "bool":
-            propertyTypes[propName] = $"{propName} == true";
-            break;
-          case "string":
-            propertyTypes[propName] = $"!string.IsNullOrEmpty({propName})";
-            break;
-          //case "char":
-          //  propertyTypes[propName] = $"{propName} != '\\0'";
-          //  break;
-          default:
-            break;
+          var str = $"{propName}.Value.Count > 0";
+          propertyTypes[propName] = str;
         }
-      }
+        else if (propType is PredefinedTypeSyntax predefinedType)
+        {
+          var typeKeyword = predefinedType.Keyword.Text;
+          switch (typeKeyword)
+          {
+            //case "int":
+            //case "long":
+            //case "float":
+            //case "double":
+            //case "decimal":
+            //  propertyTypes[propName] = $"{propName} != 0";
+            //  break;
+            case "bool":
+              propertyTypes[propName] = $"{propName} == true";
+              break;
+            case "string":
+              propertyTypes[propName] = $"!string.IsNullOrEmpty({propName})";
+              break;
+            //case "char":
+            //  propertyTypes[propName] = $"{propName} != '\\0'";
+            //  break;
+            default:
+              break;
+          }
+        }
     }
 
     if (propertyTypes.Count == 0)

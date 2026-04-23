@@ -10,17 +10,6 @@ namespace DocumentModel.Wordprocessing;
 public abstract partial class MarkupEndRangeElement<T1, T2> : ModelElement<T1>, IMarkupElement where T1 : DX.OpenXmlElement where T2 : DX.OpenXmlElement
 {
   /// <summary>
-  /// Default constructor.
-  /// </summary>
-  public MarkupEndRangeElement() : base() { }
-
-  /// <summary>
-  /// Constructor that initializes the element within an owner collection.
-  /// </summary>
-  /// <param name="collection">The collection to which this element belongs.</param>
-  public MarkupEndRangeElement(object collection) : base(collection) { }
-
-  /// <summary>
   /// Gets the element that forms the matching pair for this markup range element, if one exists.
   /// </summary>
   public MarkupStartRangeElement<T1, T2>? PairedElement { get => _PairedElement; set => UpdateField(ref _PairedElement, value, nameof(PairedElement)); }

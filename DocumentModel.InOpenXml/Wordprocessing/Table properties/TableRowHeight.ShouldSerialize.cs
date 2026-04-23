@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class TableRowHeight
 {
-  public bool ShouldSerializeValue() => Value is not null;
-  public bool ShouldSerializeType() => Type is not null;
+  public bool ShouldSerializeValue() => Value is not null && ShouldSerialize(Value);
+  public bool ShouldSerializeType() => Type is not null && ShouldSerialize(Type);
 }

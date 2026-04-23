@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class SeparatorMark
 {
-  public bool ShouldSerializeValue() => Value is not null;
+  public bool ShouldSerializeValue() => Value is not null && ShouldSerialize(Value);
   public bool ShouldSerializeContinuation() => Continuation == true;
 }

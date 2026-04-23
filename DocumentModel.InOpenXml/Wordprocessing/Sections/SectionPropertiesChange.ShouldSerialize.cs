@@ -4,5 +4,5 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class SectionPropertiesChange
 {
-  public bool ShouldSerializePreviousSectionProperties() => PreviousSectionProperties is not null;
+  public bool ShouldSerializePreviousSectionProperties() => PreviousSectionProperties is not null && ShouldSerialize(PreviousSectionProperties);
 }

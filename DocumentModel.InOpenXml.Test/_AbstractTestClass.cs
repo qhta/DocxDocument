@@ -159,6 +159,7 @@ public class _AbstractTestClass
   public static string SerializeObjectToXml(object data)
   {
     var rootType = data.GetType();
+    var UniqueTypeNames = new HashSet<string>();
     var overrides = new XmlAttributeOverrides();
     var modelTypes = typeof(DMW.Document).Assembly.GetTypes()
       .Where(t => typeof(DM.ModelElement).IsAssignableFrom(t) && !t.IsAbstract);
@@ -171,20 +172,14 @@ public class _AbstractTestClass
         if (b.IsGenericType && b.GetGenericTypeDefinition() == typeof(DM.ModelElement<>))
         {
           var arg = b.GetGenericArguments()[0];
-          if (string.IsNullOrEmpty(arg.Namespace))
-            continue;
-          var unique = $"ModelElementOf_{arg.Namespace!.Replace('.', '_')}_{arg.Name}";
-          try
+          if (!string.IsNullOrEmpty(arg.Namespace))
           {
-
-            overrides.Add(b, new XmlAttributes { XmlType = new XmlTypeAttribute(unique) });
+            var unique = $"ModelElementOf_{arg.Namespace!.Replace('.', '_')}_{arg.Name}";
+            if (UniqueTypeNames.Add(unique))
+              overrides.Add(b, new XmlAttributes { XmlType = new XmlTypeAttribute(unique) });
           }
-          catch (Exception ex)
-          {
-            //Debug.WriteLine(ex);
-          }
-          break;
         }
+        break;
         b = b.BaseType;
       }
     }

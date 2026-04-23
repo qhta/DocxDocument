@@ -4,9 +4,9 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class SdtContentDate
 {
-  public bool ShouldSerializeFullDate() => FullDate is not null;
+  public bool ShouldSerializeFullDate() => FullDate is not null && ShouldSerialize(FullDate);
   public bool ShouldSerializeDateFormat() => !String.IsNullOrEmpty(DateFormat);
   public bool ShouldSerializeLanguageId() => !String.IsNullOrEmpty(LanguageId);
-  public bool ShouldSerializeSdtDateMappingType() => SdtDateMappingType is not null;
-  public bool ShouldSerializeCalendar() => Calendar is not null;
+  public bool ShouldSerializeSdtDateMappingType() => SdtDateMappingType is not null && ShouldSerialize(SdtDateMappingType);
+  public bool ShouldSerializeCalendar() => Calendar is not null && ShouldSerialize(Calendar);
 }

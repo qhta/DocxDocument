@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class NumberingPictureBullet
 {
-  public bool ShouldSerializeNumberingPictureBulletId() => NumberingPictureBulletId is not null;
-  public bool ShouldSerializePictureBulletBase() => PictureBulletBase is not null;
-  public bool ShouldSerializeDrawing() => Drawing is not null;
+  public bool ShouldSerializeNumberingPictureBulletId() => NumberingPictureBulletId is not null && ShouldSerialize(NumberingPictureBulletId);
+  public bool ShouldSerializePictureBulletBase() => PictureBulletBase is not null && ShouldSerialize(PictureBulletBase);
+  public bool ShouldSerializeDrawing() => Drawing is not null && ShouldSerialize(Drawing);
 }

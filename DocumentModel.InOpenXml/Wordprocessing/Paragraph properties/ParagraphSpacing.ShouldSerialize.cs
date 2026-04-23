@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class ParagraphSpacing
 {
-  public bool ShouldSerializeVal() => Val is not null;
-  public bool ShouldSerializeLines() => Lines is not null;
+  public bool ShouldSerializeVal() => Val is not null && ShouldSerialize(Val);
+  public bool ShouldSerializeLines() => Lines is not null && ShouldSerialize(Lines);
   public bool ShouldSerializeAutoSpacing() => AutoSpacing is not null;
 }

@@ -5,5 +5,5 @@ namespace DocumentModel.Wordprocessing;
 public partial class ParagraphMarkRunPropertiesChange
 {
   public bool ShouldSerializeAnnotationId() => !String.IsNullOrEmpty(AnnotationId);
-  public bool ShouldSerializePreviousParagraphMarkRunProperties() => PreviousParagraphMarkRunProperties is not null;
+  public bool ShouldSerializePreviousParagraphMarkRunProperties() => PreviousParagraphMarkRunProperties is not null && ShouldSerialize(PreviousParagraphMarkRunProperties);
 }

@@ -8,7 +8,7 @@ namespace DocumentModel;
 /// <typeparam name = "ItemType">Specifies the type of model elements contained in the collection.</typeparam>
 [XmlRoot("ModelElementCollection", Namespace = "DocumentModel")]
 [LazyLoad]
-public abstract partial class ModelElementCollection<ItemType> : ElementCollection<ItemType>,
+public partial class ModelElementCollection<ItemType> : ElementCollection<ItemType>,
   ILazyLoadable
   where ItemType : ModelElement
 {
@@ -28,7 +28,7 @@ public abstract partial class ModelElementCollection<ItemType> : ElementCollecti
   /// <summary>
   ///   Initializes a new instance of the <see cref = "ModelElementCollection{ItemType}"/> class.
   /// </summary>
-  protected ModelElementCollection()
+  public ModelElementCollection()
   {
   }
 
@@ -36,7 +36,7 @@ public abstract partial class ModelElementCollection<ItemType> : ElementCollecti
   ///   Initializes a new instance of the <see cref = "ModelElementCollection{ItemType}"/> class that contains elements copied from the specified collection.
   /// </summary>
   /// <param name = "items">The collection of items to copy into the new collection. Cannot be null.</param>
-  protected ModelElementCollection(IEnumerable<ItemType> items) : this()
+  public ModelElementCollection(IEnumerable<ItemType> items) : this()
   {
     foreach (var item in items)
     {
@@ -48,7 +48,7 @@ public abstract partial class ModelElementCollection<ItemType> : ElementCollecti
   /// Initializes a new instance of the ModelElementCollection class with the specified parent element.
   /// </summary>
   /// <param name = "parent">The parent ModelElement that owns this collection. Cannot be null.</param>
-  protected ModelElementCollection(ModelElement parent) : base(parent)
+  public ModelElementCollection(ModelElement parent) : base(parent)
   {
     TryLazyLoad();
   }

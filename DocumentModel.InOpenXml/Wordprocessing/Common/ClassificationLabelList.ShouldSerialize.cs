@@ -4,5 +4,5 @@ namespace DocumentModel;
 
 public partial class ClassificationLabelList
 {
-  public bool ShouldSerializeClassificationExtensionList() => ClassificationExtensionList is not null;
+  public bool ShouldSerializeClassificationExtensionList() => ClassificationExtensionList is not null && ShouldSerialize(ClassificationExtensionList);
 }

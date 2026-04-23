@@ -4,14 +4,14 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class TableCellBorders
 {
-  public bool ShouldSerializeTopBorder() => TopBorder is not null;
-  public bool ShouldSerializeLeftBorder() => LeftBorder is not null;
-  public bool ShouldSerializeStartBorder() => StartBorder is not null;
-  public bool ShouldSerializeBottomBorder() => BottomBorder is not null;
-  public bool ShouldSerializeRightBorder() => RightBorder is not null;
-  public bool ShouldSerializeEndBorder() => EndBorder is not null;
-  public bool ShouldSerializeInsideHorizontalBorder() => InsideHorizontalBorder is not null;
-  public bool ShouldSerializeInsideVerticalBorder() => InsideVerticalBorder is not null;
-  public bool ShouldSerializeTopLeftToBottomRightCellBorder() => TopLeftToBottomRightCellBorder is not null;
-  public bool ShouldSerializeTopRightToBottomLeftCellBorder() => TopRightToBottomLeftCellBorder is not null;
+  public bool ShouldSerializeTopBorder() => TopBorder is not null && ShouldSerialize(TopBorder);
+  public bool ShouldSerializeLeftBorder() => LeftBorder is not null && ShouldSerialize(LeftBorder);
+  public bool ShouldSerializeStartBorder() => StartBorder is not null && ShouldSerialize(StartBorder);
+  public bool ShouldSerializeBottomBorder() => BottomBorder is not null && ShouldSerialize(BottomBorder);
+  public bool ShouldSerializeRightBorder() => RightBorder is not null && ShouldSerialize(RightBorder);
+  public bool ShouldSerializeEndBorder() => EndBorder is not null && ShouldSerialize(EndBorder);
+  public bool ShouldSerializeInsideHorizontalBorder() => InsideHorizontalBorder is not null && ShouldSerialize(InsideHorizontalBorder);
+  public bool ShouldSerializeInsideVerticalBorder() => InsideVerticalBorder is not null && ShouldSerialize(InsideVerticalBorder);
+  public bool ShouldSerializeTopLeftToBottomRightCellBorder() => TopLeftToBottomRightCellBorder is not null && ShouldSerialize(TopLeftToBottomRightCellBorder);
+  public bool ShouldSerializeTopRightToBottomLeftCellBorder() => TopRightToBottomLeftCellBorder is not null && ShouldSerialize(TopRightToBottomLeftCellBorder);
 }

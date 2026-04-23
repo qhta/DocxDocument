@@ -5,11 +5,11 @@ namespace DocumentModel.Wordprocessing;
 public partial class Source
 {
   public bool ShouldSerializeTag() => !String.IsNullOrEmpty(Tag);
-  public bool ShouldSerializeSourceType() => SourceType is not null;
+  public bool ShouldSerializeSourceType() => SourceType is not null && ShouldSerialize(SourceType);
   public bool ShouldSerializeTitle() => !String.IsNullOrEmpty(Title);
-  public bool ShouldSerializeAuthors() => Authors is not null;
-  public bool ShouldSerializeEditors() => Editors is not null;
-  public bool ShouldSerializeContributors() => Contributors is not null;
+  public bool ShouldSerializeAuthors() => Authors is not null && ShouldSerialize(Authors);
+  public bool ShouldSerializeEditors() => Editors is not null && ShouldSerialize(Editors);
+  public bool ShouldSerializeContributors() => Contributors is not null && ShouldSerialize(Contributors);
   public bool ShouldSerializeYear() => !String.IsNullOrEmpty(Year);
   public bool ShouldSerializeMonth() => !String.IsNullOrEmpty(Month);
   public bool ShouldSerializeDay() => !String.IsNullOrEmpty(Day);
@@ -22,7 +22,7 @@ public partial class Source
   public bool ShouldSerializePages() => !String.IsNullOrEmpty(Pages);
   public bool ShouldSerializeEdition() => !String.IsNullOrEmpty(Edition);
   public bool ShouldSerializeUrl() => !String.IsNullOrEmpty(Url);
-  public bool ShouldSerializeAccessDate() => AccessDate is not null;
+  public bool ShouldSerializeAccessDate() => AccessDate is not null && ShouldSerialize(AccessDate);
   public bool ShouldSerializeDOI() => !String.IsNullOrEmpty(DOI);
   public bool ShouldSerializeISBN() => !String.IsNullOrEmpty(ISBN);
   public bool ShouldSerializeISSN() => !String.IsNullOrEmpty(ISSN);

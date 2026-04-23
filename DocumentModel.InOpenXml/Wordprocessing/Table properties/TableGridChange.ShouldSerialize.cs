@@ -5,5 +5,5 @@ namespace DocumentModel.Wordprocessing;
 public partial class TableGridChange
 {
   public bool ShouldSerializeAnnotationId() => !String.IsNullOrEmpty(AnnotationId);
-  public bool ShouldSerializePreviousTableGrid() => PreviousTableGrid is not null;
+  public bool ShouldSerializePreviousTableGrid() => PreviousTableGrid is not null && ShouldSerialize(PreviousTableGrid);
 }

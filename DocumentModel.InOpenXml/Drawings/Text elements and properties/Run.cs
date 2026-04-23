@@ -7,17 +7,6 @@ namespace DocumentModel.Drawings;
 public partial class Run : ModelElement<DXD.Run>
 {
   /// <summary>
-  /// Initializes a new instance of the Run class.
-  /// </summary>
-  public Run() : base() { }
-
-  /// <summary>
-  /// Initializes a new instance of the Run class using the specified collection.
-  /// </summary>
-  /// <param name="collection">The collection to be used for initializing the Run instance. The collection must not be null.</param>
-  public Run(object collection) : base(collection) { }
-
-  /// <summary>
   ///   Character properties applied to the text run.
   /// </summary>
   [OpenXmlProperty(nameof(DXD.Run.RunProperties))]

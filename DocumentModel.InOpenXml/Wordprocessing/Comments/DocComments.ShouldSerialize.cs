@@ -4,8 +4,8 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class DocComments
 {
-  public bool ShouldSerializeComments() => Comments is not null;
-  public bool ShouldSerializeCommentsEx() => CommentsEx is not null;
-  public bool ShouldSerializeCommentsIds() => CommentsIds is not null;
-  public bool ShouldSerializeCommentsExtensible() => CommentsExtensible is not null;
+  public bool ShouldSerializeComments() => Comments is not null && ShouldSerialize(Comments);
+  public bool ShouldSerializeCommentsEx() => CommentsEx is not null && ShouldSerialize(CommentsEx);
+  public bool ShouldSerializeCommentsIds() => CommentsIds is not null && ShouldSerialize(CommentsIds);
+  public bool ShouldSerializeCommentsExtensible() => CommentsExtensible is not null && ShouldSerialize(CommentsExtensible);
 }

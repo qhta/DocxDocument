@@ -92,7 +92,7 @@ public partial class Story<OpenXmlCollectionType>: ModelElement<OpenXmlCollectio
   [XmlArrayItem("CustomXmlConflictInsertionRangeStart", typeof(CustomXmlConflictInsertionRangeStart))]
   [XmlArrayItem("CustomXmlConflictDeletionRangeStart", typeof(CustomXmlConflictDeletionRangeStart))]
 
-  public ObservableCollection<ModelElement> Items { get; set; } = new();
+  public ModelElementCollection<ModelElement> Items { get; set; } = new();
 
 
   /// <summary>
@@ -139,8 +139,6 @@ public partial class Story<OpenXmlCollectionType>: ModelElement<OpenXmlCollectio
             if (constructor != null)
             {
               modelObject = (ModelElement)constructor.Invoke([]);
-              Debug.WriteLine(
-                $"Warning: Model element of type {modelElementType.FullName} was created using a parameterless constructor. Consider adding a constructor that accepts the parent collection or the Open XML element for better initialization.");
               Items.Add(modelObject);
               modelObject.LoadData(openXmlElement);
             }

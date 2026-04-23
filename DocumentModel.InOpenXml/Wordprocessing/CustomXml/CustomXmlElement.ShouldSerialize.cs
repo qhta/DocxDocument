@@ -6,5 +6,5 @@ public partial class CustomXmlElement
 {
   public bool ShouldSerializeUriString() => !String.IsNullOrEmpty(UriString);
   public bool ShouldSerializeElement() => !String.IsNullOrEmpty(Element);
-  public bool ShouldSerializeCustomXmlProperties() => CustomXmlProperties is not null;
+  public bool ShouldSerializeCustomXmlProperties() => CustomXmlProperties is not null && ShouldSerialize(CustomXmlProperties);
 }

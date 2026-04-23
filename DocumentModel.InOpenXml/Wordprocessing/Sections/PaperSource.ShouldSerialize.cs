@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class PaperSource
 {
-  public bool ShouldSerializeFirst() => First is not null;
-  public bool ShouldSerializeOther() => Other is not null;
+  public bool ShouldSerializeFirst() => First is not null && ShouldSerialize(First);
+  public bool ShouldSerializeOther() => Other is not null && ShouldSerialize(Other);
 }

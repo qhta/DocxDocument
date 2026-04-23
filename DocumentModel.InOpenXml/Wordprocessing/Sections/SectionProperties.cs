@@ -9,17 +9,6 @@ namespace DocumentModel.Wordprocessing;
 public partial class SectionProperties : BaseSectionProperties<DXW.SectionProperties>
 {
   /// <summary>
-  /// Default constructor.
-  /// </summary>
-  public SectionProperties() : base() { }
-
-  /// <summary>
-  /// Constructor that initializes the element within an owner collection.
-  /// </summary>
-  /// <param name="collection">The collection to which this element belongs.</param>
-  public SectionProperties(object collection) : base(collection) { }
-
-  /// <summary>
   /// Collection of header references associated with the current instance.
   /// </summary>
   [OpenXmlElementCollection(typeof(DXW.HeaderReference))]

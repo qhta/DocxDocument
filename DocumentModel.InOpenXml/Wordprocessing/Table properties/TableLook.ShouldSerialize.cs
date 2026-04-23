@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class TableLook
 {
-  public bool ShouldSerializeVal() => Val is not null;
+  public bool ShouldSerializeVal() => Val is not null && ShouldSerialize(Val);
   public bool ShouldSerializeFirstRow() => FirstRow is not null;
   public bool ShouldSerializeLastRow() => LastRow is not null;
   public bool ShouldSerializeFirstColumn() => FirstColumn is not null;

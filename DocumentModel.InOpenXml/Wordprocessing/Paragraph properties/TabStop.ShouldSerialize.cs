@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class TabStop
 {
-  public bool ShouldSerializeType() => Type is not null;
-  public bool ShouldSerializePosition() => Position is not null;
-  public bool ShouldSerializeLeader() => Leader is not null;
+  public bool ShouldSerializeType() => Type is not null && ShouldSerialize(Type);
+  public bool ShouldSerializePosition() => Position is not null && ShouldSerialize(Position);
+  public bool ShouldSerializeLeader() => Leader is not null && ShouldSerialize(Leader);
 }

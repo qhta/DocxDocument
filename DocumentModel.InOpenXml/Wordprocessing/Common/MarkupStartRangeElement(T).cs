@@ -10,17 +10,6 @@ namespace DocumentModel.Wordprocessing;
 public abstract partial class MarkupStartRangeElement<T1, T2> : ModelElement<T1>, IIdentifiedChange, IMarkupElement where T1 : DX.OpenXmlElement where T2 : DX.OpenXmlElement
 {
   /// <summary>
-  /// Default constructor.
-  /// </summary>
-  protected MarkupStartRangeElement() : base() { }
-
-  /// <summary>
-  /// Constructor that initializes the element within an owner collection.
-  /// </summary>
-  /// <param name="collection">The collection to which this element belongs.</param>
-  protected MarkupStartRangeElement(object collection) : base(collection) { }
-
-  /// <summary>
   ///   Indicates that the parent annotation's placement is directly linked with the location of the physical presentation of a custom XML element in the document.
   ///   This property only has an effect when the custom XML element is block-level (i.e., surrounds an entire paragraph), as the logical and physical placement of the annotation and custom XML element can differ in this scenario.
   /// </summary>

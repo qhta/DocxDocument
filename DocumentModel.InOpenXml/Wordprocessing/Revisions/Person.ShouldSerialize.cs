@@ -6,5 +6,5 @@ public partial class Person
 {
   public bool ShouldSerializeContact() => !String.IsNullOrEmpty(Contact);
   public bool ShouldSerializeAuthor() => !String.IsNullOrEmpty(Author);
-  public bool ShouldSerializePresenceInfo() => PresenceInfo is not null;
+  public bool ShouldSerializePresenceInfo() => PresenceInfo is not null && ShouldSerialize(PresenceInfo);
 }

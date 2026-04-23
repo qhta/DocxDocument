@@ -4,5 +4,5 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class TableCell
 {
-  public bool ShouldSerializeTableCellProperties() => TableCellProperties is not null;
+  public bool ShouldSerializeTableCellProperties() => TableCellProperties is not null && ShouldSerialize(TableCellProperties);
 }

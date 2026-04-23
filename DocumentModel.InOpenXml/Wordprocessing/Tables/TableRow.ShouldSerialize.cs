@@ -4,12 +4,12 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class TableRow
 {
-  public bool ShouldSerializeRsidTableRowMarkRevision() => RsidTableRowMarkRevision is not null;
-  public bool ShouldSerializeRsidTableRowAddition() => RsidTableRowAddition is not null;
-  public bool ShouldSerializeRsidTableRowDeletion() => RsidTableRowDeletion is not null;
-  public bool ShouldSerializeRsidTableRowProperties() => RsidTableRowProperties is not null;
-  public bool ShouldSerializeParagraphId() => ParagraphId is not null;
-  public bool ShouldSerializeTextId() => TextId is not null;
-  public bool ShouldSerializeTablePropertyExceptions() => TablePropertyExceptions is not null;
-  public bool ShouldSerializeTableRowProperties() => TableRowProperties is not null;
+  public bool ShouldSerializeRsidTableRowMarkRevision() => RsidTableRowMarkRevision is not null && ShouldSerialize(RsidTableRowMarkRevision);
+  public bool ShouldSerializeRsidTableRowAddition() => RsidTableRowAddition is not null && ShouldSerialize(RsidTableRowAddition);
+  public bool ShouldSerializeRsidTableRowDeletion() => RsidTableRowDeletion is not null && ShouldSerialize(RsidTableRowDeletion);
+  public bool ShouldSerializeRsidTableRowProperties() => RsidTableRowProperties is not null && ShouldSerialize(RsidTableRowProperties);
+  public bool ShouldSerializeParagraphId() => ParagraphId is not null && ShouldSerialize(ParagraphId);
+  public bool ShouldSerializeTextId() => TextId is not null && ShouldSerialize(TextId);
+  public bool ShouldSerializeTablePropertyExceptions() => TablePropertyExceptions is not null && ShouldSerialize(TablePropertyExceptions);
+  public bool ShouldSerializeTableRowProperties() => TableRowProperties is not null && ShouldSerialize(TableRowProperties);
 }

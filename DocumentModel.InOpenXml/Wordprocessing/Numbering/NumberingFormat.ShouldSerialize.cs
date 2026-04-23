@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class NumberingFormat
 {
-  public bool ShouldSerializeType() => Type is not null;
+  public bool ShouldSerializeType() => Type is not null && ShouldSerialize(Type);
   public bool ShouldSerializeCustom() => !String.IsNullOrEmpty(Custom);
 }

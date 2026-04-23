@@ -5,5 +5,5 @@ namespace DocumentModel.Wordprocessing;
 public partial class TableCellPropertiesChange
 {
   public bool ShouldSerializeAnnotationId() => !String.IsNullOrEmpty(AnnotationId);
-  public bool ShouldSerializePreviousTableCellProperties() => PreviousTableCellProperties is not null;
+  public bool ShouldSerializePreviousTableCellProperties() => PreviousTableCellProperties is not null && ShouldSerialize(PreviousTableCellProperties);
 }

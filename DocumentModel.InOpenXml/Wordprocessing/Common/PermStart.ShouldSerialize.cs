@@ -4,8 +4,8 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class PermStart
 {
-  public bool ShouldSerializeColumnFirst() => ColumnFirst is not null;
-  public bool ShouldSerializeColumnLast() => ColumnLast is not null;
-  public bool ShouldSerializeEditorGroup() => EditorGroup is not null;
+  public bool ShouldSerializeColumnFirst() => ColumnFirst is not null && ShouldSerialize(ColumnFirst);
+  public bool ShouldSerializeColumnLast() => ColumnLast is not null && ShouldSerialize(ColumnLast);
+  public bool ShouldSerializeEditorGroup() => EditorGroup is not null && ShouldSerialize(EditorGroup);
   public bool ShouldSerializeEd() => !String.IsNullOrEmpty(Ed);
 }

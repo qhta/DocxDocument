@@ -11,6 +11,6 @@ public partial class ClassificationLabel
   public bool ShouldSerializeName() => !String.IsNullOrEmpty(Name);
   public bool ShouldSerializeSiteId() => !String.IsNullOrEmpty(SiteId);
   public bool ShouldSerializeActionId() => !String.IsNullOrEmpty(ActionId);
-  public bool ShouldSerializeContentBits() => ContentBits is not null;
+  public bool ShouldSerializeContentBits() => ContentBits is not null && ShouldSerialize(ContentBits);
   public bool ShouldSerializeRemoved() => Removed is not null;
 }

@@ -110,12 +110,19 @@ internal static class AutoEditCommands
         try
         {
           dte.ItemOperations.OpenFile(filePath, EnvDTE.Constants.vsViewKindTextView);
-          action(filePath);
         }
         catch
         {
         }
       }
+      try
+      {
+        action(filePath);
+      }
+      catch
+      {
+      }
+
     }
   }
 
