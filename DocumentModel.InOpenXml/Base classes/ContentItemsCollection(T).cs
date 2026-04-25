@@ -166,13 +166,13 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
       IsLazyLoadEnabled = false;
       if (DataSource is DX.OpenXmlCompositeElement openXmlElement)
       {
-        Debug.WriteLine($"Lazy loading data for {GetType().Name} from OpenXmlCompositeElement: {openXmlElement.LocalName}");
+        //Debug.WriteLine($"Lazy loading data for {GetType().Name} from OpenXmlCompositeElement: {openXmlElement.LocalName}");
         LoadData(openXmlElement);
         Task.Run(() =>
         {
-          Debug.WriteLine($"Loading collection children for {GetType().Name} from OpenXmlCompositeElement: {openXmlElement.LocalName}");
+          //Debug.WriteLine($"Loading collection children for {GetType().Name} from OpenXmlCompositeElement: {openXmlElement.LocalName}");
           LoadCollectionChildren(openXmlElement);
-          Debug.WriteLine($"Finished loading collection children for {GetType().Name}. Total items loaded: {Items.Count}");
+          //Debug.WriteLine($"Finished loading collection children for {GetType().Name}. Total items loaded: {Items.Count}");
           IsSynchronized = true;
           DataSource = null;
         });
@@ -207,7 +207,7 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   private void LoadCollectionChildren(DX.OpenXmlCompositeElement openXmlElement)
   {
     var children = openXmlElement.Elements().ToArray();
-    Debug.WriteLine($"Loading {children.Length} child elements for {GetType().Name} from OpenXmlCompositeElement: {openXmlElement.LocalName}");
+    //Debug.WriteLine($"Loading {children.Length} child elements for {GetType().Name} from OpenXmlCompositeElement: {openXmlElement.LocalName}");
     foreach (var openXmlChildElement in children)
     {
       if (!AcceptItem(openXmlChildElement))
@@ -239,7 +239,7 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   {
     get
     {
-      Debug.WriteLine($"Accessing item at index {index} in {GetType().Name}. IsSynchronized: {IsSynchronized}, Items.Count: {Items.Count}");
+      //Debug.WriteLine($"Accessing item at index {index} in {GetType().Name}. IsSynchronized: {IsSynchronized}");
       while (!IsSynchronized && index > Items.Count - 1)
         Task.Delay(100).Wait();
       return Items[index];

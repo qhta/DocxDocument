@@ -44,14 +44,42 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
     }
   }
 
-  ///// <summary>
-  ///// Initializes a new instance of the ModelElementCollection class with the specified parent element.
-  ///// </summary>
-  ///// <param name = "parent">The parent ModelElement that owns this collection. Cannot be null.</param>
-  //public ModelElementCollection(ModelElement parent) : base(parent)
-  //{
-  //  TryLazyLoad();
-  //}
+  /// <summary>
+  /// Returns the number of items in the collection.
+  /// </summary>
+  public override int Count
+  {
+    get
+    {
+      //if (IsLazyLoadEnabled)
+      //  if (DataSource is DX.OpenXmlCompositeElement openXmlElement)
+      //    return openXmlElement.Elements().Count();
+      return Items.Count;
+    }
+  }
+
+  /// <summary>
+  /// Checks if the collection is empty.
+  /// A collection is considered empty if all its properties are null or empty
+  /// (as determined by the base implementation of IsEmpty())
+  /// and it contains no items or if all items in the collection are themselves empty
+  /// (i.e., they implement IEmptyCheckable and return true for IsEmpty()).
+  /// </summary>
+  /// <returns></returns>
+  public override bool IsEmpty()
+  {
+    //if (IsLazyLoadEnabled)
+    //  if (DataSource is DX.OpenXmlCompositeElement openXmlElement)
+    //    return !openXmlElement.Elements().Any();
+    return !Items.Any();
+  }
+
+
+  /// <summary>
+  /// Returns or assigns the item at the specified index.
+  /// </summary>
+  /// <param name = "index">The zero-based index.</param>
+  public override ItemType this[int index] { get => Items[index]; set => Items[index] = value; }
 
   /// <summary>
   /// Enables or disables lazy loading for the collection. 
@@ -80,8 +108,9 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
       IsLazyLoadEnabled = false;
       if (DataSource is DX.OpenXmlCompositeElement openXmlElement)
       {
-        Debug.WriteLine($"Lazy loading data for {GetType().Name} from OpenXmlCompositeElement: {openXmlElement.LocalName}");
+        //Debug.WriteLine($"Lazy loading data for {GetType().Name} from OpenXmlCompositeElement: {openXmlElement.LocalName}");
         LoadData(openXmlElement);
+        DataSource = null;
       }
     }
   }

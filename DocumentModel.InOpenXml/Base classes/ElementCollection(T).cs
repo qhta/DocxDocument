@@ -27,19 +27,6 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   }
 
   /// <summary>
-  /// Creates a new collection with the specified parent element.
-  /// The parent element is assigned to the Parent property of this collection, establishing a hierarchical relationship
-  /// between the collection and its parent. This constructor allows for the creation of collections that are associated
-  /// with a specific parent model element, enabling structured data organization and navigation within the model.
-  /// </summary>
-  /// <param name = "parent">Model element that will be notified about modifications.</param>
-  protected ElementCollection(ModelElement parent) : this()
-  {
-    SetParent(parent);
-    _items.CollectionChanged += Items_CollectionChanged;
-  }
-
-  /// <summary>
   /// Initializes a new collection with the specified items.
   /// </summary>
   /// <param name = "items">The items to add to the collection.</param>
@@ -477,15 +464,7 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   /// <returns></returns>
   public override bool IsEmpty()
   {
-    if (!base.IsEmpty())
-      return false;
-    foreach (var item in this)
-    {
-      if (item is IEmptyCheckable emptyCheckable && !emptyCheckable.IsEmpty())
-        return false;
-    }
-
-    return true;
+    return !Items.Any();
   }
 
   /// <summary>
