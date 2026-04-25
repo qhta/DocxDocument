@@ -239,7 +239,7 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   {
     get
     {
-      //Debug.WriteLine($"Accessing item at index {index} in {GetType().Name}. IsSynchronized: {IsSynchronized}");
+      Debug.WriteLine($"Accessing item at index {index} in {GetType().Name}. IsSynchronized: {IsSynchronized}");
       while (!IsSynchronized && index > Items.Count - 1)
         Task.Delay(100).Wait();
       return Items[index];

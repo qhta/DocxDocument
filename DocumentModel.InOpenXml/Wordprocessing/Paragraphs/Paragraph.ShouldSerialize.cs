@@ -13,6 +13,5 @@ public partial class Paragraph
   public bool ShouldSerializeRsidParagraphMarkRevision() => RsidParagraphMarkRevision is not null && ShouldSerialize(RsidParagraphMarkRevision);
   public bool ShouldSerializeNoSpellError() => NoSpellError is not null;
   public bool ShouldSerializeParagraphProperties() => ParagraphProperties is not null && ShouldSerialize(ParagraphProperties);
-  public bool ShouldSerializeIsLazyLoadEnabled() => IsLazyLoadEnabled == true;
-  public bool ShouldSerializeDataSource() => DataSource is not null;
+
 }

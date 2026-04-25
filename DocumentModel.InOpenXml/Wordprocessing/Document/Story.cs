@@ -6,9 +6,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [XmlRoot("Story", Namespace = "DocumentModel.Wordprocessing")]
 [OpenXmlType(typeof(DX.OpenXmlCompositeElement))]
-//[OpenXmlItem(typeof(DX.OpenXmlElement))]
-//[OpenXmlLoadData(nameof(LoadDataCollection))]
-//[OpenXmlUpdateData(nameof(UpdateDataCollection))]
 public partial class Story<OpenXmlCollectionType>: ModelElement<OpenXmlCollectionType>
   where OpenXmlCollectionType: DX.OpenXmlCompositeElement
 {
@@ -56,64 +53,6 @@ public partial class Story<OpenXmlCollectionType>: ModelElement<OpenXmlCollectio
 
   public StoryItemsCollection Items { get; set; } = new();
 
-
-  ///// <summary>
-  ///// Loads model elements from the specified Open XML composite element and populates the collection.
-  ///// </summary>
-  ///// <param name = "openXmlModeledCollection">The Open XML composite element containing child elements to load.</param>
-  //protected void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection)
-  //{
-  //  Items.Clear();
-  //  foreach (var openXmlElement in openXmlModeledCollection.Elements())
-  //  {
-  //    var openXmlElementType = openXmlElement.GetType();
-  //    if (!_modelElementTypeMapping.TryGetValue(openXmlElementType, out var modelElementType))
-  //    {
-  //      throw new InvalidOperationException(
-  //        $"No model element type mapping found for Open XML element type {openXmlElementType.FullName}.");
-  //    }
-  //    ModelElement? modelObject = null;
-  //    var constructor = modelElementType.GetConstructor([this.GetType()]);
-  //    if (constructor != null)
-  //    {
-  //      modelObject = (ModelElement)constructor.Invoke([this]);
-  //      Items.Add(modelObject);
-  //      modelObject.LoadData(openXmlElement);
-  //    }
-  //    else
-  //    {
-  //      constructor = modelElementType.GetConstructor([openXmlElementType, this.GetType()]);
-  //      if (constructor != null)
-  //      {
-  //        modelObject = (ModelElement)constructor.Invoke([openXmlElement, this]);
-  //      }
-  //      else
-  //      {
-  //        constructor = modelElementType.GetConstructor([openXmlElementType]);
-  //        if (constructor != null)
-  //        {
-  //          modelObject = (ModelElement)constructor.Invoke([openXmlElement]);
-  //          Items.Add(modelObject);
-  //        }
-  //        else
-  //        {
-  //          constructor = modelElementType.GetConstructor([]);
-  //          if (constructor != null)
-  //          {
-  //            modelObject = (ModelElement)constructor.Invoke([]);
-  //            Items.Add(modelObject);
-  //            modelObject.LoadData(openXmlElement);
-  //          }
-  //          else
-  //          {
-  //            throw new InvalidOperationException(
-  //              $"No suitable constructor found for model element type {modelElementType.FullName}.");
-  //          }
-  //        }
-  //      }
-  //    }
-  //  }
-  //}
 
   /// <summary>
   /// Updates the Open XML composite element to reflect the current state of the collection.

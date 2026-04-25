@@ -3,8 +3,7 @@
 /// <summary>
 /// Specific collection of story items in a Wordprocessing document, extending the generic ContentItemsCollection to handle ModelElement types. This collection is designed to accept any item and provides a mapping between OpenXml element types and model element types for proper data loading and synchronization within the document model.
 /// </summary>
-//[OpenXmlItem(typeof(DX.OpenXmlElement))]
-public class StoryItemsCollection: ContentItemsCollection<ModelElement>
+public class ParagraphItemsCollection: ContentItemsCollection<ModelElement>
 {
 
   /// <summary>
@@ -12,13 +11,34 @@ public class StoryItemsCollection: ContentItemsCollection<ModelElement>
   /// </summary>
   private static readonly BiDiDictionary<Type, Type> _ModelElementTypeMapping = new()
   {
-    { typeof(DXW.Paragraph), typeof(DMW.Paragraph) },
-    { typeof(DXW.Table), typeof(DMW.Table) },
-    { typeof(DXW.AltChunk), typeof(DMW.AltChunk) },
-    { typeof(DXW.SdtBlock), typeof(DMW.SdtBlock) },
+    { typeof(DXM.Accent), typeof(DMM.Accent) },
+    { typeof(DXM.Bar), typeof(DMM.Bar) },
+    { typeof(DXM.BorderBox), typeof(DMM.BorderBox) },
+    { typeof(DXM.Box), typeof(DMM.Box) },
+    { typeof(DXM.Delimiter), typeof(DMM.Delimiter) },
+    { typeof(DXM.EquationArray), typeof(DMM.EquationArray) },
+    { typeof(DXM.Fraction), typeof(DMM.Fraction) },
+    { typeof(DXM.MathFunction), typeof(DMM.Function) },
+    { typeof(DXM.GroupChar), typeof(DMM.GroupChar) },
+    { typeof(DXM.LimitLower), typeof(DMM.LimitLower) },
+    { typeof(DXM.LimitUpper), typeof(DMM.LimitUpper) },
+    { typeof(DXM.Matrix), typeof(DMM.Matrix) },
+    { typeof(DXM.Nary), typeof(DMM.Nary) },
+    { typeof(DXM.OfficeMath), typeof(DMM.OfficeMath) },
+    { typeof(DXM.Paragraph), typeof(DMM.Paragraph) },
+    { typeof(DXM.Phantom), typeof(DMM.Phantom) },
+    { typeof(DXM.Run), typeof(DMM.Run) },
+    { typeof(DXM.Radical), typeof(DMM.Radical) },
+    { typeof(DXM.PreSubSuper), typeof(DMM.PreSubSuper) },
+    { typeof(DXM.Subscript), typeof(DMM.Subscript) },
+    { typeof(DXM.SubSuperscript), typeof(DMM.SubSuperscript) },
+    { typeof(DXM.Superscript), typeof(DMM.Superscript) },
+    { typeof(DXW.BidirectionalOverride), typeof(DMW.BidirectionalOverride) },
     { typeof(DXW.BookmarkStart), typeof(DMW.BookmarkStart) },
     { typeof(DXW.ContentPart), typeof(DMW.ContentPart) },
-    { typeof(DXW.CustomXmlBlock), typeof(DMW.CustomXmlBlock) },
+    { typeof(DXW.CustomXmlRun), typeof(DMW.CustomXmlRun) },
+    { typeof(DXW.BidirectionalEmbedding), typeof(DMW.BidirectionalEmbedding) },
+    { typeof(DXW.Hyperlink), typeof(DMW.Hyperlink) },
     { typeof(DXW.CustomXmlInsRangeEnd), typeof(DMW.CustomXmlInsRangeEnd) },
     { typeof(DXW.CustomXmlDelRangeEnd), typeof(DMW.CustomXmlDelRangeEnd) },
     { typeof(DXW.CustomXmlMoveFromRangeEnd), typeof(DMW.CustomXmlMoveFromRangeEnd) },
@@ -34,21 +54,24 @@ public class StoryItemsCollection: ContentItemsCollection<ModelElement>
     { typeof(DXW.MoveToRangeStart), typeof(DMW.MoveToRangeStart) },
     { typeof(DXW.PermEnd), typeof(DMW.PermEnd) },
     { typeof(DXW.PermStart), typeof(DMW.PermStart) },
+    { typeof(DXW.ParagraphProperties), typeof(DMW.ParagraphProperties) },
     { typeof(DXW.ProofError), typeof(DMW.ProofError) },
+    { typeof(DXW.Run), typeof(DMW.Run) },
+    { typeof(DXW.SubDocumentReference), typeof(DMW.SubDocumentReference) },
     { typeof(DXW.InsertedRun), typeof(DMW.InsertedRun) },
     { typeof(DXW.DeletedRun), typeof(DMW.DeletedRun) },
     { typeof(DXW.MoveFromRun), typeof(DMW.MoveFromRun) },
     { typeof(DXW.MoveToRun), typeof(DMW.MoveToRun) },
     { typeof(DXO10W.RunConflictInsertion), typeof(DMW.RunConflictInsertion) },
     { typeof(DXO10W.RunConflictDeletion), typeof(DMW.RunConflictDeletion) },
-    { typeof(DXW.SectionProperties), typeof(DMW.SectionProperties) },
+    { typeof(DXW.SdtRun), typeof(DMW.SdtRun) },
+    { typeof(DXW.SimpleField), typeof(DMW.SimpleField) },
     { typeof(DXW.CustomXmlInsRangeStart), typeof(DMW.CustomXmlInsRangeStart) },
     { typeof(DXW.CustomXmlDelRangeStart), typeof(DMW.CustomXmlDelRangeStart) },
     { typeof(DXW.CustomXmlMoveFromRangeStart), typeof(DMW.CustomXmlMoveFromRangeStart) },
     { typeof(DXW.CustomXmlMoveToRangeStart), typeof(DMW.CustomXmlMoveToRangeStart) },
     { typeof(DXO10W.CustomXmlConflictInsertionRangeStart), typeof(DMW.CustomXmlConflictInsertionRangeStart) },
-    { typeof(DXO10W.CustomXmlConflictDeletionRangeStart), typeof(DMW.CustomXmlConflictDeletionRangeStart) },
-  };
+    { typeof(DXO10W.CustomXmlConflictDeletionRangeStart), typeof(DMW.CustomXmlConflictDeletionRangeStart) },  };
 
   /// <summary>
   /// Gets the mapping between model element types and their corresponding mapped types.  
