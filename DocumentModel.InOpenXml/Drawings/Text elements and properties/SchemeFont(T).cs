@@ -41,7 +41,7 @@ public abstract partial class SchemeFont<T> : ModelElement<T>, IExtendableElemen
   /// <param name="openXmlElement">The Open XML element containing supplemental font data to be loaded.</param>
   private void LoadSupplementalFontsFromOpenXml(DX.OpenXmlElement openXmlElement)
   {
-    SupplementalFonts ??= new SupplementalFonts(this);
+    SupplementalFonts ??= new SupplementalFonts(){ Parent = this };
     SupplementalFonts.LoadData(openXmlElement);
   }
 

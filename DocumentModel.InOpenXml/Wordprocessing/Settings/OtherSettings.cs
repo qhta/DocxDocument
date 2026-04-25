@@ -6,18 +6,5 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("OtherSettings", Namespace = "DocumentModel.Wordprocessing")]
 public class OtherSettings : ModelElementCollection<CompatibilitySetting, DXW.Compatibility, DXW.CompatibilitySetting>
 {
- /// <summary>
- /// Default constructor.
- /// </summary>
- public OtherSettings()
- {
- }
 
- /// <summary>
- /// Initializing constructor.
- /// </summary>
- /// <param name = "parent"></param>
- public OtherSettings(ModelElement parent) : base(parent)
- {
- }
 }

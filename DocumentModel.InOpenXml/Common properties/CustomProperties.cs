@@ -17,8 +17,9 @@ public sealed partial class CustomProperties : ModelElementCollection<CustomProp
   /// Initializing constructor.
   /// </summary>
   /// <param name="document">Wordprocessing document model</param>
-  public CustomProperties(Wordprocessing.Document document) : base(document)
+  public CustomProperties(Wordprocessing.Document document)
   {
+    Parent = document;
     if (document.WordprocessingDocument != null)
        AttachAndLoad(document.WordprocessingDocument);
   }

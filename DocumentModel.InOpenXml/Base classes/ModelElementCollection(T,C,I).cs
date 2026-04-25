@@ -15,21 +15,21 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
  {
  }
 
- /// <summary>
- /// Initializes a new instance of the ModelElementCollection class with the specified parent element.
- /// </summary>
- /// <param name = "parent">The parent ModelElement that owns this collection. Cannot be null.</param>
- protected ModelElementCollection(ModelElement parent) : base(parent)
- {
- }
+ ///// <summary>
+ ///// Initializes a new instance of the ModelElementCollection class with the specified parent element.
+ ///// </summary>
+ ///// <param name = "parent">The parent ModelElement that owns this collection. Cannot be null.</param>
+ //protected ModelElementCollection(ModelElement parent) : base(parent)
+ //{
+ //}
 
- /// <summary>
- /// Initializes a new instance of the collection from an Open XML composite element.
- /// </summary>
- /// <param name = "openXmlCollection">The Open XML composite element to initialize from.</param>
- protected ModelElementCollection(OpenXmlCollectionType? openXmlCollection) : base()
- {
- }
+ ///// <summary>
+ ///// Initializes a new instance of the collection from an Open XML composite element.
+ ///// </summary>
+ ///// <param name = "openXmlCollection">The Open XML composite element to initialize from.</param>
+ //protected ModelElementCollection(OpenXmlCollectionType? openXmlCollection) : base()
+ //{
+ //}
 
  /// <summary>
  /// Initializes a new instance of the collection from an enumerable of model elements.

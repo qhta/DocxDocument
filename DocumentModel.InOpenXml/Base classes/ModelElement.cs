@@ -411,10 +411,12 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// </summary>
   [XmlIgnore]
   [JsonIgnore]
+  [NotMapped]
   public object? Parent
   {
     [DebuggerStepThrough]
     get => _Parent;
+    set => SetParent(value);
   }
 
   /// <summary>

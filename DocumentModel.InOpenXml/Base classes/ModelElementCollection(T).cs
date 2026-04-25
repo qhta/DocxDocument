@@ -44,14 +44,14 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
     }
   }
 
-  /// <summary>
-  /// Initializes a new instance of the ModelElementCollection class with the specified parent element.
-  /// </summary>
-  /// <param name = "parent">The parent ModelElement that owns this collection. Cannot be null.</param>
-  public ModelElementCollection(ModelElement parent) : base(parent)
-  {
-    TryLazyLoad();
-  }
+  ///// <summary>
+  ///// Initializes a new instance of the ModelElementCollection class with the specified parent element.
+  ///// </summary>
+  ///// <param name = "parent">The parent ModelElement that owns this collection. Cannot be null.</param>
+  //public ModelElementCollection(ModelElement parent) : base(parent)
+  //{
+  //  TryLazyLoad();
+  //}
 
   /// <summary>
   /// Enables or disables lazy loading for the collection. 
@@ -73,7 +73,7 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
   /// <summary>
   /// If LazyLoad is enabled, this method loads the related data from the data source and disables lazy loading.
   /// </summary>
-  public void TryLazyLoad()
+  public virtual void TryLazyLoad()
   {
     if (IsLazyLoadEnabled)
     {

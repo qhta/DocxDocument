@@ -5,14 +5,5 @@
 /// </summary>
 public class SchemeColorDefs: ModelElementCollection<SchemeColorDef>
 {
-  /// <summary>
-  /// Default constructor.
-  /// </summary>
-  public SchemeColorDefs() : base() { }
 
-  /// <summary>
-  /// Initializing constructor with a parent element.
-  /// </summary>
-  /// <param name="parent">A parent <see cref="ColorScheme"/> element that this collection belongs to.</param>
-  public SchemeColorDefs(ColorScheme parent) : base(parent) { }
 }

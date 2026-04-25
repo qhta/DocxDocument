@@ -8361,6 +8361,18 @@
             </summary>
             <returns><c>true</c> if the object is empty; otherwise, <c>false</c>.</returns>
         </member>
+        <member name="T:DocumentModel.IFilteringCollection">
+            <summary>
+            Interface for collections that support filtering of items. Implementing classes should provide logic to determine whether an item should be accepted or rejected based on specific criteria.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.IFilteringCollection.AcceptItem(System.Object)">
+            <summary>
+            Determines whether the specified item should be accepted by the collection.
+            </summary>
+            <param name="item">The item to evaluate.</param>
+            <returns><c>true</c> if the item is accepted; otherwise, <c>false</c>.</returns>
+        </member>
         <member name="T:DocumentModel.ILazyLoadable">
             <summary>
             Interface used to mark a collection as supporting lazy loading of its elements from an Open XML composite element.

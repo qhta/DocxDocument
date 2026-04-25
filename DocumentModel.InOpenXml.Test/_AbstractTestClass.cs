@@ -178,8 +178,8 @@ public class _AbstractTestClass
             if (UniqueTypeNames.Add(unique))
               overrides.Add(b, new XmlAttributes { XmlType = new XmlTypeAttribute(unique) });
           }
+          break;
         }
-        break;
         b = b.BaseType;
       }
     }

@@ -441,8 +441,8 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
  /// <param name = "setting"></param>
  public void Add(CompatibilitySetting setting)
  {
-  if (_OtherSettings == null)
-   _OtherSettings = new OtherSettings(this);
+   if (_OtherSettings == null)
+     _OtherSettings = new OtherSettings() { Parent = this };
   _OtherSettings.Add(setting);
  }
 }

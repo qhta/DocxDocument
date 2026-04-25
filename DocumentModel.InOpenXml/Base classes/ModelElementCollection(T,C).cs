@@ -21,14 +21,14 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   InitCollectionChangedEventHandler();
  }
 
- /// <summary>
- /// Initializes a new instance of the ModelElementCollection class with the specified parent element.
- /// </summary>
- /// <param name = "parent">The parent ModelElement that owns this collection. Cannot be null.</param>
- protected ModelElementCollection(ModelElement parent) : base(parent)
- {
-  InitCollectionChangedEventHandler();
- }
+ ///// <summary>
+ ///// Initializes a new instance of the ModelElementCollection class with the specified parent element.
+ ///// </summary>
+ ///// <param name = "parent">The parent ModelElement that owns this collection. Cannot be null.</param>
+ //protected ModelElementCollection(ModelElement parent) : base(parent)
+ //{
+ // InitCollectionChangedEventHandler();
+ //}
 
  /// <summary>
  /// Initializes collection changed event handler to update data on change.
@@ -90,26 +90,26 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   SetUpdatableElement(null);
  }
 
- /// <summary>
- ///   Initializes a new instance of the <see cref = "ModelElementCollection{ItemType, OpenXmlCollectionType}"/> class with the specified OpenXml element.
- /// </summary>
- /// <param name = "openXmlCollection">The OpenXml collection element to wrap and synchronize with.</param>
- protected ModelElementCollection(OpenXmlCollectionType? openXmlCollection) : this()
- {
-  _openXmlCollection = openXmlCollection;
- }
+ ///// <summary>
+ /////   Initializes a new instance of the <see cref = "ModelElementCollection{ItemType, OpenXmlCollectionType}"/> class with the specified OpenXml element.
+ ///// </summary>
+ ///// <param name = "openXmlCollection">The OpenXml collection element to wrap and synchronize with.</param>
+ //protected ModelElementCollection(OpenXmlCollectionType? openXmlCollection) : this()
+ //{
+ // _openXmlCollection = openXmlCollection;
+ //}
 
- /// <summary>
- ///   Initializes a new instance of the <see cref = "ModelElementCollection{ItemType, OpenXmlCollectionType}"/> class with the specified items.
- /// </summary>
- /// <param name = "items">The items to add to the collection.</param>
- protected ModelElementCollection(IEnumerable<ItemType> items) : this()
- {
-  foreach (var item in items)
-  {
-   Add(item);
-  }
- }
+ ///// <summary>
+ /////   Initializes a new instance of the <see cref = "ModelElementCollection{ItemType, OpenXmlCollectionType}"/> class with the specified items.
+ ///// </summary>
+ ///// <param name = "items">The items to add to the collection.</param>
+ //protected ModelElementCollection(IEnumerable<ItemType> items) : this()
+ //{
+ // foreach (var item in items)
+ // {
+ //  Add(item);
+ // }
+ //}
 
  /// <summary>
  ///   Returns the OpenXml collection element instance for update operations, or null if not set.
