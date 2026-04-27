@@ -16,7 +16,6 @@ public partial class RunFonts: ModelElement<DXW.RunFonts>
     get => _Hint ??= GetProperty<FontTypeHint>(_openXmlElement?.Hint);
     set => UpdateField(ref _Hint, value, nameof(Hint));
   }
-
   private FontTypeHint? _Hint;
 
   /// <summary>
@@ -28,7 +27,6 @@ public partial class RunFonts: ModelElement<DXW.RunFonts>
     get => _Ascii ??= GetProperty<String>(_openXmlElement?.Ascii);
     set => UpdateField(ref _Ascii, value, nameof(Ascii));
   }
-
   private String? _Ascii;
 
   /// <summary>
@@ -40,7 +38,6 @@ public partial class RunFonts: ModelElement<DXW.RunFonts>
     get => _highAnsi ??= GetProperty<String>(_openXmlElement?.HighAnsi);
     set => UpdateField(ref _highAnsi, value, nameof(HighAnsi));
   }
-
   private String? _highAnsi;
 
   /// <summary>
@@ -52,7 +49,6 @@ public partial class RunFonts: ModelElement<DXW.RunFonts>
     get => _EastAsia ??= GetProperty<String>(_openXmlElement?.EastAsia);
     set => UpdateField(ref _EastAsia, value, nameof(EastAsia));
   }
-
   private String? _EastAsia;
 
   /// <summary>
@@ -64,7 +60,6 @@ public partial class RunFonts: ModelElement<DXW.RunFonts>
     get => _ComplexScript ??= GetProperty<String>(_openXmlElement?.ComplexScript);
     set => UpdateField(ref _ComplexScript, value, nameof(ComplexScript));
   }
-
   private String? _ComplexScript;
 
   /// <summary>
@@ -72,7 +67,6 @@ public partial class RunFonts: ModelElement<DXW.RunFonts>
   /// </summary>
   [OpenXmlProperty(nameof(DXW.RunFonts.AsciiTheme))]
   public ThemeFont? AsciiTheme { get => _AsciiTheme; set => UpdateField(ref _AsciiTheme, value, nameof(AsciiTheme)); }
-
   private ThemeFont? _AsciiTheme;
 
   /// <summary>
@@ -84,7 +78,6 @@ public partial class RunFonts: ModelElement<DXW.RunFonts>
     get => _HighAnsiTheme ??= GetProperty<ThemeFont>(_openXmlElement?.HighAnsiTheme);
     set => UpdateField(ref _HighAnsiTheme, value, nameof(HighAnsiTheme));
   }
-
   private ThemeFont? _HighAnsiTheme;
 
   /// <summary>
@@ -96,7 +89,6 @@ public partial class RunFonts: ModelElement<DXW.RunFonts>
     get => _EastAsiaTheme ??= GetProperty<ThemeFont>(_openXmlElement?.EastAsiaTheme);
     set => UpdateField(ref _EastAsiaTheme, value, nameof(EastAsiaTheme));
   }
-
   private ThemeFont? _EastAsiaTheme;
 
   /// <summary>
@@ -108,6 +100,5 @@ public partial class RunFonts: ModelElement<DXW.RunFonts>
     get => _ComplexScriptTheme ??= GetProperty<ThemeFont>(_openXmlElement?.ComplexScriptTheme);
     set => UpdateField(ref _ComplexScriptTheme, value, nameof(ComplexScriptTheme));
   }
-
   private ThemeFont? _ComplexScriptTheme;
 }

@@ -187,7 +187,7 @@ public static partial class EnumTypeConverter
       enumValuesMap = new BiDiDictionary<object, object>();
       foreach (var modelEnumField in modelEnumFields)
       {
-        string mappedName = modelEnumField.GetCustomAttribute<OpenXmlEnumValueAttribute>()?.EnumValueName ??
+        string mappedName = modelEnumField.GetCustomAttributes<OpenXmlEnumValueAttribute>()?.FirstOrDefault(a => a.EnumType==null || a.EnumType==openXmlEnumValuesType)?.EnumValueName ??
                             modelEnumField.GetCustomAttribute<OpenXmlPropertyAttribute>()?.PropertyName ??
                             modelEnumField.Name;
         if (!openXmlEnumProperties.TryGetValue(mappedName, out var openXmlProperty))

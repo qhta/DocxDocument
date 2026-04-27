@@ -5,33 +5,33 @@ using System.Xml.Serialization;
 namespace DocumentModel.InOpenXml.Test;
 
 /// <summary>
-/// Tests reading document body from a sample file and serializing created DocumentModel elements.
+/// Tests reading document Run from a sample file and serializing created DocumentModel elements.
 /// </summary>
-public class BodyReadTest : _AbstractTestClass
+public class RunTest : _AbstractTestClass
 {
   private const string SampleFilePath = @"D:\OneDrive\VS\Projects\DocxDocument\Samples\_Jakość oprogramowania2.zip";
 
   /// <summary>
-  /// Runs all body read tests.
+  /// Runs all Run read tests.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
   {
-    Console.WriteLine("=== Body Read Test ===\n");
-    //if (!TestReadBodyFromSampleFile()) return false;
-    if (!TestGetBodyFromSampleFile()) return false;
-    //if (!TestCreateAndSerializeBodyElements()) return false;
-    Console.WriteLine("All Body read tests passed.\n");
+    Console.WriteLine("=== Run Read Test ===\n");
+    //if (!TestReadOpenXmlRunFromSampleFile()) return false;
+    if (!TestGetRunFromSampleFile()) return false;
+    //if (!TestCreateAndSerializeRunElements()) return false;
+    Console.WriteLine("All Run read tests passed.\n");
     return true;
   }
 
   /// <summary>
-  /// Tests reading document body from the sample file and loading it into DocumentModel body.
+  /// Test reading OpenXml Run elements from the sample file and outputting their XML to the console and a file.
   /// </summary>
-  /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestReadBodyFromSampleFile()
+  /// <returns></returns>
+  static bool TestReadOpenXmlRunFromSampleFile()
   {
-    Console.WriteLine("--- Read Body From Sample File ---");
+    Console.WriteLine("--- Get Run From Sample File ---");
 
     if (!File.Exists(SampleFilePath))
     {
@@ -43,53 +43,31 @@ public class BodyReadTest : _AbstractTestClass
     var openXmlBody = wordDoc.MainDocumentPart?.Document?.Body;
     if (openXmlBody == null)
     {
-      Console.WriteLine("✗ OpenXml body not found");
+      Console.WriteLine("✗ OpenXml Body not found");
       return false;
     }
- 
-    var t0 = DateTime.Now;
-    var modelBody = new DocumentModel.Wordprocessing.Body();
-    modelBody.LoadData(openXmlBody);
-    var t1 = DateTime.Now;
-    Debug.WriteLine($"LoadData duration: {(t1 - t0).TotalMilliseconds} ms");
-    var openXmlCount = openXmlBody.ChildElements.Count;
-    var modelCount = modelBody.Items.Count;
-    var t2 = DateTime.Now;
-    Debug.WriteLine($"Count retrieval duration: {(t2 - t1).TotalMilliseconds} ms");
-    Console.WriteLine($"OpenXml body elements count: {openXmlCount}");
-    Console.WriteLine($"Model body elements count: {modelCount}");
 
-    if (modelCount == 0)
+    var outputFileName = Path.Combine(Path.GetDirectoryName(SampleFilePath)!, "OpenXmlRunElements.xml");
+    using TextWriter output = File.CreateText(outputFileName);
+    output.WriteLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
+    output.WriteLine("<Runs xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\">");
+    foreach (var openXmlRun in openXmlBody.Descendants<DXW.Run>().ToArray())
     {
-      Console.WriteLine("✗ Model body is empty after load");
-      return false;
+      var line = $"{openXmlRun.OuterXml.Replace(" xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"", "")}";
+      Console.WriteLine(line);
+      output.WriteLine(line);
     }
-
-    if (modelCount != openXmlCount)
-    {
-      Console.WriteLine($"✗ Body element count mismatch: model={modelCount}, openXml={openXmlCount}");
-      return false;
-    }
-    var t3 = DateTime.Now;
-    var bodyXml = SerializeObjectToXml(modelBody);
-    var t4 = DateTime.Now;
-    Debug.WriteLine($"Serialization duration: {(t4 - t3).TotalMilliseconds} ms");
-    Console.WriteLine("Serialized Body XML:\n" + bodyXml);
-    //var bodyJson = JsonSerializer.Serialize(modelBody, JsonConfig.Options);
-    //Console.WriteLine("Serialized Body JSON:\n" + bodyJson);
-
-    Console.WriteLine("✓ Body read from sample file test passed\n");
+    output.WriteLine("</Runs>");
     return true;
   }
 
-
   /// <summary>
-  /// Tests reading document body from the sample file and loading it into DocumentModel body.
+  /// Test creating DocumentModel Run elements from OpenXml Run elements read from the sample file, serializing them to XML, and outputting to the console and a file.
   /// </summary>
-  /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestGetBodyFromSampleFile()
+  /// <returns></returns>
+  static bool TestGetRunFromSampleFile()
   {
-    Console.WriteLine("--- Get Body From Sample File ---");
+    Console.WriteLine("--- Get Run From Sample File ---");
 
     if (!File.Exists(SampleFilePath))
     {
@@ -101,97 +79,29 @@ public class BodyReadTest : _AbstractTestClass
     var openXmlBody = wordDoc.MainDocumentPart?.Document?.Body;
     if (openXmlBody == null)
     {
-      Console.WriteLine("✗ OpenXml body not found");
+      Console.WriteLine("✗ OpenXml Body not found");
       return false;
     }
 
-    var t0 = DateTime.Now;
-    var modelBody = new DocumentModel.Wordprocessing.Body(openXmlBody);
-    var t1 = DateTime.Now;
-    Debug.WriteLine($"LoadData duration: {(t1 - t0).TotalMilliseconds} ms");
-    var openXmlCount = openXmlBody.ChildElements.Count;
-    var modelCount = modelBody.Items.Count;
-    var t2 = DateTime.Now;
-    Debug.WriteLine($"Count retrieval duration: {(t2 - t1).TotalMilliseconds} ms");
-    Console.WriteLine($"OpenXml body elements count: {openXmlCount}");
-    Console.WriteLine($"Model body elements count: {modelCount}");
-
-    if (modelCount == 0)
+    var outputFileName = Path.Combine(Path.GetDirectoryName(SampleFilePath)!, "ModelRunElements.xml");
+    using TextWriter output = File.CreateText(outputFileName);
+    output.WriteLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
+    output.WriteLine("<Runs xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns=\"DocumentModel.Wordprocessing\">");
+    foreach (var openXmlRun in openXmlBody.Descendants<DXW.Run>().ToArray())
     {
-      Console.WriteLine("✗ Model body is empty after load");
-      return false;
+      var modelRun = new Run(openXmlRun);
+      var modelRunXml = SerializeToXml(modelRun);
+      var line = $"{modelRunXml.Replace("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n", "")
+        .Replace(" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"","")
+        .Replace(" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"","")
+        .Replace(" xmlns=\"DocumentModel.Wordprocessing\"","")}";
+      Console.WriteLine(line);
+      output.WriteLine(line);
     }
-
-    if (modelCount != openXmlCount)
-    {
-      Console.WriteLine($"✗ Body element count mismatch: model={modelCount}, openXml={openXmlCount}");
-      return false;
-    }
-    var t3 = DateTime.Now;
-    var bodyXml = SerializeObjectToXml(modelBody);
-    var t4 = DateTime.Now;
-    Debug.WriteLine($"Serialization duration: {(t4 - t3).TotalMilliseconds} ms");
-    Console.WriteLine("Serialized Body XML:\n" + bodyXml);
-    //var bodyJson = JsonSerializer.Serialize(modelBody, JsonConfig.Options);
-    //Console.WriteLine("Serialized Body JSON:\n" + bodyJson);
-
-    Console.WriteLine("✓ Body read from sample file test passed\n");
+    output.WriteLine("</Runs>");
     return true;
   }
 
-  /// <summary>
-  /// Tests creation of DocumentModel body elements by reading from sample body and serializing each element.
-  /// </summary>
-  /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestCreateAndSerializeBodyElements()
-  {
-    Console.WriteLine("--- Create And Serialize DocumentModel Body Elements ---");
-
-    using var wordDoc = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(SampleFilePath, false);
-    var openXmlBody = wordDoc.MainDocumentPart?.Document?.Body;
-    if (openXmlBody == null)
-    {
-      Console.WriteLine("✗ OpenXml body not found");
-      return false;
-    }
-
-    var modelBody = new DocumentModel.Wordprocessing.Body();
-    modelBody.LoadData(openXmlBody);
-
-    var createdElements = modelBody.Items.Cast<ModelElement>().Take(10).ToList();
-    if (createdElements.Count == 0)
-    {
-      Console.WriteLine("✗ No DocumentModel elements created from body");
-      return false;
-    }
-
-    foreach (var element in createdElements)
-    {
-      var elementType = element.GetType();
-      var elementXml = SerializeObjectToXml(element);
-      //var elementJson = JsonSerializer.Serialize(element, elementType, JsonConfig.Options);
-
-      Console.WriteLine($"Element type: {elementType.FullName}");
-      Console.WriteLine("XML:\n" + elementXml);
-      //Console.WriteLine("JSON:\n" + elementJson);
-      var xmlDeserialized = DeserializeObjectFromXml(elementType, elementXml);
-      if (xmlDeserialized == null)
-      {
-        Console.WriteLine($"✗ XML deserialization returned null for '{elementType.Name}'");
-        return false;
-      }
-
-      //var jsonDeserialized = JsonSerializer.Deserialize(elementJson, elementType, JsonConfig.Options);
-      //if (jsonDeserialized == null)
-      //{
-      //  Console.WriteLine($"✗ JSON deserialization returned null for '{elementType.Name}'");
-      //  return false;
-      //}
-    }
-
-    Console.WriteLine("✓ Create and serialize DocumentModel elements test passed\n");
-    return true;
-  }
 
   static Type[] GetRuntimeKnownTypes(object root, Type rootType)
   {
@@ -221,7 +131,7 @@ public class BodyReadTest : _AbstractTestClass
         && !type.IsSubclassOf(typeof(DocumentModel.ModelElementCollection<>))
         //&& !IsXmlAnonymousType(type) && (type.BaseType == null || !IsXmlAnonymousType(type.BaseType))
         && type != typeof(ExtensionList)
-        && type != typeof(Body)
+        && type != typeof(Run)
         && type != typeof(FooterReferences)
         && type != typeof(HeaderReferences)
         //&& type != typeof(Tabs)
@@ -272,7 +182,7 @@ public class BodyReadTest : _AbstractTestClass
   static XmlAttributeOverrides CreateXmlSerializerOverrides()
   {
     var overrides = new XmlAttributeOverrides();
-    var assembly = typeof(DocumentModel.Wordprocessing.Body).Assembly;
+    var assembly = typeof(DocumentModel.Wordprocessing.Run).Assembly;
 
     foreach (var type in assembly.GetTypes().Where(t => t.Namespace?.StartsWith("DocumentModel", StringComparison.Ordinal) == true))
     {

@@ -13,7 +13,7 @@
 /// </para>
 /// </summary>
 /// <param name="targetType">The type to be associated with the decorated Enum type when converted to/from Open XML.</param>
-[AttributeUsage(AttributeTargets.Enum, Inherited = true, AllowMultiple = false)]
+[AttributeUsage(AttributeTargets.Enum, Inherited = true, AllowMultiple = true)]
 public class OpenXmlEnumTypeAttribute(Type targetType) : Attribute
 {
 

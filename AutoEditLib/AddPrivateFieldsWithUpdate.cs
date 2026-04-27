@@ -67,6 +67,17 @@ public class AddPrivateFieldsWithUpdate
 
   private static string FixBackingFieldSpacing(string text)
   {
+    // Ensure expression-bodied get/set accessors are on separate lines
+    text = Regex.Replace(
+      text,
+      @"\{\s*get\s*=>\s*([^;]+);\s*set\s*=>\s*([^;]+);\s*\}",
+      "\r\n  {\r\n    get => $1;\r\n    set => $2;\r\n  }");
+
+    //text = Regex.Replace(
+    //  text,
+    //  @"(?m)^(\s*)\{\s*get\s*=>\s*([^;]+);\s*set\s*=>\s*([^;]+);\s*\}",
+    //  "$1{\r\n$1  get => $2;\r\n$1  set => $3;\r\n$1}");
+
     // No blank line before generated backing field
     text = Regex.Replace(
       text,
@@ -86,7 +97,7 @@ public class AddPrivateFieldsWithUpdate
 /// <summary>
 /// Syntax rewriter that transforms auto-properties in ModelElement-derived classes into backed properties.
 /// </summary>
-public class ModelElementPropertyRewriter: CSharpSyntaxRewriter
+public class ModelElementPropertyRewriter : CSharpSyntaxRewriter
 {
   /// <summary>
   /// Indicates whether any modifications were produced during rewriting.
@@ -107,24 +118,27 @@ public class ModelElementPropertyRewriter: CSharpSyntaxRewriter
     //if (!inheritsModelElement)
     //  return base.VisitClassDeclaration(node);
 
-    var newMembers = node.Members.ToList();
+    var members = node.Members.ToList();
     var toReplace = new List<(PropertyDeclarationSyntax, int)>();
     var toInsert = new List<(FieldDeclarationSyntax, int)>();
-    for (int i = 0; i < newMembers.Count; i++)
+    var existingFieldNames = new HashSet<string>(members.OfType<FieldDeclarationSyntax>()
+      .SelectMany(f => f.Declaration.Variables)
+      .Select(v => v.Identifier.Text)); 
+    for (int i = 0; i < members.Count; i++)
     {
-      if (newMembers[i] is PropertyDeclarationSyntax prop)
+      if (members[i] is PropertyDeclarationSyntax prop)
       {
-        if (prop.AccessorList != null && prop.AccessorList.Accessors.Count == 2 &&
-            prop.AccessorList.Accessors.All(a => a.Body == null && a.ExpressionBody == null) &&
-            prop.AccessorList.Accessors.Any(a => a.Kind() == SyntaxKind.GetAccessorDeclaration) &&
-            prop.AccessorList.Accessors.Any(a => a.Kind() == SyntaxKind.SetAccessorDeclaration))
+        var propertyName = GetOpenXmlPropertyName(prop);
+        var elementType = GetOpenXmlElementType(prop);
+
+        if (propertyName != null || elementType != null)
         {
           var propName = prop.Identifier.Text;
           var fieldName = "_" + propName;
-          var elementType = GetOpenXmlElementType(prop) ?? InferOpenXmlElementType(prop);
-          var getterExpression = elementType == null
-            ? SyntaxFactory.IdentifierName(fieldName) as ExpressionSyntax
-            : SyntaxFactory.AssignmentExpression(
+          ExpressionSyntax? getterExpression;
+          if (elementType != null)
+            getterExpression =
+            SyntaxFactory.AssignmentExpression(
               SyntaxKind.CoalesceAssignmentExpression,
               SyntaxFactory.IdentifierName(fieldName),
               SyntaxFactory.InvocationExpression(
@@ -140,6 +154,30 @@ public class ModelElementPropertyRewriter: CSharpSyntaxRewriter
                   SyntaxFactory.ArgumentList(
                     SyntaxFactory.SingletonSeparatedList(
                       SyntaxFactory.Argument(SyntaxFactory.IdentifierName("_openXmlElement"))))));
+          else
+          {
+            if (propertyName != null)
+              getterExpression =
+                SyntaxFactory.AssignmentExpression(
+                  SyntaxKind.CoalesceAssignmentExpression,
+                  SyntaxFactory.IdentifierName(fieldName),
+                  SyntaxFactory.InvocationExpression(
+                      SyntaxFactory.GenericName("GetProperty")
+                        .WithTypeArgumentList(
+                          SyntaxFactory.TypeArgumentList(
+                            SyntaxFactory.SingletonSeparatedList<TypeSyntax>(prop.Type))))
+                    .WithArgumentList(
+                      SyntaxFactory.ArgumentList(
+                        SyntaxFactory.SingletonSeparatedList(
+                          SyntaxFactory.Argument(
+                            SyntaxFactory.ConditionalAccessExpression(
+                              SyntaxFactory.IdentifierName("_openXmlElement"),
+                              SyntaxFactory.MemberBindingExpression(
+                                SyntaxFactory.IdentifierName(propertyName))))))));
+
+            else
+              getterExpression = SyntaxFactory.IdentifierName(fieldName);
+          }
           var getterAccessor = SyntaxFactory.AccessorDeclaration(SyntaxKind.GetAccessorDeclaration)
             .WithExpressionBody(SyntaxFactory.ArrowExpressionClause(getterExpression))
             .WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken))
@@ -171,19 +209,51 @@ public class ModelElementPropertyRewriter: CSharpSyntaxRewriter
               SyntaxFactory.CarriageReturnLineFeed,
               SyntaxFactory.CarriageReturnLineFeed));
           toReplace.Add((newProp, i));
-          toInsert.Add((field, i + 1));
+          if (!existingFieldNames.Contains(fieldName))
+            toInsert.Add((field, i + 1));
           Changed = true;
         }
       }
     }
     foreach (var (newProp, idx) in toReplace.OrderByDescending(x => x.Item2))
-      newMembers[idx] = newProp;
+      members[idx] = newProp;
     foreach (var (field, idx) in toInsert.OrderByDescending(x => x.Item2))
-      newMembers.Insert(idx, field);
-    return node.WithMembers(SyntaxFactory.List(newMembers));
+      members.Insert(idx, field);
+    return node.WithMembers(SyntaxFactory.List(members));
   }
 
- private static TypeSyntax? GetOpenXmlElementType(PropertyDeclarationSyntax prop)
+  private static string? GetOpenXmlPropertyName(PropertyDeclarationSyntax prop)
+  {
+    var openXmlPropertyAttribute = prop.AttributeLists
+      .SelectMany(al => al.Attributes)
+      .FirstOrDefault(attr =>
+      {
+        var attrName = attr.Name.ToString();
+        return attrName == "OpenXmlProperty" ||
+               attrName == "OpenXmlPropertyAttribute" ||
+               attrName.EndsWith(".OpenXmlProperty") ||
+               attrName.EndsWith(".OpenXmlPropertyAttribute") ||
+               attrName.EndsWith("::OpenXmlProperty") ||
+               attrName.EndsWith("::OpenXmlPropertyAttribute");
+      });
+
+    var nameOfExpression = openXmlPropertyAttribute?.ArgumentList?.Arguments.FirstOrDefault()?.Expression as
+      InvocationExpressionSyntax;
+    if (nameOfExpression?.Expression is IdentifierNameSyntax identifier &&
+        identifier.Identifier.ValueText != "nameof")
+      return null;
+
+    var nameofArgument = nameOfExpression?.ArgumentList.Arguments.FirstOrDefault()?.Expression;
+    if (nameofArgument is MemberAccessExpressionSyntax memberAccess)
+      return memberAccess.Name.Identifier.ValueText;
+
+    if (nameofArgument is IdentifierNameSyntax identifierName)
+      return identifierName.Identifier.ValueText;
+
+    return null;
+  }
+
+  private static TypeSyntax? GetOpenXmlElementType(PropertyDeclarationSyntax prop)
   {
     var openXmlElementAttribute = prop.AttributeLists
       .SelectMany(al => al.Attributes)

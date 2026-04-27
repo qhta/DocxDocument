@@ -4,6 +4,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXD.LightRigValues))]
+[OpenXmlEnumType(typeof(DXO10W.LightRigTypeValues))]
 public enum LightRigType
 {
   /// <summary>
@@ -12,136 +13,138 @@ public enum LightRigType
   /// <summary>
   ///   Legacy Flat 1.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.LegacyFlat1))]
+  [OpenXmlEnumValue("LegacyFlat1")]
   LegacyFlat1 = 1,
   /// <summary>
   ///   Legacy Flat 2.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.LegacyFlat2))]
+  [OpenXmlEnumValue("LegacyFlat2")]
   LegacyFlat2,
   /// <summary>
   ///   Legacy Flat 3.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.LegacyFlat3))]
+  [OpenXmlEnumValue("LegacyFlat3")]
   LegacyFlat3,
   /// <summary>
   ///   Legacy Flat 4.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.LegacyFlat4))]
+  [OpenXmlEnumValue("LegacyFlat4")]
   LegacyFlat4,
   /// <summary>
   ///   Legacy Normal 1.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.LegacyNormal1))]
+  [OpenXmlEnumValue("LegacyNormal1")]
   LegacyNormal1,
   /// <summary>
   ///   Legacy Normal 2.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.LegacyNormal2))]
+  [OpenXmlEnumValue("LegacyNormal2")]
   LegacyNormal2,
   /// <summary>
   ///   Legacy Normal 3.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.LegacyNormal3))]
+  [OpenXmlEnumValue("LegacyNormal3")]
   LegacyNormal3,
   /// <summary>
   ///   Legacy Normal 4.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.LegacyNormal4))]
+  [OpenXmlEnumValue("LegacyNormal4")]
   LegacyNormal4,
   /// <summary>
   ///   Legacy Harsh 1.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.LegacyHarsh1))]
+  [OpenXmlEnumValue("LegacyHarsh1")]
   LegacyHarsh1,
   /// <summary>
   ///   Legacy Harsh 2.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.LegacyHarsh2))]
+  [OpenXmlEnumValue("LegacyHarsh2")]
   LegacyHarsh2,
   /// <summary>
   ///   Legacy Harsh 3.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.LegacyHarsh3))]
+  [OpenXmlEnumValue("LegacyHarsh3")]
   LegacyHarsh3,
   /// <summary>
   ///   Legacy Harsh 4.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.LegacyHarsh4))]
+  [OpenXmlEnumValue("LegacyHarsh4")]
   LegacyHarsh4,
   /// <summary>
   ///   Three Point.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.ThreePoints))]
+  [OpenXmlEnumValue(typeof(DXD.LightRigValues), "ThreePoints")]
+  [OpenXmlEnumValue(typeof(DXO10W.LightRigTypeValues),"ThreePoint")]
   ThreePoints,
   /// <summary>
   ///   Light Rig Enum ( Balanced ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.Balanced))]
+  [OpenXmlEnumValue("Balanced")]
   Balanced,
   /// <summary>
   ///   Soft.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.Soft))]
+  [OpenXmlEnumValue("Soft")]
   Soft,
   /// <summary>
   ///   Harsh.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.Harsh))]
+  [OpenXmlEnumValue("Harsh")]
   Harsh,
   /// <summary>
   ///   Flood.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.Flood))]
+  [OpenXmlEnumValue("Flood")]
   Flood,
   /// <summary>
   ///   Contrasting.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.Contrasting))]
+  [OpenXmlEnumValue("Contrasting")]
   Contrasting,
   /// <summary>
   ///   Morning.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.Morning))]
+  [OpenXmlEnumValue("Morning")]
   Morning,
   /// <summary>
   ///   Sunrise.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.Sunrise))]
+  [OpenXmlEnumValue("Sunrise")]
   Sunrise,
   /// <summary>
   ///   Sunset.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.Sunset))]
+  [OpenXmlEnumValue("Sunset")]
   Sunset,
   /// <summary>
   ///   Chilly.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.Chilly))]
+  [OpenXmlEnumValue("Chilly")]
   Chilly,
   /// <summary>
   ///   Freezing.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.Freezing))]
+  [OpenXmlEnumValue("Freezing")]
   Freezing,
   /// <summary>
   ///   Flat.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.Flat))]
+  [OpenXmlEnumValue("Flat")]
   Flat,
   /// <summary>
   ///   Two Point.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.TwoPoints))]
+  [OpenXmlEnumValue(typeof(DXD.LightRigValues), "TwoPoints")]
+  [OpenXmlEnumValue(typeof(DXO10W.LightRigTypeValues), "TwoPoint")]
   TwoPoints,
   /// <summary>
   ///   Glow.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.Glow))]
+  [OpenXmlEnumValue("Glow")]
   Glow,
   /// <summary>
   ///   Bright Room.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.LightRigValues.BrightRoom))]
+  [OpenXmlEnumValue("BrightRoom")]
   BrightRoom
 }

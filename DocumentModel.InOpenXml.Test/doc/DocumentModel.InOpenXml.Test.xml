@@ -1522,6 +1522,52 @@
             <param name="json">The JSON string to deserialize.</param>
             <returns>The deserialized Rsids object, or null if deserialization fails.</returns>
         </member>
+        <member name="T:DocumentModel.InOpenXml.Test.RunTest">
+            <summary>
+            Tests reading document Run from a sample file and serializing created DocumentModel elements.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.RunTest.Run">
+            <summary>
+            Runs all Run read tests.
+            </summary>
+            <returns>True if all tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.RunTest.TestReadOpenXmlRunFromSampleFile">
+            <summary>
+            Test reading OpenXml Run elements from the sample file and outputting their XML to the console and a file.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.RunTest.TestGetRunFromSampleFile">
+            <summary>
+            Test creating DocumentModel Run elements from OpenXml Run elements read from the sample file, serializing them to XML, and outputting to the console and a file.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.RunTest.CreateXmlSerializerOverrides">
+            <summary>
+            Creates XML serializer overrides with separate XML namespaces for different DocumentModel namespaces.
+            Also resolves closed generic AbstractColor type name collisions.
+            </summary>
+            <returns>Prepared overrides used by XmlSerializer.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.RunTest.GetXmlNamespaceForType(System.Type)">
+            <summary>
+            Gets XML namespace for a model type based on its CLR namespace.
+            </summary>
+            <param name="type">Type for which XML namespace is generated.</param>
+            <returns>XML namespace string.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.RunTest.AddAbstractColorOverride(System.Xml.Serialization.XmlAttributeOverrides,System.Type,System.String,System.String)">
+            <summary>
+            Adds an XML type override for a closed generic AbstractColor{T}"/> type.
+            </summary>
+            <param name="overrides">Override collection to populate.</param>
+            <param name="type">Closed generic abstract color type to override.</param>
+            <param name="xmlTypeName">Unique XML type name.</param>
+            <param name="xmlNamespace">XML namespace for the type.</param>
+        </member>
         <member name="T:DocumentModel.InOpenXml.Test.StatisticPropertiesTest">
             <summary>
             Provides comprehensive serialization tests for <see cref="T:DocumentModel.StatisticProperties"/>.
