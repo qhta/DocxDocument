@@ -680,7 +680,7 @@ public static partial class OpenXmlModelConverter
     if (openXmlPropertyAttribute != null && openXmlPropertyAttribute.DirectAccess)
       return false;
     var openXmlType = openXmlObject.GetType();
-    if (modelProperty.Name == "Panose") Debug.Assert(true);
+    if (modelProperty.Name == "EastAsia") Debug.Assert(true);
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlProperty(modelProperty, openXmlType);
     if (openXmlProperty is not null && openXmlProperty.CanRead)
     {
