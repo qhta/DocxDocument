@@ -41,34 +41,34 @@ public partial class Run : ModelElement<DXW.Run>, //RunContentCollection,
   ///   Revision Identifier for Run Properties
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Run.RsidRunProperties))]
-  public HexInt? RsidRunProperties 
+  public HexInt? RsidProps 
   {
-    get => _RsidRunProperties ??= GetProperty<HexInt?>(_openXmlElement?.RsidRunProperties);
-    set => UpdateField(ref _RsidRunProperties, value, nameof(RsidRunProperties));
+    get => _RsidProps ??= GetProperty<HexInt?>(_openXmlElement?.RsidRunProperties);
+    set => UpdateField(ref _RsidProps, value, nameof(RsidProps));
   }
-  private HexInt? _RsidRunProperties;
+  private HexInt? _RsidProps;
 
   /// <summary>
   ///   Revision Identifier for Run Deletion
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Run.RsidRunDeletion))]
-  public HexInt? RsidRunDeletion 
+  public HexInt? RsidDel 
   {
-    get => _RsidRunDeletion ??= GetProperty<HexInt?>(_openXmlElement?.RsidRunDeletion);
-    set => UpdateField(ref _RsidRunDeletion, value, nameof(RsidRunDeletion));
+    get => _RsidDel ??= GetProperty<HexInt?>(_openXmlElement?.RsidRunDeletion);
+    set => UpdateField(ref _RsidDel, value, nameof(RsidDel));
   }
-  private HexInt? _RsidRunDeletion;
+  private HexInt? _RsidDel;
 
   /// <summary>
   ///   Revision Identifier for Run
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Run.RsidRunAddition))]
-  public HexInt? RsidRunAddition 
+  public HexInt? RsidAdd 
   {
-    get => _RsidRunAddition ??= GetProperty<HexInt?>(_openXmlElement?.RsidRunAddition);
-    set => UpdateField(ref _RsidRunAddition, value, nameof(RsidRunAddition));
+    get => _RsidAdd ??= GetProperty<HexInt?>(_openXmlElement?.RsidRunAddition);
+    set => UpdateField(ref _RsidAdd, value, nameof(RsidAdd));
   }
-  private HexInt? _RsidRunAddition;
+  private HexInt? _RsidAdd;
 
   /// <summary>
   ///   Specifies a set of run properties which shall be applied to the contents of the parent run 

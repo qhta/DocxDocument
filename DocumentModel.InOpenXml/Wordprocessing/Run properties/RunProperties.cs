@@ -22,42 +22,6 @@ public partial class RunProperties: BaseRunProperties<DXW.RunProperties>
   private string? _RunStyle;
 
   /// <summary>
-  /// Indicates whether complex script text in the run is bold.
-  /// </summary>
-  [OpenXmlElement(typeof(DXW.BoldComplexScript))]
-  public bool? BoldComplexScript
-  {
-    get => _BoldComplexScript ??= GetElement<bool?, DXW.BoldComplexScript>(_openXmlElement);
-    set => UpdateField(ref _BoldComplexScript, value, nameof(BoldComplexScript));
-  }
-
-  private bool? _BoldComplexScript;
-
-  /// <summary>
-  /// Indicates whether complex script text in the run is italic.
-  /// </summary>
-  [OpenXmlElement(typeof(DXW.ItalicComplexScript))]
-  public bool? ItalicComplexScript
-  {
-    get => _ItalicComplexScript ??= GetElement<bool?, DXW.ItalicComplexScript>(_openXmlElement);
-    set => UpdateField(ref _ItalicComplexScript, value, nameof(ItalicComplexScript));
-  }
-
-  private bool? _ItalicComplexScript;
-
-  /// <summary>
-  /// TextFormat size for complex script text in half-points.
-  /// </summary>
-  [OpenXmlElement(typeof(DXW.FontSizeComplexScript))]
-  public string? FontSizeComplexScript
-  {
-    get => _FontSizeComplexScript ??= GetElement<string?, DXW.FontSizeComplexScript>(_openXmlElement);
-    set => UpdateField(ref _FontSizeComplexScript, value, nameof(FontSizeComplexScript));
-  }
-
-  private string? _FontSizeComplexScript;
-
-  /// <summary>
   /// Highlight color.
   /// </summary>
   [OpenXmlElement(typeof(DXW.Highlight))]

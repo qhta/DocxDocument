@@ -5,9 +5,6 @@ namespace DocumentModel.Wordprocessing;
 public partial class RunProperties
 {
   public bool ShouldSerializeRunStyle() => !String.IsNullOrEmpty(RunStyle);
-  public bool ShouldSerializeBoldComplexScript() => BoldComplexScript is not null;
-  public bool ShouldSerializeItalicComplexScript() => ItalicComplexScript is not null;
-  public bool ShouldSerializeFontSizeComplexScript() => !String.IsNullOrEmpty(FontSizeComplexScript);
   public bool ShouldSerializeHighlight() => Highlight is not null && ShouldSerialize(Highlight);
   public bool ShouldSerializeRightToLeftText() => RightToLeftText is not null;
   public bool ShouldSerializeComplexScript() => ComplexScript is not null;

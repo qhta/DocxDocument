@@ -90,6 +90,8 @@ public static partial class OpenXmlModelConverter
     if (openXmlObject == null)
       return null;
 
+    modelType = modelType.GetNotNullableType();
+
     var openXmlType = openXmlObject.GetType().GetNotNullableType();
     if (modelType == openXmlType)
       return openXmlObject;
