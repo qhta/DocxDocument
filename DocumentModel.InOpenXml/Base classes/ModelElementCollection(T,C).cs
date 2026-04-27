@@ -21,19 +21,28 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   InitCollectionChangedEventHandler();
  }
 
- ///// <summary>
- ///// Initializes a new instance of the ModelElementCollection class with the specified parent element.
- ///// </summary>
- ///// <param name = "parent">The parent ModelElement that owns this collection. Cannot be null.</param>
- //protected ModelElementCollection(ModelElement parent) : base(parent)
- //{
- // InitCollectionChangedEventHandler();
- //}
+  /// <summary>
+  /// Initializes a new instance of the <see cref = "ModelElementCollection{ItemType, OpenXmlCollectionType}"/> class with the specified parent element.
+  /// </summary>
+  /// <param name="parent"></param>
+  protected ModelElementCollection(ModelElement parent) : base(parent)
+ {
+  InitCollectionChangedEventHandler();
+  }
 
- /// <summary>
- /// Initializes collection changed event handler to update data on change.
- /// </summary>
- private void InitCollectionChangedEventHandler()
+  ///// <summary>
+  ///// Initializes a new instance of the ModelElementCollection class with the specified parent element.
+  ///// </summary>
+  ///// <param name = "parent">The parent ModelElement that owns this collection. Cannot be null.</param>
+  //protected ModelElementCollection(ModelElement parent) : base(parent)
+  //{
+  // InitCollectionChangedEventHandler();
+  //}
+
+  /// <summary>
+  /// Initializes collection changed event handler to update data on change.
+  /// </summary>
+  private void InitCollectionChangedEventHandler()
  {
   CollectionChanged += (sender, e) =>
   {

@@ -18,9 +18,72 @@ public class BodyReadTest : _AbstractTestClass
   public static bool Run()
   {
     Console.WriteLine("=== Body Read Test ===\n");
-    if (!TestReadBodyFromSampleFile()) return false;
+    //if (!TestReadBodyFromSampleFile()) return false;
+    if (!TestGetBodyFromSampleFile()) return false;
     //if (!TestCreateAndSerializeBodyElements()) return false;
     Console.WriteLine("All Body read tests passed.\n");
+    return true;
+  }
+
+
+  /// <summary>
+  /// Tests reading first Run from the sample file and loading it into DocumentModel Run.
+  /// </summary>
+  /// <returns>True if the test passes; otherwise, false.</returns>
+  static bool TestGetFirstRunFromSampleFile()
+  {
+    Console.WriteLine("--- Get First Run From Sample File ---");
+
+    if (!File.Exists(SampleFilePath))
+    {
+      Console.WriteLine($"✗ Sample file not found: {SampleFilePath}");
+      return false;
+    }
+
+    using var wordDoc = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(SampleFilePath, false);
+    var openXmlBody = wordDoc.MainDocumentPart?.Document?.Body;
+    if (openXmlBody == null)
+    {
+      Console.WriteLine("✗ OpenXml body not found");
+      return false;
+    }
+    var firstRun = openXmlBody.Descendants<DocumentFormat.OpenXml.Wordprocessing.Run>().FirstOrDefault();
+    if (firstRun == null)
+    {
+      Console.WriteLine("✗ No Run element found in OpenXml body");
+      return false;
+    }
+    var t0 = DateTime.Now;
+    var modelRun = new DocumentModel.Wordprocessing.Run(firstRun);
+    var t1 = DateTime.Now;
+    Debug.WriteLine($"LoadData duration: {(t1 - t0).TotalMilliseconds} ms");
+    var openXmlCount = firstRun.ChildElements.Count;
+    var modelCount = modelRun.Items.Count;
+    var t2 = DateTime.Now;
+    Debug.WriteLine($"Count retrieval duration: {(t2 - t1).TotalMilliseconds} ms");
+    Console.WriteLine($"OpenXml run elements count: {openXmlCount}");
+    Console.WriteLine($"Model run elements count: {modelCount}");
+
+    if (modelCount == 0)
+    {
+      Console.WriteLine("✗ Model body is empty after load");
+      return false;
+    }
+
+    if (modelCount != openXmlCount)
+    {
+      Console.WriteLine($"✗ Body element count mismatch: model={modelCount}, openXml={openXmlCount}");
+      return false;
+    }
+    var t3 = DateTime.Now;
+    var bodyXml = SerializeObjectToXml(modelBody);
+    var t4 = DateTime.Now;
+    Debug.WriteLine($"Serialization duration: {(t4 - t3).TotalMilliseconds} ms");
+    Console.WriteLine("Serialized Body XML:\n" + bodyXml);
+    //var bodyJson = JsonSerializer.Serialize(modelBody, JsonConfig.Options);
+    //Console.WriteLine("Serialized Body JSON:\n" + bodyJson);
+
+    Console.WriteLine("✓ Body read from sample file test passed\n");
     return true;
   }
 
@@ -45,13 +108,16 @@ public class BodyReadTest : _AbstractTestClass
       Console.WriteLine("✗ OpenXml body not found");
       return false;
     }
-
+ 
+    var t0 = DateTime.Now;
     var modelBody = new DocumentModel.Wordprocessing.Body();
     modelBody.LoadData(openXmlBody);
-
+    var t1 = DateTime.Now;
+    Debug.WriteLine($"LoadData duration: {(t1 - t0).TotalMilliseconds} ms");
     var openXmlCount = openXmlBody.ChildElements.Count;
     var modelCount = modelBody.Items.Count;
-
+    var t2 = DateTime.Now;
+    Debug.WriteLine($"Count retrieval duration: {(t2 - t1).TotalMilliseconds} ms");
     Console.WriteLine($"OpenXml body elements count: {openXmlCount}");
     Console.WriteLine($"Model body elements count: {modelCount}");
 
@@ -66,10 +132,68 @@ public class BodyReadTest : _AbstractTestClass
       Console.WriteLine($"✗ Body element count mismatch: model={modelCount}, openXml={openXmlCount}");
       return false;
     }
-
+    var t3 = DateTime.Now;
     var bodyXml = SerializeObjectToXml(modelBody);
+    var t4 = DateTime.Now;
+    Debug.WriteLine($"Serialization duration: {(t4 - t3).TotalMilliseconds} ms");
     Console.WriteLine("Serialized Body XML:\n" + bodyXml);
+    //var bodyJson = JsonSerializer.Serialize(modelBody, JsonConfig.Options);
+    //Console.WriteLine("Serialized Body JSON:\n" + bodyJson);
 
+    Console.WriteLine("✓ Body read from sample file test passed\n");
+    return true;
+  }
+
+
+  /// <summary>
+  /// Tests reading document body from the sample file and loading it into DocumentModel body.
+  /// </summary>
+  /// <returns>True if the test passes; otherwise, false.</returns>
+  static bool TestGetBodyFromSampleFile()
+  {
+    Console.WriteLine("--- Get Body From Sample File ---");
+
+    if (!File.Exists(SampleFilePath))
+    {
+      Console.WriteLine($"✗ Sample file not found: {SampleFilePath}");
+      return false;
+    }
+
+    using var wordDoc = DocumentFormat.OpenXml.Packaging.WordprocessingDocument.Open(SampleFilePath, false);
+    var openXmlBody = wordDoc.MainDocumentPart?.Document?.Body;
+    if (openXmlBody == null)
+    {
+      Console.WriteLine("✗ OpenXml body not found");
+      return false;
+    }
+
+    var t0 = DateTime.Now;
+    var modelBody = new DocumentModel.Wordprocessing.Body(openXmlBody);
+    var t1 = DateTime.Now;
+    Debug.WriteLine($"LoadData duration: {(t1 - t0).TotalMilliseconds} ms");
+    var openXmlCount = openXmlBody.ChildElements.Count;
+    var modelCount = modelBody.Items.Count;
+    var t2 = DateTime.Now;
+    Debug.WriteLine($"Count retrieval duration: {(t2 - t1).TotalMilliseconds} ms");
+    Console.WriteLine($"OpenXml body elements count: {openXmlCount}");
+    Console.WriteLine($"Model body elements count: {modelCount}");
+
+    if (modelCount == 0)
+    {
+      Console.WriteLine("✗ Model body is empty after load");
+      return false;
+    }
+
+    if (modelCount != openXmlCount)
+    {
+      Console.WriteLine($"✗ Body element count mismatch: model={modelCount}, openXml={openXmlCount}");
+      return false;
+    }
+    var t3 = DateTime.Now;
+    var bodyXml = SerializeObjectToXml(modelBody);
+    var t4 = DateTime.Now;
+    Debug.WriteLine($"Serialization duration: {(t4 - t3).TotalMilliseconds} ms");
+    Console.WriteLine("Serialized Body XML:\n" + bodyXml);
     //var bodyJson = JsonSerializer.Serialize(modelBody, JsonConfig.Options);
     //Console.WriteLine("Serialized Body JSON:\n" + bodyJson);
 

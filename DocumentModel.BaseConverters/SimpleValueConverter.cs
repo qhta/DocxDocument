@@ -227,4 +227,40 @@ public static class SimpleValueConverter
     }
     return ConverterBase.TryConvertFrom(value, targetType, ConversionFromMap, out result);
   }
+
+  /// <summary>
+  /// Generic method to attempt conversion from an OpenXmlElementType to a ModelElementType. It first checks for null values, then attempts implicit conversion if a base type mapping exists, and finally uses the conversion map to perform the conversion.
+  /// </summary>
+  /// <typeparam name="ModelElementType"></typeparam>
+  /// <typeparam name="OpenXmlElementType"></typeparam>
+  /// <param name="value"></param>
+  /// <param name="result"></param>
+  /// <returns></returns>
+  public static bool TryConvertFrom<ModelElementType, OpenXmlElementType>(OpenXmlElementType? value, out ModelElementType? result)
+  {
+    if (value == null)
+    {
+      result = default;
+      return true;
+    }
+
+    var sourceType = value.GetType();
+    var targetType = typeof(ModelElementType);
+
+    if (BaseTypeMappings.TryGetValue(targetType, out var newSourceType))
+    {
+      if (ConverterBase.TryImplicitConvertFrom(value, targetType, out var newValue))
+      {
+        result = (ModelElementType?)newValue;
+        return true;
+      }
+    }
+    if (ConverterBase.TryConvertFrom(value, targetType, ConversionFromMap, out var anyResult))
+    {
+      result = (ModelElementType?)anyResult;
+      return true;
+    }
+    result = default;
+    return false;
+  }
 }

@@ -2,9 +2,13 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Threading.Tasks;
+
+using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Wordprocessing;
 
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
@@ -17,6 +21,9 @@ namespace AutoEdit;
 /// </summary>
 static class AliasHelper
 {
+  private static readonly Dictionary<string, Type?> _typeCache = new(StringComparer.Ordinal);
+  public static readonly Assembly? OpenXmlFrameworkAssembly = typeof(OpenXmlElement).Assembly;
+  public static readonly Assembly? OpenXmlAssembly = typeof(Document).Assembly;
 
   /// <summary>
   /// Builds an alias map from local <c>using</c> directives and cached global aliases for the containing project.
@@ -161,7 +168,91 @@ static class AliasHelper
 
     }
     return null;
+  }
 
+  /// <summary>
+  /// Expands namespace aliases referenced within the current file.
+  /// </summary>
+  /// <param name="typeName">Type name potentially prefixed with an alias.</param>
+  /// <param name="aliasMap">A bidirectional dictionary mapping aliases to namespaces.</param>
+  public static string ResolveAlias(this BiDiDictionary<string, string> aliasMap, string typeName)
+  {
+    var dotIndex = typeName.IndexOf('.');
+    if (dotIndex > 0)
+    {
+      var alias = typeName.Substring(0, dotIndex);
+      if (aliasMap.TryGetValue(alias, out var ns))
+        return ns + "." + typeName.Substring(dotIndex + 1);
+    }
+    return typeName;
+  }
+
+  /// <summary>
+  /// Gets namespace alias for the type name.
+  /// </summary>
+  /// <param name="typeName">Type name that may use an alias prefix.</param>
+  /// <param name="aliasMap">A bidirectional dictionary mapping aliases to namespaces.</param>
+  /// <returns>Aliased type name.</returns>
+  public static string? GetAlias(this BiDiDictionary<string, string> aliasMap, string typeName)
+  {
+    var dotIndex = typeName.LastIndexOf('.');
+    if (dotIndex > 0)
+    {
+      var ns = typeName.Substring(0, dotIndex);
+      if (aliasMap.TryGetValue1(ns, out var alias))
+        return alias;
+    }
+    return null;
+  }
+
+  /// <summary>
+  /// Resolves namespace alias in the provided type name..
+  /// </summary>
+  /// <param name="typeName">Type name that may use an alias prefix.</param>
+  /// <param name="aliasMap">A bidirectional dictionary mapping aliases to namespaces.</param>
+  /// <returns>The fully-qualified type name.</returns>
+  public static string ResolveNsAlias(this BiDiDictionary<string, string> aliasMap, string typeName)
+  {
+    var dotIndex = typeName.LastIndexOf('.');
+    if (dotIndex > 0)
+    {
+      var alias = typeName.Substring(0, dotIndex);
+      if (aliasMap.TryGetValue2(alias, out var ns))
+        return ns + "." + typeName.Substring(dotIndex + 1);
+    }
+    return typeName;
+  }
+
+  /// <summary>
+  /// Attempts to resolve a type using alias expansion and loaded assemblies.
+  /// </summary>
+  /// <param name="typeName">Candidate type name, possibly using an alias.</param>
+  /// <param name="type">Resolved <see cref="Type"/> when successful.</param>
+  /// <param name="aliasMap">A bidirectional dictionary mapping aliases to namespaces.</param>
+  /// <returns><see langword="true"/> if the type is resolved; otherwise <see langword="false"/>.</returns>
+  public static bool TryResolveOpenXmlType(this BiDiDictionary<string, string> aliasMap, string typeName, out Type? type)
+  {
+    if (_typeCache.TryGetValue(typeName, out var cached))
+    {
+      type = cached!;
+      return cached != null;
+    }
+    var resolvedName = aliasMap.ResolveNsAlias(typeName);
+    type = Type.GetType(resolvedName, throwOnError: false, ignoreCase: false) ??
+           OpenXmlFrameworkAssembly?.GetType(resolvedName, throwOnError: false, ignoreCase: false) ??
+           OpenXmlAssembly?.GetType(resolvedName, throwOnError: false, ignoreCase: false);
+    if (type == null)
+    {
+      var assembliesToSearch = AppDomain.CurrentDomain.GetAssemblies().ToList();
+      foreach (var asm in assembliesToSearch)
+      {
+        type = asm.GetType(resolvedName, false, false);
+        if (type != null)
+          break;
+      }
+    }
+    _typeCache[typeName] = type;
+    return type != null;
   }
 }
 

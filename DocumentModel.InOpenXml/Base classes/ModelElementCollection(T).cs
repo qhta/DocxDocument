@@ -8,10 +8,66 @@ namespace DocumentModel;
 /// <typeparam name = "ItemType">Specifies the type of model elements contained in the collection.</typeparam>
 [XmlRoot("ModelElementCollection", Namespace = "DocumentModel")]
 [LazyLoad]
-public partial class ModelElementCollection<ItemType> : ElementCollection<ItemType>,
-  ILazyLoadable
+public abstract partial class ModelElementCollection<ItemType> : ElementCollection<ItemType>, IDirectAccessElement
   where ItemType : ModelElement
 {
+
+  /// <summary>
+  ///   Initializes a new instance of the <see cref = "ModelElementCollection{ItemType}"/> class.
+  /// </summary>
+  protected ModelElementCollection()
+  {
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the ModelElementCollection class with the specified parent element.
+  /// </summary>
+  /// <param name="parent">The parent ModelElement that owns this collection. Cannot be null.</param>
+  protected ModelElementCollection(ModelElement parent) : base(parent)
+  {
+
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the ModelElementCollection class using the specified OpenXmlCompositeElement as the
+  /// underlying XML element.
+  /// </summary>
+  /// <param name="openXmlElement">The OpenXmlCompositeElement that provides the XML content for the collection. Cannot be null.</param>
+  protected ModelElementCollection(DX.OpenXmlCompositeElement openXmlElement): base()
+  {
+    DataSource = openXmlElement;
+    HasDirectAccess = true;
+
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the ModelElementCollection class with the specified parent element and OpenXml
+  /// composite element as the data source.
+  /// </summary>
+  /// <param name="parent">The parent ModelElement that will own this collection. Cannot be null.</param>
+  /// <param name="openXmlElement">The OpenXmlCompositeElement that serves as the data source for the collection. Must not be null.</param>
+  protected ModelElementCollection(ModelElement parent, DX.OpenXmlCompositeElement openXmlElement) : base(parent)
+  {
+    DataSource = openXmlElement;
+    HasDirectAccess = true;
+  }
+
+  /// <summary>
+  /// Specifies whether the collection has direct access to its underlying OpenXmlCompositeElement, indicating that it can manipulate the XML content directly without lazy loading. This property is set to true when the collection is initialized with an OpenXmlCompositeElement and false otherwise.
+  /// </summary>
+  public bool HasDirectAccess { get; private set; }
+
+  /// <summary>
+  ///   Initializes a new instance of the <see cref = "ModelElementCollection{ItemType}"/> class that contains elements copied from the specified collection.
+  /// </summary>
+  /// <param name = "items">The collection of items to copy into the new collection. Cannot be null.</param>
+  protected ModelElementCollection(IEnumerable<ItemType> items) : this()
+  {
+    foreach (var item in items)
+    {
+      Add(item);
+    }
+  }
 
   /// <summary>
   /// Overriden accessor for the Items collection that ensures lazy loading is attempted before returning the collection.
@@ -25,24 +81,6 @@ public partial class ModelElementCollection<ItemType> : ElementCollection<ItemTy
     }
   }
 
-  /// <summary>
-  ///   Initializes a new instance of the <see cref = "ModelElementCollection{ItemType}"/> class.
-  /// </summary>
-  public ModelElementCollection()
-  {
-  }
-
-  /// <summary>
-  ///   Initializes a new instance of the <see cref = "ModelElementCollection{ItemType}"/> class that contains elements copied from the specified collection.
-  /// </summary>
-  /// <param name = "items">The collection of items to copy into the new collection. Cannot be null.</param>
-  public ModelElementCollection(IEnumerable<ItemType> items) : this()
-  {
-    foreach (var item in items)
-    {
-      Add(item);
-    }
-  }
 
   /// <summary>
   /// Returns the number of items in the collection.

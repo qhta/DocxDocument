@@ -15,7 +15,7 @@ public static partial class OpenXmlModelConverter
   /// Represents a collection of delegates to convert a type to OpenXml.
   /// </summary>
   public static readonly Dictionary<Type, ConvertToOpenXml> ConvertToOpenXmlDelegates = new();
-  
+
   /// <summary>
   /// Converts a model object to an Open XML element of the specified type.
   /// </summary>
@@ -49,6 +49,33 @@ public static partial class OpenXmlModelConverter
   }
 
   /// <summary>
+  /// Generic version of ConvertTo that converts a model object to an Open XML element of the specified type.
+  /// </summary>
+  /// <typeparam name="ModelElementType"></typeparam>
+  /// <typeparam name="OpenXmlElementType"></typeparam>
+  /// <param name="modelObject"></param>
+  /// <returns></returns>
+  public static OpenXmlElementType? ConvertTo<ModelElementType, OpenXmlElementType>(ModelElementType? modelObject) 
+  {
+    if (modelObject == null)
+      return default;
+
+    var modelType = typeof(ModelElementType).GetNotNullableType();
+    var openXmlType = typeof(OpenXmlElementType).GetNotNullableType();
+
+    if (ConvertToOpenXmlDelegates.TryGetValue(modelType, out var convertToOpenXml) ||
+        ConvertToOpenXmlDelegates.TryGetValue(openXmlType, out convertToOpenXml))
+      return (OpenXmlElementType?)convertToOpenXml(modelObject, openXmlType);
+
+    if (SimpleValueConverter.TryConvertTo(modelObject, openXmlType, out var result))
+      return (OpenXmlElementType?)result;
+
+    var openXmlElement = Activator.CreateInstance(openXmlType)!;
+    UpdateData(modelObject, openXmlElement, openXmlType);
+    return (OpenXmlElementType?)openXmlElement;
+  }
+
+  /// <summary>
   /// Converts an OpenXML element to an instance of the specified model type.
   /// </summary>
   /// <remarks>The returned object is created using the default constructor of the specified model type. Ensure
@@ -77,11 +104,46 @@ public static partial class OpenXmlModelConverter
     if (SimpleValueConverter.TryConvertFrom(openXmlObject, modelType, out var result))
       return result;
 
+    if (modelType.GetCustomAttribute<DirectAccessAttribute>() is {} directAccess && directAccess.IsEnabled
+        && modelType.GetConstructor([typeof(DX.OpenXmlCompositeElement)])!=null)
+    {
+      var modelObject = Activator.CreateInstance(modelType, openXmlObject)!;
+      return modelObject;
+    }
+    else
+    {
+      var modelObject = Activator.CreateInstance(modelType)!;
+      if (openXmlObject is DX.OpenXmlElement openXmlElement)
+        LoadData(modelObject, openXmlElement);
+      return modelObject;
+    }
+  }
+
+  /// <summary>
+  /// Generic version of ConvertFrom that converts an OpenXML element to an instance of the specified model type.
+  /// </summary>
+  /// <typeparam name="ModelElementType"></typeparam>
+  /// <typeparam name="OpenXmlElementType"></typeparam>
+  /// <param name="openXmlObject"></param>
+  /// <returns></returns>
+  public static ModelElementType? ConvertFrom<ModelElementType, OpenXmlElementType>(OpenXmlElementType? openXmlObject)
+  {
+    var modelType = typeof(ModelElementType).GetNotNullableType();
+    var openXmlType = typeof(OpenXmlElementType).GetNotNullableType();
+
+    if (ConvertFromOpenXmlDelegates.TryGetValue(modelType, out var convertFromOpenXml) ||
+        ConvertFromOpenXmlDelegates.TryGetValue(openXmlType, out convertFromOpenXml))
+      return (ModelElementType?)convertFromOpenXml(openXmlObject, modelType);
+
+    if (SimpleValueConverter.TryConvertFrom<ModelElementType, OpenXmlElementType>(openXmlObject, out var result))
+      return result;
+
     var modelObject = Activator.CreateInstance(modelType)!;
     if (openXmlObject is DX.OpenXmlElement openXmlElement)
       LoadData(modelObject, openXmlElement);
-    return modelObject;
+    return (ModelElementType?)modelObject;
   }
+
 
   /// <summary>
   /// Updates the properties of the specified model object by synchronizing their values with the corresponding Open XML
@@ -614,6 +676,9 @@ public static partial class OpenXmlModelConverter
   /// <returns>true if the value was successfully loaded and assigned to the model property; otherwise, false.</returns>
   public static bool TryLoadUsingPropertyMapping(object modelObject, PropertyInfo modelProperty, object openXmlObject)
   {
+    var openXmlPropertyAttribute = modelProperty.GetCustomAttribute<OpenXmlPropertyAttribute>();
+    if (openXmlPropertyAttribute != null && openXmlPropertyAttribute.DirectAccess)
+      return false;
     var openXmlType = openXmlObject.GetType();
     if (modelProperty.Name == "Panose") Debug.Assert(true);
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlProperty(modelProperty, openXmlType);
@@ -751,7 +816,7 @@ public static partial class OpenXmlModelConverter
   /// <param name="openXmlElement">The Open XML element to load the child element from.</param>
   /// <param name="openXmlChildType">The Open XML child type of the element.</param>
   /// <exception cref="InvalidOperationException"></exception>
-  public static void LoadChildElement( object modelObject, PropertyInfo modelProperty, DX.OpenXmlCompositeElement openXmlElement,
+  public static void LoadChildElement(object modelObject, PropertyInfo modelProperty, DX.OpenXmlCompositeElement openXmlElement,
     Type? openXmlChildType)
   {
     var modelPropertyType = modelProperty.PropertyType.GetNotNullableType();

@@ -6,5 +6,14 @@ namespace DocumentModel.Drawings;
 [XmlRoot("SupplementalFonts", Namespace = "DocumentModel.Drawings")]
 public class SupplementalFonts : ModelElementCollection<SupplementalFont, DXD.FontCollectionType, DXD.SupplementalFont>
 {
+  /// <summary>
+  /// Default constructor for the SupplementalFonts class, initializing a new instance of the SupplementalFonts class.
+  /// </summary>
+  public SupplementalFonts() : base() { }
 
+  /// <summary>
+  /// Initializes a new instance of the SupplementalFonts class with the specified parent element.
+  /// </summary>
+  /// <param name="parent">The parent ModelElement that owns this SupplementalFonts instance. Cannot be null.</param>
+  public SupplementalFonts(ModelElement parent) : base(parent) { }
 }

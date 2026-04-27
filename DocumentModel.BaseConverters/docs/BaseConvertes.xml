@@ -4,6 +4,29 @@
         <name>DocumentModel.BaseConverters</name>
     </assembly>
     <members>
+        <member name="T:DocumentModel.OpenXml.DirectAccessAttribute">
+            <summary>
+            Specifies that direct access is enabled or disabled for a class or property.
+            </summary>
+            <remarks>Apply this attribute to a class or property to control whether direct access is permitted. This can
+            be used to restrict or allow certain behaviors at runtime or during serialization, depending on the consuming
+            framework.</remarks>
+            <param name="isEnabled">true to enable direct access; otherwise, false. The default is true.</param>
+        </member>
+        <member name="M:DocumentModel.OpenXml.DirectAccessAttribute.#ctor(System.Boolean)">
+            <summary>
+            Specifies that direct access is enabled or disabled for a class or property.
+            </summary>
+            <remarks>Apply this attribute to a class or property to control whether direct access is permitted. This can
+            be used to restrict or allow certain behaviors at runtime or during serialization, depending on the consuming
+            framework.</remarks>
+            <param name="isEnabled">true to enable direct access; otherwise, false. The default is true.</param>
+        </member>
+        <member name="P:DocumentModel.OpenXml.DirectAccessAttribute.IsEnabled">
+            <summary>
+            Can be enabled or disabled.
+            </summary>
+        </member>
         <member name="T:DocumentModel.OpenXml.LazyLoadAttribute">
             <summary>
             Indicates a property or collection that is lazily loaded from the underlying OpenXml element. When applied, the property will not be initialized until it is first accessed, allowing for deferred loading of data and improved performance when working with large documents or complex structures.
@@ -285,6 +308,11 @@
             <param name="propertyName">The name of the Open XML property to be associated with the target class or property. Cannot be null or empty.</param>
         </member>
         <member name="P:DocumentModel.OpenXml.OpenXmlPropertyAttribute.PropertyName">
+            <summary>
+            The Open XML property name associated with the decorated member.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.OpenXml.OpenXmlPropertyAttribute.DirectAccess">
             <summary>
             The Open XML property name associated with the decorated member.
             </summary>
@@ -4990,6 +5018,15 @@
             <remarks>This method creates a new instance of the specified Open XML type and populates it with data from the model object.</remarks>
             <returns>The created Open XML element, or null if the input is null.</returns>
         </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.ConvertTo``2(``0)">
+            <summary>
+            Generic version of ConvertTo that converts a model object to an Open XML element of the specified type.
+            </summary>
+            <typeparam name="ModelElementType"></typeparam>
+            <typeparam name="OpenXmlElementType"></typeparam>
+            <param name="modelObject"></param>
+            <returns></returns>
+        </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.ConvertFrom(System.Object,System.Type)">
             <summary>
             Converts an OpenXML element to an instance of the specified model type.
@@ -5001,6 +5038,15 @@
             <param name="modelType">The type of the model object to create and populate from the OpenXML element. Must not be null.</param>
             <returns>An object of the specified model type populated with data from the OpenXML element, or null if <paramref
             name="openXmlObject"/> is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.ConvertFrom``2(``1)">
+            <summary>
+            Generic version of ConvertFrom that converts an OpenXML element to an instance of the specified model type.
+            </summary>
+            <typeparam name="ModelElementType"></typeparam>
+            <typeparam name="OpenXmlElementType"></typeparam>
+            <param name="openXmlObject"></param>
+            <returns></returns>
         </member>
         <member name="M:DocumentModel.OpenXml.OpenXmlModelConverter.UpdateData(System.Object,System.Object,System.Type)">
             <summary>
@@ -6535,6 +6581,16 @@
             <param name="result">When this method returns, contains the converted value if the conversion succeeded, or the original value if it
             was null or already of the target type; otherwise, contains null. This parameter is passed uninitialized.</param>
             <returns>true if the conversion was successful or the value was null; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.SimpleValueConverter.TryConvertFrom``2(``1,``0@)">
+            <summary>
+            Generic method to attempt conversion from an OpenXmlElementType to a ModelElementType. It first checks for null values, then attempts implicit conversion if a base type mapping exists, and finally uses the conversion map to perform the conversion.
+            </summary>
+            <typeparam name="ModelElementType"></typeparam>
+            <typeparam name="OpenXmlElementType"></typeparam>
+            <param name="value"></param>
+            <param name="result"></param>
+            <returns></returns>
         </member>
         <member name="T:DocumentModel.OpenXml.SingleConverter">
             <summary>
@@ -8348,6 +8404,16 @@
             Sets the collection that contains this item.
             </summary>
             <param name="collection"></param>
+        </member>
+        <member name="T:DocumentModel.IDirectAccessElement">
+            <summary>
+            Interface for elements that support direct access to their underlying OpenXml representation, allowing for efficient manipulation and retrieval of OpenXml data without the need for full model element instantiation.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.IDirectAccessElement.HasDirectAccess">
+            <summary>
+            Gets a value indicating whether the element has direct access to its underlying OpenXml representation.
+            </summary>
         </member>
         <member name="T:DocumentModel.IEmptyCheckable">
             <summary>

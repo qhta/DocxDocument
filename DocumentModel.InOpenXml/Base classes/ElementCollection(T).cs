@@ -27,6 +27,14 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   }
 
   /// <summary>
+  /// 
+  /// </summary>
+  /// <param name="parent"></param>
+  protected ElementCollection(ModelElement parent) : base(parent)
+  {
+  }
+
+  /// <summary>
   /// Initializes a new collection with the specified items.
   /// </summary>
   /// <param name = "items">The items to add to the collection.</param>

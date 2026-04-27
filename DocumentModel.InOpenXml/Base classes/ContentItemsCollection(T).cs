@@ -8,11 +8,44 @@ namespace DocumentModel;
 /// </summary>
 [XmlRoot("ContentItemsCollection", Namespace = "DocumentModel")]
 [LazyLoad]
-public abstract partial class ContentItemsCollection<ItemType> : ModelElementCollection<ItemType>, 
-  ILazyLoadable, 
+public abstract partial class ContentItemsCollection<ItemType> : ModelElementCollection<ItemType>,
+  ILazyLoadable,
   IFilteringCollection
   where ItemType : ModelElement
 {
+  /// <summary>
+  /// Default constructor for the ContentItemsCollection class, initializing a new instance of the ContentItemsCollection class.
+  /// </summary>
+  protected ContentItemsCollection() : base()
+  {
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the ContentItemsCollection class with the specified parent element. 
+  /// </summary>
+  /// <param name="parent">The parent ModelElement that owns this collection. Cannot be null.</param>
+  protected ContentItemsCollection(ModelElement parent) : base(parent)
+  {
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the ContentItemsCollection class with the specified OpenXmlCompositeElement.
+  /// </summary>
+  /// <param name="openXmlElement">The OpenXmlCompositeElement to be wrapped by the collection. Cannot be null.</param>
+  protected ContentItemsCollection(DX.OpenXmlCompositeElement openXmlElement) : base(openXmlElement)
+  {
+
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the ContentItemsCollection class with the specified parent model element and Open
+  /// XML composite element.
+  /// </summary>
+  /// <param name="parent">The parent ModelElement that owns this collection. Cannot be null.</param>
+  /// <param name="openXmlElement">The underlying OpenXmlCompositeElement that provides the XML structure for the collection. Cannot be null.</param>
+  protected ContentItemsCollection(ModelElement parent, DX.OpenXmlCompositeElement openXmlElement) : base(parent, openXmlElement)
+  {
+  }
 
   /// <summary>
   /// Adds an item to the collection.
@@ -21,7 +54,7 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   public new void Add(ItemType item)
   {
     while (!IsSynchronized)
-      Task.Delay(100).Wait();
+      Task.Delay(1).Wait();
     Items.Add(item);
   }
 
@@ -31,7 +64,7 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   public override void Clear()
   {
     while (!IsSynchronized)
-      Task.Delay(100).Wait();
+      Task.Delay(1).Wait();
     Items.Clear();
   }
 
@@ -43,7 +76,7 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   public override bool Contains(ItemType item)
   {
     while (!IsSynchronized)
-      Task.Delay(100).Wait();
+      Task.Delay(1).Wait();
     return Items.Contains(item);
   }
 
@@ -55,7 +88,7 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   public override void CopyTo(ItemType[] array, int arrayIndex)
   {
     while (!IsSynchronized)
-      Task.Delay(100).Wait();
+      Task.Delay(1).Wait();
     Items.CopyTo(array, arrayIndex);
   }
 
@@ -67,7 +100,7 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   public override bool Remove(ItemType item)
   {
     while (!IsSynchronized)
-      Task.Delay(100).Wait();
+      Task.Delay(1).Wait();
     return Items.Remove(item);
   }
 
@@ -79,7 +112,7 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   public override void Insert(int index, ItemType item)
   {
     while (!IsSynchronized)
-      Task.Delay(100).Wait();
+      Task.Delay(1).Wait();
     Items.Insert(index, item);
   }
 
@@ -90,7 +123,7 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   public override void RemoveAt(int index)
   {
     while (!IsSynchronized)
-      Task.Delay(100).Wait();
+      Task.Delay(1).Wait();
     Items.RemoveAt(index);
   }
 
@@ -104,7 +137,7 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   public override void CopyTo(Array array, int index)
   {
     while (!IsSynchronized)
-      Task.Delay(100).Wait();
+      Task.Delay(1).Wait();
     ((ICollection)Items).CopyTo(array, index);
   }
 
@@ -131,9 +164,14 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   {
     get
     {
-      if (!IsSynchronized &&DataSource is DX.OpenXmlCompositeElement openXmlElement)
+      if (DataSource is DX.OpenXmlCompositeElement openXmlElement)
       {
-        return openXmlElement.ChildElements.Count(AcceptItem);
+        if (HasDirectAccess)
+        {
+          return openXmlElement.ChildElements.Count(AcceptItem);
+        }
+        while (!IsSynchronized)
+          Task.Delay(1).Wait();
       }
       return Items.Count;
     }
@@ -151,7 +189,10 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   {
     if (DataSource is DX.OpenXmlCompositeElement openXmlElement)
     {
-      return !openXmlElement.ChildElements.Any(AcceptItem);
+      if (HasDirectAccess)
+        return !openXmlElement.ChildElements.Any(AcceptItem);
+      while (!IsSynchronized)
+        Task.Delay(1).Wait();
     }
     return base.IsEmpty();
   }
@@ -161,6 +202,8 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   /// </summary>
   public override void TryLazyLoad()
   {
+    if (HasDirectAccess)
+      return;
     if (IsLazyLoadEnabled)
     {
       IsLazyLoadEnabled = false;
@@ -239,15 +282,39 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   {
     get
     {
-      Debug.WriteLine($"Accessing item at index {index} in {GetType().Name}. IsSynchronized: {IsSynchronized}");
-      while (!IsSynchronized && index > Items.Count - 1)
-        Task.Delay(100).Wait();
+      if (DataSource is DX.OpenXmlCompositeElement openXmlElement)
+      {
+        if (HasDirectAccess)
+        {
+          var childElements = openXmlElement.Elements().Where(AcceptItem).ToArray();
+          if (index < 0 || index >= childElements.Length)
+            throw new ArgumentOutOfRangeException(nameof(index),
+              $"Index {index} is out of range for the collection with {childElements.Length} items.");
+
+          var openXmlChildElement = childElements[index];
+          if (ModelElementTypeMapping.TryGetValue(openXmlChildElement.GetType(), out var modelItemType) == false)
+            throw new InvalidOperationException(
+              $"No model element type mapping found for OpenXml element type {openXmlChildElement.GetType()}");
+
+          var modelItem = OpenXmlModelConverter.ConvertFrom(openXmlChildElement, modelItemType);
+          if (modelItem != null && !modelItemType.IsInstanceOfType(modelItem))
+            throw new InvalidOperationException($"Converted model Item is not compatible to {modelItemType}");
+
+          return (ItemType)modelItem!;
+        }
+
+        while (!IsSynchronized && index > Items.Count - 1)
+        {
+          //Debug.WriteLine($"Waiting for synchronization to access item at index {index}  in {GetType().Name}. Current count: {Items.Count}");
+          Task.Delay(1).Wait();
+        }
+      }
       return Items[index];
     }
     set
     {
       while (!IsSynchronized)
-        Task.Delay(100).Wait();
+        Task.Delay(1).Wait();
       Items[index] = value;
     }
   }

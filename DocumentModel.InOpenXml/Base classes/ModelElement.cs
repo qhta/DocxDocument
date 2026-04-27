@@ -2,12 +2,14 @@ using DocumentModel.BaseConverters;
 
 #pragma warning disable CS0659
 namespace DocumentModel;
+
 /// <summary>
 /// Base class for all model elements, providing property change notification support.
 /// </summary>
 [XmlRoot("ModelElement", Namespace = "DocumentModel")]
-public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem, ICollectionItem,
-  IModifiable, INotificationSource, ILoadable, ISerializationEnabling, IEmptyCheckable, IPropertiesProvider, IModelObject
+public abstract partial class ModelElement: INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem,
+  ICollectionItem, IModifiable, INotificationSource, ILoadable, ISerializationEnabling, IEmptyCheckable,
+  IPropertiesProvider, IModelObject
 {
   static ModelElement()
   {
@@ -23,12 +25,12 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   }
 
   /// <summary>
-  /// Initializes a new instance of the ModelElement class within the specified collection.
+  /// Initializes a new instance of the ModelElement class with the specified parent element. This constructor is used to establish a parent-child relationship between model elements.
   /// </summary>
-  /// <param name = "collection">The collection object that contains or manages this model element. This parameter cannot be null.</param>
-  protected ModelElement(Object collection) : this()
+  /// <param name="parent"></param>
+  protected ModelElement(ModelElement parent): this()
   {
-    _Collection = collection;
+    SetParent(parent);
   }
 
   /// <summary>
@@ -72,7 +74,6 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
         if (Guid.TryParse(stringValue.Value, out var guid))
           return guid;
       }
-
     return null;
   }
 
@@ -95,7 +96,6 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
         var text = guid.ToString("B").ToUpper();
         return new DX.StringValue(text);
       }
-
     return null;
   }
 
@@ -103,6 +103,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// Occurs when a property value changes. Can be subscribed to by listeners to receive notifications of property changes.
   /// </summary>
   public event PropertyChangedEventHandler? PropertyChanged;
+
   /// <summary>
   /// Updates data and raises a property changed notification for the specified property.
   /// </summary>
@@ -157,6 +158,37 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   }
 
   /// <summary>
+  /// Gets the first element of the specified OpenXmlType from OpenXmlCompositeElement and convert it to ModelType.
+  /// </summary>
+  /// <typeparam name="ModelType">Type of the output model value</typeparam>
+  /// <typeparam name="OpenXmlType">Type of the OpenXml element to find.</typeparam>
+  /// <param name="openXmlElement">Composite element to search for the specified OpenXmlType.</param>
+  /// <returns>The first element of the specified OpenXmlType converted to ModelType, or null if not found.</returns>
+  protected ModelType? GetElement<ModelType, OpenXmlType>(DX.OpenXmlCompositeElement? openXmlElement)
+    where OpenXmlType: DX.OpenXmlElement
+  {
+    if (openXmlElement == null)
+      return default;
+
+    return OpenXmlModelConverter.ConvertFrom<ModelType, OpenXmlType>(openXmlElement.Elements<OpenXmlType>()
+      .FirstOrDefault());
+  }
+
+  /// <summary>
+  /// Convert a value of the OpenXmlElement property to ModelType.
+  /// </summary>
+  /// <typeparam name="ModelType">Type of the output model value</typeparam>
+  /// <param name="openXmlValue">The OpenXml value to convert.</param>
+  /// <returns>The converted model value, or null if the OpenXml value is null.</returns>
+  protected ModelType? GetProperty<ModelType>(object? openXmlValue)
+  {
+    if (openXmlValue == null)
+      return default;
+
+    return (ModelType?)OpenXmlModelConverter.ConvertFrom(openXmlValue, typeof(ModelType));
+  }
+
+  /// <summary>
   /// Updates the specified field with a new value and raises a property change notification if the value has changed.
   /// </summary>
   /// <remarks>This method is typically used in property setters to implement the INotifyPropertyChanged
@@ -178,10 +210,12 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
         oldChild.SetParent(null);
       if (fieldValue is IWordprocessingDocumentAware oldWDAValue && oldWDAValue.WordprocessingDocument != null)
         oldWDAValue.Detach();
-      if (newValue is IWordprocessingDocumentAware newWDAValue && this is IWordprocessingDocumentAware thisElement && thisElement.WordprocessingDocument != null)
+      if (newValue is IWordprocessingDocumentAware newWDAValue && this is IWordprocessingDocumentAware thisElement &&
+          thisElement.WordprocessingDocument != null)
         newWDAValue.AttachAndUpdate(thisElement.WordprocessingDocument);
       else if (newValue is IUpdatable updatableValue)
         updatableValue.UpdateData();
+
       //else if (this is IUpdatable updatableElement)
       //  updatableElement.UpdateData();
       fieldValue = newValue;
@@ -205,6 +239,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   }
 
   #region INotificationSource implementation
+
   /// <summary>
   /// Property name to be used when the object raise PropertyChanged event.
   /// </summary>
@@ -217,6 +252,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// </summary>
   /// <param name = "propertyName">Property name to set (null erases property name)</param>
   public void SetPropertyName(string? propertyName) => _PropertyName = propertyName;
+
   /// <summary>
   /// Flag to determine if notification is enabled when the object raise PropertyChanged event.
   /// It should be set to true when the object is created.
@@ -224,14 +260,21 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public bool IsNotificationEnabled { get => _IsNotificationEnabled ?? Parent is INotificationSource parentSource && parentSource.IsNotificationEnabled || Collection is INotificationSource collectionSource && collectionSource.IsNotificationEnabled; set => _IsNotificationEnabled = value; }
+  public bool IsNotificationEnabled
+  {
+    get => _IsNotificationEnabled ?? Parent is INotificationSource parentSource && parentSource.IsNotificationEnabled ||
+      Collection is INotificationSource collectionSource && collectionSource.IsNotificationEnabled;
+    set => _IsNotificationEnabled = value;
+  }
 
   /// <summary>
   /// Helper field for IsNotificationEnabled property. It is set to true when the object is created,
   /// and can disable notification for this object and its children.
   /// </summary>
   protected bool? _IsNotificationEnabled;
+
   #endregion
+
   /// <summary>
   /// Invoked on child item property change to raise PropertyChanged event on this model.
   /// </summary>
@@ -267,6 +310,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
       return false;
     if (ReferenceEquals(this, other))
       return true;
+
     return DeepComparer.Equals(this, other);
   }
 
@@ -277,9 +321,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// method overrides Object.Equals(Object).</remarks>
   /// <param name = "obj">The object to compare with the current ModelElement instance.</param>
   /// <returns>true if the specified object is a ModelElement and is equal to the current instance; otherwise, false.</returns>
-
 #pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
-
   public override bool Equals(object? obj)
   {
     if (obj is null)
@@ -288,6 +330,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
       return true;
     if (obj.GetType() != GetType())
       return false;
+
     return DeepComparer.Equals(this.GetType(), this, obj);
   }
 
@@ -313,6 +356,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   {
     if (value is ISerializationEnabling serializationEnabling)
       return serializationEnabling.ShouldSerialize();
+
     return true;
   }
 
@@ -327,7 +371,9 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     if (_knownProperties == null)
     {
       var modelType = this.GetType();
-      var knownProperties = modelType.GetProperty("KnownProperties", BindingFlags.Public | BindingFlags.Static)?.GetValue(null) as KnownProperties;
+      var knownProperties =
+        modelType.GetProperty("KnownProperties", BindingFlags.Public | BindingFlags.Static)?.GetValue(null) as
+          KnownProperties;
       if (knownProperties == null)
         knownProperties = new KnownProperties(modelType);
       _knownProperties = new KnownProperties();
@@ -339,9 +385,9 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
         _knownProperties.Add(modelProp);
       }
     }
-
     return _knownProperties;
   }
+
   private KnownProperties? _knownProperties;
 
   /// <summary>
@@ -385,13 +431,16 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
     var updatableElement = GetUpdatableElement();
     if (updatableElement == null)
       return;
+
     var modelProperty = this.GetType().GetProperty(propertyName);
     if (modelProperty == null)
       return;
+
     var openXmlType = updatableElement.GetType()!;
     var openXmlProperty = OpenXmlPropertyMap.GetOpenXmlProperty(modelProperty, openXmlType);
     if (openXmlProperty == null)
       return;
+
     OpenXmlModelConverter.UpdateOpenXmlProperty(this, modelProperty, updatableElement, openXmlProperty);
   }
 
@@ -405,7 +454,6 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// implementation in the derived class.</returns>
   public virtual object? GetUpdatableElement() => null;
 
-
   /// <summary>
   /// Parent object that contains this item.
   /// </summary>
@@ -416,7 +464,6 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   {
     [DebuggerStepThrough]
     get => _Parent;
-    set => SetParent(value);
   }
 
   /// <summary>
@@ -427,6 +474,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   {
     _Parent = parent;
   }
+
   private object? _Parent;
 
   /// <summary>
@@ -448,6 +496,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   {
     _Collection = collection;
   }
+
   private object? _Collection;
 
   /// <summary>
@@ -468,6 +517,7 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   {
     if (IsLoading)
       return;
+
     if (_IsModified != isModified)
     {
       _IsModified = isModified;
@@ -487,14 +537,13 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
             if (prop.GetIndexParameters().Length == 0)
               if (prop.GetValue(this) is IModifiable modifiableChild)
                 modifiableChild.SetIsModified(IsModified);
-          }
-          catch (Exception ex)
+          } catch (Exception ex)
           {
-            Debug.WriteLine($"Error setting IsModified for property '{prop.Name}' of type '{this.GetType().Name}': {ex.Message}");
+            Debug.WriteLine(
+              $"Error setting IsModified for property '{prop.Name}' of type '{this.GetType().Name}': {ex.Message}");
           }
         }
       }
-
       NotifyPropertyChanged(nameof(IsModified));
     }
   }
@@ -505,7 +554,11 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   [XmlIgnore]
   [JsonIgnore]
   [NotMapped]
-  public bool IsLoading { get; set; }
+  public bool IsLoading
+  {
+    get;
+    set;
+  }
 
   /// <summary>
   /// Checks if all public properties of the current model element are null or empty (for strings and collections).
@@ -515,7 +568,8 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   {
     foreach (var prop in this.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance))
     {
-      if (prop.GetIndexParameters().Length == 0 && prop.CanWrite && prop.GetCustomAttribute<NotMappedAttribute>() == null)
+      if (prop.GetIndexParameters().Length == 0 && prop.CanWrite &&
+          prop.GetCustomAttribute<NotMappedAttribute>() == null)
       {
         var value = prop.GetValue(this);
         if (value != null)
@@ -543,8 +597,6 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
         }
       }
     }
-
     return true;
   }
-
 }

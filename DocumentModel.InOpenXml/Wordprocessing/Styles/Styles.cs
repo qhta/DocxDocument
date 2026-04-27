@@ -76,7 +76,7 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
     get
     {
       if (_LatentStyles == null)
-       _LatentStyles = new LatentStyles(){Parent = this};
+       _LatentStyles = new LatentStyles(this);
       return _LatentStyles;
     }
 

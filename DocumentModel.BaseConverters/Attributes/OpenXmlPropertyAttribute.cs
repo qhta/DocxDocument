@@ -15,4 +15,9 @@ public class OpenXmlPropertyAttribute(string propertyName) : Attribute
   /// The Open XML property name associated with the decorated member.
   /// </summary>
   public string PropertyName { [DebuggerStepThrough] get; } = propertyName;
+
+  /// <summary>
+  /// The Open XML property name associated with the decorated member.
+  /// </summary>
+  public bool DirectAccess { [DebuggerStepThrough] get; set; }
 }

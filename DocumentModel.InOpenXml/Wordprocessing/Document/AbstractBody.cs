@@ -7,8 +7,31 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("AbstractBody", Namespace = "DocumentModel.Wordprocessing")]
 public abstract partial class AbstractBody<T> : Story<T> where T : DXW.BodyType
 {
- /// <summary>
- /// Collection of sections, recollected from <see cref = "ISectionProperties"/> elements within the document body.
- /// </summary>
- public Sections? Sections { get; set; }
+  /// <summary>
+  /// Default constructor for the AbstractBody class, initializing a new instance of the AbstractBody class.
+  /// </summary>
+  protected AbstractBody() : base()
+  {
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the AbstractBody class with the specified parent element.
+  /// </summary>
+  /// <param name="parent">The parent ModelElement to associate with this body. Can be null if the body does not have a parent.</param>
+  protected AbstractBody(ModelElement parent) : base(parent)
+  {
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the AbstractBody class with the specified body type.  
+  /// </summary>
+  /// <param name="bodyType">The body type to associate with this instance.</param>
+  protected AbstractBody(DX.OpenXmlCompositeElement bodyType) : base(bodyType)
+  {
+  }
+
+  /// <summary>
+  /// Collection of sections, recollected from <see cref = "ISectionProperties"/> elements within the document body.
+  /// </summary>
+  public Sections? Sections { get; set; }
 }

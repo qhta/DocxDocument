@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// Contains font attributes (font name, font size, color, and so on) for an object.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.font?view=word-pia"/>
-public partial class BaseRunProperties<T> : ITextFormat
+public partial class BaseRunProperties<OpenXmlElementType> : ITextFormat
 {
 
   /// <summary>

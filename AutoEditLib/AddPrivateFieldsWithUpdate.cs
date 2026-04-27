@@ -9,6 +9,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 /// <summary>
 /// Rewrites model classes so auto-properties become backed by private fields with UpdateField notifications.
@@ -120,11 +121,30 @@ public class ModelElementPropertyRewriter: CSharpSyntaxRewriter
         {
           var propName = prop.Identifier.Text;
           var fieldName = "_" + propName;
-          var newProp = prop.WithAccessorList(SyntaxFactory.AccessorList(SyntaxFactory.List([
-            SyntaxFactory.AccessorDeclaration(SyntaxKind.GetAccessorDeclaration)
-              .WithExpressionBody(SyntaxFactory.ArrowExpressionClause(SyntaxFactory.IdentifierName(fieldName)))
-              .WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken)),
-            SyntaxFactory.AccessorDeclaration(SyntaxKind.SetAccessorDeclaration).WithExpressionBody(
+          var elementType = GetOpenXmlElementType(prop) ?? InferOpenXmlElementType(prop);
+          var getterExpression = elementType == null
+            ? SyntaxFactory.IdentifierName(fieldName) as ExpressionSyntax
+            : SyntaxFactory.AssignmentExpression(
+              SyntaxKind.CoalesceAssignmentExpression,
+              SyntaxFactory.IdentifierName(fieldName),
+              SyntaxFactory.InvocationExpression(
+                  SyntaxFactory.GenericName("GetElement")
+                    .WithTypeArgumentList(
+                      SyntaxFactory.TypeArgumentList(
+                        SyntaxFactory.SeparatedList<TypeSyntax>(
+                        [
+                          prop.Type,
+                          elementType,
+                        ]))))
+                .WithArgumentList(
+                  SyntaxFactory.ArgumentList(
+                    SyntaxFactory.SingletonSeparatedList(
+                      SyntaxFactory.Argument(SyntaxFactory.IdentifierName("_openXmlElement"))))));
+          var getterAccessor = SyntaxFactory.AccessorDeclaration(SyntaxKind.GetAccessorDeclaration)
+            .WithExpressionBody(SyntaxFactory.ArrowExpressionClause(getterExpression))
+            .WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken))
+            .WithTrailingTrivia(SyntaxFactory.TriviaList(SyntaxFactory.CarriageReturnLineFeed));
+          var setterAccessor = SyntaxFactory.AccessorDeclaration(SyntaxKind.SetAccessorDeclaration).WithExpressionBody(
               SyntaxFactory.ArrowExpressionClause(SyntaxFactory
                 .InvocationExpression(SyntaxFactory.IdentifierName("UpdateField")).WithArgumentList(
                   SyntaxFactory.ArgumentList(SyntaxFactory.SeparatedList<ArgumentSyntax>(new SyntaxNodeOrToken[]
@@ -137,7 +157,11 @@ public class ModelElementPropertyRewriter: CSharpSyntaxRewriter
                       .WithArgumentList(SyntaxFactory.ArgumentList(
                         SyntaxFactory.SingletonSeparatedList(
                           SyntaxFactory.Argument(SyntaxFactory.IdentifierName(propName)))))),
-                  }))))).WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken))
+                  })))))
+            .WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken));
+          var newProp = prop.WithAccessorList(SyntaxFactory.AccessorList(SyntaxFactory.List([
+            getterAccessor,
+            setterAccessor,
           ]))).WithTrailingTrivia(SyntaxFactory.TriviaList(SyntaxFactory.CarriageReturnLineFeed));
           var field = SyntaxFactory
             .FieldDeclaration(SyntaxFactory.VariableDeclaration(prop.Type)
@@ -157,5 +181,64 @@ public class ModelElementPropertyRewriter: CSharpSyntaxRewriter
     foreach (var (field, idx) in toInsert.OrderByDescending(x => x.Item2))
       newMembers.Insert(idx, field);
     return node.WithMembers(SyntaxFactory.List(newMembers));
+  }
+
+ private static TypeSyntax? GetOpenXmlElementType(PropertyDeclarationSyntax prop)
+  {
+    var openXmlElementAttribute = prop.AttributeLists
+      .SelectMany(al => al.Attributes)
+      .FirstOrDefault(attr =>
+      {
+        var attrName = attr.Name.ToString();
+        return attrName == "OpenXmlElement" ||
+               attrName == "OpenXmlElementAttribute" ||
+               attrName.EndsWith(".OpenXmlElement") ||
+               attrName.EndsWith(".OpenXmlElementAttribute") ||
+               attrName.EndsWith("::OpenXmlElement") ||
+               attrName.EndsWith("::OpenXmlElementAttribute");
+      });
+
+    var typeOfExpression = openXmlElementAttribute?.ArgumentList?.Arguments.FirstOrDefault()?.Expression as
+      TypeOfExpressionSyntax;
+    return typeOfExpression?.Type;
+  }
+
+  private static TypeSyntax? InferOpenXmlElementType(PropertyDeclarationSyntax prop)
+  {
+    var modelTypeName = GetSimpleTypeName(prop.Type);
+    if (string.IsNullOrWhiteSpace(modelTypeName) || IsSimpleNonElementType(modelTypeName))
+      return null;
+
+    if (modelTypeName.StartsWith("DocumentModel.", StringComparison.Ordinal))
+      return SyntaxFactory.ParseTypeName(modelTypeName.Replace("DocumentModel.", "DocumentFormat.OpenXml."));
+
+    var namespaceName = prop.Ancestors().OfType<BaseNamespaceDeclarationSyntax>().FirstOrDefault()?.Name.ToString();
+    if (!string.IsNullOrWhiteSpace(namespaceName) && namespaceName!.StartsWith("DocumentModel.", StringComparison.Ordinal))
+    {
+      var openXmlNamespace = namespaceName.Replace("DocumentModel.", "DocumentFormat.OpenXml.");
+      return SyntaxFactory.ParseTypeName($"{openXmlNamespace}.{modelTypeName}");
+    }
+
+    return null;
+  }
+
+  private static string GetSimpleTypeName(TypeSyntax typeSyntax)
+  {
+    return typeSyntax switch
+    {
+      NullableTypeSyntax nullableType => nullableType.ElementType.ToString(),
+      _ => typeSyntax.ToString().TrimEnd('?'),
+    };
+  }
+
+  private static bool IsSimpleNonElementType(string typeName)
+  {
+    var simpleTypeNames = new HashSet<string>(StringComparer.Ordinal)
+    {
+      "string", "bool", "byte", "sbyte", "short", "ushort", "int", "uint", "long", "ulong", "float", "double", "decimal", "char", "object",
+      "String", "Boolean", "Byte", "SByte", "Int16", "UInt16", "Int32", "UInt32", "Int64", "UInt64", "Single", "Double", "Decimal", "Char", "Object",
+      "DateTime", "TimeSpan", "Guid"
+    };
+    return simpleTypeNames.Contains(typeName) || typeName.Contains('<') || typeName.Contains('[');
   }
 }

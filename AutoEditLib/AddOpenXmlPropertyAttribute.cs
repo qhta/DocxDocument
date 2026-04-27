@@ -66,11 +66,6 @@ public class AddOpenXmlPropertyAttributeRewriter(BiDiDictionary<string, string> 
   /// <returns>Updated class syntax node or original when unchanged.</returns>
   public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax classNode)
   {
-
-    // Skip abstract classes
-    //if (classNode.Modifiers.Any(m => m.IsKind(SyntaxKind.AbstractKeyword)))
-    //  return classNode;
-
     var openXmlTypeAttribute = classNode.AttributeLists
       .SelectMany(selector: al => al.Attributes)
       .FirstOrDefault(predicate: attr =>
@@ -90,7 +85,8 @@ public class AddOpenXmlPropertyAttributeRewriter(BiDiDictionary<string, string> 
       return base.VisitClassDeclaration(node: classNode);
 
     var openXmlTypeName =  typeOfExpression.Type.ToString();
-    if (!TryResolveOpenXmlType(ResolveAlias(openXmlTypeName), out var openXmlType))
+    var openXmlTypeNameResolved = aliasMap.ResolveAlias(openXmlTypeName);
+    if (!aliasMap.TryResolveOpenXmlType(openXmlTypeNameResolved, out var openXmlType))
       return base.VisitClassDeclaration(node: classNode);
 
 
@@ -161,39 +157,4 @@ public class AddOpenXmlPropertyAttributeRewriter(BiDiDictionary<string, string> 
     return openXmlType.GetProperty(propertyName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase) != null;
   }
 
-  /// <summary>
-  /// Resolves a type name using alias expansion and cached Open XML assemblies.
-  /// </summary>
-  /// <param name="typeName">Candidate type name.</param>
-  /// <param name="type">Resolved <see cref="Type"/> when successful.</param>
-  /// <returns><see langword="true"/> if the type could be resolved.</returns>
-  private bool TryResolveOpenXmlType(string typeName, out Type? type)
-  {
-    if (TypeCache.TryResolveType(typeName, out var cached))
-    {
-      type = cached!;
-      return cached != null;
-    }
-
-    var resolvedName = ResolveAlias(typeName);
-    type = TypeCache.ResolveType(resolvedName);
-;
-    return type!=null;
-  }
-
-  /// <summary>
-  /// Expands namespace aliases referenced within the current file.
-  /// </summary>
-  /// <param name="typeName">Type name potentially prefixed with an alias.</param>
-  private string ResolveAlias(string typeName)
-  {
-    var dotIndex = typeName.IndexOf('.');
-    if (dotIndex > 0)
-    {
-      var alias = typeName.Substring(0, dotIndex);
-      if (aliasMap.TryGetValue(alias, out var ns))
-        return ns + "." + typeName.Substring(dotIndex + 1);
-    }
-    return typeName;
-  }
 }

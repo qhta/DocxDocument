@@ -9,13 +9,24 @@ namespace DocumentModel.Wordprocessing;
 public partial class Paragraph : ModelElement<DXW.Paragraph>, IStoryContent, ITableCellContent, ISdtBlockContent, 
   ICustomXmlBlockContent, ICommentContent, IBidirectionalContent
 {
+  /// <summary>
+  /// Initializes a new instance of the Paragraph class.
+  /// </summary>
+  /// <remarks>This constructor creates a new paragraph element using the default settings. Use this constructor
+  /// when you want to create a new paragraph in a document without copying from an existing one.</remarks>
+  public Paragraph() : base(new DXW.Paragraph()) { }
+
+  private DXW.Paragraph _paragraph => _openXmlElement as DXW.Paragraph ?? throw new InvalidOperationException("Underlying OpenXml element is not of type DXW.Paragraph.");
 
   /// <summary>
   /// Identifier for the paragraph, unique within the document part (except across Alternate Content blocks). Values must be greater than 0 and less than 0x80000000.
   /// </summary>
-  [OpenXmlProperty(nameof(DXW.Paragraph.ParagraphId))]
-  public HexInt? ParagraphId { get => _ParagraphId; set => UpdateField(ref _ParagraphId, value, nameof(ParagraphId)); }
-  private HexInt? _ParagraphId;
+  [OpenXmlProperty(nameof(DXW.Paragraph.ParagraphId), DirectAccess = true)]
+  public HexInt? ParagraphId 
+  { 
+    get => OpenXmlModelConverter.ConvertFrom<HexInt?, DX.HexBinaryValue>(_paragraph.ParagraphId); 
+    set => _paragraph.ParagraphId = OpenXmlModelConverter.ConvertTo<HexInt?, DX.HexBinaryValue>(value);
+  }
 
   /// <summary>
   /// Version identifier for the paragraph. Values must be greater than 0 and less than 0x80000000. Requires <see cref = "ParagraphId"/>. Used for text identity across documents with the same docId.

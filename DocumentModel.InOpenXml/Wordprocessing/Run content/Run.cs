@@ -8,6 +8,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [OpenXmlType(typeof(DXW.Run))]
 [XmlRoot("Run", Namespace = "DocumentModel.Wordprocessing")]
+[DirectAccess(true)]
 public partial class Run : ModelElement<DXW.Run>, //RunContentCollection,
  IParagraphContent, ISdtRunContent, IRubyContent, IBidirectionalContent, IMathArgumentContent
 {
@@ -21,28 +22,47 @@ public partial class Run : ModelElement<DXW.Run>, //RunContentCollection,
   /// </summary>
   /// <param name="parent">The parent object that will contain this Run instance. This parameter establishes the hierarchical relationship
   /// within the object model and cannot be null.</param>
-  public Run(object parent) : base(parent) { }
+  public Run(ModelElement parent) : base(parent) { }
+  
+  /// <summary>
+  /// Initializes a new instance of the Run class using the specified OpenXmlCompositeElement as the underlying XML
+  /// element.
+  /// </summary>
+  /// <param name="openXmlElement">The OpenXmlCompositeElement that provides the XML data for the Run instance. Cannot be null.</param>
+  public Run(DX.OpenXmlCompositeElement openXmlElement) : base(openXmlElement) { }
+
+  private DXW.Run _openXmlRun => _openXmlElement as DXW.Run ?? throw new InvalidOperationException("Underlying OpenXml element is not of type DXW.Run.");
 
   /// <summary>
   ///   Revision Identifier for Run Properties
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Run.RsidRunProperties))]
-  public HexInt? RsidRunProperties { get => _RsidRunProperties; set => UpdateField(ref _RsidRunProperties, value, nameof(RsidRunProperties)); }
-  private HexInt? _RsidRunProperties;
+  public HexInt? RsidRunProperties
+  {
+    get => OpenXmlModelConverter.ConvertFrom<HexInt?, DX.HexBinaryValue>(_openXmlRun.RsidRunProperties);
+    set => _openXmlRun.RsidRunProperties = OpenXmlModelConverter.ConvertTo<HexInt?, DX.HexBinaryValue>(value);
+  }
+
 
   /// <summary>
   ///   Revision Identifier for Run Deletion
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Run.RsidRunDeletion))]
-  public HexInt? RsidRunDeletion { get => _RsidRunDeletion; set => UpdateField(ref _RsidRunDeletion, value, nameof(RsidRunDeletion)); }
-  private HexInt? _RsidRunDeletion;
+  public HexInt? RsidRunDeletion
+  {
+    get => OpenXmlModelConverter.ConvertFrom<HexInt?, DX.HexBinaryValue>(_openXmlRun.RsidRunDeletion);
+    set => _openXmlRun.RsidRunDeletion = OpenXmlModelConverter.ConvertTo<HexInt?, DX.HexBinaryValue>(value);
+  }
 
   /// <summary>
   ///   Revision Identifier for Run
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Run.RsidRunAddition))]
-  public HexInt? RsidRunAddition { get => _RsidRunAddition; set => UpdateField(ref _RsidRunAddition, value, nameof(RsidRunAddition)); }
-  private HexInt? _RsidRunAddition;
+  public HexInt? RsidRunAddition
+  {
+    get => OpenXmlModelConverter.ConvertFrom<HexInt?, DX.HexBinaryValue>(_openXmlRun.RsidRunAddition);
+    set => _openXmlRun.RsidRunAddition = OpenXmlModelConverter.ConvertTo<HexInt?, DX.HexBinaryValue>(value);
+  }
 
   /// <summary>
   ///   Specifies a set of run properties which shall be applied to the contents of the parent run 
@@ -50,6 +70,10 @@ public partial class Run : ModelElement<DXW.Run>, //RunContentCollection,
   ///   since they are directly applied to the run and supersede any formatting from styles..
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Run.RunProperties))]
-  public RunProperties? RunProperties { get => _RunProperties; set => UpdateField(ref _RunProperties, value, nameof(RunProperties)); }
+  public RunProperties? RunProperties
+  {
+    get => _RunProperties ??= OpenXmlModelConverter.ConvertFrom<RunProperties?, DXW.RunProperties>(_openXmlRun.RunProperties);
+    set => UpdateField(ref _RunProperties, value, nameof(RunProperties));
+  }
   private RunProperties? _RunProperties;
 }

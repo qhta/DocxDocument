@@ -51,11 +51,7 @@ public static class AddOpenXmlElementAttribute
 /// <param name="aliasMap">Namespace aliases discovered in the processed file.</param>
 public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> aliasMap): CSharpSyntaxRewriter
 {
-  private readonly Dictionary<string, Type?> _typeCache = new(StringComparer.Ordinal);
   private readonly Dictionary<string, IReadOnlyList<Type>> _childElementTypesCache = new(StringComparer.Ordinal);
-  private readonly Dictionary<string, XDocument?> _xmlDocumentationCache = new(StringComparer.OrdinalIgnoreCase);
-  private static readonly Assembly? OpenXmlFrameworkAssembly = typeof(OpenXmlElement).Assembly;
-  private static readonly Assembly? OpenXmlAssembly = typeof(Document).Assembly;
 
   /// <summary>
   /// Indicates whether the rewriter produced any modifications.
@@ -69,146 +65,87 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
   /// <returns>The updated class declaration, or the original node when no changes were required.</returns>
   public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax classNode)
   {
-    var openXmlTypeAttribute = classNode.AttributeLists.SelectMany(al => al.Attributes).FirstOrDefault(attr =>
-    {
-      var attrName = attr.Name.ToString();
-      return attrName == "OpenXmlType" || attrName == "OpenXmlTypeAttribute" || attrName.EndsWith(".OpenXmlType") ||
-             attrName.EndsWith(".OpenXmlTypeAttribute");
-    });
-    if (openXmlTypeAttribute?.ArgumentList == null)
-      return base.VisitClassDeclaration(classNode);
-    if (openXmlTypeAttribute.ArgumentList.Arguments.Count < 1)
-      return base.VisitClassDeclaration(classNode);
+    var openXmlTypeAttribute = classNode.AttributeLists
+      .SelectMany(selector: al => al.Attributes)
+      .FirstOrDefault(predicate: attr =>
+      {
+        var attrName = attr.Name.ToString();
+        return attrName == "OpenXmlType";
+      });
 
-    var openXmlTypeExpression = openXmlTypeAttribute.ArgumentList.Arguments[0].Expression;
+    if (openXmlTypeAttribute?.ArgumentList == null)
+      return base.VisitClassDeclaration(node: classNode);
+
+    if (openXmlTypeAttribute.ArgumentList.Arguments.Count < 1)
+      return base.VisitClassDeclaration(node: classNode);
+
+    var openXmlTypeExpression = openXmlTypeAttribute.ArgumentList.Arguments[index: 0].Expression;
     if (openXmlTypeExpression is not TypeOfExpressionSyntax typeOfExpression)
-      return base.VisitClassDeclaration(classNode);
+      return base.VisitClassDeclaration(node: classNode);
 
     var openXmlTypeName = typeOfExpression.Type.ToString();
-    if (openXmlTypeName == "T")
-    {
-      var typeParamClause =
-        classNode.ConstraintClauses.FirstOrDefault(clause => clause.Name.Identifier.Text == openXmlTypeName);
-      if (typeParamClause?.Constraints == null)
-        return base.VisitClassDeclaration(classNode);
+    var openXmlTypeNameResolved = aliasMap.ResolveAlias(openXmlTypeName);
+    if (!aliasMap.TryResolveOpenXmlType(openXmlTypeNameResolved, out var openXmlType))
+      return base.VisitClassDeclaration(node: classNode);
 
-      var constraint = typeParamClause.Constraints.OfType<TypeConstraintSyntax>().FirstOrDefault();
-      if (constraint == null)
-        return base.VisitClassDeclaration(classNode);
 
-      var qualifiedName = constraint.Type is QualifiedNameSyntax constraintType
-        ? constraintType.ToString()
-        : constraint.Type.ToString();
-      if (qualifiedName == "DX.OpenXmlElement")
-        return base.VisitClassDeclaration(classNode);
-
-      openXmlTypeName = qualifiedName;
-    }
+    // Add [OpenXmlProperty(nameof(Format.EnumPropertyName))] to each property
     var childElementTypes = GetChildElementTypes(openXmlTypeName);
-    var newMembers = classNode.Members.Select(member =>
+    var newMembers = new List<MemberDeclarationSyntax>();
+    foreach (var member in classNode.Members)
     {
-      if (member is PropertyDeclarationSyntax prop)
+      if (member is not PropertyDeclarationSyntax prop)
       {
-        var hasSetter = prop.AccessorList?.Accessors
-          .Any(a => a.Kind() == SyntaxKind.SetAccessorDeclaration) == true;
-        if (!hasSetter)
-          return member;
-
-        var hasElementAttr = prop.AttributeLists.SelectMany(al => al.Attributes)
-          .Any(attr => attr.Name.ToString().Contains("OpenXmlElement"));
-        if (hasElementAttr)
-          return member;
-
-        var hasPropertyAttr = prop.AttributeLists.SelectMany(al => al.Attributes)
-          .Any(attr => attr.Name.ToString().Contains("OpenXmlProperty"));
-        if (hasPropertyAttr)
-          return member;
-        if (PropertyExistsInOpenXmlType(openXmlTypeName, prop.Identifier.Text))
-          return member;
-
-        var targetElementTypeName = ResolveTargetElementTypeName(openXmlTypeName, prop, childElementTypes);
-        var leadingTrivia = prop.GetLeadingTrivia();
-        var docTrivia = leadingTrivia.Where(t =>
-          t.IsKind(SyntaxKind.SingleLineDocumentationCommentTrivia) ||
-          t.IsKind(SyntaxKind.MultiLineDocumentationCommentTrivia)).ToList();
-        var otherTrivia = leadingTrivia.Except(docTrivia).ToList();
-        var attr = SyntaxFactory.Attribute(SyntaxFactory.IdentifierName("OpenXmlElement"),
-          SyntaxFactory.AttributeArgumentList(SyntaxFactory.SingletonSeparatedList(
-            SyntaxFactory.AttributeArgument(
-              SyntaxFactory.TypeOfExpression(SyntaxFactory.ParseTypeName(targetElementTypeName))))));
-        var attrList = SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(attr))
-          .WithLeadingTrivia(SyntaxFactory.TriviaList(docTrivia));
-        var newProp = prop.WithLeadingTrivia(SyntaxFactory.TriviaList(otherTrivia))
-          .WithAttributeLists(prop.AttributeLists.Add(attrList)).WithTrailingTrivia(prop.GetTrailingTrivia());
-        Changed = true;
-        return newProp;
+        newMembers.Add(member);
+        continue;
       }
-      return member;
-    }).ToList();
-    return classNode.WithMembers(SyntaxFactory.List(newMembers));
-  }
 
-  /// <summary>
-  /// Determines when an Open XML type already exposes a property with the supplied name.
-  /// </summary>
-  /// <param name="openXmlTypeName">Fully-qualified Open XML type name.</param>
-  /// <param name="propertyName">Property name to search for.</param>
-  /// <returns><see langword="true"/> if the property exists; otherwise <see langword="false"/>.</returns>
-  private bool PropertyExistsInOpenXmlType(string openXmlTypeName, string propertyName)
-  {
-    if (!TryResolveOpenXmlType(openXmlTypeName, out var type))
-      return false;
-
-    return type!.GetProperty(propertyName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase) !=
-           null;
-  }
-
-  /// <summary>
-  /// Attempts to resolve a type using alias expansion and loaded assemblies.
-  /// </summary>
-  /// <param name="typeName">Candidate type name, possibly using an alias.</param>
-  /// <param name="type">Resolved <see cref="Type"/> when successful.</param>
-  /// <returns><see langword="true"/> if the type is resolved; otherwise <see langword="false"/>.</returns>
-  private bool TryResolveOpenXmlType(string typeName, out Type? type)
-  {
-    if (_typeCache.TryGetValue(typeName, out var cached))
-    {
-      type = cached!;
-      return cached != null;
-    }
-    var resolvedName = ResolveNsAlias(typeName);
-    type = Type.GetType(resolvedName, throwOnError: false, ignoreCase: false) ??
-           OpenXmlFrameworkAssembly?.GetType(resolvedName, throwOnError: false, ignoreCase: false) ??
-           OpenXmlAssembly?.GetType(resolvedName, throwOnError: false, ignoreCase: false);
-    if (type == null)
-    {
-      var assembliesToSearch = AppDomain.CurrentDomain.GetAssemblies().ToList();
-      foreach (var asm in assembliesToSearch)
+      // Only touch properties that have a setter
+      var hasSetter = prop.AccessorList?.Accessors.Any(predicate: a => a.Kind() == SyntaxKind.SetAccessorDeclaration) ==
+                      true;
+      if (!hasSetter)
       {
-        type = asm.GetType(resolvedName, false, false);
-        if (type != null)
-          break;
+        newMembers.Add(prop);
+        continue;
       }
-    }
-    _typeCache[typeName] = type;
-    return type != null;
-  }
+      var hasAttr = prop.AttributeLists.SelectMany(selector: al => al.Attributes)
+        .Any(predicate: attr => attr.Name.ToString().Contains(value: "OpenXmlElement"));
+      if (hasAttr)
+      {
+        newMembers.Add(prop);
+        continue;
+      }
 
-  /// <summary>
-  /// Resolves namespace alias in the provided type name..
-  /// </summary>
-  /// <param name="typeName">Type name that may use an alias prefix.</param>
-  /// <returns>The fully-qualified type name.</returns>
-  private string ResolveNsAlias(string typeName)
-  {
-    var dotIndex = typeName.LastIndexOf('.');
-    if (dotIndex > 0)
-    {
-      var alias = typeName.Substring(0, dotIndex);
-      if (aliasMap.TryGetValue2(alias, out var ns))
-        return ns + "." + typeName.Substring(dotIndex + 1);
+      var leadingTrivia = prop.GetLeadingTrivia();
+      var docTrivia = leadingTrivia.Where(predicate: t =>
+        t.IsKind(kind: SyntaxKind.SingleLineDocumentationCommentTrivia) ||
+        t.IsKind(kind: SyntaxKind.MultiLineDocumentationCommentTrivia)).ToList();
+      var otherTrivia = leadingTrivia.Except(second: docTrivia).ToList();
+
+
+      var elementType = childElementTypes.FirstOrDefault(t => t.Name == prop.Identifier.Text);
+      if (elementType == null)
+      {
+        newMembers.Add(prop);
+        continue;
+      }
+      var attributeName = "OpenXmlElement";
+
+      var attr = SyntaxFactory.Attribute(name: SyntaxFactory.IdentifierName(name: attributeName),
+        argumentList: SyntaxFactory.AttributeArgumentList(arguments: SyntaxFactory.SingletonSeparatedList(
+          node: SyntaxFactory.AttributeArgument(
+            expression: SyntaxFactory.ParseExpression(text: $"typeof({aliasMap.GetAlias(elementType.FullName!)}.{elementType.Name})")))));
+
+      var attrList = SyntaxFactory.AttributeList(attributes: SyntaxFactory.SingletonSeparatedList(node: attr))
+        .WithLeadingTrivia(trivia: SyntaxFactory.TriviaList(trivias: docTrivia));
+      var newProp = prop.WithLeadingTrivia(trivia: SyntaxFactory.TriviaList(trivias: otherTrivia))
+        .WithAttributeLists(attributeLists: prop.AttributeLists.Add(node: attrList))
+        .WithTrailingTrivia(trivia: prop.GetTrailingTrivia());
+
+      Changed = true;
+      newMembers.Add(newProp);
     }
-    return typeName;
+    return classNode.WithMembers(members: SyntaxFactory.List(nodes: newMembers));
   }
 
   /// <summary>
@@ -227,26 +164,10 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
     return null;
   }
 
-  /// <summary>
-  /// Set namespace alias for the type name.
-  /// </summary>
-  /// <param name="typeName">Type name that may use an alias prefix.</param>
-  /// <returns>Aliased type name.</returns>
-  private string SetAlias(string typeName)
-  {
-    var dotIndex = typeName.LastIndexOf('.');
-    if (dotIndex > 0)
-    {
-      var ns = typeName.Substring(0, dotIndex);
-      if (aliasMap.TryGetValue1(ns, out var alias))
-        return alias + "." + typeName.Substring(dotIndex + 1);
-    }
-    return typeName;
-  }
 
   /// Determines the most appropriate Open XML element type to reference in the <c>[OpenXmlElement]</c> attribute
   /// based on the property name, type, and child elements of the Open XML type.
-  private string ResolveTargetElementTypeName
+  private string? ResolveTargetElementTypeName
     (string openXmlTypeName, PropertyDeclarationSyntax prop, IReadOnlyList<Type> childElementTypes)
   {
     string? targetElementTypeName = null;
@@ -259,10 +180,10 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
       var ns = GetNamespace(openXmlTypeName);
       if (ns != null)
         targetElementTypeName = ns + "." + targetElementTypeName;
-      if (TryResolveOpenXmlType(targetElementTypeName, out var elementType))
+      if (aliasMap.TryResolveOpenXmlType(targetElementTypeName, out var elementType))
         targetElementTypeName = elementType!.FullName ?? elementType!.Name;
     }
-    return SetAlias(targetElementTypeName);
+    return aliasMap.GetAlias(targetElementTypeName);
   }
 
   /// <summary>
@@ -404,7 +325,7 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
       return cached;
 
     var result = new List<Type>();
-    if (TryResolveOpenXmlType(openXmlTypeName, out var openXmlType) && openXmlType != null &&
+    if (aliasMap.TryResolveOpenXmlType(openXmlTypeName, out var openXmlType) && openXmlType != null &&
         typeof(OpenXmlElement).IsAssignableFrom(openXmlType) && !openXmlType.IsAbstract &&
         !openXmlType.ContainsGenericParameters)
     {
@@ -416,8 +337,8 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
       var ctor = openXmlType.GetConstructor(Type.EmptyTypes);
       if (result.Count == 0 && ctor?.Invoke(Array.Empty<object>()) is OpenXmlElement element)
       {
-        var metadata = GetElementMetadata(element);
-        var metadataParticle = GetMetadataParticle(metadata);
+        var metadata = element.GetMetadata();
+        var metadataParticle = DocumentationHelper.GetMetadataParticle(metadata);
         if (metadataParticle != null)
         {
           var children = new HashSet<Type>();
@@ -444,7 +365,7 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
   /// The list is empty if no child types are found.</returns>
   private IReadOnlyList<Type> GetChildElementTypesFromRemarks(Type openXmlType)
   {
-    var xml = GetAssemblyXmlDocumentation(openXmlType.Assembly);
+    var xml = openXmlType.Assembly.GetAssemblyXmlDocumentation();
     if (xml == null)
       return [];
 
@@ -466,159 +387,13 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
         continue;
 
       var typeName = crefValue.Substring(2);
-      if (TryResolveOpenXmlType(typeName, out var childType) && childType != null &&
+      if (aliasMap.TryResolveOpenXmlType(typeName, out var childType) && childType != null &&
           typeof(OpenXmlElement).IsAssignableFrom(childType) && !result.Contains(childType))
       {
         result.Add(childType);
       }
     }
     return result;
-  }
-
-  /// <summary>
-  /// Retrieves the XML documentation for the specified assembly, if available.
-  /// </summary>
-  /// <remarks>This method checks multiple candidate paths for the XML documentation file and caches the results
-  /// to improve performance on subsequent calls.</remarks>
-  /// <param name="assembly">The assembly from which to load the XML documentation.</param>
-  /// <returns>An XDocument containing the XML documentation for the assembly,
-  /// or null if no documentation is found.</returns>
-  private XDocument? GetAssemblyXmlDocumentation(Assembly assembly)
-  {
-    foreach (var xmlPath in GetXmlDocumentationCandidatePaths(assembly))
-    {
-      if (_xmlDocumentationCache.TryGetValue(xmlPath, out var cached))
-      {
-        if (cached != null)
-          return cached;
-
-        continue;
-      }
-      XDocument? loaded = null;
-      if (File.Exists(xmlPath))
-      {
-        try
-        {
-          loaded = XDocument.Load(xmlPath);
-        } catch
-        {
-          loaded = null;
-        }
-      }
-      _xmlDocumentationCache[xmlPath] = loaded;
-      if (loaded != null)
-        return loaded;
-    }
-    return null;
-  }
-
-  /// <summary>
-  /// Retrieves a collection of file paths to XML documentation files that may be associated with the specified
-  /// assembly.
-  /// </summary>
-  /// <remarks>The method searches multiple locations for XML documentation files, including the assembly's
-  /// location, the application's base directory, and common NuGet package directories. Each path in the returned
-  /// collection is unique and non-empty if present.</remarks>
-  /// <param name="assembly">The assembly for which to locate XML documentation files.
-  /// This parameter cannot be null.</param>
-  /// <returns>An enumerable collection of strings representing the paths to potential XML documentation files.
-  /// The collection
-  /// may be empty if no documentation files are found.</returns>
-  private static IEnumerable<string> GetXmlDocumentationCandidatePaths(Assembly assembly)
-  {
-    var paths = new List<string>();
-    var yielded = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-    void YieldIfNew(string? path)
-    {
-      if (!string.IsNullOrWhiteSpace(path) && yielded.Add(path!))
-        paths.Add(path ?? string.Empty);
-    }
-    var assemblyName = assembly.GetName().Name;
-    if (string.IsNullOrWhiteSpace(assemblyName))
-      return paths;
-
-    var location = assembly.Location;
-    if (!string.IsNullOrWhiteSpace(location))
-      YieldIfNew(Path.ChangeExtension(location, ".xml"));
-    YieldIfNew(Path.Combine(AppContext.BaseDirectory, assemblyName + ".xml"));
-    var nugetPackages = Environment.GetEnvironmentVariable("NUGET_PACKAGES");
-    if (string.IsNullOrWhiteSpace(nugetPackages))
-    {
-      var userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-      if (!string.IsNullOrWhiteSpace(userProfile))
-        nugetPackages = Path.Combine(userProfile, ".nuget", "packages");
-    }
-    if (!string.IsNullOrWhiteSpace(nugetPackages) && Directory.Exists(nugetPackages))
-    {
-      var packageId = assemblyName.ToLowerInvariant();
-      var packageFolder = Path.Combine(nugetPackages, packageId);
-      if (Directory.Exists(packageFolder))
-      {
-        var versionFolders = Directory.GetDirectories(packageFolder)
-          .OrderByDescending(p => p, StringComparer.OrdinalIgnoreCase).Take(5);
-        foreach (var versionFolder in versionFolders)
-        {
-          foreach (var xmlFile in Directory.EnumerateFiles(versionFolder, assemblyName + ".xml",
-                     SearchOption.AllDirectories))
-            YieldIfNew(xmlFile);
-        }
-      }
-    }
-    return paths;
-  }
-
-  /// <summary>
-  /// Retrieves the metadata associated with the specified OpenXmlElement instance.
-  /// </summary>
-  /// <remarks>This method uses reflection to access internal metadata features of the OpenXml framework. Ensure
-  /// that the OpenXmlFrameworkAssembly is properly initialized before calling this method.</remarks>
-  /// <param name="element">The OpenXmlElement for which to obtain metadata. This parameter cannot be null.</param>
-  /// <returns>An object representing the metadata of the specified element, or null if no metadata is available.</returns>
-  private static object? GetElementMetadata(OpenXmlElement element)
-  {
-    var metadataFeatureType = OpenXmlFrameworkAssembly?.GetType(
-      "DocumentFormat.OpenXml.Framework.Metadata.ElementMetadataFactoryFeature", throwOnError: false,
-      ignoreCase: false);
-    if (metadataFeatureType == null)
-      return null;
-
-    var metadataFeature = Activator.CreateInstance(metadataFeatureType, nonPublic: true);
-    if (metadataFeature == null)
-      return null;
-
-    var getMetadataMethod = metadataFeatureType.GetMethod("GetMetadata",
-      BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-    if (getMetadataMethod == null)
-      return null;
-
-    return getMetadataMethod.Invoke(metadataFeature, [element]);
-  }
-
-  /// <summary>
-  /// Retrieves the inner 'Particle' object from the specified metadata object, if available.
-  /// </summary>
-  /// <remarks>This method uses reflection to access a property named 'Particle' on the provided metadata object
-  /// and its nested object. The metadata object is expected to have a specific structure with a 'Particle' property. If
-  /// the required properties are not present, the method returns null.</remarks>
-  /// <param name="metadata">The metadata object from which to extract the inner 'Particle'. This parameter can be null.</param>
-  /// <returns>An object representing the inner 'Particle' if found; otherwise, null.</returns>
-  private static object? GetMetadataParticle(object? metadata)
-  {
-    if (metadata == null)
-      return null;
-
-    var metadataType = metadata.GetType();
-    var particleHolder = metadataType
-      .GetProperty("Particle",
-        BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
-      ?.GetValue(metadata);
-    if (particleHolder == null)
-      return null;
-
-    return particleHolder.GetType()
-      .GetProperty("Particle",
-        BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
-      ?.GetValue(particleHolder);
   }
 
   /// <summary>

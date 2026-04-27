@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 
 #pragma warning disable CS1591
 
-public partial class BaseRunProperties<T> 
+public partial class BaseRunProperties<OpenXmlElementType> 
 {
   public bool ShouldSerializeRunFonts() => RunFonts is not null && ShouldSerialize(RunFonts);
   public bool ShouldSerializeBold() => Bold is not null && ShouldSerialize(Bold);

@@ -11,16 +11,16 @@ public partial class LatentStyles:
   ModelElementCollection<LatentStyleExceptionInfo, DXW.LatentStyles, DXW.LatentStyleExceptionInfo>
 
 {
-  ///// <summary>
-  ///// Default constructor.
-  ///// </summary>
-  //public LatentStyles() { }
+  /// <summary>
+  /// Default constructor.
+  /// </summary>
+  public LatentStyles() { }
 
-  ///// <summary>
-  ///// Initializing constructor.
-  ///// </summary>
-  ///// <param name = "styles"></param>
-  //public LatentStyles(Styles styles): base(styles) { }
+  /// <summary>
+  /// Initializing constructor.
+  /// </summary>
+  /// <param name = "styles"></param>
+  public LatentStyles(Styles styles) : base(styles) { }
 
   /// <summary>
   /// Parent styles element that contains this collection of defined styles. 

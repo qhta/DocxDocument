@@ -5,8 +5,45 @@ namespace DocumentModel;
 /// </summary>
 /// <typeparam name = "OpenXmlType">Specifies the type of the underlying OpenXml element being wrapped and synchronized.</typeparam>
 [XmlRoot("ModelElement", Namespace = "DocumentModel")]
-public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordprocessingDocumentAware, IUpdatable where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with PackageProperties
+public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordprocessingDocumentAware, IUpdatable
+  where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with PackageProperties
 {
+
+  /// <summary>
+  ///   Initializes a new instance of the <see cref = "ModelElement{Format}"/> class.
+  /// </summary>
+  protected ModelElement()
+  {
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the ModelElement class with the specified parent element. 
+  /// </summary>
+  /// <param name="parent">The parent ModelElement that contains this element. Can be null if the element has no parent.</param>
+  protected ModelElement(ModelElement parent) : base(parent)
+  {
+  }
+
+
+  /// <summary>
+  ///   Initializes a new instance of the <see cref = "ModelElement{Format}"/> class with the specified OpenXml element.
+  /// </summary>
+  /// <param name = "openXmlElement">The OpenXml element to wrap and synchronize with. It can't be null</param>
+  protected ModelElement(DX.OpenXmlElement openXmlElement)
+  {
+    _openXmlElement = (OpenXmlType)openXmlElement;
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the ModelElement class with the specified parent element and Open XML element.  
+  /// </summary>
+  /// <param name="parent">The parent ModelElement that contains this element. Can be null if this is a root element.</param>
+  /// <param name="openXmlElement">The OpenXmlElement that provides the underlying Open XML data for this model element. Must not be null.</param>
+  protected ModelElement(ModelElement parent, DX.OpenXmlElement openXmlElement) : base(parent)
+  {
+    _openXmlElement = (OpenXmlType)openXmlElement;
+  }
+
   /// <summary>
   /// Represents the underlying Open XML element associated with this instance, or null if no element is present.
   /// </summary>
@@ -14,6 +51,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordpro
   /// that backs the current object. The value may be null if the instance has not been initialized with an Open XML
   /// element.</remarks>
   protected OpenXmlType? _openXmlElement { get; private set; }
+
 
   /// <summary>
   ///   The WordprocessingDocument instance to which this model element is attached, or null if not attached.
@@ -42,22 +80,6 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordpro
   private DXPP.WordprocessingDocument? _WordprocessingDocument;
 
   /// <summary>
-  ///   Initializes a new instance of the <see cref = "ModelElement{Format}"/> class.
-  /// </summary>
-  protected ModelElement()
-  {
-  }
-
-  /// <summary>
-  /// Initializes a new instance of the ModelElement class and associates it with the specified collection.
-  /// </summary>
-  /// <param name = "collection">The collection to which this model element will belong. This parameter determines the context in which the element
-  /// is managed.</param>
-  protected ModelElement(object collection) : base(collection)
-  {
-  }
-
-  /// <summary>
   ///   Attaches this model element to the specified WordprocessingDocument and loads data from the document's package properties or OpenXml part.
   /// </summary>
   /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to and load data from.</param>
@@ -83,15 +105,6 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordpro
   {
     WordprocessingDocument = null;
     SetUpdatableElement(null);
-  }
-
-  /// <summary>
-  ///   Initializes a new instance of the <see cref = "ModelElement{Format}"/> class with the specified OpenXml element.
-  /// </summary>
-  /// <param name = "openXmlElement">The OpenXml element to wrap and synchronize with.</param>
-  protected ModelElement(OpenXmlType? openXmlElement)
-  {
-    _openXmlElement = openXmlElement;
   }
 
   /// <summary>

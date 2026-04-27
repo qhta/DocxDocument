@@ -6,9 +6,26 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [XmlRoot("Story", Namespace = "DocumentModel.Wordprocessing")]
 [OpenXmlType(typeof(DX.OpenXmlCompositeElement))]
-public partial class Story<OpenXmlCollectionType>: ModelElement<OpenXmlCollectionType>
+[DirectAccess(true)]
+public abstract partial class Story<OpenXmlCollectionType>: ModelElement<OpenXmlCollectionType>
   where OpenXmlCollectionType: DX.OpenXmlCompositeElement
 {
+  /// <summary>
+  /// Default constructor for the Story class, initializing a new instance of the Story class.
+  /// </summary>
+  protected Story() { }
+
+  /// <summary>
+  /// Initializes a new instance of the Story class with the specified parent element.
+  /// </summary>
+  /// <param name="parent">The parent ModelElement to associate with this story. Cannot be null. </param>
+  protected Story(ModelElement parent) : base(parent) { }
+
+  /// <summary>
+  /// Initializes a new instance of the Story class using the specified OpenXmlCollectionType element.
+  /// </summary>
+  /// <param name="openXmlElement">The OpenXmlCollectionType element that provides the underlying XML data for the story.</param>
+  protected Story(DX.OpenXmlCompositeElement openXmlElement) : base(openXmlElement) { }
 
   /// <summary>
   /// Collection of items.
@@ -51,7 +68,22 @@ public partial class Story<OpenXmlCollectionType>: ModelElement<OpenXmlCollectio
   [XmlArrayItem("CustomXmlConflictInsertionRangeStart", typeof(CustomXmlConflictInsertionRangeStart))]
   [XmlArrayItem("CustomXmlConflictDeletionRangeStart", typeof(CustomXmlConflictDeletionRangeStart))]
 
-  public StoryItemsCollection Items { get; set; } = new();
+  public StoryItemsCollection Items
+  {
+    get
+    {
+      if (_Items == null)
+      {
+        if (_openXmlElement != null)
+          _Items = new StoryItemsCollection(this, _openXmlElement);
+        else 
+          _Items = new StoryItemsCollection(this);
+      }
+      return _Items;
+    }
+  }
+
+  private StoryItemsCollection? _Items;
 
 
   /// <summary>
