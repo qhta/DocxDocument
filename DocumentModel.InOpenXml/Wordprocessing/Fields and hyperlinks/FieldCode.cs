@@ -1,12 +1,10 @@
 namespace DocumentModel.Wordprocessing;
 /// <summary>
-///  Represents a field code in a text run within a complex field in the document.
-///  If this element is contained within a run which is not part of a complex field's field codes, 
-///  then it and its contents should be treated as regular text. If this element is contained within a del element, 
-///  then the document is non-conformant.
+/// Represents a deleted field code within a WordprocessingML document. This class corresponds to the <c>DeletedFieldCode</c> element in the WordprocessingML schema and is used to represent field codes that have been marked as deleted in the document. The DeletedFieldCode class provides a strongly-typed representation for working with deleted field code content in Open XML word processing documents.
 /// </summary>
-[OpenXmlType(typeof(DXW.FieldCode))]
-[XmlRoot("FieldCode", Namespace = "DocumentModel.Wordprocessing")]
-public class FieldCode : TextualElement<DXW.FieldCode>
+
+[OpenXmlType(typeof(DXW.DeletedFieldCode))]
+[XmlRoot("DeletedFieldCode", Namespace = "DocumentModel.Wordprocessing")]
+public class DeletedFieldCode : TextualElement<DXW.DeletedFieldCode>
 {
 }
