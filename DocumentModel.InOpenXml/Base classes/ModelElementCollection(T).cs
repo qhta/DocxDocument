@@ -20,15 +20,6 @@ public abstract partial class ModelElementCollection<ItemType> : ElementCollecti
   }
 
   /// <summary>
-  /// Initializes a new instance of the ModelElementCollection class with the specified parent element.
-  /// </summary>
-  /// <param name="parent">The parent ModelElement that owns this collection. Cannot be null.</param>
-  protected ModelElementCollection(ModelElement parent) : base(parent)
-  {
-
-  }
-
-  /// <summary>
   /// Initializes a new instance of the ModelElementCollection class using the specified OpenXmlCompositeElement as the
   /// underlying XML element.
   /// </summary>
@@ -45,11 +36,11 @@ public abstract partial class ModelElementCollection<ItemType> : ElementCollecti
   /// composite element as the data source.
   /// </summary>
   /// <param name="parent">The parent ModelElement that will own this collection. Cannot be null.</param>
-  /// <param name="openXmlElement">The OpenXmlCompositeElement that serves as the data source for the collection. Must not be null.</param>
-  protected ModelElementCollection(ModelElement parent, DX.OpenXmlCompositeElement openXmlElement) : base(parent)
+  /// <param name="openXmlElement">The OpenXmlCompositeElement that serves as the data source for the collection. Can be null.</param>
+  protected ModelElementCollection(ModelElement parent, DX.OpenXmlElement? openXmlElement) : base(parent)
   {
     DataSource = openXmlElement;
-    HasDirectAccess = true;
+    HasDirectAccess = openXmlElement != null;
   }
 
   /// <summary>

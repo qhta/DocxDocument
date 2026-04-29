@@ -3,7 +3,7 @@
 /// <summary>
 /// Provides XML serialization support for the <see cref="Twips"/> structure.
 /// </summary>
-public partial class Twips : IXmlSerializable
+public sealed partial class Twips : IXmlSerializable
 {
 
 
@@ -70,6 +70,6 @@ public partial class Twips : IXmlSerializable
   /// </remarks>
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {
-    writer.WriteString(ToString());
+    writer.WriteString(ToString(LengthUnit.Twips).Replace(" ", ""));
   }
 }

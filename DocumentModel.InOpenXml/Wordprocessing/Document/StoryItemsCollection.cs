@@ -6,39 +6,14 @@
 //[OpenXmlItem(typeof(DX.OpenXmlElement))]
 public class StoryItemsCollection: ContentItemsCollection<ModelElement>
 {
-  /// <summary>
-  /// Default constructor for the StoryItemsCollection class, initializing a new instance of the StoryItemsCollection class.
-  /// </summary>
-  public StoryItemsCollection() : base()
-  {
-  }
-
-  /// <summary>
-  /// Initializes a new instance of the StoryItemsCollection class with the specified parent element.
-  /// </summary>
-  /// <param name="parent">The parent ModelElement that owns this collection. Cannot be null.</param>
-  public StoryItemsCollection(ModelElement parent) : base(parent)
-  {
-  }
-
-  /// <summary>
-  /// Initializes a new instance of the StoryItemsCollection class that wraps the specified OpenXmlCompositeElement.
-  /// </summary>
-  /// <remarks>This constructor allows the collection to operate directly on an existing
-  /// OpenXmlCompositeElement, enabling manipulation of its child elements as story items. The provided element must be
-  /// compatible with the expected structure of a story items collection.</remarks>
-  /// <param name="openXmlElement">The OpenXmlCompositeElement to be wrapped by the collection. Cannot be null.</param>
-  public StoryItemsCollection(DX.OpenXmlCompositeElement openXmlElement) : base(openXmlElement)
-  {
-  }
 
   /// <summary>
   /// Initializes a new instance of the StoryItemsCollection class with the specified parent model element and Open XML
   /// composite element as the data source.
   /// </summary>
-  /// <param name="parent">The parent ModelElement that owns this collection.</param>
-  /// <param name="openXmlElement">The OpenXmlCompositeElement that serves as the data source for the collection.</param>
-  public StoryItemsCollection(ModelElement parent, DX.OpenXmlCompositeElement openXmlElement) : base(parent, openXmlElement)
+  /// <param name="parent">The parent ModelElement that owns this collection. Cannot be null.</param>
+  /// <param name="openXmlElement">The OpenXmlCompositeElement that serves as the data source for the collection. Can be null.</param>
+  public StoryItemsCollection(ModelElement parent, DX.OpenXmlCompositeElement? openXmlElement) : base(parent, openXmlElement)
   {
   }
 

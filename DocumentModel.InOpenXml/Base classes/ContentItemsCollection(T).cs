@@ -13,37 +13,16 @@ public abstract partial class ContentItemsCollection<ItemType> : ModelElementCol
   IFilteringCollection
   where ItemType : ModelElement
 {
-  /// <summary>
-  /// Default constructor for the ContentItemsCollection class, initializing a new instance of the ContentItemsCollection class.
-  /// </summary>
-  protected ContentItemsCollection() : base()
-  {
-  }
 
-  /// <summary>
-  /// Initializes a new instance of the ContentItemsCollection class with the specified parent element. 
-  /// </summary>
-  /// <param name="parent">The parent ModelElement that owns this collection. Cannot be null.</param>
-  protected ContentItemsCollection(ModelElement parent) : base(parent)
-  {
-  }
-
-  /// <summary>
-  /// Initializes a new instance of the ContentItemsCollection class with the specified OpenXmlCompositeElement.
-  /// </summary>
-  /// <param name="openXmlElement">The OpenXmlCompositeElement to be wrapped by the collection. Cannot be null.</param>
-  protected ContentItemsCollection(DX.OpenXmlCompositeElement openXmlElement) : base(openXmlElement)
-  {
-
-  }
 
   /// <summary>
   /// Initializes a new instance of the ContentItemsCollection class with the specified parent model element and Open
   /// XML composite element.
   /// </summary>
   /// <param name="parent">The parent ModelElement that owns this collection. Cannot be null.</param>
-  /// <param name="openXmlElement">The underlying OpenXmlCompositeElement that provides the XML structure for the collection. Cannot be null.</param>
-  protected ContentItemsCollection(ModelElement parent, DX.OpenXmlCompositeElement openXmlElement) : base(parent, openXmlElement)
+  /// <param name="openXmlElement">The underlying OpenXmlCompositeElement that provides the XML structure for the collection. Can be null.</param>
+  protected ContentItemsCollection(ModelElement parent, DX.OpenXmlCompositeElement? openXmlElement) : 
+    base(parent, openXmlElement)
   {
   }
 

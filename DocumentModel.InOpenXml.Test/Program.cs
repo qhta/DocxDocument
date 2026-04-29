@@ -10,14 +10,14 @@ internal class Program
     Console.WriteLine("╔═════════════════════════════════════════════╗");
     Console.WriteLine("║   DocumentModel InOpenXml Test Suite        ║");
     Console.WriteLine("╚═════════════════════════════════════════════╝");
-    //Console.WriteLine();
-    //if (!Exec(ElementCollectionTest.Run)) return;
-    //if (!Exec(CorePropertiesTest.Run)) return;
-    //if (!Exec(ContentPropertiesTest.Run)) return;
-    //if (!Exec(StatisticPropertiesTest.Run)) return;
-    //if (!Exec(CustomPropertiesTest.Run)) return;
+    Console.WriteLine();
+    if (!Exec(ElementCollectionTest.Run)) return;
+    if (!Exec(CorePropertiesTest.Run)) return;
+    if (!Exec(ContentPropertiesTest.Run)) return;
+    if (!Exec(StatisticPropertiesTest.Run)) return;
+    if (!Exec(CustomPropertiesTest.Run)) return;
 
-    //if (!Exec(DocumentSettingsTest.Run)) return;
+    if (!Exec(DocumentSettingsTest.Run)) return;
     //if (!Exec(RsidsTest.Run)) return;
     //if (!Exec(DocumentVariablesTest.Run)) return;
     //if (!Exec(FontTableTest.Run)) return;
@@ -35,7 +35,7 @@ internal class Program
     //if (!Exec(BaseTablePropertiesTest.Run)) return;
     //if (!Exec(ColorTypesTest.Run)) return;
     //if (!Exec(ThemeTest.Run)) return;
-    if (!Exec(RunTest.Run)) return;
+    //if (!Exec(RunTest.Run)) return;
 
     Console.WriteLine("All tests passed.");
   }

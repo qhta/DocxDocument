@@ -12,6 +12,6 @@ public partial class FormFieldData
   public bool ShouldSerializeHelpText() => HelpText is not null && ShouldSerialize(HelpText);
   public bool ShouldSerializeStatusText() => StatusText is not null && ShouldSerialize(StatusText);
   public bool ShouldSerializeCheckBox() => CheckBox is not null && ShouldSerialize(CheckBox);
-  public bool ShouldSerializeDropDownListFormField() => DropDownListFormField is not null && ShouldSerialize(DropDownListFormField);
-  public bool ShouldSerializeTextInput() => TextInput is not null && ShouldSerialize(TextInput);
+  //public bool ShouldSerializeDropDownListFormField() => DropDownListFormField is not null && ShouldSerialize(DropDownListFormField);
+  //public bool ShouldSerializeTextInput() => TextInput is not null && ShouldSerialize(TextInput);
 }

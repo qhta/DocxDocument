@@ -50,7 +50,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordpro
   /// <remarks>This field is intended for use by derived classes to access or manipulate the Open XML element
   /// that backs the current object. The value may be null if the instance has not been initialized with an Open XML
   /// element.</remarks>
-  protected OpenXmlType? _openXmlElement { get; private set; }
+  protected OpenXmlType? _openXmlElement { get; set; }
 
 
   /// <summary>
@@ -80,12 +80,21 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordpro
   private DXPP.WordprocessingDocument? _WordprocessingDocument;
 
   /// <summary>
+  ///   Attaches this model element to the specified WordprocessingDocument.
+  /// </summary>
+  /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to.</param>
+  public virtual void Attach(DXPP.WordprocessingDocument wordprocessingDocument)
+  {
+    WordprocessingDocument = wordprocessingDocument;
+  }
+
+  /// <summary>
   ///   Attaches this model element to the specified WordprocessingDocument and loads data from the document's package properties or OpenXml part.
   /// </summary>
   /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to and load data from.</param>
   public virtual void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
-    WordprocessingDocument = wordprocessingDocument;
+    Attach(wordprocessingDocument);
   }
 
   /// <summary>
@@ -94,7 +103,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordpro
   /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to and update.</param>
   public virtual void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
   {
-    WordprocessingDocument = wordprocessingDocument;
+    Attach(wordprocessingDocument);
   }
 
   /// <summary>
@@ -128,5 +137,29 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordpro
   public override object? GetUpdatableElement()
   {
     return _openXmlElement;
+  }
+
+  /// <summary>
+  /// Override of LoadData that loads data from the attached OpenXmlElement. Throws an ArgumentException if the OpenXmlElement is not attached.
+  /// </summary>
+  /// <exception cref="ArgumentException"></exception>
+  public override void LoadData()
+  {
+    if (_openXmlElement !=null)
+      LoadData(_openXmlElement);
+    else
+      throw new ArgumentException($"LoadData() must not be called if the OpenXmlElement is not attached.");
+  }
+
+  /// <summary>
+  /// Override of UpdateData that updates the attached OpenXmlElement with current data. Throws an ArgumentException if the OpenXmlElement is not attached.
+  /// </summary>
+  /// <exception cref="ArgumentException"></exception>
+  public override void UpdateData()
+  {
+    if (_openXmlElement != null)
+      UpdateData(_openXmlElement);
+    else
+      throw new ArgumentException($"UpdateData() must not be called if the OpenXmlElement is not attached.");
   }
 }

@@ -869,7 +869,7 @@
             inspection.</remarks>
             <returns>true if the document custom properties are successfully updated and verified; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.TestStoreICustomProperties">
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.TestStoreCustomProperties">
             <summary>
             Tests setting sample custom properties to a new document and outputs the result to the console.
             </summary>
@@ -878,7 +878,7 @@
             inspection.</remarks>
             <returns>true if the document custom properties are successfully stored and verified; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.TestUpdateICustomProperties">
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.TestUpdateCustomProperties">
             <summary>
             Tests updating the custom properties of a document and outputs the result to the console.
             </summary>
@@ -964,21 +964,6 @@
             document format.</remarks>
             <returns>true if the document settings are stored and reloaded correctly; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestUpdateInDocument">
-            <summary>
-            Tests updating and persisting document settings within a document file.
-            </summary>
-            <remarks>This method creates a sample document with specific settings, saves it, modifies the original
-            settings, and then reloads the document to verify that the stored settings remain unchanged. It outputs
-            diagnostic information to the console for verification purposes.</remarks>
-            <returns>true if the document settings are correctly stored and reloaded from the document; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestValidateOpenXml">
-            <summary>
-            Tests that the XML generated for document settings stored in a document conforms to the OpenXml schema.
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestPerformance">
             <summary>
             Measures and reports the performance of <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> update.
@@ -995,20 +980,6 @@
             Creates a sample <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance for testing.
             </summary>
             <returns>A populated <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> object.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.SerializeToXml(DocumentModel.Wordprocessing.DocumentSettings)">
-            <summary>
-            Serializes a <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance to XML.
-            </summary>
-            <param name="settings">The <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance to serialize.</param>
-            <returns>XML string representation.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.DeserializeFromXml(System.String)">
-            <summary>
-            Deserializes a <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance from XML.
-            </summary>
-            <param name="xml">The XML string to deserialize.</param>
-            <returns>The deserialized <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance.</returns>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.SerializeToJson(DocumentModel.Wordprocessing.DocumentSettings)">
             <summary>

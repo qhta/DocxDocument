@@ -430,18 +430,8 @@ public sealed partial class CompatibilitySettings : ModelElement<DXW.Compatibili
   /// <summary>
   /// Compatibility settings collection for additional options.
   /// </summary>
-  [OpenXmlElementCollection(typeof(DXW.CompatibilitySetting))]
-  public OtherSettings? OtherSettings { get => _OtherSettings; set => UpdateField(ref _OtherSettings, value, nameof(OtherSettings)); }
+  public OtherSettings OtherSettings 
+  { get => _OtherSettings ??= new OtherSettings(this, _openXmlElement);}
   private OtherSettings? _OtherSettings;
 
-  /// <summary>
-  /// Adds a compatibility setting to the OtherSettings collection.
-  /// If the collection does not exist, it will be initialized before adding the setting.
-  /// </summary>
-  /// <param name = "setting"></param>
-  public void Add(CompatibilitySetting setting)
-  {
-    _OtherSettings ??= new OtherSettings(this);
-    _OtherSettings.Add(setting);
-  }
 }

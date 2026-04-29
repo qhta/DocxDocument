@@ -70,19 +70,8 @@ public abstract partial class Story<OpenXmlCollectionType>: ModelElement<OpenXml
 
   public StoryItemsCollection Items
   {
-    get
-    {
-      if (_Items == null)
-      {
-        if (_openXmlElement != null)
-          _Items = new StoryItemsCollection(this, _openXmlElement);
-        else 
-          _Items = new StoryItemsCollection(this);
-      }
-      return _Items;
-    }
+    get => _Items ??= new StoryItemsCollection(this, _openXmlElement);
   }
-
   private StoryItemsCollection? _Items;
 
 

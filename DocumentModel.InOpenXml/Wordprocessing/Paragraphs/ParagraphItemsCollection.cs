@@ -5,6 +5,15 @@
 /// </summary>
 public class ParagraphItemsCollection: ContentItemsCollection<ModelElement>
 {
+  /// <summary>
+  /// Initializing constructor.
+  /// </summary>
+  /// <param name="parent">Model element that owns this collection. Cannot be null.</param>
+  /// <param name="openXmlParagraph">The OpenXml Paragraph element to be wrapped by the collection. Can be null.</param>
+
+  public ParagraphItemsCollection(DMW.Paragraph parent, DXW.Paragraph? openXmlParagraph): base(parent, openXmlParagraph)
+  {
+  }
 
   /// <summary>
   /// Static mapping between OpenXml element types and their corresponding model element types. This bidirectional dictionary allows for easy conversion and lookup between the two type systems, facilitating the loading and updating of model elements based on their OpenXml representations.

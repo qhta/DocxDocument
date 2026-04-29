@@ -10,7 +10,7 @@ public class _AbstractTestClass
   /// <summary>
   /// Common file name used for testing purposes. This file is created and deleted during tests, so it should not exist before the tests are run.
   /// </summary>
-  protected const string TestFileName = "temp.docx";
+  protected const string TestFileName = @"d:\OneDrive\VS\Projects\DocxDocument\Samples\temp.docx";
   /// <summary>
   /// Common directory path used for testing purposes. This should be set to a valid directory on the test machine where sample files can be stored and accessed during tests.
   /// </summary>
@@ -63,13 +63,14 @@ public class _AbstractTestClass
   /// <returns>A string containing the XML representation of the specified object.</returns>
   protected static string SerializeToXml(object data)
   {
-    var xmlSerializer = new XmlSerializer(data.GetType());
-    using (var stringWriter = new StringWriter())
-    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-    {
-      xmlSerializer.Serialize(xmlWriter, data);
-      return stringWriter.ToString();
-    }
+    return SerializeObjectToXml(data);
+    //var xmlSerializer = new XmlSerializer(data.GetType());
+    //using (var stringWriter = new StringWriter())
+    //using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+    //{
+    //  xmlSerializer.Serialize(xmlWriter, data);
+    //  return stringWriter.ToString();
+    //}
   }
 
   /// <summary>
@@ -162,7 +163,12 @@ public class _AbstractTestClass
     var UniqueTypeNames = new HashSet<string>();
     var overrides = new XmlAttributeOverrides();
     var modelTypes = typeof(DMW.Document).Assembly.GetTypes()
-      .Where(t => typeof(DM.ModelElement).IsAssignableFrom(t) && !t.IsAbstract);
+      //.Where
+      //(t =>
+      //  t.IsAssignableTo(typeof(DM.ModelElement)) && t.IsPublic && !t.IsAbstract && !t.IsGenericType
+      //  && t.GetCustomAttribute<SpecificClassAttribute>() != null
+      //  )
+      .ToArray();
 
     foreach (var t in modelTypes)
     {
@@ -190,12 +196,6 @@ public class _AbstractTestClass
     ns.Add("wd", "DocumentModel.Wordprocessing.Drawings");
     ns.Add("dw", "DocumentModel.Drawings.Wordprocessing");
     ns.Add("m", "DocumentModel.Math");
-
-    //Type[] knownTypes = typeof(DMW.Document).Assembly.GetTypes().Where
-    //  (t => 
-    //    t.IsAssignableTo(typeof(DM.ModelElement)) && t.IsPublic && !t.IsAbstract && !t.IsGenericType 
-    //    && t.GetCustomAttribute<SpecificClassAttribute>() != null
-    //    ).ToArray();
 
     var xmlSerializer = new XmlSerializer(rootType, overrides);
     using (var stringWriter = new StringWriter())

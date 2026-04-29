@@ -149,6 +149,9 @@ public partial class Paragraph : ModelElement<DXW.Paragraph>, IStoryContent, ITa
   [XmlArrayItem("CustomXmlMoveToRangeStart", typeof(DMW.CustomXmlMoveToRangeStart))]
   [XmlArrayItem("CustomXmlConflictInsertionRangeStart", typeof(DMW.CustomXmlConflictInsertionRangeStart))]
   [XmlArrayItem("CustomXmlConflictDeletionRangeStart", typeof(DMW.CustomXmlConflictDeletionRangeStart))]
-  public ParagraphItemsCollection Items { get; set; } = new();
-
+  public ParagraphItemsCollection Items
+  {
+    get => _Items ??= new ParagraphItemsCollection(this, _openXmlElement);
+  }
+  private ParagraphItemsCollection? _Items;
 }

@@ -9,9 +9,11 @@ public static class TwipsConverter
 {
   private static readonly ConversionMethodInfo[] supportedConversions =
   [
+    new(typeof(DX.Int16Value), nameof(ConvertFromInt16Value), nameof(ConvertToInt16Value)),
     new(typeof(DX.Int32Value), nameof(ConvertFromInt32Value), nameof(ConvertToInt32Value)),
     new(typeof(DX.Int64Value), nameof(ConvertFromInt64Value), nameof(ConvertToInt64Value)),
     new(typeof(DX.IntegerValue), nameof(ConvertFromIntegerValue), nameof(ConvertToIntegerValue)),
+    new(typeof(DX.UInt16Value), nameof(ConvertFromUInt16Value), nameof(ConvertToUInt16Value)),
     new(typeof(DX.UInt32Value), nameof(ConvertFromUInt32Value), nameof(ConvertToUInt32Value)),
     new(typeof(DX.UInt64Value), nameof(ConvertFromUInt64Value), nameof(ConvertToUInt64Value)),
     new(typeof(DX.StringValue), nameof(ConvertFromStringValue), nameof(ConvertToStringValue)),
@@ -30,6 +32,37 @@ public static class TwipsConverter
   {
     ConverterBase.RegisterConversionMethods(typeof(TwipsConverter), typeof(Twips), supportedConversions, ConversionToMap, ConversionFromMap);
   }
+
+  #region Int16Value conversion.
+
+  /// <summary>
+  /// Converts an OpenXml Int16Value to Twips.
+  /// </summary>
+  /// <param name="Int16Value">The Int16Value to convert.</param>
+  /// <returns>The Twips value, or null if the element has no content.</returns>
+  private static Twips? ConvertFromInt16Value(DX.Int16Value? Int16Value)
+  {
+    if (Int16Value == null) return null;
+
+    return Int16Value.Value;
+  }
+
+  /// <summary>
+  /// Creates an OpenXml Int16Value from an Twips value.
+  /// </summary>
+  /// <param name="value">The Twips value to convert.</param>
+  /// <returns>A new Int16Value, or null if the input is null.</returns>
+  private static DX.Int16Value? ConvertToInt16Value(Twips? value)
+  {
+    if (value is null) return null;
+    if ((decimal)value < (decimal)Int16.MinValue || (decimal)value > (decimal)Int16.MaxValue)
+      throw new OverflowException($"Value {value} is out of range for Int16");
+
+    return new DX.Int16Value { Value = (Int16)value };
+  }
+
+  #endregion
+
   #region Int32Value conversion.
 
   /// <summary>
@@ -117,6 +150,36 @@ public static class TwipsConverter
       throw new OverflowException($"Value {value} is out of range for Twips");
 
     return new DX.IntegerValue { Value = (Int64)value };
+  }
+
+  #endregion
+
+  #region UInt16Value conversion.
+
+  /// <summary>
+  /// Converts an OpenXml UInt16Value to Twips.
+  /// </summary>
+  /// <param name="UInt16Value">The UInt16Value to convert.</param>
+  /// <returns>The Twips value, or null if the element has no content.</returns>
+  private static Twips? ConvertFromUInt16Value(DX.UInt16Value? UInt16Value)
+  {
+    if (UInt16Value == null) return null;
+
+    return UInt16Value.Value;
+  }
+
+  /// <summary>
+  /// Creates an OpenXml UInt16Value from an Twips value.
+  /// </summary>
+  /// <param name="value">The Twips value to convert.</param>
+  /// <returns>A new UInt16Value, or null if the input is null.</returns>
+  private static DX.UInt16Value? ConvertToUInt16Value(Twips? value)
+  {
+    if (value is null) return null;
+    if ((double)value < (double)UInt16.MinValue || (double)value > (double)UInt16.MaxValue)
+      throw new OverflowException($"Value {value} is out of range for UInt16");
+
+    return new DX.UInt16Value { Value = (UInt16)value };
   }
 
   #endregion

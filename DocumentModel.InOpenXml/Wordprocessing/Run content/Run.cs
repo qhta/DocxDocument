@@ -82,4 +82,47 @@ public partial class Run : ModelElement<DXW.Run>, //RunContentCollection,
     set => UpdateField(ref _RunProperties, value, nameof(RunProperties));
   }
   private RunProperties? _RunProperties;
+
+  /// <summary>
+  /// Collection of Run items, which can include text, breaks, fields, and other inline elements. 
+  /// </summary>
+  [XmlArray("Items")]
+  [XmlArrayItem("Break", typeof(DMW.Break))]
+  [XmlArrayItem("Drawing", typeof(DMW.Drawing))]
+  //[XmlArrayItem("NoBreakHyphen", typeof(DMW.NoBreakHyphen))]
+  //[XmlArrayItem("SoftHyphen", typeof(DMW.SoftHyphen))]
+  //[XmlArrayItem("DayShort", typeof(DMW.DayShort))]
+  //[XmlArrayItem("MonthShort", typeof(DMW.MonthShort))]
+  //[XmlArrayItem("YearShort", typeof(DMW.YearShort))]
+  //[XmlArrayItem("DayLong", typeof(DMW.DayLong))]
+  //[XmlArrayItem("MonthLong", typeof(DMW.MonthLong))]
+  //[XmlArrayItem("YearLong", typeof(DMW.YearLong))]
+  //[XmlArrayItem("AnnotationReferenceMark", typeof(DMW.AnnotationReferenceMark))]
+  //[XmlArrayItem("FootnoteReferenceMark", typeof(DMW.FootnoteReferenceMark))]
+  //[XmlArrayItem("EndnoteReferenceMark", typeof(DMW.EndnoteReferenceMark))]
+  //[XmlArrayItem("SeparatorMark", typeof(DMW.SeparatorMark))]
+  //[XmlArrayItem("ContinuationSeparatorMark", typeof(DMW.ContinuationSeparatorMark))]
+  //[XmlArrayItem("PageNumber", typeof(DMW.PageNumber))]
+  //[XmlArrayItem("CarriageReturn", typeof(DMW.CarriageReturn))]
+  [XmlArrayItem("TabChar", typeof(DMW.TabChar))]
+  [XmlArrayItem("LastRenderedPageBreak", typeof(DMW.LastRenderedPageBreak))]
+  [XmlArrayItem("FieldChar", typeof(DMW.FieldChar))]
+  //[XmlArrayItem("FootnoteReference", typeof(DMW.FootnoteReference))]
+  //[XmlArrayItem("EndnoteReference", typeof(DMW.EndnoteReference))]
+  //[XmlArrayItem("CommentReference", typeof(DMW.CommentReference))]
+  //[XmlArrayItem("EmbeddedObject", typeof(DMW.EmbeddedObject))]
+  //[XmlArrayItem("Picture", typeof(DMW.Picture))]
+  //[XmlArrayItem("PositionalTab", typeof(DMW.PositionalTab))]
+  //[XmlArrayItem("RunProperties", typeof(DMW.RunProperties))]
+  //[XmlArrayItem("Ruby", typeof(DMW.Ruby))]
+  //[XmlArrayItem("SymbolChar", typeof(DMW.SymbolChar))]
+  [XmlArrayItem("Text", typeof(DMW.Text))]
+  //[XmlArrayItem("DeletedText", typeof(DMW.DeletedText))]
+  //[XmlArrayItem("FieldCode", typeof(DMW.FieldCode))]
+  //[XmlArrayItem("DeletedFieldCode", typeof(DMW.DeletedFieldCode))]
+  public RunItemsCollection Items
+  {
+    get => _Items ??= new RunItemsCollection(this, _openXmlElement);
+  }
+  private RunItemsCollection? _Items;
 }

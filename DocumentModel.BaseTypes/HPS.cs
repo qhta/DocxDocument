@@ -177,7 +177,7 @@ public partial class HPS: UniversalMeasure
   /// </summary>
   /// <param name="value">The <see cref="HPS"/> value to convert.</param>
   /// <returns>A string representation of the HPS value.</returns>
-  public static implicit operator string(HPS value)
+  public static implicit operator string?(HPS value)
   {
     return value.ToString();
   }

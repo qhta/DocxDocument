@@ -16,7 +16,7 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
  [NotMapped]
  public DXPP.WordprocessingDocument? WordprocessingDocument { get => _WordprocessingDocument; set => UpdateField(ref _WordprocessingDocument, value, nameof(WordprocessingDocument)); }
  private DXPP.WordprocessingDocument? _WordprocessingDocument;
- //internal PackageProperties? PackageProperties { get; private set; }
+
  /// <summary>
  /// Default constructor.
  /// </summary>
@@ -48,10 +48,19 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
  }
 
  /// <summary>
- /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
+ ///   Attaches this collection to the specified WordprocessingDocument.
  /// </summary>
- /// <param name = "wordprocessingDocument">Document to attach to.</param>
- public void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
+ /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to.</param>
+ public virtual void Attach(DXPP.WordprocessingDocument wordprocessingDocument)
+ {
+   WordprocessingDocument = wordprocessingDocument;
+ }
+
+  /// <summary>
+  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
+  /// </summary>
+  /// <param name = "wordprocessingDocument">Document to attach to.</param>
+  public void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
  {
   WordprocessingDocument = wordprocessingDocument;
   var packageProperties = wordprocessingDocument.GetPackageProperties();

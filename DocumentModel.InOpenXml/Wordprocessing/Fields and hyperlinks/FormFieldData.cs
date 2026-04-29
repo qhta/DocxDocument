@@ -5,65 +5,116 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [OpenXmlType(typeof(DXW.FormFieldData))]
 [XmlRoot("FormFieldData", Namespace = "DocumentModel.Wordprocessing")]
+[DirectAccess(true)]
 public partial class FormFieldData : ModelElement<DXW.FormFieldData>
 {
- /// <summary>
- /// Name of the form field, used for identification and referencing within the document.
- /// </summary>
- public string? FormFieldName { get => _FormFieldName; set => UpdateField(ref _FormFieldName, value, nameof(FormFieldName)); }
- private string? _FormFieldName;
+  /// <summary>
+  /// Name of the form field, used for identification and referencing within the document.
+  /// </summary>
+  [OpenXmlElement(typeof(DXW.FormFieldName))]
+  public string? FormFieldName 
+  {
+    get => _FormFieldName ??= GetElement<string?, DXW.FormFieldName>(_openXmlElement);
+    set => UpdateField(ref _FormFieldName, value, nameof(FormFieldName));
+  }
+  private string? _FormFieldName;
 
- /// <summary>
- /// Indicates whether the form field is enabled for user interaction.
- /// </summary>
- public bool? Enabled { get => _Enabled; set => UpdateField(ref _Enabled, value, nameof(Enabled)); }
- private bool? _Enabled;
+  /// <summary>
+  /// Indicates whether the form field is enabled for user interaction.
+  /// </summary>
+  [OpenXmlElement(typeof(DXW.Enabled))]
+  public bool? Enabled 
+  {
+    get => _Enabled ??= GetElement<bool?, DXW.Enabled>(_openXmlElement);
+    set => UpdateField(ref _Enabled, value, nameof(Enabled));
+  }
+  private bool? _Enabled;
 
- /// <summary>
- /// Indicates whether calculations should be performed when exiting the form field.
- /// </summary>
- public bool? CalculateOnExit { get => _CalculateOnExit; set => UpdateField(ref _CalculateOnExit, value, nameof(CalculateOnExit)); }
- private bool? _CalculateOnExit;
+  /// <summary>
+  /// Indicates whether calculations should be performed when exiting the form field.
+  /// </summary>
+  [OpenXmlElement(typeof(DXW.CalculateOnExit))]
+  public bool? CalculateOnExit 
+  {
+    get => _CalculateOnExit ??= GetElement<bool?, DXW.CalculateOnExit>(_openXmlElement);
+    set => UpdateField(ref _CalculateOnExit, value, nameof(CalculateOnExit));
+  }
+  private bool? _CalculateOnExit;
 
- /// <summary>
- /// Macro to run when entering the form field.
- /// </summary>
- public string? EntryMacro { get => _EntryMacro; set => UpdateField(ref _EntryMacro, value, nameof(EntryMacro)); }
- private string? _EntryMacro;
+  /// <summary>
+  /// Macro to run when entering the form field.
+  /// </summary>
+  [OpenXmlElement(typeof(DXW.EntryMacro))]
+  public string? EntryMacro 
+  {
+    get => _EntryMacro ??= GetElement<string?, DXW.EntryMacro>(_openXmlElement);
+    set => UpdateField(ref _EntryMacro, value, nameof(EntryMacro));
+  }
+  private string? _EntryMacro;
 
- /// <summary>
- /// Macro to run when exiting the form field.
- /// </summary>
- public string? ExitMacro { get => _ExitMacro; set => UpdateField(ref _ExitMacro, value, nameof(ExitMacro)); }
- private string? _ExitMacro;
+  /// <summary>
+  /// Macro to run when exiting the form field.
+  /// </summary>
+  [OpenXmlElement(typeof(DXW.ExitMacro))]
+  public string? ExitMacro 
+  {
+    get => _ExitMacro ??= GetElement<string?, DXW.ExitMacro>(_openXmlElement);
+    set => UpdateField(ref _ExitMacro, value, nameof(ExitMacro));
+  }
+  private string? _ExitMacro;
 
- /// <summary>
- /// Help text associated with the form field, providing guidance to users.
- /// </summary>
- public HelpText? HelpText { get => _HelpText; set => UpdateField(ref _HelpText, value, nameof(HelpText)); }
- private HelpText? _HelpText;
+  /// <summary>
+  /// Help text associated with the form field, providing guidance to users.
+  /// </summary>
+  [OpenXmlElement(typeof(DXW.HelpText))]
+  public HelpText? HelpText
+  {
+    get => _HelpText ??= GetElement<HelpText?, DXW.HelpText>(_openXmlElement);
+    set => UpdateField(ref _HelpText, value, nameof(HelpText));
+  }
+  private HelpText? _HelpText;
 
- /// <summary>
- /// Status text associated with the form field, displayed in the status bar or tooltip.
- /// </summary>
- public StatusText? StatusText { get => _StatusText; set => UpdateField(ref _StatusText, value, nameof(StatusText)); }
- private StatusText? _StatusText;
+  /// <summary>
+  /// Status text associated with the form field, displayed in the status bar or tooltip.
+  /// </summary>
+  [OpenXmlElement(typeof(DXW.StatusText))]
+  public StatusText? StatusText
+  {
+    get => _StatusText ??= GetElement<StatusText?, DXW.StatusText>(_openXmlElement);
+    set => UpdateField(ref _StatusText, value, nameof(StatusText));
+  }
+  private StatusText? _StatusText;
 
- /// <summary>
- /// Checkbox form field properties, if the form field is a checkbox.
- /// </summary>
- public CheckBox? CheckBox { get => _CheckBox; set => UpdateField(ref _CheckBox, value, nameof(CheckBox)); }
- private CheckBox? _CheckBox;
+  /// <summary>
+  /// Checkbox form field properties, if the form field is a checkbox.
+  /// </summary>
+  [OpenXmlElement(typeof(DXW.CheckBox))]
+  public CheckBox? CheckBox
+  {
+    get => _CheckBox ??= GetElement<CheckBox?, DXW.CheckBox>(_openXmlElement);
+    set => UpdateField(ref _CheckBox, value, nameof(CheckBox));
+  }
+  private CheckBox? _CheckBox;
 
- /// <summary>
- /// Drop-down list form field properties, if the form field is a drop-down list.
- /// </summary>
- public DropDownListFormField? DropDownListFormField { get => _DropDownListFormField; set => UpdateField(ref _DropDownListFormField, value, nameof(DropDownListFormField)); }
- private DropDownListFormField? _DropDownListFormField;
+  /// <summary>
+  /// Drop-down list form field properties, if the form field is a drop-down list.
+  /// </summary>
+  [OpenXmlElement(typeof(DXW.DropDownListFormField))]
+  public DropDownListFormField? DropDownListFormField
+  {
+    get => _DropDownListFormField ??= GetElement<DropDownListFormField?, DXW.DropDownListFormField>(_openXmlElement);
+    set => UpdateField(ref _DropDownListFormField, value, nameof(DropDownListFormField));
+  }
+  private DropDownListFormField? _DropDownListFormField;
 
- /// <summary>
- /// Text input form field properties, if the form field is a text input.
- /// </summary>
- public TextInput? TextInput { get => _TextInput; set => UpdateField(ref _TextInput, value, nameof(TextInput)); }
- private TextInput? _TextInput;
+  ///// <summary>
+  ///// Text input form field properties, if the form field is a text input.
+  ///// </summary>
+  //[OpenXmlElement(typeof(DXW.TextInput))]
+  //public TextInput? TextInput 
+  //{
+  //  get => _TextInput ??= GetElement<TextInput?, DXW.TextInput>(_openXmlElement);
+  //  set => UpdateField(ref _TextInput, value, nameof(TextInput));
+  //}
+  //private TextInput? _TextInput;
 }

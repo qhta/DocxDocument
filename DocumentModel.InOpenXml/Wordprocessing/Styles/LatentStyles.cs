@@ -19,8 +19,9 @@ public partial class LatentStyles:
   /// <summary>
   /// Initializing constructor.
   /// </summary>
-  /// <param name = "styles"></param>
-  public LatentStyles(Styles styles) : base(styles) { }
+  /// <param name = "styles">Model Styles</param>
+  /// <param name="openXmlElement">The OpenXml collection of latent styles.</param>
+  public LatentStyles(Styles styles, DXW.LatentStyles? openXmlElement) : base(styles, openXmlElement) { }
 
   /// <summary>
   /// Parent styles element that contains this collection of defined styles. 

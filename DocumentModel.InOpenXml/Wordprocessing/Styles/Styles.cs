@@ -71,15 +71,9 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
   /// Latent style information, providing metadata and settings for latent styles in the document.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Styles.LatentStyles))]
-  public LatentStyles LatentStyles
+  public LatentStyles? LatentStyles
   {
-    get
-    {
-      if (_LatentStyles == null)
-       _LatentStyles = new LatentStyles(this);
-      return _LatentStyles;
-    }
-
+    get => _LatentStyles ??= new LatentStyles(this, _openXmlElement?.LatentStyles);
     set => UpdateField(ref _LatentStyles, value, nameof(LatentStyles));
   }
   private LatentStyles? _LatentStyles;
@@ -87,41 +81,34 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
   /// <summary>
   /// Collection of defined styles in the document, including paragraph, character, table, and numbering styles.
   /// </summary>
-  [OpenXmlElementCollection(typeof(DXW.Style))]
-  [OpenXmlUpdateData(nameof(UpdateDefinedStyles))]
-  [OpenXmlLoadData(nameof(LoadDefinedStyles))]
+  //[OpenXmlElementCollection(typeof(DXW.Style))]
+  //[OpenXmlUpdateData(nameof(UpdateDefinedStyles))]
+  //[OpenXmlLoadData(nameof(LoadDefinedStyles))]
   public DefinedStyles DefinedStyles
   {
-    get
-    {
-      if (_DefinedStyles == null)
-        _DefinedStyles = new DefinedStyles(this);
-      return _DefinedStyles;
-    }
-
-    set => UpdateField(ref _DefinedStyles, value, nameof(DefinedStyles));
+    get => _DefinedStyles ??= new DefinedStyles(this, _openXmlElement);
   }
   private DefinedStyles? _DefinedStyles;
 
-  /// <summary>
-  /// Updates the styles in the specified OpenXml element b with styles defined in the DefinedStyles collection.  
-  /// </summary>
-  /// <remarks>This method passes the specified element to the DefinedStyles collection for updating.</remarks>
-  /// <param name = "element">The OpenXml element to update. Must be of type <see cref = "DXW.Styles"/>.</param>
-  /// <exception cref = "ArgumentException">Thrown if <paramref name = "element"/> is not of type <see cref = "DXW.Styles"/>.</exception>
-  public void UpdateDefinedStyles(DX.OpenXmlElement element)
-  {
-    DefinedStyles.UpdateStyles(element);
-  }
+  ///// <summary>
+  ///// Updates the styles in the specified OpenXml element b with styles defined in the DefinedStyles collection.  
+  ///// </summary>
+  ///// <remarks>This method passes the specified element to the DefinedStyles collection for updating.</remarks>
+  ///// <param name = "element">The OpenXml element to update. Must be of type <see cref = "DXW.Styles"/>.</param>
+  ///// <exception cref = "ArgumentException">Thrown if <paramref name = "element"/> is not of type <see cref = "DXW.Styles"/>.</exception>
+  //public void UpdateDefinedStyles(DX.OpenXmlElement element)
+  //{
+  //  DefinedStyles.UpdateStyles(element);
+  //}
 
-  /// <summary>
-  /// Loads styles from the specified OpenXmlElement into the DefinedStyles collection, replacing any existing styles.
-  /// </summary>
-  /// <remarks>This method passes the specified element to the DefinedStyles collection for loading.</remarks>
-  /// <param name = "element">The OpenXmlElement containing the styles to load. Must be of type DXW.Styles.</param>
-  /// <exception cref = "ArgumentException">Thrown if the provided element is not of type DXW.Styles.</exception>
-  public void LoadDefinedStyles(DX.OpenXmlElement element)
-  {
-    DefinedStyles.LoadStyles(element);
-  }
+  ///// <summary>
+  ///// Loads styles from the specified OpenXmlElement into the DefinedStyles collection, replacing any existing styles.
+  ///// </summary>
+  ///// <remarks>This method passes the specified element to the DefinedStyles collection for loading.</remarks>
+  ///// <param name = "element">The OpenXmlElement containing the styles to load. Must be of type DXW.Styles.</param>
+  ///// <exception cref = "ArgumentException">Thrown if the provided element is not of type DXW.Styles.</exception>
+  //public void LoadDefinedStyles(DX.OpenXmlElement element)
+  //{
+  //  DefinedStyles.LoadStyles(element);
+  //}
 }

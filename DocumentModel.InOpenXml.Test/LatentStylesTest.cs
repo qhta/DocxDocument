@@ -166,11 +166,11 @@ public class LatentStylesTest: _AbstractTestClass
     Console.WriteLine("--- Update document latent styles ---");
     {
       Styles testData = CreateSampleStyles();
-      var initialCount = testData.LatentStyles.Count;
+      var initialCount = testData.LatentStyles?.Count;
       using (var document = new Document(TestFileName, FileMode.CreateNew))
       {
         document.Styles = testData;
-        document.Styles.LatentStyles.Add(new LatentStyleExceptionInfo()
+        document.Styles.LatentStyles?.Add(new LatentStyleExceptionInfo()
         {
           Name = "New style",
         });
@@ -191,7 +191,7 @@ public class LatentStylesTest: _AbstractTestClass
       }
       Console.WriteLine("Updated document latent Styles:\n" + xmlString);
 
-      var storedCount = storedData.LatentStyles.Count;
+      var storedCount = storedData.LatentStyles?.Count ?? 0;
       if (storedCount != initialCount + 1)
       {
         Console.WriteLine($"✗ Updated document latent styles test FAILED  - new property count is {storedCount}, expected {initialCount + 1}");

@@ -10,7 +10,7 @@
 /// This supports implicit conversions to/from various integer types and string representations with unit suffixes.
 /// </remarks>
 [JsonConverter(typeof(TwipsJsonConverter))]
-public partial class Twips: UniversalMeasure
+public sealed partial class Twips: UniversalMeasure
 {
   /// <summary>
   /// Defines the number of twips in one inch.
@@ -22,9 +22,7 @@ public partial class Twips: UniversalMeasure
   /// <summary>
   /// Default constructor. Creates an empty instance.
   /// </summary>
-  public Twips()
-  {
-  }
+  public Twips() { }
 
   /// <summary>
   /// Initializes a new instance of the <see cref="Twips"/> from a string value.
@@ -45,7 +43,25 @@ public partial class Twips: UniversalMeasure
   {
     Init(str);
   }
-  
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="Twips"/> from an Int16 value.
+  /// </summary>
+  /// <param name="value">The value in twips.</param>
+  public Twips(Int16 value)
+  {
+    Init(value);
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="Twips"/> from an Int32 value.
+  /// </summary>
+  /// <param name="value">The value in twips.</param>
+  public Twips(Int32 value)
+  {
+    Init(value);
+  }
+
   /// <summary>
   /// Initializes a new instance of the <see cref="Twips"/> from an Int64 value.
   /// </summary>
@@ -54,6 +70,25 @@ public partial class Twips: UniversalMeasure
   {
     Init(value);
   }
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="Twips"/> from an UInt16 value.
+  /// </summary>
+  /// <param name="value">The value in twips.</param>
+  public Twips(UInt16 value)
+  {
+    Init(value);
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="Twips"/> from an UInt32 value.
+  /// </summary>
+  /// <param name="value">The value in twips.</param>
+  public Twips(UInt32 value)
+  {
+    Init(value);
+  }
+
   /// <summary>
   /// Initializes a new instance of the <see cref="Twips"/> from a UInt64 value.
   /// </summary>
@@ -89,6 +124,7 @@ public partial class Twips: UniversalMeasure
   /// Creates an instance of an <see cref="Twips"/> that represents the specified value in twips.
   /// </summary>
   public static Twips FromTwips(double twips) => new Twips($"{twips}tw");
+
   /// <summary>
   /// Creates an instance of an <see cref="Twips"/> that represents the specified value in points.
   /// </summary>
@@ -189,6 +225,16 @@ public partial class Twips: UniversalMeasure
   }
 
   /// <summary>
+  /// Implicitly converts a 16-bit signed integer to a <see cref="Twips"/> value.
+  /// </summary>
+  /// <param name="value">The 16-bit signed integer to convert.</param>
+  /// <returns>A <see cref="Twips"/> value representing the integer.</returns>
+  public static implicit operator Twips(Int16 value)
+  {
+    return new Twips(value);
+  }
+
+  /// <summary>
   /// Implicitly converts a 32-bit signed integer to a <see cref="Twips"/> value.
   /// </summary>
   /// <param name="value">The 32-bit signed integer to convert.</param>
@@ -209,6 +255,36 @@ public partial class Twips: UniversalMeasure
   }
 
   /// <summary>
+  /// Implicitly converts a 16-bit unsigned integer to a <see cref="Twips"/> value.
+  /// </summary>
+  /// <param name="value">The 16-bit unsigned integer to convert.</param>
+  /// <returns>A <see cref="Twips"/> value representing the unsigned integer.</returns>
+  public static implicit operator Twips(UInt16 value)
+  {
+    return new Twips(value);
+  }
+
+  /// <summary>
+  /// Implicitly converts a 32-bit unsigned integer to a <see cref="Twips"/> value.
+  /// </summary>
+  /// <param name="value">The 32-bit unsigned integer to convert.</param>
+  /// <returns>A <see cref="Twips"/> value representing the unsigned integer.</returns>
+  public static implicit operator Twips(UInt32 value)
+  {
+    return new Twips(value);
+  }
+
+  /// <summary>
+  /// Implicitly converts a 64-bit unsigned integer to a <see cref="Twips"/> value.
+  /// </summary>
+  /// <param name="value">The 64-bit unsigned integer to convert.</param>
+  /// <returns>A <see cref="Twips"/> value representing the unsigned integer.</returns>
+  public static implicit operator Twips(UInt64 value)
+  {
+    return new Twips(value);
+  }
+
+  /// <summary>
   /// Implicitly converts a double-precision floating-point number to a Twips instance.
   /// </summary>
   /// <remarks>This conversion allows for seamless integration of double values into contexts where Twips are
@@ -217,6 +293,109 @@ public partial class Twips: UniversalMeasure
   public static implicit operator Twips(Double value)
   {
     return new Twips(value);
+  }
+
+  /// <summary>
+  /// Implicitly converts a single-precision floating-point number to a Twips instance.
+  /// </summary>
+  /// <remarks>This conversion allows for seamless integration of single-precision values into contexts where Twips are
+  /// required, facilitating operations that involve measurements in twips.</remarks>
+  /// <param name="value">The value to convert, representing a measurement in twips.</param>
+  public static implicit operator Twips(Single value)
+  {
+    return new Twips(value);
+  }
+
+  /// <summary>
+  /// Implicitly converts a decimal number to a Twips instance.
+  /// </summary>
+  /// <remarks>This conversion allows for seamless integration of decimal values into contexts where Twips are
+  /// required, facilitating operations that involve measurements in twips.</remarks>
+  /// <param name="value">The value to convert, representing a measurement in twips.</param>
+  public static implicit operator Twips(Decimal value)
+  {
+    return new Twips(value);
+  }
+
+  /// <summary>
+  /// Implicitly converts a Twips instance to a 16-bit signed integer.
+  /// </summary>
+  /// <param name="value">The Twips value to convert.</param>
+  public static implicit operator Int16(Twips value)
+  {
+    return (Int16?)value.IntValue ?? 0;
+  }
+
+  /// <summary>
+  /// Implicitly converts a Twips instance to a 32-bit signed integer.
+  /// </summary>
+  /// <param name="value">The Twips value to convert.</param>
+  public static implicit operator Int32(Twips value)
+  {
+    return (Int32?)value.IntValue?? 0;
+  }
+
+  /// <summary>
+  /// Implicitly converts a Twips instance to a 64-bit signed integer.
+  /// </summary>
+  /// <param name="value">The Twips value to convert.</param>
+  public static implicit operator Int64(Twips value)
+  {
+    return (Int64?)value.IntValue ?? 0;
+  }
+
+  /// <summary>
+  /// Implicitly converts a Twips instance to a 16-bit unsigned integer.
+  /// </summary>
+  /// <param name="value">The Twips value to convert.</param>
+  public static implicit operator UInt16(Twips value)
+  {
+    return (UInt16?)value.UIntValue ?? 0;
+  }
+
+  /// <summary>
+  /// Implicitly converts a Twips instance to a 32-bit unsigned integer.
+  /// </summary>
+  /// <param name="value">The Twips value to convert.</param>
+  public static implicit operator UInt32(Twips value)
+  {
+    return (UInt32?)value?.UIntValue ?? 0;
+  }
+
+  /// <summary>
+  /// Implicitly converts a Twips instance to a 64-bit unsigned integer.
+  /// </summary>
+  /// <param name="value">The Twips value to convert.</param>
+  public static implicit operator UInt64(Twips value)
+  {
+    return value?.UIntValue ?? 0;
+  }
+
+  /// <summary>
+  /// Implicitly converts a Twips instance to a double-precision floating-point number.
+  /// </summary>
+  /// <param name="value">The Twips value to convert.</param>
+  public static implicit operator Double(Twips value)
+  {
+    return value?.DoubleValue ?? 0;
+  }
+
+  /// <summary>
+  /// Implicitly converts a Twips instance to a Single-precision floating-point number.
+  /// </summary>
+  /// <param name="value">The Twips value to convert.</param>
+  public static implicit operator Single(Twips value)
+  {
+    return (Single)(value?.DoubleValue ?? 0);
+  }
+
+  /// <summary>
+  /// Implicitly converts a Twips instance to a Decimal-precision floating-point number.
+  /// </summary>
+  /// <param name="value">The Twips value to convert.</param>
+  public static implicit operator Decimal(Twips value)
+  {
+    return value?.DecimalValue ?? 0;
   }
 
   #endregion

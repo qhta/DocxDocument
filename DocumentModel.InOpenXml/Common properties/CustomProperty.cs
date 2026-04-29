@@ -6,10 +6,6 @@ namespace DocumentModel;
 [XmlRoot("CustomProperty", Namespace = "DocumentModel")]
 public sealed partial class CustomProperty : ModelElement<DXCP.CustomDocumentProperty>, INamedObject
 {
-  [XmlIgnore]
-  [JsonIgnore]
-  [NotMapped]
-  private DXCP.CustomDocumentProperty? OpenXmlCustomDocumentProperty { get => GetUpdatableElement() as DXCP.CustomDocumentProperty; set => SetUpdatableElement(value); }
 
   /// <summary>
   /// Default constructor needed for serialization.
@@ -39,9 +35,9 @@ public sealed partial class CustomProperty : ModelElement<DXCP.CustomDocumentPro
   /// from the current object.</returns>
   public DXCP.CustomDocumentProperty CreateOpenCustomDocumentProperty()
   {
-    OpenXmlCustomDocumentProperty ??= new DXCP.CustomDocumentProperty();
-    UpdateData(OpenXmlCustomDocumentProperty);
-    return OpenXmlCustomDocumentProperty!;
+    _openXmlElement ??= new DXCP.CustomDocumentProperty();
+    UpdateData(_openXmlElement);
+    return _openXmlElement!;
   }
 
   /// <summary>

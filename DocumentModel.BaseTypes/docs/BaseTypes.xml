@@ -8038,9 +8038,33 @@
             <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
             </remarks>
         </member>
+        <member name="M:DocumentModel.Twips.#ctor(System.Int16)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Twips"/> from an Int16 value.
+            </summary>
+            <param name="value">The value in twips.</param>
+        </member>
+        <member name="M:DocumentModel.Twips.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Twips"/> from an Int32 value.
+            </summary>
+            <param name="value">The value in twips.</param>
+        </member>
         <member name="M:DocumentModel.Twips.#ctor(System.Int64)">
             <summary>
             Initializes a new instance of the <see cref="T:DocumentModel.Twips"/> from an Int64 value.
+            </summary>
+            <param name="value">The value in twips.</param>
+        </member>
+        <member name="M:DocumentModel.Twips.#ctor(System.UInt16)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Twips"/> from an UInt16 value.
+            </summary>
+            <param name="value">The value in twips.</param>
+        </member>
+        <member name="M:DocumentModel.Twips.#ctor(System.UInt32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Twips"/> from an UInt32 value.
             </summary>
             <param name="value">The value in twips.</param>
         </member>
@@ -8133,6 +8157,13 @@
             <param name="value">The <see cref="T:DocumentModel.Twips"/> value to convert.</param>
             <returns>A string representation of the twips value.</returns>
         </member>
+        <member name="M:DocumentModel.Twips.op_Implicit(System.Int16)~DocumentModel.Twips">
+            <summary>
+            Implicitly converts a 16-bit signed integer to a <see cref="T:DocumentModel.Twips"/> value.
+            </summary>
+            <param name="value">The 16-bit signed integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.Twips"/> value representing the integer.</returns>
+        </member>
         <member name="M:DocumentModel.Twips.op_Implicit(System.Int32)~DocumentModel.Twips">
             <summary>
             Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.Twips"/> value.
@@ -8147,6 +8178,27 @@
             <param name="value">The 64-bit signed integer to convert.</param>
             <returns>A <see cref="T:DocumentModel.Twips"/> value representing the integer.</returns>
         </member>
+        <member name="M:DocumentModel.Twips.op_Implicit(System.UInt16)~DocumentModel.Twips">
+            <summary>
+            Implicitly converts a 16-bit unsigned integer to a <see cref="T:DocumentModel.Twips"/> value.
+            </summary>
+            <param name="value">The 16-bit unsigned integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.Twips"/> value representing the unsigned integer.</returns>
+        </member>
+        <member name="M:DocumentModel.Twips.op_Implicit(System.UInt32)~DocumentModel.Twips">
+            <summary>
+            Implicitly converts a 32-bit unsigned integer to a <see cref="T:DocumentModel.Twips"/> value.
+            </summary>
+            <param name="value">The 32-bit unsigned integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.Twips"/> value representing the unsigned integer.</returns>
+        </member>
+        <member name="M:DocumentModel.Twips.op_Implicit(System.UInt64)~DocumentModel.Twips">
+            <summary>
+            Implicitly converts a 64-bit unsigned integer to a <see cref="T:DocumentModel.Twips"/> value.
+            </summary>
+            <param name="value">The 64-bit unsigned integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.Twips"/> value representing the unsigned integer.</returns>
+        </member>
         <member name="M:DocumentModel.Twips.op_Implicit(System.Double)~DocumentModel.Twips">
             <summary>
             Implicitly converts a double-precision floating-point number to a Twips instance.
@@ -8154,6 +8206,76 @@
             <remarks>This conversion allows for seamless integration of double values into contexts where Twips are
             required, facilitating operations that involve measurements in twips.</remarks>
             <param name="value">The value to convert, representing a measurement in twips.</param>
+        </member>
+        <member name="M:DocumentModel.Twips.op_Implicit(System.Single)~DocumentModel.Twips">
+            <summary>
+            Implicitly converts a single-precision floating-point number to a Twips instance.
+            </summary>
+            <remarks>This conversion allows for seamless integration of single-precision values into contexts where Twips are
+            required, facilitating operations that involve measurements in twips.</remarks>
+            <param name="value">The value to convert, representing a measurement in twips.</param>
+        </member>
+        <member name="M:DocumentModel.Twips.op_Implicit(System.Decimal)~DocumentModel.Twips">
+            <summary>
+            Implicitly converts a decimal number to a Twips instance.
+            </summary>
+            <remarks>This conversion allows for seamless integration of decimal values into contexts where Twips are
+            required, facilitating operations that involve measurements in twips.</remarks>
+            <param name="value">The value to convert, representing a measurement in twips.</param>
+        </member>
+        <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.Int16">
+            <summary>
+            Implicitly converts a Twips instance to a 16-bit signed integer.
+            </summary>
+            <param name="value">The Twips value to convert.</param>
+        </member>
+        <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.Int32">
+            <summary>
+            Implicitly converts a Twips instance to a 32-bit signed integer.
+            </summary>
+            <param name="value">The Twips value to convert.</param>
+        </member>
+        <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.Int64">
+            <summary>
+            Implicitly converts a Twips instance to a 64-bit signed integer.
+            </summary>
+            <param name="value">The Twips value to convert.</param>
+        </member>
+        <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.UInt16">
+            <summary>
+            Implicitly converts a Twips instance to a 16-bit unsigned integer.
+            </summary>
+            <param name="value">The Twips value to convert.</param>
+        </member>
+        <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.UInt32">
+            <summary>
+            Implicitly converts a Twips instance to a 32-bit unsigned integer.
+            </summary>
+            <param name="value">The Twips value to convert.</param>
+        </member>
+        <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.UInt64">
+            <summary>
+            Implicitly converts a Twips instance to a 64-bit unsigned integer.
+            </summary>
+            <param name="value">The Twips value to convert.</param>
+        </member>
+        <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.Double">
+            <summary>
+            Implicitly converts a Twips instance to a double-precision floating-point number.
+            </summary>
+            <param name="value">The Twips value to convert.</param>
+        </member>
+        <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.Single">
+            <summary>
+            Implicitly converts a Twips instance to a Single-precision floating-point number.
+            </summary>
+            <param name="value">The Twips value to convert.</param>
+        </member>
+        <member name="M:DocumentModel.Twips.op_Implicit(DocumentModel.Twips)~System.Decimal">
+            <summary>
+            Implicitly converts a Twips instance to a Decimal-precision floating-point number.
+            </summary>
+            <param name="value">The Twips value to convert.</param>
         </member>
         <member name="T:DocumentModel.TwipsJsonConverter">
             <summary>
@@ -10371,6 +10493,116 @@
             <returns>The length value converted to the specified unit.</returns>
             <exception cref="T:System.ArgumentException">Thrown if the specified unit is not supported.</exception>
         </member>
+        <member name="M:DocumentModel.UniversalMeasure.GetTypeCode">
+            <summary>
+            Gets the TypeCode for the current instance, indicating the underlying data type of the value stored in this UniversalMeasure.
+            </summary>
+            <returns>The TypeCode representing the underlying data type of the value.</returns>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasure.ToBoolean(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to an equivalent Boolean.
+            </summary>
+            <remarks>This method is not implemented and will throw a NotImplementedException if called.</remarks>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasure.ToByte(System.IFormatProvider)">
+            <summary>
+            Converts the current value to an 8-bit unsigned integer.  
+            </summary>
+            <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+            <returns>An 8-bit unsigned integer equivalent to the current value.</returns>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasure.ToChar(System.IFormatProvider)">
+            <summary>
+            Converts the value of this instance to its equivalent Unicode character.
+            </summary>
+            <remarks>This method is not implemented and will throw a NotImplementedException if called.</remarks>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasure.ToDateTime(System.IFormatProvider)">
+            <summary>
+            Converts the current instance to a DateTime object.
+            </summary>
+            <remarks>This method is not implemented and will throw a NotImplementedException if called.</remarks>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasure.ToDecimal(System.IFormatProvider)">
+            <summary>
+            Converts the current instance to a Decimal value.
+            </summary>
+            <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+            <returns>A Decimal value equivalent to the current value.</returns>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasure.ToDouble(System.IFormatProvider)">
+            <summary>
+            Converts the current value to a double-precision floating-point number. 
+            </summary>
+            <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+            <returns>A double-precision floating-point number equivalent to the current value.</returns>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasure.ToInt16(System.IFormatProvider)">
+            <summary>
+            Converts the current value to a 16-bit signed integer.
+            </summary>
+            <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+            <returns>A 16-bit signed integer equivalent to the current value.</returns>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasure.ToInt32(System.IFormatProvider)">
+            <summary>
+            Converts the current value to a 32-bit signed integer.
+            </summary>
+            <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+            <returns>A 32-bit signed integer equivalent to the current value.</returns>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasure.ToInt64(System.IFormatProvider)">
+            <summary>
+            Converts the current value to a 64-bit signed integer.
+            </summary>
+            <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+            <returns>A 64-bit signed integer equivalent to the current value.</returns>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasure.ToSByte(System.IFormatProvider)">
+            <summary>
+            Converts the current value to a 8-bit signed integer.
+            </summary>
+            <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+            <returns>An 8-bit signed integer equivalent to the current value.</returns>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasure.ToSingle(System.IFormatProvider)">
+            <summary>
+            Converts the current value to a single-precision floating-point number.
+            </summary>
+            <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+            <returns>A single-precision floating-point number equivalent to the current value.</returns>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasure.ToType(System.Type,System.IFormatProvider)">
+            <summary>
+            Converts the current value to an object of the specified type, using the provided format information if necessary.
+            </summary>
+            <param name="conversionType">The type to which to convert the current value.</param>
+            <param name="provider">An object that supplies culture-specific formatting information, or null to use the current culture.</param>
+            <returns>An object of the specified type that is equivalent to the current value.</returns>
+            <exception cref="T:System.NotImplementedException">Thrown if the specified conversion type is not supported.</exception>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasure.ToUInt16(System.IFormatProvider)">
+            <summary>
+            Converts the current value to a 16-bit unsigned integer.
+            </summary>
+            <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+            <returns>A 16-bit unsigned integer equivalent to the current value.</returns>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasure.ToUInt32(System.IFormatProvider)">
+            <summary>
+            Converts the current value to a 32-bit unsigned integer.
+            </summary>
+            <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+            <returns>A 32-bit unsigned integer equivalent to the current value.</returns>
+        </member>
+        <member name="M:DocumentModel.UniversalMeasure.ToUInt64(System.IFormatProvider)">
+            <summary>
+            Converts the current value to a 64-bit unsigned integer.
+            </summary>
+            <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+            <returns>A 64-bit unsigned integer equivalent to the current value.</returns>
+        </member>
         <member name="M:DocumentModel.UniversalMeasure.ToString">
             <summary>
             Converts the current length measure to its string representation. Raw number formats are expected in InvariantCulture.
@@ -10378,7 +10610,7 @@
         </member>
         <member name="M:DocumentModel.UniversalMeasure.ToString(System.IFormatProvider)">
             <summary>
-            Converts the current length measure to its string representation using the specified format provider.
+            Converts the current length measure to its string representation.
             This allows for culture-specific formatting of the output string, such as using different decimal separators
             based on the culture settings provided by the formatProvider.
             If the formatProvider is null, the method should use invariant culture's formatting conventions.

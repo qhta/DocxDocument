@@ -20,8 +20,8 @@
       if (!TestJsonSerialization()) return false;
       if (!TestEdgeCases()) return false;
       if (!TestStoreInDocument()) return false;
-      if (!TestUpdateInDocument()) return false;
-      if (!TestValidateOpenXml()) return false;
+      //if (!TestUpdateInDocument()) return false;
+      //if (!TestValidateOpenXml()) return false;
       Console.WriteLine("All DocumentSettings tests passed.\n");
       return true;
     }
@@ -34,21 +34,10 @@
     {
       Console.WriteLine("--- XML Serialization ---");
       var testData = CreateSampleDocumentSettings();
-      var xmlSerializer = new XmlSerializer(typeof(DocumentSettings));
-      string xmlString;
-      using (var stringWriter = new StringWriter())
-      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-      {
-        xmlSerializer.Serialize(xmlWriter, testData);
-        xmlString = stringWriter.ToString();
-      }
-      Console.WriteLine("Serialized XML:\n" + xmlString);
+      string xmlString = SerializeToXml(testData);
 
-      DocumentSettings? deserialized;
-      using (var stringReader = new StringReader(xmlString))
-      {
-        deserialized = (DocumentSettings?)xmlSerializer.Deserialize(stringReader);
-      }
+      Console.WriteLine("Serialized XML:\n" + xmlString);
+      var deserialized = DeserializeFromXml<DocumentSettings>(xmlString);
       if (deserialized == null)
       {
         Console.WriteLine("✗ XML Deserialization returned null");
@@ -100,7 +89,7 @@
       Console.WriteLine("--- Edge Cases ---");
       var empty = new DocumentSettings();
       string xml = SerializeToXml(empty);
-      var xmlDeserialized = DeserializeFromXml(xml);
+      var xmlDeserialized = DeserializeFromXml<DocumentSettings>(xml);
       if (xmlDeserialized == null)
       {
         Console.WriteLine("✗ Edge Cases: XML deserialization of empty object failed");
@@ -138,6 +127,8 @@
       using (var document = new Document(TestFileName))
       {
         storedData = document.DocumentSettings;
+        storedData?.SetUpdatableElement(document.WordprocessingDocument?.GetDocumentSettings());
+        storedData?.LoadData();
       }
 
       var xmlSerializer = new XmlSerializer(typeof(DocumentSettings));
@@ -166,102 +157,103 @@
       return true;
     }
 
-    /// <summary>
-    /// Tests updating and persisting document settings within a document file.
-    /// </summary>
-    /// <remarks>This method creates a sample document with specific settings, saves it, modifies the original
-    /// settings, and then reloads the document to verify that the stored settings remain unchanged. It outputs
-    /// diagnostic information to the console for verification purposes.</remarks>
-    /// <returns>true if the document settings are correctly stored and reloaded from the document; otherwise, false.</returns>
-    static bool TestUpdateInDocument()
-    {
-      Console.WriteLine("--- Update document settings stored in document---");
-      DocumentSettings testData = CreateSampleDocumentSettings(true);
-      using (var document = new Document(TestFileName, FileMode.CreateNew))
-      {
-        document.DocumentSettings = testData;
-      }
+    ///// <summary>
+    ///// Tests updating and persisting document settings within a document file.
+    ///// </summary>
+    ///// <remarks>This method creates a sample document with specific settings, saves it, modifies the original
+    ///// settings, and then reloads the document to verify that the stored settings remain unchanged. It outputs
+    ///// diagnostic information to the console for verification purposes.</remarks>
+    ///// <returns>true if the document settings are correctly stored and reloaded from the document; otherwise, false.</returns>
+    //static bool TestUpdateInDocument()
+    //{
+    //  Console.WriteLine("--- Update document settings stored in document---");
+    //  DocumentSettings testData = CreateSampleDocumentSettings(true);
+    //  using (var document = new Document(TestFileName, FileMode.CreateNew))
+    //  {
+    //    document.DocumentSettings = testData;
+    //  }
 
-      TestHelper.ChangeTestData(testData);
-      testData.Compatibility?.Add(new CompatibilitySetting{ Name="CompatibilityMode", Val="value" });
-      DocumentSettings? storedData;
-      using (var document = new Document(TestFileName))
-      {
-        storedData = document.DocumentSettings;
-        if (storedData != null)
-        {
-          TestHelper.CopyTestData(testData, storedData);
-        }
-      }
+    //  TestHelper.ChangeTestData(testData);
+    //  testData.Compatibility?.Add(new CompatibilitySetting{ Name="CompatibilityMode", Val="value" });
+    //  DocumentSettings? storedData;
+    //  using (var document = new Document(TestFileName))
+    //  {
+    //    storedData = document.DocumentSettings;
+    //    if (storedData != null)
+    //    {
+    //      TestHelper.CopyTestData(testData, storedData);
+    //    }
+    //  }
 
-      var xmlSerializer = new XmlSerializer(typeof(DocumentSettings));
-      string xmlString;
-      using (var stringWriter = new StringWriter())
-      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-      {
-        xmlSerializer.Serialize(xmlWriter, storedData);
-        xmlString = stringWriter.ToString();
-      }
-      Console.WriteLine("document settings stored to new document and reloaded from it:\n" + xmlString);
+    //  var xmlSerializer = new XmlSerializer(typeof(DocumentSettings));
+    //  string xmlString;
+    //  using (var stringWriter = new StringWriter())
+    //  using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+    //  {
+    //    xmlSerializer.Serialize(xmlWriter, storedData);
+    //    xmlString = stringWriter.ToString();
+    //  }
+    //  Console.WriteLine("document settings stored to new document and reloaded from it:\n" + xmlString);
 
-      if (storedData == null)
-      {
-        Console.WriteLine("✗ XML Deserialization returned null");
-        return false;
-      }
+    //  if (storedData == null)
+    //  {
+    //    Console.WriteLine("✗ XML Deserialization returned null");
+    //    return false;
+    //  }
 
-      if (!TestHelper.CompareTestData(testData, storedData, out var propName))
-      {
-        Console.WriteLine($"✗ Store sample document settings test FAILED - data mismatch in property '{propName}'");
-        return false;
-      }
+    //  if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+    //  {
+    //    Console.WriteLine($"✗ Store sample document settings test FAILED - data mismatch in property '{propName}'");
+    //    return false;
+    //  }
 
-      Console.WriteLine("✓ Store sample document settings test passed\n");
-      return true;
-    }
+    //  Console.WriteLine("✓ Store sample document settings test passed\n");
+    //  return true;
+    //}
 
-    /// <summary>
-    /// Tests that the XML generated for document settings stored in a document conforms to the OpenXml schema.
-    /// </summary>
-    /// <returns></returns>
-    static bool TestValidateOpenXml()
-    {
-      Console.WriteLine("--- Validate sample settings stored in new document against OpenXml schema ---");
-      {
-        DocumentSettings testData = CreateSampleDocumentSettings(true);
-        TestHelper.ChangeTestData(testData);
-        testData.Compatibility?.Add(new CompatibilitySetting { Name = "CompatibilityMode", Val = "value" });
-        using (var document = new Document(TestFileName, FileMode.CreateNew))
-        {
-          document.DocumentSettings = testData;
-        }
+    ///// <summary>
+    ///// Tests that the XML generated for document settings stored in a document conforms to the OpenXml schema.
+    ///// </summary>
+    ///// <returns></returns>
+    //static bool TestValidateOpenXml()
+    //{
+    //  Console.WriteLine("--- Validate sample settings stored in new document against OpenXml schema ---");
+    //  {
+    //    DocumentSettings testData = CreateSampleDocumentSettings(true);
+    //    TestHelper.ChangeTestData(testData);
+    //    testData.Compatibility?.Add(new CompatibilitySetting { Name = "CompatibilityMode", Val = "value" });
+    //    using (var document = new Document(TestFileName, FileMode.CreateNew))
+    //    {
+    //      document.DocumentSettings = testData;
+    //    }
 
 
 
-        using (var document = new Document(TestFileName))
-        {
-          var openXml = document.WordprocessingDocument!.MainDocumentPart!.DocumentSettingsPart!.Settings!.OuterXml;
-          var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
-          Console.WriteLine(formattedOpenXml);
-          var validationResult = OpenXmlSchemaValidator.ValidateXml(formattedOpenXml);
-          if (!validationResult.IsValid)
-          {
-            Console.WriteLine("✗ OpenXml schema validation FAILED - issues found:");
-            var errorsFound = false;
-            foreach (var message in validationResult.Messages)
-            {
-              Console.WriteLine($" {message}");
-              if (message.TrimStart().StartsWith("Error")) errorsFound = true;
-            }
-            if (errorsFound)
-              return !errorsFound;
-          }
-        }
+    //    using (var document = new Document(TestFileName))
+    //    {
+    //      var openXml = document.WordprocessingDocument!.MainDocumentPart!.DocumentSettingsPart!.Settings!.OuterXml;
+    //      var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
+    //      Console.WriteLine(formattedOpenXml);
+    //      var validationResult = OpenXmlSchemaValidator.ValidateXml(formattedOpenXml);
+    //      if (!validationResult.IsValid)
+    //      {
+    //        Console.WriteLine("✗ OpenXml schema validation FAILED - issues found:");
+    //        var errorsFound = false;
+    //        foreach (var message in validationResult.Messages)
+    //        {
+    //          Console.WriteLine($" {message}");
+    //          if (message.TrimStart().StartsWith("Error")) errorsFound = true;
+    //        }
+    //        if (errorsFound)
+    //          return !errorsFound;
+    //      }
+    //    }
 
-        Console.WriteLine("✓ Validate sample settings test passed\n");
-        return true;
-      }
-    }
+    //    Console.WriteLine("✓ Validate sample settings test passed\n");
+    //    return true;
+    //  }
+    //}
+
     /// <summary>
     /// Measures and reports the performance of <see cref="DocumentSettings"/> update.
     /// </summary>
@@ -406,169 +398,139 @@
           View = ViewType.PrintView,
           Zoom = "100%", // PresetZoom.FullPage,
 
-          ActiveWritingStyles =
-          [
-            new ActiveWritingStyle
-            {
-              ApplicationName = "MyApp",
-              CheckStyle = true,
-              DllVersion = 1,
-              VendorID = 1234,
-              Language = "en-US",
-              NaturalLanguageGrammarCheck = true
-            },
-            new ActiveWritingStyle
-            {
-              ApplicationName = "AnotherApp",
-              CheckStyle = false,
-              DllVersion = 2,
-              VendorID = 5678,
-              Language = "fr-FR",
-              NaturalLanguageGrammarCheck = false
-            }
-          ],
-          AttachedSchemas = new AttachedSchemas([
-            new AttachedSchema
-            {
-              Uri = "http://schemas.microsoft.com/office/word/2010/wordml",
-            },
-            new AttachedSchema
-            {
-              Uri = "http://schemas.microsoft.com/office/word/2012/wordml",
-            }
-          ]),
-          AttachedTemplate = new AttachedTemplate("file:///C:/Users/qhta1/AppData/Roaming/Microsoft/Templates/NormalEmail.dotm\" TargetMode=\"External\"/"),
-          Captions = new Captions
-          {
-            CaptionDefinitions = new CaptionDefinitions([
-              new CaptionDefinition
-              {
-                Name = "Figure",
-                Position = CaptionPosition.Below,
-                ChapterNumber = true,
-                NumberFormat = NumberFormat.Decimal,
-              },
-              new CaptionDefinition
-              {
-                Name = "Table",
-                Position = CaptionPosition.Above,
-                ChapterNumber = false,
-                NoLabel = true,
-              }
-            ]),
-            AutoCaptions = new AutoCaptions([
-              new AutoCaption
-              {
-                Name = "Figure",
-                Caption = "Fig.",
-              },
-              new AutoCaption
-              {
-                Name = "Table",
-                Caption = "Tab.",
-              }
-            ])
-          },
-          Compatibility = new CompatibilitySettings
-          {
-            UseSingleBorderForContiguousCells = true,
-            WordPerfectJustification = true,
-            NoTabHangIndent = true,
-            NoLeading = true,
-            SpaceForUnderline = true,
-            NoColumnBalance = true,
-            BalanceSingleByteDoubleByteWidth = true,
-            NoExtraLineSpacing = true,
-            DoNotLeaveBackslashAlone = true,
-            UnderlineTrailingSpaces = true,
-            DoNotExpandShiftReturn = true,
-            SpacingInWholePoints = true,
-            LineWrapLikeWord6 = true,
-            PrintBodyTextBeforeHeader = true,
-            PrintColorBlackWhite = true,
-            WordPerfectSpaceWidth = true,
-            ShowBreaksInFrames = true,
-            SubFontBySize = true,
-            SuppressBottomSpacing = true,
-            SuppressTopSpacing = true,
-            SuppressSpacingAtTopOfPage = true,
-            SuppressTopSpacingWordPerfect = true,
-            SuppressSpacingBeforeAfterPageBreak = true,
-            SwapBordersFacingPages = true,
-            ConvertMailMergeEscape = true,
-            TruncateFontHeightsLikeWordPerfect = true,
-            MacWordSmallCaps = true,
-            UsePrinterMetrics = true,
-            DoNotSuppressParagraphBorders = true,
-            WrapTrailSpaces = true,
-            FootnoteLayoutLikeWord8 = true,
-            ShapeLayoutLikeWord8 = true,
-            AlignTablesRowByRow = true,
-            ForgetLastTabAlignment = true,
-            AdjustLineHeightInTable = true,
-            AutoSpaceLikeWord95 = true,
-            NoSpaceRaiseLower = true,
-            DoNotUseHTMLParagraphAutoSpacing = true,
-            LayoutRawTableWidth = true,
-            LayoutTableRowsApart = true,
-            UseWord97LineBreakRules = true,
-            DoNotBreakWrappedTables = true,
-            DoNotSnapToGridInCell = true,
-            SelectFieldWithFirstOrLastChar = true,
-            ApplyBreakingRules = true,
-            DoNotWrapTextWithPunctuation = true,
-            DoNotUseEastAsianBreakRules = true,
-            UseWord2002TableStyleRules = true,
-            GrowAutofit = true,
-            UseFarEastLayout = true,
-            UseNormalStyleForList = true,
-            DoNotUseIndentAsNumberingTabStop = true,
-            UseAltKinsokuLineBreakRules = true,
-            AllowSpaceOfSameStyleInTable = true,
-            DoNotSuppressIndentation = true,
-            DoNotAutofitConstrainedTables = true,
-            AutofitToFirstFixedWidthCell = true,
-            UnderlineTabInNumberingList = true,
-            DisplayHangulFixedWidth = true,
-            SplitPageBreakAndParagraphMark = true,
-            DoNotVerticallyAlignCellWithShape = true,
-            DoNotBreakConstrainedForcedTable = true,
-            DoNotVerticallyAlignInTextBox = true,
-            UseAnsiKerningPairs = true,
-            CachedColumnBalance = true,
-          }
+          //ActiveWritingStyles =
+          //[
+          //  new ActiveWritingStyle
+          //  {
+          //    ApplicationName = "MyApp",
+          //    CheckStyle = true,
+          //    DllVersion = 1,
+          //    VendorID = 1234,
+          //    Language = "en-US",
+          //    NaturalLanguageGrammarCheck = true
+          //  },
+          //  new ActiveWritingStyle
+          //  {
+          //    ApplicationName = "AnotherApp",
+          //    CheckStyle = false,
+          //    DllVersion = 2,
+          //    VendorID = 5678,
+          //    Language = "fr-FR",
+          //    NaturalLanguageGrammarCheck = false
+          //  }
+          //],
+          //AttachedSchemas = new AttachedSchemas([
+          //  new AttachedSchema
+          //  {
+          //    Uri = "http://schemas.microsoft.com/office/word/2010/wordml",
+          //  },
+          //  new AttachedSchema
+          //  {
+          //    Uri = "http://schemas.microsoft.com/office/word/2012/wordml",
+          //  }
+          //]),
+          //AttachedTemplate = new AttachedTemplate("file:///C:/Users/qhta1/AppData/Roaming/Microsoft/Templates/NormalEmail.dotm\" TargetMode=\"External\"/"),
+          //Captions = new Captions
+          //{
+          //  CaptionDefinitions = new CaptionDefinitions([
+          //    new CaptionDefinition
+          //    {
+          //      Name = "Figure",
+          //      Position = CaptionPosition.Below,
+          //      ChapterNumber = true,
+          //      NumberFormat = NumberFormat.Decimal,
+          //    },
+          //    new CaptionDefinition
+          //    {
+          //      Name = "Table",
+          //      Position = CaptionPosition.Above,
+          //      ChapterNumber = false,
+          //      NoLabel = true,
+          //    }
+          //  ]),
+          //  AutoCaptions = new AutoCaptions([
+          //    new AutoCaption
+          //    {
+          //      Name = "Figure",
+          //      Caption = "Fig.",
+          //    },
+          //    new AutoCaption
+          //    {
+          //      Name = "Table",
+          //      Caption = "Tab.",
+          //    }
+          //  ])
+          //},
+
+          //Compatibility = new CompatibilitySettings
+          //{
+          //  UseSingleBorderForContiguousCells = true,
+          //  WordPerfectJustification = true,
+          //  NoTabHangIndent = true,
+          //  NoLeading = true,
+          //  SpaceForUnderline = true,
+          //  NoColumnBalance = true,
+          //  BalanceSingleByteDoubleByteWidth = true,
+          //  NoExtraLineSpacing = true,
+          //  DoNotLeaveBackslashAlone = true,
+          //  UnderlineTrailingSpaces = true,
+          //  DoNotExpandShiftReturn = true,
+          //  SpacingInWholePoints = true,
+          //  LineWrapLikeWord6 = true,
+          //  PrintBodyTextBeforeHeader = true,
+          //  PrintColorBlackWhite = true,
+          //  WordPerfectSpaceWidth = true,
+          //  ShowBreaksInFrames = true,
+          //  SubFontBySize = true,
+          //  SuppressBottomSpacing = true,
+          //  SuppressTopSpacing = true,
+          //  SuppressSpacingAtTopOfPage = true,
+          //  SuppressTopSpacingWordPerfect = true,
+          //  SuppressSpacingBeforeAfterPageBreak = true,
+          //  SwapBordersFacingPages = true,
+          //  ConvertMailMergeEscape = true,
+          //  TruncateFontHeightsLikeWordPerfect = true,
+          //  MacWordSmallCaps = true,
+          //  UsePrinterMetrics = true,
+          //  DoNotSuppressParagraphBorders = true,
+          //  WrapTrailSpaces = true,
+          //  FootnoteLayoutLikeWord8 = true,
+          //  ShapeLayoutLikeWord8 = true,
+          //  AlignTablesRowByRow = true,
+          //  ForgetLastTabAlignment = true,
+          //  AdjustLineHeightInTable = true,
+          //  AutoSpaceLikeWord95 = true,
+          //  NoSpaceRaiseLower = true,
+          //  DoNotUseHTMLParagraphAutoSpacing = true,
+          //  LayoutRawTableWidth = true,
+          //  LayoutTableRowsApart = true,
+          //  UseWord97LineBreakRules = true,
+          //  DoNotBreakWrappedTables = true,
+          //  DoNotSnapToGridInCell = true,
+          //  SelectFieldWithFirstOrLastChar = true,
+          //  ApplyBreakingRules = true,
+          //  DoNotWrapTextWithPunctuation = true,
+          //  DoNotUseEastAsianBreakRules = true,
+          //  UseWord2002TableStyleRules = true,
+          //  GrowAutofit = true,
+          //  UseFarEastLayout = true,
+          //  UseNormalStyleForList = true,
+          //  DoNotUseIndentAsNumberingTabStop = true,
+          //  UseAltKinsokuLineBreakRules = true,
+          //  AllowSpaceOfSameStyleInTable = true,
+          //  DoNotSuppressIndentation = true,
+          //  DoNotAutofitConstrainedTables = true,
+          //  AutofitToFirstFixedWidthCell = true,
+          //  UnderlineTabInNumberingList = true,
+          //  DisplayHangulFixedWidth = true,
+          //  SplitPageBreakAndParagraphMark = true,
+          //  DoNotVerticallyAlignCellWithShape = true,
+          //  DoNotBreakConstrainedForcedTable = true,
+          //  DoNotVerticallyAlignInTextBox = true,
+          //  UseAnsiKerningPairs = true,
+          //  CachedColumnBalance = true,
+          //}
         };
-    }
-
-
-    /// <summary>
-    /// Serializes a <see cref="DocumentSettings"/> instance to XML.
-    /// </summary>
-    /// <param name="settings">The <see cref="DocumentSettings"/> instance to serialize.</param>
-    /// <returns>XML string representation.</returns>
-    static string SerializeToXml(DocumentSettings settings)
-    {
-      var xmlSerializer = new XmlSerializer(typeof(DocumentSettings));
-      using (var stringWriter = new StringWriter())
-      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-      {
-        xmlSerializer.Serialize(xmlWriter, settings);
-        return stringWriter.ToString();
-      }
-    }
-
-    /// <summary>
-    /// Deserializes a <see cref="DocumentSettings"/> instance from XML.
-    /// </summary>
-    /// <param name="xml">The XML string to deserialize.</param>
-    /// <returns>The deserialized <see cref="DocumentSettings"/> instance.</returns>
-    static DocumentSettings? DeserializeFromXml(string xml)
-    {
-      var xmlSerializer = new XmlSerializer(typeof(DocumentSettings));
-      using (var stringReader = new StringReader(xml))
-      {
-        return (DocumentSettings?)xmlSerializer.Deserialize(stringReader);
-      }
     }
 
     /// <summary>

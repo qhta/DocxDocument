@@ -10,21 +10,29 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   IEquatable<ElementCollection<ItemType>>, ICollection<ItemType>, IList, INotificationSource, IEmptyCheckable
   where ItemType : notnull
 {
-  private ObservableCollection<ItemType> _items = new ObservableCollection<ItemType>();
   private readonly BiDiDictionary<object, ItemType> _index = new BiDiDictionary<object, ItemType>();
 
   /// <summary>
   /// Accessor for the internal ObservableCollection of items for all Collection
   /// </summary>
-  protected virtual ObservableCollection<ItemType> Items => _items;
+  protected virtual ObservableCollection<ItemType> Items
+  {
+    get
+    {
+      if (_items == null)
+      {
+        _items = new ObservableCollection<ItemType>();
+        _items.CollectionChanged += Items_CollectionChanged;
+      }
+      return _items;
+    }
+  }
+  private ObservableCollection<ItemType>? _items;
 
   /// <summary>
   /// Initializes a new, empty collection.
   /// </summary>
-  protected ElementCollection()
-  {
-    _items.CollectionChanged += Items_CollectionChanged;
-  }
+  protected ElementCollection() { }
 
   /// <summary>
   /// 
@@ -40,6 +48,7 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   /// <param name = "items">The items to add to the collection.</param>
   protected ElementCollection(IEnumerable<ItemType> items)
   {
+    _items = new ObservableCollection<ItemType>();
     foreach (var item in items)
     {
       _items.Add(item);
@@ -51,6 +60,22 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
         notificationSource.PropertyChanged += ItemPropertyChanged;
     }
     _items.CollectionChanged += Items_CollectionChanged;
+  }
+
+  /// <summary>
+  /// Copies the elements from the specified source collection into this collection, replacing any existing elements.
+  /// </summary>
+  /// <param name="source"></param>
+  /// <exception cref="ArgumentNullException"></exception>
+  public virtual void CopyFrom(ElementCollection<ItemType> source)
+  {
+    if (source == null)
+      throw new ArgumentNullException(nameof(source));
+    Clear();
+    foreach (var item in source)
+    {
+      Add(item);
+    }
   }
 
   /// <summary>

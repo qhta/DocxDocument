@@ -23,10 +23,19 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
  public DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
 
  /// <summary>
- ///   Attaches this value collection to the specified WordprocessingDocument and loads data from the document's package properties or OpenXml part.
+ ///   Attaches this value collection to the specified WordprocessingDocument.
  /// </summary>
- /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to and load data from.</param>
- public virtual void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
+ /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to.</param>
+ public virtual void Attach(DXPP.WordprocessingDocument wordprocessingDocument)
+ {
+   WordprocessingDocument = wordprocessingDocument;
+ }
+
+  /// <summary>
+  ///   Attaches this value collection to the specified WordprocessingDocument and loads data from the document's package properties or OpenXml part.
+  /// </summary>
+  /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to and load data from.</param>
+  public virtual void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
  {
   WordprocessingDocument = wordprocessingDocument;
  }

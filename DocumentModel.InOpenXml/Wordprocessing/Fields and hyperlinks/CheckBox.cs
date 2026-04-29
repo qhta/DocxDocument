@@ -7,27 +7,47 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("CheckBox", Namespace = "DocumentModel.Wordprocessing")]
 public partial class CheckBox : ModelElement<DXW.CheckBox>
 {
- /// <summary>
- /// Size of the checkbox form field, specified as a string value (e.g., in points or percent).
- /// </summary>
- public string? FormFieldSize { get => _FormFieldSize; set => UpdateField(ref _FormFieldSize, value, nameof(FormFieldSize)); }
- private string? _FormFieldSize;
+  /// <summary>
+  /// Size of the checkbox form field, specified as a string value (e.g., in points or percent).
+  /// </summary>
+  [OpenXmlElement(typeof(DXW.FormFieldSize))]
+  public HPS? FormFieldSize 
+  {
+    get => _FormFieldSize ??= GetElement<HPS?, DXW.FormFieldSize>(_openXmlElement);
+    set => UpdateField(ref _FormFieldSize, value, nameof(FormFieldSize));
+  }
+  private HPS? _FormFieldSize;
 
- /// <summary>
- /// Indicates whether the checkbox form field should be automatically sized.
- /// </summary>
- public bool? AutomaticallySizeFormField { get => _AutomaticallySizeFormField; set => UpdateField(ref _AutomaticallySizeFormField, value, nameof(AutomaticallySizeFormField)); }
- private bool? _AutomaticallySizeFormField;
+  /// <summary>
+  /// Indicates whether the checkbox form field should be automatically sized.
+  /// </summary>
+  [OpenXmlElement(typeof(DXW.AutomaticallySizeFormField))]
+  public bool? AutomaticallySizeFormField 
+  {
+    get => _AutomaticallySizeFormField ??= GetElement<bool?, DXW.AutomaticallySizeFormField>(_openXmlElement);
+    set => UpdateField(ref _AutomaticallySizeFormField, value, nameof(AutomaticallySizeFormField));
+  }
+  private bool? _AutomaticallySizeFormField;
 
- /// <summary>
- /// Default state of the checkbox form field when the form is loaded (checked or unchecked).
- /// </summary>
- public bool? DefaultCheckBoxFormFieldState { get => _DefaultCheckBoxFormFieldState; set => UpdateField(ref _DefaultCheckBoxFormFieldState, value, nameof(DefaultCheckBoxFormFieldState)); }
- private bool? _DefaultCheckBoxFormFieldState;
+  /// <summary>
+  /// Default state of the checkbox form field when the form is loaded (checked or unchecked).
+  /// </summary>
+  [OpenXmlElement(typeof(DXW.DefaultCheckBoxFormFieldState))]
+  public bool? DefaultCheckBoxFormFieldState 
+  {
+    get => _DefaultCheckBoxFormFieldState ??= GetElement<bool?, DXW.DefaultCheckBoxFormFieldState>(_openXmlElement);
+    set => UpdateField(ref _DefaultCheckBoxFormFieldState, value, nameof(DefaultCheckBoxFormFieldState));
+  }
+  private bool? _DefaultCheckBoxFormFieldState;
 
- /// <summary>
- /// Indicates whether the checkbox is currently checked.
- /// </summary>
- public bool? Checked { get => _Checked; set => UpdateField(ref _Checked, value, nameof(Checked)); }
- private bool? _Checked;
+  /// <summary>
+  /// Indicates whether the checkbox is currently checked.
+  /// </summary>
+  [OpenXmlElement(typeof(DXW.Checked))]
+  public bool? Checked 
+  {
+    get => _Checked ??= GetElement<bool?, DXW.Checked>(_openXmlElement);
+    set => UpdateField(ref _Checked, value, nameof(Checked));
+  }
+  private bool? _Checked;
 }

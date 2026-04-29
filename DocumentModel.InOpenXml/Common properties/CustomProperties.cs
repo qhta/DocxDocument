@@ -28,6 +28,7 @@ public sealed partial class CustomProperties : ModelElementCollection<CustomProp
   /// <param name="wordprocessingDocument">Document to attach to.</param>
   public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
+  //Debug.WriteLine($"Attaching CustomProperties to WordprocessingDocument: {wordprocessingDocument}");
     base.AttachAndLoad(wordprocessingDocument);
     var customFileProperties = wordprocessingDocument.GetCustomFileProperties();
     SetUpdatableElement(customFileProperties);
@@ -39,6 +40,7 @@ public sealed partial class CustomProperties : ModelElementCollection<CustomProp
   /// <param name="wordprocessingDocument">Document to attach to.</param>
   public override void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
   {
+  //Debug.WriteLine($"Attaching CustomProperties to WordprocessingDocument for update: {wordprocessingDocument}");
     WordprocessingDocument = wordprocessingDocument;
     var customFileProperties = wordprocessingDocument.GetCustomFileProperties();
     SetUpdatableElement(customFileProperties);
@@ -84,5 +86,22 @@ public sealed partial class CustomProperties : ModelElementCollection<CustomProp
       item.PropertyId = Count == 0 ? 2 : this.Max<CustomProperty, int?>(p => p.PropertyId)!.Value + 1;
     }
     base.Add(item);
+  }
+
+  /// <summary>
+  /// Adds a new CustomProperty to the collection with the specified name and value. The PropertyId is automatically assigned if not set.
+  /// </summary>
+  /// <param name="name"></param>
+  /// <param name="value"></param>
+  /// <returns></returns>
+  public CustomProperty Add(string name, object value)
+  {
+    var newItem = new CustomProperty
+    {
+      Name = name,
+      Value = new Variant(value)
+    };
+    Add(newItem);
+    return newItem;
   }
 }

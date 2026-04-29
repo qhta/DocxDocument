@@ -24,8 +24,8 @@ public class CustomPropertiesTest: _AbstractTestClass
     if (!TestEdgeCases()) return false;
     if (!TestStoreInDocument()) return false;
     if (!TestUpdateInDocument()) return false;
-    if (!TestStoreICustomProperties()) return false;
-    if (!TestUpdateICustomProperties()) return false;
+    if (!TestStoreCustomProperties()) return false;
+    if (!TestUpdateCustomProperties()) return false;
     Console.WriteLine("All CustomProperties Test passed.\n");
     return true;
   }
@@ -243,14 +243,17 @@ public class CustomPropertiesTest: _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document custom properties are successfully stored and verified; otherwise, false.</returns>
-  static bool TestStoreICustomProperties()
+  static bool TestStoreCustomProperties()
   {
-    Console.WriteLine("--- ICustomProperties Test: Store sample custom properties in new document ---");
+    Console.WriteLine("--- CustomProperties Test: Store sample custom properties in new document ---");
     CustomProperties testData = CreateSampleCustomProperties();
     using (var document = new Document(TestFileName, FileMode.CreateNew))
     {
       foreach (var prop in testData)
-        document.CustomDocumentProperties.Add(prop.Name!, prop.Value!);
+      {
+        //Debug.WriteLine($"Adding custom property: Name={prop.Name}, Value={prop.Value}");
+        document.CustomProperties.Add(prop.Name!, prop.Value!);
+      }
     }
 
     using (var wordDoc = WordprocessingDocument.Open(TestFileName, false))
@@ -274,15 +277,15 @@ public class CustomPropertiesTest: _AbstractTestClass
       xmlSerializer.Serialize(xmlWriter, storedData);
       xmlString = stringWriter.ToString();
     }
-    Console.WriteLine("✓ ICustomProperties Test: Custom properties stored to new document and reloaded from it:\n" + xmlString);
+    Console.WriteLine("✓ CustomProperties Test: Custom properties stored to new document and reloaded from it:\n" + xmlString);
 
     if (!TestHelper.CompareTestData(testData, storedData, out var propName))
     {
-      Console.WriteLine($"✗ ICustomProperties Test:  Store sample custom properties test FAILED - data mismatch in '{propName}'");
+      Console.WriteLine($"✗ CustomProperties Test:  Store sample custom properties test FAILED - data mismatch in '{propName}'");
       return false;
     }
 
-    Console.WriteLine("✓ ICustomProperties Test: Store sample custom properties in new document\n");
+    Console.WriteLine("✓ CustomProperties Test: Store sample custom properties in new document\n");
     return true;
   }
 
@@ -293,9 +296,9 @@ public class CustomPropertiesTest: _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document custom properties are successfully updated and verified; otherwise, false.</returns>
-  static bool TestUpdateICustomProperties()
+  static bool TestUpdateCustomProperties()
   {
-    Console.WriteLine("--- ICustomProperties Test: Update document custom properties ---");
+    Console.WriteLine("--- CustomProperties Test: Update document custom properties ---");
     CustomProperties testData = CreateSampleCustomProperties();
     var initialCount = testData.Count;
     //var newCustomProperty = new CustomProperty { Name = "CustomTitle", Value = "Updated Title" };
@@ -311,7 +314,7 @@ public class CustomPropertiesTest: _AbstractTestClass
     {
       var outerXml = wordDoc.CustomFilePropertiesPart?.RootElement?.OuterXml;
       outerXml = outerXml?.FormatXmlWithLineNumbers();
-      Console.WriteLine("✓ ICustomProperties Test: custom properties stored in document:\n" + outerXml);
+      Console.WriteLine("✓ CustomProperties Test: custom properties stored in document:\n" + outerXml);
     }
 
     ICustomProperties storedData;
@@ -328,22 +331,22 @@ public class CustomPropertiesTest: _AbstractTestClass
       xmlSerializer.Serialize(xmlWriter, storedData);
       xmlString = stringWriter.ToString();
     }
-    Console.WriteLine("✓ ICustomProperties Test: Updated document custom properties:\n" + xmlString);
+    Console.WriteLine("✓ CustomProperties Test: Updated document custom properties:\n" + xmlString);
 
     var storedCount = storedData.Count();
     if (storedCount != initialCount)
     {
-      Console.WriteLine($"✗ ICustomProperties Test: Updated document custom properties test FAILED  - new property count is {storedCount}, expected {initialCount}");
+      Console.WriteLine($"✗ CustomProperties Test: Updated document custom properties test FAILED  - new property count is {storedCount}, expected {initialCount}");
       return false;
     }
     var storedCustomProperty = storedData.Last();
     if (!TestHelper.CompareTestData(newPropertyName, storedCustomProperty.Name, out var propName))
     {
-      Console.WriteLine($"✗ ICustomProperties Test: Updated document custom properties test FAILED - data mismatch in new item '{propName}'");
+      Console.WriteLine($"✗ CustomProperties Test: Updated document custom properties test FAILED - data mismatch in new item '{propName}'");
       return false;
     }
 
-    Console.WriteLine("✓ ICustomProperties Test: Updated document custom properties test passed\n");
+    Console.WriteLine("✓ CustomProperties Test: Updated document custom properties test passed\n");
     return true;
   }
   /// <summary>

@@ -10,18 +10,17 @@ namespace DocumentModel;
 /// UniversalMeasure provide a precise, integer-based unit for document measurements.
 /// This supports implicit conversions to/from various integer types and string representations with unit suffixes.
 /// </remarks>
-public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatable<UniversalMeasure>
+public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatable<UniversalMeasure>, IConvertible
 {
   /// <summary>
   /// internal storage for the length value. This can be of type Int64, UInt64, Decimal, or Double, depending on how the instance was initialized.
   /// </summary>
-  protected internal  object? _value;
+  protected internal object? _value;
 
   /// <summary>
   /// Internal storage for the unit of measurement associated with this length value.
   /// </summary>
   protected internal LengthUnit? _unit;
-
 
   /// <summary>
   /// Unit of measurement for this length value.
@@ -66,9 +65,9 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   /// If the instance was initialized with a Double or Decimal value, the value will be converted to Int64 by rounding
   /// away from zero.
   /// </summary>
-  public Int64 IntValue => IsInteger ? (Int64)_value! 
+  public Int64 IntValue => IsInteger ? (Int64)_value!
     : IsUnsignedInteger ? Convert.ToInt64((UInt64)_value!)
-    : IsDecimal ? (Int64)Math.Round((Decimal)_value!, MidpointRounding.AwayFromZero) 
+    : IsDecimal ? (Int64)Math.Round((Decimal)_value!, MidpointRounding.AwayFromZero)
     : IsDouble ? (Int64)Math.Round((Double)_value!, MidpointRounding.AwayFromZero) : 0;
 
   /// <summary>
@@ -85,7 +84,7 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   /// Gets the Decimal value represented by this instance.
   /// If the instance was initialized with an Int64 or Double value, it will be converted to Decimal.
   /// </summary>
-  public Decimal DecimalValue => IsDecimal? (Decimal) _value!
+  public Decimal DecimalValue => IsDecimal ? (Decimal)_value!
     : IsInteger ? Convert.ToDecimal((Int64)_value!)
     : IsUnsignedInteger ? Convert.ToDecimal((UInt64)_value!)
     : IsDouble ? Convert.ToDecimal((Double)_value!) : 0;
@@ -194,6 +193,13 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
     if (str.EndsWith("tw"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
+      _value = Double.Parse(str, CultureInfo.InvariantCulture) * UnitsPerTwips;
+      _unit = LengthUnit.Twips;
+      return;
+    }
+    if (str.EndsWith("twips"))
+    {
+      str = str.Substring(0, str.Length - 5).Trim();
       _value = Double.Parse(str, CultureInfo.InvariantCulture) * UnitsPerTwips;
       _unit = LengthUnit.Twips;
       return;
@@ -319,6 +325,284 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   }
   #endregion
 
+  #region IConvertible Implementation
+
+  /// <summary>
+  /// Gets the TypeCode for the current instance, indicating the underlying data type of the value stored in this UniversalMeasure.
+  /// </summary>
+  /// <returns>The TypeCode representing the underlying data type of the value.</returns>
+  public TypeCode GetTypeCode()
+  {
+    if (IsDouble)
+      return TypeCode.Double;
+    if (IsDecimal)
+      return TypeCode.Decimal;
+    if (IsInteger)
+      return TypeCode.Int64;
+    if (IsUnsignedInteger)
+      return TypeCode.UInt64;
+    return TypeCode.Object;
+  }
+
+  /// <summary>
+  /// Converts the value of this instance to an equivalent Boolean.
+  /// </summary>
+  /// <remarks>This method is not implemented and will throw a NotImplementedException if called.</remarks>
+  public bool ToBoolean(IFormatProvider? provider)
+  {
+    throw new NotImplementedException();
+  }
+
+  /// <summary>
+  /// Converts the current value to an 8-bit unsigned integer.  
+  /// </summary>
+  /// <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+  /// <returns>An 8-bit unsigned integer equivalent to the current value.</returns>
+  public byte ToByte(IFormatProvider? provider)
+  {
+    if (IsDouble)
+      return Convert.ToByte((Double)_value!);
+    if (IsDecimal)
+      return Convert.ToByte((Decimal)_value!);
+    if (IsInteger)
+      return Convert.ToByte((Int64)_value!);
+    if (IsUnsignedInteger)
+      return Convert.ToByte((UInt64)_value!);
+    return 0;
+  }
+
+  /// <summary>
+  /// Converts the value of this instance to its equivalent Unicode character.
+  /// </summary>
+  /// <remarks>This method is not implemented and will throw a NotImplementedException if called.</remarks>
+  public char ToChar(IFormatProvider? provider)
+  {
+    throw new NotImplementedException();
+  }
+
+  /// <summary>
+  /// Converts the current instance to a DateTime object.
+  /// </summary>
+  /// <remarks>This method is not implemented and will throw a NotImplementedException if called.</remarks>
+  public DateTime ToDateTime(IFormatProvider? provider)
+  {
+    throw new NotImplementedException();
+  }
+
+  /// <summary>
+  /// Converts the current instance to a Decimal value.
+  /// </summary>
+  /// <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+  /// <returns>A Decimal value equivalent to the current value.</returns>
+  public decimal ToDecimal(IFormatProvider? provider)
+  {
+    if (IsDouble)
+      return Convert.ToDecimal((Double)_value!);
+    if (IsDecimal)
+      return Convert.ToDecimal((Decimal)_value!);
+    if (IsInteger)
+      return Convert.ToDecimal((Int64)_value!);
+    if (IsUnsignedInteger)
+      return Convert.ToDecimal((UInt64)_value!);
+    return 0;
+  }
+
+  /// <summary>
+  /// Converts the current value to a double-precision floating-point number. 
+  /// </summary>
+  /// <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+  /// <returns>A double-precision floating-point number equivalent to the current value.</returns>
+  public double ToDouble(IFormatProvider? provider)
+  {
+    if (IsDouble)
+      return Convert.ToDouble((Double)_value!);
+    if (IsDecimal)
+      return Convert.ToDouble((Decimal)_value!);
+    if (IsInteger)
+      return Convert.ToDouble((Int64)_value!);
+    if (IsUnsignedInteger)
+      return Convert.ToDouble((UInt64)_value!);
+    return 0;
+  }
+
+  /// <summary>
+  /// Converts the current value to a 16-bit signed integer.
+  /// </summary>
+  /// <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+  /// <returns>A 16-bit signed integer equivalent to the current value.</returns>
+  public short ToInt16(IFormatProvider? provider)
+  {
+    if (IsDouble)
+      return Convert.ToInt16((Double)_value!);
+    if (IsDecimal)
+      return Convert.ToInt16((Decimal)_value!);
+    if (IsInteger)
+      return Convert.ToInt16((Int64)_value!);
+    if (IsUnsignedInteger)
+      return Convert.ToInt16((UInt64)_value!);
+    return 0;
+  }
+
+  /// <summary>
+  /// Converts the current value to a 32-bit signed integer.
+  /// </summary>
+  /// <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+  /// <returns>A 32-bit signed integer equivalent to the current value.</returns>
+  public int ToInt32(IFormatProvider? provider)
+  {
+    if (IsDouble)
+      return Convert.ToInt32((Double)_value!);
+    if (IsDecimal)
+      return Convert.ToInt32((Decimal)_value!);
+    if (IsInteger)
+      return Convert.ToInt32((Int64)_value!);
+    if (IsUnsignedInteger)
+      return Convert.ToInt32((UInt64)_value!);
+    return 0;
+  }
+
+  /// <summary>
+  /// Converts the current value to a 64-bit signed integer.
+  /// </summary>
+  /// <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+  /// <returns>A 64-bit signed integer equivalent to the current value.</returns>
+  public long ToInt64(IFormatProvider? provider)
+  {
+    if (IsDouble)
+      return Convert.ToInt64((Double)_value!);
+    if (IsDecimal)
+      return Convert.ToInt64((Decimal)_value!);
+    if (IsInteger)
+      return Convert.ToInt64((Int64)_value!);
+    if (IsUnsignedInteger)
+      return Convert.ToInt64((UInt64)_value!);
+    return 0;
+  }
+
+  /// <summary>
+  /// Converts the current value to a 8-bit signed integer.
+  /// </summary>
+  /// <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+  /// <returns>An 8-bit signed integer equivalent to the current value.</returns>
+  public sbyte ToSByte(IFormatProvider? provider)
+  {
+    if (IsDouble)
+      return Convert.ToSByte((Double)_value!);
+    if (IsDecimal)
+      return Convert.ToSByte((Decimal)_value!);
+    if (IsInteger)
+      return Convert.ToSByte((Int64)_value!);
+    if (IsUnsignedInteger)
+      return Convert.ToSByte((UInt64)_value!);
+    return 0;
+  }
+
+  /// <summary>
+  /// Converts the current value to a single-precision floating-point number.
+  /// </summary>
+  /// <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+  /// <returns>A single-precision floating-point number equivalent to the current value.</returns>
+  public float ToSingle(IFormatProvider? provider)
+  {
+    if (IsDouble)
+      return Convert.ToSingle((Double)_value!);
+    if (IsDecimal)
+      return Convert.ToSingle((Decimal)_value!);
+    if (IsInteger)
+      return Convert.ToSingle((Int64)_value!);
+    if (IsUnsignedInteger)
+      return Convert.ToSingle((UInt64)_value!);
+    return 0;
+  }
+
+  /// <summary>
+  /// Converts the current value to an object of the specified type, using the provided format information if necessary.
+  /// </summary>
+  /// <param name="conversionType">The type to which to convert the current value.</param>
+  /// <param name="provider">An object that supplies culture-specific formatting information, or null to use the current culture.</param>
+  /// <returns>An object of the specified type that is equivalent to the current value.</returns>
+  /// <exception cref="NotImplementedException">Thrown if the specified conversion type is not supported.</exception>
+  public object ToType(Type conversionType, IFormatProvider? provider)
+  {
+    if (conversionType == typeof(Double))
+      return ToDouble(provider);
+    if (conversionType == typeof(Decimal))
+      return ToDecimal(provider);
+    if (conversionType == typeof(Single))
+      return ToSingle(provider);
+    if (conversionType == typeof(SByte))
+      return ToSByte(provider);
+    if (conversionType == typeof(Int16))
+      return ToInt16(provider);
+    if (conversionType == typeof(Int32))
+      return ToInt32(provider);
+    if (conversionType == typeof(UInt16))
+      return ToUInt16(provider);
+    if(conversionType == typeof(UInt32))
+      return ToUInt32(provider);
+    if (conversionType == typeof(UInt64))
+      return ToUInt64(provider);
+    if (conversionType == typeof(Byte))
+      return ToByte(provider);
+    throw new NotImplementedException();
+  }
+
+  /// <summary>
+  /// Converts the current value to a 16-bit unsigned integer.
+  /// </summary>
+  /// <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+  /// <returns>A 16-bit unsigned integer equivalent to the current value.</returns>
+  public ushort ToUInt16(IFormatProvider? provider)
+  {
+    if (IsDouble)
+      return Convert.ToUInt16((Double)_value!);
+    if (IsDecimal)
+      return Convert.ToUInt16((Decimal)_value!);
+    if (IsInteger)
+      return Convert.ToUInt16((Int64)_value!);
+    if (IsUnsignedInteger)
+      return Convert.ToUInt16((UInt64)_value!);
+    return 0;
+  }
+
+  /// <summary>
+  /// Converts the current value to a 32-bit unsigned integer.
+  /// </summary>
+  /// <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+  /// <returns>A 32-bit unsigned integer equivalent to the current value.</returns>
+  public uint ToUInt32(IFormatProvider? provider)
+  {
+    if (IsDouble)
+      return Convert.ToUInt32((Double)_value!);
+    if (IsDecimal)
+      return Convert.ToUInt32((Decimal)_value!);
+    if (IsInteger)
+      return Convert.ToUInt32((Int64)_value!);
+    if (IsUnsignedInteger)
+      return Convert.ToUInt32((UInt64)_value!);
+    return 0;
+  }
+
+  /// <summary>
+  /// Converts the current value to a 64-bit unsigned integer.
+  /// </summary>
+  /// <param name="provider">Unused. This parameter is included to match the IConvertible interface.</param>
+  /// <returns>A 64-bit unsigned integer equivalent to the current value.</returns>
+  public ulong ToUInt64(IFormatProvider? provider) 
+  { 
+    if (IsDouble)
+      return Convert.ToUInt64((Double)_value!);
+    if (IsDecimal)
+      return Convert.ToUInt64((Decimal)_value!);
+    if (IsInteger)
+      return Convert.ToUInt64((Int64)_value!);
+    if (IsUnsignedInteger)
+      return Convert.ToUInt64((UInt64)_value!);
+    return 0;
+  }
+
+  #endregion
+
   #region ToString conversions
 
   /// <summary>
@@ -329,7 +613,7 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
     if (IsDouble)
       return ((Double)_value!).ToString(CultureInfo.InvariantCulture);
     if (IsDecimal)
-      return ((Decimal)_value!).ToString(CultureInfo.InvariantCulture); 
+      return ((Decimal)_value!).ToString(CultureInfo.InvariantCulture);
     if (IsInteger)
       return ((Int64)_value!).ToString(CultureInfo.InvariantCulture);
     if (IsUnsignedInteger)
@@ -338,7 +622,7 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   }
 
   /// <summary>
-  /// Converts the current length measure to its string representation using the specified format provider.
+  /// Converts the current length measure to its string representation.
   /// This allows for culture-specific formatting of the output string, such as using different decimal separators
   /// based on the culture settings provided by the formatProvider.
   /// If the formatProvider is null, the method should use invariant culture's formatting conventions.
@@ -468,7 +752,7 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   {
     return value.ToString();
   }
-  
+
   /// <summary>
   /// Implicitly converts a UniversalMeasure instance to an Int32 value.
   /// </summary>
@@ -556,10 +840,10 @@ public abstract class UniversalMeasure: IComparable<UniversalMeasure>, IEquatabl
   {
     if (other == null)
       throw new ArgumentNullException(nameof(other), "Cannot compare to null.");
-    return 
+    return
       ToInch().CompareTo(other.ToInch());
   }
-  
+
   /// <summary>
   /// Returns the hash code for this instance.
   /// </summary>

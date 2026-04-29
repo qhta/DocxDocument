@@ -5,6 +5,14 @@
 /// </summary>
 public class RunItemsCollection: ContentItemsCollection<ModelElement>
 {
+  /// <summary>
+  /// Initializing constructor.
+  /// </summary>
+  /// <param name="parent">Model element that owns this collection. Cannot be null.</param>
+  /// <param name="openXmlRun">The OpenXml Run element to be wrapped by the collection. Can be null.</param>
+  public RunItemsCollection(DMW.Run parent, DXW.Run? openXmlRun) : base(parent, openXmlRun)
+  {
+  }
 
   /// <summary>
   /// Static mapping between OpenXml element types and their corresponding model element types. This bidirectional dictionary allows for easy conversion and lookup between the two type systems, facilitating the loading and updating of model elements based on their OpenXml representations.
@@ -52,4 +60,14 @@ public class RunItemsCollection: ContentItemsCollection<ModelElement>
   /// its mapped type. The mapping enables conversion or lookup operations between the two type systems, which is useful
   /// for scenarios such as serialization, deserialization, or type resolution in modeling frameworks.</remarks>
   public override BiDiDictionary<Type, Type> ModelElementTypeMapping => _ModelElementTypeMapping;
+
+  /// <summary>
+  /// Checks if the specified item is acceptable for this collection.
+  /// </summary>
+  /// <param name="item">The item to check.</param>
+  /// <returns>True if the item is acceptable; otherwise, false.</returns>
+  public override bool AcceptItem(object item)
+  {
+    return item is not DXW.RunProperties;
+  }
 }

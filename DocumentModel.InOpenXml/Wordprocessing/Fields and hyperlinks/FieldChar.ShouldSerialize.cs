@@ -9,5 +9,5 @@ public partial class FieldChar
   public bool ShouldSerializeDirty() => Dirty is not null;
   public bool ShouldSerializeFieldData() => !String.IsNullOrEmpty(FieldData);
   public bool ShouldSerializeFormFieldData() => FormFieldData is not null && ShouldSerialize(FormFieldData);
-  public bool ShouldSerializeNumberingChange() => NumberingChange is not null && ShouldSerialize(NumberingChange);
+  //public bool ShouldSerializeNumberingChange() => NumberingChange is not null && ShouldSerialize(NumberingChange);
 }

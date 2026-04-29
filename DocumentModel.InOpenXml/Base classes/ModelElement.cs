@@ -7,7 +7,7 @@ namespace DocumentModel;
 /// Base class for all model elements, providing property change notification support.
 /// </summary>
 [XmlRoot("ModelElement", Namespace = "DocumentModel")]
-public abstract partial class ModelElement: INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem,
+public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<ModelElement>, IChildItem,
   ICollectionItem, IModifiable, INotificationSource, ILoadable, ISerializationEnabling, IEmptyCheckable,
   IPropertiesProvider, IModelObject
 {
@@ -28,7 +28,7 @@ public abstract partial class ModelElement: INotifyPropertyChanged, IEquatable<M
   /// Initializes a new instance of the ModelElement class with the specified parent element. This constructor is used to establish a parent-child relationship between model elements.
   /// </summary>
   /// <param name="parent"></param>
-  protected ModelElement(ModelElement parent): this()
+  protected ModelElement(ModelElement parent) : this()
   {
     SetParent(parent);
   }
@@ -165,7 +165,7 @@ public abstract partial class ModelElement: INotifyPropertyChanged, IEquatable<M
   /// <param name="openXmlElement">Composite element to search for the specified OpenXmlType.</param>
   /// <returns>The first element of the specified OpenXmlType converted to ModelType, or null if not found.</returns>
   protected ModelType? GetElement<ModelType, OpenXmlType>(DX.OpenXmlCompositeElement? openXmlElement)
-    where OpenXmlType: DX.OpenXmlElement
+    where OpenXmlType : DX.OpenXmlElement
   {
     if (openXmlElement == null)
       return default;
@@ -210,11 +210,16 @@ public abstract partial class ModelElement: INotifyPropertyChanged, IEquatable<M
         oldChild.SetParent(null);
       if (fieldValue is IWordprocessingDocumentAware oldWDAValue && oldWDAValue.WordprocessingDocument != null)
         oldWDAValue.Detach();
-      if (newValue is IWordprocessingDocumentAware newWDAValue && this is IWordprocessingDocumentAware thisElement &&
-          thisElement.WordprocessingDocument != null)
-        newWDAValue.AttachAndUpdate(thisElement.WordprocessingDocument);
-      else if (newValue is IUpdatable updatableValue)
-        updatableValue.UpdateData();
+      //if (newValue is IWordprocessingDocumentAware newWDAValue && this is IWordprocessingDocumentAware thisElement &&
+      //    thisElement.WordprocessingDocument != null)
+      //  newWDAValue.Attach(thisElement.WordprocessingDocument);
+      //else if (newValue is IUpdatable updatableValue)
+      //{
+      //  if (updatableValue.GetUpdatableElement() != null)
+      //    updatableValue.UpdateData();
+      //  else if (fieldValue is IUpdatable updatableFieldValue)
+      //    updatableValue.SetUpdatableElement(updatableFieldValue.GetUpdatableElement());
+      //}
 
       //else if (this is IUpdatable updatableElement)
       //  updatableElement.UpdateData();
@@ -229,13 +234,16 @@ public abstract partial class ModelElement: INotifyPropertyChanged, IEquatable<M
         source.SetPropertyName(propertyName);
       if (IsNotificationEnabled)
         NotifyPropertyChanged(propertyName, oldValue, newValue);
+
+
+      if (this is  IWordprocessingDocumentAware wordprocessingDocumentAware)
+      {
+        var wordprocessingDocument = wordprocessingDocumentAware.WordprocessingDocument;
+        if (wordprocessingDocument != null)
+          wordprocessingDocumentAware.Attach(wordprocessingDocument);
+      }
     }
-    else if (fieldValue is IWordprocessingDocumentAware updatedValue)
-    {
-      var wordprocessingDocument = updatedValue.WordprocessingDocument;
-      if (wordprocessingDocument != null)
-        updatedValue.AttachAndUpdate(wordprocessingDocument);
-    }
+
   }
 
   #region INotificationSource implementation
@@ -391,6 +399,24 @@ public abstract partial class ModelElement: INotifyPropertyChanged, IEquatable<M
   private KnownProperties? _knownProperties;
 
   /// <summary>
+  /// Loads data into the current model element from an external source. This method is intended to be overridden in derived classes to implement specific data loading logic. The base implementation throws a NotImplementedException, indicating that derived classes must provide their own implementation.
+  /// </summary>
+  /// <exception cref="NotImplementedException"></exception>
+  public virtual void LoadData()
+  {
+    throw new NotImplementedException("LoadData() must be implemented in derived classes.");
+  }
+
+  /// <summary>
+  /// Updates the current model element's data in an external source. This method is intended to be overridden in derived classes to implement specific data updating logic. The base implementation throws a NotImplementedException, indicating that derived classes must provide their own implementation.
+  /// </summary>
+  /// <exception cref="NotImplementedException"></exception>
+  public virtual void UpdateData()
+  {
+    throw new NotImplementedException("UpdateData() must be implemented in derived classes.");
+  }
+
+  /// <summary>
   /// Populates the current model element's properties with values from the specified Open XML element.
   /// </summary>
   /// <remarks>This method maps properties from the provided Open XML element to the corresponding properties of
@@ -537,7 +563,8 @@ public abstract partial class ModelElement: INotifyPropertyChanged, IEquatable<M
             if (prop.GetIndexParameters().Length == 0)
               if (prop.GetValue(this) is IModifiable modifiableChild)
                 modifiableChild.SetIsModified(IsModified);
-          } catch (Exception ex)
+          }
+          catch (Exception ex)
           {
             Debug.WriteLine(
               $"Error setting IsModified for property '{prop.Name}' of type '{this.GetType().Name}': {ex.Message}");

@@ -5,6 +5,14 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [OpenXmlType(typeof(ListEntryFormField))]
 [XmlRoot("ListEntryFormFields", Namespace = "DocumentModel.Wordprocessing")]
-public class ListEntryFormFields : ElementCollection<ListEntryFormField>
+public class ListEntryFormFields : ModelElementCollection<ListEntryFormField, DX.OpenXmlCompositeElement, DXW.ListEntryFormField>
 {
+  /// <summary>
+  /// Initializes a new instance of the ListEntryFormFields collection with default settings.
+  /// </summary>
+  /// <param name="parent"></param>
+  /// <param name="openXmlElement"></param>
+  public ListEntryFormFields(ModelElement parent, DX.OpenXmlCompositeElement? openXmlElement) : base(parent, openXmlElement)
+  {
+  }
 }

@@ -24,6 +24,7 @@ public partial class DropDownListFormField : ModelElement<DXW.DropDownListFormFi
  /// <summary>
  /// Collection of list entry form fields representing the available options in the drop-down list.
  /// </summary>
- public ListEntryFormFields? ListEntryFormFields { get => _ListEntryFormFields; set => UpdateField(ref _ListEntryFormFields, value, nameof(ListEntryFormFields)); }
+ public ListEntryFormFields ListEntryFormFields
+ { get => _ListEntryFormFields ??= new ListEntryFormFields(this, _openXmlElement); }
  private ListEntryFormFields? _ListEntryFormFields;
 }

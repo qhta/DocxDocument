@@ -4878,20 +4878,11 @@
             <remarks>The returned WordprocessingDocument provides access to the contents and structure of the Open XML
             Word document. The value may be null if no document is currently loaded or associated.</remarks>
         </member>
-        <member name="M:DocumentModel.OpenXml.IWordprocessingDocumentAware.AttachAndLoad(DocumentFormat.OpenXml.Packaging.WordprocessingDocument)">
+        <member name="M:DocumentModel.OpenXml.IWordprocessingDocumentAware.Attach(DocumentFormat.OpenXml.Packaging.WordprocessingDocument)">
             <summary>
-            Attaches to the specified WordprocessingDocument and loads its content for further processing.
+            Attaches the specified WordprocessingDocument to the current context without loading its content.
             </summary>
-            <remarks>After calling this method, the instance is associated with the provided WordprocessingDocument.
-            Any previously attached document will be detached. This method does not take ownership of the document; the caller
-            remains responsible for disposing of it when no longer needed.</remarks>
-            <param name="wordprocessingDocument">The WordprocessingDocument instance to attach and load. Cannot be null.</param>
-        </member>
-        <member name="M:DocumentModel.OpenXml.IWordprocessingDocumentAware.AttachAndUpdate(DocumentFormat.OpenXml.Packaging.WordprocessingDocument)">
-            <summary>
-            Attaches the specified WordprocessingDocument to the current context and updates its state to reflect any changes.
-            </summary>
-            <param name="wordprocessingDocument">The WordprocessingDocument instance to attach and update. Cannot be null.</param>
+            <param name="wordprocessingDocument"></param>
         </member>
         <member name="M:DocumentModel.OpenXml.IWordprocessingDocumentAware.Detach">
             <summary>
@@ -7006,6 +6997,20 @@
             Initializes the conversion maps for <see cref="T:DocumentModel.OpenXml.Int32Converter"/>.
             </summary>
         </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertFromInt16Value(DocumentFormat.OpenXml.Int16Value)">
+            <summary>
+            Converts an OpenXml Int16Value to Twips.
+            </summary>
+            <param name="Int16Value">The Int16Value to convert.</param>
+            <returns>The Twips value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertToInt16Value(DocumentModel.Twips)">
+            <summary>
+            Creates an OpenXml Int16Value from an Twips value.
+            </summary>
+            <param name="value">The Twips value to convert.</param>
+            <returns>A new Int16Value, or null if the input is null.</returns>
+        </member>
         <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertFromInt32Value(DocumentFormat.OpenXml.Int32Value)">
             <summary>
             Converts an OpenXml Int32Value to Twips.
@@ -7047,6 +7052,20 @@
             </summary>
             <param name="value">The Twips value to convert.</param>
             <returns>A new IntegerValue, or null if the input is null.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertFromUInt16Value(DocumentFormat.OpenXml.UInt16Value)">
+            <summary>
+            Converts an OpenXml UInt16Value to Twips.
+            </summary>
+            <param name="UInt16Value">The UInt16Value to convert.</param>
+            <returns>The Twips value, or null if the element has no content.</returns>
+        </member>
+        <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertToUInt16Value(DocumentModel.Twips)">
+            <summary>
+            Creates an OpenXml UInt16Value from an Twips value.
+            </summary>
+            <param name="value">The Twips value to convert.</param>
+            <returns>A new UInt16Value, or null if the input is null.</returns>
         </member>
         <member name="M:DocumentModel.OpenXml.TwipsConverter.ConvertFromUInt32Value(DocumentFormat.OpenXml.UInt32Value)">
             <summary>
