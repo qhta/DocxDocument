@@ -123,6 +123,13 @@
         document.DocumentSettings = testData;
       }
 
+      using (var wordDoc = DXPP.WordprocessingDocument.Open(TestFileName, false))
+      {
+        var outerXml = wordDoc.MainDocumentPart?.DocumentSettingsPart?.Settings?.OuterXml;
+        outerXml = outerXml?.FormatXmlWithLineNumbers();
+        Console.WriteLine("✓ DocumentSettings Test: document settings stored in document:\n" + outerXml);
+      }
+
       DocumentSettings? storedData;
       using (var document = new Document(TestFileName))
       {

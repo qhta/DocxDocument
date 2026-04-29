@@ -77,7 +77,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     CoreProperties.AttachAndLoad(wordprocessingDocument);
     ContentProperties.AttachAndLoad(wordprocessingDocument);
     StatisticProperties.AttachAndLoad(wordprocessingDocument);
-    CustomProperties?.AttachAndLoad(wordprocessingDocument);
+    //CustomProperties?.AttachAndLoad(wordprocessingDocument);
     _IsNotificationEnabled = null;
   }
 
@@ -91,7 +91,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     CoreProperties.AttachAndUpdate(wordprocessingDocument);
     ContentProperties.AttachAndUpdate(wordprocessingDocument);
     StatisticProperties.AttachAndUpdate(wordprocessingDocument);
-    CustomProperties?.AttachAndUpdate(wordprocessingDocument);
+    //CustomProperties?.AttachAndUpdate(wordprocessingDocument);
   }
 
   /// <summary>
@@ -275,7 +275,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   public CustomProperties CustomProperties
   {
     get => _CustomProperties ??= new CustomProperties(this);
-    set => UpdateField(ref _CustomProperties, value, nameof(CustomProperties));
+    set => CustomProperties.CopyFrom(value);
   }
   private CustomProperties? _CustomProperties;
 
@@ -285,13 +285,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   public DocumentSettings DocumentSettings
   {
     get => _DocumentSettings ??= new DocumentSettings(this);
-    set
-    {
-      if (!Equals(DocumentSettings, value))
-      {
-        DocumentSettings.CopyFrom(value);
-      }
-    }
+    set => DocumentSettings.CopyFrom(value);
   }
 
   private DocumentSettings? _DocumentSettings;

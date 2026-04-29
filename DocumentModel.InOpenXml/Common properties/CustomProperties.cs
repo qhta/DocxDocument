@@ -4,6 +4,7 @@
 /// </summary>
 [XmlRoot("CustomProperties")]
 [OpenXmlType(typeof(DXCP.Properties))]
+[DirectAccess]
 public sealed partial class CustomProperties : ModelElementCollection<CustomProperty, DXCP.Properties>
 {
   /// <summary>
