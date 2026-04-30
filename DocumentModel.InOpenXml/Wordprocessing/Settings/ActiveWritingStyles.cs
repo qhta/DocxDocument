@@ -9,7 +9,7 @@ public class ActiveWritingStyles : ModelElementCollection<ActiveWritingStyle, DX
   /// <summary>
   /// Default constructor. Initializes an empty collection of active writing styles.
   /// </summary>
-  public ActiveWritingStyles() : base()
+  public ActiveWritingStyles(): base()
   {
   }
 
@@ -18,15 +18,15 @@ public class ActiveWritingStyles : ModelElementCollection<ActiveWritingStyle, DX
   /// </summary>
   /// <param name = "parent">The parent document settings element.</param>
   /// <param name = "openXmlCollection">The underlying OpenXml collection element.</param>
-  public ActiveWritingStyles(DocumentSettings parent, DXW.Settings? openXmlCollection): base(parent, openXmlCollection)
- {
- }
+  public ActiveWritingStyles(DocumentSettings parent, DXW.Settings? openXmlCollection) : base(parent, openXmlCollection)
+  {
+  }
 
- /// <summary>
- /// Initializes the collection with the specified styles.
- /// </summary>
- /// <param name = "styles">Initial collection of active writing styles.</param>
- public ActiveWritingStyles(IEnumerable<ActiveWritingStyle> styles) : base(styles)
- {
- }
+  /// <summary>
+  /// Initializes the collection with the specified styles.
+  /// </summary>
+  /// <param name = "styles">Initial collection of active writing styles.</param>
+  public ActiveWritingStyles(IEnumerable<ActiveWritingStyle> styles) : base(styles)
+  {
+  }
 }

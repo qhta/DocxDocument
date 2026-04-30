@@ -964,16 +964,20 @@
             document format.</remarks>
             <returns>true if the document settings are stored and reloaded correctly; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestPerformance">
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestUpdateInDocument">
             <summary>
-            Measures and reports the performance of <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> update.
+            Tests updating and persisting document settings within a document file.
             </summary>
-            <returns>True if performance tests complete without error; otherwise, false.</returns>
+            <remarks>This method creates a sample document with specific settings, saves it, modifies the original
+            settings, and then reloads the document to verify that the stored settings remain unchanged. It outputs
+            diagnostic information to the console for verification purposes.</remarks>
+            <returns>true if the document settings are correctly stored and reloaded from the document; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.UpdateMethodForPerformanceTest">
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestValidateOpenXml">
             <summary>
-            Single-step update method for performance testing.
+            Tests that the XML generated for document settings stored in a document conforms to the OpenXml schema.
             </summary>
+            <returns></returns>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.CreateSampleDocumentSettings(System.Boolean)">
             <summary>

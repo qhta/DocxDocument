@@ -1,18 +1,17 @@
 ﻿namespace DocumentModel;
+
 /// <summary>
 /// Custom properties enable users to define custom metadata properties through a set of well-defined data types.
 /// </summary>
 [XmlRoot("CustomProperties")]
 [OpenXmlType(typeof(DXCP.Properties))]
 [DirectAccess]
-public sealed partial class CustomProperties : ModelElementCollection<CustomProperty, DXCP.Properties>
+public sealed partial class CustomProperties: ModelElementCollection<CustomProperty, DXCP.Properties>
 {
   /// <summary>
   /// Default constructor.
   /// </summary>
-  public CustomProperties()
-  {
-  }
+  public CustomProperties() { }
 
   /// <summary>
   /// Initializing constructor.
@@ -21,41 +20,45 @@ public sealed partial class CustomProperties : ModelElementCollection<CustomProp
   public CustomProperties(Wordprocessing.Document document): base(document)
   {
     if (document.WordprocessingDocument != null)
-       AttachAndLoad(document.WordprocessingDocument);
+      AttachAndLoad(document.WordprocessingDocument);
   }
+
   /// <summary>
   /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
   /// </summary>
   /// <param name="wordprocessingDocument">Document to attach to.</param>
   public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
-  //Debug.WriteLine($"Attaching CustomProperties to WordprocessingDocument: {wordprocessingDocument}");
+    //Debug.WriteLine($"Attaching CustomProperties to WordprocessingDocument: {wordprocessingDocument}");
     base.AttachAndLoad(wordprocessingDocument);
     var customFileProperties = wordprocessingDocument.GetCustomFileProperties();
     SetUpdatableElement(customFileProperties);
     LoadData(customFileProperties);
   }
+
   /// <summary>
   /// Attach this instance to the specified wordprocessingDocument. Data is stored to the wordprocessingDocument's PackageProperties.
   /// </summary>
   /// <param name="wordprocessingDocument">Document to attach to.</param>
   public override void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
   {
-  //Debug.WriteLine($"Attaching CustomProperties to WordprocessingDocument for update: {wordprocessingDocument}");
+    //Debug.WriteLine($"Attaching CustomProperties to WordprocessingDocument for update: {wordprocessingDocument}");
     WordprocessingDocument = wordprocessingDocument;
     var customFileProperties = wordprocessingDocument.GetCustomFileProperties();
     SetUpdatableElement(customFileProperties);
     UpdateData(customFileProperties);
   }
+
   /// <summary>
   /// Loads data from customFileProperties to this instance.
   /// </summary>
   protected override void LoadDataCollection(DXCP.Properties customFileProperties)
-  { 
+  {
     IsLoading = true;
     _IsNotificationEnabled = false;
     Clear();
-    foreach (var openXmlCustomDocumentProperty in customFileProperties!.ChildElements.Cast<DXCP.CustomDocumentProperty>())
+    foreach (var openXmlCustomDocumentProperty in
+             customFileProperties!.ChildElements.Cast<DXCP.CustomDocumentProperty>())
     {
       var customDocumentProperty = new CustomProperty(this, openXmlCustomDocumentProperty);
       Add(customDocumentProperty);
@@ -75,6 +78,7 @@ public sealed partial class CustomProperties : ModelElementCollection<CustomProp
       customFileProperties.AppendChild(customDocumentProperty.CreateOpenCustomDocumentProperty());
     }
   }
+
   /// <summary>
   /// Automatically assigns PropertyId if not set, then adds the item to the collection.
   /// First PropertyId is 2, then increments from the highest existing PropertyId.

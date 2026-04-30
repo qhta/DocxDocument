@@ -1,5 +1,7 @@
 using DocumentModel.BaseConverters;
 
+using InvalidOperationException = Qhta.TestHelper.InvalidOperationException;
+
 #pragma warning disable CS0659
 namespace DocumentModel;
 
@@ -158,20 +160,40 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   }
 
   /// <summary>
-  /// Gets the first element of the specified OpenXmlType from OpenXmlCompositeElement and convert it to ModelType.
+  /// Gets the first element of the specified OpenXmlType from OpenXmlCompositeElement and converts it to ModelType.
   /// </summary>
   /// <typeparam name="ModelType">Type of the output model value</typeparam>
   /// <typeparam name="OpenXmlType">Type of the OpenXml element to find.</typeparam>
-  /// <param name="openXmlElement">Composite element to search for the specified OpenXmlType.</param>
+  /// <param name="openXmlParentElement">Composite element to search for the specified OpenXmlType.</param>
   /// <returns>The first element of the specified OpenXmlType converted to ModelType, or null if not found.</returns>
-  protected ModelType? GetElement<ModelType, OpenXmlType>(DX.OpenXmlCompositeElement? openXmlElement)
+  protected ModelType? GetElement<ModelType, OpenXmlType>(DX.OpenXmlCompositeElement? openXmlParentElement)
     where OpenXmlType : DX.OpenXmlElement
   {
-    if (openXmlElement == null)
+    if (openXmlParentElement == null)
       return default;
 
-    return OpenXmlModelConverter.ConvertFrom<ModelType, OpenXmlType>(openXmlElement.Elements<OpenXmlType>()
+    return OpenXmlModelConverter.ConvertFrom<ModelType, OpenXmlType>(openXmlParentElement.Elements<OpenXmlType>()
       .FirstOrDefault());
+  }
+  /// <summary>
+  /// Gets or creates the first element of the specified OpenXmlType from OpenXmlCompositeElement and converts it to ModelType.
+  /// </summary>
+  /// <typeparam name="ModelType">Type of the output model value</typeparam>
+  /// <typeparam name="OpenXmlType">Type of the OpenXml element to find.</typeparam>
+  /// <param name="openXmlParentElement">Composite element to search for the specified OpenXmlType.</param>
+  /// <returns>The element of the specified OpenXmlType converted to ModelType.</returns>
+  protected ModelType GetOrCreateElement<ModelType, OpenXmlType>(DX.OpenXmlCompositeElement? openXmlParentElement)
+    where ModelType: ModelElement<OpenXmlType>
+    where OpenXmlType : DX.OpenXmlElement
+  {
+    var openXmlType = openXmlParentElement?.Elements<OpenXmlType>().FirstOrDefault();
+    if (openXmlType == null) 
+    {
+      openXmlType = Activator.CreateInstance<OpenXmlType>();
+      openXmlParentElement?.AppendChild(openXmlType);
+    }
+    var modelElement = OpenXmlModelConverter.ConvertFrom<ModelType, OpenXmlType>(openXmlType)!;
+    return modelElement;
   }
 
   /// <summary>

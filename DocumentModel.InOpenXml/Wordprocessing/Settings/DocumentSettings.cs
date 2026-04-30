@@ -40,7 +40,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
     }
   }
 
-
   /// <summary>
   /// Copies data from the specified DocumentSettings instance to this instance.
   /// </summary>
@@ -89,7 +88,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:activeWritingStyle
   /// </remarks>
   [MultiCategory("Proofing")]
-  [XmlIgnore, OpenXmlElementCollection(typeof(DXW.ActiveWritingStyle))]
+  [OpenXmlElementCollection(typeof(DXW.ActiveWritingStyle))]
   public ActiveWritingStyles ActiveWritingStyles
   {
     get => _ActiveWritingStyles ??= new ActiveWritingStyles(this, _openXmlElement);
@@ -149,10 +148,10 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:attachedSchema
   /// </remarks>
   [MultiCategory("CustomXml")]
-  [XmlIgnore, OpenXmlElementCollection(typeof(DXW.AttachedSchema))]
+  [OpenXmlElementCollection(typeof(DXW.AttachedSchema))]
   public AttachedSchemas? AttachedSchemas
   {
-    get => _AttachedSchemas;
+    get => _AttachedSchemas ??= new AttachedSchemas(this, _openXmlElement);
     set => UpdateField(ref _AttachedSchemas, value, nameof(AttachedSchemas));
   }
   private AttachedSchemas? _AttachedSchemas;
@@ -284,7 +283,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:captions
   /// </remarks>
   [MultiCategory("Captions")]
-  [XmlIgnore, OpenXmlElement(typeof(DXW.Captions))]
+  [OpenXmlElement(typeof(DXW.Captions))]
   public Captions? Captions
   {
     get => _Captions ??= GetElement<Captions?, DXW.Captions>(_openXmlElement);
@@ -351,21 +350,6 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
     set => UpdateField(ref _ColorSchemeMapping, value, nameof(ColorSchemeMapping));
   }
   private DMWD.ColorSchemeMapping? _ColorSchemeMapping;
-
-  /// <summary>
-  /// Specifies a set of optional compatibility options for the document.
-  /// </summary>
-  /// <remarks>
-  /// Represents the following element tag in the schema: w:compat
-  /// </remarks>
-  [MultiCategory("Conformance")]
-  [XmlIgnore, OpenXmlElement(typeof(DXW.Compatibility))]
-  public CompatibilitySettings? Compatibility
-  {
-    get => _Compatibility ??= GetElement<CompatibilitySettings?, DXW.Compatibility>(_openXmlElement);
-    set => UpdateField(ref _Compatibility, value, nameof(Compatibility));
-  }
-  private CompatibilitySettings? _Compatibility;
 
   /// <summary>
   /// Specifies that the user was resolving conflicting edits when the document was saved.
@@ -1530,4 +1514,38 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
     set => UpdateField(ref _MathProperties, value, nameof(MathProperties));
   }
   private DMM.MathProperties? _MathProperties;
+
+  /// <summary>
+  /// Specifies a set of optional compatibility options for the document.
+  /// </summary>
+  /// <remarks>
+  /// Represents the following element tag in the schema: w:compat
+  /// </remarks>
+  [MultiCategory("Conformance")]
+  [OpenXmlElement(typeof(DXW.Compatibility))]
+  public CompatibilitySettings? Compatibility
+  {
+    get => _Compatibility ??= GetElement<CompatibilitySettings?, DXW.Compatibility>(_openXmlElement);
+    set => UpdateField(ref _Compatibility, value, nameof(Compatibility));
+  }
+  private CompatibilitySettings? _Compatibility;
+
+  /// <summary>
+  /// Adds a compatibility setting to the document settings. If the compatibility settings element does not exist, it will be created.
+  /// </summary>
+  /// <param name="compatibilitySetting">The compatibility setting to add.</param>
+  public void Add(DMW.CompatibilitySetting compatibilitySetting)
+  {
+    _Compatibility = Compatibility;
+    if (_Compatibility == null)
+    {
+      var openXmlCompatibility = new DXW.Compatibility();
+      if (_openXmlElement != null)
+      {
+        _openXmlElement.AppendChild(openXmlCompatibility);
+      }
+      _Compatibility ??= new CompatibilitySettings(this, openXmlCompatibility);
+    }
+    _Compatibility.OtherSettings.Add(compatibilitySetting);
+  }
 }

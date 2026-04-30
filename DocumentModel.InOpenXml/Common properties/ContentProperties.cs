@@ -40,13 +40,13 @@ public sealed partial class ContentProperties : ModelElement<DXEP.Properties>
   /// <summary>
   /// Copies data from the specified ContentProperties instance to this instance.
   /// </summary>
-  /// <param name = "settings">ContentProperties instance containing the model property value.</param>
-  public void CopyFrom(ContentProperties settings)
+  /// <param name = "properties">ContentProperties instance containing the model property value.</param>
+  public void CopyFrom(ContentProperties properties)
   {
-    var modelType = settings.GetType();
+    var modelType = properties.GetType();
     foreach (var modelProperty in modelType.GetModelProperties())
     {
-      var value = modelProperty.GetValue(settings);
+      var value = modelProperty.GetValue(properties);
       modelProperty.SetValue(this, value);
     }
 

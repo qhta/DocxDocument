@@ -75,9 +75,6 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     WordprocessingDocument = wordprocessingDocument;
     wordprocessingDocument.GetPackageProperties();
     CoreProperties.AttachAndLoad(wordprocessingDocument);
-    //ContentProperties.AttachAndLoad(wordprocessingDocument);
-    //StatisticProperties.AttachAndLoad(wordprocessingDocument);
-    //CustomProperties?.AttachAndLoad(wordprocessingDocument);
     _IsNotificationEnabled = null;
   }
 
@@ -89,9 +86,6 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   {
     WordprocessingDocument = wordprocessingDocument;
     CoreProperties.AttachAndUpdate(wordprocessingDocument);
-    //ContentProperties.AttachAndUpdate(wordprocessingDocument);
-    //StatisticProperties.AttachAndUpdate(wordprocessingDocument);
-    //CustomProperties?.AttachAndUpdate(wordprocessingDocument);
   }
 
   /// <summary>
@@ -102,11 +96,11 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   public void Detach()
   {
     WordprocessingDocument = null;
-    CoreProperties.Detach();
-    ContentProperties.Detach();
-    StatisticProperties.Detach();
-    CustomProperties?.Detach();
-    DocumentSettings?.Detach();
+    _CoreProperties?.Detach();
+    _ContentProperties?.Detach();
+    _StatisticProperties?.Detach();
+    _CustomProperties?.Detach();
+    _DocumentSettings?.Detach();
   }
 
   /// <summary>
@@ -271,14 +265,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   [NotMapped]
   public StatisticProperties StatisticProperties
   {
-    get
-    {
-      if (_StatisticProperties == null)
-        _StatisticProperties = new StatisticProperties(this);
-      return _StatisticProperties!;
-    }
-
-    set => UpdateField(ref _StatisticProperties!, value, nameof(StatisticProperties));
+    get => _StatisticProperties ??= new StatisticProperties(this);
+    set => StatisticProperties.CopyFrom(value);
   }
   private StatisticProperties? _StatisticProperties;
 
