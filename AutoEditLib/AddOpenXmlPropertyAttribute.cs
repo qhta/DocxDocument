@@ -117,12 +117,6 @@ public class AddOpenXmlPropertyAttributeRewriter(BiDiDictionary<string, string> 
         continue;
       }
 
-      var leadingTrivia = prop.GetLeadingTrivia();
-      var docTrivia = leadingTrivia.Where(predicate: t =>
-        t.IsKind(kind: SyntaxKind.SingleLineDocumentationCommentTrivia) ||
-        t.IsKind(kind: SyntaxKind.MultiLineDocumentationCommentTrivia)).ToList();
-      var otherTrivia = leadingTrivia.Except(second: docTrivia).ToList();
-
       if (!PropertyExistsInOpenXmlType(openXmlType!, prop.Identifier.Text))
       {
         newMembers.Add(prop);
@@ -135,11 +129,8 @@ public class AddOpenXmlPropertyAttributeRewriter(BiDiDictionary<string, string> 
           node: SyntaxFactory.AttributeArgument(
             expression: SyntaxFactory.ParseExpression(text: $"nameof({openXmlTypeName}.{prop.Identifier.Text})")))));
 
-      var attrList = SyntaxFactory.AttributeList(attributes: SyntaxFactory.SingletonSeparatedList(node: attr))
-        .WithLeadingTrivia(trivia: SyntaxFactory.TriviaList(trivias: docTrivia));
-      var newProp = prop.WithLeadingTrivia(trivia: SyntaxFactory.TriviaList(trivias: otherTrivia))
-        .WithAttributeLists(attributeLists: prop.AttributeLists.Add(node: attrList))
-        .WithTrailingTrivia(trivia: prop.GetTrailingTrivia());
+      var attrList = SyntaxFactory.AttributeList(attributes: SyntaxFactory.SingletonSeparatedList(node: attr));
+      var newProp = prop.WithAttributeLists(attributeLists: prop.AttributeLists.Add(node: attrList));
 
       Changed = true;
       newMembers.Add(newProp);

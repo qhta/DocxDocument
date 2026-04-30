@@ -75,8 +75,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     WordprocessingDocument = wordprocessingDocument;
     wordprocessingDocument.GetPackageProperties();
     CoreProperties.AttachAndLoad(wordprocessingDocument);
-    ContentProperties.AttachAndLoad(wordprocessingDocument);
-    StatisticProperties.AttachAndLoad(wordprocessingDocument);
+    //ContentProperties.AttachAndLoad(wordprocessingDocument);
+    //StatisticProperties.AttachAndLoad(wordprocessingDocument);
     //CustomProperties?.AttachAndLoad(wordprocessingDocument);
     _IsNotificationEnabled = null;
   }
@@ -89,8 +89,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   {
     WordprocessingDocument = wordprocessingDocument;
     CoreProperties.AttachAndUpdate(wordprocessingDocument);
-    ContentProperties.AttachAndUpdate(wordprocessingDocument);
-    StatisticProperties.AttachAndUpdate(wordprocessingDocument);
+    //ContentProperties.AttachAndUpdate(wordprocessingDocument);
+    //StatisticProperties.AttachAndUpdate(wordprocessingDocument);
     //CustomProperties?.AttachAndUpdate(wordprocessingDocument);
   }
 
@@ -260,14 +260,8 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   [NotMapped]
   public ContentProperties ContentProperties
   {
-    get
-    {
-      if (_ContentProperties == null)
-        _ContentProperties = new ContentProperties(this);
-      return _ContentProperties!;
-    }
-
-    set => UpdateField(ref _ContentProperties!, value, nameof(ContentProperties));
+    get => _ContentProperties ??= new ContentProperties(this);
+    set => ContentProperties.CopyFrom(value);
   }
   private ContentProperties? _ContentProperties;
 
@@ -306,24 +300,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
     get => _DocumentSettings ??= new DocumentSettings(this);
     set => DocumentSettings.CopyFrom(value);
   }
-
   private DocumentSettings? _DocumentSettings;
-  ///// <summary>
-  /////   Document-level settings, including compatibility, protection, and view options.
-  ///// </summary>
-  //public CompatibilitySettings? CompatibilitySettings
-  //{
-  //  get
-  //  {
-  //    if (_DocumentSettings == null)
-  //      _DocumentSettings = new DocumentSettings(this);
-  //    if (CompatibilitySettings == null)
-  //      CompatibilitySettings = new CompatibilitySettings(this);
-  //    return _CompatibilitySettings;
-  //  }
-  //  set => UpdateField(ref _CompatibilitySettings, value, nameof(CompatibilitySettings));
-  //}
-  //private CompatibilitySettings? _CompatibilitySettings;
 
   /// <summary>
   /// Collection of all known document properties.

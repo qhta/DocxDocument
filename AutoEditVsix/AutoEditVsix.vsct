@@ -159,6 +159,9 @@
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddXmlRootAttribute" priority="0x0100">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsFolderNode" />
     </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddXmlRootAttribute" priority="0x0100">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCodeWin" />
+    </CommandPlacement>
 
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlTypeAttribute" priority="0x0110">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
@@ -171,6 +174,9 @@
     </CommandPlacement>
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlTypeAttribute" priority="0x0110">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsFolderNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlTypeAttribute" priority="0x0110">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCodeWin" />
     </CommandPlacement>
 
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlPropertyAttribute" priority="0x0120">
@@ -201,6 +207,9 @@
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlElementAttribute" priority="0x0130">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsFolderNode" />
     </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlElementAttribute" priority="0x0130">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCodeWin" />
+    </CommandPlacement>
     
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlEnumTypeAttribute" priority="0x0140">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
@@ -213,6 +222,9 @@
     </CommandPlacement>
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlEnumTypeAttribute" priority="0x0140">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsFolderNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddOpenXmlEnumTypeAttribute" priority="0x0140">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCodeWin" />
     </CommandPlacement>
     
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddPartialToClass" priority="0x0150">
@@ -227,6 +239,9 @@
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddPartialToClass" priority="0x0150">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsFolderNode" />
     </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddPartialToClass" priority="0x0150">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCodeWin" />
+    </CommandPlacement>
     
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddPrivateFieldsWithUpdate" priority="0x0160">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
@@ -240,6 +255,9 @@
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddPrivateFieldsWithUpdate" priority="0x0160">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsFolderNode" />
     </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidAddPrivateFieldsWithUpdate" priority="0x0160">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCodeWin" />
+    </CommandPlacement>
     
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidGenerateShouldSerializeFunctions" priority="0x0170">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
@@ -253,6 +271,9 @@
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidGenerateShouldSerializeFunctions" priority="0x0170">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsFolderNode" />
     </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidGenerateShouldSerializeFunctions" priority="0x0170">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCodeWin" />
+    </CommandPlacement>
     
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidRemoveDuplicateDocComments" priority="0x0180">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupItemNode" />
@@ -265,6 +286,9 @@
     </CommandPlacement>
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidRemoveDuplicateDocComments" priority="0x0180">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsFolderNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidRemoveDuplicateDocComments" priority="0x0180">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCodeWin" />
     </CommandPlacement>
 
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidFixBackingFieldSpacing" priority="0x0190">
@@ -278,6 +302,9 @@
     </CommandPlacement>
     <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidFixBackingFieldSpacing" priority="0x0190">
       <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCpsFolderNode" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidAutoEditCmdSet" id="cmdidFixBackingFieldSpacing" priority="0x0190">
+      <Parent guid="guidAutoEditCmdSet" id="AutoEditSubMenuGroupCodeWin" />
     </CommandPlacement>
 
 
