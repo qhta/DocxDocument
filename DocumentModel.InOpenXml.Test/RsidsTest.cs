@@ -5,6 +5,8 @@
 /// </summary>
 public class RsidsTest: _AbstractTestClass
 {
+  private static readonly string TestFileName = Path.Combine(TestFileDir, "BaseParagraphPropertiesTest.docx");
+
   /// <summary>
   /// Runs all Rsids serialization tests.
   /// </summary>

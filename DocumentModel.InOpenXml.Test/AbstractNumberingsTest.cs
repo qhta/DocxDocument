@@ -7,6 +7,9 @@ namespace DocumentModel.InOpenXml.Test
   /// </summary>
   public class AbstractNumberingsTest: _AbstractTestClass
   {
+
+    private static readonly string TestFileName = Path.Combine(TestFileDir, "AbstractNumberingsTest.docx");
+
     /// <summary>
     /// Runs all tests and reports the results.
     /// </summary>

@@ -200,15 +200,34 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   }
 
   /// <summary>
+  /// Closes a document and detached WordprocessingDocument. Disposes the underlying Open XML document and detaches all property objects.
+  /// </summary>
+  public void Close()
+  {
+    if (WordprocessingDocument != null)
+    {
+      var customPropertiesPart = WordprocessingDocument.CustomFilePropertiesPart;
+      if (customPropertiesPart != null)
+      {
+        var customProperties = customPropertiesPart.Properties;
+        if (customProperties != null && !customProperties.HasChildren)
+        {
+          WordprocessingDocument.DeletePart(customPropertiesPart);
+        }
+      }
+      WordprocessingDocument.Dispose();
+    }
+    Detach();
+    NotifyPropertyChanged(nameof(WordprocessingDocument));
+  }
+
+  /// <summary>
   ///   Releases resources used by the document and notifies property change.
   ///   Disposes the underlying Open XML document and detaches all property objects.
   /// </summary>
   public void Dispose()
   {
-    if (WordprocessingDocument != null)
-      WordprocessingDocument.Dispose();
-    Detach();
-    NotifyPropertyChanged(nameof(WordprocessingDocument));
+    Close();
   }
 
   /// <summary>

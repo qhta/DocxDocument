@@ -1887,11 +1887,6 @@
             Base class for all test classes, providing common functionality and constants.
             </summary>
         </member>
-        <member name="F:DocumentModel.InOpenXml.Test._AbstractTestClass.TestFileName">
-            <summary>
-            Common file name used for testing purposes. This file is created and deleted during tests, so it should not exist before the tests are run.
-            </summary>
-        </member>
         <member name="F:DocumentModel.InOpenXml.Test._AbstractTestClass.TestFileDir">
             <summary>
             Common directory path used for testing purposes. This should be set to a valid directory on the test machine where sample files can be stored and accessed during tests.
@@ -1952,7 +1947,7 @@
             <param name="json">The JSON string to deserialize. Must represent a valid JSON object compatible with the specified type.</param>
             <returns>An instance of the specified type deserialized from the JSON string, or null if the input is null or empty.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.CorePropertiesPartXml">
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.CorePropertiesPartXml(System.String)">
             <summary>
             Retrieves the formatted XML content of the core properties part from a WordprocessingML document.
             </summary>
@@ -1962,7 +1957,7 @@
             <returns>A string containing the formatted XML with line numbers from the core properties part if it exists; otherwise,
             null.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.ExtendedFileProperties">
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.ExtendedFileProperties(System.String)">
             <summary>
             Retrieves the formatted XML content of the content properties part from a WordprocessingML document.
             </summary>

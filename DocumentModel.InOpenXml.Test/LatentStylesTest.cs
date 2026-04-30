@@ -5,6 +5,8 @@
 /// </summary>
 public class LatentStylesTest: _AbstractTestClass
 {
+  private static readonly string TestFileName = Path.Combine(TestFileDir, "LatentStylesTest.docx");
+
   /// <summary>
   /// Runs all Styles serialization tests.
   /// </summary>

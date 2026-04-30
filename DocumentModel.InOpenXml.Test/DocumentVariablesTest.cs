@@ -5,6 +5,8 @@
 	/// </summary>
 	public class DocumentVariablesTest: _AbstractTestClass
 	{
+    private static readonly string TestFileName = Path.Combine(TestFileDir, "DocumentVariablesTest.docx");
+
     /// <summary>
     /// Runs all DocumentVariables serialization tests.
     /// </summary>

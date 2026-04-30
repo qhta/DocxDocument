@@ -7,6 +7,7 @@ namespace DocumentModel.InOpenXml.Test;
 /// </summary>
 public class ContentPropertiesTest: _AbstractTestClass
 {
+  private static readonly string TestFileName = Path.Combine(TestFileDir, "ContentPropertiesTest.docx");
 
   /// <summary>
   /// Runs all serialization tests for <see cref="ContentProperties"/>.
@@ -161,7 +162,7 @@ public class ContentPropertiesTest: _AbstractTestClass
         document.ContentProperties = testData;
       }
 
-      Console.WriteLine("✓ ContentPropertiesTest: ExtendedFileProperties stored in document:\n" + ExtendedFileProperties());
+      Console.WriteLine("✓ ContentPropertiesTest: ExtendedFileProperties stored in document:\n" + ExtendedFileProperties(TestFileName));
 
       ContentProperties storedData;
       using (var document = new Document(TestFileName))
@@ -202,7 +203,7 @@ public class ContentPropertiesTest: _AbstractTestClass
         testData.Application = "Updated Application";
       }
 
-      Console.WriteLine("✓ ContentPropertiesTest: ExtendedFileProperties stored in document:\n" + ExtendedFileProperties());
+      Console.WriteLine("✓ ContentPropertiesTest: ExtendedFileProperties stored in document:\n" + ExtendedFileProperties(TestFileName));
 
       ContentProperties storedData;
       using (var document = new Document(TestFileName))
@@ -248,7 +249,7 @@ public class ContentPropertiesTest: _AbstractTestClass
         }
       }
 
-      Console.WriteLine("✓ ContentPropertiesTest: ExtendedFileProperties stored in document:\n" + ExtendedFileProperties());
+      Console.WriteLine("✓ ContentPropertiesTest: ExtendedFileProperties stored in document:\n" + ExtendedFileProperties(TestFileName));
 
       Console.WriteLine("✓ ContentPropertiesTest Store sample content properties test passed\n");
       return true;

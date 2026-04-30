@@ -8,10 +8,6 @@ namespace DocumentModel.InOpenXml.Test;
 public class _AbstractTestClass
 {
   /// <summary>
-  /// Common file name used for testing purposes. This file is created and deleted during tests, so it should not exist before the tests are run.
-  /// </summary>
-  protected const string TestFileName = @"d:\OneDrive\VS\Projects\DocxDocument\Samples\temp.docx";
-  /// <summary>
   /// Common directory path used for testing purposes. This should be set to a valid directory on the test machine where sample files can be stored and accessed during tests.
   /// </summary>
   protected const string TestFileDir = @"d:\OneDrive\VS\Projects\DocxDocument\Samples\";
@@ -127,9 +123,9 @@ public class _AbstractTestClass
   /// properties part, the method returns null.</remarks>
   /// <returns>A string containing the formatted XML with line numbers from the core properties part if it exists; otherwise,
   /// null.</returns>
-  public static string? CorePropertiesPartXml()
+  public static string? CorePropertiesPartXml(string testFileName)
   {
-    using (var wordDoc = WordprocessingDocument.Open(TestFileName, false))
+    using (var wordDoc = WordprocessingDocument.Open(testFileName, false))
     {
       return GetPartXml(wordDoc.CoreFilePropertiesPart);
     }
@@ -143,9 +139,9 @@ public class _AbstractTestClass
   /// properties part, the method returns null.</remarks>
   /// <returns>A string containing the formatted XML with line numbers from the content properties part if it exists; otherwise,
   /// null.</returns>
-  public static string? ExtendedFileProperties()
+  public static string? ExtendedFileProperties(string testFileName)
   {
-    using (var wordDoc = WordprocessingDocument.Open(TestFileName, false))
+    using (var wordDoc = WordprocessingDocument.Open(testFileName, false))
     {
       return GetPartXml(wordDoc.ExtendedFilePropertiesPart);
     }

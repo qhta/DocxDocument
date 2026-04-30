@@ -5,6 +5,8 @@ namespace DocumentModel.InOpenXml.Test;
 /// </summary>
 public class StyleDocDefaultsParagraphPropertiesTest: _AbstractTestClass
 {
+  private static readonly string TestFileName = Path.Combine(TestFileDir, "StyleDocDefaultsParagraphPropertiesTest.docx");
+
   /// <summary>
   /// Paragraphs all Styles DocDefaults DefaultParagraphProperties tests.
   /// </summary>

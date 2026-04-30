@@ -1,20 +1,12 @@
-﻿using System;
-using System.IO;
-using System.Text;
-using System.Xml;
-using System.Xml.Serialization;
-using System.Text.Json;
-
-using DocumentModel;
-using DocumentModel.Wordprocessing;
-
-namespace DocumentModel.InOpenXml.Test;
+﻿namespace DocumentModel.InOpenXml.Test;
 
 /// <summary>
 /// Comprehensive test for DocumentModel.Fonts.
 /// </summary>
 public class FontTableTest: _AbstractTestClass
 {
+  private static readonly string TestFileName = Path.Combine(TestFileDir, "FontTableTest.docx");
+
   /// <summary>
   /// Runs all Fonts serialization tests.
   /// </summary>

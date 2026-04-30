@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-using DocumentFormat.OpenXml.Packaging;
+﻿using DocumentFormat.OpenXml.Packaging;
 
 using DocumentModel.Properties;
 
@@ -11,6 +9,7 @@ namespace DocumentModel.InOpenXml.Test;
 /// </summary>
 public class CustomPropertiesTest: _AbstractTestClass
 {
+  private static readonly string TestFileName = Path.Combine(TestFileDir, "CustomPropertiesTest.docx");
 
   /// <summary>
   /// Runs all CustomProperties serialization tests.

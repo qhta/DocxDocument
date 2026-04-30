@@ -5,6 +5,8 @@
 /// </summary>
 public class StyleDefsTest: _AbstractTestClass
 {
+  private static readonly string TestFileName = Path.Combine(TestFileDir, "StyleDefsTest.docx");
+
   /// <summary>
   /// Runs all Styles serialization tests.
   /// </summary>

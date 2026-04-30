@@ -7,6 +7,7 @@ namespace DocumentModel.InOpenXml.Test;
 /// </summary>
 public class CorePropertiesTest: _AbstractTestClass
 {
+  private static readonly string TestFileName = Path.Combine(TestFileDir, "CorePropertiesTest.docx");
 
   /// <summary>
   /// Runs all CoreProperties serialization tests and reports the results.
@@ -184,7 +185,7 @@ public class CorePropertiesTest: _AbstractTestClass
         document.CoreProperties = testData;
       }
 
-      Console.WriteLine("✓ CorePropertiesTest Test: CoreFileProperties stored in document:\n" + CorePropertiesPartXml());
+      Console.WriteLine("✓ CorePropertiesTest Test: CoreFileProperties stored in document:\n" + CorePropertiesPartXml(TestFileName));
 
       CoreProperties storedData;
       using (var document = new Document(TestFileName))
@@ -224,7 +225,7 @@ public class CorePropertiesTest: _AbstractTestClass
         document.CoreProperties.Title = "Updated Title";
       }
 
-      Console.WriteLine("✓ CorePropertiesTest Test: CoreFileProperties stored in document:\n" + CorePropertiesPartXml());
+      Console.WriteLine("✓ CorePropertiesTest Test: CoreFileProperties stored in document:\n" + CorePropertiesPartXml(TestFileName));
 
       CoreProperties storedData;
       using (var document = new Document(TestFileName))
@@ -277,7 +278,7 @@ public class CorePropertiesTest: _AbstractTestClass
       }
       testData.Title += " Updated";
 
-      Console.WriteLine("✓ BuiltInProperties Test: CoreFileProperties stored in document:\n" + CorePropertiesPartXml());
+      Console.WriteLine("✓ BuiltInProperties Test: CoreFileProperties stored in document:\n" + CorePropertiesPartXml(TestFileName));
 
       CoreProperties storedData;
       using (var document = new Document(TestFileName))

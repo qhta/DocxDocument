@@ -3,8 +3,10 @@
 /// <summary>
 /// Comprehensive test for DocumentModel.Numbering.
 /// </summary>
-public class NumberingInstancesTest: _AbstractTestClass
+public class NumberingInstancesTest : _AbstractTestClass
 {
+  private static readonly string TestFileName = Path.Combine(TestFileDir, "NumberingInstancesTest.docx");
+
   /// <summary>
   /// Runs all Numbering serialization tests.
   /// </summary>
@@ -271,7 +273,7 @@ public class NumberingInstancesTest: _AbstractTestClass
     {
 
       AbstractNumId = 1,
-      NumberID=1,
+      NumberID = 1,
       LevelOverrides = new NumberingLevelOverrides()
       {
         new NumberingLevelOverride()
@@ -295,13 +297,13 @@ public class NumberingInstancesTest: _AbstractTestClass
     NumberingInstances.Add(new NumberingInstance()
     {
       AbstractNumId = 2,
-      NumberID=2
+      NumberID = 2
     });
 
     NumberingInstances.Add(new NumberingInstance()
     {
       AbstractNumId = 3,
-      NumberID=3,
+      NumberID = 3,
     });
 
     return NumberingInstances;

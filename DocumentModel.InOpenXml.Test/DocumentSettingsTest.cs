@@ -5,6 +5,9 @@
   /// </summary>
   public class DocumentSettingsTest: _AbstractTestClass
   {
+
+    private static readonly string TestFileName = Path.Combine(TestFileDir, "DocumentSettingsTest.docx");
+
     /// <summary>
     /// Runs all serialization tests for the <see cref="DocumentSettings"/> class and reports the results to the console.
     /// </summary>

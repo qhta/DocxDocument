@@ -5,6 +5,9 @@
 /// </summary>
 public class StatisticPropertiesTest: _AbstractTestClass
 {
+  private static readonly string TestFileName = Path.Combine(TestFileDir, "StatisticPropertiesTest.docx");
+
+
   /// <summary>
   /// Runs all serialization tests for the <see cref="StatisticProperties"/> class and reports the results.
   /// </summary>
@@ -153,7 +156,7 @@ public class StatisticPropertiesTest: _AbstractTestClass
         document.StatisticProperties = testData;
       }
 
-      Console.WriteLine("✓ ContentPropertiesTest: ExtendedFileProperties stored in document:\n" + ExtendedFileProperties());
+      Console.WriteLine("✓ ContentPropertiesTest: ExtendedFileProperties stored in document:\n" + ExtendedFileProperties(TestFileName));
 
       StatisticProperties storedData;
       using (var document = new Document(TestFileName))
@@ -193,7 +196,7 @@ public class StatisticPropertiesTest: _AbstractTestClass
       testData.Pages = 1000000;
     }
 
-    Console.WriteLine("✓ ContentPropertiesTest: ExtendedFileProperties stored in document:\n" + ExtendedFileProperties());
+    Console.WriteLine("✓ ContentPropertiesTest: ExtendedFileProperties stored in document:\n" + ExtendedFileProperties(TestFileName));
 
     StatisticProperties storedData;
     using (var document = new Document(TestFileName))
@@ -239,7 +242,7 @@ public class StatisticPropertiesTest: _AbstractTestClass
         }
       }
 
-      Console.WriteLine("✓ StatisticPropertiesTest: ExtendedFileProperties stored in document:\n" + ExtendedFileProperties());
+      Console.WriteLine("✓ StatisticPropertiesTest: ExtendedFileProperties stored in document:\n" + ExtendedFileProperties(TestFileName));
 
       Console.WriteLine("✓ StatisticPropertiesTest Store sample content properties test passed\n");
       return true;
