@@ -1932,6 +1932,11 @@
             <returns>An instance of type DataType deserialized from the XML string, or null if the XML does not represent a valid
             object.</returns>
         </member>
+        <member name="F:DocumentModel.InOpenXml.Test._AbstractTestClass._jsonOptions">
+            <summary>
+            JSON options configured for indented formatting. This static field is used to ensure consistent JSON serialization and deserialization behavior across the test classes.
+            </summary>
+        </member>
         <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.SerializeToJson(System.Object)">
             <summary>
             Serializes the specified object to a JSON string using indented formatting.

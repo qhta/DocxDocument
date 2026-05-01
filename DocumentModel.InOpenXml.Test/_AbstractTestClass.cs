@@ -88,16 +88,21 @@ public class _AbstractTestClass
   }
 
   /// <summary>
+  /// JSON options configured for indented formatting. This static field is used to ensure consistent JSON serialization and deserialization behavior across the test classes.
+  /// </summary>
+  protected static readonly JsonSerializerOptions _jsonOptions = new JsonSerializerOptions { WriteIndented = true };
+
+  /// <summary>
   /// Serializes the specified object to a JSON string using indented formatting.
   /// </summary>
   /// <remarks>The resulting JSON string is formatted with indentation for readability. If the object contains
   /// properties that are not serializable, serialization may fail and throw an exception.</remarks>
   /// <param name="data">The object to serialize to JSON. Can be any serializable type.</param>
   /// <returns>A JSON-formatted string representation of the specified object.</returns>
+
   protected static string SerializeToJson(object data)
   {
-    var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-    return JsonSerializer.Serialize(data, jsonOptions);
+    return JsonSerializer.Serialize(data, _jsonOptions);
   }
 
   /// <summary>
