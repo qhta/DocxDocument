@@ -1,4 +1,5 @@
 namespace DocumentModel.Wordprocessing;
+
 /// <summary>
 ///   Specifies all document-level properties that affect the handling, behavior, and appearance of the current Wordprocessing document.
 ///   Provides access to settings for proofing, borders, custom XML, templates, protection, printing, captions, compatibility, styles, and more.
@@ -7,7 +8,7 @@ namespace DocumentModel.Wordprocessing;
 [OpenXmlType(typeof(DXW.Settings))]
 [XmlRoot("DocumentSettings", Namespace = "DocumentModel.Wordprocessing")]
 [DirectAccess]
-public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
+public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
 {
   /// <summary>
   /// Known properties that can be set in DocumentSettings.
@@ -21,9 +22,7 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   /// <summary>
   ///   Initializes a new instance of the <see cref = "DocumentSettings"/> class with default values.
   /// </summary>
-  public DocumentSettings()
-  {
-  }
+  public DocumentSettings() { }
 
   /// <summary>
   ///   Initializes a new instance of the <see cref = "DocumentSettings"/> class and attaches it to the specified Wordprocessing document model.
@@ -32,53 +31,18 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   public DocumentSettings(Wordprocessing.Document document)
   {
     if (document.WordprocessingDocument != null)
-    {
-      var wordprocessingDocument = document.WordprocessingDocument;
-      Attach(wordprocessingDocument);
-      var documentSettings = wordprocessingDocument.GetDocumentSettings();
-      SetUpdatableElement(documentSettings);
-    }
-  }
-
-  /// <summary>
-  /// Copies data from the specified DocumentSettings instance to this instance.
-  /// </summary>
-  /// <param name = "settings">DocumentSettings instance containing the model property value.</param>
-  public void CopyFrom(DocumentSettings settings)
-  {
-    var modelType = settings.GetType();
-    foreach (var modelProperty in modelType.GetModelProperties())
-    {
-      var value = modelProperty.GetValue(settings);
-      modelProperty.SetValue(this, value);
-    }
-
-    var updatableElement = GetUpdatableElement();
-    if (updatableElement != null)
-      UpdateData(updatableElement);
+      Attach(document.WordprocessingDocument);
   }
 
   /// <summary>
   ///   Attaches this instance to the specified Wordprocessing document and loads data from the document's settings part.
   /// </summary>
   /// <param name = "wordprocessingDocument">The document to attach to.</param>
-  public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
+  public override void Attach(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     base.Attach(wordprocessingDocument);
     var documentSettings = wordprocessingDocument.GetDocumentSettings();
     SetUpdatableElement(documentSettings);
-    LoadData(documentSettings);
-  }
-  /// <summary>
-  ///   Attaches this instance to the specified Wordprocessing document and updates the document's settings part with current data.
-  /// </summary>
-  /// <param name = "wordprocessingDocument">The document to attach to.</param>
-  public override void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
-  {
-    base.AttachAndUpdate(wordprocessingDocument);
-    var documentSettings = wordprocessingDocument.GetDocumentSettings();
-    SetUpdatableElement(documentSettings);
-    UpdateData(documentSettings);
   }
 
   /// <summary>
@@ -676,7 +640,8 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   [OpenXmlElement(typeof(DXW.DoNotUseMarginsForDrawingGridOrigin))]
   public bool? DoNotUseMarginsForDrawingGridOrigin
   {
-    get => _DoNotUseMarginsForDrawingGridOrigin ??= GetElement<bool?, DXW.DoNotUseMarginsForDrawingGridOrigin>(_openXmlElement);
+    get => _DoNotUseMarginsForDrawingGridOrigin ??=
+      GetElement<bool?, DXW.DoNotUseMarginsForDrawingGridOrigin>(_openXmlElement);
     set => UpdateField(ref _DoNotUseMarginsForDrawingGridOrigin, value, nameof(DoNotUseMarginsForDrawingGridOrigin));
   }
   private bool? _DoNotUseMarginsForDrawingGridOrigin;
@@ -793,7 +758,8 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   [XmlIgnore, OpenXmlElement(typeof(DXW.EndnoteDocumentWideProperties))]
   public EndnoteDocumentWideProperties? EndnoteDocumentWideProperties
   {
-    get => _EndnoteDocumentWideProperties ??= GetElement<EndnoteDocumentWideProperties?, DXW.EndnoteDocumentWideProperties>(_openXmlElement);
+    get => _EndnoteDocumentWideProperties ??=
+      GetElement<EndnoteDocumentWideProperties?, DXW.EndnoteDocumentWideProperties>(_openXmlElement);
     set => UpdateField(ref _EndnoteDocumentWideProperties, value, nameof(EndnoteDocumentWideProperties));
   }
   private EndnoteDocumentWideProperties? _EndnoteDocumentWideProperties;
@@ -820,7 +786,8 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   [XmlIgnore, OpenXmlElement(typeof(DXW.FootnoteDocumentWideProperties))]
   public FootnoteDocumentWideProperties? FootnoteDocumentWideProperties
   {
-    get => _FootnoteDocumentWideProperties ??= GetElement<FootnoteDocumentWideProperties?, DXW.FootnoteDocumentWideProperties>(_openXmlElement);
+    get => _FootnoteDocumentWideProperties ??=
+      GetElement<FootnoteDocumentWideProperties?, DXW.FootnoteDocumentWideProperties>(_openXmlElement);
     set => UpdateField(ref _FootnoteDocumentWideProperties, value, nameof(FootnoteDocumentWideProperties));
   }
   private FootnoteDocumentWideProperties? _FootnoteDocumentWideProperties;
@@ -994,7 +961,8 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   [XmlIgnore, OpenXmlElement(typeof(DXW.NoLineBreaksAfterKinsoku))]
   public NoLineBreaksAfterKinsoku? NoLineBreaksAfterKinsoku
   {
-    get => _NoLineBreaksAfterKinsoku ??= GetElement<NoLineBreaksAfterKinsoku?, DXW.NoLineBreaksAfterKinsoku>(_openXmlElement);
+    get => _NoLineBreaksAfterKinsoku ??=
+      GetElement<NoLineBreaksAfterKinsoku?, DXW.NoLineBreaksAfterKinsoku>(_openXmlElement);
     set => UpdateField(ref _NoLineBreaksAfterKinsoku, value, nameof(NoLineBreaksAfterKinsoku));
   }
   private NoLineBreaksAfterKinsoku? _NoLineBreaksAfterKinsoku;
@@ -1006,7 +974,8 @@ public sealed partial class DocumentSettings : ModelElement<DXW.Settings>
   [XmlIgnore, OpenXmlElement(typeof(DXW.NoLineBreaksBeforeKinsoku))]
   public NoLineBreaksBeforeKinsoku? NoLineBreaksBeforeKinsoku
   {
-    get => _NoLineBreaksBeforeKinsoku ??= GetElement<NoLineBreaksBeforeKinsoku?, DXW.NoLineBreaksBeforeKinsoku>(_openXmlElement);
+    get => _NoLineBreaksBeforeKinsoku ??=
+      GetElement<NoLineBreaksBeforeKinsoku?, DXW.NoLineBreaksBeforeKinsoku>(_openXmlElement);
     set => UpdateField(ref _NoLineBreaksBeforeKinsoku, value, nameof(NoLineBreaksBeforeKinsoku));
   }
   private NoLineBreaksBeforeKinsoku? _NoLineBreaksBeforeKinsoku;

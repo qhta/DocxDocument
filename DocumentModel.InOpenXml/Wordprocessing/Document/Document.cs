@@ -335,42 +335,31 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <summary>
   ///   Collection of DocumentVariables used in the document.
   /// </summary>
-  public DocumentVariables? DocumentVariables
+  public DocumentVariables DocumentVariables
   {
-    get
-    {
-      if (_DocumentVariables == null && WordprocessingDocument?.MainDocumentPart?.DocumentSettingsPart != null)
-        _DocumentVariables = new DocumentVariables(this);
-      return _DocumentVariables;
-    }
-
-    set => UpdateField(ref _DocumentVariables, value, nameof(DocumentVariables));
+    get => _DocumentVariables ??= new DocumentVariables(this);
+    set => DocumentVariables.CopyFrom(value);
   }
   private DocumentVariables? _DocumentVariables;
 
   /// <summary>
-  ///   TextFormat table for the document, providing access to font definitions used within the document.
+  ///   Font table for the document, providing access to font definitions used within the document.
   /// </summary>
-  public FontTable? FontTableTable
+  public FontTable FontTable
   {
-    get
-    {
-      if (_FontTable == null && WordprocessingDocument?.MainDocumentPart?.FontTablePart != null)
-        _FontTable = new FontTable(this);
-      return _FontTable;
-    }
-
-    set => UpdateField(ref _FontTable, value, nameof(FontTableTable));
+    get => _FontTable ??= new FontTable(this);
+    set => FontTable.CopyFrom(value);
   }
   private FontTable? _FontTable;
 
+
   /// <summary>
-  ///   Document-level settings, including compatibility, protection, and view options.
+  ///   Theme colors and fonts.
   /// </summary>
-  public DMD.Theme? Theme
+  public DMD.Theme Theme
   {
     get => _Theme ??= new DMD.Theme(this);
-    set => UpdateField(ref _Theme, value, nameof(Theme));
+    set => Theme.CopyFrom(value);
   }
   private DMD.Theme? _Theme;
 

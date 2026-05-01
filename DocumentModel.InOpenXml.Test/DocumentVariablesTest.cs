@@ -29,7 +29,7 @@
 		/// <returns>True if the test passes; otherwise, false.</returns>
 		static bool TestXmlSerialization()
 		{
-			Console.WriteLine("--- XML Serialization ---");
+			Console.WriteLine("--- DocumentVariables XML Serialization ---");
 			var testData = CreateSampleDocumentVariables();
 			{
 				var xmlSerializer = new XmlSerializer(typeof(DocumentVariables));
@@ -40,7 +40,7 @@
 					xmlSerializer.Serialize(xmlWriter, testData);
 					xmlString = stringWriter.ToString();
 				}
-				Console.WriteLine("Serialized XML:\n" + xmlString);
+				Console.WriteLine("DocumentVariables Serialized XML:\n" + xmlString);
 
 				DocumentVariables? deserialized;
 				using (var stringReader = new StringReader(xmlString))
@@ -49,15 +49,15 @@
 				}
 				if (deserialized == null)
 				{
-					Console.WriteLine("✗ XML Deserialization returned null");
+					Console.WriteLine("✗ DocumentVariables XML Deserialization returned null");
 					return false;
 				}
 				if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
 				{
-					Console.WriteLine($"✗ XML Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+					Console.WriteLine($"✗ DocumentVariables XML Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
 					return false;
 				}
-				Console.WriteLine("✓ XML Serialization/Deserialization test passed\n");
+				Console.WriteLine("✓ DocumentVariables XML Serialization/Deserialization test passed\n");
 				return true;
 			}
 		}
@@ -68,25 +68,25 @@
 		/// <returns>True if the test passes; otherwise, false.</returns>
 		static bool TestJsonSerialization()
 		{
-			Console.WriteLine("--- JSON Serialization ---");
+			Console.WriteLine("--- DocumentVariables JSON Serialization ---");
 			var testData = CreateSampleDocumentVariables();
 			{
         var jsonOptions = JsonConfig.Options;
 				string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
-				Console.WriteLine("Serialized JSON:\n" + jsonString);
+				Console.WriteLine("DocumentVariables Serialized JSON:\n" + jsonString);
 
 				var deserialized = JsonSerializer.Deserialize<DocumentVariables>(jsonString, jsonOptions);
 				if (deserialized == null)
 				{
-					Console.WriteLine("✗ JSON Deserialization returned null");
+					Console.WriteLine("✗ DocumentVariables JSON Deserialization returned null");
 					return false;
 				}
 				if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
 				{
-					Console.WriteLine($"✗ JSON Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+					Console.WriteLine($"✗ DocumentVariables JSON Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
 					return false;
 				}
-				Console.WriteLine("✓ JSON Serialization/Deserialization test passed\n");
+				Console.WriteLine("✓ DocumentVariables JSON Serialization/Deserialization test passed\n");
 				return true;
 			}
 		}
@@ -97,24 +97,24 @@
 		/// <returns>True if the test passes; otherwise, false.</returns>
 		static bool TestEdgeCases()
 		{
-			Console.WriteLine("--- Edge Cases ---");
+			Console.WriteLine("--- DocumentVariables Edge Cases ---");
 			{
 				var empty = new DocumentVariables();
 				string xml = SerializeToXml(empty);
 				var xmlDeserialized = DeserializeFromXml(xml);
 				if (xmlDeserialized == null)
 				{
-					Console.WriteLine("✗ Edge Cases: XML deserialization of empty object failed");
+					Console.WriteLine("✗ DocumentVariables Edge Cases: XML deserialization of empty object failed");
 					return false;
 				}
 				string json = SerializeToJson(empty);
 				var jsonDeserialized = DeserializeFromJson(json);
 				if (jsonDeserialized == null)
 				{
-					Console.WriteLine("✗ Edge Cases: JSON deserialization of empty object failed");
+					Console.WriteLine("✗ DocumentVariables Edge Cases: JSON deserialization of empty object failed");
 					return false;
 				}
-				Console.WriteLine("✓ Edge case tests passed\n");
+				Console.WriteLine("✓ DocumentVariables Edge case tests passed\n");
 				return true;
 			}
 		}

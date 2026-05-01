@@ -7,10 +7,10 @@ public partial class Document
   public bool ShouldSerializeWordprocessingDocument() => WordprocessingDocument is not null && ShouldSerialize(WordprocessingDocument);
   public bool ShouldSerializeFilename() => !String.IsNullOrEmpty(Filename);
   public bool ShouldSerializeIsEditable() => IsEditable == true;
-  public bool ShouldSerializeRsids() => Rsids is not null && ShouldSerialize(Rsids);
-  public bool ShouldSerializeDocumentVariables() => DocumentVariables is not null && ShouldSerialize(DocumentVariables);
-  public bool ShouldSerializeFontTableTable() => FontTableTable is not null && ShouldSerialize(FontTableTable);
-  public bool ShouldSerializeTheme() => Theme is not null && ShouldSerialize(Theme);
-  public bool ShouldSerializeStyles() => Styles is not null && ShouldSerialize(Styles);
-  public bool ShouldSerializeNumbering() => Numbering is not null && ShouldSerialize(Numbering);
+  public bool ShouldSerializeRsids() => _Rsids is not null && ShouldSerialize(Rsids);
+  public bool ShouldSerializeDocumentVariables() => _DocumentVariables is not null && ShouldSerialize(DocumentVariables);
+  public bool ShouldSerializeFontTable() => _FontTable is not null && ShouldSerialize(FontTable);
+  public bool ShouldSerializeTheme() => _Theme is not null && ShouldSerialize(Theme);
+  public bool ShouldSerializeStyles() => _Styles is not null && ShouldSerialize(Styles);
+  public bool ShouldSerializeNumbering() => _Numbering is not null && ShouldSerialize(Numbering);
 }

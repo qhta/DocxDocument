@@ -22,24 +22,6 @@ public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
       AttachAndLoad(document.WordprocessingDocument);
   }
 
-
-  /// <summary>
-  /// Copies data from the specified Rsids instance to this instance.
-  /// </summary>
-  /// <param name = "properties">Rsids instance containing the model property value.</param>
-  public void CopyFrom(Rsids properties)
-  {
-    var modelType = properties.GetType();
-    foreach (var item in properties)
-    {
-      this.Add(item);
-    }
-
-    var updatableElement = GetUpdatableElement();
-    if (updatableElement != null)
-      UpdateData(updatableElement);
-  }
-
   /// <summary>
   /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's DocumentSettings.
   /// </summary>

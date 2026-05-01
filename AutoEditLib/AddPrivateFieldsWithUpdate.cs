@@ -70,13 +70,8 @@ public class AddPrivateFieldsWithUpdate
     // Ensure expression-bodied get/set accessors are on separate lines
     text = Regex.Replace(
       text,
-      @"\{\s*get\s*=>\s*([^;]+);\s*set\s*=>\s*([^;]+);\s*\}",
-      "\r\n  {\r\n    get => $1;\r\n    set => $2;\r\n  }");
-
-    //text = Regex.Replace(
-    //  text,
-    //  @"(?m)^(\s*)\{\s*get\s*=>\s*([^;]+);\s*set\s*=>\s*([^;]+);\s*\}",
-    //  "$1{\r\n$1  get => $2;\r\n$1  set => $3;\r\n$1}");
+      @"(^  )\{\s*get\s*=>\s*([^;]+);\s*set\s*=>\s*([^;]+);\s*\}",
+      "\r\n  {\r\n    get => $2;\r\n    set => $3;\r\n  }");
 
     // No blank line before generated backing field
     text = Regex.Replace(

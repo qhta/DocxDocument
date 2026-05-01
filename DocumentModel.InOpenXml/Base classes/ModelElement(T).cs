@@ -45,6 +45,24 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordpro
   }
 
   /// <summary>
+  /// Copies data from the specified other instance to this instance.
+  /// </summary>
+  /// <param name = "otherInstance">The instance containing the model property values to copy.</param>
+  public void CopyFrom(ModelElement otherInstance)
+  {
+    var modelType = otherInstance.GetType();
+    foreach (var modelProperty in modelType.GetModelProperties())
+    {
+      var value = modelProperty.GetValue(otherInstance);
+      modelProperty.SetValue(this, value);
+    }
+
+    var updatableElement = GetUpdatableElement();
+    if (updatableElement != null)
+      UpdateData(updatableElement);
+  }
+
+  /// <summary>
   /// Represents the underlying Open XML element associated with this instance, or null if no element is present.
   /// </summary>
   /// <remarks>This field is intended for use by derived classes to access or manipulate the Open XML element

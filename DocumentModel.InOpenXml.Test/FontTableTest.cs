@@ -30,7 +30,7 @@ public class FontTableTest: _AbstractTestClass
   /// <returns>True if the test passes; otherwise, false.</returns>
   static bool TestXmlSerialization()
   {
-    Console.WriteLine("--- XML Serialization ---");
+    Console.WriteLine("--- FontTableTest XML Serialization ---");
     var testData = CreateSampleFonts();
     {
       var xmlSerializer = new XmlSerializer(typeof(FontTable));
@@ -41,7 +41,7 @@ public class FontTableTest: _AbstractTestClass
         xmlSerializer.Serialize(xmlWriter, testData);
         xmlString = stringWriter.ToString();
       }
-      Console.WriteLine("Serialized XML:\n" + xmlString);
+      Console.WriteLine("FontTableTest Serialized XML:\n" + xmlString);
 
       FontTable? deserialized;
       using (var stringReader = new StringReader(xmlString))
@@ -50,15 +50,15 @@ public class FontTableTest: _AbstractTestClass
       }
       if (deserialized == null)
       {
-        Console.WriteLine("✗ XML Deserialization returned null");
+        Console.WriteLine("✗ FontTableTest XML Deserialization returned null");
         return false;
       }
       if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
       {
-        Console.WriteLine($"✗ XML Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+        Console.WriteLine($"✗ FontTableTest XML Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
         return false;
       }
-      Console.WriteLine("✓ XML Serialization/Deserialization test passed\n");
+      Console.WriteLine("✓ FontTableTest XML Serialization/Deserialization test passed\n");
       return true;
     }
   }
@@ -69,25 +69,25 @@ public class FontTableTest: _AbstractTestClass
   /// <returns>True if the test passes; otherwise, false.</returns>
   static bool TestJsonSerialization()
   {
-    Console.WriteLine("--- JSON Serialization ---");
+    Console.WriteLine("--- FontTableTest JSON Serialization ---");
     var testData = CreateSampleFonts();
     {
       var jsonOptions = JsonConfig.Options;
       string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
-      Console.WriteLine("Serialized JSON:\n" + jsonString);
+      Console.WriteLine("FontTableTest Serialized JSON:\n" + jsonString);
 
       var deserialized = JsonSerializer.Deserialize<FontTable>(jsonString, jsonOptions);
       if (deserialized == null)
       {
-        Console.WriteLine("✗ JSON Deserialization returned null");
+        Console.WriteLine("✗ FontTableTest JSON Deserialization returned null");
         return false;
       }
       if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
       {
-        Console.WriteLine($"✗ JSON Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+        Console.WriteLine($"✗ FontTableTest JSON Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
         return false;
       }
-      Console.WriteLine("✓ JSON Serialization/Deserialization test passed\n");
+      Console.WriteLine("✓ FontTableTest JSON Serialization/Deserialization test passed\n");
       return true;
     }
   }
@@ -98,24 +98,24 @@ public class FontTableTest: _AbstractTestClass
   /// <returns>True if the test passes; otherwise, false.</returns>
   static bool TestEdgeCases()
   {
-    Console.WriteLine("--- Edge Cases ---");
+    Console.WriteLine("--- FontTableTest Edge Cases ---");
     {
       var empty = new FontTable();
       string xml = SerializeToXml(empty);
       var xmlDeserialized = DeserializeFromXml(xml);
       if (xmlDeserialized == null)
       {
-        Console.WriteLine("✗ Edge Cases: XML deserialization of empty object failed");
+        Console.WriteLine("✗ FontTableTest Edge Cases: XML deserialization of empty object failed");
         return false;
       }
       string json = SerializeToJson(empty);
       var jsonDeserialized = DeserializeFromJson(json);
       if (jsonDeserialized == null)
       {
-        Console.WriteLine("✗ Edge Cases: JSON deserialization of empty object failed");
+        Console.WriteLine("✗ FontTableTest Edge Cases: JSON deserialization of empty object failed");
         return false;
       }
-      Console.WriteLine("✓ Edge case tests passed\n");
+      Console.WriteLine("✓ FontTableTest Edge case tests passed\n");
       return true;
     }
   }
@@ -134,13 +134,13 @@ public class FontTableTest: _AbstractTestClass
       FontTable testData = CreateSampleFonts();
       using (var document = new Document(TestFileName, FileMode.CreateNew))
       {
-        document.FontTableTable = testData;
+        document.FontTable = testData;
       }
 
       FontTable storedData;
       using (var document = new Document(TestFileName))
       {
-        storedData = document.FontTableTable ?? throw new InvalidOperationException("Fonts not found.");
+        storedData = document.FontTable ?? throw new InvalidOperationException("Fonts not found.");
       }
 
       var xmlSerializer = new XmlSerializer(typeof(FontTable));
@@ -180,13 +180,13 @@ public class FontTableTest: _AbstractTestClass
       var initialCount = testData.Count;
       using (var document = new Document(TestFileName, FileMode.CreateNew))
       {
-        document.FontTableTable = testData;
-        document.FontTableTable.Add(CreateOneFont());
+        document.FontTable = testData;
+        document.FontTable.Add(CreateOneFont());
       }
       FontTable storedData;
       using (var document = new Document(TestFileName))
       {
-        storedData = document.FontTableTable ?? throw new InvalidOperationException("Fonts not found.");
+        storedData = document.FontTable ?? throw new InvalidOperationException("Fonts not found.");
       }
 
       var xmlSerializer = new XmlSerializer(typeof(FontTable));
@@ -225,7 +225,7 @@ public class FontTableTest: _AbstractTestClass
       FontTable testData = CreateSampleFonts();
       using (var document = new Document(TestFileName, FileMode.CreateNew))
       {
-        document.FontTableTable = testData;
+        document.FontTable = testData;
       }
 
       using (var document = new Document(TestFileName))
