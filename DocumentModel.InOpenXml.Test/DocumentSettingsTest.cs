@@ -35,7 +35,7 @@
     /// <returns>True if the round-trip succeeds; otherwise, false.</returns>
     static bool TestXmlSerialization()
     {
-      Console.WriteLine("--- XML Serialization ---");
+      Console.WriteLine("--- DocumentSettings XML Serialization ---");
       var testData = CreateSampleDocumentSettings();
       string xmlString = SerializeToXml(testData);
 
@@ -43,16 +43,16 @@
       var deserialized = DeserializeFromXml<DocumentSettings>(xmlString);
       if (deserialized == null)
       {
-        Console.WriteLine("✗ XML Deserialization returned null");
+        Console.WriteLine("✗ DocumentSettings XML Deserialization returned null");
         return false;
       }
 
       if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
       {
-        Console.WriteLine($"✗ XML Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
+        Console.WriteLine($"✗ DocumentSettings XML Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
         return false;
       }
-      Console.WriteLine("✓ XML Serialization/Deserialization test passed\n");
+      Console.WriteLine("✓ DocumentSettings XML Serialization/Deserialization test passed\n");
       return true;
     }
 
@@ -62,7 +62,7 @@
     /// <returns>True if the round-trip succeeds; otherwise, false.</returns>
     static bool TestJsonSerialization()
     {
-      Console.WriteLine("--- JSON Serialization ---");
+      Console.WriteLine("--- DocumentSettings JSON Serialization ---");
       var testData = CreateSampleDocumentSettings();
       var jsonOptions = JsonConfig.Options;
       string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
@@ -71,15 +71,15 @@
       var deserialized = JsonSerializer.Deserialize<DocumentSettings>(jsonString, jsonOptions);
       if (deserialized == null)
       {
-        Console.WriteLine("✗ JSON Deserialization returned null");
+        Console.WriteLine("✗ DocumentSettingsTest JSON Deserialization returned null");
         return false;
       }
       if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
       {
-        Console.WriteLine($"✗ JSON Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
+        Console.WriteLine($"✗ DocumentSettingsTest JSON Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
         return false;
       }
-      Console.WriteLine("✓ JSON Serialization/Deserialization test passed\n");
+      Console.WriteLine("✓ DocumentSettingsTest JSON Serialization/Deserialization test passed\n");
       return true;
     }
 
@@ -89,23 +89,23 @@
     /// <returns>True if all edge case tests pass; otherwise, false.</returns>
     static bool TestEdgeCases()
     {
-      Console.WriteLine("--- Edge Cases ---");
+      Console.WriteLine("--- DocumentSettingsTest Edge Cases ---");
       var empty = new DocumentSettings();
       string xml = SerializeToXml(empty);
       var xmlDeserialized = DeserializeFromXml<DocumentSettings>(xml);
       if (xmlDeserialized == null)
       {
-        Console.WriteLine("✗ Edge Cases: XML deserialization of empty object failed");
+        Console.WriteLine("✗ DocumentSettings Edge Cases: XML deserialization of empty object failed");
         return false;
       }
       string json = SerializeToJson(empty);
       var jsonDeserialized = DeserializeFromJson(json);
       if (jsonDeserialized == null)
       {
-        Console.WriteLine("✗ Edge Cases: JSON deserialization of empty object failed");
+        Console.WriteLine("✗ DocumentSettings Edge Cases: JSON deserialization of empty object failed");
         return false;
       }
-      Console.WriteLine("✓ Edge case tests passed\n");
+      Console.WriteLine("✓ DocumentSettings Edge case tests passed\n");
       return true;
     }
 

@@ -325,16 +325,10 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <summary>
   ///   Collection of revision IDs for tracked changes in the document.
   /// </summary>
-  public Rsids? Rsids
+  public Rsids Rsids
   {
-    get
-    {
-      if (_Rsids == null && WordprocessingDocument?.MainDocumentPart?.DocumentSettingsPart != null)
-        _Rsids = new Rsids(this);
-      return _Rsids;
-    }
-
-    set => UpdateField(ref _Rsids, value, nameof(Rsids));
+    get => _Rsids ??= new Rsids(this);
+    set => Rsids.CopyFrom(value);
   }
   private Rsids? _Rsids;
 

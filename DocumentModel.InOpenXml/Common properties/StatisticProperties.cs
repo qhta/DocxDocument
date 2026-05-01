@@ -39,7 +39,6 @@ public sealed partial class StatisticProperties : ModelElement<DXEP.Properties>
       AttachAndLoad(document.WordprocessingDocument);
   }
 
-
   /// <summary>
   /// Copies data from the specified StatisticProperties instance to this instance.
   /// </summary>

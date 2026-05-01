@@ -1,4 +1,6 @@
-﻿namespace DocumentModel.InOpenXml.Test;
+﻿using Qhta.OpenXmlTools;
+
+namespace DocumentModel.InOpenXml.Test;
 
 /// <summary>
 /// Comprehensive test for DocumentModel.Rsids.
@@ -29,7 +31,7 @@ public class RsidsTest: _AbstractTestClass
   /// <returns>True if the test passes; otherwise, false.</returns>
   static bool TestXmlSerialization()
   {
-    Console.WriteLine("--- XML Serialization ---");
+    Console.WriteLine("--- RsidsTest XML Serialization ---");
     var testData = CreateSampleRsids();
     {
       var xmlSerializer = new XmlSerializer(typeof(Rsids));
@@ -49,15 +51,15 @@ public class RsidsTest: _AbstractTestClass
       }
       if (deserialized == null)
       {
-        Console.WriteLine("✗ XML Deserialization returned null");
+        Console.WriteLine("✗ RsidsTest XML Deserialization returned null");
         return false;
       }
       if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
       {
-        Console.WriteLine($"✗ XML Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+        Console.WriteLine($"✗ RsidsTest XML Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
         return false;
       }
-      Console.WriteLine("✓ XML Serialization/Deserialization test passed\n");
+      Console.WriteLine("✓ RsidsTest XML Serialization/Deserialization test passed\n");
       return true;
     }
   }
@@ -68,7 +70,7 @@ public class RsidsTest: _AbstractTestClass
   /// <returns>True if the test passes; otherwise, false.</returns>
   static bool TestJsonSerialization()
   {
-    Console.WriteLine("--- JSON Serialization ---");
+    Console.WriteLine("--- RsidsTest JSON Serialization ---");
     var testData = CreateSampleRsids();
     {
       var jsonOptions = JsonConfig.Options;
@@ -78,15 +80,15 @@ public class RsidsTest: _AbstractTestClass
       var deserialized = JsonSerializer.Deserialize<Rsids>(jsonString, jsonOptions);
       if (deserialized == null)
       {
-        Console.WriteLine("✗ JSON Deserialization returned null");
+        Console.WriteLine("✗ RsidsTest JSON Deserialization returned null");
         return false;
       }
       if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
       {
-        Console.WriteLine($"✗ JSON Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+        Console.WriteLine($"✗ RsidsTest JSON Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
         return false;
       }
-      Console.WriteLine("✓ JSON Serialization/Deserialization test passed\n");
+      Console.WriteLine("✓ RsidsTest JSON Serialization/Deserialization test passed\n");
       return true;
     }
   }
@@ -97,24 +99,24 @@ public class RsidsTest: _AbstractTestClass
   /// <returns>True if the test passes; otherwise, false.</returns>
   static bool TestEdgeCases()
   {
-    Console.WriteLine("--- Edge Cases ---");
+    Console.WriteLine("--- RsidsTest Edge Cases ---");
     {
       var empty = new Rsids();
       string xml = SerializeToXml(empty);
       var xmlDeserialized = DeserializeFromXml(xml);
       if (xmlDeserialized == null)
       {
-        Console.WriteLine("✗ Edge Cases: XML deserialization of empty object failed");
+        Console.WriteLine("✗ RsidsTest Edge Cases: XML deserialization of empty object failed");
         return false;
       }
       string json = SerializeToJson(empty);
       var jsonDeserialized = DeserializeFromJson(json);
       if (jsonDeserialized == null)
       {
-        Console.WriteLine("✗ Edge Cases: JSON deserialization of empty object failed");
+        Console.WriteLine("✗ RsidsTest Edge Cases: JSON deserialization of empty object failed");
         return false;
       }
-      Console.WriteLine("✓ Edge case tests passed\n");
+      Console.WriteLine("✓ RsidsTest Edge case tests passed\n");
       return true;
     }
   }
@@ -134,6 +136,13 @@ public class RsidsTest: _AbstractTestClass
       using (var document = new Document(TestFileName, FileMode.CreateNew))
       {
         document.Rsids = testData;
+      }
+
+      using (var wordDoc = DXPP.WordprocessingDocument.Open(TestFileName, false))
+      {
+        var outerXml = wordDoc.MainDocumentPart?.DocumentSettingsPart?.Settings?.OuterXml;
+        outerXml = outerXml?.FormatXmlWithLineNumbers();
+        Console.WriteLine("✓ Rsid Test: settings stored in document:\n" + outerXml);
       }
 
       Rsids storedData;
