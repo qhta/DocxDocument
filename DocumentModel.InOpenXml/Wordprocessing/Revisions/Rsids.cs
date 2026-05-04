@@ -16,53 +16,42 @@ public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
   /// Initializing constructor.
   /// </summary>
   /// <param name = "document">Wordprocessing document model</param>
-  public Rsids(Wordprocessing.Document document)
+  public Rsids(Document document): base(document, document.WordprocessingDocument?.GetRsids())
   {
-    if (document.WordprocessingDocument != null)
-      AttachAndLoad(document.WordprocessingDocument);
   }
 
   /// <summary>
-  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's DocumentSettings.
+  /// Populates the data collection with the root revision save ID from the specified Rsids object, if it is not already
+  /// present.
   /// </summary>
-  /// <param name = "wordprocessingDocument">Document to attach to.</param>
-  public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
+  /// <remarks>If the collection is empty or the first element does not match the root revision save ID from the
+  /// provided Rsids object, the method inserts the root revision save ID at the beginning of the collection.</remarks>
+  /// <param name="rsids">The Rsids object containing the root revision save ID to be loaded into the collection.</param>
+  protected override void LoadDataCollection(DXW.Rsids rsids)
   {
-    base.AttachAndLoad(wordprocessingDocument);
-    var documentSettings = wordprocessingDocument.GetDocumentSettings();
-    var rsids = documentSettings.Elements<DXW.Rsids>().FirstOrDefault();
-    if (rsids == null)
-    {
-      rsids = new DXW.Rsids();
-      documentSettings.AddChildUsingSchemaOrder(rsids);
-    }
-    SetUpdatableElement(rsids);
-    LoadData(rsids);
     if (rsids.RsidRoot != null)
     {
+      this.Clear();
       // ReSharper disable once SpecifyACultureInStringConversionExplicitly
       if (this.Count == 0 || this[0].ToString() != rsids.RsidRoot.Val?.Value)
       {
         this.Insert(0, new HexInt(rsids.RsidRoot.Val?.Value!));
       }
+      foreach (var rsid in rsids.Elements<DXW.Rsid>())
+      {
+        // ReSharper disable once SpecifyACultureInStringConversionExplicitly
+        var hexInt = new HexInt(rsid.Val?.Value!);
+        this.Add(hexInt);
+      }
     }
   }
+
   /// <summary>
-  /// Attach this instance to the specified document. Data is stored to the document's DocumentSettings.
+  /// Store data from this instance to the specified wordprocessingDocument. Data is stored to the wordprocessingDocument's DocumentSettings.
   /// </summary>
-  /// <param name = "wordprocessingDocument">Document to attach to.</param>
-  public override void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
+  /// <param name="rsids"></param>
+  protected override void UpdateDataCollection(DXW.Rsids rsids)
   {
-    base.AttachAndUpdate(wordprocessingDocument);
-    var documentSettings = wordprocessingDocument.GetDocumentSettings();
-    var rsids = documentSettings.Elements<DXW.Rsids>().FirstOrDefault();
-    if (rsids == null)
-    {
-      rsids = new DXW.Rsids();
-      documentSettings.AddChildUsingSchemaOrder(rsids);
-    }
-    SetUpdatableElement(rsids);
-    UpdateData(rsids);
     if (this.Count > 0)
     {
       // ReSharper disable once SpecifyACultureInStringConversionExplicitly
@@ -76,8 +65,20 @@ public sealed partial class Rsids : ValueCollection<HexInt, DXW.Rsids, DXW.Rsid>
         if (rsid.Val == rsids.RsidRoot.Val)
           rsid.Remove();
       }
+      rsids.RemoveAllChildren<DXW.Rsid>();
+      for (var i = 1; i < this.Count; i++)
+      {
+        var rsid = new DXW.Rsid
+        {
+          Val = new DX.HexBinaryValue(this[i].ToString())
+        };
+        rsids.Append(rsid);
+      }
     }
     else
+    {
       rsids.RsidRoot = null;
+      rsids.RemoveAllChildren<DXW.Rsid>();
+    }
   }
 }

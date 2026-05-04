@@ -143,7 +143,7 @@ public static class TestHelper
         if (enumerator1.MoveNext())
         {
           if (itemCount==0)
-            message = $"{secondName} has more no items";
+            message = $"{secondName} has no items";
           else
             message = $"{firstName} has more items than {secondName}";
           result = false;
@@ -152,7 +152,7 @@ public static class TestHelper
         if (enumerator2.MoveNext())
         {
           if (itemCount == 0)
-            message = $"{firstName} has more no items";
+            message = $"{firstName} has no items";
           else
             message = $"{secondName} has more items than {firstName}";
           result = false;

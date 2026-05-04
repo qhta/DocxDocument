@@ -19,35 +19,35 @@ public sealed partial class CustomProperties: ModelElementCollection<CustomPrope
   /// <param name="document">Wordprocessing document model</param>
   public CustomProperties(Wordprocessing.Document document): base(document)
   {
-    if (document.WordprocessingDocument != null)
-      AttachAndLoad(document.WordprocessingDocument);
+    //if (document.WordprocessingDocument != null)
+    //  AttachAndLoad(document.WordprocessingDocument);
   }
 
-  /// <summary>
-  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
-  /// </summary>
-  /// <param name="wordprocessingDocument">Document to attach to.</param>
-  public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
-  {
-    //Debug.WriteLine($"Attaching CustomProperties to WordprocessingDocument: {wordprocessingDocument}");
-    base.AttachAndLoad(wordprocessingDocument);
-    var customFileProperties = wordprocessingDocument.GetCustomFileProperties();
-    SetUpdatableElement(customFileProperties);
-    LoadData(customFileProperties);
-  }
+  ///// <summary>
+  ///// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
+  ///// </summary>
+  ///// <param name="wordprocessingDocument">Document to attach to.</param>
+  //public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
+  //{
+  //  //Debug.WriteLine($"Attaching CustomProperties to WordprocessingDocument: {wordprocessingDocument}");
+  //  base.AttachAndLoad(wordprocessingDocument);
+  //  var customFileProperties = wordprocessingDocument.GetCustomFileProperties();
+  //  SetUpdatableElement(customFileProperties);
+  //  LoadData(customFileProperties);
+  //}
 
-  /// <summary>
-  /// Attach this instance to the specified wordprocessingDocument. Data is stored to the wordprocessingDocument's PackageProperties.
-  /// </summary>
-  /// <param name="wordprocessingDocument">Document to attach to.</param>
-  public override void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
-  {
-    //Debug.WriteLine($"Attaching CustomProperties to WordprocessingDocument for update: {wordprocessingDocument}");
-    WordprocessingDocument = wordprocessingDocument;
-    var customFileProperties = wordprocessingDocument.GetCustomFileProperties();
-    SetUpdatableElement(customFileProperties);
-    UpdateData(customFileProperties);
-  }
+  ///// <summary>
+  ///// Attach this instance to the specified wordprocessingDocument. Data is stored to the wordprocessingDocument's PackageProperties.
+  ///// </summary>
+  ///// <param name="wordprocessingDocument">Document to attach to.</param>
+  //public override void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
+  //{
+  //  //Debug.WriteLine($"Attaching CustomProperties to WordprocessingDocument for update: {wordprocessingDocument}");
+  //  WordprocessingDocument = wordprocessingDocument;
+  //  var customFileProperties = wordprocessingDocument.GetCustomFileProperties();
+  //  SetUpdatableElement(customFileProperties);
+  //  UpdateData(customFileProperties);
+  //}
 
   /// <summary>
   /// Loads data from customFileProperties to this instance.

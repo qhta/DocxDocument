@@ -15,6 +15,16 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   /// </summary>
   protected OpenXmlCollectionType? _openXmlCollection;
 
+
+  /// <summary>
+  ///   The WordprocessingDocument instance to which this model element collection is attached, or null if not attached.
+  /// </summary>
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public DXPP.WordprocessingDocument? WordprocessingDocument { get; protected set; }
+
+
   /// <summary>
   ///   Initializes a new instance of the <see cref = "ModelElementCollection{ItemType, OpenXmlCollectionType}"/> class.
   ///   Subscribes to collection change events to synchronize with the underlying OpenXml collection.
@@ -37,7 +47,6 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
     InitCollectionChangedEventHandler();
   }
 
-
   /// <summary>
   /// Initializes collection changed event handler to update data on change.
   /// </summary>
@@ -57,45 +66,12 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   }
 
   /// <summary>
-  ///   The WordprocessingDocument instance to which this model element collection is attached, or null if not attached.
-  /// </summary>
-  [XmlIgnore]
-  [JsonIgnore]
-  [NotMapped]
-  public DXPP.WordprocessingDocument? WordprocessingDocument { get => _WordprocessingDocument ?? (Parent as IWordprocessingDocumentAware)?.WordprocessingDocument; protected set => _WordprocessingDocument = value; }
-  private DXPP.WordprocessingDocument? _WordprocessingDocument;
-
-  /// <summary>
   ///   Attaches this model element collection to the specified WordprocessingDocument.
   /// </summary>
   /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to.</param>
   public virtual void Attach(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
-  }
-
-  /// <summary>
-  ///   Attaches this model element collection to the specified WordprocessingDocument and loads data from the document's package properties or OpenXml part.
-  /// </summary>
-  /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to and load data from.</param>
-  public virtual void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
-  {
-    Attach(wordprocessingDocument);
-    var updatableElement = GetUpdatableElement();
-    if (updatableElement != null)
-      LoadData(updatableElement);
-  }
-
-  /// <summary>
-  ///   Attaches this model element collection to the specified WordprocessingDocument and updates the document's package properties or OpenXml part with current data.
-  /// </summary>
-  /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to and update.</param>
-  public virtual void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
-  {
-    Attach(wordprocessingDocument);
-    var updatableElement = GetUpdatableElement();
-    if (updatableElement != null)
-      UpdateData(updatableElement);
   }
 
   /// <summary>
@@ -178,6 +154,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   /// </summary>
   /// <param name = "openXmlModeledCollection">The OpenXml collection to load data from.</param>
   protected abstract void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection);
+
   /// <summary>
   ///   Stores data from this model element collection to the specified OpenXml element.
   ///   Calls the abstract <see cref = "UpdateDataCollection"/> method for the actual mapping logic.

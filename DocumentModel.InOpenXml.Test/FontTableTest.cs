@@ -3,7 +3,7 @@
 /// <summary>
 /// Comprehensive test for DocumentModel.Fonts.
 /// </summary>
-public class FontTableTest: _AbstractModelTest<FontTable>
+public class FontTableTestClass: _AbstractModelTestClass<FontTable>
 {
 
   /// <summary>
@@ -60,11 +60,11 @@ public class FontTableTest: _AbstractModelTest<FontTable>
   /// Sets the font table of the specified document to the provided font table element. 
   /// </summary>
   /// <param name="document">The document whose font table is to be set.</param>
-  /// <param name="element">The font table to assign to the document.</param>
+  /// <param name="data">The font table to assign to the document.</param>
   /// <returns>The font table that was set on the document.</returns>
-  protected override FontTable SetDataInDocument(Document document, FontTable element)
+  protected override FontTable SetDataToDocument(Document document, FontTable data)
   {
-    document.FontTable = element;
+    document.FontTable = data;
     return document.FontTable;
   }
 
@@ -72,9 +72,9 @@ public class FontTableTest: _AbstractModelTest<FontTable>
   /// Updates the specified font table in the document by adding a new predefined font and returns the added font.
   /// </summary>
   /// <param name="document">The document in which the font table will be updated.</param>
-  /// <param name="fontTable">The font table to which the new font will be added.</param>
+  /// <param name="data">The font table to which the new font will be added.</param>
   /// <returns>The newly created and added Font instance.</returns>
-  protected override FontTable UpdateDataInDocument(Document document, FontTable fontTable)
+  protected override FontTable UpdateDataInDocument(Document document, FontTable data)
   {
     Font newFont = new Font
     {
@@ -86,7 +86,7 @@ public class FontTableTest: _AbstractModelTest<FontTable>
       Panose = "020B0604020202020204",
       FontSignature = "E0002EFF-C000785B-00000009-00000000-000001FF-00000000"
     };
-    fontTable.Add(newFont);
+    data.Add(newFont);
     return document.FontTable;
   }
 

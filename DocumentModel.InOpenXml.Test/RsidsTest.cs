@@ -5,227 +5,13 @@ namespace DocumentModel.InOpenXml.Test;
 /// <summary>
 /// Comprehensive test for DocumentModel.Rsids.
 /// </summary>
-public class RsidsTest: _AbstractTestClass
+public class RsidsTest: _AbstractModelTestClass<Rsids>
 {
-  private readonly string TestFileName = Path.Combine(TestFileDir, "BaseParagraphPropertiesTest.docx");
-
-  /// <summary>
-  /// Runs all Rsids serialization tests.
-  /// </summary>
-  /// <returns>True if all tests pass; otherwise, false.</returns>
-  public override bool Run()
-  {
-    Console.WriteLine("=== Rsids Test ===\n");
-    if (!TestXmlSerialization()) return false;
-    if (!TestJsonSerialization()) return false;
-    if (!TestEdgeCases()) return false;
-    if (!TestStoreInDocument()) return false;
-    if (!TestUpdateInDocument()) return false;
-    Console.WriteLine("All Rsids tests passed.\n");
-    return true;
-  }
-
-  /// <summary>
-  /// Tests XML serialization and deserialization of Rsids.
-  /// </summary>
-  /// <returns>True if the test passes; otherwise, false.</returns>
-  private bool TestXmlSerialization()
-  {
-    Console.WriteLine("--- RsidsTest XML Serialization ---");
-    var testData = CreateSampleRsids();
-    {
-      var xmlSerializer = new XmlSerializer(typeof(Rsids));
-      string xmlString;
-      using (var stringWriter = new StringWriter())
-      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-      {
-        xmlSerializer.Serialize(xmlWriter, testData);
-        xmlString = stringWriter.ToString();
-      }
-      Console.WriteLine("Serialized XML:\n" + xmlString);
-
-      Rsids? deserialized;
-      using (var stringReader = new StringReader(xmlString))
-      {
-        deserialized = (Rsids?)xmlSerializer.Deserialize(stringReader);
-      }
-      if (deserialized == null)
-      {
-        Console.WriteLine("✗ RsidsTest XML Deserialization returned null");
-        return false;
-      }
-      if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
-      {
-        Console.WriteLine($"✗ RsidsTest XML Serialization/Deserialization test FAILED: {message}");
-        return false;
-      }
-      Console.WriteLine("✓ RsidsTest XML Serialization/Deserialization test passed\n");
-      return true;
-    }
-  }
-
-  /// <summary>
-  /// Tests JSON serialization and deserialization of Rsids.
-  /// </summary>
-  /// <returns>True if the test passes; otherwise, false.</returns>
-  private bool TestJsonSerialization()
-  {
-    Console.WriteLine("--- RsidsTest JSON Serialization ---");
-    var testData = CreateSampleRsids();
-    {
-      var jsonOptions = JsonConfig.Options;
-      string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
-      Console.WriteLine("Serialized JSON:\n" + jsonString);
-
-      var deserialized = JsonSerializer.Deserialize<Rsids>(jsonString, jsonOptions);
-      if (deserialized == null)
-      {
-        Console.WriteLine("✗ RsidsTest JSON Deserialization returned null");
-        return false;
-      }
-      if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
-      {
-        Console.WriteLine($"✗ RsidsTest JSON Serialization/Deserialization test FAILED: {message}");
-        return false;
-      }
-      Console.WriteLine("✓ RsidsTest JSON Serialization/Deserialization test passed\n");
-      return true;
-    }
-  }
-
-  /// <summary>
-  /// Tests edge cases like empty Rsids object.
-  /// </summary>
-  /// <returns>True if the test passes; otherwise, false.</returns>
-  private bool TestEdgeCases()
-  {
-    Console.WriteLine("--- RsidsTest Edge Cases ---");
-    {
-      var empty = new Rsids();
-      string xml = SerializeToXml(empty);
-      var xmlDeserialized = DeserializeFromXml(xml);
-      if (xmlDeserialized == null)
-      {
-        Console.WriteLine("✗ RsidsTest Edge Cases: XML deserialization of empty object failed");
-        return false;
-      }
-      string json = SerializeToJson(empty);
-      var jsonDeserialized = DeserializeFromJson(json);
-      if (jsonDeserialized == null)
-      {
-        Console.WriteLine("✗ RsidsTest Edge Cases: JSON deserialization of empty object failed");
-        return false;
-      }
-      Console.WriteLine("✓ RsidsTest Edge case tests passed\n");
-      return true;
-    }
-  }
-
-  /// <summary>
-  /// Tests setting sample Rsids to a new document and outputs the result to the console.
-  /// </summary>
-  /// <remarks>This method is intended for use in test scenarios to verify that document Rsids can
-  /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
-  /// inspection.</remarks>
-  /// <returns>true if the document Rsids are successfully stored and verified; otherwise, false.</returns>
-  private bool TestStoreInDocument()
-  {
-    Console.WriteLine("--- Store sample Rsids in new document---");
-    {
-      Rsids testData = CreateSampleRsids();
-      using (var document = new Document(TestFileName, FileMode.CreateNew))
-      {
-        document.Rsids = testData;
-      }
-
-      using (var wordDoc = DXPP.WordprocessingDocument.Open(TestFileName, false))
-      {
-        var outerXml = wordDoc.MainDocumentPart?.DocumentSettingsPart?.Settings?.OuterXml;
-        outerXml = outerXml?.FormatXmlWithLineNumbers();
-        Console.WriteLine("✓ Rsid Test: settings stored in document:\n" + outerXml);
-      }
-
-      Rsids storedData;
-      using (var document = new Document(TestFileName))
-      {
-        storedData = document.Rsids ?? throw new InvalidOperationException("Rsids not found.");
-      }
-
-      var xmlSerializer = new XmlSerializer(typeof(Rsids));
-      string xmlString;
-      using (var stringWriter = new StringWriter())
-      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-      {
-        xmlSerializer.Serialize(xmlWriter, storedData);
-        xmlString = stringWriter.ToString();
-      }
-      Console.WriteLine("Rsids stored to new document and reloaded from it:\n" + xmlString);
-
-      if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
-      {
-        Console.WriteLine($"✗ Store sample Rsids test FAILED: {message}");
-        return false;
-      }
-
-      Console.WriteLine("✓ Store sample Rsids test passed\n");
-      return true;
-    }
-  }
-
-
-  /// <summary>
-  /// Tests updating the Rsids of a document and outputs the result to the console.
-  /// </summary>
-  /// <remarks>This method is intended for use in test scenarios to verify that document Rsids can
-  /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
-  /// inspection.</remarks>
-  /// <returns>true if the document Rsids are successfully updated and verified; otherwise, false.</returns>
-  private bool TestUpdateInDocument()
-  {
-    Console.WriteLine("--- Update document Rsids ---");
-    {
-      Rsids testData = CreateSampleRsids();
-      var initialCount = testData.Count;
-      using (var document = new Document(TestFileName, FileMode.CreateNew))
-      {
-        document.Rsids = testData;
-        document.Rsids.Add(Random.Shared.Next() );
-      }
-
-      Rsids storedData;
-      using (var document = new Document(TestFileName))
-      {
-        storedData = document.Rsids ?? throw new InvalidOperationException("Rsids not found.");
-      }
-
-      var xmlSerializer = new XmlSerializer(typeof(Rsids));
-      string xmlString;
-      using (var stringWriter = new StringWriter())
-      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-      {
-        xmlSerializer.Serialize(xmlWriter, storedData);
-        xmlString = stringWriter.ToString();
-      }
-      Console.WriteLine("Updated document Rsids:\n" + xmlString);
-
-      var storedCount = storedData.Count;
-      if (storedCount != initialCount + 1)
-      {
-        Console.WriteLine($"✗ Updated document Rsids test FAILED  - new property count is {storedCount}, expected {initialCount + 1}");
-        return false;
-      }
-
-      Console.WriteLine("✓ Updated document Rsids test passed\n");
-      return true;
-    }
-  }
-
-
   /// <summary>
   /// Creates a sample Rsids object with various property types.
   /// </summary>
   /// <returns>A populated Rsids object.</returns>
-  private Rsids CreateSampleRsids()
+  protected override Rsids CreateSampleData()
   {
     var props = new Rsids();
     for (int i=1; i<=10; i++)
@@ -234,56 +20,50 @@ public class RsidsTest: _AbstractTestClass
     }
     return props;
   }
-
+  
   /// <summary>
-  /// Serializes a Rsids object to an XML string.
+  /// Retrieves the collection of revision save identifiers (Rsids) from the specified document.
   /// </summary>
-  /// <param name="props">The Rsids object to serialize.</param>
-  /// <returns>The serialized XML string.</returns>
-  private string SerializeToXml(Rsids props)
+  /// <param name="document">The document from which to obtain the Rsids collection. Cannot be null.</param>
+  /// <returns>The Rsids collection associated with the specified document.</returns>
+  protected override Rsids GetDataFromDocument(Document document)
   {
-    var xmlSerializer = new XmlSerializer(typeof(Rsids));
-    using (var stringWriter = new StringWriter())
-    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-    {
-      xmlSerializer.Serialize(xmlWriter, props);
-      return stringWriter.ToString();
-    }
+    return document.Rsids;
   }
 
   /// <summary>
-  /// Deserializes a Rsids object from an XML string.
+  /// Sets the specified Rsids data to the provided Document instance and returns the updated Rsids object.
   /// </summary>
-  /// <param name="xml">The XML string to deserialize.</param>
-  /// <returns>The deserialized Rsids object, or null if deserialization fails.</returns>
-  private Rsids? DeserializeFromXml(string xml)
+  /// <param name="document">The Document instance to which the Rsids data will be assigned.</param>
+  /// <param name="data">The Rsids object containing the data to set on the document.</param>
+  /// <returns>The Rsids object that was assigned to the document.</returns>
+  protected override Rsids SetDataToDocument(Document document, Rsids data)
   {
-    var xmlSerializer = new XmlSerializer(typeof(Rsids));
-    using (var stringReader = new StringReader(xml))
-    {
-      return (Rsids?)xmlSerializer.Deserialize(stringReader);
-    }
+    document.Rsids = data;
+    return document.Rsids;
   }
 
   /// <summary>
-  /// Serializes a Rsids object to a JSON string.
+  /// Updates the data within the specified document using the provided data information.
   /// </summary>
-  /// <param name="props">The Rsids object to serialize.</param>
-  /// <returns>The serialized JSON string.</returns>
-  private string SerializeToJson(Rsids props)
+  /// <param name="document">The document to update with new data.</param>
+  /// <param name="data">The Rsids information to use when updating the document.</param>
+  /// <returns>A new or updated Rsids object representing the result of the update operation.</returns>
+  /// <exception cref="NotImplementedException">Always thrown, as this method is not implemented.</exception>
+  protected override Rsids UpdateDataInDocument(Document document, Rsids data)
   {
-    var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-    return JsonSerializer.Serialize(props, jsonOptions);
+    data.Add(data.Count+1);
+    return document.Rsids;
   }
 
   /// <summary>
-  /// Deserializes a Rsids object from a JSON string.
+  /// Get the Open XML representation of the document's Rsids data.
   /// </summary>
-  /// <param name="json">The JSON string to deserialize.</param>
-  /// <returns>The deserialized Rsids object, or null if deserialization fails.</returns>
-  private Rsids? DeserializeFromJson(string json)
+  /// <param name="document">The document from which to retrieve the OpenXml representation.</param>
+  /// <returns>The OpenXml representation of the document's Rsids data.</returns>
+  /// <exception cref="NotImplementedException">Always thrown, as this method is not implemented.</exception>
+  protected override string GetOpenXmlFromDocument(Document document)
   {
-    var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-    return JsonSerializer.Deserialize<Rsids>(json, jsonOptions);
+    return document.WordprocessingDocument!.MainDocumentPart!.DocumentSettingsPart!.Settings!.OuterXml;
   }
 }

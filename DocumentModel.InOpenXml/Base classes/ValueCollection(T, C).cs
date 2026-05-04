@@ -8,152 +8,164 @@ namespace DocumentModel;
 [XmlRoot("ValueCollection", Namespace = "DocumentModel")]
 public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : ElementCollection<ItemType>, IWordprocessingDocumentAware where ItemType : notnull where OpenXmlCollectionType : DX.OpenXmlElement
 {
- private OpenXmlCollectionType? _openXmlCollection;
+  private OpenXmlCollectionType? _openXmlCollection;
 
- /// <summary>
- /// Indicates whether a loading operation is currently in progress.
- /// </summary>
- protected bool isLoading;
- /// <summary>
- ///   The WordprocessingDocument instance to which this value collection is attached, or null if not attached.
- /// </summary>
- [XmlIgnore]
- [JsonIgnore]
- [NotMapped]
- public DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
-
- /// <summary>
- ///   Attaches this value collection to the specified WordprocessingDocument.
- /// </summary>
- /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to.</param>
- public virtual void Attach(DXPP.WordprocessingDocument wordprocessingDocument)
- {
-   WordprocessingDocument = wordprocessingDocument;
- }
 
   /// <summary>
-  ///   Attaches this value collection to the specified WordprocessingDocument and loads data from the document's package properties or OpenXml part.
+  ///   The WordprocessingDocument instance to which this value collection is attached, or null if not attached.
   /// </summary>
-  /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to and load data from.</param>
-  public virtual void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
- {
-  WordprocessingDocument = wordprocessingDocument;
- }
+  [XmlIgnore]
+  [JsonIgnore]
+  [NotMapped]
+  public DXPP.WordprocessingDocument? WordprocessingDocument { get; private set; }
 
- /// <summary>
- ///   Attaches this value collection to the specified WordprocessingDocument and updates the document's package properties or OpenXml part with current data.
- /// </summary>
- /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to and update.</param>
- public virtual void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
- {
-  WordprocessingDocument = wordprocessingDocument;
- }
 
- /// <summary>
- ///   Detaches this value collection from the attached document, clearing the underlying OpenXml element reference.
- ///   After detaching, further access to OpenXml properties is not possible until re-attached.
- /// </summary>
- public virtual void Detach()
- {
-  WordprocessingDocument = null;
-  SetUpdatableElement(null);
- }
-
- /// <summary>
- ///   Initializes a new instance of the <see cref = "ValueCollection{ItemType, OpenXmlCollectionType}"/> class.
- ///   Subscribes to collection change events to synchronize with the underlying OpenXml collection.
- /// </summary>
- protected ValueCollection()
- {
-  base.CollectionChanged += (sender, e) =>
+  /// <summary>
+  ///   Initializes a new instance of the <see cref = "ValueCollection{ItemType, OpenXmlCollectionType}"/> class.
+  ///   Subscribes to collection change events to synchronize with the underlying OpenXml collection.
+  /// </summary>
+  protected ValueCollection()
   {
-   if (isLoading || _openXmlCollection == null)
-    return;
-   if (e.Action == NotifyCollectionChangedAction.Add || e.Action == NotifyCollectionChangedAction.Remove || e.Action == NotifyCollectionChangedAction.Replace || e.Action == NotifyCollectionChangedAction.Reset)
-   {
-    UpdateData(_openXmlCollection);
-   }
-  };
- }
-
- /// <summary>
- ///   Initializes a new instance of the <see cref = "ValueCollection{ItemType, OpenXmlCollectionType}"/> class with the specified OpenXml element.
- /// </summary>
- /// <param name = "openXmlCollection">The OpenXml collection element to wrap and synchronize with.</param>
- protected ValueCollection(OpenXmlCollectionType? openXmlCollection) : this()
- {
-  _openXmlCollection = openXmlCollection;
- }
-
- /// <summary>
- ///   Initializes a new instance of the <see cref = "ValueCollection{ItemType, OpenXmlCollectionType}"/> class with the specified items.
- /// </summary>
- /// <param name = "items">The items to add to the collection.</param>
- protected ValueCollection(IEnumerable<ItemType> items) : this()
- {
-  foreach (var item in items)
-  {
-   Add(item);
-  }
- }
-
- /// <summary>
- ///   Returns the wrapped OpenXml collection element instance, or null if not set.
- /// </summary>
- /// <returns>The OpenXml collection element instance, or null if not set.</returns>
- public override OpenXmlCollectionType? GetUpdatableElement()
- {
-  return _openXmlCollection;
- }
-
- /// <summary>
- ///   Assigns the wrapped OpenXml collection element instance.
- /// </summary>
- /// <param name = "element">The OpenXml collection element to assign.</param>
- public void SetUpdatableElement(OpenXmlCollectionType? element)
- {
-  _openXmlCollection = element;
- }
-
- /// <summary>
- ///   Loads data from the specified OpenXml element into this value collection.
- ///   Sets the isLoading flag to true while loading data to avoid unnecessary updates by collection change events.
- /// </summary>
- /// <param name = "openXmlObject">The OpenXml element to load data from.</param>
- public override void LoadData(object openXmlObject)
- {
-  isLoading = true;
-  if (openXmlObject is OpenXmlCollectionType openXmlModeledElement)
-  {
-   LoadDataCollection(openXmlModeledElement);
+    InitCollectionChangedEventHandler();
   }
 
-  isLoading = false;
- }
-
- /// <summary>
- ///   Loads data from the modeled OpenXml collection into this value collection instance.
- ///   Must be implemented by derived classes to define the mapping logic.
- /// </summary>
- /// <param name = "openXmlModeledCollection">The OpenXml collection to load data from.</param>
- protected abstract void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection);
- /// <summary>
- ///   Stores data from this value collection to the specified OpenXml element.
- ///   Calls the abstract <see cref = "UpdateDataCollection"/> method for the actual mapping logic.
- /// </summary>
- /// <param name = "openXmlObject">The OpenXml element to store data to.</param>
- public override void UpdateData(object openXmlObject)
- {
-  if (openXmlObject is OpenXmlCollectionType openXmlModeledElement)
+  /// <summary>
+  ///   Initializes a new instance of the <see cref = "ValueCollection{ItemType, OpenXmlCollectionType}"/> class with the specified OpenXml element.
+  /// </summary>
+  /// <param name="parent">The parent model element.</param>
+  /// <param name = "openXmlCollection">The OpenXml collection element to wrap and synchronize with.</param>
+  protected ValueCollection(ModelElement parent, DX.OpenXmlElement? openXmlCollection = null) : base(parent)
   {
-   UpdateDataCollection(openXmlModeledElement);
+    _openXmlCollection = openXmlCollection as OpenXmlCollectionType;
+    if (_openXmlCollection != null && this.GetType().GetCustomAttribute<DirectAccessAttribute>() == null)
+      LoadData(_openXmlCollection);
+    InitCollectionChangedEventHandler();
   }
- }
 
- /// <summary>
- ///   Stores data from this value collection instance to the modeled OpenXml collection.
- ///   Must be implemented by derived classes to define the mapping logic.
- /// </summary>
- /// <param name = "openXmlModeledCollection">The OpenXml collection to store data to.</param>
- protected abstract void UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection);
+  /// <summary>
+  /// Initializes collection changed event handler to update data on change.
+  /// </summary>
+  private void InitCollectionChangedEventHandler()
+  {
+    CollectionChanged += (sender, e) =>
+    {
+      //Debug.WriteLine($"CollectionChanged event triggered. Action: {e.Action}, IsLoading: {IsLoading}, OpenXmlCollection: {_openXmlCollection}");
+      if (IsLoading || _openXmlCollection == null)
+        return;
+      if (e.Action == NotifyCollectionChangedAction.Add || e.Action == NotifyCollectionChangedAction.Remove || e.Action == NotifyCollectionChangedAction.Replace || e.Action == NotifyCollectionChangedAction.Reset)
+      {
+        //Debug.WriteLine($"Updating data for OpenXmlCollection: {_openXmlCollection}");
+        UpdateData(_openXmlCollection);
+      }
+    };
+  }
+
+  /// <summary>
+  ///   Attaches this value collection to the specified WordprocessingDocument.
+  /// </summary>
+  /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to.</param>
+  public virtual void Attach(DXPP.WordprocessingDocument wordprocessingDocument)
+  {
+    WordprocessingDocument = wordprocessingDocument;
+  }
+
+  /// <summary>
+  ///   Detaches this value collection from the attached document, clearing the underlying OpenXml element reference.
+  ///   After detaching, further access to OpenXml properties is not possible until re-attached.
+  /// </summary>
+  public virtual void Detach()
+  {
+    WordprocessingDocument = null;
+    SetUpdatableElement(null);
+  }
+
+  /// <summary>
+  /// Override of LoadData that loads data from the attached OpenXmlCollection. Throws an ArgumentException if the OpenXmlCollection is not attached.
+  /// </summary>
+  /// <exception cref="ArgumentException"></exception>
+  public override void LoadData()
+  {
+    if (_openXmlCollection != null)
+      LoadData(_openXmlCollection);
+    else
+      throw new ArgumentException($"LoadData() must not be called if the OpenXmlCollection is not attached.");
+  }
+
+  /// <summary>
+  /// Override of UpdateData that updates the attached OpenXmlCollection with current data. Throws an ArgumentException if the OpenXmlCollection is not attached.
+  /// </summary>
+  /// <exception cref="ArgumentException"></exception>
+  public override void UpdateData()
+  {
+    if (_openXmlCollection != null)
+      UpdateData(_openXmlCollection);
+    else
+      throw new ArgumentException($"UpdateData() must not be called if the OpenXmlCollection is not attached.");
+  }
+
+
+  /// <summary>
+  ///   Returns the wrapped OpenXml collection element instance, or null if not set.
+  /// </summary>
+  /// <returns>The OpenXml collection element instance, or null if not set.</returns>
+  public override OpenXmlCollectionType? GetUpdatableElement()
+  {
+    return _openXmlCollection ?? (Parent as IUpdatable)?.GetUpdatableElement() as OpenXmlCollectionType;
+  }
+
+  /// <summary>
+  ///   Assigns the wrapped OpenXml collection element instance.
+  /// </summary>
+  /// <param name = "element">The OpenXml collection element to assign.</param>
+  public void SetUpdatableElement(OpenXmlCollectionType? element)
+  {
+    if (element is null)
+      _openXmlCollection = null;
+    else if (element is OpenXmlCollectionType openXmlCollection)
+      _openXmlCollection = openXmlCollection;
+    else
+      throw new ArgumentException($"Expected an element of type {typeof(OpenXmlCollectionType).FullName}, but received {element.GetType().FullName}.");
+  }
+
+  /// <summary>
+  ///   Loads data from the specified OpenXml element into this value collection.
+  ///   Sets the isLoading flag to true while loading data to avoid unnecessary updates by collection change events.
+  /// </summary>
+  /// <param name = "openXmlObject">The OpenXml element to load data from.</param>
+  public sealed override void LoadData(object openXmlObject)
+  {
+    SetLoading(true);
+    if (openXmlObject is OpenXmlCollectionType openXmlModeledElement)
+    {
+      LoadDataCollection(openXmlModeledElement);
+    }
+    SetLoading(false);
+  }
+
+  /// <summary>
+  ///   Loads data from the modeled OpenXml collection into this value collection instance.
+  ///   Must be implemented by derived classes to define the mapping logic.
+  /// </summary>
+  /// <param name = "openXmlModeledCollection">The OpenXml collection to load data from.</param>
+  protected abstract void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection);
+
+  /// <summary>
+  ///   Stores data from this value collection to the specified OpenXml element.
+  ///   Calls the abstract <see cref = "UpdateDataCollection"/> method for the actual mapping logic.
+  /// </summary>
+  /// <param name = "openXmlObject">The OpenXml element to store data to.</param>
+  public override void UpdateData(object openXmlObject)
+  {
+    if (openXmlObject is OpenXmlCollectionType openXmlModeledElement)
+    {
+      UpdateDataCollection(openXmlModeledElement);
+    }
+  }
+
+  /// <summary>
+  ///   Stores data from this value collection instance to the modeled OpenXml collection.
+  ///   Must be implemented by derived classes to define the mapping logic.
+  /// </summary>
+  /// <param name = "openXmlModeledCollection">The OpenXml collection to store data to.</param>
+  protected abstract void UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection);
 }

@@ -999,86 +999,48 @@
             <param name="json">The JSON string to deserialize.</param>
             <returns>The deserialized <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance.</returns>
         </member>
-        <member name="T:DocumentModel.InOpenXml.Test.DocumentVariablesTest">
+        <member name="T:DocumentModel.InOpenXml.Test.DocumentVariablesTestClass">
             <summary>
             Comprehensive test for DocumentModel.DocumentVariables.
             </summary>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.Run">
-            <summary>
-            Runs all DocumentVariables serialization tests.
-            </summary>
-            <returns>True if all tests pass; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.TestXmlSerialization">
-            <summary>
-            Tests XML serialization and deserialization of DocumentVariables.
-            </summary>
-            <returns>True if the test passes; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.TestJsonSerialization">
-            <summary>
-            Tests JSON serialization and deserialization of DocumentVariables.
-            </summary>
-            <returns>True if the test passes; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.TestEdgeCases">
-            <summary>
-            Tests edge cases like empty DocumentVariables object.
-            </summary>
-            <returns>True if the test passes; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.TestStoreInDocument">
-            <summary>
-            Tests setting sample DocumentVariables to a new document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document DocumentVariables can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document DocumentVariables are successfully stored and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.TestUpdateInDocument">
-            <summary>
-            Tests updating the DocumentVariables of a document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document DocumentVariables can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document DocumentVariables are successfully updated and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.CreateSampleDocumentVariables">
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTestClass.CreateSampleData">
             <summary>
             Creates a sample DocumentVariables object with various property types.
             </summary>
             <returns>A populated DocumentVariables object.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.SerializeToXml(DocumentModel.Wordprocessing.DocumentVariables)">
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTestClass.GetDataFromDocument(DocumentModel.Wordprocessing.Document)">
             <summary>
-            Serializes a DocumentVariables object to an XML string.
+            Retrieves the collection of variables associated with the specified document.
             </summary>
-            <param name="props">The DocumentVariables object to serialize.</param>
-            <returns>The serialized XML string.</returns>
+            <param name="document">The document from which to obtain the variables. Cannot be null.</param>
+            <returns>A <see cref="T:DocumentModel.Wordprocessing.DocumentVariables"/> object containing the variables defined in the specified document.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.DeserializeFromXml(System.String)">
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTestClass.SetDataToDocument(DocumentModel.Wordprocessing.Document,DocumentModel.Wordprocessing.DocumentVariables)">
             <summary>
-            Deserializes a DocumentVariables object from an XML string.
+            Sets the specified data as the document's variables and returns the updated variables.
             </summary>
-            <param name="xml">The XML string to deserialize.</param>
-            <returns>The deserialized DocumentVariables object, or null if deserialization fails.</returns>
+            <param name="document">The document to which the variables will be assigned.</param>
+            <param name="data">The set of variables to assign to the document.</param>
+            <returns>The updated set of document variables after assignment.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.SerializeToJson(DocumentModel.Wordprocessing.DocumentVariables)">
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTestClass.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.Wordprocessing.DocumentVariables)">
             <summary>
-            Serializes a DocumentVariables object to a JSON string.
+            Updates the specified document with new data variables and returns the updated collection of document variables.
             </summary>
-            <param name="props">The DocumentVariables object to serialize.</param>
-            <returns>The serialized JSON string.</returns>
+            <param name="document">The document to update with new data variables.</param>
+            <param name="data">The collection of data variables to add to the document.</param>
+            <returns>The updated collection of document variables from the specified document.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTest.DeserializeFromJson(System.String)">
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentVariablesTestClass.GetOpenXmlFromDocument(DocumentModel.Wordprocessing.Document)">
             <summary>
-            Deserializes a DocumentVariables object from a JSON string.
+            Retrieves the Open XML markup for the document variables from the specified WordprocessingML document.	
             </summary>
-            <param name="json">The JSON string to deserialize.</param>
-            <returns>The deserialized DocumentVariables object, or null if deserialization fails.</returns>
+            <remarks>This method accesses the document variables stored in the settings part of the main document. If
+            the document does not contain any document variables, the method returns an empty string.</remarks>
+            <param name="document">The WordprocessingML document from which to extract the document variables.</param>
+            <returns>A string containing the Open XML markup of the document variables if present; otherwise, an empty string.</returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.ElementCollectionTest">
             <summary>
@@ -1141,41 +1103,41 @@
             successful if an exception is thrown and unsuccessful otherwise.</remarks>
             <returns>true if the method throws an exception as expected when an invalid index type is used; otherwise, false.</returns>
         </member>
-        <member name="T:DocumentModel.InOpenXml.Test.FontTableTest">
+        <member name="T:DocumentModel.InOpenXml.Test.FontTableTestClass">
             <summary>
             Comprehensive test for DocumentModel.Fonts.
             </summary>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.CreateSampleData">
+        <member name="M:DocumentModel.InOpenXml.Test.FontTableTestClass.CreateSampleData">
             <summary>
             Creates a sample Fonts object with various property types.
             </summary>
             <returns>A populated Fonts object.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.GetDataFromDocument(DocumentModel.Wordprocessing.Document)">
+        <member name="M:DocumentModel.InOpenXml.Test.FontTableTestClass.GetDataFromDocument(DocumentModel.Wordprocessing.Document)">
             <summary>
             Gets the FontTable from the provided Document.
             </summary>
             <param name="document">The document from which to retrieve the font table.</param>
             <returns>The font table from the document.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.SetDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.Wordprocessing.FontTable)">
+        <member name="M:DocumentModel.InOpenXml.Test.FontTableTestClass.SetDataToDocument(DocumentModel.Wordprocessing.Document,DocumentModel.Wordprocessing.FontTable)">
             <summary>
             Sets the font table of the specified document to the provided font table element. 
             </summary>
             <param name="document">The document whose font table is to be set.</param>
-            <param name="element">The font table to assign to the document.</param>
+            <param name="data">The font table to assign to the document.</param>
             <returns>The font table that was set on the document.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.Wordprocessing.FontTable)">
+        <member name="M:DocumentModel.InOpenXml.Test.FontTableTestClass.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.Wordprocessing.FontTable)">
             <summary>
             Updates the specified font table in the document by adding a new predefined font and returns the added font.
             </summary>
             <param name="document">The document in which the font table will be updated.</param>
-            <param name="fontTable">The font table to which the new font will be added.</param>
+            <param name="data">The font table to which the new font will be added.</param>
             <returns>The newly created and added Font instance.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.GetOpenXmlFromDocument(DocumentModel.Wordprocessing.Document)">
+        <member name="M:DocumentModel.InOpenXml.Test.FontTableTestClass.GetOpenXmlFromDocument(DocumentModel.Wordprocessing.Document)">
             <summary>
             Gets the OpenXml representation of the font table from the specified document.
             </summary>
@@ -1408,81 +1370,43 @@
             Comprehensive test for DocumentModel.Rsids.
             </summary>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.RsidsTest.Run">
-            <summary>
-            Runs all Rsids serialization tests.
-            </summary>
-            <returns>True if all tests pass; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.RsidsTest.TestXmlSerialization">
-            <summary>
-            Tests XML serialization and deserialization of Rsids.
-            </summary>
-            <returns>True if the test passes; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.RsidsTest.TestJsonSerialization">
-            <summary>
-            Tests JSON serialization and deserialization of Rsids.
-            </summary>
-            <returns>True if the test passes; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.RsidsTest.TestEdgeCases">
-            <summary>
-            Tests edge cases like empty Rsids object.
-            </summary>
-            <returns>True if the test passes; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.RsidsTest.TestStoreInDocument">
-            <summary>
-            Tests setting sample Rsids to a new document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document Rsids can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document Rsids are successfully stored and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.RsidsTest.TestUpdateInDocument">
-            <summary>
-            Tests updating the Rsids of a document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document Rsids can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document Rsids are successfully updated and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.RsidsTest.CreateSampleRsids">
+        <member name="M:DocumentModel.InOpenXml.Test.RsidsTest.CreateSampleData">
             <summary>
             Creates a sample Rsids object with various property types.
             </summary>
             <returns>A populated Rsids object.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.RsidsTest.SerializeToXml(DocumentModel.Wordprocessing.Rsids)">
+        <member name="M:DocumentModel.InOpenXml.Test.RsidsTest.GetDataFromDocument(DocumentModel.Wordprocessing.Document)">
             <summary>
-            Serializes a Rsids object to an XML string.
+            Retrieves the collection of revision save identifiers (Rsids) from the specified document.
             </summary>
-            <param name="props">The Rsids object to serialize.</param>
-            <returns>The serialized XML string.</returns>
+            <param name="document">The document from which to obtain the Rsids collection. Cannot be null.</param>
+            <returns>The Rsids collection associated with the specified document.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.RsidsTest.DeserializeFromXml(System.String)">
+        <member name="M:DocumentModel.InOpenXml.Test.RsidsTest.SetDataToDocument(DocumentModel.Wordprocessing.Document,DocumentModel.Wordprocessing.Rsids)">
             <summary>
-            Deserializes a Rsids object from an XML string.
+            Sets the specified Rsids data to the provided Document instance and returns the updated Rsids object.
             </summary>
-            <param name="xml">The XML string to deserialize.</param>
-            <returns>The deserialized Rsids object, or null if deserialization fails.</returns>
+            <param name="document">The Document instance to which the Rsids data will be assigned.</param>
+            <param name="data">The Rsids object containing the data to set on the document.</param>
+            <returns>The Rsids object that was assigned to the document.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.RsidsTest.SerializeToJson(DocumentModel.Wordprocessing.Rsids)">
+        <member name="M:DocumentModel.InOpenXml.Test.RsidsTest.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.Wordprocessing.Rsids)">
             <summary>
-            Serializes a Rsids object to a JSON string.
+            Updates the data within the specified document using the provided data information.
             </summary>
-            <param name="props">The Rsids object to serialize.</param>
-            <returns>The serialized JSON string.</returns>
+            <param name="document">The document to update with new data.</param>
+            <param name="data">The Rsids information to use when updating the document.</param>
+            <returns>A new or updated Rsids object representing the result of the update operation.</returns>
+            <exception cref="T:System.NotImplementedException">Always thrown, as this method is not implemented.</exception>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.RsidsTest.DeserializeFromJson(System.String)">
+        <member name="M:DocumentModel.InOpenXml.Test.RsidsTest.GetOpenXmlFromDocument(DocumentModel.Wordprocessing.Document)">
             <summary>
-            Deserializes a Rsids object from a JSON string.
+            Get the Open XML representation of the document's Rsids data.
             </summary>
-            <param name="json">The JSON string to deserialize.</param>
-            <returns>The deserialized Rsids object, or null if deserialization fails.</returns>
+            <param name="document">The document from which to retrieve the OpenXml representation.</param>
+            <returns>The OpenXml representation of the document's Rsids data.</returns>
+            <exception cref="T:System.NotImplementedException">Always thrown, as this method is not implemented.</exception>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.RunTest">
             <summary>
@@ -1873,41 +1797,41 @@
             Creates a Theme with a basic content.
             </summary>
         </member>
-        <member name="T:DocumentModel.InOpenXml.Test._AbstractModelTest`1">
+        <member name="T:DocumentModel.InOpenXml.Test._AbstractModelTestClass`1">
             <summary>
             Comprehensive test for DocumentModel.Numbering.
             </summary>
         </member>
-        <member name="P:DocumentModel.InOpenXml.Test._AbstractModelTest`1.TestFileName">
+        <member name="P:DocumentModel.InOpenXml.Test._AbstractModelTestClass`1.TestFileName">
             <summary>
             Test file name for storing the document during tests.
             </summary>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.Run">
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTestClass`1.Run">
             <summary>
             Runs all tests.
             </summary>
             <returns>True if all tests pass; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.TestXmlSerialization">
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTestClass`1.TestXmlSerialization">
             <summary>
             Tests XML serialization and deserialization of the model collection.
             </summary>
             <returns>True if the test passes; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.TestJsonSerialization">
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTestClass`1.TestJsonSerialization">
             <summary>
             Tests JSON serialization and deserialization of the model collection.
             </summary>
             <returns>True if the test passes; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.TestEdgeCases">
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTestClass`1.TestEdgeCases">
             <summary>
             Tests edge cases like empty model collection.
             </summary>
             <returns>True if the test passes; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.TestStoreInDocument">
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTestClass`1.TestStoreInDocument">
             <summary>
             Tests setting sample model collection to a new document and outputs the result to the console.
             </summary>
@@ -1916,7 +1840,7 @@
             inspection.</remarks>
             <returns>true if the document model collection is successfully stored and verified; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.TestUpdateInDocument">
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTestClass`1.TestUpdateInDocument">
             <summary>
             Tests updating the sample collection in a document and outputs the result to the console.
             </summary>
@@ -1925,34 +1849,34 @@
             inspection.</remarks>
             <returns>true if the document Numbering are successfully updated and verified; otherwise, false.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.CreateSampleData">
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTestClass`1.CreateSampleData">
             <summary>
             Creates a sample model collection object with various items.
             </summary>
             <returns>A populated sample model collection object.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.GetDataFromDocument(DocumentModel.Wordprocessing.Document)">
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTestClass`1.GetDataFromDocument(DocumentModel.Wordprocessing.Document)">
             <summary>
             Gets the model collection data from the specified document.
             </summary>
             <param name="document">The document from which the data is to be retrieved.</param>
-            <returns>The model collection data from the document.</returns>
+            <returns>The model data from the document.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.SetDataInDocument(DocumentModel.Wordprocessing.Document,`0)">
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTestClass`1.SetDataToDocument(DocumentModel.Wordprocessing.Document,`0)">
             <summary>
             Sets the specified document property for the given model collection element.
             </summary>
             <param name="document">The document in which the data is to be set.</param>
-            <param name="element">The model collection element for which the document property is to be set.</param>
+            <param name="data">The model data for which the document property is to be set.</param>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,`0)">
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTestClass`1.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,`0)">
             <summary>
-            Updates the specified document property for the given model collection element.
+            Updates the specified document for the given model data.
             </summary>
             <param name="document">The document in which the data is to be set.</param>
-            <param name="fontTable">The model collection element for which the document property is to be set.</param>
+            <param name="data">The model data for which the document property is to be set.</param>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.GetOpenXmlFromDocument(DocumentModel.Wordprocessing.Document)">
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTestClass`1.GetOpenXmlFromDocument(DocumentModel.Wordprocessing.Document)">
             <summary>
             Gets the OpenXml representation of the model collection from the specified document.
             </summary>

@@ -22,8 +22,9 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType, OpenXmlIt
   /// <summary>
   /// Initializes a new instance of the collection from an Open XML composite element.
   /// </summary>
+  /// <param name = "parent">The parent model element.</param>  
   /// <param name = "openXmlCollection">The Open XML composite element to initialize from.</param>
-  protected ValueCollection(OpenXmlCollectionType? openXmlCollection) : base()
+  protected ValueCollection(ModelElement parent, OpenXmlCollectionType? openXmlCollection) : base(parent, openXmlCollection)
   {
   }
 

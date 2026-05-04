@@ -3,7 +3,7 @@
 /// <summary>
 /// Comprehensive test for DocumentModel.Numbering.
 /// </summary>
-public abstract class _AbstractModelTest<ModelDataType> : _AbstractTestClass
+public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClass
   where ModelDataType : DM.ModelElement, new()
 {
   /// <summary>
@@ -133,7 +133,7 @@ public abstract class _AbstractModelTest<ModelDataType> : _AbstractTestClass
     ModelDataType testData = CreateSampleData();
     using (var document = new Document(TestFileName, FileMode.CreateNew))
     {
-      SetDataInDocument(document, testData);
+      SetDataToDocument(document, testData);
     }
 
     using (var document = new Document(TestFileName))
@@ -191,7 +191,7 @@ public abstract class _AbstractModelTest<ModelDataType> : _AbstractTestClass
     ModelDataType updatedData;
     using (var document = new Document(TestFileName, FileMode.CreateNew))
     {
-      var storedData = SetDataInDocument(document, testData);
+      var storedData = SetDataToDocument(document, testData);
       updatedData = UpdateDataInDocument(document, storedData);
       if (TestHelper.CompareTestData(testData, storedData, "storedData", "updatedData", out _))
       {
@@ -249,22 +249,22 @@ public abstract class _AbstractModelTest<ModelDataType> : _AbstractTestClass
   /// Gets the model collection data from the specified document.
   /// </summary>
   /// <param name="document">The document from which the data is to be retrieved.</param>
-  /// <returns>The model collection data from the document.</returns>
+  /// <returns>The model data from the document.</returns>
   protected abstract ModelDataType GetDataFromDocument(Document document);
 
   /// <summary>
   /// Sets the specified document property for the given model collection element.
   /// </summary>
   /// <param name="document">The document in which the data is to be set.</param>
-  /// <param name="element">The model collection element for which the document property is to be set.</param>
-  protected abstract ModelDataType SetDataInDocument(Document document, ModelDataType element);
+  /// <param name="data">The model data for which the document property is to be set.</param>
+  protected abstract ModelDataType SetDataToDocument(Document document, ModelDataType data);
 
   /// <summary>
-  /// Updates the specified document property for the given model collection element.
+  /// Updates the specified document for the given model data.
   /// </summary>
   /// <param name="document">The document in which the data is to be set.</param>
-  /// <param name="fontTable">The model collection element for which the document property is to be set.</param>
-  protected abstract ModelDataType UpdateDataInDocument(Document document, ModelDataType fontTable);
+  /// <param name="data">The model data for which the document property is to be set.</param>
+  protected abstract ModelDataType UpdateDataInDocument(Document document, ModelDataType data);
 
   /// <summary>
   /// Gets the OpenXml representation of the model collection from the specified document.
