@@ -34,6 +34,8 @@
     <Compile Remove="Wordprocessing.Drawings\Colors\WordColorClass.cs" />
     <Compile Remove="Wordprocessing\Common\Color.XmlSerialization.cs" />
     <Compile Remove="Wordprocessing\Common\ColorJsonConverter.cs" />
+    <Compile Remove="Wordprocessing\Styles\StyleDef.ext.cs" />
+    <Compile Remove="Wordprocessing\Styles\StyleDefinition.ext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Wordprocessing\Table properties\Enums\5k3e00t1.egu~" />

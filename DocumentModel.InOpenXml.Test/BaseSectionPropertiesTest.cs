@@ -48,9 +48,9 @@ namespace DocumentModel.InOpenXml.Test
         Console.WriteLine("✗ XML Deserialization returned null");
         return false;
       }
-      if (!TestHelper.CompareTestData(typeof(BaseSectionProperties), (object)testData, (object)deserialized, out var propName))
+      if (!TestHelper.CompareTestData(typeof(BaseSectionProperties), (object)testData, (object)deserialized, "testData", "deserialized", out var message))
       {
-        Console.WriteLine($"✗ XML Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+        Console.WriteLine($"✗ XML Serialization/Deserialization test FAILED: {message}");
         return false;
       }
       Console.WriteLine("✓ XML Serialization/Deserialization test passed\n");
@@ -75,9 +75,9 @@ namespace DocumentModel.InOpenXml.Test
         Console.WriteLine("✗ JSON Deserialization returned null");
         return false;
       }
-      if (!TestHelper.CompareTestData(typeof(BaseSectionProperties), (object)testData, (object)deserialized, out var propName))
+      if (!TestHelper.CompareTestData(typeof(BaseSectionProperties), (object)testData, (object)deserialized, "testData", "deserialized", out var message))
       {
-        Console.WriteLine($"✗ JSON Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+        Console.WriteLine($"✗ JSON Serialization/Deserialization test FAILED: {message}");
         return false;
       }
       Console.WriteLine("✓ JSON Serialization/Deserialization test passed\n");

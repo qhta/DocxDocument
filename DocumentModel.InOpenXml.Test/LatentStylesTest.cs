@@ -30,7 +30,7 @@ public class LatentStylesTest: _AbstractTestClass
   /// <returns>True if the test passes; otherwise, false.</returns>
   static bool TestXmlSerialization()
   {
-    Console.WriteLine("--- XML Serialization ---");
+    Console.WriteLine("--- Latent Styles XML Serialization ---");
     var testData = CreateSampleStyles();
     var xmlSerializer = new XmlSerializer(typeof(Styles));
     string xmlString;
@@ -40,7 +40,7 @@ public class LatentStylesTest: _AbstractTestClass
       xmlSerializer.Serialize(xmlWriter, testData);
       xmlString = stringWriter.ToString();
     }
-    Console.WriteLine("Serialized XML:\n" + xmlString);
+    Console.WriteLine("Latent Styles Serialized XML:\n" + xmlString);
 
     Styles? deserialized;
     using (var stringReader = new StringReader(xmlString))
@@ -49,15 +49,15 @@ public class LatentStylesTest: _AbstractTestClass
     }
     if (deserialized == null)
     {
-      Console.WriteLine("✗ XML Deserialization returned null");
+      Console.WriteLine("✗ Latent Styles XML Deserialization returned null");
       return false;
     }
-    if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+    if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
     {
-      Console.WriteLine($"✗ XML Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+      Console.WriteLine($"✗ Latent Styles XML Serialization/Deserialization test FAILED: {message}");
       return false;
     }
-    Console.WriteLine("✓ XML Serialization/Deserialization test passed\n");
+    Console.WriteLine("✓ Latent Styles XML Serialization/Deserialization test passed\n");
     return true;
   }
 
@@ -67,24 +67,23 @@ public class LatentStylesTest: _AbstractTestClass
   /// <returns>True if the test passes; otherwise, false.</returns>
   static bool TestJsonSerialization()
   {
-    Console.WriteLine("--- JSON Serialization ---");
+    Console.WriteLine("--- Latent Styles JSON Serialization ---");
     var testData = CreateSampleStyles();
     var jsonOptions = JsonConfig.Options;
     string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
-    Console.WriteLine("Serialized JSON:\n" + jsonString);
-
+    Console.WriteLine("Latent Styles Serialized JSON:\n" + jsonString);
     var deserialized = JsonSerializer.Deserialize<Styles>(jsonString, jsonOptions);
     if (deserialized == null)
     {
-      Console.WriteLine("✗ JSON Deserialization returned null");
+      Console.WriteLine("✗ Latent Styles JSON Deserialization returned null");
       return false;
     }
-    if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+    if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
     {
-      Console.WriteLine($"✗ JSON Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+      Console.WriteLine($"✗ Latent Styles JSON Serialization/Deserialization test FAILED: {message}");
       return false;
     }
-    Console.WriteLine("✓ JSON Serialization/Deserialization test passed\n");
+    Console.WriteLine("✓ Latent Styles JSON Serialization/Deserialization test passed\n");
     return true;
   }
 
@@ -94,23 +93,23 @@ public class LatentStylesTest: _AbstractTestClass
   /// <returns>True if the test passes; otherwise, false.</returns>
   static bool TestEdgeCases()
   {
-    Console.WriteLine("--- Edge Cases ---");
+    Console.WriteLine("--- Latent Styles Edge Cases ---");
     var empty = new Styles();
     string xml = SerializeToXml(empty);
     var xmlDeserialized = DeserializeFromXml(xml);
     if (xmlDeserialized == null)
     {
-      Console.WriteLine("✗ Edge Cases: XML deserialization of empty object failed");
+      Console.WriteLine("✗ Latent Styles Edge Cases: XML deserialization of empty object failed");
       return false;
     }
     string json = SerializeToJson(empty);
     var jsonDeserialized = DeserializeFromJson(json);
     if (jsonDeserialized == null)
     {
-      Console.WriteLine("✗ Edge Cases: JSON deserialization of empty object failed");
+      Console.WriteLine("✗ Latent Styles Edge Cases: JSON deserialization of empty object failed");
       return false;
     }
-    Console.WriteLine("✓ Edge case tests passed\n");
+    Console.WriteLine("✓ Latent Styles Edge case tests passed\n");
     return true;
   }
 
@@ -130,6 +129,13 @@ public class LatentStylesTest: _AbstractTestClass
       document.Styles = testData;
     }
 
+    using (var wordDoc = DXPP.WordprocessingDocument.Open(TestFileName, false))
+    {
+      var outerXml = wordDoc.MainDocumentPart?.StyleDefinitionsPart?.Styles?.LatentStyles?.OuterXml;
+      outerXml = outerXml?.FormatXmlWithLineNumbers();
+      Console.WriteLine("✓ Latent styles stored in document:\n" + outerXml);
+    }
+
     Styles storedData;
     using (var document = new Document(TestFileName))
     {
@@ -144,11 +150,11 @@ public class LatentStylesTest: _AbstractTestClass
       xmlSerializer.Serialize(xmlWriter, storedData);
       xmlString = stringWriter.ToString();
     }
-    Console.WriteLine("Styles stored to new document and reloaded from it:\n" + xmlString);
+    Console.WriteLine("Latent Styles stored to new document and reloaded from it:\n" + xmlString);
 
-    if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+    if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
     {
-      Console.WriteLine($"✗ Store sample latent styles test FAILED - data mismatch in '{propName}'");
+      Console.WriteLine($"✗ Store sample latent styles test FAILED: {message}");
       return false;
     }
 
@@ -172,11 +178,19 @@ public class LatentStylesTest: _AbstractTestClass
       using (var document = new Document(TestFileName, FileMode.CreateNew))
       {
         document.Styles = testData;
-        document.Styles.LatentStyles?.Add(new LatentStyleExceptionInfo()
+        document.Styles.LatentStyles?.Add(new LatentStyle()
         {
           Name = "New style",
         });
       }
+
+      using (var wordDoc = DXPP.WordprocessingDocument.Open(TestFileName, false))
+      {
+        var outerXml = wordDoc.MainDocumentPart?.StyleDefinitionsPart?.Styles?.LatentStyles?.OuterXml;
+        outerXml = outerXml?.FormatXmlWithLineNumbers();
+        Console.WriteLine("✓ Latent styles stored in document:\n" + outerXml);
+      }
+
       Styles storedData;
       using (var document = new Document(TestFileName))
       {
@@ -268,29 +282,29 @@ public class LatentStylesTest: _AbstractTestClass
   internal static LatentStyles CreateSampleLatentStyles()
   {
     var latentStyles = new LatentStyles();
-    latentStyles.Add(new LatentStyleExceptionInfo()
+    latentStyles.Add(new LatentStyle()
     {
       Name = "Normal",
       PrimaryStyle = true
     });
-    latentStyles.Add(new LatentStyleExceptionInfo()
+    latentStyles.Add(new LatentStyle()
     {
       Name = "Heading 1",
       PrimaryStyle = true
     });
-    latentStyles.Add(new LatentStyleExceptionInfo()
+    latentStyles.Add(new LatentStyle()
     {
       Name = "Heading 6",
       SemiHidden = true,
       UnhideWhenUsed = true,
       PrimaryStyle = true
     });
-    latentStyles.Add(new LatentStyleExceptionInfo()
+    latentStyles.Add(new LatentStyle()
     {
       Name = "annotation text",
       UiPriority = 99,
     });
-    latentStyles.Add(new LatentStyleExceptionInfo()
+    latentStyles.Add(new LatentStyle()
     {
       Name = "Book title",
       UiPriority = 33,

@@ -72,9 +72,9 @@ public class ThemeTest : _AbstractTestClass
       xmlString = stringWriter.ToString();
     }
     Console.WriteLine("Theme loaded from document:\n" + xmlString);
-    if (!TestHelper.CompareTestData(typeof(Theme), testData, storedData, out var propName1))
+    if (!TestHelper.CompareTestData(typeof(Theme), testData, storedData, "testData", "storedData", out var message2))
     {
-      Console.WriteLine($"✗ XML test FAILED for '{storedData.GetType().Name}' - mismatch in '{propName1}'");
+      Console.WriteLine($"✗ XML test FAILED: {message2}");
       return false;
     }
     Console.WriteLine("✓ Store Theme in document passed");

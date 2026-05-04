@@ -53,9 +53,9 @@ public class FontTableTest: _AbstractTestClass
         Console.WriteLine("✗ FontTableTest XML Deserialization returned null");
         return false;
       }
-      if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+      if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
       {
-        Console.WriteLine($"✗ FontTableTest XML Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+        Console.WriteLine($"✗ FontTableTest XML Serialization/Deserialization test FAILED: {message}");
         return false;
       }
       Console.WriteLine("✓ FontTableTest XML Serialization/Deserialization test passed\n");
@@ -82,9 +82,9 @@ public class FontTableTest: _AbstractTestClass
         Console.WriteLine("✗ FontTableTest JSON Deserialization returned null");
         return false;
       }
-      if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+      if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
       {
-        Console.WriteLine($"✗ FontTableTest JSON Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+        Console.WriteLine($"✗ FontTableTest JSON Serialization/Deserialization test FAILED: {message}");
         return false;
       }
       Console.WriteLine("✓ FontTableTest JSON Serialization/Deserialization test passed\n");
@@ -137,6 +137,13 @@ public class FontTableTest: _AbstractTestClass
         document.FontTable = testData;
       }
 
+      using (var wordDoc = DXPP.WordprocessingDocument.Open(TestFileName, false))
+      {
+        var outerXml = wordDoc.MainDocumentPart?.FontTablePart?.Fonts?.OuterXml;
+        outerXml = outerXml?.FormatXmlWithLineNumbers();
+        Console.WriteLine("✓ Fonts stored in document:\n" + outerXml);
+      }
+
       FontTable storedData;
       using (var document = new Document(TestFileName))
       {
@@ -153,9 +160,9 @@ public class FontTableTest: _AbstractTestClass
       }
       Console.WriteLine("Fonts stored to new document and reloaded from it:\n" + xmlString);
 
-      if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+      if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
       {
-        Console.WriteLine($"✗ Store sample Fonts test FAILED - data mismatch in '{propName}'");
+        Console.WriteLine($"✗ Store sample Fonts test FAILED: {message}");
         return false;
       }
 
@@ -183,6 +190,14 @@ public class FontTableTest: _AbstractTestClass
         document.FontTable = testData;
         document.FontTable.Add(CreateOneFont());
       }
+
+      using (var wordDoc = DXPP.WordprocessingDocument.Open(TestFileName, false))
+      {
+        var outerXml = wordDoc.MainDocumentPart?.FontTablePart?.Fonts?.OuterXml;
+        outerXml = outerXml?.FormatXmlWithLineNumbers();
+        Console.WriteLine("✓ Fonts stored in document:\n" + outerXml);
+      }
+
       FontTable storedData;
       using (var document = new Document(TestFileName))
       {

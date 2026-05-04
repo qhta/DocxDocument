@@ -366,32 +366,20 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <summary>
   ///   Styles for the document, providing access to style definitions used within the document.
   /// </summary>
-  public Styles? Styles
+  public Styles Styles
   {
-    get
-    {
-      if (_Styles == null && WordprocessingDocument?.MainDocumentPart?.StyleDefinitionsPart != null)
-        _Styles = new Styles(this);
-      return _Styles;
-    }
-
-    set => UpdateField(ref _Styles, value, nameof(Styles));
+    get => _Styles ??= new Styles(this);
+    set => Styles.CopyFrom(value);
   }
   private Styles? _Styles;
 
   /// <summary>
   /// Numbering definitions for the document, providing access to numbering formats and instances used within the document.
   /// </summary>
-  public Numbering? Numbering
+  public Numbering Numbering
   {
-    get
-    {
-      if (_Numbering == null && WordprocessingDocument?.MainDocumentPart?.NumberingDefinitionsPart != null)
-        _Numbering = new Numbering(this);
-      return _Numbering;
-    }
-
-    set => UpdateField(ref _Numbering, value, nameof(Numbering));
+    get => _Numbering ??= new Numbering(this);
+    set => Numbering.CopyFrom(value);
   }
   private Numbering? _Numbering;
 }

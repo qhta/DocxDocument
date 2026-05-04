@@ -8503,6 +8503,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:DocumentModel.ILoadable.SetLoading(System.Boolean)">
+            <summary>
+            Sets the loading state of the component.
+            </summary>
+            <param name="isLoading">true to indicate that the component is loading; otherwise, false.</param>
+        </member>
         <member name="T:DocumentModel.IModifiable">
             <summary>
             Interface for types that can track modifications, allowing clients to check if the object has been modified and to set its modified state.

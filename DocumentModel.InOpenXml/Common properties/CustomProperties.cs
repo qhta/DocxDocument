@@ -54,7 +54,7 @@ public sealed partial class CustomProperties: ModelElementCollection<CustomPrope
   /// </summary>
   protected override void LoadDataCollection(DXCP.Properties customFileProperties)
   {
-    IsLoading = true;
+    SetLoading(true);
     _IsNotificationEnabled = false;
     Clear();
     foreach (var openXmlCustomDocumentProperty in
@@ -64,7 +64,7 @@ public sealed partial class CustomProperties: ModelElementCollection<CustomPrope
       Add(customDocumentProperty);
     }
     _IsNotificationEnabled = null;
-    IsLoading = false;
+    SetLoading(false);
   }
 
   /// <summary>

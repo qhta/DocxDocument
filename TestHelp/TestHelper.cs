@@ -20,11 +20,13 @@ public static class TestHelper
   /// </summary>
   /// <param name="obj1">First test data instance</param>
   /// <param name="obj2">Second test data instance</param>
-  /// <param name="propName">Name of the property that differs, if any</param>
+  /// <param name="firstName">Name of the first object (for message generating)</param>
+  /// <param name="secondName">Name of the second object (for message generating)</param>
+  /// <param name="message">Message describing the difference, if any</param>
   /// <returns>True if the properties are equal, false otherwise</returns>
-  public static bool CompareTestData<T>(T obj1, T obj2, out string? propName)
+  public static bool CompareTestData<T>(T obj1, T obj2, string firstName, string secondName, out string? message)
   {
-    return CompareTestData(typeof(T), obj1, obj2, out propName);
+    return CompareTestData(typeof(T), obj1, obj2, firstName, secondName, out message);
   }
 
   /// <summary>
@@ -37,46 +39,39 @@ public static class TestHelper
   /// <param name="comparedType">The type whose public writable properties are compared between the two objects. Must not be null.</param>
   /// <param name="obj1">The first object to compare. Must be of the specified type.</param>
   /// <param name="obj2">The second object to compare. Must be of the specified type.</param>
-  /// <param name="propName">When the method returns <see langword="false"/>, contains the name of the first property or collection element
-  /// that differs; otherwise, <see langword="null"/>.</param>
+  /// <param name="firstName">Name of the first object (for message generating)</param>
+  /// <param name="secondName">Name of the second object (for message generating)</param>
+  /// <param name="message">Message describing the difference, if any</param>
   /// <returns><see langword="true"/> if all public writable properties of the two objects are equal; otherwise, <see
   /// langword="false"/>.</returns>
-  public static bool CompareTestData<T>(Type comparedType, T obj1, T obj2, out string? propName)
-  {
-    propName = null;
-    return CompareTestData1(comparedType, obj1, obj2, ref propName);
-  }
-  /// <summary>
-  /// The actual implementation of CompareTestData with ref parameter for propName.
-  /// </summary>
-  private static bool CompareTestData1<T>(Type comparedType, T obj1, T obj2, ref string? propName)
+  public static bool CompareTestData<T>(Type comparedType, T obj1, T obj2, string firstName, string secondName, out string? message)
   {
     bool result;
-
+    message = null;
     if (obj1 == null && obj2 == null) return true;
-    if (obj1 == null || obj2 == null) return false;
+    if (obj1 == null && obj2 != null) { message = $"{firstName} is null and {secondName} is {obj2}"; return false; }
+    if (obj2 == null && obj1 != null) { message = $"{secondName} is null and {firstName} is {obj1}"; return false; }
     comparedType = comparedType.GetNotNullableType();
     if (comparedType.IsEnum)
     {
       result = object.Equals(obj1, obj2);
       if (!result)
-        return false;
+        message = $"Enum values differ: {firstName}={obj1} vs {secondName}={obj2}";
       return result;
     }
     if (comparedType.Implements(typeof(IEquatable<T>)))
     {
       result = Object.Equals(obj1, obj2);
       if (!result)
-        return false;
+        message = $"Objects of type {comparedType.Name} differ: {firstName}={obj1} vs {secondName}={obj2}";
       return result;
     }
 
     foreach (var property in comparedType.GetProperties())
     {
-      if (propName=="LatentStyles") Debug.Assert(true);
       if (property.CanWrite && property.GetIndexParameters().Length == 0 && !property.IsDefined(typeof(NotMappedAttribute), true))
       {
-        propName = /*property.DeclaringType?.Name +"."+ */property.Name;
+        var propName = /*property.DeclaringType?.Name +"."+ */property.Name;
         var obj1Value = property.GetValue(obj1);
         var obj2Value = property.GetValue(obj2);
 
@@ -84,7 +79,8 @@ public static class TestHelper
         {
           result = Comparer.Equals(obj1Value, obj2Value);
           if (!result)
-            return false;
+            message = $"Property {propName} values differ: {firstName}={obj1Value} vs {secondName}={obj2Value}";
+          return result;
         }
         else
         {
@@ -97,7 +93,7 @@ public static class TestHelper
             if (result)
               continue;
           }
-          if (!CompareTestData1(property.PropertyType, obj1Value, obj2Value, ref propName))
+          if (!CompareTestData(property.PropertyType, obj1Value, obj2Value, firstName, secondName, out var nestedMessage))
           {
             if (obj1Value is bool boolObj1Value)
             {
@@ -108,6 +104,7 @@ public static class TestHelper
               continue;
             if (obj2Value is null && obj1Value is IEnumerable enumerable1 && !enumerable1.Cast<object>().Any())
               continue;
+            message = $"Property {propName} values differ: {nestedMessage}";
             return false;
           }
         }
@@ -119,28 +116,47 @@ public static class TestHelper
       string? obj1String = obj1.ToString();
       string? obj2String = obj2.ToString();
       result = string.Equals(obj1String, obj2String);
+      message = result ? null : $"String values differ: '{obj1String}' vs '{obj2String}'";
       return result;
     }
     if (comparedType.IsEnumerable(out var itemType) && obj1 is IEnumerable obj1Enumerable
                                                     && obj2 is IEnumerable obj2Enumerable)
     {
+
       var enumerator1 = obj1Enumerable.GetEnumerator();
       var enumerator2 = obj2Enumerable.GetEnumerator();
       int itemCount = 0;
       while (enumerator1.MoveNext() && enumerator2.MoveNext())
       {
-        if (!CompareTestData(itemType, enumerator1.Current, enumerator2.Current, out var itemPropName))
+        var item1 = enumerator1.Current;
+        var item2 = enumerator2.Current;
+        if (!CompareTestData(itemType, item1, item2, firstName, secondName, out var internalMessage))
         {
-          propName = $"{itemType.Name}[{itemCount}].{itemPropName}";
+          message = $"{itemType.Name}[{itemCount}] differ: {internalMessage}";
           result = false;
           break;
         }
+        itemCount++;
       }
       if (result)
       {
-        result = !enumerator1.MoveNext() && !enumerator2.MoveNext();
-        if (!result)
-          propName = $"{comparedType}.Count";
+        if (enumerator1.MoveNext())
+        {
+          if (itemCount==0)
+            message = $"{secondName} has more no items";
+          else
+            message = $"{firstName} has more items than {secondName}";
+          result = false;
+        }
+        else
+        if (enumerator2.MoveNext())
+        {
+          if (itemCount == 0)
+            message = $"{firstName} has more no items";
+          else
+            message = $"{secondName} has more items than {firstName}";
+          result = false;
+        }
       }
       (enumerator1 as IDisposable)?.Dispose();
       (enumerator2 as IDisposable)?.Dispose();
@@ -157,7 +173,7 @@ public static class TestHelper
   public static void ChangeTestData<T>(T instance)
   {
     if (instance == null)
-      throw new ArgumentNullException(nameof(instance));  
+      throw new ArgumentNullException(nameof(instance));
     var properties = typeof(T).GetProperties().Where(prop => prop.CanWrite);
     foreach (var prop in properties)
     {
@@ -202,8 +218,8 @@ public static class TestHelper
     if (value == null)
       return Random.Shared.NextDouble() < 0.5;
     else
-    if (value is bool boolValue)
-      return !boolValue;
+      if (value is bool boolValue)
+        return !boolValue;
     return (bool?)value;
   }
 
@@ -222,8 +238,8 @@ public static class TestHelper
     if (value == null)
       return Random.Shared.Next();
     else
-    if (value is int intValue)
-      return intValue + 1;
+      if (value is int intValue)
+        return intValue + 1;
     return (int?)value;
   }
 

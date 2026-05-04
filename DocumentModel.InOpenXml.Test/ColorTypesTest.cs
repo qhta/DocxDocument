@@ -74,7 +74,7 @@ public class ColorTypesTest : _AbstractTestClass
   /// <returns>True if all XML tests pass; otherwise, false.</returns>
   static bool TestXmlSerialization()
   {
-    Console.WriteLine("--- XML Serialization ---");
+    Console.WriteLine("--- Theme/Color XML Serialization ---");
     var document = CreateDocumentWithInitializedThemePart();
     var theme = document.Theme!;
     var xmlString = SerializeObjectToXml(theme);
@@ -85,35 +85,35 @@ public class ColorTypesTest : _AbstractTestClass
       Console.WriteLine($"✗ Xml theme deserialization returned null for '{theme.GetType().Name}'");
       return false;
     }
-    if (!TestHelper.CompareTestData(typeof(Theme), theme, deserializedTheme, out var propName1))
+    if (!TestHelper.CompareTestData(typeof(Theme), theme, deserializedTheme, "testTheme", "deserialized", out var message))
     {
-      Console.WriteLine($"✗ XML test FAILED for '{theme.GetType().Name}' - mismatch in '{propName1}'");
+      Console.WriteLine($"✗ Theme/Color XML Serialization/Deserialization test FAILED: {message}");
       return false;
     }
 
     foreach (var colorType in GetIColorTypes())
     {
-      var testData = CreateSampleColor(colorType);
-      AttachToDocumentContext(testData, document);
-      xmlString = SerializeObjectToXml(testData);
+      var color = CreateSampleColor(colorType);
+      AttachToDocumentContext(color, document);
+      xmlString = SerializeObjectToXml(color);
       Console.WriteLine($"\nSerialized XML ({colorType.Name}):\n{xmlString}");
 
       var deserialized = DeserializeObjectFromXml(colorType, xmlString);
       if (deserialized == null)
       {
-        Console.WriteLine($"✗ XML Deserialization returned null for '{colorType.Name}'");
+        Console.WriteLine($"✗ Theme/Color XML Deserialization returned null for '{colorType.Name}'");
         return false;
       }
       AttachToDocumentContext(deserialized, document);
 
-      if (!TestHelper.CompareTestData(colorType, testData, deserialized, out var propName))
+      if (!TestHelper.CompareTestData(colorType, color, deserialized, "testColor", "deserialized", out message))
       {
-        Console.WriteLine($"✗ XML test FAILED for '{colorType.Name}' - mismatch in '{propName}'");
+        Console.WriteLine($"✗ Theme/Color XML Serialization/Deserialization test FAILED: {message}");
         return false;
       }
     }
 
-    Console.WriteLine("✓ XML serialization tests passed\n");
+    Console.WriteLine("✓ Theme/Color XML serialization tests passed\n");
     return true;
   }
 
@@ -123,47 +123,46 @@ public class ColorTypesTest : _AbstractTestClass
   /// <returns>True if all JSON tests pass; otherwise, false.</returns>
   static bool TestJsonSerialization()
   {
-    Console.WriteLine("--- JSON Serialization ---");
-    var jsonOptions = CreateJsonOptions();
+    Console.WriteLine("--- Theme/Color Json Serialization ---");
     var document = CreateDocumentWithInitializedThemePart();
     var theme = document.Theme!;
-    var jsonString = JsonSerializer.Serialize(theme, typeof(Theme), jsonOptions);
-    Console.WriteLine($"\nSerialized JSON (theme):\n{jsonString}");
-    var deserializedTheme = JsonSerializer.Deserialize(jsonString, typeof(Theme), jsonOptions);
+    var JsonString = SerializeToJson(theme);
+    Console.WriteLine($"\nSerialized Json (theme):\n{JsonString}");
+    var deserializedTheme = DeserializeFromJson<Theme>(JsonString);
     if (deserializedTheme == null)
     {
-      Console.WriteLine($"✗ JSON theme deserialization returned null for '{theme.GetType().Name}'");
+      Console.WriteLine($"✗ Json theme deserialization returned null for '{theme.GetType().Name}'");
       return false;
     }
-    if (!TestHelper.CompareTestData(typeof(Theme), theme, deserializedTheme, out var propName1))
+    if (!TestHelper.CompareTestData(typeof(Theme), theme, deserializedTheme, "testTheme", "deserialized", out var message))
     {
-      Console.WriteLine($"✗ JSON test FAILED for '{theme.GetType().Name}' - mismatch in '{propName1}'");
+      Console.WriteLine($"✗ Theme/Color Json Serialization/Deserialization test FAILED: {message}");
       return false;
     }
 
     foreach (var colorType in GetIColorTypes())
     {
-      var testData = CreateSampleColor(colorType);
-      AttachToDocumentContext(testData, document);
-      jsonString = JsonSerializer.Serialize(testData, colorType, jsonOptions);
-      Console.WriteLine($"\nSerialized JSON ({colorType.Name}):\n{jsonString}");
+      var color = CreateSampleColor(colorType);
+      AttachToDocumentContext(color, document);
+      JsonString = SerializeToJson(color);
+      Console.WriteLine($"\nSerialized Json ({colorType.Name}):\n{JsonString}");
 
-      var deserialized = JsonSerializer.Deserialize(jsonString, colorType, jsonOptions);
+      var deserialized = DeserializeFromJson(colorType, JsonString);
       if (deserialized == null)
       {
-        Console.WriteLine($"✗ JSON Deserialization returned null for '{colorType.Name}'");
+        Console.WriteLine($"✗ XTheme/Color ML Deserialization returned null for '{colorType.Name}'");
         return false;
       }
       AttachToDocumentContext(deserialized, document);
 
-      if (!TestHelper.CompareTestData(colorType, testData, deserialized, out var propName))
+      if (!TestHelper.CompareTestData(colorType, color, deserialized, "testColor", "deserialized", out message))
       {
-        Console.WriteLine($"✗ JSON test FAILED for '{colorType.Name}' - mismatch in '{propName}'");
+        Console.WriteLine($"✗ Theme/Color Json Serialization/Deserialization test FAILED: {message}");
         return false;
       }
     }
 
-    Console.WriteLine("✓ JSON serialization tests passed\n");
+    Console.WriteLine("✓ Theme/Color Json serialization tests passed\n");
     return true;
   }
 
@@ -463,9 +462,9 @@ public class ColorTypesTest : _AbstractTestClass
       xmlString = stringWriter.ToString();
     }
     Console.WriteLine("Theme loaded from document:\n" + xmlString);
-    if (!TestHelper.CompareTestData(typeof(Theme), testData, storedData, out var propName1))
+    if (!TestHelper.CompareTestData(typeof(Theme), testData, storedData, "testData", "storedData",out var message2))
     {
-      Console.WriteLine($"✗ XML test FAILED for '{storedData.GetType().Name}' - mismatch in '{propName1}'");
+      Console.WriteLine($"✗ XML test FAILED: {message2}");
       return false;
     }
     Console.WriteLine("✓ Store Theme in document passed");

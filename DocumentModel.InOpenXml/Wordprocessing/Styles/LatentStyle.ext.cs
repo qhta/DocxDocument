@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// Represents extended latent style exception information for a Wordprocessing document.
 /// This class provides properties for the primary style name and alternate style names, enabling advanced management and customization of latent styles. Implements property change notification Interop.
 /// </summary>
-public partial class LatentStyleExceptionInfo
+public partial class LatentStyle
 {
  /// <summary>
  /// Primary style name associated with the latent style exception.

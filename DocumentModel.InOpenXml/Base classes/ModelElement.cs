@@ -36,6 +36,24 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   }
 
   /// <summary>
+  /// Copy data f from the specified other instance to this instance. This method copies all public properties from the other instance to the current instance, and updates the underlying OpenXml element if applicable.
+  /// </summary>
+  /// <param name="otherInstance"></param>
+  public virtual void CopyFrom(ModelElement otherInstance)
+  {
+    var modelType = otherInstance.GetType();
+    foreach (var modelProperty in modelType.GetModelProperties())
+    {
+      var value = modelProperty.GetValue(otherInstance);
+      modelProperty.SetValue(this, value);
+    }
+
+    var updatableElement = GetUpdatableElement();
+    if (updatableElement != null)
+      UpdateData(updatableElement);
+  }
+
+  /// <summary>
   /// Passes the IsModified up to the parent IModifiable object.
   /// </summary>
   /// <param name = "sender">Sender object that raised the event.</param>
@@ -448,9 +466,9 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// Must be compatible with the current model element type.</param>
   public virtual void LoadData(object openXmlObject)
   {
-    IsLoading = true;
+    SetLoading(true);
     OpenXmlModelConverter.LoadData(this, openXmlObject);
-    IsLoading = false;
+    SetLoading(false);
   }
 
   /// <summary>
@@ -605,8 +623,17 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   [NotMapped]
   public bool IsLoading
   {
-    get;
-    set;
+    get => _IsLoading ?? (Parent is ILoadable loadableParent && loadableParent.IsLoading);
+  }
+  private bool? _IsLoading;
+
+  /// <summary>
+  /// Changes the loading state of the component. When set to true, it indicates that the component is currently loading, and any modifications made during this time should not trigger change notifications or mark the component as modified. When set to false, it indicates that loading is complete, and subsequent changes will be tracked normally.
+  /// </summary>
+  /// <param name="isLoading"></param>
+  public void SetLoading(bool isLoading)
+  {
+    _IsLoading = isLoading == false ? null : isLoading;
   }
 
   /// <summary>

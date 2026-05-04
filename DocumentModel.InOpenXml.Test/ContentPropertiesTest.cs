@@ -56,9 +56,9 @@ public class ContentPropertiesTest: _AbstractTestClass
       Console.WriteLine("✗ ContentPropertiesTest XML Deserialization returned null");
       return false;
     }
-    if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+    if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
     {
-      Console.WriteLine($"✗ ContentPropertiesTestXML Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
+      Console.WriteLine($"✗ ContentPropertiesTest XML Serialization/Deserialization test FAILED: {message}");
       return false;
     }
     Console.WriteLine("✓ ContentPropertiesTest XML Serialization/Deserialization test passed\n");
@@ -83,9 +83,9 @@ public class ContentPropertiesTest: _AbstractTestClass
       Console.WriteLine("✗ ContentPropertiesTestJSON Deserialization returned null");
       return false;
     }
-    if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+    if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
     {
-      Console.WriteLine($"✗ ContentPropertiesTest JSON Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
+      Console.WriteLine($"✗ ContentPropertiesTest JSON Serialization/Deserialization test FAILED: {message}");
       return false;
     }
     Console.WriteLine("✓ ContentPropertiesTest JSON Serialization/Deserialization test passed\n");
@@ -172,9 +172,9 @@ public class ContentPropertiesTest: _AbstractTestClass
 
       Console.WriteLine("ContentPropertiesTest: Content properties stored to new document and reloaded from it:\n" + GetDataXml(storedData));
 
-      if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+      if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
       {
-        Console.WriteLine($"✗ ContentPropertiesTest Store sample content properties test FAILED - data mismatch in property '{propName}'");
+        Console.WriteLine($"✗ ContentPropertiesTest Store sample content properties test FAILED: {message}");
         return false;
       }
 
@@ -213,9 +213,9 @@ public class ContentPropertiesTest: _AbstractTestClass
 
       Console.WriteLine("ContentPropertiesTest: Updated document content properties:\n" + GetDataXml(storedData));
 
-      if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+      if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
       {
-        Console.WriteLine($"✗ ContentPropertiesTest Updated document content properties test FAILED - data mismatch in property '{propName}'");
+        Console.WriteLine($"✗ ContentPropertiesTest Updated document content properties test FAILED: {message}");
         return false;
       }
 

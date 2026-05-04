@@ -115,11 +115,22 @@ public class _AbstractTestClass
   /// <returns>An instance of the specified type deserialized from the JSON string, or null if the input is null or empty.</returns>
   protected static DataType? DeserializeFromJson<DataType>(string json)
   {
-    var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-    return JsonSerializer.Deserialize<DataType>(json, jsonOptions);
+    return JsonSerializer.Deserialize<DataType>(json, _jsonOptions);
   }
 
 
+  /// <summary>
+  /// Deserializes the specified JSON string to an instance of the specified type.
+  /// </summary>
+  /// <remarks>The deserialization uses indented formatting options. If the JSON does not match the structure of
+  /// the specified type, the method may throw a JsonException.</remarks>
+  /// <param name="dataType">The type of the object to deserialize to. Must be compatible with the structure of the JSON string.</param>
+  /// <param name="json">The JSON string to deserialize. Must represent a valid JSON object compatible with the specified type.</param>
+  /// <returns>An instance of the specified type deserialized from the JSON string, or null if the input is null or empty.</returns>
+  protected static object? DeserializeFromJson(Type dataType, string json)
+  {
+    return JsonSerializer.Deserialize(json, dataType, _jsonOptions);
+  }
   /// <summary>
   /// Retrieves the formatted XML content of the core properties part from a WordprocessingML document.
   /// </summary>

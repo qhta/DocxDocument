@@ -53,9 +53,9 @@ public class StyleDocDefaultsParagraphPropertiesTest: _AbstractTestClass
       Console.WriteLine("✗ XML Deserialization returned null");
       return false;
     }
-    if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+    if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
     {
-      Console.WriteLine($"✗ XML Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+      Console.WriteLine($"✗ XML Serialization/Deserialization test FAILED: {message}");
       return false;
     }
     Console.WriteLine("✓ XML Serialization/Deserialization test passed\n");
@@ -80,9 +80,9 @@ public class StyleDocDefaultsParagraphPropertiesTest: _AbstractTestClass
       Console.WriteLine("✗ JSON Deserialization returned null");
       return false;
     }
-    if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+    if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
     {
-      Console.WriteLine($"✗ JSON Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+      Console.WriteLine($"✗ JSON Serialization/Deserialization test FAILED: {message}");
       return false;
     }
     Console.WriteLine("✓ JSON Serialization/Deserialization test passed\n");
@@ -144,9 +144,9 @@ public class StyleDocDefaultsParagraphPropertiesTest: _AbstractTestClass
     }
     Console.WriteLine("Styles stored to new document and reloaded from it:\n" + xmlString);
 
-    if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+    if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
     {
-      Console.WriteLine($"✗ Store sample doc defaults Paragraph properties test FAILED - data mismatch in '{propName}'");
+      Console.WriteLine($"✗ Store sample doc defaults Paragraph properties test FAILED: {message}");
       return false;
     }
 
@@ -195,9 +195,9 @@ public class StyleDocDefaultsParagraphPropertiesTest: _AbstractTestClass
       return false;
     }
 
-    if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+    if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
     {
-      Console.WriteLine($"✗ Updated document doc defaults Paragraph properties test FAILED - data mismatch in '{propName}'");
+      Console.WriteLine($"✗ Updated document doc defaults Paragraph properties test FAILED: {message}");
       return false;
     }
 
@@ -247,7 +247,7 @@ public class StyleDocDefaultsParagraphPropertiesTest: _AbstractTestClass
   /// <returns>A populated Styles object.</returns>
   static Styles CreateSampleStyles()
   {
-    var styles = StyleDefsTest.CreateSampleStyles();
+    var styles = StyleDefinitionsTest.CreateSampleStyles();
     styles.LatentStyles = LatentStylesTest.CreateSampleLatentStyles();
     styles.DocDefaults = CreateSampleDocDefaults();
     return styles;

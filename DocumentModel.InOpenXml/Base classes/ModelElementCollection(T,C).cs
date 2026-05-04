@@ -10,7 +10,10 @@ namespace DocumentModel;
 [XmlRoot("ModelElementCollection", Namespace = "DocumentModel")]
 public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : ModelElementCollection<ItemType>, IWordprocessingDocumentAware, IUpdatable where ItemType : ModelElement where OpenXmlCollectionType : DX.OpenXmlElement
 {
-  private OpenXmlCollectionType? _openXmlCollection;
+  /// <summary>
+  /// OpenXml collection element that this model element collection wraps and synchronizes with. Can be null if not attached to an OpenXml element.
+  /// </summary>
+  protected OpenXmlCollectionType? _openXmlCollection;
 
   /// <summary>
   ///   Initializes a new instance of the <see cref = "ModelElementCollection{ItemType, OpenXmlCollectionType}"/> class.
@@ -152,7 +155,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   /// <returns>The OpenXml collection element instance, or null if not set.</returns>
   public override DX.OpenXmlElement? GetUpdatableElement()
   {
-    return _openXmlCollection;
+    return _openXmlCollection ?? (Parent as IUpdatable)?.GetUpdatableElement() as DX.OpenXmlElement;
   }
 
   /// <summary>
@@ -177,13 +180,13 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   /// <param name = "openXmlObject">The OpenXml element to load data from.</param>
   public override void LoadData(object openXmlObject)
   {
-    IsLoading = true;
+    SetLoading(true);
     if (openXmlObject is OpenXmlCollectionType openXmlModeledElement)
     {
       LoadDataCollection(openXmlModeledElement);
     }
 
-    IsLoading = false;
+    SetLoading(false);
   }
 
   /// <summary>

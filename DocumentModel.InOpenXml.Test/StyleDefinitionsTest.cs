@@ -3,7 +3,7 @@
 /// <summary>
 /// Comprehensive test for DocumentModel.Styles.
 /// </summary>
-public class StyleDefsTest: _AbstractTestClass
+public class StyleDefinitionsTest: _AbstractTestClass
 {
   private static readonly string TestFileName = Path.Combine(TestFileDir, "StyleDefsTest.docx");
 
@@ -30,7 +30,7 @@ public class StyleDefsTest: _AbstractTestClass
   /// <returns>True if the test passes; otherwise, false.</returns>
   static bool TestXmlSerialization()
   {
-    Console.WriteLine("--- XML Serialization ---");
+    Console.WriteLine("--- Styles XML Serialization ---");
     var testData = CreateSampleStyles();
     var xmlSerializer = new XmlSerializer(typeof(Styles));
     string xmlString;
@@ -40,7 +40,7 @@ public class StyleDefsTest: _AbstractTestClass
       xmlSerializer.Serialize(xmlWriter, testData);
       xmlString = stringWriter.ToString();
     }
-    Console.WriteLine("Serialized XML:\n" + xmlString);
+    Console.WriteLine("Styles Serialized XML:\n" + xmlString);
 
     Styles? deserialized;
     using (var stringReader = new StringReader(xmlString))
@@ -49,15 +49,15 @@ public class StyleDefsTest: _AbstractTestClass
     }
     if (deserialized == null)
     {
-      Console.WriteLine("✗ XML Deserialization returned null");
+      Console.WriteLine("✗ Styles XML Deserialization returned null");
       return false;
     }
-    if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+    if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
     {
-      Console.WriteLine($"✗ XML Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+      Console.WriteLine($"✗ Styles XML Serialization/Deserialization test FAILED: {message}");
       return false;
     }
-    Console.WriteLine("✓ XML Serialization/Deserialization test passed\n");
+    Console.WriteLine("✓ Styles XML Serialization/Deserialization test passed\n");
     return true;
   }
 
@@ -67,24 +67,24 @@ public class StyleDefsTest: _AbstractTestClass
   /// <returns>True if the test passes; otherwise, false.</returns>
   static bool TestJsonSerialization()
   {
-    Console.WriteLine("--- JSON Serialization ---");
+    Console.WriteLine("--- Styles JSON Serialization ---");
     var testData = CreateSampleStyles();
     var jsonOptions = JsonConfig.Options;
     string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
-    Console.WriteLine("Serialized JSON:\n" + jsonString);
+    Console.WriteLine("Styles Serialized JSON:\n" + jsonString);
 
     var deserialized = JsonSerializer.Deserialize<Styles>(jsonString, jsonOptions);
     if (deserialized == null)
     {
-      Console.WriteLine("✗ JSON Deserialization returned null");
+      Console.WriteLine("✗ Styles JSON Deserialization returned null");
       return false;
     }
-    if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+    if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
     {
-      Console.WriteLine($"✗ JSON Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+      Console.WriteLine($"✗ Styles JSON Serialization/Deserialization test FAILED: {message}");
       return false;
     }
-    Console.WriteLine("✓ JSON Serialization/Deserialization test passed\n");
+    Console.WriteLine("✓ Styles JSON Serialization/Deserialization test passed\n");
     return true;
   }
 
@@ -94,23 +94,23 @@ public class StyleDefsTest: _AbstractTestClass
   /// <returns>True if the test passes; otherwise, false.</returns>
   static bool TestEdgeCases()
   {
-    Console.WriteLine("--- Edge Cases ---");
+    Console.WriteLine("--- Styles Edge Cases ---");
     var empty = new Styles();
     string xml = SerializeToXml(empty);
     var xmlDeserialized = DeserializeFromXml(xml);
     if (xmlDeserialized == null)
     {
-      Console.WriteLine("✗ Edge Cases: XML deserialization of empty object failed");
+      Console.WriteLine("✗ Styles Edge Cases: XML deserialization of empty object failed");
       return false;
     }
     string json = SerializeToJson(empty);
     var jsonDeserialized = DeserializeFromJson(json);
     if (jsonDeserialized == null)
     {
-      Console.WriteLine("✗ Edge Cases: JSON deserialization of empty object failed");
+      Console.WriteLine("✗ Styles Edge Cases: JSON deserialization of empty object failed");
       return false;
     }
-    Console.WriteLine("✓ Edge case tests passed\n");
+    Console.WriteLine("✓ Styles Edge case tests passed\n");
     return true;
   }
 
@@ -124,16 +124,26 @@ public class StyleDefsTest: _AbstractTestClass
   static bool TestStoreInDocument()
   {
     Console.WriteLine("--- Store sample StyleDefs in new document---");
+    //Debug.WriteLine($"Creating sample styles");
     Styles testData = CreateSampleStyles();
+    //Debug.WriteLine($"Creating document {TestFileName}");
     using (var document = new Document(TestFileName, FileMode.CreateNew))
     {
       document.Styles = testData;
     }
 
+    using (var wordDoc = DXPP.WordprocessingDocument.Open(TestFileName, false))
+    {
+      var outerXml = wordDoc.MainDocumentPart?.StyleDefinitionsPart?.Styles?.OuterXml;
+      outerXml = outerXml?.FormatXmlWithLineNumbers();
+      Console.WriteLine("✓ Styles stored in document:\n" + outerXml);
+    }
+
     Styles storedData;
+    //Debug.WriteLine($"Opening document {TestFileName}");
     using (var document = new Document(TestFileName))
     {
-      storedData = document.Styles ?? throw new InvalidOperationException("Styles not found.");
+      storedData = document.Styles;
     }
 
     var xmlSerializer = new XmlSerializer(typeof(Styles));
@@ -146,9 +156,9 @@ public class StyleDefsTest: _AbstractTestClass
     }
     Console.WriteLine("Styles stored to new document and reloaded from it:\n" + xmlString);
 
-    if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+    if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
     {
-      Console.WriteLine($"✗ Store sample StyleDefs test FAILED - data mismatch in '{propName}'");
+      Console.WriteLine($"✗ Store sample StyleDefs test FAILED: {message}");
       return false;
     }
 
@@ -168,13 +178,22 @@ public class StyleDefsTest: _AbstractTestClass
     Console.WriteLine("--- Update document StyleDefs ---");
     {
       Styles testData = CreateSampleStyles();
-      var initialCount = testData.DefinedStyles.Count;
+      var initialCount = testData.StyleDefinitions.Count;
       using (var document = new Document(TestFileName, FileMode.CreateNew))
       {
         document.Styles = testData;
-        var newStyle = new StyleDef() { StyleName = "New Style" };
-        document.Styles.DefinedStyles.Add(newStyle);
+        var newStyle = new StyleDefinition() { StyleName = "New Style" };
+        document.Styles.StyleDefinitions.Add(newStyle);
       }
+
+
+      using (var wordDoc = DXPP.WordprocessingDocument.Open(TestFileName, false))
+      {
+        var outerXml = wordDoc.MainDocumentPart?.StyleDefinitionsPart?.Styles?.OuterXml;
+        outerXml = outerXml?.FormatXmlWithLineNumbers();
+        Console.WriteLine("✓ Styles stored in document:\n" + outerXml);
+      }
+
       Styles storedData;
       using (var document = new Document(TestFileName))
       {
@@ -191,7 +210,7 @@ public class StyleDefsTest: _AbstractTestClass
       }
       Console.WriteLine("Updated document StyleDefs:\n" + xmlString);
 
-      var storedCount = storedData.DefinedStyles.Count;
+      var storedCount = storedData.StyleDefinitions.Count;
       if (storedCount != initialCount + 1)
       {
         Console.WriteLine($"✗ Updated document StyleDefs test FAILED  - new property count is {storedCount}, expected {initialCount + 1}");
@@ -251,7 +270,7 @@ public class StyleDefsTest: _AbstractTestClass
   internal static Styles CreateSampleStyles()
   {
     var Styles = new Styles();
-    Styles.DefinedStyles.Add(new StyleDef()
+    Styles.StyleDefinitions.Add(new StyleDefinition()
     {
       StyleName = "Normal",
       Type = StyleType.Paragraph,
@@ -259,7 +278,7 @@ public class StyleDefsTest: _AbstractTestClass
       IsPrimary = true,
       UIPriority = 1,
     });
-    Styles.DefinedStyles.Add(new StyleDef()
+    Styles.StyleDefinitions.Add(new StyleDefinition()
     {
       StyleName = "Heading 1",
       Type = StyleType.Paragraph,
@@ -268,7 +287,7 @@ public class StyleDefsTest: _AbstractTestClass
       NextParagraphStyle = "Normal",
       UIPriority = 9,
     });
-    Styles.DefinedStyles.Add(new StyleDef()
+    Styles.StyleDefinitions.Add(new StyleDefinition()
     {
       StyleName = "Heading 6",
       Type = StyleType.Paragraph,
@@ -277,7 +296,7 @@ public class StyleDefsTest: _AbstractTestClass
       NextParagraphStyle = "Normal",
       UIPriority = 14,
     });
-    Styles.DefinedStyles.Add(new StyleDef()
+    Styles.StyleDefinitions.Add(new StyleDefinition()
     {
       StyleName = "annotation text",
       Type = StyleType.Character,
@@ -285,7 +304,7 @@ public class StyleDefsTest: _AbstractTestClass
       BasedOn = "DefaultParagraphFont",
       UIPriority = 99,
     });
-    Styles.DefinedStyles.Add(new StyleDef()
+    Styles.StyleDefinitions.Add(new StyleDefinition()
     {
       StyleName = "Book title",
       Type = StyleType.Paragraph,

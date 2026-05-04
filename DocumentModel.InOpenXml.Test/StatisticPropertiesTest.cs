@@ -55,9 +55,9 @@ public class StatisticPropertiesTest: _AbstractTestClass
       Console.WriteLine("✗ StatisticPropertiesTest XML Deserialization returned null");
       return false;
     }
-    if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+    if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
     {
-      Console.WriteLine($"✗ StatisticPropertiesTest Store sample content properties test FAILED - data mismatch in property '{propName}'");
+      Console.WriteLine($"✗ StatisticPropertiesTest Store sample content properties test FAILED: {message}");
       return false;
     }
     Console.WriteLine("✓ XML Serialization/Deserialization test passed\n");
@@ -82,9 +82,9 @@ public class StatisticPropertiesTest: _AbstractTestClass
       Console.WriteLine("✗ StatisticPropertiesTest JSON Deserialization returned null");
       return false;
     }
-    if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+    if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
     {
-      Console.WriteLine($"✗ StatisticPropertiesTest Store sample content properties test FAILED - data mismatch in property '{propName}'");
+      Console.WriteLine($"✗ StatisticPropertiesTest Store sample content properties test FAILED: {message}");
       return false;
     }
     Console.WriteLine("✓ StatisticPropertiesTest JSON Serialization/Deserialization test passed\n");
@@ -166,9 +166,9 @@ public class StatisticPropertiesTest: _AbstractTestClass
 
       Console.WriteLine("StatisticPropertiesTest properties stored to new document and reloaded from it:\n" + GetDataXml(storedData));
 
-      if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+      if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
       {
-        Console.WriteLine($"✗ StatisticPropertiesTest Store sample statistic properties test FAILED - data mismatch in property '{propName}'");
+        Console.WriteLine($"✗ StatisticPropertiesTest Store sample statistic properties test FAILED: {message}");
         return false;
       }
 
@@ -206,9 +206,9 @@ public class StatisticPropertiesTest: _AbstractTestClass
 
     Console.WriteLine("StatisticPropertiesTest Updated document statistic properties:\n" + GetDataXml(storedData));
 
-    if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+    if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
     {
-      Console.WriteLine($"✗ StatisticPropertiesTest Updated document statistic properties test FAILED - data mismatch in property '{propName}'");
+      Console.WriteLine($"✗ StatisticPropertiesTest Updated document statistic properties test FAILED: {message}");
       return false;
     }
 

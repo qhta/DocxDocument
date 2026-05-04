@@ -24,7 +24,6 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordpro
   {
   }
 
-
   /// <summary>
   ///   Initializes a new instance of the <see cref = "ModelElement{Format}"/> class with the specified OpenXml element.
   /// </summary>
@@ -39,23 +38,19 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordpro
   /// </summary>
   /// <param name="parent">The parent ModelElement that contains this element. Can be null if this is a root element.</param>
   /// <param name="openXmlElement">The OpenXmlElement that provides the underlying Open XML data for this model element. Must not be null.</param>
-  protected ModelElement(ModelElement parent, DX.OpenXmlElement openXmlElement) : base(parent)
+  protected ModelElement(ModelElement parent, DX.OpenXmlElement? openXmlElement) : base(parent)
   {
-    _openXmlElement = (OpenXmlType)openXmlElement;
+    if (openXmlElement != null)
+      _openXmlElement = (OpenXmlType)openXmlElement;
   }
 
   /// <summary>
   /// Copies data from the specified other instance to this instance.
   /// </summary>
   /// <param name = "otherInstance">The instance containing the model property values to copy.</param>
-  public void CopyFrom(ModelElement otherInstance)
+  public override void CopyFrom(ModelElement otherInstance)
   {
-    var modelType = otherInstance.GetType();
-    foreach (var modelProperty in modelType.GetModelProperties())
-    {
-      var value = modelProperty.GetValue(otherInstance);
-      modelProperty.SetValue(this, value);
-    }
+    base.CopyFrom(otherInstance);
 
     var updatableElement = GetUpdatableElement();
     if (updatableElement != null)
@@ -68,7 +63,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordpro
   /// <remarks>This field is intended for use by derived classes to access or manipulate the Open XML element
   /// that backs the current object. The value may be null if the instance has not been initialized with an Open XML
   /// element.</remarks>
-  protected OpenXmlType? _openXmlElement { get; set; }
+  protected OpenXmlType? _openXmlElement;
 
 
   /// <summary>

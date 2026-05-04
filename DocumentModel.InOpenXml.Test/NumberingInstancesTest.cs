@@ -13,14 +13,13 @@ public class NumberingInstancesTest : _AbstractTestClass
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
   {
-    Console.WriteLine("=== Abstract Numbering Test ===\n");
+    Console.WriteLine("=== NumberingInstances test ===\n");
     if (!TestXmlSerialization()) return false;
     if (!TestJsonSerialization()) return false;
     if (!TestEdgeCases()) return false;
     if (!TestStoreInDocument()) return false;
     if (!TestUpdateInDocument()) return false;
-    if (!TestValidateOpenXml()) return false;
-    Console.WriteLine("All Numbering tests passed.\n");
+    Console.WriteLine("All NumberingInstances tests passed.\n");
     return true;
   }
 
@@ -30,7 +29,7 @@ public class NumberingInstancesTest : _AbstractTestClass
   /// <returns>True if the test passes; otherwise, false.</returns>
   static bool TestXmlSerialization()
   {
-    Console.WriteLine("--- XML Serialization ---");
+    Console.WriteLine("--- NumberingInstances XML Serialization ---");
     var testData = CreateSampleNumbering();
     var xmlSerializer = new XmlSerializer(typeof(Numbering));
     string xmlString;
@@ -40,7 +39,7 @@ public class NumberingInstancesTest : _AbstractTestClass
       xmlSerializer.Serialize(xmlWriter, testData);
       xmlString = stringWriter.ToString();
     }
-    Console.WriteLine("Serialized XML:\n" + xmlString);
+    Console.WriteLine("NumberingInstances Serialized XML:\n" + xmlString);
 
     Numbering? deserialized;
     using (var stringReader = new StringReader(xmlString))
@@ -49,15 +48,15 @@ public class NumberingInstancesTest : _AbstractTestClass
     }
     if (deserialized == null)
     {
-      Console.WriteLine("✗ XML Deserialization returned null");
+      Console.WriteLine("✗ NumberingInstances XML Deserialization returned null");
       return false;
     }
-    if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+    if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
     {
-      Console.WriteLine($"✗ XML Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+      Console.WriteLine($"✗ NumberingInstances XML Serialization/Deserialization test FAILED: {message}");
       return false;
     }
-    Console.WriteLine("✓ XML Serialization/Deserialization test passed\n");
+    Console.WriteLine("✓ NumberingInstances XML Serialization/Deserialization test passed\n");
     return true;
   }
 
@@ -67,7 +66,7 @@ public class NumberingInstancesTest : _AbstractTestClass
   /// <returns>True if the test passes; otherwise, false.</returns>
   static bool TestJsonSerialization()
   {
-    Console.WriteLine("--- JSON Serialization ---");
+    Console.WriteLine("--- NumberingInstances JSON Serialization ---");
     var testData = CreateSampleNumbering();
     var jsonOptions = JsonConfig.Options;
     string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
@@ -76,15 +75,15 @@ public class NumberingInstancesTest : _AbstractTestClass
     var deserialized = JsonSerializer.Deserialize<Numbering>(jsonString, jsonOptions);
     if (deserialized == null)
     {
-      Console.WriteLine("✗ JSON Deserialization returned null");
+      Console.WriteLine("✗ NumberingInstances JSON Deserialization returned null");
       return false;
     }
-    if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+    if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
     {
-      Console.WriteLine($"✗ JSON Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+      Console.WriteLine($"✗ NumberingInstances JSON Serialization/Deserialization test FAILED: {message}");
       return false;
     }
-    Console.WriteLine("✓ JSON Serialization/Deserialization test passed\n");
+    Console.WriteLine("✓ NumberingInstances JSON Serialization/Deserialization test passed\n");
     return true;
   }
 
@@ -94,23 +93,23 @@ public class NumberingInstancesTest : _AbstractTestClass
   /// <returns>True if the test passes; otherwise, false.</returns>
   static bool TestEdgeCases()
   {
-    Console.WriteLine("--- Edge Cases ---");
+    Console.WriteLine("--- NumberingInstances Edge Cases ---");
     var empty = new Numbering();
     string xml = SerializeToXml(empty);
     var xmlDeserialized = DeserializeFromXml(xml);
     if (xmlDeserialized == null)
     {
-      Console.WriteLine("✗ Edge Cases: XML deserialization of empty object failed");
+      Console.WriteLine("✗ NumberingInstances Edge Cases: XML deserialization of empty object failed");
       return false;
     }
     string json = SerializeToJson(empty);
     var jsonDeserialized = DeserializeFromJson(json);
     if (jsonDeserialized == null)
     {
-      Console.WriteLine("✗ Edge Cases: JSON deserialization of empty object failed");
+      Console.WriteLine("✗ NumberingInstances Edge Cases: JSON deserialization of empty object failed");
       return false;
     }
-    Console.WriteLine("✓ Edge case tests passed\n");
+    Console.WriteLine("✓ NumberingInstances Edge case tests passed\n");
     return true;
   }
 
@@ -123,11 +122,28 @@ public class NumberingInstancesTest : _AbstractTestClass
   /// <returns>true if the document Numbering are successfully stored and verified; otherwise, false.</returns>
   static bool TestStoreInDocument()
   {
-    Console.WriteLine("--- Store sample abstract numbering in new document---");
+    Console.WriteLine("--- Store sample NumberingInstances in new document---");
     Numbering testData = CreateSampleNumbering();
     using (var document = new Document(TestFileName, FileMode.CreateNew))
     {
       document.Numbering = testData;
+    }
+
+    using (var document = new Document(TestFileName))
+    {
+      var openXml = document.WordprocessingDocument!.MainDocumentPart!.NumberingDefinitionsPart!.Numbering!.OuterXml;
+      var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
+      Console.WriteLine(formattedOpenXml);
+      var validationResult = OpenXmlSchemaValidator.ValidateXml(formattedOpenXml);
+      if (!validationResult.IsValid)
+      {
+        Console.WriteLine("✗ NumberingInstances OpenXml schema validation FAILED - issues found:");
+        foreach (var msg in validationResult.Messages)
+        {
+          Console.WriteLine($" {msg}");
+        }
+        return false;
+      }
     }
 
     Numbering storedData;
@@ -144,11 +160,11 @@ public class NumberingInstancesTest : _AbstractTestClass
       xmlSerializer.Serialize(xmlWriter, storedData);
       xmlString = stringWriter.ToString();
     }
-    Console.WriteLine("Numbering stored to new document and reloaded from it:\n" + xmlString);
+    Console.WriteLine("NumberingInstances stored to new document and reloaded from it:\n" + xmlString);
 
-    if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+    if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
     {
-      Console.WriteLine($"✗ Store sample abstract numbering test FAILED - data mismatch in '{propName}'");
+      Console.WriteLine($"✗ Store sample NumberingInstances test FAILED: {message}");
       return false;
     }
 
@@ -165,86 +181,60 @@ public class NumberingInstancesTest : _AbstractTestClass
   /// <returns>true if the document Numbering are successfully updated and verified; otherwise, false.</returns>
   static bool TestUpdateInDocument()
   {
-    Console.WriteLine("--- Update document abstract numbering ---");
+    Console.WriteLine("--- Update document NumberingInstances ---");
+    Numbering testData = CreateSampleNumbering();
+    var initialCount = testData.NumberingInstances.Count;
+    using (var document = new Document(TestFileName, FileMode.CreateNew))
     {
-      Numbering testData = CreateSampleNumbering();
-      var initialCount = testData.NumberingInstances.Count;
-      using (var document = new Document(TestFileName, FileMode.CreateNew))
+      document.Numbering = testData;
+      document.Numbering.NumberingInstances.Add(new NumberingInstance()
       {
-        document.Numbering = testData;
-        document.Numbering.NumberingInstances.Add(new NumberingInstance()
+        AbstractNumId = 1,
+        NumberID = 4,
+      });
+    }
+    using (var document = new Document(TestFileName))
+    {
+      var openXml = document.WordprocessingDocument!.MainDocumentPart!.NumberingDefinitionsPart!.Numbering!.OuterXml;
+      var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
+      Console.WriteLine(formattedOpenXml);
+      var validationResult = OpenXmlSchemaValidator.ValidateXml(formattedOpenXml);
+      if (!validationResult.IsValid)
+      {
+        Console.WriteLine("✗ NumberingInstances OpenXml schema validation FAILED - issues found:");
+        foreach (var msg in validationResult.Messages)
         {
-          AbstractNumId = 1,
-          NumberID = 4,
-        });
-      }
-      Numbering storedData;
-      using (var document = new Document(TestFileName))
-      {
-        storedData = document.Numbering ?? throw new InvalidOperationException("Numbering not found.");
-      }
-
-      var xmlSerializer = new XmlSerializer(typeof(Numbering));
-      string xmlString;
-      using (var stringWriter = new StringWriter())
-      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-      {
-        xmlSerializer.Serialize(xmlWriter, storedData);
-        xmlString = stringWriter.ToString();
-      }
-      Console.WriteLine("Updated document abstract Numbering:\n" + xmlString);
-
-      var storedCount = storedData.NumberingInstances.Count;
-      if (storedCount != initialCount + 1)
-      {
-        Console.WriteLine($"✗ Updated document abstract numbering test FAILED  - new property count is {storedCount}, expected {initialCount + 1}");
+          Console.WriteLine($" {msg}");
+        }
         return false;
       }
-
-      Console.WriteLine("✓ Updated document Numbering test passed\n");
-      return true;
     }
-  }
 
-  /// <summary>
-  /// Tests validating the OpenXml generated from the document containing sample Numbering against the OpenXml schema.
-  /// </summary>
-  /// <remarks>This method is intended for use in test scenarios to verify that the OpenXml generated from the document
-  /// containing sample Numbering adheres to the OpenXml schema. It writes status messages and the serialized properties to the console for
-  /// inspection.</remarks>
-  /// <returns>true if the OpenXml is valid according to the schema; otherwise, false.</returns>
-  static bool TestValidateOpenXml()
-  {
-    Console.WriteLine("--- Validate sample abstract numbering stored in new document against OpenXml schema ---");
+    Numbering storedData;
+    using (var document = new Document(TestFileName))
     {
-      Numbering testData = CreateSampleNumbering();
-      using (var document = new Document(TestFileName, FileMode.CreateNew))
-      {
-        document.Numbering = testData;
-      }
-
-      using (var document = new Document(TestFileName))
-      {
-        var openXml = document.WordprocessingDocument!.MainDocumentPart!.NumberingDefinitionsPart!.Numbering!.OuterXml;
-        //openXml = openXml.Replace("http://schemas.openxmlformats.org/wordprocessingml/2006/main",
-        //  "http://purl.oclc.org/ooxml/wordprocessingml/main");
-        var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
-        Console.WriteLine(formattedOpenXml);
-        var validationResult = OpenXmlSchemaValidator.ValidateXml(formattedOpenXml);
-        if (!validationResult.IsValid)
-        {
-          Console.WriteLine("✗ OpenXml schema validation FAILED - issues found:");
-          foreach (var message in validationResult.Messages)
-          {
-            Console.WriteLine($" {message}");
-          }
-          return false;
-        }
-      }
-
-      Console.WriteLine("✓ Validate sample abstract numbering test passed\n");
-      return true;
+      storedData = document.Numbering ?? throw new InvalidOperationException("Numbering not found.");
     }
+
+    var xmlSerializer = new XmlSerializer(typeof(Numbering));
+    string xmlString;
+    using (var stringWriter = new StringWriter())
+    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+    {
+      xmlSerializer.Serialize(xmlWriter, storedData);
+      xmlString = stringWriter.ToString();
+    }
+    Console.WriteLine("Updated document NumberingInstances:\n" + xmlString);
+
+    var storedCount = storedData.NumberingInstances.Count;
+    if (storedCount != initialCount + 1)
+    {
+      Console.WriteLine($"✗ Updated document NumberingInstances test FAILED  - new property count is {storedCount}, expected {initialCount + 1}");
+      return false;
+    }
+
+    Console.WriteLine("✓ Updated document NumberingInstances test passed\n");
+    return true;
   }
 
   /// <summary>

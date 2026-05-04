@@ -47,9 +47,9 @@
         return false;
       }
 
-      if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+      if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
       {
-        Console.WriteLine($"✗ DocumentSettings XML Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
+        Console.WriteLine($"✗ DocumentSettings XML Serialization/Deserialization test FAILED: {message}");
         return false;
       }
       Console.WriteLine("✓ DocumentSettings XML Serialization/Deserialization test passed\n");
@@ -74,9 +74,9 @@
         Console.WriteLine("✗ DocumentSettingsTest JSON Deserialization returned null");
         return false;
       }
-      if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+      if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
       {
-        Console.WriteLine($"✗ DocumentSettingsTest JSON Serialization/Deserialization test FAILED - data mismatch in property '{propName}'");
+        Console.WriteLine($"✗ DocumentSettingsTest JSON Serialization/Deserialization test FAILED: {message}");
         return false;
       }
       Console.WriteLine("✓ DocumentSettingsTest JSON Serialization/Deserialization test passed\n");
@@ -157,9 +157,9 @@
         return false;
       }
 
-      if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+      if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
       {
-        Console.WriteLine($"✗ Store sample document settings test FAILED - data mismatch in property '{propName}'");
+        Console.WriteLine($"✗ Store sample document settings test FAILED: {message}");
         return false;
       }
 
@@ -202,9 +202,9 @@
       }
       Console.WriteLine("document settings stored to new document and reloaded from it:\n" + xmlString);
 
-      if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+      if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
       {
-        Console.WriteLine($"✗ Store sample document settings test FAILED - data mismatch in property '{propName}'");
+        Console.WriteLine($"✗ Store sample document settings test FAILED: {message}");
         return false;
       }
 

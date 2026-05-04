@@ -315,7 +315,7 @@ public static class WordprocessingHelper
  public static DXW.Fonts GetFontTable(this DXPP.WordprocessingDocument wordDocument)
  {
   var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
-  var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
+  //var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
   DXPP.FontTablePart part = mainPart.FontTablePart ?? mainPart.AddNewPart<DXPP.FontTablePart>();
   var fonts = part.Fonts ?? (part.Fonts = new DXW.Fonts());
   return fonts;
@@ -329,7 +329,7 @@ public static class WordprocessingHelper
  public static DXD.Theme GetTheme(this DXPP.WordprocessingDocument wordDocument)
  {
   var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
-  var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
+  //var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
   DXPP.ThemePart part = mainPart.ThemePart ?? mainPart.AddNewPart<DXPP.ThemePart>();
   var theme = part.Theme ?? (part.Theme = new DXD.Theme());
   return theme;
@@ -343,7 +343,7 @@ public static class WordprocessingHelper
  public static DXW.Styles GetStyles(this DXPP.WordprocessingDocument wordDocument)
  {
   var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
-  var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
+  //var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
   DXPP.StyleDefinitionsPart part = mainPart.StyleDefinitionsPart ?? mainPart.AddNewPart<DXPP.StyleDefinitionsPart>();
   var Styles = part.Styles ?? (part.Styles = new DXW.Styles());
   return Styles;
@@ -357,9 +357,9 @@ public static class WordprocessingHelper
  public static DXW.Numbering GetNumbering(this DXPP.WordprocessingDocument wordDocument)
  {
   var mainPart = wordDocument.MainDocumentPart ?? wordDocument.AddMainDocumentPart();
-  var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
+  //var document = mainPart.Document ?? (mainPart.Document = new DXW.Document());
   DXPP.NumberingDefinitionsPart part = mainPart.NumberingDefinitionsPart ?? mainPart.AddNewPart<DXPP.NumberingDefinitionsPart>();
-  var Numbering = part.Numbering ?? (part.Numbering = new DXW.Numbering());
+  var Numbering = part.Numbering ??= new DXW.Numbering();
   return Numbering;
  }
 }

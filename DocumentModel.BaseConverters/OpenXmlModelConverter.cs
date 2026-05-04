@@ -557,11 +557,13 @@ public static partial class OpenXmlModelConverter
   public static void LoadData(object modelObject, object openXmlObject)
   {
     if (modelObject.GetType().Name == "Body") Debug.Assert(true);
+    (modelObject as ILoadable)?.SetLoading(true);
     var modelType = modelObject.GetType();
     var openXmlType = openXmlObject.GetType();
     if (TryLoadUsingTypeLoadDataMethod(modelObject, openXmlObject, openXmlType)) return;
     TryLoadModelProperties(modelObject, openXmlObject, modelType, openXmlType);
     TryLoadUsingItemAttribute(modelObject, openXmlObject, modelType);
+    (modelObject as ILoadable)?.SetLoading(false);
   }
 
   /// <summary>
@@ -644,8 +646,11 @@ public static partial class OpenXmlModelConverter
   {
     //Debug.WriteLine($"Loading property {modelProperty.Name} of type {modelProperty.PropertyType} " +
     //                $"from Open XML type {openXmlType} into model type {modelObject.GetType()}");
+
     var propertyType = modelProperty.PropertyType.GetNotNullableType();
-    if (modelProperty.Name == "Items") Debug.Assert(true);
+    if (modelProperty.Name == "LatentStyles") Debug.Assert(true);
+
+    if (modelProperty.Name == "DefinedStyles") Debug.Assert(true);
     if (propertyType.Implements(typeof(ILazyLoadable)) && openXmlObject is DX.OpenXmlCompositeElement openXmlCompositeElement)
     {
       var propertyValue = modelProperty.GetValue(modelObject);
@@ -881,6 +886,8 @@ public static partial class OpenXmlModelConverter
   /// <exception cref="InvalidOperationException"></exception>
   public static void LoadCollectionChildren(object modelCollection, DX.OpenXmlCompositeElement openXmlElement)
   {
+    //Debug.WriteLine($"Loading collection children for model collection of type {modelCollection.GetType()} " +
+    //                $"from Open XML type {openXmlElement.GetType()}");
     if (TryRegisterLazyLoad(modelCollection, openXmlElement))
       return;
 

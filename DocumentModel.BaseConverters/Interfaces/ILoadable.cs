@@ -12,4 +12,9 @@ public interface ILoadable
   /// <returns></returns>
   public bool IsLoading { get; }
 
+  /// <summary>
+  /// Sets the loading state of the component.
+  /// </summary>
+  /// <param name="isLoading">true to indicate that the component is loading; otherwise, false.</param>
+  public void SetLoading(bool isLoading);
 }

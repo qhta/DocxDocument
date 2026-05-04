@@ -6,14 +6,18 @@ namespace DocumentModel;
 /// <typeparam name = "OpenXmlCollectionType">Type of the Open XML composite element representing the collection.</typeparam>
 /// <typeparam name = "OpenXmlItemType">Type of the Open XML element representing individual items.</typeparam>
 [XmlRoot("ModelElementCollection", Namespace = "DocumentModel")]
-public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, OpenXmlItemType> : ModelElementCollection<ItemType, OpenXmlCollectionType> where ItemType : ModelElement where OpenXmlCollectionType : DX.OpenXmlCompositeElement where OpenXmlItemType : DX.OpenXmlElement
+public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, OpenXmlItemType> :
+  ModelElementCollection<ItemType, OpenXmlCollectionType>
+  where ItemType : ModelElement
+  where OpenXmlCollectionType : DX.OpenXmlCompositeElement
+  where OpenXmlItemType : DX.OpenXmlElement
 {
- /// <summary>
- /// Initializes a new instance of the collection with default settings.
- /// </summary>
- protected ModelElementCollection()
- {
- }
+  /// <summary>
+  /// Initializes a new instance of the collection with default settings.
+  /// </summary>
+  protected ModelElementCollection()
+  {
+  }
 
   /// <summary>
   /// Initializes a new instance of the ModelElementCollection class with the specified parent element.
@@ -29,56 +33,58 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   /// </summary>
   /// <param name = "itemTypeCollection">The collection of model elements to add.</param>
   protected ModelElementCollection(IEnumerable<ItemType> itemTypeCollection) : base()
- {
-  foreach (var item in itemTypeCollection)
   {
-   this.Add(item);
-  }
- }
-
- /// <summary>
- /// Loads model elements from the specified Open XML composite element and populates the collection.
- /// </summary>
- /// <param name = "openXmlModeledCollection">The Open XML composite element containing child elements to load.</param>
- protected override void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection)
- {
-  this.Clear();
-  foreach (var openXmlElement in openXmlModeledCollection!.ChildElements.OfType<OpenXmlItemType>())
-  {
-   var constructor = typeof(ItemType).GetConstructor([typeof(ModelElement<OpenXmlItemType>), typeof(OpenXmlItemType)]);
-   ItemType modelObject;
-   if (constructor != null)
-   {
-    modelObject = (ItemType)constructor.Invoke([this, openXmlElement]);
-   }
-   else
-   {
-    modelObject = Activator.CreateInstance<ItemType>();
-    modelObject.LoadData(openXmlElement);
-   }
-
-   this.Add(modelObject);
-  }
- }
-
- /// <summary>
- /// Updates the Open XML composite element to reflect the current state of the collection.
- /// </summary>
- /// <param name = "openXmlModeledCollection">The Open XML composite element to update.</param>
- protected override void UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection)
- {
-  SetUpdatableElement(openXmlModeledCollection);
-  var children = openXmlModeledCollection.Elements().Where(item => item is OpenXmlItemType).ToArray();
-  foreach (var child in children)
-  {
-   child.Remove();
+    foreach (var item in itemTypeCollection)
+    {
+      this.Add(item);
+    }
   }
 
-  foreach (var item in this)
+  /// <summary>
+  /// Loads model elements from the specified Open XML composite element and populates the collection.
+  /// </summary>
+  /// <param name = "openXmlModeledCollection">The Open XML composite element containing child elements to load.</param>
+  protected override void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection)
   {
-   OpenXmlItemType openXmlElement = Activator.CreateInstance<OpenXmlItemType>();
-   item.UpdateData(openXmlElement);
-   openXmlModeledCollection.AppendChild(openXmlElement);
+    this.Clear();
+    foreach (var openXmlElement in openXmlModeledCollection!.ChildElements.OfType<OpenXmlItemType>())
+    {
+      var constructor = typeof(ItemType).GetConstructor([typeof(ModelElement<OpenXmlItemType>), typeof(OpenXmlItemType)]);
+      ItemType modelObject;
+      if (constructor != null)
+      {
+        Debug.WriteLine($"Invoking constructor with parameters (ModelElement<{typeof(OpenXmlItemType).Name}>, {typeof(OpenXmlItemType).Name}) for type {typeof(ItemType).FullName}.");
+        modelObject = (ItemType)constructor.Invoke([this, openXmlElement]);
+      }
+      else
+      {
+        Debug.WriteLine($"Constructor with parameters (ModelElement<{typeof(OpenXmlItemType).Name}>, {typeof(OpenXmlItemType).Name}) not found for type {typeof(ItemType).FullName}. Falling back to parameterless constructor and LoadData method.");
+        modelObject = Activator.CreateInstance<ItemType>();
+        modelObject.LoadData(openXmlElement);
+      }
+
+      this.Add(modelObject);
+    }
   }
- }
+
+  /// <summary>
+  /// Updates the Open XML composite element to reflect the current state of the collection.
+  /// </summary>
+  /// <param name = "openXmlModeledCollection">The Open XML composite element to update.</param>
+  protected override void UpdateDataCollection(OpenXmlCollectionType openXmlModeledCollection)
+  {
+    SetUpdatableElement(openXmlModeledCollection);
+    var children = openXmlModeledCollection.Elements().Where(item => item is OpenXmlItemType).ToArray();
+    foreach (var child in children)
+    {
+      child.Remove();
+    }
+
+    foreach (var item in this)
+    {
+      OpenXmlItemType openXmlElement = Activator.CreateInstance<OpenXmlItemType>();
+      item.UpdateData(openXmlElement);
+      openXmlModeledCollection.AppendChild(openXmlElement);
+    }
+  }
 }

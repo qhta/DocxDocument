@@ -67,12 +67,11 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
   /// </summary>
   /// <param name="source"></param>
   /// <exception cref="ArgumentNullException"></exception>
-  public virtual void CopyFrom(ElementCollection<ItemType> source)
+  public virtual void CopyFrom(IEnumerable<ItemType> source)
   {
-    if (source == null)
-      throw new ArgumentNullException(nameof(source));
+    var sourceArray = source as ItemType[] ?? source.ToArray();
     Clear();
-    foreach (var item in source)
+    foreach (var item in sourceArray)
     {
       Add(item);
     }
@@ -119,6 +118,9 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
         }
       }
     }
+    else if (args.Action == NotifyCollectionChangedAction.Reset)
+      return;
+
     if (!IsLoading)
       if (Parent != null)
       {

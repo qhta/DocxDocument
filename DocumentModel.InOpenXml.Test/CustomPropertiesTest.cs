@@ -58,9 +58,9 @@ public class CustomPropertiesTest: _AbstractTestClass
         Console.WriteLine("✗ CustomProperties Test XML Deserialization returned null");
         return false;
       }
-      if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+      if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
       {
-        Console.WriteLine($"✗ CustomProperties Test XML Serialization/Deserialization FAILED - data mismatch in '{propName}'");
+        Console.WriteLine($"✗ CustomProperties Test XML Serialization/Deserialization FAILED: {message}");
         return false;
       }
       Console.WriteLine("✓ CustomProperties Test XML Serialization/Deserialization passed\n");
@@ -87,9 +87,9 @@ public class CustomPropertiesTest: _AbstractTestClass
         Console.WriteLine("✗ CustomProperties Test JSON Deserialization returned null");
         return false;
       }
-      if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+      if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
       {
-        Console.WriteLine($"✗ CustomProperties Test JSON Serialization/Deserialization FAILED - data mismatch in '{propName}'");
+        Console.WriteLine($"✗ CustomProperties Test JSON Serialization/Deserialization FAILED: {message}");
         return false;
       }
       Console.WriteLine("✓ CustomProperties Test JSON Serialization/Deserialization passed\n");
@@ -164,9 +164,9 @@ public class CustomPropertiesTest: _AbstractTestClass
     }
     Console.WriteLine("✓ CustomProperties Test: Custom properties stored to new document and reloaded from it:\n" + xmlString);
 
-    if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+    if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
     {
-      Console.WriteLine($"✗ CustomProperties Test: Store sample custom properties test FAILED - data mismatch in '{propName}'");
+      Console.WriteLine($"✗ CustomProperties Test: Store sample custom properties test FAILED: {message}");
       return false;
     }
 
@@ -225,9 +225,9 @@ public class CustomPropertiesTest: _AbstractTestClass
       return false;
     }
     var storedCustomProperty = storedData.Last<object>();
-    if (!TestHelper.CompareTestData(newCustomProperty, storedCustomProperty, out var propName))
+    if (!TestHelper.CompareTestData(newCustomProperty, storedCustomProperty, "newCustomProperty", "storedCustomProperty", out var message))
     {
-      Console.WriteLine($"✗ CustomProperties Test: Updated document custom properties test FAILED - data mismatch in new item '{propName}'");
+      Console.WriteLine($"✗ CustomProperties Test: Updated document custom properties test FAILED: {message}");
       return false;
     }
 
@@ -278,9 +278,9 @@ public class CustomPropertiesTest: _AbstractTestClass
     }
     Console.WriteLine("✓ CustomProperties Test: Custom properties stored to new document and reloaded from it:\n" + xmlString);
 
-    if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+    if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
     {
-      Console.WriteLine($"✗ CustomProperties Test:  Store sample custom properties test FAILED - data mismatch in '{propName}'");
+      Console.WriteLine($"✗ CustomProperties Test:  Store sample custom properties test FAILED: {message}");
       return false;
     }
 
@@ -339,9 +339,9 @@ public class CustomPropertiesTest: _AbstractTestClass
       return false;
     }
     var storedCustomProperty = storedData.Last();
-    if (!TestHelper.CompareTestData(newPropertyName, storedCustomProperty.Name, out var propName))
+    if (!TestHelper.CompareTestData(newPropertyName, storedCustomProperty.Name, "newPropertyName", "storedCustomProperty.Name", out var message))
     {
-      Console.WriteLine($"✗ CustomProperties Test: Updated document custom properties test FAILED - data mismatch in new item '{propName}'");
+      Console.WriteLine($"✗ CustomProperties Test: Updated document custom properties test FAILED: {message}");
       return false;
     }
 

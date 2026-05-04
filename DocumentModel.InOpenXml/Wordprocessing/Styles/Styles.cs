@@ -20,7 +20,7 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
   /// Initializing constructor.
   /// </summary>
   /// <param name = "document">The document to attach to.</param>
-  public Styles(Document document) : this()
+  public Styles(Document document) : base(document)
   {
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);
@@ -71,7 +71,7 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
   /// Latent style information, providing metadata and settings for latent styles in the document.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.Styles.LatentStyles))]
-  public LatentStyles? LatentStyles
+  public LatentStyles LatentStyles
   {
     get => _LatentStyles ??= new LatentStyles(this, _openXmlElement?.LatentStyles);
     set => UpdateField(ref _LatentStyles, value, nameof(LatentStyles));
@@ -81,34 +81,12 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
   /// <summary>
   /// Collection of defined styles in the document, including paragraph, character, table, and numbering styles.
   /// </summary>
-  //[OpenXmlElementCollection(typeof(DXW.Style))]
-  //[OpenXmlUpdateData(nameof(UpdateDefinedStyles))]
-  //[OpenXmlLoadData(nameof(LoadDefinedStyles))]
-  public DefinedStyles DefinedStyles
+  [OpenXmlElementCollection(typeof(DXW.Style))]
+  public StyleDefinitions StyleDefinitions
   {
-    get => _DefinedStyles ??= new DefinedStyles(this, _openXmlElement);
+    get => _StyleDefinitions ??= new StyleDefinitions(this, _openXmlElement);
+    set => StyleDefinitions.CopyFrom(value);
   }
-  private DefinedStyles? _DefinedStyles;
+  private StyleDefinitions? _StyleDefinitions;
 
-  ///// <summary>
-  ///// Updates the styles in the specified OpenXml element b with styles defined in the DefinedStyles collection.  
-  ///// </summary>
-  ///// <remarks>This method passes the specified element to the DefinedStyles collection for updating.</remarks>
-  ///// <param name = "element">The OpenXml element to update. Must be of type <see cref = "DXW.Styles"/>.</param>
-  ///// <exception cref = "ArgumentException">Thrown if <paramref name = "element"/> is not of type <see cref = "DXW.Styles"/>.</exception>
-  //public void UpdateDefinedStyles(DX.OpenXmlElement element)
-  //{
-  //  DefinedStyles.UpdateStyles(element);
-  //}
-
-  ///// <summary>
-  ///// Loads styles from the specified OpenXmlElement into the DefinedStyles collection, replacing any existing styles.
-  ///// </summary>
-  ///// <remarks>This method passes the specified element to the DefinedStyles collection for loading.</remarks>
-  ///// <param name = "element">The OpenXmlElement containing the styles to load. Must be of type DXW.Styles.</param>
-  ///// <exception cref = "ArgumentException">Thrown if the provided element is not of type DXW.Styles.</exception>
-  //public void LoadDefinedStyles(DX.OpenXmlElement element)
-  //{
-  //  DefinedStyles.LoadStyles(element);
-  //}
 }

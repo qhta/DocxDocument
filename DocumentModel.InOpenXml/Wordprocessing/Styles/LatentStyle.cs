@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [OpenXmlType(typeof(DXW.LatentStyleExceptionInfo))]
 [XmlRoot("LatentStyleExceptionInfo", Namespace = "DocumentModel.Wordprocessing")]
-public partial class LatentStyleExceptionInfo : ModelElement<DXW.LatentStyleExceptionInfo>
+public partial class LatentStyle : ModelElement<DXW.LatentStyleExceptionInfo>
 {
  /// <summary>
  /// Primary style name associated with the latent style exception.

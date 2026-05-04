@@ -1,4 +1,6 @@
-﻿namespace DocumentModel.InOpenXml.Test
+﻿using Qhta.OpenXmlTools;
+
+namespace DocumentModel.InOpenXml.Test
 {
 	/// <summary>
 	/// Comprehensive test for DocumentModel.DocumentVariables.
@@ -52,9 +54,9 @@
 					Console.WriteLine("✗ DocumentVariables XML Deserialization returned null");
 					return false;
 				}
-				if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+				if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
 				{
-					Console.WriteLine($"✗ DocumentVariables XML Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+					Console.WriteLine($"✗ DocumentVariables XML Serialization/Deserialization test FAILED: {message}");
 					return false;
 				}
 				Console.WriteLine("✓ DocumentVariables XML Serialization/Deserialization test passed\n");
@@ -81,9 +83,9 @@
 					Console.WriteLine("✗ DocumentVariables JSON Deserialization returned null");
 					return false;
 				}
-				if (!TestHelper.CompareTestData(testData, deserialized, out var propName))
+				if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
 				{
-					Console.WriteLine($"✗ DocumentVariables JSON Serialization/Deserialization test FAILED - data mismatch in '{propName}'");
+					Console.WriteLine($"✗ DocumentVariables JSON Serialization/Deserialization test FAILED: {message}");
 					return false;
 				}
 				Console.WriteLine("✓ DocumentVariables JSON Serialization/Deserialization test passed\n");
@@ -136,7 +138,14 @@
 					document.DocumentVariables = testData;
 				}
 
-				DocumentVariables storedData;
+        using (var wordDoc = DXPP.WordprocessingDocument.Open(TestFileName, false))
+        {
+          var outerXml = wordDoc.MainDocumentPart?.DocumentSettingsPart?.Settings?.GetDocumentVariables()?.OuterXml;
+          outerXml = outerXml?.FormatXmlWithLineNumbers();
+          Console.WriteLine("✓ Styles stored in document:\n" + outerXml);
+        }
+
+        DocumentVariables storedData;
 				using (var document = new Document(TestFileName))
 				{
 					storedData = document.DocumentVariables ?? throw new InvalidOperationException("DocumentVariables not found.");
@@ -152,9 +161,9 @@
 				}
 				Console.WriteLine("DocumentVariables stored to new document and reloaded from it:\n" + xmlString);
 
-				if (!TestHelper.CompareTestData(testData, storedData, out var propName))
+				if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
 				{
-					Console.WriteLine($"✗ Store sample DocumentVariables test FAILED - data mismatch in '{propName}'");
+					Console.WriteLine($"✗ Store sample DocumentVariables test FAILED: {message}");
 					return false;
 				}
 
