@@ -5,13 +5,13 @@ namespace DocumentModel.InOpenXml.Test;
 /// </summary>
 public class StyleDocDefaultsRunPropertiesTest: _AbstractTestClass
 {
-  private static readonly string TestFileName = Path.Combine(TestFileDir, "StyleDocDefaultsRunPropertiesTest.docx");
+  private readonly string TestFileName = Path.Combine(TestFileDir, "StyleDocDefaultsRunPropertiesTest.docx");
 
   /// <summary>
   /// Runs all Styles DocDefaults DefaultRunProperties tests.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
-  public static bool Run()
+  public override bool Run()
   {
     //DXW.CharacterScale
     Console.WriteLine("=== Styles DocDefaults DefaultRunProperties Test ===\n");
@@ -29,7 +29,7 @@ public class StyleDocDefaultsRunPropertiesTest: _AbstractTestClass
   /// Tests XML serialization and deserialization of Styles DocDefaults DefaultRunProperties.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestXmlSerialization()
+  private bool TestXmlSerialization()
   {
     Console.WriteLine("--- XML Serialization ---");
     var testData = CreateSampleStyles();
@@ -66,7 +66,7 @@ public class StyleDocDefaultsRunPropertiesTest: _AbstractTestClass
   /// Tests JSON serialization and deserialization of Styles DocDefaults DefaultRunProperties.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestJsonSerialization()
+  private bool TestJsonSerialization()
   {
     Console.WriteLine("--- JSON Serialization ---");
     var testData = CreateSampleStyles();
@@ -93,7 +93,7 @@ public class StyleDocDefaultsRunPropertiesTest: _AbstractTestClass
   /// Tests edge cases like empty Styles object.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestEdgeCases()
+  private bool TestEdgeCases()
   {
     Console.WriteLine("--- Edge Cases ---");
     var empty = new Styles();
@@ -119,7 +119,7 @@ public class StyleDocDefaultsRunPropertiesTest: _AbstractTestClass
   /// Tests setting sample Styles to a new document and outputs the result to the console.
   /// </summary>
   /// <returns>true if the document Styles are successfully stored and verified; otherwise, false.</returns>
-  static bool TestStoreInDocument()
+  private bool TestStoreInDocument()
   {
     Console.WriteLine("--- Store sample doc defaults run properties in new document---");
     Styles testData = CreateSampleStyles();
@@ -158,7 +158,7 @@ public class StyleDocDefaultsRunPropertiesTest: _AbstractTestClass
   /// Tests updating the Styles of a document and outputs the result to the console.
   /// </summary>
   /// <returns>true if the document Styles are successfully updated and verified; otherwise, false.</returns>
-  static bool TestUpdateInDocument()
+  private bool TestUpdateInDocument()
   {
     Console.WriteLine("--- Update document doc defaults run properties ---");
     Styles testData = CreateSampleStyles();
@@ -209,7 +209,7 @@ public class StyleDocDefaultsRunPropertiesTest: _AbstractTestClass
   /// Tests validating the OpenXml generated from the document containing sample Styles against the OpenXml schema.
   /// </summary>
   /// <returns>true if the OpenXml is valid according to the schema; otherwise, false.</returns>
-  static bool TestValidateOpenXml()
+  private bool TestValidateOpenXml()
   {
     Console.WriteLine("--- Validate sample doc defaults run properties stored in new document against OpenXml schema ---");
     {
@@ -245,7 +245,7 @@ public class StyleDocDefaultsRunPropertiesTest: _AbstractTestClass
   /// Creates a sample Styles object with DocDefaults DefaultRunProperties.
   /// </summary>
   /// <returns>A populated Styles object.</returns>
-  static Styles CreateSampleStyles()
+  private Styles CreateSampleStyles()
   {
     var styles = StyleDefinitionsTest.CreateSampleStyles();
     styles.LatentStyles = LatentStylesTest.CreateSampleLatentStyles();
@@ -253,7 +253,7 @@ public class StyleDocDefaultsRunPropertiesTest: _AbstractTestClass
     return styles;
   }
 
-  static DocDefaults CreateSampleDocDefaults(bool isUpdated = false)
+  private DocDefaults CreateSampleDocDefaults(bool isUpdated = false)
   {
     return new DocDefaults
     {
@@ -267,7 +267,7 @@ public class StyleDocDefaultsRunPropertiesTest: _AbstractTestClass
   /// </summary>
   /// <param name="props">The Styles object to serialize.</param>
   /// <returns>The serialized XML string.</returns>
-  static string SerializeToXml(Styles props)
+  private string SerializeToXml(Styles props)
   {
     var xmlSerializer = new XmlSerializer(typeof(Styles));
     using (var stringWriter = new StringWriter())
@@ -283,7 +283,7 @@ public class StyleDocDefaultsRunPropertiesTest: _AbstractTestClass
   /// </summary>
   /// <param name="xml">The XML string to deserialize.</param>
   /// <returns>The deserialized Styles object, or null if deserialization fails.</returns>
-  static Styles? DeserializeFromXml(string xml)
+  private Styles? DeserializeFromXml(string xml)
   {
     var xmlSerializer = new XmlSerializer(typeof(Styles));
     using (var stringReader = new StringReader(xml))
@@ -297,7 +297,7 @@ public class StyleDocDefaultsRunPropertiesTest: _AbstractTestClass
   /// </summary>
   /// <param name="props">The Styles object to serialize.</param>
   /// <returns>The serialized JSON string.</returns>
-  static string SerializeToJson(Styles props)
+  private string SerializeToJson(Styles props)
   {
     var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
     return JsonSerializer.Serialize(props, jsonOptions);
@@ -308,7 +308,7 @@ public class StyleDocDefaultsRunPropertiesTest: _AbstractTestClass
   /// </summary>
   /// <param name="json">The JSON string to deserialize.</param>
   /// <returns>The deserialized Styles object, or null if deserialization fails.</returns>
-  static Styles? DeserializeFromJson(string json)
+  private Styles? DeserializeFromJson(string json)
   {
     var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
     return JsonSerializer.Deserialize<Styles>(json, jsonOptions);

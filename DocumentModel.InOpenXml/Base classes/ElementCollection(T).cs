@@ -6,7 +6,7 @@ namespace DocumentModel;
 /// </summary>
 /// <typeparam name = "ItemType">The type of elements contained in the collection.</typeparam>
 [XmlRoot("ElementCollection", Namespace = "DocumentModel")]
-public abstract partial class ElementCollection<ItemType> : ModelElement, IElementCollection<ItemType>, 
+public abstract partial class ElementCollection<ItemType> : ModelElement, IElementCollection<ItemType>,
   IEquatable<ElementCollection<ItemType>>, ICollection<ItemType>, IList, INotificationSource, IEmptyCheckable
   where ItemType : notnull
 {
@@ -122,12 +122,11 @@ public abstract partial class ElementCollection<ItemType> : ModelElement, IEleme
       return;
 
     if (!IsLoading)
-      if (Parent != null)
-      {
-        var openXmlElement = GetUpdatableElement();
-        if (openXmlElement != null)
-          UpdateData(openXmlElement);
-      }
+    {
+      var openXmlElement = GetUpdatableElement();
+      if (openXmlElement != null)
+        UpdateData(openXmlElement);
+    }
 
     CollectionChanged?.Invoke(this, args);
     if (!IsLoading && IsNotificationEnabled)

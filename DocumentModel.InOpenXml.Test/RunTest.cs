@@ -15,7 +15,7 @@ public class RunTest : _AbstractTestClass
   /// Runs all Run read tests.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
-  public static bool Run()
+  public override bool Run()
   {
     Console.WriteLine("=== Run Read Test ===\n");
     //if (!TestReadOpenXmlRunFromSampleFile()) return false;
@@ -29,7 +29,7 @@ public class RunTest : _AbstractTestClass
   /// Test reading OpenXml Run elements from the sample file and outputting their XML to the console and a file.
   /// </summary>
   /// <returns></returns>
-  static bool TestReadOpenXmlRunFromSampleFile()
+  private bool TestReadOpenXmlRunFromSampleFile()
   {
     Console.WriteLine("--- Get Run From Sample File ---");
 
@@ -65,7 +65,7 @@ public class RunTest : _AbstractTestClass
   /// Test creating DocumentModel Run elements from OpenXml Run elements read from the sample file, serializing them to XML, and outputting to the console and a file.
   /// </summary>
   /// <returns></returns>
-  static bool TestGetRunFromSampleFile()
+  private bool TestGetRunFromSampleFile()
   {
     Console.WriteLine("--- Get Run From Sample File ---");
 
@@ -103,7 +103,7 @@ public class RunTest : _AbstractTestClass
   }
 
 
-  static Type[] GetRuntimeKnownTypes(object root, Type rootType)
+  private Type[] GetRuntimeKnownTypes(object root, Type rootType)
   {
     var knownTypes = new HashSet<Type>();
     var visited = new HashSet<object>(ReferenceEqualityComparer.Instance);
@@ -113,7 +113,7 @@ public class RunTest : _AbstractTestClass
     return knownTypes.ToArray();
   }
 
-  static void CollectRuntimeTypes(object? value, Type rootType, HashSet<Type> knownTypes, HashSet<object> visited)
+  private void CollectRuntimeTypes(object? value, Type rootType, HashSet<Type> knownTypes, HashSet<object> visited)
   {
     if (value == null)
       return;
@@ -165,7 +165,7 @@ public class RunTest : _AbstractTestClass
     }
   }
 
-  private static bool IsXmlAnonymousType(Type type)
+  private bool IsXmlAnonymousType(Type type)
   {
     var xmlType = type.GetCustomAttribute<XmlTypeAttribute>();
     var xmlRoot = type.GetCustomAttribute<XmlRootAttribute>();
@@ -179,7 +179,7 @@ public class RunTest : _AbstractTestClass
   /// Also resolves closed generic AbstractColor type name collisions.
   /// </summary>
   /// <returns>Prepared overrides used by XmlSerializer.</returns>
-  static XmlAttributeOverrides CreateXmlSerializerOverrides()
+  private XmlAttributeOverrides CreateXmlSerializerOverrides()
   {
     var overrides = new XmlAttributeOverrides();
     var assembly = typeof(DocumentModel.Wordprocessing.Run).Assembly;
@@ -229,7 +229,7 @@ public class RunTest : _AbstractTestClass
   /// </summary>
   /// <param name="type">Type for which XML namespace is generated.</param>
   /// <returns>XML namespace string.</returns>
-  static string GetXmlNamespaceForType(Type type)
+  private string GetXmlNamespaceForType(Type type)
   {
     var typeNamespace = type.Namespace ?? "DocumentModel";
     if (typeNamespace.StartsWith("DocumentModel.", StringComparison.Ordinal))
@@ -244,7 +244,7 @@ public class RunTest : _AbstractTestClass
   /// <param name="type">Closed generic abstract color type to override.</param>
   /// <param name="xmlTypeName">Unique XML type name.</param>
   /// <param name="xmlNamespace">XML namespace for the type.</param>
-  static void AddAbstractColorOverride(XmlAttributeOverrides overrides, Type type, string xmlTypeName, string xmlNamespace)
+  private void AddAbstractColorOverride(XmlAttributeOverrides overrides, Type type, string xmlTypeName, string xmlNamespace)
   {
     var attrs = new XmlAttributes
     {

@@ -9,7 +9,7 @@ namespace DocumentModel.InOpenXml.Test
     /// Run all BaseParagraphProperties tests.
     /// </summary>
     /// <returns>True if all tests pass; otherwise, false.</returns>
-    public static bool Run()
+    public override bool Run()
     {
       Console.WriteLine("=== BaseParagraphProperties Test ===\n");
       if (!TestXmlSerialization()) return false;
@@ -24,7 +24,7 @@ namespace DocumentModel.InOpenXml.Test
     /// Tests XML serialization and deserialization of BaseParagraphProperties.
     /// </summary>
     /// <returns>True if the test passes; otherwise, false.</returns>
-    static bool TestXmlSerialization()
+    private bool TestXmlSerialization()
     {
       Console.WriteLine("--- XML Serialization ---");
       var testData = CreateSampleProperties();
@@ -61,7 +61,7 @@ namespace DocumentModel.InOpenXml.Test
     /// Tests JSON serialization and deserialization of BaseParagraphProperties.
     /// </summary>
     /// <returns>True if the test passes; otherwise, false.</returns>
-    static bool TestJsonSerialization()
+    private bool TestJsonSerialization()
     {
       Console.WriteLine("--- JSON Serialization ---");
       var testData = CreateSampleProperties();
@@ -88,7 +88,7 @@ namespace DocumentModel.InOpenXml.Test
     /// Tests edge cases like empty Styles object.
     /// </summary>
     /// <returns>True if the test passes; otherwise, false.</returns>
-    static bool TestEdgeCases()
+    private bool TestEdgeCases()
     {
       Console.WriteLine("--- Edge Cases ---");
       var empty = new Styles();
@@ -113,7 +113,7 @@ namespace DocumentModel.InOpenXml.Test
     /// Creates a sample Styles object with BaseParagraphProperties.
     /// </summary>
     /// <returns>A populated Styles object.</returns>
-    static BaseParagraphProperties CreateSampleProperties(bool isUpdated = false)
+    private BaseParagraphProperties CreateSampleProperties(bool isUpdated = false)
     {
       return CreateSampleParagraphProperties(isUpdated);
     }
@@ -183,7 +183,7 @@ namespace DocumentModel.InOpenXml.Test
     /// </summary>
     /// <param name="props">The Styles object to serialize.</param>
     /// <returns>The serialized XML string.</returns>
-    static string SerializeToXml(Styles props)
+    private string SerializeToXml(Styles props)
     {
       var xmlSerializer = new XmlSerializer(typeof(Styles));
       using (var stringWriter = new StringWriter())
@@ -199,7 +199,7 @@ namespace DocumentModel.InOpenXml.Test
     /// </summary>
     /// <param name="xml">The XML string to deserialize.</param>
     /// <returns>The deserialized Styles object, or null if deserialization fails.</returns>
-    static Styles? DeserializeFromXml(string xml)
+    private Styles? DeserializeFromXml(string xml)
     {
       var xmlSerializer = new XmlSerializer(typeof(Styles));
       using (var stringReader = new StringReader(xml))
@@ -213,7 +213,7 @@ namespace DocumentModel.InOpenXml.Test
     /// </summary>
     /// <param name="props">The Styles object to serialize.</param>
     /// <returns>The serialized JSON string.</returns>
-    static string SerializeToJson(Styles props)
+    private string SerializeToJson(Styles props)
     {
       var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
       return JsonSerializer.Serialize(props, jsonOptions);
@@ -224,7 +224,7 @@ namespace DocumentModel.InOpenXml.Test
     /// </summary>
     /// <param name="json">The JSON string to deserialize.</param>
     /// <returns>The deserialized Styles object, or null if deserialization fails.</returns>
-    static Styles? DeserializeFromJson(string json)
+    private Styles? DeserializeFromJson(string json)
     {
       var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
       return JsonSerializer.Deserialize<Styles>(json, jsonOptions);

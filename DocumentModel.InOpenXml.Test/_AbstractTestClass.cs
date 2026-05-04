@@ -1,16 +1,39 @@
-﻿using DocumentFormat.OpenXml.Packaging;
+﻿using System.Runtime.CompilerServices;
+
+using DocumentFormat.OpenXml.Packaging;
+
+using Qhta.OpenXmlTools;
 
 namespace DocumentModel.InOpenXml.Test;
 
 /// <summary>
 /// Base class for all test classes, providing common functionality and constants.
 /// </summary>
-public class _AbstractTestClass
+public abstract class _AbstractTestClass
 {
   /// <summary>
   /// Common directory path used for testing purposes. This should be set to a valid directory on the test machine where sample files can be stored and accessed during tests.
   /// </summary>
   protected const string TestFileDir = @"d:\OneDrive\VS\Projects\DocxDocument\Samples\";
+
+  /// <summary>
+  /// Name of the test to display.
+  /// </summary>
+  protected string TestName => this.GetType().Name.ReplaceEnd("Test", "");
+
+  /// <summary>
+  /// Gets invoking method name using compiler services. 
+  /// </summary>
+  /// <param name="memberName">The name of the calling member. This is automatically provided by the compiler.</param>
+  /// <returns>The name of the calling method.</returns>
+  protected string GetInvokingMethodName([CallerMemberName] string memberName = "")
+    => memberName;
+
+  /// <summary>
+  /// Runs a test and returns its result.
+  /// </summary>
+  /// <returns>True if test passed, false otherwise</returns>
+  public abstract bool Run();
 
   /// <summary>
   /// Returns the XML representation of the given data object.
@@ -19,7 +42,7 @@ public class _AbstractTestClass
   /// </summary>
   /// <param name="data">The object to serialize to XML.</param>
   /// <returns>The XML string representation of the object.</returns>
-  protected static string GetDataXml(object data)
+  protected string GetDataXml(object data)
   {
     var xmlSerializer = new XmlSerializer(data.GetType());
     string xmlString;
@@ -37,7 +60,7 @@ public class _AbstractTestClass
   /// </summary>
   /// <param name="part">The OpenXmlPart to retrieve the XML content from.</param>
   /// <returns>A string containing the formatted XML with line numbers if the part exists; otherwise, null.</returns>
-  public static string? GetPartXml(OpenXmlPart? part)
+  private string? GetPartXml(OpenXmlPart? part)
   {
     if (part != null)
     {
@@ -57,16 +80,9 @@ public class _AbstractTestClass
   /// XmlSerializer; otherwise, an exception may be thrown.</remarks>
   /// <param name="data">The object to serialize. The object must be serializable and not null.</param>
   /// <returns>A string containing the XML representation of the specified object.</returns>
-  protected static string SerializeToXml(object data)
+  protected string SerializeToXml(object data)
   {
     return SerializeObjectToXml(data);
-    //var xmlSerializer = new XmlSerializer(data.GetType());
-    //using (var stringWriter = new StringWriter())
-    //using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-    //{
-    //  xmlSerializer.Serialize(xmlWriter, data);
-    //  return stringWriter.ToString();
-    //}
   }
 
   /// <summary>
@@ -78,7 +94,7 @@ public class _AbstractTestClass
   /// <param name="xml">A string containing the XML data to deserialize. The XML must represent an object of type DataType.</param>
   /// <returns>An instance of type DataType deserialized from the XML string, or null if the XML does not represent a valid
   /// object.</returns>
-  protected static DataType? DeserializeFromXml<DataType>(string xml)
+  protected DataType? DeserializeFromXml<DataType>(string xml)
   {
     var xmlSerializer = new XmlSerializer(typeof(DataType));
     using (var stringReader = new StringReader(xml))
@@ -88,7 +104,7 @@ public class _AbstractTestClass
   }
 
   /// <summary>
-  /// JSON options configured for indented formatting. This static field is used to ensure consistent JSON serialization and deserialization behavior across the test classes.
+  /// JSON options configured for indented formatting. This private field is used to ensure consistent JSON serialization and deserialization behavior across the test classes.
   /// </summary>
   protected static readonly JsonSerializerOptions _jsonOptions = new JsonSerializerOptions { WriteIndented = true };
 
@@ -100,7 +116,7 @@ public class _AbstractTestClass
   /// <param name="data">The object to serialize to JSON. Can be any serializable type.</param>
   /// <returns>A JSON-formatted string representation of the specified object.</returns>
 
-  protected static string SerializeToJson(object data)
+  protected string SerializeToJson(object data)
   {
     return JsonSerializer.Serialize(data, _jsonOptions);
   }
@@ -113,7 +129,7 @@ public class _AbstractTestClass
   /// <typeparam name="DataType">The type of the object to deserialize to. Must be compatible with the structure of the JSON string.</typeparam>
   /// <param name="json">The JSON string to deserialize. Must represent a valid JSON object compatible with the specified type.</param>
   /// <returns>An instance of the specified type deserialized from the JSON string, or null if the input is null or empty.</returns>
-  protected static DataType? DeserializeFromJson<DataType>(string json)
+  protected DataType? DeserializeFromJson<DataType>(string json)
   {
     return JsonSerializer.Deserialize<DataType>(json, _jsonOptions);
   }
@@ -127,7 +143,7 @@ public class _AbstractTestClass
   /// <param name="dataType">The type of the object to deserialize to. Must be compatible with the structure of the JSON string.</param>
   /// <param name="json">The JSON string to deserialize. Must represent a valid JSON object compatible with the specified type.</param>
   /// <returns>An instance of the specified type deserialized from the JSON string, or null if the input is null or empty.</returns>
-  protected static object? DeserializeFromJson(Type dataType, string json)
+  protected object? DeserializeFromJson(Type dataType, string json)
   {
     return JsonSerializer.Deserialize(json, dataType, _jsonOptions);
   }
@@ -139,7 +155,7 @@ public class _AbstractTestClass
   /// properties part, the method returns null.</remarks>
   /// <returns>A string containing the formatted XML with line numbers from the core properties part if it exists; otherwise,
   /// null.</returns>
-  public static string? CorePropertiesPartXml(string testFileName)
+  protected string? CorePropertiesPartXml(string testFileName)
   {
     using (var wordDoc = WordprocessingDocument.Open(testFileName, false))
     {
@@ -155,7 +171,7 @@ public class _AbstractTestClass
   /// properties part, the method returns null.</remarks>
   /// <returns>A string containing the formatted XML with line numbers from the content properties part if it exists; otherwise,
   /// null.</returns>
-  public static string? ExtendedFileProperties(string testFileName)
+  protected string? ExtendedFileProperties(string testFileName)
   {
     using (var wordDoc = WordprocessingDocument.Open(testFileName, false))
     {
@@ -169,18 +185,12 @@ public class _AbstractTestClass
   /// </summary>
   /// <param name="data">The object to serialize.</param>
   /// <returns>Serialized XML text.</returns>
-  public static string SerializeObjectToXml(object data)
+  protected string SerializeObjectToXml(object data)
   {
     var rootType = data.GetType();
     var UniqueTypeNames = new HashSet<string>();
     var overrides = new XmlAttributeOverrides();
-    var modelTypes = typeof(DMW.Document).Assembly.GetTypes()
-      //.Where
-      //(t =>
-      //  t.IsAssignableTo(typeof(DM.ModelElement)) && t.IsPublic && !t.IsAbstract && !t.IsGenericType
-      //  && t.GetCustomAttribute<SpecificClassAttribute>() != null
-      //  )
-      .ToArray();
+    var modelTypes = typeof(DMW.Document).Assembly.GetTypes();
 
     foreach (var t in modelTypes)
     {
@@ -224,7 +234,7 @@ public class _AbstractTestClass
   /// <param name="dataType">Target type.</param>
   /// <param name="xml">XML input.</param>
   /// <returns>Deserialized instance or null.</returns>
-  public static object? DeserializeObjectFromXml(Type dataType, string xml)
+  protected object? DeserializeObjectFromXml(Type dataType, string xml)
   {
     var xmlSerializer = new XmlSerializer(dataType);
     using (var stringReader = new StringReader(xml))

@@ -13,7 +13,7 @@ public class KnownPropertiesTest: _AbstractTestClass
   /// Writes the progress and results to the standard output. Use this method to verify that <see cref="KnownProperties"/> serialization behaves as expected.
   /// </remarks>
   /// <returns>True if all serialization tests pass; otherwise, false.</returns>
-  public static bool Run()
+  public override bool Run()
   {
     Console.WriteLine("=== KnownProperties Test ===\n");
     if (!TestKnownPropertiesList()) return false;
@@ -25,7 +25,7 @@ public class KnownPropertiesTest: _AbstractTestClass
   /// Tests XML serialization and deserialization for <see cref="KnownProperties"/>.
   /// </summary>
   /// <returns>True if the round-trip succeeds; otherwise, false.</returns>
-  static bool TestKnownPropertiesList()
+  private bool TestKnownPropertiesList()
   {
     Console.WriteLine("--- Known properties list ---");
     var document = new Document();
@@ -66,7 +66,7 @@ public class KnownPropertiesTest: _AbstractTestClass
   /// Tests XML serialization and deserialization for <see cref="KnownProperties"/>.
   /// </summary>
   /// <returns>True if the round-trip succeeds; otherwise, false.</returns>
-  static bool TestPropertiesCategories()
+  private bool TestPropertiesCategories()
   {
     Console.WriteLine("--- Known properties list ---");
     var document = new Document();

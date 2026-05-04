@@ -31,6 +31,9 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   /// <param name="openXmlCollection">The OpenXml collection element to wrap and synchronize with. Can be null.</param>
   protected ModelElementCollection(ModelElement parent, DX.OpenXmlElement? openXmlCollection = null) : base(parent, openXmlCollection)
   {
+    _openXmlCollection = openXmlCollection as OpenXmlCollectionType;
+    if (_openXmlCollection != null && this.GetType().GetCustomAttribute<DirectAccessAttribute>()==null)
+      LoadData(_openXmlCollection);
     InitCollectionChangedEventHandler();
   }
 
@@ -128,26 +131,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
     else
       throw new ArgumentException($"UpdateData() must not be called if the OpenXmlCollection is not attached.");
   }
-  ///// <summary>
-  /////   Initializes a new instance of the <see cref = "ModelElementCollection{ItemType, OpenXmlCollectionType}"/> class with the specified OpenXml element.
-  ///// </summary>
-  ///// <param name = "openXmlCollection">The OpenXml collection element to wrap and synchronize with.</param>
-  //protected ModelElementCollection(OpenXmlCollectionType? openXmlCollection) : this()
-  //{
-  // _openXmlCollection = openXmlCollection;
-  //}
 
-  ///// <summary>
-  /////   Initializes a new instance of the <see cref = "ModelElementCollection{ItemType, OpenXmlCollectionType}"/> class with the specified items.
-  ///// </summary>
-  ///// <param name = "items">The items to add to the collection.</param>
-  //protected ModelElementCollection(IEnumerable<ItemType> items) : this()
-  //{
-  // foreach (var item in items)
-  // {
-  //  Add(item);
-  // }
-  //}
 
   /// <summary>
   ///   Returns the OpenXml collection element instance for update operations, or null if not set.
@@ -178,14 +162,13 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   ///   Sets the isLoading flag to true while loading data to avoid unnecessary updates by collection change events.
   /// </summary>
   /// <param name = "openXmlObject">The OpenXml element to load data from.</param>
-  public override void LoadData(object openXmlObject)
+  public sealed override void LoadData(object openXmlObject)
   {
     SetLoading(true);
     if (openXmlObject is OpenXmlCollectionType openXmlModeledElement)
     {
       LoadDataCollection(openXmlModeledElement);
     }
-
     SetLoading(false);
   }
 

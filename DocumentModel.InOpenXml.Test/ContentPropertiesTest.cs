@@ -7,13 +7,13 @@ namespace DocumentModel.InOpenXml.Test;
 /// </summary>
 public class ContentPropertiesTest: _AbstractTestClass
 {
-  private static readonly string TestFileName = Path.Combine(TestFileDir, "ContentPropertiesTest.docx");
+  private readonly string TestFileName = Path.Combine(TestFileDir, "ContentPropertiesTest.docx");
 
   /// <summary>
   /// Runs all serialization tests for <see cref="ContentProperties"/>.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
-  public static bool Run()
+  public override bool Run()
   {
     Console.WriteLine("=== ContentProperties Test ===\n");
     if (!TestXmlSerialization()) return false;
@@ -32,7 +32,7 @@ public class ContentPropertiesTest: _AbstractTestClass
   /// Tests XML serialization and deserialization for <see cref="ContentProperties"/>.
   /// </summary>
   /// <returns>True if the round-trip succeeds; otherwise, false.</returns>
-  static bool TestXmlSerialization()
+  private bool TestXmlSerialization()
   {
     Console.WriteLine("--- ContentPropertiesTest XML Serialization ---");
     var testData = CreateSampleContentProperties(true);
@@ -69,7 +69,7 @@ public class ContentPropertiesTest: _AbstractTestClass
   /// Tests JSON serialization and deserialization for <see cref="ContentProperties"/>.
   /// </summary>
   /// <returns>True if the round-trip succeeds; otherwise, false.</returns>
-  static bool TestJsonSerialization()
+  private bool TestJsonSerialization()
   {
     Console.WriteLine("--- ContentPropertiesTest JSON Serialization ---");
     var testData = CreateSampleContentProperties(true);
@@ -96,7 +96,7 @@ public class ContentPropertiesTest: _AbstractTestClass
   /// Tests edge cases for serialization and deserialization of empty <see cref="ContentProperties"/> objects.
   /// </summary>
   /// <returns>True if all edge case tests pass; otherwise, false.</returns>
-  static bool TestEdgeCases()
+  private bool TestEdgeCases()
   {
     Console.WriteLine("--- ContentPropertiesTest Edge Cases ---");
     {
@@ -128,7 +128,7 @@ public class ContentPropertiesTest: _AbstractTestClass
   /// and outputs the result to the console. It is intended for diagnostic or verification purposes and writes status
   /// messages to the console.</remarks>
   /// <returns>true if the test completes successfully; otherwise, false.</returns>
-  static bool TestNewFromDocument()
+  private bool TestNewFromDocument()
   {
     Console.WriteLine("--- ContentPropertiesTest New document content properties ---");
     {
@@ -152,7 +152,7 @@ public class ContentPropertiesTest: _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document content properties are successfully stored and verified; otherwise, false.</returns>
-  static bool TestStoreInDocument()
+  private bool TestStoreInDocument()
   {
     Console.WriteLine("--- ContentPropertiesTest Store sample content properties in new document---");
     {
@@ -190,7 +190,7 @@ public class ContentPropertiesTest: _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document content properties are successfully updated and verified; otherwise, false.</returns>
-  static bool TestUpdateInDocument()
+  private bool TestUpdateInDocument()
   {
     Console.WriteLine("--- ContentPropertiesTest Update document content properties ---");
     {
@@ -228,7 +228,7 @@ public class ContentPropertiesTest: _AbstractTestClass
   /// Tests storing sample content properties as built-into a new document and verifies that they are correctly saved and reloaded.
   /// </summary>
   /// <returns>true if the document content properties are successfully stored and verified; otherwise, false.</returns>
-  static bool TestStoreBuiltInProperties()
+  private bool TestStoreBuiltInProperties()
   {
     Console.WriteLine("--- ContentPropertiesTest Store built-in content properties in new document---");
     {
@@ -261,7 +261,7 @@ public class ContentPropertiesTest: _AbstractTestClass
   /// </summary>
   /// <param name="createAllProperties">Whether to create compound properties, like HeadingPairs and TitlesOfParts.</param>
   /// <returns>A populated <see cref="ContentProperties"/> object.</returns>
-  static ContentProperties CreateSampleContentProperties(bool createAllProperties = true)
+  private ContentProperties CreateSampleContentProperties(bool createAllProperties = true)
   {
     var props = new ContentProperties
     {

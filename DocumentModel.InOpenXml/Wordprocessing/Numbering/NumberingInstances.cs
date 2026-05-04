@@ -18,5 +18,5 @@ public class NumberingInstances : ModelElementCollection<NumberingInstance, DXW.
   /// <param name = "numbering">The parent numbering element.</param>
   public NumberingInstances(Numbering numbering) : base(numbering, numbering?.GetUpdatableElement() as DXW.Numbering)
   {
- }
+  }
 }

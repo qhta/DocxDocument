@@ -5,13 +5,13 @@
 /// </summary>
 public class NumberingInstancesTest : _AbstractTestClass
 {
-  private static readonly string TestFileName = Path.Combine(TestFileDir, "NumberingInstancesTest.docx");
+  private readonly string TestFileName = Path.Combine(TestFileDir, "NumberingInstancesTest.docx");
 
   /// <summary>
   /// Runs all Numbering serialization tests.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
-  public static bool Run()
+  public override bool Run()
   {
     Console.WriteLine("=== NumberingInstances test ===\n");
     if (!TestXmlSerialization()) return false;
@@ -27,7 +27,7 @@ public class NumberingInstancesTest : _AbstractTestClass
   /// Tests XML serialization and deserialization of Numbering.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestXmlSerialization()
+  private bool TestXmlSerialization()
   {
     Console.WriteLine("--- NumberingInstances XML Serialization ---");
     var testData = CreateSampleNumbering();
@@ -64,7 +64,7 @@ public class NumberingInstancesTest : _AbstractTestClass
   /// Tests JSON serialization and deserialization of Numbering.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestJsonSerialization()
+  private bool TestJsonSerialization()
   {
     Console.WriteLine("--- NumberingInstances JSON Serialization ---");
     var testData = CreateSampleNumbering();
@@ -91,7 +91,7 @@ public class NumberingInstancesTest : _AbstractTestClass
   /// Tests edge cases like empty Numbering object.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestEdgeCases()
+  private bool TestEdgeCases()
   {
     Console.WriteLine("--- NumberingInstances Edge Cases ---");
     var empty = new Numbering();
@@ -120,7 +120,7 @@ public class NumberingInstancesTest : _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document Numbering are successfully stored and verified; otherwise, false.</returns>
-  static bool TestStoreInDocument()
+  private bool TestStoreInDocument()
   {
     Console.WriteLine("--- Store sample NumberingInstances in new document---");
     Numbering testData = CreateSampleNumbering();
@@ -179,7 +179,7 @@ public class NumberingInstancesTest : _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document Numbering are successfully updated and verified; otherwise, false.</returns>
-  static bool TestUpdateInDocument()
+  private bool TestUpdateInDocument()
   {
     Console.WriteLine("--- Update document NumberingInstances ---");
     Numbering testData = CreateSampleNumbering();
@@ -241,7 +241,7 @@ public class NumberingInstancesTest : _AbstractTestClass
   /// Creates a sample Numbering object with various property types.
   /// </summary>
   /// <returns>A populated Numbering object.</returns>
-  static Numbering CreateSampleNumbering()
+  private Numbering CreateSampleNumbering()
   {
     var Numbering = new Numbering
     {
@@ -256,7 +256,7 @@ public class NumberingInstancesTest : _AbstractTestClass
   /// <remarks>This method initializes several abstract numbering with specific properties, such as primary
   /// status and UI priority, to facilitate consistent document styling.</remarks>
   /// <returns>A NumberingInstances object containing predefined abstract numbering, including primary numbering and annotations.</returns>
-  internal static NumberingInstances CreateSampleNumberingInstances()
+  private NumberingInstances CreateSampleNumberingInstances()
   {
     var NumberingInstances = new NumberingInstances();
     NumberingInstances.Add(new NumberingInstance()
@@ -304,7 +304,7 @@ public class NumberingInstancesTest : _AbstractTestClass
   /// </summary>
   /// <param name="props">The Numbering object to serialize.</param>
   /// <returns>The serialized XML string.</returns>
-  static string SerializeToXml(Numbering props)
+  private string SerializeToXml(Numbering props)
   {
     var xmlSerializer = new XmlSerializer(typeof(Numbering));
     using (var stringWriter = new StringWriter())
@@ -320,7 +320,7 @@ public class NumberingInstancesTest : _AbstractTestClass
   /// </summary>
   /// <param name="xml">The XML string to deserialize.</param>
   /// <returns>The deserialized Numbering object, or null if deserialization fails.</returns>
-  static Numbering? DeserializeFromXml(string xml)
+  private Numbering? DeserializeFromXml(string xml)
   {
     var xmlSerializer = new XmlSerializer(typeof(Numbering));
     using (var stringReader = new StringReader(xml))
@@ -334,7 +334,7 @@ public class NumberingInstancesTest : _AbstractTestClass
   /// </summary>
   /// <param name="props">The Numbering object to serialize.</param>
   /// <returns>The serialized JSON string.</returns>
-  static string SerializeToJson(Numbering props)
+  private string SerializeToJson(Numbering props)
   {
     var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
     return JsonSerializer.Serialize(props, jsonOptions);
@@ -345,7 +345,7 @@ public class NumberingInstancesTest : _AbstractTestClass
   /// </summary>
   /// <param name="json">The JSON string to deserialize.</param>
   /// <returns>The deserialized Numbering object, or null if deserialization fails.</returns>
-  static Numbering? DeserializeFromJson(string json)
+  private Numbering? DeserializeFromJson(string json)
   {
     var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
     return JsonSerializer.Deserialize<Numbering>(json, jsonOptions);

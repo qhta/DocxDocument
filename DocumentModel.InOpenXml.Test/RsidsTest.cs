@@ -7,13 +7,13 @@ namespace DocumentModel.InOpenXml.Test;
 /// </summary>
 public class RsidsTest: _AbstractTestClass
 {
-  private static readonly string TestFileName = Path.Combine(TestFileDir, "BaseParagraphPropertiesTest.docx");
+  private readonly string TestFileName = Path.Combine(TestFileDir, "BaseParagraphPropertiesTest.docx");
 
   /// <summary>
   /// Runs all Rsids serialization tests.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
-  public static bool Run()
+  public override bool Run()
   {
     Console.WriteLine("=== Rsids Test ===\n");
     if (!TestXmlSerialization()) return false;
@@ -29,7 +29,7 @@ public class RsidsTest: _AbstractTestClass
   /// Tests XML serialization and deserialization of Rsids.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestXmlSerialization()
+  private bool TestXmlSerialization()
   {
     Console.WriteLine("--- RsidsTest XML Serialization ---");
     var testData = CreateSampleRsids();
@@ -68,7 +68,7 @@ public class RsidsTest: _AbstractTestClass
   /// Tests JSON serialization and deserialization of Rsids.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestJsonSerialization()
+  private bool TestJsonSerialization()
   {
     Console.WriteLine("--- RsidsTest JSON Serialization ---");
     var testData = CreateSampleRsids();
@@ -97,7 +97,7 @@ public class RsidsTest: _AbstractTestClass
   /// Tests edge cases like empty Rsids object.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestEdgeCases()
+  private bool TestEdgeCases()
   {
     Console.WriteLine("--- RsidsTest Edge Cases ---");
     {
@@ -128,7 +128,7 @@ public class RsidsTest: _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document Rsids are successfully stored and verified; otherwise, false.</returns>
-  static bool TestStoreInDocument()
+  private bool TestStoreInDocument()
   {
     Console.WriteLine("--- Store sample Rsids in new document---");
     {
@@ -180,7 +180,7 @@ public class RsidsTest: _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document Rsids are successfully updated and verified; otherwise, false.</returns>
-  static bool TestUpdateInDocument()
+  private bool TestUpdateInDocument()
   {
     Console.WriteLine("--- Update document Rsids ---");
     {
@@ -225,7 +225,7 @@ public class RsidsTest: _AbstractTestClass
   /// Creates a sample Rsids object with various property types.
   /// </summary>
   /// <returns>A populated Rsids object.</returns>
-  static Rsids CreateSampleRsids()
+  private Rsids CreateSampleRsids()
   {
     var props = new Rsids();
     for (int i=1; i<=10; i++)
@@ -240,7 +240,7 @@ public class RsidsTest: _AbstractTestClass
   /// </summary>
   /// <param name="props">The Rsids object to serialize.</param>
   /// <returns>The serialized XML string.</returns>
-  static string SerializeToXml(Rsids props)
+  private string SerializeToXml(Rsids props)
   {
     var xmlSerializer = new XmlSerializer(typeof(Rsids));
     using (var stringWriter = new StringWriter())
@@ -256,7 +256,7 @@ public class RsidsTest: _AbstractTestClass
   /// </summary>
   /// <param name="xml">The XML string to deserialize.</param>
   /// <returns>The deserialized Rsids object, or null if deserialization fails.</returns>
-  static Rsids? DeserializeFromXml(string xml)
+  private Rsids? DeserializeFromXml(string xml)
   {
     var xmlSerializer = new XmlSerializer(typeof(Rsids));
     using (var stringReader = new StringReader(xml))
@@ -270,7 +270,7 @@ public class RsidsTest: _AbstractTestClass
   /// </summary>
   /// <param name="props">The Rsids object to serialize.</param>
   /// <returns>The serialized JSON string.</returns>
-  static string SerializeToJson(Rsids props)
+  private string SerializeToJson(Rsids props)
   {
     var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
     return JsonSerializer.Serialize(props, jsonOptions);
@@ -281,7 +281,7 @@ public class RsidsTest: _AbstractTestClass
   /// </summary>
   /// <param name="json">The JSON string to deserialize.</param>
   /// <returns>The deserialized Rsids object, or null if deserialization fails.</returns>
-  static Rsids? DeserializeFromJson(string json)
+  private Rsids? DeserializeFromJson(string json)
   {
     var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
     return JsonSerializer.Deserialize<Rsids>(json, jsonOptions);

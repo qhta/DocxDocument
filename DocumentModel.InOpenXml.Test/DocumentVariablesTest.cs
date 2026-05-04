@@ -7,13 +7,13 @@ namespace DocumentModel.InOpenXml.Test
 	/// </summary>
 	public class DocumentVariablesTest: _AbstractTestClass
 	{
-    private static readonly string TestFileName = Path.Combine(TestFileDir, "DocumentVariablesTest.docx");
+    private readonly string TestFileName = Path.Combine(TestFileDir, "DocumentVariablesTest.docx");
 
     /// <summary>
     /// Runs all DocumentVariables serialization tests.
     /// </summary>
     /// <returns>True if all tests pass; otherwise, false.</returns>
-    public static bool Run()
+    public override bool Run()
 		{
 			Console.WriteLine("=== DocumentVariables Test ===\n");
 			if (!TestXmlSerialization()) return false;
@@ -29,7 +29,7 @@ namespace DocumentModel.InOpenXml.Test
 		/// Tests XML serialization and deserialization of DocumentVariables.
 		/// </summary>
 		/// <returns>True if the test passes; otherwise, false.</returns>
-		static bool TestXmlSerialization()
+		private bool TestXmlSerialization()
 		{
 			Console.WriteLine("--- DocumentVariables XML Serialization ---");
 			var testData = CreateSampleDocumentVariables();
@@ -68,7 +68,7 @@ namespace DocumentModel.InOpenXml.Test
 		/// Tests JSON serialization and deserialization of DocumentVariables.
 		/// </summary>
 		/// <returns>True if the test passes; otherwise, false.</returns>
-		static bool TestJsonSerialization()
+		private bool TestJsonSerialization()
 		{
 			Console.WriteLine("--- DocumentVariables JSON Serialization ---");
 			var testData = CreateSampleDocumentVariables();
@@ -97,7 +97,7 @@ namespace DocumentModel.InOpenXml.Test
 		/// Tests edge cases like empty DocumentVariables object.
 		/// </summary>
 		/// <returns>True if the test passes; otherwise, false.</returns>
-		static bool TestEdgeCases()
+		private bool TestEdgeCases()
 		{
 			Console.WriteLine("--- DocumentVariables Edge Cases ---");
 			{
@@ -128,7 +128,7 @@ namespace DocumentModel.InOpenXml.Test
 		/// be set and serialized correctly. It writes status messages and the serialized properties to the console for
 		/// inspection.</remarks>
 		/// <returns>true if the document DocumentVariables are successfully stored and verified; otherwise, false.</returns>
-		static bool TestStoreInDocument()
+		private bool TestStoreInDocument()
 		{
 			Console.WriteLine("--- Store sample DocumentVariables in new document---");
 			{
@@ -180,7 +180,7 @@ namespace DocumentModel.InOpenXml.Test
 		/// be set and serialized correctly. It writes status messages and the serialized properties to the console for
 		/// inspection.</remarks>
 		/// <returns>true if the document DocumentVariables are successfully updated and verified; otherwise, false.</returns>
-		static bool TestUpdateInDocument()
+		private bool TestUpdateInDocument()
 		{
 			Console.WriteLine("--- Update document DocumentVariables ---");
 			{
@@ -226,7 +226,7 @@ namespace DocumentModel.InOpenXml.Test
 		/// Creates a sample DocumentVariables object with various property types.
 		/// </summary>
 		/// <returns>A populated DocumentVariables object.</returns>
-		static DocumentVariables CreateSampleDocumentVariables()
+		private DocumentVariables CreateSampleDocumentVariables()
 		{
 			var props = new DocumentVariables();
 			for (int i=1; i<=10; i++)
@@ -241,7 +241,7 @@ namespace DocumentModel.InOpenXml.Test
 		/// </summary>
 		/// <param name="props">The DocumentVariables object to serialize.</param>
 		/// <returns>The serialized XML string.</returns>
-		static string SerializeToXml(DocumentVariables props)
+		private string SerializeToXml(DocumentVariables props)
 		{
 			var xmlSerializer = new XmlSerializer(typeof(DocumentVariables));
 			using (var stringWriter = new StringWriter())
@@ -257,7 +257,7 @@ namespace DocumentModel.InOpenXml.Test
 		/// </summary>
 		/// <param name="xml">The XML string to deserialize.</param>
 		/// <returns>The deserialized DocumentVariables object, or null if deserialization fails.</returns>
-		static DocumentVariables? DeserializeFromXml(string xml)
+		private DocumentVariables? DeserializeFromXml(string xml)
 		{
 			var xmlSerializer = new XmlSerializer(typeof(DocumentVariables));
 			using (var stringReader = new StringReader(xml))
@@ -271,7 +271,7 @@ namespace DocumentModel.InOpenXml.Test
 		/// </summary>
 		/// <param name="props">The DocumentVariables object to serialize.</param>
 		/// <returns>The serialized JSON string.</returns>
-		static string SerializeToJson(DocumentVariables props)
+		private string SerializeToJson(DocumentVariables props)
 		{
 			var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
 			return JsonSerializer.Serialize(props, jsonOptions);
@@ -282,7 +282,7 @@ namespace DocumentModel.InOpenXml.Test
 		/// </summary>
 		/// <param name="json">The JSON string to deserialize.</param>
 		/// <returns>The deserialized DocumentVariables object, or null if deserialization fails.</returns>
-		static DocumentVariables? DeserializeFromJson(string json)
+		private DocumentVariables? DeserializeFromJson(string json)
 		{
 			var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
 			return JsonSerializer.Deserialize<DocumentVariables>(json, jsonOptions);

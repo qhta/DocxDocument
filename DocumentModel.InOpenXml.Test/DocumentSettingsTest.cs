@@ -6,7 +6,7 @@
   public class DocumentSettingsTest: _AbstractTestClass
   {
 
-    private static readonly string TestFileName = Path.Combine(TestFileDir, "DocumentSettingsTest.docx");
+    private readonly string TestFileName = Path.Combine(TestFileDir, "DocumentSettingsTest.docx");
 
     /// <summary>
     /// Runs all serialization tests for the <see cref="DocumentSettings"/> class and reports the results to the console.
@@ -16,7 +16,7 @@
     /// Writes the progress and results to the standard output. Use this method to verify that <see cref="DocumentSettings"/> serialization behaves as expected.
     /// </remarks>
     /// <returns>True if all serialization tests pass; otherwise, false.</returns>
-    public static bool Run()
+    public override bool Run()
     {
       Console.WriteLine("=== DocumentSettings Test ===\n");
       if (!TestXmlSerialization()) return false;
@@ -33,7 +33,7 @@
     /// Tests XML serialization and deserialization for <see cref="DocumentSettings"/>.
     /// </summary>
     /// <returns>True if the round-trip succeeds; otherwise, false.</returns>
-    static bool TestXmlSerialization()
+    private bool TestXmlSerialization()
     {
       Console.WriteLine("--- DocumentSettings XML Serialization ---");
       var testData = CreateSampleDocumentSettings();
@@ -60,7 +60,7 @@
     /// Tests JSON serialization and deserialization for <see cref="DocumentSettings"/>.
     /// </summary>
     /// <returns>True if the round-trip succeeds; otherwise, false.</returns>
-    static bool TestJsonSerialization()
+    private bool TestJsonSerialization()
     {
       Console.WriteLine("--- DocumentSettings JSON Serialization ---");
       var testData = CreateSampleDocumentSettings();
@@ -87,7 +87,7 @@
     /// Tests edge cases for serialization and deserialization of empty <see cref="DocumentSettings"/> objects.
     /// </summary>
     /// <returns>True if all edge case tests pass; otherwise, false.</returns>
-    static bool TestEdgeCases()
+    private bool TestEdgeCases()
     {
       Console.WriteLine("--- DocumentSettingsTest Edge Cases ---");
       var empty = new DocumentSettings();
@@ -117,7 +117,7 @@
     /// reports the result to the console. Use this method to validate the persistence of document settings in the
     /// document format.</remarks>
     /// <returns>true if the document settings are stored and reloaded correctly; otherwise, false.</returns>
-    static bool TestStoreInDocument()
+    private bool TestStoreInDocument()
     {
       Console.WriteLine("--- Store sample document settings in new document---");
       DocumentSettings testData = CreateSampleDocumentSettings(true);
@@ -174,7 +174,7 @@
     /// settings, and then reloads the document to verify that the stored settings remain unchanged. It outputs
     /// diagnostic information to the console for verification purposes.</remarks>
     /// <returns>true if the document settings are correctly stored and reloaded from the document; otherwise, false.</returns>
-    static bool TestUpdateInDocument()
+    private bool TestUpdateInDocument()
     {
       Console.WriteLine("--- Update document settings stored in document---");
       DocumentSettings testData = CreateSampleDocumentSettings(true);
@@ -216,7 +216,7 @@
     /// Tests that the XML generated for document settings stored in a document conforms to the OpenXml schema.
     /// </summary>
     /// <returns></returns>
-    static bool TestValidateOpenXml()
+    private bool TestValidateOpenXml()
     {
       Console.WriteLine("--- Validate sample settings stored in new document against OpenXml schema ---");
       {
@@ -257,7 +257,7 @@
     /// Creates a sample <see cref="DocumentSettings"/> instance for testing.
     /// </summary>
     /// <returns>A populated <see cref="DocumentSettings"/> object.</returns>
-    static DocumentSettings CreateSampleDocumentSettings(bool createAllProperties = true)
+    private DocumentSettings CreateSampleDocumentSettings(bool createAllProperties = true)
     {
       if (!createAllProperties)
         return new DocumentSettings
@@ -497,7 +497,7 @@
     /// </summary>
     /// <param name="settings">The <see cref="DocumentSettings"/> instance to serialize.</param>
     /// <returns>JSON string representation.</returns>
-    static string SerializeToJson(DocumentSettings settings)
+    private string SerializeToJson(DocumentSettings settings)
     {
       var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
       return JsonSerializer.Serialize(settings, jsonOptions);
@@ -508,7 +508,7 @@
     /// </summary>
     /// <param name="json">The JSON string to deserialize.</param>
     /// <returns>The deserialized <see cref="DocumentSettings"/> instance.</returns>
-    static DocumentSettings? DeserializeFromJson(string json)
+    private DocumentSettings? DeserializeFromJson(string json)
     {
       var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
       return JsonSerializer.Deserialize<DocumentSettings>(json, jsonOptions);

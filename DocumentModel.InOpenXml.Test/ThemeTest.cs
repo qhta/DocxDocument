@@ -18,7 +18,7 @@ public class ThemeTest : _AbstractTestClass
   /// Runs all IColor implementation tests.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
-  public static bool Run()
+  public override bool Run()
   {
     Console.WriteLine("=== Document Theme Test ===\n");
     if (!StoreThemeInDocument()) return false;
@@ -31,7 +31,7 @@ public class ThemeTest : _AbstractTestClass
   /// </summary>
   /// <returns></returns>
   /// <exception cref="InvalidOperationException"></exception>
-  public static bool StoreThemeInDocument()
+  private bool StoreThemeInDocument()
   {
     Console.WriteLine("\n --- Store Theme in document ---");
     Theme testData = CreateThemeWithColorScheme();
@@ -86,7 +86,7 @@ public class ThemeTest : _AbstractTestClass
   /// <summary>
   /// Creates a Theme with a basic content.
   /// </summary>
-  static Theme CreateThemeWithColorScheme()
+  private Theme CreateThemeWithColorScheme()
   {
     var theme = new Theme
     {

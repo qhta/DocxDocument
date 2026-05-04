@@ -5,14 +5,14 @@
 /// </summary>
 public class StatisticPropertiesTest: _AbstractTestClass
 {
-  private static readonly string TestFileName = Path.Combine(TestFileDir, "StatisticPropertiesTest.docx");
+  private readonly string TestFileName = Path.Combine(TestFileDir, "StatisticPropertiesTest.docx");
 
 
   /// <summary>
   /// Runs all serialization tests for the <see cref="StatisticProperties"/> class and reports the results.
   /// </summary>
   /// <returns>True if all serialization tests pass; otherwise, false.</returns>
-  public static bool Run()
+  public override bool Run()
   {
     Console.WriteLine("=== StatisticProperties Test ===\n");
     if (!TestXmlSerialization()) return false;
@@ -31,7 +31,7 @@ public class StatisticPropertiesTest: _AbstractTestClass
   /// Tests XML serialization and deserialization for <see cref="StatisticProperties"/>.
   /// </summary>
   /// <returns>True if the round-trip succeeds; otherwise, false.</returns>
-  static bool TestXmlSerialization()
+  private bool TestXmlSerialization()
   {
     Console.WriteLine("--- StatisticPropertiesTest XML Serialization ---");
     var testData = CreateSampleStatisticProperties();
@@ -68,7 +68,7 @@ public class StatisticPropertiesTest: _AbstractTestClass
   /// Tests JSON serialization and deserialization for <see cref="StatisticProperties"/>.
   /// </summary>
   /// <returns>True if the round-trip succeeds; otherwise, false.</returns>
-  static bool TestJsonSerialization()
+  private bool TestJsonSerialization()
   {
     Console.WriteLine("--- StatisticPropertiesTest JSON Serialization ---");
     var testData = CreateSampleStatisticProperties();
@@ -95,7 +95,7 @@ public class StatisticPropertiesTest: _AbstractTestClass
   /// Tests edge cases for serialization and deserialization of empty <see cref="StatisticProperties"/> objects.
   /// </summary>
   /// <returns>True if all edge case tests pass; otherwise, false.</returns>
-  static bool TestEdgeCases()
+  private bool TestEdgeCases()
   {
     Console.WriteLine("--- StatisticPropertiesTest Edge Cases ---");
     var empty = new StatisticProperties();
@@ -124,7 +124,7 @@ public class StatisticPropertiesTest: _AbstractTestClass
   /// and outputs the result to the console. It is intended for diagnostic or verification purposes and writes status
   /// messages to the console.</remarks>
   /// <returns>true if the test completes successfully; otherwise, false.</returns>
-  static bool TestNewFromDocument()
+  private bool TestNewFromDocument()
   {
     Console.WriteLine("--- StatisticPropertiesTest New document statistic properties ---");
     StatisticProperties testData;
@@ -146,7 +146,7 @@ public class StatisticPropertiesTest: _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document statistic properties are successfully stored and verified; otherwise, false.</returns>
-  static bool TestStoreInDocument()
+  private bool TestStoreInDocument()
   {
     Console.WriteLine("--- StatisticPropertiesTest Store sample statistic properties in new document---");
     {
@@ -184,7 +184,7 @@ public class StatisticPropertiesTest: _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document statistic properties are successfully updated and verified; otherwise, false.</returns>
-  static bool TestUpdateInDocument()
+  private bool TestUpdateInDocument()
   {
     Console.WriteLine("--- StatisticPropertiesTest Update document statistic properties ---");
     StatisticProperties testData = CreateSampleStatisticProperties();
@@ -221,7 +221,7 @@ public class StatisticPropertiesTest: _AbstractTestClass
   /// Tests storing statistic content properties as built-into a new document and verifies that they are correctly saved and reloaded.
   /// </summary>
   /// <returns>true if the document statistic properties are successfully stored and verified; otherwise, false.</returns>
-  static bool TestStoreBuiltInProperties()
+  private bool TestStoreBuiltInProperties()
   {
     Console.WriteLine("--- StatisticPropertiesTest Store built-in content properties in new document---");
     {
@@ -254,7 +254,7 @@ public class StatisticPropertiesTest: _AbstractTestClass
   /// Creates a sample <see cref="StatisticProperties"/> instance for testing.
   /// </summary>
   /// <returns>A populated <see cref="StatisticProperties"/> object.</returns>
-  static StatisticProperties CreateSampleStatisticProperties()
+  private StatisticProperties CreateSampleStatisticProperties()
   {
     return new StatisticProperties
     {

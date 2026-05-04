@@ -3,275 +3,14 @@
 /// <summary>
 /// Comprehensive test for DocumentModel.Fonts.
 /// </summary>
-public class FontTableTest: _AbstractTestClass
+public class FontTableTest: _AbstractModelTest<FontTable>
 {
-  private static readonly string TestFileName = Path.Combine(TestFileDir, "FontTableTest.docx");
-
-  /// <summary>
-  /// Runs all Fonts serialization tests.
-  /// </summary>
-  /// <returns>True if all tests pass; otherwise, false.</returns>
-  public static bool Run()
-  {
-    Console.WriteLine("=== Fonts Test ===\n");
-    if (!TestXmlSerialization()) return false;
-    if (!TestJsonSerialization()) return false;
-    if (!TestEdgeCases()) return false;
-    if (!TestStoreInDocument()) return false;
-    if (!TestUpdateInDocument()) return false;
-    if (!TestValidateOpenXml()) return false;
-    Console.WriteLine("All Fonts tests passed.\n");
-    return true;
-  }
-
-  /// <summary>
-  /// Tests XML serialization and deserialization of Fonts.
-  /// </summary>
-  /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestXmlSerialization()
-  {
-    Console.WriteLine("--- FontTableTest XML Serialization ---");
-    var testData = CreateSampleFonts();
-    {
-      var xmlSerializer = new XmlSerializer(typeof(FontTable));
-      string xmlString;
-      using (var stringWriter = new StringWriter())
-      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-      {
-        xmlSerializer.Serialize(xmlWriter, testData);
-        xmlString = stringWriter.ToString();
-      }
-      Console.WriteLine("FontTableTest Serialized XML:\n" + xmlString);
-
-      FontTable? deserialized;
-      using (var stringReader = new StringReader(xmlString))
-      {
-        deserialized = (FontTable?)xmlSerializer.Deserialize(stringReader);
-      }
-      if (deserialized == null)
-      {
-        Console.WriteLine("✗ FontTableTest XML Deserialization returned null");
-        return false;
-      }
-      if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
-      {
-        Console.WriteLine($"✗ FontTableTest XML Serialization/Deserialization test FAILED: {message}");
-        return false;
-      }
-      Console.WriteLine("✓ FontTableTest XML Serialization/Deserialization test passed\n");
-      return true;
-    }
-  }
-
-  /// <summary>
-  /// Tests JSON serialization and deserialization of Fonts.
-  /// </summary>
-  /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestJsonSerialization()
-  {
-    Console.WriteLine("--- FontTableTest JSON Serialization ---");
-    var testData = CreateSampleFonts();
-    {
-      var jsonOptions = JsonConfig.Options;
-      string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
-      Console.WriteLine("FontTableTest Serialized JSON:\n" + jsonString);
-
-      var deserialized = JsonSerializer.Deserialize<FontTable>(jsonString, jsonOptions);
-      if (deserialized == null)
-      {
-        Console.WriteLine("✗ FontTableTest JSON Deserialization returned null");
-        return false;
-      }
-      if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
-      {
-        Console.WriteLine($"✗ FontTableTest JSON Serialization/Deserialization test FAILED: {message}");
-        return false;
-      }
-      Console.WriteLine("✓ FontTableTest JSON Serialization/Deserialization test passed\n");
-      return true;
-    }
-  }
-
-  /// <summary>
-  /// Tests edge cases like empty Fonts object.
-  /// </summary>
-  /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestEdgeCases()
-  {
-    Console.WriteLine("--- FontTableTest Edge Cases ---");
-    {
-      var empty = new FontTable();
-      string xml = SerializeToXml(empty);
-      var xmlDeserialized = DeserializeFromXml(xml);
-      if (xmlDeserialized == null)
-      {
-        Console.WriteLine("✗ FontTableTest Edge Cases: XML deserialization of empty object failed");
-        return false;
-      }
-      string json = SerializeToJson(empty);
-      var jsonDeserialized = DeserializeFromJson(json);
-      if (jsonDeserialized == null)
-      {
-        Console.WriteLine("✗ FontTableTest Edge Cases: JSON deserialization of empty object failed");
-        return false;
-      }
-      Console.WriteLine("✓ FontTableTest Edge case tests passed\n");
-      return true;
-    }
-  }
-
-  /// <summary>
-  /// Tests setting sample Fonts to a new document and outputs the result to the console.
-  /// </summary>
-  /// <remarks>This method is intended for use in test scenarios to verify that document Fonts can
-  /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
-  /// inspection.</remarks>
-  /// <returns>true if the document Fonts are successfully stored and verified; otherwise, false.</returns>
-  static bool TestStoreInDocument()
-  {
-    Console.WriteLine("--- Store sample Fonts in new document---");
-    {
-      FontTable testData = CreateSampleFonts();
-      using (var document = new Document(TestFileName, FileMode.CreateNew))
-      {
-        document.FontTable = testData;
-      }
-
-      using (var wordDoc = DXPP.WordprocessingDocument.Open(TestFileName, false))
-      {
-        var outerXml = wordDoc.MainDocumentPart?.FontTablePart?.Fonts?.OuterXml;
-        outerXml = outerXml?.FormatXmlWithLineNumbers();
-        Console.WriteLine("✓ Fonts stored in document:\n" + outerXml);
-      }
-
-      FontTable storedData;
-      using (var document = new Document(TestFileName))
-      {
-        storedData = document.FontTable ?? throw new InvalidOperationException("Fonts not found.");
-      }
-
-      var xmlSerializer = new XmlSerializer(typeof(FontTable));
-      string xmlString;
-      using (var stringWriter = new StringWriter())
-      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-      {
-        xmlSerializer.Serialize(xmlWriter, storedData);
-        xmlString = stringWriter.ToString();
-      }
-      Console.WriteLine("Fonts stored to new document and reloaded from it:\n" + xmlString);
-
-      if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
-      {
-        Console.WriteLine($"✗ Store sample Fonts test FAILED: {message}");
-        return false;
-      }
-
-      Console.WriteLine("✓ Store sample Fonts test passed\n");
-      return true;
-    }
-  }
-
-
-  /// <summary>
-  /// Tests updating the Fonts of a document and outputs the result to the console.
-  /// </summary>
-  /// <remarks>This method is intended for use in test scenarios to verify that document Fonts can
-  /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
-  /// inspection.</remarks>
-  /// <returns>true if the document Fonts are successfully updated and verified; otherwise, false.</returns>
-  static bool TestUpdateInDocument()
-  {
-    Console.WriteLine("--- Update document Fonts ---");
-    {
-      FontTable testData = CreateSampleFonts();
-      var initialCount = testData.Count;
-      using (var document = new Document(TestFileName, FileMode.CreateNew))
-      {
-        document.FontTable = testData;
-        document.FontTable.Add(CreateOneFont());
-      }
-
-      using (var wordDoc = DXPP.WordprocessingDocument.Open(TestFileName, false))
-      {
-        var outerXml = wordDoc.MainDocumentPart?.FontTablePart?.Fonts?.OuterXml;
-        outerXml = outerXml?.FormatXmlWithLineNumbers();
-        Console.WriteLine("✓ Fonts stored in document:\n" + outerXml);
-      }
-
-      FontTable storedData;
-      using (var document = new Document(TestFileName))
-      {
-        storedData = document.FontTable ?? throw new InvalidOperationException("Fonts not found.");
-      }
-
-      var xmlSerializer = new XmlSerializer(typeof(FontTable));
-      string xmlString;
-      using (var stringWriter = new StringWriter())
-      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-      {
-        xmlSerializer.Serialize(xmlWriter, storedData);
-        xmlString = stringWriter.ToString();
-      }
-      Console.WriteLine("Updated document Fonts:\n" + xmlString);
-
-      var storedCount = storedData.Count;
-      if (storedCount != initialCount + 1)
-      {
-        Console.WriteLine($"✗ Updated document Fonts test FAILED  - new property count is {storedCount}, expected {initialCount + 1}");
-        return false;
-      }
-
-      Console.WriteLine("✓ Updated document Fonts test passed\n");
-      return true;
-    }
-  }
-
-  /// <summary>
-  /// Tests validating the OpenXml generated from the document containing sample Fonts against the OpenXml schema.
-  /// </summary>
-  /// <remarks>This method is intended for use in test scenarios to verify that the OpenXml generated from the document
-  /// containing sample Fonts adheres to the OpenXml schema. It writes status messages and the serialized properties to the console for
-  /// inspection.</remarks>
-  /// <returns>true if the OpenXml is valid according to the schema; otherwise, false.</returns>
-  static bool TestValidateOpenXml()
-  {
-    Console.WriteLine("--- Validate sample Fonts stored in new document against OpenXml schema ---");
-    {
-      FontTable testData = CreateSampleFonts();
-      using (var document = new Document(TestFileName, FileMode.CreateNew))
-      {
-        document.FontTable = testData;
-      }
-
-      using (var document = new Document(TestFileName))
-      {
-        var openXml = document.WordprocessingDocument!.MainDocumentPart!.FontTablePart!.Fonts!.OuterXml;
-        //openXml = openXml.Replace("http://schemas.openxmlformats.org/wordprocessingml/2006/main",
-        //  "http://purl.oclc.org/ooxml/wordprocessingml/main");
-        var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
-        Console.WriteLine(formattedOpenXml);
-        var validationResult = OpenXmlSchemaValidator.ValidateXml(formattedOpenXml);
-        if (!validationResult.IsValid)
-        {
-          Console.WriteLine("✗ OpenXml schema validation FAILED - issues found:");
-          foreach (var message in validationResult.Messages)
-          {
-            Console.WriteLine($" {message}");
-          }
-          return false;
-        }
-      }
-
-      Console.WriteLine("✓ Validate sample Fonts test passed\n");
-      return true;
-    }
-  }
 
   /// <summary>
   /// Creates a sample Fonts object with various property types.
   /// </summary>
   /// <returns>A populated Fonts object.</returns>
-  static FontTable CreateSampleFonts()
+  protected override FontTable CreateSampleData()
   {
     var fonts = new FontTable();
     fonts.Add(new Font
@@ -308,74 +47,56 @@ public class FontTableTest: _AbstractTestClass
   }
 
   /// <summary>
-  /// Creates a new instance of the FontDef class.
+  /// Gets the FontTable from the provided Document.
   /// </summary>
-  static Font CreateOneFont()
+  /// <param name="document">The document from which to retrieve the font table.</param>
+  /// <returns>The font table from the document.</returns>
+  protected override FontTable GetDataFromDocument(Document document)
   {
-    var font = (new Font
+    return document.FontTable;
+  }
+
+  /// <summary>
+  /// Sets the font table of the specified document to the provided font table element. 
+  /// </summary>
+  /// <param name="document">The document whose font table is to be set.</param>
+  /// <param name="element">The font table to assign to the document.</param>
+  /// <returns>The font table that was set on the document.</returns>
+  protected override FontTable SetDataInDocument(Document document, FontTable element)
+  {
+    document.FontTable = element;
+    return document.FontTable;
+  }
+
+  /// <summary>
+  /// Updates the specified font table in the document by adding a new predefined font and returns the added font.
+  /// </summary>
+  /// <param name="document">The document in which the font table will be updated.</param>
+  /// <param name="fontTable">The font table to which the new font will be added.</param>
+  /// <returns>The newly created and added Font instance.</returns>
+  protected override FontTable UpdateDataInDocument(Document document, FontTable fontTable)
+  {
+    Font newFont = new Font
     {
-      FontName = "Arial",
-      Aliases = "Helvetica,Swiss",
+      FontName = "Verdana",
+      Aliases = "Geneva",
       FontFamily = FontFamily.Swiss,
       Pitch = FontPitch.Variable,
-      Charset = FontCharset.EastEurope,
+      Charset = FontCharset.Ansi,
       Panose = "020B0604020202020204",
-      FontSignature = "E0002EFF-C000785B-00000009-00000000-000001FF-00000000",
-      // TODO: Test FontRelationshipType properties when supported by the model and embed the font accordingly
-      //EmbedRegularFont =  new FontRelationshipType { Id = "rId1", FontKey = Guid.NewGuid(), Subsetted = false },
-    });
-    return font;
+      FontSignature = "E0002EFF-C000785B-00000009-00000000-000001FF-00000000"
+    };
+    fontTable.Add(newFont);
+    return document.FontTable;
   }
 
   /// <summary>
-  /// Serializes a Fonts object to an XML string.
+  /// Gets the OpenXml representation of the font table from the specified document.
   /// </summary>
-  /// <param name="props">The Fonts object to serialize.</param>
-  /// <returns>The serialized XML string.</returns>
-  static string SerializeToXml(FontTable props)
+  /// <param name="document">The document from which to retrieve the OpenXml representation.</param>
+  /// <returns>The OpenXml representation of the font table.</returns>
+  protected override string GetOpenXmlFromDocument(Document document)
   {
-    var xmlSerializer = new XmlSerializer(typeof(FontTable));
-    using (var stringWriter = new StringWriter())
-    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-    {
-      xmlSerializer.Serialize(xmlWriter, props);
-      return stringWriter.ToString();
-    }
-  }
-
-  /// <summary>
-  /// Deserializes a Fonts object from an XML string.
-  /// </summary>
-  /// <param name="xml">The XML string to deserialize.</param>
-  /// <returns>The deserialized Fonts object, or null if deserialization fails.</returns>
-  static FontTable? DeserializeFromXml(string xml)
-  {
-    var xmlSerializer = new XmlSerializer(typeof(FontTable));
-    using (var stringReader = new StringReader(xml))
-    {
-      return (FontTable?)xmlSerializer.Deserialize(stringReader);
-    }
-  }
-
-  /// <summary>
-  /// Serializes a Fonts object to a JSON string.
-  /// </summary>
-  /// <param name="props">The Fonts object to serialize.</param>
-  /// <returns>The serialized JSON string.</returns>
-  static string SerializeToJson(FontTable props)
-  {
-    var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-    return JsonSerializer.Serialize(props, jsonOptions);
-  }
-
-  /// <summary>
-  /// Deserializes a Fonts object from a JSON string.
-  /// </summary>
-  /// <param name="json">The JSON string to deserialize.</param>
-  /// <returns>The deserialized Fonts object, or null if deserialization fails.</returns>
-  static FontTable? DeserializeFromJson(string json)
-  {
-    var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-    return JsonSerializer.Deserialize<FontTable>(json, jsonOptions);
+    return document.WordprocessingDocument!.MainDocumentPart!.FontTablePart!.Fonts!.OuterXml;
   }
 }

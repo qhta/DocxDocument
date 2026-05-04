@@ -9,13 +9,13 @@ namespace DocumentModel.InOpenXml.Test;
 /// </summary>
 public class CustomPropertiesTest: _AbstractTestClass
 {
-  private static readonly string TestFileName = Path.Combine(TestFileDir, "CustomPropertiesTest.docx");
+  private readonly string TestFileName = Path.Combine(TestFileDir, "CustomPropertiesTest.docx");
 
   /// <summary>
   /// Runs all CustomProperties serialization tests.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
-  public static bool Run()
+  public override bool Run()
   {
     Console.WriteLine("=== CustomProperties Test ===\n");
     if (!TestXmlSerialization()) return false;
@@ -33,7 +33,7 @@ public class CustomPropertiesTest: _AbstractTestClass
   /// Tests XML serialization and deserialization of CustomProperties.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestXmlSerialization()
+  private bool TestXmlSerialization()
   {
     Console.WriteLine("--- CustomProperties Test XML Serialization ---");
     var testData = CreateSampleCustomProperties();
@@ -72,7 +72,7 @@ public class CustomPropertiesTest: _AbstractTestClass
   /// Tests JSON serialization and deserialization of CustomProperties.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestJsonSerialization()
+  private bool TestJsonSerialization()
   {
     Console.WriteLine("--- CustomProperties Test JSON Serialization ---");
     var testData = CreateSampleCustomProperties();
@@ -101,7 +101,7 @@ public class CustomPropertiesTest: _AbstractTestClass
   /// Tests edge cases like empty CustomProperties object.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestEdgeCases()
+  private bool TestEdgeCases()
   {
     Console.WriteLine("--- CustomProperties Test Edge Cases ---");
     {
@@ -132,7 +132,7 @@ public class CustomPropertiesTest: _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document custom properties are successfully stored and verified; otherwise, false.</returns>
-  static bool TestStoreInDocument()
+  private bool TestStoreInDocument()
   {
     Console.WriteLine("--- CustomProperties Test: Store sample custom properties in new document ---");
     CustomProperties testData = CreateSampleCustomProperties();
@@ -181,7 +181,7 @@ public class CustomPropertiesTest: _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document custom properties are successfully updated and verified; otherwise, false.</returns>
-  static bool TestUpdateInDocument()
+  private bool TestUpdateInDocument()
   {
     Console.WriteLine("--- CustomProperties Test: Update document custom properties ---");
     CustomProperties testData = CreateSampleCustomProperties();
@@ -242,7 +242,7 @@ public class CustomPropertiesTest: _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document custom properties are successfully stored and verified; otherwise, false.</returns>
-  static bool TestStoreCustomProperties()
+  private bool TestStoreCustomProperties()
   {
     Console.WriteLine("--- CustomProperties Test: Store sample custom properties in new document ---");
     CustomProperties testData = CreateSampleCustomProperties();
@@ -295,7 +295,7 @@ public class CustomPropertiesTest: _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document custom properties are successfully updated and verified; otherwise, false.</returns>
-  static bool TestUpdateCustomProperties()
+  private bool TestUpdateCustomProperties()
   {
     Console.WriteLine("--- CustomProperties Test: Update document custom properties ---");
     CustomProperties testData = CreateSampleCustomProperties();
@@ -352,7 +352,7 @@ public class CustomPropertiesTest: _AbstractTestClass
   /// Creates a sample CustomProperties object with various property types.
   /// </summary>
   /// <returns>A populated CustomProperties object.</returns>
-  static CustomProperties CreateSampleCustomProperties()
+  private CustomProperties CreateSampleCustomProperties()
   {
     var props = new CustomProperties();
     props.Add(new CustomProperty
@@ -384,7 +384,7 @@ public class CustomPropertiesTest: _AbstractTestClass
   /// </summary>
   /// <param name="props">The CustomProperties object to serialize.</param>
   /// <returns>The serialized XML string.</returns>
-  static string SerializeToXml(CustomProperties props)
+  private string SerializeToXml(CustomProperties props)
   {
     var xmlSerializer = new XmlSerializer(typeof(CustomProperties));
     using (var stringWriter = new StringWriter())
@@ -400,7 +400,7 @@ public class CustomPropertiesTest: _AbstractTestClass
   /// </summary>
   /// <param name="xml">The XML string to deserialize.</param>
   /// <returns>The deserialized CustomProperties object, or null if deserialization fails.</returns>
-  static CustomProperties? DeserializeFromXml(string xml)
+  private CustomProperties? DeserializeFromXml(string xml)
   {
     var xmlSerializer = new XmlSerializer(typeof(CustomProperties));
     using (var stringReader = new StringReader(xml))
@@ -414,7 +414,7 @@ public class CustomPropertiesTest: _AbstractTestClass
   /// </summary>
   /// <param name="props">The CustomProperties object to serialize.</param>
   /// <returns>The serialized JSON string.</returns>
-  static string SerializeToJson(CustomProperties props)
+  private string SerializeToJson(CustomProperties props)
   {
     var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
     return JsonSerializer.Serialize(props, jsonOptions);
@@ -425,7 +425,7 @@ public class CustomPropertiesTest: _AbstractTestClass
   /// </summary>
   /// <param name="json">The JSON string to deserialize.</param>
   /// <returns>The deserialized CustomProperties object, or null if deserialization fails.</returns>
-  static CustomProperties? DeserializeFromJson(string json)
+  private CustomProperties? DeserializeFromJson(string json)
   {
     var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
     return JsonSerializer.Deserialize<CustomProperties>(json, jsonOptions);

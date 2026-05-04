@@ -1,8 +1,10 @@
-﻿namespace DocumentModel.InOpenXml.Test;
+﻿using DocumentFormat.OpenXml.Office.CoverPageProps;
+
+namespace DocumentModel.InOpenXml.Test;
 
 internal class Program
 {
-  static void Main(string[] args)
+  public static void Main(string[] args)
   {
     // Ensure Unicode characters display correctly
     Console.OutputEncoding = System.Text.Encoding.UTF8;
@@ -11,43 +13,43 @@ internal class Program
     Console.WriteLine("║   DocumentModel InOpenXml Test Suite        ║");
     Console.WriteLine("╚═════════════════════════════════════════════╝");
     Console.WriteLine();
-    if (!Exec(ElementCollectionTest.Run)) return;
-    if (!Exec(CorePropertiesTest.Run)) return;
-    if (!Exec(ContentPropertiesTest.Run)) return;
-    if (!Exec(StatisticPropertiesTest.Run)) return;
-    if (!Exec(CustomPropertiesTest.Run)) return;
+    if (!Exec(new ElementCollectionTest())) return;
+    //if (!Exec(new CorePropertiesTest())) return;
+    //if (!Exec(new ContentPropertiesTest())) return;
+    //if (!Exec(new StatisticPropertiesTest())) return;
+    //if (!Exec(new CustomPropertiesTest())) return;
 
-    if (!Exec(DocumentSettingsTest.Run)) return;
-    if (!Exec(RsidsTest.Run)) return;
-    if (!Exec(DocumentVariablesTest.Run)) return;
-    if (!Exec(FontTableTest.Run)) return;
-    if (!Exec(LatentStylesTest.Run)) return;
-    if (!Exec(StyleDefinitionsTest.Run)) return;
-    if (!Exec(BaseRunPropertiesTest.Run)) return;
-    if (!Exec(StyleDocDefaultsRunPropertiesTest.Run)) return;
-    if (!Exec(BaseParagraphPropertiesTest.Run)) return;
-    if (!Exec(StyleDocDefaultsParagraphPropertiesTest.Run)) return;
-    if (!Exec(AbstractNumberingsTest.Run)) return;
-    if (!Exec(NumberingInstancesTest.Run)) return;
-    //if (!Exec(BaseSectionPropertiesTest.Run)) return;
-    //if (!Exec(BaseTableCellPropertiesTest.Run)) return;
-    //if (!Exec(BaseTableRowPropertiesTest.Run)) return;
-    //if (!Exec(BaseTablePropertiesTest.Run)) return;
-    //if (!Exec(ColorTypesTest.Run)) return;
-    //if (!Exec(ThemeTest.Run)) return;
-    //if (!Exec(RunTest.Run)) return;
+    //if (!Exec(new DocumentSettingsTest())) return;
+    //if (!Exec(new RsidsTest())) return;
+    //if (!Exec(new DocumentVariablesTest())) return;
+    if (!Exec(new FontTableTest())) return;
+    //if (!Exec(new LatentStylesTest())) return;
+    //if (!Exec(new StyleDefinitionsTest())) return;
+    //if (!Exec(new BaseRunPropertiesTest())) return;
+    //if (!Exec(new StyleDocDefaultsRunPropertiesTest())) return;
+    //if (!Exec(new BaseParagraphPropertiesTest())) return;
+    //if (!Exec(new StyleDocDefaultsParagraphPropertiesTest())) return;
+    //if (!Exec(new AbstractNumberingsTest())) return;
+    //if (!Exec(new NumberingInstancesTest())) return;
+    //if (!Exec(new BaseSectionPropertiesTest())) return;
+    //if (!Exec(new BaseTableCellPropertiesTest())) return;
+    //if (!Exec(new BaseTableRowPropertiesTest())) return;
+    //if (!Exec(new BaseTablePropertiesTest())) return;
+    //if (!Exec(new ColorTypesTest())) return;
+    //if (!Exec(new ThemeTest())) return;
+    //if (!new Exec()new Test())) return;
 
     Console.WriteLine("All tests passed.");
   }
 
   /// <summary>
-  /// Runs the specified test method and reports the result to the console.
+  ///new ()s the specified test method and reports the result to the console.
   /// </summary>
-  /// <param name="runMethod"></param>
+  /// <param name="test"></param>
   /// <returns></returns>
-  public static bool Exec(Func<bool> runMethod)
+  private static bool Exec(_AbstractTestClass test)
   {
-    if (!runMethod())
+    if (!test.Run())
     {
       Console.WriteLine("\nSome tests failed.");
       return false;

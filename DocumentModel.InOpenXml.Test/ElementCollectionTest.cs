@@ -7,50 +7,82 @@ namespace DocumentModel.InOpenXml.Test;
 /// </summary>
 public class ElementCollectionTest: _AbstractTestClass
 {
+
   /// <summary>
   /// Runs all tests and reports the results.
   /// </summary>
   /// <returns>true if all tests pass; otherwise, false.</returns>
-  public static bool Run()
+  public override bool Run()
   {
-    Console.WriteLine("=== ElementCollectionTest ===\n");
-    if (!TestIndexerGetByIntAndString()) return false;
-    if (!TestIndexerSetByInt()) return false;
-    if (!TestEnumeration()) return false;
-    if (!TestMissingNameThrows()) return false;
-    if (!TestInvalidIndexTypeThrows()) return false;
-
-    Console.WriteLine("All ElementCollectionTest.\n");
+    Console.WriteLine($"===  {TestName} test ===\n");
+    if (!TestIModelCollectionIndexerGetByInt()) return false;
+    if (!TestIndexerGetString()) return false;
+    if (!TestIModelCollectionIndexerSetByInt()) return false;
+    if (!TestIModelCollectionEnumeration()) return false;
+    if (!TestIModelCollectionMissingNameThrows()) return false;
+    if (!TestIModelCollectionInvalidIndexTypeThrows()) return false;
+    Console.WriteLine($"All {TestName} tests passed.\n");
     return true;
   }
 
-  static bool TestIndexerGetByIntAndString()
+  /// <summary>
+  /// Tests the indexer get by int functionality of IModelCollection.
+  /// </summary>
+  /// <returns></returns>
+  private bool TestIModelCollectionIndexerGetByInt()
   {
-    Console.WriteLine("--- Test IModelCollection indexer get (int/string) ---");
+    var testMethodName = GetInvokingMethodName();
+    Console.WriteLine($"--- {testMethodName} ---");
     var props = CreateSampleCollection();
     IModelCollection<DMP.ICustomProperty> modelCollection = props;
 
     var byInt = modelCollection[0];
-    var byString = modelCollection["Second"];
-
+    
     if (!ReferenceEquals(byInt, props[0]))
     {
-      Console.WriteLine("✗ IModelCollection indexer get by int FAILED - unexpected item instance");
-      return false;
-    }
-    if (!ReferenceEquals(byString, props[1]))
-    {
-      Console.WriteLine("✗ IModelCollection indexer get by string FAILED - unexpected item instance");
+      Console.WriteLine($"✗ {testMethodName} FAILED - unexpected item instance");
       return false;
     }
 
-    Console.WriteLine("✓ IModelCollection indexer get test passed\n");
+    Console.WriteLine($"✓ {testMethodName} passed\n");
     return true;
   }
 
-  static bool TestIndexerSetByInt()
+  /// <summary>
+  /// Tests the indexer get by string functionality of IModelCollection.
+  /// </summary>
+  /// <returns></returns>
+  private bool TestIndexerGetString()
   {
-    Console.WriteLine("--- Test IModelCollection indexer set (int) ---");
+    var testMethodName = GetInvokingMethodName();
+    Console.WriteLine($"--- {testMethodName} ---");
+    var props = CreateSampleCollection();
+    IModelCollection<DMP.ICustomProperty> modelCollection = props;
+
+    var byString = modelCollection["Second"];
+
+    if (!ReferenceEquals(byString, props[1]))
+    {
+      Console.WriteLine($"✗ {testMethodName} FAILED - unexpected item instance");
+      return false;
+    }
+
+    Console.WriteLine($"✓ {testMethodName} passed\n");
+    return true;
+  }
+
+  /// <summary>
+  /// Tests setting an element in the IModelCollection by integer index and verifies that the replacement is applied
+  /// correctly.  
+  /// </summary>
+  /// <remarks>This method checks that assigning a new element to the IModelCollection using an integer index
+  /// updates the collection as expected. It also verifies that no unexpected exceptions are thrown during the
+  /// operation.</remarks>
+  /// <returns>true if the replacement element is set successfully at the specified index; otherwise, false.</returns>
+  private bool TestIModelCollectionIndexerSetByInt()
+  {
+    var testMethodName = GetInvokingMethodName();
+    Console.WriteLine($"--- {testMethodName} ---");
     var props = CreateSampleCollection();
     IModelCollection<DMP.ICustomProperty> modelCollection = props;
     var replacement = new CustomProperty { Name = "Replacement", Value = "Updated" };
@@ -61,23 +93,32 @@ public class ElementCollectionTest: _AbstractTestClass
     }
     catch (Exception ex)
     {
-      Console.WriteLine($"✗ IModelCollection indexer set by int FAILED - unexpected exception: {ex.GetType().Name}: {ex.Message}");
+      Console.WriteLine($"✗ {testMethodName} FAILED - unexpected exception: {ex.GetType().Name}: {ex.Message}");
       return false;
     }
 
     if (!ReferenceEquals(props[1], replacement))
     {
-      Console.WriteLine("✗ IModelCollection indexer set by int FAILED - replacement was not applied");
+      Console.WriteLine($"✗ {testMethodName} FAILED - replacement was not applied");
       return false;
     }
 
-    Console.WriteLine("✓ IModelCollection indexer set by int test passed\n");
+    Console.WriteLine($"✓ {testMethodName} passed\n");
     return true;
   }
 
-  static bool TestEnumeration()
+  /// <summary>
+  /// Tests the enumeration behavior of the IModelCollection interface to ensure items are iterated in the expected
+  /// order and count.  
+  /// </summary>
+  /// <remarks>This method verifies that enumerating an IModelCollection of ICustomProperty yields exactly three
+  /// items in the correct sequence. It outputs diagnostic messages to the console indicating the result of the
+  /// test.</remarks>
+  /// <returns>true if the IModelCollection enumeration produces the expected item count and order; otherwise, false.</returns>
+  private bool TestIModelCollectionEnumeration()
   {
-    Console.WriteLine("--- Test IModelCollection enumeration ---");
+    var testMethodName = GetInvokingMethodName();
+    Console.WriteLine($"--- {testMethodName} ---");
     {
       var props = CreateSampleCollection();
       IModelCollection<DMP.ICustomProperty> modelCollection = props;
@@ -90,23 +131,31 @@ public class ElementCollectionTest: _AbstractTestClass
 
       if (names.Count != 3)
       {
-        Console.WriteLine($"✗ IModelCollection enumeration FAILED - count is {names.Count}, expected 3");
+        Console.WriteLine($"✗ {testMethodName} FAILED - count is {names.Count}, expected 3");
         return false;
       }
       if (names[0] != "First" || names[1] != "Second" || names[2] != "Third")
       {
-        Console.WriteLine("✗ IModelCollection enumeration FAILED - sequence order mismatch");
+        Console.WriteLine($"✗ {testMethodName} FAILED - sequence order mismatch");
         return false;
       }
 
-      Console.WriteLine("✓ IModelCollection enumeration test passed\n");
+      Console.WriteLine($"✓ {testMethodName} passed\n");
       return true;
     }
   }
 
-  static bool TestMissingNameThrows()
+  /// <summary>
+  /// Tests that accessing a missing string key in an IModelCollection throws a KeyNotFoundException.
+  /// </summary>
+  /// <remarks>This test verifies the correct exception handling behavior when attempting to access a
+  /// non-existent key in an IModelCollection. It is intended to ensure that the collection implementation conforms to
+  /// expected .NET collection semantics.</remarks>
+  /// <returns>true if the KeyNotFoundException is thrown as expected; otherwise, false.</returns>
+  private bool TestIModelCollectionMissingNameThrows()
   {
-    Console.WriteLine("--- Test IModelCollection missing string key throws ---");
+    var testMethodName = GetInvokingMethodName();
+    Console.WriteLine($"--- {testMethodName} ---");
     {
       var props = CreateSampleCollection();
       IModelCollection<DMP.ICustomProperty> modelCollection = props;
@@ -114,25 +163,33 @@ public class ElementCollectionTest: _AbstractTestClass
       try
       {
         _ = modelCollection["MissingName"];
-        Console.WriteLine("✗ IModelCollection missing string key test FAILED - expected KeyNotFoundException");
+        Console.WriteLine($"✗ {testMethodName} FAILED - expected KeyNotFoundException");
         return false;
       }
       catch (KeyNotFoundException)
       {
-        Console.WriteLine("✓ IModelCollection missing string key throws test passed\n");
+        Console.WriteLine($"✓ {testMethodName} passed\n");
         return true;
       }
       catch (Exception ex)
       {
-        Console.WriteLine($"✗ IModelCollection missing string key test FAILED - unexpected exception: {ex.GetType().Name}: {ex.Message}");
+        Console.WriteLine($"✗ {testMethodName} FAILED - unexpected exception: {ex.GetType().Name}: {ex.Message}");
         return false;
       }
     }
   }
 
-  static bool TestInvalidIndexTypeThrows()
+  /// <summary>
+  /// Tests whether accessing an IModelCollection with an invalid index type throws the expected exception. 
+  /// </summary>
+  /// <remarks>This test verifies that the IModelCollection implementation correctly handles attempts to access
+  /// elements using an unsupported index type, such as a double, by throwing an exception. The test is considered
+  /// successful if an exception is thrown and unsuccessful otherwise.</remarks>
+  /// <returns>true if the method throws an exception as expected when an invalid index type is used; otherwise, false.</returns>
+  private bool TestIModelCollectionInvalidIndexTypeThrows()
   {
-    Console.WriteLine("--- Test IModelCollection invalid index type throws ---");
+    var testMethodName = GetInvokingMethodName();
+    Console.WriteLine($"--- {testMethodName} ---");
     {
       var props = CreateSampleCollection();
       IModelCollection<DMP.ICustomProperty> modelCollection = props;
@@ -140,18 +197,18 @@ public class ElementCollectionTest: _AbstractTestClass
       try
       {
         _ = modelCollection[1.5];
-        Console.WriteLine("✗ IModelCollection invalid index type test FAILED - expected NotSupportedException");
+        Console.WriteLine($"✗ {testMethodName} FAILED - expected NotSupportedException");
         return false;
       }
       catch
       {
-        Console.WriteLine("✓ IModelCollection invalid index type throws test passed\n");
+        Console.WriteLine($"✓ {testMethodName} passed\n");
         return true;
       }
     }
   }
 
-  static CustomProperties CreateSampleCollection()
+  private CustomProperties CreateSampleCollection()
   {
     var props = new CustomProperties();
     props.Add(new CustomProperty { Name = "First", Value = "One" });

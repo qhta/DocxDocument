@@ -1091,100 +1091,96 @@
             </summary>
             <returns>true if all tests pass; otherwise, false.</returns>
         </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ElementCollectionTest.TestIModelCollectionIndexerGetByInt">
+            <summary>
+            Tests the indexer get by int functionality of IModelCollection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ElementCollectionTest.TestIndexerGetString">
+            <summary>
+            Tests the indexer get by string functionality of IModelCollection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ElementCollectionTest.TestIModelCollectionIndexerSetByInt">
+            <summary>
+            Tests setting an element in the IModelCollection by integer index and verifies that the replacement is applied
+            correctly.  
+            </summary>
+            <remarks>This method checks that assigning a new element to the IModelCollection using an integer index
+            updates the collection as expected. It also verifies that no unexpected exceptions are thrown during the
+            operation.</remarks>
+            <returns>true if the replacement element is set successfully at the specified index; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ElementCollectionTest.TestIModelCollectionEnumeration">
+            <summary>
+            Tests the enumeration behavior of the IModelCollection interface to ensure items are iterated in the expected
+            order and count.  
+            </summary>
+            <remarks>This method verifies that enumerating an IModelCollection of ICustomProperty yields exactly three
+            items in the correct sequence. It outputs diagnostic messages to the console indicating the result of the
+            test.</remarks>
+            <returns>true if the IModelCollection enumeration produces the expected item count and order; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ElementCollectionTest.TestIModelCollectionMissingNameThrows">
+            <summary>
+            Tests that accessing a missing string key in an IModelCollection throws a KeyNotFoundException.
+            </summary>
+            <remarks>This test verifies the correct exception handling behavior when attempting to access a
+            non-existent key in an IModelCollection. It is intended to ensure that the collection implementation conforms to
+            expected .NET collection semantics.</remarks>
+            <returns>true if the KeyNotFoundException is thrown as expected; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ElementCollectionTest.TestIModelCollectionInvalidIndexTypeThrows">
+            <summary>
+            Tests whether accessing an IModelCollection with an invalid index type throws the expected exception. 
+            </summary>
+            <remarks>This test verifies that the IModelCollection implementation correctly handles attempts to access
+            elements using an unsupported index type, such as a double, by throwing an exception. The test is considered
+            successful if an exception is thrown and unsuccessful otherwise.</remarks>
+            <returns>true if the method throws an exception as expected when an invalid index type is used; otherwise, false.</returns>
+        </member>
         <member name="T:DocumentModel.InOpenXml.Test.FontTableTest">
             <summary>
             Comprehensive test for DocumentModel.Fonts.
             </summary>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.Run">
-            <summary>
-            Runs all Fonts serialization tests.
-            </summary>
-            <returns>True if all tests pass; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.TestXmlSerialization">
-            <summary>
-            Tests XML serialization and deserialization of Fonts.
-            </summary>
-            <returns>True if the test passes; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.TestJsonSerialization">
-            <summary>
-            Tests JSON serialization and deserialization of Fonts.
-            </summary>
-            <returns>True if the test passes; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.TestEdgeCases">
-            <summary>
-            Tests edge cases like empty Fonts object.
-            </summary>
-            <returns>True if the test passes; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.TestStoreInDocument">
-            <summary>
-            Tests setting sample Fonts to a new document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document Fonts can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document Fonts are successfully stored and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.TestUpdateInDocument">
-            <summary>
-            Tests updating the Fonts of a document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document Fonts can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document Fonts are successfully updated and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.TestValidateOpenXml">
-            <summary>
-            Tests validating the OpenXml generated from the document containing sample Fonts against the OpenXml schema.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that the OpenXml generated from the document
-            containing sample Fonts adheres to the OpenXml schema. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the OpenXml is valid according to the schema; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.CreateSampleFonts">
+        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.CreateSampleData">
             <summary>
             Creates a sample Fonts object with various property types.
             </summary>
             <returns>A populated Fonts object.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.CreateOneFont">
+        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.GetDataFromDocument(DocumentModel.Wordprocessing.Document)">
             <summary>
-            Creates a new instance of the FontDef class.
+            Gets the FontTable from the provided Document.
             </summary>
+            <param name="document">The document from which to retrieve the font table.</param>
+            <returns>The font table from the document.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.SerializeToXml(DocumentModel.Wordprocessing.FontTable)">
+        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.SetDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.Wordprocessing.FontTable)">
             <summary>
-            Serializes a Fonts object to an XML string.
+            Sets the font table of the specified document to the provided font table element. 
             </summary>
-            <param name="props">The Fonts object to serialize.</param>
-            <returns>The serialized XML string.</returns>
+            <param name="document">The document whose font table is to be set.</param>
+            <param name="element">The font table to assign to the document.</param>
+            <returns>The font table that was set on the document.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.DeserializeFromXml(System.String)">
+        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.Wordprocessing.FontTable)">
             <summary>
-            Deserializes a Fonts object from an XML string.
+            Updates the specified font table in the document by adding a new predefined font and returns the added font.
             </summary>
-            <param name="xml">The XML string to deserialize.</param>
-            <returns>The deserialized Fonts object, or null if deserialization fails.</returns>
+            <param name="document">The document in which the font table will be updated.</param>
+            <param name="fontTable">The font table to which the new font will be added.</param>
+            <returns>The newly created and added Font instance.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.SerializeToJson(DocumentModel.Wordprocessing.FontTable)">
+        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.GetOpenXmlFromDocument(DocumentModel.Wordprocessing.Document)">
             <summary>
-            Serializes a Fonts object to a JSON string.
+            Gets the OpenXml representation of the font table from the specified document.
             </summary>
-            <param name="props">The Fonts object to serialize.</param>
-            <returns>The serialized JSON string.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.FontTableTest.DeserializeFromJson(System.String)">
-            <summary>
-            Deserializes a Fonts object from a JSON string.
-            </summary>
-            <param name="json">The JSON string to deserialize.</param>
-            <returns>The deserialized Fonts object, or null if deserialization fails.</returns>
+            <param name="document">The document from which to retrieve the OpenXml representation.</param>
+            <returns>The OpenXml representation of the font table.</returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.KnownPropertiesTest">
             <summary>
@@ -1400,12 +1396,12 @@
             <param name="json">The JSON string to deserialize.</param>
             <returns>The deserialized Numbering object, or null if deserialization fails.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.Program.Exec(System.Func{System.Boolean})">
-            <summary>
-            Runs the specified test method and reports the result to the console.
-            </summary>
-            <param name="runMethod"></param>
-            <returns></returns>
+        <member name="M:DocumentModel.InOpenXml.Test.Program.Exec(DocumentModel.InOpenXml.Test._AbstractTestClass)">
+             <summary>
+            new ()s the specified test method and reports the result to the console.
+             </summary>
+             <param name="test"></param>
+             <returns></returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.RsidsTest">
             <summary>
@@ -1877,6 +1873,92 @@
             Creates a Theme with a basic content.
             </summary>
         </member>
+        <member name="T:DocumentModel.InOpenXml.Test._AbstractModelTest`1">
+            <summary>
+            Comprehensive test for DocumentModel.Numbering.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.InOpenXml.Test._AbstractModelTest`1.TestFileName">
+            <summary>
+            Test file name for storing the document during tests.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.Run">
+            <summary>
+            Runs all tests.
+            </summary>
+            <returns>True if all tests pass; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.TestXmlSerialization">
+            <summary>
+            Tests XML serialization and deserialization of the model collection.
+            </summary>
+            <returns>True if the test passes; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.TestJsonSerialization">
+            <summary>
+            Tests JSON serialization and deserialization of the model collection.
+            </summary>
+            <returns>True if the test passes; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.TestEdgeCases">
+            <summary>
+            Tests edge cases like empty model collection.
+            </summary>
+            <returns>True if the test passes; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.TestStoreInDocument">
+            <summary>
+            Tests setting sample model collection to a new document and outputs the result to the console.
+            </summary>
+            <remarks>This method is intended for use in test scenarios to verify that document model collection can
+            be set and serialized correctly. It writes status messages and the serialized properties to the console for
+            inspection.</remarks>
+            <returns>true if the document model collection is successfully stored and verified; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.TestUpdateInDocument">
+            <summary>
+            Tests updating the sample collection in a document and outputs the result to the console.
+            </summary>
+            <remarks>This method is intended for use in test scenarios to verify that document Numbering can
+            be set and serialized correctly. It writes status messages and the serialized properties to the console for
+            inspection.</remarks>
+            <returns>true if the document Numbering are successfully updated and verified; otherwise, false.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.CreateSampleData">
+            <summary>
+            Creates a sample model collection object with various items.
+            </summary>
+            <returns>A populated sample model collection object.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.GetDataFromDocument(DocumentModel.Wordprocessing.Document)">
+            <summary>
+            Gets the model collection data from the specified document.
+            </summary>
+            <param name="document">The document from which the data is to be retrieved.</param>
+            <returns>The model collection data from the document.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.SetDataInDocument(DocumentModel.Wordprocessing.Document,`0)">
+            <summary>
+            Sets the specified document property for the given model collection element.
+            </summary>
+            <param name="document">The document in which the data is to be set.</param>
+            <param name="element">The model collection element for which the document property is to be set.</param>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,`0)">
+            <summary>
+            Updates the specified document property for the given model collection element.
+            </summary>
+            <param name="document">The document in which the data is to be set.</param>
+            <param name="fontTable">The model collection element for which the document property is to be set.</param>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractModelTest`1.GetOpenXmlFromDocument(DocumentModel.Wordprocessing.Document)">
+            <summary>
+            Gets the OpenXml representation of the model collection from the specified document.
+            </summary>
+            <param name="document">The document from which to retrieve the OpenXml representation.</param>
+            <returns>The OpenXml representation of the model collection.</returns>
+        </member>
         <member name="T:DocumentModel.InOpenXml.Test._AbstractTestClass">
             <summary>
             Base class for all test classes, providing common functionality and constants.
@@ -1886,6 +1968,24 @@
             <summary>
             Common directory path used for testing purposes. This should be set to a valid directory on the test machine where sample files can be stored and accessed during tests.
             </summary>
+        </member>
+        <member name="P:DocumentModel.InOpenXml.Test._AbstractTestClass.TestName">
+            <summary>
+            Name of the test to display.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.GetInvokingMethodName(System.String)">
+            <summary>
+            Gets invoking method name using compiler services. 
+            </summary>
+            <param name="memberName">The name of the calling member. This is automatically provided by the compiler.</param>
+            <returns>The name of the calling method.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.Run">
+            <summary>
+            Runs a test and returns its result.
+            </summary>
+            <returns>True if test passed, false otherwise</returns>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.GetDataXml(System.Object)">
             <summary>
@@ -1925,7 +2025,7 @@
         </member>
         <member name="F:DocumentModel.InOpenXml.Test._AbstractTestClass._jsonOptions">
             <summary>
-            JSON options configured for indented formatting. This static field is used to ensure consistent JSON serialization and deserialization behavior across the test classes.
+            JSON options configured for indented formatting. This private field is used to ensure consistent JSON serialization and deserialization behavior across the test classes.
             </summary>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test._AbstractTestClass.SerializeToJson(System.Object)">

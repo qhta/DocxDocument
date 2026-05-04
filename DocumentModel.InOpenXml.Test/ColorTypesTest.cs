@@ -18,7 +18,7 @@ public class ColorTypesTest : _AbstractTestClass
   /// Runs all IColor implementation tests.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
-  public static bool Run()
+  public override bool Run()
   {
     Console.WriteLine("=== IColor Implementations Test ===\n");
     if (!TestTypeDiscovery()) return false;
@@ -36,7 +36,7 @@ public class ColorTypesTest : _AbstractTestClass
   /// Verifies that all known IColor implementations are discovered.
   /// </summary>
   /// <returns>True if discovery is correct; otherwise, false.</returns>
-  static bool TestTypeDiscovery()
+  private bool TestTypeDiscovery()
   {
     Console.WriteLine("--- IColor Type Discovery ---");
     var discovered = GetIColorTypes().OrderBy(t => t.FullName).ToList();
@@ -72,7 +72,7 @@ public class ColorTypesTest : _AbstractTestClass
   /// Tests XML serialization and deserialization for all IColor implementations.
   /// </summary>
   /// <returns>True if all XML tests pass; otherwise, false.</returns>
-  static bool TestXmlSerialization()
+  private bool TestXmlSerialization()
   {
     Console.WriteLine("--- Theme/Color XML Serialization ---");
     var document = CreateDocumentWithInitializedThemePart();
@@ -121,7 +121,7 @@ public class ColorTypesTest : _AbstractTestClass
   /// Tests JSON serialization and deserialization for all IColor implementations.
   /// </summary>
   /// <returns>True if all JSON tests pass; otherwise, false.</returns>
-  static bool TestJsonSerialization()
+  private bool TestJsonSerialization()
   {
     Console.WriteLine("--- Theme/Color Json Serialization ---");
     var document = CreateDocumentWithInitializedThemePart();
@@ -170,7 +170,7 @@ public class ColorTypesTest : _AbstractTestClass
   /// Tests common IColor accessors for all implementations.
   /// </summary>
   /// <returns>True if all accessor tests pass; otherwise, false.</returns>
-  static bool TestIColorAccessors()
+  private bool TestIColorAccessors()
   {
     Console.WriteLine("--- IColor Accessors ---");
     var document = CreateDocumentWithInitializedThemePart();
@@ -222,7 +222,7 @@ public class ColorTypesTest : _AbstractTestClass
   /// Tests edge cases using empty instances for all IColor implementations.
   /// </summary>
   /// <returns>True if all edge case tests pass; otherwise, false.</returns>
-  static bool TestEdgeCases()
+  private bool TestEdgeCases()
   {
     Console.WriteLine("--- Edge Cases ---");
     var jsonOptions = CreateJsonOptions();
@@ -264,7 +264,7 @@ public class ColorTypesTest : _AbstractTestClass
   /// Returns all non-abstract classes in the model assembly that implement an interface named IColor.
   /// </summary>
   /// <returns>Collection of discovered IColor implementation types.</returns>
-  static List<Type> GetIColorTypes()
+  private List<Type> GetIColorTypes()
   {
     return typeof(RgbColorModelHex).Assembly.GetTypes()
       .Where(t => t.IsClass && !t.IsAbstract)
@@ -279,7 +279,7 @@ public class ColorTypesTest : _AbstractTestClass
   /// </summary>
   /// <param name="colorType">The concrete color implementation type.</param>
   /// <returns>A populated color instance.</returns>
-  static object CreateSampleColor(Type colorType)
+  private object CreateSampleColor(Type colorType)
   {
     if (colorType == typeof(DocumentModel.Drawings.HslColor))
       return new HslColor
@@ -343,7 +343,7 @@ public class ColorTypesTest : _AbstractTestClass
   /// Creates a document context initialized with a theme and color scheme.
   /// </summary>
   /// <returns>Document context for color tests.</returns>
-  static DocumentModel.Wordprocessing.Document CreateDocumentWithInitializedThemePart()
+  private DocumentModel.Wordprocessing.Document CreateDocumentWithInitializedThemePart()
   {
     var document = new DocumentModel.Wordprocessing.Document();
     document.Theme = CreateThemeWithColorScheme();
@@ -355,7 +355,7 @@ public class ColorTypesTest : _AbstractTestClass
   /// </summary>
   /// <param name="color">Color instance to attach.</param>
   /// <param name="document">Document context containing initialized theme data.</param>
-  static void AttachToDocumentContext(object color, DocumentModel.Wordprocessing.Document document)
+  private void AttachToDocumentContext(object color, DocumentModel.Wordprocessing.Document document)
   {
     if (color is ModelElement modelElement)
       modelElement.SetParent(document);
@@ -364,7 +364,7 @@ public class ColorTypesTest : _AbstractTestClass
   /// <summary>
   /// Initializes the document theme part with a basic color scheme.
   /// </summary>
-  static Theme CreateThemeWithColorScheme()
+  private Theme CreateThemeWithColorScheme()
   {
     var theme = new Theme
     {
@@ -392,7 +392,7 @@ public class ColorTypesTest : _AbstractTestClass
     return theme;
   }
 
-  static JsonSerializerOptions CreateJsonOptions()
+  private JsonSerializerOptions CreateJsonOptions()
   {
     var options = new JsonSerializerOptions(JsonConfig.Options);
     var resolver = new DefaultJsonTypeInfoResolver();
@@ -421,7 +421,7 @@ public class ColorTypesTest : _AbstractTestClass
   /// </summary>
   /// <returns></returns>
   /// <exception cref="InvalidOperationException"></exception>
-  public static bool StoreThemeInDocument()
+  private bool StoreThemeInDocument()
   {
     Console.WriteLine("\n --- Store Theme in document ---");
     Theme testData = CreateThemeWithColorScheme();
@@ -472,9 +472,9 @@ public class ColorTypesTest : _AbstractTestClass
 
   }
 
-  private static readonly Random Random = new Random();
-  private static HexColor GetRandomHexColor() => (HexColor)Random.Next(0x000000, 0xFFFFFF);
-  //private static DXW.ThemeColorValues GetRandomThemeColor() => (DXW.ThemeColorValues)Random.Next(1, Enum.GetValues(typeof(DXW.ThemeColorValues)).Length);
+  private readonly Random Random = new Random();
+  private HexColor GetRandomHexColor() => (HexColor)Random.Next(0x000000, 0xFFFFFF);
+  //private DXW.ThemeColorValues GetRandomThemeColor() => (DXW.ThemeColorValues)Random.Next(1, Enum.GetValues(typeof(DXW.ThemeColorValues)).Length);
 
   /// <summary>
   /// Changes colors of two specific run texts in the specified document package.
@@ -482,7 +482,7 @@ public class ColorTypesTest : _AbstractTestClass
   /// </summary>
   /// <param name="filePath">Path to the .docx/.zip OpenXml package.</param>
   /// <returns>True if both target runs were found and updated; otherwise, false.</returns>
-  public static bool ChangeTwoWordColorsInDocument(string filePath = @"D:\OneDrive\VS\Projects\DocxDocument\Samples\Colors test2.zip")
+  private bool ChangeTwoWordColorsInDocument(string filePath = @"D:\OneDrive\VS\Projects\DocxDocument\Samples\Colors test2.zip")
   {
     Console.WriteLine("\n--- Two Word Colors in Document ---");
 

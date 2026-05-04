@@ -24,7 +24,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   /// </summary>
   /// <param name = "parent">The parent ModelElement that owns this collection. Cannot be null.</param>
   /// <param name = "openXmlCollection">The Open XML composite element that represents the collection. Can be null.</param>
-  protected ModelElementCollection(ModelElement parent, DX.OpenXmlCompositeElement? openXmlCollection) : base(parent)
+  protected ModelElementCollection(ModelElement parent, DX.OpenXmlCompositeElement? openXmlCollection) : base(parent, openXmlCollection)
   {
   }
 
@@ -44,7 +44,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
   /// Loads model elements from the specified Open XML composite element and populates the collection.
   /// </summary>
   /// <param name = "openXmlModeledCollection">The Open XML composite element containing child elements to load.</param>
-  protected override void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection)
+  protected sealed override void LoadDataCollection(OpenXmlCollectionType openXmlModeledCollection)
   {
     this.Clear();
     foreach (var openXmlElement in openXmlModeledCollection!.ChildElements.OfType<OpenXmlItemType>())
@@ -58,7 +58,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType, Op
       }
       else
       {
-        Debug.WriteLine($"Constructor with parameters (ModelElement<{typeof(OpenXmlItemType).Name}>, {typeof(OpenXmlItemType).Name}) not found for type {typeof(ItemType).FullName}. Falling back to parameterless constructor and LoadData method.");
+        //Debug.WriteLine($"Constructor with parameters (ModelElement<{typeof(OpenXmlItemType).Name}>, {typeof(OpenXmlItemType).Name}) not found for type {typeof(ItemType).FullName}. Falling back to parameterless constructor and LoadData method.");
         modelObject = Activator.CreateInstance<ItemType>();
         modelObject.LoadData(openXmlElement);
       }

@@ -113,8 +113,8 @@ public static class TestHelper
     result = true;
     if (comparedType == typeof(string))
     {
-      string? obj1String = obj1.ToString();
-      string? obj2String = obj2.ToString();
+      string? obj1String = obj1?.ToString();
+      string? obj2String = obj2?.ToString();
       result = string.Equals(obj1String, obj2String);
       message = result ? null : $"String values differ: '{obj1String}' vs '{obj2String}'";
       return result;

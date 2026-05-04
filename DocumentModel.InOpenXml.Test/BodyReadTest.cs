@@ -15,7 +15,7 @@ public class BodyReadTest : _AbstractTestClass
   /// Runs all body read tests.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
-  public static bool Run()
+  public override bool Run()
   {
     Console.WriteLine("=== Body Read Test ===\n");
     //if (!TestReadBodyFromSampleFile()) return false;
@@ -29,7 +29,7 @@ public class BodyReadTest : _AbstractTestClass
   /// Tests reading document body from the sample file and loading it into DocumentModel body.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestReadBodyFromSampleFile()
+  private bool TestReadBodyFromSampleFile()
   {
     Console.WriteLine("--- Read Body From Sample File ---");
 
@@ -87,7 +87,7 @@ public class BodyReadTest : _AbstractTestClass
   /// Tests reading document body from the sample file and loading it into DocumentModel body.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestGetBodyFromSampleFile()
+  private bool TestGetBodyFromSampleFile()
   {
     Console.WriteLine("--- Get Body From Sample File ---");
 
@@ -143,7 +143,7 @@ public class BodyReadTest : _AbstractTestClass
   /// Tests creation of DocumentModel body elements by reading from sample body and serializing each element.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestCreateAndSerializeBodyElements()
+  private bool TestCreateAndSerializeBodyElements()
   {
     Console.WriteLine("--- Create And Serialize DocumentModel Body Elements ---");
 
@@ -193,7 +193,7 @@ public class BodyReadTest : _AbstractTestClass
     return true;
   }
 
-  static Type[] GetRuntimeKnownTypes(object root, Type rootType)
+  private Type[] GetRuntimeKnownTypes(object root, Type rootType)
   {
     var knownTypes = new HashSet<Type>();
     var visited = new HashSet<object>(ReferenceEqualityComparer.Instance);
@@ -203,7 +203,7 @@ public class BodyReadTest : _AbstractTestClass
     return knownTypes.ToArray();
   }
 
-  static void CollectRuntimeTypes(object? value, Type rootType, HashSet<Type> knownTypes, HashSet<object> visited)
+  private void CollectRuntimeTypes(object? value, Type rootType, HashSet<Type> knownTypes, HashSet<object> visited)
   {
     if (value == null)
       return;
@@ -255,7 +255,7 @@ public class BodyReadTest : _AbstractTestClass
     }
   }
 
-  private static bool IsXmlAnonymousType(Type type)
+  private bool IsXmlAnonymousType(Type type)
   {
     var xmlType = type.GetCustomAttribute<XmlTypeAttribute>();
     var xmlRoot = type.GetCustomAttribute<XmlRootAttribute>();
@@ -269,7 +269,7 @@ public class BodyReadTest : _AbstractTestClass
   /// Also resolves closed generic AbstractColor type name collisions.
   /// </summary>
   /// <returns>Prepared overrides used by XmlSerializer.</returns>
-  static XmlAttributeOverrides CreateXmlSerializerOverrides()
+  private XmlAttributeOverrides CreateXmlSerializerOverrides()
   {
     var overrides = new XmlAttributeOverrides();
     var assembly = typeof(DocumentModel.Wordprocessing.Body).Assembly;
@@ -319,7 +319,7 @@ public class BodyReadTest : _AbstractTestClass
   /// </summary>
   /// <param name="type">Type for which XML namespace is generated.</param>
   /// <returns>XML namespace string.</returns>
-  static string GetXmlNamespaceForType(Type type)
+  private string GetXmlNamespaceForType(Type type)
   {
     var typeNamespace = type.Namespace ?? "DocumentModel";
     if (typeNamespace.StartsWith("DocumentModel.", StringComparison.Ordinal))
@@ -334,7 +334,7 @@ public class BodyReadTest : _AbstractTestClass
   /// <param name="type">Closed generic abstract color type to override.</param>
   /// <param name="xmlTypeName">Unique XML type name.</param>
   /// <param name="xmlNamespace">XML namespace for the type.</param>
-  static void AddAbstractColorOverride(XmlAttributeOverrides overrides, Type type, string xmlTypeName, string xmlNamespace)
+  private void AddAbstractColorOverride(XmlAttributeOverrides overrides, Type type, string xmlTypeName, string xmlNamespace)
   {
     var attrs = new XmlAttributes
     {

@@ -7,13 +7,13 @@ namespace DocumentModel.InOpenXml.Test;
 /// </summary>
 public class CorePropertiesTest: _AbstractTestClass
 {
-  private static readonly string TestFileName = Path.Combine(TestFileDir, "CorePropertiesTest.docx");
+  private readonly string TestFileName = Path.Combine(TestFileDir, "CorePropertiesTest.docx");
 
   /// <summary>
   /// Runs all CoreProperties serialization tests and reports the results.
   /// </summary>
   /// <returns>true if all CoreProperties serialization tests pass; otherwise, false.</returns>
-  public static bool Run()
+  public override bool Run()
   {
     Console.WriteLine("=== CorePropertiesTest ===\n");
     if (!TestXmlSerialization()) return false;
@@ -37,7 +37,7 @@ public class CorePropertiesTest: _AbstractTestClass
   /// the test. It is intended for use in validation or debugging scenarios to ensure that XML serialization is
   /// functioning as expected.</remarks>
   /// <returns>true if the CoreProperties object is correctly serialized and deserialized without data loss; otherwise, false.</returns>
-  static bool TestXmlSerialization()
+  private bool TestXmlSerialization()
   {
     Console.WriteLine("--- CorePropertiesTest XML Serialization ---");
     var testData = CreateSampleCoreProperties();
@@ -79,7 +79,7 @@ public class CorePropertiesTest: _AbstractTestClass
   /// of JSON serialization logic.</remarks>
   /// <returns>true if the CoreProperties object is correctly serialized and deserialized without data loss or mismatch;
   /// otherwise, false.</returns>
-  static bool TestJsonSerialization()
+  private bool TestJsonSerialization()
   {
     Console.WriteLine("--- CorePropertiesTest JSON Serialization ---");
     var testData = CreateSampleCoreProperties();
@@ -111,7 +111,7 @@ public class CorePropertiesTest: _AbstractTestClass
   /// each edge case test. It is intended for use in verifying that serialization and deserialization logic correctly
   /// handles empty objects without errors.</remarks>
   /// <returns>true if all edge case tests pass; otherwise, false.</returns>
-  static bool TestEdgeCases()
+  private bool TestEdgeCases()
   {
     Console.WriteLine("--- CorePropertiesTest Edge Cases ---");
     var empty = new CoreProperties();
@@ -141,7 +141,7 @@ public class CorePropertiesTest: _AbstractTestClass
   /// and outputs the result to the console. It is intended for diagnostic or verification purposes and writes status
   /// messages to the console.</remarks>
   /// <returns>true if the test completes successfully; otherwise, false.</returns>
-  static bool TestNewFromDocument()
+  private bool TestNewFromDocument()
   {
     Console.WriteLine("--- CorePropertiesTest New document properties ---");
     {
@@ -172,7 +172,7 @@ public class CorePropertiesTest: _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document properties are successfully stored and verified; otherwise, false.</returns>
-  static bool TestStoreInDocument()
+  private bool TestStoreInDocument()
   {
     Console.WriteLine("--- CorePropertiesTest Store sample properties in new document---");
     {
@@ -211,7 +211,7 @@ public class CorePropertiesTest: _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document properties are successfully updated and verified; otherwise, false.</returns>
-  static bool TestUpdateInDocument()
+  private bool TestUpdateInDocument()
   {
     Console.WriteLine("--- CorePropertiesTest Update document properties ---");
     {
@@ -252,7 +252,7 @@ public class CorePropertiesTest: _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document properties are successfully stored and verified; otherwise, false.</returns>
-  static bool TestStoreBuiltInProperties()
+  private bool TestStoreBuiltInProperties()
   {
     Console.WriteLine("--- CorePropertiesTest store built-in properties in new document---");
     {
@@ -313,7 +313,7 @@ public class CorePropertiesTest: _AbstractTestClass
   /// file and disposed after the properties are initialized.</remarks>
   /// <returns>A CoreProperties object initialized with example document metadata such as title, subject, creator, and other
   /// properties.</returns>
-  static CoreProperties CreateSampleCoreProperties()
+  private CoreProperties CreateSampleCoreProperties()
   {
     var props = new CoreProperties()
     {

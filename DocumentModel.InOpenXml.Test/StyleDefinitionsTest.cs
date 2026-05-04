@@ -5,13 +5,13 @@
 /// </summary>
 public class StyleDefinitionsTest: _AbstractTestClass
 {
-  private static readonly string TestFileName = Path.Combine(TestFileDir, "StyleDefsTest.docx");
+  private readonly string TestFileName = Path.Combine(TestFileDir, "StyleDefsTest.docx");
 
   /// <summary>
   /// Runs all Styles serialization tests.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
-  public static bool Run()
+  public override bool Run()
   {
     Console.WriteLine("=== StyleDefs Test ===\n");
     if (!TestXmlSerialization()) return false;
@@ -28,7 +28,7 @@ public class StyleDefinitionsTest: _AbstractTestClass
   /// Tests XML serialization and deserialization of Styles.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestXmlSerialization()
+  private bool TestXmlSerialization()
   {
     Console.WriteLine("--- Styles XML Serialization ---");
     var testData = CreateSampleStyles();
@@ -65,7 +65,7 @@ public class StyleDefinitionsTest: _AbstractTestClass
   /// Tests JSON serialization and deserialization of Styles.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestJsonSerialization()
+  private bool TestJsonSerialization()
   {
     Console.WriteLine("--- Styles JSON Serialization ---");
     var testData = CreateSampleStyles();
@@ -92,7 +92,7 @@ public class StyleDefinitionsTest: _AbstractTestClass
   /// Tests edge cases like empty Styles object.
   /// </summary>
   /// <returns>True if the test passes; otherwise, false.</returns>
-  static bool TestEdgeCases()
+  private bool TestEdgeCases()
   {
     Console.WriteLine("--- Styles Edge Cases ---");
     var empty = new Styles();
@@ -121,7 +121,7 @@ public class StyleDefinitionsTest: _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document Styles are successfully stored and verified; otherwise, false.</returns>
-  static bool TestStoreInDocument()
+  private bool TestStoreInDocument()
   {
     Console.WriteLine("--- Store sample StyleDefs in new document---");
     //Debug.WriteLine($"Creating sample styles");
@@ -173,7 +173,7 @@ public class StyleDefinitionsTest: _AbstractTestClass
   /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the document Styles are successfully updated and verified; otherwise, false.</returns>
-  static bool TestUpdateInDocument()
+  private bool TestUpdateInDocument()
   {
     Console.WriteLine("--- Update document StyleDefs ---");
     {
@@ -229,7 +229,7 @@ public class StyleDefinitionsTest: _AbstractTestClass
   /// containing sample Styles adheres to the OpenXml schema. It writes status messages and the serialized properties to the console for
   /// inspection.</remarks>
   /// <returns>true if the OpenXml is valid according to the schema; otherwise, false.</returns>
-  static bool TestValidateOpenXml()
+  private bool TestValidateOpenXml()
   {
     Console.WriteLine("--- Validate sample StyleDefs stored in new document against OpenXml schema ---");
     {
@@ -323,7 +323,7 @@ public class StyleDefinitionsTest: _AbstractTestClass
   /// </summary>
   /// <param name="props">The Styles object to serialize.</param>
   /// <returns>The serialized XML string.</returns>
-  static string SerializeToXml(Styles props)
+  private string SerializeToXml(Styles props)
   {
     var xmlSerializer = new XmlSerializer(typeof(Styles));
     using (var stringWriter = new StringWriter())
@@ -339,7 +339,7 @@ public class StyleDefinitionsTest: _AbstractTestClass
   /// </summary>
   /// <param name="xml">The XML string to deserialize.</param>
   /// <returns>The deserialized Styles object, or null if deserialization fails.</returns>
-  static Styles? DeserializeFromXml(string xml)
+  private Styles? DeserializeFromXml(string xml)
   {
     var xmlSerializer = new XmlSerializer(typeof(Styles));
     using (var stringReader = new StringReader(xml))
@@ -353,7 +353,7 @@ public class StyleDefinitionsTest: _AbstractTestClass
   /// </summary>
   /// <param name="props">The Styles object to serialize.</param>
   /// <returns>The serialized JSON string.</returns>
-  static string SerializeToJson(Styles props)
+  private string SerializeToJson(Styles props)
   {
     var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
     return JsonSerializer.Serialize(props, jsonOptions);
@@ -364,7 +364,7 @@ public class StyleDefinitionsTest: _AbstractTestClass
   /// </summary>
   /// <param name="json">The JSON string to deserialize.</param>
   /// <returns>The deserialized Styles object, or null if deserialization fails.</returns>
-  static Styles? DeserializeFromJson(string json)
+  private Styles? DeserializeFromJson(string json)
   {
     var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
     return JsonSerializer.Deserialize<Styles>(json, jsonOptions);

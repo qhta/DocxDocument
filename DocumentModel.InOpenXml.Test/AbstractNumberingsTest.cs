@@ -8,13 +8,13 @@ namespace DocumentModel.InOpenXml.Test
   public class AbstractNumberingsTest: _AbstractTestClass
   {
 
-    private static readonly string TestFileName = Path.Combine(TestFileDir, "AbstractNumberingsTest.docx");
+    private readonly string TestFileName = Path.Combine(TestFileDir, "AbstractNumberingsTest.docx");
 
     /// <summary>
     /// Runs all tests and reports the results.
     /// </summary>
     /// <returns>True if all tests pass; otherwise, false.</returns>
-    public static bool Run()
+    public override bool Run()
     {
       Console.WriteLine("=== AbstractNumberingsTest ===\n");
       //if (!TestXmlSerialization()) return false;
@@ -31,7 +31,7 @@ namespace DocumentModel.InOpenXml.Test
     /// Tests XML serialization and deserialization of Numbering.
     /// </summary>
     /// <returns>True if the test passes; otherwise, false.</returns>
-    static bool TestXmlSerialization()
+    private bool TestXmlSerialization()
     {
       Console.WriteLine("--- AbstractNumberings Test XML Serialization ---");
       var testData = CreateSampleNumbering();
@@ -68,7 +68,7 @@ namespace DocumentModel.InOpenXml.Test
     /// Tests JSON serialization and deserialization of Numbering.
     /// </summary>
     /// <returns>True if the test passes; otherwise, false.</returns>
-    static bool TestJsonSerialization()
+    private bool TestJsonSerialization()
     {
       Console.WriteLine("--- AbstractNumberings Test JSON Serialization ---");
       var testData = CreateSampleNumbering();
@@ -95,7 +95,7 @@ namespace DocumentModel.InOpenXml.Test
     /// Tests edge cases like empty Numbering object.
     /// </summary>
     /// <returns>True if the test passes; otherwise, false.</returns>
-    static bool TestEdgeCases()
+    private bool TestEdgeCases()
     {
       Console.WriteLine("--- AbstractNumberings Test Edge Cases ---");
       var empty = new Numbering();
@@ -124,7 +124,7 @@ namespace DocumentModel.InOpenXml.Test
     /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
     /// inspection.</remarks>
     /// <returns>true if the document Numbering are successfully stored and verified; otherwise, false.</returns>
-    static bool TestStoreInDocument()
+    private bool TestStoreInDocument()
     {
       Console.WriteLine("--- AbstractNumberings Test Store sample abstract numbering in new document---");
       Numbering testData = CreateSampleNumbering();
@@ -172,7 +172,7 @@ namespace DocumentModel.InOpenXml.Test
     /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
     /// inspection.</remarks>
     /// <returns>true if the document Numbering are successfully updated and verified; otherwise, false.</returns>
-    static bool TestUpdateInDocument()
+    private bool TestUpdateInDocument()
     {
       Console.WriteLine("--- AbstractNumberings Test: Update document abstract numbering ---");
       {
@@ -221,7 +221,7 @@ namespace DocumentModel.InOpenXml.Test
     /// containing sample Numbering adheres to the OpenXml schema. It writes status messages and the serialized properties to the console for
     /// inspection.</remarks>
     /// <returns>true if the OpenXml is valid according to the schema; otherwise, false.</returns>
-    static bool TestValidateOpenXml()
+    private bool TestValidateOpenXml()
     {
       Console.WriteLine("--- AbstractNumberings Test: Validate sample abstract numbering stored in new document against OpenXml schema ---");
       {
@@ -259,7 +259,7 @@ namespace DocumentModel.InOpenXml.Test
     /// Creates a sample Numbering object with various property types.
     /// </summary>
     /// <returns>A populated Numbering object.</returns>
-    static Numbering CreateSampleNumbering()
+    private Numbering CreateSampleNumbering()
     {
       var Numbering = new Numbering
       {
@@ -274,7 +274,7 @@ namespace DocumentModel.InOpenXml.Test
     /// <remarks>This method initializes several abstract numbering with specific properties, such as primary
     /// status and UI priority, to facilitate consistent document styling.</remarks>
     /// <returns>A AbstractNumberings object containing predefined abstract numbering, including primary numbering and annotations.</returns>
-    internal static AbstractNumberings CreateSampleAbstractNumberings()
+    private AbstractNumberings CreateSampleAbstractNumberings()
     {
       var abstractNumberings = new AbstractNumberings();
       abstractNumberings.Add(new AbstractNumbering()
@@ -363,7 +363,7 @@ namespace DocumentModel.InOpenXml.Test
     /// </summary>
     /// <param name="props">The Numbering object to serialize.</param>
     /// <returns>The serialized XML string.</returns>
-    static string SerializeToXml(Numbering props)
+    private string SerializeToXml(Numbering props)
     {
       var xmlSerializer = new XmlSerializer(typeof(Numbering));
       using (var stringWriter = new StringWriter())
@@ -379,7 +379,7 @@ namespace DocumentModel.InOpenXml.Test
     /// </summary>
     /// <param name="xml">The XML string to deserialize.</param>
     /// <returns>The deserialized Numbering object, or null if deserialization fails.</returns>
-    static Numbering? DeserializeFromXml(string xml)
+    private Numbering? DeserializeFromXml(string xml)
     {
       var xmlSerializer = new XmlSerializer(typeof(Numbering));
       using (var stringReader = new StringReader(xml))
@@ -393,7 +393,7 @@ namespace DocumentModel.InOpenXml.Test
     /// </summary>
     /// <param name="props">The Numbering object to serialize.</param>
     /// <returns>The serialized JSON string.</returns>
-    static string SerializeToJson(Numbering props)
+    private string SerializeToJson(Numbering props)
     {
       var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
       return JsonSerializer.Serialize(props, jsonOptions);
@@ -404,7 +404,7 @@ namespace DocumentModel.InOpenXml.Test
     /// </summary>
     /// <param name="json">The JSON string to deserialize.</param>
     /// <returns>The deserialized Numbering object, or null if deserialization fails.</returns>
-    static Numbering? DeserializeFromJson(string json)
+    private Numbering? DeserializeFromJson(string json)
     {
       var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
       return JsonSerializer.Deserialize<Numbering>(json, jsonOptions);
