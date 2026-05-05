@@ -42,7 +42,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <param name = "wordprocessingDocument">The Open XML word processing document to attach to.</param>
   public Document(DXPP.WordprocessingDocument wordprocessingDocument)
   {
-    WordprocessingDocument = wordprocessingDocument;
+    _WordprocessingDocument = wordprocessingDocument;
     _IsNotificationEnabled = true;
   }
 
@@ -52,7 +52,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   public DXPP.WordprocessingDocument? WordprocessingDocument
   {
     [DebuggerStepThrough]
-    get => _WordprocessingDocument; set => UpdateField(ref _WordprocessingDocument, value, nameof(WordprocessingDocument));
+    get => _WordprocessingDocument; 
   }
   private DXPP.WordprocessingDocument? _WordprocessingDocument;
 
@@ -72,7 +72,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   public void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     _IsNotificationEnabled = false;
-    WordprocessingDocument = wordprocessingDocument;
+    _WordprocessingDocument = wordprocessingDocument;
     wordprocessingDocument.GetPackageProperties();
     CoreProperties.AttachAndLoad(wordprocessingDocument);
     _IsNotificationEnabled = null;
@@ -84,7 +84,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// <param name = "wordprocessingDocument">The word processing document to attach and update.</param>
   public void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
   {
-    WordprocessingDocument = wordprocessingDocument;
+    _WordprocessingDocument = wordprocessingDocument;
     CoreProperties.AttachAndUpdate(wordprocessingDocument);
   }
 
@@ -95,7 +95,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   /// </summary>
   public void Detach()
   {
-    WordprocessingDocument = null;
+    _WordprocessingDocument = null;
     _CoreProperties?.Detach();
     _ContentProperties?.Detach();
     _StatisticProperties?.Detach();
@@ -240,11 +240,7 @@ public partial class Document : ModelElement, IWordprocessingDocumentAware, IDis
   public CoreProperties CoreProperties
   {
     get => _CoreProperties ??= new CoreProperties(this);
-    set
-    {
-      if (!Equals(CoreProperties, value))
-        CoreProperties.CopyFrom(value);
-    }
+    set => CoreProperties.CopyFrom(value);
   }
   private CoreProperties? _CoreProperties;
 

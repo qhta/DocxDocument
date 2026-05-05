@@ -12,12 +12,9 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
   /// Gets the underlying Document instance associated with this object.
   /// </summary>
   [XmlIgnore]
+  [JsonIgnore]
   [NotMapped]
-  public DXPP.WordprocessingDocument? WordprocessingDocument
-  {
-    get => _WordprocessingDocument;
-    set => UpdateField(ref _WordprocessingDocument, value, nameof(WordprocessingDocument));
-  }
+  public DXPP.WordprocessingDocument? WordprocessingDocument => _WordprocessingDocument;
   private DXPP.WordprocessingDocument? _WordprocessingDocument;
 
   /// <summary>
@@ -56,7 +53,7 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
   /// <param name = "wordprocessingDocument">The WordprocessingDocument to attach to.</param>
   public virtual void Attach(DXPP.WordprocessingDocument wordprocessingDocument)
   {
-    WordprocessingDocument = wordprocessingDocument;
+    _WordprocessingDocument = wordprocessingDocument;
   }
 
   /// <summary>
@@ -65,9 +62,11 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
   /// <param name = "wordprocessingDocument">Document to attach to.</param>
   public void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
-    WordprocessingDocument = wordprocessingDocument;
+    SetLoading(true);
+    _WordprocessingDocument = wordprocessingDocument;
     var packageProperties = wordprocessingDocument.GetPackageProperties();
     LoadData(packageProperties);
+    SetLoading(false);
   }
 
   /// <summary>
@@ -76,7 +75,7 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
   /// <param name = "wordprocessingDocument">Document to attach to.</param>
   public void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
   {
-    WordprocessingDocument = wordprocessingDocument;
+    _WordprocessingDocument = wordprocessingDocument;
     var packageProperties = wordprocessingDocument.GetPackageProperties();
     UpdateData(packageProperties);
   }
@@ -87,7 +86,7 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
   /// </summary>
   public void Detach()
   {
-    WordprocessingDocument = null;
+    _WordprocessingDocument = null;
   }
 
   /// <summary>

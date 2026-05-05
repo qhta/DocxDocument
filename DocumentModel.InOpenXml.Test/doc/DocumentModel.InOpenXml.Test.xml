@@ -739,79 +739,7 @@
             Comprehensive test for DocumentModel.CoreProperties.
             </summary>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.Run">
-            <summary>
-            Runs all CoreProperties serialization tests and reports the results.
-            </summary>
-            <returns>true if all CoreProperties serialization tests pass; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.TestXmlSerialization">
-            <summary>
-            Tests the XML serialization and deserialization process for the CoreProperties type, verifying that data is
-            preserved accurately.
-            </summary>
-            <remarks>This method writes diagnostic messages to the console indicating the progress and result of
-            the test. It is intended for use in validation or debugging scenarios to ensure that XML serialization is
-            functioning as expected.</remarks>
-            <returns>true if the CoreProperties object is correctly serialized and deserialized without data loss; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.TestJsonSerialization">
-            <summary>
-            Tests the JSON serialization and deserialization process for the CoreProperties object, verifying that data
-            integrity is maintained.
-            </summary>
-            <remarks>This method writes diagnostic output to the console, including details of the serialized JSON
-            and any errors encountered during the test. It is intended for use in test scenarios to validate the correctness
-            of JSON serialization logic.</remarks>
-            <returns>true if the CoreProperties object is correctly serialized and deserialized without data loss or mismatch;
-            otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.TestEdgeCases">
-            <summary>
-            Tests serialization and deserialization edge cases for empty objects using both XML and JSON formats.
-            </summary>
-            <remarks>This method writes diagnostic messages to the console indicating the success or failure of
-            each edge case test. It is intended for use in verifying that serialization and deserialization logic correctly
-            handles empty objects without errors.</remarks>
-            <returns>true if all edge case tests pass; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.TestNewFromDocument">
-            <summary>
-            Tests the creation and serialization of properties for a new document.
-            </summary>
-            <remarks>This method creates a new document, retrieves its properties, serializes them to XML,
-            and outputs the result to the console. It is intended for diagnostic or verification purposes and writes status
-            messages to the console.</remarks>
-            <returns>true if the test completes successfully; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.TestStoreInDocument">
-            <summary>
-            Tests setting sample properties to a new document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document properties can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document properties are successfully stored and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.TestUpdateInDocument">
-            <summary>
-            Tests updating the properties of a document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document properties can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document properties are successfully updated and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.TestStoreBuiltInProperties">
-            <summary>
-            Tests setting sample Built-in properties to a new document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document properties can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document properties are successfully stored and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.CreateSampleCoreProperties">
+        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.CreateSampleData">
             <summary>
             Creates a new instance of the CoreProperties class populated with sample metadata values for testing or
             demonstration purposes.
@@ -821,6 +749,40 @@
             file and disposed after the properties are initialized.</remarks>
             <returns>A CoreProperties object initialized with example document metadata such as title, subject, creator, and other
             properties.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.GetDataFromDocument(DocumentModel.Wordprocessing.Document)">
+            <summary>
+            Retrieves the CoreProperties data from the provided Document instance for testing purposes.
+            </summary>
+            <param name="document">The Document instance from which to retrieve the CoreProperties.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.SetDataToDocument(DocumentModel.Wordprocessing.Document,DocumentModel.CoreProperties)">
+            <summary>
+            Sets the specified core properties on the given document and returns the updated core properties.
+            </summary>
+            <param name="document">The document to which the core properties will be applied. Cannot be null.</param>
+            <param name="data">The core properties to set on the document. Cannot be null.</param>
+            <returns>The updated core properties of the document after the assignment.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.CoreProperties)">
+            <summary>
+            Updates the specified document with the provided core properties data.
+            </summary>
+            <param name="document">The document to update with new data.</param>
+            <param name="data">The core properties data to apply to the document.</param>
+            <returns>The updated core properties data after applying changes to the document.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.CorePropertiesTest.GetOpenXmlFromDocument(DocumentModel.Wordprocessing.Document)">
+            <summary>
+            Retrieves the XML markup of the core file properties part from the specified WordprocessingML document.
+            </summary>
+            <remarks>The returned XML represents the metadata properties of the WordprocessingML document, such as
+            title, author, and subject. This method assumes that the document contains a CoreFilePropertiesPart; otherwise, a
+            NullReferenceException may occur.</remarks>
+            <param name="document">The document from which to extract the core file properties XML. Must not be null and must contain a valid
+            WordprocessingDocument with a CoreFilePropertiesPart.</param>
+            <returns>A string containing the outer XML of the core file properties part of the document.</returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.CustomPropertiesTest">
             <summary>
