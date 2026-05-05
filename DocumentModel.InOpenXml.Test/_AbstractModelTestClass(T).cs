@@ -251,6 +251,11 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
   /// <param name="document">The document from which the data is to be retrieved.</param>
   /// <returns>The model data from the document.</returns>
   protected abstract ModelDataType GetDataFromDocument(Document document);
+  //{
+  //  var property = typeof(Document).GetProperties().FirstOrDefault(p => p.PropertyType == typeof(ModelDataType));
+  //  if (property == null) throw new InvalidOperationException($"{typeof(ModelDataType).Name} not found.");
+  //  return (ModelDataType)property.GetValue(document)!;
+  //}
 
   /// <summary>
   /// Sets the specified document property for the given model collection element.
@@ -258,6 +263,12 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
   /// <param name="document">The document in which the data is to be set.</param>
   /// <param name="data">The model data for which the document property is to be set.</param>
   protected abstract ModelDataType SetDataToDocument(Document document, ModelDataType data);
+  //{
+  //  var property = typeof(Document).GetProperties().FirstOrDefault(p => p.PropertyType == typeof(ModelDataType));
+  //  if (property == null) throw new InvalidOperationException($"{typeof(ModelDataType).Name} not found.");
+  //  property.SetValue(document, data);
+  //  return (ModelDataType)property.GetValue(document)!; 
+  //}
 
   /// <summary>
   /// Updates the specified document for the given model data.

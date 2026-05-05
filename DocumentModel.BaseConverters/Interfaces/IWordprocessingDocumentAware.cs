@@ -21,20 +21,20 @@ public interface IWordprocessingDocumentAware
   /// <param name="wordprocessingDocument"></param>
   public void Attach(DXPP.WordprocessingDocument wordprocessingDocument);
 
-  ///// <summary>
-  ///// Attaches to the specified WordprocessingDocument and loads its content for further processing.
-  ///// </summary>
-  ///// <remarks>After calling this method, the instance is associated with the provided WordprocessingDocument.
-  ///// Any previously attached document will be detached. This method does not take ownership of the document; the caller
-  ///// remains responsible for disposing of it when no longer needed.</remarks>
-  ///// <param name="wordprocessingDocument">The WordprocessingDocument instance to attach and load. Cannot be null.</param>
-  //public void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument);
+  /// <summary>
+  /// Attaches to the specified WordprocessingDocument and loads its content for further processing.
+  /// </summary>
+  /// <remarks>After calling this method, the instance is associated with the provided WordprocessingDocument.
+  /// Any previously attached document will be detached. This method does not take ownership of the document; the caller
+  /// remains responsible for disposing of it when no longer needed.</remarks>
+  /// <param name="wordprocessingDocument">The WordprocessingDocument instance to attach and load. Cannot be null.</param>
+  public void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument);
 
-  ///// <summary>
-  ///// Attaches the specified WordprocessingDocument to the current context and updates its state to reflect any changes.
-  ///// </summary>
-  ///// <param name="wordprocessingDocument">The WordprocessingDocument instance to attach and update. Cannot be null.</param>
-  //public void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument);
+  /// <summary>
+  /// Attaches the specified WordprocessingDocument to the current context and updates its state to reflect any changes.
+  /// </summary>
+  /// <param name="wordprocessingDocument">The WordprocessingDocument instance to attach and update. Cannot be null.</param>
+  public void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument);
 
   /// <summary>
   /// Detaches the current object from its parent or container, removing any associations or references.

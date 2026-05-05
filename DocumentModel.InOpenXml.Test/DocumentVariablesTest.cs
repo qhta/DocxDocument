@@ -65,7 +65,7 @@ namespace DocumentModel.InOpenXml.Test
 		/// <returns>A string containing the Open XML markup of the document variables if present; otherwise, an empty string.</returns>
     protected override string GetOpenXmlFromDocument(Document document)
     {
-      return document.WordprocessingDocument?.MainDocumentPart?.DocumentSettingsPart?.Settings?.OuterXml ?? string.Empty;
+      return document.WordprocessingDocument!.MainDocumentPart!.DocumentSettingsPart!.Settings!.OuterXml;
     }
   }
 }

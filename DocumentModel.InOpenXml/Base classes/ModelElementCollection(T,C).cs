@@ -75,6 +75,29 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   }
 
   /// <summary>
+  /// Attaches the specified WordprocessingDocument and loads its associated data into the current instance.
+  /// </summary>
+  /// <remarks>This method combines the attachment of a WordprocessingDocument with the loading of its data,
+  /// ensuring that the current instance is initialized and ready for further operations. If the document is already
+  /// attached, calling this method will reload its data.</remarks>
+  /// <param name="wordprocessingDocument">The WordprocessingDocument to attach and load data from. Cannot be null.</param>
+  public virtual void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
+  {
+    Attach(wordprocessingDocument);
+    LoadData();
+  }
+
+  /// <summary>
+  /// Attaches the specified WordprocessingDocument to the current instance and updates its data.
+  /// </summary>
+  /// <param name="wordprocessingDocument">The WordprocessingDocument to attach and update. Cannot be null.</param>
+  public virtual void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
+  {
+    Attach(wordprocessingDocument);
+    UpdateData();
+  }
+
+  /// <summary>
   ///   Detaches this model element collection from the attached document, clearing the underlying OpenXml element reference.
   ///   After detaching, further access to OpenXml properties is not possible until re-attached.
   /// </summary>

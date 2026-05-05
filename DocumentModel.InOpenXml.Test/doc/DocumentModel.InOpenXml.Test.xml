@@ -872,78 +872,45 @@
             Provides comprehensive serialization tests for <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/>.
             </summary>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.Run">
-            <summary>
-            Runs all serialization tests for the <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> class and reports the results to the console.
-            </summary>
-            <remarks>
-            Executes XML and JSON serialization tests, as well as edge case tests, for the <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> class.
-            Writes the progress and results to the standard output. Use this method to verify that <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> serialization behaves as expected.
-            </remarks>
-            <returns>True if all serialization tests pass; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestXmlSerialization">
-            <summary>
-            Tests XML serialization and deserialization for <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/>.
-            </summary>
-            <returns>True if the round-trip succeeds; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestJsonSerialization">
-            <summary>
-            Tests JSON serialization and deserialization for <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/>.
-            </summary>
-            <returns>True if the round-trip succeeds; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestEdgeCases">
-            <summary>
-            Tests edge cases for serialization and deserialization of empty <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> objects.
-            </summary>
-            <returns>True if all edge case tests pass; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestStoreInDocument">
-            <summary>
-            Tests storing and retrieving document settings in a new document to verify data integrity.
-            </summary>
-            <remarks>This method creates a new document, saves sample document settings to it, and then reloads
-            the settings to ensure they match the original data. It outputs the serialized XML of the reloaded settings and
-            reports the result to the console. Use this method to validate the persistence of document settings in the
-            document format.</remarks>
-            <returns>true if the document settings are stored and reloaded correctly; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestUpdateInDocument">
-            <summary>
-            Tests updating and persisting document settings within a document file.
-            </summary>
-            <remarks>This method creates a sample document with specific settings, saves it, modifies the original
-            settings, and then reloads the document to verify that the stored settings remain unchanged. It outputs
-            diagnostic information to the console for verification purposes.</remarks>
-            <returns>true if the document settings are correctly stored and reloaded from the document; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.TestValidateOpenXml">
-            <summary>
-            Tests that the XML generated for document settings stored in a document conforms to the OpenXml schema.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.CreateSampleDocumentSettings(System.Boolean)">
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.CreateSampleData">
             <summary>
             Creates a sample <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance for testing.
             </summary>
             <returns>A populated <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> object.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.SerializeToJson(DocumentModel.Wordprocessing.DocumentSettings)">
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.GetDataFromDocument(DocumentModel.Wordprocessing.Document)">
             <summary>
-            Serializes a <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance to JSON.
+            Retrieves the settings associated with the specified document.
             </summary>
-            <param name="settings">The <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance to serialize.</param>
-            <returns>JSON string representation.</returns>
+            <param name="document">The document from which to obtain the settings. Cannot be null.</param>
+            <returns>The settings for the specified document.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.DeserializeFromJson(System.String)">
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.SetDataToDocument(DocumentModel.Wordprocessing.Document,DocumentModel.Wordprocessing.DocumentSettings)">
             <summary>
-            Deserializes a <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance from JSON.
+            Sets the specified document's settings to the provided values and returns the updated settings.
             </summary>
-            <param name="json">The JSON string to deserialize.</param>
-            <returns>The deserialized <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance.</returns>
+            <param name="document">The document whose settings will be updated.</param>
+            <param name="data">The settings to apply to the document.</param>
+            <returns>The updated settings of the document after applying the specified values.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.Wordprocessing.DocumentSettings)">
+            <summary>
+            Updates the provided <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance with new test data and adds a compatibility setting.
+            </summary>
+            <param name="document">The document in which to update the settings.</param>
+            <param name="data">The document settings to update.</param>
+            <returns>The updated document settings.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.GetOpenXmlFromDocument(DocumentModel.Wordprocessing.Document)">
+            <summary>
+            Retrieves the XML representation of the document settings from the specified WordprocessingML document.
+            </summary>
+            <remarks>The returned XML represents the settings part of the WordprocessingML document, which may
+            include configuration such as compatibility options, protection settings, and other document-level properties.
+            Ensure that the document contains a settings part; otherwise, a NullReferenceException may occur.</remarks>
+            <param name="document">The document from which to extract the settings as Open XML. Must contain a valid WordprocessingDocument with
+            settings part present.</param>
+            <returns>A string containing the outer XML of the document settings part.</returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.DocumentVariablesTestClass">
             <summary>

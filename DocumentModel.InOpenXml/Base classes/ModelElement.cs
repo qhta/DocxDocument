@@ -201,11 +201,11 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   /// <param name="openXmlParentElement">Composite element to search for the specified OpenXmlType.</param>
   /// <returns>The element of the specified OpenXmlType converted to ModelType.</returns>
   protected ModelType GetOrCreateElement<ModelType, OpenXmlType>(DX.OpenXmlCompositeElement? openXmlParentElement)
-    where ModelType: ModelElement<OpenXmlType>
+    where ModelType : ModelElement<OpenXmlType>
     where OpenXmlType : DX.OpenXmlElement
   {
     var openXmlType = openXmlParentElement?.Elements<OpenXmlType>().FirstOrDefault();
-    if (openXmlType == null) 
+    if (openXmlType == null)
     {
       openXmlType = Activator.CreateInstance<OpenXmlType>();
       openXmlParentElement?.AppendChild(openXmlType);
@@ -275,13 +275,13 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
       if (IsNotificationEnabled)
         NotifyPropertyChanged(propertyName, oldValue, newValue);
 
-
-      if (this is  IWordprocessingDocumentAware wordprocessingDocumentAware)
-      {
-        var wordprocessingDocument = wordprocessingDocumentAware.WordprocessingDocument;
-        if (wordprocessingDocument != null)
-          wordprocessingDocumentAware.Attach(wordprocessingDocument);
-      }
+      if (!IsLoading)
+        if (this is IWordprocessingDocumentAware wordprocessingDocumentAware)
+        {
+          var wordprocessingDocument = wordprocessingDocumentAware.WordprocessingDocument;
+          if (wordprocessingDocument != null)
+            wordprocessingDocumentAware.AttachAndUpdate(wordprocessingDocument);
+        }
     }
 
   }

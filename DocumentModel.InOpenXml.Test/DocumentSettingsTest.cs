@@ -3,287 +3,16 @@
   /// <summary>
   /// Provides comprehensive serialization tests for <see cref="DocumentSettings"/>.
   /// </summary>
-  public class DocumentSettingsTest: _AbstractTestClass
+  public class DocumentSettingsTest: _AbstractModelTestClass<DocumentSettings>
   {
-
-    private readonly string TestFileName = Path.Combine(TestFileDir, "DocumentSettingsTest.docx");
-
-    /// <summary>
-    /// Runs all serialization tests for the <see cref="DocumentSettings"/> class and reports the results to the console.
-    /// </summary>
-    /// <remarks>
-    /// Executes XML and JSON serialization tests, as well as edge case tests, for the <see cref="DocumentSettings"/> class.
-    /// Writes the progress and results to the standard output. Use this method to verify that <see cref="DocumentSettings"/> serialization behaves as expected.
-    /// </remarks>
-    /// <returns>True if all serialization tests pass; otherwise, false.</returns>
-    public override bool Run()
-    {
-      Console.WriteLine("=== DocumentSettings Test ===\n");
-      if (!TestXmlSerialization()) return false;
-      if (!TestJsonSerialization()) return false;
-      if (!TestEdgeCases()) return false;
-      if (!TestStoreInDocument()) return false;
-      if (!TestUpdateInDocument()) return false;
-      if (!TestValidateOpenXml()) return false;
-      Console.WriteLine("All DocumentSettings tests passed.\n");
-      return true;
-    }
-
-    /// <summary>
-    /// Tests XML serialization and deserialization for <see cref="DocumentSettings"/>.
-    /// </summary>
-    /// <returns>True if the round-trip succeeds; otherwise, false.</returns>
-    private bool TestXmlSerialization()
-    {
-      Console.WriteLine("--- DocumentSettings XML Serialization ---");
-      var testData = CreateSampleDocumentSettings();
-      string xmlString = SerializeToXml(testData);
-
-      Console.WriteLine("Serialized XML:\n" + xmlString);
-      var deserialized = DeserializeFromXml<DocumentSettings>(xmlString);
-      if (deserialized == null)
-      {
-        Console.WriteLine("✗ DocumentSettings XML Deserialization returned null");
-        return false;
-      }
-
-      if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
-      {
-        Console.WriteLine($"✗ DocumentSettings XML Serialization/Deserialization test FAILED: {message}");
-        return false;
-      }
-      Console.WriteLine("✓ DocumentSettings XML Serialization/Deserialization test passed\n");
-      return true;
-    }
-
-    /// <summary>
-    /// Tests JSON serialization and deserialization for <see cref="DocumentSettings"/>.
-    /// </summary>
-    /// <returns>True if the round-trip succeeds; otherwise, false.</returns>
-    private bool TestJsonSerialization()
-    {
-      Console.WriteLine("--- DocumentSettings JSON Serialization ---");
-      var testData = CreateSampleDocumentSettings();
-      var jsonOptions = JsonConfig.Options;
-      string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
-      Console.WriteLine("Serialized JSON:\n" + jsonString);
-
-      var deserialized = JsonSerializer.Deserialize<DocumentSettings>(jsonString, jsonOptions);
-      if (deserialized == null)
-      {
-        Console.WriteLine("✗ DocumentSettingsTest JSON Deserialization returned null");
-        return false;
-      }
-      if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
-      {
-        Console.WriteLine($"✗ DocumentSettingsTest JSON Serialization/Deserialization test FAILED: {message}");
-        return false;
-      }
-      Console.WriteLine("✓ DocumentSettingsTest JSON Serialization/Deserialization test passed\n");
-      return true;
-    }
-
-    /// <summary>
-    /// Tests edge cases for serialization and deserialization of empty <see cref="DocumentSettings"/> objects.
-    /// </summary>
-    /// <returns>True if all edge case tests pass; otherwise, false.</returns>
-    private bool TestEdgeCases()
-    {
-      Console.WriteLine("--- DocumentSettingsTest Edge Cases ---");
-      var empty = new DocumentSettings();
-      string xml = SerializeToXml(empty);
-      var xmlDeserialized = DeserializeFromXml<DocumentSettings>(xml);
-      if (xmlDeserialized == null)
-      {
-        Console.WriteLine("✗ DocumentSettings Edge Cases: XML deserialization of empty object failed");
-        return false;
-      }
-      string json = SerializeToJson(empty);
-      var jsonDeserialized = DeserializeFromJson(json);
-      if (jsonDeserialized == null)
-      {
-        Console.WriteLine("✗ DocumentSettings Edge Cases: JSON deserialization of empty object failed");
-        return false;
-      }
-      Console.WriteLine("✓ DocumentSettings Edge case tests passed\n");
-      return true;
-    }
-
-    /// <summary>
-    /// Tests storing and retrieving document settings in a new document to verify data integrity.
-    /// </summary>
-    /// <remarks>This method creates a new document, saves sample document settings to it, and then reloads
-    /// the settings to ensure they match the original data. It outputs the serialized XML of the reloaded settings and
-    /// reports the result to the console. Use this method to validate the persistence of document settings in the
-    /// document format.</remarks>
-    /// <returns>true if the document settings are stored and reloaded correctly; otherwise, false.</returns>
-    private bool TestStoreInDocument()
-    {
-      Console.WriteLine("--- Store sample document settings in new document---");
-      DocumentSettings testData = CreateSampleDocumentSettings(true);
-      using (var document = new Document(TestFileName, FileMode.CreateNew))
-      {
-        document.DocumentSettings = testData;
-      }
-
-      using (var wordDoc = DXPP.WordprocessingDocument.Open(TestFileName, false))
-      {
-        var outerXml = wordDoc.MainDocumentPart?.DocumentSettingsPart?.Settings?.OuterXml;
-        outerXml = outerXml?.FormatXmlWithLineNumbers();
-        Console.WriteLine("✓ DocumentSettings Test: document settings stored in document:\n" + outerXml);
-      }
-
-      DocumentSettings? storedData;
-      using (var document = new Document(TestFileName))
-      {
-        storedData = document.DocumentSettings;
-        storedData?.SetUpdatableElement(document.WordprocessingDocument?.GetDocumentSettings());
-        storedData?.LoadData();
-      }
-
-      var xmlSerializer = new XmlSerializer(typeof(DocumentSettings));
-      string xmlString;
-      using (var stringWriter = new StringWriter())
-      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-      {
-        xmlSerializer.Serialize(xmlWriter, storedData);
-        xmlString = stringWriter.ToString();
-      }
-      Console.WriteLine("document settings stored to new document and reloaded from it:\n" + xmlString);
-
-      if (storedData == null)
-      {
-        Console.WriteLine("✗ XML Deserialization returned null");
-        return false;
-      }
-
-      if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
-      {
-        Console.WriteLine($"✗ Store sample document settings test FAILED: {message}");
-        return false;
-      }
-
-      Console.WriteLine("✓ Store sample document settings test passed\n");
-      return true;
-    }
-
-    /// <summary>
-    /// Tests updating and persisting document settings within a document file.
-    /// </summary>
-    /// <remarks>This method creates a sample document with specific settings, saves it, modifies the original
-    /// settings, and then reloads the document to verify that the stored settings remain unchanged. It outputs
-    /// diagnostic information to the console for verification purposes.</remarks>
-    /// <returns>true if the document settings are correctly stored and reloaded from the document; otherwise, false.</returns>
-    private bool TestUpdateInDocument()
-    {
-      Console.WriteLine("--- Update document settings stored in document---");
-      DocumentSettings testData = CreateSampleDocumentSettings(true);
-      using (var document = new Document(TestFileName, FileMode.CreateNew))
-      {
-        document.DocumentSettings = testData;
-      }
-
-      TestHelper.ChangeTestData(testData);
-      testData.Add(new CompatibilitySetting { Name = "CompatibilityMode", Val = "value" });
-      DocumentSettings? storedData;
-      using (var document = new Document(TestFileName))
-      {
-        storedData = document.DocumentSettings;
-        TestHelper.CopyTestData(testData, storedData);
-      }
-
-      var xmlSerializer = new XmlSerializer(typeof(DocumentSettings));
-      string xmlString;
-      using (var stringWriter = new StringWriter())
-      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-      {
-        xmlSerializer.Serialize(xmlWriter, storedData);
-        xmlString = stringWriter.ToString();
-      }
-      Console.WriteLine("document settings stored to new document and reloaded from it:\n" + xmlString);
-
-      if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
-      {
-        Console.WriteLine($"✗ Store sample document settings test FAILED: {message}");
-        return false;
-      }
-
-      Console.WriteLine("✓ Store sample document settings test passed\n");
-      return true;
-    }
-
-    /// <summary>
-    /// Tests that the XML generated for document settings stored in a document conforms to the OpenXml schema.
-    /// </summary>
-    /// <returns></returns>
-    private bool TestValidateOpenXml()
-    {
-      Console.WriteLine("--- Validate sample settings stored in new document against OpenXml schema ---");
-      {
-        DocumentSettings testData = CreateSampleDocumentSettings(true);
-        TestHelper.ChangeTestData(testData);
-        testData.Add(new CompatibilitySetting { Name = "CompatibilityMode", Val = "value" });
-        using (var document = new Document(TestFileName, FileMode.CreateNew))
-        {
-          document.DocumentSettings = testData;
-        }
-
-        using (var document = new Document(TestFileName))
-        {
-          var openXml = document.WordprocessingDocument!.MainDocumentPart!.DocumentSettingsPart!.Settings!.OuterXml;
-          var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
-          Console.WriteLine(formattedOpenXml);
-          var validationResult = OpenXmlSchemaValidator.ValidateXml(formattedOpenXml);
-          if (!validationResult.IsValid)
-          {
-            Console.WriteLine("✗ OpenXml schema validation FAILED - issues found:");
-            var errorsFound = false;
-            foreach (var message in validationResult.Messages)
-            {
-              Console.WriteLine($" {message}");
-              if (message.TrimStart().StartsWith("Error")) errorsFound = true;
-            }
-            if (errorsFound)
-              return !errorsFound;
-          }
-        }
-
-        Console.WriteLine("✓ Validate sample settings test passed\n");
-        return true;
-      }
-    }
 
     /// <summary>
     /// Creates a sample <see cref="DocumentSettings"/> instance for testing.
     /// </summary>
     /// <returns>A populated <see cref="DocumentSettings"/> object.</returns>
-    private DocumentSettings CreateSampleDocumentSettings(bool createAllProperties = true)
+    protected override DocumentSettings CreateSampleData()
     {
-      if (!createAllProperties)
-        return new DocumentSettings
-        {
-          AlignBorderAndEdges = true,
-          BordersDoNotSurroundFooter = true,
-          BordersDoNotSurroundHeader = false,
-          DisplayBackgroundShape = false,
-          DoNotDisplayPageBoundaries = true,
-          EmbedSystemFonts = true,
-          EmbedTrueTypeFonts = false,
-          GutterAtTop = false,
-          HideGrammaticalErrors = true,
-          HideSpellingErrors = false,
-          MirrorMargins = true,
-          PrintFormsData = true,
-          PrintPostScriptOverText = true,
-          RemoveDateAndTime = true,
-          RemovePersonalInformation = false,
-          SaveFormsData = true,
-          SaveSubsetFonts = false,
-          View = ViewType.PrintView,
-          Zoom = "100%", //PresetZoom.FullPage,
-        };
-      else
-        return new DocumentSettings
+     return new DocumentSettings
         {
           AlignBorderAndEdges = true,
           AlwaysMergeEmptyNamespace = true,
@@ -493,25 +222,54 @@
     }
 
     /// <summary>
-    /// Serializes a <see cref="DocumentSettings"/> instance to JSON.
+    /// Retrieves the settings associated with the specified document.
     /// </summary>
-    /// <param name="settings">The <see cref="DocumentSettings"/> instance to serialize.</param>
-    /// <returns>JSON string representation.</returns>
-    private string SerializeToJson(DocumentSettings settings)
+    /// <param name="document">The document from which to obtain the settings. Cannot be null.</param>
+    /// <returns>The settings for the specified document.</returns>
+    protected override DocumentSettings GetDataFromDocument(Document document)
     {
-      var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-      return JsonSerializer.Serialize(settings, jsonOptions);
+      var result = document.DocumentSettings;
+      result.LoadData();
+      return result;
     }
 
     /// <summary>
-    /// Deserializes a <see cref="DocumentSettings"/> instance from JSON.
+    /// Sets the specified document's settings to the provided values and returns the updated settings.
     /// </summary>
-    /// <param name="json">The JSON string to deserialize.</param>
-    /// <returns>The deserialized <see cref="DocumentSettings"/> instance.</returns>
-    private DocumentSettings? DeserializeFromJson(string json)
+    /// <param name="document">The document whose settings will be updated.</param>
+    /// <param name="data">The settings to apply to the document.</param>
+    /// <returns>The updated settings of the document after applying the specified values.</returns>
+    protected override DocumentSettings SetDataToDocument(Document document, DocumentSettings data)
     {
-      var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-      return JsonSerializer.Deserialize<DocumentSettings>(json, jsonOptions);
+      document.DocumentSettings = data;
+      return document.DocumentSettings;
+    }
+
+    /// <summary>
+    /// Updates the provided <see cref="DocumentSettings"/> instance with new test data and adds a compatibility setting.
+    /// </summary>
+    /// <param name="document">The document in which to update the settings.</param>
+    /// <param name="data">The document settings to update.</param>
+    /// <returns>The updated document settings.</returns>
+    protected override DocumentSettings UpdateDataInDocument(Document document, DocumentSettings data)
+    {
+      TestHelper.ChangeTestData(data);
+      data.Add(new CompatibilitySetting { Name = "CompatibilityMode", Val = "value" });
+      return data;
+    }
+
+    /// <summary>
+    /// Retrieves the XML representation of the document settings from the specified WordprocessingML document.
+    /// </summary>
+    /// <remarks>The returned XML represents the settings part of the WordprocessingML document, which may
+    /// include configuration such as compatibility options, protection settings, and other document-level properties.
+    /// Ensure that the document contains a settings part; otherwise, a NullReferenceException may occur.</remarks>
+    /// <param name="document">The document from which to extract the settings as Open XML. Must contain a valid WordprocessingDocument with
+    /// settings part present.</param>
+    /// <returns>A string containing the outer XML of the document settings part.</returns>
+    protected override string GetOpenXmlFromDocument(Document document)
+    {
+      return document.WordprocessingDocument!.GetDocumentSettings()!.OuterXml;
     }
   }
 }

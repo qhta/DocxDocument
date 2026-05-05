@@ -82,6 +82,6 @@ public class CustomPropertiesTest: _AbstractModelTestClass<CustomProperties>
   /// <returns>A string containing the XML markup of the custom file properties part if present; otherwise, an empty string.</returns>
   protected override string GetOpenXmlFromDocument(Document document)
   {
-    return document.WordprocessingDocument?.CustomFilePropertiesPart?.RootElement?.OuterXml ?? string.Empty;
+    return document.WordprocessingDocument!.CustomFilePropertiesPart!.RootElement!.OuterXml;
   }
 }

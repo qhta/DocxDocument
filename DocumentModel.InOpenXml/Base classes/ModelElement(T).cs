@@ -108,6 +108,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordpro
   public virtual void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     Attach(wordprocessingDocument);
+    LoadData();
   }
 
   /// <summary>
@@ -117,6 +118,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordpro
   public virtual void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
   {
     Attach(wordprocessingDocument);
+    UpdateData();
   }
 
   /// <summary>
