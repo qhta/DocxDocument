@@ -97,6 +97,6 @@ public class FontTableTestClass: _AbstractModelTestClass<FontTable>
   /// <returns>The OpenXml representation of the font table.</returns>
   protected override string GetOpenXmlFromDocument(Document document)
   {
-    return document.WordprocessingDocument!.MainDocumentPart!.FontTablePart!.Fonts!.OuterXml;
+    return document.WordprocessingDocument?.MainDocumentPart?.FontTablePart?.Fonts?.OuterXml ?? string.Empty;
   }
 }

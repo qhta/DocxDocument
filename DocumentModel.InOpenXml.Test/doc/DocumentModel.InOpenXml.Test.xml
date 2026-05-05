@@ -827,99 +827,45 @@
             Comprehensive test for DocumentModel.CustomProperties.
             </summary>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.Run">
-            <summary>
-            Runs all CustomProperties serialization tests.
-            </summary>
-            <returns>True if all tests pass; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.TestXmlSerialization">
-            <summary>
-            Tests XML serialization and deserialization of CustomProperties.
-            </summary>
-            <returns>True if the test passes; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.TestJsonSerialization">
-            <summary>
-            Tests JSON serialization and deserialization of CustomProperties.
-            </summary>
-            <returns>True if the test passes; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.TestEdgeCases">
-            <summary>
-            Tests edge cases like empty CustomProperties object.
-            </summary>
-            <returns>True if the test passes; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.TestStoreInDocument">
-            <summary>
-            Tests setting sample custom properties to a new document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document custom properties can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document custom properties are successfully stored and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.TestUpdateInDocument">
-            <summary>
-            Tests updating the custom properties of a document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document custom properties can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document custom properties are successfully updated and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.TestStoreCustomProperties">
-            <summary>
-            Tests setting sample custom properties to a new document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document custom properties can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document custom properties are successfully stored and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.TestUpdateCustomProperties">
-            <summary>
-            Tests updating the custom properties of a document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document custom properties can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document custom properties are successfully updated and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.CreateSampleCustomProperties">
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.CreateSampleData">
             <summary>
             Creates a sample CustomProperties object with various property types.
             </summary>
             <returns>A populated CustomProperties object.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.SerializeToXml(DocumentModel.CustomProperties)">
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.GetDataFromDocument(DocumentModel.Wordprocessing.Document)">
             <summary>
-            Serializes a CustomProperties object to an XML string.
+            Retrieves the custom properties from the specified document.
             </summary>
-            <param name="props">The CustomProperties object to serialize.</param>
-            <returns>The serialized XML string.</returns>
+            <param name="document">The document from which to retrieve custom properties. Cannot be null.</param>
+            <returns>The collection of custom properties associated with the specified document.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.DeserializeFromXml(System.String)">
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.SetDataToDocument(DocumentModel.Wordprocessing.Document,DocumentModel.CustomProperties)">
             <summary>
-            Deserializes a CustomProperties object from an XML string.
+            Sets the custom properties of the specified document to the provided values.
             </summary>
-            <param name="xml">The XML string to deserialize.</param>
-            <returns>The deserialized CustomProperties object, or null if deserialization fails.</returns>
+            <param name="document">The document whose custom properties are to be updated.</param>
+            <param name="data">The custom properties to assign to the document. Cannot be null.</param>
+            <returns>The updated collection of custom properties assigned to the document.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.SerializeToJson(DocumentModel.CustomProperties)">
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.CustomProperties)">
             <summary>
-            Serializes a CustomProperties object to a JSON string.
+            Updates the specified document with new custom property data and returns the updated collection of custom
+            properties.
             </summary>
-            <param name="props">The CustomProperties object to serialize.</param>
-            <returns>The serialized JSON string.</returns>
+            <param name="document">The document to update with the new custom property data. Cannot be null.</param>
+            <param name="data">The collection of custom properties to add to the document. Cannot be null.</param>
+            <returns>The updated collection of custom properties from the document after the new data has been added.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.DeserializeFromJson(System.String)">
+        <member name="M:DocumentModel.InOpenXml.Test.CustomPropertiesTest.GetOpenXmlFromDocument(DocumentModel.Wordprocessing.Document)">
             <summary>
-            Deserializes a CustomProperties object from a JSON string.
+            Retrieves the XML markup of the custom file properties part from the specified Wordprocessing document.
             </summary>
-            <param name="json">The JSON string to deserialize.</param>
-            <returns>The deserialized CustomProperties object, or null if deserialization fails.</returns>
+            <remarks>If the document does not contain a custom file properties part, this method returns an empty
+            string. The returned XML represents the raw Open XML of the custom properties section, which may be used for
+            inspection or further processing.</remarks>
+            <param name="document">The document from which to extract the custom file properties XML. Must not be null.</param>
+            <returns>A string containing the XML markup of the custom file properties part if present; otherwise, an empty string.</returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.DocumentSettingsTest">
             <summary>

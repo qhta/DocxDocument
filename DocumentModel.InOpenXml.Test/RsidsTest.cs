@@ -64,6 +64,6 @@ public class RsidsTest: _AbstractModelTestClass<Rsids>
   /// <exception cref="NotImplementedException">Always thrown, as this method is not implemented.</exception>
   protected override string GetOpenXmlFromDocument(Document document)
   {
-    return document.WordprocessingDocument!.MainDocumentPart!.DocumentSettingsPart!.Settings!.OuterXml;
+    return document.WordprocessingDocument?.MainDocumentPart?.DocumentSettingsPart?.Settings?.OuterXml ?? string.Empty;
   }
 }

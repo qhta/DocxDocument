@@ -5,8 +5,7 @@
 /// </summary>
 [XmlRoot("CustomProperties")]
 [OpenXmlType(typeof(DXCP.Properties))]
-[DirectAccess]
-public sealed partial class CustomProperties: ModelElementCollection<CustomProperty, DXCP.Properties>
+public sealed partial class CustomProperties: ModelElementCollection<CustomProperty, DXCP.Properties, DXCP.CustomDocumentProperty>
 {
   /// <summary>
   /// Default constructor.
@@ -17,66 +16,8 @@ public sealed partial class CustomProperties: ModelElementCollection<CustomPrope
   /// Initializing constructor.
   /// </summary>
   /// <param name="document">Wordprocessing document model</param>
-  public CustomProperties(Wordprocessing.Document document): base(document)
+  public CustomProperties(Wordprocessing.Document document): base(document, document.WordprocessingDocument?.GetCustomFileProperties())
   {
-    //if (document.WordprocessingDocument != null)
-    //  AttachAndLoad(document.WordprocessingDocument);
-  }
-
-  ///// <summary>
-  ///// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
-  ///// </summary>
-  ///// <param name="wordprocessingDocument">Document to attach to.</param>
-  //public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
-  //{
-  //  //Debug.WriteLine($"Attaching CustomProperties to WordprocessingDocument: {wordprocessingDocument}");
-  //  base.AttachAndLoad(wordprocessingDocument);
-  //  var customFileProperties = wordprocessingDocument.GetCustomFileProperties();
-  //  SetUpdatableElement(customFileProperties);
-  //  LoadData(customFileProperties);
-  //}
-
-  ///// <summary>
-  ///// Attach this instance to the specified wordprocessingDocument. Data is stored to the wordprocessingDocument's PackageProperties.
-  ///// </summary>
-  ///// <param name="wordprocessingDocument">Document to attach to.</param>
-  //public override void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
-  //{
-  //  //Debug.WriteLine($"Attaching CustomProperties to WordprocessingDocument for update: {wordprocessingDocument}");
-  //  WordprocessingDocument = wordprocessingDocument;
-  //  var customFileProperties = wordprocessingDocument.GetCustomFileProperties();
-  //  SetUpdatableElement(customFileProperties);
-  //  UpdateData(customFileProperties);
-  //}
-
-  /// <summary>
-  /// Loads data from customFileProperties to this instance.
-  /// </summary>
-  protected override void LoadDataCollection(DXCP.Properties customFileProperties)
-  {
-    SetLoading(true);
-    _IsNotificationEnabled = false;
-    Clear();
-    foreach (var openXmlCustomDocumentProperty in
-             customFileProperties!.ChildElements.Cast<DXCP.CustomDocumentProperty>())
-    {
-      var customDocumentProperty = new CustomProperty(this, openXmlCustomDocumentProperty);
-      Add(customDocumentProperty);
-    }
-    _IsNotificationEnabled = null;
-    SetLoading(false);
-  }
-
-  /// <summary>
-  /// Store data from this instance to CustomFileProperties.
-  /// </summary>
-  protected override void UpdateDataCollection(DXCP.Properties customFileProperties)
-  {
-    customFileProperties!.RemoveAllChildren();
-    foreach (var customDocumentProperty in this)
-    {
-      customFileProperties.AppendChild(customDocumentProperty.CreateOpenCustomDocumentProperty());
-    }
   }
 
   /// <summary>

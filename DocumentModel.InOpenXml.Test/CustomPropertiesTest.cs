@@ -1,358 +1,16 @@
-﻿using DocumentFormat.OpenXml.Packaging;
-
-using DocumentModel.Properties;
-
-namespace DocumentModel.InOpenXml.Test;
+﻿namespace DocumentModel.InOpenXml.Test;
 
 /// <summary>
 /// Comprehensive test for DocumentModel.CustomProperties.
 /// </summary>
-public class CustomPropertiesTest: _AbstractTestClass
+public class CustomPropertiesTest: _AbstractModelTestClass<CustomProperties>
 {
-  private readonly string TestFileName = Path.Combine(TestFileDir, "CustomPropertiesTest.docx");
 
-  /// <summary>
-  /// Runs all CustomProperties serialization tests.
-  /// </summary>
-  /// <returns>True if all tests pass; otherwise, false.</returns>
-  public override bool Run()
-  {
-    Console.WriteLine("=== CustomProperties Test ===\n");
-    if (!TestXmlSerialization()) return false;
-    if (!TestJsonSerialization()) return false;
-    if (!TestEdgeCases()) return false;
-    if (!TestStoreInDocument()) return false;
-    if (!TestUpdateInDocument()) return false;
-    if (!TestStoreCustomProperties()) return false;
-    if (!TestUpdateCustomProperties()) return false;
-    Console.WriteLine("All CustomProperties Test passed.\n");
-    return true;
-  }
-
-  /// <summary>
-  /// Tests XML serialization and deserialization of CustomProperties.
-  /// </summary>
-  /// <returns>True if the test passes; otherwise, false.</returns>
-  private bool TestXmlSerialization()
-  {
-    Console.WriteLine("--- CustomProperties Test XML Serialization ---");
-    var testData = CreateSampleCustomProperties();
-    {
-      var xmlSerializer = new XmlSerializer(typeof(CustomProperties));
-      string xmlString;
-      using (var stringWriter = new StringWriter())
-      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-      {
-        xmlSerializer.Serialize(xmlWriter, testData);
-        xmlString = stringWriter.ToString();
-      }
-      Console.WriteLine("✓ CustomProperties Test XML Serialization:\n" + xmlString);
-
-      CustomProperties? deserialized;
-      using (var stringReader = new StringReader(xmlString))
-      {
-        deserialized = (CustomProperties?)xmlSerializer.Deserialize(stringReader);
-      }
-      if (deserialized == null)
-      {
-        Console.WriteLine("✗ CustomProperties Test XML Deserialization returned null");
-        return false;
-      }
-      if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
-      {
-        Console.WriteLine($"✗ CustomProperties Test XML Serialization/Deserialization FAILED: {message}");
-        return false;
-      }
-      Console.WriteLine("✓ CustomProperties Test XML Serialization/Deserialization passed\n");
-      return true;
-    }
-  }
-
-  /// <summary>
-  /// Tests JSON serialization and deserialization of CustomProperties.
-  /// </summary>
-  /// <returns>True if the test passes; otherwise, false.</returns>
-  private bool TestJsonSerialization()
-  {
-    Console.WriteLine("--- CustomProperties Test JSON Serialization ---");
-    var testData = CreateSampleCustomProperties();
-    {
-      var jsonOptions = JsonConfig.Options;
-      string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
-      Console.WriteLine("✓ CustomProperties Test JSON Serialization:\n" + jsonString);
-
-      var deserialized = JsonSerializer.Deserialize<CustomProperties>(jsonString, jsonOptions);
-      if (deserialized == null)
-      {
-        Console.WriteLine("✗ CustomProperties Test JSON Deserialization returned null");
-        return false;
-      }
-      if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
-      {
-        Console.WriteLine($"✗ CustomProperties Test JSON Serialization/Deserialization FAILED: {message}");
-        return false;
-      }
-      Console.WriteLine("✓ CustomProperties Test JSON Serialization/Deserialization passed\n");
-      return true;
-    }
-  }
-
-  /// <summary>
-  /// Tests edge cases like empty CustomProperties object.
-  /// </summary>
-  /// <returns>True if the test passes; otherwise, false.</returns>
-  private bool TestEdgeCases()
-  {
-    Console.WriteLine("--- CustomProperties Test Edge Cases ---");
-    {
-      var empty = new CustomProperties();
-      string xml = SerializeToXml(empty);
-      var xmlDeserialized = DeserializeFromXml(xml);
-      if (xmlDeserialized == null)
-      {
-        Console.WriteLine("✗ CustomProperties Test Edge Cases: XML deserialization of empty object failed");
-        return false;
-      }
-      string json = SerializeToJson(empty);
-      var jsonDeserialized = DeserializeFromJson(json);
-      if (jsonDeserialized == null)
-      {
-        Console.WriteLine("✗ CustomProperties Test Edge Cases: JSON deserialization of empty object failed");
-        return false;
-      }
-      Console.WriteLine("✓ CustomProperties Test Edge Cases passed\n");
-      return true;
-    }
-  }
-
-  /// <summary>
-  /// Tests setting sample custom properties to a new document and outputs the result to the console.
-  /// </summary>
-  /// <remarks>This method is intended for use in test scenarios to verify that document custom properties can
-  /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
-  /// inspection.</remarks>
-  /// <returns>true if the document custom properties are successfully stored and verified; otherwise, false.</returns>
-  private bool TestStoreInDocument()
-  {
-    Console.WriteLine("--- CustomProperties Test: Store sample custom properties in new document ---");
-    CustomProperties testData = CreateSampleCustomProperties();
-    using (var document = new Document(TestFileName, FileMode.CreateNew))
-    {
-      document.CustomProperties = testData;
-    }
-
-    using (var wordDoc = WordprocessingDocument.Open(TestFileName, false))
-    {
-      var outerXml = wordDoc.CustomFilePropertiesPart?.RootElement?.OuterXml;
-      outerXml = outerXml?.FormatXmlWithLineNumbers();
-      Console.WriteLine("✓ CustomProperties Test: custom properties stored in document:\n" + outerXml);
-    }
-
-    CustomProperties storedData;
-    using (var document = new Document(TestFileName))
-    {
-      storedData = document.CustomProperties ?? throw new InvalidOperationException("Custom properties not found.");
-    }
-
-    var xmlSerializer = new XmlSerializer(typeof(CustomProperties));
-    string xmlString;
-    using (var stringWriter = new StringWriter())
-    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-    {
-      xmlSerializer.Serialize(xmlWriter, storedData);
-      xmlString = stringWriter.ToString();
-    }
-    Console.WriteLine("✓ CustomProperties Test: Custom properties stored to new document and reloaded from it:\n" + xmlString);
-
-    if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
-    {
-      Console.WriteLine($"✗ CustomProperties Test: Store sample custom properties test FAILED: {message}");
-      return false;
-    }
-
-    Console.WriteLine("✓ CustomProperties Test: Store sample custom properties test passed\n");
-    return true;
-  }
-    
-  /// <summary>
-  /// Tests updating the custom properties of a document and outputs the result to the console.
-  /// </summary>
-  /// <remarks>This method is intended for use in test scenarios to verify that document custom properties can
-  /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
-  /// inspection.</remarks>
-  /// <returns>true if the document custom properties are successfully updated and verified; otherwise, false.</returns>
-  private bool TestUpdateInDocument()
-  {
-    Console.WriteLine("--- CustomProperties Test: Update document custom properties ---");
-    CustomProperties testData = CreateSampleCustomProperties();
-    var initialCount = testData.Count;
-    var newCustomProperty = new CustomProperty { Name = "CustomTitle", Value = "Updated Title" };
-
-    using (var document = new Document(TestFileName, FileMode.CreateNew))
-    {
-      document.CustomProperties = testData;
-
-      document.CustomProperties.Add(newCustomProperty);
-    }
-
-    using (var wordDoc = WordprocessingDocument.Open(TestFileName, false))
-    {
-      var outerXml = wordDoc.CustomFilePropertiesPart?.RootElement?.OuterXml;
-      outerXml = outerXml?.FormatXmlWithLineNumbers();
-      Console.WriteLine("✓ CustomProperties Test: custom properties stored in document:\n" + outerXml);
-    }
-
-    CustomProperties storedData;
-    using (var document = new Document(TestFileName))
-    {
-      storedData = document.CustomProperties ?? throw new InvalidOperationException("Custom properties not found.");
-    }
-
-    var xmlSerializer = new XmlSerializer(typeof(CustomProperties));
-    string xmlString;
-    using (var stringWriter = new StringWriter())
-    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-    {
-      xmlSerializer.Serialize(xmlWriter, storedData);
-      xmlString = stringWriter.ToString();
-    }
-    Console.WriteLine("✓ CustomProperties Test: Updated document custom properties:\n" + xmlString);
-
-    var storedCount = storedData.Count;
-    if (storedCount != initialCount + 1)
-    {
-      Console.WriteLine($"✗ CustomProperties Test: Updated document custom properties test FAILED  - new property count is {storedCount}, expected {initialCount + 1}");
-      return false;
-    }
-    var storedCustomProperty = storedData.Last<object>();
-    if (!TestHelper.CompareTestData(newCustomProperty, storedCustomProperty, "newCustomProperty", "storedCustomProperty", out var message))
-    {
-      Console.WriteLine($"✗ CustomProperties Test: Updated document custom properties test FAILED: {message}");
-      return false;
-    }
-
-    Console.WriteLine("✓ CustomProperties Test: Updated document custom properties test passed\n");
-    return true;
-  }
-
-  /// <summary>
-  /// Tests setting sample custom properties to a new document and outputs the result to the console.
-  /// </summary>
-  /// <remarks>This method is intended for use in test scenarios to verify that document custom properties can
-  /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
-  /// inspection.</remarks>
-  /// <returns>true if the document custom properties are successfully stored and verified; otherwise, false.</returns>
-  private bool TestStoreCustomProperties()
-  {
-    Console.WriteLine("--- CustomProperties Test: Store sample custom properties in new document ---");
-    CustomProperties testData = CreateSampleCustomProperties();
-    using (var document = new Document(TestFileName, FileMode.CreateNew))
-    {
-      foreach (var prop in testData)
-      {
-        //Debug.WriteLine($"Adding custom property: Name={prop.Name}, Value={prop.Value}");
-        document.CustomProperties.Add(prop.Name!, prop.Value!);
-      }
-    }
-
-    using (var wordDoc = WordprocessingDocument.Open(TestFileName, false))
-    {
-      var outerXml = wordDoc.CustomFilePropertiesPart?.RootElement?.OuterXml;
-      outerXml = outerXml?.FormatXmlWithLineNumbers();
-      Console.WriteLine("✓ CustomProperties Test: custom properties stored in document:\n" + outerXml);
-    }
-
-    ICustomProperties storedData;
-    using (var document = new Document(TestFileName))
-    {
-      storedData = document.CustomDocumentProperties ?? throw new InvalidOperationException("Custom properties not found.");
-    }
-
-    var xmlSerializer = new XmlSerializer(typeof(CustomProperties));
-    string xmlString;
-    using (var stringWriter = new StringWriter())
-    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-    {
-      xmlSerializer.Serialize(xmlWriter, storedData);
-      xmlString = stringWriter.ToString();
-    }
-    Console.WriteLine("✓ CustomProperties Test: Custom properties stored to new document and reloaded from it:\n" + xmlString);
-
-    if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
-    {
-      Console.WriteLine($"✗ CustomProperties Test:  Store sample custom properties test FAILED: {message}");
-      return false;
-    }
-
-    Console.WriteLine("✓ CustomProperties Test: Store sample custom properties in new document\n");
-    return true;
-  }
-
-  /// <summary>
-  /// Tests updating the custom properties of a document and outputs the result to the console.
-  /// </summary>
-  /// <remarks>This method is intended for use in test scenarios to verify that document custom properties can
-  /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
-  /// inspection.</remarks>
-  /// <returns>true if the document custom properties are successfully updated and verified; otherwise, false.</returns>
-  private bool TestUpdateCustomProperties()
-  {
-    Console.WriteLine("--- CustomProperties Test: Update document custom properties ---");
-    CustomProperties testData = CreateSampleCustomProperties();
-    var initialCount = testData.Count;
-    //var newCustomProperty = new CustomProperty { Name = "CustomTitle", Value = "Updated Title" };
-    string newPropertyName;
-    using (var document = new Document(TestFileName, FileMode.CreateNew))
-    {
-      foreach (var prop in testData)
-        document.CustomDocumentProperties.Add(prop.Name!, prop.Value!);
-      newPropertyName = document.CustomDocumentProperties.Last().Name += "Updated";
-    }
-
-    using (var wordDoc = WordprocessingDocument.Open(TestFileName, false))
-    {
-      var outerXml = wordDoc.CustomFilePropertiesPart?.RootElement?.OuterXml;
-      outerXml = outerXml?.FormatXmlWithLineNumbers();
-      Console.WriteLine("✓ CustomProperties Test: custom properties stored in document:\n" + outerXml);
-    }
-
-    ICustomProperties storedData;
-    using (var document = new Document(TestFileName))
-    {
-      storedData = document.CustomProperties ?? throw new InvalidOperationException("Custom properties not found.");
-    }
-
-    var xmlSerializer = new XmlSerializer(typeof(CustomProperties));
-    string xmlString;
-    using (var stringWriter = new StringWriter())
-    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-    {
-      xmlSerializer.Serialize(xmlWriter, storedData);
-      xmlString = stringWriter.ToString();
-    }
-    Console.WriteLine("✓ CustomProperties Test: Updated document custom properties:\n" + xmlString);
-
-    var storedCount = storedData.Count();
-    if (storedCount != initialCount)
-    {
-      Console.WriteLine($"✗ CustomProperties Test: Updated document custom properties test FAILED  - new property count is {storedCount}, expected {initialCount}");
-      return false;
-    }
-    var storedCustomProperty = storedData.Last();
-    if (!TestHelper.CompareTestData(newPropertyName, storedCustomProperty.Name, "newPropertyName", "storedCustomProperty.Name", out var message))
-    {
-      Console.WriteLine($"✗ CustomProperties Test: Updated document custom properties test FAILED: {message}");
-      return false;
-    }
-
-    Console.WriteLine("✓ CustomProperties Test: Updated document custom properties test passed\n");
-    return true;
-  }
   /// <summary>
   /// Creates a sample CustomProperties object with various property types.
   /// </summary>
   /// <returns>A populated CustomProperties object.</returns>
-  private CustomProperties CreateSampleCustomProperties()
+  protected override CustomProperties CreateSampleData()
   {
     var props = new CustomProperties();
     props.Add(new CustomProperty
@@ -380,54 +38,50 @@ public class CustomPropertiesTest: _AbstractTestClass
   }
 
   /// <summary>
-  /// Serializes a CustomProperties object to an XML string.
+  /// Retrieves the custom properties from the specified document.
   /// </summary>
-  /// <param name="props">The CustomProperties object to serialize.</param>
-  /// <returns>The serialized XML string.</returns>
-  private string SerializeToXml(CustomProperties props)
+  /// <param name="document">The document from which to retrieve custom properties. Cannot be null.</param>
+  /// <returns>The collection of custom properties associated with the specified document.</returns>
+  protected override CustomProperties GetDataFromDocument(Document document)
   {
-    var xmlSerializer = new XmlSerializer(typeof(CustomProperties));
-    using (var stringWriter = new StringWriter())
-    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-    {
-      xmlSerializer.Serialize(xmlWriter, props);
-      return stringWriter.ToString();
-    }
+    return document.CustomProperties;
   }
 
   /// <summary>
-  /// Deserializes a CustomProperties object from an XML string.
+  /// Sets the custom properties of the specified document to the provided values.
   /// </summary>
-  /// <param name="xml">The XML string to deserialize.</param>
-  /// <returns>The deserialized CustomProperties object, or null if deserialization fails.</returns>
-  private CustomProperties? DeserializeFromXml(string xml)
+  /// <param name="document">The document whose custom properties are to be updated.</param>
+  /// <param name="data">The custom properties to assign to the document. Cannot be null.</param>
+  /// <returns>The updated collection of custom properties assigned to the document.</returns>
+  protected override CustomProperties SetDataToDocument(Document document, CustomProperties data)
   {
-    var xmlSerializer = new XmlSerializer(typeof(CustomProperties));
-    using (var stringReader = new StringReader(xml))
-    {
-      return (CustomProperties?)xmlSerializer.Deserialize(stringReader);
-    }
+    document.CustomProperties = data;
+    return document.CustomProperties;
   }
 
   /// <summary>
-  /// Serializes a CustomProperties object to a JSON string.
+  /// Updates the specified document with new custom property data and returns the updated collection of custom
+  /// properties.
   /// </summary>
-  /// <param name="props">The CustomProperties object to serialize.</param>
-  /// <returns>The serialized JSON string.</returns>
-  private string SerializeToJson(CustomProperties props)
+  /// <param name="document">The document to update with the new custom property data. Cannot be null.</param>
+  /// <param name="data">The collection of custom properties to add to the document. Cannot be null.</param>
+  /// <returns>The updated collection of custom properties from the document after the new data has been added.</returns>
+  protected override CustomProperties UpdateDataInDocument(Document document, CustomProperties data)
   {
-    var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-    return JsonSerializer.Serialize(props, jsonOptions);
+    data.Add(new CustomProperty { Name = "CustomTitle", Value = "Updated Title" });
+    return document.CustomProperties;
   }
 
   /// <summary>
-  /// Deserializes a CustomProperties object from a JSON string.
+  /// Retrieves the XML markup of the custom file properties part from the specified Wordprocessing document.
   /// </summary>
-  /// <param name="json">The JSON string to deserialize.</param>
-  /// <returns>The deserialized CustomProperties object, or null if deserialization fails.</returns>
-  private CustomProperties? DeserializeFromJson(string json)
+  /// <remarks>If the document does not contain a custom file properties part, this method returns an empty
+  /// string. The returned XML represents the raw Open XML of the custom properties section, which may be used for
+  /// inspection or further processing.</remarks>
+  /// <param name="document">The document from which to extract the custom file properties XML. Must not be null.</param>
+  /// <returns>A string containing the XML markup of the custom file properties part if present; otherwise, an empty string.</returns>
+  protected override string GetOpenXmlFromDocument(Document document)
   {
-    var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-    return JsonSerializer.Deserialize<CustomProperties>(json, jsonOptions);
+    return document.WordprocessingDocument?.CustomFilePropertiesPart?.RootElement?.OuterXml ?? string.Empty;
   }
 }
