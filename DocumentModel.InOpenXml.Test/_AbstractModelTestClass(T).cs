@@ -193,9 +193,9 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
     {
       var storedData = SetDataToDocument(document, testData);
       updatedData = UpdateDataInDocument(document, storedData);
-      if (TestHelper.CompareTestData(testData, storedData, "storedData", "updatedData", out _))
+      if (TestHelper.CompareTestData(testData, updatedData, "storedData", "updatedData", out _))
       {
-        Console.WriteLine($"✗ {TestName} {testMethodName} failed: updated data count was not changed.");
+        Console.WriteLine($"✗ {TestName} {testMethodName} failed: updated data was not changed.");
         return false;
       }
     }

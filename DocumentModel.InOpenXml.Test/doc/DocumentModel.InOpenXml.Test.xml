@@ -1307,68 +1307,42 @@
             Provides comprehensive serialization tests for <see cref="T:DocumentModel.StatisticProperties"/>.
             </summary>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.Run">
-            <summary>
-            Runs all serialization tests for the <see cref="T:DocumentModel.StatisticProperties"/> class and reports the results.
-            </summary>
-            <returns>True if all serialization tests pass; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.TestXmlSerialization">
-            <summary>
-            Tests XML serialization and deserialization for <see cref="T:DocumentModel.StatisticProperties"/>.
-            </summary>
-            <returns>True if the round-trip succeeds; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.TestJsonSerialization">
-            <summary>
-            Tests JSON serialization and deserialization for <see cref="T:DocumentModel.StatisticProperties"/>.
-            </summary>
-            <returns>True if the round-trip succeeds; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.TestEdgeCases">
-            <summary>
-            Tests edge cases for serialization and deserialization of empty <see cref="T:DocumentModel.StatisticProperties"/> objects.
-            </summary>
-            <returns>True if all edge case tests pass; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.TestNewFromDocument">
-            <summary>
-            Tests the creation and serialization of statistic properties for a new document.
-            </summary>
-            <remarks>This method creates a new document, retrieves its statistic properties, serializes them to XML,
-            and outputs the result to the console. It is intended for diagnostic or verification purposes and writes status
-            messages to the console.</remarks>
-            <returns>true if the test completes successfully; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.TestStoreInDocument">
-            <summary>
-            Tests setting sample statistic properties to a new document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document statistic properties can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document statistic properties are successfully stored and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.TestUpdateInDocument">
-            <summary>
-            Tests updating the statistic properties of a document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document statistic properties can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document statistic properties are successfully updated and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.TestStoreBuiltInProperties">
-            <summary>
-            Tests storing statistic content properties as built-into a new document and verifies that they are correctly saved and reloaded.
-            </summary>
-            <returns>true if the document statistic properties are successfully stored and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.CreateSampleStatisticProperties">
+        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.CreateSampleData">
             <summary>
             Creates a sample <see cref="T:DocumentModel.StatisticProperties"/> instance for testing.
             </summary>
             <returns>A populated <see cref="T:DocumentModel.StatisticProperties"/> object.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.GetDataFromDocument(DocumentModel.Wordprocessing.Document)">
+            <summary>
+            Retrieves the <see cref="T:DocumentModel.StatisticProperties"/> from the given <see cref="T:DocumentModel.Wordprocessing.Document"/> for testing.
+            </summary>
+            <param name="document">The document from which to retrieve the statistic properties.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.SetDataToDocument(DocumentModel.Wordprocessing.Document,DocumentModel.StatisticProperties)">
+            <summary>
+            Sets the specified statistic properties on the given document and returns the updated properties.
+            </summary>
+            <param name="document">The document to which the statistic properties will be assigned. Cannot be null.</param>
+            <param name="data">The statistic properties to set on the document. Cannot be null.</param>
+            <returns>The updated statistic properties assigned to the document.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.StatisticProperties)">
+            <summary>
+            Updates the specified document with the provided statistical data.
+            </summary>
+            <param name="document">The document to update with new statistical data.</param>
+            <param name="data">The statistical data to apply to the document. This object may be modified during the update process.</param>
+            <returns>The updated statistical data after applying changes to the document.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.StatisticPropertiesTest.GetOpenXmlFromDocument(DocumentModel.Wordprocessing.Document)">
+            <summary>
+            Retrieves the XML markup representing the extended file properties from the specified WordprocessingML document.
+            </summary>
+            <param name="document">The document from which to extract the extended file properties as XML. Must not be null and must contain a valid
+            WordprocessingDocument with an ExtendedFilePropertiesPart.</param>
+            <returns>A string containing the XML markup of the extended file properties for the specified document.</returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.StyleDefinitionsTest">
             <summary>

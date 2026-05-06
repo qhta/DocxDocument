@@ -142,24 +142,40 @@ public static class TestHelper
       {
         if (enumerator1.MoveNext())
         {
-          if (itemCount==0)
+          if (itemCount == 0)
             message = $"{secondName} has no items";
           else
             message = $"{firstName} has more items than {secondName}";
           result = false;
         }
         else
-        if (enumerator2.MoveNext())
-        {
-          if (itemCount == 0)
-            message = $"{firstName} has no items";
-          else
-            message = $"{secondName} has more items than {firstName}";
-          result = false;
-        }
+          if (enumerator2.MoveNext())
+          {
+            if (itemCount == 0)
+              message = $"{firstName} has no items";
+            else
+              message = $"{secondName} has more items than {firstName}";
+            result = false;
+          }
       }
       (enumerator1 as IDisposable)?.Dispose();
       (enumerator2 as IDisposable)?.Dispose();
+    }
+    else
+    {
+      var equatableType = typeof(IEquatable<>).MakeGenericType(comparedType);
+      if (comparedType.Implements(equatableType))
+      {
+        var equalsMethod = equatableType.GetMethod("Equals", [comparedType]);
+        equalsMethod ??= comparedType.GetMethod("Equals", [comparedType]);
+        if (equalsMethod == null)
+          throw new InvalidOperationException($"Type {comparedType.Name} implements IEquatable<{comparedType.Name}> but does not have an Equals method.");
+        result = (bool)equalsMethod.Invoke(obj1, [obj2])!;
+        if (!result)
+          message = $"Objects of type {comparedType.Name} differ: {firstName}={obj1} vs {secondName}={obj2}";
+        if (!result)
+          return false;
+      }
     }
 
     return result;
@@ -179,25 +195,46 @@ public static class TestHelper
     {
       var propType = prop.PropertyType.GetNotNullableType();
       // Update each property with new test data
-      if (prop.PropertyType == typeof(bool))
+      if (propType == typeof(bool))
       {
         prop.SetValue(instance, Random.Shared.NextDouble() < 0.5);
       }
-      else if (prop.PropertyType == typeof(int))
+      else if (propType == typeof(int))
       {
         prop.SetValue(instance, Random.Shared.Next());
       }
-      else if (prop.PropertyType == typeof(HexInt))
+      else if (propType == typeof(HexInt))
       {
         prop.SetValue(instance, new HexInt(Random.Shared.Next()));
       }
-      else if (prop.PropertyType == typeof(string))
+      else if (propType == typeof(string))
       {
         prop.SetValue(instance, prop.GetValue(instance) + " updated");
       }
-      else if (prop.PropertyType == typeof(DateTime))
+      else if (propType == typeof(DateTime))
       {
         prop.SetValue(instance, DateTime.Now);
+      }
+      else if (propType.IsEnum)
+      {
+        var enumValues = Enum.GetValues(propType);
+        var randomValue = enumValues.GetValue(Random.Shared.Next(enumValues.Length));
+        prop.SetValue(instance, randomValue);
+      }
+      else if (propType.IsClass && propType != typeof(string))
+      {
+        // For complex types, recursively change their properties
+        var nestedInstance = prop.GetValue(instance);
+        if (nestedInstance == null)
+        {
+          nestedInstance = Activator.CreateInstance(propType);
+          prop.SetValue(instance, nestedInstance);
+        }
+        ChangeTestData(nestedInstance);
+      }
+      else
+      {
+        throw new NotSupportedException($"Property type {prop.PropertyType} is not supported for test data change.");
       }
     }
   }

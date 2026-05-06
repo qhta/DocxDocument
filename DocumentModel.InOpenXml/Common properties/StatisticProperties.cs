@@ -32,9 +32,9 @@ public sealed partial class StatisticProperties : ModelElement<DXEP.Properties>
   /// Initializing constructor.
   /// </summary>
   /// <param name = "document">Wordprocessing document model</param>
-  public StatisticProperties(Wordprocessing.Document document)
+  public StatisticProperties(Wordprocessing.Document document): 
+    base(document, document.WordprocessingDocument?.GetExtendedFileProperties()) 
   {
-    SetParent(document);
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);
   }
@@ -57,29 +57,29 @@ public sealed partial class StatisticProperties : ModelElement<DXEP.Properties>
       UpdateData(updatableElement);
   }
 
-  /// <summary>
-  /// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
-  /// </summary>
-  /// <param name = "wordprocessingDocument">Document to attach to.</param>
-  public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
-  {
-    base.AttachAndLoad(wordprocessingDocument);
-    var extendedFileProperties = wordprocessingDocument.GetExtendedFileProperties();
-    SetUpdatableElement(extendedFileProperties);
-    LoadData(extendedFileProperties);
-  }
+  ///// <summary>
+  ///// Attach this instance to the specified wordprocessingDocument. Data is loaded from the wordprocessingDocument's PackageProperties.
+  ///// </summary>
+  ///// <param name = "wordprocessingDocument">Document to attach to.</param>
+  //public override void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument)
+  //{
+  //  base.AttachAndLoad(wordprocessingDocument);
+  //  var extendedFileProperties = wordprocessingDocument.GetExtendedFileProperties();
+  //  SetUpdatableElement(extendedFileProperties);
+  //  LoadData(extendedFileProperties);
+  //}
 
-  /// <summary>
-  /// Attach this instance to the specified wordprocessingDocument. Data is stored to the wordprocessingDocument's PackageProperties.
-  /// </summary>
-  /// <param name = "wordprocessingDocument">Document to attach to.</param>
-  public override void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
-  {
-    base.AttachAndUpdate(wordprocessingDocument);
-    var extendedFileProperties = wordprocessingDocument.GetExtendedFileProperties();
-    SetUpdatableElement(extendedFileProperties);
-    UpdateData(extendedFileProperties);
-  }
+  ///// <summary>
+  ///// Attach this instance to the specified wordprocessingDocument. Data is stored to the wordprocessingDocument's PackageProperties.
+  ///// </summary>
+  ///// <param name = "wordprocessingDocument">Document to attach to.</param>
+  //public override void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument)
+  //{
+  //  base.AttachAndUpdate(wordprocessingDocument);
+  //  var extendedFileProperties = wordprocessingDocument.GetExtendedFileProperties();
+  //  SetUpdatableElement(extendedFileProperties);
+  //  UpdateData(extendedFileProperties);
+  //}
 
   /// <summary>
   ///   The total number of pages of a document if applicable.

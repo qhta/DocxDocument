@@ -27,7 +27,8 @@ public sealed partial class ContentProperties : ModelElement<DXEP.Properties>
   /// Initializing constructor.
   /// </summary>
   /// <param name = "document">Wordprocessing document model</param>
-  public ContentProperties(Wordprocessing.Document document): base(document, document.WordprocessingDocument?.GetExtendedFileProperties())
+  public ContentProperties(Wordprocessing.Document document): 
+    base(document, document.WordprocessingDocument?.GetExtendedFileProperties())
   {
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);
