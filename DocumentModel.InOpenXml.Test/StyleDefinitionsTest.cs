@@ -3,266 +3,17 @@
 /// <summary>
 /// Comprehensive test for DocumentModel.Styles.
 /// </summary>
-public class StyleDefinitionsTest: _AbstractTestClass
+public class StyleDefinitionsTest: _AbstractModelTestClass<Styles>
 {
-  private readonly string TestFileName = Path.Combine(TestFileDir, "StyleDefsTest.docx");
-
   /// <summary>
-  /// Runs all Styles serialization tests.
+  /// Creates and returns a sample set of styles for demonstration or testing purposes.
   /// </summary>
-  /// <returns>True if all tests pass; otherwise, false.</returns>
-  public override bool Run()
+  /// <returns>A <see cref="Styles"/> object containing sample style data.</returns>
+  protected override Styles CreateSampleData()
   {
-    Console.WriteLine("=== StyleDefs Test ===\n");
-    if (!TestXmlSerialization()) return false;
-    if (!TestJsonSerialization()) return false;
-    if (!TestEdgeCases()) return false;
-    if (!TestStoreInDocument()) return false;
-    if (!TestUpdateInDocument()) return false;
-    if (!TestValidateOpenXml()) return false;
-    Console.WriteLine("All Styles tests passed.\n");
-    return true;
+    return CreateSampleStyles();
   }
 
-  /// <summary>
-  /// Tests XML serialization and deserialization of Styles.
-  /// </summary>
-  /// <returns>True if the test passes; otherwise, false.</returns>
-  private bool TestXmlSerialization()
-  {
-    Console.WriteLine("--- Styles XML Serialization ---");
-    var testData = CreateSampleStyles();
-    var xmlSerializer = new XmlSerializer(typeof(Styles));
-    string xmlString;
-    using (var stringWriter = new StringWriter())
-    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-    {
-      xmlSerializer.Serialize(xmlWriter, testData);
-      xmlString = stringWriter.ToString();
-    }
-    Console.WriteLine("Styles Serialized XML:\n" + xmlString);
-
-    Styles? deserialized;
-    using (var stringReader = new StringReader(xmlString))
-    {
-      deserialized = (Styles?)xmlSerializer.Deserialize(stringReader);
-    }
-    if (deserialized == null)
-    {
-      Console.WriteLine("✗ Styles XML Deserialization returned null");
-      return false;
-    }
-    if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
-    {
-      Console.WriteLine($"✗ Styles XML Serialization/Deserialization test FAILED: {message}");
-      return false;
-    }
-    Console.WriteLine("✓ Styles XML Serialization/Deserialization test passed\n");
-    return true;
-  }
-
-  /// <summary>
-  /// Tests JSON serialization and deserialization of Styles.
-  /// </summary>
-  /// <returns>True if the test passes; otherwise, false.</returns>
-  private bool TestJsonSerialization()
-  {
-    Console.WriteLine("--- Styles JSON Serialization ---");
-    var testData = CreateSampleStyles();
-    var jsonOptions = JsonConfig.Options;
-    string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
-    Console.WriteLine("Styles Serialized JSON:\n" + jsonString);
-
-    var deserialized = JsonSerializer.Deserialize<Styles>(jsonString, jsonOptions);
-    if (deserialized == null)
-    {
-      Console.WriteLine("✗ Styles JSON Deserialization returned null");
-      return false;
-    }
-    if (!TestHelper.CompareTestData(testData, deserialized, "testData", "deserialized", out var message))
-    {
-      Console.WriteLine($"✗ Styles JSON Serialization/Deserialization test FAILED: {message}");
-      return false;
-    }
-    Console.WriteLine("✓ Styles JSON Serialization/Deserialization test passed\n");
-    return true;
-  }
-
-  /// <summary>
-  /// Tests edge cases like empty Styles object.
-  /// </summary>
-  /// <returns>True if the test passes; otherwise, false.</returns>
-  private bool TestEdgeCases()
-  {
-    Console.WriteLine("--- Styles Edge Cases ---");
-    var empty = new Styles();
-    string xml = SerializeToXml(empty);
-    var xmlDeserialized = DeserializeFromXml(xml);
-    if (xmlDeserialized == null)
-    {
-      Console.WriteLine("✗ Styles Edge Cases: XML deserialization of empty object failed");
-      return false;
-    }
-    string json = SerializeToJson(empty);
-    var jsonDeserialized = DeserializeFromJson(json);
-    if (jsonDeserialized == null)
-    {
-      Console.WriteLine("✗ Styles Edge Cases: JSON deserialization of empty object failed");
-      return false;
-    }
-    Console.WriteLine("✓ Styles Edge case tests passed\n");
-    return true;
-  }
-
-  /// <summary>
-  /// Tests setting sample Styles to a new document and outputs the result to the console.
-  /// </summary>
-  /// <remarks>This method is intended for use in test scenarios to verify that document Styles can
-  /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
-  /// inspection.</remarks>
-  /// <returns>true if the document Styles are successfully stored and verified; otherwise, false.</returns>
-  private bool TestStoreInDocument()
-  {
-    Console.WriteLine("--- Store sample StyleDefs in new document---");
-    //Debug.WriteLine($"Creating sample styles");
-    Styles testData = CreateSampleStyles();
-    //Debug.WriteLine($"Creating document {TestFileName}");
-    using (var document = new Document(TestFileName, FileMode.CreateNew))
-    {
-      document.Styles = testData;
-    }
-
-    using (var wordDoc = DXPP.WordprocessingDocument.Open(TestFileName, false))
-    {
-      var outerXml = wordDoc.MainDocumentPart?.StyleDefinitionsPart?.Styles?.OuterXml;
-      outerXml = outerXml?.FormatXmlWithLineNumbers();
-      Console.WriteLine("✓ Styles stored in document:\n" + outerXml);
-    }
-
-    Styles storedData;
-    //Debug.WriteLine($"Opening document {TestFileName}");
-    using (var document = new Document(TestFileName))
-    {
-      storedData = document.Styles;
-    }
-
-    var xmlSerializer = new XmlSerializer(typeof(Styles));
-    string xmlString;
-    using (var stringWriter = new StringWriter())
-    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-    {
-      xmlSerializer.Serialize(xmlWriter, storedData);
-      xmlString = stringWriter.ToString();
-    }
-    Console.WriteLine("Styles stored to new document and reloaded from it:\n" + xmlString);
-
-    if (!TestHelper.CompareTestData(testData, storedData, "testData", "storedData", out var message))
-    {
-      Console.WriteLine($"✗ Store sample StyleDefs test FAILED: {message}");
-      return false;
-    }
-
-    Console.WriteLine("✓ Store sample StyleDefs test passed\n");
-    return true;
-  }
-    
-  /// <summary>
-  /// Tests updating the Styles of a document and outputs the result to the console.
-  /// </summary>
-  /// <remarks>This method is intended for use in test scenarios to verify that document Styles can
-  /// be set and serialized correctly. It writes status messages and the serialized properties to the console for
-  /// inspection.</remarks>
-  /// <returns>true if the document Styles are successfully updated and verified; otherwise, false.</returns>
-  private bool TestUpdateInDocument()
-  {
-    Console.WriteLine("--- Update document StyleDefs ---");
-    {
-      Styles testData = CreateSampleStyles();
-      var initialCount = testData.StyleDefinitions.Count;
-      using (var document = new Document(TestFileName, FileMode.CreateNew))
-      {
-        document.Styles = testData;
-        var newStyle = new StyleDefinition() { StyleName = "New Style" };
-        document.Styles.StyleDefinitions.Add(newStyle);
-      }
-
-
-      using (var wordDoc = DXPP.WordprocessingDocument.Open(TestFileName, false))
-      {
-        var outerXml = wordDoc.MainDocumentPart?.StyleDefinitionsPart?.Styles?.OuterXml;
-        outerXml = outerXml?.FormatXmlWithLineNumbers();
-        Console.WriteLine("✓ Styles stored in document:\n" + outerXml);
-      }
-
-      Styles storedData;
-      using (var document = new Document(TestFileName))
-      {
-        storedData = document.Styles ?? throw new InvalidOperationException("Styles not found.");
-      }
-
-      var xmlSerializer = new XmlSerializer(typeof(Styles));
-      string xmlString;
-      using (var stringWriter = new StringWriter())
-      using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
-      {
-        xmlSerializer.Serialize(xmlWriter, storedData);
-        xmlString = stringWriter.ToString();
-      }
-      Console.WriteLine("Updated document StyleDefs:\n" + xmlString);
-
-      var storedCount = storedData.StyleDefinitions.Count;
-      if (storedCount != initialCount + 1)
-      {
-        Console.WriteLine($"✗ Updated document StyleDefs test FAILED  - new property count is {storedCount}, expected {initialCount + 1}");
-        return false;
-      }
-
-      Console.WriteLine("✓ Updated document Styles test passed\n");
-      return true;
-    }
-  }
-
-  /// <summary>
-  /// Tests validating the OpenXml generated from the document containing sample Styles against the OpenXml schema.
-  /// </summary>
-  /// <remarks>This method is intended for use in test scenarios to verify that the OpenXml generated from the document
-  /// containing sample Styles adheres to the OpenXml schema. It writes status messages and the serialized properties to the console for
-  /// inspection.</remarks>
-  /// <returns>true if the OpenXml is valid according to the schema; otherwise, false.</returns>
-  private bool TestValidateOpenXml()
-  {
-    Console.WriteLine("--- Validate sample StyleDefs stored in new document against OpenXml schema ---");
-    {
-      Styles testData = CreateSampleStyles();
-      using (var document = new Document(TestFileName, FileMode.CreateNew))
-      {
-        document.Styles = testData;
-      }
-
-      using (var document = new Document(TestFileName))
-      {
-        var openXml = document.WordprocessingDocument!.MainDocumentPart!.StyleDefinitionsPart!.Styles!.OuterXml;
-        //openXml = openXml.Replace("http://schemas.openxmlformats.org/wordprocessingml/2006/main",
-        //  "http://purl.oclc.org/ooxml/wordprocessingml/main");
-        var formattedOpenXml = openXml.FormatXmlWithLineNumbers();
-        Console.WriteLine(formattedOpenXml);
-        var validationResult = OpenXmlSchemaValidator.ValidateXml(formattedOpenXml);
-        if (!validationResult.IsValid)
-        {
-          Console.WriteLine("✗ OpenXml schema validation FAILED - issues found:");
-          foreach (var message in validationResult.Messages)
-          {
-            Console.WriteLine($" {message}");
-          }
-          return false;
-        }
-      }
-
-      Console.WriteLine("✓ Validate sample StyleDefs test passed\n");
-      return true;
-    }
-  }
-    
   /// <summary>
   /// Creates a sample Styles object with various property types.
   /// </summary>
@@ -319,54 +70,59 @@ public class StyleDefinitionsTest: _AbstractTestClass
   }
 
   /// <summary>
-  /// Serializes a Styles object to an XML string.
+  /// Retrieves the collection of styles defined in the specified document.
   /// </summary>
-  /// <param name="props">The Styles object to serialize.</param>
-  /// <returns>The serialized XML string.</returns>
-  private string SerializeToXml(Styles props)
+  /// <param name="document">The document from which to obtain the styles collection.</param>
+  /// <returns>A <see cref="Styles"/> object that contains all styles defined in the specified document.</returns>
+  protected override Styles GetDataFromDocument(Document document)
   {
-    var xmlSerializer = new XmlSerializer(typeof(Styles));
-    using (var stringWriter = new StringWriter())
-    using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+    return document.Styles;
+  }
+
+  /// <summary>
+  /// Sets the specified styles data to the provided document and returns the updated styles.
+  /// </summary>
+  /// <param name="document">The document to which the styles data will be applied. Cannot be null.</param>
+  /// <param name="data">The styles data to set on the document. Cannot be null.</param>
+  /// <returns>The styles that have been set on the document.</returns>
+  protected override Styles SetDataToDocument(Document document, Styles data)
+  {
+    document.Styles = data;
+    return document.Styles;
+  }
+
+  /// <summary>
+  /// Updates the specified document with the provided style data.
+  /// </summary>
+  /// <param name="document">The document to update with new style information.</param>
+  /// <param name="data">The style data to apply to the document.</param>
+  /// <returns>The updated style data after changes have been applied.</returns>
+  protected override Styles UpdateDataInDocument(Document document, Styles data)
+  {
+    data.StyleDefinitions.Add(new StyleDefinition()
     {
-      xmlSerializer.Serialize(xmlWriter, props);
-      return stringWriter.ToString();
-    }
+      StyleName = "NewStyle",
+      Type = StyleType.Paragraph,
+      IsCustom = true,
+      BasedOn = "Normal",
+      NextParagraphStyle = "Normal",
+      UIPriority = 50,
+    });
+    return data;
   }
 
   /// <summary>
-  /// Deserializes a Styles object from an XML string.
+  /// Retrieves the raw Open XML markup for the style definitions part of the specified WordprocessingML document.
   /// </summary>
-  /// <param name="xml">The XML string to deserialize.</param>
-  /// <returns>The deserialized Styles object, or null if deserialization fails.</returns>
-  private Styles? DeserializeFromXml(string xml)
+  /// <remarks>This method assumes that the document contains a main document part and a style definitions part.
+  /// If these parts are missing, a NullReferenceException may occur.</remarks>
+  /// <param name="document">The document from which to extract the style definitions as Open XML. Must not be null and must contain a valid
+  /// style definitions part.</param>
+  /// <returns>A string containing the outer XML of the style definitions part of the document.</returns>
+  protected override string GetOpenXmlFromDocument(Document document)
   {
-    var xmlSerializer = new XmlSerializer(typeof(Styles));
-    using (var stringReader = new StringReader(xml))
-    {
-      return (Styles?)xmlSerializer.Deserialize(stringReader);
-    }
+    return document.WordprocessingDocument!.MainDocumentPart!.StyleDefinitionsPart!.Styles!.OuterXml;
   }
 
-  /// <summary>
-  /// Serializes a Styles object to a JSON string.
-  /// </summary>
-  /// <param name="props">The Styles object to serialize.</param>
-  /// <returns>The serialized JSON string.</returns>
-  private string SerializeToJson(Styles props)
-  {
-    var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-    return JsonSerializer.Serialize(props, jsonOptions);
-  }
 
-  /// <summary>
-  /// Deserializes a Styles object from a JSON string.
-  /// </summary>
-  /// <param name="json">The JSON string to deserialize.</param>
-  /// <returns>The deserialized Styles object, or null if deserialization fails.</returns>
-  private Styles? DeserializeFromJson(string json)
-  {
-    var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
-    return JsonSerializer.Deserialize<Styles>(json, jsonOptions);
-  }
 }

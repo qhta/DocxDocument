@@ -23,8 +23,8 @@ internal class Program
     if (!Exec(new RsidsTest())) return;
     if (!Exec(new DocumentVariablesTestClass())) return;
     if (!Exec(new FontTableTestClass())) return;
-    //if (!Exec(new LatentStylesTest())) return;
-    //if (!Exec(new StyleDefinitionsTest())) return;
+    if (!Exec(new LatentStylesTest())) return;
+    if (!Exec(new StyleDefinitionsTest())) return;
     //if (!Exec(new BaseRunPropertiesTest())) return;
     //if (!Exec(new StyleDocDefaultsRunPropertiesTest())) return;
     //if (!Exec(new BaseParagraphPropertiesTest())) return;

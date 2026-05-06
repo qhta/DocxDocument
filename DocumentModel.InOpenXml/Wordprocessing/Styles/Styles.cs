@@ -74,7 +74,7 @@ public sealed partial class Styles : ModelElement<DXW.Styles>
   public LatentStyles LatentStyles
   {
     get => _LatentStyles ??= new LatentStyles(this, _openXmlElement?.LatentStyles);
-    set => UpdateField(ref _LatentStyles, value, nameof(LatentStyles));
+    set => LatentStyles.CopyFrom(value);
   }
   private LatentStyles? _LatentStyles;
 

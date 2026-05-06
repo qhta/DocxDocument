@@ -1024,58 +1024,7 @@
             Comprehensive test for DocumentModel.Styles.
             </summary>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.LatentStylesTest.Run">
-            <summary>
-            Runs all Styles serialization tests.
-            </summary>
-            <returns>True if all tests pass; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.LatentStylesTest.TestXmlSerialization">
-            <summary>
-            Tests XML serialization and deserialization of Styles.
-            </summary>
-            <returns>True if the test passes; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.LatentStylesTest.TestJsonSerialization">
-            <summary>
-            Tests JSON serialization and deserialization of Styles.
-            </summary>
-            <returns>True if the test passes; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.LatentStylesTest.TestEdgeCases">
-            <summary>
-            Tests edge cases like empty Styles object.
-            </summary>
-            <returns>True if the test passes; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.LatentStylesTest.TestStoreInDocument">
-            <summary>
-            Tests setting sample Styles to a new document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document Styles can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document Styles are successfully stored and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.LatentStylesTest.TestUpdateInDocument">
-            <summary>
-            Tests updating the Styles of a document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document Styles can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document Styles are successfully updated and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.LatentStylesTest.TestValidateOpenXml">
-            <summary>
-            Tests validating the OpenXml generated from the document containing sample Styles against the OpenXml schema.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that the OpenXml generated from the document
-            containing sample Styles adheres to the OpenXml schema. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the OpenXml is valid according to the schema; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.LatentStylesTest.CreateSampleStyles">
+        <member name="M:DocumentModel.InOpenXml.Test.LatentStylesTest.CreateSampleData">
             <summary>
             Creates a sample Styles object with various property types.
             </summary>
@@ -1089,33 +1038,38 @@
             status and UI priority, to facilitate consistent document styling.</remarks>
             <returns>A LatentStyles object containing predefined latent styles, including primary styles and annotations.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.LatentStylesTest.SerializeToXml(DocumentModel.Wordprocessing.Styles)">
+        <member name="M:DocumentModel.InOpenXml.Test.LatentStylesTest.GetDataFromDocument(DocumentModel.Wordprocessing.Document)">
             <summary>
-            Serializes a Styles object to an XML string.
+            Retrieves the collection of styles defined in the specified document.
             </summary>
-            <param name="props">The Styles object to serialize.</param>
-            <returns>The serialized XML string.</returns>
+            <param name="document">The document from which to obtain the styles collection.</param>
+            <returns>A <see cref="T:DocumentModel.Wordprocessing.Styles"/> object that contains all styles defined in the specified document.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.LatentStylesTest.DeserializeFromXml(System.String)">
+        <member name="M:DocumentModel.InOpenXml.Test.LatentStylesTest.SetDataToDocument(DocumentModel.Wordprocessing.Document,DocumentModel.Wordprocessing.Styles)">
             <summary>
-            Deserializes a Styles object from an XML string.
+            Sets the specified styles data to the provided document and returns the updated styles.
             </summary>
-            <param name="xml">The XML string to deserialize.</param>
-            <returns>The deserialized Styles object, or null if deserialization fails.</returns>
+            <param name="document">The document to which the styles data will be applied. Cannot be null.</param>
+            <param name="data">The styles data to set on the document. Cannot be null.</param>
+            <returns>The styles that have been set on the document.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.LatentStylesTest.SerializeToJson(DocumentModel.Wordprocessing.Styles)">
+        <member name="M:DocumentModel.InOpenXml.Test.LatentStylesTest.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.Wordprocessing.Styles)">
             <summary>
-            Serializes a Styles object to a JSON string.
+            Updates the specified document with the provided style data.
             </summary>
-            <param name="props">The Styles object to serialize.</param>
-            <returns>The serialized JSON string.</returns>
+            <param name="document">The document to update with new style information.</param>
+            <param name="data">The style data to apply to the document.</param>
+            <returns>The updated style data after changes have been applied.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.LatentStylesTest.DeserializeFromJson(System.String)">
+        <member name="M:DocumentModel.InOpenXml.Test.LatentStylesTest.GetOpenXmlFromDocument(DocumentModel.Wordprocessing.Document)">
             <summary>
-            Deserializes a Styles object from a JSON string.
+            Retrieves the raw Open XML markup for the style definitions part of the specified WordprocessingML document.
             </summary>
-            <param name="json">The JSON string to deserialize.</param>
-            <returns>The deserialized Styles object, or null if deserialization fails.</returns>
+            <remarks>This method assumes that the document contains a main document part and a style definitions part.
+            If these parts are missing, a NullReferenceException may occur.</remarks>
+            <param name="document">The document from which to extract the style definitions as Open XML. Must not be null and must contain a valid
+            style definitions part.</param>
+            <returns>A string containing the outer XML of the style definitions part of the document.</returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.NumberingInstancesTest">
             <summary>
@@ -1349,56 +1303,11 @@
             Comprehensive test for DocumentModel.Styles.
             </summary>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StyleDefinitionsTest.Run">
+        <member name="M:DocumentModel.InOpenXml.Test.StyleDefinitionsTest.CreateSampleData">
             <summary>
-            Runs all Styles serialization tests.
+            Creates and returns a sample set of styles for demonstration or testing purposes.
             </summary>
-            <returns>True if all tests pass; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StyleDefinitionsTest.TestXmlSerialization">
-            <summary>
-            Tests XML serialization and deserialization of Styles.
-            </summary>
-            <returns>True if the test passes; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StyleDefinitionsTest.TestJsonSerialization">
-            <summary>
-            Tests JSON serialization and deserialization of Styles.
-            </summary>
-            <returns>True if the test passes; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StyleDefinitionsTest.TestEdgeCases">
-            <summary>
-            Tests edge cases like empty Styles object.
-            </summary>
-            <returns>True if the test passes; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StyleDefinitionsTest.TestStoreInDocument">
-            <summary>
-            Tests setting sample Styles to a new document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document Styles can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document Styles are successfully stored and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StyleDefinitionsTest.TestUpdateInDocument">
-            <summary>
-            Tests updating the Styles of a document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document Styles can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document Styles are successfully updated and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StyleDefinitionsTest.TestValidateOpenXml">
-            <summary>
-            Tests validating the OpenXml generated from the document containing sample Styles against the OpenXml schema.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that the OpenXml generated from the document
-            containing sample Styles adheres to the OpenXml schema. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the OpenXml is valid according to the schema; otherwise, false.</returns>
+            <returns>A <see cref="T:DocumentModel.Wordprocessing.Styles"/> object containing sample style data.</returns>
         </member>
         <member name="M:DocumentModel.InOpenXml.Test.StyleDefinitionsTest.CreateSampleStyles">
             <summary>
@@ -1406,33 +1315,38 @@
             </summary>
             <returns>A populated Styles object.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StyleDefinitionsTest.SerializeToXml(DocumentModel.Wordprocessing.Styles)">
+        <member name="M:DocumentModel.InOpenXml.Test.StyleDefinitionsTest.GetDataFromDocument(DocumentModel.Wordprocessing.Document)">
             <summary>
-            Serializes a Styles object to an XML string.
+            Retrieves the collection of styles defined in the specified document.
             </summary>
-            <param name="props">The Styles object to serialize.</param>
-            <returns>The serialized XML string.</returns>
+            <param name="document">The document from which to obtain the styles collection.</param>
+            <returns>A <see cref="T:DocumentModel.Wordprocessing.Styles"/> object that contains all styles defined in the specified document.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StyleDefinitionsTest.DeserializeFromXml(System.String)">
+        <member name="M:DocumentModel.InOpenXml.Test.StyleDefinitionsTest.SetDataToDocument(DocumentModel.Wordprocessing.Document,DocumentModel.Wordprocessing.Styles)">
             <summary>
-            Deserializes a Styles object from an XML string.
+            Sets the specified styles data to the provided document and returns the updated styles.
             </summary>
-            <param name="xml">The XML string to deserialize.</param>
-            <returns>The deserialized Styles object, or null if deserialization fails.</returns>
+            <param name="document">The document to which the styles data will be applied. Cannot be null.</param>
+            <param name="data">The styles data to set on the document. Cannot be null.</param>
+            <returns>The styles that have been set on the document.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StyleDefinitionsTest.SerializeToJson(DocumentModel.Wordprocessing.Styles)">
+        <member name="M:DocumentModel.InOpenXml.Test.StyleDefinitionsTest.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.Wordprocessing.Styles)">
             <summary>
-            Serializes a Styles object to a JSON string.
+            Updates the specified document with the provided style data.
             </summary>
-            <param name="props">The Styles object to serialize.</param>
-            <returns>The serialized JSON string.</returns>
+            <param name="document">The document to update with new style information.</param>
+            <param name="data">The style data to apply to the document.</param>
+            <returns>The updated style data after changes have been applied.</returns>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.StyleDefinitionsTest.DeserializeFromJson(System.String)">
+        <member name="M:DocumentModel.InOpenXml.Test.StyleDefinitionsTest.GetOpenXmlFromDocument(DocumentModel.Wordprocessing.Document)">
             <summary>
-            Deserializes a Styles object from a JSON string.
+            Retrieves the raw Open XML markup for the style definitions part of the specified WordprocessingML document.
             </summary>
-            <param name="json">The JSON string to deserialize.</param>
-            <returns>The deserialized Styles object, or null if deserialization fails.</returns>
+            <remarks>This method assumes that the document contains a main document part and a style definitions part.
+            If these parts are missing, a NullReferenceException may occur.</remarks>
+            <param name="document">The document from which to extract the style definitions as Open XML. Must not be null and must contain a valid
+            style definitions part.</param>
+            <returns>A string containing the outer XML of the style definitions part of the document.</returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.StyleDocDefaultsParagraphPropertiesTest">
             <summary>
