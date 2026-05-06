@@ -17,12 +17,12 @@ internal class Program
     if (!Exec(new CorePropertiesTest())) return;
     if (!Exec(new ContentPropertiesTest())) return;
     if (!Exec(new StatisticPropertiesTest())) return;
-    //if (!Exec(new CustomPropertiesTest())) return;
+    if (!Exec(new CustomPropertiesTest())) return;
 
-    //if (!Exec(new DocumentSettingsTest())) return;
-    //if (!Exec(new RsidsTest())) return;
-    //if (!Exec(new DocumentVariablesTestClass())) return;
-    //if (!Exec(new FontTableTestClass())) return;
+    if (!Exec(new DocumentSettingsTest())) return;
+    if (!Exec(new RsidsTest())) return;
+    if (!Exec(new DocumentVariablesTestClass())) return;
+    if (!Exec(new FontTableTestClass())) return;
     //if (!Exec(new LatentStylesTest())) return;
     //if (!Exec(new StyleDefinitionsTest())) return;
     //if (!Exec(new BaseRunPropertiesTest())) return;

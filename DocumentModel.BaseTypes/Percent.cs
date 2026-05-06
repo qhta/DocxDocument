@@ -7,7 +7,7 @@
 [JsonConverter(typeof(PercentJsonConverter))]
 public readonly partial struct Percent : IConvertible, IEquatable<Percent>, IComparable<Percent>, IComparable<object>
 {
-  private readonly decimal value;
+  private readonly int value;
 
   /// <summary>
   /// Initializes a new instance of the <see cref="Percent"/> struct from a string value.
@@ -19,16 +19,43 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   public Percent(string str)
   {
     str = str.TrimEnd('%');
-    value = decimal.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
+    value = int.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="Percent"/> struct from an int value.
+  /// Initializes a new instance of the <see cref="Percent"/> struct from a byte value.
   /// </summary>
-  /// <param name="value">The int value representing the percentage.</param>
-  public Percent(int value)
+  /// <param name="value">The byte value representing the percentage.</param>
+  public Percent(byte value)
   {
-    this.value = (decimal)value;
+    this.value = (int)value;
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="Percent"/> struct from a SByte value.
+  /// </summary>
+  /// <param name="value">The SByte value representing the percentage.</param>
+  public Percent(sbyte value)
+  {
+    this.value = (int)value;
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="Percent"/> struct from an Int16 value.
+  /// </summary>
+  /// <param name="value">The Int16 value representing the percentage.</param>
+  public Percent(Int16 value)
+  {
+    this.value = (int)value;
+  }
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="Percent"/> struct from an Int32 value.
+  /// </summary>
+  /// <param name="value">The Int32 value representing the percentage.</param>
+  public Percent(Int32 value)
+  {
+    this.value = (int)value;
   }
 
 
@@ -38,57 +65,63 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   /// <param name="value">The int value representing the percentage.</param>
   public Percent(Int64 value)
   {
-    this.value = (decimal)value;
+    this.value = (int)value;
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="Percent"/> struct from a decimal value.
+  /// Initializes a new instance of the <see cref="Percent"/> struct from an UInt16 value.
   /// </summary>
-  /// <param name="value">The decimal value representing the percentage.</param>
-  public Percent(decimal value)
+  /// <param name="value">The UInt16 value representing the percentage.</param>
+  public Percent(UInt16 value)
   {
-    this.value = value;
+    this.value = (int)value;
   }
 
   /// <summary>
-  /// Initializes a new instance of the <see cref="Percent"/> struct from a double value.
+  /// Initializes a new instance of the <see cref="Percent"/> struct from an UInt32 value.
   /// </summary>
-  /// <param name="value">The double value representing the percentage.</param>
-  public Percent(double value)
+  /// <param name="value">The UInt32 value representing the percentage.</param>
+  public Percent(UInt32 value)
   {
-    this.value = (decimal)value;
+    this.value = (int)value;
   }
 
 
   /// <summary>
   /// Initializes a new instance of the <see cref="Percent"/> struct from an UInt64 value.
   /// </summary>
-  /// <param name="value">The UInt64 value representing the percentage.</param>
+  /// <param name="value">The UInt value representing the percentage.</param>
   public Percent(UInt64 value)
   {
-    this.value = (decimal)value;
+    this.value = (int)value;
   }
 
   /// <summary>
-  /// Creates a <see cref="Percent"/> instance from a hexadecimal string representation.
+  /// Initializes a new instance of the <see cref="Percent"/> struct from a Decimal value.
   /// </summary>
-  /// <param name="hexString"></param>
-  /// <returns></returns>
-  public static Percent FromHexString(string hexString)
+  /// <param name="value">The Decimal value representing the percentage.</param>
+  public Percent(Decimal value)
   {
-    if (hexString.EndsWith("%"))
-      hexString = hexString.TrimEnd('%');
-    var val = decimal.Parse(hexString.Replace(",", "."), CultureInfo.InvariantCulture);
-    return new Percent(val);
+    this.value = (int)value;
+  }
+
+
+  /// <summary>
+  /// Initializes a new instance of the <see cref="Percent"/> struct from a Single value.
+  /// </summary>
+  /// <param name="value">The Single value representing the percentage.</param>
+  public Percent(Single value)
+  {
+    this.value = (int)value;
   }
 
   /// <summary>
-  /// Converts the value of this instance to its hexadecimal string representation.
+  /// Initializes a new instance of the <see cref="Percent"/> struct from a Double value.
   /// </summary>
-  /// <returns>A string that represents the value in uppercase hexadecimal format.</returns>
-  public string ToHexString()
+  /// <param name="value">The Double value representing the percentage.</param>
+  public Percent(Double value)
   {
-    return value.ToString("2X");
+    this.value = (int)value;
   }
 
   #region IConvertible Implementation
@@ -387,16 +420,6 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   }
 
   /// <summary>
-  /// Implicitly converts a 32-bit unsigned integer to a <see cref="Percent"/> value.
-  /// </summary>
-  /// <param name="val">The 32-bit unsigned integer to convert.</param>
-  /// <returns>A <see cref="Percent"/>Percent instance.</returns>
-  public static implicit operator Percent(decimal val)
-  {
-    return new Percent(val);
-  }
-
-  /// <summary>
   /// Implicitly converts a 32-bit signed integer to a <see cref="Percent"/> value.
   /// </summary>
   /// <param name="val">The 32-bit signed integer to convert.</param>
@@ -414,6 +437,27 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   public static implicit operator Percent(ulong val)
   {
     return new Percent((decimal)val);
+  }
+
+
+  /// <summary>
+  /// Implicitly converts a double value to a <see cref="Percent"/> value.
+  /// </summary>
+  /// <param name="val">The double value to convert.</param>
+  /// <returns>A <see cref="Percent"/>Percent instance.</returns>
+  public static implicit operator Percent(double val)
+  {
+    return new Percent((decimal)val);
+  }
+
+  /// <summary>
+  /// Implicitly converts a decimal value to a <see cref="Percent"/> value.
+  /// </summary>
+  /// <param name="val">The decimal value to convert.</param>
+  /// <returns>A <see cref="Percent"/>Percent instance.</returns>
+  public static implicit operator Percent(decimal val)
+  {
+    return new Percent(val);
   }
 
   #endregion
@@ -541,6 +585,86 @@ public readonly partial struct Percent : IConvertible, IEquatable<Percent>, ICom
   public int CompareTo(Percent other)
   {
     return value.CompareTo(other.value);
+  }
+
+  /// <summary>
+  /// Compares this instance to a specified Byte value and returns an indication of their relative values.
+  /// </summary>
+  /// <param name="other">An Byte value to compare.</param>
+  /// <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
+  public int CompareTo(Byte other)
+  {
+    return value.CompareTo(other);
+  }
+
+  /// <summary>
+  /// Compares this instance to a specified SByte value and returns an indication of their relative values.
+  /// </summary>
+  /// <param name="other">An SByte value to compare.</param>
+  /// <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
+  public int CompareTo(SByte other)
+  {
+    return value.CompareTo(other);
+  }
+
+  /// <summary>
+  /// Compares this instance to a specified Int16 value and returns an indication of their relative values.
+  /// </summary>
+  /// <param name="other">An Int16 value to compare.</param>
+  /// <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
+  public int CompareTo(Int16 other)
+  {
+    return value.CompareTo(other);
+  }
+
+  /// <summary>
+  /// Compares this instance to a specified Int32 value and returns an indication of their relative values.
+  /// </summary>
+  /// <param name="other">An Int32 value to compare.</param>
+  /// <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
+  public int CompareTo(Int32 other)
+  {
+    return value.CompareTo(other);
+  }
+
+  /// <summary>
+  /// Compares this instance to a specified Int64 value and returns an indication of their relative values.
+  /// </summary>
+  /// <param name="other">An Int64 value to compare.</param>
+  /// <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
+  public int CompareTo(Int64 other)
+  {
+    return value.CompareTo(other);
+  }
+
+  /// <summary>
+  /// Compares this instance to a specified UInt16 value and returns an indication of their relative values.
+  /// </summary>
+  /// <param name="other">An UInt16 value to compare.</param>
+  /// <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
+  public int CompareTo(UInt16 other)
+  {
+    return value.CompareTo(other);
+  }
+
+  /// <summary>
+  /// Compares this instance to a specified UInt32 value and returns an indication of their relative values.
+  /// </summary>
+  /// <param name="other">An UInt32 value to compare.</param>
+  /// <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
+  public int CompareTo(UInt32 other)
+  {
+    return value.CompareTo(other);
+  }
+
+  /// <summary>
+  /// Compares this instance to a specified UInt64 value and returns an indication of their relative values.
+  /// </summary>
+  /// <param name="other">An UInt64 value to compare.</param>
+  /// <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
+  public int CompareTo(UInt64 other)
+  {
+    return value.CompareTo(other);
   }
 
   /// <summary>

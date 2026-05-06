@@ -89,11 +89,14 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   private static object? ConvertGuidFromOpenXml(object? openXmlElement, Type modelType)
   {
     if (modelType == typeof(Guid))
+    {
       if (openXmlElement is DX.StringValue stringValue)
       {
         if (Guid.TryParse(stringValue.Value, out var guid))
           return guid;
       }
+      return SimpleValueConverter.ConvertFrom(openXmlElement, modelType);
+    }
     return null;
   }
 
@@ -111,11 +114,14 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
   private static object? ConvertToGuidOpenXml(object? modelObject, Type openXmlType)
   {
     if (modelObject is Guid guid)
+    {
       if (openXmlType == typeof(DX.StringValue))
       {
         var text = guid.ToString("B").ToUpper();
         return new DX.StringValue(text);
       }
+      return SimpleValueConverter.ConvertTo(modelObject, openXmlType);
+    }
     return null;
   }
 

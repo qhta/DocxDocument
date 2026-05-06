@@ -449,11 +449,19 @@ public static partial class OpenXmlModelConverter
     if (modelValue == null)
       return;
 
-    if (openXmlChildType.IsSubclassOf(typeof(DXW.EmptyType)) && !modelValue.Equals(true))
-      return;
-
-    //if (openXmlChildType == typeof(DXW.StylePaneSortMethods)) Debug.Assert(true);
-    var openXmlChildElement = ConvertTo(modelValue, openXmlChildType);
+    DX.OpenXmlElement openXmlChildElement;
+    if (modelValue is Guid && openXmlChildType.IsSubclassOf(typeof(DX.OpenXmlLeafElement)))
+      Debug.Assert(true);
+    if (openXmlChildType.IsSubclassOf(typeof(DXW.EmptyType)))
+    {
+      if (!modelValue.Equals(true))
+        return;
+      openXmlChildElement = Activator.CreateInstance(openXmlChildType) as DX.OpenXmlElement ??
+                            throw new InvalidOperationException($"Failed to create instance of Open XML child element " +
+                                                                $"of type {openXmlChildType} for model property {modelProperty.Name}");
+    }
+    else
+      openXmlChildElement = (DX.OpenXmlElement)ConvertTo(modelValue, openXmlChildType)!;
     if (openXmlChildElement is not DX.OpenXmlElement o)
       throw new InvalidOperationException($"Converted Open XML child element " +
                                           $"is not of type DX.OpenXmlElement for model property {modelProperty.Name}");

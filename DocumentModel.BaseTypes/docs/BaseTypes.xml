@@ -6212,11 +6212,29 @@
             Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.
             </remarks>
         </member>
+        <member name="M:DocumentModel.Percent.#ctor(System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Percent"/> struct from a byte value.
+            </summary>
+            <param name="value">The byte value representing the percentage.</param>
+        </member>
+        <member name="M:DocumentModel.Percent.#ctor(System.SByte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Percent"/> struct from a SByte value.
+            </summary>
+            <param name="value">The SByte value representing the percentage.</param>
+        </member>
+        <member name="M:DocumentModel.Percent.#ctor(System.Int16)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Percent"/> struct from an Int16 value.
+            </summary>
+            <param name="value">The Int16 value representing the percentage.</param>
+        </member>
         <member name="M:DocumentModel.Percent.#ctor(System.Int32)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.Percent"/> struct from an int value.
+            Initializes a new instance of the <see cref="T:DocumentModel.Percent"/> struct from an Int32 value.
             </summary>
-            <param name="value">The int value representing the percentage.</param>
+            <param name="value">The Int32 value representing the percentage.</param>
         </member>
         <member name="M:DocumentModel.Percent.#ctor(System.Int64)">
             <summary>
@@ -6224,36 +6242,41 @@
             </summary>
             <param name="value">The int value representing the percentage.</param>
         </member>
-        <member name="M:DocumentModel.Percent.#ctor(System.Decimal)">
+        <member name="M:DocumentModel.Percent.#ctor(System.UInt16)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.Percent"/> struct from a decimal value.
+            Initializes a new instance of the <see cref="T:DocumentModel.Percent"/> struct from an UInt16 value.
             </summary>
-            <param name="value">The decimal value representing the percentage.</param>
+            <param name="value">The UInt16 value representing the percentage.</param>
         </member>
-        <member name="M:DocumentModel.Percent.#ctor(System.Double)">
+        <member name="M:DocumentModel.Percent.#ctor(System.UInt32)">
             <summary>
-            Initializes a new instance of the <see cref="T:DocumentModel.Percent"/> struct from a double value.
+            Initializes a new instance of the <see cref="T:DocumentModel.Percent"/> struct from an UInt32 value.
             </summary>
-            <param name="value">The double value representing the percentage.</param>
+            <param name="value">The UInt32 value representing the percentage.</param>
         </member>
         <member name="M:DocumentModel.Percent.#ctor(System.UInt64)">
             <summary>
             Initializes a new instance of the <see cref="T:DocumentModel.Percent"/> struct from an UInt64 value.
             </summary>
-            <param name="value">The UInt64 value representing the percentage.</param>
+            <param name="value">The UInt value representing the percentage.</param>
         </member>
-        <member name="M:DocumentModel.Percent.FromHexString(System.String)">
+        <member name="M:DocumentModel.Percent.#ctor(System.Decimal)">
             <summary>
-            Creates a <see cref="T:DocumentModel.Percent"/> instance from a hexadecimal string representation.
+            Initializes a new instance of the <see cref="T:DocumentModel.Percent"/> struct from a Decimal value.
             </summary>
-            <param name="hexString"></param>
-            <returns></returns>
+            <param name="value">The Decimal value representing the percentage.</param>
         </member>
-        <member name="M:DocumentModel.Percent.ToHexString">
+        <member name="M:DocumentModel.Percent.#ctor(System.Single)">
             <summary>
-            Converts the value of this instance to its hexadecimal string representation.
+            Initializes a new instance of the <see cref="T:DocumentModel.Percent"/> struct from a Single value.
             </summary>
-            <returns>A string that represents the value in uppercase hexadecimal format.</returns>
+            <param name="value">The Single value representing the percentage.</param>
+        </member>
+        <member name="M:DocumentModel.Percent.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocumentModel.Percent"/> struct from a Double value.
+            </summary>
+            <param name="value">The Double value representing the percentage.</param>
         </member>
         <member name="M:DocumentModel.Percent.GetTypeCode">
             <summary>
@@ -6438,13 +6461,6 @@
             <param name="val">The 16-bit unsigned integer to convert.</param>
             <returns>A <see cref="T:DocumentModel.Percent"/>Percent instance.</returns>
         </member>
-        <member name="M:DocumentModel.Percent.op_Implicit(System.Decimal)~DocumentModel.Percent">
-            <summary>
-            Implicitly converts a 32-bit unsigned integer to a <see cref="T:DocumentModel.Percent"/> value.
-            </summary>
-            <param name="val">The 32-bit unsigned integer to convert.</param>
-            <returns>A <see cref="T:DocumentModel.Percent"/>Percent instance.</returns>
-        </member>
         <member name="M:DocumentModel.Percent.op_Implicit(System.Int32)~DocumentModel.Percent">
             <summary>
             Implicitly converts a 32-bit signed integer to a <see cref="T:DocumentModel.Percent"/> value.
@@ -6457,6 +6473,20 @@
             Implicitly converts a 64-bit unsigned integer to a <see cref="T:DocumentModel.Percent"/> value.
             </summary>
             <param name="val">The 64-bit unsigned integer to convert.</param>
+            <returns>A <see cref="T:DocumentModel.Percent"/>Percent instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Percent.op_Implicit(System.Double)~DocumentModel.Percent">
+            <summary>
+            Implicitly converts a double value to a <see cref="T:DocumentModel.Percent"/> value.
+            </summary>
+            <param name="val">The double value to convert.</param>
+            <returns>A <see cref="T:DocumentModel.Percent"/>Percent instance.</returns>
+        </member>
+        <member name="M:DocumentModel.Percent.op_Implicit(System.Decimal)~DocumentModel.Percent">
+            <summary>
+            Implicitly converts a decimal value to a <see cref="T:DocumentModel.Percent"/> value.
+            </summary>
+            <param name="val">The decimal value to convert.</param>
             <returns>A <see cref="T:DocumentModel.Percent"/>Percent instance.</returns>
         </member>
         <member name="M:DocumentModel.Percent.Parse(System.String)">
@@ -6532,6 +6562,62 @@
             zero if this instance equals <paramref name="other"/>;
             greater than zero if this instance is greater than <paramref name="other"/>.
             </returns>
+        </member>
+        <member name="M:DocumentModel.Percent.CompareTo(System.Byte)">
+            <summary>
+            Compares this instance to a specified Byte value and returns an indication of their relative values.
+            </summary>
+            <param name="other">An Byte value to compare.</param>
+            <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.Percent.CompareTo(System.SByte)">
+            <summary>
+            Compares this instance to a specified SByte value and returns an indication of their relative values.
+            </summary>
+            <param name="other">An SByte value to compare.</param>
+            <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.Percent.CompareTo(System.Int16)">
+            <summary>
+            Compares this instance to a specified Int16 value and returns an indication of their relative values.
+            </summary>
+            <param name="other">An Int16 value to compare.</param>
+            <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.Percent.CompareTo(System.Int32)">
+            <summary>
+            Compares this instance to a specified Int32 value and returns an indication of their relative values.
+            </summary>
+            <param name="other">An Int32 value to compare.</param>
+            <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.Percent.CompareTo(System.Int64)">
+            <summary>
+            Compares this instance to a specified Int64 value and returns an indication of their relative values.
+            </summary>
+            <param name="other">An Int64 value to compare.</param>
+            <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.Percent.CompareTo(System.UInt16)">
+            <summary>
+            Compares this instance to a specified UInt16 value and returns an indication of their relative values.
+            </summary>
+            <param name="other">An UInt16 value to compare.</param>
+            <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.Percent.CompareTo(System.UInt32)">
+            <summary>
+            Compares this instance to a specified UInt32 value and returns an indication of their relative values.
+            </summary>
+            <param name="other">An UInt32 value to compare.</param>
+            <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
+        </member>
+        <member name="M:DocumentModel.Percent.CompareTo(System.UInt64)">
+            <summary>
+            Compares this instance to a specified UInt64 value and returns an indication of their relative values.
+            </summary>
+            <param name="other">An UInt64 value to compare.</param>
+            <returns>A signed number indicating the relative values of this instance and <paramref name="other"/>.</returns>
         </member>
         <member name="M:DocumentModel.Percent.CompareTo(System.Object)">
             <summary>

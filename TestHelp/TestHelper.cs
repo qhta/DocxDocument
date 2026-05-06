@@ -203,6 +203,14 @@ public static class TestHelper
       {
         prop.SetValue(instance, Random.Shared.Next());
       }
+      else if (propType == typeof(Int16))
+      {
+        prop.SetValue(instance, (Int16)(Random.Shared.Next() % Int16.MaxValue));
+      }
+      else if (propType == typeof(UInt16))
+      {
+        prop.SetValue(instance, (UInt16)(Random.Shared.Next() % UInt16.MaxValue));
+      }
       else if (propType == typeof(HexInt))
       {
         prop.SetValue(instance, new HexInt(Random.Shared.Next()));
@@ -221,21 +229,29 @@ public static class TestHelper
         var randomValue = enumValues.GetValue(Random.Shared.Next(enumValues.Length));
         prop.SetValue(instance, randomValue);
       }
-      else if (propType.IsClass && propType != typeof(string))
+      else if (propType == typeof(Guid))
       {
-        // For complex types, recursively change their properties
-        var nestedInstance = prop.GetValue(instance);
-        if (nestedInstance == null)
-        {
-          nestedInstance = Activator.CreateInstance(propType);
-          prop.SetValue(instance, nestedInstance);
-        }
-        ChangeTestData(nestedInstance);
+        prop.SetValue(instance, Guid.NewGuid());
       }
-      else
+      else if (propType == typeof(Percent))
       {
-        throw new NotSupportedException($"Property type {prop.PropertyType} is not supported for test data change.");
+        prop.SetValue(instance, new Percent(Random.Shared.NextDouble()*100));
       }
+      //else if (propType.IsClass && propType != typeof(string))
+      //{
+      //  // For complex types, recursively change their properties
+      //  var nestedInstance = prop.GetValue(instance);
+      //  if (nestedInstance == null)
+      //  {
+      //    nestedInstance = Activator.CreateInstance(propType);
+      //    prop.SetValue(instance, nestedInstance);
+      //  }
+      //  ChangeTestData(nestedInstance);
+      //}
+      //else
+      //{
+      //  throw new NotSupportedException($"Property type {propType} is not supported for test data change.");
+      //}
     }
   }
 
