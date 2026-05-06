@@ -92,9 +92,9 @@ public class RunTest : _AbstractTestClass
       var modelRun = new Run(openXmlRun);
       var modelRunXml = SerializeToXml(modelRun);
       var line = $"{modelRunXml.Replace("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n", "")
-        .Replace(" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"","")
-        .Replace(" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"","")
-        .Replace(" xmlns=\"DocumentModel.Wordprocessing\"","")}";
+        .Replace(" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"", "")
+        .Replace(" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"", "")
+        .Replace(" xmlns=\"DocumentModel.Wordprocessing\"", "")}";
       Console.WriteLine(line);
       output.WriteLine(line);
     }

@@ -16,24 +16,24 @@ public abstract partial class BaseRunProperties<OpenXmlElementType> : ModelEleme
   /// </summary>
   protected BaseRunProperties() : base() { }
 
-  /// <summary>
-  /// Initializes a new instance of the BaseRunProperties class with the specified parent element.
-  /// </summary>
-  /// <param name="parent">The parent ModelElement that contains this element. Can be null if this is a root element.</param>
-  protected BaseRunProperties(ModelElement parent) : base(parent) { }
+  ///// <summary>
+  ///// Initializes a new instance of the BaseRunProperties class with the specified parent element.
+  ///// </summary>
+  ///// <param name="parent">The parent ModelElement that contains this element. Can be null if this is a root element.</param>
+  //protected BaseRunProperties(ModelElement parent) : base(parent) { }
 
-  /// <summary>
-  /// Initializes a new instance of the BaseRunProperties class using the specified OpenXmlElementType.
-  /// </summary>
-  /// <param name="element">The OpenXmlElementType that provides the underlying element for the run properties.</param>
-  protected BaseRunProperties(OpenXmlElementType element) : base(element) { }
+  ///// <summary>
+  ///// Initializes a new instance of the BaseRunProperties class using the specified OpenXmlElementType.
+  ///// </summary>
+  ///// <param name="element">The OpenXmlElementType that provides the underlying element for the run properties.</param>
+  //protected BaseRunProperties(OpenXmlElementType element) : base(element) { }
 
   /// <summary>
   /// Initializes a new instance of the BaseRunProperties class with the specified parent element and OpenXmlElementType.
   /// </summary>
   /// <param name="parent">The parent ModelElement that contains this element. Can be null if this is a root element.</param>
   /// <param name="element">The OpenXmlElementType that provides the underlying element for the run properties.</param>
-  protected BaseRunProperties(ModelElement parent, OpenXmlElementType element) : base(parent, element) { }
+  protected BaseRunProperties(ModelElement parent, OpenXmlElementType? element) : base(parent, element) { }
 
   #region Common run properties
 

@@ -25,23 +25,25 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordpro
   }
 
   /// <summary>
-  ///   Initializes a new instance of the <see cref = "ModelElement{Format}"/> class with the specified OpenXml element.
-  /// </summary>
-  /// <param name = "openXmlElement">The OpenXml element to wrap and synchronize with. It can't be null</param>
-  protected ModelElement(DX.OpenXmlElement openXmlElement)
-  {
-    _openXmlElement = (OpenXmlType)openXmlElement;
-  }
-
-  /// <summary>
   /// Initializes a new instance of the ModelElement class with the specified parent element and Open XML element.  
   /// </summary>
   /// <param name="parent">The parent ModelElement that contains this element. Can be null if this is a root element.</param>
   /// <param name="openXmlElement">The OpenXmlElement that provides the underlying Open XML data for this model element. Must not be null.</param>
   protected ModelElement(ModelElement parent, DX.OpenXmlElement? openXmlElement) : base(parent)
   {
-    if (openXmlElement != null)
-      _openXmlElement = (OpenXmlType)openXmlElement;
+    _openXmlElement = (OpenXmlType?)openXmlElement;
+    if (_openXmlElement != null && _openXmlElement.GetType().GetCustomAttribute<DirectAccessAttribute>()==null)
+      LoadData(_openXmlElement);
+  }
+
+
+  /// <summary>
+  ///   Initializes a new instance of the <see cref = "ModelElement{Format}"/> class with the specified OpenXml element.
+  /// </summary>
+  /// <param name = "openXmlElement">The OpenXml element to wrap and synchronize with. It can't be null</param>
+  protected ModelElement(DX.OpenXmlElement openXmlElement)
+  {
+    _openXmlElement = (OpenXmlType)openXmlElement;
   }
 
   /// <summary>
@@ -155,26 +157,28 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordpro
   }
 
   /// <summary>
-  /// Override of LoadData that loads data from the attached OpenXmlElement. Throws an ArgumentException if the OpenXmlElement is not attached.
+  /// Override of LoadData that loads data from the attached OpenXmlElement.
   /// </summary>
-  /// <exception cref="ArgumentException"></exception>
-  public override void LoadData()
+  public bool LoadData()
   {
     if (_openXmlElement !=null)
+    {
       LoadData(_openXmlElement);
-    else
-      throw new ArgumentException($"LoadData() must not be called if the OpenXmlElement is not attached.");
+      return true;
+    }
+    return false;
   }
 
   /// <summary>
-  /// Override of UpdateData that updates the attached OpenXmlElement with current data. Throws an ArgumentException if the OpenXmlElement is not attached.
+  /// Override of UpdateData that updates the attached OpenXmlElement with current data. 
   /// </summary>
-  /// <exception cref="ArgumentException"></exception>
-  public override void UpdateData()
+  public bool UpdateData()
   {
     if (_openXmlElement != null)
+    {
       UpdateData(_openXmlElement);
-    else
-      throw new ArgumentException($"UpdateData() must not be called if the OpenXmlElement is not attached.");
+      return true;
+    }
+    return false;
   }
 }

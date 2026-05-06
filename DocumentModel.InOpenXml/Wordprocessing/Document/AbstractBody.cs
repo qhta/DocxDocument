@@ -18,17 +18,20 @@ public abstract partial class AbstractBody<T> : Story<T> where T : DXW.BodyType
   /// Initializes a new instance of the AbstractBody class with the specified parent element.
   /// </summary>
   /// <param name="parent">The parent ModelElement to associate with this body. Can be null if the body does not have a parent.</param>
-  protected AbstractBody(ModelElement parent) : base(parent)
+  /// <param name="bodyType">The OpenXmlCompositeElement that provides the XML data for the body instance. Can be null.</param>
+  protected AbstractBody(ModelElement parent, DX.OpenXmlCompositeElement? bodyType) : base(parent, bodyType)
   {
   }
 
+
   /// <summary>
-  /// Initializes a new instance of the AbstractBody class with the specified body type.  
+  /// Initializes a new instance of the AbstractBody class with the specified parent element.
   /// </summary>
-  /// <param name="bodyType">The body type to associate with this instance.</param>
+  /// <param name="bodyType">The OpenXmlCompositeElement that provides the XML data for the body instance. Cannot be null.</param>
   protected AbstractBody(DX.OpenXmlCompositeElement bodyType) : base(bodyType)
   {
   }
+
 
   /// <summary>
   /// Collection of sections, recollected from <see cref = "ISectionProperties"/> elements within the document body.

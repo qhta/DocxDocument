@@ -15,7 +15,7 @@ internal class Program
     Console.WriteLine();
     if (!Exec(new ElementCollectionTest())) return;
     if (!Exec(new CorePropertiesTest())) return;
-    //if (!Exec(new ContentPropertiesTest())) return;
+    if (!Exec(new ContentPropertiesTest())) return;
     //if (!Exec(new StatisticPropertiesTest())) return;
     //if (!Exec(new CustomPropertiesTest())) return;
 

@@ -20,21 +20,6 @@ public class Drawing: ModelElement<DXW.Drawing>
   }
 
   /// <summary>
-  /// Initializes a new instance of the Drawing class with the specified parent model element.
-  /// </summary>
-  /// <param name="parent">The parent ModelElement that will contain this Drawing instance. Cannot be null.</param>
-  public Drawing(ModelElement parent) : base(parent)
-  {
-  }
-
-  /// <summary>
-  /// Initializes a new instance of the Drawing class with the specified OpenXML element.
-  /// </summary>
-  public Drawing(DX.OpenXmlCompositeElement openXmlElement) : base(openXmlElement)
-  {
-  }
-
-  /// <summary>
   /// Initializes a new instance of the Drawing class with the specified parent element and underlying Open XML element.
   /// </summary>
   /// <param name="parent">The parent ModelElement that will contain this Drawing instance. Cannot be null.</param>

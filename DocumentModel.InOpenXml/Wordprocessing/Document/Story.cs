@@ -19,12 +19,12 @@ public abstract partial class Story<OpenXmlCollectionType>: ModelElement<OpenXml
   /// Initializes a new instance of the Story class with the specified parent element.
   /// </summary>
   /// <param name="parent">The parent ModelElement to associate with this story. Cannot be null. </param>
-  protected Story(ModelElement parent) : base(parent) { }
+  /// <param name="openXmlElement">The OpenXmlCollectionType element that provides the underlying XML data for the story.</param>
+  protected Story(ModelElement parent, DX.OpenXmlCompositeElement? openXmlElement) : base(parent, openXmlElement) { }
 
   /// <summary>
   /// Initializes a new instance of the Story class using the specified OpenXmlCollectionType element.
   /// </summary>
-  /// <param name="openXmlElement">The OpenXmlCollectionType element that provides the underlying XML data for the story.</param>
   protected Story(DX.OpenXmlCompositeElement openXmlElement) : base(openXmlElement) { }
 
   /// <summary>

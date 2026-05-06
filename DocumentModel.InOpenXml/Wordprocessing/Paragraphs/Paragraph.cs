@@ -14,7 +14,7 @@ public partial class Paragraph : ModelElement<DXW.Paragraph>, IStoryContent, ITa
   /// </summary>
   /// <remarks>This constructor creates a new paragraph element using the default settings. Use this constructor
   /// when you want to create a new paragraph in a document without copying from an existing one.</remarks>
-  public Paragraph() : base(new DXW.Paragraph()) { }
+  public Paragraph() : base() { }
 
   private DXW.Paragraph _paragraph => _openXmlElement as DXW.Paragraph ?? throw new InvalidOperationException("Underlying OpenXml element is not of type DXW.Paragraph.");
 

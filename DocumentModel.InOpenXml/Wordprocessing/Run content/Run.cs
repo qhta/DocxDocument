@@ -24,15 +24,15 @@ public partial class Run : ModelElement<DXW.Run>, //RunContentCollection,
   /// </summary>
   /// <param name = "parent">The parent object that will contain this Run instance. This parameter establishes the hierarchical relationship
   /// within the object model and cannot be null.</param>
-  public Run(ModelElement parent) : base(parent)
+  /// <param name = "openXmlElement">The OpenXmlCompositeElement that provides the XML data for the Run instance. Cannot be null.</param>
+  public Run(ModelElement parent, DX.OpenXmlCompositeElement? openXmlElement) : base(parent, openXmlElement)
   {
   }
 
   /// <summary>
-  /// Initializes a new instance of the Run class using the specified OpenXmlCompositeElement as the underlying XML
-  /// element.
+  /// Initializes a new instance of the Run class using the specified OpenXmlCompositeElement.  
   /// </summary>
-  /// <param name = "openXmlElement">The OpenXmlCompositeElement that provides the XML data for the Run instance. Cannot be null.</param>
+  /// <param name="openXmlElement">The OpenXmlCompositeElement that provides the underlying XML data for the run.</param>
   public Run(DX.OpenXmlCompositeElement openXmlElement) : base(openXmlElement)
   {
   }

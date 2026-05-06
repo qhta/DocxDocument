@@ -96,8 +96,9 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
   /// Only writable properties are set. Type conversion is performed if the property types do not match
   /// exactly.</remarks>
   /// <param name = "openXmlObject">The Open XML element containing property values to load. Must be an instance of the expected Open XML type.</param>
-  public override void LoadData(object openXmlObject)
+  public new void LoadData(object openXmlObject)
   {
+    SetLoading(true);
     var currentType = GetType();
     var openXmlType = typeof(PackageProperties);
     foreach (var openXmlProperty in openXmlType.GetOpenXmlProperties())
@@ -111,6 +112,7 @@ public partial class CoreProperties : ModelElement, IWordprocessingDocumentAware
         modelProperty.SetValue(this, openXmlValue);
       }
     }
+    SetLoading(false);
   }
 
   /// <summary>

@@ -103,27 +103,29 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   }
 
   /// <summary>
-  /// Override of LoadData that loads data from the attached OpenXmlCollection. Throws an ArgumentException if the OpenXmlCollection is not attached.
+  /// Override of LoadData that loads data from the attached OpenXmlCollection. Returns false if the OpenXmlCollection is not attached.
   /// </summary>
-  /// <exception cref="ArgumentException"></exception>
-  public override void LoadData()
+  public bool LoadData()
   {
     if (_openXmlCollection != null)
+    {
       LoadData(_openXmlCollection);
-    else
-      throw new ArgumentException($"LoadData() must not be called if the OpenXmlCollection is not attached.");
+      return true;
+    } 
+    return false;
   }
 
   /// <summary>
-  /// Override of UpdateData that updates the attached OpenXmlCollection with current data. Throws an ArgumentException if the OpenXmlCollection is not attached.
+  /// Override of UpdateData that updates the attached OpenXmlCollection with current data. Returns false if the OpenXmlCollection is not attached.
   /// </summary>
-  /// <exception cref="ArgumentException"></exception>
-  public override void UpdateData()
+  public bool UpdateData()
   {
     if (_openXmlCollection != null)
+    {
       UpdateData(_openXmlCollection);
-    else
-      throw new ArgumentException($"UpdateData() must not be called if the OpenXmlCollection is not attached.");
+      return true;
+    } 
+    return false;
   }
 
 
@@ -155,14 +157,14 @@ public abstract class ValueCollection<ItemType, OpenXmlCollectionType> : Element
   ///   Sets the isLoading flag to true while loading data to avoid unnecessary updates by collection change events.
   /// </summary>
   /// <param name = "openXmlObject">The OpenXml element to load data from.</param>
-  public sealed override void LoadData(object openXmlObject)
+  public new void LoadData(object openXmlObject)
   {
-    SetLoading(true);
     if (openXmlObject is OpenXmlCollectionType openXmlModeledElement)
     {
+      SetLoading(true);
       LoadDataCollection(openXmlModeledElement);
+      SetLoading(false);
     }
-    SetLoading(false);
   }
 
   /// <summary>

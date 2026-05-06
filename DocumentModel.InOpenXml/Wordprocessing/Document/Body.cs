@@ -17,14 +17,15 @@ public class Body : AbstractBody<DXW.Body>
   /// Initializes a new instance of the Body class with the specified parent element.
   /// </summary>
   /// <param name="parent">The parent ModelElement that will contain this Body instance. Cannot be null.</param>
-  public Body(ModelElement parent) : base(parent)
+  /// <param name="openXmlBody">The OpenXml Body element to initialize the Body class with. Can be null.</param>
+  public Body(ModelElement parent, DXW.Body? openXmlBody = null) : base(parent, openXmlBody)
   {
   }
 
   /// <summary>
   /// Constructor for the Body class that initializes a new instance based on an existing OpenXml Body element.
   /// </summary>
-  /// <param name="openXmlBody">The OpenXml Body element to initialize the Body class with.</param>
+  /// <param name="openXmlBody">The OpenXml Body element to initialize the Body class with. Cannot be null.</param>
   public Body(DXW.Body openXmlBody) : base(openXmlBody)
   {
   }

@@ -670,69 +670,42 @@
             Provides comprehensive serialization tests for <see cref="T:DocumentModel.ContentProperties"/>.
             </summary>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.Run">
-            <summary>
-            Runs all serialization tests for <see cref="T:DocumentModel.ContentProperties"/>.
-            </summary>
-            <returns>True if all tests pass; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.TestXmlSerialization">
-            <summary>
-            Tests XML serialization and deserialization for <see cref="T:DocumentModel.ContentProperties"/>.
-            </summary>
-            <returns>True if the round-trip succeeds; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.TestJsonSerialization">
-            <summary>
-            Tests JSON serialization and deserialization for <see cref="T:DocumentModel.ContentProperties"/>.
-            </summary>
-            <returns>True if the round-trip succeeds; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.TestEdgeCases">
-            <summary>
-            Tests edge cases for serialization and deserialization of empty <see cref="T:DocumentModel.ContentProperties"/> objects.
-            </summary>
-            <returns>True if all edge case tests pass; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.TestNewFromDocument">
-            <summary>
-            Tests the creation and serialization of content properties for a new document.
-            </summary>
-            <remarks>This method creates a new document, retrieves its content properties, serializes them to XML,
-            and outputs the result to the console. It is intended for diagnostic or verification purposes and writes status
-            messages to the console.</remarks>
-            <returns>true if the test completes successfully; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.TestStoreInDocument">
-            <summary>
-            Tests setting sample content properties to a new document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document content properties can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document content properties are successfully stored and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.TestUpdateInDocument">
-            <summary>
-            Tests updating the content properties of a document and outputs the result to the console.
-            </summary>
-            <remarks>This method is intended for use in test scenarios to verify that document content properties can
-            be set and serialized correctly. It writes status messages and the serialized properties to the console for
-            inspection.</remarks>
-            <returns>true if the document content properties are successfully updated and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.TestStoreBuiltInProperties">
-            <summary>
-            Tests storing sample content properties as built-into a new document and verifies that they are correctly saved and reloaded.
-            </summary>
-            <returns>true if the document content properties are successfully stored and verified; otherwise, false.</returns>
-        </member>
-        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.CreateSampleContentProperties(System.Boolean)">
+        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.CreateSampleData">
             <summary>
             Creates a sample <see cref="T:DocumentModel.ContentProperties"/> instance for testing.
             </summary>
-            <param name="createAllProperties">Whether to create compound properties, like HeadingPairs and TitlesOfParts.</param>
             <returns>A populated <see cref="T:DocumentModel.ContentProperties"/> object.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.GetDataFromDocument(DocumentModel.Wordprocessing.Document)">
+            <summary>
+            Retrieves the content properties from the specified document.
+            </summary>
+            <param name="document">The document from which to obtain the content properties. Cannot be null.</param>
+            <returns>The content properties associated with the specified document.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.SetDataToDocument(DocumentModel.Wordprocessing.Document,DocumentModel.ContentProperties)">
+            <summary>
+            Sets the specified content properties on the provided document and returns the updated content properties.
+            </summary>
+            <param name="document">The document to which the content properties will be applied.</param>
+            <param name="data">The content properties to set on the document.</param>
+            <returns>The updated content properties of the document after assignment.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.ContentProperties)">
+            <summary>
+            Updates the specified document with the provided content properties.
+            </summary>
+            <param name="document">The document to update with new content properties.</param>
+            <param name="data">The content properties to apply to the document.</param>
+            <returns>The updated content properties after applying changes to the document.</returns>
+        </member>
+        <member name="M:DocumentModel.InOpenXml.Test.ContentPropertiesTest.GetOpenXmlFromDocument(DocumentModel.Wordprocessing.Document)">
+            <summary>
+            Retrieves the XML markup representing the extended file properties from the specified Wordprocessing document.
+            </summary>
+            <param name="document">The document from which to extract the extended file properties as XML. Must not be null and must contain a valid
+            WordprocessingDocument with an ExtendedFilePropertiesPart.</param>
+            <returns>A string containing the XML markup of the extended file properties for the specified document.</returns>
         </member>
         <member name="T:DocumentModel.InOpenXml.Test.CorePropertiesTest">
             <summary>

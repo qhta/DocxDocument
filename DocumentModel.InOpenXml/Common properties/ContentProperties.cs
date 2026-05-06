@@ -21,18 +21,14 @@ public sealed partial class ContentProperties : ModelElement<DXEP.Properties>
   /// </summary>
   public ContentProperties()
   {
-    _IsNotificationEnabled = false;
-    HeadingPairs = new HeadingPairs();
-    _IsNotificationEnabled = null;
   }
 
   /// <summary>
   /// Initializing constructor.
   /// </summary>
   /// <param name = "document">Wordprocessing document model</param>
-  public ContentProperties(Wordprocessing.Document document) : this()
+  public ContentProperties(Wordprocessing.Document document): base(document, document.WordprocessingDocument?.GetExtendedFileProperties())
   {
-    SetParent(document);
     if (document.WordprocessingDocument != null)
       AttachAndLoad(document.WordprocessingDocument);
   }
@@ -53,40 +49,6 @@ public sealed partial class ContentProperties : ModelElement<DXEP.Properties>
     var updatableElement = GetUpdatableElement();
     if (updatableElement != null)
       UpdateData(updatableElement);
-  }
-
-  /// <summary>
-  /// Attach this instance to the specified document. Data is loaded from the document's PackageProperties.
-  /// </summary>
-  /// <param name = "document">Document to attach to.</param>
-  public override void AttachAndLoad(DXPP.WordprocessingDocument document)
-  {
-    base.AttachAndLoad(document);
-    var extendedFileProperties = document.GetExtendedFileProperties();
-    SetUpdatableElement(extendedFileProperties);
-    LoadData(extendedFileProperties);
-  }
-
-  /// <summary>
-  /// Attach this instance to the specified document. Data is stored to the document's PackageProperties.
-  /// </summary>
-  /// <param name = "document">Document to attach to.</param>
-  public override void AttachAndUpdate(DXPP.WordprocessingDocument document)
-  {
-    base.AttachAndUpdate(document);
-    var extendedFileProperties = document.GetExtendedFileProperties();
-    SetUpdatableElement(extendedFileProperties);
-    UpdateData(extendedFileProperties);
-  }
-
-  /// <summary>
-  /// Detach this instance from the attached document.
-  /// Underlying Open XML element is set to null, so further access to its properties will not work until re-attached.
-  /// </summary>
-  public override void Detach()
-  {
-    base.Detach();
-    SetUpdatableElement(null);
   }
 
   /// <summary>
