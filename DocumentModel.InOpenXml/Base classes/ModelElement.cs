@@ -444,25 +444,25 @@ public abstract partial class ModelElement : INotifyPropertyChanged, IEquatable<
 
   private KnownProperties? _knownProperties;
 
-  ///// <summary>
-  ///// Loads data into the current model element from an external source. This method is intended to be overridden in derived classes to implement specific data loading logic. The base implementation throws a NotImplementedException, indicating that derived classes must provide their own implementation.
-  ///// </summary>
-  ///// <returns>True if the data was successfully loaded; otherwise, false.</returns>
-  ///// <exception cref="NotImplementedException"></exception>
-  //public virtual bool LoadData()
-  //{
-  //  throw new NotImplementedException("LoadData() must be implemented in derived classes.");
-  //}
+  /// <summary>
+  /// Loads data into the current model element from an external source. This method is intended to be overridden in derived classes to implement specific data loading logic. The base implementation throws a NotImplementedException, indicating that derived classes must provide their own implementation.
+  /// </summary>
+  /// <returns>True if the data was successfully loaded; otherwise, false.</returns>
+  /// <exception cref="NotImplementedException"></exception>
+  public virtual bool LoadData()
+  {
+    throw new NotImplementedException("LoadData() must be implemented in derived classes.");
+  }
 
-  ///// <summary>
-  ///// Updates the current model element's data in an external source. This method is intended to be overridden in derived classes to implement specific data updating logic. The base implementation throws a NotImplementedException, indicating that derived classes must provide their own implementation.
-  ///// </summary>
-  ///// <returns>True if the data was successfully updated; otherwise, false.</returns>
-  ///// <exception cref="NotImplementedException"></exception>
-  //public virtual bool UpdateData()
-  //{
-  //  throw new NotImplementedException("UpdateData() must be implemented in derived classes.");
-  //}
+  /// <summary>
+  /// Updates the current model element's data in an external source. This method is intended to be overridden in derived classes to implement specific data updating logic. The base implementation throws a NotImplementedException, indicating that derived classes must provide their own implementation.
+  /// </summary>
+  /// <returns>True if the data was successfully updated; otherwise, false.</returns>
+  /// <exception cref="NotImplementedException"></exception>
+  public virtual bool UpdateData()
+  {
+    throw new NotImplementedException("UpdateData() must be implemented in derived classes.");
+  }
 
   /// <summary>
   /// Populates the current model element's properties with values from the specified Open XML element.

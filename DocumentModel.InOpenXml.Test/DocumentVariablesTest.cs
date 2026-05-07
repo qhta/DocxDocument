@@ -23,28 +23,6 @@ namespace DocumentModel.InOpenXml.Test
 		}
 
 		/// <summary>
-		/// Retrieves the collection of variables associated with the specified document.
-		/// </summary>
-		/// <param name="document">The document from which to obtain the variables. Cannot be null.</param>
-		/// <returns>A <see cref="DocumentVariables"/> object containing the variables defined in the specified document.</returns>
-		protected override DocumentVariables GetDataFromDocument(Document document)
-		{
-			return document.DocumentVariables;
-    }
-
-		/// <summary>
-		/// Sets the specified data as the document's variables and returns the updated variables.
-		/// </summary>
-		/// <param name="document">The document to which the variables will be assigned.</param>
-		/// <param name="data">The set of variables to assign to the document.</param>
-		/// <returns>The updated set of document variables after assignment.</returns>
-		protected override DocumentVariables SetDataToDocument(Document document, DocumentVariables data)
-		{
-			document.DocumentVariables = data;
-      return document.DocumentVariables;
-    }
-
-		/// <summary>
 		/// Updates the specified document with new data variables and returns the updated collection of document variables.
 		/// </summary>
 		/// <param name="document">The document to update with new data variables.</param>

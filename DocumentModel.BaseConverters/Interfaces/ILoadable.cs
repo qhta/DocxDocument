@@ -17,4 +17,10 @@ public interface ILoadable
   /// </summary>
   /// <param name="isLoading">true to indicate that the component is loading; otherwise, false.</param>
   public void SetLoading(bool isLoading);
+
+  /// <summary>
+  /// Loads data from into the current object, updating its state accordingly.
+  /// </summary>
+  /// <returns>True if the data was successfully loaded; otherwise, false.</returns>
+  public bool LoadData();
 }

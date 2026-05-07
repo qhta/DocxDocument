@@ -110,7 +110,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   /// <summary>
   /// Override of LoadData that loads data from the attached OpenXmlCollection. Returns false if the OpenXmlCollection is not attached.
   /// </summary>
-  public bool LoadData()
+  public override bool LoadData()
   {
     if (_openXmlCollection != null)
     {
@@ -123,7 +123,7 @@ public abstract class ModelElementCollection<ItemType, OpenXmlCollectionType> : 
   /// <summary>
   /// Override of UpdateData that updates the attached OpenXmlCollection with current data. Returns false if the OpenXmlCollection is not attached.
   /// </summary>
-  public bool UpdateData()
+  public override bool UpdateData()
   {
     if (_openXmlCollection != null)
     {

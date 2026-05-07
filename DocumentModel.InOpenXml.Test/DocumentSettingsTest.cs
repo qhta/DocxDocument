@@ -222,30 +222,6 @@
     }
 
     /// <summary>
-    /// Retrieves the settings associated with the specified document.
-    /// </summary>
-    /// <param name="document">The document from which to obtain the settings. Cannot be null.</param>
-    /// <returns>The settings for the specified document.</returns>
-    protected override DocumentSettings GetDataFromDocument(Document document)
-    {
-      var result = document.DocumentSettings;
-      result.LoadData();
-      return result;
-    }
-
-    /// <summary>
-    /// Sets the specified document's settings to the provided values and returns the updated settings.
-    /// </summary>
-    /// <param name="document">The document whose settings will be updated.</param>
-    /// <param name="data">The settings to apply to the document.</param>
-    /// <returns>The updated settings of the document after applying the specified values.</returns>
-    protected override DocumentSettings SetDataToDocument(Document document, DocumentSettings data)
-    {
-      document.DocumentSettings = data;
-      return document.DocumentSettings;
-    }
-
-    /// <summary>
     /// Updates the provided <see cref="DocumentSettings"/> instance with new test data and adds a compatibility setting.
     /// </summary>
     /// <param name="document">The document in which to update the settings.</param>
@@ -253,7 +229,7 @@
     /// <returns>The updated document settings.</returns>
     protected override DocumentSettings UpdateDataInDocument(Document document, DocumentSettings data)
     {
-      TestHelper.ChangeTestData(data);
+      TestHelper.UpdateTestData(data);
       data.Add(new CompatibilitySetting { Name = "CompatibilityMode", Val = "value" });
       return data;
     }

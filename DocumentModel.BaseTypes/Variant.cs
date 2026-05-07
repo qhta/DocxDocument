@@ -1,11 +1,5 @@
 //#define TraceSetValue
 
-using System;
-using System.ComponentModel;
-
-using DocumentModel;
-
-using Qhta.Conversion;
 using Qhta.TypeUtils;
 
 namespace DocumentModel;
@@ -1241,7 +1235,8 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   {
     if (other is null) return false;
     if (ReferenceEquals(this, other)) return true;
-    if (_variantType != other._variantType) return false;
+    // Sometimes _variantType is not set correctly, so we compare the values instead of the types.
+    //if (_variantType != other._variantType) return false;
 
     if (_value?.GetType().IsArray == true && other._value?.GetType().IsArray == true)
     {

@@ -70,28 +70,6 @@ public class StyleDefinitionsTest: _AbstractModelTestClass<Styles>
   }
 
   /// <summary>
-  /// Retrieves the collection of styles defined in the specified document.
-  /// </summary>
-  /// <param name="document">The document from which to obtain the styles collection.</param>
-  /// <returns>A <see cref="Styles"/> object that contains all styles defined in the specified document.</returns>
-  protected override Styles GetDataFromDocument(Document document)
-  {
-    return document.Styles;
-  }
-
-  /// <summary>
-  /// Sets the specified styles data to the provided document and returns the updated styles.
-  /// </summary>
-  /// <param name="document">The document to which the styles data will be applied. Cannot be null.</param>
-  /// <param name="data">The styles data to set on the document. Cannot be null.</param>
-  /// <returns>The styles that have been set on the document.</returns>
-  protected override Styles SetDataToDocument(Document document, Styles data)
-  {
-    document.Styles = data;
-    return document.Styles;
-  }
-
-  /// <summary>
   /// Updates the specified document with the provided style data.
   /// </summary>
   /// <param name="document">The document to update with new style information.</param>

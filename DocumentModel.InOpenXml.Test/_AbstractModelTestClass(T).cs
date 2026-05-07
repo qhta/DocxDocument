@@ -243,32 +243,41 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
   /// Creates a sample model collection object with various items.
   /// </summary>
   /// <returns>A populated sample model collection object.</returns>
-  protected abstract ModelDataType CreateSampleData();
+  protected virtual ModelDataType CreateSampleData()
+  {
+    var result = new ModelDataType();
+    TestHelper.PopulateTestData(result);
+    return result;
+  }
 
   /// <summary>
   /// Gets the model collection data from the specified document.
   /// </summary>
   /// <param name="document">The document from which the data is to be retrieved.</param>
   /// <returns>The model data from the document.</returns>
-  protected abstract ModelDataType GetDataFromDocument(Document document);
-  //{
-  //  var property = typeof(Document).GetProperties().FirstOrDefault(p => p.PropertyType == typeof(ModelDataType));
-  //  if (property == null) throw new InvalidOperationException($"{typeof(ModelDataType).Name} not found.");
-  //  return (ModelDataType)property.GetValue(document)!;
-  //}
+  protected /*virtual*/ ModelDataType GetDataFromDocument(Document document)
+  {
+    var property = typeof(Document).GetProperties().FirstOrDefault(p => p.PropertyType == typeof(ModelDataType));
+    if (property == null) throw new InvalidOperationException($"{typeof(ModelDataType).Name} not found.");
+    var result = (ModelDataType) property.GetValue(document)!;
+    if (result is IDirectAccessElement directAccessElement && result is ILoadable loadableResult)
+      if (directAccessElement.HasDirectAccess)
+        loadableResult.LoadData();
+    return result;
+  }
 
   /// <summary>
   /// Sets the specified document property for the given model collection element.
   /// </summary>
   /// <param name="document">The document in which the data is to be set.</param>
   /// <param name="data">The model data for which the document property is to be set.</param>
-  protected abstract ModelDataType SetDataToDocument(Document document, ModelDataType data);
-  //{
-  //  var property = typeof(Document).GetProperties().FirstOrDefault(p => p.PropertyType == typeof(ModelDataType));
-  //  if (property == null) throw new InvalidOperationException($"{typeof(ModelDataType).Name} not found.");
-  //  property.SetValue(document, data);
-  //  return (ModelDataType)property.GetValue(document)!; 
-  //}
+  protected /*virtual*/ ModelDataType SetDataToDocument(Document document, ModelDataType data)
+  {
+    var property = typeof(Document).GetProperties().FirstOrDefault(p => p.PropertyType == typeof(ModelDataType));
+    if (property == null) throw new InvalidOperationException($"{typeof(ModelDataType).Name} not found.");
+    property.SetValue(document, data);
+    return (ModelDataType)property.GetValue(document)!;
+  }
 
   /// <summary>
   /// Updates the specified document for the given model data.

@@ -20,28 +20,6 @@ public class RsidsTest: _AbstractModelTestClass<Rsids>
     }
     return props;
   }
-  
-  /// <summary>
-  /// Retrieves the collection of revision save identifiers (Rsids) from the specified document.
-  /// </summary>
-  /// <param name="document">The document from which to obtain the Rsids collection. Cannot be null.</param>
-  /// <returns>The Rsids collection associated with the specified document.</returns>
-  protected override Rsids GetDataFromDocument(Document document)
-  {
-    return document.Rsids;
-  }
-
-  /// <summary>
-  /// Sets the specified Rsids data to the provided Document instance and returns the updated Rsids object.
-  /// </summary>
-  /// <param name="document">The Document instance to which the Rsids data will be assigned.</param>
-  /// <param name="data">The Rsids object containing the data to set on the document.</param>
-  /// <returns>The Rsids object that was assigned to the document.</returns>
-  protected override Rsids SetDataToDocument(Document document, Rsids data)
-  {
-    document.Rsids = data;
-    return document.Rsids;
-  }
 
   /// <summary>
   /// Updates the data within the specified document using the provided data information.

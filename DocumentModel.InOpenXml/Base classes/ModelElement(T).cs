@@ -5,7 +5,8 @@ namespace DocumentModel;
 /// </summary>
 /// <typeparam name = "OpenXmlType">Specifies the type of the underlying OpenXml element being wrapped and synchronized.</typeparam>
 [XmlRoot("ModelElement", Namespace = "DocumentModel")]
-public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordprocessingDocumentAware, IUpdatable
+public abstract partial class ModelElement<OpenXmlType> : ModelElement, 
+  IWordprocessingDocumentAware, IUpdatable, IDirectAccessElement
   where OpenXmlType : DX.OpenXmlElement // this constraint can cause issue with PackageProperties
 {
 
@@ -32,8 +33,6 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordpro
   protected ModelElement(ModelElement parent, DX.OpenXmlElement? openXmlElement) : base(parent)
   {
     _openXmlElement = (OpenXmlType?)openXmlElement;
-    if (_openXmlElement != null && _openXmlElement.GetType().GetCustomAttribute<DirectAccessAttribute>()==null)
-      LoadData(_openXmlElement);
   }
 
 
@@ -159,7 +158,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordpro
   /// <summary>
   /// Override of LoadData that loads data from the attached OpenXmlElement.
   /// </summary>
-  public bool LoadData()
+  public override bool LoadData()
   {
     if (_openXmlElement !=null)
     {
@@ -172,7 +171,7 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordpro
   /// <summary>
   /// Override of UpdateData that updates the attached OpenXmlElement with current data. 
   /// </summary>
-  public bool UpdateData()
+  public override bool UpdateData()
   {
     if (_openXmlElement != null)
     {
@@ -181,4 +180,10 @@ public abstract partial class ModelElement<OpenXmlType> : ModelElement, IWordpro
     }
     return false;
   }
+
+  /// <summary>
+  /// Checks if the current model element has direct access to its underlying OpenXmlElement, based on the presence of the DirectAccessAttribute and the non-null state of the _openXmlElement field.
+  /// </summary>
+  public bool HasDirectAccess => _openXmlElement != null 
+                                 && this.GetType().GetCustomAttribute<DirectAccessAttribute>()?.IsEnabled == true;
 }

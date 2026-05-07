@@ -6,58 +6,36 @@
 public class CustomPropertiesTest: _AbstractModelTestClass<CustomProperties>
 {
 
-  /// <summary>
-  /// Creates a sample CustomProperties object with various property types.
-  /// </summary>
-  /// <returns>A populated CustomProperties object.</returns>
-  protected override CustomProperties CreateSampleData()
-  {
-    var props = new CustomProperties();
-    props.Add(new CustomProperty
-    {
-      Name = "CustomString",
-      Value = "Test String"
-    });
-    props.Add(new CustomProperty
-    {
-      Name = "CustomInt",
-      Value = 123
-    });
-    props.Add(new CustomProperty
-    {
-      Name = "CustomBool",
-      Value = true
-    });
-    props.Add(new CustomProperty
-    {
-      Name = "CustomDate",
-      Value = DateTime.Parse("2026-01-17T10:00:00Z")
-    });
+  ///// <summary>
+  ///// Creates a sample CustomProperties object with various property types.
+  ///// </summary>
+  ///// <returns>A populated CustomProperties object.</returns>
+  //protected override CustomProperties CreateSampleData()
+  //{
+  //  var props = new CustomProperties();
+  //  props.Add(new CustomProperty
+  //  {
+  //    Name = "CustomString",
+  //    Value = "Test String"
+  //  });
+  //  props.Add(new CustomProperty
+  //  {
+  //    Name = "CustomInt",
+  //    Value = 123
+  //  });
+  //  props.Add(new CustomProperty
+  //  {
+  //    Name = "CustomBool",
+  //    Value = true
+  //  });
+  //  props.Add(new CustomProperty
+  //  {
+  //    Name = "CustomDate",
+  //    Value = DateTime.Parse("2026-01-17T10:00:00Z")
+  //  });
 
-    return props;
-  }
-
-  /// <summary>
-  /// Retrieves the custom properties from the specified document.
-  /// </summary>
-  /// <param name="document">The document from which to retrieve custom properties. Cannot be null.</param>
-  /// <returns>The collection of custom properties associated with the specified document.</returns>
-  protected override CustomProperties GetDataFromDocument(Document document)
-  {
-    return document.CustomProperties;
-  }
-
-  /// <summary>
-  /// Sets the custom properties of the specified document to the provided values.
-  /// </summary>
-  /// <param name="document">The document whose custom properties are to be updated.</param>
-  /// <param name="data">The custom properties to assign to the document. Cannot be null.</param>
-  /// <returns>The updated collection of custom properties assigned to the document.</returns>
-  protected override CustomProperties SetDataToDocument(Document document, CustomProperties data)
-  {
-    document.CustomProperties = data;
-    return document.CustomProperties;
-  }
+  //  return props;
+  //}
 
   /// <summary>
   /// Updates the specified document with new custom property data and returns the updated collection of custom

@@ -182,11 +182,124 @@ public static class TestHelper
   }
 
   /// <summary>
+  /// Populates test data in the given instance.
+  /// </summary>
+  /// <param name="instance">The test data to modify.</param>
+  /// <param name="index">Optional index number</param>
+  public static void PopulateTestData(object instance, int index=-1)
+  {
+    if (instance == null)
+      throw new ArgumentNullException(nameof(instance));
+    var properties = instance.GetType().GetProperties()
+      .Where(prop => !prop.IsIndexer() && prop.CanWrite && prop.GetCustomAttribute<NotMappedAttribute>()==null);
+    foreach (var prop in properties)
+    {
+      var propType = prop.PropertyType.GetNotNullableType();
+      // Set each property with new test data
+      if (propType == typeof(string))
+      {
+        prop.SetValue(instance, "Sample " + prop.Name + (index >= 0 ? $" {index + 1}" : ""));
+      }
+      else if (propType == typeof(bool))
+      {
+        prop.SetValue(instance, Random.Shared.NextDouble() < 0.5);
+      }
+      else if (propType == typeof(int))
+      {
+        prop.SetValue(instance, Random.Shared.Next());
+      }
+      else if (propType == typeof(Int16))
+      {
+        prop.SetValue(instance, (Int16)(Random.Shared.Next() % Int16.MaxValue));
+      }
+      else if (propType == typeof(UInt16))
+      {
+        prop.SetValue(instance, (UInt16)(Random.Shared.Next() % UInt16.MaxValue));
+      }
+      else if (propType == typeof(HexInt))
+      {
+        prop.SetValue(instance, new HexInt(Random.Shared.Next()));
+      }
+      else if (propType == typeof(HexBinary))
+      {
+        prop.SetValue(instance, CreateHexBinary(Random.Shared.Next()));
+      }
+      else if (propType == typeof(DateTime))
+      {
+        prop.SetValue(instance, DateTime.Now);
+      }
+      else if (propType.IsEnum)
+      {
+        var enumValues = Enum.GetValues(propType);
+        var randomValue = enumValues.GetValue(Random.Shared.Next(enumValues.Length));
+        prop.SetValue(instance, randomValue);
+      }
+      else if (propType == typeof(Guid))
+      {
+        prop.SetValue(instance, Guid.NewGuid());
+      }
+      else if (propType == typeof(Percent))
+      {
+        prop.SetValue(instance, new Percent(Random.Shared.NextDouble() * 100));
+      }
+      else if (propType == typeof(Variant))
+      {
+        prop.SetValue(instance, CreateVariant(VariantSupportedTypes[Random.Shared.Next(VariantSupportedTypes.Length)]));
+      }
+      else if (propType.IsClass && propType != typeof(string))
+      {
+        // For complex types, recursively change their properties
+        var nestedInstance = prop.GetValue(instance);
+        if (nestedInstance == null)
+        {
+          nestedInstance = Activator.CreateInstance(propType);
+          prop.SetValue(instance, nestedInstance);
+        }
+        PopulateTestData(nestedInstance!);
+      }
+      else
+      {
+        throw new NotSupportedException($"Property type {propType} is not supported for test data change.");
+      }
+    }
+
+    if (instance.GetType().IsEnumerable(out var elementType))
+    {
+      var n = Random.Shared.Next(2, 5); // Random number of elements to add
+
+      if (elementType == typeof(string))
+      {
+        for (var i = 0; i < n; i++)
+        {
+          var elementInstance = "Item " + (i + 1);
+          if (instance is IList list)
+          {
+            list.Add(elementInstance);
+          }
+        }
+      }
+      else
+      {
+        for (var i = 0; i < n; i++)
+        {
+          var elementInstance = Activator.CreateInstance(elementType);
+          PopulateTestData(elementInstance!, i);
+          if (instance is IList list)
+          {
+            list.Add(elementInstance);
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
   /// Changes test data in the given instance.
   /// </summary>
   /// <typeparam name="T"></typeparam>
   /// <param name="instance">The test data to modify.</param>
-  public static void ChangeTestData<T>(T instance)
+  public static void UpdateTestData<T>(T instance)
   {
     if (instance == null)
       throw new ArgumentNullException(nameof(instance));
@@ -235,7 +348,7 @@ public static class TestHelper
       }
       else if (propType == typeof(Percent))
       {
-        prop.SetValue(instance, new Percent(Random.Shared.NextDouble()*100));
+        prop.SetValue(instance, new Percent(Random.Shared.NextDouble() * 100));
       }
       //else if (propType.IsClass && propType != typeof(string))
       //{
@@ -246,7 +359,7 @@ public static class TestHelper
       //    nestedInstance = Activator.CreateInstance(propType);
       //    prop.SetValue(instance, nestedInstance);
       //  }
-      //  ChangeTestData(nestedInstance);
+      //  UpdateTestData(nestedInstance);
       //}
       //else
       //{
@@ -296,6 +409,63 @@ public static class TestHelper
     return (int?)value;
   }
 
+  /// <summary>
+  /// Creates a new instance of HexBinary with a random byte array of the specified size.
+  /// </summary>
+  /// <param name="size"></param>
+  /// <returns></returns>
+  static HexBinary CreateHexBinary(int size)
+  {
+    size = size % 256; // Limit size to a reasonable range
+    var bytes = new byte[size+1];
+    for (int i = 0; i < size; i++)
+    {
+      bytes[i] = (byte)Random.Shared.Next(0, 256);
+    }
+    return new HexBinary(bytes);
+  }
+
+  static readonly Type[] VariantSupportedTypes =
+  [
+    typeof(string),
+    typeof(int),
+    typeof(bool),
+    typeof(DateTime),
+    //typeof(Guid),
+    //typeof(Percent)
+  ];
+  /// <summary>
+  /// Creates a new Variant instance containing a randomly generated value of the specified type.
+  /// </summary>
+  /// <remarks>The generated value is randomly selected based on the provided type. For enum types, a random
+  /// value from the enumeration is chosen. For Percent, a random value between 0 and 100 is used.</remarks>
+  /// <param name="type">The type of value to generate and encapsulate in the Variant. Supported types include string, int, bool, DateTime,
+  /// enum types, Guid, and Percent.</param>
+  /// <returns>A Variant containing a randomly generated value of the specified type.</returns>
+  /// <exception cref="NotSupportedException">Thrown if the specified type is not supported for Variant creation.</exception>
+  static Variant CreateVariant(Type type)
+  {
+    if (type == typeof(string))
+      return new Variant("Sample string");
+    else if (type == typeof(int))
+      return new Variant(Random.Shared.Next());
+    else if (type == typeof(bool))
+      return new Variant(Random.Shared.NextDouble() < 0.5);
+    else if (type == typeof(DateTime))
+      return new Variant(DateTime.Now);
+    else if (type.IsEnum)
+    {
+      var enumValues = Enum.GetValues(type);
+      var randomValue = enumValues.GetValue(Random.Shared.Next(enumValues.Length));
+      return new Variant(randomValue);
+    }
+    else if (type == typeof(Guid))
+      return new Variant(Guid.NewGuid());
+    else if (type == typeof(Percent))
+      return new Variant(new Percent(Random.Shared.NextDouble() * 100));
+    else
+      throw new NotSupportedException($"Type {type} is not supported for creating a Variant.");
+  }
   /// <summary>
   /// Copies test data from one instance to another.
   /// </summary>

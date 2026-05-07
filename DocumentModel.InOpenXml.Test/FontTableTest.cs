@@ -47,28 +47,6 @@ public class FontTableTestClass: _AbstractModelTestClass<FontTable>
   }
 
   /// <summary>
-  /// Gets the FontTable from the provided Document.
-  /// </summary>
-  /// <param name="document">The document from which to retrieve the font table.</param>
-  /// <returns>The font table from the document.</returns>
-  protected override FontTable GetDataFromDocument(Document document)
-  {
-    return document.FontTable;
-  }
-
-  /// <summary>
-  /// Sets the font table of the specified document to the provided font table element. 
-  /// </summary>
-  /// <param name="document">The document whose font table is to be set.</param>
-  /// <param name="data">The font table to assign to the document.</param>
-  /// <returns>The font table that was set on the document.</returns>
-  protected override FontTable SetDataToDocument(Document document, FontTable data)
-  {
-    document.FontTable = data;
-    return document.FontTable;
-  }
-
-  /// <summary>
   /// Updates the specified font table in the document by adding a new predefined font and returns the added font.
   /// </summary>
   /// <param name="document">The document in which the font table will be updated.</param>
