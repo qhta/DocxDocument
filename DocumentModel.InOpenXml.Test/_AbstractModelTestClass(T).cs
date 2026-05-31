@@ -36,7 +36,7 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
     var testMethodName = GetInvokingMethodName();
     Console.WriteLine($"--- {TestName} {testMethodName} ---");
     var testData = CreateSampleData();
-    var xmlSerializer = new XmlSerializer(typeof(ModelDataType));
+    var xmlSerializer = CreateXmlSerializer();
     string xmlString;
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
@@ -74,10 +74,9 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
     var testMethodName = GetInvokingMethodName();
     Console.WriteLine($"--- {TestName} {testMethodName} ---");
     var testData = CreateSampleData();
-    var jsonOptions = JsonConfig.Options;
-    string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
+    string jsonString = SerializeToJson(testData);
     Console.WriteLine($"{TestName} Serialized JSON:\n" + jsonString);
-    var deserialized = JsonSerializer.Deserialize<ModelDataType>(jsonString, jsonOptions);
+    var deserialized = DeserializeFromJson<ModelDataType>(jsonString);
     if (deserialized == null)
     {
       Console.WriteLine($"✗ {TestName} JSON Deserialization returned null");
@@ -156,7 +155,7 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
       storedData = GetDataFromDocument(document) ?? throw new InvalidOperationException($"{typeof(ModelDataType).Name} not found.");
     }
 
-    var xmlSerializer = new XmlSerializer(typeof(ModelDataType));
+    var xmlSerializer = CreateXmlSerializer();
     string xmlString;
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
@@ -219,7 +218,7 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
       restoredData = GetDataFromDocument(document) ?? throw new InvalidOperationException($"{typeof(ModelDataType).Name} not found.");;
     }
 
-    var xmlSerializer = new XmlSerializer(typeof(ModelDataType));
+    var xmlSerializer = CreateXmlSerializer();
     string xmlString;
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
@@ -292,4 +291,107 @@ public abstract class _AbstractModelTestClass<ModelDataType> : _AbstractTestClas
   /// <param name="document">The document from which to retrieve the OpenXml representation.</param>
   /// <returns>The OpenXml representation of the model collection.</returns>
   protected abstract string GetOpenXmlFromDocument(Document document);
+
+  private static XmlSerializer CreateXmlSerializer()
+  {
+    try
+    {
+      var overrides = new XmlAttributeOverrides();
+
+      overrides.Add(
+        typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Wordprocessing.Paragraph>),
+        new XmlAttributes
+        {
+          XmlType = new XmlTypeAttribute("ModelElementOfWordprocessingParagraph")
+          {
+            Namespace = "DocumentModel.Wordprocessing"
+          }
+        });
+
+      overrides.Add(
+        typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Math.Paragraph>),
+        new XmlAttributes
+        {
+          XmlType = new XmlTypeAttribute("ModelElementOfMathParagraph")
+          {
+            Namespace = "DocumentModel.Math"
+          }
+        });
+
+      overrides.Add(
+        typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Wordprocessing.Run>),
+        new XmlAttributes
+        {
+          XmlType = new XmlTypeAttribute("ModelElementOfWordprocessingRun")
+          {
+            Namespace = "DocumentModel.Wordprocessing"
+          }
+        });
+
+      overrides.Add(
+        typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Math.Run>),
+        new XmlAttributes
+        {
+          XmlType = new XmlTypeAttribute("ModelElementOfMathRun")
+          {
+            Namespace = "DocumentModel.Math"
+          }
+        });
+
+      overrides.Add(
+        typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Wordprocessing.ParagraphProperties>),
+        new XmlAttributes
+        {
+          XmlType = new XmlTypeAttribute("ModelElementOfWordprocessingParagraphProperties")
+          {
+            Namespace = "DocumentModel.Wordprocessing"
+          }
+        });
+
+      overrides.Add(
+        typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Math.ParagraphProperties>),
+        new XmlAttributes
+        {
+          XmlType = new XmlTypeAttribute("ModelElementOfMathParagraphProperties")
+          {
+            Namespace = "DocumentModel.Math"
+          }
+        });
+
+      overrides.Add(
+        typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Wordprocessing.RunProperties>),
+        new XmlAttributes
+        {
+          XmlType = new XmlTypeAttribute("ModelElementOfWordprocessingRunProperties")
+          {
+            Namespace = "DocumentModel.Wordprocessing"
+          }
+        });
+
+      overrides.Add(
+        typeof(DocumentModel.ModelElement<DocumentFormat.OpenXml.Math.RunProperties>),
+        new XmlAttributes
+        {
+          XmlType = new XmlTypeAttribute("ModelElementOfMathRunProperties")
+          {
+            Namespace = "DocumentModel.Math"
+          }
+        });
+
+      return new XmlSerializer(typeof(ModelDataType), overrides);
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine($"✗ {typeof(ModelDataType).Name} XmlSerializer creation failed: {ex.Message}");
+      var current = ex.InnerException;
+      var level = 1;
+      while (current != null)
+      {
+        Console.WriteLine($"  Inner[{level}]: {current.GetType().FullName}: {current.Message}");
+        current = current.InnerException;
+        level++;
+      }
+      throw;
+    }
+  }
 }

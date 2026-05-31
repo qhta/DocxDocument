@@ -6,8 +6,8 @@ namespace DocumentModel.Wordprocessing;
 [XmlRoot("EndnoteSeparator", Namespace = "DocumentModel.Wordprocessing")]
 public partial class EndnoteSeparator : FootnoteEndnoteSeparatorReferenceType
 {
- /// <summary>
- /// Target endnote associated with this separator, specifying the endnote to which the separator applies.
- /// </summary>
- public Endnote? Endnote { get; set; }
+ ///// <summary>
+ ///// Target endnote associated with this separator, specifying the endnote to which the separator applies.
+ ///// </summary>
+ //public Endnote? Endnote { get; set; }
 }

@@ -4,5 +4,5 @@ namespace DocumentModel.Wordprocessing;
 
 public partial class FootnoteSeparator
 {
-  public bool ShouldSerializeFootnote() => Footnote is not null && ShouldSerialize(Footnote);
+  //public bool ShouldSerializeFootnote() => Footnote is not null && ShouldSerialize(Footnote);
 }

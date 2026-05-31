@@ -204,17 +204,29 @@ public static class TestHelper
       {
         prop.SetValue(instance, Random.Shared.NextDouble() < 0.5);
       }
-      else if (propType == typeof(int))
+      else if (propType == typeof(Int32))
       {
         prop.SetValue(instance, Random.Shared.Next());
       }
+      else if (propType == typeof(UInt32))
+      {
+        prop.SetValue(instance, (UInt32)Random.Shared.NextInt64(0,UInt32.MaxValue));
+      }
       else if (propType == typeof(Int16))
       {
-        prop.SetValue(instance, (Int16)(Random.Shared.Next() % Int16.MaxValue));
+        prop.SetValue(instance, (Int16)(Random.Shared.Next(0, Int16.MaxValue)));
       }
       else if (propType == typeof(UInt16))
       {
-        prop.SetValue(instance, (UInt16)(Random.Shared.Next() % UInt16.MaxValue));
+        prop.SetValue(instance, (UInt16)(Random.Shared.Next(0, UInt16.MaxValue)));
+      }
+      else if (propType == typeof(Int64))
+      {
+        prop.SetValue(instance, Random.Shared.NextInt64());
+      }
+      else if (propType == typeof(UInt64))
+      {
+        prop.SetValue(instance, (UInt64)Random.Shared.NextInt64(0, (long)Int64.MaxValue));
       }
       else if (propType == typeof(HexInt))
       {
@@ -242,6 +254,18 @@ public static class TestHelper
       {
         prop.SetValue(instance, new Percent(Random.Shared.NextDouble() * 100));
       }
+      else if (propType == typeof(Decimal))
+      {
+        prop.SetValue(instance, new Decimal(Random.Shared.NextDouble() * 100));
+      }
+      else if (propType == typeof(Double))
+      {
+        prop.SetValue(instance, Random.Shared.NextDouble() * 100);
+      }
+      else if (propType == typeof(Single))
+      {
+        prop.SetValue(instance, (float)Random.Shared.NextDouble() * 100);
+      }
       else if (propType == typeof(Variant))
       {
         prop.SetValue(instance, CreateVariant(VariantSupportedTypes[Random.Shared.Next(VariantSupportedTypes.Length)]));
@@ -259,7 +283,7 @@ public static class TestHelper
       }
       else
       {
-        throw new NotSupportedException($"Property type {propType} is not supported for test data change.");
+        throw new NotSupportedException($"Property type {propType} is not supported for PopulateTestData.");
       }
     }
 
@@ -308,29 +332,41 @@ public static class TestHelper
     {
       var propType = prop.PropertyType.GetNotNullableType();
       // Update each property with new test data
-      if (propType == typeof(bool))
+      if (propType == typeof(string))
+      {
+        prop.SetValue(instance, prop.GetValue(instance) + " updated");
+      }
+      else if (propType == typeof(bool))
       {
         prop.SetValue(instance, Random.Shared.NextDouble() < 0.5);
       }
-      else if (propType == typeof(int))
+      else if (propType == typeof(Int32))
       {
         prop.SetValue(instance, Random.Shared.Next());
       }
+      else if (propType == typeof(UInt32))
+      {
+        prop.SetValue(instance, (UInt32)Random.Shared.NextInt64(0, UInt32.MaxValue));
+      }
       else if (propType == typeof(Int16))
       {
-        prop.SetValue(instance, (Int16)(Random.Shared.Next() % Int16.MaxValue));
+        prop.SetValue(instance, (Int16)(Random.Shared.Next(0, Int16.MaxValue)));
       }
       else if (propType == typeof(UInt16))
       {
-        prop.SetValue(instance, (UInt16)(Random.Shared.Next() % UInt16.MaxValue));
+        prop.SetValue(instance, (UInt16)(Random.Shared.Next(0, UInt16.MaxValue)));
+      }
+      else if (propType == typeof(Int64))
+      {
+        prop.SetValue(instance, Random.Shared.NextInt64());
+      }
+      else if (propType == typeof(UInt64))
+      {
+        prop.SetValue(instance, (UInt64)Random.Shared.NextInt64(0, (long)Int64.MaxValue));
       }
       else if (propType == typeof(HexInt))
       {
         prop.SetValue(instance, new HexInt(Random.Shared.Next()));
-      }
-      else if (propType == typeof(string))
-      {
-        prop.SetValue(instance, prop.GetValue(instance) + " updated");
       }
       else if (propType == typeof(DateTime))
       {

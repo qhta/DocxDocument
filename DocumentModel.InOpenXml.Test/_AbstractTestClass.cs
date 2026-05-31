@@ -190,12 +190,15 @@ public abstract class _AbstractTestClass
     var rootType = data.GetType();
     var UniqueTypeNames = new HashSet<string>();
     var overrides = new XmlAttributeOverrides();
-    var modelTypes = typeof(DMW.Document).Assembly.GetTypes();
+    var modelTypes = typeof(DMW.Document).Assembly.GetTypes()
+      .Where(t=>t.IsClass && !t.IsAbstract && !t.IsGenericType && !t.IsConstructedGenericType
+                && !t.Implements(typeof(System.Collections.IDictionary))
+      && t.GetConstructor([])!=null).ToArray();
 
     foreach (var t in modelTypes)
     {
       var b = t.BaseType;
-      while (b != null)
+      while (b != null && b != typeof(object))
       {
         if (b.IsGenericType && b.GetGenericTypeDefinition() == typeof(DM.ModelElement<>))
         {
@@ -219,7 +222,7 @@ public abstract class _AbstractTestClass
     ns.Add("dw", "DocumentModel.Drawings.Wordprocessing");
     ns.Add("m", "DocumentModel.Math");
 
-    var xmlSerializer = new XmlSerializer(rootType, overrides);
+    var xmlSerializer = new XmlSerializer(rootType, overrides, modelTypes, null, null);
     using (var stringWriter = new StringWriter())
     using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
     {

@@ -171,19 +171,4 @@ public partial class HslColor : IColor
   }
  }
 
- /// <summary>
- /// Tint modification of the color, represented as a percentage value between 0 and 1.
- /// </summary>
- [NotMapped]
- [XmlIgnore]
- [JsonIgnore]
- double? IColor.Tint { get => this.Tint; set => this.Tint = value; }
-
- /// <summary>
- /// Shade modification of the color, represented as a percentage value between 0 and 1.
- /// </summary>
- [NotMapped]
- [XmlIgnore]
- [JsonIgnore]
- double? IColor.Shade { get => this.Shade; set => this.Shade = value; }
 }

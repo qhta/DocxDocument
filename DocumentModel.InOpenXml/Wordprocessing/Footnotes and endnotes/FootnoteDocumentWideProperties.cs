@@ -35,9 +35,14 @@ public partial class FootnoteDocumentWideProperties : ModelElement<DXW.FootnoteD
  public RestartNumber? NumberingRestart { get => _NumberingRestart; set => UpdateField(ref _NumberingRestart, value, nameof(NumberingRestart)); }
  private RestartNumber? _NumberingRestart;
 
- /// <summary>
- /// Special references for footnotes, such as separators and continuation notices.
- /// </summary>
- public FootnoteSeparators? FootnoteSeparators { get => _FootnoteSeparators; set => UpdateField(ref _FootnoteSeparators, value, nameof(FootnoteSeparators)); }
- private FootnoteSeparators? _FootnoteSeparators;
+  /// <summary>
+  /// Special references for footnotes, such as separators and continuation notices.
+  /// </summary>
+  [OpenXmlElementCollection(typeof(DXW.FootnoteSpecialReference))]
+  public FootnoteSeparators FootnoteSeparators
+  {
+    get => _FootnoteSeparators ??= new FootnoteSeparators(this);
+    set => UpdateField(ref _FootnoteSeparators, value, nameof(FootnoteSeparators));
+  }
+  private FootnoteSeparators? _FootnoteSeparators;
 }

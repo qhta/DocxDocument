@@ -38,6 +38,11 @@ public partial class EndnoteDocumentWideProperties : ModelElement<DXW.EndnoteDoc
  /// <summary>
  /// Special references for endnotes, such as separators and continuation notices.
  /// </summary>
- public EndnoteSeparators? EndnoteSeparators { get => _EndnoteSeparators; set => UpdateField(ref _EndnoteSeparators, value, nameof(EndnoteSeparators)); }
- private EndnoteSeparators? _EndnoteSeparators;
+ [OpenXmlElementCollection(typeof(DXW.EndnoteSpecialReference))]
+ public EndnoteSeparators EndnoteSeparators
+ {
+   get => _EndnoteSeparators ??= new EndnoteSeparators(this);
+    set => UpdateField(ref _EndnoteSeparators, value, nameof(EndnoteSeparators));
+ }
+  private EndnoteSeparators? _EndnoteSeparators;
 }

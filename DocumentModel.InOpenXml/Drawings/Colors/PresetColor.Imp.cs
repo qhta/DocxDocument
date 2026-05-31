@@ -127,13 +127,4 @@ public partial class PresetColor : IColor
   }
  }
 
- /// <summary>
- /// Tint modification of the color, represented as a percentage value between 0 and 1.
- /// </summary>
- double? IColor.Tint { get => this.Tint; set => this.Tint = value; }
-
- /// <summary>
- /// Shade modification of the color, represented as a percentage value between 0 and 1.
- /// </summary>
- double? IColor.Shade { get => this.Shade; set => this.Shade = value; }
 }

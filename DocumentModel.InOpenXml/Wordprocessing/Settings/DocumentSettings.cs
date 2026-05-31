@@ -307,7 +307,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:clrSchemeMapping
   /// </remarks>
   [MultiCategory("Conformance")]
-  [XmlIgnore, OpenXmlElement(typeof(DXW.ColorSchemeMapping))]
+  [OpenXmlElement(typeof(DXW.ColorSchemeMapping))]
   public DMWD.ColorSchemeMapping? ColorSchemeMapping
   {
     get => _ColorSchemeMapping ??= GetElement<DMWD.ColorSchemeMapping?, DXW.ColorSchemeMapping>(_openXmlElement);
@@ -487,7 +487,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Represents the following element tag in the schema: w:documentProtection
   /// </remarks>
   [MultiCategory("Protection")]
-  [XmlIgnore, OpenXmlElement(typeof(DXW.DocumentProtection))]
+  [OpenXmlElement(typeof(DXW.DocumentProtection))]
   public DocumentProtection? DocumentProtection
   {
     get => _DocumentProtection ??= GetElement<DocumentProtection?, DXW.DocumentProtection>(_openXmlElement);
@@ -755,7 +755,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies the endnote properties for the document.
   /// </summary>
   [MultiCategory("Footnotes and endnotes")]
-  [XmlIgnore, OpenXmlElement(typeof(DXW.EndnoteDocumentWideProperties))]
+  [OpenXmlElement(typeof(DXW.EndnoteDocumentWideProperties))]
   public EndnoteDocumentWideProperties? EndnoteDocumentWideProperties
   {
     get => _EndnoteDocumentWideProperties ??=
@@ -783,7 +783,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies the footnote properties for the document.
   /// </summary>
   [MultiCategory("Footnotes and endnotes")]
-  [XmlIgnore, OpenXmlElement(typeof(DXW.FootnoteDocumentWideProperties))]
+  [ OpenXmlElement(typeof(DXW.FootnoteDocumentWideProperties))]
   public FootnoteDocumentWideProperties? FootnoteDocumentWideProperties
   {
     get => _FootnoteDocumentWideProperties ??=
@@ -841,7 +841,7 @@ public sealed partial class DocumentSettings: ModelElement<DXW.Settings>
   /// Specifies the default parameters for VML objects inserted in the header and footer.
   /// </summary>
   [MultiCategory("VML")]
-  [XmlIgnore, OpenXmlElement(typeof(DXW.HeaderShapeDefaults))]
+  [OpenXmlElement(typeof(DXW.HeaderShapeDefaults))]
   public DMWV.HeaderShapeDefaults? HeaderShapeDefaults
   {
     get => _HeaderShapeDefaults ??= GetElement<DMWV.HeaderShapeDefaults?, DXW.HeaderShapeDefaults>(_openXmlElement);

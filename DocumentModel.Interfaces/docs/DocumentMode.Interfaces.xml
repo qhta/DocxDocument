@@ -29258,32 +29258,6 @@
             The actual interpretation of the name depends on the context in which it is used and may be mapped to a specific RGB value or theme color.
             </summary>
         </member>
-        <member name="P:DocumentModel.IColor.Tint">
-            <summary>
-            Gets or sets the theme tint represented by this property.
-            </summary>
-            <remarks>
-            Given an RGB color defined as three hex values in RRGGBB format, the shade is applied as follows:
-            <list type="bullet">
-            <item>Convert the color to the HSL color format (values from 0 to 1)</item>
-            <item>Modify the luminance factor as follows:  L′ = Tint_percentage + (1 − Tint_percentage)</item>
-            <item>Convert the resultant HSL color to RGB</item>
-            </list> 
-            </remarks> 
-        </member>
-        <member name="P:DocumentModel.IColor.Shade">
-            <summary>
-            Gets or sets the theme shade represented by this property.
-            </summary>
-            <remarks>
-            Given an RGB color defined as three hex values in RRGGBB format, the shade is applied as follows:
-            <list type="bullet">
-            <item>Convert the color to the HSL color format (values from 0 to 1)</item>
-            <item>Modify the luminance factor as follows:  L′ =L* Shade_percentage </item>
-            <item>Convert the resultant HSL color to RGB</item>
-            </list>
-            </remarks>  
-        </member>
         <member name="T:DocumentModel.Properties.ICustomProperties">
             <summary>
             A collection of CustomProperty objects that represents the properties related to a smart tag.

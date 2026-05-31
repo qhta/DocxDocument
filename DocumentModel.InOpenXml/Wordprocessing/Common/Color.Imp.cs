@@ -101,29 +101,4 @@ public partial class Color : IColor
     }
   }
 
-  /// <summary>
-  /// Gets or sets the theme tint represented by this property.
-  /// </summary>
-  /// <remarks>
-  /// Given an RGB color defined as three hex values in RRGGBB format, the shade is applied as follows:
-  /// <list type="bullet">
-  /// <item>Convert the color to the HSL color format (values from 0 to 1)</item>
-  /// <item>Modify the luminance factor as follows:  Lâ€˛ = Tint_percentage + (1 â’ Tint_percentage)</item>
-  /// <item>Convert the resultant HSL color to RGB</item>
-  /// </list> 
-  /// </remarks> 
-  double? IColor.Tint { get => this.ThemeTint; set => ThemeTint = value; }
-
-  /// <summary>
-  /// Gets or sets the theme shade represented by this property.
-  /// </summary>
-  /// <remarks>
-  /// Given an RGB color defined as three hex values in RRGGBB format, the shade is applied as follows:
-  /// <list type="bullet">
-  /// <item>Convert the color to the HSL color format (values from 0 to 1)</item>
-  /// <item>Modify the luminance factor as follows:  Lâ€˛ =L* Shade_percentage </item>
-  /// <item>Convert the resultant HSL color to RGB</item>
-  /// </list>
-  /// </remarks>  
-  double? IColor.Shade { get => this.ThemeShade; set => ThemeShade = value; }
 }

@@ -739,12 +739,6 @@
             Provides comprehensive serialization tests for <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/>.
             </summary>
         </member>
-        <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.CreateSampleData">
-            <summary>
-            Creates a sample <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance for testing.
-            </summary>
-            <returns>A populated <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> object.</returns>
-        </member>
         <member name="M:DocumentModel.InOpenXml.Test.DocumentSettingsTest.UpdateDataInDocument(DocumentModel.Wordprocessing.Document,DocumentModel.Wordprocessing.DocumentSettings)">
             <summary>
             Updates the provided <see cref="T:DocumentModel.Wordprocessing.DocumentSettings"/> instance with new test data and adds a compatibility setting.
