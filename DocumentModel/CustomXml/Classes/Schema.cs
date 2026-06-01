@@ -1,4 +1,4 @@
-namespace DocumentModel.CustomXml;
+﻿namespace DocumentModel.CustomXml;
 
 /// <summary>
 ///   Custom XML Schema Reference.
@@ -21,7 +21,7 @@ public class Schema: ModelElement
   public string? SchemaLocation { get; set; }
 
   /// <summary>
-  /// Modified for tests.
+  /// Modified Ifor tests.
   /// </summary>
   /// <returns></returns>
   public override string ToString()

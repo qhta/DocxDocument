@@ -1,18 +1,18 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Drop-Down List Form Field Properties.
+///   Drop-Down IList Form IField Properties.
 /// </summary>
 public class DropDownListFormField: ModelElement
 {
   /// <summary>
-  ///   Drop-Down List Selection.
+  ///   Drop-Down IList ISelection.
   /// </summary>
   public Int32? DropDownListSelection { get; set; }
 
   /// <summary>
-  ///   Default Drop-Down List Item Index.
+  ///   Default Drop-Down IList Item IIndex.
   /// </summary>
   public Int32? DefaultDropDownListItemIndex { get; set; }
 

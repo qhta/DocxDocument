@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 ///   Path Gradient.
@@ -11,7 +11,7 @@ public class PathGradientFill: GradientFill
   public PathShadeKind? Path { get; set; }
 
   /// <summary>
-  ///   Fill To Rectangle.
+  ///   Fill To IRectangle.
   /// </summary>
   public RelativeRectangleType? FillToRectangle { get; set; }
 }

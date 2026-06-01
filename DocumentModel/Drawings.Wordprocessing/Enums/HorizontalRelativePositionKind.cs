@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Horizontal Relative Positioning
@@ -8,19 +8,19 @@ namespace DocumentModel.Drawings.Wordprocessing;
 public enum HorizontalRelativePositionKind
 {
   /// <summary>
-  ///   Page Margin.
+  ///   IPage Margin.
   /// </summary>
   Margin,
 
   /// <summary>
-  ///   Page Edge.
+  ///   IPage Edge.
   /// </summary>
-  Page,
+  IPage,
 
   /// <summary>
-  ///   Column.
+  ///   IColumn.
   /// </summary>
-  Column,
+  IColumn,
 
   /// <summary>
   ///   Character.

@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the LabelAlignment enumeration.
-/// Used in types such as CategoryAxis, CategoryAxisConverter.
+/// Used Iin types such as CategoryAxis, CategoryAxisConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.LabelAlignmentValues))]
@@ -24,3 +24,4 @@ public enum LabelAlignment
   [OpenXmlEnumValue("Right")]
   Right
 }
+

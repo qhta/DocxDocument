@@ -1,5 +1,5 @@
-namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the ContextMenu Class.
@@ -7,7 +7,7 @@ namespace DocumentModel;
 public class ContextMenu: ModelElement
 {
   /// <summary>
-  ///   idMso, this property is only available in Office 2010 and later.
+  ///   idMso, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? IdMso { get; set; }
 
@@ -15,7 +15,7 @@ public class ContextMenu: ModelElement
 
   public ButtonRegular? ButtonRegular { get; set; }
 
-  public CheckBox? CheckBox { get; set; }
+  public ICheckBox? ICheckBox { get; set; }
 
   public GalleryRegular? GalleryRegular { get; set; }
 

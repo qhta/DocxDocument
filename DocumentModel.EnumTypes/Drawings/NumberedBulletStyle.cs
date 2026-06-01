@@ -1,7 +1,7 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msonumberedbulletstyle?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msonumberedbulletstyle?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum NumberedBulletStyle
 {
@@ -174,3 +174,4 @@ public enum NumberedBulletStyle
   /// </summary>
   HindiAlpha1Period = 40
 }
+

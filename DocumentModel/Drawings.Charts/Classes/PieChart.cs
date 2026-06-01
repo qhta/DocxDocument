@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Pie Charts.
@@ -13,7 +13,7 @@ public class PieChart: ModelElement
 
   public Collection<PieChartSeries>? PieChartSeries { get; set; }
 
-  public DataLabels? DataLabels { get; set; }
+  public IDataLabels? IDataLabels { get; set; }
 
   public UInt16? FirstSliceAngle { get; set; }
 

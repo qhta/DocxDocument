@@ -1,8 +1,8 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Document Default Paragraph and Run Properties.
+///   IDocument Default IParagraph and Run Properties.
 /// </summary>
 public class DocDefaults: ModelElement
 {
@@ -12,7 +12,7 @@ public class DocDefaults: ModelElement
   public DefaultRunProperties? RunPropertiesDefault { get; set; }
 
   /// <summary>
-  ///   Default Paragraph Properties.
+  ///   Default IParagraph Properties.
   /// </summary>
   public DefaultParagraphProperties? ParagraphPropertiesDefault { get; set; }
 }

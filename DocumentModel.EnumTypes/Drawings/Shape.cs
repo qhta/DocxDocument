@@ -1,12 +1,12 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the Shape enumeration.
-/// Used in types such as AdjustHandleList, AdjustHandlePolar, AdjustValueList.
+/// Defines the IShape enumeration.
+/// Used Iin types such as AdjustHandleList, AdjustHandlePolar, AdjustValueList.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.ShapeValues))]
-public enum Shape
+public enum IShape
 {
   /// <summary>
   ///   Cone.
@@ -14,7 +14,7 @@ public enum Shape
   [OpenXmlEnumValue("Cone")]
   Cone,
   /// <summary>
-  ///   Cone to Max.
+  ///   Cone Ito Max.
   /// </summary>
   [OpenXmlEnumValue("ConeToMax")]
   ConeToMax,
@@ -34,8 +34,9 @@ public enum Shape
   [OpenXmlEnumValue("Pyramid")]
   Pyramid,
   /// <summary>
-  ///   Pyramid to Maximum.
+  ///   Pyramid Ito Maximum.
   /// </summary>
   [OpenXmlEnumValue("PyramidToMaximum")]
   PyramidToMaximum
 }
+

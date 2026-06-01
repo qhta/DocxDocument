@@ -1,6 +1,6 @@
-// Global using directives
+﻿// IGlobal using directives
 
-global using System.Collections;
-global using System.Xml;
+global using ISystem.Collections;
+global using ISystem.Xml;
 global using DocumentFormat.OpenXml.VariantTypes;
 global using Qhta.Collections;

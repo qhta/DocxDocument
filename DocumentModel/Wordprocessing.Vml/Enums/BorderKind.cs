@@ -1,39 +1,39 @@
-namespace DocumentModel.Wordprocessing.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Border Type
+///   IBorder Type
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum BorderKind
 {
   /// <summary>
-  ///   No Border.
+  ///   No IBorder.
   /// </summary>
   None,
 
   /// <summary>
-  ///   Single Line Border.
+  ///   Single ILine IBorder.
   /// </summary>
   Single,
 
   /// <summary>
-  ///   Thick Line Border.
+  ///   Thick ILine IBorder.
   /// </summary>
   Thick,
 
   /// <summary>
-  ///   Double Line Border.
+  ///   Double ILine IBorder.
   /// </summary>
   Double,
 
   /// <summary>
-  ///   Hairline Border.
+  ///   Hairline IBorder.
   /// </summary>
   Hairline,
 
   /// <summary>
-  ///   Dotted Border.
+  ///   Dotted IBorder.
   /// </summary>
   Dot,
 
@@ -43,22 +43,22 @@ public enum BorderKind
   Dash,
 
   /// <summary>
-  ///   Dot Dash Border.
+  ///   Dot Dash IBorder.
   /// </summary>
   DotDash,
 
   /// <summary>
-  ///   Dash Dot Dot Border.
+  ///   Dash Dot Dot IBorder.
   /// </summary>
   DashDotDot,
 
   /// <summary>
-  ///   Triple Line Border.
+  ///   Triple ILine IBorder.
   /// </summary>
   Triple,
 
   /// <summary>
-  ///   Thin Thick Small Gap Border.
+  ///   Thin Thick Small Gap IBorder.
   /// </summary>
   ThinThickSmall,
 
@@ -68,77 +68,77 @@ public enum BorderKind
   ThickThinSmall,
 
   /// <summary>
-  ///   Small thin-thick-thin Lines Border.
+  ///   Small thin-thick-thin ILines IBorder.
   /// </summary>
   ThickBetweenThinSmall,
 
   /// <summary>
-  ///   Thin Thick Line Border.
+  ///   Thin Thick ILine IBorder.
   /// </summary>
   ThinThick,
 
   /// <summary>
-  ///   Thick Thin Line Border.
+  ///   Thick Thin ILine IBorder.
   /// </summary>
   ThickThin,
 
   /// <summary>
-  ///   Thin-thick-thin Border.
+  ///   Thin-thick-thin IBorder.
   /// </summary>
   ThickBetweenThin,
 
   /// <summary>
-  ///   Thin Thick Large Gap Border.
+  ///   Thin Thick Large Gap IBorder.
   /// </summary>
   ThinThickLarge,
 
   /// <summary>
-  ///   Thick Thin Large Gap Border.
+  ///   Thick Thin Large Gap IBorder.
   /// </summary>
   ThickThinLarge,
 
   /// <summary>
-  ///   Large thin-thick-thin Border.
+  ///   Large thin-thick-thin IBorder.
   /// </summary>
   ThickBetweenThinLarge,
 
   /// <summary>
-  ///   Wavy Border.
+  ///   Wavy IBorder.
   /// </summary>
   Wave,
 
   /// <summary>
-  ///   Double Wavy Lines Border.
+  ///   Double Wavy ILines IBorder.
   /// </summary>
   DoubleWave,
 
   /// <summary>
-  ///   Small Dash Border.
+  ///   Small Dash IBorder.
   /// </summary>
   DashedSmall,
 
   /// <summary>
-  ///   Stroked Dash Dot Border.
+  ///   Stroked Dash Dot IBorder.
   /// </summary>
   DashDotStroked,
 
   /// <summary>
-  ///   3D Embossed Border.
+  ///   3D Embossed IBorder.
   /// </summary>
   ThreeDEmboss,
 
   /// <summary>
-  ///   3D Engraved Border.
+  ///   3D Engraved IBorder.
   /// </summary>
   ThreeDEngrave,
 
   /// <summary>
-  ///   Outset Border.
+  ///   Outset IBorder.
   /// </summary>
   HTMLOutset,
 
   /// <summary>
-  ///   Inset Border.
+  ///   Inset IBorder.
   /// </summary>
   HTMLInset
 }

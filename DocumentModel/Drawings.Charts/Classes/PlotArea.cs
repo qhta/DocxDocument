@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Plot data and formatting.
 /// </summary>
-public class PlotArea: ModelElement
+public class IPlotArea: ModelElement
 {
   /// <summary>
   ///   Layout.
@@ -51,7 +51,7 @@ public class PlotArea: ModelElement
 
   public SeriesAxis? SeriesAxis { get; set; }
 
-  public DataTable? DataTable { get; set; }
+  public IDataTable? IDataTable { get; set; }
 
   public ShapeProperties? ShapeProperties { get; set; }
 

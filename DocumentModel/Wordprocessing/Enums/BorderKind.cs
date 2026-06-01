@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the BorderValues enumeration.
@@ -8,887 +8,887 @@ namespace DocumentModel.Wordprocessing;
 public enum BorderKind
 {
   /// <summary>
-  ///   No Border.
+  ///   No IBorder.
   /// </summary>
   Nil,
 
   /// <summary>
-  ///   No Border.
+  ///   No IBorder.
   /// </summary>
   None,
 
   /// <summary>
-  ///   Single Line Border.
+  ///   Single ILine IBorder.
   /// </summary>
   Single,
 
   /// <summary>
-  ///   Single Line Border.
+  ///   Single ILine IBorder.
   /// </summary>
   Thick,
 
   /// <summary>
-  ///   Double Line Border.
+  ///   Double ILine IBorder.
   /// </summary>
   Double,
 
   /// <summary>
-  ///   Dotted Line Border.
+  ///   Dotted ILine IBorder.
   /// </summary>
   Dotted,
 
   /// <summary>
-  ///   Dashed Line Border.
+  ///   Dashed ILine IBorder.
   /// </summary>
   Dashed,
 
   /// <summary>
-  ///   Dot Dash Line Border.
+  ///   Dot Dash ILine IBorder.
   /// </summary>
   DotDash,
 
   /// <summary>
-  ///   Dot Dot Dash Line Border.
+  ///   Dot Dot Dash ILine IBorder.
   /// </summary>
   DotDotDash,
 
   /// <summary>
-  ///   Triple Line Border.
+  ///   Triple ILine IBorder.
   /// </summary>
   Triple,
 
   /// <summary>
-  ///   Thin, Thick Line Border.
+  ///   Thin, Thick ILine IBorder.
   /// </summary>
   ThinThickSmallGap,
 
   /// <summary>
-  ///   Thick, Thin Line Border.
+  ///   Thick, Thin ILine IBorder.
   /// </summary>
   ThickThinSmallGap,
 
   /// <summary>
-  ///   Thin, Thick, Thin Line Border.
+  ///   Thin, Thick, Thin ILine IBorder.
   /// </summary>
   ThinThickThinSmallGap,
 
   /// <summary>
-  ///   Thin, Thick Line Border.
+  ///   Thin, Thick ILine IBorder.
   /// </summary>
   ThinThickMediumGap,
 
   /// <summary>
-  ///   Thick, Thin Line Border.
+  ///   Thick, Thin ILine IBorder.
   /// </summary>
   ThickThinMediumGap,
 
   /// <summary>
-  ///   Thin, Thick, Thin Line Border.
+  ///   Thin, Thick, Thin ILine IBorder.
   /// </summary>
   ThinThickThinMediumGap,
 
   /// <summary>
-  ///   Thin, Thick Line Border.
+  ///   Thin, Thick ILine IBorder.
   /// </summary>
   ThinThickLargeGap,
 
   /// <summary>
-  ///   Thick, Thin Line Border.
+  ///   Thick, Thin ILine IBorder.
   /// </summary>
   ThickThinLargeGap,
 
   /// <summary>
-  ///   Thin, Thick, Thin Line Border.
+  ///   Thin, Thick, Thin ILine IBorder.
   /// </summary>
   ThinThickThinLargeGap,
 
   /// <summary>
-  ///   Wavy Line Border.
+  ///   Wavy ILine IBorder.
   /// </summary>
   Wave,
 
   /// <summary>
-  ///   Double Wave Line Border.
+  ///   Double Wave ILine IBorder.
   /// </summary>
   DoubleWave,
 
   /// <summary>
-  ///   Dashed Line Border.
+  ///   Dashed ILine IBorder.
   /// </summary>
   DashSmallGap,
 
   /// <summary>
-  ///   Dash Dot Strokes Line Border.
+  ///   Dash Dot Strokes ILine IBorder.
   /// </summary>
   DashDotStroked,
 
   /// <summary>
-  ///   3D Embossed Line Border.
+  ///   3D Embossed ILine IBorder.
   /// </summary>
   ThreeDEmboss,
 
   /// <summary>
-  ///   3D Engraved Line Border.
+  ///   3D Engraved ILine IBorder.
   /// </summary>
   ThreeDEngrave,
 
   /// <summary>
-  ///   Outset Line Border.
+  ///   Outset ILine IBorder.
   /// </summary>
   Outset,
 
   /// <summary>
-  ///   Inset Line Border.
+  ///   Inset ILine IBorder.
   /// </summary>
   Inset,
 
   /// <summary>
-  ///   Apples Art Border.
+  ///   Apples Art IBorder.
   /// </summary>
   Apples,
 
   /// <summary>
-  ///   Arched Scallops Art Border.
+  ///   Arched Scallops Art IBorder.
   /// </summary>
   ArchedScallops,
 
   /// <summary>
-  ///   Baby Pacifier Art Border.
+  ///   Baby Pacifier Art IBorder.
   /// </summary>
   BabyPacifier,
 
   /// <summary>
-  ///   Baby Rattle Art Border.
+  ///   Baby Rattle Art IBorder.
   /// </summary>
   BabyRattle,
 
   /// <summary>
-  ///   Three Color Balloons Art Border.
+  ///   Three Color Balloons Art IBorder.
   /// </summary>
   Balloons3Colors,
 
   /// <summary>
-  ///   Hot Air Balloons Art Border.
+  ///   Hot Air Balloons Art IBorder.
   /// </summary>
   BalloonsHotAir,
 
   /// <summary>
-  ///   Black Dash Art Border.
+  ///   Black Dash Art IBorder.
   /// </summary>
   BasicBlackDashes,
 
   /// <summary>
-  ///   Black Dot Art Border.
+  ///   Black Dot Art IBorder.
   /// </summary>
   BasicBlackDots,
 
   /// <summary>
-  ///   Black Square Art Border.
+  ///   Black Square Art IBorder.
   /// </summary>
   BasicBlackSquares,
 
   /// <summary>
-  ///   Thin Line Art Border.
+  ///   Thin ILine Art IBorder.
   /// </summary>
   BasicThinLines,
 
   /// <summary>
-  ///   White Dash Art Border.
+  ///   White Dash Art IBorder.
   /// </summary>
   BasicWhiteDashes,
 
   /// <summary>
-  ///   White Dot Art Border.
+  ///   White Dot Art IBorder.
   /// </summary>
   BasicWhiteDots,
 
   /// <summary>
-  ///   White Square Art Border.
+  ///   White Square Art IBorder.
   /// </summary>
   BasicWhiteSquares,
 
   /// <summary>
-  ///   Wide Inline Art Border.
+  ///   Wide Inline Art IBorder.
   /// </summary>
   BasicWideInline,
 
   /// <summary>
-  ///   Wide Midline Art Border.
+  ///   Wide Midline Art IBorder.
   /// </summary>
   BasicWideMidline,
 
   /// <summary>
-  ///   Wide Outline Art Border.
+  ///   Wide Outline Art IBorder.
   /// </summary>
   BasicWideOutline,
 
   /// <summary>
-  ///   Bats Art Border.
+  ///   Bats Art IBorder.
   /// </summary>
   Bats,
 
   /// <summary>
-  ///   Birds Art Border.
+  ///   Birds Art IBorder.
   /// </summary>
   Birds,
 
   /// <summary>
-  ///   Birds Flying Art Border.
+  ///   Birds Flying Art IBorder.
   /// </summary>
   BirdsFlight,
 
   /// <summary>
-  ///   Cabin Art Border.
+  ///   Cabin Art IBorder.
   /// </summary>
   Cabins,
 
   /// <summary>
-  ///   Cake Art Border.
+  ///   Cake Art IBorder.
   /// </summary>
   CakeSlice,
 
   /// <summary>
-  ///   Candy Corn Art Border.
+  ///   Candy Corn Art IBorder.
   /// </summary>
   CandyCorn,
 
   /// <summary>
-  ///   Knot Work Art Border.
+  ///   Knot Work Art IBorder.
   /// </summary>
   CelticKnotwork,
 
   /// <summary>
-  ///   Certificate Banner Art Border.
+  ///   Certificate Banner Art IBorder.
   /// </summary>
   CertificateBanner,
 
   /// <summary>
-  ///   Chain Link Art Border.
+  ///   Chain Link Art IBorder.
   /// </summary>
   ChainLink,
 
   /// <summary>
-  ///   Champagne Bottle Art Border.
+  ///   Champagne Bottle Art IBorder.
   /// </summary>
   ChampagneBottle,
 
   /// <summary>
-  ///   Black and White Bar Art Border.
+  ///   Black and White Bar Art IBorder.
   /// </summary>
   CheckedBarBlack,
 
   /// <summary>
-  ///   Color Checked Bar Art Border.
+  ///   Color Checked Bar Art IBorder.
   /// </summary>
   CheckedBarColor,
 
   /// <summary>
-  ///   Checkerboard Art Border.
+  ///   Checkerboard Art IBorder.
   /// </summary>
   Checkered,
 
   /// <summary>
-  ///   Christmas Tree Art Border.
+  ///   Christmas Tree Art IBorder.
   /// </summary>
   ChristmasTree,
 
   /// <summary>
-  ///   Circles And Lines Art Border.
+  ///   Circles And ILines Art IBorder.
   /// </summary>
   CirclesLines,
 
   /// <summary>
-  ///   Circles and Rectangles Art Border.
+  ///   Circles and IRectangles Art IBorder.
   /// </summary>
   CirclesRectangles,
 
   /// <summary>
-  ///   Wave Art Border.
+  ///   Wave Art IBorder.
   /// </summary>
   ClassicalWave,
 
   /// <summary>
-  ///   Clocks Art Border.
+  ///   Clocks Art IBorder.
   /// </summary>
   Clocks,
 
   /// <summary>
-  ///   Compass Art Border.
+  ///   Compass Art IBorder.
   /// </summary>
   Compass,
 
   /// <summary>
-  ///   Confetti Art Border.
+  ///   Confetti Art IBorder.
   /// </summary>
   Confetti,
 
   /// <summary>
-  ///   Confetti Art Border.
+  ///   Confetti Art IBorder.
   /// </summary>
   ConfettiGrays,
 
   /// <summary>
-  ///   Confetti Art Border.
+  ///   Confetti Art IBorder.
   /// </summary>
   ConfettiOutline,
 
   /// <summary>
-  ///   Confetti Streamers Art Border.
+  ///   Confetti Streamers Art IBorder.
   /// </summary>
   ConfettiStreamers,
 
   /// <summary>
-  ///   Confetti Art Border.
+  ///   Confetti Art IBorder.
   /// </summary>
   ConfettiWhite,
 
   /// <summary>
-  ///   Corner Triangle Art Border.
+  ///   Corner Triangle Art IBorder.
   /// </summary>
   CornerTriangles,
 
   /// <summary>
-  ///   Dashed Line Art Border.
+  ///   Dashed ILine Art IBorder.
   /// </summary>
   CouponCutoutDashes,
 
   /// <summary>
-  ///   Dotted Line Art Border.
+  ///   Dotted ILine Art IBorder.
   /// </summary>
   CouponCutoutDots,
 
   /// <summary>
-  ///   Maze Art Border.
+  ///   Maze Art IBorder.
   /// </summary>
   CrazyMaze,
 
   /// <summary>
-  ///   Butterfly Art Border.
+  ///   Butterfly Art IBorder.
   /// </summary>
   CreaturesButterfly,
 
   /// <summary>
-  ///   Fish Art Border.
+  ///   Fish Art IBorder.
   /// </summary>
   CreaturesFish,
 
   /// <summary>
-  ///   Insects Art Border.
+  ///   Insects Art IBorder.
   /// </summary>
   CreaturesInsects,
 
   /// <summary>
-  ///   Ladybug Art Border.
+  ///   Ladybug Art IBorder.
   /// </summary>
   CreaturesLadyBug,
 
   /// <summary>
-  ///   Cross-stitch Art Border.
+  ///   Cross-stitch Art IBorder.
   /// </summary>
   CrossStitch,
 
   /// <summary>
-  ///   Cupid Art Border.
+  ///   Cupid Art IBorder.
   /// </summary>
   Cup,
 
   /// <summary>
-  ///   Archway Art Border.
+  ///   Archway Art IBorder.
   /// </summary>
   DecoArch,
 
   /// <summary>
-  ///   Color Archway Art Border.
+  ///   Color Archway Art IBorder.
   /// </summary>
   DecoArchColor,
 
   /// <summary>
-  ///   Blocks Art Border.
+  ///   Blocks Art IBorder.
   /// </summary>
   DecoBlocks,
 
   /// <summary>
-  ///   Gray Diamond Art Border.
+  ///   Gray Diamond Art IBorder.
   /// </summary>
   DiamondsGray,
 
   /// <summary>
-  ///   Double D Art Border.
+  ///   Double D Art IBorder.
   /// </summary>
   DoubleD,
 
   /// <summary>
-  ///   Diamond Art Border.
+  ///   Diamond Art IBorder.
   /// </summary>
   DoubleDiamonds,
 
   /// <summary>
-  ///   Earth Art Border.
+  ///   Earth Art IBorder.
   /// </summary>
   Earth1,
 
   /// <summary>
-  ///   Earth Art Border.
+  ///   Earth Art IBorder.
   /// </summary>
   Earth2,
 
   /// <summary>
-  ///   Shadowed Square Art Border.
+  ///   Shadowed Square Art IBorder.
   /// </summary>
   EclipsingSquares1,
 
   /// <summary>
-  ///   Shadowed Square Art Border.
+  ///   Shadowed Square Art IBorder.
   /// </summary>
   EclipsingSquares2,
 
   /// <summary>
-  ///   Painted Egg Art Border.
+  ///   Painted Egg Art IBorder.
   /// </summary>
   EggsBlack,
 
   /// <summary>
-  ///   Fans Art Border.
+  ///   Fans Art IBorder.
   /// </summary>
   Fans,
 
   /// <summary>
-  ///   Film Reel Art Border.
+  ///   Film Reel Art IBorder.
   /// </summary>
   Film,
 
   /// <summary>
-  ///   Firecracker Art Border.
+  ///   Firecracker Art IBorder.
   /// </summary>
   Firecrackers,
 
   /// <summary>
-  ///   Flowers Art Border.
+  ///   Flowers Art IBorder.
   /// </summary>
   FlowersBlockPrint,
 
   /// <summary>
-  ///   Daisy Art Border.
+  ///   Daisy Art IBorder.
   /// </summary>
   FlowersDaisies,
 
   /// <summary>
-  ///   Flowers Art Border.
+  ///   Flowers Art IBorder.
   /// </summary>
   FlowersModern1,
 
   /// <summary>
-  ///   Flowers Art Border.
+  ///   Flowers Art IBorder.
   /// </summary>
   FlowersModern2,
 
   /// <summary>
-  ///   Pansy Art Border.
+  ///   Pansy Art IBorder.
   /// </summary>
   FlowersPansy,
 
   /// <summary>
-  ///   Red Rose Art Border.
+  ///   Red Rose Art IBorder.
   /// </summary>
   FlowersRedRose,
 
   /// <summary>
-  ///   Roses Art Border.
+  ///   Roses Art IBorder.
   /// </summary>
   FlowersRoses,
 
   /// <summary>
-  ///   Flowers in a Teacup Art Border.
+  ///   Flowers Iin a Teacup Art IBorder.
   /// </summary>
   FlowersTeacup,
 
   /// <summary>
-  ///   Small Flower Art Border.
+  ///   Small Flower Art IBorder.
   /// </summary>
   FlowersTiny,
 
   /// <summary>
-  ///   Gems Art Border.
+  ///   Gems Art IBorder.
   /// </summary>
   Gems,
 
   /// <summary>
-  ///   Gingerbread Man Art Border.
+  ///   Gingerbread Man Art IBorder.
   /// </summary>
   GingerbreadMan,
 
   /// <summary>
-  ///   Triangle Gradient Art Border.
+  ///   Triangle Gradient Art IBorder.
   /// </summary>
   Gradient,
 
   /// <summary>
-  ///   Handmade Art Border.
+  ///   Handmade Art IBorder.
   /// </summary>
   Handmade1,
 
   /// <summary>
-  ///   Handmade Art Border.
+  ///   Handmade Art IBorder.
   /// </summary>
   Handmade2,
 
   /// <summary>
-  ///   Heart-Shaped Balloon Art Border.
+  ///   Heart-Shaped Balloon Art IBorder.
   /// </summary>
   HeartBalloon,
 
   /// <summary>
-  ///   Gray Heart Art Border.
+  ///   Gray Heart Art IBorder.
   /// </summary>
   HeartGray,
 
   /// <summary>
-  ///   Hearts Art Border.
+  ///   Hearts Art IBorder.
   /// </summary>
   Hearts,
 
   /// <summary>
-  ///   Pattern Art Border.
+  ///   Pattern Art IBorder.
   /// </summary>
   HeebieJeebies,
 
   /// <summary>
-  ///   Holly Art Border.
+  ///   Holly Art IBorder.
   /// </summary>
   Holly,
 
   /// <summary>
-  ///   House Art Border.
+  ///   House Art IBorder.
   /// </summary>
   HouseFunky,
 
   /// <summary>
-  ///   Circular Art Border.
+  ///   Circular Art IBorder.
   /// </summary>
   Hypnotic,
 
   /// <summary>
-  ///   Ice Cream Cone Art Border.
+  ///   Ice Cream Cone Art IBorder.
   /// </summary>
   IceCreamCones,
 
   /// <summary>
-  ///   Light Bulb Art Border.
+  ///   Light Bulb Art IBorder.
   /// </summary>
   LightBulb,
 
   /// <summary>
-  ///   Lightning Art Border.
+  ///   Lightning Art IBorder.
   /// </summary>
   Lightning1,
 
   /// <summary>
-  ///   Lightning Art Border.
+  ///   Lightning Art IBorder.
   /// </summary>
   Lightning2,
 
   /// <summary>
-  ///   Map Pins Art Border.
+  ///   Map Pins Art IBorder.
   /// </summary>
   MapPins,
 
   /// <summary>
-  ///   Maple Leaf Art Border.
+  ///   Maple Leaf Art IBorder.
   /// </summary>
   MapleLeaf,
 
   /// <summary>
-  ///   Muffin Art Border.
+  ///   Muffin Art IBorder.
   /// </summary>
   MapleMuffins,
 
   /// <summary>
-  ///   Marquee Art Border.
+  ///   Marquee Art IBorder.
   /// </summary>
   Marquee,
 
   /// <summary>
-  ///   Marquee Art Border.
+  ///   Marquee Art IBorder.
   /// </summary>
   MarqueeToothed,
 
   /// <summary>
-  ///   Moon Art Border.
+  ///   Moon Art IBorder.
   /// </summary>
   Moons,
 
   /// <summary>
-  ///   Mosaic Art Border.
+  ///   Mosaic Art IBorder.
   /// </summary>
   Mosaic,
 
   /// <summary>
-  ///   Musical Note Art Border.
+  ///   Musical Note Art IBorder.
   /// </summary>
   MusicNotes,
 
   /// <summary>
-  ///   Patterned Art Border.
+  ///   Patterned Art IBorder.
   /// </summary>
   Northwest,
 
   /// <summary>
-  ///   Oval Art Border.
+  ///   Oval Art IBorder.
   /// </summary>
   Ovals,
 
   /// <summary>
-  ///   Package Art Border.
+  ///   Package Art IBorder.
   /// </summary>
   Packages,
 
   /// <summary>
-  ///   Black Palm Tree Art Border.
+  ///   Black Palm Tree Art IBorder.
   /// </summary>
   PalmsBlack,
 
   /// <summary>
-  ///   Color Palm Tree Art Border.
+  ///   Color Palm Tree Art IBorder.
   /// </summary>
   PalmsColor,
 
   /// <summary>
-  ///   Paper Clip Art Border.
+  ///   Paper Clip Art IBorder.
   /// </summary>
   PaperClips,
 
   /// <summary>
-  ///   Papyrus Art Border.
+  ///   Papyrus Art IBorder.
   /// </summary>
   Papyrus,
 
   /// <summary>
-  ///   Party Favor Art Border.
+  ///   Party Favor Art IBorder.
   /// </summary>
   PartyFavor,
 
   /// <summary>
-  ///   Party Glass Art Border.
+  ///   Party Glass Art IBorder.
   /// </summary>
   PartyGlass,
 
   /// <summary>
-  ///   Pencils Art Border.
+  ///   Pencils Art IBorder.
   /// </summary>
   Pencils,
 
   /// <summary>
-  ///   Character Art Border.
+  ///   Character Art IBorder.
   /// </summary>
   People,
 
   /// <summary>
-  ///   Waving Character Border.
+  ///   Waving Character IBorder.
   /// </summary>
   PeopleWaving,
 
   /// <summary>
-  ///   Character With Hat Art Border.
+  ///   Character With Hat Art IBorder.
   /// </summary>
   PeopleHats,
 
   /// <summary>
-  ///   Poinsettia Art Border.
+  ///   Poinsettia Art IBorder.
   /// </summary>
   Poinsettias,
 
   /// <summary>
-  ///   Postage Stamp Art Border.
+  ///   Postage Stamp Art IBorder.
   /// </summary>
   PostageStamp,
 
   /// <summary>
-  ///   Pumpkin Art Border.
+  ///   Pumpkin Art IBorder.
   /// </summary>
   Pumpkin1,
 
   /// <summary>
-  ///   Push Pin Art Border.
+  ///   Push Pin Art IBorder.
   /// </summary>
   PushPinNote2,
 
   /// <summary>
-  ///   Push Pin Art Border.
+  ///   Push Pin Art IBorder.
   /// </summary>
   PushPinNote1,
 
   /// <summary>
-  ///   Pyramid Art Border.
+  ///   Pyramid Art IBorder.
   /// </summary>
   Pyramids,
 
   /// <summary>
-  ///   Pyramid Art Border.
+  ///   Pyramid Art IBorder.
   /// </summary>
   PyramidsAbove,
 
   /// <summary>
-  ///   Quadrants Art Border.
+  ///   Quadrants Art IBorder.
   /// </summary>
   Quadrants,
 
   /// <summary>
-  ///   Rings Art Border.
+  ///   Rings Art IBorder.
   /// </summary>
   Rings,
 
   /// <summary>
-  ///   Safari Art Border.
+  ///   Safari Art IBorder.
   /// </summary>
   Safari,
 
   /// <summary>
-  ///   Saw tooth Art Border.
+  ///   Saw tooth Art IBorder.
   /// </summary>
   Sawtooth,
 
   /// <summary>
-  ///   Gray Saw tooth Art Border.
+  ///   Gray Saw tooth Art IBorder.
   /// </summary>
   SawtoothGray,
 
   /// <summary>
-  ///   Scared Cat Art Border.
+  ///   Scared Cat Art IBorder.
   /// </summary>
   ScaredCat,
 
   /// <summary>
-  ///   Umbrella Art Border.
+  ///   Umbrella Art IBorder.
   /// </summary>
   Seattle,
 
   /// <summary>
-  ///   Shadowed Squares Art Border.
+  ///   Shadowed Squares Art IBorder.
   /// </summary>
   ShadowedSquares,
 
   /// <summary>
-  ///   Shark Tooth Art Border.
+  ///   Shark Tooth Art IBorder.
   /// </summary>
   SharksTeeth,
 
   /// <summary>
-  ///   Bird Tracks Art Border.
+  ///   Bird Tracks Art IBorder.
   /// </summary>
   ShorebirdTracks,
 
   /// <summary>
-  ///   Rocket Art Border.
+  ///   Rocket Art IBorder.
   /// </summary>
   Skyrocket,
 
   /// <summary>
-  ///   Snowflake Art Border.
+  ///   Snowflake Art IBorder.
   /// </summary>
   SnowflakeFancy,
 
   /// <summary>
-  ///   Snowflake Art Border.
+  ///   Snowflake Art IBorder.
   /// </summary>
   Snowflakes,
 
   /// <summary>
-  ///   Sombrero Art Border.
+  ///   Sombrero Art IBorder.
   /// </summary>
   Sombrero,
 
   /// <summary>
-  ///   Southwest-themed Art Border.
+  ///   Southwest-themed Art IBorder.
   /// </summary>
   Southwest,
 
   /// <summary>
-  ///   Stars Art Border.
+  ///   Stars Art IBorder.
   /// </summary>
   Stars,
 
   /// <summary>
-  ///   Stars On Top Art Border.
+  ///   Stars On Top Art IBorder.
   /// </summary>
   StarsTop,
 
   /// <summary>
-  ///   3-D Stars Art Border.
+  ///   3-D Stars Art IBorder.
   /// </summary>
   Stars3d,
 
   /// <summary>
-  ///   Stars Art Border.
+  ///   Stars Art IBorder.
   /// </summary>
   StarsBlack,
 
   /// <summary>
-  ///   Stars With Shadows Art Border.
+  ///   Stars With Shadows Art IBorder.
   /// </summary>
   StarsShadowed,
 
   /// <summary>
-  ///   Sun Art Border.
+  ///   Sun Art IBorder.
   /// </summary>
   Sun,
 
   /// <summary>
-  ///   Whirligig Art Border.
+  ///   Whirligig Art IBorder.
   /// </summary>
   Swirligig,
 
   /// <summary>
-  ///   Torn Paper Art Border.
+  ///   Torn Paper Art IBorder.
   /// </summary>
   TornPaper,
 
   /// <summary>
-  ///   Black Torn Paper Art Border.
+  ///   Black Torn Paper Art IBorder.
   /// </summary>
   TornPaperBlack,
 
   /// <summary>
-  ///   Tree Art Border.
+  ///   Tree Art IBorder.
   /// </summary>
   Trees,
 
   /// <summary>
-  ///   Triangle Art Border.
+  ///   Triangle Art IBorder.
   /// </summary>
   TriangleParty,
 
   /// <summary>
-  ///   Triangles Art Border.
+  ///   Triangles Art IBorder.
   /// </summary>
   Triangles,
 
   /// <summary>
-  ///   Tribal Art Border One.
+  ///   Tribal Art IBorder One.
   /// </summary>
   Tribal1,
 
   /// <summary>
-  ///   Tribal Art Border Two.
+  ///   Tribal Art IBorder Two.
   /// </summary>
   Tribal2,
 
   /// <summary>
-  ///   Tribal Art Border Three.
+  ///   Tribal Art IBorder Three.
   /// </summary>
   Tribal3,
 
   /// <summary>
-  ///   Tribal Art Border Four.
+  ///   Tribal Art IBorder Four.
   /// </summary>
   Tribal4,
 
   /// <summary>
-  ///   Tribal Art Border Five.
+  ///   Tribal Art IBorder Five.
   /// </summary>
   Tribal5,
 
   /// <summary>
-  ///   Tribal Art Border Six.
+  ///   Tribal Art IBorder Six.
   /// </summary>
   Tribal6,
 
@@ -923,67 +923,67 @@ public enum BorderKind
   Shapes2,
 
   /// <summary>
-  ///   Twisted Lines Art Border.
+  ///   Twisted ILines Art IBorder.
   /// </summary>
   TwistedLines1,
 
   /// <summary>
-  ///   Twisted Lines Art Border.
+  ///   Twisted ILines Art IBorder.
   /// </summary>
   TwistedLines2,
 
   /// <summary>
-  ///   Vine Art Border.
+  ///   Vine Art IBorder.
   /// </summary>
   Vine,
 
   /// <summary>
-  ///   Wavy Line Art Border.
+  ///   Wavy ILine Art IBorder.
   /// </summary>
   Waveline,
 
   /// <summary>
-  ///   Weaving Angles Art Border.
+  ///   Weaving Angles Art IBorder.
   /// </summary>
   WeavingAngles,
 
   /// <summary>
-  ///   Weaving Braid Art Border.
+  ///   Weaving Braid Art IBorder.
   /// </summary>
   WeavingBraid,
 
   /// <summary>
-  ///   Weaving Ribbon Art Border.
+  ///   Weaving Ribbon Art IBorder.
   /// </summary>
   WeavingRibbon,
 
   /// <summary>
-  ///   Weaving Strips Art Border.
+  ///   Weaving Strips Art IBorder.
   /// </summary>
   WeavingStrips,
 
   /// <summary>
-  ///   White Flowers Art Border.
+  ///   White Flowers Art IBorder.
   /// </summary>
   WhiteFlowers,
 
   /// <summary>
-  ///   Woodwork Art Border.
+  ///   Woodwork Art IBorder.
   /// </summary>
   Woodwork,
 
   /// <summary>
-  ///   Crisscross Art Border.
+  ///   Crisscross Art IBorder.
   /// </summary>
   XIllusions,
 
   /// <summary>
-  ///   Triangle Art Border.
+  ///   Triangle Art IBorder.
   /// </summary>
   ZanyTriangles,
 
   /// <summary>
-  ///   Zigzag Art Border.
+  ///   Zigzag Art IBorder.
   /// </summary>
   ZigZag,
 

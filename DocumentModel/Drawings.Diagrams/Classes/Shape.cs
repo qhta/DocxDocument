@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Shape.
+///   IShape.
 /// </summary>
-public class Shape: ModelElement
+public class IShape: ModelElement
 {
   /// <summary>
   ///   Rotation
@@ -12,12 +12,12 @@ public class Shape: ModelElement
   public Double? Rotation { get; set; }
 
   /// <summary>
-  ///   Shape Type
+  ///   IShape Type
   /// </summary>
   public string? Type { get; set; }
 
   /// <summary>
-  ///   Relationship to Image Part
+  ///   Relationship Ito Image Part
   /// </summary>
   public string? Blip { get; set; }
 
@@ -42,7 +42,7 @@ public class Shape: ModelElement
   public bool? BlipPlaceholder { get; set; }
 
   /// <summary>
-  ///   Shape Adjust List.
+  ///   IShape Adjust IList.
   /// </summary>
   public AdjustList? AdjustList { get; set; }
 

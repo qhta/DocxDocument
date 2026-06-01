@@ -1,15 +1,15 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies the style of the arrowhead at the end of a line.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoarrowheadstyle?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoarrowheadstyle?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum ArrowheadStyle
 {
   /// <summary>
-  /// Return value only; indicates a combination of the other states.
+  /// Return value Ionly; indicates a combination of the other states.
   /// </summary>
   StyleMixed = -2,
   /// <summary>
@@ -37,3 +37,4 @@ public enum ArrowheadStyle
   /// </summary>
   Oval = 6
 }
+

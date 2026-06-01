@@ -1,4 +1,4 @@
-
+﻿
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
@@ -6,46 +6,46 @@ namespace DocumentModel.Drawings.Charts;
 /// of the chart item.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlchartitem?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlchartitem?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum XlChartItem
 {
   /// <summary>
   /// Data label.
   /// </summary>
-  DataLabel = 0,
+  IDataLabel = 0,
   /// <summary>
-  /// Chart area.
+  /// IChart area.
   /// </summary>
-  ChartArea = 2,
+  IChartArea = 2,
   /// <summary>
-  /// Series lines.
+  /// ISeries lines.
   /// </summary>
-  Series = 3,
+  ISeries = 3,
   /// <summary>
-  /// Chart title.
+  /// IChart title.
   /// </summary>
-  ChartTitle = 4,
+  IChartTitle = 4,
   /// <summary>
-  /// Walls.
+  /// IWalls.
   /// </summary>
-  Walls = 5,
+  IWalls = 5,
   /// <summary>
-  /// Corners.
+  /// ICorners.
   /// </summary>
-  Corners = 6,
+  ICorners = 6,
   /// <summary>
   /// Data table.
   /// </summary>
-  DataTable = 7,
+  IDataTable = 7,
   /// <summary>
   /// Trend line.
   /// </summary>
-  Trendline = 8,
+  ITrendline = 8,
   /// <summary>
   /// Y error bars.
   /// </summary>
-  ErrorBars = 9,
+  IErrorBars = 9,
   /// <summary>
   /// X error bars.
   /// </summary>
@@ -55,17 +55,17 @@ public enum XlChartItem
   /// </summary>
   YErrorBars = 11,
   /// <summary>
-  /// Legend entry.
+  /// ILegend entry.
   /// </summary>
-  LegendEntry = 12,
+  ILegendEntry = 12,
   /// <summary>
-  /// Legend key.
+  /// ILegend key.
   /// </summary>
-  LegendKey = 13,
+  ILegendKey = 13,
   /// <summary>
-  /// Shape.
+  /// IShape.
   /// </summary>
-  Shape = 14,
+  IShape = 14,
   /// <summary>
   /// Major gridlines.
   /// </summary>
@@ -75,45 +75,45 @@ public enum XlChartItem
   /// </summary>
   MinorGridlines = 16,
   /// <summary>
-  /// Axis title.
+  /// IAxis title.
   /// </summary>
-  AxisTitle = 17,
+  IAxisTitle = 17,
   /// <summary>
   /// Up bars.
   /// </summary>
-  UpBars = 18,
+  IUpBars = 18,
   /// <summary>
   /// Plot area.
   /// </summary>
-  PlotArea = 19,
+  IPlotArea = 19,
   /// <summary>
   /// Down bars.
   /// </summary>
-  DownBars = 20,
+  IDownBars = 20,
   /// <summary>
-  /// Axis.
+  /// IAxis.
   /// </summary>
-  Axis = 21,
+  IAxis = 21,
   /// <summary>
-  /// Series lines.
+  /// ISeries lines.
   /// </summary>
-  SeriesLines = 22,
+  ISeriesLines = 22,
   /// <summary>
-  /// Floor.
+  /// IFloor.
   /// </summary>
-  Floor = 23,
+  IFloor = 23,
   /// <summary>
-  /// Legend.
+  /// ILegend.
   /// </summary>
-  Legend = 24,
+  ILegend = 24,
   /// <summary>
   /// HiLo lines.
   /// </summary>
-  HiLoLines = 25,
+  IHiLoLines = 25,
   /// <summary>
   /// Drop lines.
   /// </summary>
-  DropLines = 26,
+  IDropLines = 26,
   /// <summary>
   /// Radar axis labels.
   /// </summary>
@@ -125,11 +125,11 @@ public enum XlChartItem
   /// <summary>
   /// Leader lines.
   /// </summary>
-  LeaderLines = 29,
+  ILeaderLines = 29,
   /// <summary>
   /// Display unit label.
   /// </summary>
-  DisplayUnitLabel = 30,
+  IDisplayUnitLabel = 30,
   /// <summary>
   /// PivotChart field button.
   /// </summary>
@@ -139,3 +139,4 @@ public enum XlChartItem
   /// </summary>
   PivotChartDropZone = 32
 }
+

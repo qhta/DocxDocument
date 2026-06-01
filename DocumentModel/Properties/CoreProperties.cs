@@ -1,4 +1,4 @@
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 using DocumentModel.Wordprocessing;
 
@@ -6,15 +6,15 @@ using PP = DocumentFormat.OpenXml.Packaging;
 using WP = DocumentFormat.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Collection of core properties, which represents document properties defined in Dublin Core standard
+///   Collection of core properties, which represents document properties defined Iin Dublin Core standard
 /// and Open Packaging Conventions
 /// </summary>
 public partial class CoreProperties : DocumentProperties
 {
   /// <summary>
-  /// Documents that owns the core properties.
+  /// IDocuments Ithat owns the core properties.
   /// </summary>
-  internal Document? Document { get; set; }
+  internal IDocument? IDocument { get; set; }
 #pragma warning disable OOXML0001
   internal PP.IPackageProperties? CoreFilePropertiesPart;
 #pragma warning restore OOXML0001
@@ -22,16 +22,16 @@ public partial class CoreProperties : DocumentProperties
   /// <summary>
   /// Initializing constructor.
   /// </summary>
-  /// <param name="document">Documents that owns the core properties.</param>
-  public CoreProperties(Document document)
+  /// <param name="document">IDocuments Ithat owns the core properties.</param>
+  public CoreProperties(IDocument document)
   {
-    Document = document;
-    CoreFilePropertiesPart = Document?.WordprocessingDocument?.PackageProperties;
+    IDocument = document;
+    CoreFilePropertiesPart = IDocument?.WordprocessingDocument?.PackageProperties;
     KnownProperties = new KnownProperties(typeof(CoreProperties));
   }
 
   /// <summary>
-  /// Known properties that can be set in CoreProperties
+  /// Known properties Ithat can be set Iin CoreProperties
   /// </summary>
   public KnownProperties KnownProperties { get; }
 
@@ -59,7 +59,7 @@ public partial class CoreProperties : DocumentProperties
   }
 
   /// <summary>
-  ///   An entity primarily responsible for making the content of the resource.
+  ///   An entity primarily responsible Ifor making the content of the resource.
   /// </summary>
   public string? Creator
   {
@@ -67,11 +67,11 @@ public partial class CoreProperties : DocumentProperties
   }
 
   /// <summary>
-  ///   A delimited set of keywords to support searching and indexing. 
-  ///   This is typically a list of terms that are not available elsewhere in the properties. 
-  ///   The definition of this element uniquely allows for: 
-  ///   Use of the xml:lang attribute to identify languages 
-  ///   A mixed content model, such that keywords can be flagged individually 
+  ///   A delimited set of keywords Ito support searching and indexing. 
+  ///   This is typically a list of terms Ithat are not available elsewhere Iin the properties. 
+  ///   The definition of this element uniquely allows Ifor: 
+  ///   Use of the xml:lang attribute Ito identify languages 
+  ///   A mixed content model, such Ithat keywords can be flagged individually 
   /// </summary>
   public string? Keywords
   {
@@ -80,7 +80,7 @@ public partial class CoreProperties : DocumentProperties
 
   /// <summary>
   ///   An explanation of the content of the resource. [Example: Values might include 
-  ///   an abstract, table of contents, reference to a graphical representation of content, 
+  ///   an abstract, table of contents, reference Ito a graphical representation of content, 
   ///   and a free-text account of the content. 
   /// </summary>
   public string? Description
@@ -90,7 +90,7 @@ public partial class CoreProperties : DocumentProperties
 
   /// <summary>
   ///   The user who performed the last modification. The identification is environment-specific. 
-  ///   A name, email address, or employee ID. It is recommended that this value be as concise as possible.
+  ///   A name, email address, or employee ID. It is recommended Ithat this value be as concise as possible.
   /// </summary>
   public string? LastModifiedBy
   {
@@ -101,17 +101,17 @@ public partial class CoreProperties : DocumentProperties
   ///   The revision number. This value might indicate the number of saves or revisions, 
   ///   provided the application updates it after each revision.
   /// </summary>
-  public int? Revision
+  public int? IRevision
   {
     get
     {
-      if (int.TryParse(CoreFilePropertiesPart.Revision, out var val)) return val;
+      if (int.TryParse(CoreFilePropertiesPart.IRevision, out var val)) return val;
       return null;
     }
     set 
     {
       if (value != null)
-        CoreFilePropertiesPart.Revision = value.ToString();
+        CoreFilePropertiesPart.IRevision = value.ToString();
     }
   }
 
@@ -141,17 +141,17 @@ public partial class CoreProperties : DocumentProperties
 
   /// <summary>
   ///   A categorization of the content of this package. 
-  ///   Example values for this property might include: 
+  ///   Example values Ifor this property might include: 
   ///   Resume, Letter, Financial Forecast, Proposal, Technical Presentation, and so on.
-  ///   This value might be used by an application's user interface to facilitate navigation of a large set of documents.
+  ///   This value might be used by an application's user interface Ito facilitate navigation of a large set of documents.
   /// </summary>
-  public string? Category
+  public string? ICategory
   {
-    get => CoreFilePropertiesPart.Category; set => CoreFilePropertiesPart.Category = value;
+    get => CoreFilePropertiesPart.ICategory; set => CoreFilePropertiesPart.ICategory = value;
   }
 
   /// <summary>
-  ///   An unambiguous reference to the resource within a given context.
+  ///   An unambiguous reference Ito the resource within a given context.
   /// </summary>
   public string? Identifier
   {
@@ -168,23 +168,23 @@ public partial class CoreProperties : DocumentProperties
 
   /// <summary>
   ///   The language of the intellectual content of the resource. 
-  ///   IETF RFC 3066 provides guidance on encoding to represent languages. 
+  ///   IETF RFC 3066 provides guidance on encoding Ito represent languages. 
   /// </summary>
-  public string? Language
+  public string? ILanguage
   {
-    get => CoreFilePropertiesPart.Language; set => CoreFilePropertiesPart.Language = value;
+    get => CoreFilePropertiesPart.ILanguage; set => CoreFilePropertiesPart.ILanguage = value;
   }
 
   /// <summary>
   ///   The version number. This value is set by the user or by the application.
   /// </summary>
-  public string? Version
+  public string? IVersion
   {
-    get => CoreFilePropertiesPart.Version; set => CoreFilePropertiesPart.Version = value;
+    get => CoreFilePropertiesPart.IVersion; set => CoreFilePropertiesPart.IVersion = value;
   }
 
   /// <summary>
-  ///   The status of the content. Values might include “Draft”, “Reviewed”, and “Final”.
+  ///   The status of the content. Values might include â€śDraftâ€ť, â€śReviewedâ€ť, and â€śFinalâ€ť.
   /// </summary>
   public string? ContentStatus
   {

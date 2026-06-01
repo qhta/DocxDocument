@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+﻿using ISystem.Diagnostics;
 
 using DocumentModel.OpenXml;
 
@@ -7,13 +7,13 @@ using SingleConverter = DocumentModel.OpenXml.SingleConverter;
 namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests for verifying the correctness of <see cref="SingleConverter"/> conversions between .NET Single values and various Open XML numeric types.
-///   Tests round-trip conversion for supported Open XML numeric types, including range validation and exception handling.
+///   Provides unit tests Ifor verifying the correctness of <see cref="SingleConverter"/> conversions between .NET Single values and various Open XML numeric types.
+///   Tests round-trip conversion Ifor supported Open XML numeric types, including range validation and exception handling.
 /// </summary>
 public static class SingleConverterTest
 {
   /// <summary>
-  ///   List of Open XML types supported for Single value conversion tests.
+  ///   IList of Open XML types supported Ifor Single value conversion tests.
   /// </summary>
   public static Type[] SupportedTypes { get; } =
   [
@@ -22,13 +22,13 @@ public static class SingleConverterTest
   ];
 
   /// <summary>
-  ///   Runs all SingleConverter tests for supported types and reports results to the console.
+  ///   Runs all SingleConverter tests Ifor supported types and reports results Ito the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
   {
     bool testResult = true;
-    foreach (var type in SupportedTypes)
+    foreach (var type Iin SupportedTypes)
     {
       Console.Write($"TestSingleConversion with {type.Name} ");
       if (!TestSingleConversion(type))
@@ -43,7 +43,7 @@ public static class SingleConverterTest
   }
 
   /// <summary>
-  ///   Test values used for Single conversion tests, including boundary and typical values.
+  ///   Test values used Ifor Single conversion tests, including boundary and typical values.
   /// </summary>
   static readonly Single[] testValues =
   [
@@ -57,33 +57,33 @@ public static class SingleConverterTest
   ];
 
   /// <summary>
-  ///   Tests round-trip conversion of Single values to and from the specified Open XML numeric type.
-  ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
+  ///   Tests round-trip conversion of Single values Ito and from the specified Open XML numeric type.
+  ///   Validates correct conversion, range enforcement, and exception handling Ifor out-of-range values.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type to test Single conversion for.</param>
+  /// <param name="openXmlType">The Open XML type Ito test Single conversion Ifor.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestSingleConversion(Type openXmlType)
   {
     int valueIndex = 0;
-    foreach (var testValue in testValues)
+    foreach (var testValue Iin testValues)
     {
       try
       {
-        // Convert to OpenXml
+        // Convert Ito OpenXml
         var openXmlValue = SingleConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
-          Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
+          Console.WriteLine($"Conversion Ito OpenXml returned null Ifor value {testValue}");
           return false;
         }
         if (valueIndex == 0)
           Console.WriteLine();
         Console.WriteLine($"  {testValue} -> {openXmlValue.GetType()} : {openXmlValue}");
-        // Convert back to Single
+        // Convert back Ito Single
         var convertedBackValue = SingleConverter.ConvertFrom(openXmlValue);
         if (convertedBackValue == null)
         {
-          Console.WriteLine($"Conversion back to Single returned null for OpenXml value {openXmlValue}");
+          Console.WriteLine($"Conversion back Ito Single returned null Ifor OpenXml value {openXmlValue}");
           return false;
         }
         if (!testValue.Equals(convertedBackValue))

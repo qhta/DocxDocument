@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Constraint.
@@ -22,7 +22,7 @@ public class Constraint: ModelElement
   public string? ForName { get; set; }
 
   /// <summary>
-  ///   Data Point Type
+  ///   Data IPoint Type
   /// </summary>
   public ElementKind? PointType { get; set; }
 
@@ -42,7 +42,7 @@ public class Constraint: ModelElement
   public string? ReferenceForName { get; set; }
 
   /// <summary>
-  ///   Reference Point Type
+  ///   Reference IPoint Type
   /// </summary>
   public ElementKind? ReferencePointType { get; set; }
 

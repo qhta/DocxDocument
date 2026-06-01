@@ -1,27 +1,27 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Set of Borders for HTML div.
+///   Set of IBorders Ifor HTML div.
 /// </summary>
 public class DivBorder: ModelElement
 {
   /// <summary>
-  ///   Top Border for HTML div.
+  ///   Top IBorder Ifor HTML div.
   /// </summary>
-  public Border? TopBorder { get; set; }
+  public IBorder? TopBorder { get; set; }
 
   /// <summary>
-  ///   Left Border for HTML div.
+  ///   Left IBorder Ifor HTML div.
   /// </summary>
-  public Border? LeftBorder { get; set; }
+  public IBorder? LeftBorder { get; set; }
 
   /// <summary>
-  ///   Bottom Border for HTML div.
+  ///   Bottom IBorder Ifor HTML div.
   /// </summary>
-  public Border? BottomBorder { get; set; }
+  public IBorder? BottomBorder { get; set; }
 
   /// <summary>
-  ///   Right Border for HTML div.
+  ///   Right IBorder Ifor HTML div.
   /// </summary>
-  public Border? RightBorder { get; set; }
+  public IBorder? RightBorder { get; set; }
 }

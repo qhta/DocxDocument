@@ -1,7 +1,7 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Extent for 2D drawings
+///   Extent Ifor 2D drawings
 /// </summary>
 [TypeConverter(typeof(ExtentTypeConverter))]
 public record Extent

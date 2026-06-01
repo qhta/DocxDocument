@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the LineNumberRestartValues enumeration.
@@ -8,17 +8,17 @@ namespace DocumentModel.Wordprocessing;
 public enum LineNumberRestartKind
 {
   /// <summary>
-  ///   Restart Line Numbering on Each Page.
+  ///   Restart ILine Numbering on Each IPage.
   /// </summary>
   NewPage,
 
   /// <summary>
-  ///   Restart Line Numbering for Each Section.
+  ///   Restart ILine Numbering Ifor Each ISection.
   /// </summary>
   NewSection,
 
   /// <summary>
-  ///   Continue Line Numbering From Previous Section.
+  ///   Continue ILine Numbering From Previous ISection.
   /// </summary>
   Continuous
 }

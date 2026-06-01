@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the ConnectionType Class.
@@ -12,7 +12,7 @@ public class ConnectionType: ModelElement
   public UInt32? Id { get; set; }
 
   /// <summary>
-  ///   Index
+  ///   IIndex
   /// </summary>
-  public UInt32? Index { get; set; }
+  public UInt32? IIndex { get; set; }
 }

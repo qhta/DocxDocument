@@ -1,7 +1,7 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Interface for elements that can be included in document <see cref="BidirectionalElement"/>.
+///   Interface Ifor elements Ithat can be included Iin document <see cref="BidirectionalElement"/>.
 /// </summary>
 public interface IBidirectionalContent: IModelElement
 {

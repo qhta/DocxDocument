@@ -1,7 +1,7 @@
-﻿namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.encryptionciphermode?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.encryptionciphermode?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum EncryptionCipherMode
 {
@@ -14,3 +14,4 @@ public enum EncryptionCipherMode
   /// </summary>
   CBC
 }
+

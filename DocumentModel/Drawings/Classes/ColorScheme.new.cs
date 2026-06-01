@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the ColorScheme Class.
@@ -115,17 +115,17 @@ public partial class ColorScheme
   }
 
   /// <summary>
-  ///   Hyperlink.
+  ///   IHyperlink.
   /// </summary>
   [XmlIgnore]
-  public ThemeColor? Hyperlink 
+  public ThemeColor? IHyperlink 
   {
-    get => ThemeColors["Hyperlink"];
-    set => ThemeColors["Hyperlink"] = value;
+    get => ThemeColors["IHyperlink"];
+    set => ThemeColors["IHyperlink"] = value;
   }
 
   /// <summary>
-  ///   Followed Hyperlink.
+  ///   Followed IHyperlink.
   /// </summary>
   [XmlIgnore]
   public ThemeColor? FollowedHyperlinkColor 

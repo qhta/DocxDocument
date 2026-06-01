@@ -1,7 +1,7 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   TableRowPropertiesChange class used in <see cref="TableRowProperties"/>.
+///   TableRowPropertiesChange class used Iin <see cref="TableRowProperties"/>.
 ///   Represents <see cref="PreviousTableRowProperties"/> annotated with Author, Date, and AnnotationId.
 /// </summary>
 public class TableRowPropertiesChange: ModelElement
@@ -22,7 +22,7 @@ public class TableRowPropertiesChange: ModelElement
   public string? AnnotationId { get; set; }
 
   /// <summary>
-  ///   Previous Table Row Properties.
+  ///   Previous ITable IRow Properties.
   /// </summary>
   public PreviousTableRowProperties? PreviousTableRowProperties { get; set; }
 }

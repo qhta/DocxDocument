@@ -1,7 +1,7 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Run Properties which are declared in a table style.
+///   Run Properties which are declared Iin a table style.
 /// </summary>
 public class TableStyleRunProperties: ExtBaseRunProperties
 {

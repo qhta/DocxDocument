@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
+﻿namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Defines the ResizeHandlesString enumeration.
-/// Used in types such as LayoutVariablePropertySetType, PresentationLayoutVariables, VariableList.
+/// Used Iin types such as LayoutVariablePropertySetType, PresentationLayoutVariables, VariableList.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.ResizeHandlesStringValues))]
@@ -19,3 +19,4 @@ public enum ResizeHandlesString
   [OpenXmlEnumValue("Relative")]
   Relative
 }
+

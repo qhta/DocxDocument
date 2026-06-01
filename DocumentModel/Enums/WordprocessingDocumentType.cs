@@ -1,5 +1,5 @@
-namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines WordprocessingDocumentType - type of WordprocessingDocument.
@@ -8,22 +8,22 @@ namespace DocumentModel;
 public enum WordprocessingDocumentType
 {
   /// <summary>
-  ///   Word Document (*.docx).
+  ///   Word IDocument (*.docx).
   /// </summary>
-  Document,
+  IDocument,
 
   /// <summary>
-  ///   Word Template (*.dotx).
+  ///   Word ITemplate (*.dotx).
   /// </summary>
-  Template,
+  ITemplate,
 
   /// <summary>
-  ///   Word Macro-Enabled Document (*.docm).
+  ///   Word Macro-Enabled IDocument (*.docm).
   /// </summary>
   MacroEnabledDocument,
 
   /// <summary>
-  ///   Word Macro-Enabled Template (*.dotm).
+  ///   Word Macro-Enabled ITemplate (*.dotm).
   /// </summary>
   MacroEnabledTemplate
 }

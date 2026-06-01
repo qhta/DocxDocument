@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the RegionLabelLayoutEnum enumeration.
-/// Used in types such as SeriesLayoutProperties, RegionLabelLayoutEnum, SeriesLayoutPropertiesConverter.
+/// Used Iin types such as SeriesLayoutProperties, RegionLabelLayoutEnum, SeriesLayoutPropertiesConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum RegionLabelLayoutEnum
@@ -23,3 +23,4 @@ public enum RegionLabelLayoutEnum
   [OpenXmlEnumValue("ShowAll")]
   ShowAll
 }
+

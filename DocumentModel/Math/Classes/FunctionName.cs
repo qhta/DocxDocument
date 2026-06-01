@@ -1,9 +1,9 @@
-using DocumentModel.Wordprocessing;
+﻿using DocumentModel.Wordprocessing;
 
 namespace DocumentModel.Math;
 
 /// <summary>
-///   This element specifies the name of the function in the Function-Apply object func. 
+///   This element specifies the name of the function Iin the Function-Apply object func. 
 ///   For example, function names are sin and cos.
 /// </summary>
 public class FunctionName: ElementCollection<IMathArgumentContent>

@@ -1,8 +1,8 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Shape Handle.
+///   IShape Handle.
 /// </summary>
 public class ShapeHandle: ModelElement
 {
@@ -37,17 +37,17 @@ public class ShapeHandle: ModelElement
   public bool? Switch { get; set; }
 
   /// <summary>
-  ///   Handle X Position Range
+  ///   Handle X Position IRange
   /// </summary>
   public string? XRange { get; set; }
 
   /// <summary>
-  ///   Handle Y Position Range
+  ///   Handle Y Position IRange
   /// </summary>
   public string? YRange { get; set; }
 
   /// <summary>
-  ///   Handle Polar Radius Range
+  ///   Handle Polar Radius IRange
   /// </summary>
   public string? RadiusRange { get; set; }
 }

@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the PageMargin Class.
@@ -17,7 +17,7 @@ public class PageMargin: ModelElement, ISectionPropertiesContent
   public Twips? Right { get; set; }
 
   /// <summary>
-  ///   Page Bottom Spacing
+  ///   IPage Bottom Spacing
   /// </summary>
   public Twips? Bottom { get; set; }
 
@@ -27,17 +27,17 @@ public class PageMargin: ModelElement, ISectionPropertiesContent
   public Twips? Left { get; set; }
 
   /// <summary>
-  ///   Spacing to Top of Header
+  ///   Spacing Ito Top of Header
   /// </summary>
   public Twips? Header { get; set; }
 
   /// <summary>
-  ///   Spacing to Bottom of Footer
+  ///   Spacing Ito Bottom of Footer
   /// </summary>
   public Twips? Footer { get; set; }
 
   /// <summary>
-  ///   Page Gutter Spacing
+  ///   IPage Gutter Spacing
   /// </summary>
   public Twips? Gutter { get; set; }
 }

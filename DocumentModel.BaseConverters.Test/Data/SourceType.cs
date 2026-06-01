@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Specifies the type of bibliographic source.
@@ -8,11 +8,11 @@ public enum SourceType
 {
   /// <summary>Book</summary>
   Book,
-  /// <summary>Section in a book</summary>
+  /// <summary>ISection Iin a book</summary>
   BookSection,
   /// <summary>Journal article</summary>
   JournalArticle,
-  /// <summary>Article in a periodical</summary>
+  /// <summary>Article Iin a periodical</summary>
   ArticleInAPeriodical,
   /// <summary>Conference proceedings</summary>
   ConferenceProceedings,

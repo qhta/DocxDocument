@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the SeriesLayout enumeration.
-/// Used in types such as Series, SeriesLayout, SeriesConverter.
+/// Used Iin types such as ISeries, SeriesLayout, SeriesConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum SeriesLayout
@@ -48,3 +48,4 @@ public enum SeriesLayout
   [OpenXmlEnumValue("Waterfall")]
   Waterfall
 }
+

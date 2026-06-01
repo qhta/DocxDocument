@@ -1,6 +1,6 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   Document-Wide Footnote Properties.
+///   IDocument-Wide IFootnote Properties.
 /// </summary>
 public class FootnoteDocumentWideProperties: ModelElement
 {
@@ -14,27 +14,27 @@ public class FootnoteDocumentWideProperties: ModelElement
   }
 
   /// <summary>
-  ///   Footnote Placement.
+  ///   IFootnote Placement.
   /// </summary>
   public FootnotePositionKind? FootnotePosition { get; set; }
 
   /// <summary>
-  ///   Footnote Numbering Format.
+  ///   IFootnote Numbering Format.
   /// </summary>
   public NumberingFormat? NumberingFormat { get; set; }
 
   /// <summary>
-  ///   Footnote Numbering Starting Value.
+  ///   IFootnote Numbering Starting Value.
   /// </summary>
   public UInt16? NumberingStart { get; set; }
 
   /// <summary>
-  ///   Footnote Numbering Restart Location.
+  ///   IFootnote Numbering Restart Location.
   /// </summary>
   public RestartNumberKind? NumberingRestart { get; set; }
 
   /// <summary>
-  /// Footnote special references
+  /// IFootnote special references
   /// </summary>
   public FootnoteSeparators? FootnoteSeparators { get; set; }
 }

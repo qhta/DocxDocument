@@ -1,23 +1,23 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Data About Single Data Source Record.
+///   Data About Single Data ISource Record.
 /// </summary>
 public class RecipientData: ModelElement
 {
   /// <summary>
-  ///   Record Is Included in Mail Merge.
+  ///   Record Is Included Iin Mail Merge.
   /// </summary>
   public bool? Active { get; set; }
 
   /// <summary>
-  ///   Index of Column Containing Unique Values for Record.
+  ///   IIndex of IColumn Containing Unique Values Ifor Record.
   /// </summary>
   public UInt32? ColumnIndex { get; set; }
 
   /// <summary>
-  ///   Unique Value for Record.
+  ///   Unique Value Ifor Record.
   /// </summary>
   public HexBinary? UniqueTag { get; set; }
 }

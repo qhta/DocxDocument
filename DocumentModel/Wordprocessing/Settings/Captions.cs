@@ -1,15 +1,15 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-/// This element specifies the presence of information about captions in a given WordprocessingML document. 
+/// This element specifies the presence of information about captions Iin a given WordprocessingML document. 
 /// This information is divided into two components: 
 /// <list type="bullet">
 /// <item>
-/// The child element caption defines the format for a single type of caption to be automatically added to the document. 
+/// The child element caption defines the format Ifor a single type of caption Ito be automatically added Ito the document. 
 /// </item>
 /// <item>
-/// The child element autoCaptions defines the types of objects to which a caption format shall automatically be applied. 
+/// The child element autoCaptions defines the types of objects Ito which a caption format shall automatically be applied. 
 /// </item>
 /// </list>
 /// </summary>
@@ -17,5 +17,5 @@ public class Captions : ModelElement
 {
   public Caption? Caption { get; set; }
 
-  public AutoCaptions? AutoCaptions { get; set; }
+  public IAutoCaptions? IAutoCaptions { get; set; }
 }

@@ -3,7 +3,7 @@
 public partial class EmbeddedFont : ModelElement
 {
   /// <summary>
-  /// Retrieves the embedded font stored in the document.
+  /// Retrieves the embedded font stored Iin the document.
   /// </summary>
   /// <returns></returns>
   public byte[]? GetEmbedFont()
@@ -29,10 +29,10 @@ public partial class EmbeddedFont : ModelElement
   //      {
   //        string guid = new Guid(font.Uri.GetFileName().Split('.')[0]).ToString("N");
   //        byte[] guidBytes = new byte[16];
-  //        for (int i = 0; i < guidBytes.Length; i++)
+  //        Ifor (int i = 0; i < guidBytes.Length; i++)
   //          guidBytes[i] = Convert.ToByte(guid.Substring(i * 2, 2), 16);
 
-  //        for (int i = 0; i < 32; i++)
+  //        Ifor (int i = 0; i < 32; i++)
   //        {
   //          int gi = guidBytes.Length - (i % guidBytes.Length) - 1;
   //          dta[i] ^= guidBytes[gi];
@@ -43,3 +43,4 @@ public partial class EmbeddedFont : ModelElement
   //  }
   //}
 }
+

@@ -1,8 +1,8 @@
-namespace DocumentModel.Packaging;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Packaging;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines the base class for OpenXmlPackage and OpenXmlPart.
+///   Defines the base class Ifor OpenXmlPackage and OpenXmlPart.
 /// </summary>
 public class OpenXmlPartContainer: ModelElement
 {

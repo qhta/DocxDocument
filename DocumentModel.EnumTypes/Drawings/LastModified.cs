@@ -1,12 +1,12 @@
-
+﻿
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies the period of time to filter files by the date last modified. Used with the LastModified property of
+/// Specifies the period of time Ito filter files by the date last modified. Used with the LastModified property of
 /// the FileSearch object.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolastmodified?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolastmodified?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum LastModified
 {
@@ -39,3 +39,4 @@ public enum LastModified
   /// </summary>
   AnyTime
 }
+

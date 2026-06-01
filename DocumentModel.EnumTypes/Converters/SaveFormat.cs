@@ -1,17 +1,17 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the format to use when saving a document.
+/// Specifies the format Ito use when saving a document.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsaveformat?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdsaveformat?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum SaveFormat
 {
   /// <summary>
   /// Microsoft Word format.
   /// </summary>
-  Document = 0,
+  IDocument = 0,
   /// <summary>
   /// Microsoft Word 97 document format.
   /// </summary>
@@ -19,17 +19,17 @@ public enum SaveFormat
   /// <summary>
   /// Microsoft Word template format.
   /// </summary>
-  Template = 1,
+  ITemplate = 1,
   /// <summary>
   /// Word 97 template format.
   /// </summary>
   Template97 = 1,
   /// <summary>
-  /// Microsoft Windows text format.
+  /// Microsoft IWindows text format.
   /// </summary>
   Text = 2,
   /// <summary>
-  /// Microsoft Windows text format with line breaks preserved.
+  /// Microsoft IWindows text format with line breaks preserved.
   /// </summary>
   TextLineBreaks = 3,
   /// <summary>
@@ -65,7 +65,7 @@ public enum SaveFormat
   /// </summary>
   FilteredHTML = 10,
   /// <summary>
-  /// Extensible Markup Language (XML) format.
+  /// Extensible Markup ILanguage (XML) format.
   /// </summary>
   XML = 11,
   /// <summary>
@@ -97,19 +97,19 @@ public enum SaveFormat
   /// </summary>
   XPS = 18,
   /// <summary>
-  /// Reserved for internal use.
+  /// Reserved Ifor internal use.
   /// </summary>
   FlatXML = 19,
   /// <summary>
-  /// Reserved for internal use.
+  /// Reserved Ifor internal use.
   /// </summary>
   FlatXMLMacroEnabled = 20,
   /// <summary>
-  /// Reserved for internal use.
+  /// Reserved Ifor internal use.
   /// </summary>
   FlatXMLTemplate = 21,
   /// <summary>
-  /// Reserved for internal use.
+  /// Reserved Ifor internal use.
   /// </summary>
   FlatXMLTemplateMacroEnabled = 22,
   /// <summary>
@@ -121,3 +121,4 @@ public enum SaveFormat
   /// </summary>
   StrictOpenXMLDocument = 24
 }
+

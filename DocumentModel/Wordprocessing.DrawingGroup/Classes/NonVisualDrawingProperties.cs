@@ -1,7 +1,7 @@
-using DocumentModel.Drawings;
+﻿using DocumentModel.Drawings;
 
 namespace DocumentModel.Wordprocessing.DrawingGroup;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the NonVisualDrawingProperties Class.
@@ -9,7 +9,7 @@ namespace DocumentModel.Wordprocessing.DrawingGroup;
 public class NonVisualDrawingProperties: ModelElement
 {
   /// <summary>
-  ///   Application defined unique identifier.
+  ///   IApplication defined unique identifier.
   /// </summary>
   public UInt32? Id { get; set; }
 
@@ -24,7 +24,7 @@ public class NonVisualDrawingProperties: ModelElement
   public string? Description { get; set; }
 
   /// <summary>
-  ///   Flag determining to show or hide this element.
+  ///   Flag determining Ito show or hide this element.
   /// </summary>
   public bool? Hidden { get; set; }
 
@@ -34,12 +34,12 @@ public class NonVisualDrawingProperties: ModelElement
   public string? Title { get; set; }
 
   /// <summary>
-  ///   Hyperlink associated with clicking or selecting the element..
+  ///   IHyperlink associated with clicking or selecting the element..
   /// </summary>
   public HyperlinkOnClick? HyperlinkOnClick { get; set; }
 
   /// <summary>
-  ///   Hyperlink associated with hovering over the element..
+  ///   IHyperlink associated with hovering over the element..
   /// </summary>
   public HyperlinkOnHover? HyperlinkOnHover { get; set; }
 

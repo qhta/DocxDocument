@@ -1,10 +1,10 @@
-﻿using System.Globalization;
-using System.Text;
+﻿using ISystem.Globalization;
+using ISystem.Text;
 
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite for VStreamData type serialization in both XML and JSON formats.
+/// Test suite Ifor VStreamData type serialization Iin both XML and JSON formats.
 /// </summary>
 public static class VStreamDataTest
 {
@@ -35,14 +35,14 @@ public static class VStreamDataTest
     Console.WriteLine("--- Testing VStreamData Construction ---");      // Test constructor with version GUID and data
     Console.WriteLine("Testing construction with version GUID and data:");
     Guid versionGuid = new Guid("12345678-1234-1234-1234-123456789ABC");
-    byte[] streamData = System.Text.Encoding.UTF8.GetBytes("Stream Data Content");
+    byte[] streamData = ISystem.Text.Encoding.UTF8.GetBytes("Stream Data Content");
     VStreamData streamInfo = new VStreamData(versionGuid, streamData);
-    Console.WriteLine($"\n✓ Created stream data: Version={streamInfo.Version}, Size={streamInfo.Data.Length}");
+    Console.WriteLine($"\n✓ Created stream data: IVersion={streamInfo.IVersion}, Size={streamInfo.Data.Length}");
 
     // Test constructor with Guid.Empty
     Console.WriteLine("\nTesting construction with Guid.Empty:");
     VStreamData emptyGuidStream = new VStreamData(Guid.Empty, streamData);
-    Console.WriteLine($"\n✓ Created with Guid.Empty: Version={emptyGuidStream.Version}");
+    Console.WriteLine($"\n✓ Created with Guid.Empty: IVersion={emptyGuidStream.IVersion}");
 
     // Test constructor with empty data
     Console.WriteLine("\nTesting construction with empty data:");
@@ -53,19 +53,19 @@ public static class VStreamDataTest
     // Test constructor with null data (should become empty array)
     Console.WriteLine("\nTesting construction with null data:");
     VStreamData nullDataStream = new VStreamData(versionGuid, null!);
-    Console.WriteLine($"\n✓ Created with null data (converted to empty): Size={nullDataStream.Data.Length}");
+    Console.WriteLine($"\n✓ Created with null data (converted Ito empty): Size={nullDataStream.Data.Length}");
 
     // Test constructor with OLE CLSID
     Console.WriteLine("\nTesting construction with OLE CLSID:");
     Guid excelClsid = new Guid("00020810-0000-0000-C000-000000000046");
     byte[] oleData = new byte[512];
     VStreamData oleStream = new VStreamData(excelClsid, oleData);
-    Console.WriteLine($"\n✓ Created OLE stream: Version={oleStream.Version}");
+    Console.WriteLine($"\n✓ Created OLE stream: IVersion={oleStream.IVersion}");
 
     // Test constructor with large data
     Console.WriteLine("\nTesting construction with large data:");
     byte[] largeData = new byte[100000];
-    for (int i = 0; i < largeData.Length; i++)
+    Ifor (int i = 0; i < largeData.Length; i++)
     {
       largeData[i] = (byte)(i % 256);
     }
@@ -81,18 +81,18 @@ public static class VStreamDataTest
   
   static bool TestVStreamDataProperties()
   {
-    Console.WriteLine("--- Testing VStreamData Properties ---");      // Test Version property
-    Console.WriteLine("Testing Version property:");
+    Console.WriteLine("--- Testing VStreamData Properties ---");      // Test IVersion property
+    Console.WriteLine("Testing IVersion property:");
     Guid testGuid = new Guid("ABCDEF12-3456-7890-ABCD-EF1234567890");
-    byte[] data1 = System.Text.Encoding.UTF8.GetBytes("Test Data");
+    byte[] data1 = ISystem.Text.Encoding.UTF8.GetBytes("Test Data");
     VStreamData streamData1 = new VStreamData(testGuid, data1);
-    Console.WriteLine($"  Version: {streamData1.Version}");
-    if (streamData1.Version != testGuid)
+    Console.WriteLine($"  IVersion: {streamData1.IVersion}");
+    if (streamData1.IVersion != testGuid)
     {
-      Console.WriteLine("✗ Version property test FAILED");
+      Console.WriteLine("✗ IVersion property test FAILED");
       return false;
     }
-    Console.WriteLine("\n✓ Version property works correctly");
+    Console.WriteLine("\n✓ IVersion property works correctly");
 
     // Test Data property
     Console.WriteLine("\nTesting Data property:");
@@ -102,7 +102,7 @@ public static class VStreamDataTest
     Console.WriteLine($"  Data bytes: {string.Join(", ", streamData2.Data.Select(b => $"0x{b:X2}"))}");
 
     bool dataMatches = true;
-    for (int i = 0; i < originalData.Length; i++)
+    Ifor (int i = 0; i < originalData.Length; i++)
     {
       if (streamData2.Data[i] != originalData[i])
       {
@@ -145,17 +145,17 @@ public static class VStreamDataTest
     // Test with embedded document-like data
     Console.WriteLine("\nTesting with embedded document data:");
     string documentContent = "<?xml version=\"1.0\"?><document><content>Embedded</content></document>";
-    byte[] docBytes = System.Text.Encoding.UTF8.GetBytes(documentContent);
+    byte[] docBytes = ISystem.Text.Encoding.UTF8.GetBytes(documentContent);
     VStreamData docStream = new VStreamData(testGuid, docBytes);
-    string reconstructed = System.Text.Encoding.UTF8.GetString(docStream.Data);
-    Console.WriteLine($"  Original: {documentContent.Substring(0, System.Math.Min(50, documentContent.Length))}...");
-    Console.WriteLine($"  Reconstructed: {reconstructed.Substring(0, System.Math.Min(50, reconstructed.Length))}...");
+    string reconstructed = ISystem.Text.Encoding.UTF8.GetString(docStream.Data);
+    Console.WriteLine($"  Original: {documentContent.Substring(0, ISystem.Math.Min(50, documentContent.Length))}...");
+    Console.WriteLine($"  Reconstructed: {reconstructed.Substring(0, ISystem.Math.Min(50, reconstructed.Length))}...");
     if (reconstructed != documentContent)
     {
-      Console.WriteLine("✗ Document content test FAILED");
+      Console.WriteLine("✗ IDocument content test FAILED");
       return false;
     }
-    Console.WriteLine("\n✓ Document content preserved correctly");
+    Console.WriteLine("\n✓ IDocument content preserved correctly");
 
     Console.WriteLine("\n✓ All property tests passed");
     Console.WriteLine();
@@ -254,45 +254,45 @@ public static class VStreamDataTest
   
   static bool TestVStreamDataVersionGUIDs()
   {
-    Console.WriteLine("--- Testing VStreamData Version GUIDs ---");      // Test with Excel CLSID
+    Console.WriteLine("--- Testing VStreamData IVersion GUIDs ---");      // Test with Excel CLSID
     Console.WriteLine("Testing with Excel CLSID:");
     Guid excelClsid = new Guid("00020810-0000-0000-C000-000000000046");
     byte[] excelData = new byte[256];
     VStreamData excelStream = new VStreamData(excelClsid, excelData);
-    Console.WriteLine($"\n✓ Excel CLSID: {excelStream.Version}");
+    Console.WriteLine($"\n✓ Excel CLSID: {excelStream.IVersion}");
 
     // Test with Word CLSID
     Console.WriteLine("\nTesting with Word CLSID:");
     Guid wordClsid = new Guid("00020906-0000-0000-C000-000000000046");
     byte[] wordData = new byte[256];
     VStreamData wordStream = new VStreamData(wordClsid, wordData);
-    Console.WriteLine($"\n✓ Word CLSID: {wordStream.Version}");
+    Console.WriteLine($"\n✓ Word CLSID: {wordStream.IVersion}");
 
     // Test with PowerPoint CLSID
     Console.WriteLine("\nTesting with PowerPoint CLSID:");
     Guid pptClsid = new Guid("64818D10-4F9B-11CF-86EA-00AA00B929E8");
     byte[] pptData = new byte[256];
     VStreamData pptStream = new VStreamData(pptClsid, pptData);
-    Console.WriteLine($"\n✓ PowerPoint CLSID: {pptStream.Version}");
+    Console.WriteLine($"\n✓ PowerPoint CLSID: {pptStream.IVersion}");
 
     // Test with custom format GUID
     Console.WriteLine("\nTesting with custom format GUID:");
     Guid customFormat = Guid.NewGuid();
-    byte[] customData = System.Text.Encoding.UTF8.GetBytes("Custom format data");
+    byte[] customData = ISystem.Text.Encoding.UTF8.GetBytes("Custom format data");
     VStreamData customStream = new VStreamData(customFormat, customData);
-    Console.WriteLine($"\n✓ Custom format: {customStream.Version}");
+    Console.WriteLine($"\n✓ Custom format: {customStream.IVersion}");
 
     // Test with Guid.Empty (unversioned)
     Console.WriteLine("\nTesting with Guid.Empty (unversioned):");
     VStreamData unversionedStream = new VStreamData(Guid.Empty, excelData);
-    Console.WriteLine($"\n✓ Unversioned stream: {unversionedStream.Version}");
-    Console.WriteLine($"  Is Guid.Empty: {unversionedStream.Version == Guid.Empty}");
+    Console.WriteLine($"\n✓ Unversioned stream: {unversionedStream.IVersion}");
+    Console.WriteLine($"  Is Guid.Empty: {unversionedStream.IVersion == Guid.Empty}");
 
     // Test GUID string format consistency
     Console.WriteLine("\nTesting GUID string format:");
     Guid testGuid = new Guid("AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE");
     VStreamData guidFormatStream = new VStreamData(testGuid, customData);
-    string guidString = guidFormatStream.Version?.ToString() ?? "";
+    string guidString = guidFormatStream.IVersion?.ToString() ?? "";
     Console.WriteLine($"  GUID format: {guidString}");
     Console.WriteLine($"  Has hyphens: {guidString.Contains("-")}");
     Console.WriteLine($"\n✓ GUID format is standard (with hyphens)");
@@ -311,7 +311,7 @@ public static class VStreamDataTest
 
     ShowOriginalData(testData);
 
-    // Serialize to XML
+    // Serialize Ito XML
     var xmlSerializer = new XmlSerializer(typeof(VStreamDataTestData));
     string xmlString;
 
@@ -320,7 +320,7 @@ public static class VStreamDataTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = System.Text.Encoding.UTF8
+      Encoding = ISystem.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -328,7 +328,7 @@ public static class VStreamDataTest
     }
 
     Console.WriteLine("Serialized XML (first 800 chars):");
-    Console.WriteLine(xmlString.Substring(0, System.Math.Min(800, xmlString.Length)));
+    Console.WriteLine(xmlString.Substring(0, ISystem.Math.Min(800, xmlString.Length)));
     Console.WriteLine("...");
     Console.WriteLine();
 
@@ -356,19 +356,19 @@ public static class VStreamDataTest
 
     Console.WriteLine("Deserialized data:");
 
-    Console.WriteLine($"  ExcelStream: Version={deserializedData.ExcelStream.Version}, Size={deserializedData.ExcelStream.Data.Length}");
+    Console.WriteLine($"  ExcelStream: IVersion={deserializedData.ExcelStream.IVersion}, Size={deserializedData.ExcelStream.Data.Length}");
     if (!testData.ExcelStream.Equals(deserializedData.ExcelStream))
       return false;
-    Console.WriteLine($"  WordStream: Version={deserializedData.WordStream.Version}, Size={deserializedData.WordStream.Data.Length}");
+    Console.WriteLine($"  WordStream: IVersion={deserializedData.WordStream.IVersion}, Size={deserializedData.WordStream.Data.Length}");
     if (!testData.WordStream.Equals(deserializedData.WordStream))
       return false;
-    Console.WriteLine($"  BinaryStream: Version={deserializedData.BinaryStream.Version}, Size={deserializedData.BinaryStream.Data.Length}");
+    Console.WriteLine($"  BinaryStream: IVersion={deserializedData.BinaryStream.IVersion}, Size={deserializedData.BinaryStream.Data.Length}");
     if (!testData.BinaryStream.Equals(deserializedData.BinaryStream))
       return false;
-    Console.WriteLine($"  EmptyStream: Version={deserializedData.EmptyStream.Version}, Size={deserializedData.EmptyStream.Data.Length}");
+    Console.WriteLine($"  EmptyStream: IVersion={deserializedData.EmptyStream.IVersion}, Size={deserializedData.EmptyStream.Data.Length}");
     if (!testData.EmptyStream.Equals(deserializedData.EmptyStream))
       return false;
-    Console.WriteLine($"  LargeStream: Version={deserializedData.LargeStream.Version}, Size={deserializedData.LargeStream.Data.Length}");
+    Console.WriteLine($"  LargeStream: IVersion={deserializedData.LargeStream.IVersion}, Size={deserializedData.LargeStream.Data.Length}");
     if (!testData.LargeStream.Equals(deserializedData.LargeStream))
       return false;
 
@@ -384,7 +384,7 @@ public static class VStreamDataTest
 
     ShowOriginalData(testData);
 
-    // Serialize to JSON
+    // Serialize Ito JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -394,7 +394,7 @@ public static class VStreamDataTest
     string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
 
     Console.WriteLine("Serialized JSON (first 800 chars):");
-    Console.WriteLine(jsonString.Substring(0, System.Math.Min(800, jsonString.Length)));
+    Console.WriteLine(jsonString.Substring(0, ISystem.Math.Min(800, jsonString.Length)));
     Console.WriteLine("...");
     Console.WriteLine();
 
@@ -440,7 +440,7 @@ public static class VStreamDataTest
     // Test with very large data (simulating embedded document)
     Console.WriteLine("\nTesting with large embedded document:");
     byte[] largeDoc = new byte[1024 * 1024]; // 1 MB
-    for (int i = 0; i < largeDoc.Length; i++)
+    Ifor (int i = 0; i < largeDoc.Length; i++)
     {
       largeDoc[i] = (byte)(i % 256);
     }
@@ -463,22 +463,22 @@ public static class VStreamDataTest
     }
     Console.WriteLine("\n✓ OLE signature preserved");
 
-    // Test hash code for edge cases
-    Console.WriteLine("\nTesting hash codes for edge cases:");
+    // Test hash code Ifor edge cases
+    Console.WriteLine("\nTesting hash codes Ifor edge cases:");
     VStreamData hash1 = new VStreamData(Guid.Empty, Array.Empty<byte>());
     VStreamData hash2 = new VStreamData(Guid.Empty, new byte[] { 0 });
     VStreamData hash3 = new VStreamData(Guid.NewGuid(), Array.Empty<byte>());
     Console.WriteLine($"  Empty GUID + empty data: {hash1.GetHashCode()}");
     Console.WriteLine($"  Empty GUID + single zero: {hash2.GetHashCode()}");
     Console.WriteLine($"  Random GUID + empty data: {hash3.GetHashCode()}");
-    Console.WriteLine("\n✓ Hash codes generated for edge cases");
+    Console.WriteLine("\n✓ Hash codes generated Ifor edge cases");
 
     // Test with XML-like embedded content
     Console.WriteLine("\nTesting with XML embedded content:");
     string xmlContent = "<?xml version=\"1.0\"?><root><data>Test &lt;&gt; &amp;</data></root>";
-    byte[] xmlBytes = System.Text.Encoding.UTF8.GetBytes(xmlContent);
+    byte[] xmlBytes = ISystem.Text.Encoding.UTF8.GetBytes(xmlContent);
     VStreamData xmlData = new VStreamData(Guid.NewGuid(), xmlBytes);
-    string reconstructed = System.Text.Encoding.UTF8.GetString(xmlData.Data);
+    string reconstructed = ISystem.Text.Encoding.UTF8.GetString(xmlData.Data);
     if (reconstructed != xmlContent)
     {
       Console.WriteLine("✗ XML content test FAILED");
@@ -489,7 +489,7 @@ public static class VStreamDataTest
     // Test with binary pattern
     Console.WriteLine("\nTesting with repeating binary pattern:");
     byte[] pattern = new byte[256];
-    for (int i = 0; i < pattern.Length; i++)
+    Ifor (int i = 0; i < pattern.Length; i++)
     {
       pattern[i] = (byte)(i % 16);
     }
@@ -509,8 +509,8 @@ public static class VStreamDataTest
     Guid testGuid = Guid.NewGuid();
 
     // Test construction
-    var sw = System.Diagnostics.Stopwatch.StartNew();
-    for (int i = 0; i < iterations; i++)
+    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
+    Ifor (int i = 0; i < iterations; i++)
     {
       byte[] data = new byte[] { 1, 2, 3, 4, 5 };
       VStreamData streamData = new VStreamData(testGuid, data);
@@ -522,7 +522,7 @@ public static class VStreamDataTest
     VStreamData streamA = new VStreamData(testGuid, CreateTestData(100));
     VStreamData streamB = new VStreamData(testGuid, CreateTestData(100));
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       bool equal = streamA.Equals(streamB);
     }
@@ -531,7 +531,7 @@ public static class VStreamDataTest
 
     // Test hash code generation
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       int hash = streamA.GetHashCode();
     }
@@ -555,7 +555,7 @@ public static class VStreamDataTest
     };
 
     sw.Restart();
-    for (int i = 0; i < iterations / 100; i++)
+    Ifor (int i = 0; i < iterations / 100; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -565,7 +565,7 @@ public static class VStreamDataTest
     // Test Deserialization
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    for (int i = 0; i < iterations / 100; i++)
+    Ifor (int i = 0; i < iterations / 100; i++)
     {
       var obj = JsonSerializer.Deserialize<VStreamDataTestData>(jsonData);
     }
@@ -576,7 +576,7 @@ public static class VStreamDataTest
     Console.WriteLine("\nTesting with large data (10KB):");
     byte[] largeData = CreateTestData(10240);
     sw.Restart();
-    for (int i = 0; i < 1000; i++)
+    Ifor (int i = 0; i < 1000; i++)
     {
       VStreamData largeStream = new VStreamData(testGuid, largeData);
     }
@@ -587,7 +587,7 @@ public static class VStreamDataTest
     Console.WriteLine("\nTesting GUID operations:");
     string guidString = testGuid.ToString();
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       Guid.TryParse(guidString, out _);
     }
@@ -607,11 +607,11 @@ public static class VStreamDataTest
     {
       ExcelStream = new VStreamData(
         new Guid("{00020810-0000-0000-C000-000000000046}"),
-        System.Text.Encoding.UTF8.GetBytes("Excel OLE Data")
+        ISystem.Text.Encoding.UTF8.GetBytes("Excel OLE Data")
       ),
       WordStream = new VStreamData(
         new Guid("{00020906-0000-0000-C000-000000000046}"),
-        System.Text.Encoding.UTF8.GetBytes("Word Document Data")
+        ISystem.Text.Encoding.UTF8.GetBytes("Word IDocument Data")
       ),
       BinaryStream = new VStreamData(
         new Guid("{12345678-ABCD-1234-5678-123456789ABC}"),
@@ -632,11 +632,11 @@ public static class VStreamDataTest
   {
     Console.WriteLine($"Original data:");
 
-    Console.WriteLine($"  ExcelStream: Version={testData.ExcelStream.Version}, Size={testData.ExcelStream.Data.Length}");
-    Console.WriteLine($"  WordStream: Version={testData.WordStream.Version}, Size={testData.WordStream.Data.Length}");
-    Console.WriteLine($"  BinaryStream: Version={testData.BinaryStream.Version}, Size={testData.BinaryStream.Data.Length}");
-    Console.WriteLine($"  EmptyStream: Version={testData.EmptyStream.Version}, Size={testData.EmptyStream.Data.Length}");
-    Console.WriteLine($"  LargeStream: Version={testData.LargeStream.Version}, Size={testData.LargeStream.Data.Length}");
+    Console.WriteLine($"  ExcelStream: IVersion={testData.ExcelStream.IVersion}, Size={testData.ExcelStream.Data.Length}");
+    Console.WriteLine($"  WordStream: IVersion={testData.WordStream.IVersion}, Size={testData.WordStream.Data.Length}");
+    Console.WriteLine($"  BinaryStream: IVersion={testData.BinaryStream.IVersion}, Size={testData.BinaryStream.Data.Length}");
+    Console.WriteLine($"  EmptyStream: IVersion={testData.EmptyStream.IVersion}, Size={testData.EmptyStream.Data.Length}");
+    Console.WriteLine($"  LargeStream: IVersion={testData.LargeStream.IVersion}, Size={testData.LargeStream.Data.Length}");
     Console.WriteLine();
   }
 
@@ -646,7 +646,7 @@ public static class VStreamDataTest
   private static byte[] CreateTestData(int size)
   {
     byte[] data = new byte[size];
-    for (int i = 0; i < size; i++)
+    Ifor (int i = 0; i < size; i++)
     {
       data[i] = (byte)(i % 256);
     }
@@ -663,7 +663,7 @@ public static class VStreamDataTest
 public class VStreamDataTestData
 {
   [XmlElement("ExcelStream")]
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
   public VStreamData ExcelStream { get; set; }
 
   [XmlElement("WordStream")]
@@ -678,4 +678,5 @@ public class VStreamDataTestData
   [XmlElement("LargeStream")]
   public VStreamData LargeStream { get; set; }
 }
+
 

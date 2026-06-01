@@ -1,21 +1,21 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Text Paragraphs.
+///   Text IParagraphs.
 /// </summary>
-public class Paragraph: ModelElement
+public class IParagraph: ModelElement
 {
   /// <summary>
-  ///   Text Paragraph Properties.
+  ///   Text IParagraph Properties.
   /// </summary>
   public ParagraphProperties? ParagraphProperties { get; set; }
 
   public Run? Run { get; set; }
 
-  public Break? Break { get; set; }
+  public IBreak? IBreak { get; set; }
 
-  public Field? Field { get; set; }
+  public IField? IField { get; set; }
 
   public bool? TextMath { get; set; }
 

@@ -1,15 +1,15 @@
-﻿namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
 /// Provides the results of verifying a digital certificate.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.certificateverificationresults?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.certificateverificationresults?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum CertificateVerificationResults
 {
   /// <summary>
-  /// The verification resulted in an error.
+  /// The verification resulted Iin an error.
   /// </summary>
   Error,
   /// <summary>
@@ -41,3 +41,4 @@ public enum CertificateVerificationResults
   /// </summary>
   Untrusted
 }
+

@@ -1,10 +1,10 @@
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Specifies the country/region setting of the current system.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcountry?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcountry?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum Country
 {
@@ -105,3 +105,4 @@ public enum Country
   /// </summary>
   Taiwan = 886
 }
+

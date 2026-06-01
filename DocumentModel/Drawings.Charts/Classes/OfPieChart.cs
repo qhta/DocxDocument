@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Pie of Pie or Bar of Pie Charts.
@@ -18,7 +18,7 @@ public class OfPieChart: ModelElement
 
   public Collection<PieChartSeries>? PieChartSeries { get; set; }
 
-  public DataLabels? DataLabels { get; set; }
+  public IDataLabels? IDataLabels { get; set; }
 
   public UInt16? GapWidth { get; set; }
 
@@ -30,7 +30,7 @@ public class OfPieChart: ModelElement
 
   public UInt16? SecondPieSize { get; set; }
 
-  public Collection<SeriesLines>? SeriesLines { get; set; }
+  public Collection<ISeriesLines>? ISeriesLines { get; set; }
 
   public ExtensionList? ExtensionList { get; set; }
 }

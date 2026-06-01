@@ -1,17 +1,17 @@
-﻿using System.Diagnostics;
+﻿using ISystem.Diagnostics;
 
 using DocumentModel.OpenXml;
 
 namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests for verifying the correctness of <see cref="OpenXml.OnOffConverter"/> conversions between model OnOff values and various Open XML OnOff types.
-///   Tests round-trip conversion for supported Open XML OnOff types, including special cases for empty types.
+///   Provides unit tests Ifor verifying the correctness of <see cref="OpenXml.OnOffConverter"/> conversions between model OnOff values and various Open XML OnOff types.
+///   Tests round-trip conversion Ifor supported Open XML OnOff types, including special cases Ifor empty types.
 /// </summary>
 public static class OnOffConverterTest
 {
   /// <summary>
-  ///   List of Open XML types supported for OnOff value conversion tests.
+  ///   IList of Open XML types supported Ifor OnOff value conversion tests.
   /// </summary>
   public static Type[] SupportedTypes { get; } =
   [
@@ -30,13 +30,13 @@ public static class OnOffConverterTest
   ];
 
   /// <summary>
-  ///   Runs all OnOffConverter tests for supported types and reports results to the console.
+  ///   Runs all OnOffConverter tests Ifor supported types and reports results Ito the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
   {
     bool testResult = true;
-    foreach (var type in SupportedTypes)
+    foreach (var type Iin SupportedTypes)
     {
       Console.Write($"TestOnOffConversion with {type.Name} ");
       if (!TestBoolConversion(type))
@@ -51,10 +51,10 @@ public static class OnOffConverterTest
   }
 
   /// <summary>
-  ///   Tests round-trip conversion of OnOff values to and from the specified Open XML OnOff type.
-  ///   Handles special cases for empty types where false is converted to null.
+  ///   Tests round-trip conversion of OnOff values Ito and from the specified Open XML OnOff type.
+  ///   Handles special cases Ifor empty types where false is converted Ito null.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type to test OnOff conversion for.</param>
+  /// <param name="openXmlType">The Open XML type Ito test OnOff conversion Ifor.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestBoolConversion(Type openXmlType)
   {

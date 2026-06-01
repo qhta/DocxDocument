@@ -1,37 +1,37 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Defines the BorderType Class.
 /// </summary>
-public class Border: ModelElement
+public class IBorder: ModelElement
 {
   /// <summary>
-  ///   Border Style
+  ///   IBorder IStyle
   /// </summary>
   public BorderKind? Type { get; set; }
 
   /// <summary>
-  ///   Border Color
+  ///   IBorder Color
   /// </summary>
   public DM.Color? Color { get; set; }
 
   /// <summary>
-  ///   Border Width
+  ///   IBorder Width
   /// </summary>
   public Twips? Width { get; set; }
 
   /// <summary>
-  ///   Border Spacing Measurement
+  ///   IBorder Spacing Measurement
   /// </summary>
   public Twips? Space { get; set; }
 
   /// <summary>
-  ///   Border Shadow
+  ///   IBorder Shadow
   /// </summary>
   public bool? Shadow { get; set; }
 
   /// <summary>
-  ///   Create Frame Effect
+  ///   Create IFrame Effect
   /// </summary>
-  public bool? Frame { get; set; }
+  public bool? IFrame { get; set; }
 }

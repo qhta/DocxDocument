@@ -1,10 +1,10 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies what the bubble size represents on a bubble chart.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlsizerepresents?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlsizerepresents?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum XlSizeRepresents
 {
@@ -17,3 +17,4 @@ public enum XlSizeRepresents
   /// </summary>
   Width = 2
 }
+

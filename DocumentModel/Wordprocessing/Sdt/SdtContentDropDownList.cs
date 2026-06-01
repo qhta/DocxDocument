@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the SdtContentDropDownList Class.
@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 public class SdtContentDropDownList: ModelElement
 {
   /// <summary>
-  ///   Drop-down List Last Saved Value
+  ///   Drop-down IList Last Saved Value
   /// </summary>
   public string? LastValue { get; set; }
 

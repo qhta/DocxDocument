@@ -1,7 +1,7 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-///   This class collects drawing properties for some document object.
+///   This class collects drawing properties Ifor some document object.
 /// </summary>
 public class DrawingProperties: ElementCollection<IDrawingProperty>
 {

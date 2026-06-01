@@ -1,19 +1,19 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Dual boolean. First value is for regular script, second for complex script.
-/// If second value is null, it is assumed to be the first value;
+/// Dual boolean. First value is Ifor regular script, second Ifor complex script.
+/// If second value is null, it is assumed Ito be the first value;
 /// </summary>
 //[TypeConverter(typeof(DualBoolTypeConverter))]
 public abstract class DualBool: TypedModelElement
 {
   /// <summary>
-  /// Value for regular script.
+  /// Value Ifor regular script.
   /// </summary>
   public bool? Val { get; set; }
 
   /// <summary>
-  /// Value for complex script.
+  /// Value Ifor complex script.
   /// </summary>
   public bool? CS { get; set; }
 
@@ -48,7 +48,7 @@ public abstract class DualBool: TypedModelElement
   //}
 
 
-//#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+//#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 //  public static implicit operator DualBool(string val)
 //  {
 //    return new DualBool(val);

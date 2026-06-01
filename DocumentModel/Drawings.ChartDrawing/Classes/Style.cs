@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings.ChartDrawing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Shape Style.
+///   IShape IStyle.
 /// </summary>
-public class Style: ModelElement
+public class IStyle: ModelElement
 {
   /// <summary>
   ///   LineReference.
@@ -22,7 +22,7 @@ public class Style: ModelElement
   public EffectReference? EffectReference { get; set; }
 
   /// <summary>
-  ///   Font Reference.
+  ///   IFont Reference.
   /// </summary>
   public FontReference? FontReference { get; set; }
 }

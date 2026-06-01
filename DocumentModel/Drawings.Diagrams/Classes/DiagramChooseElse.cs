@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Else.
@@ -13,7 +13,7 @@ public class DiagramChooseElse: ModelElement
 
   public Algorithm? Algorithm { get; set; }
 
-  public Shape? Shape { get; set; }
+  public IShape? IShape { get; set; }
 
   public PresentationOf? PresentationOf { get; set; }
 

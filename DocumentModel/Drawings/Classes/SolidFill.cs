@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 ///   Specifies a solid color fill. The shape is filled entirely with the specified color. 
@@ -21,7 +21,7 @@ public class SolidFill: Fill
   public HslColor? HslColor { get; set; }
 
   /// <summary>
-  ///   System Color.
+  ///   ISystem Color.
   /// </summary>
   public SystemColor? SystemColor { get; set; }
 

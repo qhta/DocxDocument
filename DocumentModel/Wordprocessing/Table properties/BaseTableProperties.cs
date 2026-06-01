@@ -1,38 +1,38 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Base class for all TableProperties classes.
+///   Base class Ifor all TableProperties classes.
 ///   Contains common properties.
 /// </summary>
 public abstract class BaseTableProperties: ModelElement
 {
   /// <summary>
-  ///   Table Alignment.
+  ///   ITable Alignment.
   /// </summary>
   public TableRowAlignmentKind? TableJustification { get; set; }
 
   /// <summary>
-  ///   Table Indent from Leading Margin.
+  ///   ITable Indent from Leading Margin.
   /// </summary>
   public TableWidth? TableIndentation { get; set; }
 
   /// <summary>
-  ///   Table Cell Margin.
+  ///   ITable ICell Margin.
   /// </summary>
   public DefaultTableCellMargin? DefaultTableCellMargin { get; set; }
 
   /// <summary>
-  ///   Table Cell Spacing.
+  ///   ITable ICell Spacing.
   /// </summary>
   public TableWidth? TableCellSpacing { get; set; }
 
   /// <summary>
-  ///   Table Borders..
+  ///   ITable IBorders..
   /// </summary>
   public TableBorders? TableBorders { get; set; }
 
   /// <summary>
-  ///   Table Shading.
+  ///   ITable IShading.
   /// </summary>
-  public Shading? Shading { get; set; }
+  public IShading? IShading { get; set; }
 }

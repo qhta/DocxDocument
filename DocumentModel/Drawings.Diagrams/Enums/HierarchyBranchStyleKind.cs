@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Hierarchy Branch Style Definition
+///   Hierarchy Branch IStyle Definition
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum HierarchyBranchStyleKind

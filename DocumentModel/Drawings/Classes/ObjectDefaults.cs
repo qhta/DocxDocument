@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the ObjectDefaults Class.
@@ -7,12 +7,12 @@ namespace DocumentModel.Drawings;
 public class ObjectDefaults: ModelElement
 {
   /// <summary>
-  ///   Shape Default.
+  ///   IShape Default.
   /// </summary>
   public ShapeDefault? ShapeDefault { get; set; }
 
   /// <summary>
-  ///   Line Default.
+  ///   ILine Default.
   /// </summary>
   public LineDefault? LineDefault { get; set; }
 

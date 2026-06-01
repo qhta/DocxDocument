@@ -1,10 +1,10 @@
-namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
-/// Specifies which icon, if any, to display with an alert.
+/// Specifies which icon, if any, Ito display with an alert.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoalerticontype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoalerticontype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum AlertIconType
 {
@@ -29,3 +29,4 @@ public enum AlertIconType
   /// </summary>
   Info
 }
+

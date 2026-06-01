@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Algorithm.
@@ -12,9 +12,9 @@ public class Algorithm: ModelElement
   public AlgorithmKind? Type { get; set; }
 
   /// <summary>
-  ///   Revision Number
+  ///   IRevision Number
   /// </summary>
-  public UInt32? Revision { get; set; }
+  public UInt32? IRevision { get; set; }
 
   public Collection<Parameter>? Parameters { get; set; }
 

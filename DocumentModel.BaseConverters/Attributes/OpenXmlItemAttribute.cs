@@ -1,9 +1,9 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Specifies that the decorated model class is a collection of Open XML elements.
+/// Specifies Ithat the decorated model class is a collection of Open XML elements.
 /// </summary>
-/// <param name="type">The type of Open XML element that can be a child of an element associated with this class.
+/// <param name="type">The type of Open XML element Ithat can be a child of an element associated with this class.
 /// </param>
 [AttributeUsage(AttributeTargets.Class, Inherited = true, AllowMultiple = true)]
 public class OpenXmlItemAttribute(Type? type) : Attribute

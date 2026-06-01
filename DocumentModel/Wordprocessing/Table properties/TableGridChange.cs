@@ -1,7 +1,7 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Revision Information for Table Grid Column Definitions.
+///   IRevision Information Ifor ITable Grid IColumn Definitions.
 /// </summary>
 public class TableGridChange: ModelElement
 {
@@ -11,7 +11,7 @@ public class TableGridChange: ModelElement
   public string? AnnotationId { get; set; }
 
   /// <summary>
-  ///   Previous Table Grid.
+  ///   Previous ITable Grid.
   /// </summary>
   public PreviousTableGrid? PreviousTableGrid { get; set; }
 }

@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
+﻿namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Defines the ColorApplicationMethod enumeration.
-/// Used in types such as ColorsType.
+/// Used Iin types such as ColorsType.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.ColorApplicationMethodValues))]
@@ -24,3 +24,4 @@ public enum ColorApplicationMethod
   [OpenXmlEnumValue("Repeat")]
   Repeat
 }
+

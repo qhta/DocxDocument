@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
+﻿namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Defines the ElementType enumeration.
-/// Used in types such as AddOpenXmlElementAttribute, AddOpenXmlTypeAttribute, ChildElementInfoAttribute.
+/// Used Iin types such as AddOpenXmlElementAttribute, AddOpenXmlTypeAttribute, ChildElementInfoAttribute.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum ElementType
@@ -13,10 +13,10 @@ public enum ElementType
   [OpenXmlEnumValue("All")]
   All,
   /// <summary>
-  ///   Document.
+  ///   IDocument.
   /// </summary>
-  [OpenXmlEnumValue("Document")]
-  Document,
+  [OpenXmlEnumValue("IDocument")]
+  IDocument,
   /// <summary>
   ///   Node.
   /// </summary>
@@ -58,3 +58,4 @@ public enum ElementType
   [OpenXmlEnumValue("SiblingTransition")]
   SiblingTransition
 }
+

@@ -1,19 +1,19 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Magnification Setting.
 /// </summary>
 [TypeConverter(typeof(ZoomTypeConverter))]
-public class Zoom: ModelElement
+public class IZoom: ModelElement
 {
   /// <summary>
-  ///   Zoom Type
+  ///   IZoom Type
   /// </summary>
   public PresetZoomKind? Kind { get; set; }
 
   /// <summary>
-  ///   Zoom Percentage
+  ///   IZoom Percentage
   /// </summary>
   public int? Percent { get; set; }
 }

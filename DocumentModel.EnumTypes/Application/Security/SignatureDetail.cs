@@ -1,10 +1,10 @@
-﻿namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
 /// Indicates additional information about a signature.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signaturedetail?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signaturedetail?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum SignatureDetail
 {
@@ -25,7 +25,7 @@ public enum SignatureDetail
   /// </summary>
   OfficeVersion,
   /// <summary>
-  /// Specifies the Windows version.
+  /// Specifies the IWindows version.
   /// </summary>
   WindowsVersion,
   /// <summary>
@@ -69,7 +69,7 @@ public enum SignatureDetail
   /// </summary>
   HashAlgorithm,
   /// <summary>
-  /// Specifies the Should Show View Warning setting.
+  /// Specifies the Should Show IView Warning setting.
   /// </summary>
   ShouldShowViewWarning,
   /// <summary>
@@ -93,7 +93,8 @@ public enum SignatureDetail
   /// </summary>
   DelSuggSignerEmail,
   /// <summary>
-  /// Indicates whether an email for a suggested signer delegate has been specified.
+  /// Indicates whether an email Ifor a suggested signer delegate has been specified.
   /// </summary>
   DelSuggSignerEmailSet
 }
+

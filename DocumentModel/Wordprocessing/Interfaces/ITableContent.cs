@@ -1,16 +1,16 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Interface for elements that can be included in document <see cref="Table"/> element.
+///   Interface Ifor elements Ithat can be included Iin document <see cref="ITable"/> element.
 /// </summary>
 public interface ITableContent: IModelElement
 {
   /// <summary>
-  /// Parent as a <see cref="Table"/> element.
+  /// Parent as a <see cref="ITable"/> element.
   /// </summary>
-  public new Table? Parent
+  public new ITable? Parent
   {
-    get => (this as IModelElement).Parent as Table;
+    get => (this as IModelElement).Parent as ITable;
     set => (this as IModelElement).Parent = value;
   }
 }

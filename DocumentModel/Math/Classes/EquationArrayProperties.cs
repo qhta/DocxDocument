@@ -1,4 +1,4 @@
-namespace DocumentModel.Math;
+﻿namespace DocumentModel.Math;
 
 /// <summary>
 ///   This element specifies the properties of the array object, including the vertical justification of the object and layout inside the object. 
@@ -21,7 +21,7 @@ public class EquationArrayProperties: ModelElement
   public bool? ObjectDistribution { get; set; }
 
   /// <summary>
-  ///   Row Spacing (Equation Array). The meaning of the value is unspecified.
+  ///   IRow Spacing (Equation Array). The meaning of the value is unspecified.
   /// </summary>
   public RowSpacing? RowSpacing { get; set; }
 

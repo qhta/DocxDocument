@@ -1,39 +1,39 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Chart Animation Build Step
+///   IChart Animation Build Step
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum ChartBuildStepKind
 {
   /// <summary>
-  ///   Category.
+  ///   ICategory.
   /// </summary>
-  Category,
+  ICategory,
 
   /// <summary>
-  ///   Category Points.
+  ///   ICategory IPoints.
   /// </summary>
   CategoryPoints,
 
   /// <summary>
-  ///   Series.
+  ///   ISeries.
   /// </summary>
-  Series,
+  ISeries,
 
   /// <summary>
-  ///   Series Points.
+  ///   ISeries IPoints.
   /// </summary>
   SeriesPoints,
 
   /// <summary>
-  ///   All Points.
+  ///   All IPoints.
   /// </summary>
   AllPoints,
 
   /// <summary>
-  ///   Grid and Legend.
+  ///   Grid and ILegend.
   /// </summary>
   GridLegend
 }

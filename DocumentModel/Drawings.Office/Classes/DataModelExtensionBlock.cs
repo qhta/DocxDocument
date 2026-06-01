@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Office;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Office;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the DataModelExtensionBlock Class.
@@ -7,12 +7,12 @@ namespace DocumentModel.Drawings.Office;
 public class DataModelExtensionBlock: ModelElement
 {
   /// <summary>
-  ///   relId, this property is only available in Office 2010 and later.
+  ///   relId, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? RelId { get; set; }
 
   /// <summary>
-  ///   minVer, this property is only available in Office 2010 and later.
+  ///   minVer, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? MinVer { get; set; }
 }

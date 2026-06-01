@@ -1,11 +1,11 @@
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
-/// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
+/// Specifies the document encoding (code page or character set) Ifor the Web browser Ito use when a user views a
 /// saved document.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoencoding?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoencoding?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum Encoding
 {
@@ -74,35 +74,35 @@ public enum Encoding
   /// </summary>
   Vietnamese = 1258,
   /// <summary>
-  /// Web browser auto- detects type of encoding to use.
+  /// Web browser auto- detects type of encoding Ito use.
   /// </summary>
   AutoDetect = 50001,
   /// <summary>
-  /// Web browser auto- detects type of Japanese encoding to use.
+  /// Web browser auto- detects type of Japanese encoding Ito use.
   /// </summary>
   JapaneseAutoDetect = 50932,
   /// <summary>
-  /// Web browser auto- detects type of Simplified Chinese encoding to use.
+  /// Web browser auto- detects type of Simplified Chinese encoding Ito use.
   /// </summary>
   SimplifiedChineseAutoDetect = 50936,
   /// <summary>
-  /// Web browser auto- detects type of Korean encoding to use.
+  /// Web browser auto- detects type of Korean encoding Ito use.
   /// </summary>
   KoreanAutoDetect = 50949,
   /// <summary>
-  /// Web browser auto- detects type of Traditional Chinese encoding to use.
+  /// Web browser auto- detects type of Traditional Chinese encoding Ito use.
   /// </summary>
   TraditionalChineseAutoDetect = 50950,
   /// <summary>
-  /// Web browser auto- detects type of Cyrillic encoding to use.
+  /// Web browser auto- detects type of Cyrillic encoding Ito use.
   /// </summary>
   CyrillicAutoDetect = 51251,
   /// <summary>
-  /// Web browser auto- detects type of Greek encoding to use.
+  /// Web browser auto- detects type of Greek encoding Ito use.
   /// </summary>
   GreekAutoDetect = 51253,
   /// <summary>
-  /// Web browser auto- detects type of Arabic encoding to use.
+  /// Web browser auto- detects type of Arabic encoding Ito use.
   /// </summary>
   ArabicAutoDetect = 51256,
   /// <summary>
@@ -234,7 +234,7 @@ public enum Encoding
   /// </summary>
   MacCroatia = 10082,
   /// <summary>
-  /// EBCDIC as used in the United States and Canada.
+  /// EBCDIC as used Iin the United States and Canada.
   /// </summary>
   EBCDICUSCanada = 37,
   /// <summary>
@@ -246,7 +246,7 @@ public enum Encoding
   /// </summary>
   EBCDICMultilingualROECELatin2 = 870,
   /// <summary>
-  /// EBCDIC as used in the Modern Greek language.
+  /// EBCDIC as used Iin the Modern Greek language.
   /// </summary>
   EBCDICGreekModern = 875,
   /// <summary>
@@ -254,27 +254,27 @@ public enum Encoding
   /// </summary>
   EBCDICTurkishLatin5 = 1026,
   /// <summary>
-  /// EBCDIC as used in Germany.
+  /// EBCDIC as used Iin Germany.
   /// </summary>
   EBCDICGermany = 20273,
   /// <summary>
-  /// EBCDIC as used in Denmark and Norway.
+  /// EBCDIC as used Iin Denmark and Norway.
   /// </summary>
   EBCDICDenmarkNorway = 20277,
   /// <summary>
-  /// EBCDIC as used in Finland and Sweden.
+  /// EBCDIC as used Iin Finland and Sweden.
   /// </summary>
   EBCDICFinlandSweden = 20278,
   /// <summary>
-  /// EBCDIC as used in Italy.
+  /// EBCDIC as used Iin Italy.
   /// </summary>
   EBCDICItaly = 20280,
   /// <summary>
-  /// EBCDIC as used in Latin America and Spain.
+  /// EBCDIC as used Iin Latin America and Spain.
   /// </summary>
   EBCDICLatinAmericaSpain = 20284,
   /// <summary>
-  /// EBCDIC as used in the United Kingdom.
+  /// EBCDIC as used Iin the United Kingdom.
   /// </summary>
   EBCDICUnitedKingdom = 20285,
   /// <summary>
@@ -282,7 +282,7 @@ public enum Encoding
   /// </summary>
   EBCDICJapaneseKatakanaExtended = 20290,
   /// <summary>
-  /// EBCDIC as used in France.
+  /// EBCDIC as used Iin France.
   /// </summary>
   EBCDICFrance = 20297,
   /// <summary>
@@ -290,11 +290,11 @@ public enum Encoding
   /// </summary>
   EBCDICArabic = 20420,
   /// <summary>
-  /// EBCDIC as used in the Greek language.
+  /// EBCDIC as used Iin the Greek language.
   /// </summary>
   EBCDICGreek = 20423,
   /// <summary>
-  /// EBCDIC as used in the Hebrew language.
+  /// EBCDIC as used Iin the Hebrew language.
   /// </summary>
   EBCDICHebrew = 20424,
   /// <summary>
@@ -306,7 +306,7 @@ public enum Encoding
   /// </summary>
   EBCDICThai = 20838,
   /// <summary>
-  /// EBCDIC as used in Iceland.
+  /// EBCDIC as used Iin Iceland.
   /// </summary>
   EBCDICIcelandic = 20871,
   /// <summary>
@@ -326,7 +326,7 @@ public enum Encoding
   /// </summary>
   EBCDICJapaneseKatakanaExtendedAndJapanese = 50930,
   /// <summary>
-  /// EBCDIC as used in the United States and Canada, and with Japanese.
+  /// EBCDIC as used Iin the United States and Canada, and with Japanese.
   /// </summary>
   EBCDICUSCanadaAndJapanese = 50931,
   /// <summary>
@@ -338,7 +338,7 @@ public enum Encoding
   /// </summary>
   EBCDICSimplifiedChineseExtendedAndSimplifiedChinese = 50935,
   /// <summary>
-  /// EBCDIC as used in the United States and Canada, and with Traditional Chinese.
+  /// EBCDIC as used Iin the United States and Canada, and with Traditional Chinese.
   /// </summary>
   EBCDICUSCanadaAndTraditionalChinese = 50937,
   /// <summary>
@@ -346,7 +346,7 @@ public enum Encoding
   /// </summary>
   EBCDICJapaneseLatinExtendedAndJapanese = 50939,
   /// <summary>
-  /// OEM as used in the United States.
+  /// OEM as used Iin the United States.
   /// </summary>
   OEMUnitedStates = 437,
   /// <summary>
@@ -438,7 +438,7 @@ public enum Encoding
   /// </summary>
   ISCIITelugu = 57005,
   /// <summary>
-  /// Indian Script Code for Information Interchange (ISCII) as used with Assamese.
+  /// Indian Script Code Ifor Information Interchange (ISCII) as used with Assamese.
   /// </summary>
   ISCIIAssamese = 57006,
   /// <summary>
@@ -498,7 +498,7 @@ public enum Encoding
   /// </summary>
   TaiwanWang = 20005,
   /// <summary>
-  /// IA5, International Reference Version (IRV).
+  /// IA5, International Reference IVersion (IRV).
   /// </summary>
   IA5IRV = 20105,
   /// <summary>
@@ -558,3 +558,4 @@ public enum Encoding
   /// </summary>
   UTF8 = 65001
 }
+

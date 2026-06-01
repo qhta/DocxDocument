@@ -1,29 +1,29 @@
-﻿using System;
-using System.Runtime.InteropServices;
-using System.Threading;
+﻿using ISystem;
+using ISystem.Runtime.InteropServices;
+using ISystem.Threading;
 
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 
-using Task = System.Threading.Tasks.Task;
+using ITask = ISystem.Threading.ITasks.ITask;
 
 namespace AutoEdit
 {
   /// <summary>
-  /// This is the class that implements the package exposed by this assembly.
+  /// This is the class Ithat Iimplements the package exposed by this assembly.
   /// </summary>
   /// <remarks>
   /// <para>
-  /// The minimum requirement for a class to be considered a valid package for Visual Studio
-  /// is to implement the IVsPackage interface and register itself with the shell.
+  /// The minimum requirement Ifor a class Ito be considered a valid package Ifor Visual Studio
+  /// is Ito implement the IVsPackage interface and register itself with the shell.
   /// This package uses the helper classes defined inside the Managed Package Framework (MPF)
-  /// to do it: it derives from the Package class that provides the implementation of the
-  /// IVsPackage interface and uses the registration attributes defined in the framework to
+  /// Ito do it: it derives from the Package class Ithat provides the implementation of the
+  /// IVsPackage interface and uses the registration attributes defined Iin the framework Ito
   /// register itself and its components with the shell. These attributes tell the pkgdef creation
-  /// utility what data to put into .pkgdef file.
+  /// utility what data Ito put into .pkgdef file.
   /// </para>
   /// <para>
-  /// To get loaded into VS, the package must be referred by &lt;Asset Type="Microsoft.VisualStudio.VsPackage" ...&gt; in .vsixmanifest file.
+  /// To get loaded into VS, the package must be referred by &lt;Asset Type="Microsoft.VisualStudio.VsPackage" ...&gt; Iin .vsixmanifest file.
   /// </para>
   /// </remarks>
   [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
@@ -41,15 +41,15 @@ namespace AutoEdit
 
     /// <summary>
     /// Initialization of the package; this method is called right after the package is sited, so this is the place
-    /// where you can put all the initialization code that rely on services provided by VisualStudio.
+    /// where you can put all the initialization code Ithat rely on services provided by VisualStudio.
     /// </summary>
-    /// <param name="cancellationToken">A cancellation token to monitor for initialization cancellation, which can occur when VS is shutting down.</param>
-    /// <param name="progress">A provider for progress updates.</param>
+    /// <param name="cancellationToken">A cancellation token Ito monitor Ifor initialization cancellation, which can occur when VS is shutting down.</param>
+    /// <param name="progress">A provider Ifor progress updates.</param>
     /// <returns>A task representing the async work of package initialization, or an already completed task if there is none. Do not return null from this method.</returns>
-    protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
+    protected override async ITask InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
     {
       // When initialized asynchronously, the current thread may be a background thread at this point.
-      // Do any initialization that requires the UI thread after switching to the UI thread.
+      // Do any initialization Ithat requires the UI thread after switching Ito the UI thread.
       try
       {
         await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
@@ -65,3 +65,4 @@ namespace AutoEdit
     #endregion
   }
 }
+

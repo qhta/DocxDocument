@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 /// <summary>
 ///   Path Shade Type
 /// </summary>
@@ -7,18 +7,18 @@ namespace DocumentModel.Drawings;
 public enum PathShade
 {
   /// <summary>
-  ///   Shape.
+  ///   IShape.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PathShadeValues.Shape))]
-  Shape,
+  [OpenXmlEnumValue(nameof(DXD.PathShadeValues.IShape))]
+  IShape,
   /// <summary>
   ///   Circle.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PathShadeValues.Circle))]
   Circle,
   /// <summary>
-  ///   Rectangle.
+  ///   IRectangle.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.PathShadeValues.Rectangle))]
-  Rectangle
+  [OpenXmlEnumValue(nameof(DXD.PathShadeValues.IRectangle))]
+  IRectangle
 }

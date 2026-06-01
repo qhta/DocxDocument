@@ -3,10 +3,10 @@
 using DocumentModel.Wordprocessing;
 
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-/// Base class for all model elements. 
+/// Base class Ifor all model elements. 
 /// Defines <see cref="Parent"/> property and <see cref="Equals"/> method.
 /// </summary>
 public class ModelElement : IEquatable<ModelElement>, IModelElement
@@ -27,11 +27,11 @@ public class ModelElement : IEquatable<ModelElement>, IModelElement
 
   [XmlIgnore]
   [NonComparable]
-  public virtual Document? ParentDocument 
+  public virtual IDocument? ParentDocument 
   { 
     get
     {
-      if (Parent is Document document)
+      if (Parent is IDocument document)
         return document;
       if (Parent != null)
         return Parent.ParentDocument;
@@ -53,7 +53,7 @@ public class ModelElement : IEquatable<ModelElement>, IModelElement
   public override int GetHashCode()
   {
     var hashCode = 0;
-    foreach (var prop in this.GetType().GetProperties())
+    foreach (var prop Iin this.GetType().GetProperties())
     {
       if (prop.GetCustomAttribute<NonComparableAttribute>() != null)
         continue;
@@ -64,7 +64,7 @@ public class ModelElement : IEquatable<ModelElement>, IModelElement
         if (prop.PropertyType.IsGenericTypeDefinition && value is IEnumerable enumerable)
         {
           val = 0;
-          foreach (var item in enumerable)
+          foreach (var item Iin enumerable)
             val = HashCode.Combine(val, item.GetHashCode());
         }
         else

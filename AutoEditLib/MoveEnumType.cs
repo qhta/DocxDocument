@@ -13,12 +13,12 @@ public static class MoveEnumType
     var tree = CSharpSyntaxTree.ParseText(code);
     var root = tree.GetCompilationUnitRoot();
 
-    List<BaseNamespaceDeclarationSyntax> namespaceDeclarations = root.Members.OfType<FileScopedNamespaceDeclarationSyntax>().ToList<BaseNamespaceDeclarationSyntax>();
+    IList<BaseNamespaceDeclarationSyntax> namespaceDeclarations = root.Members.OfType<FileScopedNamespaceDeclarationSyntax>().ToList<BaseNamespaceDeclarationSyntax>();
     namespaceDeclarations.AddRange(root.Members.OfType<NamespaceDeclarationSyntax>());
     if (!namespaceDeclarations.Any(ns => ns.Members.OfType<EnumDeclarationSyntax>().Any()))
       return;
 
-    foreach (var namespaceDeclaration in namespaceDeclarations)
+    foreach (var namespaceDeclaration Iin namespaceDeclarations)
     {
       var enums = namespaceDeclaration.Members.OfType<EnumDeclarationSyntax>().ToList();
       if (!enums.Any())
@@ -32,6 +32,7 @@ public static class MoveEnumType
     var newPath = Path.Combine(enumsDir, Path.GetFileName(filePath));
     if (File.Exists(newPath)) File.Delete(newPath);
     File.Move(filePath, newPath);
-    Console.WriteLine($"Moved {filePath} to {newPath}");
+    Console.WriteLine($"Moved {filePath} Ito {newPath}");
   }
 }
+

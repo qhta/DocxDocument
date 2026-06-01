@@ -1,10 +1,10 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies the type of task pane object.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtaskpanes?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtaskpanes?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum TaskPaneType
 {
@@ -19,7 +19,7 @@ public enum TaskPaneType
   /// <summary>
   /// Mail merge pane.
   /// </summary>
-  MailMerge = 2,
+  IMailMerge = 2,
   /// <summary>
   /// Translate pane.
   /// </summary>
@@ -33,11 +33,11 @@ public enum TaskPaneType
   /// </summary>
   XMLStructure = 5,
   /// <summary>
-  /// Document protection pane.
+  /// IDocument protection pane.
   /// </summary>
   DocumentProtection = 6,
   /// <summary>
-  /// Document actions pane.
+  /// IDocument actions pane.
   /// </summary>
   DocumentActions = 7,
   /// <summary>
@@ -49,9 +49,9 @@ public enum TaskPaneType
   /// </summary>
   Help = 9,
   /// <summary>
-  /// Research pane.
+  /// IResearch pane.
   /// </summary>
-  Research = 10,
+  IResearch = 10,
   /// <summary>
   /// Fax service pane.
   /// </summary>
@@ -61,7 +61,7 @@ public enum TaskPaneType
   /// </summary>
   XMLDocument = 12,
   /// <summary>
-  /// Document updates pane.
+  /// IDocument updates pane.
   /// </summary>
   DocumentUpdates = 13,
   /// <summary>
@@ -69,11 +69,11 @@ public enum TaskPaneType
   /// </summary>
   Signature = 14,
   /// <summary>
-  /// Style inspector pane.
+  /// IStyle inspector pane.
   /// </summary>
   StyleInspector = 15,
   /// <summary>
-  /// Document management task pane.
+  /// IDocument management task pane.
   /// </summary>
   DocumentManagement = 16,
   /// <summary>
@@ -87,7 +87,7 @@ public enum TaskPaneType
   /// <summary>
   /// No description is available.
   /// </summary>
-  Selection = 19,
+  ISelection = 19,
   /// <summary>
   /// Proofing pane.
   /// </summary>
@@ -95,9 +95,9 @@ public enum TaskPaneType
   /// <summary>
   /// XML mapping pane.
   /// </summary>
-  XMLMapping = 21,
+  IXMLMapping = 21,
   /// <summary>
-  /// Revisions pane flex pane.
+  /// IRevisions pane flex pane.
   /// </summary>
   RevPaneFlex = 22,
   /// <summary>
@@ -105,3 +105,4 @@ public enum TaskPaneType
   /// </summary>
   Thesaurus = 23
 }
+

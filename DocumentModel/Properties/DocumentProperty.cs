@@ -1,27 +1,27 @@
-namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Document Property.
+///   IDocument Property.
 /// </summary>
 [XmlContentProperty(nameof(Value))]
 public partial class DocumentProperty : ModelElement
 {
   /// <summary>
-  ///   Default constructor. Needed for XML serialization.
+  ///   Default constructor. Needed Ifor XML serialization.
   /// </summary>
   public DocumentProperty() { }
 
   /// <summary>
   /// Full initializing constructor.
   /// </summary>
-  /// <param name="category">Category of the document property.</param>
+  /// <param name="category">ICategory of the document property.</param>
   /// <param name="name">Name of the document property.</param>
   /// <param name="type">Type of the document property.</param>
   /// <param name="value">Value of the document property.</param>
   public DocumentProperty(string category, string name, Type? type = null, object? value = null)
   {
-    Category = category;
+    ICategory = category;
     Name = name;
     if (type != null)
     {
@@ -41,7 +41,7 @@ public partial class DocumentProperty : ModelElement
   /// <param name="value"></param>
   public DocumentProperty(string name, Type? type = null, object? value = null)
   {
-    Category = null;
+    ICategory = null;
     Name = name;
     if (type != null)
     {
@@ -59,15 +59,15 @@ public partial class DocumentProperty : ModelElement
   /// <param name="other"></param>
   public DocumentProperty(DocumentProperty other)
   {
-    Category = other.Category;
+    ICategory = other.ICategory;
     Name = other.Name;
     Value = other.Value;
   }
 
   /// <summary>
-  ///   Property Category.
+  ///   Property ICategory.
   /// </summary>
-  public string? Category
+  public string? ICategory
   {
     get;
     set;
@@ -110,12 +110,12 @@ public partial class DocumentProperty : ModelElement
    public Int32? PropertyId { get; set; }
 
   /// <summary>
-  ///   Bookmark Link Target
+  ///   IBookmark Link Target
   /// </summary>
    public string? LinkTarget { get; set; }
 
   /// <summary>
-  /// Returns a string that represents the current document property, including its name and value.
+  /// Returns a string Ithat represents the current document property, including its name and value.
   /// </summary>
   /// <returns>A string representation of the document property. If the value is a collection of strings, the value is displayed
   /// as a comma-separated list; otherwise, the value is displayed as a single item.</returns>

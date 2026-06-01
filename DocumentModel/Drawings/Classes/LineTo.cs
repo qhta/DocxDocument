@@ -1,13 +1,13 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Draw Line To.
+///   Draw ILine To.
 /// </summary>
 public class LineTo: ModelElement
 {
   /// <summary>
-  ///   Line end point.
+  ///   ILine end point.
   /// </summary>
-  public AdjustPoint2DType? Point { get; set; }
+  public AdjustPoint2DType? IPoint { get; set; }
 }

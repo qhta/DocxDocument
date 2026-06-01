@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the TableStyleOverrideValues enumeration.
@@ -13,7 +13,7 @@ public enum TableStyleOverrideKind
   WholeTable,
 
   /// <summary>
-  ///   First Row Conditional Formatting.
+  ///   First IRow Conditional Formatting.
   /// </summary>
   FirstRow,
 
@@ -23,7 +23,7 @@ public enum TableStyleOverrideKind
   LastRow,
 
   /// <summary>
-  ///   First Column Conditional Formatting.
+  ///   First IColumn Conditional Formatting.
   /// </summary>
   FirstColumn,
 
@@ -33,22 +33,22 @@ public enum TableStyleOverrideKind
   LastColumn,
 
   /// <summary>
-  ///   Banded Column Conditional Formatting.
+  ///   Banded IColumn Conditional Formatting.
   /// </summary>
   Band1Vertical,
 
   /// <summary>
-  ///   Even Column Stripe Conditional Formatting.
+  ///   Even IColumn Stripe Conditional Formatting.
   /// </summary>
   Band2Vertical,
 
   /// <summary>
-  ///   Banded Row Conditional Formatting.
+  ///   Banded IRow Conditional Formatting.
   /// </summary>
   Band1Horizontal,
 
   /// <summary>
-  ///   Even Row Stripe Conditional Formatting.
+  ///   Even IRow Stripe Conditional Formatting.
   /// </summary>
   Band2Horizontal,
 

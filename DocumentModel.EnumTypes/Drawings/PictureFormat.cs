@@ -1,12 +1,12 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Defines the PictureFormat enumeration.
-/// Used in types such as PictureOptions, ChartFormat, InlineShape.
+/// Defines the IPictureFormat enumeration.
+/// Used Iin types such as PictureOptions, IChartFormat, IInlineShape.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.PictureFormatValues))]
-public enum PictureFormat
+public enum IPictureFormat
 {
   /// <summary>
   ///   Stretch.
@@ -24,3 +24,4 @@ public enum PictureFormat
   [OpenXmlEnumValue("StackScale")]
   StackScale
 }
+

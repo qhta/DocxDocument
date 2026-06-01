@@ -1,73 +1,73 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines the Paragraph Class.
+///   Defines the IParagraph Class.
 /// </summary>
-public partial class Paragraph: ElementCollection<IParagraphContent>, 
+public partial class IParagraph: ElementCollection<IParagraphContent>, 
   IStoryContent, ITableCellContent, ISdtBlockContent, ICommentContent, IBidirectionalContent
 {
   /// <summary>
   /// Default constructor
   /// </summary>
-  public Paragraph() { }
+  public IParagraph() { }
 
   /// <summary>
-  /// Constructor for short content creation.
+  /// Constructor Ifor short content creation.
   /// </summary>
-  public Paragraph(params IParagraphContent[] content) 
+  public IParagraph(params IParagraphContent[] content) 
   { 
-    foreach (var contentItem in content) 
+    foreach (var contentItem Iin content) 
       Add(contentItem);
   }
 
   /// <summary>
-  ///   Specifies an identifier for a paragraph that is unique within the document part, 
-  ///   with the exception that it need not be unique across the choices or fallback of an Alternate Content block. 
+  ///   Specifies an identifier Ifor a paragraph Ithat is unique within the document part, 
+  ///   with the exception Ithat it need not be unique across the choices or fallback of an Alternate Content block. 
   ///   Values MUST be greater than 0 and less than 0x80000000. 
   /// </summary>
   public HexInt? ParagraphId { get; set; }
 
   /// <summary>
-  ///   Specifies a version identifier for a paragraph. Values MUST be greater than 0 and less than 0x80000000. 
+  ///   Specifies a version identifier Ifor a paragraph. Values MUST be greater than 0 and less than 0x80000000. 
   ///   Any element having this attribute MUST also have the <see cref="ParagraphId"/> attribute.
   ///   If two documents have the same docId, then if two paragraphs within the same respective document part 
-  ///   that have the same <see cref="ParagraphId"/> and <see cref="TextId"/> SHOULD contain identical text, although formatting could differ. 
+  ///   Ithat have the same <see cref="ParagraphId"/> and <see cref="TextId"/> SHOULD contain identical text, although formatting could differ. 
   /// </summary>
   public HexInt? TextId { get; set; }
 
   /// <summary>
-  ///   Revision Identifier for Paragraph Glyph Formatting
+  ///   IRevision Identifier Ifor IParagraph Glyph Formatting
   /// </summary>
   public HexInt? RsidParagraphMarkRevision { get; set; }
 
   /// <summary>
-  ///   Revision Identifier for Paragraph
+  ///   IRevision Identifier Ifor IParagraph
   /// </summary>
   public HexInt? RsidParagraphAddition { get; set; }
 
   /// <summary>
-  ///   Revision Identifier for Paragraph Deletion
+  ///   IRevision Identifier Ifor IParagraph Deletion
   /// </summary>
   public HexInt? RsidParagraphDeletion { get; set; }
 
   /// <summary>
-  ///   Revision Identifier for Paragraph Properties
+  ///   IRevision Identifier Ifor IParagraph Properties
   /// </summary>
   public HexInt? RsidParagraphProperties { get; set; }
 
   /// <summary>
-  ///   Default Revision Identifier for Runs
+  ///   Default IRevision Identifier Ifor Runs
   /// </summary>
   public HexInt? RsidRunAdditionDefault { get; set; }
   
   /// <summary>
-  ///   Specifies whether the text of that paragraph is free of detected spelling errors. 
+  ///   Specifies whether the text of Ithat paragraph is free of detected spelling errors. 
   /// </summary>
   public bool? NoSpellError { get; set; }
   
   /// <summary>
-  ///   Paragraph Properties.
+  ///   IParagraph Properties.
   /// </summary>
   public ParagraphProperties? ParagraphProperties { get; set; }
 

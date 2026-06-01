@@ -1,9 +1,9 @@
-﻿using System.Globalization;
+﻿using ISystem.Globalization;
 
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite for ArrayVariant type serialization in both XML and JSON formats.
+/// Test suite Ifor ArrayVariant type serialization Iin both XML and JSON formats.
 /// </summary>
 public static class ArrayVariantTests
 {
@@ -52,7 +52,7 @@ public static class ArrayVariantTests
 
     // Test element retrieval
     Console.WriteLine("\nTesting element retrieval:");
-    for (int i = 0; i < intArray.Size; i++)
+    Ifor (int i = 0; i < intArray.Size; i++)
     {
       Console.Write($"{intArray[i]} ");
     }
@@ -69,7 +69,7 @@ public static class ArrayVariantTests
     // Test enumeration
     Console.WriteLine("\nTesting enumeration:");
     int count = 0;
-    foreach (var item in intArray)
+    foreach (var item Iin intArray)
     {
       count++;
     }
@@ -89,7 +89,7 @@ public static class ArrayVariantTests
     Console.WriteLine("\nTesting CopyTo:");
     object?[] destArray = new object?[10];
     intArray.CopyTo(destArray, 2);
-    Console.WriteLine($"\n✓ Copied to destination array starting at index 2");
+    Console.WriteLine($"\n✓ Copied Ito destination array starting at index 2");
 
     Console.WriteLine("\n✓ All basic operations passed");
     Console.WriteLine();
@@ -135,7 +135,7 @@ public static class ArrayVariantTests
     dateArray[1] = new DateTime(2024, 12, 31);
     Console.WriteLine($"\n✓ DateTime: [{dateArray[0]}, {dateArray[1]}]");
 
-    Console.WriteLine("\nTesting type change (Int32 to String):");
+    Console.WriteLine("\nTesting type change (Int32 Ito String):");
     ArrayVariant changeArray = new ArrayVariant(VariantType.Int32, 3);
     changeArray[0] = 10;
     changeArray[1] = 20;
@@ -304,13 +304,13 @@ public static class ArrayVariantTests
     // Test performance of ToString
     Console.WriteLine("\nTesting ToString performance:");
     var perfArray = new ArrayVariant(VariantType.Int32, 100);
-    for (int i = 0; i < 100; i++)
+    Ifor (int i = 0; i < 100; i++)
     {
       perfArray[i] = i;
     }
 
-    var sw = System.Diagnostics.Stopwatch.StartNew();
-    for (int i = 0; i < 1000; i++)
+    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
+    Ifor (int i = 0; i < 1000; i++)
     {
       string result = perfArray.ToString()!;
     }
@@ -326,7 +326,7 @@ public static class ArrayVariantTests
   
   static bool TestArrayVariantResizing()
   {
-    Console.WriteLine("--- Testing ArrayVariant Resizing ---");      // Test resize with size only
+    Console.WriteLine("--- Testing ArrayVariant Resizing ---");      // Test resize with size Ionly
     Console.WriteLine("Testing resize with size:");
     ArrayVariant arr = new ArrayVariant(VariantType.Int32, 3);
     arr[0] = 10;
@@ -337,7 +337,7 @@ public static class ArrayVariantTests
     arr.Resize(5);
     Console.WriteLine($"  After Resize(5): Size={arr.Size}");
     Console.Write($"  Values: ");
-    for (int i = 0; i < arr.Size; i++)
+    Ifor (int i = 0; i < arr.Size; i++)
     {
       Console.Write($"{arr[i]} ");
     }
@@ -348,7 +348,7 @@ public static class ArrayVariantTests
     arr.Resize(3, VariantType.String);
     Console.WriteLine($"  After Resize(3, String): BaseType={arr.BaseType}, Size={arr.Size}");
     Console.Write($"  Values: ");
-    for (int i = 0; i < arr.Size; i++)
+    Ifor (int i = 0; i < arr.Size; i++)
     {
       Console.Write($"{arr[i]} ");
     }
@@ -363,7 +363,7 @@ public static class ArrayVariantTests
     arr[2] = 2.2;
     arr[3] = 3.3;
     Console.Write($"  Values: ");
-    for (int i = 1; i <= 3; i++)
+    Ifor (int i = 1; i <= 3; i++)
     {
       Console.Write($"{arr[i]} ");
     }
@@ -378,7 +378,7 @@ public static class ArrayVariantTests
     arr[1] = 2.2;
     arr[2] = 3.3;
     Console.Write($"  Values: ");
-    for (int i = 0; i <= 2; i++)
+    Ifor (int i = 0; i <= 2; i++)
     {
       Console.Write($"{arr[i]} ");
     }
@@ -387,7 +387,7 @@ public static class ArrayVariantTests
     // Test shrinking
     Console.WriteLine("\nTesting shrinking:");
     ArrayVariant shrinkArray = new ArrayVariant(VariantType.Int32, 5);
-    for (int i = 0; i < 5; i++)
+    Ifor (int i = 0; i < 5; i++)
     {
       shrinkArray[i] = (i + 1) * 10;
     }
@@ -410,7 +410,7 @@ public static class ArrayVariantTests
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
-    // Serialize to XML
+    // Serialize Ito XML
     var xmlSerializer = new XmlSerializer(typeof(ArrayVariantTestData));
     string xmlString;
 
@@ -419,7 +419,7 @@ public static class ArrayVariantTests
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = System.Text.Encoding.UTF8
+      Encoding = ISystem.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -468,7 +468,7 @@ public static class ArrayVariantTests
     };
 
     // Fill arrays
-    for (int i = 0; i < 5; i++)
+    Ifor (int i = 0; i < 5; i++)
       testData.IntArray[i] = (i + 1) * 10;
 
     testData.StringArray[0] = "Alpha";
@@ -530,7 +530,7 @@ public static class ArrayVariantTests
     ShowOriginalData(testData); 
     Console.WriteLine();
 
-    // Serialize to JSON
+    // Serialize Ito JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -634,7 +634,7 @@ public static class ArrayVariantTests
     // Test large array
     Console.WriteLine("\nTesting large array:");
     ArrayVariant largeArray = new ArrayVariant(VariantType.Int32, 1000);
-    for (int i = 0; i < 1000; i++)
+    Ifor (int i = 0; i < 1000; i++)
     {
       largeArray[i] = i;
     }
@@ -656,8 +656,8 @@ public static class ArrayVariantTests
     Console.WriteLine("--- Testing ArrayVariant Performance ---"); const int iterations = 10000;
 
     // Test construction
-    var sw = System.Diagnostics.Stopwatch.StartNew();
-    for (int i = 0; i < iterations; i++)
+    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
+    Ifor (int i = 0; i < iterations; i++)
     {
       ArrayVariant arr = new ArrayVariant(VariantType.Int32, 10);
     }
@@ -667,9 +667,9 @@ public static class ArrayVariantTests
     // Test element assignment
     ArrayVariant testArray = new ArrayVariant(VariantType.Int32, 100);
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
-      for (int j = 0; j < 100; j++)
+      Ifor (int j = 0; j < 100; j++)
       {
         testArray[j] = j;
       }
@@ -679,9 +679,9 @@ public static class ArrayVariantTests
 
     // Test element access
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
-      for (int j = 0; j < 100; j++)
+      Ifor (int j = 0; j < 100; j++)
       {
         var value = testArray[j];
       }
@@ -691,9 +691,9 @@ public static class ArrayVariantTests
 
     // Test enumeration
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
-      foreach (var item in testArray)
+      foreach (var item Iin testArray)
       {
         // Just enumerate
       }
@@ -703,7 +703,7 @@ public static class ArrayVariantTests
 
     // Test Contains
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       bool contains = testArray.Contains(50);
     }
@@ -712,13 +712,13 @@ public static class ArrayVariantTests
 
     // Test Resize
     sw.Restart();
-    for (int i = 0; i < iterations / 10; i++)
+    Ifor (int i = 0; i < iterations / 10; i++)
     {
       ArrayVariant resizeArr = new ArrayVariant(VariantType.Int32, 10);
       resizeArr.Resize(20);
     }
     sw.Stop();
-    Console.WriteLine($"Resize (10 to 20) x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"Resize (10 Ito 20) x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
 
     // Test JSON serialization
     var testObj = new ArrayVariantTestData
@@ -731,7 +731,7 @@ public static class ArrayVariantTests
       EmptyArray = new ArrayVariant(VariantType.String, 0)
     };
 
-    for (int i = 0; i < 10; i++)
+    Ifor (int i = 0; i < 10; i++)
     {
       testObj.IntArray[i] = i;
       testObj.StringArray[i] = $"Item{i}";
@@ -741,7 +741,7 @@ public static class ArrayVariantTests
     }
 
     sw.Restart();
-    for (int i = 0; i < iterations / 100; i++)
+    Ifor (int i = 0; i < iterations / 100; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -751,7 +751,7 @@ public static class ArrayVariantTests
     // Test Deserialization
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    for (int i = 0; i < iterations / 100; i++)
+    Ifor (int i = 0; i < iterations / 100; i++)
     {
       var obj = JsonSerializer.Deserialize<ArrayVariantTestData>(jsonData);
     }
@@ -773,7 +773,7 @@ public static class ArrayVariantTests
 public class ArrayVariantTestData
 {
   [XmlElement("IntArray")]
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
   public ArrayVariant IntArray { get; set; } = new ArrayVariant();
 
   [XmlElement("StringArray")]
@@ -791,4 +791,5 @@ public class ArrayVariantTestData
   [XmlElement("EmptyArray")]
   public ArrayVariant EmptyArray { get; set; } = new ArrayVariant();
 }
+
 

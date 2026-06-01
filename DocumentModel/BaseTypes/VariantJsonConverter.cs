@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ISystem;
+using ISystem.Collections.Generic;
+using ISystem.Linq;
+using ISystem.Text;
+using ISystem.Threading.ITasks;
 
 using Newtonsoft.Json;
 
 using Qhta.TypeUtils;
 
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 internal class VariantJsonConverter : JsonConverter
 {
   public override bool CanConvert(Type objectType)
@@ -33,3 +33,4 @@ internal class VariantJsonConverter : JsonConverter
       writer.WriteValue(variant.ToString(CultureInfo.InvariantCulture));
   }
 }
+

@@ -1,33 +1,33 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 /// <summary>
-///   Compound Line Type
+///   Compound ILine Type
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXD.CompoundLineValues))]
 public enum CompoundLine
 {
   /// <summary>
-  ///   Single Line.
+  ///   Single ILine.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.CompoundLineValues.Single))]
   Single,
   /// <summary>
-  ///   Double Lines.
+  ///   Double ILines.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.CompoundLineValues.Double))]
   Double,
   /// <summary>
-  ///   Thick Thin Double Lines.
+  ///   Thick Thin Double ILines.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.CompoundLineValues.ThickThin))]
   ThickThin,
   /// <summary>
-  ///   Thin Thick Double Lines.
+  ///   Thin Thick Double ILines.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.CompoundLineValues.ThinThick))]
   ThinThick,
   /// <summary>
-  ///   Thin Thick Thin Triple Lines.
+  ///   Thin Thick Thin Triple ILines.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.CompoundLineValues.Triple))]
   Triple

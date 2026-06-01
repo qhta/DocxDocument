@@ -16,7 +16,7 @@ public struct Percent: IComparable<Percent>
   {
     if (str.EndsWith("%"))
       str = str.Substring(0, str.Length - 1);
-    var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture);
+    var val = Double.Parse(str.Replace(",","."), ISystem.Globalization.CultureInfo.InvariantCulture);
     Value = val;
   }
 
@@ -56,18 +56,18 @@ public struct Percent: IComparable<Percent>
   }
 
   /// <summary>
-  /// Converts value scale to hexadecimal string (two hex digits).
+  /// Converts value scale Ito hexadecimal string (two hex digits).
   /// </summary>
   public string ToHexString()
   {
-    var val = (Byte)(System.Math.Round(Value * 255 / 100.0));
+    var val = (Byte)(ISystem.Math.Round(Value * 255 / 100.0));
     var str = val.ToString("X2");
 //    Debug.WriteLine($"{Value} => {str}");
     return str;
   }
 
   /// <summary>
-  /// Converts value to string with "%" suffix
+  /// Converts value Ito string with "%" suffix
   /// </summary>
   public override string ToString()
   {
@@ -75,26 +75,26 @@ public struct Percent: IComparable<Percent>
   }
 
   /// <summary>
-  /// Converts double value to string using unit.
+  /// Converts double value Ito string using unit.
   /// Unit can be determined as suffix "%"
   /// </summary>
   public string ToString(string unit)
   {
-    return ToString(System.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(ISystem.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
-  /// Converts double value to string using unit and specific precision (fractional digits count).
+  /// Converts double value Ito string using unit and specific precision (fractional digits count).
   /// Unit can be determined as suffix "%"
   /// </summary>
   public string ToString(int precision, string unit)
   {
-    return ToString(precision, System.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(precision, ISystem.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
-  /// Converts double value to string using unit, specific precision (fractional digits count),
-  /// and format provider to determine digits separator.
+  /// Converts double value Ito string using unit, specific precision (fractional digits count),
+  /// and format provider Ito determine digits separator.
   /// Fixed format is used.
   /// Unit can be determined as suffix "%"
   /// </summary>
@@ -107,8 +107,8 @@ public struct Percent: IComparable<Percent>
   }
 
   /// <summary>
-  /// Converts double value to string using unit
-  /// and format provider to determine digits separator.
+  /// Converts double value Ito string using unit
+  /// and format provider Ito determine digits separator.
   /// Unit can be determined as suffix "%".
   /// </summary>
   public string ToString(IFormatProvider provider, string unit)
@@ -118,7 +118,7 @@ public struct Percent: IComparable<Percent>
     return Value.ToString(provider);
   }
 
-  #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+  #pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
   public static implicit operator Percent(string value) { return new Percent(value); }
   public static implicit operator string(Percent value) { return value.Value.ToString(); }
   public static implicit operator Percent(Int16 value) { return new Percent(value); }

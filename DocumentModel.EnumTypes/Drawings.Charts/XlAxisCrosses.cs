@@ -1,4 +1,4 @@
-
+﻿
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.Charts;
 /// on the specified axis where the other axis crosses.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlaxiscrosses?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlaxiscrosses?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum XlAxisCrosses
 {
@@ -27,3 +27,4 @@ public enum XlAxisCrosses
   /// </summary>
   Minimum = 4
 }
+

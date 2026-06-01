@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 /// <summary>
 ///   Vertical Text Types
 /// </summary>
@@ -37,7 +37,7 @@ public enum TextVertical
   [OpenXmlEnumValue(nameof(DXD.TextVerticalValues.MongolianVertical))]
   MongolianVertical,
   /// <summary>
-  ///   Vertical WordArt Right to Left.
+  ///   Vertical WordArt Right Ito Left.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.TextVerticalValues.WordArtLeftToRight))]
   WordArtLeftToRight

@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Point List.
+///   IPoint IList.
 /// </summary>
 public class PointList: ModelElement
 {
-  public Collection<Point>? Points { get; set; }
+  public Collection<IPoint>? IPoints { get; set; }
 }

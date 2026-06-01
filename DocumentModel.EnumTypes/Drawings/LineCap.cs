@@ -1,24 +1,24 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 /// <summary>
-///   End Line Cap
+///   End ILine Cap
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXD.LineCapValues))]
 public enum LineCap
 {
   /// <summary>
-  ///   Round Line Cap.
+  ///   Round ILine Cap.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.LineCapValues.Round))]
   Round = 1,
 
   /// <summary>
-  ///   Square Line Cap.
+  ///   Square ILine Cap.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.LineCapValues.Square))]
   Square,
   /// <summary>
-  ///   Flat Line Cap.
+  ///   Flat ILine Cap.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.LineCapValues.Flat))]
   Flat

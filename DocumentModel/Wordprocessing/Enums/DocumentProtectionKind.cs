@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the DocumentProtectionValues enumeration.
@@ -18,17 +18,17 @@ public enum DocumentProtectionKind
   ReadOnly,
 
   /// <summary>
-  ///   Allow Editing of Comments.
+  ///   Allow Editing of IComments.
   /// </summary>
-  Comments,
+  IComments,
 
   /// <summary>
-  ///   Allow Editing With Revision Tracking.
+  ///   Allow Editing With IRevision Tracking.
   /// </summary>
   TrackedChanges,
 
   /// <summary>
-  ///   Allow Editing of Form Fields.
+  ///   Allow Editing of Form IFields.
   /// </summary>
   Forms
 }

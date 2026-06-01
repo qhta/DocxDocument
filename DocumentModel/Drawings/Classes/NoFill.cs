@@ -1,6 +1,6 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 /// <summary>
-///   No fill is applied to the parent element.
+///   No fill is applied Ito the parent element.
 /// </summary>
 public class NoFill: Fill
 {

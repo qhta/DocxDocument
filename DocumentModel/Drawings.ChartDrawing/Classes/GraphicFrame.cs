@@ -1,13 +1,13 @@
-namespace DocumentModel.Drawings.ChartDrawing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Graphic Frame.
+///   Graphic IFrame.
 /// </summary>
 public class GraphicFrame: ModelElement
 {
   /// <summary>
-  ///   Reference to Custom Function
+  ///   Reference Ito Custom Function
   /// </summary>
   public string? Macro { get; set; }
 
@@ -17,12 +17,12 @@ public class GraphicFrame: ModelElement
   public bool? Published { get; set; }
 
   /// <summary>
-  ///   Non-Visual Graphic Frame Properties.
+  ///   Non-Visual Graphic IFrame Properties.
   /// </summary>
   public NonVisualGraphicFrameProperties? NonVisualGraphicFrameProperties { get; set; }
 
   /// <summary>
-  ///   Graphic Frame Transform.
+  ///   Graphic IFrame Transform.
   /// </summary>
   public Transform? Transform { get; set; }
 

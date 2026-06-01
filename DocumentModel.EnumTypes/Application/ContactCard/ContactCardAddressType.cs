@@ -1,8 +1,8 @@
-
-namespace DocumentModel.Application;
+﻿
+namespace DocumentModel.IApplication;
 
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocontactcardaddresstype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocontactcardaddresstype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum ContactCardAddressType
 {
@@ -23,3 +23,4 @@ public enum ContactCardAddressType
   /// </summary>
   IM
 }
+

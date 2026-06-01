@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the UnderlineValues enumeration.
@@ -13,9 +13,9 @@ public enum UnderlineKind
   Single,
 
   /// <summary>
-  ///   Underline Non-Space Characters Only.
+  ///   Underline Non-Space ICharacters Only.
   /// </summary>
-  Words,
+  IWords,
 
   /// <summary>
   ///   Double Underline.

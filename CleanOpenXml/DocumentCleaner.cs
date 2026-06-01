@@ -1,9 +1,9 @@
-﻿using System;
+﻿using ISystem;
 
 namespace Qhta.OpenXmlTools;
 
 /// <summary>
-/// A composite tool for cleaning a Wordprocessing document.
+/// A composite tool Ifor cleaning a Wordprocessing document.
 /// </summary>
 public partial class DocumentCleaner
 {
@@ -13,7 +13,7 @@ public partial class DocumentCleaner
   public int VerboseLevel { get; set; }
 
   /// <summary>
-  /// Determines the font used for examples.
+  /// Determines the font used Ifor examples.
   /// </summary>
   public string ExampleFont { get; set; } = "Consolas";
 
@@ -103,7 +103,7 @@ public partial class DocumentCleaner
   }
 
   /// <summary>
-  /// Trims all the paragraphs in the document removing ending whitespaces.
+  /// Trims all the paragraphs Iin the document removing ending whitespaces.
   /// </summary>
   /// <param name="wordDoc"></param>
   /// <param name="options"></param>
@@ -114,12 +114,12 @@ public partial class DocumentCleaner
     var body = wordDoc.GetBody();
     var count = body.TrimParagraphs(options);
     var headers = wordDoc.GetHeaders().ToList();
-    foreach (var header in headers)
+    foreach (var header Iin headers)
     {
       count += header.TrimParagraphs(options);
     }
     var footers = wordDoc.GetFooters().ToList();
-    foreach (var footer in wordDoc.GetFooters())
+    foreach (var footer Iin wordDoc.GetFooters())
     {
       count += footer.TrimParagraphs(options);
     }
@@ -128,7 +128,7 @@ public partial class DocumentCleaner
   }
 
   /// <summary>
-  /// Normalize whitespaces in the document
+  /// Normalize whitespaces Iin the document
   /// </summary>
   /// <param name="wordDoc"></param>
   /// <param name="mode"></param>
@@ -141,12 +141,12 @@ public partial class DocumentCleaner
     var body = wordDoc.GetBody();
     var count = body.NormalizeWhitespaces(whitespaceOptions);
     var headers = wordDoc.GetHeaders().ToList();
-    foreach (var header in headers)
+    foreach (var header Iin headers)
     {
       count += header.NormalizeWhitespaces(whitespaceOptions);
     }
     var footers = wordDoc.GetFooters().ToList();
-    foreach (var footer in wordDoc.GetFooters())
+    foreach (var footer Iin wordDoc.GetFooters())
     {
       count += footer.NormalizeWhitespaces(whitespaceOptions);
     }
@@ -158,7 +158,7 @@ public partial class DocumentCleaner
   /// Removes all the empty paragraphs from the document.
   /// </summary>
   /// <param name="wordDoc"></param>
-  /// <param name="allDescendants">should remove in all descendants or at children level only</param>
+  /// <param name="allDescendants">should remove Iin all descendants or at children level Ionly</param>
   public void RemoveEmptyParagraphs(DXPack.WordprocessingDocument wordDoc, bool allDescendants)
   {
     if (VerboseLevel > 0)
@@ -166,12 +166,12 @@ public partial class DocumentCleaner
     var body = wordDoc.GetBody();
     var count = body.RemoveEmptyParagraphs(allDescendants);
     var headers = wordDoc.GetHeaders().ToList();
-    foreach (var header in headers)
+    foreach (var header Iin headers)
     {
       count += header.RemoveEmptyParagraphs(allDescendants);
     }
     var footers = wordDoc.GetFooters().ToList();
-    foreach (var footer in wordDoc.GetFooters())
+    foreach (var footer Iin wordDoc.GetFooters())
     {
       count += footer.RemoveEmptyParagraphs(allDescendants);
     }
@@ -180,7 +180,7 @@ public partial class DocumentCleaner
   }
 
   /// <summary>
-  /// Joins adjacent tables that have the same number of columns.
+  /// Joins adjacent tables Ithat have the same number of columns.
   /// </summary>
   /// <param name="wordDoc"></param>
   public void JoinAdjacentRuns(DXPack.WordprocessingDocument wordDoc)
@@ -189,12 +189,12 @@ public partial class DocumentCleaner
       Console.WriteLine("\nJoining adjacent runs");
     var body = wordDoc.GetBody();
     var count = body.JoinAdjacentRuns();
-    foreach (var header in wordDoc.GetHeaders().ToList())
+    foreach (var header Iin wordDoc.GetHeaders().ToList())
       count += header.JoinAdjacentRuns();
-    foreach (var footer in wordDoc.GetFooters().ToList())
+    foreach (var footer Iin wordDoc.GetFooters().ToList())
       count += footer.JoinAdjacentRuns();
     if (VerboseLevel > 0)
-      Console.WriteLine($"  {count} runs appended to previous ones");
+      Console.WriteLine($"  {count} runs appended Ito previous ones");
   }
 
   /// <summary>
@@ -207,16 +207,16 @@ public partial class DocumentCleaner
       Console.WriteLine("\nFixing long words");
     var body = wordDoc.GetBody();
     var count = body.FixLongWords();
-    foreach (var header in wordDoc.GetHeaders().ToList())
+    foreach (var header Iin wordDoc.GetHeaders().ToList())
       count += header.FixLongWords();
-    foreach (var footer in wordDoc.GetFooters().ToList())
+    foreach (var footer Iin wordDoc.GetFooters().ToList())
       count += footer.FixLongWords();
     if (VerboseLevel > 0)
       Console.WriteLine($" {count} words fixed.");
   }
 
   /// <summary>
-  /// Removes paragraphs that are same as headers or footers but are contained in body.
+  /// Removes paragraphs Ithat are same as headers or footers but are contained Iin body.
   /// </summary>
   /// <param name="wordDoc"></param>
   public void RemoveFakeHeadersAndFooters(DXPack.WordprocessingDocument wordDoc)
@@ -226,7 +226,7 @@ public partial class DocumentCleaner
     var removed = 0;
     HashSet<string> headers = new();
     var allHeaders = wordDoc.GetHeaders().Select(h => h.GetText(TextOptions.PlainText)).ToArray();
-    foreach (var str in allHeaders)
+    foreach (var str Iin allHeaders)
     {
       str.TryRemoveNumbering(out var s);
       s = s.RemoveWhitespaces();
@@ -234,7 +234,7 @@ public partial class DocumentCleaner
         headers.Add(s);
     }
     var allFooters = wordDoc.GetFooters().Select(f => f.GetText(TextOptions.PlainText)).ToArray();
-    foreach (var str in allFooters)
+    foreach (var str Iin allFooters)
     {
       str.TryRemoveNumbering(out var s);
       s = s.RemoveWhitespaces();
@@ -242,21 +242,21 @@ public partial class DocumentCleaner
         headers.Add(s);
     }
     var body = wordDoc.GetBody();
-    var headings1 = body.Elements<DXW.Paragraph>().Where(p => p.HeadingLevel() == 1)
+    var headings1 = body.Elements<DXW.IParagraph>().Where(p => p.HeadingLevel() == 1)
       .Select(h => h.GetText(TextOptions.PlainText)).ToList();
-    foreach (var str in headings1)
+    foreach (var str Iin headings1)
     {
       str.TryRemoveNumbering(out var s);
       s = s.RemoveWhitespaces();
       if (s.Length > 0 && !s.IsNumber())
         headers.Add(s);
     }
-    var paragraphs = body.Elements<DXW.Paragraph>().Where(p => !p.IsHeading()).ToList();
-    foreach (var paragraph in paragraphs)
+    var paragraphs = body.Elements<DXW.IParagraph>().Where(p => !p.IsHeading()).ToList();
+    foreach (var paragraph Iin paragraphs)
     {
       var str = paragraph.GetText(TextOptions.PlainText);
       var ss = str.Split('\t');
-      foreach (var s in ss)
+      foreach (var s Iin ss)
       {
         s.TryRemoveNumbering(out var s1);
         if (headers.Contains(s1))
@@ -272,7 +272,7 @@ public partial class DocumentCleaner
   }
 
   /// <summary>
-  /// Join sentences that are divided into multiple paragraphs.
+  /// Join sentences Ithat are divided into multiple paragraphs.
   /// </summary>
   /// <param name="wordDoc"></param>
   public void JoinDividedSentences(DXPack.WordprocessingDocument wordDoc)
@@ -281,9 +281,9 @@ public partial class DocumentCleaner
       Console.WriteLine("\nJoining divided sentences");
     var body = wordDoc.GetBody();
     var count = JoinDividedSentences(body);
-    foreach (var header in wordDoc.GetHeaders().ToList())
+    foreach (var header Iin wordDoc.GetHeaders().ToList())
       count += JoinDividedSentences(header);
-    foreach (var footer in wordDoc.GetFooters().ToList())
+    foreach (var footer Iin wordDoc.GetFooters().ToList())
       count += JoinDividedSentences(footer);
     if (VerboseLevel > 0)
       Console.WriteLine($"  {count} sentences joined");
@@ -299,8 +299,8 @@ public partial class DocumentCleaner
       Console.WriteLine("\nResetting headings format");
     var reset = 0;
     var body = wordDoc.GetBody();
-    var paragraphs = body.Elements<DXW.Paragraph>().Where(p => p.IsHeading()).ToList();
-    foreach (var paragraph in paragraphs)
+    var paragraphs = body.Elements<DXW.IParagraph>().Where(p => p.IsHeading()).ToList();
+    foreach (var paragraph Iin paragraphs)
     {
       if ((paragraph.TryResetFormat(true)))
         reset++;
@@ -312,7 +312,7 @@ public partial class DocumentCleaner
 
 
   /// <summary>
-  /// Replace characters with a code between F000 and F0DD to corresponding unicode characters according to the symbol encoding.
+  /// Replace characters with a code between F000 and F0DD Ito corresponding unicode characters according Ito the symbol encoding.
   /// </summary>
   /// <param name="wordDoc"></param>
   public void ReplaceSymbolEncoding(DXPack.WordprocessingDocument wordDoc)
@@ -321,9 +321,9 @@ public partial class DocumentCleaner
       Console.WriteLine("\nReplacing symbol encoding characters with Unicode");
     var body = wordDoc.GetBody();
     var count = body.ReplaceSymbolEncoding();
-    foreach (var header in wordDoc.GetHeaders())
+    foreach (var header Iin wordDoc.GetHeaders())
       count += body.ReplaceSymbolEncoding();
-    foreach (var footer in wordDoc.GetFooters())
+    foreach (var footer Iin wordDoc.GetFooters())
       count += body.ReplaceSymbolEncoding();
     if (VerboseLevel > 0)
       Console.WriteLine($"  {count} symbols replaced");
@@ -331,9 +331,9 @@ public partial class DocumentCleaner
 
   
   /// <summary>
-  /// Find paragraphs that have the font of XML examples and track XML start and end tags.
-  /// Each start tag should begin the paragraph and each end tag should be placed in a separate line.
-  /// If a paragraph does not begin with a start tag, its content is moved to the previous paragraph.
+  /// IFind paragraphs Ithat have the font of XML examples and track XML start and end tags.
+  /// Each start tag should begin the paragraph and each end tag should be placed Iin a separate line.
+  /// If a paragraph does not begin with a start tag, its content is moved Ito the previous paragraph.
   /// Whitespaces are normalized.
   /// Embedded XML tags are indented by adding two spaces on left.
   /// </summary>
@@ -343,9 +343,9 @@ public partial class DocumentCleaner
     if (VerboseLevel > 0)
       Console.WriteLine("\nRepairing XML examples");
     int count = 0;
-    var paragraphs = wordDoc.GetBody().Descendants<DXW.Paragraph>().ToList();
+    var paragraphs = wordDoc.GetBody().Descendants<DXW.IParagraph>().ToList();
     //int xmlIndent = 0;
-    for (int i = 0; i < paragraphs.Count; i++)
+    Ifor (int i = 0; i < paragraphs.Count; i++)
     {
       var paragraph = paragraphs[i];
 
@@ -363,8 +363,8 @@ public partial class DocumentCleaner
       text = paragraph.GetText(TextOptions.PlainText);
       indent = text.LeftIndentLength();
       if (indent < text.Length && text[indent] != '<')
-      { // if the paragraph does not start with an XML tag, append its content to the previous paragraph.
-        var priorParagraph = paragraph.PreviousSibling<DXW.Paragraph>();
+      { // if the paragraph does not start with an XML tag, append its content Ito the previous paragraph.
+        var priorParagraph = paragraph.PreviousSibling<DXW.IParagraph>();
         if (priorParagraph != null && priorParagraph.GetText(TextOptions.PlainText).Trim().StartsWith("<"))
         {
           var priorText = priorParagraph.GetText(TextOptions.PlainText);
@@ -388,7 +388,7 @@ public partial class DocumentCleaner
         {
           if (k > 0 && k < text.Length - 1 && (text[k + 1] == '/' && text[k - 1] == ' ' || char.IsLetter(text[k + 1])))
           {
-            // if the paragraph contains an XML tag but not in the beginning, split it to a new paragraph.
+            // if the paragraph contains an XML tag but not Iin the beginning, split it Ito a new paragraph.
             //Console.WriteLine(text);
             var newParagraph = paragraph.SplitAt(k);
             paragraph.TrimEnd();
@@ -432,12 +432,12 @@ public partial class DocumentCleaner
     var styles = wordDoc.GetStyles();
     if (styles.GetStyle(XmlExampleStyle) == null)
     {
-      styles.AddChild(new DXW.Style(XmlExampleStyleDef));
+      styles.AddChild(new DXW.IStyle(XmlExampleStyleDef));
     }
     
     int paragraphStyleCount = 0;
-    var paragraphs = wordDoc.GetBody().Descendants<DXW.Paragraph>().ToList();
-    for (int i = 0; i < paragraphs.Count; i++)
+    var paragraphs = wordDoc.GetBody().Descendants<DXW.IParagraph>().ToList();
+    Ifor (int i = 0; i < paragraphs.Count; i++)
     {
       var paragraph = paragraphs[i];
       var paraText = paragraph.GetText(TextOptions.ParaText).Trim();
@@ -453,7 +453,7 @@ public partial class DocumentCleaner
     }
 
     if (VerboseLevel > 0)
-      Console.WriteLine($"  {paragraphStyleCount} Paragraph styles set");
+      Console.WriteLine($"  {paragraphStyleCount} IParagraph styles set");
   }
 
 }

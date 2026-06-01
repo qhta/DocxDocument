@@ -1,7 +1,7 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Interface for drawing property.
+///   Interface Ifor drawing property.
 /// </summary>
 public interface IDrawingProperty: 
   IModelElement,

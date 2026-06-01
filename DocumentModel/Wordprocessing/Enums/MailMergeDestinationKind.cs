@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the MailMergeDestinationValues enumeration.
@@ -8,22 +8,22 @@ namespace DocumentModel.Wordprocessing;
 public enum MailMergeDestinationKind
 {
   /// <summary>
-  ///   Send Merged Documents to New Documents.
+  ///   Send Merged IDocuments Ito New IDocuments.
   /// </summary>
   NewDocument,
 
   /// <summary>
-  ///   Send Merged Documents to Printer.
+  ///   Send Merged IDocuments Ito Printer.
   /// </summary>
   Printer,
 
   /// <summary>
-  ///   Send Merged Documents as E-mail Messages.
+  ///   Send Merged IDocuments as E-mail Messages.
   /// </summary>
-  Email,
+  IEmail,
 
   /// <summary>
-  ///   Send Merged Documents as Faxes.
+  ///   Send Merged IDocuments as Faxes.
   /// </summary>
   Fax
 }

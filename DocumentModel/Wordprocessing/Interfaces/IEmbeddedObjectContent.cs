@@ -1,7 +1,7 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Interface for elements that can be included in an embedded object element.
+///   Interface Ifor elements Ithat can be included Iin an embedded object element.
 /// </summary>
 public interface IEmbeddedObjectContent: IModelElement
 {

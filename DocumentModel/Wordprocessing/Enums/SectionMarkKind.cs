@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the SectionMarkValues enumeration.
@@ -8,27 +8,27 @@ namespace DocumentModel.Wordprocessing;
 public enum SectionMarkKind
 {
   /// <summary>
-  ///   Next Page Section Break.
+  ///   Next IPage ISection IBreak.
   /// </summary>
   NextPage,
 
   /// <summary>
-  ///   Column Section Break.
+  ///   IColumn ISection IBreak.
   /// </summary>
   NextColumn,
 
   /// <summary>
-  ///   Continuous Section Break.
+  ///   Continuous ISection IBreak.
   /// </summary>
   Continuous,
 
   /// <summary>
-  ///   Even Page Section Break.
+  ///   Even IPage ISection IBreak.
   /// </summary>
   EvenPage,
 
   /// <summary>
-  ///   Odd Page Section Break.
+  ///   Odd IPage ISection IBreak.
   /// </summary>
   OddPage
 }

@@ -1,10 +1,10 @@
-namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
 /// Specifies the status of a shared workspace task.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosharedworkspacetaskstatus?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosharedworkspacetaskstatus?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum SharedWorkspaceTaskStatus
 {
@@ -29,3 +29,4 @@ public enum SharedWorkspaceTaskStatus
   /// </summary>
   Waiting
 }
+

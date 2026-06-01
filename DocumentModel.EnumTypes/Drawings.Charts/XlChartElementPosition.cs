@@ -1,4 +1,4 @@
-
+﻿
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.Charts;
 /// position of the chart element.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlchartelementposition?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlchartelementposition?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum XlChartElementPosition
 {
@@ -15,7 +15,8 @@ public enum XlChartElementPosition
   /// </summary>
   Automatic = -4105,
   /// <summary>
-  /// Specifies a specific position for the chart element.
+  /// Specifies a specific position Ifor the chart element.
   /// </summary>
   Custom = -4114
 }
+

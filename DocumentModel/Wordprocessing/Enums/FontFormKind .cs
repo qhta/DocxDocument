@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Defines the FontForm enumeration.
@@ -7,22 +7,22 @@ namespace DocumentModel.Wordprocessing;
 public enum FontFormKind
 {
   /// <summary>
-  ///   Regular Font.
+  ///   Regular IFont.
   /// </summary>
   Regular,
 
   /// <summary>
-  ///   Bold Font.
+  ///   Bold IFont.
   /// </summary>
   Bold,
 
   /// <summary>
-  ///   Italic Font
+  ///   Italic IFont
   /// </summary>
   Italic,
 
   /// <summary>
-  ///   BoldItalic Font.
+  ///   BoldItalic IFont.
   /// </summary>
   BoldItalic,
 }

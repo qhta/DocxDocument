@@ -1,23 +1,23 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-///   Represents binary data encoded as a Base64 string, used for embedding binary content in text-based formats.
+///   Represents binary data encoded as a Base64 string, used Ifor embedding binary content Iin text-based formats.
 /// </summary>
 /// <remarks>
 ///   <para>
-///   Base64 encoding converts binary data to ASCII characters using a 64-character alphabet (A-Z, a-z, 0-9, +, /).
-///   The encoded string length is approximately 133% of the original binary size due to the encoding overhead.
-///   Padding characters (=) are added to ensure the encoded string length is a multiple of 4.
+///   Base64 encoding converts binary data Ito ASCII characters using a 64-character alphabet (A-Z, a-z, 0-9, +, /).
+///   The encoded string length is approximately 133% of the original binary size due Ito the encoding overhead.
+///   Padding characters (=) are added Ito ensure the encoded string length is a multiple of 4.
 ///   </para>
 ///   <para>
 ///   This struct provides implicit conversions between Base64Binary and both string and byte array types,
-///   making it seamless to work with binary data in different representations. The struct is immutable
-///   and implements value equality based on the underlying byte sequence.
+///   making it seamless Ito work with binary data Iin different representations. The struct is immutable
+///   and Iimplements value equality based on the underlying byte sequence.
 ///   </para>
 ///   <para>
 ///   <b>Office Availability:</b> Base64 binary encoding is supported across all Office Open XML formats
 ///   including Word, Excel, and PowerPoint documents (Office 2007 and later). This is the standard
-///   encoding method for embedding binary data in XML-based document formats.
+///   encoding method Ifor embedding binary data Iin XML-based document formats.
 ///   </para>
 /// </remarks>
 [JsonConverter(typeof(Base64BinaryJsonConverter))]
@@ -30,7 +30,7 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   ///   Initializes a new instance of the <see cref="Base64Binary"/> class with an empty byte array.
   /// </summary>
   /// <remarks>
-  ///   This parameterless constructor is required for XML serialization.
+  ///   This parameterless constructor is required Ifor XML serialization.
   /// </remarks>
   public Base64Binary()
   {
@@ -48,7 +48,7 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   /// <summary>
   ///   Initializes a new instance of the <see cref="Base64Binary"/> class from a byte array.
   /// </summary>
-  /// <param name="val">The byte array to wrap.</param>
+  /// <param name="val">The byte array Ito wrap.</param>
   public Base64Binary(byte[] val)
   {
     value = val;
@@ -60,11 +60,11 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   public int Length => value?.Length ?? 0;
 
   /// <summary>
-  ///   Implicitly converts a Base64Binary value to its Base64-encoded string representation.
+  ///   Implicitly converts a Base64Binary value Ito its Base64-encoded string representation.
   /// </summary>
-  /// <param name="val">The Base64Binary value to convert.</param>
+  /// <param name="val">The Base64Binary value Ito convert.</param>
   /// <returns>
-  ///   A Base64-encoded string containing only valid Base64 characters (A-Z, a-z, 0-9, +, /, =).
+  ///   A Base64-encoded string containing Ionly valid Base64 characters (A-Z, a-z, 0-9, +, /, =).
   /// </returns>
   /// <remarks>
   ///   <para>
@@ -83,10 +83,10 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   public static implicit operator string(Base64Binary val) => Convert.ToBase64String(val.value);
 
   /// <summary>
-  ///   Implicitly converts a Base64-encoded string to a Base64Binary value.
+  ///   Implicitly converts a Base64-encoded string Ito a Base64Binary value.
   /// </summary>
   /// <param name="val">
-  ///   A Base64-encoded string containing only valid Base64 characters.
+  ///   A Base64-encoded string containing Ionly valid Base64 characters.
   /// </param>
   /// <returns>A Base64Binary value containing the decoded binary data.</returns>
   /// <remarks>
@@ -113,32 +113,32 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   public static implicit operator Base64Binary(string val) => new(val);
 
   /// <summary>
-  ///   Implicitly converts a Base64Binary value to its underlying byte array representation.
+  ///   Implicitly converts a Base64Binary value Ito its underlying byte array representation.
   /// </summary>
-  /// <param name="val">The Base64Binary value to convert.</param>
+  /// <param name="val">The Base64Binary value Ito convert.</param>
   /// <returns>
   ///   A byte array containing the decoded binary data.
   /// </returns>
   /// <remarks>
-  ///   This conversion provides direct access to the raw binary data without encoding overhead.
+  ///   This conversion provides direct access Ito the raw binary data without encoding overhead.
   ///   The returned byte array is the actual underlying data, not a Base64-encoded representation.
   /// </remarks>
   public static implicit operator byte[](Base64Binary val) => val.value;
 
   /// <summary>
-  ///   Implicitly converts a byte array to a Base64Binary value.
+  ///   Implicitly converts a byte array Ito a Base64Binary value.
   /// </summary>
   /// <param name="val">
-  ///   A byte array containing the binary data to be represented as Base64Binary.
+  ///   A byte array containing the binary data Ito be represented as Base64Binary.
   /// </param>
   /// <returns>A Base64Binary value wrapping the provided byte array.</returns>
   /// <remarks>
   ///   <para>
   ///   This conversion creates a Base64Binary wrapper around binary data. The data is stored
-  ///   as-is and will be Base64-encoded only when converted to a string representation.
+  ///   as-is and will be Base64-encoded Ionly when converted Ito a string representation.
   ///   </para>
   ///   <para>
-  ///   Null input is accepted and results in a Base64Binary with an empty byte array.
+  ///   Null input is accepted and results Iin a Base64Binary with an empty byte array.
   ///   </para>
   /// </remarks>
   public static implicit operator Base64Binary(byte[] val) => new(val);
@@ -154,21 +154,21 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   }
 
   /// <summary>
-  ///   Determines whether this Base64Binary value is equal to another Base64Binary value.
+  ///   Determines whether this Base64Binary value is equal Ito another Base64Binary value.
   /// </summary>
-  /// <param name="other">The Base64Binary value to compare with this instance.</param>
+  /// <param name="other">The Base64Binary value Ito compare with this instance.</param>
   /// <returns>
   ///   <see langword="true"/> if the byte sequences are equal; otherwise <see langword="false"/>.
   /// </returns>
   /// <remarks>
   ///   <para>
   ///   Equality is determined by comparing the underlying byte arrays element-by-element.
-  ///   Two Base64Binary values are equal if and only if their byte arrays have the same length
-  ///   and contain identical bytes in the same order.
+  ///   Two Base64Binary values are equal if and Ionly if their byte arrays have the same length
+  ///   and contain identical bytes Iin the same order.
   ///   </para>
   ///   <para>
   ///   This method uses sequence comparison, so Base64Binary values with identical binary content
-  ///   are considered equal even if they were created from different sources (byte array vs. Base64 string).
+  ///   are considered equal even if they were Icreated from different sources (byte array vs. Base64 string).
   ///   </para>
   /// </remarks>
   public bool Equals(Base64Binary? other)
@@ -179,7 +179,7 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   }
 
   /// <summary>
-  /// Needed to correctly compare with object instances.
+  /// Needed Ito correctly compare with object instances.
   /// </summary>
   /// <param name="obj"></param>
   /// <returns></returns>
@@ -189,7 +189,7 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   }
 
   /// <summary>
-  ///   Returns a hash code for this Base64Binary value.
+  ///   Returns a hash code Ifor this Base64Binary value.
   /// </summary>
   /// <returns>
   ///   A 32-bit signed integer hash code calculated from the byte array contents.
@@ -197,12 +197,12 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   /// <remarks>
   ///   <para>
   ///   The hash code is computed by combining the array length with each byte value using
-  ///   <see cref="HashCode.Combine{T, T}"/>. This ensures that Base64Binary values with identical
-  ///   byte content produce the same hash code, supporting proper usage in hash-based collections
-  ///   like <see cref="Dictionary{TKey,TValue}"/> and <see cref="HashSet{T}"/>.
+  ///   <see cref="HashCode.Combine{T, T}"/>. This ensures Ithat Base64Binary values with identical
+  ///   byte content produce the same hash code, supporting proper usage Iin hash-based collections
+  ///   like <see cref="IDictionary{TKey,TValue}"/> and <see cref="HashSet{T}"/>.
   ///   </para>
   ///   <para>
-  ///   <b>Important:</b> Hash codes are only guaranteed to be equal for identical byte sequences
+  ///   <b>Important:</b> Hash codes are Ionly guaranteed Ito be equal Ifor identical byte sequences
   ///   within the same application execution. Hash codes may differ across application runs or
   ///   .NET implementations.
   ///   </para>
@@ -210,7 +210,7 @@ public partial class Base64Binary : IEquatable<Base64Binary>
   public override int GetHashCode()
   {
     var result = value.Length;
-    foreach (var item in value)
+    foreach (var item Iin value)
       result = HashCode.Combine(result, item);
     return result;
   }

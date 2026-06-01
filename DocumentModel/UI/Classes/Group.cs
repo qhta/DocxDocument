@@ -1,5 +1,5 @@
-namespace DocumentModel.UI;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.UI;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the Group Class.
@@ -119,13 +119,13 @@ public class Group: ModelElement
 
   public ToggleButton? ToggleButton { get; set; }
 
-  public CheckBox? CheckBox { get; set; }
+  public ICheckBox? ICheckBox { get; set; }
 
   public EditBox? EditBox { get; set; }
 
   public ComboBox? ComboBox { get; set; }
 
-  public DropDown? DropDown { get; set; }
+  public IDropDown? IDropDown { get; set; }
 
   public Gallery? Gallery { get; set; }
 

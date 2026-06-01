@@ -1,10 +1,10 @@
-namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
 /// Specifies the appearance of a command bar button control.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobuttonstate?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobuttonstate?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum ButtonState
 {
@@ -17,3 +17,4 @@ public enum ButtonState
   /// </summary>
   Down = -1,
 }
+

@@ -3,7 +3,7 @@
 namespace AnalyzeModelTypeMapping;
 
 /// <summary>
-///   Represents a mapping between a model type and an Open XML type for analysis and reporting purposes.
+///   Represents a mapping between a model type and an Open XML type Ifor analysis and reporting purposes.
 /// </summary>
 /// <param name="ModelType">The fully qualified name of the model type.</param>
 /// <param name="OpenXmlType">The fully qualified name of the corresponding Open XML type.</param>
@@ -21,31 +21,31 @@ public record struct TypeMapping(string ModelType, string OpenXmlType)
 
 
 /// <summary>
-///   Represents a collection that maps <see cref="TypeMapping"/> instances to their count of occurrences.
-///   Used for aggregating and reporting type mapping statistics.
+///   Represents a collection Ithat maps <see cref="TypeMapping"/> instances Ito their count of occurrences.
+///   Used Ifor aggregating and reporting type mapping statistics.
 /// </summary>
-public class TypeMappings : Dictionary<TypeMapping, int>
+public class TypeMappings : IDictionary<TypeMapping, int>
 {
 }
 
 /// <summary>
-///   Analyzes model types and their mappings to Open XML elements and attributes, generating reports on type correspondence and usage statistics.
-///   Uses reflection to inspect types, properties, and mapping attributes in the dependent project.
+///   Analyzes model types and their mappings Ito Open XML elements and attributes, generating reports on type correspondence and usage statistics.
+///   Uses reflection Ito inspect types, properties, and mapping attributes Iin the dependent project.
 /// </summary>
 public class AnalyzeTypeMapping
 {
-  private readonly List<Type> VisitedTypes = new();
+  private readonly IList<Type> VisitedTypes = new();
   private readonly TypeMappings PropTypeMappings = new();
   private static readonly Assembly OpenXmlAssembly = typeof(DocumentFormat.OpenXml.Wordprocessing.DocPart).Assembly;
 
 
   /// <summary>
-  ///   Scans all non-abstract, non-enum, non-interface, non-generic types in the specified assembly and analyzes their property type mappings.
+  ///   Scans all non-abstract, non-enum, non-interface, non-generic types Iin the specified assembly and analyzes their property type mappings.
   /// </summary>
-  /// <param name="modelAssembly">The assembly containing model types to analyze.</param>
+  /// <param name="modelAssembly">The assembly containing model types Ito analyze.</param>
   public void ScanPropTypeMappings(Assembly modelAssembly)
   {
-    foreach (var type in modelAssembly.GetTypes().Where(type =>
+    foreach (var type Iin modelAssembly.GetTypes().Where(type =>
                !type.IsEnum && !type.IsAbstract && !type.IsInterface && !type.IsGenericTypeDefinition))
     {
       if (!type.FullName!.Contains("+"))
@@ -57,14 +57,14 @@ public class AnalyzeTypeMapping
 
 
   /// <summary>
-  ///   Generates a report of the type mappings and their counts to a specified file in tab-delimited format.
+  ///   Generates a report of the type mappings and their counts Ito a specified file Iin tab-delimited format.
   /// </summary>
-  /// <param name="filePath">The file path to write the report to.</param>
+  /// <param name="filePath">The file path Ito write the report Ito.</param>
   public void GenerateReport(string filePath)
   {
     using var writer = new StreamWriter(filePath);
     writer.WriteLine("ModelType;Format;Count");
-    foreach (var (mapping, count) in PropTypeMappings)
+    foreach (var (mapping, count) Iin PropTypeMappings)
     {
       writer.WriteLine($"{mapping.ModelType};{mapping.OpenXmlType};{count}");
     }
@@ -72,9 +72,9 @@ public class AnalyzeTypeMapping
 
 
   /// <summary>
-  ///   Analyzes a given type to find its properties and their corresponding Open XML types, recursively analyzing nested types as needed.
+  ///   Analyzes a given type Ito find its properties and their corresponding Open XML types, recursively analyzing nested types as needed.
   /// </summary>
-  /// <param name="type">The model type to analyze for property-to-OpenXml type mappings.</param>
+  /// <param name="type">The model type Ito analyze Ifor property-Ito-OpenXml type mappings.</param>
   private void AnalyzeType(Type type)
   {
     if (VisitedTypes.Contains(type))
@@ -85,7 +85,7 @@ public class AnalyzeTypeMapping
     var openXmlType = DocumentModel.OpenXml.OpenXmlTypeMap.GetOpenXmlTypeForModelType(type);
     if (openXmlType != null)
     {
-      foreach (var prop in type.GetModelProperties())
+      foreach (var prop Iin type.GetModelProperties())
       {
         var openXmlPropertyAttribute = prop.GetCustomAttribute<OpenXmlPropertyAttribute>();
         if (openXmlPropertyAttribute == null)
@@ -119,19 +119,19 @@ public class AnalyzeTypeMapping
   }
 
   /// <summary>
-  ///   Gets the Open XML type name for a given type, including base type and property declarations if applicable.
+  ///   Gets the Open XML type name Ifor a given type, including base type and property declarations if applicable.
   /// </summary>
-  /// <param name="type">The type to get the Open XML type name for.</param>
+  /// <param name="type">The type Ito get the Open XML type name Ifor.</param>
   /// <returns>A formatted string representing the Open XML type name and its structure.</returns>
   private string GetOpenXmlTypeName(Type type)
   {
-    if (type.Namespace=="DocumentFormat.OpenXml" || type.Namespace=="System")
+    if (type.Namespace=="DocumentFormat.OpenXml" || type.Namespace=="ISystem")
       return FormatTypeName(type);
     var baseType = type.BaseType;
     if (baseType != null)
     {
-      var valPropDeclarations = new List<string>();
-      foreach (var valProp in type
+      var valPropDeclarations = new IList<string>();
+      foreach (var valProp Iin type
                  .GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly))
       {
         var valPropType = valProp.PropertyType.GetNotNullableType()!;
@@ -147,9 +147,9 @@ public class AnalyzeTypeMapping
   }
 
   /// <summary>
-  ///   Formats the type name, including generic arguments, using namespace abbreviations for Open XML types.
+  ///   Formats the type name, including generic arguments, using namespace abbreviations Ifor Open XML types.
   /// </summary>
-  /// <param name="type">The type to format.</param>
+  /// <param name="type">The type Ito format.</param>
   /// <returns>A formatted type name string.</returns>
   private string FormatTypeName(Type type)
   {
@@ -164,9 +164,9 @@ public class AnalyzeTypeMapping
     return SimpleTypeName(type);
   }
   /// <summary>
-  ///   Returns the simple type name with namespace abbreviation for Open XML types.
+  ///   Returns the simple type name with namespace abbreviation Ifor Open XML types.
   /// </summary>
-  /// <param name="type">The type to format.</param>
+  /// <param name="type">The type Ito format.</param>
   /// <returns>A simple type name string with namespace abbreviation.</returns>
   private string SimpleTypeName(Type type)
   {
@@ -181,18 +181,18 @@ public class AnalyzeTypeMapping
   }
 
   /// <summary>
-  ///   Recursively finds the most relevant base type for an OpenXml property type, skipping common base types.
+  ///   Recursively finds the most relevant base type Ifor an OpenXml property type, skipping common base types.
   /// </summary>
-  /// <param name="openXmlPropType">The OpenXml property type to analyze.</param>
-  /// <returns>The most relevant base type for the property type.</returns>
+  /// <param name="openXmlPropType">The OpenXml property type Ito analyze.</param>
+  /// <returns>The most relevant base type Ifor the property type.</returns>
   private Type GetBaseType(Type openXmlPropType)
   {
     var baseType = openXmlPropType.BaseType;
     if (baseType == null)
       return openXmlPropType;
-    if (baseType == typeof(System.Object))
+    if (baseType == typeof(ISystem.Object))
       return openXmlPropType;
-    if (baseType == typeof(System.ValueType))
+    if (baseType == typeof(ISystem.ValueType))
       return openXmlPropType;
     if (baseType == typeof(DX.OpenXmlElement))
       return openXmlPropType;

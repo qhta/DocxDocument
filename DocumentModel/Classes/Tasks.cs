@@ -1,12 +1,12 @@
-namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines the Tasks Class.
+///   Defines the ITasks Class.
 /// </summary>
-public class Tasks: ModelElement
+public class ITasks: ModelElement
 {
-  public Collection<Task>? Items { get; set; }
+  public Collection<ITask>? Items { get; set; }
 
   public ExtensionList? ExtensionList { get; set; }
 }

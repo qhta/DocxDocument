@@ -1,5 +1,5 @@
-namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Array Variant ValueType Simple ValueType
@@ -8,7 +8,7 @@ namespace DocumentModel;
 public enum VariantType
 {
   /// <summary>
-  ///   For uninitialized Variant only
+  ///   For uninitialized Variant Ionly
   /// </summary>
   Empty,
 
@@ -138,7 +138,7 @@ public enum VariantType
   Enum,
 
   /// <summary>
-  ///   Global Unique ID Variant ValueType.
+  ///   IGlobal Unique ID Variant ValueType.
   /// </summary>
   Guid,
 

@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 /// <summary>
 ///   Preset Camera Type
 /// </summary>
@@ -143,62 +143,62 @@ public enum PresetCamera
   [OpenXmlEnumValue(nameof(DXD.PresetCameraValues.IsometricRightDown))]
   IsometricRightDown,
   /// <summary>
-  ///   Isometric Off Axis 1 Left.
+  ///   Isometric Off IAxis 1 Left.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetCameraValues.IsometricOffAxis1Left))]
   IsometricOffAxis1Left,
   /// <summary>
-  ///   Isometric Off Axis 1 Right.
+  ///   Isometric Off IAxis 1 Right.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetCameraValues.IsometricOffAxis1Right))]
   IsometricOffAxis1Right,
   /// <summary>
-  ///   Isometric Off Axis 1 Top.
+  ///   Isometric Off IAxis 1 Top.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetCameraValues.IsometricOffAxis1Top))]
   IsometricOffAxis1Top,
   /// <summary>
-  ///   Isometric Off Axis 2 Left.
+  ///   Isometric Off IAxis 2 Left.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetCameraValues.IsometricOffAxis2Left))]
   IsometricOffAxis2Left,
   /// <summary>
-  ///   Isometric Off Axis 2 Right.
+  ///   Isometric Off IAxis 2 Right.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetCameraValues.IsometricOffAxis2Right))]
   IsometricOffAxis2Right,
   /// <summary>
-  ///   Isometric Off Axis 2 Top.
+  ///   Isometric Off IAxis 2 Top.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetCameraValues.IsometricOffAxis2Top))]
   IsometricOffAxis2Top,
   /// <summary>
-  ///   Isometric Off Axis 3 Left.
+  ///   Isometric Off IAxis 3 Left.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetCameraValues.IsometricOffAxis3Left))]
   IsometricOffAxis3Left,
   /// <summary>
-  ///   Isometric Off Axis 3 Right.
+  ///   Isometric Off IAxis 3 Right.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetCameraValues.IsometricOffAxis3Right))]
   IsometricOffAxis3Right,
   /// <summary>
-  ///   Isometric Off Axis 3 Bottom.
+  ///   Isometric Off IAxis 3 Bottom.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetCameraValues.IsometricOffAxis3Bottom))]
   IsometricOffAxis3Bottom,
   /// <summary>
-  ///   Isometric Off Axis 4 Left.
+  ///   Isometric Off IAxis 4 Left.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetCameraValues.IsometricOffAxis4Left))]
   IsometricOffAxis4Left,
   /// <summary>
-  ///   Isometric Off Axis 4 Right.
+  ///   Isometric Off IAxis 4 Right.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetCameraValues.IsometricOffAxis4Right))]
   IsometricOffAxis4Right,
   /// <summary>
-  ///   Isometric Off Axis 4 Bottom.
+  ///   Isometric Off IAxis 4 Bottom.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetCameraValues.IsometricOffAxis4Bottom))]
   IsometricOffAxis4Bottom,

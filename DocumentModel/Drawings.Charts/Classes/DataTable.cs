@@ -1,28 +1,28 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Data Table.
+///   Data ITable.
 /// </summary>
-public class DataTable: ModelElement
+public class IDataTable: ModelElement
 {
   /// <summary>
-  ///   Show Horizontal Border.
+  ///   Show Horizontal IBorder.
   /// </summary>
   public bool? ShowHorizontalBorder { get; set; }
 
   /// <summary>
-  ///   Show Vertical Border.
+  ///   Show Vertical IBorder.
   /// </summary>
   public bool? ShowVerticalBorder { get; set; }
 
   /// <summary>
-  ///   Show Outline Border.
+  ///   Show Outline IBorder.
   /// </summary>
   public bool? ShowOutlineBorder { get; set; }
 
   /// <summary>
-  ///   Show Legend Keys.
+  ///   Show ILegend Keys.
   /// </summary>
   public bool? ShowKeys { get; set; }
 
@@ -37,7 +37,7 @@ public class DataTable: ModelElement
   public TextProperties? TextProperties { get; set; }
 
   /// <summary>
-  ///   Chart Extensibility.
+  ///   IChart Extensibility.
   /// </summary>
   public ExtensionList? ExtensionList { get; set; }
 }

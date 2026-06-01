@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Camera.
@@ -12,14 +12,14 @@ public class Camera: ModelElement
   public PresetCameraKind? Preset { get; set; }
 
   /// <summary>
-  ///   Field of View
+  ///   IField of IView
   /// </summary>
   public Int32? FieldOfView { get; set; }
 
   /// <summary>
-  ///   Zoom
+  ///   IZoom
   /// </summary>
-  public Int32? Zoom { get; set; }
+  public Int32? IZoom { get; set; }
 
   /// <summary>
   ///   Rotation.

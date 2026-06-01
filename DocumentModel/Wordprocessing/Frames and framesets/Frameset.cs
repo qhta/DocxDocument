@@ -1,9 +1,9 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Frameset Definition.
+///   IFrameset Definition.
 /// </summary>
-public class Frameset: ElementCollection<IFramesetItem>, IFramesetItem
+public class IFrameset: ElementCollection<IFramesetItem>, IFramesetItem
 {
   ///// <summary>
   /////   Advisory information about the frameset.
@@ -11,17 +11,17 @@ public class Frameset: ElementCollection<IFramesetItem>, IFramesetItem
   //public String? Title { get; set; }
 
   /// <summary>
-  ///   Nested Frameset Size.
+  ///   Nested IFrameset Size.
   /// </summary>
   public UInt32? FrameSize { get; set; }
 
   /// <summary>
-  ///   Frameset Splitter Properties.
+  ///   IFrameset Splitter Properties.
   /// </summary>
   public FramesetSplitbar? FramesetSplitbar { get; set; }
 
   /// <summary>
-  ///   Frameset Layout.
+  ///   IFrameset Layout.
   /// </summary>
   public FrameLayoutKind? FrameLayout { get; set; }
 

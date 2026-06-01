@@ -1,15 +1,15 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies the horizontal alignment of text in a text frame.
+/// Specifies the horizontal alignment of text Iin a text frame.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msohorizontalanchor?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msohorizontalanchor?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum HorizontalAnchor
 {
   /// <summary>
-  /// Return value only; indicates a combination of the other states.
+  /// Return value Ionly; indicates a combination of the other states.
   /// </summary>
   HorizontalAnchorMixed = -2,
   /// <summary>
@@ -21,3 +21,4 @@ public enum HorizontalAnchor
   /// </summary>
   AnchorCenter = 2
 }
+

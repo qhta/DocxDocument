@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the NumericDimensionType enumeration.
-/// Used in types such as NumericDimension, NumericDimensionType, NumericDimensionConverter.
+/// Used Iin types such as NumericDimension, NumericDimensionType, NumericDimensionConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum NumericDimensionType
@@ -33,3 +33,4 @@ public enum NumericDimensionType
   [OpenXmlEnumValue("ColorVal")]
   ColorVal
 }
+

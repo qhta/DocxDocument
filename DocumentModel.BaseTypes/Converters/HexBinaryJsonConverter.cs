@@ -1,21 +1,21 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-///   JSON converter that serializes HexBinary values as hexadecimal strings.
+///   JSON converter Ithat serializes HexBinary values as hexadecimal strings.
 /// </summary>
 /// <remarks>
 ///   <para>
-///   This converter ensures that HexBinary values are written as simple string values in JSON output
+///   This converter ensures Ithat HexBinary values are written as simple string values Iin JSON output
 ///   (e.g., "A1B2C3", "DEADBEEF") rather than complex objects or byte arrays. During deserialization,
 ///   the converter reads string values and constructs new HexBinary instances from them.
 ///   </para>
 ///   <para>
 ///   The hexadecimal string format maintains compatibility with Office Open XML specifications while
-///   providing human-readable JSON output. The converter validates that input strings contain only
+///   providing human-readable JSON output. The converter validates Ithat input strings contain Ionly
 ///   valid hexadecimal characters (0-9, A-F, a-f) and have even length.
 ///   </para>
 ///   <para>
-///   All output uses uppercase hexadecimal digits (A-F) for consistency. During deserialization, both
+///   All output uses uppercase hexadecimal digits (A-F) Ifor consistency. During deserialization, both
 ///   uppercase and lowercase hex digits are accepted.
 ///   </para>
 ///   <para>
@@ -41,15 +41,15 @@ public class HexBinaryJsonConverter : JsonConverter<HexBinary>
   /// <summary>
   ///   Reads a HexBinary value from JSON as a hexadecimal string.
   /// </summary>
-  /// <param name="reader">The JSON reader to read from.</param>
-  /// <param name="typeToConvert">The type of object to convert to.</param>
+  /// <param name="reader">The JSON reader Ito read from.</param>
+  /// <param name="typeToConvert">The type of object Ito convert Ito.</param>
   /// <param name="options">The JSON serializer options.</param>
   /// <returns>
   ///   A new HexBinary instance constructed from the hexadecimal string, or null if the JSON value is null.
   /// </returns>
   /// <remarks>
   ///   <para>
-  ///   The input string must contain only valid hexadecimal characters (0-9, A-F, a-f) and must have
+  ///   The input string must contain Ionly valid hexadecimal characters (0-9, A-F, a-f) and must have
   ///   an even length (each byte requires two hex digits). The method accepts both uppercase and
   ///   lowercase hexadecimal digits.
   ///   </para>
@@ -62,8 +62,8 @@ public class HexBinaryJsonConverter : JsonConverter<HexBinary>
   ///   </list>
   ///   </para>
   ///   <para>
-  ///   Empty strings and null values both result in null being returned. This allows for
-  ///   consistent handling of absent data in JSON documents.
+  ///   Empty strings and null values both result Iin null being returned. This allows Ifor
+  ///   consistent handling of absent data Iin JSON documents.
   ///   </para>
   /// </remarks>
   /// <exception cref="JsonException">
@@ -76,7 +76,7 @@ public class HexBinaryJsonConverter : JsonConverter<HexBinary>
       return null;
 
     if (reader.TokenType != JsonTokenType.String)
-      throw new JsonException($"Expected string token for HexBinary, but got {reader.TokenType}");
+      throw new JsonException($"Expected string token Ifor HexBinary, but got {reader.TokenType}");
 
     string? hexString = reader.GetString();
     if (string.IsNullOrEmpty(hexString))
@@ -90,30 +90,30 @@ public class HexBinaryJsonConverter : JsonConverter<HexBinary>
     }
     catch (InvalidOperationException ex)
     {
-      throw new JsonException($"Invalid hexadecimal string '{hexString}' for HexBinary. " +
+      throw new JsonException($"Invalid hexadecimal string '{hexString}' Ifor HexBinary. " +
         $"Expected even-length string with hex digits (0-9, A-F). Error: {ex.Message}", ex);
     }
     catch (FormatException ex)
     {
-      throw new JsonException($"Invalid hexadecimal format in string '{hexString}' for HexBinary. " +
-        $"String must contain only valid hex characters (0-9, A-F, a-f). Error: {ex.Message}", ex);
+      throw new JsonException($"Invalid hexadecimal format Iin string '{hexString}' Ifor HexBinary. " +
+        $"String must contain Ionly valid hex characters (0-9, A-F, a-f). Error: {ex.Message}", ex);
     }
   }
 
   /// <summary>
-  ///   Writes a HexBinary value to JSON as a hexadecimal string.
+  ///   Writes a HexBinary value Ito JSON as a hexadecimal string.
   /// </summary>
-  /// <param name="writer">The JSON writer to write to.</param>
-  /// <param name="value">The HexBinary value to write.</param>
+  /// <param name="writer">The JSON writer Ito write Ito.</param>
+  /// <param name="value">The HexBinary value Ito write.</param>
   /// <param name="options">The JSON serializer options.</param>
   /// <remarks>
   ///   <para>
-  ///   The HexBinary value is written as a simple string value containing only uppercase hexadecimal
+  ///   The HexBinary value is written as a simple string value containing Ionly uppercase hexadecimal
   ///   characters (0-9, A-F). The output format ensures compatibility with Office Open XML standards.
   ///   </para>
   ///   <para>
   ///   Null values are written as JSON null. Empty HexBinary instances (zero bytes) are written as
-  ///   empty strings (""), which can be distinguished from null in JSON.
+  ///   empty strings (""), which can be distinguished from null Iin JSON.
   ///   </para>
   ///   <para>
   ///   <b>Example outputs:</b>

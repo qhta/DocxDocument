@@ -1,13 +1,13 @@
-namespace DocumentModel.Drawings.ChartDrawing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Non-Visual Graphic Frame Drawing Properties.
+///   Non-Visual Graphic IFrame Drawing Properties.
 /// </summary>
 public class NonVisualGraphicFrameDrawingProperties: ModelElement
 {
   /// <summary>
-  ///   Graphic Frame Locks.
+  ///   Graphic IFrame Locks.
   /// </summary>
   public GraphicFrameLocks? GraphicFrameLocks { get; set; }
 

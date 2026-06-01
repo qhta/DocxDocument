@@ -1,8 +1,8 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Document Background.
+///   IDocument Background.
 /// </summary>
 public class Background: ModelElement
 {
@@ -12,7 +12,7 @@ public class Background: ModelElement
   public string? Id { get; set; }
 
   /// <summary>
-  ///   Shape Fill Toggle
+  ///   IShape Fill Toggle
   /// </summary>
   public bool? Filled { get; set; }
 

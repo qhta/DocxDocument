@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the ParagraphBorders Class.
@@ -7,32 +7,32 @@ namespace DocumentModel.Wordprocessing;
 public class ParagraphBorders: ModelElement
 {
   /// <summary>
-  ///   Paragraph Border Above Identical Paragraphs.
+  ///   IParagraph IBorder Above Identical IParagraphs.
   /// </summary>
-  public Border? TopBorder { get; set; }
+  public IBorder? TopBorder { get; set; }
 
   /// <summary>
-  ///   Left Paragraph Border.
+  ///   Left IParagraph IBorder.
   /// </summary>
-  public Border? LeftBorder { get; set; }
+  public IBorder? LeftBorder { get; set; }
 
   /// <summary>
-  ///   Paragraph Border Between Identical Paragraphs.
+  ///   IParagraph IBorder Between Identical IParagraphs.
   /// </summary>
-  public Border? BottomBorder { get; set; }
+  public IBorder? BottomBorder { get; set; }
 
   /// <summary>
-  ///   Right Paragraph Border.
+  ///   Right IParagraph IBorder.
   /// </summary>
-  public Border? RightBorder { get; set; }
+  public IBorder? RightBorder { get; set; }
 
   /// <summary>
-  ///   Paragraph Border Between Identical Paragraphs.
+  ///   IParagraph IBorder Between Identical IParagraphs.
   /// </summary>
-  public Border? BetweenBorder { get; set; }
+  public IBorder? BetweenBorder { get; set; }
 
   /// <summary>
-  ///   Paragraph Border Between Facing Pages.
+  ///   IParagraph IBorder Between Facing IPages.
   /// </summary>
-  public Border? BarBorder { get; set; }
+  public IBorder? BarBorder { get; set; }
 }

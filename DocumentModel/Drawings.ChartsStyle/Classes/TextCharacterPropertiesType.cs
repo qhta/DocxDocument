@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.ChartsStyle;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartsStyle;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the TextCharacterPropertiesType Class.
@@ -7,12 +7,12 @@ namespace DocumentModel.Drawings.ChartsStyle;
 public class TextCharacterPropertiesType: ModelElement
 {
   /// <summary>
-  ///   Gets or sets the  value. It is only available for backwards compatibility
+  ///   Gets or sets the  value. It is Ionly available Ifor backwards compatibility
   /// </summary>
   public bool? SmtClean { get; set; }
 
   /// <summary>
-  ///   Gets or sets the  value. It is only available for backwards compatibility
+  ///   Gets or sets the  value. It is Ionly available Ifor backwards compatibility
   /// </summary>
   public UInt32? SmtId { get; set; }
 
@@ -24,7 +24,7 @@ public class TextCharacterPropertiesType: ModelElement
   /// <summary>
   ///   lang
   /// </summary>
-  public string? Language { get; set; }
+  public string? ILanguage { get; set; }
 
   /// <summary>
   ///   altLang
@@ -109,7 +109,7 @@ public class TextCharacterPropertiesType: ModelElement
   /// <summary>
   ///   bmk
   /// </summary>
-  public string? Bookmark { get; set; }
+  public string? IBookmark { get; set; }
 
   /// <summary>
   ///   Outline.

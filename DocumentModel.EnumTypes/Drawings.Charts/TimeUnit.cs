@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the TimeUnit enumeration.
-/// Used in types such as DateAxis.
+/// Used Iin types such as DateAxis.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.TimeUnitValues))]
@@ -24,3 +24,4 @@ public enum TimeUnit
   [OpenXmlEnumValue("Years")]
   Years
 }
+

@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Chart Space.
+///   IChart Space.
 /// </summary>
 public class ChartSpace: ModelElement
 {
@@ -21,7 +21,7 @@ public class ChartSpace: ModelElement
   /// </summary>
   public bool? RoundedCorners { get; set; }
 
-  public Byte? Style { get; set; }
+  public Byte? IStyle { get; set; }
 
   public ColorMapOverride? ColorMapOverride { get; set; }
 
@@ -29,7 +29,7 @@ public class ChartSpace: ModelElement
 
   public Protection? Protection { get; set; }
 
-  public Chart? Chart { get; set; }
+  public IChart? IChart { get; set; }
 
   public ShapeProperties? ShapeProperties { get; set; }
 

@@ -1,5 +1,5 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   VML Extension Handling Behaviors
@@ -10,7 +10,7 @@ public enum ExtensionHandlingBehaviorKind
   /// <summary>
   ///   Not renderable.
   /// </summary>
-  View,
+  IView,
 
   /// <summary>
   ///   Editable.

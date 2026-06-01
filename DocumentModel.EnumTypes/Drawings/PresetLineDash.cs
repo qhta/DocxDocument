@@ -1,6 +1,6 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 /// <summary>
-///   Preset Line Dash Value
+///   Preset ILine Dash Value
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXD.PresetLineDashValues))]
@@ -42,22 +42,22 @@ public enum PresetLineDash
   [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.LargeDashDotDot))]
   LargeDashDotDot,
   /// <summary>
-  ///   System Dash.
+  ///   ISystem Dash.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.SystemDash))]
   SystemDash,
   /// <summary>
-  ///   System Dot.
+  ///   ISystem Dot.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.SystemDot))]
   SystemDot,
   /// <summary>
-  ///   System Dash Dot.
+  ///   ISystem Dash Dot.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.SystemDashDot))]
   SystemDashDot,
   /// <summary>
-  ///   System Dash Dot Dot.
+  ///   ISystem Dash Dot Dot.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.PresetLineDashValues.SystemDashDotDot))]
   SystemDashDotDot

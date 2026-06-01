@@ -1,28 +1,28 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Previous Section Properties.
+///   Previous ISection Properties.
 /// </summary>
 public class PreviousSectionProperties: ModelElement
 {
   /// <summary>
-  ///   Physical Section Mark Character Revision ID
+  ///   Physical ISection Mark Character IRevision ID
   /// </summary>
   public HexInt? RsidRPr { get; set; }
 
   /// <summary>
-  ///   Section Deletion Revision ID
+  ///   ISection Deletion IRevision ID
   /// </summary>
   public HexInt? RsidDel { get; set; }
 
   /// <summary>
-  ///   Section Addition Revision ID
+  ///   ISection Addition IRevision ID
   /// </summary>
   public HexInt? RsidR { get; set; }
 
   /// <summary>
-  ///   Section Properties Revision ID
+  ///   ISection Properties IRevision ID
   /// </summary>
   public HexInt? RsidSect { get; set; }
 
@@ -72,9 +72,9 @@ public class PreviousSectionProperties: ModelElement
   public PageNumberType? PageNumberType { get; set; }
 
   /// <summary>
-  ///   Columns.
+  ///   IColumns.
   /// </summary>
-  public Columns? Columns { get; set; }
+  public IColumns? IColumns { get; set; }
 
   /// <summary>
   ///   FormProtection.
@@ -122,7 +122,7 @@ public class PreviousSectionProperties: ModelElement
   public RelationshipType? PrinterSettingsReference { get; set; }
 
   /// <summary>
-  ///   FootnoteColumns, this property is only available in Office 2013 and later..
+  ///   FootnoteColumns, this property is Ionly available Iin Office 2013 and later..
   /// </summary>
   public Int32? FootnoteColumns { get; set; }
 }

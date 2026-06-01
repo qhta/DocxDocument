@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.ChartDrawing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Non-Visual Shape Drawing Properties.
+///   Non-Visual IShape Drawing Properties.
 /// </summary>
 public class NonVisualShapeDrawingProperties: ModelElement
 {
@@ -12,7 +12,7 @@ public class NonVisualShapeDrawingProperties: ModelElement
   public bool? TextBox { get; set; }
 
   /// <summary>
-  ///   Shape Locks.
+  ///   IShape Locks.
   /// </summary>
   public ShapeLocks? ShapeLocks { get; set; }
 

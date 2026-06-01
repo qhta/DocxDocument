@@ -1,10 +1,10 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the unit of time for chart axes and data series.
+/// Specifies the unit of time Ifor chart axes and data series.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xltimeunit?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xltimeunit?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum XlTimeUnit
 {
@@ -21,3 +21,4 @@ public enum XlTimeUnit
   /// </summary>
   Years = 2
 }
+

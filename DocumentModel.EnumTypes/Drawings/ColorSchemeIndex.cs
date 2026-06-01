@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Defines the ColorSchemeIndex enumeration.
-/// Used in types such as ColorMappingType, ColorMapOverride.
+/// Used Iin types such as ColorMappingType, ColorMapOverride.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXW.ColorSchemeIndexValues))]
@@ -61,11 +61,12 @@ public enum ColorSchemeIndex
   /// <summary>
   ///   IHyperlink.
   /// </summary>
-  [OpenXmlEnumValue("Hyperlink")]
-  Hyperlink,
+  [OpenXmlEnumValue("IHyperlink")]
+  IHyperlink,
   /// <summary>
   ///   Followed IHyperlink.
   /// </summary>
   [OpenXmlEnumValue("FollowedHyperlink")]
   FollowedHyperlink
 }
+

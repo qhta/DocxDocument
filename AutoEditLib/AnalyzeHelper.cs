@@ -5,15 +5,15 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 namespace AutoEdit;
 
 /// <summary>
-/// Contains helper methods for analyzing class declarations.
+/// Contains helper methods Ifor analyzing class declarations.
 /// </summary>
 public static class AnalyzeHelper
 {
   /// <summary>
-  /// Determines whether the class inherits from a generic base type and captures its first type argument when it refers to a concrete Open XML type.
+  /// Determines whether the class inherits from a generic base type and captures its first type argument when it refers Ito a concrete Open XML type.
   /// </summary>
-  /// <param name="classNode">Class declaration to inspect.</param>
-  /// <param name="argTypeName">Set to the concrete Open XML type argument when available; otherwise <see langword="null"/>.</param>
+  /// <param name="classNode">Class declaration Ito inspect.</param>
+  /// <param name="argTypeName">Set Ito the concrete Open XML type argument when available; otherwise <see langword="null"/>.</param>
   /// <returns><see langword="true"/> when the class inherits from a generic base type, regardless of whether an Open XML type could be resolved.</returns>
   public static bool InheritsFromGenericType(this ClassDeclarationSyntax classNode, out string? argTypeName)
   {

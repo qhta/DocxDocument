@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the ThemeFontValues enumeration.
@@ -8,42 +8,42 @@ namespace DocumentModel.Wordprocessing;
 public enum ThemeFontKind
 {
   /// <summary>
-  ///   Major East Asian Theme Font.
+  ///   Major East Asian Theme IFont.
   /// </summary>
   MajorEastAsia,
 
   /// <summary>
-  ///   Major Complex Script Theme Font.
+  ///   Major Complex Script Theme IFont.
   /// </summary>
   MajorBidi,
 
   /// <summary>
-  ///   Major ASCII Theme Font.
+  ///   Major ASCII Theme IFont.
   /// </summary>
   MajorAscii,
 
   /// <summary>
-  ///   Major High ANSI Theme Font.
+  ///   Major High ANSI Theme IFont.
   /// </summary>
   MajorHighAnsi,
 
   /// <summary>
-  ///   Minor East Asian Theme Font.
+  ///   Minor East Asian Theme IFont.
   /// </summary>
   MinorEastAsia,
 
   /// <summary>
-  ///   Minor Complex Script Theme Font.
+  ///   Minor Complex Script Theme IFont.
   /// </summary>
   MinorBidi,
 
   /// <summary>
-  ///   Minor ASCII Theme Font.
+  ///   Minor ASCII Theme IFont.
   /// </summary>
   MinorAscii,
 
   /// <summary>
-  ///   Minor High ANSI Theme Font.
+  ///   Minor High ANSI Theme IFont.
   /// </summary>
   MinorHighAnsi
 }

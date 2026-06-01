@@ -1,5 +1,5 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   3D Extrusion.
@@ -57,12 +57,12 @@ public class Extrusion: ModelElement
   public string? BackDepth { get; set; }
 
   /// <summary>
-  ///   Rotation Axis
+  ///   Rotation IAxis
   /// </summary>
   public string? Orientation { get; set; }
 
   /// <summary>
-  ///   Rotation Around Axis
+  ///   Rotation Around IAxis
   /// </summary>
   public Single? OrientationAngle { get; set; }
 
@@ -122,7 +122,7 @@ public class Extrusion: ModelElement
   public string? Facet { get; set; }
 
   /// <summary>
-  ///   Shape Face Lighting Toggle
+  ///   IShape Face Lighting Toggle
   /// </summary>
   public bool? LightFace { get; set; }
 

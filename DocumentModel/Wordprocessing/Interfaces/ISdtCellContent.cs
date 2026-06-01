@@ -1,6 +1,6 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   Interface for elements that can be included in document <see cref="SdtCell"/> element.
+///   Interface Ifor elements Ithat can be included Iin document <see cref="SdtCell"/> element.
 /// </summary>
 public interface ISdtCellContent: IModelElement
 {

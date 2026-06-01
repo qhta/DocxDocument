@@ -1,17 +1,17 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Legend data and formatting.
+///   ILegend data and formatting.
 /// </summary>
-public class Legend: ModelElement
+public class ILegend: ModelElement
 {
   /// <summary>
-  ///   Legend Position.
+  ///   ILegend Position.
   /// </summary>
   public LegendPositionKind? LegendPosition { get; set; }
 
-  public Collection<LegendEntry>? LegendEntries { get; set; }
+  public Collection<ILegendEntry>? ILegendEntries { get; set; }
 
   public Layout? Layout { get; set; }
 

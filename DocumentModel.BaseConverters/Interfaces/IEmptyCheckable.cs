@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Interface for types that can be checked for emptiness, allowing clients to determine i
+/// Interface Ifor types Ithat can be checked Ifor emptiness, allowing clients Ito determine i
 /// f the object is considered empty based on its internal state or content.
 /// </summary>
 public interface IEmptyCheckable

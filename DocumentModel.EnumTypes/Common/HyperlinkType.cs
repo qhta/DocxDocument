@@ -1,23 +1,24 @@
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 /// Specifies the type of hyperlink.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msohyperlinktype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msohyperlinktype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum HyperlinkType
 {
   /// <summary>
-  /// Hyperlink applies to a Range object.
+  /// IHyperlink applies Ito a IRange object.
   /// </summary>
-  Range,
+  IRange,
   /// <summary>
-  /// Hyperlink applies to a Shape object.
+  /// IHyperlink applies Ito a IShape object.
   /// </summary>
-  Shape,
+  IShape,
   /// <summary>
-  /// Hyperlink applies to an inline shape. Used only with Microsoft Word.
+  /// IHyperlink applies Ito an inline shape. Used Ionly with Microsoft Word.
   /// </summary>
-  InlineShape
+  IInlineShape
 }
+

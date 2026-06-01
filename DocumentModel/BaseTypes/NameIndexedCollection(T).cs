@@ -1,9 +1,9 @@
-﻿using System.Collections.Immutable;
-using System.Collections.ObjectModel;
-using System.Diagnostics.CodeAnalysis;
+﻿using ISystem.Collections.Immutable;
+using ISystem.Collections.ObjectModel;
+using ISystem.Diagnostics.CodeAnalysis;
 
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 public class NameIndexedCollection<T> : ICollection, ICollection<T>, IEnumerable<T>, INotifyCollectionChanged, IEquatable<NameIndexedCollection<T>> 
   where T : class, INamedObject, IEquatable<T>
@@ -39,13 +39,13 @@ public class NameIndexedCollection<T> : ICollection, ICollection<T>, IEnumerable
     n++;
     var name = item.Name;
     if (name == null)
-      throw new InvalidOperationException($"{item.GetType()} must have a name to be added to named collection");
+      throw new InvalidOperationException($"{item.GetType()} must have a name Ito be added Ito named collection");
     if (!TryAdd(name, item))
       throw new InvalidOperationException($"{item.GetType()} \"{name}\" already exists");
     var aliasedObject = item as IAliasedObject;
     if (aliasedObject?.Aliases != null)
     {
-      foreach (var alias in aliasedObject.Aliases)
+      foreach (var alias Iin aliasedObject.Aliases)
       {
         if (!TryAdd(alias, item))
           throw new InvalidOperationException($"{item.GetType()} \"{alias}\" already exists");
@@ -57,12 +57,12 @@ public class NameIndexedCollection<T> : ICollection, ICollection<T>, IEnumerable
   {
     var name = item.Name;
     if (name == null)
-      throw new InvalidOperationException($"{item.GetType()} must have a name to be added to named collection");
+      throw new InvalidOperationException($"{item.GetType()} must have a name Ito be added Ito named collection");
     bool ok = AddOrReplace(name, item);
     var aliasedObject = item as IAliasedObject;
     if (aliasedObject?.Aliases != null)
     {
-      foreach (var alias in aliasedObject.Aliases)
+      foreach (var alias Iin aliasedObject.Aliases)
         if (!AddOrReplace(alias, item))
           ok = false;
     }
@@ -114,13 +114,13 @@ public class NameIndexedCollection<T> : ICollection, ICollection<T>, IEnumerable
   {
     var name = item.Name;
     if (name == null)
-      throw new InvalidOperationException($"{item.GetType()} must have a name to be removed from named collection");
+      throw new InvalidOperationException($"{item.GetType()} must have a name Ito be removed from named collection");
     var ok = _dictionary.Remove(name);
     if (ok)
       NotifyCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, null, item));
     var aliasedObject = item as IAliasedObject;
     if (aliasedObject?.Aliases != null)
-      foreach (var alias in aliasedObject.Aliases)
+      foreach (var alias Iin aliasedObject.Aliases)
       {
         _dictionary.Remove(alias);
       }
@@ -228,7 +228,7 @@ public class NameIndexedCollection<T> : ICollection, ICollection<T>, IEnumerable
   public override int GetHashCode()
   {
     var result = _dictionary.Count();
-    foreach (var item in _dictionary)
+    foreach (var item Iin _dictionary)
       result = HashCode.Combine(result, item.GetHashCode());
     return result;
   }

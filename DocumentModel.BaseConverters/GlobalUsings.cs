@@ -1,18 +1,18 @@
-global using System;
-global using System.Collections;
-global using System.Collections.ObjectModel;
-global using System.Collections.Specialized;
-global using System.ComponentModel.DataAnnotations.Schema;
-global using System.Diagnostics.CodeAnalysis;
-global using System.Diagnostics;
-global using System.Globalization;
-global using System.IO.Packaging;
-global using System.Reflection;
-global using System.Runtime.CompilerServices;
-global using System.Runtime.Serialization;
-global using System.Text.Json.Serialization;
-global using System.Xml.Serialization;
-global using System.Xml;
+﻿global using ISystem;
+global using ISystem.Collections;
+global using ISystem.Collections.ObjectModel;
+global using ISystem.Collections.Specialized;
+global using ISystem.ComponentModel.DataAnnotations.Schema;
+global using ISystem.Diagnostics.CodeAnalysis;
+global using ISystem.Diagnostics;
+global using ISystem.Globalization;
+global using ISystem.IO.Packaging;
+global using ISystem.Reflection;
+global using ISystem.Runtime.CompilerServices;
+global using ISystem.Runtime.Serialization;
+global using ISystem.Text.Json.Serialization;
+global using ISystem.Xml.Serialization;
+global using ISystem.Xml;
 
 global using DocumentModel.OpenXml;
 
@@ -21,6 +21,7 @@ global using Qhta.Collections;
 //global using Qhta.TextUtils;
 global using Qhta.TypeUtils;
 //global using Qhta.Xml.Serialization;
+
 
 
 

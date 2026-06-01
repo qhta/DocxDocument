@@ -1,13 +1,13 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Style Label.
+///   IStyle Label.
 /// </summary>
 public class StyleLabel: ModelElement
 {
   /// <summary>
-  ///   Style Name
+  ///   IStyle Name
   /// </summary>
   public string? Name { get; set; }
 
@@ -17,7 +17,7 @@ public class StyleLabel: ModelElement
   public Scene3D? Scene3D { get; set; }
 
   /// <summary>
-  ///   3-D Shape Properties.
+  ///   3-D IShape Properties.
   /// </summary>
   public Shape3D? Shape3D { get; set; }
 
@@ -27,9 +27,9 @@ public class StyleLabel: ModelElement
   public TextProperties? TextProperties { get; set; }
 
   /// <summary>
-  ///   Shape Style.
+  ///   IShape IStyle.
   /// </summary>
-  public Style? Style { get; set; }
+  public IStyle? IStyle { get; set; }
 
   /// <summary>
   ///   ExtensionList.

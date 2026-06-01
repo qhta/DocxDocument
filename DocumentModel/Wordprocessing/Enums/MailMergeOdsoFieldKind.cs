@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the MailMergeOdsoFieldValues enumeration.
@@ -8,12 +8,12 @@ namespace DocumentModel.Wordprocessing;
 public enum MailMergeOdsoFieldKind
 {
   /// <summary>
-  ///   Field Not Mapped.
+  ///   IField Not Mapped.
   /// </summary>
   Null,
 
   /// <summary>
-  ///   Field Mapping to Data Source Column.
+  ///   IField Mapping Ito Data ISource IColumn.
   /// </summary>
   DbColumn
 }

@@ -1,4 +1,4 @@
-
+﻿
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
@@ -6,28 +6,28 @@ namespace DocumentModel.Drawings.Charts;
 /// type.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlcharttype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlcharttype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum ChartType
 {
   /// <summary>
-  /// 3D Clustered Column
+  /// 3D Clustered IColumn
   /// </summary>
   ColumnClustered = 51,
   /// <summary>
-  /// 100% Stacked Column
+  /// 100% Stacked IColumn
   /// </summary>
   ColumnStacked = 52,
   /// <summary>
-  /// 100% Stacked Column
+  /// 100% Stacked IColumn
   /// </summary>
   ColumnStacked100 = 53,
   /// <summary>
-  /// 3D Clustered Column
+  /// 3D Clustered IColumn
   /// </summary>
   ThreeDColumnClustered = 54,
   /// <summary>
-  /// 3D Stacked Column
+  /// 3D Stacked IColumn
   /// </summary>
   ThreeDColumnStacked = 55,
   /// <summary>
@@ -59,23 +59,23 @@ public enum ChartType
   /// </summary>
   ThreeDBarStacked100 = 62,
   /// <summary>
-  /// 100% Stacked Line
+  /// 100% Stacked ILine
   /// </summary>
   LineStacked = 63,
   /// <summary>
-  /// 100% Stacked Line
+  /// 100% Stacked ILine
   /// </summary>
   LineStacked100 = 64,
   /// <summary>
-  /// 100% Stacked Line with Markers
+  /// 100% Stacked ILine with Markers
   /// </summary>
   LineMarkers = 65,
   /// <summary>
-  /// 100% Stacked Line with Markers
+  /// 100% Stacked ILine with Markers
   /// </summary>
   LineMarkersStacked = 66,
   /// <summary>
-  /// 100% Stacked Line with Markers
+  /// 100% Stacked ILine with Markers
   /// </summary>
   LineMarkersStacked100 = 67,
   /// <summary>
@@ -95,19 +95,19 @@ public enum ChartType
   /// </summary>
   BarOfPie = 71,
   /// <summary>
-  /// Scatter with Smoothed Lines and No Data Markers
+  /// Scatter with Smoothed ILines and No Data Markers
   /// </summary>
   XYScatterSmooth = 72,
   /// <summary>
-  /// Scatter with Smoothed Lines and No Data Markers
+  /// Scatter with Smoothed ILines and No Data Markers
   /// </summary>
   XYScatterSmoothNoMarkers = 73,
   /// <summary>
-  /// Scatter with Lines and No Data Markers
+  /// Scatter with ILines and No Data Markers
   /// </summary>
   XYScatterLines = 74,
   /// <summary>
-  /// Scatter with Lines and No Data Markers
+  /// Scatter with ILines and No Data Markers
   /// </summary>
   XYScatterLinesNoMarkers = 75,
   /// <summary>
@@ -139,7 +139,7 @@ public enum ChartType
   /// </summary>
   RadarFilled = 82,
   /// <summary>
-  /// Surface (Top View wireframe)
+  /// Surface (Top IView wireframe)
   /// </summary>
   Surface = 83,
   /// <summary>
@@ -147,11 +147,11 @@ public enum ChartType
   /// </summary>
   SurfaceWireframe = 84,
   /// <summary>
-  /// Surface (Top View wireframe)
+  /// Surface (Top IView wireframe)
   /// </summary>
   SurfaceTopView = 85,
   /// <summary>
-  /// Surface (Top View wireframe)
+  /// Surface (Top IView wireframe)
   /// </summary>
   SurfaceTopViewWireframe = 86,
   /// <summary>
@@ -179,15 +179,15 @@ public enum ChartType
   /// </summary>
   StockVOHLC = 91,
   /// <summary>
-  /// Clustered Cone Column
+  /// Clustered Cone IColumn
   /// </summary>
   CylinderColClustered = 92,
   /// <summary>
-  /// 100% Stacked Cylinder Column
+  /// 100% Stacked Cylinder IColumn
   /// </summary>
   CylinderColStacked = 93,
   /// <summary>
-  /// 100% Stacked Cylinder Column
+  /// 100% Stacked Cylinder IColumn
   /// </summary>
   CylinderColStacked100 = 94,
   /// <summary>
@@ -203,19 +203,19 @@ public enum ChartType
   /// </summary>
   CylinderBarStacked100 = 97,
   /// <summary>
-  /// 3D Cylinder Column
+  /// 3D Cylinder IColumn
   /// </summary>
   CylinderCol = 98,
   /// <summary>
-  /// Clustered Cone Column
+  /// Clustered Cone IColumn
   /// </summary>
   ConeColClustered = 99,
   /// <summary>
-  /// 100% Stacked Cone Column
+  /// 100% Stacked Cone IColumn
   /// </summary>
   ConeColStacked = 100,
   /// <summary>
-  /// 100% Stacked Cone Column
+  /// 100% Stacked Cone IColumn
   /// </summary>
   ConeColStacked100 = 101,
   /// <summary>
@@ -235,15 +235,15 @@ public enum ChartType
   /// </summary>
   ConeCol = 105,
   /// <summary>
-  /// Clustered Pyramid Column
+  /// Clustered Pyramid IColumn
   /// </summary>
   PyramidColClustered = 106,
   /// <summary>
-  /// 100% Stacked Pyramid Column
+  /// 100% Stacked Pyramid IColumn
   /// </summary>
   PyramidColStacked = 107,
   /// <summary>
-  /// 100% Stacked Pyramid Column
+  /// 100% Stacked Pyramid IColumn
   /// </summary>
   PyramidColStacked100 = 108,
   /// <summary>
@@ -259,7 +259,7 @@ public enum ChartType
   /// </summary>
   PyramidBarStacked100 = 111,
   /// <summary>
-  /// 3D Pyramid Column
+  /// 3D Pyramid IColumn
   /// </summary>
   PyramidCol = 112,
   /// <summary>
@@ -267,11 +267,11 @@ public enum ChartType
   /// </summary>
   ThreeDColumn = -4100,
   /// <summary>
-  /// 100% Stacked Line with Markers
+  /// 100% Stacked ILine with Markers
   /// </summary>
-  Line = 4,
+  ILine = 4,
   /// <summary>
-  /// 3D Line
+  /// 3D ILine
   /// </summary>
   ThreeDLine = -4101,
   /// <summary>
@@ -283,7 +283,7 @@ public enum ChartType
   /// </summary>
   Pie = 5,
   /// <summary>
-  /// Scatter with Lines and No Data Markers
+  /// Scatter with ILines and No Data Markers
   /// </summary>
   XYScatter = -4169,
   /// <summary>
@@ -327,3 +327,4 @@ public enum ChartType
   /// </summary>
   SuggestedChart = -2
 }
+

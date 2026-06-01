@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the SidePos enumeration.
-/// Used in types such as ChartTitle, Legend, SidePos.
+/// Used Iin types such as IChartTitle, ILegend, SidePos.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum SidePos
@@ -28,3 +28,4 @@ public enum SidePos
   [OpenXmlEnumValue("B")]
   B
 }
+

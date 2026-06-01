@@ -1,10 +1,10 @@
-namespace DocumentModel.CustomXml;
+﻿namespace DocumentModel.CustomXml;
 
 /// <summary>
 /// Specifies the node type.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocustomxmlnodetype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocustomxmlnodetype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum XMLNodeType
 {
@@ -31,9 +31,10 @@ public enum XMLNodeType
   /// <summary>
   /// The node is a comment.
   /// </summary>
-  Comment = 8,
+  IComment = 8,
   /// <summary>
-  /// The node is a Document node.
+  /// The node is a IDocument node.
   /// </summary>
-  Document = 9
+  IDocument = 9
 }
+

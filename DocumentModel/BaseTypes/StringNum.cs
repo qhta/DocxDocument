@@ -1,7 +1,7 @@
-﻿using System;
+﻿using ISystem;
 
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 public class StringNum: IEquatable<StringNum>
 {

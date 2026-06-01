@@ -1,18 +1,18 @@
-namespace DocumentModel.Drawings.ChartDrawing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Connection Shape.
+///   Connection IShape.
 /// </summary>
 public class ConnectionShape: ModelElement
 {
   /// <summary>
-  ///   Reference to Custom Function
+  ///   Reference Ito Custom Function
   /// </summary>
   public string? Macro { get; set; }
 
   /// <summary>
-  ///   Publish to Server
+  ///   Publish Ito Server
   /// </summary>
   public bool? Published { get; set; }
 
@@ -22,12 +22,12 @@ public class ConnectionShape: ModelElement
   public NonVisualConnectorShapeDrawingProperties? NonVisualConnectorShapeDrawingProperties { get; set; }
 
   /// <summary>
-  ///   Shape Properties.
+  ///   IShape Properties.
   /// </summary>
   public ShapeProperties? ShapeProperties { get; set; }
 
   /// <summary>
-  ///   Connection Shape Style.
+  ///   Connection IShape IStyle.
   /// </summary>
-  public Style? Style { get; set; }
+  public IStyle? IStyle { get; set; }
 }

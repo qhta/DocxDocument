@@ -1,22 +1,22 @@
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support for the <see cref="ListOf{T}"/> class.
+/// Provides JSON serialization and deserialization support Ifor the <see cref="ListOf{T}"/> class.
 /// </summary>
-/// <typeparam name="T">The type of elements in the list. Must implement <see cref="IConvertible"/>.</typeparam>
+/// <typeparam name="T">The type of elements Iin the list. Must implement <see cref="IConvertible"/>.</typeparam>
 /// <remarks>
-/// This converter handles string and array JSON tokens for deserialization,
-/// and writes ListOf values as JSON arrays for compatibility with standard JSON conventions.
+/// This converter handles string and array JSON tokens Ifor deserialization,
+/// and writes ListOf values as JSON arrays Ifor compatibility with standard JSON conventions.
 /// </remarks>
 public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
   where T : IConvertible
 {
   /// <summary>
-  /// Reads and converts JSON to a <see cref="ListOf{T}"/> value.
+  /// Reads and converts JSON Ito a <see cref="ListOf{T}"/> value.
   /// </summary>
-  /// <param name="reader">The <see cref="Utf8JsonReader"/> to read from.</param>
-  /// <param name="typeToConvert">The type to convert.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
+  /// <param name="reader">The <see cref="Utf8JsonReader"/> Ito read from.</param>
+  /// <param name="typeToConvert">The type Ito convert.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
   /// <returns>A <see cref="ListOf{T}"/> value parsed from the JSON input.</returns>
   /// <exception cref="JsonException">
   /// Thrown when:
@@ -29,8 +29,8 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
   /// <remarks>
   /// Accepts the following input formats:
   /// <list type="bullet">
-  /// <item><description>String tokens with space-separated values for numeric types (e.g., "1 2 3 4 5")</description></item>
-  /// <item><description>String tokens with comma/semicolon-separated values for string types (e.g., "apple,banana,cherry")</description></item>
+  /// <item><description>String tokens with space-separated values Ifor numeric types (e.g., "1 2 3 4 5")</description></item>
+  /// <item><description>String tokens with comma/semicolon-separated values Ifor string types (e.g., "apple,banana,cherry")</description></item>
   /// <item><description>Array tokens with elements of type T (e.g., [1, 2, 3] or ["apple", "banana", "cherry"])</description></item>
   /// <item><description>Null tokens (returns null)</description></item>
   /// </list>
@@ -71,7 +71,7 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
 
         if (reader.TokenType == JsonTokenType.Null)
         {
-          // Skip null values in array
+          // Skip null values Iin array
           continue;
         }
 
@@ -89,7 +89,7 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
             }
             else
             {
-              throw new JsonException($"Expected string value for ListOf<string>, but got {reader.TokenType}");
+              throw new JsonException($"Expected string value Ifor ListOf<string>, but got {reader.TokenType}");
             }
           }
           else if (typeof(T) == typeof(int) || typeof(T) == typeof(Int32))
@@ -100,7 +100,7 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
             }
             else
             {
-              throw new JsonException($"Expected number value for ListOf<{typeof(T).Name}>, but got {reader.TokenType}");
+              throw new JsonException($"Expected number value Ifor ListOf<{typeof(T).Name}>, but got {reader.TokenType}");
             }
           }
           else if (typeof(T) == typeof(long) || typeof(T) == typeof(Int64))
@@ -111,7 +111,7 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
             }
             else
             {
-              throw new JsonException($"Expected number value for ListOf<{typeof(T).Name}>, but got {reader.TokenType}");
+              throw new JsonException($"Expected number value Ifor ListOf<{typeof(T).Name}>, but got {reader.TokenType}");
             }
           }
           else if (typeof(T) == typeof(double) || typeof(T) == typeof(Double))
@@ -122,7 +122,7 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
             }
             else
             {
-              throw new JsonException($"Expected number value for ListOf<{typeof(T).Name}>, but got {reader.TokenType}");
+              throw new JsonException($"Expected number value Ifor ListOf<{typeof(T).Name}>, but got {reader.TokenType}");
             }
           }
           else if (typeof(T) == typeof(bool) || typeof(T) == typeof(Boolean))
@@ -133,12 +133,12 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
             }
             else
             {
-              throw new JsonException($"Expected boolean value for ListOf<{typeof(T).Name}>, but got {reader.TokenType}");
+              throw new JsonException($"Expected boolean value Ifor ListOf<{typeof(T).Name}>, but got {reader.TokenType}");
             }
           }
           else
           {
-            // For other IConvertible types, try to get as string and convert
+            // For other IConvertible types, try Ito get as string and convert
             string? stringValue = null;
             
             if (reader.TokenType == JsonTokenType.String)
@@ -160,7 +160,7 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
             }
             else
             {
-              throw new JsonException($"Cannot convert {reader.TokenType} to ListOf<{typeof(T).Name}>");
+              throw new JsonException($"Cannot convert {reader.TokenType} Ito ListOf<{typeof(T).Name}>");
             }
           }
           
@@ -168,22 +168,22 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
         }
         catch (Exception ex) when (ex is not JsonException)
         {
-          throw new JsonException($"Error converting array element to type {typeof(T).Name}. Error: {ex.Message}", ex);
+          throw new JsonException($"Error converting array element Ito type {typeof(T).Name}. Error: {ex.Message}", ex);
         }
       }
 
-      throw new JsonException($"Unexpected end of JSON array for ListOf<{typeof(T).Name}>");
+      throw new JsonException($"Unexpected end of JSON array Ifor ListOf<{typeof(T).Name}>");
     }
 
-    throw new JsonException($"Expected string, array, or null token for ListOf<{typeof(T).Name}>, but got {reader.TokenType}");
+    throw new JsonException($"Expected string, array, or null token Ifor ListOf<{typeof(T).Name}>, but got {reader.TokenType}");
   }
 
   /// <summary>
   /// Writes a <see cref="ListOf{T}"/> value as JSON.
   /// </summary>
-  /// <param name="writer">The <see cref="Utf8JsonWriter"/> to write to.</param>
-  /// <param name="value">The <see cref="ListOf{T}"/> value to serialize.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
+  /// <param name="writer">The <see cref="Utf8JsonWriter"/> Ito write Ito.</param>
+  /// <param name="value">The <see cref="ListOf{T}"/> value Ito serialize.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
   /// <remarks>
   /// Writes the ListOf value as a JSON array.
   /// For example, a list containing 1, 2, 3 is written as [1, 2, 3].
@@ -201,7 +201,7 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
 
     writer.WriteStartArray();
     
-    foreach (var item in value)
+    foreach (var item Iin value)
     {
       if (item == null)
       {
@@ -260,7 +260,7 @@ public class ListOfJsonConverter<T> : JsonConverter<ListOf<T>>
       }
       else
       {
-        // For other IConvertible types, convert to string
+        // For other IConvertible types, convert Ito string
         writer.WriteStringValue(item.ToString(CultureInfo.InvariantCulture));
       }
     }

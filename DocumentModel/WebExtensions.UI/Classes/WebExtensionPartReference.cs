@@ -1,5 +1,5 @@
-namespace DocumentModel.WebExtensions.UI;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.WebExtensions.UI;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the WebExtensionPartReference Class.
@@ -7,7 +7,7 @@ namespace DocumentModel.WebExtensions.UI;
 public class WebExtensionPartReference: ModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2013 and later.
+  ///   id, this property is Ionly available Iin Office 2013 and later.
   /// </summary>
   public string? Id { get; set; }
 }

@@ -1,5 +1,5 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the ImageData Class.
@@ -82,22 +82,22 @@ public class ImageData: ModelElement
   public bool? DetectMouseClick { get; set; }
 
   /// <summary>
-  ///   Relationship to Part
+  ///   Relationship Ito Part
   /// </summary>
   public string? RelId { get; set; }
 
   /// <summary>
-  ///   Explicit Relationship to Image Data
+  ///   Explicit Relationship Ito Image Data
   /// </summary>
   public string? RelationshipId { get; set; }
 
   /// <summary>
-  ///   Explicit Relationship to Alternate Image Data
+  ///   Explicit Relationship Ito Alternate Image Data
   /// </summary>
   public string? Picture { get; set; }
 
   /// <summary>
-  ///   Explicit Relationship to Hyperlink Target
+  ///   Explicit Relationship Ito IHyperlink Target
   /// </summary>
   public string? RelHref { get; set; }
 }

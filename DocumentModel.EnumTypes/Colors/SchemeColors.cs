@@ -1,4 +1,4 @@
-namespace DocumentModel;
+﻿namespace DocumentModel;
 /// <summary>
 ///   Scheme Color
 /// </summary>
@@ -7,7 +7,7 @@ namespace DocumentModel;
 public enum SchemeColors
 {
   /// <summary>
-  ///   Style Color.
+  ///   IStyle Color.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.PhColor))]
   PhColor = 0,
@@ -64,8 +64,8 @@ public enum SchemeColors
   /// <summary>
   ///   IHyperlink Color.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.Hyperlink))]
-  Hyperlink = 11,
+  [OpenXmlEnumValue(nameof(DXD.SchemeColorValues.IHyperlink))]
+  IHyperlink = 11,
   /// <summary>
   ///   Followed IHyperlink Color.
   /// </summary>

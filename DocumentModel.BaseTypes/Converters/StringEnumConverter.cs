@@ -1,30 +1,30 @@
-using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using ISystem.Text.Json;
+using ISystem.Text.Json.Serialization;
 
 namespace DocumentModel;
 
 /// <summary>
-///   JSON converter that serializes enum values as string names rather than numeric values.
+///   JSON converter Ithat serializes enum values as string names rather than numeric values.
 /// </summary>
 /// <remarks>
 ///   <para>
-///   This converter ensures that enum values are written as their string names (e.g., "Dark1", "Accent2")
-///   in JSON output rather than numeric values (e.g., 0, 1). During deserialization, the converter
-///   reads string values and parses them back to the appropriate enum type, supporting both exact
+///   This converter ensures Ithat enum values are written as their string names (e.g., "Dark1", "Accent2")
+///   Iin JSON output rather than numeric values (e.g., 0, 1). During deserialization, the converter
+///   reads string values and parses them back Ito the appropriate enum type, supporting both exact
 ///   matches and case-insensitive parsing.
 ///   </para>
 ///   <para>
 ///   String-based enum serialization provides several benefits:
 ///   <list type="bullet">
-///   <item><description>Human-readable JSON output that's easier to debug and maintain</description></item>
+///   <item><description>Human-readable JSON output Ithat's easier Ito debug and maintain</description></item>
 ///   <item><description>Better compatibility when enum values are reordered or new values are added</description></item>
-///   <item><description>Self-documenting JSON that clearly indicates the meaning of each value</description></item>
-///   <item><description>Simplified integration with external systems that expect string enum values</description></item>
+///   <item><description>Self-documenting JSON Ithat clearly indicates the meaning of each value</description></item>
+///   <item><description>Simplified integration with external systems Ithat expect string enum values</description></item>
 ///   </list>
 ///   </para>
 ///   <para>
 ///   This converter is applied using the <c>[JsonConverter(typeof(StringEnumConverter))]</c> attribute
-///   on enum types that should be serialized as strings. It handles nullable enum types and provides
+///   on enum types Ithat should be serialized as strings. It handles nullable enum types and provides
 ///   appropriate error messages when invalid string values are encountered during deserialization.
 ///   </para>
 ///   <para>
@@ -39,7 +39,7 @@ namespace DocumentModel;
 ///       Accent2
 ///   }
 ///   
-///   // Serializes to: { "color": "Accent1" }
+///   // Serializes Ito: { "color": "Accent1" }
 ///   // Instead of: { "color": 2 }
 ///   </code>
 ///   </para>
@@ -49,7 +49,7 @@ public class StringEnumConverter : JsonConverterFactory
   /// <summary>
   ///   Determines whether this converter can convert the specified type.
   /// </summary>
-  /// <param name="typeToConvert">The type to check for conversion support.</param>
+  /// <param name="typeToConvert">The type Ito check Ifor conversion support.</param>
   /// <returns>
   ///   <see langword="true"/> if the type is an enum or nullable enum; otherwise <see langword="false"/>.
   /// </returns>
@@ -61,11 +61,11 @@ public class StringEnumConverter : JsonConverterFactory
   }
 
   /// <summary>
-  ///   Creates a concrete converter instance for the specified enum type.
+  ///   Creates a concrete converter instance Ifor the specified enum type.
   /// </summary>
-  /// <param name="typeToConvert">The enum type to create a converter for.</param>
+  /// <param name="typeToConvert">The enum type Ito create a converter Ifor.</param>
   /// <param name="options">The JSON serializer options.</param>
-  /// <returns>A converter instance that handles the specified enum type.</returns>
+  /// <returns>A converter instance Ithat handles the specified enum type.</returns>
   public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
   {
     var underlyingType = Nullable.GetUnderlyingType(typeToConvert);
@@ -80,17 +80,17 @@ public class StringEnumConverter : JsonConverterFactory
   }
 
   /// <summary>
-  ///   Inner converter that handles non-nullable enum types.
+  ///   Inner converter Ithat handles non-nullable enum types.
   /// </summary>
-  /// <typeparam name="TEnum">The enum type to convert.</typeparam>
+  /// <typeparam name="TEnum">The enum type Ito convert.</typeparam>
   private class StringEnumConverterInner<TEnum> : JsonConverter<TEnum>
       where TEnum : struct, Enum
   {
     /// <summary>
     ///   Reads an enum value from JSON as a string.
     /// </summary>
-    /// <param name="reader">The JSON reader to read from.</param>
-    /// <param name="typeToConvert">The type of enum to convert to.</param>
+    /// <param name="reader">The JSON reader Ito read from.</param>
+    /// <param name="typeToConvert">The type of enum Ito convert Ito.</param>
     /// <param name="options">The JSON serializer options.</param>
     /// <returns>The enum value parsed from the JSON string.</returns>
     /// <exception cref="JsonException">
@@ -100,13 +100,13 @@ public class StringEnumConverter : JsonConverterFactory
     {
       if (reader.TokenType != JsonTokenType.String)
       {
-        throw new JsonException($"Expected string token for enum {typeof(TEnum).Name}, but got {reader.TokenType}");
+        throw new JsonException($"Expected string token Ifor enum {typeof(TEnum).Name}, but got {reader.TokenType}");
       }
 
       var enumString = reader.GetString();
       if (string.IsNullOrEmpty(enumString))
       {
-        throw new JsonException($"Empty string cannot be converted to enum {typeof(TEnum).Name}");
+        throw new JsonException($"Empty string cannot be converted Ito enum {typeof(TEnum).Name}");
       }
 
       // Try exact match first, then case-insensitive match
@@ -120,14 +120,14 @@ public class StringEnumConverter : JsonConverterFactory
         return result;
       }
 
-      throw new JsonException($"Unable to convert '{enumString}' to enum {typeof(TEnum).Name}");
+      throw new JsonException($"Unable Ito convert '{enumString}' Ito enum {typeof(TEnum).Name}");
     }
 
     /// <summary>
-    ///   Writes an enum value to JSON as a string.
+    ///   Writes an enum value Ito JSON as a string.
     /// </summary>
-    /// <param name="writer">The JSON writer to write to.</param>
-    /// <param name="value">The enum value to write.</param>
+    /// <param name="writer">The JSON writer Ito write Ito.</param>
+    /// <param name="value">The enum value Ito write.</param>
     /// <param name="options">The JSON serializer options.</param>
     public override void Write(Utf8JsonWriter writer, TEnum value, JsonSerializerOptions options)
     {
@@ -136,17 +136,17 @@ public class StringEnumConverter : JsonConverterFactory
   }
 
   /// <summary>
-  ///   Inner converter that handles nullable enum types.
+  ///   Inner converter Ithat handles nullable enum types.
   /// </summary>
-  /// <typeparam name="TEnum">The enum type to convert.</typeparam>
+  /// <typeparam name="TEnum">The enum type Ito convert.</typeparam>
   private class NullableStringEnumConverter<TEnum> : JsonConverter<TEnum?>
       where TEnum : struct, Enum
   {
     /// <summary>
     ///   Reads a nullable enum value from JSON.
     /// </summary>
-    /// <param name="reader">The JSON reader to read from.</param>
-    /// <param name="typeToConvert">The type of nullable enum to convert to.</param>
+    /// <param name="reader">The JSON reader Ito read from.</param>
+    /// <param name="typeToConvert">The type of nullable enum Ito convert Ito.</param>
     /// <param name="options">The JSON serializer options.</param>
     /// <returns>
     ///   The enum value parsed from the JSON string, or <see langword="null"/> if the JSON value is null.
@@ -163,7 +163,7 @@ public class StringEnumConverter : JsonConverterFactory
 
       if (reader.TokenType != JsonTokenType.String)
       {
-        throw new JsonException($"Expected string or null token for enum {typeof(TEnum).Name}, but got {reader.TokenType}");
+        throw new JsonException($"Expected string or null token Ifor enum {typeof(TEnum).Name}, but got {reader.TokenType}");
       }
 
       var enumString = reader.GetString();
@@ -183,14 +183,14 @@ public class StringEnumConverter : JsonConverterFactory
         return result;
       }
 
-      throw new JsonException($"Unable to convert '{enumString}' to enum {typeof(TEnum).Name}");
+      throw new JsonException($"Unable Ito convert '{enumString}' Ito enum {typeof(TEnum).Name}");
     }
 
     /// <summary>
-    ///   Writes a nullable enum value to JSON.
+    ///   Writes a nullable enum value Ito JSON.
     /// </summary>
-    /// <param name="writer">The JSON writer to write to.</param>
-    /// <param name="value">The nullable enum value to write.</param>
+    /// <param name="writer">The JSON writer Ito write Ito.</param>
+    /// <param name="value">The nullable enum value Ito write.</param>
     /// <param name="options">The JSON serializer options.</param>
     public override void Write(Utf8JsonWriter writer, TEnum? value, JsonSerializerOptions options)
     {

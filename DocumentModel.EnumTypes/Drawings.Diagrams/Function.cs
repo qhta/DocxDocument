@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
+﻿namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Defines the Function enumeration.
-/// Used in types such as ConnectionShape, GraphicFrame, Picture.
+/// Used Iin types such as ConnectionShape, GraphicFrame, Picture.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.FunctionValues))]
@@ -34,10 +34,10 @@ public enum Function
   [OpenXmlEnumValue("PositionOdd")]
   PositionOdd,
   /// <summary>
-  ///   Variable.
+  ///   IVariable.
   /// </summary>
-  [OpenXmlEnumValue("Variable")]
-  Variable,
+  [OpenXmlEnumValue("IVariable")]
+  IVariable,
   /// <summary>
   ///   Depth.
   /// </summary>
@@ -49,3 +49,4 @@ public enum Function
   [OpenXmlEnumValue("MaxDepth")]
   MaxDepth
 }
+

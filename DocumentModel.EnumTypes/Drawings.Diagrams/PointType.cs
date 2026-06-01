@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
+﻿namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Defines the PointType enumeration.
-/// Used in types such as Constraint, DiagramChooseIf, ForEach.
+/// Used Iin types such as Constraint, DiagramChooseIf, ForEach.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum PointType
@@ -18,10 +18,10 @@ public enum PointType
   [OpenXmlEnumValue("Assistant")]
   Assistant,
   /// <summary>
-  ///   Document.
+  ///   IDocument.
   /// </summary>
-  [OpenXmlEnumValue("Document")]
-  Document,
+  [OpenXmlEnumValue("IDocument")]
+  IDocument,
   /// <summary>
   ///   Presentation.
   /// </summary>
@@ -38,3 +38,4 @@ public enum PointType
   [OpenXmlEnumValue("SiblingTransition")]
   SiblingTransition
 }
+

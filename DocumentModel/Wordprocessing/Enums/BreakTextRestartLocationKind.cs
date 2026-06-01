@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the BreakTextRestartLocationValues enumeration.
@@ -8,7 +8,7 @@ namespace DocumentModel.Wordprocessing;
 public enum BreakTextRestartLocationKind
 {
   /// <summary>
-  ///   Restart On Next Line.
+  ///   Restart On Next ILine.
   /// </summary>
   None,
 
@@ -23,7 +23,7 @@ public enum BreakTextRestartLocationKind
   Right,
 
   /// <summary>
-  ///   Restart On Next Full Line.
+  ///   Restart On Next Full ILine.
   /// </summary>
   All
 }

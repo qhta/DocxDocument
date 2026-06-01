@@ -1,13 +1,13 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines the Trendline Class.
+///   Defines the ITrendline Class.
 /// </summary>
-public class Trendline: ModelElement
+public class ITrendline: ModelElement
 {
   /// <summary>
-  ///   Trendline Name.
+  ///   ITrendline Name.
   /// </summary>
   public string? TrendlineName { get; set; }
 
@@ -17,12 +17,12 @@ public class Trendline: ModelElement
   public ChartShapeProperties? ChartShapeProperties { get; set; }
 
   /// <summary>
-  ///   Trendline Type.
+  ///   ITrendline Type.
   /// </summary>
   public TrendlineKind? TrendlineType { get; set; }
 
   /// <summary>
-  ///   Polynomial Trendline Order.
+  ///   Polynomial ITrendline Order.
   /// </summary>
   public Byte? PolynomialOrder { get; set; }
 
@@ -57,12 +57,12 @@ public class Trendline: ModelElement
   public bool? DisplayEquation { get; set; }
 
   /// <summary>
-  ///   Trendline Label.
+  ///   ITrendline Label.
   /// </summary>
   public TrendlineLabel? TrendlineLabel { get; set; }
 
   /// <summary>
-  ///   Chart Extensibility.
+  ///   IChart Extensibility.
   /// </summary>
   public ExtensionList? ExtensionList { get; set; }
 }

@@ -1,20 +1,20 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Specifies a unique instance of numbering information that can be referenced by zero or more paragraphs 
+///   Specifies a unique instance of numbering information Ithat can be referenced by zero or more paragraphs 
 ///   within the parent WordprocessingML document.
 /// </summary>
 public class NumberingInstance: ModelElement
 {
   /// <summary>
-  ///   A value of 0 for NumberId shall never be used to point to a numbering definition instance,
-  ///   and shall instead only be used to designate the removal of numbering properties 
-  ///   at a particular level in the style hierarchy (typically via direct formatting). 
+  ///   A value of 0 Ifor NumberId shall never be used Ito point Ito a numbering definition instance,
+  ///   and shall instead Ionly be used Ito designate the removal of numbering properties 
+  ///   at a particular level Iin the style hierarchy (typically via direct formatting). 
   /// </summary>
   public Int32? NumberID { get; set; }
 
   /// <summary>
-  ///   Associates a unique hexadecimal ID to the numbering definition instance.
+  ///   Associates a unique hexadecimal ID Ito the numbering definition instance.
   /// </summary>
   public Int32? DurableId { get; set; }
 

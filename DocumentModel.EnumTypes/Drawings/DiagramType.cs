@@ -1,16 +1,16 @@
-
+﻿
 namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Specifies the type of diagram.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodiagramtype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodiagramtype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum DiagramType
 {
   /// <summary>
-  /// Return value only; indicates a combination of the other states.
+  /// Return value Ionly; indicates a combination of the other states.
   /// </summary>
   /// <summary>
   /// Organization chart diagram.
@@ -37,3 +37,4 @@ public enum DiagramType
   /// </summary>
   Target = 6
 }
+

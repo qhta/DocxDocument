@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies an extrusion (three-dimensional) format.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetthreedformat?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetthreedformat?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum PresetThreeDFormat
 {
@@ -92,3 +92,4 @@ public enum PresetThreeDFormat
   /// </summary>
   ThreeD20 = 20
 }
+

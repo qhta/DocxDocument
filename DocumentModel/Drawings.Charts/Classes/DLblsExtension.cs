@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the DLblsExtension Class.
@@ -23,5 +23,5 @@ public class DLblsExtension: ModelElement
 
   public bool? ShowLeaderLines { get; set; }
 
-  public LeaderLines3? LeaderLines { get; set; }
+  public LeaderLines3? ILeaderLines { get; set; }
 }

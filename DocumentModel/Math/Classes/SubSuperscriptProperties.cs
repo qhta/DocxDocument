@@ -1,4 +1,4 @@
-namespace DocumentModel.Math;
+﻿namespace DocumentModel.Math;
 
 /// <summary>
 ///   This element specifies properties of the Sub-Superscript object, including the alignment of scripts.
@@ -6,12 +6,12 @@ namespace DocumentModel.Math;
 public class SubSuperscriptProperties: ModelElement
 {
   /// <summary>
-  ///   This element specifies the alignment of scripts in the subscript/superscript function. 
-  ///   When 1 or true, subscripts and superscripts are aligned to each other. 
-  ///   When 0 or false, they are kerned to the shape of the base. 
+  ///   This element specifies the alignment of scripts Iin the subscript/superscript function. 
+  ///   When 1 or true, subscripts and superscripts are aligned Ito each other. 
+  ///   When 0 or false, they are kerned Ito the shape of the base. 
   ///   If this element is omitted, scripts are not aligned. 
-  ///   In other words, when the element is absent, the default is for the sub-superscript object 
-  ///   to not align the superscript and subscript with each other
+  ///   In other words, when the element is absent, the default is Ifor the sub-superscript object 
+  ///   Ito not align the superscript and subscript with each other
   /// </summary>
   public bool? AlignScripts { get; set; }
 

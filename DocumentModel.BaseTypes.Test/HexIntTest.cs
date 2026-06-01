@@ -3,7 +3,7 @@
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite for HexInt type serialization in both XML and JSON formats.
+/// Test suite Ifor HexInt type serialization Iin both XML and JSON formats.
 /// </summary>
 public static class HexIntTest
 {
@@ -28,13 +28,13 @@ public static class HexIntTest
   
   static bool TestHexIntBasicOperations()
   {
-    Console.WriteLine("--- Testing HexInt Basic Operations ---"); // Test string to HexInt conversion
-    HexInt hexInt1 = "0000007B"; // 123 in hex
-    Console.WriteLine($"\n✓ String to HexInt: {hexInt1} = {hexInt1.ToInt32(null)}");
+    Console.WriteLine("--- Testing HexInt Basic Operations ---"); // Test string Ito HexInt conversion
+    HexInt hexInt1 = "0000007B"; // 123 Iin hex
+    Console.WriteLine($"\n✓ String Ito HexInt: {hexInt1} = {hexInt1.ToInt32(null)}");
 
-    // Test int to HexInt conversion
+    // Test int Ito HexInt conversion
     HexInt hexInt2 = 123;
-    Console.WriteLine($"\n✓ Int to HexInt: {hexInt2}");
+    Console.WriteLine($"\n✓ Int Ito HexInt: {hexInt2}");
 
     // Test equality
     if (hexInt1.Equals(hexInt2))
@@ -42,13 +42,13 @@ public static class HexIntTest
     else
       Console.WriteLine("✗ Equality test FAILED");
 
-    // Test HexInt to string
+    // Test HexInt Ito string
     string str = hexInt1.ToString();
-    Console.WriteLine($"\n✓ HexInt to string: {str}");
+    Console.WriteLine($"\n✓ HexInt Ito string: {str}");
 
-    // Test HexInt to int
+    // Test HexInt Ito int
     int value = hexInt1;
-    Console.WriteLine($"\n✓ HexInt to int: {value}");
+    Console.WriteLine($"\n✓ HexInt Ito int: {value}");
 
     // Test negative values
     HexInt negative = -1;
@@ -81,7 +81,7 @@ public static class HexIntTest
     {
       RevisionId = 123,
       DocumentHash = "DEADBEEF",
-      ColorARGB = 0xFF0000FF, // Red in ARGB
+      ColorARGB = 0xFF0000FF, // Red Iin ARGB
       NegativeValue = -1,
       Zero = 0,
       MaxPositive = int.MaxValue,
@@ -97,7 +97,7 @@ public static class HexIntTest
     Console.WriteLine($"  MinNegative: {testData.MinNegative} ({testData.MinNegative.ToInt32(null)})");
     Console.WriteLine();
 
-    // Serialize to XML
+    // Serialize Ito XML
     var xmlSerializer = new XmlSerializer(typeof(HexIntTestData));
     string xmlString;
     using (var stringWriter = new StringWriter())
@@ -105,7 +105,7 @@ public static class HexIntTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = System.Text.Encoding.UTF8
+      Encoding = ISystem.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -179,7 +179,7 @@ public static class HexIntTest
     {
       RevisionId = 456,
       DocumentHash = "CAFEBABE",
-      ColorARGB = 0x00FF00FF, // Green in ARGB
+      ColorARGB = 0x00FF00FF, // Green Iin ARGB
       NegativeValue = -42,
       Zero = 0,
       MaxPositive = int.MaxValue,
@@ -195,7 +195,7 @@ public static class HexIntTest
     Console.WriteLine($"  MinNegative: {testData.MinNegative}");
     Console.WriteLine();
 
-    // Serialize to JSON
+    // Serialize Ito JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -299,8 +299,8 @@ public static class HexIntTest
     const int iterations = 100000;
 
     // Test construction from string
-    var sw = System.Diagnostics.Stopwatch.StartNew();
-    for (int i = 0; i < iterations; i++)
+    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
+    Ifor (int i = 0; i < iterations; i++)
     {
       HexInt hex = new HexInt("0000007B");
     }
@@ -309,7 +309,7 @@ public static class HexIntTest
 
     // Test construction from int
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       HexInt hex = new HexInt(123);
     }
@@ -319,7 +319,7 @@ public static class HexIntTest
     // Test ToString performance
     HexInt testInt = new HexInt(123);
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       string str = testInt.ToString();
     }
@@ -338,7 +338,7 @@ public static class HexIntTest
       MinNegative = int.MinValue
     };
     sw.Restart();
-    for (int i = 0; i < iterations / 10; i++) // Fewer iterations for serialization
+    Ifor (int i = 0; i < iterations / 10; i++) // Fewer iterations Ifor serialization
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -348,7 +348,7 @@ public static class HexIntTest
     // Test Deserialization performance
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    for (int i = 0; i < iterations / 10; i++)
+    Ifor (int i = 0; i < iterations / 10; i++)
     {
       var obj = JsonSerializer.Deserialize<HexIntTestData>(jsonData);
     }
@@ -359,7 +359,7 @@ public static class HexIntTest
     HexInt hex1 = new HexInt(123);
     HexInt hex2 = new HexInt(123);
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       bool equal = hex1.Equals(hex2);
     }
@@ -368,21 +368,21 @@ public static class HexIntTest
 
     // Test implicit conversions performance
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       int value = hex1;
     }
     sw.Stop();
-    Console.WriteLine($"Implicit conversion to int x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"Implicit conversion Ito int x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     // Test HexBinary conversion performance
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       HexBinary binary = (HexBinary)hex1;
     }
     sw.Stop();
-    Console.WriteLine($"Conversion to HexBinary x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"Conversion Ito HexBinary x {iterations}: {sw.ElapsedMilliseconds}ms");
     Console.WriteLine("\n✓ Performance tests completed");
     Console.WriteLine();
     return true;
@@ -398,7 +398,7 @@ public static class HexIntTest
 public class HexIntTestData
 {
   [XmlElement("RevisionId")]
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
   public HexInt RevisionId { get; set; }
 
   [XmlElement("DocumentHash")]
@@ -419,4 +419,5 @@ public class HexIntTestData
   [XmlElement("MinNegative")]
   public HexInt MinNegative { get; set; }
 }
+
 

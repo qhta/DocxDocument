@@ -1,12 +1,12 @@
-namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
-/// Specifies the menu group that a command bar pop-up control belongs to when the menu groups of the OLE server
-/// are merged with the menu groups of an OLE client (that is, when an object of the container application type is
-/// embedded in another application).
+/// Specifies the menu group Ithat a command bar pop-up control belongs Ito when the menu groups of the OLE server
+/// are merged with the menu groups of an OLE client (Ithat is, when an object of the container application type is
+/// embedded Iin another application).
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoolemenugroup?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoolemenugroup?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum OLEMenuGroup
 {
@@ -31,11 +31,12 @@ public enum OLEMenuGroup
   /// </summary>
   Object,
   /// <summary>
-  /// Window menu.
+  /// IWindow menu.
   /// </summary>
-  Window,
+  IWindow,
   /// <summary>
   /// Help menu.
   /// </summary>
   Help
 }
+

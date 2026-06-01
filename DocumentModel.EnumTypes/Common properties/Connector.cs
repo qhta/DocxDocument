@@ -1,16 +1,16 @@
-
+﻿
 namespace DocumentModel.Properties;
 
 /// <summary>
 /// Specifies the connector between two similar property test values.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoconnector?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoconnector?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum Connector
 {
   /// <summary>
-  /// Combine property test values to form one property test.
+  /// Combine property test values Ito form one property test.
   /// </summary>
   And = 1,
   /// <summary>
@@ -18,3 +18,4 @@ public enum Connector
   /// </summary>
   Or
 }
+

@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Text Line Color List.
+///   Text ILine Color IList.
 /// </summary>
 public class TextLineColorList: ModelElement
 {

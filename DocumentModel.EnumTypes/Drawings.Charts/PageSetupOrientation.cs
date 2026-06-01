@@ -1,27 +1,28 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the PageSetupOrientation enumeration.
-/// Used in types such as PageSetup.
+/// Used Iin types such as IPageSetup.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.PageSetupOrientationValues))]
 public enum PageSetupOrientation
 {
   /// <summary>
-  ///   Default Page Orientation.
+  ///   Default IPage Orientation.
   /// </summary>
   [OpenXmlEnumValue("Default")]
   Default = 1,
 
   /// <summary>
-  ///   Portrait Page.
+  ///   Portrait IPage.
   /// </summary>
   [OpenXmlEnumValue("Portrait")]
   Portrait,
   /// <summary>
-  ///   Landscape Page.
+  ///   Landscape IPage.
   /// </summary>
   [OpenXmlEnumValue("Landscape")]
   Landscape
 }
+

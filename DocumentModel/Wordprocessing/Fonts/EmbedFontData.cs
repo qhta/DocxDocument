@@ -1,8 +1,9 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Embedded fonts stored in the document.
+/// Embedded fonts stored Iin the document.
 /// </summary>
-public class EmbedFontData: Dictionary<string, byte[]>
+public class EmbedFontData: IDictionary<string, byte[]>
 {
 }
+

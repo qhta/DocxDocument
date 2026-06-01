@@ -1,19 +1,19 @@
-﻿namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
 /// Provides information about the digital certificate.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.certificatedetail?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.certificatedetail?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum CertificateDetail
 {
   /// <summary>
-  /// Specifies that the digital certificate is available for signing.
+  /// Specifies Ithat the digital certificate is available Ifor signing.
   /// </summary>
   Available,
   /// <summary>
-  /// The holder of a Private Key corresponding to a Public Key.
+  /// The holder of a Private Key corresponding Ito a Public Key.
   /// </summary>
   Subject,
   /// <summary>
@@ -29,3 +29,4 @@ public enum CertificateDetail
   /// </summary>
   Thumbprint
 }
+

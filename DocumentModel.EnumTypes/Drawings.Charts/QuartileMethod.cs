@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the QuartileMethod enumeration.
-/// Used in types such as Statistics, QuartileMethod, StatisticsConverter.
+/// Used Iin types such as Statistics, QuartileMethod, StatisticsConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum QuartileMethod
@@ -18,3 +18,4 @@ public enum QuartileMethod
   [OpenXmlEnumValue("Exclusive")]
   Exclusive
 }
+

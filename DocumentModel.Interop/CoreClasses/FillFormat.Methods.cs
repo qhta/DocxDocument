@@ -1,0 +1,68 @@
+
+namespace DocumentModel.Interop.Core;
+
+/// <summary>
+/// Reserved for internal use.
+/// </summary>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat?view=office-pia"/>
+public partial class FillFormat
+{
+  /// <summary>
+  /// Sets the fill to use the background style.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.background?view=office-pia"/>
+  public void Background() { throw new NotImplementedException(); }
+  /// <summary>
+  /// Applies a one-color gradient fill.
+  /// </summary>
+  /// <param name="Style">The `Style` parameter.</param>
+  /// <param name="Variant">The `Variant` parameter.</param>
+  /// <param name="Degree">The `Degree` parameter.</param>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.onecolorgradient?view=office-pia"/>
+  public void OneColorGradient(GradientStyle Style, int Variant, float Degree) { throw new NotImplementedException(); }
+  /// <summary>
+  /// Applies a patterned fill.
+  /// </summary>
+  /// <param name="Pattern">The `Pattern` parameter.</param>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.patterned?view=office-pia"/>
+  public void Patterned(PatternType Pattern) { throw new NotImplementedException(); }
+  /// <summary>
+  /// Applies a preset gradient fill.
+  /// </summary>
+  /// <param name="Style">The `Style` parameter.</param>
+  /// <param name="Variant">The `Variant` parameter.</param>
+  /// <param name="PresetGradientType">The `PresetGradientType` parameter.</param>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.presetgradient?view=office-pia"/>
+  public void PresetGradient(GradientStyle Style, int Variant, PresetGradientType PresetGradientType) { throw new NotImplementedException(); }
+  /// <summary>
+  /// Applies a preset texture fill.
+  /// </summary>
+  /// <param name="PresetTexture">The `PresetTexture` parameter.</param>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.presettextured?view=office-pia"/>
+  public void PresetTextured(PresetTexture PresetTexture) { throw new NotImplementedException(); }
+  /// <summary>
+  /// Applies a solid fill.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.solid?view=office-pia"/>
+  public void Solid() { throw new NotImplementedException(); }
+  /// <summary>
+  /// Applies a two-color gradient fill.
+  /// </summary>
+  /// <param name="Style">The `Style` parameter.</param>
+  /// <param name="Variant">The `Variant` parameter.</param>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.twocolorgradient?view=office-pia"/>
+  public void TwoColorGradient(GradientStyle Style, int Variant) { throw new NotImplementedException(); }
+  /// <summary>
+  /// Uses a picture file as the fill source.
+  /// </summary>
+  /// <param name="PictureFile">The `PictureFile` parameter.</param>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.userpicture?view=office-pia"/>
+  public void UserPicture(string PictureFile) { throw new NotImplementedException(); }
+  /// <summary>
+  /// Uses a custom texture file as the fill source.
+  /// </summary>
+  /// <param name="TextureFile">The `TextureFile` parameter.</param>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.usertextured?view=office-pia"/>
+  public void UserTextured(string TextureFile) { throw new NotImplementedException(); }
+}
+

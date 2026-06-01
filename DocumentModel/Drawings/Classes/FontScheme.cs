@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Font Scheme.
+///   IFont Scheme.
 /// </summary>
 public class FontScheme: ModelElement
 {
@@ -12,7 +12,7 @@ public class FontScheme: ModelElement
   public string? Name { get; set; }
 
   /// <summary>
-  ///   Major Font.
+  ///   Major IFont.
   /// </summary>
   public MajorFont? MajorFont { get; set; }
 

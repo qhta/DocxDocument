@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the PrintSettings Class.
@@ -9,20 +9,20 @@ public class PrintSettings: ModelElement
   /// <summary>
   ///   Header and Footer.
   /// </summary>
-  public HeaderFooter? HeaderFooter { get; set; }
+  public IHeaderFooter? IHeaderFooter { get; set; }
 
   /// <summary>
-  ///   Page Margins.
+  ///   IPage Margins.
   /// </summary>
   public PageMargins? PageMargins { get; set; }
 
   /// <summary>
-  ///   Page Setup.
+  ///   IPage Setup.
   /// </summary>
-  public PageSetup? PageSetup { get; set; }
+  public IPageSetup? IPageSetup { get; set; }
 
   /// <summary>
-  ///   Legacy Drawing for Headers and Footers.
+  ///   Legacy Drawing Ifor Headers and Footers.
   /// </summary>
   public RelationshipIdType? LegacyDrawingHeaderFooter { get; set; }
 }

@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Defines how to align specified objects relative to one another.
+/// Defines how Ito align specified objects relative Ito one another.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoaligncmd?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoaligncmd?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum AlignCmd
 {
@@ -33,3 +33,4 @@ public enum AlignCmd
   /// </summary>
   Bottoms
 }
+

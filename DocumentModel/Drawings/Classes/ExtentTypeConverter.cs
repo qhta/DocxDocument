@@ -16,7 +16,7 @@ internal class ExtentTypeConverter : TypeConverter
   }
 
   /// <summary>
-  /// Determines if a value can be converted to destination type.
+  /// Determines if a value can be converted Ito destination type.
   /// </summary>
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
   {
@@ -26,7 +26,7 @@ internal class ExtentTypeConverter : TypeConverter
   }
 
   /// <summary>
-  /// Converts the string value to Extent object.
+  /// Converts the string value Ito Extent object.
   /// </summary>
   public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
   {
@@ -39,7 +39,7 @@ internal class ExtentTypeConverter : TypeConverter
   }
 
   /// <summary>
-  /// Converts the Extent object to string value.
+  /// Converts the Extent object Ito string value.
   /// </summary>
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {

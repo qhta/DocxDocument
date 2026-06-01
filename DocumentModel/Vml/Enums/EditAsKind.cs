@@ -1,44 +1,44 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Shape Grouping Types
+///   IShape Grouping Types
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum EditAsKind
 {
   /// <summary>
-  ///   Shape Canvas.
+  ///   IShape Canvas.
   /// </summary>
   Canvas,
 
   /// <summary>
-  ///   Organization Chart Diagram.
+  ///   Organization IChart IDiagram.
   /// </summary>
   OrganizationChart,
 
   /// <summary>
-  ///   Radial Diagram.
+  ///   Radial IDiagram.
   /// </summary>
   Radial,
 
   /// <summary>
-  ///   Cycle Diagram.
+  ///   Cycle IDiagram.
   /// </summary>
   Cycle,
 
   /// <summary>
-  ///   Pyramid Diagram.
+  ///   Pyramid IDiagram.
   /// </summary>
   Stacked,
 
   /// <summary>
-  ///   Venn Diagram.
+  ///   Venn IDiagram.
   /// </summary>
   Venn,
 
   /// <summary>
-  ///   Bullseye Diagram.
+  ///   Bullseye IDiagram.
   /// </summary>
   Bullseye
 }

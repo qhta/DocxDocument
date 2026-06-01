@@ -2,14 +2,14 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// This static class contains extension operations to be performed on a OnOffType or OnOffValue element.
+/// This static class contains extension operations Ito be performed on a OnOffType or OnOffValue element.
 /// </summary>
 public static class OnOffUtils
 {
   /// <summary>
   /// Retrieves the boolean equivalent of the specified OpenXml Math OnOffType.
   /// </summary>
-  /// <param name="element">The OpenXml Math OnOffType element to convert.</param>
+  /// <param name="element">The OpenXml Math OnOffType element Ito convert.</param>
   /// <returns>True if value is 'true' or 'on', false if 'false' or 'off', otherwise null.</returns>
   public static bool? AsBoolean(this DXM.OnOffType? element)
   {
@@ -23,8 +23,9 @@ public static class OnOffUtils
   /// <summary>
   /// Retrieves the boolean equivalent of the specified OpenXml OnOffValue.
   /// </summary>
-  /// <param name="element">The OpenXml OnOffValue element to convert.</param>
+  /// <param name="element">The OpenXml OnOffValue element Ito convert.</param>
   /// <returns>The boolean value, or null if the element is null.</returns>
   public static bool? AsBoolean(this DX.OnOffValue? element)
     => (element is null) ? null : (bool)element;
 }
+

@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the VerticalMergeRevisionValues enumeration.
@@ -8,12 +8,12 @@ namespace DocumentModel.Wordprocessing;
 public enum VerticalMergeRevisionKind
 {
   /// <summary>
-  ///   Vertically Merged Cell.
+  ///   Vertically Merged ICell.
   /// </summary>
   Continue,
 
   /// <summary>
-  ///   Vertically Split Cell.
+  ///   Vertically Split ICell.
   /// </summary>
   Restart
 }

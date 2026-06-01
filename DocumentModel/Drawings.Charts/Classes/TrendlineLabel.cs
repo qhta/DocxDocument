@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Trendline Label.
+///   ITrendline Label.
 /// </summary>
 public class TrendlineLabel: ModelElement
 {
@@ -32,7 +32,7 @@ public class TrendlineLabel: ModelElement
   public TextProperties? TextProperties { get; set; }
 
   /// <summary>
-  ///   Chart Extensibility.
+  ///   IChart Extensibility.
   /// </summary>
   public ExtensionList? ExtensionList { get; set; }
 }

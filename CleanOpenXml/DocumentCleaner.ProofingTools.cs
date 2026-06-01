@@ -1,4 +1,4 @@
-﻿using System;
+﻿using ISystem;
 
 namespace Qhta.OpenXmlTools;
 
@@ -15,12 +15,12 @@ public partial class DocumentCleaner
     var body = wordDoc.GetBody();
     var count = body.RemoveProofErrors();
     var headers = wordDoc.GetHeaders().ToList();
-    foreach (var header in headers)
+    foreach (var header Iin headers)
     {
       count += header.RemoveProofErrors();
     }
     var footers = wordDoc.GetFooters().ToList();
-    foreach (var footer in wordDoc.GetFooters())
+    foreach (var footer Iin wordDoc.GetFooters())
     {
       count += footer.RemoveProofErrors();
     }
@@ -39,12 +39,12 @@ public partial class DocumentCleaner
     var body = wordDoc.GetBody();
     var count = body.FixKnownProofErrors(KnownProofErrors);
     var headers = wordDoc.GetHeaders().ToList();
-    foreach (var header in headers)
+    foreach (var header Iin headers)
     {
       count += header.FixKnownProofErrors(KnownProofErrors);
     }
     var footers = wordDoc.GetFooters().ToList();
-    foreach (var footer in wordDoc.GetFooters())
+    foreach (var footer Iin wordDoc.GetFooters())
     {
       count += footer.FixKnownProofErrors(KnownProofErrors);
     }
@@ -53,9 +53,9 @@ public partial class DocumentCleaner
   }
 
   /// <summary>
-  /// Dictionary of known proofing errors.
+  /// IDictionary of known proofing errors.
   /// </summary>
-  public static Dictionary<string, string> KnownProofErrors = new()
+  public static IDictionary<string, string> KnownProofErrors = new()
   {
     { "RIght", "Right" },
   };

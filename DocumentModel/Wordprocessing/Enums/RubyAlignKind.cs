@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the RubyAlignValues enumeration.
@@ -13,12 +13,12 @@ public enum RubyAlignKind
   Center,
 
   /// <summary>
-  ///   Distribute All Characters.
+  ///   Distribute All ICharacters.
   /// </summary>
   DistributeLetter,
 
   /// <summary>
-  ///   Distribute all Characters w/ Additional Space On Either Side.
+  ///   Distribute all ICharacters w/ Additional Space On Either Side.
   /// </summary>
   DistributeSpace,
 
@@ -33,7 +33,7 @@ public enum RubyAlignKind
   Right,
 
   /// <summary>
-  ///   Vertically Aligned to Right of Base Text.
+  ///   Vertically Aligned Ito Right of Base Text.
   /// </summary>
   RightVertical
 }

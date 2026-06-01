@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Style.
+///   IStyle.
 /// </summary>
 public class ShapeStyle: ModelElement
 {
@@ -22,7 +22,7 @@ public class ShapeStyle: ModelElement
   public EffectReference? EffectReference { get; set; }
 
   /// <summary>
-  ///   Font Reference.
+  ///   IFont Reference.
   /// </summary>
   public FontReference? FontReference { get; set; }
 }

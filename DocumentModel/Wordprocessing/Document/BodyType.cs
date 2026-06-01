@@ -1,7 +1,7 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Common class for <see cref="Body"/> and <see cref="DocPartBody"/> elements.
+///   Common class Ifor <see cref="Body"/> and <see cref="DocPartBody"/> elements.
 /// </summary>
 public abstract class BodyType : Story
 {
@@ -17,7 +17,7 @@ public abstract class BodyType : Story
   /// Collection of sections which is recollected from SectionProperties elements
   /// </summary>
   [NonComparable]
-  [XmlIgnore] public SectionsCollection? Sections
+  [XmlIgnore] public SectionsCollection? ISections
   {
     get 
     {

@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies a language setting in a Microsoft Office application.
+/// Specifies a language setting Iin a Microsoft Office application.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoapplanguageid?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoapplanguageid?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum AppLanguageID
 {
@@ -25,7 +25,8 @@ public enum AppLanguageID
   /// </summary>
   ExeMode,
   /// <summary>
-  /// User interface language used prior to the current user interface language.
+  /// User interface language used prior Ito the current user interface language.
   /// </summary>
   UIPrevious
 }
+

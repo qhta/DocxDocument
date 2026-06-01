@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Function Type
@@ -33,9 +33,9 @@ public enum FunctionKind
   PositionOdd,
 
   /// <summary>
-  ///   Variable.
+  ///   IVariable.
   /// </summary>
-  Variable,
+  IVariable,
 
   /// <summary>
   ///   Depth.

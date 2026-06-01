@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.ChartsStyle;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartsStyle;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the ChartStyle Class.
@@ -7,14 +7,14 @@ namespace DocumentModel.Drawings.ChartsStyle;
 public class ChartStyle: ModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2013 and later.
+  ///   id, this property is Ionly available Iin Office 2013 and later.
   /// </summary>
   public UInt32? Id { get; set; }
 
   /// <summary>
-  ///   AxisTitle.
+  ///   IAxisTitle.
   /// </summary>
-  public AxisTitle? AxisTitle { get; set; }
+  public IAxisTitle? IAxisTitle { get; set; }
 
   /// <summary>
   ///   CategoryAxis.
@@ -22,14 +22,14 @@ public class ChartStyle: ModelElement
   public CategoryAxis? CategoryAxis { get; set; }
 
   /// <summary>
-  ///   ChartArea.
+  ///   IChartArea.
   /// </summary>
-  public ChartArea? ChartArea { get; set; }
+  public IChartArea? IChartArea { get; set; }
 
   /// <summary>
-  ///   DataLabel.
+  ///   IDataLabel.
   /// </summary>
-  public DataLabel? DataLabel { get; set; }
+  public IDataLabel? IDataLabel { get; set; }
 
   /// <summary>
   ///   DataLabelCallout.
@@ -87,9 +87,9 @@ public class ChartStyle: ModelElement
   public ErrorBar? ErrorBar { get; set; }
 
   /// <summary>
-  ///   Floor.
+  ///   IFloor.
   /// </summary>
-  public Floor? Floor { get; set; }
+  public IFloor? IFloor { get; set; }
 
   /// <summary>
   ///   GridlineMajor.
@@ -117,9 +117,9 @@ public class ChartStyle: ModelElement
   public LegendStyle? LegendStyle { get; set; }
 
   /// <summary>
-  ///   PlotArea.
+  ///   IPlotArea.
   /// </summary>
-  public PlotArea? PlotArea { get; set; }
+  public IPlotArea? IPlotArea { get; set; }
 
   /// <summary>
   ///   PlotArea3D.

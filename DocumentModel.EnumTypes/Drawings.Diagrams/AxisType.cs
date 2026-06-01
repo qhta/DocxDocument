@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
+﻿namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Defines the AxisType enumeration.
-/// Used in types such as AxisList, AxisType, CategoryAxis.
+/// Used Iin types such as AxisList, AxisType, CategoryAxis.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum AxisType
@@ -73,3 +73,4 @@ public enum AxisType
   [OpenXmlEnumValue("None")]
   None
 }
+

@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings.ChartDrawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines the TickLabels Class.
+///   Defines the ITickLabels Class.
 /// </summary>
-public class TickLabels: ModelElement
+public class ITickLabels: ModelElement
 {
   /// <summary>
   ///   ExtensionList.

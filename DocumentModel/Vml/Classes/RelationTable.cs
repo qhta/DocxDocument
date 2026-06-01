@@ -1,8 +1,8 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Diagram Relationship Table.
+///   IDiagram Relationship ITable.
 /// </summary>
 public class RelationTable: ModelElement
 {

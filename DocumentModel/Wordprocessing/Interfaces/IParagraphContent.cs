@@ -1,16 +1,16 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Interface for elements that can be included in document <see cref="Paragraph"/> element.
+///   Interface Ifor elements Ithat can be included Iin document <see cref="IParagraph"/> element.
 /// </summary>
 public interface IParagraphContent: IModelElement, DMM.IOfficeMathContent
 {
   /// <summary>
-  /// Parent as a <see cref="Paragraph"/> element.
+  /// Parent as a <see cref="IParagraph"/> element.
   /// </summary>
-  public new Paragraph? Parent
+  public new IParagraph? Parent
   {
-    get => (this as IModelElement).Parent as Paragraph;
+    get => (this as IModelElement).Parent as IParagraph;
     set => (this as IModelElement).Parent = value;
   }
 }

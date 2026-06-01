@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the BreakValues enumeration.
@@ -8,17 +8,17 @@ namespace DocumentModel.Wordprocessing;
 public enum BreakKind
 {
   /// <summary>
-  ///   Page Break.
+  ///   IPage IBreak.
   /// </summary>
-  Page,
+  IPage,
 
   /// <summary>
-  ///   Column Break.
+  ///   IColumn IBreak.
   /// </summary>
-  Column,
+  IColumn,
 
   /// <summary>
-  ///   Line Break.
+  ///   ILine IBreak.
   /// </summary>
   TextWrapping
 }

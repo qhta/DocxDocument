@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Defines the TableWidthUnitValues enumeration.
@@ -15,13 +15,13 @@ public enum TableMeasureType
   Auto,
 
   /// <summary>
-  ///   Width in Twentieths of a Point.
+  ///   Width Iin Twentieths of a IPoint.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.TableWidthUnitValues.Dxa))]
   Absolute,
 
   /// <summary>
-  ///   Width in Fiftieths of a Percent.
+  ///   Width Iin Fiftieths of a Percent.
   /// </summary>
   [OpenXmlProperty(nameof(DXW.TableWidthUnitValues.Pct))]
   Percent,

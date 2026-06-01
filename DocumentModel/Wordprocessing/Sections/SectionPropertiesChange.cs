@@ -1,8 +1,8 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Revision Information for Section Properties.
+///   IRevision Information Ifor ISection Properties.
 /// </summary>
 public class SectionPropertiesChange: ModelElement, ISectionPropertiesContent
 {
@@ -22,7 +22,7 @@ public class SectionPropertiesChange: ModelElement, ISectionPropertiesContent
   public string? Id { get; set; }
 
   /// <summary>
-  ///   Previous Section Properties.
+  ///   Previous ISection Properties.
   /// </summary>
   public PreviousSectionProperties? PreviousSectionProperties { get; set; }
 }

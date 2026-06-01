@@ -1,23 +1,23 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Graphic Frame Locks.
+///   Graphic IFrame Locks.
 /// </summary>
 public class GraphicFrameLocks: ModelElement
 {
   /// <summary>
-  ///   Disallow Shape Grouping
+  ///   Disallow IShape Grouping
   /// </summary>
   public bool? NoGrouping { get; set; }
 
   /// <summary>
-  ///   Disallow Selection of Child Shapes
+  ///   Disallow ISelection of Child IShapes
   /// </summary>
   public bool? NoDrilldown { get; set; }
 
   /// <summary>
-  ///   Disallow Shape Selection
+  ///   Disallow IShape ISelection
   /// </summary>
   public bool? NoSelection { get; set; }
 
@@ -27,12 +27,12 @@ public class GraphicFrameLocks: ModelElement
   public bool? NoChangeAspect { get; set; }
 
   /// <summary>
-  ///   Disallow Shape Movement
+  ///   Disallow IShape Movement
   /// </summary>
   public bool? NoMove { get; set; }
 
   /// <summary>
-  ///   Disallow Shape Resize
+  ///   Disallow IShape Resize
   /// </summary>
   public bool? NoResize { get; set; }
 

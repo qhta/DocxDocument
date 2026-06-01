@@ -1,5 +1,5 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the TextPath Class.
@@ -12,9 +12,9 @@ public class TextPath: ModelElement
   public string? Id { get; set; }
 
   /// <summary>
-  ///   Shape Styling Properties
+  ///   IShape Styling Properties
   /// </summary>
-  public string? Style { get; set; }
+  public string? IStyle { get; set; }
 
   /// <summary>
   ///   Text Path Toggle
@@ -22,7 +22,7 @@ public class TextPath: ModelElement
   public bool? On { get; set; }
 
   /// <summary>
-  ///   Shape Fit Toggle
+  ///   IShape Fit Toggle
   /// </summary>
   public bool? FitShape { get; set; }
 

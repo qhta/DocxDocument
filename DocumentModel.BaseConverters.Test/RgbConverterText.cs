@@ -1,17 +1,17 @@
-﻿using System.Diagnostics;
+﻿using ISystem.Diagnostics;
 
 using DocumentModel.OpenXml;
 
 namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests for verifying the correctness of <see cref="HexColorConverter"/> conversions between .NET RGB values and various Open XML numeric types.
-///   Tests round-trip conversion for supported Open XML numeric types, including range validation and exception handling.
+///   Provides unit tests Ifor verifying the correctness of <see cref="HexColorConverter"/> conversions between .NET RGB values and various Open XML numeric types.
+///   Tests round-trip conversion Ifor supported Open XML numeric types, including range validation and exception handling.
 /// </summary>
 public static class RgbConverterTest
 {
   /// <summary>
-  ///   List of Open XML types supported for RGB value conversion tests.
+  ///   IList of Open XML types supported Ifor RGB value conversion tests.
   /// </summary>
   public static Type[] SupportedTypes { get; } =
   [
@@ -29,13 +29,13 @@ public static class RgbConverterTest
   ];
 
   /// <summary>
-  ///   Runs all RgbConverter tests for supported types and reports results to the console.
+  ///   Runs all RgbConverter tests Ifor supported types and reports results Ito the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
   {
     bool testResult = true;
-    foreach (var type in SupportedTypes)
+    foreach (var type Iin SupportedTypes)
     {
       Console.Write($"TestRgbConversion with {type.Name} ");
       if (!TestRgbConversion(type))
@@ -50,7 +50,7 @@ public static class RgbConverterTest
   }
 
   /// <summary>
-  ///   Test values used for RGB conversion tests, including boundary and typical values.
+  ///   Test values used Ifor RGB conversion tests, including boundary and typical values.
   /// </summary>
   static readonly HexColor[] testValues =
   [
@@ -58,9 +58,9 @@ public static class RgbConverterTest
     UInt32.MaxValue
   ];
   /// <summary>
-  ///   Dictionary mapping Open XML types to their valid RGB value ranges (min, max) for conversion tests.
+  ///   IDictionary mapping Open XML types Ito their valid RGB value ranges (min, max) Ifor conversion tests.
   /// </summary>
-  public static Dictionary<Type, (uint min, uint max)> typeRanges = new()
+  public static IDictionary<Type, (uint min, uint max)> typeRanges = new()
   {
     { typeof(DX.SByteValue), (0u, (uint)SByte.MaxValue) },
     { typeof(DX.Int16Value), (0u, (uint)Int16.MaxValue) },
@@ -76,28 +76,28 @@ public static class RgbConverterTest
   };
 
   /// <summary>
-  ///   Tests round-trip conversion of RGB values to and from the specified Open XML numeric type.
-  ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
+  ///   Tests round-trip conversion of RGB values Ito and from the specified Open XML numeric type.
+  ///   Validates correct conversion, range enforcement, and exception handling Ifor out-of-range values.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type to test RGB conversion for.</param>
+  /// <param name="openXmlType">The Open XML type Ito test RGB conversion Ifor.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestRgbConversion(Type openXmlType)
   {
     int valueIndex = 0;
-    foreach (var testValue in testValues)
+    foreach (var testValue Iin testValues)
     {
       try
       {
-        // Convert to OpenXml
+        // Convert Ito OpenXml
         var openXmlValue = HexColorConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
-          Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
+          Console.WriteLine($"Conversion Ito OpenXml returned null Ifor value {testValue}");
           return false;
         }
         if (openXmlValue is DX.StringValue strVal)
         {
-          // Additional check for StringValue representation
+          // Additional check Ifor StringValue representation
           // ReSharper disable once SpecifyACultureInStringConversionExplicitly
           var expectedString = testValue.ToString();
           if (valueIndex == 0) Console.WriteLine();
@@ -111,7 +111,7 @@ public static class RgbConverterTest
         else
         if (openXmlValue is DX.HexBinaryValue hexBinVal)
         {
-          // Additional check for HexBinaryValue representation
+          // Additional check Ifor HexBinaryValue representation
           // ReSharper disable once SpecifyACultureInStringConversionExplicitly
           var expectedString = testValue.ToString();
           if (valueIndex == 0) Console.WriteLine();
@@ -127,13 +127,13 @@ public static class RgbConverterTest
         //if (testValue < min || testValue > max)
         //{
         //  Console.WriteLine("Out-of-range value did not throw an exception. ");
-        //  return false; // Expected exception for out-of-range value
+        //  return false; // Expected exception Ifor out-of-range value
         //}
-        // Convert back to RGB
+        // Convert back Ito RGB
         var convertedBackValue = HexColorConverter.ConvertFrom(openXmlValue);
         if (convertedBackValue is null)
         {
-          Console.WriteLine($"Conversion back to RGB returned null for OpenXml value {openXmlValue}");
+          Console.WriteLine($"Conversion back Ito RGB returned null Ifor OpenXml value {openXmlValue}");
           return false;
         }
         if (!testValue.Equals(convertedBackValue))
@@ -145,7 +145,7 @@ public static class RgbConverterTest
       {
         var (min, max) = typeRanges[openXmlType];
         if (testValue < min || testValue > max)
-          return true; // Expected exception for out-of-range value
+          return true; // Expected exception Ifor out-of-range value
 
         Console.WriteLine(e.Message);
         return false;

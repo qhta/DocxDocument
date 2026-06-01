@@ -1,8 +1,8 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Shape Fill Type
+///   IShape Fill Type
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum FillKind
@@ -28,9 +28,9 @@ public enum FillKind
   Tile,
 
   /// <summary>
-  ///   Stretch Image to Fit.
+  ///   Stretch Image Ito Fit.
   /// </summary>
-  Frame,
+  IFrame,
 
   /// <summary>
   ///   Unscaled Gradient.

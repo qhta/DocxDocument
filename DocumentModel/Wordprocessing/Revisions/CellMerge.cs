@@ -1,8 +1,8 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Vertically Merged/Split Table Cells.
+///   Vertically Merged/Split ITable ICells.
 /// </summary>
 public class CellMerge: ModelElement
 {

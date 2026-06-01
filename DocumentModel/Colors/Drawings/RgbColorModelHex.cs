@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   RGB Color Model - Hex Variant.
@@ -12,7 +12,7 @@ public class RgbColorModelHex: ModelElement
   public RGB? Val { get; set; }
 
   /// <summary>
-  ///   legacySpreadsheetColorIndex, this property is only available in Office 2010 and later.
+  ///   legacySpreadsheetColorIndex, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public Int32? LegacySpreadsheetColorIndex { get; set; }
 

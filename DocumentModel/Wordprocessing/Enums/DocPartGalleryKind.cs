@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the DocPartGalleryValues enumeration.
@@ -8,7 +8,7 @@ namespace DocumentModel.Wordprocessing;
 public enum DocPartGalleryKind
 {
   /// <summary>
-  ///   Structured Document Tag Placeholder Text Gallery.
+  ///   Structured IDocument Tag Placeholder Text Gallery.
   /// </summary>
   Placeholder,
 
@@ -23,12 +23,12 @@ public enum DocPartGalleryKind
   Default,
 
   /// <summary>
-  ///   Document Parts Gallery.
+  ///   IDocument Parts Gallery.
   /// </summary>
   DocumentPart,
 
   /// <summary>
-  ///   Cover Page Gallery.
+  ///   Cover IPage Gallery.
   /// </summary>
   CoverPage,
 
@@ -48,14 +48,14 @@ public enum DocPartGalleryKind
   Header,
 
   /// <summary>
-  ///   Page Numbers Gallery.
+  ///   IPage Numbers Gallery.
   /// </summary>
-  PageNumber,
+  IPageNumber,
 
   /// <summary>
-  ///   Table Gallery.
+  ///   ITable Gallery.
   /// </summary>
-  Table,
+  ITable,
 
   /// <summary>
   ///   Watermark Gallery.
@@ -73,29 +73,29 @@ public enum DocPartGalleryKind
   TextBox,
 
   /// <summary>
-  ///   Page Numbers At Top Gallery.
+  ///   IPage Numbers At Top Gallery.
   /// </summary>
   PageNumberTop,
 
   /// <summary>
-  ///   Page Numbers At Bottom Gallery.
+  ///   IPage Numbers At Bottom Gallery.
   /// </summary>
   PageNumberBottom,
 
   /// <summary>
-  ///   Page Numbers At Margins Gallery.
+  ///   IPage Numbers At Margins Gallery.
   /// </summary>
   PageNumberMargins,
 
   /// <summary>
-  ///   Table of Contents Gallery.
+  ///   ITable of Contents Gallery.
   /// </summary>
-  TableOfContents,
+  ITableOfContents,
 
   /// <summary>
-  ///   Bibliography Gallery.
+  ///   IBibliography Gallery.
   /// </summary>
-  Bibliography,
+  IBibliography,
 
   /// <summary>
   ///   Custom Quick Parts Gallery.
@@ -103,7 +103,7 @@ public enum DocPartGalleryKind
   CustomQuickParts,
 
   /// <summary>
-  ///   Custom Cover Page Gallery.
+  ///   Custom Cover IPage Gallery.
   /// </summary>
   CustomCoverPage,
 
@@ -123,12 +123,12 @@ public enum DocPartGalleryKind
   CustomHeaders,
 
   /// <summary>
-  ///   Custom Page Number Gallery.
+  ///   Custom IPage Number Gallery.
   /// </summary>
   CustomPageNumber,
 
   /// <summary>
-  ///   Custom Table Gallery.
+  ///   Custom ITable Gallery.
   /// </summary>
   CustomTable,
 
@@ -148,27 +148,27 @@ public enum DocPartGalleryKind
   CustomTextBox,
 
   /// <summary>
-  ///   Custom Page Number At Top Gallery.
+  ///   Custom IPage Number At Top Gallery.
   /// </summary>
   CustomPageNumberTop,
 
   /// <summary>
-  ///   Custom Page Number At Bottom Gallery.
+  ///   Custom IPage Number At Bottom Gallery.
   /// </summary>
   CustomPageNumberBottom,
 
   /// <summary>
-  ///   Custom Page Number At Margins Gallery.
+  ///   Custom IPage Number At Margins Gallery.
   /// </summary>
   CustomPageNumberMargin,
 
   /// <summary>
-  ///   Custom Table of Contents Gallery.
+  ///   Custom ITable of Contents Gallery.
   /// </summary>
   CustomTableOfContents,
 
   /// <summary>
-  ///   Custom Bibliography Gallery.
+  ///   Custom IBibliography Gallery.
   /// </summary>
   CustomBibliography,
 

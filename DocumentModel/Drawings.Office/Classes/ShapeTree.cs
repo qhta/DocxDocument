@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Office;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Office;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the ShapeTree Class.
@@ -10,7 +10,7 @@ public class ShapeTree: ModelElement
 
   public GroupShapeProperties? GroupShapeProperties { get; set; }
 
-  public Shape? Shape { get; set; }
+  public IShape? IShape { get; set; }
 
   public GroupShape? GroupShape { get; set; }
 

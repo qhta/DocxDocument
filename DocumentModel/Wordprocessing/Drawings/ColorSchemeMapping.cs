@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Theme Color Mappings.
@@ -57,12 +57,12 @@ public class ColorSchemeMapping: ModelElement
   public ColorSchemeIndexKind? Accent6 { get; set; }
 
   /// <summary>
-  ///   Hyperlink Theme Color Mapping
+  ///   IHyperlink Theme Color Mapping
   /// </summary>
-  public ColorSchemeIndexKind? Hyperlink { get; set; }
+  public ColorSchemeIndexKind? IHyperlink { get; set; }
 
   /// <summary>
-  ///   Followed Hyperlink Theme Color Mapping
+  ///   Followed IHyperlink Theme Color Mapping
   /// </summary>
   public ColorSchemeIndexKind? FollowedHyperlink { get; set; }
 }

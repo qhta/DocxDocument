@@ -1,10 +1,10 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the placement of a user-selected picture on a bar in a 3-D bar or column.
+/// Specifies the placement of a user-selected picture on a bar Iin a 3-D bar or column.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlchartpictureplacement?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlchartpictureplacement?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum XlChartPicturePlacement
 {
@@ -37,3 +37,4 @@ public enum XlChartPicturePlacement
   /// </summary>
   AllFaces = 7
 }
+

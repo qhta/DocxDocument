@@ -1,24 +1,24 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   End Line Cap
+///   End ILine Cap
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum LineCapKind
 {
   /// <summary>
-  ///   Round Line Cap.
+  ///   Round ILine Cap.
   /// </summary>
   Round,
 
   /// <summary>
-  ///   Square Line Cap.
+  ///   Square ILine Cap.
   /// </summary>
   Square,
 
   /// <summary>
-  ///   Flat Line Cap.
+  ///   Flat ILine Cap.
   /// </summary>
   Flat
 }

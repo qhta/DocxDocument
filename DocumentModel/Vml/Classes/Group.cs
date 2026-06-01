@@ -1,11 +1,11 @@
-using DocumentModel.Wordprocessing;
+﻿using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
 
 namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Shape Group.
+///   IShape Group.
 /// </summary>
 public class Group: ModelElement, IEmbeddedObjectContent
 {
@@ -15,17 +15,17 @@ public class Group: ModelElement, IEmbeddedObjectContent
   public string? Id { get; set; }
 
   /// <summary>
-  ///   Shape Styling Properties
+  ///   IShape Styling Properties
   /// </summary>
-  public string? Style { get; set; }
+  public string? IStyle { get; set; }
 
   /// <summary>
-  ///   Hyperlink Target
+  ///   IHyperlink Target
   /// </summary>
   public string? Href { get; set; }
 
   /// <summary>
-  ///   Hyperlink Display Target
+  ///   IHyperlink Display Target
   /// </summary>
   public string? Target { get; set; }
 
@@ -35,7 +35,7 @@ public class Group: ModelElement, IEmbeddedObjectContent
   public string? Class { get; set; }
 
   /// <summary>
-  ///   Shape Title
+  ///   IShape Title
   /// </summary>
   public string? Title { get; set; }
 
@@ -55,7 +55,7 @@ public class Group: ModelElement, IEmbeddedObjectContent
   public string? CoordinateOrigin { get; set; }
 
   /// <summary>
-  ///   Shape Bounding Polygon
+  ///   IShape Bounding Polygon
   /// </summary>
   public string? WrapCoordinates { get; set; }
 
@@ -165,23 +165,23 @@ public class Group: ModelElement, IEmbeddedObjectContent
   public Base64Binary? Gfxdata { get; set; }
 
   /// <summary>
-  ///   Group Diagram Type
+  ///   Group IDiagram Type
   /// </summary>
   public EditAsKind? EditAs { get; set; }
 
   /// <summary>
-  ///   Table Properties
+  ///   ITable Properties
   /// </summary>
   public string? TableProperties { get; set; }
 
   /// <summary>
-  ///   Table Row Height Limits
+  ///   ITable IRow Height Limits
   /// </summary>
   public string? TableLimits { get; set; }
 
   public Group? ChildGroup { get; set; }
 
-  public Shape? Shape { get; set; }
+  public IShape? IShape { get; set; }
 
   public Shapetype? Shapetype { get; set; }
 
@@ -191,17 +191,17 @@ public class Group: ModelElement, IEmbeddedObjectContent
 
   public ImageFile? ImageFile { get; set; }
 
-  public Line? Line { get; set; }
+  public ILine? ILine { get; set; }
 
   public Oval? Oval { get; set; }
 
   public PolyLine? PolyLine { get; set; }
 
-  public Rectangle? Rectangle { get; set; }
+  public IRectangle? IRectangle { get; set; }
 
   public RoundRectangle? RoundRectangle { get; set; }
 
-  public Diagram? Diagram { get; set; }
+  public IDiagram? IDiagram { get; set; }
 
   public Lock? Lock { get; set; }
 

@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
+﻿namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Defines the Algorithm enumeration.
-/// Used in types such as DocumentCleaner.TableTools, Algorithm, DiagramChooseElse.
+/// Used Iin types such as DocumentCleaner.TableTools, Algorithm, DiagramChooseElse.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.AlgorithmValues))]
@@ -59,3 +59,4 @@ public enum AlgorithmType
   [OpenXmlEnumValue("Snake")]
   Snake
 }
+

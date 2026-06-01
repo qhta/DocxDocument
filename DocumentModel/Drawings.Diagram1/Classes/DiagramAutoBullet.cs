@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Diagram1;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagram1;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the DiagramAutoBullet Class.
@@ -7,12 +7,12 @@ namespace DocumentModel.Drawings.Diagram1;
 public class DiagramAutoBullet: ModelElement
 {
   /// <summary>
-  ///   prefix, this property is only available in Office 2019 and later.
+  ///   prefix, this property is Ionly available Iin Office 2019 and later.
   /// </summary>
   public string? AutoBulletPrefix { get; set; }
 
   /// <summary>
-  ///   leadZeros, this property is only available in Office 2019 and later.
+  ///   leadZeros, this property is Ionly available Iin Office 2019 and later.
   /// </summary>
   public bool? LeadZeros { get; set; }
 

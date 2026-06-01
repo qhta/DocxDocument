@@ -1,59 +1,59 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies the active tab when the specified dialog box is displayed.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdworddialogtab?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdworddialogtab?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum WordDialogTab
 {
   /// <summary>
-  /// General tab of the Options dialog box.
+  /// General tab of the IOptions dialog box.
   /// </summary>
   ToolsOptionsTabGeneral = 203,
   /// <summary>
-  /// View tab of the Options dialog box.
+  /// IView tab of the IOptions dialog box.
   /// </summary>
   ToolsOptionsTabView = 204,
   /// <summary>
-  /// Print tab of the Options dialog box.
+  /// Print tab of the IOptions dialog box.
   /// </summary>
   ToolsOptionsTabPrint = 208,
   /// <summary>
-  /// Save tab of the Options dialog box.
+  /// Save tab of the IOptions dialog box.
   /// </summary>
   ToolsOptionsTabSave = 209,
   /// <summary>
-  /// Spelling and Grammar tab of the Options dialog box.
+  /// Spelling and Grammar tab of the IOptions dialog box.
   /// </summary>
   ToolsOptionsTabProofread = 211,
   /// <summary>
-  /// User Information tab of the Options dialog box.
+  /// User Information tab of the IOptions dialog box.
   /// </summary>
   ToolsOptionsTabUserInfo = 213,
   /// <summary>
-  /// Edit tab of the Options dialog box.
+  /// Edit tab of the IOptions dialog box.
   /// </summary>
   ToolsOptionsTabEdit = 224,
   /// <summary>
-  /// File Locations tab of the Options dialog box.
+  /// File Locations tab of the IOptions dialog box.
   /// </summary>
   ToolsOptionsTabFileLocations = 225,
   /// <summary>
-  /// Track Changes tab of the Options dialog box.
+  /// Track Changes tab of the IOptions dialog box.
   /// </summary>
   ToolsOptionsTabTrackChanges = 386,
   /// <summary>
-  /// Compatibility tab of the Options dialog box.
+  /// Compatibility tab of the IOptions dialog box.
   /// </summary>
   ToolsOptionsTabCompatibility = 525,
   /// <summary>
-  /// Asian Typography tab of the Options dialog box.
+  /// Asian Typography tab of the IOptions dialog box.
   /// </summary>
   ToolsOptionsTabTypography = 739,
   /// <summary>
-  /// Hangul Hanja Conversion tab of the Options dialog box.
+  /// Hangul Hanja Conversion tab of the IOptions dialog box.
   /// </summary>
   ToolsOptionsTabHangulHanjaConversion = 786,
   /// <summary>
@@ -61,7 +61,7 @@ public enum WordDialogTab
   /// </summary>
   ToolsOptionsTabFuzzy = 790,
   /// <summary>
-  /// Complex Scripts tab of the Options dialog box.
+  /// Complex Scripts tab of the IOptions dialog box.
   /// </summary>
   ToolsOptionsTabBidi = 1029,
   /// <summary>
@@ -69,23 +69,23 @@ public enum WordDialogTab
   /// </summary>
   ToolsOptionsTabAcetate = 1266,
   /// <summary>
-  /// Security tab of the Options dialog box.
+  /// Security tab of the IOptions dialog box.
   /// </summary>
   ToolsOptionsTabSecurity = 1361,
   /// <summary>
-  /// Margins tab of the Page Setup dialog box.
+  /// Margins tab of the IPage Setup dialog box.
   /// </summary>
   FilePageSetupTabMargins = 150000,
   /// <summary>
-  /// Paper tab of the Page Setup dialog box.
+  /// Paper tab of the IPage Setup dialog box.
   /// </summary>
   FilePageSetupTabPaper = 150001,
   /// <summary>
-  /// Layout tab of the Page Setup dialog box.
+  /// Layout tab of the IPage Setup dialog box.
   /// </summary>
   FilePageSetupTabLayout = 150003,
   /// <summary>
-  /// Margins tab of the Page Setup dialog box, with Apply To drop-down list active.
+  /// Margins tab of the IPage Setup dialog box, with Apply To drop-down list active.
   /// </summary>
   FilePageSetupTabCharsLines = 150004,
   /// <summary>
@@ -93,35 +93,35 @@ public enum WordDialogTab
   /// </summary>
   InsertSymbolTabSymbols = 200000,
   /// <summary>
-  /// Special Characters tab of the Symbol dialog box.
+  /// Special ICharacters tab of the Symbol dialog box.
   /// </summary>
   InsertSymbolTabSpecialCharacters = 200001,
   /// <summary>
-  /// All Footnotes tab of the Note Options dialog box.
+  /// All IFootnotes tab of the Note IOptions dialog box.
   /// </summary>
   NoteOptionsTabAllFootnotes = 300000,
   /// <summary>
-  /// All Endnotes tab of the Note Options dialog box.
+  /// All IEndnotes tab of the Note IOptions dialog box.
   /// </summary>
   NoteOptionsTabAllEndnotes = 300001,
   /// <summary>
-  /// Index tab of the Index and Tables dialog box.
+  /// IIndex tab of the IIndex and ITables dialog box.
   /// </summary>
   InsertIndexAndTablesTabIndex = 400000,
   /// <summary>
-  /// Table of Contents tab of the Index and Tables dialog box.
+  /// ITable of Contents tab of the IIndex and ITables dialog box.
   /// </summary>
   InsertIndexAndTablesTabTableOfContents = 400001,
   /// <summary>
-  /// Table of Figures tab of the Index and Tables dialog box.
+  /// ITable of Figures tab of the IIndex and ITables dialog box.
   /// </summary>
   InsertIndexAndTablesTabTableOfFigures = 400002,
   /// <summary>
-  /// Table of Authorities tab of the Index and Tables dialog box.
+  /// ITable of Authorities tab of the IIndex and ITables dialog box.
   /// </summary>
   InsertIndexAndTablesTabTableOfAuthorities = 400003,
   /// <summary>
-  /// Styles tab of the Organizer dialog box.
+  /// IStyles tab of the Organizer dialog box.
   /// </summary>
   OrganizerTabStyles = 500000,
   /// <summary>
@@ -137,27 +137,27 @@ public enum WordDialogTab
   /// </summary>
   OrganizerTabMacros = 500003,
   /// <summary>
-  /// Font tab of the Font dialog box.
+  /// IFont tab of the IFont dialog box.
   /// </summary>
   FormatFontTabFont = 600000,
   /// <summary>
-  /// Character Spacing tab of the Font dialog box.
+  /// Character Spacing tab of the IFont dialog box.
   /// </summary>
   FormatFontTabCharacterSpacing = 600001,
   /// <summary>
-  /// Animation tab of the Font dialog box.
+  /// Animation tab of the IFont dialog box.
   /// </summary>
   FormatFontTabAnimation = 600002,
   /// <summary>
-  /// Borders tab of the Borders dialog box.
+  /// IBorders tab of the IBorders dialog box.
   /// </summary>
   FormatBordersAndShadingTabBorders = 700000,
   /// <summary>
-  /// Page Border tab of the Borders dialog box.
+  /// IPage IBorder tab of the IBorders dialog box.
   /// </summary>
   FormatBordersAndShadingTabPageBorder = 700001,
   /// <summary>
-  /// Shading tab of the Borders dialog box.
+  /// IShading tab of the IBorders dialog box.
   /// </summary>
   FormatBordersAndShadingTabShading = 700002,
   /// <summary>
@@ -166,22 +166,22 @@ public enum WordDialogTab
   ToolsEnvelopesAndLabelsTabEnvelopes = 800000,
   /// <summary>
   /// Labels tab of the Envelopes and Labels dialog box. wdDialogFormatParagraphTabIndentsAndSpacing 1000000Indents
-  /// and Spacing tab of the Paragraph dialog box. wdDialogFormatParagraphTabTextFlow 1000001Line and Page Breaks
-  /// tab of the Paragraph dialog box. wdDialogFormatParagraphTabTeisai 1000002Line and Page Breaks tab of the
-  /// Paragraph dialog box, with choices appropriate for Asian text. wdDialogFormatDrawingObjectTabColorsAndLines
-  /// 1200000Colors and Lines tab of the Format Drawing Object dialog box. wdDialogFormatDrawingObjectTabSize
+  /// and Spacing tab of the IParagraph dialog box. wdDialogFormatParagraphTabTextFlow 1000001Line and IPage IBreaks
+  /// tab of the IParagraph dialog box. wdDialogFormatParagraphTabTeisai 1000002Line and IPage IBreaks tab of the
+  /// IParagraph dialog box, with choices appropriate Ifor Asian text. wdDialogFormatDrawingObjectTabColorsAndLines
+  /// 1200000Colors and ILines tab of the Format Drawing Object dialog box. wdDialogFormatDrawingObjectTabSize
   /// 1200001Size tab of the Format Drawing Object dialog box. wdDialogFormatDrawingObjectTabPosition
   /// 1200002Position tab of the Format Drawing Object dialog box. wdDialogFormatDrawingObjectTabWrapping
   /// 1200003Wrapping tab of the Format Drawing Object dialog box. wdDialogFormatDrawingObjectTabPicture
   /// 1200004Picture tab of the Format Drawing Object dialog box. wdDialogFormatDrawingObjectTabTextbox
   /// 1200005Textbox tab of the Format Drawing Object dialog box. wdDialogFormatDrawingObjectTabWeb 1200006Web tab
-  /// of the Format Drawing Object dialog box. wdDialogFormatDrawingObjectTabHR 1200007Colors and Lines tab of the
+  /// of the Format Drawing Object dialog box. wdDialogFormatDrawingObjectTabHR 1200007Colors and ILines tab of the
   /// Format Drawing Object dialog box. wdDialogToolsAutoCorrectExceptionsTabFirstLetter 1400000First Letter tab of
-  /// the AutoCorrect Exceptions dialog box. wdDialogToolsAutoCorrectExceptionsTabInitialCaps 1400001Initial Caps
-  /// tab of the AutoCorrect Exceptions dialog box.
-  /// wdDialogToolsAutoCorrectExceptionsTabHangulAndAlphabet1400002Hangul and Alphabet tab of the AutoCorrect
-  /// Exceptions dialog box. Available only in multi-language versions. wdDialogToolsAutoCorrectExceptionsTabIac
-  /// 1400003Other Corrections tab of the AutoCorrect Exceptions dialog box.
+  /// the IAutoCorrect Exceptions dialog box. wdDialogToolsAutoCorrectExceptionsTabInitialCaps 1400001Initial Caps
+  /// tab of the IAutoCorrect Exceptions dialog box.
+  /// wdDialogToolsAutoCorrectExceptionsTabHangulAndAlphabet1400002Hangul and Alphabet tab of the IAutoCorrect
+  /// Exceptions dialog box. Available Ionly Iin multi-language versions. wdDialogToolsAutoCorrectExceptionsTabIac
+  /// 1400003Other Corrections tab of the IAutoCorrect Exceptions dialog box.
   /// wdDialogFormatBulletsAndNumberingTabBulleted 1500000Bulleted tab of the Bullets and Numbering dialog box.
   /// wdDialogFormatBulletsAndNumberingTabNumbered 1500001Numbered tab of the Bullets and Numbering dialog box.
   /// wdDialogFormatBulletsAndNumberingTabOutlineNumbered1500002Outline Numbered tab of the Bullets and Numbering
@@ -189,17 +189,17 @@ public enum WordDialogTab
   /// wdDialogLetterWizardTabRecipientInfo 1600001Recipient Info tab of the Letter Wizard dialog box.
   /// wdDialogLetterWizardTabOtherElements 1600002Other Elements tab of the Letter Wizard dialog box.
   /// wdDialogLetterWizardTabSenderInfo 1600003Sender Info tab of the Letter Wizard dialog box.
-  /// wdDialogToolsAutoManagerTabAutoCorrect 1700000AutoCorrect tab of the AutoCorrect dialog box.
-  /// wdDialogToolsAutoManagerTabAutoFormatAsYouType 1700001Format As You Type tab of the AutoCorrect dialog box.
-  /// wdDialogToolsAutoManagerTabAutoText 1700002AutoText tab of the AutoCorrect dialog box.
-  /// wdDialogToolsAutoManagerTabAutoFormat 1700003AutoFormat tab of the AutoCorrect dialog box.
-  /// wdDialogToolsAutoManagerTabSmartTags 1700004Smart Tags tab of the AutoCorrect dialog box.
-  /// wdDialogTablePropertiesTabTable 1800000Table tab of the Table Properties dialog box.
-  /// wdDialogTablePropertiesTabRow 1800001Row tab of the Table Properties dialog box.
-  /// wdDialogTablePropertiesTabColumn 1800002Column tab of the Table Properties dialog box.
-  /// wdDialogTablePropertiesTabCell 1800003Cell tab of the Table Properties dialog box.
-  /// wdDialogEmailOptionsTabSignature 1900000E-mail Signature tab of the E- mail Options dialog box.
-  /// wdDialogEmailOptionsTabStationary 1900001Personal Stationary tab of the E-mail Options dialog box.
+  /// wdDialogToolsAutoManagerTabAutoCorrect 1700000AutoCorrect tab of the IAutoCorrect dialog box.
+  /// wdDialogToolsAutoManagerTabAutoFormatAsYouType 1700001Format As You Type tab of the IAutoCorrect dialog box.
+  /// wdDialogToolsAutoManagerTabAutoText 1700002AutoText tab of the IAutoCorrect dialog box.
+  /// wdDialogToolsAutoManagerTabAutoFormat 1700003AutoFormat tab of the IAutoCorrect dialog box.
+  /// wdDialogToolsAutoManagerTabSmartTags 1700004Smart Tags tab of the IAutoCorrect dialog box.
+  /// wdDialogTablePropertiesTabTable 1800000Table tab of the ITable Properties dialog box.
+  /// wdDialogTablePropertiesTabRow 1800001Row tab of the ITable Properties dialog box.
+  /// wdDialogTablePropertiesTabColumn 1800002Column tab of the ITable Properties dialog box.
+  /// wdDialogTablePropertiesTabCell 1800003Cell tab of the ITable Properties dialog box.
+  /// wdDialogEmailOptionsTabSignature 1900000E-mail Signature tab of the E- mail IOptions dialog box.
+  /// wdDialogEmailOptionsTabStationary 1900001Personal Stationary tab of the E-mail IOptions dialog box.
   /// </summary>
   ToolsEnvelopesAndLabelsTabLabels = 800001,
   /// <summary>
@@ -365,7 +365,7 @@ public enum WordDialogTab
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
-  Templates = 2100000,
+  ITemplates = 2100000,
   /// <summary>
   /// Specifies the active tab when the specified dialog box is displayed.
   /// </summary>
@@ -391,3 +391,4 @@ public enum WordDialogTab
   /// </summary>
   StyleManagementTabRestrict = 2200002
 }
+

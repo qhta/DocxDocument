@@ -2,7 +2,7 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// This static class contains extension operations to be performed on a OpenXmlSimpleType object.
+/// This static class contains extension operations Ito be performed on a OpenXmlSimpleType object.
 /// </summary>
 public static class OpenXmlSimpleTypeUtils
 {
@@ -11,7 +11,7 @@ public static class OpenXmlSimpleTypeUtils
   /// Retrieves a boolean value from the specified OpenXml SimpleType parameter
   /// having "True/False" inner text.
   /// </summary>
-  /// <param name="element">The OpenXmlSimpleType element to convert.</param>
+  /// <param name="element">The OpenXmlSimpleType element Ito convert.</param>
   /// <returns>The boolean value, or null if conversion fails.</returns>
   public static bool? AsBoolean(this DX.OpenXmlSimpleType? element)
   {
@@ -28,7 +28,7 @@ public static class OpenXmlSimpleTypeUtils
   /// Retrieves an int value from the specified OpenXml SimpleType parameter
   /// having integer-formatted inner text.
   /// </summary>
-  /// <param name="element">The OpenXmlSimpleType element to convert.</param>
+  /// <param name="element">The OpenXmlSimpleType element Ito convert.</param>
   /// <returns>The int value, or null if conversion fails.</returns>
   public static int? AsInt(this DX.OpenXmlSimpleType? element)
   {
@@ -45,7 +45,7 @@ public static class OpenXmlSimpleTypeUtils
   /// Retrieves a uint value from the specified OpenXml SimpleType parameter
   /// having hex-formatted inner text.
   /// </summary>
-  /// <param name="element">The OpenXmlSimpleType element to convert.</param>
+  /// <param name="element">The OpenXmlSimpleType element Ito convert.</param>
   /// <returns>The uint value, or null if conversion fails.</returns>
   public static uint? AsUInt(this DX.OpenXmlSimpleType? element)
   {
@@ -62,7 +62,7 @@ public static class OpenXmlSimpleTypeUtils
   /// Retrieves a Guid value from the specified OpenXml SimpleType parameter
   /// having Guid-formatted inner text.
   /// </summary>
-  /// <param name="element">The OpenXmlSimpleType element to convert.</param>
+  /// <param name="element">The OpenXmlSimpleType element Ito convert.</param>
   /// <returns>The Guid value, or null if conversion fails.</returns>
   public static Guid? AsGuid(this DX.OpenXmlSimpleType? element)
   {
@@ -111,3 +111,4 @@ public static class OpenXmlSimpleTypeUtils
 //DocumentFormat.OpenXml.TrueFalseValue 
   #endregion
 }
+

@@ -1,13 +1,13 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Latent Style Information.
+///   Latent IStyle Information.
 /// </summary>
 public partial class LatentStyles
 {
   /// <summary>
-  ///   Default Style Locking Setting
+  ///   Default IStyle Locking Setting
   /// </summary>
   //[DefaultValue(false)]
   public bool? DefaultLockedState { get; set; }
@@ -31,13 +31,13 @@ public partial class LatentStyles
   public bool? DefaultUnhideWhenUsed { get; set; }
 
   /// <summary>
-  ///   Default Primary Style Setting
+  ///   Default Primary IStyle Setting
   /// </summary>
   //[DefaultValue(false)]
   public bool? DefaultPrimaryStyle { get; set; }
 
   /// <summary>
-  ///   Latent Style Count
+  ///   Latent IStyle Count
   /// </summary>
   //[DefaultValue(0)]
   public Int32? TotalCount { get; set; }

@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the DisplayBlanksAs enumeration.
-/// Used in types such as Chart, ChartConverter.
+/// Used Iin types such as IChart, ChartConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.DisplayBlanksAsValues))]
@@ -24,3 +24,4 @@ public enum DisplayBlanksAs
   [OpenXmlEnumValue("Zero")]
   Zero
 }
+

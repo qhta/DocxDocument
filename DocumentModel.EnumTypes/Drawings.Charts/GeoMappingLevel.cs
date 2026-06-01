@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the GeoMappingLevel enumeration.
-/// Used in types such as Geography, GeoMappingLevel, GeographyConverter.
+/// Used Iin types such as Geography, GeoMappingLevel, GeographyConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum GeoMappingLevel
@@ -43,3 +43,4 @@ public enum GeoMappingLevel
   [OpenXmlEnumValue("World")]
   World
 }
+

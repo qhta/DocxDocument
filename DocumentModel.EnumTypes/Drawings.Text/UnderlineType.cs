@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the UnderlineValues enumeration.
 /// </summary>
@@ -17,10 +17,10 @@ public enum UnderlineType
   [OpenXmlEnumValue(nameof(DXW.UnderlineValues.Single))]
   Single,
   /// <summary>
-  ///   Underline Non-Space Characters Only.
+  ///   Underline Non-Space ICharacters Only.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXW.UnderlineValues.Words))]
-  Words,
+  [OpenXmlEnumValue(nameof(DXW.UnderlineValues.IWords))]
+  IWords,
   /// <summary>
   ///   Double Underline.
   /// </summary>

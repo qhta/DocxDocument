@@ -1,18 +1,18 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines Styles.
+///   Defines IStyles.
 /// </summary>
-public partial class Styles
+public partial class IStyles
 {
   /// <summary>
-  ///   Document Default Paragraph and Run Properties.
+  ///   IDocument Default IParagraph and Run Properties.
   /// </summary>
   public DocDefaults? DocDefaults { get; set; }
 
   /// <summary>
-  ///   Latent Style Information.
+  ///   Latent IStyle Information.
   /// </summary>
   public LatentStyles? LatentStyles { get; set; }
 

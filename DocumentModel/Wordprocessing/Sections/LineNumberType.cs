@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the LineNumberType Class.
@@ -7,22 +7,22 @@ namespace DocumentModel.Wordprocessing;
 public class LineNumberType: ModelElement, ISectionPropertiesContent
 {
   /// <summary>
-  ///   Line Number Increments to Display
+  ///   ILine Number Increments Ito Display
   /// </summary>
   public Int16? CountBy { get; set; }
 
   /// <summary>
-  ///   Line Numbering Starting Value
+  ///   ILine Numbering Starting Value
   /// </summary>
   public Int16? Start { get; set; }
 
   /// <summary>
-  ///   Distance Between Text and Line Numbering
+  ///   Distance Between Text and ILine Numbering
   /// </summary>
   public string? Distance { get; set; }
 
   /// <summary>
-  ///   Line Numbering Restart Setting
+  ///   ILine Numbering Restart Setting
   /// </summary>
   public LineNumberRestartKind? Restart { get; set; }
 }

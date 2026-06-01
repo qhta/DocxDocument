@@ -1,4 +1,4 @@
-﻿using System.Xml.Serialization;
+﻿using ISystem.Xml.Serialization;
 
 namespace DocumentModel.Impl;
 

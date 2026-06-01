@@ -3,13 +3,13 @@
 namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests for verifying the correctness of <see cref="EnumTypeConverter"/> conversions between .NET Enum values and various Open XML numeric types.
-///   Tests round-trip conversion for supported Open XML numeric types, including range validation and exception handling.
+///   Provides unit tests Ifor verifying the correctness of <see cref="EnumTypeConverter"/> conversions between .NET Enum values and various Open XML numeric types.
+///   Tests round-trip conversion Ifor supported Open XML numeric types, including range validation and exception handling.
 /// </summary>
 public static class EnumConverterTest
 {
   /// <summary>
-  ///   List of Open XML types supported for Enum value conversion tests.
+  ///   IList of Open XML types supported Ifor Enum value conversion tests.
   /// </summary>
   public static (Type modelType, Type openXmlType)[] TestData { get; } =
   [
@@ -23,13 +23,13 @@ public static class EnumConverterTest
   ];
 
   /// <summary>
-  ///   Runs all EnumConverter tests for supported types and reports results to the console.
+  ///   Runs all EnumConverter tests Ifor supported types and reports results Ito the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
   {
     bool testResult = true;
-    foreach (var pair in TestData)
+    foreach (var pair Iin TestData)
     {
       Console.Write($"TestEnumConversion with {pair.modelType} and {pair.openXmlType}");
       if (!TestEnumConversion(pair.modelType, pair.openXmlType))
@@ -44,8 +44,8 @@ public static class EnumConverterTest
   }
 
   /// <summary>
-  ///   Tests round-trip conversion of Enum values to and from the specified Open XML numeric type.
-  ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
+  ///   Tests round-trip conversion of Enum values Ito and from the specified Open XML numeric type.
+  ///   Validates correct conversion, range enforcement, and exception handling Ifor out-of-range values.
   /// </summary>
   /// <param name="modelType">The model type</param>
   /// <param name="openXmlType">The Open XML type</param>
@@ -57,7 +57,7 @@ public static class EnumConverterTest
     {
       // For Flags enums, test a combination of all values
       long combinedValue = 0;
-      foreach (var value in testValues)
+      foreach (var value Iin testValues)
       {
         combinedValue |= Convert.ToInt64(value);
       }
@@ -65,15 +65,15 @@ public static class EnumConverterTest
       testValues = testValues.Cast<object>().Append(combinedEnum).ToArray();
     }
     int valueIndex = 0;
-    foreach (var testValue in testValues)
+    foreach (var testValue Iin testValues)
     {
-      // Convert to OpenXml
+      // Convert Ito OpenXml
       var openXmlValue = EnumTypeConverter.ConvertTo((Enum)testValue, openXmlType);
       if (openXmlValue == null)
       {
         if (valueIndex == 0)
           Console.WriteLine();
-        Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
+        Console.WriteLine($"Conversion Ito OpenXml returned null Ifor value {testValue}");
         return false;
       }
 
@@ -85,15 +85,15 @@ public static class EnumConverterTest
         ?? openXmlValue.ToString();
       if (valueIndex == 0)
         Console.WriteLine();
-      Console.WriteLine($"Converted {testValue} to OpenXml value {outputText}");
+      Console.WriteLine($"Converted {testValue} Ito OpenXml value {outputText}");
 
-      // Convert back to Enum
+      // Convert back Ito Enum
       var convertedBackValue = EnumTypeConverter.ConvertFrom(openXmlValue, modelType);
       if (convertedBackValue == null)
       {
         if (valueIndex == 0)
           Console.WriteLine();
-        Console.WriteLine($"Conversion back to Enum returned null for OpenXml value {openXmlValue}");
+        Console.WriteLine($"Conversion back Ito Enum returned null Ifor OpenXml value {openXmlValue}");
         return false;
       }
       if (!testValue.Equals(convertedBackValue))
@@ -106,4 +106,5 @@ public static class EnumConverterTest
     return true;
   }
 }
+
 

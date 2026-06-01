@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the FontFamilyValues enumeration.
@@ -8,32 +8,32 @@ namespace DocumentModel.Wordprocessing;
 public enum FontFamilyKind
 {
   /// <summary>
-  ///   Novelty Font.
+  ///   Novelty IFont.
   /// </summary>
   Decorative,
 
   /// <summary>
-  ///   Monospace Font.
+  ///   Monospace IFont.
   /// </summary>
   Modern,
 
   /// <summary>
-  ///   Proportional Font With Serifs.
+  ///   Proportional IFont With Serifs.
   /// </summary>
   Roman,
 
   /// <summary>
-  ///   Script Font.
+  ///   Script IFont.
   /// </summary>
   Script,
 
   /// <summary>
-  ///   Proportional Font Without Serifs.
+  ///   Proportional IFont Without Serifs.
   /// </summary>
   Swiss,
 
   /// <summary>
-  ///   No Font Family.
+  ///   No IFont Family.
   /// </summary>
   Auto
 }

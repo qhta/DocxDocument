@@ -1,30 +1,30 @@
-using System.Diagnostics.CodeAnalysis;
+﻿using ISystem.Diagnostics.CodeAnalysis;
 
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines Styles.
+///   Defines IStyles.
 /// </summary>
-public partial class DefinedStyles : ElementCollection<Style>
+public partial class DefinedStyles : ElementCollection<IStyle>
 {
-  private readonly SortedDictionary<string, Style> _StyleIds = null!;
+  private readonly SortedDictionary<string, IStyle> _StyleIds = null!;
 
   public DefinedStyles()
   {
-    _StyleIds = new SortedDictionary<string, Style>();
+    _StyleIds = new SortedDictionary<string, IStyle>();
     CollectionChanged += Styles_CollectionChanged;
   }
 
   [XmlIgnore]
-  public IDictionary<string, Style> StyleIndex => _StyleIds;
+  public IDictionary<string, IStyle> StyleIndex => _StyleIds;
 
-  public IEnumerable<Style> ParagraphStyles => this.Where(item => item.Type==StyleKind.Paragraph);
-  public IEnumerable<Style> CharacterStyles => this.Where(item => item.Type==StyleKind.Character);
-  public IEnumerable<Style> TableStyles => this.Where(item => item.Type==StyleKind.Table);
-  public IEnumerable<Style> NumberingStyles => this.Where(item => item.Type==StyleKind.Numbering);
+  public IEnumerable<IStyle> ParagraphStyles => this.Where(item => item.Type==StyleKind.IParagraph);
+  public IEnumerable<IStyle> CharacterStyles => this.Where(item => item.Type==StyleKind.Character);
+  public IEnumerable<IStyle> TableStyles => this.Where(item => item.Type==StyleKind.ITable);
+  public IEnumerable<IStyle> NumberingStyles => this.Where(item => item.Type==StyleKind.Numbering);
 
-  public void Add(string key, Style value)
+  public void Add(string key, IStyle value)
   {
     this.Add(value);
     StyleIndex.TryAdd(key, value);
@@ -42,12 +42,12 @@ public partial class DefinedStyles : ElementCollection<Style>
     return StyleIndex.Remove(key);
   }
 
-  public bool TryGetValue(string key, [MaybeNullWhen(false)] out Style value)
+  public bool TryGetValue(string key, [MaybeNullWhen(false)] out IStyle value)
   {
     return StyleIndex.TryGetValue(key, out value);
   }
 
-  public Style this[string key]
+  public IStyle this[string key]
   {
     get => StyleIndex[key];
     set => StyleIndex[key] = value;
@@ -58,34 +58,34 @@ public partial class DefinedStyles : ElementCollection<Style>
   
   [XmlIgnore]
 
-  public ICollection<Style> Values => StyleIndex.Values;
+  public ICollection<IStyle> Values => StyleIndex.Values;
 
-  public void Add(KeyValuePair<string, Style> item)
+  public void Add(KeyValuePair<string, IStyle> item)
   {
-    ((ICollection<KeyValuePair<string, Style>>)StyleIndex).Add(item);
+    ((ICollection<KeyValuePair<string, IStyle>>)StyleIndex).Add(item);
   }
 
-  public bool Contains(KeyValuePair<string, Style> item)
+  public bool Contains(KeyValuePair<string, IStyle> item)
   {
-    return ((ICollection<KeyValuePair<string, Style>>)StyleIndex).Contains(item);
+    return ((ICollection<KeyValuePair<string, IStyle>>)StyleIndex).Contains(item);
   }
 
-  public void CopyTo(KeyValuePair<string, Style>[] array, int arrayIndex)
+  public void CopyTo(KeyValuePair<string, IStyle>[] array, int arrayIndex)
   {
-    ((ICollection<KeyValuePair<string, Style>>)StyleIndex).CopyTo(array, arrayIndex);
+    ((ICollection<KeyValuePair<string, IStyle>>)StyleIndex).CopyTo(array, arrayIndex);
   }
 
-  public bool Remove(KeyValuePair<string, Style> item)
+  public bool Remove(KeyValuePair<string, IStyle> item)
   {
-    return ((ICollection<KeyValuePair<string, Style>>)StyleIndex).Remove(item);
+    return ((ICollection<KeyValuePair<string, IStyle>>)StyleIndex).Remove(item);
   }
 
-  //IEnumerator<KeyValuePair<string, Style>> IEnumerable<KeyValuePair<string, Style>>.GetEnumerator()
+  //IEnumerator<KeyValuePair<string, IStyle>> IEnumerable<KeyValuePair<string, IStyle>>.GetEnumerator()
   //{
-  //  return ((IEnumerable<KeyValuePair<string, Style>>)StyleIndex).GetEnumerator();
+  //  return ((IEnumerable<KeyValuePair<string, IStyle>>)StyleIndex).GetEnumerator();
   //}
 
-  private void _StyleIdsAdd(string id, Style value)
+  private void _StyleIdsAdd(string id, IStyle value)
   {
     if (_StyleIds.ContainsKey(id))
       _StyleIds[id] = value;
@@ -98,7 +98,7 @@ public partial class DefinedStyles : ElementCollection<Style>
     switch (args.Action)
     {
       case NotifyCollectionChangedAction.Reset:
-        foreach (var item in this)
+        foreach (var item Iin this)
         {
           var style = item;
           style.PropertyChanging -= Item_PropertyChanging;
@@ -107,7 +107,7 @@ public partial class DefinedStyles : ElementCollection<Style>
         break;
       case NotifyCollectionChangedAction.Add:
         if (args.NewItems != null)
-          foreach (var newStyle in args.NewItems.Cast<Style>())
+          foreach (var newStyle Iin args.NewItems.Cast<IStyle>())
           {
             var id = newStyle.StyleId;
             if (id != null)
@@ -118,7 +118,7 @@ public partial class DefinedStyles : ElementCollection<Style>
         break;
       case NotifyCollectionChangedAction.Replace:
         if (args.OldItems != null)
-          foreach (var oldStyle in args.OldItems.Cast<Style>())
+          foreach (var oldStyle Iin args.OldItems.Cast<IStyle>())
           {
             var id = oldStyle.StyleId;
             if (id != null)
@@ -127,7 +127,7 @@ public partial class DefinedStyles : ElementCollection<Style>
             oldStyle.PropertyChanged -= Item_PropertyChanged;
           }
         if (args.NewItems != null)
-          foreach (var newStyle in args.NewItems.Cast<Style>())
+          foreach (var newStyle Iin args.NewItems.Cast<IStyle>())
           {
             var id = newStyle.StyleId;
             if (id != null)
@@ -138,7 +138,7 @@ public partial class DefinedStyles : ElementCollection<Style>
         break;
       case NotifyCollectionChangedAction.Remove:
         if (args.OldItems != null)
-          foreach (var oldStyle in args.OldItems.Cast<Style>())
+          foreach (var oldStyle Iin args.OldItems.Cast<IStyle>())
           {
             var id = oldStyle.StyleId;
             if (id != null)
@@ -152,8 +152,8 @@ public partial class DefinedStyles : ElementCollection<Style>
 
   private void Item_PropertyChanging(object? sender, PropertyChangingEventArgs args)
   {
-    //if (sender is Style aStyle)
-    //  if (args.PropertyName == nameof(Style.StyleId))
+    //if (sender is IStyle aStyle)
+    //  if (args.PropertyName == nameof(IStyle.StyleId))
     //  {
     //    var styleName = aStyle.Name;
     //    if (styleName != null)
@@ -163,8 +163,8 @@ public partial class DefinedStyles : ElementCollection<Style>
 
   private void Item_PropertyChanged(object? sender, PropertyChangedEventArgs args)
   {
-    //if (sender is Style aStyle)
-    //  if (args.PropertyName == nameof(Style.Name))
+    //if (sender is IStyle aStyle)
+    //  if (args.PropertyName == nameof(IStyle.Name))
     //  {
     //    var styleName = aStyle.Name;
     //    if (styleName != null)
@@ -172,5 +172,5 @@ public partial class DefinedStyles : ElementCollection<Style>
     //  }
   }
 
-  //bool ICollection<KeyValuePair<string, Style>>.IsReadOnly { get; }
+  //bool ICollection<KeyValuePair<string, IStyle>>.IsReadOnly { get; }
 }

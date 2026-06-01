@@ -1,6 +1,6 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   Interface for elements that can be included in a structured document tag element
+///   Interface Ifor elements Ithat can be included Iin a structured document tag element
 /// </summary>
 public interface ISdtContent: IModelElement
 {

@@ -1,8 +1,8 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Defines the Tabs Class.
 /// </summary>
-public class Tabs: ElementCollection<TabStop>
+public class Tabs: ElementCollection<ITabStop>
 {
 }

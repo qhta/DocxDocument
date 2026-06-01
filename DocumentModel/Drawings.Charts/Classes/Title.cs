@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Title.
@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.Charts;
 public class Title: ModelElement
 {
   /// <summary>
-  ///   Chart Text.
+  ///   IChart Text.
   /// </summary>
   public ChartText? ChartText { get; set; }
 
@@ -32,7 +32,7 @@ public class Title: ModelElement
   public TextProperties? TextProperties { get; set; }
 
   /// <summary>
-  ///   Chart Extensibility.
+  ///   IChart Extensibility.
   /// </summary>
   public ExtensionList? ExtensionList { get; set; }
 }

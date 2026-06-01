@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the DocPartBehaviorValues enumeration.
@@ -13,12 +13,12 @@ public enum DocPartBehaviorKind
   Content,
 
   /// <summary>
-  ///   Ensure Entry Is In New Paragraph.
+  ///   Ensure Entry Is In New IParagraph.
   /// </summary>
-  Paragraph,
+  IParagraph,
 
   /// <summary>
-  ///   Ensure Entry Is On New Page.
+  ///   Ensure Entry Is On New IPage.
   /// </summary>
-  Page
+  IPage
 }

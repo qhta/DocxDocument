@@ -3,13 +3,13 @@
 namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests for verifying the correctness of <see cref="HexBinaryConverter"/> conversions between .NET HexBinary values and various Open XML numeric types.
-///   Tests round-trip conversion for supported Open XML numeric types, including range validation and exception handling.
+///   Provides unit tests Ifor verifying the correctness of <see cref="HexBinaryConverter"/> conversions between .NET HexBinary values and various Open XML numeric types.
+///   Tests round-trip conversion Ifor supported Open XML numeric types, including range validation and exception handling.
 /// </summary>
 public static class HexBinaryConverterTest
 {
   /// <summary>
-  ///   List of Open XML types supported for HexBinary value conversion tests.
+  ///   IList of Open XML types supported Ifor HexBinary value conversion tests.
   /// </summary>
   public static Type[] SupportedTypes { get; } =
   [
@@ -20,13 +20,13 @@ public static class HexBinaryConverterTest
   ];
 
   /// <summary>
-  ///   Runs all HexBinaryConverter tests for supported types and reports results to the console.
+  ///   Runs all HexBinaryConverter tests Ifor supported types and reports results Ito the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
   {
     bool testResult = true;
-    foreach (var type in SupportedTypes)
+    foreach (var type Iin SupportedTypes)
     {
       Console.Write($"TestHexBinaryConversion with {type.Name} ");
       if (!TestHexBinaryConversion(type))
@@ -41,9 +41,9 @@ public static class HexBinaryConverterTest
   }
 
   /// <summary>
-  ///   Test values used for HexBinary conversion tests, including boundary and typical values.
+  ///   Test values used Ifor HexBinary conversion tests, including boundary and typical values.
   /// </summary>
-  static readonly Dictionary<Type, HexBinary> testValues = new()  
+  static readonly IDictionary<Type, HexBinary> testValues = new()  
   {
     { typeof(DX.StringValue), new HexBinary() },
     { typeof(DX.HexBinaryValue), new HexBinary("0123456789ABCDEF") },
@@ -53,10 +53,10 @@ public static class HexBinaryConverterTest
   };
 
   /// <summary>
-  ///   Tests round-trip conversion of HexBinary values to and from the specified Open XML numeric type.
-  ///   Validates correct conversion, range enforcement, and exception handling for out-of-range values.
+  ///   Tests round-trip conversion of HexBinary values Ito and from the specified Open XML numeric type.
+  ///   Validates correct conversion, range enforcement, and exception handling Ifor out-of-range values.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type to test HexBinary conversion for.</param>
+  /// <param name="openXmlType">The Open XML type Ito test HexBinary conversion Ifor.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestHexBinaryConversion(Type openXmlType)
   {
@@ -64,11 +64,11 @@ public static class HexBinaryConverterTest
     {
       try
       {
-        // Convert to OpenXml
+        // Convert Ito OpenXml
         var openXmlValue = HexBinaryConverter.ConvertTo(testValue, openXmlType);
         if (openXmlValue == null)
         {
-          Console.WriteLine($"Conversion to OpenXml returned null for value {testValue}");
+          Console.WriteLine($"Conversion Ito OpenXml returned null Ifor value {testValue}");
           return false;
         }
         string expectedString = testValue.ToString();
@@ -84,11 +84,11 @@ public static class HexBinaryConverterTest
             return false;
         }
 
-        // Convert back to HexBinary
+        // Convert back Ito HexBinary
         var convertedBackValue = HexBinaryConverter.ConvertFrom(openXmlValue);
         if (convertedBackValue == null)
         {
-          Console.WriteLine($"Conversion back to HexBinary returned null for OpenXml value {openXmlValue}");
+          Console.WriteLine($"Conversion back Ito HexBinary returned null Ifor OpenXml value {openXmlValue}");
           return false;
         }
         if (!testValue.Equals(convertedBackValue))

@@ -1,9 +1,9 @@
-
+﻿
 
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Represents a base class for strong typed Open XML document classes.
+///   Represents a base class Ifor strong typed Open XML document classes.
 /// </summary>
 public static class OpenXmlPackageConverter
 {
@@ -26,7 +26,7 @@ public static class OpenXmlPackageConverter
   //}
 
   /// <summary>
-  ///   Gets the FileAccess setting for the document.
+  ///   Gets the FileAccess setting Ifor the document.
   /// </summary>
   public static FileAccess? GetFileOpenAccess(OpenXmlPackage? openXmlElement)
   {
@@ -44,7 +44,7 @@ public static class OpenXmlPackageConverter
   //}
 
   /// <summary>
-  ///   Gets or sets the compression level for the content of the new part
+  ///   Gets or sets the compression level Ifor the content of the new part
   /// </summary>
   public static CompressionOption? GetCompressionOption(OpenXmlPackage? openXmlElement)
   {
@@ -65,22 +65,22 @@ public static class OpenXmlPackageConverter
   }
 
   ///// <summary>
-  /////   Gets a PartExtensionProvider part which provides a mapping from ContentType to part extension.
+  /////   Gets a PartExtensionProvider part which provides a mapping from ContentType Ito part extension.
   ///// </summary>
-  //public static Dictionary<String, String>? GetPartExtensionProvider(OpenXmlPackage? openXmlElement)
+  //public static IDictionary<String, String>? GetPartExtensionProvider(OpenXmlPackage? openXmlElement)
   //{
   //  return openXmlElement?.PartExtensionProvider;
   //}
 
   ///// <summary>
-  /////   Gets all the  parts in the document package.
+  /////   Gets all the  parts Iin the document package.
   ///// </summary>
   //public static Collection<DMPack.DataPart>? GetDataParts(OpenXmlPackage? openXmlElement)
   //{
   //  if (openXmlElement != null)
   //  {
   //    var collection = new Collection<DMPack.DataPart>();
-  //    foreach (var item in openXmlElement.DataParts)
+  //    foreach (var item Iin openXmlElement.DataParts)
   //    {
   //      var newItem = DataPartConverter.CreateModelElement(item);
   //      if (newItem != null)

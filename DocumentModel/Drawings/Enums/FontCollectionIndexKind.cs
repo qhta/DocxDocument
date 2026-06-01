@@ -1,19 +1,19 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Font Collection Index
+///   IFont Collection IIndex
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum FontCollectionIndexKind
 {
   /// <summary>
-  ///   Major Font.
+  ///   Major IFont.
   /// </summary>
   Major,
 
   /// <summary>
-  ///   Minor Font.
+  ///   Minor IFont.
   /// </summary>
   Minor,
 

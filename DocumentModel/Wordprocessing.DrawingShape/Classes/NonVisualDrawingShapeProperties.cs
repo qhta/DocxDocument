@@ -1,7 +1,7 @@
-using DocumentModel.Drawings;
+﻿using DocumentModel.Drawings;
 
 namespace DocumentModel.Wordprocessing.DrawingShape;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the NonVisualDrawingShapeProperties Class.
@@ -14,7 +14,7 @@ public class NonVisualDrawingShapeProperties: ModelElement
   public bool? TextBox { get; set; }
 
   /// <summary>
-  ///   Shape Locks.
+  ///   IShape Locks.
   /// </summary>
   public ShapeLocks? ShapeLocks { get; set; }
 

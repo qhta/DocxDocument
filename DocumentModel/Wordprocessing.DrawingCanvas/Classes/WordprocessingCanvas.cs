@@ -1,8 +1,8 @@
-using DocumentModel.Wordprocessing.DrawingGroup;
+﻿using DocumentModel.Wordprocessing.DrawingGroup;
 using DocumentModel.Wordprocessing.DrawingShape;
 
 namespace DocumentModel.Wordprocessing.DrawingCanvas;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the WordprocessingCanvas Class.

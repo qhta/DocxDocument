@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the Blip Class.
@@ -17,7 +17,7 @@ public class Blip: ModelElement
   public string? Link { get; set; }
 
   /// <summary>
-  ///   Compression state for blips.
+  ///   Compression state Ifor blips.
   /// </summary>
   public BlipCompressionKind? CompressionState { get; set; }
 

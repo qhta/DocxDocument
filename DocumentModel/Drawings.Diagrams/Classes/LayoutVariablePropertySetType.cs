@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the LayoutVariablePropertySetType Class.
@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.Diagrams;
 public class LayoutVariablePropertySetType: ModelElement
 {
   /// <summary>
-  ///   Show Organization Chart User Interface.
+  ///   Show Organization IChart User Interface.
   /// </summary>
   public bool? OrganizationChart { get; set; }
 
@@ -27,12 +27,12 @@ public class LayoutVariablePropertySetType: ModelElement
   public bool? BulletEnabled { get; set; }
 
   /// <summary>
-  ///   Diagram Direction.
+  ///   IDiagram Direction.
   /// </summary>
   public DirectionKind? Direction { get; set; }
 
   /// <summary>
-  ///   Organization Chart Branch Style.
+  ///   Organization IChart Branch IStyle.
   /// </summary>
   public HierarchyBranchStyleKind? HierarchyBranch { get; set; }
 
@@ -47,7 +47,7 @@ public class LayoutVariablePropertySetType: ModelElement
   public AnimationLevelStringKind? AnimationLevel { get; set; }
 
   /// <summary>
-  ///   Shape Resize Style.
+  ///   IShape Resize IStyle.
   /// </summary>
   public ResizeHandlesStringKind? ResizeHandles { get; set; }
 }

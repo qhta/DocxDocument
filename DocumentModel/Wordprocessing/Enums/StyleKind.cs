@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the StyleValues enumeration.
@@ -8,22 +8,22 @@ namespace DocumentModel.Wordprocessing;
 public enum StyleKind
 {
   /// <summary>
-  ///   Paragraph Style.
+  ///   IParagraph IStyle.
   /// </summary>
-  Paragraph,
+  IParagraph,
 
   /// <summary>
-  ///   Character Style.
+  ///   Character IStyle.
   /// </summary>
   Character,
 
   /// <summary>
-  ///   Table Style.
+  ///   ITable IStyle.
   /// </summary>
-  Table,
+  ITable,
 
   /// <summary>
-  ///   Numbering Style.
+  ///   Numbering IStyle.
   /// </summary>
   Numbering
 }

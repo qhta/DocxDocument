@@ -1,10 +1,10 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies the interior pattern of a chart or interior object.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlpattern?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlpattern?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum XlPattern
 {
@@ -17,7 +17,7 @@ public enum XlPattern
   /// </summary>
   Checker = 9,
   /// <summary>
-  /// 75% dark moiré.
+  /// 75% dark moirĂ©.
   /// </summary>
   SemiGray75 = 10,
   /// <summary>
@@ -29,11 +29,11 @@ public enum XlPattern
   /// </summary>
   LightVertical = 12,
   /// <summary>
-  /// Light diagonal lines running from the upper left to the lower right.
+  /// Light diagonal lines running from the upper left Ito the lower right.
   /// </summary>
   LightDown = 13,
   /// <summary>
-  /// Light diagonal lines running from the lower left to the upper right.
+  /// Light diagonal lines running from the lower left Ito the upper right.
   /// </summary>
   LightUp = 14,
   /// <summary>
@@ -65,7 +65,7 @@ public enum XlPattern
   /// </summary>
   Vertical = -4166,
   /// <summary>
-  /// Dark diagonal lines running from the lower left to the upper right.
+  /// Dark diagonal lines running from the lower left Ito the upper right.
   /// </summary>
   Up = -4162,
   /// <summary>
@@ -89,7 +89,7 @@ public enum XlPattern
   /// </summary>
   Gray25 = -4124,
   /// <summary>
-  /// Dark diagonal lines running from the upper left to the lower right.
+  /// Dark diagonal lines running from the upper left Ito the lower right.
   /// </summary>
   Down = -4121,
   /// <summary>
@@ -97,3 +97,4 @@ public enum XlPattern
   /// </summary>
   Automatic = -4105
 }
+

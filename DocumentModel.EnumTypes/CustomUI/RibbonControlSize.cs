@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.CustomUI;
 
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ribboncontrolsize?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ribboncontrolsize?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum RibbonControlSize
 {
@@ -14,3 +14,4 @@ public enum RibbonControlSize
   /// </summary>
   Large
 }
+

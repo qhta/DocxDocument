@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.ChartDrawing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Non-Visual Graphic Frame Properties.
+///   Non-Visual Graphic IFrame Properties.
 /// </summary>
 public class NonVisualGraphicFrameProperties: ModelElement
 {
@@ -12,7 +12,7 @@ public class NonVisualGraphicFrameProperties: ModelElement
   public NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
 
   /// <summary>
-  ///   Non-Visual Graphic Frame Drawing Properties.
+  ///   Non-Visual Graphic IFrame Drawing Properties.
   /// </summary>
   public NonVisualGraphicFrameDrawingProperties? NonVisualGraphicFrameDrawingProperties { get; set; }
 }

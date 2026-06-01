@@ -1,10 +1,10 @@
-namespace DocumentModel.Math;
+﻿namespace DocumentModel.Math;
 
 /// <summary>
-///   This element specifies properties on control characters; that is, object characters that cannot be selected. 
+///   This element specifies properties on control characters; Ithat is, object characters Ithat cannot be selected. 
 ///   Examples of control characters are n-ary operators (excluding their limits and bases), 
 ///   fraction bars (excluding the numerator and denominator), and grouping characters (excluding the base). 
-///   ControlProperties allows formatting properties to be stored on these control characters. 
+///   ControlProperties allows formatting properties Ito be stored on these control characters. 
 ///   The control character inherits its formatting from the paragraph formatting; 
 ///   ControlProperties contains the formatting differences between the control character and the paragraph formatting.
 /// </summary>

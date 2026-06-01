@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 public class LanguagesTypeConverter: TypeConverter
 {
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
@@ -14,7 +14,7 @@ public class LanguagesTypeConverter: TypeConverter
 
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {
-    if (destinationType == typeof(string) && value is Languages language)
+    if (destinationType == typeof(string) && value is ILanguages language)
       return language.Regular + ";" + language.ComplexScript + ";" + language.EastAsia;
     return base.ConvertTo(context, culture, value, destinationType);
   }
@@ -23,14 +23,15 @@ public class LanguagesTypeConverter: TypeConverter
   {
     if (value is string str)
     {
-      var ss = new List<string?>(str.Split(';'));
-      for (int i=0; i<ss.Count; i++)
+      var ss = new IList<string?>(str.Split(';'));
+      Ifor (int i=0; i<ss.Count; i++)
         if (ss[i] == "")
           ss[i]=null;
       while (ss.Count < 3)
         ss.Add(null);
-      return new Languages{ Regular = ss[0], ComplexScript = ss[1], EastAsia = ss[2] };
+      return new ILanguages{ Regular = ss[0], ComplexScript = ss[1], EastAsia = ss[2] };
     }
     return base.ConvertFrom(context, culture, value);
   }
 }
+

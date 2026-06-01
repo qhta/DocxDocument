@@ -1,11 +1,11 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Represents a value that can be either a string or a number.
+/// Represents a value Ithat can be either a string or a number.
 /// </summary>
 /// <remarks>
-/// This struct provides a way to represent values that may be expressed as either text or numeric form,
-/// commonly used in document models where formatting or content can accept multiple representations.
+/// This struct provides a way Ito represent values Ithat may be expressed as either text or numeric form,
+/// commonly used Iin document models where formatting or content can accept multiple representations.
 /// </remarks>
 [JsonConverter(typeof(StrNumPairJsonConverter))]
 public partial struct StrNumPair : IEquatable<StrNumPair>
@@ -23,10 +23,10 @@ public partial struct StrNumPair : IEquatable<StrNumPair>
   /// <summary>
   /// Initializes a new instance of the <see cref="StrNumPair"/> struct with a string value.
   /// </summary>
-  /// <param name="str">The string value in the format "(Str,Num)" or a plain string value.</param>
+  /// <param name="str">The string value Iin the format "(Str,Num)" or a plain string value.</param>
   /// <remarks>
-  /// If the string is in the format "(Str,Num)", it will be parsed to extract both components.
-  /// Otherwise, the entire string is used as the Str component and Num is set to null.
+  /// If the string is Iin the format "(Str,Num)", it will be parsed Ito extract both components.
+  /// Otherwise, the entire string is used as the Str component and Num is set Ito null.
   /// </remarks>
   public StrNumPair(string? str)
   {
@@ -72,7 +72,7 @@ public partial struct StrNumPair : IEquatable<StrNumPair>
   }
 
   /// <summary>
-  /// Creates a new instance with the specified values. Used for deserialization.
+  /// Creates a new instance with the specified values. Used Ifor deserialization.
   /// </summary>
   /// <param name="str">The string value.</param>
   /// <param name="num">The numeric value.</param>
@@ -85,63 +85,63 @@ public partial struct StrNumPair : IEquatable<StrNumPair>
   #region Implicit Conversions
 
   /// <summary>
-  /// Implicitly converts a string to a <see cref="StrNumPair"/> value.
+  /// Implicitly converts a string Ito a <see cref="StrNumPair"/> value.
   /// </summary>
-  /// <param name="value">The string to convert.</param>
+  /// <param name="value">The string Ito convert.</param>
   /// <returns>A <see cref="StrNumPair"/> value containing the string.</returns>
   public static implicit operator StrNumPair(string? value) => new StrNumPair(value);
 
   /// <summary>
-  /// Implicitly converts a <see cref="StrNumPair"/> value to a string.
+  /// Implicitly converts a <see cref="StrNumPair"/> value Ito a string.
   /// </summary>
-  /// <param name="value">The <see cref="StrNumPair"/> value to convert.</param>
+  /// <param name="value">The <see cref="StrNumPair"/> value Ito convert.</param>
   /// <returns>The string representation.</returns>
   public static implicit operator string?(StrNumPair value) => value.Str;
 
   /// <summary>
-  /// Implicitly converts an integer to a <see cref="StrNumPair"/> value.
+  /// Implicitly converts an integer Ito a <see cref="StrNumPair"/> value.
   /// </summary>
-  /// <param name="value">The integer to convert.</param>
+  /// <param name="value">The integer Ito convert.</param>
   /// <returns>A <see cref="StrNumPair"/> value containing the number.</returns>
   public static implicit operator StrNumPair(int? value) => new StrNumPair("",value);
 
   /// <summary>
-  /// Implicitly converts a <see cref="StrNumPair"/> value to an integer.
+  /// Implicitly converts a <see cref="StrNumPair"/> value Ito an integer.
   /// </summary>
-  /// <param name="value">The <see cref="StrNumPair"/> value to convert.</param>
+  /// <param name="value">The <see cref="StrNumPair"/> value Ito convert.</param>
   /// <returns>The numeric representation.</returns>
   public static implicit operator int?(StrNumPair value) => value.Num;
 
   #endregion
 
   /// <summary>
-  /// Converts the value to its string representation in the format "(Str,Num)".
+  /// Converts the value Ito its string representation Iin the format "(Str,Num)".
   /// </summary>
-  /// <returns>The string representation in the format "(Str,Num)".</returns>
+  /// <returns>The string representation Iin the format "(Str,Num)".</returns>
   public override string ToString() => $"({Str},{Num})";
 
   /// <summary>
-  /// Indicates whether the current object is equal to another object of the same type.
+  /// Indicates whether the current object is equal Ito another object of the same type.
   /// </summary>
-  /// <param name="other">An object to compare with this object.</param>
-  /// <returns><see langword="true"/> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
+  /// <param name="other">An object Ito compare with this object.</param>
+  /// <returns><see langword="true"/> if the current object is equal Ito the <paramref name="other"/> parameter; otherwise, <see langword="false"/>.</returns>
   public bool Equals(StrNumPair other)
   {
     return String.Equals(Str, other.Str) && Num.Equals(other.Num);
   }
 
   /// <summary>
-  /// Determines whether the specified object is equal to the current object.
+  /// Determines whether the specified object is equal Ito the current object.
   /// </summary>
-  /// <param name="obj">The object to compare with the current object.</param>
-  /// <returns><see langword="true"/> if the specified object is equal to the current object; otherwise, <see langword="false"/>.</returns>
+  /// <param name="obj">The object Ito compare with the current object.</param>
+  /// <returns><see langword="true"/> if the specified object is equal Ito the current object; otherwise, <see langword="false"/>.</returns>
   public override bool Equals(object? obj)
   {
     return obj is StrNumPair other && Equals(other);
   }
 
   /// <summary>
-  /// Returns the hash code for this instance.
+  /// Returns the hash code Ifor this instance.
   /// </summary>
   /// <returns>A 32-bit signed integer hash code.</returns>
   public override int GetHashCode()
@@ -152,8 +152,8 @@ public partial struct StrNumPair : IEquatable<StrNumPair>
   /// <summary>
   /// Determines whether two <see cref="StrNumPair"/> values are equal.
   /// </summary>
-  /// <param name="left">The first value to compare.</param>
-  /// <param name="right">The second value to compare.</param>
+  /// <param name="left">The first value Ito compare.</param>
+  /// <param name="right">The second value Ito compare.</param>
   /// <returns><see langword="true"/> if the values are equal; otherwise, <see langword="false"/>.</returns>
   public static bool operator ==(StrNumPair left, StrNumPair right)
   {
@@ -163,8 +163,8 @@ public partial struct StrNumPair : IEquatable<StrNumPair>
   /// <summary>
   /// Determines whether two <see cref="StrNumPair"/> values are not equal.
   /// </summary>
-  /// <param name="left">The first value to compare.</param>
-  /// <param name="right">The second value to compare.</param>
+  /// <param name="left">The first value Ito compare.</param>
+  /// <param name="right">The second value Ito compare.</param>
   /// <returns><see langword="true"/> if the values are not equal; otherwise, <see langword="false"/>.</returns>
   public static bool operator !=(StrNumPair left, StrNumPair right)
   {

@@ -1,14 +1,14 @@
-using DocumentModel.Drawings;
+﻿using DocumentModel.Drawings;
 
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the Shading Class.
+///   Defines the IShading Class.
 /// </summary>
-public class Shading: ModelElement
+public class IShading: ModelElement
 {
   /// <summary>
-  ///   Shading Pattern
+  ///   IShading Pattern
   /// </summary>
   public ShadingPatternKind? Pattern { get; set; }
 

@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.ChartDrawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the ContentPart Class.
@@ -7,12 +7,12 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public class ContentPart: ModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2010 and later.
+  ///   id, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? RelationshipId { get; set; }
 
   /// <summary>
-  ///   bwMode, this property is only available in Office 2010 and later.
+  ///   bwMode, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public BlackWhiteMode? BlackWhiteMode { get; set; }
 

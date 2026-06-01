@@ -11,12 +11,12 @@ public struct RowSpacing
   /// </summary>
   public RowSpacingRuleKind Rule { get; set; }
   /// <summary>
-  /// Specifies numeric value for Exactly and Multiply rules.
+  /// Specifies numeric value Ifor Exactly and Multiply rules.
   /// </summary>
   public UInt16? Value { get; set; }
 
   /// <summary>
-  /// Default constructor - Rule set to Single.
+  /// Default constructor - Rule set Ito Single.
   /// </summary>
   public RowSpacing() { }
 
@@ -57,7 +57,7 @@ public struct RowSpacing
   }
 
   /// <summary>
-  /// Convert to string.
+  /// Convert Ito string.
   /// </summary>
   public override string? ToString()
   {
@@ -78,3 +78,4 @@ public struct RowSpacing
     return null;
   }
 }
+

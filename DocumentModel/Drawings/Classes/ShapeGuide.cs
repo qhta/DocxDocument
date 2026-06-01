@@ -1,18 +1,18 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Shape Guide.
+///   IShape Guide.
 /// </summary>
 public class ShapeGuide: ModelElement
 {
   /// <summary>
-  ///   Shape Guide Name
+  ///   IShape Guide Name
   /// </summary>
   public string? Name { get; set; }
 
   /// <summary>
-  ///   Shape Guide Formula
+  ///   IShape Guide Formula
   /// </summary>
   public string? Formula { get; set; }
 }

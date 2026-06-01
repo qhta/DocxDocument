@@ -1,7 +1,7 @@
-using System.ComponentModel;
+﻿using ISystem.ComponentModel;
 
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 public partial class LatentStyleExceptionInfo: INotifyPropertyChanged, INotifyPropertyChanging
 {
@@ -10,7 +10,7 @@ public partial class LatentStyleExceptionInfo: INotifyPropertyChanged, INotifyPr
   private string? _StyleName;
 
   /// <summary>
-  ///   Primary Style Name.
+  ///   Primary IStyle Name.
   /// </summary>
   public string? StyleName
   {
@@ -27,7 +27,7 @@ public partial class LatentStyleExceptionInfo: INotifyPropertyChanged, INotifyPr
   }
 
   /// <summary>
-  ///   Alternate Style Names.
+  ///   Alternate IStyle Names.
   /// </summary>
   public ListOf<String>? Aliases
   {

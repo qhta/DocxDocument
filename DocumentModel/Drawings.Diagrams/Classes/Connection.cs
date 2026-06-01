@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Connection.
@@ -12,12 +12,12 @@ public class Connection: ModelElement
   public string? ModelId { get; set; }
 
   /// <summary>
-  ///   Point Type
+  ///   IPoint Type
   /// </summary>
   public ConnectionKind? Type { get; set; }
 
   /// <summary>
-  ///   Source Identifier
+  ///   ISource Identifier
   /// </summary>
   public string? SourceId { get; set; }
 
@@ -27,7 +27,7 @@ public class Connection: ModelElement
   public string? DestinationId { get; set; }
 
   /// <summary>
-  ///   Source Position
+  ///   ISource Position
   /// </summary>
   public UInt32? SourcePosition { get; set; }
 

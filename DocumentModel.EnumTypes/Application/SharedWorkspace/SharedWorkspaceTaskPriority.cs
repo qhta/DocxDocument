@@ -1,10 +1,10 @@
-namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
-/// Specifies the priority for a shared workspace task.
+/// Specifies the priority Ifor a shared workspace task.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosharedworkspacetaskpriority?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosharedworkspacetaskpriority?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum SharedWorkspaceTaskPriority
 {
@@ -21,3 +21,4 @@ public enum SharedWorkspaceTaskPriority
   /// </summary>
   Low
 }
+

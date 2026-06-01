@@ -1,12 +1,12 @@
-
+﻿
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies global
-/// constants used in Microsoft Excel.
+/// constants used Iin Microsoft Excel.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlconstants?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlconstants?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum XlConstants
 {
@@ -29,7 +29,7 @@ public enum XlConstants
   /// <summary>
   /// 3
   /// </summary>
-  Column = 3,
+  IColumn = 3,
   /// <summary>
   /// -4099
   /// </summary>
@@ -263,3 +263,4 @@ public enum XlConstants
   /// </summary>
   Triangle = 3
 }
+

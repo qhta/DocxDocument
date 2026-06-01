@@ -1,13 +1,13 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 
 using PP = DocumentFormat.OpenXml.Packaging;
 using WP = DocumentFormat.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Main Document.
+///   Main IDocument.
 /// </summary>
-public partial class Document : ModelElement, IDisposable
+public partial class IDocument : ModelElement, IDisposable
 {
 
   /// <summary>
@@ -27,7 +27,7 @@ public partial class Document : ModelElement, IDisposable
   /// Opens internal Wordprocessing document from a file.
   /// </summary>
   /// <param name="filename">Full Filename</param>
-  /// <param name="readWrite">Open for modification</param>
+  /// <param name="readWrite">Open Ifor modification</param>
   public void Open(string filename, bool readWrite = true)
   {
     Filename = filename;
@@ -64,7 +64,7 @@ public partial class Document : ModelElement, IDisposable
   }
 
   /// <summary>
-  ///   Comma delimited set of keywords to support searching and indexing. 
+  ///   Comma delimited set of keywords Ito support searching and indexing. 
   /// </summary>
   public string? Keywords
   {
@@ -90,9 +90,9 @@ public partial class Document : ModelElement, IDisposable
   /// <summary>
   ///   The revision number.
   /// </summary>
-  public int? Revision
+  public int? IRevision
   {
-    get => CoreProperties.Revision; set => CoreProperties.Revision = value;
+    get => CoreProperties.IRevision; set => CoreProperties.IRevision = value;
   }
 
   /// <summary>
@@ -122,13 +122,13 @@ public partial class Document : ModelElement, IDisposable
   /// <summary>
   ///   A categorization of the content of the document. 
   /// </summary>
-  public string? Category
+  public string? ICategory
   {
-    get => CoreProperties.Category; set => CoreProperties.Category = value;
+    get => CoreProperties.ICategory; set => CoreProperties.ICategory = value;
   }
 
   /// <summary>
-  ///   An unambiguous reference to the document within a given context.
+  ///   An unambiguous reference Ito the document within a given context.
   /// </summary>
   public string? Identifier
   {
@@ -146,17 +146,17 @@ public partial class Document : ModelElement, IDisposable
   /// <summary>
   ///   Main language of the document.
   /// </summary>
-  public string? Language
+  public string? ILanguage
   {
-    get => CoreProperties.Language; set => CoreProperties.Language = value;
+    get => CoreProperties.ILanguage; set => CoreProperties.ILanguage = value;
   }
 
   /// <summary>
   ///   The version number. This value is set by the user or by the application.
   /// </summary>
-  public string? Version
+  public string? IVersion
   {
-    get => CoreProperties.Version; set => CoreProperties.Version = value;
+    get => CoreProperties.IVersion; set => CoreProperties.IVersion = value;
   }
 
   /// <summary>
@@ -177,9 +177,9 @@ public partial class Document : ModelElement, IDisposable
   }
 
   /// <summary>
-  /// Style definitions.
+  /// IStyle definitions.
   /// </summary>
-  public Styles? Styles
+  public IStyles? IStyles
   {
     get => _Styles;
     set
@@ -189,7 +189,7 @@ public partial class Document : ModelElement, IDisposable
         _Styles.Parent = this;
     }
   }
-  private Styles? _Styles;
+  private IStyles? _Styles;
 
   /// <summary>
   /// Set if color and font themes.
@@ -207,7 +207,7 @@ public partial class Document : ModelElement, IDisposable
   private DMD.Theme? _Theme;
 
   /// <summary>
-  /// Font table
+  /// IFont table
   /// </summary>
   public Fonts? Fonts
   {
@@ -245,9 +245,9 @@ public partial class Document : ModelElement, IDisposable
   private Numbering? _Numbering;
 
   /// <summary>
-  /// Comment annotations.
+  /// IComment annotations.
   /// </summary>
-  public DocComments? Comments
+  public DocComments? IComments
   {
     get => _Comments;
     set
@@ -261,7 +261,7 @@ public partial class Document : ModelElement, IDisposable
 
 
   /// <summary>
-  /// Document background.
+  /// IDocument background.
   /// </summary>
   public DocumentBackground? Background
   {
@@ -290,15 +290,15 @@ public partial class Document : ModelElement, IDisposable
       }
 
       // TODO: free unmanaged resources (unmanaged objects) and override finalizer
-      // TODO: set large fields to null
+      // TODO: set large fields Ito null
       disposedValue = true;
     }
   }
 
-  // // TODO: override finalizer only if 'Dispose(bool disposing)' has code to free unmanaged resources
-  // ~Document()
+  // // TODO: override finalizer Ionly if 'Dispose(bool disposing)' has code Ito free unmanaged resources
+  // ~IDocument()
   // {
-  //     // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+  //     // Do not change this code. Put cleanup code Iin 'Dispose(bool disposing)' method
   //     Dispose(disposing: false);
   // }
 
@@ -307,7 +307,7 @@ public partial class Document : ModelElement, IDisposable
   /// </summary>
   public void Dispose()
   {
-    // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+    // Do not change this code. Put cleanup code Iin 'Dispose(bool disposing)' method
     Dispose(disposing: true);
     GC.SuppressFinalize(this);
   }
@@ -320,7 +320,7 @@ public partial class Document : ModelElement, IDisposable
   }
 
   /// <summary>
-  ///   Document Background.
+  ///   IDocument Background.
   /// </summary>
   public DocumentBackground? DocumentBackground
   {

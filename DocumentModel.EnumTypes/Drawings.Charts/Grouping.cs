@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the Grouping enumeration.
-/// Used in types such as DocumentCleaner.TableTools, ConnectionShapeLocks, ContentPartLocks.
+/// Used Iin types such as DocumentCleaner.TableTools, ConnectionShapeLocks, ContentPartLocks.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.GroupingValues))]
@@ -24,3 +24,4 @@ public enum Grouping
   [OpenXmlEnumValue("Stacked")]
   Stacked
 }
+

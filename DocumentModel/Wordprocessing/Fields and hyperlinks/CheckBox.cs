@@ -1,10 +1,10 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Checkbox Form Field Properties.
+///   Checkbox Form IField Properties.
 /// </summary>
-public class CheckBox: ModelElement
+public class ICheckBox: ModelElement
 {
   public string? FormFieldSize { get; set; }
 

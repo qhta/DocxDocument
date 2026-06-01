@@ -1,72 +1,72 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Style Definition.
+///   IStyle Definition.
 /// </summary>
-public partial class Style : ModelElement, IEquatable<Style>
+public partial class IStyle : ModelElement, IEquatable<IStyle>
 {
   /// <summary>
-  ///   Style Type
+  ///   IStyle Type
   /// </summary>
   public StyleKind? Type { get; set; }
 
   /// <summary>
-  ///   Style ID
+  ///   IStyle ID
   /// </summary>
   public string? StyleId { get; set; }
 
   /// <summary>
-  ///   Style Name
+  ///   IStyle Name
   /// </summary>
   public string? StyleName { get; set; }
 
   /// <summary>
-  ///   Default Style
+  ///   Default IStyle
   /// </summary>
   [DefaultValue(false)]
   public bool? IsDefault { get; set; }
 
   /// <summary>
-  ///   User-Defined Style
+  ///   User-Defined IStyle
   /// </summary>
   [DefaultValue(false)]
   public bool? IsCustom { get; set; }
 
   /// <summary>
-  ///   Parent Style ID.
+  ///   Parent IStyle ID.
   /// </summary>
   public string? BasedOn { get; set; }
 
   /// <summary>
-  ///   Style For Next Paragraph.
+  ///   IStyle For Next IParagraph.
   /// </summary>
   public string? NextParagraphStyle { get; set; }
 
   /// <summary>
-  ///   Linked Style Reference.
+  ///   Linked IStyle Reference.
   /// </summary>
   public string? LinkedStyle { get; set; }
 
   /// <summary>
-  ///   Automatically Merge User Formatting Into Style Definition.
+  ///   Automatically Merge User Formatting Into IStyle Definition.
   /// </summary>
   [DefaultValue(false)]
   public Boolean IsAutoRedefined { get; set; }
 
   /// <summary>
-  ///   Hide Style From User Interface.
+  ///   Hide IStyle From User Interface.
   /// </summary>
   [DefaultValue(false)]
   public Boolean IsHidden { get; set; }
 
   /// <summary>
-  ///   Hide Style From Main User Interface.
+  ///   Hide IStyle From Main User Interface.
   /// </summary>
   [DefaultValue(false)]
   public Boolean IsSemiHidden { get; set; }
 
   /// <summary>
-  ///   Remove Semi-Hidden Property When Style Is Used.
+  ///   Remove Semi-Hidden Property When IStyle Is Used.
   /// </summary>
   [DefaultValue(false)]
   public Boolean IsUnhiddenWhenUsed { get; set; }
@@ -77,42 +77,42 @@ public partial class Style : ModelElement, IEquatable<Style>
   public Int32? UIPriority { get; set; }
 
   /// <summary>
-  ///   Primary Style.
+  ///   Primary IStyle.
   /// </summary>
   [DefaultValue(false)]
   public Boolean IsPrimary { get; set; }
 
   /// <summary>
-  ///   Style Cannot Be Applied.
+  ///   IStyle Cannot Be Applied.
   /// </summary>
   [DefaultValue(false)]
   public Boolean IsLocked { get; set; }
 
   /// <summary>
-  ///   E-Mail Message Text Style.
+  ///   E-Mail Message Text IStyle.
   /// </summary>
   [DefaultValue(false)]
   public Boolean IsPersonal { get; set; }
 
   /// <summary>
-  ///   E-Mail Message Composition Style.
+  ///   E-Mail Message Composition IStyle.
   /// </summary>
   [DefaultValue(false)]
   public Boolean IsPersonalCompose { get; set; }
 
   /// <summary>
-  ///   E-Mail Message Reply Style.
+  ///   E-Mail Message Reply IStyle.
   /// </summary>
   [DefaultValue(false)]
   public Boolean IsPersonalReply { get; set; }
 
   /// <summary>
-  ///   Revision Identifier for Style Definition.
+  ///   IRevision Identifier Ifor IStyle Definition.
   /// </summary>
    public HexInt? Rsid { get; set; }
 
   /// <summary>
-  ///   Style Paragraph Properties.
+  ///   IStyle IParagraph Properties.
   /// </summary>
   public StyleParagraphProperties? StyleParagraphProperties { get; set; }
 
@@ -122,29 +122,29 @@ public partial class Style : ModelElement, IEquatable<Style>
   public StyleRunProperties? StyleRunProperties { get; set; }
 
   /// <summary>
-  ///   Style Table Properties.
+  ///   IStyle ITable Properties.
   /// </summary>
   public StyleTableProperties? StyleTableProperties { get; set; }
 
   /// <summary>
-  ///   Style Table Row Properties.
+  ///   IStyle ITable IRow Properties.
   /// </summary>
   public TableStyleConditionalRowProperties? TableStyleConditionalFormattingTableRowProperties { get; set; }
 
   /// <summary>
-  ///   Style Table Cell Properties.
+  ///   IStyle ITable ICell Properties.
   /// </summary>
   public StyleTableCellProperties? StyleTableCellProperties { get; set; }
 
   /// <summary>
-  ///   Table Style Properties
+  ///   ITable IStyle Properties
   /// </summary>
   public TableStyleConditionalProperties? TableStyleConditionalProperties { get; set; }
 
   /// <summary>
   /// Compare equality with other style definition.
   /// </summary>
-  public bool Equals(Style? other)
+  public bool Equals(IStyle? other)
   {
     if (other == null)  return false;
     if (this.Type != other.Type) return false;

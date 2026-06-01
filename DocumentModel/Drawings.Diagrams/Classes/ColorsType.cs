@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the ColorsType Class.
@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.Diagrams;
 public class ColorsType: ModelElement
 {
   /// <summary>
-  ///   Color Application Method Type
+  ///   Color IApplication Method Type
   /// </summary>
   public ColorApplicationMethodKind? Method { get; set; }
 

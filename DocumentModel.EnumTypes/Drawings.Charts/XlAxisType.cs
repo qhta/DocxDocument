@@ -1,4 +1,4 @@
-
+﻿
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
@@ -6,20 +6,21 @@ namespace DocumentModel.Drawings.Charts;
 /// type.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlaxistype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlaxistype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum XlAxisType
 {
   /// <summary>
-  /// Axis displays categories.
+  /// IAxis displays categories.
   /// </summary>
-  Category = 1,
+  ICategory = 1,
   /// <summary>
-  /// Axis displays data series.
+  /// IAxis displays data series.
   /// </summary>
   SeriesAxis = 3,
   /// <summary>
-  /// Axis displays values.
+  /// IAxis displays values.
   /// </summary>
   Value = 2
 }
+

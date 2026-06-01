@@ -1,7 +1,7 @@
-using DocumentModel.Drawings;
+﻿using DocumentModel.Drawings;
 
 namespace DocumentModel.WebExtensions;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the Snapshot Class.
@@ -19,7 +19,7 @@ public class Snapshot: ModelElement
   public string? Link { get; set; }
 
   /// <summary>
-  ///   Compression state for blips.
+  ///   Compression state Ifor blips.
   /// </summary>
   public BlipCompressionKind? CompressionState { get; set; }
 

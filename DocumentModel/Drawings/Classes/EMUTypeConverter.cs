@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Type converter for EMU type.
+/// Type converter Ifor EMU type.
 /// </summary>
 internal class EMUTypeConverter : TypeConverter
 {
@@ -16,7 +16,7 @@ internal class EMUTypeConverter : TypeConverter
   }
 
   /// <summary>
-  /// Determines if a value can be converted to destination type.
+  /// Determines if a value can be converted Ito destination type.
   /// </summary>
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
   {
@@ -26,7 +26,7 @@ internal class EMUTypeConverter : TypeConverter
   }
 
   /// <summary>
-  /// Converts the string value to EMU object.
+  /// Converts the string value Ito EMU object.
   /// </summary>
   public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
   {
@@ -36,7 +36,7 @@ internal class EMUTypeConverter : TypeConverter
   }
 
   /// <summary>
-  /// Converts the EMU object to string value.
+  /// Converts the EMU object Ito string value.
   /// </summary>
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {

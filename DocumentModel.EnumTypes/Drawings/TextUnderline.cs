@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Underline Types
 /// </summary>
@@ -13,10 +13,10 @@ public enum TextUnderline
   None = 1,
 
   /// <summary>
-  ///   Text Underline Enum ( Words ).
+  ///   Text Underline Enum ( IWords ).
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.Words))]
-  Words,
+  [OpenXmlEnumValue(nameof(DXD.TextUnderlineValues.IWords))]
+  IWords,
   /// <summary>
   ///   Text Underline Enum ( Single ).
   /// </summary>

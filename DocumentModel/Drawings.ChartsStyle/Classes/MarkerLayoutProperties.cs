@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.ChartsStyle;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartsStyle;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the MarkerLayoutProperties Class.
@@ -7,12 +7,12 @@ namespace DocumentModel.Drawings.ChartsStyle;
 public class MarkerLayoutProperties: ModelElement
 {
   /// <summary>
-  ///   symbol, this property is only available in Office 2013 and later.
+  ///   symbol, this property is Ionly available Iin Office 2013 and later.
   /// </summary>
   public MarkerStyle? Symbol { get; set; }
 
   /// <summary>
-  ///   size, this property is only available in Office 2013 and later.
+  ///   size, this property is Ionly available Iin Office 2013 and later.
   /// </summary>
   public Byte? Size { get; set; }
 }

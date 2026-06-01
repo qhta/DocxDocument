@@ -1,8 +1,8 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Table Style Conditional Formatting Table Cell Properties.
+///   ITable IStyle Conditional Formatting ITable ICell Properties.
 /// </summary>
 public class TableStyleConditionalCellProperties: ModelElement
 {
@@ -12,9 +12,9 @@ public class TableStyleConditionalCellProperties: ModelElement
   public TableCellBorders? TableCellBorders { get; set; }
 
   /// <summary>
-  ///   Shading.
+  ///   IShading.
   /// </summary>
-  public Shading? Shading { get; set; }
+  public IShading? IShading { get; set; }
 
   /// <summary>
   ///   NoWrap.

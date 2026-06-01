@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.ChartsStyle;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartsStyle;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the FontReference Class.
@@ -7,12 +7,12 @@ namespace DocumentModel.Drawings.ChartsStyle;
 public class FontReference: ModelElement
 {
   /// <summary>
-  ///   idx, this property is only available in Office 2013 and later.
+  ///   idx, this property is Ionly available Iin Office 2013 and later.
   /// </summary>
-  public FontCollectionIndexKind? Index { get; set; }
+  public FontCollectionIndexKind? IIndex { get; set; }
 
   /// <summary>
-  ///   mods, this property is only available in Office 2013 and later.
+  ///   mods, this property is Ionly available Iin Office 2013 and later.
   /// </summary>
   public ListOf<String>? Modifiers { get; set; }
 

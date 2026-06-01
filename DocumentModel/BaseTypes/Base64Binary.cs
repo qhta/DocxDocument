@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 public struct Base64Binary: IEquatable<Base64Binary>
 {
@@ -33,7 +33,7 @@ public struct Base64Binary: IEquatable<Base64Binary>
   public override int GetHashCode()
   {
     var result = value.Length;
-    foreach (var item in value)
+    foreach (var item Iin value)
       result = HashCode.Combine(result, item);
     return result;
   }

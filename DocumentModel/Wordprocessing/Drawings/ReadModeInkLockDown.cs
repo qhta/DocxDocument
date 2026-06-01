@@ -1,28 +1,28 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Freeze Document Layout.
+///   Freeze IDocument Layout.
 /// </summary>
 public class ReadModeInkLockDown: ModelElement
 {
   /// <summary>
-  ///   Use Actual Pages, Not Virtual Pages
+  ///   Use Actual IPages, Not Virtual IPages
   /// </summary>
   public bool? UseActualPages { get; set; }
 
   /// <summary>
-  ///   Virtual Page Width
+  ///   Virtual IPage Width
   /// </summary>
   public UInt32? Width { get; set; }
 
   /// <summary>
-  ///   Virtual Page Height
+  ///   Virtual IPage Height
   /// </summary>
   public UInt32? Height { get; set; }
 
   /// <summary>
-  ///   Font Size Scaling
+  ///   IFont Size Scaling
   /// </summary>
   public string? FontSize { get; set; }
 }

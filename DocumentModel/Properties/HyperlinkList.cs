@@ -1,7 +1,7 @@
-namespace DocumentModel.Properties;
+﻿namespace DocumentModel.Properties;
 
 /// <summary>
-///   Hyperlink List.
+///   IHyperlink IList.
 /// </summary>
 public class HyperlinkList : ElementCollection<HyperlinkInfo>
 {

@@ -1,11 +1,11 @@
-
-namespace DocumentModel.Application;
+﻿
+namespace DocumentModel.IApplication;
 
 /// <summary>
-/// Specifies whether and under what circumstances synchronization is available for the document.
+/// Specifies whether and under what circumstances synchronization is available Ifor the document.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosyncavailabletype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosyncavailabletype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum SyncAvailableType
 {
@@ -14,7 +14,7 @@ public enum SyncAvailableType
   /// </summary>
   None,
   /// <summary>
-  /// Synchronization is available offline only.
+  /// Synchronization is available offline Ionly.
   /// </summary>
   Offline,
   /// <summary>
@@ -22,3 +22,4 @@ public enum SyncAvailableType
   /// </summary>
   Anywhere
 }
+

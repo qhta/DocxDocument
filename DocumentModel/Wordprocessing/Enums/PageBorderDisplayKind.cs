@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the PageBorderDisplayValues enumeration.
@@ -8,17 +8,17 @@ namespace DocumentModel.Wordprocessing;
 public enum PageBorderDisplayKind
 {
   /// <summary>
-  ///   Display Page Border on All Pages.
+  ///   Display IPage IBorder on All IPages.
   /// </summary>
   AllPages,
 
   /// <summary>
-  ///   Display Page Border on First Page.
+  ///   Display IPage IBorder on First IPage.
   /// </summary>
   FirstPage,
 
   /// <summary>
-  ///   Display Page Border on All Pages Except First.
+  ///   Display IPage IBorder on All IPages Except First.
   /// </summary>
   NotFirstPage
 }

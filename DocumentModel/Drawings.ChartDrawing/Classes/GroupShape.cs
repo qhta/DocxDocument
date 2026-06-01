@@ -1,22 +1,22 @@
-namespace DocumentModel.Drawings.ChartDrawing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Group Shape.
+///   Group IShape.
 /// </summary>
 public class GroupShape: ModelElement
 {
   /// <summary>
-  ///   Non-Visual Group Shape Properties.
+  ///   Non-Visual Group IShape Properties.
   /// </summary>
   public NonVisualGroupShapeProperties? NonVisualGroupShapeProperties { get; set; }
 
   /// <summary>
-  ///   Group Shape Properties.
+  ///   Group IShape Properties.
   /// </summary>
   public GroupShapeProperties? GroupShapeProperties { get; set; }
 
-  public Shape? Shape { get; set; }
+  public IShape? IShape { get; set; }
 
   public GroupShape? ChildGroupShape { get; set; }
 

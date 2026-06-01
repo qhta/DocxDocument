@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies whether and how to display chart elements.
+/// Specifies whether and how Ito display chart elements.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msochartelementtype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msochartelementtype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum ChartElementType
 {
@@ -57,7 +57,7 @@ public enum ChartElementType
   /// </summary>
   DataLabelShow = 201,
   /// <summary>
-  /// Display data label in center.
+  /// Display data label Iin center.
   /// </summary>
   DataLabelCenter = 202,
   /// <summary>
@@ -73,11 +73,11 @@ public enum ChartElementType
   /// </summary>
   DataLabelOutSideEnd = 205,
   /// <summary>
-  /// Display data label to the left.
+  /// Display data label Ito the left.
   /// </summary>
   DataLabelLeft = 206,
   /// <summary>
-  /// Display data label to the right.
+  /// Display data label Ito the right.
   /// </summary>
   DataLabelRight = 207,
   /// <summary>
@@ -89,7 +89,7 @@ public enum ChartElementType
   /// </summary>
   DataLabelBottom = 209,
   /// <summary>
-  /// Use best fit for data label.
+  /// Use best fit Ifor data label.
   /// </summary>
   DataLabelBestFit = 210,
   /// <summary>
@@ -101,7 +101,7 @@ public enum ChartElementType
   /// </summary>
   PrimaryCategoryAxisTitleNone = 300,
   /// <summary>
-  /// Display primary category axis title adjacent to the axis.
+  /// Display primary category axis title adjacent Ito the axis.
   /// </summary>
   PrimaryCategoryAxisTitleAdjacentToAxis = 301,
   /// <summary>
@@ -125,7 +125,7 @@ public enum ChartElementType
   /// </summary>
   PrimaryValueAxisTitleNone = 306,
   /// <summary>
-  /// Place primary value axis title adjacent to the axis.
+  /// Place primary value axis title adjacent Ito the axis.
   /// </summary>
   PrimaryValueAxisTitleAdjacentToAxis = 306,
   /// <summary>
@@ -149,7 +149,7 @@ public enum ChartElementType
   /// </summary>
   SecondaryCategoryAxisTitleNone = 312,
   /// <summary>
-  /// Display secondary category axis title adjacent to axis.
+  /// Display secondary category axis title adjacent Ito axis.
   /// </summary>
   SecondaryCategoryAxisTitleAdjacentToAxis = 313,
   /// <summary>
@@ -173,7 +173,7 @@ public enum ChartElementType
   /// </summary>
   SecondaryValueAxisTitleNone = 318,
   /// <summary>
-  /// Display secondary category axis title adjacent to axis.
+  /// Display secondary category axis title adjacent Ito axis.
   /// </summary>
   SecondaryValueAxisTitleAdjacentToAxis = 319,
   /// <summary>
@@ -313,19 +313,19 @@ public enum ChartElementType
   /// </summary>
   PrimaryValueAxisShow = 353,
   /// <summary>
-  /// Use thousands for primary value axis units.
+  /// Use thousands Ifor primary value axis units.
   /// </summary>
   PrimaryValueAxisThousands = 354,
   /// <summary>
-  /// Use millions for primary value axis units.
+  /// Use millions Ifor primary value axis units.
   /// </summary>
   PrimaryValueAxisMillions = 355,
   /// <summary>
-  /// Use billions for primary value axis units.
+  /// Use billions Ifor primary value axis units.
   /// </summary>
   PrimaryValueAxisBillions = 356,
   /// <summary>
-  /// Use log scale for primary value axis.
+  /// Use log scale Ifor primary value axis.
   /// </summary>
   PrimaryValueAxisLogScale = 357,
   /// <summary>
@@ -353,19 +353,19 @@ public enum ChartElementType
   /// </summary>
   SecondaryValueAxisShow = 363,
   /// <summary>
-  /// Use thousands for secondary category axis units.
+  /// Use thousands Ifor secondary category axis units.
   /// </summary>
   SecondaryValueAxisThousands = 364,
   /// <summary>
-  /// Use millions for secondary category axis units.
+  /// Use millions Ifor secondary category axis units.
   /// </summary>
   SecondaryValueAxisMillions = 365,
   /// <summary>
-  /// Use billions for secondary value axis units.
+  /// Use billions Ifor secondary value axis units.
   /// </summary>
   SecondaryValueAxisBillions = 366,
   /// <summary>
-  /// Use log scale for secondary value axis.
+  /// Use log scale Ifor secondary value axis.
   /// </summary>
   SecondaryValueAxisLogScale = 367,
   /// <summary>
@@ -385,35 +385,35 @@ public enum ChartElementType
   /// </summary>
   SeriesAxisReverse = 371,
   /// <summary>
-  /// Use thousands for primary category axis units.
+  /// Use thousands Ifor primary category axis units.
   /// </summary>
   PrimaryCategoryAxisThousands = 372,
   /// <summary>
-  /// Use millions for primary category axis units.
+  /// Use millions Ifor primary category axis units.
   /// </summary>
   PrimaryCategoryAxisMillions = 373,
   /// <summary>
-  /// Use billions for primary category axis units.
+  /// Use billions Ifor primary category axis units.
   /// </summary>
   PrimaryCategoryAxisBillions = 374,
   /// <summary>
-  /// Use log scale for primary category axis.
+  /// Use log scale Ifor primary category axis.
   /// </summary>
   PrimaryCategoryAxisLogScale = 375,
   /// <summary>
-  /// Use thousands for secondary category axis units.
+  /// Use thousands Ifor secondary category axis units.
   /// </summary>
   SecondaryCategoryAxisThousands = 376,
   /// <summary>
-  /// Use millions for secondary category axis units.
+  /// Use millions Ifor secondary category axis units.
   /// </summary>
   SecondaryCategoryAxisMillions = 377,
   /// <summary>
-  /// Use billions for secondary category axis units.
+  /// Use billions Ifor secondary category axis units.
   /// </summary>
   SecondaryCategoryAxisBillions = 378,
   /// <summary>
-  /// Use log scale for secondary category axis.
+  /// Use log scale Ifor secondary category axis.
   /// </summary>
   SecondaryCategoryAxisLogScale = 379,
   /// <summary>
@@ -517,3 +517,4 @@ public enum ChartElementType
   /// </summary>
   ChartFloorShow = 1201
 }
+

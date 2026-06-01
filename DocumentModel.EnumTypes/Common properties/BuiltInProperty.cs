@@ -1,10 +1,10 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies a built-in document property.
+/// Specifies a built-Iin document property.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbuiltinproperty?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbuiltinproperty?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum BuiltInProperty
 {
@@ -25,21 +25,21 @@ public enum BuiltInProperty
   /// </summary>
   Keywords = 4,
   /// <summary>
-  /// Comments.
+  /// IComments.
   /// </summary>
-  Comments = 5,
+  IComments = 5,
   /// <summary>
-  /// Template name.
+  /// ITemplate name.
   /// </summary>
-  Template = 6,
+  ITemplate = 6,
   /// <summary>
   /// Last author.
   /// </summary>
   LastAuthor = 7,
   /// <summary>
-  /// Revision number.
+  /// IRevision number.
   /// </summary>
-  Revision = 8,
+  IRevision = 8,
   /// <summary>
   /// Name of application.
   /// </summary>
@@ -49,7 +49,7 @@ public enum BuiltInProperty
   /// </summary>
   TimeLastPrinted = 10,
   /// <summary>
-  /// Time created.
+  /// Time Icreated.
   /// </summary>
   TimeCreated = 11,
   /// <summary>
@@ -57,29 +57,29 @@ public enum BuiltInProperty
   /// </summary>
   TimeLastSaved = 12,
   /// <summary>
-  /// Number of edits to VBA project.
+  /// Number of edits Ito VBA project.
   /// </summary>
   VBATotalEdit = 13,
   /// <summary>
-  /// Page count.
+  /// IPage count.
   /// </summary>
-  Pages = 14,
+  IPages = 14,
   /// <summary>
   /// Word count.
   /// </summary>
-  Words = 15,
+  IWords = 15,
   /// <summary>
   /// Character count.
   /// </summary>
-  Characters = 16,
+  ICharacters = 16,
   /// <summary>
   /// Security setting.
   /// </summary>
   Security = 17,
   /// <summary>
-  /// Category.
+  /// ICategory.
   /// </summary>
-  Category = 18,
+  ICategory = 18,
   /// <summary>
   /// Not supported.
   /// </summary>
@@ -97,11 +97,11 @@ public enum BuiltInProperty
   /// </summary>
   Bytes = 22,
   /// <summary>
-  /// Line count.
+  /// ILine count.
   /// </summary>
-  Lines = 23,
+  ILines = 23,
   /// <summary>
-  /// Paragraph count.
+  /// IParagraph count.
   /// </summary>
   Paras = 24,
   /// <summary>
@@ -129,3 +129,4 @@ public enum BuiltInProperty
   /// </summary>
   CharsWSpaces = 30
 }
+

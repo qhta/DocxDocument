@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Scatter Charts.
@@ -18,7 +18,7 @@ public class ScatterChart: ModelElement
 
   public Collection<ScatterChartSeries>? ScatterChartSeries { get; set; }
 
-  public DataLabels? DataLabels { get; set; }
+  public IDataLabels? IDataLabels { get; set; }
 
   public Collection<UInt32>? AxisIds { get; set; }
 

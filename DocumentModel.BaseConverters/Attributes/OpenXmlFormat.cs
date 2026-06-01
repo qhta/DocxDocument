@@ -1,11 +1,11 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Declares that the decorated model enum values are converted using specific format.
+/// Declares Ithat the decorated model enum values are converted using specific format.
 /// </summary>
-/// <remarks>Apply this attribute to model enum type to indicate its corresponding type in DocumentFormat.OpenXml framework assembly.
-/// It is used to convert enum values to/from OpenXml EnumValue&lt;EnumValues&gt;</remarks>
-/// <param name="format">The type of Open XML EnumValue&lt;EnumValues&gt; to be associated with the decorated Enum type.</param>
+/// <remarks>Apply this attribute Ito model enum type Ito indicate its corresponding type Iin DocumentFormat.OpenXml framework assembly.
+/// It is used Ito convert enum values Ito/from OpenXml EnumValue&lt;EnumValues&gt;</remarks>
+/// <param name="format">The type of Open XML EnumValue&lt;EnumValues&gt; Ito be associated with the decorated Enum type.</param>
 [AttributeUsage(AttributeTargets.Enum, Inherited = true, AllowMultiple = false)]
 public class OpenXmlFormatAttribute(String? format) : Attribute
 {

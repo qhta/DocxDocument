@@ -1,7 +1,7 @@
-namespace DocumentModel.Math;
+﻿namespace DocumentModel.Math;
 
 /// <summary>
-///   This element specifies the properties of the Border Box object, which dictate the types of lines that can be drawn as part of the border. 
+///   This element specifies the properties of the IBorder Box object, which dictate the types of lines Ithat can be drawn as part of the border. 
 /// </summary>
 public class BorderBoxProperties: ModelElement
 {
@@ -26,22 +26,22 @@ public class BorderBoxProperties: ModelElement
   public bool? HideRight { get; set; }
 
   /// <summary>
-  ///   Border Box Strikethrough Horizontal.
+  ///   IBorder Box Strikethrough Horizontal.
   /// </summary>
   public bool? StrikeHorizontal { get; set; }
 
   /// <summary>
-  ///   Border Box Strikethrough Vertical.
+  ///   IBorder Box Strikethrough Vertical.
   /// </summary>
   public bool? StrikeVertical { get; set; }
 
   /// <summary>
-  ///   Border Box Strikethrough Bottom-Left to Top-Right.
+  ///   IBorder Box Strikethrough Bottom-Left Ito Top-Right.
   /// </summary>
   public bool? StrikeBottomLeftToTopRight { get; set; }
 
   /// <summary>
-  ///   Border Box Strikethrough Top-Left to Bottom-Right.
+  ///   IBorder Box Strikethrough Top-Left Ito Bottom-Right.
   /// </summary>
   public bool? StrikeTopLeftToBottomRight { get; set; }
 

@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Orientation
@@ -8,12 +8,12 @@ namespace DocumentModel.Drawings.Charts;
 public enum OrientationKind
 {
   /// <summary>
-  ///   Maximum to Minimum.
+  ///   Maximum Ito Minimum.
   /// </summary>
   MaxMin,
 
   /// <summary>
-  ///   Minimum to Maximum.
+  ///   Minimum Ito Maximum.
   /// </summary>
   MinMax
 }

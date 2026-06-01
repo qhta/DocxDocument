@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the EndnotePositionValues enumeration.
@@ -8,12 +8,12 @@ namespace DocumentModel.Wordprocessing;
 public enum EndnotePositionKind
 {
   /// <summary>
-  ///   Endnotes Positioned at End of Section.
+  ///   IEndnotes Positioned at End of ISection.
   /// </summary>
   SectionEnd,
 
   /// <summary>
-  ///   Endnotes Positioned at End of Document.
+  ///   IEndnotes Positioned at End of IDocument.
   /// </summary>
   DocumentEnd
 }

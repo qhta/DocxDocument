@@ -1,7 +1,7 @@
-namespace DocumentModel.Drawings.Wordprocessing;
+﻿namespace DocumentModel.Drawings.Wordprocessing;
 
 /// <summary>
-/// Specifies the type of vertical alignment to apply.
+/// Specifies the type of vertical alignment Ito apply.
 /// </summary>
 [OpenXmlEnumType(typeof(DXDW.VerticalAlignmentValues))]
 public enum VerticalAlignment
@@ -22,13 +22,14 @@ public enum VerticalAlignment
   [OpenXmlEnumValue(nameof(DXDW.VerticalAlignmentValues.Bottom))]
   Bottom,
   /// <summary>
-  /// Indicates that the element is located inside the specified boundary or region.
+  /// Indicates Ithat the element is located inside the specified boundary or region.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXDW.VerticalAlignmentValues.Inside))]
   Inside,
   /// <summary>
-  /// Indicates that the element is positioned outside the defined area or boundary.
+  /// Indicates Ithat the element is positioned outside the defined area or boundary.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXDW.VerticalAlignmentValues.Outside))]
   Outside,
 }
+

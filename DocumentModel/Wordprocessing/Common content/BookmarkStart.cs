@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   This element specifies the start of a bookmark within a WordprocessingML document. 
@@ -9,19 +9,19 @@ public class BookmarkStart: MarkupRangeElement, IRangeMarkupElement, ICommonCont
 {
   /// <summary>
   ///   Specifies the bookmark name. 
-  ///   If multiple bookmarks in a document share the same name, then the first bookmark 
-  ///   (defined by the location of the bookmarkStart element in document order) shall be maintained, 
+  ///   If multiple bookmarks Iin a document share the same name, then the first bookmark 
+  ///   (defined by the location of the bookmarkStart element Iin document order) shall be maintained, 
   ///   and all subsequent bookmarks should be ignored. 
   /// </summary>
   public string? Name { get; set; }
 
   /// <summary>
-  ///   Specifies the zero-based index of the first column in this row which shall be part of this bookmark.
+  ///   Specifies the zero-based index of the first column Iin this row which shall be part of this bookmark.
   /// </summary>
   public Int32? ColumnFirst { get; set; }
 
   /// <summary>
-  ///   Specifies the zero-based index of the last column in this row which shall be part of this bookmark.
+  ///   Specifies the zero-based index of the last column Iin this row which shall be part of this bookmark.
   /// </summary>
   public Int32? ColumnLast { get; set; }
 

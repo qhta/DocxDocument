@@ -1,14 +1,14 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the TickMarksType enumeration.
-/// Used in types such as OpenXmlTickMarksElement, TickMarksType, OpenXmlTickMarksElementConverter.
+/// Used Iin types such as OpenXmlTickMarksElement, TickMarksType, OpenXmlTickMarksElementConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum TickMarksType
 {
   /// <summary>
-  ///   in.
+  ///   Iin.
   /// </summary>
   [OpenXmlEnumValue("In")]
   In,
@@ -28,3 +28,4 @@ public enum TickMarksType
   [OpenXmlEnumValue("None")]
   None
 }
+

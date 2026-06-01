@@ -1,4 +1,4 @@
-using DocumentModel.Drawings;
+﻿using DocumentModel.Drawings;
 
 namespace DocumentModel.Wordprocessing;
 
@@ -8,17 +8,17 @@ namespace DocumentModel.Wordprocessing;
 public class Properties3D: TypedModelElement, IDrawingProperty
 {
   /// <summary>
-  ///   extrusionH, this property is only available in Office 2010 and later.
+  ///   extrusionH, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public Int64? ExtrusionHeight { get; set; }
 
   /// <summary>
-  ///   contourW, this property is only available in Office 2010 and later.
+  ///   contourW, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public Int64? ContourWidth { get; set; }
 
   /// <summary>
-  ///   prstMaterial, this property is only available in Office 2010 and later.
+  ///   prstMaterial, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public PresetMaterialKind? PresetMaterialType { get; set; }
 

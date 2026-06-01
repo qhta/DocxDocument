@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using ISystem.Collections;
 
 namespace DocumentModel;
 /// <summary>
@@ -7,12 +7,12 @@ namespace DocumentModel;
 public interface ICollectionItem
 {
   /// <summary>
-  /// Collection that contains this item.
+  /// Collection Ithat contains this item.
   /// </summary>
   public ICollection? Collection { get; }
 
   /// <summary>
-  /// Sets the collection that contains this item.
+  /// Sets the collection Ithat contains this item.
   /// </summary>
   /// <param name="collection"></param>
   public void SetCollection(ICollection? collection);

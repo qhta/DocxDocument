@@ -1,6 +1,6 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 /// <summary>
-///   Defines CustomXmlElement - the base class for the customXml elements.
+///   Defines CustomXmlElement - the base class Ifor the customXml elements.
 /// </summary>
 public class CustomXmlElement: ElementCollection<IModelElement>
 {
@@ -15,7 +15,7 @@ public class CustomXmlElement: ElementCollection<IModelElement>
   public string? Element { get; set; }
 
   /// <summary>
-  ///   Gets or sets the CustomXmlProperties which represents the element tag in schema: w:customXmlPr.
+  ///   Gets or sets the CustomXmlProperties which represents the element tag Iin schema: w:customXmlPr.
   /// </summary>
   public CustomXmlProperties? CustomXmlProperties { get; set; }
 }

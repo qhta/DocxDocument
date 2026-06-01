@@ -32,7 +32,7 @@ public static class OnOffToggleConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps for <see cref="OnOffToggleConverter"/>.
+  /// Initializes the conversion maps Ifor <see cref="OnOffToggleConverter"/>.
   /// </summary>
   static OnOffToggleConverter()
   {
@@ -43,10 +43,10 @@ public static class OnOffToggleConverter
   #region EmptyType conversion.
 
   /// <summary>
-  /// Converts a nullable Open XML EmptyType element to a OnOffToggle value.
+  /// Converts a nullable Open XML EmptyType element Ito a OnOffToggle value.
   /// </summary>
-  /// <param name="openXmlElement">The Open XML EmptyType element to convert. If null, the method returns null.</param>
-  /// <returns>A OnOffToggle value that is <see langword="true"/> if <paramref name="openXmlElement"/> is not null;
+  /// <param name="openXmlElement">The Open XML EmptyType element Ito convert. If null, the method returns null.</param>
+  /// <returns>A OnOffToggle value Ithat is <see langword="true"/> if <paramref name="openXmlElement"/> is not null;
   /// otherwise, <see langword="false"/>.</returns>
   private static OnOffToggle ConvertFromEmptyType(DXW.EmptyType? openXmlElement)
   {
@@ -56,12 +56,12 @@ public static class OnOffToggleConverter
   }
 
   /// <summary>
-  /// Converts a nullable OnOffToggle value to a new instance of the specified DXW.EmptyType, or returns null if the value
+  /// Converts a nullable OnOffToggle value Ito a new instance of the specified DXW.EmptyType, or returns null if the value
   /// is null or false.
   /// </summary>
-  /// <param name="value">The nullable OnOffToggle value to convert. If null or <see langword="false"/>, the method returns null.</param>
-  /// <param name="targetType">The type of DXW.EmptyType to instantiate if <paramref name="value"/> is <see langword="true"/>. Must be a type
-  /// that derives from DXW.EmptyType and has a parameterless constructor.</param>
+  /// <param name="value">The nullable OnOffToggle value Ito convert. If null or <see langword="false"/>, the method returns null.</param>
+  /// <param name="targetType">The type of DXW.EmptyType Ito instantiate if <paramref name="value"/> is <see langword="true"/>. Must be a type
+  /// Ithat derives from DXW.EmptyType and has a parameterless constructor.</param>
   /// <returns>A new instance of the specified DXW.EmptyType if <paramref name="value"/> is <see langword="true"/>; otherwise,
   /// null.</returns>
   private static DXW.EmptyType? ConvertToEmptyType(OnOffToggle? value, Type targetType)
@@ -79,7 +79,7 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Retrieves a OnOffToggle value from the specified OnOffOnlyValues element.
   /// </summary>
-  /// <param name="openXmlElement">The OnOffOnlyValues element to check.</param>
+  /// <param name="openXmlElement">The OnOffOnlyValues element Ito check.</param>
   /// <returns>True if the value is On, otherwise null or false.</returns>
   private static OnOffToggle? ConvertFromOnOffOnlyValues(DXW.OnOffOnlyValues? openXmlElement)
   {
@@ -96,7 +96,7 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Creates an OnOffOnlyValues element from the specified OnOffToggle value.
   /// </summary>
-  /// <param name="value">The OnOffToggle value to convert.</param>
+  /// <param name="value">The OnOffToggle value Ito convert.</param>
   /// <returns>OnOffOnlyValues.On if true, OnOffOnlyValues.Off if false, otherwise null.</returns>
   private static DXW.OnOffOnlyValues? ConvertToOnOffOnlyValues(OnOffToggle? value)
   {
@@ -114,7 +114,7 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Retrieves a OnOffToggle value from the specified EnumValue&lt;OnOffOnlyValues&gt; element.
   /// </summary>
-  /// <param name="openXmlElement">The OnOffOnlyValues element to check.</param>
+  /// <param name="openXmlElement">The OnOffOnlyValues element Ito check.</param>
   /// <returns>True if the value is On, otherwise null or false.</returns>
   private static OnOffToggle? ConvertFromEnumValueOfOnOffOnlyValues(DX.EnumValue<DXW.OnOffOnlyValues>? openXmlElement)
   {
@@ -131,7 +131,7 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Creates an EnumValue&lt;OnOffOnlyValues&gt; element from the specified OnOffToggle value.
   /// </summary>
-  /// <param name="value">The OnOffToggle value to convert.</param>
+  /// <param name="value">The OnOffToggle value Ito convert.</param>
   /// <returns>OnOffOnlyValues.On if true, OnOffOnlyValues.Off if false, otherwise null.</returns>
   private static DX.EnumValue<DXW.OnOffOnlyValues>? ConvertToEnumValueOfOnOffOnlyValues(OnOffToggle? value)
   {
@@ -151,7 +151,7 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Retrieves a OnOffToggle openXmlElement from the specified TrueFalseValue element.
   /// </summary>
-  /// <param name="openXmlElement">The TrueFalseValue element to check.</param>
+  /// <param name="openXmlElement">The TrueFalseValue element Ito check.</param>
   /// <returns>True if the openXmlElement is On, otherwise null or false.</returns>
   private static OnOffToggle? ConvertFromTrueFalseValue(DX.TrueFalseValue? openXmlElement)
   {
@@ -166,7 +166,7 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Creates an TrueFalseValue element from the specified OnOffToggle value.
   /// </summary>
-  /// <param name="value">The OnOffToggle value to convert.</param>
+  /// <param name="value">The OnOffToggle value Ito convert.</param>
   /// <returns>TrueFalseValue.On if true, TrueFalseValue.Off if false, otherwise null.</returns>
   private static DX.TrueFalseValue? ConvertToTrueFalseValue(OnOffToggle? value)
   {
@@ -185,7 +185,7 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Converts a <see cref="DX.TrueFalseBlankValue"/> into its <see cref="OnOffToggle"/> counterpart, preserving the blank state.
   /// </summary>
-  /// <param name="value">The Open XML three-state value to interpret.</param>
+  /// <param name="value">The Open XML three-state value Ito interpret.</param>
   /// <returns>The equivalent <see cref="OnOffToggle"/> value.</returns>
   public static OnOffToggle ConvertFromTrueFalseBlankValue(DX.TrueFalseBlankValue value)
   {
@@ -195,9 +195,9 @@ public static class OnOffToggleConverter
   }
 
   /// <summary>
-  /// Creates a <see cref="DX.TrueFalseBlankValue"/> that mirrors the supplied <see cref="OnOffToggle"/> state.
+  /// Creates a <see cref="DX.TrueFalseBlankValue"/> Ithat mirrors the supplied <see cref="OnOffToggle"/> state.
   /// </summary>
-  /// <param name="value">The tri-state value to serialize.</param>
+  /// <param name="value">The tri-state value Ito serialize.</param>
   /// <returns>A new <see cref="DX.TrueFalseBlankValue"/> instance representing the same logical state.</returns>
   public static DX.TrueFalseBlankValue? ConvertToTrueFalseBlankValue(OnOffToggle value)
   {
@@ -214,7 +214,7 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Retrieves a OnOffToggle value from the specified DXW.OnOffType element.
   /// </summary>
-  /// <param name="openXmlElement">The OnOffType element to check.</param>
+  /// <param name="openXmlElement">The OnOffType element Ito check.</param>
   /// <returns>The OnOffToggle value, true if element exists but value is null.</returns>
   private static OnOffToggle? ConvertFromOnOffType(DXW.OnOffType? openXmlElement)
   {
@@ -228,12 +228,12 @@ public static class OnOffToggleConverter
   }
 
   /// <summary>
-  /// Creates a new instance of the specified DXW.OnOffType and sets its value to the provided OnOffToggle value.
+  /// Creates a new instance of the specified DXW.OnOffType and sets its value Ito the provided OnOffToggle value.
   /// </summary>
-  /// <param name="value">The OnOffToggle value to create the OnOffType element. If <see langword="null"/>, the method returns <see
+  /// <param name="value">The OnOffToggle value Ito create the OnOffType element. If <see langword="null"/>, the method returns <see
   /// langword="null"/>.</param>
-  /// <param name="targetType">The type of OnOffType to instantiate. Must be a type derived from DXW.OnOffType.</param>
-  /// <returns>A new instance of the specified OnOffType with its value set to <paramref name="value"/>; or <see
+  /// <param name="targetType">The type of OnOffType Ito instantiate. Must be a type derived from DXW.OnOffType.</param>
+  /// <returns>A new instance of the specified OnOffType with its value set Ito <paramref name="value"/>; or <see
   /// langword="null"/> if <paramref name="value"/> is <see langword="null"/>.</returns>
   private static DXW.OnOffType? ConvertToOnOffType(OnOffToggle? value, Type targetType)
   {
@@ -257,7 +257,7 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Retrieves a OnOffToggle value from the specified DXO13W.OnOffType element.
   /// </summary>
-  /// <param name="openXmlElement">The OnOffType element to check.</param>
+  /// <param name="openXmlElement">The OnOffType element Ito check.</param>
   /// <returns>The OnOffToggle value, true if element exists but value is null.</returns>
   private static OnOffToggle? ConvertFromO13WOnOffType(DXO13W.OnOffType? openXmlElement)
   {
@@ -271,12 +271,12 @@ public static class OnOffToggleConverter
   }
 
   /// <summary>
-  /// Creates a new instance of the specified DXO13W.OnOffType and sets its value to the provided OnOffToggle value.
+  /// Creates a new instance of the specified DXO13W.OnOffType and sets its value Ito the provided OnOffToggle value.
   /// </summary>
-  /// <param name="value">The OnOffToggle value to create the OnOffType element. If <see langword="null"/>, the method returns <see
+  /// <param name="value">The OnOffToggle value Ito create the OnOffType element. If <see langword="null"/>, the method returns <see
   /// langword="null"/>.</param>
-  /// <param name="targetType">The type of OnOffType to instantiate. Must be a type derived from DXO13W.OnOffType.</param>
-  /// <returns>A new instance of the specified OnOffType with its value set to <paramref name="value"/>; or <see
+  /// <param name="targetType">The type of OnOffType Ito instantiate. Must be a type derived from DXO13W.OnOffType.</param>
+  /// <returns>A new instance of the specified OnOffType with its value set Ito <paramref name="value"/>; or <see
   /// langword="null"/> if <paramref name="value"/> is <see langword="null"/>.</returns>
   private static DXO13W.OnOffType? ConvertToO13WOnOffType(OnOffToggle? value, Type targetType)
   {
@@ -301,7 +301,7 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Retrieves a OnOffToggle value from the specified DXM.OnOffType element.
   /// </summary>
-  /// <param name="openXmlElement">The OnOffType element to check.</param>
+  /// <param name="openXmlElement">The OnOffType element Ito check.</param>
   /// <returns>The OnOffToggle value, true if element exists but value is null.</returns>
   private static OnOffToggle? ConvertFromMathOnOffType(DXM.OnOffType? openXmlElement)
   {
@@ -318,12 +318,12 @@ public static class OnOffToggleConverter
   }
 
   /// <summary>
-  /// Creates a new instance of the specified DXM.OnOffType and sets its value to the provided OnOffToggle value.
+  /// Creates a new instance of the specified DXM.OnOffType and sets its value Ito the provided OnOffToggle value.
   /// </summary>
-  /// <param name="value">The OnOffToggle value to create the OnOffType element. If <see langword="null"/>, the method returns <see
+  /// <param name="value">The OnOffToggle value Ito create the OnOffType element. If <see langword="null"/>, the method returns <see
   /// langword="null"/>.</param>
-  /// <param name="targetType">The type of OnOffType to instantiate. Must be a type derived from DXM.OnOffType.</param>
-  /// <returns>A new instance of the specified OnOffType with its value set to <paramref name="value"/>.</returns>
+  /// <param name="targetType">The type of OnOffType Ito instantiate. Must be a type derived from DXM.OnOffType.</param>
+  /// <returns>A new instance of the specified OnOffType with its value set Ito <paramref name="value"/>.</returns>
   private static DXM.OnOffType? ConvertToMathOnOffType(OnOffToggle? value, Type targetType)
   {
     if (value == null) return null;
@@ -345,7 +345,7 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Retrieves a OnOffToggle value from the specified OnOffOnlyType element.
   /// </summary>
-  /// <param name="openXmlElement">The OnOffOnlyType element to check.</param>
+  /// <param name="openXmlElement">The OnOffOnlyType element Ito check.</param>
   /// <returns>True if the value is On, false if the value is Off, or true if the element exists without a value.</returns>
   private static OnOffToggle? ConvertFromOnOffOnlyType(DXW.OnOffOnlyType? openXmlElement)
   {
@@ -362,12 +362,12 @@ public static class OnOffToggleConverter
   }
 
   /// <summary>
-  /// Creates a new instance of the specified OnOffOnlyType and sets its value to the provided OnOffToggle value.
+  /// Creates a new instance of the specified OnOffOnlyType and sets its value Ito the provided OnOffToggle value.
   /// </summary>
-  /// <param name="value">The OnOffToggle value to create the OnOffOnlyType element. If <see langword="null"/>, the method returns <see
+  /// <param name="value">The OnOffToggle value Ito create the OnOffOnlyType element. If <see langword="null"/>, the method returns <see
   /// langword="null"/>.</param>
-  /// <param name="targetType">The type of OnOffType to instantiate. Must be a type derived from DXW.OnOffOnlyType.</param>
-  /// <returns>A new instance of the specified OnOffType with its value set to <paramref name="value"/>; or <see
+  /// <param name="targetType">The type of OnOffType Ito instantiate. Must be a type derived from DXW.OnOffOnlyType.</param>
+  /// <returns>A new instance of the specified OnOffType with its value set Ito <paramref name="value"/>; or <see
   /// langword="null"/> if <paramref name="value"/> is <see langword="null"/>.</returns>
   private static DXW.OnOffOnlyType? ConvertToOnOffOnlyType(OnOffToggle? value, Type targetType)
   {
@@ -389,8 +389,8 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Retrieves a OnOffToggle openXmlElement from the specified Word 2010 OnOffValue.
   /// </summary>
-  /// <param name="openXmlElement">The OnOffValues to get OnOffToggle openXmlElement.</param>
-  /// <returns>True for True/One, false for False/Zero.</returns>
+  /// <param name="openXmlElement">The OnOffValues Ito get OnOffToggle openXmlElement.</param>
+  /// <returns>True Ifor True/One, false Ifor False/Zero.</returns>
   private static OnOffToggle? ConvertFromO10WOnOffValues(DXO10W.OnOffValues? openXmlElement)
   {
     if (openXmlElement == null) return null;
@@ -403,9 +403,9 @@ public static class OnOffToggleConverter
   }
 
   /// <summary>
-  /// Converts a nullable OnOffToggle value to its corresponding Open XML OnOffValues enumeration value.
+  /// Converts a nullable OnOffToggle value Ito its corresponding Open XML OnOffValues enumeration value.
   /// </summary>
-  /// <param name="value">The nullable OnOffToggle value to convert. If <see langword="true"/>, returns <c>OnOffValues.One</c>; if <see
+  /// <param name="value">The nullable OnOffToggle value Ito convert. If <see langword="true"/>, returns <c>OnOffValues.One</c>; if <see
   /// langword="false"/>, returns <c>OnOffValues.Zero</c>; if <see langword="null"/>, returns <see langword="null"/>.</param>
   /// <returns>A <c>DXO10W.OnOffValues</c> value representing the OnOffToggle input.</returns>
   private static DXO10W.OnOffValues? ConvertToO10WOnOffValues(OnOffToggle? value)
@@ -426,8 +426,8 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Retrieves a OnOffToggle value from the specified Word 2010 OnOffValue.
   /// </summary>
-  /// <param name="openXmlElement">The EnumValue of OnOffValues to check.</param>
-  /// <returns>True for True/One, false for False/Zero, or null.</returns>
+  /// <param name="openXmlElement">The EnumValue of OnOffValues Ito check.</param>
+  /// <returns>True Ifor True/One, false Ifor False/Zero, or null.</returns>
   private static OnOffToggle? ConvertFromEnumValueOfO10WOnOffValues(DX.EnumValue<DXO10W.OnOffValues>? openXmlElement)
   {
     if (openXmlElement == null) return null;
@@ -442,10 +442,10 @@ public static class OnOffToggleConverter
   }
 
   /// <summary>
-  /// Converts a OnOffToggle value to enum value of Office2010 Word OnOffValue.
+  /// Converts a OnOffToggle value Ito enum value of Office2010 Word OnOffValue.
   /// </summary>
-  /// <param name="value">The OnOffToggle value to convert.</param>
-  /// <returns>An <see cref="DXO10W.OnOffValues"/> corresponding to the specified OnOffToggle value, or <see
+  /// <param name="value">The OnOffToggle value Ito convert.</param>
+  /// <returns>An <see cref="DXO10W.OnOffValues"/> corresponding Ito the specified OnOffToggle value, or <see
   /// langword="null"/> if <paramref name="value"/> is <see langword="null"/>.</returns>
   private static DX.EnumValue<DXO10W.OnOffValues>? ConvertToEnumValueOfO10WOnOffValues(OnOffToggle? value)
   {
@@ -466,8 +466,8 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Retrieves a OnOffToggle value from the specified Word 2010 OnOffValue.
   /// </summary>
-  /// <param name="openXmlElement">The EnumValue of OnOffValues to check.</param>
-  /// <returns>True for True/One, false for False/Zero.</returns>
+  /// <param name="openXmlElement">The EnumValue of OnOffValues Ito check.</param>
+  /// <returns>True Ifor True/One, false Ifor False/Zero.</returns>
   private static OnOffToggle? ConvertFromO10WOnOffType(DXO10W.OnOffType? openXmlElement)
   {
     if (openXmlElement == null) return null;
@@ -482,12 +482,12 @@ public static class OnOffToggleConverter
   }
 
   /// <summary>
-  /// Creates a new instance of the specified OnOffType and sets its value to the provided OnOffToggle value.
+  /// Creates a new instance of the specified OnOffType and sets its value Ito the provided OnOffToggle value.
   /// </summary>
-  /// <param name="value">The OnOffToggle value to create the OnOffType element. If <see langword="null"/>, the method returns <see
+  /// <param name="value">The OnOffToggle value Ito create the OnOffType element. If <see langword="null"/>, the method returns <see
   /// langword="null"/>.</param>
-  /// <param name="targetType">The type of OnOffType to instantiate. Must be a type derived from DXW.OnOffType.</param>
-  /// <returns>A new instance of the specified OnOffType with its value set to <paramref name="value"/>.</returns>
+  /// <param name="targetType">The type of OnOffType Ito instantiate. Must be a type derived from DXW.OnOffType.</param>
+  /// <returns>A new instance of the specified OnOffType with its value set Ito <paramref name="value"/>.</returns>
   private static DXO10W.OnOffType? ConvertToO10WOnOffType(OnOffToggle? value, Type targetType)
   {
     if (value == null) return null;
@@ -517,8 +517,8 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Retrieves a OnOffToggle openXmlElement from the specified OnOffValue comparable simple openXmlElement.
   /// </summary>
-  /// <param name="openXmlElement">The openXmlElement to convert</param>
-  /// <returns>True for True/On/One, false for False/Off/Zero, or null.</returns>
+  /// <param name="openXmlElement">The openXmlElement Ito convert</param>
+  /// <returns>True Ifor True/On/One, false Ifor False/Off/Zero, or null.</returns>
   private static OnOffToggle? ConvertFromBooleanValue(DX.BooleanValue? openXmlElement)
   {
     if (openXmlElement == null) return null;
@@ -530,9 +530,9 @@ public static class OnOffToggleConverter
   }
 
   /// <summary>
-  /// Converts a nullable OnOffToggle value to its corresponding OpenXml OnOffValue representation.
+  /// Converts a nullable OnOffToggle value Ito its corresponding OpenXml OnOffValue representation.
   /// </summary>
-  /// <param name="value">The nullable OnOffToggle value to convert. If null, the method returns null.</param>
+  /// <param name="value">The nullable OnOffToggle value Ito convert. If null, the method returns null.</param>
   /// <returns>A DX.OnOffValue value representing the OnOffToggle input</returns>
   private static DX.BooleanValue? ConvertToBooleanValue(OnOffToggle? value)
   {
@@ -551,8 +551,8 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Retrieves a OnOffToggle openXmlElement from the specified OnOffValue comparable simple openXmlElement.
   /// </summary>
-  /// <param name="openXmlElement">The openXmlElement to convert</param>
-  /// <returns>True for True/On/One, false for False/Off/Zero, or null.</returns>
+  /// <param name="openXmlElement">The openXmlElement Ito convert</param>
+  /// <returns>True Ifor True/On/One, false Ifor False/Off/Zero, or null.</returns>
   private static OnOffToggle? ConvertFromOnOffValue(DX.OnOffValue? openXmlElement)
   {
     if (openXmlElement == null) return null;
@@ -564,9 +564,9 @@ public static class OnOffToggleConverter
   }
 
   /// <summary>
-  /// Converts a nullable OnOffToggle value to its corresponding OpenXml OnOffValue representation.
+  /// Converts a nullable OnOffToggle value Ito its corresponding OpenXml OnOffValue representation.
   /// </summary>
-  /// <param name="value">The nullable OnOffToggle value to convert. If null, the method returns null.</param>
+  /// <param name="value">The nullable OnOffToggle value Ito convert. If null, the method returns null.</param>
   /// <returns>A DX.OnOffValue value representing the OnOffToggle input</returns>
   private static DX.OnOffValue? ConvertToOnOffValue(OnOffToggle? value)
   {
@@ -585,8 +585,8 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Retrieves a OnOffToggle openXmlElement from the specified Math OnOffValues enum openXmlElement.
   /// </summary>
-  /// <param name="openXmlElement">The openXmlElement to convert</param>
-  /// <returns>True for True/On/One, false for False/Off/Zero, or null.</returns>
+  /// <param name="openXmlElement">The openXmlElement Ito convert</param>
+  /// <returns>True Ifor True/On/One, false Ifor False/Off/Zero, or null.</returns>
   private static OnOffToggle? ConvertFromBooleanValues(DXM.BooleanValues? openXmlElement)
   {
     if (openXmlElement == null) return null;
@@ -599,9 +599,9 @@ public static class OnOffToggleConverter
   }
 
   /// <summary>
-  /// Converts a nullable OnOffToggle value to its corresponding OpenXml Math OnOffValues representation.
+  /// Converts a nullable OnOffToggle value Ito its corresponding OpenXml Math OnOffValues representation.
   /// </summary>
-  /// <param name="value">The nullable OnOffToggle value to convert. If null, the method returns null.</param>
+  /// <param name="value">The nullable OnOffToggle value Ito convert. If null, the method returns null.</param>
   /// <returns>A DXM.BooleanValues value representing the OnOffToggle input: DXM.BooleanValues.One if <paramref name="value"/> is
   /// <see langword="true"/>, DXM.BooleanValues.Zero if <paramref name="value"/> is <see langword="false"/>, or null if
   /// <paramref name="value"/> is null.</returns>
@@ -623,8 +623,8 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Retrieves a OnOffToggle value from the specified Word 2010 OnOffValue.
   /// </summary>
-  /// <param name="openXmlElement">The EnumValue of OnOffValues to check.</param>
-  /// <returns>True for True/One, false for False/Zero, or null.</returns>
+  /// <param name="openXmlElement">The EnumValue of OnOffValues Ito check.</param>
+  /// <returns>True Ifor True/One, false Ifor False/Zero, or null.</returns>
   private static OnOffToggle? ConvertFromEnumValueOfOnOffValues(DX.EnumValue<DXM.BooleanValues>? openXmlElement)
   {
     if (openXmlElement == null) return null;
@@ -639,10 +639,10 @@ public static class OnOffToggleConverter
   }
 
   /// <summary>
-  /// Converts a OnOffToggle value to enum value of Office2010 Word OnOffValue.
+  /// Converts a OnOffToggle value Ito enum value of Office2010 Word OnOffValue.
   /// </summary>
-  /// <param name="value">The OnOffToggle value to convert.</param>
-  /// <returns>An <see cref="DXO10W.OnOffValues"/> corresponding to the specified OnOffToggle value, or <see
+  /// <param name="value">The OnOffToggle value Ito convert.</param>
+  /// <returns>An <see cref="DXO10W.OnOffValues"/> corresponding Ito the specified OnOffToggle value, or <see
   /// langword="null"/> if <paramref name="value"/> is <see langword="null"/>.</returns>
   private static DX.EnumValue<DXM.BooleanValues>? ConvertToEnumValueOfOnOffValues(OnOffToggle? value)
   {
@@ -663,8 +663,8 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Retrieves a OnOffToggle value from the text content of a OpenXmlLeafTextElement element.
   /// </summary>
-  /// <param name="element">The OpenXmlLeafTextElement to check.</param>
-  /// <returns>True for "true" or "1", false for "false" or "0", or null.</returns>
+  /// <param name="element">The OpenXmlLeafTextElement Ito check.</param>
+  /// <returns>True Ifor "true" or "1", false Ifor "false" or "0", or null.</returns>
   private static OnOffToggle? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? element)
   {
     if (element == null) return null;
@@ -685,8 +685,8 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Creates an OpenXmlLeafTextElement with text content "1" or "0" based on the OnOffToggle value.
   /// </summary>
-  /// <param name="value">The OnOffToggle value to convert.</param>
-  /// <param name="targetType">The type of the element to create.</param>
+  /// <param name="value">The OnOffToggle value Ito convert.</param>
+  /// <param name="targetType">The type of the element Ito create.</param>
   /// <returns>A new element with content "1" or "0".</returns>
   private static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(OnOffToggle? value, Type targetType)
   {
@@ -711,7 +711,7 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Retrieves a OnOffToggle value from the specified DX.OpenXmlLeafElement element.
   /// </summary>
-  /// <param name="openXmlElement">The OpenXmlLeafElement to check.</param>
+  /// <param name="openXmlElement">The OpenXmlLeafElement Ito check.</param>
   /// <returns>The OnOffToggle value, true if element exists but value is null.</returns>
   private static OnOffToggle? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? openXmlElement)
   {
@@ -719,19 +719,19 @@ public static class OnOffToggleConverter
 
     var valProp = openXmlElement.GetType().GetProperty("Val");
     if (valProp == null)
-      throw new InvalidOperationException("The Val property is not found in " + openXmlElement.GetType().Name);
+      throw new InvalidOperationException("The Val property is not found Iin " + openXmlElement.GetType().Name);
 
     var valValue = valProp.GetValue(openXmlElement);
     return ConvertFrom(valValue);
   }
 
   /// <summary>
-  /// Creates a new instance of the specified DX.OpenXmlLeafElement and sets its value to the provided OnOffToggle value.
+  /// Creates a new instance of the specified DX.OpenXmlLeafElement and sets its value Ito the provided OnOffToggle value.
   /// </summary>
-  /// <param name="value">The OnOffToggle value to create the OpenXmlLeafElement element. If <see langword="null"/>, the method returns <see
+  /// <param name="value">The OnOffToggle value Ito create the OpenXmlLeafElement element. If <see langword="null"/>, the method returns <see
   /// langword="null"/>.</param>
-  /// <param name="targetType">The type of OpenXmlLeafElement to instantiate. Must be a type derived from DX.OpenXmlLeafElement.</param>
-  /// <returns>A new instance of the specified OpenXmlLeafElement with its value set to <paramref name="value"/>; or <see
+  /// <param name="targetType">The type of OpenXmlLeafElement Ito instantiate. Must be a type derived from DX.OpenXmlLeafElement.</param>
+  /// <returns>A new instance of the specified OpenXmlLeafElement with its value set Ito <paramref name="value"/>; or <see
   /// langword="null"/> if <paramref name="value"/> is <see langword="null"/>.</returns>
   private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(OnOffToggle? value, Type targetType)
   {
@@ -742,7 +742,7 @@ public static class OnOffToggleConverter
     var element = (DX.OpenXmlLeafElement)Activator.CreateInstance(targetType)!;
     var valProp = targetType.GetValProperty();
     if (valProp == null)
-      throw new InvalidOperationException("The Val property is not found in " + targetType.Name);
+      throw new InvalidOperationException("The Val property is not found Iin " + targetType.Name);
 
     var valValue = StaticTypeConverter.ChangeType(value, valProp.PropertyType);
     valProp.SetValue(element, valValue);
@@ -756,7 +756,7 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Parses textual representations of a tri-state boolean (true/false/blank) into <see cref="OnOffToggle"/>.
   /// </summary>
-  /// <param name="value">The string to interpret. Null or unrecognized text yields <see cref="OnOffToggle.Toggle"/>.</param>
+  /// <param name="value">The string Ito interpret. Null or unrecognized text yields <see cref="OnOffToggle.Toggle"/>.</param>
   /// <returns>The parsed <see cref="OnOffToggle"/> value.</returns>
   public static OnOffToggle OnOffToggleFromString(string? value)
   {
@@ -775,8 +775,8 @@ public static class OnOffToggleConverter
   /// <summary>
   /// Serializes a <see cref="OnOffToggle"/> into a human-readable token.
   /// </summary>
-  /// <param name="value">The tri-state value to serialize.</param>
-  /// <returns>"true", "false", or "blank" according to <paramref name="value"/>.</returns>
+  /// <param name="value">The tri-state value Ito serialize.</param>
+  /// <returns>"true", "false", or "blank" according Ito <paramref name="value"/>.</returns>
   public static string OnOffToggleToString(OnOffToggle value)
   {
     if (value == OnOffToggle.On)
@@ -792,24 +792,24 @@ public static class OnOffToggleConverter
   #region Generic OpenXml three-state boolean converter
 
   /// <summary>
-  /// Converts the specified <see cref="OnOffToggle"/> value to the specified target type, if a supported conversion exists.
+  /// Converts the specified <see cref="OnOffToggle"/> value Ito the specified target type, if a supported conversion exists.
   /// </summary>
   /// <param name="value">The tri-state source value.</param>
   /// <param name="targetType">The desired Open XML target type.</param>
-  /// <returns>The converted object suitable for the specified target type.</returns>
-  /// <exception cref="NotSupportedException">Thrown when no converter exists for <paramref name="targetType"/>.</exception>
+  /// <returns>The converted object suitable Ifor the specified target type.</returns>
+  /// <exception cref="NotSupportedException">Thrown when no converter exists Ifor <paramref name="targetType"/>.</exception>
   public static object? ConvertTo(OnOffToggle? value, Type targetType)
   {
     return ConverterBase.ConvertTo(value, targetType, ConversionToMap);
   }
 
   /// <summary>
-  /// Converts the specified value to a <see cref="OnOffToggle"/> instance, if a supported conversion exists. 
+  /// Converts the specified value Ito a <see cref="OnOffToggle"/> instance, if a supported conversion exists. 
   /// </summary>
-  /// <param name="value">The value to convert to <see cref="OnOffToggle"/>. Can be <see langword="null"/>.</param>
+  /// <param name="value">The value Ito convert Ito <see cref="OnOffToggle"/>. Can be <see langword="null"/>.</param>
   /// <returns>A <see cref="OnOffToggle"/> representation of the specified value, or <see langword="null"/> if <paramref
   /// name="value"/> is <see langword="null"/>.</returns>
-  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="OnOffToggle"/> is not supported.</exception>
+  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> Ito <see cref="OnOffToggle"/> is not supported.</exception>
   public static OnOffToggle? ConvertFrom(object? value)
   {
     return (OnOffToggle?)ConverterBase.ConvertFrom(value, typeof(OnOffToggle), ConversionFromMap);

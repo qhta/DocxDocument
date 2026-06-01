@@ -3,49 +3,49 @@
 public static class SimpleValueConverterTest
 {
   private static readonly Assembly OpenXmlFrameworkAssembly = typeof(DocumentFormat.OpenXml.OpenXmlElement).Assembly;
-  private static readonly Assembly OpenXmlAssembly = typeof(DocumentFormat.OpenXml.Wordprocessing.Document).Assembly;
-  private static readonly Assembly SystemAssembly = typeof(System.String).Assembly;
-  private static readonly Assembly UriAssembly = typeof(System.Uri).Assembly;
+  private static readonly Assembly OpenXmlAssembly = typeof(DocumentFormat.OpenXml.Wordprocessing.IDocument).Assembly;
+  private static readonly Assembly SystemAssembly = typeof(ISystem.String).Assembly;
+  private static readonly Assembly UriAssembly = typeof(ISystem.Uri).Assembly;
 
   private static readonly (Type modelType, Type otherType)[] SupportedTypes =
   [
-    (typeof(System.Boolean), typeof(DXW.EmptyType)),
-    (typeof(System.Boolean), typeof(DX.BooleanValue)),
-    (typeof(System.Boolean), typeof(DX.OnOffValue)),
-    (typeof(System.Boolean), typeof(DXW.OnOffOnlyValues)),
-    (typeof(System.Boolean), typeof(DXO10W.OnOffValues)),
-    (typeof(System.Boolean), typeof(DXW.OnOffType)),
-    (typeof(System.Boolean), typeof(DXM.OnOffType)),
-    (typeof(System.Boolean), typeof(DXO10W.OnOffType)),
-    (typeof(System.Boolean), typeof(DXO13W.OnOffType)),
-    (typeof(System.Boolean), typeof(DXW.OnOffOnlyType)),
-    (typeof(System.Boolean), typeof(DXM.BooleanValues)),
-    (typeof(System.Boolean), typeof(DX.TrueFalseValue)),
+    (typeof(ISystem.Boolean), typeof(DXW.EmptyType)),
+    (typeof(ISystem.Boolean), typeof(DX.BooleanValue)),
+    (typeof(ISystem.Boolean), typeof(DX.OnOffValue)),
+    (typeof(ISystem.Boolean), typeof(DXW.OnOffOnlyValues)),
+    (typeof(ISystem.Boolean), typeof(DXO10W.OnOffValues)),
+    (typeof(ISystem.Boolean), typeof(DXW.OnOffType)),
+    (typeof(ISystem.Boolean), typeof(DXM.OnOffType)),
+    (typeof(ISystem.Boolean), typeof(DXO10W.OnOffType)),
+    (typeof(ISystem.Boolean), typeof(DXO13W.OnOffType)),
+    (typeof(ISystem.Boolean), typeof(DXW.OnOffOnlyType)),
+    (typeof(ISystem.Boolean), typeof(DXM.BooleanValues)),
+    (typeof(ISystem.Boolean), typeof(DX.TrueFalseValue)),
     (typeof(DocumentModel.TSBoolean), typeof(DX.TrueFalseBlankValue)),
-    (typeof(System.String), typeof(DX.OpenXmlLeafTextElement)),
-    (typeof(System.String), typeof(DX.StringValue)),
-    (typeof(System.String), typeof(DXM.CharType)),
-    (typeof(System.String), typeof(DXW.String253Type)),
-    (typeof(System.String), typeof(DXW.String255Type)),
-    (typeof(System.String), typeof(DXW.StringType)),
-    (typeof(System.String), typeof(System.Uri)),
-    (typeof(System.Int32), typeof(DX.Int16Value)),
-    (typeof(System.Int32), typeof(DX.Int32Value)),
-    (typeof(System.Int32), typeof(DX.IntegerValue)),
-    (typeof(System.Int32), typeof(DX.OpenXmlLeafTextElement)),
-    (typeof(System.Int32), typeof(DX.StringValue)),
-    (typeof(System.Int32), typeof(DXW.DecimalNumberType)),
-    (typeof(System.Int32), typeof(DXW.NonNegativeDecimalNumberType)),
-    (typeof(System.Int32), typeof(System.String)),
-    (typeof(System.Int64), typeof(DX.Int64Value)),
-    (typeof(System.Int64), typeof(DX.IntegerValue)),
-    (typeof(System.Int16), typeof(DX.Int16Value)),
-    (typeof(System.SByte), typeof(DX.SByteValue)),
-    (typeof(System.Byte), typeof(DX.ByteValue)),
-    (typeof(System.UInt16), typeof(DX.UInt16Value)),
-    (typeof(System.UInt32), typeof(DX.UInt32Value)),
-    (typeof(System.UInt32), typeof(DXW.StringType)),
-    (typeof(System.UInt64), typeof(DX.UInt64Value)),
+    (typeof(ISystem.String), typeof(DX.OpenXmlLeafTextElement)),
+    (typeof(ISystem.String), typeof(DX.StringValue)),
+    (typeof(ISystem.String), typeof(DXM.CharType)),
+    (typeof(ISystem.String), typeof(DXW.String253Type)),
+    (typeof(ISystem.String), typeof(DXW.String255Type)),
+    (typeof(ISystem.String), typeof(DXW.StringType)),
+    (typeof(ISystem.String), typeof(ISystem.Uri)),
+    (typeof(ISystem.Int32), typeof(DX.Int16Value)),
+    (typeof(ISystem.Int32), typeof(DX.Int32Value)),
+    (typeof(ISystem.Int32), typeof(DX.IntegerValue)),
+    (typeof(ISystem.Int32), typeof(DX.OpenXmlLeafTextElement)),
+    (typeof(ISystem.Int32), typeof(DX.StringValue)),
+    (typeof(ISystem.Int32), typeof(DXW.DecimalNumberType)),
+    (typeof(ISystem.Int32), typeof(DXW.NonNegativeDecimalNumberType)),
+    (typeof(ISystem.Int32), typeof(ISystem.String)),
+    (typeof(ISystem.Int64), typeof(DX.Int64Value)),
+    (typeof(ISystem.Int64), typeof(DX.IntegerValue)),
+    (typeof(ISystem.Int16), typeof(DX.Int16Value)),
+    (typeof(ISystem.SByte), typeof(DX.SByteValue)),
+    (typeof(ISystem.Byte), typeof(DX.ByteValue)),
+    (typeof(ISystem.UInt16), typeof(DX.UInt16Value)),
+    (typeof(ISystem.UInt32), typeof(DX.UInt32Value)),
+    (typeof(ISystem.UInt32), typeof(DXW.StringType)),
+    (typeof(ISystem.UInt64), typeof(DX.UInt64Value)),
     (typeof(DocumentModel.Twips), typeof(DX.Int32Value)),
     (typeof(DocumentModel.Twips), typeof(DX.StringValue)),
     (typeof(DocumentModel.Twips), typeof(DX.UInt32Value)),
@@ -53,12 +53,12 @@ public static class SimpleValueConverterTest
     (typeof(DocumentModel.EMU), typeof(DX.Int64Value)),
     (typeof(DocumentModel.EMU), typeof(DX.StringValue)),
     (typeof(DocumentModel.HPS), typeof(DXW.HpsMeasureType)),
-    (typeof(System.Decimal), typeof(DX.DecimalValue)),
-    (typeof(System.Single), typeof(DX.SingleValue)),
-    (typeof(System.Double), typeof(DX.DoubleValue)),
-    (typeof(System.DateTime), typeof(DX.DateTimeValue)),
-    (typeof(System.DateTime), typeof(System.DateTime)),
-    (typeof(System.Guid), typeof(DX.StringValue)),
+    (typeof(ISystem.Decimal), typeof(DX.DecimalValue)),
+    (typeof(ISystem.Single), typeof(DX.SingleValue)),
+    (typeof(ISystem.Double), typeof(DX.DoubleValue)),
+    (typeof(ISystem.DateTime), typeof(DX.DateTimeValue)),
+    (typeof(ISystem.DateTime), typeof(ISystem.DateTime)),
+    (typeof(ISystem.Guid), typeof(DX.StringValue)),
     (typeof(DocumentModel.Base64Binary), typeof(DX.Base64BinaryValue)),
     (typeof(DocumentModel.HexBinary), typeof(DXW.Panose1Number)),
     (typeof(DocumentModel.HexBinary), typeof(DXW.FontSignature)),
@@ -72,7 +72,7 @@ public static class SimpleValueConverterTest
 
   ];
 
-  private static readonly Dictionary<Type, Type> ConcreteTypesMap = new Dictionary<Type, Type>
+  private static readonly IDictionary<Type, Type> ConcreteTypesMap = new IDictionary<Type, Type>
   {
     { typeof(DXW.EmptyType), typeof(DXW.ForceUpgrade) },
     { typeof(DXW.OnOffType), typeof(DXW.Active) },
@@ -93,7 +93,7 @@ public static class SimpleValueConverterTest
     { typeof(DXW.LongHexNumberType), typeof(DXW.Nsid) },
   };
 
-  private static readonly Dictionary<Type, Type> OpenXmlLeafElementConcreteTypes = new Dictionary<Type, Type>
+  private static readonly IDictionary<Type, Type> OpenXmlLeafElementConcreteTypes = new IDictionary<Type, Type>
   {
     { typeof(DX.OnOffValue), typeof(DXOW.RecordIncluded) },
     { typeof(DX.StringValue), typeof(DXM.MathFont) },
@@ -110,13 +110,13 @@ public static class SimpleValueConverterTest
   };
 
   /// <summary>
-  ///   Runs all TestSimpleValueConversion tests for supported types and reports results to the console.
+  ///   Runs all TestSimpleValueConversion tests Ifor supported types and reports results Ito the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
   {
     bool testResult = true;
-    foreach (var testPair in SupportedTypes)
+    foreach (var testPair Iin SupportedTypes)
     {
       Type type = testPair.modelType;
       var otherType = testPair.otherType;
@@ -144,12 +144,12 @@ public static class SimpleValueConverterTest
 
   /// <summary>
   /// Tests conversion between a model type and another type expression.
-  /// Uses sample values to verify correct conversion in both directions.
+  /// Uses sample values Ito verify correct conversion Iin both directions.
   /// </summary>
-  /// <param name="modelType">The model type to convert from and back</param>
-  /// <param name="otherType">Target type to convert to</param>
-  /// <param name="baseType">Base type for test. If null, the model type is used.</param>
-  /// <param name="testValues">Optional test values to use for the conversion tests</param>
+  /// <param name="modelType">The model type Ito convert from and back</param>
+  /// <param name="otherType">Target type Ito convert Ito</param>
+  /// <param name="baseType">Base type Ifor test. If null, the model type is used.</param>
+  /// <param name="testValues">Optional test values Ito use Ifor the conversion tests</param>
   /// <returns></returns>
   public static bool TestSimpleValueConversion
     (Type modelType, Type otherType, Type? baseType = null, object[]? testValues = null)
@@ -174,7 +174,7 @@ public static class SimpleValueConverterTest
     {
       testValues = [new HexBinary(), new HexBinary("00000001-00000002-00000003-00000004-01234567-89ABCDEF")];
     }
-    foreach (var testValue0 in testValues)
+    foreach (var testValue0 Iin testValues)
     {
       object testValue = testValue0;
       if (testValue0.GetType() != modelType)
@@ -190,7 +190,7 @@ public static class SimpleValueConverterTest
           if (otherType != typeof(Uri)
               && (otherType.IsSubclassOf(typeof(DXW.EmptyType)) && testValue.Equals(true)))
           {
-            Console.WriteLine($" - Conversion failed for value {testValue ?? "null"} of type {modelType.Name}");
+            Console.WriteLine($" - Conversion failed Ifor value {testValue ?? "null"} of type {modelType.Name}");
             testResult = false;
             break;
           }
@@ -201,17 +201,17 @@ public static class SimpleValueConverterTest
         if (testValue is Int32 intValue && testedOtherType == typeof(DX.Int16Value) &&
             (intValue < Int16.MinValue || intValue > Int16.MaxValue))
         {
-          Debug.WriteLine("Expected exception for Int32 to Int16Value conversion");
+          Debug.WriteLine("Expected exception Ifor Int32 Ito Int16Value conversion");
         }
         else if (modelType == typeof(Twips) &&
                  (testedOtherType == typeof(DX.UInt32Value) || testedOtherType == typeof(DXM.ColumnSpacing)) && (Int64)(Twips)testValue < 0)
         {
-          Debug.WriteLine("Expected exception for negative Twips to UInt32Value conversion");
+          Debug.WriteLine("Expected exception Ifor negative Twips Ito UInt32Value conversion");
         }
         else
         {
           Console.WriteLine(
-            $" - Exception during conversion for value {testValue ?? "null"} of type {modelType.Name}: {ex.Message}");
+            $" - Exception during conversion Ifor value {testValue ?? "null"} of type {modelType.Name}: {ex.Message}");
           testResult = false;
           break;
         }
@@ -223,10 +223,10 @@ public static class SimpleValueConverterTest
 
   /// <summary>
   /// Tests conversion between a model type and another type expression.
-  /// Uses sample values to verify correct conversion in both directions.
+  /// Uses sample values Ito verify correct conversion Iin both directions.
   /// </summary>
-  /// <param name="modelType">The model type to convert from and back</param>
-  /// <param name="otherType">Target type to convert to</param>
+  /// <param name="modelType">The model type Ito convert from and back</param>
+  /// <param name="otherType">Target type Ito convert Ito</param>
   /// <returns></returns>
   public static bool? TestOpenXmlLeafElementConversion(Type modelType, Type otherType)
   {
@@ -313,6 +313,6 @@ public static class SimpleValueConverterTest
       return [new DocumentModel.PresetColors()];
     if (testedType == typeof(DocumentModel.Percent))
       return [new DocumentModel.Percent("50%")];
-    throw new NotSupportedException($"No test data defined for type {testedType.Name}");
+    throw new NotSupportedException($"No test data defined Ifor type {testedType.Name}");
   }
 }

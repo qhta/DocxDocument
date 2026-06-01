@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Custom geometry.
@@ -7,32 +7,32 @@ namespace DocumentModel.Drawings;
 public class CustomGeometry: ModelElement
 {
   /// <summary>
-  ///   Adjust Value List.
+  ///   Adjust Value IList.
   /// </summary>
   public AdjustValueList? AdjustValueList { get; set; }
 
   /// <summary>
-  ///   List of Shape Guides.
+  ///   IList of IShape Guides.
   /// </summary>
   public ShapeGuideList? ShapeGuideList { get; set; }
 
   /// <summary>
-  ///   List of Shape Adjust Handles.
+  ///   IList of IShape Adjust Handles.
   /// </summary>
   public AdjustHandleList? AdjustHandleList { get; set; }
 
   /// <summary>
-  ///   List of Shape Connection Sites.
+  ///   IList of IShape Connection Sites.
   /// </summary>
   public ConnectionSiteList? ConnectionSiteList { get; set; }
 
   /// <summary>
-  ///   Shape Text Rectangle.
+  ///   IShape Text IRectangle.
   /// </summary>
-  public Rectangle? Rectangle { get; set; }
+  public IRectangle? IRectangle { get; set; }
 
   /// <summary>
-  ///   List of Shape Paths.
+  ///   IList of IShape Paths.
   /// </summary>
   public PathList? PathList { get; set; }
 }

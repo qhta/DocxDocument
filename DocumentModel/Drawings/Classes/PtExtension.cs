@@ -1,7 +1,7 @@
-using DocumentModel.Drawings.Diagrams;
+﻿using DocumentModel.Drawings.Diagrams;
 
 namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the PtExtension Class.

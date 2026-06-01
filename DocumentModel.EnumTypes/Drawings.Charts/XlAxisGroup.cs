@@ -1,4 +1,4 @@
-
+﻿
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.Charts;
 /// of axis group.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlaxisgroup?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlaxisgroup?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum XlAxisGroup
 {
@@ -19,3 +19,4 @@ public enum XlAxisGroup
   /// </summary>
   Secondary
 }
+

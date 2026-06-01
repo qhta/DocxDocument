@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.ChartDrawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the NumericDimension Class.
@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public class NumericDimension: ModelElement
 {
   /// <summary>
-  ///   type, this property is only available in Office 2016 and later.
+  ///   type, this property is Ionly available Iin Office 2016 and later.
   /// </summary>
   public NumericDimensionType? Type { get; set; }
 

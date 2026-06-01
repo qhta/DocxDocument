@@ -1,24 +1,24 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Printed Page Orientation
+///   Printed IPage Orientation
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum PageSetupOrientationKind
 {
   /// <summary>
-  ///   Default Page Orientation.
+  ///   Default IPage Orientation.
   /// </summary>
   Default,
 
   /// <summary>
-  ///   Portrait Page.
+  ///   Portrait IPage.
   /// </summary>
   Portrait,
 
   /// <summary>
-  ///   Landscape Page.
+  ///   Landscape IPage.
   /// </summary>
   Landscape
 }

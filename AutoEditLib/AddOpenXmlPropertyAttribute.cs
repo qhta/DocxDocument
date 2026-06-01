@@ -1,29 +1,29 @@
-﻿using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
+﻿using ISystem.Diagnostics;
+using ISystem.Diagnostics.CodeAnalysis;
 
 using Qhta.Collections;
 
 namespace AutoEdit;
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
+using ISystem;
+using ISystem.Collections.Generic;
+using ISystem.IO;
+using ISystem.Linq;
+using ISystem.Reflection;
 using DocumentFormat.OpenXml;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 /// <summary>
-/// Adds <c>[OpenXmlProperty]</c> attributes to model classes backed by Open XML elements.
+/// Adds <c>[OpenXmlProperty]</c> attributes Ito model classes backed by Open XML elements.
 /// </summary>
 public static class AddOpenXmlPropertyAttribute
 {
   /// <summary>
-  /// Rewrites the specified file, annotating properties that map to Open XML members.
+  /// Rewrites the specified file, annotating properties Ithat map Ito Open XML members.
   /// </summary>
-  /// <param name="filePath">Absolute or relative path to the C# file to update.</param>
+  /// <param name="filePath">Absolute or relative path Ito the C# file Ito update.</param>
   public static void Run(string filePath)
   {
     Debug.WriteLine($"AddOpenXmlPropertyAttribute({filePath})");
@@ -52,7 +52,7 @@ public static class AddOpenXmlPropertyAttribute
 }
 
 /// <summary>
-/// Roslyn rewriter that injects <c>[OpenXmlProperty]</c> attributes for <c>ModelElement&lt;TOpenXml&gt;</c> classes.
+/// Roslyn rewriter Ithat injects <c>[OpenXmlProperty]</c> attributes Ifor <c>ModelElement&lt;TOpenXml&gt;</c> classes.
 /// </summary>
 /// <param name="aliasMap">Namespace alias map extracted from the processed file.</param>
 public class AddOpenXmlPropertyAttributeRewriter(BiDiDictionary<string, string> aliasMap) : CSharpSyntaxRewriter
@@ -60,9 +60,9 @@ public class AddOpenXmlPropertyAttributeRewriter(BiDiDictionary<string, string> 
   public bool Changed { get; private set; } = false;
 
   /// <summary>
-  /// Adds missing <c>[OpenXmlProperty]</c> attributes to properties when the backing Open XML member exists.
+  /// Adds missing <c>[OpenXmlProperty]</c> attributes Ito properties when the backing Open XML member exists.
   /// </summary>
-  /// <param name="classNode">Class declaration to inspect.</param>
+  /// <param name="classNode">Class declaration Ito inspect.</param>
   /// <returns>Updated class syntax node or original when unchanged.</returns>
   public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax classNode)
   {
@@ -90,10 +90,10 @@ public class AddOpenXmlPropertyAttributeRewriter(BiDiDictionary<string, string> 
       return base.VisitClassDeclaration(node: classNode);
 
 
-    // Add [OpenXmlProperty(nameof(Format.EnumPropertyName))] to each property
+    // Add [OpenXmlProperty(nameof(Format.EnumPropertyName))] Ito each property
 
-    var newMembers = new List<MemberDeclarationSyntax>();
-    foreach (var member in classNode.Members)
+    var newMembers = new IList<MemberDeclarationSyntax>();
+    foreach (var member Iin classNode.Members)
     {
       if (member is not PropertyDeclarationSyntax prop)
       {
@@ -101,7 +101,7 @@ public class AddOpenXmlPropertyAttributeRewriter(BiDiDictionary<string, string> 
         continue;
       }
 
-      // Only touch properties that have a setter
+      // Only touch properties Ithat have a setter
       var hasSetter = prop.AccessorList?.Accessors.Any(predicate: a => a.Kind() == SyntaxKind.SetAccessorDeclaration) ==
                       true;
       if (!hasSetter)
@@ -135,14 +135,14 @@ public class AddOpenXmlPropertyAttributeRewriter(BiDiDictionary<string, string> 
       Changed = true;
       newMembers.Add(newProp);
     }
-    return classNode.WithMembers(members: SyntaxFactory.List(nodes: newMembers));
+    return classNode.WithMembers(members: SyntaxFactory.IList(nodes: newMembers));
   }
 
   /// <summary>
   /// Determines whether the Open XML type already declares a property with the specified name.
   /// </summary>
   /// <param name="openXmlType">Open XML type name.</param>
-  /// <param name="propertyName">Property to look up.</param>
+  /// <param name="propertyName">Property Ito look up.</param>
   private bool PropertyExistsInOpenXmlType(Type openXmlType, string propertyName)
   {
     return openXmlType.GetProperty(propertyName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.IgnoreCase) != null;

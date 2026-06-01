@@ -1,27 +1,27 @@
-namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
-/// Specifies the view presented to the user in a file dialog box.
+/// Specifies the view presented Ito the user Iin a file dialog box.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofiledialogview?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofiledialogview?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum FileDialogView
 {
   /// <summary>
-  /// Files displayed in a list without details.
+  /// Files displayed Iin a list without details.
   /// </summary>
-  List = 1,
+  IList = 1,
   /// <summary>
-  /// Files displayed in a list with detail information.
+  /// Files displayed Iin a list with detail information.
   /// </summary>
   Details,
   /// <summary>
-  /// Files displayed in a list with a pane showing the selected file's properties.
+  /// Files displayed Iin a list with a pane showing the selected file's properties.
   /// </summary>
   Properties,
   /// <summary>
-  /// Files displayed in a list with a preview pane showing the selected file.
+  /// Files displayed Iin a list with a preview pane showing the selected file.
   /// </summary>
   Preview,
   /// <summary>
@@ -37,7 +37,7 @@ public enum FileDialogView
   /// </summary>
   SmallIcons,
   /// <summary>
-  /// Files displayed in Web view.
+  /// Files displayed Iin Web view.
   /// </summary>
   WebView,
   /// <summary>
@@ -45,3 +45,4 @@ public enum FileDialogView
   /// </summary>
   Tiles
 }
+

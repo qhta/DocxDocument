@@ -1,24 +1,24 @@
-﻿using System.Collections;
+﻿using ISystem.Collections;
 
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+using ISystem.Collections.Generic;
+using ISystem.Diagnostics;
+using ISystem.Linq;
 
 namespace AutoEdit;
 
 /// <summary>
-/// Generates partial files containing ShouldSerialize helpers for model classes by analyzing their properties.
+/// Generates partial files containing ShouldSerialize helpers Ifor model classes by analyzing their properties.
 /// </summary>
 public class GenerateShouldSerializeFunctions
 {
   private static readonly string[] ignoredAttributes = ["XmlIgnore", "JsonIgnore", "NotMapped"];
   /// <summary>
-  /// Entry point for generating ShouldSerialize helpers for the specified source file.
+  /// Entry point Ifor generating ShouldSerialize helpers Ifor the specified source file.
   /// </summary>
-  /// <param name="filePath">Path to the C# file to analyze.</param>
+  /// <param name="filePath">Path Ito the C# file Ito analyze.</param>
   public static void Run(string filePath)
   {
     var filename = Path.GetFileNameWithoutExtension(filePath);
@@ -34,8 +34,8 @@ public class GenerateShouldSerializeFunctions
         MetadataReference.CreateFromFile(typeof(ICollection).Assembly.Location))
       .AddSyntaxTrees(tree);
     var semanticModel = compilation.GetSemanticModel(tree);
-    var iCollectionType = compilation.GetTypeByMetadataName("System.Collections.ICollection");
-    var iGenericCollectionType = compilation.GetTypeByMetadataName("System.Collections.Generic.ICollection`1");
+    var iCollectionType = compilation.GetTypeByMetadataName("ISystem.Collections.ICollection");
+    var iGenericCollectionType = compilation.GetTypeByMetadataName("ISystem.Collections.Generic.ICollection`1");
 
     BaseNamespaceDeclarationSyntax? namespaceNode = root.DescendantNodes().OfType<NamespaceDeclarationSyntax>().FirstOrDefault();
     if (namespaceNode == null)
@@ -63,8 +63,8 @@ public class GenerateShouldSerializeFunctions
         p.AccessorList.Accessors.Any(a => a.Kind() == SyntaxKind.SetAccessorDeclaration))
 
       .ToList();
-    Dictionary<string, string> propertyTypes = new();
-    foreach (var prop in properties)
+    IDictionary<string, string> propertyTypes = new();
+    foreach (var prop Iin properties)
     {
       var propName = prop.Identifier.Text;
       var propType = prop.Type;
@@ -151,3 +151,4 @@ public partial class {classDecl}
     AddPartialToClass.Run(filePath);
   }
 }
+

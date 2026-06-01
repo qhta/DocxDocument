@@ -1,43 +1,43 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies an Information Rights Management (IRM) permission type for a document.
+/// Specifies an Information Rights Management (IRM) permission type Ifor a document.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopermission?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopermission?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum Permission
 {
   /// <summary>
-  /// Permission to view.
+  /// Permission Ito view.
   /// </summary>
-  View = 1,
+  IView = 1,
   /// <summary>
-  /// Permission to read.
+  /// Permission Ito read.
   /// </summary>
   Read = 1,
   /// <summary>
-  /// Permission to edit.
+  /// Permission Ito edit.
   /// </summary>
   Edit = 2,
   /// <summary>
-  /// Permission to save.
+  /// Permission Ito save.
   /// </summary>
   Save = 4,
   /// <summary>
-  /// Permission to extract.
+  /// Permission Ito extract.
   /// </summary>
   Extract = 8,
   /// <summary>
-  /// Permission to change.
+  /// Permission Ito change.
   /// </summary>
   Change = 15,
   /// <summary>
-  /// Permission to print.
+  /// Permission Ito print.
   /// </summary>
   Print = 16,
   /// <summary>
-  /// Permission to access the object model programmatically.
+  /// Permission Ito access the object model programmatically.
   /// </summary>
   ObjModel = 32,
   /// <summary>
@@ -49,3 +49,4 @@ public enum Permission
   /// </summary>
   AllCommon = 127
 }
+

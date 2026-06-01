@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Data Model.
@@ -7,12 +7,12 @@ namespace DocumentModel.Drawings.Diagrams;
 public class DataModelRoot: ModelElement
 {
   /// <summary>
-  ///   Point List.
+  ///   IPoint IList.
   /// </summary>
   public PointList? PointList { get; set; }
 
   /// <summary>
-  ///   Connection List.
+  ///   Connection IList.
   /// </summary>
   public ConnectionList? ConnectionList { get; set; }
 

@@ -1,13 +1,13 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Value Axis.
+///   Value IAxis.
 /// </summary>
 public class ValueAxis: ModelElement
 {
   /// <summary>
-  ///   Axis ID.
+  ///   IAxis ID.
   /// </summary>
   public UInt32? AxisId { get; set; }
 
@@ -22,17 +22,17 @@ public class ValueAxis: ModelElement
   public bool? Delete { get; set; }
 
   /// <summary>
-  ///   Axis Position.
+  ///   IAxis Position.
   /// </summary>
   public AxisPositionKind? AxisPosition { get; set; }
 
   /// <summary>
-  ///   Major Gridlines.
+  ///   Major IGridlines.
   /// </summary>
   public MajorGridlines? MajorGridlines { get; set; }
 
   /// <summary>
-  ///   Minor Gridlines.
+  ///   Minor IGridlines.
   /// </summary>
   public MinorGridlines? MinorGridlines { get; set; }
 
@@ -72,7 +72,7 @@ public class ValueAxis: ModelElement
   public TextProperties? TextProperties { get; set; }
 
   /// <summary>
-  ///   Crossing Axis ID.
+  ///   Crossing IAxis ID.
   /// </summary>
   public UInt32? CrossingAxis { get; set; }
 

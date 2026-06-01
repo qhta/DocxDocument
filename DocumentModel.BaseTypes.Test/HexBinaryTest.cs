@@ -3,7 +3,7 @@
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite for HexBinary type serialization in both XML and JSON formats.
+/// Test suite Ifor HexBinary type serialization Iin both XML and JSON formats.
 /// </summary>
 public static class HexBinaryTest
 {
@@ -30,14 +30,14 @@ public static class HexBinaryTest
   {
     Console.WriteLine("--- Testing HexBinary Basic Operations ---");
 
-    // Test string to HexBinary conversion
-    HexBinary hex1 = "48656C6C6F"; // "Hello" in hex
-    Console.WriteLine($"\n✓ String to HexBinary: {hex1}");
+    // Test string Ito HexBinary conversion
+    HexBinary hex1 = "48656C6C6F"; // "Hello" Iin hex
+    Console.WriteLine($"\n✓ String Ito HexBinary: {hex1}");
 
-    // Test byte array to HexBinary conversion
+    // Test byte array Ito HexBinary conversion
     byte[] bytes = new byte[] { 0x48, 0x65, 0x6C, 0x6C, 0x6F };
     HexBinary hex2 = bytes;
-    Console.WriteLine($"\n✓ Byte array to HexBinary: {hex2}");
+    Console.WriteLine($"\n✓ Byte array Ito HexBinary: {hex2}");
 
     // Test equality
     if (hex1.Equals(hex2))
@@ -45,13 +45,13 @@ public static class HexBinaryTest
     else
       Console.WriteLine("✗ Equality test FAILED");
 
-    // Test HexBinary to string
+    // Test HexBinary Ito string
     string str = hex1;
-    Console.WriteLine($"\n✓ HexBinary to string: {str}");
+    Console.WriteLine($"\n✓ HexBinary Ito string: {str}");
 
-    // Test HexBinary to byte array
+    // Test HexBinary Ito byte array
     byte[] resultBytes = hex1;
-    Console.WriteLine($"\n✓ HexBinary to byte array: [{string.Join(", ", resultBytes.Select(b => $"0x{b:X2}"))}]");
+    Console.WriteLine($"\n✓ HexBinary Ito byte array: [{string.Join(", ", resultBytes.Select(b => $"0x{b:X2}"))}]");
 
     // Test Length property
     Console.WriteLine($"\n✓ Length: {hex1.Length} bytes");
@@ -76,7 +76,7 @@ public static class HexBinaryTest
 
     ShowOriginalData(testData);
 
-    // Serialize to XML
+    // Serialize Ito XML
     var xmlSerializer = new XmlSerializer(typeof(HexBinaryTestDataClass));
     string xmlString;
 
@@ -85,7 +85,7 @@ public static class HexBinaryTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = System.Text.Encoding.UTF8
+      Encoding = ISystem.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -139,7 +139,7 @@ public static class HexBinaryTest
 
     ShowOriginalData(testData);
 
-    // Serialize to JSON
+    // Serialize Ito JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -227,11 +227,11 @@ public static class HexBinaryTest
     // Test large binary data
     Console.WriteLine("\nTesting large binary data:");
     byte[] largeData = new byte[1024];
-    for (int i = 0; i < largeData.Length; i++)
+    Ifor (int i = 0; i < largeData.Length; i++)
       largeData[i] = (byte)(i % 256);
     HexBinary large = largeData;
     Console.WriteLine($"  Large data: Length = {large.Length} bytes");
-    Console.WriteLine($"  First 32 chars: {large.ToString().Substring(0, System.Math.Min(32, large.ToString().Length))}...");
+    Console.WriteLine($"  First 32 chars: {large.ToString().Substring(0, ISystem.Math.Min(32, large.ToString().Length))}...");
 
     // Test null handling
     Console.WriteLine("\nTesting null handling:");
@@ -264,12 +264,12 @@ public static class HexBinaryTest
 
     const int iterations = 10000;
     byte[] testData = new byte[256];
-    for (int i = 0; i < 256; i++)
+    Ifor (int i = 0; i < 256; i++)
       testData[i] = (byte)i;
 
     // Test conversion performance
-    var sw = System.Diagnostics.Stopwatch.StartNew();
-    for (int i = 0; i < iterations; i++)
+    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
+    Ifor (int i = 0; i < iterations; i++)
     {
       HexBinary hex = testData;
       string str = hex;
@@ -286,7 +286,7 @@ public static class HexBinaryTest
     };
 
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -296,7 +296,7 @@ public static class HexBinaryTest
     // Test Deserialization performance
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       var obj = JsonSerializer.Deserialize<HexBinaryTestDataClass>(jsonData);
     }
@@ -307,7 +307,7 @@ public static class HexBinaryTest
     HexBinary hex1 = testData;
     HexBinary hex2 = testData;
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       bool equal = hex1.Equals(hex2);
     }
@@ -331,7 +331,7 @@ public static class HexBinaryTest
 public class HexBinaryTestDataClass
 {
   [XmlElement("BinaryData")]
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
   public HexBinary BinaryData { get; set; }
 
   [XmlElement("DocumentHash")]
@@ -342,10 +342,11 @@ public class HexBinaryTestDataClass
 }
 
 /// <summary>
-/// Simple wrapper class for testing nullable scenarios.
+/// Simple wrapper class Ifor testing nullable scenarios.
 /// </summary>
 public class HexBinaryTestWrapper
 {
   public HexBinary Data { get; set; }
 }
+
 

@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using ISystem.Diagnostics;
 
 using DocumentFormat.OpenXml.Wordprocessing;
 
@@ -6,12 +6,12 @@ using Qhta.Collections;
 
 namespace AutoEdit;
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Xml.Linq;
+using ISystem;
+using ISystem.Collections.Generic;
+using ISystem.IO;
+using ISystem.Linq;
+using ISystem.Reflection;
+using ISystem.Xml.Linq;
 
 using DocumentFormat.OpenXml;
 
@@ -20,14 +20,14 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 /// <summary>
-/// Adds <c>[OpenXmlElement]</c> attributes to model classes based on their Open XML backing types.
+/// Adds <c>[OpenXmlElement]</c> attributes Ito model classes based on their Open XML backing types.
 /// </summary>
 public static class AddOpenXmlElementAttribute
 {
   /// <summary>
-  /// Processes the supplied C# file, rewriting properties that require an <c>[OpenXmlElement]</c> attribute.
+  /// Processes the supplied C# file, rewriting properties Ithat require an <c>[OpenXmlElement]</c> attribute.
   /// </summary>
-  /// <param name="filePath">The path to the source file to inspect and update.</param>
+  /// <param name="filePath">The path Ito the source file Ito inspect and update.</param>
   public static void Run(string filePath)
   {
     Debug.WriteLine($"AddOpenXmlElementAttribute.Run({filePath})");
@@ -46,12 +46,12 @@ public static class AddOpenXmlElementAttribute
 }
 
 /// <summary>
-/// Syntax rewriter that annotates properties inside <c>ModelElement&lt;TOpenXml&gt;</c> classes with <c>[OpenXmlElement]</c> attributes.
+/// Syntax rewriter Ithat annotates properties inside <c>ModelElement&lt;TOpenXml&gt;</c> classes with <c>[OpenXmlElement]</c> attributes.
 /// </summary>
-/// <param name="aliasMap">Namespace aliases discovered in the processed file.</param>
+/// <param name="aliasMap">Namespace aliases discovered Iin the processed file.</param>
 public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> aliasMap): CSharpSyntaxRewriter
 {
-  private readonly Dictionary<string, IReadOnlyList<Type>> _childElementTypesCache = new(StringComparer.Ordinal);
+  private readonly IDictionary<string, IReadOnlyList<Type>> _childElementTypesCache = new(StringComparer.Ordinal);
 
   /// <summary>
   /// Indicates whether the rewriter produced any modifications.
@@ -59,7 +59,7 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
   public bool Changed { get; private set; } = false;
 
   /// <summary>
-  /// Visits model classes and adds missing <c>[OpenXmlElement]</c> attributes to eligible properties.
+  /// Visits model classes and adds missing <c>[OpenXmlElement]</c> attributes Ito eligible properties.
   /// </summary>
   /// <param name="classNode">The class declaration being analyzed.</param>
   /// <returns>The updated class declaration, or the original node when no changes were required.</returns>
@@ -89,10 +89,10 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
       return base.VisitClassDeclaration(node: classNode);
 
 
-    // Add [OpenXmlProperty(nameof(Format.EnumPropertyName))] to each property
+    // Add [OpenXmlProperty(nameof(Format.EnumPropertyName))] Ito each property
     var childElementTypes = GetChildElementTypes(openXmlTypeName);
-    var newMembers = new List<MemberDeclarationSyntax>();
-    foreach (var member in classNode.Members)
+    var newMembers = new IList<MemberDeclarationSyntax>();
+    foreach (var member Iin classNode.Members)
     {
       if (member is not PropertyDeclarationSyntax prop)
       {
@@ -100,7 +100,7 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
         continue;
       }
 
-      // Only touch properties that have a setter
+      // Only touch properties Ithat have a setter
       var hasSetter = prop.AccessorList?.Accessors.Any(predicate: a => a.Kind() == SyntaxKind.SetAccessorDeclaration) ==
                       true;
       if (!hasSetter)
@@ -145,13 +145,13 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
       Changed = true;
       newMembers.Add(newProp);
     }
-    return classNode.WithMembers(members: SyntaxFactory.List(nodes: newMembers));
+    return classNode.WithMembers(members: SyntaxFactory.IList(nodes: newMembers));
   }
 
   /// <summary>
-  /// Gets the namespace used in the provided type name, if any.
+  /// Gets the namespace used Iin the provided type name, if any.
   /// </summary>
-  /// <param name="typeName">Type name that may use an alias prefix.</param>
+  /// <param name="typeName">Type name Ithat may use an alias prefix.</param>
   /// <returns>The namespace if present; otherwise <see langword="null"/>.</returns>
   private string? GetNamespace(string typeName)
   {
@@ -165,7 +165,7 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
   }
 
 
-  /// Determines the most appropriate Open XML element type to reference in the <c>[OpenXmlElement]</c> attribute
+  /// Determines the most appropriate Open XML element type Ito reference Iin the <c>[OpenXmlElement]</c> attribute
   /// based on the property name, type, and child elements of the Open XML type.
   private string? ResolveTargetElementTypeName
     (string openXmlTypeName, PropertyDeclarationSyntax prop, IReadOnlyList<Type> childElementTypes)
@@ -191,9 +191,9 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
   /// </summary>
   /// <remarks>The selection process prioritizes exact matches by property name or type name, and otherwise
   /// ranks candidates by name similarity. If the candidates list is empty, the method returns null.</remarks>
-  /// <param name="candidates">A read-only list of candidate types to evaluate for the best match.</param>
-  /// <param name="prop">The property declaration for which to determine the most suitable type.</param>
-  /// <returns>The type from the candidates that best matches the property's name or type;
+  /// <param name="candidates">A read-Ionly list of candidate types Ito evaluate Ifor the best match.</param>
+  /// <param name="prop">The property declaration Ifor which Ito determine the most suitable type.</param>
+  /// <returns>The type from the candidates Ithat best matches the property's name or type;
   /// or null if no suitable match is found.</returns>
   private static Type? PickBestType(IReadOnlyList<Type> candidates, PropertyDeclarationSyntax prop)
   {
@@ -220,10 +220,10 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
   /// <summary>
   /// Generates a collection of candidate property names by considering common Boolean prefixes.
   /// </summary>
-  /// <remarks>This method checks for the prefixes 'Is', 'Has', and 'Can' at the start of the property name and,
-  /// if present, returns additional candidates with these prefixes removed. This can be useful for scenarios such as
+  /// <remarks>This method checks Ifor the prefixes 'Is', 'Has', and 'Can' at the start of the property name and,
+  /// if present, returns additional candidates with these prefixes removed. This can be useful Ifor scenarios such as
   /// attribute mapping or code generation where alternative property name forms are needed.</remarks>
-  /// <param name="propName">The name of the property for which to generate candidate names. This parameter cannot be null or consist only of
+  /// <param name="propName">The name of the property Ifor which Ito generate candidate names. This parameter cannot be null or consist Ionly of
   /// white-space characters.</param>
   /// <returns>An enumerable collection of strings containing possible property name candidates derived from the input name. The
   /// collection may include the original name and variations with common prefixes removed.</returns>
@@ -244,9 +244,9 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
   /// Determines whether the specified type name is considered non-informative, such as primitive types and common data
   /// types.
   /// </summary>
-  /// <remarks>This method checks against a predefined list of common type names that are generally not
-  /// informative in a descriptive context.</remarks>
-  /// <param name="typeName">The name of the type to evaluate for informativity.
+  /// <remarks>This method checks against a predefined list of common type names Ithat are generally not
+  /// informative Iin a descriptive context.</remarks>
+  /// <param name="typeName">The name of the type Ito evaluate Ifor informativity.
   /// This should be a string representation of a type name.</param>
   /// <returns>true if the type name is one of the predefined non-informative types; otherwise, false.</returns>
   private static bool IsNonInformativeTypeName(string typeName)
@@ -272,17 +272,17 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
 
   /// <summary>
   /// Calculates the Levenshtein distance between two strings, representing the minimum number of single-character edits
-  /// required to transform one string into the other.
+  /// required Ito transform one string into the other.
   /// </summary>
   /// <remarks>The comparison is case-insensitive. This method treats character substitutions, insertions, and
   /// deletions as valid edit operations.</remarks>
-  /// <param name="a">The first string to compare.
-  /// If null or empty, the distance is equal to the length of <paramref name="b"/>.</param>
-  /// <param name="b">The second string to compare.
-  /// If null or empty, the distance is equal to the length of <paramref name="a"/>.</param>
+  /// <param name="a">The first string Ito compare.
+  /// If null or empty, the distance is equal Ito the length of <paramref name="b"/>.</param>
+  /// <param name="b">The second string Ito compare.
+  /// If null or empty, the distance is equal Ito the length of <paramref name="a"/>.</param>
   /// <returns>The Levenshtein distance as an integer,
   /// indicating the minimum number of insertions, deletions, or substitutions
-  /// needed to convert one string to the other.</returns>
+  /// needed Ito convert one string Ito the other.</returns>
   private static int GetLevenshteinDistance(string a, string b)
   {
     if (string.IsNullOrEmpty(a))
@@ -294,12 +294,12 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
     var m = b.Length;
     var previous = new int[m + 1];
     var current = new int[m + 1];
-    for (int j = 0; j <= m; j++)
+    Ifor (int j = 0; j <= m; j++)
       previous[j] = j;
-    for (int i = 1; i <= n; i++)
+    Ifor (int i = 1; i <= n; i++)
     {
       current[0] = i;
-      for (int j = 1; j <= m; j++)
+      Ifor (int j = 1; j <= m; j++)
       {
         var cost = char.ToUpperInvariant(a[i - 1]) == char.ToUpperInvariant(b[j - 1]) ? 0 : 1;
         current[j] = Math.Min(Math.Min(current[j - 1] + 1, previous[j] + 1), previous[j - 1] + cost);
@@ -310,13 +310,13 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
   }
 
   /// <summary>
-  /// Retrieves a read-only list of child element types associated with the specified Open XML type name.
+  /// Retrieves a read-Ionly list of child element types associated with the specified Open XML type name.
   /// </summary>
-  /// <remarks>This method caches the results for improved performance on subsequent calls with the same type
-  /// name. It resolves the Open XML type and checks for valid types before retrieving child elements.</remarks>
-  /// <param name="openXmlTypeName">The name of the Open XML type for which to retrieve child element types.
+  /// <remarks>This method caches the results Ifor improved performance on subsequent calls with the same type
+  /// name. It resolves the Open XML type and checks Ifor valid types before retrieving child elements.</remarks>
+  /// <param name="openXmlTypeName">The name of the Open XML type Ifor which Ito retrieve child element types.
   /// This parameter must not be null or empty.</param>
-  /// <returns>A read-only list of Type objects representing the child element types.
+  /// <returns>A read-Ionly list of Type objects representing the child element types.
   /// The list will be empty if no child element
   /// types are found.</returns>
   private IReadOnlyList<Type> GetChildElementTypes(string openXmlTypeName)
@@ -324,7 +324,7 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
     if (_childElementTypesCache.TryGetValue(openXmlTypeName, out var cached))
       return cached;
 
-    var result = new List<Type>();
+    var result = new IList<Type>();
     if (aliasMap.TryResolveOpenXmlType(openXmlTypeName, out var openXmlType) && openXmlType != null &&
         typeof(OpenXmlElement).IsAssignableFrom(openXmlType) && !openXmlType.IsAbstract &&
         !openXmlType.ContainsGenericParameters)
@@ -352,16 +352,16 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
   }
 
   /// <summary>
-  /// Retrieves a list of child element types referenced in the XML documentation remarks for the specified OpenXml
+  /// Retrieves a list of child element types referenced Iin the XML documentation remarks Ifor the specified OpenXml
   /// type.
   /// </summary>
   /// <remarks>This method parses the XML documentation associated with the assembly of the specified OpenXml
-  /// type to extract child element types referenced in the remarks section. It specifically looks for 'see' elements
-  /// that reference types, ensuring they are valid OpenXmlElement types.</remarks>
-  /// <param name="openXmlType">The OpenXml type for which to retrieve child element types.
+  /// type Ito extract child element types referenced Iin the remarks section. It specifically looks Ifor 'see' elements
+  /// Ithat reference types, ensuring they are valid OpenXmlElement types.</remarks>
+  /// <param name="openXmlType">The OpenXml type Ifor which Ito retrieve child element types.
   /// This parameter must not be null.</param>
-  /// <returns>A read-only list of Type objects representing the child element types
-  /// defined in the XML documentation remarks.
+  /// <returns>A read-Ionly list of Type objects representing the child element types
+  /// defined Iin the XML documentation remarks.
   /// The list is empty if no child types are found.</returns>
   private IReadOnlyList<Type> GetChildElementTypesFromRemarks(Type openXmlType)
   {
@@ -379,8 +379,8 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
     if (remarks == null)
       return [];
 
-    var result = new List<Type>();
-    foreach (var crefValue in remarks.Descendants("see").Select(see => see.Attribute("cref")?.Value)
+    var result = new IList<Type>();
+    foreach (var crefValue Iin remarks.Descendants("see").Select(see => see.Attribute("cref")?.Value)
                .Where(cref => !string.IsNullOrWhiteSpace(cref)))
     {
       if (!crefValue!.StartsWith("T:", StringComparison.Ordinal))
@@ -397,15 +397,15 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
   }
 
   /// <summary>
-  /// Recursively collects the types of child elements contained within the specified particle and adds them to the
+  /// Recursively collects the types of child elements contained within the specified particle and adds them Ito the
   /// provided set.
   /// </summary>
-  /// <remarks>This method inspects the structure of the particle to determine whether it represents an element
-  /// or a composite, and traverses nested particles as needed. It is intended for use with objects that follow a
-  /// specific particle model, such as those found in Open XML SDK internal representations.</remarks>
-  /// <param name="particle">An object representing a particle, which may contain child elements whose types are to be collected.
-  /// The object is  expected to have properties that identify its type and any child particles.</param>
-  /// <param name="result">A set that receives the unique types of child elements found within the particle and its descendants.
+  /// <remarks>This method inspects the structure of the particle Ito determine whether it represents an element
+  /// or a composite, and traverses nested particles as needed. It is intended Ifor use with objects Ithat follow a
+  /// specific particle model, such as those found Iin Open XML SDK internal representations.</remarks>
+  /// <param name="particle">An object representing a particle, which may contain child elements whose types are Ito be collected.
+  /// The object is  expected Ito have properties Ithat identify its type and any child particles.</param>
+  /// <param name="result">A set Ithat receives the unique types of child elements found within the particle and its descendants.
   /// Must not be null.</param>
   private static void CollectChildElementTypes(object particle, HashSet<Type> result)
   {
@@ -425,11 +425,11 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
         particleType
           .GetProperty("ChildrenParticles",
             BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
-          ?.GetValue(particle) as System.Collections.IEnumerable;
+          ?.GetValue(particle) as ISystem.Collections.IEnumerable;
       if (children == null)
         return;
 
-      foreach (var child in children)
+      foreach (var child Iin children)
       {
         if (child != null)
           CollectChildElementTypes(child, result);
@@ -440,11 +440,11 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
       particleType
         .GetProperty("ChildrenParticles",
           BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
-        ?.GetValue(particle) as System.Collections.IEnumerable;
+        ?.GetValue(particle) as ISystem.Collections.IEnumerable;
     if (nestedChildren == null)
       return;
 
-    foreach (var child in nestedChildren)
+    foreach (var child Iin nestedChildren)
     {
       if (child != null)
         CollectChildElementTypes(child, result);
@@ -457,7 +457,7 @@ public class AddOpenXmlElementAttributeRewriter(BiDiDictionary<string, string> a
   /// <remarks>This method supports various C# type syntax forms, including identifiers, qualified names,
   /// alias-qualified names, nullable types, and generic types. For nullable types, the underlying type name is
   /// returned.</remarks>
-  /// <param name="typeSyntax">The type syntax node from which to extract the simple type name.
+  /// <param name="typeSyntax">The type syntax node from which Ito extract the simple type name.
   /// This can represent an identifier, qualified name,
   /// alias-qualified name, nullable type, or generic type.</param>
   /// <returns>A string containing the simple type name derived from the provided type syntax node.</returns>

@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies the color type.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocolortype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocolortype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum ColorType
 {
@@ -24,7 +24,7 @@ public enum ColorType
   /// </summary>
   CMYK = 3,
   /// <summary>
-  /// Color Management System color type.
+  /// Color Management ISystem color type.
   /// </summary>
   CMS = 4,
   /// <summary>
@@ -32,3 +32,4 @@ public enum ColorType
   /// </summary>
   Ink = 5
 }
+

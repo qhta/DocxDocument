@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the SizeRepresents enumeration.
-/// Used in types such as BubbleChart, ChartGroup, BubbleChartConverter.
+/// Used Iin types such as BubbleChart, IChartGroup, BubbleChartConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.SizeRepresentsValues))]
@@ -19,3 +19,4 @@ public enum SizeRepresents
   [OpenXmlEnumValue("Width")]
   Width
 }
+

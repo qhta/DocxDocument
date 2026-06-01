@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Type of Red, Green, Blue compacted to UInt32
+/// Type of Red, Green, Blue compacted Ito UInt32
 /// </summary>
 [TypeConverter(typeof(RGBTypeXmlConverter))]
 public struct RGB : IEquatable<RGB>
@@ -59,7 +59,7 @@ public struct RGB : IEquatable<RGB>
   public Byte B { get; set; }
 
 
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
   public static implicit operator RGB(UInt32 value) => new RGB { R = (byte)(value >> 16), G = (byte)(value >> 8), B = (byte)(value) };
   public static implicit operator UInt32(RGB value) => (UInt32)value.R << 16 | (UInt32)(value.G << 8) | value.B;
 

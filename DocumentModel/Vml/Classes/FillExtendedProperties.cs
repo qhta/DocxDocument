@@ -1,8 +1,8 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Shape Fill Extended Properties.
+///   IShape Fill Extended Properties.
 /// </summary>
 public class FillExtendedProperties: ModelElement
 {

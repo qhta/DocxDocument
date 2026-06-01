@@ -1,8 +1,8 @@
-namespace DocumentModel.Packaging;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Packaging;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Represents an internal reference relationship to a DataPart element.
+///   Represents an internal reference relationship Ito a DataPart element.
 /// </summary>
 public class DataPartReferenceRelationship: ModelElement
 {

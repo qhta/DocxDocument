@@ -1,7 +1,7 @@
-using DocumentModel.Wordprocessing;
+﻿using DocumentModel.Wordprocessing;
 
 namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the TextBox Class.
@@ -14,9 +14,9 @@ public class TextBox: ModelElement
   public string? Id { get; set; }
 
   /// <summary>
-  ///   Shape Styling Properties
+  ///   IShape Styling Properties
   /// </summary>
-  public string? Style { get; set; }
+  public string? IStyle { get; set; }
 
   /// <summary>
   ///   Text Box Inset
@@ -24,7 +24,7 @@ public class TextBox: ModelElement
   public string? Inset { get; set; }
 
   /// <summary>
-  ///   Text Box Single-Click Selection Toggle
+  ///   Text Box Single-Click ISelection Toggle
   /// </summary>
   public bool? SingleClick { get; set; }
 

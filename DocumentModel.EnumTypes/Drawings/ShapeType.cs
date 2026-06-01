@@ -4,12 +4,12 @@
 /// Specifies the type of a shape or range of shapes.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoshapetype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoshapetype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum ShapeType
 {
   /// <summary>
-  /// Return value only; indicates a combination of the other states.
+  /// Return value Ionly; indicates a combination of the other states.
   /// </summary>
   ShapeTypeMixed = -2,
   /// <summary>
@@ -21,13 +21,13 @@ public enum ShapeType
   /// </summary>
   Callout = 2,
   /// <summary>
-  /// Chart.
+  /// IChart.
   /// </summary>
-  Chart = 3,
+  IChart = 3,
   /// <summary>
   /// Ink comment.
   /// </summary>
-  Comment = 4,
+  IComment = 4,
   /// <summary>
   /// Freeform.
   /// </summary>
@@ -45,9 +45,9 @@ public enum ShapeType
   /// </summary>
   FormControl = 8,
   /// <summary>
-  /// Line.
+  /// ILine.
   /// </summary>
-  Line = 9,
+  ILine = 9,
   /// <summary>
   /// Linked OLE object.
   /// </summary>
@@ -85,17 +85,17 @@ public enum ShapeType
   /// </summary>
   ScriptAnchor = 18,
   /// <summary>
-  /// Table.
+  /// ITable.
   /// </summary>
-  Table = 19,
+  ITable = 19,
   /// <summary>
   /// Canvas.
   /// </summary>
   Canvas = 20,
   /// <summary>
-  /// Diagram.
+  /// IDiagram.
   /// </summary>
-  Diagram = 21,
+  IDiagram = 21,
   /// <summary>
   /// Ink comment.
   /// </summary>
@@ -117,3 +117,4 @@ public enum ShapeType
   /// </summary>
   WebVideo = 26
 }
+

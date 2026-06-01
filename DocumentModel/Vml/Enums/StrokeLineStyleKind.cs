@@ -1,34 +1,34 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Stroke Line Style
+///   Stroke ILine IStyle
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum StrokeLineStyleKind
 {
   /// <summary>
-  ///   Single Line.
+  ///   Single ILine.
   /// </summary>
   Single,
 
   /// <summary>
-  ///   Two Thin Lines.
+  ///   Two Thin ILines.
   /// </summary>
   ThinThin,
 
   /// <summary>
-  ///   Thin Line Outside Thick Line.
+  ///   Thin ILine Outside Thick ILine.
   /// </summary>
   ThinThick,
 
   /// <summary>
-  ///   Thick Line Outside Thin Line.
+  ///   Thick ILine Outside Thin ILine.
   /// </summary>
   ThickThin,
 
   /// <summary>
-  ///   Thck Line Between Thin Lines.
+  ///   Thck ILine Between Thin ILines.
   /// </summary>
   ThickBetweenThin
 }

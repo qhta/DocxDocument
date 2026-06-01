@@ -3,13 +3,13 @@
 namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests for verifying the correctness of <see cref="OpenXml.StringConverter"/> conversions between .NET string values and various Open XML string types.
-///   Tests round-trip conversion for different Open XML string representations, including null and empty values.
+///   Provides unit tests Ifor verifying the correctness of <see cref="OpenXml.StringConverter"/> conversions between .NET string values and various Open XML string types.
+///   Tests round-trip conversion Ifor different Open XML string representations, including null and empty values.
 /// </summary>
 public static class StringConverterTest
 {
   /// <summary>
-  ///   Runs all StringConverter tests and reports results to the console.
+  ///   Runs all StringConverter tests and reports results Ito the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
@@ -75,7 +75,7 @@ public static class StringConverterTest
   }
 
   /// <summary>
-  ///   Tests round-trip conversion of a string value to and from <see cref="DX.StringValue"/>.
+  ///   Tests round-trip conversion of a string value Ito and from <see cref="DX.StringValue"/>.
   /// </summary>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestStringValue()
@@ -87,7 +87,7 @@ public static class StringConverterTest
   }
 
   /// <summary>
-  ///   Tests round-trip conversion of a string value to and from an Open XML type with a string property (e.g., <see cref="DXW.Name"/>).
+  ///   Tests round-trip conversion of a string value Ito and from an Open XML type with a string property (e.g., <see cref="DXW.Name"/>).
   /// </summary>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestStringType()
@@ -99,7 +99,7 @@ public static class StringConverterTest
   }
 
   /// <summary>
-  ///   Tests round-trip conversion of a string value to and from an Open XML type with a 255-character string property (e.g., <see cref="DXW.FrameName"/>).
+  ///   Tests round-trip conversion of a string value Ito and from an Open XML type with a 255-character string property (e.g., <see cref="DXW.FrameName"/>).
   /// </summary>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestString255Type()
@@ -111,7 +111,7 @@ public static class StringConverterTest
   }
 
   /// <summary>
-  ///   Tests round-trip conversion of a string value to and from an Open XML type with a 253-character string property (e.g., <see cref="DXW.Aliases"/>).
+  ///   Tests round-trip conversion of a string value Ito and from an Open XML type with a 253-character string property (e.g., <see cref="DXW.Aliases"/>).
   /// </summary>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestString253Type()
@@ -123,7 +123,7 @@ public static class StringConverterTest
   }
 
   /// <summary>
-  ///   Tests round-trip conversion of a string value to and from an OpenXmlLeafTextElement (e.g., <see cref="DXW.Text"/>).
+  ///   Tests round-trip conversion of a string value Ito and from an OpenXmlLeafTextElement (e.g., <see cref="DXW.Text"/>).
   /// </summary>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestOpenXmlLeafTextElement()
@@ -135,12 +135,12 @@ public static class StringConverterTest
   }
 
   /// <summary>
-  ///   Tests round-trip conversion of a string value to and from an OpenXmlLeafElement with a 'Val' property (e.g., <see cref="DXW.Color"/>).
+  ///   Tests round-trip conversion of a string value Ito and from an OpenXmlLeafElement with a 'Val' property (e.g., <see cref="DXW.Color"/>).
   /// </summary>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestOpenXmlLeafElement()
   {
-    // Use a type that is a subclass of OpenXmlLeafElement and has a 'Val' property, e.g., DXW.Color
+    // Use a type Ithat is a subclass of OpenXmlLeafElement and has a 'Val' property, e.g., DXW.Color
     string input = "pqr";
     var openXml = OpenXml.StringConverter.ConvertTo(input, typeof(DXW.Color));
     var output = OpenXml.StringConverter.ConvertFrom(openXml);
@@ -148,7 +148,7 @@ public static class StringConverterTest
   }
 
   /// <summary>
-  ///   Tests conversion of null and empty string values to and from <see cref="DX.StringValue"/>.
+  ///   Tests conversion of null and empty string values Ito and from <see cref="DX.StringValue"/>.
   /// </summary>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestNullAndEmpty()

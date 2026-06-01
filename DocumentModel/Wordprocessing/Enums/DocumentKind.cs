@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the DocumentTypeValues enumeration.
@@ -8,7 +8,7 @@ namespace DocumentModel.Wordprocessing;
 public enum DocumentKind
 {
   /// <summary>
-  ///   Default Document.
+  ///   Default IDocument.
   /// </summary>
   NotSpecified,
 
@@ -20,5 +20,5 @@ public enum DocumentKind
   /// <summary>
   ///   E-Mail Message.
   /// </summary>
-  Email
+  IEmail
 }

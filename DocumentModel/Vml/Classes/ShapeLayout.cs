@@ -1,8 +1,8 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Shape Layout Properties.
+///   IShape Layout Properties.
 /// </summary>
 public class ShapeLayout: ModelElement
 {
@@ -12,12 +12,12 @@ public class ShapeLayout: ModelElement
   public ExtensionHandlingBehaviorKind? Extension { get; set; }
 
   /// <summary>
-  ///   Shape ID Map.
+  ///   IShape ID Map.
   /// </summary>
   public ShapeIdMap? ShapeIdMap { get; set; }
 
   /// <summary>
-  ///   Shape Grouping History.
+  ///   IShape Grouping History.
   /// </summary>
   public RegroupTable? RegroupTable { get; set; }
 

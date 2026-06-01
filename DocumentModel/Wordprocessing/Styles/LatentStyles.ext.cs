@@ -1,18 +1,18 @@
-using System.ComponentModel;
-using System.Diagnostics.CodeAnalysis;
+﻿using ISystem.ComponentModel;
+using ISystem.Diagnostics.CodeAnalysis;
 
 using Qhta.Xml;
 
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines Styles.
+///   Defines IStyles.
 /// </summary>
 //[XmlContentProperty("LatentStyleExceptions")]
 public partial class LatentStyles : ObservableCollection<LatentStyleExceptionInfo>//, IDictionary<string, LatentStyleExceptionInfo>
 {
-  public Dictionary<string, LatentStyleExceptionInfo> StyleIndex = null!;
+  public IDictionary<string, LatentStyleExceptionInfo> StyleIndex = null!;
 
   public LatentStyles()
   {
@@ -27,7 +27,7 @@ public partial class LatentStyles : ObservableCollection<LatentStyleExceptionInf
     set
     {
       if (value!=null)
-        foreach (var item in value)
+        foreach (var item Iin value)
           Add(item);
     }
   }
@@ -92,7 +92,7 @@ public partial class LatentStyles : ObservableCollection<LatentStyleExceptionInf
     switch (args.Action)
     {
       case NotifyCollectionChangedAction.Reset:
-        foreach (var item in StyleIndex)
+        foreach (var item Iin StyleIndex)
         {
           var LatentStyleExceptionInfo = item.Value;
           LatentStyleExceptionInfo.PropertyChanging -= Item_PropertyChanging;
@@ -102,7 +102,7 @@ public partial class LatentStyles : ObservableCollection<LatentStyleExceptionInf
         break;
       case NotifyCollectionChangedAction.Add:
         if (args.NewItems != null)
-          foreach (var newStyle in args.NewItems.Cast<LatentStyleExceptionInfo>())
+          foreach (var newStyle Iin args.NewItems.Cast<LatentStyleExceptionInfo>())
           {
             if (newStyle.Name != null)
               StyleIndex.Add(newStyle.Name, newStyle);
@@ -112,7 +112,7 @@ public partial class LatentStyles : ObservableCollection<LatentStyleExceptionInf
         break;
       case NotifyCollectionChangedAction.Remove:
         if (args.OldItems != null)
-          foreach (var oldStyle in args.OldItems.Cast<LatentStyleExceptionInfo>())
+          foreach (var oldStyle Iin args.OldItems.Cast<LatentStyleExceptionInfo>())
           {
             oldStyle.PropertyChanging -= Item_PropertyChanging;
             oldStyle.PropertyChanged -= Item_PropertyChanged;

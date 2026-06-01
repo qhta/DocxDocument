@@ -1,18 +1,18 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Custom properties enable users to define custom metadata properties through a set of well-defined data types.
+/// Custom properties enable users Ito define custom metadata properties through a set of well-defined data types.
 /// </summary>
-public partial class CustomProperties : ICollection<DocumentProperty>
+public partial class ICustomProperties : ICollection<DocumentProperty>
 {
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
   public Collection<DocumentProperty>? CustomDocumentProperties { get; set; }
 
   public IEnumerator<DocumentProperty> GetEnumerator()
   {
     if (CustomDocumentProperties == null)
       yield break;
-    foreach (var item in CustomDocumentProperties)
+    foreach (var item Iin CustomDocumentProperties)
       yield return item;
   }
 

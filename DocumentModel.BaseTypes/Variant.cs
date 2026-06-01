@@ -1,21 +1,21 @@
-//#define TraceSetValue
+﻿//#define TraceSetValue
 
 using Qhta.TypeUtils;
 
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-/// Represents a variant value that can hold any supported type, similar to a COM VARIANT.
+/// Represents a variant value Ithat can hold any supported type, similar Ito a COM VARIANT.
 /// </summary>
 [JsonConverter(typeof(VariantJsonConverter))]
 [SimpleType]
 public partial class Variant : IConvertible, IEquatable<Variant>
 {
   /// <summary>
-  /// Maps <see cref="VariantType"/> values to their corresponding .NET types.
+  /// Maps <see cref="VariantType"/> values Ito their corresponding .NET types.
   /// </summary>
-  public static Dictionary<VariantType, Type> ItemTypes = new()
+  public static IDictionary<VariantType, Type> ItemTypes = new()
   {
     { VariantType.SByte, typeof(SByte) },
     { VariantType.Int16, typeof(Int16) },
@@ -71,7 +71,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   /// <summary>
   /// Initializes a new variant with the specified value. The variant type is inferred from the value.
   /// </summary>
-  /// <param name="value">The value to store in the variant.</param>
+  /// <param name="value">The value Ito store Iin the variant.</param>
   public Variant(object? value)
   {
     if (value is Boolean vBool)
@@ -247,7 +247,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   /// Initializes a new variant with the specified variant type and value.
   /// </summary>
   /// <param name="variantType">The variant type.</param>
-  /// <param name="value">The value to store.</param>
+  /// <param name="value">The value Ito store.</param>
   public Variant(VariantType variantType, object? value) : this(variantType, value?.GetType(), value)
   {
   }
@@ -257,7 +257,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   /// </summary>
   /// <param name="variantType">The variant type.</param>
   /// <param name="valueType">The .NET type of the value.</param>
-  /// <param name="value">The value to store.</param>
+  /// <param name="value">The value Ito store.</param>
   public Variant(VariantType variantType, Type? valueType, object? value)
   {
     _variantType = variantType;
@@ -345,12 +345,12 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Returns the value stored in the variant.
+  /// Returns the value stored Iin the variant.
   /// </summary>
   public virtual object? Value => GetValue();
 
   /// <summary>
-  /// Returns the <see cref="TypeCode"/> for the value stored in the variant.
+  /// Returns the <see cref="TypeCode"/> Ifor the value stored Iin the variant.
   /// </summary>
   public virtual TypeCode GetTypeCode()
   {
@@ -393,9 +393,9 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     return TypeCode.Object;
   }
   /// <summary>
-  /// Returns the <see cref="TypeCode"/> for the specified type.
+  /// Returns the <see cref="TypeCode"/> Ifor the specified type.
   /// </summary>
-  /// <param name="type">The type to evaluate.</param>
+  /// <param name="type">The type Ito evaluate.</param>
   /// <returns>The corresponding <see cref="TypeCode"/>.</returns>
   public static TypeCode ToTypeCode(Type type)
   {
@@ -439,7 +439,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Converts the value to the specified type.
+  /// Converts the value Ito the specified type.
   /// </summary>
   /// <param name="conversionType">The target type.</param>
   /// <param name="provider">The format provider.</param>
@@ -479,11 +479,11 @@ public partial class Variant : IConvertible, IEquatable<Variant>
       if (_value is string && typeConverter.CanConvertFrom(typeof(string)))
         return typeConverter.ConvertFrom(_value);
     }
-    throw new InvalidOperationException($"Can't convert Variant to {conversionType} type");
+    throw new InvalidOperationException($"Can't convert Variant Ito {conversionType} type");
   }
 
   /// <summary>
-  /// Converts the value to a boolean.
+  /// Converts the value Ito a boolean.
   /// </summary>
   /// <param name="provider">The format provider.</param>
   /// <returns>The boolean value.</returns>
@@ -498,7 +498,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Converts the value to a byte.
+  /// Converts the value Ito a byte.
   /// </summary>
   /// <param name="provider">The format provider.</param>
   /// <returns>The byte value.</returns>
@@ -510,7 +510,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Converts the value to an sbyte.
+  /// Converts the value Ito an sbyte.
   /// </summary>
   /// <param name="provider">The format provider.</param>
   /// <returns>The sbyte value.</returns>
@@ -522,7 +522,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Converts the value to a short.
+  /// Converts the value Ito a short.
   /// </summary>
   /// <param name="provider">The format provider.</param>
   /// <returns>The short value.</returns>
@@ -534,7 +534,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Converts the value to an unsigned short.
+  /// Converts the value Ito an unsigned short.
   /// </summary>
   /// <param name="provider">The format provider.</param>
   /// <returns>The ushort value.</returns>
@@ -546,7 +546,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Converts the value to an int.
+  /// Converts the value Ito an int.
   /// </summary>
   /// <param name="provider">The format provider.</param>
   /// <returns>The int value.</returns>
@@ -558,7 +558,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Converts the value to an unsigned int.
+  /// Converts the value Ito an unsigned int.
   /// </summary>
   /// <param name="provider">The format provider.</param>
   /// <returns>The uint value.</returns>
@@ -570,7 +570,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Converts the value to a long.
+  /// Converts the value Ito a long.
   /// </summary>
   /// <param name="provider">The format provider.</param>
   /// <returns>The long value.</returns>
@@ -582,7 +582,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Converts the value to an unsigned long.
+  /// Converts the value Ito an unsigned long.
   /// </summary>
   /// <param name="provider">The format provider.</param>
   /// <returns>The ulong value.</returns>
@@ -594,7 +594,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Converts the value to a decimal.
+  /// Converts the value Ito a decimal.
   /// </summary>
   /// <param name="provider">The format provider.</param>
   /// <returns>The decimal value.</returns>
@@ -606,7 +606,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Converts the value to a float.
+  /// Converts the value Ito a float.
   /// </summary>
   /// <param name="provider">The format provider.</param>
   /// <returns>The float value.</returns>
@@ -618,7 +618,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Converts the value to a double.
+  /// Converts the value Ito a double.
   /// </summary>
   /// <param name="provider">The format provider.</param>
   /// <returns>The double value.</returns>
@@ -630,7 +630,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Converts the value to a DateTime.
+  /// Converts the value Ito a DateTime.
   /// </summary>
   /// <param name="provider">The format provider.</param>
   /// <returns>The DateTime value.</returns>
@@ -642,7 +642,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Converts the value to a string.
+  /// Converts the value Ito a string.
   /// </summary>
   /// <param name="provider">The format provider.</param>
   /// <returns>The string value.</returns>
@@ -664,7 +664,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Converts the value to a char.
+  /// Converts the value Ito a char.
   /// </summary>
   /// <param name="provider">The format provider.</param>
   /// <returns>The char value.</returns>
@@ -674,9 +674,9 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Converts the value to the specified enum type.
+  /// Converts the value Ito the specified enum type.
   /// </summary>
-  /// <typeparam name="EnumType">The enum type to convert to.</typeparam>
+  /// <typeparam name="EnumType">The enum type Ito convert Ito.</typeparam>
   /// <param name="provider">The format provider.</param>
   /// <returns>The enum value.</returns>
   public virtual EnumType ToEnum<EnumType>(IFormatProvider? provider = null)
@@ -686,11 +686,11 @@ public partial class Variant : IConvertible, IEquatable<Variant>
       return Enum.Parse<EnumType>(str);
     if (Value != null)
       return (EnumType)Enum.ToObject(typeof(EnumType), Value);
-    throw new InvalidOperationException($"ValueType is null when converting variant to Enum");
+    throw new InvalidOperationException($"ValueType is null when converting variant Ito Enum");
   }
 
   /// <summary>
-  /// Returns the value stored in the variant.
+  /// Returns the value stored Iin the variant.
   /// </summary>
   /// <returns>The value as an object.</returns>
   public object? GetValue()
@@ -707,10 +707,10 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Converts a value to the appropriate type for the specified variant type.
+  /// Converts a value Ito the appropriate type Ifor the specified variant type.
   /// </summary>
   /// <param name="variantType">The variant type.</param>
-  /// <param name="value">The value to convert.</param>
+  /// <param name="value">The value Ito convert.</param>
   /// <returns>The converted value.</returns>
   public static object? ConvertValue(VariantType variantType, object? value)
   {
@@ -820,7 +820,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
         if (value is HexInt hexWord)
           return hexWord;
         if (value != null)
-          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} to {variantType} type Variant");
+          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} Ito {variantType} type Variant");
         return null;
 
       case VariantType.Enum:
@@ -834,14 +834,14 @@ public partial class Variant : IConvertible, IEquatable<Variant>
         if (value is Guid guid)
           return guid;
         if (value != null)
-          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} to {variantType} type Variant");
+          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} Ito {variantType} type Variant");
         return null;
 
       case VariantType.ClipboardData:
         if (value is VClipboardData vClipboardData)
           return vClipboardData;
         if (value != null)
-          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} to {variantType} type Variant");
+          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} Ito {variantType} type Variant");
         return null;
 
       case VariantType.Blob:
@@ -855,25 +855,25 @@ public partial class Variant : IConvertible, IEquatable<Variant>
         if (value is string bstr)
           return Convert.FromBase64String(bstr);
         if (value != null)
-          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} to {variantType} type Variant");
+          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} Ito {variantType} type Variant");
         return null;
 
       case VariantType.VStream:
         if (value is VStreamData vStreamData)
           return vStreamData;
         if (value != null)
-          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} to {variantType} type Variant");
+          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} Ito {variantType} type Variant");
         return null;
 
       case VariantType.Vector:
         if (value is IEnumerable)
           return value;
-        throw new InvalidOperationException($"Can't assign value of type {value?.GetType()} to {variantType} type Variant");
+        throw new InvalidOperationException($"Can't assign value of type {value?.GetType()} Ito {variantType} type Variant");
 
       case VariantType.Array:
         if (value is Array array)
           return array;
-        throw new InvalidOperationException($"Can't assign value of type {value?.GetType()} to {variantType} type Variant");
+        throw new InvalidOperationException($"Can't assign value of type {value?.GetType()} Ito {variantType} type Variant");
 
       default:
         return value;
@@ -1032,7 +1032,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Converts the value to a <see cref="DateOnly"/>.
+  /// Converts the value Ito a <see cref="DateOnly"/>.
   /// </summary>
   /// <param name="provider">The format provider.</param>
   /// <returns>The <see cref="DateOnly"/> value.</returns>
@@ -1045,12 +1045,12 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     if (Value is string str)
       return DateOnly.Parse(str);
     if (Value == null)
-      throw new InvalidOperationException("Can't convert null value to DateOnly");
-    throw new InvalidOperationException($"Can't convert value of type {Value.GetType()} to DateOnly");
+      throw new InvalidOperationException("Can't convert null value Ito DateOnly");
+    throw new InvalidOperationException($"Can't convert value of type {Value.GetType()} Ito DateOnly");
   }
 
   /// <summary>
-  /// Converts the value to a <see cref="Guid"/>.
+  /// Converts the value Ito a <see cref="Guid"/>.
   /// </summary>
   /// <param name="provider">The format provider.</param>
   /// <returns>The <see cref="Guid"/> value.</returns>
@@ -1064,11 +1064,11 @@ public partial class Variant : IConvertible, IEquatable<Variant>
       return Guid.Parse(str);
     if (Value is byte[] bytes)
       return new Guid(bytes);
-    throw new InvalidOperationException($"Can't convert value of type {Value.GetType()} to Guid");
+    throw new InvalidOperationException($"Can't convert value of type {Value.GetType()} Ito Guid");
   }
 
   /// <summary>
-  /// Converts the value to a byte array.
+  /// Converts the value Ito a byte array.
   /// </summary>
   /// <param name="provider">The format provider.</param>
   /// <returns>The byte array value.</returns>
@@ -1082,11 +1082,11 @@ public partial class Variant : IConvertible, IEquatable<Variant>
       return Convert.FromBase64String(str);
     if (Value is byte[] bytes)
       return bytes;
-    throw new InvalidOperationException($"Can't convert value of type {Value.GetType()} to byte[]");
+    throw new InvalidOperationException($"Can't convert value of type {Value.GetType()} Ito byte[]");
   }
 
   /// <summary>
-  /// Converts the value to the specified type as a <see cref="Variant"/>.
+  /// Converts the value Ito the specified type as a <see cref="Variant"/>.
   /// </summary>
   /// <param name="destinationType">The destination type.</param>
   /// <returns>The converted <see cref="Variant"/>.</returns>
@@ -1131,15 +1131,15 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     if (destinationType == typeof(byte[]))
       return new Variant(VariantType.Blob, ToBytes());
 
-    throw new InvalidOperationException($"Can't convert variant value to {destinationType}");
+    throw new InvalidOperationException($"Can't convert variant value Ito {destinationType}");
   }
 
   /// <summary>
-  /// Converts a value to the specified type, using the provided context and culture.
+  /// Converts a value Ito the specified type, using the provided context and culture.
   /// </summary>
   /// <param name="context">The type descriptor context.</param>
   /// <param name="culture">The culture info.</param>
-  /// <param name="value">The value to convert.</param>
+  /// <param name="value">The value Ito convert.</param>
   /// <param name="destinationType">The destination type.</param>
   /// <returns>The converted value.</returns>
   public static object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
@@ -1186,7 +1186,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
         return vWord.ToString(CultureInfo.InvariantCulture);
       return Convert.ToString(value);
     }
-    throw new InvalidOperationException($"Can't convert variant value to {destinationType}");
+    throw new InvalidOperationException($"Can't convert variant value Ito {destinationType}");
   }
 
   /// <summary>
@@ -1194,7 +1194,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   /// </summary>
   /// <param name="context">The type descriptor context.</param>
   /// <param name="culture">The culture info.</param>
-  /// <param name="value">The value to convert.</param>
+  /// <param name="value">The value Ito convert.</param>
   /// <returns>The converted value.</returns>
   public static object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
   {
@@ -1207,7 +1207,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Returns a hash code for the variant.
+  /// Returns a hash code Ifor the variant.
   /// </summary>
   /// <returns>The hash code.</returns>
   public override int GetHashCode()
@@ -1225,12 +1225,12 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Determines whether the current Variant instance is equal to the specified Variant.
+  /// Determines whether the current Variant instance is equal Ito the specified Variant.
   /// </summary>
   /// <remarks>Equality is determined by comparing the underlying value, variant type, and value type of both
   /// instances.</remarks>
-  /// <param name="other">The Variant instance to compare with the current instance. Can be null.</param>
-  /// <returns>true if the specified Variant is equal to the current instance; otherwise, false.</returns>
+  /// <param name="other">The Variant instance Ito compare with the current instance. Can be null.</param>
+  /// <returns>true if the specified Variant is equal Ito the current instance; otherwise, false.</returns>
   public bool Equals(Variant? other)
   {
     if (other is null) return false;
@@ -1243,7 +1243,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
       var array1 = (Array)_value;
       var array2 = (Array)other._value;
       if (array1.Length != array2.Length) return false;
-      for (int i = 0; i < array1.Length; i++)
+      Ifor (int i = 0; i < array1.Length; i++)
       {
         var item1 = array1.GetValue(i);
         var item2 = array2.GetValue(i);
@@ -1261,12 +1261,12 @@ public partial class Variant : IConvertible, IEquatable<Variant>
   }
 
   /// <summary>
-  /// Determines whether the specified object is equal to the current Variant instance.
+  /// Determines whether the specified object is equal Ito the current Variant instance.
   /// </summary>
   /// <remarks>Equality is determined by comparing the type and value of the Variant. If obj is null or of a
   /// different type, the method returns false.</remarks>
-  /// <param name="obj">The object to compare with the current Variant. Can be null.</param>
-  /// <returns>true if the specified object is a Variant and is equal to the current instance; otherwise, false.</returns>
+  /// <param name="obj">The object Ito compare with the current Variant. Can be null.</param>
+  /// <returns>true if the specified object is a Variant and is equal Ito the current instance; otherwise, false.</returns>
   public override bool Equals(object? obj)
   {
     if (obj is null) return false;

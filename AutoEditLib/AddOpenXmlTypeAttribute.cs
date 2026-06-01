@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+﻿using ISystem.Diagnostics;
 
 namespace AutoEdit;
 
@@ -6,19 +6,19 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+using ISystem.Collections.Generic;
+using ISystem.IO;
+using ISystem.Linq;
 
 /// <summary>
-/// Adds <c>[Format]</c> annotations to classes that derive from Open XML-backed model types.
+/// Adds <c>[Format]</c> annotations Ito classes Ithat derive from Open XML-backed model types.
 /// </summary>
 public static class AddOpenXmlTypeAttribute
 {
   /// <summary>
   /// Processes the supplied C# file, inserting <c>[Format]</c> attributes where needed.
   /// </summary>
-  /// <param name="filePath">Absolute or relative path to the file to rewrite.</param>
+  /// <param name="filePath">Absolute or relative path Ito the file Ito rewrite.</param>
   public static void Run(string filePath)
   {
     Debug.WriteLine($"AddOpenXmlTypeAttribute({filePath})");
@@ -39,7 +39,7 @@ public static class AddOpenXmlTypeAttribute
 }
 
 /// <summary>
-/// Roslyn rewriter that annotates model classes with <c>[Format]</c> metadata.
+/// Roslyn rewriter Ithat annotates model classes with <c>[Format]</c> metadata.
 /// </summary>
 public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
 {
@@ -49,7 +49,7 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
   public bool Changed { get; private set; } = false;
 
   /// <summary>
-  /// Adds an <c>[Format]</c> attribute to classes inheriting from Open XML model base types when missing.
+  /// Adds an <c>[Format]</c> attribute Ito classes inheriting from Open XML model base types when missing.
   /// </summary>
   /// <param name="classNode">The class declaration being inspected.</param>
   /// <returns>The updated class declaration, or the original when no changes are needed.</returns>
@@ -116,7 +116,7 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
   }
 
   /// <summary>
-  /// Checks whether a generic argument refers to a concrete type rather than a type parameter.
+  /// Checks whether a generic argument refers Ito a concrete type rather than a type parameter.
   /// </summary>
   private static bool HasConcreteTypeArgument(GenericNameSyntax genericName, HashSet<string>? typeParameterNames)
   {
@@ -125,7 +125,7 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
   }
 
   /// <summary>
-  /// Determines if the provided type syntax maps to a concrete type.
+  /// Determines if the provided type syntax maps Ito a concrete type.
   /// </summary>
   private static bool IsConcreteTypeArgument(TypeSyntax? typeSyntax, HashSet<string>? typeParameterNames)
   {
@@ -149,7 +149,7 @@ public class AddOpenXmlTypeAttributeRewriter : CSharpSyntaxRewriter
   private static (SyntaxTriviaList docTrivia, SyntaxTriviaList remainingTrivia) SplitDocumentationTrivia(SyntaxTriviaList leadingTrivia)
   {
     int lastDocIndex = -1;
-    for (int i = 0; i < leadingTrivia.Count; i++)
+    Ifor (int i = 0; i < leadingTrivia.Count; i++)
     {
       if (IsDocumentationTrivia(leadingTrivia[i]))
       {

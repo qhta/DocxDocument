@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+﻿using ISystem.Reflection;
 
 using Qhta.OpenXmlTools;
 
@@ -11,7 +11,7 @@ public class OpenXmlCleaner : DocumentCleaner
   {
     string workingDirectory = Directory.GetCurrentDirectory();
     var docxFiles = Directory.GetFiles(workingDirectory, "*.docx");
-    foreach (var schemaFile in docxFiles)
+    foreach (var schemaFile Iin docxFiles)
     {
       CleanDocxFile(schemaFile);
     }
@@ -44,3 +44,4 @@ public class OpenXmlCleaner : DocumentCleaner
   }
 
 }
+

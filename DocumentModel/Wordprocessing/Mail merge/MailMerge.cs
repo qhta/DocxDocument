@@ -1,38 +1,38 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Mail Merge Settings.
 /// </summary>
-public class MailMerge: ModelElement
+public class IMailMerge: ModelElement
 {
   /// <summary>
-  ///   Source Document Type.
+  ///   ISource IDocument Type.
   /// </summary>
   public MailMergeDocumentKind? MainDocumentType { get; set; }
 
   /// <summary>
-  ///   Query Contains Link to External Query File.
+  ///   Query Contains Link Ito External Query File.
   /// </summary>
   public bool? LinkToQuery { get; set; }
 
   /// <summary>
-  ///   Data Source Type.
+  ///   Data ISource Type.
   /// </summary>
   public MailMergeDataKind? DataType { get; set; }
 
   /// <summary>
-  ///   Data Source Connection String.
+  ///   Data ISource Connection String.
   /// </summary>
   public string? ConnectString { get; set; }
 
   /// <summary>
-  ///   Query For Data Source Records To Merge.
+  ///   Query For Data ISource Records To Merge.
   /// </summary>
   public string? Query { get; set; }
 
   /// <summary>
-  ///   Data Source File Path.
+  ///   Data ISource File Path.
   /// </summary>
   public RelationshipType? DataSourceReference { get; set; }
 
@@ -42,37 +42,37 @@ public class MailMerge: ModelElement
   public RelationshipType? HeaderSource { get; set; }
 
   /// <summary>
-  ///   Remove Blank Lines from Merged Documents.
+  ///   Remove Blank ILines from Merged IDocuments.
   /// </summary>
   public bool? DoNotSuppressBlankLines { get; set; }
 
   /// <summary>
-  ///   Merged Document Destination.
+  ///   Merged IDocument Destination.
   /// </summary>
   public MailMergeDestinationKind? Destination { get; set; }
 
   /// <summary>
-  ///   Column Containing E-mail Address.
+  ///   IColumn Containing E-mail Address.
   /// </summary>
   public string? AddressFieldName { get; set; }
 
   /// <summary>
-  ///   Merged E-mail or Fax Subject Line.
+  ///   Merged E-mail or Fax Subject ILine.
   /// </summary>
   public string? MailSubject { get; set; }
 
   /// <summary>
-  ///   Merged Document To E-Mail Attachment.
+  ///   Merged IDocument To E-Mail Attachment.
   /// </summary>
   public bool? MailAsAttachment { get; set; }
 
   /// <summary>
-  ///   View Merged Data Within Document.
+  ///   IView Merged Data Within IDocument.
   /// </summary>
   public bool? ViewMergedData { get; set; }
 
   /// <summary>
-  ///   Record Currently Displayed In Merged Document.
+  ///   Record Currently Displayed In Merged IDocument.
   /// </summary>
   public Int32? ActiveRecord { get; set; }
 
@@ -82,7 +82,7 @@ public class MailMerge: ModelElement
   public Int32? CheckErrors { get; set; }
 
   /// <summary>
-  ///   Office Data Source Object Settings.
+  ///   Office Data ISource Object Settings.
   /// </summary>
   public DataSourceObject? DataSourceObject { get; set; }
 }

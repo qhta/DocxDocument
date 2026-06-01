@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ColorSchemeIndexValues enumeration.
 /// </summary>
@@ -59,8 +59,8 @@ public enum ColorSchemes
   /// <summary>
   ///   IHyperlink Theme Color Reference.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.ColorSchemeIndexValues.Hyperlink))]
-  Hyperlink,
+  [OpenXmlEnumValue(nameof(DXD.ColorSchemeIndexValues.IHyperlink))]
+  IHyperlink,
   /// <summary>
   ///   Followed IHyperlink Theme Color Reference.
   /// </summary>

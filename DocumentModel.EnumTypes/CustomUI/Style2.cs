@@ -1,26 +1,27 @@
-namespace DocumentModel.CustomUI;
+﻿namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Defines the Style2 enumeration.
-/// Used in types such as BackstageGroupButton, ChartSpaceConverter.
+/// Used Iin types such as BackstageGroupButton, ChartSpaceConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXO10CUI.Style2Values))]
 public enum Style2
 {
 	/// <summary>
-	/// Specifies the normal option.
+	/// Specifies the normal Ioption.
 	/// </summary>
 	[OpenXmlEnumValue("Normal")]
 	Normal,
 	/// <summary>
-	/// Specifies the borderless option.
+	/// Specifies the borderless Ioption.
 	/// </summary>
 	[OpenXmlEnumValue("Borderless")]
 	Borderless,
 	/// <summary>
-	/// Specifies the large option.
+	/// Specifies the large Ioption.
 	/// </summary>
 	[OpenXmlEnumValue("Large")]
 	Large
 }
+

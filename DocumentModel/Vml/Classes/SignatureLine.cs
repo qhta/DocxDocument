@@ -1,8 +1,8 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Digital Signature Line.
+///   Digital Signature ILine.
 /// </summary>
 public class SignatureLine: ModelElement
 {
@@ -12,7 +12,7 @@ public class SignatureLine: ModelElement
   public ExtensionHandlingBehaviorKind? Extension { get; set; }
 
   /// <summary>
-  ///   Signature Line Flag
+  ///   Signature ILine Flag
   /// </summary>
   public bool? IsSignatureLine { get; set; }
 
@@ -32,7 +32,7 @@ public class SignatureLine: ModelElement
   public bool? SigningInstructionsSet { get; set; }
 
   /// <summary>
-  ///   User-specified Comments Flag
+  ///   User-specified IComments Flag
   /// </summary>
   public bool? AllowComments { get; set; }
 
@@ -42,12 +42,12 @@ public class SignatureLine: ModelElement
   public bool? ShowSignDate { get; set; }
 
   /// <summary>
-  ///   Suggested Signer Line 1
+  ///   Suggested Signer ILine 1
   /// </summary>
   public string? SuggestedSigner { get; set; }
 
   /// <summary>
-  ///   Suggested Signer Line 2
+  ///   Suggested Signer ILine 2
   /// </summary>
   public string? SuggestedSigner2 { get; set; }
 
@@ -57,7 +57,7 @@ public class SignatureLine: ModelElement
   public string? SuggestedSignerEmail { get; set; }
 
   /// <summary>
-  ///   Instructions for Signing
+  ///   Instructions Ifor Signing
   /// </summary>
   public string? SigningInstructions { get; set; }
 

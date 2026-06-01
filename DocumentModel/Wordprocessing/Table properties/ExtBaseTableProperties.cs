@@ -1,15 +1,15 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Extended BaseTableProperties.
-///   Contains these common properties, which are not applied to <see cref="CurrentTableProperties"/>
+///   Contains these common properties, which are not applied Ito <see cref="CurrentTableProperties"/>
 /// </summary>
 public abstract class ExtBaseTableProperties: CurrentTableProperties
 {
   /// <summary>
-  ///   TableStyle.
+  ///   ITableStyle.
   /// </summary>
-  public string? TableStyle { get; set; }
+  public string? ITableStyle { get; set; }
 
   /// <summary>
   ///   TablePositionProperties.
@@ -27,12 +27,12 @@ public abstract class ExtBaseTableProperties: CurrentTableProperties
   public bool? BiDiVisual { get; set; }
 
   /// <summary>
-  ///   TableCaption, this property is only available in Office 2010 and later..
+  ///   TableCaption, this property is Ionly available Iin Office 2010 and later..
   /// </summary>
   public string? TableCaption { get; set; }
 
   /// <summary>
-  ///   TableDescription, this property is only available in Office 2010 and later..
+  ///   TableDescription, this property is Ionly available Iin Office 2010 and later..
   /// </summary>
   public string? TableDescription { get; set; }
 }

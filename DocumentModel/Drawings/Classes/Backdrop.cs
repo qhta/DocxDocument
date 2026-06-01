@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Backdrop Plane.
@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings;
 public class Backdrop: ModelElement
 {
   /// <summary>
-  ///   Anchor Point.
+  ///   Anchor IPoint.
   /// </summary>
   public Anchor? Anchor { get; set; }
 

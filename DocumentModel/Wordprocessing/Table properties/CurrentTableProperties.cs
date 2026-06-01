@@ -1,22 +1,22 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Base class for current table properties
+///   Base class Ifor current table properties
 /// </summary>
 public abstract class CurrentTableProperties: BaseTableProperties
 {
   /// <summary>
-  ///   Preferred Table Width.
+  ///   Preferred ITable Width.
   /// </summary>
   public TableWidth? TableWidth { get; set; }
 
   /// <summary>
-  ///   Table Layout.
+  ///   ITable Layout.
   /// </summary>
   public TableLayoutKind? TableLayout { get; set; }
 
   /// <summary>
-  ///   Table Style Conditional Formatting Settings.
+  ///   ITable IStyle Conditional Formatting Settings.
   /// </summary>
   public TableLookFlags? TableLook { get; set; }
 }

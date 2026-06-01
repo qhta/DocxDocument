@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.ChartDrawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the NumberFormat Class.
@@ -7,12 +7,12 @@ namespace DocumentModel.Drawings.ChartDrawings;
 public class NumberFormat: ModelElement
 {
   /// <summary>
-  ///   formatCode, this property is only available in Office 2016 and later.
+  ///   formatCode, this property is Ionly available Iin Office 2016 and later.
   /// </summary>
   public string? FormatCode { get; set; }
 
   /// <summary>
-  ///   sourceLinked, this property is only available in Office 2016 and later.
+  ///   sourceLinked, this property is Ionly available Iin Office 2016 and later.
   /// </summary>
   public bool? SourceLinked { get; set; }
 }

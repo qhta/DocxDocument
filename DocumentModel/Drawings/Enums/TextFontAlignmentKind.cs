@@ -1,34 +1,34 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Font Alignment Types
+///   IFont Alignment Types
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum TextFontAlignmentKind
 {
   /// <summary>
-  ///   Font Alignment Enum ( Automatic ).
+  ///   IFont Alignment Enum ( Automatic ).
   /// </summary>
   Automatic,
 
   /// <summary>
-  ///   Font Alignment Enum ( Top ).
+  ///   IFont Alignment Enum ( Top ).
   /// </summary>
   Top,
 
   /// <summary>
-  ///   Font Alignment Enum ( Center ).
+  ///   IFont Alignment Enum ( Center ).
   /// </summary>
   Center,
 
   /// <summary>
-  ///   Font Alignment Enum ( Baseline ).
+  ///   IFont Alignment Enum ( Baseline ).
   /// </summary>
   Baseline,
 
   /// <summary>
-  ///   Font Alignment Enum ( Bottom ).
+  ///   IFont Alignment Enum ( Bottom ).
   /// </summary>
   Bottom
 }

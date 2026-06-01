@@ -1,8 +1,8 @@
-﻿using System.Runtime.CompilerServices;
-using System.Xml;
+﻿using ISystem.Runtime.CompilerServices;
+using ISystem.Xml;
 
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 internal class VariantTypeXmlConverter : VariantTypeConverter, IXmlConverter
 {
@@ -115,6 +115,6 @@ internal class VariantTypeXmlConverter : VariantTypeConverter, IXmlConverter
 
   private void ThrowNotImplemented(string msg, [CallerMemberName] string? callerName = null) 
   {
-    throw new NotImplementedException($"{msg} in {this.GetType()} {callerName}");
+    throw new NotImplementedException($"{msg} Iin {this.GetType()} {callerName}");
   }
 }

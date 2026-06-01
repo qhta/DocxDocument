@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the SurfaceType Class.
@@ -17,12 +17,12 @@ public class SurfaceType: ModelElement
   public ShapeProperties? ShapeProperties { get; set; }
 
   /// <summary>
-  ///   Picture Options.
+  ///   Picture IOptions.
   /// </summary>
   public PictureOptions? PictureOptions { get; set; }
 
   /// <summary>
-  ///   Chart Extensibility.
+  ///   IChart Extensibility.
   /// </summary>
   public ExtensionList? ExtensionList { get; set; }
 }

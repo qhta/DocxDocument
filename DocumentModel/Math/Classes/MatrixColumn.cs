@@ -1,12 +1,12 @@
-namespace DocumentModel.Math;
+﻿namespace DocumentModel.Math;
 
 /// <summary>
-///   This element specifies a single column in a matrix.
+///   This element specifies a single column Iin a matrix.
 /// </summary>
 public class MatrixColumn: ModelElement
 {
   /// <summary>
-  ///   Matrix Column Properties.
+  ///   Matrix IColumn Properties.
   /// </summary>
   public MatrixColumnProperties? MatrixColumnProperties { get; set; }
 }

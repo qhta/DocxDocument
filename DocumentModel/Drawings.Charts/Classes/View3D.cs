@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   3D view settings.
@@ -27,7 +27,7 @@ public class View3D: ModelElement
   public UInt16? DepthPercent { get; set; }
 
   /// <summary>
-  ///   Right Angle Axes.
+  ///   Right Angle IAxes.
   /// </summary>
   public bool? RightAngleAxes { get; set; }
 
@@ -37,7 +37,7 @@ public class View3D: ModelElement
   public Byte? Perspective { get; set; }
 
   /// <summary>
-  ///   Chart Extensibility.
+  ///   IChart Extensibility.
   /// </summary>
   public ExtensionList? ExtensionList { get; set; }
 }

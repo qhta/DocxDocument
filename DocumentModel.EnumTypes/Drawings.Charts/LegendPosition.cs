@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the LegendPosition enumeration.
-/// Used in types such as Legend, LegendConverter.
+/// Used Iin types such as ILegend, LegendConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.LegendPositionValues))]
@@ -34,3 +34,4 @@ public enum LegendPosition
   [OpenXmlEnumValue("Top")]
   Top
 }
+

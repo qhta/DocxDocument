@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TextEffectValues enumeration.
 /// </summary>
@@ -18,7 +18,7 @@ public enum TextEffect
   [OpenXmlEnumValue(nameof(DXW.TextEffectValues.Lights))]
   Lights,
   /// <summary>
-  ///   Black Dashed Line Animation.
+  ///   Black Dashed ILine Animation.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXW.TextEffectValues.AntsBlack))]
   AntsBlack,

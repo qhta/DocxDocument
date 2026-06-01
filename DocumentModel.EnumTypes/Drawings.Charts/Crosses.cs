@@ -1,15 +1,15 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the Crosses enumeration.
-/// Used in types such as CategoryAxis, DateAxis, SeriesAxis.
+/// Used Iin types such as CategoryAxis, DateAxis, SeriesAxis.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.CrossesValues))]
 public enum Crosses
 {
   /// <summary>
-  ///   Axis Crosses at Zero.
+  ///   IAxis Crosses at Zero.
   /// </summary>
   [OpenXmlEnumValue("AutoZero")]
   AutoZero,
@@ -24,3 +24,4 @@ public enum Crosses
   [OpenXmlEnumValue("Minimum")]
   Minimum
 }
+

@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies the format of a file or folder path.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopathformat?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopathformat?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum PathFormat
 {
@@ -32,3 +32,4 @@ public enum PathFormat
   /// </summary>
   Type4 = 4
 }
+

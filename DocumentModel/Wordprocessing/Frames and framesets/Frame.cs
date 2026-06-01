@@ -1,32 +1,32 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Single Frame Properties.
+///   Single IFrame Properties.
 /// </summary>
-public class Frame: ModelElement, IFramesetItem
+public class IFrame: ModelElement, IFramesetItem
 {
   /// <summary>
-  ///   Frame Size.
+  ///   IFrame Size.
   /// </summary>
   public UInt32? FrameSize { get; set; }
 
   /// <summary>
-  ///   Frame Name.
+  ///   IFrame Name.
   /// </summary>
   public string? FrameName { get; set; }
 
   /// <summary>
-  ///   Source File for Frame.
+  ///   ISource File Ifor IFrame.
   /// </summary>
   public FrameSourceFile? FrameSourceFile { get; set; }
 
   /// <summary>
-  ///   Left and Right Margin for Frame.
+  ///   Left and Right Margin Ifor IFrame.
   /// </summary>
   public UInt32? MarginWidth { get; set; }
 
   /// <summary>
-  ///   Top and Bottom Margin for Frame.
+  ///   Top and Bottom Margin Ifor IFrame.
   /// </summary>
   public UInt32? MarginHeight { get; set; }
 
@@ -36,12 +36,12 @@ public class Frame: ModelElement, IFramesetItem
   public FrameScrollbarVisibilityKind? ScrollbarVisibility { get; set; }
 
   /// <summary>
-  ///   Frame Cannot Be Resized.
+  ///   IFrame Cannot Be Resized.
   /// </summary>
   public bool? NoResizeAllowed { get; set; }
 
   /// <summary>
-  ///   Maintain Link to Existing File.
+  ///   Maintain Link Ito Existing File.
   /// </summary>
   public bool? LinkedToFile { get; set; }
 }

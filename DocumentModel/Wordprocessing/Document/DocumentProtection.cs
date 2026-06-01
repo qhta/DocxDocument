@@ -1,23 +1,23 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Document Editing Restrictions.
+///   IDocument Editing Restrictions.
 /// </summary>
 public class DocumentProtection: ModelElement
 {
   /// <summary>
-  ///   Document Editing Restrictions
+  ///   IDocument Editing Restrictions
   /// </summary>
   public DocumentProtectionKind? Edit { get; set; }
 
   /// <summary>
-  ///   Only Allow Formatting With Unlocked Styles
+  ///   Only Allow Formatting With Unlocked IStyles
   /// </summary>
   public bool? Formatting { get; set; }
 
   /// <summary>
-  ///   Enforce Document Protection Settings
+  ///   Enforce IDocument Protection Settings
   /// </summary>
   public bool? Enforcement { get; set; }
 
@@ -42,7 +42,7 @@ public class DocumentProtection: ModelElement
   public Int32? CryptographicAlgorithmSid { get; set; }
 
   /// <summary>
-  ///   Iterations to Run Hashing Algorithm
+  ///   Iterations Ito Run Hashing Algorithm
   /// </summary>
   public UInt32? CryptographicSpinCount { get; set; }
 
@@ -57,7 +57,7 @@ public class DocumentProtection: ModelElement
   public HexInt? AlgorithmIdExtensibility { get; set; }
 
   /// <summary>
-  ///   Algorithm Extensibility Source
+  ///   Algorithm Extensibility ISource
   /// </summary>
   public string? AlgorithmIdExtensibilitySource { get; set; }
 
@@ -67,7 +67,7 @@ public class DocumentProtection: ModelElement
   public HexInt? CryptographicProviderTypeExtensibility { get; set; }
 
   /// <summary>
-  ///   Provider Type Extensibility Source
+  ///   Provider Type Extensibility ISource
   /// </summary>
   public string? CryptographicProviderTypeExtSource { get; set; }
 
@@ -77,27 +77,27 @@ public class DocumentProtection: ModelElement
   public Base64Binary? Hash { get; set; }
 
   /// <summary>
-  ///   Salt for Password Verifier
+  ///   Salt Ifor Password Verifier
   /// </summary>
   public Base64Binary? Salt { get; set; }
 
   /// <summary>
-  ///   algorithmName, this property is only available in Office 2010 and later.
+  ///   algorithmName, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? AlgorithmName { get; set; }
 
   /// <summary>
-  ///   hashValue, this property is only available in Office 2010 and later.
+  ///   hashValue, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public Base64Binary? HashValue { get; set; }
 
   /// <summary>
-  ///   saltValue, this property is only available in Office 2010 and later.
+  ///   saltValue, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public Base64Binary? SaltValue { get; set; }
 
   /// <summary>
-  ///   spinCount, this property is only available in Office 2010 and later.
+  ///   spinCount, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public Int32? SpinCount { get; set; }
 }

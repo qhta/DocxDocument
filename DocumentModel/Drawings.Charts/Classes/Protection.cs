@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the Protection Class.
@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.Charts;
 public class Protection: ModelElement
 {
   /// <summary>
-  ///   Chart Object.
+  ///   IChart Object.
   /// </summary>
   public bool? ChartObject { get; set; }
 
@@ -22,9 +22,9 @@ public class Protection: ModelElement
   public bool? Formatting { get; set; }
 
   /// <summary>
-  ///   Selection.
+  ///   ISelection.
   /// </summary>
-  public bool? Selection { get; set; }
+  public bool? ISelection { get; set; }
 
   /// <summary>
   ///   User Interface.

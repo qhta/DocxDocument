@@ -1,4 +1,4 @@
-namespace DocumentModel.Vml;
+﻿namespace DocumentModel.Vml;
 /// <summary>
 ///   Gradient Fill Computation Type
 /// </summary>
@@ -22,7 +22,7 @@ public enum FillMethod
   [OpenXmlEnumValue(nameof(DXV.FillMethodValues.Sigma))]
   Sigma,
   /// <summary>
-  ///   Application Default Fill.
+  ///   IApplication Default Fill.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXV.FillMethodValues.Any))]
   Any,

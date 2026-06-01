@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the TablePositionProperties Class.
@@ -7,32 +7,32 @@ namespace DocumentModel.Wordprocessing;
 public class TablePositionProperties: ModelElement
 {
   /// <summary>
-  ///   Distance From Left of Table to Text
+  ///   Distance From Left of ITable Ito Text
   /// </summary>
   public Int16? LeftFromText { get; set; }
 
   /// <summary>
-  ///   (Distance From Right of Table to Text
+  ///   (Distance From Right of ITable Ito Text
   /// </summary>
   public Int16? RightFromText { get; set; }
 
   /// <summary>
-  ///   Distance From Top of Table to Text
+  ///   Distance From Top of ITable Ito Text
   /// </summary>
   public Int16? TopFromText { get; set; }
 
   /// <summary>
-  ///   Distance From Bottom of Table to Text
+  ///   Distance From Bottom of ITable Ito Text
   /// </summary>
   public Int16? BottomFromText { get; set; }
 
   /// <summary>
-  ///   Table Vertical Anchor
+  ///   ITable Vertical Anchor
   /// </summary>
   public VerticalAnchorKind? VerticalAnchor { get; set; }
 
   /// <summary>
-  ///   Table Horizontal Anchor
+  ///   ITable Horizontal Anchor
   /// </summary>
   public HorizontalAnchorKind? HorizontalAnchor { get; set; }
 

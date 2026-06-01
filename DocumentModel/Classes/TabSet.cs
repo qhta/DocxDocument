@@ -1,5 +1,5 @@
-namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the TabSet Class.
@@ -7,17 +7,17 @@ namespace DocumentModel;
 public class TabSet: ModelElement
 {
   /// <summary>
-  ///   idMso, this property is only available in Office 2010 and later.
+  ///   idMso, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? IdMso { get; set; }
 
   /// <summary>
-  ///   visible, this property is only available in Office 2010 and later.
+  ///   visible, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? Visible { get; set; }
 
   /// <summary>
-  ///   getVisible, this property is only available in Office 2010 and later.
+  ///   getVisible, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? GetVisible { get; set; }
 

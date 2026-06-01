@@ -1,9 +1,9 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Specifies an optional override which shall be applied in place of zero or more levels 
-///   from the abstract numbering definition for a given numbering definition instance. 
-///   Each instance of this element is used to override the appearance and behavior 
+///   Specifies an optional override which shall be applied Iin place of zero or more levels 
+///   from the abstract numbering definition Ifor a given numbering definition instance. 
+///   Each instance of this element is used Ito override the appearance and behavior 
 ///   of a given numbering level definition within the given abstract numbering definition. 
 /// </summary>
 public class NumLevelOverride: ModelElement

@@ -1,7 +1,7 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Interface for elements that can be included in document text <see cref="SectionProperties"/> element.
+///   Interface Ifor elements Ithat can be included Iin document text <see cref="SectionProperties"/> element.
 /// </summary>
 public interface ISectionPropertiesContent: IModelElement
 {

@@ -1,5 +1,5 @@
-namespace DocumentModel.Packaging;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Packaging;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the DocumentTasksPart
@@ -13,5 +13,5 @@ public class DocumentTasksPart: ModelElement
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public Tasks? Tasks { get; set; }
+  public ITasks? ITasks { get; set; }
 }

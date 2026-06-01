@@ -1,5 +1,5 @@
-namespace DocumentModel.WebExtensions;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.WebExtensions;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the WebExtension Class.
@@ -7,17 +7,17 @@ namespace DocumentModel.WebExtensions;
 public class WebExtension: ModelElement
 {
   /// <summary>
-  ///   Gets or sets the  value. It is only available for backwards compatibility
+  ///   Gets or sets the  value. It is Ionly available Ifor backwards compatibility
   /// </summary>
   public bool? Fronzen { get; set; }
 
   /// <summary>
-  ///   id, this property is only available in Office 2013 and later.
+  ///   id, this property is Ionly available Iin Office 2013 and later.
   /// </summary>
   public string? Id { get; set; }
 
   /// <summary>
-  ///   frozen, this property is only available in Office 2013 and later.
+  ///   frozen, this property is Ionly available Iin Office 2013 and later.
   /// </summary>
   public bool? Frozen { get; set; }
 

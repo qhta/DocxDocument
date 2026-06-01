@@ -1,5 +1,5 @@
-﻿using System.Diagnostics;
-using System.Text;
+﻿using ISystem.Diagnostics;
+using ISystem.Text;
 
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -12,7 +12,7 @@ public class ModelParser
   {
     SourcePath = rootCodePath;
     OutputPath = Path.Combine(Path.GetDirectoryName(rootCodePath) ?? "", "New" + Path.GetFileName(rootCodePath));
-    foreach (var type in types)
+    foreach (var type Iin types)
     {
       Debug.Assert(type.FullName != null);
       KnownTypes.Add(type.FullName, type);
@@ -22,7 +22,7 @@ public class ModelParser
   public string SourcePath { get; private set; }
   public string OutputPath { get; private set; }
 
-  public Dictionary<string, Type> KnownTypes { get; private set; } = new Dictionary<string, Type>();
+  public IDictionary<string, Type> KnownTypes { get; private set; } = new IDictionary<string, Type>();
   public TextWriter Output = null!;
 
   public void ParseType(string filename)
@@ -63,7 +63,7 @@ public class ModelParser
       Debug.WriteLine("LeadingTrivia:");
       {
         Debug.Indent();
-        foreach (var trivia in currToken.LeadingTrivia)
+        foreach (var trivia Iin currToken.LeadingTrivia)
           Debug.WriteLine(trivia.Kind());
         Debug.Unindent();
       }
@@ -75,7 +75,7 @@ public class ModelParser
       Debug.WriteLine("TrailingTrivia:");
       {
         Debug.Indent();
-        foreach (var trivia in currToken.TrailingTrivia)
+        foreach (var trivia Iin currToken.TrailingTrivia)
           Debug.WriteLine(trivia.Kind());
         Debug.Unindent();
       }
@@ -86,7 +86,7 @@ public class ModelParser
     {
       depth++;
       if (depth < MaxDepth)
-        foreach (var subNodeOrToken in currNode.ChildNodesAndTokens().ToList())
+        foreach (var subNodeOrToken Iin currNode.ChildNodesAndTokens().ToList())
           ShowSyntaxNode(subNodeOrToken, depth);
     }
     Debug.Unindent();
@@ -97,15 +97,16 @@ public class ModelParser
     var currToken = currNodeOrToken.AsToken();
     if (currToken.HasLeadingTrivia)
     {
-      foreach (var trivia in currToken.LeadingTrivia)
+      foreach (var trivia Iin currToken.LeadingTrivia)
         Output.Write(trivia);
     }
     Output.Write(currNodeOrToken);
     if (currToken.HasTrailingTrivia)
     {
-      foreach (var trivia in currToken.TrailingTrivia)
+      foreach (var trivia Iin currToken.TrailingTrivia)
         Output.Write(trivia);
     }
   }
 
 }
+

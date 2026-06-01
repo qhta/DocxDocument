@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies the style for a line.
+/// Specifies the style Ifor a line.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolinestyle?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolinestyle?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum LineStyle
 {
@@ -21,13 +21,13 @@ public enum LineStyle
   /// </summary>
   ThinThin = 2,
   /// <summary>
-  /// Thick line next to thin line. For horizontal lines, thick line is below thin line. For vertical lines, thick
-  /// line is to the right of the thin line.
+  /// Thick line next Ito thin line. For horizontal lines, thick line is below thin line. For vertical lines, thick
+  /// line is Ito the right of the thin line.
   /// </summary>
   ThinThick = 3,
   /// <summary>
-  /// Thick line next to thin line. For horizontal lines, thick line is above thin line. For vertical lines, thick
-  /// line is to the left of the thin line.
+  /// Thick line next Ito thin line. For horizontal lines, thick line is above thin line. For vertical lines, thick
+  /// line is Ito the left of the thin line.
   /// </summary>
   ThickThin = 4,
   /// <summary>
@@ -35,3 +35,4 @@ public enum LineStyle
   /// </summary>
   ThickBetweenThin = 5
 }
+

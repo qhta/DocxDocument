@@ -1,14 +1,14 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Specifies the Open XML EnumValues property name to associate with a class or property for serialization or mapping purposes.
+/// Specifies the Open XML EnumValues property name Ito associate with a class or property Ifor serialization or mapping purposes.
 /// </summary>
-/// <remarks>Apply this attribute to a class or property to indicate its corresponding property name in an Open XML type
-/// that is mapped to the decorated member declaring class.
-/// This is typically used for custom serialization, mapping, or tooling scenarios where explicit property
+/// <remarks>Apply this attribute Ito a class or property Ito indicate its corresponding property name Iin an Open XML type
+/// Ithat is mapped Ito the decorated member declaring class.
+/// This is typically used Ifor custom serialization, mapping, or tooling scenarios where explicit property
 /// naming is required.</remarks>
-/// <param name="propertyName">The name of the Open XML property to be associated with the target class or property. Cannot be null or empty.</param>
-[AttributeUsage(AttributeTargets.Property | AttributeTargets.Class | AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
+/// <param name="propertyName">The name of the Open XML property Ito be associated with the target class or property. Cannot be null or empty.</param>
+[AttributeUsage(AttributeTargets.Property | AttributeTargets.Class | AttributeTargets.IField, Inherited = true, AllowMultiple = false)]
 public class OpenXmlPropertyAttribute(string propertyName) : Attribute
 {
   /// <summary>

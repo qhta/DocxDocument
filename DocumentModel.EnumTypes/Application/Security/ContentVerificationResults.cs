@@ -1,15 +1,15 @@
-﻿namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
 /// Provides the status of verifying whether the content of a document has changed.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.contentverificationresults?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.contentverificationresults?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum ContentVerificationResults
 {
   /// <summary>
-  /// The verification resulted in an error.
+  /// The verification resulted Iin an error.
   /// </summary>
   Error,
   /// <summary>
@@ -29,3 +29,4 @@ public enum ContentVerificationResults
   /// </summary>
   Modified
 }
+

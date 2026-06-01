@@ -1,0 +1,41 @@
+
+namespace DocumentModel.Interop.Core;
+
+/// <summary>
+/// Reserved for internal use.
+/// </summary>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode?view=office-pia"/>
+public partial class DiagramNode: InteropObject
+{
+  /// <summary>
+  /// Gets or sets the `Children` property.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.children?view=office-pia"/>
+  public DiagramNodeChildren Children { get; }
+  /// <summary>
+  /// Gets the `Shape` property.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.shape?view=office-pia"/>
+  public Shape Shape { get; }
+  /// <summary>
+  /// Gets the `Root` property.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.root?view=office-pia"/>
+  public DiagramNode Root { get; }
+  /// <summary>
+  /// Gets the `Diagram` property.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.diagram?view=office-pia"/>
+  public IMsoDiagram Diagram { get; }
+  /// <summary>
+  /// Gets or sets the `Layout` property.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.layout?view=office-pia"/>
+  public OrgChartLayoutType Layout { get; set; }
+  /// <summary>
+  /// Gets the `TextShape` property.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.textshape?view=office-pia"/>
+  public Shape TextShape { get; }
+}
+

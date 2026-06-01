@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the FontCollectionType Class.
@@ -7,17 +7,17 @@ namespace DocumentModel.Drawings;
 public class FontCollectionType: ModelElement
 {
   /// <summary>
-  ///   Latin Font.
+  ///   Latin IFont.
   /// </summary>
   public TextFontType? LatinFont { get; set; }
 
   /// <summary>
-  ///   East Asian Font.
+  ///   East Asian IFont.
   /// </summary>
   public TextFontType? EastAsianFont { get; set; }
 
   /// <summary>
-  ///   Complex Script Font.
+  ///   Complex Script IFont.
   /// </summary>
   public TextFontType? ComplexScriptFont { get; set; }
 }

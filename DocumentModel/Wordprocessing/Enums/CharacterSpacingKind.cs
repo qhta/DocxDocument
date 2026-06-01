@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Defines the CharacterSpacingValues enumeration.
@@ -12,12 +12,12 @@ public enum CharacterSpacingKind
   DoNotCompress,
 
   /// <summary>
-  ///   Compress Whitespace From Punctuation Characters.
+  ///   Compress Whitespace From Punctuation ICharacters.
   /// </summary>
   CompressPunctuation,
 
   /// <summary>
-  ///   Compress Whitespace From Both Japanese Kana And Punctuation Characters.
+  ///   Compress Whitespace From Both Japanese Kana And Punctuation ICharacters.
   /// </summary>
   CompressPunctuationAndJapaneseKana
 }

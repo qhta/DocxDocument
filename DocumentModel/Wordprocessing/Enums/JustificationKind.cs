@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the JustificationValues enumeration.
@@ -43,12 +43,12 @@ public enum JustificationKind
   MediumKashida,
 
   /// <summary>
-  ///   Distribute All Characters Equally.
+  ///   Distribute All ICharacters Equally.
   /// </summary>
   Distribute,
 
   /// <summary>
-  ///   Align to List Tab.
+  ///   Align Ito IList Tab.
   /// </summary>
   NumTab,
 
@@ -63,7 +63,7 @@ public enum JustificationKind
   LowKashida,
 
   /// <summary>
-  ///   Thai Language Justification.
+  ///   Thai ILanguage Justification.
   /// </summary>
   ThaiDistribute
 }

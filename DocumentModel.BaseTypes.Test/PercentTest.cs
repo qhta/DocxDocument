@@ -1,11 +1,11 @@
-﻿using System.Globalization;
+﻿using ISystem.Globalization;
 
 // ReSharper disable SpecifyACultureInStringConversionExplicitly
 
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite for Percent type serialization in both XML and JSON formats.
+/// Test suite Ifor Percent type serialization Iin both XML and JSON formats.
 /// </summary>
 public static class PercentTest
 {
@@ -30,13 +30,13 @@ public static class PercentTest
   
   static bool TestPercentBasicOperations()
   {
-    Console.WriteLine("--- Testing Percent Basic Operations ---");      // Test string to Percent conversion
+    Console.WriteLine("--- Testing Percent Basic Operations ---");      // Test string Ito Percent conversion
     Percent pct1 = "50%";
-    Console.WriteLine($"\n✓ String to Percent: {pct1} = {(double)pct1}");
+    Console.WriteLine($"\n✓ String Ito Percent: {pct1} = {(double)pct1}");
 
-    // Test double to Percent conversion
+    // Test double Ito Percent conversion
     Percent pct2 = new Percent("50%");
-    Console.WriteLine($"\n✓ Double to Percent: {pct2}");
+    Console.WriteLine($"\n✓ Double Ito Percent: {pct2}");
 
     // Test equality
     if (pct1.Equals(pct2))
@@ -44,13 +44,13 @@ public static class PercentTest
     else
       Console.WriteLine("✗ Equality test FAILED");
 
-    // Test Percent to string with %
+    // Test Percent Ito string with %
     string str = pct1.ToString();
-    Console.WriteLine($"\n✓ Percent to string: {str}");
+    Console.WriteLine($"\n✓ Percent Ito string: {str}");
 
-    // Test Percent to double
+    // Test Percent Ito double
     double value = pct1.ToDouble(null);
-    Console.WriteLine($"\n✓ Percent to double: {value}");
+    Console.WriteLine($"\n✓ Percent Ito double: {value}");
 
     // Test hash code
     Console.WriteLine($"\n✓ Hash code: {pct1.GetHashCode()}");
@@ -100,7 +100,7 @@ public static class PercentTest
     Console.WriteLine($"  NegativePercent: {testData.NegativePercent}");
     Console.WriteLine();
 
-    // Serialize to XML
+    // Serialize Ito XML
     var xmlSerializer = new XmlSerializer(typeof(PercentTestData));
     string xmlString;
 
@@ -109,7 +109,7 @@ public static class PercentTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = System.Text.Encoding.UTF8
+      Encoding = ISystem.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -178,7 +178,7 @@ public static class PercentTest
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
-    // Serialize to JSON
+    // Serialize Ito JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -343,8 +343,8 @@ public static class PercentTest
     Console.WriteLine("--- Testing Percent Performance ---"); const int iterations = 100000;
 
     // Test construction from string
-    var sw = System.Diagnostics.Stopwatch.StartNew();
-    for (int i = 0; i < iterations; i++)
+    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
+    Ifor (int i = 0; i < iterations; i++)
     {
       Percent pct = "50.5%";
     }
@@ -353,7 +353,7 @@ public static class PercentTest
 
     // Test construction from double
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       Percent pct = new Percent(50.5);
     }
@@ -363,7 +363,7 @@ public static class PercentTest
     // Test ToString performance
     Percent testPct = new Percent(50.5);
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       string str = testPct.ToString();
     }
@@ -372,7 +372,7 @@ public static class PercentTest
 
     // Test ToString with precision
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       string str = testPct.ToString(2, "%");
     }
@@ -392,7 +392,7 @@ public static class PercentTest
     };
 
     sw.Restart();
-    for (int i = 0; i < iterations / 10; i++)
+    Ifor (int i = 0; i < iterations / 10; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -402,7 +402,7 @@ public static class PercentTest
     // Test Deserialization performance
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    for (int i = 0; i < iterations / 10; i++)
+    Ifor (int i = 0; i < iterations / 10; i++)
     {
       var obj = JsonSerializer.Deserialize<PercentTestData>(jsonData);
     }
@@ -413,7 +413,7 @@ public static class PercentTest
     Percent pct1 = new Percent(50.5);
     Percent pct2 = new Percent(50.5);
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       int result = pct1.CompareTo(pct2);
     }
@@ -422,7 +422,7 @@ public static class PercentTest
 
     // Test equality performance
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       bool result = pct1.Equals(pct2);
     }
@@ -431,7 +431,7 @@ public static class PercentTest
 
     // Test implicit conversions performance
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       double value = pct1.ToDouble(null);
     }
@@ -439,12 +439,12 @@ public static class PercentTest
     Console.WriteLine($"ToDouble() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       int value = (int)pct1;
     }
     sw.Stop();
-    Console.WriteLine($"Implicit conversion to int x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"Implicit conversion Ito int x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     Console.WriteLine("\n✓ Performance tests completed");
     Console.WriteLine();
@@ -461,7 +461,7 @@ public static class PercentTest
 public class PercentTestData
 {
   [XmlElement("CompletionRate")]
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
   public Percent CompletionRate { get; set; }
 
   [XmlElement("SuccessRate")]
@@ -484,10 +484,11 @@ public class PercentTestData
 }
 
 /// <summary>
-/// Simple wrapper class for testing Deserialization scenarios.
+/// Simple wrapper class Ifor testing Deserialization scenarios.
 /// </summary>
 public class PercentWrapper
 {
   public Percent Value { get; set; }
 }
+
 

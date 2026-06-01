@@ -1,7 +1,7 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Table Style Conditional Formatting Table Properties.
+///   ITable IStyle Conditional Formatting ITable Properties.
 /// </summary>
 public class TableStyleConditionalTableProperties: BaseTableProperties
 {

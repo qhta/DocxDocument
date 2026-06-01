@@ -1,159 +1,159 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   System Color Value
+///   ISystem Color Value
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum SystemColorKind
 {
   /// <summary>
-  ///   Scroll Bar System Color.
+  ///   Scroll Bar ISystem Color.
   /// </summary>
   ScrollBar,
 
   /// <summary>
-  ///   Background System Color.
+  ///   Background ISystem Color.
   /// </summary>
   Background,
 
   /// <summary>
-  ///   Active Caption System Color.
+  ///   Active Caption ISystem Color.
   /// </summary>
   ActiveCaption,
 
   /// <summary>
-  ///   Inactive Caption System Color.
+  ///   Inactive Caption ISystem Color.
   /// </summary>
   InactiveCaption,
 
   /// <summary>
-  ///   Menu System Color.
+  ///   Menu ISystem Color.
   /// </summary>
   Menu,
 
   /// <summary>
-  ///   Window System Color.
+  ///   IWindow ISystem Color.
   /// </summary>
-  Window,
+  IWindow,
 
   /// <summary>
-  ///   Window Frame System Color.
+  ///   IWindow IFrame ISystem Color.
   /// </summary>
   WindowFrame,
 
   /// <summary>
-  ///   Menu Text System Color.
+  ///   Menu Text ISystem Color.
   /// </summary>
   MenuText,
 
   /// <summary>
-  ///   Window Text System Color.
+  ///   IWindow Text ISystem Color.
   /// </summary>
   WindowText,
 
   /// <summary>
-  ///   Caption Text System Color.
+  ///   Caption Text ISystem Color.
   /// </summary>
   CaptionText,
 
   /// <summary>
-  ///   Active Border System Color.
+  ///   Active IBorder ISystem Color.
   /// </summary>
   ActiveBorder,
 
   /// <summary>
-  ///   Inactive Border System Color.
+  ///   Inactive IBorder ISystem Color.
   /// </summary>
   InactiveBorder,
 
   /// <summary>
-  ///   Application Workspace System Color.
+  ///   IApplication Workspace ISystem Color.
   /// </summary>
   ApplicationWorkspace,
 
   /// <summary>
-  ///   Highlight System Color.
+  ///   Highlight ISystem Color.
   /// </summary>
   Highlight,
 
   /// <summary>
-  ///   Highlight Text System Color.
+  ///   Highlight Text ISystem Color.
   /// </summary>
   HighlightText,
 
   /// <summary>
-  ///   Button Face System Color.
+  ///   Button Face ISystem Color.
   /// </summary>
   ButtonFace,
 
   /// <summary>
-  ///   Button Shadow System Color.
+  ///   Button Shadow ISystem Color.
   /// </summary>
   ButtonShadow,
 
   /// <summary>
-  ///   Gray Text System Color.
+  ///   Gray Text ISystem Color.
   /// </summary>
   GrayText,
 
   /// <summary>
-  ///   Button Text System Color.
+  ///   Button Text ISystem Color.
   /// </summary>
   ButtonText,
 
   /// <summary>
-  ///   Inactive Caption Text System Color.
+  ///   Inactive Caption Text ISystem Color.
   /// </summary>
   InactiveCaptionText,
 
   /// <summary>
-  ///   Button Highlight System Color.
+  ///   Button Highlight ISystem Color.
   /// </summary>
   ButtonHighlight,
 
   /// <summary>
-  ///   3D Dark System Color.
+  ///   3D Dark ISystem Color.
   /// </summary>
   ThreeDDarkShadow,
 
   /// <summary>
-  ///   3D Light System Color.
+  ///   3D Light ISystem Color.
   /// </summary>
   ThreeDLight,
 
   /// <summary>
-  ///   Info Text System Color.
+  ///   Info Text ISystem Color.
   /// </summary>
   InfoText,
 
   /// <summary>
-  ///   Info Back System Color.
+  ///   Info Back ISystem Color.
   /// </summary>
   InfoBack,
 
   /// <summary>
-  ///   Hot Light System Color.
+  ///   Hot Light ISystem Color.
   /// </summary>
   HotLight,
 
   /// <summary>
-  ///   Gradient Active Caption System Color.
+  ///   Gradient Active Caption ISystem Color.
   /// </summary>
   GradientActiveCaption,
 
   /// <summary>
-  ///   Gradient Inactive Caption System Color.
+  ///   Gradient Inactive Caption ISystem Color.
   /// </summary>
   GradientInactiveCaption,
 
   /// <summary>
-  ///   Menu Highlight System Color.
+  ///   Menu Highlight ISystem Color.
   /// </summary>
   MenuHighlight,
 
   /// <summary>
-  ///   Menu Bar System Color.
+  ///   Menu Bar ISystem Color.
   /// </summary>
   MenuBar
 }

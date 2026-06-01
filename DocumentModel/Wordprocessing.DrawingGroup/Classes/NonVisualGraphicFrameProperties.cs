@@ -1,7 +1,7 @@
-using DocumentModel.Drawings;
+﻿using DocumentModel.Drawings;
 
 namespace DocumentModel.Wordprocessing.DrawingGroup;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the NonVisualGraphicFrameProperties Class.
@@ -9,7 +9,7 @@ namespace DocumentModel.Wordprocessing.DrawingGroup;
 public class NonVisualGraphicFrameProperties: ModelElement
 {
   /// <summary>
-  ///   Graphic Frame Locks.
+  ///   Graphic IFrame Locks.
   /// </summary>
   public GraphicFrameLocks? GraphicFrameLocks { get; set; }
 

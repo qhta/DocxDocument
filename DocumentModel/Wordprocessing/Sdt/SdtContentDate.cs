@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the SdtContentDate Class.
@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 public class SdtContentDate: ModelElement
 {
   /// <summary>
-  ///   Last Known Date in XML Schema DateTime Format
+  ///   Last Known Date Iin XML Schema DateTime Format
   /// </summary>
   public DateTime? FullDate { get; set; }
 
@@ -17,7 +17,7 @@ public class SdtContentDate: ModelElement
   public string? DateFormat { get; set; }
 
   /// <summary>
-  ///   Date Picker Language ID.
+  ///   Date Picker ILanguage ID.
   /// </summary>
   public string? LanguageId { get; set; }
 

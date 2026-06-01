@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Vertical Relative Positioning
@@ -8,24 +8,24 @@ namespace DocumentModel.Drawings.Wordprocessing;
 public enum VerticalRelativePositionKind
 {
   /// <summary>
-  ///   Page Margin.
+  ///   IPage Margin.
   /// </summary>
   Margin,
 
   /// <summary>
-  ///   Page Edge.
+  ///   IPage Edge.
   /// </summary>
-  Page,
+  IPage,
 
   /// <summary>
-  ///   Paragraph.
+  ///   IParagraph.
   /// </summary>
-  Paragraph,
+  IParagraph,
 
   /// <summary>
-  ///   Line.
+  ///   ILine.
   /// </summary>
-  Line,
+  ILine,
 
   /// <summary>
   ///   Top Margin.

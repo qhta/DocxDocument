@@ -1,31 +1,31 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines the section properties for a section of the document.
+///   Defines the section properties Ifor a section of the document.
 ///   If it occurs as the last body element, then it specifies the properties of the last section of the document.
 ///   For any other section the properties are stored as a child element of the paragraph element 
-///   corresponding to the last paragraph in the given section.
+///   corresponding Ito the last paragraph Iin the given section.
 /// </summary>
 public partial class SectionProperties : ModelElement, IStoryContent
 {
   /// <summary>
-  ///   Physical Section Mark Character Revision ID
+  ///   Physical ISection Mark Character IRevision ID
   /// </summary>
   public HexInt? RsidRPr { get; set; }
 
   /// <summary>
-  ///   Section Deletion Revision ID
+  ///   ISection Deletion IRevision ID
   /// </summary>
   public HexInt? RsidDel { get; set; }
 
   /// <summary>
-  ///   Section Addition Revision ID
+  ///   ISection Addition IRevision ID
   /// </summary>
   public HexInt? RsidR { get; set; }
 
   /// <summary>
-  ///   Section Properties Revision ID
+  ///   ISection Properties IRevision ID
   /// </summary>
   public HexInt? RsidSect { get; set; }
 
@@ -67,7 +67,7 @@ public partial class SectionProperties : ModelElement, IStoryContent
 
    public PageNumberType? PageNumberType { get; set; }
 
-   public Columns? Columns { get; set; }
+   public IColumns? IColumns { get; set; }
 
    public DocGrid? DocGrid { get; set; }
 

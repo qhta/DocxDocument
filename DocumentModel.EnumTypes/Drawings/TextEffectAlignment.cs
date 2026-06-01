@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies alignment for WordArt text.
+/// Specifies alignment Ifor WordArt text.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotexteffectalignment?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotexteffectalignment?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum TextEffectAlignment
 {
@@ -24,15 +24,16 @@ public enum TextEffectAlignment
   /// </summary>
   Right = 3,
   /// <summary>
-  /// Text is justified. Spacing between letters may be adjusted to justify text.
+  /// Text is justified. Spacing between letters may be adjusted Ito justify text.
   /// </summary>
   LetterJustify = 4,
   /// <summary>
-  /// Text is justified. Spacing between words (but not letters) may be adjusted to justify text.
+  /// Text is justified. Spacing between words (but not letters) may be adjusted Ito justify text.
   /// </summary>
   WordJustify = 5,
   /// <summary>
-  /// Text is justified. Letters may be stretched to justify text.
+  /// Text is justified. Letters may be stretched Ito justify text.
   /// </summary>
   StretchJustify = 6
 }
+

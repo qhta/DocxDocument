@@ -1,10 +1,10 @@
-﻿namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
 /// Indicates the signature line image.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signaturelineimage?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signaturelineimage?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum SignatureLineImage
 {
@@ -29,3 +29,4 @@ public enum SignatureLineImage
   /// </summary>
   Signed
 }
+

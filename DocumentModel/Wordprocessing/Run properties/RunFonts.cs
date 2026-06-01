@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Defines the RunFonts Class.
@@ -6,47 +6,47 @@ namespace DocumentModel.Wordprocessing;
 public class RunFonts: TypedModelElement, IRunProperty
 {
   /// <summary>
-  ///   Font Content Type
+  ///   IFont Content Type
   /// </summary>
   public FontTypeHintKind? Hint { get; set; }
 
   /// <summary>
-  ///   ASCII Font
+  ///   ASCII IFont
   /// </summary>
   public RunFont? Ascii { get; set; }
 
   /// <summary>
-  ///   High ANSI Font
+  ///   High ANSI IFont
   /// </summary>
   public RunFont? Ansi { get; set; }
 
   /// <summary>
-  ///   East Asian Font
+  ///   East Asian IFont
   /// </summary>
   public RunFont? EastAsia { get; set; }
 
   /// <summary>
-  ///   Complex Script Font
+  ///   Complex Script IFont
   /// </summary>
   public RunFont? ComplexScript { get; set; }
 
   ///// <summary>
-  /////   ASCII Theme Font
+  /////   ASCII Theme IFont
   ///// </summary>
   //public ThemeFontKind? AsciiTheme { get; set; }
 
   ///// <summary>
-  /////   High ANSI Theme Font
+  /////   High ANSI Theme IFont
   ///// </summary>
   //public ThemeFontKind? HighAnsiTheme { get; set; }
 
   ///// <summary>
-  /////   East Asian Theme Font
+  /////   East Asian Theme IFont
   ///// </summary>
   //public ThemeFontKind? EastAsiaTheme { get; set; }
 
   ///// <summary>
-  /////   Complex Script Theme Font
+  /////   Complex Script Theme IFont
   ///// </summary>
   //public ThemeFontKind? ComplexScriptTheme { get; set; }
 }

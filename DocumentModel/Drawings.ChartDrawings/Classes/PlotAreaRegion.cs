@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.ChartDrawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the PlotAreaRegion Class.
@@ -11,7 +11,7 @@ public class PlotAreaRegion: ModelElement
   /// </summary>
   public PlotSurface? PlotSurface { get; set; }
 
-  public Collection<Series>? Series { get; set; }
+  public Collection<ISeries>? ISeries { get; set; }
 
   public ExtensionList? ExtensionList { get; set; }
 }

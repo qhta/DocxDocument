@@ -1,14 +1,14 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   This element specifies all of the comments defined in the current document. 
+///   This element specifies all of the comments defined Iin the current document. 
 /// </summary>
 public class DocComments: ModelElement
 {
   /// <summary>
-  /// Comments collections.
+  /// IComments collections.
   /// </summary>
-  public Comments? Comments { get; set; }
+  public IComments? IComments { get; set; }
 
   /// <summary>
   /// CommentsEx collections.

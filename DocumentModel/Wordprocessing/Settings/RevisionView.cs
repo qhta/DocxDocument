@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Visibility of Annotation Types.
@@ -12,17 +12,17 @@ public class RevisionView: ModelElement
   public bool? Markup { get; set; }
 
   /// <summary>
-  ///   Display Comments
+  ///   Display IComments
   /// </summary>
-  public bool? Comments { get; set; }
+  public bool? IComments { get; set; }
 
   /// <summary>
-  ///   Display Content Revisions
+  ///   Display Content IRevisions
   /// </summary>
   public bool? DisplayRevision { get; set; }
 
   /// <summary>
-  ///   Display Formatting Revisions
+  ///   Display Formatting IRevisions
   /// </summary>
   public bool? Formatting { get; set; }
 

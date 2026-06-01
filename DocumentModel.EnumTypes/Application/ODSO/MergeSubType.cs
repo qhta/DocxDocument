@@ -1,10 +1,10 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the data source to be attached to the current document.
+/// Specifies the data source Ito be attached Ito the current document.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdmergesubtype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdmergesubtype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum MergeSubType
 {
@@ -17,7 +17,7 @@ public enum MergeSubType
   /// </summary>
   Access = 1,
   /// <summary>
-  /// Office Address List.
+  /// Office Address IList.
   /// </summary>
   OAL = 2,
   /// <summary>
@@ -45,3 +45,4 @@ public enum MergeSubType
   /// </summary>
   Word2000 = 8
 }
+

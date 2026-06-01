@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings.ChartsStyle;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartsStyle;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines the ChartArea Class.
+///   Defines the IChartArea Class.
 /// </summary>
-public class ChartArea: ModelElement
+public class IChartArea: ModelElement
 {
   public LineReference? LineReference { get; set; }
 

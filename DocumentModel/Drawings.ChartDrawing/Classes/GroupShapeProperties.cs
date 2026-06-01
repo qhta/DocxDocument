@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.ChartDrawing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Group Shape Properties.
+///   Group IShape Properties.
 /// </summary>
 public class GroupShapeProperties: ModelElement
 {
@@ -12,7 +12,7 @@ public class GroupShapeProperties: ModelElement
   public BlackWhiteMode? BlackWhiteMode { get; set; }
 
   /// <summary>
-  ///   2D Transform for Grouped Objects.
+  ///   2D Transform Ifor Grouped Objects.
   /// </summary>
   public TransformGroup? TransformGroup { get; set; }
 

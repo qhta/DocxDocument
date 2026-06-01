@@ -1,18 +1,18 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 /// <summary>
-///   Font Collection Index
+///   IFont Collection IIndex
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXD.FontCollectionIndexValues))]
 public enum FontCollectionIndex
 {
   /// <summary>
-  ///   Major Font.
+  ///   Major IFont.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.FontCollectionIndexValues.Major))]
   Major,
   /// <summary>
-  ///   Minor Font.
+  ///   Minor IFont.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.FontCollectionIndexValues.Minor))]
   Minor,

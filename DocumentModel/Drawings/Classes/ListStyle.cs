@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the ListStyle Class.
@@ -7,52 +7,52 @@ namespace DocumentModel.Drawings;
 public class ListStyle: ModelElement
 {
   /// <summary>
-  ///   Default Paragraph Style.
+  ///   Default IParagraph IStyle.
   /// </summary>
   public ParagraphProperties? DefaultParagraphProperties { get; set; }
 
   /// <summary>
-  ///   List Level 1 Text Style.
+  ///   IList Level 1 Text IStyle.
   /// </summary>
   public ParagraphProperties? Level1ParagraphProperties { get; set; }
 
   /// <summary>
-  ///   List Level 2 Text Style.
+  ///   IList Level 2 Text IStyle.
   /// </summary>
   public ParagraphProperties? Level2ParagraphProperties { get; set; }
 
   /// <summary>
-  ///   List Level 3 Text Style.
+  ///   IList Level 3 Text IStyle.
   /// </summary>
   public ParagraphProperties? Level3ParagraphProperties { get; set; }
 
   /// <summary>
-  ///   List Level 4 Text Style.
+  ///   IList Level 4 Text IStyle.
   /// </summary>
   public ParagraphProperties? Level4ParagraphProperties { get; set; }
 
   /// <summary>
-  ///   List Level 5 Text Style.
+  ///   IList Level 5 Text IStyle.
   /// </summary>
   public ParagraphProperties? Level5ParagraphProperties { get; set; }
 
   /// <summary>
-  ///   List Level 6 Text Style.
+  ///   IList Level 6 Text IStyle.
   /// </summary>
   public ParagraphProperties? Level6ParagraphProperties { get; set; }
 
   /// <summary>
-  ///   List Level 7 Text Style.
+  ///   IList Level 7 Text IStyle.
   /// </summary>
   public ParagraphProperties? Level7ParagraphProperties { get; set; }
 
   /// <summary>
-  ///   List Level 8 Text Style.
+  ///   IList Level 8 Text IStyle.
   /// </summary>
   public ParagraphProperties? Level8ParagraphProperties { get; set; }
 
   /// <summary>
-  ///   List Level 9 Text Style.
+  ///   IList Level 9 Text IStyle.
   /// </summary>
   public ParagraphProperties? Level9ParagraphProperties { get; set; }
 

@@ -1,5 +1,5 @@
-namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the TaskHistoryEvent Class.
@@ -7,12 +7,12 @@ namespace DocumentModel;
 public class TaskHistoryEvent: ModelElement
 {
   /// <summary>
-  ///   time, this property is only available in Office 2021 and later.
+  ///   time, this property is Ionly available Iin Office 2021 and later.
   /// </summary>
   public DateTime? Time { get; set; }
 
   /// <summary>
-  ///   id, this property is only available in Office 2021 and later.
+  ///   id, this property is Ionly available Iin Office 2021 and later.
   /// </summary>
   public string? Id { get; set; }
 

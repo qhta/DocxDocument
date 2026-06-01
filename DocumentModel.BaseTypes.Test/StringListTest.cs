@@ -1,12 +1,12 @@
-﻿using System.Collections;
-using System.Globalization;
+﻿using ISystem.Collections;
+using ISystem.Globalization;
 
 // ReSharper disable SpecifyACultureInStringConversionExplicitly
 
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite for StringList type serialization in both XML and JSON formats.
+/// Test suite Ifor StringList type serialization Iin both XML and JSON formats.
 /// </summary>
 public static class StringListTest
 {
@@ -59,9 +59,9 @@ public static class StringListTest
     StringList list3 = "one,two,three"!;
     Console.WriteLine($"\n✓ Implicit from string: {list3}");
 
-    // Test implicit conversion to string
+    // Test implicit conversion Ito string
     string? backToString = list3;
-    Console.WriteLine($"\n✓ Back to string: '{backToString}'");
+    Console.WriteLine($"\n✓ Back Ito string: '{backToString}'");
 
     // Test Count property
     Console.WriteLine($"\n✓ Count property: {list2.Count}");
@@ -85,7 +85,7 @@ public static class StringListTest
     list.Add("item2");
     list.Add("item3");
     Console.Write("  Items: ");
-    foreach (var item in list)
+    foreach (var item Iin list)
     {
       Console.Write($"{item} ");
     }
@@ -100,7 +100,7 @@ public static class StringListTest
     Console.WriteLine("\nTesting Remove:");
     bool removed = list.Remove("item2");
     Console.WriteLine($"  Removed 'item2': {removed}");
-    Console.WriteLine($"  List after remove: {list}");
+    Console.WriteLine($"  IList after remove: {list}");
     Console.WriteLine($"  Count after remove: {list.Count}");
 
     // Test CopyTo
@@ -114,7 +114,7 @@ public static class StringListTest
     Console.WriteLine($"  Count before clear: {list.Count}");
     list.Clear();
     Console.WriteLine($"  Count after clear: {list.Count}");
-    Console.WriteLine($"  List after clear: '{list}'");
+    Console.WriteLine($"  IList after clear: '{list}'");
 
     // Test ICollection.CopyTo
     Console.WriteLine("\nTesting ICollection.CopyTo:");
@@ -248,7 +248,7 @@ public static class StringListTest
     Console.WriteLine("\nTesting ToInt32 (returns count):");
     StringList threeItems = new StringList("x,y,z");
     int count32 = threeItems.ToInt32(null);
-    Console.WriteLine($"  List with 3 items ToInt32: {count32}");
+    Console.WriteLine($"  IList with 3 items ToInt32: {count32}");
     if (count32 != 3)
     {
       Console.WriteLine("✗ ToInt32 test FAILED");
@@ -258,7 +258,7 @@ public static class StringListTest
     // Test ToInt64
     Console.WriteLine("\nTesting ToInt64 (returns count):");
     long count64 = threeItems.ToInt64(null);
-    Console.WriteLine($"  List with 3 items ToInt64: {count64}");
+    Console.WriteLine($"  IList with 3 items ToInt64: {count64}");
     if (count64 != 3L)
     {
       Console.WriteLine("✗ ToInt64 test FAILED");
@@ -268,7 +268,7 @@ public static class StringListTest
     // Test ToUInt32
     Console.WriteLine("\nTesting ToUInt32 (returns count):");
     uint countU32 = threeItems.ToUInt32(null);
-    Console.WriteLine($"  List with 3 items ToUInt32: {countU32}");
+    Console.WriteLine($"  IList with 3 items ToUInt32: {countU32}");
     if (countU32 != 3U)
     {
       Console.WriteLine("✗ ToUInt32 test FAILED");
@@ -278,7 +278,7 @@ public static class StringListTest
     // Test ToUInt64
     Console.WriteLine("\nTesting ToUInt64 (returns count):");
     ulong countU64 = threeItems.ToUInt64(null);
-    Console.WriteLine($"  List with 3 items ToUInt64: {countU64}");
+    Console.WriteLine($"  IList with 3 items ToUInt64: {countU64}");
     if (countU64 != 3UL)
     {
       Console.WriteLine("✗ ToUInt64 test FAILED");
@@ -357,7 +357,7 @@ public static class StringListTest
 
     ShowOriginalData(testData);
 
-    // Serialize to XML
+    // Serialize Ito XML
     var xmlSerializer = new XmlSerializer(typeof(StringListTestData));
     string xmlString;
 
@@ -366,7 +366,7 @@ public static class StringListTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = System.Text.Encoding.UTF8
+      Encoding = ISystem.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -431,7 +431,7 @@ public static class StringListTest
 
     ShowOriginalData(testData);
 
-    // Serialize to JSON
+    // Serialize Ito JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -463,7 +463,7 @@ public static class StringListTest
       SingleItem = new StringList("single"),
       MultipleItems = new StringList("one,two,three"),
       ItemsWithSpaces = new StringList("item one,item two,item three"),
-      SpecialChars = new StringList("hello world,test@example.com,path/to/file"),
+      SpecialChars = new StringList("hello world,test@example.com,path/Ito/file"),
       Numbers = new StringList("1,2,3,4,5")
     };
   }
@@ -488,7 +488,7 @@ public static class StringListTest
     Console.WriteLine("Testing null handling:");
     StringList? nullList = null;
     string? nullToString = nullList;
-    Console.WriteLine($"  Null list to string: {(nullToString == null ? "null" : $"'{nullToString}'")}");
+    Console.WriteLine($"  Null list Ito string: {(nullToString == null ? "null" : $"'{nullToString}'")}");
 
     StringList? fromNull = (string?)null;
     Console.WriteLine($"  From null string: {(fromNull == null ? "null" : $"'{fromNull}'")}");
@@ -561,7 +561,7 @@ public static class StringListTest
     // Test enumeration on empty list
     Console.WriteLine("\nTesting enumeration on empty list:");
     int count = 0;
-    foreach (var item in emptyList)
+    foreach (var item Iin emptyList)
     {
       count++;
     }
@@ -579,8 +579,8 @@ public static class StringListTest
     Console.WriteLine("--- Testing StringList Performance ---"); const int iterations = 10000;
 
     // Test construction from string
-    var sw = System.Diagnostics.Stopwatch.StartNew();
-    for (int i = 0; i < iterations; i++)
+    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
+    Ifor (int i = 0; i < iterations; i++)
     {
       StringList list = new StringList("a,b,c,d,e");
     }
@@ -589,7 +589,7 @@ public static class StringListTest
 
     // Test default construction and Add operations
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       StringList list = new StringList();
       list.Add("a");
@@ -604,7 +604,7 @@ public static class StringListTest
     // Test ToString performance
     StringList testList = new StringList("one,two,three,four,five");
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       string str = testList.ToString();
     }
@@ -613,7 +613,7 @@ public static class StringListTest
 
     // Test Contains performance
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       bool contains = testList.Contains("three");
     }
@@ -622,9 +622,9 @@ public static class StringListTest
 
     // Test enumeration performance
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
-      foreach (var item in testList)
+      foreach (var item Iin testList)
       {
         // Just enumerate
       }
@@ -639,12 +639,12 @@ public static class StringListTest
       SingleItem = new StringList("single"),
       MultipleItems = new StringList("one,two,three"),
       ItemsWithSpaces = new StringList("item one,item two,item three"),
-      SpecialChars = new StringList("hello world,test@example.com,path/to/file"),
+      SpecialChars = new StringList("hello world,test@example.com,path/Ito/file"),
       Numbers = new StringList("1,2,3,4,5")
     };
 
     sw.Restart();
-    for (int i = 0; i < iterations / 10; i++)
+    Ifor (int i = 0; i < iterations / 10; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -654,7 +654,7 @@ public static class StringListTest
     // Test Deserialization performance
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    for (int i = 0; i < iterations / 10; i++)
+    Ifor (int i = 0; i < iterations / 10; i++)
     {
       var obj = JsonSerializer.Deserialize<StringListTestData>(jsonData);
     }
@@ -665,7 +665,7 @@ public static class StringListTest
     StringList list1 = new StringList("a,b,c,d,e");
     StringList list2 = new StringList("a,b,c,d,e");
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       bool result = list1.Equals(list2);
     }
@@ -674,7 +674,7 @@ public static class StringListTest
 
     // Test GetHashCode performance
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       int hash = list1.GetHashCode();
     }
@@ -683,7 +683,7 @@ public static class StringListTest
 
     // Test Remove performance
     sw.Restart();
-    for (int i = 0; i < iterations / 10; i++)
+    Ifor (int i = 0; i < iterations / 10; i++)
     {
       StringList tempList = new StringList("a,b,c,d,e");
       tempList.Remove("c");
@@ -706,7 +706,7 @@ public static class StringListTest
 public class StringListTestData
 {
   [XmlElement("EmptyList")]
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
   public StringList EmptyList { get; set; } = new StringList();
 
   [XmlElement("SingleItem")]
@@ -726,10 +726,11 @@ public class StringListTestData
 }
 
 /// <summary>
-/// Simple wrapper class for testing Deserialization scenarios.
+/// Simple wrapper class Ifor testing Deserialization scenarios.
 /// </summary>
 public class StringListWrapper
 {
   public StringList? Value { get; set; }
 }
+
 

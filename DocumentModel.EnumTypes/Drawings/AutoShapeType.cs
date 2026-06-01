@@ -1,20 +1,20 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies the shape type for an AutoShape object.
+/// Specifies the shape type Ifor an AutoShape object.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoautoshapetype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoautoshapetype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum AutoShapeType
 {
   /// <summary>
-  /// Return value only; indicates a combination of the other states.
+  /// Return value Ionly; indicates a combination of the other states.
   /// </summary>
   /// <summary>
-  /// Rectangle.
+  /// IRectangle.
   /// </summary>
-  Rectangle = 1,
+  IRectangle = 1,
   /// <summary>
   /// Parallelogram.
   /// </summary>
@@ -140,39 +140,39 @@ public enum AutoShapeType
   /// </summary>
   RightBrace = 32,
   /// <summary>
-  /// Block arrow that points right.
+  /// Block arrow Ithat points right.
   /// </summary>
   RightArrow = 33,
   /// <summary>
-  /// Block arrow that points left.
+  /// Block arrow Ithat points left.
   /// </summary>
   LeftArrow = 34,
   /// <summary>
-  /// Block arrow that points up.
+  /// Block arrow Ithat points up.
   /// </summary>
   UpArrow = 35,
   /// <summary>
-  /// Block arrow that points down.
+  /// Block arrow Ithat points down.
   /// </summary>
   DownArrow = 36,
   /// <summary>
-  /// Block arrow with arrowheads that point both left and right.
+  /// Block arrow with arrowheads Ithat point both left and right.
   /// </summary>
   LeftRightArrow = 37,
   /// <summary>
-  /// Block arrow that points up and down.
+  /// Block arrow Ithat points up and down.
   /// </summary>
   UpDownArrow = 38,
   /// <summary>
-  /// Block arrows that point up, down, left, and right.
+  /// Block arrows Ithat point up, down, left, and right.
   /// </summary>
   QuadArrow = 39,
   /// <summary>
-  /// Block arrow with arrowheads that point left, right, and up.
+  /// Block arrow with arrowheads Ithat point left, right, and up.
   /// </summary>
   LeftRightUpArrow = 40,
   /// <summary>
-  /// Block arrow that follows a curved 90-degree angle.
+  /// Block arrow Ithat follows a curved 90-degree angle.
   /// </summary>
   BentArrow = 41,
   /// <summary>
@@ -180,35 +180,35 @@ public enum AutoShapeType
   /// </summary>
   UTurnArrow = 42,
   /// <summary>
-  /// Block arrow with arrowheads that point left and up.
+  /// Block arrow with arrowheads Ithat point left and up.
   /// </summary>
   LeftUpArrow = 43,
   /// <summary>
-  /// Block arrow that follows a sharp 90-degree angle. Points up by default.
+  /// Block arrow Ithat follows a sharp 90-degree angle. IPoints up by default.
   /// </summary>
   BentUpArrow = 44,
   /// <summary>
-  /// Block arrow that curves right.
+  /// Block arrow Ithat curves right.
   /// </summary>
   CurvedRightArrow = 45,
   /// <summary>
-  /// Block arrow that curves left.
+  /// Block arrow Ithat curves left.
   /// </summary>
   CurvedLeftArrow = 46,
   /// <summary>
-  /// Block arrow that curves up.
+  /// Block arrow Ithat curves up.
   /// </summary>
   CurvedUpArrow = 47,
   /// <summary>
-  /// Block arrow that curves down.
+  /// Block arrow Ithat curves down.
   /// </summary>
   CurvedDownArrow = 48,
   /// <summary>
-  /// Block arrow that points right with stripes at the tail.
+  /// Block arrow Ithat points right with stripes at the tail.
   /// </summary>
   StripedRightArrow = 49,
   /// <summary>
-  /// Notched block arrow that points right.
+  /// Notched block arrow Ithat points right.
   /// </summary>
   NotchedRightArrow = 50,
   /// <summary>
@@ -220,35 +220,35 @@ public enum AutoShapeType
   /// </summary>
   Chevron = 52,
   /// <summary>
-  /// Callout with arrow that points right.
+  /// Callout with arrow Ithat points right.
   /// </summary>
   RightArrowCallout = 53,
   /// <summary>
-  /// Callout with arrow that points left.
+  /// Callout with arrow Ithat points left.
   /// </summary>
   LeftArrowCallout = 54,
   /// <summary>
-  /// Callout with arrow that points up.
+  /// Callout with arrow Ithat points up.
   /// </summary>
   UpArrowCallout = 55,
   /// <summary>
-  /// Callout with arrow that points down.
+  /// Callout with arrow Ithat points down.
   /// </summary>
   DownArrowCallout = 56,
   /// <summary>
-  /// Callout with arrowheads that point both left and right.
+  /// Callout with arrowheads Ithat point both left and right.
   /// </summary>
   LeftRightArrowCallout = 57,
   /// <summary>
-  /// Callout with arrows that point up and down.
+  /// Callout with arrows Ithat point up and down.
   /// </summary>
   UpDownArrowCallout = 58,
   /// <summary>
-  /// Callout with arrows that point up, down, left, and right.
+  /// Callout with arrows Ithat point up, down, left, and right.
   /// </summary>
   QuadArrowCallout = 59,
   /// <summary>
-  /// Block arrow that follows a curved 180-degree angle.
+  /// Block arrow Ithat follows a curved 180-degree angle.
   /// </summary>
   CircularArrow = 60,
   /// <summary>
@@ -276,7 +276,7 @@ public enum AutoShapeType
   /// </summary>
   FlowchartInternalStorage = 66,
   /// <summary>
-  /// Document flowchart symbol.
+  /// IDocument flowchart symbol.
   /// </summary>
   FlowchartDocument = 67,
   /// <summary>
@@ -404,11 +404,11 @@ public enum AutoShapeType
   /// </summary>
   DownRibbon = 98,
   /// <summary>
-  /// Ribbon banner that curves up.
+  /// Ribbon banner Ithat curves up.
   /// </summary>
   CurvedUpRibbon = 99,
   /// <summary>
-  /// Ribbon banner that curves down.
+  /// Ribbon banner Ithat curves down.
   /// </summary>
   CurvedDownRibbon = 100,
   /// <summary>
@@ -544,7 +544,7 @@ public enum AutoShapeType
   /// </summary>
   ActionButtonReturn = 133,
   /// <summary>
-  /// Document button. Supports mouse-click and mouse-over actions.
+  /// IDocument button. Supports mouse-click and mouse-over actions.
   /// </summary>
   ActionButtonDocument = 134,
   /// <summary>
@@ -642,7 +642,7 @@ public enum AutoShapeType
   /// <summary>
   /// No description is available.
   /// </summary>
-  Frame = 158,
+  IFrame = 158,
   /// <summary>
   /// No description is available.
   /// </summary>
@@ -744,3 +744,4 @@ public enum AutoShapeType
   /// </summary>
   LineInverse = 183
 }
+

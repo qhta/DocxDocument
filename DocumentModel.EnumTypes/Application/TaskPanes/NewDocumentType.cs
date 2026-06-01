@@ -1,10 +1,10 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the type of new document to create.
+/// Specifies the type of new document Ito create.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdnewdocumenttype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdnewdocumenttype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum NewDocumentType
 {
@@ -21,11 +21,12 @@ public enum NewDocumentType
   /// </summary>
   EmailMessage = 2,
   /// <summary>
-  /// Frameset.
+  /// IFrameset.
   /// </summary>
-  Frameset = 3,
+  IFrameset = 3,
   /// <summary>
   /// XML document.
   /// </summary>
   XMLDocument = 4
 }
+

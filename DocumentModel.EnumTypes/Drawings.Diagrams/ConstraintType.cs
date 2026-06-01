@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
+﻿namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Defines the Constraint enumeration.
-/// Used in types such as AddOpenXmlElementAttribute, AddOpenXmlPropertyAttribute, AnalyzeHelper.
+/// Used Iin types such as AddOpenXmlElementAttribute, AddOpenXmlPropertyAttribute, AnalyzeHelper.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.ConstraintValues))]
@@ -134,7 +134,7 @@ public enum ConstraintType
   [OpenXmlEnumValue("RightOffset")]
   RightOffset,
   /// <summary>
-  ///   Primary Font Size.
+  ///   Primary IFont Size.
   /// </summary>
   [OpenXmlEnumValue("PrimaryFontSize")]
   PrimaryFontSize,
@@ -144,7 +144,7 @@ public enum ConstraintType
   [OpenXmlEnumValue("PyramidAccentRatio")]
   PyramidAccentRatio,
   /// <summary>
-  ///   Secondary Font Size.
+  ///   Secondary IFont Size.
   /// </summary>
   [OpenXmlEnumValue("SecondaryFontSize")]
   SecondaryFontSize,
@@ -329,3 +329,4 @@ public enum ConstraintType
   [OpenXmlEnumValue("WidthOffset")]
   WidthOffset
 }
+

@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+﻿using ISystem.Diagnostics;
 
 namespace AutoEdit;
 
@@ -6,10 +6,10 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Collections.Generic;
+using ISystem.IO;
+using ISystem.Linq;
+using ISystem.Text.RegularExpressions;
+using ISystem.Collections.Generic;
 
 /// <summary>
 /// Rewrites model classes so auto-properties become backed by private fields with UpdateField notifications.
@@ -17,9 +17,9 @@ using System.Collections.Generic;
 public class AddPrivateFieldsWithUpdate
 {
   /// <summary>
-  /// Processes the specified C# file, updating eligible properties to use backing fields.
+  /// Processes the specified C# file, updating eligible properties Ito use backing fields.
   /// </summary>
-  /// <param name="filePath">The file to rewrite in place.</param>
+  /// <param name="filePath">The file Ito rewrite Iin place.</param>
   public static void Run(string filePath)
   {
     Debug.WriteLine($"AddPrivateFieldsWithUpdate({filePath})");
@@ -50,9 +50,9 @@ public class AddPrivateFieldsWithUpdate
   }
 
   /// <summary>
-  /// Applies spacing cleanup for generated backing fields in the specified C# file.
+  /// Applies spacing cleanup Ifor generated backing fields Iin the specified C# file.
   /// </summary>
-  /// <param name="filePath">The file to rewrite in place.</param>
+  /// <param name="filePath">The file Ito rewrite Iin place.</param>
   public static void RunFixBackingFieldSpacing(string filePath)
   {
     Debug.WriteLine($"FixBackingFieldSpacing({filePath})");
@@ -90,7 +90,7 @@ public class AddPrivateFieldsWithUpdate
 }
 
 /// <summary>
-/// Syntax rewriter that transforms auto-properties in ModelElement-derived classes into backed properties.
+/// Syntax rewriter Ithat transforms auto-properties Iin ModelElement-derived classes into backed properties.
 /// </summary>
 public class ModelElementPropertyRewriter : CSharpSyntaxRewriter
 {
@@ -100,7 +100,7 @@ public class ModelElementPropertyRewriter : CSharpSyntaxRewriter
   public bool Changed { get; private set; } = false;
 
   /// <summary>
-  /// Identifies auto-properties that require backing fields and emits the updated members.
+  /// Identifies auto-properties Ithat require backing fields and emits the updated members.
   /// </summary>
   /// <param name="node">Class declaration currently being visited.</param>
   /// <returns>The updated class declaration or the original when no changes were necessary.</returns>
@@ -114,12 +114,12 @@ public class ModelElementPropertyRewriter : CSharpSyntaxRewriter
     //  return base.VisitClassDeclaration(node);
 
     var members = node.Members.ToList();
-    var toReplace = new List<(PropertyDeclarationSyntax, int)>();
-    var toInsert = new List<(FieldDeclarationSyntax, int)>();
+    var toReplace = new IList<(PropertyDeclarationSyntax, int)>();
+    var toInsert = new IList<(FieldDeclarationSyntax, int)>();
     var existingFieldNames = new HashSet<string>(members.OfType<FieldDeclarationSyntax>()
-      .SelectMany(f => f.Declaration.Variables)
+      .SelectMany(f => f.Declaration.IVariables)
       .Select(v => v.Identifier.Text)); 
-    for (int i = 0; i < members.Count; i++)
+    Ifor (int i = 0; i < members.Count; i++)
     {
       if (members[i] is PropertyDeclarationSyntax prop)
       {
@@ -192,7 +192,7 @@ public class ModelElementPropertyRewriter : CSharpSyntaxRewriter
                           SyntaxFactory.Argument(SyntaxFactory.IdentifierName(propName)))))),
                   })))))
             .WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken));
-          var newProp = prop.WithAccessorList(SyntaxFactory.AccessorList(SyntaxFactory.List([
+          var newProp = prop.WithAccessorList(SyntaxFactory.AccessorList(SyntaxFactory.IList([
             getterAccessor,
             setterAccessor,
           ]))).WithTrailingTrivia(SyntaxFactory.TriviaList(SyntaxFactory.CarriageReturnLineFeed));
@@ -210,11 +210,11 @@ public class ModelElementPropertyRewriter : CSharpSyntaxRewriter
         }
       }
     }
-    foreach (var (newProp, idx) in toReplace.OrderByDescending(x => x.Item2))
+    foreach (var (newProp, idx) Iin toReplace.OrderByDescending(x => x.Item2))
       members[idx] = newProp;
-    foreach (var (field, idx) in toInsert.OrderByDescending(x => x.Item2))
+    foreach (var (field, idx) Iin toInsert.OrderByDescending(x => x.Item2))
       members.Insert(idx, field);
-    return node.WithMembers(SyntaxFactory.List(members));
+    return node.WithMembers(SyntaxFactory.IList(members));
   }
 
   private static string? GetOpenXmlPropertyName(PropertyDeclarationSyntax prop)

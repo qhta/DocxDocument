@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the PageBorders Class.
@@ -7,37 +7,37 @@ namespace DocumentModel.Wordprocessing;
 public class PageBorders: ModelElement, ISectionPropertiesContent
 {
   /// <summary>
-  ///   Z-Ordering of Page Border
+  ///   Z-Ordering of IPage IBorder
   /// </summary>
   public PageBorderZOrderKind? ZOrder { get; set; }
 
   /// <summary>
-  ///   Pages to Display Page Borders
+  ///   IPages Ito Display IPage IBorders
   /// </summary>
   public PageBorderDisplayKind? Display { get; set; }
 
   /// <summary>
-  ///   Page Border Positioning
+  ///   IPage IBorder Positioning
   /// </summary>
   public PageBorderOffsetKind? OffsetFrom { get; set; }
 
   /// <summary>
-  ///   Top Border.
+  ///   Top IBorder.
   /// </summary>
-  public Border? TopBorder { get; set; }
+  public IBorder? TopBorder { get; set; }
 
   /// <summary>
-  ///   Left Border.
+  ///   Left IBorder.
   /// </summary>
-  public Border? LeftBorder { get; set; }
+  public IBorder? LeftBorder { get; set; }
 
   /// <summary>
-  ///   Bottom Border.
+  ///   Bottom IBorder.
   /// </summary>
-  public Border? BottomBorder { get; set; }
+  public IBorder? BottomBorder { get; set; }
 
   /// <summary>
-  ///   Right Border.
+  ///   Right IBorder.
   /// </summary>
-  public Border? RightBorder { get; set; }
+  public IBorder? RightBorder { get; set; }
 }

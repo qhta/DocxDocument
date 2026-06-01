@@ -1,4 +1,4 @@
-﻿using System;
+﻿using ISystem;
 
 namespace DocumentModel.Attributes
 {

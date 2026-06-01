@@ -1,4 +1,4 @@
-﻿using System.Runtime.Serialization;
+﻿using ISystem.Runtime.Serialization;
 
 namespace DocumentModel;
 
@@ -20,12 +20,12 @@ public class Color
   public RGB? Value { get; set; }
 
   /// <summary>
-  /// Initializing constructor for empty color.
+  /// Initializing constructor Ifor empty color.
   /// </summary>
   public Color() { }
 
   /// <summary>
-  /// Initializing constructor for "auto" or RGB color.
+  /// Initializing constructor Ifor "auto" or RGB color.
   /// </summary>
   /// <param name="value"></param>
   public Color(string value)
@@ -90,3 +90,4 @@ public class Color
   }
 
 }
+

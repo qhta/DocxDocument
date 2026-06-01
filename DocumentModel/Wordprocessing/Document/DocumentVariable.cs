@@ -1,18 +1,18 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Single Document Variable.
+///   Single IDocument IVariable.
 /// </summary>
 public class DocumentVariable: ModelElement
 {
   /// <summary>
-  ///   Document Variable Name
+  ///   IDocument IVariable Name
   /// </summary>
   public string? Name { get; set; }
 
   /// <summary>
-  ///   Document Variable Value
+  ///   IDocument IVariable Value
   /// </summary>
   public string? Val { get; set; }
 }

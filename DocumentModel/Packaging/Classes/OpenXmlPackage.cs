@@ -1,10 +1,10 @@
-using DocumentModel;
+﻿using DocumentModel;
 
 namespace DocumentModel.Packaging;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Represents a base class for strong typed Open XML document classes.
+///   Represents a base class Ifor strong typed Open XML document classes.
 /// </summary>
 public class OpenXmlPackage: ModelElement
 {
@@ -19,7 +19,7 @@ public class OpenXmlPackage: ModelElement
   public Package? Package { get; set; }
 
   /// <summary>
-  ///   Gets the FileAccess setting for the document.
+  ///   Gets the FileAccess setting Ifor the document.
   /// </summary>
   public FileAccess? FileOpenAccess { get; set; }
 
@@ -29,17 +29,17 @@ public class OpenXmlPackage: ModelElement
   public CoreProperties? PackageProperties { get; set; }
 
   /// <summary>
-  ///   Gets or sets the compression level for the content of the new part
+  ///   Gets or sets the compression level Ifor the content of the new part
   /// </summary>
   public CompressionOption? CompressionOption { get; set; }
 
   /// <summary>
-  ///   Gets a PartExtensionProvider part which provides a mapping from ContentType to part extension.
+  ///   Gets a PartExtensionProvider part which provides a mapping from ContentType Ito part extension.
   /// </summary>
-  public Dictionary<String, String>? PartExtensionProvider { get; set; }
+  public IDictionary<String, String>? PartExtensionProvider { get; set; }
 
   /// <summary>
-  ///   Gets all the  parts in the document package.
+  ///   Gets all the  parts Iin the document package.
   /// </summary>
   public Collection<DataPart>? DataParts { get; set; }
 

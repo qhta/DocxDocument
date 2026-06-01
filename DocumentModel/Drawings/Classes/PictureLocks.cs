@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the PictureLocks Class.
@@ -7,17 +7,17 @@ namespace DocumentModel.Drawings;
 public class PictureLocks: ModelElement
 {
   /// <summary>
-  ///   Disallow Shape Grouping
+  ///   Disallow IShape Grouping
   /// </summary>
   public bool? NoGrouping { get; set; }
 
   /// <summary>
-  ///   Disallow Shape Selection
+  ///   Disallow IShape ISelection
   /// </summary>
   public bool? NoSelection { get; set; }
 
   /// <summary>
-  ///   Disallow Shape Rotation
+  ///   Disallow IShape Rotation
   /// </summary>
   public bool? NoRotation { get; set; }
 
@@ -27,17 +27,17 @@ public class PictureLocks: ModelElement
   public bool? NoChangeAspect { get; set; }
 
   /// <summary>
-  ///   Disallow Shape Movement
+  ///   Disallow IShape Movement
   /// </summary>
   public bool? NoMove { get; set; }
 
   /// <summary>
-  ///   Disallow Shape Resize
+  ///   Disallow IShape Resize
   /// </summary>
   public bool? NoResize { get; set; }
 
   /// <summary>
-  ///   Disallow Shape Point Editing
+  ///   Disallow IShape IPoint Editing
   /// </summary>
   public bool? NoEditPoints { get; set; }
 
@@ -52,7 +52,7 @@ public class PictureLocks: ModelElement
   public bool? NoChangeArrowheads { get; set; }
 
   /// <summary>
-  ///   Disallow Shape Type Change
+  ///   Disallow IShape Type Change
   /// </summary>
   public bool? NoChangeShapeType { get; set; }
 

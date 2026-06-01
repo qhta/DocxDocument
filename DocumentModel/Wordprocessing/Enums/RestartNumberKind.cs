@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the RestartNumberValues enumeration.
@@ -8,17 +8,17 @@ namespace DocumentModel.Wordprocessing;
 public enum RestartNumberKind
 {
   /// <summary>
-  ///   Continue Numbering From Previous Section.
+  ///   Continue Numbering From Previous ISection.
   /// </summary>
   Continuous,
 
   /// <summary>
-  ///   Restart Numbering For Each Section.
+  ///   Restart Numbering For Each ISection.
   /// </summary>
   EachSection,
 
   /// <summary>
-  ///   Restart Numbering On Each Page.
+  ///   Restart Numbering On Each IPage.
   /// </summary>
   EachPage
 }

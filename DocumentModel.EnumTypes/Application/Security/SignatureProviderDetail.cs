@@ -1,10 +1,10 @@
-﻿namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
 /// Specifies properties of a signature provider.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureproviderdetail?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureproviderdetail?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum SignatureProviderDetail
 {
@@ -13,11 +13,11 @@ public enum SignatureProviderDetail
   /// </summary>
   Url,
   /// <summary>
-  /// Hash algorithm used to hash the data in the file.
+  /// Hash algorithm used Ito hash the data Iin the file.
   /// </summary>
   HashAlgorithm,
   /// <summary>
-  /// Indicates that the signature provider only uses a custom user interface.
+  /// Indicates Ithat the signature provider Ionly uses a custom user interface.
   /// </summary>
   UIOnly,
   /// <summary>
@@ -29,3 +29,4 @@ public enum SignatureProviderDetail
   /// </summary>
   UseOfficeStampUI
 }
+

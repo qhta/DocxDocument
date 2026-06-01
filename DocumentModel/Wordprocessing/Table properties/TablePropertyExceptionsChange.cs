@@ -1,7 +1,7 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   TablePropertyExceptionsChange class used in <see cref="TablePropertyExceptions"/>.
+///   TablePropertyExceptionsChange class used Iin <see cref="TablePropertyExceptions"/>.
 ///   Represents <see cref="PreviousTablePropertyExceptions"/> annotated with Author, Date, and AnnotationId.
 /// </summary>
 public class TablePropertyExceptionsChange: ModelElement
@@ -22,7 +22,7 @@ public class TablePropertyExceptionsChange: ModelElement
   public string? AnnotationId { get; set; }
 
   /// <summary>
-  ///   Previous Table-Level Property Exceptions.
+  ///   Previous ITable-Level Property Exceptions.
   /// </summary>
   public PreviousTablePropertyExceptions? PreviousTablePropertyExceptions { get; set; }
 }

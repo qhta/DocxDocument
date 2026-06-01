@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   3D Bar Charts.
@@ -23,13 +23,13 @@ public class Bar3DChart: ModelElement
 
   public Collection<BarChartSeries>? BarChartSeries { get; set; }
 
-  public DataLabels? DataLabels { get; set; }
+  public IDataLabels? IDataLabels { get; set; }
 
   public UInt16? GapWidth { get; set; }
 
   public UInt16? GapDepth { get; set; }
 
-  public ShapeKind? Shape { get; set; }
+  public ShapeKind? IShape { get; set; }
 
   public Collection<UInt32>? AxisIds { get; set; }
 

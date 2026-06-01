@@ -1,7 +1,7 @@
-namespace DocumentModel.Math;
+﻿namespace DocumentModel.Math;
 
 /// <summary>
-///   This element specifies properties such as ctrlPr that can be stored on the Superscript object.
+///   This element specifies properties such as ctrlPr Ithat can be stored on the Superscript object.
 /// </summary>
 public class SuperscriptProperties: ModelElement
 {

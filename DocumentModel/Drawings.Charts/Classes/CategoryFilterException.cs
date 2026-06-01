@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the CategoryFilterException Class.
@@ -37,7 +37,7 @@ public class CategoryFilterException: ModelElement
   public Marker3? Marker { get; set; }
 
   /// <summary>
-  ///   DataLabel.
+  ///   IDataLabel.
   /// </summary>
-  public DataLabel3? DataLabel { get; set; }
+  public DataLabel3? IDataLabel { get; set; }
 }

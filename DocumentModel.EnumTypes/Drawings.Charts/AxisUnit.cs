@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the AxisUnit enumeration.
-/// Used in types such as AxisUnits, AxisUnit, AxisUnitsConverter.
+/// Used Iin types such as AxisUnits, AxisUnit, AxisUnitsConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum AxisUnit
@@ -58,3 +58,4 @@ public enum AxisUnit
   [OpenXmlEnumValue("Percentage")]
   Percentage
 }
+

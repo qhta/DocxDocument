@@ -1,10 +1,10 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   VML Diagram.
+///   VML IDiagram.
 /// </summary>
-public class Diagram: ModelElement
+public class IDiagram: ModelElement
 {
   /// <summary>
   ///   VML Extension Handling Behavior
@@ -12,52 +12,52 @@ public class Diagram: ModelElement
   public ExtensionHandlingBehaviorKind? Extension { get; set; }
 
   /// <summary>
-  ///   Diagram Style Options
+  ///   IDiagram IStyle IOptions
   /// </summary>
-  public Int64? Style { get; set; }
+  public Int64? IStyle { get; set; }
 
   /// <summary>
-  ///   Diagram Automatic Format
+  ///   IDiagram Automatic Format
   /// </summary>
   public bool? AutoFormat { get; set; }
 
   /// <summary>
-  ///   Diagram Reverse Direction
+  ///   IDiagram Reverse Direction
   /// </summary>
   public bool? Reverse { get; set; }
 
   /// <summary>
-  ///   Diagram Automatic Layout
+  ///   IDiagram Automatic Layout
   /// </summary>
   public bool? AutoLayout { get; set; }
 
   /// <summary>
-  ///   Diagram Layout X Scale
+  ///   IDiagram Layout X Scale
   /// </summary>
   public Int64? ScaleX { get; set; }
 
   /// <summary>
-  ///   Diagram Layout Y Scale
+  ///   IDiagram Layout Y Scale
   /// </summary>
   public Int64? ScaleY { get; set; }
 
   /// <summary>
-  ///   Diagram Font Size
+  ///   IDiagram IFont Size
   /// </summary>
   public Int64? FontSize { get; set; }
 
   /// <summary>
-  ///   Diagram Layout Extents
+  ///   IDiagram Layout Extents
   /// </summary>
   public string? ConstrainBounds { get; set; }
 
   /// <summary>
-  ///   Diagram Base Font Size
+  ///   IDiagram Base IFont Size
   /// </summary>
   public Int64? BaseTextScale { get; set; }
 
   /// <summary>
-  ///   Diagram Relationship Table.
+  ///   IDiagram Relationship ITable.
   /// </summary>
   public RelationTable? RelationTable { get; set; }
 }

@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the Header/Footer kind enumeration.
@@ -8,7 +8,7 @@ namespace DocumentModel.Wordprocessing;
 public enum HeaderFooterKind
 {
   /// <summary>
-  ///   Even Numbered Pages Only.
+  ///   Even Numbered IPages Only.
   /// </summary>
   Even,
 
@@ -18,7 +18,7 @@ public enum HeaderFooterKind
   Default,
 
   /// <summary>
-  ///   First Page Only.
+  ///   First IPage Only.
   /// </summary>
   First
 }

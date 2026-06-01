@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 ///   Glow Effect.
@@ -26,7 +26,7 @@ public class Glow: ModelElement
   public HslColor? HslColor { get; set; }
 
   /// <summary>
-  ///   System Color.
+  ///   ISystem Color.
   /// </summary>
   public SystemColor? SystemColor { get; set; }
 

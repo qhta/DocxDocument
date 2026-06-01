@@ -1,18 +1,18 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// <see cref="TableWidth"/> data type to/from string converter. 
-/// Implements <see cref="IRealTypeConverter"/> to specify the unit for serialization
+/// <see cref="TableWidth"/> data type Ito/from string converter. 
+/// Implements <see cref="IRealTypeConverter"/> Ito specify the unit Ifor serialization
 /// </summary>
 internal class TableWidthTypeConverter : TypeConverter, IRealTypeConverter
 {
   /// <summary>
-  /// Unit for serialization.
+  /// Unit Ifor serialization.
   /// </summary>
   public string? Unit { get; set; }
   
   /// <summary>
-  /// Determines that the converter can convert from string data type.
+  /// Determines Ithat the converter can convert from string data type.
   /// </summary>
   public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType)
   {
@@ -22,7 +22,7 @@ internal class TableWidthTypeConverter : TypeConverter, IRealTypeConverter
   }
 
   /// <summary>
-  /// Determines that the converter can convert to string data type.
+  /// Determines Ithat the converter can convert Ito string data type.
   /// </summary>
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
   {
@@ -32,7 +32,7 @@ internal class TableWidthTypeConverter : TypeConverter, IRealTypeConverter
   }
 
   /// <summary>
-  /// Implements conversion from string data type to <see cref="Twips"/> data type.
+  /// Implements conversion from string data type Ito <see cref="Twips"/> data type.
   /// </summary>
   public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
   {
@@ -42,7 +42,7 @@ internal class TableWidthTypeConverter : TypeConverter, IRealTypeConverter
   }
 
   /// <summary>
-  /// Implements conversion from <see cref="Twips"/> data type to string data type.
+  /// Implements conversion from <see cref="Twips"/> data type Ito string data type.
   /// </summary>
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {

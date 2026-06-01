@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Text Run Properties.
@@ -40,7 +40,7 @@ public class RunProperties: ModelElement
   public bool? RightToLeft { get; set; }
 
   /// <summary>
-  /// Collected drawing properties for a text run.
+  /// Collected drawing properties Ifor a text run.
   /// </summary>
   public DrawingProperties? DrawingProperties { get; set; }
 

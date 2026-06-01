@@ -1,0 +1,11 @@
+
+namespace DocumentModel.Interop.Core;
+
+/// <summary>
+/// Represents a resolved or selected item of data.
+/// </summary>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerresult?view=office-pia"/>
+public partial class PickerResult
+{
+}
+

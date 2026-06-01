@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the StringDimensionType enumeration.
-/// Used in types such as StringDimension, StringDimensionType, StringDimensionConverter.
+/// Used Iin types such as StringDimension, StringDimensionType, StringDimensionConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum StringDimensionType
@@ -23,3 +23,4 @@ public enum StringDimensionType
   [OpenXmlEnumValue("EntityId")]
   EntityId
 }
+

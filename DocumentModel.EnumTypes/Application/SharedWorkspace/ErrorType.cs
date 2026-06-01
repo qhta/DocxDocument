@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the Error enumeration.
-/// Used in types such as CSharpVerifierHelper, AddOpenXmlEnumTypeAttribute, AddOpenXmlPropertyAttribute.
+/// Used Iin types such as CSharpVerifierHelper, AddOpenXmlEnumTypeAttribute, AddOpenXmlPropertyAttribute.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.ErrorValues))]
@@ -34,3 +34,4 @@ public enum ErrorType
   [OpenXmlEnumValue("StandardError")]
   StandardError
 }
+

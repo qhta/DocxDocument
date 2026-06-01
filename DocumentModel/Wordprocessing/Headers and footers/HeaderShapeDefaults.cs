@@ -1,10 +1,10 @@
-using DocumentModel.Vml;
+﻿using DocumentModel.Vml;
 
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Default Properties for VML Objects in Header and Footer.
+///   Default Properties Ifor VML Objects Iin Header and Footer.
 /// </summary>
 public class HeaderShapeDefaults: ModelElement
 {

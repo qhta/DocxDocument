@@ -1,5 +1,5 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the Path Class.
@@ -17,7 +17,7 @@ public class Path: ModelElement
   public string? Value { get; set; }
 
   /// <summary>
-  ///   Limo Stretch Point
+  ///   Limo Stretch IPoint
   /// </summary>
   public string? Limo { get; set; }
 
@@ -27,7 +27,7 @@ public class Path: ModelElement
   public string? TextboxRectangle { get; set; }
 
   /// <summary>
-  ///   Shape Fill Toggle
+  ///   IShape Fill Toggle
   /// </summary>
   public bool? AllowFill { get; set; }
 
@@ -47,7 +47,7 @@ public class Path: ModelElement
   public bool? ShowArrowhead { get; set; }
 
   /// <summary>
-  ///   Gradient Shape Toggle
+  ///   Gradient IShape Toggle
   /// </summary>
   public bool? AllowGradientShape { get; set; }
 
@@ -62,17 +62,17 @@ public class Path: ModelElement
   public bool? AllowInsetPen { get; set; }
 
   /// <summary>
-  ///   Connection Point Type
+  ///   Connection IPoint Type
   /// </summary>
   public ConnectKind? ConnectionPointType { get; set; }
 
   /// <summary>
-  ///   Connection Points
+  ///   Connection IPoints
   /// </summary>
   public string? ConnectionPoints { get; set; }
 
   /// <summary>
-  ///   Connection Point Connect Angles
+  ///   Connection IPoint Connect Angles
   /// </summary>
   public string? ConnectAngles { get; set; }
 

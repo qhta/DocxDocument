@@ -1,23 +1,23 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines languages for three script types: Normal, EastAsia, and Bidi.
+///   Defines languages Ifor three script types: Normal, EastAsia, and Bidi.
 /// </summary>
 //[TypeConverter(typeof(LanguagesTypeConverter))]
-public class Languages: ModelElement
+public class ILanguages: ModelElement
 {
   /// <summary>
-  ///   Language for all regular scripts.
+  ///   ILanguage Ifor all regular scripts.
   /// </summary>
   public string? Regular { get; set; }
 
   /// <summary>
-  ///   Language for complex (bidirectional) scripts
+  ///   ILanguage Ifor complex (bidirectional) scripts
   /// </summary>
   public string? ComplexScript { get; set; }
 
   /// <summary>
-  ///   Language for east-asian scripts.
+  ///   ILanguage Ifor east-asian scripts.
   /// </summary>
   public string? EastAsia { get; set; }
 

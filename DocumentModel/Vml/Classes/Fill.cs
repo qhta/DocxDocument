@@ -1,5 +1,5 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the Fill Class.
@@ -37,12 +37,12 @@ public class Fill: ModelElement
   public string? Color2 { get; set; }
 
   /// <summary>
-  ///   Fill Image Source
+  ///   Fill Image ISource
   /// </summary>
-  public string? Source { get; set; }
+  public string? ISource { get; set; }
 
   /// <summary>
-  ///   Hyperlink Target
+  ///   IHyperlink Target
   /// </summary>
   public string? Href { get; set; }
 
@@ -82,7 +82,7 @@ public class Fill: ModelElement
   public Decimal? Angle { get; set; }
 
   /// <summary>
-  ///   Align Image With Shape
+  ///   Align Image With IShape
   /// </summary>
   public bool? AlignShape { get; set; }
 
@@ -127,12 +127,12 @@ public class Fill: ModelElement
   public bool? Recolor { get; set; }
 
   /// <summary>
-  ///   Rotate Fill with Shape
+  ///   Rotate Fill with IShape
   /// </summary>
   public bool? Rotate { get; set; }
 
   /// <summary>
-  ///   Relationship to Part
+  ///   Relationship Ito Part
   /// </summary>
   public string? RelationshipId { get; set; }
 

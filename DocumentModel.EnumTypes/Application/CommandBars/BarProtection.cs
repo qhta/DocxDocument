@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies how a command bar is protected from user customization.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobarprotection?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobarprotection?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum BarProtection
 {
@@ -33,11 +33,12 @@ public enum BarProtection
   /// </summary>
   ChangeDock = 0x10,
   /// <summary>
-  /// Command bar cannot be docked to the left or right.
+  /// Command bar cannot be docked Ito the left or right.
   /// </summary>
   VerticalDock = 0x20,
   /// <summary>
-  /// Command bar cannot be docked to the top or bottom.
+  /// Command bar cannot be docked Ito the top or bottom.
   /// </summary>
   HorizontalDock = 0x40
 }
+

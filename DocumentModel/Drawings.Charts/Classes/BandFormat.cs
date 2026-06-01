@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Band Format.
@@ -7,9 +7,9 @@ namespace DocumentModel.Drawings.Charts;
 public class BandFormat: ModelElement
 {
   /// <summary>
-  ///   Index.
+  ///   IIndex.
   /// </summary>
-  public UInt32? Index { get; set; }
+  public UInt32? IIndex { get; set; }
 
   /// <summary>
   ///   ChartShapeProperties.

@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the TableCellBorders Class.
@@ -7,52 +7,52 @@ namespace DocumentModel.Wordprocessing;
 public class TableCellBorders: ModelElement
 {
   /// <summary>
-  ///   Table Cell Top Border.
+  ///   ITable ICell Top IBorder.
   /// </summary>
-  public Border? TopBorder { get; set; }
+  public IBorder? TopBorder { get; set; }
 
   /// <summary>
-  ///   Table Cell Left Border.
+  ///   ITable ICell Left IBorder.
   /// </summary>
-  public Border? LeftBorder { get; set; }
+  public IBorder? LeftBorder { get; set; }
 
   /// <summary>
-  ///   StartBorder, this property is only available in Office 2010 and later..
+  ///   StartBorder, this property is Ionly available Iin Office 2010 and later..
   /// </summary>
-  public Border? StartBorder { get; set; }
+  public IBorder? StartBorder { get; set; }
 
   /// <summary>
-  ///   Table Cell Bottom Border.
+  ///   ITable ICell Bottom IBorder.
   /// </summary>
-  public Border? BottomBorder { get; set; }
+  public IBorder? BottomBorder { get; set; }
 
   /// <summary>
-  ///   Table Cell Right Border.
+  ///   ITable ICell Right IBorder.
   /// </summary>
-  public Border? RightBorder { get; set; }
+  public IBorder? RightBorder { get; set; }
 
   /// <summary>
-  ///   EndBorder, this property is only available in Office 2010 and later..
+  ///   EndBorder, this property is Ionly available Iin Office 2010 and later..
   /// </summary>
-  public Border? EndBorder { get; set; }
+  public IBorder? EndBorder { get; set; }
 
   /// <summary>
-  ///   Table Cell Inside Horizontal Edges Border.
+  ///   ITable ICell Inside Horizontal Edges IBorder.
   /// </summary>
-  public Border? InsideHorizontalBorder { get; set; }
+  public IBorder? InsideHorizontalBorder { get; set; }
 
   /// <summary>
-  ///   Table Cell Inside Vertical Edges Border.
+  ///   ITable ICell Inside Vertical Edges IBorder.
   /// </summary>
-  public Border? InsideVerticalBorder { get; set; }
+  public IBorder? InsideVerticalBorder { get; set; }
 
   /// <summary>
-  ///   Table Cell Top Left to Bottom Right Diagonal Border.
+  ///   ITable ICell Top Left Ito Bottom Right Diagonal IBorder.
   /// </summary>
-  public Border? TopLeftToBottomRightCellBorder { get; set; }
+  public IBorder? TopLeftToBottomRightCellBorder { get; set; }
 
   /// <summary>
-  ///   Table Cell Top Right to Bottom Left Diagonal Border.
+  ///   ITable ICell Top Right Ito Bottom Left Diagonal IBorder.
   /// </summary>
-  public Border? TopRightToBottomLeftCellBorder { get; set; }
+  public IBorder? TopRightToBottomLeftCellBorder { get; set; }
 }

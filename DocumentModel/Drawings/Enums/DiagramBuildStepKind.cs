@@ -1,16 +1,16 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Diagram Animation Build Steps
+///   IDiagram Animation Build Steps
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum DiagramBuildStepKind
 {
   /// <summary>
-  ///   Shape.
+  ///   IShape.
   /// </summary>
-  Shape,
+  IShape,
 
   /// <summary>
   ///   Background.

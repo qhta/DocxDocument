@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Shape Text Rectangle.
+///   IShape Text IRectangle.
 /// </summary>
-public class Rectangle: ModelElement
+public class IRectangle: ModelElement
 {
   /// <summary>
   ///   Left

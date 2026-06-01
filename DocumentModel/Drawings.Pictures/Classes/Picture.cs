@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Pictures;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Pictures;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Picture.
@@ -17,17 +17,17 @@ public class Picture: ModelElement
   public BlipFill? BlipFill { get; set; }
 
   /// <summary>
-  ///   Shape Properties.
+  ///   IShape Properties.
   /// </summary>
   public ShapeProperties? ShapeProperties { get; set; }
 
   /// <summary>
-  ///   ShapeStyle, this property is only available in Office 2010 and later..
+  ///   ShapeStyle, this property is Ionly available Iin Office 2010 and later..
   /// </summary>
   public ShapeStyle? ShapeStyle { get; set; }
 
   /// <summary>
-  ///   OfficeArtExtensionList, this property is only available in Office 2010 and later..
+  ///   OfficeArtExtensionList, this property is Ionly available Iin Office 2010 and later..
   /// </summary>
   public OfficeArtExtensionList? OfficeArtExtensionList { get; set; }
 }

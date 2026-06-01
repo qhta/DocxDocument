@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the BuiltInUnit enumeration.
-/// Used in types such as DisplayUnits, DisplayUnitsConverter.
+/// Used Iin types such as DisplayUnits, DisplayUnitsConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.BuiltInUnitValues))]
@@ -54,3 +54,4 @@ public enum BuiltInUnit
   [OpenXmlEnumValue("Trillions")]
   Trillions
 }
+

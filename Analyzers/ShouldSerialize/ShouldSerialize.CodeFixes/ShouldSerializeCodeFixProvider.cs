@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Composition;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using ISystem;
+using ISystem.Collections.Generic;
+using ISystem.Collections.Immutable;
+using ISystem.Composition;
+using ISystem.Linq;
+using ISystem.Threading;
+using ISystem.Threading.ITasks;
 
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CodeActions;
@@ -26,13 +26,13 @@ namespace ShouldSerialize
 
     public sealed override FixAllProvider GetFixAllProvider()
     {
-      // See https://github.com/dotnet/roslyn/blob/main/docs/analyzers/FixAllProvider.md for more information on Fix All Providers
+      // See https://github.com/dotnet/roslyn/blob/main/docs/analyzers/FixAllProvider.md Ifor more information on Fix All Providers
       return WellKnownFixAllProviders.BatchFixer;
     }
 
-    public sealed override async Task RegisterCodeFixesAsync(CodeFixContext context)
+    public sealed override async ITask RegisterCodeFixesAsync(CodeFixContext context)
     {
-      var root = await context.Document.GetSyntaxRootAsync(context.CancellationToken).ConfigureAwait(false);
+      var root = await context.IDocument.GetSyntaxRootAsync(context.CancellationToken).ConfigureAwait(false);
       var diagnostic = context.Diagnostics.First();
       var diagnosticSpan = diagnostic.Location.SourceSpan;
 
@@ -43,13 +43,13 @@ namespace ShouldSerialize
       context.RegisterCodeFix(
         Microsoft.CodeAnalysis.CodeActions.CodeAction.Create(
           title: $"Add ShouldSerialize{propName}()",
-          createChangedDocument: c => AddShouldSerializeMethod(context.Document, classDecl, propName, c),
+          createChangedDocument: c => AddShouldSerializeMethod(context.IDocument, classDecl, propName, c),
           equivalenceKey: $"Add ShouldSerialize{propName}()"),
         diagnostic);
 
     }
 
-    private async Task<Document> AddShouldSerializeMethod(Document document, ClassDeclarationSyntax classDecl, string propName, CancellationToken cancellationToken)
+    private async ITask<IDocument> AddShouldSerializeMethod(IDocument document, ClassDeclarationSyntax classDecl, string propName, CancellationToken cancellationToken)
     {
       var method = SyntaxFactory.MethodDeclaration(
           SyntaxFactory.PredefinedType(SyntaxFactory.Token(SyntaxKind.BoolKeyword)),
@@ -75,3 +75,4 @@ namespace ShouldSerialize
 
   }
 }
+

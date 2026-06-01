@@ -1,757 +1,757 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 /// <summary>
-///   Preset Shape Types
+///   Preset IShape Types
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.ShapeValues))]
 public enum BuiltInShapeType
 {
   /// <summary>
-  ///   Line Shape.
+  ///   ILine IShape.
   /// </summary>
-  Line,
+  ILine,
   /// <summary>
-  ///   Line Inverse Shape.
+  ///   ILine Inverse IShape.
   /// </summary>
   LineInverse,
   /// <summary>
-  ///   Triangle Shape.
+  ///   Triangle IShape.
   /// </summary>
   Triangle,
   /// <summary>
-  ///   Right Triangle Shape.
+  ///   Right Triangle IShape.
   /// </summary>
   RightTriangle,
   /// <summary>
-  ///   Rectangle Shape.
+  ///   IRectangle IShape.
   /// </summary>
-  Rectangle,
+  IRectangle,
   /// <summary>
-  ///   Diamond Shape.
+  ///   Diamond IShape.
   /// </summary>
   Diamond,
   /// <summary>
-  ///   Parallelogram Shape.
+  ///   Parallelogram IShape.
   /// </summary>
   Parallelogram,
   /// <summary>
-  ///   Trapezoid Shape.
+  ///   Trapezoid IShape.
   /// </summary>
   Trapezoid,
   /// <summary>
-  ///   Non-Isosceles Trapezoid Shape.
+  ///   Non-Isosceles Trapezoid IShape.
   /// </summary>
   NonIsoscelesTrapezoid,
   /// <summary>
-  ///   Pentagon Shape.
+  ///   Pentagon IShape.
   /// </summary>
   Pentagon,
   /// <summary>
-  ///   Hexagon Shape.
+  ///   Hexagon IShape.
   /// </summary>
   Hexagon,
   /// <summary>
-  ///   Heptagon Shape.
+  ///   Heptagon IShape.
   /// </summary>
   Heptagon,
   /// <summary>
-  ///   Octagon Shape.
+  ///   Octagon IShape.
   /// </summary>
   Octagon,
   /// <summary>
-  ///   Decagon Shape.
+  ///   Decagon IShape.
   /// </summary>
   Decagon,
   /// <summary>
-  ///   Dodecagon Shape.
+  ///   Dodecagon IShape.
   /// </summary>
   Dodecagon,
   /// <summary>
-  ///   Four Pointed Star Shape.
+  ///   Four Pointed Star IShape.
   /// </summary>
   Star4,
   /// <summary>
-  ///   Five Pointed Star Shape.
+  ///   Five Pointed Star IShape.
   /// </summary>
   Star5,
   /// <summary>
-  ///   Six Pointed Star Shape.
+  ///   Six Pointed Star IShape.
   /// </summary>
   Star6,
   /// <summary>
-  ///   Seven Pointed Star Shape.
+  ///   Seven Pointed Star IShape.
   /// </summary>
   Star7,
   /// <summary>
-  ///   Eight Pointed Star Shape.
+  ///   Eight Pointed Star IShape.
   /// </summary>
   Star8,
   /// <summary>
-  ///   Ten Pointed Star Shape.
+  ///   Ten Pointed Star IShape.
   /// </summary>
   Star10,
   /// <summary>
-  ///   Twelve Pointed Star Shape.
+  ///   Twelve Pointed Star IShape.
   /// </summary>
   Star12,
   /// <summary>
-  ///   Sixteen Pointed Star Shape.
+  ///   Sixteen Pointed Star IShape.
   /// </summary>
   Star16,
   /// <summary>
-  ///   Twenty Four Pointed Star Shape.
+  ///   Twenty Four Pointed Star IShape.
   /// </summary>
   Star24,
   /// <summary>
-  ///   Thirty Two Pointed Star Shape.
+  ///   Thirty Two Pointed Star IShape.
   /// </summary>
   Star32,
   /// <summary>
-  ///   Round Corner Rectangle Shape.
+  ///   Round Corner IRectangle IShape.
   /// </summary>
   RoundRectangle,
   /// <summary>
-  ///   One Round Corner Rectangle Shape.
+  ///   One Round Corner IRectangle IShape.
   /// </summary>
   Round1Rectangle,
   /// <summary>
-  ///   Two Same-side Round Corner Rectangle Shape.
+  ///   Two Same-side Round Corner IRectangle IShape.
   /// </summary>
   Round2SameRectangle,
   /// <summary>
-  ///   Two Diagonal Round Corner Rectangle Shape.
+  ///   Two Diagonal Round Corner IRectangle IShape.
   /// </summary>
   Round2DiagonalRectangle,
   /// <summary>
-  ///   One Snip One Round Corner Rectangle Shape.
+  ///   One Snip One Round Corner IRectangle IShape.
   /// </summary>
   SnipRoundRectangle,
   /// <summary>
-  ///   One Snip Corner Rectangle Shape.
+  ///   One Snip Corner IRectangle IShape.
   /// </summary>
   Snip1Rectangle,
   /// <summary>
-  ///   Two Same-side Snip Corner Rectangle Shape.
+  ///   Two Same-side Snip Corner IRectangle IShape.
   /// </summary>
   Snip2SameRectangle,
   /// <summary>
-  ///   Two Diagonal Snip Corner Rectangle Shape.
+  ///   Two Diagonal Snip Corner IRectangle IShape.
   /// </summary>
   Snip2DiagonalRectangle,
   /// <summary>
-  ///   Plaque Shape.
+  ///   Plaque IShape.
   /// </summary>
   Plaque,
   /// <summary>
-  ///   Ellipse Shape.
+  ///   Ellipse IShape.
   /// </summary>
   Ellipse,
   /// <summary>
-  ///   Teardrop Shape.
+  ///   Teardrop IShape.
   /// </summary>
   Teardrop,
   /// <summary>
-  ///   Home Plate Shape.
+  ///   Home Plate IShape.
   /// </summary>
   HomePlate,
   /// <summary>
-  ///   Chevron Shape.
+  ///   Chevron IShape.
   /// </summary>
   Chevron,
   /// <summary>
-  ///   Pie Wedge Shape.
+  ///   Pie Wedge IShape.
   /// </summary>
   PieWedge,
   /// <summary>
-  ///   Pie Shape.
+  ///   Pie IShape.
   /// </summary>
   Pie,
   /// <summary>
-  ///   Block Arc Shape.
+  ///   Block Arc IShape.
   /// </summary>
   BlockArc,
   /// <summary>
-  ///   Donut Shape.
+  ///   Donut IShape.
   /// </summary>
   Donut,
   /// <summary>
-  ///   No Smoking Shape.
+  ///   No Smoking IShape.
   /// </summary>
   NoSmoking,
   /// <summary>
-  ///   Right Arrow Shape.
+  ///   Right Arrow IShape.
   /// </summary>
   RightArrow,
   /// <summary>
-  ///   Left Arrow Shape.
+  ///   Left Arrow IShape.
   /// </summary>
   LeftArrow,
   /// <summary>
-  ///   Up Arrow Shape.
+  ///   Up Arrow IShape.
   /// </summary>
   UpArrow,
   /// <summary>
-  ///   Down Arrow Shape.
+  ///   Down Arrow IShape.
   /// </summary>
   DownArrow,
   /// <summary>
-  ///   Striped Right Arrow Shape.
+  ///   Striped Right Arrow IShape.
   /// </summary>
   StripedRightArrow,
   /// <summary>
-  ///   Notched Right Arrow Shape.
+  ///   Notched Right Arrow IShape.
   /// </summary>
   NotchedRightArrow,
   /// <summary>
-  ///   Bent Up Arrow Shape.
+  ///   Bent Up Arrow IShape.
   /// </summary>
   BentUpArrow,
   /// <summary>
-  ///   Left Right Arrow Shape.
+  ///   Left Right Arrow IShape.
   /// </summary>
   LeftRightArrow,
   /// <summary>
-  ///   Up Down Arrow Shape.
+  ///   Up Down Arrow IShape.
   /// </summary>
   UpDownArrow,
   /// <summary>
-  ///   Left Up Arrow Shape.
+  ///   Left Up Arrow IShape.
   /// </summary>
   LeftUpArrow,
   /// <summary>
-  ///   Left Right Up Arrow Shape.
+  ///   Left Right Up Arrow IShape.
   /// </summary>
   LeftRightUpArrow,
   /// <summary>
-  ///   Quad-Arrow Shape.
+  ///   Quad-Arrow IShape.
   /// </summary>
   QuadArrow,
   /// <summary>
-  ///   Callout Left Arrow Shape.
+  ///   Callout Left Arrow IShape.
   /// </summary>
   LeftArrowCallout,
   /// <summary>
-  ///   Callout Right Arrow Shape.
+  ///   Callout Right Arrow IShape.
   /// </summary>
   RightArrowCallout,
   /// <summary>
-  ///   Callout Up Arrow Shape.
+  ///   Callout Up Arrow IShape.
   /// </summary>
   UpArrowCallout,
   /// <summary>
-  ///   Callout Down Arrow Shape.
+  ///   Callout Down Arrow IShape.
   /// </summary>
   DownArrowCallout,
   /// <summary>
-  ///   Callout Left Right Arrow Shape.
+  ///   Callout Left Right Arrow IShape.
   /// </summary>
   LeftRightArrowCallout,
   /// <summary>
-  ///   Callout Up Down Arrow Shape.
+  ///   Callout Up Down Arrow IShape.
   /// </summary>
   UpDownArrowCallout,
   /// <summary>
-  ///   Callout Quad-Arrow Shape.
+  ///   Callout Quad-Arrow IShape.
   /// </summary>
   QuadArrowCallout,
   /// <summary>
-  ///   Bent Arrow Shape.
+  ///   Bent Arrow IShape.
   /// </summary>
   BentArrow,
   /// <summary>
-  ///   U-Turn Arrow Shape.
+  ///   U-Turn Arrow IShape.
   /// </summary>
   UTurnArrow,
   /// <summary>
-  ///   Circular Arrow Shape.
+  ///   Circular Arrow IShape.
   /// </summary>
   CircularArrow,
   /// <summary>
-  ///   Left Circular Arrow Shape.
+  ///   Left Circular Arrow IShape.
   /// </summary>
   LeftCircularArrow,
   /// <summary>
-  ///   Left Right Circular Arrow Shape.
+  ///   Left Right Circular Arrow IShape.
   /// </summary>
   LeftRightCircularArrow,
   /// <summary>
-  ///   Curved Right Arrow Shape.
+  ///   Curved Right Arrow IShape.
   /// </summary>
   CurvedRightArrow,
   /// <summary>
-  ///   Curved Left Arrow Shape.
+  ///   Curved Left Arrow IShape.
   /// </summary>
   CurvedLeftArrow,
   /// <summary>
-  ///   Curved Up Arrow Shape.
+  ///   Curved Up Arrow IShape.
   /// </summary>
   CurvedUpArrow,
   /// <summary>
-  ///   Curved Down Arrow Shape.
+  ///   Curved Down Arrow IShape.
   /// </summary>
   CurvedDownArrow,
   /// <summary>
-  ///   Swoosh Arrow Shape.
+  ///   Swoosh Arrow IShape.
   /// </summary>
   SwooshArrow,
   /// <summary>
-  ///   Cube Shape.
+  ///   Cube IShape.
   /// </summary>
   Cube,
   /// <summary>
-  ///   Can Shape.
+  ///   Can IShape.
   /// </summary>
   Can,
   /// <summary>
-  ///   Lightning Bolt Shape.
+  ///   Lightning Bolt IShape.
   /// </summary>
   LightningBolt,
   /// <summary>
-  ///   Heart Shape.
+  ///   Heart IShape.
   /// </summary>
   Heart,
   /// <summary>
-  ///   Sun Shape.
+  ///   Sun IShape.
   /// </summary>
   Sun,
   /// <summary>
-  ///   Moon Shape.
+  ///   Moon IShape.
   /// </summary>
   Moon,
   /// <summary>
-  ///   Smiley Face Shape.
+  ///   Smiley Face IShape.
   /// </summary>
   SmileyFace,
   /// <summary>
-  ///   Irregular Seal 1 Shape.
+  ///   Irregular Seal 1 IShape.
   /// </summary>
   IrregularSeal1,
   /// <summary>
-  ///   Irregular Seal 2 Shape.
+  ///   Irregular Seal 2 IShape.
   /// </summary>
   IrregularSeal2,
   /// <summary>
-  ///   Folded Corner Shape.
+  ///   Folded Corner IShape.
   /// </summary>
   FoldedCorner,
   /// <summary>
-  ///   Bevel Shape.
+  ///   Bevel IShape.
   /// </summary>
   Bevel,
   /// <summary>
-  ///   Frame Shape.
+  ///   IFrame IShape.
   /// </summary>
-  Frame,
+  IFrame,
   /// <summary>
-  ///   Half Frame Shape.
+  ///   Half IFrame IShape.
   /// </summary>
   HalfFrame,
   /// <summary>
-  ///   Corner Shape.
+  ///   Corner IShape.
   /// </summary>
   Corner,
   /// <summary>
-  ///   Diagonal Stripe Shape.
+  ///   Diagonal Stripe IShape.
   /// </summary>
   DiagonalStripe,
   /// <summary>
-  ///   Chord Shape.
+  ///   Chord IShape.
   /// </summary>
   Chord,
   /// <summary>
-  ///   Curved Arc Shape.
+  ///   Curved Arc IShape.
   /// </summary>
   Arc,
   /// <summary>
-  ///   Left Bracket Shape.
+  ///   Left Bracket IShape.
   /// </summary>
   LeftBracket,
   /// <summary>
-  ///   Right Bracket Shape.
+  ///   Right Bracket IShape.
   /// </summary>
   RightBracket,
   /// <summary>
-  ///   Left Brace Shape.
+  ///   Left Brace IShape.
   /// </summary>
   LeftBrace,
   /// <summary>
-  ///   Right Brace Shape.
+  ///   Right Brace IShape.
   /// </summary>
   RightBrace,
   /// <summary>
-  ///   Bracket Pair Shape.
+  ///   Bracket Pair IShape.
   /// </summary>
   BracketPair,
   /// <summary>
-  ///   Brace Pair Shape.
+  ///   Brace Pair IShape.
   /// </summary>
   BracePair,
   /// <summary>
-  ///   Straight Connector 1 Shape.
+  ///   Straight Connector 1 IShape.
   /// </summary>
   StraightConnector1,
   /// <summary>
-  ///   Bent Connector 2 Shape.
+  ///   Bent Connector 2 IShape.
   /// </summary>
   BentConnector2,
   /// <summary>
-  ///   Bent Connector 3 Shape.
+  ///   Bent Connector 3 IShape.
   /// </summary>
   BentConnector3,
   /// <summary>
-  ///   Bent Connector 4 Shape.
+  ///   Bent Connector 4 IShape.
   /// </summary>
   BentConnector4,
   /// <summary>
-  ///   Bent Connector 5 Shape.
+  ///   Bent Connector 5 IShape.
   /// </summary>
   BentConnector5,
   /// <summary>
-  ///   Curved Connector 2 Shape.
+  ///   Curved Connector 2 IShape.
   /// </summary>
   CurvedConnector2,
   /// <summary>
-  ///   Curved Connector 3 Shape.
+  ///   Curved Connector 3 IShape.
   /// </summary>
   CurvedConnector3,
   /// <summary>
-  ///   Curved Connector 4 Shape.
+  ///   Curved Connector 4 IShape.
   /// </summary>
   CurvedConnector4,
   /// <summary>
-  ///   Curved Connector 5 Shape.
+  ///   Curved Connector 5 IShape.
   /// </summary>
   CurvedConnector5,
   /// <summary>
-  ///   Callout 1 Shape.
+  ///   Callout 1 IShape.
   /// </summary>
   Callout1,
   /// <summary>
-  ///   Callout 2 Shape.
+  ///   Callout 2 IShape.
   /// </summary>
   Callout2,
   /// <summary>
-  ///   Callout 3 Shape.
+  ///   Callout 3 IShape.
   /// </summary>
   Callout3,
   /// <summary>
-  ///   Callout 1 Shape.
+  ///   Callout 1 IShape.
   /// </summary>
   AccentCallout1,
   /// <summary>
-  ///   Callout 2 Shape.
+  ///   Callout 2 IShape.
   /// </summary>
   AccentCallout2,
   /// <summary>
-  ///   Callout 3 Shape.
+  ///   Callout 3 IShape.
   /// </summary>
   AccentCallout3,
   /// <summary>
-  ///   Callout 1 with Border Shape.
+  ///   Callout 1 with IBorder IShape.
   /// </summary>
   BorderCallout1,
   /// <summary>
-  ///   Callout 2 with Border Shape.
+  ///   Callout 2 with IBorder IShape.
   /// </summary>
   BorderCallout2,
   /// <summary>
-  ///   Callout 3 with Border Shape.
+  ///   Callout 3 with IBorder IShape.
   /// </summary>
   BorderCallout3,
   /// <summary>
-  ///   Callout 1 with Border and Accent Shape.
+  ///   Callout 1 with IBorder and Accent IShape.
   /// </summary>
   AccentBorderCallout1,
   /// <summary>
-  ///   Callout 2 with Border and Accent Shape.
+  ///   Callout 2 with IBorder and Accent IShape.
   /// </summary>
   AccentBorderCallout2,
   /// <summary>
-  ///   Callout 3 with Border and Accent Shape.
+  ///   Callout 3 with IBorder and Accent IShape.
   /// </summary>
   AccentBorderCallout3,
   /// <summary>
-  ///   Callout Wedge Rectangle Shape.
+  ///   Callout Wedge IRectangle IShape.
   /// </summary>
   WedgeRectangleCallout,
   /// <summary>
-  ///   Callout Wedge Round Rectangle Shape.
+  ///   Callout Wedge Round IRectangle IShape.
   /// </summary>
   WedgeRoundRectangleCallout,
   /// <summary>
-  ///   Callout Wedge Ellipse Shape.
+  ///   Callout Wedge Ellipse IShape.
   /// </summary>
   WedgeEllipseCallout,
   /// <summary>
-  ///   Callout Cloud Shape.
+  ///   Callout Cloud IShape.
   /// </summary>
   CloudCallout,
   /// <summary>
-  ///   Cloud Shape.
+  ///   Cloud IShape.
   /// </summary>
   Cloud,
   /// <summary>
-  ///   Ribbon Shape.
+  ///   Ribbon IShape.
   /// </summary>
   Ribbon,
   /// <summary>
-  ///   Ribbon 2 Shape.
+  ///   Ribbon 2 IShape.
   /// </summary>
   Ribbon2,
   /// <summary>
-  ///   Ellipse Ribbon Shape.
+  ///   Ellipse Ribbon IShape.
   /// </summary>
   EllipseRibbon,
   /// <summary>
-  ///   Ellipse Ribbon 2 Shape.
+  ///   Ellipse Ribbon 2 IShape.
   /// </summary>
   EllipseRibbon2,
   /// <summary>
-  ///   Left Right Ribbon Shape.
+  ///   Left Right Ribbon IShape.
   /// </summary>
   LeftRightRibbon,
   /// <summary>
-  ///   Vertical Scroll Shape.
+  ///   Vertical Scroll IShape.
   /// </summary>
   VerticalScroll,
   /// <summary>
-  ///   Horizontal Scroll Shape.
+  ///   Horizontal Scroll IShape.
   /// </summary>
   HorizontalScroll,
   /// <summary>
-  ///   Wave Shape.
+  ///   Wave IShape.
   /// </summary>
   Wave,
   /// <summary>
-  ///   Double Wave Shape.
+  ///   Double Wave IShape.
   /// </summary>
   DoubleWave,
   /// <summary>
-  ///   Plus Shape.
+  ///   Plus IShape.
   /// </summary>
   Plus,
   /// <summary>
-  ///   Process Flow Shape.
+  ///   Process Flow IShape.
   /// </summary>
   FlowChartProcess,
   /// <summary>
-  ///   Decision Flow Shape.
+  ///   Decision Flow IShape.
   /// </summary>
   FlowChartDecision,
   /// <summary>
-  ///   Input Output Flow Shape.
+  ///   Input Output Flow IShape.
   /// </summary>
   FlowChartInputOutput,
   /// <summary>
-  ///   Predefined Process Flow Shape.
+  ///   Predefined Process Flow IShape.
   /// </summary>
   FlowChartPredefinedProcess,
   /// <summary>
-  ///   Internal Storage Flow Shape.
+  ///   Internal Storage Flow IShape.
   /// </summary>
   FlowChartInternalStorage,
   /// <summary>
-  ///   Document Flow Shape.
+  ///   IDocument Flow IShape.
   /// </summary>
   FlowChartDocument,
   /// <summary>
-  ///   Multi-Document Flow Shape.
+  ///   Multi-IDocument Flow IShape.
   /// </summary>
   FlowChartMultidocument,
   /// <summary>
-  ///   Terminator Flow Shape.
+  ///   Terminator Flow IShape.
   /// </summary>
   FlowChartTerminator,
   /// <summary>
-  ///   Preparation Flow Shape.
+  ///   Preparation Flow IShape.
   /// </summary>
   FlowChartPreparation,
   /// <summary>
-  ///   Manual Input Flow Shape.
+  ///   Manual Input Flow IShape.
   /// </summary>
   FlowChartManualInput,
   /// <summary>
-  ///   Manual Operation Flow Shape.
+  ///   Manual Operation Flow IShape.
   /// </summary>
   FlowChartManualOperation,
   /// <summary>
-  ///   Connector Flow Shape.
+  ///   Connector Flow IShape.
   /// </summary>
   FlowChartConnector,
   /// <summary>
-  ///   Punched Card Flow Shape.
+  ///   Punched Card Flow IShape.
   /// </summary>
   FlowChartPunchedCard,
   /// <summary>
-  ///   Punched Tape Flow Shape.
+  ///   Punched Tape Flow IShape.
   /// </summary>
   FlowChartPunchedTape,
   /// <summary>
-  ///   Summing Junction Flow Shape.
+  ///   Summing Junction Flow IShape.
   /// </summary>
   FlowChartSummingJunction,
   /// <summary>
-  ///   Or Flow Shape.
+  ///   Or Flow IShape.
   /// </summary>
   FlowChartOr,
   /// <summary>
-  ///   Collate Flow Shape.
+  ///   Collate Flow IShape.
   /// </summary>
   FlowChartCollate,
   /// <summary>
-  ///   Sort Flow Shape.
+  ///   Sort Flow IShape.
   /// </summary>
   FlowChartSort,
   /// <summary>
-  ///   Extract Flow Shape.
+  ///   Extract Flow IShape.
   /// </summary>
   FlowChartExtract,
   /// <summary>
-  ///   Merge Flow Shape.
+  ///   Merge Flow IShape.
   /// </summary>
   FlowChartMerge,
   /// <summary>
-  ///   Offline Storage Flow Shape.
+  ///   Offline Storage Flow IShape.
   /// </summary>
   FlowChartOfflineStorage,
   /// <summary>
-  ///   Online Storage Flow Shape.
+  ///   Online Storage Flow IShape.
   /// </summary>
   FlowChartOnlineStorage,
   /// <summary>
-  ///   Magnetic Tape Flow Shape.
+  ///   Magnetic Tape Flow IShape.
   /// </summary>
   FlowChartMagneticTape,
   /// <summary>
-  ///   Magnetic Disk Flow Shape.
+  ///   Magnetic Disk Flow IShape.
   /// </summary>
   FlowChartMagneticDisk,
   /// <summary>
-  ///   Magnetic Drum Flow Shape.
+  ///   Magnetic Drum Flow IShape.
   /// </summary>
   FlowChartMagneticDrum,
   /// <summary>
-  ///   Display Flow Shape.
+  ///   Display Flow IShape.
   /// </summary>
   FlowChartDisplay,
   /// <summary>
-  ///   Delay Flow Shape.
+  ///   Delay Flow IShape.
   /// </summary>
   FlowChartDelay,
   /// <summary>
-  ///   Alternate Process Flow Shape.
+  ///   Alternate Process Flow IShape.
   /// </summary>
   FlowChartAlternateProcess,
   /// <summary>
-  ///   Off-Page Connector Flow Shape.
+  ///   Off-IPage Connector Flow IShape.
   /// </summary>
   FlowChartOffpageConnector,
   /// <summary>
-  ///   Blank Button Shape.
+  ///   Blank Button IShape.
   /// </summary>
   ActionButtonBlank,
   /// <summary>
-  ///   Home Button Shape.
+  ///   Home Button IShape.
   /// </summary>
   ActionButtonHome,
   /// <summary>
-  ///   Help Button Shape.
+  ///   Help Button IShape.
   /// </summary>
   ActionButtonHelp,
   /// <summary>
-  ///   Information Button Shape.
+  ///   Information Button IShape.
   /// </summary>
   ActionButtonInformation,
   /// <summary>
-  ///   Forward or Next Button Shape.
+  ///   Forward or Next Button IShape.
   /// </summary>
   ActionButtonForwardNext,
   /// <summary>
-  ///   Back or Previous Button Shape.
+  ///   Back or Previous Button IShape.
   /// </summary>
   ActionButtonBackPrevious,
   /// <summary>
-  ///   End Button Shape.
+  ///   End Button IShape.
   /// </summary>
   ActionButtonEnd,
   /// <summary>
-  ///   Beginning Button Shape.
+  ///   Beginning Button IShape.
   /// </summary>
   ActionButtonBeginning,
   /// <summary>
-  ///   Return Button Shape.
+  ///   Return Button IShape.
   /// </summary>
   ActionButtonReturn,
   /// <summary>
-  ///   Document Button Shape.
+  ///   IDocument Button IShape.
   /// </summary>
   ActionButtonDocument,
   /// <summary>
-  ///   Sound Button Shape.
+  ///   Sound Button IShape.
   /// </summary>
   ActionButtonSound,
   /// <summary>
-  ///   Movie Button Shape.
+  ///   Movie Button IShape.
   /// </summary>
   ActionButtonMovie,
   /// <summary>
-  ///   Gear 6 Shape.
+  ///   Gear 6 IShape.
   /// </summary>
   Gear6,
   /// <summary>
-  ///   Gear 9 Shape.
+  ///   Gear 9 IShape.
   /// </summary>
   Gear9,
   /// <summary>
-  ///   Funnel Shape.
+  ///   Funnel IShape.
   /// </summary>
   Funnel,
   /// <summary>
-  ///   Plus Math Shape.
+  ///   Plus Math IShape.
   /// </summary>
   MathPlus,
   /// <summary>
-  ///   Minus Math Shape.
+  ///   Minus Math IShape.
   /// </summary>
   MathMinus,
   /// <summary>
-  ///   Multiply Math Shape.
+  ///   Multiply Math IShape.
   /// </summary>
   MathMultiply,
   /// <summary>
-  ///   Divide Math Shape.
+  ///   Divide Math IShape.
   /// </summary>
   MathDivide,
   /// <summary>
-  ///   Equal Math Shape.
+  ///   Equal Math IShape.
   /// </summary>
   MathEqual,
   /// <summary>
-  ///   Not Equal Math Shape.
+  ///   Not Equal Math IShape.
   /// </summary>
   MathNotEqual,
   /// <summary>
-  ///   Corner Tabs Shape.
+  ///   Corner Tabs IShape.
   /// </summary>
   CornerTabs,
   /// <summary>
-  ///   Square Tabs Shape.
+  ///   Square Tabs IShape.
   /// </summary>
   SquareTabs,
   /// <summary>
-  ///   Plaque Tabs Shape.
+  ///   Plaque Tabs IShape.
   /// </summary>
   PlaqueTabs,
   /// <summary>
-  ///   Chart X Shape.
+  ///   IChart X IShape.
   /// </summary>
   ChartX,
   /// <summary>
-  ///   Chart Star Shape.
+  ///   IChart Star IShape.
   /// </summary>
   ChartStar,
   /// <summary>
-  ///   Chart Plus Shape.
+  ///   IChart Plus IShape.
   /// </summary>
   ChartPlus
 }

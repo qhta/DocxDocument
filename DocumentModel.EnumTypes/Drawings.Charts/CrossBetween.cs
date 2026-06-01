@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the CrossBetween enumeration.
-/// Used in types such as ValueAxis, ValueAxisConverter.
+/// Used Iin types such as ValueAxis, ValueAxisConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.CrossBetweenValues))]
@@ -14,8 +14,9 @@ public enum CrossBetween
   [OpenXmlEnumValue("Between")]
   Between,
   /// <summary>
-  ///   Midpoint of Category.
+  ///   Midpoint of ICategory.
   /// </summary>
   [OpenXmlEnumValue("MidpointCategory")]
   MidpointCategory
 }
+

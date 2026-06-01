@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides helper methods for converting Double values to and from OpenXml.
+/// Provides helper methods Ifor converting Double values Ito and from OpenXml.
 /// </summary>
 public static class DoubleConverter
 {
@@ -26,7 +26,7 @@ public static class DoubleConverter
   /// <summary>
   /// Retrieves the value of a DoubleValue as a nullable Double.
   /// </summary>
-  /// <param name="element">The DoubleValue to convert.</param>
+  /// <param name="element">The DoubleValue Ito convert.</param>
   /// <returns>The Double value or null if the element is null.</returns>
   public static Double? ConvertFromDoubleValue(DX.DoubleValue element)
   {
@@ -52,7 +52,7 @@ public static class DoubleConverter
   /// <summary>
   /// Retrieves the value of a DoubleValue as a nullable Double.
   /// </summary>
-  /// <param name="element">The DoubleValue to convert.</param>
+  /// <param name="element">The DoubleValue Ito convert.</param>
   /// <returns>The Double value or null if the element is null.</returns>
   public static Double? ConvertFromStringValue(DX.StringValue? element)
   {
@@ -94,8 +94,8 @@ public static class DoubleConverter
   /// <summary>
   /// Creates an OpenXmlLeafTextElement and sets its value or text property.
   /// </summary>
-  /// <param name="value">The Double value to set.</param>
-  /// <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="value">The Double value Ito set.</param>
+  /// <param name="targetType">The target type Ifor the Icreated target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(Double? value, Type targetType)
   {
@@ -135,8 +135,8 @@ public static class DoubleConverter
   /// <summary>
   /// Creates an OpenXmlLeafElement and sets its value or text property.
   /// </summary>
-  /// <param name="value">The Double value to set.</param>
-  /// <param name="targetType">The target type for the created target instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="value">The Double value Ito set.</param>
+  /// <param name="targetType">The target type Ifor the Icreated target instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(Double? value, Type targetType)
   {
@@ -158,19 +158,19 @@ public static class DoubleConverter
   /// <summary>
   /// Converts a CLR Double into the requested Open XML type using the registered converter map.
   /// </summary>
-  /// <param name="value">Source Double to translate.</param>
+  /// <param name="value">ISource Double Ito translate.</param>
   /// <param name="targetType">Destination Open XML type.</param>
   /// <returns>The converted object instance.</returns>
-  /// <exception cref="NotSupportedException">Raised when no conversion is registered for <paramref name="targetType"/>.</exception>
+  /// <exception cref="NotSupportedException">Raised when no conversion is registered Ifor <paramref name="targetType"/>.</exception>
   public static object? ConvertTo(Double? value, Type targetType)
   {
     return ConverterBase.ConvertTo(value, targetType, ConversionToMap);
   }
 
   /// <summary>
-  /// Converts any registered Open XML instance back to a CLR Double.
+  /// Converts any registered Open XML instance back Ito a CLR Double.
   /// </summary>
-  /// <param name="value">Source Open XML object to convert.</param>
+  /// <param name="value">ISource Open XML object Ito convert.</param>
   /// <returns>The extracted Double representation.</returns>
   /// <exception cref="NotSupportedException">Raised when the source type has no registered converter.</exception>
   public static Double? ConvertFrom(object? value)

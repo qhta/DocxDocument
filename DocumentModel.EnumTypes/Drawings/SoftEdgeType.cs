@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies the type of soft edge effect.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosoftedgetype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosoftedgetype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum SoftEdgeType
 {
@@ -40,3 +40,4 @@ public enum SoftEdgeType
   /// </summary>
   Type6 = 6
 }
+

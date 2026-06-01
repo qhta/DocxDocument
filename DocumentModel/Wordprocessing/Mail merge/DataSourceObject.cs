@@ -1,8 +1,8 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Office Data Source Object Settings.
+///   Office Data ISource Object Settings.
 /// </summary>
 public class DataSourceObject: ModelElement
 {
@@ -12,27 +12,27 @@ public class DataSourceObject: ModelElement
   public string? UdlConnectionString { get; set; }
 
   /// <summary>
-  ///   Data Source Table Name.
+  ///   Data ISource ITable Name.
   /// </summary>
   public string? DataSourceTableName { get; set; }
 
   /// <summary>
-  ///   ODSO Data Source File Path.
+  ///   ODSO Data ISource File Path.
   /// </summary>
   public RelationshipType? SourceReference { get; set; }
 
   /// <summary>
-  ///   Column Delimiter for Data Source.
+  ///   IColumn Delimiter Ifor Data ISource.
   /// </summary>
   public UInt32? ColumnDelimiter { get; set; }
 
   /// <summary>
-  ///   ODSO Data Source Type.
+  ///   ODSO Data ISource Type.
   /// </summary>
   public MailMergeSourceKind? MailMergeSource { get; set; }
 
   /// <summary>
-  ///   First Row of Data Source Contains Column Names.
+  ///   First IRow of Data ISource Contains IColumn Names.
   /// </summary>
   public bool? FirstRowHeader { get; set; }
 

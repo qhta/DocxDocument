@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the TableBorders Class.
@@ -7,42 +7,42 @@ namespace DocumentModel.Wordprocessing;
 public class TableBorders: ModelElement
 {
   /// <summary>
-  ///   Table Top Border.
+  ///   ITable Top IBorder.
   /// </summary>
-  public Border? TopBorder { get; set; }
+  public IBorder? TopBorder { get; set; }
 
   /// <summary>
-  ///   Table Left Border.
+  ///   ITable Left IBorder.
   /// </summary>
-  public Border? LeftBorder { get; set; }
+  public IBorder? LeftBorder { get; set; }
 
   /// <summary>
-  ///   StartBorder, this property is only available in Office 2010 and later..
+  ///   StartBorder, this property is Ionly available Iin Office 2010 and later..
   /// </summary>
-  public Border? StartBorder { get; set; }
+  public IBorder? StartBorder { get; set; }
 
   /// <summary>
-  ///   Table Bottom Border.
+  ///   ITable Bottom IBorder.
   /// </summary>
-  public Border? BottomBorder { get; set; }
+  public IBorder? BottomBorder { get; set; }
 
   /// <summary>
-  ///   Table Right Border.
+  ///   ITable Right IBorder.
   /// </summary>
-  public Border? RightBorder { get; set; }
+  public IBorder? RightBorder { get; set; }
 
   /// <summary>
-  ///   EndBorder, this property is only available in Office 2010 and later..
+  ///   EndBorder, this property is Ionly available Iin Office 2010 and later..
   /// </summary>
-  public Border? EndBorder { get; set; }
+  public IBorder? EndBorder { get; set; }
 
   /// <summary>
-  ///   Table Inside Horizontal Edges Border.
+  ///   ITable Inside Horizontal Edges IBorder.
   /// </summary>
-  public Border? InsideHorizontalBorder { get; set; }
+  public IBorder? InsideHorizontalBorder { get; set; }
 
   /// <summary>
-  ///   Table Inside Vertical Edges Border.
+  ///   ITable Inside Vertical Edges IBorder.
   /// </summary>
-  public Border? InsideVerticalBorder { get; set; }
+  public IBorder? InsideVerticalBorder { get; set; }
 }

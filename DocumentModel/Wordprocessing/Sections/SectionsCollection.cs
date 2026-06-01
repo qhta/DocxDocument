@@ -1,12 +1,12 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Collection of sections that should be rebuild after SectionProperties 
-///   were added to or deleted from ParagraphProperties in any paragraph.
-///   Also the last SectionProperties element in a Body defines the last section in this collection.
+///   Collection of sections Ithat should be rebuild after SectionProperties 
+///   were added Ito or deleted from ParagraphProperties Iin any paragraph.
+///   Also the last SectionProperties element Iin a Body defines the last section Iin this collection.
 /// </summary>
-public class SectionsCollection : LinkedList<Section>
+public class SectionsCollection : LinkedList<ISection>
 {
   public static SectionsCollection Create(BodyType aBody)
   {
@@ -14,14 +14,14 @@ public class SectionsCollection : LinkedList<Section>
     var lastSectionProperties = aBody.LastOrDefault() as SectionProperties;
     if (lastSectionProperties != null)
     {
-      var section = new Section();
+      var section = new ISection();
       section.Properties = lastSectionProperties;
       var index = section.FillBackward(aBody, aBody.Count() - 1);
       sections.AddFirst(section);
       while (index >= 0)
       {
-        section = new Section();
-        var aParagraph = aBody[index] as Paragraph;
+        section = new ISection();
+        var aParagraph = aBody[index] as IParagraph;
         if (aParagraph != null)
         {
           section.Properties = aParagraph.ParagraphProperties?.SectionProperties;
@@ -37,7 +37,7 @@ public class SectionsCollection : LinkedList<Section>
     return sections;
   }
 
-  public void Add(Section section)
+  public void Add(ISection section)
   {
     AddLast(section);
   }

@@ -1,13 +1,13 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Category.
+///   ICategory.
 /// </summary>
 public class StyleDisplayCategory: ModelElement
 {
   /// <summary>
-  ///   Category Type
+  ///   ICategory Type
   /// </summary>
   public string? Type { get; set; }
 

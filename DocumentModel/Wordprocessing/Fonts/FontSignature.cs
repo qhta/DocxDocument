@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Defines the FontSignature Class.
@@ -31,13 +31,13 @@ public record FontSignature
   public HexInt UnicodeSignature3 { get => Items[3]; set => Items[3] = value; }
 
   /// <summary>
-  ///   Lower 32 Bits of Code Page Bit Field
+  ///   Lower 32 Bits of Code IPage Bit IField
   /// </summary>
   [XmlAttribute("csb0")]
   public HexInt CodePageSignature0 { get => Items[4]; set => Items[4] = value; }
 
   /// <summary>
-  ///   Upper 32 Bits of Code Page Bit Field
+  ///   Upper 32 Bits of Code IPage Bit IField
   /// </summary>
   [XmlAttribute("csb1")]
   public HexInt CodePageSignature1 { get => Items[5]; set => Items[5] = value; }

@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the StyleMatrixReferenceType Class.
@@ -7,9 +7,9 @@ namespace DocumentModel.Drawings;
 public class StyleMatrixReferenceType: ModelElement
 {
   /// <summary>
-  ///   Style Matrix Index
+  ///   IStyle Matrix IIndex
   /// </summary>
-  public UInt32? Index { get; set; }
+  public UInt32? IIndex { get; set; }
 
   /// <summary>
   ///   RGB Color Model - Percentage Variant.
@@ -27,7 +27,7 @@ public class StyleMatrixReferenceType: ModelElement
   public HslColor? HslColor { get; set; }
 
   /// <summary>
-  ///   System Color.
+  ///   ISystem Color.
   /// </summary>
   public SystemColor? SystemColor { get; set; }
 

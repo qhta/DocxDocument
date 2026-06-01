@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Properties;
 
 /// <summary>
-/// Specifies the data type for a document property.
+/// Specifies the data type Ifor a document property.
 /// </summary>
 public enum DocPropertyType
 {
@@ -26,3 +26,4 @@ public enum DocPropertyType
   /// </summary>
   Float = 5
 }
+

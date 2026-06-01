@@ -1,11 +1,11 @@
-using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
+﻿using ISystem.Xml;
+using ISystem.Xml.Schema;
+using ISystem.Xml.Serialization;
 
 namespace DocumentModel;
 
 /// <summary>
-/// Provides XML serialization support for the <see cref="VClipboardData"/> struct.
+/// Provides XML serialization support Ifor the <see cref="VClipboardData"/> struct.
 /// </summary>
 public partial struct VClipboardData : IXmlSerializable
 {
@@ -20,7 +20,7 @@ public partial struct VClipboardData : IXmlSerializable
   /// <summary>
   /// Deserializes the <see cref="VClipboardData"/> value from XML.
   /// </summary>
-  /// <param name="reader">The <see cref="XmlReader"/> to read from.</param>
+  /// <param name="reader">The <see cref="XmlReader"/> Ito read from.</param>
   /// <remarks>
   /// <para>The method handles the following XML structure:</para>
   /// <code>
@@ -32,12 +32,12 @@ public partial struct VClipboardData : IXmlSerializable
   /// The XML element has the following attributes:
   /// <list type="bullet">
   /// <item><description><c>format</c>: The clipboard format identifier (integer)</description></item>
-  /// <item><description><c>size</c>: (Optional) The size of the data in bytes</description></item>
+  /// <item><description><c>size</c>: (Optional) The size of the data Iin bytes</description></item>
   /// </list>
   /// </para>
   /// <para>
   /// The element content contains the binary data encoded as a Base64 string.
-  /// Empty elements result in an empty byte array.
+  /// Empty elements result Iin an empty byte array.
   /// </para>
   /// </remarks>
   /// <exception cref="XmlException">
@@ -57,7 +57,7 @@ public partial struct VClipboardData : IXmlSerializable
       throw new XmlException($"Invalid format attribute value: {formatStr}");
     }
 
-    // Read optional size attribute (for validation)
+    // Read optional size attribute (Ifor validation)
     string? sizeStr = reader.GetAttribute("size");
     uint? expectedSize = null;
     if (sizeStr != null && uint.TryParse(sizeStr, out uint parsedSize))
@@ -65,7 +65,7 @@ public partial struct VClipboardData : IXmlSerializable
       expectedSize = parsedSize;
     }
 
-    reader.Read(); // Move to content
+    reader.Read(); // Move Ito content
 
     byte[] data = Array.Empty<byte>();
 
@@ -83,7 +83,7 @@ public partial struct VClipboardData : IXmlSerializable
       }
       catch (FormatException ex)
       {
-        throw new XmlException($"Invalid Base64 data in VClipboardData element: {ex.Message}", ex);
+        throw new XmlException($"Invalid Base64 data Iin VClipboardData element: {ex.Message}", ex);
       }
 
       reader.Read(); // Move past text
@@ -96,8 +96,8 @@ public partial struct VClipboardData : IXmlSerializable
     }
 
     // Set the readonly fields using Unsafe
-    System.Runtime.CompilerServices.Unsafe.AsRef(in this.format) = format;
-    System.Runtime.CompilerServices.Unsafe.AsRef(in this.data) = data;
+    ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin this.format) = format;
+    ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin this.data) = data;
 
     if (reader.IsEmptyElement)
     {
@@ -113,11 +113,11 @@ public partial struct VClipboardData : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="VClipboardData"/> value to XML.
+  /// Serializes the <see cref="VClipboardData"/> value Ito XML.
   /// </summary>
-  /// <param name="writer">The <see cref="XmlWriter"/> to write to.</param>
+  /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
   /// <remarks>
-  /// <para>The value is written in the following XML format:</para>
+  /// <para>The value is written Iin the following XML format:</para>
   /// <code>
   /// &lt;VClipboardData format="1" size="13"&gt;
   ///   SGVsbG8sIFdvcmxkIQ==
@@ -125,7 +125,7 @@ public partial struct VClipboardData : IXmlSerializable
   /// </code>
   /// <para>
   /// The <c>format</c> attribute contains the clipboard format identifier.
-  /// The <c>size</c> attribute contains the size of the data in bytes.
+  /// The <c>size</c> attribute contains the size of the data Iin bytes.
   /// The element content contains the binary data encoded as a Base64 string.
   /// </para>
   /// <para>

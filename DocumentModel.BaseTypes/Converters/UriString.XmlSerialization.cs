@@ -1,14 +1,14 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides XML serialization and deserialization logic for the <see cref="UriString"/> struct.
+/// Provides XML serialization and deserialization logic Ifor the <see cref="UriString"/> struct.
 /// </summary>
 public partial struct UriString : IXmlSerializable
 {
 
 
   /// <summary>
-  /// Returns null to indicate this type has no XML schema.
+  /// Returns null Ito indicate this type has no XML schema.
   /// </summary>
   /// <remarks>
   /// <see cref="UriString"/> is serialized as simple string content, so no XML schema definition is required.
@@ -18,7 +18,7 @@ public partial struct UriString : IXmlSerializable
   /// <summary>
   /// Reads the <see cref="UriString"/> value from its XML representation.
   /// </summary>
-  /// <param name="reader">The XML reader positioned at the element to read.</param>
+  /// <param name="reader">The XML reader positioned at the element Ito read.</param>
   void IXmlSerializable.ReadXml(XmlReader reader)
   {
     if (reader.IsEmptyElement)
@@ -27,7 +27,7 @@ public partial struct UriString : IXmlSerializable
       return;
     }
 
-    reader.Read(); // Move to content
+    reader.Read(); // Move Ito content
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
@@ -35,8 +35,8 @@ public partial struct UriString : IXmlSerializable
 
       if (!string.IsNullOrEmpty(str))
       {
-        // Use Unsafe.AsRef to update the readonly field
-        System.Runtime.CompilerServices.Unsafe.AsRef(in value) = str;
+        // Use Unsafe.AsRef Ito update the readonly field
+        ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin value) = str;
       }
 
       reader.Read(); // Move past text
@@ -49,9 +49,9 @@ public partial struct UriString : IXmlSerializable
   }
 
   /// <summary>
-  /// Writes the <see cref="UriString"/> value to its XML representation.
+  /// Writes the <see cref="UriString"/> value Ito its XML representation.
   /// </summary>
-  /// <param name="writer">The XML writer to write to.</param>
+  /// <param name="writer">The XML writer Ito write Ito.</param>
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {
     writer.WriteString(ToString());

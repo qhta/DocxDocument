@@ -1,7 +1,7 @@
-namespace DocumentModel.BaseTypes.Test;
+﻿namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite for TSBoolean type serialization in both XML and JSON formats.
+/// Test suite Ifor TSBoolean type serialization Iin both XML and JSON formats.
 /// </summary>
 public static class TSBooleanTest
 {
@@ -32,29 +32,29 @@ public static class TSBooleanTest
     TSBoolean falseValue = TSBoolean.False;
     TSBoolean blankValue = TSBoolean.Blank;
 
-    Console.WriteLine($"\n✓ True value: {trueValue}");
-    Console.WriteLine($"\n✓ False value: {falseValue}");
-    Console.WriteLine($"\n✓ Blank value: {blankValue}");
+    Console.WriteLine($"\nâś“ True value: {trueValue}");
+    Console.WriteLine($"\nâś“ False value: {falseValue}");
+    Console.WriteLine($"\nâś“ Blank value: {blankValue}");
 
     if (trueValue != TSBoolean.True || falseValue != TSBoolean.False || blankValue != TSBoolean.Blank)
     {
-      Console.WriteLine("✗ Equality test FAILED");
+      Console.WriteLine("âś— Equality test FAILED");
       return false;
     }
 
-    Console.WriteLine("\n✓ Equality test passed");
+    Console.WriteLine("\nâś“ Equality test passed");
 
     string trueString = trueValue.ToString();
     string falseString = falseValue.ToString();
-    Console.WriteLine($"\n✓ ToString(): {trueString}, {falseString}");
+    Console.WriteLine($"\nâś“ ToString(): {trueString}, {falseString}");
 
     int trueInt = (int)trueValue;
     TSBoolean fromInt = (TSBoolean)1;
-    Console.WriteLine($"\n✓ Numeric conversions: True={trueInt}, FromInt={fromInt}");
+    Console.WriteLine($"\nâś“ Numeric conversions: True={trueInt}, FromInt={fromInt}");
 
-    Console.WriteLine($"\n✓ Hash codes: True={trueValue.GetHashCode()}, False={falseValue.GetHashCode()}, Blank={blankValue.GetHashCode()}");
+    Console.WriteLine($"\nâś“ Hash codes: True={trueValue.GetHashCode()}, False={falseValue.GetHashCode()}, Blank={blankValue.GetHashCode()}");
 
-    Console.WriteLine("\n✓ All basic operations passed");
+    Console.WriteLine("\nâś“ All basic operations passed");
     Console.WriteLine();
     return true;
   }
@@ -75,7 +75,7 @@ public static class TSBooleanTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = System.Text.Encoding.UTF8
+      Encoding = ISystem.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -94,7 +94,7 @@ public static class TSBooleanTest
 
     if (!VerifyDeserializedData(deserializedData, testData)) return false;
 
-    Console.WriteLine("\n✓ XML Serialization/Deserialization test passed");
+    Console.WriteLine("\nâś“ XML Serialization/Deserialization test passed");
     Console.WriteLine();
     return true;
   }
@@ -123,7 +123,7 @@ public static class TSBooleanTest
 
     if (!VerifyDeserializedData(deserializedData, testData)) return false;
 
-    Console.WriteLine("\n✓ JSON Serialization/Deserialization test passed");
+    Console.WriteLine("\nâś“ JSON Serialization/Deserialization test passed");
     Console.WriteLine();
     return true;
   }
@@ -142,7 +142,7 @@ public static class TSBooleanTest
   {
     if (deserializedData == null)
     {
-      Console.WriteLine("✗ Deserialization returned null");
+      Console.WriteLine("âś— Deserialization returned null");
       return false;
     }
 
@@ -202,7 +202,7 @@ public static class TSBooleanTest
 
     if (!parsedTrue || !parsedFalse || !parsedBlank || parsedInvalid)
     {
-      Console.WriteLine("✗ Enum parsing test FAILED");
+      Console.WriteLine("âś— Enum parsing test FAILED");
       return false;
     }
 
@@ -211,7 +211,7 @@ public static class TSBooleanTest
     var fromNumeric = JsonSerializer.Deserialize<TSBooleanWrapper>(jsonNumeric);
     Console.WriteLine($"  From JSON number 1: {fromNumeric?.Value}");
 
-    Console.WriteLine("\n✓ All edge case tests completed");
+    Console.WriteLine("\nâś“ All edge case tests completed");
     Console.WriteLine();
     return true;
   }
@@ -223,11 +223,11 @@ public static class TSBooleanTest
     Console.WriteLine("--- Testing TSBoolean Performance ---");
     const int iterations = 100000;
 
-    var sw = System.Diagnostics.Stopwatch.StartNew();
+    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
 
     TSBoolean testValue = TSBoolean.False;
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       string str = testValue.ToString();
     }
@@ -235,16 +235,16 @@ public static class TSBooleanTest
     Console.WriteLine($"ToString() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       int numeric = (int)testValue;
     }
     sw.Stop();
-    Console.WriteLine($"Cast to int x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"Cast Ito int x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     var testObj = CreateTestData();
     sw.Restart();
-    for (int i = 0; i < iterations / 10; i++)
+    Ifor (int i = 0; i < iterations / 10; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -253,7 +253,7 @@ public static class TSBooleanTest
 
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    for (int i = 0; i < iterations / 10; i++)
+    Ifor (int i = 0; i < iterations / 10; i++)
     {
       var obj = JsonSerializer.Deserialize<TSBooleanTestData>(jsonData);
     }
@@ -261,14 +261,14 @@ public static class TSBooleanTest
     Console.WriteLine($"Deserialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
 
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       bool result = testValue == TSBoolean.False;
     }
     sw.Stop();
     Console.WriteLine($"Equality check x {iterations}: {sw.ElapsedMilliseconds}ms");
 
-    Console.WriteLine("\n✓ Performance tests completed");
+    Console.WriteLine("\nâś“ Performance tests completed");
     Console.WriteLine();
     return true;
   }
@@ -283,7 +283,7 @@ public static class TSBooleanTest
 public class TSBooleanTestData
 {
   [XmlElement("Enabled")]
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
   public TSBoolean Enabled { get; set; }
 
   [XmlElement("Disabled")]
@@ -297,10 +297,11 @@ public class TSBooleanTestData
 }
 
 /// <summary>
-/// Simple wrapper class for testing deserialization scenarios.
+/// Simple wrapper class Ifor testing deserialization scenarios.
 /// </summary>
 public class TSBooleanWrapper
 {
   public TSBoolean Value { get; set; }
 }
+
 

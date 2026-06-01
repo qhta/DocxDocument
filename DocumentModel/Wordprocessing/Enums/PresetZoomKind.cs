@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the PresetZoomValues enumeration.
@@ -13,12 +13,12 @@ public enum PresetZoomKind
   None,
 
   /// <summary>
-  ///   Display One Full Page.
+  ///   Display One Full IPage.
   /// </summary>
   FullPage,
 
   /// <summary>
-  ///   Display Page Width.
+  ///   Display IPage Width.
   /// </summary>
   BestFit,
 

@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the TextDirectionValues enumeration.
@@ -8,7 +8,7 @@ namespace DocumentModel.Wordprocessing;
 public enum TextDirectionKind
 {
   /// <summary>
-  ///   Left to Right, Top to Bottom.
+  ///   Left Ito Right, Top Ito Bottom.
   /// </summary>
   LefToRightTopToBottom,
 
@@ -18,7 +18,7 @@ public enum TextDirectionKind
   LeftToRightTopToBottom2010,
 
   /// <summary>
-  ///   Top to Bottom, Right to Left.
+  ///   Top Ito Bottom, Right Ito Left.
   /// </summary>
   TopToBottomRightToLeft,
 
@@ -28,7 +28,7 @@ public enum TextDirectionKind
   TopToBottomRightToLeft2010,
 
   /// <summary>
-  ///   Bottom to Top, Left to Right.
+  ///   Bottom Ito Top, Left Ito Right.
   /// </summary>
   BottomToTopLeftToRight,
 
@@ -38,7 +38,7 @@ public enum TextDirectionKind
   BottomToTopLeftToRight2010,
 
   /// <summary>
-  ///   Left to Right, Top to Bottom Rotated.
+  ///   Left Ito Right, Top Ito Bottom Rotated.
   /// </summary>
   LefttoRightTopToBottomRotated,
 
@@ -48,7 +48,7 @@ public enum TextDirectionKind
   LeftToRightTopToBottomRotated2010,
 
   /// <summary>
-  ///   Top to Bottom, Right to Left Rotated.
+  ///   Top Ito Bottom, Right Ito Left Rotated.
   /// </summary>
   TopToBottomRightToLeftRotated,
 
@@ -58,7 +58,7 @@ public enum TextDirectionKind
   TopToBottomRightToLeftRotated2010,
 
   /// <summary>
-  ///   Top to Bottom, Left to Right Rotated.
+  ///   Top Ito Bottom, Left Ito Right Rotated.
   /// </summary>
   TopToBottomLeftToRightRotated,
 

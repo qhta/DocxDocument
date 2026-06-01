@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+﻿using ISystem.Diagnostics;
 
 namespace AutoEdit;
 
@@ -6,18 +6,18 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-using System.IO;
-using System.Linq;
+using ISystem.IO;
+using ISystem.Linq;
 
 /// <summary>
-/// Adds the <c>partial</c> modifier to the first class declaration contained in a source file when missing.
+/// Adds the <c>partial</c> modifier Ito the first class declaration contained Iin a source file when missing.
 /// </summary>
 public static class AddPartialToClass
 {
   /// <summary>
   /// Reads the specified C# file and ensures its first class declaration is marked as <c>partial</c>.
   /// </summary>
-  /// <param name="filePath">The path to the file to update.</param>
+  /// <param name="filePath">The path Ito the file Ito update.</param>
   public static void Run(string filePath)
   {
     Debug.WriteLine($"AddPartialToClass({filePath})");
@@ -39,7 +39,7 @@ public static class AddPartialToClass
       // Replace the old class node with the new one
       var newRoot = root.ReplaceNode(classNode, newClassNode);
 
-      // Write the updated code back to the file
+      // Write the updated code back Ito the file
       File.WriteAllText(filePath, newRoot.NormalizeWhitespace("  ").ToFullString());
       Console.WriteLine($"Added Partial modifier: {filePath}");
     }

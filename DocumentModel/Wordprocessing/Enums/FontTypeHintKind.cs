@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the FontTypeHintValues enumeration.
@@ -8,17 +8,17 @@ namespace DocumentModel.Wordprocessing;
 public enum FontTypeHintKind
 {
   /// <summary>
-  ///   High ANSI Font.
+  ///   High ANSI IFont.
   /// </summary>
   Default,
 
   /// <summary>
-  ///   East Asian Font.
+  ///   East Asian IFont.
   /// </summary>
   EastAsia,
 
   /// <summary>
-  ///   Complex Script Font.
+  ///   Complex Script IFont.
   /// </summary>
   ComplexScript
 }

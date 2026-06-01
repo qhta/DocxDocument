@@ -1,4 +1,4 @@
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 
 using DocumentModel.Wordprocessing;
@@ -6,14 +6,14 @@ using DocumentModel.Wordprocessing;
 using OpenXml = DocumentFormat.OpenXml;
 
 /// <summary>
-///   This set of properties is stored in Extended properties part, but contained data is evaluated on document change.
+///   This set of properties is stored Iin Extended properties part, but contained data is evaluated on document change.
 /// </summary>
 public partial class StatisticProperties: DocumentProperties
 {
   /// <summary>
-  /// Document that owns these properties.
+  /// IDocument Ithat owns these properties.
   /// </summary>
-  public Document? Document { get; internal set; }
+  public IDocument? IDocument { get; internal set; }
 
   /// <summary>
   /// Gets or sets the collection of extended properties associated with this object.
@@ -24,12 +24,12 @@ public partial class StatisticProperties: DocumentProperties
   /// Initializing constructor.
   /// </summary>
   /// <param name="document"></param>
-  public StatisticProperties(Document document)
+  public StatisticProperties(IDocument document)
   {
-    Document = document;
-    var part = Document.WordprocessingDocument.ExtendedFilePropertiesPart;
+    IDocument = document;
+    var part = IDocument.WordprocessingDocument.ExtendedFilePropertiesPart;
     if (part == null)
-      part = Document.WordprocessingDocument.AddExtendedFilePropertiesPart();
+      part = IDocument.WordprocessingDocument.AddExtendedFilePropertiesPart();
     var properties = part.Properties;
     ExtendedProperties = properties;
   }
@@ -37,55 +37,55 @@ public partial class StatisticProperties: DocumentProperties
   /// <summary>
   ///   The total number of pages of a document if applicable.
   /// </summary>
-  public int? Pages { get; set; }
+  public int? IPages { get; set; }
 
   /// <summary>
   ///   The total number of words of a document if applicable.
   /// </summary>
-  public int? Words { get; set; }
+  public int? IWords { get; set; }
 
   /// <summary>
-  ///   The total number of characters in a document.
+  ///   The total number of characters Iin a document.
   /// </summary>
-  public int? Characters { get; set; }
+  public int? ICharacters { get; set; }
 
   /// <summary>
-  ///   The total number of lines in a document when last saved by a conforming producer if applicable.
+  ///   The total number of lines Iin a document when last saved by a conforming producer if applicable.
   /// </summary>
-  public int? Lines { get; set; }
+  public int? ILines { get; set; }
 
   /// <summary>
-  ///   The total number of paragraphs found in a document if applicable.
+  ///   The total number of paragraphs found Iin a document if applicable.
   /// </summary>
-  public int? Paragraphs { get; set; }
+  public int? IParagraphs { get; set; }
 
   /// <summary>
-  ///   The last count of the number of characters (including spaces) in this document.
+  ///   The last count of the number of characters (including spaces) Iin this document.
   /// </summary>
   public int? CharactersWithSpaces { get; set; }
 
   /// <summary>
-  ///  The total number of slides in a presentation document.
+  ///  The total number of slides Iin a presentation document.
   /// </summary>
   public int? Slides { get; set; }
   
   /// <summary>
-  ///  The number of slides in a presentation containing notes.
+  ///  The number of slides Iin a presentation containing notes.
   /// </summary>
   public int? Notes { get; set; }
   
   /// <summary>
-  ///   The number of hidden slides in a presentation document.
+  ///   The number of hidden slides Iin a presentation document.
   /// </summary>
   public int? HiddenSlides { get; set; }
 
   /// <summary>
-  ///   The total number of sound or video clips that are present in the document.
+  ///   The total number of sound or video clips Ithat are present Iin the document.
   /// </summary>
   public int? MultimediaClips { get; set; }
 
   /// <summary>
-  ///   Total time that a document has been edited. The default time unit is minutes.
+  ///   Total time Ithat a document has been edited. The default time unit is minutes.
   /// </summary>
   public int? TotalTime { get; set; }
 }

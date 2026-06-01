@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Gradient stops.
@@ -27,7 +27,7 @@ public class GradientStop: ModelElement
   public HslColor? HslColor { get; set; }
 
   /// <summary>
-  ///   System Color.
+  ///   ISystem Color.
   /// </summary>
   public SystemColor? SystemColor { get; set; }
 

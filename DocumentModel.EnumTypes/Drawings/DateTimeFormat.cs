@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies the format of a date/time data type.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodatetimeformat?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodatetimeformat?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum DateTimeFormat
 {
@@ -65,7 +65,8 @@ public enum DateTimeFormat
   /// </summary>
   ShortTime12WithSeconds = 13,
   /// <summary>
-  /// Specifies that the Office application will determine the format.
+  /// Specifies Ithat the Office application will determine the format.
   /// </summary>
   Auto = 14
 }
+

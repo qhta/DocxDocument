@@ -1,8 +1,8 @@
-namespace DocumentModel.CustomUI;
+﻿namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Defines the ItemSize enumeration.
-/// Used in types such as BackstageMenuGroup, Menu, MenuRegular.
+/// Used Iin types such as BackstageMenuGroup, Menu, MenuRegular.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXO10CUI.ItemSizeValues))]
@@ -19,3 +19,4 @@ public enum ItemSize
   [OpenXmlEnumValue("Large")]
 	Large
 }
+

@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Stretch.
@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings;
 public class Stretch: ModelElement
 {
   /// <summary>
-  ///   Fill Rectangle.
+  ///   Fill IRectangle.
   /// </summary>
   public RelativeRectangleType? FillRectangle { get; set; }
 }

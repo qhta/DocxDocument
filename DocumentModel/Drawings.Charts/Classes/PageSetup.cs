@@ -1,18 +1,18 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Page Setup.
+///   IPage Setup.
 /// </summary>
-public class PageSetup: ModelElement
+public class IPageSetup: ModelElement
 {
   /// <summary>
-  ///   Page Size
+  ///   IPage Size
   /// </summary>
   public UInt32? PaperSize { get; set; }
 
   /// <summary>
-  ///   First Page Number
+  ///   First IPage Number
   /// </summary>
   public Int32? FirstPageNumber { get; set; }
 
@@ -32,7 +32,7 @@ public class PageSetup: ModelElement
   public bool? Draft { get; set; }
 
   /// <summary>
-  ///   Use First Page Number
+  ///   Use First IPage Number
   /// </summary>
   public bool? UseFirstPageNumber { get; set; }
 

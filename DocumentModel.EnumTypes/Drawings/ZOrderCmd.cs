@@ -1,19 +1,19 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies where in the z-order a shape should be moved relative to other shapes.
+/// Specifies where Iin the z-order a shape should be moved relative Ito other shapes.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msozordercmd?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msozordercmd?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum ZOrderCmd
 {
   /// <summary>
-  /// Bring shape to the front.
+  /// Bring shape Ito the front.
   /// </summary>
   BringToFront,
   /// <summary>
-  /// Send shape to the back.
+  /// Send shape Ito the back.
   /// </summary>
   SendToBack,
   /// <summary>
@@ -25,7 +25,7 @@ public enum ZOrderCmd
   /// </summary>
   SendBackward,
   /// <summary>
-  /// Bring shape in front of text.
+  /// Bring shape Iin front of text.
   /// </summary>
   BringInFrontOfText,
   /// <summary>
@@ -33,3 +33,4 @@ public enum ZOrderCmd
   /// </summary>
   SendBehindText
 }
+

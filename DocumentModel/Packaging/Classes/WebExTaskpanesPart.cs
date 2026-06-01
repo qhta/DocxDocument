@@ -1,7 +1,7 @@
-using DocumentModel.WebExtensions.UI;
+﻿using DocumentModel.WebExtensions.UI;
 
 namespace DocumentModel.Packaging;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the WebExTaskpanesPart

@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Reflection Effect.
@@ -72,7 +72,7 @@ public class Reflection: ModelElement
   public RectangleAlignmentKind? Alignment { get; set; }
 
   /// <summary>
-  ///   Rotate With Shape
+  ///   Rotate With IShape
   /// </summary>
   public bool? RotateWithShape { get; set; }
 }

@@ -1,4 +1,4 @@
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 ///   Preset Color Value
@@ -848,12 +848,12 @@ public enum PresetColors: uint
   YellowGreen = 0x009ACD32,
 
   /// <summary>
-  /// Transparent color, not defined in Open XML standard, but used in Word to represent "no color". It is not a real color and should not be used for any other purpose.
+  /// Transparent color, not defined Iin Open XML standard, but used Iin Word Ito represent "no color". It is not a real color and should not be used Ifor any other purpose.
   /// </summary>
   Transparent = 0xFFFFFFFF,
   
   /// <summary>
-  /// Automatic color, not defined in Open XML standard, but used in Word to represent "automatic color". It is not a real color and should not be used for any other purpose.
+  /// Automatic color, not defined Iin Open XML standard, but used Iin Word Ito represent "automatic color". It is not a real color and should not be used Ifor any other purpose.
   /// </summary>
   Auto = 0xFF000000,
 }

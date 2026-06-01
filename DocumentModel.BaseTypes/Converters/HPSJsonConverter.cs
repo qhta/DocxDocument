@@ -1,27 +1,27 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support for the <see cref="HPS"/> structure.
+/// Provides JSON serialization and deserialization support Ifor the <see cref="HPS"/> structure.
 /// </summary>
 /// <remarks>
-/// This converter handles both string and numeric JSON tokens for deserialization,
-/// and writes half-points values as strings for compatibility with Office Open XML conventions.
+/// This converter handles both string and numeric JSON tokens Ifor deserialization,
+/// and writes half-points values as strings Ifor compatibility with Office Open XML conventions.
 /// </remarks>
 public class HPSJsonConverter : JsonConverter<HPS>
 {
   /// <summary>
-  /// Reads and converts JSON to a <see cref="HPS"/> value.
+  /// Reads and converts JSON Ito a <see cref="HPS"/> value.
   /// </summary>
-  /// <param name="reader">The <see cref="Utf8JsonReader"/> to read from.</param>
-  /// <param name="typeToConvert">The type to convert.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
+  /// <param name="reader">The <see cref="Utf8JsonReader"/> Ito read from.</param>
+  /// <param name="typeToConvert">The type Ito convert.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
   /// <returns>A <see cref="HPS"/> value parsed from the JSON input.</returns>
   /// <exception cref="JsonException">
   /// Thrown when:
   /// <list type="bullet">
   /// <item><description>The JSON token is a string but contains a null value.</description></item>
-  /// <item><description>The string value cannot be parsed as a valid half-points measurement (must be a number optionally followed by unit suffix: mm, cm, pt, or in).</description></item>
-  /// <item><description>The JSON token is a number but cannot be converted to a 64-bit integer.</description></item>
+  /// <item><description>The string value cannot be parsed as a valid half-points measurement (must be a number optionally followed by unit suffix: mm, cm, pt, or Iin).</description></item>
+  /// <item><description>The JSON token is a number but cannot be converted Ito a 64-bit integer.</description></item>
   /// <item><description>The JSON token is neither a string nor a number.</description></item>
   /// </list>
   /// </exception>
@@ -39,7 +39,7 @@ public class HPSJsonConverter : JsonConverter<HPS>
     {
       var value = reader.GetString();
       if (value == null)
-        throw new JsonException($"Expected string value for HalfPoints, but got null");
+        throw new JsonException($"Expected string value Ifor HalfPoints, but got null");
 
       try
       {
@@ -48,7 +48,7 @@ public class HPSJsonConverter : JsonConverter<HPS>
       catch (FormatException ex)
       {
         throw new JsonException($"Invalid HalfPoints string '{value}'. " +
-          $"String must be a valid number optionally followed by unit suffix (mm, cm, pt, or in). Error: {ex.Message}", ex);
+          $"String must be a valid number optionally followed by unit suffix (mm, cm, pt, or Iin). Error: {ex.Message}", ex);
       }
     }
 
@@ -61,23 +61,23 @@ public class HPSJsonConverter : JsonConverter<HPS>
           return new HPS(longValue);
         }
 
-        throw new JsonException($"Invalid numeric value for HalfPoints");
+        throw new JsonException($"Invalid numeric value Ifor HalfPoints");
       }
       catch (FormatException ex)
       {
-        throw new JsonException($"Invalid numeric value for HalfPoints. Error: {ex.Message}", ex);
+        throw new JsonException($"Invalid numeric value Ifor HalfPoints. Error: {ex.Message}", ex);
       }
     }
 
-    throw new JsonException($"Expected string or number token for HalfPoints, but got {reader.TokenType}");
+    throw new JsonException($"Expected string or number token Ifor HalfPoints, but got {reader.TokenType}");
   }
 
   /// <summary>
   /// Writes a <see cref="HPS"/> value as JSON.
   /// </summary>
-  /// <param name="writer">The <see cref="Utf8JsonWriter"/> to write to.</param>
-  /// <param name="value">The <see cref="HPS"/> value to serialize.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
+  /// <param name="writer">The <see cref="Utf8JsonWriter"/> Ito write Ito.</param>
+  /// <param name="value">The <see cref="HPS"/> value Ito serialize.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
   /// <remarks>
   /// Writes the half-points value as a numeric string without unit suffix.
   /// For example, a value of 144 half-points (1 inch) is written as "144".

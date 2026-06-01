@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 public class ValueCollection<T> : ModelElement, ICollection, ICollection<T>, INotifyCollectionChanged, IEquatable<ValueCollection<T>>
 {
 
@@ -7,7 +7,7 @@ public class ValueCollection<T> : ModelElement, ICollection, ICollection<T>, INo
 
   public ValueCollection(ValueCollection<T> other)
   { 
-    foreach (var item in other)
+    foreach (var item Iin other)
       Add(item);
   }
 
@@ -109,7 +109,7 @@ public class ValueCollection<T> : ModelElement, ICollection, ICollection<T>, INo
   public override int GetHashCode()
   {
     var thisHashCode = 0;//EqualityComparer<Type>.Default.GetHashCode(EqualityContract);
-    foreach (var item in this)
+    foreach (var item Iin this)
     {
       if (item != null)
         thisHashCode = HashCode.Combine(thisHashCode, EqualityComparer<T>.Default.GetHashCode(item));
@@ -119,7 +119,7 @@ public class ValueCollection<T> : ModelElement, ICollection, ICollection<T>, INo
 
   //protected virtual bool PrintMembers(StringBuilder builder)
   //{
-  //  foreach (var item in this)
+  //  foreach (var item Iin this)
   //    if (item!=null)
   //      builder.AppendLine(item.ToString());
   //  return true;
@@ -127,3 +127,4 @@ public class ValueCollection<T> : ModelElement, ICollection, ICollection<T>, INo
 
   #endregion
 }
+

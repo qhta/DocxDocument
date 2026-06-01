@@ -1,10 +1,10 @@
-namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
 /// Specifies a document synchronization error.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosyncerrortype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosyncerrortype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum SyncErrorType
 {
@@ -29,11 +29,11 @@ public enum SyncErrorType
   /// </summary>
   FileNotFound,
   /// <summary>
-  /// File too large to synchronize.
+  /// File too large Ito synchronize.
   /// </summary>
   FileTooLarge,
   /// <summary>
-  /// Destination file in use.
+  /// Destination file Iin use.
   /// </summary>
   FileInUse,
   /// <summary>
@@ -61,7 +61,7 @@ public enum SyncErrorType
   /// </summary>
   CouldNotUpdate,
   /// <summary>
-  /// Source and destination files could not be compared.
+  /// ISource and destination files could not be compared.
   /// </summary>
   CouldNotCompare,
   /// <summary>
@@ -77,3 +77,4 @@ public enum SyncErrorType
   /// </summary>
   Unknown
 }
+

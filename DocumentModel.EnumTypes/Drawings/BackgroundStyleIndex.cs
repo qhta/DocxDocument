@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Indicates the background style for an object.
+/// Indicates the background style Ifor an object.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobackgroundstyleindex?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobackgroundstyleindex?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum BackgroundStyleIndex
 {
@@ -64,3 +64,4 @@ public enum BackgroundStyleIndex
   /// </summary>
   Preset12 = 12
 }
+

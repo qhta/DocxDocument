@@ -1,15 +1,15 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Custom Set Of Characters Which Cannot Begin A Line.
+///   Custom Set Of ICharacters Which Cannot Begin A ILine.
 /// </summary>
 public class NoLineBreaksBeforeKinsoku: ModelElement
 {
   /// <summary>
   ///   lang
   /// </summary>
-  public string? Language { get; set; }
+  public string? ILanguage { get; set; }
 
   /// <summary>
   ///   val

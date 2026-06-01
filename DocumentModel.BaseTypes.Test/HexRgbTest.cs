@@ -1,9 +1,9 @@
-﻿using System.Globalization;
+﻿using ISystem.Globalization;
 
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite for HexRgb type serialization in both XML and JSON formats.
+/// Test suite Ifor HexRgb type serialization Iin both XML and JSON formats.
 /// </summary>
 public static class HexRgbTest
 {
@@ -30,17 +30,17 @@ public static class HexRgbTest
   
   static bool TestHexRgbBasicOperations()
   {
-    Console.WriteLine("--- Testing HexRgb Basic Operations ---");      // Test string to HexRgb conversion
+    Console.WriteLine("--- Testing HexRgb Basic Operations ---");      // Test string Ito HexRgb conversion
     HexColor color1 = new HexColor("FF0000");
-    Console.WriteLine($"\n✓ String to HexRgb: {color1} = Red({color1.R}), Green({color1.G}), Blue({color1.B})");
+    Console.WriteLine($"\n✓ String Ito HexRgb: {color1} = Red({color1.R}), Green({color1.G}), Blue({color1.B})");
 
-    // Test UInt32 to HexRgb conversion
+    // Test UInt32 Ito HexRgb conversion
     HexColor color2 = new HexColor(0xFF0000U);
-    Console.WriteLine($"\n✓ UInt32 to HexRgb: {color2}");
+    Console.WriteLine($"\n✓ UInt32 Ito HexRgb: {color2}");
 
     // Test byte components constructor
     HexColor color3 = new HexColor(255, 0, 0);
-    Console.WriteLine($"\n✓ Byte components to HexRgb: {color3}");
+    Console.WriteLine($"\n✓ Byte components Ito HexRgb: {color3}");
 
     // Test equality
     if (color1.Equals(color2) && color2.Equals(color3))
@@ -48,9 +48,9 @@ public static class HexRgbTest
     else
       Console.WriteLine("✗ Equality test FAILED");
 
-    // Test HexRgb to string
+    // Test HexRgb Ito string
     string str = color1.ToString();
-    Console.WriteLine($"\n✓ HexRgb to string: {str}");
+    Console.WriteLine($"\n✓ HexRgb Ito string: {str}");
 
     // Test component access
     Console.WriteLine($"\n✓ Component access: R={color1.R}, G={color1.G}, B={color1.B}");
@@ -75,7 +75,7 @@ public static class HexRgbTest
 
     HexColor fromUInt = uintVal;
     HexColor fromInt = intVal;
-    Console.WriteLine($"\n✓ Back to HexRgb: fromUInt={fromUInt}, fromInt={fromInt}");
+    Console.WriteLine($"\n✓ Back Ito HexRgb: fromUInt={fromUInt}, fromInt={fromInt}");
 
     Console.WriteLine("\n✓ All basic operations passed");
     Console.WriteLine();
@@ -300,7 +300,7 @@ public static class HexRgbTest
 
     ShowOriginalData(testData);
 
-    // Serialize to XML
+    // Serialize Ito XML
     var xmlSerializer = new XmlSerializer(typeof(HexRgbTestData));
     string xmlString;
 
@@ -309,7 +309,7 @@ public static class HexRgbTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = System.Text.Encoding.UTF8
+      Encoding = ISystem.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -385,7 +385,7 @@ public static class HexRgbTest
 
     ShowOriginalData(testData);
 
-    // Serialize to JSON
+    // Serialize Ito JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -468,7 +468,7 @@ public static class HexRgbTest
     HexColor backToHexRgb = hexColor;
     Console.WriteLine($"  Original HexRgb: {color}");
     Console.WriteLine($"  As HexInt: {hexColor}");
-    Console.WriteLine($"  Back to HexRgb: {backToHexRgb}");
+    Console.WriteLine($"  Back Ito HexRgb: {backToHexRgb}");
     Console.WriteLine($"  Are equal: {color.Equals(backToHexRgb)}");
 
     // Test Deserialization from different formats
@@ -546,8 +546,8 @@ public static class HexRgbTest
     Console.WriteLine("--- Testing HexRgb Performance ---"); const int iterations = 100000;
 
     // Test construction from string
-    var sw = System.Diagnostics.Stopwatch.StartNew();
-    for (int i = 0; i < iterations; i++)
+    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
+    Ifor (int i = 0; i < iterations; i++)
     {
       HexColor color = new HexColor("FF0000");
     }
@@ -556,7 +556,7 @@ public static class HexRgbTest
 
     // Test construction from UInt32
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       HexColor color = new HexColor(0xFF0000U);
     }
@@ -565,7 +565,7 @@ public static class HexRgbTest
 
     // Test construction from bytes
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       HexColor color = new HexColor(255, 0, 0);
     }
@@ -575,7 +575,7 @@ public static class HexRgbTest
     // Test ToString performance
     HexColor testColor = new HexColor(255, 128, 64);
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       string str = testColor.ToString();
     }
@@ -584,7 +584,7 @@ public static class HexRgbTest
 
     // Test component access
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       byte r = testColor.R;
       byte g = testColor.G;
@@ -596,7 +596,7 @@ public static class HexRgbTest
     // Test component modification
     HexColor mutableColor = new HexColor(100, 100, 100);
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       mutableColor.R = (byte)(i % 256);
       mutableColor.G = (byte)((i * 2) % 256);
@@ -620,7 +620,7 @@ public static class HexRgbTest
     };
 
     sw.Restart();
-    for (int i = 0; i < iterations / 10; i++)
+    Ifor (int i = 0; i < iterations / 10; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -630,7 +630,7 @@ public static class HexRgbTest
     // Test Deserialization performance
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    for (int i = 0; i < iterations / 10; i++)
+    Ifor (int i = 0; i < iterations / 10; i++)
     {
       var obj = JsonSerializer.Deserialize<HexRgbTestData>(jsonData);
     }
@@ -641,7 +641,7 @@ public static class HexRgbTest
     HexColor color1 = new HexColor(128, 128, 128);
     HexColor color2 = new HexColor(128, 128, 128);
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       bool result = color1.Equals(color2);
     }
@@ -650,7 +650,7 @@ public static class HexRgbTest
 
     // Test GetHashCode performance
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       int hash = color1.GetHashCode();
     }
@@ -659,12 +659,12 @@ public static class HexRgbTest
 
     // Test implicit conversions performance
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       UInt32 value = color1;
     }
     sw.Stop();
-    Console.WriteLine($"Implicit conversion to UInt32 x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"Implicit conversion Ito UInt32 x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     Console.WriteLine("\n✓ Performance tests completed");
     Console.WriteLine();
@@ -681,7 +681,7 @@ public static class HexRgbTest
 public class HexRgbTestData
 {
   [XmlElement("PrimaryRed")]
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
   public HexColor PrimaryRed { get; set; }
 
   [XmlElement("PrimaryGreen")]
@@ -710,10 +710,11 @@ public class HexRgbTestData
 }
 
 /// <summary>
-/// Simple wrapper class for testing Deserialization scenarios.
+/// Simple wrapper class Ifor testing Deserialization scenarios.
 /// </summary>
 public class HexRgbWrapper
 {
   public HexColor Value { get; set; }
 }
+
 

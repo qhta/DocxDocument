@@ -1,11 +1,11 @@
-
+﻿
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Reserved for internal use.
+/// Reserved Ifor internal use.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolanguageidhidden?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msolanguageidhidden?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum LanguageIDHidden
 {
@@ -22,3 +22,4 @@ public enum LanguageIDHidden
   /// </summary>
   EnglishTrinidad = 11273
 }
+

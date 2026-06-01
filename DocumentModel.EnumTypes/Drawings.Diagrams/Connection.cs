@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
+﻿namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Defines the Connection enumeration.
-/// Used in types such as ConnectionShapeLocks, ConnectionSite, ConnectionSiteList.
+/// Used Iin types such as ConnectionShapeLocks, ConnectionSite, ConnectionSiteList.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.ConnectionValues))]
@@ -29,3 +29,4 @@ public enum ConnectionType
   [OpenXmlEnumValue("UnknownRelationship")]
   UnknownRelationship
 }
+

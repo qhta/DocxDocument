@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Text Underline Types
@@ -13,9 +13,9 @@ public enum TextUnderlineKind
   None,
 
   /// <summary>
-  ///   Text Underline Enum ( Words ).
+  ///   Text Underline Enum ( IWords ).
   /// </summary>
-  Words,
+  IWords,
 
   /// <summary>
   ///   Text Underline Enum ( Single ).

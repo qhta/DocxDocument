@@ -1,10 +1,10 @@
-namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
 /// Specifies the docking behavior of the custom task pane.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoctpdockposition?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoctpdockposition?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum CTPDockPosition
 {
@@ -29,3 +29,4 @@ public enum CTPDockPosition
   /// </summary>
   Floating
 }
+

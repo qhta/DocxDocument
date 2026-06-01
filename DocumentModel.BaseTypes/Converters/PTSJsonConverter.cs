@@ -1,27 +1,27 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support for the <see cref="PTS"/> structure.
+/// Provides JSON serialization and deserialization support Ifor the <see cref="PTS"/> structure.
 /// </summary>
 /// <remarks>
-/// This converter handles both string and numeric JSON tokens for deserialization,
-/// and writes points values as strings for compatibility with Office Open XML conventions.
+/// This converter handles both string and numeric JSON tokens Ifor deserialization,
+/// and writes points values as strings Ifor compatibility with Office Open XML conventions.
 /// </remarks>
 public class PTSJsonConverter : JsonConverter<PTS>
 {
   /// <summary>
-  /// Reads and converts JSON to a <see cref="PTS"/> value.
+  /// Reads and converts JSON Ito a <see cref="PTS"/> value.
   /// </summary>
-  /// <param name="reader">The <see cref="Utf8JsonReader"/> to read from.</param>
-  /// <param name="typeToConvert">The type to convert.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
+  /// <param name="reader">The <see cref="Utf8JsonReader"/> Ito read from.</param>
+  /// <param name="typeToConvert">The type Ito convert.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
   /// <returns>A <see cref="PTS"/> value parsed from the JSON input.</returns>
   /// <exception cref="JsonException">
   /// Thrown when:
   /// <list type="bullet">
   /// <item><description>The JSON token is a string but contains a null value.</description></item>
-  /// <item><description>The string value cannot be parsed as a valid points measurement (must be a number optionally followed by unit suffix: mm, cm, pt, or in).</description></item>
-  /// <item><description>The JSON token is a number but cannot be converted to a 64-bit integer.</description></item>
+  /// <item><description>The string value cannot be parsed as a valid points measurement (must be a number optionally followed by unit suffix: mm, cm, pt, or Iin).</description></item>
+  /// <item><description>The JSON token is a number but cannot be converted Ito a 64-bit integer.</description></item>
   /// <item><description>The JSON token is neither a string nor a number.</description></item>
   /// </list>
   /// </exception>
@@ -38,7 +38,7 @@ public class PTSJsonConverter : JsonConverter<PTS>
     {
       var value = reader.GetString();
       if (value == null)
-        throw new JsonException($"Expected string value for Points, but got null");
+        throw new JsonException($"Expected string value Ifor IPoints, but got null");
 
       try
       {
@@ -46,8 +46,8 @@ public class PTSJsonConverter : JsonConverter<PTS>
       }
       catch (FormatException ex)
       {
-        throw new JsonException($"Invalid Points string '{value}'. " +
-          $"String must be a valid number optionally followed by unit suffix (mm, cm, pt, or in). Error: {ex.Message}", ex);
+        throw new JsonException($"Invalid IPoints string '{value}'. " +
+          $"String must be a valid number optionally followed by unit suffix (mm, cm, pt, or Iin). Error: {ex.Message}", ex);
       }
     }
 
@@ -60,23 +60,23 @@ public class PTSJsonConverter : JsonConverter<PTS>
           return new PTS(longValue);
         }
 
-        throw new JsonException($"Invalid numeric value for Points");
+        throw new JsonException($"Invalid numeric value Ifor IPoints");
       }
       catch (FormatException ex)
       {
-        throw new JsonException($"Invalid numeric value for Points. Error: {ex.Message}", ex);
+        throw new JsonException($"Invalid numeric value Ifor IPoints. Error: {ex.Message}", ex);
       }
     }
 
-    throw new JsonException($"Expected string or number token for Points, but got {reader.TokenType}");
+    throw new JsonException($"Expected string or number token Ifor IPoints, but got {reader.TokenType}");
   }
 
   /// <summary>
   /// Writes a <see cref="PTS"/> value as JSON.
   /// </summary>
-  /// <param name="writer">The <see cref="Utf8JsonWriter"/> to write to.</param>
-  /// <param name="value">The <see cref="PTS"/> value to serialize.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
+  /// <param name="writer">The <see cref="Utf8JsonWriter"/> Ito write Ito.</param>
+  /// <param name="value">The <see cref="PTS"/> value Ito serialize.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
   /// <remarks>
   /// Writes the points value as a numeric string without unit suffix.
   /// For example, a value of 72 points is written as "72".

@@ -1,8 +1,8 @@
-﻿using System.ComponentModel;
+﻿using ISystem.ComponentModel;
 using DocumentModel;
 
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 [TypeConverter(typeof(HexCharTypeXmlConverter))]
 public struct HexChar : IConvertible, IEquatable<HexChar>
@@ -183,14 +183,14 @@ public struct HexChar : IConvertible, IEquatable<HexChar>
   public static implicit operator HexChar(uint val)
   {
     if (val>ushort.MaxValue)
-      throw new InvalidCastException($"Type {val} out of range to cast to HexChar");
+      throw new InvalidCastException($"Type {val} out of range Ito cast Ito HexChar");
     return new HexChar((ushort)val);
   }
 
   public static implicit operator HexChar(ulong val)
   {
     if (val>ushort.MaxValue)
-      throw new InvalidCastException($"Type {val} out of range to cast to HexChar");
+      throw new InvalidCastException($"Type {val} out of range Ito cast Ito HexChar");
     return new HexChar((ushort)val);
   }
 

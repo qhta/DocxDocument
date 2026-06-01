@@ -112,9 +112,9 @@ public interface ITextFormat
   /// </summary>
   public PresetColors Color { get; set; }
 
-  public WdColorIndex ColorIndex { get; set; }
+  public ColorIndex ColorIndex { get; set; }
 
-  public WdColorIndex ColorIndexBi { get; set; }
+  public ColorIndex ColorIndexBi { get; set; }
 
   public PresetColors DiacriticColor { get; set; }
 
@@ -122,9 +122,9 @@ public interface ITextFormat
 
   public ColorFormat TextColor { get; }
 
-  public UnderlineType Underline { get; set; }
+  public Underline Underline { get; set; }
 
-  public WdColor UnderlineColor { get; set; }
+  public PresetColors UnderlineColor { get; set; }
 
   /// <summary>
   /// The position of text (in points) relative to the baseline. A positive number raises the text, and a negative number lowers it. 
@@ -144,7 +144,7 @@ public interface ITextFormat
   /// <summary>
   /// True if the specified font is formatted as shadowed. Can be True, False, or Undefined. 
   /// </summary>
-  public OnOff Shadow { get; set; }
+  public int Shadow { get; set; }
 
   /// <summary>
   /// True if the text is formatted as outlined.
@@ -181,10 +181,10 @@ public interface ITextFormat
   public int Hidden { get; set; }
 
 
-  public WdAnimation Animation { get; set; }
+  public Animation Animation { get; set; }
   public Borders Borders { get; set; }
   public Shading Shading { get; }
-  public WdEmphasisMark EmphasisMark { get; set; }
+  public EmphasisMark EmphasisMark { get; set; }
   public bool DisableCharacterSpaceGrid { get; set; }
   public GlowFormat Glow { get; set; }
   public ReflectionFormat Reflection { get; set; }
@@ -192,11 +192,11 @@ public interface ITextFormat
   public FillFormat Fill { get; set; }
   public LineFormat Line { get; set; }
   public ThreeDFormat ThreeD { get; set; }
-  public WdLigatures Ligatures { get; set; }
-  public WdNumberForm NumberForm { get; set; }
-  public WdNumberSpacing NumberSpacing { get; set; }
+  public Ligatures Ligatures { get; set; }
+  public NumberForm NumberForm { get; set; }
+  public NumberSpacing NumberSpacing { get; set; }
   public int ContextualAlternates { get; set; }
-  public WdStylisticSet StylisticSet { get; set; }
+  public StylisticSet StylisticSet { get; set; }
 
   //#region methods
   public void SetAsTemplateDefault();

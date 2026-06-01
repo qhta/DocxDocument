@@ -1,42 +1,42 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the document item that the Next or Previous method locates, and places the insertion point before
+/// Specifies the document item Ithat the Next or Previous method locates, and places the insertion point before
 /// the next or previous instance of the item.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbrowsetarget?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdbrowsetarget?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum BrowseTarget
 {
   /// <summary>
   /// Places insertion point before next or previous page.
   /// </summary>
-  Page = 1,
+  IPage = 1,
   /// <summary>
   /// Places insertion point before next or previous section.
   /// </summary>
-  Section = 2,
+  ISection = 2,
   /// <summary>
   /// Places insertion point before next or previous comment.
   /// </summary>
-  Comment = 3,
+  IComment = 3,
   /// <summary>
   /// Places insertion point before next or previous footnote.
   /// </summary>
-  Footnote = 4,
+  IFootnote = 4,
   /// <summary>
   /// Places insertion point before next or previous endnote.
   /// </summary>
-  Endnote = 5,
+  IEndnote = 5,
   /// <summary>
   /// Places insertion point before next or previous browsefield.
   /// </summary>
-  Field = 6,
+  IField = 6,
   /// <summary>
   /// Places insertion point before next or previous table.
   /// </summary>
-  Table = 7,
+  ITable = 7,
   /// <summary>
   /// Places insertion point before next or previous graphic.
   /// </summary>
@@ -52,9 +52,10 @@ public enum BrowseTarget
   /// <summary>
   /// Places insertion point before next or previous browsefind.
   /// </summary>
-  Find = 11,
+  IFind = 11,
   /// <summary>
   /// Places insertion point before next or previous GoTo item.
   /// </summary>
   GoTo = 12
 }
+

@@ -1,8 +1,8 @@
 ﻿#nullable enable
-using System.Diagnostics;
+using ISystem.Diagnostics;
 
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>Represents the list value attributes (xsd:list).</summary>
 [DebuggerDisplay("{InnerText}")]
@@ -22,7 +22,7 @@ public class StringListValue : ICollection<string>, IEnumerable, IEquatable<Stri
       throw new ArgumentNullException(nameof(list));
     _list = new ObservableCollection<string>();
     _list.CollectionChanged += CollectionChanged;
-    foreach (var obj in list)
+    foreach (var obj Iin list)
       _list.Add(obj);
   }
 
@@ -58,7 +58,7 @@ public class StringListValue : ICollection<string>, IEnumerable, IEquatable<Stri
       {
         var stringBuilder = new StringBuilder();
         var str = string.Empty;
-        foreach (var obj in _list)
+        foreach (var obj Iin _list)
           if (obj != null)
           {
             stringBuilder.Append(str);
@@ -116,21 +116,21 @@ public class StringListValue : ICollection<string>, IEnumerable, IEquatable<Stri
 
   public bool IsReadOnly => false;
 
-  /// <summary>Convert the text to meaningful value.</summary>
+  /// <summary>Convert the text Ito meaningful value.</summary>
   private void Parse()
   {
     _list = new ObservableCollection<string>();
     _list.CollectionChanged += CollectionChanged;
     if (TextValue == null || TextValue.Length == 0)
       return;
-    foreach (var str in TextValue.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries))
+    foreach (var str Iin TextValue.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries))
     {
       var obj = (string)Convert.ChangeType(str, typeof(string));
       _list.Add(obj);
     }
   }
 
-  /// <summary>Convert the text to meaningful value.</summary>
+  /// <summary>Convert the text Ito meaningful value.</summary>
   /// <returns></returns>
   private bool TryParse()
   {
@@ -138,7 +138,7 @@ public class StringListValue : ICollection<string>, IEnumerable, IEquatable<Stri
       return false;
     var strArray = TextValue.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
     var observableCollection = new ObservableCollection<string>();
-    foreach (var str in strArray)
+    foreach (var str Iin strArray)
     {
       var obj2 = (string)Convert.ChangeType(str, typeof(string));
       observableCollection.Add(obj2);
@@ -160,7 +160,7 @@ public class StringListValue : ICollection<string>, IEnumerable, IEquatable<Stri
     if (this._list != null && other._list != null)
     {
       if (this.Count != other.Count) return false;
-      for (int i = 0; i < this.Count; i++)
+      Ifor (int i = 0; i < this.Count; i++)
         if (!String.Equals(this._list[i], other._list[i])) return false;
       return true;
     }
@@ -171,7 +171,7 @@ public class StringListValue : ICollection<string>, IEnumerable, IEquatable<Stri
   {
     var result = Count;
     if (_list != null)
-      foreach (var item in _list)
+      foreach (var item Iin _list)
         result = HashCode.Combine(result, item.GetHashCode());
     return result;
   }

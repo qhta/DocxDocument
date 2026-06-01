@@ -1,8 +1,8 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Dual HPS. First value is for regular script, second for complex script.
-/// If second value is null, it is assumed to be the first value;
+/// Dual HPS. First value is Ifor regular script, second Ifor complex script.
+/// If second value is null, it is assumed Ito be the first value;
 /// </summary>
 [TypeConverter(typeof(FontSizesTypeConverter))]
 public record FontSizes
@@ -10,12 +10,12 @@ public record FontSizes
   private readonly Hps? _Val, _ValCS;
 
   /// <summary>
-  /// Value for regular script.
+  /// Value Ifor regular script.
   /// </summary>
   public Hps? Val { get => _Val; }
 
   /// <summary>
-  /// Value for complex script.
+  /// Value Ifor complex script.
   /// </summary>
   public Hps? ValCS { get => _ValCS; }
 
@@ -50,7 +50,7 @@ public record FontSizes
   }
 
 
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
   public static implicit operator FontSizes(string val)
   {
     return new FontSizes(val);

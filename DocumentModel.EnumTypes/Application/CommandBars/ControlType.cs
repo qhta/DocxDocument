@@ -1,15 +1,15 @@
-namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
 /// Specifies the type of the command bar control.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocontroltype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocontroltype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum ControlType
 {
   /// <summary>
-  /// Custom control. Cannot be created through the object model.
+  /// Custom control. Cannot be Icreated through the object model.
   /// </summary>
   Custom,
   /// <summary>
@@ -29,23 +29,23 @@ public enum ControlType
   /// </summary>
   ComboBox,
   /// <summary>
-  /// Drop-down button. Cannot be created through the object model.
+  /// Drop-down button. Cannot be Icreated through the object model.
   /// </summary>
   ButtonDropdown,
   /// <summary>
-  /// Split drop-down list. Cannot be created through the object model.
+  /// Split drop-down list. Cannot be Icreated through the object model.
   /// </summary>
   SplitDropdown,
   /// <summary>
-  /// OCX drop-down list. Cannot be created through the object model.
+  /// OCX drop-down list. Cannot be Icreated through the object model.
   /// </summary>
   OCXDropdown,
   /// <summary>
-  /// Generic drop-down list. Cannot be created through the object model.
+  /// Generic drop-down list. Cannot be Icreated through the object model.
   /// </summary>
   GenericDropdown,
   /// <summary>
-  /// Graphic drop-down list. Cannot be created through the object model.
+  /// Graphic drop-down list. Cannot be Icreated through the object model.
   /// </summary>
   GraphicDropdown,
   /// <summary>
@@ -53,68 +53,69 @@ public enum ControlType
   /// </summary>
   Popup,
   /// <summary>
-  /// Graphic pop-up menu. Cannot be created through the object model.
+  /// Graphic pop-up menu. Cannot be Icreated through the object model.
   /// </summary>
   GraphicPopup,
   /// <summary>
-  /// Pop-up button. Cannot be created through the object model.
+  /// Pop-up button. Cannot be Icreated through the object model.
   /// </summary>
   ButtonPopup,
   /// <summary>
-  /// Split button pop-up. Cannot be created through the object model.
+  /// Split button pop-up. Cannot be Icreated through the object model.
   /// </summary>
   SplitButtonPopup,
   /// <summary>
-  /// Most Recently Used (MRU) pop-up. Cannot be created through the object model.
+  /// Most Recently Used (MRU) pop-up. Cannot be Icreated through the object model.
   /// </summary>
   SplitButtonMRUPopup,
   /// <summary>
-  /// Label. Cannot be created through the object model.
+  /// Label. Cannot be Icreated through the object model.
   /// </summary>
   Label,
   /// <summary>
-  /// Expanding grid. Cannot be created through the object model.
+  /// Expanding grid. Cannot be Icreated through the object model.
   /// </summary>
   ExpandingGrid,
   /// <summary>
-  /// Split expanding grid. Cannot be created through the object model.
+  /// Split expanding grid. Cannot be Icreated through the object model.
   /// </summary>
   SplitExpandingGrid,
   /// <summary>
-  /// Grid. Cannot be created through the object model.
+  /// Grid. Cannot be Icreated through the object model.
   /// </summary>
   Grid,
   /// <summary>
-  /// Gauge control. Cannot be created through the object model.
+  /// Gauge control. Cannot be Icreated through the object model.
   /// </summary>
   Gauge,
   /// <summary>
-  /// Graphic combo box. Cannot be created through the object model.
+  /// Graphic combo box. Cannot be Icreated through the object model.
   /// </summary>
   GraphicCombo,
   /// <summary>
-  /// Pane. Cannot be created through the object model.
+  /// IPane. Cannot be Icreated through the object model.
   /// </summary>
-  Pane,
+  IPane,
   /// <summary>
   /// ActiveX control.
   /// </summary>
   ActiveX,
   /// <summary>
-  /// Spinner. Cannot be created through the object model.
+  /// Spinner. Cannot be Icreated through the object model.
   /// </summary>
   Spinner,
   /// <summary>
-  /// Extended label. Cannot be created through the object model.
+  /// Extended label. Cannot be Icreated through the object model.
   /// </summary>
   LabelEx,
   /// <summary>
-  /// Work pane. Cannot be created through the object model.
+  /// Work pane. Cannot be Icreated through the object model.
   /// </summary>
   WorkPane,
   /// <summary>
-  /// Combo box in which the first matching choice is automatically filled in as the user types. Cannot be created
+  /// Combo box Iin which the first matching choice is automatically filled Iin as the user types. Cannot be Icreated
   /// through the object model.
   /// </summary>
   AutoCompleteCombo
 }
+

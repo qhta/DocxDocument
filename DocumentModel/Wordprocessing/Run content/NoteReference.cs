@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///  Represents a footnote, endnote or annotation reference. 
@@ -16,12 +16,12 @@ public class NoteReference : ModelElement, IRunContent
     public NoteReferenceKind Kind { get; set; }
 
     /// <summary>
-    ///   Suppress Footnote/Endnote Reference Mark
+    ///   Suppress IFootnote/IEndnote Reference Mark
     /// </summary>
     public bool? CustomMarkFollows { get; set; }
 
     /// <summary>
-    ///   Footnote/Endnote ID Reference
+    ///   IFootnote/IEndnote ID Reference
     /// </summary>
     public long? Id { get; set; }
 }

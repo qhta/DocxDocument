@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the LineEndPropertiesType Class.
@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings;
 public class LineEndPropertiesType: ModelElement
 {
   /// <summary>
-  ///   Line Head/End Type
+  ///   ILine Head/End Type
   /// </summary>
   public LineEndKind? Type { get; set; }
 

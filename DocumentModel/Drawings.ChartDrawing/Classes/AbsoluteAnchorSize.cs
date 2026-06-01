@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.ChartDrawing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Absolute Anchor Shape Size.
+///   Absolute Anchor IShape Size.
 /// </summary>
 public class AbsoluteAnchorSize: ModelElement
 {
@@ -12,11 +12,11 @@ public class AbsoluteAnchorSize: ModelElement
   public FromAnchor? FromAnchor { get; set; }
 
   /// <summary>
-  ///   Shape Extent.
+  ///   IShape Extent.
   /// </summary>
   public Extent? Extent { get; set; }
 
-  public Shape? Shape { get; set; }
+  public IShape? IShape { get; set; }
 
   public GroupShape? GroupShape { get; set; }
 

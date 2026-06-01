@@ -1,5 +1,5 @@
-namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the GroupBox Class.
@@ -7,32 +7,32 @@ namespace DocumentModel;
 public class GroupBox: ModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2010 and later.
+  ///   id, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? Id { get; set; }
 
   /// <summary>
-  ///   idQ, this property is only available in Office 2010 and later.
+  ///   idQ, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? QualifiedId { get; set; }
 
   /// <summary>
-  ///   tag, this property is only available in Office 2010 and later.
+  ///   tag, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? Tag { get; set; }
 
   /// <summary>
-  ///   expand, this property is only available in Office 2010 and later.
+  ///   expand, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public ExpandKind? Expand { get; set; }
 
   /// <summary>
-  ///   label, this property is only available in Office 2010 and later.
+  ///   label, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   getLabel, this property is only available in Office 2010 and later.
+  ///   getLabel, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? GetLabel { get; set; }
 
@@ -48,7 +48,7 @@ public class GroupBox: ModelElement
 
   public BackstageComboBox? BackstageComboBox { get; set; }
 
-  public Hyperlink? Hyperlink { get; set; }
+  public IHyperlink? IHyperlink { get; set; }
 
   public BackstageLabelControl? BackstageLabelControl { get; set; }
 

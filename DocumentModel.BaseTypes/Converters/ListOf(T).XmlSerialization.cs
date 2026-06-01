@@ -1,4 +1,4 @@
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 public partial class ListOf<T> : IXmlSerializable
   where T : IConvertible
@@ -13,20 +13,20 @@ public partial class ListOf<T> : IXmlSerializable
 
   /// <summary>
   /// Deserializes the <see cref="ListOf{T}"/> value from XML.
-  /// Accepts space-separated values (or comma/semicolon-separated for string types).
+  /// Accepts space-separated values (or comma/semicolon-separated Ifor string types).
   /// </summary>
-  /// <param name="reader">The <see cref="XmlReader"/> to read from.</param>
+  /// <param name="reader">The <see cref="XmlReader"/> Ito read from.</param>
   /// <remarks>
   /// The method handles the following formats:
   /// <list type="bullet">
-  /// <item><description>Space-separated values for numeric types (e.g., "1 2 3 4 5")</description></item>
-  /// <item><description>Comma or semicolon-separated values for string types (e.g., "apple,banana,cherry" or "item1;item2;item3")</description></item>
-  /// <item><description>Single values (stored as a single item in the list)</description></item>
+  /// <item><description>Space-separated values Ifor numeric types (e.g., "1 2 3 4 5")</description></item>
+  /// <item><description>Comma or semicolon-separated values Ifor string types (e.g., "apple,banana,cherry" or "item1;item2;item3")</description></item>
+  /// <item><description>Single values (stored as a single item Iin the list)</description></item>
   /// <item><description>Empty elements (creates an empty list)</description></item>
   /// </list>
   /// <para>The string is split using appropriate separators based on the element type.</para>
   /// <para>Empty entries are automatically removed.</para>
-  /// <para>Each token is converted to type T using <see cref="Convert.ChangeType(object, Type)"/>.</para>
+  /// <para>Each token is converted Ito type T using <see cref="Convert.ChangeType(object, Type)"/>.</para>
   /// </remarks>
   void IXmlSerializable.ReadXml(XmlReader reader)
   {
@@ -36,7 +36,7 @@ public partial class ListOf<T> : IXmlSerializable
       return;
     }
 
-    reader.Read(); // Move to content
+    reader.Read(); // Move Ito content
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
@@ -49,7 +49,7 @@ public partial class ListOf<T> : IXmlSerializable
         
         // Parse the string using appropriate separators
         var items = listString.Split(_listSeparators, StringSplitOptions.RemoveEmptyEntries);
-        foreach (var item in items)
+        foreach (var item Iin items)
         {
           var convertedItem = (T)Convert.ChangeType(item, typeof(T), CultureInfo.InvariantCulture);
           Add(convertedItem);
@@ -66,9 +66,9 @@ public partial class ListOf<T> : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="ListOf{T}"/> value to XML.
+  /// Serializes the <see cref="ListOf{T}"/> value Ito XML.
   /// </summary>
-  /// <param name="writer">The <see cref="XmlWriter"/> to write to.</param>
+  /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
   /// <remarks>
   /// The value is written as a space-separated string with items separated by spaces.
   /// For example, a list containing 1, 2, 3 is written as "1 2 3".

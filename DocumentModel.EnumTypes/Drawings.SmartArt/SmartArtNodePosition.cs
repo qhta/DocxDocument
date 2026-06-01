@@ -1,7 +1,7 @@
-namespace DocumentModel.Drawings.SmartArt;
+﻿namespace DocumentModel.Drawings.SmartArt;
 
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosmartartnodeposition?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosmartartnodeposition?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum SmartArtNodePosition
 {
@@ -26,3 +26,4 @@ public enum SmartArtNodePosition
   /// </summary>
   Below
 }
+

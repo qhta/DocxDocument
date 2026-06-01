@@ -1,19 +1,20 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies the type for a segment.
+/// Specifies the type Ifor a segment.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosegmenttype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosegmenttype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum SegmentType
 {
   /// <summary>
-  /// Line.
+  /// ILine.
   /// </summary>
-  Line,
+  ILine,
   /// <summary>
   /// Curve.
   /// </summary>
   Curve
 }
+

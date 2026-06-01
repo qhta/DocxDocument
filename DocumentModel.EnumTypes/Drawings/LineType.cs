@@ -1,15 +1,15 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies whether a line is a line of text or a table row.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdlinetype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdlinetype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum LineType
 {
   /// <summary>
-  /// A line of text in the body of the document.
+  /// A line of text Iin the body of the document.
   /// </summary>
   TextLine = 0,
   /// <summary>
@@ -17,3 +17,4 @@ public enum LineType
   /// </summary>
   TableRow = 1
 }
+

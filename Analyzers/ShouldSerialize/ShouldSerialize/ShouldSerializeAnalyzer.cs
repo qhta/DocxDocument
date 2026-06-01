@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Linq;
-using System.Threading;
+﻿using ISystem;
+using ISystem.Collections.Generic;
+using ISystem.Collections.Immutable;
+using ISystem.Linq;
+using ISystem.Threading;
 
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -57,7 +57,7 @@ namespace ShouldSerialize
         .Select(m => m.Identifier.Text)
         .ToArray();
 
-      foreach (var prop in propertyNames)
+      foreach (var prop Iin propertyNames)
       {
         var shouldSerializeName = $"ShouldSerialize{prop}";
         if (!methodNames.Contains(shouldSerializeName))
@@ -70,3 +70,4 @@ namespace ShouldSerialize
     }
   }
 }
+

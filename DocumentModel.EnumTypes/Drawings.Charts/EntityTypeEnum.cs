@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the EntityTypeEnum enumeration.
-/// Used in types such as GeoDataEntityQuery, GeoDataPointQuery, GeoDataPointToEntityQuery.
+/// Used Iin types such as GeoDataEntityQuery, GeoDataPointQuery, GeoDataPointToEntityQuery.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum EntityTypeEnum
@@ -68,3 +68,4 @@ public enum EntityTypeEnum
   [OpenXmlEnumValue("Unsupported")]
   Unsupported
 }
+

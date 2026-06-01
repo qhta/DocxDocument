@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings.ChartDrawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines the ChartData Class.
+///   Defines the IChartData Class.
 /// </summary>
-public class ChartData: ModelElement
+public class IChartData: ModelElement
 {
   /// <summary>
   ///   ExternalData.

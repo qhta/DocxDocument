@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Property Set.
@@ -17,37 +17,37 @@ public class PropertySet: ModelElement
   public string? PresentationName { get; set; }
 
   /// <summary>
-  ///   Presentation Style Label
+  ///   Presentation IStyle Label
   /// </summary>
   public string? PresentationStyleLabel { get; set; }
 
   /// <summary>
-  ///   Presentation Style Index
+  ///   Presentation IStyle IIndex
   /// </summary>
   public Int32? PresentationStyleIndex { get; set; }
 
   /// <summary>
-  ///   Presentation Style Count
+  ///   Presentation IStyle Count
   /// </summary>
   public Int32? PresentationStyleCount { get; set; }
 
   /// <summary>
-  ///   Current Diagram Type
+  ///   Current IDiagram Type
   /// </summary>
   public string? LayoutTypeId { get; set; }
 
   /// <summary>
-  ///   Current Diagram Category
+  ///   Current IDiagram ICategory
   /// </summary>
   public string? LayoutCategoryId { get; set; }
 
   /// <summary>
-  ///   Current Style Type
+  ///   Current IStyle Type
   /// </summary>
   public string? QuickStyleTypeId { get; set; }
 
   /// <summary>
-  ///   Current Style Category
+  ///   Current IStyle ICategory
   /// </summary>
   public string? QuickStyleCategoryId { get; set; }
 
@@ -57,7 +57,7 @@ public class PropertySet: ModelElement
   public string? ColorType { get; set; }
 
   /// <summary>
-  ///   Color Transform Category
+  ///   Color Transform ICategory
   /// </summary>
   public string? ColorCategoryId { get; set; }
 
@@ -147,12 +147,12 @@ public class PropertySet: ModelElement
   public Int32? IncludeAngleScale { get; set; }
 
   /// <summary>
-  ///   Presentation Layout Variables.
+  ///   Presentation Layout IVariables.
   /// </summary>
   public PresentationLayoutVariables? PresentationLayoutVariables { get; set; }
 
   /// <summary>
-  ///   Shape Style.
+  ///   IShape IStyle.
   /// </summary>
-  public Style? Style { get; set; }
+  public IStyle? IStyle { get; set; }
 }

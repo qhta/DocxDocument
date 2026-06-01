@@ -1,5 +1,5 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the Lock Class.
@@ -17,9 +17,9 @@ public class Lock: ModelElement
   public bool? Position { get; set; }
 
   /// <summary>
-  ///   Selection Lock
+  ///   ISelection Lock
   /// </summary>
-  public bool? Selection { get; set; }
+  public bool? ISelection { get; set; }
 
   /// <summary>
   ///   Grouping Lock

@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the WebVideoProperty Class.
@@ -7,17 +7,17 @@ namespace DocumentModel.Drawings.Wordprocessing;
 public class WebVideoProperty: ModelElement
 {
   /// <summary>
-  ///   embeddedHtml, this property is only available in Office 2013 and later.
+  ///   embeddedHtml, this property is Ionly available Iin Office 2013 and later.
   /// </summary>
   public string? EmbeddedHtml { get; set; }
 
   /// <summary>
-  ///   h, this property is only available in Office 2013 and later.
+  ///   h, this property is Ionly available Iin Office 2013 and later.
   /// </summary>
   public UInt32? Height { get; set; }
 
   /// <summary>
-  ///   w, this property is only available in Office 2013 and later.
+  ///   w, this property is Ionly available Iin Office 2013 and later.
   /// </summary>
   public UInt32? Width { get; set; }
 }

@@ -1,9 +1,9 @@
-using DocumentModel.Wordprocessing;
+﻿using DocumentModel.Wordprocessing;
 
 namespace DocumentModel.Math;
 
 /// <summary>
-///   Interface for math elements that can be included in many other elements.
+///   Interface Ifor math elements Ithat can be included Iin many other elements.
 /// </summary>
 public interface ICommonMathContent: 
   IParagraphContent, 

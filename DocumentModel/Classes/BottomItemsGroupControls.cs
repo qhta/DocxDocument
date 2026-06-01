@@ -1,5 +1,5 @@
-namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the BottomItemsGroupControls Class.
@@ -18,7 +18,7 @@ public class BottomItemsGroupControls: ModelElement
 
   public BackstageComboBox? BackstageComboBox { get; set; }
 
-  public Hyperlink? Hyperlink { get; set; }
+  public IHyperlink? IHyperlink { get; set; }
 
   public BackstageLabelControl? BackstageLabelControl { get; set; }
 

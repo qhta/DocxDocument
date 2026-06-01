@@ -1,23 +1,23 @@
-namespace DocumentModel.Drawings.ChartDrawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines the ChartTitle Class.
+///   Defines the IChartTitle Class.
 /// </summary>
-public class ChartTitle: ModelElement
+public class IChartTitle: ModelElement
 {
   /// <summary>
-  ///   pos, this property is only available in Office 2016 and later.
+  ///   pos, this property is Ionly available Iin Office 2016 and later.
   /// </summary>
   public SidePos? Pos { get; set; }
 
   /// <summary>
-  ///   align, this property is only available in Office 2016 and later.
+  ///   align, this property is Ionly available Iin Office 2016 and later.
   /// </summary>
   public PosAlign? Align { get; set; }
 
   /// <summary>
-  ///   overlay, this property is only available in Office 2016 and later.
+  ///   overlay, this property is Ionly available Iin Office 2016 and later.
   /// </summary>
   public bool? Overlay { get; set; }
 

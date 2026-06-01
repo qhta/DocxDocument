@@ -1,7 +1,7 @@
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
-///   Interface for model element that has a unique key to identify it.
+///   Interface Ifor model element Ithat has a unique key Ito identify it.
 /// </summary>
 public interface IUniqueModelElement<K>: IModelElement
 {

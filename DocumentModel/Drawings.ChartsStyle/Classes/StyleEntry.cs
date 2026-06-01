@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.ChartsStyle;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartsStyle;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the StyleEntry Class.
@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 public class StyleEntry: ModelElement
 {
   /// <summary>
-  ///   mods, this property is only available in Office 2013 and later.
+  ///   mods, this property is Ionly available Iin Office 2013 and later.
   /// </summary>
   public ListOf<String>? Modifiers { get; set; }
 

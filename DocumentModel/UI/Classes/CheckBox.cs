@@ -1,10 +1,10 @@
-namespace DocumentModel.UI;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.UI;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines the CheckBox Class.
+///   Defines the ICheckBox Class.
 /// </summary>
-public class CheckBox: ModelElement
+public class ICheckBox: ModelElement
 {
   /// <summary>
   ///   getPressed

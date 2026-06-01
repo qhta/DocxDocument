@@ -1,10 +1,10 @@
-namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
-/// Specifies action to take when a user clicks an item in the task pane.
+/// Specifies action Ito take when a user clicks an item Iin the task pane.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofilenewaction?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofilenewaction?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum FileNewAction
 {
@@ -21,3 +21,4 @@ public enum FileNewAction
   /// </summary>
   OpenFile
 }
+

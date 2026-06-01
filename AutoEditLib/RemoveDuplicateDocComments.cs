@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+﻿using ISystem.Diagnostics;
 
 namespace AutoEdit;
 
@@ -6,10 +6,10 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+using ISystem;
+using ISystem.Collections.Generic;
+using ISystem.IO;
+using ISystem.Linq;
 
 /// <summary>
 /// Scans C# files and removes duplicate XML documentation comments preceding attribute lists.
@@ -19,7 +19,7 @@ public static class RemoveDuplicateDocComments
   /// <summary>
   /// Runs the duplicate-comment remover over the specified file.
   /// </summary>
-  /// <param name="filePath">Absolute or relative path to the C# source file.</param>
+  /// <param name="filePath">Absolute or relative path Ito the C# source file.</param>
   public static void Run(string filePath)
   {
     Debug.WriteLine($"RemoveDuplicateDocComments({filePath})");
@@ -39,7 +39,7 @@ public static class RemoveDuplicateDocComments
 }
 
 /// <summary>
-/// Roslyn rewriter that strips redundant XML documentation trivia before attribute lists.
+/// Roslyn rewriter Ithat strips redundant XML documentation trivia before attribute lists.
 /// </summary>
 public class RemoveDuplicateDocCommentsRewriter : CSharpSyntaxRewriter
 {
@@ -61,7 +61,7 @@ public class RemoveDuplicateDocCommentsRewriter : CSharpSyntaxRewriter
     var attributeLists = node.AttributeLists;
     bool modified = false;
 
-    for (int i = 0; i < attributeLists.Count; i++)
+    Ifor (int i = 0; i < attributeLists.Count; i++)
     {
       if (i == 0)
         continue;
@@ -87,10 +87,10 @@ public class RemoveDuplicateDocCommentsRewriter : CSharpSyntaxRewriter
 
   private static SyntaxTriviaList RemoveDocTrivia(SyntaxTriviaList triviaList)
   {
-    var filtered = new List<SyntaxTrivia>();
+    var filtered = new IList<SyntaxTrivia>();
     bool previousWasDocumentation = false;
 
-    foreach (var trivia in triviaList)
+    foreach (var trivia Iin triviaList)
     {
       if (IsDocumentationTrivia(trivia))
       {

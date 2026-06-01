@@ -1,25 +1,26 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 /// <summary>
 /// Defines the BaselineAlignment enumeration.
-/// Used in types such as _ParagraphFormat, Paragraph, Paragraphs.
+/// Used Iin types such as _IParagraphFormat, IParagraph, IParagraphs.
 /// </summary>
 [OpenXmlEnumType(typeof(DXW.VerticalTextAlignmentValues))]
 [JsonConverter(typeof(StringEnumConverter))]
 public enum BaselineAlignment
 {
-  /// <summary>Align to baseline</summary>
+  /// <summary>Align Ito baseline</summary>
   [OpenXmlEnumValue(nameof(DXW.VerticalTextAlignmentValues.Baseline))]
   Baseline = 0,
-  /// <summary>Align to top</summary>
+  /// <summary>Align Ito top</summary>
   [OpenXmlEnumValue(nameof(DXW.VerticalTextAlignmentValues.Top))]
   Top,
-  /// <summary>Align to center</summary>
+  /// <summary>Align Ito center</summary>
   [OpenXmlEnumValue(nameof(DXW.VerticalTextAlignmentValues.Center))]
   Center,
-  /// <summary>Align to bottom according to the Far East font standards.</summary>
+  /// <summary>Align Ito bottom according Ito the Far East font standards.</summary>
   [OpenXmlEnumValue(nameof(DXW.VerticalTextAlignmentValues.Bottom))]
   Bottom,
   /// <summary>Automatic alignment</summary>
   [OpenXmlEnumValue(nameof(DXW.VerticalTextAlignmentValues.Auto))]
   Auto
 }
+

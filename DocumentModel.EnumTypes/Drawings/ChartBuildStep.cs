@@ -1,41 +1,42 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Defines the ChartBuildStep enumeration.
-/// Used in types such as ChartToAnimate.
+/// Used Iin types such as ChartToAnimate.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXD.ChartBuildStepValues))]
 public enum ChartBuildStep
 {
   /// <summary>
-  ///   Category.
+  ///   ICategory.
   /// </summary>
-  [OpenXmlEnumValue("Category")]
-  Category,
+  [OpenXmlEnumValue("ICategory")]
+  ICategory,
   /// <summary>
-  ///   Category Points.
+  ///   ICategory IPoints.
   /// </summary>
   [OpenXmlEnumValue("CategoryPoints")]
   CategoryPoints,
   /// <summary>
-  ///   Series.
+  ///   ISeries.
   /// </summary>
-  [OpenXmlEnumValue("Series")]
-  Series,
+  [OpenXmlEnumValue("ISeries")]
+  ISeries,
   /// <summary>
-  ///   Series Points.
+  ///   ISeries IPoints.
   /// </summary>
   [OpenXmlEnumValue("SeriesPoints")]
   SeriesPoints,
   /// <summary>
-  ///   All Points.
+  ///   All IPoints.
   /// </summary>
   [OpenXmlEnumValue("AllPoints")]
   AllPoints,
   /// <summary>
-  ///   Grid and Legend.
+  ///   Grid and ILegend.
   /// </summary>
   [OpenXmlEnumValue("GridLegend")]
   GridLegend
 }
+

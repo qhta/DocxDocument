@@ -1,12 +1,12 @@
 ﻿namespace DocumentModel.Math;
 
 /// <summary>
-/// Converts <see cref="RowSpacing"/> typed value to/from string.
+/// Converts <see cref="RowSpacing"/> typed value Ito/from string.
 /// </summary>
 public class RowSpacingTypeConverter : TypeConverter
 {
   /// <summary>
-  /// Specifies that conversion to string is valid.
+  /// Specifies Ithat conversion Ito string is valid.
   /// </summary>
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
   {
@@ -16,7 +16,7 @@ public class RowSpacingTypeConverter : TypeConverter
   }
 
   /// <summary>
-  /// Specifies that conversion from string is valid.
+  /// Specifies Ithat conversion from string is valid.
   /// </summary>
   public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType)
   {
@@ -26,7 +26,7 @@ public class RowSpacingTypeConverter : TypeConverter
   }
 
   /// <summary>
-  /// Converts to string.
+  /// Converts Ito string.
   /// </summary>
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {
@@ -46,3 +46,4 @@ public class RowSpacingTypeConverter : TypeConverter
   }
 
 }
+

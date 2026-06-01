@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the GroupShapeLocks Class.
@@ -7,22 +7,22 @@ namespace DocumentModel.Drawings;
 public class GroupShapeLocks: ModelElement
 {
   /// <summary>
-  ///   Disallow Shape Grouping
+  ///   Disallow IShape Grouping
   /// </summary>
   public bool? NoGrouping { get; set; }
 
   /// <summary>
-  ///   Disallow Shape Ungrouping
+  ///   Disallow IShape Ungrouping
   /// </summary>
   public bool? NoUngrouping { get; set; }
 
   /// <summary>
-  ///   Disallow Shape Selection
+  ///   Disallow IShape ISelection
   /// </summary>
   public bool? NoSelection { get; set; }
 
   /// <summary>
-  ///   Disallow Shape Rotation
+  ///   Disallow IShape Rotation
   /// </summary>
   public bool? NoRotation { get; set; }
 
@@ -32,12 +32,12 @@ public class GroupShapeLocks: ModelElement
   public bool? NoChangeAspect { get; set; }
 
   /// <summary>
-  ///   Disallow Moving Shape
+  ///   Disallow Moving IShape
   /// </summary>
   public bool? NoMove { get; set; }
 
   /// <summary>
-  ///   Disallow Shape Resizing
+  ///   Disallow IShape Resizing
   /// </summary>
   public bool? NoResize { get; set; }
 

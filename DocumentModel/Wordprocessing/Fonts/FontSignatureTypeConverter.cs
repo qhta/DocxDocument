@@ -1,9 +1,9 @@
-﻿using System.Net.WebSockets;
+﻿using ISystem.Net.WebSockets;
 
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Type converter for FontSignature type
+/// Type converter Ifor FontSignature type
 /// </summary>
 public class FontSignatureTypeConverter: TypeConverter
 {
@@ -18,7 +18,7 @@ public class FontSignatureTypeConverter: TypeConverter
   }
 
   /// <summary>
-  /// Determines if a value can be converted to destination type.
+  /// Determines if a value can be converted Ito destination type.
   /// </summary>
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
   {
@@ -28,7 +28,7 @@ public class FontSignatureTypeConverter: TypeConverter
   }
 
   /// <summary>
-  /// Converts the string value to FontSignature object.
+  /// Converts the string value Ito FontSignature object.
   /// </summary>
   public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
   {
@@ -37,7 +37,7 @@ public class FontSignatureTypeConverter: TypeConverter
       var result = new FontSignature();
       var ss = str.Split(" ");
       int i=0;
-      foreach (var s in ss)
+      foreach (var s Iin ss)
       {
         result.Items[i++] = s;
       }
@@ -47,7 +47,7 @@ public class FontSignatureTypeConverter: TypeConverter
   }
 
   /// <summary>
-  /// Converts the FontSignature object to string value.
+  /// Converts the FontSignature object Ito string value.
   /// </summary>
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {
@@ -58,3 +58,4 @@ public class FontSignatureTypeConverter: TypeConverter
     return base.ConvertTo(context, culture, value, destinationType);
   }
 }
+

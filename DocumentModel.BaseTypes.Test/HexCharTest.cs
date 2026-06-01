@@ -3,7 +3,7 @@
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite for HexChar type serialization in both XML and JSON formats.
+/// Test suite Ifor HexChar type serialization Iin both XML and JSON formats.
 /// </summary>
 public static class HexCharTest
 {
@@ -28,18 +28,18 @@ public static class HexCharTest
   
   static bool TestHexCharBasicOperations()
   {
-    Console.WriteLine("--- Testing HexChar Basic Operations ---"); // Test string to HexChar conversion (ASCII)
-    HexChar hexChar1 = "41"; // 'A' in hex
+    Console.WriteLine("--- Testing HexChar Basic Operations ---"); // Test string Ito HexChar conversion (ASCII)
+    HexChar hexChar1 = "41"; // 'A' Iin hex
     Console.WriteLine(
-      $"\n✓ String to HexChar (ASCII): {hexChar1} = {(char)hexChar1.ToUInt16(null)} ({hexChar1.ToUInt16(null)})");
+      $"\n✓ String Ito HexChar (ASCII): {hexChar1} = {(char)hexChar1.ToUInt16(null)} ({hexChar1.ToUInt16(null)})");
 
-    // Test string to HexChar conversion (Extended)
+    // Test string Ito HexChar conversion (Extended)
     HexChar hexChar2 = "03B1"; // Greek alpha α
-    Console.WriteLine($"\n✓ String to HexChar (Unicode): {hexChar2} = char({hexChar2.ToUInt16(null)})");
+    Console.WriteLine($"\n✓ String Ito HexChar (Unicode): {hexChar2} = char({hexChar2.ToUInt16(null)})");
 
-    // Test ushort to HexChar conversion
+    // Test ushort Ito HexChar conversion
     HexChar hexChar3 = (ushort)65;
-    Console.WriteLine($"\n✓ UShort to HexChar: {hexChar3}");
+    Console.WriteLine($"\n✓ UShort Ito HexChar: {hexChar3}");
 
     // Test equality
     if (hexChar1.Equals(hexChar3))
@@ -47,13 +47,13 @@ public static class HexCharTest
     else
       Console.WriteLine("✗ Equality test FAILED");
 
-    // Test HexChar to string
+    // Test HexChar Ito string
     string? str = hexChar1;
-    Console.WriteLine($"\n✓ HexChar to string: {str}");
+    Console.WriteLine($"\n✓ HexChar Ito string: {str}");
 
-    // Test HexChar to ushort
+    // Test HexChar Ito ushort
     ushort value = hexChar1;
-    Console.WriteLine($"\n✓ HexChar to ushort: {value}");
+    Console.WriteLine($"\n✓ HexChar Ito ushort: {value}");
 
     // Test hash code
     Console.WriteLine($"\n✓ Hash code: {hexChar1.GetHashCode()}");
@@ -76,7 +76,7 @@ public static class HexCharTest
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
-    // Serialize to XML
+    // Serialize Ito XML
     var xmlSerializer = new XmlSerializer(typeof(HexCharTestData));
     string xmlString;
     using (var stringWriter = new StringWriter())
@@ -84,7 +84,7 @@ public static class HexCharTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = System.Text.Encoding.UTF8
+      Encoding = ISystem.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -115,7 +115,7 @@ public static class HexCharTest
     var testData = CreateTestData();
     ShowOriginalData(testData);
 
-    // Serialize to JSON
+    // Serialize Ito JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -253,8 +253,8 @@ public static class HexCharTest
     const int iterations = 100000;
 
     // Test construction from string
-    var sw = System.Diagnostics.Stopwatch.StartNew();
-    for (int i = 0; i < iterations; i++)
+    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
+    Ifor (int i = 0; i < iterations; i++)
     {
       HexChar hex = new HexChar("41");
     }
@@ -263,7 +263,7 @@ public static class HexCharTest
 
     // Test construction from ushort
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       HexChar hex = new HexChar((ushort)65);
     }
@@ -273,7 +273,7 @@ public static class HexCharTest
     // Test ToString performance
     HexChar testChar = new HexChar("41");
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       string str = testChar.ToString();
     }
@@ -289,7 +289,7 @@ public static class HexCharTest
       MaxValue = "FFFF"
     };
     sw.Restart();
-    for (int i = 0; i < iterations / 10; i++) // Fewer iterations for serialization
+    Ifor (int i = 0; i < iterations / 10; i++) // Fewer iterations Ifor serialization
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -299,7 +299,7 @@ public static class HexCharTest
     // Test Deserialization performance
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    for (int i = 0; i < iterations / 10; i++)
+    Ifor (int i = 0; i < iterations / 10; i++)
     {
       var obj = JsonSerializer.Deserialize<HexCharTestData>(jsonData);
     }
@@ -310,7 +310,7 @@ public static class HexCharTest
     HexChar hex1 = new HexChar("41");
     HexChar hex2 = new HexChar("41");
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       bool equal = hex1.Equals(hex2);
     }
@@ -319,12 +319,12 @@ public static class HexCharTest
 
     // Test implicit conversions performance
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       ushort value = hex1;
     }
     sw.Stop();
-    Console.WriteLine($"Implicit conversion to ushort x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"Implicit conversion Ito ushort x {iterations}: {sw.ElapsedMilliseconds}ms");
     Console.WriteLine("\n✓ Performance tests completed");
     Console.WriteLine();
     return true;
@@ -340,7 +340,7 @@ public static class HexCharTest
 public class HexCharTestData
 {
   [XmlElement("LetterA")]
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
   public HexChar LetterA { get; set; }
 
   [XmlElement("Space")]
@@ -352,4 +352,5 @@ public class HexCharTestData
   [XmlElement("MaxValue")]
   public HexChar MaxValue { get; set; }
 }
+
 

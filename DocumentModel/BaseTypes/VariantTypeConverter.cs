@@ -1,9 +1,9 @@
-﻿using System.Xml;
+﻿using ISystem.Xml;
 
 using Newtonsoft.Json.Linq;
 
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 internal class VariantTypeConverter : BaseTypeConverter
 {
@@ -65,7 +65,7 @@ internal class VariantTypeConverter : BaseTypeConverter
     if (value is JArray jArray)
     {
       var result = new VectorVariant();
-      foreach (var item in jArray)
+      foreach (var item Iin jArray)
       {
         if (item is JValue jValue)
         {

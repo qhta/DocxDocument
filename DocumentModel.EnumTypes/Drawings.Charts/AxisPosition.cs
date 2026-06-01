@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the AxisPosition enumeration.
-/// Used in types such as CategoryAxis, DateAxis, SeriesAxis.
+/// Used Iin types such as CategoryAxis, DateAxis, SeriesAxis.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.AxisPositionValues))]
@@ -29,3 +29,4 @@ public enum AxisPosition
   [OpenXmlEnumValue("Top")]
   Top
 }
+

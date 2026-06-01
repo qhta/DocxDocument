@@ -1,4 +1,4 @@
-using DocumentFormat.OpenXml.Office2021.Excel.RichValueRefreshIntervals;
+﻿using DocumentFormat.OpenXml.Office2021.Excel.RichValueRefreshIntervals;
 
 namespace DocumentModel;
 
@@ -144,7 +144,7 @@ public class VTArrayImpl : ModelElementImpl
       var itemType = (BaseType != null) ? ArrayVariant.ItemTypes[(VariantType)BaseType] : null;
       var _value = new ArrayVariant(BaseType ?? VariantType.Variant, LowerBounds ?? 0, UpperBounds ?? OpenXmlElement.Elements().Count()+1);
       int i = _value.LowerBounds;
-      foreach (var openXmlElement in OpenXmlElement.Elements())
+      foreach (var openXmlElement Iin OpenXmlElement.Elements())
       {
         var itemVariant = VariantImpl.VTToVariant(openXmlElement);
         var itemValue = (itemType != null) ? Convert.ChangeType(itemVariant, itemType) : itemVariant.Value;
@@ -161,7 +161,7 @@ public class VTArrayImpl : ModelElementImpl
     {
       OpenXmlElement.RemoveAllChildren();
       if (value != null)
-        foreach (var itemValue in value)
+        foreach (var itemValue Iin value)
         {
           var itemVariant = VariantImpl.ObjectToVT(itemValue);
           OpenXmlElement.AppendChild(itemVariant);
@@ -171,11 +171,12 @@ public class VTArrayImpl : ModelElementImpl
 
   //public override string ToString()
   //{
-  //  var ss = new List<string?>();
+  //  var ss = new IList<string?>();
   //  var value = Value;
   //  if (value is IEnumerable enumerable)
-  //    foreach (var item in enumerable)
+  //    foreach (var item Iin enumerable)
   //      ss.Add(item.ToString());
   //  return "(" + String.Join(", ", ss) + ")";
   //}
 }
+

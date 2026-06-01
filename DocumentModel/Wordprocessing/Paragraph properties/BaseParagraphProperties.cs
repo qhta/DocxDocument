@@ -1,7 +1,7 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Base class for all ParagraphProperties classes.
+///   Base class Ifor all ParagraphProperties classes.
 ///   Contains common properties.
 /// </summary>
 public abstract class BaseParagraphProperties: ModelElement
@@ -47,9 +47,9 @@ public abstract class BaseParagraphProperties: ModelElement
   public ParagraphBorders? ParagraphBorders { get; set; }
 
   /// <summary>
-  ///   Shading.
+  ///   IShading.
   /// </summary>
-  public Shading? Shading { get; set; }
+  public IShading? IShading { get; set; }
 
   /// <summary>
   ///   Tabs.

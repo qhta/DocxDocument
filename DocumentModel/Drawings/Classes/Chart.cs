@@ -1,18 +1,18 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Chart to Animate.
+///   IChart Ito Animate.
 /// </summary>
-public class Chart: ModelElement
+public class IChart: ModelElement
 {
   /// <summary>
-  ///   Series Index
+  ///   ISeries IIndex
   /// </summary>
   public Int32? SeriesIndex { get; set; }
 
   /// <summary>
-  ///   Category Index
+  ///   ICategory IIndex
   /// </summary>
   public Int32? CategoryIndex { get; set; }
 

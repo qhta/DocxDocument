@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the FootnotePositionValues enumeration.
@@ -8,17 +8,17 @@ namespace DocumentModel.Wordprocessing;
 public enum FootnotePositionKind
 {
   /// <summary>
-  ///   Footnotes Positioned at Page Bottom.
+  ///   IFootnotes Positioned at IPage Bottom.
   /// </summary>
   PageBottom,
 
   /// <summary>
-  ///   Footnotes Positioned Beneath Text.
+  ///   IFootnotes Positioned Beneath Text.
   /// </summary>
   BeneathText,
 
   /// <summary>
-  ///   Footnotes Positioned At End of Section.
+  ///   IFootnotes Positioned At End of ISection.
   /// </summary>
   SectionEnd
 }

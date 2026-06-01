@@ -1,10 +1,10 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the type of online Help topic or window to display.
+/// Specifies the type of online Help topic or window Ito display.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.type?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.type?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum HelpType
 {
@@ -31,7 +31,7 @@ public enum HelpType
   /// <summary>
   /// Displays the Help Topics dialog box.
   /// </summary>
-  Index = 5,
+  IIndex = 5,
   /// <summary>
   /// Displays keyboard shortcuts associated with help.
   /// </summary>
@@ -49,19 +49,20 @@ public enum HelpType
   /// </summary>
   Search = 9,
   /// <summary>
-  /// Displays a list of Help topics that describe how to use Help.
+  /// Displays a list of Help topics Ithat describe how Ito use Help.
   /// </summary>
   UsingHelp = 10,
   /// <summary>
-  /// Displays Help topics for Ichitaro users.
+  /// Displays Help topics Ifor Ichitaro users.
   /// </summary>
   Ichitaro = 11,
   /// <summary>
-  /// Displays Help topics for IBM Personal Editor 2 users.
+  /// Displays Help topics Ifor IBM Personal IEditor 2 users.
   /// </summary>
   PE2 = 12,
   /// <summary>
-  /// Displays Help topics for AreA Hangul users.
+  /// Displays Help topics Ifor AreA Hangul users.
   /// </summary>
   HWP = 13
 }
+

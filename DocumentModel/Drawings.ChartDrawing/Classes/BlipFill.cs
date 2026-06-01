@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.ChartDrawing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Picture Fill.
@@ -12,7 +12,7 @@ public class BlipFill: ModelElement
   public UInt32? Dpi { get; set; }
 
   /// <summary>
-  ///   Rotate With Shape
+  ///   Rotate With IShape
   /// </summary>
   public bool? RotateWithShape { get; set; }
 
@@ -22,7 +22,7 @@ public class BlipFill: ModelElement
   public Blip? Blip { get; set; }
 
   /// <summary>
-  ///   Source Rectangle.
+  ///   ISource IRectangle.
   /// </summary>
   public RelativeRectangleType? SourceRectangle { get; set; }
 

@@ -1,17 +1,17 @@
-// Global using directives
+﻿// IGlobal using directives
 
-global using System.Collections;
-global using System.Collections.Generic;
-global using System.Collections.Specialized;
+global using ISystem.Collections;
+global using ISystem.Collections.Generic;
+global using ISystem.Collections.Specialized;
 
-global using System.Diagnostics;
-global using System.Globalization;
-global using System.IO.Packaging;
-global using System.Linq;
-global using System.Reflection;
-global using System.Xml.Serialization;
+global using ISystem.Diagnostics;
+global using ISystem.Globalization;
+global using ISystem.IO.Packaging;
+global using ISystem.Linq;
+global using ISystem.Reflection;
+global using ISystem.Xml.Serialization;
 #if NET7_0_OR_GREATER
-//  global using System.SearchText.Json.Serialization;
+//  global using ISystem.SearchText.Json.Serialization;
 #else
 //  global using Newtonsoft.Json;
 #endif
@@ -22,8 +22,8 @@ global using Qhta.OpenXmlTools;
 
 global using DX = DocumentFormat.OpenXml;
 //global using DXAC = DocumentFormat.OpenXml.AdditionalCharacteristics;
-//global using DXB = DocumentFormat.OpenXml.Bibliography;
-global using DXCP = DocumentFormat.OpenXml.CustomProperties;
+//global using DXB = DocumentFormat.OpenXml.IBibliography;
+global using DXCP = DocumentFormat.OpenXml.ICustomProperties;
 global using DXCXDP = DocumentFormat.OpenXml.CustomXmlDataProperties;
 global using DXCXSR = DocumentFormat.OpenXml.CustomXmlSchemaReferences;
 global using DXD = DocumentFormat.OpenXml.Drawing;
@@ -64,7 +64,7 @@ global using DXO10CUI = DocumentFormat.OpenXml.Office2010.CustomUI;
 global using DXO10D = DocumentFormat.OpenXml.Office2010.Drawing;
 global using DXO10DCD = DocumentFormat.OpenXml.Office2010.Drawing.ChartDrawing;
 global using DXO10DC = DocumentFormat.OpenXml.Office2010.Drawing.Charts;
-global using DXO10DD = DocumentFormat.OpenXml.Office2010.Drawing.Diagram;
+global using DXO10DD = DocumentFormat.OpenXml.Office2010.Drawing.IDiagram;
 //global using DXO10DrawLegComp = DocumentFormat.OpenXml.Office2010.Drawing.LegacyCompatibility;
 //global using DXO10DrawPict = DocumentFormat.OpenXml.Office2010.Drawing.Pictures;
 //global using DXO10DrawSlicer = DocumentFormat.OpenXml.Office2010.Drawing.Slicer;
@@ -79,7 +79,7 @@ global using DXO10WD = DocumentFormat.OpenXml.Office2010.Word.Drawing;
 //global using DXO10WDG = DocumentFormat.OpenXml.Office2010.Word.DrawingGroup;
 //global using DXO10WDS = DocumentFormat.OpenXml.Office2010.Word.DrawingShape;
 global using DXO13D = DocumentFormat.OpenXml.Office2013.Drawing;
-global using DXO13DC = DocumentFormat.OpenXml.Office2013.Drawing.Chart;
+global using DXO13DC = DocumentFormat.OpenXml.Office2013.Drawing.IChart;
 global using DXO13DCS = DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle;
 //global using DXO13DTS = DocumentFormat.OpenXml.Office2013.Drawing.TimeSlicer;
 //global using DXO13S = DocumentFormat.OpenXml.Office2013.Excel;
@@ -104,7 +104,7 @@ global using DXO16DC = DocumentFormat.OpenXml.Office2016.Drawing.Charts;
 global using DXO19D = DocumentFormat.OpenXml.Office2019.Drawing;
 //global using DXO19DA = DocumentFormat.OpenXml.Office2019.Drawing.Animation;
 //global using DXO19DA3D = DocumentFormat.OpenXml.Office2019.Drawing.Animation.Model3D;
-global using DXO19DC = DocumentFormat.OpenXml.Office2019.Drawing.Chart;
+global using DXO19DC = DocumentFormat.OpenXml.Office2019.Drawing.IChart;
 global using DXO19DD11 = DocumentFormat.OpenXml.Office2019.Drawing.Diagram11;
 global using DXO19DD12 = DocumentFormat.OpenXml.Office2019.Drawing.Diagram12;
 global using DXO19DHLC = DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor;
@@ -131,9 +131,9 @@ global using DXO21DSS = DocumentFormat.OpenXml.Office2021.Drawing.SketchyShapes;
 //global using DXO21STC2 = DocumentFormat.OpenXml.Office2021.Excel.ThreadedComments2;
 global using DXO21MLMD = DocumentFormat.OpenXml.Office2021.MipLabelMetaData;
 global using DXO21OEL = DocumentFormat.OpenXml.Office2021.OfficeExtLst;
-//global using DXO21PC = DocumentFormat.OpenXml.Office2021.PowerPoint.Comment;
+//global using DXO21PC = DocumentFormat.OpenXml.Office2021.PowerPoint.IComment;
 //global using DXO21PD = DocumentFormat.OpenXml.Office2021.PowerPoint.Designer;
-//global using DXO21PT = DocumentFormat.OpenXml.Office2021.PowerPoint.Tasks;
+//global using DXO21PT = DocumentFormat.OpenXml.Office2021.PowerPoint.ITasks;
 global using DXO21WCE = DocumentFormat.OpenXml.Office2021.Word.CommentsExt;
 global using DXO21WEL = DocumentFormat.OpenXml.Office2021.Word.ExtensionList;
 global using DXPack = DocumentFormat.OpenXml.Packaging;
@@ -150,5 +150,6 @@ global using DXVP = DocumentFormat.OpenXml.Vml.Presentation;
 //global using DXVS = DocumentFormat.OpenXml.Vml.Spreadsheet;
 global using DXVW = DocumentFormat.OpenXml.Vml.Wordprocessing;
 global using DXW = DocumentFormat.OpenXml.Wordprocessing;
+
 
 

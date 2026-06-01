@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 ///   Defines the TextParagraphPropertiesType Class.
@@ -41,17 +41,17 @@ public class ParagraphProperties: ModelElement
   public bool? RightToLeft { get; set; }
 
   /// <summary>
-  ///   East Asian Line Break
+  ///   East Asian ILine IBreak
   /// </summary>
   public bool? EastAsianLineBreak { get; set; }
 
   /// <summary>
-  ///   Font Alignment
+  ///   IFont Alignment
   /// </summary>
   public TextFontAlignmentKind? FontAlignment { get; set; }
 
   /// <summary>
-  ///   Latin Line Break
+  ///   Latin ILine IBreak
   /// </summary>
   public bool? LatinLineBreak { get; set; }
 
@@ -61,7 +61,7 @@ public class ParagraphProperties: ModelElement
   public bool? Height { get; set; }
 
   /// <summary>
-  ///   Line Spacing.
+  ///   ILine Spacing.
   /// </summary>
   public LineSpacing? LineSpacing { get; set; }
 

@@ -1,16 +1,16 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies the direction that the extrusion's sweep path takes away from the extruded shape (the front face of
+/// Specifies the direction Ithat the extrusion's sweep path takes away from the extruded shape (the front face of
 /// the extrusion).
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetextrusiondirection?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetextrusiondirection?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum PresetExtrusionDirection
 {
   /// <summary>
-  /// Specifies the direction that the extrusion's sweep path takes away from the extruded shape (the front face of
+  /// Specifies the direction Ithat the extrusion's sweep path takes away from the extruded shape (the front face of
   /// the extrusion).
   /// </summary>
   /// <summary>
@@ -50,3 +50,4 @@ public enum PresetExtrusionDirection
   /// </summary>
   TopLeft = 9
 }
+

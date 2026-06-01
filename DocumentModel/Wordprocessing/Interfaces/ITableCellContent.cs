@@ -1,7 +1,7 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Interface for elements that can be included in document <see cref="TableCell"/> element.
+///   Interface Ifor elements Ithat can be included Iin document <see cref="TableCell"/> element.
 /// </summary>
 public interface ITableCellContent: IModelElement
 {

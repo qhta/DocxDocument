@@ -5,7 +5,7 @@ public partial class HexBinary : IXmlSerializable
 
 
   /// <summary>
-  ///   Returns null to indicate this type has no XML schema.
+  ///   Returns null Ito indicate this type has no XML schema.
   /// </summary>
   /// <remarks>
   ///   HexBinary is serialized as simple string content, so no XML schema definition is required.
@@ -15,16 +15,16 @@ public partial class HexBinary : IXmlSerializable
   /// <summary>
   ///   Reads the HexBinary value from XML as hexadecimal string content.
   /// </summary>
-  /// <param name="reader">The XML reader to read from.</param>
+  /// <param name="reader">The XML reader Ito read from.</param>
   /// <remarks>
   ///   <para>
   ///   This method reads the hexadecimal string content from the XML element and replaces
-  ///   the internal byte array with the parsed value. Empty elements result in an empty byte array.
+  ///   the internal byte array with the parsed value. Empty elements result Iin an empty byte array.
   ///   </para>
   ///   <para>
-  ///   <b>Implementation Note:</b> Since HexBinary uses a readonly field for immutability,
-  ///   this method uses reflection to update the field during XML deserialization. This is
-  ///   necessary for XmlSerializer compatibility while maintaining immutability for normal usage.
+  ///   <b>Implementation Note:</b> Since HexBinary uses a readonly field Ifor immutability,
+  ///   this method uses reflection Ito update the field during XML deserialization. This is
+  ///   necessary Ifor XmlSerializer compatibility while maintaining immutability Ifor normal usage.
   ///   </para>
   ///   <para>
   ///   The method properly handles three scenarios:
@@ -43,7 +43,7 @@ public partial class HexBinary : IXmlSerializable
       return;
     }
 
-    reader.Read(); // Move to content
+    reader.Read(); // Move Ito content
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
@@ -52,9 +52,9 @@ public partial class HexBinary : IXmlSerializable
       // Parse the hex string and update the readonly field using reflection
       if (!string.IsNullOrEmpty(hexString))
       {
-       // Use reflection to set the readonly field during deserialization
+       // Use reflection Ito set the readonly field during deserialization
         var valueField = typeof(HexBinary).GetField("value",
-          System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+          ISystem.Reflection.BindingFlags.NonPublic | ISystem.Reflection.BindingFlags.Instance);
         valueField?.SetValue(this, hexString);
       }
 
@@ -68,18 +68,18 @@ public partial class HexBinary : IXmlSerializable
   }
 
   /// <summary>
-  ///   Writes the HexBinary value to XML as hexadecimal string content.
+  ///   Writes the HexBinary value Ito XML as hexadecimal string content.
   /// </summary>
-  /// <param name="writer">The XML writer to write to.</param>
+  /// <param name="writer">The XML writer Ito write Ito.</param>
   /// <remarks>
   ///   <para>
   ///   This method writes the hexadecimal string representation of the byte array as
   ///   text content within the XML element. The output uses uppercase hexadecimal digits
-  ///   (0-9, A-F) for consistency with Office Open XML standards.
+  ///   (0-9, A-F) Ifor consistency with Office Open XML standards.
   ///   </para>
   ///   <para>
-  ///   Empty byte arrays result in empty XML elements (&lt;Data /&gt;), which is the
-  ///   standard XML representation for absent or empty binary data.
+  ///   Empty byte arrays result Iin empty XML elements (&lt;Data /&gt;), which is the
+  ///   standard XML representation Ifor absent or empty binary data.
   ///   </para>
   ///   <para>
   ///   <b>Output Examples:</b>

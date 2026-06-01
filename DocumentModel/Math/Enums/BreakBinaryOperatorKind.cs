@@ -1,4 +1,4 @@
-namespace DocumentModel.Math;
+﻿namespace DocumentModel.Math;
 
 /// <summary>
 ///   Defines the BreakBinaryOperatorValues enumeration.
@@ -7,17 +7,17 @@ namespace DocumentModel.Math;
 public enum BreakBinaryOperatorKind
 {
   /// <summary>
-  ///   Break occurs before binary operator.
+  ///   IBreak occurs before binary operator.
   /// </summary>
   Before,
 
   /// <summary>
-  ///   Break occurs after binary operator.
+  ///   IBreak occurs after binary operator.
   /// </summary>
   After,
 
   /// <summary>
-  ///   Break occurs after binary operator, but the operator is repeater at the beginning on the next line.
+  ///   IBreak occurs after binary operator, but the operator is repeater at the beginning on the next line.
   /// </summary>
   Repeat
 }

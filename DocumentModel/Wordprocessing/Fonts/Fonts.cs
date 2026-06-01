@@ -1,8 +1,8 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Font Table Root Element.
+///   IFont ITable Root Element.
 /// </summary>
-public class Fonts : ElementCollection<Font>
+public class Fonts : ElementCollection<IFont>
 {
 }

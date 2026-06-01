@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Path Shade Type
@@ -8,9 +8,9 @@ namespace DocumentModel.Drawings;
 public enum PathShadeKind
 {
   /// <summary>
-  ///   Shape.
+  ///   IShape.
   /// </summary>
-  Shape,
+  IShape,
 
   /// <summary>
   ///   Circle.
@@ -18,7 +18,7 @@ public enum PathShadeKind
   Circle,
 
   /// <summary>
-  ///   Rectangle.
+  ///   IRectangle.
   /// </summary>
-  Rectangle
+  IRectangle
 }

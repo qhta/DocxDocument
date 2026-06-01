@@ -1,8 +1,8 @@
-using DocumentModel.Drawings.Diagram1;
+﻿using DocumentModel.Drawings.Diagram1;
 
 
 namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the DiagramDefinitionExtension Class.

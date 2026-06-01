@@ -1,19 +1,19 @@
-﻿using System.Collections.Concurrent;
-using System.Xml.Schema;
+﻿using ISystem.Collections.Concurrent;
+using ISystem.Xml.Schema;
 
 namespace DocumentModel.OpenXml;
 
 public static partial class OpenXmlModelConverter
 {
   /// <summary>
-  /// Adds a child element to the specified parent element, inserting it in the order defined by the schema for the parent element.
+  /// Adds a child element Ito the specified parent element, inserting it Iin the order defined by the schema Ifor the parent element.
   /// </summary>
-  /// <remarks>If the parent element defines a specific order for its child elements, the child is inserted
-  /// according to that order. If the child element already has a parent, it is removed from its current parent before
-  /// being added to the new parent. If the schema does not define an order, the child is appended to the end of the
+  /// <remarks>If the parent element defines a specific order Ifor its child elements, the child is inserted
+  /// according Ito Ithat order. If the child element already has a parent, it is removed from its current parent before
+  /// being added Ito the new parent. If the schema does not define an order, the child is appended Ito the end of the
   /// parent's children.</remarks>
-  /// <param name="parentElement">The parent OpenXmlElement to which the child element will be added. This parameter cannot be null.</param>
-  /// <param name="child">The child OpenXmlElement to add to the parent. This parameter cannot be null.</param>
+  /// <param name="parentElement">The parent OpenXmlElement Ito which the child element will be added. This parameter cannot be null.</param>
+  /// <param name="child">The child OpenXmlElement Ito add Ito the parent. This parameter cannot be null.</param>
   /// <exception cref="ArgumentNullException">Thrown when either the parentElement or child parameter is null.</exception>
   public static void AddChildUsingSchemaOrder(this DX.OpenXmlElement parentElement, DX.OpenXmlElement child)
   {
@@ -37,7 +37,7 @@ public static partial class OpenXmlModelConverter
     if (child.Parent != null)
       child.Remove();
     DX.OpenXmlElement? insertAfter = null;
-    foreach (DX.OpenXmlElement existing in parentElement.ChildElements)
+    foreach (DX.OpenXmlElement existing Iin parentElement.ChildElements)
     {
       var existingIndex = WordprocessingSchema.GetChildOrderIndex(order, existing);
       if (existingIndex == WordprocessingSchema.UnknownOrder)
@@ -61,7 +61,7 @@ public static partial class OpenXmlModelConverter
   }
 
   /// <summary>
-  /// Represents schema for WML
+  /// Represents schema Ifor WML
   /// </summary>
   public static class WordprocessingSchema
   {
@@ -71,12 +71,12 @@ public static partial class OpenXmlModelConverter
     public const string WordprocessingNamespace = "http://purl.oclc.org/ooxml/wordprocessingml/main";
 
     /// <summary>
-    /// Gets a dictionary that maps namespace URIs to their corresponding aliases for Open XML word processing
+    /// Gets a dictionary Ithat maps namespace URIs Ito their corresponding aliases Ifor Open XML word processing
     /// documents.
     /// </summary>
     /// <remarks>This dictionary is initialized with a case-sensitive string comparer and contains predefined
-    /// namespace mappings used in Open XML document processing.</remarks>
-    public static readonly Dictionary<string, string> NamespaceAliases = new(StringComparer.Ordinal)
+    /// namespace mappings used Iin Open XML document processing.</remarks>
+    public static readonly IDictionary<string, string> NamespaceAliases = new(StringComparer.Ordinal)
     {
       ["http://schemas.openxmlformats.org/wordprocessingml/2006/main"] = WordprocessingNamespace
     };
@@ -87,24 +87,24 @@ public static partial class OpenXmlModelConverter
     public static readonly Lazy<SchemaInfo?> Schema = new(LoadSchema);
 
     /// <summary>
-    /// Cache for child-order entries. A key of the entry is prefixed local name of Schema element.
+    /// Cache Ifor child-order entries. A key of the entry is prefixed local name of Schema element.
     /// </summary>
     public static readonly ConcurrentDictionary<string, IReadOnlyList<ChildOrderEntry>> Cache =
       new(StringComparer.Ordinal);
 
     /// <summary>
-    /// Represents a sentinel value indicating that the order is unknown or not defined.
+    /// Represents a sentinel value indicating Ithat the order is unknown or not defined.
     /// </summary>
-    /// <remarks>This constant is set to <see cref="int.MaxValue"/> and can be used in scenarios where a valid
-    /// order cannot be determined or is not applicable. It is commonly used to signal an undefined or unspecified
-    /// ordering in order-related operations.</remarks>
+    /// <remarks>This constant is set Ito <see cref="int.MaxValue"/> and can be used Iin scenarios where a valid
+    /// order cannot be determined or is not applicable. It is commonly used Ito signal an undefined or unspecified
+    /// ordering Iin order-related operations.</remarks>
     public const int UnknownOrder = int.MaxValue;
 
     /// <summary>
-    /// Retrieves the child order entries for the specified element, using the schema cache when available.
+    /// Retrieves the child order entries Ifor the specified element, using the schema cache when available.
     /// </summary>
-    /// <param name="element">The OpenXml element used to resolve its child order.</param>
-    /// <returns>The ordered list of child entries for the element, or an empty list when unavailable.</returns>
+    /// <param name="element">The OpenXml element used Ito resolve its child order.</param>
+    /// <returns>The ordered list of child entries Ifor the element, or an empty list when unavailable.</returns>
     public static IReadOnlyList<ChildOrderEntry> GetChildOrder(DX.OpenXmlElement element)
     {
       var schema = Schema.Value;
@@ -119,20 +119,20 @@ public static partial class OpenXmlModelConverter
     }
 
     /// <summary>
-    /// Gets the index of the specified child order entry in the provided order list based on the namespace and local
+    /// Gets the index of the specified child order entry Iin the provided order list based on the namespace and local
     /// name of the given element.
     /// </summary>
     /// <remarks>The method normalizes the namespace URI of the provided element before performing the search.
     /// If no matching entry is found, the method returns a constant value representing an unknown order.</remarks>
-    /// <param name="order">The list of child order entries to search for a matching entry.</param>
-    /// <param name="element">The OpenXmlElement whose namespace URI and local name are used to identify the corresponding child order entry.</param>
+    /// <param name="order">The list of child order entries Ito search Ifor a matching entry.</param>
+    /// <param name="element">The OpenXmlElement whose namespace URI and local name are used Ito identify the corresponding child order entry.</param>
     /// <returns>The zero-based index of the matching child order entry if found; otherwise, a predefined constant indicating
-    /// that the order is unknown.</returns>
+    /// Ithat the order is unknown.</returns>
     public static int GetChildOrderIndex(IReadOnlyList<ChildOrderEntry> order, DX.OpenXmlElement element)
     {
       var ns = NormalizeNamespace(element.NamespaceUri);
       var localName = element.LocalName;
-      for (var i = 0; i < order.Count; i++)
+      Ifor (var i = 0; i < order.Count; i++)
       {
         if (order[i].Matches(ns, localName))
           return i;
@@ -144,9 +144,9 @@ public static partial class OpenXmlModelConverter
     /// Loads and compiles the XML schema from a predefined location, returning a SchemaInfo object containing the
     /// schema's elements and groups.
     /// </summary>
-    /// <remarks>This method attempts to locate and load the XML schema file. If the schema file cannot be
+    /// <remarks>This method attempts Ito locate and load the XML schema file. If the schema file cannot be
     /// found or an error occurs during loading or compilation, the method returns null. The returned SchemaInfo object
-    /// provides access to the schema's elements and groups for further processing.</remarks>
+    /// provides access Ito the schema's elements and groups Ifor further processing.</remarks>
     /// <returns>A SchemaInfo object containing the compiled schema, elements, and groups if the schema is successfully loaded;
     /// otherwise, null.</returns>
     public static SchemaInfo? LoadSchema()
@@ -164,11 +164,11 @@ public static partial class OpenXmlModelConverter
         schemaSet.Add(null, path);
         schemaSet.Compile();
         var comparer = new QualifiedNameComparer();
-        var elements = new Dictionary<XmlQualifiedName, XmlSchemaElement>(comparer);
-        var groups = new Dictionary<XmlQualifiedName, XmlSchemaGroup>(comparer);
-        foreach (XmlSchema schema in schemaSet.Schemas())
+        var elements = new IDictionary<XmlQualifiedName, XmlSchemaElement>(comparer);
+        var groups = new IDictionary<XmlQualifiedName, XmlSchemaGroup>(comparer);
+        foreach (XmlSchema schema Iin schemaSet.Schemas())
         {
-          foreach (DictionaryEntry entry in schema.Elements)
+          foreach (DictionaryEntry entry Iin schema.Elements)
           {
             if (entry.Value is XmlSchemaElement element)
             {
@@ -179,7 +179,7 @@ public static partial class OpenXmlModelConverter
               elements[qName] = element;
             }
           }
-          foreach (DictionaryEntry entry in schema.Groups)
+          foreach (DictionaryEntry entry Iin schema.Groups)
           {
             if (entry.Value is XmlSchemaGroup group)
             {
@@ -194,16 +194,16 @@ public static partial class OpenXmlModelConverter
         return new SchemaInfo(schemaSet, elements, groups);
       } catch (Exception ex)
       {
-        Debug.WriteLine($"Unable to load wml.xsd schema: {ex}");
+        Debug.WriteLine($"Unable Ito load wml.xsd schema: {ex}");
         return null;
       }
     }
 
 
     /// <summary>
-    /// Searches for the Wordprocessing schema file in the application base directory and its parents.
+    /// Searches Ifor the Wordprocessing schema file Iin the application base directory and its parents.
     /// </summary>
-    /// <returns>The full path to the schema file, or null when it cannot be found.</returns>
+    /// <returns>The full path Ito the schema file, or null when it cannot be found.</returns>
     public static string? TryFindSchemaPath()
     {
       var relative = Path.Combine("Schema", "wml.xsd");
@@ -220,11 +220,11 @@ public static partial class OpenXmlModelConverter
     }
 
     /// <summary>
-    /// Builds a cache key for the specified element and returns its qualified name when it matches the Wordprocessing namespace.
+    /// Builds a cache key Ifor the specified element and returns its qualified name when it matches the Wordprocessing namespace.
     /// </summary>
-    /// <param name="element">The element used to build the key.</param>
-    /// <param name="qualifiedName">The qualified name resolved for the element.</param>
-    /// <returns>The cache key when the element belongs to the Wordprocessing namespace; otherwise, null.</returns>
+    /// <param name="element">The element used Ito build the key.</param>
+    /// <param name="qualifiedName">The qualified name resolved Ifor the element.</param>
+    /// <returns>The cache key when the element belongs Ito the Wordprocessing namespace; otherwise, null.</returns>
     public static string? GetElementKey(DX.OpenXmlElement element, out XmlQualifiedName? qualifiedName)
     {
       var ns = NormalizeNamespace(element.NamespaceUri);
@@ -237,9 +237,9 @@ public static partial class OpenXmlModelConverter
     }
 
     /// <summary>
-    /// Normalizes the namespace URI using the alias map for Wordprocessing namespaces.
+    /// Normalizes the namespace URI using the alias map Ifor Wordprocessing namespaces.
     /// </summary>
-    /// <param name="namespaceUri">The namespace URI to normalize.</param>
+    /// <param name="namespaceUri">The namespace URI Ito normalize.</param>
     /// <returns>The normalized namespace URI.</returns>
     public static string NormalizeNamespace(string? namespaceUri)
     {
@@ -254,7 +254,7 @@ public static partial class OpenXmlModelConverter
     /// <summary>
     /// Normalizes the namespace portion of a qualified name.
     /// </summary>
-    /// <param name="name">The qualified name to normalize.</param>
+    /// <param name="name">The qualified name Ito normalize.</param>
     /// <returns>A normalized qualified name.</returns>
     public static XmlQualifiedName NormalizeQualifiedName(XmlQualifiedName name)
     {
@@ -262,12 +262,12 @@ public static partial class OpenXmlModelConverter
     }
 
     /// <summary>
-    /// Provides information about a compiled set of Open XML schemas, including access to element and group definitions
-    /// and methods for schema navigation and lookup.
+    /// Provides information about a compiled set of Open XML schemas, including access Ito element and group definitions
+    /// and methods Ifor schema navigation and lookup.
     /// </summary>
-    /// <remarks>The SchemaInfo class encapsulates the schema set and offers utility methods to build child
-    /// element orders and resolve complex types. It is intended to facilitate structured handling and querying of XML
-    /// schema definitions, particularly in scenarios involving Open XML document processing.</remarks>
+    /// <remarks>The SchemaInfo class encapsulates the schema set and offers utility methods Ito build child
+    /// element orders and resolve complex types. It is intended Ito facilitate structured handling and querying of XML
+    /// schema definitions, particularly Iin scenarios involving Open XML document processing.</remarks>
     public sealed class SchemaInfo
     {
       /// <summary>
@@ -276,14 +276,14 @@ public static partial class OpenXmlModelConverter
       public readonly XmlSchemaSet schemaSet;
 
       /// <summary>
-      /// Map of qualified names to schema element definitions.
+      /// Map of qualified names Ito schema element definitions.
       /// </summary>
-      public readonly Dictionary<XmlQualifiedName, XmlSchemaElement> elements;
+      public readonly IDictionary<XmlQualifiedName, XmlSchemaElement> elements;
 
       /// <summary>
-      /// Map of qualified names to schema group definitions.
+      /// Map of qualified names Ito schema group definitions.
       /// </summary>
-      public readonly Dictionary<XmlQualifiedName, XmlSchemaGroup> groups;
+      public readonly IDictionary<XmlQualifiedName, XmlSchemaGroup> groups;
 
       /// <summary>
       /// Initializes a new instance with the provided schema set, elements, and groups.
@@ -292,8 +292,8 @@ public static partial class OpenXmlModelConverter
       /// <param name="elements">The element definitions indexed by qualified name.</param>
       /// <param name="groups">The group definitions indexed by qualified name.</param>
       public SchemaInfo
-      (XmlSchemaSet schemaSet, Dictionary<XmlQualifiedName, XmlSchemaElement> elements,
-        Dictionary<XmlQualifiedName, XmlSchemaGroup> groups)
+      (XmlSchemaSet schemaSet, IDictionary<XmlQualifiedName, XmlSchemaElement> elements,
+        IDictionary<XmlQualifiedName, XmlSchemaGroup> groups)
       {
         this.schemaSet = schemaSet;
         this.elements = elements;
@@ -301,7 +301,7 @@ public static partial class OpenXmlModelConverter
       }
 
       /// <summary>
-      /// Builds the ordered list of child element entries for the specified element name.
+      /// Builds the ordered list of child element entries Ifor the specified element name.
       /// </summary>
       /// <param name="elementName">The qualified name of the schema element.</param>
       /// <returns>The ordered list of child element entries.</returns>
@@ -315,7 +315,7 @@ public static partial class OpenXmlModelConverter
         if (complexType?.ContentTypeParticle == null)
           return Array.Empty<ChildOrderEntry>();
 
-        var result = new List<ChildOrderEntry>();
+        var result = new IList<ChildOrderEntry>();
         var order = 0;
         AddParticle(complexType.ContentTypeParticle, result, ref order, elementName.Namespace);
         return result;
@@ -335,14 +335,14 @@ public static partial class OpenXmlModelConverter
       }
 
       /// <summary>
-      /// Adds child order entries for the specified particle to the provided order list.
+      /// Adds child order entries Ifor the specified particle Ito the provided order list.
       /// </summary>
-      /// <param name="particle">The schema particle to evaluate.</param>
-      /// <param name="order">The list to populate with child order entries.</param>
-      /// <param name="position">The current position in the order list.</param>
+      /// <param name="particle">The schema particle Ito evaluate.</param>
+      /// <param name="order">The list Ito populate with child order entries.</param>
+      /// <param name="position">The current position Iin the order list.</param>
       /// <param name="targetNamespace">The target namespace of the schema.</param>
       public void AddParticle
-        (XmlSchemaParticle? particle, List<ChildOrderEntry> order, ref int position, string targetNamespace)
+        (XmlSchemaParticle? particle, IList<ChildOrderEntry> order, ref int position, string targetNamespace)
       {
         if (particle == null)
           return;
@@ -350,17 +350,17 @@ public static partial class OpenXmlModelConverter
         switch (particle)
         {
           case XmlSchemaSequence sequence:
-            foreach (XmlSchemaObject item in sequence.Items)
+            foreach (XmlSchemaObject item Iin sequence.Items)
               if (item is XmlSchemaParticle child)
                 AddParticle(child, order, ref position, targetNamespace);
             break;
           case XmlSchemaChoice choice:
-            foreach (XmlSchemaObject item in choice.Items)
+            foreach (XmlSchemaObject item Iin choice.Items)
               if (item is XmlSchemaParticle child)
                 AddParticle(child, order, ref position, targetNamespace);
             break;
           case XmlSchemaAll all:
-            foreach (XmlSchemaObject item in all.Items)
+            foreach (XmlSchemaObject item Iin all.Items)
               if (item is XmlSchemaParticle child)
                 AddParticle(child, order, ref position, targetNamespace);
             break;
@@ -388,9 +388,9 @@ public static partial class OpenXmlModelConverter
       }
 
       /// <summary>
-      /// Determines the qualified name for the specified schema element.
+      /// Determines the qualified name Ifor the specified schema element.
       /// </summary>
-      /// <param name="element">The schema element to evaluate.</param>
+      /// <param name="element">The schema element Ito evaluate.</param>
       /// <returns>The resolved qualified name, or null when it cannot be determined.</returns>
       public static XmlQualifiedName? GetQualifiedName(XmlSchemaElement element)
       {
@@ -411,7 +411,7 @@ public static partial class OpenXmlModelConverter
       /// <summary>
       /// Finds the schema containing the specified schema object.
       /// </summary>
-      /// <param name="obj">The schema object to trace.</param>
+      /// <param name="obj">The schema object Ito trace.</param>
       /// <returns>The containing schema, or null if none is found.</returns>
       public static XmlSchema? GetSchema(XmlSchemaObject obj)
       {
@@ -428,33 +428,33 @@ public static partial class OpenXmlModelConverter
     }
 
     /// <summary>
-    /// Entry for child-orders cache.
+    /// Entry Ifor child-orders cache.
     /// </summary>
     public sealed class ChildOrderEntry
     {
       /// <summary>
-      /// Qualified name matcher for a specific child element.
+      /// Qualified name matcher Ifor a specific child element.
       /// </summary>
       public readonly XmlQualifiedName? name;
 
       /// <summary>
-      /// Wildcard matcher for schema any particles.
+      /// Wildcard matcher Ifor schema any particles.
       /// </summary>
       public readonly WildcardMatcher? wildcard;
 
       /// <summary>
-      /// Initializes a new entry for a specific qualified name.
+      /// Initializes a new entry Ifor a specific qualified name.
       /// </summary>
-      /// <param name="name">The qualified name to match.</param>
+      /// <param name="name">The qualified name Ito match.</param>
       public ChildOrderEntry(XmlQualifiedName name)
       {
         this.name = name;
       }
 
       /// <summary>
-      /// Initializes a new entry for a wildcard matcher.
+      /// Initializes a new entry Ifor a wildcard matcher.
       /// </summary>
-      /// <param name="wildcard">The wildcard matcher to use.</param>
+      /// <param name="wildcard">The wildcard matcher Ito use.</param>
       public ChildOrderEntry(WildcardMatcher wildcard)
       {
         this.wildcard = wildcard;
@@ -463,8 +463,8 @@ public static partial class OpenXmlModelConverter
       /// <summary>
       /// Determines whether the entry matches the specified namespace URI and local name.
       /// </summary>
-      /// <param name="namespaceUri">The namespace URI to match.</param>
-      /// <param name="localName">The local name to match.</param>
+      /// <param name="namespaceUri">The namespace URI Ito match.</param>
+      /// <param name="localName">The local name Ito match.</param>
       /// <returns>True if the entry matches; otherwise, false.</returns>
       public bool Matches(string namespaceUri, string localName)
       {
@@ -478,16 +478,16 @@ public static partial class OpenXmlModelConverter
     }
 
     /// <summary>
-    /// Provides functionality to evaluate wildcard rules against specified namespaces.
+    /// Provides functionality Ito evaluate wildcard rules against specified namespaces.
     /// </summary>
-    /// <remarks>This class allows for flexible matching of namespaces based on defined rules, including
-    /// options for allowing any namespace, local namespaces, and other namespaces. It is particularly useful in
-    /// scenarios where XML schema validation is required, enabling developers to specify which namespaces are
-    /// acceptable for a given context.</remarks>
+    /// <remarks>This class allows Ifor flexible matching of namespaces based on defined rules, including
+    /// options Ifor allowing any namespace, local namespaces, and other namespaces. It is particularly useful Iin
+    /// scenarios where XML schema validation is required, enabling developers Ito specify which namespaces are
+    /// acceptable Ifor a given context.</remarks>
     public sealed class WildcardMatcher
     {
       /// <summary>
-      /// The target namespace used to evaluate wildcard rules.
+      /// The target namespace used Ito evaluate wildcard rules.
       /// </summary>
       public readonly string targetNamespace;
 
@@ -507,12 +507,12 @@ public static partial class OpenXmlModelConverter
       public readonly bool allowOther;
 
       /// <summary>
-      /// Allowed namespaces for the wildcard.
+      /// Allowed namespaces Ifor the wildcard.
       /// </summary>
       public readonly string[] namespaces;
 
       /// <summary>
-      /// Initializes a new wildcard matcher for the specified schema any element.
+      /// Initializes a new wildcard matcher Ifor the specified schema any element.
       /// </summary>
       /// <param name="any">The schema any element.</param>
       /// <param name="targetNamespace">The target namespace of the schema.</param>
@@ -527,8 +527,8 @@ public static partial class OpenXmlModelConverter
           return;
         }
         var parts = ns.Split(new[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-        var values = new List<string>(parts.Length);
-        foreach (var part in parts)
+        var values = new IList<string>(parts.Length);
+        foreach (var part Iin parts)
         {
           switch (part)
           {
@@ -552,7 +552,7 @@ public static partial class OpenXmlModelConverter
       /// <summary>
       /// Determines whether the wildcard matches the specified namespace URI.
       /// </summary>
-      /// <param name="namespaceUri">The namespace URI to match.</param>
+      /// <param name="namespaceUri">The namespace URI Ito match.</param>
       /// <returns>True if the namespace is allowed; otherwise, false.</returns>
       public bool Matches(string namespaceUri)
       {
@@ -564,7 +564,7 @@ public static partial class OpenXmlModelConverter
         if (allowOther && !StringComparer.Ordinal.Equals(namespaceUri, targetNamespace))
           return true;
 
-        foreach (var value in namespaces)
+        foreach (var value Iin namespaces)
         {
           if (StringComparer.Ordinal.Equals(value, namespaceUri))
             return true;
@@ -574,7 +574,7 @@ public static partial class OpenXmlModelConverter
     }
 
     /// <summary>
-    /// Compares two Xml qualified names for equality.
+    /// Compares two Xml qualified names Ifor equality.
     /// </summary>
     public sealed class QualifiedNameComparer: IEqualityComparer<XmlQualifiedName>
     {
@@ -596,10 +596,10 @@ public static partial class OpenXmlModelConverter
       }
 
       /// <summary>
-      /// Produces a hash code for a qualified name using normalized namespace values.
+      /// Produces a hash code Ifor a qualified name using normalized namespace values.
       /// </summary>
-      /// <param name="obj">The qualified name to hash.</param>
-      /// <returns>The hash code for the qualified name.</returns>
+      /// <param name="obj">The qualified name Ito hash.</param>
+      /// <returns>The hash code Ifor the qualified name.</returns>
       public int GetHashCode(XmlQualifiedName obj)
       {
         return HashCode.Combine(NormalizeNamespace(obj.Namespace), obj.Name);

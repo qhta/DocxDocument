@@ -1,5 +1,5 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the StrokeChildType Class.
@@ -37,7 +37,7 @@ public class StrokeChildType: ModelElement
   public string? Opacity { get; set; }
 
   /// <summary>
-  ///   Stroke Line Style
+  ///   Stroke ILine IStyle
   /// </summary>
   public StrokeLineStyleKind? LineStyle { get; set; }
 
@@ -47,12 +47,12 @@ public class StrokeChildType: ModelElement
   public Decimal? MiterLimit { get; set; }
 
   /// <summary>
-  ///   Line End Join Style)
+  ///   ILine End Join IStyle)
   /// </summary>
   public StrokeJoinStyleKind? JoinStyle { get; set; }
 
   /// <summary>
-  ///   Line End Cap
+  ///   ILine End Cap
   /// </summary>
   public StrokeEndCapKind? EndCap { get; set; }
 
@@ -62,19 +62,19 @@ public class StrokeChildType: ModelElement
   public string? DashStyle { get; set; }
 
   /// <summary>
-  ///   Inset Border From Path
+  ///   Inset IBorder From Path
   /// </summary>
   public bool? InsetPen { get; set; }
 
   /// <summary>
-  ///   Stroke Image Style
+  ///   Stroke Image IStyle
   /// </summary>
   public FillTypeKind? FillType { get; set; }
 
   /// <summary>
   ///   Stroke Image Location
   /// </summary>
-  public string? Source { get; set; }
+  public string? ISource { get; set; }
 
   /// <summary>
   ///   Stroke Image Aspect Ratio
@@ -92,32 +92,32 @@ public class StrokeChildType: ModelElement
   public bool? ImageAlignShape { get; set; }
 
   /// <summary>
-  ///   Line Start Arrowhead
+  ///   ILine Start Arrowhead
   /// </summary>
   public StrokeArrowKind? StartArrow { get; set; }
 
   /// <summary>
-  ///   Line Start Arrowhead Width
+  ///   ILine Start Arrowhead Width
   /// </summary>
   public StrokeArrowWidthKind? StartArrowWidth { get; set; }
 
   /// <summary>
-  ///   Line Start Arrowhead Length
+  ///   ILine Start Arrowhead Length
   /// </summary>
   public StrokeArrowLengthKind? StartArrowLength { get; set; }
 
   /// <summary>
-  ///   Line End Arrowhead
+  ///   ILine End Arrowhead
   /// </summary>
   public StrokeArrowKind? EndArrow { get; set; }
 
   /// <summary>
-  ///   Line End Arrowhead Width
+  ///   ILine End Arrowhead Width
   /// </summary>
   public StrokeArrowWidthKind? EndArrowWidth { get; set; }
 
   /// <summary>
-  ///   Line End Arrowhead Length
+  ///   ILine End Arrowhead Length
   /// </summary>
   public StrokeArrowLengthKind? EndArrowLength { get; set; }
 

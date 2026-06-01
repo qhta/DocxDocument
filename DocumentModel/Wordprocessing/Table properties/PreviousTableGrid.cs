@@ -1,7 +1,7 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Previous Table Grid.
+///   Previous ITable Grid.
 /// </summary>
 public class PreviousTableGrid: BaseTableGrid
 {

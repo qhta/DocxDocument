@@ -1,10 +1,10 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the shading texture to use for a selected item.
+/// Specifies the shading texture Ito use Ifor a selected item.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtextureindex?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtextureindex?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum TextureIndex
 {
@@ -221,3 +221,4 @@ public enum TextureIndex
   /// </summary>
   DarkHorizontal = -1
 }
+

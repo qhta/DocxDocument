@@ -1,10 +1,10 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies the state (shape) of the cursor.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcursortype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdcursortype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum CursorType
 {
@@ -17,7 +17,7 @@ public enum CursorType
   /// </summary>
   IBeam = 1,
   /// <summary>
-  /// Normal cursor shape. Default; cursor takes shape designated by Microsoft Windows or the application.
+  /// Normal cursor shape. Default; cursor takes shape designated by Microsoft IWindows or the application.
   /// </summary>
   Normal = 2,
   /// <summary>
@@ -25,3 +25,4 @@ public enum CursorType
   /// </summary>
   NorthwestArrow = 3
 }
+

@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.ChartDrawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the RichTextBody Class.
@@ -10,5 +10,5 @@ public class RichTextBody: ModelElement
 
   public ListStyle? ListStyle { get; set; }
 
-  public Paragraph? Paragraph { get; set; }
+  public IParagraph? IParagraph { get; set; }
 }

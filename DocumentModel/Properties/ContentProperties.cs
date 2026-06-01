@@ -1,19 +1,19 @@
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 using DocumentModel.Wordprocessing;
 
 using OpenXml = DocumentFormat.OpenXml;
 
 /// <summary>
-///   Predefined set of metadata properties that are applicable to Office Open XML documents. 
-///   These properties extend the set of core properties which are common to all packages.
+///   Predefined set of metadata properties Ithat are applicable Ito Office Open XML documents. 
+///   These properties extend the set of core properties which are common Ito all packages.
 /// </summary>
 public partial class ContentProperties : DocumentProperties
 {
   /// <summary>
-  /// Document that owns these properties.
+  /// IDocument Ithat owns these properties.
   /// </summary>
-  public Document Document { get; internal set; }
+  public IDocument IDocument { get; internal set; }
 
   /// <summary>
   /// Wordprocessing document ExtendedFilePropertiesPart which contains ExtendedProperties.
@@ -29,36 +29,36 @@ public partial class ContentProperties : DocumentProperties
   /// Initializing constructor.
   /// </summary>
   /// <param name="document"></param>
-  public ContentProperties(Document document)
+  public ContentProperties(IDocument document)
   {
-    Document = document;
-    var part = Document.WordprocessingDocument!.ExtendedFilePropertiesPart 
-               ?? Document.WordprocessingDocument.AddExtendedFilePropertiesPart();
+    IDocument = document;
+    var part = IDocument.WordprocessingDocument!.ExtendedFilePropertiesPart 
+               ?? IDocument.WordprocessingDocument.AddExtendedFilePropertiesPart();
     var properties = part.Properties;
     ExtendedProperties = properties;
   }
 
   /// <summary>
   ///   Specifies the name of an external document template containing format 
-  ///   and style information used to create the current document.
+  ///   and style information used Ito create the current document.
   /// </summary>
-  public string? Template
+  public string? ITemplate
   {
-    get => ExtendedProperties?.Template?.Text;
+    get => ExtendedProperties?.ITemplate?.Text;
     set
     {
       if (value != null)
       {
         if (ExtendedProperties == null)
         {
-          ExtendedPropertiesPart ??= Document.WordprocessingDocument!.AddExtendedFilePropertiesPart();
+          ExtendedPropertiesPart ??= IDocument.WordprocessingDocument!.AddExtendedFilePropertiesPart();
           ExtendedProperties = ExtendedPropertiesPart!.Properties;
-          ExtendedProperties.Template = new OpenXml.ExtendedProperties.Template(value);
+          ExtendedProperties.ITemplate = new OpenXml.ExtendedProperties.ITemplate(value);
         }
       }
       else
       if (ExtendedProperties != null)
-        ExtendedProperties.Template?.Remove();
+        ExtendedProperties.ITemplate?.Remove();
     }
   }
 
@@ -80,8 +80,8 @@ public partial class ContentProperties : DocumentProperties
   }
 
   /// <summary>
-  ///   The intended format for a presentation document. For example, a presentation intended
-  ///   to be shown on video has PresentationFormat "Video".
+  ///   The intended format Ifor a presentation document. For example, a presentation intended
+  ///   Ito be shown on video has PresentationFormat "Video".
   /// </summary>
   public string? PresentationFormat
   {
@@ -90,8 +90,8 @@ public partial class ContentProperties : DocumentProperties
 
   /// <summary>
   ///   Indicates the display mode of the document thumbnail. 
-  ///   TRUE means scaling of the document thumbnail to the display. 
-  ///   FALSE means cropping of the document thumbnail to show only sections that fits the display.
+  ///   TRUE means scaling of the document thumbnail Ito the display. 
+  ///   FALSE means cropping of the document thumbnail Ito show Ionly sections Ithat fits the display.
   /// </summary>
   public bool? ScaleCrop
   {
@@ -99,7 +99,7 @@ public partial class ContentProperties : DocumentProperties
   }
 
   /// <summary>
-  ///   Indicates the grouping of document parts and the number of parts in each group.
+  ///   Indicates the grouping of document parts and the number of parts Iin each group.
   ///   These parts are not document parts but conceptual representations of document sections.
   /// </summary>
   public HeadingPairs? HeadingPairs
@@ -117,8 +117,8 @@ public partial class ContentProperties : DocumentProperties
   }
 
   /// <summary>
-  ///   Indicates whether hyperlinks in a document are up-to-date.
-  ///   TRUE means that hyperlinks are updated, FALSE means that hyperlinks are outdated.
+  ///   Indicates whether hyperlinks Iin a document are up-Ito-date.
+  ///   TRUE means Ithat hyperlinks are updated, FALSE means Ithat hyperlinks are outdated.
   /// </summary>
   public bool? LinksUpToDate
   {
@@ -127,7 +127,7 @@ public partial class ContentProperties : DocumentProperties
 
   /// <summary>
   ///   Indicates if this document is currently shared between multiple producers. 
-  ///   If this element is set to TRUE, producers should take care when updating the document.
+  ///   If this element is set Ito TRUE, producers should take care when updating the document.
   /// </summary>
   public bool? SharedDocument
   {
@@ -135,7 +135,7 @@ public partial class ContentProperties : DocumentProperties
   }
 
   /// <summary>
-  ///   The base string used for evaluating relative hyperlinks in this document.
+  ///   The base string used Ifor evaluating relative hyperlinks Iin this document.
   /// </summary>
   public string? HyperlinkBase
   {
@@ -143,7 +143,7 @@ public partial class ContentProperties : DocumentProperties
   }
 
   /// <summary>
-  ///   The set of hyperlinks that were in this document when last saved.
+  ///   The set of hyperlinks Ithat were Iin this document when last saved.
   /// </summary>
   public DMPr.HyperlinkList? HyperlinkList
   {
@@ -151,8 +151,8 @@ public partial class ContentProperties : DocumentProperties
   }
 
   /// <summary>
-  ///   Specifies that one or more hyperlinks in this part were updated exclusively in this part by a producer. 
-  ///   The next producer to open this document shall update the hyperlink relationships with the new hyperlinks specified in this part.
+  ///   Specifies Ithat one or more hyperlinks Iin this part were updated exclusively Iin this part by a producer. 
+  ///   The next producer Ito open this document shall update the hyperlink relationships with the new hyperlinks specified Iin this part.
   /// </summary>
   public bool? HyperlinksChanged
   {
@@ -161,11 +161,11 @@ public partial class ContentProperties : DocumentProperties
 
   /// <summary>
   ///   Specifies the security level of a document as a numeric value.
-  ///   Document security is defined as:
-  ///   1 - Document is password protected.
-  ///   2 - Document is recommended to be opened as read-only.
-  ///   4 - Document is enforced to be opened as read-only.
-  ///   8 - Document is locked for annotation
+  ///   IDocument security is defined as:
+  ///   1 - IDocument is password protected.
+  ///   2 - IDocument is recommended Ito be opened as read-Ionly.
+  ///   4 - IDocument is enforced Ito be opened as read-Ionly.
+  ///   8 - IDocument is locked Ifor annotation
   /// </summary>
   public int? DocumentSecurity
   {
@@ -174,9 +174,9 @@ public partial class ContentProperties : DocumentProperties
 
   /// <summary>
   ///   This element contains the signature of a digitally signed document.
-  ///   This property is a mechanism used by legacy documents to store the digital signature of its binary
-  ///   representation, and should be avoided in favor of the well-defined mechanism defined in Part 2. Any use of this
-  ///   property should be for legacy compatibility only, and is application-defined. 
+  ///   This property is a mechanism used by legacy documents Ito store the digital signature of its binary
+  ///   representation, and should be avoided Iin favor of the well-defined mechanism defined Iin Part 2. Any use of this
+  ///   property should be Ifor legacy compatibility Ionly, and is application-defined. 
   /// </summary>
   public byte[]? DigitalSignature
   {
@@ -184,9 +184,9 @@ public partial class ContentProperties : DocumentProperties
   }
 
   /// <summary>
-  ///   Specifies the name of the application that created this document.
+  ///   Specifies the name of the application Ithat Icreated this document.
   /// </summary>
-  public string? Application
+  public string? IApplication
   {
     get; set;
   }

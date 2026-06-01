@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the SdtDocPartType Class.
@@ -7,17 +7,17 @@ namespace DocumentModel.Wordprocessing;
 public class SdtDocPartType: ModelElement
 {
   /// <summary>
-  ///   Document Part Gallery Filter.
+  ///   IDocument Part Gallery Filter.
   /// </summary>
   public string? DocPartGallery { get; set; }
 
   /// <summary>
-  ///   Document Part Category Filter.
+  ///   IDocument Part ICategory Filter.
   /// </summary>
   public string? DocPartCategory { get; set; }
 
   /// <summary>
-  ///   Built-In Document Part.
+  ///   Built-In IDocument Part.
   /// </summary>
   public bool? DocPartUnique { get; set; }
 }

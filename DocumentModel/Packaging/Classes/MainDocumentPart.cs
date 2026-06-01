@@ -1,7 +1,7 @@
-using DocumentModel.Wordprocessing;
+﻿using DocumentModel.Wordprocessing;
 
 namespace DocumentModel.Packaging;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the MainDocumentPart
@@ -51,7 +51,7 @@ public class MainDocumentPart: ModelElement
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
-  public Document? Document { get; set; }
+  public IDocument? IDocument { get; set; }
 
   /// <summary>
   ///   Gets the EmbeddedControlPersistenceParts of the MainDocumentPart

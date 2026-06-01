@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the MailMergeDataValues enumeration.
@@ -8,32 +8,32 @@ namespace DocumentModel.Wordprocessing;
 public enum MailMergeDataKind
 {
   /// <summary>
-  ///   Text File Data Source.
+  ///   Text File Data ISource.
   /// </summary>
   TextFile,
 
   /// <summary>
-  ///   Database Data Source.
+  ///   Database Data ISource.
   /// </summary>
   Database,
 
   /// <summary>
-  ///   Spreadsheet Data Source.
+  ///   Spreadsheet Data ISource.
   /// </summary>
   Spreadsheet,
 
   /// <summary>
-  ///   Query Data Source.
+  ///   Query Data ISource.
   /// </summary>
   Query,
 
   /// <summary>
-  ///   Open Database Connectivity Data Source.
+  ///   Open Database Connectivity Data ISource.
   /// </summary>
   Odbc,
 
   /// <summary>
-  ///   Office Data Source Object Data Source.
+  ///   Office Data ISource Object Data ISource.
   /// </summary>
   Native
 }

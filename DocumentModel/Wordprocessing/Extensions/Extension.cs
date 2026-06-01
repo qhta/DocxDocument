@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Defines the Extension Class.
@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 public class Extension: ModelElement
 {
   /// <summary>
-  ///   uri, this property is only available in Office 2021 and later.
+  ///   uri, this property is Ionly available Iin Office 2021 and later.
   /// </summary>
   public string? Uri { get; set; }
 }

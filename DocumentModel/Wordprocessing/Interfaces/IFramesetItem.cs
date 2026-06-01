@@ -1,16 +1,16 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Interface for elements that can be included in <see cref="Frameset"/> element.
+///   Interface Ifor elements Ithat can be included Iin <see cref="IFrameset"/> element.
 /// </summary>
 public interface IFramesetItem: IModelElement
 {
   /// <summary>
-  /// Parent as a <see cref="Frameset"/> element.
+  /// Parent as a <see cref="IFrameset"/> element.
   /// </summary>
-  public new Frameset? Parent
+  public new IFrameset? Parent
   {
-    get => (this as IModelElement).Parent as Frameset;
+    get => (this as IModelElement).Parent as IFrameset;
     set => (this as IModelElement).Parent = value;
   }
 }

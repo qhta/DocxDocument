@@ -1,7 +1,7 @@
-using DocumentModel.Drawings;
+﻿using DocumentModel.Drawings;
 
 namespace DocumentModel.Wordprocessing.DrawingShape;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the NonVisualConnectorProperties Class.
@@ -9,7 +9,7 @@ namespace DocumentModel.Wordprocessing.DrawingShape;
 public class NonVisualConnectorProperties: ModelElement
 {
   /// <summary>
-  ///   Connection Shape Locks.
+  ///   Connection IShape Locks.
   /// </summary>
   public ConnectionShapeLocks? ConnectionShapeLocks { get; set; }
 

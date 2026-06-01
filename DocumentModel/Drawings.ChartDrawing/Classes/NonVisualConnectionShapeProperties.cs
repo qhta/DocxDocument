@@ -1,13 +1,13 @@
-namespace DocumentModel.Drawings.ChartDrawing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Non-Visual Connection Shape Drawing Properties.
+///   Non-Visual Connection IShape Drawing Properties.
 /// </summary>
 public class NonVisualConnectionShapeProperties: ModelElement
 {
   /// <summary>
-  ///   Connection Shape Locks.
+  ///   Connection IShape Locks.
   /// </summary>
   public ConnectionShapeLocks? ConnectionShapeLocks { get; set; }
 

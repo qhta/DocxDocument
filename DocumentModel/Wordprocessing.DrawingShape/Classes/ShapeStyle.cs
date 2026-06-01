@@ -1,7 +1,7 @@
-using DocumentModel.Drawings;
+﻿using DocumentModel.Drawings;
 
 namespace DocumentModel.Wordprocessing.DrawingShape;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the ShapeStyle Class.
@@ -24,7 +24,7 @@ public class ShapeStyle: ModelElement
   public EffectReference? EffectReference { get; set; }
 
   /// <summary>
-  ///   Font Reference.
+  ///   IFont Reference.
   /// </summary>
   public FontReference? FontReference { get; set; }
 }

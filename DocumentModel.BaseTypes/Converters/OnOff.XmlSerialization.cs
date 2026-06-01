@@ -4,7 +4,7 @@ public partial record OnOff : IXmlSerializable
 {
 
   /// <summary>
-  ///   Returns null to indicate this type has no XML schema.
+  ///   Returns null Ito indicate this type has no XML schema.
   /// </summary>
   /// <remarks>
   ///   OnOff is serialized as simple string content, so no XML schema definition is required.
@@ -14,16 +14,16 @@ public partial record OnOff : IXmlSerializable
   /// <summary>
   ///   Reads the OnOff value from XML as hexadecimal string content.
   /// </summary>
-  /// <param name="reader">The XML reader to read from.</param>
+  /// <param name="reader">The XML reader Ito read from.</param>
   /// <remarks>
   ///   <para>
   ///   This method reads the hexadecimal string content from the XML element and parses it
-  ///   into the internal ushort value. Empty elements result in a zero value.
+  ///   into the internal ushort value. Empty elements result Iin a zero value.
   ///   </para>
   ///   <para>
-  ///   Since OnOff is a struct with a readonly field, this method uses unsafe code to update
-  ///   the field during XML deserialization. This is necessary for XmlSerializer compatibility
-  ///   while maintaining immutability for normal usage.
+  ///   Since OnOff is a struct with a readonly field, this method uses unsafe code Ito update
+  ///   the field during XML deserialization. This is necessary Ifor XmlSerializer compatibility
+  ///   while maintaining immutability Ifor normal usage.
   ///   </para>
   ///   <para>
   ///   The method properly handles three scenarios:
@@ -48,7 +48,7 @@ public partial record OnOff : IXmlSerializable
       return;
     }
 
-    reader.Read(); // Move to content
+    reader.Read(); // Move Ito content
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
@@ -56,11 +56,11 @@ public partial record OnOff : IXmlSerializable
 
       if (!string.IsNullOrEmpty(readerValue))
       {
-        // Parse the hex string to byte
+        // Parse the hex string Ito byte
         byte parsedValue = OnOff.Parse(readerValue);
 
-        // Use Unsafe.AsRef to update the readonly field
-        System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue;
+        // Use Unsafe.AsRef Ito update the readonly field
+        ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin value) = parsedValue;
       }
 
       reader.Read(); // Move past text
@@ -73,17 +73,17 @@ public partial record OnOff : IXmlSerializable
   }
 
   /// <summary>
-  ///   Writes the OnOff value to XML as hexadecimal string content.
+  ///   Writes the OnOff value Ito XML as hexadecimal string content.
   /// </summary>
-  /// <param name="writer">The XML writer to write to.</param>
+  /// <param name="writer">The XML writer Ito write Ito.</param>
   /// <remarks>
   ///   <para>
   ///   This method writes the hexadecimal string representation of the character code as
   ///   text content within the XML element. The output uses uppercase hexadecimal digits
-  ///   (0-9, A-F) for consistency with Office Open XML standards.
+  ///   (0-9, A-F) Ifor consistency with Office Open XML standards.
   ///   </para>
   ///   <para>
-  ///   Zero values are written as "00", not as empty elements, to maintain consistency
+  ///   Zero values are written as "00", not as empty elements, Ito maintain consistency
   ///   with Office Open XML character code representations.
   ///   </para>
   /// </remarks>

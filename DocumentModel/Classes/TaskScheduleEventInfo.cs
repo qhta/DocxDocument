@@ -1,5 +1,5 @@
-namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the TaskScheduleEventInfo Class.
@@ -7,12 +7,12 @@ namespace DocumentModel;
 public class TaskScheduleEventInfo: ModelElement
 {
   /// <summary>
-  ///   startDate, this property is only available in Office 2021 and later.
+  ///   startDate, this property is Ionly available Iin Office 2021 and later.
   /// </summary>
   public DateTime? StartDate { get; set; }
 
   /// <summary>
-  ///   dueDate, this property is only available in Office 2021 and later.
+  ///   dueDate, this property is Ionly available Iin Office 2021 and later.
   /// </summary>
   public DateTime? DueDate { get; set; }
 }

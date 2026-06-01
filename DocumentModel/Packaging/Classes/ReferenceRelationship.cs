@@ -1,5 +1,5 @@
-namespace DocumentModel.Packaging;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Packaging;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines a reference relationship. A reference relationship can be internal or external.
@@ -12,7 +12,7 @@ public class ReferenceRelationship: ModelElement
   public string? RelationshipType { get; set; }
 
   /// <summary>
-  ///   Gets a value indicating whether the target of the relationship is Internal or External to the .
+  ///   Gets a value indicating whether the target of the relationship is Internal or External Ito the .
   /// </summary>
   public bool? IsExternal { get; set; }
 

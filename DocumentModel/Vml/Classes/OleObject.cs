@@ -1,7 +1,7 @@
-using DocumentModel.Wordprocessing;
+﻿using DocumentModel.Wordprocessing;
 
 namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Embedded OLE Object.
@@ -14,12 +14,12 @@ public class OleObject: ModelElement, IEmbeddedObjectContent
   public OleKind? Type { get; set; }
 
   /// <summary>
-  ///   OLE Object Application
+  ///   OLE Object IApplication
   /// </summary>
   public string? ProgId { get; set; }
 
   /// <summary>
-  ///   OLE Object Shape
+  ///   OLE Object IShape
   /// </summary>
   public string? ShapeId { get; set; }
 
@@ -54,7 +54,7 @@ public class OleObject: ModelElement, IEmbeddedObjectContent
   public string? LockedField { get; set; }
 
   /// <summary>
-  ///   WordprocessingML Field Switches.
+  ///   WordprocessingML IField Switches.
   /// </summary>
   public string? FieldCodes { get; set; }
 }

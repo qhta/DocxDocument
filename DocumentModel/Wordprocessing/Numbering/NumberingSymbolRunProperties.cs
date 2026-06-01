@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Numbering Symbol Run Properties.
@@ -6,12 +6,12 @@ namespace DocumentModel.Wordprocessing;
 public class NumberingSymbolRunProperties: BaseRunProperties
 {
   /// <summary>
-  ///   Specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run. 
+  ///   Specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting Ifor this run. 
   /// </summary>
   public bool? ComplexScript { get; set; }
 
   /// <summary>
-  ///   Specifies whether the contents of this run shall have right-to-left characteristics.
+  ///   Specifies whether the contents of this run shall have right-Ito-left characteristics.
   /// </summary>
   public bool? RightToLeftText { get; set; }
 }

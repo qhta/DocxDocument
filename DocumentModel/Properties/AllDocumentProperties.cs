@@ -3,35 +3,35 @@ using DocumentModel.Wordprocessing;
 
 
 /// <summary>
-/// Collection of all document properties that is divided to several parts: core properties, 
+/// Collection of all document properties Ithat is divided Ito several parts: core properties, 
 /// content properties, statistics properties, and custom properties. 
-/// Document settings and web settings are also contained in this collection.
+/// IDocument settings and web settings are also contained Iin this collection.
 /// </summary>
 public partial class AllDocumentProperties : ICollection<DocumentProperty>
 {
   /// <summary>
-  /// Document that owns these properties.
+  /// IDocument Ithat owns these properties.
   /// </summary>
-  public Document Document { get; }
+  public IDocument IDocument { get; }
 
   /// <summary>
   /// Initializing constructor.
   /// </summary>
   /// <param name="document"></param>
-  public AllDocumentProperties(Document document)
+  public AllDocumentProperties(IDocument document)
   {
-    Document = document;
+    IDocument = document;
     AllKnownProperties.Add("CoreProperties",new KnownProperties(typeof(CoreProperties)));
     AllKnownProperties.Add("ContentProperties", new KnownProperties(typeof(ContentProperties)));
     AllKnownProperties.Add("StatisticProperties", new KnownProperties(typeof(StatisticProperties)));
     AllKnownProperties.Add("DocumentSettings", new KnownProperties(typeof(DocumentSettings)));
     AllKnownProperties.Add("WebSettings", new KnownProperties(typeof(WebSettings)));
-    CoreProperties = new CoreProperties(Document);
+    CoreProperties = new CoreProperties(IDocument);
   }
   /// <summary>
   /// KnownProperties of CoreProperties.
   /// </summary>
-  public Dictionary<string, KnownProperties> AllKnownProperties { get; } = new ();
+  public IDictionary<string, KnownProperties> AllKnownProperties { get; } = new ();
 
   /// <summary>
   /// Gets or sets the title of the document.
@@ -41,21 +41,21 @@ public partial class AllDocumentProperties : ICollection<DocumentProperty>
     get => CoreProperties?.Title;
     set
     {
-      CoreProperties ??= new CoreProperties(Document!);
+      CoreProperties ??= new CoreProperties(IDocument!);
       CoreProperties.Title = value;
     }
   }
 
 
   /// <summary>
-  /// Collection of core properties, which represents document properties defined in Dublin Core standard
+  /// Collection of core properties, which represents document properties defined Iin Dublin Core standard
   /// and Open Packaging Conventions. 
   /// </summary>
   [XmlIgnore]
   public CoreProperties? CoreProperties { get; set; }
 
   /// <summary>
-  /// Collection of content properties, which represents document properties defined in Microsoft Office standard.
+  /// Collection of content properties, which represents document properties defined Iin Microsoft Office standard.
   /// </summary>
   [XmlIgnore]
   public ContentProperties? ContentProperties { get; set; }
@@ -82,30 +82,30 @@ public partial class AllDocumentProperties : ICollection<DocumentProperty>
   /// Collection of custom-defined document properties.
   /// </summary>
   [XmlIgnore]
-  public CustomProperties? CustomProperties { get; set; }
+  public ICustomProperties? ICustomProperties { get; set; }
 
 
 
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
   public IEnumerator<DocumentProperty> GetEnumerator()
   {
     if (CoreProperties != null)
-      foreach (var property in CoreProperties)
+      foreach (var property Iin CoreProperties)
         yield return property;
     if (ContentProperties != null)
-      foreach (var property in ContentProperties)
+      foreach (var property Iin ContentProperties)
         yield return property;
     if (StatisticProperties != null)
-      foreach (var property in StatisticProperties)
+      foreach (var property Iin StatisticProperties)
         yield return property;
     if (DocumentSettings != null)
-      foreach (var property in DocumentSettings)
+      foreach (var property Iin DocumentSettings)
         yield return property;
     if (WebSettings != null)
-      foreach (var property in WebSettings)
+      foreach (var property Iin WebSettings)
         yield return property;
-    if (CustomProperties != null)
-      foreach (var property in CustomProperties)
+    if (ICustomProperties != null)
+      foreach (var property Iin ICustomProperties)
         yield return property;
   }
 
@@ -120,23 +120,23 @@ public partial class AllDocumentProperties : ICollection<DocumentProperty>
     {
       if (AllKnownProperties["CoreProperties"].ContainsKey(item.Name))
       {
-        CoreProperties ??= new CoreProperties(Document);
+        CoreProperties ??= new CoreProperties(IDocument);
         CoreProperties.Set(item.Name, item.Value);
       }
       else
       if (AllKnownProperties["ContentProperties"].ContainsKey(item.Name))
       {
-        ContentProperties ??= new ContentProperties(Document);
+        ContentProperties ??= new ContentProperties(IDocument);
         ContentProperties.Set(item.Name, item.Value);
       }
       if (AllKnownProperties["ContentProperties"].ContainsKey(item.Name))
       {
-        StatisticProperties ??= new StatisticProperties(Document);
+        StatisticProperties ??= new StatisticProperties(IDocument);
         StatisticProperties.Set(item.Name, item.Value);
       }
       if (AllKnownProperties["DocumentSettings"].ContainsKey(item.Name))
       {
-        DocumentSettings ??= new DocumentSettings(Document);
+        DocumentSettings ??= new DocumentSettings(IDocument);
         DocumentSettings.Set(item.Name, item.Value);
       }
 
@@ -148,9 +148,9 @@ public partial class AllDocumentProperties : ICollection<DocumentProperty>
       }
       else
       {
-        if (CustomProperties == null)
-          CustomProperties = new CustomProperties();
-        CustomProperties.Add(item);
+        if (ICustomProperties == null)
+          ICustomProperties = new ICustomProperties();
+        ICustomProperties.Add(item);
       }
     }
   }
@@ -167,8 +167,8 @@ public partial class AllDocumentProperties : ICollection<DocumentProperty>
       DocumentSettings.Clear();
     if (WebSettings != null)
       WebSettings.Clear();
-    if (CustomProperties != null)
-      CustomProperties.Clear();
+    if (ICustomProperties != null)
+      ICustomProperties.Clear();
   }
 
   public bool Contains(DocumentProperty item)
@@ -183,7 +183,7 @@ public partial class AllDocumentProperties : ICollection<DocumentProperty>
       return true;
     if (WebSettings != null && WebSettings.Contains(item))
       return true;
-    if (CustomProperties != null && CustomProperties.Contains(item))
+    if (ICustomProperties != null && ICustomProperties.Contains(item))
       return true;
     return false;
   }
@@ -215,8 +215,8 @@ public partial class AllDocumentProperties : ICollection<DocumentProperty>
       WebSettings.CopyTo(array, arrayIndex);
       arrayIndex += WebSettings.Count();
     }
-    if (CustomProperties != null)
-      CustomProperties.CopyTo(array, arrayIndex);
+    if (ICustomProperties != null)
+      ICustomProperties.CopyTo(array, arrayIndex);
   }
 
   public bool Remove(DocumentProperty item)
@@ -236,8 +236,8 @@ public partial class AllDocumentProperties : ICollection<DocumentProperty>
     if (WebSettings != null)
       if (WebSettings.Remove(item))
         return true;
-    if (CustomProperties != null)
-      if (CustomProperties.Remove(item))
+    if (ICustomProperties != null)
+      if (ICustomProperties.Remove(item))
         return true;
     return false;
   }
@@ -259,29 +259,29 @@ public partial class AllDocumentProperties : ICollection<DocumentProperty>
       count += DocumentSettings.Count();
     if (WebSettings != null)
       count += WebSettings.Count();
-    if (CustomProperties != null)
-      count += CustomProperties.Count();
+    if (ICustomProperties != null)
+      count += ICustomProperties.Count();
     return count;
   }
 
   public IEnumerable<KeyValuePair<string, PropertyModel>> GetKnownProperties()
   {
-      foreach (var prop in CoreProperties.GetKnownProperties(typeof(CoreProperties)))
+      foreach (var prop Iin CoreProperties.GetKnownProperties(typeof(CoreProperties)))
       {
         prop.Value.Component = CoreProperties;
         yield return prop;
       }
     //if (ContentProperties != null)
-    //  foreach (var prop in ContentProperties.GetKnownProperties())
+    //  foreach (var prop Iin ContentProperties.GetKnownProperties())
     //    yield return prop;
     //if (StatisticProperties != null)
-    //  foreach (var prop in StatisticProperties.GetKnownProperties())
+    //  foreach (var prop Iin StatisticProperties.GetKnownProperties())
     //    yield return prop;
     //if (DocumentSettings != null)
-    //  foreach (var prop in DocumentSettings.GetKnownProperties())
+    //  foreach (var prop Iin DocumentSettings.GetKnownProperties())
     //    yield return prop;
     //if (WebSettings != null)
-    //  foreach (var prop in WebSettings.GetKnownProperties())
+    //  foreach (var prop Iin WebSettings.GetKnownProperties())
     //    yield return prop;
   }
 
@@ -303,7 +303,7 @@ public partial class AllDocumentProperties : ICollection<DocumentProperty>
     if (WebSettings != null && WebSettings.GetKnownProperties().ContainsKey(propName))
       result = WebSettings.GetProperty(propName);
     else
-      result = CustomProperties?.GetProperty(propName);
+      result = ICustomProperties?.GetProperty(propName);
     return result;
   }
 
@@ -325,7 +325,7 @@ public partial class AllDocumentProperties : ICollection<DocumentProperty>
     if (WebSettings != null && WebSettings.GetKnownProperties().ContainsKey(propName))
       result = WebSettings.GetValue(propName);
     else
-      result = CustomProperties?.GetValue(propName);
+      result = ICustomProperties?.GetValue(propName);
     return result;
   }
 

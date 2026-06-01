@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   This element specifies the set of properties which shall be applied a specific table cell. 
@@ -9,7 +9,7 @@ namespace DocumentModel.Wordprocessing;
 public class TableCellProperties : CurrentTableCellProperties
 {
   /// <summary>
-  /// Specifies the details about a single revision to a set of table cell properties in a WordprocessingML document.
+  /// Specifies the details about a single revision Ito a set of table cell properties Iin a WordprocessingML document.
   /// </summary>
   public TableCellPropertiesChange? TableCellPropertiesChange { get; set; }
 }

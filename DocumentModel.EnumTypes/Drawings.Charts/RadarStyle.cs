@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the RadarStyle enumeration.
-/// Used in types such as RadarChart, RadarChartConverter.
+/// Used Iin types such as RadarChart, RadarChartConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.RadarStyleValues))]
@@ -24,3 +24,4 @@ public enum RadarStyle
   [OpenXmlEnumValue("Filled")]
   Filled
 }
+

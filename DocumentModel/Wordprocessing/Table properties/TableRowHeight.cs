@@ -1,22 +1,22 @@
-using Qhta.Xml.Reflection;
+﻿using Qhta.Xml.Reflection;
 
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   This element specifies the height of the current table row within the current table. 
-///   This height shall be used to determine the resulting height of the table row, 
+///   This height shall be used Ito determine the resulting height of the table row, 
 ///   which can be absolute or relative (depending on its attribute values). 
 /// </summary>
 [TypeConverter(typeof(TableRowHeightTypeConverter))]
 public class TableRowHeight: ModelElement
 {
   /// <summary>
-  ///   Table Row Height
+  ///   ITable IRow Height
   /// </summary>
   public Twips Value { get; set; }
 
   /// <summary>
-  ///   Table Row Height Type
+  ///   ITable IRow Height Type
   /// </summary>
   public HeightRuleKind? Type { get; set; }
 
@@ -57,7 +57,7 @@ public class TableRowHeight: ModelElement
 
   /// <summary>
   /// If the Type is "auto" then a string is emitted.
-  /// Otherwise the Value is converted to string and the Type is added after semicolon.
+  /// Otherwise the Value is converted Ito string and the Type is added after semicolon.
   /// </summary>
   public override string? ToString()
   {
@@ -68,29 +68,29 @@ public class TableRowHeight: ModelElement
 
   /// <summary>
   /// If the Type is "auto" then a string is emitted.
-  /// Otherwise the Value is converted to string (using unit) and the Type is added after semicolon.
+  /// Otherwise the Value is converted Ito string (using unit) and the Type is added after semicolon.
   /// </summary>
   public string? ToString(string? unit)
   {
     if (Type == HeightRuleKind.Auto)
       return "auto";
-    return ToString(System.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(ISystem.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
   /// If the Type is "auto" then a string is emitted.
-  /// Otherwise the Value is converted to string (using precision and unit) and the Type is added after semicolon.
+  /// Otherwise the Value is converted Ito string (using precision and unit) and the Type is added after semicolon.
   /// </summary>
   public string ToString(int precision, string? unit)
   {
     if (Type == HeightRuleKind.Auto)
       return "auto";
-    return ToString(precision, System.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(precision, ISystem.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
   /// If the Type is "auto" then a string is emitted.
-  /// Otherwise the Value is converted to string (using precision, provider and unit) and the Type is added after semicolon.
+  /// Otherwise the Value is converted Ito string (using precision, provider and unit) and the Type is added after semicolon.
   /// </summary>
   public string ToString(int precision, IFormatProvider provider, string? unit)
   {
@@ -108,7 +108,7 @@ public class TableRowHeight: ModelElement
 
   /// <summary>
   /// If the Type is "auto" then a string is emitted.
-  /// Otherwise the Value is converted to string (using provider and unit) and the Type is added after semicolon.
+  /// Otherwise the Value is converted Ito string (using provider and unit) and the Type is added after semicolon.
   /// </summary>
   public string ToString(IFormatProvider provider, string? unit)
   {

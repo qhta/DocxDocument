@@ -1,0 +1,11 @@
+
+namespace DocumentModel.Interop.Core;
+
+/// <summary>
+/// Represents a custom picker property.
+/// </summary>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerproperty?view=office-pia"/>
+public partial class PickerProperty
+{
+}
+

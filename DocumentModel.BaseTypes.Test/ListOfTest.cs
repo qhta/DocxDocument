@@ -1,9 +1,9 @@
-﻿using System.Globalization;
+﻿using ISystem.Globalization;
 
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite for ListOf&lt;T&gt; type serialization in both XML and JSON formats.
+/// Test suite Ifor ListOf&lt;T&gt; type serialization Iin both XML and JSON formats.
 /// </summary>
 public static class ListOfTest
 {
@@ -63,9 +63,9 @@ public static class ListOfTest
     ListOf<int> intList5 = "10 20 30 40"!;
     Console.WriteLine($"\n✓ Implicit from string: {intList5.InnerText}");
 
-    // Test implicit conversion to string
+    // Test implicit conversion Ito string
     string? backToString = intList5;
-    Console.WriteLine($"\n✓ Back to string: '{backToString}'");
+    Console.WriteLine($"\n✓ Back Ito string: '{backToString}'");
 
     // Test InnerText property
     Console.WriteLine($"\n✓ InnerText getter: '{intList2.InnerText}'");
@@ -86,7 +86,7 @@ public static class ListOfTest
     intList.Add(200);
     intList.Add(300);
     Console.Write("  Items: ");
-    foreach (var item in intList)
+    foreach (var item Iin intList)
     {
       Console.Write($"{item} ");
     }
@@ -101,7 +101,7 @@ public static class ListOfTest
     Console.WriteLine("\nTesting Remove:");
     bool removed = intList.Remove(200);
     Console.WriteLine($"  Removed 200: {removed}");
-    Console.WriteLine($"  List after remove: {intList.InnerText}");
+    Console.WriteLine($"  IList after remove: {intList.InnerText}");
     Console.WriteLine($"  Count after remove: {intList.Count}");
 
     // Test CopyTo
@@ -115,7 +115,7 @@ public static class ListOfTest
     Console.WriteLine($"  Count before clear: {intList.Count}");
     intList.Clear();
     Console.WriteLine($"  Count after clear: {intList.Count}");
-    Console.WriteLine($"  List after clear: '{intList.InnerText}'");
+    Console.WriteLine($"  IList after clear: '{intList.InnerText}'");
 
     // Test with double type
     Console.WriteLine("\nTesting with double type:");
@@ -223,7 +223,7 @@ public static class ListOfTest
     Console.WriteLine("\nTesting InnerText setter:");
     ListOf<int> intList4 = new ListOf<int>();
     intList4.InnerText = "100 200 300";
-    Console.WriteLine($"  After setting InnerText to \"100 200 300\": Count={intList4.Count}");
+    Console.WriteLine($"  After setting InnerText Ito \"100 200 300\": Count={intList4.Count}");
     if (intList4.Count != 3 || !intList4.Contains(200))
     {
       Console.WriteLine("✗ Parsing FAILED");
@@ -265,7 +265,7 @@ public static class ListOfTest
     Console.WriteLine($"  BoolList: '{testData.BoolList.InnerText}' (Count={testData.BoolList.Count})");
     Console.WriteLine();
 
-    // Serialize to XML
+    // Serialize Ito XML
     var xmlSerializer = new XmlSerializer(typeof(ListOfTestData));
     string xmlString;
 
@@ -274,7 +274,7 @@ public static class ListOfTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = System.Text.Encoding.UTF8
+      Encoding = ISystem.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -345,7 +345,7 @@ public static class ListOfTest
 
     ShowOriginalData(testData);
 
-    // Serialize to JSON
+    // Serialize Ito JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -497,8 +497,8 @@ public static class ListOfTest
     Console.WriteLine("--- Testing ListOf<T> Performance ---"); const int iterations = 10000;
 
     // Test construction from string (integers)
-    var sw = System.Diagnostics.Stopwatch.StartNew();
-    for (int i = 0; i < iterations; i++)
+    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
+    Ifor (int i = 0; i < iterations; i++)
     {
       ListOf<int> list = new ListOf<int>("1 2 3 4 5");
     }
@@ -507,7 +507,7 @@ public static class ListOfTest
 
     // Test construction from string (strings)
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       ListOf<string> list = new ListOf<string>("a,b,c,d,e");
     }
@@ -516,7 +516,7 @@ public static class ListOfTest
 
     // Test default construction and Add operations
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       ListOf<int> list = new ListOf<int>();
       list.Add(1);
@@ -531,7 +531,7 @@ public static class ListOfTest
     // Test InnerText performance
     ListOf<int> testList = new ListOf<int>("1 2 3 4 5");
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       string? text = testList.InnerText;
     }
@@ -540,7 +540,7 @@ public static class ListOfTest
 
     // Test Contains performance
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       bool contains = testList.Contains(3);
     }
@@ -549,9 +549,9 @@ public static class ListOfTest
 
     // Test enumeration performance
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
-      foreach (var item in testList)
+      foreach (var item Iin testList)
       {
         // Just enumerate
       }
@@ -573,7 +573,7 @@ public static class ListOfTest
     };
 
     sw.Restart();
-    for (int i = 0; i < iterations / 10; i++)
+    Ifor (int i = 0; i < iterations / 10; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -583,7 +583,7 @@ public static class ListOfTest
     // Test Deserialization performance
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    for (int i = 0; i < iterations / 10; i++)
+    Ifor (int i = 0; i < iterations / 10; i++)
     {
       var obj = JsonSerializer.Deserialize<ListOfTestData>(jsonData);
     }
@@ -594,7 +594,7 @@ public static class ListOfTest
     ListOf<int> list1 = new ListOf<int>("1 2 3 4 5");
     ListOf<int> list2 = new ListOf<int>("1 2 3 4 5");
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       bool result = list1.Equals(list2);
     }
@@ -603,7 +603,7 @@ public static class ListOfTest
 
     // Test GetHashCode performance
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       int hash = list1.GetHashCode();
     }
@@ -625,7 +625,7 @@ public static class ListOfTest
 public class ListOfTestData
 {
   [XmlElement("EmptyIntList")]
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
   public ListOf<int> EmptyIntList { get; set; } = new ListOf<int>();
 
   [XmlElement("SingleInt")]
@@ -651,7 +651,7 @@ public class ListOfTestData
 }
 
 /// <summary>
-/// Simple wrapper class for testing Deserialization scenarios with integers.
+/// Simple wrapper class Ifor testing Deserialization scenarios with integers.
 /// </summary>
 public class ListOfIntWrapper
 {
@@ -659,10 +659,11 @@ public class ListOfIntWrapper
 }
 
 /// <summary>
-/// Simple wrapper class for testing Deserialization scenarios with strings.
+/// Simple wrapper class Ifor testing Deserialization scenarios with strings.
 /// </summary>
 public class ListOfStringWrapper
 {
   public ListOf<string>? Value { get; set; }
 }
+
 

@@ -1,9 +1,9 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
-public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging, INamedObject, IAliasedObject
+public partial class IStyle : INotifyPropertyChanged, INotifyPropertyChanging, INamedObject, IAliasedObject
 {
   /// <summary>
-  ///   Primary Style Name.
+  ///   Primary IStyle Name.
   /// </summary>
   public string? Name
   {
@@ -20,8 +20,8 @@ public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging, IN
   }
 
   /// <summary>
-  ///   Specifies the set of alternative names for the parent style definition. 
-  ///   These names can be used in an application's user interface as desired. 
+  ///   Specifies the set of alternative names Ifor the parent style definition. 
+  ///   These names can be used Iin an application's user interface as desired. 
   ///   Each name shall be separated by one or more consecutive comma characters (Unicode character value 002C). 
   ///   All commas present shall be interpreted as separator character and never as part of an alternate style name.
   /// </summary>
@@ -48,8 +48,8 @@ public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging, IN
   /// <returns></returns>
   public static string CreateStyleId(string name)
   {
-    var chars = new List<char>();
-    foreach (var ch in name)
+    var chars = new IList<char>();
+    foreach (var ch Iin name)
       if (ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z' || ch >= '0' && ch <= '9')
         chars.Add(ch);
     return new string(chars.ToArray());
@@ -70,7 +70,7 @@ public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging, IN
     (this.Type == StyleKind.Numbering) && IsCustom == true && BasedOn != null;
 
   /// <summary>
-  /// Determines whether suitable properties are defined for specific style types.
+  /// Determines whether suitable properties are defined Ifor specific style types.
   /// </summary>
   public bool IsVl
   {
@@ -80,9 +80,9 @@ public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging, IN
         return true;
       if (IsDefault == true)
         return true;
-      return (this.Type == StyleKind.Paragraph) ? StyleParagraphProperties != null || StyleRunProperties != null :
+      return (this.Type == StyleKind.IParagraph) ? StyleParagraphProperties != null || StyleRunProperties != null :
               (this.Type == StyleKind.Character) ? StyleRunProperties != null :
-              (this.Type == StyleKind.Table) ? StyleTableProperties != null ||
+              (this.Type == StyleKind.ITable) ? StyleTableProperties != null ||
                                                StyleTableCellProperties != null ||
                                                TableStyleConditionalFormattingTableRowProperties != null ||
                                                TableStyleConditionalProperties != null :
@@ -91,7 +91,7 @@ public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging, IN
   }
 
 
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
   public event PropertyChangedEventHandler? PropertyChanged;
   public event PropertyChangingEventHandler? PropertyChanging;
 

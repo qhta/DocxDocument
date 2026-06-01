@@ -1,14 +1,14 @@
-using DocumentFormat.OpenXml.Packaging;
+﻿using DocumentFormat.OpenXml.Packaging;
 
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Represents an abstract base class for all OpenXml parts.
+///   Represents an abstract base class Ifor all OpenXml parts.
 /// </summary>
 public static class OpenXmlPartConverter
 {
   /// <summary>
-  ///  Gets the internal part path in the package.
+  ///  Gets the internal part path Iin the package.
   /// </summary>
   /// <param name="openXmlElement"></param>
   /// <returns></returns>
@@ -18,7 +18,7 @@ public static class OpenXmlPartConverter
   }
 
   /// <summary>
-  ///   Gets the content type (MIME type) of the content data in the part.
+  ///   Gets the content type (MIME type) of the content data Iin the part.
   /// </summary>
   public static String? GetContentType(OpenXmlPart? openXmlElement)
   {

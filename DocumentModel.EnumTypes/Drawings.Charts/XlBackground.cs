@@ -1,10 +1,10 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the background type for text in charts.
+/// Specifies the background type Ifor text Iin charts.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.xlbackground?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.xlbackground?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum XlBackground
 {
@@ -21,3 +21,4 @@ public enum XlBackground
   /// </summary>
   Automatic = -4105
 }
+

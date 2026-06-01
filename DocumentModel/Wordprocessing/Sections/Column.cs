@@ -1,18 +1,18 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Single Column Definition.
+///   Single IColumn Definition.
 /// </summary>
-public class Column: ModelElement
+public class IColumn: ModelElement
 {
   /// <summary>
-  ///   Column Width
+  ///   IColumn Width
   /// </summary>
   public string? Width { get; set; }
 
   /// <summary>
-  ///   Space Before Following Column
+  ///   Space Before Following IColumn
   /// </summary>
   public string? Space { get; set; }
 }

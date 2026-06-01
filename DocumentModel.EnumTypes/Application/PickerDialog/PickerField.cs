@@ -1,8 +1,8 @@
-
+﻿
 namespace DocumentModel.Drawings;
 
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopickerfield?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopickerfield?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum PickerField
 {
@@ -31,3 +31,4 @@ public enum PickerField
   /// </summary>
   Max
 }
+

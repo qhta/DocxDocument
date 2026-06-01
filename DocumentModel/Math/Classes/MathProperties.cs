@@ -1,14 +1,14 @@
-namespace DocumentModel.Math;
+﻿namespace DocumentModel.Math;
 
 /// <summary>
-///   This element specifies the document-level properties for all math in the document.
+///   This element specifies the document-level properties Ifor all math Iin the document.
 /// </summary>
 public class MathProperties: ModelElement
 {
   /// <summary>
-  ///   Specifies the default math font to be used in the document. 
-  ///   If this element is omitted, font substitution (§17.8.2) should be used 
-  ///   to determine the most appropriate font for use throughout the document.  
+  ///   Specifies the default math font Ito be used Iin the document. 
+  ///   If this element is omitted, font substitution (Â§17.8.2) should be used 
+  ///   Ito determine the most appropriate font Ifor use throughout the document.  
   /// </summary>
   public string? MathFont { get; set; }
 
@@ -21,42 +21,42 @@ public class MathProperties: ModelElement
 
   /// <summary>
   ///   Specifies how the subtraction operator is treated when it coincides with a line break, 
-  ///   when brkBin is set to repeat. 
+  ///   when brkBin is set Ito repeat. 
   ///   If this element is omitted, the subtraction operator is repeated before and after the break.
   /// </summary>
   public BreakBinarySubtractionKind? BreakBinarySubtraction { get; set; }
 
   /// <summary>
-  ///   Specifies a reduced fraction size display math, such that the numerator and denominator 
-  ///   are written in script size instead of at the size of regular text.
-  ///   When the element is absent, the default value of the option is 0 meaning that this option is not applied.  
+  ///   Specifies a reduced fraction size display math, such Ithat the numerator and denominator 
+  ///   are written Iin script size instead of at the size of regular text.
+  ///   When the element is absent, the default value of the Ioption is 0 meaning Ithat this Ioption is not applied.  
   ///   When the element is present and the val attribute is absent, 
-  ///   the default of the val attribute is 1 meaning that this option is applied.
+  ///   the default of the val attribute is 1 meaning Ithat this Ioption is applied.
   /// </summary>
   public bool? SmallFraction { get; set; }
 
   /// <summary>
-  ///   Specifies the document-level property to overwrite paragraph settings for mathematical text. 
-  ///   When omitted, this element is set to 1 or true and special math settings are applied. 
+  ///   Specifies the document-level property Ito overwrite paragraph settings Ifor mathematical text. 
+  ///   When omitted, this element is set Ito 1 or true and special math settings are applied. 
   ///   Whether the element is absent or present without the val attribute, 
-  ///   the default of the val attribute is 1 meaning that this option is applied.
+  ///   the default of the val attribute is 1 meaning Ithat this Ioption is applied.
   /// </summary>
   public bool? DisplayDefaults { get; set; }
 
   /// <summary>
-  ///   Specifies the left margin for math, in twips. If this element is omitted, no left margin is used. 
-  ///   In other words, when the element is absent, the default value of the option is 0.  
+  ///   Specifies the left margin Ifor math, Iin twips. If this element is omitted, no left margin is used. 
+  ///   In other words, when the element is absent, the default value of the Ioption is 0.  
   ///   When the element is present and the val attribute is absent, the default of the val attribute is 1440 (or 1 inch). 
-  ///   Math margins are added to the paragraph settings for margins. 
+  ///   Math margins are added Ito the paragraph settings Ifor margins. 
   ///   If the sum of lMargin and rMargin exceed the width available, lMargin should be ignored. 
   /// </summary>
   public Twips? LeftMargin { get; set; }
 
   /// <summary>
-  ///   Specifies the right margin for math, in twips. If this element is omitted, no right margin is used. 
-  ///   In other words, when the element is absent, the default value of the option is 0. 
+  ///   Specifies the right margin Ifor math, Iin twips. If this element is omitted, no right margin is used. 
+  ///   In other words, when the element is absent, the default value of the Ioption is 0. 
   ///   When the element is present and the val attribute is absent, the default of the val attribute is 1440 (or 1 inch).
-  ///   Math margins are added to the paragraph settings for margins. 
+  ///   Math margins are added Ito the paragraph settings Ifor margins. 
   ///   If the sum of lMargin and rMargin exceed the width available, lMargin should be ignored. 
   ///   If rMargin exceeds the width available, a default indent of 1440 twips should be used. 
   /// </summary>
@@ -69,30 +69,30 @@ public class MathProperties: ModelElement
   ///   Whether the element is absent or present without the val attribute, the default of the val attribute is centerGroup. 
   ///   Display math can be left justified, right justified, centered, or centered as a group. 
   ///   When display math is centered as a group, the mathematical text is left aligned within a block, 
-  ///   and the entire block is centered with respect to column margins. 
+  ///   and the entire block is centered with respect Ito column margins. 
   ///   If this element is omitted, the mathematical text is centered as a group. 
   /// </summary>
   public JustificationKind? DefaultJustification { get; set; }
 
   /// <summary>
-  ///   Specifies the spacing before a math paragraph, in twips. 
+  ///   Specifies the spacing before a math paragraph, Iin twips. 
   ///   If this element is omitted, no spacing is applied before the paragraph. 
   /// </summary>
   public Twips? PreSpacing { get; set; }
 
   /// <summary>
-  ///   Specifies the spacing after a math paragraph, in twips. 
+  ///   Specifies the spacing after a math paragraph, Iin twips. 
   ///   If this element is omitted, no spacing is applied after the paragraph.
   /// </summary>
   public Twips? PostSpacing { get; set; }
 
   /// <summary>
-  ///   Specifies spacing between equations, expressions, or other instances of mathematical text within a display math paragraph, in twips.
+  ///   Specifies spacing between equations, expressions, or other instances of mathematical text within a display math paragraph, Iin twips.
   /// </summary>
   public Twips? InterSpacing { get; set; }
 
   /// <summary>
-  ///   Specifies the spacing between adjacent display math paragraphs, in twips. 
+  ///   Specifies the spacing between adjacent display math paragraphs, Iin twips. 
   ///   If this element is omitted, no spacing is applied between adjacent math paragraphs..
   /// </summary>
   public Twips? IntraSpacing { get; set; }
@@ -111,22 +111,22 @@ public class MathProperties: ModelElement
   ///   The line or lines of a wrapped instance of mathematical text after the line break 
   ///   can either be indented by a specified amount from the left margin, or right aligned. 
   ///   If this element is present, the continuation is right aligned. 
-  ///   When the element is absent, the default value of the option is 0 meaning that this option is not applied. 
+  ///   When the element is absent, the default value of the Ioption is 0 meaning Ithat this Ioption is not applied. 
   ///   When the element is present and the val attribute is absent, 
-  ///   the default of the val attribute is 1 meaning that this option is applied.
+  ///   the default of the val attribute is 1 meaning Ithat this Ioption is applied.
   /// </summary>
   public bool? WrapRight { get; set; }
 
   /// <summary>
-  ///   Specifies the document setting for the default placement of integral limits, 
-  ///   when converted from a linear form to a two-dimensional output (professional form). 
-  ///   Limits can be either centered above and below the integral, or positioned just to the right of the operator.
+  ///   Specifies the document setting Ifor the default placement of integral limits, 
+  ///   when converted from a linear form Ito a two-dimensional output (professional form). 
+  ///   Limits can be either centered above and below the integral, or positioned just Ito the right of the operator.
   /// </summary>
   public LimitLocationKind? IntegralLimitLocation { get; set; }
 
   /// <summary>
-  ///   Specifies the location of limits in n-ary operators. 
-  ///   Limits can be either centered above and below the n-ary operator, or positioned just to the right of the operator.
+  ///   Specifies the location of limits Iin n-ary operators. 
+  ///   Limits can be either centered above and below the n-ary operator, or positioned just Ito the right of the operator.
   /// </summary>
   public LimitLocationKind? NaryLimitLocation { get; set; }
 }

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 /// <summary>
-///   Specifies the semantic meaning of the N4L field in <see cref="HyperlinkInfo"/>.
-///   Indicates the context or attachment type for a hyperlink or graphic reference in a document.
+///   Specifies the semantic meaning of the N4L field Iin <see cref="HyperlinkInfo"/>.
+///   Indicates the context or attachment type Ifor a hyperlink or graphic reference Iin a document.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlNotMapped]
@@ -12,27 +12,28 @@ public enum HyperlinkAttachment
   /// </summary>
   Background,        //  0 - Graphic shown as background of document
   /// <summary>
-  ///   Graphic is displayed directly in the document content.
+  ///   Graphic is displayed directly Iin the document content.
   /// </summary>
-  Document,          //  1 - Graphic shown in document
+  IDocument,          //  1 - Graphic shown Iin document
   /// <summary>
-  ///   Graphic is used to fill a shape.
+  ///   Graphic is used Ito fill a shape.
   /// </summary>
-  ShapeFill,         //  2 - Graphic used to fill a shape
+  ShapeFill,         //  2 - Graphic used Ito fill a shape
   /// <summary>
-  ///   Graphic is used for the outline of a shape.
+  ///   Graphic is used Ifor the outline of a shape.
   /// </summary>
-  ShapeOutline,      //  3 - Graphic used for shape outline
+  ShapeOutline,      //  3 - Graphic used Ifor shape outline
   /// <summary>
-  ///   Hyperlink is attached to a shape element.
+  ///   IHyperlink is attached Ito a shape element.
   /// </summary>
-  Shape,             //  4 - IHyperlink attached to a shape
+  IShape,             //  4 - IHyperlink attached Ito a shape
   /// <summary>
-  ///   Hyperlink is attached to a WordprocessingML field.
+  ///   IHyperlink is attached Ito a WordprocessingML field.
   /// </summary>
-  Field,             //  5 - IHyperlink attached to a WordprocessingML  field
+  IField,             //  5 - IHyperlink attached Ito a WordprocessingML  field
   /// <summary>
-  ///   Hyperlink is attached to a SpreadsheetML range.
+  ///   IHyperlink is attached Ito a SpreadsheetML range.
   /// </summary>
-  Range,             //  6 - IHyperlink attached to a SpreadsheetML  range
+  IRange,             //  6 - IHyperlink attached Ito a SpreadsheetML  range
 }
+

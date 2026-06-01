@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines the Chart Class.
+///   Defines the IChart Class.
 /// </summary>
-public class Chart: ModelElement
+public class IChart: ModelElement
 {
   /// <summary>
   ///   Title data and formatting.
@@ -29,7 +29,7 @@ public class Chart: ModelElement
   /// <summary>
   ///   3D floor formatting.
   /// </summary>
-  public Floor? Floor { get; set; }
+  public IFloor? IFloor { get; set; }
 
   /// <summary>
   ///   3D side wall formatting.
@@ -44,20 +44,20 @@ public class Chart: ModelElement
   /// <summary>
   ///   Plot data and formatting.
   /// </summary>
-  public PlotArea? PlotArea { get; set; }
+  public IPlotArea? IPlotArea { get; set; }
 
   /// <summary>
-  ///   Legend data and formatting.
+  ///   ILegend data and formatting.
   /// </summary>
-  public Legend? Legend { get; set; }
+  public ILegend? ILegend { get; set; }
 
   /// <summary>
-  ///   True if only visible cells are plotted..
+  ///   True if Ionly visible cells are plotted..
   /// </summary>
   public bool? PlotVisibleOnly { get; set; }
 
   /// <summary>
-  ///   The way that blank cells are plotted on a chart..
+  ///   The way Ithat blank cells are plotted on a chart..
   /// </summary>
   public DisplayBlanksAsKind? DisplayBlanksAs { get; set; }
 

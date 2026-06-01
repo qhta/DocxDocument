@@ -1,7 +1,7 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Style Table Properties.
+///   IStyle ITable Properties.
 /// </summary>
 public class StyleTableProperties: BaseTableProperties
 {

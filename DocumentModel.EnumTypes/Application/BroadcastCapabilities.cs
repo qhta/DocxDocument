@@ -1,10 +1,10 @@
-namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
-/// Specifies the application capabilities available for a document or presentation broadcasting session.
+/// Specifies the application capabilities available Ifor a document or presentation broadcasting session.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobroadcastcapabilities?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobroadcastcapabilities?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum BroadcastCapabilities
 {
@@ -17,7 +17,8 @@ public enum BroadcastCapabilities
   /// </summary>
   SupportsMeetingNotes = 2,
   /// <summary>
-  /// The presenters and attendees can make updates to the file during the broadcast.
+  /// The presenters and attendees can make updates Ito the file during the broadcast.
   /// </summary>
   SupportsUpdateDoc = 4
 }
+

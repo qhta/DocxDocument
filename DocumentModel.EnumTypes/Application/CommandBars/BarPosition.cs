@@ -1,10 +1,10 @@
-namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
 /// Specifies the position or behavior of a command bar.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobarposition?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobarposition?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum BarPosition
 {
@@ -33,7 +33,8 @@ public enum BarPosition
   /// </summary>
   Popup,
   /// <summary>
-  /// Command bar will be a menu bar (Macintosh only).
+  /// Command bar will be a menu bar (Macintosh Ionly).
   /// </summary>
   MenuBar
 }
+

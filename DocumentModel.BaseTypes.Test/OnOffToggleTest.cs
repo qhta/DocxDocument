@@ -1,7 +1,7 @@
-namespace DocumentModel.BaseTypes.Test;
+﻿namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite for OnOffToggle type serialization in both XML and JSON formats.
+/// Test suite Ifor OnOffToggle type serialization Iin both XML and JSON formats.
 /// </summary>
 public static class OnOffToggleTest
 {
@@ -33,29 +33,29 @@ public static class OnOffToggleTest
     OnOffToggle undefined = OnOffToggle.Undefined;
     OnOffToggle toggle = OnOffToggle.Toggle;
 
-    Console.WriteLine($"\n✓ True value: {on}");
-    Console.WriteLine($"\n✓ False value: {off}");
-    Console.WriteLine($"\n✓ Undefined value: {undefined}");
-    Console.WriteLine($"\n✓ Toggle value: {toggle}");
+    Console.WriteLine($"\nâś“ True value: {on}");
+    Console.WriteLine($"\nâś“ False value: {off}");
+    Console.WriteLine($"\nâś“ Undefined value: {undefined}");
+    Console.WriteLine($"\nâś“ Toggle value: {toggle}");
     if (!on.Equals(true)|| !off.Equals(false))
     {
-      Console.WriteLine("✗ Equality test FAILED");
+      Console.WriteLine("âś— Equality test FAILED");
       return false;
     }
 
-    Console.WriteLine("\n✓ Equality test passed");
+    Console.WriteLine("\nâś“ Equality test passed");
 
     string trueString = on.ToString();
     string falseString = off.ToString();
-    Console.WriteLine($"\n✓ ToString(): {trueString}, {falseString}");
+    Console.WriteLine($"\nâś“ ToString(): {trueString}, {falseString}");
 
     int trueInt = (int)on;
     OnOffToggle fromInt = (OnOffToggle)1;
-    Console.WriteLine($"\n✓ Numeric conversions: True={trueInt}, FromInt={fromInt}");
+    Console.WriteLine($"\nâś“ Numeric conversions: True={trueInt}, FromInt={fromInt}");
 
-    Console.WriteLine($"\n✓ Hash codes: True={on.GetHashCode()}, False={off.GetHashCode()}, Undefined={undefined.GetHashCode()}");
+    Console.WriteLine($"\nâś“ Hash codes: True={on.GetHashCode()}, False={off.GetHashCode()}, Undefined={undefined.GetHashCode()}");
 
-    Console.WriteLine("\n✓ All basic operations passed");
+    Console.WriteLine("\nâś“ All basic operations passed");
     Console.WriteLine();
     return true;
   }
@@ -76,7 +76,7 @@ public static class OnOffToggleTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = System.Text.Encoding.UTF8
+      Encoding = ISystem.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -95,7 +95,7 @@ public static class OnOffToggleTest
 
     if (!VerifyDeserializedData(deserializedData, testData)) return false;
 
-    Console.WriteLine("\n✓ XML Serialization/Deserialization test passed");
+    Console.WriteLine("\nâś“ XML Serialization/Deserialization test passed");
     Console.WriteLine();
     return true;
   }
@@ -124,7 +124,7 @@ public static class OnOffToggleTest
 
     if (!VerifyDeserializedData(deserializedData, testData)) return false;
 
-    Console.WriteLine("\n✓ JSON Serialization/Deserialization test passed");
+    Console.WriteLine("\nâś“ JSON Serialization/Deserialization test passed");
     Console.WriteLine();
     return true;
   }
@@ -144,7 +144,7 @@ public static class OnOffToggleTest
   {
     if (deserializedData == null)
     {
-      Console.WriteLine("✗ Deserialization returned null");
+      Console.WriteLine("âś— Deserialization returned null");
       return false;
     }
 
@@ -208,7 +208,7 @@ public static class OnOffToggleTest
 
     if (!parsedTrue || !parsedFalse || !parsedUndefined || parsedInvalid)
     {
-      Console.WriteLine("✗ OnOffToggle parsing test FAILED");
+      Console.WriteLine("âś— OnOffToggle parsing test FAILED");
       return false;
     }
 
@@ -217,7 +217,7 @@ public static class OnOffToggleTest
     var fromNumeric = JsonSerializer.Deserialize<OnOffToggleWrapper>(jsonNumeric);
     Console.WriteLine($"  From JSON number 1: {fromNumeric?.Value}");
 
-    Console.WriteLine("\n✓ All edge case tests completed");
+    Console.WriteLine("\nâś“ All edge case tests completed");
     Console.WriteLine();
     return true;
   }
@@ -229,11 +229,11 @@ public static class OnOffToggleTest
     Console.WriteLine("--- Testing OnOffToggle Performance ---");
     const int iterations = 100000;
 
-    var sw = System.Diagnostics.Stopwatch.StartNew();
+    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
 
     OnOffToggle testValue = OnOffToggle.Off;
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       string str = testValue.ToString();
     }
@@ -241,16 +241,16 @@ public static class OnOffToggleTest
     Console.WriteLine($"ToString() x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       int numeric = (int)testValue;
     }
     sw.Stop();
-    Console.WriteLine($"Cast to int x {iterations}: {sw.ElapsedMilliseconds}ms");
+    Console.WriteLine($"Cast Ito int x {iterations}: {sw.ElapsedMilliseconds}ms");
 
     var testObj = CreateTestData();
     sw.Restart();
-    for (int i = 0; i < iterations / 10; i++)
+    Ifor (int i = 0; i < iterations / 10; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -259,7 +259,7 @@ public static class OnOffToggleTest
 
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    for (int i = 0; i < iterations / 10; i++)
+    Ifor (int i = 0; i < iterations / 10; i++)
     {
       var obj = JsonSerializer.Deserialize<OnOffToggleTestData>(jsonData);
     }
@@ -267,14 +267,14 @@ public static class OnOffToggleTest
     Console.WriteLine($"Deserialization x {iterations / 10}: {sw.ElapsedMilliseconds}ms");
 
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       bool result = testValue == OnOffToggle.Off;
     }
     sw.Stop();
     Console.WriteLine($"Equality check x {iterations}: {sw.ElapsedMilliseconds}ms");
 
-    Console.WriteLine("\n✓ Performance tests completed");
+    Console.WriteLine("\nâś“ Performance tests completed");
     Console.WriteLine();
     return true;
   }
@@ -289,7 +289,7 @@ public static class OnOffToggleTest
 public class OnOffToggleTestData
 {
   [XmlElement("Enabled")]
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
   public OnOffToggle Enabled { get; set; } = OnOffToggle.On;
 
   [XmlElement("Disabled")]
@@ -306,10 +306,11 @@ public class OnOffToggleTestData
 }
 
 /// <summary>
-/// Simple wrapper class for testing deserialization scenarios.
+/// Simple wrapper class Ifor testing deserialization scenarios.
 /// </summary>
 public class OnOffToggleWrapper
 {
   public OnOffToggle Value { get; set; } = OnOffToggle.Undefined;
 }
+
 

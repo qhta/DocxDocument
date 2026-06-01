@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Type converter for LegacyNumbering type
+/// Type converter Ifor LegacyNumbering type
 /// </summary>
 public class LegacyNumberingTypeConverter: TypeConverter
 {
@@ -16,7 +16,7 @@ public class LegacyNumberingTypeConverter: TypeConverter
   }
 
   /// <summary>
-  /// Determines if a value can be converted to destination type.
+  /// Determines if a value can be converted Ito destination type.
   /// </summary>
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
   {
@@ -26,7 +26,7 @@ public class LegacyNumberingTypeConverter: TypeConverter
   }
 
   /// <summary>
-  /// Converts the string value to LegacyNumbering object.
+  /// Converts the string value Ito LegacyNumbering object.
   /// </summary>
   public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
   {
@@ -41,7 +41,7 @@ public class LegacyNumberingTypeConverter: TypeConverter
   }
 
   /// <summary>
-  /// Converts the LegacyNumbering object to string value.
+  /// Converts the LegacyNumbering object Ito string value.
   /// </summary>
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {
@@ -54,3 +54,4 @@ public class LegacyNumberingTypeConverter: TypeConverter
     return base.ConvertTo(context, culture, value, destinationType);
   }
 }
+

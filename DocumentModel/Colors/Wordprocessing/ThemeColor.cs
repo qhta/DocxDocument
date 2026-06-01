@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Theme color class.
@@ -21,7 +21,7 @@ public class ThemeColor : Color
   {
     Name = baseColor?.Name;
     Value = baseColor?.Value;
-    Index = index;
+    IIndex = index;
     Tint = tint;
     Shade = shade;
   }
@@ -34,7 +34,7 @@ public class ThemeColor : Color
   /// <param name="shade"></param>
   public ThemeColor(ThemeColorIndex index, Percent? tint, Percent? shade)
   {
-    Index = index;
+    IIndex = index;
     Tint = tint;
     Shade = shade;
   }
@@ -42,7 +42,7 @@ public class ThemeColor : Color
   /// <summary>
   ///   Run Content Theme Color
   /// </summary>
-  public ThemeColorIndex Index { get; set; } = ThemeColorIndex.None;
+  public ThemeColorIndex IIndex { get; set; } = ThemeColorIndex.None;
 
   /// <summary>
   ///   Specifies a lighter version of its input color. A 10% tint is 10% of the input color combined with 90% white.
@@ -55,16 +55,16 @@ public class ThemeColor : Color
   public Percent? Shade { get; set; }
 
   /// <summary>
-  /// Gets up to four string values separated by semicolons: index, tint, shade, and value
-  /// Index is a <see cref="ThemeColorIndex"/> enumeration type string.
+  /// Gets up Ito four string values separated by semicolons: index, tint, shade, and value
+  /// IIndex is a <see cref="ThemeColorIndex"/> enumeration type string.
   /// Tint and shade are percent values (ended with percent mark) preceded with "t=" and "s=" clauses.
   /// Value is "auto" or RGB value.
   /// </summary>
   /// <returns></returns>
   public override string ToString()
   {
-    var list = new List<string?>();
-    list.Add(Index.ToString());
+    var list = new IList<string?>();
+    list.Add(IIndex.ToString());
     if (Tint is not null)
       list.Add($"t={Tint}");
     if (Shade is not null)
@@ -88,7 +88,7 @@ public class ThemeColor : Color
     var ss = str.Split(';');
     RGB? RGB = null;
     string? name = null;
-    foreach (var s in ss)
+    foreach (var s Iin ss)
     {
       if (s.StartsWith("t="))
       {

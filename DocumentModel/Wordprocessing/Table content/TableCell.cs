@@ -1,13 +1,13 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Table Cell.
+///   ITable ICell.
 /// </summary>
 public class TableCell: ElementCollection<ITableCellContent>, ITableRowContent, ISdtCellContent
 {
   /// <summary>
-  ///   Table Cell Properties.
+  ///   ITable ICell Properties.
   /// </summary>
   public TableCellProperties? TableCellProperties { get; set; }
 
@@ -17,7 +17,7 @@ public class TableCell: ElementCollection<ITableCellContent>, ITableRowContent, 
 
   public SdtBlock? SdtBlock { get; set; }
 
-  public Collection<Paragraph>? Paragraphs { get; set; }
+  public Collection<IParagraph>? IParagraphs { get; set; }
 
-  public Collection<Table>? Tables { get; set; }
+  public Collection<ITable>? ITables { get; set; }
 }

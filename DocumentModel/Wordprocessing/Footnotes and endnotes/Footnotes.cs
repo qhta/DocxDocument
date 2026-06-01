@@ -1,9 +1,9 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Document Footnotes.
+///   IDocument IFootnotes.
 /// </summary>
-public class Footnotes: ElementCollection<Footnote>
+public class IFootnotes: ElementCollection<IFootnote>
 {
   /// <summary>
   /// Creates default separators.
@@ -14,14 +14,14 @@ public class Footnotes: ElementCollection<Footnote>
     Add(CreateSpecialItem(0, FootnoteEndnoteKind.ContinuationSeparator));
   }
 
-  private Footnote CreateSpecialItem(int id, FootnoteEndnoteKind type)
+  private IFootnote CreateSpecialItem(int id, FootnoteEndnoteKind type)
   {
-    var item = new Footnote
+    var item = new IFootnote
     { 
       Id = id,
       Type = type
     };
-    item.Add(new Paragraph(new Run(new DMW.SeparatorMark{ Continuation = type == FootnoteEndnoteKind.ContinuationSeparator })));
+    item.Add(new IParagraph(new Run(new DMW.SeparatorMark{ Continuation = type == FootnoteEndnoteKind.ContinuationSeparator })));
     return item;
   }
 }

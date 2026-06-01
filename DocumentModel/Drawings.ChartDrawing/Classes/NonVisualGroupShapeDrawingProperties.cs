@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.ChartDrawing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Non-Visual Group Shape Drawing Properties.
+///   Non-Visual Group IShape Drawing Properties.
 /// </summary>
 public class NonVisualGroupShapeDrawingProperties: ModelElement
 {

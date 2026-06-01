@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
+﻿namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Defines the ChildOrder enumeration.
-/// Used in types such as LayoutNode, LayoutNodeConverter.
+/// Used Iin types such as LayoutNode, LayoutNodeConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.ChildOrderValues))]
@@ -19,3 +19,4 @@ public enum ChildOrder
   [OpenXmlEnumValue("Top")]
   Top
 }
+

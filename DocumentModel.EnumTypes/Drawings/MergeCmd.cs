@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies the output of a merge shapes operation.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msomergecmd?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msomergecmd?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum MergeCmd
 {
@@ -27,7 +27,8 @@ public enum MergeCmd
   /// </summary>
   Subtract,
   /// <summary>
-  /// Breaks a shape into smaller parts or create new shapes from intersecting lines or from shapes that overlap.
+  /// IBreaks a shape into smaller parts or create new shapes from intersecting lines or from shapes Ithat overlap.
   /// </summary>
   Fragment
 }
+

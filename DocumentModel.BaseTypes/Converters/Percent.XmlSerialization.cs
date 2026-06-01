@@ -14,7 +14,7 @@ public partial struct Percent : IXmlSerializable
   /// Deserializes the <see cref="Percent"/> value from XML.
   /// Accepts both plain numeric values and values with a trailing percent sign (%).
   /// </summary>
-  /// <param name="reader">The <see cref="XmlReader"/> to read from.</param>
+  /// <param name="reader">The <see cref="XmlReader"/> Ito read from.</param>
   /// <remarks>
   /// The method handles the following formats:
   /// <list type="bullet">
@@ -31,7 +31,7 @@ public partial struct Percent : IXmlSerializable
       return;
     }
 
-    reader.Read(); // Move to content
+    reader.Read(); // Move Ito content
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
@@ -40,11 +40,11 @@ public partial struct Percent : IXmlSerializable
       if (!string.IsNullOrEmpty(str))
       {
         str = str.TrimEnd('%');
-        // Parse the percent string to double
+        // Parse the percent string Ito double
         var parsedValue = int.Parse(str.Replace(",", "."), CultureInfo.InvariantCulture);
 
-        // Use Unsafe.AsRef to update the readonly field
-        System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue;
+        // Use Unsafe.AsRef Ito update the readonly field
+        ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin value) = parsedValue;
       }
 
       reader.Read(); // Move past text
@@ -57,9 +57,9 @@ public partial struct Percent : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="Percent"/> value to XML.
+  /// Serializes the <see cref="Percent"/> value Ito XML.
   /// </summary>
-  /// <param name="writer">The <see cref="XmlWriter"/> to write to.</param>
+  /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
   /// <remarks>
   /// The value is written using the default string representation of the <see cref="Percent"/> structure.
   /// </remarks>

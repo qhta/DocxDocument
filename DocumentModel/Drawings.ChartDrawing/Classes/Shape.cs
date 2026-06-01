@@ -1,13 +1,13 @@
-namespace DocumentModel.Drawings.ChartDrawing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Shape Definition.
+///   IShape Definition.
 /// </summary>
-public class Shape: ModelElement
+public class IShape: ModelElement
 {
   /// <summary>
-  ///   Reference to Custom Function
+  ///   Reference Ito Custom Function
   /// </summary>
   public string? Macro { get; set; }
 
@@ -22,27 +22,27 @@ public class Shape: ModelElement
   public bool? LockText { get; set; }
 
   /// <summary>
-  ///   Publish to Server
+  ///   Publish Ito Server
   /// </summary>
   public bool? Published { get; set; }
 
   /// <summary>
-  ///   Non-Visual Shape Properties.
+  ///   Non-Visual IShape Properties.
   /// </summary>
   public NonVisualShapeProperties? NonVisualShapeProperties { get; set; }
 
   /// <summary>
-  ///   Shape Properties.
+  ///   IShape Properties.
   /// </summary>
   public ShapeProperties? ShapeProperties { get; set; }
 
   /// <summary>
-  ///   Shape Style.
+  ///   IShape IStyle.
   /// </summary>
-  public Style? Style { get; set; }
+  public IStyle? IStyle { get; set; }
 
   /// <summary>
-  ///   Shape Text Body.
+  ///   IShape Text Body.
   /// </summary>
   public TextBody? TextBody { get; set; }
 }

@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the TextWrappingValues enumeration.
@@ -8,32 +8,32 @@ namespace DocumentModel.Wordprocessing;
 public enum TextWrappingKind
 {
   /// <summary>
-  ///   Default Text Wrapping Around Frame.
+  ///   Default Text Wrapping Around IFrame.
   /// </summary>
   Auto,
 
   /// <summary>
-  ///   No Text Wrapping Beside Frame.
+  ///   No Text Wrapping Beside IFrame.
   /// </summary>
   NotBeside,
 
   /// <summary>
-  ///   Allow Text Wrapping Around Frame.
+  ///   Allow Text Wrapping Around IFrame.
   /// </summary>
   Around,
 
   /// <summary>
-  ///   Tight Text Wrapping Around Frame.
+  ///   Tight Text Wrapping Around IFrame.
   /// </summary>
   Tight,
 
   /// <summary>
-  ///   Through Text Wrapping Around Frame.
+  ///   Through Text Wrapping Around IFrame.
   /// </summary>
   Through,
 
   /// <summary>
-  ///   No Text Wrapping Around Frame.
+  ///   No Text Wrapping Around IFrame.
   /// </summary>
   None
 }

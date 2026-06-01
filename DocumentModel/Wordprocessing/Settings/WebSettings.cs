@@ -1,16 +1,16 @@
-using DocumentModel.Wordprocessing;
+﻿using DocumentModel.Wordprocessing;
 
 namespace DocumentModel;
 
 /// <summary>
-///   Web Page Settings.
+///   Web IPage Settings.
 /// </summary>
 public class WebSettings: DocumentProperties
 {
     /// <summary>
-    ///   Frameset.
+    ///   IFrameset.
     /// </summary>
-    public Frameset? Frameset { get; set; }
+    public IFrameset? IFrameset { get; set; }
 
     /// <summary>
     ///   Divs.

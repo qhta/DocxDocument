@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Single Caption Type Definition.
@@ -17,12 +17,12 @@ public class Caption: ModelElement
   public CaptionPositionKind? Position { get; set; }
 
   /// <summary>
-  ///   Include Chapter Number in Field for Caption
+  ///   Include Chapter Number Iin IField Ifor Caption
   /// </summary>
   public bool? ChapterNumber { get; set; }
 
   /// <summary>
-  ///   Style for Chapter Headings
+  ///   IStyle Ifor Chapter Headings
   /// </summary>
   public Int32? Heading { get; set; }
 
@@ -37,7 +37,7 @@ public class Caption: ModelElement
   public NumberFormatKind? NumberFormat { get; set; }
 
   /// <summary>
-  ///   Chapter Number/Item Index Separator
+  ///   Chapter Number/Item IIndex Separator
   /// </summary>
   public ChapterSeparatorKind? Separator { get; set; }
 }

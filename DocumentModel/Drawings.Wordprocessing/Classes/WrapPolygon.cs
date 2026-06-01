@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Tight Wrapping Extents Polygon.
@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 public class WrapPolygon: ModelElement
 {
   /// <summary>
-  ///   Wrapping Points Modified
+  ///   Wrapping IPoints Modified
   /// </summary>
   public bool? Edited { get; set; }
 

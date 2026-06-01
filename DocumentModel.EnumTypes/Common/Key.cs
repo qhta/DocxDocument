@@ -1,11 +1,11 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies a keyboard character. Although uppercase and lowercase characters are designated by using different
-/// values in a character encoding map, they share a single constant in this enumeration.
+/// values Iin a character encoding map, they share a single constant Iin this enumeration.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdkey?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdkey?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum Key
 {
@@ -390,11 +390,11 @@ public enum Key
   /// </summary>
   KeyControl = 512,
   /// <summary>
-  /// The Windows command key or Macintosh COMMAND key.
+  /// The IWindows command key or Macintosh COMMAND key.
   /// </summary>
   KeyCommand = 512,
   /// <summary>
-  /// The mouse option key or Macintosh OPTION key.
+  /// The mouse Ioption key or Macintosh OPTION key.
   /// </summary>
   KeyOption = 1024,
   /// <summary>
@@ -402,3 +402,4 @@ public enum Key
   /// </summary>
   KeyAlt = 1024
 }
+

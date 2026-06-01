@@ -1,7 +1,7 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Gradient Stop List.
+///   Gradient Stop IList.
 /// </summary>
 public class GradientStopList: ElementCollection<GradientStop>
 {

@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Indicates the bevel type of a ThreeDFormat object.
+/// Indicates the bevel type of a IThreeDFormat object.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobeveltype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobeveltype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum BevelType
 {
@@ -65,3 +65,4 @@ public enum BevelType
   /// </summary>
   ArtDeco = 13
 }
+

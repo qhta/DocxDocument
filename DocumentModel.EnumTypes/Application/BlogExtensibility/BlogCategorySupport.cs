@@ -1,7 +1,7 @@
-namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoblogcategorysupport?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoblogcategorysupport?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum BlogCategorySupport
 {
@@ -18,3 +18,4 @@ public enum BlogCategorySupport
   /// </summary>
   MultipleCategories
 }
+

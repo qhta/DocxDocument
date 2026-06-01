@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the IntervalClosedSide enumeration.
-/// Used in types such as Binning, IntervalClosedSide, BinningConverter.
+/// Used Iin types such as Binning, IntervalClosedSide, BinningConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum IntervalClosedSide
@@ -18,3 +18,4 @@ public enum IntervalClosedSide
   [OpenXmlEnumValue("R")]
   R
 }
+

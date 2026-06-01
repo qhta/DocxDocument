@@ -1,15 +1,15 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Surface Chart Series.
+///   Surface IChart ISeries.
 /// </summary>
 public class SurfaceChartSeries: ModelElement
 {
   /// <summary>
-  ///   Index.
+  ///   IIndex.
   /// </summary>
-  public UInt32? Index { get; set; }
+  public UInt32? IIndex { get; set; }
 
   /// <summary>
   ///   Order.
@@ -17,7 +17,7 @@ public class SurfaceChartSeries: ModelElement
   public UInt32? Order { get; set; }
 
   /// <summary>
-  ///   Series Text.
+  ///   ISeries Text.
   /// </summary>
   public SeriesText? SeriesText { get; set; }
 

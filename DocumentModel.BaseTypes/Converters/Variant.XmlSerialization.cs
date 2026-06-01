@@ -1,12 +1,12 @@
-using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
+﻿using ISystem.Xml;
+using ISystem.Xml.Schema;
+using ISystem.Xml.Serialization;
 using Qhta.TypeUtils;
 
 namespace DocumentModel;
 
 /// <summary>
-/// Provides XML serialization support for the <see cref="Variant"/> class.
+/// Provides XML serialization support Ifor the <see cref="Variant"/> class.
 /// </summary>
 public partial class Variant : IXmlSerializable
 {
@@ -21,7 +21,7 @@ public partial class Variant : IXmlSerializable
   /// <summary>
   /// Deserializes the <see cref="Variant"/> value from XML.
   /// </summary>
-  /// <param name="reader">The <see cref="XmlReader"/> to read from.</param>
+  /// <param name="reader">The <see cref="XmlReader"/> Ito read from.</param>
   /// <remarks>
   /// <para>The method handles the following XML structure:</para>
   /// <code>
@@ -29,17 +29,17 @@ public partial class Variant : IXmlSerializable
   /// &lt;Variant type="String"&gt;Hello&lt;/Variant&gt;
   /// &lt;Variant type="Date"&gt;2024-01-15&lt;/Variant&gt;
   /// &lt;Variant type="Blob"&gt;SGVsbG8sIFdvcmxkIQ==&lt;/Variant&gt;
-  /// &lt;Variant type="Enum" valueType="System.DayOfWeek"&gt;Monday&lt;/Variant&gt;
+  /// &lt;Variant type="Enum" valueType="ISystem.DayOfWeek"&gt;Monday&lt;/Variant&gt;
   /// </code>
   /// <para>
   /// The XML element has the following attributes:
   /// <list type="bullet">
   /// <item><description><c>type</c>: The VariantType name (required)</description></item>
-  /// <item><description><c>valueType</c>: The full .NET type name for Enum and Object types (optional)</description></item>
+  /// <item><description><c>valueType</c>: The full .NET type name Ifor Enum and Object types (optional)</description></item>
   /// </list>
   /// </para>
   /// <para>
-  /// The element content contains the value in an appropriate string format:
+  /// The element content contains the value Iin an appropriate string format:
   /// <list type="bullet">
   /// <item><description>Numeric types: Standard numeric string representation</description></item>
   /// <item><description>Date: "yyyy-MM-dd" format</description></item>
@@ -57,13 +57,13 @@ public partial class Variant : IXmlSerializable
   {
     if (reader.IsEmptyElement)
     {
-      // Read type attribute for empty elements
+      // Read type attribute Ifor empty elements
       string? typeStr = reader.GetAttribute("type");
       if (typeStr != null && Enum.TryParse<VariantType>(typeStr, out var emptyType))
       {
-        System.Runtime.CompilerServices.Unsafe.AsRef(in _variantType) = emptyType;
+        ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin _variantType) = emptyType;
         if (emptyType == VariantType.Null)
-          System.Runtime.CompilerServices.Unsafe.AsRef(in _value) = DBNull.Value;
+          ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin _value) = DBNull.Value;
       }
       reader.Read();
       return;
@@ -81,7 +81,7 @@ public partial class Variant : IXmlSerializable
       throw new XmlException($"Invalid type attribute value: {typeAttr}. Expected a valid VariantType.");
     }
 
-    // Read valueType attribute (optional, used for Enum and Object types)
+    // Read valueType attribute (optional, used Ifor Enum and Object types)
     string? valueTypeAttr = reader.GetAttribute("valueType");
     Type? valueType = null;
     if (valueTypeAttr != null)
@@ -94,7 +94,7 @@ public partial class Variant : IXmlSerializable
     }
     else 
 
-    reader.Read(); // Move to content
+    reader.Read(); // Move Ito content
 
     object? value = null;
 
@@ -103,14 +103,14 @@ public partial class Variant : IXmlSerializable
     {
       string content = reader.Value;
 
-      // Convert string content to appropriate type
+      // Convert string content Ito appropriate type
       try
       {
         value = ParseValueFromString(parsedType, content, valueType);
       }
       catch (Exception ex)
       {
-        throw new XmlException($"Failed to parse Variant value for type {parsedType}: {ex.Message}", ex);
+        throw new XmlException($"Failed Ito parse Variant value Ifor type {parsedType}: {ex.Message}", ex);
       }
 
       reader.Read(); // Move past text
@@ -125,10 +125,10 @@ public partial class Variant : IXmlSerializable
     }
 
     // Set the readonly fields using Unsafe
-    System.Runtime.CompilerServices.Unsafe.AsRef(in _variantType) = parsedType;
+    ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin _variantType) = parsedType;
     if (valueType != null)
-      System.Runtime.CompilerServices.Unsafe.AsRef(in _valueType) = valueType;
-    System.Runtime.CompilerServices.Unsafe.AsRef(in _value) = value;
+      ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin _valueType) = valueType;
+    ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin _value) = value;
 
     // Move past end element
     if (reader.NodeType == XmlNodeType.EndElement)
@@ -138,22 +138,22 @@ public partial class Variant : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="Variant"/> value to XML.
+  /// Serializes the <see cref="Variant"/> value Ito XML.
   /// </summary>
-  /// <param name="writer">The <see cref="XmlWriter"/> to write to.</param>
+  /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
   /// <remarks>
-  /// <para>The value is written in the following XML format:</para>
+  /// <para>The value is written Iin the following XML format:</para>
   /// <code>
   /// &lt;Variant type="Int32"&gt;42&lt;/Variant&gt;
   /// &lt;Variant type="String"&gt;Hello&lt;/Variant&gt;
   /// &lt;Variant type="Date"&gt;2024-01-15&lt;/Variant&gt;
   /// &lt;Variant type="Blob"&gt;SGVsbG8sIFdvcmxkIQ==&lt;/Variant&gt;
-  /// &lt;Variant type="Enum" valueType="System.DayOfWeek"&gt;Monday&lt;/Variant&gt;
+  /// &lt;Variant type="Enum" valueType="ISystem.DayOfWeek"&gt;Monday&lt;/Variant&gt;
   /// </code>
   /// <para>
   /// The <c>type</c> attribute contains the VariantType name.
-  /// The <c>valueType</c> attribute is included for Enum and Object types.
-  /// The element content contains the value in an appropriate string format.
+  /// The <c>valueType</c> attribute is included Ifor Enum and Object types.
+  /// The element content contains the value Iin an appropriate string format.
   /// </para>
   /// <para>
   /// Special handling:
@@ -162,7 +162,7 @@ public partial class Variant : IXmlSerializable
   /// <item><description>DateTime values use ISO 8601 format via XmlConvert</description></item>
   /// <item><description>Binary data is Base64-encoded</description></item>
   /// <item><description>Null and Empty types produce empty elements</description></item>
-  /// <item><description>Floating-point values use XmlConvert for proper formatting</description></item>
+  /// <item><description>Floating-point values use XmlConvert Ifor proper formatting</description></item>
   /// </list>
   /// </para>
   /// </remarks>
@@ -171,7 +171,7 @@ public partial class Variant : IXmlSerializable
     // Write type attribute
     writer.WriteAttributeString("type", VariantType.ToString(CultureInfo.InvariantCulture));
 
-    // Write valueType attribute for Enum and Object types
+    // Write valueType attribute Ifor Enum and Object types
     if ((VariantType == VariantType.Enum || VariantType == VariantType.Object) && ValueType != null)
     {
       writer.WriteAttributeString("valueType", ValueType.AssemblyQualifiedName ?? ValueType.FullName);
@@ -180,7 +180,7 @@ public partial class Variant : IXmlSerializable
     // Write value content
     if (VariantType == VariantType.Null || VariantType == VariantType.Empty)
     {
-      // Empty element for Null and Empty types
+      // Empty element Ifor Null and Empty types
       return;
     }
 
@@ -277,11 +277,11 @@ public partial class Variant : IXmlSerializable
         return Convert.FromBase64String(content);
 
       case VariantType.ClipboardData:
-        // ClipboardData needs special handling - for now return as byte array
+        // ClipboardData needs special handling - Ifor now return as byte array
         return Convert.FromBase64String(content);
 
       case VariantType.VStream:
-        // VStreamData needs special handling - for now return as byte array
+        // VStreamData needs special handling - Ifor now return as byte array
         return Convert.FromBase64String(content);
 
       case VariantType.Variant:
@@ -300,7 +300,7 @@ public partial class Variant : IXmlSerializable
   }
 
   /// <summary>
-  /// Converts a value to its string representation for XML serialization.
+  /// Converts a value Ito its string representation Ifor XML serialization.
   /// </summary>
   private static string? ConvertValueToString(VariantType variantType, object value)
   {

@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the GradientFill Class.
 /// </summary>
@@ -10,12 +10,12 @@ public abstract class GradientFill: Fill
   public TileFlipKind? Flip { get; set; }
 
   /// <summary>
-  ///   Rotate With Shape
+  ///   Rotate With IShape
   /// </summary>
   public bool? RotateWithShape { get; set; }
 
   /// <summary>
-  ///   Gradient Stop List.
+  ///   Gradient Stop IList.
   /// </summary>
   public GradientStopList? GradientStopList { get; set; }
 

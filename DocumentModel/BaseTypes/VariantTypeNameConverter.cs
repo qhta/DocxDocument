@@ -1,9 +1,9 @@
-﻿using System.Xml;
+﻿using ISystem.Xml;
 
 using Newtonsoft.Json.Linq;
 
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 internal class VariantTypeNameConverter : TypeConverter
 {

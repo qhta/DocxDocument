@@ -1,10 +1,10 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies the format of the picture being copied.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlcopypictureformat?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlcopypictureformat?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum XlCopyPictureFormat
 {
@@ -17,3 +17,4 @@ public enum XlCopyPictureFormat
   /// </summary>
   Picture = -4147
 }
+

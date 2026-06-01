@@ -1,10 +1,10 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the line style for the border.
+/// Specifies the line style Ifor the border.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xllinestyle?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xllinestyle?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum XlLineStyle
 {
@@ -41,3 +41,4 @@ public enum XlLineStyle
   /// </summary>
   Dash = -4115
 }
+

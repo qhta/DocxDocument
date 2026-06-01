@@ -1,18 +1,18 @@
-namespace DocumentModel.Drawings.ChartDrawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines the Axis Class.
+///   Defines the IAxis Class.
 /// </summary>
-public class Axis: ModelElement
+public class IAxis: ModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2016 and later.
+  ///   id, this property is Ionly available Iin Office 2016 and later.
   /// </summary>
   public UInt32? Id { get; set; }
 
   /// <summary>
-  ///   hidden, this property is only available in Office 2016 and later.
+  ///   hidden, this property is Ionly available Iin Office 2016 and later.
   /// </summary>
   public bool? Hidden { get; set; }
 
@@ -20,7 +20,7 @@ public class Axis: ModelElement
 
   public ValueAxisScaling? ValueAxisScaling { get; set; }
 
-  public AxisTitle? AxisTitle { get; set; }
+  public IAxisTitle? IAxisTitle { get; set; }
 
   public AxisUnits? AxisUnits { get; set; }
 
@@ -32,7 +32,7 @@ public class Axis: ModelElement
 
   public MinorTickMarksTickMarks? MinorTickMarksTickMarks { get; set; }
 
-  public TickLabels? TickLabels { get; set; }
+  public ITickLabels? ITickLabels { get; set; }
 
   public NumberFormat? NumberFormat { get; set; }
 

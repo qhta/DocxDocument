@@ -1,7 +1,7 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Interface for drawing property.
+///   Interface Ifor drawing property.
 /// </summary>
 public interface IOpenTypeFontProperty: 
   IModelElement,

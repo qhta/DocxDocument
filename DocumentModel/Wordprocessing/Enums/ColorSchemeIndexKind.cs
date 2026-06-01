@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the ColorSchemeIndexValues enumeration.
@@ -58,12 +58,12 @@ public enum ColorSchemeIndexKind
   Accent6,
 
   /// <summary>
-  ///   Hyperlink Theme Color Reference.
+  ///   IHyperlink Theme Color Reference.
   /// </summary>
-  Hyperlink,
+  IHyperlink,
 
   /// <summary>
-  ///   Followed Hyperlink Theme Color Reference.
+  ///   Followed IHyperlink Theme Color Reference.
   /// </summary>
   FollowedHyperlink
 }

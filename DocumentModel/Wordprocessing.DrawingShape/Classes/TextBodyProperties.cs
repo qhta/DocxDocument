@@ -1,7 +1,7 @@
-using DocumentModel.Drawings;
+﻿using DocumentModel.Drawings;
 
 namespace DocumentModel.Wordprocessing.DrawingShape;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the TextBodyProperties Class.
@@ -14,7 +14,7 @@ public class TextBodyProperties: ModelElement
   public Int32? Rotation { get; set; }
 
   /// <summary>
-  ///   Paragraph Spacing
+  ///   IParagraph Spacing
   /// </summary>
   public bool? UseParagraphSpacing { get; set; }
 
@@ -59,17 +59,17 @@ public class TextBodyProperties: ModelElement
   public Int32? BottomInset { get; set; }
 
   /// <summary>
-  ///   Number of Columns
+  ///   Number of IColumns
   /// </summary>
   public Int32? ColumnCount { get; set; }
 
   /// <summary>
-  ///   Space Between Columns
+  ///   Space Between IColumns
   /// </summary>
   public Int32? ColumnSpacing { get; set; }
 
   /// <summary>
-  ///   Columns Right-To-Left
+  ///   IColumns Right-To-Left
   /// </summary>
   public bool? RightToLeftColumns { get; set; }
 
@@ -99,12 +99,12 @@ public class TextBodyProperties: ModelElement
   public bool? UpRight { get; set; }
 
   /// <summary>
-  ///   Compatible Line Spacing
+  ///   Compatible ILine Spacing
   /// </summary>
   public bool? CompatibleLineSpacing { get; set; }
 
   /// <summary>
-  ///   Preset Text Shape.
+  ///   Preset Text IShape.
   /// </summary>
   public PresetTextWrap? PresetTextWrap { get; set; }
 

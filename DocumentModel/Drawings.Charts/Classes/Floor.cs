@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   3D floor formatting.
 /// </summary>
-public class Floor: ModelElement
+public class IFloor: ModelElement
 {
   public Byte? Thickness { get; set; }
 

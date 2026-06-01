@@ -1,0 +1,31 @@
+
+namespace DocumentModel.Interop.Core;
+
+/// <summary>
+/// Represents the `SmartArtLayout` class.
+/// </summary>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartlayout?view=office-pia"/>
+public partial class SmartArtLayout: InteropObject
+{
+  /// <summary>
+  /// Gets the `Id` property.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartlayout.id?view=office-pia"/>
+  public string Id { get; }
+  /// <summary>
+  /// Gets the `Name` property.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartlayout.name?view=office-pia"/>
+  public string Name { get; }
+  /// <summary>
+  /// Gets the `Description` property.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartlayout.description?view=office-pia"/>
+  public string Description { get; }
+  /// <summary>
+  /// Gets the `Category` property.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartlayout.category?view=office-pia"/>
+  public string Category { get; }
+}
+

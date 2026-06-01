@@ -1,0 +1,17 @@
+using System.Collections;
+
+namespace DocumentModel.Interop.Core;
+
+/// <summary>
+/// A collection of BalloonCheckbox objects that represent all check boxes in the Office Assistant balloon.
+/// </summary>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ballooncheckboxes?view=office-pia"/>
+public partial class BalloonCheckboxes: InteropCollection<BalloonCheckbox>
+{
+  /// <summary>
+  /// Gets the `Name` property.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ballooncheckboxes.name?view=office-pia"/>
+  public string Name { get; }
+}
+

@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Defines the FootnoteEndnoteValues enumeration.
@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 public enum FootnoteEndnoteKind
 {
   /// <summary>
-  ///   Normal Footnote/Endnote.
+  ///   Normal IFootnote/IEndnote.
   /// </summary>
   Normal,
 

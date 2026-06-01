@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Preset Camera Type
@@ -143,62 +143,62 @@ public enum PresetCameraKind
   IsometricRightDown,
 
   /// <summary>
-  ///   Isometric Off Axis 1 Left.
+  ///   Isometric Off IAxis 1 Left.
   /// </summary>
   IsometricOffAxis1Left,
 
   /// <summary>
-  ///   Isometric Off Axis 1 Right.
+  ///   Isometric Off IAxis 1 Right.
   /// </summary>
   IsometricOffAxis1Right,
 
   /// <summary>
-  ///   Isometric Off Axis 1 Top.
+  ///   Isometric Off IAxis 1 Top.
   /// </summary>
   IsometricOffAxis1Top,
 
   /// <summary>
-  ///   Isometric Off Axis 2 Left.
+  ///   Isometric Off IAxis 2 Left.
   /// </summary>
   IsometricOffAxis2Left,
 
   /// <summary>
-  ///   Isometric Off Axis 2 Right.
+  ///   Isometric Off IAxis 2 Right.
   /// </summary>
   IsometricOffAxis2Right,
 
   /// <summary>
-  ///   Isometric Off Axis 2 Top.
+  ///   Isometric Off IAxis 2 Top.
   /// </summary>
   IsometricOffAxis2Top,
 
   /// <summary>
-  ///   Isometric Off Axis 3 Left.
+  ///   Isometric Off IAxis 3 Left.
   /// </summary>
   IsometricOffAxis3Left,
 
   /// <summary>
-  ///   Isometric Off Axis 3 Right.
+  ///   Isometric Off IAxis 3 Right.
   /// </summary>
   IsometricOffAxis3Right,
 
   /// <summary>
-  ///   Isometric Off Axis 3 Bottom.
+  ///   Isometric Off IAxis 3 Bottom.
   /// </summary>
   IsometricOffAxis3Bottom,
 
   /// <summary>
-  ///   Isometric Off Axis 4 Left.
+  ///   Isometric Off IAxis 4 Left.
   /// </summary>
   IsometricOffAxis4Left,
 
   /// <summary>
-  ///   Isometric Off Axis 4 Right.
+  ///   Isometric Off IAxis 4 Right.
   /// </summary>
   IsometricOffAxis4Right,
 
   /// <summary>
-  ///   Isometric Off Axis 4 Bottom.
+  ///   Isometric Off IAxis 4 Bottom.
   /// </summary>
   IsometricOffAxis4Bottom,
 

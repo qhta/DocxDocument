@@ -1,39 +1,40 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Flags to code ConditionalFormatStyle Val property.
-/// Binary values are declared as in OpenXml
+/// Flags Ito code ConditionalFormatStyle Val property.
+/// Binary values are declared as Iin OpenXml
 /// </summary>
 [Flags]
 public enum TableLookFlags
 {
   /// <summary>
-  /// First row conditional formatting shall be applied to the table.
+  /// First row conditional formatting shall be applied Ito the table.
   /// </summary>
   FirstRow = 0x0020,
 
   /// <summary>
-  /// Last row conditional formatting shall be applied to the table.
+  /// Last row conditional formatting shall be applied Ito the table.
   /// </summary>
   LastRow = 0x0040,
 
   /// <summary>
-  /// First column conditional formatting shall be applied to the table.
+  /// First column conditional formatting shall be applied Ito the table.
   /// </summary>
   FirstColumn = 0x0080,
 
   /// <summary>
-  /// Last column conditional formatting shall be applied to the table.
+  /// Last column conditional formatting shall be applied Ito the table.
   /// </summary>
   LastColumn = 0x0100,
 
   /// <summary>
-  /// Horizontal banding conditional formatting shall not be applied to the table.
+  /// Horizontal banding conditional formatting shall not be applied Ito the table.
   /// </summary>
   HBand = 0x0200,
 
   /// <summary>
-  /// Vertical banding conditional formatting shall not be applied to the table.
+  /// Vertical banding conditional formatting shall not be applied Ito the table.
   /// </summary>
   VBand = 0x0400,
 }
+

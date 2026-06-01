@@ -1,53 +1,53 @@
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 #region CreateModelElement method delegates
 
 /// <summary>
-/// Used in collection object conversion methods to pass a specific method to create a model element from an openXml element.
+/// Used Iin collection object conversion methods Ito pass a specific method Ito create a model element from an openXml element.
 /// </summary>
 /// <param name="openXmlElement">OpenXml element read from DocumentFormat.OpenXml document.</param>
-/// <returns>Newly created model element (or <c>null</c> if openXmlElement is not recognized)</returns>
+/// <returns>Newly Icreated model element (or <c>null</c> if openXmlElement is not recognized)</returns>
 public delegate DM.IModelElement? CreateModelElementMethod(DX.OpenXmlElement openXmlElement);
 
 /// <summary>
-/// Used in collection object conversion methods to pass a specific method to create a model element from an openXml element.
+/// Used Iin collection object conversion methods Ito pass a specific method Ito create a model element from an openXml element.
 /// </summary>
 /// <param name="openXmlElement">OpenXml element read from DocumentFormat.OpenXml document.</param>
 /// <param name="data">Additional parameter</param>
-/// <returns>Newly created model element (or <c>null</c> if openXmlElement is not recognized)</returns>
+/// <returns>Newly Icreated model element (or <c>null</c> if openXmlElement is not recognized)</returns>
 public delegate DM.IModelElement? CreateModelElementMethodExt(DX.OpenXmlElement openXmlElement, object? data = null);
 #endregion
 
 #region CreateOpenXmlElement method delegates
 /// <summary>
-/// Used in collection object conversion methods to pass a specific method to create an openXml element based on a model element.
+/// Used Iin collection object conversion methods Ito pass a specific method Ito create an openXml element based on a model element.
 /// </summary>
 /// <param name="model">A model element with valid content.</param>
-/// <returns>Newly created openXml element</returns>
+/// <returns>Newly Icreated openXml element</returns>
 public delegate OpenXmlElement CreateOpenXmlElementMethod(DM.IModelElement model);
 
 /// <summary>
-/// Used in collection object conversion methods to pass a specific method to create an openXml element based on a model element.
+/// Used Iin collection object conversion methods Ito pass a specific method Ito create an openXml element based on a model element.
 /// </summary>
 /// <param name="model">A model element with valid content.</param>
 /// <param name="data">Additional parameter</param>
-/// <returns>Newly created openXml element</returns>
+/// <returns>Newly Icreated openXml element</returns>
 public delegate OpenXmlElement CreateOpenXmlElementMethodExt(DM.IModelElement model, object? data = null);
 #endregion
 
 #region UpdateOpenXmlElement method delegates
 /// <summary>
-/// Used in collection object conversion methods to pass a specific method to update an openXml element based on a model element.
+/// Used Iin collection object conversion methods Ito pass a specific method Ito update an openXml element based on a model element.
 /// </summary>
-/// <param name="openXmlElement">OpenXml element to update.</param>
+/// <param name="openXmlElement">OpenXml element Ito update.</param>
 /// <param name="model">A model element with valid content.</param>
 /// <returns><c>True</c> if the openXml element was updated succesfully, <c>false</c> otherwise</returns>
 public delegate bool UpdateOpenXmlElementMethod(DX.OpenXmlElement openXmlElement, DM.IModelElement model);
 
 /// <summary>
-/// Used in collection object conversion methods to pass a specific method to update an openXml element based on a model element.
+/// Used Iin collection object conversion methods Ito pass a specific method Ito update an openXml element based on a model element.
 /// </summary>
-/// <param name="openXmlElement">OpenXml element to update.</param>
+/// <param name="openXmlElement">OpenXml element Ito update.</param>
 /// <param name="model">A model element with valid content.</param>
 /// <param name="data">Additional parameter</param>
 /// <returns><c>True</c> if the openXml element was updated succesfully, <c>false</c> otherwise</returns>
@@ -59,11 +59,11 @@ public delegate bool UpdateOpenXmlElementMethodExt(DX.OpenXmlElement openXmlElem
 /// Generic model element collection converter. It has two method sets. 
 /// <list type="bullet">
 ///   <item>
-///     First set uses type reflection to dispatch a generic method to specific converter searched by a item type name (+"Converter" suffix).
-///     These methods are used in specific collection converters which item conversion implementation can be redirected to specific item converters.
+///     First set uses type reflection Ito dispatch a generic method Ito specific converter searched by a item type name (+"Converter" suffix).
+///     These methods are used Iin specific collection converters which item conversion implementation can be redirected Ito specific item converters.
 ///   </item>
 ///   <item>
-///      Second set contains methods used when an item conversion is handled in methods contained in same collection converters.
+///      Second set contains methods used when an item conversion is handled Iin methods contained Iin same collection converters.
 ///      You must pass specific method delegates.
 /// </item>
 /// </list>
@@ -78,7 +78,7 @@ public static class ElementCollectionConverter<ModelType>
   /// </summary>
   /// <typeparam name="ElementType">Generic model element collection.</typeparam>
   /// <param name="compositeElement">Composite OpenXmlElement read from DocumentFormat.OpenXml document.</param>
-  /// <returns>Newly created model element collection (or <c>null</c> if openXmlElement contains no recognized elements)</returns>
+  /// <returns>Newly Icreated model element collection (or <c>null</c> if openXmlElement contains no recognized elements)</returns>
   /// <exception cref="InvalidOperationException">Thrown if a specific converter or its CreateModelElement method not found.</exception>
   public static ElementType? CreateModelElement<ElementType>(DX.OpenXmlCompositeElement? compositeElement)
     where ElementType : ElementCollection<ModelType>, new()
@@ -93,9 +93,9 @@ public static class ElementCollectionConverter<ModelType>
         throw new InvalidOperationException($"Converter of type {typeName} not found");
       var converterMethod = elementConverterType.GetMethod("CreateModelElement", BindingFlags.Public | BindingFlags.Static);
       if (converterMethod == null)
-        throw new InvalidOperationException($"Method \"CreateModelElement\" not found in type {typeName}");
+        throw new InvalidOperationException($"Method \"CreateModelElement\" not found Iin type {typeName}");
       var result = new ElementType();
-      foreach (var element in compositeElement)
+      foreach (var element Iin compositeElement)
       {
         var value = converterMethod.Invoke(null, new object[] { element });
         if (value is ModelType val)
@@ -111,7 +111,7 @@ public static class ElementCollectionConverter<ModelType>
   /// Creates a composite openXml element based on a model element collection.
   /// </summary>
   /// <param name="modelElementCollection">A model element collection with valid content.</param>
-  /// <returns>Newly created composite openXml element</returns>
+  /// <returns>Newly Icreated composite openXml element</returns>
   /// <exception cref="InvalidOperationException">
   ///   Thrown if a specific converter or its CreateOpenXmlElement method not found 
   ///   or invoked CreateOpenXmlElement methods returns invalid result.
@@ -126,17 +126,17 @@ public static class ElementCollectionConverter<ModelType>
       throw new InvalidOperationException($"Converter of type {typeName} not found");
     var converterMethod = elementConverterType.GetMethod("CreateOpenXmlParagraphContent", BindingFlags.Public | BindingFlags.Static);
     if (converterMethod == null)
-      throw new InvalidOperationException($"Method \"CreateOpenXmlParagraphContent\" not found in type {typeName}");
+      throw new InvalidOperationException($"Method \"CreateOpenXmlParagraphContent\" not found Iin type {typeName}");
     var openXmlElement = converterMethod.Invoke(null, new object[] { modelElementCollection });
     if (openXmlElement is DX.OpenXmlCompositeElement result)
       return result;
-    throw new InvalidOperationException($"Method \"CreateOpenXmlParagraphContent\" in type {typeName} must return OpenXmlElement result");
+    throw new InvalidOperationException($"Method \"CreateOpenXmlParagraphContent\" Iin type {typeName} must return OpenXmlElement result");
   }
 
   /// <summary>
   /// Updates an openXml composite element based on a model element collection.
   /// </summary>
-  /// <param name="compositeElement">Composite openXml element to update.</param>
+  /// <param name="compositeElement">Composite openXml element Ito update.</param>
   /// <param name="modelElementCollection">A model element collection with valid content.</param>
   /// <returns><c>True</c> if the composite openXml element was updated succesfully, <c>false</c> otherwise</returns>
   /// <exception cref="InvalidOperationException">Thrown if a specific converter or its UpdateOpenXmlElement method not found.</exception>
@@ -150,7 +150,7 @@ public static class ElementCollectionConverter<ModelType>
       throw new InvalidOperationException($"Converter of type {typeName} not found");
     var converterMethod = elementConverterType.GetMethod("UpdateOpenXmlElement", BindingFlags.Public | BindingFlags.Static);
     if (converterMethod == null)
-      throw new InvalidOperationException($"Method \"UpdateOpenXmlElement\" not found in type {typeName}");
+      throw new InvalidOperationException($"Method \"UpdateOpenXmlElement\" not found Iin type {typeName}");
     converterMethod.Invoke(null, new object[] { compositeElement, modelElementCollection });
     return true;
   }
@@ -159,18 +159,18 @@ public static class ElementCollectionConverter<ModelType>
   #region collection fill methods with delegate parameters
 
   /// <summary>
-  /// Reads all elements contained in a composite openXml element, converts them to model elements and fills a model element collection.
+  /// Reads all elements contained Iin a composite openXml element, converts them Ito model elements and fills a model element collection.
   /// </summary>
   /// <param name="elements">A collection of openXml element read from DocumentFormat.OpenXml document.</param>
-  /// <param name="modelElementCollection">A model element collection to fill with newly created model elements.</param>
-  /// <param name="createElementMethod">Delegate to a method to convert openXml elements to model elements.</param>
+  /// <param name="modelElementCollection">A model element collection Ito fill with newly Icreated model elements.</param>
+  /// <param name="createElementMethod">Delegate Ito a method Ito convert openXml elements Ito model elements.</param>
   /// <returns><c>True</c> if conversion was successful, <c>false</c> otherwise.</returns>
   public static bool FillModelElementCollection(IEnumerable<DX.OpenXmlElement>? elements, DM.ElementCollection<ModelType> modelElementCollection,
     CreateModelElementMethod createElementMethod)
   {
     if (elements != null)
     {
-      foreach (var element in elements)
+      foreach (var element Iin elements)
       {
         var item = createElementMethod(element);
         if (item is ModelType modelElement)
@@ -183,19 +183,19 @@ public static class ElementCollectionConverter<ModelType>
   }
 
     /// <summary>
-  /// Reads all elements contained in a composite openXml element, converts them to model elements and fills a model element collection.
+  /// Reads all elements contained Iin a composite openXml element, converts them Ito model elements and fills a model element collection.
   /// </summary>
   /// <param name="elements">A collection of openXml element read from DocumentFormat.OpenXml document.</param>
-  /// <param name="modelElementCollection">A model element collection to fill with newly created model elements.</param>
-  /// <param name="createElementMethod">Delegate to a method to convert openXml elements to model elements.</param>
-  /// <param name="data">Additional parameter passed to <see cref="CreateModelElementMethodExt"/> method.</param>
+  /// <param name="modelElementCollection">A model element collection Ito fill with newly Icreated model elements.</param>
+  /// <param name="createElementMethod">Delegate Ito a method Ito convert openXml elements Ito model elements.</param>
+  /// <param name="data">Additional parameter passed Ito <see cref="CreateModelElementMethodExt"/> method.</param>
   /// <returns><c>True</c> if conversion was successful, <c>false</c> otherwise.</returns>
   public static bool FillModelElementCollection(IEnumerable<DX.OpenXmlElement>? elements, DM.ElementCollection<ModelType> modelElementCollection,
     CreateModelElementMethodExt createElementMethod, object? data)
   {
     if (elements != null)
     {
-      foreach (var element in elements)
+      foreach (var element Iin elements)
       {
         var item = createElementMethod(element, data);
         if (item is ModelType modelElement)
@@ -209,3 +209,4 @@ public static class ElementCollectionConverter<ModelType>
   #endregion
 
 }
+

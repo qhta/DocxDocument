@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the DocGrid Class.
@@ -7,17 +7,17 @@ namespace DocumentModel.Wordprocessing;
 public class DocGrid: ModelElement, ISectionPropertiesContent
 {
   /// <summary>
-  ///   Document Grid Type
+  ///   IDocument Grid Type
   /// </summary>
   public DocGridKind? Type { get; set; }
 
   /// <summary>
-  ///   Document Grid Line Pitch
+  ///   IDocument Grid ILine Pitch
   /// </summary>
   public Twips? LinePitch { get; set; }
 
   /// <summary>
-  ///   Document Grid Character Pitch
+  ///   IDocument Grid Character Pitch
   /// </summary>
   public Twips? CharacterSpace { get; set; }
 }

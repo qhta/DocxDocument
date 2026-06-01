@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 /// <summary>
 ///   Blip Compression Type
 /// </summary>
@@ -7,10 +7,10 @@ namespace DocumentModel.Drawings;
 public enum BlipCompression
 {
   /// <summary>
-  ///   Email Compression.
+  ///   IEmail Compression.
   /// </summary>
-  [OpenXmlEnumValue(nameof(DXD.BlipCompressionValues.Email))]
-  Email,
+  [OpenXmlEnumValue(nameof(DXD.BlipCompressionValues.IEmail))]
+  IEmail,
   /// <summary>
   ///   Screen Viewing Compression.
   /// </summary>

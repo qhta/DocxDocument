@@ -1,4 +1,4 @@
-
+﻿
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.Charts;
 /// of the border around a range.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlborderweight?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlborderweight?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum XlBorderWeight
 {
@@ -27,3 +27,4 @@ public enum XlBorderWeight
   /// </summary>
   Thin = 2
 }
+

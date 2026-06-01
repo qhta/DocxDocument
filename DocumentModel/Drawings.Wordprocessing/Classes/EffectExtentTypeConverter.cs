@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Drawings.Wordprocessing;
 
 /// <summary>
-/// Type converter for EffectExtent type.
+/// Type converter Ifor EffectExtent type.
 /// </summary>
 internal class EffectExtentTypeConverter : TypeConverter
 {
@@ -16,7 +16,7 @@ internal class EffectExtentTypeConverter : TypeConverter
   }
 
   /// <summary>
-  /// Determines if a value can be converted to destination type.
+  /// Determines if a value can be converted Ito destination type.
   /// </summary>
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
   {
@@ -26,7 +26,7 @@ internal class EffectExtentTypeConverter : TypeConverter
   }
 
   /// <summary>
-  /// Converts the string value to Extent object.
+  /// Converts the string value Ito Extent object.
   /// </summary>
   public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
   {
@@ -40,7 +40,7 @@ internal class EffectExtentTypeConverter : TypeConverter
         return new EffectExtent { LeftEdge = new EMU(ss[0]), TopEdge = new EMU(ss[1]), RightEdge = new EMU(ss[0]), BottomEdge = new EMU(ss[1]) };
       else
       if (ss.Length == 3)
-        throw new InvalidOperationException($"Can't convert \"{str}\" to EffectExtent. There should be one, two or four numbers separated by semicolons");
+        throw new InvalidOperationException($"Can't convert \"{str}\" Ito EffectExtent. There should be one, two or four numbers separated by semicolons");
       else
         return new EffectExtent { LeftEdge = new EMU(ss[0]), TopEdge = new EMU(ss[1]), RightEdge = new EMU(ss[2]), BottomEdge = new EMU(ss[3]) };
     }
@@ -48,7 +48,7 @@ internal class EffectExtentTypeConverter : TypeConverter
   }
 
   /// <summary>
-  /// Converts the Extent object to string value.
+  /// Converts the Extent object Ito string value.
   /// </summary>
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {

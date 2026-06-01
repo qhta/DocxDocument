@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the PageBorderZOrderValues enumeration.
@@ -8,12 +8,12 @@ namespace DocumentModel.Wordprocessing;
 public enum PageBorderZOrderKind
 {
   /// <summary>
-  ///   Page Border Ahead of Text.
+  ///   IPage IBorder Ahead of Text.
   /// </summary>
   Front,
 
   /// <summary>
-  ///   Page Border Behind Text.
+  ///   IPage IBorder Behind Text.
   /// </summary>
   Back
 }

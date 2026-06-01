@@ -1,4 +1,4 @@
-
+﻿
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.Charts;
 /// used with the 3-D bar or column chart.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlbarshape?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlbarshape?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum XlBarShape
 {
@@ -15,7 +15,7 @@ public enum XlBarShape
   /// </summary>
   Box,
   /// <summary>
-  /// Pyramid, coming to point at value.
+  /// Pyramid, coming Ito point at value.
   /// </summary>
   PyramidToPoint,
   /// <summary>
@@ -27,7 +27,7 @@ public enum XlBarShape
   /// </summary>
   Cylinder,
   /// <summary>
-  /// Cone, coming to point at value.
+  /// Cone, coming Ito point at value.
   /// </summary>
   ConeToPoint,
   /// <summary>
@@ -35,3 +35,4 @@ public enum XlBarShape
   /// </summary>
   ConeToMax
 }
+

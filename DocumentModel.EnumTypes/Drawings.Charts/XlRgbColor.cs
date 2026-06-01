@@ -1,10 +1,10 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies the RGB color.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlrgbcolor?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlrgbcolor?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum XlRgbColor
 {
@@ -585,3 +585,4 @@ public enum XlRgbColor
   /// </summary>
   White = 16777215
 }
+

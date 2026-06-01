@@ -1,22 +1,23 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the Orientation enumeration.
-/// Used in types such as PageSetup, Scaling, OrientationKind.
+/// Used Iin types such as IPageSetup, Scaling, OrientationKind.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.OrientationValues))]
 public enum Orientation
 {
   /// <summary>
-  ///   Maximum to Minimum.
+  ///   Maximum Ito Minimum.
   /// </summary>
   [OpenXmlEnumValue("MaxMin")]
   MaxMin = 1,
 
   /// <summary>
-  ///   Minimum to Maximum.
+  ///   Minimum Ito Maximum.
   /// </summary>
   [OpenXmlEnumValue("MinMax")]
   MinMax
 }
+

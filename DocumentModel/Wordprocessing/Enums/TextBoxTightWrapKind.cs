@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the TextBoxTightWrapValues enumeration.
@@ -13,22 +13,22 @@ public enum TextBoxTightWrapKind
   None,
 
   /// <summary>
-  ///   Tight Wrap All Lines.
+  ///   Tight Wrap All ILines.
   /// </summary>
   AllLines,
 
   /// <summary>
-  ///   Tight Wrap First and Last Lines.
+  ///   Tight Wrap First and Last ILines.
   /// </summary>
   FirstAndLastLine,
 
   /// <summary>
-  ///   Tight Wrap First Line.
+  ///   Tight Wrap First ILine.
   /// </summary>
   FirstLineOnly,
 
   /// <summary>
-  ///   Tight Wrap Last Line.
+  ///   Tight Wrap Last ILine.
   /// </summary>
   LastLineOnly
 }

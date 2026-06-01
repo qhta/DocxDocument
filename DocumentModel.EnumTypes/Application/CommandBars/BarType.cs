@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies the type of the command bar.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobartype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobartype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum BarType
 {
@@ -21,3 +21,4 @@ public enum BarType
   /// </summary>
   Popup
 }
+

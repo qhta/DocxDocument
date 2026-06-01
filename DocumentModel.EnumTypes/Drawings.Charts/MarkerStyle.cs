@@ -1,7 +1,7 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
-/// Specifies the marker style for a point or series in a line chart, scatter chart, or radar chart.
+/// Specifies the marker style Ifor a point or series Iin a line chart, scatter chart, or radar chart.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.MarkerStyleValues))]
@@ -9,7 +9,7 @@ public enum MarkerStyle
 {
   /// <summary>
   /// Automatic marker style.
-  /// The actual marker style is determined by the chart type and the order of the data series in the chart.
+  /// The actual marker style is determined by the chart type and the order of the data series Iin the chart.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXDC.MarkerStyleValues.Auto))]
   Automatic = -4105,

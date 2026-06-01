@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the ParentLabelLayoutVal enumeration.
-/// Used in types such as ParentLabelLayout, ParentLabelLayoutVal, ParentLabelLayoutConverter.
+/// Used Iin types such as ParentLabelLayout, ParentLabelLayoutVal, ParentLabelLayoutConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum ParentLabelLayoutVal
@@ -23,3 +23,4 @@ public enum ParentLabelLayoutVal
   [OpenXmlEnumValue("Overlapping")]
   Overlapping
 }
+

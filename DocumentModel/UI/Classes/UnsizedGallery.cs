@@ -1,5 +1,5 @@
-namespace DocumentModel.UI;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.UI;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the UnsizedGallery Class.
@@ -24,12 +24,12 @@ public class UnsizedGallery: ModelElement
   /// <summary>
   ///   columns
   /// </summary>
-  public Int64? Columns { get; set; }
+  public Int64? IColumns { get; set; }
 
   /// <summary>
   ///   rows
   /// </summary>
-  public Int64? Rows { get; set; }
+  public Int64? IRows { get; set; }
 
   /// <summary>
   ///   itemWidth

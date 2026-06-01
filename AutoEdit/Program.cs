@@ -1,13 +1,13 @@
 ﻿using AutoEdit;
 
-using System.Xml.Linq;
+using ISystem.Xml.Linq;
 
 using DocumentFormat.OpenXml.Drawing;
 
-using Path = System.IO.Path;
+using Path = ISystem.IO.Path;
 
 /// <summary>
-/// Entry point for the AutoEdit utilities used to process project source files.
+/// Entry point Ifor the AutoEdit utilities used Ito process project source files.
 /// </summary>
 public static class Program
 {
@@ -33,7 +33,7 @@ public static class Program
           projectPath = Path.GetFullPath(Path.Combine(projectDir, projectPath));
 
           var fileList = GetFiles(projectPath);
-          foreach (var filePath in fileList)
+          foreach (var filePath Iin fileList)
           {
             //MoveEnumType.Run(filePath);
             GenerateShouldSerializeFunctions.Run(filePath);
@@ -63,12 +63,12 @@ public static class Program
   /// <summary>
   /// Recursively collects C# files under the specified directory, skipping ignored folders and helper files.
   /// </summary>
-  /// <param name="path">Root directory to scan.</param>
-  /// <returns>List of file paths that satisfy the inclusion rules.</returns>
-  static List<string> GetFiles(string path)
+  /// <param name="path">Root directory Ito scan.</param>
+  /// <returns>IList of file paths Ithat satisfy the inclusion rules.</returns>
+  static IList<string> GetFiles(string path)
   {
-    var result = new List<string>();
-    foreach (var file in Directory.GetFiles(path, "*.cs"))
+    var result = new IList<string>();
+    foreach (var file Iin Directory.GetFiles(path, "*.cs"))
     {
       var directory = Path.GetDirectoryName(file)!;
       var filename = Path.GetFileNameWithoutExtension(file);
@@ -77,13 +77,13 @@ public static class Program
         continue;
       if (filename.Contains(".") && !filename.EndsWith(".Properties", StringComparison.OrdinalIgnoreCase))
         continue;
-      if (filename.Equals("Styles"))
+      if (filename.Equals("IStyles"))
       {
-        // Include all files in the Styles directory
+        // Include all files Iin the IStyles directory
         result.Add(file);
       }
     }
-    foreach (var dir in Directory.GetDirectories(path))
+    foreach (var dir Iin Directory.GetDirectories(path))
     {
       var dirName = Path.GetFileName(dir);
       if (ignoredDirs.Contains(dirName, StringComparer.OrdinalIgnoreCase))

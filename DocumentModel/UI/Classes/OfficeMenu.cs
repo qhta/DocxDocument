@@ -1,5 +1,5 @@
-namespace DocumentModel.UI;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.UI;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the OfficeMenu Class.
@@ -10,7 +10,7 @@ public class OfficeMenu: ModelElement
 
   public UnsizedButton? UnsizedButton { get; set; }
 
-  public CheckBox? CheckBox { get; set; }
+  public ICheckBox? ICheckBox { get; set; }
 
   public UnsizedGallery? UnsizedGallery { get; set; }
 

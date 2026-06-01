@@ -1,9 +1,9 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Compound document model.
 /// </summary>
-public partial class Document
+public partial class IDocument
 {
   /// <summary>
   /// Compound of object of document properties
@@ -11,9 +11,9 @@ public partial class Document
   public DocumentProperties? Properties { get; set; }
 
   /// <summary>
-  /// Style definitions.
+  /// IStyle definitions.
   /// </summary>
-  public Styles? Styles 
+  public IStyles? IStyles 
   { 
     get => _Styles; 
     set
@@ -23,7 +23,7 @@ public partial class Document
         _Styles.Parent = this;
     }
   }
-  private Styles? _Styles;
+  private IStyles? _Styles;
 
   /// <summary>
   /// Set if color and font themes.
@@ -41,7 +41,7 @@ public partial class Document
   private DMD.Theme? _Theme;
 
   /// <summary>
-  /// Font table
+  /// IFont table
   /// </summary>
   public Fonts? Fonts 
   { 
@@ -76,9 +76,9 @@ public partial class Document
   private Numbering? _Numbering;
 
   /// <summary>
-  /// Comment annotations.
+  /// IComment annotations.
   /// </summary>
-  public DocComments? Comments
+  public DocComments? IComments
   { 
     get => _Comments; 
     set
@@ -92,7 +92,7 @@ public partial class Document
 
 
   /// <summary>
-  /// Document background.
+  /// IDocument background.
   /// </summary>
   public DocumentBackground? Background
   { 

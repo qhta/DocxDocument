@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
+﻿namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Defines the HierarchyBranchStyle enumeration.
-/// Used in types such as LayoutVariablePropertySetType, PresentationLayoutVariables, VariableList.
+/// Used Iin types such as LayoutVariablePropertySetType, PresentationLayoutVariables, VariableList.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.HierarchyBranchStyleValues))]
@@ -34,3 +34,4 @@ public enum HierarchyBranchStyle
   [OpenXmlEnumValue("Initial")]
   Initial
 }
+

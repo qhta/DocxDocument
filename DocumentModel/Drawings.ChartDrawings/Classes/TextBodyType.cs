@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.ChartDrawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the TextBodyType Class.
@@ -12,7 +12,7 @@ public class TextBodyType: ModelElement
   public BodyProperties? BodyProperties { get; set; }
 
   /// <summary>
-  ///   Text List Styles.
+  ///   Text IList IStyles.
   /// </summary>
   public ListStyle? ListStyle { get; set; }
 }

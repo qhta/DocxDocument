@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the FormulaDirection enumeration.
-/// Used in types such as OpenXmlFormulaElement, FormulaDirection, OpenXmlFormulaElementConverter.
+/// Used Iin types such as OpenXmlFormulaElement, FormulaDirection, OpenXmlFormulaElementConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum FormulaDirection
@@ -15,6 +15,7 @@ public enum FormulaDirection
   /// <summary>
   ///   row.
   /// </summary>
-  [OpenXmlEnumValue("Row")]
-  Row
+  [OpenXmlEnumValue("IRow")]
+  IRow
 }
+

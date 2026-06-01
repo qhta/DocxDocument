@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the TextBoxFormFieldValues enumeration.
@@ -33,7 +33,7 @@ public enum TextBoxFormFieldKind
   CurrentDate,
 
   /// <summary>
-  ///   Field Calculation.
+  ///   IField Calculation.
   /// </summary>
   Calculated
 }

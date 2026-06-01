@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   If.
@@ -12,12 +12,12 @@ public class DiagramChooseIf: ModelElement
   public string? Name { get; set; }
 
   /// <summary>
-  ///   Axis
+  ///   IAxis
   /// </summary>
-  public ListOf<AxisKind>? Axis { get; set; }
+  public ListOf<AxisKind>? IAxis { get; set; }
 
   /// <summary>
-  ///   Data Point Type
+  ///   Data IPoint Type
   /// </summary>
   public ListOf<ElementKind>? PointType { get; set; }
 
@@ -63,7 +63,7 @@ public class DiagramChooseIf: ModelElement
 
   public Algorithm? Algorithm { get; set; }
 
-  public Shape? Shape { get; set; }
+  public IShape? IShape { get; set; }
 
   public PresentationOf? PresentationOf { get; set; }
 

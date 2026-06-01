@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies whether the extrusion color is based on the extruded shape's fill (the front face of the extrusion)
@@ -6,12 +6,12 @@ namespace DocumentModel.Drawings;
 /// shape's fill.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoextrusioncolortype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoextrusioncolortype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum ExtrusionColorType
 {
   /// <summary>
-  /// Return value only; indicates a combination of the other states.
+  /// Return value Ionly; indicates a combination of the other states.
   /// </summary>
   TypeMixed = -2,
   /// <summary>
@@ -23,3 +23,4 @@ public enum ExtrusionColorType
   /// </summary>
   Custom = 2
 }
+

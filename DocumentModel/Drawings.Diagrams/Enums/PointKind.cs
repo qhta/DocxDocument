@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Point Type
+///   IPoint Type
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum PointKind
@@ -18,9 +18,9 @@ public enum PointKind
   Assistant,
 
   /// <summary>
-  ///   Document.
+  ///   IDocument.
   /// </summary>
-  Document,
+  IDocument,
 
   /// <summary>
   ///   Presentation.

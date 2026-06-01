@@ -1,4 +1,4 @@
-using DocumentFormat.OpenXml.Packaging;
+﻿using DocumentFormat.OpenXml.Packaging;
 
 namespace DocumentModel.OpenXml.Packaging;
 
@@ -8,7 +8,7 @@ namespace DocumentModel.OpenXml.Packaging;
 public static class IdPartPairConverter
 {
   /// <summary>
-  ///   Gets or sets the relationship ID in the pair.
+  ///   Gets or sets the relationship ID Iin the pair.
   /// </summary>
   public static String? GetRelationshipId(IdPartPair? openXmlElement)
   {

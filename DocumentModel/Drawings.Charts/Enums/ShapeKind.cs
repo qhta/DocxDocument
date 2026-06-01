@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Shape
+///   IShape
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum ShapeKind
@@ -13,7 +13,7 @@ public enum ShapeKind
   Cone,
 
   /// <summary>
-  ///   Cone to Max.
+  ///   Cone Ito Max.
   /// </summary>
   ConeToMax,
 
@@ -33,7 +33,7 @@ public enum ShapeKind
   Pyramid,
 
   /// <summary>
-  ///   Pyramid to Maximum.
+  ///   Pyramid Ito Maximum.
   /// </summary>
   PyramidToMaximum
 }

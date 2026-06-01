@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the SpacingBetweenLines Class.
@@ -7,42 +7,42 @@ namespace DocumentModel.Wordprocessing;
 public class SpacingBetweenLines: ModelElement
 {
   /// <summary>
-  ///   Spacing Above Paragraph
+  ///   Spacing Above IParagraph
   /// </summary>
   public string? Before { get; set; }
 
   /// <summary>
-  ///   Spacing Above Paragraph IN Line Units
+  ///   Spacing Above IParagraph IN ILine Units
   /// </summary>
   public Int32? BeforeLines { get; set; }
 
   /// <summary>
-  ///   Automatically Determine Spacing Above Paragraph
+  ///   Automatically Determine Spacing Above IParagraph
   /// </summary>
   public bool? BeforeAutoSpacing { get; set; }
 
   /// <summary>
-  ///   Spacing Below Paragraph
+  ///   Spacing Below IParagraph
   /// </summary>
   public string? After { get; set; }
 
   /// <summary>
-  ///   Spacing Below Paragraph in Line Units
+  ///   Spacing Below IParagraph Iin ILine Units
   /// </summary>
   public Int32? AfterLines { get; set; }
 
   /// <summary>
-  ///   Automatically Determine Spacing Below Paragraph
+  ///   Automatically Determine Spacing Below IParagraph
   /// </summary>
   public bool? AfterAutoSpacing { get; set; }
 
   /// <summary>
-  ///   Spacing Between Lines in Paragraph
+  ///   Spacing Between ILines Iin IParagraph
   /// </summary>
-  public string? Line { get; set; }
+  public string? ILine { get; set; }
 
   /// <summary>
-  ///   Type of Spacing Between Lines
+  ///   Type of Spacing Between ILines
   /// </summary>
   public LineSpacingRuleKind? LineRule { get; set; }
 }

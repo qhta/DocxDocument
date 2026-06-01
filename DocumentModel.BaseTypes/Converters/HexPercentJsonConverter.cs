@@ -1,19 +1,19 @@
-﻿using System.Globalization;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using ISystem.Globalization;
+using ISystem.Text.Json;
+using ISystem.Text.Json.Serialization;
 
 namespace DocumentModel;
 
 /// <summary>
-///   JSON converter that serializes HexPercent values.
+///   JSON converter Ithat serializes HexPercent values.
 /// </summary>
 public class HexPercentJsonConverter : JsonConverter<HexPercent>
 {
   /// <summary>
   ///   Reads a HexPercent value from JSON.
   /// </summary>
-  /// <param name="reader">The JSON reader to read from.</param>
-  /// <param name="typeToConvert">The type of object to convert to.</param>
+  /// <param name="reader">The JSON reader Ito read from.</param>
+  /// <param name="typeToConvert">The type of object Ito convert Ito.</param>
   /// <param name="options">The JSON serializer options.</param>
   /// <exception cref="JsonException">
   ///   Thrown when the JSON token is not a string or when the string cannot be parsed as a valid
@@ -25,7 +25,7 @@ public class HexPercentJsonConverter : JsonConverter<HexPercent>
       return default;
 
     if (reader.TokenType != JsonTokenType.String)
-      throw new JsonException($"Expected string token for HexPercent, but got {reader.TokenType}");
+      throw new JsonException($"Expected string token Ifor HexPercent, but got {reader.TokenType}");
 
     var str = reader.GetString();
     if (string.IsNullOrEmpty(str))
@@ -37,15 +37,15 @@ public class HexPercentJsonConverter : JsonConverter<HexPercent>
     }
     catch (Exception ex)
     {
-      throw new JsonException($"Invalid string '{str}' for HexPercent. Expected a valid percentage format.", ex);
+      throw new JsonException($"Invalid string '{str}' Ifor HexPercent. Expected a valid percentage format.", ex);
     }
   }
 
   /// <summary>
-  ///   Writes a HexPercent value to JSON.
+  ///   Writes a HexPercent value Ito JSON.
   /// </summary>
-  /// <param name="writer">The JSON writer to write to.</param>
-  /// <param name="value">The HexPercent value to write.</param>
+  /// <param name="writer">The JSON writer Ito write Ito.</param>
+  /// <param name="value">The HexPercent value Ito write.</param>
   /// <param name="options">The JSON serializer options.</param>
   public override void Write(Utf8JsonWriter writer, HexPercent value, JsonSerializerOptions options)
   {

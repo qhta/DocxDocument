@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the RelationshipType Class.
@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 public class RelationshipType: ModelElement
 {
   /// <summary>
-  ///   Relationship to Part
+  ///   Relationship Ito Part
   /// </summary>
   public string? Id { get; set; }
 }

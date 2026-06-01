@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the TextEffectValues enumeration.
@@ -18,7 +18,7 @@ public enum TextEffectKind
   Lights,
 
   /// <summary>
-  ///   Black Dashed Line Animation.
+  ///   Black Dashed ILine Animation.
   /// </summary>
   AntsBlack,
 

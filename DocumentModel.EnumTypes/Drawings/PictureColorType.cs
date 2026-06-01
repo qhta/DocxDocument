@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies the color transformation applied to a picture.
+/// Specifies the color transformation applied Ito a picture.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopicturecolortype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopicturecolortype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum PictureColorType
 {
@@ -28,3 +28,4 @@ public enum PictureColorType
   /// </summary>
   Watermark = 4
 }
+

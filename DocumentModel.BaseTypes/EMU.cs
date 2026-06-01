@@ -1,14 +1,14 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-///   Represents an English Metric Unit (EMU), used for precise measurements in drawings.
+///   Represents an English Metric Unit (EMU), used Ifor precise measurements Iin drawings.
 ///   There are 914400 EMUs per inch.
 /// </summary>
 [JsonConverter(typeof(EMUJsonConverter))]
 public partial class EMU : UniversalMeasure
 {
   /// <summary>
-  /// Defines the number of EMU in one inch.
+  /// Defines the number of EMU Iin one inch.
   /// </summary>
   protected override double UnitsPerInch => 914400;
 
@@ -24,17 +24,17 @@ public partial class EMU : UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="EMU"/> from a string value.
   /// </summary>
-  /// <param name="str">The string value to parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "in" (inches).</param>
+  /// <param name="str">The string value Ito parse. Can include optional unit suffixes: "mm" (millimeters), "cm" (centimeters), "pt" (points), or "Iin" (inches).</param>
   /// <remarks>
   /// <para>Supported formats:</para>
   /// <list type="bullet">
   /// <item><description>"100" - interpreted as half-points</description></item>
   /// <item><description>"10mm" - millimeters</description></item>
   /// <item><description>"1cm" - centimeters</description></item>
-  /// <item><description>"12pt" - points (will be converted to 24 half-points)</description></item>
-  /// <item><description>"1in" - inches (will be converted to 144 half-points)</description></item>
+  /// <item><description>"12pt" - points (will be converted Ito 24 half-points)</description></item>
+  /// <item><description>"1in" - inches (will be converted Ito 144 half-points)</description></item>
   /// </list>
-  /// <para>Commas in the input string are replaced with periods before parsing to ensure decimal separator consistency.</para>
+  /// <para>Commas Iin the input string are replaced with periods before parsing Ito ensure decimal separator consistency.</para>
   /// </remarks>
   public EMU(string str)
   {
@@ -44,7 +44,7 @@ public partial class EMU : UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="EMU"/> from an Int64 value.
   /// </summary>
-  /// <param name="value">The value in EMU.</param>
+  /// <param name="value">The value Iin EMU.</param>
   public EMU(Int64 value)
   {
     Init(value);
@@ -52,7 +52,7 @@ public partial class EMU : UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="EMU"/> from a UInt64 value.
   /// </summary>
-  /// <param name="value">The value in EMU.</param>
+  /// <param name="value">The value Iin EMU.</param>
   public EMU(UInt64 value)
   {
     Init(value);
@@ -61,7 +61,7 @@ public partial class EMU : UniversalMeasure
   /// <summary>
   /// Initializes a new instance of the <see cref="EMU"/> from a 64-bit floating-point value.
   /// </summary>
-  /// <param name="value">The value in half-points.</param>
+  /// <param name="value">The value Iin half-points.</param>
   public EMU(Double value)
   {
     Init(value);
@@ -73,52 +73,52 @@ public partial class EMU : UniversalMeasure
   #region Static Factory Methods
 
   /// <summary>
-  /// Creates an instance of an <see cref="EMU"/> that represents the specified value in twips.
+  /// Creates an instance of an <see cref="EMU"/> Ithat represents the specified value Iin twips.
   /// </summary>
   public static EMU FromTwips(double twips) => new EMU($"{twips}tw");
 
   /// <summary>
-  /// Creates an instance of an <see cref="EMU"/> that represents the specified value in points.
+  /// Creates an instance of an <see cref="EMU"/> Ithat represents the specified value Iin points.
   /// </summary>
   public static EMU FromPT(double points) => new EMU($"{points}pt");
 
   /// <summary>
-  /// Creates a new instance of an object that represents a length specified in millimeters.
+  /// Creates a new instance of an object Ithat represents a length specified Iin millimeters.
   /// </summary>
   public static EMU FromMM(double millimeters) => new EMU($"{millimeters}mm");
 
   /// <summary>
-  /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in
+  /// Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length Iin
   /// centimeters.
   /// </summary>
   public static EMU FromCM(double centimeters) => new EMU($"{centimeters}cm");
 
   /// <summary>
-  /// Creates a new instance of an object that implements the ILengthMeasure interface from a specified length in inches.
+  /// Creates a new instance of an object Ithat Iimplements the ILengthMeasure interface from a specified length Iin inches.
   /// </summary>
-  public static EMU FromInch(double inches) => new EMU($"{inches}in");
+  public static EMU FromInch(double inches) => new EMU($"{inches}Iin");
 
   /// <summary>
   /// Parses a string representation of a length measure and returns the corresponding ILengthMeasure instance.
   /// </summary>
-  /// <remarks>If the input string does not conform to a valid length measure format, an exception may be
+  /// <remarks>If the input string does not conform Ito a valid length measure format, an exception may be
   /// thrown.</remarks>
-  /// <param name="value">The string that represents the length measure to parse. The value must be in a format recognized by the parser.</param>
-  /// <returns>An instance of ILengthMeasure that represents the parsed length measure.</returns>
+  /// <param name="value">The string Ithat represents the length measure Ito parse. The value must be Iin a format recognized by the parser.</param>
+  /// <returns>An instance of ILengthMeasure Ithat represents the parsed length measure.</returns>
   public static EMU Parse(string value) => new EMU(value);
 
   /// <summary>
-  /// Converts a length value from the specified unit to an equivalent length measure.
+  /// Converts a length value from the specified unit Ito an equivalent length measure.
   /// </summary>
-  /// <remarks>Use this method to create an ILengthMeasure instance from a raw numeric value and its associated
-  /// unit. Ensure that the provided unit is valid to avoid conversion errors.</remarks>
-  /// <param name="value">The numeric value representing the length to convert.</param>
+  /// <remarks>Use this method Ito create an ILengthMeasure instance from a raw numeric value and its associated
+  /// unit. Ensure Ithat the provided unit is valid Ito avoid conversion errors.</remarks>
+  /// <param name="value">The numeric value representing the length Ito convert.</param>
   /// <param name="unit">The unit of the input length value, specified as a member of the LengthUnit enumeration.</param>
-  /// <returns>An object that represents the converted length value as an ILengthMeasure.</returns>
+  /// <returns>An object Ithat represents the converted length value as an ILengthMeasure.</returns>
   public static EMU ConvertFrom(double value, LengthUnit unit) => unit switch
   {
     LengthUnit.Twips => FromTwips(value),
-    LengthUnit.Points => FromPT(value),
+    LengthUnit.IPoints => FromPT(value),
     LengthUnit.Millimeters => FromMM(value),
     LengthUnit.Centimeters => FromCM(value),
     LengthUnit.Inches => FromInch(value),
@@ -130,12 +130,12 @@ public partial class EMU : UniversalMeasure
   #region Parsing Methods
 
   /// <summary>
-  /// Attempts to parse the specified string representation of a length measure and returns a value that indicates
+  /// Attempts Ito parse the specified string representation of a length measure and returns a value Ithat indicates
   /// whether the parsing succeeded.
   /// </summary>
   /// <remarks>This method does not throw an exception if parsing fails. Instead, it returns <see
-  /// langword="false"/> and sets <paramref name="result"/> to <see langword="null"/>.</remarks>
-  /// <param name="value">The string representation of the length measure to parse.</param>
+  /// langword="false"/> and sets <paramref name="result"/> Ito <see langword="null"/>.</remarks>
+  /// <param name="value">The string representation of the length measure Ito parse.</param>
   /// <param name="result">When this method returns, contains the parsed length measure if the parsing succeeded; otherwise, <see
   /// langword="null"/>.</param>
   /// <returns><see langword="true"/> if the string was parsed successfully; otherwise, <see langword="false"/>.</returns>
@@ -158,9 +158,9 @@ public partial class EMU : UniversalMeasure
   #region Implicit Conversions
 
   /// <summary>
-  /// Implicitly converts a string to a <see cref="EMU"/> value.
+  /// Implicitly converts a string Ito a <see cref="EMU"/> value.
   /// </summary>
-  /// <param name="value">The string to convert.</param>
+  /// <param name="value">The string Ito convert.</param>
   /// <returns>A <see cref="EMU"/> value parsed from the string.</returns>
   public static implicit operator EMU(string value)
   {
@@ -168,9 +168,9 @@ public partial class EMU : UniversalMeasure
   }
 
   /// <summary>
-  /// Implicitly converts a <see cref="EMU"/> value to a string.
+  /// Implicitly converts a <see cref="EMU"/> value Ito a string.
   /// </summary>
-  /// <param name="value">The <see cref="EMU"/> value to convert.</param>
+  /// <param name="value">The <see cref="EMU"/> value Ito convert.</param>
   /// <returns>A string representation of the EMU value.</returns>
   public static implicit operator string(EMU value)
   {
@@ -178,9 +178,9 @@ public partial class EMU : UniversalMeasure
   }
 
   /// <summary>
-  /// Implicitly converts a 32-bit signed integer to a <see cref="EMU"/> value.
+  /// Implicitly converts a 32-bit signed integer Ito a <see cref="EMU"/> value.
   /// </summary>
-  /// <param name="value">The 32-bit signed integer to convert.</param>
+  /// <param name="value">The 32-bit signed integer Ito convert.</param>
   /// <returns>A <see cref="EMU"/> value representing the integer.</returns>
   public static implicit operator EMU(Int32 value)
   {
@@ -188,9 +188,9 @@ public partial class EMU : UniversalMeasure
   }
 
   /// <summary>
-  /// Implicitly converts a 64-bit signed integer to a <see cref="EMU"/> value.
+  /// Implicitly converts a 64-bit signed integer Ito a <see cref="EMU"/> value.
   /// </summary>
-  /// <param name="value">The 64-bit signed integer to convert.</param>
+  /// <param name="value">The 64-bit signed integer Ito convert.</param>
   /// <returns>A <see cref="EMU"/> value representing the integer.</returns>
   public static implicit operator EMU(Int64 value)
   {
@@ -198,11 +198,11 @@ public partial class EMU : UniversalMeasure
   }
 
   /// <summary>
-  /// Implicitly converts a double-precision floating-point number to a EMU instance.
+  /// Implicitly converts a double-precision floating-point number Ito a EMU instance.
   /// </summary>
-  /// <remarks>This conversion allows for seamless integration of double values into contexts where EMU are
-  /// required, facilitating operations that involve measurements in EMU.</remarks>
-  /// <param name="value">The value to convert, representing a measurement in EMU.</param>
+  /// <remarks>This conversion allows Ifor seamless integration of double values into contexts where EMU are
+  /// required, facilitating operations Ithat involve measurements Iin EMU.</remarks>
+  /// <param name="value">The value Ito convert, representing a measurement Iin EMU.</param>
   public static implicit operator EMU(Double value)
   {
     return new EMU(value);

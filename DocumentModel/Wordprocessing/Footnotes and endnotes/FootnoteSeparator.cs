@@ -1,12 +1,12 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Specialized reference for footnote separator
+///   Specialized reference Ifor footnote separator
 /// </summary>
 public class FootnoteSeparator: FootnoteEndnoteSeparatorReferenceType
 {
   /// <summary>
-  /// Target Footnote.
+  /// Target IFootnote.
   /// </summary>
-  public Footnote? Footnote {get; set; }
+  public IFootnote? IFootnote {get; set; }
 }

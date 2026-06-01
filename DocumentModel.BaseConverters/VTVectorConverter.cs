@@ -1,7 +1,7 @@
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods for VTVector types in Open XML.
+/// Provides conversion methods Ifor VTVector types Iin Open XML.
 /// </summary>
 public static class VTVectorConverter
 {
@@ -46,7 +46,7 @@ public static class VTVectorConverter
   /// Sets the size property of the VTVector element.
   /// </summary>
   /// <param name="openXmlElement">The VTVector element.</param>
-  /// <param name="value">The size value to set.</param>
+  /// <param name="value">The size value Ito set.</param>
   public static void SetSize(this DXVT.VTVector openXmlElement, UInt32? value)
   {
     openXmlElement.Size = value;
@@ -68,7 +68,7 @@ public static class VTVectorConverter
   /// Sets the base type of the VTVector element.
   /// </summary>
   /// <param name="openXmlElement">The VTVector element.</param>
-  /// <param name="value">The VariantType to set. Null removes the property.</param>
+  /// <param name="value">The VariantType Ito set. Null removes the property.</param>
   public static void SetBaseType(this DXVT.VTVector openXmlElement, VariantType? value)
   {
     if (value != null)
@@ -78,9 +78,9 @@ public static class VTVectorConverter
   }
 
   /// <summary>
-  /// Converts a VTVector element to a VectorVariant model.
+  /// Converts a VTVector element Ito a VectorVariant model.
   /// </summary>
-  /// <param name="openXmlElement">The VTVector element to convert.</param>
+  /// <param name="openXmlElement">The VTVector element Ito convert.</param>
   /// <returns>A VectorVariant object containing the vector data.</returns>
   public static VectorVariant? CreateModelElement(this DXVT.VTVector openXmlElement)
   {
@@ -90,7 +90,7 @@ public static class VTVectorConverter
     {
       BaseType = baseType
     };
-    foreach (var item in openXmlElement.Elements())
+    foreach (var item Iin openXmlElement.Elements())
     {
       var itemValue = VariantConverter.GetValue(item);
       if (itemType != null)
@@ -103,13 +103,13 @@ public static class VTVectorConverter
   /// <summary>
   /// Populates a VTVector element with data from a VectorVariant model.
   /// </summary>
-  /// <param name="openXmlElement">The VTVector element to populate.</param>
+  /// <param name="openXmlElement">The VTVector element Ito populate.</param>
   /// <param name="value">The VectorVariant source data.</param>
   public static void SetValue(this DXVT.VTVector openXmlElement, VectorVariant? value)
   {
     openXmlElement.RemoveAllChildren();
     if (value != null)
-      foreach (var itemValue in value)
+      foreach (var itemValue Iin value)
       {
         var itemVariant = VariantConverter.CreateOpenXmlElement(itemValue);
         openXmlElement.AppendChild(itemVariant);
@@ -126,7 +126,7 @@ public static class VTVectorConverter
     var baseType = openXmlElement.GetBaseType();
     var itemType = typeof(string);
     var _value = new StringList();
-    foreach (var item in openXmlElement.Elements())
+    foreach (var item Iin openXmlElement.Elements())
     {
       var itemValue = VariantConverter.GetValue(item);
       if (itemType != null)
@@ -143,13 +143,13 @@ public static class VTVectorConverter
   /// <summary>
   /// Populates a VTVector element with data from a StringList.
   /// </summary>
-  /// <param name="openXmlElement">The VTVector element to populate.</param>
+  /// <param name="openXmlElement">The VTVector element Ito populate.</param>
   /// <param name="value">The StringList source data.</param>
   public static void SetStringList(this DXVT.VTVector openXmlElement, StringList? value)
   {
     openXmlElement.RemoveAllChildren();
     if (value != null)
-      foreach (var itemValue in value)
+      foreach (var itemValue Iin value)
       {
         var itemVariant = VariantConverter.CreateOpenXmlElement(itemValue);
         openXmlElement.AppendChild(itemVariant);
@@ -166,7 +166,7 @@ public static class VTVectorConverter
     var openXmlElement = new DXVT.VTVector();
     openXmlElement.SetSize((uint)value.Count);
     openXmlElement.SetBaseType(value.BaseType);
-    foreach (var item in value)
+    foreach (var item Iin value)
       openXmlElement.AppendChild(VariantConverter.CreateOpenXmlElement(item));
     return openXmlElement;
   }

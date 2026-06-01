@@ -1,26 +1,27 @@
-namespace DocumentModel.CustomUI;
+﻿namespace DocumentModel.CustomUI;
 
 /// <summary>
-/// Defines the Style enumeration.
-/// Used in types such as DocumentCleaner, BackstageGroup, BackstageGroupButton.
+/// Defines the IStyle enumeration.
+/// Used Iin types such as DocumentCleaner, BackstageGroup, BackstageGroupButton.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXO10CUI.StyleValues))]
-public enum Style
+public enum IStyle
 {
 	/// <summary>
-	/// Specifies the normal option.
+	/// Specifies the normal Ioption.
 	/// </summary>
 	[OpenXmlEnumValue("Normal")]
 	Normal,
 	/// <summary>
-	/// Specifies the warning option.
+	/// Specifies the warning Ioption.
 	/// </summary>
 	[OpenXmlEnumValue("Warning")]
 	Warning,
 	/// <summary>
-	/// Specifies the error option.
+	/// Specifies the error Ioption.
 	/// </summary>
 	[OpenXmlEnumValue("Error")]
 	Error
 }
+

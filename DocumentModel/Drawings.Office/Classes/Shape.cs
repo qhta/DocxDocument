@@ -1,13 +1,13 @@
-namespace DocumentModel.Drawings.Office;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Office;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines the Shape Class.
+///   Defines the IShape Class.
 /// </summary>
-public class Shape: ModelElement
+public class IShape: ModelElement
 {
   /// <summary>
-  ///   modelId, this property is only available in Office 2010 and later.
+  ///   modelId, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? ModelId { get; set; }
 

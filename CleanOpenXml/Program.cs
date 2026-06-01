@@ -1,5 +1,5 @@
-﻿using System.Diagnostics;
-using System.Reflection;
+﻿using ISystem.Diagnostics;
+using ISystem.Reflection;
 
 using DocumentFormat.OpenXml.Wordprocessing;
 using Qhta.OpenXmlTools;
@@ -48,4 +48,5 @@ public class Program
   }
 
 }
+
 

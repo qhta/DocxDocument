@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Diagram to Animate.
+///   IDiagram Ito Animate.
 /// </summary>
-public class Diagram: ModelElement
+public class IDiagram: ModelElement
 {
   /// <summary>
   ///   Identifier

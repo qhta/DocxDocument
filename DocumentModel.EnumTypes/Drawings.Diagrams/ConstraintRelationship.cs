@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
+﻿namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Defines the ConstraintRelationship enumeration.
-/// Used in types such as Constraint, Rule.
+/// Used Iin types such as Constraint, Rule.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.ConstraintRelationshipValues))]
@@ -24,3 +24,4 @@ public enum ConstraintRelationship
   [OpenXmlEnumValue("Descendant")]
   Descendant
 }
+

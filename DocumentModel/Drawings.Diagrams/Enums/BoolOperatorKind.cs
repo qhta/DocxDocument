@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Boolean Constraint
@@ -18,12 +18,12 @@ public enum BoolOperatorKind
   Equal,
 
   /// <summary>
-  ///   Greater Than or Equal to.
+  ///   Greater Than or Equal Ito.
   /// </summary>
   GreaterThanOrEqualTo,
 
   /// <summary>
-  ///   Less Than or Equal to.
+  ///   Less Than or Equal Ito.
   /// </summary>
   LessThanOrEqualTo
 }

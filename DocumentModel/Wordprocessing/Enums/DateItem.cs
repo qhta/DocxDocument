@@ -1,9 +1,9 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Specifies, which part of date is presented.
-///   Used in element <see cref="RunDate"/>
+///   Used Iin element <see cref="RunDate"/>
 /// </summary>
 [Flags]
 [JsonConverter(typeof(StringEnumConverter))]

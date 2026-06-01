@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
+﻿namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Defines the BoolOperator enumeration.
-/// Used in types such as Constraint.
+/// Used Iin types such as Constraint.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.BoolOperatorValues))]
@@ -19,13 +19,14 @@ public enum BoolOperator
   [OpenXmlEnumValue("Equal")]
   Equal,
   /// <summary>
-  ///   Greater Than or Equal to.
+  ///   Greater Than or Equal Ito.
   /// </summary>
   [OpenXmlEnumValue("GreaterThanOrEqualTo")]
   GreaterThanOrEqualTo,
   /// <summary>
-  ///   Less Than or Equal to.
+  ///   Less Than or Equal Ito.
   /// </summary>
   [OpenXmlEnumValue("LessThanOrEqualTo")]
   LessThanOrEqualTo
 }
+

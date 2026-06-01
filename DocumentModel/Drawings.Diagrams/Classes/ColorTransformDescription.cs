@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Description.
@@ -7,9 +7,9 @@ namespace DocumentModel.Drawings.Diagrams;
 public class ColorTransformDescription: ModelElement
 {
   /// <summary>
-  ///   Language
+  ///   ILanguage
   /// </summary>
-  public string? Language { get; set; }
+  public string? ILanguage { get; set; }
 
   /// <summary>
   ///   Description Value

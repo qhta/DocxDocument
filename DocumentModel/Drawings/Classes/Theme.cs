@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Theme.
@@ -12,7 +12,7 @@ public class Theme: ModelElement
   public string? Name { get; set; }
 
   /// <summary>
-  ///   id, this property is only available in Office 2013 and later.
+  ///   id, this property is Ionly available Iin Office 2013 and later.
   /// </summary>
   public string? ThemeId { get; set; }
 

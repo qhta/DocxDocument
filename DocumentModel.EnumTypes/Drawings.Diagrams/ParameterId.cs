@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
+﻿namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Defines the ParameterId enumeration.
-/// Used in types such as Parameter.
+/// Used Iin types such as Parameter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.ParameterIdValues))]
@@ -49,7 +49,7 @@ public enum ParameterId
   [OpenXmlEnumValue("StartElement")]
   StartElement,
   /// <summary>
-  ///   Bend Point.
+  ///   Bend IPoint.
   /// </summary>
   [OpenXmlEnumValue("BendPoint")]
   BendPoint,
@@ -59,12 +59,12 @@ public enum ParameterId
   [OpenXmlEnumValue("ConnectionRoute")]
   ConnectionRoute,
   /// <summary>
-  ///   Beginning Arrowhead Style.
+  ///   Beginning Arrowhead IStyle.
   /// </summary>
   [OpenXmlEnumValue("BeginningArrowheadStyle")]
   BeginningArrowheadStyle,
   /// <summary>
-  ///   End Style.
+  ///   End IStyle.
   /// </summary>
   [OpenXmlEnumValue("EndStyle")]
   EndStyle,
@@ -79,7 +79,7 @@ public enum ParameterId
   [OpenXmlEnumValue("RotationPath")]
   RotationPath,
   /// <summary>
-  ///   Center Shape Mapping.
+  ///   Center IShape Mapping.
   /// </summary>
   [OpenXmlEnumValue("CenterShapeMapping")]
   CenterShapeMapping,
@@ -139,22 +139,22 @@ public enum ParameterId
   [OpenXmlEnumValue("TextAnchorVerticalWithChildren")]
   TextAnchorVerticalWithChildren,
   /// <summary>
-  ///   Parent Text Left-to-Right Alignment.
+  ///   Parent Text Left-Ito-Right Alignment.
   /// </summary>
   [OpenXmlEnumValue("ParentTextLeftToRightAlignment")]
   ParentTextLeftToRightAlignment,
   /// <summary>
-  ///   Parent Text Right-to-Left Alignment.
+  ///   Parent Text Right-Ito-Left Alignment.
   /// </summary>
   [OpenXmlEnumValue("ParentTextRightToLeftAlignment")]
   ParentTextRightToLeftAlignment,
   /// <summary>
-  ///   Shape Text Left-to-Right Alignment.
+  ///   IShape Text Left-Ito-Right Alignment.
   /// </summary>
   [OpenXmlEnumValue("ShapeTextLeftToRightAlignment")]
   ShapeTextLeftToRightAlignment,
   /// <summary>
-  ///   Shape Text Right-to-Left Alignment.
+  ///   IShape Text Right-Ito-Left Alignment.
   /// </summary>
   [OpenXmlEnumValue("ShapeTextRightToLeftAlignment")]
   ShapeTextRightToLeftAlignment,
@@ -219,22 +219,22 @@ public enum ParameterId
   [OpenXmlEnumValue("AspectRatio")]
   AspectRatio,
   /// <summary>
-  ///   Line Spacing Parent.
+  ///   ILine Spacing Parent.
   /// </summary>
   [OpenXmlEnumValue("LineSpacingParent")]
   LineSpacingParent,
   /// <summary>
-  ///   Line Spacing After Parent Paragraph.
+  ///   ILine Spacing After Parent IParagraph.
   /// </summary>
   [OpenXmlEnumValue("LineSpacingAfterParentParagraph")]
   LineSpacingAfterParentParagraph,
   /// <summary>
-  ///   Line Spacing Children.
+  ///   ILine Spacing Children.
   /// </summary>
   [OpenXmlEnumValue("LineSpacingChildren")]
   LineSpacingChildren,
   /// <summary>
-  ///   Line Spacing After Children Paragraph.
+  ///   ILine Spacing After Children IParagraph.
   /// </summary>
   [OpenXmlEnumValue("LineSpacingAfterChildrenParagraph")]
   LineSpacingAfterChildrenParagraph,
@@ -264,7 +264,7 @@ public enum ParameterId
   [OpenXmlEnumValue("PyramidAccentTextNode")]
   PyramidAccentTextNode,
   /// <summary>
-  ///   Source Node.
+  ///   ISource Node.
   /// </summary>
   [OpenXmlEnumValue("SourceNode")]
   SourceNode,
@@ -274,13 +274,14 @@ public enum ParameterId
   [OpenXmlEnumValue("DestinationNode")]
   DestinationNode,
   /// <summary>
-  ///   Beginning Points.
+  ///   Beginning IPoints.
   /// </summary>
   [OpenXmlEnumValue("BeginningPoints")]
   BeginningPoints,
   /// <summary>
-  ///   End Points.
+  ///   End IPoints.
   /// </summary>
   [OpenXmlEnumValue("EndPoints")]
   EndPoints
 }
+

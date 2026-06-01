@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.ChartDrawing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the Picture Class.
@@ -7,12 +7,12 @@ namespace DocumentModel.Drawings.ChartDrawing;
 public class Picture: ModelElement
 {
   /// <summary>
-  ///   Reference to Custom Function
+  ///   Reference Ito Custom Function
   /// </summary>
   public string? Macro { get; set; }
 
   /// <summary>
-  ///   Publish to Server
+  ///   Publish Ito Server
   /// </summary>
   public bool? Published { get; set; }
 
@@ -32,7 +32,7 @@ public class Picture: ModelElement
   public ShapeProperties? ShapeProperties { get; set; }
 
   /// <summary>
-  ///   Style.
+  ///   IStyle.
   /// </summary>
-  public Style? Style { get; set; }
+  public IStyle? IStyle { get; set; }
 }

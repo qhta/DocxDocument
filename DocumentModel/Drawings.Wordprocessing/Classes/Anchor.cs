@@ -1,10 +1,10 @@
-using DocumentModel.Wordprocessing.Drawings;
+﻿using DocumentModel.Wordprocessing.Drawings;
 
 namespace DocumentModel.Drawings.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Anchor for Floating DrawingML Object.
+///   Anchor Ifor Floating DrawingML Object.
 /// </summary>
 public class Anchor: ModelElement
 {
@@ -29,7 +29,7 @@ public class Anchor: ModelElement
   public UInt32? DistanceFromRight { get; set; }
 
   /// <summary>
-  ///   Page Positioning
+  ///   IPage Positioning
   /// </summary>
   public bool? SimplePos { get; set; }
 
@@ -39,7 +39,7 @@ public class Anchor: ModelElement
   public UInt32? RelativeHeight { get; set; }
 
   /// <summary>
-  ///   Display Behind Document Text
+  ///   Display Behind IDocument Text
   /// </summary>
   public bool? BehindDoc { get; set; }
 
@@ -49,7 +49,7 @@ public class Anchor: ModelElement
   public bool? Locked { get; set; }
 
   /// <summary>
-  ///   Layout In Table Cell
+  ///   Layout In ITable ICell
   /// </summary>
   public bool? LayoutInCell { get; set; }
 
@@ -59,17 +59,17 @@ public class Anchor: ModelElement
   public bool? Hidden { get; set; }
 
   /// <summary>
-  ///   Allow Objects to Overlap
+  ///   Allow Objects Ito Overlap
   /// </summary>
   public bool? AllowOverlap { get; set; }
 
   /// <summary>
-  ///   editId, this property is only available in Office 2010 and later.
+  ///   editId, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public HexInt? EditId { get; set; }
 
   /// <summary>
-  ///   anchorId, this property is only available in Office 2010 and later.
+  ///   anchorId, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public HexInt? AnchorId { get; set; }
 

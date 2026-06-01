@@ -1,8 +1,8 @@
-namespace DocumentModel.CustomUI;
+﻿namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Defines the LayoutChildren enumeration.
-/// Used in types such as LayoutContainer, LayoutContainerConverter.
+/// Used Iin types such as LayoutContainer, LayoutContainerConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXO10CUI.LayoutChildrenValues))]
@@ -19,3 +19,4 @@ public enum LayoutChildren
 	[OpenXmlEnumValue("Vertical")]
 	Vertical
 }
+

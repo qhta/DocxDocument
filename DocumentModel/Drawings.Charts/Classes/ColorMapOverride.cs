@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the ColorMapOverride Class.
@@ -57,12 +57,12 @@ public class ColorMapOverride: ModelElement
   public ColorSchemeIndexKind? Accent6 { get; set; }
 
   /// <summary>
-  ///   Hyperlink
+  ///   IHyperlink
   /// </summary>
-  public ColorSchemeIndexKind? Hyperlink { get; set; }
+  public ColorSchemeIndexKind? IHyperlink { get; set; }
 
   /// <summary>
-  ///   Followed Hyperlink
+  ///   Followed IHyperlink
   /// </summary>
   public ColorSchemeIndexKind? FollowedHyperlink { get; set; }
 

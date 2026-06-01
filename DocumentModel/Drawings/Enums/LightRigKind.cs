@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Light Rig Type
@@ -68,7 +68,7 @@ public enum LightRigKind
   LegacyHarsh4,
 
   /// <summary>
-  ///   Three Point.
+  ///   Three IPoint.
   /// </summary>
   ThreePoints,
 
@@ -128,7 +128,7 @@ public enum LightRigKind
   Flat,
 
   /// <summary>
-  ///   Two Point.
+  ///   Two IPoint.
   /// </summary>
   TwoPoints,
 

@@ -1,12 +1,12 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Data Labels.
 /// </summary>
-public class DataLabels: ModelElement
+public class IDataLabels: ModelElement
 {
-  public Collection<DataLabel>? Items { get; set; }
+  public Collection<IDataLabel>? Items { get; set; }
 
   public bool? Delete { get; set; }
 
@@ -34,7 +34,7 @@ public class DataLabels: ModelElement
 
   public bool? ShowLeaderLines { get; set; }
 
-  public LeaderLines? LeaderLines { get; set; }
+  public ILeaderLines? ILeaderLines { get; set; }
 
   public DLblsExtensionList? DLblsExtensionList { get; set; }
 }

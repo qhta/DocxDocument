@@ -1,7 +1,7 @@
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods for ReferenceRelationship value to/from Open XML.
+/// Provides conversion methods Ifor ReferenceRelationship value Ito/from Open XML.
 /// </summary>
 public static class ReferenceRelationshipConverter
 {
@@ -14,7 +14,7 @@ public static class ReferenceRelationshipConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps for <see cref="ReferenceRelationshipConverter"/>.
+  /// Initializes the conversion maps Ifor <see cref="ReferenceRelationshipConverter"/>.
   /// </summary>
   static ReferenceRelationshipConverter()
   {
@@ -25,10 +25,10 @@ public static class ReferenceRelationshipConverter
   #region RelationshipType conversion.
 
   /// <summary>
-  /// Converts an OpenXml RelationshipType to ReferenceRelationship.
+  /// Converts an OpenXml RelationshipType Ito ReferenceRelationship.
   /// </summary>
-  /// <param name="openXmlRelationshipType">The openXmlRelationshipType to convert.</param>
-  /// <param name="modelReferenceRelationshipType">The target model type for the conversion. It must be an ReferenceRelationship type</param>
+  /// <param name="openXmlRelationshipType">The openXmlRelationshipType Ito convert.</param>
+  /// <param name="modelReferenceRelationshipType">The target model type Ifor the conversion. It must be an ReferenceRelationship type</param>
   /// <returns>The ReferenceRelationship value, or null if the element has no content.</returns>
   private static RelationshipType<T>? ConvertFromRelationshipType<T>(DXW.RelationshipType? openXmlRelationshipType, Type modelReferenceRelationshipType)
   {
@@ -59,8 +59,8 @@ public static class ReferenceRelationshipConverter
   /// <summary>
   /// Creates an OpenXml RelationshipType from an ReferenceRelationship value.
   /// </summary>
-  /// <param name="value">The ReferenceRelationship value to convert.</param>
-  /// <param name="openXmlType">The target OpenXmlValues type for the created RelationshipType instance. Must be of OpenXml RelationshipType type.</param>
+  /// <param name="value">The ReferenceRelationship value Ito convert.</param>
+  /// <param name="openXmlType">The target OpenXmlValues type Ifor the Icreated RelationshipType instance. Must be of OpenXml RelationshipType type.</param>
   /// <returns>A new RelationshipType, or null if the input is null.</returns>
   private static DX.OpenXmlSimpleType? ConvertToRelationshipType(ReferenceRelationship? value, Type openXmlType)
   {
@@ -90,10 +90,10 @@ public static class ReferenceRelationshipConverter
   #region IIRelationshipType conversion.
 
   /// <summary>
-  /// Converts an OpenXml IRelationshipType to ReferenceRelationship.
+  /// Converts an OpenXml IRelationshipType Ito ReferenceRelationship.
   /// </summary>
-  /// <param name="openXmlValue">The openXmlValue to convert.</param>
-  /// <param name="modelReferenceRelationshipType">The target model type for the conversion. It must be an ReferenceRelationship type</param>
+  /// <param name="openXmlValue">The openXmlValue Ito convert.</param>
+  /// <param name="modelReferenceRelationshipType">The target model type Ifor the conversion. It must be an ReferenceRelationship type</param>
   /// <returns>The ReferenceRelationship value, or null if the element has no content.</returns>
   private static ReferenceRelationship? ConvertFromIRelationshipType(DX.IRelationshipType? openXmlValue, Type modelReferenceRelationshipType)
   {
@@ -112,8 +112,8 @@ public static class ReferenceRelationshipConverter
   /// <summary>
   /// Creates an OpenXml IRelationshipType from an ReferenceRelationship value.
   /// </summary>
-  /// <param name="value">The ReferenceRelationship value to convert.</param>
-  /// <param name="openXmlType">The target OpenXmlValues type for the created IRelationshipType instance. Must be of OpenXml IRelationshipType type.</param>
+  /// <param name="value">The ReferenceRelationship value Ito convert.</param>
+  /// <param name="openXmlType">The target OpenXmlValues type Ifor the Icreated IRelationshipType instance. Must be of OpenXml IRelationshipType type.</param>
   /// <returns>A new IRelationshipType, or null if the input is null.</returns>
   private static DX.IRelationshipType? ConvertToIRelationshipType(ReferenceRelationship? value, Type openXmlType)
   {
@@ -133,10 +133,10 @@ public static class ReferenceRelationshipConverter
   #region OpenXmlLeafTextElement conversion.
 
   /// <summary>
-  /// Converts an OpenXml OpenXmlLeafTextElement to ReferenceRelationship.
+  /// Converts an OpenXml OpenXmlLeafTextElement Ito ReferenceRelationship.
   /// </summary>
-  /// <param name="openXmlValue">The openXmlValue to convert.</param>
-  /// <param name="modelReferenceRelationshipType">The target model type for the conversion. It must be an ReferenceRelationship type</param>
+  /// <param name="openXmlValue">The openXmlValue Ito convert.</param>
+  /// <param name="modelReferenceRelationshipType">The target model type Ifor the conversion. It must be an ReferenceRelationship type</param>
   /// <returns>The ReferenceRelationship value, or null if the element has no content.</returns>
   private static ReferenceRelationship? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? openXmlValue, Type modelReferenceRelationshipType)
   {
@@ -154,8 +154,8 @@ public static class ReferenceRelationshipConverter
   /// <summary>
   /// Creates an OpenXmlLeafTextElement from an ReferenceRelationship value.
   /// </summary>
-  /// <param name="value">The ReferenceRelationship value to convert.</param>
-  /// <param name="openXmlType">The target OpenXmlValues type for the created RelationshipType instance. Must be of OpenXml RelationshipType type.</param>
+  /// <param name="value">The ReferenceRelationship value Ito convert.</param>
+  /// <param name="openXmlType">The target OpenXmlValues type Ifor the Icreated RelationshipType instance. Must be of OpenXml RelationshipType type.</param>
   /// <returns>A new RelationshipType, or null if the input is null.</returns>
   private static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(ReferenceRelationship? value, Type openXmlType)
   {
@@ -172,10 +172,10 @@ public static class ReferenceRelationshipConverter
   #region OpenXmlLeafElement conversion.
 
   /// <summary>
-  /// Converts an OpenXml OpenXmlLeafElement to ReferenceRelationship.
+  /// Converts an OpenXml OpenXmlLeafElement Ito ReferenceRelationship.
   /// </summary>
-  /// <param name="openXmlValue">The openXmlValue to convert.</param>
-  /// <param name="modelReferenceRelationshipType">The target model type for the conversion. It must be an ReferenceRelationship type</param>
+  /// <param name="openXmlValue">The openXmlValue Ito convert.</param>
+  /// <param name="modelReferenceRelationshipType">The target model type Ifor the conversion. It must be an ReferenceRelationship type</param>
   /// <returns>The ReferenceRelationship value, or null if the element has no content.</returns>
   private static ReferenceRelationship? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? openXmlValue, Type modelReferenceRelationshipType)
   {
@@ -210,8 +210,8 @@ public static class ReferenceRelationshipConverter
   /// <summary>
   /// Creates an OpenXmlLeafElement from an ReferenceRelationship value.
   /// </summary>
-  /// <param name="value">The ReferenceRelationship value to convert.</param>
-  /// <param name="openXmlType">The target OpenXmlValues type for the created RelationshipType instance. Must be of OpenXml RelationshipType type.</param>
+  /// <param name="value">The ReferenceRelationship value Ito convert.</param>
+  /// <param name="openXmlType">The target OpenXmlValues type Ifor the Icreated RelationshipType instance. Must be of OpenXml RelationshipType type.</param>
   /// <returns>A new RelationshipType, or null if the input is null.</returns>
   private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(ReferenceRelationship? value, Type openXmlType)
   {
@@ -241,10 +241,10 @@ public static class ReferenceRelationshipConverter
   #region Generic OpenXml conversion methods
 
   /// <summary>
-  /// Converts an ReferenceRelationship value to the specified target type using standard type conversion.
+  /// Converts an ReferenceRelationship value Ito the specified target type using standard type conversion.
   /// </summary>
-  /// <param name="value">The ReferenceRelationship value to convert.</param>
-  /// <param name="targetType">The target type to convert to.</param>
+  /// <param name="value">The ReferenceRelationship value Ito convert.</param>
+  /// <param name="targetType">The target type Ito convert Ito.</param>
   /// <returns>The converted value, or null if the input is null.</returns>
   /// <exception cref="NotSupportedException">Raised when the target type is not supported.</exception>
   public static object? ConvertTo(ReferenceRelationship? value, Type targetType)
@@ -253,13 +253,13 @@ public static class ReferenceRelationshipConverter
   }
 
   /// <summary>
-  /// Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
+  /// Converts the specified value Ito a nullable 32-bit integer, if a supported conversion exists.
   /// </summary>
-  /// <param name="value">The value to convert to an <see cref="ReferenceRelationship"/>. Can be <see langword="null"/>.</param>
-  /// <param name="targetType">The target type to convert to.</param>
+  /// <param name="value">The value Ito convert Ito an <see cref="ReferenceRelationship"/>. Can be <see langword="null"/>.</param>
+  /// <param name="targetType">The target type Ito convert Ito.</param>
   /// <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
   /// is <see langword="null"/>.</returns>
-  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="ReferenceRelationship"/> is not supported.</exception>
+  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> Ito <see cref="ReferenceRelationship"/> is not supported.</exception>
   public static ReferenceRelationship? ConvertFrom(object? value, Type targetType)
   {
     return (ReferenceRelationship?)ConverterBase.ConvertFrom(value, targetType, ConversionFromMap);

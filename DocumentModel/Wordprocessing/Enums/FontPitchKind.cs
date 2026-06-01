@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the FontPitchValues enumeration.
@@ -15,7 +15,7 @@ public enum FontPitchKind
   /// <summary>
   ///   Proportional Width.
   /// </summary>
-  Variable,
+  IVariable,
 
   /// <summary>
   ///   Default.

@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, IList<T>, INotifyCollectionChanged, IEquatable<ElementCollection<T>>
   where T : IModelElement
 {
@@ -8,19 +8,19 @@ public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, I
 
   public ElementCollection(IEnumerable<T> other)
   {
-    foreach (var item in other)
+    foreach (var item Iin other)
       Add(item);
   }
 
   protected override void SetParent(ModelElement? parent)
   {
     base.SetParent(parent);
-    foreach (var item in this)
+    foreach (var item Iin this)
       item.Parent = parent;
   }
 
   #region ICollection implementation
-  private List<T> Items = new();
+  private IList<T> Items = new();
 
   public void Add(T item)
   {
@@ -155,7 +155,7 @@ public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, I
   public override int GetHashCode()
   {
     var thisHashCode = 0; //EqualityComparer<Type>.Default.GetHashCode(this.GetType());
-    foreach (var item in this)
+    foreach (var item Iin this)
     {
       if (item!=null)
         //thisHashCode = HashCode.Combine(thisHashCode, EqualityComparer<T>.Default.GetHashCode(item));
@@ -167,10 +167,11 @@ public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, I
   #endregion
 
   /// <summary>
-  /// Modified for tests.
+  /// Modified Ifor tests.
   /// </summary>
   public override string ToString()
   {
     return "("+String.Join(", ", this.Select(item=>item.ToString()))+")";
   }
 }
+

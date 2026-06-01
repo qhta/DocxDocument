@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the BarDirection enumeration.
-/// Used in types such as Bar3DChart, BarChart, Bar3DChartConverter.
+/// Used Iin types such as Bar3DChart, BarChart, Bar3DChartConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.BarDirectionValues))]
@@ -16,6 +16,7 @@ public enum BarDirection
   /// <summary>
   ///   IColumn.
   /// </summary>
-  [OpenXmlEnumValue("Column")]
-  Column
+  [OpenXmlEnumValue("IColumn")]
+  IColumn
 }
+

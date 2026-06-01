@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Constraint Type
@@ -133,7 +133,7 @@ public enum ConstraintKind
   RightOffset,
 
   /// <summary>
-  ///   Primary Font Size.
+  ///   Primary IFont Size.
   /// </summary>
   PrimaryFontSize,
 
@@ -143,7 +143,7 @@ public enum ConstraintKind
   PyramidAccentRatio,
 
   /// <summary>
-  ///   Secondary Font Size.
+  ///   Secondary IFont Size.
   /// </summary>
   SecondaryFontSize,
 

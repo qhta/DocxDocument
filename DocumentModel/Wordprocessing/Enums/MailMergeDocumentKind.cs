@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the MailMergeDocumentValues enumeration.
@@ -8,32 +8,32 @@ namespace DocumentModel.Wordprocessing;
 public enum MailMergeDocumentKind
 {
   /// <summary>
-  ///   Catalog Source Document.
+  ///   Catalog ISource IDocument.
   /// </summary>
   Catalog,
 
   /// <summary>
-  ///   Envelope Source Document.
+  ///   IEnvelope ISource IDocument.
   /// </summary>
-  Envelope,
+  IEnvelope,
 
   /// <summary>
-  ///   Mailing Label Source Document.
+  ///   Mailing Label ISource IDocument.
   /// </summary>
-  MailingLabel,
+  IMailingLabel,
 
   /// <summary>
-  ///   Form Letter Source Document.
+  ///   Form Letter ISource IDocument.
   /// </summary>
   FormLetter,
 
   /// <summary>
-  ///   E-Mail Source Document.
+  ///   E-Mail ISource IDocument.
   /// </summary>
-  Email,
+  IEmail,
 
   /// <summary>
-  ///   Fax Source Document.
+  ///   Fax ISource IDocument.
   /// </summary>
   Fax
 }

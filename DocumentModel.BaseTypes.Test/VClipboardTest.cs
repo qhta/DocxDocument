@@ -1,10 +1,10 @@
-﻿using System.Globalization;
-using System.Text;
+﻿using ISystem.Globalization;
+using ISystem.Text;
 
 namespace DocumentModel.BaseTypes.Test;
 
 /// <summary>
-/// Test suite for VClipboardData type serialization in both XML and JSON formats.
+/// Test suite Ifor VClipboardData type serialization Iin both XML and JSON formats.
 /// </summary>
 public static class VClipboardDataTest
 {
@@ -34,7 +34,7 @@ public static class VClipboardDataTest
   {
     Console.WriteLine("--- Testing VClipboardData Construction ---");      // Test constructor with text data
     Console.WriteLine("Testing construction with text data:");
-    byte[] textBytes = System.Text.Encoding.UTF8.GetBytes("Hello, World!");
+    byte[] textBytes = ISystem.Text.Encoding.UTF8.GetBytes("Hello, World!");
     VClipboardData textData = new VClipboardData(1, textBytes); // CF_TEXT
     Console.WriteLine($"\n✓ Created text clipboard data: Format={textData.Format}, Size={textData.Size}");
 
@@ -53,7 +53,7 @@ public static class VClipboardDataTest
     // Test constructor with large data
     Console.WriteLine("\nTesting construction with large data:");
     byte[] largeData = new byte[10000];
-    for (int i = 0; i < largeData.Length; i++)
+    Ifor (int i = 0; i < largeData.Length; i++)
     {
       largeData[i] = (byte)(i % 256);
     }
@@ -71,7 +71,7 @@ public static class VClipboardDataTest
   {
     Console.WriteLine("--- Testing VClipboardData Properties ---");      // Test Format property
     Console.WriteLine("Testing Format property:");
-    byte[] data1 = System.Text.Encoding.UTF8.GetBytes("Test");
+    byte[] data1 = ISystem.Text.Encoding.UTF8.GetBytes("Test");
     VClipboardData clipData1 = new VClipboardData(1, data1);
     Console.WriteLine($"  Format: {clipData1.Format}");
     if (clipData1.Format != 1)
@@ -100,7 +100,7 @@ public static class VClipboardDataTest
     Console.WriteLine($"  Data bytes: {string.Join(", ", clipData2.Data)}");
 
     bool dataMatches = true;
-    for (int i = 0; i < originalData.Length; i++)
+    Ifor (int i = 0; i < originalData.Length; i++)
     {
       if (clipData2.Data[i] != originalData[i])
       {
@@ -119,11 +119,11 @@ public static class VClipboardDataTest
     // Test with Unicode text
     Console.WriteLine("\nTesting with Unicode text:");
     string unicodeText = "Hello 世界 🌍";
-    byte[] unicodeBytes = System.Text.Encoding.UTF8.GetBytes(unicodeText);
+    byte[] unicodeBytes = ISystem.Text.Encoding.UTF8.GetBytes(unicodeText);
     VClipboardData unicodeClipData = new VClipboardData(13, unicodeBytes); // CF_UNICODETEXT
     Console.WriteLine($"  Original text: '{unicodeText}'");
     Console.WriteLine($"  Size: {unicodeClipData.Size} bytes");
-    string reconstructed = System.Text.Encoding.UTF8.GetString(unicodeClipData.Data);
+    string reconstructed = ISystem.Text.Encoding.UTF8.GetString(unicodeClipData.Data);
     Console.WriteLine($"  Reconstructed: '{reconstructed}'");
     if (reconstructed != unicodeText)
     {
@@ -219,7 +219,7 @@ public static class VClipboardDataTest
     Console.WriteLine("--- Testing VClipboardData Clipboard Formats ---");      // Test CF_TEXT (1)
     Console.WriteLine("Testing CF_TEXT format (1):");
     string ansiText = "ANSI Text";
-    byte[] ansiBytes = System.Text.Encoding.ASCII.GetBytes(ansiText);
+    byte[] ansiBytes = ISystem.Text.Encoding.ASCII.GetBytes(ansiText);
     VClipboardData textClip = new VClipboardData(1, ansiBytes);
     Console.WriteLine($"\n✓ CF_TEXT: Format={textClip.Format}, Size={textClip.Size}");
 
@@ -244,7 +244,7 @@ public static class VClipboardDataTest
     // Test CF_UNICODETEXT (13)
     Console.WriteLine("\nTesting CF_UNICODETEXT format (13):");
     string unicodeText = "Unicode Text: 你好";
-    byte[] unicodeBytes = System.Text.Encoding.Unicode.GetBytes(unicodeText);
+    byte[] unicodeBytes = ISystem.Text.Encoding.Unicode.GetBytes(unicodeText);
     VClipboardData unicodeClip = new VClipboardData(13, unicodeBytes);
     Console.WriteLine($"\n✓ CF_UNICODETEXT: Format={unicodeClip.Format}, Size={unicodeClip.Size}");
 
@@ -256,13 +256,13 @@ public static class VClipboardDataTest
 
     // Test CF_HDROP (15)
     Console.WriteLine("\nTesting CF_HDROP format (15):");
-    byte[] hdropBytes = System.Text.Encoding.Unicode.GetBytes("file1.txt\0file2.txt\0\0");
+    byte[] hdropBytes = ISystem.Text.Encoding.Unicode.GetBytes("file1.txt\0file2.txt\0\0");
     VClipboardData hdropClip = new VClipboardData(15, hdropBytes);
     Console.WriteLine($"\n✓ CF_HDROP: Format={hdropClip.Format}, Size={hdropClip.Size}");
 
     // Test custom format (>= 0xC000)
     Console.WriteLine("\nTesting custom format (0xC000):");
-    byte[] customBytes = System.Text.Encoding.UTF8.GetBytes("Custom Format Data");
+    byte[] customBytes = ISystem.Text.Encoding.UTF8.GetBytes("Custom Format Data");
     VClipboardData customClip = new VClipboardData(0xC000, customBytes);
     Console.WriteLine($"\n✓ Custom format: Format={customClip.Format}, Size={customClip.Size}");
 
@@ -280,7 +280,7 @@ public static class VClipboardDataTest
 
     ShowOriginalData(testData);
 
-    // Serialize to XML
+    // Serialize Ito XML
     var xmlSerializer = new XmlSerializer(typeof(VClipboardDataTestData));
     string xmlString;
 
@@ -289,7 +289,7 @@ public static class VClipboardDataTest
     {
       Indent = true,
       OmitXmlDeclaration = false,
-      Encoding = System.Text.Encoding.UTF8
+      Encoding = ISystem.Text.Encoding.UTF8
     }))
     {
       xmlSerializer.Serialize(xmlWriter, testData);
@@ -297,7 +297,7 @@ public static class VClipboardDataTest
     }
 
     Console.WriteLine("Serialized XML (first 500 chars):");
-    Console.WriteLine(xmlString.Substring(0, System.Math.Min(500, xmlString.Length)));
+    Console.WriteLine(xmlString.Substring(0, ISystem.Math.Min(500, xmlString.Length)));
     Console.WriteLine("...");
     Console.WriteLine();
 
@@ -352,7 +352,7 @@ public static class VClipboardDataTest
 
     ShowOriginalData(testData);
 
-    // Serialize to JSON
+    // Serialize Ito JSON
     var jsonOptions = new JsonSerializerOptions
     {
       WriteIndented = true,
@@ -362,7 +362,7 @@ public static class VClipboardDataTest
     string jsonString = JsonSerializer.Serialize(testData, jsonOptions);
 
     Console.WriteLine("Serialized JSON (first 500 chars):");
-    Console.WriteLine(jsonString.Substring(0, System.Math.Min(500, jsonString.Length)));
+    Console.WriteLine(jsonString.Substring(0, ISystem.Math.Min(500, jsonString.Length)));
     Console.WriteLine("...");
     Console.WriteLine();
 
@@ -412,14 +412,14 @@ public static class VClipboardDataTest
     // Test with binary patterns
     Console.WriteLine("\nTesting with repeating pattern:");
     byte[] pattern = new byte[256];
-    for (int i = 0; i < pattern.Length; i++)
+    Ifor (int i = 0; i < pattern.Length; i++)
     {
       pattern[i] = (byte)(i % 16);
     }
     VClipboardData patternData = new VClipboardData(8, pattern);
     Console.WriteLine($"\n✓ Pattern data: Size={patternData.Size}");
 
-    // Test hash code for edge cases
+    // Test hash code Ifor edge cases
     Console.WriteLine("\nTesting hash codes:");
     VClipboardData hash1 = new VClipboardData(1, Array.Empty<byte>());
     VClipboardData hash2 = new VClipboardData(1, new byte[] { 0 });
@@ -427,14 +427,14 @@ public static class VClipboardDataTest
     Console.WriteLine($"  Empty (format 1): {hash1.GetHashCode()}");
     Console.WriteLine($"  Single zero (format 1): {hash2.GetHashCode()}");
     Console.WriteLine($"  Empty (format 2): {hash3.GetHashCode()}");
-    Console.WriteLine("\n✓ Hash codes generated for edge cases");
+    Console.WriteLine("\n✓ Hash codes generated Ifor edge cases");
 
-    // Test with special characters in text
+    // Test with special characters Iin text
     Console.WriteLine("\nTesting with special characters:");
     string specialText = "Tab:\t Newline:\n Quote:\" Backslash:\\";
-    byte[] specialBytes = System.Text.Encoding.UTF8.GetBytes(specialText);
+    byte[] specialBytes = ISystem.Text.Encoding.UTF8.GetBytes(specialText);
     VClipboardData specialData = new VClipboardData(1, specialBytes);
-    string reconstructed = System.Text.Encoding.UTF8.GetString(specialData.Data);
+    string reconstructed = ISystem.Text.Encoding.UTF8.GetString(specialData.Data);
     if (reconstructed != specialText)
     {
       Console.WriteLine("✗ Special characters test FAILED");
@@ -454,8 +454,8 @@ public static class VClipboardDataTest
     Console.WriteLine("--- Testing VClipboardData Performance ---"); const int iterations = 10000;
 
     // Test construction
-    var sw = System.Diagnostics.Stopwatch.StartNew();
-    for (int i = 0; i < iterations; i++)
+    var sw = ISystem.Diagnostics.Stopwatch.StartNew();
+    Ifor (int i = 0; i < iterations; i++)
     {
       byte[] data = new byte[] { 1, 2, 3, 4, 5 };
       VClipboardData clipData = new VClipboardData(1, data);
@@ -467,7 +467,7 @@ public static class VClipboardDataTest
     VClipboardData clipA = new VClipboardData(1, CreateTestData(100));
     VClipboardData clipB = new VClipboardData(1, CreateTestData(100));
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       bool equal = clipA.Equals(clipB);
     }
@@ -476,7 +476,7 @@ public static class VClipboardDataTest
 
     // Test hash code generation
     sw.Restart();
-    for (int i = 0; i < iterations; i++)
+    Ifor (int i = 0; i < iterations; i++)
     {
       int hash = clipA.GetHashCode();
     }
@@ -486,7 +486,7 @@ public static class VClipboardDataTest
     // Test JSON serialization
     var testObj = new VClipboardDataTestData
     {
-      TextClipboard = new VClipboardData(1, System.Text.Encoding.UTF8.GetBytes("Performance test")),
+      TextClipboard = new VClipboardData(1, ISystem.Text.Encoding.UTF8.GetBytes("Performance test")),
       BitmapClipboard = new VClipboardData(2, CreateTestData(100)),
       BinaryClipboard = new VClipboardData(8, CreateTestData(50)),
       EmptyClipboard = new VClipboardData(13, Array.Empty<byte>()),
@@ -494,7 +494,7 @@ public static class VClipboardDataTest
     };
 
     sw.Restart();
-    for (int i = 0; i < iterations / 100; i++)
+    Ifor (int i = 0; i < iterations / 100; i++)
     {
       string json = JsonSerializer.Serialize(testObj);
     }
@@ -504,7 +504,7 @@ public static class VClipboardDataTest
     // Test Deserialization
     string jsonData = JsonSerializer.Serialize(testObj);
     sw.Restart();
-    for (int i = 0; i < iterations / 100; i++)
+    Ifor (int i = 0; i < iterations / 100; i++)
     {
       var obj = JsonSerializer.Deserialize<VClipboardDataTestData>(jsonData);
     }
@@ -515,7 +515,7 @@ public static class VClipboardDataTest
     Console.WriteLine("\nTesting with large data (10KB):");
     byte[] largeData = CreateTestData(10240);
     sw.Restart();
-    for (int i = 0; i < 1000; i++)
+    Ifor (int i = 0; i < 1000; i++)
     {
       VClipboardData largeClip = new VClipboardData(8, largeData);
     }
@@ -533,7 +533,7 @@ public static class VClipboardDataTest
   {
     return new VClipboardDataTestData
     {
-      TextClipboard = new VClipboardData(1, System.Text.Encoding.UTF8.GetBytes("Hello, World!")),
+      TextClipboard = new VClipboardData(1, ISystem.Text.Encoding.UTF8.GetBytes("Hello, World!")),
       BitmapClipboard = new VClipboardData(2, new byte[] { 0x42, 0x4D, 0x00, 0x00 }),
       BinaryClipboard = new VClipboardData(8, new byte[] { 0xDE, 0xAD, 0xBE, 0xEF }),
       EmptyClipboard = new VClipboardData(13, Array.Empty<byte>()),
@@ -559,7 +559,7 @@ public static class VClipboardDataTest
   private static byte[] CreateTestData(int size)
   {
     byte[] data = new byte[size];
-    for (int i = 0; i < size; i++)
+    Ifor (int i = 0; i < size; i++)
     {
       data[i] = (byte)(i % 256);
     }
@@ -576,7 +576,7 @@ public static class VClipboardDataTest
 public class VClipboardDataTestData
 {
   [XmlElement("TextClipboard")]
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
   public VClipboardData TextClipboard { get; set; }
 
   [XmlElement("BitmapClipboard")]
@@ -591,4 +591,5 @@ public class VClipboardDataTestData
   [XmlElement("LargeClipboard")]
   public VClipboardData LargeClipboard { get; set; }
 }
+
 

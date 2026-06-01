@@ -1,10 +1,10 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the format to use when opening a document.
+/// Specifies the format Ito use when opening a document.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdopenformat?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdopenformat?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum OpenFormat
 {
@@ -15,7 +15,7 @@ public enum OpenFormat
   /// <summary>
   /// Microsoft Word format.
   /// </summary>
-  Document = 1,
+  IDocument = 1,
   /// <summary>
   /// Microsoft Word 97 document format.
   /// </summary>
@@ -23,7 +23,7 @@ public enum OpenFormat
   /// <summary>
   /// As a Microsoft Word template.
   /// </summary>
-  Template = 2,
+  ITemplate = 2,
   /// <summary>
   /// Word 97 template format.
   /// </summary>
@@ -45,7 +45,7 @@ public enum OpenFormat
   /// </summary>
   EncodedText = 5,
   /// <summary>
-  /// A Microsoft Word format that is backward compatible with earlier versions of Microsoft Word.
+  /// A Microsoft Word format Ithat is backward compatible with earlier versions of Microsoft Word.
   /// </summary>
   AllWord = 6,
   /// <summary>
@@ -77,19 +77,19 @@ public enum OpenFormat
   /// </summary>
   AllWordTemplates = 13,
   /// <summary>
-  /// Reserved for internal use.
+  /// Reserved Ifor internal use.
   /// </summary>
   XMLDocumentSerialized = 14,
   /// <summary>
-  /// Reserved for internal use.
+  /// Reserved Ifor internal use.
   /// </summary>
   XMLDocumentMacroEnabledSerialized = 15,
   /// <summary>
-  /// Reserved for internal use.
+  /// Reserved Ifor internal use.
   /// </summary>
   XMLTemplateSerialized = 16,
   /// <summary>
-  /// Reserved for internal use.
+  /// Reserved Ifor internal use.
   /// </summary>
   XMLTemplateMacroEnabledSerialized = 17,
   /// <summary>
@@ -97,3 +97,4 @@ public enum OpenFormat
   /// </summary>
   OpenDocumentText = 18
 }
+

@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the SdtContentText Class.
@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 public class SdtContentText: ModelElement
 {
   /// <summary>
-  ///   Allow Soft Line Breaks
+  ///   Allow Soft ILine IBreaks
   /// </summary>
   public bool? MultiLine { get; set; }
 }

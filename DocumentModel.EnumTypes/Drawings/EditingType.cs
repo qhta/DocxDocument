@@ -1,15 +1,15 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies the editing type of a node.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoeditingtype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoeditingtype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum EditingType
 {
   /// <summary>
-  /// Editing type is appropriate to the segments being connected.
+  /// Editing type is appropriate Ito the segments being connected.
   /// </summary>
   Auto,
   /// <summary>
@@ -25,3 +25,4 @@ public enum EditingType
   /// </summary>
   Symmetric
 }
+

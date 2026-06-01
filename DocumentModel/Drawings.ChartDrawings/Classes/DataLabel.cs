@@ -1,18 +1,18 @@
-namespace DocumentModel.Drawings.ChartDrawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines the DataLabel Class.
+///   Defines the IDataLabel Class.
 /// </summary>
-public class DataLabel: ModelElement
+public class IDataLabel: ModelElement
 {
   /// <summary>
-  ///   idx, this property is only available in Office 2016 and later.
+  ///   idx, this property is Ionly available Iin Office 2016 and later.
   /// </summary>
   public UInt32? Idx { get; set; }
 
   /// <summary>
-  ///   pos, this property is only available in Office 2016 and later.
+  ///   pos, this property is Ionly available Iin Office 2016 and later.
   /// </summary>
   public DataLabelPos? Pos { get; set; }
 

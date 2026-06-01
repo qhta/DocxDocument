@@ -1,5 +1,5 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
+﻿using ISystem.Threading;
+using ISystem.Threading.ITasks;
 
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Testing;
@@ -25,7 +25,7 @@ namespace ShouldSerialize.Test
       (DiagnosticDescriptor descriptor) => CSharpAnalyzerVerifier<TAnalyzer, MSTestVerifier>.Diagnostic(descriptor);
 
     /// <inheritdoc cref="AnalyzerVerifier{TAnalyzer, TTest, TVerifier}.VerifyAnalyzerAsync(string, DiagnosticResult[])"/>
-    public static async Task VerifyAnalyzerAsync(string source, params DiagnosticResult[] expected)
+    public static async ITask VerifyAnalyzerAsync(string source, params DiagnosticResult[] expected)
     {
       var test = new Test
       {

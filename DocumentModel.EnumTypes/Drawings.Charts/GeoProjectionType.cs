@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the GeoProjectionType enumeration.
-/// Used in types such as Geography, GeoProjectionType, GeographyConverter.
+/// Used Iin types such as Geography, GeoProjectionType, GeographyConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum GeoProjectionType
@@ -28,3 +28,4 @@ public enum GeoProjectionType
   [OpenXmlEnumValue("Albers")]
   Albers
 }
+

@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Indicates the type of text wrap.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotextcharwrap?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotextcharwrap?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum TextCharWrap
 {
@@ -21,7 +21,7 @@ public enum TextCharWrap
   /// </summary>
   StandardCharWrap = 1,
   /// <summary>
-  /// Specifies text wrapping that adheres to restrictions imposed by some languages such as Chinese and Japanese
+  /// Specifies text wrapping Ithat adheres Ito restrictions imposed by some languages such as Chinese and Japanese
   /// alphabets.
   /// </summary>
   StrictCharWrap = 2,
@@ -30,3 +30,4 @@ public enum TextCharWrap
   /// </summary>
   CustomCharWrap = 3
 }
+

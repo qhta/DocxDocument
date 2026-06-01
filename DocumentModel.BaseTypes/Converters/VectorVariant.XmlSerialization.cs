@@ -1,11 +1,11 @@
-using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
+﻿using ISystem.Xml;
+using ISystem.Xml.Schema;
+using ISystem.Xml.Serialization;
 
 namespace DocumentModel;
 
 /// <summary>
-/// Provides XML serialization support for the <see cref="VectorVariant"/> class.
+/// Provides XML serialization support Ifor the <see cref="VectorVariant"/> class.
 /// </summary>
 public partial class VectorVariant : IXmlSerializable
 {
@@ -20,7 +20,7 @@ public partial class VectorVariant : IXmlSerializable
   /// <summary>
   /// Deserializes the <see cref="VectorVariant"/> value from XML.
   /// </summary>
-  /// <param name="reader">The <see cref="XmlReader"/> to read from.</param>
+  /// <param name="reader">The <see cref="XmlReader"/> Ito read from.</param>
   /// <remarks>
   /// <para>The method handles the following XML structure:</para>
   /// <code>
@@ -35,7 +35,7 @@ public partial class VectorVariant : IXmlSerializable
   /// Each vector element is represented as an <c>&lt;Item&gt;</c> child element.
   /// </para>
   /// <para>
-  /// Empty elements are treated as null values. Elements are added to the vector in the order they appear.
+  /// Empty elements are treated as null values. Elements are added Ito the vector Iin the order they appear.
   /// </para>
   /// </remarks>
   /// <exception cref="XmlException">
@@ -59,7 +59,7 @@ public partial class VectorVariant : IXmlSerializable
         throw new XmlException($"Invalid baseType value: {baseTypeStr}");
     }
 
-    reader.Read(); // Move to content
+    reader.Read(); // Move Ito content
 
     // Read vector items
     while (reader.NodeType != XmlNodeType.EndElement)
@@ -83,13 +83,13 @@ public partial class VectorVariant : IXmlSerializable
             else
               throw new XmlException($"Invalid baseType value: {baseTypeStr}");
           }
-          reader.Read(); // Move to content
+          reader.Read(); // Move Ito content
 
           if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
           {
             string itemValue = reader.Value;
             
-            // Convert string to appropriate type if baseType is specified
+            // Convert string Ito appropriate type if baseType is specified
             try
             {
               var currentCulture = CultureInfo.CurrentCulture;
@@ -102,7 +102,7 @@ public partial class VectorVariant : IXmlSerializable
             }
             catch (Exception ex)
             {
-              throw new XmlException($"Failed to convert value '{itemValue}' to type {BaseType}: {ex.Message}", ex);
+              throw new XmlException($"Failed Ito convert value '{itemValue}' Ito type {BaseType}: {ex.Message}", ex);
             }
 
             reader.Read(); // Move past text
@@ -133,11 +133,11 @@ public partial class VectorVariant : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="VectorVariant"/> value to XML.
+  /// Serializes the <see cref="VectorVariant"/> value Ito XML.
   /// </summary>
-  /// <param name="writer">The <see cref="XmlWriter"/> to write to.</param>
+  /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
   /// <remarks>
-  /// <para>The value is written in the following XML format:</para>
+  /// <para>The value is written Iin the following XML format:</para>
   /// <code>
   /// &lt;VectorVariant baseType="Int32"&gt;
   ///   &lt;Item&gt;10&lt;/Item&gt;
@@ -160,7 +160,7 @@ public partial class VectorVariant : IXmlSerializable
     }
 
     // Write vector items
-    foreach (var item in this)
+    foreach (var item Iin this)
     {
       writer.WriteStartElement("Item");
       
@@ -190,9 +190,9 @@ public partial class VectorVariant : IXmlSerializable
   #region Helper Methods
 
   /// <summary>
-  /// Converts a string value to the specified variant type.
+  /// Converts a string value Ito the specified variant type.
   /// </summary>
-  /// <param name="value">The string value to convert.</param>
+  /// <param name="value">The string value Ito convert.</param>
   /// <param name="variantType">The target variant type.</param>
   /// <returns>The converted object, or null if conversion fails.</returns>
   private static object? ConvertFromString(string value, VariantType variantType)
@@ -221,9 +221,9 @@ public partial class VectorVariant : IXmlSerializable
   }
 
   /// <summary>
-  /// Converts an object value to its string representation based on the variant type.
+  /// Converts an object value Ito its string representation based on the variant type.
   /// </summary>
-  /// <param name="value">The object to convert.</param>
+  /// <param name="value">The object Ito convert.</param>
   /// <param name="variantType">The variant type of the value.</param>
   /// <returns>The string representation, or null if the value is null.</returns>
   private static string? ConvertToString(object? value, VariantType variantType)

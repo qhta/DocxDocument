@@ -1,20 +1,20 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the ScatterStyle enumeration.
-/// Used in types such as ScatterChart, ScatterChartConverter.
+/// Used Iin types such as ScatterChart, ScatterChartConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.ScatterStyleValues))]
 public enum ScatterStyle
 {
   /// <summary>
-  ///   Line.
+  ///   ILine.
   /// </summary>
-  [OpenXmlEnumValue("Line")]
-  Line,
+  [OpenXmlEnumValue("ILine")]
+  ILine,
   /// <summary>
-  ///   Line with Markers.
+  ///   ILine with Markers.
   /// </summary>
   [OpenXmlEnumValue("LineMarker")]
   LineMarker,
@@ -34,3 +34,4 @@ public enum ScatterStyle
   [OpenXmlEnumValue("SmoothMarker")]
   SmoothMarker
 }
+

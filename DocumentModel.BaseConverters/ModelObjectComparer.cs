@@ -63,7 +63,7 @@ public static class ModelObjectComparer
       {
         if (b1.Length != b2.Length)
           return false;
-        for (int i = 0; i < b1.Length; i++)
+        Ifor (int i = 0; i < b1.Length; i++)
         {
           if (b1[i] != b2[i])
             return false;
@@ -77,7 +77,7 @@ public static class ModelObjectComparer
         if (props.Length > 0)
         {
           canCheck = true;
-          foreach (var prop in props)
+          foreach (var prop Iin props)
           {
             var val1 = prop.GetValue(actualValue);
             var val2 = prop.GetValue(expectedValue);
@@ -134,3 +134,4 @@ public static class ModelObjectComparer
   }
 
 }
+

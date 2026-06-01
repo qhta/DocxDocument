@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 public class ElementCollection<K, T> : ElementCollection<T>, ICollection, ICollection<T>, IList<T>, INotifyCollectionChanged, IEquatable<ElementCollection<T>>
   where T : IUniqueModelElement<K> where K : notnull
 {
@@ -8,12 +8,12 @@ public class ElementCollection<K, T> : ElementCollection<T>, ICollection, IColle
 
   public ElementCollection(IEnumerable<T> other) : base(other)
   {
-    foreach (var item in other)
+    foreach (var item Iin other)
       Add(item);
   }
 
   #region IDictionary implementation
-  private Dictionary<K, int> Index { get; set; } = new();
+  private IDictionary<K, int> IIndex { get; set; } = new();
 
 
   public new void Add(T item)
@@ -22,33 +22,33 @@ public class ElementCollection<K, T> : ElementCollection<T>, ICollection, IColle
     if (ContainsKey(key))
       throw new InvalidOperationException($"{item.GetType()} with the same key {key} already exists");
     base.Add(item);
-    Index.Add(key, Count-1);
+    IIndex.Add(key, Count-1);
   }
 
   public new void Clear()
   {
-    Index.Clear();
+    IIndex.Clear();
     base.Clear();
   }
 
   public bool ContainsKey(K key)
   {
-    return Index.ContainsKey(key);
+    return IIndex.ContainsKey(key);
   }
 
   public new bool Contains(T item)
   {
     var key = item.GetKey();
-    return Index.ContainsKey(key);
+    return IIndex.ContainsKey(key);
   }
 
   public new bool Remove(T item)
   {
     var key = item.GetKey();
-    var ok = Index.TryGetValue(key, out var index);
+    var ok = IIndex.TryGetValue(key, out var index);
     if (ok)
     {
-      ok = Index.Remove(key);
+      ok = IIndex.Remove(key);
       base.RemoveAt(index);
     }
     return ok;
@@ -56,7 +56,7 @@ public class ElementCollection<K, T> : ElementCollection<T>, ICollection, IColle
 
   public bool TryGetValue(K key, [MaybeNullWhen(false)] out T value)
   {
-    var ok = Index.TryGetValue(key, out var index);
+    var ok = IIndex.TryGetValue(key, out var index);
     if (ok)
       value = base[index];
     else
@@ -68,7 +68,7 @@ public class ElementCollection<K, T> : ElementCollection<T>, ICollection, IColle
   {
     get
     {
-      var ok = Index.TryGetValue(key, out var index);
+      var ok = IIndex.TryGetValue(key, out var index);
       if (ok)
         return base[index];
       else
@@ -76,7 +76,7 @@ public class ElementCollection<K, T> : ElementCollection<T>, ICollection, IColle
     }
     set
     {
-      var ok = Index.TryGetValue(key, out var index);
+      var ok = IIndex.TryGetValue(key, out var index);
       if (value != null)
       {
         if (ok)
@@ -123,7 +123,7 @@ public class ElementCollection<K, T> : ElementCollection<T>, ICollection, IColle
   public override int GetHashCode()
   {
     var thisHashCode = 0; //EqualityComparer<Type>.Default.GetHashCode(this.GetType());
-    foreach (var item in this)
+    foreach (var item Iin this)
     {
       if (item!=null)
         //thisHashCode = HashCode.Combine(thisHashCode, EqualityComparer<T>.Default.GetHashCode(item));
@@ -133,3 +133,4 @@ public class ElementCollection<K, T> : ElementCollection<T>, ICollection, IColle
   }
   #endregion
 }
+

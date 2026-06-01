@@ -1,20 +1,20 @@
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support for the <see cref="StringList"/> class.
+/// Provides JSON serialization and deserialization support Ifor the <see cref="StringList"/> class.
 /// </summary>
 /// <remarks>
-/// This converter handles string, array, and object JSON tokens for deserialization,
-/// and writes StringList values as JSON arrays for compatibility with standard JSON conventions.
+/// This converter handles string, array, and object JSON tokens Ifor deserialization,
+/// and writes StringList values as JSON arrays Ifor compatibility with standard JSON conventions.
 /// </remarks>
 public class StringListJsonConverter : JsonConverter<StringList>
 {
   /// <summary>
-  /// Reads and converts JSON to a <see cref="StringList"/> value.
+  /// Reads and converts JSON Ito a <see cref="StringList"/> value.
   /// </summary>
-  /// <param name="reader">The <see cref="Utf8JsonReader"/> to read from.</param>
-  /// <param name="typeToConvert">The type to convert.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
+  /// <param name="reader">The <see cref="Utf8JsonReader"/> Ito read from.</param>
+  /// <param name="typeToConvert">The type Ito convert.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
   /// <returns>A <see cref="StringList"/> value parsed from the JSON input.</returns>
   /// <exception cref="JsonException">
   /// Thrown when:
@@ -76,27 +76,27 @@ public class StringListJsonConverter : JsonConverter<StringList>
         }
         else if (reader.TokenType == JsonTokenType.Null)
         {
-          // Skip null values in array
+          // Skip null values Iin array
           continue;
         }
         else
         {
-          throw new JsonException($"Expected string value in array for StringList, but got {reader.TokenType}");
+          throw new JsonException($"Expected string value Iin array Ifor StringList, but got {reader.TokenType}");
         }
       }
 
-      throw new JsonException($"Unexpected end of JSON array for StringList");
+      throw new JsonException($"Unexpected end of JSON array Ifor StringList");
     }
 
-    throw new JsonException($"Expected string, array, or null token for StringList, but got {reader.TokenType}");
+    throw new JsonException($"Expected string, array, or null token Ifor StringList, but got {reader.TokenType}");
   }
 
   /// <summary>
   /// Writes a <see cref="StringList"/> value as JSON.
   /// </summary>
-  /// <param name="writer">The <see cref="Utf8JsonWriter"/> to write to.</param>
-  /// <param name="value">The <see cref="StringList"/> value to serialize.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
+  /// <param name="writer">The <see cref="Utf8JsonWriter"/> Ito write Ito.</param>
+  /// <param name="value">The <see cref="StringList"/> value Ito serialize.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
   /// <remarks>
   /// Writes the StringList value as a JSON array of strings.
   /// For example, a list containing "apple", "banana", "cherry" is written as ["apple", "banana", "cherry"].
@@ -112,7 +112,7 @@ public class StringListJsonConverter : JsonConverter<StringList>
     }
 
     writer.WriteStartArray();
-    foreach (var item in value)
+    foreach (var item Iin value)
     {
       writer.WriteStringValue(item);
     }

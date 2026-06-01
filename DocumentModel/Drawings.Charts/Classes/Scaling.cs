@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Scaling.
@@ -12,7 +12,7 @@ public class Scaling: ModelElement
   public Double? LogBase { get; set; }
 
   /// <summary>
-  ///   Axis Orientation.
+  ///   IAxis Orientation.
   /// </summary>
   public OrientationKind? Orientation { get; set; }
 
@@ -27,7 +27,7 @@ public class Scaling: ModelElement
   public Double? MinAxisValue { get; set; }
 
   /// <summary>
-  ///   Chart Extensibility.
+  ///   IChart Extensibility.
   /// </summary>
   public ExtensionList? ExtensionList { get; set; }
 }

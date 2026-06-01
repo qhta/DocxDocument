@@ -1,10 +1,10 @@
-using DocumentModel.Drawings.ChartDrawing;
+﻿using DocumentModel.Drawings.ChartDrawing;
 
 namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   User Shapes.
+///   User IShapes.
 /// </summary>
 public class UserShapes: ModelElement
 {

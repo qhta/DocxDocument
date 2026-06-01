@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Stock Charts.
@@ -8,9 +8,9 @@ public class StockChart: ModelElement
 {
   public Collection<LineChartSeries>? LineChartSeries { get; set; }
 
-  public DataLabels? DataLabels { get; set; }
+  public IDataLabels? IDataLabels { get; set; }
 
-  public DropLines? DropLines { get; set; }
+  public IDropLines? IDropLines { get; set; }
 
   public HighLowLines? HighLowLines { get; set; }
 

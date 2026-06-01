@@ -1,8 +1,8 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Form Field Properties.
+///   Form IField Properties.
 /// </summary>
 public class FormFieldData: ModelElement
 {
@@ -20,9 +20,9 @@ public class FormFieldData: ModelElement
 
   public StatusText? StatusText { get; set; }
 
-  public CheckBox? CheckBox { get; set; }
+  public ICheckBox? ICheckBox { get; set; }
 
   public DropDownListFormField? DropDownListFormField { get; set; }
 
-  public TextInput? TextInput { get; set; }
+  public ITextInput? ITextInput { get; set; }
 }

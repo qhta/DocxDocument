@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the Vector3DType Class.
@@ -7,17 +7,17 @@ namespace DocumentModel.Drawings;
 public class Vector3DType: ModelElement
 {
   /// <summary>
-  ///   Distance along X-axis in 3D
+  ///   Distance along X-axis Iin 3D
   /// </summary>
   public Int64? Dx { get; set; }
 
   /// <summary>
-  ///   Distance along Y-axis in 3D
+  ///   Distance along Y-axis Iin 3D
   /// </summary>
   public Int64? Dy { get; set; }
 
   /// <summary>
-  ///   Distance along Z-axis in 3D
+  ///   Distance along Z-axis Iin 3D
   /// </summary>
   public Int64? Dz { get; set; }
 }

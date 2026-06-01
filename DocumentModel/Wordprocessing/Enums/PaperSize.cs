@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 public enum PaperSize {
   Letter = 1,
@@ -62,4 +62,5 @@ public enum PaperSize {
   B5ISO = 137,
   User = 256,
 };
+
 

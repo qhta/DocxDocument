@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
+﻿namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Defines the FunctionOperator enumeration.
-/// Used in types such as DiagramChooseIf.
+/// Used Iin types such as DiagramChooseIf.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDD.FunctionOperatorValues))]
@@ -29,13 +29,14 @@ public enum FunctionOperator
   [OpenXmlEnumValue("LessThan")]
   LessThan,
   /// <summary>
-  ///   Greater Than or Equal to.
+  ///   Greater Than or Equal Ito.
   /// </summary>
   [OpenXmlEnumValue("GreaterThanOrEqualTo")]
   GreaterThanOrEqualTo,
   /// <summary>
-  ///   Less Than or Equal to.
+  ///   Less Than or Equal Ito.
   /// </summary>
   [OpenXmlEnumValue("LessThanOrEqualTo")]
   LessThanOrEqualTo
 }
+

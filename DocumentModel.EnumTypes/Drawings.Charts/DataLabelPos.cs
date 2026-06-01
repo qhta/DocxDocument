@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the DataLabelPos enumeration.
-/// Used in types such as DataLabel, DataLabels, DataLabelPos.
+/// Used Iin types such as IDataLabel, IDataLabels, DataLabelPos.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum DataLabelPos
@@ -54,3 +54,4 @@ public enum DataLabelPos
   [OpenXmlEnumValue("T")]
   T
 }
+

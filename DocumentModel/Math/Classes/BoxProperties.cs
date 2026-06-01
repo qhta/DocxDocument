@@ -1,9 +1,9 @@
-namespace DocumentModel.Math;
+﻿namespace DocumentModel.Math;
 
 /// <summary>
-///   This element specifies properties of the Box object, for example, 
+///   This element specifies properties of the Box object, Ifor example, 
 ///   whether the Box serves as operator emulator with or without an alignment point, 
-///   serves as a line break point, or receives the correct spacing for the mathematical differential. 
+///   serves as a line break point, or receives the correct spacing Ifor the mathematical differential. 
 /// </summary>
 public class BoxProperties: ModelElement
 {
@@ -13,7 +13,7 @@ public class BoxProperties: ModelElement
   public bool? OperatorEmulator { get; set; }
 
   /// <summary>
-  ///   No Break.
+  ///   No IBreak.
   /// </summary>
   public bool? NoBreak { get; set; }
 
@@ -23,9 +23,9 @@ public class BoxProperties: ModelElement
   public bool? Differential { get; set; }
 
   /// <summary>
-  ///   Break.
+  ///   IBreak.
   /// </summary>
-  public Break? Break { get; set; }
+  public IBreak? IBreak { get; set; }
 
   /// <summary>
   ///   Alignment.

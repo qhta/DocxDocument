@@ -1,5 +1,5 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Rule.
@@ -22,7 +22,7 @@ public class Rule: ModelElement
   public AlignmentKind? How { get; set; }
 
   /// <summary>
-  ///   Rule Shape Reference
+  ///   Rule IShape Reference
   /// </summary>
   public string? ShapeReference { get; set; }
 

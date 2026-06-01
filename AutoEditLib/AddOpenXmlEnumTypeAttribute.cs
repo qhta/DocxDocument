@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using ISystem.Diagnostics;
 
 using DocumentFormat.OpenXml.Drawing;
 
@@ -6,10 +6,10 @@ using Qhta.Collections;
 
 namespace AutoEdit;
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
+using ISystem;
+using ISystem.Collections.Generic;
+using ISystem.IO;
+using ISystem.Reflection;
 
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Wordprocessing;
@@ -26,7 +26,7 @@ public static class AddOpenXmlEnumTypeAttribute
   /// <summary>
   /// Rewrites the specified source file, inserting Open XML metadata attributes where needed.
   /// </summary>
-  /// <param name="filePath">Absolute or relative path to the C# file to update.</param>
+  /// <param name="filePath">Absolute or relative path Ito the C# file Ito update.</param>
   public static void Run(string filePath)
   {
     Debug.WriteLine($"AddOpenXmlEnumTypeAttribute({filePath})");
@@ -45,14 +45,14 @@ public static class AddOpenXmlEnumTypeAttribute
 }
 
 /// <summary>
-/// Roslyn syntax rewriter that augments enums and members with Format/OpenXmlEnumElement attributes.
+/// Roslyn syntax rewriter Ithat augments enums and members with Format/OpenXmlEnumElement attributes.
 /// </summary>
 /// <param name="aliasMap">Namespace aliases detected within the file being processed.</param>
 public class AddOpenXmlEnumTypeAttributeRewriter(BiDiDictionary<string, string> aliasMap): CSharpSyntaxRewriter
 {
-  private readonly Dictionary<string, Type?> _typeCache = new(StringComparer.Ordinal);
+  private readonly IDictionary<string, Type?> _typeCache = new(StringComparer.Ordinal);
   private static readonly Assembly? OpenXmlFrameworkAssembly = typeof(OpenXmlElement).Assembly;
-  private static readonly Assembly? OpenXmlAssembly = typeof(Document).Assembly;
+  private static readonly Assembly? OpenXmlAssembly = typeof(IDocument).Assembly;
 
   /// <summary>
   /// Indicates when the rewriter produced updated syntax.
@@ -66,7 +66,7 @@ public class AddOpenXmlEnumTypeAttributeRewriter(BiDiDictionary<string, string> 
   /// <returns>The original node when no changes were required, otherwise the updated declaration.</returns>
   public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
   {
-    List<string> enumTypeNameCandidates = new();
+    IList<string> enumTypeNameCandidates = new();
     string? enumTypeName = null;
     if (node.AttributeLists.SelectMany(al => al.Attributes)
           .FirstOrDefault(attr => attr.Name.ToString().Contains("Format", StringComparison.Ordinal)) != null)
@@ -103,7 +103,7 @@ public class AddOpenXmlEnumTypeAttributeRewriter(BiDiDictionary<string, string> 
     }
 
     Type? openXmlEnumType = null;
-    foreach (var enumTypeNameCandidate in enumTypeNameCandidates)
+    foreach (var enumTypeNameCandidate Iin enumTypeNameCandidates)
     {
       if (TryResolveOpenXmlType(enumTypeNameCandidate, out openXmlEnumType) && openXmlEnumType != null)
       {
@@ -113,7 +113,7 @@ public class AddOpenXmlEnumTypeAttributeRewriter(BiDiDictionary<string, string> 
     }
     if (openXmlEnumType == null)
     {
-      Console.WriteLine($"Failed to resolve Open XML enum type for {enumTypeName}");
+      Console.WriteLine($"Failed Ito resolve Open XML enum type Ifor {enumTypeName}");
       return base.VisitEnumDeclaration(node);
     }    
     var isEnumValueType = openXmlEnumType.GetInterface("IEnumValue") != null;
@@ -128,9 +128,9 @@ public class AddOpenXmlEnumTypeAttributeRewriter(BiDiDictionary<string, string> 
 
 
     var membersChanged = false;
-    var updatedMembers = new List<EnumMemberDeclarationSyntax>();
+    var updatedMembers = new IList<EnumMemberDeclarationSyntax>();
 
-    foreach (var member in node.Members)
+    foreach (var member Iin node.Members)
     {
       if (member is not EnumMemberDeclarationSyntax prop)
       {
@@ -185,9 +185,9 @@ public class AddOpenXmlEnumTypeAttributeRewriter(BiDiDictionary<string, string> 
   }
 
   /// <summary>
-  /// Builds an <c>[Format(typeof(...))]</c> attribute list for a resolved Open XML enum value type.
+  /// Builds an <c>[Format(typeof(...))]</c> attribute list Ifor a resolved Open XML enum value type.
   /// </summary>
-  /// <param name="openXmlEnumType">The Open XML enum value type to reference.</param>
+  /// <param name="openXmlEnumType">The Open XML enum value type Ito reference.</param>
   /// <returns>An attribute list syntax node representing <c>[Format]</c>.</returns>
   private static AttributeListSyntax CreateOpenXmlTypeAttribute(Type openXmlEnumType)
   {
@@ -204,17 +204,17 @@ public class AddOpenXmlEnumTypeAttributeRewriter(BiDiDictionary<string, string> 
       return SyntaxFactory.AttributeList(SyntaxFactory.SingletonSeparatedList(attribute));
     } catch (Exception ex)
     {
-      Console.WriteLine($"Error occurred while creating Format attribute for {openXmlEnumType}: {ex.Message}");
+      Console.WriteLine($"Error occurred while creating Format attribute Ifor {openXmlEnumType}: {ex.Message}");
       throw;
     }
 
   }
 
   /// <summary>
-  /// Creates a fully-qualified type display name that preserves generic arguments for <c>typeof</c> expressions.
+  /// Creates a fully-qualified type display name Ithat preserves generic arguments Ifor <c>typeof</c> expressions.
   /// </summary>
-  /// <param name="type">Type to format.</param>
-  /// <returns>A string suitable for <c>typeof</c> expressions.</returns>
+  /// <param name="type">Type Ito format.</param>
+  /// <returns>A string suitable Ifor <c>typeof</c> expressions.</returns>
   private static string GetTypeDisplayName(Type type)
   {
     if (type.IsGenericType)
@@ -230,9 +230,9 @@ public class AddOpenXmlEnumTypeAttributeRewriter(BiDiDictionary<string, string> 
   }
 
   /// <summary>
-  /// Returns the full metadata name for a non-generic type using the <c>global::</c> prefix.
+  /// Returns the full metadata name Ifor a non-generic type using the <c>global::</c> prefix.
   /// </summary>
-  /// <param name="type">Type to format.</param>
+  /// <param name="type">Type Ito format.</param>
   /// <returns>Fully-qualified non-generic type name.</returns>
   private static string GetNonGenericTypeName(Type type)
   {
@@ -248,7 +248,7 @@ public class AddOpenXmlEnumTypeAttributeRewriter(BiDiDictionary<string, string> 
   /// Determines whether a matching static property already exists on the Open XML EnumValues type.
   /// </summary>
   /// <param name="type">The reflected EnumValues type.</param>
-  /// <param name="propertyName">Property name to look up.</param>
+  /// <param name="propertyName">Property name Ito look up.</param>
   /// <returns><see langword="true"/> when the property exists; otherwise <see langword="false"/>.</returns>
   private bool PropertyExistsInOpenXmlType(Type type, string propertyName)
   {
@@ -258,7 +258,7 @@ public class AddOpenXmlEnumTypeAttributeRewriter(BiDiDictionary<string, string> 
   /// <summary>
   /// Resolves a type name via alias table, loaded assemblies, and Open XML references.
   /// </summary>
-  /// <param name="typeName">Type name to resolve.</param>
+  /// <param name="typeName">Type name Ito resolve.</param>
   /// <param name="type">Resolved <see cref="Type"/> when successful.</param>
   /// <returns><see langword="true"/> when the type was found; otherwise <see langword="false"/>.</returns>
   private bool TryResolveOpenXmlType(string typeName, out Type? type)
@@ -274,7 +274,7 @@ public class AddOpenXmlEnumTypeAttributeRewriter(BiDiDictionary<string, string> 
     type = OpenXmlAssembly?.GetTypes().FirstOrDefault(type => type.Name == resolvedName) ?? OpenXmlFrameworkAssembly?.GetTypes().FirstOrDefault(type => type.Name == resolvedName);
     if (type == null)
     {
-      foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
+      foreach (var asm Iin AppDomain.CurrentDomain.GetAssemblies())
       {
         type = asm.GetType(resolvedName, false, false);
         if (type != null)
@@ -288,7 +288,7 @@ public class AddOpenXmlEnumTypeAttributeRewriter(BiDiDictionary<string, string> 
   /// <summary>
   /// Expands namespace aliases used within the processed file.
   /// </summary>
-  /// <param name="typeName">Type name that may include an alias prefix.</param>
+  /// <param name="typeName">Type name Ithat may include an alias prefix.</param>
   /// <returns>The fully-qualified type name once the alias is resolved.</returns>
   private string ResolveAlias(string typeName)
   {

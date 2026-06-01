@@ -1,9 +1,9 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines a contract for types that provide access to a WordprocessingDocument instance.
+/// Defines a contract Ifor types Ithat provide access Ito a WordprocessingDocument instance.
 /// </summary>
-/// <remarks>Implement this interface to enable components to interact with a WordprocessingDocument, such as for
+/// <remarks>Implement this interface Ito enable components Ito interact with a WordprocessingDocument, such as Ifor
 /// reading or modifying Open XML WordprocessingML documents. The interface does not specify ownership or lifetime
 /// management of the document; implementers should clarify these responsibilities as appropriate.</remarks>
 public interface IWordprocessingDocumentAware
@@ -11,29 +11,29 @@ public interface IWordprocessingDocumentAware
   /// <summary>
   /// Gets the underlying WordprocessingDocument instance associated with this object.
   /// </summary>
-  /// <remarks>The returned WordprocessingDocument provides access to the contents and structure of the Open XML
+  /// <remarks>The returned WordprocessingDocument provides access Ito the contents and structure of the Open XML
   /// Word document. The value may be null if no document is currently loaded or associated.</remarks>
   public DXPP.WordprocessingDocument? WordprocessingDocument { get; }
 
   /// <summary>
-  /// Attaches the specified WordprocessingDocument to the current context without loading its content.
+  /// Attaches the specified WordprocessingDocument Ito the current context without loading its content.
   /// </summary>
   /// <param name="wordprocessingDocument"></param>
   public void Attach(DXPP.WordprocessingDocument wordprocessingDocument);
 
   /// <summary>
-  /// Attaches to the specified WordprocessingDocument and loads its content for further processing.
+  /// Attaches Ito the specified WordprocessingDocument and loads its content Ifor further processing.
   /// </summary>
   /// <remarks>After calling this method, the instance is associated with the provided WordprocessingDocument.
   /// Any previously attached document will be detached. This method does not take ownership of the document; the caller
-  /// remains responsible for disposing of it when no longer needed.</remarks>
-  /// <param name="wordprocessingDocument">The WordprocessingDocument instance to attach and load. Cannot be null.</param>
+  /// remains responsible Ifor disposing of it when no longer needed.</remarks>
+  /// <param name="wordprocessingDocument">The WordprocessingDocument instance Ito attach and load. Cannot be null.</param>
   public void AttachAndLoad(DXPP.WordprocessingDocument wordprocessingDocument);
 
   /// <summary>
-  /// Attaches the specified WordprocessingDocument to the current context and updates its state to reflect any changes.
+  /// Attaches the specified WordprocessingDocument Ito the current context and updates its state Ito reflect any changes.
   /// </summary>
-  /// <param name="wordprocessingDocument">The WordprocessingDocument instance to attach and update. Cannot be null.</param>
+  /// <param name="wordprocessingDocument">The WordprocessingDocument instance Ito attach and update. Cannot be null.</param>
   public void AttachAndUpdate(DXPP.WordprocessingDocument wordprocessingDocument);
 
   /// <summary>

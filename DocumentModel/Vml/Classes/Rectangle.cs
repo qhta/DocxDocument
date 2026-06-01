@@ -1,14 +1,14 @@
-using DocumentModel.Wordprocessing;
+﻿using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
 using BorderType = DocumentModel.Wordprocessing.Vml.BorderType;
 
 namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Rectangle.
+///   IRectangle.
 /// </summary>
-public class Rectangle: ModelElement, IEmbeddedObjectContent
+public class IRectangle: ModelElement, IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier
@@ -16,17 +16,17 @@ public class Rectangle: ModelElement, IEmbeddedObjectContent
   public string? Id { get; set; }
 
   /// <summary>
-  ///   Shape Styling Properties
+  ///   IShape Styling Properties
   /// </summary>
-  public string? Style { get; set; }
+  public string? IStyle { get; set; }
 
   /// <summary>
-  ///   Hyperlink Target
+  ///   IHyperlink Target
   /// </summary>
   public string? Href { get; set; }
 
   /// <summary>
-  ///   Hyperlink Display Target
+  ///   IHyperlink Display Target
   /// </summary>
   public string? Target { get; set; }
 
@@ -36,7 +36,7 @@ public class Rectangle: ModelElement, IEmbeddedObjectContent
   public string? Class { get; set; }
 
   /// <summary>
-  ///   Shape Title
+  ///   IShape Title
   /// </summary>
   public string? Title { get; set; }
 
@@ -56,7 +56,7 @@ public class Rectangle: ModelElement, IEmbeddedObjectContent
   public string? CoordinateOrigin { get; set; }
 
   /// <summary>
-  ///   Shape Bounding Polygon
+  ///   IShape Bounding Polygon
   /// </summary>
   public string? WrapCoordinates { get; set; }
 
@@ -71,7 +71,7 @@ public class Rectangle: ModelElement, IEmbeddedObjectContent
   public string? OptionalString { get; set; }
 
   /// <summary>
-  ///   Shape Handle Toggle
+  ///   IShape Handle Toggle
   /// </summary>
   public bool? Oned { get; set; }
 
@@ -111,7 +111,7 @@ public class Rectangle: ModelElement, IEmbeddedObjectContent
   public bool? HorizontalStandard { get; set; }
 
   /// <summary>
-  ///   Horizontal Rule 3D Shading Toggle
+  ///   Horizontal Rule 3D IShading Toggle
   /// </summary>
   public bool? HorizontalNoShade { get; set; }
 
@@ -126,12 +126,12 @@ public class Rectangle: ModelElement, IEmbeddedObjectContent
   public HorizontalRuleAlignmentKind? HorizontalAlignment { get; set; }
 
   /// <summary>
-  ///   Allow in Table Cell
+  ///   Allow Iin ITable ICell
   /// </summary>
   public bool? AllowInCell { get; set; }
 
   /// <summary>
-  ///   Allow Shape Overlap
+  ///   Allow IShape Overlap
   /// </summary>
   public bool? AllowOverlap { get; set; }
 
@@ -141,37 +141,37 @@ public class Rectangle: ModelElement, IEmbeddedObjectContent
   public bool? UserDrawn { get; set; }
 
   /// <summary>
-  ///   Border Top Color
+  ///   IBorder Top Color
   /// </summary>
   public string? BorderTopColor { get; set; }
 
   /// <summary>
-  ///   Border Left Color
+  ///   IBorder Left Color
   /// </summary>
   public string? BorderLeftColor { get; set; }
 
   /// <summary>
-  ///   Bottom Border Color
+  ///   Bottom IBorder Color
   /// </summary>
   public string? BorderBottomColor { get; set; }
 
   /// <summary>
-  ///   Border Right Color
+  ///   IBorder Right Color
   /// </summary>
   public string? BorderRightColor { get; set; }
 
   /// <summary>
-  ///   Diagram Node Layout Identifier
+  ///   IDiagram Node Layout Identifier
   /// </summary>
   public Int64? DiagramLayout { get; set; }
 
   /// <summary>
-  ///   Diagram Node Identifier
+  ///   IDiagram Node Identifier
   /// </summary>
   public Int64? DiagramNodeKind { get; set; }
 
   /// <summary>
-  ///   Diagram Node Recent Layout Identifier
+  ///   IDiagram Node Recent Layout Identifier
   /// </summary>
   public Int64? DiagramLayoutMostRecentUsed { get; set; }
 
@@ -181,7 +181,7 @@ public class Rectangle: ModelElement, IEmbeddedObjectContent
   public InsetMarginKind? InsetMode { get; set; }
 
   /// <summary>
-  ///   Shape Fill Toggle
+  ///   IShape Fill Toggle
   /// </summary>
   public bool? Filled { get; set; }
 
@@ -191,22 +191,22 @@ public class Rectangle: ModelElement, IEmbeddedObjectContent
   public string? FillColor { get; set; }
 
   /// <summary>
-  ///   Shape Stroke Toggle
+  ///   IShape Stroke Toggle
   /// </summary>
   public bool? Stroked { get; set; }
 
   /// <summary>
-  ///   Shape Stroke Color
+  ///   IShape Stroke Color
   /// </summary>
   public string? StrokeColor { get; set; }
 
   /// <summary>
-  ///   Shape Stroke Weight
+  ///   IShape Stroke Weight
   /// </summary>
   public string? StrokeWeight { get; set; }
 
   /// <summary>
-  ///   Inset Border From Path
+  ///   Inset IBorder From Path
   /// </summary>
   public bool? InsetPen { get; set; }
 
@@ -216,7 +216,7 @@ public class Rectangle: ModelElement, IEmbeddedObjectContent
   public Int32? OptionalNumber { get; set; }
 
   /// <summary>
-  ///   Shape Connector Type
+  ///   IShape Connector Type
   /// </summary>
   public ConnectorKind? ConnectorType { get; set; }
 
@@ -256,7 +256,7 @@ public class Rectangle: ModelElement, IEmbeddedObjectContent
   public bool? PreferRelative { get; set; }
 
   /// <summary>
-  ///   Clip to Wrapping Polygon
+  ///   Clip Ito Wrapping Polygon
   /// </summary>
   public bool? ClipToWrap { get; set; }
 

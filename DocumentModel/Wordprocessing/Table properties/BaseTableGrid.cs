@@ -1,8 +1,8 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Base Table Grid.
-///   Contains GridColumns only.
+///   Base ITable Grid.
+///   Contains GridColumns Ionly.
 /// </summary>
 public abstract class BaseTableGrid: ModelElement
 {

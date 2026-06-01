@@ -1,17 +1,17 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Paragraph Properties.
+///   IParagraph Properties.
 /// </summary>
 public class ParagraphProperties: ExtBaseParagraphProperties
 {
   /// <summary>
-  ///   Run Properties for the Paragraph Mark.
+  ///   Run Properties Ifor the IParagraph Mark.
   /// </summary>
   public ParagraphMarkRunProperties? ParagraphMarkRunProperties { get; set; }
 
   /// <summary>
-  ///   Section Properties.
+  ///   ISection Properties.
   /// </summary>
   public SectionProperties? SectionProperties { get; set; }
 

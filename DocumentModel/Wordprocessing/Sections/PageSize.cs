@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the PageSize Class.
@@ -7,17 +7,17 @@ namespace DocumentModel.Wordprocessing;
 public class PageSize: ModelElement, ISectionPropertiesContent
 {
   /// <summary>
-  ///   Page Width
+  ///   IPage Width
   /// </summary>
   public Twips? Width { get; set; }
 
   /// <summary>
-  ///   Page Height
+  ///   IPage Height
   /// </summary>
   public Twips? Height { get; set; }
 
   /// <summary>
-  ///   Page Orientation
+  ///   IPage Orientation
   /// </summary>
   public PageOrientationKind? Orient { get; set; }
 

@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the FrameLayoutValues enumeration.
@@ -8,17 +8,17 @@ namespace DocumentModel.Wordprocessing;
 public enum FrameLayoutKind
 {
   /// <summary>
-  ///   Stack Frames Vertically.
+  ///   Stack IFrames Vertically.
   /// </summary>
-  Rows,
+  IRows,
 
   /// <summary>
-  ///   Stack Frames Horizontally.
+  ///   Stack IFrames Horizontally.
   /// </summary>
-  Columns,
+  IColumns,
 
   /// <summary>
-  ///   Do Not Stack Frames.
+  ///   Do Not Stack IFrames.
   /// </summary>
   None
 }

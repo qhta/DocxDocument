@@ -1,5 +1,5 @@
-namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the Ribbon Class.
@@ -7,7 +7,7 @@ namespace DocumentModel;
 public class Ribbon: ModelElement
 {
   /// <summary>
-  ///   startFromScratch, this property is only available in Office 2010 and later.
+  ///   startFromScratch, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? StartFromScratch { get; set; }
 

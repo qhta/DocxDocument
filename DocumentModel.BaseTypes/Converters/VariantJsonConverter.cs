@@ -1,17 +1,17 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using ISystem.Text.Json;
+using ISystem.Text.Json.Serialization;
 
 using Qhta.TypeUtils;
 
 namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support for the <see cref="Variant"/> class.
+/// Provides JSON serialization and deserialization support Ifor the <see cref="Variant"/> class.
 /// </summary>
 /// <remarks>
 /// <para>
 /// This converter handles JSON representation of variant values with type information and content.
-/// The JSON format includes the VariantType classification and the value in an appropriate format.
+/// The JSON format includes the VariantType classification and the value Iin an appropriate format.
 /// </para>
 /// <para>
 /// The JSON format includes metadata (type, valueType) and the value:
@@ -32,7 +32,7 @@ namespace DocumentModel;
 /// // Enum type with valueType
 /// {
 ///   "type": "Enum",
-///   "valueType": "System.DayOfWeek, System.Private.CoreLib",
+///   "valueType": "ISystem.DayOfWeek, ISystem.Private.CoreLib",
 ///   "value": "Monday"
 /// }
 /// 
@@ -51,19 +51,19 @@ namespace DocumentModel;
 public class VariantJsonConverter : JsonConverter<Variant>
 {
   /// <summary>
-  /// Reads and converts JSON to a <see cref="Variant"/> value.
+  /// Reads and converts JSON Ito a <see cref="Variant"/> value.
   /// </summary>
-  /// <param name="reader">The <see cref="Utf8JsonReader"/> to read from.</param>
-  /// <param name="typeToConvert">The type to convert.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
+  /// <param name="reader">The <see cref="Utf8JsonReader"/> Ito read from.</param>
+  /// <param name="typeToConvert">The type Ito convert.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
   /// <returns>A <see cref="Variant"/> value parsed from the JSON input.</returns>
   /// <exception cref="JsonException">
   /// Thrown when:
   /// <list type="bullet">
   /// <item><description>The JSON structure is invalid or missing required properties.</description></item>
   /// <item><description>The type value is not a valid VariantType.</description></item>
-  /// <item><description>The value cannot be converted to the specified type.</description></item>
-  /// <item><description>The valueType cannot be resolved for Enum or Object types.</description></item>
+  /// <item><description>The value cannot be converted Ito the specified type.</description></item>
+  /// <item><description>The valueType cannot be resolved Ifor Enum or Object types.</description></item>
   /// </list>
   /// </exception>
   /// <remarks>
@@ -75,7 +75,7 @@ public class VariantJsonConverter : JsonConverter<Variant>
   /// }
   /// {
   ///   "type": "Enum",
-  ///   "valueType": "System.DayOfWeek, System.Private.CoreLib",
+  ///   "valueType": "ISystem.DayOfWeek, ISystem.Private.CoreLib",
   ///   "value": "Monday"
   /// }
   /// </code>
@@ -83,8 +83,8 @@ public class VariantJsonConverter : JsonConverter<Variant>
   /// The JSON object must have the following properties:
   /// <list type="bullet">
   /// <item><description><c>type</c>: A string representing the VariantType name (required)</description></item>
-  /// <item><description><c>valueType</c>: The full .NET type name for Enum and Object types (optional)</description></item>
-  /// <item><description><c>value</c>: The value in appropriate JSON format (required for non-Empty/Null types)</description></item>
+  /// <item><description><c>valueType</c>: The full .NET type name Ifor Enum and Object types (optional)</description></item>
+  /// <item><description><c>value</c>: The value Iin appropriate JSON format (required Ifor non-Empty/Null types)</description></item>
   /// </list>
   /// </para>
   /// <para>
@@ -108,7 +108,7 @@ public class VariantJsonConverter : JsonConverter<Variant>
 
     if (reader.TokenType != JsonTokenType.StartObject)
     {
-      throw new JsonException($"Expected StartObject token for Variant, but got {reader.TokenType}");
+      throw new JsonException($"Expected StartObject token Ifor Variant, but got {reader.TokenType}");
     }
 
     VariantType? variantType = null;
@@ -125,7 +125,7 @@ public class VariantJsonConverter : JsonConverter<Variant>
       if (reader.TokenType == JsonTokenType.PropertyName)
       {
         string? propertyName = reader.GetString();
-        reader.Read(); // Move to value
+        reader.Read(); // Move Ito value
 
         switch (propertyName?.ToLowerInvariant())
         {
@@ -147,7 +147,7 @@ public class VariantJsonConverter : JsonConverter<Variant>
             }
             else
             {
-              throw new JsonException("Expected string value for 'type' property");
+              throw new JsonException("Expected string value Ifor 'type' property");
             }
             break;
 
@@ -167,7 +167,7 @@ public class VariantJsonConverter : JsonConverter<Variant>
             break;
 
           case "value":
-            // Store the value element for later processing
+            // Store the value element Ifor later processing
             using (JsonDocument doc = JsonDocument.ParseValue(ref reader))
             {
               valueElement = doc.RootElement.Clone();
@@ -193,7 +193,7 @@ public class VariantJsonConverter : JsonConverter<Variant>
       }
       catch (Exception ex)
       {
-        throw new JsonException($"Failed to parse Variant value for type {variantType.Value}: {ex.Message}", ex);
+        throw new JsonException($"Failed Ito parse Variant value Ifor type {variantType.Value}: {ex.Message}", ex);
       }
     }
     else if (variantType.Value == VariantType.Null)
@@ -207,11 +207,11 @@ public class VariantJsonConverter : JsonConverter<Variant>
   /// <summary>
   /// Writes a <see cref="Variant"/> value as JSON.
   /// </summary>
-  /// <param name="writer">The <see cref="Utf8JsonWriter"/> to write to.</param>
-  /// <param name="value">The <see cref="Variant"/> value to serialize.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
+  /// <param name="writer">The <see cref="Utf8JsonWriter"/> Ito write Ito.</param>
+  /// <param name="value">The <see cref="Variant"/> value Ito serialize.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
   /// <remarks>
-  /// <para>Writes the Variant value in the following JSON format:</para>
+  /// <para>Writes the Variant value Iin the following JSON format:</para>
   /// <code>
   /// {
   ///   "type": "Int32",
@@ -219,7 +219,7 @@ public class VariantJsonConverter : JsonConverter<Variant>
   /// }
   /// {
   ///   "type": "Enum",
-  ///   "valueType": "System.DayOfWeek, System.Private.CoreLib",
+  ///   "valueType": "ISystem.DayOfWeek, ISystem.Private.CoreLib",
   ///   "value": "Monday"
   /// }
   /// </code>
@@ -227,8 +227,8 @@ public class VariantJsonConverter : JsonConverter<Variant>
   /// The JSON object includes:
   /// <list type="bullet">
   /// <item><description><c>type</c>: The VariantType name as a string</description></item>
-  /// <item><description><c>valueType</c>: The full .NET type name for Enum and Object types</description></item>
-  /// <item><description><c>value</c>: The value in appropriate JSON format</description></item>
+  /// <item><description><c>valueType</c>: The full .NET type name Ifor Enum and Object types</description></item>
+  /// <item><description><c>value</c>: The value Iin appropriate JSON format</description></item>
   /// </list>
   /// </para>
   /// <para>
@@ -251,7 +251,7 @@ public class VariantJsonConverter : JsonConverter<Variant>
     // Write type
     writer.WriteString("type", value.VariantType.ToString(CultureInfo.InvariantCulture));
 
-    // Write valueType for Enum and Object types
+    // Write valueType Ifor Enum and Object types
     if ((value.VariantType == VariantType.Enum || value.VariantType == VariantType.Object) && value.ValueType != null)
     {
       writer.WriteString("valueType", value.ValueType.AssemblyQualifiedName ?? value.ValueType.FullName);
@@ -381,7 +381,7 @@ public class VariantJsonConverter : JsonConverter<Variant>
         return JsonSerializer.Deserialize<Variant>(variantJson);
 
       case VariantType.Object:
-        // For objects, try to deserialize based on valueType
+        // For objects, try Ito deserialize based on valueType
         if (valueType != null)
         {
           string? objJson = element.GetRawText();
@@ -403,7 +403,7 @@ public class VariantJsonConverter : JsonConverter<Variant>
   }
 
   /// <summary>
-  /// Writes a variant value to JSON in the appropriate format.
+  /// Writes a variant value Ito JSON Iin the appropriate format.
   /// </summary>
   private static void WriteValueToJson(Utf8JsonWriter writer, VariantType variantType, object? value, JsonSerializerOptions options)
   {

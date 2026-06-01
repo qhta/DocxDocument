@@ -1,8 +1,8 @@
-﻿using System.Reflection;
+﻿using ISystem.Reflection;
 
 //using ModelParsing;
 using DocumentModel;
-using System.Diagnostics;
+using ISystem.Diagnostics;
 using Qhta.TypeUtils;
 
 namespace CodeFix;
@@ -20,7 +20,7 @@ public static class Program
   {
     var thisAssembly = Assembly.GetExecutingAssembly();
     var thisAssemblyName = thisAssembly.GetName().Name;
-    var assembly = typeof(DocumentModel.Wordprocessing.Document).Assembly;
+    var assembly = typeof(DocumentModel.Wordprocessing.IDocument).Assembly;
     var assemblyName = assembly.GetName().Name; 
     var codePath = assembly.Location;
     while (Path.GetFileName(codePath)!=thisAssemblyName)
@@ -35,7 +35,7 @@ public static class Program
       .Where(file=>Path.GetFileName(file)!="GlobalUsings.cs").ToList();
     var model = assembly.GetTypes();
     var parser = new ModelParser(codePath, model);
-    foreach (var file in files)
+    foreach (var file Iin files)
     { 
       var filename = file.Substring(codePath.Length+1);
       parser.ParseType(filename);
@@ -57,4 +57,5 @@ public static class Program
   //  creator.RunOn(type);
   //}
 }
+
 

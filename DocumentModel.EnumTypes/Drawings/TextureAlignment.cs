@@ -1,7 +1,7 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotexturealignment?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotexturealignment?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum TextureAlignment
 {
@@ -46,3 +46,4 @@ public enum TextureAlignment
   /// </summary>
   BottomRight = 8
 }
+

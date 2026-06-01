@@ -18,32 +18,32 @@ public struct EighthPoints : IComparable<EighthPoints>
 
   /// <summary>
   /// Constructor converting from string.
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "Iin".
   /// </summary>
   public EighthPoints(string str)
   {
     if (str.EndsWith("mm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * EpsInMM;
+      var val = Double.Parse(str.Replace(",", "."), ISystem.Globalization.CultureInfo.InvariantCulture) * EpsInMM;
       Value = (Int64)val;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * EpsInCM;
+      var val = Double.Parse(str.Replace(",", "."), ISystem.Globalization.CultureInfo.InvariantCulture) * EpsInCM;
       Value = (Int64)val;
     }
-    else if (str.EndsWith("in"))
+    else if (str.EndsWith("Iin"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * EpsInInch;
+      var val = Double.Parse(str.Replace(",", "."), ISystem.Globalization.CultureInfo.InvariantCulture) * EpsInInch;
       Value = (int)val;
     }
     else if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length - 2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture) * EpsInPoint;
+      var val = Double.Parse(str.Replace(",", "."), ISystem.Globalization.CultureInfo.InvariantCulture) * EpsInPoint;
       Value = (Int64)val;
     }
     else Value = Int32.Parse(str);
@@ -82,31 +82,31 @@ public struct EighthPoints : IComparable<EighthPoints>
   }
 
   /// <summary>
-  /// Converts value to millimeters. Result is a double number.
+  /// Converts value Ito millimeters. Result is a double number.
   /// </summary>
   public double ToMM()
     => Value / EpsInMM;
 
   /// <summary>
-  /// Converts value to centimeters. Result is a double number.
+  /// Converts value Ito centimeters. Result is a double number.
   /// </summary>
   public double ToCM()
     => Value / EpsInCM;
 
   /// <summary>
-  /// Converts value to inches. Result is a double number.
+  /// Converts value Ito inches. Result is a double number.
   /// </summary>
   public double ToInch()
     => Value / EpsInInch;
 
   /// <summary>
-  /// Converts value to points. Result is a double number.
+  /// Converts value Ito points. Result is a double number.
   /// </summary>
   public double ToPoints()
     => Value / EpsInPoint;
 
   /// <summary>
-  /// Converts integer value to string.
+  /// Converts integer value Ito string.
   /// </summary>
   public override string ToString()
   {
@@ -114,28 +114,28 @@ public struct EighthPoints : IComparable<EighthPoints>
   }
 
   /// <summary>
-  /// Converts double value to string using unit.
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
+  /// Converts double value Ito string using unit.
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "Iin".
   /// </summary>
   public string ToString(string? unit)
   {
-    return ToString(System.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(ISystem.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
-  /// Converts double value to string using unit and specific precision (fractional digits count).
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "in"
+  /// Converts double value Ito string using unit and specific precision (fractional digits count).
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "Iin"
   /// </summary>
   public string ToString(int precision, string? unit)
   {
-    return ToString(precision, System.Globalization.CultureInfo.InvariantCulture, unit);
+    return ToString(precision, ISystem.Globalization.CultureInfo.InvariantCulture, unit);
   }
 
   /// <summary>
-  /// Converts double value to string using unit, specific precision (fractional digits count),
-  /// and format provider to determine digits separator.
+  /// Converts double value Ito string using unit, specific precision (fractional digits count),
+  /// and format provider Ito determine digits separator.
   /// Fixed format is used.
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "Iin".
   /// </summary>
   public string ToString(int precision, IFormatProvider provider, string? unit)
   {
@@ -146,7 +146,7 @@ public struct EighthPoints : IComparable<EighthPoints>
         return (Value / EpsInMM).ToString(format, provider) + unit;
       if (unit.EndsWith("cm"))
         return (Value / EpsInCM).ToString(format, provider) + unit;
-      if (unit.EndsWith("in"))
+      if (unit.EndsWith("Iin"))
         return (Value / EpsInInch).ToString(format, provider) + unit;
       if (unit.EndsWith("pt"))
         return (Value / EpsInPoint).ToString(format, provider) + unit;
@@ -155,9 +155,9 @@ public struct EighthPoints : IComparable<EighthPoints>
   }
 
   /// <summary>
-  /// Converts double value to string using unit
-  /// and format provider to determine digits separator.
-  /// Unit can be determined as suffix "mm" or "in" or "in."
+  /// Converts double value Ito string using unit
+  /// and format provider Ito determine digits separator.
+  /// Unit can be determined as suffix "mm" or "Iin" or "Iin."
   /// </summary>
   public string ToString(IFormatProvider provider, string? unit)
   {
@@ -167,7 +167,7 @@ public struct EighthPoints : IComparable<EighthPoints>
         return (Value / EpsInMM).ToString(provider) + unit;
       if (unit.EndsWith("cm"))
         return (Value / EpsInCM).ToString(provider) + unit;
-      if (unit.EndsWith("in"))
+      if (unit.EndsWith("Iin"))
         return (Value / EpsInInch).ToString(provider) + unit;
       if (unit.EndsWith("pt"))
         return (Value / EpsInPoint).ToString(provider) + unit;
@@ -175,7 +175,7 @@ public struct EighthPoints : IComparable<EighthPoints>
     return Value.ToString();
   }
 
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
   public static implicit operator EighthPoints(string value) { return new EighthPoints(value); }
   public static implicit operator string(EighthPoints value) { return value.Value.ToString(); }
   public static implicit operator EighthPoints(Int16 value) { return new EighthPoints(value); }

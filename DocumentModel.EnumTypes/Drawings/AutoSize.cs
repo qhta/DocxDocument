@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Determines the type of automatic sizing allowed.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoautosize?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoautosize?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum AutoSize
 {
@@ -16,11 +16,12 @@ public enum AutoSize
   /// </summary>
   None = 0,
   /// <summary>
-  /// The shape is adjusted to fit the text.
+  /// The shape is adjusted Ito fit the text.
   /// </summary>
   ShapeToFitText = 1,
   /// <summary>
-  /// The text is adjusted to fit the shape.
+  /// The text is adjusted Ito fit the shape.
   /// </summary>
   TextToFitShape = 2
 }
+

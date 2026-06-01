@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.ChartsStyle;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartsStyle;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the StyleColor Class.
@@ -7,7 +7,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 public class StyleColor: ModelElement
 {
   /// <summary>
-  ///   val, this property is only available in Office 2013 and later.
+  ///   val, this property is Ionly available Iin Office 2013 and later.
   /// </summary>
   public string? Val { get; set; }
 

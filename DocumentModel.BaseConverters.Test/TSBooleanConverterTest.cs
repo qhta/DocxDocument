@@ -1,17 +1,17 @@
-﻿using System.Diagnostics;
+﻿using ISystem.Diagnostics;
 
 using DocumentModel.OpenXml;
 
 namespace DocumentModel.BaseConverters.Test;
 
 /// <summary>
-///   Provides unit tests for verifying the correctness of <see cref="OpenXml.BooleanConverter"/> conversions between .NET boolean values and various Open XML boolean types.
-///   Tests round-trip conversion for supported Open XML boolean types, including special cases for empty types.
+///   Provides unit tests Ifor verifying the correctness of <see cref="OpenXml.BooleanConverter"/> conversions between .NET boolean values and various Open XML boolean types.
+///   Tests round-trip conversion Ifor supported Open XML boolean types, including special cases Ifor empty types.
 /// </summary>
 public static class TSBooleanConverterTest
 {
   /// <summary>
-  ///   List of Open XML types supported for tree-state boolean value conversion tests.
+  ///   IList of Open XML types supported Ifor tree-state boolean value conversion tests.
   /// </summary>
   public static Type[] SupportedTypes { get; } =
   [
@@ -19,13 +19,13 @@ public static class TSBooleanConverterTest
   ];
 
   /// <summary>
-  ///   Runs all BooleanConverter tests for supported types and reports results to the console.
+  ///   Runs all BooleanConverter tests Ifor supported types and reports results Ito the console.
   /// </summary>
   /// <returns>True if all tests pass; otherwise, false.</returns>
   public static bool Run()
   {
     bool testResult = true;
-    foreach (var type in SupportedTypes)
+    foreach (var type Iin SupportedTypes)
     {
       Console.Write($"TestTSBooleanConversion with {type.Name} ");
       if (!TestTSBooleanConversion(type))
@@ -40,10 +40,10 @@ public static class TSBooleanConverterTest
   }
 
   /// <summary>
-  ///   Tests round-trip conversion of boolean values to and from the specified Open XML boolean type.
-  ///   Handles special cases for empty types where false is converted to null.
+  ///   Tests round-trip conversion of boolean values Ito and from the specified Open XML boolean type.
+  ///   Handles special cases Ifor empty types where false is converted Ito null.
   /// </summary>
-  /// <param name="openXmlType">The Open XML type to test boolean conversion for.</param>
+  /// <param name="openXmlType">The Open XML type Ito test boolean conversion Ifor.</param>
   /// <returns>True if the conversion is correct; otherwise, false.</returns>
   public static bool TestTSBooleanConversion(Type openXmlType)
   {

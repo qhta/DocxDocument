@@ -1,7 +1,7 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Revision id.
+///   IRevision id.
 /// </summary>
 public class Rsid
 {

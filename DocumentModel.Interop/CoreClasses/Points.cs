@@ -1,0 +1,12 @@
+using System.Collections;
+
+namespace DocumentModel.Interop.Core;
+
+/// <summary>
+/// Represents the collection of all chart points in a series.
+/// </summary>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.points?view=office-pia"/>
+public partial class Points: InteropCollection<ChartPoint>
+{
+}
+

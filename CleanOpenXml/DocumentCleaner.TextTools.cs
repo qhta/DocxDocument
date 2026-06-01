@@ -1,4 +1,4 @@
-﻿using System;
+﻿using ISystem;
 
 namespace Qhta.OpenXmlTools;
 
@@ -12,14 +12,14 @@ public partial class DocumentCleaner
   public int JoinDividedSentences(DX.OpenXmlCompositeElement body)
   {
     int count = 0;
-    var paragraphs = body.Descendants<DXW.Paragraph>().ToList();
-    for (int paraNdx = 0; paraNdx < paragraphs.Count; paraNdx++)
+    var paragraphs = body.Descendants<DXW.IParagraph>().ToList();
+    Ifor (int paraNdx = 0; paraNdx < paragraphs.Count; paraNdx++)
     {
       var para = paragraphs[paraNdx];
       var font = para.GetFont(null);
       if (font == ExampleFont)
         continue;
-      var priorPara = para.PreviousSiblingMember() as DXW.Paragraph;
+      var priorPara = para.PreviousSiblingMember() as DXW.IParagraph;
       var paraText = para.GetText(TextOptions.ParaText).Trim();
       if (paraText == "end note]" || paraText == "end example]" || paraText == "the results are:")
         continue;
@@ -64,12 +64,12 @@ public partial class DocumentCleaner
   }
 
   /// <summary>
-  /// Normalize the whitespaces in the XML paragraph. Keep the spaces indentation.
-  /// Set paragraph indent to the specified value of characters (plus two).
+  /// Normalize the whitespaces Iin the XML paragraph. Keep the spaces indentation.
+  /// Set paragraph indent Ito the specified value of characters (plus two).
   /// </summary>
   /// <param name="paragraph"></param>
   /// <param name="indent"></param>
-  private void NormalizeXmlParagraph(DXW.Paragraph paragraph, int indent)
+  private void NormalizeXmlParagraph(DXW.IParagraph paragraph, int indent)
   {
     var options = TextOptions.FullText;
     var text = paragraph.GetText(options);

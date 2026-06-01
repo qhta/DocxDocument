@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Inline DrawingML Object.
@@ -27,12 +27,12 @@ public class Inline: ModelElement
   public EMU? DistanceFromRight { get; set; }
 
   /// <summary>
-  ///   anchorId, this property is only available in Office 2010 and later.
+  ///   anchorId, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public HexInt? AnchorId { get; set; }
 
   /// <summary>
-  ///   editId, this property is only available in Office 2010 and later.
+  ///   editId, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public HexInt? EditId { get; set; }
 

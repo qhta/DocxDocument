@@ -1,0 +1,31 @@
+
+namespace DocumentModel.Interop.Core;
+
+/// <summary>
+/// Represents the `SmartArtQuickStyle` class.
+/// </summary>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartquickstyle?view=office-pia"/>
+public partial class SmartArtQuickStyle: InteropObject
+{
+  /// <summary>
+  /// Gets the `Id` property.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartquickstyle.id?view=office-pia"/>
+  public string Id { get; }
+  /// <summary>
+  /// Gets the `Name` property.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartquickstyle.name?view=office-pia"/>
+  public string Name { get; }
+  /// <summary>
+  /// Gets the `Description` property.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartquickstyle.description?view=office-pia"/>
+  public string Description { get; }
+  /// <summary>
+  /// Gets the `Category` property.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartquickstyle.category?view=office-pia"/>
+  public string Category { get; }
+}
+

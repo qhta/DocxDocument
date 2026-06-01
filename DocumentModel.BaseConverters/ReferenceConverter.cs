@@ -1,4 +1,4 @@
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
 ///   Defines a reference. 
@@ -14,13 +14,13 @@ public static class ReferenceConverter
       if (_element != null)
       {
         var valProperty = typeof(ElementType).GetProperty("Id");
-        Debug.Assert(valProperty != null, $"\"Id\" property in {typeof(ElementType)} not found");
+        Debug.Assert(valProperty != null, $"\"Id\" property Iin {typeof(ElementType)} not found");
         var val = valProperty.GetValue(_element);
         if (val != null)
         {
           var valType = val.GetType();
           var valueProperty = valType.GetProperty("Value");
-          Debug.Assert(valueProperty != null, $"\"Value\" property in {valType} not found");
+          Debug.Assert(valueProperty != null, $"\"Value\" property Iin {valType} not found");
           var value = valueProperty.GetValue(val);
           if (value is not null)
           {
@@ -47,10 +47,10 @@ public static class ReferenceConverter
         openXmlElement.AppendChild(_element);
       }
       var valProperty = typeof(ElementType).GetProperty("Id");
-      Debug.Assert(valProperty != null, $"\"Id\" property in {typeof(ElementType)} not found");
+      Debug.Assert(valProperty != null, $"\"Id\" property Iin {typeof(ElementType)} not found");
       var valType = valProperty.PropertyType;
       var valueProperty = valType.GetProperty("Value");
-      Debug.Assert(valueProperty != null, $"\"Value\" property in {valType} not found");
+      Debug.Assert(valueProperty != null, $"\"Value\" property Iin {valType} not found");
       var val = new StringValue(value.ToString());
       valProperty.SetValue(_element, val);
     }

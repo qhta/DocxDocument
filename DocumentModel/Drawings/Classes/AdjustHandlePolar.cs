@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Polar Adjust Handle.
@@ -37,7 +37,7 @@ public class AdjustHandlePolar: ModelElement
   public string? MaxAngle { get; set; }
 
   /// <summary>
-  ///   Shape Position Coordinate.
+  ///   IShape Position Coordinate.
   /// </summary>
   public AdjustPoint2DType? Position { get; set; }
 }

@@ -1,0 +1,13 @@
+using System.Collections;
+using System.Reflection;
+
+namespace DocumentModel.Interop.Core;
+
+/// <summary>
+/// A collection of COM add-ins registered in the Windows registry.
+/// </summary>
+/// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.comaddins?view=office-pia"/>
+public partial class COMAddIns: InteropCollection<COMAddIn>
+{
+}
+

@@ -1,11 +1,11 @@
-
-namespace DocumentModel.Application;
+﻿
+namespace DocumentModel.IApplication;
 
 /// <summary>
 /// Specifies a type of file.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofiletype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofiletype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum FileType
 {
@@ -41,7 +41,7 @@ public enum FileType
   /// <summary>
   /// Microsoft PowerPoint template (.pot), Word template (.dot), Excel template (*.xlt).
   /// </summary>
-  Templates,
+  ITemplates,
   /// <summary>
   /// Any Microsoft Outlook item file.
   /// </summary>
@@ -87,7 +87,7 @@ public enum FileType
   /// </summary>
   ProjectFiles,
   /// <summary>
-  /// Microsoft Document Imaging file (*.mdi).
+  /// Microsoft IDocument Imaging file (*.mdi).
   /// </summary>
   DocumentImagingFiles,
   /// <summary>
@@ -103,3 +103,4 @@ public enum FileType
   /// </summary>
   WebPages
 }
+

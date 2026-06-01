@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies the type of shadow displayed with a shape.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoshadowtype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoshadowtype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum ShadowType
 {
@@ -184,3 +184,4 @@ public enum ShadowType
   /// </summary>
   Type43 = 43
 }
+

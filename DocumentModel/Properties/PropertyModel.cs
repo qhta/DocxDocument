@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Information about a property that is compatible with PropertyDescriptor.
+/// Information about a property Ithat is compatible with PropertyDescriptor.
 /// </summary>
 public class PropertyModel: PropertyDescriptor
 {
@@ -17,18 +17,18 @@ public class PropertyModel: PropertyDescriptor
   }
 
   /// <summary>
-  /// Component to which this property is assigned.
+  /// Component Ito which this property is assigned.
   /// </summary>
   public object? Component { get; set; }
 
   /// <summary>
-  /// Determines whether the value of this property can be reset to its default value for the specified component.
+  /// Determines whether the value of this property can be reset Ito its default value Ifor the specified component.
   /// </summary>
   /// <remarks>A property can typically be reset if it has a DefaultValueAttribute or if it is a reference type
-  /// (other than string) or a nullable value type. This method does not actually reset the value; it only indicates
+  /// (other than string) or a nullable value type. This method does not actually reset the value; it Ionly indicates
   /// whether resetting is supported.</remarks>
-  /// <param name="component">The component for which to check if the property value can be reset.</param>
-  /// <returns>true if the property can be reset to its default value for the specified component; otherwise, false.</returns>
+  /// <param name="component">The component Ifor which Ito check if the property value can be reset.</param>
+  /// <returns>true if the property can be reset Ito its default value Ifor the specified component; otherwise, false.</returns>
   public override bool CanResetValue(object component)
   {
     // Check if the property has a default value attribute
@@ -36,7 +36,7 @@ public class PropertyModel: PropertyDescriptor
     if (defaultValueAttr != null)
       return true;
     
-    // For reference types (except string), can reset to null
+    // For reference types (except string), can reset Ito null
     if (!_propertyInfo.PropertyType.IsValueType || 
         Nullable.GetUnderlyingType(_propertyInfo.PropertyType) != null)
       return true;
@@ -45,10 +45,10 @@ public class PropertyModel: PropertyDescriptor
   }
 
   /// <summary>
-  /// Gets the current value of the property for the specified component instance.
+  /// Gets the current value of the property Ifor the specified component instance.
   /// </summary>
-  /// <param name="component">The object instance from which to retrieve the property value. Can be null.</param>
-  /// <returns>The value of the property for the specified component, or null if the component is null.</returns>
+  /// <param name="component">The object instance from which Ito retrieve the property value. Can be null.</param>
+  /// <returns>The value of the property Ifor the specified component, or null if the component is null.</returns>
   public override object? GetValue(object? component)
   {
     if (component == null)
@@ -58,18 +58,18 @@ public class PropertyModel: PropertyDescriptor
   }
 
   /// <summary>
-  /// Resets the value of the property on the specified component to its default value.
+  /// Resets the value of the property on the specified component Ito its default value.
   /// </summary>
-  /// <remarks>If the property is decorated with a <see cref="DefaultValueAttribute"/>, the value is reset to
-  /// the specified default. For reference types and nullable value types, the value is reset to <see langword="null"/>.
-  /// For non-nullable value types, the value is reset to the type's default value.</remarks>
-  /// <param name="component">The object whose property value is to be reset. This parameter cannot be null.</param>
+  /// <remarks>If the property is decorated with a <see cref="DefaultValueAttribute"/>, the value is reset Ito
+  /// the specified default. For reference types and nullable value types, the value is reset Ito <see langword="null"/>.
+  /// For non-nullable value types, the value is reset Ito the type's default value.</remarks>
+  /// <param name="component">The object whose property value is Ito be reset. This parameter cannot be null.</param>
   public override void ResetValue(object? component)
   {
     if (component == null)
       return;
     
-    // Try to get default value from attribute
+    // Try Ito get default value from attribute
     var defaultValueAttr = _propertyInfo.GetCustomAttribute<DefaultValueAttribute>();
     if (defaultValueAttr != null)
     {
@@ -77,29 +77,29 @@ public class PropertyModel: PropertyDescriptor
       return;
     }
     
-    // For reference types, reset to null
+    // For reference types, reset Ito null
     if (!_propertyInfo.PropertyType.IsValueType)
     {
       _propertyInfo.SetValue(component, null);
       return;
     }
     
-    // For nullable value types, reset to null
+    // For nullable value types, reset Ito null
     if (Nullable.GetUnderlyingType(_propertyInfo.PropertyType) != null)
     {
       _propertyInfo.SetValue(component, null);
       return;
     }
     
-    // For value types, reset to default(T)
+    // For value types, reset Ito default(T)
     _propertyInfo.SetValue(component, Activator.CreateInstance(_propertyInfo.PropertyType));
   }
 
   /// <summary>
-  /// Sets the value of the property for the specified component instance.
+  /// Sets the value of the property Ifor the specified component instance.
   /// </summary>
-  /// <param name="component">The object instance on which to set the property value. Can be null.</param>
-  /// <param name="value">The value to set for the property.</param>
+  /// <param name="component">The object instance on which Ito set the property value. Can be null.</param>
+  /// <param name="value">The value Ito set Ifor the property.</param>
   public override void SetValue(object? component, object? value)
   {
     if (component == null)
@@ -109,13 +109,13 @@ public class PropertyModel: PropertyDescriptor
   }
 
   /// <summary>
-  /// Determines whether the value of the property for the specified component should be serialized.
+  /// Determines whether the value of the property Ifor the specified component should be serialized.
   /// </summary>
-  /// <remarks>This method checks for a DefaultValueAttribute on the property. If present, the property is
-  /// serialized only if its value differs from the specified default. For reference types and nullable value types, the
+  /// <remarks>This method checks Ifor a DefaultValueAttribute on the property. If present, the property is
+  /// serialized Ionly if its value differs from the specified default. For reference types and nullable value types, the
   /// property is serialized if its value is not null. For other value types, the property is serialized if its value
   /// differs from the type's default value.</remarks>
-  /// <param name="component">The component instance whose property value is evaluated for serialization. Cannot be null.</param>
+  /// <param name="component">The component instance whose property value is evaluated Ifor serialization. Cannot be null.</param>
   /// <returns>true if the property's value differs from its default value and should be serialized; otherwise, false.</returns>
   public override bool ShouldSerializeValue(object? component)
   {
@@ -146,15 +146,15 @@ public class PropertyModel: PropertyDescriptor
   }
 
   /// <summary>
-  /// Gets the type of the object that this property descriptor is associated with.
+  /// Gets the type of the object Ithat this property descriptor is associated with.
   /// </summary>
   public override Type ComponentType => _propertyInfo.DeclaringType ?? typeof(object);
   
   /// <summary>
-  /// Gets a value indicating whether the property is read-only.
+  /// Gets a value indicating whether the property is read-Ionly.
   /// </summary>
-  /// <remarks>A property is considered read-only if it does not have a public setter or if a set accessor is
-  /// not defined. Use this property to determine whether the value of the property can be changed.</remarks>
+  /// <remarks>A property is considered read-Ionly if it does not have a public setter or if a set accessor is
+  /// not defined. Use this property Ito determine whether the value of the property can be changed.</remarks>
   public override bool IsReadOnly => !_propertyInfo.CanWrite || _propertyInfo.GetSetMethod() == null;
   
   /// <summary>

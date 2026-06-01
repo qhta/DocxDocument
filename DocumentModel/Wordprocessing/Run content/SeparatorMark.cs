@@ -1,16 +1,16 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   This element specifies the presence of a separator mark within the current run. 
 ///   A separator mark is a horizontal line which spans part of the width text extents.
 ///   The separator mark is typically used within the context of separator footnotes or endnotes. 
-///   These footnote and endnote types define the footnote/endnote used to separate the contents of the main document story 
-///   from the contents of footnotes or endnotes on that page.
+///   These footnote and endnote types define the footnote/endnote used Ito separate the contents of the main document story 
+///   from the contents of footnotes or endnotes on Ithat page.
 /// </summary>
 public class SeparatorMark : ModelElement, IRunContent
 {
   /// <summary>
-  /// Specifies whether the separator mark occurs in endnote or footnote.
+  /// Specifies whether the separator mark occurs Iin endnote or footnote.
   /// </summary>
    public NoteReferenceKind? Value { get; set;}
 

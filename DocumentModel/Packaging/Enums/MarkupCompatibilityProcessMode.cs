@@ -1,8 +1,8 @@
-namespace DocumentModel.Packaging;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Packaging;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Specifies the mode in which to process the markup compatibility tags in the document.
+///   Specifies the mode Iin which Ito process the markup compatibility tags Iin the document.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum MarkupCompatibilityProcessMode
@@ -18,7 +18,7 @@ public enum MarkupCompatibilityProcessMode
   ProcessLoadedPartsOnly,
 
   /// <summary>
-  ///   Process all the parts in the package.
+  ///   Process all the parts Iin the package.
   /// </summary>
   ProcessAllParts
 }

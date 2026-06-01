@@ -1,9 +1,9 @@
-using System.Runtime.Serialization;
+﻿using ISystem.Runtime.Serialization;
 
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the abstract MarkupRangeType class for the following types: 
+///   Defines the abstract MarkupRangeType class Ifor the following types: 
 ///   BookmarkStart, BookmarkEnd, 
 ///   CommentRangeStart, CommentRangeEnd, 
 ///   MoveFromRangeStart, MoveFromRangeEnd, 
@@ -20,16 +20,16 @@ namespace DocumentModel.Wordprocessing;
 public abstract class MarkupRangeElement: ModelElement, IRangeMarkupElement, ICommonContent
 {
   /// <summary>
-  ///   Specifies a unique identifier for an annotation within a WordprocessingML document. 
+  ///   Specifies a unique identifier Ifor an annotation within a WordprocessingML document. 
   ///   The restrictions on the id attribute, if any, are defined by the parent XML element. 
   /// </summary>
   public Int32? Id { get; set; }
   
   /// <summary>
-  ///   Specifies that the parent annotation's placement shall be directly linked 
-  ///   with the location of the physical presentation of a custom XML element in the document. 
-  ///   This element only has an effect when the custom XML element is block-level (i.e. surrounds an entire paragraph), 
-  ///   as in this scenario the logical and physical placement of the annotation and custom XML element can differ. 
+  ///   Specifies Ithat the parent annotation's placement shall be directly linked 
+  ///   with the location of the physical presentation of a custom XML element Iin the document. 
+  ///   This element Ionly has an effect when the custom XML element is block-level (i.e. surrounds an entire paragraph), 
+  ///   as Iin this scenario the logical and physical placement of the annotation and custom XML element can differ. 
   /// </summary>
   public DisplacedByCustomXmlKind? DisplacedByCustomXml { get; set; }
 

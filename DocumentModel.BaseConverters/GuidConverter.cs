@@ -1,4 +1,4 @@
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
 ///   Defines a Guid converter from OpenXml. 
@@ -18,7 +18,7 @@ public static class GuidConverter
   internal static readonly ConversionFromMap ConversionFromMap = new();
 
   /// <summary>
-  /// Initializes the conversion maps for <see cref="GuidConverter"/>.
+  /// Initializes the conversion maps Ifor <see cref="GuidConverter"/>.
   /// </summary>
   static GuidConverter()
   {
@@ -28,9 +28,9 @@ public static class GuidConverter
   #region StringValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml StringValue to Guid.
+  /// Converts an OpenXml StringValue Ito Guid.
   /// </summary>
-  /// <param name="StringValue">The StringValue to convert.</param>
+  /// <param name="StringValue">The StringValue Ito convert.</param>
   /// <returns>The Guid value, or null if the element has no content.</returns>
   public static Guid? ConvertFromStringValue(DX.StringValue? StringValue)
   {
@@ -46,8 +46,8 @@ public static class GuidConverter
   /// <summary>
   /// Creates an OpenXml StringValue from an Guid value.
   /// </summary>
-  /// <param name="value">The Guid value to convert.</param>
-  /// <param name="targetType">The target type for the created StringValue instance. Must be a subclass of StringValue.</param>
+  /// <param name="value">The Guid value Ito convert.</param>
+  /// <param name="targetType">The target type Ifor the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   public static DX.StringValue? ConvertToStringValue(Guid? value, Type targetType)
   {
@@ -64,10 +64,10 @@ public static class GuidConverter
   #region String conversion.
 
   /// <summary>
-  /// Converts the specified string representation of a number to its 16-bit signed integer equivalent.
+  /// Converts the specified string representation of a number Ito its 16-bit signed integer equivalent.
   /// </summary>
-  /// <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A 16-bit signed integer equivalent to the number contained in the input string, or null if the input is null or
+  /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
+  /// <returns>A 16-bit signed integer equivalent Ito the number contained Iin the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static Guid? ConvertFromString(string? value)
   {
@@ -79,9 +79,9 @@ public static class GuidConverter
   }
 
   /// <summary>
-  /// Converts a nullable 16-bit integer value to its string representation.
+  /// Converts a nullable 16-bit integer value Ito its string representation.
   /// </summary>
-  /// <param name="value">The nullable 16-bit integer value to convert. If null, the method returns null.</param>
+  /// <param name="value">The nullable 16-bit integer value Ito convert. If null, the method returns null.</param>
   /// <returns>A string representation of the specified value, or null if the value is null.</returns>
   private static String? ConvertToString(Guid? value)
   {
@@ -96,9 +96,9 @@ public static class GuidConverter
   #region OpenXmlLeafTextElement conversion.
 
   /// <summary>
-  /// Converts an OpenXml OpenXmlLeafTextElement to Guid.
+  /// Converts an OpenXml OpenXmlLeafTextElement Ito Guid.
   /// </summary>
-  /// <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
+  /// <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement Ito convert.</param>
   /// <returns>The Guid value, or null if the element has no content.</returns>
   public static Guid? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? OpenXmlLeafTextElement)
   {
@@ -114,8 +114,8 @@ public static class GuidConverter
   /// <summary>
   /// Creates an OpenXml OpenXmlLeafTextElement from an Guid value.
   /// </summary>
-  /// <param name="value">The Guid value to convert.</param>
-  /// <param name="targetType">The target type for the created OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
+  /// <param name="value">The Guid value Ito convert.</param>
+  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(Guid? value, Type targetType)
   {
@@ -132,9 +132,9 @@ public static class GuidConverter
   #region OpenXmlLeafElement conversion.
 
   /// <summary>
-  /// Converts an OpenXml OpenXmlLeafElement to Guid.
+  /// Converts an OpenXml OpenXmlLeafElement Ito Guid.
   /// </summary>
-  /// <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
+  /// <param name="OpenXmlLeafElement">The OpenXmlLeafElement Ito convert.</param>
   /// <returns>The Guid value, or null if the element has no content.</returns>
   public static Guid? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? OpenXmlLeafElement)
   {
@@ -158,8 +158,8 @@ public static class GuidConverter
   /// <summary>
   /// Creates an OpenXml OpenXmlLeafElement from an Guid value.
   /// </summary>
-  /// <param name="value">The Guid value to convert.</param>
-  /// <param name="targetType">The target type for the created OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
+  /// <param name="value">The Guid value Ito convert.</param>
+  /// <param name="targetType">The target type Ifor the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(Guid? value, Type targetType)
   {
@@ -185,10 +185,10 @@ public static class GuidConverter
   #region Generic OpenXml conversion methods
 
   /// <summary>
-  /// Converts a value to a specified target type.
+  /// Converts a value Ito a specified target type.
   /// </summary>
-  /// <param name="value">The value to convert.</param>
-  /// <param name="targetType">The target type to convert to.</param>
+  /// <param name="value">The value Ito convert.</param>
+  /// <param name="targetType">The target type Ito convert Ito.</param>
   /// <returns>The converted value, or null if the element has no content.</returns>
   /// <exception cref="InvalidOperationException">Thrown if the conversion is not supported.</exception>
   public static object? ConvertTo(Guid? value, Type targetType)
@@ -197,14 +197,14 @@ public static class GuidConverter
   }
 
   /// <summary>
-  /// Converts an Open XML value to a nullable Guid, if possible.
+  /// Converts an Open XML value Ito a nullable Guid, if possible.
   /// </summary>
-  /// <remarks>If value is a StringValue, the method attempts to parse its contents as an Guid integer. If
+  /// <remarks>If value is a StringValue, the method attempts Ito parse its contents as an Guid integer. If
   /// parsing fails, the method returns null.</remarks>
-  /// <param name="value">The value to convert. Supported types include GuidValue, GuidValue, GuidValue, UGuidValue, GuidValue,
+  /// <param name="value">The value Ito convert. Supported types include GuidValue, GuidValue, GuidValue, UGuidValue, GuidValue,
   /// UGuidValue, UGuidValue, and StringValue. May be null.</param>
   /// <returns>An Guid representation of the input value, or null if the input is null or cannot be converted.</returns>
-  /// <exception cref="InvalidOperationException">Thrown if the type of value is not supported for conversion.</exception>
+  /// <exception cref="InvalidOperationException">Thrown if the type of value is not supported Ifor conversion.</exception>
   public static Guid? ConvertFrom(object? value)
   {
     return (Guid?)ConverterBase.ConvertFrom(value, typeof(Guid), ConversionFromMap);

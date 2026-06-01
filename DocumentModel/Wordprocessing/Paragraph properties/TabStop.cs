@@ -1,10 +1,10 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Custom Tab Stop.
 /// </summary>
-public class TabStop: ModelElement
+public class ITabStop: ModelElement
 {
   /// <summary>
   ///   Tab Stop Type

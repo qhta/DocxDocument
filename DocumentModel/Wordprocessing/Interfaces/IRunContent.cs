@@ -1,7 +1,7 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Interface for elements that can be included in document text <see cref="Run"/> element.
+///   Interface Ifor elements Ithat can be included Iin document text <see cref="Run"/> element.
 /// </summary>
 public interface IRunContent: IModelElement
 {

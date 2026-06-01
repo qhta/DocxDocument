@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies the intensity of light used on a shape.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetlightingsoftness?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetlightingsoftness?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum PresetLightingSoftness
 {
@@ -24,3 +24,4 @@ public enum PresetLightingSoftness
   /// </summary>
   Bright = 3
 }
+

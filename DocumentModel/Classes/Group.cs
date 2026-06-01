@@ -1,5 +1,5 @@
-namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the Group Class.
@@ -7,117 +7,117 @@ namespace DocumentModel;
 public class Group: ModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2010 and later.
+  ///   id, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? Id { get; set; }
 
   /// <summary>
-  ///   idQ, this property is only available in Office 2010 and later.
+  ///   idQ, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? QualifiedId { get; set; }
 
   /// <summary>
-  ///   tag, this property is only available in Office 2010 and later.
+  ///   tag, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? Tag { get; set; }
 
   /// <summary>
-  ///   idMso, this property is only available in Office 2010 and later.
+  ///   idMso, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? IdMso { get; set; }
 
   /// <summary>
-  ///   label, this property is only available in Office 2010 and later.
+  ///   label, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   getLabel, this property is only available in Office 2010 and later.
+  ///   getLabel, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? GetLabel { get; set; }
 
   /// <summary>
-  ///   image, this property is only available in Office 2010 and later.
+  ///   image, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? Image { get; set; }
 
   /// <summary>
-  ///   imageMso, this property is only available in Office 2010 and later.
+  ///   imageMso, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? ImageMso { get; set; }
 
   /// <summary>
-  ///   getImage, this property is only available in Office 2010 and later.
+  ///   getImage, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? GetImage { get; set; }
 
   /// <summary>
-  ///   insertAfterMso, this property is only available in Office 2010 and later.
+  ///   insertAfterMso, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? InsertAfterMso { get; set; }
 
   /// <summary>
-  ///   insertBeforeMso, this property is only available in Office 2010 and later.
+  ///   insertBeforeMso, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? InsertBeforeMso { get; set; }
 
   /// <summary>
-  ///   insertAfterQ, this property is only available in Office 2010 and later.
+  ///   insertAfterQ, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? InsertAfterQulifiedId { get; set; }
 
   /// <summary>
-  ///   insertBeforeQ, this property is only available in Office 2010 and later.
+  ///   insertBeforeQ, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? InsertBeforeQulifiedId { get; set; }
 
   /// <summary>
-  ///   screentip, this property is only available in Office 2010 and later.
+  ///   screentip, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? Screentip { get; set; }
 
   /// <summary>
-  ///   getScreentip, this property is only available in Office 2010 and later.
+  ///   getScreentip, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? GetScreentip { get; set; }
 
   /// <summary>
-  ///   supertip, this property is only available in Office 2010 and later.
+  ///   supertip, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? Supertip { get; set; }
 
   /// <summary>
-  ///   getSupertip, this property is only available in Office 2010 and later.
+  ///   getSupertip, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? GetSupertip { get; set; }
 
   /// <summary>
-  ///   visible, this property is only available in Office 2010 and later.
+  ///   visible, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? Visible { get; set; }
 
   /// <summary>
-  ///   getVisible, this property is only available in Office 2010 and later.
+  ///   getVisible, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? GetVisible { get; set; }
 
   /// <summary>
-  ///   keytip, this property is only available in Office 2010 and later.
+  ///   keytip, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? Keytip { get; set; }
 
   /// <summary>
-  ///   getKeytip, this property is only available in Office 2010 and later.
+  ///   getKeytip, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? GetKeytip { get; set; }
 
   /// <summary>
-  ///   autoScale, this property is only available in Office 2010 and later.
+  ///   autoScale, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? AutoScale { get; set; }
 
   /// <summary>
-  ///   centerVertically, this property is only available in Office 2010 and later.
+  ///   centerVertically, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? CenterVertically { get; set; }
 
@@ -129,7 +129,7 @@ public class Group: ModelElement
 
   public ToggleButton? ToggleButton { get; set; }
 
-  public CheckBox? CheckBox { get; set; }
+  public ICheckBox? ICheckBox { get; set; }
 
   public EditBox? EditBox { get; set; }
 

@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Specifies the type of shadowing effect.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoshadowstyle?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoshadowstyle?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum ShadowStyle
 {
@@ -20,3 +20,4 @@ public enum ShadowStyle
   /// </summary>
   OuterShadow = 2
 }
+

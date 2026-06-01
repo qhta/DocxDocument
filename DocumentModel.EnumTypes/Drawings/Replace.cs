@@ -1,10 +1,10 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the number of replacements to be made when find and replace is used.
+/// Specifies the number of replacements Ito be made when find and replace is used.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdreplace?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdreplace?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum Replace
 {
@@ -21,3 +21,4 @@ public enum Replace
   /// </summary>
   All = 2
 }
+

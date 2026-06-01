@@ -1,11 +1,11 @@
-
+﻿
 namespace DocumentModel.Properties;
 
 /// <summary>
-/// Defines the condition for comparison between a file and a specified property in a file search.
+/// Defines the condition Ifor comparison between a file and a specified property Iin a file search.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocondition?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocondition?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum Condition
 {
@@ -38,122 +38,122 @@ public enum Condition
   /// </summary>
   FileTypeDatabases,
   /// <summary>
-  /// Template.
+  /// ITemplate.
   /// </summary>
   FileTypeTemplates,
   /// <summary>
-  /// Value of the file property specified in Name property of the PropertyTest object includes the value specified
-  /// in the Value property of the PropertyTest object.
+  /// Value of the file property specified Iin Name property of the PropertyTest object includes the value specified
+  /// Iin the Value property of the PropertyTest object.
   /// </summary>
   Includes,
   /// <summary>
-  /// Value of the file property specified in Name property of the PropertyTest object includes the phrase specified
-  /// in the value specified in
+  /// Value of the file property specified Iin Name property of the PropertyTest object includes the phrase specified
+  /// Iin the value specified Iin
   /// </summary>
   IncludesPhrase,
   /// <summary>
-  /// Value of the file property specified in Name property of the PropertyTest object begins with the value
-  /// specified in the Value property of the PropertyTest object.
+  /// Value of the file property specified Iin Name property of the PropertyTest object begins with the value
+  /// specified Iin the Value property of the PropertyTest object.
   /// </summary>
   BeginsWith,
   /// <summary>
-  /// Value of the file property specified in Name property of the PropertyTest object ends with the value specified
-  /// in the Value property of the PropertyTest object.
+  /// Value of the file property specified Iin Name property of the PropertyTest object ends with the value specified
+  /// Iin the Value property of the PropertyTest object.
   /// </summary>
   EndsWith,
   /// <summary>
-  /// Value of the file property specified in Name property of the PropertyTest object and the value specified in
+  /// Value of the file property specified Iin Name property of the PropertyTest object and the value specified Iin
   /// the Value property of the PropertyTest object are near each other.
   /// </summary>
   IncludesNearEachOther,
   /// <summary>
-  /// Value of the file property specified in Name property of the PropertyTest object is exactly the value
-  /// specified in the Value property of the PropertyTest object.
+  /// Value of the file property specified Iin Name property of the PropertyTest object is exactly the value
+  /// specified Iin the Value property of the PropertyTest object.
   /// </summary>
   IsExactly,
   /// <summary>
-  /// Value of the file property specified in Name property of the PropertyTest object is not the value specified in
+  /// Value of the file property specified Iin Name property of the PropertyTest object is not the value specified Iin
   /// the Value property of the PropertyTest object.
   /// </summary>
   IsNot,
   /// <summary>
-  /// Date specified in the Name property of the PropertyTest object is yesterday.
+  /// Date specified Iin the Name property of the PropertyTest object is yesterday.
   /// </summary>
   Yesterday,
   /// <summary>
-  /// Date specified in the Name property of the PropertyTest object is today.
+  /// Date specified Iin the Name property of the PropertyTest object is today.
   /// </summary>
   Today,
   /// <summary>
-  /// Date specified in the Name property of the PropertyTest object is tomorrow.
+  /// Date specified Iin the Name property of the PropertyTest object is tomorrow.
   /// </summary>
   Tomorrow,
   /// <summary>
-  /// Date specified in the Name property of the PropertyTest object is within the last week.
+  /// Date specified Iin the Name property of the PropertyTest object is within the last week.
   /// </summary>
   LastWeek,
   /// <summary>
-  /// Date specified in the Name property of the PropertyTest object is this week.
+  /// Date specified Iin the Name property of the PropertyTest object is this week.
   /// </summary>
   ThisWeek,
   /// <summary>
-  /// Date specified in the Name property of the PropertyTest object is next week.
+  /// Date specified Iin the Name property of the PropertyTest object is next week.
   /// </summary>
   NextWeek,
   /// <summary>
-  /// Date specified in the Name property of the PropertyTest object is within the last month.
+  /// Date specified Iin the Name property of the PropertyTest object is within the last month.
   /// </summary>
   LastMonth,
   /// <summary>
-  /// Date specified in the Name property of the PropertyTest object is this month.
+  /// Date specified Iin the Name property of the PropertyTest object is this month.
   /// </summary>
   ThisMonth,
   /// <summary>
-  /// Date specified in the Name property of the PropertyTest object is next month.
+  /// Date specified Iin the Name property of the PropertyTest object is next month.
   /// </summary>
   NextMonth,
   /// <summary>
-  /// Date specified in the Name property of the PropertyTest object can be any time.
+  /// Date specified Iin the Name property of the PropertyTest object can be any time.
   /// </summary>
   Anytime,
   /// <summary>
-  /// Date specified in the Name property of the PropertyTest object is between the dates specified with the Value
+  /// Date specified Iin the Name property of the PropertyTest object is between the dates specified with the Value
   /// and SecondValue properties of the PropertyTest object.
   /// </summary>
   AnytimeBetween,
   /// <summary>
-  /// Date specified in the Name property of the PropertyTest object is the same as the date specified in the Value
+  /// Date specified Iin the Name property of the PropertyTest object is the same as the date specified Iin the Value
   /// property of the PropertyTest object.
   /// </summary>
   On,
   /// <summary>
-  /// Date specified in the Name property of the PropertyTest object is on or after the date specified in the Value
+  /// Date specified Iin the Name property of the PropertyTest object is on or after the date specified Iin the Value
   /// property of the PropertyTest object.
   /// </summary>
   OnOrAfter,
   /// <summary>
-  /// Date specified in the Name property of the PropertyTest object is on or before the date specified in the Value
+  /// Date specified Iin the Name property of the PropertyTest object is on or before the date specified Iin the Value
   /// property of the PropertyTest object.
   /// </summary>
   OnOrBefore,
   /// <summary>
-  /// Date specified in the Name property of the PropertyTest object is within the next time interval specified in
+  /// Date specified Iin the Name property of the PropertyTest object is within the next time interval specified Iin
   /// the Value property of the PropertyTest object.
   /// </summary>
   InTheNext,
   /// <summary>
-  /// Date specified in the Name property of the PropertyTest object is within the last time interval specified in
+  /// Date specified Iin the Name property of the PropertyTest object is within the last time interval specified Iin
   /// the Value property of the PropertyTest object.
   /// </summary>
   InTheLast,
   /// <summary>
-  /// Value of the file property specified in Name property of the PropertyTest object equals the value specified in
+  /// Value of the file property specified Iin Name property of the PropertyTest object equals the value specified Iin
   /// the Value property of the PropertyTest object.
   /// </summary>
   Equals,
   /// <summary>
-  /// Value of the file property specified in Name property of the PropertyTest object does not equal the value
-  /// specified in the Value property of the PropertyTest object.
+  /// Value of the file property specified Iin Name property of the PropertyTest object does not equal the value
+  /// specified Iin the Value property of the PropertyTest object.
   /// </summary>
   DoesNotEqual,
   /// <summary>
@@ -161,41 +161,41 @@ public enum Condition
   /// </summary>
   AnyNumberBetween,
   /// <summary>
-  /// Value of the file property specified in Name property of the PropertyTest object is at most the value
-  /// specified in the Value property of the PropertyTest object.
+  /// Value of the file property specified Iin Name property of the PropertyTest object is at most the value
+  /// specified Iin the Value property of the PropertyTest object.
   /// </summary>
   AtMost,
   /// <summary>
-  /// Value of the file property specified in Name property of the PropertyTest object is at least the value
-  /// specified in the Value property of the PropertyTest object.
+  /// Value of the file property specified Iin Name property of the PropertyTest object is at least the value
+  /// specified Iin the Value property of the PropertyTest object.
   /// </summary>
   AtLeast,
   /// <summary>
-  /// Value of the file property specified in Name property of the PropertyTest object is more than the value
-  /// specified in the Value property of the PropertyTest object.
+  /// Value of the file property specified Iin Name property of the PropertyTest object is more than the value
+  /// specified Iin the Value property of the PropertyTest object.
   /// </summary>
   MoreThan,
   /// <summary>
-  /// Value of the file property specified in Name property of the PropertyTest object is less than the value
-  /// specified in the Value property of the PropertyTest object.
+  /// Value of the file property specified Iin Name property of the PropertyTest object is less than the value
+  /// specified Iin the Value property of the PropertyTest object.
   /// </summary>
   LessThan,
   /// <summary>
-  /// Value of the file property specified in Name property of the PropertyTest object is "True".
+  /// Value of the file property specified Iin Name property of the PropertyTest object is "True".
   /// </summary>
   IsYes,
   /// <summary>
-  /// Value of the file property specified in Name property of the PropertyTest object is "False".
+  /// Value of the file property specified Iin Name property of the PropertyTest object is "False".
   /// </summary>
   IsNo,
   /// <summary>
-  /// Value of the file property specified in Name property of the PropertyTest object includes forms of the value
-  /// specified in the Value property of the PropertyTest object.
+  /// Value of the file property specified Iin Name property of the PropertyTest object includes forms of the value
+  /// specified Iin the Value property of the PropertyTest object.
   /// </summary>
   IncludesFormsOf,
   /// <summary>
-  /// Value of the file property specified in the Name property of the PropertyTest object matches the value
-  /// specified in the Value property of the PropertyTest object when a FreeText search is used.
+  /// Value of the file property specified Iin the Name property of the PropertyTest object matches the value
+  /// specified Iin the Value property of the PropertyTest object when a FreeText search is used.
   /// </summary>
   FreeText,
   /// <summary>
@@ -223,7 +223,7 @@ public enum Condition
   /// </summary>
   FileTypeJournalItem,
   /// <summary>
-  /// Task item.
+  /// ITask item.
   /// </summary>
   FileTypeTaskItem,
   /// <summary>
@@ -243,7 +243,7 @@ public enum Condition
   /// </summary>
   FileTypeProjectFiles,
   /// <summary>
-  /// Document imaging file.
+  /// IDocument imaging file.
   /// </summary>
   FileTypeDocumentImagingFiles,
   /// <summary>
@@ -271,17 +271,17 @@ public enum Condition
   /// </summary>
   EqualsHigh,
   /// <summary>
-  /// Value of file property specified in the Name property of the PropertyTest object does not equal "Low". Value
+  /// Value of file property specified Iin the Name property of the PropertyTest object does not equal "Low". Value
   /// of the Name property must be Priority or Importance.
   /// </summary>
   NotEqualToLow,
   /// <summary>
-  /// Value of file property specified in the Name property of the PropertyTest object does not equal "Normal".
+  /// Value of file property specified Iin the Name property of the PropertyTest object does not equal "Normal".
   /// Value of the Name property must be Priority or Importance.
   /// </summary>
   NotEqualToNormal,
   /// <summary>
-  /// Value of file property specified in the Name property of the PropertyTest object does not equal "High". Value
+  /// Value of file property specified Iin the Name property of the PropertyTest object does not equal "High". Value
   /// of the Name property must be Priority or Importance.
   /// </summary>
   NotEqualToHigh,
@@ -298,7 +298,7 @@ public enum Condition
   /// </summary>
   EqualsCompleted,
   /// <summary>
-  /// Status equals "Waiting for Someone Else". Value of the Name property must be Status.
+  /// Status equals "Waiting Ifor Someone Else". Value of the Name property must be Status.
   /// </summary>
   EqualsWaitingForSomeoneElse,
   /// <summary>
@@ -318,7 +318,7 @@ public enum Condition
   /// </summary>
   NotEqualToCompleted,
   /// <summary>
-  /// Status does not equal "Waiting for Someone Else". Value of the Name property must be Status.
+  /// Status does not equal "Waiting Ifor Someone Else". Value of the Name property must be Status.
   /// </summary>
   NotEqualToWaitingForSomeoneElse,
   /// <summary>
@@ -326,3 +326,4 @@ public enum Condition
   /// </summary>
   NotEqualToDeferred
 }
+

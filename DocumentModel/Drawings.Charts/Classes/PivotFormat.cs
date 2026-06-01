@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Pivot Format.
@@ -7,9 +7,9 @@ namespace DocumentModel.Drawings.Charts;
 public class PivotFormat: ModelElement
 {
   /// <summary>
-  ///   Index.
+  ///   IIndex.
   /// </summary>
-  public UInt32? Index { get; set; }
+  public UInt32? IIndex { get; set; }
 
   /// <summary>
   ///   ShapeProperties.
@@ -24,10 +24,10 @@ public class PivotFormat: ModelElement
   /// <summary>
   ///   Data Label.
   /// </summary>
-  public DataLabel? DataLabel { get; set; }
+  public IDataLabel? IDataLabel { get; set; }
 
   /// <summary>
-  ///   Chart Extensibility.
+  ///   IChart Extensibility.
   /// </summary>
   public ExtensionList? ExtensionList { get; set; }
 }

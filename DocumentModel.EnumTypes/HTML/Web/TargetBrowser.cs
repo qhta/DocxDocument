@@ -1,10 +1,10 @@
-namespace DocumentModel.HTML;
+﻿namespace DocumentModel.HTML;
 
 /// <summary>
-/// Specifies target browser for documents viewed in a Web browser.
+/// Specifies target browser Ifor documents viewed Iin a Web browser.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotargetbrowser?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msotargetbrowser?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum TargetBrowser
 {
@@ -29,3 +29,4 @@ public enum TargetBrowser
   /// </summary>
   IE6
 }
+

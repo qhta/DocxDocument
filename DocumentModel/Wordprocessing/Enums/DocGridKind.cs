@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the DocGridValues enumeration.
@@ -8,17 +8,17 @@ namespace DocumentModel.Wordprocessing;
 public enum DocGridKind
 {
   /// <summary>
-  ///   No Document Grid.
+  ///   No IDocument Grid.
   /// </summary>
   Default,
 
   /// <summary>
-  ///   Line Grid Only.
+  ///   ILine Grid Only.
   /// </summary>
-  Lines,
+  ILines,
 
   /// <summary>
-  ///   Line and Character Grid.
+  ///   ILine and Character Grid.
   /// </summary>
   LinesAndChars,
 

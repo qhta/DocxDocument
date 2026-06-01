@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Information About Single HTML div Element.
@@ -12,37 +12,37 @@ public class Div: ModelElement
   public Int32? Id { get; set; }
 
   /// <summary>
-  ///   Data for HTML blockquote Element.
+  ///   Data Ifor HTML blockquote Element.
   /// </summary>
   public bool? IsBlockQuote { get; set; }
 
   /// <summary>
-  ///   Data for HTML body Element.
+  ///   Data Ifor HTML body Element.
   /// </summary>
   public bool? IsBody { get; set; }
 
   /// <summary>
-  ///   Left Margin for HTML div.
+  ///   Left Margin Ifor HTML div.
   /// </summary>
   public Twips? LeftMargin { get; set; }
 
   /// <summary>
-  ///   Right Margin for HTML div.
+  ///   Right Margin Ifor HTML div.
   /// </summary>
   public Twips? RightMargin { get; set; }
 
   /// <summary>
-  ///   Top Margin for HTML div.
+  ///   Top Margin Ifor HTML div.
   /// </summary>
   public Twips? TopMargin { get; set; }
 
   /// <summary>
-  ///   Bottom Margin for HTML div.
+  ///   Bottom Margin Ifor HTML div.
   /// </summary>
   public Twips? BottomMargin { get; set; }
 
   /// <summary>
-  ///   Set of Borders for HTML div.
+  ///   Set of IBorders Ifor HTML div.
   /// </summary>
   public DivBorder? DivBorder { get; set; }
 

@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the PosAlign enumeration.
-/// Used in types such as ChartTitle, Legend, PosAlign.
+/// Used Iin types such as IChartTitle, ILegend, PosAlign.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum PosAlign
@@ -23,3 +23,4 @@ public enum PosAlign
   [OpenXmlEnumValue("Max")]
   Max
 }
+

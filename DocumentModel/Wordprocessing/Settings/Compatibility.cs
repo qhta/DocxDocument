@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Compatibility Settings.
@@ -7,22 +7,22 @@ namespace DocumentModel.Wordprocessing;
 public class Compatibility: ModelElement
 {
   /// <summary>
-  ///   Use Simplified Rules For Table Border Conflicts.
+  ///   Use Simplified Rules For ITable IBorder IConflicts.
   /// </summary>
   public bool? UseSingleBorderForContiguousCells { get; set; }
 
   /// <summary>
-  ///   Emulate WordPerfect 6.x Paragraph Justification.
+  ///   Emulate WordPerfect 6.x IParagraph Justification.
   /// </summary>
   public bool? WordPerfectJustification { get; set; }
 
   /// <summary>
-  ///   Do Not Create Custom Tab Stop for Hanging Indent.
+  ///   Do Not Create Custom Tab Stop Ifor Hanging Indent.
   /// </summary>
   public bool? NoTabHangIndent { get; set; }
 
   /// <summary>
-  ///   Do Not Add Leading Between Lines of Text.
+  ///   Do Not Add Leading Between ILines of Text.
   /// </summary>
   public bool? NoLeading { get; set; }
 
@@ -32,17 +32,17 @@ public class Compatibility: ModelElement
   public bool? SpaceForUnderline { get; set; }
 
   /// <summary>
-  ///   Do Not Balance Text Columns within a Section.
+  ///   Do Not Balance Text IColumns within a ISection.
   /// </summary>
   public bool? NoColumnBalance { get; set; }
 
   /// <summary>
-  ///   Balance Single Byte and Double Byte Characters.
+  ///   Balance Single Byte and Double Byte ICharacters.
   /// </summary>
   public bool? BalanceSingleByteDoubleByteWidth { get; set; }
 
   /// <summary>
-  ///   Do Not Center Content on Lines With Exact Line Height.
+  ///   Do Not Center Content on ILines With Exact ILine Height.
   /// </summary>
   public bool? NoExtraLineSpacing { get; set; }
 
@@ -57,17 +57,17 @@ public class Compatibility: ModelElement
   public bool? UnderlineTrailingSpaces { get; set; }
 
   /// <summary>
-  ///   Don't Justify Lines Ending in Soft Line Break.
+  ///   Don't Justify ILines Ending Iin Soft ILine IBreak.
   /// </summary>
   public bool? DoNotExpandShiftReturn { get; set; }
 
   /// <summary>
-  ///   Only Expand/Condense Text By Whole Points.
+  ///   Only Expand/Condense Text By Whole IPoints.
   /// </summary>
   public bool? SpacingInWholePoints { get; set; }
 
   /// <summary>
-  ///   Emulate Word 6.0 Line Wrapping for East Asian Text.
+  ///   Emulate Word 6.0 ILine Wrapping Ifor East Asian Text.
   /// </summary>
   public bool? LineWrapLikeWord6 { get; set; }
 
@@ -87,42 +87,42 @@ public class Compatibility: ModelElement
   public bool? WordPerfectSpaceWidth { get; set; }
 
   /// <summary>
-  ///   Display Page/Column Breaks Present in Frames.
+  ///   Display IPage/IColumn IBreaks Present Iin IFrames.
   /// </summary>
   public bool? ShowBreaksInFrames { get; set; }
 
   /// <summary>
-  ///   Increase Priority Of Font Size During Font Substitution.
+  ///   Increase Priority Of IFont Size During IFont Substitution.
   /// </summary>
   public bool? SubFontBySize { get; set; }
 
   /// <summary>
-  ///   Ignore Exact Line Height for Last Line on Page.
+  ///   Ignore Exact ILine Height Ifor Last ILine on IPage.
   /// </summary>
   public bool? SuppressBottomSpacing { get; set; }
 
   /// <summary>
-  ///   Ignore Minimum and Exact Line Height for First Line on Page.
+  ///   Ignore Minimum and Exact ILine Height Ifor First ILine on IPage.
   /// </summary>
   public bool? SuppressTopSpacing { get; set; }
 
   /// <summary>
-  ///   Ignore Minimum Line Height for First Line on Page.
+  ///   Ignore Minimum ILine Height Ifor First ILine on IPage.
   /// </summary>
   public bool? SuppressSpacingAtTopOfPage { get; set; }
 
   /// <summary>
-  ///   Emulate WordPerfect 5.x Line Spacing.
+  ///   Emulate WordPerfect 5.x ILine Spacing.
   /// </summary>
   public bool? SuppressTopSpacingWordPerfect { get; set; }
 
   /// <summary>
-  ///   Do Not Use Space Before On First Line After a Page Break.
+  ///   Do Not Use Space Before On First ILine After a IPage IBreak.
   /// </summary>
   public bool? SuppressSpacingBeforeAfterPageBreak { get; set; }
 
   /// <summary>
-  ///   Swap Paragraph Borders on Odd Numbered Pages.
+  ///   Swap IParagraph IBorders on Odd Numbered IPages.
   /// </summary>
   public bool? SwapBordersFacingPages { get; set; }
 
@@ -132,32 +132,32 @@ public class Compatibility: ModelElement
   public bool? ConvertMailMergeEscape { get; set; }
 
   /// <summary>
-  ///   Emulate WordPerfect 6.x Font Height Calculation.
+  ///   Emulate WordPerfect 6.x IFont Height Calculation.
   /// </summary>
   public bool? TruncateFontHeightsLikeWordPerfect { get; set; }
 
   /// <summary>
-  ///   Emulate Word 5.x for the Macintosh Small Caps Formatting.
+  ///   Emulate Word 5.x Ifor the Macintosh Small Caps Formatting.
   /// </summary>
   public bool? MacWordSmallCaps { get; set; }
 
   /// <summary>
-  ///   Use Printer Metrics To Display Documents.
+  ///   Use Printer Metrics To Display IDocuments.
   /// </summary>
   public bool? UsePrinterMetrics { get; set; }
 
   /// <summary>
-  ///   Do Not Suppress Paragraph Borders Next To Frames.
+  ///   Do Not Suppress IParagraph IBorders Next To IFrames.
   /// </summary>
   public bool? DoNotSuppressParagraphBorders { get; set; }
 
   /// <summary>
-  ///   Line Wrap Trailing Spaces.
+  ///   ILine Wrap Trailing Spaces.
   /// </summary>
   public bool? WrapTrailSpaces { get; set; }
 
   /// <summary>
-  ///   Emulate Word 6.x/95/97 Footnote Placement.
+  ///   Emulate Word 6.x/95/97 IFootnote Placement.
   /// </summary>
   public bool? FootnoteLayoutLikeWord8 { get; set; }
 
@@ -167,17 +167,17 @@ public class Compatibility: ModelElement
   public bool? ShapeLayoutLikeWord8 { get; set; }
 
   /// <summary>
-  ///   Align Table Rows Independently.
+  ///   Align ITable IRows Independently.
   /// </summary>
   public bool? AlignTablesRowByRow { get; set; }
 
   /// <summary>
-  ///   Ignore Width of Last Tab Stop When Aligning Paragraph If It Is Not Left Aligned.
+  ///   Ignore Width of Last Tab Stop When Aligning IParagraph If It Is Not Left Aligned.
   /// </summary>
   public bool? ForgetLastTabAlignment { get; set; }
 
   /// <summary>
-  ///   Add Document Grid Line Pitch To Lines in Table Cells.
+  ///   Add IDocument Grid ILine Pitch To ILines Iin ITable ICells.
   /// </summary>
   public bool? AdjustLineHeightInTable { get; set; }
 
@@ -187,47 +187,47 @@ public class Compatibility: ModelElement
   public bool? AutoSpaceLikeWord95 { get; set; }
 
   /// <summary>
-  ///   Do Not Increase Line Height for Raised/Lowered Text.
+  ///   Do Not Increase ILine Height Ifor Raised/Lowered Text.
   /// </summary>
   public bool? NoSpaceRaiseLower { get; set; }
 
   /// <summary>
-  ///   Use Fixed Paragraph Spacing for HTML Auto Setting.
+  ///   Use Fixed IParagraph Spacing Ifor HTML Auto Setting.
   /// </summary>
   public bool? DoNotUseHTMLParagraphAutoSpacing { get; set; }
 
   /// <summary>
-  ///   Ignore Space Before Table When Deciding If Table Should Wrap Floating Object.
+  ///   Ignore Space Before ITable When Deciding If ITable Should Wrap Floating Object.
   /// </summary>
   public bool? LayoutRawTableWidth { get; set; }
 
   /// <summary>
-  ///   Allow Table Rows to Wrap Inline Objects Independently.
+  ///   Allow ITable IRows Ito Wrap Inline Objects Independently.
   /// </summary>
   public bool? LayoutTableRowsApart { get; set; }
 
   /// <summary>
-  ///   Emulate Word 97 East Asian Line Breaking.
+  ///   Emulate Word 97 East Asian ILine Breaking.
   /// </summary>
   public bool? UseWord97LineBreakRules { get; set; }
 
   /// <summary>
-  ///   Do Not Allow Floating Tables To Break Across Pages.
+  ///   Do Not Allow Floating ITables To IBreak Across IPages.
   /// </summary>
   public bool? DoNotBreakWrappedTables { get; set; }
 
   /// <summary>
-  ///   Do Not Snap to Document Grid in Table Cells with Objects.
+  ///   Do Not Snap Ito IDocument Grid Iin ITable ICells with Objects.
   /// </summary>
   public bool? DoNotSnapToGridInCell { get; set; }
 
   /// <summary>
-  ///   Select Field When First or Last Character Is Selected.
+  ///   Select IField When First or Last Character Is Selected.
   /// </summary>
   public bool? SelectFieldWithFirstOrLastChar { get; set; }
 
   /// <summary>
-  ///   Use Legacy Ethiopic and Amharic Line Breaking Rules.
+  ///   Use Legacy Ethiopic and Amharic ILine Breaking Rules.
   /// </summary>
   public bool? ApplyBreakingRules { get; set; }
 
@@ -237,17 +237,17 @@ public class Compatibility: ModelElement
   public bool? DoNotWrapTextWithPunctuation { get; set; }
 
   /// <summary>
-  ///   Do Not Compress Compressible Characters When Using Document Grid.
+  ///   Do Not Compress Compressible ICharacters When Using IDocument Grid.
   /// </summary>
   public bool? DoNotUseEastAsianBreakRules { get; set; }
 
   /// <summary>
-  ///   Emulate Word 2002 Table Style Rules.
+  ///   Emulate Word 2002 ITable IStyle Rules.
   /// </summary>
   public bool? UseWord2002TableStyleRules { get; set; }
 
   /// <summary>
-  ///   Allow Tables to AutoFit Into Page Margins.
+  ///   Allow ITables Ito AutoFit Into IPage Margins.
   /// </summary>
   public bool? GrowAutofit { get; set; }
 
@@ -257,7 +257,7 @@ public class Compatibility: ModelElement
   public bool? UseFarEastLayout { get; set; }
 
   /// <summary>
-  ///   Do Not Automatically Apply List Paragraph Style To Bulleted/Numbered Text.
+  ///   Do Not Automatically Apply IList IParagraph IStyle To Bulleted/Numbered Text.
   /// </summary>
   public bool? UseNormalStyleForList { get; set; }
 
@@ -267,27 +267,27 @@ public class Compatibility: ModelElement
   public bool? DoNotUseIndentAsNumberingTabStop { get; set; }
 
   /// <summary>
-  ///   Use Alternate Set of East Asian Line Breaking Rules.
+  ///   Use Alternate Set of East Asian ILine Breaking Rules.
   /// </summary>
   public bool? UseAltKinsokuLineBreakRules { get; set; }
 
   /// <summary>
-  ///   Allow Contextual Spacing of Paragraphs in Tables.
+  ///   Allow Contextual Spacing of IParagraphs Iin ITables.
   /// </summary>
   public bool? AllowSpaceOfSameStyleInTable { get; set; }
 
   /// <summary>
-  ///   Do Not Ignore Floating Objects When Calculating Paragraph Indentation.
+  ///   Do Not Ignore Floating Objects When Calculating IParagraph Indentation.
   /// </summary>
   public bool? DoNotSuppressIndentation { get; set; }
 
   /// <summary>
-  ///   Do Not AutoFit Tables To Fit Next To Wrapped Objects.
+  ///   Do Not AutoFit ITables To Fit Next To Wrapped Objects.
   /// </summary>
   public bool? DoNotAutofitConstrainedTables { get; set; }
 
   /// <summary>
-  ///   Allow Table Columns To Exceed Preferred Widths of Constituent Cells.
+  ///   Allow ITable IColumns To Exceed Preferred Widths of Constituent ICells.
   /// </summary>
   public bool? AutofitToFirstFixedWidthCell { get; set; }
 
@@ -297,27 +297,27 @@ public class Compatibility: ModelElement
   public bool? UnderlineTabInNumberingList { get; set; }
 
   /// <summary>
-  ///   Always Use Fixed Width for Hangul Characters.
+  ///   Always Use Fixed Width Ifor Hangul ICharacters.
   /// </summary>
   public bool? DisplayHangulFixedWidth { get; set; }
 
   /// <summary>
-  ///   Always Move Paragraph Mark to Page after a Page Break.
+  ///   Always Move IParagraph Mark Ito IPage after a IPage IBreak.
   /// </summary>
   public bool? SplitPageBreakAndParagraphMark { get; set; }
 
   /// <summary>
-  ///   Don't Vertically Align Cells Containing Floating Objects.
+  ///   Don't Vertically Align ICells Containing Floating Objects.
   /// </summary>
   public bool? DoNotVerticallyAlignCellWithShape { get; set; }
 
   /// <summary>
-  ///   Don't Break Table Rows Around Floating Tables.
+  ///   Don't IBreak ITable IRows Around Floating ITables.
   /// </summary>
   public bool? DoNotBreakConstrainedForcedTable { get; set; }
 
   /// <summary>
-  ///   Ignore Vertical Alignment in Textboxes.
+  ///   Ignore Vertical Alignment Iin Textboxes.
   /// </summary>
   public bool? DoNotVerticallyAlignInTextBox { get; set; }
 
@@ -327,7 +327,7 @@ public class Compatibility: ModelElement
   public bool? UseAnsiKerningPairs { get; set; }
 
   /// <summary>
-  ///   Use Cached Paragraph Information for Column Balancing.
+  ///   Use Cached IParagraph Information Ifor IColumn Balancing.
   /// </summary>
   public bool? CachedColumnBalance { get; set; }
 

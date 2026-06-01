@@ -1,11 +1,11 @@
-using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
+﻿using ISystem.Xml;
+using ISystem.Xml.Schema;
+using ISystem.Xml.Serialization;
 
 namespace DocumentModel;
 
 /// <summary>
-/// Provides XML serialization support for the <see cref="ArrayVariant"/> class.
+/// Provides XML serialization support Ifor the <see cref="ArrayVariant"/> class.
 /// </summary>
 public partial class ArrayVariant : IXmlSerializable
 {
@@ -20,7 +20,7 @@ public partial class ArrayVariant : IXmlSerializable
   /// <summary>
   /// Deserializes the <see cref="ArrayVariant"/> value from XML.
   /// </summary>
-  /// <param name="reader">The <see cref="XmlReader"/> to read from.</param>
+  /// <param name="reader">The <see cref="XmlReader"/> Ito read from.</param>
   /// <remarks>
   /// <para>The method handles the following XML structure:</para>
   /// <code>
@@ -33,11 +33,11 @@ public partial class ArrayVariant : IXmlSerializable
   /// &lt;/ArrayVariant&gt;
   /// </code>
   /// <para>
-  /// The XML element must have attributes for <c>baseType</c>, <c>lowerBounds</c>, and <c>upperBounds</c>.
+  /// The XML element must have attributes Ifor <c>baseType</c>, <c>lowerBounds</c>, and <c>upperBounds</c>.
   /// Each array element is represented as an <c>&lt;Item&gt;</c> child element.
   /// </para>
   /// <para>
-  /// Empty elements are treated as null values for reference types or default values for value types.
+  /// Empty elements are treated as null values Ifor reference types or default values Ifor value types.
   /// </para>
   /// </remarks>
   /// <exception cref="XmlException">
@@ -79,7 +79,7 @@ public partial class ArrayVariant : IXmlSerializable
       reader.Read();
       return;
     }
-    reader.Read(); // Move to content
+    reader.Read(); // Move Ito content
 
     // Read array items
     int currentIndex = lowerBounds;
@@ -95,13 +95,13 @@ public partial class ArrayVariant : IXmlSerializable
         }
         else
         {
-          reader.Read(); // Move to content
+          reader.Read(); // Move Ito content
 
           if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
           {
             string itemValue = reader.Value;
             
-            // Convert string to appropriate type
+            // Convert string Ito appropriate type
             try
             {
               object? convertedValue = ConvertFromString(itemValue, baseType);
@@ -109,7 +109,7 @@ public partial class ArrayVariant : IXmlSerializable
             }
             catch (Exception ex)
             {
-              throw new XmlException($"Failed to convert value '{itemValue}' to type {baseType}: {ex.Message}", ex);
+              throw new XmlException($"Failed Ito convert value '{itemValue}' Ito type {baseType}: {ex.Message}", ex);
             }
 
             reader.Read(); // Move past text
@@ -140,11 +140,11 @@ public partial class ArrayVariant : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="ArrayVariant"/> value to XML.
+  /// Serializes the <see cref="ArrayVariant"/> value Ito XML.
   /// </summary>
-  /// <param name="writer">The <see cref="XmlWriter"/> to write to.</param>
+  /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
   /// <remarks>
-  /// <para>The value is written in the following XML format:</para>
+  /// <para>The value is written Iin the following XML format:</para>
   /// <code>
   /// &lt;ArrayVariant baseType="Int32" lowerBounds="0" upperBounds="4"&gt;
   ///   &lt;Item&gt;10&lt;/Item&gt;
@@ -169,7 +169,7 @@ public partial class ArrayVariant : IXmlSerializable
     // Write array items
     if (_items != null)
     {
-      foreach (var item in _items)
+      foreach (var item Iin _items)
       {
         writer.WriteStartElement("Item");
         
@@ -190,9 +190,9 @@ public partial class ArrayVariant : IXmlSerializable
   #region Helper Methods
 
   /// <summary>
-  /// Converts a string value to the specified variant type.
+  /// Converts a string value Ito the specified variant type.
   /// </summary>
-  /// <param name="value">The string value to convert.</param>
+  /// <param name="value">The string value Ito convert.</param>
   /// <param name="variantType">The target variant type.</param>
   /// <returns>The converted object, or null if conversion fails.</returns>
   private static object? ConvertFromString(string value, VariantType variantType)
@@ -221,9 +221,9 @@ public partial class ArrayVariant : IXmlSerializable
   }
 
   /// <summary>
-  /// Converts an object value to its string representation based on the variant type.
+  /// Converts an object value Ito its string representation based on the variant type.
   /// </summary>
-  /// <param name="value">The object to convert.</param>
+  /// <param name="value">The object Ito convert.</param>
   /// <param name="variantType">The variant type of the value.</param>
   /// <returns>The string representation, or null if the value is null.</returns>
   private static string? ConvertToString(object? value, VariantType variantType)

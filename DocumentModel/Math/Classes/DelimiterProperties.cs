@@ -1,8 +1,8 @@
-namespace DocumentModel.Math;
+﻿namespace DocumentModel.Math;
 
 /// <summary>
 ///   Specifies the properties of <see cref="Delimiter"/>, including the enclosing and separating characters, 
-///   and the properties that affect the shape of the delimiters.
+///   and the properties Ithat affect the shape of the delimiters.
 /// </summary>
 public class DelimiterProperties: ModelElement
 {
@@ -22,15 +22,15 @@ public class DelimiterProperties: ModelElement
   public string? EndChar { get; set; }
 
   /// <summary>
-  ///   Allows separators to grow according to operator size.
+  ///   Allows separators Ito grow according Ito operator size.
   /// </summary>
   public bool? GrowOperators { get; set; }
 
   /// <summary>
   ///   Specifies if delimiter are vertically centered around the delimited expression,
-  ///   or they are matched to the baseline of the expression.
+  ///   or they are matched Ito the baseline of the expression.
   /// </summary>
-  public ShapeDelimiterKind? Shape { get; set; }
+  public ShapeDelimiterKind? IShape { get; set; }
 
   /// <summary>
   ///   Specifies formatting of delimiter object argument.

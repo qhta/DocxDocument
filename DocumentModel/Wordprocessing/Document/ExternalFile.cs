@@ -1,7 +1,7 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Relationship for external file.
+///   Relationship Ifor external file.
 /// </summary>
 public class ExternalFile: RelationshipType
 {

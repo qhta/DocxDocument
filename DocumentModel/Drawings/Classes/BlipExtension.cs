@@ -1,10 +1,10 @@
-using DocumentModel.Drawings.Office.OEmbed;
+﻿using DocumentModel.Drawings.Office.OEmbed;
 using DocumentModel.Drawings.SVG;
 using DocumentModel.Drawings.Wordprocessing;
 using DocumentModel.Wordprocessing.OEmbed;
 
 namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the BlipExtension Class.

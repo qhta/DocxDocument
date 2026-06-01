@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings.ChartsStyle;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartsStyle;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines the DataLabel Class.
+///   Defines the IDataLabel Class.
 /// </summary>
-public class DataLabel: ModelElement
+public class IDataLabel: ModelElement
 {
   public LineReference? LineReference { get; set; }
 

@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the ViewValues enumeration.
@@ -8,32 +8,32 @@ namespace DocumentModel.Wordprocessing;
 public enum ViewKind
 {
   /// <summary>
-  ///   Default View.
+  ///   Default IView.
   /// </summary>
   None,
 
   /// <summary>
-  ///   Print Layout View.
+  ///   Print Layout IView.
   /// </summary>
   Print,
 
   /// <summary>
-  ///   Outline View.
+  ///   Outline IView.
   /// </summary>
   Outline,
 
   /// <summary>
-  ///   Master Document View.
+  ///   Master IDocument IView.
   /// </summary>
   MasterPages,
 
   /// <summary>
-  ///   Draft View.
+  ///   Draft IView.
   /// </summary>
   Normal,
 
   /// <summary>
-  ///   Web Page View.
+  ///   Web IPage IView.
   /// </summary>
   Web
 }

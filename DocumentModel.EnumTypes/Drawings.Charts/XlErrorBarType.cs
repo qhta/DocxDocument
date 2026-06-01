@@ -1,4 +1,4 @@
-
+﻿
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
@@ -6,12 +6,12 @@ namespace DocumentModel.Drawings.Charts;
 /// marked by error bars.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlerrorbartype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlerrorbartype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum XlErrorBarType
 {
   /// <summary>
-  /// Range is set by fixed values or cell values.
+  /// IRange is set by fixed values or cell values.
   /// </summary>
   Custom = -4114,
   /// <summary>
@@ -19,11 +19,11 @@ public enum XlErrorBarType
   /// </summary>
   FixedValue = 1,
   /// <summary>
-  /// Percentage of range to be covered by the error bars.
+  /// Percentage of range Ito be covered by the error bars.
   /// </summary>
   Percent = 2,
   /// <summary>
-  /// Shows range for specified number of standard deviations.
+  /// Shows range Ifor specified number of standard deviations.
   /// </summary>
   StDev = -4155,
   /// <summary>
@@ -31,3 +31,4 @@ public enum XlErrorBarType
   /// </summary>
   StError = 4
 }
+

@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the TickMark enumeration.
-/// Used in types such as AxisType.
+/// Used Iin types such as AxisType.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.TickMarkValues))]
@@ -29,3 +29,4 @@ public enum TickMark
   [OpenXmlEnumValue("Outside")]
   Outside
 }
+

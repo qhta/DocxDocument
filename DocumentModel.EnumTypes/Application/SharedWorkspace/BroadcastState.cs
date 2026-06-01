@@ -1,10 +1,10 @@
-namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
 /// Specifies the current state of a document or presentation broadcast.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobroadcaststate?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msobroadcaststate?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum BroadcastState
 {
@@ -21,3 +21,4 @@ public enum BroadcastState
   /// </summary>
   BroadcastPaused
 }
+

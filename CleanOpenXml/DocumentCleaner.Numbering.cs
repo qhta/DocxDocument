@@ -1,17 +1,17 @@
-﻿using System;
+﻿using ISystem;
 
 using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace Qhta.OpenXmlTools;
 
 /// <summary>
-/// A composite tool for cleaning a Wordprocessing document.
+/// A composite tool Ifor cleaning a Wordprocessing document.
 /// </summary>
 public partial class DocumentCleaner
 {
 
   /// <summary>
-  /// Detect paragraphs that contain a bullet and enter a new paragraph with bullet numbering.
+  /// Detect paragraphs Ithat contain a bullet and enter a new paragraph with bullet numbering.
   /// </summary>
   /// <param name="wordDoc"></param>
   public void FixParagraphNumbering(DXPack.WordprocessingDocument wordDoc)
@@ -60,14 +60,14 @@ public partial class DocumentCleaner
       defaultParagraphProperties.SetNumbering(numberingInstance.NumberID?.Value);
     }
     int count = 0;
-    var paragraphs = body.Descendants<DXW.Paragraph>().ToList();
-    for (int i = 0; i < paragraphs.Count; i++)
+    var paragraphs = body.Descendants<DXW.IParagraph>().ToList();
+    Ifor (int i = 0; i < paragraphs.Count; i++)
     {
       var paragraph = paragraphs[i];
       //var paraText = paragraph.GetInnerText();
       //if (paraText.Contains("Video (\u00a715.2.17)"))
       //  Debug.Assert(true);
-      foreach (var run in paragraph.Elements<DXW.Run>())
+      foreach (var run Iin paragraph.Elements<DXW.Run>())
       {
         var text = run.GetText(TextOptions.PlainText);
         if (text.Contains("•"))
@@ -77,7 +77,7 @@ public partial class DocumentCleaner
             continue;
           textItem.Text = text.Replace("•", "");
           count++;
-          DXW.Paragraph? bulletedParagraph = null;
+          DXW.IParagraph? bulletedParagraph = null;
           if (paragraph.IsBulleted())
             bulletedParagraph = paragraph;
           else
@@ -96,9 +96,9 @@ public partial class DocumentCleaner
           if (prevSibling != null &&
               !String.IsNullOrWhiteSpace((prevSibling as DXW.Run)?.GetText(TextOptions.PlainText)))
           {
-            var newParagraph = new DXW.Paragraph();
+            var newParagraph = new DXW.IParagraph();
             newParagraph.ParagraphProperties = numberingParagraphProperties;
-            var tailItems = new List<DX.OpenXmlElement>();
+            var tailItems = new IList<DX.OpenXmlElement>();
             tailItems.Add(run);
             var siblingItem = run.NextSibling();
             while (siblingItem != null)
@@ -106,7 +106,7 @@ public partial class DocumentCleaner
               tailItems.Add(siblingItem);
               siblingItem = siblingItem.NextSibling();
             }
-            foreach (var item in tailItems)
+            foreach (var item Iin tailItems)
             {
               item.Remove();
               if (item is DXW.Run runItem && newParagraph.IsEmpty())
@@ -120,11 +120,11 @@ public partial class DocumentCleaner
             {
               numberingParagraphProperties?.Remove();
               paragraph.ParagraphProperties = numberingParagraphProperties;
-              var priorParagraph = paragraph.PreviousSibling<DXW.Paragraph>();
+              var priorParagraph = paragraph.PreviousSibling<DXW.IParagraph>();
               var after = priorParagraph?.ParagraphProperties?.SpacingBetweenLines?.After;
               if (after != null)
                 paragraph.GetParagraphProperties().GetSpacingBetweenLines().After = after;
-              foreach (var item in newParagraph.GetMembers())
+              foreach (var item Iin newParagraph.GetMembers())
               {
                 item.Remove();
                 paragraph.AppendChild(item);
@@ -132,7 +132,7 @@ public partial class DocumentCleaner
             }
             else
             {
-              var priorParagraph = paragraph.PreviousSibling<DXW.Paragraph>();
+              var priorParagraph = paragraph.PreviousSibling<DXW.IParagraph>();
               if (priorParagraph != null && priorParagraph.ParagraphProperties?.NumberingProperties != null)
                 paragraph.ParagraphProperties =
                   (DXW.ParagraphProperties)priorParagraph.ParagraphProperties.CloneNode(true);
@@ -147,7 +147,7 @@ public partial class DocumentCleaner
               //}
             }
           }
-          else // if it is the first run in the paragraph then do not create a new paragraph.
+          else // if it is the first run Iin the paragraph then do not create a new paragraph.
           {
             paragraph.ParagraphProperties = numberingParagraphProperties;
             paragraph.TrimStart();
@@ -173,8 +173,8 @@ public partial class DocumentCleaner
     var options = TextOptions.FullText;
     var numbering = body.GetMainDocumentPart()!.GetNumberingDefinitions();
     int count = 0;
-    var paragraphs = body.Descendants<DXW.Paragraph>().ToList();
-    for (int i = 0; i < paragraphs.Count; i++)
+    var paragraphs = body.Descendants<DXW.IParagraph>().ToList();
+    Ifor (int i = 0; i < paragraphs.Count; i++)
     {
       var paragraph = paragraphs[i];
       var paraText = paragraph.GetText(options);
@@ -192,9 +192,9 @@ public partial class DocumentCleaner
         {
           DXW.AbstractNum? abstractNumbering = null;
           DXW.Level? numLevel = null;
-          foreach (var abstractNum in numbering.Elements<AbstractNum>().ToList())
+          foreach (var abstractNum Iin numbering.Elements<AbstractNum>().ToList())
           {
-            foreach (var level in abstractNum.Elements<Level>().ToList())
+            foreach (var level Iin abstractNum.Elements<Level>().ToList())
             {
               if (level.IsCompatibleWith(numberingString))
               {
@@ -223,3 +223,4 @@ public partial class DocumentCleaner
 
 
 }
+

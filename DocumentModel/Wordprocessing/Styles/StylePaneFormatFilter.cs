@@ -1,8 +1,8 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Suggested Filtering for List of Document Styles.
+///   Suggested Filtering Ifor IList of IDocument IStyles.
 /// </summary>
 public class StylePaneFormatFilter: ModelElement
 {
@@ -12,77 +12,77 @@ public class StylePaneFormatFilter: ModelElement
   public HexChar? Val { get; set; }
 
   /// <summary>
-  ///   allStyles, this property is only available in Office 2010 and later.
+  ///   allStyles, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? AllStyles { get; set; }
 
   /// <summary>
-  ///   customStyles, this property is only available in Office 2010 and later.
+  ///   customStyles, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? CustomStyles { get; set; }
 
   /// <summary>
-  ///   latentStyles, this property is only available in Office 2010 and later.
+  ///   latentStyles, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? LatentStyles { get; set; }
 
   /// <summary>
-  ///   stylesInUse, this property is only available in Office 2010 and later.
+  ///   stylesInUse, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? StylesInUse { get; set; }
 
   /// <summary>
-  ///   headingStyles, this property is only available in Office 2010 and later.
+  ///   headingStyles, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
-  public bool? HeadingStyles { get; set; }
+  public bool? IHeadingStyles { get; set; }
 
   /// <summary>
-  ///   numberingStyles, this property is only available in Office 2010 and later.
+  ///   numberingStyles, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? NumberingStyles { get; set; }
 
   /// <summary>
-  ///   tableStyles, this property is only available in Office 2010 and later.
+  ///   tableStyles, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? TableStyles { get; set; }
 
   /// <summary>
-  ///   directFormattingOnRuns, this property is only available in Office 2010 and later.
+  ///   directFormattingOnRuns, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? DirectFormattingOnRuns { get; set; }
 
   /// <summary>
-  ///   directFormattingOnParagraphs, this property is only available in Office 2010 and later.
+  ///   directFormattingOnParagraphs, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? DirectFormattingOnParagraphs { get; set; }
 
   /// <summary>
-  ///   directFormattingOnNumbering, this property is only available in Office 2010 and later.
+  ///   directFormattingOnNumbering, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? DirectFormattingOnNumbering { get; set; }
 
   /// <summary>
-  ///   directFormattingOnTables, this property is only available in Office 2010 and later.
+  ///   directFormattingOnTables, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? DirectFormattingOnTables { get; set; }
 
   /// <summary>
-  ///   clearFormatting, this property is only available in Office 2010 and later.
+  ///   clearFormatting, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? ClearFormatting { get; set; }
 
   /// <summary>
-  ///   top3HeadingStyles, this property is only available in Office 2010 and later.
+  ///   top3HeadingStyles, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? Top3HeadingStyles { get; set; }
 
   /// <summary>
-  ///   visibleStyles, this property is only available in Office 2010 and later.
+  ///   visibleStyles, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? VisibleStyles { get; set; }
 
   /// <summary>
-  ///   alternateStyleNames, this property is only available in Office 2010 and later.
+  ///   alternateStyleNames, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? AlternateStyleNames { get; set; }
 }

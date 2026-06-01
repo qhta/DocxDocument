@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   List of Shape Adjust Values.
+///   IList of IShape Adjust Values.
 /// </summary>
 public class AdjustValueList: ModelElement
 {

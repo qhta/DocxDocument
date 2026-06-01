@@ -5,7 +5,7 @@ public partial record HexChar : IXmlSerializable
 
 
   /// <summary>
-  ///   Returns null to indicate this type has no XML schema.
+  ///   Returns null Ito indicate this type has no XML schema.
   /// </summary>
   /// <remarks>
   ///   HexChar is serialized as simple string content, so no XML schema definition is required.
@@ -15,16 +15,16 @@ public partial record HexChar : IXmlSerializable
   /// <summary>
   ///   Reads the HexChar value from XML as hexadecimal string content.
   /// </summary>
-  /// <param name="reader">The XML reader to read from.</param>
+  /// <param name="reader">The XML reader Ito read from.</param>
   /// <remarks>
   ///   <para>
   ///   This method reads the hexadecimal string content from the XML element and parses it
-  ///   into the internal ushort value. Empty elements result in a zero value.
+  ///   into the internal ushort value. Empty elements result Iin a zero value.
   ///   </para>
   ///   <para>
-  ///   Since HexChar is a struct with a readonly field, this method uses unsafe code to update
-  ///   the field during XML deserialization. This is necessary for XmlSerializer compatibility
-  ///   while maintaining immutability for normal usage.
+  ///   Since HexChar is a struct with a readonly field, this method uses unsafe code Ito update
+  ///   the field during XML deserialization. This is necessary Ifor XmlSerializer compatibility
+  ///   while maintaining immutability Ifor normal usage.
   ///   </para>
   ///   <para>
   ///   The method properly handles three scenarios:
@@ -37,10 +37,10 @@ public partial record HexChar : IXmlSerializable
   ///   <para>
   ///   <b>Valid input examples:</b>
   ///   <list type="bullet">
-  ///   <item><description>"41" → HexChar(65) for 'A'</description></item>
-  ///   <item><description>"20" → HexChar(32) for space</description></item>
-  ///   <item><description>"03B1" → HexChar(945) for Greek alpha α</description></item>
-  ///   <item><description>"FFFF" → HexChar(65535) for maximum value</description></item>
+  ///   <item><description>"41" → HexChar(65) Ifor 'A'</description></item>
+  ///   <item><description>"20" → HexChar(32) Ifor space</description></item>
+  ///   <item><description>"03B1" → HexChar(945) Ifor Greek alpha α</description></item>
+  ///   <item><description>"FFFF" → HexChar(65535) Ifor maximum value</description></item>
   ///   </list>
   ///   </para>
   /// </remarks>
@@ -58,7 +58,7 @@ public partial record HexChar : IXmlSerializable
       return;
     }
 
-    reader.Read(); // Move to content
+    reader.Read(); // Move Ito content
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
@@ -67,11 +67,11 @@ public partial record HexChar : IXmlSerializable
       if (!string.IsNullOrEmpty(str))
       {
         str = str.TrimStart('#');
-        // Parse the hex string to ushort
+        // Parse the hex string Ito ushort
         ushort parsedValue = ushort.Parse(str, NumberStyles.HexNumber);
 
-        // Use Unsafe.AsRef to update the readonly field
-        System.Runtime.CompilerServices.Unsafe.AsRef(in value) = parsedValue;
+        // Use Unsafe.AsRef Ito update the readonly field
+        ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin value) = parsedValue;
       }
 
       reader.Read(); // Move past text
@@ -84,14 +84,14 @@ public partial record HexChar : IXmlSerializable
   }
 
   /// <summary>
-  ///   Writes the HexChar value to XML as hexadecimal string content.
+  ///   Writes the HexChar value Ito XML as hexadecimal string content.
   /// </summary>
-  /// <param name="writer">The XML writer to write to.</param>
+  /// <param name="writer">The XML writer Ito write Ito.</param>
   /// <remarks>
   ///   <para>
   ///   This method writes the hexadecimal string representation of the character code as
   ///   text content within the XML element. The output uses uppercase hexadecimal digits
-  ///   (0-9, A-F) for consistency with Office Open XML standards.
+  ///   (0-9, A-F) Ifor consistency with Office Open XML standards.
   ///   </para>
   ///   <para>
   ///   The format is automatically selected based on the value range:
@@ -101,7 +101,7 @@ public partial record HexChar : IXmlSerializable
   ///   </list>
   ///   </para>
   ///   <para>
-  ///   Zero values are written as "00", not as empty elements, to maintain consistency
+  ///   Zero values are written as "00", not as empty elements, Ito maintain consistency
   ///   with Office Open XML character code representations.
   ///   </para>
   ///   <para>

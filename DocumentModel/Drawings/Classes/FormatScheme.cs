@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 ///   Format Scheme.
@@ -11,22 +11,22 @@ public class FormatScheme: ModelElement
   public string? Name { get; set; }
 
   /// <summary>
-  ///   Fill Style List.
+  ///   Fill IStyle IList.
   /// </summary>
   public FillStyleList? FillStyleList { get; set; }
 
   /// <summary>
-  ///   Line Style List.
+  ///   ILine IStyle IList.
   /// </summary>
   public LineStyleList? LineStyleList { get; set; }
 
   /// <summary>
-  ///   Effect Style List.
+  ///   Effect IStyle IList.
   /// </summary>
   public EffectStyleList? EffectStyleList { get; set; }
 
   /// <summary>
-  ///   Background Fill Style List.
+  ///   Background Fill IStyle IList.
   /// </summary>
   public FillStyleList? BackgroundFillStyleList { get; set; }
 }

@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Phonetic Guide Properties.
@@ -11,7 +11,7 @@ public class RubyProperties: ModelElement
   public RubyAlignKind? RubyAlign { get; set; }
 
   /// <summary>
-  ///   Phonetic Guide Text Font Size.
+  ///   Phonetic Guide Text IFont Size.
   /// </summary>
   public Hps? PhoneticGuideTextFontSize { get; set; }
 
@@ -21,17 +21,17 @@ public class RubyProperties: ModelElement
   public Int16? PhoneticGuideRaise { get; set; }
 
   /// <summary>
-  ///   Phonetic Guide Base Text Font Size.
+  ///   Phonetic Guide Base Text IFont Size.
   /// </summary>
   public Hps? PhoneticGuideBaseTextSize { get; set; }
 
   /// <summary>
-  ///   Language ID for Phonetic Guide.
+  ///   ILanguage ID Ifor Phonetic Guide.
   /// </summary>
   public string? LanguageId { get; set; }
 
   /// <summary>
-  ///   Invalidated Field Cache.
+  ///   Invalidated IField Cache.
   /// </summary>
   public bool? Dirty { get; set; }
 }

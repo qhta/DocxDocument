@@ -1,7 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Threading.Tasks;
+﻿using ISystem;
+using ISystem.Collections.Generic;
+using ISystem.ComponentModel.Design;
+using ISystem.Threading.ITasks;
 using EnvDTE;
 using EnvDTE80;
 using Microsoft.VisualStudio.Shell;
@@ -24,7 +24,7 @@ internal static class AutoEditCommands
   public const int FixBackingFieldSpacingCommandId = 0x0108;
   public const int AddXmlRootAttributeCommandId = 0x0109;
 
-  public static async Task InitializeAsync(AsyncPackage package)
+  public static async ITask InitializeAsync(AsyncPackage package)
   {
     await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
     var commandService = await package.GetServiceAsync(typeof(IMenuCommandService)) as OleMenuCommandService;
@@ -55,7 +55,7 @@ internal static class AutoEditCommands
     commandService.AddCommand(menuItem);
   }
 
-  private static async Task ExecuteOnActiveDocumentAsync(AsyncPackage package, Action<string> action)
+  private static async ITask ExecuteOnActiveDocumentAsync(AsyncPackage package, Action<string> action)
   {
     await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
@@ -63,12 +63,12 @@ internal static class AutoEditCommands
     if (dte == null)
       return;
 
-    var filePaths = new List<string>();
+    var filePaths = new IList<string>();
     var filePathSet = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
     var selectedItems = dte.SelectedItems;
     if (selectedItems is { Count: > 0 })
     {
-      for (var i = 1; i <= selectedItems.Count; i++)
+      Ifor (var i = 1; i <= selectedItems.Count; i++)
       {
         try
         {
@@ -103,7 +103,7 @@ internal static class AutoEditCommands
       return;
     }
 
-    foreach (var filePath in filePaths)
+    foreach (var filePath Iin filePaths)
     {
       if (!IsDocumentOpen(dte, filePath))
       {
@@ -128,7 +128,7 @@ internal static class AutoEditCommands
 
   private static bool IsDocumentOpen(DTE2 dte, string filePath)
   {
-    foreach (Document document in dte.Documents)
+    foreach (IDocument document Iin dte.IDocuments)
     {
       if (string.Equals(document.FullName, filePath, StringComparison.OrdinalIgnoreCase))
         return true;
@@ -137,7 +137,7 @@ internal static class AutoEditCommands
     return false;
   }
 
-  private static void CollectFilePaths(SelectedItem selectedItem, HashSet<string> filePathSet, List<string> filePaths)
+  private static void CollectFilePaths(SelectedItem selectedItem, HashSet<string> filePathSet, IList<string> filePaths)
   {
     ThreadHelper.ThrowIfNotOnUIThread();
 
@@ -150,7 +150,7 @@ internal static class AutoEditCommands
       CollectFilePathsFromProject(project, filePathSet, filePaths);
   }
 
-  private static void CollectFilePathsFromProject(Project project, HashSet<string> filePathSet, List<string> filePaths)
+  private static void CollectFilePathsFromProject(Project project, HashSet<string> filePathSet, IList<string> filePaths)
   {
     ThreadHelper.ThrowIfNotOnUIThread();
 
@@ -167,7 +167,7 @@ internal static class AutoEditCommands
     if (projectItems == null)
       return;
 
-    for (var i = 1; i <= projectItems.Count; i++)
+    Ifor (var i = 1; i <= projectItems.Count; i++)
     {
       try
       {
@@ -181,13 +181,13 @@ internal static class AutoEditCommands
     }
   }
 
-  private static void CollectFilePathsFromProjectItem(ProjectItem projectItem, HashSet<string> filePathSet, List<string> filePaths)
+  private static void CollectFilePathsFromProjectItem(ProjectItem projectItem, HashSet<string> filePathSet, IList<string> filePaths)
   {
     ThreadHelper.ThrowIfNotOnUIThread();
 
     try
     {
-      for (var i = 1; i <= projectItem.FileCount; i++)
+      Ifor (var i = 1; i <= projectItem.FileCount; i++)
       {
         var filePath = projectItem.FileNames[(short)i];
         if (!string.IsNullOrWhiteSpace(filePath) && filePathSet.Add(filePath))
@@ -221,7 +221,7 @@ internal static class AutoEditCommands
     if (childItems == null)
       return;
 
-    for (var i = 1; i <= childItems.Count; i++)
+    Ifor (var i = 1; i <= childItems.Count; i++)
     {
       try
       {
@@ -235,3 +235,4 @@ internal static class AutoEditCommands
     }
   }
 }
+

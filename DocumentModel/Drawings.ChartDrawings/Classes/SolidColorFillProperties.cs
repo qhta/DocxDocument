@@ -1,11 +1,11 @@
-namespace DocumentModel.Drawings.ChartDrawings;
+﻿namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the MaxColorSolidColorFillProperties Class.
 /// </summary>
 public class SolidColorFillProperties: ModelElement
 {
   /// <summary>
-  /// Rgb color in hex model
+  /// Rgb color Iin hex model
   /// </summary>
   public RgbColorModelHex? RgbColorModelHex { get; set; }
 
@@ -15,7 +15,7 @@ public class SolidColorFillProperties: ModelElement
   public SchemeColor? SchemeColor { get; set; }
 
   /// <summary>
-  /// Rgb color in percentage model
+  /// Rgb color Iin percentage model
   /// </summary>
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
 
@@ -25,7 +25,7 @@ public class SolidColorFillProperties: ModelElement
   public HslColor? HslColor { get; set; }
 
   /// <summary>
-  /// System color.
+  /// ISystem color.
   /// </summary>
   public SystemColor? SystemColor { get; set; }
 

@@ -1,13 +1,13 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   3-D Shape Properties.
+///   3-D IShape Properties.
 /// </summary>
 public class Shape3D: ModelElement
 {
   /// <summary>
-  ///   Shape Depth
+  ///   IShape Depth
   /// </summary>
   public Int64? Z { get; set; }
 

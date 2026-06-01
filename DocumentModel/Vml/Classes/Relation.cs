@@ -1,8 +1,8 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Diagram Relationship.
+///   IDiagram Relationship.
 /// </summary>
 public class Relation: ModelElement
 {
@@ -12,17 +12,17 @@ public class Relation: ModelElement
   public ExtensionHandlingBehaviorKind? Extension { get; set; }
 
   /// <summary>
-  ///   Diagram Relationship Source Shape
+  ///   IDiagram Relationship ISource IShape
   /// </summary>
   public string? SourceId { get; set; }
 
   /// <summary>
-  ///   Diagram Relationship Destination Shape
+  ///   IDiagram Relationship Destination IShape
   /// </summary>
   public string? DestinationId { get; set; }
 
   /// <summary>
-  ///   Diagram Relationship Center Shape
+  ///   IDiagram Relationship Center IShape
   /// </summary>
   public string? CenterShapeId { get; set; }
 }

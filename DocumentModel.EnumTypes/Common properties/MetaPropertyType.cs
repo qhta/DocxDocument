@@ -1,10 +1,10 @@
-namespace DocumentModel.Properties;
+﻿namespace DocumentModel.Properties;
 
 /// <summary>
 /// Specifies the metadata property type.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msometapropertytype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msometapropertytype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum MetaPropertyType
 {
@@ -37,7 +37,7 @@ public enum MetaPropertyType
   /// </summary>
   DateTime,
   /// <summary>
-  /// Represents a value from two or more choices that is written-in by the user.
+  /// Represents a value from two or more choices Ithat is written-Iin by the user.
   /// </summary>
   FillInChoice,
   /// <summary>
@@ -49,11 +49,11 @@ public enum MetaPropertyType
   /// </summary>
   Integer,
   /// <summary>
-  /// Represents a value used to lookup another value.
+  /// Represents a value used Ito lookup another value.
   /// </summary>
   Lookup,
   /// <summary>
-  /// Represents a collection of choices used to lookup another value.
+  /// Represents a collection of choices used Ito lookup another value.
   /// </summary>
   MultiChoiceLookup,
   /// <summary>
@@ -61,7 +61,7 @@ public enum MetaPropertyType
   /// </summary>
   MultiChoice,
   /// <summary>
-  /// Represents a collection of choices that require the user to write-in a value.
+  /// Represents a collection of choices Ithat require the user Ito write-Iin a value.
   /// </summary>
   MultiChoiceFillIn,
   /// <summary>
@@ -97,7 +97,8 @@ public enum MetaPropertyType
   /// </summary>
   BusinessDataSecondary,
   /// <summary>
-  /// Represents the maximum value for a range.
+  /// Represents the maximum value Ifor a range.
   /// </summary>
   Max
 }
+

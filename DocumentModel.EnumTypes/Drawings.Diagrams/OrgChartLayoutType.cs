@@ -1,15 +1,15 @@
-namespace DocumentModel.Drawings.Diagrams;
+﻿namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Indicates how to format the child nodes in an organization chart.
+/// Indicates how Ito format the child nodes Iin an organization chart.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoorgchartlayouttype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoorgchartlayouttype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum OrgChartLayoutType
 {
   /// <summary>
-  /// Return value for a parent node that has children formatted using more than one OrgChartLayoutType.
+  /// Return value Ifor a parent node Ithat has children formatted using more than one OrgChartLayoutType.
   /// </summary>
   /// <summary>
   /// Places child nodes horizontally below the parent node.
@@ -32,3 +32,4 @@ public enum OrgChartLayoutType
   /// </summary>
   Default = 5
 }
+

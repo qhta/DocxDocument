@@ -1,8 +1,8 @@
-namespace DocumentModel.CustomUI;
+﻿namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Defines the Expand enumeration.
-/// Used in types such as BackstageCheckBox, BackstageComboBox, BackstageDropDown.
+/// Used Iin types such as BackstageCheckBox, BackstageComboBox, BackstageDropDown.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXO10CUI.ExpandValues))]
@@ -54,3 +54,4 @@ public enum Expand
 	[OpenXmlEnumValue("BottomRight")]
 	BottomRight
 }
+

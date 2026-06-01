@@ -1,8 +1,8 @@
-namespace DocumentModel.CustomUI;
+﻿namespace DocumentModel.CustomUI;
 
 /// <summary>
 /// Defines the BoxStyle enumeration.
-/// Used in types such as Box, BoxConverter.
+/// Used Iin types such as Box, BoxConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXO10CUI.BoxStyleValues))]
@@ -19,3 +19,4 @@ public enum BoxStyle
 	[OpenXmlEnumValue("Vertical")]
 	Vertical
 }
+

@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Custom XSL Transform To Use When Saving As XML File.
@@ -7,7 +7,7 @@ public class SaveThroughXslt: ExternalFile
 {
 
   /// <summary>
-  ///   Local Identifier for XSL Transform
+  ///   Local Identifier Ifor XSL Transform
   /// </summary>
   public string? SolutionId { get; set; }
 }

@@ -1,38 +1,38 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Style Conditional Table Formatting Properties.
+///   IStyle Conditional ITable Formatting Properties.
 /// </summary>
 public class TableStyleProperties: ModelElement
 {
   /// <summary>
-  ///   Table Style Conditional Formatting Type
+  ///   ITable IStyle Conditional Formatting Type
   /// </summary>
   public TableStyleOverrideKind? Type { get; set; }
 
   /// <summary>
-  ///   Table Style Conditional Formatting Paragraph Properties.
+  ///   ITable IStyle Conditional Formatting IParagraph Properties.
   /// </summary>
   public StyleParagraphProperties? StyleParagraphProperties { get; set; }
 
   /// <summary>
-  ///   Table Style Conditional Formatting Run Properties.
+  ///   ITable IStyle Conditional Formatting Run Properties.
   /// </summary>
   public TableStyleRunProperties? TableStyleRunProperties { get; set; }
 
   /// <summary>
-  ///   Table Style Conditional Formatting Table Properties.
+  ///   ITable IStyle Conditional Formatting ITable Properties.
   /// </summary>
   public TableStyleConditionalTableProperties? TableStyleConditionalTableProperties { get; set; }
 
   /// <summary>
-  ///   Table Style Conditional Formatting Table Row Properties.
+  ///   ITable IStyle Conditional Formatting ITable IRow Properties.
   /// </summary>
   public TableStyleConditionalRowProperties? TableStyleConditionalRowProperties { get; set; }
 
   /// <summary>
-  ///   Table Style Conditional Formatting Table Cell Properties.
+  ///   ITable IStyle Conditional Formatting ITable ICell Properties.
   /// </summary>
   public TableStyleConditionalCellProperties? TableStyleConditionalCellProperties { get; set; }
 }

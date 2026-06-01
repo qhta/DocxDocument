@@ -1,7 +1,7 @@
-namespace DocumentModel.Drawings.Wordprocessing;
+﻿namespace DocumentModel.Drawings.Wordprocessing;
 
 /// <summary>
-///   Additional extent for object effects.
+///   Additional extent Ifor object effects.
 /// </summary>
 [TypeConverter(typeof(EffectExtentTypeConverter))]
 public class EffectExtent: ModelElement

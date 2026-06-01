@@ -1,4 +1,4 @@
-﻿using System.Xml;
+﻿using ISystem.Xml;
 
 using DocumentModel.Drawings;
 using DocumentModel.UI;
@@ -6,7 +6,7 @@ using DocumentModel.UI;
 using Newtonsoft.Json.Linq;
 
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 internal class VectorTypeXmlConverter : TypeConverter, IXmlConverter
 {
@@ -41,7 +41,7 @@ internal class VectorTypeXmlConverter : TypeConverter, IXmlConverter
     var result = new VectorVariant();
     if (value is JArray jArray)
     {
-      foreach (var item in jArray)
+      foreach (var item Iin jArray)
       {
         if (item is JValue jValue)
         {
@@ -62,7 +62,7 @@ internal class VectorTypeXmlConverter : TypeConverter, IXmlConverter
       writer.WriteStartElement("Vector");
       if (vector.BaseType != null)
         writer.WriteAttributeString("baseType", vector.BaseType.ToString());
-      foreach (var item in vector)
+      foreach (var item Iin vector)
       {
         if (item == null)
         {
@@ -122,7 +122,7 @@ internal class VectorTypeXmlConverter : TypeConverter, IXmlConverter
           if (type == null)
           {
             if (!typeName.Contains('.'))
-              type = Type.GetType("System." + typeName);
+              type = Type.GetType("ISystem." + typeName);
             if (type == null)
               throw new InvalidOperationException($"Type \"{typeName}\" not found");
           }

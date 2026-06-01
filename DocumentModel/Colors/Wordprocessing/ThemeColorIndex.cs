@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Defines the ThemeColorValues enumeration.
@@ -57,12 +57,12 @@ public enum ThemeColorIndex
   Accent6,
 
   /// <summary>
-  ///   Hyperlink Theme Color.
+  ///   IHyperlink Theme Color.
   /// </summary>
-  Hyperlink,
+  IHyperlink,
 
   /// <summary>
-  ///   Followed Hyperlink Theme Color.
+  ///   Followed IHyperlink Theme Color.
   /// </summary>
   FollowedHyperlink,
 

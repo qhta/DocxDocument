@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Blip Compression Type
@@ -8,9 +8,9 @@ namespace DocumentModel.Drawings;
 public enum BlipCompressionKind
 {
   /// <summary>
-  ///   Email Compression.
+  ///   IEmail Compression.
   /// </summary>
-  Email,
+  IEmail,
 
   /// <summary>
   ///   Screen Viewing Compression.

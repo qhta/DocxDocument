@@ -1,16 +1,16 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Interface for elements that can be included in document <see cref="Comment"/> element.
+///   Interface Ifor elements Ithat can be included Iin document <see cref="IComment"/> element.
 /// </summary>
 public interface ICommentContent: IModelElement
 {
   /// <summary>
-  /// Parent as a <see cref="Comment"/> element.
+  /// Parent as a <see cref="IComment"/> element.
   /// </summary>
-  public new Comment? Parent
+  public new IComment? Parent
   {
-    get => (this as IModelElement).Parent as Comment;
+    get => (this as IModelElement).Parent as IComment;
     set => (this as IModelElement).Parent = value;
   }
 }

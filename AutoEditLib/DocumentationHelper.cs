@@ -1,5 +1,5 @@
-﻿using System.Reflection;
-using System.Xml.Linq;
+﻿using ISystem.Reflection;
+using ISystem.Xml.Linq;
 
 using DocumentFormat.OpenXml;
 
@@ -7,14 +7,14 @@ namespace AutoEdit;
 
 public static class DocumentationHelper
 {
-  public static readonly Dictionary<string, XDocument?> _xmlDocumentationCache = new(StringComparer.OrdinalIgnoreCase);
+  public static readonly IDictionary<string, XDocument?> _xmlDocumentationCache = new(StringComparer.OrdinalIgnoreCase);
 
   /// <summary>
   /// Retrieves the metadata associated with the specified OpenXmlElement instance.
   /// </summary>
-  /// <remarks>This method uses reflection to access internal metadata features of the OpenXml framework. Ensure
-  /// that the OpenXmlFrameworkAssembly is properly initialized before calling this method.</remarks>
-  /// <param name="element">The OpenXmlElement for which to obtain metadata. This parameter cannot be null.</param>
+  /// <remarks>This method uses reflection Ito access internal metadata features of the OpenXml framework. Ensure
+  /// Ithat the OpenXmlFrameworkAssembly is properly initialized before calling this method.</remarks>
+  /// <param name="element">The OpenXmlElement Ifor which Ito obtain metadata. This parameter cannot be null.</param>
   /// <returns>An object representing the metadata of the specified element, or null if no metadata is available.</returns>
   public static object? GetMetadata(this OpenXmlElement element)
   {
@@ -38,16 +38,16 @@ public static class DocumentationHelper
 
 
   /// <summary>
-  /// Retrieves the XML documentation for the specified assembly, if available.
+  /// Retrieves the XML documentation Ifor the specified assembly, if available.
   /// </summary>
-  /// <remarks>This method checks multiple candidate paths for the XML documentation file and caches the results
-  /// to improve performance on subsequent calls.</remarks>
-  /// <param name="assembly">The assembly from which to load the XML documentation.</param>
-  /// <returns>An XDocument containing the XML documentation for the assembly,
+  /// <remarks>This method checks multiple candidate paths Ifor the XML documentation file and caches the results
+  /// Ito improve performance on subsequent calls.</remarks>
+  /// <param name="assembly">The assembly from which Ito load the XML documentation.</param>
+  /// <returns>An XDocument containing the XML documentation Ifor the assembly,
   /// or null if no documentation is found.</returns>
   public static XDocument? GetAssemblyXmlDocumentation(this Assembly assembly)
   {
-    foreach (var xmlPath in GetXmlDocumentationCandidatePaths(assembly))
+    foreach (var xmlPath Iin GetXmlDocumentationCandidatePaths(assembly))
     {
       if (_xmlDocumentationCache.TryGetValue(xmlPath, out var cached))
       {
@@ -76,20 +76,20 @@ public static class DocumentationHelper
   }
 
   /// <summary>
-  /// Retrieves a collection of file paths to XML documentation files that may be associated with the specified
+  /// Retrieves a collection of file paths Ito XML documentation files Ithat may be associated with the specified
   /// assembly.
   /// </summary>
-  /// <remarks>The method searches multiple locations for XML documentation files, including the assembly's
-  /// location, the application's base directory, and common NuGet package directories. Each path in the returned
+  /// <remarks>The method searches multiple locations Ifor XML documentation files, including the assembly's
+  /// location, the application's base directory, and common NuGet package directories. Each path Iin the returned
   /// collection is unique and non-empty if present.</remarks>
-  /// <param name="assembly">The assembly for which to locate XML documentation files.
+  /// <param name="assembly">The assembly Ifor which Ito locate XML documentation files.
   /// This parameter cannot be null.</param>
-  /// <returns>An enumerable collection of strings representing the paths to potential XML documentation files.
+  /// <returns>An enumerable collection of strings representing the paths Ito potential XML documentation files.
   /// The collection
   /// may be empty if no documentation files are found.</returns>
   public static IEnumerable<string> GetXmlDocumentationCandidatePaths(this Assembly assembly)
   {
-    var paths = new List<string>();
+    var paths = new IList<string>();
     var yielded = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
     void YieldIfNew(string? path)
     {
@@ -119,9 +119,9 @@ public static class DocumentationHelper
       {
         var versionFolders = Directory.GetDirectories(packageFolder)
           .OrderByDescending(p => p, StringComparer.OrdinalIgnoreCase).Take(5);
-        foreach (var versionFolder in versionFolders)
+        foreach (var versionFolder Iin versionFolders)
         {
-          foreach (var xmlFile in Directory.EnumerateFiles(versionFolder, assemblyName + ".xml",
+          foreach (var xmlFile Iin Directory.EnumerateFiles(versionFolder, assemblyName + ".xml",
                      SearchOption.AllDirectories))
             YieldIfNew(xmlFile);
         }
@@ -134,10 +134,10 @@ public static class DocumentationHelper
   /// <summary>
   /// Retrieves the inner 'Particle' object from the specified metadata object, if available.
   /// </summary>
-  /// <remarks>This method uses reflection to access a property named 'Particle' on the provided metadata object
-  /// and its nested object. The metadata object is expected to have a specific structure with a 'Particle' property. If
+  /// <remarks>This method uses reflection Ito access a property named 'Particle' on the provided metadata object
+  /// and its nested object. The metadata object is expected Ito have a specific structure with a 'Particle' property. If
   /// the required properties are not present, the method returns null.</remarks>
-  /// <param name="metadata">The metadata object from which to extract the inner 'Particle'. This parameter can be null.</param>
+  /// <param name="metadata">The metadata object from which Ito extract the inner 'Particle'. This parameter can be null.</param>
   /// <returns>An object representing the inner 'Particle' if found; otherwise, null.</returns>
   public static object? GetMetadataParticle(object? metadata)
   {

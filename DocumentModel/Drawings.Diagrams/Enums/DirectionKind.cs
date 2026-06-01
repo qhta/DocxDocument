@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Diagram Direction Definition
+///   IDiagram Direction Definition
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum DirectionKind

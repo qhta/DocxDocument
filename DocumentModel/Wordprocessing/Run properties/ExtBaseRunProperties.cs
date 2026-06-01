@@ -1,24 +1,24 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Extended BaseRunProperties.
-///   Contains these common properties, which are not applied to <see cref="BaseRunProperties"/>
+///   Contains these common properties, which are not applied Ito <see cref="BaseRunProperties"/>
 /// </summary>
 public abstract class ExtBaseRunProperties : BaseRunProperties
 {
-  #region These properties are defined in ECMA
+  #region These properties are defined Iin ECMA
   /// <summary>
-  ///   Specifies the style ID of the character style which shall be used to format the contents of this paragraph.
+  ///   Specifies the style ID of the character style which shall be used Ito format the contents of this paragraph.
   /// </summary>
   public string? RunStyle { get; set; }
 
   /// <summary>
-  ///   Specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run. 
+  ///   Specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting Ifor this run. 
   /// </summary>
   public bool? ComplexScript { get; set; }
 
   /// <summary>
-  ///   Specifies whether the contents of this run shall have right-to-left characteristics.
+  ///   Specifies whether the contents of this run shall have right-Ito-left characteristics.
   /// </summary>
   public bool? RightToLeftText { get; set; }
 
@@ -26,21 +26,21 @@ public abstract class ExtBaseRunProperties : BaseRunProperties
   ///   Specifies a highlighting color which is applied as a background behind the contents of this run. 
   ///   If this run has any background shading specified using the shading, 
   ///   then the background shading shall be superseded by the highlighting color when the contents of this run are displayed. 
-  ///   This property is not applied to <see cref="BaseRunProperties"/> element.
+  ///   This property is not applied Ito <see cref="BaseRunProperties"/> element.
   /// </summary>
   public HighlightColorKind? Highlight { get; set; }
 
   #endregion
 
-  #region These properties are defined in Office Word Extensions (from Office 2010)
+  #region These properties are defined Iin Office Word Extensions (from Office 2010)
 
   /// <summary>
-  ///   Specifies whether to display the characters using contextual alternates according to OpenType Font specification.
+  ///   Specifies whether Ito display the characters using contextual alternates according Ito OpenType IFont specification.
   /// </summary>
   public OnOffKind? ContextualAlternates { get; set; }
 
   /// <summary>
-  ///   Specifies the glow effect, a colored, blurred outline that is added outside the edges of text.
+  ///   Specifies the glow effect, a colored, blurred outline Ithat is added outside the edges of text.
   /// </summary>
   public Glow? Glow { get; set; }
 
@@ -55,42 +55,42 @@ public abstract class ExtBaseRunProperties : BaseRunProperties
   public Reflection? Reflection { get; set; }
 
   /// <summary>
-  ///   TextOutlineEffect, this property is only available in Office 2010 and later..
+  ///   TextOutlineEffect, this property is Ionly available Iin Office 2010 and later..
   /// </summary>
   public TextOutlineEffect? TextOutlineEffect { get; set; }
 
   /// <summary>
-  ///   FillTextEffect, this property is only available in Office 2010 and later..
+  ///   FillTextEffect, this property is Ionly available Iin Office 2010 and later..
   /// </summary>
   public FillTextEffect? FillTextEffect { get; set; }
 
   /// <summary>
-  ///   Scene3D, this property is only available in Office 2010 and later..
+  ///   Scene3D, this property is Ionly available Iin Office 2010 and later..
   /// </summary>
   public Scene3D? Scene3D { get; set; }
 
   /// <summary>
-  ///   Properties3D, this property is only available in Office 2010 and later..
+  ///   Properties3D, this property is Ionly available Iin Office 2010 and later..
   /// </summary>
   public Properties3D? Properties3D { get; set; }
 
   /// <summary>
-  ///   Specifies which kinds of ligatures to use when displaying the text.
+  ///   Specifies which kinds of ligatures Ito use when displaying the text.
   /// </summary>
   public LigaturesKind? Ligatures { get; set; }
 
   /// <summary>
-  ///   NumberingFormat, this property is only available in Office 2010 and later..
+  ///   NumberingFormat, this property is Ionly available Iin Office 2010 and later..
   /// </summary>
   public NumberFormKind? NumberingFormat { get; set; }
 
   /// <summary>
-  ///   NumberSpacing, this property is only available in Office 2010 and later..
+  ///   NumberSpacing, this property is Ionly available Iin Office 2010 and later..
   /// </summary>
   public NumberSpacingKind? NumberSpacing { get; set; }
 
   /// <summary>
-  ///   StylisticSets, this property is only available in Office 2010 and later..
+  ///   StylisticSets, this property is Ionly available Iin Office 2010 and later..
   /// </summary>
   public StylisticSets? StylisticSets { get; set; }
   #endregion

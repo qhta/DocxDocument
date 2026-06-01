@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Magnification Setting.
@@ -13,7 +13,7 @@ internal class ZoomTypeConverter: TypeConverter
 
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {
-    if (value is Zoom zoom)
+    if (value is IZoom zoom)
     {
       if (zoom.Percent != null)
         return zoom.Percent.ToString() + "%";
@@ -34,11 +34,11 @@ internal class ZoomTypeConverter: TypeConverter
       if (str.EndsWith('%'))
       {
         str = str.Substring(0, str.Length - 1);
-        return new Zoom { Percent = int.Parse(str) };
+        return new IZoom { Percent = int.Parse(str) };
       }
       else if (Enum.TryParse<PresetZoomKind>(str, out var kind))
       {
-        return new Zoom { Kind = kind };
+        return new IZoom { Kind = kind };
       }
     }
     return base.ConvertFrom(context, culture, value);

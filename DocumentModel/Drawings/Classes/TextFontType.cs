@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the TextFontType Class.
@@ -17,7 +17,7 @@ public class TextFontType: ModelElement
    public HexBinary? Panose { get; set; }
 
   /// <summary>
-  ///   Similar Font Family
+  ///   Similar IFont Family
   /// </summary>
   public SByte? PitchFamily { get; set; }
 

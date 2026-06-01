@@ -1,33 +1,33 @@
-namespace DocumentModel.Drawings.ChartDrawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines the Series Class.
+///   Defines the ISeries Class.
 /// </summary>
-public class Series: ModelElement
+public class ISeries: ModelElement
 {
   /// <summary>
-  ///   layoutId, this property is only available in Office 2016 and later.
+  ///   layoutId, this property is Ionly available Iin Office 2016 and later.
   /// </summary>
   public SeriesLayout? LayoutId { get; set; }
 
   /// <summary>
-  ///   hidden, this property is only available in Office 2016 and later.
+  ///   hidden, this property is Ionly available Iin Office 2016 and later.
   /// </summary>
   public bool? Hidden { get; set; }
 
   /// <summary>
-  ///   ownerIdx, this property is only available in Office 2016 and later.
+  ///   ownerIdx, this property is Ionly available Iin Office 2016 and later.
   /// </summary>
   public UInt32? OwnerIdx { get; set; }
 
   /// <summary>
-  ///   uniqueId, this property is only available in Office 2016 and later.
+  ///   uniqueId, this property is Ionly available Iin Office 2016 and later.
   /// </summary>
   public string? UniqueId { get; set; }
 
   /// <summary>
-  ///   formatIdx, this property is only available in Office 2016 and later.
+  ///   formatIdx, this property is Ionly available Iin Office 2016 and later.
   /// </summary>
   public UInt32? FormatIdx { get; set; }
 
@@ -53,7 +53,7 @@ public class Series: ModelElement
 
   public Collection<DataPoint>? DataPoints { get; set; }
 
-  public DataLabels? DataLabels { get; set; }
+  public IDataLabels? IDataLabels { get; set; }
 
   public UInt32? DataId { get; set; }
 

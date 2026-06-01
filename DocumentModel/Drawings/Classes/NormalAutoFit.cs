@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Normal AutoFit.
@@ -7,12 +7,12 @@ namespace DocumentModel.Drawings;
 public class NormalAutoFit: ModelElement
 {
   /// <summary>
-  ///   Font Scale
+  ///   IFont Scale
   /// </summary>
   public Int32? FontScale { get; set; }
 
   /// <summary>
-  ///   Line Space Reduction
+  ///   ILine Space Reduction
   /// </summary>
   public Int32? LineSpaceReduction { get; set; }
 }

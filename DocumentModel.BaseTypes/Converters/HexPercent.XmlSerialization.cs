@@ -5,7 +5,7 @@ public partial struct HexPercent : IXmlSerializable
 
 
   /// <summary>
-  ///   Returns null to indicate this type has no XML schema.
+  ///   Returns null Ito indicate this type has no XML schema.
   /// </summary>
   /// <remarks>
   ///   HexPercent is serialized as simple string content, so no XML schema definition is required.
@@ -15,7 +15,7 @@ public partial struct HexPercent : IXmlSerializable
   /// <summary>
   ///   Reads the HexPercent value from XML
   /// </summary>
-  /// <param name="reader">The XML reader to read from.</param>
+  /// <param name="reader">The XML reader Ito read from.</param>
   /// <exception cref="FormatException">
   ///   Thrown when the string is not a valid percent number.
   /// </exception>
@@ -30,7 +30,7 @@ public partial struct HexPercent : IXmlSerializable
       return;
     }
 
-    reader.Read(); // Move to content
+    reader.Read(); // Move Ito content
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
@@ -38,11 +38,11 @@ public partial struct HexPercent : IXmlSerializable
 
       if (!string.IsNullOrEmpty(str))
       {
-        // Parse the hex string to byte
+        // Parse the hex string Ito byte
         var temp = new HexPercent(str);
 
-        // Use Unsafe.AsRef to update the readonly field
-        System.Runtime.CompilerServices.Unsafe.AsRef(in value) = temp.value;
+        // Use Unsafe.AsRef Ito update the readonly field
+        ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin value) = temp.value;
       }
 
       reader.Read(); // Move past text
@@ -55,9 +55,9 @@ public partial struct HexPercent : IXmlSerializable
   }
 
   /// <summary>
-  ///   Writes the HexPercent value to XML as a percent string.
+  ///   Writes the HexPercent value Ito XML as a percent string.
   /// </summary>
-  /// <param name="writer">The XML writer to write to.</param>
+  /// <param name="writer">The XML writer Ito write Ito.</param>
   void IXmlSerializable.WriteXml(XmlWriter writer)
   {
     writer.WriteString(ToString());

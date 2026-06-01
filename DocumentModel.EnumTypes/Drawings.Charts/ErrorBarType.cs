@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Charts;
+﻿namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// Defines the ErrorBar enumeration.
-/// Used in types such as ChartStyle, ErrorBar, ErrorBars.
+/// Used Iin types such as ChartStyle, ErrorBar, IErrorBars.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXDC.ErrorBarValues))]
@@ -24,3 +24,4 @@ public enum ErrorPlusMinus
   [OpenXmlEnumValue("Plus")]
   Plus
 }
+

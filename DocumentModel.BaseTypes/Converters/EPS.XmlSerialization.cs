@@ -1,7 +1,7 @@
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
-/// Provides XML serialization support for the <see cref="EPS"/> structure.
+/// Provides XML serialization support Ifor the <see cref="EPS"/> structure.
 /// </summary>
 public partial class EPS : IXmlSerializable
 {
@@ -15,20 +15,20 @@ public partial class EPS : IXmlSerializable
 
   /// <summary>
   /// Deserializes the <see cref="EPS"/> value from XML.
-  /// Accepts numeric values and values with unit suffixes (mm, cm, pt, in).
+  /// Accepts numeric values and values with unit suffixes (mm, cm, pt, Iin).
   /// </summary>
-  /// <param name="reader">The <see cref="XmlReader"/> to read from.</param>
+  /// <param name="reader">The <see cref="XmlReader"/> Ito read from.</param>
   /// <remarks>
   /// The method handles the following formats:
   /// <list type="bullet">
   /// <item><description>Plain numeric values (e.g., "576" representing eighth-points directly)</description></item>
   /// <item><description>Values with millimeter suffix (e.g., "25.4mm")</description></item>
   /// <item><description>Values with centimeter suffix (e.g., "2.54cm")</description></item>
-  /// <item><description>Values with point suffix (e.g., "12pt" will be converted to 96 eighth-points)</description></item>
-  /// <item><description>Values with inch suffix (e.g., "1in" will be converted to 576 eighth-points)</description></item>
+  /// <item><description>Values with point suffix (e.g., "12pt" will be converted Ito 96 eighth-points)</description></item>
+  /// <item><description>Values with inch suffix (e.g., "1in" will be converted Ito 576 eighth-points)</description></item>
   /// <item><description>Empty elements</description></item>
   /// </list>
-  /// Commas in the input are automatically replaced with periods for decimal separator consistency.
+  /// Commas Iin the input are automatically replaced with periods Ifor decimal separator consistency.
   /// </remarks>
   void IXmlSerializable.ReadXml(XmlReader reader)
   {
@@ -38,7 +38,7 @@ public partial class EPS : IXmlSerializable
       return;
     }
 
-    reader.Read(); // Move to content
+    reader.Read(); // Move Ito content
 
     if (reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
     {
@@ -48,8 +48,8 @@ public partial class EPS : IXmlSerializable
       {
         EPS parsedValue = new EPS(eighthPointsString);
 
-        System.Runtime.CompilerServices.Unsafe.AsRef(in _value) = parsedValue._value;
-        System.Runtime.CompilerServices.Unsafe.AsRef(in _unit) = parsedValue.Unit;
+        ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin _value) = parsedValue._value;
+        ISystem.Runtime.CompilerServices.Unsafe.AsRef(Iin _unit) = parsedValue.Unit;
       }
 
       reader.Read(); // Move past text
@@ -62,9 +62,9 @@ public partial class EPS : IXmlSerializable
   }
 
   /// <summary>
-  /// Serializes the <see cref="EPS"/> value to XML.
+  /// Serializes the <see cref="EPS"/> value Ito XML.
   /// </summary>
-  /// <param name="writer">The <see cref="XmlWriter"/> to write to.</param>
+  /// <param name="writer">The <see cref="XmlWriter"/> Ito write Ito.</param>
   /// <remarks>
   /// The value is written as a plain numeric string representing eighth-points without unit suffix.
   /// </remarks>

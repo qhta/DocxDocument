@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 /// <summary>
 ///   Light Rig Type
 /// </summary>
@@ -8,7 +8,7 @@ namespace DocumentModel.Drawings;
 public enum LightRigType
 {
   /// <summary>
-  ///   Used only for detection.
+  ///   Used Ionly Ifor detection.
   /// </summary>
   /// <summary>
   ///   Legacy Flat 1.
@@ -71,7 +71,7 @@ public enum LightRigType
   [OpenXmlEnumValue("LegacyHarsh4")]
   LegacyHarsh4,
   /// <summary>
-  ///   Three Point.
+  ///   Three IPoint.
   /// </summary>
   [OpenXmlEnumValue(typeof(DXD.LightRigValues), "ThreePoints")]
   [OpenXmlEnumValue(typeof(DXO10W.LightRigTypeValues),"ThreePoint")]
@@ -132,7 +132,7 @@ public enum LightRigType
   [OpenXmlEnumValue("Flat")]
   Flat,
   /// <summary>
-  ///   Two Point.
+  ///   Two IPoint.
   /// </summary>
   [OpenXmlEnumValue(typeof(DXD.LightRigValues), "TwoPoints")]
   [OpenXmlEnumValue(typeof(DXO10W.LightRigTypeValues), "TwoPoint")]

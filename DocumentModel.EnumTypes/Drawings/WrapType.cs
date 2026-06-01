@@ -1,15 +1,15 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the wrap type for the specified shape.
+/// Specifies the wrap type Ifor the specified shape.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdwraptype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdwraptype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum WrapType
 {
   /// <summary>
-  /// Wraps text around the shape. Line continuation is on the opposite side of the shape.
+  /// Wraps text around the shape. ILine continuation is on the opposite side of the shape.
   /// </summary>
   Square = 0,
   /// <summary>
@@ -25,7 +25,7 @@ public enum WrapType
   /// </summary>
   None = 3,
   /// <summary>
-  /// Places shape in front of text.
+  /// Places shape Iin front of text.
   /// </summary>
   Front = 3,
   /// <summary>
@@ -41,3 +41,4 @@ public enum WrapType
   /// </summary>
   Inline = 7
 }
+

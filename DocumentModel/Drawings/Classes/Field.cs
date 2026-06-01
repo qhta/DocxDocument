@@ -1,18 +1,18 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Text Field.
+///   Text IField.
 /// </summary>
-public class Field: ModelElement
+public class IField: ModelElement
 {
   /// <summary>
-  ///   Field ID
+  ///   IField ID
   /// </summary>
   public string? Id { get; set; }
 
   /// <summary>
-  ///   Field Type
+  ///   IField Type
   /// </summary>
   public string? Type { get; set; }
 
@@ -22,7 +22,7 @@ public class Field: ModelElement
   public RunProperties? RunProperties { get; set; }
 
   /// <summary>
-  ///   Text Paragraph Properties.
+  ///   Text IParagraph Properties.
   /// </summary>
   public ParagraphProperties? ParagraphProperties { get; set; }
 

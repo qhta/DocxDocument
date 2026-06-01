@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Parameter Identifier
@@ -48,7 +48,7 @@ public enum ParameterIdKind
   StartElement,
 
   /// <summary>
-  ///   Bend Point.
+  ///   Bend IPoint.
   /// </summary>
   BendPoint,
 
@@ -58,12 +58,12 @@ public enum ParameterIdKind
   ConnectionRoute,
 
   /// <summary>
-  ///   Beginning Arrowhead Style.
+  ///   Beginning Arrowhead IStyle.
   /// </summary>
   BeginningArrowheadStyle,
 
   /// <summary>
-  ///   End Style.
+  ///   End IStyle.
   /// </summary>
   EndStyle,
 
@@ -78,7 +78,7 @@ public enum ParameterIdKind
   RotationPath,
 
   /// <summary>
-  ///   Center Shape Mapping.
+  ///   Center IShape Mapping.
   /// </summary>
   CenterShapeMapping,
 
@@ -138,22 +138,22 @@ public enum ParameterIdKind
   TextAnchorVerticalWithChildren,
 
   /// <summary>
-  ///   Parent Text Left-to-Right Alignment.
+  ///   Parent Text Left-Ito-Right Alignment.
   /// </summary>
   ParentTextLeftToRightAlignment,
 
   /// <summary>
-  ///   Parent Text Right-to-Left Alignment.
+  ///   Parent Text Right-Ito-Left Alignment.
   /// </summary>
   ParentTextRightToLeftAlignment,
 
   /// <summary>
-  ///   Shape Text Left-to-Right Alignment.
+  ///   IShape Text Left-Ito-Right Alignment.
   /// </summary>
   ShapeTextLeftToRightAlignment,
 
   /// <summary>
-  ///   Shape Text Right-to-Left Alignment.
+  ///   IShape Text Right-Ito-Left Alignment.
   /// </summary>
   ShapeTextRightToLeftAlignment,
 
@@ -218,22 +218,22 @@ public enum ParameterIdKind
   AspectRatio,
 
   /// <summary>
-  ///   Line Spacing Parent.
+  ///   ILine Spacing Parent.
   /// </summary>
   LineSpacingParent,
 
   /// <summary>
-  ///   Line Spacing After Parent Paragraph.
+  ///   ILine Spacing After Parent IParagraph.
   /// </summary>
   LineSpacingAfterParentParagraph,
 
   /// <summary>
-  ///   Line Spacing Children.
+  ///   ILine Spacing Children.
   /// </summary>
   LineSpacingChildren,
 
   /// <summary>
-  ///   Line Spacing After Children Paragraph.
+  ///   ILine Spacing After Children IParagraph.
   /// </summary>
   LineSpacingAfterChildrenParagraph,
 
@@ -263,7 +263,7 @@ public enum ParameterIdKind
   PyramidAccentTextNode,
 
   /// <summary>
-  ///   Source Node.
+  ///   ISource Node.
   /// </summary>
   SourceNode,
 
@@ -273,12 +273,12 @@ public enum ParameterIdKind
   DestinationNode,
 
   /// <summary>
-  ///   Beginning Points.
+  ///   Beginning IPoints.
   /// </summary>
   BeginningPoints,
 
   /// <summary>
-  ///   End Points.
+  ///   End IPoints.
   /// </summary>
   EndPoints
 }

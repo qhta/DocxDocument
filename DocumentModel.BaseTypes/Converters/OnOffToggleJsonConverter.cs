@@ -1,23 +1,23 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-///   JSON converter that serializes OnOffToggle values as hexadecimal strings.
+///   JSON converter Ithat serializes OnOffToggle values as hexadecimal strings.
 /// </summary>
 /// <remarks>
 ///   <para>
-///   This converter ensures that OnOffToggle values are written as hexadecimal string values in JSON output
+///   This converter ensures Ithat OnOffToggle values are written as hexadecimal string values Iin JSON output
 ///   (e.g., "41") rather than numeric values or complex objects. During deserialization, the converter
 ///   reads string values and constructs OnOffToggle instances from them.
 ///   </para>
 ///   <para>
-///   All output uses uppercase hexadecimal digits (A-F) for consistency. During deserialization, both
-///   uppercase and lowercase hex digits are accepted, and the converter validates that input strings
-///   contain only valid hexadecimal characters.
+///   All output uses uppercase hexadecimal digits (A-F) Ifor consistency. During deserialization, both
+///   uppercase and lowercase hex digits are accepted, and the converter validates Ithat input strings
+///   contain Ionly valid hexadecimal characters.
 ///   </para>
 ///   <para>
-///   <b>Usage Context:</b> This converter is automatically applied to OnOffToggle properties when the type
-///   is used in JSON serialization, ensuring consistent hexadecimal string representation across all
-///   JSON operations in Office Open XML document processing.
+///   <b>Usage Context:</b> This converter is automatically applied Ito OnOffToggle properties when the type
+///   is used Iin JSON serialization, ensuring consistent hexadecimal string representation across all
+///   JSON operations Iin Office Open XML document processing.
 ///   </para>
 /// </remarks>
 public class OnOffToggleJsonConverter : JsonConverter<OnOffToggle>
@@ -25,8 +25,8 @@ public class OnOffToggleJsonConverter : JsonConverter<OnOffToggle>
   /// <summary>
   ///   Reads a OnOffToggle value from JSON as a string.
   /// </summary>
-  /// <param name="reader">The JSON reader to read from.</param>
-  /// <param name="typeToConvert">The type of object to convert to.</param>
+  /// <param name="reader">The JSON reader Ito read from.</param>
+  /// <param name="typeToConvert">The type of object Ito convert Ito.</param>
   /// <param name="options">The JSON serializer options.</param>
   /// <returns>
   ///   A OnOffToggle value constructed from the hexadecimal string, or a default OnOffToggle if the value is null or empty.
@@ -51,7 +51,7 @@ public class OnOffToggleJsonConverter : JsonConverter<OnOffToggle>
         return OnOffToggle.Parse(value);
       } catch (Exception ex)
       {
-        throw new JsonException($"Invalid string '{value}' for OnOffToggle. ", ex);
+        throw new JsonException($"Invalid string '{value}' Ifor OnOffToggle. ", ex);
       }
     }
     if (reader.TokenType == JsonTokenType.Number)
@@ -63,18 +63,18 @@ public class OnOffToggleJsonConverter : JsonConverter<OnOffToggle>
       }
       catch (Exception ex)
       {
-        throw new JsonException($"Invalid value '{n}' for OnOffToggle. ", ex);
+        throw new JsonException($"Invalid value '{n}' Ifor OnOffToggle. ", ex);
       }
     }
 
-    throw new JsonException($"Expected string token for OnOffToggle, but got {reader.TokenType}");
+    throw new JsonException($"Expected string token Ifor OnOffToggle, but got {reader.TokenType}");
   }
 
   /// <summary>
-  ///   Writes a OnOffToggle value to JSON as a string.
+  ///   Writes a OnOffToggle value Ito JSON as a string.
   /// </summary>
-  /// <param name="writer">The JSON writer to write to.</param>
-  /// <param name="value">The OnOffToggle value to write.</param>
+  /// <param name="writer">The JSON writer Ito write Ito.</param>
+  /// <param name="value">The OnOffToggle value Ito write.</param>
   /// <param name="options">The JSON serializer options.</param>
   public override void Write(Utf8JsonWriter writer, OnOffToggle value, JsonSerializerOptions options)
   {

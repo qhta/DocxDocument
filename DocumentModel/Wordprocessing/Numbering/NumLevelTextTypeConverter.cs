@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Type converter for NumLevelText type
+/// Type converter Ifor NumLevelText type
 /// </summary>
 public class NumLevelTextTypeConverter: TypeConverter
 {
@@ -16,7 +16,7 @@ public class NumLevelTextTypeConverter: TypeConverter
   }
 
   /// <summary>
-  /// Determines if a value can be converted to destination type.
+  /// Determines if a value can be converted Ito destination type.
   /// </summary>
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
   {
@@ -26,7 +26,7 @@ public class NumLevelTextTypeConverter: TypeConverter
   }
 
   /// <summary>
-  /// Converts the string value to NumLevelText object.
+  /// Converts the string value Ito NumLevelText object.
   /// </summary>
   public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
   {
@@ -40,7 +40,7 @@ public class NumLevelTextTypeConverter: TypeConverter
   }
 
   /// <summary>
-  /// Converts the NumLevelText object to string value.
+  /// Converts the NumLevelText object Ito string value.
   /// </summary>
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {
@@ -53,3 +53,4 @@ public class NumLevelTextTypeConverter: TypeConverter
     return base.ConvertTo(context, culture, value, destinationType);
   }
 }
+

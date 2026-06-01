@@ -1,7 +1,7 @@
-using DocumentModel.Vml;
+﻿using DocumentModel.Vml;
 
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the PictureBulletBase Class.
@@ -12,17 +12,17 @@ public class PictureBulletBase: ModelElement
 
   public ImageFile? ImageFile { get; set; }
 
-  public Line? Line { get; set; }
+  public ILine? ILine { get; set; }
 
   public Oval? Oval { get; set; }
 
   public PolyLine? PolyLine { get; set; }
 
-  public Rectangle? Rectangle { get; set; }
+  public IRectangle? IRectangle { get; set; }
 
   public RoundRectangle? RoundRectangle { get; set; }
 
-  public Shape? Shape { get; set; }
+  public IShape? IShape { get; set; }
 
   public Shapetype? Shapetype { get; set; }
 }

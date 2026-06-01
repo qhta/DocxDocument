@@ -1,4 +1,4 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Numbering Format.
@@ -12,8 +12,8 @@ public record NumberingFormat
   public NumberFormatKind? Type { get; set; }
 
   /// <summary>
-  ///   Specifies a custom number format using the syntax defined by the XSLT format attribute. This format shall be used for all numbering in the parent object. 
-  ///   [Example: A value of &#x30A2; indicates that a consumer must use Katakana numbering. end example] 
+  ///   Specifies a custom number format using the syntax defined by the XSLT format attribute. This format shall be used Ifor all numbering Iin the parent object. 
+  ///   [Example: A value of &#x30A2; indicates Ithat a consumer must use Katakana numbering. end example] 
   /// </summary>
   public string? Custom { get; set; }
 
@@ -25,7 +25,7 @@ public record NumberingFormat
   }
 
   /// <summary>
-  /// Constructor for standard format.
+  /// Constructor Ifor standard format.
   /// </summary>
   public NumberingFormat(NumberFormatKind? type)
   {
@@ -33,7 +33,7 @@ public record NumberingFormat
   }
 
   /// <summary>
-  /// Constructor for custom format.
+  /// Constructor Ifor custom format.
   /// </summary>
   public NumberingFormat(string format)
   {

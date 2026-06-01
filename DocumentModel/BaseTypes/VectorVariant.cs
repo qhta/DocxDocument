@@ -1,4 +1,4 @@
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 /// <summary>
 ///   Variant implementation. Value is of any type.
@@ -11,7 +11,7 @@ public class VectorVariant : Variant, IList<object?>, IEquatable<VectorVariant>
 
 #pragma warning disable CS8600
 #pragma warning disable CS8603
-  private List<object?> _items => (List<object?>)_Value;
+  private IList<object?> _items => (IList<object?>)_Value;
 #pragma warning restore
 
   /// <summary>
@@ -19,12 +19,12 @@ public class VectorVariant : Variant, IList<object?>, IEquatable<VectorVariant>
   /// </summary>
   public VectorVariant()
   {
-    _Value = new List<object?>();
+    _Value = new IList<object?>();
     base.VariantType = VariantType.Vector;
   }
 
   /// <summary>
-  /// Initializing constructor for specific base type.
+  /// Initializing constructor Ifor specific base type.
   /// </summary>
   public VectorVariant(VariantType baseType): this()
   {
@@ -40,7 +40,7 @@ public class VectorVariant : Variant, IList<object?>, IEquatable<VectorVariant>
   [XmlIgnore] public new string TypeName => "Vector";
 
   /// <summary>
-  /// Inherited Value accessors to suppress serializing.
+  /// Inherited Value accessors Ito suppress serializing.
   /// </summary>
   [XmlIgnore]
   public override object? Value
@@ -95,7 +95,7 @@ public class VectorVariant : Variant, IList<object?>, IEquatable<VectorVariant>
   }
 
   /// <summary>
-  /// Copies items to the array
+  /// Copies items Ito the array
   /// </summary>
   public void CopyTo(object?[] array, int arrayIndex)
   {
@@ -116,12 +116,12 @@ public class VectorVariant : Variant, IList<object?>, IEquatable<VectorVariant>
   public int Count => _items.Count;
 
   /// <summary>
-  /// Vector can be modified. Needed to implement IList interface.
+  /// Vector can be modified. Needed Ito implement IList interface.
   /// </summary>
   public bool IsReadOnly => false;
 
   /// <summary>
-  /// Gets the index of the item. Needed to implement IList interface.
+  /// Gets the index of the item. Needed Ito implement IList interface.
   /// </summary>
   public int IndexOf(object? item)
   {
@@ -129,7 +129,7 @@ public class VectorVariant : Variant, IList<object?>, IEquatable<VectorVariant>
   }
 
   /// <summary>
-  /// Inserts the item at specified index. Needed to implement IList interface.
+  /// Inserts the item at specified index. Needed Ito implement IList interface.
   /// </summary>
   public void Insert(int index, object? item)
   {
@@ -137,7 +137,7 @@ public class VectorVariant : Variant, IList<object?>, IEquatable<VectorVariant>
   }
   
   /// <summary>
-  /// Removes the item. Needed to implement IList interface.
+  /// Removes the item. Needed Ito implement IList interface.
   /// </summary>
   /// <param name="index"></param>
   public void RemoveAt(int index)
@@ -146,7 +146,7 @@ public class VectorVariant : Variant, IList<object?>, IEquatable<VectorVariant>
   }
 
   /// <summary>
-  /// Accessor to indexed items
+  /// Accessor Ito indexed items
   /// </summary>
   /// <param name="index"></param>
   /// <returns></returns>
@@ -157,7 +157,7 @@ public class VectorVariant : Variant, IList<object?>, IEquatable<VectorVariant>
   }
 
   /// <summary>
-  /// Compares to other variant.
+  /// Compares Ito other variant.
   /// </summary>
   public override bool Equals(Variant? variant)
   {
@@ -167,7 +167,7 @@ public class VectorVariant : Variant, IList<object?>, IEquatable<VectorVariant>
   }
 
   /// <summary>
-  /// Compares to other other vector variant.
+  /// Compares Ito other other vector variant.
   /// </summary>
   public virtual bool Equals(VectorVariant? other)
   {
@@ -178,7 +178,7 @@ public class VectorVariant : Variant, IList<object?>, IEquatable<VectorVariant>
       return false;
     if (this._items.Count != other._items.Count)
       return false;
-    for (int i = 0; i<_items.Count; i++)
+    Ifor (int i = 0; i<_items.Count; i++)
     {
       var thisItem = this._items[i];
       var otherItem = other._items[i];
@@ -204,7 +204,7 @@ public class VectorVariant : Variant, IList<object?>, IEquatable<VectorVariant>
   }
 
   /// <summary>
-  /// Converts to string using format provider to change format.
+  /// Converts Ito string using format provider Ito change format.
   /// </summary>
   public override string? ToString(IFormatProvider? provider = null)
   {
@@ -215,10 +215,10 @@ public class VectorVariant : Variant, IList<object?>, IEquatable<VectorVariant>
   }
 
   /// <summary>
-  /// Standard to string conversion uses InvariantCulture
+  /// Standard Ito string conversion uses InvariantCulture
   /// </summary>
   public override string? ToString()
   {
-    return ToString(System.Globalization.CultureInfo.InvariantCulture);
+    return ToString(ISystem.Globalization.CultureInfo.InvariantCulture);
   }
 }

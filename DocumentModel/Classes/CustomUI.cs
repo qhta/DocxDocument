@@ -1,5 +1,5 @@
-namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the CustomUI Class.
@@ -7,12 +7,12 @@ namespace DocumentModel;
 public class CustomUI: ModelElement
 {
   /// <summary>
-  ///   onLoad, this property is only available in Office 2010 and later.
+  ///   onLoad, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? OnLoad { get; set; }
 
   /// <summary>
-  ///   loadImage, this property is only available in Office 2010 and later.
+  ///   loadImage, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? LoadImage { get; set; }
 

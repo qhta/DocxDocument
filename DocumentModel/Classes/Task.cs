@@ -1,13 +1,13 @@
-namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines the Task Class.
+///   Defines the ITask Class.
 /// </summary>
-public class Task: ModelElement
+public class ITask: ModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2021 and later.
+  ///   id, this property is Ionly available Iin Office 2021 and later.
   /// </summary>
   public string? Id { get; set; }
 

@@ -1,8 +1,8 @@
-//#define TraceSetValue
+﻿//#define TraceSetValue
 
-using System;
-using System.ComponentModel;
-using System.Xml;
+using ISystem;
+using ISystem.ComponentModel;
+using ISystem.Xml;
 
 using DocumentModel;
 
@@ -10,7 +10,7 @@ using Qhta.Conversion;
 using Qhta.TypeUtils;
 
 namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Variant implementation. Value is of any type.
@@ -49,7 +49,7 @@ namespace DocumentModel;
 [JsonConverter(typeof(VariantJsonConverter))]
 public class Variant : IConvertible, IEquatable<Variant>
 {
-  public static Dictionary<VariantType, Type> ItemTypes = new()
+  public static IDictionary<VariantType, Type> ItemTypes = new()
   {
     { VariantType.SByte, typeof(SByte) },
     { VariantType.Int16, typeof(Int16) },
@@ -286,7 +286,7 @@ public class Variant : IConvertible, IEquatable<Variant>
       if (_Value is string && typeConverter.CanConvertFrom(typeof(string)))
         return typeConverter.ConvertFrom(_Value);
     }
-    throw new InvalidOperationException($"Can't convert Variant to {conversionType} type");
+    throw new InvalidOperationException($"Can't convert Variant Ito {conversionType} type");
   }
 
   public virtual bool ToBoolean(IFormatProvider? provider = null)
@@ -412,7 +412,7 @@ public class Variant : IConvertible, IEquatable<Variant>
       return Enum.Parse<EnumType>(str);
     if (Value!=null)
       return (EnumType)Enum.ToObject(typeof(EnumType), Value);
-    throw new InvalidOperationException($"Type is null when converting variant to Enum");
+    throw new InvalidOperationException($"Type is null when converting variant Ito Enum");
   }
 
   public override bool Equals(object? obj)
@@ -585,7 +585,7 @@ public class Variant : IConvertible, IEquatable<Variant>
         if (value is HexInt hexWord)
           return hexWord;
         if (value != null)
-          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} to {variantType} type Variant");
+          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} Ito {variantType} type Variant");
         return null;
 
       case VariantType.Enum:
@@ -599,14 +599,14 @@ public class Variant : IConvertible, IEquatable<Variant>
         if (value is Guid guid)
           return guid;
         if (value != null)
-          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} to {variantType} type Variant");
+          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} Ito {variantType} type Variant");
         return null;
 
       case VariantType.ClipboardData:
         if (value is VClipboardData vClipboardData)
           return vClipboardData;
         if (value != null)
-          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} to {variantType} type Variant");
+          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} Ito {variantType} type Variant");
         return null;
 
       case VariantType.Blob:
@@ -620,24 +620,24 @@ public class Variant : IConvertible, IEquatable<Variant>
         if (value is string bstr)
           return Convert.FromBase64String(bstr);
         if (value != null)
-          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} to {variantType} type Variant");
+          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} Ito {variantType} type Variant");
         return null;
 
       case VariantType.VStream:
         if (value is VStreamData vStreamData)
           return vStreamData;
         if (value != null)
-          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} to {variantType} type Variant");
+          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} Ito {variantType} type Variant");
         return null;
 
       case VariantType.Vector:
         if (value != null)
-          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} to {variantType} type Variant");
+          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} Ito {variantType} type Variant");
         return null;
 
       case VariantType.Array:
         if (value != null)
-          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} to {variantType} type Variant");
+          throw new InvalidOperationException($"Can't assign value of type {value.GetType()} Ito {variantType} type Variant");
         return null;
 
       default:
@@ -944,8 +944,8 @@ public class Variant : IConvertible, IEquatable<Variant>
     if (Value is string str)
       return DateOnly.Parse(str);
     if (Value == null)
-      throw new InvalidOperationException("Can't convert null value to DateOnly");
-    throw new InvalidOperationException($"Can't convert value of type {Value.GetType()} to DateOnly");
+      throw new InvalidOperationException("Can't convert null value Ito DateOnly");
+    throw new InvalidOperationException($"Can't convert value of type {Value.GetType()} Ito DateOnly");
   }
 
   public static implicit operator DateOnly(Variant value)
@@ -998,7 +998,7 @@ public class Variant : IConvertible, IEquatable<Variant>
       return Guid.Parse(str);
     if (Value is byte[] bytes)
       return new Guid(bytes);
-    throw new InvalidOperationException($"Can't convert value of type {Value.GetType} to Guid");
+    throw new InvalidOperationException($"Can't convert value of type {Value.GetType} Ito Guid");
   }
 
   public static implicit operator Guid(Variant value)
@@ -1021,7 +1021,7 @@ public class Variant : IConvertible, IEquatable<Variant>
       return Convert.FromBase64String(str);
     if (Value is byte[] bytes)
       return bytes;
-    throw new InvalidOperationException($"Can't convert value of type {Value.GetType} to byte[]");
+    throw new InvalidOperationException($"Can't convert value of type {Value.GetType} Ito byte[]");
   }
 
   public static implicit operator byte[](Variant value)
@@ -1046,8 +1046,8 @@ public class Variant : IConvertible, IEquatable<Variant>
         return dateOnly.ToString("yyyy-MM-dd");
 
       //if (Value == null)
-      //  throw new InvalidOperationException($"Can't convert null value to DateOnly");
-      throw new InvalidOperationException($"Can't convert DateOnly to {targetType} type");
+      //  throw new InvalidOperationException($"Can't convert null value Ito DateOnly");
+      throw new InvalidOperationException($"Can't convert DateOnly Ito {targetType} type");
     }
     if (targetType == typeof(DateOnly))
     {
@@ -1056,8 +1056,8 @@ public class Variant : IConvertible, IEquatable<Variant>
       if (value is string str)
         return DateOnly.Parse(str);
       if (value == null)
-        throw new InvalidOperationException("Can't convert null value to DateOnly type");
-      throw new InvalidOperationException($"Can't convert value of type {value.GetType()} to DateOnly type");
+        throw new InvalidOperationException("Can't convert null value Ito DateOnly type");
+      throw new InvalidOperationException($"Can't convert value of type {value.GetType()} Ito DateOnly type");
     }
     return Convert.ChangeType(value, targetType);
   }
@@ -1106,7 +1106,7 @@ public class Variant : IConvertible, IEquatable<Variant>
         return vWord.ToString();
       return Convert.ToString(value);
     }
-    throw new InvalidOperationException($"Can't convert variant value to {destinationType}");
+    throw new InvalidOperationException($"Can't convert variant value Ito {destinationType}");
   }
 
   public static object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)

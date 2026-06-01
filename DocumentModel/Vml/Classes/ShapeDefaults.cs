@@ -1,8 +1,8 @@
-namespace DocumentModel.Vml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   New Shape Defaults.
+///   New IShape Defaults.
 /// </summary>
 public class ShapeDefaults: ModelElement
 {
@@ -12,17 +12,17 @@ public class ShapeDefaults: ModelElement
   public ExtensionHandlingBehaviorKind? Extension { get; set; }
 
   /// <summary>
-  ///   Shape ID Optional Storage
+  ///   IShape ID Optional Storage
   /// </summary>
   public Int64? MaxShapeId { get; set; }
 
   /// <summary>
   ///   style
   /// </summary>
-  public string? Style { get; set; }
+  public string? IStyle { get; set; }
 
   /// <summary>
-  ///   Shape Fill Toggle
+  ///   IShape Fill Toggle
   /// </summary>
   public bool? BeFilled { get; set; }
 
@@ -32,17 +32,17 @@ public class ShapeDefaults: ModelElement
   public string? FillColor { get; set; }
 
   /// <summary>
-  ///   Shape Stroke Toggle
+  ///   IShape Stroke Toggle
   /// </summary>
   public bool? IsStroke { get; set; }
 
   /// <summary>
-  ///   Shape Stroke Color
+  ///   IShape Stroke Color
   /// </summary>
   public string? StrokeColor { get; set; }
 
   /// <summary>
-  ///   Allow in Table Cell
+  ///   Allow Iin ITable ICell
   /// </summary>
   public bool? AllowInCell { get; set; }
 
@@ -97,7 +97,7 @@ public class ShapeDefaults: ModelElement
   public Callout? Callout { get; set; }
 
   /// <summary>
-  ///   Shape Protections.
+  ///   IShape Protections.
   /// </summary>
   public Lock? Lock { get; set; }
 

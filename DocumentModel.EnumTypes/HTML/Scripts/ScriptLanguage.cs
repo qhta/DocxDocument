@@ -1,11 +1,11 @@
-
+﻿
 namespace DocumentModel.HTML;
 
 /// <summary>
 /// Specifies scripting language of the active script.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoscriptlanguage?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoscriptlanguage?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum ScriptLanguage
 {
@@ -18,7 +18,7 @@ public enum ScriptLanguage
   /// </summary>
   VisualBasic,
   /// <summary>
-  /// Active Server Pages (ASP).
+  /// Active Server IPages (ASP).
   /// </summary>
   ASP,
   /// <summary>
@@ -26,3 +26,4 @@ public enum ScriptLanguage
   /// </summary>
   Other
 }
+

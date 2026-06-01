@@ -1,4 +1,4 @@
-
+﻿
 namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
@@ -6,16 +6,16 @@ namespace DocumentModel.Drawings.Charts;
 /// pictures are displayed on a column, bar picture chart, or legend key.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlchartpicturetype?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlchartpicturetype?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum XlChartPictureType
 {
   /// <summary>
-  /// Picture is sized to a specified number of units and repeated the length of the bar.
+  /// Picture is sized Ito a specified number of units and repeated the length of the bar.
   /// </summary>
   StackScale = 3,
   /// <summary>
-  /// Picture is sized to repeat a maximum of 15 times in the longest stacked bar.
+  /// Picture is sized Ito repeat a maximum of 15 times Iin the longest stacked bar.
   /// </summary>
   Stack = 2,
   /// <summary>
@@ -23,3 +23,4 @@ public enum XlChartPictureType
   /// </summary>
   Stretch = 1
 }
+

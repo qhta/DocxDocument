@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Text Line Break.
+///   Text ILine IBreak.
 /// </summary>
-public class Break: ModelElement
+public class IBreak: ModelElement
 {
   /// <summary>
   ///   Text Run Properties.

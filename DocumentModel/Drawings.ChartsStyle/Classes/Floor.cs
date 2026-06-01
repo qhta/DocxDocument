@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings.ChartsStyle;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartsStyle;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines the Floor Class.
+///   Defines the IFloor Class.
 /// </summary>
-public class Floor: ModelElement
+public class IFloor: ModelElement
 {
   public LineReference? LineReference { get; set; }
 

@@ -1,15 +1,15 @@
-namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
-/// Specifies the task pane section to which to add a file or where the file reference exists.
+/// Specifies the task pane section Ito which Ito add a file or where the file reference exists.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofilenewsection?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofilenewsection?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum FileNewSection
 {
   /// <summary>
-  /// Open Document section.
+  /// Open IDocument section.
   /// </summary>
   OpenDocument,
   /// <summary>
@@ -21,7 +21,7 @@ public enum FileNewSection
   /// </summary>
   NewfromExistingFile,
   /// <summary>
-  /// New from Template section.
+  /// New from ITemplate section.
   /// </summary>
   NewfromTemplate,
   /// <summary>
@@ -29,3 +29,4 @@ public enum FileNewSection
   /// </summary>
   BottomSection
 }
+

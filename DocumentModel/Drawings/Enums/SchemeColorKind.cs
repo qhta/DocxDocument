@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Scheme Color
@@ -58,17 +58,17 @@ public enum SchemeColorKind
   Accent6,
 
   /// <summary>
-  ///   Hyperlink Color.
+  ///   IHyperlink Color.
   /// </summary>
-  Hyperlink,
+  IHyperlink,
 
   /// <summary>
-  ///   Followed Hyperlink Color.
+  ///   Followed IHyperlink Color.
   /// </summary>
   FollowedHyperlink,
 
   /// <summary>
-  ///   Style Color.
+  ///   IStyle Color.
   /// </summary>
   PhColor,
 

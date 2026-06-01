@@ -1,8 +1,8 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   ParagraphMarkRunPropertiesChange class used in <see cref="ParagraphMarkRunProperties"/>.
+///   ParagraphMarkRunPropertiesChange class used Iin <see cref="ParagraphMarkRunProperties"/>.
 ///   Represents <see cref="PreviousParagraphMarkRunProperties"/> annotated with Author, Date, and AnnotationId.
 /// </summary>
 public class ParagraphMarkRunPropertiesChange: ModelElement
@@ -23,7 +23,7 @@ public class ParagraphMarkRunPropertiesChange: ModelElement
   public string? AnnotationId { get; set; }
 
   /// <summary>
-  ///   Previous Run Properties for the Paragraph Mark.
+  ///   Previous Run Properties Ifor the IParagraph Mark.
   /// </summary>
   public PreviousParagraphMarkRunProperties? PreviousParagraphMarkRunProperties { get; set; }
 }

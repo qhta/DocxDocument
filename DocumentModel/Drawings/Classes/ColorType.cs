@@ -1,4 +1,4 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 ///   Defines the ColorType Class.
@@ -21,7 +21,7 @@ public class ColorType: ModelElement
   public HslColor? HslColor { get; set; }
 
   /// <summary>
-  ///   System Color.
+  ///   ISystem Color.
   /// </summary>
   public SystemColor? SystemColor { get; set; }
 

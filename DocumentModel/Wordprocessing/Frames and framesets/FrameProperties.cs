@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the FrameProperties Class.
@@ -7,47 +7,47 @@ namespace DocumentModel.Wordprocessing;
 public class FrameProperties: ModelElement
 {
   /// <summary>
-  ///   Drop Cap Frame
+  ///   Drop Cap IFrame
   /// </summary>
-  public DropCapLocationKind? DropCap { get; set; }
+  public DropCapLocationKind? IDropCap { get; set; }
 
   /// <summary>
-  ///   Drop Cap Vertical Height in Lines
+  ///   Drop Cap Vertical Height Iin ILines
   /// </summary>
-  public Int32? Lines { get; set; }
+  public Int32? ILines { get; set; }
 
   /// <summary>
-  ///   Frame Width
+  ///   IFrame Width
   /// </summary>
   public string? Width { get; set; }
 
   /// <summary>
-  ///   Frame Height
+  ///   IFrame Height
   /// </summary>
   public UInt32? Height { get; set; }
 
   /// <summary>
-  ///   Vertical Frame Padding
+  ///   Vertical IFrame Padding
   /// </summary>
   public string? VerticalSpace { get; set; }
 
   /// <summary>
-  ///   Horizontal Frame Padding
+  ///   Horizontal IFrame Padding
   /// </summary>
   public string? HorizontalSpace { get; set; }
 
   /// <summary>
-  ///   Text Wrapping Around Frame
+  ///   Text Wrapping Around IFrame
   /// </summary>
   public TextWrappingKind? Wrap { get; set; }
 
   /// <summary>
-  ///   Frame Horizontal Positioning Base
+  ///   IFrame Horizontal Positioning Base
   /// </summary>
   public HorizontalAnchorKind? HorizontalPosition { get; set; }
 
   /// <summary>
-  ///   Frame Vertical Positioning Base
+  ///   IFrame Vertical Positioning Base
   /// </summary>
   public VerticalAnchorKind? VerticalPosition { get; set; }
 
@@ -72,12 +72,12 @@ public class FrameProperties: ModelElement
   public VerticalAlignmentKind? YAlign { get; set; }
 
   /// <summary>
-  ///   Frame Height Type
+  ///   IFrame Height Type
   /// </summary>
   public HeightRuleKind? HeightType { get; set; }
 
   /// <summary>
-  ///   Lock Frame Anchor to Paragraph
+  ///   Lock IFrame Anchor Ito IParagraph
   /// </summary>
   public bool? AnchorLock { get; set; }
 }

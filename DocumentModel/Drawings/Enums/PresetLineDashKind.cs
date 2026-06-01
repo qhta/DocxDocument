@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Preset Line Dash Value
+///   Preset ILine Dash Value
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum PresetLineDashKind
@@ -43,22 +43,22 @@ public enum PresetLineDashKind
   LargeDashDotDot,
 
   /// <summary>
-  ///   System Dash.
+  ///   ISystem Dash.
   /// </summary>
   SystemDash,
 
   /// <summary>
-  ///   System Dot.
+  ///   ISystem Dot.
   /// </summary>
   SystemDot,
 
   /// <summary>
-  ///   System Dash Dot.
+  ///   ISystem Dash Dot.
   /// </summary>
   SystemDashDot,
 
   /// <summary>
-  ///   System Dash Dot Dot.
+  ///   ISystem Dash Dot Dot.
   /// </summary>
   SystemDashDotDot
 }

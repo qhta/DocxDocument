@@ -1,7 +1,7 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Interface for elements that can be included in document <see cref="Body"/> element.
+///   Interface Ifor elements Ithat can be included Iin document <see cref="Body"/> element.
 /// </summary>
 public interface IStoryContent: IModelElement
 {

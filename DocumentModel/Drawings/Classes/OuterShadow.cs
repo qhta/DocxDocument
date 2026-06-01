@@ -1,5 +1,5 @@
-namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Outer Shadow Effect.
@@ -47,7 +47,7 @@ public class OuterShadow: ModelElement
   public RectangleAlignmentKind? Alignment { get; set; }
 
   /// <summary>
-  ///   Rotate With Shape
+  ///   Rotate With IShape
   /// </summary>
   public bool? RotateWithShape { get; set; }
 
@@ -67,7 +67,7 @@ public class OuterShadow: ModelElement
   public HslColor? HslColor { get; set; }
 
   /// <summary>
-  ///   System Color.
+  ///   ISystem Color.
   /// </summary>
   public SystemColor? SystemColor { get; set; }
 

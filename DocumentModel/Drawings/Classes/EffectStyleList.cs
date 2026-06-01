@@ -1,7 +1,7 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-///   Effect Style List.
+///   Effect IStyle IList.
 /// </summary>
 public class EffectStyleList: ElementCollection<EffectStyle>
 {

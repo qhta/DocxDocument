@@ -1,22 +1,22 @@
-namespace DocumentModel.Drawings.ChartDrawing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Relative Anchor Shape Size.
+///   Relative Anchor IShape Size.
 /// </summary>
 public class RelativeAnchorSize: ModelElement
 {
   /// <summary>
-  ///   Starting Anchor Point.
+  ///   Starting Anchor IPoint.
   /// </summary>
   public FromAnchor? FromAnchor { get; set; }
 
   /// <summary>
-  ///   Ending Anchor Point.
+  ///   Ending Anchor IPoint.
   /// </summary>
   public ToAnchor? ToAnchor { get; set; }
 
-  public Shape? Shape { get; set; }
+  public IShape? IShape { get; set; }
 
   public GroupShape? GroupShape { get; set; }
 

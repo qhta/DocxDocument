@@ -1,4 +1,4 @@
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 using VectorBaseType = DocumentFormat.OpenXml.VariantTypes.VectorBaseValues;
 
@@ -81,7 +81,7 @@ public class VTVectorImpl : ModelElementImpl
     {
       var itemType = (BaseType != null) ? VectorVariant.ItemTypes[(VariantType)BaseType] : null;
       var _value = new VectorVariant();
-      foreach (var openXmlElement in OpenXmlElement.Elements())
+      foreach (var openXmlElement Iin OpenXmlElement.Elements())
       {
         var itemVariant = VariantImpl.VTToVariant(openXmlElement);
         var itemValue = (itemType != null) ? Convert.ChangeType(itemVariant, itemType) : itemVariant.Value;
@@ -98,7 +98,7 @@ public class VTVectorImpl : ModelElementImpl
     {
       OpenXmlElement.RemoveAllChildren();
       if (value != null)
-        foreach (var itemValue in value)
+        foreach (var itemValue Iin value)
         {
           var itemVariant = VariantImpl.ObjectToVT(itemValue);
           OpenXmlElement.AppendChild(itemVariant);
@@ -108,11 +108,12 @@ public class VTVectorImpl : ModelElementImpl
 
   //public override string ToString()
   //{
-  //  var ss = new List<string?>();
+  //  var ss = new IList<string?>();
   //  var value = Value;
   //  if (value is IEnumerable enumerable)
-  //    foreach (var item in enumerable)
+  //    foreach (var item Iin enumerable)
   //      ss.Add(item.ToString());
   //  return "(" + String.Join(", ", ss) + ")";
   //}
 }
+

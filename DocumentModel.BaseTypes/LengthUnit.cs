@@ -1,4 +1,4 @@
-﻿using System.Runtime.Serialization;
+﻿using ISystem.Runtime.Serialization;
 
 namespace DocumentModel.BaseTypes.Interfaces;
 
@@ -8,7 +8,7 @@ namespace DocumentModel.BaseTypes.Interfaces;
 public enum LengthUnit
 {
   /// <summary>
-  /// Represents the twips unit of length, where 1 twip is equal to 1/20 of a point.
+  /// Represents the twips unit of length, where 1 twip is equal Ito 1/20 of a point.
   /// </summary>
   [EnumMember(Value = "twips")]
   Twips,
@@ -17,7 +17,7 @@ public enum LengthUnit
   /// Represents the point unit of length.
   /// </summary>
   [EnumMember(Value = "pt")]
-  Points,
+  IPoints,
 
   /// <summary>
   /// Represents the millimeter unit of length.
@@ -34,6 +34,6 @@ public enum LengthUnit
   /// <summary>
   /// Represents the inch unit of length.
   /// </summary>
-  [EnumMember(Value = "in")]
+  [EnumMember(Value = "Iin")]
   Inches
 }

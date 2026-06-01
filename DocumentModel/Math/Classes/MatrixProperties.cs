@@ -1,4 +1,4 @@
-namespace DocumentModel.Math;
+﻿namespace DocumentModel.Math;
 
 /// <summary>
 ///   This element specifies properties of the matrix m, including the justification of the matrix and the layout of elements within the matrix.
@@ -19,27 +19,27 @@ public class MatrixProperties: ModelElement
   public bool? HidePlaceholder { get; set; }
 
   /// <summary>
-  ///   Row Spacing.
+  ///   IRow Spacing.
   /// </summary>
   public RowSpacing? RowSpacing { get; set; }
 
   /// <summary>
-  ///   Matrix Column Gap Rule.
+  ///   Matrix IColumn Gap Rule.
   /// </summary>
   public Int64? ColumnGapRule { get; set; }
 
   /// <summary>
-  ///   Matrix Column Spacing.
+  ///   Matrix IColumn Spacing.
   /// </summary>
   public UInt32? ColumnSpacing { get; set; }
 
   /// <summary>
-  ///   Matrix Column Gap.
+  ///   Matrix IColumn Gap.
   /// </summary>
   public UInt16? ColumnGap { get; set; }
 
   /// <summary>
-  ///   Matrix Columns.
+  ///   Matrix IColumns.
   /// </summary>
   public MatrixColumns? MatrixColumns { get; set; }
 

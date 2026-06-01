@@ -1,5 +1,5 @@
-namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the BackstageTab Class.
@@ -7,117 +7,117 @@ namespace DocumentModel;
 public class BackstageTab: ModelElement
 {
   /// <summary>
-  ///   id, this property is only available in Office 2010 and later.
+  ///   id, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? Id { get; set; }
 
   /// <summary>
-  ///   idQ, this property is only available in Office 2010 and later.
+  ///   idQ, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? QualifiedId { get; set; }
 
   /// <summary>
-  ///   tag, this property is only available in Office 2010 and later.
+  ///   tag, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? Tag { get; set; }
 
   /// <summary>
-  ///   idMso, this property is only available in Office 2010 and later.
+  ///   idMso, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? IdMso { get; set; }
 
   /// <summary>
-  ///   insertAfterMso, this property is only available in Office 2010 and later.
+  ///   insertAfterMso, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? InsertAfterMso { get; set; }
 
   /// <summary>
-  ///   insertBeforeMso, this property is only available in Office 2010 and later.
+  ///   insertBeforeMso, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? InsertBeforeMso { get; set; }
 
   /// <summary>
-  ///   insertAfterQ, this property is only available in Office 2010 and later.
+  ///   insertAfterQ, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? InsertAfterQulifiedId { get; set; }
 
   /// <summary>
-  ///   insertBeforeQ, this property is only available in Office 2010 and later.
+  ///   insertBeforeQ, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? InsertBeforeQulifiedId { get; set; }
 
   /// <summary>
-  ///   enabled, this property is only available in Office 2010 and later.
+  ///   enabled, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? Enabled { get; set; }
 
   /// <summary>
-  ///   getEnabled, this property is only available in Office 2010 and later.
+  ///   getEnabled, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? GetEnabled { get; set; }
 
   /// <summary>
-  ///   label, this property is only available in Office 2010 and later.
+  ///   label, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? Label { get; set; }
 
   /// <summary>
-  ///   getLabel, this property is only available in Office 2010 and later.
+  ///   getLabel, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? GetLabel { get; set; }
 
   /// <summary>
-  ///   visible, this property is only available in Office 2010 and later.
+  ///   visible, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public bool? Visible { get; set; }
 
   /// <summary>
-  ///   getVisible, this property is only available in Office 2010 and later.
+  ///   getVisible, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? GetVisible { get; set; }
 
   /// <summary>
-  ///   keytip, this property is only available in Office 2010 and later.
+  ///   keytip, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? Keytip { get; set; }
 
   /// <summary>
-  ///   getKeytip, this property is only available in Office 2010 and later.
+  ///   getKeytip, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? GetKeytip { get; set; }
 
   /// <summary>
-  ///   title, this property is only available in Office 2010 and later.
+  ///   title, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? Title { get; set; }
 
   /// <summary>
-  ///   getTitle, this property is only available in Office 2010 and later.
+  ///   getTitle, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public string? GetTitle { get; set; }
 
   /// <summary>
-  ///   columnWidthPercent, this property is only available in Office 2010 and later.
+  ///   columnWidthPercent, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public Int64? ColumnWidthPercent { get; set; }
 
   /// <summary>
-  ///   firstColumnMinWidth, this property is only available in Office 2010 and later.
+  ///   firstColumnMinWidth, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public Int64? FirstColumnMinWidth { get; set; }
 
   /// <summary>
-  ///   firstColumnMaxWidth, this property is only available in Office 2010 and later.
+  ///   firstColumnMaxWidth, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public Int64? FirstColumnMaxWidth { get; set; }
 
   /// <summary>
-  ///   secondColumnMinWidth, this property is only available in Office 2010 and later.
+  ///   secondColumnMinWidth, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public Int64? SecondColumnMinWidth { get; set; }
 
   /// <summary>
-  ///   secondColumnMaxWidth, this property is only available in Office 2010 and later.
+  ///   secondColumnMaxWidth, this property is Ionly available Iin Office 2010 and later.
   /// </summary>
   public Int64? SecondColumnMaxWidth { get; set; }
 

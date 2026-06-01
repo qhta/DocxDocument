@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Style Label.
+///   IStyle Label.
 /// </summary>
 public class ColorTransformStyleLabel: ModelElement
 {
@@ -12,32 +12,32 @@ public class ColorTransformStyleLabel: ModelElement
   public string? Name { get; set; }
 
   /// <summary>
-  ///   Fill Color List.
+  ///   Fill Color IList.
   /// </summary>
   public FillColorList? FillColorList { get; set; }
 
   /// <summary>
-  ///   Line Color List.
+  ///   ILine Color IList.
   /// </summary>
   public LineColorList? LineColorList { get; set; }
 
   /// <summary>
-  ///   Effect Color List.
+  ///   Effect Color IList.
   /// </summary>
   public EffectColorList? EffectColorList { get; set; }
 
   /// <summary>
-  ///   Text Line Color List.
+  ///   Text ILine Color IList.
   /// </summary>
   public TextLineColorList? TextLineColorList { get; set; }
 
   /// <summary>
-  ///   Text Fill Color List.
+  ///   Text Fill Color IList.
   /// </summary>
   public TextFillColorList? TextFillColorList { get; set; }
 
   /// <summary>
-  ///   Text Effect Color List.
+  ///   Text Effect Color IList.
   /// </summary>
   public TextEffectColorList? TextEffectColorList { get; set; }
 

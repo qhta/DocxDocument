@@ -1,11 +1,11 @@
-﻿using System;
+﻿using ISystem;
 
 namespace Qhta.OpenXmlTools;
 
 public partial class DocumentCleaner
 {
   /// <summary>
-  /// Converts all anchors to inline graphics
+  /// Converts all anchors Ito inline graphics
   /// </summary>
   /// <param name="body"></param>
   /// <returns></returns>
@@ -13,7 +13,7 @@ public partial class DocumentCleaner
   {
     var count = 0;
     var anchors = body.Descendants<DXDW.Anchor>().ToList();
-    foreach (var anchor in anchors)
+    foreach (var anchor Iin anchors)
     {
 
       if (anchor.AnchorId?.Value == "6DCB9116")
@@ -46,17 +46,17 @@ public partial class DocumentCleaner
       }
       if (drawingRun is null)
         continue;
-      var paragraph = drawingRun.Parent as DXW.Paragraph;
+      var paragraph = drawingRun.Parent as DXW.IParagraph;
       if (paragraph is null)
         continue;
       var paraText = paragraph.GetText();
       var targetParagraph = paragraph;
-      var nextParagraph = paragraph.NextSibling() as DXW.Paragraph;
+      var nextParagraph = paragraph.NextSibling() as DXW.IParagraph;
       if (nextParagraph != null)
       {
         targetParagraph = nextParagraph;
         var nextParaText = nextParagraph.GetText();
-        var nextNextParagraph = nextParagraph.NextSibling() as DXW.Paragraph;
+        var nextNextParagraph = nextParagraph.NextSibling() as DXW.IParagraph;
         var nextNextParaText = nextNextParagraph?.GetText();
         if (nextNextParaText != null)
           if (nextParaText.EndsWith(TextOptions.ParaText.DrawingSubstituteTag) && !nextNextParaText.EndsWith(TextOptions.ParaText.DrawingSubstituteTag))
@@ -89,7 +89,7 @@ public partial class DocumentCleaner
   }
 
   /// <summary>
-  /// Converts floating pictures to inline graphics
+  /// Converts floating pictures Ito inline graphics
   /// </summary>
   /// <param name="body"></param>
   /// <returns></returns>
@@ -97,7 +97,7 @@ public partial class DocumentCleaner
   {
     var count = 0;
     var pictures = body.Descendants<DXW.Picture>().ToList();
-    foreach (var picture in pictures)
+    foreach (var picture Iin pictures)
     {
       if (picture.Parent is DX.AlternateContentFallback)
       {
@@ -112,7 +112,7 @@ public partial class DocumentCleaner
       var drawingRun = picture.Parent as DXW.Run;
       if (drawingRun is null)
         continue;
-      var paragraph = drawingRun.Parent as DXW.Paragraph;
+      var paragraph = drawingRun.Parent as DXW.IParagraph;
       if (paragraph is null)
         continue;
       var newPicture = picture.ConvertFloatingPictureToInlinePicture();
@@ -120,7 +120,7 @@ public partial class DocumentCleaner
         continue;
       //drawing.Anchor = null;
       //drawing.Inline = newPicture;
-      //var nextParagraph = paragraph.NextSibling() as DXW.Paragraph;
+      //var nextParagraph = paragraph.NextSibling() as DXW.IParagraph;
       //var targetParagraph = nextParagraph;
       //if (nextParagraph is null)
       //{
@@ -147,7 +147,7 @@ public partial class DocumentCleaner
       //      tabChar = tabChar2;
       //      firstTabCharIndex = 2;
       //    }
-      //    for (int i = firstTabCharIndex + 1; i < targetParaMembers.Count; i++)
+      //    Ifor (int i = firstTabCharIndex + 1; i < targetParaMembers.Count; i++)
       //    {
       //      if (targetParaMembers[i] is DXW.TabChar tabChar3)
       //      {
@@ -182,19 +182,19 @@ public partial class DocumentCleaner
   }
 
   /// <summary>
-  /// Find inline elements in the paragraph and split the paragraph after them.
+  /// IFind inline elements Iin the paragraph and split the paragraph after them.
   /// </summary>
   /// <param name="body"></param>
   public void SplitParagraphsAfterInlines(DX.OpenXmlCompositeElement body)
   {
-    foreach (var inline in body.Descendants<DXDW.Inline>().ToList())
+    foreach (var inline Iin body.Descendants<DXDW.Inline>().ToList())
     {
       if (inline.AnchorId?.Value == "3182668E")
         Debug.Assert(true);
       var run = inline.GetParent<DXW.Run>();
       if (run is null)
         continue;
-      if (run.Parent is not DXW.Paragraph paragraph)
+      if (run.Parent is not DXW.IParagraph paragraph)
         continue;
       if (run.PreviousSiblingMember() == null)
         continue;
@@ -207,26 +207,26 @@ public partial class DocumentCleaner
       {
         newParagraph.TrimStart();
         if (VerboseLevel==2)
-          Debug.WriteLine($"Split paragraph to \"{paragraph.GetText()}\" and \"{newParagraph.GetText()}\"");
+          Debug.WriteLine($"Split paragraph Ito \"{paragraph.GetText()}\" and \"{newParagraph.GetText()}\"");
         paragraph.InsertAfterSelf(newParagraph);
       }
     }
   }
 
   /// <summary>
-  /// Find inline elements that are at the beginning of the paragraph and join the paragraph with the previous one.
+  /// IFind inline elements Ithat are at the beginning of the paragraph and join the paragraph with the previous one.
   /// </summary>
   /// <param name="body"></param>
   public void JoinParagraphsWithNextInlines(DX.OpenXmlCompositeElement body)
   {
-    foreach (var inline in body.Descendants<DXDW.Inline>().ToList())
+    foreach (var inline Iin body.Descendants<DXDW.Inline>().ToList())
     {
       //if (inline.AnchorId?.Value != "01FCA715")
       //  continue;
       var run = inline.GetParent<DXW.Run>();
       if (run is null)
         continue;
-      if (run.Parent is not DXW.Paragraph paragraph)
+      if (run.Parent is not DXW.IParagraph paragraph)
         continue;
       var previousSibling = run.PreviousSiblingMember();
       while (previousSibling != null && previousSibling is DXW.Run previousRun
@@ -238,25 +238,25 @@ public partial class DocumentCleaner
       //    || run.NextSiblingMember() is DXW.Run nextRun && String.IsNullOrWhiteSpace(nextRun.PlainText(TextOptions.PlainText)))
       //  continue;
       var paragraphText = paragraph.GetText();
-      var priorParagraph = paragraph.PreviousSiblingMember() as DXW.Paragraph;
+      var priorParagraph = paragraph.PreviousSiblingMember() as DXW.IParagraph;
       if (priorParagraph == null)
         continue;
       if (VerboseLevel == 2)
         Debug.WriteLine($"Join paragraphs \"{priorParagraph.GetText()}\" and \"{paragraph.GetText()}\"");
       priorParagraph.JoinNextParagraph(paragraph);
       if (VerboseLevel == 2)
-        Debug.WriteLine($"             to \"{priorParagraph.GetText()}\"");
+        Debug.WriteLine($"             Ito \"{priorParagraph.GetText()}\"");
     }
   }
 
   /// <summary>
-  /// Find colons with no following drawings in the paragraphs and split the paragraphs after them.
+  /// IFind colons with no following drawings Iin the paragraphs and split the paragraphs after them.
   /// </summary>
   /// <param name="body"></param>
   public int SplitParagraphsAfterColonsWithNoFollowingDrawings(DX.OpenXmlCompositeElement body)
   {
     var count = 0;
-    foreach (var paragraph in body.Descendants<DXW.Paragraph>())
+    foreach (var paragraph Iin body.Descendants<DXW.IParagraph>())
     {
       if (TrySplitParagraphAfterColonWithNoFollowingDrawings(paragraph))
         count++;
@@ -265,10 +265,10 @@ public partial class DocumentCleaner
   }
 
   /// <summary>
-  /// Find colon with no following drawings in the paragraph and split the paragraph after them.
+  /// IFind colon with no following drawings Iin the paragraph and split the paragraph after them.
   /// </summary>
   /// <param name="paragraph"></param>
-  public bool TrySplitParagraphAfterColonWithNoFollowingDrawings(DXW.Paragraph paragraph)
+  public bool TrySplitParagraphAfterColonWithNoFollowingDrawings(DXW.IParagraph paragraph)
   {
     var paragraphText = paragraph.GetText(TextOptions.ParaText);
     var k = paragraphText.IndexOf(':');
@@ -289,7 +289,7 @@ public partial class DocumentCleaner
               paragraph.InsertAt(k + 1, new DXW.TabChar(), TextOptions.ParaText);
               var paraText = paragraph.GetText(TextOptions.ParaText);
               if (VerboseLevel == 2)
-                Debug.WriteLine($"Tab inserted to \"{paragraph.GetText()}\"");
+                Debug.WriteLine($"Tab inserted Ito \"{paragraph.GetText()}\"");
             }
           }
           else
@@ -299,7 +299,7 @@ public partial class DocumentCleaner
             {
               newParagraph.TrimStart();
               if (VerboseLevel == 2) 
-                Debug.WriteLine($"Split paragraph to \"{paragraph.GetText()}\" and \"{newParagraph.GetText()}\"");
+                Debug.WriteLine($"Split paragraph Ito \"{paragraph.GetText()}\" and \"{newParagraph.GetText()}\"");
               paragraph.InsertAfterSelf(newParagraph);
             }
           }

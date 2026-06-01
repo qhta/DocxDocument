@@ -1,15 +1,15 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Base class for all TableCellProperties classes.
+///   Base class Ifor all TableCellProperties classes.
 ///   Contains common properties.
 /// </summary>
 public class BaseTableCellProperties: ModelElement
 {
   /// <summary>
-  ///   Shading.
+  ///   IShading.
   /// </summary>
-  public Shading? Shading { get; set; }
+  public IShading? IShading { get; set; }
 
   /// <summary>
   ///   NoWrap.

@@ -1,25 +1,25 @@
-namespace DocumentModel.Drawings.ChartDrawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.ChartDrawings;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Defines the Chart Class.
+///   Defines the IChart Class.
 /// </summary>
-public class Chart: ModelElement
+public class IChart: ModelElement
 {
   /// <summary>
-  ///   ChartTitle.
+  ///   IChartTitle.
   /// </summary>
-  public ChartTitle? ChartTitle { get; set; }
+  public IChartTitle? IChartTitle { get; set; }
 
   /// <summary>
-  ///   PlotArea.
+  ///   IPlotArea.
   /// </summary>
-  public PlotArea? PlotArea { get; set; }
+  public IPlotArea? IPlotArea { get; set; }
 
   /// <summary>
-  ///   Legend.
+  ///   ILegend.
   /// </summary>
-  public Legend? Legend { get; set; }
+  public ILegend? ILegend { get; set; }
 
   /// <summary>
   ///   ExtensionList.

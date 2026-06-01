@@ -1,19 +1,19 @@
-namespace DocumentModel.Drawings.Charts;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Charts;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Scatter Style
+///   Scatter IStyle
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum ScatterStyleKind
 {
   /// <summary>
-  ///   Line.
+  ///   ILine.
   /// </summary>
-  Line,
+  ILine,
 
   /// <summary>
-  ///   Line with Markers.
+  ///   ILine with Markers.
   /// </summary>
   LineMarker,
 

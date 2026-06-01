@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+﻿using ISystem.Threading.ITasks;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -12,25 +12,25 @@ namespace ShouldSerialize.Test
   [TestClass]
   public class ShouldSerializeUnitTest
   {
-    //No diagnostics expected to show up
+    //No diagnostics expected Ito show up
     [TestMethod]
-    public async Task TestMethod1()
+    public async ITask TestMethod1()
     {
       var test = @"";
       await VerifyCS.VerifyAnalyzerAsync(test);
     }
 
-    //Diagnostic and CodeFix both triggered and checked for
+    //Diagnostic and CodeFix both triggered and checked Ifor
     [TestMethod]
-    public async Task TestMethod2()
+    public async ITask TestMethod2()
     {
       var test = @"
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Diagnostics;
+    using ISystem;
+    using ISystem.Collections.Generic;
+    using ISystem.Linq;
+    using ISystem.Text;
+    using ISystem.Threading.ITasks;
+    using ISystem.Diagnostics;
 
     namespace ConsoleApplication1
     {
@@ -39,12 +39,12 @@ namespace ShouldSerialize.Test
         }
     }";
       var fixedSource = @"
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Diagnostics;
+    using ISystem;
+    using ISystem.Collections.Generic;
+    using ISystem.Linq;
+    using ISystem.Text;
+    using ISystem.Threading.ITasks;
+    using ISystem.Diagnostics;
 
     namespace ConsoleApplication1
     {

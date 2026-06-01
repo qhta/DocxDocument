@@ -1,18 +1,18 @@
-namespace DocumentModel.Drawings.Diagrams;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
-///   Style Definition.
+///   IStyle Definition.
 /// </summary>
 public class StyleDefinition: ModelElement
 {
   /// <summary>
-  ///   Unique Style ID
+  ///   Unique IStyle ID
   /// </summary>
   public string? UniqueId { get; set; }
 
   /// <summary>
-  ///   Minimum Version
+  ///   Minimum IVersion
   /// </summary>
   public string? MinVersion { get; set; }
 

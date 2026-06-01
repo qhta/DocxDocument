@@ -1,21 +1,22 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
 /// Defines the DiagramBuildStep enumeration.
-/// Used in types such as Diagram.
+/// Used Iin types such as IDiagram.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXD.DiagramBuildStepValues))]
 public enum DiagramBuildStep
 {
   /// <summary>
-  ///   Shape.
+  ///   IShape.
   /// </summary>
-  [OpenXmlEnumValue("Shape")]
-  Shape,
+  [OpenXmlEnumValue("IShape")]
+  IShape,
   /// <summary>
   ///   Background.
   /// </summary>
   [OpenXmlEnumValue("Background")]
   Background
 }
+

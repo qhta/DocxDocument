@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the HorizontalAnchorValues enumeration.
@@ -8,7 +8,7 @@ namespace DocumentModel.Wordprocessing;
 public enum HorizontalAnchorKind
 {
   /// <summary>
-  ///   Relative to Text Extents.
+  ///   Relative Ito Text Extents.
   /// </summary>
   Text,
 
@@ -18,7 +18,7 @@ public enum HorizontalAnchorKind
   Margin,
 
   /// <summary>
-  ///   Relative to Page.
+  ///   Relative Ito IPage.
   /// </summary>
-  Page
+  IPage
 }

@@ -1,12 +1,12 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Relationship for attached document template.
+///   Relationship Ifor attached document template.
 /// </summary>
 public class AttachedTemplate: ExternalFile
 {
   /// <summary>
-  /// Modified for tests.
+  /// Modified Ifor tests.
   /// </summary>
   /// <returns></returns>
   public override string ToString()

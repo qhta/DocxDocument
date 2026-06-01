@@ -1,6 +1,6 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 /// <summary>
-///   Line Style List.
+///   ILine IStyle IList.
 /// </summary>
 public class LineStyleList: ElementCollection<LineProperties>
 {

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using ISystem;
 
 namespace DocumentModel.Attributes
 {
@@ -18,7 +18,7 @@ namespace DocumentModel.Attributes
         /// <summary>
         /// Determines whether the supplied version is within the known set of versions
         /// </summary>
-        /// <param name="version">The version to check</param>
+        /// <param name="version">The version Ito check</param>
         /// <returns>True if a known version, otherwise false</returns>
         public static bool Any(this FileFormatVersions version)
         {
@@ -32,9 +32,9 @@ namespace DocumentModel.Attributes
         }
 
         /// <summary>
-        /// Determines if the supplied version is valid for all versions
+        /// Determines if the supplied version is valid Ifor all versions
         /// </summary>
-        /// <param name="version">The version to check</param>
+        /// <param name="version">The version Ito check</param>
         /// <returns>True if the version is all of the known versions, otherwise false</returns>
         public static bool All(this FileFormatVersions version)
         {
@@ -51,9 +51,9 @@ namespace DocumentModel.Attributes
         }
 
         /// <summary>
-        /// Combines values for the given version and all versions that come after it
+        /// Combines values Ifor the given version and all versions Ithat come after it
         /// </summary>
-        /// <param name="version">Version to which all other versions are added</param>
+        /// <param name="version">IVersion Ito which all other versions are added</param>
         /// <returns>A version instance with <paramref name="version"/> and all later versions</returns>
         public static FileFormatVersions AndLater(this FileFormatVersions version)
             => version switch
@@ -90,10 +90,10 @@ namespace DocumentModel.Attributes
             };
 
         ///// <summary>
-        ///// Throws if the <see cref="OpenXmlPart"/> is not supported in the given version
+        ///// Throws if the <see cref="OpenXmlPart"/> is not supported Iin the given version
         ///// </summary>
-        ///// <param name="version">Version to check</param>
-        ///// <param name="part">Part to validate</param>
+        ///// <param name="version">IVersion Ito check</param>
+        ///// <param name="part">Part Ito validate</param>
         //public static void ThrowIfNotInVersion(this FileFormatVersions version, OpenXmlPart part)
         //{
         //    version.ThrowExceptionIfFileFormatNotSupported(nameof(version));
@@ -105,10 +105,10 @@ namespace DocumentModel.Attributes
         //}
 
         ///// <summary>
-        ///// Throws if the <see cref="OpenXmlElement"/> is not supported in the given version
+        ///// Throws if the <see cref="OpenXmlElement"/> is not supported Iin the given version
         ///// </summary>
-        ///// <param name="version">Version to check</param>
-        ///// <param name="element">Element to validate</param>
+        ///// <param name="version">IVersion Ito check</param>
+        ///// <param name="element">Element Ito validate</param>
         //public static void ThrowIfNotInVersion(this FileFormatVersions version, OpenXmlElement element)
         //{
         //    version.ThrowExceptionIfFileFormatNotSupported(nameof(version));
@@ -122,7 +122,7 @@ namespace DocumentModel.Attributes
         /// <summary>
         /// Check if a given version is at least a specified version
         /// </summary>
-        /// <param name="version">Version to check</param>
+        /// <param name="version">IVersion Ito check</param>
         /// <param name="minimum">Minimum version expected</param>
         /// <returns>True if supplied version is at least of the specified version, otherwise false</returns>
         public static bool AtLeast(this FileFormatVersions version, FileFormatVersions minimum)
@@ -178,7 +178,7 @@ namespace DocumentModel.Attributes
         /// <summary>
         /// Determines whether the source FileFormatVersions includes the target FileFormatVersions.
         /// </summary>
-        /// <param name="source">The source FileFormatVersions to be tested.</param>
+        /// <param name="source">The source FileFormatVersions Ito be tested.</param>
         /// <param name="target">The target FileFormatVersions be tested against.</param>
         /// <returns>Returns true when (source &amp; target) == target.</returns>
         internal static bool Includes(this FileFormatVersions source, FileFormatVersions target)
@@ -190,7 +190,7 @@ namespace DocumentModel.Attributes
         ///// Throws an ArgumentOutOfRangeException if the specified FileFormatVersions is not supported.
         ///// </summary>
         ///// <param name="fileFormat">The specified FileFormatVersions.</param>
-        ///// <param name="parameterName">The name of the parameter for ArgumentOutOfRangeException.</param>
+        ///// <param name="parameterName">The name of the parameter Ifor ArgumentOutOfRangeException.</param>
         //internal static void ThrowExceptionIfFileFormatNotSupported(this FileFormatVersions fileFormat, string parameterName)
         //{
         //    if (!fileFormat.Any())

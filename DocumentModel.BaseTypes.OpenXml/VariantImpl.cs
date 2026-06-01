@@ -1,4 +1,4 @@
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 using VTVariant = DocumentFormat.OpenXml.VariantTypes.Variant;
 
@@ -117,7 +117,7 @@ public class VariantImpl : ModelElementImpl
         return new Variant(VariantType.VStream, new VStreamData
         { 
           Data = Convert.FromBase64String(vVStreamData.Text), 
-          Version =(vVStreamData.Version?.Value!=null) ? Guid.Parse(vVStreamData.Version.Value) : null
+          IVersion =(vVStreamData.IVersion?.Value!=null) ? Guid.Parse(vVStreamData.IVersion.Value) : null
         });
 
     if (openXmlElement is VTClipboardData vtClipboardData)
@@ -130,18 +130,18 @@ public class VariantImpl : ModelElementImpl
 
     if (openXmlElement is VTVector vtVector)
       return new VTVectorImpl(vtVector).GetValue()
-             ?? throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
+             ?? throw new InvalidOperationException($"Can't create variant Ifor {openXmlElement.GetType()} type");
 
     if (openXmlElement is VTArray vtArray)
       return new VTArrayImpl(vtArray).GetValue()
-             ?? throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
+             ?? throw new InvalidOperationException($"Can't create variant Ifor {openXmlElement.GetType()} type");
 
     if (openXmlElement is VTVariant vtVariant)
       if (vtVariant.FirstChild!=null)
         return new Variant(VariantType.Variant, VTToVariant(vtVariant.FirstChild));
-      throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
+      throw new InvalidOperationException($"Can't create variant Ifor {openXmlElement.GetType()} type");
 
-    throw new InvalidOperationException($"Can't create variant for {openXmlElement.GetType()} type");
+    throw new InvalidOperationException($"Can't create variant Ifor {openXmlElement.GetType()} type");
   }
 
   public static DocumentFormat.OpenXml.OpenXmlElement ObjectToVT(object? value)
@@ -220,7 +220,7 @@ public class VariantImpl : ModelElementImpl
         if (value.Value is VStreamData vStreamData)
         {
           vStreamDataVariant.Text = Convert.ToBase64String(vStreamData.Data);
-          vStreamDataVariant.Version = (vStreamData.Version != null) ? XmlConvert.ToString((Guid)vStreamData.Version) : null;
+          vStreamDataVariant.IVersion = (vStreamData.IVersion != null) ? XmlConvert.ToString((Guid)vStreamData.IVersion) : null;
         };
         return vStreamDataVariant;
       case VariantType.ClipboardData:
@@ -246,7 +246,7 @@ public class VariantImpl : ModelElementImpl
           if (vtVector != null)
             return vtVector;
         }
-        throw new InvalidOperationException($"Can't convert value of type {value.GetType()} to VT vector");
+        throw new InvalidOperationException($"Can't convert value of type {value.GetType()} Ito VT vector");
       case VariantType.Array:
         if (value is ArrayVariant varArray)
         {
@@ -254,9 +254,9 @@ public class VariantImpl : ModelElementImpl
           if (vtArray != null)
             return vtArray;
         }
-        throw new InvalidOperationException($"Can't convert value of type {value.GetType()} to VT array");
+        throw new InvalidOperationException($"Can't convert value of type {value.GetType()} Ito VT array");
     }
-    throw new InvalidOperationException($"Can't convert value of type {value.GetType()} to VT array");
+    throw new InvalidOperationException($"Can't convert value of type {value.GetType()} Ito VT array");
   }
 
   public object? Value
@@ -285,3 +285,4 @@ public class VariantImpl : ModelElementImpl
   //  return Value?.ToString();
   //}
 }
+

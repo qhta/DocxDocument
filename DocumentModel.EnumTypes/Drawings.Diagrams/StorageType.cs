@@ -1,8 +1,8 @@
-namespace DocumentModel.Drawings.Diagrams;
+﻿namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
 /// Defines the STorageType enumeration.
-/// Used in types such as NumberDiagramInfo, STorageType, NumberDiagramInfoConverter.
+/// Used Iin types such as NumberDiagramInfo, STorageType, NumberDiagramInfoConverter.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 public enum StorageType
@@ -18,3 +18,4 @@ public enum StorageType
   [OpenXmlEnumValue("ParTrans")]
   ParTrans
 }
+

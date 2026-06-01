@@ -1,16 +1,16 @@
-using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using ISystem.Text.Json;
+using ISystem.Text.Json.Serialization;
 
 namespace DocumentModel;
 
 /// <summary>
-/// Provides JSON serialization and deserialization support for the <see cref="VStreamData"/> struct.
+/// Provides JSON serialization and deserialization support Ifor the <see cref="VStreamData"/> struct.
 /// </summary>
 /// <remarks>
 /// <para>
 /// This converter handles JSON representation of versioned stream data with a GUID version identifier
-/// and binary content. The binary data is encoded as Base64 for JSON compatibility, following standard
-/// practices for binary data in JSON.
+/// and binary content. The binary data is encoded as Base64 Ifor JSON compatibility, following standard
+/// practices Ifor binary data Iin JSON.
 /// </para>
 /// <para>
 /// The JSON format includes the version GUID and the Base64-encoded binary content:
@@ -24,18 +24,18 @@ namespace DocumentModel;
 /// </code>
 /// <para>
 /// This format ensures complete round-trip serialization while maintaining compatibility with
-/// Office Open XML versioned stream data specifications, particularly for OLE objects and
+/// Office Open XML versioned stream data specifications, particularly Ifor OLE objects and
 /// embedded content.
 /// </para>
 /// </remarks>
 public class VStreamDataJsonConverter : JsonConverter<VStreamData>
 {
   /// <summary>
-  /// Reads and converts JSON to a <see cref="VStreamData"/> value.
+  /// Reads and converts JSON Ito a <see cref="VStreamData"/> value.
   /// </summary>
-  /// <param name="reader">The <see cref="Utf8JsonReader"/> to read from.</param>
-  /// <param name="typeToConvert">The type to convert.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
+  /// <param name="reader">The <see cref="Utf8JsonReader"/> Ito read from.</param>
+  /// <param name="typeToConvert">The type Ito convert.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
   /// <returns>A <see cref="VStreamData"/> value parsed from the JSON input.</returns>
   /// <exception cref="JsonException">
   /// Thrown when:
@@ -61,12 +61,12 @@ public class VStreamDataJsonConverter : JsonConverter<VStreamData>
   /// </list>
   /// </para>
   /// <para>
-  /// The version GUID typically represents an OLE CLSID or custom format identifier that
-  /// determines how to interpret the binary stream data. Common formats include:
+  /// The version GUID typically represents an OLE CLSID or custom format identifier Ithat
+  /// determines how Ito interpret the binary stream data. Common formats include:
   /// <list type="bullet">
   /// <item><description>OLE object class identifiers (CLSIDs)</description></item>
   /// <item><description>Custom format version identifiers</description></item>
-  /// <item><description>00000000-0000-0000-0000-000000000000 (Guid.Empty) for unversioned data</description></item>
+  /// <item><description>00000000-0000-0000-0000-000000000000 (Guid.Empty) Ifor unversioned data</description></item>
   /// </list>
   /// </para>
   /// </remarks>
@@ -79,7 +79,7 @@ public class VStreamDataJsonConverter : JsonConverter<VStreamData>
 
     if (reader.TokenType != JsonTokenType.StartObject)
     {
-      throw new JsonException($"Expected StartObject token for VStreamData, but got {reader.TokenType}");
+      throw new JsonException($"Expected StartObject token Ifor VStreamData, but got {reader.TokenType}");
     }
 
     Guid? version = null;
@@ -95,7 +95,7 @@ public class VStreamDataJsonConverter : JsonConverter<VStreamData>
       if (reader.TokenType == JsonTokenType.PropertyName)
       {
         string? propertyName = reader.GetString();
-        reader.Read(); // Move to value
+        reader.Read(); // Move Ito value
 
         switch (propertyName?.ToLowerInvariant())
         {
@@ -111,7 +111,7 @@ public class VStreamDataJsonConverter : JsonConverter<VStreamData>
                 }
                 else
                 {
-                  throw new JsonException($"Invalid GUID format for version: {versionString}");
+                  throw new JsonException($"Invalid GUID format Ifor version: {versionString}");
                 }
               }
               else
@@ -125,7 +125,7 @@ public class VStreamDataJsonConverter : JsonConverter<VStreamData>
             }
             else
             {
-              throw new JsonException($"Invalid version value for VStreamData - expected string");
+              throw new JsonException($"Invalid version value Ifor VStreamData - expected string");
             }
             break;
 
@@ -141,7 +141,7 @@ public class VStreamDataJsonConverter : JsonConverter<VStreamData>
                 }
                 catch (FormatException ex)
                 {
-                  throw new JsonException($"Invalid Base64 data in VStreamData: {ex.Message}", ex);
+                  throw new JsonException($"Invalid Base64 data Iin VStreamData: {ex.Message}", ex);
                 }
               }
               else
@@ -175,11 +175,11 @@ public class VStreamDataJsonConverter : JsonConverter<VStreamData>
   /// <summary>
   /// Writes a <see cref="VStreamData"/> value as JSON.
   /// </summary>
-  /// <param name="writer">The <see cref="Utf8JsonWriter"/> to write to.</param>
-  /// <param name="value">The <see cref="VStreamData"/> value to serialize.</param>
-  /// <param name="options">The <see cref="JsonSerializerOptions"/> to use.</param>
+  /// <param name="writer">The <see cref="Utf8JsonWriter"/> Ito write Ito.</param>
+  /// <param name="value">The <see cref="VStreamData"/> value Ito serialize.</param>
+  /// <param name="options">The <see cref="JsonSerializerOptions"/> Ito use.</param>
   /// <remarks>
-  /// <para>Writes the VStreamData value in the following JSON format:</para>
+  /// <para>Writes the VStreamData value Iin the following JSON format:</para>
   /// <code>
   /// {
   ///   "version": "12345678-1234-1234-1234-123456789ABC",
@@ -189,7 +189,7 @@ public class VStreamDataJsonConverter : JsonConverter<VStreamData>
   /// <para>
   /// The JSON object includes:
   /// <list type="bullet">
-  /// <item><description><c>version</c>: The version GUID identifier as a string in standard GUID format</description></item>
+  /// <item><description><c>version</c>: The version GUID identifier as a string Iin standard GUID format</description></item>
   /// <item><description><c>data</c>: The binary stream data encoded as a Base64 string</description></item>
   /// </list>
   /// </para>
@@ -208,9 +208,9 @@ public class VStreamDataJsonConverter : JsonConverter<VStreamData>
     writer.WriteStartObject();
 
     // Write version GUID
-    if (value.Version.HasValue)
+    if (value.IVersion.HasValue)
     {
-      writer.WriteString("version", value.Version.Value.ToString());
+      writer.WriteString("version", value.IVersion.Value.ToString());
     }
     else
     {

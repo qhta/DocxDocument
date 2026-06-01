@@ -1,10 +1,10 @@
-namespace DocumentModel.Application;
+﻿namespace DocumentModel.IApplication;
 
 /// <summary>
-/// Specifies animation style for Microsoft Office command bars.
+/// Specifies animation style Ifor Microsoft Office command bars.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msomenuanimation?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msomenuanimation?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum MenuAnimation
 {
@@ -25,3 +25,4 @@ public enum MenuAnimation
   /// </summary>
   Slide
 }
+

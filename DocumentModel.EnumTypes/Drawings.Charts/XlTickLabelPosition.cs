@@ -1,15 +1,15 @@
-namespace DocumentModel.Wordprocessing;
+﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 /// Specifies the position of tick-mark labels on the specified axis.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlticklabelposition?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xlticklabelposition?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum XlTickLabelPosition
 {
   /// <summary>
-  /// Next to axis (where axis is not at either side of the chart).
+  /// Next Ito axis (where axis is not at either side of the chart).
   /// </summary>
   NextToAxis = 4,
   /// <summary>
@@ -25,3 +25,4 @@ public enum XlTickLabelPosition
   /// </summary>
   High = -4127
 }
+

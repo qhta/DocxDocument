@@ -1,10 +1,10 @@
-namespace DocumentModel.Drawings;
+﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies the character set to be used when rendering text.
+/// Specifies the character set Ito be used when rendering text.
 /// </summary>
 /// <remarks>
-/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocharacterset?view=office-pia` for Office interop details.
+/// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msocharacterset?view=office-pia` Ifor Office interop details.
 /// </remarks>
 public enum CharacterSet
 {
@@ -57,3 +57,4 @@ public enum CharacterSet
   /// </summary>
   Vietnamese
 }
+

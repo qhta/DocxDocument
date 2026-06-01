@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the DocPartValues enumeration.
@@ -28,17 +28,17 @@ public enum DocPartKind
   Toolbar,
 
   /// <summary>
-  ///   AutoCorrect Entry.
+  ///   IAutoCorrect Entry.
   /// </summary>
   Speller,
 
   /// <summary>
-  ///   Form Field Help Text.
+  ///   Form IField Help Text.
   /// </summary>
-  FormField,
+  IFormField,
 
   /// <summary>
-  ///   Structured Document Tag Placeholder Text.
+  ///   Structured IDocument Tag Placeholder Text.
   /// </summary>
   SdtPlaceholder
 }

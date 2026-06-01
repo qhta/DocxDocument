@@ -1,5 +1,5 @@
-namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment Ifor publicly visible type or member
 
 /// <summary>
 ///   Defines the PageNumberType Class.
@@ -7,17 +7,17 @@ namespace DocumentModel.Wordprocessing;
 public class PageNumberType: ModelElement, ISectionPropertiesContent
 {
   /// <summary>
-  ///   Page Number Format
+  ///   IPage Number Format
   /// </summary>
   public NumberFormatKind? Format { get; set; }
 
   /// <summary>
-  ///   Starting Page Number
+  ///   Starting IPage Number
   /// </summary>
   public Int32? Start { get; set; }
 
   /// <summary>
-  ///   Chapter Heading Style
+  ///   Chapter Heading IStyle
   /// </summary>
   public Byte? ChapterStyle { get; set; }
 
