@@ -31588,2260 +31588,320 @@
             </summary>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents?view=word-pia"/>
         </member>
-        <member name="T:DocumentModel.Interop.Word.ApplicationEvents2">
-            <summary>
-            Reserved for internal use.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2.Startup">
-            <summary>
-            Occurs when Microsoft Word starts.
-            </summary>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2.startup?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2.Quit">
-            <summary>
-            Occurs when Microsoft Word is quitting.
-            </summary>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2.quit?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2.DocumentChange">
-            <summary>
-            Occurs when a document is created, opened, or activated.
-            </summary>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2.documentchange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2.DocumentOpen(DocumentModel.Interop.Word.Document)">
-            <summary>
-            Occurs when a document is opened.
-            </summary>
-            <param name="Doc">The document that was opened.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2.documentopen?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2.DocumentBeforeClose(DocumentModel.Interop.Word.Document,System.Boolean@)">
-            <summary>
-            Occurs before a document closes.
-            </summary>
-            <param name="Doc">The document being closed.</param>
-            <param name="Cancel">true to cancel closing the document; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2.documentbeforeclose?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2.DocumentBeforePrint(DocumentModel.Interop.Word.Document,System.Boolean@)">
-            <summary>
-            Occurs before a document is printed.
-            </summary>
-            <param name="Doc">The document being printed.</param>
-            <param name="Cancel">true to cancel printing the document; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2.documentbeforeprint?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2.DocumentBeforeSave(DocumentModel.Interop.Word.Document,System.Boolean,System.Boolean@)">
-            <summary>
-            Occurs before a document is saved.
-            </summary>
-            <param name="Doc">The document being saved.</param>
-            <param name="SaveAsUI">true if the Save As dialog box is displayed; otherwise, false.</param>
-            <param name="Cancel">true to cancel saving the document; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2.documentbeforesave?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2.NewDocument(DocumentModel.Interop.Word.Document)">
-            <summary>
-            Occurs when a new document is created.
-            </summary>
-            <param name="Doc">The new document.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2.newdocument?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2.WindowActivate(DocumentModel.Interop.Word.Document,DocumentModel.Interop.Word.Window)">
-            <summary>
-            Occurs when a document window is activated.
-            </summary>
-            <param name="Doc">The document in the activated window.</param>
-            <param name="Wn">The window that was activated.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2.windowactivate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2.WindowDeactivate(DocumentModel.Interop.Word.Document,DocumentModel.Interop.Word.Window)">
-            <summary>
-            Occurs when a document window is deactivated.
-            </summary>
-            <param name="Doc">The document in the deactivated window.</param>
-            <param name="Wn">The window that was deactivated.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2.windowdeactivate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2.WindowSelectionChange(DocumentModel.Interop.Word.Selection)">
-            <summary>
-            Occurs when the selection changes in a document window.
-            </summary>
-            <param name="Sel">The selection that changed.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2.windowselectionchange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2.WindowBeforeRightClick(DocumentModel.Interop.Word.Selection,System.Boolean@)">
-            <summary>
-            Occurs before the user right-clicks in a document window.
-            </summary>
-            <param name="Sel">The selection under the pointer.</param>
-            <param name="Cancel">true to cancel the right-click action; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2.windowbeforerightclick?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2.WindowBeforeDoubleClick(DocumentModel.Interop.Word.Selection,System.Boolean@)">
-            <summary>
-            Occurs before the user double-clicks in a document window.
-            </summary>
-            <param name="Sel">The selection under the pointer.</param>
-            <param name="Cancel">true to cancel the double-click action; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2.windowbeforedoubleclick?view=word-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Word.ApplicationEvents2_Event">
-            <summary>
-            Events class for Microsoft Word 2000 Application object events.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.add_Startup(DocumentModel.Interop.Word.ApplicationEvents2_StartupEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnStartup">
             <summary>
             Subscribes a handler to the Startup event.
             </summary>
-            <param name="param1">The delegate to invoke when Startup occurs.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.add_startup?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.remove_Startup(DocumentModel.Interop.Word.ApplicationEvents2_StartupEventHandler)">
-            <summary>
-            Unsubscribes a handler from the Startup event.
-            </summary>
-            <param name="param1">The delegate to remove from Startup notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.remove_startup?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.add_Quit(DocumentModel.Interop.Word.ApplicationEvents2_QuitEventHandler)">
-            <summary>
-            Subscribes a handler to the Quit event.
-            </summary>
-            <param name="param1">The delegate to invoke when Quit occurs.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.add_quit?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.remove_Quit(DocumentModel.Interop.Word.ApplicationEvents2_QuitEventHandler)">
-            <summary>
-            Unsubscribes a handler from the Quit event.
-            </summary>
-            <param name="param1">The delegate to remove from Quit notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.remove_quit?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.add_DocumentChange(DocumentModel.Interop.Word.ApplicationEvents2_DocumentChangeEventHandler)">
-            <summary>
-            Subscribes a handler to the DocumentChange event.
-            </summary>
-            <param name="param1">The delegate to invoke when DocumentChange occurs.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.add_documentchange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.remove_DocumentChange(DocumentModel.Interop.Word.ApplicationEvents2_DocumentChangeEventHandler)">
-            <summary>
-            Unsubscribes a handler from the DocumentChange event.
-            </summary>
-            <param name="param1">The delegate to remove from DocumentChange notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.remove_documentchange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.add_DocumentOpen(DocumentModel.Interop.Word.ApplicationEvents2_DocumentOpenEventHandler)">
-            <summary>
-            Subscribes a handler to the DocumentOpen event.
-            </summary>
-            <param name="param1">The delegate to invoke when a document is opened.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.add_documentopen?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.remove_DocumentOpen(DocumentModel.Interop.Word.ApplicationEvents2_DocumentOpenEventHandler)">
-            <summary>
-            Unsubscribes a handler from the DocumentOpen event.
-            </summary>
-            <param name="param1">The delegate to remove from DocumentOpen notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.remove_documentopen?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.add_DocumentBeforeClose(DocumentModel.Interop.Word.ApplicationEvents2_DocumentBeforeCloseEventHandler)">
-            <summary>
-            Subscribes a handler to the DocumentBeforeClose event.
-            </summary>
-            <param name="param1">The delegate to invoke before a document closes.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.add_documentbeforeclose?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.remove_DocumentBeforeClose(DocumentModel.Interop.Word.ApplicationEvents2_DocumentBeforeCloseEventHandler)">
-            <summary>
-            Unsubscribes a handler from the DocumentBeforeClose event.
-            </summary>
-            <param name="param1">The delegate to remove from DocumentBeforeClose notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.remove_documentbeforeclose?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.add_DocumentBeforePrint(DocumentModel.Interop.Word.ApplicationEvents2_DocumentBeforePrintEventHandler)">
-            <summary>
-            Subscribes a handler to the DocumentBeforePrint event.
-            </summary>
-            <param name="param1">The delegate to invoke before a document is printed.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.add_documentbeforeprint?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.remove_DocumentBeforePrint(DocumentModel.Interop.Word.ApplicationEvents2_DocumentBeforePrintEventHandler)">
-            <summary>
-            Unsubscribes a handler from the DocumentBeforePrint event.
-            </summary>
-            <param name="param1">The delegate to remove from DocumentBeforePrint notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.remove_documentbeforeprint?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.add_DocumentBeforeSave(DocumentModel.Interop.Word.ApplicationEvents2_DocumentBeforeSaveEventHandler)">
-            <summary>
-            Subscribes a handler to the DocumentBeforeSave event.
-            </summary>
-            <param name="param1">The delegate to invoke before a document is saved.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.add_documentbeforesave?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.remove_DocumentBeforeSave(DocumentModel.Interop.Word.ApplicationEvents2_DocumentBeforeSaveEventHandler)">
-            <summary>
-            Unsubscribes a handler from the DocumentBeforeSave event.
-            </summary>
-            <param name="param1">The delegate to remove from DocumentBeforeSave notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.remove_documentbeforesave?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.add_NewDocument(DocumentModel.Interop.Word.ApplicationEvents2_NewDocumentEventHandler)">
-            <summary>
-            Subscribes a handler to the NewDocument event.
-            </summary>
-            <param name="param1">The delegate to invoke when a new document is created.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.add_newdocument?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.remove_NewDocument(DocumentModel.Interop.Word.ApplicationEvents2_NewDocumentEventHandler)">
-            <summary>
-            Unsubscribes a handler from the NewDocument event.
-            </summary>
-            <param name="param1">The delegate to remove from NewDocument notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.remove_newdocument?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.add_WindowActivate(DocumentModel.Interop.Word.ApplicationEvents2_WindowActivateEventHandler)">
-            <summary>
-            Subscribes a handler to the WindowActivate event.
-            </summary>
-            <param name="param1">The delegate to invoke when a window is activated.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.add_windowactivate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.remove_WindowActivate(DocumentModel.Interop.Word.ApplicationEvents2_WindowActivateEventHandler)">
-            <summary>
-            Unsubscribes a handler from the WindowActivate event.
-            </summary>
-            <param name="param1">The delegate to remove from WindowActivate notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.remove_windowactivate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.add_WindowDeactivate(DocumentModel.Interop.Word.ApplicationEvents2_WindowDeactivateEventHandler)">
-            <summary>
-            Subscribes a handler to the WindowDeactivate event.
-            </summary>
-            <param name="param1">The delegate to invoke when a window is deactivated.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.add_windowdeactivate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.remove_WindowDeactivate(DocumentModel.Interop.Word.ApplicationEvents2_WindowDeactivateEventHandler)">
-            <summary>
-            Unsubscribes a handler from the WindowDeactivate event.
-            </summary>
-            <param name="param1">The delegate to remove from WindowDeactivate notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.remove_windowdeactivate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.add_WindowSelectionChange(DocumentModel.Interop.Word.ApplicationEvents2_WindowSelectionChangeEventHandler)">
-            <summary>
-            Subscribes a handler to the WindowSelectionChange event.
-            </summary>
-            <param name="param1">The delegate to invoke when the selection changes in a window.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.add_windowselectionchange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.remove_WindowSelectionChange(DocumentModel.Interop.Word.ApplicationEvents2_WindowSelectionChangeEventHandler)">
-            <summary>
-            Unsubscribes a handler from the WindowSelectionChange event.
-            </summary>
-            <param name="param1">The delegate to remove from WindowSelectionChange notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.remove_windowselectionchange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.add_WindowBeforeRightClick(DocumentModel.Interop.Word.ApplicationEvents2_WindowBeforeRightClickEventHandler)">
-            <summary>
-            Subscribes a handler to the WindowBeforeRightClick event.
-            </summary>
-            <param name="param1">The delegate to invoke before a right-click action in a window.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.add_windowbeforerightclick?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.remove_WindowBeforeRightClick(DocumentModel.Interop.Word.ApplicationEvents2_WindowBeforeRightClickEventHandler)">
-            <summary>
-            Unsubscribes a handler from the WindowBeforeRightClick event.
-            </summary>
-            <param name="param1">The delegate to remove from WindowBeforeRightClick notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.remove_windowbeforerightclick?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.add_WindowBeforeDoubleClick(DocumentModel.Interop.Word.ApplicationEvents2_WindowBeforeDoubleClickEventHandler)">
-            <summary>
-            Subscribes a handler to the WindowBeforeDoubleClick event.
-            </summary>
-            <param name="param1">The delegate to invoke before a double-click action in a window.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.add_windowbeforedoubleclick?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents2_Event.remove_WindowBeforeDoubleClick(DocumentModel.Interop.Word.ApplicationEvents2_WindowBeforeDoubleClickEventHandler)">
-            <summary>
-            Unsubscribes a handler from the WindowBeforeDoubleClick event.
-            </summary>
-            <param name="param1">The delegate to remove from WindowBeforeDoubleClick notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event.remove_windowbeforedoubleclick?view=word-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Word.ApplicationEvents3">
-            <summary>
-            Reserved for internal use.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.Startup">
-            <summary>
-            Occurs when Microsoft Word starts.
-            </summary>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.startup?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.Quit">
-            <summary>
-            Occurs when Microsoft Word is quitting.
-            </summary>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.quit?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.DocumentChange">
-            <summary>
-            Occurs when a document is created, opened, or activated.
-            </summary>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.documentchange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.DocumentOpen(DocumentModel.Interop.Word.Document)">
-            <summary>
-            Occurs when a document is opened.
-            </summary>
-            <param name="Doc">The document that was opened.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.documentopen?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.DocumentBeforeClose(DocumentModel.Interop.Word.Document,System.Boolean@)">
-            <summary>
-            Occurs before a document closes.
-            </summary>
-            <param name="Doc">The document being closed.</param>
-            <param name="Cancel">true to cancel closing the document; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.documentbeforeclose?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.DocumentBeforePrint(DocumentModel.Interop.Word.Document,System.Boolean@)">
-            <summary>
-            Occurs before a document is printed.
-            </summary>
-            <param name="Doc">The document being printed.</param>
-            <param name="Cancel">true to cancel printing the document; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.documentbeforeprint?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.DocumentBeforeSave(DocumentModel.Interop.Word.Document,System.Boolean,System.Boolean@)">
-            <summary>
-            Occurs before a document is saved.
-            </summary>
-            <param name="Doc">The document being saved.</param>
-            <param name="SaveAsUI">true if the Save As dialog box is displayed; otherwise, false.</param>
-            <param name="Cancel">true to cancel saving the document; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.documentbeforesave?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.NewDocument(DocumentModel.Interop.Word.Document)">
-            <summary>
-            Occurs when a new document is created.
-            </summary>
-            <param name="Doc">The new document.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.newdocument?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.WindowActivate(DocumentModel.Interop.Word.Document,DocumentModel.Interop.Word.Window)">
-            <summary>
-            Occurs when a document window is activated.
-            </summary>
-            <param name="Doc">The document in the activated window.</param>
-            <param name="Wn">The window that was activated.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.windowactivate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.WindowDeactivate(DocumentModel.Interop.Word.Document,DocumentModel.Interop.Word.Window)">
-            <summary>
-            Occurs when a document window is deactivated.
-            </summary>
-            <param name="Doc">The document in the deactivated window.</param>
-            <param name="Wn">The window that was deactivated.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.windowdeactivate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.WindowSelectionChange(DocumentModel.Interop.Word.Selection)">
-            <summary>
-            Occurs when the selection changes in a document window.
-            </summary>
-            <param name="Sel">The selection that changed.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.windowselectionchange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.WindowBeforeRightClick(DocumentModel.Interop.Word.Selection,System.Boolean@)">
-            <summary>
-            Occurs before the user right-clicks in a document window.
-            </summary>
-            <param name="Sel">The selection under the pointer.</param>
-            <param name="Cancel">true to cancel the right-click action; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.windowbeforerightclick?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.WindowBeforeDoubleClick(DocumentModel.Interop.Word.Selection,System.Boolean@)">
-            <summary>
-            Occurs before the user double-clicks in a document window.
-            </summary>
-            <param name="Sel">The selection under the pointer.</param>
-            <param name="Cancel">true to cancel the double-click action; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.windowbeforedoubleclick?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.EPostagePropertyDialog(DocumentModel.Interop.Word.Document)">
-            <summary>
-            Occurs when the Electronic Postage Properties dialog box is displayed.
-            </summary>
-            <param name="Doc">The document associated with the dialog box.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.epostagepropertydialog?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.EPostageInsert(DocumentModel.Interop.Word.Document)">
-            <summary>
-            Occurs when electronic postage is inserted into a document.
-            </summary>
-            <param name="Doc">The document receiving electronic postage.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.epostageinsert?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.MailMergeAfterMerge(DocumentModel.Interop.Word.Document,DocumentModel.Interop.Word.Document)">
-            <summary>
-            Occurs after a mail merge operation completes.
-            </summary>
-            <param name="Doc">The main mail merge document.</param>
-            <param name="DocResult">The document produced by the merge operation.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.mailmergeaftermerge?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.MailMergeAfterRecordMerge(DocumentModel.Interop.Word.Document)">
-            <summary>
-            Occurs after each record is merged in a mail merge operation.
-            </summary>
-            <param name="Doc">The main mail merge document.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.mailmergeafterrecordmerge?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.MailMergeBeforeMerge(DocumentModel.Interop.Word.Document,System.Int32,System.Int32,System.Boolean@)">
-            <summary>
-            Occurs before a mail merge operation begins.
-            </summary>
-            <param name="Doc">The main mail merge document.</param>
-            <param name="StartRecord">The starting record number for the merge.</param>
-            <param name="EndRecord">The ending record number for the merge.</param>
-            <param name="Cancel">true to cancel the mail merge operation; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.mailmergebeforemerge?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.MailMergeBeforeRecordMerge(DocumentModel.Interop.Word.Document,System.Boolean@)">
-            <summary>
-            Occurs before each record is merged in a mail merge operation.
-            </summary>
-            <param name="Doc">The main mail merge document.</param>
-            <param name="Cancel">true to cancel merging the current record; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.mailmergebeforerecordmerge?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.MailMergeDataSourceLoad(DocumentModel.Interop.Word.Document)">
-            <summary>
-            Occurs when a mail merge data source is loaded.
-            </summary>
-            <param name="Doc">The mail merge document that loaded the data source.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.mailmergedatasourceload?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.MailMergeDataSourceValidate(DocumentModel.Interop.Word.Document,System.Boolean)">
-            <summary>
-            Occurs when a mail merge data source is validated.
-            </summary>
-            <param name="Doc">The mail merge document being validated.</param>
-            <param name="Handled">true if validation is handled by the event handler; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.mailmergedatasourcevalidate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.MailMergeWizardSendToCustom(DocumentModel.Interop.Word.Document)">
-            <summary>
-            Occurs when the Mail Merge Wizard sends output to a custom destination.
-            </summary>
-            <param name="Doc">The mail merge document associated with the wizard operation.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.mailmergewizardsendtocustom?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.MailMergeWizardStateChange(DocumentModel.Interop.Word.Document,System.Int32,System.Int32,System.Boolean)">
-            <summary>
-            Occurs when the Mail Merge Wizard changes state.
-            </summary>
-            <param name="Doc">The mail merge document associated with the wizard.</param>
-            <param name="FromState">The previous wizard state.</param>
-            <param name="ToState">The new wizard state.</param>
-            <param name="Handled">true if state handling is performed by the event handler; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.mailmergewizardstatechange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3.WindowSize(DocumentModel.Interop.Word.Document,DocumentModel.Interop.Word.Window)">
-            <summary>
-            Occurs when a document window is resized.
-            </summary>
-            <param name="Doc">The document in the resized window.</param>
-            <param name="Wn">The resized window.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3.windowsize?view=word-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Word.ApplicationEvents3_Event">
-            <summary>
-            Events class for Microsoft Word 2002 Application object events.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_Startup(DocumentModel.Interop.Word.ApplicationEvents3_StartupEventHandler)">
-            <summary>
-            Subscribes a handler to the Startup event.
-            </summary>
-            <param name="param1">The delegate to invoke when Startup occurs.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_startup?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_Startup(DocumentModel.Interop.Word.ApplicationEvents3_StartupEventHandler)">
-            <summary>
-            Unsubscribes a handler from the Startup event.
-            </summary>
-            <param name="param1">The delegate to remove from Startup notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_startup?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_Quit(DocumentModel.Interop.Word.ApplicationEvents3_QuitEventHandler)">
-            <summary>
-            Subscribes a handler to the Quit event.
-            </summary>
-            <param name="param1">The delegate to invoke when Quit occurs.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_quit?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_Quit(DocumentModel.Interop.Word.ApplicationEvents3_QuitEventHandler)">
-            <summary>
-            Unsubscribes a handler from the Quit event.
-            </summary>
-            <param name="param1">The delegate to remove from Quit notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_quit?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_DocumentChange(DocumentModel.Interop.Word.ApplicationEvents3_DocumentChangeEventHandler)">
-            <summary>
-            Subscribes a handler to the DocumentChange event.
-            </summary>
-            <param name="param1">The delegate to invoke when DocumentChange occurs.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_documentchange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_DocumentChange(DocumentModel.Interop.Word.ApplicationEvents3_DocumentChangeEventHandler)">
-            <summary>
-            Unsubscribes a handler from the DocumentChange event.
-            </summary>
-            <param name="param1">The delegate to remove from DocumentChange notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_documentchange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_DocumentOpen(DocumentModel.Interop.Word.ApplicationEvents3_DocumentOpenEventHandler)">
-            <summary>
-            Subscribes a handler to the DocumentOpen event.
-            </summary>
-            <param name="param1">The delegate to invoke when a document is opened.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_documentopen?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_DocumentOpen(DocumentModel.Interop.Word.ApplicationEvents3_DocumentOpenEventHandler)">
-            <summary>
-            Unsubscribes a handler from the DocumentOpen event.
-            </summary>
-            <param name="param1">The delegate to remove from DocumentOpen notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_documentopen?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_DocumentBeforeClose(DocumentModel.Interop.Word.ApplicationEvents3_DocumentBeforeCloseEventHandler)">
-            <summary>
-            Subscribes a handler to the DocumentBeforeClose event.
-            </summary>
-            <param name="param1">The delegate to invoke before a document closes.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_documentbeforeclose?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_DocumentBeforeClose(DocumentModel.Interop.Word.ApplicationEvents3_DocumentBeforeCloseEventHandler)">
-            <summary>
-            Unsubscribes a handler from the DocumentBeforeClose event.
-            </summary>
-            <param name="param1">The delegate to remove from DocumentBeforeClose notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_documentbeforeclose?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_DocumentBeforePrint(DocumentModel.Interop.Word.ApplicationEvents3_DocumentBeforePrintEventHandler)">
-            <summary>
-            Subscribes a handler to the DocumentBeforePrint event.
-            </summary>
-            <param name="param1">The delegate to invoke before a document is printed.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_documentbeforeprint?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_DocumentBeforePrint(DocumentModel.Interop.Word.ApplicationEvents3_DocumentBeforePrintEventHandler)">
-            <summary>
-            Unsubscribes a handler from the DocumentBeforePrint event.
-            </summary>
-            <param name="param1">The delegate to remove from DocumentBeforePrint notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_documentbeforeprint?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_DocumentBeforeSave(DocumentModel.Interop.Word.ApplicationEvents3_DocumentBeforeSaveEventHandler)">
-            <summary>
-            Subscribes a handler to the DocumentBeforeSave event.
-            </summary>
-            <param name="param1">The delegate to invoke before a document is saved.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_documentbeforesave?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_DocumentBeforeSave(DocumentModel.Interop.Word.ApplicationEvents3_DocumentBeforeSaveEventHandler)">
-            <summary>
-            Unsubscribes a handler from the DocumentBeforeSave event.
-            </summary>
-            <param name="param1">The delegate to remove from DocumentBeforeSave notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_documentbeforesave?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_NewDocument(DocumentModel.Interop.Word.ApplicationEvents3_NewDocumentEventHandler)">
-            <summary>
-            Subscribes a handler to the NewDocument event.
-            </summary>
-            <param name="param1">The delegate to invoke when a new document is created.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_newdocument?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_NewDocument(DocumentModel.Interop.Word.ApplicationEvents3_NewDocumentEventHandler)">
-            <summary>
-            Unsubscribes a handler from the NewDocument event.
-            </summary>
-            <param name="param1">The delegate to remove from NewDocument notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_newdocument?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_WindowActivate(DocumentModel.Interop.Word.ApplicationEvents3_WindowActivateEventHandler)">
-            <summary>
-            Subscribes a handler to the WindowActivate event.
-            </summary>
-            <param name="param1">The delegate to invoke when a window is activated.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_windowactivate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_WindowActivate(DocumentModel.Interop.Word.ApplicationEvents3_WindowActivateEventHandler)">
-            <summary>
-            Unsubscribes a handler from the WindowActivate event.
-            </summary>
-            <param name="param1">The delegate to remove from WindowActivate notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_windowactivate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_WindowDeactivate(DocumentModel.Interop.Word.ApplicationEvents3_WindowDeactivateEventHandler)">
-            <summary>
-            Subscribes a handler to the WindowDeactivate event.
-            </summary>
-            <param name="param1">The delegate to invoke when a window is deactivated.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_windowdeactivate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_WindowDeactivate(DocumentModel.Interop.Word.ApplicationEvents3_WindowDeactivateEventHandler)">
-            <summary>
-            Unsubscribes a handler from the WindowDeactivate event.
-            </summary>
-            <param name="param1">The delegate to remove from WindowDeactivate notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_windowdeactivate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_WindowSelectionChange(DocumentModel.Interop.Word.ApplicationEvents3_WindowSelectionChangeEventHandler)">
-            <summary>
-            Subscribes a handler to the WindowSelectionChange event.
-            </summary>
-            <param name="param1">The delegate to invoke when the selection changes in a window.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_windowselectionchange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_WindowSelectionChange(DocumentModel.Interop.Word.ApplicationEvents3_WindowSelectionChangeEventHandler)">
-            <summary>
-            Unsubscribes a handler from the WindowSelectionChange event.
-            </summary>
-            <param name="param1">The delegate to remove from WindowSelectionChange notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_windowselectionchange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_WindowBeforeRightClick(DocumentModel.Interop.Word.ApplicationEvents3_WindowBeforeRightClickEventHandler)">
-            <summary>
-            Subscribes a handler to the WindowBeforeRightClick event.
-            </summary>
-            <param name="param1">The delegate to invoke before a right-click action in a window.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_windowbeforerightclick?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_WindowBeforeRightClick(DocumentModel.Interop.Word.ApplicationEvents3_WindowBeforeRightClickEventHandler)">
-            <summary>
-            Unsubscribes a handler from the WindowBeforeRightClick event.
-            </summary>
-            <param name="param1">The delegate to remove from WindowBeforeRightClick notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_windowbeforerightclick?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_WindowBeforeDoubleClick(DocumentModel.Interop.Word.ApplicationEvents3_WindowBeforeDoubleClickEventHandler)">
-            <summary>
-            Subscribes a handler to the WindowBeforeDoubleClick event.
-            </summary>
-            <param name="param1">The delegate to invoke before a double-click action in a window.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_windowbeforedoubleclick?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_WindowBeforeDoubleClick(DocumentModel.Interop.Word.ApplicationEvents3_WindowBeforeDoubleClickEventHandler)">
-            <summary>
-            Unsubscribes a handler from the WindowBeforeDoubleClick event.
-            </summary>
-            <param name="param1">The delegate to remove from WindowBeforeDoubleClick notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_windowbeforedoubleclick?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_EPostagePropertyDialog(DocumentModel.Interop.Word.ApplicationEvents3_EPostagePropertyDialogEventHandler)">
-            <summary>
-            Subscribes a handler to the EPostagePropertyDialog event.
-            </summary>
-            <param name="param1">The delegate to invoke when the electronic postage properties dialog is shown.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_epostagepropertydialog?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_EPostagePropertyDialog(DocumentModel.Interop.Word.ApplicationEvents3_EPostagePropertyDialogEventHandler)">
-            <summary>
-            Unsubscribes a handler from the EPostagePropertyDialog event.
-            </summary>
-            <param name="param1">The delegate to remove from EPostagePropertyDialog notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_epostagepropertydialog?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_EPostageInsert(DocumentModel.Interop.Word.ApplicationEvents3_EPostageInsertEventHandler)">
-            <summary>
-            Subscribes a handler to the EPostageInsert event.
-            </summary>
-            <param name="param1">The delegate to invoke when electronic postage is inserted.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_epostageinsert?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_EPostageInsert(DocumentModel.Interop.Word.ApplicationEvents3_EPostageInsertEventHandler)">
-            <summary>
-            Unsubscribes a handler from the EPostageInsert event.
-            </summary>
-            <param name="param1">The delegate to remove from EPostageInsert notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_epostageinsert?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_MailMergeAfterMerge(DocumentModel.Interop.Word.ApplicationEvents3_MailMergeAfterMergeEventHandler)">
-            <summary>
-            Subscribes a handler to the MailMergeAfterMerge event.
-            </summary>
-            <param name="param1">The delegate to invoke after mail merge completes.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_mailmergeaftermerge?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_MailMergeAfterMerge(DocumentModel.Interop.Word.ApplicationEvents3_MailMergeAfterMergeEventHandler)">
-            <summary>
-            Unsubscribes a handler from the MailMergeAfterMerge event.
-            </summary>
-            <param name="param1">The delegate to remove from MailMergeAfterMerge notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_mailmergeaftermerge?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_MailMergeAfterRecordMerge(DocumentModel.Interop.Word.ApplicationEvents3_MailMergeAfterRecordMergeEventHandler)">
-            <summary>
-            Subscribes a handler to the MailMergeAfterRecordMerge event.
-            </summary>
-            <param name="param1">The delegate to invoke after each mail merge record is merged.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_mailmergeafterrecordmerge?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_MailMergeAfterRecordMerge(DocumentModel.Interop.Word.ApplicationEvents3_MailMergeAfterRecordMergeEventHandler)">
-            <summary>
-            Unsubscribes a handler from the MailMergeAfterRecordMerge event.
-            </summary>
-            <param name="param1">The delegate to remove from MailMergeAfterRecordMerge notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_mailmergeafterrecordmerge?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_MailMergeBeforeMerge(DocumentModel.Interop.Word.ApplicationEvents3_MailMergeBeforeMergeEventHandler)">
-            <summary>
-            Subscribes a handler to the MailMergeBeforeMerge event.
-            </summary>
-            <param name="param1">The delegate to invoke before mail merge begins.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_mailmergebeforemerge?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_MailMergeBeforeMerge(DocumentModel.Interop.Word.ApplicationEvents3_MailMergeBeforeMergeEventHandler)">
-            <summary>
-            Unsubscribes a handler from the MailMergeBeforeMerge event.
-            </summary>
-            <param name="param1">The delegate to remove from MailMergeBeforeMerge notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_mailmergebeforemerge?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_MailMergeBeforeRecordMerge(DocumentModel.Interop.Word.ApplicationEvents3_MailMergeBeforeRecordMergeEventHandler)">
-            <summary>
-            Subscribes a handler to the MailMergeBeforeRecordMerge event.
-            </summary>
-            <param name="param1">The delegate to invoke before each mail merge record is merged.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_mailmergebeforerecordmerge?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_MailMergeBeforeRecordMerge(DocumentModel.Interop.Word.ApplicationEvents3_MailMergeBeforeRecordMergeEventHandler)">
-            <summary>
-            Unsubscribes a handler from the MailMergeBeforeRecordMerge event.
-            </summary>
-            <param name="param1">The delegate to remove from MailMergeBeforeRecordMerge notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_mailmergebeforerecordmerge?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_MailMergeDataSourceLoad(DocumentModel.Interop.Word.ApplicationEvents3_MailMergeDataSourceLoadEventHandler)">
-            <summary>
-            Subscribes a handler to the MailMergeDataSourceLoad event.
-            </summary>
-            <param name="param1">The delegate to invoke when a mail merge data source is loaded.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_mailmergedatasourceload?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_MailMergeDataSourceLoad(DocumentModel.Interop.Word.ApplicationEvents3_MailMergeDataSourceLoadEventHandler)">
-            <summary>
-            Unsubscribes a handler from the MailMergeDataSourceLoad event.
-            </summary>
-            <param name="param1">The delegate to remove from MailMergeDataSourceLoad notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_mailmergedatasourceload?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_MailMergeDataSourceValidate(DocumentModel.Interop.Word.ApplicationEvents3_MailMergeDataSourceValidateEventHandler)">
-            <summary>
-            Subscribes a handler to the MailMergeDataSourceValidate event.
-            </summary>
-            <param name="param1">The delegate to invoke when a mail merge data source is validated.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_mailmergedatasourcevalidate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_MailMergeDataSourceValidate(DocumentModel.Interop.Word.ApplicationEvents3_MailMergeDataSourceValidateEventHandler)">
-            <summary>
-            Unsubscribes a handler from the MailMergeDataSourceValidate event.
-            </summary>
-            <param name="param1">The delegate to remove from MailMergeDataSourceValidate notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_mailmergedatasourcevalidate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_MailMergeWizardSendToCustom(DocumentModel.Interop.Word.ApplicationEvents3_MailMergeWizardSendToCustomEventHandler)">
-            <summary>
-            Subscribes a handler to the MailMergeWizardSendToCustom event.
-            </summary>
-            <param name="param1">The delegate to invoke when the Mail Merge Wizard sends to a custom destination.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_mailmergewizardsendtocustom?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_MailMergeWizardSendToCustom(DocumentModel.Interop.Word.ApplicationEvents3_MailMergeWizardSendToCustomEventHandler)">
-            <summary>
-            Unsubscribes a handler from the MailMergeWizardSendToCustom event.
-            </summary>
-            <param name="param1">The delegate to remove from MailMergeWizardSendToCustom notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_mailmergewizardsendtocustom?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_MailMergeWizardStateChange(DocumentModel.Interop.Word.ApplicationEvents3_MailMergeWizardStateChangeEventHandler)">
-            <summary>
-            Subscribes a handler to the MailMergeWizardStateChange event.
-            </summary>
-            <param name="param1">The delegate to invoke when the Mail Merge Wizard state changes.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_mailmergewizardstatechange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_MailMergeWizardStateChange(DocumentModel.Interop.Word.ApplicationEvents3_MailMergeWizardStateChangeEventHandler)">
-            <summary>
-            Unsubscribes a handler from the MailMergeWizardStateChange event.
-            </summary>
-            <param name="param1">The delegate to remove from MailMergeWizardStateChange notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_mailmergewizardstatechange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.add_WindowSize(DocumentModel.Interop.Word.ApplicationEvents3_WindowSizeEventHandler)">
-            <summary>
-            Subscribes a handler to the WindowSize event.
-            </summary>
-            <param name="param1">The delegate to invoke when a document window is resized.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.add_windowsize?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents3_Event.remove_WindowSize(DocumentModel.Interop.Word.ApplicationEvents3_WindowSizeEventHandler)">
-            <summary>
-            Unsubscribes a handler from the WindowSize event.
-            </summary>
-            <param name="param1">The delegate to remove from WindowSize notifications.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents3_event.remove_windowsize?view=word-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Word.ApplicationEvents4">
-            <summary>
-            Reserved for internal use.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.Startup">
-            <summary>
-            Occurs when Microsoft Word starts.
-            </summary>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.startup?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.Quit">
-            <summary>
-            Occurs when Microsoft Word is quitting.
-            </summary>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.quit?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.DocumentChange">
-            <summary>
-            Occurs when a document is created, opened, or activated.
-            </summary>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.documentchange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.DocumentOpen(DocumentModel.Interop.Word.Document)">
-            <summary>
-            Occurs when a document is opened.
-            </summary>
-            <param name="Doc">The document that was opened.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.documentopen?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.DocumentBeforeClose(DocumentModel.Interop.Word.Document,System.Boolean@)">
-            <summary>
-            Occurs before a document closes.
-            </summary>
-            <param name="Doc">The document being closed.</param>
-            <param name="Cancel">true to cancel closing the document; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.documentbeforeclose?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.DocumentBeforePrint(DocumentModel.Interop.Word.Document,System.Boolean@)">
-            <summary>
-            Occurs before a document is printed.
-            </summary>
-            <param name="Doc">The document being printed.</param>
-            <param name="Cancel">true to cancel printing the document; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.documentbeforeprint?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.DocumentBeforeSave(DocumentModel.Interop.Word.Document,System.Boolean,System.Boolean@)">
-            <summary>
-            Occurs before a document is saved.
-            </summary>
-            <param name="Doc">The document being saved.</param>
-            <param name="SaveAsUI">true if the Save As dialog box is displayed; otherwise, false.</param>
-            <param name="Cancel">true to cancel saving the document; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.documentbeforesave?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.NewDocument(DocumentModel.Interop.Word.Document)">
-            <summary>
-            Occurs when a new document is created.
-            </summary>
-            <param name="Doc">The new document.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.newdocument?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.WindowActivate(DocumentModel.Interop.Word.Document,DocumentModel.Interop.Word.Window)">
-            <summary>
-            Occurs when a document window is activated.
-            </summary>
-            <param name="Doc">The document in the activated window.</param>
-            <param name="Wn">The window that was activated.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.windowactivate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.WindowDeactivate(DocumentModel.Interop.Word.Document,DocumentModel.Interop.Word.Window)">
-            <summary>
-            Occurs when a document window is deactivated.
-            </summary>
-            <param name="Doc">The document in the deactivated window.</param>
-            <param name="Wn">The window that was deactivated.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.windowdeactivate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.WindowSelectionChange(DocumentModel.Interop.Word.Selection)">
-            <summary>
-            Occurs when the selection changes in a document window.
-            </summary>
-            <param name="Sel">The selection that changed.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.windowselectionchange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.WindowBeforeRightClick(DocumentModel.Interop.Word.Selection,System.Boolean@)">
-            <summary>
-            Occurs before the user right-clicks in a document window.
-            </summary>
-            <param name="Sel">The selection under the pointer.</param>
-            <param name="Cancel">true to cancel the right-click action; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.windowbeforerightclick?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.WindowBeforeDoubleClick(DocumentModel.Interop.Word.Selection,System.Boolean@)">
-            <summary>
-            Occurs before the user double-clicks in a document window.
-            </summary>
-            <param name="Sel">The selection under the pointer.</param>
-            <param name="Cancel">true to cancel the double-click action; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.windowbeforedoubleclick?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.EPostagePropertyDialog(DocumentModel.Interop.Word.Document)">
-            <summary>
-            Occurs when the Electronic Postage Properties dialog box is displayed.
-            </summary>
-            <param name="Doc">The document associated with the dialog box.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.epostagepropertydialog?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.EPostageInsert(DocumentModel.Interop.Word.Document)">
-            <summary>
-            Occurs when electronic postage is inserted into a document.
-            </summary>
-            <param name="Doc">The document receiving electronic postage.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.epostageinsert?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.MailMergeAfterMerge(DocumentModel.Interop.Word.Document,DocumentModel.Interop.Word.Document)">
-            <summary>
-            Occurs after a mail merge operation completes.
-            </summary>
-            <param name="Doc">The main mail merge document.</param>
-            <param name="DocResult">The document produced by the merge operation.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.mailmergeaftermerge?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.MailMergeAfterRecordMerge(DocumentModel.Interop.Word.Document)">
-            <summary>
-            Occurs after each record is merged in a mail merge operation.
-            </summary>
-            <param name="Doc">The main mail merge document.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.mailmergeafterrecordmerge?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.MailMergeBeforeMerge(DocumentModel.Interop.Word.Document,System.Int32,System.Int32,System.Boolean@)">
-            <summary>
-            Occurs before a mail merge operation begins.
-            </summary>
-            <param name="Doc">The main mail merge document.</param>
-            <param name="StartRecord">The starting record number for the merge.</param>
-            <param name="EndRecord">The ending record number for the merge.</param>
-            <param name="Cancel">true to cancel the mail merge operation; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.mailmergebeforemerge?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.MailMergeBeforeRecordMerge(DocumentModel.Interop.Word.Document,System.Boolean@)">
-            <summary>
-            Occurs before each record is merged in a mail merge operation.
-            </summary>
-            <param name="Doc">The main mail merge document.</param>
-            <param name="Cancel">true to cancel merging the current record; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.mailmergebeforerecordmerge?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.MailMergeDataSourceLoad(DocumentModel.Interop.Word.Document)">
-            <summary>
-            Occurs when a mail merge data source is loaded.
-            </summary>
-            <param name="Doc">The mail merge document that loaded the data source.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.mailmergedatasourceload?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.MailMergeDataSourceValidate(DocumentModel.Interop.Word.Document,System.Boolean)">
-            <summary>
-            Occurs when a mail merge data source is validated.
-            </summary>
-            <param name="Doc">The mail merge document being validated.</param>
-            <param name="Handled">true if validation is handled by the event handler; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.mailmergedatasourcevalidate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.MailMergeWizardSendToCustom(DocumentModel.Interop.Word.Document)">
-            <summary>
-            Occurs when the Mail Merge Wizard sends output to a custom destination.
-            </summary>
-            <param name="Doc">The mail merge document associated with the wizard operation.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.mailmergewizardsendtocustom?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.MailMergeWizardStateChange(DocumentModel.Interop.Word.Document,System.Int32,System.Int32,System.Boolean)">
-            <summary>
-            Occurs when the Mail Merge Wizard changes state.
-            </summary>
-            <param name="Doc">The mail merge document associated with the wizard.</param>
-            <param name="FromState">The previous wizard state.</param>
-            <param name="ToState">The new wizard state.</param>
-            <param name="Handled">true if state handling is performed by the event handler; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.mailmergewizardstatechange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.WindowSize(DocumentModel.Interop.Word.Document,DocumentModel.Interop.Word.Window)">
-            <summary>
-            Occurs when a document window is resized.
-            </summary>
-            <param name="Doc">The document in the resized window.</param>
-            <param name="Wn">The resized window.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.windowsize?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.XMLSelectionChange(DocumentModel.Interop.Word.Selection,DocumentModel.Interop.Word.XMLNode,DocumentModel.Interop.Word.XMLNode,System.Int32)">
-            <summary>
-            Occurs when the XML selection context changes.
-            </summary>
-            <param name="Sel">The current selection.</param>
-            <param name="OldXMLNode">The previously selected XML node.</param>
-            <param name="NewXMLNode">The newly selected XML node.</param>
-            <param name="Reason">The reason code for the XML selection change.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.xmlselectionchange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.XMLValidationError(DocumentModel.Interop.Word.XMLNode)">
-            <summary>
-            Occurs when an XML validation error is raised.
-            </summary>
-            <param name="XMLNode">The XML node that failed validation.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.xmlvalidationerror?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.DocumentSync(DocumentModel.Interop.Word.Document,DocumentModel.Interop.Core.SyncEventType)">
-            <summary>
-            Occurs when document synchronization state changes.
-            </summary>
-            <param name="Doc">The synchronized document.</param>
-            <param name="SyncEventType">The synchronization event type.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.documentsync?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.EPostageInsertEx(DocumentModel.Interop.Word.Document,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String,System.Boolean,System.Boolean)">
-            <summary>
-            Occurs when electronic postage insertion with extended information is performed.
-            </summary>
-            <param name="Doc">The target document.</param>
-            <param name="cpDeliveryAddrStart">The start character position of the delivery address.</param>
-            <param name="cpDeliveryAddrEnd">The end character position of the delivery address.</param>
-            <param name="cpReturnAddrStart">The start character position of the return address.</param>
-            <param name="cpReturnAddrEnd">The end character position of the return address.</param>
-            <param name="xaWidth">The stamp width.</param>
-            <param name="yaHeight">The stamp height.</param>
-            <param name="bstrPrinterName">The printer name.</param>
-            <param name="bstrPaperFeed">The paper feed setting.</param>
-            <param name="fPrint">true to print immediately; otherwise, false.</param>
-            <param name="fCancel">true to cancel insertion; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.epostageinsertex?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.MailMergeDataSourceValidate2(DocumentModel.Interop.Word.Document,System.Boolean)">
-            <summary>
-            Occurs when a mail merge data source is validated (version 2 event).
-            </summary>
-            <param name="Doc">The mail merge document being validated.</param>
-            <param name="Handled">true if validation is handled by the event handler; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.mailmergedatasourcevalidate2?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.ProtectedViewWindowOpen(DocumentModel.Interop.Word.ProtectedViewWindow)">
-            <summary>
-            Occurs when a protected view window is opened.
-            </summary>
-            <param name="PvWindow">The protected view window that was opened.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.protectedviewwindowopen?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.ProtectedViewWindowBeforeEdit(DocumentModel.Interop.Word.ProtectedViewWindow,System.Boolean@)">
-            <summary>
-            Occurs before editing is enabled for a protected view window.
-            </summary>
-            <param name="PvWindow">The protected view window.</param>
-            <param name="Cancel">true to cancel entering edit mode; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.protectedviewwindowbeforeedit?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.ProtectedViewWindowBeforeClose(DocumentModel.Interop.Word.ProtectedViewWindow,System.Int32,System.Boolean@)">
-            <summary>
-            Occurs before a protected view window closes.
-            </summary>
-            <param name="PvWindow">The protected view window being closed.</param>
-            <param name="CloseReason">The reason code for closing the window.</param>
-            <param name="Cancel">true to cancel closing; otherwise, false.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.protectedviewwindowbeforeclose?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.ProtectedViewWindowSize(DocumentModel.Interop.Word.ProtectedViewWindow)">
-            <summary>
-            Occurs when a protected view window is resized.
-            </summary>
-            <param name="PvWindow">The protected view window that was resized.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.protectedviewwindowsize?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.ProtectedViewWindowActivate(DocumentModel.Interop.Word.ProtectedViewWindow)">
-            <summary>
-            Occurs when a protected view window is activated.
-            </summary>
-            <param name="PvWindow">The protected view window that was activated.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.protectedviewwindowactivate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4.ProtectedViewWindowDeactivate(DocumentModel.Interop.Word.ProtectedViewWindow)">
-            <summary>
-            Occurs when a protected view window is deactivated.
-            </summary>
-            <param name="PvWindow">The protected view window that was deactivated.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4.protectedviewwindowdeactivate?view=word-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Word.ApplicationEvents4_Event">
-            <summary>
-            Events class for WordApplication object events.This is a .NET class created when processing a COM coclass that is required by managed code for interoperability with the corresponding COM object. This class implements all events of earlier interfaces and any additional new events. Use this class only when the event you want to use shares the same name as a method of the COM object; in this case, cast to this class to connect to the event, and cast to the primary class to call the method. Otherwise, use the .NET class that is derived from the COM coclass to access methods, properties, and events of the COM object.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_Startup(DocumentModel.Interop.Word.ApplicationEvents4_StartupEventHandler)">
-            <summary>
-            Subscribes a handler to the Startup event.
-            </summary>
-            <param name="param1">The delegate to invoke when the Startup event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_startup?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_Startup(DocumentModel.Interop.Word.ApplicationEvents4_StartupEventHandler)">
-            <summary>
-            Unsubscribes a handler from the Startup event.
-            </summary>
-            <param name="param1">The delegate to remove from the Startup event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_startup?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_Quit(DocumentModel.Interop.Word.ApplicationEvents4_QuitEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnQuit">
             <summary>
             Subscribes a handler to the Quit event.
             </summary>
-            <param name="param1">The delegate to invoke when the Quit event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_quit?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_Quit(DocumentModel.Interop.Word.ApplicationEvents4_QuitEventHandler)">
-            <summary>
-            Unsubscribes a handler from the Quit event.
-            </summary>
-            <param name="param1">The delegate to remove from the Quit event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_quit?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_DocumentChange(DocumentModel.Interop.Word.ApplicationEvents4_DocumentChangeEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnDocumentChange">
             <summary>
             Subscribes a handler to the DocumentChange event.
             </summary>
-            <param name="param1">The delegate to invoke when the DocumentChange event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_documentchange?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_DocumentChange(DocumentModel.Interop.Word.ApplicationEvents4_DocumentChangeEventHandler)">
-            <summary>
-            Unsubscribes a handler from the DocumentChange event.
-            </summary>
-            <param name="param1">The delegate to remove from the DocumentChange event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_documentchange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_DocumentOpen(DocumentModel.Interop.Word.ApplicationEvents4_DocumentOpenEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnDocumentOpen">
             <summary>
             Subscribes a handler to the DocumentOpen event.
             </summary>
-            <param name="param1">The delegate to invoke when the DocumentOpen event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_documentopen?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_DocumentOpen(DocumentModel.Interop.Word.ApplicationEvents4_DocumentOpenEventHandler)">
-            <summary>
-            Unsubscribes a handler from the DocumentOpen event.
-            </summary>
-            <param name="param1">The delegate to remove from the DocumentOpen event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_documentopen?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_DocumentBeforeClose(DocumentModel.Interop.Word.ApplicationEvents4_DocumentBeforeCloseEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnDocumentBeforeClose">
             <summary>
             Subscribes a handler to the DocumentBeforeClose event.
             </summary>
-            <param name="param1">The delegate to invoke when the DocumentBeforeClose event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_documentbeforeclose?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_DocumentBeforeClose(DocumentModel.Interop.Word.ApplicationEvents4_DocumentBeforeCloseEventHandler)">
-            <summary>
-            Unsubscribes a handler from the DocumentBeforeClose event.
-            </summary>
-            <param name="param1">The delegate to remove from the DocumentBeforeClose event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_documentbeforeclose?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_DocumentBeforePrint(DocumentModel.Interop.Word.ApplicationEvents4_DocumentBeforePrintEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnDocumentBeforePrint">
             <summary>
             Subscribes a handler to the DocumentBeforePrint event.
             </summary>
-            <param name="param1">The delegate to invoke when the DocumentBeforePrint event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_documentbeforeprint?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_DocumentBeforePrint(DocumentModel.Interop.Word.ApplicationEvents4_DocumentBeforePrintEventHandler)">
-            <summary>
-            Unsubscribes a handler from the DocumentBeforePrint event.
-            </summary>
-            <param name="param1">The delegate to remove from the DocumentBeforePrint event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_documentbeforeprint?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_DocumentBeforeSave(DocumentModel.Interop.Word.ApplicationEvents4_DocumentBeforeSaveEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnDocumentBeforeSave">
             <summary>
             Subscribes a handler to the DocumentBeforeSave event.
             </summary>
-            <param name="param1">The delegate to invoke when the DocumentBeforeSave event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_documentbeforesave?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_DocumentBeforeSave(DocumentModel.Interop.Word.ApplicationEvents4_DocumentBeforeSaveEventHandler)">
-            <summary>
-            Unsubscribes a handler from the DocumentBeforeSave event.
-            </summary>
-            <param name="param1">The delegate to remove from the DocumentBeforeSave event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_documentbeforesave?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_NewDocument(DocumentModel.Interop.Word.ApplicationEvents4_NewDocumentEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnNewDocument">
             <summary>
             Subscribes a handler to the NewDocument event.
             </summary>
-            <param name="param1">The delegate to invoke when the NewDocument event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_newdocument?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_NewDocument(DocumentModel.Interop.Word.ApplicationEvents4_NewDocumentEventHandler)">
-            <summary>
-            Unsubscribes a handler from the NewDocument event.
-            </summary>
-            <param name="param1">The delegate to remove from the NewDocument event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_newdocument?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_WindowActivate(DocumentModel.Interop.Word.ApplicationEvents4_WindowActivateEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnWindowActivate">
             <summary>
             Subscribes a handler to the WindowActivate event.
             </summary>
-            <param name="param1">The delegate to invoke when the WindowActivate event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_windowactivate?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_WindowActivate(DocumentModel.Interop.Word.ApplicationEvents4_WindowActivateEventHandler)">
-            <summary>
-            Unsubscribes a handler from the WindowActivate event.
-            </summary>
-            <param name="param1">The delegate to remove from the WindowActivate event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_windowactivate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_WindowDeactivate(DocumentModel.Interop.Word.ApplicationEvents4_WindowDeactivateEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnWindowDeactivate">
             <summary>
             Subscribes a handler to the WindowDeactivate event.
             </summary>
-            <param name="param1">The delegate to invoke when the WindowDeactivate event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_windowdeactivate?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_WindowDeactivate(DocumentModel.Interop.Word.ApplicationEvents4_WindowDeactivateEventHandler)">
-            <summary>
-            Unsubscribes a handler from the WindowDeactivate event.
-            </summary>
-            <param name="param1">The delegate to remove from the WindowDeactivate event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_windowdeactivate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_WindowSelectionChange(DocumentModel.Interop.Word.ApplicationEvents4_WindowSelectionChangeEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnWindowSelectionChange">
             <summary>
             Subscribes a handler to the WindowSelectionChange event.
             </summary>
-            <param name="param1">The delegate to invoke when the WindowSelectionChange event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_windowselectionchange?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_WindowSelectionChange(DocumentModel.Interop.Word.ApplicationEvents4_WindowSelectionChangeEventHandler)">
-            <summary>
-            Unsubscribes a handler from the WindowSelectionChange event.
-            </summary>
-            <param name="param1">The delegate to remove from the WindowSelectionChange event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_windowselectionchange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_WindowBeforeRightClick(DocumentModel.Interop.Word.ApplicationEvents4_WindowBeforeRightClickEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnWindowBeforeRightClick">
             <summary>
             Subscribes a handler to the WindowBeforeRightClick event.
             </summary>
-            <param name="param1">The delegate to invoke when the WindowBeforeRightClick event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_windowbeforerightclick?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_WindowBeforeRightClick(DocumentModel.Interop.Word.ApplicationEvents4_WindowBeforeRightClickEventHandler)">
-            <summary>
-            Unsubscribes a handler from the WindowBeforeRightClick event.
-            </summary>
-            <param name="param1">The delegate to remove from the WindowBeforeRightClick event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_windowbeforerightclick?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_WindowBeforeDoubleClick(DocumentModel.Interop.Word.ApplicationEvents4_WindowBeforeDoubleClickEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnWindowBeforeDoubleClick">
             <summary>
             Subscribes a handler to the WindowBeforeDoubleClick event.
             </summary>
-            <param name="param1">The delegate to invoke when the WindowBeforeDoubleClick event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_windowbeforedoubleclick?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_WindowBeforeDoubleClick(DocumentModel.Interop.Word.ApplicationEvents4_WindowBeforeDoubleClickEventHandler)">
-            <summary>
-            Unsubscribes a handler from the WindowBeforeDoubleClick event.
-            </summary>
-            <param name="param1">The delegate to remove from the WindowBeforeDoubleClick event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_windowbeforedoubleclick?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_EPostagePropertyDialog(DocumentModel.Interop.Word.ApplicationEvents4_EPostagePropertyDialogEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnEPostagePropertyDialog">
             <summary>
             Subscribes a handler to the EPostagePropertyDialog event.
             </summary>
-            <param name="param1">The delegate to invoke when the EPostagePropertyDialog event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_epostagepropertydialog?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_EPostagePropertyDialog(DocumentModel.Interop.Word.ApplicationEvents4_EPostagePropertyDialogEventHandler)">
-            <summary>
-            Unsubscribes a handler from the EPostagePropertyDialog event.
-            </summary>
-            <param name="param1">The delegate to remove from the EPostagePropertyDialog event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_epostagepropertydialog?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_EPostageInsert(DocumentModel.Interop.Word.ApplicationEvents4_EPostageInsertEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnEPostageInsert">
             <summary>
             Subscribes a handler to the EPostageInsert event.
             </summary>
-            <param name="param1">The delegate to invoke when the EPostageInsert event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_epostageinsert?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_EPostageInsert(DocumentModel.Interop.Word.ApplicationEvents4_EPostageInsertEventHandler)">
-            <summary>
-            Unsubscribes a handler from the EPostageInsert event.
-            </summary>
-            <param name="param1">The delegate to remove from the EPostageInsert event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_epostageinsert?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_MailMergeAfterMerge(DocumentModel.Interop.Word.ApplicationEvents4_MailMergeAfterMergeEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnMailMergeAfterMerge">
             <summary>
             Subscribes a handler to the MailMergeAfterMerge event.
             </summary>
-            <param name="param1">The delegate to invoke when the MailMergeAfterMerge event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergeaftermerge?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_MailMergeAfterMerge(DocumentModel.Interop.Word.ApplicationEvents4_MailMergeAfterMergeEventHandler)">
-            <summary>
-            Unsubscribes a handler from the MailMergeAfterMerge event.
-            </summary>
-            <param name="param1">The delegate to remove from the MailMergeAfterMerge event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_mailmergeaftermerge?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_MailMergeAfterRecordMerge(DocumentModel.Interop.Word.ApplicationEvents4_MailMergeAfterRecordMergeEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnMailMergeAfterRecordMerge">
             <summary>
             Subscribes a handler to the MailMergeAfterRecordMerge event.
             </summary>
-            <param name="param1">The delegate to invoke when the MailMergeAfterRecordMerge event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergeafterrecordmerge?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_MailMergeAfterRecordMerge(DocumentModel.Interop.Word.ApplicationEvents4_MailMergeAfterRecordMergeEventHandler)">
-            <summary>
-            Unsubscribes a handler from the MailMergeAfterRecordMerge event.
-            </summary>
-            <param name="param1">The delegate to remove from the MailMergeAfterRecordMerge event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_mailmergeafterrecordmerge?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_MailMergeBeforeMerge(DocumentModel.Interop.Word.ApplicationEvents4_MailMergeBeforeMergeEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnMailMergeBeforeMerge">
             <summary>
             Subscribes a handler to the MailMergeBeforeMerge event.
             </summary>
-            <param name="param1">The delegate to invoke when the MailMergeBeforeMerge event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergebeforemerge?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_MailMergeBeforeMerge(DocumentModel.Interop.Word.ApplicationEvents4_MailMergeBeforeMergeEventHandler)">
-            <summary>
-            Unsubscribes a handler from the MailMergeBeforeMerge event.
-            </summary>
-            <param name="param1">The delegate to remove from the MailMergeBeforeMerge event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_mailmergebeforemerge?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_MailMergeBeforeRecordMerge(DocumentModel.Interop.Word.ApplicationEvents4_MailMergeBeforeRecordMergeEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnMailMergeBeforeRecordMerge">
             <summary>
             Subscribes a handler to the MailMergeBeforeRecordMerge event.
             </summary>
-            <param name="param1">The delegate to invoke when the MailMergeBeforeRecordMerge event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergebeforerecordmerge?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_MailMergeBeforeRecordMerge(DocumentModel.Interop.Word.ApplicationEvents4_MailMergeBeforeRecordMergeEventHandler)">
-            <summary>
-            Unsubscribes a handler from the MailMergeBeforeRecordMerge event.
-            </summary>
-            <param name="param1">The delegate to remove from the MailMergeBeforeRecordMerge event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_mailmergebeforerecordmerge?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_MailMergeDataSourceLoad(DocumentModel.Interop.Word.ApplicationEvents4_MailMergeDataSourceLoadEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnMailMergeDataSourceLoad">
             <summary>
             Subscribes a handler to the MailMergeDataSourceLoad event.
             </summary>
-            <param name="param1">The delegate to invoke when the MailMergeDataSourceLoad event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergedatasourceload?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_MailMergeDataSourceLoad(DocumentModel.Interop.Word.ApplicationEvents4_MailMergeDataSourceLoadEventHandler)">
-            <summary>
-            Unsubscribes a handler from the MailMergeDataSourceLoad event.
-            </summary>
-            <param name="param1">The delegate to remove from the MailMergeDataSourceLoad event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_mailmergedatasourceload?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_MailMergeDataSourceValidate(DocumentModel.Interop.Word.ApplicationEvents4_MailMergeDataSourceValidateEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnMailMergeDataSourceValidate">
             <summary>
             Subscribes a handler to the MailMergeDataSourceValidate event.
             </summary>
-            <param name="param1">The delegate to invoke when the MailMergeDataSourceValidate event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergedatasourcevalidate?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_MailMergeDataSourceValidate(DocumentModel.Interop.Word.ApplicationEvents4_MailMergeDataSourceValidateEventHandler)">
-            <summary>
-            Unsubscribes a handler from the MailMergeDataSourceValidate event.
-            </summary>
-            <param name="param1">The delegate to remove from the MailMergeDataSourceValidate event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_mailmergedatasourcevalidate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_MailMergeWizardSendToCustom(DocumentModel.Interop.Word.ApplicationEvents4_MailMergeWizardSendToCustomEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnMailMergeWizardSendToCustom">
             <summary>
             Subscribes a handler to the MailMergeWizardSendToCustom event.
             </summary>
-            <param name="param1">The delegate to invoke when the MailMergeWizardSendToCustom event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergewizardsendtocustom?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_MailMergeWizardSendToCustom(DocumentModel.Interop.Word.ApplicationEvents4_MailMergeWizardSendToCustomEventHandler)">
-            <summary>
-            Unsubscribes a handler from the MailMergeWizardSendToCustom event.
-            </summary>
-            <param name="param1">The delegate to remove from the MailMergeWizardSendToCustom event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_mailmergewizardsendtocustom?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_MailMergeWizardStateChange(DocumentModel.Interop.Word.ApplicationEvents4_MailMergeWizardStateChangeEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnMailMergeWizardStateChange">
             <summary>
             Subscribes a handler to the MailMergeWizardStateChange event.
             </summary>
-            <param name="param1">The delegate to invoke when the MailMergeWizardStateChange event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergewizardstatechange?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_MailMergeWizardStateChange(DocumentModel.Interop.Word.ApplicationEvents4_MailMergeWizardStateChangeEventHandler)">
-            <summary>
-            Unsubscribes a handler from the MailMergeWizardStateChange event.
-            </summary>
-            <param name="param1">The delegate to remove from the MailMergeWizardStateChange event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_mailmergewizardstatechange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_WindowSize(DocumentModel.Interop.Word.ApplicationEvents4_WindowSizeEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnWindowSize">
             <summary>
             Subscribes a handler to the WindowSize event.
             </summary>
-            <param name="param1">The delegate to invoke when the WindowSize event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_windowsize?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_WindowSize(DocumentModel.Interop.Word.ApplicationEvents4_WindowSizeEventHandler)">
-            <summary>
-            Unsubscribes a handler from the WindowSize event.
-            </summary>
-            <param name="param1">The delegate to remove from the WindowSize event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_windowsize?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_XMLSelectionChange(DocumentModel.Interop.Word.ApplicationEvents4_XMLSelectionChangeEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnXMLSelectionChange">
             <summary>
             Subscribes a handler to the XMLSelectionChange event.
             </summary>
-            <param name="param1">The delegate to invoke when the XMLSelectionChange event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_xmlselectionchange?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_XMLSelectionChange(DocumentModel.Interop.Word.ApplicationEvents4_XMLSelectionChangeEventHandler)">
-            <summary>
-            Unsubscribes a handler from the XMLSelectionChange event.
-            </summary>
-            <param name="param1">The delegate to remove from the XMLSelectionChange event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_xmlselectionchange?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_XMLValidationError(DocumentModel.Interop.Word.ApplicationEvents4_XMLValidationErrorEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnXMLValidationError">
             <summary>
             Subscribes a handler to the XMLValidationError event.
             </summary>
-            <param name="param1">The delegate to invoke when the XMLValidationError event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_xmlvalidationerror?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_XMLValidationError(DocumentModel.Interop.Word.ApplicationEvents4_XMLValidationErrorEventHandler)">
-            <summary>
-            Unsubscribes a handler from the XMLValidationError event.
-            </summary>
-            <param name="param1">The delegate to remove from the XMLValidationError event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_xmlvalidationerror?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_DocumentSync(DocumentModel.Interop.Word.ApplicationEvents4_DocumentSyncEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnDocumentSync">
             <summary>
             Subscribes a handler to the DocumentSync event.
             </summary>
-            <param name="param1">The delegate to invoke when the DocumentSync event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_documentsync?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_DocumentSync(DocumentModel.Interop.Word.ApplicationEvents4_DocumentSyncEventHandler)">
-            <summary>
-            Unsubscribes a handler from the DocumentSync event.
-            </summary>
-            <param name="param1">The delegate to remove from the DocumentSync event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_documentsync?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_EPostageInsertEx(DocumentModel.Interop.Word.ApplicationEvents4_EPostageInsertExEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnEPostageInsertEx">
             <summary>
             Subscribes a handler to the EPostageInsertEx event.
             </summary>
-            <param name="param1">The delegate to invoke when the EPostageInsertEx event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_epostageinsertex?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_EPostageInsertEx(DocumentModel.Interop.Word.ApplicationEvents4_EPostageInsertExEventHandler)">
-            <summary>
-            Unsubscribes a handler from the EPostageInsertEx event.
-            </summary>
-            <param name="param1">The delegate to remove from the EPostageInsertEx event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_epostageinsertex?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_MailMergeDataSourceValidate2(DocumentModel.Interop.Word.ApplicationEvents4_MailMergeDataSourceValidate2EventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnMailMergeDataSourceValidate2">
             <summary>
             Subscribes a handler to the MailMergeDataSourceValidate2 event.
             </summary>
-            <param name="param1">The delegate to invoke when the MailMergeDataSourceValidate2 event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergedatasourcevalidate2?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_MailMergeDataSourceValidate2(DocumentModel.Interop.Word.ApplicationEvents4_MailMergeDataSourceValidate2EventHandler)">
-            <summary>
-            Unsubscribes a handler from the MailMergeDataSourceValidate2 event.
-            </summary>
-            <param name="param1">The delegate to remove from the MailMergeDataSourceValidate2 event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_mailmergedatasourcevalidate2?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_ProtectedViewWindowOpen(DocumentModel.Interop.Word.ApplicationEvents4_ProtectedViewWindowOpenEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnProtectedViewWindowOpen">
             <summary>
             Subscribes a handler to the ProtectedViewWindowOpen event.
             </summary>
-            <param name="param1">The delegate to invoke when the ProtectedViewWindowOpen event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_protectedviewwindowopen?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_ProtectedViewWindowOpen(DocumentModel.Interop.Word.ApplicationEvents4_ProtectedViewWindowOpenEventHandler)">
-            <summary>
-            Unsubscribes a handler from the ProtectedViewWindowOpen event.
-            </summary>
-            <param name="param1">The delegate to remove from the ProtectedViewWindowOpen event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_protectedviewwindowopen?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_ProtectedViewWindowBeforeEdit(DocumentModel.Interop.Word.ApplicationEvents4_ProtectedViewWindowBeforeEditEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnProtectedViewWindowBeforeEdit">
             <summary>
             Subscribes a handler to the ProtectedViewWindowBeforeEdit event.
             </summary>
-            <param name="param1">The delegate to invoke when the ProtectedViewWindowBeforeEdit event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_protectedviewwindowbeforeedit?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_ProtectedViewWindowBeforeEdit(DocumentModel.Interop.Word.ApplicationEvents4_ProtectedViewWindowBeforeEditEventHandler)">
-            <summary>
-            Unsubscribes a handler from the ProtectedViewWindowBeforeEdit event.
-            </summary>
-            <param name="param1">The delegate to remove from the ProtectedViewWindowBeforeEdit event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_protectedviewwindowbeforeedit?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_ProtectedViewWindowBeforeClose(DocumentModel.Interop.Word.ApplicationEvents4_ProtectedViewWindowBeforeCloseEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnProtectedViewWindowBeforeClose">
             <summary>
             Subscribes a handler to the ProtectedViewWindowBeforeClose event.
             </summary>
-            <param name="param1">The delegate to invoke when the ProtectedViewWindowBeforeClose event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_protectedviewwindowbeforeclose?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_ProtectedViewWindowBeforeClose(DocumentModel.Interop.Word.ApplicationEvents4_ProtectedViewWindowBeforeCloseEventHandler)">
-            <summary>
-            Unsubscribes a handler from the ProtectedViewWindowBeforeClose event.
-            </summary>
-            <param name="param1">The delegate to remove from the ProtectedViewWindowBeforeClose event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_protectedviewwindowbeforeclose?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_ProtectedViewWindowSize(DocumentModel.Interop.Word.ApplicationEvents4_ProtectedViewWindowSizeEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnProtectedViewWindowSize">
             <summary>
             Subscribes a handler to the ProtectedViewWindowSize event.
             </summary>
-            <param name="param1">The delegate to invoke when the ProtectedViewWindowSize event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_protectedviewwindowsize?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_ProtectedViewWindowSize(DocumentModel.Interop.Word.ApplicationEvents4_ProtectedViewWindowSizeEventHandler)">
-            <summary>
-            Unsubscribes a handler from the ProtectedViewWindowSize event.
-            </summary>
-            <param name="param1">The delegate to remove from the ProtectedViewWindowSize event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_protectedviewwindowsize?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_ProtectedViewWindowActivate(DocumentModel.Interop.Word.ApplicationEvents4_ProtectedViewWindowActivateEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnProtectedViewWindowActivate">
             <summary>
             Subscribes a handler to the ProtectedViewWindowActivate event.
             </summary>
-            <param name="param1">The delegate to invoke when the ProtectedViewWindowActivate event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_protectedviewwindowactivate?view=word-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_ProtectedViewWindowActivate(DocumentModel.Interop.Word.ApplicationEvents4_ProtectedViewWindowActivateEventHandler)">
-            <summary>
-            Unsubscribes a handler from the ProtectedViewWindowActivate event.
-            </summary>
-            <param name="param1">The delegate to remove from the ProtectedViewWindowActivate event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_protectedviewwindowactivate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.add_ProtectedViewWindowDeactivate(DocumentModel.Interop.Word.ApplicationEvents4_ProtectedViewWindowDeactivateEventHandler)">
+        <member name="E:DocumentModel.Interop.Word.ApplicationEvents.OnProtectedViewWindowDeactivate">
             <summary>
             Subscribes a handler to the ProtectedViewWindowDeactivate event.
             </summary>
-            <param name="param1">The delegate to invoke when the ProtectedViewWindowDeactivate event is raised.</param>
             <remarks>
             Microsoft Learn API reference.
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_protectedviewwindowdeactivate?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.ApplicationEvents4_Event.remove_ProtectedViewWindowDeactivate(DocumentModel.Interop.Word.ApplicationEvents4_ProtectedViewWindowDeactivateEventHandler)">
-            <summary>
-            Unsubscribes a handler from the ProtectedViewWindowDeactivate event.
-            </summary>
-            <param name="param1">The delegate to remove from the ProtectedViewWindowDeactivate event.</param>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.remove_protectedviewwindowdeactivate?view=word-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Word.ApplicationEvents_Event">
-            <summary>
-            Events class for Microsoft Word 97 Application object events.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents_event?view=word-pia"/>
         </member>
         <member name="T:DocumentModel.Interop.Word.AutoCaption">
             <summary>
@@ -62436,11 +60496,11 @@
         </member>
         <member name="T:DocumentModel.Interop.Word.IApplicationEvents4">
             <summary>
-            Events interface for WordApplication object events.This is a .NET interface created when processing a COM coclass that is required by managed code for interoperability with the corresponding COM object. This interface implements all events of earlier interfaces and any additional new events. Use this interface only when the event you want to use shares the same name as a method of the COM object; in this case, cast to this interface to connect to the event, and cast to the primary interface to call the method. Otherwise, use the .NET interface that is derived from the COM coclass to access methods, properties, and events of the COM object.
+            Events interface for WordApplication object events.This is a .NET interface created when processing a COM coclass that is required by managed code for interoperability with the corresponding COM object. This interface implements all events of earlier interfaces and any additional new events. Use this interface only when the event you want to use shares the same name as a method of the COM Onobject; in this case, cast to this interface to connect to the event, and cast to the primary interface to call the method. Otherwise, use the .NET interface that is derived from the COM coclass to access methods, properties, and events of the COM object.
             </summary>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.Startup">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnStartup">
             <summary>
             Subscribes a handler to the Startup event.
             </summary>
@@ -62449,7 +60509,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_startup?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.Quit">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnQuit">
             <summary>
             Subscribes a handler to the Quit event.
             </summary>
@@ -62458,7 +60518,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_quit?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.DocumentChange">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnDocumentChange">
             <summary>
             Subscribes a handler to the DocumentChange event.
             </summary>
@@ -62467,7 +60527,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_documentchange?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.DocumentOpen">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnDocumentOpen">
             <summary>
             Subscribes a handler to the DocumentOpen event.
             </summary>
@@ -62476,7 +60536,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_documentopen?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.DocumentBeforeClose">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnDocumentBeforeClose">
             <summary>
             Subscribes a handler to the DocumentBeforeClose event.
             </summary>
@@ -62485,7 +60545,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_documentbeforeclose?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.DocumentBeforePrint">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnDocumentBeforePrint">
             <summary>
             Subscribes a handler to the DocumentBeforePrint event.
             </summary>
@@ -62494,7 +60554,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_documentbeforeprint?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.DocumentBeforeSave">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnDocumentBeforeSave">
             <summary>
             Subscribes a handler to the DocumentBeforeSave event.
             </summary>
@@ -62503,7 +60563,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_documentbeforesave?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.NewDocument">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnNewDocument">
             <summary>
             Subscribes a handler to the NewDocument event.
             </summary>
@@ -62512,7 +60572,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_newdocument?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.WindowActivate">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnWindowActivate">
             <summary>
             Subscribes a handler to the WindowActivate event.
             </summary>
@@ -62521,7 +60581,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_windowactivate?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.WindowDeactivate">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnWindowDeactivate">
             <summary>
             Subscribes a handler to the WindowDeactivate event.
             </summary>
@@ -62530,7 +60590,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_windowdeactivate?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.WindowSelectionChange">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnWindowSelectionChange">
             <summary>
             Subscribes a handler to the WindowSelectionChange event.
             </summary>
@@ -62539,7 +60599,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_windowselectionchange?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.WindowBeforeRightClick">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnWindowBeforeRightClick">
             <summary>
             Subscribes a handler to the WindowBeforeRightClick event.
             </summary>
@@ -62548,7 +60608,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_windowbeforerightclick?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.WindowBeforeDoubleClick">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnWindowBeforeDoubleClick">
             <summary>
             Subscribes a handler to the WindowBeforeDoubleClick event.
             </summary>
@@ -62557,7 +60617,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_windowbeforedoubleclick?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.EPostagePropertyDialog">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnEPostagePropertyDialog">
             <summary>
             Subscribes a handler to the EPostagePropertyDialog event.
             </summary>
@@ -62566,7 +60626,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_epostagepropertydialog?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.EPostageInsert">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnEPostageInsert">
             <summary>
             Subscribes a handler to the EPostageInsert event.
             </summary>
@@ -62575,7 +60635,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_epostageinsert?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.MailMergeAfterMerge">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnMailMergeAfterMerge">
             <summary>
             Subscribes a handler to the MailMergeAfterMerge event.
             </summary>
@@ -62584,7 +60644,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergeaftermerge?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.MailMergeAfterRecordMerge">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnMailMergeAfterRecordMerge">
             <summary>
             Subscribes a handler to the MailMergeAfterRecordMerge event.
             </summary>
@@ -62593,7 +60653,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergeafterrecordmerge?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.MailMergeBeforeMerge">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnMailMergeBeforeMerge">
             <summary>
             Subscribes a handler to the MailMergeBeforeMerge event.
             </summary>
@@ -62602,7 +60662,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergebeforemerge?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.MailMergeBeforeRecordMerge">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnMailMergeBeforeRecordMerge">
             <summary>
             Subscribes a handler to the MailMergeBeforeRecordMerge event.
             </summary>
@@ -62611,7 +60671,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergebeforerecordmerge?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.MailMergeDataSourceLoad">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnMailMergeDataSourceLoad">
             <summary>
             Subscribes a handler to the MailMergeDataSourceLoad event.
             </summary>
@@ -62620,7 +60680,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergedatasourceload?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.MailMergeDataSourceValidate">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnMailMergeDataSourceValidate">
             <summary>
             Subscribes a handler to the MailMergeDataSourceValidate event.
             </summary>
@@ -62629,7 +60689,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergedatasourcevalidate?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.MailMergeWizardSendToCustom">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnMailMergeWizardSendToCustom">
             <summary>
             Subscribes a handler to the MailMergeWizardSendToCustom event.
             </summary>
@@ -62638,7 +60698,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergewizardsendtocustom?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.MailMergeWizardStateChange">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnMailMergeWizardStateChange">
             <summary>
             Subscribes a handler to the MailMergeWizardStateChange event.
             </summary>
@@ -62647,7 +60707,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergewizardstatechange?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.WindowSize">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnWindowSize">
             <summary>
             Subscribes a handler to the WindowSize event.
             </summary>
@@ -62656,7 +60716,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_windowsize?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.XMLSelectionChange">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnXMLSelectionChange">
             <summary>
             Subscribes a handler to the XMLSelectionChange event.
             </summary>
@@ -62665,7 +60725,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_xmlselectionchange?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.XMLValidationError">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnXMLValidationError">
             <summary>
             Subscribes a handler to the XMLValidationError event.
             </summary>
@@ -62674,7 +60734,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_xmlvalidationerror?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.DocumentSync">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnDocumentSync">
             <summary>
             Subscribes a handler to the DocumentSync event.
             </summary>
@@ -62683,7 +60743,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_documentsync?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.EPostageInsertEx">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnEPostageInsertEx">
             <summary>
             Subscribes a handler to the EPostageInsertEx event.
             </summary>
@@ -62692,7 +60752,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_epostageinsertex?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.MailMergeDataSourceValidate2">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnMailMergeDataSourceValidate2">
             <summary>
             Subscribes a handler to the MailMergeDataSourceValidate2 event.
             </summary>
@@ -62701,7 +60761,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergedatasourcevalidate2?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.ProtectedViewWindowOpen">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnProtectedViewWindowOpen">
             <summary>
             Subscribes a handler to the ProtectedViewWindowOpen event.
             </summary>
@@ -62710,7 +60770,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_protectedviewwindowopen?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.ProtectedViewWindowBeforeEdit">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnProtectedViewWindowBeforeEdit">
             <summary>
             Subscribes a handler to the ProtectedViewWindowBeforeEdit event.
             </summary>
@@ -62719,7 +60779,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_protectedviewwindowbeforeedit?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.ProtectedViewWindowBeforeClose">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnProtectedViewWindowBeforeClose">
             <summary>
             Subscribes a handler to the ProtectedViewWindowBeforeClose event.
             </summary>
@@ -62728,7 +60788,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_protectedviewwindowbeforeclose?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.ProtectedViewWindowSize">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnProtectedViewWindowSize">
             <summary>
             Subscribes a handler to the ProtectedViewWindowSize event.
             </summary>
@@ -62737,7 +60797,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_protectedviewwindowsize?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.ProtectedViewWindowActivate">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnProtectedViewWindowActivate">
             <summary>
             Subscribes a handler to the ProtectedViewWindowActivate event.
             </summary>
@@ -62746,7 +60806,7 @@
             </remarks>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_protectedviewwindowactivate?view=word-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.ProtectedViewWindowDeactivate">
+        <member name="E:DocumentModel.Interop.Word.IApplicationEvents4.OnProtectedViewWindowDeactivate">
             <summary>
             Subscribes a handler to the ProtectedViewWindowDeactivate event.
             </summary>

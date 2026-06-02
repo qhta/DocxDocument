@@ -1,7 +1,7 @@
 namespace DocumentModel.Interop.Word;
 
 /// <summary>
-/// Events interface for WordApplication object events.This is a .NET interface created when processing a COM coclass that is required by managed code for interoperability with the corresponding COM object. This interface implements all events of earlier interfaces and any additional new events. Use this interface only when the event you want to use shares the same name as a method of the COM object; in this case, cast to this interface to connect to the event, and cast to the primary interface to call the method. Otherwise, use the .NET interface that is derived from the COM coclass to access methods, properties, and events of the COM object.
+/// Events interface for WordApplication object events.This is a .NET interface created when processing a COM coclass that is required by managed code for interoperability with the corresponding COM object. This interface implements all events of earlier interfaces and any additional new events. Use this interface only when the event you want to use shares the same name as a method of the COM Onobject; in this case, cast to this interface to connect to the event, and cast to the primary interface to call the method. Otherwise, use the .NET interface that is derived from the COM coclass to access methods, properties, and events of the COM object.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event?view=word-pia"/>
 public interface IApplicationEvents4
@@ -14,7 +14,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_startup?view=word-pia"/>
-  public event ApplicationEvents4_StartupEventHandler Startup;
+  public event ApplicationEvents4_StartupEventHandler OnStartup;
 
   /// <summary>
   /// Subscribes a handler to the Quit event.
@@ -23,7 +23,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_quit?view=word-pia"/>
-  public event ApplicationEvents4_QuitEventHandler Quit;
+  public event ApplicationEvents4_QuitEventHandler OnQuit;
 
   /// <summary>
   /// Subscribes a handler to the DocumentChange event.
@@ -32,7 +32,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_documentchange?view=word-pia"/>
-  public event ApplicationEvents4_DocumentChangeEventHandler DocumentChange;
+  public event ApplicationEvents4_DocumentChangeEventHandler OnDocumentChange;
   /// <summary>
   /// Subscribes a handler to the DocumentOpen event.
   /// </summary>
@@ -40,7 +40,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_documentopen?view=word-pia"/>
-  public event ApplicationEvents4_DocumentOpenEventHandler DocumentOpen;
+  public event ApplicationEvents4_DocumentOpenEventHandler OnDocumentOpen;
 
   /// <summary>
   /// Subscribes a handler to the DocumentBeforeClose event.
@@ -49,7 +49,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_documentbeforeclose?view=word-pia"/>
-  public event ApplicationEvents4_DocumentBeforeCloseEventHandler DocumentBeforeClose;
+  public event ApplicationEvents4_DocumentBeforeCloseEventHandler OnDocumentBeforeClose;
 
   /// <summary>
   /// Subscribes a handler to the DocumentBeforePrint event.
@@ -58,7 +58,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_documentbeforeprint?view=word-pia"/>
-  public event ApplicationEvents4_DocumentBeforePrintEventHandler DocumentBeforePrint;
+  public event ApplicationEvents4_DocumentBeforePrintEventHandler OnDocumentBeforePrint;
 
   /// <summary>
   /// Subscribes a handler to the DocumentBeforeSave event.
@@ -67,7 +67,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_documentbeforesave?view=word-pia"/>
-  public event ApplicationEvents4_DocumentBeforeSaveEventHandler DocumentBeforeSave;
+  public event ApplicationEvents4_DocumentBeforeSaveEventHandler OnDocumentBeforeSave;
 
   /// <summary>
   /// Subscribes a handler to the NewDocument event.
@@ -76,7 +76,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_newdocument?view=word-pia"/>
-  public event ApplicationEvents4_NewDocumentEventHandler NewDocument;
+  public event ApplicationEvents4_NewDocumentEventHandler OnNewDocument;
 
   /// <summary>
   /// Subscribes a handler to the WindowActivate event.
@@ -85,7 +85,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_windowactivate?view=word-pia"/>
-  public event ApplicationEvents4_WindowActivateEventHandler WindowActivate;
+  public event ApplicationEvents4_WindowActivateEventHandler OnWindowActivate;
 
   /// <summary>
   /// Subscribes a handler to the WindowDeactivate event.
@@ -94,7 +94,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_windowdeactivate?view=word-pia"/>
-  public event ApplicationEvents4_WindowDeactivateEventHandler WindowDeactivate;
+  public event ApplicationEvents4_WindowDeactivateEventHandler OnWindowDeactivate;
 
   /// <summary>
   /// Subscribes a handler to the WindowSelectionChange event.
@@ -103,7 +103,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_windowselectionchange?view=word-pia"/>
-  public event ApplicationEvents4_WindowSelectionChangeEventHandler WindowSelectionChange;
+  public event ApplicationEvents4_WindowSelectionChangeEventHandler OnWindowSelectionChange;
 
   /// <summary>
   /// Subscribes a handler to the WindowBeforeRightClick event.
@@ -112,7 +112,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_windowbeforerightclick?view=word-pia"/>
-  public event ApplicationEvents4_WindowBeforeRightClickEventHandler WindowBeforeRightClick;
+  public event ApplicationEvents4_WindowBeforeRightClickEventHandler OnWindowBeforeRightClick;
 
   /// <summary>
   /// Subscribes a handler to the WindowBeforeDoubleClick event.
@@ -121,7 +121,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_windowbeforedoubleclick?view=word-pia"/>
-  public event ApplicationEvents4_WindowBeforeDoubleClickEventHandler WindowBeforeDoubleClick;
+  public event ApplicationEvents4_WindowBeforeDoubleClickEventHandler OnWindowBeforeDoubleClick;
 
   /// <summary>
   /// Subscribes a handler to the EPostagePropertyDialog event.
@@ -130,7 +130,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_epostagepropertydialog?view=word-pia"/>
-  public event ApplicationEvents4_EPostagePropertyDialogEventHandler EPostagePropertyDialog;
+  public event ApplicationEvents4_EPostagePropertyDialogEventHandler OnEPostagePropertyDialog;
 
   /// <summary>
   /// Subscribes a handler to the EPostageInsert event.
@@ -139,7 +139,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_epostageinsert?view=word-pia"/>
-  public event ApplicationEvents4_EPostageInsertEventHandler EPostageInsert;
+  public event ApplicationEvents4_EPostageInsertEventHandler OnEPostageInsert;
 
   /// <summary>
   /// Subscribes a handler to the MailMergeAfterMerge event.
@@ -148,7 +148,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergeaftermerge?view=word-pia"/>
-  public event ApplicationEvents4_MailMergeAfterMergeEventHandler MailMergeAfterMerge;
+  public event ApplicationEvents4_MailMergeAfterMergeEventHandler OnMailMergeAfterMerge;
 
   /// <summary>
   /// Subscribes a handler to the MailMergeAfterRecordMerge event.
@@ -157,7 +157,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergeafterrecordmerge?view=word-pia"/>
-  public event ApplicationEvents4_MailMergeAfterRecordMergeEventHandler MailMergeAfterRecordMerge;
+  public event ApplicationEvents4_MailMergeAfterRecordMergeEventHandler OnMailMergeAfterRecordMerge;
 
   /// <summary>
   /// Subscribes a handler to the MailMergeBeforeMerge event.
@@ -166,7 +166,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergebeforemerge?view=word-pia"/>
-  public event ApplicationEvents4_MailMergeBeforeMergeEventHandler MailMergeBeforeMerge;
+  public event ApplicationEvents4_MailMergeBeforeMergeEventHandler OnMailMergeBeforeMerge;
 
   /// <summary>
   /// Subscribes a handler to the MailMergeBeforeRecordMerge event.
@@ -175,7 +175,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergebeforerecordmerge?view=word-pia"/>
-  public event ApplicationEvents4_MailMergeBeforeRecordMergeEventHandler MailMergeBeforeRecordMerge;
+  public event ApplicationEvents4_MailMergeBeforeRecordMergeEventHandler OnMailMergeBeforeRecordMerge;
 
   /// <summary>
   /// Subscribes a handler to the MailMergeDataSourceLoad event.
@@ -184,7 +184,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergedatasourceload?view=word-pia"/>
-  public event ApplicationEvents4_MailMergeDataSourceLoadEventHandler MailMergeDataSourceLoad;
+  public event ApplicationEvents4_MailMergeDataSourceLoadEventHandler OnMailMergeDataSourceLoad;
 
   /// <summary>
   /// Subscribes a handler to the MailMergeDataSourceValidate event.
@@ -193,7 +193,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergedatasourcevalidate?view=word-pia"/>
-  public event ApplicationEvents4_MailMergeDataSourceValidateEventHandler MailMergeDataSourceValidate;
+  public event ApplicationEvents4_MailMergeDataSourceValidateEventHandler OnMailMergeDataSourceValidate;
 
   /// <summary>
   /// Subscribes a handler to the MailMergeWizardSendToCustom event.
@@ -202,7 +202,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergewizardsendtocustom?view=word-pia"/>
-  public event ApplicationEvents4_MailMergeWizardSendToCustomEventHandler MailMergeWizardSendToCustom;
+  public event ApplicationEvents4_MailMergeWizardSendToCustomEventHandler OnMailMergeWizardSendToCustom;
 
   /// <summary>
   /// Subscribes a handler to the MailMergeWizardStateChange event.
@@ -211,7 +211,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergewizardstatechange?view=word-pia"/>
-  public event ApplicationEvents4_MailMergeWizardStateChangeEventHandler MailMergeWizardStateChange;
+  public event ApplicationEvents4_MailMergeWizardStateChangeEventHandler OnMailMergeWizardStateChange;
 
   /// <summary>
   /// Subscribes a handler to the WindowSize event.
@@ -220,7 +220,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_windowsize?view=word-pia"/>
-  public event ApplicationEvents4_WindowSizeEventHandler WindowSize;
+  public event ApplicationEvents4_WindowSizeEventHandler OnWindowSize;
 
   /// <summary>
   /// Subscribes a handler to the XMLSelectionChange event.
@@ -229,7 +229,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_xmlselectionchange?view=word-pia"/>
-  public event ApplicationEvents4_XMLSelectionChangeEventHandler XMLSelectionChange;
+  public event ApplicationEvents4_XMLSelectionChangeEventHandler OnXMLSelectionChange;
 
   /// <summary>
   /// Subscribes a handler to the XMLValidationError event.
@@ -238,7 +238,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_xmlvalidationerror?view=word-pia"/>
-  public event ApplicationEvents4_XMLValidationErrorEventHandler XMLValidationError;
+  public event ApplicationEvents4_XMLValidationErrorEventHandler OnXMLValidationError;
 
   /// <summary>
   /// Subscribes a handler to the DocumentSync event.
@@ -247,7 +247,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_documentsync?view=word-pia"/>
-  public event ApplicationEvents4_DocumentSyncEventHandler DocumentSync;
+  public event ApplicationEvents4_DocumentSyncEventHandler OnDocumentSync;
 
   /// <summary>
   /// Subscribes a handler to the EPostageInsertEx event.
@@ -256,7 +256,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_epostageinsertex?view=word-pia"/>
-  public event ApplicationEvents4_EPostageInsertExEventHandler EPostageInsertEx;
+  public event ApplicationEvents4_EPostageInsertExEventHandler OnEPostageInsertEx;
 
   /// <summary>
   /// Subscribes a handler to the MailMergeDataSourceValidate2 event.
@@ -265,7 +265,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_mailmergedatasourcevalidate2?view=word-pia"/>
-  public event ApplicationEvents4_MailMergeDataSourceValidate2EventHandler MailMergeDataSourceValidate2;
+  public event ApplicationEvents4_MailMergeDataSourceValidate2EventHandler OnMailMergeDataSourceValidate2;
 
   /// <summary>
   /// Subscribes a handler to the ProtectedViewWindowOpen event.
@@ -274,7 +274,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_protectedviewwindowopen?view=word-pia"/>
-  public event ApplicationEvents4_ProtectedViewWindowOpenEventHandler ProtectedViewWindowOpen;
+  public event ApplicationEvents4_ProtectedViewWindowOpenEventHandler OnProtectedViewWindowOpen;
 
   /// <summary>
   /// Subscribes a handler to the ProtectedViewWindowBeforeEdit event.
@@ -283,7 +283,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_protectedviewwindowbeforeedit?view=word-pia"/>
-  public event ApplicationEvents4_ProtectedViewWindowBeforeEditEventHandler ProtectedViewWindowBeforeEdit;
+  public event ApplicationEvents4_ProtectedViewWindowBeforeEditEventHandler OnProtectedViewWindowBeforeEdit;
 
   /// <summary>
   /// Subscribes a handler to the ProtectedViewWindowBeforeClose event.
@@ -292,7 +292,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_protectedviewwindowbeforeclose?view=word-pia"/>
-  public event ApplicationEvents4_ProtectedViewWindowBeforeCloseEventHandler ProtectedViewWindowBeforeClose;
+  public event ApplicationEvents4_ProtectedViewWindowBeforeCloseEventHandler OnProtectedViewWindowBeforeClose;
 
   /// <summary>
   /// Subscribes a handler to the ProtectedViewWindowSize event.
@@ -301,7 +301,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_protectedviewwindowsize?view=word-pia"/>
-  public event ApplicationEvents4_ProtectedViewWindowSizeEventHandler ProtectedViewWindowSize;
+  public event ApplicationEvents4_ProtectedViewWindowSizeEventHandler OnProtectedViewWindowSize;
 
   /// <summary>
   /// Subscribes a handler to the ProtectedViewWindowActivate event.
@@ -310,7 +310,7 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_protectedviewwindowactivate?view=word-pia"/>
-  public event ApplicationEvents4_ProtectedViewWindowActivateEventHandler ProtectedViewWindowActivate;
+  public event ApplicationEvents4_ProtectedViewWindowActivateEventHandler OnProtectedViewWindowActivate;
 
   /// <summary>
   /// Subscribes a handler to the ProtectedViewWindowDeactivate event.
@@ -319,5 +319,5 @@ public interface IApplicationEvents4
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents4_event.add_protectedviewwindowdeactivate?view=word-pia"/>
-  public event ApplicationEvents4_ProtectedViewWindowDeactivateEventHandler ProtectedViewWindowDeactivate;
+  public event ApplicationEvents4_ProtectedViewWindowDeactivateEventHandler OnProtectedViewWindowDeactivate;
 }
