@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a combo box control on a command bar.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcombobox?view=office-pia"/>
-public partial interface ICommandBarComboBox: _CommandBarComboBox, _CommandBarComboBoxEvents_Event
+public partial interface ICommandBarComboBox: _ICommandBarComboBox, _ICommandBarComboBoxEvents_Event
 {
 }
 

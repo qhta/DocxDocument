@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a command bar control.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol?view=office-pia"/>
-public partial class CommandBarControl
+public partial class CommandBarControl: _MsoOleAccDispObj
 {
   /// <summary>
   /// Invokes `accSelect`.

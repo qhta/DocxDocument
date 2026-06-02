@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a custom task pane in the container application.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customtaskpane?view=office-pia"/>
-public partial interface ICustomTaskPane: _CustomTaskPane, _CustomTaskPaneEvents_Event
+public partial interface ICustomTaskPane: _ICustomTaskPane, _ICustomTaskPaneEvents_Event
 {
 }
 

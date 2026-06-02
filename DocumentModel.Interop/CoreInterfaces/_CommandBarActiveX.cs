@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbaractivex?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface _CommandBarActiveX: CommandBarControl
+public partial interface _ICommandBarActiveX: ICommandBarControl
 {
   /// <summary>
   /// Gets or sets the `accParent` property.
@@ -208,6 +208,9 @@ public partial interface _CommandBarActiveX: CommandBarControl
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbaractivex.querycontrolinterface?view=office-pia"/>
   public object QueryControlInterface { get; }
+  /// <summary>
+  /// Gets or sets the `InitWith` property.
+  /// </summary>
   public object InitWith { set; }
   /// <summary>
   /// Gets the `InstanceIdPtr` property.

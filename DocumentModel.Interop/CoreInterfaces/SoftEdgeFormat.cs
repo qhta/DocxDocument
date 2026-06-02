@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `SoftEdgeFormat` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.softedgeformat?view=office-pia"/>
-public partial interface ISoftEdgeFormat: InteropObject
+public partial interface ISoftEdgeFormat: IInteropObject
 {
   /// <summary>
   /// Gets or sets the `Type` property.

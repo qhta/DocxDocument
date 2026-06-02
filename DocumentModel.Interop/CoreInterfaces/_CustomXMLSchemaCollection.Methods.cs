@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a collection of CustomXMLSchema objects attached to a data stream.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlschemacollection?view=office-pia"/>
-public partial interface _CustomXMLSchemaCollection
+public partial interface _ICustomXMLSchemaCollection
 {
   /// <summary>
   /// Adds a schema to the custom XML schema collection.

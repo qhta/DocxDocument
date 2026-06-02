@@ -36,7 +36,7 @@ public class InteropCollection<ItemType>: IInteropCollection<ItemType>
       if (index is int intIndex)
         return _items[intIndex];
       if (index is string strIndex)
-        return _items.FirstOrDefault(item => item is INamedItem namedItem && namedItem.Name == strIndex);
+        return _items.FirstOrDefault(item => item is INamedItem namedItem && namedItem.Name == strIndex)!;
 
       return default!;
     }

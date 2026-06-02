@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a collection of picture effects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureeffects?view=office-pia"/>
-public partial interface IPictureEffects: InteropCollection<PictureEffect>
+public partial interface IPictureEffects: IInteropCollection<PictureEffect>
 {
 }
 

@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat?view=office-pia"/>
-public partial interface IFillFormat: InteropObject
+public partial interface IFillFormat: IInteropObject
 {
   /// <summary>
   /// Gets or sets the `BackColor` property.

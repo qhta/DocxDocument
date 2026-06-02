@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `TextRange2` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2?view=office-pia"/>
-public partial interface ITextRange2: InteropCollection<TextRange2>
+public partial interface ITextRange2: IInteropCollection<TextRange2>
 {
   /// <summary>
   /// Gets or sets the `Text` property.

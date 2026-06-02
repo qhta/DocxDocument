@@ -12,6 +12,8 @@ namespace DocumentModel.Interop;
 /// <typeparam name="KeyType">The type of the keys or indices used to access items in the dictionary.</typeparam>
 /// <typeparam name="ItemType">The type of the items stored in the dictionary.</typeparam>
 public class InteropDictionary<KeyType, ItemType>: IInteropDictionary<KeyType, ItemType>
+  where KeyType : notnull
+
 {
   /// <summary>
   /// The underlying dictionary that stores the key-value pairs.
@@ -148,7 +150,7 @@ public class InteropDictionary<KeyType, ItemType>: IInteropDictionary<KeyType, I
   /// <returns>true if the dictionary contains an element with the specified key; otherwise, false.</returns>
   public bool TryGetValue(KeyType key, out ItemType value)
   {
-    return _dictionary.TryGetValue(key, out value);
+    return _dictionary.TryGetValue(key, out value!);
   }
 
   /// <summary>

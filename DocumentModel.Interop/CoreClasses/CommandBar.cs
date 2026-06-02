@@ -5,78 +5,78 @@ namespace DocumentModel.Interop.Core;
 /// Represents a command bar in the container application.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar?view=office-pia"/>
-public partial class CommandBar: _IMsoOleAccDispObj
+public partial class CommandBar: _MsoOleAccDispObj
 {
   /// <summary>
   /// Gets or sets the `accParent` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accparent?view=office-pia"/>
-  public new object accParent { get; }
+  public new object Parent { get; }
   /// <summary>
   /// Gets the `accChildCount` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accchildcount?view=office-pia"/>
-  public new int accChildCount { get; }
+  public new int ChildCount { get; }
   /// <summary>
   /// Gets the `accChild` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accchild?view=office-pia"/>
-  public new object accChild { get; }
+  public new object Child { get; }
   /// <summary>
   /// Gets or sets the `accName` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accname?view=office-pia"/>
-  public new string accName { get; set; }
+  public new string Name { get; set; }
   /// <summary>
   /// Gets or sets the `accValue` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accvalue?view=office-pia"/>
-  public new string accValue { get; set; }
+  public new string Value { get; set; }
   /// <summary>
   /// Gets the `accDescription` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accdescription?view=office-pia"/>
-  public new string accDescription { get; }
+  public new string Description { get; }
   /// <summary>
   /// Gets the `accRole` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accrole?view=office-pia"/>
-  public new object accRole { get; }
+  public new object Role { get; }
   /// <summary>
   /// Gets the `accState` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accstate?view=office-pia"/>
-  public new object accState { get; }
+  public new object State { get; }
   /// <summary>
   /// Gets the `accHelp` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.acchelp?view=office-pia"/>
-  public new string accHelp { get; }
+  public new string Help { get; }
   /// <summary>
   /// Gets the `accHelpTopic` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.acchelptopic?view=office-pia"/>
-  public new int accHelpTopic { get; }
+  public new int HelpTopic { get; }
   /// <summary>
   /// Gets the `accKeyboardShortcut` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.acckeyboardshortcut?view=office-pia"/>
-  public new string accKeyboardShortcut { get; }
+  public new string KeyboardShortcut { get; }
   /// <summary>
   /// Gets the `accFocus` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accfocus?view=office-pia"/>
-  public new object accFocus { get; }
+  public new object Focus { get; }
   /// <summary>
   /// Gets the `accSelection` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accselection?view=office-pia"/>
-  public new object accSelection { get; }
+  public new object Selection { get; }
   /// <summary>
   /// Gets the `accDefaultAction` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accdefaultaction?view=office-pia"/>
-  public new string accDefaultAction { get; }
+  public new string DefaultAction { get; }
   /// <summary>
   /// Gets the `BuiltIn` property.
   /// </summary>
@@ -117,11 +117,11 @@ public partial class CommandBar: _IMsoOleAccDispObj
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.left?view=office-pia"/>
   public int Left { get; set; }
-  /// <summary>
-  /// Gets or sets the `Name` property.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.name?view=office-pia"/>
-  public string Name { get; set; }
+  ///// <summary>
+  ///// Gets or sets the `Name` property.
+  ///// </summary>
+  ///// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.name?view=office-pia"/>
+  //public new string Name { get; set; }
   /// <summary>
   /// Gets or sets the `NameLocal` property.
   /// </summary>

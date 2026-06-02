@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._imsooleaccdispobj?view=office-pia"/>
-public partial class _IMsoOleAccDispObj
+public partial class _MsoOleAccDispObj
 {
   /// <summary>
   /// Invokes `accSelect`.

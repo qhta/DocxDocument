@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Events interface for CommandBars object events.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarsevents_event?view=office-pia"/>
-public partial interface _CommandBarsEvents_Event
+public partial interface _ICommandBarsEvents_Event
 {
   /// <summary>
   /// Occurs when any change is made to a command bar.

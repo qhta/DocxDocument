@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a searchable folder.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scopefolder?view=office-pia"/>
-public partial interface IScopeFolder: InteropObject
+public partial interface IScopeFolder: IInteropObject
 {
   /// <summary>
   /// Gets the folder name.

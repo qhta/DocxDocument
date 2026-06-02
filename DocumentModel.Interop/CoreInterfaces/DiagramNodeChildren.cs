@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodechildren?view=office-pia"/>
-public partial interface IDiagramNodeChildren: InteropCollection<DiagramNode>
+public partial interface IDiagramNodeChildren: IInteropCollection<DiagramNode>
 {
   /// <summary>
   /// Gets the `FirstChild` property.

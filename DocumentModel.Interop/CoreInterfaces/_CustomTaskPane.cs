@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a custom task pane in the container application.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customtaskpane?view=office-pia"/>
-public partial interface _CustomTaskPane
+public partial interface _ICustomTaskPane
 {
   /// <summary>
   /// Gets or sets the `Title` property.

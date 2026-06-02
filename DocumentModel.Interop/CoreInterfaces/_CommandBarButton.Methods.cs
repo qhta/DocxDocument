@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarbutton?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface _CommandBarButton
+public partial interface _ICommandBarButton
 {
   /// <summary>
   /// Invokes `accSelect`.

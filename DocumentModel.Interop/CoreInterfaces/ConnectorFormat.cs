@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.connectorformat?view=office-pia"/>
-public partial interface IConnectorFormat: InteropObject
+public partial interface IConnectorFormat: IInteropObject
 {
   /// <summary>
   /// Gets or sets the `BeginConnected` property.

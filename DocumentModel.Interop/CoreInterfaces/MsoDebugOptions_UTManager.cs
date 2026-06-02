@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Manages debug unit tests.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utmanager?view=office-pia"/>
-public partial interface IMsoDebugOptions_UTManager: InteropObject
+public partial interface IMsoDebugOptions_UTManager: IInteropObject
 {
   /// <summary>
   /// Gets or sets the `UnitTests` property.

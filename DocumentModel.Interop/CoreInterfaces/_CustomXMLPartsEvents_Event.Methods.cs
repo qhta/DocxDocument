@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Events interface for CustomXMLParts object events.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpartsevents_event?view=office-pia"/>
-public partial interface _CustomXMLPartsEvents_Event
+public partial interface ICustomXMLPartsEvents_Event
 {
   /// <summary>
   /// Occurs after a part is added in a CustomXMLParts object.

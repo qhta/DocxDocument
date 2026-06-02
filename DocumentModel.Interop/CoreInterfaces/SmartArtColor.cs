@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `SmartArtColor` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartcolor?view=office-pia"/>
-public partial interface ISmartArtColor: InteropObject
+public partial interface ISmartArtColor: IInteropObject
 {
   /// <summary>
   /// Gets the `Id` property.

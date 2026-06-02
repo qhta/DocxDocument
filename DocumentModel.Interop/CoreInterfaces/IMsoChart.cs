@@ -277,6 +277,9 @@ public partial interface IMsoChart
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.showallfieldbuttons?view=office-pia"/>
   public bool ShowAllFieldButtons { get; set; }
+  /// <summary>
+  /// Gets or sets the `ProtectChartSheetFormatting` property.
+  /// </summary>
   public bool ProtectChartSheetFormatting { set; }
   /// <summary>
   /// Gets or sets the `CategoryLabelLevel` property.

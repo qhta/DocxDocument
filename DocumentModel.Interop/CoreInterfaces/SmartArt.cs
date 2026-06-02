@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartart?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface ISmartArt: InteropObject
+public partial interface ISmartArt: IInteropObject
 {
   /// <summary>
   /// Gets the `AllNodes` property.

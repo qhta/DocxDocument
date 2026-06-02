@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Events interface for CommandBarComboBox object events.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarcomboboxevents_event?view=office-pia"/>
-public partial interface _CommandBarComboBoxEvents_Event
+public partial interface _ICommandBarComboBoxEvents_Event
 {
   /// <summary>
   /// Occurs when the end user changes the selection in a command bar combo box.
