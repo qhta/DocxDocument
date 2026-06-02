@@ -189,85 +189,85 @@
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.Accessible.accParent">
+        <member name="P:DocumentModel.Interop.Core.Accessible.Parent">
             <summary>
             Gets the parent accessible object.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accparent?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.Accessible.accChildCount">
+        <member name="P:DocumentModel.Interop.Core.Accessible.ChildCount">
             <summary>
             Gets the number of accessible child objects.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accchildcount?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.Accessible.accChild">
+        <member name="P:DocumentModel.Interop.Core.Accessible.Child">
             <summary>
             Gets an accessible child object.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accchild?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.Accessible.accName">
+        <member name="P:DocumentModel.Interop.Core.Accessible.Name">
             <summary>
             Gets or sets the accessible name of the object.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accname?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.Accessible.accValue">
+        <member name="P:DocumentModel.Interop.Core.Accessible.Value">
             <summary>
             Gets or sets the accessible value of the object.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accvalue?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.Accessible.accDescription">
+        <member name="P:DocumentModel.Interop.Core.Accessible.Description">
             <summary>
             Gets the accessible description of the object.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accdescription?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.Accessible.accRole">
+        <member name="P:DocumentModel.Interop.Core.Accessible.Role">
             <summary>
             Gets the accessible role of the object.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accrole?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.Accessible.accState">
+        <member name="P:DocumentModel.Interop.Core.Accessible.State">
             <summary>
             Gets the accessible state of the object.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accstate?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.Accessible.accHelp">
+        <member name="P:DocumentModel.Interop.Core.Accessible.Help">
             <summary>
             Gets the help string for the accessible object.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.acchelp?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.Accessible.accHelpTopic">
+        <member name="P:DocumentModel.Interop.Core.Accessible.HelpTopic">
             <summary>
             Gets the help topic identifier for the accessible object.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.acchelptopic?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.Accessible.accKeyboardShortcut">
+        <member name="P:DocumentModel.Interop.Core.Accessible.KeyboardShortcut">
             <summary>
             Gets the keyboard shortcut for the accessible object.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.acckeyboardshortcut?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.Accessible.accFocus">
+        <member name="P:DocumentModel.Interop.Core.Accessible.Focus">
             <summary>
             Gets the object that has keyboard focus.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accfocus?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.Accessible.accSelection">
+        <member name="P:DocumentModel.Interop.Core.Accessible.Selection">
             <summary>
             Gets the current selection.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accselection?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.Accessible.accDefaultAction">
+        <member name="P:DocumentModel.Interop.Core.Accessible.DefaultAction">
             <summary>
             Gets the default action description for the object.
             </summary>
@@ -1187,7 +1187,7 @@
             </summary>
             <param name="PresetTextEffect">The `PresetTextEffect` parameter.</param>
             <param name="Text">The `Text` parameter.</param>
-            <param name="Name">The `Name` parameter.</param>
+            <param name="FontName">The `FontName` parameter.</param>
             <param name="FontSize">The `FontSize` parameter.</param>
             <param name="FontBold">The `FontBold` parameter.</param>
             <param name="FontItalic">The `FontItalic` parameter.</param>
@@ -1518,85 +1518,85 @@
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBar.accParent">
+        <member name="P:DocumentModel.Interop.Core.CommandBar.Parent">
             <summary>
             Gets or sets the `accParent` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accparent?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBar.accChildCount">
+        <member name="P:DocumentModel.Interop.Core.CommandBar.ChildCount">
             <summary>
             Gets the `accChildCount` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accchildcount?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBar.accChild">
+        <member name="P:DocumentModel.Interop.Core.CommandBar.Child">
             <summary>
             Gets the `accChild` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accchild?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBar.accName">
+        <member name="P:DocumentModel.Interop.Core.CommandBar.Name">
             <summary>
             Gets or sets the `accName` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accname?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBar.accValue">
+        <member name="P:DocumentModel.Interop.Core.CommandBar.Value">
             <summary>
             Gets or sets the `accValue` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accvalue?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBar.accDescription">
+        <member name="P:DocumentModel.Interop.Core.CommandBar.Description">
             <summary>
             Gets the `accDescription` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accdescription?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBar.accRole">
+        <member name="P:DocumentModel.Interop.Core.CommandBar.Role">
             <summary>
             Gets the `accRole` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accrole?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBar.accState">
+        <member name="P:DocumentModel.Interop.Core.CommandBar.State">
             <summary>
             Gets the `accState` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accstate?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBar.accHelp">
+        <member name="P:DocumentModel.Interop.Core.CommandBar.Help">
             <summary>
             Gets the `accHelp` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.acchelp?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBar.accHelpTopic">
+        <member name="P:DocumentModel.Interop.Core.CommandBar.HelpTopic">
             <summary>
             Gets the `accHelpTopic` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.acchelptopic?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBar.accKeyboardShortcut">
+        <member name="P:DocumentModel.Interop.Core.CommandBar.KeyboardShortcut">
             <summary>
             Gets the `accKeyboardShortcut` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.acckeyboardshortcut?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBar.accFocus">
+        <member name="P:DocumentModel.Interop.Core.CommandBar.Focus">
             <summary>
             Gets the `accFocus` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accfocus?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBar.accSelection">
+        <member name="P:DocumentModel.Interop.Core.CommandBar.Selection">
             <summary>
             Gets the `accSelection` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accselection?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBar.accDefaultAction">
+        <member name="P:DocumentModel.Interop.Core.CommandBar.DefaultAction">
             <summary>
             Gets the `accDefaultAction` property.
             </summary>
@@ -1649,12 +1649,6 @@
             Gets or sets the `Left` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.left?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBar.Name">
-            <summary>
-            Gets or sets the `Name` property.
-            </summary>
-            <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.name?view=office-pia"/>
         </member>
         <member name="P:DocumentModel.Interop.Core.CommandBar.NameLocal">
             <summary>
@@ -1863,85 +1857,85 @@
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBarControl.accParent">
+        <member name="P:DocumentModel.Interop.Core.CommandBarControl.Parent">
             <summary>
             Gets or sets the `accParent` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accparent?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBarControl.accChildCount">
+        <member name="P:DocumentModel.Interop.Core.CommandBarControl.ChildCount">
             <summary>
             Gets the `accChildCount` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accchildcount?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBarControl.accChild">
+        <member name="P:DocumentModel.Interop.Core.CommandBarControl.Child">
             <summary>
             Gets the `accChild` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accchild?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBarControl.accName">
+        <member name="P:DocumentModel.Interop.Core.CommandBarControl.Name">
             <summary>
             Gets or sets the `accName` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accname?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBarControl.accValue">
+        <member name="P:DocumentModel.Interop.Core.CommandBarControl.Value">
             <summary>
             Gets or sets the `accValue` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accvalue?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBarControl.accDescription">
+        <member name="P:DocumentModel.Interop.Core.CommandBarControl.Description">
             <summary>
             Gets the `accDescription` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accdescription?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBarControl.accRole">
+        <member name="P:DocumentModel.Interop.Core.CommandBarControl.Role">
             <summary>
             Gets the `accRole` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accrole?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBarControl.accState">
+        <member name="P:DocumentModel.Interop.Core.CommandBarControl.State">
             <summary>
             Gets the `accState` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accstate?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBarControl.accHelp">
+        <member name="P:DocumentModel.Interop.Core.CommandBarControl.Help">
             <summary>
             Gets the `accHelp` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.acchelp?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBarControl.accHelpTopic">
+        <member name="P:DocumentModel.Interop.Core.CommandBarControl.HelpTopic">
             <summary>
             Gets the `accHelpTopic` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.acchelptopic?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBarControl.accKeyboardShortcut">
+        <member name="P:DocumentModel.Interop.Core.CommandBarControl.KeyboardShortcut">
             <summary>
             Gets the `accKeyboardShortcut` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.acckeyboardshortcut?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBarControl.accFocus">
+        <member name="P:DocumentModel.Interop.Core.CommandBarControl.Focus">
             <summary>
             Gets the `accFocus` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accfocus?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBarControl.accSelection">
+        <member name="P:DocumentModel.Interop.Core.CommandBarControl.Selection">
             <summary>
             Gets the `accSelection` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accselection?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.CommandBarControl.accDefaultAction">
+        <member name="P:DocumentModel.Interop.Core.CommandBarControl.DefaultAction">
             <summary>
             Gets the `accDefaultAction` property.
             </summary>
@@ -13595,7 +13589,7 @@
             </summary>
             <param name="PresetTextEffect">The `PresetTextEffect` parameter.</param>
             <param name="Text">The `Text` parameter.</param>
-            <param name="Name">The `Name` parameter.</param>
+            <param name="FontName">The `FontName` parameter.</param>
             <param name="FontSize">The `FontSize` parameter.</param>
             <param name="FontBold">The `FontBold` parameter.</param>
             <param name="FontItalic">The `FontItalic` parameter.</param>
@@ -15649,7 +15643,7 @@
             <summary>
             Invokes `InsertSymbol`.
             </summary>
-            <param name="Name">The `Name` parameter.</param>
+            <param name="FontName">The `FontName` parameter.</param>
             <param name="CharNumber">The `CharNumber` parameter.</param>
             <param name="Unicode">The `Unicode` parameter.</param>
             <returns>The result of the operation.</returns>
@@ -18663,85 +18657,85 @@
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._imsooleaccdispobj?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.accParent">
+        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.Parent">
             <summary>
             Gets or sets the `accParent` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._imsooleaccdispobj.accparent?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.accChildCount">
+        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.ChildCount">
             <summary>
             Gets the `accChildCount` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._imsooleaccdispobj.accchildcount?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.accChild">
+        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.Child">
             <summary>
             Gets the `accChild` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._imsooleaccdispobj.accchild?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.accName">
+        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.Name">
             <summary>
             Gets or sets the `accName` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._imsooleaccdispobj.accname?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.accValue">
+        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.Value">
             <summary>
             Gets or sets the `accValue` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._imsooleaccdispobj.accvalue?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.accDescription">
+        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.Description">
             <summary>
             Gets the `accDescription` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._imsooleaccdispobj.accdescription?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.accRole">
+        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.Role">
             <summary>
             Gets the `accRole` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._imsooleaccdispobj.accrole?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.accState">
+        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.State">
             <summary>
             Gets the `accState` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._imsooleaccdispobj.accstate?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.accHelp">
+        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.Help">
             <summary>
             Gets the `accHelp` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._imsooleaccdispobj.acchelp?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.accHelpTopic">
+        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.HelpTopic">
             <summary>
             Gets the `accHelpTopic` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._imsooleaccdispobj.acchelptopic?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.accKeyboardShortcut">
+        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.KeyboardShortcut">
             <summary>
             Gets the `accKeyboardShortcut` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._imsooleaccdispobj.acckeyboardshortcut?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.accFocus">
+        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.Focus">
             <summary>
             Gets the `accFocus` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._imsooleaccdispobj.accfocus?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.accSelection">
+        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.Selection">
             <summary>
             Gets the `accSelection` property.
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._imsooleaccdispobj.accselection?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.accDefaultAction">
+        <member name="P:DocumentModel.Interop.Core._MsoOleAccDispObj.DefaultAction">
             <summary>
             Gets the `accDefaultAction` property.
             </summary>
@@ -19433,7 +19427,7 @@
             </summary>
             <param name="PresetTextEffect">The `PresetTextEffect` parameter.</param>
             <param name="Text">The `Text` parameter.</param>
-            <param name="Name">The `Name` parameter.</param>
+            <param name="FontName">The `FontName` parameter.</param>
             <param name="FontSize">The `FontSize` parameter.</param>
             <param name="FontBold">The `FontBold` parameter.</param>
             <param name="FontItalic">The `FontItalic` parameter.</param>
@@ -25603,6 +25597,11 @@
             Gets or sets the `ShowAllFieldButtons` property.
             </summary>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.showallfieldbuttons?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMsoChart.ProtectChartSheetFormatting">
+            <summary>
+            Gets or sets the `ProtectChartSheetFormatting` property.
+            </summary>
         </member>
         <member name="P:DocumentModel.Interop.Core.IMsoChart.CategoryLabelLevel">
             <summary>
@@ -32242,7 +32241,7 @@
             </summary>
             <param name="PresetTextEffect">The `PresetTextEffect` parameter.</param>
             <param name="Text">The `Text` parameter.</param>
-            <param name="Name">The `Name` parameter.</param>
+            <param name="FontName">The `FontName` parameter.</param>
             <param name="FontSize">The `FontSize` parameter.</param>
             <param name="FontBold">The `FontBold` parameter.</param>
             <param name="FontItalic">The `FontItalic` parameter.</param>
@@ -34296,7 +34295,7 @@
             <summary>
             Invokes `InsertSymbol`.
             </summary>
-            <param name="Name">The `Name` parameter.</param>
+            <param name="FontName">The `Name` parameter.</param>
             <param name="CharNumber">The `CharNumber` parameter.</param>
             <param name="Unicode">The `Unicode` parameter.</param>
             <returns>The result of the operation.</returns>
@@ -35542,6 +35541,11 @@
             </summary>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbaractivex.querycontrolinterface?view=office-pia"/>
         </member>
+        <member name="P:DocumentModel.Interop.Core._ICommandBarActiveX.InitWith">
+            <summary>
+            Gets or sets the `InitWith` property.
+            </summary>
+        </member>
         <member name="P:DocumentModel.Interop.Core._ICommandBarActiveX.InstanceIdPtr">
             <summary>
             Gets the `InstanceIdPtr` property.
@@ -36148,13 +36152,6 @@
             <param name="Ctrl">The `Ctrl` parameter.</param>
             <param name="CancelDefault">The `CancelDefault` parameter.</param>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarbuttonevents.click?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core._CommandBarButtonEvents_ClickEventHandler">
-            <summary>
-            Represents the event handler for the `Click` event of a `CommandBarButton` control.
-            </summary>
-            <param name="Ctrl">The `CommandBarButton` control that was clicked.</param>
-            <param name="CancelDefault">A boolean value that determines whether the default action should be canceled.</param>
         </member>
         <member name="T:DocumentModel.Interop.Core.ICommandBarButtonEvents_Event">
             <summary>
@@ -37243,7 +37240,7 @@
             <param name="Part">The `Part` parameter.</param>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpartsevents.partafterload?view=office-pia"/>
         </member>
-        <member name="T:DocumentModel.Interop.Core._ICustomXMLPartsEvents_Event">
+        <member name="T:DocumentModel.Interop.Core.ICustomXMLPartsEvents_Event">
             <summary>
             Events interface for CustomXMLParts object events.
             </summary>
@@ -37253,19 +37250,19 @@
             </summary>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpartsevents_event?view=office-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Core._ICustomXMLPartsEvents_Event.PartAfterAdd">
+        <member name="E:DocumentModel.Interop.Core.ICustomXMLPartsEvents_Event.PartAfterAdd">
             <summary>
             Occurs after a part is added in a CustomXMLParts object.
             </summary>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpartsevents_event.partafteradd?view=office-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Core._ICustomXMLPartsEvents_Event.PartBeforeDelete">
+        <member name="E:DocumentModel.Interop.Core.ICustomXMLPartsEvents_Event.PartBeforeDelete">
             <summary>
             Occurs before a part is deleted in a CustomXMLParts object.
             </summary>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpartsevents_event.partbeforedelete?view=office-pia"/>
         </member>
-        <member name="E:DocumentModel.Interop.Core._ICustomXMLPartsEvents_Event.PartAfterLoad">
+        <member name="E:DocumentModel.Interop.Core.ICustomXMLPartsEvents_Event.PartAfterLoad">
             <summary>
             Occurs after a part is loaded in a CustomXMLParts object.
             </summary>
@@ -41408,7 +41405,7 @@
             </summary>
             <param name="PresetTextEffect">The preset text effect style.</param>
             <param name="Text">The displayed text.</param>
-            <param name="Name">The font name.</param>
+            <param name="FontName">The font name.</param>
             <param name="FontSize">The font size.</param>
             <param name="FontBold">Specifies whether the text is bold.</param>
             <param name="FontItalic">Specifies whether the text is italic.</param>
@@ -59963,7 +59960,7 @@
             </summary>
             <param name="PresetTextEffect">The preset text effect.</param>
             <param name="Text">The text for the effect.</param>
-            <param name="Name">The font name.</param>
+            <param name="FontName">The font name.</param>
             <param name="FontSize">The font size.</param>
             <param name="FontBold">true for bold font; otherwise, false.</param>
             <param name="FontItalic">true for italic font; otherwise, false.</param>
@@ -69791,6 +69788,16 @@
         <member name="P:DocumentModel.Interop.IInteropObject.Parent">
             <summary>
             Returns an object that represents the parent object of the specified object.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.Interop.INamedItem">
+            <summary>
+            Interface for items that have a name.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Interop.INamedItem.Name">
+            <summary>
+            Gets the name of the item.
             </summary>
         </member>
         <member name="T:DocumentModel.Interop.IInteropCollection`1">
