@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbaractivex?view=office-pia` for Office interop details.
 /// </remarks>
-public partial class _CommandBarActiveX: CommandBarControl
+public partial class CommandBarActiveX: CommandBarControl
 {
    /// <summary>
   /// Gets or sets the `ControlCLSID` property.

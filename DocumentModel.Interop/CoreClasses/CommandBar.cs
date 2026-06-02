@@ -28,11 +28,6 @@ public partial class CommandBar : MsoOleAccDispObj
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.left?view=office-pia"/>
   public int Left { get; set; }
-  ///// <summary>
-  ///// Gets or sets the `Name` property.
-  ///// </summary>
-  ///// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.name?view=office-pia"/>
-  //public string Name { get; set; }
   /// <summary>
   /// Gets or sets the `NameLocal` property.
   /// </summary>
