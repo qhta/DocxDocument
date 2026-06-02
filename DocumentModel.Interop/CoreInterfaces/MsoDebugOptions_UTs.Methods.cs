@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a collection of debug unit tests.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_uts?view=office-pia"/>
-public partial interface MsoDebugOptions_UTs
+public partial interface IMsoDebugOptions_UTs
 {
   /// <summary>
   /// Gets unit tests in a specific collection.

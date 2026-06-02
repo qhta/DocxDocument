@@ -216,7 +216,7 @@ public partial interface IMsoChart
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.format?view=office-pia"/>
-  public IMsoChartFormat Format { get; }
+  public MsoChartFormat Format { get; }
   /// <summary>
   /// Gets the `Shapes` property.
   /// </summary>
@@ -226,32 +226,32 @@ public partial interface IMsoChart
   /// Gets the `Area3DGroup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.area3dgroup?view=office-pia"/>
-  public IMsoChartGroup Area3DGroup { get; }
+  public MsoChartGroup Area3DGroup { get; }
   /// <summary>
   /// Gets the `Bar3DGroup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.bar3dgroup?view=office-pia"/>
-  public IMsoChartGroup Bar3DGroup { get; }
+  public MsoChartGroup Bar3DGroup { get; }
   /// <summary>
   /// Gets the `Column3DGroup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.column3dgroup?view=office-pia"/>
-  public IMsoChartGroup Column3DGroup { get; }
+  public MsoChartGroup Column3DGroup { get; }
   /// <summary>
   /// Gets the `Line3DGroup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.line3dgroup?view=office-pia"/>
-  public IMsoChartGroup Line3DGroup { get; }
+  public MsoChartGroup Line3DGroup { get; }
   /// <summary>
   /// Gets the `Pie3DGroup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.pie3dgroup?view=office-pia"/>
-  public IMsoChartGroup Pie3DGroup { get; }
+  public MsoChartGroup Pie3DGroup { get; }
   /// <summary>
   /// Gets the `SurfaceGroup` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.surfacegroup?view=office-pia"/>
-  public IMsoChartGroup SurfaceGroup { get; }
+  public MsoChartGroup SurfaceGroup { get; }
   /// <summary>
   /// Gets or sets the `ShowReportFilterFieldButtons` property.
   /// </summary>

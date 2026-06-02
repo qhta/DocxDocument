@@ -1,8 +1,6 @@
 
 namespace DocumentModel.Interop.Core;
 
-public delegate void IMsoEnvelopeVBEvents_EnvelopeShowEventHandler();
-public delegate void IMsoEnvelopeVBEvents_EnvelopeHideEventHandler();
 
 /// <summary>
 /// Events class for `MsoEnvelope` object events.

@@ -1,8 +1,6 @@
 
 namespace DocumentModel.Interop.Core;
 
-public delegate void _CommandBarsEvents_OnUpdateEventHandler();
-
 /// <summary>
 /// Events class for CommandBars object events.
 /// </summary>

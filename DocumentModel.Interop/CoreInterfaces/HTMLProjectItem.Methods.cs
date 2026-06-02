@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents an individual project item branch in the Project Explorer in the Microsoft Script Editor.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlprojectitem?view=office-pia"/>
-public partial interface HTMLProjectItem
+public partial interface IHTMLProjectItem
 {
   /// <summary>
   /// Updates the text in the Microsoft Script Editor with text from the specified file on disk.

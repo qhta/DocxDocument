@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode?view=office-pia"/>
-public partial interface DiagramNode: InteropObject
+public partial interface IDiagramNode: InteropObject
 {
   /// <summary>
   /// Gets or sets the `Children` property.

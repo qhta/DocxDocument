@@ -21,7 +21,7 @@ public partial interface IMsoTrendline
   /// Gets the `DataLabel` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsotrendline.datalabel?view=office-pia"/>
-  public IMsoDataLabel DataLabel { get; }
+  public MsoDataLabel DataLabel { get; }
   /// <summary>
   /// Gets or sets the `DisplayEquation` property.
   /// </summary>
@@ -81,7 +81,7 @@ public partial interface IMsoTrendline
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsotrendline.format?view=office-pia"/>
-  public IMsoChartFormat Format { get; }
+  public MsoChartFormat Format { get; }
   /// <summary>
   /// Gets or sets the `Backward2` property.
   /// </summary>

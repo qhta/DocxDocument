@@ -1,8 +1,6 @@
 
 namespace DocumentModel.Interop.Core;
 
-public delegate void _CommandBarComboBoxEvents_ChangeEventHandler(CommandBarComboBox Ctrl);
-
 /// <summary>
 /// Events class for CommandBarComboBox object events.
 /// </summary>

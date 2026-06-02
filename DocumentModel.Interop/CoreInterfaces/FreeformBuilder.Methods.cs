@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.freeformbuilder?view=office-pia"/>
-public partial interface FreeformBuilder
+public partial interface IFreeformBuilder
 {
   /// <summary>
   /// Adds one or more nodes to the freeform being built.

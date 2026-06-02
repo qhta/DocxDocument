@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents all filters applied to the attached mail merge data source.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilters?view=office-pia"/>
-public partial interface ODSOFilters: InteropObject
+public partial interface IODSOFilters: InteropObject
 {
   /// <summary>
   /// Gets the `Count` property.

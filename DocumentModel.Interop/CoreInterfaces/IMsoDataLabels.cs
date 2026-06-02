@@ -142,12 +142,12 @@ public partial interface IMsoDataLabels: IEnumerable
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.format?view=office-pia"/>
-  public IMsoChartFormat Format { get; }
+  public MsoChartFormat Format { get; }
   /// <summary>
   /// Gets a data label by index.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.item?view=office-pia"/>
-  public IMsoDataLabel this[object Index] { get; }
+  public MsoDataLabel this[object Index] { get; }
   /// <summary>
   /// Gets or sets the `ShowRange` property.
   /// </summary>

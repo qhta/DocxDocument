@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents shadow formatting for a shape.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shadowformat?view=office-pia"/>
-public partial interface ShadowFormat: InteropObject
+public partial interface IShadowFormat: InteropObject
 {
   /// <summary>
   /// Gets or sets the `ForeColor` property.

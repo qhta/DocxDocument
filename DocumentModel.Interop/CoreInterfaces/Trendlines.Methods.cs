@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `Trendlines` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.trendlines?view=office-pia"/>
-public partial interface Trendlines
+public partial interface ITrendlines
 {
   /// <summary>
   /// Invokes `Add`.

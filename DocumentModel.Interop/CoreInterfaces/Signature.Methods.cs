@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signature?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface Signature
+public partial interface ISignature
 {
   /// <summary>
   /// Invokes `Delete`.

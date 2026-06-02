@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacemembers?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface SharedWorkspaceMembers: InteropCollection<SharedWorkspaceMember>
+public partial interface ISharedWorkspaceMembers: InteropCollection<SharedWorkspaceMember>
 {
   /// <summary>
   /// Gets the `ItemCountExceeded` property.

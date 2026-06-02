@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureset?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface SignatureSet
+public partial interface ISignatureSet
 {
   /// <summary>
   /// Invokes `Add`.

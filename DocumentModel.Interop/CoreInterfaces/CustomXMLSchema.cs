@@ -11,7 +11,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a schema in a custom XML schema collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlschema?view=office-pia"/>
-public partial interface CustomXMLSchema: InteropObject
+public partial interface ICustomXMLSchema: InteropObject
 {
   /// <summary>
   /// Gets the `Location` property.

@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a legend entry in a chart legend.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry?view=office-pia"/>
-public partial interface LegendEntry
+public partial interface ILegendEntry
 {
   /// <summary>
   /// Deletes the legend entry.

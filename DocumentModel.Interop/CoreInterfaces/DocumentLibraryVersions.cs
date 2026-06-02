@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a collection of DocumentLibraryVersion objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentlibraryversions?view=office-pia"/>
-public partial interface DocumentLibraryVersions: InteropCollection<DocumentLibraryVersion>
+public partial interface IDocumentLibraryVersions: InteropCollection<DocumentLibraryVersion>
 {
   /// <summary>
   /// Gets the `IsVersioningEnabled` property.

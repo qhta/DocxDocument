@@ -28,17 +28,14 @@
   <ItemGroup>
     <Compile Remove="BaseInterfaces\**" />
     <Compile Remove="CoreInterfaces1\**" />
-    <Compile Remove="CoreInterfaces\**" />
     <Compile Remove="ExcelInterfaces\**" />
     <Compile Remove="WordInterfaces\**" />
     <EmbeddedResource Remove="BaseInterfaces\**" />
     <EmbeddedResource Remove="CoreInterfaces1\**" />
-    <EmbeddedResource Remove="CoreInterfaces\**" />
     <EmbeddedResource Remove="ExcelInterfaces\**" />
     <EmbeddedResource Remove="WordInterfaces\**" />
     <None Remove="BaseInterfaces\**" />
     <None Remove="CoreInterfaces1\**" />
-    <None Remove="CoreInterfaces\**" />
     <None Remove="ExcelInterfaces\**" />
     <None Remove="WordInterfaces\**" />
   </ItemGroup>
@@ -48,6 +45,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="BaseInterfaces\IInteropObject.cs" />
     <Compile Include="BaseInterfaces\INamedItem.cs" />
     <Compile Include="BaseInterfaces\IInteropCollection.cs" />
     <Compile Include="BaseInterfaces\IInteropDictionary.cs" />

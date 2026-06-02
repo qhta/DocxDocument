@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents an XML node in a document's custom XML tree.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnode?view=office-pia"/>
-public partial interface CustomXMLNode
+public partial interface ICustomXMLNode
 {
   /// <summary>
   /// Invokes `AppendChildNode`.

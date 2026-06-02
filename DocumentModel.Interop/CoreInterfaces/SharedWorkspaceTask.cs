@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetask?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface SharedWorkspaceTask: InteropObject
+public partial interface ISharedWorkspaceTask: InteropObject
 {
   /// <summary>
   /// Gets or sets the `Title` property.

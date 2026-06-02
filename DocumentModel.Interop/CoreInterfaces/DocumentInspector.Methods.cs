@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a Document Inspector module in a DocumentInspectors collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentinspector?view=office-pia"/>
-public partial interface DocumentInspector
+public partial interface IDocumentInspector
 {
   /// <summary>
   /// Runs the inspector and returns status and results.

@@ -3,7 +3,7 @@ namespace DocumentModel.Interop;
 /// <summary>
 /// Basic interface for all interop objects, providing common properties such as Application, Creator, and Parent.
 /// </summary>
-public interface InteropObject
+public interface IInteropObject
 {
   ///// <summary>
   ///// Returns an Application object that represents the Microsoft Word application.

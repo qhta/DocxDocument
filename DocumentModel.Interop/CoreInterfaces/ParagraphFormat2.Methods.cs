@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents paragraph formatting of a text range.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.paragraphformat2?view=office-pia"/>
-public partial interface ParagraphFormat2
+public partial interface IParagraphFormat2
 {
 }
 

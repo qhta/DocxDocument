@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.connectorformat?view=office-pia"/>
-public partial interface ConnectorFormat
+public partial interface IConnectorFormat
 {
   /// <summary>
   /// Connects the beginning of the connector to a shape at the specified connection site.

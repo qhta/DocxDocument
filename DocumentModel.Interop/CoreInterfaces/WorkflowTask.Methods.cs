@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `WorkflowTask` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.workflowtask?view=office-pia"/>
-public partial interface WorkflowTask
+public partial interface IWorkflowTask
 {
   /// <summary>
   /// Invokes `Show`.

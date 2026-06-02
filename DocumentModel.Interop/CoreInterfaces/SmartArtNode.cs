@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `SmartArtNode` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode?view=office-pia"/>
-public partial interface SmartArtNode: InteropObject
+public partial interface ISmartArtNode: InteropObject
 {
   /// <summary>
   /// Gets or sets the `OrgChartLayout` property.

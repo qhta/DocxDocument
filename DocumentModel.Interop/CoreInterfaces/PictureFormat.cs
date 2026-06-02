@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Contains properties for formatting pictures and OLE objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat?view=office-pia"/>
-public partial interface PictureFormat: InteropObject
+public partial interface IPictureFormat: InteropObject
 {
   /// <summary>
   /// Gets or sets the `Brightness` property.

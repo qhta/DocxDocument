@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a folder in a shared workspace.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolder?view=office-pia"/>
-public partial interface SharedWorkspaceFolder
+public partial interface ISharedWorkspaceFolder
 {
   /// <summary>
   /// Deletes the shared workspace folder.

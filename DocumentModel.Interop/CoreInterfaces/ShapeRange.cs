@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange?view=office-pia"/>
-public partial interface ShapeRange: InteropCollection<Shape>
+public partial interface IShapeRange: InteropCollection<Shape>
 {
   /// <summary>
   /// Gets or sets the `Adjustments` property.

@@ -12,7 +12,7 @@ namespace DocumentModel.Interop.Core;
 /// Contains a collection of CustomXMLNode objects that represent XML nodes in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlnodes?view=office-pia"/>
-public partial interface CustomXMLNodes: InteropCollection<CustomXMLNode>
+public partial interface ICustomXMLNodes: InteropCollection<CustomXMLNode>
 {
 }
 

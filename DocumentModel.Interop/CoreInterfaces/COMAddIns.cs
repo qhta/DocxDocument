@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// A collection of COM add-ins registered in the Windows registry.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.comaddins?view=office-pia"/>
-public partial interface COMAddIns: InteropCollection<COMAddIn>
+public partial interface ICOMAddIns: InteropCollection<COMAddIn>
 {
 }
 

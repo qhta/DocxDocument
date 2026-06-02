@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents language settings used by the Office application.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.languagesettings?view=office-pia"/>
-public partial interface LanguageSettings: InteropObject
+public partial interface ILanguageSettings: InteropObject
 {
   /// <summary>
   /// Gets the `LanguageID` property.

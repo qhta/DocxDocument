@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `Sync` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sync?view=office-pia"/>
-public partial interface Sync
+public partial interface ISync
 {
   /// <summary>
   /// Invokes `GetUpdate`.

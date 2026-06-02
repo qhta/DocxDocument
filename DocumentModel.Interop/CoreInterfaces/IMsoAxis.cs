@@ -21,7 +21,7 @@ public partial interface IMsoAxis
   /// Gets the `AxisTitle` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.axistitle?view=office-pia"/>
-  public IMsoAxisTitle AxisTitle { get; }
+  public MsoAxisTitle AxisTitle { get; }
   /// <summary>
   /// Gets or sets the `CategoryNames` property.
   /// </summary>
@@ -236,6 +236,6 @@ public partial interface IMsoAxis
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.format?view=office-pia"/>
-  public IMsoChartFormat Format { get; }
+  public MsoChartFormat Format { get; }
 }
 

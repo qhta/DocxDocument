@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Provides dialog UI functionality for picking people or data.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerdialog?view=office-pia"/>
-public partial interface PickerDialog
+public partial interface IPickerDialog
 {
   /// <summary>
   /// Creates an empty `PickerResults` object.

@@ -8,6 +8,6 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ballooncheckbox?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface BalloonCheckbox
+public partial interface IBalloonCheckbox
 {
 }

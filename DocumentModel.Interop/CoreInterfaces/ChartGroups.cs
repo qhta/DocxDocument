@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Core;
 /// A collection of all ChartGroup objects in the specified chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.chartgroups?view=office-pia"/>
-public partial interface ChartGroups
+public partial interface IChartGroups
 {
 }
 

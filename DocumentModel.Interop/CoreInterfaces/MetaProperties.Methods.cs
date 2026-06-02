@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a collection of metadata properties.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties?view=office-pia"/>
-public partial interface MetaProperties
+public partial interface IMetaProperties
 {
   /// <summary>
   /// Gets a metadata property by its internal name.

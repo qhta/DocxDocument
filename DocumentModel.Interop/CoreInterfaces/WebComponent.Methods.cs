@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `WebComponent` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponent?view=office-pia"/>
-public partial interface WebComponent
+public partial interface IWebComponent
 {
   /// <summary>
   /// Invokes `SetPlaceHolderGraphic`.

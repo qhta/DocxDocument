@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `SmartArtQuickStyle` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartquickstyle?view=office-pia"/>
-public partial interface SmartArtQuickStyle: InteropObject
+public partial interface ISmartArtQuickStyle: InteropObject
 {
   /// <summary>
   /// Gets the `Id` property.

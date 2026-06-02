@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a collection of `PickerField` objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerfields?view=office-pia"/>
-public partial interface PickerFields: InteropCollection<PickerField>
+public partial interface IPickerFields: InteropCollection<PickerField>
 {
 }
 

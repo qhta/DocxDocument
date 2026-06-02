@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a file in a shared workspace.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefile?view=office-pia"/>
-public partial interface SharedWorkspaceFile
+public partial interface ISharedWorkspaceFile
 {
   /// <summary>
   /// Invokes `Delete`.

@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a collection of fields in a data source.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsocolumns?view=office-pia"/>
-public partial interface ODSOColumns
+public partial interface IODSOColumns
 {
   /// <summary>
   /// Returns a field from the collection.

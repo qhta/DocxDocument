@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a collection of CustomXMLPrefixMapping objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlprefixmappings?view=office-pia"/>
-public partial interface CustomXMLPrefixMappings
+public partial interface ICustomXMLPrefixMappings
 {
   /// <summary>
   /// Adds a namespace and prefix mapping to the collection.

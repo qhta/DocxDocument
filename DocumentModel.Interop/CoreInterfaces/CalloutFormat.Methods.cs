@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.calloutformat?view=office-pia"/>
-public partial interface CalloutFormat
+public partial interface ICalloutFormat
 {
   /// <summary>
   /// Resets callout length to automatic mode.

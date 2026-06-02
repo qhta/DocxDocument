@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a legend entry in a chart legend.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry?view=office-pia"/>
-public partial interface LegendEntry
+public partial interface ILegendEntry
 {
   /// <summary>
   /// Gets or sets the `Font` property.
@@ -51,6 +51,6 @@ public partial interface LegendEntry
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.format?view=office-pia"/>
-  public IMsoChartFormat Format { get; }
+  public MsoChartFormat Format { get; }
 }
 

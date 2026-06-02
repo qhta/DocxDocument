@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `TextEffectFormat` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat?view=office-pia"/>
-public partial interface TextEffectFormat
+public partial interface ITextEffectFormat
 {
   /// <summary>
   /// Invokes `ToggleVerticalText`.

@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `WebComponentWindowExternal` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponentwindowexternal?view=office-pia"/>
-public partial interface WebComponentWindowExternal
+public partial interface IWebComponentWindowExternal
 {
   /// <summary>
   /// Invokes `CloseWindow`.

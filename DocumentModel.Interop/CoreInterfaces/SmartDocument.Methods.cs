@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `SmartDocument` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartdocument?view=office-pia"/>
-public partial interface SmartDocument
+public partial interface ISmartDocument
 {
   /// <summary>
   /// Invokes `PickSolution`.

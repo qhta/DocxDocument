@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `SmartArtNode` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnode?view=office-pia"/>
-public partial interface SmartArtNode
+public partial interface ISmartArtNode
 {
   /// <summary>
   /// Invokes `AddNode`.

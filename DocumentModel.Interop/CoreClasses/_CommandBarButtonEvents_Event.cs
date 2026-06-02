@@ -1,8 +1,6 @@
 
 namespace DocumentModel.Interop.Core;
 
-public delegate void _CommandBarButtonEvents_ClickEventHandler(CommandBarButton Ctrl, ref bool CancelDefault);
-
 /// <summary>
 /// Represents the `_CommandBarButtonEvents_Event` class.
 /// </summary>
@@ -11,4 +9,9 @@ public delegate void _CommandBarButtonEvents_ClickEventHandler(CommandBarButton 
 /// </remarks>
 public partial class _CommandBarButtonEvents_Event
 {
+  /// <summary>
+  /// Occurs when `Click` is raised.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarbuttonevents_event.click?view=office-pia"/>
+  public event _CommandBarButtonEvents_ClickEventHandler Click { add { throw new NotImplementedException(); } remove { throw new NotImplementedException(); } }
 }

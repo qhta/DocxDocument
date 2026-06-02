@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the collection of all chart points in a series.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.points?view=office-pia"/>
-public partial interface Points
+public partial interface IPoints
 {
   /// <summary>
   /// Returns an enumerator that iterates through the collection.

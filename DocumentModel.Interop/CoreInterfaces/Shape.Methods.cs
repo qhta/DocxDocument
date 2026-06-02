@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape?view=office-pia"/>
-public partial interface Shape
+public partial interface IShape
 {
   /// <summary>
   /// Invokes `Apply`.

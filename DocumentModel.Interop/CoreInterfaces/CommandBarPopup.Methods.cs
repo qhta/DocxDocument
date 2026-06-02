@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a pop-up control on a command bar.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarpopup?view=office-pia"/>
-public partial interface CommandBarPopup
+public partial interface ICommandBarPopup
 {
   /// <summary>
   /// Invokes `accSelect`.

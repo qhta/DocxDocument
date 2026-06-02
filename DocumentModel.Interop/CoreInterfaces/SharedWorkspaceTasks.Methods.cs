@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacetasks?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface SharedWorkspaceTasks
+public partial interface ISharedWorkspaceTasks
 {
   /// <summary>
   /// Invokes `Add`.

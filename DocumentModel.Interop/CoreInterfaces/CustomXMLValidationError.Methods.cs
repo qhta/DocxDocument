@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a single validation error in a CustomXMLValidationErrors collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerror?view=office-pia"/>
-public partial interface CustomXMLValidationError
+public partial interface ICustomXMLValidationError
 {
   /// <summary>
   /// Deletes this validation error from the collection.
