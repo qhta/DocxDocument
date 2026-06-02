@@ -10,23 +10,23 @@ public partial class List : InteropObject
   /// Returns a range object that represents the portion of a document that's contained in the list.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.list.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
 
   /// <summary>
   /// Returns a list paragraphs collection that represents all paragraphs in the list.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.list.listparagraphs?view=word-pia"/>
-  public ListParagraphs ListParagraphs { get; }
+  public ListParagraphs ListParagraphs { get; set; }
 
   /// <summary>
   /// Returns whether only one list template is used for all paragraphs in the list.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.list.singlelisttemplate?view=word-pia"/>
-  public bool SingleListTemplate { get; }
+  public bool SingleListTemplate { get; set; }
 
   /// <summary>
   /// Returns the style name for the first paragraph in the list.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.list.stylename?view=word-pia"/>
-  public string StyleName { get; }
+  public string? StyleName { get; set; }
 }

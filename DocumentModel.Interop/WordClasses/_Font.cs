@@ -10,7 +10,7 @@ public partial class _Font : InteropObject
   /// Gets a duplicate of the font formatting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.duplicate?view=word-pia"/>
-  public Font Duplicate { get; }
+  public Font Duplicate { get; set; }
 
   /// <summary>
   /// True if the text is formatted as bold.
@@ -106,7 +106,7 @@ public partial class _Font : InteropObject
   /// The name of the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.name?view=word-pia"/>
-  public string Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// The position of text (in points) relative to the baseline. A positive number raises the text, and a negative number lowers it.
@@ -166,7 +166,7 @@ public partial class _Font : InteropObject
   /// Gets or sets the animation effect for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.animation?view=word-pia"/>
-  public Animation Animation { get; set; }
+  public WdAnimation Animation { get; set; }
 
   /// <summary>
   /// Gets or sets the border formatting for the font.
@@ -178,13 +178,13 @@ public partial class _Font : InteropObject
   /// Gets the shading formatting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public Shading Shading { get; set; }
 
   /// <summary>
   /// Gets or sets the emphasis mark for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.emphasismark?view=word-pia"/>
-  public EmphasisMark EmphasisMark { get; set; }
+  public WdEmphasisMark EmphasisMark { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether to disable character spacing on the document grid.
@@ -196,19 +196,19 @@ public partial class _Font : InteropObject
   /// The name of the font for East Asian scripts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.namefareast?view=word-pia"/>
-  public string NameFarEast { get; set; }
+  public string? NameFarEast { get; set; }
 
   /// <summary>
   /// The name of the font for used for Latin text (characters with character codes from 0 (zero) through 127).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.nameascii?view=word-pia"/>
-  public string NameAscii { get; set; }
+  public string? NameAscii { get; set; }
 
   /// <summary>
   /// The name of the font for characters with character codes from 128 through 255.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.nameother?view=word-pia"/>
-  public string NameOther { get; set; }
+  public string? NameOther { get; set; }
 
   /// <summary>
   /// The 24-bit color for the specified Font object.
@@ -242,7 +242,7 @@ public partial class _Font : InteropObject
   /// The name of the font for complex script.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.namebi?view=word-pia"/>
-  public string NameBi { get; set; }
+  public string? NameBi { get; set; }
 
   /// <summary>
   /// Gets or sets the color index for complex-script text.
@@ -302,25 +302,25 @@ public partial class _Font : InteropObject
   /// Gets the text color formatting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.textcolor?view=word-pia"/>
-  public ColorFormat TextColor { get; }
+  public ColorFormat TextColor { get; set; }
 
   /// <summary>
   /// Gets or sets the ligature setting for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.ligatures?view=word-pia"/>
-  public Ligatures Ligatures { get; set; }
+  public OtLigatures Ligatures { get; set; }
 
   /// <summary>
   /// Gets or sets the number form for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.numberform?view=word-pia"/>
-  public NumberForm NumberForm { get; set; }
+  public OtNumberForm NumberForm { get; set; }
 
   /// <summary>
   /// Gets or sets the number spacing for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.numberspacing?view=word-pia"/>
-  public NumberSpacing NumberSpacing { get; set; }
+  public WdNumberSpacing NumberSpacing { get; set; }
 
   /// <summary>
   /// Gets or sets whether contextual alternates are enabled.
@@ -332,5 +332,5 @@ public partial class _Font : InteropObject
   /// Gets or sets the stylistic set for the font.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font.stylisticset?view=word-pia"/>
-  public StylisticSet StylisticSet { get; set; }
+  public OtStylisticSet StylisticSet { get; set; }
 }

@@ -10,7 +10,7 @@ public partial class ContentControl : InteropObject
   /// Gets the range of text contained in the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the content control itself is locked.
@@ -28,7 +28,7 @@ public partial class ContentControl : InteropObject
   /// Gets the XML mapping for the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.xmlmapping?view=word-pia"/>
-  public XMLMapping XMLMapping { get; }
+  public XMLMapping XMLMapping { get; set; }
 
   /// <summary>
   /// Gets or sets the type of content control.
@@ -40,25 +40,25 @@ public partial class ContentControl : InteropObject
   /// Gets the collection of list entries for a drop-down or combo box content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.dropdownlistentries?view=word-pia"/>
-  public ContentControlListEntries DropdownListEntries { get; }
+  public ContentControlListEntries DropdownListEntries { get; set; }
 
   /// <summary>
   /// Gets the placeholder text building block for the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.placeholdertext?view=word-pia"/>
-  public BuildingBlock PlaceholderText { get; }
+  public BuildingBlock PlaceholderText { get; set; }
 
   /// <summary>
   /// Gets or sets the title of the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.title?view=word-pia"/>
-  public string Title { get; set; }
+  public string? Title { get; set; }
 
   /// <summary>
   /// Gets or sets the display format for date values.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.datedisplayformat?view=word-pia"/>
-  public string DateDisplayFormat { get; set; }
+  public string? DateDisplayFormat { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the content control supports multiple lines.
@@ -70,7 +70,7 @@ public partial class ContentControl : InteropObject
   /// Gets the parent content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.parentcontentcontrol?view=word-pia"/>
-  public ContentControl ParentContentControl { get; }
+  public ContentControl ParentContentControl { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the content control is removed after it is edited.
@@ -82,13 +82,13 @@ public partial class ContentControl : InteropObject
   /// Gets the unique identifier of the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.id?view=word-pia"/>
-  public string ID { get; }
+  public string? ID { get; set; }
 
   /// <summary>
   /// Gets a value indicating whether placeholder text is currently displayed.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.showingplaceholdertext?view=word-pia"/>
-  public bool ShowingPlaceholderText { get; }
+  public bool ShowingPlaceholderText { get; set; }
 
   /// <summary>
   /// Gets or sets how date values are stored.
@@ -100,13 +100,13 @@ public partial class ContentControl : InteropObject
   /// Gets or sets the building block type for a building block gallery content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.buildingblocktype?view=word-pia"/>
-  public BuildingBlockTypes BuildingBlockType { get; set; }
+  public WdBuildingBlockTypes BuildingBlockType { get; set; }
 
   /// <summary>
   /// Gets or sets the building block category for a building block gallery content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.buildingblockcategory?view=word-pia"/>
-  public string BuildingBlockCategory { get; set; }
+  public string? BuildingBlockCategory { get; set; }
 
   /// <summary>
   /// Gets or sets the locale used to display dates.
@@ -130,7 +130,7 @@ public partial class ContentControl : InteropObject
   /// Gets or sets a tag value for identifying the content control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.tag?view=word-pia"/>
-  public string Tag { get; set; }
+  public string? Tag { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether a check box content control is checked.
@@ -154,19 +154,19 @@ public partial class ContentControl : InteropObject
   /// Gets the level of the content control in the content control hierarchy.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.level?view=word-pia"/>
-  public ContentControlLevel Level { get; }
+  public ContentControlLevel Level { get; set; }
 
   /// <summary>
   /// Gets the collection of repeating section items.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.repeatingsectionitems?view=word-pia"/>
-  public RepeatingSectionItemColl RepeatingSectionItems { get; }
+  public RepeatingSectionItemColl RepeatingSectionItems { get; set; }
 
   /// <summary>
   /// Gets or sets the title displayed for each repeating section item.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.repeatingsectionitemtitle?view=word-pia"/>
-  public string RepeatingSectionItemTitle { get; set; }
+  public string? RepeatingSectionItemTitle { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether users can insert or delete repeating section items.

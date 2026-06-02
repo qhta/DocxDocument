@@ -10,7 +10,7 @@ public partial class _ParagraphFormat : InteropObject
   /// Gets a duplicate of the paragraph formatting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.duplicate?view=word-pia"/>
-  public ParagraphFormat Duplicate { get; }
+  public ParagraphFormat Duplicate { get; set; }
 
   /// <summary>
   /// Gets or sets the style for the paragraph format.
@@ -172,7 +172,7 @@ public partial class _ParagraphFormat : InteropObject
   /// Gets the shading formatting for the paragraph.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public Shading Shading { get; set; }
 
   /// <summary>
   /// Gets or sets the outline level.

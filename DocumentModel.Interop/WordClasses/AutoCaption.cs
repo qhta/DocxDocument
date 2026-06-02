@@ -10,7 +10,7 @@ public class AutoCaption : InteropObject
   /// Gets the name of the auto caption entry.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocaption.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
   /// <summary>
   /// Gets or sets a value indicating whether the caption label is inserted automatically.
   /// </summary>
@@ -20,7 +20,7 @@ public class AutoCaption : InteropObject
   /// Gets the index number of the auto caption entry in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocaption.index?view=word-pia"/>
-  public int Index { get; }
+  public int Index { get; set; }
   /// <summary>
   /// Gets or sets the caption label associated with the auto caption entry.
   /// </summary>

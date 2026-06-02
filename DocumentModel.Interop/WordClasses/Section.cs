@@ -10,7 +10,7 @@ public class Section : InteropObject
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.section.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
   /// <summary>
   /// Returns a PageSetup object that's associated with the specified section.
   /// </summary>
@@ -20,12 +20,12 @@ public class Section : InteropObject
   /// Returns a HeadersFooters collection that represents the headers for the specified section.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.section.headers?view=word-pia"/>
-  public HeadersFooters Headers { get; }
+  public HeadersFooters Headers { get; set; }
   /// <summary>
   /// Returns a HeadersFooters collection that represents the footers in the specified section.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.section.footers?view=word-pia"/>
-  public HeadersFooters Footers { get; }
+  public HeadersFooters Footers { get; set; }
   /// <summary>
   /// True if the specified section is protected for forms. When a section is protected for forms, you can select
   /// and modify text only in form fields.
@@ -36,7 +36,7 @@ public class Section : InteropObject
   /// Returns an Integer that represents the position of an item in a collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.section.index?view=word-pia"/>
-  public int Index { get; }
+  public int Index { get; set; }
   /// <summary>
   /// Returns a Borders collection that represents all the borders for the specified object.
   /// </summary>

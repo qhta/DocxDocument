@@ -10,7 +10,7 @@ public class ChartCategory : InteropObject
   /// Gets the name of the chart category.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcategory.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
   /// <summary>
   /// Gets or sets a value indicating whether the chart category is filtered.
   /// </summary>

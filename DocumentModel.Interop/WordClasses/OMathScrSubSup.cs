@@ -10,19 +10,19 @@ public partial class OMathScrSubSup : InteropObject
   /// Returns the base expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsubsup.e?view=word-pia"/>
-  public OMath E { get; }
+  public OMath E { get; set; }
 
   /// <summary>
   /// Returns the subscript expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsubsup.sub?view=word-pia"/>
-  public OMath Sub { get; }
+  public OMath Sub { get; set; }
 
   /// <summary>
   /// Returns the superscript expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsubsup.sup?view=word-pia"/>
-  public OMath Sup { get; }
+  public OMath Sup { get; set; }
 
   /// <summary>
   /// Returns or sets whether the scripts are aligned.

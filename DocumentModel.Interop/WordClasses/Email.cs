@@ -10,6 +10,6 @@ public class Email : InteropObject
   /// Gets the current email author.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.email.currentemailauthor?view=word-pia"/>
-  public EmailAuthor CurrentEmailAuthor { get; }
+  public EmailAuthor CurrentEmailAuthor { get; set; }
 
 }

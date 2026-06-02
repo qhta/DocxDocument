@@ -16,7 +16,7 @@ public partial class EmailOptions : InteropObject
   /// Gets or sets the text used to mark comments in email messages.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.markcommentswith?view=word-pia"/>
-  public string MarkCommentsWith { get; set; }
+  public string? MarkCommentsWith { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether comments are marked in email messages.
@@ -28,37 +28,37 @@ public partial class EmailOptions : InteropObject
   /// Gets the email signature settings.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.emailsignature?view=word-pia"/>
-  public EmailSignature EmailSignature { get; }
+  public EmailSignature EmailSignature { get; set; }
 
   /// <summary>
   /// Gets the style used when composing email messages.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.composestyle?view=word-pia"/>
-  public Style ComposeStyle { get; }
+  public Style ComposeStyle { get; set; }
 
   /// <summary>
   /// Gets the style used when replying to email messages.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.replystyle?view=word-pia"/>
-  public Style ReplyStyle { get; }
+  public Style ReplyStyle { get; set; }
 
   /// <summary>
   /// Gets or sets the theme name used for email messages.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.themename?view=word-pia"/>
-  public string ThemeName { get; set; }
+  public string? ThemeName { get; set; }
 
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.dummy1?view=word-pia"/>
-  public bool Dummy1 { get; }
+  public bool Dummy1 { get; set; }
 
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.dummy2?view=word-pia"/>
-  public bool Dummy2 { get; }
+  public bool Dummy2 { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether a new color is used for replies.
@@ -70,7 +70,7 @@ public partial class EmailOptions : InteropObject
   /// Gets the style used for plain-text email messages.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.plaintextstyle?view=word-pia"/>
-  public Style PlainTextStyle { get; }
+  public Style PlainTextStyle { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether theme styles are used for replies.

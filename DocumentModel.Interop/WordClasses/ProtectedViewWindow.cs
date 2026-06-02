@@ -10,13 +10,13 @@ public partial class ProtectedViewWindow : InteropObject
   /// Gets or sets the caption text that is displayed in the title bar of the document or protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.caption?view=word-pia"/>
-  public string Caption { get; set; }
+  public string? Caption { get; set; }
 
   /// <summary>
   /// Gets a Document object associated with the protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.document?view=word-pia"/>
-  public Document Document { get; }
+  public Document Document { get; set; }
 
   /// <summary>
   /// Gets or sets a value, in points, that represents the horizontal position of the specified protected view
@@ -53,13 +53,13 @@ public partial class ProtectedViewWindow : InteropObject
   /// Gets whether the specified protected view window is active.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.active?view=word-pia"/>
-  public bool Active { get; }
+  public bool Active { get; set; }
 
   /// <summary>
   /// Returns a value that represents the position of an item in a collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.index?view=word-pia"/>
-  public int Index { get; }
+  public int Index { get; set; }
 
   /// <summary>
   /// Gets or sets whether the specified protected view window is visible.
@@ -71,11 +71,11 @@ public partial class ProtectedViewWindow : InteropObject
   /// Gets the name of the source file for the specified protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.sourcename?view=word-pia"/>
-  public string SourceName { get; }
+  public string? SourceName { get; set; }
 
   /// <summary>
   /// Gets the path of the source file for the specified protected view window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.sourcepath?view=word-pia"/>
-  public string SourcePath { get; }
+  public string? SourcePath { get; set; }
 }

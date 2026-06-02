@@ -10,13 +10,13 @@ public partial class Point : InteropObject
   /// Returns a Border object that represents the border of the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public ChartBorder Border { get; set; }
 
   /// <summary>
   /// Returns a DataLabel object that represents the data label associated with the point. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.datalabel?view=word-pia"/>
-  public DataLabel DataLabel { get; }
+  public DataLabel DataLabel { get; set; }
 
   /// <summary>
   /// Returns or sets the explosion value for a pie-chart or doughnut-chart slice. Returns 0 (zero) if there's no
@@ -35,7 +35,7 @@ public partial class Point : InteropObject
   /// Returns an Interior object that represents the interior of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.interior?view=word-pia"/>
-  public Interior Interior { get; }
+  public Interior Interior { get; set; }
 
   /// <summary>
   /// True if Microsoft Word inverts the pattern in the object when it corresponds to a negative number. Read/write
@@ -137,7 +137,7 @@ public partial class Point : InteropObject
   /// contains fill formatting properties for the shape or chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.fill?view=word-pia"/>
-  public ChartFillFormat Fill { get; }
+  public ChartFillFormat Fill { get; set; }
 
   /// <summary>
   /// True if a point has a three-dimensional appearance. Read/write Boolean.
@@ -149,7 +149,7 @@ public partial class Point : InteropObject
   /// Returns the line, fill, and effect formatting for the object. Read-only ChartFormat.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public ChartFormat Format { get; set; }
 
   /// <summary>
   /// Returns or sets the unit for each picture on the chart if the PictureType property is set to xlStackScale (if
@@ -162,31 +162,31 @@ public partial class Point : InteropObject
   /// Gets the height, in points, of the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.height?view=word-pia"/>
-  public double Height { get; }
+  public double Height { get; set; }
 
   /// <summary>
   /// Gets the width, in points, of the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.width?view=word-pia"/>
-  public double Width { get; }
+  public double Width { get; set; }
 
   /// <summary>
   /// Gets a value that represents the distance, in points, from the top edge of the object to the top edge of the
   /// chart area.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.top?view=word-pia"/>
-  public double Top { get; }
+  public double Top { get; set; }
 
   /// <summary>
   /// Gets a value that represents the distance, in points, from the left edge of the object to the left edge of the
   /// chart area.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.left?view=word-pia"/>
-  public double Left { get; }
+  public double Left { get; set; }
 
   /// <summary>
   /// Gets the object name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
 }

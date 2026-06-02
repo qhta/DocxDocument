@@ -34,17 +34,17 @@ public partial class _OLEControl
   /// Gets or sets the name of the OLE control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._olecontrol.name?view=word-pia"/>
-  public string Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Gets the automation object for the OLE control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._olecontrol.automation?view=word-pia"/>
-  public object Automation { get; }
+  public object Automation { get; set; }
 
   /// <summary>
   /// Gets or sets the HTML representation used when the OLE control is saved as a web page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._olecontrol.althtml?view=word-pia"/>
-  public string AltHTML { get; set; }
+  public string? AltHTML { get; set; }
 }

@@ -11,25 +11,25 @@ public partial class Walls : InteropObject
   /// Returns a String value that represents the name of the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.walls.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Returns a Border object that represents the border of the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.walls.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public ChartBorder Border { get; set; }
 
   /// <summary>
   /// Returns an Interior object that represents the interior of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.walls.interior?view=word-pia"/>
-  public Interior Interior { get; }
+  public Interior Interior { get; set; }
 
   /// <summary>
   /// Returns a ChartFillFormat object for a specified chart that contains fill formatting properties for the chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.walls.fill?view=word-pia"/>
-  public ChartFillFormat Fill { get; }
+  public ChartFillFormat Fill { get; set; }
 
   /// <summary>
   /// Returns or sets a Object value that represents the way pictures are displayed on the walls and faces of a 3-D
@@ -55,5 +55,5 @@ public partial class Walls : InteropObject
   /// Returns the line, fill, and effect formatting for the object. Read-only ChartFormat.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.walls.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public ChartFormat Format { get; set; }
 }

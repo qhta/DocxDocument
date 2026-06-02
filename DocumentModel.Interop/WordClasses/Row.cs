@@ -10,7 +10,7 @@ public partial class Row : InteropObject
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
 
   /// <summary>
   /// Determines if the text in a table row or rows are allowed to split across a page break.
@@ -58,25 +58,25 @@ public partial class Row : InteropObject
   /// Determines if the specified column or row is the last one in the table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.islast?view=word-pia"/>
-  public bool IsLast { get; }
+  public bool IsLast { get; set; }
 
   /// <summary>
   /// Determines if the specified column or row is the first one in the table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.isfirst?view=word-pia"/>
-  public bool IsFirst { get; }
+  public bool IsFirst { get; set; }
 
   /// <summary>
   /// Returns an Integer that represents the position of an item in a collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.index?view=word-pia"/>
-  public int Index { get; }
+  public int Index { get; set; }
 
   /// <summary>
   /// Returns a Cells collection that represents the table cells in a column, row, selection, or range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.cells?view=word-pia"/>
-  public Cells Cells { get; }
+  public Cells Cells { get; set; }
 
   /// <summary>
   /// Returns a Borders collection that represents all the borders for the specified object.
@@ -88,30 +88,30 @@ public partial class Row : InteropObject
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public Shading Shading { get; set; }
 
   /// <summary>
   /// Returns the next object in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.next?view=word-pia"/>
-  public Row Next { get; }
+  public Row Next { get; set; }
 
   /// <summary>
   /// Returns the previous object in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.previous?view=word-pia"/>
-  public Row Previous { get; }
+  public Row Previous { get; set; }
 
   /// <summary>
   /// Returns the nesting level of the specified row.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.nestinglevel?view=word-pia"/>
-  public int NestingLevel { get; }
+  public int NestingLevel { get; set; }
 
   /// <summary>
   /// Returns or sets the identifying label for the specified object when the current document is saved as a Web
   /// page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.id?view=word-pia"/>
-  public string ID { get; set; }
+  public string? ID { get; set; }
 }

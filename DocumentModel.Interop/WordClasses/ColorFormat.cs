@@ -22,13 +22,13 @@ public partial class ColorFormat : InteropObject
   /// Gets the type of color.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.colorformat.type?view=word-pia"/>
-  public Core.ColorType Type { get; }
+  public Core.ColorType Type { get; set; }
 
   /// <summary>
   /// Gets or sets the name of the color.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.colorformat.name?view=word-pia"/>
-  public string Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Gets or sets the tint or shade value for the color.

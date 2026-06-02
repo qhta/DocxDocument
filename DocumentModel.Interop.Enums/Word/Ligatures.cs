@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdligatures?view=office-pia` for Office interop details.
 /// </remarks>
-public enum Ligatures
+public enum OtLigatures
 {
   /// <summary>
   /// Does not apply any ligatures to the font.

@@ -10,11 +10,11 @@ public partial class OMathRecognizedFunction : InteropObject
   /// Returns the index number of the recognized function in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrecognizedfunction.index?view=word-pia"/>
-  public int Index { get; }
+  public int Index { get; set; }
 
   /// <summary>
   /// Returns the name of the recognized function.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrecognizedfunction.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
 }

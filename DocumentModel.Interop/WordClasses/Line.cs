@@ -10,36 +10,36 @@ public class Line : InteropObject
   /// Returns the type of line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.line.linetype?view=word-pia"/>
-  public LineType LineType { get; }
+  public LineType LineType { get; set; }
   /// <summary>
   /// Returns the horizontal position of the line, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.line.left?view=word-pia"/>
-  public int Left { get; }
+  public int Left { get; set; }
   /// <summary>
   /// Returns the vertical position of the line, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.line.top?view=word-pia"/>
-  public int Top { get; }
+  public int Top { get; set; }
   /// <summary>
   /// Returns the width of the line, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.line.width?view=word-pia"/>
-  public int Width { get; }
+  public int Width { get; set; }
   /// <summary>
   /// Returns the height of the line, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.line.height?view=word-pia"/>
-  public int Height { get; }
+  public int Height { get; set; }
   /// <summary>
   /// Returns a range object that represents the line in the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.line.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
   /// <summary>
   /// Returns a rectangles collection that includes the rectangle objects in the line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.line.rectangles?view=word-pia"/>
-  public Rectangles Rectangles { get; }
+  public Rectangles Rectangles { get; set; }
 
 }

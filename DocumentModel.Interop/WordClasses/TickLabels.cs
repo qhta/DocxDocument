@@ -10,19 +10,19 @@ public partial class TickLabels : InteropObject
   /// Returns a ChartFont object that represents the font of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.ticklabels.font?view=word-pia"/>
-  public ChartFont Font { get; }
+  public ChartFont Font { get; set; }
 
   /// <summary>
   /// Returns a String value that represents the name of the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.ticklabels.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Returns or sets a String value that represents the format code for the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.ticklabels.numberformat?view=word-pia"/>
-  public string NumberFormat { get; set; }
+  public string? NumberFormat { get; set; }
 
   /// <summary>
   /// True if the number format is linked to the cells (so that the number format changes in the labels when it
@@ -61,7 +61,7 @@ public partial class TickLabels : InteropObject
   /// Returns a Long value that represents the number of levels of category tick labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.ticklabels.depth?view=word-pia"/>
-  public int Depth { get; }
+  public int Depth { get; set; }
 
   /// <summary>
   /// Returns or sets a Long value that represents the distance between the levels of labels, and the distance
@@ -86,5 +86,5 @@ public partial class TickLabels : InteropObject
   /// Returns the line, fill, and effect formatting for the object. Read-only ChartFormat.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.ticklabels.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public ChartFormat Format { get; set; }
 }

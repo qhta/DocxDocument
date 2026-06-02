@@ -10,5 +10,5 @@ public partial class Tables : InteropCollection<Table>
   /// Returns the nesting level of the specified tables.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tables.nestinglevel?view=word-pia"/>
-  public int NestingLevel { get; }
+  public int NestingLevel { get; set; }
 }

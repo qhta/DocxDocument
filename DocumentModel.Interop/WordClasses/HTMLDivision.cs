@@ -10,13 +10,13 @@ public partial class HTMLDivision : InteropObject
   /// Returns a range object that represents the contents of the HTML division.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivision.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
 
   /// <summary>
   /// Returns a borders collection that represents the borders for the HTML division.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivision.borders?view=word-pia"/>
-  public Borders Borders { get; }
+  public Borders Borders { get; set; }
 
   /// <summary>
   /// Returns or sets the left indent value, in points, for the HTML division.
@@ -46,5 +46,5 @@ public partial class HTMLDivision : InteropObject
   /// Returns the HTML divisions collection that contains this HTML division.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivision.htmldivisions?view=word-pia"/>
-  public HTMLDivisions HTMLDivisions { get; }
+  public HTMLDivisions HTMLDivisions { get; set; }
 }

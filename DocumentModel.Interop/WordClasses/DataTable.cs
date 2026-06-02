@@ -34,13 +34,13 @@ public partial class DataTable : InteropObject
   /// Gets the border formatting for the data table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datatable.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public ChartBorder Border { get; set; }
 
   /// <summary>
   /// Gets the font formatting for the data table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datatable.font?view=word-pia"/>
-  public ChartFont Font { get; }
+  public ChartFont Font { get; set; }
 
   /// <summary>
   /// Gets or sets whether the font size is scaled automatically.
@@ -52,5 +52,5 @@ public partial class DataTable : InteropObject
   /// Gets the chart formatting for the data table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datatable.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public ChartFormat Format { get; set; }
 }

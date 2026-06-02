@@ -10,7 +10,7 @@ public class CheckBox : InteropObject
   /// Gets a value indicating whether the `CheckBox` object is valid.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.checkbox.valid?view=word-pia"/>
-  public bool Valid { get; }
+  public bool Valid { get; set; }
   /// <summary>
   /// Gets or sets a value indicating whether the check box is automatically sized.
   /// </summary>

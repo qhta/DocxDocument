@@ -10,7 +10,7 @@ public class OMathGroupChar : InteropObject
   /// Returns the expression associated with the group character.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathgroupchar.e?view=word-pia"/>
-  public OMath E { get; }
+  public OMath E { get; set; }
   /// <summary>
   /// Returns or sets the group character.
   /// </summary>

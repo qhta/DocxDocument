@@ -10,19 +10,19 @@ public partial class CaptionLabel : InteropObject
   /// Gets the name of the caption label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Gets a value indicating whether the caption label is built in.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.builtin?view=word-pia"/>
-  public bool BuiltIn { get; }
+  public bool BuiltIn { get; set; }
 
   /// <summary>
   /// Gets the built-in ID for the caption label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.id?view=word-pia"/>
-  public CaptionLabelID ID { get; }
+  public CaptionLabelID ID { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether chapter numbers are included in captions for this label.

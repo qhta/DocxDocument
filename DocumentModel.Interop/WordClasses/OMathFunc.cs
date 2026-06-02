@@ -10,11 +10,11 @@ public class OMathFunc : InteropObject
   /// Returns the function name expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunc.fname?view=word-pia"/>
-  public OMath FName { get; }
+  public OMath FName { get; set; }
   /// <summary>
   /// Returns the function argument expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunc.e?view=word-pia"/>
-  public OMath E { get; }
+  public OMath E { get; set; }
 
 }

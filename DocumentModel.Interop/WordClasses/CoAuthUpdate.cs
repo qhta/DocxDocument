@@ -10,6 +10,6 @@ public class CoAuthUpdate : InteropObject
   /// Gets the range of text that was updated by a co-author.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthupdate.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
 
 }

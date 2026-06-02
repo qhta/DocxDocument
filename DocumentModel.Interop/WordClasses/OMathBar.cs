@@ -10,7 +10,7 @@ public class OMathBar : InteropObject
   /// Returns the base expression of the bar equation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbar.e?view=word-pia"/>
-  public OMath E { get; }
+  public OMath E { get; set; }
   /// <summary>
   /// Returns or sets whether the bar appears above the expression.
   /// </summary>

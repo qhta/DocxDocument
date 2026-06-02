@@ -10,17 +10,17 @@ public partial class Gridlines : InteropObject
   /// Returns the name of the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.gridlines.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Returns a border object that represents the border of the gridlines.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.gridlines.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public ChartBorder Border { get; set; }
 
   /// <summary>
   /// Returns the chart format properties for the gridlines.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.gridlines.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public ChartFormat Format { get; set; }
 }

@@ -16,7 +16,7 @@ public partial class DropCap : InteropObject
   /// Gets or sets the font name for the drop cap.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dropcap.fontname?view=word-pia"/>
-  public string FontName { get; set; }
+  public string? FontName { get; set; }
 
   /// <summary>
   /// Gets or sets the number of lines that the drop cap occupies.

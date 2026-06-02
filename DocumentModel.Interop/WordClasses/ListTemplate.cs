@@ -16,11 +16,11 @@ public partial class ListTemplate : InteropObject
   /// Returns or sets the name of the list template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listtemplate.name?view=word-pia"/>
-  public string Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Returns the list levels collection for the list template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listtemplate.listlevels?view=word-pia"/>
-  public ListLevels ListLevels { get; }
+  public ListLevels ListLevels { get; set; }
 }

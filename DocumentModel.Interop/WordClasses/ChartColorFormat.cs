@@ -15,16 +15,16 @@ public class ChartColorFormat : InteropObject
   /// Gets the red-green-blue (RGB) value of the color.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcolorformat.rgb?view=word-pia"/>
-  public int RGB { get; }
+  public int RGB { get; set; }
   /// <summary>
   /// Gets the default color.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcolorformat._default?view=word-pia"/>
-  public int _Default { get; }
+  public int _Default { get; set; }
   /// <summary>
   /// Gets the type of color.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcolorformat.type?view=word-pia"/>
-  public int Type { get; }
+  public int Type { get; set; }
 
 }

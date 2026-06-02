@@ -10,7 +10,7 @@ public class LineFormat : InteropObject
   /// Returns a color format object that represents the background color for the line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.backcolor?view=word-pia"/>
-  public ColorFormat BackColor { get; }
+  public ColorFormat BackColor { get; set; }
   /// <summary>
   /// Returns or sets the length of the begin arrowhead.
   /// </summary>
@@ -50,7 +50,7 @@ public class LineFormat : InteropObject
   /// Returns a color format object that represents the foreground color for the line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat.forecolor?view=word-pia"/>
-  public ColorFormat ForeColor { get; }
+  public ColorFormat ForeColor { get; set; }
   /// <summary>
   /// Returns or sets the fill pattern for the line.
   /// </summary>

@@ -20,7 +20,7 @@ public class Border : InteropObject
   /// Gets a value indicating whether the border is an inside border.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.border.inside?view=word-pia"/>
-  public bool Inside { get; }
+  public bool Inside { get; set; }
   /// <summary>
   /// Gets or sets the line style for the border.
   /// </summary>

@@ -10,7 +10,7 @@ public partial class OMathBreak : InteropObject
   /// Returns the range at the equation line break location.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbreak.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
 
   /// <summary>
   /// Returns or sets the alignment position at the line break.

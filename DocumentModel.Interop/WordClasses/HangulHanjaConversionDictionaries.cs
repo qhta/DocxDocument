@@ -10,7 +10,7 @@ public partial class HangulHanjaConversionDictionaries : InteropCollection<Dicti
   /// Returns the maximum number of active custom Hangul-Hanja conversion dictionaries.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hangulhanjaconversiondictionaries.maximum?view=word-pia"/>
-  public int Maximum { get; }
+  public int Maximum { get; set; }
 
   /// <summary>
   /// Returns or sets the active custom Hangul-Hanja conversion dictionary.
@@ -22,5 +22,5 @@ public partial class HangulHanjaConversionDictionaries : InteropCollection<Dicti
   /// Returns the built-in Hangul-Hanja conversion dictionary.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hangulhanjaconversiondictionaries.builtindictionary?view=word-pia"/>
-  public Dictionary BuiltinDictionary { get; }
+  public Dictionary BuiltinDictionary { get; set; }
 }

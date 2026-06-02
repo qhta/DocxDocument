@@ -82,7 +82,7 @@ public partial class Frame : InteropObject
   /// Returns a <see cref="Shading"/> object that represents the shading formatting for the specified frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frame.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public Shading Shading { get; set; }
 
   /// <summary>
   /// Returns or sets a <see cref="Borders"/> collection that represents the borders of the specified frame.
@@ -94,5 +94,5 @@ public partial class Frame : InteropObject
   /// Returns a <see cref="Range"/> object that represents the portion of a document that's contained in the specified frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frame.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
 }

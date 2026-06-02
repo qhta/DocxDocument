@@ -11,11 +11,11 @@ public partial class XMLSchemaReference : InteropObject
   /// specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlschemareference.namespaceuri?view=word-pia"/>
-  public string NamespaceURI { get; }
+  public string? NamespaceURI { get; set; }
 
   /// <summary>
   /// Returns a String indicating the location of the specified XML schema.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlschemareference.location?view=word-pia"/>
-  public string Location { get; }
+  public string? Location { get; set; }
 }

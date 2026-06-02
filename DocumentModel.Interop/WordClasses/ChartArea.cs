@@ -10,19 +10,19 @@ public partial class ChartArea : InteropObject
   /// Gets the name of the chart area object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Gets the border formatting for the chart area.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public ChartBorder Border { get; set; }
 
   /// <summary>
   /// Gets the font formatting used in the chart area.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.font?view=word-pia"/>
-  public ChartFont Font { get; }
+  public ChartFont Font { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the chart area has a shadow.
@@ -40,13 +40,13 @@ public partial class ChartArea : InteropObject
   /// Gets the interior formatting of the chart area.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.interior?view=word-pia"/>
-  public Interior Interior { get; }
+  public Interior Interior { get; set; }
 
   /// <summary>
   /// Gets the fill formatting of the chart area.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.fill?view=word-pia"/>
-  public ChartFillFormat Fill { get; }
+  public ChartFillFormat Fill { get; set; }
 
   /// <summary>
   /// Gets or sets the distance, in points, from the left edge of the chart area to the left edge of the object.
@@ -76,5 +76,5 @@ public partial class ChartArea : InteropObject
   /// Gets the chart formatting for the chart area.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public ChartFormat Format { get; set; }
 }

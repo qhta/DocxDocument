@@ -10,41 +10,41 @@ public partial class SmartTag : InteropObject
   /// Returns the name of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttag.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Returns a String that represents the related XML for a smart tag.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttag.xml?view=word-pia"/>
-  public string XML { get; }
+  public string? XML { get; set; }
 
   /// <summary>
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttag.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
 
   /// <summary>
   /// Returns a String that represents the URL address for a smart tag.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttag.downloadurl?view=word-pia"/>
-  public string DownloadURL { get; }
+  public string? DownloadURL { get; set; }
 
   /// <summary>
   /// Returns a CustomProperties object that represents the properties of a smart tag.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttag.properties?view=word-pia"/>
-  public CustomProperties Properties { get; }
+  public CustomProperties Properties { get; set; }
 
   /// <summary>
   /// Returns a SmartTagActions collection that represents the collection of actions available on a smart tag.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttag.smarttagactions?view=word-pia"/>
-  public SmartTagActions SmartTagActions { get; }
+  public SmartTagActions SmartTagActions { get; set; }
 
   /// <summary>
   /// Returns a XMLNode object that represents the XML element for a smart tag.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttag.xmlnode?view=word-pia"/>
-  public XMLNode XMLNode { get; }
+  public XMLNode XMLNode { get; set; }
 }

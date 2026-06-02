@@ -10,7 +10,7 @@ public partial class Dictionaries : InteropCollection<Dictionary>
   /// Gets the maximum number of custom dictionaries that can be active.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionaries.maximum?view=word-pia"/>
-  public int Maximum { get; }
+  public int Maximum { get; set; }
 
   /// <summary>
   /// Gets or sets the active custom spelling dictionary.

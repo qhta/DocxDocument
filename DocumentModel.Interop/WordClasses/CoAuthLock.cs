@@ -10,23 +10,23 @@ public partial class CoAuthLock : InteropObject
   /// Gets the type of coauthoring lock.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthlock.type?view=word-pia"/>
-  public LockType Type { get; }
+  public LockType Type { get; set; }
 
   /// <summary>
   /// Gets the coauthor who owns the lock.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthlock.owner?view=word-pia"/>
-  public CoAuthor Owner { get; }
+  public CoAuthor Owner { get; set; }
 
   /// <summary>
   /// Gets the range in the document covered by the lock.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthlock.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
 
   /// <summary>
   /// Gets a value indicating whether the lock is in a header or footer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthlock.headerfooter?view=word-pia"/>
-  public bool HeaderFooter { get; }
+  public bool HeaderFooter { get; set; }
 }

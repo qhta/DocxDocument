@@ -10,13 +10,13 @@ public partial class Sections : InteropCollection<Section>
   /// Returns a Section object that represents the first item in the Sections collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.sections.first?view=word-pia"/>
-  public Section First { get; }
+  public Section First { get; set; }
 
   /// <summary>
   /// Returns the last item in the Sections collection as a Section object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.sections.last?view=word-pia"/>
-  public Section Last { get; }
+  public Section Last { get; set; }
 
   /// <summary>
   /// Returns a PageSetup object that's associated with the specified sections

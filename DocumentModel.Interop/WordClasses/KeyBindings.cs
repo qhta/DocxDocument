@@ -11,5 +11,5 @@ public partial class KeyBindings : InteropCollection<KeyBinding>
   /// This property can return a Document, Template, or Application object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybindings.context?view=word-pia"/>
-  public object Context { get; }
+  public object Context { get; set; }
 }

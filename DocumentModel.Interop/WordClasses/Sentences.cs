@@ -12,11 +12,11 @@ public class Sentences : InteropCollection<Range>
   /// range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.sentences.first?view=word-pia"/>
-  public Range First { get; }
+  public Range First { get; set; }
   /// <summary>
   /// Returns a Range object that represents the last character, word, or sentence in a document, selection, or
   /// range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.sentences.last?view=word-pia"/>
-  public Range Last { get; }
+  public Range Last { get; set; }
 }

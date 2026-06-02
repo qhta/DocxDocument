@@ -28,17 +28,17 @@ public partial class TabStop : InteropObject
   /// True if the specified tab stop is a custom tab stop.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tabstop.customtab?view=word-pia"/>
-  public bool CustomTab { get; }
+  public bool CustomTab { get; set; }
 
   /// <summary>
   /// Returns the next object in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tabstop.next?view=word-pia"/>
-  public TabStop Next { get; }
+  public TabStop Next { get; set; }
 
   /// <summary>
   /// Returns the previous object in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tabstop.previous?view=word-pia"/>
-  public TabStop Previous { get; }
+  public TabStop Previous { get; set; }
 }

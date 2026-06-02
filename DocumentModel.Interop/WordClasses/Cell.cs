@@ -10,19 +10,19 @@ public partial class Cell : InteropObject
   /// Gets the range that represents the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
 
   /// <summary>
   /// Gets the index number of the row that contains the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.rowindex?view=word-pia"/>
-  public int RowIndex { get; }
+  public int RowIndex { get; set; }
 
   /// <summary>
   /// Gets the index number of the column that contains the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.columnindex?view=word-pia"/>
-  public int ColumnIndex { get; }
+  public int ColumnIndex { get; set; }
 
   /// <summary>
   /// Gets or sets the width of the cell, in points.
@@ -52,31 +52,31 @@ public partial class Cell : InteropObject
   /// Gets the column that contains the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.column?view=word-pia"/>
-  public Column Column { get; }
+  public Column Column { get; set; }
 
   /// <summary>
   /// Gets the row that contains the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.row?view=word-pia"/>
-  public Row Row { get; }
+  public Row Row { get; set; }
 
   /// <summary>
   /// Gets the next cell in the table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.next?view=word-pia"/>
-  public Cell Next { get; }
+  public Cell Next { get; set; }
 
   /// <summary>
   /// Gets the previous cell in the table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.previous?view=word-pia"/>
-  public Cell Previous { get; }
+  public Cell Previous { get; set; }
 
   /// <summary>
   /// Gets the shading formatting for the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public Shading Shading { get; set; }
 
   /// <summary>
   /// Gets or sets the border formatting for the cell.
@@ -88,13 +88,13 @@ public partial class Cell : InteropObject
   /// Gets the collection of tables nested within the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.tables?view=word-pia"/>
-  public Tables Tables { get; }
+  public Tables Tables { get; set; }
 
   /// <summary>
   /// Gets the nesting level of the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.nestinglevel?view=word-pia"/>
-  public int NestingLevel { get; }
+  public int NestingLevel { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether text wraps within the cell.
@@ -142,7 +142,7 @@ public partial class Cell : InteropObject
   /// Gets or sets the identifier for the cell.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell.id?view=word-pia"/>
-  public string ID { get; set; }
+  public string? ID { get; set; }
 
   /// <summary>
   /// Gets or sets the preferred width type for the cell.

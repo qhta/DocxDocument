@@ -10,7 +10,7 @@ public partial class Task : InteropObject
   /// Returns or sets the name of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.task.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Returns or sets an Integer that represents the horizontal position of the specified task, measured in points.

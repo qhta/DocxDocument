@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdnumberform?view=office-pia` for Office interop details.
 /// </remarks>
-public enum NumberForm
+public enum OtNumberForm
 {
   /// <summary>
   /// Applies the default number form for the font.

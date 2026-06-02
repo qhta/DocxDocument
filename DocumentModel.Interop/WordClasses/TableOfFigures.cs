@@ -10,7 +10,7 @@ public partial class TableOfFigures : InteropObject
   /// Returns or sets the label that identifies the items to be included in a table of figures.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableoffigures.caption?view=word-pia"/>
-  public string Caption { get; set; }
+  public string? Caption { get; set; }
 
   /// <summary>
   /// True if the caption label and caption number are included in a table of figures.
@@ -52,7 +52,7 @@ public partial class TableOfFigures : InteropObject
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableoffigures.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
 
   /// <summary>
   /// True if Table of Contents Entry (TC) fields are used to create a table of figures.
@@ -64,14 +64,14 @@ public partial class TableOfFigures : InteropObject
   /// Returns or sets a one-letter identifier that's used to build a table of figures from TOC fields.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableoffigures.tableid?view=word-pia"/>
-  public string TableID { get; set; }
+  public string? TableID { get; set; }
 
   /// <summary>
   /// Returns a HeadingStyles object that represents additional styles used to compile a table of figures (styles
   /// other than the Heading 1 – Heading 9 styles).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableoffigures.headingstyles?view=word-pia"/>
-  public HeadingStyles HeadingStyles { get; }
+  public HeadingStyles HeadingStyles { get; set; }
 
   /// <summary>
   /// Returns or sets the character between entries and their page numbers in a table of figures.

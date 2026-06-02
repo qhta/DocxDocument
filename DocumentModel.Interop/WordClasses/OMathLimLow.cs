@@ -10,11 +10,11 @@ public partial class OMathLimLow : InteropObject
   /// Returns the base expression for the lower-limit construct.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathlimlow.e?view=word-pia"/>
-  public OMath E { get; }
+  public OMath E { get; set; }
 
   /// <summary>
   /// Returns the lower limit expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathlimlow.lim?view=word-pia"/>
-  public OMath Lim { get; }
+  public OMath Lim { get; set; }
 }

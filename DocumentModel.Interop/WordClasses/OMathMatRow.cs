@@ -10,11 +10,11 @@ public partial class OMathMatRow : InteropObject
   /// Returns the collection of arguments in the matrix row.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatrow.args?view=word-pia"/>
-  public OMathArgs Args { get; }
+  public OMathArgs Args { get; set; }
 
   /// <summary>
   /// Returns the index number of the matrix row.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatrow.rowindex?view=word-pia"/>
-  public int RowIndex { get; }
+  public int RowIndex { get; set; }
 }

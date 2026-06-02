@@ -10,13 +10,13 @@ public partial class OMathMat : InteropObject
   /// Returns the collection of matrix rows.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmat.rows?view=word-pia"/>
-  public OMathMatRows Rows { get; }
+  public OMathMatRows Rows { get; set; }
 
   /// <summary>
   /// Returns the collection of matrix columns.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmat.cols?view=word-pia"/>
-  public OMathMatCols Cols { get; }
+  public OMathMatCols Cols { get; set; }
 
   /// <summary>
   /// Returns or sets the vertical alignment of the matrix.

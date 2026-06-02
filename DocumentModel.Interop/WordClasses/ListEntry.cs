@@ -10,11 +10,11 @@ public partial class ListEntry : InteropObject
   /// Returns the position of the item in the list entries collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listentry.index?view=word-pia"/>
-  public int Index { get; }
+  public int Index { get; set; }
 
   /// <summary>
   /// Returns or sets the text of the list entry item.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listentry.name?view=word-pia"/>
-  public string Name { get; set; }
+  public string? Name { get; set; }
 }

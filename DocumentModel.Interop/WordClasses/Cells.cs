@@ -40,13 +40,13 @@ public partial class Cells : InteropCollection<Cell>
   /// Gets the shading formatting for the cells.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public Shading Shading { get; set; }
 
   /// <summary>
   /// Gets the nesting level of the cells.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.nestinglevel?view=word-pia"/>
-  public int NestingLevel { get; }
+  public int NestingLevel { get; set; }
 
   /// <summary>
   /// Gets or sets the preferred width of the cells.

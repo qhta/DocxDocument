@@ -10,25 +10,25 @@ public partial class Window : InteropObject
   /// Returns a Pane object that represents the active pane for the specified window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.activepane?view=word-pia"/>
-  public Pane ActivePane { get; }
+  public Pane ActivePane { get; set; }
 
   /// <summary>
   /// Returns a Document object associated with the specified window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.document?view=word-pia"/>
-  public Document Document { get; }
+  public Document Document { get; set; }
 
   /// <summary>
   /// Returns a Panes collection that represents all the window panes for the specified window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.panes?view=word-pia"/>
-  public Panes Panes { get; }
+  public Panes Panes { get; set; }
 
   /// <summary>
   /// Returns the Selection object that represents a selected range or the insertion point.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.selection?view=word-pia"/>
-  public Selection Selection { get; }
+  public Selection Selection { get; set; }
 
   /// <summary>
   /// Returns or sets an Integer that represents the horizontal position of the specified window, measured in
@@ -71,7 +71,7 @@ public partial class Window : InteropObject
   /// Returns or sets the caption text for the specified document or application window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.caption?view=word-pia"/>
-  public string Caption { get; set; }
+  public string? Caption { get; set; }
 
   /// <summary>
   /// Returns or sets the state of the specified document window or task window.
@@ -95,32 +95,32 @@ public partial class Window : InteropObject
   /// Returns a View object that represents the view for the specified window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.view?view=word-pia"/>
-  public View View { get; }
+  public View View { get; set; }
 
   /// <summary>
   /// Returns the window type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.type?view=word-pia"/>
-  public WindowType Type { get; }
+  public WindowType Type { get; set; }
 
   /// <summary>
   /// Returns the next object in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.next?view=word-pia"/>
-  public Window Next { get; }
+  public Window Next { get; set; }
 
   /// <summary>
   /// Returns the previous object in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.previous?view=word-pia"/>
-  public Window Previous { get; }
+  public Window Previous { get; set; }
 
   /// <summary>
   /// Returns the window number of the document displayed in the specified window. For example, if the caption of
   /// the window is "Sales.doc:2", this property returns the number 2.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.windownumber?view=word-pia"/>
-  public int WindowNumber { get; }
+  public int WindowNumber { get; set; }
 
   /// <summary>
   /// True if a vertical scroll bar is displayed for the specified window.
@@ -169,7 +169,7 @@ public partial class Window : InteropObject
   /// True if the specified window is active.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.active?view=word-pia"/>
-  public bool Active { get; }
+  public bool Active { get; set; }
 
   /// <summary>
   /// Returns or sets the width of the document map as a percentage of the width of the specified window.
@@ -181,7 +181,7 @@ public partial class Window : InteropObject
   /// Returns an Integer that represents the position of an item in a collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.index?view=word-pia"/>
-  public int Index { get; }
+  public int Index { get; set; }
 
   /// <summary>
   /// Returns or sets the default start-up mode for the Japanese Input Method Editor (IME).
@@ -193,13 +193,13 @@ public partial class Window : InteropObject
   /// Returns the width (in points) of the active working area in the specified document window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.usablewidth?view=word-pia"/>
-  public int UsableWidth { get; }
+  public int UsableWidth { get; set; }
 
   /// <summary>
   /// Returns the height (in points) of the active working area in the specified document window.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.usableheight?view=word-pia"/>
-  public int UsableHeight { get; }
+  public int UsableHeight { get; set; }
 
   /// <summary>
   /// True if the e-mail message header is visible in the document window. The default value is False.
@@ -243,5 +243,5 @@ public partial class Window : InteropObject
   /// Returns an Integer (int in C#) that indicates the window handle of the specified window. Read- only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.hwnd?view=word-pia"/>
-  public int Hwnd { get; }
+  public int Hwnd { get; set; }
 }

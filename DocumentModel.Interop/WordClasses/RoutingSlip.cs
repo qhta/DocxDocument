@@ -10,13 +10,13 @@ public partial class RoutingSlip : InteropObject
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip.subject?view=word-pia"/>
-  public string Subject { get; set; }
+  public string? Subject { get; set; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip.message?view=word-pia"/>
-  public string Message { get; set; }
+  public string? Message { get; set; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
@@ -46,5 +46,5 @@ public partial class RoutingSlip : InteropObject
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip.status?view=word-pia"/>
-  public RoutingSlipStatus Status { get; }
+  public RoutingSlipStatus Status { get; set; }
 }

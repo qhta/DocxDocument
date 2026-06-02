@@ -10,13 +10,13 @@ public partial class Paragraphs : InteropCollection<Paragraph>
   /// Returns a Paragraph object that represents the first item in the Paragraphs collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.first?view=word-pia"/>
-  public Paragraph First { get; }
+  public Paragraph First { get; set; }
 
   /// <summary>
   /// Returns the last item in the Paragraphs collection as a Paragraph object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.last?view=word-pia"/>
-  public Paragraph Last { get; }
+  public Paragraph Last { get; set; }
 
   /// <summary>
   /// Returns or sets a ParagraphFormat object that represents the formatting of the specified paragraph or
@@ -134,7 +134,7 @@ public partial class Paragraphs : InteropCollection<Paragraph>
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public Shading Shading { get; set; }
 
   /// <summary>
   /// Determines if Microsoft Word applies East Asian line-breaking rules to the specified paragraphs.

@@ -10,19 +10,19 @@ public partial class Bookmark : InteropObject
   /// Gets the name of the bookmark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Gets the range that represents the bookmark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
 
   /// <summary>
   /// Gets a value indicating whether the bookmark is empty.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.empty?view=word-pia"/>
-  public bool Empty { get; }
+  public bool Empty { get; set; }
 
   /// <summary>
   /// Gets or sets the starting character position of the bookmark.
@@ -40,11 +40,11 @@ public partial class Bookmark : InteropObject
   /// Gets a value indicating whether the bookmark is a table column bookmark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.column?view=word-pia"/>
-  public bool Column { get; }
+  public bool Column { get; set; }
 
   /// <summary>
   /// Gets the story type for the bookmark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.storytype?view=word-pia"/>
-  public StoryType StoryType { get; }
+  public StoryType StoryType { get; set; }
 }

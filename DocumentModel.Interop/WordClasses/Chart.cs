@@ -16,7 +16,7 @@ public partial class Chart : InteropObject
   /// Gets the chart title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.charttitle?view=word-pia"/>
-  public ChartTitle ChartTitle { get; }
+  public ChartTitle ChartTitle { get; set; }
 
   /// <summary>
   /// Gets or sets the depth of a 3-D chart as a percentage of the chart width.
@@ -82,7 +82,7 @@ public partial class Chart : InteropObject
   /// Gets the corners object for a 3-D chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.corners?view=word-pia"/>
-  public Corners Corners { get; }
+  public Corners Corners { get; set; }
 
   /// <summary>
   /// Gets or sets the chart type.
@@ -112,25 +112,25 @@ public partial class Chart : InteropObject
   /// Gets the legend for the chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.legend?view=word-pia"/>
-  public Legend Legend { get; }
+  public Legend Legend { get; set; }
 
   /// <summary>
   /// Gets the walls of a 3-D chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.walls?view=word-pia"/>
-  public Walls Walls { get; }
+  public Walls Walls { get; set; }
 
   /// <summary>
   /// Gets the floor of a 3-D chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.floor?view=word-pia"/>
-  public Floor Floor { get; }
+  public Floor Floor { get; set; }
 
   /// <summary>
   /// Gets the plot area of the chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.plotarea?view=word-pia"/>
-  public PlotArea PlotArea { get; }
+  public PlotArea PlotArea { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether only visible cells are plotted.
@@ -142,7 +142,7 @@ public partial class Chart : InteropObject
   /// Gets the chart area.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.chartarea?view=word-pia"/>
-  public ChartArea ChartArea { get; }
+  public ChartArea ChartArea { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the chart scales to fit available space.
@@ -154,7 +154,7 @@ public partial class Chart : InteropObject
   /// Gets the chart data table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.datatable?view=word-pia"/>
-  public DataTable DataTable { get; }
+  public DataTable DataTable { get; set; }
 
   /// <summary>
   /// Gets or sets the shape used for bars or columns in a 3-D chart.
@@ -166,13 +166,13 @@ public partial class Chart : InteropObject
   /// Gets the side wall of a 3-D chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.sidewall?view=word-pia"/>
-  public Walls SideWall { get; }
+  public Walls SideWall { get; set; }
 
   /// <summary>
   /// Gets the back wall of a 3-D chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.backwall?view=word-pia"/>
-  public Walls BackWall { get; }
+  public Walls BackWall { get; set; }
 
   /// <summary>
   /// Gets or sets the chart style.
@@ -184,7 +184,7 @@ public partial class Chart : InteropObject
   /// Gets the PivotChart layout.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.pivotlayout?view=word-pia"/>
-  public object PivotLayout { get; }
+  public object PivotLayout { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the chart has PivotChart fields.
@@ -202,49 +202,49 @@ public partial class Chart : InteropObject
   /// Gets the chart data object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.chartdata?view=word-pia"/>
-  public ChartData ChartData { get; }
+  public ChartData ChartData { get; set; }
 
   /// <summary>
   /// Gets the collection of shapes associated with the chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.shapes?view=word-pia"/>
-  public object Shapes { get; }
+  public object Shapes { get; set; }
 
   /// <summary>
   /// Gets the chart group for 3-D area charts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.area3dgroup?view=word-pia"/>
-  public ChartGroup Area3DGroup { get; }
+  public ChartGroup Area3DGroup { get; set; }
 
   /// <summary>
   /// Gets the chart group for 3-D bar charts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.bar3dgroup?view=word-pia"/>
-  public ChartGroup Bar3DGroup { get; }
+  public ChartGroup Bar3DGroup { get; set; }
 
   /// <summary>
   /// Gets the chart group for 3-D column charts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.column3dgroup?view=word-pia"/>
-  public ChartGroup Column3DGroup { get; }
+  public ChartGroup Column3DGroup { get; set; }
 
   /// <summary>
   /// Gets the chart group for 3-D line charts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.line3dgroup?view=word-pia"/>
-  public ChartGroup Line3DGroup { get; }
+  public ChartGroup Line3DGroup { get; set; }
 
   /// <summary>
   /// Gets the chart group for 3-D pie charts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.pie3dgroup?view=word-pia"/>
-  public ChartGroup Pie3DGroup { get; }
+  public ChartGroup Pie3DGroup { get; set; }
 
   /// <summary>
   /// Gets the chart group for surface charts.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.surfacegroup?view=word-pia"/>
-  public ChartGroup SurfaceGroup { get; }
+  public ChartGroup SurfaceGroup { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether report filter field buttons are displayed on a PivotChart.
@@ -292,7 +292,7 @@ public partial class Chart : InteropObject
   /// Gets a value indicating whether the chart includes hidden content.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart.hashiddencontent?view=word-pia"/>
-  public bool HasHiddenContent { get; }
+  public bool HasHiddenContent { get; set; }
 
   /// <summary>
   /// Gets or sets the chart color style.

@@ -10,25 +10,25 @@ public partial class StyleSheet : InteropObject
   /// Specifies the name of a cascading style sheet, including the drive or Web path.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.stylesheet.fullname?view=word-pia"/>
-  public string FullName { get; }
+  public string? FullName { get; set; }
 
   /// <summary>
   /// Returns an Integer that represents the position of an item in a collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.stylesheet.index?view=word-pia"/>
-  public int Index { get; }
+  public int Index { get; set; }
 
   /// <summary>
   /// Returns the name of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.stylesheet.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Returns the disk or Web path to the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.stylesheet.path?view=word-pia"/>
-  public string Path { get; }
+  public string? Path { get; set; }
 
   /// <summary>
   /// Returns the template type.
@@ -40,5 +40,5 @@ public partial class StyleSheet : InteropObject
   /// Returns a String representing the title of a Web style sheet.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.stylesheet.title?view=word-pia"/>
-  public string Title { get; set; }
+  public string? Title { get; set; }
 }

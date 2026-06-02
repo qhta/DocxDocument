@@ -10,21 +10,21 @@ public partial class SmartTagAction : InteropObject
   /// Returns the name of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagaction.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Returns a SmartTagControlType that represents the type of Smart Document control displayed in the Document
   /// Actions task pane.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagaction.type?view=word-pia"/>
-  public SmartTagControlType Type { get; }
+  public SmartTagControlType Type { get; set; }
 
   /// <summary>
   /// Returns a Boolean that represents whether a smart document control is currently displayed in the Document
   /// Actions task pane.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagaction.presentinpane?view=word-pia"/>
-  public bool PresentInPane { get; }
+  public bool PresentInPane { get; set; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether the specified smart document Help text control is expanded
@@ -43,7 +43,7 @@ public partial class SmartTagAction : InteropObject
   /// Returns or sets a String that represents the text in a smart document textbox control.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagaction.textboxtext?view=word-pia"/>
-  public string TextboxText { get; set; }
+  public string? TextboxText { get; set; }
 
   /// <summary>
   /// Returns or sets an Integer that represents the index number of the selected item in a smart document list box
@@ -69,5 +69,5 @@ public partial class SmartTagAction : InteropObject
   /// Returns an Object that represents an ActiveX control displayed in the Document Actions task pane.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagaction.activexcontrol?view=word-pia"/>
-  public object ActiveXControl { get; }
+  public object ActiveXControl { get; set; }
 }

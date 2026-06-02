@@ -52,13 +52,13 @@ public partial class Rows : InteropCollection<Row>
   /// Returns a Row object that represents the first item in the Rows collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows.first?view=word-pia"/>
-  public Row First { get; }
+  public Row First { get; set; }
 
   /// <summary>
   /// Returns the last item in the Rows collection as a Row object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows.last?view=word-pia"/>
-  public Row Last { get; }
+  public Row Last { get; set; }
 
   /// <summary>
   /// Returns a Borders collection that represents all the borders for the specified object.
@@ -70,7 +70,7 @@ public partial class Rows : InteropCollection<Row>
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public Shading Shading { get; set; }
 
   /// <summary>
   /// Determines whether text should wrap around the specified rows.
@@ -138,7 +138,7 @@ public partial class Rows : InteropCollection<Row>
   /// Returns the nesting level of the specified rows.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows.nestinglevel?view=word-pia"/>
-  public int NestingLevel { get; }
+  public int NestingLevel { get; set; }
 
   /// <summary>
   /// Returns or sets the direction in which Microsoft Word orders cells in the specified table or row.

@@ -28,7 +28,7 @@ public partial class TextEffectFormat : InteropObject
   /// Returns or sets the name of the font for the dropped capital letter.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.fontname?view=word-pia"/>
-  public string FontName { get; set; }
+  public string? FontName { get; set; }
 
   /// <summary>
   /// Returns or sets the font size for the specified WordArt, in points.
@@ -72,7 +72,7 @@ public partial class TextEffectFormat : InteropObject
   /// Returns or sets the text in the specified WordArt.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.text?view=word-pia"/>
-  public string Text { get; set; }
+  public string? Text { get; set; }
 
   /// <summary>
   /// Returns or sets the ratio of the horizontal space allotted to each character in the specified WordArt in

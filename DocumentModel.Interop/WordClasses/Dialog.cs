@@ -16,17 +16,17 @@ public partial class Dialog : InteropObject
   /// Gets the built-in type of the dialog box.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dialog.type?view=word-pia"/>
-  public WordDialog Type { get; }
+  public WordDialog Type { get; set; }
 
   /// <summary>
   /// Gets the command name associated with the dialog box.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dialog.commandname?view=word-pia"/>
-  public string CommandName { get; }
+  public string? CommandName { get; set; }
 
   /// <summary>
   /// Gets the command bar control ID associated with the dialog box.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dialog.commandbarid?view=word-pia"/>
-  public int CommandBarId { get; }
+  public int CommandBarId { get; set; }
 }

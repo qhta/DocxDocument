@@ -10,7 +10,7 @@ public class ConditionalStyle : InteropObject
   /// Gets the shading formatting for the conditional style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conditionalstyle.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public Shading Shading { get; set; }
   /// <summary>
   /// Gets or sets the border formatting for the conditional style.
   /// </summary>

@@ -10,5 +10,5 @@ public partial class Comments : InteropCollection<Comment>
   /// Gets or sets the reviewer name whose comments are displayed.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comments.showby?view=word-pia"/>
-  public string ShowBy { get; set; }
+  public string? ShowBy { get; set; }
 }

@@ -11,37 +11,37 @@ public class Rectangle : InteropObject
   /// Returns a RectangleType constant that represents the type for the specified rectangle.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangle.rectangletype?view=word-pia"/>
-  public RectangleType RectangleType { get; }
+  public RectangleType RectangleType { get; set; }
   /// <summary>
   /// Returns or sets an integer that represents the horizontal position of the specified rectangle, measured in
   /// points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangle.left?view=word-pia"/>
-  public int Left { get; }
+  public int Left { get; set; }
   /// <summary>
   /// Returns or sets the vertical position of the specified rectangle, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangle.top?view=word-pia"/>
-  public int Top { get; }
+  public int Top { get; set; }
   /// <summary>
   /// Returns or sets the width of the specified rectangle, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangle.width?view=word-pia"/>
-  public int Width { get; }
+  public int Width { get; set; }
   /// <summary>
   /// Returns or sets the height of the specified rectangle, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangle.height?view=word-pia"/>
-  public int Height { get; }
+  public int Height { get; set; }
   /// <summary>
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangle.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
   /// <summary>
   /// Returns a Lines collection that represents the lines in a specified portion of text in a page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rectangle.lines?view=word-pia"/>
-  public Lines Lines { get; }
+  public Lines Lines { get; set; }
 
 }

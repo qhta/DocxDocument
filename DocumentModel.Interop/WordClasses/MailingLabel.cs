@@ -22,13 +22,13 @@ public partial class MailingLabel : InteropObject
   /// Returns the custom labels collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailinglabel.customlabels?view=word-pia"/>
-  public CustomLabels CustomLabels { get; }
+  public CustomLabels CustomLabels { get; set; }
 
   /// <summary>
   /// Returns or sets the default mailing label name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailinglabel.defaultlabelname?view=word-pia"/>
-  public string DefaultLabelName { get; set; }
+  public string? DefaultLabelName { get; set; }
 
   /// <summary>
   /// Returns or sets whether labels are printed vertically.

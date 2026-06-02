@@ -10,5 +10,5 @@ public partial class Research : InteropObject
   /// Gets or sets a string that specifies the favorite research service.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.research.favoriteservice?view=word-pia"/>
-  public string FavoriteService { get; set; }
+  public string? FavoriteService { get; set; }
 }

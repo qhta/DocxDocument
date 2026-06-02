@@ -30,12 +30,12 @@ public class AutoCorrect : InteropObject
   /// Gets the AutoCorrect entries collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.entries?view=word-pia"/>
-  public AutoCorrectEntries Entries { get; }
+  public AutoCorrectEntries Entries { get; set; }
   /// <summary>
   /// Gets the first-letter exceptions collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.firstletterexceptions?view=word-pia"/>
-  public FirstLetterExceptions FirstLetterExceptions { get; }
+  public FirstLetterExceptions FirstLetterExceptions { get; set; }
   /// <summary>
   /// Gets or sets a value indicating whether first-letter exceptions are added automatically.
   /// </summary>
@@ -45,7 +45,7 @@ public class AutoCorrect : InteropObject
   /// Gets the two-initial-capitals exceptions collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.twoinitialcapsexceptions?view=word-pia"/>
-  public TwoInitialCapsExceptions TwoInitialCapsExceptions { get; }
+  public TwoInitialCapsExceptions TwoInitialCapsExceptions { get; set; }
   /// <summary>
   /// Gets or sets a value indicating whether two-initial-capitals exceptions are added automatically.
   /// </summary>
@@ -65,7 +65,7 @@ public class AutoCorrect : InteropObject
   /// Gets the Hangul-and-alphabet exceptions collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.hangulandalphabetexceptions?view=word-pia"/>
-  public HangulAndAlphabetExceptions HangulAndAlphabetExceptions { get; }
+  public HangulAndAlphabetExceptions HangulAndAlphabetExceptions { get; set; }
   /// <summary>
   /// Gets or sets a value indicating whether Hangul-and-alphabet exceptions are added automatically.
   /// </summary>
@@ -85,7 +85,7 @@ public class AutoCorrect : InteropObject
   /// Gets the other-corrections exceptions collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect.othercorrectionsexceptions?view=word-pia"/>
-  public OtherCorrectionsExceptions OtherCorrectionsExceptions { get; }
+  public OtherCorrectionsExceptions OtherCorrectionsExceptions { get; set; }
   /// <summary>
   /// Gets or sets a value indicating whether keyboard setting mismatches are corrected.
   /// </summary>

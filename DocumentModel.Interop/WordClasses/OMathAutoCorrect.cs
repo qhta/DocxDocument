@@ -20,11 +20,11 @@ public class OMathAutoCorrect : InteropObject
   /// Returns the collection of math AutoCorrect entries.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathautocorrect.entries?view=word-pia"/>
-  public OMathAutoCorrectEntries Entries { get; }
+  public OMathAutoCorrectEntries Entries { get; set; }
   /// <summary>
   /// Returns the collection of recognized math functions.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathautocorrect.functions?view=word-pia"/>
-  public OMathRecognizedFunctions Functions { get; }
+  public OMathRecognizedFunctions Functions { get; set; }
 
 }

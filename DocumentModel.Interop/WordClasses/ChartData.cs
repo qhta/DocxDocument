@@ -10,11 +10,11 @@ public partial class ChartData
   /// Gets the workbook that contains the chart data.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartdata.workbook?view=word-pia"/>
-  public object Workbook { get; }
+  public object Workbook { get; set; }
 
   /// <summary>
   /// Gets a value indicating whether the chart data is linked to an external workbook.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartdata.islinked?view=word-pia"/>
-  public bool IsLinked { get; }
+  public bool IsLinked { get; set; }
 }

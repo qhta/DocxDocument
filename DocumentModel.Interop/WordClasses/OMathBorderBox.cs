@@ -10,7 +10,7 @@ public class OMathBorderBox : InteropObject
   /// Returns the equation contained in the border box.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathborderbox.e?view=word-pia"/>
-  public OMath E { get; }
+  public OMath E { get; set; }
   /// <summary>
   /// Returns or sets whether the top border is hidden.
   /// </summary>

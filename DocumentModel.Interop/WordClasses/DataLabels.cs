@@ -10,31 +10,31 @@ public partial class DataLabels : InteropCollection<DataLabel>
   /// Gets the name of the `DataLabels` object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabels.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Gets the border formatting for the data labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabels.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public ChartBorder Border { get; set; }
 
   /// <summary>
   /// Gets the interior formatting of the data labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabels.interior?view=word-pia"/>
-  public Interior Interior { get; }
+  public Interior Interior { get; set; }
 
   /// <summary>
   /// Gets the fill formatting of the data labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabels.fill?view=word-pia"/>
-  public ChartFillFormat Fill { get; }
+  public ChartFillFormat Fill { get; set; }
 
   /// <summary>
   /// Gets the font formatting for the data labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabels.font?view=word-pia"/>
-  public ChartFont Font { get; }
+  public ChartFont Font { get; set; }
 
   /// <summary>
   /// Gets or sets the horizontal alignment of the data labels.
@@ -82,7 +82,7 @@ public partial class DataLabels : InteropCollection<DataLabel>
   /// Gets or sets the number format for the data labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabels.numberformat?view=word-pia"/>
-  public string NumberFormat { get; set; }
+  public string? NumberFormat { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the number format is linked to source cells.
@@ -154,7 +154,7 @@ public partial class DataLabels : InteropCollection<DataLabel>
   /// Gets the chart formatting for the data labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabels.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public ChartFormat Format { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the cell range is displayed in the data labels.

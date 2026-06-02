@@ -21,12 +21,12 @@ public partial class MsoChartGroup
   /// Gets the `DownBars` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.downbars?view=office-pia"/>
-  public IMsoDownBars DownBars { get; }
+  public IMsoDownBars? DownBars { get; set;}
   /// <summary>
   /// Gets the `DropLines` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.droplines?view=office-pia"/>
-  public IMsoDropLines DropLines { get; }
+  public IMsoDropLines? DropLines { get; set;}
   /// <summary>
   /// Gets or sets the `FirstSliceAngle` property.
   /// </summary>

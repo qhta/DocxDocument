@@ -67,7 +67,7 @@ public partial class View : InteropObject
   /// Returns a Zoom object that represents the magnification for the specified view.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.zoom?view=word-pia"/>
-  public Zoom Zoom { get; }
+  public Zoom Zoom { get; set; }
 
   /// <summary>
   /// True if object anchors are displayed next to items that can be positioned in print layout view.
@@ -276,7 +276,7 @@ public partial class View : InteropObject
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.reviewers?view=word-pia"/>
-  public Reviewers Reviewers { get; }
+  public Reviewers Reviewers { get; set; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
@@ -385,7 +385,7 @@ public partial class View : InteropObject
   /// Returns an instance of a RevisionsFilter object. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view.revisionsfilter?view=word-pia"/>
-  public RevisionsFilter RevisionsFilter { get; }
+  public RevisionsFilter RevisionsFilter { get; set; }
 
   /// <summary>
   /// Returns and sets the page color in Reading mode. Read-write PageColor.

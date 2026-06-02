@@ -197,22 +197,25 @@ public partial class _CommandBarActiveX: CommandBarControl
   /// Gets the `IsPriorityDropped` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbaractivex.isprioritydropped?view=office-pia"/>
-  public new bool IsPriorityDropped { get; }
+  public new bool IsPriorityDropped { get; set;}
   /// <summary>
   /// Gets or sets the `ControlCLSID` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbaractivex.controlclsid?view=office-pia"/>
-  public string ControlCLSID { get; set; }
+  public string? ControlCLSID { get; set; }
   /// <summary>
   /// Gets the `QueryControlInterface` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbaractivex.querycontrolinterface?view=office-pia"/>
-  public object QueryControlInterface { get; }
-  public object InitWith { get; set; }
+  public object? QueryControlInterface { get; set;}
+  /// <summary>
+  /// Gets or sets the `InitWith` property.
+  /// </summary>
+  public object? InitWith { get; set; }
   /// <summary>
   /// Gets the `InstanceIdPtr` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbaractivex.instanceidptr?view=office-pia"/>
-  public object InstanceIdPtr { get; }
+  public object? InstanceIdPtr { get; set;}
 }
 

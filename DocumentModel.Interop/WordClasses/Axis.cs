@@ -16,13 +16,13 @@ public partial class Axis : InteropObject
   /// Gets the axis group.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.axisgroup?view=word-pia"/>
-  public AxisGroup AxisGroup { get; }
+  public AxisGroup AxisGroup { get; set; }
 
   /// <summary>
   /// Gets the axis title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.axistitle?view=word-pia"/>
-  public AxisTitle AxisTitle { get; }
+  public AxisTitle AxisTitle { get; set; }
 
   /// <summary>
   /// Gets or sets the category names.
@@ -64,7 +64,7 @@ public partial class Axis : InteropObject
   /// Gets the major gridlines.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.majorgridlines?view=word-pia"/>
-  public Gridlines MajorGridlines { get; }
+  public Gridlines MajorGridlines { get; set; }
 
   /// <summary>
   /// Gets or sets the major tick mark type.
@@ -124,7 +124,7 @@ public partial class Axis : InteropObject
   /// Gets the minor gridlines.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.minorgridlines?view=word-pia"/>
-  public Gridlines MinorGridlines { get; }
+  public Gridlines MinorGridlines { get; set; }
 
   /// <summary>
   /// Gets or sets the minor tick mark type.
@@ -166,7 +166,7 @@ public partial class Axis : InteropObject
   /// Gets the tick labels.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.ticklabels?view=word-pia"/>
-  public TickLabels TickLabels { get; }
+  public TickLabels TickLabels { get; set; }
 
   /// <summary>
   /// Gets or sets the tick-label spacing.
@@ -220,25 +220,25 @@ public partial class Axis : InteropObject
   /// Gets the distance, in points, from the left edge of the chart area to the left edge of the axis.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.left?view=word-pia"/>
-  public double Left { get; }
+  public double Left { get; set; }
 
   /// <summary>
   /// Gets the distance, in points, from the top edge of the chart area to the top edge of the axis.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.top?view=word-pia"/>
-  public double Top { get; }
+  public double Top { get; set; }
 
   /// <summary>
   /// Gets the width of the axis, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.width?view=word-pia"/>
-  public double Width { get; }
+  public double Width { get; set; }
 
   /// <summary>
   /// Gets the height of the axis, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.height?view=word-pia"/>
-  public double Height { get; }
+  public double Height { get; set; }
 
   /// <summary>
   /// Gets or sets the display unit for the value axis.
@@ -262,17 +262,17 @@ public partial class Axis : InteropObject
   /// Gets the display-unit label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.displayunitlabel?view=word-pia"/>
-  public DisplayUnitLabel DisplayUnitLabel { get; }
+  public DisplayUnitLabel DisplayUnitLabel { get; set; }
 
   /// <summary>
   /// Gets the axis border.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public ChartBorder Border { get; set; }
 
   /// <summary>
   /// Gets the chart formatting for the axis.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public ChartFormat Format { get; set; }
 }

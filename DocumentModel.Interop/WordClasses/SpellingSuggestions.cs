@@ -11,5 +11,5 @@ public class SpellingSuggestions : InteropCollection<SpellingSuggestion>
   /// Returns the spelling error type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.spellingsuggestions.spellingerrortype?view=word-pia"/>
-  public SpellingErrorType SpellingErrorType { get; }
+  public SpellingErrorType SpellingErrorType { get; set; }
 }

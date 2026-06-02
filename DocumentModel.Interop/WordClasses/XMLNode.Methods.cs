@@ -15,7 +15,7 @@ public partial class XMLNode
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.xml?view=word-pia"/>
-  public string XML(bool DataOnly) { throw new NotImplementedException(); }
+  public string? XML(bool DataOnly) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Gets the validation error text for the node.
@@ -26,7 +26,7 @@ public partial class XMLNode
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnode.validationerrortext?view=word-pia"/>
-  public string ValidationErrorText(bool Advanced) { throw new NotImplementedException(); }
+  public string? ValidationErrorText(bool Advanced) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Selects a single XML node using the specified XPath expression.

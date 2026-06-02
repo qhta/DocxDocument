@@ -10,25 +10,25 @@ public partial class Floor : InteropObject
   /// Returns a string value that represents the name of the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.floor.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Returns a <see cref="ChartBorder"/> object that represents the border of the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.floor.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public ChartBorder Border { get; set; }
 
   /// <summary>
   /// Returns an <see cref="Interior"/> object that represents the interior of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.floor.interior?view=word-pia"/>
-  public Interior Interior { get; }
+  public Interior Interior { get; set; }
 
   /// <summary>
   /// Returns a <see cref="ChartFillFormat"/> object that contains fill formatting properties for the chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.floor.fill?view=word-pia"/>
-  public ChartFillFormat Fill { get; }
+  public ChartFillFormat Fill { get; set; }
 
   /// <summary>
   /// Returns or sets an object value that represents the way pictures are displayed on the walls and faces of a 3-D chart.
@@ -46,5 +46,5 @@ public partial class Floor : InteropObject
   /// Returns the line, fill, and effect formatting for the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.floor.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public ChartFormat Format { get; set; }
 }

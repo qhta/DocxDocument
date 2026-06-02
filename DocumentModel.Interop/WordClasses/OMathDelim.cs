@@ -10,7 +10,7 @@ public class OMathDelim : InteropObject
   /// Returns the collection of expressions inside the delimiters.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathdelim.e?view=word-pia"/>
-  public OMathArgs E { get; }
+  public OMathArgs E { get; set; }
   /// <summary>
   /// Returns or sets the opening delimiter character.
   /// </summary>

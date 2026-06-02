@@ -10,7 +10,7 @@ public partial class Style : InteropObject
   /// Returns the name of a built-in style in the language of the user. Read/write String.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.namelocal?view=word-pia"/>
-  public string NameLocal { get; set; }
+  public string? NameLocal { get; set; }
 
   /// <summary>
   /// Returns or sets an existing style on which you can base the formatting of another style. Read/write Object.
@@ -22,20 +22,20 @@ public partial class Style : InteropObject
   /// Returns the description of the specified style. Read-only String.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.description?view=word-pia"/>
-  public string Description { get; }
+  public string? Description { get; set; }
 
   /// <summary>
   /// Returns the style type. Read-only Style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.type?view=word-pia"/>
-  public StyleType Type { get; }
+  public StyleType Type { get; set; }
 
   /// <summary>
   /// True if the specified object is one of the built-in styles or caption labels in Microsoft Word. Read-only
   /// Boolean.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.builtin?view=word-pia"/>
-  public bool BuiltIn { get; }
+  public bool BuiltIn { get; set; }
 
   /// <summary>
   /// Returns or sets the style to be applied automatically to a new paragraph inserted after a paragraph formatted
@@ -49,13 +49,13 @@ public partial class Style : InteropObject
   /// style that has been created in the document. Read-only Boolean.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.inuse?view=word-pia"/>
-  public bool InUse { get; }
+  public bool InUse { get; set; }
 
   /// <summary>
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public Shading Shading { get; set; }
 
   /// <summary>
   /// Returns a Borders collection that represents all the borders for the specified object.
@@ -81,7 +81,7 @@ public partial class Style : InteropObject
   /// Returns a Frame object that represents the frame formatting for the specified style. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.frame?view=word-pia"/>
-  public Frame Frame { get; }
+  public Frame Frame { get; set; }
 
   /// <summary>
   /// Returns or sets the language for the specified object. Read/write.
@@ -100,13 +100,13 @@ public partial class Style : InteropObject
   /// Returns a ListTemplate object that represents the list formatting for the specified Style object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.listtemplate?view=word-pia"/>
-  public ListTemplate ListTemplate { get; }
+  public ListTemplate ListTemplate { get; set; }
 
   /// <summary>
   /// Returns the list level for the specified style. Read-only Integer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.listlevelnumber?view=word-pia"/>
-  public int ListLevelNumber { get; }
+  public int ListLevelNumber { get; set; }
 
   /// <summary>
   /// Returns or sets an East Asian language for the specified object.
@@ -148,7 +148,7 @@ public partial class Style : InteropObject
   /// Returns a TableStyle object representing properties that can be applied to a table using a table style.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.table?view=word-pia"/>
-  public TableStyle Table { get; }
+  public TableStyle Table { get; set; }
 
   /// <summary>
   /// True if the specified style is locked.
@@ -180,5 +180,5 @@ public partial class Style : InteropObject
   /// paragraph and character formatting. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style.linked?view=word-pia"/>
-  public bool Linked { get; }
+  public bool Linked { get; set; }
 }

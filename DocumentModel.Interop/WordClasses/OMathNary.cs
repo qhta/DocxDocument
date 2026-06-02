@@ -10,17 +10,17 @@ public class OMathNary : InteropObject
   /// Returns the subscript expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.sub?view=word-pia"/>
-  public OMath Sub { get; }
+  public OMath Sub { get; set; }
   /// <summary>
   /// Returns the superscript expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.sup?view=word-pia"/>
-  public OMath Sup { get; }
+  public OMath Sup { get; set; }
   /// <summary>
   /// Returns the base expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary.e?view=word-pia"/>
-  public OMath E { get; }
+  public OMath E { get; set; }
   /// <summary>
   /// Returns or sets the n-ary operator character.
   /// </summary>

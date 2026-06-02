@@ -10,19 +10,19 @@ public partial class AddIn : InteropObject
   /// Gets the name of the add-in.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.addin.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Gets the index number of the add-in in the `AddIns` collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.addin.index?view=word-pia"/>
-  public int Index { get; }
+  public int Index { get; set; }
 
   /// <summary>
   /// Gets the path of the add-in.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.addin.path?view=word-pia"/>
-  public string Path { get; }
+  public string? Path { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the add-in is installed.
@@ -34,11 +34,11 @@ public partial class AddIn : InteropObject
   /// Gets a value indicating whether the add-in is compiled.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.addin.compiled?view=word-pia"/>
-  public bool Compiled { get; }
+  public bool Compiled { get; set; }
 
   /// <summary>
   /// Gets a value indicating whether the add-in is loaded automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.addin.autoload?view=word-pia"/>
-  public bool Autoload { get; }
+  public bool Autoload { get; set; }
 }

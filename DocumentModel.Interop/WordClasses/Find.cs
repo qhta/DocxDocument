@@ -22,7 +22,7 @@ public partial class Find : InteropObject
   /// Determines if the search for the specified object has produced a match.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.found?view=word-pia"/>
-  public bool Found { get; }
+  public bool Found { get; set; }
 
   /// <summary>
   /// Determines if all forms of the text to find are found by the find operation.
@@ -82,7 +82,7 @@ public partial class Find : InteropObject
   /// Returns or sets the text to find or replace in the specified range or selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.text?view=word-pia"/>
-  public string Text { get; set; }
+  public string? Text { get; set; }
 
   /// <summary>
   /// Returns or sets the language for the specified object.
@@ -100,13 +100,13 @@ public partial class Find : InteropObject
   /// Returns a <see cref="Replacement"/> object that contains the criteria for a replace operation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.replacement?view=word-pia"/>
-  public Replacement Replacement { get; }
+  public Replacement Replacement { get; set; }
 
   /// <summary>
   /// Returns a <see cref="Frame"/> object that represents the frame formatting for the specified style or find-and-replace operation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find.frame?view=word-pia"/>
-  public Frame Frame { get; }
+  public Frame Frame { get; set; }
 
   /// <summary>
   /// Returns or sets what happens if the end or beginning of the document is reached during the search, or if the text isn't found in the specified selection or range.

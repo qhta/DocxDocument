@@ -10,29 +10,29 @@ public partial class ChartCharacters : InteropObject
   /// Gets or sets the caption text for the chart characters.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters.caption?view=word-pia"/>
-  public string Caption { get; set; }
+  public string? Caption { get; set; }
 
   /// <summary>
   /// Gets the number of characters.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters.count?view=word-pia"/>
-  public int Count { get; }
+  public int Count { get; set; }
 
   /// <summary>
   /// Gets the font formatting for the chart characters.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters.font?view=word-pia"/>
-  public ChartFont Font { get; }
+  public ChartFont Font { get; set; }
 
   /// <summary>
   /// Gets or sets the text of the chart characters.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters.text?view=word-pia"/>
-  public string Text { get; set; }
+  public string? Text { get; set; }
 
   /// <summary>
   /// Gets or sets the phonetic characters.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters.phoneticcharacters?view=word-pia"/>
-  public string PhoneticCharacters { get; set; }
+  public string? PhoneticCharacters { get; set; }
 }

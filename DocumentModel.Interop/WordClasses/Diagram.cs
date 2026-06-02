@@ -10,13 +10,13 @@ public partial class Diagram : InteropObject
   /// Gets the collection of nodes in the diagram.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagram.nodes?view=word-pia"/>
-  public DiagramNodes Nodes { get; }
+  public DiagramNodes Nodes { get; set; }
 
   /// <summary>
   /// Gets the diagram type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagram.type?view=word-pia"/>
-  public Core.DiagramType Type { get; }
+  public Core.DiagramType Type { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the diagram layout is updated automatically.

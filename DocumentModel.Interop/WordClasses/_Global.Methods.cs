@@ -94,7 +94,7 @@ public partial class _Global : InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.dderequest?view=word-pia"/>
-  public string DDERequest(int Channel, string Item) { throw new NotImplementedException(); }
+  public string? DDERequest(int Channel, string Item) { throw new NotImplementedException(); }
   /// <summary>
   /// Closes the specified dynamic data exchange (DDE) channel to another application.
   /// </summary>
@@ -133,7 +133,7 @@ public partial class _Global : InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.keystring?view=word-pia"/>
-  public string KeyString(int KeyCode, object KeyCode2) { throw new NotImplementedException(); }
+  public string? KeyString(int KeyCode, object KeyCode2) { throw new NotImplementedException(); }
   /// <summary>
   /// Checks a string for spelling errors.
   /// </summary>
@@ -202,7 +202,7 @@ public partial class _Global : InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.cleanstring?view=word-pia"/>
-  public string CleanString(string String) { throw new NotImplementedException(); }
+  public string? CleanString(string String) { throw new NotImplementedException(); }
   /// <summary>
   /// Sets the folder in which Microsoft Word searches for documents.
   /// </summary>

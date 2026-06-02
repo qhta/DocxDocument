@@ -10,11 +10,11 @@ public partial class DiagramNodeChildren : InteropCollection<DiagramNode>
   /// Gets the first child node in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnodechildren.firstchild?view=word-pia"/>
-  public DiagramNode FirstChild { get; }
+  public DiagramNode FirstChild { get; set; }
 
   /// <summary>
   /// Gets the last child node in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnodechildren.lastchild?view=word-pia"/>
-  public DiagramNode LastChild { get; }
+  public DiagramNode LastChild { get; set; }
 }

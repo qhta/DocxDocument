@@ -10,19 +10,19 @@ public partial class Template : InteropObject
   /// Returns or sets the name of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Returns the disk or Web path to the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.path?view=word-pia"/>
-  public string Path { get; }
+  public string? Path { get; set; }
 
   /// <summary>
   /// Returns a AutoTextEntries collection that represents all the AutoText entries in the specified template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.autotextentries?view=word-pia"/>
-  public AutoTextEntries AutoTextEntries { get; }
+  public AutoTextEntries AutoTextEntries { get; set; }
 
   /// <summary>
   /// Returns or sets the language for the specified object.
@@ -41,33 +41,33 @@ public partial class Template : InteropObject
   /// Returns the template type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.type?view=word-pia"/>
-  public TemplateType Type { get; }
+  public TemplateType Type { get; set; }
 
   /// <summary>
   /// Specifies the name of a template, including the drive or Web path.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.fullname?view=word-pia"/>
-  public string FullName { get; }
+  public string? FullName { get; set; }
 
   /// <summary>
   /// Returns a DocumentProperties collection that represents all the built-in document properties for the specified
   /// document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.builtindocumentproperties?view=word-pia"/>
-  public object BuiltInDocumentProperties { get; }
+  public object BuiltInDocumentProperties { get; set; }
 
   /// <summary>
   /// Returns a DocumentProperties collection that represents all the custom document properties for the specified
   /// document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.customdocumentproperties?view=word-pia"/>
-  public object CustomDocumentProperties { get; }
+  public object CustomDocumentProperties { get; set; }
 
   /// <summary>
   /// Returns a ListTemplates collection that represents all the list formats for the specified template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.listtemplates?view=word-pia"/>
-  public ListTemplates ListTemplates { get; }
+  public ListTemplates ListTemplates { get; set; }
 
   /// <summary>
   /// Returns or sets an East Asian language for the specified object.
@@ -79,7 +79,7 @@ public partial class Template : InteropObject
   /// Returns the VBProject object for the specified template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.vbproject?view=word-pia"/>
-  public object VBProject { get; }
+  public object VBProject { get; set; }
 
   /// <summary>
   /// True if Microsoft Word kerns half-width Latin characters and punctuation marks in the specified document.
@@ -103,13 +103,13 @@ public partial class Template : InteropObject
   /// Returns or sets the kinsoku characters before which Microsoft Word will not break a line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.nolinebreakbefore?view=word-pia"/>
-  public string NoLineBreakBefore { get; set; }
+  public string? NoLineBreakBefore { get; set; }
 
   /// <summary>
   /// Returns or sets the kinsoku characters after which Microsoft Word will not break a line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.nolinebreakafter?view=word-pia"/>
-  public string NoLineBreakAfter { get; set; }
+  public string? NoLineBreakAfter { get; set; }
 
   /// <summary>
   /// True if the spelling and grammar checker ignores documents based on this template.
@@ -129,12 +129,12 @@ public partial class Template : InteropObject
   /// template. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.buildingblockentries?view=word-pia"/>
-  public BuildingBlockEntries BuildingBlockEntries { get; }
+  public BuildingBlockEntries BuildingBlockEntries { get; set; }
 
   /// <summary>
   /// Returns a BuildingBlockTypes collection that represents the collection of building block types that are
   /// contained in a template. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.buildingblocktypes?view=word-pia"/>
-  public BuildingBlockTypes BuildingBlockTypes { get; }
+  public BuildingBlockTypes BuildingBlockTypes { get; set; }
 }

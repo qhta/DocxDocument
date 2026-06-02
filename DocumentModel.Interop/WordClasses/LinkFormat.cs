@@ -16,13 +16,13 @@ public partial class LinkFormat : InteropObject
   /// Returns the source file name for the linked object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linkformat.sourcename?view=word-pia"/>
-  public string SourceName { get; }
+  public string? SourceName { get; set; }
 
   /// <summary>
   /// Returns the source path for the linked object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linkformat.sourcepath?view=word-pia"/>
-  public string SourcePath { get; }
+  public string? SourcePath { get; set; }
 
   /// <summary>
   /// Returns or sets whether the link is locked.
@@ -34,13 +34,13 @@ public partial class LinkFormat : InteropObject
   /// Returns the type of linked object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linkformat.type?view=word-pia"/>
-  public LinkType Type { get; }
+  public LinkType Type { get; set; }
 
   /// <summary>
   /// Returns or sets the full path and file name of the source for the linked object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linkformat.sourcefullname?view=word-pia"/>
-  public string SourceFullName { get; set; }
+  public string? SourceFullName { get; set; }
 
   /// <summary>
   /// Returns or sets whether the linked picture is saved with the document.

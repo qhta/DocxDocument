@@ -28,7 +28,7 @@ public partial class CalloutFormat : InteropObject
   /// Gets a value indicating whether the callout length is adjusted automatically.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.autolength?view=word-pia"/>
-  public Core.TriState AutoLength { get; }
+  public Core.TriState AutoLength { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the callout has a border around the text.
@@ -40,13 +40,13 @@ public partial class CalloutFormat : InteropObject
   /// Gets the vertical distance, in points, between the callout text and the callout line anchor.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.drop?view=word-pia"/>
-  public float Drop { get; }
+  public float Drop { get; set; }
 
   /// <summary>
   /// Gets the drop type of the callout line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.droptype?view=word-pia"/>
-  public Core.CalloutDropType DropType { get; }
+  public Core.CalloutDropType DropType { get; set; }
 
   /// <summary>
   /// Gets or sets the distance, in points, between the callout line and the callout text box.
@@ -58,7 +58,7 @@ public partial class CalloutFormat : InteropObject
   /// Gets the length, in points, of the callout line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.length?view=word-pia"/>
-  public float Length { get; }
+  public float Length { get; set; }
 
   /// <summary>
   /// Gets or sets the callout type.

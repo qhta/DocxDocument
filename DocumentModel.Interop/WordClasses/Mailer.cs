@@ -30,21 +30,21 @@ public class Mailer : InteropObject
   /// Returns the sender of the mail message.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailer.sender?view=word-pia"/>
-  public string Sender { get; }
+  public string? Sender { get; set; }
   /// <summary>
   /// Returns the date and time when the mail message was sent.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailer.senddatetime?view=word-pia"/>
-  public DateTime SendDateTime { get; }
+  public DateTime SendDateTime { get; set; }
   /// <summary>
   /// Returns whether the mail message has been received.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailer.received?view=word-pia"/>
-  public bool Received { get; }
+  public bool Received { get; set; }
   /// <summary>
   /// Returns or sets the subject of the mail message.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailer.subject?view=word-pia"/>
-  public string Subject { get; set; }
+  public string? Subject { get; set; }
 
 }

@@ -10,11 +10,11 @@ public class OMathScrSup : InteropObject
   /// Returns the base expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsup.e?view=word-pia"/>
-  public OMath E { get; }
+  public OMath E { get; set; }
   /// <summary>
   /// Returns the superscript expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsup.sup?view=word-pia"/>
-  public OMath Sup { get; }
+  public OMath Sup { get; set; }
 
 }

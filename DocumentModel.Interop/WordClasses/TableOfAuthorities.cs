@@ -29,31 +29,31 @@ public partial class TableOfAuthorities : InteropObject
   /// Returns or sets the name of the bookmark from which to collect table of authorities entries.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.bookmark?view=word-pia"/>
-  public string Bookmark { get; set; }
+  public string? Bookmark { get; set; }
 
   /// <summary>
   /// Returns or sets the characters (up to five) between the sequence number and the page number.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.separator?view=word-pia"/>
-  public string Separator { get; set; }
+  public string? Separator { get; set; }
 
   /// <summary>
   /// Returns or sets the Sequence (SEQ) field identifier for a table of authorities.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.includesequencename?view=word-pia"/>
-  public string IncludeSequenceName { get; set; }
+  public string? IncludeSequenceName { get; set; }
 
   /// <summary>
   /// Returns or sets the characters (up to five) that separate a table of authorities entry and its page number.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.entryseparator?view=word-pia"/>
-  public string EntrySeparator { get; set; }
+  public string? EntrySeparator { get; set; }
 
   /// <summary>
   /// Returns or sets the characters (up to five) that separate a range of pages in a table of authorities.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.pagerangeseparator?view=word-pia"/>
-  public string PageRangeSeparator { get; set; }
+  public string? PageRangeSeparator { get; set; }
 
   /// <summary>
   /// True if the category name for a group of entries appears in the table of authorities.
@@ -66,13 +66,13 @@ public partial class TableOfAuthorities : InteropObject
   /// authorities.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.pagenumberseparator?view=word-pia"/>
-  public string PageNumberSeparator { get; set; }
+  public string? PageNumberSeparator { get; set; }
 
   /// <summary>
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
 
   /// <summary>
   /// Returns or sets the character between entries and their page numbers in a table of authorities.

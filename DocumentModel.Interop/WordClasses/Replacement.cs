@@ -29,7 +29,7 @@ public partial class Replacement : InteropObject
   /// Returns or sets the text to find or replace in the specified range or selection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.text?view=word-pia"/>
-  public string Text { get; set; }
+  public string? Text { get; set; }
 
   /// <summary>
   /// Returns or sets the language for the specified object.
@@ -49,7 +49,7 @@ public partial class Replacement : InteropObject
   /// operation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.frame?view=word-pia"/>
-  public Frame Frame { get; }
+  public Frame Frame { get; set; }
 
   /// <summary>
   /// Returns or sets an East Asian language for the specified object.

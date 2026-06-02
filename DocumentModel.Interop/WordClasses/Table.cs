@@ -10,19 +10,19 @@ public partial class Table : InteropObject
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.table.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
 
   /// <summary>
   /// Returns a Columns collection that represents all the table columns in the table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.table.columns?view=word-pia"/>
-  public Columns Columns { get; }
+  public Columns Columns { get; set; }
 
   /// <summary>
   /// Returns a Rows collection that represents all the table rows in a table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.table.rows?view=word-pia"/>
-  public Rows Rows { get; }
+  public Rows Rows { get; set; }
 
   /// <summary>
   /// Returns a Borders collection that represents all the borders for the specified object.
@@ -34,31 +34,31 @@ public partial class Table : InteropObject
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.table.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public Shading Shading { get; set; }
 
   /// <summary>
   /// True if all the rows in a table have the same number of columns.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.table.uniform?view=word-pia"/>
-  public bool Uniform { get; }
+  public bool Uniform { get; set; }
 
   /// <summary>
   /// Returns the type of automatic formatting that's been applied to the specified table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.table.autoformattype?view=word-pia"/>
-  public int AutoFormatType { get; }
+  public int AutoFormatType { get; set; }
 
   /// <summary>
   /// Returns a Tables collection that represents all the tables in the specified table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.table.tables?view=word-pia"/>
-  public Tables Tables { get; }
+  public Tables Tables { get; set; }
 
   /// <summary>
   /// Returns the nesting level of the specified table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.table.nestinglevel?view=word-pia"/>
-  public int NestingLevel { get; }
+  public int NestingLevel { get; set; }
 
   /// <summary>
   /// Allows Microsoft Word to break the specified table across pages.
@@ -130,7 +130,7 @@ public partial class Table : InteropObject
   /// page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.table.id?view=word-pia"/>
-  public string ID { get; set; }
+  public string? ID { get; set; }
 
   /// <summary>
   /// Returns or sets the style for the specified object.
@@ -180,11 +180,11 @@ public partial class Table : InteropObject
   /// Gets or sets a string that contains a title for the specified table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.table.title?view=word-pia"/>
-  public string Title { get; set; }
+  public string? Title { get; set; }
 
   /// <summary>
   /// Gets or sets a string that contains a description for the specified table.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.table.descr?view=word-pia"/>
-  public string Descr { get; set; }
+  public string? Descr { get; set; }
 }

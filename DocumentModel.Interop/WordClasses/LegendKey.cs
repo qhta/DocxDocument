@@ -10,19 +10,19 @@ public partial class LegendKey : InteropObject
   /// Returns a border object that represents the border of the legend key.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendkey.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public ChartBorder Border { get; set; }
 
   /// <summary>
   /// Returns an interior object that represents the interior of the legend key.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendkey.interior?view=word-pia"/>
-  public Interior Interior { get; }
+  public Interior Interior { get; set; }
 
   /// <summary>
   /// Returns fill formatting properties for the legend key.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendkey.fill?view=word-pia"/>
-  public ChartFillFormat Fill { get; }
+  public ChartFillFormat Fill { get; set; }
 
   /// <summary>
   /// Returns or sets whether the data point fill is inverted when the value is negative.
@@ -88,25 +88,25 @@ public partial class LegendKey : InteropObject
   /// Returns the distance, in points, from the left edge of the chart area to the left edge of the legend key.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendkey.left?view=word-pia"/>
-  public double Left { get; }
+  public double Left { get; set; }
 
   /// <summary>
   /// Returns the distance, in points, from the top edge of the chart area to the top edge of the legend key.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendkey.top?view=word-pia"/>
-  public double Top { get; }
+  public double Top { get; set; }
 
   /// <summary>
   /// Returns the width of the legend key, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendkey.width?view=word-pia"/>
-  public double Width { get; }
+  public double Width { get; set; }
 
   /// <summary>
   /// Returns the height of the legend key, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendkey.height?view=word-pia"/>
-  public double Height { get; }
+  public double Height { get; set; }
 
   /// <summary>
   /// Returns or sets whether the legend key has a shadow.
@@ -118,7 +118,7 @@ public partial class LegendKey : InteropObject
   /// Returns the chart format properties for the legend key.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendkey.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public ChartFormat Format { get; set; }
 
   /// <summary>
   /// Returns or sets the picture unit for modern charting behavior.

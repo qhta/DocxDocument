@@ -10,5 +10,5 @@ public partial class Editors : InteropObject
   /// The count.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.editors.count?view=word-pia"/>
-  public int Count { get; }
+  public int Count { get; set; }
 }

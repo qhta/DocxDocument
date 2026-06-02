@@ -10,26 +10,26 @@ public class CoAuthor : InteropObject
   /// Gets the unique identifier of the co-author.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthor.id?view=word-pia"/>
-  public string ID { get; }
+  public string? ID { get; set; }
   /// <summary>
   /// Gets the display name of the co-author.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthor.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
   /// <summary>
   /// Gets a value indicating whether this co-author represents the current user.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthor.isme?view=word-pia"/>
-  public bool IsMe { get; }
+  public bool IsMe { get; set; }
   /// <summary>
   /// Gets the collection of coauthoring locks owned by this co-author.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthor.locks?view=word-pia"/>
-  public CoAuthLocks Locks { get; }
+  public CoAuthLocks Locks { get; set; }
   /// <summary>
   /// Gets the email address of the co-author.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthor.emailaddress?view=word-pia"/>
-  public string EmailAddress { get; }
+  public string? EmailAddress { get; set; }
 
 }

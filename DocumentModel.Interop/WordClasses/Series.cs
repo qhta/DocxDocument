@@ -16,13 +16,13 @@ public partial class Series : InteropObject
   /// Returns a ChartBorder object that represents the border of the object. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public ChartBorder Border { get; set; }
 
   /// <summary>
   /// Returns an ErrorBars object that represents the error bars for the series. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.errorbars?view=word-pia"/>
-  public ErrorBars ErrorBars { get; }
+  public ErrorBars ErrorBars { get; set; }
 
   /// <summary>
   /// Returns or sets the explosion value for a pie-chart or doughnut-chart slice. Returns 0 (zero) if there's no
@@ -36,28 +36,28 @@ public partial class Series : InteropObject
   /// of the macro.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.formula?view=word-pia"/>
-  public string Formula { get; set; }
+  public string? Formula { get; set; }
 
   /// <summary>
   /// Returns or sets the formula for the object, using A1-style references in the language of the user. Read/write
   /// String.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.formulalocal?view=word-pia"/>
-  public string FormulaLocal { get; set; }
+  public string? FormulaLocal { get; set; }
 
   /// <summary>
   /// Returns or sets the formula for the object, using R1C1-style notation in the language of the macro. Read/write
   /// String.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.formular1c1?view=word-pia"/>
-  public string FormulaR1C1 { get; set; }
+  public string? FormulaR1C1 { get; set; }
 
   /// <summary>
   /// Returns or sets the formula for the object, using R1C1-style notation in the language of the user. Read/write
   /// String.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.formular1c1local?view=word-pia"/>
-  public string FormulaR1C1Local { get; set; }
+  public string? FormulaR1C1Local { get; set; }
 
   /// <summary>
   /// True if the series has data labels. Read/write Boolean.
@@ -75,13 +75,13 @@ public partial class Series : InteropObject
   /// Returns the Interior object for the series.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.interior?view=word-pia"/>
-  public Interior Interior { get; }
+  public Interior Interior { get; set; }
 
   /// <summary>
   /// Returns the ChartFillFormat for this series.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.fill?view=word-pia"/>
-  public ChartFillFormat Fill { get; }
+  public ChartFillFormat Fill { get; set; }
 
   /// <summary>
   /// True if Microsoft Word inverts the pattern in the object when it corresponds to a negative number. Read/write
@@ -137,7 +137,7 @@ public partial class Series : InteropObject
   /// Returns or sets a String value that represents the name of the object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.name?view=word-pia"/>
-  public string Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Returns or sets a ChartPictureType value that represents the way pictures are displayed on a column or bar
@@ -244,13 +244,13 @@ public partial class Series : InteropObject
   /// Returns a LeaderLines object that represents the leader lines for the series. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.leaderlines?view=word-pia"/>
-  public LeaderLines LeaderLines { get; }
+  public LeaderLines LeaderLines { get; set; }
 
   /// <summary>
   /// Returns the line, fill, and effect formatting for the object. Read-only ChartFormat.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public ChartFormat Format { get; set; }
 
   /// <summary>
   /// Returns or sets the unit for each picture on the chart if the PictureType property is set to xlStackScale (if
@@ -263,7 +263,7 @@ public partial class Series : InteropObject
   /// Gets an index value that is used internally to associate series formatting with chart elements.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series.plotcolorindex?view=word-pia"/>
-  public int PlotColorIndex { get; }
+  public int PlotColorIndex { get; set; }
 
   /// <summary>
   /// Gets or sets the fill color for negative data points in a series.

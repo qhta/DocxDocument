@@ -10,13 +10,13 @@ public partial class DisplayUnitLabel : InteropObject
   /// Gets or sets the caption text for the display-unit label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.caption?view=word-pia"/>
-  public string Caption { get; set; }
+  public string? Caption { get; set; }
 
   /// <summary>
   /// Gets the font formatting for the display-unit label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.font?view=word-pia"/>
-  public ChartFont Font { get; }
+  public ChartFont Font { get; set; }
 
   /// <summary>
   /// Gets or sets the horizontal alignment of the display-unit label.
@@ -46,7 +46,7 @@ public partial class DisplayUnitLabel : InteropObject
   /// Gets or sets the text of the display-unit label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.text?view=word-pia"/>
-  public string Text { get; set; }
+  public string? Text { get; set; }
 
   /// <summary>
   /// Gets or sets the distance, in points, from the top edge of the chart area to the top edge of the display-unit label.
@@ -76,25 +76,25 @@ public partial class DisplayUnitLabel : InteropObject
   /// Gets the interior formatting of the display-unit label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.interior?view=word-pia"/>
-  public Interior Interior { get; }
+  public Interior Interior { get; set; }
 
   /// <summary>
   /// Gets the fill formatting of the display-unit label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.fill?view=word-pia"/>
-  public ChartFillFormat Fill { get; }
+  public ChartFillFormat Fill { get; set; }
 
   /// <summary>
   /// Gets the border formatting of the display-unit label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public ChartBorder Border { get; set; }
 
   /// <summary>
   /// Gets the name of the display-unit label object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the display-unit label occupies chart layout space when layout is calculated.
@@ -112,41 +112,41 @@ public partial class DisplayUnitLabel : InteropObject
   /// Gets the chart formatting for the display-unit label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public ChartFormat Format { get; set; }
 
   /// <summary>
   /// Gets the height of the display-unit label, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.height?view=word-pia"/>
-  public double Height { get; }
+  public double Height { get; set; }
 
   /// <summary>
   /// Gets the width of the display-unit label, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.width?view=word-pia"/>
-  public double Width { get; }
+  public double Width { get; set; }
 
   /// <summary>
   /// Gets or sets the formula for the display-unit label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.formula?view=word-pia"/>
-  public string Formula { get; set; }
+  public string? Formula { get; set; }
 
   /// <summary>
   /// Gets or sets the formula for the display-unit label in R1C1-style notation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.formular1c1?view=word-pia"/>
-  public string FormulaR1C1 { get; set; }
+  public string? FormulaR1C1 { get; set; }
 
   /// <summary>
   /// Gets or sets the formula for the display-unit label in the language of the user.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.formulalocal?view=word-pia"/>
-  public string FormulaLocal { get; set; }
+  public string? FormulaLocal { get; set; }
 
   /// <summary>
   /// Gets or sets the formula for the display-unit label in R1C1-style notation in the language of the user.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel.formular1c1local?view=word-pia"/>
-  public string FormulaR1C1Local { get; set; }
+  public string? FormulaR1C1Local { get; set; }
 }

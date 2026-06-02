@@ -10,21 +10,21 @@ public class SmartTagType : InteropObject
   /// Returns the name of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagtype.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
   /// <summary>
   /// Returns a SmartTagActions collection that represents the collection of actions available on a smart tag.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagtype.smarttagactions?view=word-pia"/>
-  public SmartTagActions SmartTagActions { get; }
+  public SmartTagActions SmartTagActions { get; set; }
   /// <summary>
   /// Returns a SmartTagRecognizers collection for an application.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagtype.smarttagrecognizers?view=word-pia"/>
-  public SmartTagRecognizers SmartTagRecognizers { get; }
+  public SmartTagRecognizers SmartTagRecognizers { get; set; }
   /// <summary>
   /// Returns a String that represents a friendly name for a smart tag type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagtype.friendlyname?view=word-pia"/>
-  public string FriendlyName { get; }
+  public string? FriendlyName { get; set; }
 
 }

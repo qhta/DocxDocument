@@ -10,17 +10,17 @@ public partial class Footnote : InteropObject
   /// Returns a <see cref="Range"/> object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnote.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
 
   /// <summary>
   /// Returns a <see cref="Range"/> object that represents a footnote, endnote, or comment reference mark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnote.reference?view=word-pia"/>
-  public Range Reference { get; }
+  public Range Reference { get; set; }
 
   /// <summary>
   /// Returns an integer that represents the position of an item in a collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnote.index?view=word-pia"/>
-  public int Index { get; }
+  public int Index { get; set; }
 }

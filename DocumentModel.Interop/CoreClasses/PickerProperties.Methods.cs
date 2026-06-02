@@ -16,7 +16,7 @@ public partial class PickerProperties
   /// <param name="Type">The `Type` parameter.</param>
   /// <returns>The added picker property.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerproperties.add?view=office-pia"/>
-  public PickerProperty Add(string Id, string Value, PickerField Type) { throw new NotImplementedException(); }
+  public PickerProperty Add(string Id, string Value, MsoPickerField Type) { throw new NotImplementedException(); }
   /// <summary>
   /// Removes a `PickerProperty` from the collection.
   /// </summary>

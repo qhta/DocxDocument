@@ -10,13 +10,13 @@ public partial class Dictionary : InteropObject
   /// Gets the name of the dictionary.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionary.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Gets the path of the dictionary file.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionary.path?view=word-pia"/>
-  public string Path { get; }
+  public string? Path { get; set; }
 
   /// <summary>
   /// Gets or sets the language ID associated with the dictionary.
@@ -28,13 +28,13 @@ public partial class Dictionary : InteropObject
   /// Gets a value indicating whether the dictionary is read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionary.readonly?view=word-pia"/>
-  public bool ReadOnly { get; }
+  public bool ReadOnly { get; set; }
 
   /// <summary>
   /// Gets the dictionary type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionary.type?view=word-pia"/>
-  public DictionaryType Type { get; }
+  public DictionaryType Type { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the dictionary is language-specific.

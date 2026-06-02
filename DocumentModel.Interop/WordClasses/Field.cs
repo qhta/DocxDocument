@@ -16,7 +16,7 @@ public partial class Field : InteropObject
   /// Gets the field type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.type?view=word-pia"/>
-  public FieldType Type { get; }
+  public FieldType Type { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the field is locked.
@@ -28,7 +28,7 @@ public partial class Field : InteropObject
   /// Gets the field kind.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.kind?view=word-pia"/>
-  public FieldKind Kind { get; }
+  public FieldKind Kind { get; set; }
 
   /// <summary>
   /// Gets or sets the result displayed for the field.
@@ -40,25 +40,25 @@ public partial class Field : InteropObject
   /// Gets or sets data associated with the field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.data?view=word-pia"/>
-  public string Data { get; set; }
+  public string? Data { get; set; }
 
   /// <summary>
   /// Gets the next field in the `Fields` collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.next?view=word-pia"/>
-  public Field Next { get; }
+  public Field Next { get; set; }
 
   /// <summary>
   /// Gets the previous field in the `Fields` collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.previous?view=word-pia"/>
-  public Field Previous { get; }
+  public Field Previous { get; set; }
 
   /// <summary>
   /// Gets the index number of the field in the `Fields` collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.index?view=word-pia"/>
-  public int Index { get; }
+  public int Index { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether field codes are displayed instead of field results.
@@ -70,17 +70,17 @@ public partial class Field : InteropObject
   /// Gets the link formatting for a linked field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.linkformat?view=word-pia"/>
-  public LinkFormat LinkFormat { get; }
+  public LinkFormat LinkFormat { get; set; }
 
   /// <summary>
   /// Gets the OLE formatting for an OLE field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.oleformat?view=word-pia"/>
-  public OLEFormat OLEFormat { get; }
+  public OLEFormat OLEFormat { get; set; }
 
   /// <summary>
   /// Gets the inline shape associated with the field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field.inlineshape?view=word-pia"/>
-  public InlineShape InlineShape { get; }
+  public InlineShape InlineShape { get; set; }
 }

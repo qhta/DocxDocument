@@ -15,7 +15,7 @@ public partial class XMLNamespace
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnamespace.location?view=word-pia"/>
-  public string Location(bool AllUsers) { throw new NotImplementedException(); }
+  public string? Location(bool AllUsers) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Gets the default XSL transform for the XML namespace.

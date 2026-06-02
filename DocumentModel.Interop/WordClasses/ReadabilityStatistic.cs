@@ -10,11 +10,11 @@ public class ReadabilityStatistic : InteropObject
   /// Returns or sets the name of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.readabilitystatistic.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
   /// <summary>
   /// Returns the value of the grammar statistic.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.readabilitystatistic.value?view=word-pia"/>
-  public float Value { get; }
+  public float Value { get; set; }
 
 }

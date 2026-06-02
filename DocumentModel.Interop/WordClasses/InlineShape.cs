@@ -16,37 +16,37 @@ public partial class InlineShape : InteropObject
   /// Returns a range object that represents the inline shape in the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
 
   /// <summary>
   /// Returns a link format object that contains link properties for the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.linkformat?view=word-pia"/>
-  public LinkFormat LinkFormat { get; }
+  public LinkFormat LinkFormat { get; set; }
 
   /// <summary>
   /// Returns a field object associated with the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.field?view=word-pia"/>
-  public Field Field { get; }
+  public Field Field { get; set; }
 
   /// <summary>
   /// Returns an OLE format object that contains OLE properties for the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.oleformat?view=word-pia"/>
-  public OLEFormat OLEFormat { get; }
+  public OLEFormat OLEFormat { get; set; }
 
   /// <summary>
   /// Returns the type of inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.type?view=word-pia"/>
-  public InlineShapeType Type { get; }
+  public InlineShapeType Type { get; set; }
 
   /// <summary>
   /// Returns a hyperlink object associated with the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.hyperlink?view=word-pia"/>
-  public Hyperlink Hyperlink { get; }
+  public Hyperlink Hyperlink { get; set; }
 
   /// <summary>
   /// Returns or sets the height of the inline shape, in points.
@@ -82,13 +82,13 @@ public partial class InlineShape : InteropObject
   /// Returns a line format object that represents line formatting for the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.line?view=word-pia"/>
-  public LineFormat Line { get; }
+  public LineFormat Line { get; set; }
 
   /// <summary>
   /// Returns a fill format object that represents fill formatting for the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.fill?view=word-pia"/>
-  public FillFormat Fill { get; }
+  public FillFormat Fill { get; set; }
 
   /// <summary>
   /// Returns or sets picture formatting for the inline shape.
@@ -100,19 +100,19 @@ public partial class InlineShape : InteropObject
   /// Returns a horizontal line format object for the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.horizontallineformat?view=word-pia"/>
-  public HorizontalLineFormat HorizontalLineFormat { get; }
+  public HorizontalLineFormat HorizontalLineFormat { get; set; }
 
   /// <summary>
   /// Returns the script associated with the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.script?view=word-pia"/>
-  public Core.Script Script { get; }
+  public Core.Script Script { get; set; }
 
   /// <summary>
   /// Returns the anchor identifier for the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.owsanchor?view=word-pia"/>
-  public int OWSAnchor { get; }
+  public int OWSAnchor { get; set; }
 
   /// <summary>
   /// Returns or sets text effect formatting for the inline shape.
@@ -124,83 +124,83 @@ public partial class InlineShape : InteropObject
   /// Returns or sets alternative text for the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.alternativetext?view=word-pia"/>
-  public string AlternativeText { get; set; }
+  public string? AlternativeText { get; set; }
 
   /// <summary>
   /// Returns whether the inline shape is used as a picture bullet.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.ispicturebullet?view=word-pia"/>
-  public bool IsPictureBullet { get; }
+  public bool IsPictureBullet { get; set; }
 
   /// <summary>
   /// Returns a group shapes collection for items in the inline shape group.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.groupitems?view=word-pia"/>
-  public GroupShapes GroupItems { get; }
+  public GroupShapes GroupItems { get; set; }
 
   /// <summary>
   /// Returns whether the inline shape has an associated chart.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.haschart?view=word-pia"/>
-  public Core.TriState HasChart { get; }
+  public Core.TriState HasChart { get; set; }
 
   /// <summary>
   /// Returns the chart associated with the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.chart?view=word-pia"/>
-  public Chart Chart { get; }
+  public Chart Chart { get; set; }
 
   /// <summary>
   /// Returns soft edge formatting for the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.softedge?view=word-pia"/>
-  public SoftEdgeFormat SoftEdge { get; }
+  public SoftEdgeFormat SoftEdge { get; set; }
 
   /// <summary>
   /// Returns glow formatting for the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.glow?view=word-pia"/>
-  public GlowFormat Glow { get; }
+  public GlowFormat Glow { get; set; }
 
   /// <summary>
   /// Returns reflection formatting for the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.reflection?view=word-pia"/>
-  public ReflectionFormat Reflection { get; }
+  public ReflectionFormat Reflection { get; set; }
 
   /// <summary>
   /// Returns shadow formatting for the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.shadow?view=word-pia"/>
-  public ShadowFormat Shadow { get; }
+  public ShadowFormat Shadow { get; set; }
 
   /// <summary>
   /// Returns whether the inline shape has SmartArt.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.hassmartart?view=word-pia"/>
-  public Core.TriState HasSmartArt { get; }
+  public Core.TriState HasSmartArt { get; set; }
 
   /// <summary>
   /// Returns SmartArt for the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.smartart?view=word-pia"/>
-  public Core.SmartArt SmartArt { get; }
+  public Core.SmartArt SmartArt { get; set; }
 
   /// <summary>
   /// Returns or sets the title for the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.title?view=word-pia"/>
-  public string Title { get; set; }
+  public string? Title { get; set; }
 
   /// <summary>
   /// Returns the anchor ID of the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.anchorid?view=word-pia"/>
-  public int AnchorID { get; }
+  public int AnchorID { get; set; }
 
   /// <summary>
   /// Returns the edit ID of the inline shape.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.editid?view=word-pia"/>
-  public int EditID { get; }
+  public int EditID { get; set; }
 }

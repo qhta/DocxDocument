@@ -11,16 +11,16 @@ public partial class PickerField: InteropObject
   /// Gets the `Name` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerfield.name?view=office-pia"/>
-  public string Name { get; }
+  public string Name { get; set; } = string.Empty;
   /// <summary>
   /// Gets the `Type` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerfield.type?view=office-pia"/>
-  public PickerField Type { get; }
+  public MsoPickerField Type { get; set;}
   /// <summary>
   /// Gets the `IsHidden` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerfield.ishidden?view=office-pia"/>
-  public bool IsHidden { get; }
+  public bool IsHidden { get; set;}
 }
 

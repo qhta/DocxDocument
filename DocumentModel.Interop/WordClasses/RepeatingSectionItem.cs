@@ -10,5 +10,5 @@ public partial class RepeatingSectionItem : InteropObject
   /// Returns the range of the specified repeating section item, excluding the start and end tags. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.repeatingsectionitem.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
 }

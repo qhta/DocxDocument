@@ -10,5 +10,5 @@ public partial class HTMLDivisions : InteropCollection<HTMLDivision>
   /// Returns the nesting level of the HTML divisions collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivisions.nestinglevel?view=word-pia"/>
-  public int NestingLevel { get; }
+  public int NestingLevel { get; set; }
 }

@@ -10,7 +10,7 @@ public class OMathEqArray : InteropObject
   /// Returns the collection of equations in the equation array.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omatheqarray.e?view=word-pia"/>
-  public OMathArgs E { get; }
+  public OMathArgs E { get; set; }
   /// <summary>
   /// Returns or sets whether maximum spacing between rows is used.
   /// </summary>

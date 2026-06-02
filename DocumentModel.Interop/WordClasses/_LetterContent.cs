@@ -10,12 +10,12 @@ public class _LetterContent : InteropObject
   /// Gets a duplicate of the letter content.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.duplicate?view=word-pia"/>
-  public LetterContent Duplicate { get; }
+  public LetterContent Duplicate { get; set; }
   /// <summary>
   /// Gets or sets the date format for the letter.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.dateformat?view=word-pia"/>
-  public string DateFormat { get; set; }
+  public string? DateFormat { get; set; }
   /// <summary>
   /// Gets or sets a value indicating whether to include the header and footer.
   /// </summary>
@@ -25,7 +25,7 @@ public class _LetterContent : InteropObject
   /// Gets or sets the page design template name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.pagedesign?view=word-pia"/>
-  public string PageDesign { get; set; }
+  public string? PageDesign { get; set; }
   /// <summary>
   /// Gets or sets the letter style.
   /// </summary>
@@ -50,17 +50,17 @@ public class _LetterContent : InteropObject
   /// Gets or sets the recipient name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.recipientname?view=word-pia"/>
-  public string RecipientName { get; set; }
+  public string? RecipientName { get; set; }
   /// <summary>
   /// Gets or sets the recipient address.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.recipientaddress?view=word-pia"/>
-  public string RecipientAddress { get; set; }
+  public string? RecipientAddress { get; set; }
   /// <summary>
   /// Gets or sets the salutation text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.salutation?view=word-pia"/>
-  public string Salutation { get; set; }
+  public string? Salutation { get; set; }
   /// <summary>
   /// Gets or sets the salutation type.
   /// </summary>
@@ -70,22 +70,22 @@ public class _LetterContent : InteropObject
   /// Gets or sets the recipient reference.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.recipientreference?view=word-pia"/>
-  public string RecipientReference { get; set; }
+  public string? RecipientReference { get; set; }
   /// <summary>
   /// Gets or sets the mailing instructions.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.mailinginstructions?view=word-pia"/>
-  public string MailingInstructions { get; set; }
+  public string? MailingInstructions { get; set; }
   /// <summary>
   /// Gets or sets the attention line.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.attentionline?view=word-pia"/>
-  public string AttentionLine { get; set; }
+  public string? AttentionLine { get; set; }
   /// <summary>
   /// Gets or sets the subject.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.subject?view=word-pia"/>
-  public string Subject { get; set; }
+  public string? Subject { get; set; }
   /// <summary>
   /// Gets or sets the number of enclosures.
   /// </summary>
@@ -95,37 +95,37 @@ public class _LetterContent : InteropObject
   /// Gets or sets the carbon-copy (CC) list.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.cclist?view=word-pia"/>
-  public string CCList { get; set; }
+  public string? CCList { get; set; }
   /// <summary>
   /// Gets or sets the return address.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.returnaddress?view=word-pia"/>
-  public string ReturnAddress { get; set; }
+  public string? ReturnAddress { get; set; }
   /// <summary>
   /// Gets or sets the sender name.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.sendername?view=word-pia"/>
-  public string SenderName { get; set; }
+  public string? SenderName { get; set; }
   /// <summary>
   /// Gets or sets the closing text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.closing?view=word-pia"/>
-  public string Closing { get; set; }
+  public string? Closing { get; set; }
   /// <summary>
   /// Gets or sets the sender company.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.sendercompany?view=word-pia"/>
-  public string SenderCompany { get; set; }
+  public string? SenderCompany { get; set; }
   /// <summary>
   /// Gets or sets the sender job title.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.senderjobtitle?view=word-pia"/>
-  public string SenderJobTitle { get; set; }
+  public string? SenderJobTitle { get; set; }
   /// <summary>
   /// Gets or sets the sender initials.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.senderinitials?view=word-pia"/>
-  public string SenderInitials { get; set; }
+  public string? SenderInitials { get; set; }
   /// <summary>
   /// Gets or sets a value indicating whether to include the information block.
   /// </summary>
@@ -135,7 +135,7 @@ public class _LetterContent : InteropObject
   /// Gets or sets the recipient postal code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.recipientcode?view=word-pia"/>
-  public string RecipientCode { get; set; }
+  public string? RecipientCode { get; set; }
   /// <summary>
   /// Gets or sets the recipient gender used for salutation.
   /// </summary>
@@ -145,17 +145,17 @@ public class _LetterContent : InteropObject
   /// Gets or sets the short-form return address.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.returnaddressshortform?view=word-pia"/>
-  public string ReturnAddressShortForm { get; set; }
+  public string? ReturnAddressShortForm { get; set; }
   /// <summary>
   /// Gets or sets the sender city.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.sendercity?view=word-pia"/>
-  public string SenderCity { get; set; }
+  public string? SenderCity { get; set; }
   /// <summary>
   /// Gets or sets the sender postal code.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.sendercode?view=word-pia"/>
-  public string SenderCode { get; set; }
+  public string? SenderCode { get; set; }
   /// <summary>
   /// Gets or sets the sender gender used for salutation.
   /// </summary>
@@ -165,6 +165,6 @@ public class _LetterContent : InteropObject
   /// Gets or sets the sender reference.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._lettercontent.senderreference?view=word-pia"/>
-  public string SenderReference { get; set; }
+  public string? SenderReference { get; set; }
 
 }

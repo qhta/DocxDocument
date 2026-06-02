@@ -15,7 +15,7 @@ public partial class Source
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.source.get_field?view=word-pia"/>
-  public string Field(string Name) { throw new NotImplementedException(); }
+  public string? Field(string Name) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Deletes the specified source.

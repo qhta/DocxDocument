@@ -10,13 +10,13 @@ public partial class OMath : InteropObject
   /// Returns the range that contains the equation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
 
   /// <summary>
   /// Returns the collection of equation functions.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.functions?view=word-pia"/>
-  public OMathFunctions Functions { get; }
+  public OMathFunctions Functions { get; set; }
 
   /// <summary>
   /// Returns or sets the type.
@@ -28,43 +28,43 @@ public partial class OMath : InteropObject
   /// Returns the parent equation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.parentomath?view=word-pia"/>
-  public OMath ParentOMath { get; }
+  public OMath ParentOMath { get; set; }
 
   /// <summary>
   /// Returns the parent equation function.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.parentfunction?view=word-pia"/>
-  public OMathFunction ParentFunction { get; }
+  public OMathFunction ParentFunction { get; set; }
 
   /// <summary>
   /// Returns the parent matrix row.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.parentrow?view=word-pia"/>
-  public OMathMatRow ParentRow { get; }
+  public OMathMatRow ParentRow { get; set; }
 
   /// <summary>
   /// Returns the parent matrix column.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.parentcol?view=word-pia"/>
-  public OMathMatCol ParentCol { get; }
+  public OMathMatCol ParentCol { get; set; }
 
   /// <summary>
   /// Returns the parent argument equation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.parentarg?view=word-pia"/>
-  public OMath ParentArg { get; }
+  public OMath ParentArg { get; set; }
 
   /// <summary>
   /// Returns the index of the argument within the parent function.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.argindex?view=word-pia"/>
-  public int ArgIndex { get; }
+  public int ArgIndex { get; set; }
 
   /// <summary>
   /// Returns the nesting level.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.nestinglevel?view=word-pia"/>
-  public int NestingLevel { get; }
+  public int NestingLevel { get; set; }
 
   /// <summary>
   /// Returns or sets the argument size.
@@ -76,7 +76,7 @@ public partial class OMath : InteropObject
   /// Returns the collection of equation line breaks.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.breaks?view=word-pia"/>
-  public OMathBreaks Breaks { get; }
+  public OMathBreaks Breaks { get; set; }
 
   /// <summary>
   /// Returns or sets the justification.

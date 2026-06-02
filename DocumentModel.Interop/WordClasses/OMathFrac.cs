@@ -10,12 +10,12 @@ public class OMathFrac : InteropObject
   /// Returns the numerator expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfrac.num?view=word-pia"/>
-  public OMath Num { get; }
+  public OMath Num { get; set; }
   /// <summary>
   /// Returns the denominator expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfrac.den?view=word-pia"/>
-  public OMath Den { get; }
+  public OMath Den { get; set; }
   /// <summary>
   /// Returns or sets the fraction type.
   /// </summary>

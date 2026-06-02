@@ -15,7 +15,7 @@ public partial class _Document: InteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.activewritingstyle?view=word-pia"/>
-  public string ActiveWritingStyle(object languageID) { throw new NotImplementedException(); }
+  public string? ActiveWritingStyle(object languageID) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Sets the writing style for a specified language in the specified document.

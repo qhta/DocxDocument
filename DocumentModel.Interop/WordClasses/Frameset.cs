@@ -10,13 +10,13 @@ public partial class Frameset : InteropCollection<Frameset>
   /// Returns the parent frameset.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.parentframeset?view=word-pia"/>
-  public Frameset ParentFrameset { get; }
+  public Frameset ParentFrameset { get; set; }
 
   /// <summary>
   /// Returns the type of the specified frameset.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.type?view=word-pia"/>
-  public FramesetType Type { get; }
+  public FramesetType Type { get; set; }
 
   /// <summary>
   /// Returns or sets the way the width of the specified frameset is determined.
@@ -46,7 +46,7 @@ public partial class Frameset : InteropCollection<Frameset>
   /// Returns the number of child framesets in the specified frameset.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.childframesetcount?view=word-pia"/>
-  public int ChildFramesetCount { get; }
+  public int ChildFramesetCount { get; set; }
 
   /// <summary>
   /// Returns or sets the width of the border around the specified frameset.
@@ -76,7 +76,7 @@ public partial class Frameset : InteropCollection<Frameset>
   /// Returns or sets the name of the specified frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.framename?view=word-pia"/>
-  public string FrameName { get; set; }
+  public string? FrameName { get; set; }
 
   /// <summary>
   /// Determines whether borders are displayed for the specified frame.
@@ -88,7 +88,7 @@ public partial class Frameset : InteropCollection<Frameset>
   /// Returns or sets the default URL for the specified frame.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.framedefaulturl?view=word-pia"/>
-  public string FrameDefaultURL { get; set; }
+  public string? FrameDefaultURL { get; set; }
 
   /// <summary>
   /// Determines whether the specified frame is linked to an external file.

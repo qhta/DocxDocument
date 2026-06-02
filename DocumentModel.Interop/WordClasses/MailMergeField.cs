@@ -10,7 +10,7 @@ public partial class MailMergeField : InteropObject
   /// Returns the type of mail merge field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefield.type?view=word-pia"/>
-  public FieldType Type { get; }
+  public FieldType Type { get; set; }
 
   /// <summary>
   /// Returns or sets whether the mail merge field is locked.
@@ -22,17 +22,17 @@ public partial class MailMergeField : InteropObject
   /// Returns or sets the field code text for the mail merge field.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefield.code?view=word-pia"/>
-  public Range Code { get; set; }
+  public Range? Code { get; set; }
 
   /// <summary>
   /// Returns the next mail merge field in the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefield.next?view=word-pia"/>
-  public MailMergeField Next { get; }
+  public MailMergeField? Next { get; set; }
 
   /// <summary>
   /// Returns the previous mail merge field in the document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefield.previous?view=word-pia"/>
-  public MailMergeField Previous { get; }
+  public MailMergeField? Previous { get; set; }
 }

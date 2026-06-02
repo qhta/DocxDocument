@@ -22,13 +22,13 @@ public partial interface MailMergeDataSource : InteropObject
   /// Returns the type of the mail merge data source.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.type?view=word-pia"/>
-  public MailMergeDataSource Type { get; }
+  public MailMergeDataSourceType Type { get; }
 
   /// <summary>
   /// Returns the type of source used for header fields.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.headersourcetype?view=word-pia"/>
-  public MailMergeDataSource HeaderSourceType { get; }
+  public MailMergeDataSourceType HeaderSourceType { get; }
 
   /// <summary>
   /// Returns the connection string for the mail merge data source.

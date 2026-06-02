@@ -84,7 +84,7 @@ public partial class WebOptions : InteropObject
   /// OrganizeInFolder properties are set to True).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.weboptions.foldersuffix?view=word-pia"/>
-  public string FolderSuffix { get; }
+  public string? FolderSuffix { get; set; }
 
   /// <summary>
   /// Sets or returns a constant representing the target browser for documents viewed in a Web browser.

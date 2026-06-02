@@ -20,6 +20,6 @@ public partial class PickerProperty: InteropObject
   /// Gets the type of the picker property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerproperty.type?view=office-pia"/>
-  public PickerField Type { get; }
+  public MsoPickerField Type { get; }
 }
 

@@ -34,17 +34,17 @@ public partial class Footnotes : InteropCollection<Footnote>
   /// Returns a <see cref="Range"/> object that represents the footnote separator.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes.separator?view=word-pia"/>
-  public Range Separator { get; }
+  public Range Separator { get; set; }
 
   /// <summary>
   /// Returns a <see cref="Range"/> object that represents the footnote continuation separator.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes.continuationseparator?view=word-pia"/>
-  public Range ContinuationSeparator { get; }
+  public Range ContinuationSeparator { get; set; }
 
   /// <summary>
   /// Returns a <see cref="Range"/> object that represents the footnote continuation notice.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes.continuationnotice?view=word-pia"/>
-  public Range ContinuationNotice { get; }
+  public Range ContinuationNotice { get; set; }
 }

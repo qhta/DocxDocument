@@ -15,7 +15,7 @@ public partial class Options
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.get_defaultfilepath?view=word-pia"/>
-  public string DefaultFilePath(DefaultFilePath Path) { throw new NotImplementedException(); }
+  public string? DefaultFilePath(DefaultFilePath Path) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Sets WordPerfect help and navigation option values.

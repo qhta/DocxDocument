@@ -16,47 +16,47 @@ public partial class ListFormat : InteropObject
   /// Returns the first valid list that is applied to the paragraphs in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.list?view=word-pia"/>
-  public List List { get; }
+  public List List { get; set; }
 
   /// <summary>
   /// Returns the list template associated with the first paragraph in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.listtemplate?view=word-pia"/>
-  public ListTemplate ListTemplate { get; }
+  public ListTemplate ListTemplate { get; set; }
 
   /// <summary>
   /// Returns the numeric value of the first paragraph in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.listvalue?view=word-pia"/>
-  public int ListValue { get; }
+  public int ListValue { get; set; }
 
   /// <summary>
   /// Returns whether the range contains paragraphs from a single list.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.singlelist?view=word-pia"/>
-  public bool SingleList { get; }
+  public bool SingleList { get; set; }
 
   /// <summary>
   /// Returns whether the range uses a single list template.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.singlelisttemplate?view=word-pia"/>
-  public bool SingleListTemplate { get; }
+  public bool SingleListTemplate { get; set; }
 
   /// <summary>
   /// Returns the list type for the first paragraph in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.listtype?view=word-pia"/>
-  public ListType ListType { get; }
+  public ListType ListType { get; set; }
 
   /// <summary>
   /// Returns the list string for the first paragraph in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.liststring?view=word-pia"/>
-  public string ListString { get; }
+  public string? ListString { get; set; }
 
   /// <summary>
   /// Returns the picture bullet inline shape for the first paragraph in the range.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat.listpicturebullet?view=word-pia"/>
-  public InlineShape ListPictureBullet { get; }
+  public InlineShape ListPictureBullet { get; set; }
 }

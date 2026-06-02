@@ -10,7 +10,7 @@ public partial class PageNumber : InteropObject
   /// Returns an Integer that represents the position of an item in a collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumber.index?view=word-pia"/>
-  public int Index { get; }
+  public int Index { get; set; }
 
   /// <summary>
   /// Returns or sets a PageNumberAlignment constant that represents the alignment for the page number.

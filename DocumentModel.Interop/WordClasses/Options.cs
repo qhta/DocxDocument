@@ -127,7 +127,7 @@ public partial class Options : InteropObject
   /// True if the current printer has a special feeder for envelopes.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.envelopefeederinstalled?view=word-pia"/>
-  public bool EnvelopeFeederInstalled { get; }
+  public bool EnvelopeFeederInstalled { get; set; }
 
   /// <summary>
   /// True if Microsoft Word updates embedded links to other files before printing a document.
@@ -151,7 +151,7 @@ public partial class Options : InteropObject
   /// Returns or sets the default tray your printer uses to print documents.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaulttray?view=word-pia"/>
-  public string DefaultTray { get; set; }
+  public string? DefaultTray { get; set; }
 
   /// <summary>
   /// Returns or sets the default tray your printer uses to print documents.
@@ -289,7 +289,7 @@ public partial class Options : InteropObject
   /// Returns or sets the name of the application to use to edit pictures.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.pictureeditor?view=word-pia"/>
-  public string PictureEditor { get; set; }
+  public string? PictureEditor { get; set; }
 
   /// <summary>
   /// True if Microsoft Word animates mouse movements, uses animated cursors, and animates actions such as
@@ -1196,7 +1196,7 @@ public partial class Options : InteropObject
   /// application.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaultepostageapp?view=word-pia"/>
-  public string DefaultEPostageApp { get; set; }
+  public string? DefaultEPostageApp { get; set; }
 
   /// <summary>
   /// Returns or sets a Encoding constant representing the code page, or character set, that Microsoft Word
@@ -1333,14 +1333,14 @@ public partial class Options : InteropObject
   /// Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.bibliographystyle?view=word-pia"/>
-  public string BibliographyStyle { get; set; }
+  public string? BibliographyStyle { get; set; }
 
   /// <summary>
   /// Returns or sets a String that represents the order in which to display sources in the Source Manager dialog
   /// box. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.bibliographysort?view=word-pia"/>
-  public string BibliographySort { get; set; }
+  public string? BibliographySort { get; set; }
 
   /// <summary>
   /// Returns or sets a CellColor constant that represents the color for an inserted table cell. Read/write.

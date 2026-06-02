@@ -106,13 +106,13 @@ public partial class Borders : InteropCollection<Border>
   /// Gets a value indicating whether the collection includes a horizontal border.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.hashorizontal?view=word-pia"/>
-  public bool HasHorizontal { get; }
+  public bool HasHorizontal { get; set; }
 
   /// <summary>
   /// Gets a value indicating whether the collection includes a vertical border.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.hasvertical?view=word-pia"/>
-  public bool HasVertical { get; }
+  public bool HasVertical { get; set; }
 
   /// <summary>
   /// Gets or sets what border distances are measured from.

@@ -10,11 +10,11 @@ public partial class OMathLimUpp : InteropObject
   /// Returns the base expression for the upper-limit construct.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathlimupp.e?view=word-pia"/>
-  public OMath E { get; }
+  public OMath E { get; set; }
 
   /// <summary>
   /// Returns the upper limit expression.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathlimupp.lim?view=word-pia"/>
-  public OMath Lim { get; }
+  public OMath Lim { get; set; }
 }

@@ -10,17 +10,17 @@ public class HeaderFooter : InteropObject
   /// Returns a range object that represents the portion of a document contained in the header or footer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headerfooter.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
   /// <summary>
   /// Returns a constant that represents the specific header or footer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headerfooter.index?view=word-pia"/>
-  public HeaderFooterIndex Index { get; }
+  public HeaderFooterIndex Index { get; set; }
   /// <summary>
   /// Returns true if the object is a header.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headerfooter.isheader?view=word-pia"/>
-  public bool IsHeader { get; }
+  public bool IsHeader { get; set; }
   /// <summary>
   /// Returns or sets whether the specified header or footer exists.
   /// </summary>
@@ -30,7 +30,7 @@ public class HeaderFooter : InteropObject
   /// Returns the page numbers collection for the header or footer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headerfooter.pagenumbers?view=word-pia"/>
-  public PageNumbers PageNumbers { get; }
+  public PageNumbers PageNumbers { get; set; }
   /// <summary>
   /// Returns or sets whether the header or footer is linked to the corresponding header or footer in the previous section.
   /// </summary>
@@ -40,6 +40,6 @@ public class HeaderFooter : InteropObject
   /// Returns the shapes collection for the header or footer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headerfooter.shapes?view=word-pia"/>
-  public Shapes Shapes { get; }
+  public Shapes Shapes { get; set; }
 
 }

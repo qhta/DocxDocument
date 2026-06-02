@@ -10,13 +10,13 @@ public partial class ListLevel : InteropObject
   /// Returns the index number of the list level in the list levels collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.index?view=word-pia"/>
-  public int Index { get; }
+  public int Index { get; set; }
 
   /// <summary>
   /// Returns or sets the number format for the list level.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.numberformat?view=word-pia"/>
-  public string NumberFormat { get; set; }
+  public string? NumberFormat { get; set; }
 
   /// <summary>
   /// Returns or sets the character inserted after the list number.
@@ -70,7 +70,7 @@ public partial class ListLevel : InteropObject
   /// Returns or sets the paragraph style linked to the list level.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.linkedstyle?view=word-pia"/>
-  public string LinkedStyle { get; set; }
+  public string? LinkedStyle { get; set; }
 
   /// <summary>
   /// Returns or sets the font formatting for the list number.
@@ -88,5 +88,5 @@ public partial class ListLevel : InteropObject
   /// Returns the picture bullet for the list level.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.picturebullet?view=word-pia"/>
-  public InlineShape PictureBullet { get; }
+  public InlineShape PictureBullet { get; set; }
 }

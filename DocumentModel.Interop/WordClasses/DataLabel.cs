@@ -10,37 +10,37 @@ public partial class DataLabel : InteropObject
   /// Gets the name of the data label object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabel.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Gets the border formatting for the data label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabel.border?view=word-pia"/>
-  public ChartBorder Border { get; }
+  public ChartBorder Border { get; set; }
 
   /// <summary>
   /// Gets the interior formatting of the data label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabel.interior?view=word-pia"/>
-  public Interior Interior { get; }
+  public Interior Interior { get; set; }
 
   /// <summary>
   /// Gets the fill formatting of the data label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabel.fill?view=word-pia"/>
-  public ChartFillFormat Fill { get; }
+  public ChartFillFormat Fill { get; set; }
 
   /// <summary>
   /// Gets or sets the caption text for the data label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabel.caption?view=word-pia"/>
-  public string Caption { get; set; }
+  public string? Caption { get; set; }
 
   /// <summary>
   /// Gets the font formatting for the data label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabel.font?view=word-pia"/>
-  public ChartFont Font { get; }
+  public ChartFont Font { get; set; }
 
   /// <summary>
   /// Gets or sets the horizontal alignment of the data label.
@@ -70,7 +70,7 @@ public partial class DataLabel : InteropObject
   /// Gets or sets the text of the data label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabel.text?view=word-pia"/>
-  public string Text { get; set; }
+  public string? Text { get; set; }
 
   /// <summary>
   /// Gets or sets the distance, in points, from the top edge of the chart area to the top edge of the data label.
@@ -106,7 +106,7 @@ public partial class DataLabel : InteropObject
   /// Gets or sets the number format for the data label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabel.numberformat?view=word-pia"/>
-  public string NumberFormat { get; set; }
+  public string? NumberFormat { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the number format is linked to the source cells.
@@ -178,43 +178,43 @@ public partial class DataLabel : InteropObject
   /// Gets the chart formatting for the data label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabel.format?view=word-pia"/>
-  public ChartFormat Format { get; }
+  public ChartFormat Format { get; set; }
 
   /// <summary>
   /// Gets the height of the data label, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabel._height?view=word-pia"/>
-  public double _Height { get; }
+  public double _Height { get; set; }
 
   /// <summary>
   /// Gets the width of the data label, in points.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabel._width?view=word-pia"/>
-  public double _Width { get; }
+  public double _Width { get; set; }
 
   /// <summary>
   /// Gets or sets the formula for the data label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabel.formula?view=word-pia"/>
-  public string Formula { get; set; }
+  public string? Formula { get; set; }
 
   /// <summary>
   /// Gets or sets the formula for the data label in R1C1-style notation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabel.formular1c1?view=word-pia"/>
-  public string FormulaR1C1 { get; set; }
+  public string? FormulaR1C1 { get; set; }
 
   /// <summary>
   /// Gets or sets the formula for the data label in the language of the user.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabel.formulalocal?view=word-pia"/>
-  public string FormulaLocal { get; set; }
+  public string? FormulaLocal { get; set; }
 
   /// <summary>
   /// Gets or sets the formula for the data label in R1C1-style notation in the language of the user.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabel.formular1c1local?view=word-pia"/>
-  public string FormulaR1C1Local { get; set; }
+  public string? FormulaR1C1Local { get; set; }
 
   /// <summary>
   /// Gets or sets a value indicating whether the cell range is displayed in the data label.

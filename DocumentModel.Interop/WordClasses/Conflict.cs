@@ -10,17 +10,17 @@ public partial class Conflict : InteropObject
   /// Gets the range in the document where the conflict occurs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conflict.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
 
   /// <summary>
   /// Gets the revision type of the conflict.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conflict.type?view=word-pia"/>
-  public RevisionType Type { get; }
+  public RevisionType Type { get; set; }
 
   /// <summary>
   /// Gets the index number of the conflict in the conflicts collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conflict.index?view=word-pia"/>
-  public int Index { get; }
+  public int Index { get; set; }
 }

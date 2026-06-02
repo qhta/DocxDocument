@@ -34,17 +34,17 @@ public partial class Endnotes : InteropCollection<Endnote>
   /// Gets the endnote separator.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.endnotes.separator?view=word-pia"/>
-  public Range Separator { get; }
+  public Range Separator { get; set; }
 
   /// <summary>
   /// Gets the endnote continuation separator.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.endnotes.continuationseparator?view=word-pia"/>
-  public Range ContinuationSeparator { get; }
+  public Range ContinuationSeparator { get; set; }
 
   /// <summary>
   /// Gets the endnote continuation notice.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.endnotes.continuationnotice?view=word-pia"/>
-  public Range ContinuationNotice { get; }
+  public Range ContinuationNotice { get; set; }
 }

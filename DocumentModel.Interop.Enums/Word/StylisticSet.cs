@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdstylisticset?view=office-pia` for Office interop details.
 /// </remarks>
-public enum StylisticSet
+public enum OtStylisticSet
 {
   /// <summary>
   /// Default stylistic set for the specified font.

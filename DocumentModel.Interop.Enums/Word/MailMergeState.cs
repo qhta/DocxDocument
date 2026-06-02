@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailmergestate?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MailMergeState
+public enum WdMailMergeState
 {
   /// <summary>
   /// Document is not involved in a mail merge operation.

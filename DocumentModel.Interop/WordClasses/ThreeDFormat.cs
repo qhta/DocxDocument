@@ -18,7 +18,7 @@ public partial class ThreeDFormat : InteropObject
   /// Returns a ColorFormat object that represents the color of the shape's extrusion.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.extrusioncolor?view=word-pia"/>
-  public ColorFormat ExtrusionColor { get; }
+  public ColorFormat ExtrusionColor { get; set; }
 
   /// <summary>
   /// Returns or sets a value that indicates whether the extrusion color is based on the extruded shape's fill (the
@@ -41,7 +41,7 @@ public partial class ThreeDFormat : InteropObject
   /// of the extrusion).
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetextrusiondirection?view=word-pia"/>
-  public Core.PresetExtrusionDirection PresetExtrusionDirection { get; }
+  public Core.PresetExtrusionDirection PresetExtrusionDirection { get; set; }
 
   /// <summary>
   /// Returns or sets the position of the light source relative to the extrusion.
@@ -65,7 +65,7 @@ public partial class ThreeDFormat : InteropObject
   /// Returns the preset extrusion format.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetthreedformat?view=word-pia"/>
-  public Core.PresetThreeDFormat PresetThreeDFormat { get; }
+  public Core.PresetThreeDFormat PresetThreeDFormat { get; set; }
 
   /// <summary>
   /// Returns or sets the rotation of the extruded shape around the x-axis in degrees. Can be a value from – 90
@@ -139,7 +139,7 @@ public partial class ThreeDFormat : InteropObject
   /// Returns an PresetCamera constant that represents the camera presets. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.presetcamera?view=word-pia"/>
-  public Core.PresetCamera PresetCamera { get; }
+  public Core.PresetCamera PresetCamera { get; set; }
 
   /// <summary>
   /// Returns or sets a Single that represents z-axis rotation of the camera. Read/write.
@@ -157,7 +157,7 @@ public partial class ThreeDFormat : InteropObject
   /// Returns or sets a ColorFormat object that represents color of the contour of a shape. Read/write.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.threedformat.contourcolor?view=word-pia"/>
-  public ColorFormat ContourColor { get; }
+  public ColorFormat ContourColor { get; set; }
 
   /// <summary>
   /// Returns or sets a Single that represents the amount of perspective for a shape. Read/write.

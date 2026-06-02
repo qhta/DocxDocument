@@ -10,7 +10,7 @@ public partial class Paragraph : InteropObject
   /// Returns a Range object that represents the portion of a document that's contained in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.range?view=word-pia"/>
-  public Range Range { get; }
+  public Range Range { get; set; }
 
   /// <summary>
   /// Returns or sets a ParagraphFormat object that represents the formatting of the specified paragraph or
@@ -35,7 +35,7 @@ public partial class Paragraph : InteropObject
   /// Returns a DropCap object that represents a dropped capital letter for the specified paragraph.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.dropcap?view=word-pia"/>
-  public DropCap DropCap { get; }
+  public DropCap DropCap { get; set; }
 
   /// <summary>
   /// Returns or sets the style for the specified object.
@@ -135,7 +135,7 @@ public partial class Paragraph : InteropObject
   /// Returns a Shading object that refers to the shading formatting for the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public Shading Shading { get; set; }
 
   /// <summary>
   /// Determines if Microsoft Word applies East Asian line-breaking rules to the specified paragraphs.
@@ -244,7 +244,7 @@ public partial class Paragraph : InteropObject
   /// page.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.id?view=word-pia"/>
-  public string ID { get; set; }
+  public string? ID { get; set; }
 
   /// <summary>
   /// Determines if Microsoft Word automatically sets the amount of spacing before the specified paragraphs.
@@ -263,7 +263,7 @@ public partial class Paragraph : InteropObject
   /// join paragraphs of different paragraph styles.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.isstyleseparator?view=word-pia"/>
-  public bool IsStyleSeparator { get; }
+  public bool IsStyleSeparator { get; set; }
 
   /// <summary>
   /// Returns or sets a Integer that represents whether left and right indents are the same width. Can be True,
@@ -283,13 +283,13 @@ public partial class Paragraph : InteropObject
   /// Reserved for internal use.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.paraid?view=word-pia"/>
-  public int ParaID { get; }
+  public int ParaID { get; set; }
 
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraph.textid?view=word-pia"/>
-  public int TextID { get; }
+  public int TextID { get; set; }
 
   /// <summary>
   /// Returns or sets whether the specified paragraph is currently in a collapsed state. Read-write Boolean (bool in

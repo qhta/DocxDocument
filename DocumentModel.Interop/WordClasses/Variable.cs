@@ -11,17 +11,17 @@ public partial class Variable : InteropObject
   /// Returns or sets the name of the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.variable.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Returns or sets the value of the document variable.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.variable.value?view=word-pia"/>
-  public string Value { get; set; }
+  public string? Value { get; set; }
 
   /// <summary>
   /// Returns an Integer that represents the position of an item in a collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.variable.index?view=word-pia"/>
-  public int Index { get; }
+  public int Index { get; set; }
 }

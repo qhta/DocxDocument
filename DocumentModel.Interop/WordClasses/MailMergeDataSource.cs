@@ -10,43 +10,43 @@ public partial class MailMergeDataSource : InteropObject
   /// Returns the name of the mail merge data source.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.name?view=word-pia"/>
-  public string Name { get; }
+  public string? Name { get; set;}
 
   /// <summary>
   /// Returns the name of the source used for header fields.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.headersourcename?view=word-pia"/>
-  public string HeaderSourceName { get; }
+  public string? HeaderSourceName { get; set; }
 
   /// <summary>
   /// Returns the type of the mail merge data source.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.type?view=word-pia"/>
-  public MailMergeDataSource Type { get; }
+  public WdMailMergeDataSource Type { get; set; }
 
   /// <summary>
   /// Returns the type of source used for header fields.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.headersourcetype?view=word-pia"/>
-  public MailMergeDataSource HeaderSourceType { get; }
+  public WdMailMergeDataSource HeaderSourceType { get; set; }
 
   /// <summary>
   /// Returns the connection string for the mail merge data source.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.connectstring?view=word-pia"/>
-  public string ConnectString { get; }
+  public string? ConnectString { get; set; }
 
   /// <summary>
   /// Returns or sets the query string used to retrieve records.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.querystring?view=word-pia"/>
-  public string QueryString { get; set; }
+  public string? QueryString { get; set; }
 
   /// <summary>
   /// Returns or sets the active record in the data source.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.activerecord?view=word-pia"/>
-  public MailMergeActiveRecord ActiveRecord { get; set; }
+  public WdMailMergeActiveRecord ActiveRecordType { get; set; }
 
   /// <summary>
   /// Returns or sets the first record number for the merge.
@@ -64,19 +64,19 @@ public partial class MailMergeDataSource : InteropObject
   /// Returns the mail merge field names collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.fieldnames?view=word-pia"/>
-  public MailMergeFieldNames FieldNames { get; }
+  public MailMergeFieldNames FieldNames { get; private set; } = new MailMergeFieldNames();
 
   /// <summary>
   /// Returns the mail merge data fields collection for the active record.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.datafields?view=word-pia"/>
-  public MailMergeDataFields DataFields { get; }
+  public MailMergeDataFields DataFields { get; private set; } = new MailMergeDataFields();
 
   /// <summary>
   /// Returns the number of records in the data source.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.recordcount?view=word-pia"/>
-  public int RecordCount { get; }
+  public int RecordCount { get; set; }
 
   /// <summary>
   /// Returns or sets whether the current record is included in the merge.
@@ -94,17 +94,17 @@ public partial class MailMergeDataSource : InteropObject
   /// Returns or sets comments about why the current record is invalid.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.invalidcomments?view=word-pia"/>
-  public string InvalidComments { get; set; }
+  public string? InvalidComments { get; set; }
 
   /// <summary>
   /// Returns the mapped data fields collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.mappeddatafields?view=word-pia"/>
-  public MappedDataFields MappedDataFields { get; }
+  public MappedDataFieldType MappedDataFields { get; set; }
 
   /// <summary>
   /// Returns the source table name for the mail merge data source.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.tablename?view=word-pia"/>
-  public string TableName { get; }
+  public string? TableName { get; set; }
 }

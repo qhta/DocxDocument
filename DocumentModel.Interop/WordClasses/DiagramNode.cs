@@ -10,25 +10,25 @@ public partial class DiagramNode : InteropObject
   /// Gets the collection of child nodes for this diagram node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.children?view=word-pia"/>
-  public DiagramNodeChildren Children { get; }
+  public DiagramNodeChildren Children { get; set; }
 
   /// <summary>
   /// Gets the shape associated with this diagram node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.shape?view=word-pia"/>
-  public Shape Shape { get; }
+  public Shape Shape { get; set; }
 
   /// <summary>
   /// Gets the root node of the diagram that contains this node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.root?view=word-pia"/>
-  public DiagramNode Root { get; }
+  public DiagramNode Root { get; set; }
 
   /// <summary>
   /// Gets the diagram that contains this node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.diagram?view=word-pia"/>
-  public Diagram Diagram { get; }
+  public Diagram Diagram { get; set; }
 
   /// <summary>
   /// Gets or sets the layout type for this diagram node.
@@ -40,5 +40,5 @@ public partial class DiagramNode : InteropObject
   /// Gets the shape that contains text for this diagram node.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnode.textshape?view=word-pia"/>
-  public Shape TextShape { get; }
+  public Shape TextShape { get; set; }
 }

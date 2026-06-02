@@ -10,13 +10,13 @@ public partial class Columns : InteropCollection<Column>
   /// Gets the first column in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.first?view=word-pia"/>
-  public Column First { get; }
+  public Column First { get; set; }
 
   /// <summary>
   /// Gets the last column in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.last?view=word-pia"/>
-  public Column Last { get; }
+  public Column Last { get; set; }
 
   /// <summary>
   /// Gets or sets the width of all columns in the collection, in points.
@@ -34,13 +34,13 @@ public partial class Columns : InteropCollection<Column>
   /// Gets the shading formatting for the columns.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.shading?view=word-pia"/>
-  public Shading Shading { get; }
+  public Shading Shading { get; set; }
 
   /// <summary>
   /// Gets the nesting level of the columns.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.nestinglevel?view=word-pia"/>
-  public int NestingLevel { get; }
+  public int NestingLevel { get; set; }
 
   /// <summary>
   /// Gets or sets the preferred width of the columns.

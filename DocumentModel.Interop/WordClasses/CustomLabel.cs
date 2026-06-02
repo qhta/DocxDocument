@@ -10,13 +10,13 @@ public partial class CustomLabel : InteropObject
   /// Gets the index number of the custom label in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customlabel.index?view=word-pia"/>
-  public int Index { get; }
+  public int Index { get; set; }
 
   /// <summary>
   /// Gets or sets the name of the custom label.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customlabel.name?view=word-pia"/>
-  public string Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   /// Gets or sets the top margin of the label, in points.
@@ -70,7 +70,7 @@ public partial class CustomLabel : InteropObject
   /// Gets a value indicating whether the custom label is designed for a dot-matrix printer.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customlabel.dotmatrix?view=word-pia"/>
-  public bool DotMatrix { get; }
+  public bool DotMatrix { get; set; }
 
   /// <summary>
   /// Gets or sets the page size used by the custom label.
@@ -82,5 +82,5 @@ public partial class CustomLabel : InteropObject
   /// Gets a value indicating whether the custom label definition is valid.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customlabel.valid?view=word-pia"/>
-  public bool Valid { get; }
+  public bool Valid { get; set; }
 }

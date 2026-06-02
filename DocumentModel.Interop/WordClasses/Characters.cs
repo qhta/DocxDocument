@@ -10,10 +10,10 @@ public class Characters : InteropCollection<Range>
   /// Gets the first character in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.characters.first?view=word-pia"/>
-  public Range First { get; }
+  public Range First { get; set; }
   /// <summary>
   /// Gets the last character in the collection.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.characters.last?view=word-pia"/>
-  public Range Last { get; }
+  public Range Last { get; set; }
 }

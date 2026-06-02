@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Word;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdmailmergecomparison?view=office-pia` for Office interop details.
 /// </remarks>
-public enum MailMergeComparison
+public enum WdMailMergeComparison
 {
   /// <summary>
   /// A value is output if the mail merge field is equal to a value.
