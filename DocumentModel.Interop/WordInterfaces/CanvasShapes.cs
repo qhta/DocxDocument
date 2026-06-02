@@ -128,7 +128,7 @@ public partial interface ICanvasShapes : IInteropObject, IInteropCollection<Shap
   /// </summary>
   /// <param name="PresetTextEffect">The preset text effect style.</param>
   /// <param name="Text">The displayed text.</param>
-  /// <param name="Name">The font name.</param>
+  /// <param name="FontName">The font name.</param>
   /// <param name="FontSize">The font size.</param>
   /// <param name="FontBold">Specifies whether the text is bold.</param>
   /// <param name="FontItalic">Specifies whether the text is italic.</param>
