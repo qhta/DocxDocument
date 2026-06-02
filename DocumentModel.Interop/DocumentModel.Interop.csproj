@@ -29,12 +29,15 @@
     <Compile Remove="BaseInterfaces\**" />
     <Compile Remove="CoreInterfaces1\**" />
     <Compile Remove="ExcelInterfaces\**" />
+    <Compile Remove="WordInterfaces\**" />
     <EmbeddedResource Remove="BaseInterfaces\**" />
     <EmbeddedResource Remove="CoreInterfaces1\**" />
     <EmbeddedResource Remove="ExcelInterfaces\**" />
+    <EmbeddedResource Remove="WordInterfaces\**" />
     <None Remove="BaseInterfaces\**" />
     <None Remove="CoreInterfaces1\**" />
     <None Remove="ExcelInterfaces\**" />
+    <None Remove="WordInterfaces\**" />
   </ItemGroup>
 
   <ItemGroup>

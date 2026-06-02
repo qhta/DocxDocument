@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a debug unit test.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_ut?view=office-pia"/>
-public partial interface IMsoDebugOptions_UT: IInteropObject
+public interface IMsoDebugOptions_UT: IInteropObject
 {
   /// <summary>
   /// Gets the `Name` property.

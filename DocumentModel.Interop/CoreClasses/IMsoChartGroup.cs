@@ -21,12 +21,12 @@ public partial class MsoChartGroup
   /// Gets the `DownBars` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.downbars?view=office-pia"/>
-  public IMsoDownBars? DownBars { get; set;}
+  public MsoDownBars? DownBars { get; set;}
   /// <summary>
   /// Gets the `DropLines` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.droplines?view=office-pia"/>
-  public IMsoDropLines? DropLines { get; set;}
+  public MsoDropLines? DropLines { get; set;}
   /// <summary>
   /// Gets or sets the `FirstSliceAngle` property.
   /// </summary>
@@ -66,7 +66,7 @@ public partial class MsoChartGroup
   /// Gets the `HiLoLines` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.hilolines?view=office-pia"/>
-  public IMsoHiLoLines HiLoLines { get; }
+  public MsoHiLoLines HiLoLines { get; }
   /// <summary>
   /// Gets the `Index` property.
   /// </summary>
@@ -86,7 +86,7 @@ public partial class MsoChartGroup
   /// Gets the `SeriesLines` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.serieslines?view=office-pia"/>
-  public IMsoSeriesLines SeriesLines { get; }
+  public MsoSeriesLines SeriesLines { get; }
   /// <summary>
   /// Gets or sets the `SubType` property.
   /// </summary>
@@ -101,7 +101,7 @@ public partial class MsoChartGroup
   /// Gets the `UpBars` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.upbars?view=office-pia"/>
-  public IMsoUpBars UpBars { get; }
+  public MsoUpBars UpBars { get; }
   /// <summary>
   /// Gets or sets the `VaryByCategories` property.
   /// </summary>

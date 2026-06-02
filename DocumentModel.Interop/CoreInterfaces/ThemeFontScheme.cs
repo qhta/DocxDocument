@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `ThemeFontScheme` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themefontscheme?view=office-pia"/>
-public partial interface IThemeFontScheme: IInteropObject
+public interface IThemeFontScheme: IInteropObject
 {
   /// <summary>
   /// Gets the `MinorFont` property.

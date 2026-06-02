@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the full set of Series objects in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fullseriescollection?view=office-pia"/>
-public partial interface IFullSeriesCollection: IInteropCollection<MsoSeries>
+public interface IFullSeriesCollection: IInteropCollection<IMsoSeries>
 {
 
 }

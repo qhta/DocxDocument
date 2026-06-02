@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// A collection of command bar controls on a command bar.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrols?view=office-pia"/>
-public partial interface ICommandBarControls: IInteropCollection<CommandBarControl>
+public interface ICommandBarControls: IInteropCollection<ICommandBarControl>
 {
 
 
@@ -22,7 +22,7 @@ public partial interface ICommandBarControls: IInteropCollection<CommandBarContr
   /// <param name="Temporary">The `Temporary` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrols.add?view=office-pia"/>
-  public CommandBarControl Add(object Type, object Id, object Parameter, object Before, object Temporary);
+  public ICommandBarControl Add(object Type, object Id, object Parameter, object Before, object Temporary);
 
   #endregion methods
 }

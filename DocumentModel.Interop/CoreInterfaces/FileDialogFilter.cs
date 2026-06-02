@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a file filter in a FileDialog object.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialogfilter?view=office-pia"/>
-public partial interface IFileDialogFilter: IInteropObject
+public interface IFileDialogFilter: IInteropObject
 {
   /// <summary>
   /// Gets the `Extensions` property.

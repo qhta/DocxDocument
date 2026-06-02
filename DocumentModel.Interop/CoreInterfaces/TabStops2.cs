@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `TabStops2` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstops2?view=office-pia"/>
-public partial interface ITabStops2: IInteropCollection<TabStop2>
+public interface ITabStops2: IInteropCollection<TabStop2>
 {
   /// <summary>
   /// Gets or sets the `DefaultSpacing` property.

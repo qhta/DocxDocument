@@ -31,7 +31,7 @@ public partial class MsoDataTable
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatatable.border?view=office-pia"/>
-  public IMsoBorder Border { get; }
+  public MsoBorder Border { get; }
   /// <summary>
   /// Gets the `Font` property.
   /// </summary>

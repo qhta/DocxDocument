@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents debug options for Office.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions?view=office-pia"/>
-public partial interface IMsoDebugOptions: IInteropObject
+public interface IMsoDebugOptions: IInteropObject
 {
   /// <summary>
   /// Gets or sets the `FeatureReports` property.

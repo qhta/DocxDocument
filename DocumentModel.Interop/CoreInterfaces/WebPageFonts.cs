@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `WebPageFonts` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webpagefonts?view=office-pia"/>
-public partial interface IWebPageFonts: IInteropCollection<WebPageFont>
+public interface IWebPageFonts: IInteropCollection<WebPageFont>
 {
 }
 

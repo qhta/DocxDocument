@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the chart area.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartarea?view=office-pia"/>
-public partial interface IMsoChartArea
+public interface IMsoChartArea
 {
   /// <summary>
   /// Gets or sets the `Name` property.

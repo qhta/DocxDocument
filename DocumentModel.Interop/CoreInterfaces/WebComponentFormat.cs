@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `WebComponentFormat` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponentformat?view=office-pia"/>
-public partial interface IWebComponentFormat
+public interface IWebComponentFormat
 {
   /// <summary>
   /// Gets or sets the `URL` property.

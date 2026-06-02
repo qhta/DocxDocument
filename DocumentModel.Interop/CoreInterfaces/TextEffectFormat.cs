@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `TextEffectFormat` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat?view=office-pia"/>
-public partial interface ITextEffectFormat: IInteropObject
+public interface ITextEffectFormat: IInteropObject
 {
   /// <summary>
   /// Gets or sets the `Alignment` property.

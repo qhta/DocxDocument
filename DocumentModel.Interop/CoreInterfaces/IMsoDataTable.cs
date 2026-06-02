@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a chart data table.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatatable?view=office-pia"/>
-public partial interface IMsoDataTable
+public interface IMsoDataTable
 {
   /// <summary>
   /// Gets or sets the `ShowLegendKey` property.

@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a trendline in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsotrendline?view=office-pia"/>
-public partial interface IMsoTrendline
+public interface IMsoTrendline
 {
   /// <summary>
   /// Gets or sets the `Backward` property.

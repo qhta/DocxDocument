@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat?view=office-pia"/>
-public partial interface IFillFormat: IInteropObject
+public interface IFillFormat: IInteropObject
 {
   /// <summary>
   /// Gets or sets the `BackColor` property.
@@ -81,7 +81,7 @@ public partial interface IFillFormat: IInteropObject
   /// Gets the `GradientStops` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.gradientstops?view=office-pia"/>
-  public GradientStops GradientStops { get; }
+  public IGradientStops GradientStops { get; }
   /// <summary>
   /// Gets or sets the `TextureOffsetX` property.
   /// </summary>
@@ -121,7 +121,7 @@ public partial interface IFillFormat: IInteropObject
   /// Gets the `PictureEffects` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.pictureeffects?view=office-pia"/>
-  public PictureEffects PictureEffects { get; }
+  public IPictureEffects PictureEffects { get; }
   /// <summary>
   /// Gets or sets the `GradientAngle` property.
   /// </summary>

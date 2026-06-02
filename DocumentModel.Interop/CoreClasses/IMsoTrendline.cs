@@ -16,7 +16,7 @@ public partial class MsoTrendline
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsotrendline.border?view=office-pia"/>
-  public IMsoBorder Border { get; }
+  public MsoBorder Border { get; }
   /// <summary>
   /// Gets the `DataLabel` property.
   /// </summary>

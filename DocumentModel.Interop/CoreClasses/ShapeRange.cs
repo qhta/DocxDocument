@@ -173,7 +173,7 @@ public partial class ShapeRange: InteropCollection<Shape>
   /// Gets the `Diagram` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.diagram?view=office-pia"/>
-  public IMsoDiagram Diagram { get; }
+  public MsoDiagram Diagram { get; }
   /// <summary>
   /// Gets the `HasDiagramNode` property.
   /// </summary>

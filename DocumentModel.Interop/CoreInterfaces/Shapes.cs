@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes?view=office-pia"/>
-public partial interface IShapes: IInteropCollection<Shape>
+public interface IShapes: IInteropCollection<Shape>
 {
   /// <summary>
   /// Gets the `Background` property.

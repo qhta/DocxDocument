@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents interior formatting for a chart element.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsointerior?view=office-pia"/>
-public partial interface IMsoInterior
+public interface IMsoInterior
 {
   /// <summary>
   /// Gets or sets the `Color` property.

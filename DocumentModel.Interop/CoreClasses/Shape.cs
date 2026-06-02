@@ -171,7 +171,7 @@ public partial class Shape: InteropObject
   /// Gets the `Diagram` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.diagram?view=office-pia"/>
-  public IMsoDiagram Diagram { get; }
+  public MsoDiagram Diagram { get; }
   /// <summary>
   /// Gets the `HasDiagramNode` property.
   /// </summary>

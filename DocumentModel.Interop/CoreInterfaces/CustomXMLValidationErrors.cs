@@ -12,7 +12,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a collection of CustomXMLValidationError objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerrors?view=office-pia"/>
-public partial interface ICustomXMLValidationErrors: IInteropCollection<CustomXMLValidationError>
+public interface ICustomXMLValidationErrors: IInteropCollection<ICustomXMLValidationError>
 {
 
 
@@ -26,7 +26,7 @@ public partial interface ICustomXMLValidationErrors: IInteropCollection<CustomXM
   /// <param name="ErrorText">The `ErrorText` parameter.</param>
   /// <param name="ClearedOnUpdate">The `ClearedOnUpdate` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerrors.add?view=office-pia"/>
-  public void Add(CustomXMLNode Node, string ErrorName, string ErrorText, bool ClearedOnUpdate);
+  public void Add(ICustomXMLNode Node, string ErrorName, string ErrorText, bool ClearedOnUpdate);
 
   #endregion methods
 }

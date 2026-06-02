@@ -237,7 +237,7 @@ public partial class ShapeRange : InteropCollection<Shape>
   /// Returns a Diagram object to which a diagram node belongs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange.diagram?view=word-pia"/>
-  public Core.IMsoDiagram Diagram { get; set; }
+  public Core.MsoDiagram Diagram { get; set; }
 
   /// <summary>
   /// MsoTrue if a shape is a diagram node.

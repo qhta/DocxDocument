@@ -10,7 +10,7 @@ public partial interface IConflict : IInteropObject
   /// Gets the range in the document where the conflict occurs.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conflict.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// Gets the revision type of the conflict.

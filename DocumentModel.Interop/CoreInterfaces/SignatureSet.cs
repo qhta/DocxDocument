@@ -8,7 +8,7 @@ namespace DocumentModel.Interop.Core;
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureset?view=office-pia` for Office interop details.
 /// </remarks>
-public partial interface ISignatureSet: IInteropCollection<Signature>
+public interface ISignatureSet: IInteropCollection<ISignature>
 {
   /// <summary>
   /// Gets or sets the `CanAddSignatureLine` property.
@@ -34,7 +34,7 @@ public partial interface ISignatureSet: IInteropCollection<Signature>
   /// </summary>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureset.add?view=office-pia"/>
-  public Signature Add();
+  public ISignature Add();
   /// <summary>
   /// Invokes `Commit`.
   /// </summary>
@@ -46,14 +46,14 @@ public partial interface ISignatureSet: IInteropCollection<Signature>
   /// <param name="varSigProv">The `varSigProv` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureset.addnonvisiblesignature?view=office-pia"/>
-  public Signature AddNonVisibleSignature(object varSigProv);
+  public ISignature AddNonVisibleSignature(object varSigProv);
   /// <summary>
   /// Invokes `AddSignatureLine`.
   /// </summary>
   /// <param name="varSigProv">The `varSigProv` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureset.addsignatureline?view=office-pia"/>
-  public Signature AddSignatureLine(object varSigProv);
+  public ISignature AddSignatureLine(object varSigProv);
 
   #endregion methods
 }

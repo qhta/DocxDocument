@@ -16,7 +16,7 @@ public partial class MsoPlotArea
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea.border?view=office-pia"/>
-  public IMsoBorder Border { get; }
+  public MsoBorder Border { get; }
   /// <summary>
   /// Gets or sets the `Height` property.
   /// </summary>
@@ -26,7 +26,7 @@ public partial class MsoPlotArea
   /// Gets the `Interior` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea.interior?view=office-pia"/>
-  public IMsoInterior Interior { get; }
+  public MsoInterior Interior { get; }
   /// <summary>
   /// Gets the `Fill` property.
   /// </summary>

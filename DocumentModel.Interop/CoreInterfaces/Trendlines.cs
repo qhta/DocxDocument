@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `Trendlines` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.trendlines?view=office-pia"/>
-public partial interface ITrendlines: IEnumerable
+public interface ITrendlines: IEnumerable
 {
   /// <summary>
   /// Gets the `Count` property.

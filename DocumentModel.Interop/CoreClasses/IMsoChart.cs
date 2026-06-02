@@ -16,7 +16,7 @@ public partial class MsoChart
   /// Gets the `ChartTitle` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.charttitle?view=office-pia"/>
-  public IMsoChartTitle ChartTitle { get; }
+  public MsoChartTitle ChartTitle { get; }
   /// <summary>
   /// Gets or sets the `DepthPercent` property.
   /// </summary>
@@ -101,7 +101,7 @@ public partial class MsoChart
   /// Gets the `Corners` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.corners?view=office-pia"/>
-  public IMsoCorners Corners { get; }
+  public MsoCorners Corners { get; }
   /// <summary>
   /// Gets or sets the `ChartType` property.
   /// </summary>
@@ -126,7 +126,7 @@ public partial class MsoChart
   /// Gets the `Legend` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.legend?view=office-pia"/>
-  public IMsoLegend Legend { get; }
+  public MsoLegend Legend { get; }
   /// <summary>
   /// Gets or sets the `HasAxis` property.
   /// </summary>
@@ -136,17 +136,17 @@ public partial class MsoChart
   /// Gets the `Walls` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.walls?view=office-pia"/>
-  public IMsoWalls Walls { get; }
+  public MsoWalls Walls { get; }
   /// <summary>
   /// Gets the `Floor` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.floor?view=office-pia"/>
-  public IMsoFloor Floor { get; }
+  public MsoFloor Floor { get; }
   /// <summary>
   /// Gets the `PlotArea` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.plotarea?view=office-pia"/>
-  public IMsoPlotArea PlotArea { get; }
+  public MsoPlotArea PlotArea { get; }
   /// <summary>
   /// Gets or sets the `PlotVisibleOnly` property.
   /// </summary>
@@ -156,7 +156,7 @@ public partial class MsoChart
   /// Gets the `ChartArea` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.chartarea?view=office-pia"/>
-  public IMsoChartArea ChartArea { get; }
+  public MsoChartArea ChartArea { get; }
   /// <summary>
   /// Gets or sets the `AutoScaling` property.
   /// </summary>
@@ -166,7 +166,7 @@ public partial class MsoChart
   /// Gets the `DataTable` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.datatable?view=office-pia"/>
-  public IMsoDataTable DataTable { get; }
+  public MsoDataTable DataTable { get; }
   /// <summary>
   /// Gets or sets the `BarShape` property.
   /// </summary>
@@ -176,12 +176,12 @@ public partial class MsoChart
   /// Gets the `SideWall` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.sidewall?view=office-pia"/>
-  public IMsoWalls SideWall { get; }
+  public MsoWalls SideWall { get; }
   /// <summary>
   /// Gets the `BackWall` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.backwall?view=office-pia"/>
-  public IMsoWalls BackWall { get; }
+  public MsoWalls BackWall { get; }
   /// <summary>
   /// Gets or sets the `ChartStyle` property.
   /// </summary>
@@ -211,7 +211,7 @@ public partial class MsoChart
   /// Gets the `ChartData` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.chartdata?view=office-pia"/>
-  public IMsoChartData ChartData { get; }
+  public MsoChartData ChartData { get; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>
@@ -333,18 +333,18 @@ public partial class MsoChart
   /// Invokes `_ApplyDataLabels`.
   /// </summary>
   /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="IMsoLegendKey">The `IMsoLegendKey` parameter.</param>
+  /// <param name="MsoLegendKey">The `IMsoLegendKey` parameter.</param>
   /// <param name="AutoText">The `AutoText` parameter.</param>
   /// <param name="HasLeaderLines">The `HasLeaderLines` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart._applydatalabels?view=office-pia"/>
   public void _ApplyDataLabels
-  (DataLabelsType Type, object IMsoLegendKey, object AutoText,
+  (DataLabelsType Type, object MsoLegendKey, object AutoText,
     object HasLeaderLines) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `ApplyDataLabels`.
   /// </summary>
   /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="IMsoLegendKey">The `IMsoLegendKey` parameter.</param>
+  /// <param name="MsoLegendKey">The `IMsoLegendKey` parameter.</param>
   /// <param name="AutoText">The `AutoText` parameter.</param>
   /// <param name="HasLeaderLines">The `HasLeaderLines` parameter.</param>
   /// <param name="ShowSeriesName">The `ShowSeriesName` parameter.</param>
@@ -355,7 +355,7 @@ public partial class MsoChart
   /// <param name="Separator">The `Separator` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.applydatalabels?view=office-pia"/>
   public void ApplyDataLabels
-  (DataLabelsType Type, object IMsoLegendKey, object AutoText,
+  (DataLabelsType Type, object MsoLegendKey, object AutoText,
     object HasLeaderLines, object ShowSeriesName, object ShowCategoryName, object ShowValue, object ShowPercentage,
     object ShowBubbleSize, object Separator) { throw new NotImplementedException(); }
   /// <summary>

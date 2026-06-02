@@ -10,19 +10,19 @@ public partial interface IComment : IInteropObject
   /// Gets the range that contains the comment text.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// Gets the range marked by the comment reference mark.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment.reference?view=word-pia"/>
-  public Range Reference { get; }
+  public IRange Reference { get; }
 
   /// <summary>
   /// Gets the range in the document to which the comment applies.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment.scope?view=word-pia"/>
-  public Range Scope { get; }
+  public IRange Scope { get; }
 
   /// <summary>
   /// Gets the index number of the comment in the `Comments` collection.

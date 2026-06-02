@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart?view=office-pia"/>
-public partial interface IMsoChart
+public interface IMsoChart
 {
   /// <summary>
   /// Gets or sets the `HasTitle` property.
@@ -216,12 +216,12 @@ public partial interface IMsoChart
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.format?view=office-pia"/>
-  public MsoChartFormat Format { get; }
+  public IMsoChartFormat Format { get; }
   /// <summary>
   /// Gets the `Shapes` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.shapes?view=office-pia"/>
-  public Shapes Shapes { get; }
+  public IShapes Shapes { get; }
   /// <summary>
   /// Gets the `Area3DGroup` property.
   /// </summary>

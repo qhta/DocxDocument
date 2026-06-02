@@ -141,7 +141,7 @@ public partial class MsoAxis
   /// Gets the `TickLabels` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.ticklabels?view=office-pia"/>
-  public IMsoTickLabels TickLabels { get; }
+  public MsoTickLabels TickLabels { get; }
   /// <summary>
   /// Gets or sets the `TickLabelSpacing` property.
   /// </summary>
@@ -221,12 +221,12 @@ public partial class MsoAxis
   /// Gets the `DisplayUnitLabel` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.displayunitlabel?view=office-pia"/>
-  public IMsoDisplayUnitLabel DisplayUnitLabel { get; }
+  public MsoDisplayUnitLabel DisplayUnitLabel { get; }
   /// <summary>
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.border?view=office-pia"/>
-  public IMsoBorder Border { get; }
+  public MsoBorder Border { get; }
   /// <summary>
   /// Gets the `Name` property.
   /// </summary>

@@ -16,12 +16,12 @@ public partial class MsoSeries
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.border?view=office-pia"/>
-  public IMsoBorder Border { get; }
+  public MsoBorder Border { get; }
   /// <summary>
   /// Gets the `ErrorBars` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.errorbars?view=office-pia"/>
-  public IMsoErrorBars ErrorBars { get; }
+  public MsoErrorBars ErrorBars { get; }
   /// <summary>
   /// Gets or sets the `Explosion` property.
   /// </summary>
@@ -61,7 +61,7 @@ public partial class MsoSeries
   /// Gets the `Interior` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.interior?view=office-pia"/>
-  public IMsoInterior Interior { get; }
+  public MsoInterior Interior { get; }
   /// <summary>
   /// Gets the `Fill` property.
   /// </summary>
@@ -191,7 +191,7 @@ public partial class MsoSeries
   /// Gets the `LeaderLines` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.leaderlines?view=office-pia"/>
-  public IMsoLeaderLines LeaderLines { get; }
+  public MsoLeaderLines LeaderLines { get; }
   /// <summary>
   /// Gets the `Format` property.
   /// </summary>
@@ -230,13 +230,13 @@ public partial class MsoSeries
   /// Applies data labels to the series.
   /// </summary>
   /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="IMsoLegendKey">The `IMsoLegendKey` parameter.</param>
+  /// <param name="MsoLegendKey">The `IMsoLegendKey` parameter.</param>
   /// <param name="AutoText">The `AutoText` parameter.</param>
   /// <param name="HasLeaderLines">The `HasLeaderLines` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries._applydatalabels?view=office-pia"/>
   public object _ApplyDataLabels
-  (DataLabelsType Type, object IMsoLegendKey, object AutoText,
+  (DataLabelsType Type, object MsoLegendKey, object AutoText,
     object HasLeaderLines) { throw new NotImplementedException(); }
   /// <summary>
   /// Clears formatting from the series.
@@ -311,7 +311,7 @@ public partial class MsoSeries
   /// Applies data labels to the series with detailed display options.
   /// </summary>
   /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="IMsoLegendKey">The `IMsoLegendKey` parameter.</param>
+  /// <param name="MsoLegendKey">The `IMsoLegendKey` parameter.</param>
   /// <param name="AutoText">The `AutoText` parameter.</param>
   /// <param name="HasLeaderLines">The `HasLeaderLines` parameter.</param>
   /// <param name="ShowSeriesName">The `ShowSeriesName` parameter.</param>
@@ -323,7 +323,7 @@ public partial class MsoSeries
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.applydatalabels?view=office-pia"/>
   public object ApplyDataLabels
-  (DataLabelsType Type, object IMsoLegendKey, object AutoText,
+  (DataLabelsType Type, object MsoLegendKey, object AutoText,
     object HasLeaderLines, object ShowSeriesName, object ShowCategoryName, object ShowValue, object ShowPercentage,
     object ShowBubbleSize, object Separator) { throw new NotImplementedException(); }
 

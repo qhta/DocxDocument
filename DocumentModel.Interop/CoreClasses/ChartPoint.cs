@@ -14,13 +14,13 @@ public partial class ChartPoint
   /// Invokes `_ApplyDataLabels`.
   /// </summary>
   /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="IMsoLegendKey">The `IMsoLegendKey` parameter.</param>
+  /// <param name="MsoLegendKey">The `MsoLegendKey` parameter.</param>
   /// <param name="AutoText">The `AutoText` parameter.</param>
   /// <param name="HasLeaderLines">The `HasLeaderLines` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.chartpoint._applydatalabels?view=office-pia"/>
   public object _ApplyDataLabels
-  (DataLabelsType Type, object IMsoLegendKey, object AutoText,
+  (DataLabelsType Type, object MsoLegendKey, object AutoText,
     object HasLeaderLines) { throw new NotImplementedException(); }
   /// <summary>
   /// Clears formatting from the chart point.
@@ -56,7 +56,7 @@ public partial class ChartPoint
   /// Invokes `ApplyDataLabels`.
   /// </summary>
   /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="IMsoLegendKey">The `IMsoLegendKey` parameter.</param>
+  /// <param name="MsoLegendKey">The `MsoLegendKey` parameter.</param>
   /// <param name="AutoText">The `AutoText` parameter.</param>
   /// <param name="HasLeaderLines">The `HasLeaderLines` parameter.</param>
   /// <param name="ShowSeriesName">The `ShowSeriesName` parameter.</param>
@@ -67,7 +67,7 @@ public partial class ChartPoint
   /// <param name="Separator">The `Separator` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.chartpoint.applydatalabels?view=office-pia"/>
-  public object ApplyDataLabels(DataLabelsType Type, object IMsoLegendKey, object AutoText, object HasLeaderLines, object ShowSeriesName, object ShowCategoryName, object ShowValue, object ShowPercentage,  object ShowBubbleSize, object Separator) { throw new NotImplementedException(); }
+  public object ApplyDataLabels(DataLabelsType Type, object MsoLegendKey, object AutoText, object HasLeaderLines, object ShowSeriesName, object ShowCategoryName, object ShowValue, object ShowPercentage,  object ShowBubbleSize, object Separator) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `PieSliceLocation`.
   /// </summary>

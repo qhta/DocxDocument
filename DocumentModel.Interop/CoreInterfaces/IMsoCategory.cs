@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocategory?view=office-pia"/>
-public partial interface IMsoCategory
+public interface IMsoCategory
 {
   /// <summary>
   /// Gets or sets the `Name` property.

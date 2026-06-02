@@ -16,12 +16,12 @@ public partial class MsoWalls
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsowalls.border?view=office-pia"/>
-  public IMsoBorder Border { get; }
+  public MsoBorder Border { get; }
   /// <summary>
   /// Gets the `Interior` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsowalls.interior?view=office-pia"/>
-  public IMsoInterior Interior { get; }
+  public MsoInterior Interior { get; }
   /// <summary>
   /// Gets the `Fill` property.
   /// </summary>

@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a chart title.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocharttitle?view=office-pia"/>
-public partial interface IMsoChartTitle
+public interface IMsoChartTitle
 {
   /// <summary>
   /// Gets or sets the `Caption` property.

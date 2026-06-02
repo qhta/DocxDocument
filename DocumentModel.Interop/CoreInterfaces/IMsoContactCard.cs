@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a contact card.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocontactcard?view=office-pia"/>
-public partial interface IMsoContactCard: IInteropObject
+public interface IMsoContactCard: IInteropObject
 {
   /// <summary>
   /// Gets the `Address` property.

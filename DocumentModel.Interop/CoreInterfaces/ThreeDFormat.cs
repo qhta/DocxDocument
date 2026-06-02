@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `ThreeDFormat` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat?view=office-pia"/>
-public partial interface IThreeDFormat: IInteropObject
+public interface IThreeDFormat: IInteropObject
 {
   /// <summary>
   /// Gets or sets the `Depth` property.

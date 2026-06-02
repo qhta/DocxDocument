@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// A collection of DocumentProperty objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperties?view=office-pia"/>
-public partial interface IDocumentProperties: IInteropCollection<DocumentProperty>
+public interface IDocumentProperties: IInteropCollection<IDocumentProperty>
 {
 
 
@@ -22,7 +22,7 @@ public partial interface IDocumentProperties: IInteropCollection<DocumentPropert
   /// <param name="LinkSource">The `LinkSource` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperties.add?view=office-pia"/>
-  public DocumentProperty Add(string Name, bool LinkToContent, object Type, object Value, object LinkSource);
+  public IDocumentProperty Add(string Name, bool LinkToContent, object Type, object Value, object LinkSource);
   /// <summary>
   /// Returns an enumerator for the document properties collection.
   /// </summary>

@@ -16,7 +16,7 @@ public partial class MsoDisplayUnitLabel: MsoChartTitle
   /// Gets the `Characters` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.characters?view=office-pia"/>
-  public new IMsoCharacters Characters { get; }
+  public new MsoCharacters Characters { get; }
   /// <summary>
   /// Gets the `Font` property.
   /// </summary>
@@ -71,7 +71,7 @@ public partial class MsoDisplayUnitLabel: MsoChartTitle
   /// Gets the `Interior` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.interior?view=office-pia"/>
-  public new IMsoInterior Interior { get; }
+  public new MsoInterior Interior { get; }
   /// <summary>
   /// Gets the `Fill` property.
   /// </summary>
@@ -81,7 +81,7 @@ public partial class MsoDisplayUnitLabel: MsoChartTitle
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel.border?view=office-pia"/>
-  public new IMsoBorder Border { get; }
+  public new MsoBorder Border { get; }
   /// <summary>
   /// Gets the `Name` property.
   /// </summary>

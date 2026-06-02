@@ -16,7 +16,7 @@ public partial class MsoLegend
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegend.border?view=office-pia"/>
-  public IMsoBorder Border { get; }
+  public MsoBorder Border { get; }
   /// <summary>
   /// Gets the `Font` property.
   /// </summary>
@@ -41,7 +41,7 @@ public partial class MsoLegend
   /// Gets the `Interior` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegend.interior?view=office-pia"/>
-  public IMsoInterior Interior { get; }
+  public MsoInterior Interior { get; }
   /// <summary>
   /// Gets the `Fill` property.
   /// </summary>

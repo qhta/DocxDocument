@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents error bars in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoerrorbars?view=office-pia"/>
-public partial interface IMsoErrorBars
+public interface IMsoErrorBars
 {
   /// <summary>
   /// Gets or sets the `Name` property.

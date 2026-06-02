@@ -21,7 +21,7 @@ public partial class LegendEntry
   /// Gets the `LegendKey` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.legendkey?view=office-pia"/>
-  public IMsoLegendKey LegendKey { get; }
+  public MsoLegendKey LegendKey { get; }
   /// <summary>
   /// Gets or sets the `AutoScaleFont` property.
   /// </summary>

@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a chart group.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup?view=office-pia"/>
-public partial interface IMsoChartGroup
+public interface IMsoChartGroup
 {
   /// <summary>
   /// Gets or sets the `AxisGroup` property.

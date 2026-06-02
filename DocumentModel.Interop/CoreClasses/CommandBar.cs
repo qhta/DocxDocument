@@ -5,93 +5,14 @@ namespace DocumentModel.Interop.Core;
 /// Represents a command bar in the container application.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar?view=office-pia"/>
-public partial class CommandBar: _MsoOleAccDispObj
+public partial class CommandBar : MsoOleAccDispObj
 {
-  /// <summary>
-  /// Gets or sets the `accParent` property.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accparent?view=office-pia"/>
-  public new object Parent { get; }
-  /// <summary>
-  /// Gets the `accChildCount` property.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accchildcount?view=office-pia"/>
-  public new int ChildCount { get; }
-  /// <summary>
-  /// Gets the `accChild` property.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accchild?view=office-pia"/>
-  public new object Child { get; }
-  /// <summary>
-  /// Gets or sets the `accName` property.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accname?view=office-pia"/>
-  public new string Name { get; set; }
-  /// <summary>
-  /// Gets or sets the `accValue` property.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accvalue?view=office-pia"/>
-  public new string Value { get; set; }
-  /// <summary>
-  /// Gets the `accDescription` property.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accdescription?view=office-pia"/>
-  public new string Description { get; }
-  /// <summary>
-  /// Gets the `accRole` property.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accrole?view=office-pia"/>
-  public new object Role { get; }
-  /// <summary>
-  /// Gets the `accState` property.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accstate?view=office-pia"/>
-  public new object State { get; }
-  /// <summary>
-  /// Gets the `accHelp` property.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.acchelp?view=office-pia"/>
-  public new string Help { get; }
-  /// <summary>
-  /// Gets the `accHelpTopic` property.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.acchelptopic?view=office-pia"/>
-  public new int HelpTopic { get; }
-  /// <summary>
-  /// Gets the `accKeyboardShortcut` property.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.acckeyboardshortcut?view=office-pia"/>
-  public new string KeyboardShortcut { get; }
-  /// <summary>
-  /// Gets the `accFocus` property.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accfocus?view=office-pia"/>
-  public new object Focus { get; }
-  /// <summary>
-  /// Gets the `accSelection` property.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accselection?view=office-pia"/>
-  public new object Selection { get; }
-  /// <summary>
-  /// Gets the `accDefaultAction` property.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accdefaultaction?view=office-pia"/>
-  public new string DefaultAction { get; }
-  /// <summary>
-  /// Gets the `BuiltIn` property.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.builtin?view=office-pia"/>
-  public bool BuiltIn { get; }
   /// <summary>
   /// Gets or sets the `Context` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.context?view=office-pia"/>
   public string Context { get; set; }
-  /// <summary>
-  /// Gets the `Controls` property.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.controls?view=office-pia"/>
-  public CommandBarControls Controls { get; }
+
   /// <summary>
   /// Gets or sets the `Enabled` property.
   /// </summary>
@@ -103,16 +24,6 @@ public partial class CommandBar: _MsoOleAccDispObj
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.height?view=office-pia"/>
   public int Height { get; set; }
   /// <summary>
-  /// Gets the `Index` property.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.index?view=office-pia"/>
-  public int Index { get; }
-  /// <summary>
-  /// Gets the `InstanceId` property.
-  /// </summary>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.instanceid?view=office-pia"/>
-  public int InstanceId { get; }
-  /// <summary>
   /// Gets or sets the `Left` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.left?view=office-pia"/>
@@ -121,7 +32,7 @@ public partial class CommandBar: _MsoOleAccDispObj
   ///// Gets or sets the `Name` property.
   ///// </summary>
   ///// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.name?view=office-pia"/>
-  //public new string Name { get; set; }
+  //public string Name { get; set; }
   /// <summary>
   /// Gets or sets the `NameLocal` property.
   /// </summary>
@@ -151,7 +62,7 @@ public partial class CommandBar: _MsoOleAccDispObj
   /// Gets the `Type` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.type?view=office-pia"/>
-  public BarType Type { get; }
+  public BarType Type => throw new NotImplementedException();
   /// <summary>
   /// Gets or sets the `Visible` property.
   /// </summary>
@@ -171,55 +82,15 @@ public partial class CommandBar: _MsoOleAccDispObj
   /// Gets the `Id` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.id?view=office-pia"/>
-  public int Id { get; }
+  public int Id => throw new NotImplementedException();
   /// <summary>
   /// Gets the `InstanceIdPtr` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.instanceidptr?view=office-pia"/>
-  public object InstanceIdPtr { get; }
+  public object InstanceIdPtr => throw new NotImplementedException();
 
 
   #region methods
-
-/// <summary>
-  /// Invokes `accSelect`.
-  /// </summary>
-  /// <param name="flagsSelect">The `flagsSelect` parameter.</param>
-  /// <param name="varChild">The `varChild` parameter.</param>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accselect?view=office-pia"/>
-  public new void accSelect(int flagsSelect, object varChild) { throw new NotImplementedException(); }
-  /// <summary>
-  /// Invokes `accLocation`.
-  /// </summary>
-  /// <param name="pxLeft">The `pxLeft` parameter.</param>
-  /// <param name="pyTop">The `pyTop` parameter.</param>
-  /// <param name="pcxWidth">The `pcxWidth` parameter.</param>
-  /// <param name="pcyHeight">The `pcyHeight` parameter.</param>
-  /// <param name="varChild">The `varChild` parameter.</param>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.acclocation?view=office-pia"/>
-  public new void accLocation(out int pxLeft, out int pyTop, out int pcxWidth, out int pcyHeight, object varChild) { throw new NotImplementedException(); }
-  /// <summary>
-  /// Invokes `accNavigate`.
-  /// </summary>
-  /// <param name="navDir">The `navDir` parameter.</param>
-  /// <param name="varStart">The `varStart` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accnavigate?view=office-pia"/>
-  public new object accNavigate(int navDir, object varStart) { throw new NotImplementedException(); }
-  /// <summary>
-  /// Invokes `accHitTest`.
-  /// </summary>
-  /// <param name="xLeft">The `xLeft` parameter.</param>
-  /// <param name="yTop">The `yTop` parameter.</param>
-  /// <returns>The result of the operation.</returns>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.acchittest?view=office-pia"/>
-  public new object accHitTest(int xLeft, int yTop) { throw new NotImplementedException(); }
-  /// <summary>
-  /// Invokes `accDoDefaultAction`.
-  /// </summary>
-  /// <param name="varChild">The `varChild` parameter.</param>
-  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.accdodefaultaction?view=office-pia"/>
-  public new void accDoDefaultAction(object varChild) { throw new NotImplementedException(); }
   /// <summary>
   /// Deletes the command bar.
   /// </summary>

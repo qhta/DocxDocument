@@ -26,7 +26,7 @@ public partial class DiagramNode: InteropObject
   /// Gets the `Diagram` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.diagram?view=office-pia"/>
-  public IMsoDiagram Diagram { get; }
+  public MsoDiagram Diagram { get; }
   /// <summary>
   /// Gets or sets the `Layout` property.
   /// </summary>

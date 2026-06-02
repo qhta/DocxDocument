@@ -112,7 +112,7 @@ public partial class Find
   /// Gets the `Results` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.results?view=office-pia"/>
-  public IFoundFiles Results { get; }
+  public FoundFiles Results { get; }
   /// <summary>
   /// Gets or sets the `FileType` property.
   /// </summary>

@@ -22,7 +22,7 @@ public partial interface ICoAuthLock : IInteropObject
   /// Gets the range in the document covered by the lock.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthlock.range?view=word-pia"/>
-  public Range Range { get; }
+  public IRange Range { get; }
 
   /// <summary>
   /// Gets a value indicating whether the lock is in a header or footer.

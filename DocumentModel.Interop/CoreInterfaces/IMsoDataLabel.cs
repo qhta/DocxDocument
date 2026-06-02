@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a data label.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel?view=office-pia"/>
-public partial interface IMsoDataLabel
+public interface IMsoDataLabel
 {
   /// <summary>
   /// Gets or sets the `Name` property.

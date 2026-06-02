@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `SharedWorkspaceLinks` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacelinks?view=office-pia"/>
-public partial interface ISharedWorkspaceLinks: IInteropCollection<SharedWorkspaceLink>
+public interface ISharedWorkspaceLinks: IInteropCollection<SharedWorkspaceLink>
 {
   /// <summary>
   /// Gets the `ItemCountExceeded` property.

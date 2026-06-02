@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a display unit label.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodisplayunitlabel?view=office-pia"/>
-public partial interface IMsoDisplayUnitLabel: IMsoChartTitle
+public interface IMsoDisplayUnitLabel: IMsoChartTitle
 {
   /// <summary>
   /// Gets or sets the `Caption` property.

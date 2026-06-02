@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the Microsoft Office Assistant.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant?view=office-pia"/>
-public partial interface IAssistant: IInteropObject
+public interface IAssistant: IInteropObject
 {
   /// <summary>
   /// Gets or sets the `Top` property.
@@ -22,7 +22,7 @@ public partial interface IAssistant: IInteropObject
   /// Gets the `NewBalloon` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.newballoon?view=office-pia"/>
-  public Balloon NewBalloon { get; }
+  public IBalloon NewBalloon { get; }
   /// <summary>
   /// Gets the `BalloonError` property.
   /// </summary>

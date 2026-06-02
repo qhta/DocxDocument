@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// A collection of FileDialogFilter objects used by a FileDialog.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialogfilters?view=office-pia"/>
-public partial interface IFileDialogFilters: IInteropCollection<FileDialogFilter>
+public interface IFileDialogFilters: IInteropCollection<IFileDialogFilter>
 {
 
 
@@ -19,7 +19,7 @@ public partial interface IFileDialogFilters: IInteropCollection<FileDialogFilter
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialogfilters.item?view=office-pia"/>
-  public FileDialogFilter Item(int Index);
+  public IFileDialogFilter Item(int Index);
   /// <summary>
   /// Removes a filter from the collection.
   /// </summary>
@@ -34,7 +34,7 @@ public partial interface IFileDialogFilters: IInteropCollection<FileDialogFilter
   /// <param name="Position">The `Position` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialogfilters.add?view=office-pia"/>
-  public FileDialogFilter Add(string Description, string Extensions, object Position);
+  public IFileDialogFilter Add(string Description, string Extensions, object Position);
 
   #endregion methods
 }

@@ -16,7 +16,7 @@ public partial class MsoErrorBars
   /// Gets the `Border` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoerrorbars.border?view=office-pia"/>
-  public IMsoBorder Border { get; }
+  public MsoBorder Border { get; }
   /// <summary>
   /// Gets or sets the `EndStyle` property.
   /// </summary>

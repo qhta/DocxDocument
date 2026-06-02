@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a shared workspace linked to the current document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspace?view=office-pia"/>
-public partial interface ISharedWorkspace: IInteropObject
+public interface ISharedWorkspace: IInteropObject
 {
   /// <summary>
   /// Gets or sets the `Name` property.

@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents chart walls.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsowalls?view=office-pia"/>
-public partial interface IMsoWalls
+public interface IMsoWalls
 {
   /// <summary>
   /// Gets or sets the `Name` property.

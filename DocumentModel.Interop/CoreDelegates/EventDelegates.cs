@@ -1,8 +1,8 @@
 ﻿namespace DocumentModel.Interop.Core;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-public delegate void IMsoEnvelopeVBEvents_EnvelopeShowEventHandler();
-public delegate void IMsoEnvelopeVBEvents_EnvelopeHideEventHandler();
+public delegate void MsoEnvelopeVBEvents_EnvelopeShowEventHandler();
+public delegate void MsoEnvelopeVBEvents_EnvelopeHideEventHandler();
 public delegate void _CommandBarComboBoxEvents_ChangeEventHandler(CommandBarComboBox Ctrl);
 public delegate void _CommandBarsEvents_OnUpdateEventHandler();
 public delegate void _CommandBarButtonEvents_ClickEventHandler(CommandBarButton Ctrl, ref bool CancelDefault);

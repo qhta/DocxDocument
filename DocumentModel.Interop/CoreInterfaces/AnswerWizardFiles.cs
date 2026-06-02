@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Contains all Answer Wizard files (.aw) available to the active Office application.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.answerwizardfiles?view=office-pia"/>
-public partial interface IAnswerWizardFiles: IInteropCollection<string>
+public interface IAnswerWizardFiles: IInteropCollection<string>
 {
 }
 

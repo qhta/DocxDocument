@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a field in a data source.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsocolumn?view=office-pia"/>
-public partial interface IODSOColumn: IInteropObject
+public interface IODSOColumn: IInteropObject
 {
   /// <summary>
   /// Gets the `Index` property.

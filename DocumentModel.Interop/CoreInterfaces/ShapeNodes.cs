@@ -7,7 +7,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapenodes?view=office-pia"/>
-public partial interface IShapeNodes: IInteropCollection<ShapeNode>
+public interface IShapeNodes: IInteropCollection<ShapeNode>
 {
 
 

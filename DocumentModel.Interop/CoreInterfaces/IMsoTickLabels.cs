@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents tick labels on a chart axis.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoticklabels?view=office-pia"/>
-public partial interface IMsoTickLabels
+public interface IMsoTickLabels
 {
   /// <summary>
   /// Gets or sets the `Font` property.

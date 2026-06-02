@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a chart axis.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis?view=office-pia"/>
-public partial interface IMsoAxis
+public interface IMsoAxis
 {
   /// <summary>
   /// Gets or sets the `AxisBetweenCategories` property.
@@ -21,7 +21,7 @@ public partial interface IMsoAxis
   /// Gets the `AxisTitle` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.axistitle?view=office-pia"/>
-  public MsoAxisTitle AxisTitle { get; }
+  public IMsoAxisTitle AxisTitle { get; }
   /// <summary>
   /// Gets or sets the `CategoryNames` property.
   /// </summary>
@@ -56,7 +56,7 @@ public partial interface IMsoAxis
   /// Gets the `MajorGridlines` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.majorgridlines?view=office-pia"/>
-  public GridLines MajorGridlines { get; }
+  public IMsoGridLines MajorGridlines { get; }
   /// <summary>
   /// Gets or sets the `MajorTickMark` property.
   /// </summary>
@@ -106,7 +106,7 @@ public partial interface IMsoAxis
   /// Gets the `MinorGridlines` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.minorgridlines?view=office-pia"/>
-  public GridLines MinorGridlines { get; }
+  public IMsoGridLines MinorGridlines { get; }
   /// <summary>
   /// Gets or sets the `MinorTickMark` property.
   /// </summary>
@@ -236,7 +236,7 @@ public partial interface IMsoAxis
   /// Gets the `Format` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.format?view=office-pia"/>
-  public MsoChartFormat Format { get; }
+  public IMsoChartFormat Format { get; }
 
 
   #region methods

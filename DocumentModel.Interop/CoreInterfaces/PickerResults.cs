@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a collection of `PickerResult` objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerresults?view=office-pia"/>
-public partial interface IPickerResults: IInteropCollection<PickerResult>
+public interface IPickerResults: IInteropCollection<PickerResult>
 {
 
 

@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the plot area of a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoplotarea?view=office-pia"/>
-public partial interface IMsoPlotArea
+public interface IMsoPlotArea
 {
   /// <summary>
   /// Gets or sets the `Name` property.

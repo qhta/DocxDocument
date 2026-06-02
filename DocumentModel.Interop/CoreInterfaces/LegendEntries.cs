@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a collection of legend entries.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentries?view=office-pia"/>
-public partial interface ILegendEntries: IEnumerable
+public interface ILegendEntries: IEnumerable
 {
   /// <summary>
   /// Gets the `Count` property.

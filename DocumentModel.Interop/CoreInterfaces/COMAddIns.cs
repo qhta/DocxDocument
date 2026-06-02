@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Reflection;
-
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
 /// A collection of COM add-ins registered in the Windows registry.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.comaddins?view=office-pia"/>
-public partial interface ICOMAddIns: IInteropCollection<COMAddIn>
+public interface ICOMAddIns: IInteropCollection<ICOMAddIn>
 {
 
 
@@ -19,7 +16,7 @@ public partial interface ICOMAddIns: IInteropCollection<COMAddIn>
   /// <param name="Index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.comaddins.item?view=office-pia"/>
-  public COMAddIn Item(ref object Index);
+  public ICOMAddIn Item(ref object Index);
   /// <summary>
   /// Updates the COM add-ins collection.
   /// </summary>

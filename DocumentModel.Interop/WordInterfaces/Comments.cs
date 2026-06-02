@@ -25,7 +25,7 @@ public partial interface IComments : IInteropObject, IInteropCollection<Comment>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comments.add?view=word-pia"/>
-  public Comment Add(Range Range, object Text);
+  public Comment Add(IRange Range, object Text);
 
   #endregion methods
 }

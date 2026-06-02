@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a collection of data labels.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels?view=office-pia"/>
-public partial interface IMsoDataLabels: IEnumerable
+public interface IMsoDataLabels: IEnumerable
 {
   /// <summary>
   /// Gets or sets the `Name` property.

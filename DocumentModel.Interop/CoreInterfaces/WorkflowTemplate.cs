@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `WorkflowTemplate` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.workflowtemplate?view=office-pia"/>
-public partial interface IWorkflowTemplate: IInteropObject
+public interface IWorkflowTemplate: IInteropObject
 {
   /// <summary>
   /// Gets the `Id` property.

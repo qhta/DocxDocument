@@ -646,7 +646,8 @@ public partial class _Application : InteropObject
   /// Returns an Microsoft.Office.Core.IAssistance object that represents the Microsoft Office Help Viewer. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.assistance?view=word-pia"/>
-  public Core.IAssistance Assistance { get; set; }
+  public Core.
+    Assistance Assistance { get; set; }
 
   /// <summary>
   /// Returns or sets a Boolean that represents whether Microsoft Office Word opens e-mail attachments in Reading mode. Read/write.

@@ -6,7 +6,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents the `WorkflowTasks` interface.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.workflowtasks?view=office-pia"/>
-public partial interface IWorkflowTasks: IInteropCollection<WorkflowTask>
+public interface IWorkflowTasks: IInteropCollection<WorkflowTask>
 {
 }
 

@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents a chart legend.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegend?view=office-pia"/>
-public partial interface IMsoLegend
+public interface IMsoLegend
 {
   /// <summary>
   /// Gets or sets the `Name` property.

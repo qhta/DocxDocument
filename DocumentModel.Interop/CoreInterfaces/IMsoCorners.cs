@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Represents chart corners.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsocorners?view=office-pia"/>
-public partial interface IMsoCorners
+public interface IMsoCorners
 {
   /// <summary>
   /// Gets the `Name` property.
