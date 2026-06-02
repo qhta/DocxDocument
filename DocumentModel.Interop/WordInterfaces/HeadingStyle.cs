@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a heading style used when building a table of contents or table of figures.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headingstyle?view=word-pia"/>
-public partial interface HeadingStyle : InteropObject
+public partial interface IHeadingStyle : IInteropObject
 {
   /// <summary>
   /// Returns or sets the style associated with the heading style entry.

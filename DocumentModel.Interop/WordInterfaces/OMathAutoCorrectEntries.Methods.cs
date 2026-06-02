@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathautocorrectentries?view=word-pia"/>
-public partial interface OMathAutoCorrectEntries
+public partial interface IOMathAutoCorrectEntries
 {
   /// <summary>
   /// Adds a math AutoCorrect entry to the collection.

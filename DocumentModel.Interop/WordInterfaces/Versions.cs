@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Word;
 /// in the Versions dialog box (File menu).
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.versions?view=word-pia"/>
-public partial interface Versions : InteropObject, InteropCollection<Version>
+public partial interface IVersions : IInteropObject, IInteropCollection<Version>
 {
   /// <summary>
   /// Returns or sets the state of the option for automatically saving document versions.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the mathematical radical object, consisting of a radical, a base, and an optional degree.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrad?view=word-pia"/>
-public interface OMathRad : InteropObject
+public interface IOMathRad : IInteropObject
 {
   /// <summary>
   /// Returns the degree expression of the radical.

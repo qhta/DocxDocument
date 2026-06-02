@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Contains the font attributes (font name, font size, color, and so on) for an object chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartfont?view=word-pia"/>
-public interface ChartFont : InteropObject
+public interface IChartFont : IInteropObject
 {
   /// <summary>
   /// Gets or sets the background fill type for the chart font.

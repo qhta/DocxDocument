@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Paragraph objects in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.paragraphs?view=word-pia"/>
-public partial interface Paragraphs : InteropObject, InteropCollection<Paragraph>
+public partial interface IParagraphs : IInteropObject, IInteropCollection<Paragraph>
 {
   /// <summary>
   /// Returns a Paragraph object that represents the first item in the Paragraphs collection.

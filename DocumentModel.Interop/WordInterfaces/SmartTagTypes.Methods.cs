@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagtypes?view=word-pia"/>
-public partial interface SmartTagTypes
+public partial interface ISmartTagTypes
 {
   /// <summary>
   /// Reloads all smart tag actions and recognizers installed on a user's computer.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the chart area of a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea?view=word-pia"/>
-public partial interface ChartArea : InteropObject
+public partial interface IChartArea : IInteropObject
 {
   /// <summary>
   /// Gets the name of the chart area object.

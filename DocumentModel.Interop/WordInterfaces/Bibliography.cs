@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the list of sources available attached to the document (in the current list) or the list of sources available in the application (in the master list).
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bibliography?view=word-pia"/>
-public partial interface Bibliography : InteropObject
+public partial interface IBibliography : IInteropObject
 {
   /// <summary>
   /// Gets the collection of sources in the bibliography.

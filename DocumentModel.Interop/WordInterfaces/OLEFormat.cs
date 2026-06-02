@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the OLE characteristics (other than linking) for an OLE object, ActiveX control, or field.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.oleformat?view=word-pia"/>
-public partial interface OLEFormat : InteropObject
+public partial interface IOLEFormat : IInteropObject
 {
   /// <summary>
   /// Returns or sets the class type.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Provides access to the Office Art formatting for chart elements.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartformat?view=word-pia"/>
-public interface ChartFormat : InteropObject
+public interface IChartFormat : IInteropObject
 {
   /// <summary>
   /// Gets the fill formatting for the chart element.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single header or footer.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headerfooter?view=word-pia"/>
-public interface HeaderFooter : InteropObject
+public interface IHeaderFooter : IInteropObject
 {
   /// <summary>
   /// Returns a range object that represents the portion of a document contained in the header or footer.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single mail merge field in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefield?view=word-pia"/>
-public partial interface MailMergeField : InteropObject
+public partial interface IMailMergeField : IInteropObject
 {
   /// <summary>
   /// Returns the type of mail merge field.

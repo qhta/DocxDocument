@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a conflicting edit in a co-authored document. The type of a Conflict object is specified by the RevisionType enumeration.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.conflict?view=word-pia"/>
-public partial interface Conflict : InteropObject
+public partial interface IConflict : IInteropObject
 {
   /// <summary>
   /// Gets the range in the document where the conflict occurs.

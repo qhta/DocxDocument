@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the up bars in a chart group.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.upbars?view=word-pia"/>
-public partial interface UpBars : InteropObject
+public partial interface IUpBars : IInteropObject
 {
   /// <summary>
   /// Returns a String value that represents the name of the object.

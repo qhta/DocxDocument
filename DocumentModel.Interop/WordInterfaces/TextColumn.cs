@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single text column.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textcolumn?view=word-pia"/>
-public interface TextColumn : InteropObject
+public interface ITextColumn : IInteropObject
 {
   /// <summary>
   /// Returns or sets the width of the specified object, in points.

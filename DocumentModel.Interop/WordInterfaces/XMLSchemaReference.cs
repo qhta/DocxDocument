@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents an individual schema that is attached to a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlschemareference?view=word-pia"/>
-public partial interface XMLSchemaReference : InteropObject
+public partial interface IXMLSchemaReference : IInteropObject
 {
   /// <summary>
   /// Returns a String that represents the Uniform Resource Identifier (URI) of the schema namespace for the

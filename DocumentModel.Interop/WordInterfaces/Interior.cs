@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the interior of an object.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior?view=word-pia"/>
-public interface Interior : InteropObject
+public interface IInterior : IInteropObject
 {
   /// <summary>
   /// Returns or sets the primary color of the object interior.

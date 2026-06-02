@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single table cell.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cell?view=word-pia"/>
-public partial interface Cell : InteropObject
+public partial interface ICell : IInteropObject
 {
   /// <summary>
   /// Gets the range that represents the cell.

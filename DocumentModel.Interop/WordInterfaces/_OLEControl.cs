@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._olecontrol?view=word-pia"/>
-public partial interface _OLEControl
+public partial interface _IOLEControl
 {
   /// <summary>
   /// Gets or sets the distance, in points, between the left edge of the object and the left edge of the anchor.

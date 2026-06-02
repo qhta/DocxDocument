@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the current selection in a window or pane.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.selection?view=word-pia"/>
-public partial interface Selection : InteropObject
+public partial interface ISelection : IInteropObject
 {
   /// <summary>
   /// Returns or sets the text in the specified selection.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a drop-down form field that contains a list of items in a form.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dropdown?view=word-pia"/>
-public interface DropDown : InteropObject
+public interface IDropDown : IInteropObject
 {
   /// <summary>
   /// Gets a value indicating whether the `DropDown` object is valid.

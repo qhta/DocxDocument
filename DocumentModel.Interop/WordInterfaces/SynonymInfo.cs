@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Word;
 /// range or a given string.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.synonyminfo?view=word-pia"/>
-public partial interface SynonymInfo : InteropObject
+public partial interface ISynonymInfo : IInteropObject
 {
   /// <summary>
   /// Returns the word or phrase that was looked up by the thesaurus.

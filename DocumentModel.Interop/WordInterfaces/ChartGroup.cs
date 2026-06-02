@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents one or more series plotted in a chart with the same format.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup?view=word-pia"/>
-public partial interface ChartGroup : InteropObject
+public partial interface IChartGroup : IInteropObject
 {
   /// <summary>
   /// Gets or sets the axis group for the chart group.

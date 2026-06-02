@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrpre?view=word-pia"/>
-public partial interface OMathScrPre
+public partial interface IOMathScrPre
 {
   /// <summary>
   /// Creates a new script function with both subscript and superscript components based on the current mathematical

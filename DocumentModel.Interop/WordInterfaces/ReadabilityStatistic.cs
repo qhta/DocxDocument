@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents one of the readability statistics for a document or range.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.readabilitystatistic?view=word-pia"/>
-public interface ReadabilityStatistic : InteropObject
+public interface IReadabilityStatistic : IInteropObject
 {
   /// <summary>
   /// Returns or sets the name of the specified object.

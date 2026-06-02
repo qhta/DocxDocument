@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single mail merge field in a data source.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatafield?view=word-pia"/>
-public interface MailMergeDataField : InteropObject
+public interface IMailMergeDataField : IInteropObject
 {
   /// <summary>
   /// Returns the value of the mail merge data field in the current record.

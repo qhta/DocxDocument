@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a unit label on an axis in the specified chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.displayunitlabel?view=word-pia"/>
-public partial interface DisplayUnitLabel : InteropObject
+public partial interface IDisplayUnitLabel : IInteropObject
 {
   /// <summary>
   /// Gets or sets the caption text for the display-unit label.

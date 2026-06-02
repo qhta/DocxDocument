@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents series lines in a chart group.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.serieslines?view=word-pia"/>
-public partial interface SeriesLines : InteropObject
+public partial interface ISeriesLines : IInteropObject
 {
   /// <summary>
   /// Returns a String value that represents the name of the object.

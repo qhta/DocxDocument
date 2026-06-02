@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents an entire frames page or a single frame on a frames page.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset?view=word-pia"/>
-public partial interface Frameset : InteropObject, InteropCollection<Frameset>
+public partial interface IFrameset : IInteropObject, IInteropCollection<Frameset>
 {
   /// <summary>
   /// Returns the parent frameset.
@@ -58,7 +58,7 @@ public partial interface Frameset : InteropObject, InteropCollection<Frameset>
   /// Returns or sets the color of the border around the specified frameset.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frameset.framesetbordercolor?view=word-pia"/>
-  public Color FramesetBorderColor { get; set; }
+  public PresetColors FramesetBorderColor { get; set; }
 
   /// <summary>
   /// Returns or sets how scroll bars are displayed for the specified frame.

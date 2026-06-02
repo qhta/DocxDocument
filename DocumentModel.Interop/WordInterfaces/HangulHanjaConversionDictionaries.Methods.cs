@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hangulhanjaconversiondictionaries?view=word-pia"/>
-public partial interface HangulHanjaConversionDictionaries
+public partial interface IHangulHanjaConversionDictionaries
 {
   /// <summary>
   /// Adds a Hangul/Hanja conversion dictionary to the collection.

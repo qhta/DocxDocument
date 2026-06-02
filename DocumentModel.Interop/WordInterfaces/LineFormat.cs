@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents line and arrowhead formatting. For a line, the LineFormat object contains formatting information for the line itself; for a shape with a border, this object contains formatting information for the shape's border.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.lineformat?view=word-pia"/>
-public interface LineFormat : InteropObject
+public interface ILineFormat : IInteropObject
 {
   /// <summary>
   /// Returns a color format object that represents the background color for the line.

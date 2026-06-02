@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single point in a series in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.point?view=word-pia"/>
-public partial interface Point : InteropObject
+public partial interface IPoint : IInteropObject
 {
   /// <summary>
   /// Returns a Border object that represents the border of the object.

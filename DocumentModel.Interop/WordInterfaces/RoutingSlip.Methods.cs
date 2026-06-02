@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip?view=word-pia"/>
-public partial interface RoutingSlip
+public partial interface IRoutingSlip
 {
   /// <summary>
   /// Returns the recipients of the routing slip at the specified index.

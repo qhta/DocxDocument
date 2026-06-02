@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the color of a one-color object or the foreground or background color of an object with a gradient or patterned fill.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.colorformat?view=word-pia"/>
-public partial interface ColorFormat : InteropObject
+public partial interface IColorFormat : IInteropObject
 {
   /// <summary>
   /// Gets or sets the red-green-blue (RGB) value of the color.

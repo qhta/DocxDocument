@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.recentfiles?view=word-pia"/>
-public partial interface RecentFiles
+public partial interface IRecentFiles
 {
  /// <summary>
  /// Adds a document to the list of recent files.

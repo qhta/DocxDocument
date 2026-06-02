@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the soft edge formatting for a shape or range of shapes.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.softedgeformat?view=word-pia"/>
-public interface SoftEdgeFormat : InteropObject
+public interface ISoftEdgeFormat : IInteropObject
 {
   /// <summary>
   /// Returns or sets an BevelType constant that represents the bevel type for the edges of images that use soft

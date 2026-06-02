@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Word;
 /// document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesofauthorities?view=word-pia"/>
-public partial interface TablesOfAuthorities : InteropObject, InteropCollection<TableOfAuthorities>
+public partial interface ITablesOfAuthorities : IInteropObject, IInteropCollection<TableOfAuthorities>
 {
   /// <summary>
   /// Returns or sets the formatting for the tables of authorities in the specified document.

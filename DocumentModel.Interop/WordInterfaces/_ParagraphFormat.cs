@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// This is a primary interface in a COM coclass that is required by managed code for interoperability with the corresponding COM object. Use this primary interface only when the method you want to use shares the same name as an event of the COM object; in this case, cast to this interface to call the method, and cast to the latest events interface to connect to the event. Otherwise, use the .NET interface that is derived from the COM coclass to access methods, properties, and events of the COM object. For more information about the COM object, see ParagraphFormat.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat?view=word-pia"/>
-public partial interface _ParagraphFormat : InteropObject
+public partial interface _IParagraphFormat : IInteropObject
 {
   /// <summary>
   /// Gets a duplicate of the paragraph formatting.

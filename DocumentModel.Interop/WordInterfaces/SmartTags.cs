@@ -5,6 +5,6 @@ namespace DocumentModel.Interop.Word;
 /// recognized type information.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttags?view=word-pia"/>
-public partial interface SmartTags : InteropObject, InteropCollection<SmartTag>
+public partial interface ISmartTags : IInteropObject, IInteropCollection<SmartTag>
 {
 }

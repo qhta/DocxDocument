@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of PageNumber objects that represent the page numbers in a single header or footer.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumbers?view=word-pia"/>
-public partial interface PageNumbers : InteropObject, InteropCollection<PageNumber>
+public partial interface IPageNumbers : IInteropObject, IInteropCollection<PageNumber>
 {
   /// <summary>
   /// Returns or sets the number style for the PageNumbers object.

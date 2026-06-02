@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a change marked with a revision mark.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revision?view=word-pia"/>
-public partial interface Revision : InteropObject
+public partial interface IRevision : IInteropObject
 {
   /// <summary>
   /// Returns the name of the user who made the specified tracked change.

@@ -4,6 +4,6 @@ namespace DocumentModel.Interop.Word;
 /// Represents a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.document?view=word-pia"/>
-public interface Document : _Document, DocumentEvents2_Event
+public interface IDocument : _IDocument, IDocumentEvents2_Event
 {
 }

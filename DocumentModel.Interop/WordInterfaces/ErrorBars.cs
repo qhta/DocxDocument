@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the error bars on a chart series.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.errorbars?view=word-pia"/>
-public partial interface ErrorBars : InteropObject
+public partial interface IErrorBars : IInteropObject
 {
   /// <summary>
   /// Gets the name of the `ErrorBars` object.

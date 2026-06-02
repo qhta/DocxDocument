@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents an equation with a base that contains a subscript.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsub?view=word-pia"/>
-public interface OMathScrSub : InteropObject
+public interface IOMathScrSub : IInteropObject
 {
   /// <summary>
   /// Returns the base expression.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Section objects in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.sections?view=word-pia"/>
-public partial interface Sections : InteropObject, InteropCollection<Section>
+public partial interface ISections : IInteropObject, IInteropCollection<Section>
 {
   /// <summary>
   /// Returns a Section object that represents the first item in the Sections collection.

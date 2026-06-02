@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Border objects that represent the borders of an object.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders?view=word-pia"/>
-public partial interface Borders : InteropObject, InteropCollection<Border>
+public partial interface IBorders : IInteropObject, IInteropCollection<Border>
 {
   /// <summary>
   /// Gets or sets whether borders are enabled.
@@ -136,11 +136,11 @@ public partial interface Borders : InteropObject, InteropCollection<Border>
   /// Gets or sets the color of inside borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.insidecolor?view=word-pia"/>
-  public Color InsideColor { get; set; }
+  public PresetColors InsideColor { get; set; }
 
   /// <summary>
   /// Gets or sets the color of outside borders.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.outsidecolor?view=word-pia"/>
-  public Color OutsideColor { get; set; }
+  public PresetColors OutsideColor { get; set; }
 }

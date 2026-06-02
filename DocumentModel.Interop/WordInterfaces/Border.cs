@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a border of an object.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.border?view=word-pia"/>
-public interface Border : InteropObject
+public interface IBorder : IInteropObject
 {
   /// <summary>
   /// Gets or sets a value indicating whether the border is visible.
@@ -45,6 +45,6 @@ public interface Border : InteropObject
   /// Gets or sets the border color.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.border.color?view=word-pia"/>
-  public Color Color { get; set; }
+  public PresetColors Color { get; set; }
 
 }

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Endnote objects that represents all the endnotes in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.endnotes?view=word-pia"/>
-public partial interface Endnotes : InteropObject, InteropCollection<Endnote>
+public partial interface IEndnotes : IInteropObject, IInteropCollection<Endnote>
 {
   /// <summary>
   /// Gets or sets the location of endnotes in the document.

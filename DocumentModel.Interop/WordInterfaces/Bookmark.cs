@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single bookmark.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark?view=word-pia"/>
-public partial interface Bookmark : InteropObject
+public partial interface IBookmark : IInteropObject
 {
   /// <summary>
   /// Gets the name of the bookmark.

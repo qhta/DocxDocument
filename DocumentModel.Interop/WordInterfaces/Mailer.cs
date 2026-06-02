@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailer?view=word-pia"/>
-public interface Mailer : InteropObject
+public interface IMailer : IInteropObject
 {
   /// <summary>
   /// Returns or sets the BCC recipients for the mail message.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocaptions?view=word-pia"/>
-public partial interface AutoCaptions
+public partial interface IAutoCaptions
 {
   /// <summary>
   /// Prevents Microsoft Word from automatically adding captions to any type of item.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single style that can be applied to a table.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablestyle?view=word-pia"/>
-public partial interface TableStyle : InteropObject
+public partial interface ITableStyle : IInteropObject
 {
   /// <summary>
   /// Allows Microsoft Word to break the specified table across pages.

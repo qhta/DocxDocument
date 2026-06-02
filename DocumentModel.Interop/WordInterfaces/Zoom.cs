@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Contains magnification options (for example, the zoom percentage) for a window or pane.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.zoom?view=word-pia"/>
-public interface Zoom : InteropObject
+public interface IZoom : IInteropObject
 {
   /// <summary>
   /// Returns or sets the magnification for a window as a percentage.

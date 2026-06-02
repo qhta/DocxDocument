@@ -5,6 +5,6 @@ namespace DocumentModel.Interop.Word;
 /// and footers in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shapes?view=word-pia"/>
-public partial interface Shapes : InteropObject, InteropCollection<Shape>
+public partial interface IShapes : IInteropObject, IInteropCollection<Shape>
 {
 }

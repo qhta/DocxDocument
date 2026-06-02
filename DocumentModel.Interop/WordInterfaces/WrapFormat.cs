@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents all the properties for wrapping text around a shape or shape range.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wrapformat?view=word-pia"/>
-public interface WrapFormat : InteropObject
+public interface IWrapFormat : IInteropObject
 {
   /// <summary>
   /// Returns the wrap type for the specified shape.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsubsup?view=word-pia"/>
-public partial interface OMathScrSubSup
+public partial interface IOMathScrSubSup
 {
   /// <summary>
   /// Removes the subscript-superscript formatting from the equation function.

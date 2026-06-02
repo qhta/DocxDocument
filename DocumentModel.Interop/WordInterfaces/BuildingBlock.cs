@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a building block in a template. A building block is pre-built content, similar to autotext, that may contain text, images, and formatting.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.buildingblock?view=word-pia"/>
-public partial interface BuildingBlock : InteropObject
+public partial interface IBuildingBlock : IInteropObject
 {
   /// <summary>
   /// Gets the index number of the building block in the collection.

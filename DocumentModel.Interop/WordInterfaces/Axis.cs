@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single axis in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axis?view=word-pia"/>
-public partial interface Axis : InteropObject
+public partial interface IAxis : IInteropObject
 {
   /// <summary>
   /// Gets or sets a value indicating whether the value axis crosses between categories.

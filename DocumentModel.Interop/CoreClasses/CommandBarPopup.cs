@@ -11,7 +11,7 @@ public partial class CommandBarPopup: CommandBarControl
   /// Gets or sets the `accParent` property.
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarpopup.accparent?view=office-pia"/>
-  public new object accParent { get; }
+  public new object Parent { get; }
   /// <summary>
   /// Gets the `accChildCount` property.
   /// </summary>

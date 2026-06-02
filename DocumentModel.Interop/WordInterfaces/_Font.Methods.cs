@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._font?view=word-pia"/>
-public partial interface _Font
+public partial interface _IFont
 {
   /// <summary>
   /// Increases the font size to the next available size. If the selection or range contains more than one font

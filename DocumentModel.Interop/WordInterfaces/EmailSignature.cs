@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Contains information about the e-mail signatures used by Microsoft Word when you create and edit e-mail messages and replies.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailsignature?view=word-pia"/>
-public interface EmailSignature : InteropObject
+public interface IEmailSignature : IInteropObject
 {
   /// <summary>
   /// Gets or sets the signature used for new email messages.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents access to the linked or embedded data associated with a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartdata?view=word-pia"/>
-public partial interface ChartData
+public partial interface IChartData
 {
   /// <summary>
   /// Gets the workbook that contains the chart data.

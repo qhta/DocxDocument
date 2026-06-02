@@ -5,6 +5,6 @@ namespace DocumentModel.Interop.Word;
 /// on the INitial CAps tab in the AutoCorrect Exceptions dialog box.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.twoinitialcapsexceptions?view=word-pia"/>
-public partial interface TwoInitialCapsExceptions : InteropObject, InteropCollection<TwoInitialCapsException>
+public partial interface ITwoInitialCapsExceptions : IInteropObject, IInteropCollection<TwoInitialCapsException>
 {
 }

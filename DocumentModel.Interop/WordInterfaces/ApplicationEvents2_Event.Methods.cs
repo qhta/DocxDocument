@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.applicationevents2_event?view=word-pia"/>
-public partial interface ApplicationEvents2_Event
+public partial interface IApplicationEvents2_Event
 {
   /// <summary>
   /// Subscribes a handler to the Startup event.

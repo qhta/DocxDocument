@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single user who has been given specific permissions to edit portions of a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.editor?view=word-pia"/>
-public partial interface Editor : InteropObject
+public partial interface IEditor : IInteropObject
 {
   /// <summary>
   /// Deletes the specified object.

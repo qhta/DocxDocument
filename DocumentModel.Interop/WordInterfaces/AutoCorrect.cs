@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the AutoCorrect functionality in Microsoft Word.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrect?view=word-pia"/>
-public interface AutoCorrect : InteropObject
+public interface IAutoCorrect : IInteropObject
 {
   /// <summary>
   /// Gets or sets a value indicating whether day names are corrected automatically.

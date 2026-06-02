@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Contains shading attributes for an object.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shading?view=word-pia"/>
-public interface Shading : InteropObject
+public interface IShading : IInteropObject
 {
   /// <summary>
   /// Returns or sets the color that's applied to the foreground of the Shading object. This color is applied to the
@@ -28,12 +28,12 @@ public interface Shading : InteropObject
   /// Basic's RGB function.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shading.foregroundpatterncolor?view=word-pia"/>
-  public Color ForegroundPatternColor { get; set; }
+  public PresetColors ForegroundPatternColor { get; set; }
   /// <summary>
   /// Returns or sets the 24-bit color that's applied to the background of the Shading object. Can be any valid
   /// Color constant or a value returned by Visual Basic's RGB function.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shading.backgroundpatterncolor?view=word-pia"/>
-  public Color BackgroundPatternColor { get; set; }
+  public PresetColors BackgroundPatternColor { get; set; }
 
 }

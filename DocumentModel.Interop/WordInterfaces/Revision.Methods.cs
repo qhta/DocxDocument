@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.revision?view=word-pia"/>
-public partial interface Revision
+public partial interface IRevision
 {
   /// <summary>
   /// Accepts the specified tracked change. The revision marks are removed, and the change is incorporated into the

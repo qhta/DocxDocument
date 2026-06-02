@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single instance of a custom property for a smart tag.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customproperty?view=word-pia"/>
-public partial interface CustomProperty : InteropObject
+public partial interface ICustomProperty : IInteropObject
 {
   /// <summary>
   /// Gets the name of the custom property.

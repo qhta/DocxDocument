@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle?view=word-pia"/>
-public partial interface AxisTitle
+public partial interface IAxisTitle
 {
   /// <summary>
   /// Returns a ChartCharacters object that represents a range of characters in the axis title text.

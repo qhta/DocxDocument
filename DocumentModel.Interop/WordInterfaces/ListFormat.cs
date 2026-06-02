@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the list formatting attributes that can be applied to the paragraphs in a range.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listformat?view=word-pia"/>
-public partial interface ListFormat : InteropObject
+public partial interface IListFormat : IInteropObject
 {
   /// <summary>
   /// Returns or sets the list level number for the first paragraph in the range.

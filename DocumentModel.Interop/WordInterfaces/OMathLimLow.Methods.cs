@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathlimlow?view=word-pia"/>
-public partial interface OMathLimLow
+public partial interface IOMathLimLow
 {
   /// <summary>
   /// Converts the lower-limit construct to an upper-limit construct.

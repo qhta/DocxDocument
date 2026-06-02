@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legend?view=word-pia"/>
-public partial interface Legend
+public partial interface ILegend
 {
   /// <summary>
   /// Selects the object.

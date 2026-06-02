@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a field. The Field object is a member of the Fields collection. The Fields collection represents the fields in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.field?view=word-pia"/>
-public partial interface Field : InteropObject
+public partial interface IField : IInteropObject
 {
   /// <summary>
   /// Gets or sets the field code.

@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Word;
 /// Sentence object.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.sentences?view=word-pia"/>
-public interface Sentences : InteropObject, InteropCollection<Range>
+public interface ISentences : IInteropObject, IInteropCollection<Range>
 {
   /// <summary>
   /// Returns a Range object that represents the first sentence, word, or character in a document, selection or

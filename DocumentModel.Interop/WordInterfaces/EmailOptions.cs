@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Contains global application-level attributes used by Microsoft Word when you create and edit e-mail messages and replies.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions?view=word-pia"/>
-public partial interface EmailOptions : InteropObject
+public partial interface IEmailOptions : IInteropObject
 {
   /// <summary>
   /// Gets or sets a value indicating whether theme styles are used for email messages.

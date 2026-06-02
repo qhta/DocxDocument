@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single table column. The Column object is a member of the Columns collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.column?view=word-pia"/>
-public partial interface Column : InteropObject
+public partial interface IColumn : IInteropObject
 {
   /// <summary>
   /// Gets or sets the width of the column, in points.

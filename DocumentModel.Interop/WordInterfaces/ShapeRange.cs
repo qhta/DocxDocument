@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a shape range, which is a set of shapes on a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange?view=word-pia"/>
-public partial interface ShapeRange : InteropObject, InteropCollection<Shape>
+public partial interface IShapeRange : IInteropObject, IInteropCollection<Shape>
 {
   /// <summary>
   /// Returns a Adjustments object that contains adjustment values for all the adjustments in the specified

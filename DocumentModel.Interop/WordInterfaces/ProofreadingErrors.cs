@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of spelling and grammatical errors for the specified document or range.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.proofreadingerrors?view=word-pia"/>
-public interface ProofreadingErrors : InteropObject, InteropCollection<Range>
+public interface IProofreadingErrors : IInteropObject, IInteropCollection<Range>
 {
   /// <summary>
   /// Returns the type of proofreading error.

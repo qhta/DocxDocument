@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents an individual line in a Rectangle object of type wdTextRectangle.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.line?view=word-pia"/>
-public interface Line : InteropObject
+public interface ILine : IInteropObject
 {
   /// <summary>
   /// Returns the type of line.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource?view=word-pia"/>
-public partial interface MailMergeDataSource
+public partial interface IMailMergeDataSource
 {
   /// <summary>
   /// Finds a record in the mail merge data source using Word 2000-compatible behavior.

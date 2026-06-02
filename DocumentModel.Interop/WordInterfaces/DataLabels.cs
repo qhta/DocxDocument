@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of all the DataLabel objects for the specified series.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabels?view=word-pia"/>
-public partial interface DataLabels : InteropObject, InteropCollection<DataLabel>
+public partial interface IDataLabels : IInteropObject, IInteropCollection<DataLabel>
 {
   /// <summary>
   /// Gets the name of the `DataLabels` object.

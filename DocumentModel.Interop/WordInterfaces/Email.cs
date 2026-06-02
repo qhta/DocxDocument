@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents an e-mail message.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.email?view=word-pia"/>
-public interface Email : InteropObject
+public interface IEmail : IInteropObject
 {
   /// <summary>
   /// Gets the current email author.

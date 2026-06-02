@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatcols?view=word-pia"/>
-public partial interface OMathMatCols
+public partial interface IOMathMatCols
 {
   /// <summary>
   /// Adds a matrix column to the collection.

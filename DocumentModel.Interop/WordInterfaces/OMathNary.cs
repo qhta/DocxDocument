@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the mathematical n-ary object, consisting of an n-ary object, a base (or operand), and optional upper limits and lower limits.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathnary?view=word-pia"/>
-public interface OMathNary : InteropObject
+public interface IOMathNary : IInteropObject
 {
   /// <summary>
   /// Returns the subscript expression.

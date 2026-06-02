@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.routingslip?view=word-pia"/>
-public partial interface RoutingSlip : InteropObject
+public partial interface IRoutingSlip : IInteropObject
 {
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.

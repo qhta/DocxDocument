@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablestyle?view=word-pia"/>
-public partial interface TableStyle
+public partial interface ITableStyle
 {
   /// <summary>
   /// Returns the conditional style for the specified table condition code.

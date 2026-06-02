@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnodechildren?view=word-pia"/>
-public partial interface DiagramNodeChildren
+public partial interface IDiagramNodeChildren
 {
   /// <summary>
   /// Adds a node to the diagram node's children collection.

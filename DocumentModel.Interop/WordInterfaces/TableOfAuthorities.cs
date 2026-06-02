@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single table of authorities in a document (a TOA field).
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities?view=word-pia"/>
-public partial interface TableOfAuthorities : InteropObject
+public partial interface ITableOfAuthorities : IInteropObject
 {
   /// <summary>
   /// True if five or more page references to the same authority are replaced with "Passim."

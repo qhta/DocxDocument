@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnote?view=word-pia"/>
-public partial interface Footnote
+public partial interface IFootnote
 {
   /// <summary>
   /// Deletes the specified object.

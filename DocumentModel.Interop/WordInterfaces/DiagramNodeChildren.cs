@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of DiagramNode objects that represents the child nodes in a diagram.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnodechildren?view=word-pia"/>
-public partial interface DiagramNodeChildren : InteropObject, InteropCollection<DiagramNode>
+public partial interface IDiagramNodeChildren : IInteropObject, IInteropCollection<DiagramNode>
 {
   /// <summary>
   /// Gets the first child node in the collection.

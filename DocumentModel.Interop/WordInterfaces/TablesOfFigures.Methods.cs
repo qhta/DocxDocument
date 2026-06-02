@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tablesoffigures?view=word-pia"/>
-public partial interface TablesOfFigures
+public partial interface ITablesOfFigures
 {
   /// <summary>
   /// Adds a table of figures to the document using legacy options.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single AutoCorrect exception.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.othercorrectionsexception?view=word-pia"/>
-public partial interface OtherCorrectionsException : InteropObject
+public partial interface IOtherCorrectionsException : IInteropObject
 {
   /// <summary>
   /// Returns an Integer that represents the position of an item in a collection.

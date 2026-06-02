@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the color of a one-color object or the foreground or background color of an object with a gradient or patterned fill.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcolorformat?view=word-pia"/>
-public interface ChartColorFormat : InteropObject
+public interface IChartColorFormat : IInteropObject
 {
   /// <summary>
   /// Gets or sets the color in the current color scheme.

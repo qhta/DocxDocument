@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents an individual source, such as a book, journal article, or interview.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.source?view=word-pia"/>
-public partial interface Source : InteropObject
+public partial interface ISource : IInteropObject
 {
   /// <summary>
   /// Returns a String that represents an internal identifying label for a source. Read-only.

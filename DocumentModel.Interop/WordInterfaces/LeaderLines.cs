@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents leader lines on a chart. Leader lines connect data labels to data points.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.leaderlines?view=word-pia"/>
-public partial interface LeaderLines : InteropObject
+public partial interface ILeaderLines : IInteropObject
 {
   /// <summary>
   /// Returns a ChartBorder object that represents the border of the object. Read-only.

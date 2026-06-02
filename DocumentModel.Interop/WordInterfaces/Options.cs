@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents application and document options in Microsoft Word. Many of the properties for the Options object correspond to items in the Options dialog box (Tools menu).
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options?view=word-pia"/>
-public partial interface Options : InteropObject
+public partial interface IOptions : IInteropObject
 {
   /// <summary>
   /// True if accents are retained when a French language character is changed to uppercase.
@@ -934,7 +934,7 @@ public partial interface Options : InteropObject
   /// a value returned by Visual Basic's RGB function.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.defaultbordercolor?view=word-pia"/>
-  public Color DefaultBorderColor { get; set; }
+  public PresetColors DefaultBorderColor { get; set; }
 
   /// <summary>
   /// True if Microsoft Word uses pixels as the default unit of measurement for HTML features that support
@@ -1075,7 +1075,7 @@ public partial interface Options : InteropObject
   /// valid Color constant or a value returned by Visual Basic's RGB function.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.options.diacriticcolorval?view=word-pia"/>
-  public Color DiacriticColorVal { get; set; }
+  public PresetColors DiacriticColorVal { get; set; }
 
   /// <summary>
   /// True if Microsoft Word optimizes all new documents for viewing in Word 97 by disabling any incompatible

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a mathematical function or structure that Microsoft Office Word supports, such as fractions, integrals, sums, and radicals. The OMathFunction object is a member of the OMathFunctions collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathfunction?view=word-pia"/>
-public partial interface OMathFunction : InteropObject
+public partial interface IOMathFunction : IInteropObject
 {
   /// <summary>
   /// Returns the type.

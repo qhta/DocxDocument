@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single reviewer of a document in which changes have been tracked.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.reviewer?view=word-pia"/>
-public interface Reviewer : InteropObject
+public interface IReviewer : IInteropObject
 {
   /// <summary>
   /// True if the specified object is visible.

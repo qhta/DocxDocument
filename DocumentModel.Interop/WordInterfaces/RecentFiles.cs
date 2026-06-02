@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Word;
 /// RecentFiles collection are displayed at the bottom of the File menu.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.recentfiles?view=word-pia"/>
-public partial interface RecentFiles : InteropObject, InteropCollection<RecentFile>
+public partial interface IRecentFiles : IInteropObject, IInteropCollection<RecentFile>
 {
   /// <summary>
   /// Returns or sets the maximum number of recently used files that can appear on the File menu. Can be a number

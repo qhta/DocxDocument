@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Word;
 /// includes all the window panes for a single window.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane?view=word-pia"/>
-public partial interface Pane : InteropObject
+public partial interface IPane : IInteropObject
 {
   /// <summary>
   /// Returns a Document object associated with the specified pane. Read-only.

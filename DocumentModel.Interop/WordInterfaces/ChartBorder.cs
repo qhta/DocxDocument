@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the border of an object.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartborder?view=word-pia"/>
-public interface ChartBorder : InteropObject
+public interface IChartBorder : IInteropObject
 {
   /// <summary>
   /// Gets or sets the primary color of the chart border.

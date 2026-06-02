@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of FormField objects that represent all the form fields in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfields?view=word-pia"/>
-public partial interface FormFields : InteropObject, InteropCollection<FormField>
+public partial interface IFormFields : IInteropObject, IInteropCollection<FormField>
 {
   /// <summary>
   /// Determines if shading is applied to form fields.

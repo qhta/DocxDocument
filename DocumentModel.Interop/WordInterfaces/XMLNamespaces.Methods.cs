@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnamespaces?view=word-pia"/>
-public partial interface XMLNamespaces
+public partial interface IXMLNamespaces
 {
   /// <summary>
   /// Adds a new XML namespace to the collection.

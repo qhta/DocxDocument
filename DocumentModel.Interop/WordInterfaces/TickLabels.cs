@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the tick-mark labels associated with tick marks on a chart axis.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.ticklabels?view=word-pia"/>
-public partial interface TickLabels : InteropObject
+public partial interface ITickLabels : IInteropObject
 {
   /// <summary>
   /// Returns a ChartFont object that represents the font of the specified object.

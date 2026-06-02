@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the linking characteristics for an OLE object or picture.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linkformat?view=word-pia"/>
-public partial interface LinkFormat : InteropObject
+public partial interface ILinkFormat : IInteropObject
 {
   /// <summary>
   /// Returns or sets whether the linked object is updated automatically.

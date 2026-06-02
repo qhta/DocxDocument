@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents line numbers in the left margin or to the left of each newspaper-style column.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linenumbering?view=word-pia"/>
-public interface LineNumbering : InteropObject
+public interface ILineNumbering : IInteropObject
 {
   /// <summary>
   /// Returns or sets when line numbering restarts.

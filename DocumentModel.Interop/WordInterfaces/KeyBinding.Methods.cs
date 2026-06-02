@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybinding?view=word-pia"/>
-public partial interface KeyBinding
+public partial interface IKeyBinding
 {
   /// <summary>
   /// Removes the key binding from the KeyBindings collection and resets a built-in command to its default key

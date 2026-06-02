@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headersfooters?view=word-pia"/>
-public partial interface HeadersFooters
+public partial interface IHeadersFooters
 {
   /// <summary>
   /// Returns a single header or footer from the collection.

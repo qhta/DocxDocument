@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a contiguous area in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range?view=word-pia"/>
-public partial interface Range : InteropObject
+public partial interface IRange : IInteropObject
 {
   /// <summary>
   /// Returns or sets the text in the specified range.
@@ -184,7 +184,7 @@ public partial interface Range : InteropObject
   /// Returns or sets the emphasis mark for a character or designated character string.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.emphasismark?view=word-pia"/>
-  public EmphasisMark EmphasisMark { get; set; }
+  public WdEmphasisMark EmphasisMark { get; set; }
 
   /// <summary>
   /// Determines if Microsoft Word ignores the number of characters per line for the range.

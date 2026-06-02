@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a matrix row. The OMathMatRow is a member of the OMathMatRows collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatrow?view=word-pia"/>
-public partial interface OMathMatRow : InteropObject
+public partial interface IOMathMatRow : IInteropObject
 {
   /// <summary>
   /// Returns the collection of arguments in the matrix row.

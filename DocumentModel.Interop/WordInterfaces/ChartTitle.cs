@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the chart title.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.charttitle?view=word-pia"/>
-public partial interface ChartTitle : InteropObject
+public partial interface IChartTitle : IInteropObject
 {
   /// <summary>
   /// Gets or sets the caption text for the chart title.

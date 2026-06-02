@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a legend entry in a chart legend.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendentry?view=word-pia"/>
-public partial interface LegendEntry : InteropObject
+public partial interface ILegendEntry : IInteropObject
 {
   /// <summary>
   /// Returns a font object that represents the font of the legend entry.

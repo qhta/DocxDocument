@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the mail merge data source in a mail merge operation.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource?view=word-pia"/>
-public partial interface MailMergeDataSource : InteropObject
+public partial interface IMailMergeDataSource : IInteropObject
 {
   /// <summary>
   /// Returns the name of the mail merge data source.
@@ -22,13 +22,13 @@ public partial interface MailMergeDataSource : InteropObject
   /// Returns the type of the mail merge data source.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.type?view=word-pia"/>
-  public MailMergeDataSourceType Type { get; }
+  public WdMailMergeDataSource Type { get; }
 
   /// <summary>
   /// Returns the type of source used for header fields.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.headersourcetype?view=word-pia"/>
-  public MailMergeDataSourceType HeaderSourceType { get; }
+  public WdMailMergeDataSource HeaderSourceType { get; }
 
   /// <summary>
   /// Returns the connection string for the mail merge data source.
@@ -46,7 +46,7 @@ public partial interface MailMergeDataSource : InteropObject
   /// Returns or sets the active record in the data source.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource.activerecord?view=word-pia"/>
-  public MailMergeActiveRecord ActiveRecord { get; set; }
+  public WdMailMergeActiveRecord ActiveRecord { get; set; }
 
   /// <summary>
   /// Returns or sets the first record number for the merge.

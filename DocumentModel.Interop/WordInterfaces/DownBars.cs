@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the down bars in a chart group.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.downbars?view=word-pia"/>
-public partial interface DownBars : InteropObject
+public partial interface IDownBars : IInteropObject
 {
   /// <summary>
   /// Gets the name of the `DownBars` object.

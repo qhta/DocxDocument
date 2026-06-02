@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Microsoft Learn API reference.
 /// </remarks>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shaperange?view=word-pia"/>
-public partial interface ShapeRange
+public partial interface IShapeRange
 {
   /// <summary>
   /// Aligns the shapes in the range according to the specified alignment command.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a file converter that's used to open or save files.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fileconverter?view=word-pia"/>
-public interface FileConverter : InteropObject
+public interface IFileConverter : IInteropObject
 {
   /// <summary>
   /// Returns the name of the specified file converter.

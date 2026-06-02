@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.connectorformat?view=word-pia"/>
-public partial interface ConnectorFormat : InteropObject
+public partial interface IConnectorFormat : IInteropObject
 {
   /// <summary>
   /// Gets a value indicating whether the beginning of the connector is attached to a shape.

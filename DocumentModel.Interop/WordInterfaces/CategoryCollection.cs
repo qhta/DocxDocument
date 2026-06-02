@@ -4,6 +4,6 @@ namespace DocumentModel.Interop.Word;
 /// Represents the collection of visible chart categories in the document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.categorycollection?view=word-pia"/>
-public interface CategoryCollection : InteropObject, InteropCollection<ChartCategory>
+public interface ICategoryCollection : IInteropObject, IInteropCollection<ChartCategory>
 {
 }

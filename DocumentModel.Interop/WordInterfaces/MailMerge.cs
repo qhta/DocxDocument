@@ -4,25 +4,25 @@ namespace DocumentModel.Interop.Word;
 /// Represents the mail merge functionality in Microsoft Word.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmerge?view=word-pia"/>
-public partial interface MailMerge : InteropObject
+public partial interface IMailMerge : IInteropObject
 {
   /// <summary>
   /// Returns or sets the main document type.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmerge.maindocumenttype?view=word-pia"/>
-  public MailMergeMainDocType MainDocumentType { get; set; }
+  public WdMailMergeMainDocType MainDocumentType { get; set; }
 
   /// <summary>
   /// Returns the current state of the mail merge operation.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmerge.state?view=word-pia"/>
-  public MailMergeState State { get; }
+  public WdMailMergeState State { get; }
 
   /// <summary>
   /// Returns or sets the destination for the mail merge results.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmerge.destination?view=word-pia"/>
-  public MailMergeDestination Destination { get; set; }
+  public WdMailMergeDestination Destination { get; set; }
 
   /// <summary>
   /// Returns the active data source for the mail merge operation.
@@ -76,7 +76,7 @@ public partial interface MailMerge : InteropObject
   /// Returns or sets the format used for merged e-mail messages.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmerge.mailformat?view=word-pia"/>
-  public MailMergeMailFormat MailFormat { get; set; }
+  public WdMailMergeMailFormat MailFormat { get; set; }
 
   /// <summary>
   /// Returns or sets custom text for the Send To user interface option.

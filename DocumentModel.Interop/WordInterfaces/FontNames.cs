@@ -4,6 +4,6 @@ namespace DocumentModel.Interop.Word;
 /// Represents a list of the names of all the available fonts.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fontnames?view=word-pia"/>
-public interface FontNames : InteropObject, InteropCollection<string>
+public interface IFontNames : IInteropObject, IInteropCollection<string>
 {
 }

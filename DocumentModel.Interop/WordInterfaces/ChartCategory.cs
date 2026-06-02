@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents all chart categories in the document, whether visible (unfiltered) or not.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcategory?view=word-pia"/>
-public interface ChartCategory : InteropObject
+public interface IChartCategory : IInteropObject
 {
   /// <summary>
   /// Gets the name of the chart category.
