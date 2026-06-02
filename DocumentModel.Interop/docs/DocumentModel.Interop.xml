@@ -75166,514 +75166,6 @@
             </summary>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hyperlinks?view=word-pia"/>
         </member>
-        <member name="T:DocumentModel.Interop.Word.IIndex">
-            <summary>
-            Represents a single index.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IIndex.HeadingSeparator">
-            <summary>
-            Returns or sets the character that separates topic headings and page numbers in an index.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.headingseparator?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IIndex.RightAlignPageNumbers">
-            <summary>
-            Returns or sets whether page numbers are right-aligned in the index.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.rightalignpagenumbers?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IIndex.Type">
-            <summary>
-            Returns or sets the type of index.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.type?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IIndex.NumberOfColumns">
-            <summary>
-            Returns or sets the number of columns in the index.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.numberofcolumns?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IIndex.Range">
-            <summary>
-            Returns a range object that represents the portion of the document included in the index.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.range?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IIndex.TabLeader">
-            <summary>
-            Returns or sets the tab leader character between entries and page numbers in the index.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.tableader?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IIndex.AccentedLetters">
-            <summary>
-            Returns or sets whether accented letters are treated separately in index sorting.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.accentedletters?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IIndex.SortBy">
-            <summary>
-            Returns or sets how index entries are sorted.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.sortby?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IIndex.Filter">
-            <summary>
-            Returns or sets the type of index filter to apply.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.filter?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IIndex.IndexLanguage">
-            <summary>
-            Returns or sets the language used for sorting the index.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.indexlanguage?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.IIndex.Delete">
-            <summary>
-            Deletes the specified object.
-            </summary>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.delete?view=word-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Word.IIndexes">
-            <summary>
-            Represents a collection of index objects in a document.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.indexes?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IIndexes.Format">
-            <summary>
-            Returns or sets the built-in format used for the index.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.indexes.format?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.IIndexes.AddOld(DocumentModel.Interop.Word.Range,DocumentModel.Interop.Word.HeadingSeparator,System.Boolean,DocumentModel.Interop.Word.IndexType,System.Int32,System.Boolean)">
-            <summary>
-            Adds an index to the document using legacy options.
-            </summary>
-            <param name="Range">The range to which the index is added.</param>
-            <param name="HeadingSeparator">The separator to use between headings.</param>
-            <param name="RightAlignPageNumbers">true to right-align page numbers; otherwise, false.</param>
-            <param name="Type">The type of index to add.</param>
-            <param name="NumberOfColumns">The number of columns in the index.</param>
-            <param name="AccentedLetters">true to include accented letters; otherwise, false.</param>
-            <returns>The created <see cref="T:DocumentModel.Interop.Word.Index"/> object.</returns>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.indexes.addold?view=word-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Word.IInlineShape">
-            <summary>
-            Represents an object in the text layer of a document.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.Borders">
-            <summary>
-            Returns or sets the borders for the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.borders?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.Range">
-            <summary>
-            Returns a range object that represents the inline shape in the document.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.range?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.LinkFormat">
-            <summary>
-            Returns a link format object that contains link properties for the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.linkformat?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.Field">
-            <summary>
-            Returns a field object associated with the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.field?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.OLEFormat">
-            <summary>
-            Returns an OLE format object that contains OLE properties for the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.oleformat?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.Type">
-            <summary>
-            Returns the type of inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.type?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.Hyperlink">
-            <summary>
-            Returns a hyperlink object associated with the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.hyperlink?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.Height">
-            <summary>
-            Returns or sets the height of the inline shape, in points.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.height?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.Width">
-            <summary>
-            Returns or sets the width of the inline shape, in points.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.width?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.ScaleHeight">
-            <summary>
-            Returns or sets the vertical scale of the inline shape, as a percentage.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.scaleheight?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.ScaleWidth">
-            <summary>
-            Returns or sets the horizontal scale of the inline shape, as a percentage.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.scalewidth?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.LockAspectRatio">
-            <summary>
-            Returns or sets whether the inline shape retains its original proportions when resized.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.lockaspectratio?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.Line">
-            <summary>
-            Returns a line format object that represents line formatting for the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.line?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.Fill">
-            <summary>
-            Returns a fill format object that represents fill formatting for the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.fill?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.PictureFormat">
-            <summary>
-            Returns or sets picture formatting for the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.pictureformat?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.HorizontalLineFormat">
-            <summary>
-            Returns a horizontal line format object for the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.horizontallineformat?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.Script">
-            <summary>
-            Returns the script associated with the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.script?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.OWSAnchor">
-            <summary>
-            Returns the anchor identifier for the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.owsanchor?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.TextEffect">
-            <summary>
-            Returns or sets text effect formatting for the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.texteffect?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.AlternativeText">
-            <summary>
-            Returns or sets alternative text for the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.alternativetext?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.IsPictureBullet">
-            <summary>
-            Returns whether the inline shape is used as a picture bullet.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.ispicturebullet?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.GroupItems">
-            <summary>
-            Returns a group shapes collection for items in the inline shape group.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.groupitems?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.HasChart">
-            <summary>
-            Returns whether the inline shape has an associated chart.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.haschart?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.Chart">
-            <summary>
-            Returns the chart associated with the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.chart?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.SoftEdge">
-            <summary>
-            Returns soft edge formatting for the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.softedge?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.Glow">
-            <summary>
-            Returns glow formatting for the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.glow?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.Reflection">
-            <summary>
-            Returns reflection formatting for the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.reflection?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.Shadow">
-            <summary>
-            Returns shadow formatting for the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.shadow?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.HasSmartArt">
-            <summary>
-            Returns whether the inline shape has SmartArt.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.hassmartart?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.SmartArt">
-            <summary>
-            Returns SmartArt for the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.smartart?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.Title">
-            <summary>
-            Returns or sets the title for the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.title?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.AnchorID">
-            <summary>
-            Returns the anchor ID of the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.anchorid?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInlineShape.EditID">
-            <summary>
-            Returns the edit ID of the inline shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.editid?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.IInlineShape.Activate">
-            <summary>
-            Activates the specified object.
-            </summary>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.activate?view=word-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Word.IInlineShapes">
-            <summary>
-            A collection of InlineShape objects that represent all the inline shapes in a document, range, or selection.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.IInlineShapes.AddPicture(System.String,System.Object,System.Object,System.Object)">
-            <summary>
-            Adds a picture to the document as an inline shape.
-            </summary>
-            <param name="FileName">The file name of the picture.</param>
-            <param name="LinkToFile">true to link to the file; otherwise, false.</param>
-            <param name="SaveWithDocument">true to save the picture with the document; otherwise, false.</param>
-            <param name="Range">The range where the picture is inserted.</param>
-            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addpicture?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.IInlineShapes.AddOLEObject(System.Object,System.Object,System.Object,System.Object,System.Object,System.Object,System.Object,System.Object)">
-            <summary>
-            Adds an OLE object to the document as an inline shape.
-            </summary>
-            <param name="ClassType">The class type of the OLE object.</param>
-            <param name="FileName">The file name of the OLE object.</param>
-            <param name="LinkToFile">true to link to the file; otherwise, false.</param>
-            <param name="DisplayAsIcon">true to display as an icon; otherwise, false.</param>
-            <param name="IconFileName">The file name of the icon.</param>
-            <param name="IconIndex">The index of the icon.</param>
-            <param name="IconLabel">The label for the icon.</param>
-            <param name="Range">The range where the OLE object is inserted.</param>
-            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addoleobject?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.IInlineShapes.AddOLEControl(System.Object,System.Object)">
-            <summary>
-            Adds an OLE control to the document as an inline shape.
-            </summary>
-            <param name="ClassType">The class type of the OLE control.</param>
-            <param name="Range">The range where the OLE control is inserted.</param>
-            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addolecontrol?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.IInlineShapes.New(DocumentModel.Interop.Word.Range)">
-            <summary>
-            Adds a new inline shape at the specified range.
-            </summary>
-            <param name="Range">The range where the inline shape is inserted.</param>
-            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.new?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.IInlineShapes.AddHorizontalLine(System.String,System.Object)">
-            <summary>
-            Adds a horizontal line to the document as an inline shape.
-            </summary>
-            <param name="FileName">The file name of the horizontal line image.</param>
-            <param name="Range">The range where the horizontal line is inserted.</param>
-            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addhorizontalline?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.IInlineShapes.AddHorizontalLineStandard(System.Object)">
-            <summary>
-            Adds a standard horizontal line to the document as an inline shape.
-            </summary>
-            <param name="Range">The range where the horizontal line is inserted.</param>
-            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addhorizontallinestandard?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.IInlineShapes.AddPictureBullet(System.String,System.Object)">
-            <summary>
-            Adds a picture bullet to the document as an inline shape.
-            </summary>
-            <param name="FileName">The file name of the picture bullet.</param>
-            <param name="Range">The range where the picture bullet is inserted.</param>
-            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addpicturebullet?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.IInlineShapes.AddChart(System.Object,System.Object)">
-            <summary>
-            Adds a chart to the document as an inline shape.
-            </summary>
-            <param name="Type">The chart type.</param>
-            <param name="Range">The range where the chart is inserted.</param>
-            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addchart?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.IInlineShapes.AddSmartArt(System.Object,System.Object)">
-            <summary>
-            Adds a SmartArt graphic to the document as an inline shape.
-            </summary>
-            <param name="Layout">The SmartArt layout.</param>
-            <param name="Range">The range where the SmartArt is inserted.</param>
-            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addsmartart?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.IInlineShapes.AddWebVideo(System.String,System.Object,System.Object,System.Object,System.Object,System.Object)">
-            <summary>
-            Adds a web video to the document as an inline shape.
-            </summary>
-            <param name="EmbedCode">The embed code for the web video.</param>
-            <param name="VideoWidth">The width of the video.</param>
-            <param name="VideoHeight">The height of the video.</param>
-            <param name="PosterFrameImage">The image to use as the poster frame.</param>
-            <param name="Url">The URL of the video.</param>
-            <param name="Range">The range where the web video is inserted.</param>
-            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addwebvideo?view=word-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Word.IInlineShapes.AddChart2(System.Int32,System.Object,System.Object,System.Object)">
-            <summary>
-            Adds a chart to the document as an inline shape using the specified style and layout.
-            </summary>
-            <param name="Style">The chart style.</param>
-            <param name="Type">The chart type.</param>
-            <param name="Range">The range where the chart is inserted.</param>
-            <param name="NewLayout">The new layout for the chart.</param>
-            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
-            <remarks>
-            Microsoft Learn API reference.
-            </remarks>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addchart2?view=word-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Word.IInterior">
-            <summary>
-            Represents the interior of an object.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInterior.Color">
-            <summary>
-            Returns or sets the primary color of the object interior.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior.color?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInterior.ColorIndex">
-            <summary>
-            Returns or sets the color index of the object interior.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior.colorindex?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInterior.InvertIfNegative">
-            <summary>
-            Returns or sets whether the interior pattern is inverted for negative values.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior.invertifnegative?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInterior.Pattern">
-            <summary>
-            Returns or sets the fill pattern for the object interior.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior.pattern?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInterior.PatternColor">
-            <summary>
-            Returns or sets the pattern color of the object interior.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior.patterncolor?view=word-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Word.IInterior.PatternColorIndex">
-            <summary>
-            Returns or sets the pattern color index of the object interior.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior.patterncolorindex?view=word-pia"/>
-        </member>
         <member name="T:DocumentModel.Interop.Word.IKeyBinding">
             <summary>
             Represents a custom key assignment in the current context.
@@ -77740,6 +77232,514 @@
             Represents the mapped data field objects available in Microsoft Word.
             </summary>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mappeddatafields?view=word-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Word.IIndex">
+            <summary>
+            Represents a single index.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IIndex.HeadingSeparator">
+            <summary>
+            Returns or sets the character that separates topic headings and page numbers in an index.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.headingseparator?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IIndex.RightAlignPageNumbers">
+            <summary>
+            Returns or sets whether page numbers are right-aligned in the index.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.rightalignpagenumbers?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IIndex.Type">
+            <summary>
+            Returns or sets the type of index.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.type?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IIndex.NumberOfColumns">
+            <summary>
+            Returns or sets the number of columns in the index.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.numberofcolumns?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IIndex.Range">
+            <summary>
+            Returns a range object that represents the portion of the document included in the index.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.range?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IIndex.TabLeader">
+            <summary>
+            Returns or sets the tab leader character between entries and page numbers in the index.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.tableader?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IIndex.AccentedLetters">
+            <summary>
+            Returns or sets whether accented letters are treated separately in index sorting.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.accentedletters?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IIndex.SortBy">
+            <summary>
+            Returns or sets how index entries are sorted.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.sortby?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IIndex.Filter">
+            <summary>
+            Returns or sets the type of index filter to apply.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.filter?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IIndex.IndexLanguage">
+            <summary>
+            Returns or sets the language used for sorting the index.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.indexlanguage?view=word-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Word.IIndex.Delete">
+            <summary>
+            Deletes the specified object.
+            </summary>
+            <remarks>
+            Microsoft Learn API reference.
+            </remarks>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index.delete?view=word-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Word.IIndexes">
+            <summary>
+            Represents a collection of index objects in a document.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.indexes?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IIndexes.Format">
+            <summary>
+            Returns or sets the built-in format used for the index.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.indexes.format?view=word-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Word.IIndexes.AddOld(DocumentModel.Interop.Word.Range,DocumentModel.Interop.Word.HeadingSeparator,System.Boolean,DocumentModel.Interop.Word.IndexType,System.Int32,System.Boolean)">
+            <summary>
+            Adds an index to the document using legacy options.
+            </summary>
+            <param name="Range">The range to which the index is added.</param>
+            <param name="HeadingSeparator">The separator to use between headings.</param>
+            <param name="RightAlignPageNumbers">true to right-align page numbers; otherwise, false.</param>
+            <param name="Type">The type of index to add.</param>
+            <param name="NumberOfColumns">The number of columns in the index.</param>
+            <param name="AccentedLetters">true to include accented letters; otherwise, false.</param>
+            <returns>The created <see cref="T:DocumentModel.Interop.Word.Index"/> object.</returns>
+            <remarks>
+            Microsoft Learn API reference.
+            </remarks>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.indexes.addold?view=word-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Word.IInlineShape">
+            <summary>
+            Represents an object in the text layer of a document.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.Borders">
+            <summary>
+            Returns or sets the borders for the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.borders?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.Range">
+            <summary>
+            Returns a range object that represents the inline shape in the document.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.range?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.LinkFormat">
+            <summary>
+            Returns a link format object that contains link properties for the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.linkformat?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.Field">
+            <summary>
+            Returns a field object associated with the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.field?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.OLEFormat">
+            <summary>
+            Returns an OLE format object that contains OLE properties for the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.oleformat?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.Type">
+            <summary>
+            Returns the type of inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.type?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.Hyperlink">
+            <summary>
+            Returns a hyperlink object associated with the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.hyperlink?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.Height">
+            <summary>
+            Returns or sets the height of the inline shape, in points.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.height?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.Width">
+            <summary>
+            Returns or sets the width of the inline shape, in points.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.width?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.ScaleHeight">
+            <summary>
+            Returns or sets the vertical scale of the inline shape, as a percentage.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.scaleheight?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.ScaleWidth">
+            <summary>
+            Returns or sets the horizontal scale of the inline shape, as a percentage.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.scalewidth?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.LockAspectRatio">
+            <summary>
+            Returns or sets whether the inline shape retains its original proportions when resized.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.lockaspectratio?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.Line">
+            <summary>
+            Returns a line format object that represents line formatting for the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.line?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.Fill">
+            <summary>
+            Returns a fill format object that represents fill formatting for the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.fill?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.PictureFormat">
+            <summary>
+            Returns or sets picture formatting for the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.pictureformat?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.HorizontalLineFormat">
+            <summary>
+            Returns a horizontal line format object for the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.horizontallineformat?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.Script">
+            <summary>
+            Returns the script associated with the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.script?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.OWSAnchor">
+            <summary>
+            Returns the anchor identifier for the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.owsanchor?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.TextEffect">
+            <summary>
+            Returns or sets text effect formatting for the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.texteffect?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.AlternativeText">
+            <summary>
+            Returns or sets alternative text for the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.alternativetext?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.IsPictureBullet">
+            <summary>
+            Returns whether the inline shape is used as a picture bullet.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.ispicturebullet?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.GroupItems">
+            <summary>
+            Returns a group shapes collection for items in the inline shape group.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.groupitems?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.HasChart">
+            <summary>
+            Returns whether the inline shape has an associated chart.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.haschart?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.Chart">
+            <summary>
+            Returns the chart associated with the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.chart?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.SoftEdge">
+            <summary>
+            Returns soft edge formatting for the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.softedge?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.Glow">
+            <summary>
+            Returns glow formatting for the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.glow?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.Reflection">
+            <summary>
+            Returns reflection formatting for the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.reflection?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.Shadow">
+            <summary>
+            Returns shadow formatting for the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.shadow?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.HasSmartArt">
+            <summary>
+            Returns whether the inline shape has SmartArt.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.hassmartart?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.SmartArt">
+            <summary>
+            Returns SmartArt for the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.smartart?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.Title">
+            <summary>
+            Returns or sets the title for the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.title?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.AnchorID">
+            <summary>
+            Returns the anchor ID of the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.anchorid?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInlineShape.EditID">
+            <summary>
+            Returns the edit ID of the inline shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.editid?view=word-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Word.IInlineShape.Activate">
+            <summary>
+            Activates the specified object.
+            </summary>
+            <remarks>
+            Microsoft Learn API reference.
+            </remarks>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape.activate?view=word-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Word.IInlineShapes">
+            <summary>
+            A collection of InlineShape objects that represent all the inline shapes in a document, range, or selection.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes?view=word-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Word.IInlineShapes.AddPicture(System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            Adds a picture to the document as an inline shape.
+            </summary>
+            <param name="FileName">The file name of the picture.</param>
+            <param name="LinkToFile">true to link to the file; otherwise, false.</param>
+            <param name="SaveWithDocument">true to save the picture with the document; otherwise, false.</param>
+            <param name="Range">The range where the picture is inserted.</param>
+            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
+            <remarks>
+            Microsoft Learn API reference.
+            </remarks>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addpicture?view=word-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Word.IInlineShapes.AddOLEObject(System.Object,System.Object,System.Object,System.Object,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            Adds an OLE object to the document as an inline shape.
+            </summary>
+            <param name="ClassType">The class type of the OLE object.</param>
+            <param name="FileName">The file name of the OLE object.</param>
+            <param name="LinkToFile">true to link to the file; otherwise, false.</param>
+            <param name="DisplayAsIcon">true to display as an icon; otherwise, false.</param>
+            <param name="IconFileName">The file name of the icon.</param>
+            <param name="IconIndex">The index of the icon.</param>
+            <param name="IconLabel">The label for the icon.</param>
+            <param name="Range">The range where the OLE object is inserted.</param>
+            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
+            <remarks>
+            Microsoft Learn API reference.
+            </remarks>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addoleobject?view=word-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Word.IInlineShapes.AddOLEControl(System.Object,System.Object)">
+            <summary>
+            Adds an OLE control to the document as an inline shape.
+            </summary>
+            <param name="ClassType">The class type of the OLE control.</param>
+            <param name="Range">The range where the OLE control is inserted.</param>
+            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
+            <remarks>
+            Microsoft Learn API reference.
+            </remarks>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addolecontrol?view=word-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Word.IInlineShapes.New(DocumentModel.Interop.Word.Range)">
+            <summary>
+            Adds a new inline shape at the specified range.
+            </summary>
+            <param name="Range">The range where the inline shape is inserted.</param>
+            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
+            <remarks>
+            Microsoft Learn API reference.
+            </remarks>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.new?view=word-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Word.IInlineShapes.AddHorizontalLine(System.String,System.Object)">
+            <summary>
+            Adds a horizontal line to the document as an inline shape.
+            </summary>
+            <param name="FileName">The file name of the horizontal line image.</param>
+            <param name="Range">The range where the horizontal line is inserted.</param>
+            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
+            <remarks>
+            Microsoft Learn API reference.
+            </remarks>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addhorizontalline?view=word-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Word.IInlineShapes.AddHorizontalLineStandard(System.Object)">
+            <summary>
+            Adds a standard horizontal line to the document as an inline shape.
+            </summary>
+            <param name="Range">The range where the horizontal line is inserted.</param>
+            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
+            <remarks>
+            Microsoft Learn API reference.
+            </remarks>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addhorizontallinestandard?view=word-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Word.IInlineShapes.AddPictureBullet(System.String,System.Object)">
+            <summary>
+            Adds a picture bullet to the document as an inline shape.
+            </summary>
+            <param name="FileName">The file name of the picture bullet.</param>
+            <param name="Range">The range where the picture bullet is inserted.</param>
+            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
+            <remarks>
+            Microsoft Learn API reference.
+            </remarks>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addpicturebullet?view=word-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Word.IInlineShapes.AddChart(System.Object,System.Object)">
+            <summary>
+            Adds a chart to the document as an inline shape.
+            </summary>
+            <param name="Type">The chart type.</param>
+            <param name="Range">The range where the chart is inserted.</param>
+            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
+            <remarks>
+            Microsoft Learn API reference.
+            </remarks>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addchart?view=word-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Word.IInlineShapes.AddSmartArt(System.Object,System.Object)">
+            <summary>
+            Adds a SmartArt graphic to the document as an inline shape.
+            </summary>
+            <param name="Layout">The SmartArt layout.</param>
+            <param name="Range">The range where the SmartArt is inserted.</param>
+            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
+            <remarks>
+            Microsoft Learn API reference.
+            </remarks>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addsmartart?view=word-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Word.IInlineShapes.AddWebVideo(System.String,System.Object,System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            Adds a web video to the document as an inline shape.
+            </summary>
+            <param name="EmbedCode">The embed code for the web video.</param>
+            <param name="VideoWidth">The width of the video.</param>
+            <param name="VideoHeight">The height of the video.</param>
+            <param name="PosterFrameImage">The image to use as the poster frame.</param>
+            <param name="Url">The URL of the video.</param>
+            <param name="Range">The range where the web video is inserted.</param>
+            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
+            <remarks>
+            Microsoft Learn API reference.
+            </remarks>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addwebvideo?view=word-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Word.IInlineShapes.AddChart2(System.Int32,System.Object,System.Object,System.Object)">
+            <summary>
+            Adds a chart to the document as an inline shape using the specified style and layout.
+            </summary>
+            <param name="Style">The chart style.</param>
+            <param name="Type">The chart type.</param>
+            <param name="Range">The range where the chart is inserted.</param>
+            <param name="NewLayout">The new layout for the chart.</param>
+            <returns>The created <see cref="T:DocumentModel.Interop.Word.InlineShape"/> object.</returns>
+            <remarks>
+            Microsoft Learn API reference.
+            </remarks>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshapes.addchart2?view=word-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Word.IInterior">
+            <summary>
+            Represents the interior of an object.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInterior.Color">
+            <summary>
+            Returns or sets the primary color of the object interior.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior.color?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInterior.ColorIndex">
+            <summary>
+            Returns or sets the color index of the object interior.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior.colorindex?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInterior.InvertIfNegative">
+            <summary>
+            Returns or sets whether the interior pattern is inverted for negative values.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior.invertifnegative?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInterior.Pattern">
+            <summary>
+            Returns or sets the fill pattern for the object interior.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior.pattern?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInterior.PatternColor">
+            <summary>
+            Returns or sets the pattern color of the object interior.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior.patterncolor?view=word-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Word.IInterior.PatternColorIndex">
+            <summary>
+            Returns or sets the pattern color index of the object interior.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.interior.patterncolorindex?view=word-pia"/>
         </member>
         <member name="T:DocumentModel.Interop.Word.IOCXEvents">
             <summary>
