@@ -15781,6 +15781,140 @@
             </summary>
             <seealso cref="!:http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._imsodispobj?view=office-pia"/>
         </member>
+        <member name="T:DocumentModel.Interop.Core.IAccessible">
+            <summary>
+            Reserved for internal use.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IAccessible.Parent">
+            <summary>
+            Gets the parent essible object.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accparent?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IAccessible.ChildCount">
+            <summary>
+            Gets the number of essible child objects.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accchildcount?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IAccessible.Child">
+            <summary>
+            Gets an essible child object.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accchild?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IAccessible.Name">
+            <summary>
+            Gets or sets the essible name of the object.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accname?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IAccessible.Value">
+            <summary>
+            Gets or sets the essible value of the object.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accvalue?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IAccessible.Description">
+            <summary>
+            Gets the essible description of the object.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accdescription?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IAccessible.Role">
+            <summary>
+            Gets the essible role of the object.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accrole?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IAccessible.State">
+            <summary>
+            Gets the essible state of the object.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accstate?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IAccessible.Help">
+            <summary>
+            Gets the help string for the essible object.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.acchelp?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IAccessible.HelpTopic">
+            <summary>
+            Gets the help topic identifier for the essible object.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.acchelptopic?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IAccessible.KeyboardShortcut">
+            <summary>
+            Gets the keyboard shortcut for the essible object.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.acckeyboardshortcut?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IAccessible.Focus">
+            <summary>
+            Gets the object that has keyboard focus.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accfocus?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IAccessible.Selection">
+            <summary>
+            Gets the current selection.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accselection?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IAccessible.DefaultAction">
+            <summary>
+            Gets the default action description for the object.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accdefaultaction?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IAccessible.Select(System.Int32,System.Object)">
+            <summary>
+            Selects the specified essible child object.
+            </summary>
+            <param name="flagsSelect">The `flagsSelect` parameter.</param>
+            <param name="varChild">The `varChild` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accselect?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IAccessible.Location(System.Int32@,System.Int32@,System.Int32@,System.Int32@,System.Object)">
+            <summary>
+            Retrieves the screen coordinates and size of the specified essible child object.
+            </summary>
+            <param name="pxLeft">The `pxLeft` parameter.</param>
+            <param name="pyTop">The `pyTop` parameter.</param>
+            <param name="pcxWidth">The `pcxWidth` parameter.</param>
+            <param name="pcyHeight">The `pcyHeight` parameter.</param>
+            <param name="varChild">The `varChild` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.acclocation?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IAccessible.Navigate(System.Int32,System.Object)">
+            <summary>
+            Navigates to another essible object from the specified starting object.
+            </summary>
+            <param name="navDir">The `navDir` parameter.</param>
+            <param name="varStart">The `varStart` parameter.</param>
+            <returns>The result of the operation.</returns>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accnavigate?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IAccessible.HitTest(System.Int32,System.Int32)">
+            <summary>
+            Retrieves the essible object at the specified screen coordinates.
+            </summary>
+            <param name="xLeft">The `xLeft` parameter.</param>
+            <param name="yTop">The `yTop` parameter.</param>
+            <returns>The result of the operation.</returns>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.acchittest?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IAccessible.DoDefaultAction(System.Object)">
+            <summary>
+            Performs the default action on the specified essible child object.
+            </summary>
+            <param name="varChild">The `varChild` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accdodefaultaction?view=office-pia"/>
+        </member>
         <member name="T:DocumentModel.Interop.Core.IAdjustments">
             <summary>
             Reserved for internal use.
@@ -15816,6 +15950,42 @@
             Contains all Answer Wizard files (.aw) available to the active Office application.
             </summary>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.answerwizardfiles?view=office-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Core.IAssistance">
+            <summary>
+            Represents the Microsoft Office Help Viewer assistance interface.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iassistance?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IAssistance.ShowHelp(System.String,System.String)">
+            <summary>
+            Displays a Help topic in the Office Help Viewer.
+            </summary>
+            <param name="HelpId">The `HelpId` parameter.</param>
+            <param name="Scope">The `Scope` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iassistance.showhelp?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IAssistance.SearchHelp(System.String,System.String)">
+            <summary>
+            Searches Help content in the Office Help Viewer.
+            </summary>
+            <param name="Query">The `Query` parameter.</param>
+            <param name="Scope">The `Scope` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iassistance.searchhelp?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IAssistance.SetDefaultContext(System.String)">
+            <summary>
+            Sets the default Help context.
+            </summary>
+            <param name="HelpId">The `HelpId` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iassistance.setdefaultcontext?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IAssistance.ClearDefaultContext(System.String)">
+            <summary>
+            Clears a default Help context.
+            </summary>
+            <param name="HelpId">The `HelpId` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iassistance.cleardefaultcontext?view=office-pia"/>
         </member>
         <member name="T:DocumentModel.Interop.Core.IAssistant">
             <summary>
@@ -16219,6 +16389,148 @@
             Gets the `Name` property.
             </summary>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.balloonlabels.name?view=office-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Core.IBlogExtensibility">
+            <summary>
+            Provides the ability to manipulate blog entries.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IBlogExtensibility.BlogProviderProperties(System.String@,System.String@,DocumentModel.Interop.Core.BlogCategorySupport@,System.Boolean@)">
+            <summary>
+            Contains information about the blog provider.
+            </summary>
+            <param name="BlogProvider">The `BlogProvider` parameter.</param>
+            <param name="FriendlyName">The `FriendlyName` parameter.</param>
+            <param name="CategorySupport">The `CategorySupport` parameter.</param>
+            <param name="Padding">The `Padding` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.blogproviderproperties?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IBlogExtensibility.SetupBlogAccount(System.String,System.Int32,System.Object,System.Boolean,System.Boolean@)">
+            <summary>
+            Sets up a provider account from the account selection dialogs.
+            </summary>
+            <param name="Account">The `Account` parameter.</param>
+            <param name="ParentWindow">The `ParentWindow` parameter.</param>
+            <param name="Document">The `Document` parameter.</param>
+            <param name="NewAccount">The `NewAccount` parameter.</param>
+            <param name="ShowPictureUI">The `ShowPictureUI` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.setupblogaccount?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IBlogExtensibility.GetUserBlogs(System.String,System.Int32,System.Object,System.Array@,System.Array@,System.Array@)">
+            <summary>
+            Returns the list and details of user blogs associated with the specified account.
+            </summary>
+            <param name="Account">The `Account` parameter.</param>
+            <param name="ParentWindow">The `ParentWindow` parameter.</param>
+            <param name="Document">The `Document` parameter.</param>
+            <param name="BlogNames">The `BlogNames` parameter.</param>
+            <param name="BlogIDs">The `BlogIDs` parameter.</param>
+            <param name="BlogURLs">The `BlogURLs` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.getuserblogs?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IBlogExtensibility.GetRecentPosts(System.String,System.Int32,System.Object,System.Array@,System.Array@,System.Array@)">
+            <summary>
+            Returns recent blog posts for display in the Open Existing Post dialog.
+            </summary>
+            <param name="Account">The `Account` parameter.</param>
+            <param name="ParentWindow">The `ParentWindow` parameter.</param>
+            <param name="Document">The `Document` parameter.</param>
+            <param name="PostTitles">The `PostTitles` parameter.</param>
+            <param name="PostDates">The `PostDates` parameter.</param>
+            <param name="PostIDs">The `PostIDs` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.getrecentposts?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IBlogExtensibility.Open(System.String,System.String,System.Int32,System.String@,System.String@,System.String@,System.Array@)">
+            <summary>
+            Opens the blog post specified by the post identifier.
+            </summary>
+            <param name="Account">The `Account` parameter.</param>
+            <param name="PostID">The `PostID` parameter.</param>
+            <param name="ParentWindow">The `ParentWindow` parameter.</param>
+            <param name="xHTML">The `xHTML` parameter.</param>
+            <param name="Title">The `Title` parameter.</param>
+            <param name="DatePosted">The `DatePosted` parameter.</param>
+            <param name="Categories">The `Categories` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.open?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IBlogExtensibility.PublishPost(System.String,System.Int32,System.Object,System.String,System.String,System.String,System.Array,System.Boolean,System.String@,System.String@)">
+            <summary>
+            Hands off the current post so it can be published by the provider.
+            </summary>
+            <param name="Account">The `Account` parameter.</param>
+            <param name="ParentWindow">The `ParentWindow` parameter.</param>
+            <param name="Document">The `Document` parameter.</param>
+            <param name="xHTML">The `xHTML` parameter.</param>
+            <param name="Title">The `Title` parameter.</param>
+            <param name="DateTime">The `DateTime` parameter.</param>
+            <param name="Categories">The `Categories` parameter.</param>
+            <param name="Draft">The `Draft` parameter.</param>
+            <param name="PostID">The `PostID` parameter.</param>
+            <param name="PublishMessage">The `PublishMessage` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.publishpost?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IBlogExtensibility.RepublishPost(System.String,System.Int32,System.Object,System.String,System.String,System.String,System.String,System.Array,System.Boolean,System.String@)">
+            <summary>
+            Hands off an existing post so it can be republished by the provider.
+            </summary>
+            <param name="Account">The `Account` parameter.</param>
+            <param name="ParentWindow">The `ParentWindow` parameter.</param>
+            <param name="Document">The `Document` parameter.</param>
+            <param name="PostID">The `PostID` parameter.</param>
+            <param name="xHTML">The `xHTML` parameter.</param>
+            <param name="Title">The `Title` parameter.</param>
+            <param name="DateTime">The `DateTime` parameter.</param>
+            <param name="Categories">The `Categories` parameter.</param>
+            <param name="Draft">The `Draft` parameter.</param>
+            <param name="PublishMessage">The `PublishMessage` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.republishpost?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IBlogExtensibility.GetCategories(System.String,System.Int32,System.Object,System.Array@)">
+            <summary>
+            Returns the list of blog categories for an account.
+            </summary>
+            <param name="Account">The `Account` parameter.</param>
+            <param name="ParentWindow">The `ParentWindow` parameter.</param>
+            <param name="Document">The `Document` parameter.</param>
+            <param name="Categories">The `Categories` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.getcategories?view=office-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Core.IBlogPictureExtensibility">
+            <summary>
+            Provides the ability to manipulate blog images.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogpictureextensibility?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IBlogPictureExtensibility.BlogPictureProviderProperties(System.String@,System.String@)">
+            <summary>
+            Enables picture providers to offer themselves as an upload location for blog pictures.
+            </summary>
+            <param name="BlogPictureProvider">The `BlogPictureProvider` parameter.</param>
+            <param name="FriendlyName">The `FriendlyName` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogpictureextensibility.blogpictureproviderproperties?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IBlogPictureExtensibility.CreatePictureAccount(System.String,System.String,System.Int32,System.Object)">
+            <summary>
+            Displays the UI needed to guide the user through picture account setup.
+            </summary>
+            <param name="Account">The `Account` parameter.</param>
+            <param name="BlogProvider">The `BlogProvider` parameter.</param>
+            <param name="ParentWindow">The `ParentWindow` parameter.</param>
+            <param name="Document">The `Document` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogpictureextensibility.createpictureaccount?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IBlogPictureExtensibility.PublishPicture(System.String,System.Int32,System.Object,System.Object,System.String@,System.Int32)">
+            <summary>
+            Posts a picture object to its final destination in a blog.
+            </summary>
+            <param name="Account">The `Account` parameter.</param>
+            <param name="ParentWindow">The `ParentWindow` parameter.</param>
+            <param name="Document">The `Document` parameter.</param>
+            <param name="Image">The `Image` parameter.</param>
+            <param name="PictureURI">The `PictureURI` parameter.</param>
+            <param name="ImageType">The `ImageType` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogpictureextensibility.publishpicture?view=office-pia"/>
         </member>
         <member name="T:DocumentModel.Interop.Core.IBulletFormat2">
             <summary>
@@ -17498,6 +17810,165 @@
             <param name="ShowWithDelay">The `ShowWithDelay` parameter.</param>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.contactcard.show?view=office-pia"/>
         </member>
+        <member name="T:DocumentModel.Interop.Core.IConverter">
+            <summary>
+            Defines methods used by Office document converters.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IConverter.HrInitConverter(DocumentModel.Interop.Core.IConverterApplicationPreferences,DocumentModel.Interop.Core.IConverterPreferences@,DocumentModel.Interop.Core.IConverterUICallback)">
+            <summary>
+            Initializes the converter.
+            </summary>
+            <param name="pcap">The `pcap` parameter.</param>
+            <param name="ppcp">The `ppcp` parameter.</param>
+            <param name="pcuic">The `pcuic` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrinitconverter?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IConverter.HrUninitConverter(DocumentModel.Interop.Core.IConverterUICallback)">
+            <summary>
+            Uninitializes the converter.
+            </summary>
+            <param name="pcuic">The `pcuic` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hruninitconverter?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IConverter.HrImport(System.String,System.String,DocumentModel.Interop.Core.IConverterApplicationPreferences,DocumentModel.Interop.Core.IConverterPreferences@,DocumentModel.Interop.Core.IConverterUICallback)">
+            <summary>
+            Imports content from a source path to a destination path.
+            </summary>
+            <param name="bstrSourcePath">The `bstrSourcePath` parameter.</param>
+            <param name="bstrDestPath">The `bstrDestPath` parameter.</param>
+            <param name="pcap">The `pcap` parameter.</param>
+            <param name="ppcp">The `ppcp` parameter.</param>
+            <param name="pcuic">The `pcuic` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrimport?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IConverter.HrExport(System.String,System.String,System.String,DocumentModel.Interop.Core.IConverterApplicationPreferences,DocumentModel.Interop.Core.IConverterPreferences@,DocumentModel.Interop.Core.IConverterUICallback)">
+            <summary>
+            Exports content from a source path to a destination path.
+            </summary>
+            <param name="bstrSourcePath">The `bstrSourcePath` parameter.</param>
+            <param name="bstrDestPath">The `bstrDestPath` parameter.</param>
+            <param name="bstrClass">The `bstrClass` parameter.</param>
+            <param name="pcap">The `pcap` parameter.</param>
+            <param name="ppcp">The `ppcp` parameter.</param>
+            <param name="pcuic">The `pcuic` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrexport?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IConverter.HrGetFormat(System.String,System.String@,DocumentModel.Interop.Core.IConverterApplicationPreferences,DocumentModel.Interop.Core.IConverterPreferences@,DocumentModel.Interop.Core.IConverterUICallback)">
+            <summary>
+            Retrieves the converter format class for the specified path.
+            </summary>
+            <param name="bstrPath">The `bstrPath` parameter.</param>
+            <param name="pbstrClass">The `pbstrClass` parameter.</param>
+            <param name="pcap">The `pcap` parameter.</param>
+            <param name="ppcp">The `ppcp` parameter.</param>
+            <param name="pcuic">The `pcuic` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrgetformat?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IConverter.HrGetErrorString(System.Int32,System.String@,DocumentModel.Interop.Core.IConverterApplicationPreferences)">
+            <summary>
+            Retrieves an error message string for an error code.
+            </summary>
+            <param name="hrErr">The `hrErr` parameter.</param>
+            <param name="pbstrErrorMsg">The `pbstrErrorMsg` parameter.</param>
+            <param name="pcap">The `pcap` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrgeterrorstring?view=office-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Core.IConverterApplicationPreferences">
+            <summary>
+            Defines application preferences used by Office document converters.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterapplicationpreferences?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IConverterApplicationPreferences.HrGetLcid(System.UInt32@)">
+            <summary>
+            Gets the current locale identifier.
+            </summary>
+            <param name="plcid">The `plcid` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterapplicationpreferences.hrgetlcid?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IConverterApplicationPreferences.HrGetHwnd(System.Int32@)">
+            <summary>
+            Gets the host application window handle.
+            </summary>
+            <param name="phwnd">The `phwnd` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterapplicationpreferences.hrgethwnd?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IConverterApplicationPreferences.HrGetApplication(System.String@)">
+            <summary>
+            Gets the host application name.
+            </summary>
+            <param name="pbstrApplication">The `pbstrApplication` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterapplicationpreferences.hrgetapplication?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IConverterApplicationPreferences.HrCheckFormat(System.Int32@)">
+            <summary>
+            Gets format-related information for the converter.
+            </summary>
+            <param name="pFormat">The `pFormat` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterapplicationpreferences.hrcheckformat?view=office-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Core.IConverterPreferences">
+            <summary>
+            Defines converter-specific preferences for Office document converters.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterpreferences?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IConverterPreferences.HrGetMacroEnabled(System.Int32@)">
+            <summary>
+            Gets whether macros are enabled.
+            </summary>
+            <param name="pfMacroEnabled">The `pfMacroEnabled` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterpreferences.hrgetmacroenabled?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IConverterPreferences.HrCheckFormat(System.Int32@)">
+            <summary>
+            Gets format-related preference information.
+            </summary>
+            <param name="pFormat">The `pFormat` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterpreferences.hrcheckformat?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IConverterPreferences.HrGetLossySave(System.Int32@)">
+            <summary>
+            Gets whether lossy save is enabled.
+            </summary>
+            <param name="pfLossySave">The `pfLossySave` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterpreferences.hrgetlossysave?view=office-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Core.IConverterUICallback">
+            <summary>
+            Defines UI callback methods for Office document converters.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverteruicallback?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IConverterUICallback.HrReportProgress(System.UInt32)">
+            <summary>
+            Reports conversion progress.
+            </summary>
+            <param name="uPercentComplete">The `uPercentComplete` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverteruicallback.hrreportprogress?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IConverterUICallback.HrMessageBox(System.String,System.String,System.UInt32,System.Int32@)">
+            <summary>
+            Displays a message box through the host UI.
+            </summary>
+            <param name="bstrText">The `bstrText` parameter.</param>
+            <param name="bstrCaption">The `bstrCaption` parameter.</param>
+            <param name="uType">The `uType` parameter.</param>
+            <param name="pidResult">The `pidResult` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverteruicallback.hrmessagebox?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IConverterUICallback.HrInputBox(System.String,System.String,System.String@,System.Int32)">
+            <summary>
+            Displays an input box through the host UI.
+            </summary>
+            <param name="bstrText">The `bstrText` parameter.</param>
+            <param name="bstrCaption">The `bstrCaption` parameter.</param>
+            <param name="pbstrInput">The `pbstrInput` parameter.</param>
+            <param name="fPassword">The `fPassword` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverteruicallback.hrinputbox?view=office-pia"/>
+        </member>
         <member name="T:DocumentModel.Interop.Core.ICrop">
             <summary>
             Represents an object used to remove a portion of an image.
@@ -17551,6 +18022,22 @@
             Gets or sets the `ShapeHeight` property.
             </summary>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.crop.shapeheight?view=office-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Core.ICTPFactory">
+            <summary>
+            Used to create a custom task pane.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ictpfactory?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.ICTPFactory.CreateCTP(System.String,System.String,System.Object)">
+            <summary>
+            Creates an instance of a custom task pane.
+            </summary>
+            <param name="CTPAxID">The `CTPAxID` parameter.</param>
+            <param name="CTPTitle">The `CTPTitle` parameter.</param>
+            <param name="CTPParentWindow">The `CTPParentWindow` parameter.</param>
+            <returns>The created custom task pane.</returns>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ictpfactory.createctp?view=office-pia"/>
         </member>
         <member name="T:DocumentModel.Interop.Core.ICustomTaskPane">
             <summary>
@@ -17611,6 +18098,19 @@
             Deletes the active custom task pane.
             </summary>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customtaskpane.delete?view=office-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Core.ICustomTaskPaneConsumer">
+            <summary>
+            Provides access to creating custom task panes.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomtaskpaneconsumer?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.ICustomTaskPaneConsumer.CTPFactoryAvailable(DocumentModel.Interop.Core.ICTPFactory)">
+            <summary>
+            Passes an `ICTPFactory` object that can be used to create a custom task pane.
+            </summary>
+            <param name="CTPFactoryInst">The `CTPFactoryInst` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomtaskpaneconsumer.ctpfactoryavailable?view=office-pia"/>
         </member>
         <member name="T:DocumentModel.Interop.Core.ICustomXMLNode">
             <summary>
@@ -17925,6 +18425,39 @@
             <returns>The matching node, if found.</returns>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.selectsinglenode?view=office-pia"/>
         </member>
+        <member name="T:DocumentModel.Interop.Core.ICustomXMLPartEvents">
+            <summary>
+            Events interface for `CustomXMLPart` object events.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.ICustomXMLPartEvents.NodeAfterInsert(DocumentModel.Interop.Core.ICustomXMLNode,System.Boolean)">
+            <summary>
+            Raised after a custom XML node is inserted.
+            </summary>
+            <param name="NewNode">The `NewNode` parameter.</param>
+            <param name="InUndoRedo">The `InUndoRedo` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents.nodeafterinsert?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.ICustomXMLPartEvents.NodeAfterDelete(DocumentModel.Interop.Core.ICustomXMLNode,DocumentModel.Interop.Core.ICustomXMLNode,DocumentModel.Interop.Core.ICustomXMLNode,System.Boolean)">
+            <summary>
+            Raised after a custom XML node is deleted.
+            </summary>
+            <param name="OldNode">The `OldNode` parameter.</param>
+            <param name="OldParentNode">The `OldParentNode` parameter.</param>
+            <param name="OldNextSibling">The `OldNextSibling` parameter.</param>
+            <param name="InUndoRedo">The `InUndoRedo` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents.nodeafterdelete?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.ICustomXMLPartEvents.NodeAfterReplace(DocumentModel.Interop.Core.ICustomXMLNode,DocumentModel.Interop.Core.ICustomXMLNode,System.Boolean)">
+            <summary>
+            Raised after a custom XML node is replaced.
+            </summary>
+            <param name="OldNode">The `OldNode` parameter.</param>
+            <param name="NewNode">The `NewNode` parameter.</param>
+            <param name="InUndoRedo">The `InUndoRedo` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents.nodeafterreplace?view=office-pia"/>
+        </member>
         <member name="T:DocumentModel.Interop.Core._ICustomXMLParts">
             <summary>
             Represents a collection of _CustomXMLPart objects.
@@ -17955,6 +18488,33 @@
             <param name="NamespaceURI">The `NamespaceURI` parameter.</param>
             <returns>The result of the operation.</returns>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlparts.selectbynamespace?view=office-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Core.ICustomXMLPartsEvents">
+            <summary>
+            Events interface for `CustomXMLParts` object events.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartsevents?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.ICustomXMLPartsEvents.PartAfterAdd(DocumentModel.Interop.Core.ICustomXMLPart)">
+            <summary>
+            Raised after a custom XML part is added.
+            </summary>
+            <param name="NewPart">The `NewPart` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartsevents.partafteradd?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.ICustomXMLPartsEvents.PartBeforeDelete(DocumentModel.Interop.Core.ICustomXMLPart)">
+            <summary>
+            Raised before a custom XML part is deleted.
+            </summary>
+            <param name="OldPart">The `OldPart` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartsevents.partbeforedelete?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.ICustomXMLPartsEvents.PartAfterLoad(DocumentModel.Interop.Core.ICustomXMLPart)">
+            <summary>
+            Raised after a custom XML part is loaded.
+            </summary>
+            <param name="Part">The `Part` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartsevents.partafterload?view=office-pia"/>
         </member>
         <member name="T:DocumentModel.Interop.Core.ICustomXMLPrefixMapping">
             <summary>
@@ -18960,6 +19520,178 @@
             <param name="TextureFile">The `TextureFile` parameter.</param>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.usertextured?view=office-pia"/>
         </member>
+        <member name="T:DocumentModel.Interop.Core.IFind">
+            <summary>
+            Provides file search functionality.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.SearchPath">
+            <summary>
+            Gets or sets the `SearchPath` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.searchpath?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.Name">
+            <summary>
+            Gets or sets the `Name` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.name?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.SubDir">
+            <summary>
+            Gets or sets the `SubDir` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.subdir?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.Title">
+            <summary>
+            Gets or sets the `Title` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.title?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.Author">
+            <summary>
+            Gets or sets the `Author` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.author?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.Keywords">
+            <summary>
+            Gets or sets the `Keywords` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.keywords?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.Subject">
+            <summary>
+            Gets or sets the `Subject` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.subject?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.Options">
+            <summary>
+            Gets or sets the `Options` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.options?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.MatchCase">
+            <summary>
+            Gets or sets the `MatchCase` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.matchcase?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.Text">
+            <summary>
+            Gets or sets the `Text` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.text?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.PatternMatch">
+            <summary>
+            Gets or sets the `PatternMatch` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.patternmatch?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.DateSavedFrom">
+            <summary>
+            Gets or sets the `DateSavedFrom` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.datesavedfrom?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.DateSavedTo">
+            <summary>
+            Gets or sets the `DateSavedTo` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.datesavedto?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.SavedBy">
+            <summary>
+            Gets or sets the `SavedBy` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.savedby?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.DateCreatedFrom">
+            <summary>
+            Gets or sets the `DateCreatedFrom` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.datecreatedfrom?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.DateCreatedTo">
+            <summary>
+            Gets or sets the `DateCreatedTo` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.datecreatedto?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.View">
+            <summary>
+            Gets or sets the `View` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.view?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.SortBy">
+            <summary>
+            Gets or sets the `SortBy` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.sortby?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.ListBy">
+            <summary>
+            Gets or sets the `ListBy` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.listby?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.SelectedFile">
+            <summary>
+            Gets or sets the `SelectedFile` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.selectedfile?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.Results">
+            <summary>
+            Gets the `Results` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.results?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IFind.FileType">
+            <summary>
+            Gets or sets the `FileType` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.filetype?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IFind.Show">
+            <summary>
+            Displays the Find dialog.
+            </summary>
+            <returns>The result of the operation.</returns>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.show?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IFind.Execute">
+            <summary>
+            Executes the file search.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.execute?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IFind.Load(System.String)">
+            <summary>
+            Loads a saved search query.
+            </summary>
+            <param name="bstrQueryName">The `bstrQueryName` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.load?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IFind.Save(System.String)">
+            <summary>
+            Saves the current search query.
+            </summary>
+            <param name="bstrQueryName">The `bstrQueryName` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.save?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IFind.Delete(System.String)">
+            <summary>
+            Deletes a saved search query.
+            </summary>
+            <param name="bstrQueryName">The `bstrQueryName` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.delete?view=office-pia"/>
+        </member>
         <member name="T:DocumentModel.Interop.Core.IFont2">
             <summary>
             Contains font attributes for an object, such as name, size, style, and color.
@@ -19443,737 +20175,122 @@
             <returns>The result of the operation.</returns>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlprojectitems.item?view=office-pia"/>
         </member>
-        <member name="T:DocumentModel.Interop.Core.IAccessible">
+        <member name="T:DocumentModel.Interop.Core.ILanguageSettings">
             <summary>
-            Reserved for internal use.
+            Represents language settings used by the Office application.
             </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible?view=office-pia"/>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.languagesettings?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.IAccessible.Parent">
+        <member name="P:DocumentModel.Interop.Core.ILanguageSettings.LanguageID">
             <summary>
-            Gets the parent essible object.
+            Gets the `LanguageID` property.
             </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accparent?view=office-pia"/>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.languagesettings.languageid?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.IAccessible.ChildCount">
+        <member name="P:DocumentModel.Interop.Core.ILanguageSettings.LanguagePreferredForEditing">
             <summary>
-            Gets the number of essible child objects.
+            Gets the `LanguagePreferredForEditing` property.
             </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accchildcount?view=office-pia"/>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.languagesettings.languagepreferredforediting?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.IAccessible.Child">
+        <member name="T:DocumentModel.Interop.Core.ILegendEntries">
             <summary>
-            Gets an essible child object.
+            Represents a collection of legend entries.
             </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accchild?view=office-pia"/>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentries?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.IAccessible.Name">
+        <member name="P:DocumentModel.Interop.Core.ILegendEntries.Count">
             <summary>
-            Gets or sets the essible name of the object.
+            Gets the `Count` property.
             </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accname?view=office-pia"/>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentries.count?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.IAccessible.Value">
+        <member name="P:DocumentModel.Interop.Core.ILegendEntries.Item(System.Object)">
             <summary>
-            Gets or sets the essible value of the object.
+            Gets a legend entry by index.
             </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accvalue?view=office-pia"/>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentries.item?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.IAccessible.Description">
+        <member name="M:DocumentModel.Interop.Core.ILegendEntries.GetEnumerator">
             <summary>
-            Gets the essible description of the object.
+            Returns an enumerator that iterates through the legend entries.
             </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accdescription?view=office-pia"/>
+            <returns>An enumerator for the collection.</returns>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentries.getenumerator?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.IAccessible.Role">
+        <member name="T:DocumentModel.Interop.Core.ILegendEntry">
             <summary>
-            Gets the essible role of the object.
+            Represents a legend entry in a chart legend.
             </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accrole?view=office-pia"/>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.IAccessible.State">
+        <member name="P:DocumentModel.Interop.Core.ILegendEntry.Font">
             <summary>
-            Gets the essible state of the object.
+            Gets or sets the `Font` property.
             </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accstate?view=office-pia"/>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.font?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.IAccessible.Help">
+        <member name="P:DocumentModel.Interop.Core.ILegendEntry.Index">
             <summary>
-            Gets the help string for the essible object.
+            Gets the `Index` property.
             </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.acchelp?view=office-pia"/>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.index?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.IAccessible.HelpTopic">
+        <member name="P:DocumentModel.Interop.Core.ILegendEntry.LegendKey">
             <summary>
-            Gets the help topic identifier for the essible object.
+            Gets the `LegendKey` property.
             </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.acchelptopic?view=office-pia"/>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.legendkey?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.IAccessible.KeyboardShortcut">
+        <member name="P:DocumentModel.Interop.Core.ILegendEntry.AutoScaleFont">
             <summary>
-            Gets the keyboard shortcut for the essible object.
+            Gets or sets the `AutoScaleFont` property.
             </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.acckeyboardshortcut?view=office-pia"/>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.autoscalefont?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.IAccessible.Focus">
+        <member name="P:DocumentModel.Interop.Core.ILegendEntry.Left">
             <summary>
-            Gets the object that has keyboard focus.
+            Gets the `Left` property.
             </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accfocus?view=office-pia"/>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.left?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.IAccessible.Selection">
+        <member name="P:DocumentModel.Interop.Core.ILegendEntry.Top">
             <summary>
-            Gets the current selection.
+            Gets the `Top` property.
             </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accselection?view=office-pia"/>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.top?view=office-pia"/>
         </member>
-        <member name="P:DocumentModel.Interop.Core.IAccessible.DefaultAction">
+        <member name="P:DocumentModel.Interop.Core.ILegendEntry.Width">
             <summary>
-            Gets the default action description for the object.
+            Gets the `Width` property.
             </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accdefaultaction?view=office-pia"/>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.width?view=office-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Core.IAccessible.Select(System.Int32,System.Object)">
+        <member name="P:DocumentModel.Interop.Core.ILegendEntry.Height">
             <summary>
-            Selects the specified essible child object.
+            Gets the `Height` property.
             </summary>
-            <param name="flagsSelect">The `flagsSelect` parameter.</param>
-            <param name="varChild">The `varChild` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accselect?view=office-pia"/>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.height?view=office-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Core.IAccessible.Location(System.Int32@,System.Int32@,System.Int32@,System.Int32@,System.Object)">
+        <member name="P:DocumentModel.Interop.Core.ILegendEntry.Format">
             <summary>
-            Retrieves the screen coordinates and size of the specified essible child object.
+            Gets the `Format` property.
             </summary>
-            <param name="pxLeft">The `pxLeft` parameter.</param>
-            <param name="pyTop">The `pyTop` parameter.</param>
-            <param name="pcxWidth">The `pcxWidth` parameter.</param>
-            <param name="pcyHeight">The `pcyHeight` parameter.</param>
-            <param name="varChild">The `varChild` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.acclocation?view=office-pia"/>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.format?view=office-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Core.IAccessible.Navigate(System.Int32,System.Object)">
+        <member name="M:DocumentModel.Interop.Core.ILegendEntry.Delete">
             <summary>
-            Navigates to another essible object from the specified starting object.
-            </summary>
-            <param name="navDir">The `navDir` parameter.</param>
-            <param name="varStart">The `varStart` parameter.</param>
-            <returns>The result of the operation.</returns>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accnavigate?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IAccessible.HitTest(System.Int32,System.Int32)">
-            <summary>
-            Retrieves the essible object at the specified screen coordinates.
-            </summary>
-            <param name="xLeft">The `xLeft` parameter.</param>
-            <param name="yTop">The `yTop` parameter.</param>
-            <returns>The result of the operation.</returns>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.acchittest?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IAccessible.DoDefaultAction(System.Object)">
-            <summary>
-            Performs the default action on the specified essible child object.
-            </summary>
-            <param name="varChild">The `varChild` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accdodefaultaction?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.IAssistance">
-            <summary>
-            Represents the Microsoft Office Help Viewer assistance interface.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iassistance?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IAssistance.ShowHelp(System.String,System.String)">
-            <summary>
-            Displays a Help topic in the Office Help Viewer.
-            </summary>
-            <param name="HelpId">The `HelpId` parameter.</param>
-            <param name="Scope">The `Scope` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iassistance.showhelp?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IAssistance.SearchHelp(System.String,System.String)">
-            <summary>
-            Searches Help content in the Office Help Viewer.
-            </summary>
-            <param name="Query">The `Query` parameter.</param>
-            <param name="Scope">The `Scope` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iassistance.searchhelp?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IAssistance.SetDefaultContext(System.String)">
-            <summary>
-            Sets the default Help context.
-            </summary>
-            <param name="HelpId">The `HelpId` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iassistance.setdefaultcontext?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IAssistance.ClearDefaultContext(System.String)">
-            <summary>
-            Clears a default Help context.
-            </summary>
-            <param name="HelpId">The `HelpId` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iassistance.cleardefaultcontext?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.IBlogExtensibility">
-            <summary>
-            Provides the ability to manipulate blog entries.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IBlogExtensibility.BlogProviderProperties(System.String@,System.String@,DocumentModel.Interop.Core.BlogCategorySupport@,System.Boolean@)">
-            <summary>
-            Contains information about the blog provider.
-            </summary>
-            <param name="BlogProvider">The `BlogProvider` parameter.</param>
-            <param name="FriendlyName">The `FriendlyName` parameter.</param>
-            <param name="CategorySupport">The `CategorySupport` parameter.</param>
-            <param name="Padding">The `Padding` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.blogproviderproperties?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IBlogExtensibility.SetupBlogAccount(System.String,System.Int32,System.Object,System.Boolean,System.Boolean@)">
-            <summary>
-            Sets up a provider account from the account selection dialogs.
-            </summary>
-            <param name="Account">The `Account` parameter.</param>
-            <param name="ParentWindow">The `ParentWindow` parameter.</param>
-            <param name="Document">The `Document` parameter.</param>
-            <param name="NewAccount">The `NewAccount` parameter.</param>
-            <param name="ShowPictureUI">The `ShowPictureUI` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.setupblogaccount?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IBlogExtensibility.GetUserBlogs(System.String,System.Int32,System.Object,System.Array@,System.Array@,System.Array@)">
-            <summary>
-            Returns the list and details of user blogs associated with the specified account.
-            </summary>
-            <param name="Account">The `Account` parameter.</param>
-            <param name="ParentWindow">The `ParentWindow` parameter.</param>
-            <param name="Document">The `Document` parameter.</param>
-            <param name="BlogNames">The `BlogNames` parameter.</param>
-            <param name="BlogIDs">The `BlogIDs` parameter.</param>
-            <param name="BlogURLs">The `BlogURLs` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.getuserblogs?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IBlogExtensibility.GetRecentPosts(System.String,System.Int32,System.Object,System.Array@,System.Array@,System.Array@)">
-            <summary>
-            Returns recent blog posts for display in the Open Existing Post dialog.
-            </summary>
-            <param name="Account">The `Account` parameter.</param>
-            <param name="ParentWindow">The `ParentWindow` parameter.</param>
-            <param name="Document">The `Document` parameter.</param>
-            <param name="PostTitles">The `PostTitles` parameter.</param>
-            <param name="PostDates">The `PostDates` parameter.</param>
-            <param name="PostIDs">The `PostIDs` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.getrecentposts?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IBlogExtensibility.Open(System.String,System.String,System.Int32,System.String@,System.String@,System.String@,System.Array@)">
-            <summary>
-            Opens the blog post specified by the post identifier.
-            </summary>
-            <param name="Account">The `Account` parameter.</param>
-            <param name="PostID">The `PostID` parameter.</param>
-            <param name="ParentWindow">The `ParentWindow` parameter.</param>
-            <param name="xHTML">The `xHTML` parameter.</param>
-            <param name="Title">The `Title` parameter.</param>
-            <param name="DatePosted">The `DatePosted` parameter.</param>
-            <param name="Categories">The `Categories` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.open?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IBlogExtensibility.PublishPost(System.String,System.Int32,System.Object,System.String,System.String,System.String,System.Array,System.Boolean,System.String@,System.String@)">
-            <summary>
-            Hands off the current post so it can be published by the provider.
-            </summary>
-            <param name="Account">The `Account` parameter.</param>
-            <param name="ParentWindow">The `ParentWindow` parameter.</param>
-            <param name="Document">The `Document` parameter.</param>
-            <param name="xHTML">The `xHTML` parameter.</param>
-            <param name="Title">The `Title` parameter.</param>
-            <param name="DateTime">The `DateTime` parameter.</param>
-            <param name="Categories">The `Categories` parameter.</param>
-            <param name="Draft">The `Draft` parameter.</param>
-            <param name="PostID">The `PostID` parameter.</param>
-            <param name="PublishMessage">The `PublishMessage` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.publishpost?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IBlogExtensibility.RepublishPost(System.String,System.Int32,System.Object,System.String,System.String,System.String,System.String,System.Array,System.Boolean,System.String@)">
-            <summary>
-            Hands off an existing post so it can be republished by the provider.
-            </summary>
-            <param name="Account">The `Account` parameter.</param>
-            <param name="ParentWindow">The `ParentWindow` parameter.</param>
-            <param name="Document">The `Document` parameter.</param>
-            <param name="PostID">The `PostID` parameter.</param>
-            <param name="xHTML">The `xHTML` parameter.</param>
-            <param name="Title">The `Title` parameter.</param>
-            <param name="DateTime">The `DateTime` parameter.</param>
-            <param name="Categories">The `Categories` parameter.</param>
-            <param name="Draft">The `Draft` parameter.</param>
-            <param name="PublishMessage">The `PublishMessage` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.republishpost?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IBlogExtensibility.GetCategories(System.String,System.Int32,System.Object,System.Array@)">
-            <summary>
-            Returns the list of blog categories for an account.
-            </summary>
-            <param name="Account">The `Account` parameter.</param>
-            <param name="ParentWindow">The `ParentWindow` parameter.</param>
-            <param name="Document">The `Document` parameter.</param>
-            <param name="Categories">The `Categories` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.getcategories?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.IBlogPictureExtensibility">
-            <summary>
-            Provides the ability to manipulate blog images.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogpictureextensibility?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IBlogPictureExtensibility.BlogPictureProviderProperties(System.String@,System.String@)">
-            <summary>
-            Enables picture providers to offer themselves as an upload location for blog pictures.
-            </summary>
-            <param name="BlogPictureProvider">The `BlogPictureProvider` parameter.</param>
-            <param name="FriendlyName">The `FriendlyName` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogpictureextensibility.blogpictureproviderproperties?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IBlogPictureExtensibility.CreatePictureAccount(System.String,System.String,System.Int32,System.Object)">
-            <summary>
-            Displays the UI needed to guide the user through picture account setup.
-            </summary>
-            <param name="Account">The `Account` parameter.</param>
-            <param name="BlogProvider">The `BlogProvider` parameter.</param>
-            <param name="ParentWindow">The `ParentWindow` parameter.</param>
-            <param name="Document">The `Document` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogpictureextensibility.createpictureaccount?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IBlogPictureExtensibility.PublishPicture(System.String,System.Int32,System.Object,System.Object,System.String@,System.Int32)">
-            <summary>
-            Posts a picture object to its final destination in a blog.
-            </summary>
-            <param name="Account">The `Account` parameter.</param>
-            <param name="ParentWindow">The `ParentWindow` parameter.</param>
-            <param name="Document">The `Document` parameter.</param>
-            <param name="Image">The `Image` parameter.</param>
-            <param name="PictureURI">The `PictureURI` parameter.</param>
-            <param name="ImageType">The `ImageType` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogpictureextensibility.publishpicture?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.IConverter">
-            <summary>
-            Defines methods used by Office document converters.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IConverter.HrInitConverter(DocumentModel.Interop.Core.IConverterApplicationPreferences,DocumentModel.Interop.Core.IConverterPreferences@,DocumentModel.Interop.Core.IConverterUICallback)">
-            <summary>
-            Initializes the converter.
-            </summary>
-            <param name="pcap">The `pcap` parameter.</param>
-            <param name="ppcp">The `ppcp` parameter.</param>
-            <param name="pcuic">The `pcuic` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrinitconverter?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IConverter.HrUninitConverter(DocumentModel.Interop.Core.IConverterUICallback)">
-            <summary>
-            Uninitializes the converter.
-            </summary>
-            <param name="pcuic">The `pcuic` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hruninitconverter?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IConverter.HrImport(System.String,System.String,DocumentModel.Interop.Core.IConverterApplicationPreferences,DocumentModel.Interop.Core.IConverterPreferences@,DocumentModel.Interop.Core.IConverterUICallback)">
-            <summary>
-            Imports content from a source path to a destination path.
-            </summary>
-            <param name="bstrSourcePath">The `bstrSourcePath` parameter.</param>
-            <param name="bstrDestPath">The `bstrDestPath` parameter.</param>
-            <param name="pcap">The `pcap` parameter.</param>
-            <param name="ppcp">The `ppcp` parameter.</param>
-            <param name="pcuic">The `pcuic` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrimport?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IConverter.HrExport(System.String,System.String,System.String,DocumentModel.Interop.Core.IConverterApplicationPreferences,DocumentModel.Interop.Core.IConverterPreferences@,DocumentModel.Interop.Core.IConverterUICallback)">
-            <summary>
-            Exports content from a source path to a destination path.
-            </summary>
-            <param name="bstrSourcePath">The `bstrSourcePath` parameter.</param>
-            <param name="bstrDestPath">The `bstrDestPath` parameter.</param>
-            <param name="bstrClass">The `bstrClass` parameter.</param>
-            <param name="pcap">The `pcap` parameter.</param>
-            <param name="ppcp">The `ppcp` parameter.</param>
-            <param name="pcuic">The `pcuic` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrexport?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IConverter.HrGetFormat(System.String,System.String@,DocumentModel.Interop.Core.IConverterApplicationPreferences,DocumentModel.Interop.Core.IConverterPreferences@,DocumentModel.Interop.Core.IConverterUICallback)">
-            <summary>
-            Retrieves the converter format class for the specified path.
-            </summary>
-            <param name="bstrPath">The `bstrPath` parameter.</param>
-            <param name="pbstrClass">The `pbstrClass` parameter.</param>
-            <param name="pcap">The `pcap` parameter.</param>
-            <param name="ppcp">The `ppcp` parameter.</param>
-            <param name="pcuic">The `pcuic` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrgetformat?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IConverter.HrGetErrorString(System.Int32,System.String@,DocumentModel.Interop.Core.IConverterApplicationPreferences)">
-            <summary>
-            Retrieves an error message string for an error code.
-            </summary>
-            <param name="hrErr">The `hrErr` parameter.</param>
-            <param name="pbstrErrorMsg">The `pbstrErrorMsg` parameter.</param>
-            <param name="pcap">The `pcap` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverter.hrgeterrorstring?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.IConverterApplicationPreferences">
-            <summary>
-            Defines application preferences used by Office document converters.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterapplicationpreferences?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IConverterApplicationPreferences.HrGetLcid(System.UInt32@)">
-            <summary>
-            Gets the current locale identifier.
-            </summary>
-            <param name="plcid">The `plcid` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterapplicationpreferences.hrgetlcid?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IConverterApplicationPreferences.HrGetHwnd(System.Int32@)">
-            <summary>
-            Gets the host application window handle.
-            </summary>
-            <param name="phwnd">The `phwnd` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterapplicationpreferences.hrgethwnd?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IConverterApplicationPreferences.HrGetApplication(System.String@)">
-            <summary>
-            Gets the host application name.
-            </summary>
-            <param name="pbstrApplication">The `pbstrApplication` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterapplicationpreferences.hrgetapplication?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IConverterApplicationPreferences.HrCheckFormat(System.Int32@)">
-            <summary>
-            Gets format-related information for the converter.
-            </summary>
-            <param name="pFormat">The `pFormat` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterapplicationpreferences.hrcheckformat?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.IConverterPreferences">
-            <summary>
-            Defines converter-specific preferences for Office document converters.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterpreferences?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IConverterPreferences.HrGetMacroEnabled(System.Int32@)">
-            <summary>
-            Gets whether macros are enabled.
-            </summary>
-            <param name="pfMacroEnabled">The `pfMacroEnabled` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterpreferences.hrgetmacroenabled?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IConverterPreferences.HrCheckFormat(System.Int32@)">
-            <summary>
-            Gets format-related preference information.
-            </summary>
-            <param name="pFormat">The `pFormat` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterpreferences.hrcheckformat?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IConverterPreferences.HrGetLossySave(System.Int32@)">
-            <summary>
-            Gets whether lossy save is enabled.
-            </summary>
-            <param name="pfLossySave">The `pfLossySave` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverterpreferences.hrgetlossysave?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.IConverterUICallback">
-            <summary>
-            Defines UI callback methods for Office document converters.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverteruicallback?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IConverterUICallback.HrReportProgress(System.UInt32)">
-            <summary>
-            Reports conversion progress.
-            </summary>
-            <param name="uPercentComplete">The `uPercentComplete` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverteruicallback.hrreportprogress?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IConverterUICallback.HrMessageBox(System.String,System.String,System.UInt32,System.Int32@)">
-            <summary>
-            Displays a message box through the host UI.
-            </summary>
-            <param name="bstrText">The `bstrText` parameter.</param>
-            <param name="bstrCaption">The `bstrCaption` parameter.</param>
-            <param name="uType">The `uType` parameter.</param>
-            <param name="pidResult">The `pidResult` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverteruicallback.hrmessagebox?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IConverterUICallback.HrInputBox(System.String,System.String,System.String@,System.Int32)">
-            <summary>
-            Displays an input box through the host UI.
-            </summary>
-            <param name="bstrText">The `bstrText` parameter.</param>
-            <param name="bstrCaption">The `bstrCaption` parameter.</param>
-            <param name="pbstrInput">The `pbstrInput` parameter.</param>
-            <param name="fPassword">The `fPassword` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iconverteruicallback.hrinputbox?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.ICTPFactory">
-            <summary>
-            Used to create a custom task pane.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ictpfactory?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.ICTPFactory.CreateCTP(System.String,System.String,System.Object)">
-            <summary>
-            Creates an instance of a custom task pane.
-            </summary>
-            <param name="CTPAxID">The `CTPAxID` parameter.</param>
-            <param name="CTPTitle">The `CTPTitle` parameter.</param>
-            <param name="CTPParentWindow">The `CTPParentWindow` parameter.</param>
-            <returns>The created custom task pane.</returns>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ictpfactory.createctp?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.ICustomTaskPaneConsumer">
-            <summary>
-            Provides access to creating custom task panes.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomtaskpaneconsumer?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.ICustomTaskPaneConsumer.CTPFactoryAvailable(DocumentModel.Interop.Core.ICTPFactory)">
-            <summary>
-            Passes an `ICTPFactory` object that can be used to create a custom task pane.
-            </summary>
-            <param name="CTPFactoryInst">The `CTPFactoryInst` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomtaskpaneconsumer.ctpfactoryavailable?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.ICustomXMLPartEvents">
-            <summary>
-            Events interface for `CustomXMLPart` object events.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.ICustomXMLPartEvents.NodeAfterInsert(DocumentModel.Interop.Core.ICustomXMLNode,System.Boolean)">
-            <summary>
-            Raised after a custom XML node is inserted.
-            </summary>
-            <param name="NewNode">The `NewNode` parameter.</param>
-            <param name="InUndoRedo">The `InUndoRedo` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents.nodeafterinsert?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.ICustomXMLPartEvents.NodeAfterDelete(DocumentModel.Interop.Core.ICustomXMLNode,DocumentModel.Interop.Core.ICustomXMLNode,DocumentModel.Interop.Core.ICustomXMLNode,System.Boolean)">
-            <summary>
-            Raised after a custom XML node is deleted.
-            </summary>
-            <param name="OldNode">The `OldNode` parameter.</param>
-            <param name="OldParentNode">The `OldParentNode` parameter.</param>
-            <param name="OldNextSibling">The `OldNextSibling` parameter.</param>
-            <param name="InUndoRedo">The `InUndoRedo` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents.nodeafterdelete?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.ICustomXMLPartEvents.NodeAfterReplace(DocumentModel.Interop.Core.ICustomXMLNode,DocumentModel.Interop.Core.ICustomXMLNode,System.Boolean)">
-            <summary>
-            Raised after a custom XML node is replaced.
-            </summary>
-            <param name="OldNode">The `OldNode` parameter.</param>
-            <param name="NewNode">The `NewNode` parameter.</param>
-            <param name="InUndoRedo">The `InUndoRedo` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents.nodeafterreplace?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.ICustomXMLPartsEvents">
-            <summary>
-            Events interface for `CustomXMLParts` object events.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartsevents?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.ICustomXMLPartsEvents.PartAfterAdd(DocumentModel.Interop.Core.ICustomXMLPart)">
-            <summary>
-            Raised after a custom XML part is added.
-            </summary>
-            <param name="NewPart">The `NewPart` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartsevents.partafteradd?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.ICustomXMLPartsEvents.PartBeforeDelete(DocumentModel.Interop.Core.ICustomXMLPart)">
-            <summary>
-            Raised before a custom XML part is deleted.
-            </summary>
-            <param name="OldPart">The `OldPart` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartsevents.partbeforedelete?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.ICustomXMLPartsEvents.PartAfterLoad(DocumentModel.Interop.Core.ICustomXMLPart)">
-            <summary>
-            Raised after a custom XML part is loaded.
-            </summary>
-            <param name="Part">The `Part` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartsevents.partafterload?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.IFind">
-            <summary>
-            Provides file search functionality.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.SearchPath">
-            <summary>
-            Gets or sets the `SearchPath` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.searchpath?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.Name">
-            <summary>
-            Gets or sets the `Name` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.name?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.SubDir">
-            <summary>
-            Gets or sets the `SubDir` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.subdir?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.Title">
-            <summary>
-            Gets or sets the `Title` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.title?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.Author">
-            <summary>
-            Gets or sets the `Author` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.author?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.Keywords">
-            <summary>
-            Gets or sets the `Keywords` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.keywords?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.Subject">
-            <summary>
-            Gets or sets the `Subject` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.subject?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.Options">
-            <summary>
-            Gets or sets the `Options` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.options?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.MatchCase">
-            <summary>
-            Gets or sets the `MatchCase` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.matchcase?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.Text">
-            <summary>
-            Gets or sets the `Text` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.text?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.PatternMatch">
-            <summary>
-            Gets or sets the `PatternMatch` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.patternmatch?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.DateSavedFrom">
-            <summary>
-            Gets or sets the `DateSavedFrom` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.datesavedfrom?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.DateSavedTo">
-            <summary>
-            Gets or sets the `DateSavedTo` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.datesavedto?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.SavedBy">
-            <summary>
-            Gets or sets the `SavedBy` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.savedby?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.DateCreatedFrom">
-            <summary>
-            Gets or sets the `DateCreatedFrom` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.datecreatedfrom?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.DateCreatedTo">
-            <summary>
-            Gets or sets the `DateCreatedTo` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.datecreatedto?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.View">
-            <summary>
-            Gets or sets the `View` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.view?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.SortBy">
-            <summary>
-            Gets or sets the `SortBy` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.sortby?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.ListBy">
-            <summary>
-            Gets or sets the `ListBy` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.listby?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.SelectedFile">
-            <summary>
-            Gets or sets the `SelectedFile` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.selectedfile?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.Results">
-            <summary>
-            Gets the `Results` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.results?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IFind.FileType">
-            <summary>
-            Gets or sets the `FileType` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.filetype?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IFind.Show">
-            <summary>
-            Displays the Find dialog.
+            Deletes the legend entry.
             </summary>
             <returns>The result of the operation.</returns>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.show?view=office-pia"/>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.delete?view=office-pia"/>
         </member>
-        <member name="M:DocumentModel.Interop.Core.IFind.Execute">
+        <member name="M:DocumentModel.Interop.Core.ILegendEntry.Select">
             <summary>
-            Executes the file search.
+            Selects the legend entry.
             </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.execute?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IFind.Load(System.String)">
-            <summary>
-            Loads a saved search query.
-            </summary>
-            <param name="bstrQueryName">The `bstrQueryName` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.load?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IFind.Save(System.String)">
-            <summary>
-            Saves the current search query.
-            </summary>
-            <param name="bstrQueryName">The `bstrQueryName` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.save?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IFind.Delete(System.String)">
-            <summary>
-            Deletes a saved search query.
-            </summary>
-            <param name="bstrQueryName">The `bstrQueryName` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.delete?view=office-pia"/>
+            <returns>The result of the operation.</returns>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.select?view=office-pia"/>
         </member>
         <member name="T:DocumentModel.Interop.Core.ILicAgent">
             <summary>
@@ -21090,6 +21207,190 @@
             </summary>
             <returns>The result of the operation.</returns>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.getconnectedstate?view=office-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Core.ILineFormat">
+            <summary>
+            Represents line formatting for a shape.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.ILineFormat.BackColor">
+            <summary>
+            Gets or sets the `BackColor` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.backcolor?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.ILineFormat.BeginArrowheadLength">
+            <summary>
+            Gets or sets the `BeginArrowheadLength` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.beginarrowheadlength?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.ILineFormat.BeginArrowheadStyle">
+            <summary>
+            Gets or sets the `BeginArrowheadStyle` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.beginarrowheadstyle?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.ILineFormat.BeginArrowheadWidth">
+            <summary>
+            Gets or sets the `BeginArrowheadWidth` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.beginarrowheadwidth?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.ILineFormat.DashStyle">
+            <summary>
+            Gets or sets the `DashStyle` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.dashstyle?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.ILineFormat.EndArrowheadLength">
+            <summary>
+            Gets or sets the `EndArrowheadLength` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.endarrowheadlength?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.ILineFormat.EndArrowheadStyle">
+            <summary>
+            Gets or sets the `EndArrowheadStyle` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.endarrowheadstyle?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.ILineFormat.EndArrowheadWidth">
+            <summary>
+            Gets or sets the `EndArrowheadWidth` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.endarrowheadwidth?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.ILineFormat.ForeColor">
+            <summary>
+            Gets or sets the `ForeColor` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.forecolor?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.ILineFormat.Pattern">
+            <summary>
+            Gets or sets the `Pattern` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.pattern?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.ILineFormat.Style">
+            <summary>
+            Gets or sets the `Style` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.style?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.ILineFormat.Transparency">
+            <summary>
+            Gets or sets the `Transparency` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.transparency?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.ILineFormat.Visible">
+            <summary>
+            Gets or sets the `Visible` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.visible?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.ILineFormat.Weight">
+            <summary>
+            Gets or sets the `Weight` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.weight?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.ILineFormat.InsetPen">
+            <summary>
+            Gets or sets the `InsetPen` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.insetpen?view=office-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Core.IMetaProperties">
+            <summary>
+            Represents a collection of metadata properties.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMetaProperties.ValidationError">
+            <summary>
+            Gets the `ValidationError` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties.validationerror?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMetaProperties.SchemaXml">
+            <summary>
+            Gets the `SchemaXml` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties.schemaxml?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IMetaProperties.GetItemByInternalName(System.String)">
+            <summary>
+            Gets a metadata property by its internal name.
+            </summary>
+            <param name="InternalName">The `InternalName` parameter.</param>
+            <returns>The matching metadata property.</returns>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties.getitembyinternalname?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IMetaProperties.Validate">
+            <summary>
+            Validates all metadata properties.
+            </summary>
+            <returns>The validation error message, if any.</returns>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties.validate?view=office-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Core.IMetaProperty">
+            <summary>
+            Represents a metadata property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMetaProperty.Value">
+            <summary>
+            Gets or sets the `Value` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.value?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMetaProperty.Name">
+            <summary>
+            Gets the `Name` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.name?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMetaProperty.Id">
+            <summary>
+            Gets the `Id` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.id?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMetaProperty.IsReadOnly">
+            <summary>
+            Gets the `IsReadOnly` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.isreadonly?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMetaProperty.IsRequired">
+            <summary>
+            Gets the `IsRequired` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.isrequired?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMetaProperty.Type">
+            <summary>
+            Gets the `Type` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.type?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMetaProperty.ValidationError">
+            <summary>
+            Gets the `ValidationError` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.validationerror?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IMetaProperty.Validate">
+            <summary>
+            Validates the metadata property value.
+            </summary>
+            <returns>The validation error message, if any.</returns>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.validate?view=office-pia"/>
         </member>
         <member name="T:DocumentModel.Interop.Core.IMsoAxis">
             <summary>
@@ -23494,6 +23795,161 @@
             </summary>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatatable.delete?view=office-pia"/>
         </member>
+        <member name="T:DocumentModel.Interop.Core.IMsoDebugOptions">
+            <summary>
+            Represents debug options for Office.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions.FeatureReports">
+            <summary>
+            Gets or sets the `FeatureReports` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.featurereports?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions.OutputToDebugger">
+            <summary>
+            Gets or sets the `OutputToDebugger` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.outputtodebugger?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions.OutputToFile">
+            <summary>
+            Gets or sets the `OutputToFile` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.outputtofile?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions.OutputToMessageBox">
+            <summary>
+            Gets or sets the `OutputToMessageBox` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.outputtomessagebox?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions.UnitTestManager">
+            <summary>
+            Gets the `UnitTestManager` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.unittestmanager?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IMsoDebugOptions.AddIgnoredAssertTag(System.String)">
+            <summary>
+            Adds an assert tag to ignore.
+            </summary>
+            <param name="bstrTagToIgnore">The `bstrTagToIgnore` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.addignoredasserttag?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IMsoDebugOptions.RemoveIgnoredAssertTag(System.String)">
+            <summary>
+            Removes an ignored assert tag.
+            </summary>
+            <param name="bstrTagToIgnore">The `bstrTagToIgnore` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.removeignoredasserttag?view=office-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Core.IMsoDebugOptions_UT">
+            <summary>
+            Represents a debug unit test.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_ut?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions_UT.Name">
+            <summary>
+            Gets the `Name` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_ut.name?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions_UT.CollectionName">
+            <summary>
+            Gets the `CollectionName` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_ut.collectionname?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IMsoDebugOptions_UT.Run">
+            <summary>
+            Runs the unit test.
+            </summary>
+            <returns>The unit test run result.</returns>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_ut.run?view=office-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Core.IMsoDebugOptions_UTManager">
+            <summary>
+            Manages debug unit tests.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utmanager?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions_UTManager.UnitTests">
+            <summary>
+            Gets or sets the `UnitTests` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utmanager.unittests?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions_UTManager.ReportErrors">
+            <summary>
+            Gets or sets the `ReportErrors` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utmanager.reporterrors?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IMsoDebugOptions_UTManager.NotifyStartOfTestSuiteRun">
+            <summary>
+            Notifies the start of a unit test suite run.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utmanager.notifystartoftestsuiterun?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IMsoDebugOptions_UTManager.NotifyEndOfTestSuiteRun">
+            <summary>
+            Notifies the end of a unit test suite run.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utmanager.notifyendoftestsuiterun?view=office-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Core.IMsoDebugOptions_UTRunResult">
+            <summary>
+            Represents the result of a debug unit test run.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utrunresult?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions_UTRunResult.Passed">
+            <summary>
+            Gets the `Passed` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utrunresult.passed?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions_UTRunResult.ErrorString">
+            <summary>
+            Gets the `ErrorString` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utrunresult.errorstring?view=office-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Core.IMsoDebugOptions_UTs">
+            <summary>
+            Represents a collection of debug unit tests.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_uts?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IMsoDebugOptions_UTs.GetUnitTestsInCollection(System.String)">
+            <summary>
+            Gets unit tests in a specific collection.
+            </summary>
+            <param name="bstrCollectionName">The `bstrCollectionName` parameter.</param>
+            <returns>The matching unit tests.</returns>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_uts.getunittestsincollection?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IMsoDebugOptions_UTs.GetUnitTest(System.String,System.String)">
+            <summary>
+            Gets a specific unit test by collection and test name.
+            </summary>
+            <param name="bstrCollectionName">The `bstrCollectionName` parameter.</param>
+            <param name="bstrUnitTestName">The `bstrUnitTestName` parameter.</param>
+            <returns>The matching unit test.</returns>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_uts.getunittest?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IMsoDebugOptions_UTs.GetMatchingUnitTestsInCollection(System.String,System.String)">
+            <summary>
+            Gets unit tests in a collection that match a name filter.
+            </summary>
+            <param name="bstrCollectionName">The `bstrCollectionName` parameter.</param>
+            <param name="bstrUnitTestNameFilter">The `bstrUnitTestNameFilter` parameter.</param>
+            <returns>The matching unit tests.</returns>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_uts.getmatchingunittestsincollection?view=office-pia"/>
+        </member>
         <member name="T:DocumentModel.Interop.Core.IMsoDiagram">
             <summary>
             Reserved for internal use.
@@ -23824,6 +24280,12 @@
             Deletes the drop lines.
             </summary>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodroplines.delete?view=office-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Core.IMsoEnvelope">
+            <summary>
+            Represents the email envelope used to send documents from Office.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoenvelope?view=office-pia"/>
         </member>
         <member name="T:DocumentModel.Interop.Core.IMsoEnvelopeVB">
             <summary>
@@ -25293,560 +25755,6 @@
             </summary>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsowalls.paste?view=office-pia"/>
         </member>
-        <member name="T:DocumentModel.Interop.Core.IRibbonControl">
-            <summary>
-            Represents the object passed into each Ribbon UI control callback procedure.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribboncontrol?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IRibbonControl.Id">
-            <summary>
-            Gets the `Id` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribboncontrol.id?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IRibbonControl.Context">
-            <summary>
-            Gets the `Context` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribboncontrol.context?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IRibbonControl.Tag">
-            <summary>
-            Gets the `Tag` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribboncontrol.tag?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.IRibbonExtensibility">
-            <summary>
-            Defines how the Ribbon UI communicates with a COM add-in to customize the UI.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonextensibility?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IRibbonExtensibility.GetCustomUI(System.String)">
-            <summary>
-            Loads the XML markup that customizes the Ribbon UI.
-            </summary>
-            <param name="RibbonID">The `RibbonID` parameter.</param>
-            <returns>The custom Ribbon UI XML markup.</returns>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonextensibility.getcustomui?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.IRibbonUI">
-            <summary>
-            Represents the Ribbon UI object returned by the `onLoad` procedure.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IRibbonUI.Invalidate">
-            <summary>
-            Invalidates cached values for all Ribbon controls.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui.invalidate?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IRibbonUI.InvalidateControl(System.String)">
-            <summary>
-            Invalidates the cached value for a specific Ribbon control.
-            </summary>
-            <param name="ControlID">The `ControlID` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui.invalidatecontrol?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IRibbonUI.InvalidateControlMso(System.String)">
-            <summary>
-            Invalidates a built-in Ribbon control.
-            </summary>
-            <param name="ControlID">The `ControlID` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui.invalidatecontrolmso?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IRibbonUI.ActivateTab(System.String)">
-            <summary>
-            Activates the specified custom tab.
-            </summary>
-            <param name="ControlID">The `ControlID` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui.activatetab?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IRibbonUI.ActivateTabMso(System.String)">
-            <summary>
-            Activates the specified built-in tab.
-            </summary>
-            <param name="ControlID">The `ControlID` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui.activatetabmso?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IRibbonUI.ActivateTabQ(System.String,System.String)">
-            <summary>
-            Activates a specified custom tab using its qualified name.
-            </summary>
-            <param name="ControlID">The `ControlID` parameter.</param>
-            <param name="Namespace">The `Namespace` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui.activatetabq?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.ILanguageSettings">
-            <summary>
-            Represents language settings used by the Office application.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.languagesettings?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILanguageSettings.LanguageID">
-            <summary>
-            Gets the `LanguageID` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.languagesettings.languageid?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILanguageSettings.LanguagePreferredForEditing">
-            <summary>
-            Gets the `LanguagePreferredForEditing` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.languagesettings.languagepreferredforediting?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.ILegendEntries">
-            <summary>
-            Represents a collection of legend entries.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentries?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILegendEntries.Count">
-            <summary>
-            Gets the `Count` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentries.count?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILegendEntries.Item(System.Object)">
-            <summary>
-            Gets a legend entry by index.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentries.item?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.ILegendEntries.GetEnumerator">
-            <summary>
-            Returns an enumerator that iterates through the legend entries.
-            </summary>
-            <returns>An enumerator for the collection.</returns>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentries.getenumerator?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.ILegendEntry">
-            <summary>
-            Represents a legend entry in a chart legend.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILegendEntry.Font">
-            <summary>
-            Gets or sets the `Font` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.font?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILegendEntry.Index">
-            <summary>
-            Gets the `Index` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.index?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILegendEntry.LegendKey">
-            <summary>
-            Gets the `LegendKey` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.legendkey?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILegendEntry.AutoScaleFont">
-            <summary>
-            Gets or sets the `AutoScaleFont` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.autoscalefont?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILegendEntry.Left">
-            <summary>
-            Gets the `Left` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.left?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILegendEntry.Top">
-            <summary>
-            Gets the `Top` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.top?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILegendEntry.Width">
-            <summary>
-            Gets the `Width` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.width?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILegendEntry.Height">
-            <summary>
-            Gets the `Height` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.height?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILegendEntry.Format">
-            <summary>
-            Gets the `Format` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.format?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.ILegendEntry.Delete">
-            <summary>
-            Deletes the legend entry.
-            </summary>
-            <returns>The result of the operation.</returns>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.delete?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.ILegendEntry.Select">
-            <summary>
-            Selects the legend entry.
-            </summary>
-            <returns>The result of the operation.</returns>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.select?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.ILineFormat">
-            <summary>
-            Represents line formatting for a shape.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILineFormat.BackColor">
-            <summary>
-            Gets or sets the `BackColor` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.backcolor?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILineFormat.BeginArrowheadLength">
-            <summary>
-            Gets or sets the `BeginArrowheadLength` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.beginarrowheadlength?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILineFormat.BeginArrowheadStyle">
-            <summary>
-            Gets or sets the `BeginArrowheadStyle` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.beginarrowheadstyle?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILineFormat.BeginArrowheadWidth">
-            <summary>
-            Gets or sets the `BeginArrowheadWidth` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.beginarrowheadwidth?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILineFormat.DashStyle">
-            <summary>
-            Gets or sets the `DashStyle` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.dashstyle?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILineFormat.EndArrowheadLength">
-            <summary>
-            Gets or sets the `EndArrowheadLength` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.endarrowheadlength?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILineFormat.EndArrowheadStyle">
-            <summary>
-            Gets or sets the `EndArrowheadStyle` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.endarrowheadstyle?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILineFormat.EndArrowheadWidth">
-            <summary>
-            Gets or sets the `EndArrowheadWidth` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.endarrowheadwidth?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILineFormat.ForeColor">
-            <summary>
-            Gets or sets the `ForeColor` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.forecolor?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILineFormat.Pattern">
-            <summary>
-            Gets or sets the `Pattern` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.pattern?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILineFormat.Style">
-            <summary>
-            Gets or sets the `Style` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.style?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILineFormat.Transparency">
-            <summary>
-            Gets or sets the `Transparency` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.transparency?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILineFormat.Visible">
-            <summary>
-            Gets or sets the `Visible` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.visible?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILineFormat.Weight">
-            <summary>
-            Gets or sets the `Weight` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.weight?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.ILineFormat.InsetPen">
-            <summary>
-            Gets or sets the `InsetPen` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.lineformat.insetpen?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.IMetaProperties">
-            <summary>
-            Represents a collection of metadata properties.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IMetaProperties.ValidationError">
-            <summary>
-            Gets the `ValidationError` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties.validationerror?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IMetaProperties.SchemaXml">
-            <summary>
-            Gets the `SchemaXml` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties.schemaxml?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IMetaProperties.GetItemByInternalName(System.String)">
-            <summary>
-            Gets a metadata property by its internal name.
-            </summary>
-            <param name="InternalName">The `InternalName` parameter.</param>
-            <returns>The matching metadata property.</returns>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties.getitembyinternalname?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IMetaProperties.Validate">
-            <summary>
-            Validates all metadata properties.
-            </summary>
-            <returns>The validation error message, if any.</returns>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties.validate?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.IMetaProperty">
-            <summary>
-            Represents a metadata property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IMetaProperty.Value">
-            <summary>
-            Gets or sets the `Value` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.value?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IMetaProperty.Name">
-            <summary>
-            Gets the `Name` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.name?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IMetaProperty.Id">
-            <summary>
-            Gets the `Id` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.id?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IMetaProperty.IsReadOnly">
-            <summary>
-            Gets the `IsReadOnly` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.isreadonly?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IMetaProperty.IsRequired">
-            <summary>
-            Gets the `IsRequired` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.isrequired?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IMetaProperty.Type">
-            <summary>
-            Gets the `Type` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.type?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IMetaProperty.ValidationError">
-            <summary>
-            Gets the `ValidationError` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.validationerror?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IMetaProperty.Validate">
-            <summary>
-            Validates the metadata property value.
-            </summary>
-            <returns>The validation error message, if any.</returns>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.validate?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.IMsoDebugOptions">
-            <summary>
-            Represents debug options for Office.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions.FeatureReports">
-            <summary>
-            Gets or sets the `FeatureReports` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.featurereports?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions.OutputToDebugger">
-            <summary>
-            Gets or sets the `OutputToDebugger` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.outputtodebugger?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions.OutputToFile">
-            <summary>
-            Gets or sets the `OutputToFile` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.outputtofile?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions.OutputToMessageBox">
-            <summary>
-            Gets or sets the `OutputToMessageBox` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.outputtomessagebox?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions.UnitTestManager">
-            <summary>
-            Gets the `UnitTestManager` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.unittestmanager?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IMsoDebugOptions.AddIgnoredAssertTag(System.String)">
-            <summary>
-            Adds an assert tag to ignore.
-            </summary>
-            <param name="bstrTagToIgnore">The `bstrTagToIgnore` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.addignoredasserttag?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IMsoDebugOptions.RemoveIgnoredAssertTag(System.String)">
-            <summary>
-            Removes an ignored assert tag.
-            </summary>
-            <param name="bstrTagToIgnore">The `bstrTagToIgnore` parameter.</param>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions.removeignoredasserttag?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.IMsoDebugOptions_UT">
-            <summary>
-            Represents a debug unit test.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_ut?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions_UT.Name">
-            <summary>
-            Gets the `Name` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_ut.name?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions_UT.CollectionName">
-            <summary>
-            Gets the `CollectionName` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_ut.collectionname?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IMsoDebugOptions_UT.Run">
-            <summary>
-            Runs the unit test.
-            </summary>
-            <returns>The unit test run result.</returns>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_ut.run?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.IMsoDebugOptions_UTManager">
-            <summary>
-            Manages debug unit tests.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utmanager?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions_UTManager.UnitTests">
-            <summary>
-            Gets or sets the `UnitTests` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utmanager.unittests?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions_UTManager.ReportErrors">
-            <summary>
-            Gets or sets the `ReportErrors` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utmanager.reporterrors?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IMsoDebugOptions_UTManager.NotifyStartOfTestSuiteRun">
-            <summary>
-            Notifies the start of a unit test suite run.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utmanager.notifystartoftestsuiterun?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IMsoDebugOptions_UTManager.NotifyEndOfTestSuiteRun">
-            <summary>
-            Notifies the end of a unit test suite run.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utmanager.notifyendoftestsuiterun?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.IMsoDebugOptions_UTRunResult">
-            <summary>
-            Represents the result of a debug unit test run.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utrunresult?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions_UTRunResult.Passed">
-            <summary>
-            Gets the `Passed` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utrunresult.passed?view=office-pia"/>
-        </member>
-        <member name="P:DocumentModel.Interop.Core.IMsoDebugOptions_UTRunResult.ErrorString">
-            <summary>
-            Gets the `ErrorString` property.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_utrunresult.errorstring?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.IMsoDebugOptions_UTs">
-            <summary>
-            Represents a collection of debug unit tests.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_uts?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IMsoDebugOptions_UTs.GetUnitTestsInCollection(System.String)">
-            <summary>
-            Gets unit tests in a specific collection.
-            </summary>
-            <param name="bstrCollectionName">The `bstrCollectionName` parameter.</param>
-            <returns>The matching unit tests.</returns>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_uts.getunittestsincollection?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IMsoDebugOptions_UTs.GetUnitTest(System.String,System.String)">
-            <summary>
-            Gets a specific unit test by collection and test name.
-            </summary>
-            <param name="bstrCollectionName">The `bstrCollectionName` parameter.</param>
-            <param name="bstrUnitTestName">The `bstrUnitTestName` parameter.</param>
-            <returns>The matching unit test.</returns>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_uts.getunittest?view=office-pia"/>
-        </member>
-        <member name="M:DocumentModel.Interop.Core.IMsoDebugOptions_UTs.GetMatchingUnitTestsInCollection(System.String,System.String)">
-            <summary>
-            Gets unit tests in a collection that match a name filter.
-            </summary>
-            <param name="bstrCollectionName">The `bstrCollectionName` parameter.</param>
-            <param name="bstrUnitTestNameFilter">The `bstrUnitTestNameFilter` parameter.</param>
-            <returns>The matching unit tests.</returns>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msodebugoptions_uts.getmatchingunittestsincollection?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core._IIMsoDispObj">
-            <summary>
-            Reserved for internal use.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._imsodispobj?view=office-pia"/>
-        </member>
-        <member name="T:DocumentModel.Interop.Core.IMsoEnvelope">
-            <summary>
-            Represents the email envelope used to send documents from Office.
-            </summary>
-            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoenvelope?view=office-pia"/>
-        </member>
         <member name="T:DocumentModel.Interop.Core.INewFile">
             <summary>
             Represents items listed on the New Item task pane.
@@ -26776,6 +26684,92 @@
             Gets or sets the blur amount applied to the reflection.
             </summary>
             <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.reflectionformat.blur?view=office-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Core.IRibbonControl">
+            <summary>
+            Represents the object passed into each Ribbon UI control callback procedure.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribboncontrol?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IRibbonControl.Id">
+            <summary>
+            Gets the `Id` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribboncontrol.id?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IRibbonControl.Context">
+            <summary>
+            Gets the `Context` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribboncontrol.context?view=office-pia"/>
+        </member>
+        <member name="P:DocumentModel.Interop.Core.IRibbonControl.Tag">
+            <summary>
+            Gets the `Tag` property.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribboncontrol.tag?view=office-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Core.IRibbonExtensibility">
+            <summary>
+            Defines how the Ribbon UI communicates with a COM add-in to customize the UI.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonextensibility?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IRibbonExtensibility.GetCustomUI(System.String)">
+            <summary>
+            Loads the XML markup that customizes the Ribbon UI.
+            </summary>
+            <param name="RibbonID">The `RibbonID` parameter.</param>
+            <returns>The custom Ribbon UI XML markup.</returns>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonextensibility.getcustomui?view=office-pia"/>
+        </member>
+        <member name="T:DocumentModel.Interop.Core.IRibbonUI">
+            <summary>
+            Represents the Ribbon UI object returned by the `onLoad` procedure.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IRibbonUI.Invalidate">
+            <summary>
+            Invalidates cached values for all Ribbon controls.
+            </summary>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui.invalidate?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IRibbonUI.InvalidateControl(System.String)">
+            <summary>
+            Invalidates the cached value for a specific Ribbon control.
+            </summary>
+            <param name="ControlID">The `ControlID` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui.invalidatecontrol?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IRibbonUI.InvalidateControlMso(System.String)">
+            <summary>
+            Invalidates a built-in Ribbon control.
+            </summary>
+            <param name="ControlID">The `ControlID` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui.invalidatecontrolmso?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IRibbonUI.ActivateTab(System.String)">
+            <summary>
+            Activates the specified custom tab.
+            </summary>
+            <param name="ControlID">The `ControlID` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui.activatetab?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IRibbonUI.ActivateTabMso(System.String)">
+            <summary>
+            Activates the specified built-in tab.
+            </summary>
+            <param name="ControlID">The `ControlID` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui.activatetabmso?view=office-pia"/>
+        </member>
+        <member name="M:DocumentModel.Interop.Core.IRibbonUI.ActivateTabQ(System.String,System.String)">
+            <summary>
+            Activates a specified custom tab using its qualified name.
+            </summary>
+            <param name="ControlID">The `ControlID` parameter.</param>
+            <param name="Namespace">The `Namespace` parameter.</param>
+            <seealso cref="!:https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui.activatetabq?view=office-pia"/>
         </member>
         <member name="T:DocumentModel.Interop.Core.IRuler2">
             <summary>
