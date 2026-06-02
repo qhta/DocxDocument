@@ -11,72 +11,72 @@ public partial interface ICommandBarControl: _IMsoOleAccDispObj
   /// Gets or sets the `accParent` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accparent?view=office-pia"/>
-  public new object accParent { get; }
+  public object Parent { get; }
   /// <summary>
   /// Gets the `accChildCount` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accchildcount?view=office-pia"/>
-  public new int accChildCount { get; }
+  public int ChildCount { get; }
   /// <summary>
   /// Gets the `accChild` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accchild?view=office-pia"/>
-  public new object accChild { get; }
+  public object Child { get; }
   /// <summary>
   /// Gets or sets the `accName` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accname?view=office-pia"/>
-  public new string accName { get; set; }
+  public string Name { get; set; }
   /// <summary>
   /// Gets or sets the `accValue` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accvalue?view=office-pia"/>
-  public new string accValue { get; set; }
+  public string Value { get; set; }
   /// <summary>
   /// Gets the `accDescription` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accdescription?view=office-pia"/>
-  public new string accDescription { get; }
+  public string Description { get; }
   /// <summary>
   /// Gets the `accRole` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accrole?view=office-pia"/>
-  public new object accRole { get; }
+  public object Role { get; }
   /// <summary>
   /// Gets the `accState` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accstate?view=office-pia"/>
-  public new object accState { get; }
+  public object State { get; }
   /// <summary>
   /// Gets the `accHelp` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.acchelp?view=office-pia"/>
-  public new string accHelp { get; }
+  public string Help { get; }
   /// <summary>
   /// Gets the `accHelpTopic` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.acchelptopic?view=office-pia"/>
-  public new int accHelpTopic { get; }
+  public int HelpTopic { get; }
   /// <summary>
   /// Gets the `accKeyboardShortcut` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.acckeyboardshortcut?view=office-pia"/>
-  public new string accKeyboardShortcut { get; }
+  public string KeyboardShortcut { get; }
   /// <summary>
   /// Gets the `accFocus` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accfocus?view=office-pia"/>
-  public new object accFocus { get; }
+  public object Focus { get; }
   /// <summary>
   /// Gets the `accSelection` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accselection?view=office-pia"/>
-  public new object accSelection { get; }
+  public object Selection { get; }
   /// <summary>
   /// Gets the `accDefaultAction` property.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.accdefaultaction?view=office-pia"/>
-  public new string accDefaultAction { get; }
+  public string DefaultAction { get; }
   /// <summary>
   /// Gets or sets the `BeginGroup` property.
   /// </summary>

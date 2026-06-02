@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Core;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible?view=office-pia"/>
-public partial class Accessible
+public partial class Accessible: IAccessible
 {
   /// <summary>
   /// Gets the parent accessible object.
