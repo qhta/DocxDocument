@@ -37,5 +37,27 @@ public partial class WebComponent
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponent.height?view=office-pia"/>
   public int Height { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Invokes `SetPlaceHolderGraphic`.
+  /// </summary>
+  /// <param name="PlaceHolderGraphic">The `PlaceHolderGraphic` parameter.</param>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponent.setplaceholdergraphic?view=office-pia"/>
+  public void SetPlaceHolderGraphic(string PlaceHolderGraphic) { throw new NotImplementedException(); }
+  /// <summary>
+  /// Invokes `Commit`.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponent.commit?view=office-pia"/>
+  public void Commit() { throw new NotImplementedException(); }
+  /// <summary>
+  /// Invokes `Revert`.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponent.revert?view=office-pia"/>
+  public void Revert() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

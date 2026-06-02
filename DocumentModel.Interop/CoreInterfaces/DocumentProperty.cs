@@ -42,4 +42,15 @@ public partial interface IDocumentProperty
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.linksource?view=office-pia"/>
   public string LinkSource { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Deletes the document property.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperty.delete?view=office-pia"/>
+  public void Delete();
+
+  #endregion methods
 }

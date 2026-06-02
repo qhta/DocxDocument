@@ -23,5 +23,21 @@ public partial class CustomXMLSchema: InteropObject
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlschema.namespaceuri?view=office-pia"/>
   public string NamespaceURI { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Deletes the schema from the collection.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlschema.delete?view=office-pia"/>
+  public void Delete() { throw new NotImplementedException(); }
+  /// <summary>
+  /// Reloads the schema from its source.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlschema.reload?view=office-pia"/>
+  public void Reload() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

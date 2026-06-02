@@ -173,4 +173,18 @@ public partial class ContentControl : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.allowinsertdeletesection?view=word-pia"/>
   public bool AllowInsertDeleteSection { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Copies the content control from the active document to the Clipboard.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrol.copy?view=word-pia"/>
+  public void Copy() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

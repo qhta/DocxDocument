@@ -9,5 +9,17 @@ namespace DocumentModel.Interop.Core;
 public partial class FullSeriesCollection: InteropCollection<MsoSeries>
 {
 
+
+
+  #region methods
+
+/// <summary>
+  /// Returns an enumerator for the full series collection.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fullseriescollection.getenumerator?view=office-pia"/>
+  public new IEnumerator GetEnumerator() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

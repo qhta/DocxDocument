@@ -47,4 +47,18 @@ public partial class Bookmark : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.storytype?view=word-pia"/>
   public StoryType StoryType { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Selects the specified Bookmark object.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmark.select?view=word-pia"/>
+  public void Select() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

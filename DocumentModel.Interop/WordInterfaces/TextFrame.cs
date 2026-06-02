@@ -132,4 +132,18 @@ public partial interface ITextFrame : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.notextrotation?view=word-pia"/>
   public Core.TriState NoTextRotation { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Breaks the forward link for the specified text frame, if such a link exists.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textframe.breakforwardlink?view=word-pia"/>
+  public void BreakForwardLink();
+
+  #endregion methods
 }

@@ -29,4 +29,18 @@ public partial class DropCap : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dropcap.distancefromtext?view=word-pia"/>
   public float DistanceFromText { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Removes the dropped capital letter formatting.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dropcap.clear?view=word-pia"/>
+  public void Clear() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

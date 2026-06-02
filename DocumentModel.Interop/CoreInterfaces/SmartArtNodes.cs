@@ -8,5 +8,17 @@ namespace DocumentModel.Interop.Core;
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnodes?view=office-pia"/>
 public partial interface ISmartArtNodes: IInteropCollection<SmartArtNode>
 {
+
+
+  #region methods
+
+/// <summary>
+  /// Invokes `Add`.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartartnodes.add?view=office-pia"/>
+  public SmartArtNode Add();
+
+  #endregion methods
 }
 

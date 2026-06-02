@@ -22,5 +22,21 @@ public partial interface IMsoHiLoLines
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsohilolines.format?view=office-pia"/>
   public MsoChartFormat Format { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Selects the high-low lines.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsohilolines.select?view=office-pia"/>
+  public void Select();
+  /// <summary>
+  /// Deletes the high-low lines.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsohilolines.delete?view=office-pia"/>
+  public void Delete();
+
+  #endregion methods
 }
 

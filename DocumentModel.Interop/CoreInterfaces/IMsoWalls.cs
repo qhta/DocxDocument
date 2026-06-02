@@ -47,5 +47,28 @@ public partial interface IMsoWalls
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsowalls.format?view=office-pia"/>
   public MsoChartFormat Format { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Selects the chart walls.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsowalls.select?view=office-pia"/>
+  public object Select();
+  /// <summary>
+  /// Clears formatting from the chart walls.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsowalls.clearformats?view=office-pia"/>
+  public object ClearFormats();
+  /// <summary>
+  /// Pastes content onto the chart walls.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsowalls.paste?view=office-pia"/>
+  public void Paste();
+
+  #endregion methods
 }
 

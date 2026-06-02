@@ -23,4 +23,18 @@ public partial class ContentControlListEntry : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrollistentry.index?view=word-pia"/>
   public int Index { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Deletes the specified item in a combo box or drop-down list content control.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.contentcontrollistentry.delete?view=word-pia"/>
+  public void Delete() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

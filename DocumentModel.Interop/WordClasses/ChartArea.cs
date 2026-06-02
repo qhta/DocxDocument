@@ -77,4 +77,18 @@ public partial class ChartArea : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.format?view=word-pia"/>
   public ChartFormat Format { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Selects the object.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartarea.select?view=word-pia"/>
+  public object Select() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

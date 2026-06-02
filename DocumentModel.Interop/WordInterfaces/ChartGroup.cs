@@ -167,4 +167,20 @@ public partial interface IChartGroup : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup.has3dshading?view=word-pia"/>
   public bool Has3DShading { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Returns one series or all series in the chart group.
+  /// </summary>
+  /// <param name="Index">The series index, or an empty value to return the full collection.</param>
+  /// <returns>A series object or series collection, depending on <paramref name="Index"/>.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup.seriescollection?view=word-pia"/>
+  public object SeriesCollection(object Index);
+
+  #endregion methods
 }

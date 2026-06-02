@@ -22,5 +22,23 @@ public partial interface IMsoSeriesLines
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoserieslines.format?view=office-pia"/>
   public MsoChartFormat Format { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Selects the series lines.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoserieslines.select?view=office-pia"/>
+  public object Select();
+  /// <summary>
+  /// Deletes the series lines.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoserieslines.delete?view=office-pia"/>
+  public object Delete();
+
+  #endregion methods
 }
 

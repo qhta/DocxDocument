@@ -43,5 +43,17 @@ public partial interface IMetaProperty: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.validationerror?view=office-pia"/>
   public string ValidationError { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Validates the metadata property value.
+  /// </summary>
+  /// <returns>The validation error message, if any.</returns>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperty.validate?view=office-pia"/>
+  public string Validate();
+
+  #endregion methods
 }
 

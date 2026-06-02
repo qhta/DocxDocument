@@ -23,4 +23,20 @@ public partial interface IListTemplate : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listtemplate.listlevels?view=word-pia"/>
   public ListLevels ListLevels { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Converts a list template to another list template type.
+  /// </summary>
+  /// <param name="Level">Specifies the level used for conversion.</param>
+  /// <returns>The converted list template.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listtemplate.convert?view=word-pia"/>
+  public ListTemplate Convert(object Level);
+
+  #endregion methods
 }

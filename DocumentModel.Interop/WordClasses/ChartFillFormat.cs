@@ -83,4 +83,21 @@ public partial class ChartFillFormat : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartfillformat.visible?view=word-pia"/>
   public Core.TriState Visible { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Executes the one color gradient operation.
+  /// </summary>
+  /// <param name="Style">Specifies the style.</param>
+  /// <param name="Variant">Specifies the variant.</param>
+  /// <param name="Degree">Specifies the degree.</param>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartfillformat.onecolorgradient?view=word-pia"/>
+  public void OneColorGradient(Core.GradientStyle Style, int Variant, float Degree) { throw new NotImplementedException(); }
+
+  #endregion methods
 }

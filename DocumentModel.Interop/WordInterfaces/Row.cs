@@ -114,4 +114,18 @@ public partial interface IRow : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.id?view=word-pia"/>
   public string ID { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Selects the specified object.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.row.select?view=word-pia"/>
+  public void Select();
+
+  #endregion methods
 }

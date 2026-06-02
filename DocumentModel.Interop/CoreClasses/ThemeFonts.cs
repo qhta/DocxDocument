@@ -9,5 +9,18 @@ namespace DocumentModel.Interop.Core;
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themefonts?view=office-pia"/>
 public partial class ThemeFonts: InteropCollection<ThemeFont>
 {
+
+
+  #region methods
+
+/// <summary>
+  /// Invokes `Item`.
+  /// </summary>
+  /// <param name="Index">The `Index` parameter.</param>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themefonts.item?view=office-pia"/>
+  public ThemeFont Item(FontLanguageIndex Index) { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

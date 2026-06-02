@@ -244,4 +244,18 @@ public partial class Window : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.hwnd?view=word-pia"/>
   public int Hwnd { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Activates the specified object.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window.activate?view=word-pia"/>
+  public void Activate() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

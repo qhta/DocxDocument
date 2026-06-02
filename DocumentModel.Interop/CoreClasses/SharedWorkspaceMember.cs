@@ -26,5 +26,16 @@ public partial class SharedWorkspaceMember: InteropObject
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacemember.id?view=office-pia"/>
   public string Id { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Invokes `Delete`.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacemember.delete?view=office-pia"/>
+  public void Delete() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

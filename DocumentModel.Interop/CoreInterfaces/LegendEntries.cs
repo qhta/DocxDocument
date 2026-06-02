@@ -18,5 +18,17 @@ public partial interface ILegendEntries: IEnumerable
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentries.item?view=office-pia"/>
   public LegendEntry this[object Index] { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Returns an enumerator that iterates through the legend entries.
+  /// </summary>
+  /// <returns>An enumerator for the collection.</returns>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentries.getenumerator?view=office-pia"/>
+  public new IEnumerator GetEnumerator();
+
+  #endregion methods
 }
 

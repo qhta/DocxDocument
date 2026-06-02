@@ -17,4 +17,18 @@ public partial class OMathBreak : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbreak.alignat?view=word-pia"/>
   public int AlignAt { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Deletes the specified line break.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbreak.delete?view=word-pia"/>
+  public void Delete() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

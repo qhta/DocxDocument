@@ -47,4 +47,19 @@ public partial interface IFloor : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.floor.format?view=word-pia"/>
   public ChartFormat Format { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Returns the value produced by the select operation.
+  /// </summary>
+  /// <returns>The resulting value.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.floor.select?view=word-pia"/>
+  public object Select();
+
+  #endregion methods
 }

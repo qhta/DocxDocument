@@ -62,5 +62,23 @@ public partial interface IShadowFormat: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shadowformat.rotatewithshape?view=office-pia"/>
   public TriState RotateWithShape { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Changes the horizontal shadow offset by the specified amount.
+  /// </summary>
+  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shadowformat.incrementoffsetx?view=office-pia"/>
+  public void IncrementOffsetX(float Increment);
+  /// <summary>
+  /// Changes the vertical shadow offset by the specified amount.
+  /// </summary>
+  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shadowformat.incrementoffsety?view=office-pia"/>
+  public void IncrementOffsetY(float Increment);
+
+  #endregion methods
 }
 

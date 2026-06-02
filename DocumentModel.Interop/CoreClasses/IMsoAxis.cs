@@ -237,5 +237,23 @@ public partial class MsoAxis
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.format?view=office-pia"/>
   public MsoChartFormat Format { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Deletes the axis.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.delete?view=office-pia"/>
+  public object Delete() { throw new NotImplementedException(); }
+  /// <summary>
+  /// Selects the axis.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxis.select?view=office-pia"/>
+  public object Select() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

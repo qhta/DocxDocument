@@ -32,5 +32,17 @@ public partial interface IWorkflowTemplate: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.workflowtemplate.documentlibraryurl?view=office-pia"/>
   public string DocumentLibraryURL { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Invokes `Show`.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.workflowtemplate.show?view=office-pia"/>
+  public int Show();
+
+  #endregion methods
 }
 

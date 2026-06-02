@@ -47,4 +47,18 @@ public partial class LinkFormat : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linkformat.savepicturewithdocument?view=word-pia"/>
   public bool SavePictureWithDocument { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Breaks the link between the source file and the specified OLE object, picture, or linked field.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.linkformat.breaklink?view=word-pia"/>
+  public void BreakLink() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

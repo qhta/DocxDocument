@@ -47,4 +47,19 @@ public partial interface ITask : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.task.visible?view=word-pia"/>
   public bool Visible { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Activates the task, optionally waiting for completion.
+  /// </summary>
+  /// <param name="Wait">true to wait for the task to activate; otherwise, false.</param>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.task.activate?view=word-pia"/>
+  public void Activate(object Wait);
+
+  #endregion methods
 }

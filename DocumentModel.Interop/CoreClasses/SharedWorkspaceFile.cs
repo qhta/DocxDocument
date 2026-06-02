@@ -33,5 +33,16 @@ public partial class SharedWorkspaceFile: InteropObject
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefile.modifieddate?view=office-pia"/>
   public object ModifiedDate { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Invokes `Delete`.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefile.delete?view=office-pia"/>
+  public void Delete() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

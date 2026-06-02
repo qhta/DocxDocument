@@ -11,4 +11,28 @@ public partial class RepeatingSectionItem : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.repeatingsectionitem.range?view=word-pia"/>
   public Range Range { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Deletes the specified repeating section item.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.repeatingsectionitem.delete?view=word-pia"/>
+  public void Delete() { throw new NotImplementedException(); }
+
+  /// <summary>
+  /// Inserts a new repeating section item after the current item.
+  /// </summary>
+  /// <returns>The newly inserted <see cref="RepeatingSectionItem"/>.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.repeatingsectionitem.insertitemafter?view=word-pia"/>
+  public RepeatingSectionItem InsertItemAfter() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

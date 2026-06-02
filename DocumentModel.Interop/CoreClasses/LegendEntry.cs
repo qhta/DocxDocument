@@ -52,5 +52,23 @@ public partial class LegendEntry
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.format?view=office-pia"/>
   public MsoChartFormat Format { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Deletes the legend entry.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.delete?view=office-pia"/>
+  public object Delete() { throw new NotImplementedException(); }
+  /// <summary>
+  /// Selects the legend entry.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.legendentry.select?view=office-pia"/>
+  public object Select() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

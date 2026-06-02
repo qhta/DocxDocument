@@ -17,5 +17,22 @@ public partial interface ISmartDocument: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartdocument.solutionurl?view=office-pia"/>
   public string SolutionURL { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Invokes `PickSolution`.
+  /// </summary>
+  /// <param name="ConsiderAllSchemas">The `ConsiderAllSchemas` parameter.</param>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartdocument.picksolution?view=office-pia"/>
+  public void PickSolution(bool ConsiderAllSchemas);
+  /// <summary>
+  /// Invokes `RefreshPane`.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartdocument.refreshpane?view=office-pia"/>
+  public void RefreshPane();
+
+  #endregion methods
 }
 

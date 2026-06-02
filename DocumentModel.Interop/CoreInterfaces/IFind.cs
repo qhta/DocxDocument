@@ -118,5 +118,40 @@ public partial interface IFind
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.filetype?view=office-pia"/>
   public int FileType { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Displays the Find dialog.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.show?view=office-pia"/>
+  public int Show();
+  /// <summary>
+  /// Executes the file search.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.execute?view=office-pia"/>
+  public void Execute();
+  /// <summary>
+  /// Loads a saved search query.
+  /// </summary>
+  /// <param name="bstrQueryName">The `bstrQueryName` parameter.</param>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.load?view=office-pia"/>
+  public void Load(string bstrQueryName);
+  /// <summary>
+  /// Saves the current search query.
+  /// </summary>
+  /// <param name="bstrQueryName">The `bstrQueryName` parameter.</param>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.save?view=office-pia"/>
+  public void Save(string bstrQueryName);
+  /// <summary>
+  /// Deletes a saved search query.
+  /// </summary>
+  /// <param name="bstrQueryName">The `bstrQueryName` parameter.</param>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ifind.delete?view=office-pia"/>
+  public void Delete(string bstrQueryName);
+
+  #endregion methods
 }
 

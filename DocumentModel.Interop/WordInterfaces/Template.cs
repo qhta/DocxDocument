@@ -137,4 +137,19 @@ public partial interface ITemplate : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.buildingblocktypes?view=word-pia"/>
   public BuildingBlockTypes BuildingBlockTypes { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Opens the template as a document.
+  /// </summary>
+  /// <returns>The created <see cref="Document"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template.openasdocument?view=word-pia"/>
+  public Document OpenAsDocument();
+
+  #endregion methods
 }

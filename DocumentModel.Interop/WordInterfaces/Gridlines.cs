@@ -23,4 +23,18 @@ public partial interface IGridlines : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.gridlines.format?view=word-pia"/>
   public ChartFormat Format { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Selects the object.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.gridlines.select?view=word-pia"/>
+  public object Select();
+
+  #endregion methods
 }

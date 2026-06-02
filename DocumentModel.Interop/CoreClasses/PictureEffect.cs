@@ -28,5 +28,16 @@ public partial class PictureEffect: InteropObject
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureeffect.visible?view=office-pia"/>
   public TriState Visible { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Invokes `Delete`.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureeffect.delete?view=office-pia"/>
+  public void Delete() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

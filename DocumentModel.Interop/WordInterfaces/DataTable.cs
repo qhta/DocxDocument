@@ -53,4 +53,18 @@ public partial interface IDataTable : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datatable.format?view=word-pia"/>
   public ChartFormat Format { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Selects the object.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datatable.select?view=word-pia"/>
+  public void Select();
+
+  #endregion methods
 }

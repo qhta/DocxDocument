@@ -38,5 +38,16 @@ public partial interface IScript: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.script.scripttext?view=office-pia"/>
   public string ScriptText { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Deletes this script from the collection.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.script.delete?view=office-pia"/>
+  public void Delete();
+
+  #endregion methods
 }
 

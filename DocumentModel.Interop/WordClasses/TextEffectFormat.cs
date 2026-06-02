@@ -80,4 +80,18 @@ public partial class TextEffectFormat : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.tracking?view=word-pia"/>
   public float Tracking { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Switches the text flow in the specified WordArt from horizontal to vertical, or vice versa.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat.toggleverticaltext?view=word-pia"/>
+  public void ToggleVerticalText() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

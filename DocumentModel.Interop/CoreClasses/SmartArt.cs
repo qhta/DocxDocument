@@ -39,5 +39,16 @@ public partial class SmartArt: InteropObject
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartart.reverse?view=office-pia"/>
   public TriState Reverse { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Invokes `Reset`.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartart.reset?view=office-pia"/>
+  public void Reset() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

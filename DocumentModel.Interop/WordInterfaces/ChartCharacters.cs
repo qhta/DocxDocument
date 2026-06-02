@@ -35,4 +35,18 @@ public partial interface IChartCharacters : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters.phoneticcharacters?view=word-pia"/>
   public string PhoneticCharacters { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Deletes the object.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters.delete?view=word-pia"/>
+  public void Delete();
+
+  #endregion methods
 }

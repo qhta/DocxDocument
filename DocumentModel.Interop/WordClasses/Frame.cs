@@ -95,4 +95,18 @@ public partial class Frame : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frame.range?view=word-pia"/>
   public Range Range { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Deletes the specified object.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frame.delete?view=word-pia"/>
+  public void Delete() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

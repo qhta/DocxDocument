@@ -67,5 +67,16 @@ public partial interface ITextEffectFormat: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.tracking?view=office-pia"/>
   public float Tracking { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Invokes `ToggleVerticalText`.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.texteffectformat.toggleverticaltext?view=office-pia"/>
+  public void ToggleVerticalText();
+
+  #endregion methods
 }
 

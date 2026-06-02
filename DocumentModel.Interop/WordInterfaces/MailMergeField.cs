@@ -35,4 +35,18 @@ public partial interface IMailMergeField : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefield.previous?view=word-pia"/>
   public MailMergeField Previous { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Selects the specified object.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefield.select?view=word-pia"/>
+  public void Select();
+
+  #endregion methods
 }

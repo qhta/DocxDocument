@@ -53,5 +53,17 @@ public partial class WorkflowTask: InteropObject
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.workflowtask.createddate?view=office-pia"/>
   public DateTime CreatedDate { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Invokes `Show`.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.workflowtask.show?view=office-pia"/>
+  public int Show() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

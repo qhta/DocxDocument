@@ -17,5 +17,16 @@ public partial interface ITabStop2: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstop2.type?view=office-pia"/>
   public TabStopType Type { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Invokes `Clear`.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstop2.clear?view=office-pia"/>
+  public void Clear();
+
+  #endregion methods
 }
 

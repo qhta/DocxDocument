@@ -132,5 +132,23 @@ public partial interface IMsoAxisTitle: IMsoChartTitle
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxistitle.formular1c1local?view=office-pia"/>
   public new string FormulaR1C1Local { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Deletes the axis title.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxistitle.delete?view=office-pia"/>
+  public new object Delete();
+  /// <summary>
+  /// Selects the axis title.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoaxistitle.select?view=office-pia"/>
+  public new object Select();
+
+  #endregion methods
 }
 

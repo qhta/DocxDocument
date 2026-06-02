@@ -23,5 +23,16 @@ public partial interface IUserPermission: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.userpermission.expirationdate?view=office-pia"/>
   public object ExpirationDate { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Invokes `Remove`.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.userpermission.remove?view=office-pia"/>
+  public void Remove();
+
+  #endregion methods
 }
 

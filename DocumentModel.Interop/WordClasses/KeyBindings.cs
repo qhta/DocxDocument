@@ -12,4 +12,24 @@ public partial class KeyBindings : InteropCollection<KeyBinding>
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybindings.context?view=word-pia"/>
   public object Context { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Adds a new key binding to the collection.
+  /// </summary>
+  /// <param name="KeyCategory">The category of the key binding.</param>
+  /// <param name="Command">The command to execute when the key binding is pressed.</param>
+  /// <param name="KeyCode">The primary key code for the key binding.</param>
+  /// <param name="KeyCode2">An optional secondary key code for the key binding.</param>
+  /// <param name="CommandParameter">An optional parameter for the command.</param>
+  /// <returns>The created <see cref="KeyBinding"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybindings.add?view=word-pia"/>
+  public KeyBinding Add(KeyCategory KeyCategory, string Command, int KeyCode, int KeyCode2, object CommandParameter) { throw new NotImplementedException(); }
+
+  #endregion methods
 }

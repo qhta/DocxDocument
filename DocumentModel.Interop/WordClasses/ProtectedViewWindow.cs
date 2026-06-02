@@ -78,4 +78,18 @@ public partial class ProtectedViewWindow : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.sourcepath?view=word-pia"/>
   public string? SourcePath { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Activates the specified protected view window.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow.activate?view=word-pia"/>
+  public void Activate() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

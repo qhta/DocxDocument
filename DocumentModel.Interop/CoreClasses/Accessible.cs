@@ -77,5 +77,90 @@ public partial class Accessible: IAccessible
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accdefaultaction?view=office-pia"/>
   public string DefaultAction { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Selects the specified accessible child object.
+  /// </summary>
+  /// <param name="flagsSelect">The `flagsSelect` parameter.</param>
+  /// <param name="varChild">The `varChild` parameter.</param>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accselect?view=office-pia"/>
+  public void accSelect(int flagsSelect, object varChild) { throw new NotImplementedException(); }
+  /// <summary>
+  /// Retrieves the screen coordinates and size of the specified accessible child object.
+  /// </summary>
+  /// <param name="pxLeft">The `pxLeft` parameter.</param>
+  /// <param name="pyTop">The `pyTop` parameter.</param>
+  /// <param name="pcxWidth">The `pcxWidth` parameter.</param>
+  /// <param name="pcyHeight">The `pcyHeight` parameter.</param>
+  /// <param name="varChild">The `varChild` parameter.</param>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.acclocation?view=office-pia"/>
+  public void accLocation(out int pxLeft, out int pyTop, out int pcxWidth, out int pcyHeight, object varChild) { throw new NotImplementedException(); }
+  /// <summary>
+  /// Navigates to another accessible object from the specified starting object.
+  /// </summary>
+  /// <param name="navDir">The `navDir` parameter.</param>
+  /// <param name="varStart">The `varStart` parameter.</param>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accnavigate?view=office-pia"/>
+  public object accNavigate(int navDir, object varStart) { throw new NotImplementedException(); }
+  /// <summary>
+  /// Retrieves the accessible object at the specified screen coordinates.
+  /// </summary>
+  /// <param name="xLeft">The `xLeft` parameter.</param>
+  /// <param name="yTop">The `yTop` parameter.</param>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.acchittest?view=office-pia"/>
+  public object accHitTest(int xLeft, int yTop) { throw new NotImplementedException(); }
+  /// <summary>
+  /// Performs the default action on the specified accessible child object.
+  /// </summary>
+  /// <param name="varChild">The `varChild` parameter.</param>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iaccessible.accdodefaultaction?view=office-pia"/>
+  public void accDoDefaultAction(object varChild) { throw new NotImplementedException(); }
+
+  /// <summary>
+  /// Selects the specified accessible child object.
+  /// </summary>
+  /// <param name="flagsSelect">The selection flags.</param>
+  /// <param name="varChild">The child object to select.</param>
+  public void Select(int flagsSelect, object varChild) => accSelect(flagsSelect, varChild);
+
+  /// <summary>
+  /// Retrieves the screen coordinates and size of the specified accessible child object.
+  /// </summary>
+  /// <param name="pxLeft">The left coordinate.</param>
+  /// <param name="pyTop">The top coordinate.</param>
+  /// <param name="pcxWidth">The width.</param>
+  /// <param name="pcyHeight">The height.</param>
+  /// <param name="varChild">The child object.</param>
+  public void Location(out int pxLeft, out int pyTop, out int pcxWidth, out int pcyHeight, object varChild)
+    => accLocation(out pxLeft, out pyTop, out pcxWidth, out pcyHeight, varChild);
+
+  /// <summary>
+  /// Navigates from the specified starting accessible object.
+  /// </summary>
+  /// <param name="navDir">The navigation direction.</param>
+  /// <param name="varStart">The starting object.</param>
+  /// <returns>The target object.</returns>
+  public object Navigate(int navDir, object varStart) => accNavigate(navDir, varStart);
+
+  /// <summary>
+  /// Retrieves the accessible object at the specified screen coordinates.
+  /// </summary>
+  /// <param name="xLeft">The x-coordinate.</param>
+  /// <param name="yTop">The y-coordinate.</param>
+  /// <returns>The object at the specified location.</returns>
+  public object HitTest(int xLeft, int yTop) => accHitTest(xLeft, yTop);
+
+  /// <summary>
+  /// Performs the default action on the specified accessible child object.
+  /// </summary>
+  /// <param name="varChild">The child object.</param>
+  public void DoDefaultAction(object varChild) => accDoDefaultAction(varChild);
+
+  #endregion methods
 }
 

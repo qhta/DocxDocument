@@ -1,4 +1,4 @@
-﻿
+
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
@@ -22,6 +22,22 @@ public partial class MsoHiLoLines
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsohilolines.format?view=office-pia"/>
   public MsoChartFormat Format { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Selects the high-low lines.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsohilolines.select?view=office-pia"/>
+  public void Select() { throw new NotImplementedException(); }
+  /// <summary>
+  /// Deletes the high-low lines.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsohilolines.delete?view=office-pia"/>
+  public void Delete() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 
 

@@ -17,4 +17,18 @@ public partial interface IOMathRecognizedFunction : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrecognizedfunction.name?view=word-pia"/>
   public string Name { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Deletes the specified recognized function from the list of the recognized functions.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrecognizedfunction.delete?view=word-pia"/>
+  public void Delete();
+
+  #endregion methods
 }

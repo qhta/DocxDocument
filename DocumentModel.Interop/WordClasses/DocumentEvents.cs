@@ -6,4 +6,36 @@ namespace DocumentModel.Interop.Word;
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents?view=word-pia"/>
 public partial class DocumentEvents
 {
+
+
+  #region methods
+
+/// <summary>
+  /// Occurs when a new document is created.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents.new?view=word-pia"/>
+  public void New() { throw new NotImplementedException(); }
+
+  /// <summary>
+  /// Occurs when a document is opened.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents.open?view=word-pia"/>
+  public void Open() { throw new NotImplementedException(); }
+
+  /// <summary>
+  /// Reserved for internal use.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents.close?view=word-pia"/>
+  public void Close() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

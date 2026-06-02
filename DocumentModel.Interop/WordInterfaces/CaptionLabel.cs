@@ -53,4 +53,18 @@ public partial interface ICaptionLabel : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.position?view=word-pia"/>
   public CaptionPosition Position { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Deletes the specified object.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabel.delete?view=word-pia"/>
+  public void Delete();
+
+  #endregion methods
 }

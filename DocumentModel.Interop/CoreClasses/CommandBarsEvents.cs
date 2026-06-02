@@ -1,4 +1,4 @@
-﻿
+
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
@@ -7,6 +7,17 @@ namespace DocumentModel.Interop.Core;
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icommandbarsevents?view=office-pia"/>
 public partial class CommandBarsEvents
 {
+
+
+  #region methods
+
+/// <summary>
+  /// Handles updates to command bars.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icommandbarsevents.onupdate?view=office-pia"/>
+  public void OnUpdate() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 
 

@@ -23,5 +23,16 @@ public partial class UserPermission: InteropObject
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.userpermission.expirationdate?view=office-pia"/>
   public object ExpirationDate { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Invokes `Remove`.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.userpermission.remove?view=office-pia"/>
+  public void Remove() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

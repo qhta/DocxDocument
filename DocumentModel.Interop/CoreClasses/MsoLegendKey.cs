@@ -1,4 +1,4 @@
-﻿
+
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
@@ -107,6 +107,30 @@ public partial class MsoLegendKey
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.pictureunit2?view=office-pia"/>
   public double PictureUnit2 { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Clears formatting from the legend key.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.clearformats?view=office-pia"/>
+  public object ClearFormats() { throw new NotImplementedException(); }
+  /// <summary>
+  /// Deletes the legend key.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.delete?view=office-pia"/>
+  public object Delete() { throw new NotImplementedException(); }
+  /// <summary>
+  /// Selects the legend key.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegendkey.select?view=office-pia"/>
+  public object Select() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 
 

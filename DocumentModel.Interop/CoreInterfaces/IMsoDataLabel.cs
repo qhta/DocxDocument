@@ -202,5 +202,23 @@ public partial interface IMsoDataLabel
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel.width?view=office-pia"/>
   public double Width { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Selects the data label.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel.select?view=office-pia"/>
+  public object Select();
+  /// <summary>
+  /// Deletes the data label.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabel.delete?view=office-pia"/>
+  public object Delete();
+
+  #endregion methods
 }
 

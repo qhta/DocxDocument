@@ -233,4 +233,18 @@ public partial interface IEmailOptions : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.tabindentkey?view=word-pia"/>
   public bool TabIndentKey { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Reserved for internal use.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailoptions.dummy3?view=word-pia"/>
+  public void Dummy3();
+
+  #endregion methods
 }

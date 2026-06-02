@@ -11,4 +11,20 @@ public partial interface IEditors : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.editors.count?view=word-pia"/>
   public int Count { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Returns the value produced by the item operation.
+  /// </summary>
+  /// <param name="Index">Specifies the index.</param>
+  /// <returns>The resulting value.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.editors.item?view=word-pia"/>
+  public Editor Item(object Index);
+
+  #endregion methods
 }

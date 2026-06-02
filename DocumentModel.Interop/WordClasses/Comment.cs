@@ -83,4 +83,18 @@ public partial class Comment : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment.replies?view=word-pia"/>
   public Comments Replies { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comment.delete?view=word-pia"/>
+  public void Delete() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

@@ -142,5 +142,32 @@ public partial class MsoChartGroup
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.has3dshading?view=office-pia"/>
   public bool Has3DShading { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Returns a series collection from the chart group.
+  /// </summary>
+  /// <param name="Index">The `Index` parameter.</param>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.seriescollection?view=office-pia"/>
+  public object SeriesCollection(object Index) { throw new NotImplementedException(); }
+  /// <summary>
+  /// Returns a category collection from the chart group.
+  /// </summary>
+  /// <param name="Index">The `Index` parameter.</param>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.categorycollection?view=office-pia"/>
+  public object CategoryCollection(object Index) { throw new NotImplementedException(); }
+  /// <summary>
+  /// Returns a full category collection from the chart group.
+  /// </summary>
+  /// <param name="Index">The `Index` parameter.</param>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochartgroup.fullcategorycollection?view=office-pia"/>
+  public object FullCategoryCollection(object Index) { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

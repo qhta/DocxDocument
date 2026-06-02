@@ -29,4 +29,18 @@ public partial class AutoCorrectEntry : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrectentry.richtext?view=word-pia"/>
   public bool RichText { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Deletes the specified object.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrectentry.delete?view=word-pia"/>
+  public void Delete() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

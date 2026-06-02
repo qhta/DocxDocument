@@ -53,4 +53,19 @@ public partial class KeyBinding : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybinding.context?view=word-pia"/>
   public object Context { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Removes the key binding from the KeyBindings collection and resets a built-in command to its default key
+  /// assignment.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybinding.clear?view=word-pia"/>
+  public void Clear() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

@@ -245,4 +245,18 @@ public partial class _ParagraphFormat : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.collapsedbydefault?view=word-pia"/>
   public int CollapsedByDefault { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Removes any spacing before the specified paragraphs.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._paragraphformat.closeup?view=word-pia"/>
+  public void CloseUp() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

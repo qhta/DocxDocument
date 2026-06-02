@@ -8,5 +8,17 @@ namespace DocumentModel.Interop.Core;
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filetypes?view=office-pia"/>
 public partial class FileTypes: InteropCollection<FileType>
 {
+
+
+  #region methods
+
+/// <summary>
+  /// Removes a file type from the collection.
+  /// </summary>
+  /// <param name="Index">The `Index` parameter.</param>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filetypes.remove?view=office-pia"/>
+  public void Remove(int Index) { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

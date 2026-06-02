@@ -114,4 +114,18 @@ public partial class Trendline : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.forward2?view=word-pia"/>
   public double Forward2 { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Clears the formatting of the object.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendline.clearformats?view=word-pia"/>
+  public void ClearFormats() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

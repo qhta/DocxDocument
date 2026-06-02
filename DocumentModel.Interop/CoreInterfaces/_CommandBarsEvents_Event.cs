@@ -7,5 +7,16 @@ namespace DocumentModel.Interop.Core;
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarsevents_event?view=office-pia"/>
 public partial interface _ICommandBarsEvents_Event
 {
+
+
+  #region methods
+
+/// <summary>
+  /// Occurs when any change is made to a command bar.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarsevents_event.onupdate?view=office-pia"/>
+  public event _CommandBarsEvents_OnUpdateEventHandler OnUpdate;
+
+  #endregion methods
 }
 

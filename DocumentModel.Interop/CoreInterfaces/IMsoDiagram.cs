@@ -32,5 +32,22 @@ public partial interface IMsoDiagram: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodiagram.autoformat?view=office-pia"/>
   public TriState AutoFormat { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Converts the diagram to another diagram type.
+  /// </summary>
+  /// <param name="Type">The `Type` parameter.</param>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodiagram.convert?view=office-pia"/>
+  public void Convert(DiagramType Type);
+  /// <summary>
+  /// Fits text within the diagram.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodiagram.fittext?view=office-pia"/>
+  public void FitText();
+
+  #endregion methods
 }
 

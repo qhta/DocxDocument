@@ -97,5 +97,16 @@ public partial class TextFrame2: InteropObject
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.notextrotation?view=office-pia"/>
   public TriState NoTextRotation { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Invokes `DeleteText`.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textframe2.deletetext?view=office-pia"/>
+  public void DeleteText() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

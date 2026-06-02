@@ -29,4 +29,19 @@ public partial class OMathScrSubSup : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsubsup.alignscripts?view=word-pia"/>
   public bool AlignScripts { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Removes the subscript-superscript formatting from the equation function.
+  /// </summary>
+  /// <returns>The resulting equation function object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathscrsubsup.removesub?view=word-pia"/>
+  public OMathFunction RemoveSub() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

@@ -23,5 +23,16 @@ public partial interface IScopeFolder: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scopefolder.scopefolders?view=office-pia"/>
   public ScopeFolders ScopeFolders { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Adds this folder to the search folders collection.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scopefolder.addtosearchfolders?view=office-pia"/>
+  public void AddToSearchFolders();
+
+  #endregion methods
 }
 

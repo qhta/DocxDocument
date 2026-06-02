@@ -27,5 +27,16 @@ public partial class WebComponentWindowExternal
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponentwindowexternal.webcomponent?view=office-pia"/>
   public WebComponent WebComponent { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Invokes `CloseWindow`.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponentwindowexternal.closewindow?view=office-pia"/>
+  public void CloseWindow() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

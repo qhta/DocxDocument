@@ -45,5 +45,21 @@ public partial interface ISharedWorkspaceLink: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacelink.modifieddate?view=office-pia"/>
   public object ModifiedDate { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Invokes `Save`.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacelink.save?view=office-pia"/>
+  public void Save();
+  /// <summary>
+  /// Invokes `Delete`.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacelink.delete?view=office-pia"/>
+  public void Delete();
+
+  #endregion methods
 }
 

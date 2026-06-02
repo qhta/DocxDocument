@@ -1,4 +1,4 @@
-﻿
+
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
@@ -22,6 +22,24 @@ public partial class MsoSeriesLines
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoserieslines.format?view=office-pia"/>
   public MsoChartFormat Format { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Selects the series lines.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoserieslines.select?view=office-pia"/>
+  public object Select() { throw new NotImplementedException(); }
+  /// <summary>
+  /// Deletes the series lines.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoserieslines.delete?view=office-pia"/>
+  public object Delete() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 
 

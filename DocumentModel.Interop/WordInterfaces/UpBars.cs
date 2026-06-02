@@ -36,4 +36,18 @@ public partial interface IUpBars : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.upbars.format?view=word-pia"/>
   public ChartFormat Format { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Selects the object.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.upbars.select?view=word-pia"/>
+  public object Select();
+
+  #endregion methods
 }

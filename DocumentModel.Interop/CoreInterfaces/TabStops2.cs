@@ -14,5 +14,26 @@ public partial interface ITabStops2: IInteropCollection<TabStop2>
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstops2.defaultspacing?view=office-pia"/>
   public float DefaultSpacing { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Invokes `Item`.
+  /// </summary>
+  /// <param name="Index">The `Index` parameter.</param>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstops2.item?view=office-pia"/>
+  public TabStop2 Item(object Index);
+  /// <summary>
+  /// Invokes `Add`.
+  /// </summary>
+  /// <param name="Type">The `Type` parameter.</param>
+  /// <param name="Position">The `Position` parameter.</param>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstops2.add?view=office-pia"/>
+  public TabStop2 Add(TabStopType Type, float Position);
+
+  #endregion methods
 }
 

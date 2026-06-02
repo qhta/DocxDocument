@@ -29,4 +29,27 @@ public partial interface IEditor : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.editor.range?view=word-pia"/>
   public Range Range { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Deletes the specified object.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.editor.delete?view=word-pia"/>
+  public void Delete();
+
+  /// <summary>
+  /// Deletes all editing permissions in a document for a specific user.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.editor.deleteall?view=word-pia"/>
+  public void DeleteAll();
+
+  /// <summary>
+  /// Selects all the shapes in the main story, in a canvas, or in headers and footers of a document.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.editor.selectall?view=word-pia"/>
+  public void SelectAll();
+
+  #endregion methods
 }

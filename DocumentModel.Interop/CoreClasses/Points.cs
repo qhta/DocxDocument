@@ -8,5 +8,17 @@ namespace DocumentModel.Interop.Core;
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.points?view=office-pia"/>
 public partial class Points: InteropCollection<ChartPoint>
 {
+
+
+  #region methods
+
+/// <summary>
+  /// Returns an enumerator that iterates through the collection.
+  /// </summary>
+  /// <returns>An enumerator for the points collection.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.points.getenumerator?view=office-pia"/>
+  public new IEnumerator GetEnumerator() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

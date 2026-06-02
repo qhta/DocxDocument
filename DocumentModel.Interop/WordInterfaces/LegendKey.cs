@@ -125,4 +125,18 @@ public partial interface ILegendKey : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendkey.pictureunit2?view=word-pia"/>
   public double PictureUnit2 { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Clears the formatting of the object.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legendkey.clearformats?view=word-pia"/>
+  public void ClearFormats();
+
+  #endregion methods
 }

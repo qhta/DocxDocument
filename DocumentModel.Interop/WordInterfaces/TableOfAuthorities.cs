@@ -79,4 +79,18 @@ public partial interface ITableOfAuthorities : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.tableader?view=word-pia"/>
   public TabLeader TabLeader { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Deletes the specified object.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableofauthorities.delete?view=word-pia"/>
+  public void Delete();
+
+  #endregion methods
 }

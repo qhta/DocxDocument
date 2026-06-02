@@ -149,4 +149,30 @@ public partial class AxisTitle : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.formular1c1local?view=word-pia"/>
   public string? FormulaR1C1Local { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Returns a ChartCharacters object that represents a range of characters in the axis title text.
+  /// </summary>
+  /// <param name="Start">The starting character position.</param>
+  /// <param name="Length">The number of characters to return.</param>
+  /// <returns>The requested <see cref="ChartCharacters"/> range.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.get_characters?view=word-pia"/>
+  public ChartCharacters Characters(object Start, object Length) { throw new NotImplementedException(); }
+
+  /// <summary>
+  /// Deletes the object.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle.delete?view=word-pia"/>
+  public void Delete() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

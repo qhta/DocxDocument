@@ -8,5 +8,17 @@ namespace DocumentModel.Interop.Core;
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.searchfolders?view=office-pia"/>
 public partial class SearchFolders: InteropCollection<ScopeFolder>
 {
+
+
+  #region methods
+
+/// <summary>
+  /// Removes a folder from the search folders collection.
+  /// </summary>
+  /// <param name="Index">The index of the folder to remove.</param>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.searchfolders.remove?view=office-pia"/>
+  public void Remove(int Index) { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

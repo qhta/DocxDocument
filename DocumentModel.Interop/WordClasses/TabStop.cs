@@ -41,4 +41,18 @@ public partial class TabStop : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tabstop.previous?view=word-pia"/>
   public TabStop Previous { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Removes the specified custom tab stop.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tabstop.clear?view=word-pia"/>
+  public void Clear() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

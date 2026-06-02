@@ -1,4 +1,4 @@
-﻿
+
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
@@ -32,6 +32,23 @@ public partial class MsoDiagram: InteropObject
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodiagram.autoformat?view=office-pia"/>
   public TriState AutoFormat { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Converts the diagram to another diagram type.
+  /// </summary>
+  /// <param name="Type">The `Type` parameter.</param>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodiagram.convert?view=office-pia"/>
+  public void Convert(DiagramType Type) { throw new NotImplementedException(); }
+  /// <summary>
+  /// Fits text within the diagram.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodiagram.fittext?view=office-pia"/>
+  public void FitText() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 
 

@@ -92,5 +92,29 @@ public partial class MsoTrendline
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsotrendline.forward2?view=office-pia"/>
   public double Forward2 { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Clears formatting from the trendline.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsotrendline.clearformats?view=office-pia"/>
+  public object ClearFormats() { throw new NotImplementedException(); }
+  /// <summary>
+  /// Deletes the trendline.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsotrendline.delete?view=office-pia"/>
+  public object Delete() { throw new NotImplementedException(); }
+  /// <summary>
+  /// Selects the trendline.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsotrendline.select?view=office-pia"/>
+  public object Select() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

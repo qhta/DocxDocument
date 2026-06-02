@@ -29,4 +29,19 @@ public partial interface IList : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.list.stylename?view=word-pia"/>
   public string StyleName { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Converts list numbers and LISTNUM fields in the list to text.
+  /// </summary>
+  /// <param name="NumberType">The type of number format to convert.</param>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.list.convertnumberstotext?view=word-pia"/>
+  public void ConvertNumbersToText(NumberType NumberType);
+
+  #endregion methods
 }

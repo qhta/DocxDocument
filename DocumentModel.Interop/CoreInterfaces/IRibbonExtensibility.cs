@@ -7,5 +7,18 @@ namespace DocumentModel.Interop.Core;
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonextensibility?view=office-pia"/>
 public partial interface IRibbonExtensibility
 {
+
+
+  #region methods
+
+/// <summary>
+  /// Loads the XML markup that customizes the Ribbon UI.
+  /// </summary>
+  /// <param name="RibbonID">The `RibbonID` parameter.</param>
+  /// <returns>The custom Ribbon UI XML markup.</returns>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonextensibility.getcustomui?view=office-pia"/>
+  public string GetCustomUI(string RibbonID);
+
+  #endregion methods
 }
 

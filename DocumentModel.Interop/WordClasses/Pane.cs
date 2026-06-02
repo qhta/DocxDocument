@@ -104,4 +104,18 @@ public partial class Pane : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.pages?view=word-pia"/>
   public Pages Pages { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Activates the specified pane.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pane.activate?view=word-pia"/>
+  public void Activate() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

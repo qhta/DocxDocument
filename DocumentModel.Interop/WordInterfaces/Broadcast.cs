@@ -35,4 +35,19 @@ public partial interface IBroadcast : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.broadcast.sessionid?view=word-pia"/>
   public string SessionID { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Starts a broadcast session.
+  /// </summary>
+  /// <param name="serverUrl">The URL of the broadcast server.</param>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.broadcast.start?view=word-pia"/>
+  public void Start(string serverUrl);
+
+  #endregion methods
 }

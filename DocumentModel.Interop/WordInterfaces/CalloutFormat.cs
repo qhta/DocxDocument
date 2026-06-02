@@ -65,4 +65,19 @@ public partial interface ICalloutFormat : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.type?view=word-pia"/>
   public Core.CalloutType Type { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Specifies that the first segment of the callout line (the segment attached to the text callout box) be scaled
+  /// automatically when the callout is moved.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.calloutformat.automaticlength?view=word-pia"/>
+  public void AutomaticLength();
+
+  #endregion methods
 }

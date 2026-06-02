@@ -23,4 +23,29 @@ public partial interface ISource : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.source.cited?view=word-pia"/>
   public bool Cited { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Gets the value of the specified field from the source.
+  /// </summary>
+  /// <param name="Name">The name of the field to retrieve.</param>
+  /// <returns>The value of the specified field as a string.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.source.get_field?view=word-pia"/>
+  public string Field(string Name);
+
+  /// <summary>
+  /// Deletes the specified source.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.source.delete?view=word-pia"/>
+  public void Delete();
+
+  #endregion methods
 }

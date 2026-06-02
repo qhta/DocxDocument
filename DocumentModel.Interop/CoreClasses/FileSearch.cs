@@ -6,5 +6,32 @@ namespace DocumentModel.Interop.Core;
 /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filesearch?view=office-pia"/>
 public partial class FileSearch
 {
+
+
+  #region methods
+
+/// <summary>
+  /// Executes the file search using the specified sort options.
+  /// </summary>
+  /// <param name="SortBy">The `SortBy` parameter.</param>
+  /// <param name="SortOrder">The `SortOrder` parameter.</param>
+  /// <param name="AlwaysAccurate">The `AlwaysAccurate` parameter.</param>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filesearch.execute?view=office-pia"/>
+  public int Execute
+  (SortBy SortBy, SortOrder SortOrder,
+    bool AlwaysAccurate) { throw new NotImplementedException(); }
+  /// <summary>
+  /// Starts a new file search.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filesearch.newsearch?view=office-pia"/>
+  public void NewSearch() { throw new NotImplementedException(); }
+  /// <summary>
+  /// Refreshes the available search scopes.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filesearch.refreshscopes?view=office-pia"/>
+  public void RefreshScopes() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

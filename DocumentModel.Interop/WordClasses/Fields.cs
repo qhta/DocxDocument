@@ -11,4 +11,18 @@ public partial class Fields : InteropCollection<Field>
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fields.locked?view=word-pia"/>
   public int Locked { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Toggles the display of the fields between field codes and field results.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fields.toggleshowcodes?view=word-pia"/>
+  public void ToggleShowCodes() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

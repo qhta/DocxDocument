@@ -37,5 +37,16 @@ public partial class WebComponentFormat
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponentformat.previewgraphic?view=office-pia"/>
   public string PreviewGraphic { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Invokes `LaunchPropertiesWindow`.
+  /// </summary>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponentformat.launchpropertieswindow?view=office-pia"/>
+  public void LaunchPropertiesWindow() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 

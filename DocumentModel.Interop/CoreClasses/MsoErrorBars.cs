@@ -1,4 +1,4 @@
-﻿
+
 namespace DocumentModel.Interop.Core;
 
 /// <summary>
@@ -27,6 +27,30 @@ public partial class MsoErrorBars
   /// </summary>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoerrorbars.format?view=office-pia"/>
   public MsoChartFormat Format { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Selects the error bars.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoerrorbars.select?view=office-pia"/>
+  public object Select() { throw new NotImplementedException(); }
+  /// <summary>
+  /// Deletes the error bars.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoerrorbars.delete?view=office-pia"/>
+  public object Delete() { throw new NotImplementedException(); }
+  /// <summary>
+  /// Clears formatting from the error bars.
+  /// </summary>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoerrorbars.clearformats?view=office-pia"/>
+  public object ClearFormats() { throw new NotImplementedException(); }
+
+  #endregion methods
 }
 
 

@@ -23,4 +23,18 @@ public partial class HiLoLines : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hilolines.format?view=word-pia"/>
   public ChartFormat Format { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Selects the object.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hilolines.select?view=word-pia"/>
+  public void Select() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

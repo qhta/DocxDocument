@@ -15,5 +15,19 @@ public partial interface ISharedWorkspaceFolders: IInteropCollection<SharedWorks
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolders.itemcountexceeded?view=office-pia"/>
   public bool ItemCountExceeded { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Invokes `Add`.
+  /// </summary>
+  /// <param name="FolderName">The `FolderName` parameter.</param>
+  /// <param name="ParentFolder">The `ParentFolder` parameter.</param>
+  /// <returns>The result of the operation.</returns>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolders.add?view=office-pia"/>
+  public SharedWorkspaceFolder Add(string FolderName, object ParentFolder);
+
+  #endregion methods
 }
 

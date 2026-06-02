@@ -89,4 +89,18 @@ public partial class OMath : InteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.alignpoint?view=word-pia"/>
   public int AlignPoint { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Converts an equation into a linear format.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omath.linearize?view=word-pia"/>
+  public void Linearize() { throw new NotImplementedException(); }
+
+  #endregion methods
 }

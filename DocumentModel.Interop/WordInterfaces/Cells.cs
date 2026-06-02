@@ -59,4 +59,20 @@ public partial interface ICells : IInteropObject, IInteropCollection<Cell>
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.preferredwidthtype?view=word-pia"/>
   public PreferredWidthType PreferredWidthType { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Adds a cell to the collection before the specified cell.
+  /// </summary>
+  /// <param name="BeforeCell">The cell before which the new cell is added.</param>
+  /// <returns>The newly added <see cref="Cell"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.cells.add?view=word-pia"/>
+  public Cell Add(object BeforeCell);
+
+  #endregion methods
 }

@@ -107,4 +107,18 @@ public partial interface IFormField : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.range?view=word-pia"/>
   public Range Range { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Selects the specified object.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfield.select?view=word-pia"/>
+  public void Select();
+
+  #endregion methods
 }

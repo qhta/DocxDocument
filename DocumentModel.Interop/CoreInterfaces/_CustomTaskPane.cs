@@ -48,5 +48,16 @@ public partial interface _ICustomTaskPane
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customtaskpane.dockpositionrestrict?view=office-pia"/>
   public CTPDockPositionRestrict DockPositionRestrict { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Deletes the active custom task pane.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customtaskpane.delete?view=office-pia"/>
+  public void Delete();
+
+  #endregion methods
 }
 

@@ -38,5 +38,16 @@ public partial interface ICustomXMLValidationError: IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerror.errorcode?view=office-pia"/>
   public int ErrorCode { get; }
+
+
+  #region methods
+
+/// <summary>
+  /// Deletes this validation error from the collection.
+  /// </summary>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.customxmlvalidationerror.delete?view=office-pia"/>
+  public void Delete();
+
+  #endregion methods
 }
 

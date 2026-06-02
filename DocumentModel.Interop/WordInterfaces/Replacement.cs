@@ -62,4 +62,19 @@ public partial interface IReplacement : IInteropObject
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.noproofing?view=word-pia"/>
   public int NoProofing { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Removes text and paragraph formatting from a selection or from the formatting specified in a find or replace
+  /// operation.
+  /// </summary>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement.clearformatting?view=word-pia"/>
+  public void ClearFormatting();
+
+  #endregion methods
 }

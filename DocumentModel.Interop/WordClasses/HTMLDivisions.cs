@@ -11,4 +11,20 @@ public partial class HTMLDivisions : InteropCollection<HTMLDivision>
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivisions.nestinglevel?view=word-pia"/>
   public int NestingLevel { get; set; }
+
+
+  #region methods
+
+/// <summary>
+  /// Adds a new HTMLDivision to the collection.
+  /// </summary>
+  /// <param name="Range">The Range object that represents the range of the new HTMLDivision.</param>
+  /// <returns>The newly created <see cref="HTMLDivision"/> object.</returns>
+  /// <remarks>
+  /// Microsoft Learn API reference.
+  /// </remarks>
+  /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.htmldivisions.add?view=word-pia"/>
+  public HTMLDivision Add(object Range) { throw new NotImplementedException(); }
+
+  #endregion methods
 }
