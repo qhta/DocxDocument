@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a protected view window.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.protectedviewwindow?view=word-pia"/>
-public partial interface IProtectedViewWindow : IInteropObject
+public interface IProtectedViewWindow : IInteropObject
 {
   /// <summary>
   /// Gets or sets the caption text that is displayed in the title bar of the document or protected view window.

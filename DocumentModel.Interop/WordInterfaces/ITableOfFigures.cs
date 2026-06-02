@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single table of figures in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tableoffigures?view=word-pia"/>
-public partial interface ITableOfFigures : IInteropObject
+public interface ITableOfFigures : IInteropObject
 {
   /// <summary>
   /// Returns or sets the label that identifies the items to be included in a table of figures.

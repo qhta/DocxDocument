@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Contains information about the computer system.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.system?view=word-pia"/>
-public partial interface ISystem : IInteropObject
+public interface ISystem : IInteropObject
 {
   /// <summary>
   /// Returns the name of the current operating system (for example, "Windows" or "Windows NT").

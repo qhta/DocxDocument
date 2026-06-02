@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single e-mail signature entry.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailsignatureentry?view=word-pia"/>
-public partial interface IEmailSignatureEntry : IInteropObject
+public interface IEmailSignatureEntry : IInteropObject
 {
   /// <summary>
   /// Gets the index number of the email signature entry in the collection.

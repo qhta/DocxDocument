@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of KeyBinding objects that represent the custom key assignments in the current context. Custom key assignments are made in the Customize Keyboard dialog box.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybindings?view=word-pia"/>
-public partial interface IKeyBindings : IInteropObject, IInteropCollection<KeyBinding>
+public interface IKeyBindings : IInteropObject, IInteropCollection<KeyBinding>
 {
   /// <summary>
   /// Returns an object that represents the storage location of the specified key binding.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single index.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.index?view=word-pia"/>
-public partial interface IIndex : IInteropObject
+public interface IIndex : IInteropObject
 {
   /// <summary>
   /// Returns or sets the character that separates topic headings and page numbers in an index.

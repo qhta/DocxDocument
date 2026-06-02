@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Word;
 /// variables are used to preserve macro settings in between macro sessions.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.variables?view=word-pia"/>
-public partial interface IVariables : IInteropObject, IInteropCollection<Variable>
+public interface IVariables : IInteropObject, IInteropCollection<Variable>
 {
 
 

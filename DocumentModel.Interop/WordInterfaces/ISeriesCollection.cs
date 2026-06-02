@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of all the Series objects in the specified chart or chart group.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.seriescollection?view=word-pia"/>
-public partial interface ISeriesCollection : IInteropObject, IInteropCollection<Series>
+public interface ISeriesCollection : IInteropObject, IInteropCollection<Series>
 {
 
 

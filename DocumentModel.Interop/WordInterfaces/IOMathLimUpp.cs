@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the upper limit mathematical construct, consisting of text on the baseline and reduced-size text immediately above it.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathlimupp?view=word-pia"/>
-public partial interface IOMathLimUpp : IInteropObject
+public interface IOMathLimUpp : IInteropObject
 {
   /// <summary>
   /// Returns the base expression for the upper-limit construct.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a window.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.window?view=word-pia"/>
-public partial interface IWindow : IInteropObject
+public interface IWindow : IInteropObject
 {
   /// <summary>
   /// Returns a Pane object that represents the active pane for the specified window.

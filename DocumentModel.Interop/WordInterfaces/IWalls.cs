@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Word;
 /// single wall; you must return all the walls as a unit.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.walls?view=word-pia"/>
-public partial interface IWalls : IInteropObject
+public interface IWalls : IInteropObject
 {
   /// <summary>
   /// Returns a String value that represents the name of the object.

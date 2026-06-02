@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents individual line breaks in an equation. Each OMathBreak object is a member of the OMathBreaks collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathbreak?view=word-pia"/>
-public partial interface IOMathBreak : IInteropObject
+public interface IOMathBreak : IInteropObject
 {
   /// <summary>
   /// Returns the range at the equation line break location.

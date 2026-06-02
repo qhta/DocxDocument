@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents characters in an object that contains text.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartcharacters?view=word-pia"/>
-public partial interface IChartCharacters : IInteropObject
+public interface IChartCharacters : IInteropObject
 {
   /// <summary>
   /// Gets or sets the caption text for the chart characters.

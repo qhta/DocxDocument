@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a chart in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chart?view=word-pia"/>
-public partial interface IChart : IInteropObject
+public interface IChart : IInteropObject
 {
   /// <summary>
   /// Gets or sets a value indicating whether the chart has a visible title.

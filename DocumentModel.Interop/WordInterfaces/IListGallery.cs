@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single gallery of list formats.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listgallery?view=word-pia"/>
-public partial interface IListGallery : IInteropObject
+public interface IListGallery : IInteropObject
 {
   /// <summary>
   /// Returns the list templates in the specified list gallery.

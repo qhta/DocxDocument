@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the title of an axis in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.axistitle?view=word-pia"/>
-public partial interface IAxisTitle : IInteropObject
+public interface IAxisTitle : IInteropObject
 {
   /// <summary>
   /// Gets or sets the caption text for the axis title.

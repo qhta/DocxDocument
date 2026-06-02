@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the legend in a chart. Each chart can have only one legend.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.legend?view=word-pia"/>
-public partial interface ILegend : IInteropObject
+public interface ILegend : IInteropObject
 {
   /// <summary>
   /// Returns the name of the object.

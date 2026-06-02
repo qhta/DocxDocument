@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a document template.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.template?view=word-pia"/>
-public partial interface ITemplate : IInteropObject
+public interface ITemplate : IInteropObject
 {
   /// <summary>
   /// Returns or sets the name of the specified object.

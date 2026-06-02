@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a collection of building block categories.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.categories?view=word-pia"/>
-public partial interface ICategories : IInteropCollection<Category>
+public interface ICategories : IInteropCollection<Category>
 {
 
 

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single registered Extensible Stylesheet Language Transformation (XSLT).
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xsltransform?view=word-pia"/>
-public partial interface IXSLTransform : IInteropObject
+public interface IXSLTransform : IInteropObject
 {
   /// <summary>
   /// Returns a value containing the GUID assigned to the current XSLTransform object.

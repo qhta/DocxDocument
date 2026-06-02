@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a series in a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.series?view=word-pia"/>
-public partial interface ISeries : IInteropObject
+public interface ISeries : IInteropObject
 {
   /// <summary>
   /// Returns an AxisGroup value that represents the type of axis group. Read/write.

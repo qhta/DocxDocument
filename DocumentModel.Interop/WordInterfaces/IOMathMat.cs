@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents an equation matrix.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmat?view=word-pia"/>
-public partial interface IOMathMat : IInteropObject
+public interface IOMathMat : IInteropObject
 {
   /// <summary>
   /// Returns the collection of matrix rows.

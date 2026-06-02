@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a subdocument within a document or range.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.subdocument?view=word-pia"/>
-public partial interface ISubdocument : IInteropObject
+public interface ISubdocument : IInteropObject
 {
   /// <summary>
   /// True if a subdocument in a master document is locked.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a chart data table.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datatable?view=word-pia"/>
-public partial interface IDataTable : IInteropObject
+public interface IDataTable : IInteropObject
 {
   /// <summary>
   /// Gets or sets a value indicating whether legend keys are shown in the data table.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the data label on a chart point or trendline.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabel?view=word-pia"/>
-public partial interface IDataLabel : IInteropObject
+public interface IDataLabel : IInteropObject
 {
   /// <summary>
   /// Gets the name of the data label object.

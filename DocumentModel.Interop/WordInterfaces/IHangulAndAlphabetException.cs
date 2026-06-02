@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single Hangul-and-alphabet AutoCorrect exception.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hangulandalphabetexception?view=word-pia"/>
-public partial interface IHangulAndAlphabetException : IInteropObject
+public interface IHangulAndAlphabetException : IInteropObject
 {
   /// <summary>
   /// Returns the position of this item in its collection.

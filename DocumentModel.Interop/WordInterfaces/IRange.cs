@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a contiguous area in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range?view=word-pia"/>
-public partial interface IRange : IInteropObject
+public interface IRange : IInteropObject
 {
   /// <summary>
   /// Returns or sets the text in the specified range.

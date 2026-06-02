@@ -4,6 +4,6 @@ namespace DocumentModel.Interop.Word;
 /// A collection of AddIn objects that represents all the add-ins available to Microsoft Word, regardless of whether or not they're currently loaded.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.addins?view=word-pia"/>
-public partial interface IAddIns : IInteropObject, IInteropCollection<AddIn>
+public interface IAddIns : IInteropObject, IInteropCollection<AddIn>
 {
 }

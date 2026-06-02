@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Word;
 /// picture.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.shape?view=word-pia"/>
-public partial interface IShape : IInteropObject
+public interface IShape : IInteropObject
 {
   /// <summary>
   /// Returns a Adjustments object that contains adjustment values for all the adjustments in the specified Shape

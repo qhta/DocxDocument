@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single action for a smart tag.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.smarttagaction?view=word-pia"/>
-public partial interface ISmartTagAction : IInteropObject
+public interface ISmartTagAction : IInteropObject
 {
   /// <summary>
   /// Returns the name of the specified object.

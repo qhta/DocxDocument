@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the drop lines in a chart group.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.droplines?view=word-pia"/>
-public partial interface IDropLines : IInteropObject
+public interface IDropLines : IInteropObject
 {
   /// <summary>
   /// Gets the name of the `DropLines` object.

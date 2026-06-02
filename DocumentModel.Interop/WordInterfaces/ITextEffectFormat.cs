@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Contains properties and methods that apply to WordArt objects.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.texteffectformat?view=word-pia"/>
-public partial interface ITextEffectFormat : IInteropObject
+public interface ITextEffectFormat : IInteropObject
 {
   /// <summary>
   /// Returns or sets a constant that represents the alignment for the specified text effect.

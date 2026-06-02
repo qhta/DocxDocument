@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Word;
 /// which indicates the elements that a user has applied to a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnodes?view=word-pia"/>
-public partial interface IXMLNodes : IInteropObject, IInteropCollection<XMLNode>
+public interface IXMLNodes : IInteropObject, IInteropCollection<XMLNode>
 {
 
 

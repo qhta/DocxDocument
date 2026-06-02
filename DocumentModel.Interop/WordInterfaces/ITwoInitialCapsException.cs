@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single initial-capital AutoCorrect exception.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.twoinitialcapsexception?view=word-pia"/>
-public partial interface ITwoInitialCapsException : IInteropObject
+public interface ITwoInitialCapsException : IInteropObject
 {
   /// <summary>
   /// Returns an Integer that represents the position of an item in a collection.

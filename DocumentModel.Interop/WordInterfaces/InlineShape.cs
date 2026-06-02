@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents an object in the text layer of a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.inlineshape?view=word-pia"/>
-public partial interface IInlineShape : IInteropObject
+public interface IInlineShape : IInteropObject
 {
   /// <summary>
   /// Returns or sets the borders for the inline shape.

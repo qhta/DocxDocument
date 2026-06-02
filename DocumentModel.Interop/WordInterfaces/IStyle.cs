@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single built-in or user-defined style.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.style?view=word-pia"/>
-public partial interface IStyle : IInteropObject
+public interface IStyle : IInteropObject
 {
   /// <summary>
   /// Returns the name of a built-in style in the language of the user. Read/write String.

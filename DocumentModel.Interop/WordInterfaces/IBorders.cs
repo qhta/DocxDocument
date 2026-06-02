@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Border objects that represent the borders of an object.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders?view=word-pia"/>
-public partial interface IBorders : IInteropObject, IInteropCollection<Border>
+public interface IBorders : IInteropObject, IInteropCollection<Border>
 {
   /// <summary>
   /// Gets or sets whether borders are enabled.

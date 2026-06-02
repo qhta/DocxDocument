@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents an individual entry in the OMathAutoCorrectEntries collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathautocorrectentry?view=word-pia"/>
-public partial interface IOMathAutoCorrectEntry : IInteropObject
+public interface IOMathAutoCorrectEntry : IInteropObject
 {
   /// <summary>
   /// Returns the index number of the entry in the math AutoCorrect entries collection.

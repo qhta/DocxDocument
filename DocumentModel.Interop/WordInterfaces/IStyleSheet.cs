@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single cascading style sheet attached to a web document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.stylesheet?view=word-pia"/>
-public partial interface IStyleSheet : IInteropObject
+public interface IStyleSheet : IInteropObject
 {
   /// <summary>
   /// Specifies the name of a cascading style sheet, including the drive or Web path.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Comment objects that represent the comments in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comments?view=word-pia"/>
-public partial interface IComments : IInteropObject, IInteropCollection<Comment>
+public interface IComments : IInteropObject, IInteropCollection<Comment>
 {
   /// <summary>
   /// Gets or sets the reviewer name whose comments are displayed.

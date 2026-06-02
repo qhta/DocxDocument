@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the collection of math AutoCorrect entries.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathautocorrectentries?view=word-pia"/>
-public partial interface IOMathAutoCorrectEntries : IInteropObject, IInteropCollection<OMathAutoCorrectEntry>
+public interface IOMathAutoCorrectEntries : IInteropObject, IInteropCollection<OMathAutoCorrectEntry>
 {
 
 

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Exposes OCX focus event subscription members for Word ActiveX controls.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.ocxevents_event?view=word-pia"/>
-public partial interface IOCXEvents_Event
+public interface IOCXEvents_Event
 {
 
 

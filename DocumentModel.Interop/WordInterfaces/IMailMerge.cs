@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the mail merge functionality in Microsoft Word.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmerge?view=word-pia"/>
-public partial interface IMailMerge : IInteropObject
+public interface IMailMerge : IInteropObject
 {
   /// <summary>
   /// Returns or sets the main document type.

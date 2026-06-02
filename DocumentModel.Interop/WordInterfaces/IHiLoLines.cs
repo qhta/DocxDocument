@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents high-low lines in a chart group.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hilolines?view=word-pia"/>
-public partial interface IHiLoLines : IInteropObject
+public interface IHiLoLines : IInteropObject
 {
   /// <summary>
   /// Returns the name of the object.

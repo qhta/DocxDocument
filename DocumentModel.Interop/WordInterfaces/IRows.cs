@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Row objects that represent the table rows in the specified selection, range, or table.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.rows?view=word-pia"/>
-public partial interface IRows : IInteropObject, IInteropCollection<Row>
+public interface IRows : IInteropObject, IInteropCollection<Row>
 {
   /// <summary>
   /// Determine if the text in a table row or rows is allowed to split across a page break.

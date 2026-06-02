@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single tab stop.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.tabstop?view=word-pia"/>
-public partial interface ITabStop : IInteropObject
+public interface ITabStop : IInteropObject
 {
   /// <summary>
   /// Returns or sets a constant that represents the alignment for the specified tab stop.

@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Word;
 /// bottom margin, paper size, and so on) as properties.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagesetup?view=word-pia"/>
-public partial interface IPageSetup : IInteropObject
+public interface IPageSetup : IInteropObject
 {
   /// <summary>
   /// Returns or sets the distance (in points) between the top edge of the page and the top boundary of the body

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single task running on the system.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.task?view=word-pia"/>
-public partial interface ITask : IInteropObject
+public interface ITask : IInteropObject
 {
   /// <summary>
   /// Returns or sets the name of the specified object.

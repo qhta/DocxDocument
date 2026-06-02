@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Field objects that represent all the fields in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fields?view=word-pia"/>
-public partial interface IFields : IInteropObject, IInteropCollection<Field>
+public interface IFields : IInteropObject, IInteropCollection<Field>
 {
   /// <summary>
   /// Determines if all fields in the <see cref="Fields"/> collection are locked.

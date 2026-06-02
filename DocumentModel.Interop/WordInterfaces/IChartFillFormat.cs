@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents fill formatting for chart elements.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartfillformat?view=word-pia"/>
-public partial interface IChartFillFormat : IInteropObject
+public interface IChartFillFormat : IInteropObject
 {
   /// <summary>
   /// Gets the background color of the fill.

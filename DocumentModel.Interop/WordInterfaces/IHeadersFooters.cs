@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of HeaderFooter objects that represent the headers or footers in the specified section of a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headersfooters?view=word-pia"/>
-public partial interface IHeadersFooters : IInteropObject, IInteropCollection<HeaderFooter>
+public interface IHeadersFooters : IInteropObject, IInteropCollection<HeaderFooter>
 {
 
 

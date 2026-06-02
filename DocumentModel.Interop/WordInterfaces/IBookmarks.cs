@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Bookmark objects that represent the bookmarks in the specified selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.bookmarks?view=word-pia"/>
-public partial interface IBookmarks : IInteropObject, IInteropCollection<Bookmark>
+public interface IBookmarks : IInteropObject, IInteropCollection<Bookmark>
 {
   /// <summary>
   /// Gets or sets the default sorting order for bookmarks.

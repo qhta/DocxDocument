@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a page number in a header or footer.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.pagenumber?view=word-pia"/>
-public partial interface IPageNumber : IInteropObject
+public interface IPageNumber : IInteropObject
 {
   /// <summary>
   /// Returns an Integer that represents the position of an item in a collection.

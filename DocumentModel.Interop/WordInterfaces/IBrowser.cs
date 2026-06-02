@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the browser tool used to move the insertion point to objects in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.browser?view=word-pia"/>
-public partial interface IBrowser : IInteropObject
+public interface IBrowser : IInteropObject
 {
   /// <summary>
   /// Gets or sets the type of item that the browser moves to.

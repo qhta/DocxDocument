@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a collection of index objects in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.indexes?view=word-pia"/>
-public partial interface IIndexes : IInteropObject, IInteropCollection<Index>
+public interface IIndexes : IInteropObject, IInteropCollection<Index>
 {
   /// <summary>
   /// Returns or sets the built-in format used for the index.

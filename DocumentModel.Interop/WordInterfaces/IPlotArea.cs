@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the plot area of a chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.plotarea?view=word-pia"/>
-public partial interface IPlotArea : IInteropObject
+public interface IPlotArea : IInteropObject
 {
   /// <summary>
   /// Returns a String value that represents the name of the object.

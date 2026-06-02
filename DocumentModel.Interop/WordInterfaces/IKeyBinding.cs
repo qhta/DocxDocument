@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a custom key assignment in the current context.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybinding?view=word-pia"/>
-public partial interface IKeyBinding : IInteropObject
+public interface IKeyBinding : IInteropObject
 {
   /// <summary>
   /// Returns the command assigned to the key binding.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the floor of a 3-D chart.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.floor?view=word-pia"/>
-public partial interface IFloor : IInteropObject
+public interface IFloor : IInteropObject
 {
   /// <summary>
   /// Returns a string value that represents the name of the object.

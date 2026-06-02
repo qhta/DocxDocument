@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single diagram in a document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagram?view=word-pia"/>
-public partial interface IDiagram : IInteropObject
+public interface IDiagram : IInteropObject
 {
   /// <summary>
   /// Gets the collection of nodes in the diagram.

@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the mail merge data source in a mail merge operation.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergedatasource?view=word-pia"/>
-public partial interface IMailMergeDataSource : IInteropObject
+public interface IMailMergeDataSource : IInteropObject
 {
   /// <summary>
   /// Returns the name of the mail merge data source.

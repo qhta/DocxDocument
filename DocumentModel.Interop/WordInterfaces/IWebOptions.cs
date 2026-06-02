@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Word;
 /// page.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.weboptions?view=word-pia"/>
-public partial interface IWebOptions : IInteropObject
+public interface IWebOptions : IInteropObject
 {
   /// <summary>
   /// True if Microsoft Word optimizes new Web pages created in Word for the Web browser specified by the

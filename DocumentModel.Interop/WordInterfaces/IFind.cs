@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the criteria for a find operation.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.find?view=word-pia"/>
-public partial interface IFind : IInteropObject
+public interface IFind : IInteropObject
 {
   /// <summary>
   /// Determines if the find operation searches forward through the document.

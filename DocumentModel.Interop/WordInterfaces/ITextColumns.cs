@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Word;
 /// document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.textcolumns?view=word-pia"/>
-public partial interface ITextColumns : IInteropObject, IInteropCollection<TextColumn>
+public interface ITextColumns : IInteropObject, IInteropCollection<TextColumn>
 {
   /// <summary>
   /// True if text columns are evenly spaced. Can be True, False, or wdUndefined.

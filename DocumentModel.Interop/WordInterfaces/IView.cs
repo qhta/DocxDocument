@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Contains the view attributes (show all, field shading, table gridlines, and so on) for a window or pane.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.view?view=word-pia"/>
-public partial interface IView : IInteropObject
+public interface IView : IInteropObject
 {
   /// <summary>
   /// Returns or sets the view type.

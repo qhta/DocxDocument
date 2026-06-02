@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Column objects that represent the columns in a table.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns?view=word-pia"/>
-public partial interface IColumns : IInteropObject, IInteropCollection<Column>
+public interface IColumns : IInteropObject, IInteropCollection<Column>
 {
   /// <summary>
   /// Gets the first column in the collection.

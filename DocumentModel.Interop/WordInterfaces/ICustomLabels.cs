@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of CustomLabel objects available in the Label Options dialog box.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customlabels?view=word-pia"/>
-public partial interface ICustomLabels : IInteropObject, IInteropCollection<CustomLabel>
+public interface ICustomLabels : IInteropObject, IInteropCollection<CustomLabel>
 {
 
 

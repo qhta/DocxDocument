@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Footnote objects that represent all the footnotes in a selection, range, or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes?view=word-pia"/>
-public partial interface IFootnotes : IInteropObject, IInteropCollection<Footnote>
+public interface IFootnotes : IInteropObject, IInteropCollection<Footnote>
 {
   /// <summary>
   /// Returns or sets the position of all footnotes.

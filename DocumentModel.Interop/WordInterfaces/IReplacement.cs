@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents the replace criteria for a find-and-replace operation.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.replacement?view=word-pia"/>
-public partial interface IReplacement : IInteropObject
+public interface IReplacement : IInteropObject
 {
   /// <summary>
   /// Returns or sets a Font object that represents the character formatting of the specified object.

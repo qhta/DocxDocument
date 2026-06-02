@@ -5,7 +5,7 @@ namespace DocumentModel.Interop.Word;
 /// between macro sessions.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.variable?view=word-pia"/>
-public partial interface IVariable : IInteropObject
+public interface IVariable : IInteropObject
 {
   /// <summary>
   /// Returns or sets the name of the specified object.

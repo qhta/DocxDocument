@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a matrix column. The OMathMatCol object is a member of the OMathMatCols collection.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatcol?view=word-pia"/>
-public partial interface IOMathMatCol : IInteropObject
+public interface IOMathMatCol : IInteropObject
 {
   /// <summary>
   /// Returns the collection of arguments in the matrix column.

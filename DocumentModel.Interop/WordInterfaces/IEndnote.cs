@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents an endnote.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.endnote?view=word-pia"/>
-public partial interface IEndnote : IInteropObject
+public interface IEndnote : IInteropObject
 {
   /// <summary>
   /// Gets the range that contains the endnote text.

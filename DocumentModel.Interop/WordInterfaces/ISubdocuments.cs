@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// A collection of Subdocument objects that represent the subdocuments in a range or document.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.subdocuments?view=word-pia"/>
-public partial interface ISubdocuments : IInteropObject, IInteropCollection<Subdocument>
+public interface ISubdocuments : IInteropObject, IInteropCollection<Subdocument>
 {
   /// <summary>
   /// True if the subdocuments in the specified document are expanded.

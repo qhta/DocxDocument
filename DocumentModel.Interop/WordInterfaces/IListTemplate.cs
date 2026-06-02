@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Represents a single list template that includes all the formatting that defines a list.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listtemplate?view=word-pia"/>
-public partial interface IListTemplate : IInteropObject
+public interface IListTemplate : IInteropObject
 {
   /// <summary>
   /// Returns or sets whether the list template is outline numbered.
