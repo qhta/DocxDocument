@@ -12,7 +12,7 @@ namespace DocumentModel.Interop;
 /// class is intended for use in scenarios where compatibility with external or legacy APIs is necessary.
 /// </remarks>
 /// <typeparam name="ItemType">The type of elements contained in the collection.</typeparam>
-public class InteropCollection<ItemType>: IInteropCollection<ItemType>
+public class InteropCollection<ItemType>: IEnumerable<ItemType>
 {
   /// <summary>
   /// The underlying list of items in the collection.

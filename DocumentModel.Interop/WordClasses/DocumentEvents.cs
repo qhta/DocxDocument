@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Reserved for internal use.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.documentevents?view=word-pia"/>
-public partial class Document: IDocumentEvents
+public partial class Document
 {
 
   /// <summary>

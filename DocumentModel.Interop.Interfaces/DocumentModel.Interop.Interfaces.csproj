@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <DocumentationFile>docs\DocumentModel.Interop.xml</DocumentationFile>
+    <DocumentationFile>docs\DocumentModel.Interop.Interfaces.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net4.8|AnyCPU'">
@@ -26,35 +26,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="BaseInterfaces\**" />
     <Compile Remove="CoreInterfaces1\**" />
     <Compile Remove="ExcelInterfaces\**" />
+    <EmbeddedResource Remove="BaseInterfaces\**" />
     <EmbeddedResource Remove="CoreInterfaces1\**" />
     <EmbeddedResource Remove="ExcelInterfaces\**" />
+    <None Remove="BaseInterfaces\**" />
     <None Remove="CoreInterfaces1\**" />
     <None Remove="ExcelInterfaces\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="BaseClasses\InteropList.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include=".github\copilot-instructions.md" />
-    <None Include="..\..\..\Scripts\UpdateXmlComments.py" Link="Scripts\UpdateXmlComments.py" />
-    <None Include="..\..\..\Scripts\RemoveTypeNamesFromEnums.py" Link="Scripts\RemoveTypeNamesFromEnums.py" />
-    <None Include="..\..\..\Scripts\TrimEnumFieldNames.py" Link="Scripts\TrimEnumFieldNames.py" />
-    <None Include="..\..\..\Scripts\CompareEnumTypes.py" Link="Scripts\CompareEnumTypes.py" />
-    <None Include="..\..\..\Scripts\AddPiaCoreLink.py" Link="Scripts\AddPiaCoreLink.py" />
-    <None Include="..\..\..\Scripts\AddPiaWordLink.py" Link="Scripts\AddPiaWordLink.py" />
+    <Compile Include="BaseInterfaces\IInteropObject.cs" />
+    <Compile Include="BaseInterfaces\INamedItem.cs" />
+    <Compile Include="BaseInterfaces\IInteropCollection.cs" />
+    <Compile Include="BaseInterfaces\IInteropDictionary.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXmlTools.csproj" />
     <ProjectReference Include="..\DocumentModel.Interop.Enums\DocumentModel.Interop.Enums.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="temp\" />
   </ItemGroup>
 
 </Project>

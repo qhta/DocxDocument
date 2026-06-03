@@ -11,7 +11,7 @@ namespace DocumentModel.Interop;
 /// should ensure consistent behavior between standard and default item accessors.</remarks>
 /// <typeparam name="KeyType">The type of the keys or indices used to access items in the dictionary.</typeparam>
 /// <typeparam name="ItemType">The type of the items stored in the dictionary.</typeparam>
-public class InteropDictionary<KeyType, ItemType>: IInteropDictionary<KeyType, ItemType>
+public class InteropDictionary<KeyType, ItemType>: IDictionary<KeyType, ItemType>
   where KeyType : notnull
 
 {

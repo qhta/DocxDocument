@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.4.11612.150
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentModel.Interop.Interfaces", "DocumentModel.Interop.Interfaces.csproj", "{862050D9-07E1-D8AF-6A32-BAEA9EFB09F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentModel.Interop.Enums", "..\DocumentModel.Interop.Enums\DocumentModel.Interop.Enums.csproj", "{1C6CC0BE-D77F-1528-983A-FD67FDF4EA21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qhta.OpenXmlTools", "..\..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXmlTools.csproj", "{CE09F7C8-AFF0-ABB7-FF1F-6358D679C445}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{862050D9-07E1-D8AF-6A32-BAEA9EFB09F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{862050D9-07E1-D8AF-6A32-BAEA9EFB09F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{862050D9-07E1-D8AF-6A32-BAEA9EFB09F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{862050D9-07E1-D8AF-6A32-BAEA9EFB09F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C6CC0BE-D77F-1528-983A-FD67FDF4EA21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C6CC0BE-D77F-1528-983A-FD67FDF4EA21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C6CC0BE-D77F-1528-983A-FD67FDF4EA21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C6CC0BE-D77F-1528-983A-FD67FDF4EA21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE09F7C8-AFF0-ABB7-FF1F-6358D679C445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE09F7C8-AFF0-ABB7-FF1F-6358D679C445}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE09F7C8-AFF0-ABB7-FF1F-6358D679C445}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE09F7C8-AFF0-ABB7-FF1F-6358D679C445}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6D51315-66AB-4CB9-86F5-16A336A40B4F}
+	EndGlobalSection
+EndGlobal

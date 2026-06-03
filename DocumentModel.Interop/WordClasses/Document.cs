@@ -76,7 +76,7 @@ public partial class Document
   /// Returns a DocumentProperties collection that represents all the built-in document properties for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.builtindocumentproperties?view=word-pia"/>
-  public Core.IDocumentProperties BuiltInDocumentProperties { get; set; }
+  public Core.DocumentProperties BuiltInDocumentProperties { get; set; }
 
   /// <summary>
   /// Returns a Characters collection that represents the characters in a document.
@@ -118,13 +118,13 @@ public partial class Document
   /// Returns a CommandBars collection that represents the menu bar and all the toolbars in Microsoft Word.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.commandbars?view=word-pia"/>
-  public Core.ICommandBars CommandBars { get; set; }
+  public Core.CommandBars CommandBars { get; set; }
 
   /// <summary>
   /// Returns a Comments collection that represents all the comments in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.comments?view=word-pia"/>
-  public IComments Comments { get; set; }
+  public Comments Comments { get; set; }
 
   /// <summary>
   /// Returns a long that specifies the compatibility mode that Word 2010 uses when opening the document.
@@ -160,7 +160,7 @@ public partial class Document
   /// Returns the metadata stored in a document, such as author name, subject, and company. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.contenttypeproperties?view=word-pia"/>
-  public Core.IMetaProperties ContentTypeProperties { get; set; }
+  public Core.MetaProperties ContentTypeProperties { get; set; }
 
   /// <summary>
   /// Returns a random number that Word assigns to changes in a document. Read-only.
@@ -172,13 +172,13 @@ public partial class Document
   /// Returns a DocumentProperties collection that represents all the custom document properties for the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.customdocumentproperties?view=word-pia"/>
-  public Core.IDocumentProperties CustomDocumentProperties { get; set; }
+  public Core.DocumentProperties CustomDocumentProperties { get; set; }
 
   /// <summary>
   /// Returns a CustomXMLParts#SameCHM collection that represents the custom XML in the XML data store. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.customxmlparts?view=word-pia"/>
-  public Core.ICustomXMLParts CustomXMLParts { get; set; }
+  public Core.CustomXMLParts CustomXMLParts { get; set; }
 
   /// <summary>
   /// Returns a TableStyle that represents the table style that is applied to all newly created tables in a document.
@@ -220,19 +220,19 @@ public partial class Document
   /// Returns a DocumentInspectors collection that enables you to locate hidden personal information, such as author name, company name, and revision date. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.documentinspectors?view=word-pia"/>
-  public Core.IDocumentInspectors DocumentInspectors { get; set; }
+  public Core.DocumentInspectors DocumentInspectors { get; set; }
 
   /// <summary>
   /// Returns a DocumentLibraryVersions collection that represents the collection of versions of a shared document that has versioning enabled and that is stored in a document library on a server.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.documentlibraryversions?view=word-pia"/>
-  public Core.IDocumentLibraryVersions DocumentLibraryVersions { get; set; }
+  public Core.DocumentLibraryVersions DocumentLibraryVersions { get; set; }
 
   /// <summary>
   /// Returns an OfficeTheme object that represents the Microsoft Office theme applied to a document. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.documenttheme?view=word-pia"/>
-  public Core.IOfficeTheme DocumentTheme { get; set; }
+  public Core.OfficeTheme DocumentTheme { get; set; }
 
   /// <summary>
   /// Determines if Microsoft Word embeds common system fonts.
@@ -478,7 +478,7 @@ public partial class Document
   /// Returns an HTMLProject object in the specified document that represents a top-level project branch, as in the Project Explorer of the Microsoft Script Editor.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.htmlproject?view=word-pia"/>
-  public Core.IHTMLProject HTMLProject { get; set; }
+  public Core.HTMLProject HTMLProject { get; set; }
 
   /// <summary>
   /// Returns a Hyperlinks collection that represents all the hyperlinks in the specified document, range, or selection.
@@ -586,7 +586,7 @@ public partial class Document
   /// Returns an MsoEnvelope object that represents an e-mail header for a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.mailenvelope?view=word-pia"/>
-  public Core.IMsoEnvelope MailEnvelope { get; set; }
+  public Core.MsoEnvelope MailEnvelope { get; set; }
 
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
@@ -754,7 +754,7 @@ public partial class Document
   /// Returns a Permission object that represents the permission settings in the specified document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.permission?view=word-pia"/>
-  public Core.IPermission Permission { get; set; }
+  public Core.Permission Permission { get; set; }
 
   /// <summary>
   /// Determines if Microsoft Word prints onto a preprinted form only the data entered in the corresponding online form.
@@ -898,7 +898,7 @@ public partial class Document
   /// Returns a Scripts collection that represents the collection of HTML scripts in the specified object.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.scripts?view=word-pia"/>
-  public Core.IScripts Scripts { get; set; }
+  public Core.Scripts Scripts { get; set; }
 
   /// <summary>
   /// Returns a Sections collection that represents the sections in the specified document.
@@ -916,7 +916,7 @@ public partial class Document
   /// Returns the policy specified for a document stored on a server running Microsoft Office SharePoint Server 2007. Read-only.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.serverpolicy?view=word-pia"/>
-  public Core.IServerPolicy ServerPolicy { get; set; }
+  public Core.ServerPolicy ServerPolicy { get; set; }
 
   /// <summary>
   /// Returns a Shapes collection that represents all the Shape objects in the specified document.
@@ -928,7 +928,7 @@ public partial class Document
   /// Returns a SharedWorkspace object that represents the Document Workspace in which a specified document is located.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.sharedworkspace?view=word-pia"/>
-  public Core.ISharedWorkspace SharedWorkspace { get; set; }
+  public Core.SharedWorkspace SharedWorkspace { get; set; }
 
   /// <summary>
   /// Determines if grammatical errors are marked by a wavy green line in the specified document.
@@ -958,13 +958,13 @@ public partial class Document
   /// Returns a SignatureSet object that represents the digital signatures for a document.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.signatures?view=word-pia"/>
-  public Core.ISignatureSet Signatures { get; set; }
+  public Core.SignatureSet Signatures { get; set; }
 
   /// <summary>
   /// Returns a SmartDocument object that represents the settings for a smart document solution.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.smartdocument?view=word-pia"/>
-  public Core.ISmartDocument SmartDocument { get; set; }
+  public Core.SmartDocument SmartDocument { get; set; }
 
   /// <summary>
   /// Returns a SmartTags object that represents a smart tag in a document.
@@ -1048,7 +1048,7 @@ public partial class Document
   /// Returns a Sync object that provides access to the methods and properties for documents that are part of a Document Workspace.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.sync?view=word-pia"/>
-  public Core.ISync Sync { get; set; }
+  public Core.Sync Sync { get; set; }
 
   /// <summary>
   /// Returns a Tables collection that represents all the tables in the specified document.
@@ -1900,7 +1900,7 @@ public partial class Document
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.getworkflowtasks?view=word-pia"/>
-  public Core.IWorkflowTasks GetWorkflowTasks() { throw new NotImplementedException(); }
+  public Core.WorkflowTasks GetWorkflowTasks() { throw new NotImplementedException(); }
 
   /// <summary>
   /// Returns the workflow templates attached to a document.
@@ -1909,7 +1909,7 @@ public partial class Document
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.getworkflowtemplates?view=word-pia"/>
-  public Core.IWorkflowTemplates GetWorkflowTemplates() { throw new NotImplementedException(); }
+  public Core.WorkflowTemplates GetWorkflowTemplates() { throw new NotImplementedException(); }
 
   /// <summary>
   /// Returns a Range object that represents the start position of the specified item.
@@ -2511,7 +2511,7 @@ public partial class Document
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectlinkedcontrols?view=word-pia"/>
-  public ContentControls SelectLinkedControls(Core.ICustomXMLNode node) { throw new NotImplementedException(); }
+  public ContentControls SelectLinkedControls(Core.CustomXMLNode node) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Returns an XMLNodes collection that represents all the specified nodes in the order in which they appear in the document.
@@ -2545,7 +2545,7 @@ public partial class Document
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectunlinkedcontrols?view=word-pia"/>
-  public ContentControls SelectUnlinkedControls(Core.ICustomXMLPart stream) { throw new NotImplementedException(); }
+  public ContentControls SelectUnlinkedControls(Core.CustomXMLPart stream) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Sends the specified document as a fax, without any user interaction.

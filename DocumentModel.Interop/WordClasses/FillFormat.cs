@@ -94,7 +94,7 @@ public partial class FillFormat : InteropObject
   /// Gets the <see cref="Core.GradientStops"/> collection associated with the specified fill format.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.gradientstops?view=word-pia"/>
-  public Core.IGradientStops GradientStops { get; set; }
+  public Core.GradientStops GradientStops { get; set; }
 
   /// <summary>
   /// Gets or sets a value that specifies the horizontal offset of the texture from the origin in points.
@@ -142,7 +142,7 @@ public partial class FillFormat : InteropObject
   /// Gets a <see cref="Core.PictureEffects"/> object that can be used to apply picture effects to the specified fill formatting.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.fillformat.pictureeffects?view=word-pia"/>
-  public Core.IPictureEffects PictureEffects { get; set; }
+  public Core.PictureEffects PictureEffects { get; set; }
 
   /// <summary>
   /// Gets or sets the angle of the gradient fill for the specified fill format.

@@ -80,7 +80,7 @@ public class DefaultWebOptions : InteropObject
   /// Gets the web page font settings.
   /// </summary>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.defaultweboptions.fonts?view=word-pia"/>
-  public Core.IWebPageFonts Fonts { get; set; }
+  public Core.WebPageFonts Fonts { get; set; }
   /// <summary>
   /// Gets the suffix used for the folder that contains supporting files for saved web pages.
   /// </summary>
