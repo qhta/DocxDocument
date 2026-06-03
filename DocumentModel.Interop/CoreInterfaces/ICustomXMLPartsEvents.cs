@@ -14,21 +14,21 @@ public interface ICustomXMLPartsEvents
 /// <summary>
   /// Raised after a custom XML part is added.
   /// </summary>
-  /// <param name="NewPart">The `NewPart` parameter.</param>
+  /// <param name="newPart">The `NewPart` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartsevents.partafteradd?view=office-pia"/>
-  public void PartAfterAdd(ICustomXMLPart NewPart);
+  public void PartAfterAdd(ICustomXMLPart newPart);
   /// <summary>
   /// Raised before a custom XML part is deleted.
   /// </summary>
-  /// <param name="OldPart">The `OldPart` parameter.</param>
+  /// <param name="oldPart">The `OldPart` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartsevents.partbeforedelete?view=office-pia"/>
-  public void PartBeforeDelete(ICustomXMLPart OldPart);
+  public void PartBeforeDelete(ICustomXMLPart oldPart);
   /// <summary>
   /// Raised after a custom XML part is loaded.
   /// </summary>
-  /// <param name="Part">The `Part` parameter.</param>
+  /// <param name="part">The `Part` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartsevents.partafterload?view=office-pia"/>
-  public void PartAfterLoad(ICustomXMLPart Part);
+  public void PartAfterLoad(ICustomXMLPart part);
 
   #endregion methods
 }

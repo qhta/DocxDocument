@@ -21,60 +21,60 @@ public partial class CanvasShapes: InteropCollection<Shape>
 /// <summary>
   /// Returns a shape from the canvas by index or name.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.item?view=office-pia"/>
-  public Shape Item(object Index) { throw new NotImplementedException(); }
+  public Shape Item(object index) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `AddCallout`.
   /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
+  /// <param name="left">The `Left` parameter.</param>
+  /// <param name="top">The `Top` parameter.</param>
+  /// <param name="width">The `Width` parameter.</param>
+  /// <param name="height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addcallout?view=office-pia"/>
-  public Shape AddCallout(CalloutType Type, float Left, float Top, float Width, float Height) { throw new NotImplementedException(); }
+  public Shape AddCallout(CalloutType type, float left, float top, float width, float height) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `AddConnector`.
   /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="BeginX">The `BeginX` parameter.</param>
-  /// <param name="BeginY">The `BeginY` parameter.</param>
-  /// <param name="EndX">The `EndX` parameter.</param>
-  /// <param name="EndY">The `EndY` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
+  /// <param name="beginX">The `BeginX` parameter.</param>
+  /// <param name="beginY">The `BeginY` parameter.</param>
+  /// <param name="endX">The `EndX` parameter.</param>
+  /// <param name="endY">The `EndY` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addconnector?view=office-pia"/>
-  public Shape AddConnector(ConnectorType Type, float BeginX, float BeginY, float EndX, float EndY) { throw new NotImplementedException(); }
+  public Shape AddConnector(ConnectorType type, float beginX, float beginY, float endX, float endY) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `AddCurve`.
   /// </summary>
-  /// <param name="SafeArrayOfPoints">The `SafeArrayOfPoints` parameter.</param>
+  /// <param name="safeArrayOfPoints">The `SafeArrayOfPoints` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addcurve?view=office-pia"/>
-  public Shape AddCurve(object SafeArrayOfPoints) { throw new NotImplementedException(); }
+  public Shape AddCurve(object safeArrayOfPoints) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `AddLabel`.
   /// </summary>
-  /// <param name="Orientation">The `Orientation` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
+  /// <param name="orientation">The `Orientation` parameter.</param>
+  /// <param name="left">The `Left` parameter.</param>
+  /// <param name="top">The `Top` parameter.</param>
+  /// <param name="width">The `Width` parameter.</param>
+  /// <param name="height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addlabel?view=office-pia"/>
-  public Shape AddLabel(TextOrientation Orientation, float Left, float Top, float Width, float Height) { throw new NotImplementedException(); }
+  public Shape AddLabel(TextOrientation orientation, float left, float top, float width, float height) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `AddLine`.
   /// </summary>
-  /// <param name="BeginX">The `BeginX` parameter.</param>
-  /// <param name="BeginY">The `BeginY` parameter.</param>
-  /// <param name="EndX">The `EndX` parameter.</param>
-  /// <param name="EndY">The `EndY` parameter.</param>
+  /// <param name="beginX">The `BeginX` parameter.</param>
+  /// <param name="beginY">The `BeginY` parameter.</param>
+  /// <param name="endX">The `EndX` parameter.</param>
+  /// <param name="endY">The `EndY` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addline?view=office-pia"/>
-  public Shape AddLine(float BeginX, float BeginY, float EndX, float EndY) { throw new NotImplementedException(); }
+  public Shape AddLine(float beginX, float beginY, float endX, float endY) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `AddPicture`.
   /// </summary>
@@ -93,21 +93,21 @@ public partial class CanvasShapes: InteropCollection<Shape>
   /// <summary>
   /// Invokes `AddPolyline`.
   /// </summary>
-  /// <param name="SafeArrayOfPoints">The `SafeArrayOfPoints` parameter.</param>
+  /// <param name="safeArrayOfPoints">The `SafeArrayOfPoints` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addpolyline?view=office-pia"/>
-  public Shape AddPolyline(object SafeArrayOfPoints) { throw new NotImplementedException(); }
+  public Shape AddPolyline(object safeArrayOfPoints) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `AddShape`.
   /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
+  /// <param name="left">The `Left` parameter.</param>
+  /// <param name="top">The `Top` parameter.</param>
+  /// <param name="width">The `Width` parameter.</param>
+  /// <param name="height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addshape?view=office-pia"/>
-  public Shape AddShape(AutoShapeType Type, float Left, float Top, float Width, float Height) { throw new NotImplementedException(); }
+  public Shape AddShape(AutoShapeType type, float left, float top, float width, float height) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `AddTextEffect`.
   /// </summary>
@@ -127,30 +127,30 @@ public partial class CanvasShapes: InteropCollection<Shape>
   /// <summary>
   /// Invokes `AddTextbox`.
   /// </summary>
-  /// <param name="Orientation">The `Orientation` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
+  /// <param name="orientation">The `Orientation` parameter.</param>
+  /// <param name="left">The `Left` parameter.</param>
+  /// <param name="top">The `Top` parameter.</param>
+  /// <param name="width">The `Width` parameter.</param>
+  /// <param name="height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.addtextbox?view=office-pia"/>
-  public Shape AddTextbox(TextOrientation Orientation, float Left, float Top, float Width, float Height) { throw new NotImplementedException(); }
+  public Shape AddTextbox(TextOrientation orientation, float left, float top, float width, float height) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `BuildFreeform`.
   /// </summary>
-  /// <param name="EditingType">The `EditingType` parameter.</param>
-  /// <param name="X1">The `X1` parameter.</param>
-  /// <param name="Y1">The `Y1` parameter.</param>
+  /// <param name="editingType">The `EditingType` parameter.</param>
+  /// <param name="x1">The `X1` parameter.</param>
+  /// <param name="y1">The `Y1` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.buildfreeform?view=office-pia"/>
-  public FreeformBuilder BuildFreeform(EditingType EditingType, float X1, float Y1) { throw new NotImplementedException(); }
+  public FreeformBuilder BuildFreeform(EditingType editingType, float x1, float y1) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `Range`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.canvasshapes.range?view=office-pia"/>
-  public ShapeRange Range(object Index) { throw new NotImplementedException(); }
+  public ShapeRange Range(object index) { throw new NotImplementedException(); }
   /// <summary>
   /// Selects all shapes on the drawing canvas.
   /// </summary>

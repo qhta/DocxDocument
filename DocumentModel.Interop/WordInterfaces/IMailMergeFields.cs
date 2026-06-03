@@ -14,60 +14,60 @@ public interface IMailMergeFields : IInteropObject, IInteropCollection<IMailMerg
   /// Inserts a merge field at the specified range.
   /// </summary>
   /// <param name="range">The range where the field is inserted.</param>
-  /// <param name="Name">The name of the mail merge field.</param>
+  /// <param name="name">The name of the mail merge field.</param>
   /// <returns>The created <see cref="IMailMergeField"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.add?view=word-pia"/>
-  public IMailMergeField Add(IRange range, string Name);
+  public IMailMergeField Add(IRange range, string name);
 
   /// <summary>
   /// Inserts an ASK field at the specified range.
   /// </summary>
   /// <param name="range">The range where the ASK field is inserted.</param>
-  /// <param name="Name">The name of the ASK field.</param>
-  /// <param name="Prompt">The prompt text for the ASK field.</param>
-  /// <param name="DefaultAskText">The default text for the ASK field.</param>
-  /// <param name="AskOnce">true to prompt only once; otherwise, false.</param>
+  /// <param name="name">The name of the ASK field.</param>
+  /// <param name="prompt">The prompt text for the ASK field.</param>
+  /// <param name="defaultAskText">The default text for the ASK field.</param>
+  /// <param name="askOnce">true to prompt only once; otherwise, false.</param>
   /// <returns>The created <see cref="IMailMergeField"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addask?view=word-pia"/>
-  public IMailMergeField AddAsk(IRange range, string Name, object Prompt, object DefaultAskText, object AskOnce);
+  public IMailMergeField AddAsk(IRange range, string name, object prompt, object defaultAskText, object askOnce);
 
   /// <summary>
   /// Inserts a FILLIN field at the specified range.
   /// </summary>
   /// <param name="range">The range where the FILLIN field is inserted.</param>
-  /// <param name="Prompt">The prompt text for the FILLIN field.</param>
-  /// <param name="DefaultFillInText">The default text for the FILLIN field.</param>
-  /// <param name="AskOnce">true to prompt only once; otherwise, false.</param>
+  /// <param name="prompt">The prompt text for the FILLIN field.</param>
+  /// <param name="defaultFillInText">The default text for the FILLIN field.</param>
+  /// <param name="askOnce">true to prompt only once; otherwise, false.</param>
   /// <returns>The created <see cref="IMailMergeField"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addfillin?view=word-pia"/>
-  public IMailMergeField AddFillIn(IRange range, object Prompt, object DefaultFillInText, object AskOnce);
+  public IMailMergeField AddFillIn(IRange range, object prompt, object defaultFillInText, object askOnce);
 
   /// <summary>
   /// Inserts an IF field at the specified range.
   /// </summary>
   /// <param name="range">The range where the IF field is inserted.</param>
-  /// <param name="MergeField">The merge field to compare.</param>
-  /// <param name="Comparison">The comparison operator.</param>
-  /// <param name="CompareTo">The value to compare to.</param>
-  /// <param name="TrueAutoText">The AutoText entry to insert if true.</param>
-  /// <param name="TrueText">The text to insert if true.</param>
-  /// <param name="FalseAutoText">The AutoText entry to insert if false.</param>
-  /// <param name="FalseText">The text to insert if false.</param>
+  /// <param name="mergeField">The merge field to compare.</param>
+  /// <param name="comparison">The comparison operator.</param>
+  /// <param name="compareTo">The value to compare to.</param>
+  /// <param name="trueAutoText">The AutoText entry to insert if true.</param>
+  /// <param name="trueText">The text to insert if true.</param>
+  /// <param name="falseAutoText">The AutoText entry to insert if false.</param>
+  /// <param name="falseText">The text to insert if false.</param>
   /// <returns>The created <see cref="IMailMergeField"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addif?view=word-pia"/>
-  public IMailMergeField AddIf(IRange range, string MergeField, WdMailMergeComparison Comparison, object CompareTo, object TrueAutoText, object TrueText, object FalseAutoText, object FalseText);
+  public IMailMergeField AddIf(IRange range, string mergeField, WdMailMergeComparison comparison, object compareTo, object trueAutoText, object trueText, object falseAutoText, object falseText);
 
   /// <summary>
   /// Inserts a MERGEREC field at the specified range.
@@ -106,43 +106,43 @@ public interface IMailMergeFields : IInteropObject, IInteropCollection<IMailMerg
   /// Inserts a NEXTIF field at the specified range.
   /// </summary>
   /// <param name="range">The range where the NEXTIF field is inserted.</param>
-  /// <param name="MergeField">The merge field to compare.</param>
-  /// <param name="Comparison">The comparison operator.</param>
-  /// <param name="CompareTo">The value to compare to.</param>
+  /// <param name="mergeField">The merge field to compare.</param>
+  /// <param name="comparison">The comparison operator.</param>
+  /// <param name="compareTo">The value to compare to.</param>
   /// <returns>The created <see cref="IMailMergeField"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addnextif?view=word-pia"/>
-  public IMailMergeField AddNextIf(IRange range, string MergeField, WdMailMergeComparison Comparison, object CompareTo);
+  public IMailMergeField AddNextIf(IRange range, string mergeField, WdMailMergeComparison comparison, object compareTo);
 
   /// <summary>
   /// Inserts a SET field at the specified range.
   /// </summary>
   /// <param name="range">The range where the SET field is inserted.</param>
-  /// <param name="Name">The name of the SET field.</param>
-  /// <param name="ValueText">The value text for the SET field.</param>
-  /// <param name="ValueAutoText">The AutoText entry for the SET field.</param>
+  /// <param name="name">The name of the SET field.</param>
+  /// <param name="valueText">The value text for the SET field.</param>
+  /// <param name="valueAutoText">The AutoText entry for the SET field.</param>
   /// <returns>The created <see cref="IMailMergeField"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addset?view=word-pia"/>
-  public IMailMergeField AddSet(IRange range, string Name, string ValueText, IAutoTextEntry ValueAutoText);
+  public IMailMergeField AddSet(IRange range, string name, string valueText, IAutoTextEntry valueAutoText);
 
   /// <summary>
   /// Inserts a SKIPIF field at the specified range.
   /// </summary>
   /// <param name="range">The range where the SKIPIF field is inserted.</param>
-  /// <param name="MergeField">The merge field to compare.</param>
-  /// <param name="Comparison">The comparison operator.</param>
-  /// <param name="CompareTo">The value to compare to.</param>
+  /// <param name="mergeField">The merge field to compare.</param>
+  /// <param name="comparison">The comparison operator.</param>
+  /// <param name="compareTo">The value to compare to.</param>
   /// <returns>The created <see cref="IMailMergeField"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.mailmergefields.addskipif?view=word-pia"/>
-  public IMailMergeField AddSkipIf(IRange range, string MergeField, WdMailMergeComparison Comparison, object CompareTo);
+  public IMailMergeField AddSkipIf(IRange range, string mergeField, WdMailMergeComparison comparison, object compareTo);
 
   #endregion methods
 }

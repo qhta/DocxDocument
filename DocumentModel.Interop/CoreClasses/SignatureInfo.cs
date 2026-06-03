@@ -85,15 +85,15 @@ public partial class SignatureInfo: InteropObject
   /// <summary>
   /// Invokes `ShowSignatureCertificate`.
   /// </summary>
-  /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
+  /// <param name="parentWindow">The `ParentWindow` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureinfo.showsignaturecertificate?view=office-pia"/>
-  public void ShowSignatureCertificate(object ParentWindow) { throw new NotImplementedException(); }
+  public void ShowSignatureCertificate(object parentWindow) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `SelectSignatureCertificate`.
   /// </summary>
-  /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
+  /// <param name="parentWindow">The `ParentWindow` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureinfo.selectsignaturecertificate?view=office-pia"/>
-  public void SelectSignatureCertificate(object ParentWindow) { throw new NotImplementedException(); }
+  public void SelectSignatureCertificate(object parentWindow) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `SelectCertificateDetailByThumbprint`.
   /// </summary>

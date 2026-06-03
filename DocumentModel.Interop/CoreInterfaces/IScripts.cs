@@ -16,10 +16,10 @@ public interface IScripts: IInteropCollection<IScript>
 /// <summary>
   /// Returns a script by name, ID, or index.
   /// </summary>
-  /// <param name="Index">The script name, ID, or index.</param>
+  /// <param name="index">The script name, ID, or index.</param>
   /// <returns>The requested script.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.scripts.item?view=office-pia"/>
-  public IScript Item(object Index);
+  public IScript Item(object index);
   /// <summary>
   /// Adds a script to the collection.
   /// </summary>

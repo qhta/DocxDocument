@@ -16,10 +16,10 @@ public partial class DiagramNodes: InteropCollection<DiagramNode>
 /// <summary>
   /// Returns a diagram node by index.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodes.item?view=office-pia"/>
-  public DiagramNode Item(object Index) { throw new NotImplementedException(); }
+  public DiagramNode Item(object index) { throw new NotImplementedException(); }
   /// <summary>
   /// Selects all diagram nodes.
   /// </summary>

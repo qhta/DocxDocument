@@ -44,9 +44,9 @@ public partial class WebComponent
 /// <summary>
   /// Invokes `SetPlaceHolderGraphic`.
   /// </summary>
-  /// <param name="PlaceHolderGraphic">The `PlaceHolderGraphic` parameter.</param>
+  /// <param name="placeHolderGraphic">The `PlaceHolderGraphic` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponent.setplaceholdergraphic?view=office-pia"/>
-  public void SetPlaceHolderGraphic(string PlaceHolderGraphic) { throw new NotImplementedException(); }
+  public void SetPlaceHolderGraphic(string placeHolderGraphic) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `Commit`.
   /// </summary>

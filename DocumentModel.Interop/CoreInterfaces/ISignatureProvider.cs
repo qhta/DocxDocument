@@ -28,35 +28,35 @@ public interface ISignatureProvider
   /// <summary>
   /// Invokes `ShowSignatureSetup`.
   /// </summary>
-  /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
+  /// <param name="parentWindow">The `ParentWindow` parameter.</param>
   /// <param name="psigsetup">The `psigsetup` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.showsignaturesetup?view=office-pia"/>
-  public void ShowSignatureSetup(object ParentWindow, ISignatureSetup psigsetup);
+  public void ShowSignatureSetup(object parentWindow, ISignatureSetup psigsetup);
   /// <summary>
   /// Invokes `ShowSigningCeremony`.
   /// </summary>
-  /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
+  /// <param name="parentWindow">The `ParentWindow` parameter.</param>
   /// <param name="psigsetup">The `psigsetup` parameter.</param>
   /// <param name="psiginfo">The `psiginfo` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.showsigningceremony?view=office-pia"/>
-  public void ShowSigningCeremony(object ParentWindow, ISignatureSetup psigsetup, ISignatureInfo psiginfo);
+  public void ShowSigningCeremony(object parentWindow, ISignatureSetup psigsetup, ISignatureInfo psiginfo);
   /// <summary>
   /// Invokes `SignXmlDsig`.
   /// </summary>
-  /// <param name="QueryContinue">The `QueryContinue` parameter.</param>
+  /// <param name="queryContinue">The `QueryContinue` parameter.</param>
   /// <param name="psigsetup">The `psigsetup` parameter.</param>
   /// <param name="psiginfo">The `psiginfo` parameter.</param>
-  /// <param name="XmlDsigStream">The `XmlDsigStream` parameter.</param>
+  /// <param name="xmlDsigStream">The `XmlDsigStream` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.signxmldsig?view=office-pia"/>
-  public void SignXmlDsig(object QueryContinue, ISignatureSetup psigsetup, ISignatureInfo psiginfo, object XmlDsigStream);
+  public void SignXmlDsig(object queryContinue, ISignatureSetup psigsetup, ISignatureInfo psiginfo, object xmlDsigStream);
   /// <summary>
   /// Invokes `NotifySignatureAdded`.
   /// </summary>
-  /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
+  /// <param name="parentWindow">The `ParentWindow` parameter.</param>
   /// <param name="psigsetup">The `psigsetup` parameter.</param>
   /// <param name="psiginfo">The `psiginfo` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.notifysignatureadded?view=office-pia"/>
-  public void NotifySignatureAdded(object ParentWindow, ISignatureSetup psigsetup, ISignatureInfo psiginfo);
+  public void NotifySignatureAdded(object parentWindow, ISignatureSetup psigsetup, ISignatureInfo psiginfo);
   /// <summary>
   /// Invokes `VerifyXmlDsig`.
   /// </summary>
@@ -93,11 +93,11 @@ public interface ISignatureProvider
   /// <summary>
   /// Invokes `HashStream`.
   /// </summary>
-  /// <param name="QueryContinue">The `QueryContinue` parameter.</param>
-  /// <param name="Stream">The `Stream` parameter.</param>
+  /// <param name="queryContinue">The `QueryContinue` parameter.</param>
+  /// <param name="stream">The `Stream` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.hashstream?view=office-pia"/>
-  public Array HashStream(object QueryContinue, object Stream);
+  public Array HashStream(object queryContinue, object stream);
 
   #endregion methods
 }

@@ -16,10 +16,10 @@ public interface IFileDialogSelectedItems: IInteropCollection<string>
 /// <summary>
   /// Returns a selected path by index.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialogselecteditems.item?view=office-pia"/>
-  public string Item(int Index);
+  public string Item(int index);
 
   #endregion methods
 }

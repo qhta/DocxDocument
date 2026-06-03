@@ -170,9 +170,9 @@ public partial class MsoDataLabels: InteropCollection<MsoDataLabel>
   /// <summary>
   /// Propagates data label settings.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.propagate?view=office-pia"/>
-  public void Propagate(object Index) { throw new NotImplementedException(); }
+  public void Propagate(object index) { throw new NotImplementedException(); }
 
   #endregion methods
 }

@@ -13,13 +13,13 @@ public partial class OMathMatCols : InteropCollection<OMathMatCol>
 /// <summary>
   /// Adds a matrix column to the collection.
   /// </summary>
-  /// <param name="BeforeCol">Specifies the column before which the new column is inserted.</param>
+  /// <param name="beforeCol">Specifies the column before which the new column is inserted.</param>
   /// <returns>The added matrix column object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathmatcols.add?view=word-pia"/>
-  public OMathMatCol Add(object BeforeCol) { throw new NotImplementedException(); }
+  public OMathMatCol Add(object beforeCol) { throw new NotImplementedException(); }
 
   #endregion methods
 }

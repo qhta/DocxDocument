@@ -30,13 +30,13 @@ public interface IHangulHanjaConversionDictionaries : IInteropObject, IInteropCo
 /// <summary>
   /// Adds a Hangul/Hanja conversion dictionary to the collection.
   /// </summary>
-  /// <param name="FileName">The full path and file name of the conversion dictionary file.</param>
+  /// <param name="fileName">The full path and file name of the conversion dictionary file.</param>
   /// <returns>The created <see cref="Word.IDictionary"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hangulhanjaconversiondictionaries.add?view=word-pia"/>
-  public Word.IDictionary Add(string FileName);
+  public Word.IDictionary Add(string fileName);
 
   #endregion methods
 }

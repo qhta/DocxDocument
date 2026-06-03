@@ -25,10 +25,10 @@ public interface IMetaProperties: IInteropCollection<IMetaProperty>
 /// <summary>
   /// Gets a metadata property by its internal name.
   /// </summary>
-  /// <param name="InternalName">The `InternalName` parameter.</param>
+  /// <param name="internalName">The `InternalName` parameter.</param>
   /// <returns>The matching metadata property.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties.getitembyinternalname?view=office-pia"/>
-  public IMetaProperty GetItemByInternalName(string InternalName);
+  public IMetaProperty GetItemByInternalName(string internalName);
   /// <summary>
   /// Validates all metadata properties.
   /// </summary>

@@ -21,18 +21,18 @@ public interface ITabStops2: IInteropCollection<ITabStop2>
 /// <summary>
   /// Invokes `Item`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstops2.item?view=office-pia"/>
-  public ITabStop2 Item(object Index);
+  public ITabStop2 Item(object index);
   /// <summary>
   /// Invokes `Add`.
   /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="Position">The `Position` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
+  /// <param name="position">The `Position` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstops2.add?view=office-pia"/>
-  public ITabStop2 Add(TabStopType Type, float Position);
+  public ITabStop2 Add(TabStopType type, float position);
 
   #endregion methods
 }

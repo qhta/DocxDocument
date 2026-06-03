@@ -27,9 +27,9 @@ public interface IPropertyTests: IInteropCollection<IPropertyTest>
   /// <summary>
   /// Removes a search criterion from the collection.
   /// </summary>
-  /// <param name="Index">The index of the criterion to remove.</param>
+  /// <param name="index">The index of the criterion to remove.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.propertytests.remove?view=office-pia"/>
-  public void Remove(int Index);
+  public void Remove(int index);
 
   #endregion methods
 }

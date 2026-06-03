@@ -261,17 +261,17 @@ public partial class ShapeRange: InteropCollection<Shape>
 /// <summary>
   /// Invokes `Item`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.item?view=office-pia"/>
-  public Shape Item(object Index) { throw new NotImplementedException(); }
+  public Shape Item(object index) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `Align`.
   /// </summary>
-  /// <param name="AlignCmd">The `AlignCmd` parameter.</param>
-  /// <param name="RelativeTo">The `RelativeTo` parameter.</param>
+  /// <param name="alignCmd">The `AlignCmd` parameter.</param>
+  /// <param name="relativeTo">The `RelativeTo` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.align?view=office-pia"/>
-  public void Align(AlignCmd AlignCmd, TriState RelativeTo) { throw new NotImplementedException(); }
+  public void Align(AlignCmd alignCmd, TriState relativeTo) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `Apply`.
   /// </summary>
@@ -285,10 +285,10 @@ public partial class ShapeRange: InteropCollection<Shape>
   /// <summary>
   /// Invokes `Distribute`.
   /// </summary>
-  /// <param name="DistributeCmd">The `DistributeCmd` parameter.</param>
-  /// <param name="RelativeTo">The `RelativeTo` parameter.</param>
+  /// <param name="distributeCmd">The `DistributeCmd` parameter.</param>
+  /// <param name="relativeTo">The `RelativeTo` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.distribute?view=office-pia"/>
-  public void Distribute(DistributeCmd DistributeCmd, TriState RelativeTo) { throw new NotImplementedException(); }
+  public void Distribute(DistributeCmd distributeCmd, TriState relativeTo) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `Duplicate`.
   /// </summary>
@@ -298,27 +298,27 @@ public partial class ShapeRange: InteropCollection<Shape>
   /// <summary>
   /// Invokes `Flip`.
   /// </summary>
-  /// <param name="FlipCmd">The `FlipCmd` parameter.</param>
+  /// <param name="flipCmd">The `FlipCmd` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.flip?view=office-pia"/>
-  public void Flip(FlipCmd FlipCmd) { throw new NotImplementedException(); }
+  public void Flip(FlipCmd flipCmd) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `IncrementLeft`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.incrementleft?view=office-pia"/>
-  public void IncrementLeft(float Increment) { throw new NotImplementedException(); }
+  public void IncrementLeft(float increment) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `IncrementRotation`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.incrementrotation?view=office-pia"/>
-  public void IncrementRotation(float Increment) { throw new NotImplementedException(); }
+  public void IncrementRotation(float increment) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `IncrementTop`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.incrementtop?view=office-pia"/>
-  public void IncrementTop(float Increment) { throw new NotImplementedException(); }
+  public void IncrementTop(float increment) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `Group`.
   /// </summary>
@@ -364,9 +364,9 @@ public partial class ShapeRange: InteropCollection<Shape>
   /// <summary>
   /// Invokes `Select`.
   /// </summary>
-  /// <param name="Replace">The `Replace` parameter.</param>
+  /// <param name="replace">The `Replace` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.select?view=office-pia"/>
-  public void Select(object Replace) { throw new NotImplementedException(); }
+  public void Select(object replace) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `SetShapesDefaultProperties`.
   /// </summary>
@@ -381,33 +381,33 @@ public partial class ShapeRange: InteropCollection<Shape>
   /// <summary>
   /// Invokes `ZOrder`.
   /// </summary>
-  /// <param name="ZOrderCmd">The `ZOrderCmd` parameter.</param>
+  /// <param name="zOrderCmd">The `ZOrderCmd` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.zorder?view=office-pia"/>
-  public void ZOrder(ZOrderCmd ZOrderCmd) { throw new NotImplementedException(); }
+  public void ZOrder(ZOrderCmd zOrderCmd) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `CanvasCropLeft`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.canvascropleft?view=office-pia"/>
-  public void CanvasCropLeft(float Increment) { throw new NotImplementedException(); }
+  public void CanvasCropLeft(float increment) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `CanvasCropTop`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.canvascroptop?view=office-pia"/>
-  public void CanvasCropTop(float Increment) { throw new NotImplementedException(); }
+  public void CanvasCropTop(float increment) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `CanvasCropRight`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.canvascropright?view=office-pia"/>
-  public void CanvasCropRight(float Increment) { throw new NotImplementedException(); }
+  public void CanvasCropRight(float increment) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `CanvasCropBottom`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.canvascropbottom?view=office-pia"/>
-  public void CanvasCropBottom(float Increment) { throw new NotImplementedException(); }
+  public void CanvasCropBottom(float increment) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `Cut`.
   /// </summary>
@@ -421,10 +421,10 @@ public partial class ShapeRange: InteropCollection<Shape>
   /// <summary>
   /// Invokes `MergeShapes`.
   /// </summary>
-  /// <param name="MergeCmd">The `MergeCmd` parameter.</param>
-  /// <param name="PrimaryShape">The `PrimaryShape` parameter.</param>
+  /// <param name="mergeCmd">The `MergeCmd` parameter.</param>
+  /// <param name="primaryShape">The `PrimaryShape` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.mergeshapes?view=office-pia"/>
-  public void MergeShapes(MergeCmd MergeCmd, Shape PrimaryShape) { throw new NotImplementedException(); }
+  public void MergeShapes(MergeCmd mergeCmd, Shape primaryShape) { throw new NotImplementedException(); }
 
   #endregion methods
 }

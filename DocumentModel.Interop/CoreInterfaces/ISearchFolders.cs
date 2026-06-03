@@ -15,9 +15,9 @@ public interface ISearchFolders: IInteropCollection<IScopeFolder>
 /// <summary>
   /// Removes a folder from the search folders collection.
   /// </summary>
-  /// <param name="Index">The index of the folder to remove.</param>
+  /// <param name="index">The index of the folder to remove.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.searchfolders.remove?view=office-pia"/>
-  public void Remove(int Index);
+  public void Remove(int index);
 
   #endregion methods
 }

@@ -94,14 +94,14 @@ public partial class CommandBar : MsoOleAccDispObj
   /// <summary>
   /// Finds a control on the command bar that matches the specified criteria.
   /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="Id">The `Id` parameter.</param>
-  /// <param name="Tag">The `Tag` parameter.</param>
-  /// <param name="Visible">The `Visible` parameter.</param>
-  /// <param name="Recursive">The `Recursive` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
+  /// <param name="id">The `Id` parameter.</param>
+  /// <param name="tag">The `Tag` parameter.</param>
+  /// <param name="visible">The `Visible` parameter.</param>
+  /// <param name="recursive">The `Recursive` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.findcontrol?view=office-pia"/>
-  public CommandBarControl FindControl(object Type, object Id, object Tag, object Visible, object Recursive) { throw new NotImplementedException(); }
+  public CommandBarControl FindControl(object type, object id, object tag, object visible, object recursive) { throw new NotImplementedException(); }
   /// <summary>
   /// Restores the command bar to its default state.
   /// </summary>

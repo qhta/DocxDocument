@@ -90,9 +90,9 @@ public interface ILicWizExternal
   /// <summary>
   /// Invokes `DisableVORWReminder`.
   /// </summary>
-  /// <param name="BPC">The `BPC` parameter.</param>
+  /// <param name="bPC">The `BPC` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.disablevorwreminder?view=office-pia"/>
-  public void DisableVORWReminder(int BPC);
+  public void DisableVORWReminder(int bPC);
   /// <summary>
   /// Invokes `SaveReceipt`.
   /// </summary>

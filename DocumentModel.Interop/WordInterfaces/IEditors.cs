@@ -18,13 +18,13 @@ public interface IEditors : IInteropObject
 /// <summary>
   /// Returns the value produced by the item operation.
   /// </summary>
-  /// <param name="Index">Specifies the index.</param>
+  /// <param name="index">Specifies the index.</param>
   /// <returns>The resulting value.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.editors.item?view=word-pia"/>
-  public IEditor Item(object Index);
+  public IEditor Item(object index);
 
   #endregion methods
 }

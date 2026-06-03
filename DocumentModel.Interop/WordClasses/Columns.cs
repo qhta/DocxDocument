@@ -60,13 +60,13 @@ public partial class Columns : InteropCollection<Column>
 /// <summary>
   /// Adds a column to the collection before the specified column.
   /// </summary>
-  /// <param name="BeforeColumn">The column before which the new column is added.</param>
+  /// <param name="beforeColumn">The column before which the new column is added.</param>
   /// <returns>The newly added <see cref="Column"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.columns.add?view=word-pia"/>
-  public Column Add(object BeforeColumn) { throw new NotImplementedException(); }
+  public Column Add(object beforeColumn) { throw new NotImplementedException(); }
 
   #endregion methods
 }

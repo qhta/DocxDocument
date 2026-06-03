@@ -30,13 +30,13 @@ public partial class Source : InteropObject
 /// <summary>
   /// Gets the value of the specified field from the source.
   /// </summary>
-  /// <param name="Name">The name of the field to retrieve.</param>
+  /// <param name="name">The name of the field to retrieve.</param>
   /// <returns>The value of the specified field as a string.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.source.get_field?view=word-pia"/>
-  public string? Field(string Name) { throw new NotImplementedException(); }
+  public string? Field(string name) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Deletes the specified source.

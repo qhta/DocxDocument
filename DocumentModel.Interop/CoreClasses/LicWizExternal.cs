@@ -90,9 +90,9 @@ public partial class LicWizExternal
   /// <summary>
   /// Invokes `DisableVORWReminder`.
   /// </summary>
-  /// <param name="BPC">The `BPC` parameter.</param>
+  /// <param name="bPC">The `BPC` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.ilicwizexternal.disablevorwreminder?view=office-pia"/>
-  public void DisableVORWReminder(int BPC) { throw new NotImplementedException(); }
+  public void DisableVORWReminder(int bPC) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `SaveReceipt`.
   /// </summary>

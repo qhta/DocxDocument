@@ -90,14 +90,14 @@ public interface IChartFillFormat : IInteropObject
 /// <summary>
   /// Executes the one color gradient operation.
   /// </summary>
-  /// <param name="Style">Specifies the style.</param>
-  /// <param name="Variant">Specifies the variant.</param>
-  /// <param name="Degree">Specifies the degree.</param>
+  /// <param name="style">Specifies the style.</param>
+  /// <param name="variant">Specifies the variant.</param>
+  /// <param name="degree">Specifies the degree.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartfillformat.onecolorgradient?view=word-pia"/>
-  public void OneColorGradient(Core.GradientStyle Style, int Variant, float Degree);
+  public void OneColorGradient(Core.GradientStyle style, int variant, float degree);
 
   #endregion methods
 }

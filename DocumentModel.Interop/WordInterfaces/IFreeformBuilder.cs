@@ -13,30 +13,30 @@ public interface IFreeformBuilder : IInteropObject
 /// <summary>
   /// Adds a node to the freeform being built.
   /// </summary>
-  /// <param name="SegmentType">The segment type used for the new node.</param>
-  /// <param name="EditingType">The editing type used for the new node.</param>
-  /// <param name="X1">The x-coordinate, in points, of the first point.</param>
-  /// <param name="Y1">The y-coordinate, in points, of the first point.</param>
-  /// <param name="X2">The x-coordinate, in points, of the second point (used for curved segments).</param>
-  /// <param name="Y2">The y-coordinate, in points, of the second point (used for curved segments).</param>
-  /// <param name="X3">The x-coordinate, in points, of the third point (used for curved segments).</param>
-  /// <param name="Y3">The y-coordinate, in points, of the third point (used for curved segments).</param>
+  /// <param name="segmentType">The segment type used for the new node.</param>
+  /// <param name="editingType">The editing type used for the new node.</param>
+  /// <param name="x1">The x-coordinate, in points, of the first point.</param>
+  /// <param name="y1">The y-coordinate, in points, of the first point.</param>
+  /// <param name="x2">The x-coordinate, in points, of the second point (used for curved segments).</param>
+  /// <param name="y2">The y-coordinate, in points, of the second point (used for curved segments).</param>
+  /// <param name="x3">The x-coordinate, in points, of the third point (used for curved segments).</param>
+  /// <param name="y3">The y-coordinate, in points, of the third point (used for curved segments).</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.freeformbuilder.addnodes?view=word-pia"/>
-  public void AddNodes(Core.SegmentType SegmentType, Core.EditingType EditingType, float X1, float Y1, float X2, float Y2, float X3, float Y3);
+  public void AddNodes(Core.SegmentType segmentType, Core.EditingType editingType, float x1, float y1, float x2, float y2, float x3, float y3);
 
   /// <summary>
   /// Converts the freeform into a shape.
   /// </summary>
-  /// <param name="Anchor">The anchor range for the created shape.</param>
+  /// <param name="anchor">The anchor range for the created shape.</param>
   /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.freeformbuilder.converttoshape?view=word-pia"/>
-  public IShape ConvertToShape(object Anchor);
+  public IShape ConvertToShape(object anchor);
 
   #endregion methods
 }

@@ -13,13 +13,13 @@ public interface ICaptionLabels : IInteropObject, IInteropCollection<ICaptionLab
 /// <summary>
   /// Adds a custom caption label to the collection.
   /// </summary>
-  /// <param name="Name">The name of the caption label to add.</param>
+  /// <param name="name">The name of the caption label to add.</param>
   /// <returns>The created <see cref="ICaptionLabel"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.captionlabels.add?view=word-pia"/>
-  public ICaptionLabel Add(string Name);
+  public ICaptionLabel Add(string name);
 
   #endregion methods
 }

@@ -600,24 +600,24 @@ public interface IRange : IInteropObject
 /// <summary>
   /// Returns information about the range.
   /// </summary>
-  /// <param name="Type">The type of information to retrieve.</param>
+  /// <param name="type">The type of information to retrieve.</param>
   /// <returns>The requested information as an object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.information?view=word-pia"/>
-  public object Information(Information Type);
+  public object Information(Information type);
 
   /// <summary>
   /// Returns the XML representation of the range.
   /// </summary>
-  /// <param name="DataOnly">true to return only the data; otherwise, false.</param>
+  /// <param name="dataOnly">true to return only the data; otherwise, false.</param>
   /// <returns>The XML string for the range.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.range.xml?view=word-pia"/>
-  public string XML(bool DataOnly);
+  public string XML(bool dataOnly);
 
   /// <summary>
   /// Selects the specified object.

@@ -19,13 +19,13 @@ public interface IComments : IInteropObject, IInteropCollection<IComment>
   /// Adds a comment to the specified range.
   /// </summary>
   /// <param name="range">The range to which the comment is attached.</param>
-  /// <param name="Text">The comment text.</param>
+  /// <param name="text">The comment text.</param>
   /// <returns>The created <see cref="IComment"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.comments.add?view=word-pia"/>
-  public IComment Add(IRange range, object Text);
+  public IComment Add(IRange range, object text);
 
   #endregion methods
 }

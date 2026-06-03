@@ -13,13 +13,13 @@ public partial class OMathRecognizedFunctions : InteropCollection<OMathRecognize
 /// <summary>
   /// Adds a new recognized function to the collection.
   /// </summary>
-  /// <param name="Name">The name of the recognized function.</param>
+  /// <param name="name">The name of the recognized function.</param>
   /// <returns>The created <see cref="OMathRecognizedFunction"/> object.</returns>  
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathrecognizedfunctions.add?view=word-pia"/>
-  public OMathRecognizedFunction Add(string Name) { throw new NotImplementedException(); }
+  public OMathRecognizedFunction Add(string name) { throw new NotImplementedException(); }
 
   #endregion methods
 }

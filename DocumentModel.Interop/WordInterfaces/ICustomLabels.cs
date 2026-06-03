@@ -13,14 +13,14 @@ public interface ICustomLabels : IInteropObject, IInteropCollection<ICustomLabel
 /// <summary>
   /// Adds a custom label to the collection.
   /// </summary>
-  /// <param name="Name">The name of the custom label.</param>
-  /// <param name="DotMatrix">Specifies whether the custom label is intended for dot-matrix printing.</param>
+  /// <param name="name">The name of the custom label.</param>
+  /// <param name="dotMatrix">Specifies whether the custom label is intended for dot-matrix printing.</param>
   /// <returns>The created <see cref="ICustomLabel"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.customlabels.add?view=word-pia"/>
-  public ICustomLabel Add(string Name, object DotMatrix);
+  public ICustomLabel Add(string name, object dotMatrix);
 
   #endregion methods
 }

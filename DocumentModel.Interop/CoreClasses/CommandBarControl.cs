@@ -134,17 +134,17 @@ public partial class CommandBarControl: MsoOleAccDispObj
   /// <summary>
   /// Copies the command bar control.
   /// </summary>
-  /// <param name="Bar">The `Bar` parameter.</param>
-  /// <param name="Before">The `Before` parameter.</param>
+  /// <param name="bar">The `Bar` parameter.</param>
+  /// <param name="before">The `Before` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.copy?view=office-pia"/>
-  public CommandBarControl Copy(object Bar, object Before) { throw new NotImplementedException(); }
+  public CommandBarControl Copy(object bar, object before) { throw new NotImplementedException(); }
   /// <summary>
   /// Deletes the command bar control.
   /// </summary>
-  /// <param name="Temporary">The `Temporary` parameter.</param>
+  /// <param name="temporary">The `Temporary` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.delete?view=office-pia"/>
-  public void Delete(object Temporary) { throw new NotImplementedException(); }
+  public void Delete(object temporary) { throw new NotImplementedException(); }
   /// <summary>
   /// Executes the command bar control action.
   /// </summary>
@@ -153,11 +153,11 @@ public partial class CommandBarControl: MsoOleAccDispObj
   /// <summary>
   /// Moves the command bar control to a new location.
   /// </summary>
-  /// <param name="Bar">The `Bar` parameter.</param>
-  /// <param name="Before">The `Before` parameter.</param>
+  /// <param name="bar">The `Bar` parameter.</param>
+  /// <param name="before">The `Before` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.move?view=office-pia"/>
-  public CommandBarControl Move(object Bar, object Before) { throw new NotImplementedException(); }
+  public CommandBarControl Move(object bar, object before) { throw new NotImplementedException(); }
   /// <summary>
   /// Resets the command bar control to its default settings.
   /// </summary>

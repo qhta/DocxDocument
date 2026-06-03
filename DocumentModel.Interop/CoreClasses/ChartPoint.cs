@@ -55,27 +55,27 @@ public partial class ChartPoint
   /// <summary>
   /// Invokes `ApplyDataLabels`.
   /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="MsoLegendKey">The `MsoLegendKey` parameter.</param>
-  /// <param name="AutoText">The `AutoText` parameter.</param>
-  /// <param name="HasLeaderLines">The `HasLeaderLines` parameter.</param>
-  /// <param name="ShowSeriesName">The `ShowSeriesName` parameter.</param>
-  /// <param name="ShowCategoryName">The `ShowCategoryName` parameter.</param>
-  /// <param name="ShowValue">The `ShowValue` parameter.</param>
-  /// <param name="ShowPercentage">The `ShowPercentage` parameter.</param>
-  /// <param name="ShowBubbleSize">The `ShowBubbleSize` parameter.</param>
-  /// <param name="Separator">The `Separator` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
+  /// <param name="msoLegendKey">The `MsoLegendKey` parameter.</param>
+  /// <param name="autoText">The `AutoText` parameter.</param>
+  /// <param name="hasLeaderLines">The `HasLeaderLines` parameter.</param>
+  /// <param name="showSeriesName">The `ShowSeriesName` parameter.</param>
+  /// <param name="showCategoryName">The `ShowCategoryName` parameter.</param>
+  /// <param name="showValue">The `ShowValue` parameter.</param>
+  /// <param name="showPercentage">The `ShowPercentage` parameter.</param>
+  /// <param name="showBubbleSize">The `ShowBubbleSize` parameter.</param>
+  /// <param name="separator">The `Separator` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.chartpoint.applydatalabels?view=office-pia"/>
-  public object ApplyDataLabels(DataLabelsType Type, object MsoLegendKey, object AutoText, object HasLeaderLines, object ShowSeriesName, object ShowCategoryName, object ShowValue, object ShowPercentage,  object ShowBubbleSize, object Separator) { throw new NotImplementedException(); }
+  public object ApplyDataLabels(DataLabelsType type, object msoLegendKey, object autoText, object hasLeaderLines, object showSeriesName, object showCategoryName, object showValue, object showPercentage,  object showBubbleSize, object separator) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `PieSliceLocation`.
   /// </summary>
   /// <param name="loc">The `loc` parameter.</param>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.chartpoint.pieslicelocation?view=office-pia"/>
-  public double PieSliceLocation(PieSliceLocation loc, PieSliceIndex Index) { throw new NotImplementedException(); }
+  public double PieSliceLocation(PieSliceLocation loc, PieSliceIndex index) { throw new NotImplementedException(); }
 
   #endregion methods
 }

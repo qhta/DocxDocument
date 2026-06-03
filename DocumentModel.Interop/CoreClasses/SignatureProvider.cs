@@ -29,35 +29,35 @@ public partial class SignatureProvider
   /// <summary>
   /// Invokes `ShowSignatureSetup`.
   /// </summary>
-  /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
+  /// <param name="parentWindow">The `ParentWindow` parameter.</param>
   /// <param name="psigsetup">The `psigsetup` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.showsignaturesetup?view=office-pia"/>
-  public void ShowSignatureSetup(object ParentWindow, SignatureSetup psigsetup) { throw new NotImplementedException(); }
+  public void ShowSignatureSetup(object parentWindow, SignatureSetup psigsetup) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `ShowSigningCeremony`.
   /// </summary>
-  /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
+  /// <param name="parentWindow">The `ParentWindow` parameter.</param>
   /// <param name="psigsetup">The `psigsetup` parameter.</param>
   /// <param name="psiginfo">The `psiginfo` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.showsigningceremony?view=office-pia"/>
-  public void ShowSigningCeremony(object ParentWindow, SignatureSetup psigsetup, SignatureInfo psiginfo) { throw new NotImplementedException(); }
+  public void ShowSigningCeremony(object parentWindow, SignatureSetup psigsetup, SignatureInfo psiginfo) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `SignXmlDsig`.
   /// </summary>
-  /// <param name="QueryContinue">The `QueryContinue` parameter.</param>
+  /// <param name="queryContinue">The `QueryContinue` parameter.</param>
   /// <param name="psigsetup">The `psigsetup` parameter.</param>
   /// <param name="psiginfo">The `psiginfo` parameter.</param>
-  /// <param name="XmlDsigStream">The `XmlDsigStream` parameter.</param>
+  /// <param name="xmlDsigStream">The `XmlDsigStream` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.signxmldsig?view=office-pia"/>
-  public void SignXmlDsig(object QueryContinue, SignatureSetup psigsetup, SignatureInfo psiginfo, object XmlDsigStream) { throw new NotImplementedException(); }
+  public void SignXmlDsig(object queryContinue, SignatureSetup psigsetup, SignatureInfo psiginfo, object xmlDsigStream) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `NotifySignatureAdded`.
   /// </summary>
-  /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
+  /// <param name="parentWindow">The `ParentWindow` parameter.</param>
   /// <param name="psigsetup">The `psigsetup` parameter.</param>
   /// <param name="psiginfo">The `psiginfo` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.notifysignatureadded?view=office-pia"/>
-  public void NotifySignatureAdded(object ParentWindow, SignatureSetup psigsetup, SignatureInfo psiginfo) { throw new NotImplementedException(); }
+  public void NotifySignatureAdded(object parentWindow, SignatureSetup psigsetup, SignatureInfo psiginfo) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `VerifyXmlDsig`.
   /// </summary>
@@ -95,11 +95,11 @@ public partial class SignatureProvider
   /// <summary>
   /// Invokes `HashStream`.
   /// </summary>
-  /// <param name="QueryContinue">The `QueryContinue` parameter.</param>
-  /// <param name="Stream">The `Stream` parameter.</param>
+  /// <param name="queryContinue">The `QueryContinue` parameter.</param>
+  /// <param name="stream">The `Stream` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.signatureprovider.hashstream?view=office-pia"/>
-  public Array HashStream(object QueryContinue, object Stream) { throw new NotImplementedException(); }
+  public Array HashStream(object queryContinue, object stream) { throw new NotImplementedException(); }
 
   #endregion methods
 }

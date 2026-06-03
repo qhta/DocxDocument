@@ -24,13 +24,13 @@ public partial class Dictionaries : InteropCollection<Dictionary>
 /// <summary>
   /// Adds a custom dictionary to the collection.
   /// </summary>
-  /// <param name="FileName">The full path and file name of the custom dictionary.</param>
+  /// <param name="fileName">The full path and file name of the custom dictionary.</param>
   /// <returns>The created <see cref="Dictionary"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.dictionaries.add?view=word-pia"/>
-  public Dictionary Add(string FileName) { throw new NotImplementedException(); }
+  public Dictionary Add(string fileName) { throw new NotImplementedException(); }
 
   #endregion methods
 }

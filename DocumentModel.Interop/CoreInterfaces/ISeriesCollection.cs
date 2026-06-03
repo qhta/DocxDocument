@@ -28,12 +28,12 @@ public interface ISeriesCollection: IInteropCollection<IMsoSeries>
   /// <summary>
   /// Invokes `Extend`.
   /// </summary>
-  /// <param name="Source">The `Source` parameter.</param>
-  /// <param name="Rowcol">The `Rowcol` parameter.</param>
-  /// <param name="CategoryLabels">The `CategoryLabels` parameter.</param>
+  /// <param name="source">The `Source` parameter.</param>
+  /// <param name="rowcol">The `Rowcol` parameter.</param>
+  /// <param name="categoryLabels">The `CategoryLabels` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.extend?view=office-pia"/>
-  public object Extend(object Source, object Rowcol, object CategoryLabels);
+  public object Extend(object source, object rowcol, object categoryLabels);
   /// <summary>
   /// Invokes `Paste`.
   /// </summary>

@@ -18,14 +18,14 @@ public partial class FormFields : InteropCollection<FormField>
 /// <summary>
   /// Returns the value produced by the add operation.
   /// </summary>
-  /// <param name="Range">Specifies the range.</param>
-  /// <param name="Type">Specifies the type.</param>
+  /// <param name="range">Specifies the range.</param>
+  /// <param name="type">Specifies the type.</param>
   /// <returns>The resulting value.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfields.add?view=word-pia"/>
-  public FormField Add(Range Range, FieldType Type) { throw new NotImplementedException(); }
+  public FormField Add(Range range, FieldType type) { throw new NotImplementedException(); }
 
   #endregion methods
 }

@@ -13,22 +13,22 @@ public partial class Trendlines : InteropCollection<Trendline>
 /// <summary>
   /// Adds a new trendline to the collection.
   /// </summary>
-  /// <param name="Type">The type of trendline to add.</param>
-  /// <param name="Order">The order of the polynomial trendline (if applicable).</param>
-  /// <param name="Period">The period for the moving average trendline (if applicable).</param>
-  /// <param name="Forward">The number of periods the trendline extends forward.</param>
-  /// <param name="Backward">The number of periods the trendline extends backward.</param>
-  /// <param name="Intercept">The intercept value for the trendline.</param>
-  /// <param name="DisplayEquation">true to display the trendline equation on the chart; otherwise, false.</param>
-  /// <param name="DisplayRSquared">true to display the R-squared value on the chart; otherwise, false.</param>
-  /// <param name="Name">The name of the trendline.</param>
+  /// <param name="type">The type of trendline to add.</param>
+  /// <param name="order">The order of the polynomial trendline (if applicable).</param>
+  /// <param name="period">The period for the moving average trendline (if applicable).</param>
+  /// <param name="forward">The number of periods the trendline extends forward.</param>
+  /// <param name="backward">The number of periods the trendline extends backward.</param>
+  /// <param name="intercept">The intercept value for the trendline.</param>
+  /// <param name="displayEquation">true to display the trendline equation on the chart; otherwise, false.</param>
+  /// <param name="displayRSquared">true to display the R-squared value on the chart; otherwise, false.</param>
+  /// <param name="name">The name of the trendline.</param>
   /// <returns>The created <see cref="Trendline"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.trendlines.add?view=word-pia"/>
-  public Trendline Add(TrendlineType Type, object Order, int Period, int Forward, int Backward, 
-    object Intercept, bool DisplayEquation, bool DisplayRSquared, string Name)
+  public Trendline Add(TrendlineType type, object order, int period, int forward, int backward, 
+    object intercept, bool displayEquation, bool displayRSquared, string name)
   {
     throw new NotImplementedException();
   }

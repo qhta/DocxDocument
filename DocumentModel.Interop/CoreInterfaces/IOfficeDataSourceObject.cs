@@ -44,11 +44,11 @@ public interface IOfficeDataSourceObject
 /// <summary>
   /// Moves the focus to a specified row.
   /// </summary>
-  /// <param name="MoveRow">The `MoveRow` parameter.</param>
-  /// <param name="RowNbr">The `RowNbr` parameter.</param>
+  /// <param name="moveRow">The `MoveRow` parameter.</param>
+  /// <param name="rowNbr">The `RowNbr` parameter.</param>
   /// <returns>The resulting row number.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.officedatasourceobject.move?view=office-pia"/>
-  public int Move(MoveRow MoveRow, int RowNbr);
+  public int Move(MoveRow moveRow, int rowNbr);
   /// <summary>
   /// Opens a connection to a mail merge data source.
   /// </summary>

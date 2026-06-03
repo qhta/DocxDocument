@@ -31,13 +31,13 @@ public interface ISections : IInteropObject, IInteropCollection<ISection>
   /// Adds a new section to the document.
   /// </summary>
   /// <param name="range">The range where the section is added.</param>
-  /// <param name="Start">The starting position for the new section.</param>
+  /// <param name="start">The starting position for the new section.</param>
   /// <returns>The created <see cref="ISection"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.sections.add?view=word-pia"/>
-  public ISection Add(object range, object Start);
+  public ISection Add(object range, object start);
 
   #endregion methods
 }

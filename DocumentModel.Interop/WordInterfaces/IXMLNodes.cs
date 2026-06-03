@@ -14,15 +14,15 @@ public interface IXMLNodes : IInteropObject, IInteropCollection<IXMLNode>
 /// <summary>
   /// Adds a new XML node to the collection.
   /// </summary>
-  /// <param name="Name">The name of the XML node to add.</param>
-  /// <param name="Namespace">The namespace of the XML node.</param>
+  /// <param name="name">The name of the XML node to add.</param>
+  /// <param name="xmlNamespace">The namespace of the XML node.</param>
   /// <param name="range">The range where the XML node is inserted.</param>
   /// <returns>The created <see cref="IXMLNode"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlnodes.add?view=word-pia"/>
-  public IXMLNode Add(string Name, string Namespace, object range);
+  public IXMLNode Add(string name, string xmlNamespace, object range);
 
   #endregion methods
 }

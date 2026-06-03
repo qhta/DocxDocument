@@ -49,10 +49,10 @@ public interface IConnectorFormat: IInteropObject
 /// <summary>
   /// Connects the beginning of the connector to a shape at the specified connection site.
   /// </summary>
-  /// <param name="ConnectedShape">The `ConnectedShape` parameter.</param>
-  /// <param name="ConnectionSite">The `ConnectionSite` parameter.</param>
+  /// <param name="connectedShape">The `ConnectedShape` parameter.</param>
+  /// <param name="connectionSite">The `ConnectionSite` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.connectorformat.beginconnect?view=office-pia"/>
-  public void BeginConnect(IShape ConnectedShape, int ConnectionSite);
+  public void BeginConnect(IShape connectedShape, int connectionSite);
   /// <summary>
   /// Disconnects the beginning of the connector.
   /// </summary>
@@ -61,10 +61,10 @@ public interface IConnectorFormat: IInteropObject
   /// <summary>
   /// Connects the end of the connector to a shape at the specified connection site.
   /// </summary>
-  /// <param name="ConnectedShape">The `ConnectedShape` parameter.</param>
-  /// <param name="ConnectionSite">The `ConnectionSite` parameter.</param>
+  /// <param name="connectedShape">The `ConnectedShape` parameter.</param>
+  /// <param name="connectionSite">The `ConnectionSite` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.connectorformat.endconnect?view=office-pia"/>
-  public void EndConnect(IShape ConnectedShape, int ConnectionSite);
+  public void EndConnect(IShape connectedShape, int connectionSite);
   /// <summary>
   /// Disconnects the end of the connector.
   /// </summary>

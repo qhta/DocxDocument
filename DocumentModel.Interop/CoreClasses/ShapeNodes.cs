@@ -16,9 +16,9 @@ public partial class ShapeNodes: InteropCollection<ShapeNode>
 /// <summary>
   /// Invokes `Delete`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapenodes.delete?view=office-pia"/>
-  public void Delete(int Index) { throw new NotImplementedException(); }
+  public void Delete(int index) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `Insert`.
   /// </summary>
@@ -38,25 +38,25 @@ public partial class ShapeNodes: InteropCollection<ShapeNode>
   /// <summary>
   /// Invokes `SetEditingType`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
-  /// <param name="EditingType">The `EditingType` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
+  /// <param name="editingType">The `EditingType` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapenodes.seteditingtype?view=office-pia"/>
-  public void SetEditingType(int Index, EditingType EditingType) { throw new NotImplementedException(); }
+  public void SetEditingType(int index, EditingType editingType) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `SetPosition`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
-  /// <param name="X1">The `X1` parameter.</param>
-  /// <param name="Y1">The `Y1` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
+  /// <param name="x1">The `X1` parameter.</param>
+  /// <param name="y1">The `Y1` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapenodes.setposition?view=office-pia"/>
-  public void SetPosition(int Index, float X1, float Y1) { throw new NotImplementedException(); }
+  public void SetPosition(int index, float x1, float y1) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `SetSegmentType`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
-  /// <param name="SegmentType">The `SegmentType` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
+  /// <param name="segmentType">The `SegmentType` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapenodes.setsegmenttype?view=office-pia"/>
-  public void SetSegmentType(int Index, SegmentType SegmentType) { throw new NotImplementedException(); }
+  public void SetSegmentType(int index, SegmentType segmentType) { throw new NotImplementedException(); }
 
   #endregion methods
 }

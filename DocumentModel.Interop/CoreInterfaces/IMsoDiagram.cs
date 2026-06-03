@@ -39,9 +39,9 @@ public interface IMsoDiagram: IInteropObject
 /// <summary>
   /// Converts the diagram to another diagram type.
   /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodiagram.convert?view=office-pia"/>
-  public void Convert(DiagramType Type);
+  public void Convert(DiagramType type);
   /// <summary>
   /// Fits text within the diagram.
   /// </summary>

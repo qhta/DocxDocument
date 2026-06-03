@@ -13,13 +13,13 @@ public partial class Categories : InteropCollection<Category>
 /// <summary>
   /// Returns a category from the collection by index or name.
   /// </summary>
-  /// <param name="Index">The numeric index or name of the category.</param>
+  /// <param name="index">The numeric index or name of the category.</param>
   /// <returns>The requested <see cref="Category"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.categories.item?view=word-pia"/>
-  public Category Item(object Index) { throw new NotImplementedException(); }
+  public Category Item(object index) { throw new NotImplementedException(); }
 
   #endregion methods
 }

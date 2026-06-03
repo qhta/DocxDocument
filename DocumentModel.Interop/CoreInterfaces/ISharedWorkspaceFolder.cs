@@ -20,9 +20,9 @@ public interface ISharedWorkspaceFolder: IInteropObject
 /// <summary>
   /// Deletes the shared workspace folder.
   /// </summary>
-  /// <param name="DeleteEventIfFolderContainsFiles">Whether to delete even if the folder contains files.</param>
+  /// <param name="deleteEventIfFolderContainsFiles">Whether to delete even if the folder contains files.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolder.delete?view=office-pia"/>
-  public void Delete(object DeleteEventIfFolderContainsFiles);
+  public void Delete(object deleteEventIfFolderContainsFiles);
 
   #endregion methods
 }

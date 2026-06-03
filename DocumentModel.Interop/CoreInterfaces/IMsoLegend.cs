@@ -96,10 +96,10 @@ public interface IMsoLegend
   /// <summary>
   /// Returns legend entries.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsolegend.legendentries?view=office-pia"/>
-  public object LegendEntries(object Index);
+  public object LegendEntries(object index);
   /// <summary>
   /// Clears the legend.
   /// </summary>

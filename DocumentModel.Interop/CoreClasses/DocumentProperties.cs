@@ -15,14 +15,14 @@ public partial class DocumentProperties: InteropCollection<DocumentProperty>
 /// <summary>
   /// Adds a new document property to the collection.
   /// </summary>
-  /// <param name="Name">The `Name` parameter.</param>
-  /// <param name="LinkToContent">The `LinkToContent` parameter.</param>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="Value">The `Value` parameter.</param>
-  /// <param name="LinkSource">The `LinkSource` parameter.</param>
+  /// <param name="name">The `Name` parameter.</param>
+  /// <param name="linkToContent">The `LinkToContent` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
+  /// <param name="value">The `Value` parameter.</param>
+  /// <param name="linkSource">The `LinkSource` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.documentproperties.add?view=office-pia"/>
-  public DocumentProperty Add(string Name, bool LinkToContent, object Type, object Value, object LinkSource) { throw new NotImplementedException(); }
+  public DocumentProperty Add(string name, bool linkToContent, object type, object value, object linkSource) { throw new NotImplementedException(); }
   /// <summary>
   /// Returns an enumerator for the document properties collection.
   /// </summary>

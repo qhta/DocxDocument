@@ -75,23 +75,23 @@ public partial class CommandBars: InteropCollection<CommandBar>
 /// <summary>
   /// Creates a new command bar and adds it to the command bars collection.
   /// </summary>
-  /// <param name="Name">The `Name` parameter.</param>
-  /// <param name="Position">The `Position` parameter.</param>
-  /// <param name="MenuBar">The `MenuBar` parameter.</param>
-  /// <param name="Temporary">The `Temporary` parameter.</param>
+  /// <param name="name">The `Name` parameter.</param>
+  /// <param name="position">The `Position` parameter.</param>
+  /// <param name="menuBar">The `MenuBar` parameter.</param>
+  /// <param name="temporary">The `Temporary` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.add?view=office-pia"/>
-  public CommandBar Add(object Name, object Position, object MenuBar, object Temporary) { throw new NotImplementedException(); }
+  public CommandBar Add(object name, object position, object menuBar, object temporary) { throw new NotImplementedException(); }
   /// <summary>
   /// Finds a single command bar control that matches the specified criteria.
   /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="Id">The `Id` parameter.</param>
-  /// <param name="Tag">The `Tag` parameter.</param>
-  /// <param name="Visible">The `Visible` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
+  /// <param name="id">The `Id` parameter.</param>
+  /// <param name="tag">The `Tag` parameter.</param>
+  /// <param name="visible">The `Visible` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.findcontrol?view=office-pia"/>
-  public CommandBarControl FindControl(object Type, object Id, object Tag, object Visible) { throw new NotImplementedException(); }
+  public CommandBarControl FindControl(object type, object id, object tag, object visible) { throw new NotImplementedException(); }
   /// <summary>
   /// Releases focus from the command bars user class.
   /// </summary>
@@ -100,24 +100,24 @@ public partial class CommandBars: InteropCollection<CommandBar>
   /// <summary>
   /// Finds all command bar controls that match the specified criteria.
   /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="Id">The `Id` parameter.</param>
-  /// <param name="Tag">The `Tag` parameter.</param>
-  /// <param name="Visible">The `Visible` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
+  /// <param name="id">The `Id` parameter.</param>
+  /// <param name="tag">The `Tag` parameter.</param>
+  /// <param name="visible">The `Visible` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.findcontrols?view=office-pia"/>
-  public CommandBarControls FindControls(object Type, object Id, object Tag, object Visible) { throw new NotImplementedException(); }
+  public CommandBarControls FindControls(object type, object id, object tag, object visible) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `AddEx`.
   /// </summary>
-  /// <param name="TbidOrName">The `TbidOrName` parameter.</param>
-  /// <param name="Position">The `Position` parameter.</param>
-  /// <param name="MenuBar">The `MenuBar` parameter.</param>
-  /// <param name="Temporary">The `Temporary` parameter.</param>
-  /// <param name="TbtrProtection">The `TbtrProtection` parameter.</param>
+  /// <param name="tbidOrName">The `TbidOrName` parameter.</param>
+  /// <param name="position">The `Position` parameter.</param>
+  /// <param name="menuBar">The `MenuBar` parameter.</param>
+  /// <param name="temporary">The `Temporary` parameter.</param>
+  /// <param name="tbtrProtection">The `TbtrProtection` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.addex?view=office-pia"/>
-  public CommandBar AddEx(object TbidOrName, object Position, object MenuBar, object Temporary, object TbtrProtection) { throw new NotImplementedException(); }
+  public CommandBar AddEx(object tbidOrName, object position, object menuBar, object temporary, object tbtrProtection) { throw new NotImplementedException(); }
   /// <summary>
   /// Executes the built-in control identified by the specified `idMso` value.
   /// </summary>
@@ -170,11 +170,11 @@ public partial class CommandBars: InteropCollection<CommandBar>
   /// Invokes `GetImageMso`.
   /// </summary>
   /// <param name="idMso">The `idMso` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
+  /// <param name="width">The `Width` parameter.</param>
+  /// <param name="height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbars.getimagemso?view=office-pia"/>
-  public object GetImageMso(string idMso, int Width, int Height) { throw new NotImplementedException(); }
+  public object GetImageMso(string idMso, int width, int height) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `CommitRenderingTransaction`.
   /// </summary>

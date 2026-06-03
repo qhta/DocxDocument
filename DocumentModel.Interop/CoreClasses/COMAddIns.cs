@@ -16,10 +16,10 @@ public partial class COMAddIns: InteropCollection<COMAddIn>
 /// <summary>
   /// Returns a COM add-in from the collection by name or index.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.comaddins.item?view=office-pia"/>
-  public COMAddIn Item(ref object Index) { throw new NotImplementedException(); }
+  public COMAddIn Item(ref object index) { throw new NotImplementedException(); }
   /// <summary>
   /// Updates the COM add-ins collection.
   /// </summary>

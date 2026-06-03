@@ -13,172 +13,172 @@ public interface ICanvasShapes : IInteropObject, IInteropCollection<IShape>
 /// <summary>
   /// Creates a callout shape on the drawing canvas.
   /// </summary>
-  /// <param name="Type">The callout type.</param>
-  /// <param name="Left">The position, in points, of the left edge of the shape.</param>
-  /// <param name="Top">The position, in points, of the top edge of the shape.</param>
-  /// <param name="Width">The width, in points, of the shape.</param>
-  /// <param name="Height">The height, in points, of the shape.</param>
+  /// <param name="type">The callout type.</param>
+  /// <param name="left">The position, in points, of the left edge of the shape.</param>
+  /// <param name="top">The position, in points, of the top edge of the shape.</param>
+  /// <param name="width">The width, in points, of the shape.</param>
+  /// <param name="height">The height, in points, of the shape.</param>
   /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addcallout?view=word-pia"/>
-  public IShape AddCallout(Core.CalloutType Type, float Left, float Top, float Width, float Height);
+  public IShape AddCallout(Core.CalloutType type, float left, float top, float width, float height);
 
   /// <summary>
   /// Creates a connector shape on the drawing canvas.
   /// </summary>
-  /// <param name="Type">The connector type.</param>
-  /// <param name="BeginX">The x-coordinate, in points, of the connector start point.</param>
-  /// <param name="BeginY">The y-coordinate, in points, of the connector start point.</param>
-  /// <param name="EndX">The x-coordinate, in points, of the connector end point.</param>
-  /// <param name="EndY">The y-coordinate, in points, of the connector end point.</param>
+  /// <param name="type">The connector type.</param>
+  /// <param name="beginX">The x-coordinate, in points, of the connector start point.</param>
+  /// <param name="beginY">The y-coordinate, in points, of the connector start point.</param>
+  /// <param name="endX">The x-coordinate, in points, of the connector end point.</param>
+  /// <param name="endY">The y-coordinate, in points, of the connector end point.</param>
   /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addconnector?view=word-pia"/>
-  public IShape AddConnector(Core.ConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
+  public IShape AddConnector(Core.ConnectorType type, float beginX, float beginY, float endX, float endY);
 
   /// <summary>
   /// Creates a curved shape using the specified points.
   /// </summary>
-  /// <param name="SafeArrayOfPoints">An array of points that defines the curve path.</param>
+  /// <param name="safeArrayOfPoints">An array of points that defines the curve path.</param>
   /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addcurve?view=word-pia"/>
-  public IShape AddCurve(object SafeArrayOfPoints);
+  public IShape AddCurve(object safeArrayOfPoints);
 
   /// <summary>
   /// Creates a label shape on the drawing canvas.
   /// </summary>
-  /// <param name="Orientation">The text orientation of the label.</param>
-  /// <param name="Left">The position, in points, of the left edge of the label.</param>
-  /// <param name="Top">The position, in points, of the top edge of the label.</param>
-  /// <param name="Width">The width, in points, of the label.</param>
-  /// <param name="Height">The height, in points, of the label.</param>
+  /// <param name="orientation">The text orientation of the label.</param>
+  /// <param name="left">The position, in points, of the left edge of the label.</param>
+  /// <param name="top">The position, in points, of the top edge of the label.</param>
+  /// <param name="width">The width, in points, of the label.</param>
+  /// <param name="height">The height, in points, of the label.</param>
   /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addlabel?view=word-pia"/>
-  public IShape AddLabel(Core.TextOrientation Orientation, float Left, float Top, float Width, float Height);
+  public IShape AddLabel(Core.TextOrientation orientation, float left, float top, float width, float height);
 
   /// <summary>
   /// Creates a line shape on the drawing canvas.
   /// </summary>
-  /// <param name="BeginX">The x-coordinate, in points, of the line start point.</param>
-  /// <param name="BeginY">The y-coordinate, in points, of the line start point.</param>
-  /// <param name="EndX">The x-coordinate, in points, of the line end point.</param>
-  /// <param name="EndY">The y-coordinate, in points, of the line end point.</param>
+  /// <param name="beginX">The x-coordinate, in points, of the line start point.</param>
+  /// <param name="beginY">The y-coordinate, in points, of the line start point.</param>
+  /// <param name="endX">The x-coordinate, in points, of the line end point.</param>
+  /// <param name="endY">The y-coordinate, in points, of the line end point.</param>
   /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addline?view=word-pia"/>
-  public IShape AddLine(float BeginX, float BeginY, float EndX, float EndY);
+  public IShape AddLine(float beginX, float beginY, float endX, float endY);
 
   /// <summary>
   /// Adds a picture to the drawing canvas.
   /// </summary>
-  /// <param name="FileName">The path and file name of the picture.</param>
-  /// <param name="LinkToFile">Specifies whether to link the picture to the source file.</param>
-  /// <param name="SaveWithDocument">Specifies whether to save the linked picture with the document.</param>
-  /// <param name="Left">The position, in points, of the left edge of the picture.</param>
-  /// <param name="Top">The position, in points, of the top edge of the picture.</param>
-  /// <param name="Width">The width, in points, of the picture.</param>
-  /// <param name="Height">The height, in points, of the picture.</param>
+  /// <param name="fileName">The path and file name of the picture.</param>
+  /// <param name="linkToFile">Specifies whether to link the picture to the source file.</param>
+  /// <param name="saveWithDocument">Specifies whether to save the linked picture with the document.</param>
+  /// <param name="left">The position, in points, of the left edge of the picture.</param>
+  /// <param name="top">The position, in points, of the top edge of the picture.</param>
+  /// <param name="width">The width, in points, of the picture.</param>
+  /// <param name="height">The height, in points, of the picture.</param>
   /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addpicture?view=word-pia"/>
-  public IShape AddPicture(string FileName, object LinkToFile, object SaveWithDocument, object Left, object Top, object Width, object Height);
+  public IShape AddPicture(string fileName, object linkToFile, object saveWithDocument, object left, object top, object width, object height);
 
   /// <summary>
   /// Creates a polyline shape using the specified points.
   /// </summary>
-  /// <param name="SafeArrayOfPoints">An array of points that defines the polyline path.</param>
+  /// <param name="safeArrayOfPoints">An array of points that defines the polyline path.</param>
   /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addpolyline?view=word-pia"/>
-  public IShape AddPolyline(object SafeArrayOfPoints);
+  public IShape AddPolyline(object safeArrayOfPoints);
 
   /// <summary>
   /// Creates an AutoShape on the drawing canvas.
   /// </summary>
-  /// <param name="Type">The AutoShape type.</param>
-  /// <param name="Left">The position, in points, of the left edge of the shape.</param>
-  /// <param name="Top">The position, in points, of the top edge of the shape.</param>
-  /// <param name="Width">The width, in points, of the shape.</param>
-  /// <param name="Height">The height, in points, of the shape.</param>
+  /// <param name="type">The AutoShape type.</param>
+  /// <param name="left">The position, in points, of the left edge of the shape.</param>
+  /// <param name="top">The position, in points, of the top edge of the shape.</param>
+  /// <param name="width">The width, in points, of the shape.</param>
+  /// <param name="height">The height, in points, of the shape.</param>
   /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addshape?view=word-pia"/>
-  public IShape AddShape(int Type, float Left, float Top, float Width, float Height);
+  public IShape AddShape(int type, float left, float top, float width, float height);
 
   /// <summary>
   /// Creates a WordArt text effect on the drawing canvas.
   /// </summary>
-  /// <param name="PresetTextEffect">The preset text effect style.</param>
-  /// <param name="Text">The displayed text.</param>
-  /// <param name="FontName">The font name.</param>
-  /// <param name="FontSize">The font size.</param>
-  /// <param name="FontBold">Specifies whether the text is bold.</param>
-  /// <param name="FontItalic">Specifies whether the text is italic.</param>
-  /// <param name="Left">The position, in points, of the left edge of the text effect.</param>
-  /// <param name="Top">The position, in points, of the top edge of the text effect.</param>
+  /// <param name="presetTextEffect">The preset text effect style.</param>
+  /// <param name="text">The displayed text.</param>
+  /// <param name="fontName">The font name.</param>
+  /// <param name="fontSize">The font size.</param>
+  /// <param name="fontBold">Specifies whether the text is bold.</param>
+  /// <param name="fontItalic">Specifies whether the text is italic.</param>
+  /// <param name="left">The position, in points, of the left edge of the text effect.</param>
+  /// <param name="top">The position, in points, of the top edge of the text effect.</param>
   /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addtexteffect?view=word-pia"/>
-  public IShape AddTextEffect(Core.PresetTextEffect PresetTextEffect, string Text, string FontName, float FontSize, Core.TriState FontBold, Core.TriState FontItalic, float Left, float Top);
+  public IShape AddTextEffect(Core.PresetTextEffect presetTextEffect, string text, string fontName, float fontSize, Core.TriState fontBold, Core.TriState fontItalic, float left, float top);
 
   /// <summary>
   /// Creates a text box on the drawing canvas.
   /// </summary>
-  /// <param name="Orientation">The text orientation of the text box.</param>
-  /// <param name="Left">The position, in points, of the left edge of the text box.</param>
-  /// <param name="Top">The position, in points, of the top edge of the text box.</param>
-  /// <param name="Width">The width, in points, of the text box.</param>
-  /// <param name="Height">The height, in points, of the text box.</param>
+  /// <param name="orientation">The text orientation of the text box.</param>
+  /// <param name="left">The position, in points, of the left edge of the text box.</param>
+  /// <param name="top">The position, in points, of the top edge of the text box.</param>
+  /// <param name="width">The width, in points, of the text box.</param>
+  /// <param name="height">The height, in points, of the text box.</param>
   /// <returns>The created <see cref="IShape"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.addtextbox?view=word-pia"/>
-  public IShape AddTextbox(Core.TextOrientation Orientation, float Left, float Top, float Width, float Height);
+  public IShape AddTextbox(Core.TextOrientation orientation, float left, float top, float width, float height);
 
   /// <summary>
   /// Creates a freeform builder for constructing a custom shape.
   /// </summary>
-  /// <param name="EditingType">The node editing type for the first node.</param>
-  /// <param name="X1">The x-coordinate, in points, of the first node.</param>
-  /// <param name="Y1">The y-coordinate, in points, of the first node.</param>
+  /// <param name="editingType">The node editing type for the first node.</param>
+  /// <param name="x1">The x-coordinate, in points, of the first node.</param>
+  /// <param name="y1">The y-coordinate, in points, of the first node.</param>
   /// <returns>A <see cref="IFreeformBuilder"/> used to define the custom shape.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.buildfreeform?view=word-pia"/>
-  public IFreeformBuilder BuildFreeform(Core.EditingType EditingType, float X1, float Y1);
+  public IFreeformBuilder BuildFreeform(Core.EditingType editingType, float x1, float y1);
 
   /// <summary>
   /// Returns one or more shapes from the collection.
   /// </summary>
-  /// <param name="Index">The index or array of indexes of shapes to return.</param>
+  /// <param name="index">The index or array of indexes of shapes to return.</param>
   /// <returns>A <see cref="IShapeRange"/> containing the selected shapes.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.canvasshapes.range?view=word-pia"/>
-  public IShapeRange Range(object Index);
+  public IShapeRange Range(object index);
 
   /// <summary>
   /// Selects all the shapes in the main story, in a canvas, or in headers and footers of a document.

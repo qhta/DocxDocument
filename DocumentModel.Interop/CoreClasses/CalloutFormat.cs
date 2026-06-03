@@ -18,21 +18,21 @@ public partial class CalloutFormat
   /// <summary>
   /// Sets a custom drop distance for the callout line.
   /// </summary>
-  /// <param name="Drop">The `Drop` parameter.</param>
+  /// <param name="drop">The `Drop` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.calloutformat.customdrop?view=office-pia"/>
-  public void CustomDrop(float Drop) { throw new NotImplementedException(); }
+  public void CustomDrop(float drop) { throw new NotImplementedException(); }
   /// <summary>
   /// Sets a custom callout line length.
   /// </summary>
-  /// <param name="Length">The `Length` parameter.</param>
+  /// <param name="length">The `Length` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.calloutformat.customlength?view=office-pia"/>
-  public void CustomLength(float Length) { throw new NotImplementedException(); }
+  public void CustomLength(float length) { throw new NotImplementedException(); }
   /// <summary>
   /// Applies a preset callout drop type.
   /// </summary>
-  /// <param name="DropType">The `DropType` parameter.</param>
+  /// <param name="dropType">The `DropType` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.calloutformat.presetdrop?view=office-pia"/>
-  public void PresetDrop(CalloutDropType DropType) { throw new NotImplementedException(); }
+  public void PresetDrop(CalloutDropType dropType) { throw new NotImplementedException(); }
 
   #endregion methods
 }

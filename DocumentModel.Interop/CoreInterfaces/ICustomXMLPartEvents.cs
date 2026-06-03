@@ -14,10 +14,10 @@ public interface ICustomXMLPartEvents
 /// <summary>
   /// Raised after a custom XML node is inserted.
   /// </summary>
-  /// <param name="NewNode">The `NewNode` parameter.</param>
-  /// <param name="InUndoRedo">The `InUndoRedo` parameter.</param>
+  /// <param name="newNode">The `NewNode` parameter.</param>
+  /// <param name="inUndoRedo">The `InUndoRedo` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents.nodeafterinsert?view=office-pia"/>
-  public void NodeAfterInsert(ICustomXMLNode NewNode, bool InUndoRedo);
+  public void NodeAfterInsert(ICustomXMLNode newNode, bool inUndoRedo);
   /// <summary>
   /// Raised after a custom XML node is deleted.
   /// </summary>
@@ -31,11 +31,11 @@ public interface ICustomXMLPartEvents
   /// <summary>
   /// Raised after a custom XML node is replaced.
   /// </summary>
-  /// <param name="OldNode">The `OldNode` parameter.</param>
-  /// <param name="NewNode">The `NewNode` parameter.</param>
-  /// <param name="InUndoRedo">The `InUndoRedo` parameter.</param>
+  /// <param name="oldNode">The `OldNode` parameter.</param>
+  /// <param name="newNode">The `NewNode` parameter.</param>
+  /// <param name="inUndoRedo">The `InUndoRedo` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomxmlpartevents.nodeafterreplace?view=office-pia"/>
-  public void NodeAfterReplace(ICustomXMLNode OldNode, ICustomXMLNode NewNode, bool InUndoRedo);
+  public void NodeAfterReplace(ICustomXMLNode oldNode, ICustomXMLNode newNode, bool inUndoRedo);
 
   #endregion methods
 }

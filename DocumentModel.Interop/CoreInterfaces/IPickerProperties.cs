@@ -15,18 +15,18 @@ public interface IPickerProperties: IInteropCollection<IPickerProperty>
 /// <summary>
   /// Adds a `PickerProperty` to the collection.
   /// </summary>
-  /// <param name="Id">The `Id` parameter.</param>
-  /// <param name="Value">The `Value` parameter.</param>
-  /// <param name="Type">The `Type` parameter.</param>
+  /// <param name="id">The `Id` parameter.</param>
+  /// <param name="value">The `Value` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
   /// <returns>The added picker property.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerproperties.add?view=office-pia"/>
-  public IPickerProperty Add(string Id, string Value, IPickerField Type);
+  public IPickerProperty Add(string id, string value, IPickerField type);
   /// <summary>
   /// Removes a `PickerProperty` from the collection.
   /// </summary>
-  /// <param name="Id">The `Id` parameter.</param>
+  /// <param name="id">The `Id` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerproperties.remove?view=office-pia"/>
-  public void Remove(string Id);
+  public void Remove(string id);
 
   #endregion methods
 }

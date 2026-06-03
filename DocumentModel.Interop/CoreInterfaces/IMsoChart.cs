@@ -308,26 +308,26 @@ public interface IMsoChart
 /// <summary>
   /// Invokes `UnProtect`.
   /// </summary>
-  /// <param name="Password">The `Password` parameter.</param>
+  /// <param name="password">The `Password` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.unprotect?view=office-pia"/>
-  public void UnProtect(object Password);
+  public void UnProtect(object password);
   /// <summary>
   /// Invokes `Protect`.
   /// </summary>
-  /// <param name="Password">The `Password` parameter.</param>
-  /// <param name="DrawingObjects">The `DrawingObjects` parameter.</param>
-  /// <param name="Contents">The `Contents` parameter.</param>
-  /// <param name="Scenarios">The `Scenarios` parameter.</param>
-  /// <param name="UserInterfaceOnly">The `UserInterfaceOnly` parameter.</param>
+  /// <param name="password">The `Password` parameter.</param>
+  /// <param name="drawingObjects">The `DrawingObjects` parameter.</param>
+  /// <param name="contents">The `Contents` parameter.</param>
+  /// <param name="scenarios">The `Scenarios` parameter.</param>
+  /// <param name="userInterfaceOnly">The `UserInterfaceOnly` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.protect?view=office-pia"/>
-  public void Protect(object Password, object DrawingObjects, object Contents, object Scenarios, object UserInterfaceOnly);
+  public void Protect(object password, object drawingObjects, object contents, object scenarios, object userInterfaceOnly);
   /// <summary>
   /// Invokes `SeriesCollection`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.seriescollection?view=office-pia"/>
-  public object SeriesCollection(object Index);
+  public object SeriesCollection(object index);
   /// <summary>
   /// Invokes `_ApplyDataLabels`.
   /// </summary>
@@ -360,35 +360,35 @@ public interface IMsoChart
   /// <summary>
   /// Invokes `ApplyCustomType`.
   /// </summary>
-  /// <param name="ChartType">The `ChartType` parameter.</param>
-  /// <param name="TypeName">The `TypeName` parameter.</param>
+  /// <param name="chartType">The `ChartType` parameter.</param>
+  /// <param name="typeName">The `TypeName` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.applycustomtype?view=office-pia"/>
-  public void ApplyCustomType(ChartType ChartType, object TypeName);
+  public void ApplyCustomType(ChartType chartType, object typeName);
   /// <summary>
   /// Invokes `GetChartElement`.
   /// </summary>
   /// <param name="x">The `x` parameter.</param>
   /// <param name="y">The `y` parameter.</param>
-  /// <param name="ElementID">The `ElementID` parameter.</param>
-  /// <param name="Arg1">The `Arg1` parameter.</param>
-  /// <param name="Arg2">The `Arg2` parameter.</param>
+  /// <param name="elementID">The `ElementID` parameter.</param>
+  /// <param name="arg1">The `Arg1` parameter.</param>
+  /// <param name="arg2">The `Arg2` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.getchartelement?view=office-pia"/>
-  public void GetChartElement(int x, int y, ref int ElementID, ref int Arg1, ref int Arg2);
+  public void GetChartElement(int x, int y, ref int elementID, ref int arg1, ref int arg2);
   /// <summary>
   /// Invokes `SetSourceData`.
   /// </summary>
-  /// <param name="Source">The `Source` parameter.</param>
-  /// <param name="PlotBy">The `PlotBy` parameter.</param>
+  /// <param name="source">The `Source` parameter.</param>
+  /// <param name="plotBy">The `PlotBy` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.setsourcedata?view=office-pia"/>
-  public void SetSourceData(string Source, object PlotBy);
+  public void SetSourceData(string source, object plotBy);
   /// <summary>
   /// Invokes `Axes`.
   /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="AxisGroup">The `AxisGroup` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
+  /// <param name="axisGroup">The `AxisGroup` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.axes?view=office-pia"/>
-  public object Axes(object Type, AxisGroup AxisGroup);
+  public object Axes(object type, AxisGroup axisGroup);
   /// <summary>
   /// Invokes `AutoFormat`.
   /// </summary>
@@ -424,28 +424,28 @@ public interface IMsoChart
   /// <summary>
   /// Invokes `CopyPicture`.
   /// </summary>
-  /// <param name="Appearance">The `Appearance` parameter.</param>
-  /// <param name="Format">The `Format` parameter.</param>
-  /// <param name="Size">The `Size` parameter.</param>
+  /// <param name="appearance">The `Appearance` parameter.</param>
+  /// <param name="format">The `Format` parameter.</param>
+  /// <param name="size">The `Size` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.copypicture?view=office-pia"/>
-  public void CopyPicture(int Appearance, int Format, int Size);
+  public void CopyPicture(int appearance, int format, int size);
   /// <summary>
   /// Invokes `Evaluate`.
   /// </summary>
   /// <param name="varName">The `varName` parameter.</param>
-  /// <param name="LocaleID">The `LocaleID` parameter.</param>
-  /// <param name="ObjType">The `ObjType` parameter.</param>
+  /// <param name="localeID">The `LocaleID` parameter.</param>
+  /// <param name="objType">The `ObjType` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.evaluate?view=office-pia"/>
-  public object Evaluate(object varName, int LocaleID, out int ObjType);
+  public object Evaluate(object varName, int localeID, out int objType);
   /// <summary>
   /// Invokes `_Evaluate`.
   /// </summary>
   /// <param name="varName">The `varName` parameter.</param>
-  /// <param name="LocaleID">The `LocaleID` parameter.</param>
+  /// <param name="localeID">The `LocaleID` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart._evaluate?view=office-pia"/>
-  public object _Evaluate(object varName, int LocaleID);
+  public object _Evaluate(object varName, int localeID);
   /// <summary>
   /// Invokes `Paste`.
   /// </summary>
@@ -492,10 +492,10 @@ public interface IMsoChart
   /// <summary>
   /// Invokes `ApplyLayout`.
   /// </summary>
-  /// <param name="Layout">The `Layout` parameter.</param>
+  /// <param name="layout">The `Layout` parameter.</param>
   /// <param name="varChartType">The `varChartType` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.applylayout?view=office-pia"/>
-  public void ApplyLayout(int Layout, object varChartType);
+  public void ApplyLayout(int layout, object varChartType);
   /// <summary>
   /// Invokes `Refresh`.
   /// </summary>
@@ -504,65 +504,65 @@ public interface IMsoChart
   /// <summary>
   /// Invokes `SetElement`.
   /// </summary>
-  /// <param name="RHS">The `RHS` parameter.</param>
+  /// <param name="rHS">The `RHS` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.setelement?view=office-pia"/>
-  public void SetElement(ChartElementType RHS);
+  public void SetElement(ChartElementType rHS);
   /// <summary>
   /// Invokes `AreaGroups`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.areagroups?view=office-pia"/>
-  public object AreaGroups(object Index);
+  public object AreaGroups(object index);
   /// <summary>
   /// Invokes `BarGroups`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.bargroups?view=office-pia"/>
-  public object BarGroups(object Index);
+  public object BarGroups(object index);
   /// <summary>
   /// Invokes `ColumnGroups`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.columngroups?view=office-pia"/>
-  public object ColumnGroups(object Index);
+  public object ColumnGroups(object index);
   /// <summary>
   /// Invokes `LineGroups`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.linegroups?view=office-pia"/>
-  public object LineGroups(object Index);
+  public object LineGroups(object index);
   /// <summary>
   /// Invokes `PieGroups`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.piegroups?view=office-pia"/>
-  public object PieGroups(object Index);
+  public object PieGroups(object index);
   /// <summary>
   /// Invokes `DoughnutGroups`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.doughnutgroups?view=office-pia"/>
-  public object DoughnutGroups(object Index);
+  public object DoughnutGroups(object index);
   /// <summary>
   /// Invokes `RadarGroups`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.radargroups?view=office-pia"/>
-  public object RadarGroups(object Index);
+  public object RadarGroups(object index);
   /// <summary>
   /// Invokes `XYGroups`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.xygroups?view=office-pia"/>
-  public object XYGroups(object Index);
+  public object XYGroups(object index);
   /// <summary>
   /// Invokes `Delete`.
   /// </summary>
@@ -578,17 +578,17 @@ public interface IMsoChart
   /// <summary>
   /// Invokes `Select`.
   /// </summary>
-  /// <param name="Replace">The `Replace` parameter.</param>
+  /// <param name="replace">The `Replace` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.select?view=office-pia"/>
-  public object Select(object Replace);
+  public object Select(object replace);
   /// <summary>
   /// Invokes `FullSeriesCollection`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsochart.fullseriescollection?view=office-pia"/>
-  public object FullSeriesCollection(object Index);
+  public object FullSeriesCollection(object index);
   /// <summary>
   /// Invokes `DeleteHiddenContent`.
   /// </summary>

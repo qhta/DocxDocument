@@ -27,10 +27,10 @@ public partial class ODSOFilters: InteropCollection<object>
   /// <summary>
   /// Deletes a filter from the collection.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
-  /// <param name="DeferUpdate">The `DeferUpdate` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
+  /// <param name="deferUpdate">The `DeferUpdate` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilters.delete?view=office-pia"/>
-  public void Delete(int Index, bool DeferUpdate) { throw new NotImplementedException(); }
+  public void Delete(int index, bool deferUpdate) { throw new NotImplementedException(); }
 
   #endregion methods
 }

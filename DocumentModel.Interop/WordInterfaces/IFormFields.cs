@@ -19,13 +19,13 @@ public interface IFormFields : IInteropObject, IInteropCollection<IFormField>
   /// Returns the value produced by the add operation.
   /// </summary>
   /// <param name="range">Specifies the range.</param>
-  /// <param name="Type">Specifies the type.</param>
+  /// <param name="type">Specifies the type.</param>
   /// <returns>The resulting value.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.formfields.add?view=word-pia"/>
-  public IFormField Add(IRange range, FieldType Type);
+  public IFormField Add(IRange range, FieldType type);
 
   #endregion methods
 }

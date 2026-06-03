@@ -64,15 +64,15 @@ public interface IPictureFormat: IInteropObject
 /// <summary>
   /// Changes the picture brightness by the specified amount.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat.incrementbrightness?view=office-pia"/>
-  public void IncrementBrightness(float Increment);
+  public void IncrementBrightness(float increment);
   /// <summary>
   /// Changes the picture contrast by the specified amount.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pictureformat.incrementcontrast?view=office-pia"/>
-  public void IncrementContrast(float Increment);
+  public void IncrementContrast(float increment);
 
   #endregion methods
 }

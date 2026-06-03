@@ -42,12 +42,12 @@ public partial class Diagram : InteropObject
 /// <summary>
   /// Converts the diagram to the specified diagram type.
   /// </summary>
-  /// <param name="Type">The target diagram type.</param>
+  /// <param name="type">The target diagram type.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagram.convert?view=word-pia"/>
-  public void Convert(Core.DiagramType Type) { throw new NotImplementedException(); }
+  public void Convert(Core.DiagramType type) { throw new NotImplementedException(); }
 
   #endregion methods
 }

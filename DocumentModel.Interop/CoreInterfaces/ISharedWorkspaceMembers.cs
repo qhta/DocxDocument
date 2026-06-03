@@ -22,13 +22,13 @@ public interface ISharedWorkspaceMembers: IInteropCollection<ISharedWorkspaceMem
 /// <summary>
   /// Invokes `Add`.
   /// </summary>
-  /// <param name="Email">The `Email` parameter.</param>
-  /// <param name="DomainName">The `DomainName` parameter.</param>
-  /// <param name="DisplayName">The `DisplayName` parameter.</param>
-  /// <param name="Role">The `Role` parameter.</param>
+  /// <param name="email">The `Email` parameter.</param>
+  /// <param name="domainName">The `DomainName` parameter.</param>
+  /// <param name="displayName">The `DisplayName` parameter.</param>
+  /// <param name="role">The `Role` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacemembers.add?view=office-pia"/>
-  public ISharedWorkspaceMember Add(string Email, string DomainName, string DisplayName, object Role);
+  public ISharedWorkspaceMember Add(string email, string domainName, string displayName, object role);
 
   #endregion methods
 }

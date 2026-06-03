@@ -261,17 +261,17 @@ public interface IShapeRange: IInteropCollection<IShape>
 /// <summary>
   /// Invokes `Item`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.item?view=office-pia"/>
-  public IShape Item(object Index);
+  public IShape Item(object index);
   /// <summary>
   /// Invokes `Align`.
   /// </summary>
-  /// <param name="AlignCmd">The `AlignCmd` parameter.</param>
-  /// <param name="RelativeTo">The `RelativeTo` parameter.</param>
+  /// <param name="alignCmd">The `AlignCmd` parameter.</param>
+  /// <param name="relativeTo">The `RelativeTo` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.align?view=office-pia"/>
-  public void Align(AlignCmd AlignCmd, TriState RelativeTo);
+  public void Align(AlignCmd alignCmd, TriState relativeTo);
   /// <summary>
   /// Invokes `Apply`.
   /// </summary>
@@ -285,10 +285,10 @@ public interface IShapeRange: IInteropCollection<IShape>
   /// <summary>
   /// Invokes `Distribute`.
   /// </summary>
-  /// <param name="DistributeCmd">The `DistributeCmd` parameter.</param>
-  /// <param name="RelativeTo">The `RelativeTo` parameter.</param>
+  /// <param name="distributeCmd">The `DistributeCmd` parameter.</param>
+  /// <param name="relativeTo">The `RelativeTo` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.distribute?view=office-pia"/>
-  public void Distribute(DistributeCmd DistributeCmd, TriState RelativeTo);
+  public void Distribute(DistributeCmd distributeCmd, TriState relativeTo);
   /// <summary>
   /// Invokes `Duplicate`.
   /// </summary>
@@ -298,27 +298,27 @@ public interface IShapeRange: IInteropCollection<IShape>
   /// <summary>
   /// Invokes `Flip`.
   /// </summary>
-  /// <param name="FlipCmd">The `FlipCmd` parameter.</param>
+  /// <param name="flipCmd">The `FlipCmd` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.flip?view=office-pia"/>
-  public void Flip(FlipCmd FlipCmd);
+  public void Flip(FlipCmd flipCmd);
   /// <summary>
   /// Invokes `IncrementLeft`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.incrementleft?view=office-pia"/>
-  public void IncrementLeft(float Increment);
+  public void IncrementLeft(float increment);
   /// <summary>
   /// Invokes `IncrementRotation`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.incrementrotation?view=office-pia"/>
-  public void IncrementRotation(float Increment);
+  public void IncrementRotation(float increment);
   /// <summary>
   /// Invokes `IncrementTop`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.incrementtop?view=office-pia"/>
-  public void IncrementTop(float Increment);
+  public void IncrementTop(float increment);
   /// <summary>
   /// Invokes `Group`.
   /// </summary>
@@ -362,9 +362,9 @@ public interface IShapeRange: IInteropCollection<IShape>
   /// <summary>
   /// Invokes `Select`.
   /// </summary>
-  /// <param name="Replace">The `Replace` parameter.</param>
+  /// <param name="replace">The `Replace` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.select?view=office-pia"/>
-  public void Select(object Replace);
+  public void Select(object replace);
   /// <summary>
   /// Invokes `SetShapesDefaultProperties`.
   /// </summary>
@@ -379,33 +379,33 @@ public interface IShapeRange: IInteropCollection<IShape>
   /// <summary>
   /// Invokes `ZOrder`.
   /// </summary>
-  /// <param name="ZOrderCmd">The `ZOrderCmd` parameter.</param>
+  /// <param name="zOrderCmd">The `ZOrderCmd` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.zorder?view=office-pia"/>
-  public void ZOrder(ZOrderCmd ZOrderCmd);
+  public void ZOrder(ZOrderCmd zOrderCmd);
   /// <summary>
   /// Invokes `CanvasCropLeft`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.canvascropleft?view=office-pia"/>
-  public void CanvasCropLeft(float Increment);
+  public void CanvasCropLeft(float increment);
   /// <summary>
   /// Invokes `CanvasCropTop`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.canvascroptop?view=office-pia"/>
-  public void CanvasCropTop(float Increment);
+  public void CanvasCropTop(float increment);
   /// <summary>
   /// Invokes `CanvasCropRight`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.canvascropright?view=office-pia"/>
-  public void CanvasCropRight(float Increment);
+  public void CanvasCropRight(float increment);
   /// <summary>
   /// Invokes `CanvasCropBottom`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.canvascropbottom?view=office-pia"/>
-  public void CanvasCropBottom(float Increment);
+  public void CanvasCropBottom(float increment);
   /// <summary>
   /// Invokes `Cut`.
   /// </summary>
@@ -419,10 +419,10 @@ public interface IShapeRange: IInteropCollection<IShape>
   /// <summary>
   /// Invokes `MergeShapes`.
   /// </summary>
-  /// <param name="MergeCmd">The `MergeCmd` parameter.</param>
-  /// <param name="PrimaryShape">The `PrimaryShape` parameter.</param>
+  /// <param name="mergeCmd">The `MergeCmd` parameter.</param>
+  /// <param name="primaryShape">The `PrimaryShape` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shaperange.mergeshapes?view=office-pia"/>
-  public void MergeShapes(MergeCmd MergeCmd, IShape PrimaryShape);
+  public void MergeShapes(MergeCmd mergeCmd, IShape primaryShape);
 
   #endregion methods
 }

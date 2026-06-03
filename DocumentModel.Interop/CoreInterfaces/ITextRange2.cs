@@ -101,10 +101,10 @@ public interface ITextRange2: IInteropCollection<ITextRange2>
 /// <summary>
   /// Invokes `Item`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.item?view=office-pia"/>
-  public ITextRange2 Item(object Index);
+  public ITextRange2 Item(object index);
   /// <summary>
   /// Invokes `TrimText`.
   /// </summary>
@@ -114,26 +114,26 @@ public interface ITextRange2: IInteropCollection<ITextRange2>
   /// <summary>
   /// Invokes `InsertAfter`.
   /// </summary>
-  /// <param name="NewText">The `NewText` parameter.</param>
+  /// <param name="newText">The `NewText` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.insertafter?view=office-pia"/>
-  public ITextRange2 InsertAfter(string NewText);
+  public ITextRange2 InsertAfter(string newText);
   /// <summary>
   /// Invokes `InsertBefore`.
   /// </summary>
-  /// <param name="NewText">The `NewText` parameter.</param>
+  /// <param name="newText">The `NewText` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.insertbefore?view=office-pia"/>
-  public ITextRange2 InsertBefore(string NewText);
+  public ITextRange2 InsertBefore(string newText);
   /// <summary>
   /// Invokes `InsertSymbol`.
   /// </summary>
-  /// <param name="FontName">The `Name` parameter.</param>
-  /// <param name="CharNumber">The `CharNumber` parameter.</param>
-  /// <param name="Unicode">The `Unicode` parameter.</param>
+  /// <param name="fontName">The `Name` parameter.</param>
+  /// <param name="charNumber">The `CharNumber` parameter.</param>
+  /// <param name="unicode">The `Unicode` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.insertsymbol?view=office-pia"/>
-  public ITextRange2 InsertSymbol(string FontName, int CharNumber, TriState Unicode);
+  public ITextRange2 InsertSymbol(string fontName, int charNumber, TriState unicode);
   /// <summary>
   /// Invokes `Select`.
   /// </summary>
@@ -163,16 +163,16 @@ public interface ITextRange2: IInteropCollection<ITextRange2>
   /// <summary>
   /// Invokes `PasteSpecial`.
   /// </summary>
-  /// <param name="Format">The `Format` parameter.</param>
+  /// <param name="format">The `Format` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.pastespecial?view=office-pia"/>
-  public ITextRange2 PasteSpecial(ClipboardFormat Format);
+  public ITextRange2 PasteSpecial(ClipboardFormat format);
   /// <summary>
   /// Invokes `ChangeCase`.
   /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.changecase?view=office-pia"/>
-  public void ChangeCase(TextChangeCase Type);
+  public void ChangeCase(TextChangeCase type);
   /// <summary>
   /// Invokes `AddPeriods`.
   /// </summary>
@@ -235,12 +235,12 @@ public interface ITextRange2: IInteropCollection<ITextRange2>
   /// <summary>
   /// Invokes `InsertChartField`.
   /// </summary>
-  /// <param name="ChartFieldType">The `ChartFieldType` parameter.</param>
-  /// <param name="Formula">The `Formula` parameter.</param>
-  /// <param name="Position">The `Position` parameter.</param>
+  /// <param name="chartFieldType">The `ChartFieldType` parameter.</param>
+  /// <param name="formula">The `Formula` parameter.</param>
+  /// <param name="position">The `Position` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.textrange2.insertchartfield?view=office-pia"/>
-  public ITextRange2 InsertChartField(ChartFieldType ChartFieldType, string Formula, int Position);
+  public ITextRange2 InsertChartField(ChartFieldType chartFieldType, string formula, int position);
 
   #endregion methods
 }

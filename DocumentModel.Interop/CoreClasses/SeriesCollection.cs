@@ -16,23 +16,23 @@ public partial class SeriesCollection: InteropCollection<MsoSeries>
 /// <summary>
   /// Invokes `Add`.
   /// </summary>
-  /// <param name="Source">The `Source` parameter.</param>
-  /// <param name="Rowcol">The `Rowcol` parameter.</param>
-  /// <param name="SeriesLabels">The `SeriesLabels` parameter.</param>
-  /// <param name="CategoryLabels">The `CategoryLabels` parameter.</param>
-  /// <param name="Replace">The `Replace` parameter.</param>
+  /// <param name="source">The `Source` parameter.</param>
+  /// <param name="rowcol">The `Rowcol` parameter.</param>
+  /// <param name="seriesLabels">The `SeriesLabels` parameter.</param>
+  /// <param name="categoryLabels">The `CategoryLabels` parameter.</param>
+  /// <param name="replace">The `Replace` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.add?view=office-pia"/>
-  public MsoSeries Add(object Source, RowCol Rowcol, object SeriesLabels, object CategoryLabels, object Replace) { throw new NotImplementedException(); }
+  public MsoSeries Add(object source, RowCol rowcol, object seriesLabels, object categoryLabels, object replace) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `Extend`.
   /// </summary>
-  /// <param name="Source">The `Source` parameter.</param>
-  /// <param name="Rowcol">The `Rowcol` parameter.</param>
-  /// <param name="CategoryLabels">The `CategoryLabels` parameter.</param>
+  /// <param name="source">The `Source` parameter.</param>
+  /// <param name="rowcol">The `Rowcol` parameter.</param>
+  /// <param name="categoryLabels">The `CategoryLabels` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.seriescollection.extend?view=office-pia"/>
-  public object Extend(object Source, object Rowcol, object CategoryLabels) { throw new NotImplementedException(); }
+  public object Extend(object source, object rowcol, object categoryLabels) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `Paste`.
   /// </summary>

@@ -59,23 +59,23 @@ public interface IDiagramNode: IInteropObject
   /// <summary>
   /// Invokes `MoveNode`.
   /// </summary>
-  /// <param name="TargetNode">The `TargetNode` parameter.</param>
-  /// <param name="Pos">The `Pos` parameter.</param>
+  /// <param name="targetNode">The `TargetNode` parameter.</param>
+  /// <param name="pos">The `Pos` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.movenode?view=office-pia"/>
-  public void MoveNode(IDiagramNode TargetNode, RelativeNodePosition Pos);
+  public void MoveNode(IDiagramNode targetNode, RelativeNodePosition pos);
   /// <summary>
   /// Invokes `ReplaceNode`.
   /// </summary>
-  /// <param name="TargetNode">The `TargetNode` parameter.</param>
+  /// <param name="targetNode">The `TargetNode` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.replacenode?view=office-pia"/>
-  public void ReplaceNode(IDiagramNode TargetNode);
+  public void ReplaceNode(IDiagramNode targetNode);
   /// <summary>
   /// Invokes `SwapNode`.
   /// </summary>
-  /// <param name="TargetNode">The `TargetNode` parameter.</param>
-  /// <param name="SwapChildren">The `SwapChildren` parameter.</param>
+  /// <param name="targetNode">The `TargetNode` parameter.</param>
+  /// <param name="swapChildren">The `SwapChildren` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.swapnode?view=office-pia"/>
-  public void SwapNode(IDiagramNode TargetNode, bool SwapChildren);
+  public void SwapNode(IDiagramNode targetNode, bool swapChildren);
   /// <summary>
   /// Invokes `CloneNode`.
   /// </summary>
@@ -89,9 +89,9 @@ public interface IDiagramNode: IInteropObject
   /// <summary>
   /// Invokes `TransferChildren`.
   /// </summary>
-  /// <param name="ReceivingNode">The `ReceivingNode` parameter.</param>
+  /// <param name="receivingNode">The `ReceivingNode` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.transferchildren?view=office-pia"/>
-  public void TransferChildren(IDiagramNode ReceivingNode);
+  public void TransferChildren(IDiagramNode receivingNode);
   /// <summary>
   /// Invokes `NextNode`.
   /// </summary>

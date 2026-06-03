@@ -19,17 +19,17 @@ public interface IKeyBindings : IInteropObject, IInteropCollection<IKeyBinding>
 /// <summary>
   /// Adds a new key binding to the collection.
   /// </summary>
-  /// <param name="KeyCategory">The category of the key binding.</param>
-  /// <param name="Command">The command to execute when the key binding is pressed.</param>
-  /// <param name="KeyCode">The primary key code for the key binding.</param>
-  /// <param name="KeyCode2">An optional secondary key code for the key binding.</param>
-  /// <param name="CommandParameter">An optional parameter for the command.</param>
+  /// <param name="keyCategory">The category of the key binding.</param>
+  /// <param name="command">The command to execute when the key binding is pressed.</param>
+  /// <param name="keyCode">The primary key code for the key binding.</param>
+  /// <param name="keyCode2">An optional secondary key code for the key binding.</param>
+  /// <param name="commandParameter">An optional parameter for the command.</param>
   /// <returns>The created <see cref="IKeyBinding"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.keybindings.add?view=word-pia"/>
-  public IKeyBinding Add(KeyCategory KeyCategory, string Command, int KeyCode, int KeyCode2, object CommandParameter);
+  public IKeyBinding Add(KeyCategory keyCategory, string command, int keyCode, int keyCode2, object commandParameter);
 
   #endregion methods
 }

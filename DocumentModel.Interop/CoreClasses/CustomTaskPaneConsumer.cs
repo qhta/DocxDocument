@@ -14,9 +14,9 @@ public partial class CustomTaskPaneConsumer
 /// <summary>
   /// Passes an `ICTPFactory` object that can be used to create a custom task pane.
   /// </summary>
-  /// <param name="CTPFactoryInst">The `CTPFactoryInst` parameter.</param>
+  /// <param name="cTPFactoryInst">The `CTPFactoryInst` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.icustomtaskpaneconsumer.ctpfactoryavailable?view=office-pia"/>
-  public void CTPFactoryAvailable(CTPFactory CTPFactoryInst) { throw new NotImplementedException(); }
+  public void CTPFactoryAvailable(CTPFactory cTPFactoryInst) { throw new NotImplementedException(); }
 
   #endregion methods
 }

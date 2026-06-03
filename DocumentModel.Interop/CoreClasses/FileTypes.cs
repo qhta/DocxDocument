@@ -15,9 +15,9 @@ public partial class FileTypes: InteropCollection<FileType>
 /// <summary>
   /// Removes a file type from the collection.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filetypes.remove?view=office-pia"/>
-  public void Remove(int Index) { throw new NotImplementedException(); }
+  public void Remove(int index) { throw new NotImplementedException(); }
 
   #endregion methods
 }

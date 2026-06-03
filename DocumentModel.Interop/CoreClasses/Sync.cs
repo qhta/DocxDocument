@@ -45,15 +45,15 @@ public partial class Sync: InteropObject
   /// <summary>
   /// Invokes `OpenVersion`.
   /// </summary>
-  /// <param name="SyncVersionType">The `SyncVersionType` parameter.</param>
+  /// <param name="syncVersionType">The `SyncVersionType` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sync.openversion?view=office-pia"/>
-  public void OpenVersion(SyncVersionType SyncVersionType) { throw new NotImplementedException(); }
+  public void OpenVersion(SyncVersionType syncVersionType) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `ResolveConflict`.
   /// </summary>
-  /// <param name="SyncConflictResolution">The `SyncConflictResolution` parameter.</param>
+  /// <param name="syncConflictResolution">The `SyncConflictResolution` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sync.resolveconflict?view=office-pia"/>
-  public void ResolveConflict(SyncConflictResolutionType SyncConflictResolution) { throw new NotImplementedException(); }
+  public void ResolveConflict(SyncConflictResolutionType syncConflictResolution) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `Unsuspend`.
   /// </summary>

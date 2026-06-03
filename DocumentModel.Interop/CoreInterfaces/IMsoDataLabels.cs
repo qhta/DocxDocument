@@ -178,9 +178,9 @@ public interface IMsoDataLabels: IEnumerable
   /// <summary>
   /// Propagates data label settings.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodatalabels.propagate?view=office-pia"/>
-  public void Propagate(object Index);
+  public void Propagate(object index);
 
   #endregion methods
 }

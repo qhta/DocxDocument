@@ -16,10 +16,10 @@ public partial class FileDialogSelectedItems: InteropCollection<string>
 /// <summary>
   /// Returns a selected path by index.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialogselecteditems.item?view=office-pia"/>
-  public string Item(int Index) { throw new NotImplementedException(); }
+  public string Item(int index) { throw new NotImplementedException(); }
 
   #endregion methods
 }

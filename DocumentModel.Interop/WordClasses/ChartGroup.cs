@@ -174,13 +174,13 @@ public partial class ChartGroup : InteropObject
 /// <summary>
   /// Returns one series or all series in the chart group.
   /// </summary>
-  /// <param name="Index">The series index, or an empty value to return the full collection.</param>
-  /// <returns>A series object or series collection, depending on <paramref name="Index"/>.</returns>
+  /// <param name="index">The series index, or an empty value to return the full collection.</param>
+  /// <returns>A series object or series collection, depending on <paramref name="index"/>.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.chartgroup.seriescollection?view=word-pia"/>
-  public object SeriesCollection(object Index) { throw new NotImplementedException(); }
+  public object SeriesCollection(object index) { throw new NotImplementedException(); }
 
   #endregion methods
 }

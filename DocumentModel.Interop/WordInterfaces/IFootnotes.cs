@@ -55,14 +55,14 @@ public interface IFootnotes : IInteropObject, IInteropCollection<IFootnote>
   /// Returns the value produced by the add operation.
   /// </summary>
   /// <param name="range">Specifies the range.</param>
-  /// <param name="Reference">Specifies the reference.</param>
-  /// <param name="Text">Specifies the text.</param>
+  /// <param name="reference">Specifies the reference.</param>
+  /// <param name="text">Specifies the text.</param>
   /// <returns>The resulting value.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.footnotes.add?view=word-pia"/>
-  public IFootnote Add(IRange range, object Reference, object Text);
+  public IFootnote Add(IRange range, object reference, object text);
 
   #endregion methods
 }

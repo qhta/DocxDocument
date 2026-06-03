@@ -35,19 +35,19 @@ public interface IPickerDialog : IInteropObject
   /// <summary>
   /// Displays the picker dialog with the specified options.
   /// </summary>
-  /// <param name="IsMultiSelect">The `IsMultiSelect` parameter.</param>
-  /// <param name="ExistingResults">The `ExistingResults` parameter.</param>
+  /// <param name="isMultiSelect">The `IsMultiSelect` parameter.</param>
+  /// <param name="existingResults">The `ExistingResults` parameter.</param>
   /// <returns>The selected picker results.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerdialog.show?view=office-pia"/>
-  public IPickerResults Show(bool IsMultiSelect, IPickerResults ExistingResults);
+  public IPickerResults Show(bool isMultiSelect, IPickerResults existingResults);
   /// <summary>
   /// Resolves a token and returns matching picker results.
   /// </summary>
-  /// <param name="TokenText">The `TokenText` parameter.</param>
+  /// <param name="tokenText">The `TokenText` parameter.</param>
   /// <param name="duplicateDlgMode">The `duplicateDlgMode` parameter.</param>
   /// <returns>The resolved picker results.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerdialog.resolve?view=office-pia"/>
-  public IPickerResults Resolve(string TokenText, int duplicateDlgMode);
+  public IPickerResults Resolve(string tokenText, int duplicateDlgMode);
 
   #endregion methods
 }

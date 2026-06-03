@@ -16,10 +16,10 @@ public partial class HTMLProjectItems: InteropCollection<HTMLProjectItem>
 /// <summary>
   /// Returns the HTML project item that represents a particular project in the Microsoft Script Editor.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlprojectitems.item?view=office-pia"/>
-  public HTMLProjectItem Item(ref object Index) { throw new NotImplementedException(); }
+  public HTMLProjectItem Item(ref object index) { throw new NotImplementedException(); }
 
   #endregion methods
 }

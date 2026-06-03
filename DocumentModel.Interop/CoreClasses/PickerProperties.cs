@@ -15,18 +15,18 @@ public partial class PickerProperties: InteropCollection<PickerProperty>
 /// <summary>
   /// Adds a `PickerProperty` to the collection.
   /// </summary>
-  /// <param name="Id">The `Id` parameter.</param>
-  /// <param name="Value">The `Value` parameter.</param>
-  /// <param name="Type">The `Type` parameter.</param>
+  /// <param name="id">The `Id` parameter.</param>
+  /// <param name="value">The `Value` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
   /// <returns>The added picker property.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerproperties.add?view=office-pia"/>
-  public PickerProperty Add(string Id, string Value, MsoPickerField Type) { throw new NotImplementedException(); }
+  public PickerProperty Add(string id, string value, MsoPickerField type) { throw new NotImplementedException(); }
   /// <summary>
   /// Removes a `PickerProperty` from the collection.
   /// </summary>
-  /// <param name="Id">The `Id` parameter.</param>
+  /// <param name="id">The `Id` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.pickerproperties.remove?view=office-pia"/>
-  public void Remove(string Id) { throw new NotImplementedException(); }
+  public void Remove(string id) { throw new NotImplementedException(); }
 
   #endregion methods
 }

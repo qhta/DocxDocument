@@ -24,15 +24,15 @@ public interface IThemeFontScheme: IInteropObject
 /// <summary>
   /// Invokes `Load`.
   /// </summary>
-  /// <param name="FileName">The `FileName` parameter.</param>
+  /// <param name="fileName">The `FileName` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themefontscheme.load?view=office-pia"/>
-  public void Load(string FileName);
+  public void Load(string fileName);
   /// <summary>
   /// Invokes `Save`.
   /// </summary>
-  /// <param name="FileName">The `FileName` parameter.</param>
+  /// <param name="fileName">The `FileName` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themefontscheme.save?view=office-pia"/>
-  public void Save(string FileName);
+  public void Save(string fileName);
 
   #endregion methods
 }

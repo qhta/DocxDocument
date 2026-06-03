@@ -32,9 +32,9 @@ public partial class CustomXMLSchemaCollection: InteropCollection<CustomXMLSchem
   /// <summary>
   /// Adds all schemas from another schema collection.
   /// </summary>
-  /// <param name="SchemaCollection">The `SchemaCollection` parameter.</param>
+  /// <param name="schemaCollection">The `SchemaCollection` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlschemacollection.addcollection?view=office-pia"/>
-  public void AddCollection(CustomXMLSchemaCollection SchemaCollection) { throw new NotImplementedException(); }
+  public void AddCollection(CustomXMLSchemaCollection schemaCollection) { throw new NotImplementedException(); }
   /// <summary>
   /// Validates the custom XML schema collection.
   /// </summary>

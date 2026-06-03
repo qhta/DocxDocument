@@ -70,10 +70,10 @@ public partial class SharedWorkspace: InteropObject
   /// <summary>
   /// Invokes `CreateNew`.
   /// </summary>
-  /// <param name="URL">The `URL` parameter.</param>
-  /// <param name="Name">The `Name` parameter.</param>
+  /// <param name="uRL">The `URL` parameter.</param>
+  /// <param name="name">The `Name` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspace.createnew?view=office-pia"/>
-  public void CreateNew(object URL, object Name) { throw new NotImplementedException(); }
+  public void CreateNew(object uRL, object name) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `Delete`.
   /// </summary>

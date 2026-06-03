@@ -16,10 +16,10 @@ public interface IThemeFonts: IInteropCollection<IThemeFont>
 /// <summary>
   /// Invokes `Item`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themefonts.item?view=office-pia"/>
-  public IThemeFont Item(FontLanguageIndex Index);
+  public IThemeFont Item(FontLanguageIndex index);
 
   #endregion methods
 }

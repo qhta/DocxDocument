@@ -159,19 +159,19 @@ public interface IAssistant: IInteropObject
   /// <summary>
   /// Ends a wizard session.
   /// </summary>
-  /// <param name="WizardID">The `WizardID` parameter.</param>
+  /// <param name="wizardID">The `WizardID` parameter.</param>
   /// <param name="varfSuccess">The `varfSuccess` parameter.</param>
-  /// <param name="Animation">The `Animation` parameter.</param>
+  /// <param name="animation">The `Animation` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.endwizard?view=office-pia"/>
-  public void EndWizard(int WizardID, bool varfSuccess, object Animation);
+  public void EndWizard(int wizardID, bool varfSuccess, object animation);
   /// <summary>
   /// Activates a wizard action for an existing wizard session.
   /// </summary>
-  /// <param name="WizardID">The `WizardID` parameter.</param>
+  /// <param name="wizardID">The `WizardID` parameter.</param>
   /// <param name="act">The `act` parameter.</param>
-  /// <param name="Animation">The `Animation` parameter.</param>
+  /// <param name="animation">The `Animation` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.assistant.activatewizard?view=office-pia"/>
-  public void ActivateWizard(int WizardID, WizardActType act, object Animation);
+  public void ActivateWizard(int wizardID, WizardActType act, object animation);
   /// <summary>
   /// Resets the Assistant tips so they can be shown again.
   /// </summary>

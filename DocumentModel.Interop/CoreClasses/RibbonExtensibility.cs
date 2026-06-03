@@ -14,10 +14,10 @@ public partial class RibbonExtensibility
 /// <summary>
   /// Loads the XML markup that customizes the Ribbon UI.
   /// </summary>
-  /// <param name="RibbonID">The `RibbonID` parameter.</param>
+  /// <param name="ribbonID">The `RibbonID` parameter.</param>
   /// <returns>The custom Ribbon UI XML markup.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonextensibility.getcustomui?view=office-pia"/>
-  public string GetCustomUI(string RibbonID) { throw new NotImplementedException(); }
+  public string GetCustomUI(string ribbonID) { throw new NotImplementedException(); }
 
   #endregion methods
 }

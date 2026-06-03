@@ -139,31 +139,31 @@ public interface IFillFormat: IInteropObject
   /// <summary>
   /// Applies a one-color gradient fill.
   /// </summary>
-  /// <param name="Style">The `Style` parameter.</param>
-  /// <param name="Variant">The `Variant` parameter.</param>
-  /// <param name="Degree">The `Degree` parameter.</param>
+  /// <param name="style">The `Style` parameter.</param>
+  /// <param name="variant">The `Variant` parameter.</param>
+  /// <param name="degree">The `Degree` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.onecolorgradient?view=office-pia"/>
-  public void OneColorGradient(GradientStyle Style, int Variant, float Degree);
+  public void OneColorGradient(GradientStyle style, int variant, float degree);
   /// <summary>
   /// Applies a patterned fill.
   /// </summary>
-  /// <param name="Pattern">The `Pattern` parameter.</param>
+  /// <param name="pattern">The `Pattern` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.patterned?view=office-pia"/>
-  public void Patterned(PatternType Pattern);
+  public void Patterned(PatternType pattern);
   /// <summary>
   /// Applies a preset gradient fill.
   /// </summary>
-  /// <param name="Style">The `Style` parameter.</param>
-  /// <param name="Variant">The `Variant` parameter.</param>
-  /// <param name="PresetGradientType">The `PresetGradientType` parameter.</param>
+  /// <param name="style">The `Style` parameter.</param>
+  /// <param name="variant">The `Variant` parameter.</param>
+  /// <param name="presetGradientType">The `PresetGradientType` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.presetgradient?view=office-pia"/>
-  public void PresetGradient(GradientStyle Style, int Variant, PresetGradientType PresetGradientType);
+  public void PresetGradient(GradientStyle style, int variant, PresetGradientType presetGradientType);
   /// <summary>
   /// Applies a preset texture fill.
   /// </summary>
-  /// <param name="PresetTexture">The `PresetTexture` parameter.</param>
+  /// <param name="presetTexture">The `PresetTexture` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.presettextured?view=office-pia"/>
-  public void PresetTextured(PresetTexture PresetTexture);
+  public void PresetTextured(PresetTexture presetTexture);
   /// <summary>
   /// Applies a solid fill.
   /// </summary>
@@ -172,22 +172,22 @@ public interface IFillFormat: IInteropObject
   /// <summary>
   /// Applies a two-color gradient fill.
   /// </summary>
-  /// <param name="Style">The `Style` parameter.</param>
-  /// <param name="Variant">The `Variant` parameter.</param>
+  /// <param name="style">The `Style` parameter.</param>
+  /// <param name="variant">The `Variant` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.twocolorgradient?view=office-pia"/>
-  public void TwoColorGradient(GradientStyle Style, int Variant);
+  public void TwoColorGradient(GradientStyle style, int variant);
   /// <summary>
   /// Uses a picture file as the fill source.
   /// </summary>
-  /// <param name="PictureFile">The `PictureFile` parameter.</param>
+  /// <param name="pictureFile">The `PictureFile` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.userpicture?view=office-pia"/>
-  public void UserPicture(string PictureFile);
+  public void UserPicture(string pictureFile);
   /// <summary>
   /// Uses a custom texture file as the fill source.
   /// </summary>
-  /// <param name="TextureFile">The `TextureFile` parameter.</param>
+  /// <param name="textureFile">The `TextureFile` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.fillformat.usertextured?view=office-pia"/>
-  public void UserTextured(string TextureFile);
+  public void UserTextured(string textureFile);
 
   #endregion methods
 }

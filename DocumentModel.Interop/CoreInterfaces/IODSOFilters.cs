@@ -19,10 +19,10 @@ public interface IODSOFilters: IInteropObject
 /// <summary>
   /// Returns a filter from the collection.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The requested filter object.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilters.item?view=office-pia"/>
-  public object Item(int Index);
+  public object Item(int index);
   /// <summary>
   /// Adds a filter to the collection.
   /// </summary>
@@ -38,10 +38,10 @@ public interface IODSOFilters: IInteropObject
   /// <summary>
   /// Deletes a filter from the collection.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
-  /// <param name="DeferUpdate">The `DeferUpdate` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
+  /// <param name="deferUpdate">The `DeferUpdate` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.odsofilters.delete?view=office-pia"/>
-  public void Delete(int Index, bool DeferUpdate);
+  public void Delete(int index, bool deferUpdate);
 
   #endregion methods
 }

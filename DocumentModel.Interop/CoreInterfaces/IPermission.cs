@@ -55,18 +55,18 @@ public interface IPermission: IInteropCollection<IUserPermission>
 /// <summary>
   /// Creates permissions for a specified user.
   /// </summary>
-  /// <param name="UserId">The `UserId` parameter.</param>
-  /// <param name="Permission">The `Permission` parameter.</param>
-  /// <param name="ExpirationDate">The `ExpirationDate` parameter.</param>
+  /// <param name="userId">The `UserId` parameter.</param>
+  /// <param name="permission">The `Permission` parameter.</param>
+  /// <param name="expirationDate">The `ExpirationDate` parameter.</param>
   /// <returns>The created user permission.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.permission.add?view=office-pia"/>
-  public IUserPermission Add(string UserId, object Permission, object ExpirationDate);
+  public IUserPermission Add(string userId, object permission, object expirationDate);
   /// <summary>
   /// Applies a permission policy to the active document.
   /// </summary>
-  /// <param name="FileName">The `FileName` parameter.</param>
+  /// <param name="fileName">The `FileName` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.permission.applypolicy?view=office-pia"/>
-  public void ApplyPolicy(string FileName);
+  public void ApplyPolicy(string fileName);
   /// <summary>
   /// Removes all user permissions and disables restrictions.
   /// </summary>

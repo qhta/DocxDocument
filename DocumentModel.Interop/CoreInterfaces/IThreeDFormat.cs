@@ -149,15 +149,15 @@ public interface IThreeDFormat: IInteropObject
 /// <summary>
   /// Invokes `IncrementRotationX`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.incrementrotationx?view=office-pia"/>
-  public void IncrementRotationX(float Increment);
+  public void IncrementRotationX(float increment);
   /// <summary>
   /// Invokes `IncrementRotationY`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.incrementrotationy?view=office-pia"/>
-  public void IncrementRotationY(float Increment);
+  public void IncrementRotationY(float increment);
   /// <summary>
   /// Invokes `ResetRotation`.
   /// </summary>
@@ -166,39 +166,39 @@ public interface IThreeDFormat: IInteropObject
   /// <summary>
   /// Invokes `SetThreeDFormat`.
   /// </summary>
-  /// <param name="PresetThreeDFormat">The `PresetThreeDFormat` parameter.</param>
+  /// <param name="presetThreeDFormat">The `PresetThreeDFormat` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.setthreedformat?view=office-pia"/>
-  public void SetThreeDFormat(PresetThreeDFormat PresetThreeDFormat);
+  public void SetThreeDFormat(PresetThreeDFormat presetThreeDFormat);
   /// <summary>
   /// Invokes `SetExtrusionDirection`.
   /// </summary>
-  /// <param name="PresetExtrusionDirection">The `PresetExtrusionDirection` parameter.</param>
+  /// <param name="presetExtrusionDirection">The `PresetExtrusionDirection` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.setextrusiondirection?view=office-pia"/>
-  public void SetExtrusionDirection(PresetExtrusionDirection PresetExtrusionDirection);
+  public void SetExtrusionDirection(PresetExtrusionDirection presetExtrusionDirection);
   /// <summary>
   /// Invokes `SetPresetCamera`.
   /// </summary>
-  /// <param name="PresetCamera">The `PresetCamera` parameter.</param>
+  /// <param name="presetCamera">The `PresetCamera` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.setpresetcamera?view=office-pia"/>
-  public void SetPresetCamera(PresetCamera PresetCamera);
+  public void SetPresetCamera(PresetCamera presetCamera);
   /// <summary>
   /// Invokes `IncrementRotationZ`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.incrementrotationz?view=office-pia"/>
-  public void IncrementRotationZ(float Increment);
+  public void IncrementRotationZ(float increment);
   /// <summary>
   /// Invokes `IncrementRotationHorizontal`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.incrementrotationhorizontal?view=office-pia"/>
-  public void IncrementRotationHorizontal(float Increment);
+  public void IncrementRotationHorizontal(float increment);
   /// <summary>
   /// Invokes `IncrementRotationVertical`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.threedformat.incrementrotationvertical?view=office-pia"/>
-  public void IncrementRotationVertical(float Increment);
+  public void IncrementRotationVertical(float increment);
 
   #endregion methods
 }

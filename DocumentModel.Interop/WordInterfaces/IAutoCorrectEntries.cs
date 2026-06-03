@@ -13,26 +13,26 @@ public interface IAutoCorrectEntries : IInteropObject, IInteropCollection<IAutoC
 /// <summary>
   /// Adds an AutoCorrect entry to the list of available AutoCorrect entries.
   /// </summary>
-  /// <param name="Name">The text to automatically replace.</param>
-  /// <param name="Value">The replacement text.</param>
+  /// <param name="name">The text to automatically replace.</param>
+  /// <param name="value">The replacement text.</param>
   /// <returns>The created <see cref="IAutoCorrectEntry"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrectentries.add?view=word-pia"/>
-  public IAutoCorrectEntry Add(string Name, string Value);
+  public IAutoCorrectEntry Add(string name, string value);
 
   /// <summary>
   /// Adds a formatted (rich-text) AutoCorrect entry.
   /// </summary>
-  /// <param name="Name">The text to automatically replace.</param>
+  /// <param name="name">The text to automatically replace.</param>
   /// <param name="range">The range whose formatted content is stored as the replacement.</param>
   /// <returns>The created <see cref="IAutoCorrectEntry"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autocorrectentries.addrichtext?view=word-pia"/>
-  public IAutoCorrectEntry AddRichText(string Name, IRange range);
+  public IAutoCorrectEntry AddRichText(string name, IRange range);
 
   #endregion methods
 }

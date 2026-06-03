@@ -13,7 +13,7 @@ public class InteropList<ItemType> : InteropCollection<ItemType>
   /// <summary>
   /// Sets the item at the specified index.
   /// </summary>
-  /// <param name="Index">The zero-based index of the item to set.</param>
+  /// <param name="index">The zero-based index of the item to set.</param>
   /// <param name="value">The new value for the item at the specified index.</param>
-  public void set_Item(int Index, ItemType value);
+  public void set_Item(int index, ItemType value);
 }

@@ -25,21 +25,21 @@ public partial class HTMLProject: InteropObject
 /// <summary>
   /// Invokes `RefreshProject`.
   /// </summary>
-  /// <param name="Refresh">The `Refresh` parameter.</param>
+  /// <param name="refresh">The `Refresh` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlproject.refreshproject?view=office-pia"/>
-  public void RefreshProject(bool Refresh) { throw new NotImplementedException(); }
+  public void RefreshProject(bool refresh) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `RefreshDocument`.
   /// </summary>
-  /// <param name="Refresh">The `Refresh` parameter.</param>
+  /// <param name="refresh">The `Refresh` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlproject.refreshdocument?view=office-pia"/>
-  public void RefreshDocument(bool Refresh) { throw new NotImplementedException(); }
+  public void RefreshDocument(bool refresh) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `Open`.
   /// </summary>
-  /// <param name="OpenKind">The `OpenKind` parameter.</param>
+  /// <param name="openKind">The `OpenKind` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlproject.open?view=office-pia"/>
-  public void Open(HTMLProjectOpen OpenKind) { throw new NotImplementedException(); }
+  public void Open(HTMLProjectOpen openKind) { throw new NotImplementedException(); }
 
   #endregion methods
 }

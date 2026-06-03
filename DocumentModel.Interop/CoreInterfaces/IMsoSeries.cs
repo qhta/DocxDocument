@@ -253,10 +253,10 @@ public interface IMsoSeries
   /// <summary>
   /// Returns data labels for the series.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.datalabels?view=office-pia"/>
-  public object DataLabels(object Index);
+  public object DataLabels(object index);
   /// <summary>
   /// Deletes the series.
   /// </summary>
@@ -284,10 +284,10 @@ public interface IMsoSeries
   /// <summary>
   /// Returns points in the series.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.points?view=office-pia"/>
-  public object Points(object Index);
+  public object Points(object index);
   /// <summary>
   /// Selects the series.
   /// </summary>
@@ -297,16 +297,16 @@ public interface IMsoSeries
   /// <summary>
   /// Returns trendlines for the series.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.trendlines?view=office-pia"/>
-  public object Trendlines(object Index);
+  public object Trendlines(object index);
   /// <summary>
   /// Applies a custom chart type to the series.
   /// </summary>
-  /// <param name="ChartType">The `ChartType` parameter.</param>
+  /// <param name="chartType">The `ChartType` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.applycustomtype?view=office-pia"/>
-  public void ApplyCustomType(ChartType ChartType);
+  public void ApplyCustomType(ChartType chartType);
   /// <summary>
   /// Applies data labels to the series with detailed display options.
   /// </summary>

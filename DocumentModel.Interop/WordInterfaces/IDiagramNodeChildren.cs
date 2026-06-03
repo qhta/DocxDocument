@@ -24,14 +24,14 @@ public interface IDiagramNodeChildren : IInteropObject, IInteropCollection<IDiag
 /// <summary>
   /// Adds a node to the diagram node's children collection.
   /// </summary>
-  /// <param name="Index">The position at which to insert the node.</param>
-  /// <param name="NodeType">The type of node to add.</param>
+  /// <param name="index">The position at which to insert the node.</param>
+  /// <param name="nodeType">The type of node to add.</param>
   /// <returns>The newly added <see cref="IDiagramNode"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.diagramnodechildren.addnode?view=word-pia"/>
-  public IDiagramNode AddNode(object Index, Core.DiagramNodeType NodeType);
+  public IDiagramNode AddNode(object index, Core.DiagramNodeType nodeType);
 
   #endregion methods
 }

@@ -24,15 +24,15 @@ public partial class ThemeFontScheme: InteropObject
 /// <summary>
   /// Invokes `Load`.
   /// </summary>
-  /// <param name="FileName">The `FileName` parameter.</param>
+  /// <param name="fileName">The `FileName` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themefontscheme.load?view=office-pia"/>
-  public void Load(string FileName) { throw new NotImplementedException(); }
+  public void Load(string fileName) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `Save`.
   /// </summary>
-  /// <param name="FileName">The `FileName` parameter.</param>
+  /// <param name="fileName">The `FileName` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.themefontscheme.save?view=office-pia"/>
-  public void Save(string FileName) { throw new NotImplementedException(); }
+  public void Save(string fileName) { throw new NotImplementedException(); }
 
   #endregion methods
 }

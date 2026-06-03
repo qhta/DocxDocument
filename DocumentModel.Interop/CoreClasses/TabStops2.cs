@@ -21,18 +21,18 @@ public partial class TabStops2: InteropCollection<TabStop2>
 /// <summary>
   /// Invokes `Item`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstops2.item?view=office-pia"/>
-  public TabStop2 Item(object Index) { throw new NotImplementedException(); }
+  public TabStop2 Item(object index) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `Add`.
   /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="Position">The `Position` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
+  /// <param name="position">The `Position` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.tabstops2.add?view=office-pia"/>
-  public TabStop2 Add(TabStopType Type, float Position) { throw new NotImplementedException(); }
+  public TabStop2 Add(TabStopType type, float position) { throw new NotImplementedException(); }
 
   #endregion methods
 }

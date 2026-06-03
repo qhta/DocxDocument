@@ -59,23 +59,23 @@ public partial class DiagramNode: InteropObject
   /// <summary>
   /// Invokes `MoveNode`.
   /// </summary>
-  /// <param name="TargetNode">The `TargetNode` parameter.</param>
-  /// <param name="Pos">The `Pos` parameter.</param>
+  /// <param name="targetNode">The `TargetNode` parameter.</param>
+  /// <param name="pos">The `Pos` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.movenode?view=office-pia"/>
-  public void MoveNode(DiagramNode TargetNode, RelativeNodePosition Pos) { throw new NotImplementedException(); }
+  public void MoveNode(DiagramNode targetNode, RelativeNodePosition pos) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `ReplaceNode`.
   /// </summary>
-  /// <param name="TargetNode">The `TargetNode` parameter.</param>
+  /// <param name="targetNode">The `TargetNode` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.replacenode?view=office-pia"/>
-  public void ReplaceNode(DiagramNode TargetNode) { throw new NotImplementedException(); }
+  public void ReplaceNode(DiagramNode targetNode) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `SwapNode`.
   /// </summary>
-  /// <param name="TargetNode">The `TargetNode` parameter.</param>
-  /// <param name="SwapChildren">The `SwapChildren` parameter.</param>
+  /// <param name="targetNode">The `TargetNode` parameter.</param>
+  /// <param name="swapChildren">The `SwapChildren` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.swapnode?view=office-pia"/>
-  public void SwapNode(DiagramNode TargetNode, bool SwapChildren) { throw new NotImplementedException(); }
+  public void SwapNode(DiagramNode targetNode, bool swapChildren) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `CloneNode`.
   /// </summary>
@@ -89,9 +89,9 @@ public partial class DiagramNode: InteropObject
   /// <summary>
   /// Invokes `TransferChildren`.
   /// </summary>
-  /// <param name="ReceivingNode">The `ReceivingNode` parameter.</param>
+  /// <param name="receivingNode">The `ReceivingNode` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnode.transferchildren?view=office-pia"/>
-  public void TransferChildren(DiagramNode ReceivingNode) { throw new NotImplementedException(); }
+  public void TransferChildren(DiagramNode receivingNode) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `NextNode`.
   /// </summary>

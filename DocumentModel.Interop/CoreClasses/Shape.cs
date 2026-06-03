@@ -285,27 +285,27 @@ public partial class Shape: InteropObject
   /// <summary>
   /// Invokes `Flip`.
   /// </summary>
-  /// <param name="FlipCmd">The `FlipCmd` parameter.</param>
+  /// <param name="flipCmd">The `FlipCmd` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.flip?view=office-pia"/>
-  public void Flip(FlipCmd FlipCmd) { throw new NotImplementedException(); }
+  public void Flip(FlipCmd flipCmd) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `IncrementLeft`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.incrementleft?view=office-pia"/>
-  public void IncrementLeft(float Increment) { throw new NotImplementedException(); }
+  public void IncrementLeft(float increment) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `IncrementRotation`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.incrementrotation?view=office-pia"/>
-  public void IncrementRotation(float Increment) { throw new NotImplementedException(); }
+  public void IncrementRotation(float increment) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `IncrementTop`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.incrementtop?view=office-pia"/>
-  public void IncrementTop(float Increment) { throw new NotImplementedException(); }
+  public void IncrementTop(float increment) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `PickUp`.
   /// </summary>
@@ -339,9 +339,9 @@ public partial class Shape: InteropObject
   /// <summary>
   /// Invokes `Select`.
   /// </summary>
-  /// <param name="Replace">The `Replace` parameter.</param>
+  /// <param name="replace">The `Replace` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.select?view=office-pia"/>
-  public void Select(object Replace) { throw new NotImplementedException(); }
+  public void Select(object replace) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `SetShapesDefaultProperties`.
   /// </summary>
@@ -356,33 +356,33 @@ public partial class Shape: InteropObject
   /// <summary>
   /// Invokes `ZOrder`.
   /// </summary>
-  /// <param name="ZOrderCmd">The `ZOrderCmd` parameter.</param>
+  /// <param name="zOrderCmd">The `ZOrderCmd` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.zorder?view=office-pia"/>
-  public void ZOrder(ZOrderCmd ZOrderCmd) { throw new NotImplementedException(); }
+  public void ZOrder(ZOrderCmd zOrderCmd) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `CanvasCropLeft`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.canvascropleft?view=office-pia"/>
-  public void CanvasCropLeft(float Increment) { throw new NotImplementedException(); }
+  public void CanvasCropLeft(float increment) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `CanvasCropTop`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.canvascroptop?view=office-pia"/>
-  public void CanvasCropTop(float Increment) { throw new NotImplementedException(); }
+  public void CanvasCropTop(float increment) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `CanvasCropRight`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.canvascropright?view=office-pia"/>
-  public void CanvasCropRight(float Increment) { throw new NotImplementedException(); }
+  public void CanvasCropRight(float increment) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `CanvasCropBottom`.
   /// </summary>
-  /// <param name="Increment">The `Increment` parameter.</param>
+  /// <param name="increment">The `Increment` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.canvascropbottom?view=office-pia"/>
-  public void CanvasCropBottom(float Increment) { throw new NotImplementedException(); }
+  public void CanvasCropBottom(float increment) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `Cut`.
   /// </summary>
@@ -396,9 +396,9 @@ public partial class Shape: InteropObject
   /// <summary>
   /// Invokes `ConvertTextToSmartArt`.
   /// </summary>
-  /// <param name="Layout">The `Layout` parameter.</param>
+  /// <param name="layout">The `Layout` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shape.converttexttosmartart?view=office-pia"/>
-  public void ConvertTextToSmartArt(SmartArtLayout Layout) { throw new NotImplementedException(); }
+  public void ConvertTextToSmartArt(SmartArtLayout layout) { throw new NotImplementedException(); }
 
   #endregion methods
 }

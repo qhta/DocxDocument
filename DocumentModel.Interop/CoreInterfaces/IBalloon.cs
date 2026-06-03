@@ -74,12 +74,12 @@ public interface IBalloon: IInteropObject
 /// <summary>
   /// Sets a screen rectangle that the balloon should avoid covering.
   /// </summary>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Right">The `Right` parameter.</param>
-  /// <param name="Bottom">The `Bottom` parameter.</param>
+  /// <param name="left">The `Left` parameter.</param>
+  /// <param name="top">The `Top` parameter.</param>
+  /// <param name="right">The `Right` parameter.</param>
+  /// <param name="bottom">The `Bottom` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.balloon.setavoidrectangle?view=office-pia"/>
-  public void SetAvoidRectangle(int Left, int Top, int Right, int Bottom);
+  public void SetAvoidRectangle(int left, int top, int right, int bottom);
   /// <summary>
   /// Displays the balloon and returns the button selected by the user.
   /// </summary>

@@ -75,10 +75,10 @@ public interface IChartPoint
   /// Invokes `PieSliceLocation`.
   /// </summary>
   /// <param name="loc">The `loc` parameter.</param>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.chartpoint.pieslicelocation?view=office-pia"/>
-  public double PieSliceLocation(PieSliceLocation loc, PieSliceIndex Index);
+  public double PieSliceLocation(PieSliceLocation loc, PieSliceIndex index);
 
   #endregion methods
 }

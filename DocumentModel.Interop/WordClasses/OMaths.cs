@@ -33,10 +33,10 @@ public partial class OMaths : InteropCollection<OMath>
   /// </summary>
   /// <remarks>The resulting range may not be contiguous if the specified range does not overlap or is not
   /// adjacent to the current range. This method does not modify the current instance.</remarks>
-  /// <param name="Range">The range to add to the current range. Must not be null.</param>
+  /// <param name="range">The range to add to the current range. Must not be null.</param>
   /// <returns>A new Range instance representing the combined range of the current and specified ranges.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omaths.add?view=word-pia"/>
-  public Range Add(Range Range) { throw new NotImplementedException(); }
+  public Range Add(Range range) { throw new NotImplementedException(); }
 
   #endregion methods
 }

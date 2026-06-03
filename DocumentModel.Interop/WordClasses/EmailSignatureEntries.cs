@@ -13,14 +13,14 @@ public partial class EmailSignatureEntries : InteropCollection<EmailSignatureEnt
 /// <summary>
   /// Returns the value produced by the add operation.
   /// </summary>
-  /// <param name="Name">Specifies the name.</param>
-  /// <param name="Range">Specifies the range.</param>
+  /// <param name="name">Specifies the name.</param>
+  /// <param name="range">Specifies the range.</param>
   /// <returns>The resulting value.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.emailsignatureentries.add?view=word-pia"/>
-  public EmailSignatureEntry Add(string Name, Range Range) { throw new NotImplementedException(); }
+  public EmailSignatureEntry Add(string name, Range range) { throw new NotImplementedException(); }
 
   #endregion methods
 }

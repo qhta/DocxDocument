@@ -13,14 +13,14 @@ public partial class CoAuthLocks : InteropCollection<CoAuthLock>
 /// <summary>
   /// Adds a co-authoring lock for the specified range and lock type.
   /// </summary>
-  /// <param name="Range">The range to lock.</param>
-  /// <param name="Type">The lock type to apply.</param>
+  /// <param name="range">The range to lock.</param>
+  /// <param name="type">The lock type to apply.</param>
   /// <returns>The created <see cref="CoAuthLock"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.coauthlocks.add?view=word-pia"/>
-  public CoAuthLock Add(object Range, LockType Type) { throw new NotImplementedException(); }
+  public CoAuthLock Add(object range, LockType type) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Removes ephemeral locks from the document.

@@ -119,14 +119,14 @@ public interface ICommandBar: IMsoOleAccDispObj
   /// <summary>
   /// Finds a control on the command bar that matches the specified criteria.
   /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="Id">The `Id` parameter.</param>
-  /// <param name="Tag">The `Tag` parameter.</param>
-  /// <param name="Visible">The `Visible` parameter.</param>
-  /// <param name="Recursive">The `Recursive` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
+  /// <param name="id">The `Id` parameter.</param>
+  /// <param name="tag">The `Tag` parameter.</param>
+  /// <param name="visible">The `Visible` parameter.</param>
+  /// <param name="recursive">The `Recursive` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbar.findcontrol?view=office-pia"/>
-  public ICommandBarControl FindControl(object Type, object Id, object Tag, object Visible, object Recursive);
+  public ICommandBarControl FindControl(object type, object id, object tag, object visible, object recursive);
   /// <summary>
   /// Restores the command bar to its default state.
   /// </summary>

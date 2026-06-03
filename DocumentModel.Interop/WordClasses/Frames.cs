@@ -13,13 +13,13 @@ public partial class Frames : InteropCollection<Frame>
 /// <summary>
   /// Returns the value produced by the add operation.
   /// </summary>
-  /// <param name="Range">Specifies the range.</param>
+  /// <param name="range">Specifies the range.</param>
   /// <returns>The resulting value.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.frames.add?view=word-pia"/>
-  public Frame Add(Range Range) { throw new NotImplementedException(); }
+  public Frame Add(Range range) { throw new NotImplementedException(); }
   /// <summary>
   /// Deletes the specified object.
   /// </summary>

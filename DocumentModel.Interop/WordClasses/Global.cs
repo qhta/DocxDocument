@@ -4,7 +4,7 @@ namespace DocumentModel.Interop.Word;
 /// Contains top-level properties and methods that don't need to be preceded by the Application property.
 /// </summary>
 /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.global?view=word-pia"/>
-public class Global: InteropObject, IGlobal
+public class Global: InteropObject
 {
 
   /// <summary>
@@ -266,102 +266,102 @@ public class Global: InteropObject, IGlobal
   /// <summary>
   /// Returns a SynonymInfo object with thesaurus information for the specified word or phrase.
   /// </summary>
-  /// <param name="Word">The word or phrase to look up.</param>
-  /// <param name="LanguageID">The language identifier.</param>
+  /// <param name="word">The word or phrase to look up.</param>
+  /// <param name="languageID">The language identifier.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_synonyminfo?view=word-pia"/>
-  public SynonymInfo SynonymInfo(string Word, object LanguageID) { throw new NotImplementedException(); }
+  public SynonymInfo SynonymInfo(string word, object languageID) { throw new NotImplementedException(); }
   /// <summary>
   /// Returns a KeysBoundTo object that represents all key combinations assigned to the specified item.
   /// </summary>
-  /// <param name="KeyCategory">The key category for the command.</param>
-  /// <param name="Command">The command name.</param>
-  /// <param name="CommandParameter">An optional command parameter.</param>
+  /// <param name="keyCategory">The key category for the command.</param>
+  /// <param name="command">The command name.</param>
+  /// <param name="commandParameter">An optional command parameter.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_keysboundto?view=word-pia"/>
-  public KeysBoundTo KeysBoundTo(KeyCategory KeyCategory, string Command, object CommandParameter) { throw new NotImplementedException(); }
+  public KeysBoundTo KeysBoundTo(KeyCategory keyCategory, string command, object commandParameter) { throw new NotImplementedException(); }
   /// <summary>
   /// Returns a KeyBinding object that represents the specified key combination.
   /// </summary>
-  /// <param name="KeyCode">The first key code.</param>
-  /// <param name="KeyCode2">The second key code.</param>
+  /// <param name="keyCode">The first key code.</param>
+  /// <param name="keyCode2">The second key code.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_findkey?view=word-pia"/>
-  public KeyBinding FindKey(int KeyCode, object KeyCode2) { throw new NotImplementedException(); }
+  public KeyBinding FindKey(int keyCode, object keyCode2) { throw new NotImplementedException(); }
   /// <summary>
   /// Determines whether a variable that references an object is valid.
   /// </summary>
-  /// <param name="Object">The object reference to validate.</param>
+  /// <param name="obj">The object reference to validate.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.get_isobjectvalid?view=word-pia"/>
-  public bool IsObjectValid(object Object) { throw new NotImplementedException(); }
+  public bool IsObjectValid(object obj) { throw new NotImplementedException(); }
   /// <summary>
   /// Repeats the most recent editing action one or more times.
   /// </summary>
-  /// <param name="Times">The number of times to repeat the action.</param>
+  /// <param name="times">The number of times to repeat the action.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.repeat?view=word-pia"/>
-  public bool Repeat(object Times) { throw new NotImplementedException(); }
+  public bool Repeat(object times) { throw new NotImplementedException(); }
   /// <summary>
   /// Sends a command or series of commands through the specified dynamic data exchange (DDE) channel.
   /// </summary>
-  /// <param name="Channel">The DDE channel number.</param>
-  /// <param name="Command">The command text to send.</param>
+  /// <param name="channel">The DDE channel number.</param>
+  /// <param name="command">The command text to send.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.ddeexecute?view=word-pia"/>
-  public void DDEExecute(int Channel, string Command) { throw new NotImplementedException(); }
+  public void DDEExecute(int channel, string command) { throw new NotImplementedException(); }
   /// <summary>
   /// Opens a dynamic data exchange (DDE) channel to another application and returns the channel number.
   /// </summary>
-  /// <param name="App">The application name.</param>
-  /// <param name="Topic">The topic name.</param>
+  /// <param name="app">The application name.</param>
+  /// <param name="topic">The topic name.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.ddeinitiate?view=word-pia"/>
-  public int DDEInitiate(string App, string Topic) { throw new NotImplementedException(); }
+  public int DDEInitiate(string app, string topic) { throw new NotImplementedException(); }
   /// <summary>
   /// Uses an open dynamic data exchange (DDE) channel to send data to an application.
   /// </summary>
-  /// <param name="Channel">The DDE channel number.</param>
-  /// <param name="Item">The item name.</param>
-  /// <param name="Data">The data to send.</param>
+  /// <param name="channel">The DDE channel number.</param>
+  /// <param name="item">The item name.</param>
+  /// <param name="data">The data to send.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.ddepoke?view=word-pia"/>
-  public void DDEPoke(int Channel, string Item, string Data) { throw new NotImplementedException(); }
+  public void DDEPoke(int channel, string item, string data) { throw new NotImplementedException(); }
   /// <summary>
   /// Uses an open dynamic data exchange (DDE) channel to request information and returns it as a string.
   /// </summary>
-  /// <param name="Channel">The DDE channel number.</param>
-  /// <param name="Item">The item to request.</param>
+  /// <param name="channel">The DDE channel number.</param>
+  /// <param name="item">The item to request.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.dderequest?view=word-pia"/>
-  public string DDERequest(int Channel, string Item) { throw new NotImplementedException(); }
+  public string DDERequest(int channel, string item) { throw new NotImplementedException(); }
   /// <summary>
   /// Closes the specified dynamic data exchange (DDE) channel to another application.
   /// </summary>
-  /// <param name="Channel">The DDE channel number.</param>
+  /// <param name="channel">The DDE channel number.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.ddeterminate?view=word-pia"/>
-  public void DDETerminate(int Channel) { throw new NotImplementedException(); }
+  public void DDETerminate(int channel) { throw new NotImplementedException(); }
   /// <summary>
   /// Closes all dynamic data exchange (DDE) channels opened by Microsoft Word.
   /// </summary>
@@ -373,77 +373,77 @@ public class Global: InteropObject, IGlobal
   /// <summary>
   /// Returns a unique number for the specified key combination.
   /// </summary>
-  /// <param name="Arg1">The first key.</param>
-  /// <param name="Arg2">The second key.</param>
-  /// <param name="Arg3">The third key.</param>
-  /// <param name="Arg4">The fourth key.</param>
+  /// <param name="arg1">The first key.</param>
+  /// <param name="arg2">The second key.</param>
+  /// <param name="arg3">The third key.</param>
+  /// <param name="arg4">The fourth key.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.buildkeycode?view=word-pia"/>
-  public int BuildKeyCode(Key Arg1, object Arg2, object Arg3, object Arg4) { throw new NotImplementedException(); }
+  public int BuildKeyCode(Key arg1, object arg2, object arg3, object arg4) { throw new NotImplementedException(); }
   /// <summary>
   /// Returns the key combination string for the specified keys.
   /// </summary>
-  /// <param name="KeyCode">The first key code.</param>
-  /// <param name="KeyCode2">The second key code.</param>
+  /// <param name="keyCode">The first key code.</param>
+  /// <param name="keyCode2">The second key code.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.keystring?view=word-pia"/>
-  public string KeyString(int KeyCode, object KeyCode2) { throw new NotImplementedException(); }
+  public string KeyString(int keyCode, object keyCode2) { throw new NotImplementedException(); }
   /// <summary>
   /// Checks a string for spelling errors.
   /// </summary>
-  /// <param name="Word">The text to check.</param>
-  /// <param name="CustomDictionary">A custom dictionary.</param>
-  /// <param name="IgnoreUppercase">Whether to ignore uppercase words.</param>
-  /// <param name="MainDictionary">The main dictionary.</param>
-  /// <param name="CustomDictionary2">An additional custom dictionary.</param>
-  /// <param name="CustomDictionary3">An additional custom dictionary.</param>
-  /// <param name="CustomDictionary4">An additional custom dictionary.</param>
-  /// <param name="CustomDictionary5">An additional custom dictionary.</param>
-  /// <param name="CustomDictionary6">An additional custom dictionary.</param>
-  /// <param name="CustomDictionary7">An additional custom dictionary.</param>
-  /// <param name="CustomDictionary8">An additional custom dictionary.</param>
-  /// <param name="CustomDictionary9">An additional custom dictionary.</param>
-  /// <param name="CustomDictionary10">An additional custom dictionary.</param>
+  /// <param name="word">The text to check.</param>
+  /// <param name="customDictionary">A custom dictionary.</param>
+  /// <param name="ignoreUppercase">Whether to ignore uppercase words.</param>
+  /// <param name="mainDictionary">The main dictionary.</param>
+  /// <param name="customDictionary2">An additional custom dictionary.</param>
+  /// <param name="customDictionary3">An additional custom dictionary.</param>
+  /// <param name="customDictionary4">An additional custom dictionary.</param>
+  /// <param name="customDictionary5">An additional custom dictionary.</param>
+  /// <param name="customDictionary6">An additional custom dictionary.</param>
+  /// <param name="customDictionary7">An additional custom dictionary.</param>
+  /// <param name="customDictionary8">An additional custom dictionary.</param>
+  /// <param name="customDictionary9">An additional custom dictionary.</param>
+  /// <param name="customDictionary10">An additional custom dictionary.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.checkspelling?view=word-pia"/>
-  public bool CheckSpelling(string Word, object CustomDictionary, object IgnoreUppercase, object MainDictionary, object CustomDictionary2, object CustomDictionary3, object CustomDictionary4, object CustomDictionary5, object CustomDictionary6, object CustomDictionary7, object CustomDictionary8, object CustomDictionary9, object CustomDictionary10) { throw new NotImplementedException(); }
+  public bool CheckSpelling(string word, object customDictionary, object ignoreUppercase, object mainDictionary, object customDictionary2, object customDictionary3, object customDictionary4, object customDictionary5, object customDictionary6, object customDictionary7, object customDictionary8, object customDictionary9, object customDictionary10) { throw new NotImplementedException(); }
   /// <summary>
   /// Returns a SpellingSuggestions collection that represents suggested spelling replacements for a word.
   /// </summary>
-  /// <param name="Word">The word to check.</param>
-  /// <param name="CustomDictionary">A custom dictionary.</param>
-  /// <param name="IgnoreUppercase">Whether to ignore uppercase words.</param>
-  /// <param name="MainDictionary">The main dictionary.</param>
-  /// <param name="SuggestionMode">The suggestion mode.</param>
-  /// <param name="CustomDictionary2">An additional custom dictionary.</param>
-  /// <param name="CustomDictionary3">An additional custom dictionary.</param>
-  /// <param name="CustomDictionary4">An additional custom dictionary.</param>
-  /// <param name="CustomDictionary5">An additional custom dictionary.</param>
-  /// <param name="CustomDictionary6">An additional custom dictionary.</param>
-  /// <param name="CustomDictionary7">An additional custom dictionary.</param>
-  /// <param name="CustomDictionary8">An additional custom dictionary.</param>
-  /// <param name="CustomDictionary9">An additional custom dictionary.</param>
-  /// <param name="CustomDictionary10">An additional custom dictionary.</param>
+  /// <param name="word">The word to check.</param>
+  /// <param name="customDictionary">A custom dictionary.</param>
+  /// <param name="ignoreUppercase">Whether to ignore uppercase words.</param>
+  /// <param name="mainDictionary">The main dictionary.</param>
+  /// <param name="suggestionMode">The suggestion mode.</param>
+  /// <param name="customDictionary2">An additional custom dictionary.</param>
+  /// <param name="customDictionary3">An additional custom dictionary.</param>
+  /// <param name="customDictionary4">An additional custom dictionary.</param>
+  /// <param name="customDictionary5">An additional custom dictionary.</param>
+  /// <param name="customDictionary6">An additional custom dictionary.</param>
+  /// <param name="customDictionary7">An additional custom dictionary.</param>
+  /// <param name="customDictionary8">An additional custom dictionary.</param>
+  /// <param name="customDictionary9">An additional custom dictionary.</param>
+  /// <param name="customDictionary10">An additional custom dictionary.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.getspellingsuggestions?view=word-pia"/>
-  public SpellingSuggestions GetSpellingSuggestions(string Word, object CustomDictionary, object IgnoreUppercase, object MainDictionary, object SuggestionMode, object CustomDictionary2, object CustomDictionary3, object CustomDictionary4, object CustomDictionary5, object CustomDictionary6, object CustomDictionary7, object CustomDictionary8, object CustomDictionary9, object CustomDictionary10) { throw new NotImplementedException(); }
+  public SpellingSuggestions GetSpellingSuggestions(string word, object customDictionary, object ignoreUppercase, object mainDictionary, object suggestionMode, object customDictionary2, object customDictionary3, object customDictionary4, object customDictionary5, object customDictionary6, object customDictionary7, object customDictionary8, object customDictionary9, object customDictionary10) { throw new NotImplementedException(); }
   /// <summary>
   /// Displays online Help information.
   /// </summary>
-  /// <param name="HelpType">The type of Help to display.</param>
+  /// <param name="helpType">The type of Help to display.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.help?view=word-pia"/>
-  public void Help(object HelpType) { throw new NotImplementedException(); }
+  public void Help(object helpType) { throw new NotImplementedException(); }
   /// <summary>
   /// Opens a new window with the same document as the specified window.
   /// </summary>
@@ -455,131 +455,131 @@ public class Global: InteropObject, IGlobal
   /// <summary>
   /// Removes nonprinting and special Word characters from the specified string or changes them to spaces.
   /// </summary>
-  /// <param name="String">The string to clean.</param>
+  /// <param name="text">The string to clean.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.cleanstring?view=word-pia"/>
-  public string CleanString(string String) { throw new NotImplementedException(); }
+  public string CleanString(string text) { throw new NotImplementedException(); }
   /// <summary>
   /// Sets the folder in which Microsoft Word searches for documents.
   /// </summary>
-  /// <param name="Path">The folder path.</param>
+  /// <param name="path">The folder path.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.changefileopendirectory?view=word-pia"/>
-  public void ChangeFileOpenDirectory(string Path) { throw new NotImplementedException(); }
+  public void ChangeFileOpenDirectory(string path) { throw new NotImplementedException(); }
   /// <summary>
   /// Converts a measurement from inches to points (1 inch = 72 points).
   /// </summary>
-  /// <param name="Inches">The value in inches.</param>
+  /// <param name="inches">The value in inches.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.inchestopoints?view=word-pia"/>
-  public float InchesToPoints(float Inches) { throw new NotImplementedException(); }
+  public float InchesToPoints(float inches) { throw new NotImplementedException(); }
   /// <summary>
   /// Converts a measurement from centimeters to points (1 cm = 28.35 points).
   /// </summary>
-  /// <param name="Centimeters">The value in centimeters.</param>
+  /// <param name="centimeters">The value in centimeters.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.centimeterstopoints?view=word-pia"/>
-  public float CentimetersToPoints(float Centimeters) { throw new NotImplementedException(); }
+  public float CentimetersToPoints(float centimeters) { throw new NotImplementedException(); }
   /// <summary>
   /// Converts a measurement from millimeters to points (1 mm = 2.85 points).
   /// </summary>
-  /// <param name="Millimeters">The value in millimeters.</param>
+  /// <param name="millimeters">The value in millimeters.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.millimeterstopoints?view=word-pia"/>
-  public float MillimetersToPoints(float Millimeters) { throw new NotImplementedException(); }
+  public float MillimetersToPoints(float millimeters) { throw new NotImplementedException(); }
   /// <summary>
   /// Converts a measurement from picas to points (1 pica = 12 points).
   /// </summary>
-  /// <param name="Picas">The value in picas.</param>
+  /// <param name="picas">The value in picas.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.picastopoints?view=word-pia"/>
-  public float PicasToPoints(float Picas) { throw new NotImplementedException(); }
+  public float PicasToPoints(float picas) { throw new NotImplementedException(); }
   /// <summary>
   /// Converts a measurement from lines to points (1 line = 12 points).
   /// </summary>
-  /// <param name="Lines">The value in lines.</param>
+  /// <param name="lines">The value in lines.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.linestopoints?view=word-pia"/>
-  public float LinesToPoints(float Lines) { throw new NotImplementedException(); }
+  public float LinesToPoints(float lines) { throw new NotImplementedException(); }
   /// <summary>
   /// Converts a measurement from points to inches (1 inch = 72 points).
   /// </summary>
-  /// <param name="Points">The value in points.</param>
+  /// <param name="points">The value in points.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pointstoinches?view=word-pia"/>
-  public float PointsToInches(float Points) { throw new NotImplementedException(); }
+  public float PointsToInches(float points) { throw new NotImplementedException(); }
   /// <summary>
   /// Converts a measurement from points to centimeters (1 centimeter = 28.35 points).
   /// </summary>
-  /// <param name="Points">The value in points.</param>
+  /// <param name="points">The value in points.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pointstocentimeters?view=word-pia"/>
-  public float PointsToCentimeters(float Points) { throw new NotImplementedException(); }
+  public float PointsToCentimeters(float points) { throw new NotImplementedException(); }
   /// <summary>
   /// Converts a measurement from points to millimeters (1 millimeter = 2.835 points).
   /// </summary>
-  /// <param name="Points">The value in points.</param>
+  /// <param name="points">The value in points.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pointstomillimeters?view=word-pia"/>
-  public float PointsToMillimeters(float Points) { throw new NotImplementedException(); }
+  public float PointsToMillimeters(float points) { throw new NotImplementedException(); }
   /// <summary>
   /// Converts a measurement from points to picas (1 pica = 12 points).
   /// </summary>
-  /// <param name="Points">The value in points.</param>
+  /// <param name="points">The value in points.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pointstopicas?view=word-pia"/>
-  public float PointsToPicas(float Points) { throw new NotImplementedException(); }
+  public float PointsToPicas(float points) { throw new NotImplementedException(); }
   /// <summary>
   /// Converts a measurement from points to lines (1 line = 12 points).
   /// </summary>
-  /// <param name="Points">The value in points.</param>
+  /// <param name="points">The value in points.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pointstolines?view=word-pia"/>
-  public float PointsToLines(float Points) { throw new NotImplementedException(); }
+  public float PointsToLines(float points) { throw new NotImplementedException(); }
   /// <summary>
   /// Converts a measurement from points to pixels.
   /// </summary>
-  /// <param name="Points">The value in points.</param>
+  /// <param name="points">The value in points.</param>
   /// <param name="fVertical">Specifies whether conversion is for vertical measurements.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pointstopixels?view=word-pia"/>
-  public float PointsToPixels(float Points, object fVertical) { throw new NotImplementedException(); }
+  public float PointsToPixels(float points, object fVertical) { throw new NotImplementedException(); }
   /// <summary>
   /// Converts a measurement from pixels to points.
   /// </summary>
-  /// <param name="Pixels">The value in pixels.</param>
+  /// <param name="pixels">The value in pixels.</param>
   /// <param name="fVertical">Specifies whether conversion is for vertical measurements.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._global.pixelstopoints?view=word-pia"/>
-  public float PixelsToPoints(float Pixels, object fVertical) { throw new NotImplementedException(); }
+  public float PixelsToPoints(float pixels, object fVertical) { throw new NotImplementedException(); }
 
   #endregion methods
 }

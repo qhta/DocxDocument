@@ -13,14 +13,14 @@ public interface IAutoTextEntries : IInteropObject, IInteropCollection<IAutoText
 /// <summary>
   /// Creates a new AutoText entry from the specified range.
   /// </summary>
-  /// <param name="Name">The name of the AutoText entry.</param>
+  /// <param name="name">The name of the AutoText entry.</param>
   /// <param name="range">The range whose contents are stored in the AutoText entry.</param>
   /// <returns>The created <see cref="IAutoTextEntry"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.autotextentries.add?view=word-pia"/>
-  public IAutoTextEntry Add(string Name, IRange range);
+  public IAutoTextEntry Add(string name, IRange range);
 
   /// <summary>
   /// Appends the specified range to the Spike AutoText entry.

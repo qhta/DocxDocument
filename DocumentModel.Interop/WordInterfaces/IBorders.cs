@@ -150,13 +150,13 @@ public interface IBorders : IInteropObject, IInteropCollection<IBorder>
 /// <summary>
   /// Returns a Border object that represents a single border.
   /// </summary>
-  /// <param name="Index">A <see cref="BorderType"/> value that identifies which border to return.</param>
+  /// <param name="index">A <see cref="BorderType"/> value that identifies which border to return.</param>
   /// <returns>The requested <see cref="IBorder"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.borders.get_item?view=word-pia"/>
-  public IBorder Item(BorderType Index);
+  public IBorder Item(BorderType index);
 
   /// <summary>
   /// Applies the specified page-border formatting to all sections in a document.

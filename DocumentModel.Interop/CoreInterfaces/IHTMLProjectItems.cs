@@ -16,10 +16,10 @@ public interface IHTMLProjectItems: IInteropCollection<IHTMLProjectItem>
 /// <summary>
   /// Returns the HTML project item that represents a particular project in the Microsoft Script Editor.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlprojectitems.item?view=office-pia"/>
-  public IHTMLProjectItem Item(ref object Index);
+  public IHTMLProjectItem Item(ref object index);
 
   #endregion methods
 }

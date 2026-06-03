@@ -253,10 +253,10 @@ public partial class MsoSeries
   /// <summary>
   /// Returns data labels for the series.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.datalabels?view=office-pia"/>
-  public object DataLabels(object Index) { throw new NotImplementedException(); }
+  public object DataLabels(object index) { throw new NotImplementedException(); }
   /// <summary>
   /// Deletes the series.
   /// </summary>
@@ -284,10 +284,10 @@ public partial class MsoSeries
   /// <summary>
   /// Returns points in the series.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.points?view=office-pia"/>
-  public object Points(object Index) { throw new NotImplementedException(); }
+  public object Points(object index) { throw new NotImplementedException(); }
   /// <summary>
   /// Selects the series.
   /// </summary>
@@ -297,16 +297,16 @@ public partial class MsoSeries
   /// <summary>
   /// Returns trendlines for the series.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.trendlines?view=office-pia"/>
-  public object Trendlines(object Index) { throw new NotImplementedException(); }
+  public object Trendlines(object index) { throw new NotImplementedException(); }
   /// <summary>
   /// Applies a custom chart type to the series.
   /// </summary>
-  /// <param name="ChartType">The `ChartType` parameter.</param>
+  /// <param name="chartType">The `ChartType` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoseries.applycustomtype?view=office-pia"/>
-  public void ApplyCustomType(ChartType ChartType) { throw new NotImplementedException(); }
+  public void ApplyCustomType(ChartType chartType) { throw new NotImplementedException(); }
   /// <summary>
   /// Applies data labels to the series with detailed display options.
   /// </summary>

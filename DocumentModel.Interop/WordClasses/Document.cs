@@ -1325,7 +1325,7 @@ public partial class Document
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.adddocumentworkspaceheader?view=word-pia"/>
-  public void AddDocumentWorkspaceHeader(bool RichFormat, string Url, string Title, string Description, string ID) { throw new NotImplementedException(); }
+  public void AddDocumentWorkspaceHeader(bool richFormat, string url, string title, string description, string iD) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Reserved for internal use.
@@ -1334,7 +1334,7 @@ public partial class Document
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.addmeetingworkspaceheader?view=word-pia"/>
-  public void AddMeetingWorkspaceHeader(bool SkipIfAbsent, string Url, string Title, string Description, string ID) { throw new NotImplementedException(); }
+  public void AddMeetingWorkspaceHeader(bool skipIfAbsent, string url, string title, string description, string iD) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Creates a shortcut to the document or hyperlink and adds it to the Favorites folder.
@@ -1352,7 +1352,7 @@ public partial class Document
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.applydocumenttheme?view=word-pia"/>
-  public void ApplyDocumentTheme(string FileName) { throw new NotImplementedException(); }
+  public void ApplyDocumentTheme(string fileName) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Changes the set of quick styles listed.
@@ -1361,7 +1361,7 @@ public partial class Document
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.applyquickstyleset?view=word-pia"/>
-  public void ApplyQuickStyleSet(string Name) { throw new NotImplementedException(); }
+  public void ApplyQuickStyleSet(string name) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Applies the specified Quick Style set to the document.
@@ -1370,7 +1370,7 @@ public partial class Document
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.applyquickstyleset2?view=word-pia"/>
-  public void ApplyQuickStyleSet2(object Style) { throw new NotImplementedException(); }
+  public void ApplyQuickStyleSet2(object style) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Applies a theme to an open document.
@@ -1379,7 +1379,7 @@ public partial class Document
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.applytheme?view=word-pia"/>
-  public void ApplyTheme(string Name) { throw new NotImplementedException(); }
+  public void ApplyTheme(string name) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Automatically formats a document.
@@ -1436,31 +1436,31 @@ public partial class Document
   /// <summary>
   /// Returns a document from a local computer to a server, and sets the local document to read-only so that it cannot be edited locally.
   /// </summary>
-  /// <param name="SaveChanges">True saves the document to the server location. The default is True</param>
-  /// <param name="Comments">Comments for the revision of the document being checked in (only applies if SaveChanges equals True).</param>
-  /// <param name="MakePublic">True allows the user to publish on the document after being checked in.
+  /// <param name="saveChanges">True saves the document to the server location. The default is True</param>
+  /// <param name="comments">Comments for the revision of the document being checked in (only applies if SaveChanges equals True).</param>
+  /// <param name="makePublic">True allows the user to publish on the document after being checked in.
   /// This submits the document for the approval process, which can eventually result in a version of the document
   /// being published to users with read-only rights to the document (only applies if SaveChanges equals True).</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.checkin?view=word-pia"/>
-  public void CheckIn(bool SaveChanges, object Comments, bool MakePublic) { throw new NotImplementedException(); }
+  public void CheckIn(bool saveChanges, object comments, bool makePublic) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Puts a document on a server from a local computer, and sets the local document to read-only so that it cannot be edited locally.
   /// </summary>
-  /// <param name="SaveChanges">True saves the document to the server location. The default is True</param>
-  /// <param name="Comments">Comments for the revision of the document being checked in (only applies if SaveChanges equals True).</param>
-  /// <param name="MakePublic">True allows the user to publish on the document after being checked in.
+  /// <param name="saveChanges">True saves the document to the server location. The default is True</param>
+  /// <param name="comments">Comments for the revision of the document being checked in (only applies if SaveChanges equals True).</param>
+  /// <param name="makePublic">True allows the user to publish on the document after being checked in.
   /// This submits the document for the approval process, which can eventually result in a version of the document
   /// being published to users with read-only rights to the document (only applies if SaveChanges equals True).</param>
-  /// <param name="VersionType">The version type to assign to the document being checked in. Can be one of the CheckInVersionType constants (only applies if SaveChanges equals True).</param>
+  /// <param name="versionType">The version type to assign to the document being checked in. Can be one of the CheckInVersionType constants (only applies if SaveChanges equals True).</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.checkinwithversion?view=word-pia"/>
-  public void CheckInWithVersion(bool SaveChanges, object Comments, bool MakePublic, CheckInVersionType VersionType) { throw new NotImplementedException(); }
+  public void CheckInWithVersion(bool saveChanges, object comments, bool makePublic, CheckInVersionType versionType) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Accesses the Microsoft Office Web site for available smart tag recognizer and action files.
@@ -1498,14 +1498,14 @@ public partial class Document
   /// <summary>
   /// Closes the specified document or documents.
   /// </summary>
-  /// <param name="SaveChanges">Specifies whether to save changes to the document. Can be one of the SaveOptions constants.</param>
-  /// <param name="OriginalFormat">Specifies the format in which to save the document. Can be one of the OriginalFormat constants.</param>
-  /// <param name="RouteDocument">Specifies whether to route the document. Can be True or False.</param>
+  /// <param name="saveChanges">Specifies whether to save changes to the document. Can be one of the SaveOptions constants.</param>
+  /// <param name="originalFormat">Specifies the format in which to save the document. Can be one of the OriginalFormat constants.</param>
+  /// <param name="routeDocument">Specifies whether to route the document. Can be True or False.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.close?view=word-pia"/>
-  public void Close(SaveOptions SaveChanges, OriginalFormat OriginalFormat, bool RouteDocument) { throw new NotImplementedException(); }
+  public void Close(SaveOptions saveChanges, OriginalFormat originalFormat, bool routeDocument) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Switches the specified document from print preview to the previous view. If the specified document isn't in
@@ -1537,12 +1537,12 @@ public partial class Document
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  /// <param name="Name">The name of the document to compare with the specified document.</param>
+  /// <param name="name">The name of the document to compare with the specified document.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.compare2000?view=word-pia"/>
-  public void Compare2000(string Name) { throw new NotImplementedException(); }
+  public void Compare2000(string name) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Reserved for internal use.
@@ -1562,13 +1562,13 @@ public partial class Document
   /// <summary>
   /// Returns a statistic based on the contents of the specified document.
   /// </summary>
-  /// <param name="Statistic">The statistic to return. Can be one of the Statistic constants.</param>
-  /// <param name="IncludeFootnotesAndEndnotes">Specifies whether to include footnotes and endnotes. Can be True or False.</param>
+  /// <param name="statistic">The statistic to return. Can be one of the Statistic constants.</param>
+  /// <param name="includeFootnotesAndEndnotes">Specifies whether to include footnotes and endnotes. Can be True or False.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.computestatistics?view=word-pia"/>
-  public int ComputeStatistics(Statistic Statistic, bool IncludeFootnotesAndEndnotes) { throw new NotImplementedException(); }
+  public int ComputeStatistics(Statistic statistic, bool includeFootnotesAndEndnotes) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Converts file to the newest file format and enables all new features.
@@ -1591,43 +1591,43 @@ public partial class Document
   /// <summary>
   /// Changes the list numbers and LISTNUM fields in the specified object to text.
   /// </summary>
-  /// <param name="NumberType">The type of numbers to convert. Can be one of the NumberType constants.</param>
+  /// <param name="numberType">The type of numbers to convert. Can be one of the NumberType constants.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.convertnumberstotext?view=word-pia"/>
-  public void ConvertNumbersToText(NumberType NumberType) { throw new NotImplementedException(); }
+  public void ConvertNumbersToText(NumberType numberType) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Reconverts a Vietnamese document to Unicode using a code page other than the default.
   /// </summary>
-  /// <param name="CodePageOrigin">The code page to use for the conversion.</param>
+  /// <param name="codePageOrigin">The code page to use for the conversion.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.convertvietdoc?view=word-pia"/>
-  public void ConvertVietDoc(int CodePageOrigin) { throw new NotImplementedException(); }
+  public void ConvertVietDoc(int codePageOrigin) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Copies styles from the specified template to a document.
   /// </summary>
-  /// <param name="Template">The name of the template from which to copy styles.</param>
+  /// <param name="template">The name of the template from which to copy styles.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.copystylesfromtemplate?view=word-pia"/>
-  public void CopyStylesFromTemplate(string Template) { throw new NotImplementedException(); }
+  public void CopyStylesFromTemplate(string template) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Returns the number of bulleted or numbered items and LISTNUM fields in the specified object.
   /// </summary>
-  /// <param name="NumberType">The type of numbers to count. Can be one of the NumberType constants.</param>
-  /// <param name="Level">The level of the numbers to count. Can be one of the WdListLevel constants.</param>
+  /// <param name="numberType">The type of numbers to count. Can be one of the NumberType constants.</param>
+  /// <param name="level">The level of the numbers to count. Can be one of the WdListLevel constants.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.countnumbereditems?view=word-pia"/>
-  public int CountNumberedItems(NumberType NumberType, int Level) { throw new NotImplementedException(); }
+  public int CountNumberedItems(NumberType numberType, int level) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Creates and returns a LetterContent object based on the specified letter elements.
@@ -1706,12 +1706,12 @@ public partial class Document
   /// <summary>
   /// Deletes permissions in all ranges for which the specified user or group of users has permission to modify.
   /// </summary>
-  /// <param name="EditorID">The user or group of users for which to delete permissions. Can be a user name, group name, or a combination of user and group names.</param>
+  /// <param name="editorID">The user or group of users for which to delete permissions. Can be a user name, group name, or a combination of user and group names.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.deletealleditableranges?view=word-pia"/>
-  public void DeleteAllEditableRanges(object EditorID) { throw new NotImplementedException(); }
+  public void DeleteAllEditableRanges(object editorID) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Deletes all handwritten ink annotations in a document.
@@ -1780,15 +1780,15 @@ public partial class Document
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  /// <param name="Type">The type of edition.</param>
-  /// <param name="Option">The edition option.</param>
-  /// <param name="Name">The name of the edition.</param>
-  /// <param name="Format">The format of the edition.</param>
+  /// <param name="type">The type of edition.</param>
+  /// <param name="option">The edition option.</param>
+  /// <param name="name">The name of the edition.</param>
+  /// <param name="format">The format of the edition.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.editionoptions?view=word-pia"/>
-  public void EditionOptions(EditionType Type, EditionOption Option, string Name, object Format) { throw new NotImplementedException(); }
+  public void EditionOptions(EditionType type, EditionOption option, string name, object format) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Terminates a review of a file that has been sent for review using the SendForReview(Object, Object, Object,
@@ -1877,12 +1877,12 @@ public partial class Document
   /// <summary>
   /// Returns an array of items that can be cross-referenced based on the specified cross-reference type.
   /// </summary>
-  /// <param name="ReferenceType">The type of items to return. Can be one of the ReferenceType constants.</param>
+  /// <param name="referenceType">The type of items to return. Can be one of the ReferenceType constants.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.getcrossreferenceitems?view=word-pia"/>
-  public object GetCrossReferenceItems(ReferenceType ReferenceType) { throw new NotImplementedException(); }
+  public object GetCrossReferenceItems(ReferenceType referenceType) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Retrieves letter elements from the specified document and returns a LetterContent object.
@@ -1914,15 +1914,15 @@ public partial class Document
   /// <summary>
   /// Returns a Range object that represents the start position of the specified item.
   /// </summary>
-  /// <param name="What">The item to return. Can be one of the GoToItem constants.</param>
-  /// <param name="Which">Specifies which instance of the item to return. Can be one of the GoToDirection constants.</param>
-  /// <param name="Count">Specifies the number of items to return.</param>
-  /// <param name="Name">Specifies the name of the item to return.</param>
+  /// <param name="what">The item to return. Can be one of the GoToItem constants.</param>
+  /// <param name="which">Specifies which instance of the item to return. Can be one of the GoToDirection constants.</param>
+  /// <param name="count">Specifies the number of items to return.</param>
+  /// <param name="name">Specifies the name of the item to return.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.goto?view=word-pia"/>
-  public Range GoTo(GoToItem What, GoToDirection Which, int Count, string Name) { throw new NotImplementedException(); }
+  public Range GoTo(GoToItem what, GoToDirection which, int count, string name) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Locks the file on the server preventing anyone else from editing it.
@@ -1974,7 +1974,7 @@ public partial class Document
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.merge2000?view=word-pia"/>
-  public void Merge2000(string FileName) { throw new NotImplementedException(); }
+  public void Merge2000(string fileName) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Posts the specified document to a public folder in Microsoft Exchange. This method displays the Send to
@@ -2089,28 +2089,28 @@ public partial class Document
   /// <summary>
   /// Helps to protect the specified document from changes. When a document is protected, users can make only limited changes, such as adding annotations, making revisions, or completing a form.
   /// </summary>
-  /// <param name="Type">The type of protection to apply. Can be one of the ProtectionType constants.</param>
-  /// <param name="NoReset">Whether to reset the protection settings. Can be True or False.</param>
-  /// <param name="Password">The password to use for protection.</param>
-  /// <param name="UseIRM">Whether to use Information Rights Management (IRM) for protection. Can be True or False.</param>
-  /// <param name="EnforceStyleLock">Whether to enforce style lock. Can be True or False.</param>
+  /// <param name="type">The type of protection to apply. Can be one of the ProtectionType constants.</param>
+  /// <param name="noReset">Whether to reset the protection settings. Can be True or False.</param>
+  /// <param name="password">The password to use for protection.</param>
+  /// <param name="useIRM">Whether to use Information Rights Management (IRM) for protection. Can be True or False.</param>
+  /// <param name="enforceStyleLock">Whether to enforce style lock. Can be True or False.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.protect?view=word-pia"/>
-  public void Protect(ProtectionType Type, bool NoReset, string Password, bool UseIRM, bool EnforceStyleLock) { throw new NotImplementedException(); }
+  public void Protect(ProtectionType type, bool noReset, string password, bool useIRM, bool enforceStyleLock) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  /// <param name="Type">The type of protection to apply. Can be one of the ProtectionType constants.</param>
-  /// <param name="NoReset">Whether to reset the protection settings. Can be True or False.</param>
-  /// <param name="Password">The password to use for protection.</param>
+  /// <param name="type">The type of protection to apply. Can be one of the ProtectionType constants.</param>
+  /// <param name="noReset">Whether to reset the protection settings. Can be True or False.</param>
+  /// <param name="password">The password to use for protection.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.protect2002?view=word-pia"/>
-  public void Protect2002(ProtectionType Type, bool NoReset, string Password) { throw new NotImplementedException(); }
+  public void Protect2002(ProtectionType type, bool noReset, string password) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Returns a Range object by using the specified starting and ending character positions.
@@ -2119,7 +2119,7 @@ public partial class Document
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.range?view=word-pia"/>
-  public Range Range(object Start, object End) { throw new NotImplementedException(); }
+  public Range Range(object start, object end) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Removes smart tags recognized by the grammar checker and rechecks the document content against all smart tag
@@ -2134,12 +2134,12 @@ public partial class Document
   /// <summary>
   /// Redoes the last action that was undone (reverses the Undo(Object) method). Returns True if the actions were redone successfully.
   /// </summary>
-  /// <param name="Times">The number of times to redo the last action. If this argument is omitted, the default value is 1.</param>
+  /// <param name="times">The number of times to redo the last action. If this argument is omitted, the default value is 1.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.redo?view=word-pia"/>
-  public bool Redo(int Times) { throw new NotImplementedException(); }
+  public bool Redo(int times) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Rejects all tracked changes in the specified document.
@@ -2171,32 +2171,32 @@ public partial class Document
   /// <summary>
   /// Reloads a document based on an HTML document, using the specified document encoding.
   /// </summary>
-  /// <param name="Encoding">The encoding to use for the HTML document.</param>
+  /// <param name="encoding">The encoding to use for the HTML document.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.reloadas?view=word-pia"/>
-  public void ReloadAs(Core.Encoding Encoding) { throw new NotImplementedException(); }
+  public void ReloadAs(Core.Encoding encoding) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Removes sensitive information, properties, comments, and other metadata from a document.
   /// </summary>
-  /// <param name="RemoveDocInfoType">The type of information to remove. Can be one of the RemoveDocInfoType constants.</param>
+  /// <param name="removeDocInfoType">The type of information to remove. Can be one of the RemoveDocInfoType constants.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.removedocumentinformation?view=word-pia"/>
-  public void RemoveDocumentInformation(RemoveDocInfoType RemoveDocInfoType) { throw new NotImplementedException(); }
+  public void RemoveDocumentInformation(RemoveDocInfoType removeDocInfoType) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Reserved for internal use.
   /// </summary>
-  /// <param name="ID">The ID of the document workspace header to remove.</param>
+  /// <param name="iD">The ID of the document workspace header to remove.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.removedocumentworkspaceheader?view=word-pia"/>
-  public void RemoveDocumentWorkspaceHeader(string ID) { throw new NotImplementedException(); }
+  public void RemoveDocumentWorkspaceHeader(string iD) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Purges a document of locked styles when formatting restrictions have been applied in a document.
@@ -2210,12 +2210,12 @@ public partial class Document
   /// <summary>
   /// Removes numbers or bullets from the specified object.
   /// </summary>
-  /// <param name="NumberType">The type of numbering to remove. Can be one of the NumberType constants.</param>
+  /// <param name="numberType">The type of numbering to remove. Can be one of the NumberType constants.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.removenumbers?view=word-pia"/>
-  public void RemoveNumbers(NumberType NumberType) { throw new NotImplementedException(); }
+  public void RemoveNumbers(NumberType numberType) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Removes all smart tag information from a document.
@@ -2265,12 +2265,12 @@ public partial class Document
   /// <summary>
   /// Sends an e-mail message to the author of a document that has been sent out for review, notifying them that a reviewer has completed review of the document.
   /// </summary>
-  /// <param name="ShowMessage">Specifies whether to show a message when replying with changes.</param>
+  /// <param name="showMessage">Specifies whether to show a message when replying with changes.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.replywithchanges?view=word-pia"/>
-  public void ReplyWithChanges(bool ShowMessage) { throw new NotImplementedException(); }
+  public void ReplyWithChanges(bool showMessage) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Clears all form fields in a document, preparing the form to be filled in again.
@@ -2303,23 +2303,23 @@ public partial class Document
   /// <summary>
   /// Runs an auto macro that's stored in the specified document. If the specified auto macro doesn't exist, nothing happens.
   /// </summary>
-  /// <param name="Which">Specifies which auto macro to run. Can be one of the AutoMacros constants.</param>
+  /// <param name="which">Specifies which auto macro to run. Can be one of the AutoMacros constants.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.runautomacro?view=word-pia"/>
-  public void RunAutoMacro(AutoMacros Which) { throw new NotImplementedException(); }
+  public void RunAutoMacro(AutoMacros which) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Runs the Letter Wizard on the specified document.
   /// </summary>
-  /// <param name="LetterContent">Specifies the content of the letter. Can be one of the WdLetterContent constants.</param>
-  /// <param name="WizardMode">Specifies the mode of the wizard. Can be one of the WdLetterWizard constants.</param>
+  /// <param name="letterContent">Specifies the content of the letter. Can be one of the WdLetterContent constants.</param>
+  /// <param name="wizardMode">Specifies the mode of the wizard. Can be one of the WdLetterWizard constants.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.runletterwizard?view=word-pia"/>
-  public void RunLetterWizard(object LetterContent, object WizardMode) { throw new NotImplementedException(); }
+  public void RunLetterWizard(object letterContent, object wizardMode) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Saves the specified document. If the document hasn't been saved before, the Save As dialog box prompts the
@@ -2416,12 +2416,12 @@ public partial class Document
   /// <summary>
   /// Saves the group of quick styles currently in use.
   /// </summary>
-  /// <param name="FileName">The name of the file to save the quick style set as.</param>
+  /// <param name="fileName">The name of the file to save the quick style set as.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.saveasquickstyleset?view=word-pia"/>
-  public void SaveAsQuickStyleSet(string FileName) { throw new NotImplementedException(); }
+  public void SaveAsQuickStyleSet(string fileName) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Saves the specified document with a new name or format.
@@ -2476,112 +2476,112 @@ public partial class Document
   /// <summary>
   /// Selects all ranges for which the specified user or group of users has permission to modify.
   /// </summary>
-  /// <param name="EditorID">The ID of the user or group of users.</param>
+  /// <param name="editorID">The ID of the user or group of users.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectalleditableranges?view=word-pia"/>
-  public void SelectAllEditableRanges(object EditorID) { throw new NotImplementedException(); }
+  public void SelectAllEditableRanges(object editorID) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Returns a ContentControls collection that represents all the content controls in a document with the tag value specified in the Tag parameter. Read-only.
   /// </summary>
-  /// <param name="Tag">The tag value of the content controls to return.</param>
+  /// <param name="tag">The tag value of the content controls to return.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectcontentcontrolsbytag?view=word-pia"/>
-  public ContentControls SelectContentControlsByTag(string Tag) { throw new NotImplementedException(); }
+  public ContentControls SelectContentControlsByTag(string tag) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Returns a ContentControls collection that represents all the content controls in a document with the title specified in the Title parameter. Read-only.
   /// </summary>
-  /// <param name="Title">The title of the content controls to return.</param>
+  /// <param name="title">The title of the content controls to return.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectcontentcontrolsbytitle?view=word-pia"/>
-  public ContentControls SelectContentControlsByTitle(string Title) { throw new NotImplementedException(); }
+  public ContentControls SelectContentControlsByTitle(string title) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Returns a ContentControls collection that represents all content controls in a document that are linked to the specific custom XML node in the document's XML data store as specified by the Node parameter. Read-only.
   /// </summary>
-  /// <param name="Node">The custom XML node to which the content controls are linked.</param>
+  /// <param name="node">The custom XML node to which the content controls are linked.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectlinkedcontrols?view=word-pia"/>
-  public ContentControls SelectLinkedControls(Core.ICustomXMLNode Node) { throw new NotImplementedException(); }
+  public ContentControls SelectLinkedControls(Core.ICustomXMLNode node) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Returns an XMLNodes collection that represents all the specified nodes in the order in which they appear in the document.
   /// </summary>
-  /// <param name="XPath">The XPath expression to evaluate.</param>
-  /// <param name="PrefixMapping">The prefix mapping for the XPath expression.</param>
-  /// <param name="FastSearchSkippingTextNodes">Specifies whether to use fast search by skipping text nodes.</param>
+  /// <param name="xPath">The XPath expression to evaluate.</param>
+  /// <param name="prefixMapping">The prefix mapping for the XPath expression.</param>
+  /// <param name="fastSearchSkippingTextNodes">Specifies whether to use fast search by skipping text nodes.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectnodes?view=word-pia"/>
-  public XMLNodes SelectNodes(string XPath, string PrefixMapping, bool FastSearchSkippingTextNodes) { throw new NotImplementedException(); }
+  public XMLNodes SelectNodes(string xPath, string prefixMapping, bool fastSearchSkippingTextNodes) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Returns an XMLNode object that represents a node in the specified document.
   /// </summary>
-  /// <param name="XPath">The XPath expression to evaluate.</param>
-  /// <param name="PrefixMapping">The prefix mapping for the XPath expression.</param>
-  /// <param name="FastSearchSkippingTextNodes">Specifies whether to use fast search by skipping text nodes.</param>
+  /// <param name="xPath">The XPath expression to evaluate.</param>
+  /// <param name="prefixMapping">The prefix mapping for the XPath expression.</param>
+  /// <param name="fastSearchSkippingTextNodes">Specifies whether to use fast search by skipping text nodes.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectsinglenode?view=word-pia"/>
-  public XMLNode SelectSingleNode(string XPath, string PrefixMapping, bool FastSearchSkippingTextNodes) { throw new NotImplementedException(); }
+  public XMLNode SelectSingleNode(string xPath, string prefixMapping, bool fastSearchSkippingTextNodes) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Returns all of the content controls in a document that are not linked to an XML node in the document's XML data store. Read-only.
   /// </summary>
-  /// <param name="Stream">The custom XML part to which the content controls are linked.</param>
+  /// <param name="stream">The custom XML part to which the content controls are linked.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.selectunlinkedcontrols?view=word-pia"/>
-  public ContentControls SelectUnlinkedControls(Core.ICustomXMLPart Stream) { throw new NotImplementedException(); }
+  public ContentControls SelectUnlinkedControls(Core.ICustomXMLPart stream) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Sends the specified document as a fax, without any user interaction.
   /// </summary>
-  /// <param name="Address">The fax number to send the document to.</param>
-  /// <param name="Subject">The subject of the fax.</param>
+  /// <param name="address">The fax number to send the document to.</param>
+  /// <param name="subject">The subject of the fax.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.sendfax?view=word-pia"/>
-  public void SendFax(string Address, string Subject) { throw new NotImplementedException(); }
+  public void SendFax(string address, string subject) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Sends a document to a fax service provider, who faxes the document to one or more specified recipients.
   /// </summary>
-  /// <param name="Recipients">The recipients to send the fax to.</param>
-  /// <param name="Subject">The subject of the fax.</param>
-  /// <param name="ShowMessage">Specifies whether to show a message when sending the fax.</param>
+  /// <param name="recipients">The recipients to send the fax to.</param>
+  /// <param name="subject">The subject of the fax.</param>
+  /// <param name="showMessage">Specifies whether to show a message when sending the fax.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.sendfaxoverinternet?view=word-pia"/>
-  public void SendFaxOverInternet(object Recipients, string Subject, bool ShowMessage) { throw new NotImplementedException(); }
+  public void SendFaxOverInternet(object recipients, string subject, bool showMessage) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Sends a document in an e-mail message for review by the specified recipients.
   /// </summary>
-  /// <param name="Recipients">The recipients to send the document to for review.</param>
-  /// <param name="Subject">The subject of the review request.</param>
-  /// <param name="ShowMessage">Specifies whether to show a message when sending the review request.</param>
-  /// <param name="IncludeAttachment">Specifies whether to include the document as an attachment.</param>
+  /// <param name="recipients">The recipients to send the document to for review.</param>
+  /// <param name="subject">The subject of the review request.</param>
+  /// <param name="showMessage">Specifies whether to show a message when sending the review request.</param>
+  /// <param name="includeAttachment">Specifies whether to include the document as an attachment.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.sendforreview?view=word-pia"/>
-  public void SendForReview(object Recipients, string Subject, bool ShowMessage, bool IncludeAttachment) { throw new NotImplementedException(); }
+  public void SendForReview(object recipients, string subject, bool showMessage, bool includeAttachment) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Opens a message window for sending the specified document through Microsoft Exchange.
@@ -2595,44 +2595,44 @@ public partial class Document
   /// <summary>
   /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
-  /// <param name="FileFormat">The file format to use when sending the mailer.</param>
-  /// <param name="Priority">The priority of the mailer.</param>
+  /// <param name="fileFormat">The file format to use when sending the mailer.</param>
+  /// <param name="priority">The priority of the mailer.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.sendmailer?view=word-pia"/>
-  public void SendMailer(object FileFormat, object Priority) { throw new NotImplementedException(); }
+  public void SendMailer(object fileFormat, object priority) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Sets the compatibility mode for the document.
   /// </summary>
-  /// <param name="Mode">The compatibility mode to set for the document.</param>
+  /// <param name="mode">The compatibility mode to set for the document.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.setcompatibilitymode?view=word-pia"/>
-  public void SetCompatibilityMode(int Mode) { throw new NotImplementedException(); }
+  public void SetCompatibilityMode(int mode) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Specifies the table style to use for newly created tables in a document.
   /// </summary>
-  /// <param name="Style">The table style to set as the default for newly created tables.</param>
-  /// <param name="SetInTemplate">Specifies whether to set the default table style in the template.</param>
+  /// <param name="style">The table style to set as the default for newly created tables.</param>
+  /// <param name="setInTemplate">Specifies whether to set the default table style in the template.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.setdefaulttablestyle?view=word-pia"/>
-  public void SetDefaultTableStyle(object Style, bool SetInTemplate) { throw new NotImplementedException(); }
+  public void SetDefaultTableStyle(object style, bool setInTemplate) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Inserts the contents of the specified LetterContent object into a document.
   /// </summary>
-  /// <param name="LetterContent">The LetterContent object that contains the letter elements to insert into the document.</param>
+  /// <param name="letterContent">The LetterContent object that contains the letter elements to insert into the document.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.setlettercontent?view=word-pia"/>
-  public void SetLetterContent(object LetterContent) { throw new NotImplementedException(); }
+  public void SetLetterContent(object letterContent) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Sets the options Microsoft Word uses for encrypting documents with passwords.
@@ -2659,23 +2659,23 @@ public partial class Document
   /// <summary>
   /// Applies the specified Extensible Stylesheet Language Transformation (XSLT) file to the specified document and replaces the document with the results.
   /// </summary>
-  /// <param name="Path">The path to the XSLT file to apply to the document.</param>
-  /// <param name="DataOnly">Specifies whether to apply the transformation to the data only.</param>
+  /// <param name="path">The path to the XSLT file to apply to the document.</param>
+  /// <param name="dataOnly">Specifies whether to apply the transformation to the data only.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.transformdocument?view=word-pia"/>
-  public void TransformDocument(string Path, bool DataOnly) { throw new NotImplementedException(); }
+  public void TransformDocument(string path, bool dataOnly) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Undoes the last action or a sequence of actions, which are displayed in the Undo list. Returns True if the actions were successfully undone.
   /// </summary>
-  /// <param name="Times">The number of actions to undo.</param>
+  /// <param name="times">The number of actions to undo.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.undo?view=word-pia"/>
-  public bool Undo(int Times) { throw new NotImplementedException(); }
+  public bool Undo(int times) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Clears the list of actions that can be undone for the specified document. Corresponds to the list of items
@@ -2700,12 +2700,12 @@ public partial class Document
   /// <summary>
   /// Removes protection from the specified document. If the document isn't protected, this method generates an error.
   /// </summary>
-  /// <param name="Password">The password used to protect the document, if any. If the document isn't protected with a password, this argument is ignored.</param>
+  /// <param name="password">The password used to protect the document, if any. If the document isn't protected with a password, this argument is ignored.</param>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._document.unprotect?view=word-pia"/>
-  public void Unprotect(string Password) { throw new NotImplementedException(); }
+  public void Unprotect(string password) { throw new NotImplementedException(); }
 
   /// <summary>
   /// Copies all styles from the attached template into the document, overwriting any existing styles in the

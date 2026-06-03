@@ -26,60 +26,60 @@ public interface IShapes: IInteropCollection<IShape>
 /// <summary>
   /// Invokes `Item`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.item?view=office-pia"/>
-  public IShape Item(object Index);
+  public IShape Item(object index);
   /// <summary>
   /// Invokes `AddCallout`.
   /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
+  /// <param name="left">The `Left` parameter.</param>
+  /// <param name="top">The `Top` parameter.</param>
+  /// <param name="width">The `Width` parameter.</param>
+  /// <param name="height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addcallout?view=office-pia"/>
-  public IShape AddCallout(CalloutType Type, float Left, float Top, float Width, float Height);
+  public IShape AddCallout(CalloutType type, float left, float top, float width, float height);
   /// <summary>
   /// Invokes `AddConnector`.
   /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="BeginX">The `BeginX` parameter.</param>
-  /// <param name="BeginY">The `BeginY` parameter.</param>
-  /// <param name="EndX">The `EndX` parameter.</param>
-  /// <param name="EndY">The `EndY` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
+  /// <param name="beginX">The `BeginX` parameter.</param>
+  /// <param name="beginY">The `BeginY` parameter.</param>
+  /// <param name="endX">The `EndX` parameter.</param>
+  /// <param name="endY">The `EndY` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addconnector?view=office-pia"/>
-  public IShape AddConnector(ConnectorType Type, float BeginX, float BeginY, float EndX, float EndY);
+  public IShape AddConnector(ConnectorType type, float beginX, float beginY, float endX, float endY);
   /// <summary>
   /// Invokes `AddCurve`.
   /// </summary>
-  /// <param name="SafeArrayOfPoints">The `SafeArrayOfPoints` parameter.</param>
+  /// <param name="safeArrayOfPoints">The `SafeArrayOfPoints` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addcurve?view=office-pia"/>
-  public IShape AddCurve(object SafeArrayOfPoints);
+  public IShape AddCurve(object safeArrayOfPoints);
   /// <summary>
   /// Invokes `AddLabel`.
   /// </summary>
-  /// <param name="Orientation">The `Orientation` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
+  /// <param name="orientation">The `Orientation` parameter.</param>
+  /// <param name="left">The `Left` parameter.</param>
+  /// <param name="top">The `Top` parameter.</param>
+  /// <param name="width">The `Width` parameter.</param>
+  /// <param name="height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addlabel?view=office-pia"/>
-  public IShape AddLabel(TextOrientation Orientation, float Left, float Top, float Width, float Height);
+  public IShape AddLabel(TextOrientation orientation, float left, float top, float width, float height);
   /// <summary>
   /// Invokes `AddLine`.
   /// </summary>
-  /// <param name="BeginX">The `BeginX` parameter.</param>
-  /// <param name="BeginY">The `BeginY` parameter.</param>
-  /// <param name="EndX">The `EndX` parameter.</param>
-  /// <param name="EndY">The `EndY` parameter.</param>
+  /// <param name="beginX">The `BeginX` parameter.</param>
+  /// <param name="beginY">The `BeginY` parameter.</param>
+  /// <param name="endX">The `EndX` parameter.</param>
+  /// <param name="endY">The `EndY` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addline?view=office-pia"/>
-  public IShape AddLine(float BeginX, float BeginY, float EndX, float EndY);
+  public IShape AddLine(float beginX, float beginY, float endX, float endY);
   /// <summary>
   /// Invokes `AddPicture`.
   /// </summary>
@@ -98,21 +98,21 @@ public interface IShapes: IInteropCollection<IShape>
   /// <summary>
   /// Invokes `AddPolyline`.
   /// </summary>
-  /// <param name="SafeArrayOfPoints">The `SafeArrayOfPoints` parameter.</param>
+  /// <param name="safeArrayOfPoints">The `SafeArrayOfPoints` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addpolyline?view=office-pia"/>
-  public IShape AddPolyline(object SafeArrayOfPoints);
+  public IShape AddPolyline(object safeArrayOfPoints);
   /// <summary>
   /// Invokes `AddShape`.
   /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
+  /// <param name="left">The `Left` parameter.</param>
+  /// <param name="top">The `Top` parameter.</param>
+  /// <param name="width">The `Width` parameter.</param>
+  /// <param name="height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addshape?view=office-pia"/>
-  public IShape AddShape(AutoShapeType Type, float Left, float Top, float Width, float Height);
+  public IShape AddShape(AutoShapeType type, float left, float top, float width, float height);
   /// <summary>
   /// Invokes `AddTextEffect`.
   /// </summary>
@@ -132,30 +132,30 @@ public interface IShapes: IInteropCollection<IShape>
   /// <summary>
   /// Invokes `AddTextbox`.
   /// </summary>
-  /// <param name="Orientation">The `Orientation` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
+  /// <param name="orientation">The `Orientation` parameter.</param>
+  /// <param name="left">The `Left` parameter.</param>
+  /// <param name="top">The `Top` parameter.</param>
+  /// <param name="width">The `Width` parameter.</param>
+  /// <param name="height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addtextbox?view=office-pia"/>
-  public IShape AddTextbox(TextOrientation Orientation, float Left, float Top, float Width, float Height);
+  public IShape AddTextbox(TextOrientation orientation, float left, float top, float width, float height);
   /// <summary>
   /// Invokes `BuildFreeform`.
   /// </summary>
-  /// <param name="EditingType">The `EditingType` parameter.</param>
-  /// <param name="X1">The `X1` parameter.</param>
-  /// <param name="Y1">The `Y1` parameter.</param>
+  /// <param name="editingType">The `EditingType` parameter.</param>
+  /// <param name="x1">The `X1` parameter.</param>
+  /// <param name="y1">The `Y1` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.buildfreeform?view=office-pia"/>
-  public IFreeformBuilder BuildFreeform(EditingType EditingType, float X1, float Y1);
+  public IFreeformBuilder BuildFreeform(EditingType editingType, float x1, float y1);
   /// <summary>
   /// Invokes `Range`.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.range?view=office-pia"/>
-  public IShapeRange Range(object Index);
+  public IShapeRange Range(object index);
   /// <summary>
   /// Invokes `SelectAll`.
   /// </summary>
@@ -164,24 +164,24 @@ public interface IShapes: IInteropCollection<IShape>
   /// <summary>
   /// Invokes `AddDiagram`.
   /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
+  /// <param name="left">The `Left` parameter.</param>
+  /// <param name="top">The `Top` parameter.</param>
+  /// <param name="width">The `Width` parameter.</param>
+  /// <param name="height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.adddiagram?view=office-pia"/>
-  public IShape AddDiagram(DiagramType Type, float Left, float Top, float Width, float Height);
+  public IShape AddDiagram(DiagramType type, float left, float top, float width, float height);
   /// <summary>
   /// Invokes `AddCanvas`.
   /// </summary>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
+  /// <param name="left">The `Left` parameter.</param>
+  /// <param name="top">The `Top` parameter.</param>
+  /// <param name="width">The `Width` parameter.</param>
+  /// <param name="height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addcanvas?view=office-pia"/>
-  public IShape AddCanvas(float Left, float Top, float Width, float Height);
+  public IShape AddCanvas(float left, float top, float width, float height);
   /// <summary>
   /// Invokes `AddChart`.
   /// </summary>
@@ -197,26 +197,26 @@ public interface IShapes: IInteropCollection<IShape>
   /// <summary>
   /// Invokes `AddTable`.
   /// </summary>
-  /// <param name="NumRows">The `NumRows` parameter.</param>
-  /// <param name="NumColumns">The `NumColumns` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
+  /// <param name="numRows">The `NumRows` parameter.</param>
+  /// <param name="numColumns">The `NumColumns` parameter.</param>
+  /// <param name="left">The `Left` parameter.</param>
+  /// <param name="top">The `Top` parameter.</param>
+  /// <param name="width">The `Width` parameter.</param>
+  /// <param name="height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addtable?view=office-pia"/>
-  public IShape AddTable(int NumRows, int NumColumns, float Left, float Top, float Width, float Height);
+  public IShape AddTable(int numRows, int numColumns, float left, float top, float width, float height);
   /// <summary>
   /// Invokes `AddSmartArt`.
   /// </summary>
-  /// <param name="Layout">The `Layout` parameter.</param>
-  /// <param name="Left">The `Left` parameter.</param>
-  /// <param name="Top">The `Top` parameter.</param>
-  /// <param name="Width">The `Width` parameter.</param>
-  /// <param name="Height">The `Height` parameter.</param>
+  /// <param name="layout">The `Layout` parameter.</param>
+  /// <param name="left">The `Left` parameter.</param>
+  /// <param name="top">The `Top` parameter.</param>
+  /// <param name="width">The `Width` parameter.</param>
+  /// <param name="height">The `Height` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.shapes.addsmartart?view=office-pia"/>
-  public IShape AddSmartArt(ISmartArtLayout Layout, float Left, float Top, float Width, float Height);
+  public IShape AddSmartArt(ISmartArtLayout layout, float left, float top, float width, float height);
   /// <summary>
   /// Invokes `AddChart2`.
   /// </summary>

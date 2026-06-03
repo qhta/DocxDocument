@@ -20,9 +20,9 @@ public partial class SharedWorkspaceFolder: InteropObject
 /// <summary>
   /// Deletes the shared workspace folder.
   /// </summary>
-  /// <param name="DeleteEventIfFolderContainsFiles">Whether to delete even if the folder contains files.</param>
+  /// <param name="deleteEventIfFolderContainsFiles">Whether to delete even if the folder contains files.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolder.delete?view=office-pia"/>
-  public void Delete(object DeleteEventIfFolderContainsFiles) { throw new NotImplementedException(); }
+  public void Delete(object deleteEventIfFolderContainsFiles) { throw new NotImplementedException(); }
 
   #endregion methods
 }

@@ -240,14 +240,14 @@ public interface IDataLabel : IInteropObject
 /// <summary>
   /// Returns a ChartCharacters object that represents a range of characters in the data label text.
   /// </summary>
-  /// <param name="Start">The starting character position.</param>
-  /// <param name="Length">The number of characters to return.</param>
+  /// <param name="start">The starting character position.</param>
+  /// <param name="length">The number of characters to return.</param>
   /// <returns>The requested <see cref="IChartCharacters"/> range.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.datalabel.get_characters?view=word-pia"/>
-  public IChartCharacters Characters(object Start, object Length);
+  public IChartCharacters Characters(object start, object length);
 
   /// <summary>
   /// Selects the object.

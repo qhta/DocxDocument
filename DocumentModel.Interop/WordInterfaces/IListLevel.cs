@@ -96,13 +96,13 @@ public interface IListLevel : IInteropObject
 /// <summary>
   /// Applies a picture bullet to the list level and returns the picture bullet shape.
   /// </summary>
-  /// <param name="FileName">The file name of the picture to use as a bullet.</param>
+  /// <param name="fileName">The file name of the picture to use as a bullet.</param>
   /// <returns>The <see cref="IInlineShape"/> created for the picture bullet.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listlevel.applypicturebullet?view=word-pia"/>
-  public IInlineShape ApplyPictureBullet(string FileName);
+  public IInlineShape ApplyPictureBullet(string fileName);
 
   #endregion methods
 }

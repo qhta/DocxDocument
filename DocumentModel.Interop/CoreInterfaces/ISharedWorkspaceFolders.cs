@@ -22,11 +22,11 @@ public interface ISharedWorkspaceFolders: IInteropCollection<ISharedWorkspaceFol
 /// <summary>
   /// Invokes `Add`.
   /// </summary>
-  /// <param name="FolderName">The `FolderName` parameter.</param>
-  /// <param name="ParentFolder">The `ParentFolder` parameter.</param>
+  /// <param name="folderName">The `FolderName` parameter.</param>
+  /// <param name="parentFolder">The `ParentFolder` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolders.add?view=office-pia"/>
-  public ISharedWorkspaceFolder Add(string FolderName, object ParentFolder);
+  public ISharedWorkspaceFolder Add(string folderName, object parentFolder);
 
   #endregion methods
 }

@@ -30,21 +30,21 @@ public interface IHTMLProjectItem: IInteropObject
 /// <summary>
   /// Updates the text in the Microsoft Script Editor with text from the specified file on disk.
   /// </summary>
-  /// <param name="FileName">The `FileName` parameter.</param>
+  /// <param name="fileName">The `FileName` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlprojectitem.loadfromfile?view=office-pia"/>
-  public void LoadFromFile(string FileName);
+  public void LoadFromFile(string fileName);
   /// <summary>
   /// Opens the specified HTML project item in the Microsoft Script Editor in one of the supported views.
   /// </summary>
-  /// <param name="OpenKind">The `OpenKind` parameter.</param>
+  /// <param name="openKind">The `OpenKind` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlprojectitem.open?view=office-pia"/>
-  public void Open(HTMLProjectOpen OpenKind);
+  public void Open(HTMLProjectOpen openKind);
   /// <summary>
   /// Saves the specified HTML project item using a new file name.
   /// </summary>
-  /// <param name="FileName">The `FileName` parameter.</param>
+  /// <param name="fileName">The `FileName` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlprojectitem.savecopyas?view=office-pia"/>
-  public void SaveCopyAs(string FileName);
+  public void SaveCopyAs(string fileName);
 
   #endregion methods
 }

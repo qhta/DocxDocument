@@ -49,15 +49,15 @@ public interface IXMLMapping : IInteropObject
 /// <summary>
   /// Sets the XML mapping for the specified XPath, prefix mapping, and source.
   /// </summary>
-  /// <param name="XPath">The XPath expression to map.</param>
-  /// <param name="PrefixMapping">The prefix mapping for the XPath expression.</param>
-  /// <param name="Source">The custom XML part to use as the source.</param>
+  /// <param name="xPath">The XPath expression to map.</param>
+  /// <param name="prefixMapping">The prefix mapping for the XPath expression.</param>
+  /// <param name="source">The custom XML part to use as the source.</param>
   /// <returns>true if the mapping is set successfully; otherwise, false.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.xmlmapping.setmapping?view=word-pia"/>
-  public bool SetMapping(string XPath, string PrefixMapping, Core.ICustomXMLPart Source);
+  public bool SetMapping(string xPath, string prefixMapping, Core.ICustomXMLPart source);
 
   #endregion methods
 }

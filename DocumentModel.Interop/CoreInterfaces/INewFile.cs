@@ -14,23 +14,23 @@ public interface INewFile: IInteropObject
 /// <summary>
   /// Adds an item to the New Item task pane.
   /// </summary>
-  /// <param name="FileName">The `FileName` parameter.</param>
-  /// <param name="Section">The `Section` parameter.</param>
-  /// <param name="DisplayName">The `DisplayName` parameter.</param>
-  /// <param name="Action">The `Action` parameter.</param>
+  /// <param name="fileName">The `FileName` parameter.</param>
+  /// <param name="section">The `Section` parameter.</param>
+  /// <param name="displayName">The `DisplayName` parameter.</param>
+  /// <param name="action">The `Action` parameter.</param>
   /// <returns><see langword="true"/> if the item was added; otherwise, <see langword="false"/>.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.newfile.add?view=office-pia"/>
-  public bool Add(string FileName, object Section, object DisplayName, object Action);
+  public bool Add(string fileName, object section, object displayName, object action);
   /// <summary>
   /// Removes an item from the New Item task pane.
   /// </summary>
-  /// <param name="FileName">The `FileName` parameter.</param>
-  /// <param name="Section">The `Section` parameter.</param>
-  /// <param name="DisplayName">The `DisplayName` parameter.</param>
-  /// <param name="Action">The `Action` parameter.</param>
+  /// <param name="fileName">The `FileName` parameter.</param>
+  /// <param name="section">The `Section` parameter.</param>
+  /// <param name="displayName">The `DisplayName` parameter.</param>
+  /// <param name="action">The `Action` parameter.</param>
   /// <returns><see langword="true"/> if the item was removed; otherwise, <see langword="false"/>.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.newfile.remove?view=office-pia"/>
-  public bool Remove(string FileName, object Section, object DisplayName, object Action);
+  public bool Remove(string fileName, object section, object displayName, object action);
 
   #endregion methods
 }

@@ -25,10 +25,10 @@ public partial class MetaProperties: InteropCollection<MetaProperty>
 /// <summary>
   /// Gets a metadata property by its internal name.
   /// </summary>
-  /// <param name="InternalName">The `InternalName` parameter.</param>
+  /// <param name="internalName">The `InternalName` parameter.</param>
   /// <returns>The matching metadata property.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.metaproperties.getitembyinternalname?view=office-pia"/>
-  public MetaProperty GetItemByInternalName(string InternalName) { throw new NotImplementedException(); }
+  public MetaProperty GetItemByInternalName(string internalName) { throw new NotImplementedException(); }
   /// <summary>
   /// Validates all metadata properties.
   /// </summary>

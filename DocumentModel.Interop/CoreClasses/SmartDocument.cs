@@ -24,9 +24,9 @@ public partial class SmartDocument: InteropObject
 /// <summary>
   /// Invokes `PickSolution`.
   /// </summary>
-  /// <param name="ConsiderAllSchemas">The `ConsiderAllSchemas` parameter.</param>
+  /// <param name="considerAllSchemas">The `ConsiderAllSchemas` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.smartdocument.picksolution?view=office-pia"/>
-  public void PickSolution(bool ConsiderAllSchemas) { throw new NotImplementedException(); }
+  public void PickSolution(bool considerAllSchemas) { throw new NotImplementedException(); }
   /// <summary>
   /// Invokes `RefreshPane`.
   /// </summary>

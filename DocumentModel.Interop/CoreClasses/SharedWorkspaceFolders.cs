@@ -22,11 +22,11 @@ public partial class SharedWorkspaceFolders: InteropCollection<SharedWorkspaceFo
 /// <summary>
   /// Invokes `Add`.
   /// </summary>
-  /// <param name="FolderName">The `FolderName` parameter.</param>
-  /// <param name="ParentFolder">The `ParentFolder` parameter.</param>
+  /// <param name="folderName">The `FolderName` parameter.</param>
+  /// <param name="parentFolder">The `ParentFolder` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.sharedworkspacefolders.add?view=office-pia"/>
-  public SharedWorkspaceFolder Add(string FolderName, object ParentFolder) { throw new NotImplementedException(); }
+  public SharedWorkspaceFolder Add(string folderName, object parentFolder) { throw new NotImplementedException(); }
 
   #endregion methods
 }

@@ -13,13 +13,13 @@ public partial class HangulAndAlphabetExceptions : InteropCollection<HangulAndAl
 /// <summary>
   /// Returns the value produced by the add operation.
   /// </summary>
-  /// <param name="Name">Specifies the name.</param>
+  /// <param name="name">Specifies the name.</param>
   /// <returns>The resulting value.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.hangulandalphabetexceptions.add?view=word-pia"/>
-  public HangulAndAlphabetException Add(string Name) { throw new NotImplementedException(); }
+  public HangulAndAlphabetException Add(string name) { throw new NotImplementedException(); }
 
   #endregion methods
 }

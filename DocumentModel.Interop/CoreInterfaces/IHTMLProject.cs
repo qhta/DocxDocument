@@ -25,21 +25,21 @@ public interface IHTMLProject: IInteropObject
 /// <summary>
   /// Invokes `RefreshProject`.
   /// </summary>
-  /// <param name="Refresh">The `Refresh` parameter.</param>
+  /// <param name="refresh">The `Refresh` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlproject.refreshproject?view=office-pia"/>
-  public void RefreshProject(bool Refresh);
+  public void RefreshProject(bool refresh);
   /// <summary>
   /// Invokes `RefreshDocument`.
   /// </summary>
-  /// <param name="Refresh">The `Refresh` parameter.</param>
+  /// <param name="refresh">The `Refresh` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlproject.refreshdocument?view=office-pia"/>
-  public void RefreshDocument(bool Refresh);
+  public void RefreshDocument(bool refresh);
   /// <summary>
   /// Invokes `Open`.
   /// </summary>
-  /// <param name="OpenKind">The `OpenKind` parameter.</param>
+  /// <param name="openKind">The `OpenKind` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.htmlproject.open?view=office-pia"/>
-  public void Open(HTMLProjectOpen OpenKind);
+  public void Open(HTMLProjectOpen openKind);
 
   #endregion methods
 }

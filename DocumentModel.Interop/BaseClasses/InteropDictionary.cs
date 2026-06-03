@@ -23,23 +23,23 @@ public class InteropDictionary<KeyType, ItemType>: IInteropDictionary<KeyType, I
   /// <summary>
   /// Gets the item associated with the specified index.
   /// </summary>
-  /// <param name="Index">The key or index of the item to get.</param>
+  /// <param name="index">The key or index of the item to get.</param>
   /// <returns>The item associated with the specified index.</returns>
-  public ItemType Item(int Index) => _dictionary.ElementAt(Index).Value;
+  public ItemType Item(int index) => _dictionary.ElementAt(index).Value;
 
   /// <summary>
   /// Gets the item associated with the specified index.
   /// </summary>
-  /// <param name="Index">The key or index of the item to get.</param>
+  /// <param name="index">The key or index of the item to get.</param>
   /// <returns>The item associated with the specified index.</returns>
-  public ItemType Item(KeyType Index) => _dictionary[Index];
+  public ItemType Item(KeyType index) => _dictionary[index];
 
   /// <summary>
   /// Gets the default item associated with the specified index.
   /// </summary>
-  /// <param name="Index">The key or index of the item to get.</param>
+  /// <param name="index">The key or index of the item to get.</param>
   /// <returns>The default item associated with the specified index.</returns>
-  public ItemType? _Default(KeyType Index) => default;
+  public ItemType? _Default(KeyType index) => default;
 
   /// <summary>
   /// Returns an enumerator that iterates through the dictionary.

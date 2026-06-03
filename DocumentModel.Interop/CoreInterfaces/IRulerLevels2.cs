@@ -16,10 +16,10 @@ public interface IRulerLevels2: IInteropCollection<IRulerLevel2>
 /// <summary>
   /// Returns a ruler level by index.
   /// </summary>
-  /// <param name="Index">The index of the ruler level to return.</param>
+  /// <param name="index">The index of the ruler level to return.</param>
   /// <returns>The requested ruler level.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.rulerlevels2.item?view=office-pia"/>
-  public IRulerLevel2 Item(object Index);
+  public IRulerLevel2 Item(object index);
 
   #endregion methods
 }

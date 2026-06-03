@@ -13,14 +13,14 @@ public partial class OMathAutoCorrectEntries : InteropCollection<OMathAutoCorrec
 /// <summary>
   /// Adds a math AutoCorrect entry to the collection.
   /// </summary>
-  /// <param name="Name">Specifies the text to replace.</param>
-  /// <param name="Value">Specifies the replacement text.</param>
+  /// <param name="name">Specifies the text to replace.</param>
+  /// <param name="value">Specifies the replacement text.</param>
   /// <returns>The added math AutoCorrect entry.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.omathautocorrectentries.add?view=word-pia"/>
-  public OMathAutoCorrectEntry Add(string Name, string Value) { throw new NotImplementedException(); }
+  public OMathAutoCorrectEntry Add(string name, string value) { throw new NotImplementedException(); }
 
   #endregion methods
 }

@@ -133,17 +133,17 @@ public interface ICommandBarControl: IMsoOleAccDispObj
   /// <summary>
   /// Copies the command bar control.
   /// </summary>
-  /// <param name="Bar">The `Bar` parameter.</param>
-  /// <param name="Before">The `Before` parameter.</param>
+  /// <param name="bar">The `Bar` parameter.</param>
+  /// <param name="before">The `Before` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.copy?view=office-pia"/>
-  public ICommandBarControl Copy(object Bar, object Before);
+  public ICommandBarControl Copy(object bar, object before);
   /// <summary>
   /// Deletes the command bar control.
   /// </summary>
-  /// <param name="Temporary">The `Temporary` parameter.</param>
+  /// <param name="temporary">The `Temporary` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.delete?view=office-pia"/>
-  public void Delete(object Temporary);
+  public void Delete(object temporary);
   /// <summary>
   /// Executes the command bar control action.
   /// </summary>
@@ -152,11 +152,11 @@ public interface ICommandBarControl: IMsoOleAccDispObj
   /// <summary>
   /// Moves the command bar control to a new location.
   /// </summary>
-  /// <param name="Bar">The `Bar` parameter.</param>
-  /// <param name="Before">The `Before` parameter.</param>
+  /// <param name="bar">The `Bar` parameter.</param>
+  /// <param name="before">The `Before` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.commandbarcontrol.move?view=office-pia"/>
-  public ICommandBarControl Move(object Bar, object Before);
+  public ICommandBarControl Move(object bar, object before);
   /// <summary>
   /// Resets the command bar control to its default settings.
   /// </summary>

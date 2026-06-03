@@ -15,25 +15,25 @@ public interface ICustomXMLParts: IInteropCollection<ICustomXMLPart>
 /// <summary>
   /// Adds a custom XML part to the collection.
   /// </summary>
-  /// <param name="XML">The `XML` parameter.</param>
-  /// <param name="SchemaCollection">The `SchemaCollection` parameter.</param>
+  /// <param name="xML">The `XML` parameter.</param>
+  /// <param name="schemaCollection">The `SchemaCollection` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlparts.add?view=office-pia"/>
-  public ICustomXMLPart Add(string XML, object SchemaCollection);
+  public ICustomXMLPart Add(string xML, object schemaCollection);
   /// <summary>
   /// Selects a custom XML part by ID.
   /// </summary>
-  /// <param name="Id">The `Id` parameter.</param>
+  /// <param name="id">The `Id` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlparts.selectbyid?view=office-pia"/>
-  public ICustomXMLPart SelectByID(string Id);
+  public ICustomXMLPart SelectByID(string id);
   /// <summary>
   /// Selects custom XML parts by namespace URI.
   /// </summary>
-  /// <param name="NamespaceURI">The `NamespaceURI` parameter.</param>
+  /// <param name="namespaceURI">The `NamespaceURI` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlparts.selectbynamespace?view=office-pia"/>
-  public ICustomXMLParts SelectByNamespace(string NamespaceURI);
+  public ICustomXMLParts SelectByNamespace(string namespaceURI);
 
   #endregion methods
 }

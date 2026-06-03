@@ -18,21 +18,21 @@ public interface ICalloutFormat
   /// <summary>
   /// Sets a custom drop distance for the callout line.
   /// </summary>
-  /// <param name="Drop">The `Drop` parameter.</param>
+  /// <param name="drop">The `Drop` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.calloutformat.customdrop?view=office-pia"/>
-  public void CustomDrop(float Drop);
+  public void CustomDrop(float drop);
   /// <summary>
   /// Sets a custom callout line length.
   /// </summary>
-  /// <param name="Length">The `Length` parameter.</param>
+  /// <param name="length">The `Length` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.calloutformat.customlength?view=office-pia"/>
-  public void CustomLength(float Length);
+  public void CustomLength(float length);
   /// <summary>
   /// Applies a preset callout drop type.
   /// </summary>
-  /// <param name="DropType">The `DropType` parameter.</param>
+  /// <param name="dropType">The `DropType` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.calloutformat.presetdrop?view=office-pia"/>
-  public void PresetDrop(CalloutDropType DropType);
+  public void PresetDrop(CalloutDropType dropType);
 
   #endregion methods
 }

@@ -29,15 +29,15 @@ public interface IMsoEServicesDialog
 /// <summary>
   /// Closes the eServices dialog.
   /// </summary>
-  /// <param name="ApplyWebComponentChanges">The `ApplyWebComponentChanges` parameter.</param>
+  /// <param name="applyWebComponentChanges">The `ApplyWebComponentChanges` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoeservicesdialog.close?view=office-pia"/>
-  public void Close(bool ApplyWebComponentChanges);
+  public void Close(bool applyWebComponentChanges);
   /// <summary>
   /// Adds a trusted domain.
   /// </summary>
-  /// <param name="Domain">The `Domain` parameter.</param>
+  /// <param name="domain">The `Domain` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsoeservicesdialog.addtrusteddomain?view=office-pia"/>
-  public void AddTrustedDomain(string Domain);
+  public void AddTrustedDomain(string domain);
 
   #endregion methods
 }

@@ -30,14 +30,14 @@ public partial class Sections : InteropCollection<Section>
 /// <summary>
   /// Adds a new section to the document.
   /// </summary>
-  /// <param name="Range">The range where the section is added.</param>
-  /// <param name="Start">The starting position for the new section.</param>
+  /// <param name="range">The range where the section is added.</param>
+  /// <param name="start">The starting position for the new section.</param>
   /// <returns>The created <see cref="Section"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.sections.add?view=word-pia"/>
-  public Section Add(object Range, object Start) { throw new NotImplementedException(); }
+  public Section Add(object range, object start) { throw new NotImplementedException(); }
 
   #endregion methods
 }

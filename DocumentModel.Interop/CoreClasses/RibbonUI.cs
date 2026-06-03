@@ -19,34 +19,34 @@ public partial class RibbonUI
   /// <summary>
   /// Invalidates the cached value for a specific Ribbon control.
   /// </summary>
-  /// <param name="ControlID">The `ControlID` parameter.</param>
+  /// <param name="controlID">The `ControlID` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui.invalidatecontrol?view=office-pia"/>
-  public void InvalidateControl(string ControlID) { throw new NotImplementedException(); }
+  public void InvalidateControl(string controlID) { throw new NotImplementedException(); }
   /// <summary>
   /// Invalidates a built-in Ribbon control.
   /// </summary>
-  /// <param name="ControlID">The `ControlID` parameter.</param>
+  /// <param name="controlID">The `ControlID` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui.invalidatecontrolmso?view=office-pia"/>
-  public void InvalidateControlMso(string ControlID) { throw new NotImplementedException(); }
+  public void InvalidateControlMso(string controlID) { throw new NotImplementedException(); }
   /// <summary>
   /// Activates the specified custom tab.
   /// </summary>
-  /// <param name="ControlID">The `ControlID` parameter.</param>
+  /// <param name="controlID">The `ControlID` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui.activatetab?view=office-pia"/>
-  public void ActivateTab(string ControlID) { throw new NotImplementedException(); }
+  public void ActivateTab(string controlID) { throw new NotImplementedException(); }
   /// <summary>
   /// Activates the specified built-in tab.
   /// </summary>
-  /// <param name="ControlID">The `ControlID` parameter.</param>
+  /// <param name="controlID">The `ControlID` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui.activatetabmso?view=office-pia"/>
-  public void ActivateTabMso(string ControlID) { throw new NotImplementedException(); }
+  public void ActivateTabMso(string controlID) { throw new NotImplementedException(); }
   /// <summary>
   /// Activates a specified custom tab using its qualified name.
   /// </summary>
-  /// <param name="ControlID">The `ControlID` parameter.</param>
-  /// <param name="Namespace">The `Namespace` parameter.</param>
+  /// <param name="controlID">The `ControlID` parameter.</param>
+  /// <param name="xmlNamespace">The `Namespace` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iribbonui.activatetabq?view=office-pia"/>
-  public void ActivateTabQ(string ControlID, string Namespace) { throw new NotImplementedException(); }
+  public void ActivateTabQ(string controlID, string xmlNamespace) { throw new NotImplementedException(); }
 
   #endregion methods
 }

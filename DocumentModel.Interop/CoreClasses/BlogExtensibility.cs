@@ -25,13 +25,13 @@ public partial class BlogExtensibility
   /// <summary>
   /// Sets up a provider account from the account selection dialogs.
   /// </summary>
-  /// <param name="Account">The `Account` parameter.</param>
-  /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
-  /// <param name="Document">The `Document` parameter.</param>
-  /// <param name="NewAccount">The `NewAccount` parameter.</param>
-  /// <param name="ShowPictureUI">The `ShowPictureUI` parameter.</param>
+  /// <param name="account">The `Account` parameter.</param>
+  /// <param name="parentWindow">The `ParentWindow` parameter.</param>
+  /// <param name="document">The `Document` parameter.</param>
+  /// <param name="newAccount">The `NewAccount` parameter.</param>
+  /// <param name="showPictureUI">The `ShowPictureUI` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.setupblogaccount?view=office-pia"/>
-  public void SetupBlogAccount(string Account, int ParentWindow, object Document, bool NewAccount, out bool ShowPictureUI) { throw new NotImplementedException(); }
+  public void SetupBlogAccount(string account, int parentWindow, object document, bool newAccount, out bool showPictureUI) { throw new NotImplementedException(); }
   /// <summary>
   /// Returns the list and details of user blogs associated with the specified account.
   /// </summary>
@@ -107,12 +107,12 @@ public partial class BlogExtensibility
   /// <summary>
   /// Returns the list of blog categories for an account.
   /// </summary>
-  /// <param name="Account">The `Account` parameter.</param>
-  /// <param name="ParentWindow">The `ParentWindow` parameter.</param>
-  /// <param name="Document">The `Document` parameter.</param>
-  /// <param name="Categories">The `Categories` parameter.</param>
+  /// <param name="account">The `Account` parameter.</param>
+  /// <param name="parentWindow">The `ParentWindow` parameter.</param>
+  /// <param name="document">The `Document` parameter.</param>
+  /// <param name="categories">The `Categories` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.iblogextensibility.getcategories?view=office-pia"/>
-  public void GetCategories(string Account, int ParentWindow, object Document, out Array Categories) { throw new NotImplementedException(); }
+  public void GetCategories(string account, int parentWindow, object document, out Array categories) { throw new NotImplementedException(); }
 
   #endregion methods
 }

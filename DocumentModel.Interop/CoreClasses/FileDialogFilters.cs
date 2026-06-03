@@ -16,10 +16,10 @@ public partial class FileDialogFilters: InteropCollection<FileDialogFilter>
 /// <summary>
   /// Returns a filter by index.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialogfilters.item?view=office-pia"/>
-  public FileDialogFilter Item(int Index) { throw new NotImplementedException(); }
+  public FileDialogFilter Item(int index) { throw new NotImplementedException(); }
   /// <summary>
   /// Removes a filter from the collection.
   /// </summary>
@@ -29,12 +29,12 @@ public partial class FileDialogFilters: InteropCollection<FileDialogFilter>
   /// <summary>
   /// Adds a file filter to the collection.
   /// </summary>
-  /// <param name="Description">The `Description` parameter.</param>
-  /// <param name="Extensions">The `Extensions` parameter.</param>
-  /// <param name="Position">The `Position` parameter.</param>
+  /// <param name="description">The `Description` parameter.</param>
+  /// <param name="extensions">The `Extensions` parameter.</param>
+  /// <param name="position">The `Position` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.filedialogfilters.add?view=office-pia"/>
-  public FileDialogFilter Add(string Description, string Extensions, object Position) { throw new NotImplementedException(); }
+  public FileDialogFilter Add(string description, string extensions, object position) { throw new NotImplementedException(); }
 
   #endregion methods
 }

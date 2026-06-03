@@ -16,10 +16,10 @@ public interface IDiagramNodes: IInteropCollection<IDiagramNode>
 /// <summary>
   /// Returns a diagram node by index.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <returns>The result of the operation.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.diagramnodes.item?view=office-pia"/>
-  public IDiagramNode Item(object Index);
+  public IDiagramNode Item(object index);
   /// <summary>
   /// Selects all diagram nodes.
   /// </summary>

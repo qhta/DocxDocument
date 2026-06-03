@@ -13,14 +13,14 @@ public interface IHeadingStyles : IInteropObject, IInteropCollection<IHeadingSty
 /// <summary>
   /// Adds a heading style mapping to the collection.
   /// </summary>
-  /// <param name="Style">The style to map to a heading level.</param>
-  /// <param name="Level">The heading level associated with the style.</param>
+  /// <param name="style">The style to map to a heading level.</param>
+  /// <param name="level">The heading level associated with the style.</param>
   /// <returns>The created <see cref="IHeadingStyle"/> object.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.headingstyles.add?view=word-pia"/>
-  public IHeadingStyle Add(object Style, short Level);
+  public IHeadingStyle Add(object style, short level);
 
   #endregion methods
 }

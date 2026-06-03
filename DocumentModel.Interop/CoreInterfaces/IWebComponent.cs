@@ -44,9 +44,9 @@ public interface IWebComponent
 /// <summary>
   /// Invokes `SetPlaceHolderGraphic`.
   /// </summary>
-  /// <param name="PlaceHolderGraphic">The `PlaceHolderGraphic` parameter.</param>
+  /// <param name="placeHolderGraphic">The `PlaceHolderGraphic` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.webcomponent.setplaceholdergraphic?view=office-pia"/>
-  public void SetPlaceHolderGraphic(string PlaceHolderGraphic);
+  public void SetPlaceHolderGraphic(string placeHolderGraphic);
   /// <summary>
   /// Invokes `Commit`.
   /// </summary>

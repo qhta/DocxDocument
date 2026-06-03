@@ -59,10 +59,10 @@ public interface ICommandBarComboBox : ICommandBarControl
   /// <summary>
   /// Adds an item to the combo box list.
   /// </summary>
-  /// <param name="Text">The `Text` parameter.</param>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="text">The `Text` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarcombobox.additem?view=office-pia"/>
-  public void AddItem(string Text, object Index);
+  public void AddItem(string text, object index);
   /// <summary>
   /// Clears all items from the combo box list.
   /// </summary>
@@ -71,9 +71,9 @@ public interface ICommandBarComboBox : ICommandBarControl
   /// <summary>
   /// Removes an item from the combo box list.
   /// </summary>
-  /// <param name="Index">The `Index` parameter.</param>
+  /// <param name="index">The `Index` parameter.</param>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._commandbarcombobox.removeitem?view=office-pia"/>
-  public void RemoveItem(int Index);
+  public void RemoveItem(int index);
 
   #endregion methods
 }

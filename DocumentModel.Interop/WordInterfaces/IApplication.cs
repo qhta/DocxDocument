@@ -742,7 +742,7 @@ public interface IApplication : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.international?view=word-pia"/>
-  public object International(InternationalIndex Index);
+  public object International(InternationalIndex index);
 
   /// <summary>
   /// Returns a SynonymInfo object that contains information from the thesaurus on synonyms, antonyms, or related
@@ -752,7 +752,7 @@ public interface IApplication : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_synonyminfo?view=word-pia"/>
-  public ISynonymInfo ISynonymInfo(string Word, object LanguageID);
+  public ISynonymInfo ISynonymInfo(string word, object languageID);
 
   /// <summary>
   /// Returns a KeysBoundTo object that represents all the key combinations assigned to the specified item.
@@ -761,7 +761,7 @@ public interface IApplication : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_keysboundto?view=word-pia"/>
-  public IKeysBoundTo IKeysBoundTo(KeyCategory KeyCategory, string Command, object CommandParameter);
+  public IKeysBoundTo IKeysBoundTo(KeyCategory keyCategory, string command, object commandParameter);
 
   /// <summary>
   /// Determines if the specified variable that references an object is valid.
@@ -770,7 +770,7 @@ public interface IApplication : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_isobjectvalid?view=word-pia"/>
-  public bool IsObjectValid(object Object);
+  public bool IsObjectValid(object obj);
 
   /// <summary>
   /// Returns a FileDialog object which represents a single instance of a file dialog box.
@@ -779,7 +779,7 @@ public interface IApplication : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.get_filedialog?view=word-pia"/>
-  public Core.IFileDialog IFileDialog(Core.FileDialogType FileDialogType);
+  public Core.IFileDialog IFileDialog(Core.FileDialogType fileDialogType);
 
   /// <summary>
   /// Quits Microsoft Word and optionally saves or routes the open documents.
@@ -788,7 +788,7 @@ public interface IApplication : IInteropObject
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word._application.quit?view=word-pia"/>
-  public void Quit(object SaveChanges, object OriginalFormat, object RouteDocument);
+  public void Quit(object saveChanges, object originalFormat, object routeDocument);
 
   #endregion methods
 

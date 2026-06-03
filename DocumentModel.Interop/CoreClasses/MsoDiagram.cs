@@ -39,9 +39,9 @@ public partial class MsoDiagram: InteropObject
 /// <summary>
   /// Converts the diagram to another diagram type.
   /// </summary>
-  /// <param name="Type">The `Type` parameter.</param>
+  /// <param name="type">The `Type` parameter.</param>
   /// <seealso cref="http://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.imsodiagram.convert?view=office-pia"/>
-  public void Convert(DiagramType Type) { throw new NotImplementedException(); }
+  public void Convert(DiagramType type) { throw new NotImplementedException(); }
   /// <summary>
   /// Fits text within the diagram.
   /// </summary>

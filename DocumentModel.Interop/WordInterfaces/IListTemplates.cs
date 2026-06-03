@@ -13,14 +13,14 @@ public interface IListTemplates : IInteropObject, IInteropCollection<IListTempla
 /// <summary>
   /// Adds a list template to the list templates collection.
   /// </summary>
-  /// <param name="OutlineNumbered">Specifies whether the list template is outline numbered.</param>
-  /// <param name="Name">Specifies the name of the list template.</param>
+  /// <param name="outlineNumbered">Specifies whether the list template is outline numbered.</param>
+  /// <param name="name">Specifies the name of the list template.</param>
   /// <returns>The added list template.</returns>
   /// <remarks>
   /// Microsoft Learn API reference.
   /// </remarks>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.listtemplates.add?view=word-pia"/>
-  public IListTemplate Add(object OutlineNumbered, object Name);
+  public IListTemplate Add(object outlineNumbered, object name);
 
   #endregion methods
 }

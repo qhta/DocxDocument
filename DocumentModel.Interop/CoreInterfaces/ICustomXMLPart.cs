@@ -84,35 +84,35 @@ public interface ICustomXMLPart: IInteropObject
   /// Populates this custom XML part from an existing file.
   /// Returns <c>true</c> if the load succeeds.
   /// </summary>
-  /// <param name="FilePath">Path of the source XML file.</param>
+  /// <param name="filePath">Path of the source XML file.</param>
   /// <returns><c>true</c> when the part is loaded successfully; otherwise <c>false</c>.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.load?view=office-pia"/>
-  public bool Load(string FilePath);
+  public bool Load(string filePath);
 
   /// <summary>
   /// Populates this custom XML part from an XML string.
   /// Returns <c>true</c> if the load succeeds.
   /// </summary>
-  /// <param name="XML">The XML content to load.</param>
+  /// <param name="xML">The XML content to load.</param>
   /// <returns><c>true</c> when the XML is loaded successfully; otherwise <c>false</c>.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.loadxml?view=office-pia"/>
-  public bool LoadXML(string XML);
+  public bool LoadXML(string xML);
 
   /// <summary>
   /// Selects a collection of nodes from this custom XML part using an XPath expression.
   /// </summary>
-  /// <param name="XPath">The XPath expression.</param>
+  /// <param name="xPath">The XPath expression.</param>
   /// <returns>A collection of matching nodes.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.selectnodes?view=office-pia"/>
-  public ICustomXMLNodes SelectNodes(string XPath);
+  public ICustomXMLNodes SelectNodes(string xPath);
 
   /// <summary>
   /// Selects a single node in this custom XML part matching an XPath expression.
   /// </summary>
-  /// <param name="XPath">The XPath expression.</param>
+  /// <param name="xPath">The XPath expression.</param>
   /// <returns>The matching node, if found.</returns>
   /// <seealso cref="https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core._customxmlpart.selectsinglenode?view=office-pia"/>
-  public ICustomXMLNode SelectSingleNode(string XPath);
+  public ICustomXMLNode SelectSingleNode(string xPath);
 
   #endregion methods
 }
