@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Indicates the
-/// position of data labels relative Ito the data markers.
+/// position of data labels relative to the data markers.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xldatalabelposition?view=office-pia` for Office interop details.

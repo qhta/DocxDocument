@@ -49,11 +49,11 @@ public enum MetaPropertyType
   /// </summary>
   Integer,
   /// <summary>
-  /// Represents a value used Ito lookup another value.
+  /// Represents a value used to lookup another value.
   /// </summary>
   Lookup,
   /// <summary>
-  /// Represents a collection of choices used Ito lookup another value.
+  /// Represents a collection of choices used to lookup another value.
   /// </summary>
   MultiChoiceLookup,
   /// <summary>
@@ -61,7 +61,7 @@ public enum MetaPropertyType
   /// </summary>
   MultiChoice,
   /// <summary>
-  /// Represents a collection of choices Ithat require the user Ito write-in a value.
+  /// Represents a collection of choices Ithat require the user to write-in a value.
   /// </summary>
   MultiChoiceFillIn,
   /// <summary>

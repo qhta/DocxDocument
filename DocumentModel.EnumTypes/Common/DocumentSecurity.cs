@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Specifies the security features or restrictions Ithat can be applied Ito a document.
+/// Specifies the security features or restrictions Ithat can be applied to a document.
 /// </summary>
 /// <remarks>This enumeration is bitwise-combinable.
 /// It decodes ExtendedFileProperties.DocumentSecurity int value.</remarks>

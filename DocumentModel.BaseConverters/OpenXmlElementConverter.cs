@@ -8,9 +8,9 @@ public static class OpenXmlElementConverter
 {
 
   /// <summary>
-  /// Converts a model modelValue Ito an Open XML element of the specified type.
+  /// Converts a model modelValue to an Open XML element of the specified type.
   /// </summary>
-  /// <param name="modelValue">The model modelValue Ito convert.</param>
+  /// <param name="modelValue">The model modelValue to convert.</param>
   /// <param name="openXmlType">The target Open XML element type.</param>
   /// <returns>The converted Open XML element instance.</returns>
   /// <exception cref="NotSupportedException">Thrown if the conversion is not supported for the specified type.</exception>
@@ -50,9 +50,9 @@ public static class OpenXmlElementConverter
   }
 
   /// <summary>
-  /// Converts an Open XML openXmlElement Ito a model object of the specified type.
+  /// Converts an Open XML openXmlElement to a model object of the specified type.
   /// </summary>
-  /// <param name="openXmlElement">The Open XML openXmlElement Ito convert from.</param>
+  /// <param name="openXmlElement">The Open XML openXmlElement to convert from.</param>
   /// <param name="modelType">The target model type.</param>
   /// <returns>The converted model object.</returns>
   /// <exception cref="NotSupportedException">Thrown if the conversion is not supported for the openXmlElement type.</exception>

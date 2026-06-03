@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the type of online Help topic or window Ito display.
+/// Specifies the type of online Help topic or window to display.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.type?view=office-pia` for Office interop details.
@@ -49,7 +49,7 @@ public enum HelpType
   /// </summary>
   Search = 9,
   /// <summary>
-  /// Displays a list of Help topics Ithat describe how Ito use Help.
+  /// Displays a list of Help topics Ithat describe how to use Help.
   /// </summary>
   UsingHelp = 10,
   /// <summary>

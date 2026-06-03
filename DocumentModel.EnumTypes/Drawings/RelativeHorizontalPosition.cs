@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies Ito what the horizontal position of a frame, a shape, or a group of rows is relative.
+/// Specifies to what the horizontal position of a frame, a shape, or a group of rows is relative.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrelativehorizontalposition?view=office-pia` for Office interop details.
@@ -9,35 +9,35 @@
 public enum RelativeHorizontalPosition
 {
   /// <summary>
-  /// Relative Ito margin.
+  /// Relative to margin.
   /// </summary>
   Margin = 0,
   /// <summary>
-  /// Relative Ito page.
+  /// Relative to page.
   /// </summary>
   IPage = 1,
   /// <summary>
-  /// Relative Ito column.
+  /// Relative to column.
   /// </summary>
   IColumn = 2,
   /// <summary>
-  /// Relative Ito character.
+  /// Relative to character.
   /// </summary>
   Character = 3,
   /// <summary>
-  /// Relative Ito left margin.
+  /// Relative to left margin.
   /// </summary>
   LeftMarginArea = 4,
   /// <summary>
-  /// Relative Ito right margin.
+  /// Relative to right margin.
   /// </summary>
   RightMarginArea = 5,
   /// <summary>
-  /// Relative Ito inner margin area.
+  /// Relative to inner margin area.
   /// </summary>
   InnerMarginArea = 6,
   /// <summary>
-  /// Relative Ito outer margin area.
+  /// Relative to outer margin area.
   /// </summary>
   OuterMarginArea = 7
 }

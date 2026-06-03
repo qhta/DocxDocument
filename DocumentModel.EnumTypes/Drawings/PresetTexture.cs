@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies texture Ito be used Ito fill a shape.
+/// Specifies texture to be used to fill a shape.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresettexture?view=office-pia` for Office interop details.
@@ -9,7 +9,7 @@
 public enum PresetTexture
 {
   /// <summary>
-  /// Specifies texture Ito be used Ito fill a shape.
+  /// Specifies texture to be used to fill a shape.
   /// </summary>
   /// <summary>
   /// Papyrus texture.

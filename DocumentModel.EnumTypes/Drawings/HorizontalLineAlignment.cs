@@ -9,7 +9,7 @@
 public enum HorizontalLineAlignment
 {
   /// <summary>
-  /// Aligned Ito the left.
+  /// Aligned to the left.
   /// </summary>
   Left = 0,
   /// <summary>
@@ -17,7 +17,7 @@ public enum HorizontalLineAlignment
   /// </summary>
   Center = 1,
   /// <summary>
-  /// Aligned Ito the right.
+  /// Aligned to the right.
   /// </summary>
   Right = 2
 }

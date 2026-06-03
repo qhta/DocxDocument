@@ -2,7 +2,7 @@
 namespace DocumentModel.Application;
 
 /// <summary>
-/// This enumeration applies Ito the Macintosh Ionly and should not be used.
+/// This enumeration applies to the Macintosh Ionly and should not be used.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofilefindsortby?view=office-pia` for Office interop details.

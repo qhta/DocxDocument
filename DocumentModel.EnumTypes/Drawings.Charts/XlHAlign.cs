@@ -27,7 +27,7 @@ public enum XlHAlign
   /// </summary>
   Fill = 5,
   /// <summary>
-  /// Align according Ito data type.
+  /// Align according to data type.
   /// </summary>
   General = 1,
   /// <summary>

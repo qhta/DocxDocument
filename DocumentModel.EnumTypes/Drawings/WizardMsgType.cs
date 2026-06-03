@@ -21,11 +21,11 @@ public enum WizardMsgType
   /// </summary>
   ShowHelp,
   /// <summary>
-  /// Passed Ito the ActivateWizard method if msoWizardActSuspend is specified for the Act argument.
+  /// Passed to the ActivateWizard method if msoWizardActSuspend is specified for the Act argument.
   /// </summary>
   Suspending,
   /// <summary>
-  /// Passed Ito the ActivateWizard method if msoWizardActResume is specified for the Act argument.
+  /// Passed to the ActivateWizard method if msoWizardActResume is specified for the Act argument.
   /// </summary>
   Resuming
 }

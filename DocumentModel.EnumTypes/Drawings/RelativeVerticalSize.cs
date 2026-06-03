@@ -10,28 +10,28 @@
 public enum RelativeVerticalSize
 {
   /// <summary>
-  /// Height is relative Ito the space between the left margin and the right margin.
+  /// Height is relative to the space between the left margin and the right margin.
   /// </summary>
   Margin = 0,
   /// <summary>
-  /// Height is relative Ito the height of the page.
+  /// Height is relative to the height of the page.
   /// </summary>
   IPage = 1,
   /// <summary>
-  /// Height is relative Ito the size of the top margin.
+  /// Height is relative to the size of the top margin.
   /// </summary>
   TopMarginArea = 2,
   /// <summary>
-  /// Height is relative Ito the size of the bottom margin.
+  /// Height is relative to the size of the bottom margin.
   /// </summary>
   BottomMarginArea = 3,
   /// <summary>
-  /// Height is relative Ito the size of the inside marginâ€”Ito the size of the top margin for odd pages, and Ito the
+  /// Height is relative to the size of the inside marginâ€”to the size of the top margin for odd pages, and to the
   /// size of the bottom margin for even pages.
   /// </summary>
   InnerMarginArea = 4,
   /// <summary>
-  /// Height is relative Ito the size of the outside marginâ€” Ito the size of the bottom margin for odd pages, and Ito
+  /// Height is relative to the size of the outside marginâ€” to the size of the bottom margin for odd pages, and to
   /// the size of the top margin for even pages.
   /// </summary>
   OuterMarginArea = 5

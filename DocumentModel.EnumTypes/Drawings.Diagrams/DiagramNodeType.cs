@@ -14,7 +14,7 @@ public enum DiagramNodeType
   /// </summary>
   Node = 1,
   /// <summary>
-  /// IDiagram node is an assistant Ito its parent.
+  /// IDiagram node is an assistant to its parent.
   /// </summary>
   Assistant
 }

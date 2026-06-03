@@ -11,7 +11,7 @@ namespace DocumentModel.Drawings.Charts;
 public enum XlCategoryLabelLevel
 {
   /// <summary>
-  /// Set no category labels in the chart. Defaults Ito automatic indexed labels.
+  /// Set no category labels in the chart. Defaults to automatic indexed labels.
   /// </summary>
   None = -3,
   /// <summary>
@@ -19,7 +19,7 @@ public enum XlCategoryLabelLevel
   /// </summary>
   Custom,
   /// <summary>
-  /// Set category labels Ito all category label levels w/in range on the chart.
+  /// Set category labels to all category label levels w/in range on the chart.
   /// </summary>
   All
 }

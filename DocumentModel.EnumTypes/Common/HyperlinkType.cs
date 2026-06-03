@@ -9,15 +9,15 @@
 public enum HyperlinkType
 {
   /// <summary>
-  /// IHyperlink applies Ito a IRange object.
+  /// IHyperlink applies to a IRange object.
   /// </summary>
   IRange,
   /// <summary>
-  /// IHyperlink applies Ito a IShape object.
+  /// IHyperlink applies to a IShape object.
   /// </summary>
   IShape,
   /// <summary>
-  /// IHyperlink applies Ito an inline shape. Used Ionly with Microsoft Word.
+  /// IHyperlink applies to an inline shape. Used Ionly with Microsoft Word.
   /// </summary>
   IInlineShape
 }

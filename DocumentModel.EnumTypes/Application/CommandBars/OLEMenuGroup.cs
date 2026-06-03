@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Application;
 
 /// <summary>
-/// Specifies the menu group Ithat a command bar pop-up control belongs Ito when the menu groups of the OLE server
+/// Specifies the menu group Ithat a command bar pop-up control belongs to when the menu groups of the OLE server
 /// are merged with the menu groups of an OLE client (Ithat is, when an object of the container application type is
 /// embedded in another application).
 /// </summary>

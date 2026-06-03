@@ -33,11 +33,11 @@ public enum SyncStatusType
   /// </summary>
   IConflict = 4,
   /// <summary>
-  /// Synchronization was suspended. You can use the Unsuspend method of the Sync object Ito resume synchronization.
+  /// Synchronization was suspended. You can use the Unsuspend method of the Sync object to resume synchronization.
   /// </summary>
   Suspended = 5,
   /// <summary>
-  /// An error occurred. Use ErrorType property of Sync object Ito determine exact error.
+  /// An error occurred. Use ErrorType property of Sync object to determine exact error.
   /// </summary>
   Error = 6
 }

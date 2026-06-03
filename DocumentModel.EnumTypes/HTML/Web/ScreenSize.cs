@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies the ideal screen resolution Ito be used Ito view a document in a Web browser.
+/// Specifies the ideal screen resolution to be used to view a document in a Web browser.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoscreensize?view=office-pia` for Office interop details.

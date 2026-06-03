@@ -15,7 +15,7 @@ public enum XlBarShape
   /// </summary>
   Box,
   /// <summary>
-  /// Pyramid, coming Ito point at value.
+  /// Pyramid, coming to point at value.
   /// </summary>
   PyramidToPoint,
   /// <summary>
@@ -27,7 +27,7 @@ public enum XlBarShape
   /// </summary>
   Cylinder,
   /// <summary>
-  /// Cone, coming Ito point at value.
+  /// Cone, coming to point at value.
   /// </summary>
   ConeToPoint,
   /// <summary>

@@ -219,7 +219,7 @@ public abstract class UniversalMeasure : IComparable<UniversalMeasure>, IEquatab
       _value = decimalValue;
       return;
     }
-    if (Double.TryParse(str, CultureInfo.InvariantCulture, out var dblValue))
+    if (Double.TryParse(str, NumberStyles.Float, CultureInfo.InvariantCulture, out var dblValue))
     {
       _value = dblValue;
       return;

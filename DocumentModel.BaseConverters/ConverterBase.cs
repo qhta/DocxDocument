@@ -371,8 +371,11 @@ public static class ConverterBase
     var methods = sourceType.GetMethods(BindingFlags.Public | BindingFlags.Static)
       .Concat(targetType.GetMethods(BindingFlags.Public | BindingFlags.Static)).ToArray();
     var op = methods.FirstOrDefault(m =>
-      m.Name == "op_Implicit" && m.ReturnType == targetType && m.GetParameters() is [{ ParameterType: var p }] &&
-      p.IsAssignableFrom(sourceType));
+    {
+      var parameters = m.GetParameters();
+      return m.Name == "op_Implicit" && m.ReturnType == targetType && parameters.Length == 1 &&
+             parameters[0].ParameterType.IsAssignableFrom(sourceType);
+    });
     if (op != null)
     {
       result = op.Invoke(null, [source]);
@@ -402,8 +405,11 @@ public static class ConverterBase
     var methods = sourceType.GetMethods(BindingFlags.Public | BindingFlags.Static)
       .Concat(targetType.GetMethods(BindingFlags.Public | BindingFlags.Static)).ToArray();
     var op = methods.FirstOrDefault(m =>
-      m.Name == "op_Implicit" && m.ReturnType == targetType && m.GetParameters() is [{ ParameterType: var p }] &&
-      p.IsAssignableFrom(sourceType));
+    {
+      var parameters = m.GetParameters();
+      return m.Name == "op_Implicit" && m.ReturnType == targetType && parameters.Length == 1 &&
+             parameters[0].ParameterType.IsAssignableFrom(sourceType);
+    });
     if (op != null)
     {
       result = op.Invoke(null, [source]);

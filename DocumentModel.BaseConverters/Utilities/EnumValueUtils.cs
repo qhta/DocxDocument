@@ -1,16 +1,16 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// This static class contains extension operations Ito be performed on a OpenXmlLeafTextElement object.
+/// This static class contains extension operations to be performed on a OpenXmlLeafTextElement object.
 /// </summary>
 public static class EnumValueUtils
 {
   /// <summary>
-  /// Converts the specified OpenXml EnumValue wrapper Ito a target Enum type.
+  /// Converts the specified OpenXml EnumValue wrapper to a target Enum type.
   /// </summary>
   /// <typeparam name="EnumType">The target Enum type.</typeparam>
   /// <typeparam name="OpenXmlEnumType">The source OpenXml Enum type.</typeparam>
-  /// <param name="enumValue">The OpenXml EnumValue Ito convert.</param>
+  /// <param name="enumValue">The OpenXml EnumValue to convert.</param>
   /// <returns>The converted Enum value, or null if conversion fails.</returns>
   public static EnumType? EnumValueToEnumType<EnumType, OpenXmlEnumType>(this DX.EnumValue<OpenXmlEnumType> enumValue) where EnumType : struct
     where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
@@ -43,11 +43,11 @@ public static class EnumValueUtils
   }
 
   /// <summary>
-  /// Converts a standard Enum value Ito an OpenXml EnumValue wrapper.
+  /// Converts a standard Enum value to an OpenXml EnumValue wrapper.
   /// </summary>
   /// <typeparam name="EnumType">The source Enum type.</typeparam>
   /// <typeparam name="OpenXmlEnumType">The target OpenXml Enum type.</typeparam>
-  /// <param name="value">The Enum value Ito convert.</param>
+  /// <param name="value">The Enum value to convert.</param>
   /// <returns>A new OpenXml EnumValue containing the converted value, or null if conversion fails.</returns>
   public static DX.EnumValue<OpenXmlEnumType>? EnumTypeToEnumValue<EnumType, OpenXmlEnumType>(EnumType value) where EnumType : struct where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
   {
@@ -94,8 +94,8 @@ public static class EnumValueUtils
   /// <typeparam name="EnumType">The source Enum type.</typeparam>
   /// <typeparam name="OpenXmlEnumType">The target OpenXml Enum type expected by the property.</typeparam>
   /// <param name="element">The object containing the property.</param>
-  /// <param name="propName">The name of the property Ito set.</param>
-  /// <param name="value">The Enum value Ito set. If null, the default value is set.</param>
+  /// <param name="propName">The name of the property to set.</param>
+  /// <param name="value">The Enum value to set. If null, the default value is set.</param>
   /// <exception cref="ArgumentException">Thrown if the property is not found on the object.</exception>
   public static void SetEnumValue<EnumType, OpenXmlEnumType>(object element, string propName, EnumType? value) where EnumType : struct
   where OpenXmlEnumType : struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
@@ -117,8 +117,8 @@ public static class EnumValueUtils
   /// </summary>
   /// <typeparam name="EnumType">The source Enum type.</typeparam>
   /// <typeparam name="EnumType2">The underlying type of the OpenXmlSimpleValue.</typeparam>
-  /// <param name="element">The OpenXmlSimpleValue element Ito update.</param>
-  /// <param name="value">The Enum value Ito set.</param>
+  /// <param name="element">The OpenXmlSimpleValue element to update.</param>
+  /// <param name="value">The Enum value to set.</param>
   public static void SetSimpleEnumValue<EnumType, EnumType2>(this DX.OpenXmlSimpleValue<EnumType2> element, EnumType? value) where EnumType : struct
   where EnumType2 : struct
   {
@@ -134,9 +134,9 @@ public static class EnumValueUtils
 
   /// <summary>
   /// Gets all static public properties of the specified Enum type.
-  /// Enum type is expected Ito be OpenXml EnumValue type.
+  /// Enum type is expected to be OpenXml EnumValue type.
   /// </summary>
-  /// <param name="enumType">The Enum type Ito inspect.</param>
+  /// <param name="enumType">The Enum type to inspect.</param>
   /// <returns>An array of PropertyInfo objects representing the public static properties of the enum type.</returns>
   public static PropertyInfo[] GetEnumProperties(this Type enumType)
   {

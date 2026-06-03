@@ -12,11 +12,11 @@ public enum VerticalAnchor
   /// Specifies the vertical alignment of text in a text frame.
   /// </summary>
   /// <summary>
-  /// Aligns text Ito top of text frame.
+  /// Aligns text to top of text frame.
   /// </summary>
   Top = 1,
   /// <summary>
-  /// Anchors bottom of text string Ito current position, regardless of text resizing. When you resize text without
+  /// Anchors bottom of text string to current position, regardless of text resizing. When you resize text without
   /// baseline anchoring, text centers itself on previous position.
   /// </summary>
   TopBaseline = 2,
@@ -25,11 +25,11 @@ public enum VerticalAnchor
   /// </summary>
   Middle = 3,
   /// <summary>
-  /// Aligns text Ito bottom of text frame.
+  /// Aligns text to bottom of text frame.
   /// </summary>
   Bottom = 4,
   /// <summary>
-  /// Anchors bottom of text string Ito current position, regardless of text resizing. When you resize text without
+  /// Anchors bottom of text string to current position, regardless of text resizing. When you resize text without
   /// baseline anchoring, text centers itself on previous position.
   /// </summary>
   BottomBaseLine = 5

@@ -21,13 +21,13 @@ public enum LineStyle
   /// </summary>
   ThinThin = 2,
   /// <summary>
-  /// Thick line next Ito thin line. For horizontal lines, thick line is below thin line. For vertical lines, thick
-  /// line is Ito the right of the thin line.
+  /// Thick line next to thin line. For horizontal lines, thick line is below thin line. For vertical lines, thick
+  /// line is to the right of the thin line.
   /// </summary>
   ThinThick = 3,
   /// <summary>
-  /// Thick line next Ito thin line. For horizontal lines, thick line is above thin line. For vertical lines, thick
-  /// line is Ito the left of the thin line.
+  /// Thick line next to thin line. For horizontal lines, thick line is above thin line. For vertical lines, thick
+  /// line is to the left of the thin line.
   /// </summary>
   ThickThin = 4,
   /// <summary>

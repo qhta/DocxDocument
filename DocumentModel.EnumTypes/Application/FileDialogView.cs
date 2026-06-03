@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Application;
 
 /// <summary>
-/// Specifies the view presented Ito the user in a file dialog box.
+/// Specifies the view presented to the user in a file dialog box.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofiledialogview?view=office-pia` for Office interop details.

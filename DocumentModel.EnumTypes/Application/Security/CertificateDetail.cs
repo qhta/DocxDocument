@@ -13,7 +13,7 @@ public enum CertificateDetail
   /// </summary>
   Available,
   /// <summary>
-  /// The holder of a Private Key corresponding Ito a Public Key.
+  /// The holder of a Private Key corresponding to a Public Key.
   /// </summary>
   Subject,
   /// <summary>

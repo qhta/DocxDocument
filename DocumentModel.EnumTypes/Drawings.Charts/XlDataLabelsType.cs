@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies the type
-/// of data label Ito apply. The default is typically xlDataLabelsShowValue.
+/// of data label to apply. The default is typically xlDataLabelsShowValue.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xldatalabelstype?view=office-pia` for Office interop details.
@@ -31,7 +31,7 @@ public enum XlDataLabelsType
   /// </summary>
   LabelAndPercent = 5,
   /// <summary>
-  /// Show the size of the bubble in reference Ito the absolute value.
+  /// Show the size of the bubble in reference to the absolute value.
   /// </summary>
   BubbleSizes = 6
 }

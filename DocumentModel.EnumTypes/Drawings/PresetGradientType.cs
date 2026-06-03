@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies which predefined gradient Ito use Ito fill a shape.
+/// Specifies which predefined gradient to use to fill a shape.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetgradienttype?view=office-pia` for Office interop details.
@@ -9,7 +9,7 @@
 public enum PresetGradientType
 {
   /// <summary>
-  /// Specifies which predefined gradient Ito use Ito fill a shape.
+  /// Specifies which predefined gradient to use to fill a shape.
   /// </summary>
   /// <summary>
   /// Early Sunset gradient.

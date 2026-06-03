@@ -11,11 +11,11 @@ namespace DocumentModel.Drawings.Charts;
 public enum XlChartPictureType
 {
   /// <summary>
-  /// Picture is sized Ito a specified number of units and repeated the length of the bar.
+  /// Picture is sized to a specified number of units and repeated the length of the bar.
   /// </summary>
   StackScale = 3,
   /// <summary>
-  /// Picture is sized Ito repeat a maximum of 15 times in the longest stacked bar.
+  /// Picture is sized to repeat a maximum of 15 times in the longest stacked bar.
   /// </summary>
   Stack = 2,
   /// <summary>

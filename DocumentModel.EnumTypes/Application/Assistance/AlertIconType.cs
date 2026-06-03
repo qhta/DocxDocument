@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Application;
 
 /// <summary>
-/// Specifies which icon, if any, Ito display with an alert.
+/// Specifies which icon, if any, to display with an alert.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msoalerticontype?view=office-pia` for Office interop details.

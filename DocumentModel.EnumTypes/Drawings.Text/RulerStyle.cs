@@ -9,7 +9,7 @@
 public enum RulerStyle
 {
   /// <summary>
-  /// Adjusts the left edge of row or rows, preserving the width of all columns by shifting them Ito the left or
+  /// Adjusts the left edge of row or rows, preserving the width of all columns by shifting them to the left or
   /// right. This is the default value.
   /// </summary>
   None = 0,
@@ -25,7 +25,7 @@ public enum RulerStyle
   FirstColumn = 2,
   /// <summary>
   /// Adjusts the left edge of the first column, preserving the position of the right edge of the table by setting
-  /// the widths of all the cells in the specified row or rows Ito the same value.
+  /// the widths of all the cells in the specified row or rows to the same value.
   /// </summary>
   SameWidth = 3
 }

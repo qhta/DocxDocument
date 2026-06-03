@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Application;
 
 /// <summary>
-/// Specifies which version of a shared document Ito open alongside the currently open local version.
+/// Specifies which version of a shared document to open alongside the currently open local version.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msosyncversiontype?view=office-pia` for Office interop details.

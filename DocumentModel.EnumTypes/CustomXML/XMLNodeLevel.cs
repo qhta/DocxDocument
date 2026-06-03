@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// This object, member, or enumeration is deprecated and is not intended Ito be used in your code.
+/// This object, member, or enumeration is deprecated and is not intended to be used in your code.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.word.wdxmlnodelevel?view=office-pia` for Office interop details.
@@ -9,19 +9,19 @@
 public enum XMLNodeLevel
 {
   /// <summary>
-  /// This object, member, or enumeration is deprecated and is not intended Ito be used in your code.
+  /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   Inline = 0,
   /// <summary>
-  /// This object, member, or enumeration is deprecated and is not intended Ito be used in your code.
+  /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   IParagraph = 1,
   /// <summary>
-  /// This object, member, or enumeration is deprecated and is not intended Ito be used in your code.
+  /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   IRow = 2,
   /// <summary>
-  /// This object, member, or enumeration is deprecated and is not intended Ito be used in your code.
+  /// This object, member, or enumeration is deprecated and is not intended to be used in your code.
   /// </summary>
   ICell = 3
 }

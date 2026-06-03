@@ -33,11 +33,11 @@ public enum BarProtection
   /// </summary>
   ChangeDock = 0x10,
   /// <summary>
-  /// Command bar cannot be docked Ito the left or right.
+  /// Command bar cannot be docked to the left or right.
   /// </summary>
   VerticalDock = 0x20,
   /// <summary>
-  /// Command bar cannot be docked Ito the top or bottom.
+  /// Command bar cannot be docked to the top or bottom.
   /// </summary>
   HorizontalDock = 0x40
 }

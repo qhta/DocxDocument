@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the WdColors enumeration.
-/// Used Ito represent Open XML mapped options.
+/// Used to represent Open XML mapped options.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
 [OpenXmlEnumType(typeof(DXD.PresetColorValues))]
@@ -849,13 +849,13 @@ public enum WdColors: uint
   YellowGreen = 0x009ACD32,
 
   /// <summary>
-  /// Transparent color, not defined in Open XML standard, but used in Word Ito represent "no color". It is not a real color and should not be used for any other purpose.
+  /// Transparent color, not defined in Open XML standard, but used in Word to represent "no color". It is not a real color and should not be used for any other purpose.
   /// </summary>
   [OpenXmlEnumValue("Transparent")]
   Transparent = 0xFFFFFFFF,
   
   /// <summary>
-  /// Automatic color, not defined in Open XML standard, but used in Word Ito represent "automatic color". It is not a real color and should not be used for any other purpose.
+  /// Automatic color, not defined in Open XML standard, but used in Word to represent "automatic color". It is not a real color and should not be used for any other purpose.
   /// </summary>
   [OpenXmlEnumValue("Auto")]
   Auto = 0xFF000000,

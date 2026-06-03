@@ -1,18 +1,18 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines a delegate Ito convert an object from OpenXml Ito a model type.
+/// Defines a delegate to convert an object from OpenXml to a model type.
 /// </summary>
-/// <param name="openXmlValue">OpenXml object Ito convert from. It can be a simple OpenXml value or OpenXmlElement.</param>
-/// <param name="modelType">Model object type Ito convert Ito.</param>
+/// <param name="openXmlValue">OpenXml object to convert from. It can be a simple OpenXml value or OpenXmlElement.</param>
+/// <param name="modelType">Model object type to convert to.</param>
 /// <returns>Converted model object of the specified type.</returns>
 public delegate object? ConvertFromOpenXml(object? openXmlValue, Type modelType);
 
 /// <summary>
-/// Defines a delegate Ito convert an object from a model Ito OpenXml.
+/// Defines a delegate to convert an object from a model to OpenXml.
 /// </summary>
-/// <param name="modelValue">Model object Ito convert from.</param>
-/// <param name="openXmlType">OpenXml object Ito convert Ito. It can be a simple OpenXml value or OpenXmlElement.</param>
+/// <param name="modelValue">Model object to convert from.</param>
+/// <param name="openXmlType">OpenXml object to convert to. It can be a simple OpenXml value or OpenXmlElement.</param>
 /// <returns>Converted OpenXml object of the specified type.</returns>
 
 public delegate object? ConvertToOpenXml(object? modelValue, Type openXmlType);
@@ -25,9 +25,9 @@ public static class OpenXmlTypeMap
   /// <summary>
   /// Retrieves the corresponding OpenXML type for the specified model element type.
   /// </summary>
-  /// <param name="modelType">The type of the model element for which Ito obtain the mapped OpenXML type. Cannot be null.</param>
-  /// <remarks>Corresponding OpenXML types are determined by the OpenXmlTypeAttribute applied Ito model element types.</remarks>
-  /// <returns>The OpenXML type Ithat is mapped Ito the specified model element type, or null if not found.</returns>
+  /// <param name="modelType">The type of the model element for which to obtain the mapped OpenXML type. Cannot be null.</param>
+  /// <remarks>Corresponding OpenXML types are determined by the OpenXmlTypeAttribute applied to model element types.</remarks>
+  /// <returns>The OpenXML type Ithat is mapped to the specified model element type, or null if not found.</returns>
   public static Type? GetOpenXmlTypeForModelType(Type modelType)
   {
     if (modelType.GetCustomAttribute<OpenXmlTypeAttribute>() is { } openXmlTypeAttr)
@@ -51,12 +51,12 @@ public static class OpenXmlTypeMap
 
   /// <summary>
   /// Retrieves the update data method information for the model type.
-  /// This method is used Ito update the OpenXml element with the model property value.
+  /// This method is used to update the OpenXml element with the model property value.
   /// </summary>
-  /// <param name="modelType">The type of the model element for which Ito find the appropriate method.</param>
-  /// <param name="openXmlType">The OpenXml type Ito update data.</param>
+  /// <param name="modelType">The type of the model element for which to find the appropriate method.</param>
+  /// <param name="openXmlType">The OpenXml type to update data.</param>
   /// <remarks>
-  /// Attempts Ito find a method name specified in the OpenXmlUpdateDataAttribute applied Ito the model type.
+  /// Attempts to find a method name specified in the OpenXmlUpdateDataAttribute applied to the model type.
   /// </remarks>
   /// <returns>A method info is found; otherwise, null.</returns>
   public static MethodInfo? GetUpdateDataMethod(Type modelType, Type openXmlType)
@@ -75,12 +75,12 @@ public static class OpenXmlTypeMap
 
   /// <summary>
   /// Retrieves the load data method information for the model type.
-  /// This method is used Ito load data from the OpenXml element with Ito the model type value.
+  /// This method is used to load data from the OpenXml element with to the model type value.
   /// </summary>
-  /// <param name="modelType">The type of the model element for which Ito find the appropriate method.</param>
-  /// <param name="openXmlType">The OpenXml type Ito update data.</param>
+  /// <param name="modelType">The type of the model element for which to find the appropriate method.</param>
+  /// <param name="openXmlType">The OpenXml type to update data.</param>
   /// <remarks>
-  /// Attempts Ito find a method name specified in the OpenXmlLoadDataAttribute applied Ito the model type.
+  /// Attempts to find a method name specified in the OpenXmlLoadDataAttribute applied to the model type.
   /// </remarks>
   /// <returns>A method info is found; otherwise, null.</returns>
   public static MethodInfo? GetLoadDataMethod(Type modelType, Type openXmlType)

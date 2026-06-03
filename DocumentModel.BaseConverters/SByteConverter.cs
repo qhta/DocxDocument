@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods for SByte value Ito/from Open XML.
+/// Provides conversion methods for SByte value to/from Open XML.
 /// </summary>
 public static class SByteConverter
 {
@@ -38,9 +38,9 @@ public static class SByteConverter
   #region SByteValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml SByteValue Ito SByte.
+  /// Converts an OpenXml SByteValue to SByte.
   /// </summary>
-  /// <param name="SByteValue">The SByteValue Ito convert.</param>
+  /// <param name="SByteValue">The SByteValue to convert.</param>
   /// <returns>The SByte value, or null if the element has no content.</returns>
   public static SByte? ConvertFromSByteValue(DX.SByteValue? SByteValue)
   {
@@ -52,7 +52,7 @@ public static class SByteConverter
   /// <summary>
   /// Creates an OpenXml SByteValue from an SByte value.
   /// </summary>
-  /// <param name="value">The SByte value Ito convert.</param>
+  /// <param name="value">The SByte value to convert.</param>
   /// <returns>A new SByteValue, or null if the input is null.</returns>
   public static DX.SByteValue? ConvertToSByteValue(SByte? value)
   {
@@ -66,9 +66,9 @@ public static class SByteConverter
   #region Int16Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int16Value Ito SByte.
+  /// Converts an OpenXml Int16Value to SByte.
   /// </summary>
-  /// <param name="int16Value">The Int16Value Ito convert.</param>
+  /// <param name="int16Value">The Int16Value to convert.</param>
   /// <returns>The SByte int16Value, or null if the element has no content.</returns>
   public static SByte? ConvertFromInt16Value(DX.Int16Value? int16Value)
   {
@@ -82,7 +82,7 @@ public static class SByteConverter
   /// <summary>
   /// Creates an OpenXml Int16Value from an SByte value.
   /// </summary>
-  /// <param name="value">The SByte value Ito convert.</param>
+  /// <param name="value">The SByte value to convert.</param>
   /// <returns>A new Int16Value, or null if the input is null.</returns>
   public static DX.Int16Value? ConvertToInt16Value(SByte? value)
   {
@@ -96,9 +96,9 @@ public static class SByteConverter
   #region Int32Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int32Value Ito SByte.
+  /// Converts an OpenXml Int32Value to SByte.
   /// </summary>
-  /// <param name="Int32Value">The Int32Value Ito convert.</param>
+  /// <param name="Int32Value">The Int32Value to convert.</param>
   /// <returns>The SByte value, or null if the element has no content.</returns>
   public static SByte? ConvertFromInt32Value(DX.Int32Value? Int32Value)
   {
@@ -112,7 +112,7 @@ public static class SByteConverter
   /// <summary>
   /// Creates an OpenXml Int32Value from an SByte value.
   /// </summary>
-  /// <param name="value">The SByte value Ito convert.</param>
+  /// <param name="value">The SByte value to convert.</param>
   /// <returns>A new Int32Value, or null if the input is null.</returns>
   public static DX.Int32Value? ConvertToInt32Value(SByte? value)
   {
@@ -126,9 +126,9 @@ public static class SByteConverter
   #region Int64Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int64Value Ito SByte.
+  /// Converts an OpenXml Int64Value to SByte.
   /// </summary>
-  /// <param name="Int64Value">The Int64Value Ito convert.</param>
+  /// <param name="Int64Value">The Int64Value to convert.</param>
   /// <returns>The SByte value, or null if the element has no content.</returns>
   public static SByte? ConvertFromInt64Value(DX.Int64Value? Int64Value)
   {
@@ -142,7 +142,7 @@ public static class SByteConverter
   /// <summary>
   /// Creates an OpenXml Int64Value from an SByte value.
   /// </summary>
-  /// <param name="value">The SByte value Ito convert.</param>
+  /// <param name="value">The SByte value to convert.</param>
   /// <returns>A new Int64Value, or null if the input is null.</returns>
   public static DX.Int64Value? ConvertToInt64Value(SByte? value)
   {
@@ -156,9 +156,9 @@ public static class SByteConverter
   #region IntegerValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml IntegerValue Ito SByte.
+  /// Converts an OpenXml IntegerValue to SByte.
   /// </summary>
-  /// <param name="IntegerValue">The IntegerValue Ito convert.</param>
+  /// <param name="IntegerValue">The IntegerValue to convert.</param>
   /// <returns>The SByte value, or null if the element has no content.</returns>
   public static SByte? ConvertFromIntegerValue(DX.IntegerValue? IntegerValue)
   {
@@ -172,7 +172,7 @@ public static class SByteConverter
   /// <summary>
   /// Creates an OpenXml IntegerValue from an SByte value.
   /// </summary>
-  /// <param name="value">The SByte value Ito convert.</param>
+  /// <param name="value">The SByte value to convert.</param>
   /// <returns>A new IntegerValue, or null if the input is null.</returns>
   public static DX.IntegerValue? ConvertToIntegerValue(SByte? value)
   {
@@ -186,9 +186,9 @@ public static class SByteConverter
   #region ByteValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml ByteValue Ito SByte.
+  /// Converts an OpenXml ByteValue to SByte.
   /// </summary>
-  /// <param name="ByteValue">The ByteValue Ito convert.</param>
+  /// <param name="ByteValue">The ByteValue to convert.</param>
   /// <returns>The SByte value, or null if the element has no content.</returns>
   public static SByte? ConvertFromByteValue(DX.ByteValue? ByteValue)
   {
@@ -201,7 +201,7 @@ public static class SByteConverter
   /// <summary>
   /// Creates an OpenXml ByteValue from an SByte value.
   /// </summary>
-  /// <param name="value">The SByte value Ito convert.</param>
+  /// <param name="value">The SByte value to convert.</param>
   /// <returns>A new ByteValue, or null if the input is null.</returns>
   public static DX.ByteValue? ConvertToByteValue(SByte? value)
   {
@@ -217,9 +217,9 @@ public static class SByteConverter
   #region UInt16Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml UInt16Value Ito SByte.
+  /// Converts an OpenXml UInt16Value to SByte.
   /// </summary>
-  /// <param name="UInt16Value">The UInt16Value Ito convert.</param>
+  /// <param name="UInt16Value">The UInt16Value to convert.</param>
   /// <returns>The SByte value, or null if the element has no content.</returns>
   public static SByte? ConvertFromUInt16Value(DX.UInt16Value? UInt16Value)
   {
@@ -232,7 +232,7 @@ public static class SByteConverter
   /// <summary>
   /// Creates an OpenXml UInt16Value from an SByte value.
   /// </summary>
-  /// <param name="value">The SByte value Ito convert.</param>
+  /// <param name="value">The SByte value to convert.</param>
   /// <returns>A new UInt16Value, or null if the input is null.</returns>
   public static DX.UInt16Value? ConvertToUInt16Value(SByte? value)
   {
@@ -248,9 +248,9 @@ public static class SByteConverter
   #region UInt32Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml UInt32Value Ito SByte.
+  /// Converts an OpenXml UInt32Value to SByte.
   /// </summary>
-  /// <param name="UInt32Value">The UInt32Value Ito convert.</param>
+  /// <param name="UInt32Value">The UInt32Value to convert.</param>
   /// <returns>The SByte value, or null if the element has no content.</returns>
   public static SByte? ConvertFromUInt32Value(DX.UInt32Value? UInt32Value)
   {
@@ -264,7 +264,7 @@ public static class SByteConverter
   /// <summary>
   /// Creates an OpenXml UInt32Value from an UInt32 value.
   /// </summary>
-  /// <param name="value">The UInt32 value Ito convert.</param>
+  /// <param name="value">The UInt32 value to convert.</param>
   /// <returns>A new UInt32Value, or null if the input is null.</returns>
   public static DX.UInt32Value? ConvertToUInt32Value(SByte? value)
   {
@@ -279,9 +279,9 @@ public static class SByteConverter
   #region UInt64Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml UInt64Value Ito SByte.
+  /// Converts an OpenXml UInt64Value to SByte.
   /// </summary>
-  /// <param name="UInt64Value">The UInt64Value Ito convert.</param>
+  /// <param name="UInt64Value">The UInt64Value to convert.</param>
   /// <returns>The SByte value, or null if the element has no content.</returns>
   public static SByte? ConvertFromUInt64Value(DX.UInt64Value? UInt64Value)
   {
@@ -295,7 +295,7 @@ public static class SByteConverter
   /// <summary>
   /// Creates an OpenXml UInt64Value from an SByte value.
   /// </summary>
-  /// <param name="value">The SByte value Ito convert.</param>
+  /// <param name="value">The SByte value to convert.</param>
   /// <returns>A new UInt64Value, or null if the input is null.</returns>
   public static DX.UInt64Value? ConvertToUInt64Value(SByte? value)
   {
@@ -312,9 +312,9 @@ public static class SByteConverter
   #region StringValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml StringValue Ito SByte.
+  /// Converts an OpenXml StringValue to SByte.
   /// </summary>
-  /// <param name="StringValue">The StringValue Ito convert.</param>
+  /// <param name="StringValue">The StringValue to convert.</param>
   /// <returns>The SByte value, or null if the element has no content.</returns>
   public static SByte? ConvertFromStringValue(DX.StringValue? StringValue)
   {
@@ -330,7 +330,7 @@ public static class SByteConverter
   /// <summary>
   /// Creates an OpenXml StringValue from an SByte value.
   /// </summary>
-  /// <param name="value">The SByte value Ito convert.</param>
+  /// <param name="value">The SByte value to convert.</param>
   /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   public static DX.StringValue? ConvertToStringValue(SByte? value, Type targetType)
@@ -348,10 +348,10 @@ public static class SByteConverter
   #region String conversion.
 
   /// <summary>
-  /// Converts the specified string representation of a number Ito its 16-bit signed integer equivalent.
+  /// Converts the specified string representation of a number to its 16-bit signed integer equivalent.
   /// </summary>
-  /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A 16-bit signed integer equivalent Ito the number contained in the input string, or null if the input is null or
+  /// <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
+  /// <returns>A 16-bit signed integer equivalent to the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static SByte? ConvertFromString(string? value)
   {
@@ -363,9 +363,9 @@ public static class SByteConverter
   }
 
   /// <summary>
-  /// Converts a nullable 16-bit integer value Ito its string representation.
+  /// Converts a nullable 16-bit integer value to its string representation.
   /// </summary>
-  /// <param name="value">The nullable 16-bit integer value Ito convert. If null, the method returns null.</param>
+  /// <param name="value">The nullable 16-bit integer value to convert. If null, the method returns null.</param>
   /// <returns>A string representation of the specified value, or null if the value is null.</returns>
   private static String? ConvertToString(SByte? value)
   {
@@ -380,9 +380,9 @@ public static class SByteConverter
   #region OpenXmlLeafTextElement conversion.
 
   /// <summary>
-  /// Converts an OpenXml OpenXmlLeafTextElement Ito SByte.
+  /// Converts an OpenXml OpenXmlLeafTextElement to SByte.
   /// </summary>
-  /// <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement Ito convert.</param>
+  /// <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
   /// <returns>The SByte value, or null if the element has no content.</returns>
   public static SByte? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? OpenXmlLeafTextElement)
   {
@@ -398,7 +398,7 @@ public static class SByteConverter
   /// <summary>
   /// Creates an OpenXml OpenXmlLeafTextElement from an SByte value.
   /// </summary>
-  /// <param name="value">The SByte value Ito convert.</param>
+  /// <param name="value">The SByte value to convert.</param>
   /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(SByte? value, Type targetType)
@@ -416,9 +416,9 @@ public static class SByteConverter
   #region OpenXmlLeafElement conversion.
 
   /// <summary>
-  /// Converts an OpenXml OpenXmlLeafElement Ito SByte.
+  /// Converts an OpenXml OpenXmlLeafElement to SByte.
   /// </summary>
-  /// <param name="OpenXmlLeafElement">The OpenXmlLeafElement Ito convert.</param>
+  /// <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
   /// <returns>The SByte value, or null if the element has no content.</returns>
   public static SByte? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? OpenXmlLeafElement)
   {
@@ -442,7 +442,7 @@ public static class SByteConverter
   /// <summary>
   /// Creates an OpenXml OpenXmlLeafElement from an SByte value.
   /// </summary>
-  /// <param name="value">The SByte value Ito convert.</param>
+  /// <param name="value">The SByte value to convert.</param>
   /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(SByte? value, Type targetType)
@@ -469,9 +469,9 @@ public static class SByteConverter
   #region HexBinaryValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml HexBinaryValue Ito SByte.
+  /// Converts an OpenXml HexBinaryValue to SByte.
   /// </summary>
-  /// <param name="HexBinaryValue">The HexBinaryValue Ito convert.</param>
+  /// <param name="HexBinaryValue">The HexBinaryValue to convert.</param>
   /// <returns>The SByte value, or null if the element has no content.</returns>
   private static SByte? ConvertFromHexBinaryValue(DX.HexBinaryValue? HexBinaryValue)
   {
@@ -479,7 +479,7 @@ public static class SByteConverter
 
     var text = HexBinaryValue.Value;
     if (!SByte.TryParse(text, NumberStyles.HexNumber, null, out var result))
-      throw new InvalidOperationException($"Conversion of {text} Ito SByte failed.");
+      throw new InvalidOperationException($"Conversion of {text} to SByte failed.");
 
     return result;
   }
@@ -487,7 +487,7 @@ public static class SByteConverter
   /// <summary>
   /// Creates an OpenXml HexBinaryValue from an SByte value.
   /// </summary>
-  /// <param name="value">The SByte value Ito convert.</param>
+  /// <param name="value">The SByte value to convert.</param>
   /// <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
   /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
   private static DX.HexBinaryValue? ConvertToHexBinaryValue(SByte? value, Type targetType)
@@ -506,10 +506,10 @@ public static class SByteConverter
   #region Generic OpenXml conversion methods
 
   /// <summary>
-  /// Converts a value Ito a specified target type.
+  /// Converts a value to a specified target type.
   /// </summary>
-  /// <param name="value">The value Ito convert.</param>
-  /// <param name="targetType">The target type Ito convert Ito.</param>
+  /// <param name="value">The value to convert.</param>
+  /// <param name="targetType">The target type to convert to.</param>
   /// <returns>The converted value, or null if the element has no content.</returns>
   /// <exception cref="InvalidOperationException">Thrown if the conversion is not supported.</exception>
   public static object? ConvertTo(SByte? value, Type targetType)
@@ -518,11 +518,11 @@ public static class SByteConverter
   }
 
   /// <summary>
-  /// Converts an Open XML value Ito a nullable SByte, if possible.
+  /// Converts an Open XML value to a nullable SByte, if possible.
   /// </summary>
-  /// <remarks>If value is a StringValue, the method attempts Ito parse its contents as an SByte integer. If
+  /// <remarks>If value is a StringValue, the method attempts to parse its contents as an SByte integer. If
   /// parsing fails, the method returns null.</remarks>
-  /// <param name="value">The value Ito convert. Supported types include SByteValue, ByteValue, SByteValue, USByteValue, SByteValue,
+  /// <param name="value">The value to convert. Supported types include SByteValue, ByteValue, SByteValue, USByteValue, SByteValue,
   /// USByteValue, USByteValue, and StringValue. May be null.</param>
   /// <returns>An SByte representation of the input value, or null if the input is null or cannot be converted.</returns>
   /// <exception cref="InvalidOperationException">Thrown if the type of value is not supported for conversion.</exception>

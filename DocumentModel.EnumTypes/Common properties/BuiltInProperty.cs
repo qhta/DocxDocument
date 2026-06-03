@@ -57,7 +57,7 @@ public enum BuiltInProperty
   /// </summary>
   TimeLastSaved = 12,
   /// <summary>
-  /// Number of edits Ito VBA project.
+  /// Number of edits to VBA project.
   /// </summary>
   VBATotalEdit = 13,
   /// <summary>

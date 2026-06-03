@@ -28,7 +28,7 @@ public enum TextChangeCase
   /// </summary>
   Title,
   /// <summary>
-  /// Indicates Ithat lowercase text should be converted Ito uppercase and Ithat uppercase text should be converted Ito
+  /// Indicates Ithat lowercase text should be converted to uppercase and Ithat uppercase text should be converted to
   /// lowercase text.
   /// </summary>
   Toggle

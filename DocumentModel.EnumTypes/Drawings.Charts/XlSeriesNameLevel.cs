@@ -11,7 +11,7 @@ namespace DocumentModel.Drawings.Charts;
 public enum XlSeriesNameLevel
 {
   /// <summary>
-  /// Set no category labels in the chart; instead default Ito automatic indexed labels.
+  /// Set no category labels in the chart; instead default to automatic indexed labels.
   /// </summary>
   None = -3,
   /// <summary>
@@ -19,7 +19,7 @@ public enum XlSeriesNameLevel
   /// </summary>
   Custom,
   /// <summary>
-  /// Set series names Ito all series name levels w/in range on the chart.
+  /// Set series names to all series name levels w/in range on the chart.
   /// </summary>
   All
 }

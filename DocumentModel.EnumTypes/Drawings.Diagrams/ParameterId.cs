@@ -139,22 +139,22 @@ public enum ParameterId
   [OpenXmlEnumValue("TextAnchorVerticalWithChildren")]
   TextAnchorVerticalWithChildren,
   /// <summary>
-  ///   Parent Text Left-Ito-Right Alignment.
+  ///   Parent Text Left-to-Right Alignment.
   /// </summary>
   [OpenXmlEnumValue("ParentTextLeftToRightAlignment")]
   ParentTextLeftToRightAlignment,
   /// <summary>
-  ///   Parent Text Right-Ito-Left Alignment.
+  ///   Parent Text Right-to-Left Alignment.
   /// </summary>
   [OpenXmlEnumValue("ParentTextRightToLeftAlignment")]
   ParentTextRightToLeftAlignment,
   /// <summary>
-  ///   IShape Text Left-Ito-Right Alignment.
+  ///   IShape Text Left-to-Right Alignment.
   /// </summary>
   [OpenXmlEnumValue("ShapeTextLeftToRightAlignment")]
   ShapeTextLeftToRightAlignment,
   /// <summary>
-  ///   IShape Text Right-Ito-Left Alignment.
+  ///   IShape Text Right-to-Left Alignment.
   /// </summary>
   [OpenXmlEnumValue("ShapeTextRightToLeftAlignment")]
   ShapeTextRightToLeftAlignment,

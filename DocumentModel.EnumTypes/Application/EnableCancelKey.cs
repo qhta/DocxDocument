@@ -13,7 +13,7 @@ public enum EnableCancelKey
   /// </summary>
   Disabled = 0,
   /// <summary>
-  /// Allows a macro Ito be interrupted by CTRL+BREAK.
+  /// Allows a macro to be interrupted by CTRL+BREAK.
   /// </summary>
   Interrupt = 1
 }

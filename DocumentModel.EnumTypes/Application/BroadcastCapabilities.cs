@@ -17,7 +17,7 @@ public enum BroadcastCapabilities
   /// </summary>
   SupportsMeetingNotes = 2,
   /// <summary>
-  /// The presenters and attendees can make updates Ito the file during the broadcast.
+  /// The presenters and attendees can make updates to the file during the broadcast.
   /// </summary>
   SupportsUpdateDoc = 4
 }

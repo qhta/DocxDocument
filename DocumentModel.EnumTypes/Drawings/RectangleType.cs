@@ -30,7 +30,7 @@ public enum RectangleType
   /// </summary>
   PageBorderRectangle = 4,
   /// <summary>
-  /// Represents a region corresponding Ito a line Ithat separates columns.
+  /// Represents a region corresponding to a line Ithat separates columns.
   /// </summary>
   LineBetweenColumnRectangle = 5,
   /// <summary>
@@ -52,7 +52,7 @@ public enum RectangleType
   /// </summary>
   ReadingModeNavigation = 9,
   /// <summary>
-  /// Represents space occupied by the Go button used Ito find matching pairs of tracked moves in a document.
+  /// Represents space occupied by the Go button used to find matching pairs of tracked moves in a document.
   /// </summary>
   MarkupRectangleMoveMatch = 10,
   /// <summary>

@@ -7,16 +7,16 @@
 [JsonConverter(typeof(StringEnumConverter))]
 public enum BaselineAlignment
 {
-  /// <summary>Align Ito baseline</summary>
+  /// <summary>Align to baseline</summary>
   [OpenXmlEnumValue(nameof(DXW.VerticalTextAlignmentValues.Baseline))]
   Baseline = 0,
-  /// <summary>Align Ito top</summary>
+  /// <summary>Align to top</summary>
   [OpenXmlEnumValue(nameof(DXW.VerticalTextAlignmentValues.Top))]
   Top,
-  /// <summary>Align Ito center</summary>
+  /// <summary>Align to center</summary>
   [OpenXmlEnumValue(nameof(DXW.VerticalTextAlignmentValues.Center))]
   Center,
-  /// <summary>Align Ito bottom according Ito the Far East font standards.</summary>
+  /// <summary>Align to bottom according to the Far East font standards.</summary>
   [OpenXmlEnumValue(nameof(DXW.VerticalTextAlignmentValues.Bottom))]
   Bottom,
   /// <summary>Automatic alignment</summary>

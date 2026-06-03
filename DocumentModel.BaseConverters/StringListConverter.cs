@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides helper methods for converting StringList values Ito and from OpenXml.
+/// Provides helper methods for converting StringList values to and from OpenXml.
 /// </summary>
 public static class StringListConverter
 {
@@ -31,7 +31,7 @@ public static class StringListConverter
   /// <summary>
   /// Retrieves the value of a String as a nullable StringList.
   /// </summary>
-  /// <param name="element">The String Ito convert.</param>
+  /// <param name="element">The String to convert.</param>
   /// <returns>The StringList value or null if the element is null.</returns>
   public static StringList? ConvertFromString(String? element)
   {
@@ -58,7 +58,7 @@ public static class StringListConverter
   /// <summary>
   /// Retrieves the value of a StringValue as a nullable StringList.
   /// </summary>
-  /// <param name="element">The StringValue Ito convert.</param>
+  /// <param name="element">The StringValue to convert.</param>
   /// <returns>The StringList value or null if the element is null.</returns>
   public static StringList? ConvertFromStringValue(DX.StringValue? element)
   {
@@ -100,7 +100,7 @@ public static class StringListConverter
   /// <summary>
   /// Creates an instance of StringType and sets its Val property.
   /// </summary>
-  /// <param name="value">The StringList value Ito set.</param>
+  /// <param name="value">The StringList value to set.</param>
   /// <param name="targetType">The target type for the Icreated StringType instance. Must be a subclass of StringType.</param>
   /// <returns>Created StringType instance or null if element is null.</returns>
   public static DXW.StringType? ConvertToStringType(StringList? value, Type targetType)
@@ -132,7 +132,7 @@ public static class StringListConverter
   /// <summary>
   /// Creates an OpenXmlLeafTextElement and sets its value or text property.
   /// </summary>
-  /// <param name="value">The StringList value Ito set.</param>
+  /// <param name="value">The StringList value to set.</param>
   /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(StringList? value, Type targetType)
@@ -169,7 +169,7 @@ public static class StringListConverter
   /// <summary>
   /// Creates an OpenXmlLeafElement and sets its value or text property.
   /// </summary>
-  /// <param name="value">The StringList value Ito set.</param>
+  /// <param name="value">The StringList value to set.</param>
   /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(StringList? value, Type targetType)
@@ -209,7 +209,7 @@ public static class StringListConverter
   /// <summary>
   /// Creates an OpenXml EnumValue and sets its value or text property.
   /// </summary>
-  /// <param name="value">The StringList value Ito set.</param>
+  /// <param name="value">The StringList value to set.</param>
   /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXml EnumValue.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlSimpleType? CreateOpenXmlEnumValue(StringList? value, Type targetType)
@@ -230,10 +230,10 @@ public static class StringListConverter
   #region Generic OpenXml conversion methods
 
   /// <summary>
-  /// Converts an StringList value Ito the specified target type using standard type conversion.
+  /// Converts an StringList value to the specified target type using standard type conversion.
   /// </summary>
-  /// <param name="value">The StringList value Ito convert.</param>
-  /// <param name="targetType">The target type Ito convert Ito.</param>
+  /// <param name="value">The StringList value to convert.</param>
+  /// <param name="targetType">The target type to convert to.</param>
   /// <returns>The converted value, or null if the input is null.</returns>
   /// <exception cref="NotSupportedException">Raised when the target type is not supported.</exception>
   public static object? ConvertTo(StringList? value, Type targetType)
@@ -242,12 +242,12 @@ public static class StringListConverter
   }
 
   /// <summary>
-  /// Converts the specified value Ito a nullable 32-bit integer, if a supported conversion exists.
+  /// Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
   /// </summary>
-  /// <param name="value">The value Ito convert Ito an <see cref="StringList"/>. Can be <see langword="null"/>.</param>
+  /// <param name="value">The value to convert to an <see cref="StringList"/>. Can be <see langword="null"/>.</param>
   /// <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
   /// is <see langword="null"/>.</returns>
-  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> Ito <see cref="StringList"/> is not supported.</exception>
+  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="StringList"/> is not supported.</exception>
   public static StringList? ConvertFrom(object? value)
   {
     return (StringList?)ConverterBase.ConvertFrom(value, typeof(StringList), ConversionFromMap);

@@ -9,11 +9,11 @@
 public enum ReadingOrder
 {
   /// <summary>
-  /// Right-Ito-left reading order.
+  /// Right-to-left reading order.
   /// </summary>
   Rtl = 0,
   /// <summary>
-  /// Left-Ito-right reading order.
+  /// Left-to-right reading order.
   /// </summary>
   Ltr = 1
 }

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Specifies the document encoding (code page or character set) for the Web browser Ito use when a user views a
+/// Specifies the document encoding (code page or character set) for the Web browser to use when a user views a
 /// saved document.
 /// </summary>
 /// <remarks>
@@ -74,35 +74,35 @@ public enum Encoding
   /// </summary>
   Vietnamese = 1258,
   /// <summary>
-  /// Web browser auto- detects type of encoding Ito use.
+  /// Web browser auto- detects type of encoding to use.
   /// </summary>
   AutoDetect = 50001,
   /// <summary>
-  /// Web browser auto- detects type of Japanese encoding Ito use.
+  /// Web browser auto- detects type of Japanese encoding to use.
   /// </summary>
   JapaneseAutoDetect = 50932,
   /// <summary>
-  /// Web browser auto- detects type of Simplified Chinese encoding Ito use.
+  /// Web browser auto- detects type of Simplified Chinese encoding to use.
   /// </summary>
   SimplifiedChineseAutoDetect = 50936,
   /// <summary>
-  /// Web browser auto- detects type of Korean encoding Ito use.
+  /// Web browser auto- detects type of Korean encoding to use.
   /// </summary>
   KoreanAutoDetect = 50949,
   /// <summary>
-  /// Web browser auto- detects type of Traditional Chinese encoding Ito use.
+  /// Web browser auto- detects type of Traditional Chinese encoding to use.
   /// </summary>
   TraditionalChineseAutoDetect = 50950,
   /// <summary>
-  /// Web browser auto- detects type of Cyrillic encoding Ito use.
+  /// Web browser auto- detects type of Cyrillic encoding to use.
   /// </summary>
   CyrillicAutoDetect = 51251,
   /// <summary>
-  /// Web browser auto- detects type of Greek encoding Ito use.
+  /// Web browser auto- detects type of Greek encoding to use.
   /// </summary>
   GreekAutoDetect = 51253,
   /// <summary>
-  /// Web browser auto- detects type of Arabic encoding Ito use.
+  /// Web browser auto- detects type of Arabic encoding to use.
   /// </summary>
   ArabicAutoDetect = 51256,
   /// <summary>

@@ -24,15 +24,15 @@ public enum TextEffectAlignment
   /// </summary>
   Right = 3,
   /// <summary>
-  /// Text is justified. Spacing between letters may be adjusted Ito justify text.
+  /// Text is justified. Spacing between letters may be adjusted to justify text.
   /// </summary>
   LetterJustify = 4,
   /// <summary>
-  /// Text is justified. Spacing between words (but not letters) may be adjusted Ito justify text.
+  /// Text is justified. Spacing between words (but not letters) may be adjusted to justify text.
   /// </summary>
   WordJustify = 5,
   /// <summary>
-  /// Text is justified. Letters may be stretched Ito justify text.
+  /// Text is justified. Letters may be stretched to justify text.
   /// </summary>
   StretchJustify = 6
 }

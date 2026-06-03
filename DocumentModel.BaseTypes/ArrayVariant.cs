@@ -278,7 +278,7 @@ public partial class ArrayVariant : Variant, ICollection<object?>, IEquatable<Ar
   public void Clear()
   {
     if (_items != null)
-      Array.Clear(_items);
+      Array.Clear(_items, 0, _items.Length);
   }
 
   /// <summary>

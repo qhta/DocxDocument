@@ -10,11 +10,11 @@ public enum CustomXMLValidationErrorType
 {
   /// <summary>
   /// Specifies Ithat where there is a non-empty schema collection available for the custom XML part and validation
-  /// is in effect, any changes Ito the part will cause validation errors.
+  /// is in effect, any changes to the part will cause validation errors.
   /// </summary>
   SchemaGenerated,
   /// <summary>
-  /// Specifies Ithat the error will clear itself whenever any change is made Ito the node it is bound Ito.
+  /// Specifies Ithat the error will clear itself whenever any change is made to the node it is bound to.
   /// </summary>
   AutomaticallyCleared,
   /// <summary>

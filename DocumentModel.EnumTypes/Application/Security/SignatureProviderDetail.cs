@@ -13,7 +13,7 @@ public enum SignatureProviderDetail
   /// </summary>
   Url,
   /// <summary>
-  /// Hash algorithm used Ito hash the data in the file.
+  /// Hash algorithm used to hash the data in the file.
   /// </summary>
   HashAlgorithm,
   /// <summary>

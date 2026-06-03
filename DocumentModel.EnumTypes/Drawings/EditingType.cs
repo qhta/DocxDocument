@@ -9,7 +9,7 @@
 public enum EditingType
 {
   /// <summary>
-  /// Editing type is appropriate Ito the segments being connected.
+  /// Editing type is appropriate to the segments being connected.
   /// </summary>
   Auto,
   /// <summary>

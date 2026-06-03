@@ -20,15 +20,15 @@ public enum GradientStyle
   /// </summary>
   Vertical = 2,
   /// <summary>
-  /// Diagonal gradient moving from a bottom corner up Ito the opposite corner.
+  /// Diagonal gradient moving from a bottom corner up to the opposite corner.
   /// </summary>
   DiagonalUp = 3,
   /// <summary>
-  /// Diagonal gradient moving from a top corner down Ito the opposite corner.
+  /// Diagonal gradient moving from a top corner down to the opposite corner.
   /// </summary>
   DiagonalDown = 4,
   /// <summary>
-  /// Gradient running from a corner Ito the other three corners.
+  /// Gradient running from a corner to the other three corners.
   /// </summary>
   FromCorner = 5,
   /// <summary>
@@ -36,7 +36,7 @@ public enum GradientStyle
   /// </summary>
   FromTitle = 6,
   /// <summary>
-  /// Gradient running from the center out Ito the corners.
+  /// Gradient running from the center out to the corners.
   /// </summary>
   FromCenter = 7
 }

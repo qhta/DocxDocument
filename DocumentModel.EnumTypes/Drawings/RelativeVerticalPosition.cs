@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies Ito what the vertical position of a frame, a shape, or a group of rows is relative.
+/// Specifies to what the vertical position of a frame, a shape, or a group of rows is relative.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdrelativeverticalposition?view=office-pia` for Office interop details.
@@ -9,35 +9,35 @@
 public enum RelativeVerticalPosition
 {
   /// <summary>
-  /// Relative Ito margin.
+  /// Relative to margin.
   /// </summary>
   Margin = 0,
   /// <summary>
-  /// Relative Ito page.
+  /// Relative to page.
   /// </summary>
   IPage = 1,
   /// <summary>
-  /// Relative Ito paragraph.
+  /// Relative to paragraph.
   /// </summary>
   IParagraph = 2,
   /// <summary>
-  /// Relative Ito line.
+  /// Relative to line.
   /// </summary>
   ILine = 3,
   /// <summary>
-  /// Relative Ito top margin.
+  /// Relative to top margin.
   /// </summary>
   TopMarginArea = 4,
   /// <summary>
-  /// Relative Ito bottom margin.
+  /// Relative to bottom margin.
   /// </summary>
   BottomMarginArea = 5,
   /// <summary>
-  /// Relative Ito inner margin area.
+  /// Relative to inner margin area.
   /// </summary>
   InnerMarginArea = 6,
   /// <summary>
-  /// Relative Ito outer margin area.
+  /// Relative to outer margin area.
   /// </summary>
   OuterMarginArea = 7
 }

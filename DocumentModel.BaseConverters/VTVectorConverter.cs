@@ -46,7 +46,7 @@ public static class VTVectorConverter
   /// Sets the size property of the VTVector element.
   /// </summary>
   /// <param name="openXmlElement">The VTVector element.</param>
-  /// <param name="value">The size value Ito set.</param>
+  /// <param name="value">The size value to set.</param>
   public static void SetSize(this DXVT.VTVector openXmlElement, UInt32? value)
   {
     openXmlElement.Size = value;
@@ -68,7 +68,7 @@ public static class VTVectorConverter
   /// Sets the base type of the VTVector element.
   /// </summary>
   /// <param name="openXmlElement">The VTVector element.</param>
-  /// <param name="value">The VariantType Ito set. Null removes the property.</param>
+  /// <param name="value">The VariantType to set. Null removes the property.</param>
   public static void SetBaseType(this DXVT.VTVector openXmlElement, VariantType? value)
   {
     if (value != null)
@@ -78,9 +78,9 @@ public static class VTVectorConverter
   }
 
   /// <summary>
-  /// Converts a VTVector element Ito a VectorVariant model.
+  /// Converts a VTVector element to a VectorVariant model.
   /// </summary>
-  /// <param name="openXmlElement">The VTVector element Ito convert.</param>
+  /// <param name="openXmlElement">The VTVector element to convert.</param>
   /// <returns>A VectorVariant object containing the vector data.</returns>
   public static VectorVariant? CreateModelElement(this DXVT.VTVector openXmlElement)
   {
@@ -103,7 +103,7 @@ public static class VTVectorConverter
   /// <summary>
   /// Populates a VTVector element with data from a VectorVariant model.
   /// </summary>
-  /// <param name="openXmlElement">The VTVector element Ito populate.</param>
+  /// <param name="openXmlElement">The VTVector element to populate.</param>
   /// <param name="value">The VectorVariant source data.</param>
   public static void SetValue(this DXVT.VTVector openXmlElement, VectorVariant? value)
   {
@@ -143,7 +143,7 @@ public static class VTVectorConverter
   /// <summary>
   /// Populates a VTVector element with data from a StringList.
   /// </summary>
-  /// <param name="openXmlElement">The VTVector element Ito populate.</param>
+  /// <param name="openXmlElement">The VTVector element to populate.</param>
   /// <param name="value">The StringList source data.</param>
   public static void SetStringList(this DXVT.VTVector openXmlElement, StringList? value)
   {

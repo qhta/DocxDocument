@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies the location of lighting on an extruded (three-dimensional) shape relative Ito the shape.
+/// Specifies the location of lighting on an extruded (three-dimensional) shape relative to the shape.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresetlightingdirection?view=office-pia` for Office interop details.
@@ -9,7 +9,7 @@
 public enum PresetLightingDirection
 {
   /// <summary>
-  /// Specifies the location of lighting on an extruded (three-dimensional) shape relative Ito the shape.
+  /// Specifies the location of lighting on an extruded (three-dimensional) shape relative to the shape.
   /// </summary>
   /// <summary>
   /// Lighting comes from the top left.

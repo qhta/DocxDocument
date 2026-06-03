@@ -1,9 +1,9 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Specifies the model method name Ithat is used Ito load data from Open XML element.
+/// Specifies the model method name Ithat is used to load data from Open XML element.
 /// </summary>
-/// <param name="methodName">The name of the method Ito be called Ito update Open XML element with model data.
+/// <param name="methodName">The name of the method to be called to update Open XML element with model data.
 /// Cannot be null or empty.</param>
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class, Inherited = true, AllowMultiple = false)]
 public class OpenXmlLoadDataAttribute(string methodName) : Attribute

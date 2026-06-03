@@ -11,7 +11,7 @@ namespace DocumentModel.Drawings.Charts;
 public enum XlChartSplitType
 {
   /// <summary>
-  /// Second chart displays the smallest values in the data series. The number of values Ito display is specified by
+  /// Second chart displays the smallest values in the data series. The number of values to display is specified by
   /// the SplitValue property.
   /// </summary>
   Position = 1,

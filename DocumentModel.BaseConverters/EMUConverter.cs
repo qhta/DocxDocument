@@ -3,7 +3,7 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods for EMU value Ito/from Open XML.
+/// Provides conversion methods for EMU value to/from Open XML.
 /// </summary>
 public static class EMUConverter
 {
@@ -33,9 +33,9 @@ public static class EMUConverter
   #region Int32Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int32Value Ito EMU.
+  /// Converts an OpenXml Int32Value to EMU.
   /// </summary>
-  /// <param name="Int32Value">The Int32Value Ito convert.</param>
+  /// <param name="Int32Value">The Int32Value to convert.</param>
   /// <returns>The EMU value, or null if the element has no content.</returns>
   private static EMU? ConvertFromInt32Value(DX.Int32Value? Int32Value)
   {
@@ -47,7 +47,7 @@ public static class EMUConverter
   /// <summary>
   /// Creates an OpenXml Int32Value from an EMU value.
   /// </summary>
-  /// <param name="value">The EMU value Ito convert.</param>
+  /// <param name="value">The EMU value to convert.</param>
   /// <returns>A new Int32Value, or null if the input is null.</returns>
   private static DX.Int32Value? ConvertToInt32Value(EMU? value)
   {
@@ -63,9 +63,9 @@ public static class EMUConverter
   #region Int64Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int64Value Ito EMU.
+  /// Converts an OpenXml Int64Value to EMU.
   /// </summary>
-  /// <param name="Int64Value">The Int64Value Ito convert.</param>
+  /// <param name="Int64Value">The Int64Value to convert.</param>
   /// <returns>The EMU value, or null if the element has no content.</returns>
   private static EMU? ConvertFromInt64Value(DX.Int64Value? Int64Value)
   {
@@ -77,7 +77,7 @@ public static class EMUConverter
   /// <summary>
   /// Creates an OpenXml Int64Value from an EMU value.
   /// </summary>
-  /// <param name="value">The EMU value Ito convert.</param>
+  /// <param name="value">The EMU value to convert.</param>
   /// <returns>A new Int64Value, or null if the input is null.</returns>
   private static DX.Int64Value? ConvertToInt64Value(EMU? value)
   {
@@ -94,9 +94,9 @@ public static class EMUConverter
   #region IntegerValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml IntegerValue Ito EMU.
+  /// Converts an OpenXml IntegerValue to EMU.
   /// </summary>
-  /// <param name="IntegerValue">The IntegerValue Ito convert.</param>
+  /// <param name="IntegerValue">The IntegerValue to convert.</param>
   /// <returns>The EMU value, or null if the element has no content.</returns>
   private static EMU? ConvertFromIntegerValue(DX.IntegerValue? IntegerValue)
   {
@@ -108,7 +108,7 @@ public static class EMUConverter
   /// <summary>
   /// Creates an OpenXml IntegerValue from an EMU value.
   /// </summary>
-  /// <param name="value">The EMU value Ito convert.</param>
+  /// <param name="value">The EMU value to convert.</param>
   /// <returns>A new IntegerValue, or null if the input is null.</returns>
   private static DX.IntegerValue? ConvertToIntegerValue(EMU? value)
   {
@@ -124,9 +124,9 @@ public static class EMUConverter
   #region UInt32Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml UInt32Value Ito EMU.
+  /// Converts an OpenXml UInt32Value to EMU.
   /// </summary>
-  /// <param name="UInt32Value">The UInt32Value Ito convert.</param>
+  /// <param name="UInt32Value">The UInt32Value to convert.</param>
   /// <returns>The EMU value, or null if the element has no content.</returns>
   private static EMU? ConvertFromUInt32Value(DX.UInt32Value? UInt32Value)
   {
@@ -138,7 +138,7 @@ public static class EMUConverter
   /// <summary>
   /// Creates an OpenXml UInt32Value from an EMU value.
   /// </summary>
-  /// <param name="value">The EMU value Ito convert.</param>
+  /// <param name="value">The EMU value to convert.</param>
   /// <returns>A new UInt32Value, or null if the input is null.</returns>
   private static DX.UInt32Value? ConvertToUInt32Value(EMU? value)
   {
@@ -154,9 +154,9 @@ public static class EMUConverter
   #region UInt64Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml UInt64Value Ito EMU.
+  /// Converts an OpenXml UInt64Value to EMU.
   /// </summary>
-  /// <param name="UInt64Value">The UInt64Value Ito convert.</param>
+  /// <param name="UInt64Value">The UInt64Value to convert.</param>
   /// <returns>The EMU value, or null if the element has no content.</returns>
   private static EMU? ConvertFromUInt64Value(DX.UInt64Value? UInt64Value)
   {
@@ -168,7 +168,7 @@ public static class EMUConverter
   /// <summary>
   /// Creates an OpenXml UInt64Value from an EMU value.
   /// </summary>
-  /// <param name="value">The EMU value Ito convert.</param>
+  /// <param name="value">The EMU value to convert.</param>
   /// <returns>A new UInt64Value, or null if the input is null.</returns>
   private static DX.UInt64Value? ConvertToUInt64Value(EMU? value)
   {
@@ -185,9 +185,9 @@ public static class EMUConverter
   #region StringValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml StringValue Ito EMU.
+  /// Converts an OpenXml StringValue to EMU.
   /// </summary>
-  /// <param name="StringValue">The StringValue Ito convert.</param>
+  /// <param name="StringValue">The StringValue to convert.</param>
   /// <returns>The EMU value, or null if the element has no content.</returns>
   private static EMU? ConvertFromStringValue(DX.StringValue? StringValue)
   {
@@ -203,7 +203,7 @@ public static class EMUConverter
   /// <summary>
   /// Creates an OpenXml StringValue from an EMU value.
   /// </summary>
-  /// <param name="value">The EMU value Ito convert.</param>
+  /// <param name="value">The EMU value to convert.</param>
   /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   private static DX.StringValue? ConvertToStringValue(EMU? value, Type targetType)
@@ -221,10 +221,10 @@ public static class EMUConverter
   #region String conversion.
 
   /// <summary>
-  /// Converts the specified string representation of a number Ito its 32-bit signed integer equivalent.
+  /// Converts the specified string representation of a number to its 32-bit signed integer equivalent.
   /// </summary>
-  /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A 32-bit signed integer equivalent Ito the number contained in the input string, or null if the input is null or
+  /// <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
+  /// <returns>A 32-bit signed integer equivalent to the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static EMU? ConvertFromString(string? value)
   {
@@ -236,9 +236,9 @@ public static class EMUConverter
   }
 
   /// <summary>
-  /// Converts a nullable 32-bit integer value Ito its string representation.
+  /// Converts a nullable 32-bit integer value to its string representation.
   /// </summary>
-  /// <param name="value">The nullable 32-bit integer value Ito convert. If null, the method returns null.</param>
+  /// <param name="value">The nullable 32-bit integer value to convert. If null, the method returns null.</param>
   /// <returns>A string representation of the specified value, or null if the value is null.</returns>
   private static String? ConvertToString(EMU? value)
   {
@@ -253,9 +253,9 @@ public static class EMUConverter
   #region OpenXmlLeafTextElement conversion.
 
   /// <summary>
-  /// Converts an OpenXml OpenXmlLeafTextElement Ito EMU.
+  /// Converts an OpenXml OpenXmlLeafTextElement to EMU.
   /// </summary>
-  /// <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement Ito convert.</param>
+  /// <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
   /// <returns>The EMU value, or null if the element has no content.</returns>
   private static EMU? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? OpenXmlLeafTextElement)
   {
@@ -271,7 +271,7 @@ public static class EMUConverter
   /// <summary>
   /// Creates an OpenXml OpenXmlLeafTextElement from an EMU value.
   /// </summary>
-  /// <param name="value">The EMU value Ito convert.</param>
+  /// <param name="value">The EMU value to convert.</param>
   /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(EMU? value, Type targetType)
@@ -289,9 +289,9 @@ public static class EMUConverter
   #region OpenXmlLeafElement conversion.
 
   /// <summary>
-  /// Converts an OpenXml OpenXmlLeafElement Ito EMU.
+  /// Converts an OpenXml OpenXmlLeafElement to EMU.
   /// </summary>
-  /// <param name="OpenXmlLeafElement">The OpenXmlLeafElement Ito convert.</param>
+  /// <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
   /// <returns>The EMU value, or null if the element has no content.</returns>
   private static EMU? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? OpenXmlLeafElement)
   {
@@ -315,7 +315,7 @@ public static class EMUConverter
   /// <summary>
   /// Creates an OpenXml OpenXmlLeafElement from an EMU value.
   /// </summary>
-  /// <param name="value">The EMU value Ito convert.</param>
+  /// <param name="value">The EMU value to convert.</param>
   /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(EMU? value, Type targetType)
@@ -342,10 +342,10 @@ public static class EMUConverter
   #region Generic OpenXml conversion methods
 
   /// <summary>
-  /// Converts an EMU value Ito the specified target type using standard type conversion.
+  /// Converts an EMU value to the specified target type using standard type conversion.
   /// </summary>
-  /// <param name="value">The EMU value Ito convert.</param>
-  /// <param name="targetType">The target type Ito convert Ito.</param>
+  /// <param name="value">The EMU value to convert.</param>
+  /// <param name="targetType">The target type to convert to.</param>
   /// <returns>The converted value, or null if the input is null.</returns>
   /// <exception cref="NotSupportedException">Raised when the target type is not supported.</exception>
   public static object? ConvertTo(EMU? value, Type targetType)
@@ -354,12 +354,12 @@ public static class EMUConverter
   }
 
   /// <summary>
-  /// Converts the specified value Ito a nullable 32-bit integer, if a supported conversion exists.
+  /// Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
   /// </summary>
-  /// <param name="value">The value Ito convert Ito an <see cref="EMU"/>. Can be <see langword="null"/>.</param>
+  /// <param name="value">The value to convert to an <see cref="EMU"/>. Can be <see langword="null"/>.</param>
   /// <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
   /// is <see langword="null"/>.</returns>
-  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> Ito <see cref="EMU"/> is not supported.</exception>
+  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="EMU"/> is not supported.</exception>
   public static EMU? ConvertFrom(object? value)
   {
     return (EMU?)ConverterBase.ConvertFrom(value, typeof(EMU), ConversionFromMap);

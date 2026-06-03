@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods for UInt16 value Ito/from Open XML.
+/// Provides conversion methods for UInt16 value to/from Open XML.
 /// </summary>
 public static class UInt16Converter
 {
@@ -37,9 +37,9 @@ public static class UInt16Converter
   #region SByteValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml SByteValue Ito UInt16.
+  /// Converts an OpenXml SByteValue to UInt16.
   /// </summary>
-  /// <param name="SByteValue">The SByteValue Ito convert.</param>
+  /// <param name="SByteValue">The SByteValue to convert.</param>
   /// <returns>The UInt16 value, or null if the element has no content.</returns>
   public static UInt16? ConvertFromSByteValue(DX.SByteValue? SByteValue)
   {
@@ -53,7 +53,7 @@ public static class UInt16Converter
   /// <summary>
   /// Creates an OpenXml SByteValue from an UInt16 value.
   /// </summary>
-  /// <param name="value">The UInt16 value Ito convert.</param>
+  /// <param name="value">The UInt16 value to convert.</param>
   /// <returns>A new SByteValue, or null if the input is null.</returns>
   public static DX.SByteValue? ConvertToSByteValue(UInt16? value)
   {
@@ -69,9 +69,9 @@ public static class UInt16Converter
   #region Int16Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int16Value Ito UInt16.
+  /// Converts an OpenXml Int16Value to UInt16.
   /// </summary>
-  /// <param name="int16Value">The Int16Value Ito convert.</param>
+  /// <param name="int16Value">The Int16Value to convert.</param>
   /// <returns>The UInt16 int16Value, or null if the element has no content.</returns>
   public static UInt16? ConvertFromInt16Value(DX.Int16Value? int16Value)
   {
@@ -85,7 +85,7 @@ public static class UInt16Converter
   /// <summary>
   /// Creates an OpenXml Int16Value from an UInt16 value.
   /// </summary>
-  /// <param name="value">The UInt16 value Ito convert.</param>
+  /// <param name="value">The UInt16 value to convert.</param>
   /// <returns>A new Int16Value, or null if the input is null.</returns>
   public static DX.Int16Value? ConvertToInt16Value(UInt16? value)
   {
@@ -101,9 +101,9 @@ public static class UInt16Converter
   #region Int32Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int32Value Ito UInt16.
+  /// Converts an OpenXml Int32Value to UInt16.
   /// </summary>
-  /// <param name="Int32Value">The Int32Value Ito convert.</param>
+  /// <param name="Int32Value">The Int32Value to convert.</param>
   /// <returns>The UInt16 value, or null if the element has no content.</returns>
   public static UInt16? ConvertFromInt32Value(DX.Int32Value? Int32Value)
   {
@@ -117,7 +117,7 @@ public static class UInt16Converter
   /// <summary>
   /// Creates an OpenXml Int32Value from an UInt16 value.
   /// </summary>
-  /// <param name="value">The UInt16 value Ito convert.</param>
+  /// <param name="value">The UInt16 value to convert.</param>
   /// <returns>A new Int32Value, or null if the input is null.</returns>
   public static DX.Int32Value? ConvertToInt32Value(UInt16? value)
   {
@@ -131,9 +131,9 @@ public static class UInt16Converter
   #region Int64Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int64Value Ito UInt16.
+  /// Converts an OpenXml Int64Value to UInt16.
   /// </summary>
-  /// <param name="Int64Value">The Int64Value Ito convert.</param>
+  /// <param name="Int64Value">The Int64Value to convert.</param>
   /// <returns>The UInt16 value, or null if the element has no content.</returns>
   public static UInt16? ConvertFromInt64Value(DX.Int64Value? Int64Value)
   {
@@ -147,7 +147,7 @@ public static class UInt16Converter
   /// <summary>
   /// Creates an OpenXml Int64Value from an UInt16 value.
   /// </summary>
-  /// <param name="value">The UInt16 value Ito convert.</param>
+  /// <param name="value">The UInt16 value to convert.</param>
   /// <returns>A new Int64Value, or null if the input is null.</returns>
   public static DX.Int64Value? ConvertToInt64Value(UInt16? value)
   {
@@ -161,9 +161,9 @@ public static class UInt16Converter
   #region IntegerValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml IntegerValue Ito UInt16.
+  /// Converts an OpenXml IntegerValue to UInt16.
   /// </summary>
-  /// <param name="IntegerValue">The IntegerValue Ito convert.</param>
+  /// <param name="IntegerValue">The IntegerValue to convert.</param>
   /// <returns>The UInt16 value, or null if the element has no content.</returns>
   public static UInt16? ConvertFromIntegerValue(DX.IntegerValue? IntegerValue)
   {
@@ -177,7 +177,7 @@ public static class UInt16Converter
   /// <summary>
   /// Creates an OpenXml IntegerValue from an UInt16 value.
   /// </summary>
-  /// <param name="value">The UInt16 value Ito convert.</param>
+  /// <param name="value">The UInt16 value to convert.</param>
   /// <returns>A new IntegerValue, or null if the input is null.</returns>
   public static DX.IntegerValue? ConvertToIntegerValue(UInt16? value)
   {
@@ -191,9 +191,9 @@ public static class UInt16Converter
   #region ByteValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml ByteValue Ito UInt16.
+  /// Converts an OpenXml ByteValue to UInt16.
   /// </summary>
-  /// <param name="ByteValue">The ByteValue Ito convert.</param>
+  /// <param name="ByteValue">The ByteValue to convert.</param>
   /// <returns>The UInt16 value, or null if the element has no content.</returns>
   public static UInt16? ConvertFromByteValue(DX.ByteValue? ByteValue)
   {
@@ -205,7 +205,7 @@ public static class UInt16Converter
   /// <summary>
   /// Creates an OpenXml ByteValue from an UInt16 value.
   /// </summary>
-  /// <param name="value">The UInt16 value Ito convert.</param>
+  /// <param name="value">The UInt16 value to convert.</param>
   /// <returns>A new ByteValue, or null if the input is null.</returns>
   public static DX.ByteValue? ConvertToByteValue(UInt16? value)
   {
@@ -221,9 +221,9 @@ public static class UInt16Converter
   #region UInt16Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml UInt16Value Ito UInt16.
+  /// Converts an OpenXml UInt16Value to UInt16.
   /// </summary>
-  /// <param name="UInt16Value">The UInt16Value Ito convert.</param>
+  /// <param name="UInt16Value">The UInt16Value to convert.</param>
   /// <returns>The UInt16 value, or null if the element has no content.</returns>
   public static UInt16? ConvertFromUInt16Value(DX.UInt16Value? UInt16Value)
   {
@@ -234,7 +234,7 @@ public static class UInt16Converter
   /// <summary>
   /// Creates an OpenXml UInt16Value from an UInt16 value.
   /// </summary>
-  /// <param name="value">The UInt16 value Ito convert.</param>
+  /// <param name="value">The UInt16 value to convert.</param>
   /// <returns>A new UInt16Value, or null if the input is null.</returns>
   public static DX.UInt16Value? ConvertToUInt16Value(UInt16? value)
   {
@@ -250,9 +250,9 @@ public static class UInt16Converter
   #region UInt32Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml UInt32Value Ito UInt16.
+  /// Converts an OpenXml UInt32Value to UInt16.
   /// </summary>
-  /// <param name="UInt32Value">The UInt32Value Ito convert.</param>
+  /// <param name="UInt32Value">The UInt32Value to convert.</param>
   /// <returns>The UInt16 value, or null if the element has no content.</returns>
   public static UInt16? ConvertFromUInt32Value(DX.UInt32Value? UInt32Value)
   {
@@ -266,7 +266,7 @@ public static class UInt16Converter
   /// <summary>
   /// Creates an OpenXml UInt32Value from an UInt32 value.
   /// </summary>
-  /// <param name="value">The UInt32 value Ito convert.</param>
+  /// <param name="value">The UInt32 value to convert.</param>
   /// <returns>A new UInt32Value, or null if the input is null.</returns>
   public static DX.UInt32Value? ConvertToUInt32Value(UInt16? value)
   {
@@ -281,9 +281,9 @@ public static class UInt16Converter
   #region UInt64Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml UInt64Value Ito UInt16.
+  /// Converts an OpenXml UInt64Value to UInt16.
   /// </summary>
-  /// <param name="UInt64Value">The UInt64Value Ito convert.</param>
+  /// <param name="UInt64Value">The UInt64Value to convert.</param>
   /// <returns>The UInt16 value, or null if the element has no content.</returns>
   public static UInt16? ConvertFromUInt64Value(DX.UInt64Value? UInt64Value)
   {
@@ -297,7 +297,7 @@ public static class UInt16Converter
   /// <summary>
   /// Creates an OpenXml UInt64Value from an UInt16 value.
   /// </summary>
-  /// <param name="value">The UInt16 value Ito convert.</param>
+  /// <param name="value">The UInt16 value to convert.</param>
   /// <returns>A new UInt64Value, or null if the input is null.</returns>
   public static DX.UInt64Value? ConvertToUInt64Value(UInt16? value)
   {
@@ -312,9 +312,9 @@ public static class UInt16Converter
   #region StringValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml StringValue Ito UInt16.
+  /// Converts an OpenXml StringValue to UInt16.
   /// </summary>
-  /// <param name="StringValue">The StringValue Ito convert.</param>
+  /// <param name="StringValue">The StringValue to convert.</param>
   /// <returns>The UInt16 value, or null if the element has no content.</returns>
   public static UInt16? ConvertFromStringValue(DX.StringValue? StringValue)
   {
@@ -330,7 +330,7 @@ public static class UInt16Converter
   /// <summary>
   /// Creates an OpenXml StringValue from an UInt16 value.
   /// </summary>
-  /// <param name="value">The UInt16 value Ito convert.</param>
+  /// <param name="value">The UInt16 value to convert.</param>
   /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   public static DX.StringValue? ConvertToStringValue(UInt16? value, Type targetType)
@@ -348,10 +348,10 @@ public static class UInt16Converter
   #region String conversion.
 
   /// <summary>
-  /// Converts the specified string representation of a number Ito its 16-bit signed integer equivalent.
+  /// Converts the specified string representation of a number to its 16-bit signed integer equivalent.
   /// </summary>
-  /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A 16-bit signed integer equivalent Ito the number contained in the input string, or null if the input is null or
+  /// <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
+  /// <returns>A 16-bit signed integer equivalent to the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static UInt16? ConvertFromString(string? value)
   {
@@ -363,9 +363,9 @@ public static class UInt16Converter
   }
 
   /// <summary>
-  /// Converts a nullable 16-bit integer value Ito its string representation.
+  /// Converts a nullable 16-bit integer value to its string representation.
   /// </summary>
-  /// <param name="value">The nullable 16-bit integer value Ito convert. If null, the method returns null.</param>
+  /// <param name="value">The nullable 16-bit integer value to convert. If null, the method returns null.</param>
   /// <returns>A string representation of the specified value, or null if the value is null.</returns>
   private static String? ConvertToString(UInt16? value)
   {
@@ -380,9 +380,9 @@ public static class UInt16Converter
   #region OpenXmlLeafTextElement conversion.
 
   /// <summary>
-  /// Converts an OpenXml OpenXmlLeafTextElement Ito UInt16.
+  /// Converts an OpenXml OpenXmlLeafTextElement to UInt16.
   /// </summary>
-  /// <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement Ito convert.</param>
+  /// <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
   /// <returns>The UInt16 value, or null if the element has no content.</returns>
   public static UInt16? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? OpenXmlLeafTextElement)
   {
@@ -398,7 +398,7 @@ public static class UInt16Converter
   /// <summary>
   /// Creates an OpenXml OpenXmlLeafTextElement from an UInt16 value.
   /// </summary>
-  /// <param name="value">The UInt16 value Ito convert.</param>
+  /// <param name="value">The UInt16 value to convert.</param>
   /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(UInt16? value, Type targetType)
@@ -416,9 +416,9 @@ public static class UInt16Converter
   #region OpenXmlLeafElement conversion.
 
   /// <summary>
-  /// Converts an OpenXml OpenXmlLeafElement Ito UInt16.
+  /// Converts an OpenXml OpenXmlLeafElement to UInt16.
   /// </summary>
-  /// <param name="OpenXmlLeafElement">The OpenXmlLeafElement Ito convert.</param>
+  /// <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
   /// <returns>The UInt16 value, or null if the element has no content.</returns>
   public static UInt16? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? OpenXmlLeafElement)
   {
@@ -442,7 +442,7 @@ public static class UInt16Converter
   /// <summary>
   /// Creates an OpenXml OpenXmlLeafElement from an UInt16 value.
   /// </summary>
-  /// <param name="value">The UInt16 value Ito convert.</param>
+  /// <param name="value">The UInt16 value to convert.</param>
   /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(UInt16? value, Type targetType)
@@ -469,9 +469,9 @@ public static class UInt16Converter
   #region HexBinaryValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml HexBinaryValue Ito UInt16.
+  /// Converts an OpenXml HexBinaryValue to UInt16.
   /// </summary>
-  /// <param name="HexBinaryValue">The HexBinaryValue Ito convert.</param>
+  /// <param name="HexBinaryValue">The HexBinaryValue to convert.</param>
   /// <returns>The UInt16 value, or null if the element has no content.</returns>
   private static UInt16? ConvertFromHexBinaryValue(DX.HexBinaryValue? HexBinaryValue)
   {
@@ -479,7 +479,7 @@ public static class UInt16Converter
 
     var text = HexBinaryValue.Value;
     if (!UInt16.TryParse(text, NumberStyles.HexNumber, null, out var result))
-      throw new InvalidOperationException($"Conversion of {text} Ito UInt16 failed.");
+      throw new InvalidOperationException($"Conversion of {text} to UInt16 failed.");
 
     return result;
   }
@@ -487,7 +487,7 @@ public static class UInt16Converter
   /// <summary>
   /// Creates an OpenXml HexBinaryValue from an UInt16 value.
   /// </summary>
-  /// <param name="value">The UInt16 value Ito convert.</param>
+  /// <param name="value">The UInt16 value to convert.</param>
   /// <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
   /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
   private static DX.HexBinaryValue? ConvertToHexBinaryValue(UInt16? value, Type targetType)
@@ -505,10 +505,10 @@ public static class UInt16Converter
   #region Generic OpenXml conversion methods
 
   /// <summary>
-  /// Converts a value Ito a specified target type.
+  /// Converts a value to a specified target type.
   /// </summary>
-  /// <param name="value">The value Ito convert.</param>
-  /// <param name="targetType">The target type Ito convert Ito.</param>
+  /// <param name="value">The value to convert.</param>
+  /// <param name="targetType">The target type to convert to.</param>
   /// <returns>The converted value, or null if the element has no content.</returns>
   /// <exception cref="InvalidOperationException">Thrown if the conversion is not supported.</exception>
   public static object? ConvertTo(UInt16? value, Type targetType)
@@ -517,11 +517,11 @@ public static class UInt16Converter
   }
 
   /// <summary>
-  /// Converts an Open XML value Ito a nullable UInt16, if possible.
+  /// Converts an Open XML value to a nullable UInt16, if possible.
   /// </summary>
-  /// <remarks>If value is a StringValue, the method attempts Ito parse its contents as an UInt16 integer. If
+  /// <remarks>If value is a StringValue, the method attempts to parse its contents as an UInt16 integer. If
   /// parsing fails, the method returns null.</remarks>
-  /// <param name="value">The value Ito convert. Supported types include SByteValue, ByteValue, UInt16Value, UUInt16Value, UInt16Value,
+  /// <param name="value">The value to convert. Supported types include SByteValue, ByteValue, UInt16Value, UUInt16Value, UInt16Value,
   /// UUInt16Value, UUInt16Value, and StringValue. May be null.</param>
   /// <returns>An UInt16 representation of the input value, or null if the input is null or cannot be converted.</returns>
   /// <exception cref="InvalidOperationException">Thrown if the type of value is not supported for conversion.</exception>

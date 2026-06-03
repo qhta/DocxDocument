@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods for RGB value Ito/from Open XML.
+/// Provides conversion methods for RGB value to/from Open XML.
 /// </summary>
 public static class HexColorConverter
 {
@@ -38,9 +38,9 @@ public static class HexColorConverter
   #region SByteValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml SByteValue Ito RGB.
+  /// Converts an OpenXml SByteValue to RGB.
   /// </summary>
-  /// <param name="SByteValue">The SByteValue Ito convert.</param>
+  /// <param name="SByteValue">The SByteValue to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
   public static HexColor? ConvertFromSByteValue(DX.SByteValue? SByteValue)
   {
@@ -54,7 +54,7 @@ public static class HexColorConverter
   /// <summary>
   /// Creates an OpenXml SByteValue from an RGB value.
   /// </summary>
-  /// <param name="value">The RGB value Ito convert.</param>
+  /// <param name="value">The RGB value to convert.</param>
   /// <returns>A new SByteValue, or null if the input is null.</returns>
   public static DX.SByteValue? ConvertToSByteValue(HexColor? value)
   {
@@ -70,9 +70,9 @@ public static class HexColorConverter
   #region Int16Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int16Value Ito RGB.
+  /// Converts an OpenXml Int16Value to RGB.
   /// </summary>
-  /// <param name="int16Value">The Int16Value Ito convert.</param>
+  /// <param name="int16Value">The Int16Value to convert.</param>
   /// <returns>The RGB int16Value, or null if the element has no content.</returns>
   public static HexColor? ConvertFromInt16Value(DX.Int16Value? int16Value)
   {
@@ -86,7 +86,7 @@ public static class HexColorConverter
   /// <summary>
   /// Creates an OpenXml Int16Value from an RGB value.
   /// </summary>
-  /// <param name="value">The RGB value Ito convert.</param>
+  /// <param name="value">The RGB value to convert.</param>
   /// <returns>A new Int16Value, or null if the input is null.</returns>
   public static DX.Int16Value? ConvertToInt16Value(HexColor? value)
   {
@@ -102,9 +102,9 @@ public static class HexColorConverter
   #region Int32Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int32Value Ito RGB.
+  /// Converts an OpenXml Int32Value to RGB.
   /// </summary>
-  /// <param name="Int32Value">The Int32Value Ito convert.</param>
+  /// <param name="Int32Value">The Int32Value to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
   public static HexColor? ConvertFromInt32Value(DX.Int32Value? Int32Value)
   {
@@ -118,7 +118,7 @@ public static class HexColorConverter
   /// <summary>
   /// Creates an OpenXml Int32Value from an RGB value.
   /// </summary>
-  /// <param name="value">The RGB value Ito convert.</param>
+  /// <param name="value">The RGB value to convert.</param>
   /// <returns>A new Int32Value, or null if the input is null.</returns>
   public static DX.Int32Value? ConvertToInt32Value(HexColor? value)
   {
@@ -134,9 +134,9 @@ public static class HexColorConverter
   #region Int64Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int64Value Ito RGB.
+  /// Converts an OpenXml Int64Value to RGB.
   /// </summary>
-  /// <param name="Int64Value">The Int64Value Ito convert.</param>
+  /// <param name="Int64Value">The Int64Value to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
   public static HexColor? ConvertFromInt64Value(DX.Int64Value? Int64Value)
   {
@@ -150,7 +150,7 @@ public static class HexColorConverter
   /// <summary>
   /// Creates an OpenXml Int64Value from an RGB value.
   /// </summary>
-  /// <param name="value">The RGB value Ito convert.</param>
+  /// <param name="value">The RGB value to convert.</param>
   /// <returns>A new Int64Value, or null if the input is null.</returns>
   public static DX.Int64Value? ConvertToInt64Value(HexColor? value)
   {
@@ -164,9 +164,9 @@ public static class HexColorConverter
   #region IntegerValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml IntegerValue Ito RGB.
+  /// Converts an OpenXml IntegerValue to RGB.
   /// </summary>
-  /// <param name="IntegerValue">The IntegerValue Ito convert.</param>
+  /// <param name="IntegerValue">The IntegerValue to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
   public static HexColor? ConvertFromIntegerValue(DX.IntegerValue? IntegerValue)
   {
@@ -180,7 +180,7 @@ public static class HexColorConverter
   /// <summary>
   /// Creates an OpenXml IntegerValue from an RGB value.
   /// </summary>
-  /// <param name="value">The RGB value Ito convert.</param>
+  /// <param name="value">The RGB value to convert.</param>
   /// <returns>A new IntegerValue, or null if the input is null.</returns>
   public static DX.IntegerValue? ConvertToIntegerValue(HexColor? value)
   {
@@ -194,9 +194,9 @@ public static class HexColorConverter
   #region ByteValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml ByteValue Ito RGB.
+  /// Converts an OpenXml ByteValue to RGB.
   /// </summary>
-  /// <param name="ByteValue">The ByteValue Ito convert.</param>
+  /// <param name="ByteValue">The ByteValue to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
   public static HexColor? ConvertFromByteValue(DX.ByteValue? ByteValue)
   {
@@ -208,7 +208,7 @@ public static class HexColorConverter
   /// <summary>
   /// Creates an OpenXml ByteValue from an RGB value.
   /// </summary>
-  /// <param name="value">The RGB value Ito convert.</param>
+  /// <param name="value">The RGB value to convert.</param>
   /// <returns>A new ByteValue, or null if the input is null.</returns>
   public static DX.ByteValue? ConvertToByteValue(HexColor? value)
   {
@@ -224,9 +224,9 @@ public static class HexColorConverter
   #region UInt16Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml UInt16Value Ito RGB.
+  /// Converts an OpenXml UInt16Value to RGB.
   /// </summary>
-  /// <param name="UInt16Value">The UInt16Value Ito convert.</param>
+  /// <param name="UInt16Value">The UInt16Value to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
   public static HexColor? ConvertFromUInt16Value(DX.UInt16Value? UInt16Value)
   {
@@ -238,7 +238,7 @@ public static class HexColorConverter
   /// <summary>
   /// Creates an OpenXml UInt16Value from an RGB value.
   /// </summary>
-  /// <param name="value">The RGB value Ito convert.</param>
+  /// <param name="value">The RGB value to convert.</param>
   /// <returns>A new UInt16Value, or null if the input is null.</returns>
   public static DX.UInt16Value? ConvertToUInt16Value(HexColor? value)
   {
@@ -254,9 +254,9 @@ public static class HexColorConverter
   #region RgbValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml RgbValue Ito RGB.
+  /// Converts an OpenXml RgbValue to RGB.
   /// </summary>
-  /// <param name="RgbValue">The RgbValue Ito convert.</param>
+  /// <param name="RgbValue">The RgbValue to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
   public static HexColor? ConvertFromUInt32Value(DX.UInt32Value? RgbValue)
   {
@@ -268,7 +268,7 @@ public static class HexColorConverter
   /// <summary>
   /// Creates an OpenXml RgbValue from an RGB value.
   /// </summary>
-  /// <param name="value">The RGB value Ito convert.</param>
+  /// <param name="value">The RGB value to convert.</param>
   /// <returns>A new RgbValue, or null if the input is null.</returns>
   public static DX.UInt32Value? ConvertToUInt32Value(HexColor? value)
   {
@@ -283,9 +283,9 @@ public static class HexColorConverter
   #region UInt64Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml UInt64Value Ito RGB.
+  /// Converts an OpenXml UInt64Value to RGB.
   /// </summary>
-  /// <param name="UInt64Value">The UInt64Value Ito convert.</param>
+  /// <param name="UInt64Value">The UInt64Value to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
   public static HexColor? ConvertFromUInt64Value(DX.UInt64Value? UInt64Value)
   {
@@ -299,7 +299,7 @@ public static class HexColorConverter
   /// <summary>
   /// Creates an OpenXml UInt64Value from an RGB value.
   /// </summary>
-  /// <param name="value">The RGB value Ito convert.</param>
+  /// <param name="value">The RGB value to convert.</param>
   /// <returns>A new UInt64Value, or null if the input is null.</returns>
   public static DX.UInt64Value? ConvertToUInt64Value(HexColor? value)
   {
@@ -314,9 +314,9 @@ public static class HexColorConverter
   #region StringValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml StringValue Ito RGB.
+  /// Converts an OpenXml StringValue to RGB.
   /// </summary>
-  /// <param name="StringValue">The StringValue Ito convert.</param>
+  /// <param name="StringValue">The StringValue to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
   public static HexColor? ConvertFromStringValue(DX.StringValue? StringValue)
   {
@@ -332,7 +332,7 @@ public static class HexColorConverter
   /// <summary>
   /// Creates an OpenXml StringValue from an RGB value.
   /// </summary>
-  /// <param name="value">The RGB value Ito convert.</param>
+  /// <param name="value">The RGB value to convert.</param>
   /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   public static DX.StringValue? ConvertToStringValue(HexColor? value, Type targetType)
@@ -350,9 +350,9 @@ public static class HexColorConverter
   #region OpenXmlLeafTextElement conversion.
 
   /// <summary>
-  /// Converts an OpenXml OpenXmlLeafTextElement Ito RGB.
+  /// Converts an OpenXml OpenXmlLeafTextElement to RGB.
   /// </summary>
-  /// <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement Ito convert.</param>
+  /// <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
   public static HexColor? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? OpenXmlLeafTextElement)
   {
@@ -365,7 +365,7 @@ public static class HexColorConverter
   /// <summary>
   /// Creates an OpenXml OpenXmlLeafTextElement from an RGB value.
   /// </summary>
-  /// <param name="value">The RGB value Ito convert.</param>
+  /// <param name="value">The RGB value to convert.</param>
   /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(HexColor? value, Type targetType)
@@ -384,9 +384,9 @@ public static class HexColorConverter
   #region HexBinaryValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml HexBinaryValue Ito RGB.
+  /// Converts an OpenXml HexBinaryValue to RGB.
   /// </summary>
-  /// <param name="HexBinaryValue">The HexBinaryValue Ito convert.</param>
+  /// <param name="HexBinaryValue">The HexBinaryValue to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
   public static HexColor? ConvertFromHexBinaryValue(DX.HexBinaryValue? HexBinaryValue)
   {
@@ -402,7 +402,7 @@ public static class HexColorConverter
   /// <summary>
   /// Creates an OpenXml HexBinaryValue from an RGB value.
   /// </summary>
-  /// <param name="value">The RGB value Ito convert.</param>
+  /// <param name="value">The RGB value to convert.</param>
   /// <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
   /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
   public static DX.HexBinaryValue? ConvertToHexBinaryValue(HexColor? value, Type targetType)
@@ -421,9 +421,9 @@ public static class HexColorConverter
   #region OpenXmlLeafElement conversion.
 
   /// <summary>
-  /// Converts an OpenXml OpenXmlLeafElement Ito RGB.
+  /// Converts an OpenXml OpenXmlLeafElement to RGB.
   /// </summary>
-  /// <param name="OpenXmlLeafElement">The OpenXmlLeafElement Ito convert.</param>
+  /// <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
   /// <returns>The RGB value, or null if the element has no content.</returns>
   public static HexColor? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? OpenXmlLeafElement)
   {
@@ -448,7 +448,7 @@ public static class HexColorConverter
   /// <summary>
   /// Creates an OpenXml OpenXmlLeafElement from an RGB value.
   /// </summary>
-  /// <param name="value">The RGB value Ito convert.</param>
+  /// <param name="value">The RGB value to convert.</param>
   /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(HexColor? value, Type targetType)
@@ -475,10 +475,10 @@ public static class HexColorConverter
   #region String conversion.
 
   /// <summary>
-  /// Converts the specified string representation of a number Ito its Rgbequivalent.
+  /// Converts the specified string representation of a number to its Rgbequivalent.
   /// </summary>
-  /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A RGB integer equivalent Ito the number contained in the input string, or null if the input is null or
+  /// <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
+  /// <returns>A RGB integer equivalent to the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static HexColor? ConvertFromString(string? value)
   {
@@ -487,9 +487,9 @@ public static class HexColorConverter
   }
 
   /// <summary>
-  /// Converts a nullable RGB value Ito its string representation.
+  /// Converts a nullable RGB value to its string representation.
   /// </summary>
-  /// <param name="value">The nullable RGB value Ito convert. If null, the method returns null.</param>
+  /// <param name="value">The nullable RGB value to convert. If null, the method returns null.</param>
   /// <returns>A string representation of the specified value, or null if the value is null.</returns>
   private static String? ConvertToString(HexColor? value)
   {
@@ -504,10 +504,10 @@ public static class HexColorConverter
   #region Generic OpenXml conversion methods
 
   /// <summary>
-  /// Converts an RGB value Ito the specified target type using standard type conversion.
+  /// Converts an RGB value to the specified target type using standard type conversion.
   /// </summary>
-  /// <param name="value">The RGB value Ito convert.</param>
-  /// <param name="targetType">The target type Ito convert Ito.</param>
+  /// <param name="value">The RGB value to convert.</param>
+  /// <param name="targetType">The target type to convert to.</param>
   /// <returns>The converted value, or null if the input is null.</returns>
   /// <exception cref="NotSupportedException">Raised when the target type is not supported.</exception>
   public static object? ConvertTo(HexColor? value, Type targetType)
@@ -516,12 +516,12 @@ public static class HexColorConverter
   }
 
   /// <summary>
-  /// Converts the specified value Ito a nullable 32-bit integer, if a supported conversion exists.
+  /// Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
   /// </summary>
-  /// <param name="value">The value Ito convert Ito an <see cref="HexColor"/>. Can be <see langword="null"/>.</param>
+  /// <param name="value">The value to convert to an <see cref="HexColor"/>. Can be <see langword="null"/>.</param>
   /// <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
   /// is <see langword="null"/>.</returns>
-  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> Ito <see cref="HexColor"/> is not supported.</exception>
+  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="HexColor"/> is not supported.</exception>
   public static HexColor? ConvertFrom(object? value)
   {
     return (HexColor?)ConverterBase.ConvertFrom(value, typeof(HexColor), ConversionFromMap);

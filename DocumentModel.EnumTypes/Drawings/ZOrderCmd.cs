@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies where in the z-order a shape should be moved relative Ito other shapes.
+/// Specifies where in the z-order a shape should be moved relative to other shapes.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msozordercmd?view=office-pia` for Office interop details.
@@ -9,11 +9,11 @@
 public enum ZOrderCmd
 {
   /// <summary>
-  /// Bring shape Ito the front.
+  /// Bring shape to the front.
   /// </summary>
   BringToFront,
   /// <summary>
-  /// Send shape Ito the back.
+  /// Send shape to the back.
   /// </summary>
   SendToBack,
   /// <summary>

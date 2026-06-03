@@ -10,8 +10,8 @@ public static class VariantConverter
   /// <summary>
   /// Retrieves the value from an OpenXml element representing a variant type.
   /// </summary>
-  /// <param name="openXmlElement">The OpenXml element Ito convert.</param>
-  /// <returns>The value contained in the element, converted Ito the appropriate .NET type.</returns>
+  /// <param name="openXmlElement">The OpenXml element to convert.</param>
+  /// <returns>The value contained in the element, converted to the appropriate .NET type.</returns>
   /// <exception cref="InvalidOperationException">Thrown when the element type is not supported.</exception>
   public static object? GetValue(DX.OpenXmlElement openXmlElement)
   {
@@ -133,9 +133,9 @@ public static class VariantConverter
   }
 
   /// <summary>
-  /// Converts an OpenXml element Ito a Variant object.
+  /// Converts an OpenXml element to a Variant object.
   /// </summary>
-  /// <param name="openXmlElement">The OpenXml element Ito convert.</param>
+  /// <param name="openXmlElement">The OpenXml element to convert.</param>
   /// <returns>A Variant object representing the element values and type.</returns>
   /// <exception cref="InvalidOperationException">Thrown when the element type is not supported.</exception>
   public static Variant GetVariant(DX.OpenXmlElement openXmlElement)
@@ -260,7 +260,7 @@ public static class VariantConverter
   /// <summary>
   /// Creates an OpenXml element from an object value.
   /// </summary>
-  /// <param name="value">The value Ito convert. Can be a Variant or a raw object.</param>
+  /// <param name="value">The value to convert. Can be a Variant or a raw object.</param>
   /// <returns>An OpenXmlElement representing the value.</returns>
   public static DX.OpenXmlElement CreateOpenXmlElement(object? value)
   {
@@ -273,8 +273,8 @@ public static class VariantConverter
   /// <summary>
   /// Creates an OpenXml element from a Variant object.
   /// </summary>
-  /// <param name="variant">The Variant object Ito convert.</param>
-  /// <returns>An OpenXmlElement corresponding Ito the variant type and value.</returns>
+  /// <param name="variant">The Variant object to convert.</param>
+  /// <returns>An OpenXmlElement corresponding to the variant type and value.</returns>
   /// <exception cref="InvalidOperationException">Thrown when the variant type is not supported.</exception>
   public static DX.OpenXmlElement CreateOpenXmlElement(Variant variant)
   {
@@ -370,15 +370,15 @@ public static class VariantConverter
           var vtVector = varVector.CreateOpenXmlElement();
           return vtVector;
         }
-        throw new InvalidOperationException($"Can't convert value of type {variant.GetType()} Ito VT vector");
+        throw new InvalidOperationException($"Can't convert value of type {variant.GetType()} to VT vector");
       case VariantType.Array:
         if (variant is ArrayVariant varArray)
         {
           var vtArray = varArray.CreateOpenXmlElement();
           return vtArray;
         }
-        throw new InvalidOperationException($"Can't convert value of type {variant.GetType()} Ito VT array");
+        throw new InvalidOperationException($"Can't convert value of type {variant.GetType()} to VT array");
     }
-    throw new InvalidOperationException($"Can't convert value of type {variant.GetType()} Ito VT array");
+    throw new InvalidOperationException($"Can't convert value of type {variant.GetType()} to VT array");
   }
 }

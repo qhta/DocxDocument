@@ -17,11 +17,11 @@ public enum CTPDockPositionRestrict
   /// </summary>
   Change,
   /// <summary>
-  /// ITask pane can't be docked Ito either the right or the left side of the document window.
+  /// ITask pane can't be docked to either the right or the left side of the document window.
   /// </summary>
   Horizontal,
   /// <summary>
-  /// ITask pane can't be docked Ito either the top or the bottom of the document window.
+  /// ITask pane can't be docked to either the top or the bottom of the document window.
   /// </summary>
   Vertical
 }

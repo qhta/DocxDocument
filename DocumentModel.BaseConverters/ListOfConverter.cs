@@ -11,7 +11,7 @@ public static class ListOfConverter
   /// <summary>
   /// Retrieves a list of strings from a ListValue of StringValue elements.
   /// </summary>
-  /// <param name="element">The ListValue element Ito convert.</param>
+  /// <param name="element">The ListValue element to convert.</param>
   /// <returns>A List strings, or null if the input is null.</returns>
   public static List<String>? GetValue(DX.ListValue<DX.StringValue>? element)
   {
@@ -31,7 +31,7 @@ public static class ListOfConverter
   /// Creates a ListValue of StringValue elements from a List strings.
   /// </summary>
   /// <typeparam name="OpenXmlElementType">The type of the OpenXmlElement.</typeparam>
-  /// <param name="value">The list of strings Ito convert.</param>
+  /// <param name="value">The list of strings to convert.</param>
   /// <returns>A new ListValue containing the strings.</returns>
   public static DX.ListValue<DX.StringValue>? CreateListValue<OpenXmlElementType>(List<String> value)
   {
@@ -54,7 +54,7 @@ public static class ListOfConverter
   /// </summary>
   /// <typeparam name="OpenXmlEnumType">The OpenXml enum type.</typeparam>
   /// <typeparam name="EnumKind">The model enum type.</typeparam>
-  /// <param name="element">The ListValue element Ito convert.</param>
+  /// <param name="element">The ListValue element to convert.</param>
   /// <returns>A List enums, or null if the input is null.</returns>
   public static ListOf<EnumKind>? GetValue<OpenXmlEnumType, EnumKind>(DX.ListValue<DX.EnumValue<OpenXmlEnumType>>? element)
     where OpenXmlEnumType: struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
@@ -79,7 +79,7 @@ public static class ListOfConverter
   /// </summary>
   /// <typeparam name="OpenXmlEnumType">The OpenXml enum type.</typeparam>
   /// <typeparam name="EnumKind">The model enum type.</typeparam>
-  /// <param name="value">The list of enum values Ito convert.</param>
+  /// <param name="value">The list of enum values to convert.</param>
   /// <returns>A new ListValue containing the enum values.</returns>
   public static DX.ListValue<DX.EnumValue<OpenXmlEnumType>>? CreateListValue<OpenXmlEnumType, EnumKind>(List<EnumKind> value)
     where OpenXmlEnumType: struct, DX.IEnumValue, DX.IEnumValueFactory<OpenXmlEnumType>
@@ -103,7 +103,7 @@ public static class ListOfConverter
   /// <summary>
   /// Retrieves a list of boolean values from a ListValue of BooleanValue elements.
   /// </summary>
-  /// <param name="element">The ListValue element Ito convert.</param>
+  /// <param name="element">The ListValue element to convert.</param>
   /// <returns>A List booleans, or null if the input is null.</returns>
   public static List<Boolean>? GetValue(DX.ListValue<DX.BooleanValue>? element)
   {
@@ -119,7 +119,7 @@ public static class ListOfConverter
   /// Creates a ListValue of BooleanValue elements from a List booleans.
   /// </summary>
   /// <typeparam name="OpenXmlElementType">The type of the OpenXmlElement.</typeparam>
-  /// <param name="value">The list of boolean values Ito convert.</param>
+  /// <param name="value">The list of boolean values to convert.</param>
   /// <returns>A new ListValue containing the boolean values.</returns>
   public static DX.ListValue<DX.BooleanValue>? CreateListValue<OpenXmlElementType>(List<Boolean> value)
   {
@@ -140,7 +140,7 @@ public static class ListOfConverter
   /// <summary>
   /// Retrieves a list of Int32 values from a ListValue of Int32Value elements.
   /// </summary>
-  /// <param name="element">The ListValue element Ito convert.</param>
+  /// <param name="element">The ListValue element to convert.</param>
   /// <returns>A List Int32s, or null if the input is null.</returns>
   public static List<Int32>? GetValue(DX.ListValue<DX.Int32Value>? element)
   {
@@ -156,7 +156,7 @@ public static class ListOfConverter
   /// Creates a ListValue of Int32Value elements from a List Int32s.
   /// </summary>
   /// <typeparam name="OpenXmlElementType">The type of the OpenXmlElement.</typeparam>
-  /// <param name="value">The list of Int32 values Ito convert.</param>
+  /// <param name="value">The list of Int32 values to convert.</param>
   /// <returns>A new ListValue containing the Int32 values.</returns>
   public static DX.ListValue<DX.Int32Value>? CreateListValue<OpenXmlElementType>(List<Int32> value)
   {
@@ -177,7 +177,7 @@ public static class ListOfConverter
   /// <summary>
   /// Retrieves a list of UInt32 values from a ListValue of UInt32Value elements.
   /// </summary>
-  /// <param name="element">The ListValue element Ito convert.</param>
+  /// <param name="element">The ListValue element to convert.</param>
   /// <returns>A List UInt32s, or null if the input is null.</returns>
   public static List<UInt32>? GetValue(DX.ListValue<DX.UInt32Value>? element)
   {
@@ -193,7 +193,7 @@ public static class ListOfConverter
   /// Creates a ListValue of UInt32Value elements from a List UInt32s.
   /// </summary>
   /// <typeparam name="OpenXmlElementType">The type of the OpenXmlElement.</typeparam>
-  /// <param name="value">The list of UInt32 values Ito convert.</param>
+  /// <param name="value">The list of UInt32 values to convert.</param>
   /// <returns>A new ListValue containing the UInt32 values.</returns>
   public static DX.ListValue<DX.UInt32Value>? CreateListValue<OpenXmlElementType>(List<UInt32> value)
   {

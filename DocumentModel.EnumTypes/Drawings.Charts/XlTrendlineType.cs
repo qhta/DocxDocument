@@ -9,16 +9,16 @@
 public enum XlTrendlineType
 {
   /// <summary>
-  /// Uses an equation Ito calculate the least squares fit through points, for example, y = ax^6 + bx^5 + cx^4 + dx^3
+  /// Uses an equation to calculate the least squares fit through points, for example, y = ax^6 + bx^5 + cx^4 + dx^3
   /// + ex^2 + fx + g.
   /// </summary>
   Polynomial = 3,
   /// <summary>
-  /// Uses an equation Ito calculate the least squares fit through points, for example, y = ax^b.
+  /// Uses an equation to calculate the least squares fit through points, for example, y = ax^b.
   /// </summary>
   Power = 4,
   /// <summary>
-  /// Uses an equation Ito calculate the least squares fit through points, for example, y=ab^x .
+  /// Uses an equation to calculate the least squares fit through points, for example, y=ab^x .
   /// </summary>
   Exponential = 5,
   /// <summary>
@@ -27,11 +27,11 @@ public enum XlTrendlineType
   /// </summary>
   MovingAvg = 6,
   /// <summary>
-  /// Uses the equation y = c ln x + b Ito calculate the least squares fit through points.
+  /// Uses the equation y = c ln x + b to calculate the least squares fit through points.
   /// </summary>
   Logarithmic = -4133,
   /// <summary>
-  /// Uses the linear equation y = mx + b Ito calculate the least squares fit through points.
+  /// Uses the linear equation y = mx + b to calculate the least squares fit through points.
   /// </summary>
   Linear = -4132
 }

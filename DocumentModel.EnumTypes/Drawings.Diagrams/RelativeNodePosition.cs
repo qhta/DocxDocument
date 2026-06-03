@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Drawings.Diagrams;
 
 /// <summary>
-/// Specifies where a node is added Ito a diagram relative Ito existing nodes.
+/// Specifies where a node is added to a diagram relative to existing nodes.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msorelativenodeposition?view=office-pia` for Office interop details.

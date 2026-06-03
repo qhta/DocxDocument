@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies whether
-/// the values corresponding Ito a particular data series are in rows or columns.
+/// the values corresponding to a particular data series are in rows or columns.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlrowcol?view=office-pia` for Office interop details.

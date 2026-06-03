@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Drawings.Wordprocessing;
 
 /// <summary>
-/// Specifies the type of vertical alignment Ito apply.
+/// Specifies the type of vertical alignment to apply.
 /// </summary>
 [OpenXmlEnumType(typeof(DXDW.VerticalAlignmentValues))]
 public enum VerticalAlignment

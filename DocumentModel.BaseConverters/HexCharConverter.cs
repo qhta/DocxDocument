@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods for HexChar value Ito/from Open XML.
+/// Provides conversion methods for HexChar value to/from Open XML.
 /// </summary>
 public static class HexCharConverter
 {
@@ -38,9 +38,9 @@ public static class HexCharConverter
   #region SByteValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml SByteValue Ito HexChar.
+  /// Converts an OpenXml SByteValue to HexChar.
   /// </summary>
-  /// <param name="SByteValue">The SByteValue Ito convert.</param>
+  /// <param name="SByteValue">The SByteValue to convert.</param>
   /// <returns>The HexChar value, or null if the element has no content.</returns>
   public static HexChar? ConvertFromSByteValue(DX.SByteValue? SByteValue)
   {
@@ -54,7 +54,7 @@ public static class HexCharConverter
   /// <summary>
   /// Creates an OpenXml SByteValue from an HexChar value.
   /// </summary>
-  /// <param name="value">The HexChar value Ito convert.</param>
+  /// <param name="value">The HexChar value to convert.</param>
   /// <returns>A new SByteValue, or null if the input is null.</returns>
   public static DX.SByteValue? ConvertToSByteValue(HexChar? value)
   {
@@ -70,9 +70,9 @@ public static class HexCharConverter
   #region Int16Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int16Value Ito HexChar.
+  /// Converts an OpenXml Int16Value to HexChar.
   /// </summary>
-  /// <param name="int16Value">The Int16Value Ito convert.</param>
+  /// <param name="int16Value">The Int16Value to convert.</param>
   /// <returns>The HexChar int16Value, or null if the element has no content.</returns>
   public static HexChar? ConvertFromInt16Value(DX.Int16Value? int16Value)
   {
@@ -86,7 +86,7 @@ public static class HexCharConverter
   /// <summary>
   /// Creates an OpenXml Int16Value from an HexChar value.
   /// </summary>
-  /// <param name="value">The HexChar value Ito convert.</param>
+  /// <param name="value">The HexChar value to convert.</param>
   /// <returns>A new Int16Value, or null if the input is null.</returns>
   public static DX.Int16Value? ConvertToInt16Value(HexChar? value)
   {
@@ -102,9 +102,9 @@ public static class HexCharConverter
   #region Int32Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int32Value Ito HexChar.
+  /// Converts an OpenXml Int32Value to HexChar.
   /// </summary>
-  /// <param name="Int32Value">The Int32Value Ito convert.</param>
+  /// <param name="Int32Value">The Int32Value to convert.</param>
   /// <returns>The HexChar value, or null if the element has no content.</returns>
   public static HexChar? ConvertFromInt32Value(DX.Int32Value? Int32Value)
   {
@@ -118,7 +118,7 @@ public static class HexCharConverter
   /// <summary>
   /// Creates an OpenXml Int32Value from an HexChar value.
   /// </summary>
-  /// <param name="value">The HexChar value Ito convert.</param>
+  /// <param name="value">The HexChar value to convert.</param>
   /// <returns>A new Int32Value, or null if the input is null.</returns>
   public static DX.Int32Value? ConvertToInt32Value(HexChar? value)
   {
@@ -132,9 +132,9 @@ public static class HexCharConverter
   #region Int64Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int64Value Ito HexChar.
+  /// Converts an OpenXml Int64Value to HexChar.
   /// </summary>
-  /// <param name="Int64Value">The Int64Value Ito convert.</param>
+  /// <param name="Int64Value">The Int64Value to convert.</param>
   /// <returns>The HexChar value, or null if the element has no content.</returns>
   public static HexChar? ConvertFromInt64Value(DX.Int64Value? Int64Value)
   {
@@ -148,7 +148,7 @@ public static class HexCharConverter
   /// <summary>
   /// Creates an OpenXml Int64Value from an HexChar value.
   /// </summary>
-  /// <param name="value">The HexChar value Ito convert.</param>
+  /// <param name="value">The HexChar value to convert.</param>
   /// <returns>A new Int64Value, or null if the input is null.</returns>
   public static DX.Int64Value? ConvertToInt64Value(HexChar? value)
   {
@@ -162,9 +162,9 @@ public static class HexCharConverter
   #region IntegerValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml IntegerValue Ito HexChar.
+  /// Converts an OpenXml IntegerValue to HexChar.
   /// </summary>
-  /// <param name="IntegerValue">The IntegerValue Ito convert.</param>
+  /// <param name="IntegerValue">The IntegerValue to convert.</param>
   /// <returns>The HexChar value, or null if the element has no content.</returns>
   public static HexChar? ConvertFromIntegerValue(DX.IntegerValue? IntegerValue)
   {
@@ -178,7 +178,7 @@ public static class HexCharConverter
   /// <summary>
   /// Creates an OpenXml IntegerValue from an HexChar value.
   /// </summary>
-  /// <param name="value">The HexChar value Ito convert.</param>
+  /// <param name="value">The HexChar value to convert.</param>
   /// <returns>A new IntegerValue, or null if the input is null.</returns>
   public static DX.IntegerValue? ConvertToIntegerValue(HexChar? value)
   {
@@ -192,9 +192,9 @@ public static class HexCharConverter
   #region ByteValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml ByteValue Ito HexChar.
+  /// Converts an OpenXml ByteValue to HexChar.
   /// </summary>
-  /// <param name="ByteValue">The ByteValue Ito convert.</param>
+  /// <param name="ByteValue">The ByteValue to convert.</param>
   /// <returns>The HexChar value, or null if the element has no content.</returns>
   public static HexChar? ConvertFromByteValue(DX.ByteValue? ByteValue)
   {
@@ -206,7 +206,7 @@ public static class HexCharConverter
   /// <summary>
   /// Creates an OpenXml ByteValue from an HexChar value.
   /// </summary>
-  /// <param name="value">The HexChar value Ito convert.</param>
+  /// <param name="value">The HexChar value to convert.</param>
   /// <returns>A new ByteValue, or null if the input is null.</returns>
   public static DX.ByteValue? ConvertToByteValue(HexChar? value)
   {
@@ -222,9 +222,9 @@ public static class HexCharConverter
   #region UInt16Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml UInt16Value Ito HexChar.
+  /// Converts an OpenXml UInt16Value to HexChar.
   /// </summary>
-  /// <param name="UInt16Value">The UInt16Value Ito convert.</param>
+  /// <param name="UInt16Value">The UInt16Value to convert.</param>
   /// <returns>The HexChar value, or null if the element has no content.</returns>
   public static HexChar? ConvertFromUInt16Value(DX.UInt16Value? UInt16Value)
   {
@@ -236,7 +236,7 @@ public static class HexCharConverter
   /// <summary>
   /// Creates an OpenXml UInt16Value from an HexChar value.
   /// </summary>
-  /// <param name="value">The HexChar value Ito convert.</param>
+  /// <param name="value">The HexChar value to convert.</param>
   /// <returns>A new UInt16Value, or null if the input is null.</returns>
   public static DX.UInt16Value? ConvertToUInt16Value(HexChar? value)
   {
@@ -252,9 +252,9 @@ public static class HexCharConverter
   #region HexCharValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml HexCharValue Ito HexChar.
+  /// Converts an OpenXml HexCharValue to HexChar.
   /// </summary>
-  /// <param name="HexCharValue">The HexCharValue Ito convert.</param>
+  /// <param name="HexCharValue">The HexCharValue to convert.</param>
   /// <returns>The HexChar value, or null if the element has no content.</returns>
   public static HexChar? ConvertFromUInt32Value(DX.UInt32Value? HexCharValue)
   {
@@ -266,7 +266,7 @@ public static class HexCharConverter
   /// <summary>
   /// Creates an OpenXml HexCharValue from an HexChar value.
   /// </summary>
-  /// <param name="value">The HexChar value Ito convert.</param>
+  /// <param name="value">The HexChar value to convert.</param>
   /// <returns>A new HexCharValue, or null if the input is null.</returns>
   public static DX.UInt32Value? ConvertToUInt32Value(HexChar? value)
   {
@@ -281,9 +281,9 @@ public static class HexCharConverter
   #region UInt64Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml UInt64Value Ito HexChar.
+  /// Converts an OpenXml UInt64Value to HexChar.
   /// </summary>
-  /// <param name="UInt64Value">The UInt64Value Ito convert.</param>
+  /// <param name="UInt64Value">The UInt64Value to convert.</param>
   /// <returns>The HexChar value, or null if the element has no content.</returns>
   public static HexChar? ConvertFromUInt64Value(DX.UInt64Value? UInt64Value)
   {
@@ -297,7 +297,7 @@ public static class HexCharConverter
   /// <summary>
   /// Creates an OpenXml UInt64Value from an HexChar value.
   /// </summary>
-  /// <param name="value">The HexChar value Ito convert.</param>
+  /// <param name="value">The HexChar value to convert.</param>
   /// <returns>A new UInt64Value, or null if the input is null.</returns>
   public static DX.UInt64Value? ConvertToUInt64Value(HexChar? value)
   {
@@ -312,9 +312,9 @@ public static class HexCharConverter
   #region StringValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml StringValue Ito HexChar.
+  /// Converts an OpenXml StringValue to HexChar.
   /// </summary>
-  /// <param name="StringValue">The StringValue Ito convert.</param>
+  /// <param name="StringValue">The StringValue to convert.</param>
   /// <returns>The HexChar value, or null if the element has no content.</returns>
   public static HexChar? ConvertFromStringValue(DX.StringValue? StringValue)
   {
@@ -330,7 +330,7 @@ public static class HexCharConverter
   /// <summary>
   /// Creates an OpenXml StringValue from an HexChar value.
   /// </summary>
-  /// <param name="value">The HexChar value Ito convert.</param>
+  /// <param name="value">The HexChar value to convert.</param>
   /// <param name="targetType">The target type for the Icreated StringValue instance. Must be a subclass of StringValue.</param>
   /// <returns>A new StringValue, or null if the input is null.</returns>
   public static DX.StringValue? ConvertToStringValue(HexChar? value, Type targetType)
@@ -348,9 +348,9 @@ public static class HexCharConverter
   #region OpenXmlLeafTextElement conversion.
 
   /// <summary>
-  /// Converts an OpenXml OpenXmlLeafTextElement Ito HexChar.
+  /// Converts an OpenXml OpenXmlLeafTextElement to HexChar.
   /// </summary>
-  /// <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement Ito convert.</param>
+  /// <param name="OpenXmlLeafTextElement">The OpenXmlLeafTextElement to convert.</param>
   /// <returns>The HexChar value, or null if the element has no content.</returns>
   public static HexChar? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? OpenXmlLeafTextElement)
   {
@@ -363,7 +363,7 @@ public static class HexCharConverter
   /// <summary>
   /// Creates an OpenXml OpenXmlLeafTextElement from an HexChar value.
   /// </summary>
-  /// <param name="value">The HexChar value Ito convert.</param>
+  /// <param name="value">The HexChar value to convert.</param>
   /// <param name="targetType">The target type for the Icreated OpenXmlLeafTextElement instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new OpenXmlLeafTextElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(HexChar? value, Type targetType)
@@ -382,9 +382,9 @@ public static class HexCharConverter
   #region HexBinaryValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml HexBinaryValue Ito HexChar.
+  /// Converts an OpenXml HexBinaryValue to HexChar.
   /// </summary>
-  /// <param name="HexBinaryValue">The HexBinaryValue Ito convert.</param>
+  /// <param name="HexBinaryValue">The HexBinaryValue to convert.</param>
   /// <returns>The HexChar value, or null if the element has no content.</returns>
   public static HexChar? ConvertFromHexBinaryValue(DX.HexBinaryValue? HexBinaryValue)
   {
@@ -399,7 +399,7 @@ public static class HexCharConverter
   /// <summary>
   /// Creates an OpenXml HexBinaryValue from an HexChar value.
   /// </summary>
-  /// <param name="value">The HexChar value Ito convert.</param>
+  /// <param name="value">The HexChar value to convert.</param>
   /// <param name="targetType">The target type for the Icreated HexBinaryValue instance. Must be a subclass of HexBinaryValue.</param>
   /// <returns>A new HexBinaryValue, or null if the input is null.</returns>
   public static DX.HexBinaryValue? ConvertToHexBinaryValue(HexChar? value, Type targetType)
@@ -418,9 +418,9 @@ public static class HexCharConverter
   #region OpenXmlLeafElement conversion.
 
   /// <summary>
-  /// Converts an OpenXml OpenXmlLeafElement Ito HexChar.
+  /// Converts an OpenXml OpenXmlLeafElement to HexChar.
   /// </summary>
-  /// <param name="OpenXmlLeafElement">The OpenXmlLeafElement Ito convert.</param>
+  /// <param name="OpenXmlLeafElement">The OpenXmlLeafElement to convert.</param>
   /// <returns>The HexChar value, or null if the element has no content.</returns>
   public static HexChar? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? OpenXmlLeafElement)
   {
@@ -445,7 +445,7 @@ public static class HexCharConverter
   /// <summary>
   /// Creates an OpenXml OpenXmlLeafElement from an HexChar value.
   /// </summary>
-  /// <param name="value">The HexChar value Ito convert.</param>
+  /// <param name="value">The HexChar value to convert.</param>
   /// <param name="targetType">The target type for the Icreated OpenXmlLeafElement instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new OpenXmlLeafElement, or null if the input is null.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(HexChar? value, Type targetType)
@@ -472,10 +472,10 @@ public static class HexCharConverter
   #region String conversion.
 
   /// <summary>
-  /// Converts the specified string representation of a number Ito its HexCharequivalent.
+  /// Converts the specified string representation of a number to its HexCharequivalent.
   /// </summary>
-  /// <param name="value">The string Ito convert. The string may be null or contain a valid integer representation.</param>
-  /// <returns>A HexChar integer equivalent Ito the number contained in the input string, or null if the input is null or
+  /// <param name="value">The string to convert. The string may be null or contain a valid integer representation.</param>
+  /// <returns>A HexChar integer equivalent to the number contained in the input string, or null if the input is null or
   /// not a valid integer.</returns>
   private static HexChar? ConvertFromString(string? value)
   {
@@ -485,9 +485,9 @@ public static class HexCharConverter
   }
 
   /// <summary>
-  /// Converts a nullable HexChar value Ito its string representation.
+  /// Converts a nullable HexChar value to its string representation.
   /// </summary>
-  /// <param name="value">The nullable HexChar value Ito convert. If null, the method returns null.</param>
+  /// <param name="value">The nullable HexChar value to convert. If null, the method returns null.</param>
   /// <returns>A string representation of the specified value, or null if the value is null.</returns>
   private static String? ConvertToString(HexChar? value)
   {
@@ -502,10 +502,10 @@ public static class HexCharConverter
   #region Generic OpenXml conversion methods
 
   /// <summary>
-  /// Converts an HexChar value Ito the specified target type using standard type conversion.
+  /// Converts an HexChar value to the specified target type using standard type conversion.
   /// </summary>
-  /// <param name="value">The HexChar value Ito convert.</param>
-  /// <param name="targetType">The target type Ito convert Ito.</param>
+  /// <param name="value">The HexChar value to convert.</param>
+  /// <param name="targetType">The target type to convert to.</param>
   /// <returns>The converted value, or null if the input is null.</returns>
   /// <exception cref="NotSupportedException">Raised when the target type is not supported.</exception>
   public static object? ConvertTo(HexChar? value, Type targetType)
@@ -514,12 +514,12 @@ public static class HexCharConverter
   }
 
   /// <summary>
-  /// Converts the specified value Ito a nullable 32-bit integer, if a supported conversion exists.
+  /// Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
   /// </summary>
-  /// <param name="value">The value Ito convert Ito an <see cref="HexChar"/>. Can be <see langword="null"/>.</param>
+  /// <param name="value">The value to convert to an <see cref="HexChar"/>. Can be <see langword="null"/>.</param>
   /// <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
   /// is <see langword="null"/>.</returns>
-  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> Ito <see cref="HexChar"/> is not supported.</exception>
+  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="HexChar"/> is not supported.</exception>
   public static HexChar? ConvertFrom(object? value)
   {
     return (HexChar?)ConverterBase.ConvertFrom(value, typeof(HexChar), ConversionFromMap);

@@ -16,11 +16,11 @@ public enum AutoSize
   /// </summary>
   None = 0,
   /// <summary>
-  /// The shape is adjusted Ito fit the text.
+  /// The shape is adjusted to fit the text.
   /// </summary>
   ShapeToFitText = 1,
   /// <summary>
-  /// The text is adjusted Ito fit the shape.
+  /// The text is adjusted to fit the shape.
   /// </summary>
   TextToFitShape = 2
 }

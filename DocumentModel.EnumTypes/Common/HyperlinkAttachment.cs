@@ -16,24 +16,24 @@ public enum HyperlinkAttachment
   /// </summary>
   IDocument,          //  1 - Graphic shown in document
   /// <summary>
-  ///   Graphic is used Ito fill a shape.
+  ///   Graphic is used to fill a shape.
   /// </summary>
-  ShapeFill,         //  2 - Graphic used Ito fill a shape
+  ShapeFill,         //  2 - Graphic used to fill a shape
   /// <summary>
   ///   Graphic is used for the outline of a shape.
   /// </summary>
   ShapeOutline,      //  3 - Graphic used for shape outline
   /// <summary>
-  ///   IHyperlink is attached Ito a shape element.
+  ///   IHyperlink is attached to a shape element.
   /// </summary>
-  IShape,             //  4 - IHyperlink attached Ito a shape
+  IShape,             //  4 - IHyperlink attached to a shape
   /// <summary>
-  ///   IHyperlink is attached Ito a WordprocessingML field.
+  ///   IHyperlink is attached to a WordprocessingML field.
   /// </summary>
-  Field,             //  5 - IHyperlink attached Ito a WordprocessingML  field
+  Field,             //  5 - IHyperlink attached to a WordprocessingML  field
   /// <summary>
-  ///   IHyperlink is attached Ito a SpreadsheetML range.
+  ///   IHyperlink is attached to a SpreadsheetML range.
   /// </summary>
-  IRange,             //  6 - IHyperlink attached Ito a SpreadsheetML  range
+  IRange,             //  6 - IHyperlink attached to a SpreadsheetML  range
 }
 

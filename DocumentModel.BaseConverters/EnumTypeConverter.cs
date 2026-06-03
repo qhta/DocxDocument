@@ -5,7 +5,7 @@ using System.Reflection;
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides conversion methods for Enum value Ito/from Open XML.
+/// Provides conversion methods for Enum value to/from Open XML.
 /// </summary>
 public static partial class EnumTypeConverter
 {
@@ -40,8 +40,8 @@ public static partial class EnumTypeConverter
   }
 
   /// <summary>
-  /// Maps enum types Ito their name-value bidirectional dictionaries.
-  /// The key is the model enum Type, and the value is a BiDiDictionary mapping model enum values Ito openXmlEnumValues objects.
+  /// Maps enum types to their name-value bidirectional dictionaries.
+  /// The key is the model enum Type, and the value is a BiDiDictionary mapping model enum values to openXmlEnumValues objects.
   /// </summary>
   private static readonly Dictionary<Type, BiDiDictionary<object, object>> mappingEnumValues = new();
 
@@ -210,9 +210,9 @@ public static partial class EnumTypeConverter
   #region EnumValue<> conversion.
 
   /// <summary>
-  /// Converts an OpenXml EnumValue Ito Enum.
+  /// Converts an OpenXml EnumValue to Enum.
   /// </summary>
-  /// <param name="openXmlEnumValue">The openXmlEnumValue Ito convert.</param>
+  /// <param name="openXmlEnumValue">The openXmlEnumValue to convert.</param>
   /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
   /// <returns>The Enum value, or null if the element has no content.</returns>
   private static Enum? ConvertFromEnumValue(object? openXmlEnumValue, Type modelEnumType)
@@ -244,7 +244,7 @@ public static partial class EnumTypeConverter
   /// <summary>
   /// Creates an OpenXml EnumValue from an Enum value.
   /// </summary>
-  /// <param name="value">The Enum value Ito convert.</param>
+  /// <param name="value">The Enum value to convert.</param>
   /// <param name="openXmlType">The target OpenXmlValues type for the Icreated EnumValue instance. Must be of OpenXml EnumValue type.</param>
   /// <returns>A new EnumValue, or null if the input is null.</returns>
   private static object? ConvertToEnumValue(Enum? value, Type openXmlType)
@@ -275,9 +275,9 @@ public static partial class EnumTypeConverter
   #region IEnumValue conversion.
 
   /// <summary>
-  /// Converts an OpenXml IEnumValue Ito Enum.
+  /// Converts an OpenXml IEnumValue to Enum.
   /// </summary>
-  /// <param name="openXmlValue">The openXmlValue Ito convert.</param>
+  /// <param name="openXmlValue">The openXmlValue to convert.</param>
   /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
   /// <returns>The Enum value, or null if the element has no content.</returns>
   private static Enum? ConvertFromIEnumValue(DX.IEnumValue? openXmlValue, Type modelEnumType)
@@ -297,7 +297,7 @@ public static partial class EnumTypeConverter
   /// <summary>
   /// Creates an OpenXml IEnumValue from an Enum value.
   /// </summary>
-  /// <param name="value">The Enum value Ito convert.</param>
+  /// <param name="value">The Enum value to convert.</param>
   /// <param name="openXmlType">The target OpenXmlValues type for the Icreated IEnumValue instance. Must be of OpenXml IEnumValue type.</param>
   /// <returns>A new IEnumValue, or null if the input is null.</returns>
   private static DX.IEnumValue? ConvertToIEnumValue(Enum? value, Type openXmlType)
@@ -318,9 +318,9 @@ public static partial class EnumTypeConverter
   #region Int32Value conversion.
 
   /// <summary>
-  /// Converts an OpenXml Int32Value Ito Enum.
+  /// Converts an OpenXml Int32Value to Enum.
   /// </summary>
-  /// <param name="openXmlValue">The openXmlValue Ito convert.</param>
+  /// <param name="openXmlValue">The openXmlValue to convert.</param>
   /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
   /// <returns>The Enum value, or null if the element has no content.</returns>
   private static Enum? ConvertFromInt32Value(DX.Int32Value? openXmlValue, Type modelEnumType)
@@ -338,7 +338,7 @@ public static partial class EnumTypeConverter
   /// <summary>
   /// Creates an OpenXml Int32Value from an Enum value.
   /// </summary>
-  /// <param name="value">The Enum value Ito convert.</param>
+  /// <param name="value">The Enum value to convert.</param>
   /// <returns>A new Int32Value, or null if the input is null.</returns>
   private static DX.Int32Value? ConvertToInt32Value(Enum? value)
   {
@@ -353,9 +353,9 @@ public static partial class EnumTypeConverter
   #region ValueType conversion.
 
   /// <summary>
-  /// Converts ValueType value Ito Enum.
+  /// Converts ValueType value to Enum.
   /// </summary>
-  /// <param name="value">The value Ito convert.</param>
+  /// <param name="value">The value to convert.</param>
   /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
   /// <returns>The Enum value, or null if the element has no content.</returns>
   public static Enum? ConvertFromValueType(ValueType? value, Type modelEnumType)
@@ -373,7 +373,7 @@ public static partial class EnumTypeConverter
   /// <summary>
   /// Creates a ValueType value from an Enum value.
   /// </summary>
-  /// <param name="value">The Enum value Ito convert.</param>
+  /// <param name="value">The Enum value to convert.</param>
   /// <param name="valueType">The target ValueType for the conversion.</param>
   /// <returns>A new ValueType, or null if the input is null.</returns>
   public static ValueType? ConvertToValueType(Enum? value, Type valueType)
@@ -392,9 +392,9 @@ public static partial class EnumTypeConverter
   #region String conversion.
 
   /// <summary>
-  /// Converts an OpenXml String Ito Enum.
+  /// Converts an OpenXml String to Enum.
   /// </summary>
-  /// <param name="value">The value Ito convert.</param>
+  /// <param name="value">The value to convert.</param>
   /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
   /// <returns>The Enum value, or null if the element has no content.</returns>
   private static Enum? ConvertFromString(String? value, Type modelEnumType)
@@ -430,7 +430,7 @@ public static partial class EnumTypeConverter
   /// <summary>
   /// Creates an OpenXml String from an Enum value.
   /// </summary>
-  /// <param name="value">The Enum value Ito convert.</param>
+  /// <param name="value">The Enum value to convert.</param>
   /// <returns>A new String, or null if the input is null.</returns>
   private static String? ConvertToString(Enum? value)
   {
@@ -452,9 +452,9 @@ public static partial class EnumTypeConverter
   #region OpenXmlLeafTextElement conversion.
 
   /// <summary>
-  /// Converts an OpenXml OpenXmlLeafTextElement Ito Enum.
+  /// Converts an OpenXml OpenXmlLeafTextElement to Enum.
   /// </summary>
-  /// <param name="openXmlValue">The openXmlValue Ito convert.</param>
+  /// <param name="openXmlValue">The openXmlValue to convert.</param>
   /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
   /// <returns>The Enum value, or null if the element has no content.</returns>
   private static Enum? ConvertFromOpenXmlLeafTextElement(DX.OpenXmlLeafTextElement? openXmlValue, Type modelEnumType)
@@ -475,7 +475,7 @@ public static partial class EnumTypeConverter
   /// <summary>
   /// Creates an OpenXmlLeafTextElement from an Enum value.
   /// </summary>
-  /// <param name="value">The Enum value Ito convert.</param>
+  /// <param name="value">The Enum value to convert.</param>
   /// <param name="openXmlType">The target OpenXmlValues type for the Icreated EnumValue instance. Must be of OpenXml EnumValue type.</param>
   /// <returns>A new EnumValue, or null if the input is null.</returns>
   private static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(Enum? value, Type openXmlType)
@@ -493,9 +493,9 @@ public static partial class EnumTypeConverter
   #region OpenXmlLeafElement conversion.
 
   /// <summary>
-  /// Converts an OpenXml OpenXmlLeafElement Ito Enum.
+  /// Converts an OpenXml OpenXmlLeafElement to Enum.
   /// </summary>
-  /// <param name="openXmlValue">The openXmlValue Ito convert.</param>
+  /// <param name="openXmlValue">The openXmlValue to convert.</param>
   /// <param name="modelEnumType">The target model type for the conversion. It must be an enum type</param>
   /// <returns>The Enum value, or null if the element has no content.</returns>
   private static Enum? ConvertFromOpenXmlLeafElement(DX.OpenXmlLeafElement? openXmlValue, Type modelEnumType)
@@ -529,7 +529,7 @@ public static partial class EnumTypeConverter
   /// <summary>
   /// Creates an OpenXmlLeafElement from an Enum value.
   /// </summary>
-  /// <param name="value">The Enum value Ito convert.</param>
+  /// <param name="value">The Enum value to convert.</param>
   /// <param name="openXmlType">The target OpenXmlValues type for the Icreated EnumValue instance. Must be of OpenXml EnumValue type.</param>
   /// <returns>A new EnumValue, or null if the input is null.</returns>
   private static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(Enum? value, Type openXmlType)
@@ -566,9 +566,9 @@ public static partial class EnumTypeConverter
   #region EnumValue<> conversion.
 
   /// <summary>
-  /// Converts an OpenXml EnumValue Ito Enum.
+  /// Converts an OpenXml EnumValue to Enum.
   /// </summary>
-  /// <param name="openXmlEnumValue">The openXmlEnumValue Ito convert.</param>
+  /// <param name="openXmlEnumValue">The openXmlEnumValue to convert.</param>
   /// <returns>The Enum value, or null if the element has no content.</returns>
   public static string? ConvertFromOpenXmlEnumValueToString(DX.OpenXmlSimpleType? openXmlEnumValue)
   {
@@ -596,7 +596,7 @@ public static partial class EnumTypeConverter
   /// <summary>
   /// Creates an OpenXml EnumValue from an Enum value.
   /// </summary>
-  /// <param name="value">The Enum value Ito convert.</param>
+  /// <param name="value">The Enum value to convert.</param>
   /// <param name="openXmlType">The target OpenXmlValues type for the Icreated EnumValue instance. Must be of OpenXml EnumValue type.</param>
   /// <returns>A new EnumValue, or null if the input is null.</returns>
   public static DX.OpenXmlSimpleType? ConvertToOpenXmlEnumValueFromString(string? value, Type openXmlType)
@@ -627,10 +627,10 @@ public static partial class EnumTypeConverter
   #region Generic OpenXml conversion methods
 
   /// <summary>
-  /// Attempts Ito convert an Enum value Ito the specified target type using standard type conversion, returning a boolean Ito indicate success or failure.
+  /// Attempts to convert an Enum value to the specified target type using standard type conversion, returning a boolean to indicate success or failure.
   /// </summary>
-  /// <param name="value">The Enum value Ito convert.</param>
-  /// <param name="targetType">The target type Ito convert Ito.</param>
+  /// <param name="value">The Enum value to convert.</param>
+  /// <param name="targetType">The target type to convert to.</param>
   /// <param name="result">The converted value, or null if the conversion failed.</param>
   /// <returns>True if the conversion was successful; otherwise, false.</returns>
   public static bool TryConvertTo(object? value, Type targetType, out object? result)
@@ -639,13 +639,13 @@ public static partial class EnumTypeConverter
   }
 
   /// <summary>
-  /// Attempts Ito convert the specified value Ito the specified target type.
+  /// Attempts to convert the specified value to the specified target type.
   /// </summary>
-  /// <remarks>This method utilizes a predefined conversion map Ito determine how Ito convert the value Ito the
-  /// target type. It is important Ito ensure Ithat the target type is compatible with the provided value Ito avoid
+  /// <remarks>This method utilizes a predefined conversion map to determine how to convert the value to the
+  /// target type. It is important to ensure Ithat the target type is compatible with the provided value to avoid
   /// conversion failures.</remarks>
-  /// <param name="value">The object Ito convert. This can be null, in which case the conversion will not be performed.</param>
-  /// <param name="targetType">The type Ito which the value should be converted. This must be a valid type Ithat the conversion supports.</param>
+  /// <param name="value">The object to convert. This can be null, in which case the conversion will not be performed.</param>
+  /// <param name="targetType">The type to which the value should be converted. This must be a valid type Ithat the conversion supports.</param>
   /// <param name="result">When this method returns, contains the converted value if the conversion was successful; otherwise, it will be
   /// null.</param>
   /// <returns>true if the conversion was successful; otherwise, false.</returns>
@@ -663,10 +663,10 @@ public static partial class EnumTypeConverter
   }
 
   /// <summary>
-  /// Converts an Enum value Ito the specified target type using standard type conversion.
+  /// Converts an Enum value to the specified target type using standard type conversion.
   /// </summary>
-  /// <param name="value">The Enum value Ito convert.</param>
-  /// <param name="targetType">The target type Ito convert Ito.</param>
+  /// <param name="value">The Enum value to convert.</param>
+  /// <param name="targetType">The target type to convert to.</param>
   /// <returns>The converted value, or null if the input is null.</returns>
   /// <exception cref="NotSupportedException">Raised when the target type is not supported.</exception>
   public static object? ConvertTo(object? value, Type targetType)
@@ -675,13 +675,13 @@ public static partial class EnumTypeConverter
   }
 
   /// <summary>
-  /// Converts the specified value Ito a nullable 32-bit integer, if a supported conversion exists.
+  /// Converts the specified value to a nullable 32-bit integer, if a supported conversion exists.
   /// </summary>
-  /// <param name="value">The value Ito convert Ito an <see cref="Enum"/>. Can be <see langword="null"/>.</param>
-  /// <param name="targetType">The target type Ito convert Ito.</param>
+  /// <param name="value">The value to convert to an <see cref="Enum"/>. Can be <see langword="null"/>.</param>
+  /// <param name="targetType">The target type to convert to.</param>
   /// <returns>A nullable 32-bit integer representing the converted value, or <see langword="null"/> if <paramref name="value"/>
   /// is <see langword="null"/>.</returns>
-  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> Ito <see cref="Enum"/> is not supported.</exception>
+  /// <exception cref="NotSupportedException">Thrown if conversion from the type of <paramref name="value"/> to <see cref="Enum"/> is not supported.</exception>
   public static object? ConvertFrom(object? value, Type targetType)
   {
     return ConverterBase.ConvertFrom(value, targetType, ConversionFromMap);

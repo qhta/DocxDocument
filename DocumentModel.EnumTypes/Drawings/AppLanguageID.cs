@@ -25,7 +25,7 @@ public enum AppLanguageID
   /// </summary>
   ExeMode,
   /// <summary>
-  /// User interface language used prior Ito the current user interface language.
+  /// User interface language used prior to the current user interface language.
   /// </summary>
   UIPrevious
 }

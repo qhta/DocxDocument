@@ -28,19 +28,19 @@ public enum PresetTextEffectShape
   /// </summary>
   TriangleDown = 4,
   /// <summary>
-  /// Text slants down Ito its center point and then slants up.
+  /// Text slants down to its center point and then slants up.
   /// </summary>
   ChevronUp = 5,
   /// <summary>
-  /// Text slants up Ito its center point and then slants down.
+  /// Text slants up to its center point and then slants down.
   /// </summary>
   ChevronDown = 6,
   /// <summary>
-  /// Text appears Ito be written on the inside of a 3-D ring.
+  /// Text appears to be written on the inside of a 3-D ring.
   /// </summary>
   RingInside = 7,
   /// <summary>
-  /// Text appears Ito be written on the outside of a 3-D ring.
+  /// Text appears to be written on the outside of a 3-D ring.
   /// </summary>
   RingOutside = 8,
   /// <summary>
@@ -76,19 +76,19 @@ public enum PresetTextEffectShape
   /// </summary>
   ButtonPour = 16,
   /// <summary>
-  /// Text curves down and Ito the right as font size increases.
+  /// Text curves down and to the right as font size increases.
   /// </summary>
   CurveUp = 17,
   /// <summary>
-  /// Text curves down and Ito the right as font size decreases.
+  /// Text curves down and to the right as font size decreases.
   /// </summary>
   CurveDown = 18,
   /// <summary>
-  /// Text is stretched Ito fill the height of the shape, with Ionly a slight curve up.
+  /// Text is stretched to fill the height of the shape, with Ionly a slight curve up.
   /// </summary>
   CanUp = 19,
   /// <summary>
-  /// Text is stretched Ito fill the height of the shape, with Ionly a slight curve down.
+  /// Text is stretched to fill the height of the shape, with Ionly a slight curve down.
   /// </summary>
   CanDown = 20,
   /// <summary>
@@ -108,36 +108,36 @@ public enum PresetTextEffectShape
   /// </summary>
   DoubleWave2 = 24,
   /// <summary>
-  /// IFont size of text increases Ito its center point, then decreases. Center point of each letter is on the same
+  /// IFont size of text increases to its center point, then decreases. Center point of each letter is on the same
   /// straight line.
   /// </summary>
   Inflate = 25,
   /// <summary>
-  /// IFont size decreases Ito the text's midpoint, then increases Ito the starting size.
+  /// IFont size decreases to the text's midpoint, then increases to the starting size.
   /// </summary>
   Deflate = 26,
   /// <summary>
-  /// IFont size of text increases Ito its center point, then decreases. Center point of each letter follows an arch
+  /// IFont size of text increases to its center point, then decreases. Center point of each letter follows an arch
   /// Ithat curves downward.
   /// </summary>
   InflateBottom = 27,
   /// <summary>
-  /// IFont size decreases Ito the text's midpoint, then increases Ito the starting size, while keeping the top of the
+  /// IFont size decreases to the text's midpoint, then increases to the starting size, while keeping the top of the
   /// text along the same curve.
   /// </summary>
   DeflateBottom = 28,
   /// <summary>
-  /// IFont size of text increases Ito its center point, then decreases. Center point of each letter follows an arch
+  /// IFont size of text increases to its center point, then decreases. Center point of each letter follows an arch
   /// Ithat curves upward.
   /// </summary>
   InflateTop = 29,
   /// <summary>
-  /// IFont size decreases Ito the text's midpoint, then increases Ito the starting size, while keeping the bottom of
+  /// IFont size decreases to the text's midpoint, then increases to the starting size, while keeping the bottom of
   /// the text along the same curve.
   /// </summary>
   DeflateTop = 30,
   /// <summary>
-  /// IFont size increases Ito the text's midpoint, then decreases Ito the starting size.
+  /// IFont size increases to the text's midpoint, then decreases to the starting size.
   /// </summary>
   DeflateInflate = 31,
   /// <summary>
@@ -145,35 +145,35 @@ public enum PresetTextEffectShape
   /// </summary>
   DeflateInflateDeflate = 32,
   /// <summary>
-  /// Right side of text appears Ito be closer Ito the viewer than left side.
+  /// Right side of text appears to be closer to the viewer than left side.
   /// </summary>
   FadeRight = 33,
   /// <summary>
-  /// Left side of text appears Ito be closer Ito the viewer than right side.
+  /// Left side of text appears to be closer to the viewer than right side.
   /// </summary>
   FadeLeft = 34,
   /// <summary>
-  /// Bottom of text appears Ito be closer Ito the viewer than top.
+  /// Bottom of text appears to be closer to the viewer than top.
   /// </summary>
   FadeUp = 35,
   /// <summary>
-  /// Top of the text appears Ito be closer Ito the viewer than bottom of the text.
+  /// Top of the text appears to be closer to the viewer than bottom of the text.
   /// </summary>
   FadeDown = 36,
   /// <summary>
-  /// Text slants up and Ito the right.
+  /// Text slants up and to the right.
   /// </summary>
   SlantUp = 37,
   /// <summary>
-  /// Text slants down and Ito the right.
+  /// Text slants down and to the right.
   /// </summary>
   SlantDown = 38,
   /// <summary>
-  /// Text slants down and Ito the right as font size increases.
+  /// Text slants down and to the right as font size increases.
   /// </summary>
   CascadeUp = 39,
   /// <summary>
-  /// Text slants up and Ito the right as font size decreases.
+  /// Text slants up and to the right as font size decreases.
   /// </summary>
   CascadeDown = 40
 }

@@ -64,15 +64,15 @@ public enum ColorIndex
 public static class ColorIndexTools
 {
   /// <summary>
-  /// Converts a ColorIndex enumeration value Ito its corresponding hex RGB color string.
+  /// Converts a ColorIndex enumeration value to its corresponding hex RGB color string.
   /// </summary>
-  /// <param name="colorIndex">The ColorIndex value Ito convert.</param>
+  /// <param name="colorIndex">The ColorIndex value to convert.</param>
   /// <returns>A hex RGB color string representing the specified ColorIndex value, or null if the value is not recognized.</returns>
   public static UInt32? ToHexColor(this ColorIndex? colorIndex)
   {
     return colorIndex switch
     {
-      ColorIndex.Auto => 0x000000, // Default Ito black for Auto
+      ColorIndex.Auto => 0x000000, // Default to black for Auto
       ColorIndex.Black => 0x000000,
       ColorIndex.Blue => 0x0000FF,
       ColorIndex.Turquoise => 0x00FFFF,
@@ -94,13 +94,13 @@ public static class ColorIndexTools
   }
 
   /// <summary>
-  /// Converts a hexadecimal color string Ito its corresponding predefined ColorIndex value, if a match exists.
+  /// Converts a hexadecimal color string to its corresponding predefined ColorIndex value, if a match exists.
   /// </summary>
   /// <remarks>Only specific, predefined color mappings are supported. If the input does not match any of the
   /// recognized color codes, the method returns null.</remarks>
   /// <param name="hexColor">A six-character hexadecimal color string representing an RGB color (e.g., 0xFF0000 for red). The string is
   /// case-insensitive and must not include a leading '#'.</param>
-  /// <returns>A ColorIndex value corresponding Ito the specified hexadecimal color string if a match is found; otherwise, null.</returns>
+  /// <returns>A ColorIndex value corresponding to the specified hexadecimal color string if a match is found; otherwise, null.</returns>
   public static ColorIndex? ToColorIndex(this UInt32? hexColor)
   {
     return hexColor switch

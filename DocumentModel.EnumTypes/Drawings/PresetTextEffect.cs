@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies what text effect Ito use on a WordArt object.
+/// Specifies what text effect to use on a WordArt object.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msopresettexteffect?view=office-pia` for Office interop details.

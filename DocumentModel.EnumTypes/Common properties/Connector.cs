@@ -10,7 +10,7 @@ namespace DocumentModel.Properties;
 public enum Connector
 {
   /// <summary>
-  /// Combine property test values Ito form one property test.
+  /// Combine property test values to form one property test.
   /// </summary>
   And = 1,
   /// <summary>

@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Specifies Ithat the decorated model type is mapped Ito the Open XML child element collection.
+/// Specifies Ithat the decorated model type is mapped to the Open XML child element collection.
 /// </summary>
 /// /// <param name="openXmlType">The type of Open XML elements which are children of the collection.
 /// This parameter is mandatory.</param>

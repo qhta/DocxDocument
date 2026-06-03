@@ -683,7 +683,7 @@ public partial class Variant : IConvertible, IEquatable<Variant>
     where EnumType : struct, IConvertible
   {
     if (Value is string str)
-      return Enum.Parse<EnumType>(str);
+      return (EnumType)Enum.Parse(typeof(EnumType), str);
     if (Value != null)
       return (EnumType)Enum.ToObject(typeof(EnumType), Value);
     throw new InvalidOperationException($"ValueType is null when converting variant Ito Enum");

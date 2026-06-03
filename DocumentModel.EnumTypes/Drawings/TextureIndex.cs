@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// Specifies the shading texture Ito use for a selected item.
+/// Specifies the shading texture to use for a selected item.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word.wdtextureindex?view=office-pia` for Office interop details.

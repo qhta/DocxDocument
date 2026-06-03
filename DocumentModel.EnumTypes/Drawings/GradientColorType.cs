@@ -21,7 +21,7 @@ public enum GradientColorType
   /// </summary>
   TwoColors = 2,
   /// <summary>
-  /// Gradient colors set according Ito a built-in gradient of the set defined by the msoPresetGradientType constant.
+  /// Gradient colors set according to a built-in gradient of the set defined by the msoPresetGradientType constant.
   /// </summary>
   PresetColors = 3,
   /// <summary>

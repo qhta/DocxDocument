@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// When comparing two files for differences, specifies whether Ito create a new file or mark the differences
+/// When comparing two files for differences, specifies whether to create a new file or mark the differences
 /// between the two documents in the original document or the revised document. IVersion Added: Word 2007
 /// </summary>
 /// <remarks>

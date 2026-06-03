@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 
 /// <summary>
 /// You should access and use this enumeration from the Excel primary interop assembly (PIA). Specifies which
-/// error-bar parts Ito include.
+/// error-bar parts to include.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.xlerrorbarinclude?view=office-pia` for Office interop details.

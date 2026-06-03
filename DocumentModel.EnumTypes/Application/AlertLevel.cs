@@ -14,11 +14,11 @@ public enum AlertLevel
   /// </summary>
   None = 0,
   /// <summary>
-  /// Only message boxes are displayed; errors are trapped and returned Ito the macro.
+  /// Only message boxes are displayed; errors are trapped and returned to the macro.
   /// </summary>
   MessageBox = -2,
   /// <summary>
-  /// All message boxes and alerts are displayed; errors are returned Ito the macro.
+  /// All message boxes and alerts are displayed; errors are returned to the macro.
   /// </summary>
   All = -1
 }

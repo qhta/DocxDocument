@@ -29,7 +29,7 @@ public static class VTArrayConverter
   /// <summary>
   /// Retrieves the base type of the array from the VTArray element.
   /// </summary>
-  /// <param name="openXmlElement">The VTArray element Ito query.</param>
+  /// <param name="openXmlElement">The VTArray element to query.</param>
   /// <returns>The base VariantType, or null if not set.</returns>
   public static VariantType? GetBaseType(this DXVT.VTArray openXmlElement)
   {
@@ -41,8 +41,8 @@ public static class VTArrayConverter
   /// <summary>
   /// Sets the base type of the VTArray element.
   /// </summary>
-  /// <param name="openXmlElement">The VTArray element Ito modify.</param>
-  /// <param name="value">The VariantType Ito set. Null removes the property.</param>
+  /// <param name="openXmlElement">The VTArray element to modify.</param>
+  /// <param name="value">The VariantType to set. Null removes the property.</param>
   public static void SetBaseType(this DXVT.VTArray openXmlElement, VariantType? value)
   {
 
@@ -55,7 +55,7 @@ public static class VTArrayConverter
   /// <summary>
   /// Retrieves the lower bounds of the array from the VTArray element.
   /// </summary>
-  /// <param name="openXmlElement">The VTArray element Ito query.</param>
+  /// <param name="openXmlElement">The VTArray element to query.</param>
   /// <returns>The lower bounds integer, or null if not set.</returns>
   public static int? GetLowerBounds(this DXVT.VTArray openXmlElement)
   {
@@ -65,7 +65,7 @@ public static class VTArrayConverter
   /// <summary>
   /// Sets the lower bounds of the VTArray element.
   /// </summary>
-  /// <param name="openXmlElement">The VTArray element Ito modify.</param>
+  /// <param name="openXmlElement">The VTArray element to modify.</param>
   /// <param name="value">The lower bounds value.</param>
   public static void SetLowerBounds(this DXVT.VTArray openXmlElement, int? value)
   {
@@ -75,7 +75,7 @@ public static class VTArrayConverter
   /// <summary>
   /// Retrieves the upper bounds of the array from the VTArray element.
   /// </summary>
-  /// <param name="openXmlElement">The VTArray element Ito query.</param>
+  /// <param name="openXmlElement">The VTArray element to query.</param>
   /// <returns>The upper bounds integer, or null if not set.</returns>
   public static int? GetUpperBounds(this DXVT.VTArray openXmlElement)
   {
@@ -85,7 +85,7 @@ public static class VTArrayConverter
   /// <summary>
   /// Sets the upper bounds of the VTArray element.
   /// </summary>
-  /// <param name="openXmlElement">The VTArray element Ito modify.</param>
+  /// <param name="openXmlElement">The VTArray element to modify.</param>
   /// <param name="value">The upper bounds value.</param>
   public static void SetUpperBounds(this DXVT.VTArray openXmlElement, int? value)
   {
@@ -93,9 +93,9 @@ public static class VTArrayConverter
   }
 
   /// <summary>
-  /// Converts a VTArray element Ito an ArrayVariant object, parsing all contained items.
+  /// Converts a VTArray element to an ArrayVariant object, parsing all contained items.
   /// </summary>
-  /// <param name="openXmlElement">The VTArray element Ito convert.</param>
+  /// <param name="openXmlElement">The VTArray element to convert.</param>
   /// <returns>An ArrayVariant object populated with the array data.</returns>
   public static ArrayVariant? GetValue(this DXVT.VTArray openXmlElement)
   {
@@ -118,7 +118,7 @@ public static class VTArrayConverter
   /// <summary>
   /// Populates a VTArray element with data from an ArrayVariant object.
   /// </summary>
-  /// <param name="openXmlElement">The VTArray element Ito populate.</param>
+  /// <param name="openXmlElement">The VTArray element to populate.</param>
   /// <param name="value">The ArrayVariant source data.</param>
   public static void SetValue(this DXVT.VTArray openXmlElement, ArrayVariant? value)
   {
@@ -134,7 +134,7 @@ public static class VTArrayConverter
   /// <summary>
   /// Creates a VTArray element from an ArrayVariant object.
   /// </summary>
-  /// <param name="value">The ArrayVariant object Ito convert.</param>
+  /// <param name="value">The ArrayVariant object to convert.</param>
   /// <returns>A new VTArray element populated with the array data.</returns>
   public static DXVT.VTArray CreateOpenXmlElement(this ArrayVariant value)
   {

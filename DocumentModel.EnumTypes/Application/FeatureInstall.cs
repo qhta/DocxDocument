@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Application;
 
 /// <summary>
-/// Specifies how the application handles calls Ito methods and properties Ithat require features not yet installed.
+/// Specifies how the application handles calls to methods and properties Ithat require features not yet installed.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msofeatureinstall?view=office-pia` for Office interop details.
@@ -13,11 +13,11 @@ public enum FeatureInstall
   /// </summary>
   None,
   /// <summary>
-  /// Prompts the user Ito install new features.
+  /// Prompts the user to install new features.
   /// </summary>
   OnDemand,
   /// <summary>
-  /// Displays a progress meter during installation; does not prompt the user Ito install new features.
+  /// Displays a progress meter during installation; does not prompt the user to install new features.
   /// </summary>
   OnDemandWithUI
 }

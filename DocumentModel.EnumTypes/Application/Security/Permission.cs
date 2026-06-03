@@ -9,35 +9,35 @@
 public enum Permission
 {
   /// <summary>
-  /// Permission Ito view.
+  /// Permission to view.
   /// </summary>
   IView = 1,
   /// <summary>
-  /// Permission Ito read.
+  /// Permission to read.
   /// </summary>
   Read = 1,
   /// <summary>
-  /// Permission Ito edit.
+  /// Permission to edit.
   /// </summary>
   Edit = 2,
   /// <summary>
-  /// Permission Ito save.
+  /// Permission to save.
   /// </summary>
   Save = 4,
   /// <summary>
-  /// Permission Ito extract.
+  /// Permission to extract.
   /// </summary>
   Extract = 8,
   /// <summary>
-  /// Permission Ito change.
+  /// Permission to change.
   /// </summary>
   Change = 15,
   /// <summary>
-  /// Permission Ito print.
+  /// Permission to print.
   /// </summary>
   Print = 16,
   /// <summary>
-  /// Permission Ito access the object model programmatically.
+  /// Permission to access the object model programmatically.
   /// </summary>
   ObjModel = 32,
   /// <summary>

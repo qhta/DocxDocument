@@ -9,13 +9,13 @@
 public enum Orientation
 {
   /// <summary>
-  ///   Maximum Ito Minimum.
+  ///   Maximum to Minimum.
   /// </summary>
   [OpenXmlEnumValue("MaxMin")]
   MaxMin = 1,
 
   /// <summary>
-  ///   Minimum Ito Maximum.
+  ///   Minimum to Maximum.
   /// </summary>
   [OpenXmlEnumValue("MinMax")]
   MinMax

@@ -29,11 +29,11 @@ public enum XlPattern
   /// </summary>
   LightVertical = 12,
   /// <summary>
-  /// Light diagonal lines running from the upper left Ito the lower right.
+  /// Light diagonal lines running from the upper left to the lower right.
   /// </summary>
   LightDown = 13,
   /// <summary>
-  /// Light diagonal lines running from the lower left Ito the upper right.
+  /// Light diagonal lines running from the lower left to the upper right.
   /// </summary>
   LightUp = 14,
   /// <summary>
@@ -65,7 +65,7 @@ public enum XlPattern
   /// </summary>
   Vertical = -4166,
   /// <summary>
-  /// Dark diagonal lines running from the lower left Ito the upper right.
+  /// Dark diagonal lines running from the lower left to the upper right.
   /// </summary>
   Up = -4162,
   /// <summary>
@@ -89,7 +89,7 @@ public enum XlPattern
   /// </summary>
   Gray25 = -4124,
   /// <summary>
-  /// Dark diagonal lines running from the upper left Ito the lower right.
+  /// Dark diagonal lines running from the upper left to the lower right.
   /// </summary>
   Down = -4121,
   /// <summary>

@@ -68,11 +68,11 @@ public enum PatternType
   /// </summary>
   DarkVertical = 14,
   /// <summary>
-  /// Thick lines in the foreground color running from the top Ito the right-hand side of the shape.
+  /// Thick lines in the foreground color running from the top to the right-hand side of the shape.
   /// </summary>
   DarkDownwardDiagonal = 15,
   /// <summary>
-  /// Thick lines in the foreground color running from the top Ito the left-hand side of the shape.
+  /// Thick lines in the foreground color running from the top to the left-hand side of the shape.
   /// </summary>
   DarkUpwardDiagonal = 16,
   /// <summary>
@@ -92,36 +92,36 @@ public enum PatternType
   /// </summary>
   LightVertical = 20,
   /// <summary>
-  /// Thin lines in the foreground color running from the top Ito the right-hand side of the shape.
+  /// Thin lines in the foreground color running from the top to the right-hand side of the shape.
   /// </summary>
   LightDownwardDiagonal = 21,
   /// <summary>
-  /// Thin lines in the foreground color running from the top Ito the left-hand side of the shape.
+  /// Thin lines in the foreground color running from the top to the left-hand side of the shape.
   /// </summary>
   LightUpwardDiagonal = 22,
   /// <summary>
-  /// Solid, closely spaced perpendicular lines in the foreground color running horizontally and vertically Ito form
+  /// Solid, closely spaced perpendicular lines in the foreground color running horizontally and vertically to form
   /// grid lines across the shape.
   /// </summary>
   SmallGrid = 23,
   /// <summary>
-  /// Dotted perpendicular lines in the foreground color running diagonally Ito form diamonds across the shape.
+  /// Dotted perpendicular lines in the foreground color running diagonally to form diamonds across the shape.
   /// </summary>
   DottedDiamond = 24,
   /// <summary>
-  /// Widely spaced lines in the foreground color running from the top Ito the right-hand side of the shape.
+  /// Widely spaced lines in the foreground color running from the top to the right-hand side of the shape.
   /// </summary>
   WideDownwardDiagonal = 25,
   /// <summary>
-  /// Widely spaced lines in the foreground color running from the top Ito the left-hand side of the shape.
+  /// Widely spaced lines in the foreground color running from the top to the left-hand side of the shape.
   /// </summary>
   WideUpwardDiagonal = 26,
   /// <summary>
-  /// Dashed lines in the foreground color running from the top Ito the left-hand side of the shape.
+  /// Dashed lines in the foreground color running from the top to the left-hand side of the shape.
   /// </summary>
   DashedUpwardDiagonal = 27,
   /// <summary>
-  /// Dashed lines in the foreground color running from the top Ito the right-hand side of the shape.
+  /// Dashed lines in the foreground color running from the top to the right-hand side of the shape.
   /// </summary>
   DashedDownwardDiagonal = 28,
   /// <summary>
@@ -145,7 +145,7 @@ public enum PatternType
   /// </summary>
   LargeConfetti = 33,
   /// <summary>
-  /// Solid, widely spaced perpendicular lines in the foreground color running horizontally and vertically Ito form
+  /// Solid, widely spaced perpendicular lines in the foreground color running horizontally and vertically to form
   /// grid lines across the shape.
   /// </summary>
   LargeGrid = 34,
@@ -174,7 +174,7 @@ public enum PatternType
   /// </summary>
   DiagonalBrick = 40,
   /// <summary>
-  /// Solid perpendicular lines in the foreground color running diagonally Ito form diamonds across the shape.
+  /// Solid perpendicular lines in the foreground color running diagonally to form diamonds across the shape.
   /// </summary>
   OutlinedDiamond = 41,
   /// <summary>
@@ -183,7 +183,7 @@ public enum PatternType
   /// </summary>
   Plaid = 42,
   /// <summary>
-  /// Circles Ithat use foreground and background colors Ito make them appear three-dimensional, oriented in rows
+  /// Circles Ithat use foreground and background colors to make them appear three-dimensional, oriented in rows
   /// across the shape.
   /// </summary>
   Sphere = 43,
@@ -192,7 +192,7 @@ public enum PatternType
   /// </summary>
   Weave = 44,
   /// <summary>
-  /// Dotted perpendicular lines in the foreground color running horizontally and vertically Ito form grid lines
+  /// Dotted perpendicular lines in the foreground color running horizontally and vertically to form grid lines
   /// across the shape.
   /// </summary>
   DottedGrid = 45,

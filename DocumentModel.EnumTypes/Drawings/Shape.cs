@@ -14,7 +14,7 @@ public enum Shape
   [OpenXmlEnumValue("Cone")]
   Cone,
   /// <summary>
-  ///   Cone Ito Max.
+  ///   Cone to Max.
   /// </summary>
   [OpenXmlEnumValue("ConeToMax")]
   ConeToMax,
@@ -34,7 +34,7 @@ public enum Shape
   [OpenXmlEnumValue("Pyramid")]
   Pyramid,
   /// <summary>
-  ///   Pyramid Ito Maximum.
+  ///   Pyramid to Maximum.
   /// </summary>
   [OpenXmlEnumValue("PyramidToMaximum")]
   PyramidToMaximum

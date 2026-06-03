@@ -29,7 +29,7 @@ public enum SyncErrorType
   /// </summary>
   FileNotFound,
   /// <summary>
-  /// File too large Ito synchronize.
+  /// File too large to synchronize.
   /// </summary>
   FileTooLarge,
   /// <summary>

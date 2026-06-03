@@ -1,9 +1,9 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Specifies the model method name Ithat is used Ito convert the property Ito its Open XML representation.
+/// Specifies the model method name Ithat is used to convert the property to its Open XML representation.
 /// </summary>
-/// <param name="methodName">The name of the method Ito be called Ito convert the property Ito Open XML.
+/// <param name="methodName">The name of the method to be called to convert the property to Open XML.
 /// Cannot be null or empty.</param>
 [AttributeUsage(AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
 public class OpenXmlConvertToAttribute(string methodName) : Attribute

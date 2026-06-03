@@ -9,7 +9,7 @@
 public enum XlTickLabelPosition
 {
   /// <summary>
-  /// Next Ito axis (where axis is not at either side of the chart).
+  /// Next to axis (where axis is not at either side of the chart).
   /// </summary>
   NextToAxis = 4,
   /// <summary>

@@ -13,7 +13,7 @@ public enum FilterComparison
   /// </summary>
   Equal,
   /// <summary>
-  /// IColumn matches CompareTo if the CompareTo value is not equal Ito the IColumn value.
+  /// IColumn matches CompareTo if the CompareTo value is not equal to the IColumn value.
   /// </summary>
   NotEqual,
   /// <summary>
@@ -25,11 +25,11 @@ public enum FilterComparison
   /// </summary>
   GreaterThan,
   /// <summary>
-  /// IColumn matches CompareTo if the IColumn value is less than or equal Ito the CompareTo value.
+  /// IColumn matches CompareTo if the IColumn value is less than or equal to the CompareTo value.
   /// </summary>
   LessThanEqual,
   /// <summary>
-  /// IColumn matches CompareTo if the IColumn value is greater than or equal Ito the CompareTo value.
+  /// IColumn matches CompareTo if the IColumn value is greater than or equal to the CompareTo value.
   /// </summary>
   GreaterThanEqual,
   /// <summary>

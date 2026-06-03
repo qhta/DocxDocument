@@ -16,19 +16,19 @@ public enum TextFontAlign
   /// </summary>
   Auto = 0,
   /// <summary>
-  /// Specifies Ithat the font is aligned Ito the top of the object.
+  /// Specifies Ithat the font is aligned to the top of the object.
   /// </summary>
   Top = 1,
   /// <summary>
-  /// Specifies Ithat the font is aligned Ito the center of the object.
+  /// Specifies Ithat the font is aligned to the center of the object.
   /// </summary>
   Center = 2,
   /// <summary>
-  /// Specifies Ithat the font is aligned Ito the baseline of the object.
+  /// Specifies Ithat the font is aligned to the baseline of the object.
   /// </summary>
   Baseline = 3,
   /// <summary>
-  /// Specifies Ithat the font is aligned Ito the bottom of the object.
+  /// Specifies Ithat the font is aligned to the bottom of the object.
   /// </summary>
   Bottom = 4
 }

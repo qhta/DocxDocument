@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Specifies Ithat the decorated model property is mapped Ito the Open XML child element with the given type
+/// Specifies Ithat the decorated model property is mapped to the Open XML child element with the given type
 /// and this child element is not directly contained in the parent element,
 /// but is instead contained within another element.
 /// </summary>

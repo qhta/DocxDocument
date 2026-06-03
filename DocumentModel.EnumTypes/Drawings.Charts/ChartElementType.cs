@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies whether and how Ito display chart elements.
+/// Specifies whether and how to display chart elements.
 /// </summary>
 /// <remarks>
 /// See `https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.core.msochartelementtype?view=office-pia` for Office interop details.
@@ -73,11 +73,11 @@ public enum ChartElementType
   /// </summary>
   DataLabelOutSideEnd = 205,
   /// <summary>
-  /// Display data label Ito the left.
+  /// Display data label to the left.
   /// </summary>
   DataLabelLeft = 206,
   /// <summary>
-  /// Display data label Ito the right.
+  /// Display data label to the right.
   /// </summary>
   DataLabelRight = 207,
   /// <summary>
@@ -101,7 +101,7 @@ public enum ChartElementType
   /// </summary>
   PrimaryCategoryAxisTitleNone = 300,
   /// <summary>
-  /// Display primary category axis title adjacent Ito the axis.
+  /// Display primary category axis title adjacent to the axis.
   /// </summary>
   PrimaryCategoryAxisTitleAdjacentToAxis = 301,
   /// <summary>
@@ -125,7 +125,7 @@ public enum ChartElementType
   /// </summary>
   PrimaryValueAxisTitleNone = 306,
   /// <summary>
-  /// Place primary value axis title adjacent Ito the axis.
+  /// Place primary value axis title adjacent to the axis.
   /// </summary>
   PrimaryValueAxisTitleAdjacentToAxis = 306,
   /// <summary>
@@ -149,7 +149,7 @@ public enum ChartElementType
   /// </summary>
   SecondaryCategoryAxisTitleNone = 312,
   /// <summary>
-  /// Display secondary category axis title adjacent Ito axis.
+  /// Display secondary category axis title adjacent to axis.
   /// </summary>
   SecondaryCategoryAxisTitleAdjacentToAxis = 313,
   /// <summary>
@@ -173,7 +173,7 @@ public enum ChartElementType
   /// </summary>
   SecondaryValueAxisTitleNone = 318,
   /// <summary>
-  /// Display secondary category axis title adjacent Ito axis.
+  /// Display secondary category axis title adjacent to axis.
   /// </summary>
   SecondaryValueAxisTitleAdjacentToAxis = 319,
   /// <summary>

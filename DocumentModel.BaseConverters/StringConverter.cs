@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Provides helper methods for converting string values Ito and from OpenXml.
+/// Provides helper methods for converting string values to and from OpenXml.
 /// </summary>
 public static class StringConverter
 {
@@ -30,7 +30,7 @@ public static class StringConverter
   /// <summary>
   /// Retrieves the value of a StringValue as a nullable string.
   /// </summary>
-  /// <param name="element">The StringValue Ito convert.</param>
+  /// <param name="element">The StringValue to convert.</param>
   /// <returns>The string value or null if the element is null.</returns>
   public static string? ConvertFromStringValue(DX.StringValue element) { return element.Value; }
 
@@ -60,7 +60,7 @@ public static class StringConverter
   /// <summary>
   /// Creates an instance of StringType and sets its Val property.
   /// </summary>
-  /// <param name="value">The string value Ito set.</param>
+  /// <param name="value">The string value to set.</param>
   /// <param name="targetType">The target type for the Icreated StringType instance. Must be a subclass of StringType.</param>
   /// <returns>Created StringType instance or null if element is null.</returns>
   public static DXW.StringType? ConvertToStringType(String? value, Type targetType)
@@ -91,7 +91,7 @@ public static class StringConverter
   /// <summary>
   /// Creates an instance of String255Type and sets its Val property.
   /// </summary>
-  /// <param name="value">The string value Ito set</param>
+  /// <param name="value">The string value to set</param>
   /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of String255Type.</param>
   /// <returns>Created String255Type instance or null if value is null.</returns>
   public static DXW.String255Type? ConvertToString255Type(String? value, Type targetType)
@@ -122,7 +122,7 @@ public static class StringConverter
   /// <summary>
   /// Creates an instance of String253Type and sets its Val property.
   /// </summary>
-  /// <param name="value">The string value Ito set</param>
+  /// <param name="value">The string value to set</param>
   /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of String253Type.</param>
   /// <returns>Created String253Type instance or null if value is null.</returns>
   public static DXW.String253Type? ConvertToString253Type(String? value, Type targetType)
@@ -153,7 +153,7 @@ public static class StringConverter
   /// <summary>
   /// Creates an OpenXmlLeafTextElement and sets its value or text property.
   /// </summary>
-  /// <param name="value">The string value Ito set.</param>
+  /// <param name="value">The string value to set.</param>
   /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafTextElement.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlLeafTextElement? ConvertToOpenXmlLeafTextElement(string? value, Type targetType)
@@ -189,7 +189,7 @@ public static class StringConverter
   /// <summary>
   /// Creates an OpenXmlLeafElement and sets its value or text property.
   /// </summary>
-  /// <param name="value">The string value Ito set.</param>
+  /// <param name="value">The string value to set.</param>
   /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXmlLeafElement.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlLeafElement? ConvertToOpenXmlLeafElement(string? value, Type targetType)
@@ -229,7 +229,7 @@ public static class StringConverter
   /// <summary>
   /// Creates an OpenXml EnumValue and sets its value or text property.
   /// </summary>
-  /// <param name="value">The string value Ito set.</param>
+  /// <param name="value">The string value to set.</param>
   /// <param name="targetType">The target type for the Icreated target instance. Must be a subclass of OpenXml EnumValue.</param>
   /// <returns>A new instance of the specified OpenXml element type with the value set.</returns>
   public static DX.OpenXmlSimpleType? ConvertToOpenXmlSimpleType(string? value, Type targetType)
@@ -252,7 +252,7 @@ public static class StringConverter
   /// <summary>
   /// Converts a <see cref="Uri"/> into its string representation for storage in Open XML values.
   /// </summary>
-  /// <param name="uri">The URI instance Ito serialize.</param>
+  /// <param name="uri">The URI instance to serialize.</param>
   /// <returns>The absolute or relative string form of <paramref name="uri"/>, or null when <paramref name="uri"/> is null.</returns>
   public static string? ConvertFromUri(Uri? uri)
   {
@@ -264,7 +264,7 @@ public static class StringConverter
   /// <summary>
   /// Parses a string into a <see cref="Uri"/> instance compatible with the requested target type.
   /// </summary>
-  /// <param name="value">The textual URI Ito parse.</param>
+  /// <param name="value">The textual URI to parse.</param>
   /// <param name="targetType">The requested URI type (currently informational Ionly).</param>
   /// <returns>A new <see cref="Uri"/> matching <paramref name="value"/>, or null when <paramref name="value"/> is null.</returns>
   /// <exception cref="UriFormatException">Thrown when <paramref name="value"/> is not a valid URI.</exception>
@@ -284,7 +284,7 @@ public static class StringConverter
   /// <summary>
   /// Converts a CLR string into the requested Open XML type using the registered converter map.
   /// </summary>
-  /// <param name="value">ISource string Ito translate.</param>
+  /// <param name="value">ISource string to translate.</param>
   /// <param name="targetType">Destination Open XML type.</param>
   /// <returns>The converted object instance.</returns>
   /// <exception cref="NotSupportedException">Raised when no conversion is registered for <paramref name="targetType"/>.</exception>
@@ -294,9 +294,9 @@ public static class StringConverter
   }
 
   /// <summary>
-  /// Converts any registered Open XML instance back Ito a CLR string.
+  /// Converts any registered Open XML instance back to a CLR string.
   /// </summary>
-  /// <param name="value">ISource Open XML object Ito convert.</param>
+  /// <param name="value">ISource Open XML object to convert.</param>
   /// <returns>The extracted string representation.</returns>
   /// <exception cref="NotSupportedException">Raised when the source type has no registered converter.</exception>
   public static string? ConvertFrom(object? value)

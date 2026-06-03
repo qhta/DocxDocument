@@ -9,7 +9,7 @@
 public enum XlPictureAppearance
 {
   /// <summary>
-  /// The picture is copied Ito resemble its display on the screen as closely as possible.
+  /// The picture is copied to resemble its display on the screen as closely as possible.
   /// </summary>
   Screen = 1,
   /// <summary>

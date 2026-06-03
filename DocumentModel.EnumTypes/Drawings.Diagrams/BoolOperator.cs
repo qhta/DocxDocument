@@ -19,12 +19,12 @@ public enum BoolOperator
   [OpenXmlEnumValue("Equal")]
   Equal,
   /// <summary>
-  ///   Greater Than or Equal Ito.
+  ///   Greater Than or Equal to.
   /// </summary>
   [OpenXmlEnumValue("GreaterThanOrEqualTo")]
   GreaterThanOrEqualTo,
   /// <summary>
-  ///   Less Than or Equal Ito.
+  ///   Less Than or Equal to.
   /// </summary>
   [OpenXmlEnumValue("LessThanOrEqualTo")]
   LessThanOrEqualTo

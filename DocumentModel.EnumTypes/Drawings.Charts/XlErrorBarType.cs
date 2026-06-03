@@ -19,7 +19,7 @@ public enum XlErrorBarType
   /// </summary>
   FixedValue = 1,
   /// <summary>
-  /// Percentage of range Ito be covered by the error bars.
+  /// Percentage of range to be covered by the error bars.
   /// </summary>
   Percent = 2,
   /// <summary>

@@ -2,7 +2,7 @@
 namespace DocumentModel.Drawings;
 
 /// <summary>
-/// Specifies the period of time Ito filter files by the date last modified. Used with the LastModified property of
+/// Specifies the period of time to filter files by the date last modified. Used with the LastModified property of
 /// the FileSearch object.
 /// </summary>
 /// <remarks>

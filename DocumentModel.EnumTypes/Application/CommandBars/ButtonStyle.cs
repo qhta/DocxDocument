@@ -21,11 +21,11 @@ public enum ButtonStyle
   /// </summary>
   Caption = 2,
   /// <summary>
-  /// Image and text, with text Ito the right of image.
+  /// Image and text, with text to the right of image.
   /// </summary>
   IconAndCaption = 3,
   /// <summary>
-  /// Image with text wrapped and Ito the right of the image.
+  /// Image with text wrapped and to the right of the image.
   /// </summary>
   IconAndWrapCaption = 7,
   /// <summary>

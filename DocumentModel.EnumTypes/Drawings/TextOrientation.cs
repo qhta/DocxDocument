@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Defines the TextOrientation enumeration.
-/// Used Ito represent Open XML mapped options.
+/// Used to represent Open XML mapped options.
 /// </summary>
 [OpenXmlNotMapped]
 [JsonConverter(typeof(StringEnumConverter))]

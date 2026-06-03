@@ -37,7 +37,7 @@ public enum TextVertical
   [OpenXmlEnumValue(nameof(DXD.TextVerticalValues.MongolianVertical))]
   MongolianVertical,
   /// <summary>
-  ///   Vertical WordArt Right Ito Left.
+  ///   Vertical WordArt Right to Left.
   /// </summary>
   [OpenXmlEnumValue(nameof(DXD.TextVerticalValues.WordArtLeftToRight))]
   WordArtLeftToRight
